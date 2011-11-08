@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source dmdf-init
+
+echo "Internationalisation archives:"
+showMpqInfo $DMDF_PATH/archives/de.mpq
+echo "\"Die Macht des Feuers\"-specific archive:"
+showMpqInfo $DMDF_PATH/archives/DMdF.mpq
+echo "Main archive:"
+showMpqInfo $DMDF_PATH/archives/Die\ Macht\ des\ Feuers.mpq

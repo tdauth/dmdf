@@ -1,0 +1,96 @@
+Cinematic stuff (from Bonus Campaign)
+- All items on the map are hidden during cinematics
+- Use damage protector to make cinematic fights without dying units
+- Pick all units owned by user which are not hidden (matching condition) and hide them.
+- Remove all buffs fro user units (without expiring timer buffs)
+- set camera return point = target of current camera view
+- use spacebar points for quest targets and shrine!!!
+
+Geräusch heißt im Editor Sound
+Geräuschtyp heißt Sound-Typ
+
+Save-/Load-System:
+- 24 Buchstaben
+- °^"$%&/()=?\`´*+'#~-_<>|,;.: 28 Sonderzeichen
+- 10 Zahlen
+62 verschiedene Zeichen
+Es gibt 32 ^ 4 mögliche Kombinationen pro Id.
+
+Aufladungen (maximal 99) 100 verschiedene Möglichkeiten
+
+6 * 4 Zeichen - Inventar: 24 Zeichen
+
+1 Zeichen * 3 - Attribute: 3 Zeichen (auf permanente Boni beschränken, 62 Bonuspunkte möglich)
+2 Zeichen - Stufe: 2 Zeichen (eventuell 1 Zeichen, wenn die Stufe nicht über 34 oder + Sonderzeichen hinausgeht, Stufenbonus zu 1)
+Logarithmus verwenden, um die Anzahl benötigter Stellen herauszufinden.
+Für jede Stelle ein das entsprechende Zeichen aus den möglichen herauslesen.
+Danach kodieren
+
+
+function 
+
+
+function GetValueChar takes string charList, integer value returns string
+	return SubStr(value, value + 1, charList)
+endfunction
+
+function GetCharValue takes string charList, string char returns integer
+	local integer i = 0
+	loop
+		exitwhen (StringLength(charList) <= i)
+		if (SubStr(i, i + 1, charList) == char) then
+			return i
+		endif
+		set i = i + 1
+	endloop
+	return -1
+endfunction
+
+function GetIntegerCode takes integer value, integer maxValue, string charList returns string
+	local integer requiredChars = StringLength(I2S(maxValue / StringLength(charList))) // Code-Länge in Zeichen
+	local string result = ""
+	local integer i = 0
+	loop
+		exitwhen (i == requiredChars)
+		set result = result + GetValueChar(charList, S2I(SubString(i, i + 1, I2S(value))))
+		set i = i + 1
+	endloop
+	return result
+endfunction
+
+function GetCodeInteger takes string code, integer maxValue, string charList returns integer
+	local integer result = 0
+	local integer i = 0
+	loop
+		exitwhen (i == StringLength(code))
+		set result = result + GetCharValue(charList, SubString(i, i + 1, code)
+		set i = i + 1
+	endloop
+	return result
+endfunction
+
+function StoreHero takes unit whichUnit, string charList, integer maxStrength, integer maxAgility, integer maxIntelligence, integer maxLevel, integer maxHP, integer maxMana returns string
+	// Falls Hash-Tabelle noch keine Listen für die entsprechenden Werte enthält, Folgendes ausführen
+	local unit dummy = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), GetUnitTypeId(whichUnit), 0.0, 0.0, 0.0)
+	
+	call PauseUnit(dummy, true)
+	call ShowUnit(dummy, false)
+	call SetUnitInvulnerable(dummy, true)
+	set maxStrength = maxStrength - GetHeroStr(dummy, false)
+	set maxAgility = maxAgility - GetHeroAgi(dummy, false)
+	set maxIntelligence = set maxIntelligence - GetHeroInt(dummy, false)
+	set maxLevel = maxLevel - 1
+	set maxHP = maxHP - R2I(GetUnitState(dummy, UNIT_STATE_MAX_LIFE))
+	set maxHP = maxMana - R2I(GetUnitState(dummy, UNIT_STATE_MAX_MANA))
+	
+	// Einheit erschaffen und Standardattribute von allem herausfinden, dann Differenzen bilden und Möglichkeiten bestimmen
+	// Anhand der Möglichkeiten mit den 62 verschiedenen Zeichen die Länge der einzelnen ermitteln
+	
+	set maxStrength = StringLength(I2S(maxStrength / StringLength(charList))) // Code-Länge der Kraft
+	
+	
+	set strengthString = GetValueChar takes string charList, integer valu
+	
+	
+
+endfunction

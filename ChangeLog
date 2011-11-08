@@ -1,0 +1,1212 @@
+2011-11-07 Tamino Dauth <tamino@cdauth.eu>
+* Fixed various bugs in Bash scripts and usual game scripts.
+
+2011-11-06 Tamino Dauth <tamino@cdauth.eu>
+* Replaced deprecated map script for proper JassHelper run.
+* Fixed many syntax stuff.
+* Improved release script.
+* Added all formerly "archives" stuff to one single directory for DMdF.
+
+2011-11-05 Tamino Dauth <tamino@cdauth.eu>
+* Added new release Bash script based on smpq.
+
+2011-10-24 Tamino Dauth <tamino@cdauth.eu>
+* Made some minor talk revisions for NPCs "Osman", "Baldar" and "Halder".
+* Wrote some great songs for NPC "Mathilda" :).
+
+2011-09-14 Tamino Dauth <tamino@cdauth.eu>
+* Improved API documentation.
+
+2011-08-14 Tamino Dauth <tamino@cdauth.eu>
+* Implemented talk of NPC "Haldar".
+* Revised talks of NPCs "Haldar" and "Baldar".
+
+2011-06-22 Tamino Dauth <tamino@cdauth.eu>
+* Listed voice speakers in file "AUTHORS".
+* Added several missing spawn points (to quest "Slaughter" as well).
+* Added new item types in code.
+
+2011-06-19 Tamino Dauth <tamino@cdauth.eu>
+* Fixed various talk bugs for NPCs "Björn" and "Markward".
+
+2011-06-18 Tamino Dauth <tamino@cdauth.eu>
+* Reivsed quest "Burn the Bears Down!".
+* Revised talk of NPC "Dago".
+
+2011-06-17 Tamino Dauth <tamino@cdauth.eu>
+* Fixed spell removal by using ENDCAST events in ASL now.
+* Recorded sounds for NPC "Dago".
+
+2011-06-16 Tamino Dauth <tamino@cdauth.eu>
+* Continued grimoire revision.
+* Added custom item type for "Staff of Clarity".
+* Recorded sounds for NPCs "Brogo", "Kuno" and "Lothar".
+
+2011-06-15 Tamino Dauth <tamino@cdauth.eu>
+* Added spells "Herbal Cure", "Forest Faeries Spell", "Relief" (code only) and "Awakening of the Forest" (code only).
+* Revised grimoire (isn't research based anymore -> uses spell book ability now).
+
+2011-06-14 Tamino Dauth <tamino@cdauth.eu>
+* Introduced new grimoire system.
+* Revised various spell tooltips and values.
+* Added missng level check for spell "Absorbation".
+
+2011-06-13 Tamino Dauth <tamino@cdauth.eu>
+* Revised object data.
+* Fixed various bugs (see TODO)
+
+2011-06-08 Tamino Dauth <tamino@cdauth.eu>
+* Fixed enable functionality of quest "Slaughter".
+* Fixed 3rd person camera at beginning (is disabled by default now).
+
+2011-05-20 Tamino Dauth <tamino@cdauth.eu>
+* Added icons for spells "Magical Shock Waves", "Arcane Time" and "Mana Stream".
+* Revised effects and tooltips of spells "Arcane Hunger" and "Arcane Time".
+* Fixed Ids of spell "Repulsion".
+* "Mastery" belongs to class "Elemental Mage" now.
+* Added spells "Arcane Protection" and "Ban".
+
+2011-05-19 Tamino Dauth <tamino@cdauth.eu>
+* Updated map "Talras" -> new terrain.
+* Fixed pausing of bears in Dago's video.
+
+2011-04-21 Tamino Dauth <tamino@cdauth.eu>
+* Spell: Added methods "interruptEx" and "interrupt".
+* Spell: Added method "isLearned".
+* Spell: Revised various spell conditions.
+
+2011-03-19 Tamino Dauth <tamino@cdauth.eu>
+* Added videos "Bloodthirstiness" and "Dragon Hunt".
+
+2011-03-11 Tamino Dauth <tamino@cdauth.eu>
+* Added quest "Slaughter".
+
+2011-03-09 Tamino Dauth <tamino@cdauth.eu>
+* Game: Improved method "initVideoSettings" (oriented on Bonus Campaign).
+
+2011-03-07 Tamino Dauth <tamino@cdauth.eu>
+* Added druid spells "Bear Form" and "Zoology".
+* Added various NPC routines.
+* Revised object data of map "Talras".
+
+2011-03-06 Tamino Dauth <tamino@cdauth.eu>
+* Added spell icons.
+* Added spell "Controlled Time Flow".
+* Improved video "The Chief".
+* Fixed spell "Emblaze".
+* Fixed restoration of metamorphisis of item "Baldar's ring".
+* Added various ability and unit types to map "Talras".
+
+2011-03-05 Tamino Dauth <tamino@cdauth.eu>
+* Fixed various spell bugs.
+
+2011-03-03 Tamino Dauth <tamino@cdauth.eu>
+* Revised object data.
+* Improved terrain of map "Talras".
+* Added item types.
+* Added missing stuff of talk of NPC "Osman".
+
+2011-02-27 Tamino Dauth <tamino@cdauth.eu>
+* Dropped class "Illusionist", moved class "Astral Modifier" to magicans and added new class "Druid" to chaplains.
+* Revised spells and added description for class "Druid".
+* Added spells "Arcane Ruse" and "Crow Form".
+
+2011-02-25 Tamino Dauth <tamino@cdauth.eu>
+* Added spell "Arcane Time".
+* Improved video "Wigberht".
+* NPC "Dago" has a fellow now for quest "Rescue Dago".
+* Actors are reset by method Game.resetVideoSettings() now.
+
+2011-02-23 Tamino Dauth <tamino@cdauth.eu>
+* Improved talk of NPC "Irmina".
+* Improved terrain of map "Talras".
+
+2011-02-12 Tamino Dauth <tamino@cdauth.eu>
+* Added several spawn points.
+* Improved talk of NPC "Lothar".
+
+2011-02-06 Tamino Dauth <tamino@cdauth.eu>
+* Added various necromancer spell icons.
+* Improved video "Wigberht".
+* Fixed various item and ability ids in tooltips and in item type creation.
+
+2011-01-29 Tamino Dauth <tamino@cdauth.eu>
+* Removed unnecessary inventory and shrine messages.
+* Revised some tooltips.
+* Added various missing item types.
+* Fixed important info of NPC "Markward".
+* Improved terrain of map "Talras".
+
+2011-01-25 Tamino Dauth <tamino@cdauth.eu>
+* Fixed spell "Daunt".
+
+2011-01-24 Tamino Dauth <tamino@cdauth.eu>
+* Improved character info messages.
+* Added static methods for attributes bonus calculations to structure Character.
+
+2011-01-23 Tamino Dauth <tamino@cdauth.eu>
+* Improved violence system.
+* Added static constant DMDF_VIOLENCE.
+* Added talk of NPC "Guntrich".
+
+2011-01-22 Tamino Dauth <tamino@cdauth.eu>
+* Character: Added various characters scheme methods.
+* Fixed ability ids of spells "Mana Stream" and "Mana Explosion".
+
+2011-01-16 Tamino Dauth <tamino@cdauth.eu>
+* Added spell "Exorcize Evil".
+* Added spell "Desperate Prayer".
+* Fixed various spell icons and tooltips.
+* Grimoire: Added methods "readd", "spellLevels" and "spellByAbilityId".
+* Character: Added methods "morph", "restoreUnit" and "morphAbilityId" and therefore added unit transformation support for spells.
+* Fixed spell "Ancestor Pact" by self implementation.
+* Spell: Fixed method "isSkillableTo".
+
+2011-01-15 Tamino Dauth <tamino@cdauth.eu>
+* Added structure Shrine and dropped deprecated shrine rect methods of structure MapData.
+* Implemented blood system.
+* Creep camp display status and ally color filter settings are applied on game starting now.
+* All map shrines can be queried by a global container now.
+* Shrine: Has unit member for spells and mini map icon now.
+* Since ASL has been changed actor is up to date now.
+* Implemented new item types.
+* Changed icon positions of sellable item types.
+* Fellows: Added fellow instances for NPCs "Wigberht" and "Ricman".
+* Fellow: Fixed and improved revival.
+* Revised some Necromancer spells.
+* Implemented spells "Death Herald" and "Ancestor Pact".
+* Revised spell "Arcane Hunger".
+* Fixed spell "Furious Bloodthirstiness".
+* Improved terrain of map "Talras".
+
+2011-01-11 Tamino Dauth <tamino@cdauth.eu>
+* Added implementations of spells "Holy Will" and "Impending Disaster".
+* Added several spell icons.
+* Added fellow support for NPC "Sisgard".
+* Fellow: Uses damage event now.
+
+2011-01-10 Tamino Dauth <tamino@cdauth.eu>
+* Added structure Fellows.
+* Fixed various syntax and logic errors.
+
+2011-01-03 Tamino Dauth <tamino@cdauth.eu>
+* Improved structure Fellow.
+* Added method "initFellows" to structure Npcs.
+* Added methods "xpBonus" and "displayXPBonus" to structure Character.
+* Improved talk of NPC "Lothar".
+* Added implementation of talk of NPC "Lothar".
+* Added method "giveQuestItem" to structure Character.
+
+2011-01-02 Tamino Dauth <tamino@cdauth.eu>
+* Improved talk and its implementation of NPC "Mathilda".
+* Added implementations of quests "Ein kleines Geschenk" and "Ein großes Geschenk".
+* Improved structure Fellow.
+
+2010-11-28 Tamino Dauth <tamino@cdauth.eu>
+* Added structure Fellow.
+
+2010-11-27 Tamino Dauth <tamino@cdauth.eu>
+* Fixed destruction of non-existing trigger in quest "Die Nordmänner".
+* Added waves display to structure of quest "Die Nordmänner".
+* Improved talk routine.
+* Improved leave house routine.
+* Added NPC entry for NPC "Lothar" in structure Npcs.
+* Added routine for NPC "Mathilda".
+* Improved terrain of map "Talras".
+* Added missing item types of NPC "Ricman".
+
+2010-11-26 Tamino Dauth <tamino@cdauth.eu>
+* Increased TODO list.
+* Added talk document of NPC "Lothar".
+* Revised talk document of NPC "Mathilda".
+
+2010-11-25 Tamino Dauth <tamino@cdauth.eu>
+* Fixed talk and quest of NPC "Haid".
+
+2010-11-06 Tamino Dauth <tamino@cdauth.eu>
+* Npcs: Fixed some values.
+* Layers: Improved layer of bridge near "Talras".
+* Improved terrain of map "Talras".
+* Fixed talks of NPCs "Heimrich" and "Markward".
+* Routines: Fixed actions (new ASL API).
+
+2010-11-03 Tamino Dauth <tamino@cdauth.eu>
+* Game: Added methods setMapMusicForPlayer and setDefaultMapMusicForPlayer.
+
+2010-11-02 Tamino Dauth <tamino@cdauth.eu>
+* Game: Fixed method setMapMusic.
+* Revised map document.
+* Added and improved tutorial items.
+* Game: Improved method mapName.
+* Fixed talk and quest requirements of NPC "Brogo".
+* Fixed quest "Die Bestie".
+* Fixed info ids of talk of NPC "Ferdinand".
+* Fixed quest completion in talk of NPC "Manfred".
+* Arena: Uses MapData.alliedPlayer now. NPCs are removed now.
+* Game: Added method setAlliedPlayerUnalliedToPlayer.
+* SpellBlaze: Fixed unit erasing.
+* Fixed book icons.
+* Improved talk of NPC "Ferdiand".
+* Fixed quest "Zu den Waffen, Bauern!".
+* NPC "Irmina" sells items now.
+
+2010-11-01 Tamino Dauth <tamino@cdauth.eu>
+* Added hero icon functionality to structure NpcRevival.
+
+2010-10-30 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Added sound data files to "UI/SoundInfo".
+* Fixed script "dmdf-compile-script-map".
+* Added scripts "dmdf-open-log-input" and "dmdf-open-log-output".
+
+2010-10-29 Tamino Dauth <tamino@cdauth.eu>
+* Added various sound files for classes.
+
+2010-10-24 Tamino Dauth <tamino@cdauth.eu>
+* Added structure Npcs.
+* Revised and added talk of NPC "Ricman".
+* Improved talk of NPC "Wigberht".
+* Specified various armors and helments (sold by NPCs "Wieland" and "Ricman").
+* Fixed talk unit of NPC "Einar".
+* Fixed talk bug of NPC "Agihard".
+* Added revival shrine at castle.
+* Revised and implemented talk of NPC "Irmina".
+
+2010-10-23 Tamino Dauth <tamino@cdauth.eu>
+* Fixed hero arena revival.
+* ClassSelection: Added class category methods.
+* Revised talk of NPC "Wieland".
+
+2010-10-21 Tamino Dauth <tamino@cdauth.eu>
+* Added map data member for map music.
+* Added map music methods to struct Game.
+* Extended custom map guide.
+
+2010-10-14 Tamino Dauth <tamino@cdauth.eu>
+* Added map data constant for start skill points which will be added automatically when game starts (auto skill).
+
+2010-09-26 Tamino Dauth <tamino@cdauth.eu>
+* Added items of NPC "Björn".
+* Extended TODO list.
+
+2010-09-25 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Fixed various bugs from TODO list.
+
+2010-09-12 Tamino Dauth <tamino@cdauth.eu>
+* Changed to make compliant for ASL revision.
+
+2010-09-02 Tamino Dauth <tamino@cdauth.eu>
+* Added several NPC units to map "Talas".
+* Added various item types for NPC "Einar".
+* Added and implemented quest "Felle für die Bauern".
+* Improved talk of NPC "Björn".
+* Giants can drop coats now.
+* Revised talk draft of NPC "Ricman".
+* Added various item types for NPC "Ricman".
+
+2010-09-01 Tamino Dauth <tamino@cdauth.eu>
+* Added quest "Talras' mutiger Waffenmeister" and its implementation.
+* Revised talk of NPC "Irmina".
+* Revised talk of NPC "Agihard".
+
+2010-08-28 Tamino Dauth <tamino@cdauth.eu>
+* Revised and added talks of NPCs "Heimrich" and "Markward".
+* Revised talk of NPC "Irmina".
+* Revised document "doc/Planung/Spielinhalt/Gegenstände/Talras/Gegenstände.ods".
+
+2010-08-23 Tamino Dauth <tamino@cdauth.eu>
+* Changed to make compliant for ASL revision.
+
+2010-08-18 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Fixed various bugs (see TODO).
+
+2010-08-17 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Fixed various bugs (see TODO).
+
+2010-08-14 Tamino Dauth <tamino@cdauth.eu>
+* Spell: Added method skillableClassSpells.
+
+2010-08-13 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Added Kunos daughter.
+* Improved struct Spell.
+* Implemented auto skill functionality of grimoire.
+* Revised trade GUI.
+
+2010-08-12 Tamino Dauth <tamino@cdauth.eu>
+* Improved grimoire shortcuts.
+
+2010-08-11 Tamino Dauth <tamino@cdauth.eu>
+* Revised talk of NPC "Kuno".
+* Implemented talk of NPC "Kuno".
+* Added quest "Kunos Tochter".
+* Implemented quest "Kunos Tochter".
+* Implemented talk of NPC "Fulco".
+
+2010-08-02 Tamino Dauth <tamino@cdauth.eu>
+* Fixed trade bug.
+* Added condition to prevent opening grimoire of computer players.
+* Added first implementation of auto skill functionality.
+
+2010-07-30 Tamino Dauth <tamino@cdauth.eu>
+* Added main menu entry for showing/hiding worker button.
+* Improved tutorial entries.
+* Fixed characters scheme display bug.
+* Fixed some quest messages.
+* Improved terrain of map "Talras".
+
+2010-07-26 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+
+2010-07-25 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Improved main menu.
+
+2010-07-19 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Added options for showing and hiding characters buttons and characters scheme to main menu.
+* Added various doodads with models from Neratia and Frotty.
+
+2010-05-30 Tamino Dauth <tamino@cdauth.eu>
+* Fixed "Baldars" quest reward distribution.
+* Revised video "Wigberht".
+
+2010-05-26 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Revised object data of map "Talras".
+* Added giant spawn point to map "Talras".
+
+2010-05-24 Tamino Dauth <tamino@cdauth.eu>
+* Added various message display functions.
+
+2010-05-14 Tamino Dauth <tamino@cdauth.eu>
+* Added and improved various spells (especially for dragon slayer).
+* Added gate opening functionality for gate of "Talras".
+* Added spells "Selflessness" and "Beast Hunter".
+* Added method mapName to struct Game.
+* Enabled various settings in map "Talras".
+* Specified exact class colours.
+* Revised some spell tooltips.
+* Improved terrain of map "Talras".
+* Added worker shrine functionality.
+* Grimoire shows favourite spells now by indicating them with F.
+
+2010-05-11 Tamino Dauth <tamino@cdauth.eu>
+* Reivsed some quests (because of ASL quest system changes).
+* Revised some talks (because of ASL quest system changes).
+* Fixed tutorial creation.
+
+2010-05-01 Tamino Dauth <tamino@cdauth.eu>
+* Revised book "Die Macht des Feuers - Der Meister".
+* Added description document for some book story characters.
+* Added spells "Agility", "Shot Into Heart" and "Furious Bloodthirstiness".
+
+2010-04-28 Tamino Dauth <tamino@cdauth.eu>
+* Revised struct MainWindow.
+* Added game cheat "classes".
+* Improved game cheat "addspells".
+
+2010-04-27 Tamino Dauth <tamino@cdauth.eu>
+* Added spell "Soul Thievery".
+
+2010-04-18 Tamino Dauth <tamino@cdauth.eu>
+* Improved info log GUI.
+* Added various wizard items.
+
+2010-04-11 Tamino Dauth <tamino@cdauth.eu>
+* Added many balancing specifications and fixes.
+* Improved terrain of map "Talras".
+* Revised object editor data (added life and mana regeneration auras to shrines!).
+* Fixed spell "Absorbation".
+* Fixed talk of "Baldar".
+* Enabled UI during talks.
+
+2010-04-09 Tamino Dauth <tamino@cdauth.eu>
+* Fixed some spell effects in object editor.
+* Added spells "Recovery", "Astral Source" and "Violent Death".
+* Defined class spell effects and icons colors.
+
+2010-04-08 Tamino Dauth <tamino@cdauth.eu>
+* Revised various bash scripts.
+* Changed some map data balance values.
+* Added various text tag methods to struct Spell.
+* Fixed some doubled quest item enable calls.
+
+2010-04-06 Tamino Dauth <tamino@cdauth.eu>
+* Revised various bash scripts.
+
+2010-03-31 Tamino Dauth <tamino@cdauth.eu>
+* Reworked custom map tutorial.
+* Revised bash map compilation scripts.
+* Added several code files for map "Holzbruck".
+
+2010-03-29 Tamino Dauth <tamino@cdauth.eu>
+* Added methods addUnitMoveSpeed and removeUnitMoveSpeed to struct Game.
+* Fixed various spells.
+
+2010-03-21 Tamino Dauth <tamino@cdauth.eu>
+* Fixed grimoire ultimate spell level condition.
+* Revised terrain of map "Talras".
+* Fixed various spells.
+* Fixed info log index.
+
+2010-03-20 Tamino Dauth <tamino@cdauth.eu>
+* Conformed videos to new AVideo implementation of the ASL.
+* Revised object data of map "Talras".
+* Fixed various spells.
+
+2010-03-18 Tamino Dauth <tamino@cdauth.eu>
+* Revised object data of map "Talras".
+* Improved quest "The Oaks Power".
+
+2010-03-16 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Talras/Spells/Struct Spell Scroll Of The Realm.j".
+
+2010-03-14 Tamino Dauth <tamino@cdauth.eu>
+* Fixed spell "Übernehmen".
+* Revised terrain of orc camp in map "Talras".
+* Added cameras and rects for video "Wigberht".
+* Revised object data of map "Talras".
+* Added library StructGameNpcRevival.
+* Revised talk log GUI.
+
+2010-03-13 Tamino Dauth <tamino@cdauth.eu>
+* Added various allied player methods to struct Game.
+* Added revival functionality for NPCs "Ricman" and "Wigberht".
+* Revised various class spells.
+* Fixed several bugs.
+* Fixed and revised bash scripts.
+
+2010-03-12 Tamino Dauth <tamino@cdauth.eu>
+* Improved struct Spell.
+* Rewrote character spell creation.
+* Revised terrain and object data of map "Talras".
+
+2010-03-11 Tamino Dauth <tamino@cdauth.eu>
+* Fixed various bugs.
+* Added menials to map "Talras".
+* Splitted up game and map cheats.
+
+2010-03-10 Tamino Dauth <tamino@cdauth.eu>
+* Added struct Spell.
+* Improved and revised struct Grimoire.
+* Revised various spell structs.
+* Added various spell abilities to map "Talras".
+* Added struct DMDF_CREATE_FAVOURITE_ABILITY.
+
+2010-03-08 Tamino Dauth <tamino@cdauth.eu>
+* Revised class descriptions.
+* Revised class sound texts.
+
+2010-03-07 Tamino Dauth <tamino@cdauth.eu>
+* Added various Bash scripts.
+* Added method alliedPlayer to struct MapData.
+* Added various map cheats to map "Talras".
+* Added various methods to struct Grimoire.
+
+2010-03-06 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Guis/Struct Main Window.j".
+* Improved struct InfoLog.
+
+2010-03-03 Tamino Dauth <tamino@cdauth.eu>
+* Added private struct Experience.
+* Added file "src/Talras/Map/Struct Layers.j".
+* Fixed various syntax errors.
+
+2010-02-28 Tamino Dauth <tamino@cdauth.eu>
+* Revised tileset of map "Talras".
+* Revised terrain of map "Talras."
+
+2010-02-27 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Talras/Talks/Struct Talk Ursula.j".
+* Added file "src/Talras/Quests/Struct Quest The Oaks Power.j".
+* Added file "doc/Planung/Spielinhalt/Aufträge/Talras/Die Kraft der Eiche.odt".
+* Revised talk of NPC "Ursula".
+
+2010-02-26 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Game/Struct Character.j".
+* Improved and revised structs Classes, Trade, Credits, Grimoire, Inventory, InfoLog, Aos, Game, MainMenu, Tutorial and CharacteStats.
+
+2010-02-21 Tamino Dauth <tamino@cdauth.eu>
+* Renamed all libraries of map "Talras" and "Holzbruck" for better usability from core structs.
+* Added various class spells methods to struct Grimoire.
+
+2010-02-20 Tamino Dauth <tamino@cdauth.eu>
+* Fixed various syntax errors and bugs.
+* Added script "src/Scripts/dmdf-compile-script-map".
+* Fixed talk of NPC "Wigberht".
+
+2010-02-19 Tamino Dauth <tamino@cdauth.eu>
+* Revised talk of NPC "Björn".
+* Added file "src/Talras/Quests/Struct Quest Mushroom Search.j".
+
+2010-02-18 Tamino Dauth <tamino@cdauth.eu>
+* Revised talk of NPC "Dago".
+* Added file "doc/Planung/Spielinhalt/Aufträge/Pilzsuche.odt".
+* Fixed talk of NPC "Baldar".
+
+2010-02-17 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Talras/Talks/Struct Talk Bjoern.j".
+
+2010-02-16 Tamino Dauth <tamino@cdauth.eu>
+* Added struct's FerryBoat initialization to struct MapData.
+* Added routine of NPC "Trommon".
+
+2010-02-15 Tamino Dauth <tamino@cdauth.eu>
+* Wrote first C++ program to fix environment file of Talras.
+
+2010-02-14 Tamino Dauth <tamino@cdauth.eu>
+* Revised document "doc/Planung/Spielinhalt/Gegenstände/Talras/Gegenstände.ods".
+* Improved some spells.
+* Revised object data and terrain of map "Talras".
+
+2010-02-03 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Game/Struct Character Stats.j".
+* Revised some object data of map "Talras".
+
+2010-01-30 Tamino Dauth <tamino@cdauth.eu>
+* Revised several talk structs.
+
+2010-01-26 Tamino Dauth <tamino@cdauth.eu>
+* Revised file "archives/DMdF/TerrainArt/TerrainNew.slk".
+
+2009-12-30 Tamino Dauth <tamino@cdauth.eu>
+* Changed struct's ACharactersScheme initialization.
+* Added some object data to file "imports/Object Data.w3o".
+
+2009-12-28 Tamino Dauth <tamino@cdauth.eu>
+* Added character memory administration button to main menu.
+* Added methods storeCharacter and restoreCharacter to struct Game.
+
+2009-12-25 Tamino Dauth <tamino@cdauth.eu>
+* Revised various historical documents.
+
+2009-12-24 Tamino Dauth <tamino@cdauth.eu>
+* Revised grimoire initialization.
+* Revised dialog document of NPC "Ferdinand".
+* Added file "src/Talras/Talks/Struct Talk Ferdinand.j".
+
+2009-12-21 Tamino Dauth <tamino@cdauth.eu>
+* Added methods initVideoSettings and resetVideoSettings to struct Game.
+* Revised struct Grimoire.
+
+2009-12-19 Tamino Dauth <tamino@cdauth.eu>
+* Improved GUIs.
+* Fixed grimoire ability index bug.
+* Fixed various bugs of quest "Die Nordmänner".
+* Added file "src/Talras/Spells/Struct Unearth.j".
+* Added wolves spawn point, creatures and items.
+* Fixed back button problem of "Baldars" dialog.
+* Changed map size of map "Talras" for getting more map border shadowed space.
+* Added file "archives/DMdF/TerrainArt/TerrainOld.slk" for old terrain tileset ids.
+
+2009-12-15 Tamino Dauth <tamino@cdauth.eu>
+* Improved struct's Credits contributors display.
+* Added various structs for the new inventory system which shows the character model etc.
+* Added struct ItemType which extends AItemType for custom item type data for the new inventory system.
+* Added document "doc/Planung/Geschichte/Anmerkungen zur Geschichte vom Bären.odt".
+* Added document "doc/Planung/Geschichte/Aufteilung der Geschichte auf Bücher.odt".
+
+2009-12-13 Tamino Dauth <tamino@cdauth.eu>
+* Added file "archives/DMdF/Music/ANewAlliance.mp3".
+* Improved game concept document of map "Holzbruck".
+* Improved struct AVideoANewAlliance.
+* Revised talk of NPC "Wigberht".
+* There won't be spawned too much groups in quest "The Norsemen" anymore.
+
+2009-12-12 Tamino Dauth <tamino@cdauth.eu>
+* Converted various Zinc code files back to vJass.
+* Added interface MapDataInterface.
+* Replaced damage recorder by state trigger for NPC "Sisgard".
+* Fixed various syntax errors.
+
+2009-12-11 Tamino Dauth <tamino@cdauth.eu>
+* Converted file "src/Talras/Map/Struct Markers.j" to Zinc code.
+* Started reconverting Zinc code to vJass code :-D, damn JassHelper!
+
+2009-12-10 Tamino Dauth <tamino@cdauth.eu>
+* Fixed various syntax errors and added workarounds for Zinc (JassHelper).
+
+2009-12-09 Tamino Dauth <tamino@cdauth.eu>
+* Converted files "src/Guis/Struct Trade.j" and "src/Talras/Struct Spawn Points.j" to Zinc.
+
+2009-12-08 Tamino Dauth <tamino@cdauth.eu>
+* Revised tileset ids.
+* Fixed various syntax errors.
+* Started converting vJass file "src/Guis/Struct Trade.j" to Zinc code.
+
+2009-12-06 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Holzbruck/Map/Struct Catapult.j".
+* Revised file "archives/DMdF/TerrainArt/README".
+* Not today, last week: Revised file "doc/Planung/Geschichte/Die Macht des Feuers - Baradés Buch.odt".
+
+2009-11-27 Tamino Dauth <tamino@cdauth.eu>
+* Revised various code files and converted their content to Zinc code.
+* Added and revised various historical documents.
+
+2009-11-26 Tamino Dauth <tamino@cdauth.eu>
+* Added custom experience functions.
+* Revised ASL initialization.
+
+2009-11-25 Tamino Dauth <tamino@cdauth.eu>
+* Converted dialog of NPC "Tobias" to Zinc.
+
+2009-11-21 Tamino Dauth <tamino@cdauth.eu>
+* Revised file "archives/DMdF/TerrainArt/Terrain.slk".
+
+2009-11-20 Tamino Dauth <tamino@cdauth.eu>
+* Revised terrain of map "Talras".
+
+2009-11-20 Tamino Dauth <tamino@cdauth.eu>
+* Revised story documents.
+* Revised struct Tutorial.
+* Revised terrain of map "Talras".
+
+2009-11-19 Tamino Dauth <tamino@cdauth.eu>
+* Revised struct Grimoire that user can add spells by methods to each character grimoire.
+* Added first Zinc syntax.
+
+2009-11-14 Tamino Dauth <tamino@cdauth.eu>
+* Revised spell "Sprint".
+* Revised quest "The Norsemen".
+
+2009-11-11 Tamino Dauth <tamino@cdauth.eu>
+* Added struct initialization of ABuff.
+* Revised spell "Emblaze" and added ABuff usage.
+* Added file "doc/Planung/Charaktere/Talras/Björn.odt".
+
+2009-11-08 Tamino Dauth <tamino@cdauth.eu>
+* Fixed "Talras" marker.
+
+2009-11-07 Tamino Dauth <tamino@cdauth.eu>
+* Improved several historical related documentation files.
+
+2009-11-04 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Added file "src/Game/Struct Marker.j".
+* Added file "src/Talras/Map/Struct Markers.j".
+
+2009-10-31 Tamino Dauth <tamino@cdauth.eu>
+* Fixed various bugs.
+
+2009-10-29 Tamino Dauth <tamino@cdauth.eu>
+* Renamed file (and the corresponding struct) "src/Spells/Struct Spell Aduction.j" to "src/Talras/Spells/Struct Spell Adduction.j".
+* Added file "src/Spells/Struct Spell Arcane Binding.j".
+* Added file "src/Spells/Struct Spell Arcane Hunger.j".
+* Added file "src/Spells/Struct Spell Magical Shock Wave.j".
+* Added file "src/Spells/Struct Spell Mana Explosion.j".
+* Added file "src/Spells/Struct Spell Mana Stream.j".
+* Added file "src/Spells/Struct Spell Repulsion.j".
+
+2009-10-28 Tamino Dauth <tamino@cdauth.eu>
+* Fixed various syntax errors and bugs.
+
+2009-10-27 Tamino Dauth <tamino@cdauth.eu>
+* Fixed quest "The Kings Crown".
+* Finished talk of NPC "Tanka".
+* Revised several code files.
+* Added file "src/Talras/Talks/Struct Talk Trommon.j".
+* Added file "src/Talras/Quests/Struct Quest Wood For The Hut.j".
+* Removed unnecessary functions of spell libraries.
+
+2009-10-26 Tamino Dauth <tamino@cdauth.eu>
+* Moved documentation files of map "Talras" in sub directories called "Talras".
+* Added first concept document for map "Holzbruck".
+* Added several item types in object editor
+* Added file "src/Talras/Talks/Struct Talk Tanka.j".
+* Added file "src/Talras/Quests/Struct Quest The Beast.j".
+
+2009-10-25 Tamino Dauth <tamino@cdauth.eu>
+* Revised dialog of NPCs "Ricman" and "Markward".
+
+2009-10-24 Tamino Dauth <tamino@cdauth.eu>
+* Revised quest "The Norsemen".
+* Revised talk of NPC "Wigberht".
+
+2009-10-22 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Game/Struct Routines.j".
+* Added file "src/Talras/Map/Struct Npc Routines.j".
+* Removed folder "src/Routines".
+* Removed folder "src/Talras/Routines".
+* Added several simple routine types.
+* Revised talk of NPC "Ursula".
+* NPC "Ursula" sells cats now.
+
+2009-10-18 Tamino Dauth <tamino@cdauth.eu>
+* Revised some routine functions since there's a new routine system in the ASL.
+* Revised talk of "Kuno".
+* Revised game concept file.
+* Fixed several small gameplay bugs.
+* Added several video and quest files.
+* Improved video "The First Combat".
+* Improved quest "The Norsemen".
+
+2009-10-16 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Spells/Struct Spell Trollkette.j".
+* Improved talk of "Brogo".
+* Added file "doc/Planung/Aufträge/Katzen für Brogo.j"
+* Added file "src/Talras/Quests/Struct Quest Cats For Brogo.j".
+
+2009-10-15 Tamino Dauth <tamino@cdauth.eu>
+* Revised talk of "Brogo".
+* Added file "src/Talras/Talks/Struct Brogo.j".
+* Revised talk of "Einar".
+* Added file "src/Talras/Talks/Struct Einar.j".
+
+2009-09-07 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Talras/Map/Struct Boat Ferry.j".
+
+2009-09-05 Tamino Dauth <tamino@cdauth.eu>
+* Improved Baldars dialog.
+* Improved spell "Revive".
+* Revised object editor data.
+
+2009-09-04 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Spells/Struct Spell Protect.j".
+* Added file "src/Spells/Struct Spell Clarity.j".
+* Added file "src/Spells/Struct Spell Prevent Ill.j".
+* Added file "src/Spells/Struct Spell Revive.j".
+* Revised several spell structs.
+* Added file "src/Spells/Struct Damage Protector.j"
+* Improved dialog of NPC "Haldar".
+* Improved dialog of NPC "Baldar".
+* Recreated parts of "Mathildas" dialog.
+
+2009-09-02 Tamino Dauth <tamino@cdauth.eu>
+* Added first implementation of computer controller and shared control support.
+
+2009-09-01 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Spells/Struct Abatement.j".
+* Added file "src/Spells/Struct Torment.j".
+
+2009-08-31 Tamino Dauth <tamino@cdauth.eu>
+* Moved "Talras" specific files into directory "src/Talras".
+* Added file "src/Talras/Map/Struct Map Data.j".
+
+2009-08-29 Tamino Dauth <tamino@cdauth.eu>
+* Improved struct Trade.
+* Improved struct Aos.
+* Added file "src/Quests/Struct Quest Death To Black Legion.j".
+* Added file "src/Talks/Struct Talk Baldar.j".
+* Improved talk of NPC "Baldar".
+
+2009-08-27 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Guis/Struct Trade.j".
+* NPC "Sisgard" teleports back to her waypoint now when her life decreases down to 10 % or less.
+* Arena computer player is now allied to all players beside during fights.
+
+2009-08-24 Tamino Dauth <tamino@cdauth.eu>
+* Improved dialog of "Wieland.".
+* Added file "src/Talks/Struct Talk Wieland.j".
+* Added file "doc/Planung/Aufträge/Des Königs Krone.odt".
+* Added file "doc/Planung/Aufträge/Wielands Schwert.odt".
+* Added file "src/Quests/Struct Quest The Kings Crown.j".
+* Added file "src/Quests/Struct Quest Wielands Sword.j".
+* Added file "src/Spells/Struct Spell Daunt.j".
+
+2009-08-22 Tamino Dauth <tamino@cdauth.eu>
+* Added several units for video "The First Combat".
+* Improved dialog of "Wieland".
+* Added file "doc/Planung/Charaktere/Einar.odt".
+
+2009-08-19 Tamino Dauth <tamino@cdauth.eu>
+* Revised dialog of "Kuno".
+* Revised dialog of "Ursula".
+* Improved struct Arena.
+
+2009-08-18 Tamino Dauth <tamino@cdauth.eu>
+* Fixed description of Quest "Talras".
+* Wrote dialog of Irmina.
+* Improved some parts of Terrain of map "Talras".
+* Added several items which are sold by Irmina.
+* Added file "doc/Planung/Charaktere/Ursula.odt".
+* Revised file "doc/Planung/Charaktere/Vorlage Charakter.ott".
+* Added file "doc/Planung/Gegenstände/Informationen zu attributssteigernden Gegenständen.odt".
+* Fixed talk of "Agihard".
+* Added file "doc/Planung/Charaktere/Wieland.odt".
+* Added several items to object editor.
+
+2009-08-15 Tamino Dauth <tamino@cdauth.eu>
+* Improved struct Arena.
+* Improved video "The First Combat".
+* Revised struct Aos.
+* Revised and added object editor data.
+* Added file "src/Spells/Struct Spell Baldars Ring Astral Modifier.j".
+* Renamed quest "Death To White Army" to "Death To White Legion".
+* Added file "src/Talks/Struct Talk Baldar.j".
+* Added file "src/Talks/Module Talk.j".
+
+2009-08-14 Tamino Dauth <tamino@cdauth.eu>
+* Revised some object editor data.
+* Improved struct Arena.
+* Revised struct QuestTheNorsemen.
+* Added several item types.
+* Improved talk of "Agihard".
+* Fixed some AOS issues.
+
+2009-08-13 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map "Talras".
+* Added file "src/Quests/Struct Quest Among The Weapons Peasants.j".
+* Added file "src/Quests/Struct Quest Protect The People.j".
+* Improved dialog of "Baldar.".
+* Added file "doc/Planung/Aufträge/Zu den Waffen, Bauern!.odt".
+
+2009-08-12 Tamino Dauth <tamino@cdauth.eu>
+* Revised file "doc/Planung/Charaktere/Ferdinand.odt".
+* Added file "doc/Planung/Charaktere/Manfred.odt".
+* Added file "src/Talks/Struct Talk Manfred.j".
+* Added file "src/Routines/Struct Routine Osman.j".
+* Added file "src/Routines/Struct Routine Wigberht.j".
+* Added file "src/Routines/Module Routine.j".
+* Added file "src/Routines/Import.j".
+* Removed file "src/Game/Struct Routines.j".
+* Improved routines by using the latest ASL functions.
+* Added several spawn points.
+
+2009-08-11 Tamino Dauth <tamino@cdauth.eu>
+* Fixed several item types.
+* Revised some object editor data.
+* Revised file "doc/Planung/Spielverlauf/Die Macht des Feuers.odt".
+
+2009-08-10 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Videos/Struct Video The First Combat.j".
+* Added file "src/Videos/Struct Video Wigberht.j".
+* Added several rects and camera object of Video "The First Combat".
+
+2009-08-09 Tamino Dauth <tamino@cdauth.eu>
+* Merged Tamino's object data and code with Deranors new Talras map.
+* Removed several boar spawn points.
+* Added file "src/Game/Struct Tavern.j".
+* Removed file "src/Game/Struct Videos.j".
+* Added directory "src/Videos" with video struct files.
+
+2009-08-07 Tamino Dauth <tamino@cdauth.eu>
+* Improved struct Gimoire.
+* Added file "src/Spells/Struct Spell An Eye For An Eye.j".
+
+2009-08-05 Tamino Dauth <tamino@cdauth.eu>
+* Added file "doc/Planung/Charaktere/Guntrich.odt".
+* Fixed third person camera entry in main menu.
+* Added attributes increasing when player number is smaller than 6.
+* Improved talk of "Osman".
+* Improved talk of "Guntrich".
+* Added file "src/Talks/Struct Talk Mathilda.j".
+
+2009-08-04 Tamino Dauth <tamino@cdauth.eu>
+* Moved quest initialization into method start of struct Game.
+* Added config function injection for playing character selection music while loading the map.
+* Added file "doc/Planung/Klassen/Attribute.odt".
+* Revised character unit types in object editor.
+* Added missing favourite abilities in object editor.
+* Improved struct Grimoire.
+
+2009-08-03 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Guis/Struct Main Menu.j".
+* Improved struct Inventory and Credits.
+* Added file "src/Spells/Struct Spell Shooter.j".
+* Added cheat "farm".
+* Revised struct Credits.
+
+2009-08-02 Tamino Dauth <tamino@cdauth.eu>
+* Improved several spells.
+* Added file "src/Spells/Struct Spell Absorbation.j".
+* Added file "src/Spells/Struct Spell Mana Shield.j".
+* Added file "src/Spells/Struct Spell Curb.j".
+* Added several abilities in object editor.
+
+2009-08-01 Tamino Dauth <tamino@cdauth.eu>
+* Added file "doc/Planung/Charaktere/Talraswache.odt".
+* Added file "src/Talks/Struct Talk Talras Guardian.j".
+* Revised several spell structs.
+* Improved spell "Aduction".
+* Revised spell "Blaze".
+* Revised spell "Freeze".
+* Revised spell "Ice Age".
+
+2009-07-31 Tamino Dauth <tamino@cdauth.eu>
+* Revised file "src/Talks/Struct Talk Sisgard.j".
+* Added file "doc/Planung/Aufträge/Die Zauberkunst.odt".
+* Added file "src/Talks/Struct Quest The Magic.j".
+* Added file "src/Talks/Struct Talk Tobias.j".
+* Added file "doc/Planung/Aufträge/Die heilige Kartoffel.odt".
+* Added file "src/Quests/Struct Quest The Holy Potato.j".
+
+2009-07-30 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Talks/Struct Talk Agihard.j".
+* Improved struct Arena.
+* Revised file "doc/Planung/Charaktere/Sisgard.odt".
+* Added file "doc/Planung/Aufträge/Arenameister.odt".
+* Added file "src/Quests/Struct Arena Champion.j".
+* Added file "src/Talks/Struct Talk Sisgard.j".
+
+2009-07-29 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Added file "src/Guis/Struct Credits.j".
+* Added file "doc/Planung/Charaktere/Sisgard.odt".
+
+2009-07-27 Tamino Dauth <tamino@cdauth.eu>
+* Moved strings back into code files.
+
+2009-07-26 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Fixed favourite spell handling of grimoire.
+* Added file "src/Spells/Struct Spell Dark Servant.j".
+* Added file "src/Spells/Struct Spell Demon Servant.j".
+* Added several favourite spell abilities.
+
+2009-07-25 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Added file "doc/Planung/Kreaturen/Liste.ods".
+* Improved video "The Chief".
+* Added file "src/Quests/Module Quest.j".
+* Revised talk of Wigberht.
+
+2009-07-24 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Improved talk of NPC Haid.
+
+2009-07-22 Tamino Dauth <tamino@cdauth.eu>
+* Improved talk of NPC Haid.
+* Added file "src/Talks/Struct Talk Haid.j".
+
+2009-07-20 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Added file "src/Spells/Struct Spell Cow Nova.j".
+
+2009-07-11 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+
+2009-07-10 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+
+2009-07-08 Tamino Dauth <tamino@cdauth.eu>
+* Added benchmark to game initialization.
+* Revised struct SpellLightning.
+
+2009-06-30 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+
+2009-06-28 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Quests/Struct Quest The Norsemen.j"
+* Added first implementation of video The Chief.
+* Added file "src/Quests/Module Character Quest.j"
+
+2009-06-27 Tamino Dauth <tamino@cdauth.eu>
+* Created several sound files of character and Wigberht.
+
+2009-06-25 Tamino Dauth <tamino@cdauth.eu>
+* Added file "doc/Planung/Charaktere/Fulco.odt".
+* Added file "src/Talks/Struct Talk Tellborn.j".
+* Added file "src/Quests/Struct Quest My Friend The Bear.j".
+* Added file "doc/Planung/Charaktere/Mathilda.odt".
+* Improved sturcts SpellFreeze and SpellIceAge.
+
+2009-06-23 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Improved video sequences.
+
+2009-06-22 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Improved video sequences.
+
+2009-06-21 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Spells/Struct Spell Jump Attack.j".
+* Added file "src/Talks/Struct Talk Dago.j".
+* Added file "src/Quests/Struct Quest Burn The Bears Down.j".
+* Added several buffs, abilities, items and units in object editor.
+* Improved terrain of map Talras.
+* Added file "doc/Planung/Charaktere/Tellborn.odt".
+
+2009-06-20 Tamino Dauth <tamino@cdauth.eu>
+* Improved struct AInventory.
+* Added several item types.
+* Improved terrain of map Talras.
+
+2009-06-19 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Spells/Struct Spell Taunt.j".
+* Added file "src/Game/Struct Dmdf Hash Table.j".
+
+2009-06-18 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Added various item types to struct ItemTypes.
+
+2009-06-17 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Improved intro video.
+
+2009-06-15 Tamino Dauth <tamino@cdauth.eu>
+* Improved struct Inventory.
+* Added struct Arena.
+
+2009-06-14 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+
+2009-06-13 Tamino Dauth <tamino@cdauth.eu>
+* Added creature "Rothirsch" and item "Sommerdecke" in object editor.
+* Improved terrain of map Talras.
+
+2009-06-11 Tamino Dauth <tamino@cdauth.eu>
+* Improved terrain of map Talras.
+* Revised some doodad objects in object editor.
+* Created first camera objects and terrain for video "Die Vision".
+
+2009-06-10 Tamino Dauth <tamino@cdauth.eu>
+* Added routine for character Osman.
+* Added file "src/Talks/Struct Talk Osman.j".
+* Added file "src/Quests/Struct Quest The Paedophilliac Cleric.j".
+* Revised file "doc/Planung/Charaktere/Osman.odt".
+* Added file "doc/Planung/Aufträge/Der pädophile Kleriker.odt".
+* Added several items and item abilities in object editor.
+
+2009-06-09 Tamino Dauth <tamino@cdauth.eu>
+* Improved struct Grimoire.
+* Improved map terrain of Talras.
+
+2009-06-08 Tamino Dauth <tamino@cdauth.eu>
+* Revised struct TalkWigberht.
+* Some fading text tags aren't shown if caster is hidden anymore.
+* Implemented kill bounty system.
+* Implemented level up system.
+
+2009-06-07 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Spells/Struct Spell Stab.j".
+* Added file "src/Spells/Struct Spell Resolution.j"
+* Added file "src/Spells/Struct Spell Freeze.j"
+* Added file "src/Spells/Struct Spell Glistening Light.j"
+
+2009-06-06 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Spells/Struct Spell Cat Rune.j".
+* Added several item types.
+* Revised object data.
+* Added file "src/Quests/Quest Rescue Dago.j"
+* Implemented video sequence "Rescue Dago".
+* Revised Talras map terrain.
+* Improved struct Grimoire.
+* Added file "src/Spells/Struct Spell Concentration.j".
+
+2009-06-05 Tamino Dauth <tamino@cdauth.eu>
+* Improved start terrain.
+* Revised units "Keiler" and "Braunbär".
+* Added file "doc/Planung/Charaktere/Dago.odt".
+* Added file "doc/Planung/Videos/Rettet Dago.odt".
+
+2009-06-04 Tamino Dauth <tamino@cdauth.eu>
+* Improved struct Grimoire.
+* Added file "src/Spells/Struct Spell Ice Missile.j".
+
+2009-06-02 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Guis/Struct Grimoire.j".
+
+2009-05-24 Tamino Dauth <tamino@cdauth.eu>
+* Fixed unit dead condition bug.
+* Fixed regeneration effect of spell "Mastery".
+* Fixed spell selection of spell "Rage Of Elements".
+* Improved class selection select function.
+
+2009-05-23 Tamino Dauth <tamino@cdauth.eu>
+* Added file "src/Spells/Struct Spell Pure Energy.j".
+* Added file "src/Spells/Struct Spell Mastery.j"
+* Added file "src/Spells/Struct Spell Rage Of Elements.j".
+* Added file "src/Spells/Struct Spell Elemental Mage Damage Spell.j".
+* Improved spells.
+* Added file "src/Spells/Struct Spell Inferno.j".
+
+2009-05-22 Tamino Dauth <tamino@cdauth.eu>
+* Revised spells.
+* Revised initialization.
+* Revised object editor data.
+* Added file "src/Spells/Struct Spell Earth Prison.j".
+
+2009-05-21 Tamino Dauth <tamino@cdauth.eu>
+* Revised object editor data.
+
+2009-05-20 Tamino Dauth <tamino@cdauth.eu>
+* Revised some classes.
+* Replaced strings by tr function calls with corresponding string names of the fdf file.
+* Added new archive DE for German localization.
+* Added file "src/Spells/Struct Spell Block.j".
+* Added file "src/Spells/Struct Spell Rush.j".
+* Revised spell "Sprint".
+
+2009-04-26 Tamino Dauth <tamino@cdauth.eu>
+* Adapted initialization call of struct AGui to the new ASL version.
+
+2009-04-20 Tamino Dauth <tamino@cdauth.eu>
+* Added file "Spells/Struct Spell Aduction.j".
+* Added file "Spells/Struct Spell Living Will.j".
+* Added file "Spells/Struct Spell Sprint.j".
+
+2009-04-19 Tamino Dauth <tamino@cdauth.eu>
+* Added unit "Geistliche Schwertkämpferin".
+
+2009-04-16 Tamino Dauth <tamino@cdauth.eu>
+* Added document file for character "Kuno".
+* Added document file for quest "Holz für die Hütte".
+* Improved content of document file of character "Trommon".
+
+2009-04-11 Tamino Dauth <tamino@cdauth.eu>
+* Added intro init action.
+* Added possibility to enter AOS battle field as neutral player.
+
+2009-04-09 Tamino Dauth <tamino@cdauth.eu>
+* Fixed unnecassery shortcut disabling of main window in struct Inventory.
+* Revised intro video.
+
+2009-04-08 Tamino Dauth <tamino@cdauth.eu>
+* Revised struct Aos.
+* Removed file "Game/Struct Npcs.j"
+* All character owner units can score in AOS now.
+* Character will be stopped now after teleportation.
+* Camera will pan to player's character at the beginning of game now.
+
+2009-04-07 Tamino Dauth <tamino@cdauth.eu>
+* Added library StructsSpellsTakeOver.
+* Added library StructsSpellsTeleport.
+* Added library StructGuisInventory.
+
+2009-04-06 Tamino Dauth <tamino@cdauth.eu>
+* Improved several unit types.
+* Added unit types Paladin and Baldar.
+* Improved AOS.
+
+2009-04-05 Tamino Dauth <tamino@cdauth.eu>
+* Renamed files like ASL files.
+* Improved struct Aos.
+* Added several cheats for debugging.
+* Added struct StructQuestsQuestDeathToWhiteArmy.
+* Revised spell struct library StructSpellsSpellFireMissile.
+* Improved AOS terrain.
+* Added unit types Schattenefreet, Schattenefreet (Händler), Imp and Berserker.
+
+2009-04-02 Tamino Dauth <tamino@cdauth.eu>
+* Added character document for Baldar.
+
+2009-03-31 Tamino Dauth <tamino@cdauth.eu>
+* Added library AStructGameAos.
+
+2009-03-18 Tamino Dauth <tamino@cdauth.eu>
+* Renamed Class expressions to Struct.
+* Added initialization call for struct ACheckBox.
+
+2009-03-01 Tamino Dauth <tamino@cdauth.eu>
+* Changed e-mail address from tamino.dauth@web.de to tamino@cdauth.eu.
+
+2009-02-05 Tamino Dauth <tamino@cdauth.eu>
+* Revised quest Talras.
+
+2009-02-04 Tamino Dauth <tamino@cdauth.eu>
+* Revised quest Talras.
+* Added all video instances of the scheduling to class Video.
+* Improved map terrain.
+
+2008-10-25 Tamino Dauth <tamino@cdauth.eu>
+* Switched to utf8 encodings.
+
+2008-10-11 Tamino Dauth <tamino@cdauth.eu>
+* Added a simple message for all players when player watches a replay.
+
+2008-08-24 Tamino Dauth <tamino@cdauth.eu>
+* The order of the game object creation was changed. Quests will be created before videos now.

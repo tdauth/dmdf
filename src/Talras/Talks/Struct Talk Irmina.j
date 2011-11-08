@@ -1,0 +1,358 @@
+library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMapQuestsQuestTheBraveArmourerOfTalras, StructMapQuestsQuestTheWayToHolzbruck
+
+	struct TalkIrmina extends ATalk
+		/// @todo Set ids
+		private static constant real potionTime = 30.0
+		private static constant integer strengthPotion = 'I01T'
+		private static constant integer dexterityPotion = 'I01U'
+		private static constant integer purificationPotion = 'I01V'
+		private timer array m_potionTimer[12] // MapData.maxPlayers
+
+		implement Talk
+
+		private method showPotionInfo takes Character character returns nothing
+			if (TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]) > 0.0) then
+				call character.displayHint(Format(tr("Irminas %1% benötigt noch %2% bis zur Fertigstellung.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion"))).time(R2I(TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]))).result())
+			else
+				call character.displayItemAcquired(GetItemTypeIdName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion")), Format(tr("Irminas %1% wurde fertiggestellt.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion"))).result())
+			endif
+		endmethod
+
+		private method createsPotion takes nothing returns boolean
+			return this.m_potionTimer[GetPlayerId(this.character().player())] != null and TimerGetRemaining(this.m_potionTimer[GetPlayerId(this.character().player())]) > 0.0
+		endmethod
+
+		private method finishedPotion takes nothing returns boolean
+			return this.m_potionTimer[GetPlayerId(this.character().player())] != null and TimerGetRemaining(this.m_potionTimer[GetPlayerId(this.character().player())]) == 0.0
+		endmethod
+
+		private method potion takes nothing returns integer
+			if (this.m_potionTimer[GetPlayerId(this.character().player())] == null) then
+				return 0
+			endif
+			return DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(this.character().player())], "Potion")
+		endmethod
+
+		private static method timerFunctionPotion takes nothing returns nothing
+			local Character character = DmdfHashTable.global().handleInteger(GetExpiredTimer(), "Character")
+			call thistype(thistype.talk()).showPotionInfo(character)
+		endmethod
+
+		private method startPotionCreation takes integer potion returns nothing
+			if (this.m_potionTimer[GetPlayerId(this.character().player())] != null) then
+				return
+			endif
+			set this.m_potionTimer[GetPlayerId(this.character().player())] = CreateTimer()
+			call DmdfHashTable.global().setHandleInteger(this.m_potionTimer[GetPlayerId(this.character().player())], "Character", this.character())
+			call DmdfHashTable.global().setHandleInteger(this.m_potionTimer[GetPlayerId(this.character().player())], "Potion", potion)
+			call TimerStart(this.m_potionTimer[GetPlayerId(this.character().player())], thistype.potionTime, false, function thistype.timerFunctionPotion)
+		endmethod
+
+		/// @return Returns an integer vector with all necessary ressource item types. Do not forget to destroy it!
+		private static method potionRessources takes integer potion returns AIntegerVector
+			local AIntegerVector result = AIntegerVector.create()
+			if (potion == thistype.strengthPotion) then
+				return result
+			elseif (potion == thistype.dexterityPotion) then
+				return result
+			elseif (potion == thistype.purificationPotion) then
+				return result
+			endif
+			return result
+		endmethod
+
+		/// @todo Set ressources
+		private method hasPotionRessources takes integer potion returns boolean
+			local AIntegerVector itemTypes = thistype.potionRessources(potion)
+			local boolean result = true
+			if (potion == thistype.strengthPotion) then
+				//
+			elseif (potion == thistype.dexterityPotion) then
+				//
+			elseif (potion == thistype.purificationPotion) then
+				//
+			endif
+			call itemTypes.destroy()
+			return result
+		endmethod
+
+		private static method potionMoney takes integer potion returns integer
+			if (potion == thistype.strengthPotion) then
+				return 900
+			elseif (potion == thistype.dexterityPotion) then
+				return 900
+			elseif (potion == thistype.purificationPotion) then
+				return 500
+			endif
+			return 0
+		endmethod
+
+		/// @todo Set prices
+		private method hasPotionMoney takes integer potion returns boolean
+			return GetPlayerState(this.character().player(), PLAYER_STATE_RESOURCE_GOLD) >= thistype.potionMoney(potion)
+		endmethod
+
+		private method finishPotionCreation takes nothing returns nothing
+			if (not this.finishedPotion()) then
+				return
+			endif
+			call UnitAddItemById(this.character().unit(), DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(this.character().player())], "Potion"))
+			call DmdfHashTable.global().destroyTimer(this.m_potionTimer[GetPlayerId(this.character().player())])
+			set this.m_potionTimer[GetPlayerId(this.character().player())] = null
+		endmethod
+
+		private method startPageAction takes nothing returns nothing
+			call this.showUntil(8)
+		endmethod
+
+		// Hallo.
+		private static method infoAction0 takes AInfo info returns nothing
+			call speech(info, false, tr("Hallo."), null)
+			call speech(info, true, tr("Hallo. Möchtest du zufällig etwas bei mir kaufen?"), null)
+			call info.talk().showRange(9, 10)
+		endmethod
+
+		// (Nach Begrüßung)
+		private static method infoCondition1 takes AInfo info returns boolean
+			return info.talk().infoHasBeenShown(0)
+		endmethod
+
+		// Wer bist du?
+		private static method infoAction1 takes AInfo info returns nothing
+			call speech(info, false, tr("Wer bist du?"), null)
+			call speech(info, true, tr("Ich bin Irmina und sowohl der Stand hier als auch das Haus daneben gehören meinem Mann und mir. Ich verkaufe hier meine Ware, also falls du was brauchst ..."), null)
+			call speech(info, true, tr("Ich kenne mich mit Kräutern und anderen Pflanzen bestens aus und weiß, wie man sich alle möglichen nützlichen Dinge zusammenmischt. Man könnte fast sagen, ich sei eine Alchemistin."), null)
+			call speech(info, false, tr("Klingt gut."), null)
+			call speech(info, true, tr("Das will ich doch meinen. Ich mache auch gerechte Preise, denn ich habe selbst genug zum Leben und wenn mein Mann wieder aus Holzbruck zurückkehrt, dann werde ich vermutlich mein Geschäft schließen und mich meinen Studien widmen."), null)
+			call speech(info, true, tr("Das bringt nämlich letztlich mehr als die harte Arbeit hier."), null)
+			call info.talk().showStartPage()
+		endmethod
+
+		// (Nach „Wer bist du?“)
+		private static method infoCondition2And3 takes AInfo info returns boolean
+			return info.talk().infoHasBeenShown(1)
+		endmethod
+
+		// Kannst du mir auch was Spezielles brauen oder mischen?
+		private static method infoAction2 takes AInfo info returns nothing
+			call speech(info, false, tr("Kannst du mir auch was Spezielles brauen oder mischen?"), null)
+			call speech(info, true, tr("Natürlich, aber das kostet dich auch ein Wenig und du musst mir die Zutaten beschaffen."), null)
+			call speech(info, true, tr("Ich muss hier nämlich meinen Laden führen und ich habe keine Lust mich noch um einen Bauern oder Jäger zu kümmern, der das für mich macht."), null)
+			call speech(info, true, tr("Am besten gebe ich dir Abschriften meiner Zutaten- und Preislisten für besondere Tränke. Manche Zutaten sind sehr selten, was ja auch erklärt, warum ich sie nicht in meinem Sortiment habe."), null)
+			/**
+			TODO
+			Charakter erhält:
+			Stärketrank-Zutaten
+			Geschicklichkeitstrank-Zutaten
+			Reinigungstrank-Zutaten
+			*/
+			call info.talk().showStartPage()
+		endmethod
+
+		// Was macht dein Mann in Holzbruck?
+		private static method infoAction3 takes AInfo info returns nothing
+			call speech(info, true, tr("Was macht dein Mann in Holzbruck?"), null)
+			call speech(info, false, tr("Er hat dort Geschäfte zu erledigen. Er ist ein wohlhabender Kaufmann und handelt mit Salz, dem weißen Gold. Vor ein paar Monaten ist er mit einigen Wagen aufgebrochen, um sein Salz in Holzbruck zu verkaufen."), null)
+			call speech(info, true, tr("Du musst wissen, dass er ursprünglich aus Holzbruck kommt und sich hier nur meinetwegen niedergelassen hat."), null)
+			call speech(info, true, tr("Ich bin froh, einen solchen Mann getroffen und geheiratet zu haben. Meine Eltern waren einfache Leute und mussten noch viel härter arbeiten als ich und nun haben wir unser eigenes Haus hier und mir geht’s eigentlich recht gut."), null)
+			call speech(info, true, tr("Na ja, jetzt da Krieg herrschen wird, sollten wir vielleicht woanders hingehen. Holzbruck gefällt mir zwar, aber das ist ja noch näher an der Grenze. Ich hoffe nur, dass meinem Mann nichts passiert."), null)
+			call speech(info, true, tr("Er ist zwar ein netter Kerl, aber kein besonders starker. Ich glaube, er würde den Feinden, die in unser Königreich einfallen eher einen Handel vorschlagen als ihnen mit dem Schwert entgegenzutreten. Ganz anders als Agihard … (seufzt)"), null)
+			call speech(info, false, tr("Agihard?"), null)
+			call speech(info, true, tr("Ja, der Waffenmeister von Talras. Das ist ein starker Krieger. Egal was andere von ihm denken, ich weiß, dass er ein gutes Herz hat und Mut noch dazu. Ich glaube, er ist nur etwas einsam."), null)
+			call info.talk().showRange(11, 12)
+		endmethod
+
+		// (Auftragsziel 1 des Auftrags „Talras' mutiger Waffenmeister“ ist abgeschlossen)
+		private static method infoCondition4 takes AInfo info returns boolean
+			return QuestTheBraveArmourerOfTalras.characterQuest(info.talk().character()).questItem(0).isCompleted()
+		endmethod
+
+		// Agihard mag dich.
+		private static method infoAction4 takes AInfo info returns nothing
+			call speech(info, false, tr("Agihard mag dich."), null)
+			call speech(info, true, tr("Was … äh .. wie bitte? Hast du etwa mit ihm gesprochen?"), null)
+			call speech(info, false, tr("Ja."), null)
+			call speech(info, true, tr("Du hast ihm doch nicht erzählt, was ich dir gesagt habe, oder?"), null)
+			call speech(info, false, tr("Also …"), null)
+			call speech(info, true, tr("Wie konntest du nur? Jetzt denkt er bestimmt etwas Falsches von mir."), null)
+			call speech(info, false, tr("…"), null)
+			call speech(info, true, tr("Was … also was hat er denn gesagt, also was genau?"), null)
+			call speech(info, false, tr("Er meinte nur, dass er dich sehr gerne hat und vielleicht mal in nächster Zeit bei dir vorbeischaut."), null)
+			call speech(info, true, tr("Tatsächlich! Ich meine, tatsächlich? Das wäre toll. Endlich mal eine gute Neuigkeit. Hier hast du ein paar Salben, danke!"), null)
+			// Auftrag „Talras' mutiger Waffenmeister“ abgeschlossen
+			call QuestTheBraveArmourerOfTalras.characterQuest(info.talk().character()).complete()
+			call info.talk().showStartPage()
+		endmethod
+
+		// (Nach Begrüßung und Auftrag „Der Weg nach Holzbruck“ ist aktiv)
+		private static method infoCondition5 takes AInfo info returns boolean
+			return info.talk().infoHasBeenShown(0) and QuestTheWayToHolzbruck.quest().isNew()
+		endmethod
+
+		// Ich gehe nach Holzbruck.
+		private static method infoAction5 takes AInfo info returns nothing
+			call speech(info, false, tr("Ich gehe nach Holzbruck."), null)
+			call speech(info, true, tr("Tatsächlich? Nun, ich wünsche dir viel Glück und bitte sieh nach meinem Mann! Sein Name ist Lambert. Hier, nimm noch diese Tränke! Ich hoffe, sie werden dir von Nutzen sein."), null)
+			// Charakter erhält Heiltränke
+			/// @todo GIVE HIM
+			call info.talk().showStartPage()
+		endmethod
+
+		// (Nachdem der Charakter danach gefragt hat)
+		private static method infoCondition6 takes AInfo info returns boolean
+			return info.talk().infoHasBeenShown(2)
+		endmethod
+
+		// Braue mir einen speziellen Trank!
+		private static method infoAction6 takes AInfo info returns nothing
+			call speech(info, false, tr("Braue mir einen speziellen Trank!"), null)
+			// (Irmina braut keinen speziellen Trank für den Charakter)
+			if (not thistype(info.talk()).createsPotion()) then
+				call speech(info, true, tr("Gut, wenn du die Zutaten und Goldmünzen hast. Welcher darf's denn sein?"), null)
+				call info.talk().showRange(13, 16)
+			elseif (thistype(info.talk()).createsPotion()) then
+			// (Irmina braut bereits einen speziellen Trank für den Charakter)
+				call speech(info, true, tr("Ich braue dir doch bereits einen. Warte erstmal bis der fertig ist, dann sehen wir weiter!"), null)
+				call thistype(thistype.talk()).showPotionInfo(info.talk().character())
+				call info.talk().showStartPage()
+			// (Irmina braut keinen speziellen Trank, der Charakter hat sich den letzten aber noch nicht abgeholt)
+			elseif (thistype(info.talk()).finishedPotion()) then
+				call speech(info, true, tr("Gut, hier hast du noch deinen letzten Trank und welcher darf's als Nächstes sein?"), null)
+				call thistype(info.talk()).finishPotionCreation()
+				call info.talk().showRange(13, 16)
+			endif
+		endmethod
+
+		// (Irmina braut einen Trank für den Charakter oder ist bereits fertig damit)
+		private static method infoCondition7 takes AInfo info returns boolean
+			return thistype(info.talk()).createsPotion() or thistype(info.talk()).finishedPotion()
+		endmethod
+
+		// Hast du den Trank für mich?
+		private static method infoAction7 takes AInfo info returns nothing
+			call speech(info, false, tr("Hast du den Trank für mich?"), null)
+			// (Der Trank ist fertig)
+			if (thistype(thistype.talk()).finishedPotion()) then
+				call speech(info, true, tr("Ja. Bitteschön, hier hast du ihn."), null)
+				call thistype(thistype.talk()).finishPotionCreation()
+			// (Der Trank ist noch nicht fertig)
+			else
+				call speech(info, false, tr("Nein. Es dauert noch eine Weile."), null)
+				call thistype(thistype.talk()).showPotionInfo(info.talk().character())
+			endif
+			call info.talk().showStartPage()
+		endmethod
+
+		// Was verkaufst du denn?
+		private static method infoAction0_0 takes AInfo info returns nothing
+			call speech(info, false, tr("Was verkaufst du denn?"), null)
+			call speech(info, true, tr("Alles was man braucht, um den Alltag, ob nun den eines gewöhnlichen Bürgers oder eines Kriegers, gut zu überstehen. Tränke, Salben, Kräuter, Lebensmittel und noch ein paar andere Sachen."), null)
+			call speech(info, true, tr("Sieh's dir einfach mal an!"), null)
+			call info.talk().showStartPage()
+		endmethod
+
+		// Nein.
+		private static method infoAction0_1 takes AInfo info returns nothing
+			call speech(info, false, tr("Nein."), null)
+			call speech(info, true, tr("Toll, sind den Leuten auf einmal die Goldmünzen ausgegangen oder was? Plötzlich, bei Kriegsgefahr sparen sie alle, dabei sollten sie es doch lieber jetzt nochmal ausgeben. Wie auch immer, ist ja deine Sache."), null)
+			call info.talk().showStartPage()
+		endmethod
+
+		// Also Agihard, der mutige Waffenmeister!
+		private static method infoAction3_0 takes AInfo info returns nothing
+			call speech(info, false, tr("Also Agihard, der mutige Waffenmeister!"), null)
+			call speech(info, true, tr("Ich weiß, ich sollte nicht so daherreden, aber was ich empfinde, ist nun mal da. Ich wünschte nur, er käme eines Tages mal zu mir, um etwas zu kaufen, dann könnte ich mich nett mit ihm unterhalten."), null)
+			call speech(info, false, tr("Unterhalten ..."), null)
+			call speech(info, true, tr("Ja! Ich würde ihm auch was umsonst geben."), null)
+			call speech(info, false, tr("Davon bin ich überzeugt (lacht)."), null)
+			// Neuer Auftrag: „Talras' mutiger Waffenmeister“
+			call QuestTheBraveArmourerOfTalras.characterQuest(info.talk().character()).enable()
+			call info.talk().showStartPage()
+		endmethod
+
+		// Glückwunsch!
+		private static method infoAction3_1 takes AInfo info returns nothing
+			call speech(info, true, tr("Ja, Glück wünsche ich ihm wahrlich (seufzt)."), null)
+			call info.talk().showStartPage()
+		endmethod
+
+		private static method potionAction takes AInfo info, integer potion returns nothing
+			local AIntegerVector ressources
+			local integer i
+			// (Charakter hat die nötigen Zutaten und die geforderten Goldmünzen)
+			if (thistype(info.talk()).hasPotionRessources(potion) and thistype(info.talk()).hasPotionMoney(potion)) then
+				call speech(info, true, tr("Gut, komm in ein paar Minuten wieder!"), null)
+				// Charakter gibt Irmina die Zutaten.
+				call info.talk().character().removeGold(thistype.potionMoney(potion)) // remove gold
+				set ressources = thistype.potionRessources(potion)
+				set i = 0
+				loop
+					exitwhen (i == ressources.size())
+					/// @todo DO IT, remove resources!
+					set i = i + 1
+				endloop
+				call ressources.destroy()
+				call thistype(info.talk()).startPotionCreation(potion)
+				call info.talk().showStartPage() // return to start page
+			// (Dem Charakter fehlen die nötigen Zutaten)
+			elseif (not thistype(info.talk()).hasPotionRessources(potion)) then
+				call speech(info, true, tr("Und wie ohne die nötigen Zutaten?"), null)
+				call info.talk().showRange(13, 16)
+			// (Dem Charakter fehlen die geforderten Goldmünzen)
+			else
+				call speech(info, true, tr("Ohne Bezahlung sicher nicht!"), null)
+				call info.talk().showRange(13, 16)
+			endif
+		endmethod
+
+		// Ein Stärketrank.
+		private static method infoAction6_0 takes AInfo info returns nothing
+			call speech(info, false, tr("Ein Stärketrank."), null)
+			call thistype.potionAction(info, thistype.strengthPotion)
+		endmethod
+
+		// Ein Geschicklichkeitstrank.
+		private static method infoAction6_1 takes AInfo info returns nothing
+			call speech(info, false, tr("Ein Geschicklichkeitstrank."), null)
+			call thistype.potionAction(info, thistype.dexterityPotion)
+		endmethod
+
+		// Ein Reinigungstrank.
+		private static method infoAction6_2 takes AInfo info returns nothing
+			call speech(info, false, tr("Ein Reinigungstrank."), null)
+			call thistype.potionAction(info, thistype.purificationPotion)
+		endmethod
+
+		private static method create takes nothing returns thistype
+			local thistype this = thistype.allocate(gg_unit_n01S_0201, thistype.startPageAction)
+
+			// start page
+			call this.addInfo(false, false, 0, thistype.infoAction0, tr("Hallo.")) // 0
+			call this.addInfo(false, false, thistype.infoCondition1, thistype.infoAction1, tr("Wer bist du?")) // 1
+			call this.addInfo(false, false, thistype.infoCondition2And3, thistype.infoAction2, tr("Kannst du mir auch was Spezielles brauen oder mischen?")) // 2
+			call this.addInfo(false, false, thistype.infoCondition2And3, thistype.infoAction3, tr("Was macht dein Mann in Holzbruck?")) // 3
+			call this.addInfo(false, false, thistype.infoCondition4, thistype.infoAction4, tr("Agihard mag dich.")) // 4
+			call this.addInfo(false, false, thistype.infoCondition5, thistype.infoAction5, tr("Ich gehe nach Holzbruck.")) // 5
+			call this.addInfo(true, false, thistype.infoCondition6, thistype.infoAction6, tr("Braue mir einen speziellen Trank!")) // 6
+			call this.addInfo(true, false, thistype.infoCondition7, thistype.infoAction7, tr("Hast du den Trank für mich?")) // 7
+			call this.addExitButton() // 8
+
+			// info 0
+			call this.addInfo(false, false, 0, thistype.infoAction0_0, tr("Was verkaufst du denn?")) // 9
+			call this.addInfo(false, false, 0, thistype.infoAction0_1, tr("Nein.")) // 10
+
+			// info 3
+			call this.addInfo(false, false, 0, thistype.infoAction3_0, tr("Also Agihard, der mutige Waffenmeister!")) // 11
+			call this.addInfo(false, false, 0, thistype.infoAction3_1, tr("Glückwunsch!")) // 12
+
+			// info 6
+			call this.addInfo(true, false, 0, thistype.infoAction6_0, Format(tr("Ein Stärketrank (%1% Goldmünzen).")).i(thistype.potionMoney(thistype.strengthPotion)).result()) // 13
+			call this.addInfo(true, false, 0, thistype.infoAction6_1, Format(tr("Ein Geschicklichkeitstrank (%1% Goldmünzen).")).i(thistype.potionMoney(thistype.dexterityPotion)).result()) // 14
+			call this.addInfo(true, false, 0, thistype.infoAction6_2, Format(tr("Ein Reinigungstrank (%1% Goldmünzen).")).i(thistype.potionMoney(thistype.purificationPotion)).result()) // 15
+			call this.addBackToStartPageButton() // 16
+
+			return this
+		endmethod
+	endstruct
+
+endlibrary

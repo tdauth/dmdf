@@ -1,0 +1,1188 @@
+2011-11-06 Tamino Dauth <tamino@cdauth.eu>
+* Checkout if there are any MPQ files which are missing in the current archive since all files were taken from /mnt/disk2 not the old /home/tamino partition!!!
+
+2011-10-14 Tamino Dauth <tamino@cdauth.eu>
+* Improve Grimoire API documentation.
+
+2011-06-18 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Fehlende Gegenstände: Dagos Dolch, Holzbrett (als Spawnpoints platzieren), Flügel des Todesengels, Donnerkugel (entlädt sich einmalig mit Blitz), Kopf der Medusa (einschläfern), Vampir-Kette (erzeugt Heuschreckenschwarm mit Fledermäusen)
+* Giftstachel von Giftkugel für Vergiftungszauber von Gegenständen verwenden!
+* FIXED: Unable to allocate "AIntegerVector"!!!
+
+2011-06-17 Tamino Dauth <tamino@cdauth.eu>
+* Schwebender Weizen taucht über Rüben auf.
+
+2011-06-16 Tamino Dauth <tamino@cdauth.eu>
+* Bei der Klassenauswahl Stufenattribute oben im Multiboard eintragen.
+* Bei der Klassenauswahl Startgegenstände im Inventar erschaffen.
+* Bei der Klassenauswahl Fake-Zauberbuch hinzufügen, in welchem man alle erlernbaren Zauber sieht.
+* Das Zauberbuch wird immer dann verlassen, wenn zu einem Zeitpunkt alle Zauber verschwinden. Bei einem Seitenwechsel oder Wechsel zu einem Zauber sollte daher der Zauberbuchzauber ebenfalls ausgeführt werden.
+* FIXED: Die angezeigte Zauberstufe sollte minimal 1 sein und danach immer die aktuell gelernte Stufe haben.
+* Wenn beim Erhöhen der Stufe ein Zauber das erste Mal erlernt wird, sollte je nachdem, ob der Zauber zu den Favoriten kommt oder nicht (geschieht automatisch) ein entsprechender Button erscheinen und nicht bereits zuvor dort sein!
+* Der Charakter zaubert einen Zauber die ganze Zeit ohne Unterbrechung, wenn dieser beim Casten entfernt wird. Casten in diesem Fall abbrechen!!!
+* FIXED: Osman sagt sehr wenig bei Begrüßung, Hallo ist unpassend, wenn man um Hilfe für Guntrich ersucht. Man sollte erst nach einer Begrüßung um Hilfe ersuchen können und Osmans Antwort sollte davon abhängen, ob man Kleriker ist!
+* "Zurück" in Baldars Dialog einbauen.
+* DONE: Hinweis, dass man die Höhle in Dämonen- bzw. Engelsgestalt nicht verlassen kann in Baldars und Haldars Dialog einbauen.
+* "Geisterstunde" lässt sich nicht abschließen (Mühle erkunden usw.).
+
+2011-06-15 Tamino Dauth <tamino@cdauth.eu>
+* DEPRECATED: Spell.enableTech setzt die Forschungsstufe nicht zurück?
+* Bei Dialogen Portrait nicht ausblenden nur Sprache beenden!
+* Wenn Zauber im Zauberbuch gewirkt werden, wird dann der Zauberbuchzauber ebenfalls gewirkt?
+
+2011-06-14 Tamino Dauth <tamino@cdauth.eu>
+* Fehler beim Zugriff auf "Fellows.dragonSlayer()".
+* FIXED: Zauberbuchzauber zum Seitenwechseln etc. werden nicht ausgeführt.
+
+2011-06-13 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Verkommene Seele hat keinen Angriffsschaden.
+* Tötet den Vampirgebieter wird zwar abgeschlossen allerdings kommt keine Meldung (Tötung funktioniert).
+* FIXED: Bei "Fulco" sollte "Meine Zauberkraft ist fast erloschen" erst möglich sein, nachdem man "Du siehst aus wie ein Magier" gesagt hat.
+* FIXED: "Was trägst du da für EINE Kleidung" bei Tellborn!
+* FIXED: "Immer doch" statt "Immer noch" bei Tellborn!
+* Bestenliste (AOS, Timer usw.) während Video ausbelenden, am besten addLeaderboard-Funktion für Charakter. Funktionalität in AVideo einbauen!
+* Rückverwandlung bei Wiederbelebung vielleicht nicht über Workaround sondern einfach über eine Option, dass der Zauber nicht unterbrochen werden kann ermöglichen?!
+* FIXED: "Stab des Zauberers" benötigt im Tooltip einen Hinweis auf den Schaden.
+* DONE: "Stab der Klarsicht" mit Fernsicht-Fähigkeit einfügen - Tellborn verkauft ihn.
+* "Stab der Klarsicht" braucht ein Gegenstandsmodell und ein Geschossmodell.
+
+2011-06-11 Tamino Dauth <tamino@cdauth.eu>
+* Für das neue Zauberbuch, muss jede Klasse die Ausbaustufen jeweils verwenden!
+* "After displaying state." is shown when video "Dragon Hunt" ends.
+
+2011-05-20 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Pilz bekommt für Testzwecke ein normales Gegenstandsmodell.
+* Irgendein manaregenerierender Zauber wird ausgeführt obwohl er nicht erlernt wurde (auch bei 0 Mana +0! Eventuell ein Zauber des Zauberers).
+* FIXED: "Abstoßung" kann nicht erlernt werden, falsche Ids?
+* DONE: Add wizard spells "Ban" and "Arcane Protection".
+* Spell "Arcane Time" says "wrong target".
+* Spell "Controlled Time Flow" does never start!
+
+2011-05-19 Tamino Dauth <tamino@cdauth.eu>
+* Get new effect model for revival (ARevival, fellow revival).
+
+2011-04-21 Tamino Dauth <tamino@cdauth.eu>
+* Zauber, deren Stufe während des Effekts erhöht wird, sollten den Effekt dadurch verbessern oder entfernen (falls sie entfernt werden).
+
+2011-04-02 Tamino Dauth <tamino@cdauth.eu>
+* Zauber, die ein Charakter als Belohnung bzw. zusätzlich erhält werden zum Zauberbuch ganz normal hinzugefügt. Sie können nur verwendet werden, falls der Charakter noch nicht 15 Zauber erlernt hat.
+
+2011-03-25 Tamino Dauth <tamino@cdauth.eu>
+* Try SetPlayerController(Player(PLAYER_NEUTRAL_PASSIVE), MAP_CONTROL_NEUTRAL) if control is creep for fixing unit return bug.
+
+2011-03-11 Tamino Dauth <tamino@cdauth.eu>
+* Finish quest "Slaughter" and video "Death Vault" and therefore add videos "Bloodthirstiness" and "Dragon Hunt".
+
+2011-03-07 Tamino Dauth <tamino@cdauth.eu>
+* "Einzigartiges Wirken" für Zauber aktivieren, die normalerweise nicht bei mehreren Einheiten/Klassencharakteren gleichzeitig gewirkt werden lassen sollten.
+* Sisgard's "Come with me." is missing.
+
+2011-03-06 Tamino Dauth <tamino@cdauth.eu>
+* Store alliance settings between each player -> fellow sharing problem.
+* Video "The Chief": Store norsemen actors and place them correctly. Move camera heights.
+* Spell "Emblaze" needs another icon (with weapon).
+* Spell "Embalze" doesn't give any bonus.
+* Hüttendächer laden nicht.
+* Minensäule Kategorie Gebäude
+* Minimap extra icon (shrines) has to have the size of 16x16 pixels.
+* DONE (in test map): Halder needs model "Burning One".
+* FIXED: When restoring unit in cast event action you have to wait at least 0 seconds by using TriggerSleepAction!
+
+2011-03-05 Tamino Dauth <tamino@cdauth.eu>
+* Find or implement cross-platform host bot which allows you to change map with group of players (multiplayer campaign) and store stats (publish on website).
+
+2011-02-26 Tamino Dauth <tamino@cdauth.eu>
+* Maybe use something else than ASpell (AUnitSpell more general) for item spells that usual units with inventory could use them, too. Besides spell "Unearth" should use this general spell structure for units!
+
+2011-02-23 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Agihards info of Irmina's quest should be visible after greeting.
+
+2011-01-29 Tamino Dauth <tamino@cdauth.eu>
+* Mit SetUnitCreepGuard verhindern, dass neutral passive Einheiten umkehren: Einheit läuft nur ein bisschen weiter als vorher (Dago).
+
+2011-01-23 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Add Guntrich related stuff to Osman's talk/finish Osman's talk.
+* FIXED (video wait bug): IssueRectOrder seems to be bugged since Wieland routine AND video orders do not work correctly (units do never reach rects). -  TESTED: Doesn't seem to be bugged maybe rects are too small?!
+
+2011-01-22 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Try to replace dialog-based grimoire with ability-based one and use hero skill points for skill points (icon display).
+
+2011-01-16 Tamino Dauth <tamino@cdauth.eu>
+* Goldmünzensymbol: Falke.
+* Goldmünzentextur ändern zu einem Falken (Symbol von Mittillant).
+
+2011-01-15 Tamino Dauth <tamino@cdauth.eu>
+* Get correct ability/attack index for range weapons (should be 2 - only attack 2).
+* Improve blood system (organic units, less blood on damage, more blood on kills etc.).
+
+2011-01-11 Tamino Dauth <tamino@cdauth.eu>
+* Fellow: Enabled talks only for shared players so that others can't stop fellows.
+* Character: Use UTF-8 line break in messages which is also used by tooltips since |n isn't displayed correctly on screen (in log only).
+
+2011-01-08 Tamino Dauth <tamino@cdauth.eu>
+* Inject InitBlizzard and replace InitNeutralBuildings call (only create trigger bj_stockItemPurchased and call SetAllItemTypeSlots and SetAllUnitTypeSlots if necessary) since we don't have marketplaces.
+* UnitDropItem uses UpdateStockAvailability which changes marketplaces items availbilities.
+
+2011-01-03 Tamino Dauth <tamino@cdauth.eu>
+* Mathilda muss irgendwie die Gruppe verlassen können.
+* Mathildas Lieder und Gesänge.
+* Mathildas Gegenstandstypen (Quests).
+* DONE: Lothars Gespräch einbauen.
+* DONE: Sisgard dauerhafte Fellow-Instanz geben.
+* DONE: Fellow-Instanzen bei letzter Schlacht überprüfen (Ricman und Wigberht).
+* DONE: Fellow-Wiederbelebung nach letzter Schlacht.
+* Gefährten bei Videos verbergen (alle Spielereinheiten -> Videofunktion).
+* Stallburschen und Mägde bzw. andere Angestellte der Burg "Talras"?
+* Tagesabläufe der NPCs einbauen (Burg).
+* DONE: Guntrichs Gespräch einbauen!
+
+2010-11-28 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Neue Gegenstandstypen im Code einfügen.
+
+2010-11-27 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Neue Wellenanzeige für das Nordmann-Quest testen.
+* FIXED: Bestenliste wird nicht angezeigt.
+* Pfeil vom Handeln entfernen beim Actor.
+* NOTE: Auswahlwiederherstellung geht!
+* Orks sind angeblich zauberressitent (Übernehmen! Level zu hoch?)
+* DONE: SmartPan Camera bei der Metzelei.
+* Init-Funktion stimmt nicht von Wigberht?
+* NOTE: Start Wigberht --> sogar Player Selection wird gespeichert
+* Wieland verschwindet immer noch nicht in der Tür.
+* Orks, die beim "Wigberht"-Video erzeugt werden, sollten vorerst pausiert werden oder alle Verbündeten bereits vorher entfernen (Nordmänner), da sie sonst angegriffen werden.
+* Nach dem Video "Wigberht" noch ein Video einbauen oder ein Ende, bei dem auch der Waldläufer- und der Bauernanführer gezeigt werden (Manfred mit Knechten?).
+
+2010-11-26 Tamino Dauth <tamino@cdauth.eu>
+* Wenn das Video zu Ende ist, ist der Charakter nicht unbewegbar oder korrekt im Gespräch (Hauptmenü lässt sich öffnen)
+* ASL?: Charakter-Buttons lassen sich korrekt deaktivieren aber nicht mehr aktivieren.
+* Lothar gehört nicht Neutral Passiv.
+* Lothars Dialog vervollständigen und dessen Aufträge einbauen.
+* Mathildas Dialog einbauen.
+* Absorbation hat keine Auswirkung auf Verbündete (Radius, Aura?) oder zeigt einfach keinen Text an (auch nicht bei sich selbst).
+* FIXED: Wolfsfell und Bärenfell Tooltips.
+* FIXED: Ricman: Sollte zu erst was labern aber Dialog kommt sofort!
+* Ricmans Dialog sollte während der Schlacht deaktiviert sein, Ausrufezeichen ist aber noch da!! Man kann ihn auch noch ansprechen
+* DONE: Aktuelle Welle (auch Verbündete) anzeigen!
+* Kein Video startet nach der Schlacht auch wenn beide NPCs leben. Es wird schwarz dann nichts mehr!
+
+2010-11-25 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Wielands Rüstungen und Helme einbauen!
+* Charakter spielte alleine mit Computerspielern, hatte kein Quest von Dago und sagte bei Björn dennoch nichts außer "Ja, habe ich.".
+* Riesen müssen Felle droppen.
+* ASL Rucksacksystem fixen: Wenn eine Rucksackseite voll ist, kann kein Gegenstand aufgenommen werden, Gegenstände über Befehl aufnehmen!
+* FIXED: Sisgards Gegenstand soll nicht verderblich sein, damit das Quest nicht fehlschlägt.
+* FIXED: ASL: Quests nur für Spieler anzeigen.
+
+2010-11-06 Tamino Dauth <tamino@cdauth.eu>
+* Wenn Grabenspinnen erzeugt werden, sollte der Zauber automatisch überprüfen, ob Gegner sich nähern. Es scheint aber so, als würde der Spieler "Neutral Feindlich" jede Spinne automatisch erst einmal ausgraben!
+* FIXED: Wenn die Tageszeit während des Videos verändert wird, sollte sie zurückgesetzt werden, damit Tagesabläufe richtig funktionieren!
+* Wenn man sich als Dämon zurück verwandelt, fehlen sämtliche erlernte Zauber (auch das Problem der Klassen beheben).
+
+2010-11-03 Tamino Dauth <tamino@cdauth.eu>
+* DEPRECATED: Was passiert, wenn ein Charakter gerade wiederbelebt wird und ein Video startet.
+* DEPRECATED: Nachdem das passiert ist, läuft der Timer im Fenster nach sämtlichen Videos weiter (Eigentlich sollte es verschwinden und der Timer pausiert werden)?!
+* Wenn Creeps zurücklaufen, passiert das auch bei Neutral Passiv
+* Riese muss fressen können - Test auch Helden
+* Ursulas Gegenstände für Quests
+* Der Jäger Björn könnte ihr beibringen von Kuno in Björns Dialog einbauen Quest fixen
+* Wenn Charakter im Gespräch ist (unbeweglich und unbesiegbar, unmovable) ist er es nach dem Video nicht mehr!!!
+* FIXED: Der Arenagegner wird nach dem erfolglosen Arenakampf nicht entfernt!
+* Inventarsystem: Gibt der Charakter einem anderen einen Gegenstand mit zwei Aufladungen, erhält dieser nur eine!
+* Ferdinand: Bei Hallo und Was hast du denn zu tun mehr einbauen, falls Aufträge erledigt wurden oder Hallo und Wer bist du in diesem Fall nicht mehr zulassen.
+* FIXED: Irmina sollte die Heiltränke usw. verkaufen.
+* FIXED: Grabenspinnen dürfen auf keinen Fall nachts schlafen, da sonst das Ausgraben nicht funktioniert.
+* Grabenspinnen benötigen ein anderes eingegrabenes Modell - Todesanimation.
+* Wenn Grabenspinnen erzeugt werden, wird Eingraben gezaubert, sie werden aber ausgegraben (einfach eingegrabene erzeugen, außerdem beim Spawn gleich überprüfen, ob Feind in Nähe ist und dann ausgraben!!!)
+* We need structure Fellow for DMdF which provides revival interface for NPC fellows which has to be heroes (replaces NpcRevival)!
+* FIXED: Absorbation . im Tooltip
+* Spielermusikfunktionen werden benötigt - ASL
+* Mitwirkende - Steuerung funktioniert nicht oder nur ein Mitwirkender
+* Videofunktion bei welcher Arena und AOS berücksichtigt werden, ATalk sollte von der ASL bereits berücksichtigt werden!
+* Das Video "Ein neues Bündnis" startet vermutlich nicht, weil Wigberht tot ist - restoreUnitActors - eigentlich eher unwahrscheinlich - testen?
+* Bauern und Waldläufer für das erste Gefecht einbauen, mit Anführern (Nachrichten im Auftrag kommen von den Anführern).
+* Klassenauswahlmusik startet nie. Spielmusik manchmal, oft aber erst nach der Menschenmusik!
+
+2010-11-01 Tamino Dauth <tamino@cdauth.eu>
+* Haid will 40 Gold, gibt ihm 10.
+* Video, andere Charaktere laufen in die Richtung eines Charakters, falscher Order für Charakter 0?
+* FIXED: Spieler 1 oder 2 sieht öfter seinen Wiederbelebungstimer.
+
+2010-10-24 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Use structure Npcs to refer NPC units.
+* DONE: Haid braucht ein anderes Modell.
+* DONE: Schrein in Talras.
+* FIXED: Kamerafahrt von "Der Anführer".
+* FIXED: Wetter pausieren und zurücksetzen während Videos.
+* NPC-Revival testen.
+* Spieler 1 wurde während der Nordmannschlacht nicht wiederbelebt (Timer wurde nicht gestartet).
+* FIXED: Ein- und Ausgraben (kommt beide Male "Eingraben")
+
+2010-10-23 Tamino Dauth <tamino@cdauth.eu>
+* "Übernehmen" should not be usable in PvP (Arena, AOS).
+* FIXED: Arena: Character is revived at wrong rect.
+
+2010-10-22 Tamino Dauth <tamino@cdauth.eu>
+* Neue Fähigkeiten: Sichtradius von Gegnern anzeigen lassen, Gegner im Gebiet mit Nebel des Krieges anzeigen lassen (nur Positionen).
+* Verbergenfähigkeit des Gegners zeigt Button an, funktioniert aber automatisiert (Button weg!).
+* Wildgrubenpfähle weiter entfernt vom Charakter platzieren, da diese auch bei eigenen Einheiten ausgelöst werden, eventuell ändern!
+* FIXED: Speer ist nicht vorrätig (Einar),
+* FIXED: Vasallenlanze "Erhöhte den Schaden um"!
+* FIXED: Hellebarde: Umkreis 0, Prozentwert mit einer Nachkommastelle, Text.
+* FIXED: Hellebarde: Fähigkeiten-Ids.
+
+2010-09-26 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Hellebarde usw. haben keinen eigenen Gegenstandstyp.
+* Klassenauswahlmusik/Spielmusik sofort starten!
+* FIXED: Aufladungen im kleinen Manatrank und im Manatrank im Tooltip beheben!
+* FIXED: Stab des Zauberers Manaregenerationsbonus und Wissenbonus fixen (Tooltip) - Schadensbonus wird nicht erwähnt. Teleportation auch auf Verbündete? Abklinggruppe Teleportzauber
+* FIXED: Zaubering Wissensbonus (Tooltip).
+* Wieland steht beim Tagesablauf vor seiner Tür und verschwindet nicht!
+* FIXED: Kapuze - Bewegungsgeschwindigkeit ist im Tooltip 0.
+* FIXED: Grubenpfähle - Landmine wird platziert!
+* DEPRECATED: Pfähle verderblich?
+* Wieland sieht Einar nicht an, wenn angekommen.
+* FIXED: Absorbation Tooltip und passives Icon?
+* Double free of ADynamicLightning bei "Anziehung".
+
+2010-09-25 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Schadenszauber-Id des Kurzschwerts stimmt nicht
+
+2010-09-21 Tamino Dauth <tamino@cdauth.eu>
+* Niedrige Priorität: Feld am Bauernhof teils brach liegen lassen (Dreifelderwirtschaft).
+* Fix Einars item charges and names!
+* Spawn point units can't be spawned (debug message).
+* DONE: Fix doodads in exe.
+* Character moves too fast in video of last fight.
+* Increase strength of characters at start.
+* Missing Wigberths animation of attack "Rundumhieb" (is called correctly in object editor - ability bug).
+* DONE: Create sight modifier at spawn point of orks and dark elves (camera movement)
+* Missing hero icons of Ricman and Wigberht.
+* DEPRECATED: Fix revival of Ricman and Wigberht ... (corpse is moved to shrine).
+* FIXED: "Blitzschlag wird" nicht durch "Wut der Elemente" nicht verstärkt (Stufe 5 immer 500 Schaden), "Eisgeschoss"?
+* DEPRECATED: Zweite Orkwelle kommt nicht gänzlich aus dem Wald (überprüft, kann nicht sein!)?!
+* DONE: Unterstützung braucht einen Kamera-Pan und einen Ping.
+* DEPRECATED: "Ihr Hundesöhne .." und "Mich besiegt keiner so leicht" sollte bei der Hälfte der besiegten Truppen der letzten Welle kommen.
+* FIXED: Sequenz "Wigberht" startet nicht, aber Fadefilter wird eingeblendet (hängt mit nicht stattfindener Wiederbelebung zusammen).
+* DEPRECATED: Autoskill fügt nur drei der Zauber als Favoriten hinzu (überprüft, scheint unmöglich zu sein).
+* Für Abstimmungsergebnis auch Pluralzeichenkette speichern.
+
+2010-09-19 Tamino Dauth <tamino@cdauth.eu>
+* Elchmodelle: "Textures/Invisible0.blp" wird nicht gefunden.
+* Skalierung für männliche WoW-Modelle ca. 1.10.
+* Hochelfen sind größer -> siehe Dokumente.
+* "HumanMalePeasant" etwas größer skalieren, Achtung, bisher wurden sie auf 1.20 skaliert -> Kind und Zwerg (Ritter?).
+* Zäune, Esse, Kisten, viel zu groß.
+* Bei der Flasche fehlt "Textures/Misc.blp"?
+* Goldbrockenmodell in die Mitte verschieben.
+* Erz hat an vielen Ecken eine völlig verzerrte Textur.
+* Säge auch ein Stück weiter in die Mitte (nicht mit dem Griff), weiße Textur ist nicht transparent im Editor!
+* Löffel in die Mitte, Modell nicht unbedingt ganz so groß skalieren, Genauigkeit passt zwar noch im Objekteditor, ist aber umständlicher einzustellen.
+* Löffel hat deutliche Verzerrungen hinten am Griff und auf der vorderen Fläche.
+* HumanMaleFarmer.mdx, HummanWarriorLight.mdx, HumanMaleThief.mdx, HumanFemaleWarriorMedium.mdx sind unsichtbar.
+* Hüttendächer werden nicht geladen.
+* Kiste 2 geht nicht.
+* Zweimal Messer.
+* Ritter1.mdx - Kein Texturpfad - wc3viewer - vermutlich nur weil nicht in der "Die Macht des Feuers.mpq"
+* Trebuchet.mdx - Kein Texturpfad - wc3viewer - vermutlich nur weil nicht in der "Die Macht des Feuers.mpq"
+* Felswand - Leuchten entfernen.
+* DONE: Objekteditor - Erz, Säge, Löffel, Messer (Frotty)
+
+
+2010-09-12 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Stärketrank hat irgendeinen Gegenstandstyp und kann daher angelegt werden (Primärwaffe) - den der Startprimärwaffe.
+* DONE: Schwebende Doodads in der Untotenhöhle beseitigen (Tisch).
+* Nur die optimierte Version der Karte lässt sich noch starten.
+* Immer wenn eine Einheit stirbt "Wrong position value 0" von einem Container (vermutlich Reaktion auf das Ereignis von irgendeinem System).
+
+2010-09-02 Tamino Dauth <tamino@cdauth.eu>
+* Einige Zäune, die Esse und weitere Doodads sind zu groß.
+* WoW-Modelle reparieren und verwenden.
+* DONE: Björns Gegenstände (Jagdutensilien) hinzufügen.
+* Kunoscheiße bei Dago und Björn in den Dialog einbauen.
+* Ricmans Dialog benötigt dringend eine Überarbeitung. Er kann Waffen verkaufen, wenn möglich aber andere als die Waffenhändler in Talras bzw. weitere Gegenstände hinzufügen. Anstatt die Stärke eines Drachentöters für Geld zu erhöhen, sollte er diesem spezielle Fähigkeiten beibringen können.
+* DONE: Helme und Rüstungen bei Wieland verkaufen, in Dialog einbauen.
+
+2010-09-01 Tamino Dauth <tamino@cdauth.eu>
+* Add "Irminas" items and fix talk.
+
+2010-08-31 Tamino Dauth <tamino@cdauth.eu>
+* Quest-Erzeugung für einzelne Spieler scheint zu funktionieren (siehe Gaias-RPG).
+
+2010-08-28 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Einars und Agihards Waffen einfügen und zur Verfügung stellen.
+* DONE: Auftrag "Talras' mutiger Waffenmeister" einbauen und Dialogeinträge von Agihard hinzufügen.
+* Überprüfen ob Einar alle Waffen verkaufen kann (maximale Anzahl).
+* DONE: Irminas Dialog einbauen, Charakter können Tränke gleichzeitig brauen lassen, Zeitgeber pro Charakter verwenden. Für Gegenstandsbeschreibungen siehe Gegenständedokument.
+* Die Zutatenlisten Irminas einbauen. Nötige Zutaten müssen entweder käuflich oder in der Wildnis auffindbar sein.
+
+2010-08-25 Tamino Dauth <tamino@cdauth.eu>
+* Dunkeln Krieger mit Nazgul-Modell in den Wald einbauen.
+
+2010-08-19 Tamino Dauth <tamino@cdauth.eu>
+* Der nördliche Wald heißt "Dunkelwald".
+
+2010-08-18 Tamino Dauth <tamino@cdauth.eu>
+* Use AAbstractQuest.onStateCondition and AAbstractQuest.onStateAction instead of function pointers!
+* Use ASpell.onCastCondition and ASpell.onCastAction instead of function pointers!
+* Wenn Charakter-Buttons aktiviert werden, sollten diese nicht erscheinen, falls man erweiterte gemeinsame Kontrolle hat.
+* Die beiden Ansichten Wigberht sind zu kurz!
+* Der Herzog läuft im Video "Ein neues Bündnis" nicht weit genug weg, außerdem ein Wartebug.
+* Vermutlich müssen die Gebiete lediglich größer sein.
+* Gruppen beim Metzelauftrag sollten in die Mitte des Lagers laufen (eventuell brechen Befehle ab, weil die erzeugten Gruppen von AGroup wieder zerstört werden???)!
+* FIXED: NPC-Wiederbelebung stoppt.
+
+2010-08-17 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Startgegenstände erst nach Video geben!
+* Text "Hauptmenü" -> Funktion InserLineBreaks.
+* Einheitliches Tooltipformat der Zauber (alle notwendigen Daten angeben).
+* Enter region muss sich innerhalb der Region des Layers befinden, damit die Einheit ihn betreten kann!
+* FIXED: Auftragsaktualisierungsnachricht nach Video "Die Burg".
+* 3d-Personansicht ist zu Beginn nicht deaktiviert.
+* Wieland ist nicht da, Tagesblauf falsch?
+* DONE: Einars Dialog umsetzen!
+* Videostrukturen sollten nichts im Spiel verändern, damit sie jederzeit nochmals abspielbar sind (manchmal unmöglich?)!
+* Wartefehler in "Der Anführer", aber nicht in "Der Herzog von Talras".
+* DEPRECATED: "Hallo." von Wigberht wird nicht angezeigt, nur "Lass uns in den Kampf ziehen!"?
+* FIXED: Wenn ein GUI deaktiviert wird, sieht man die Charaktereübersicht trotz Deaktivierung im Spielmenü.
+* FIXED: Nordmänner fehlen in der Schlacht!
+* FIXED: Riesengolem ist nicht immun gegenüber "Übernehmen", trotz Zauberressistenz.
+* FIXED: Keinen schwebenden Text bei "Übernehmen" anzeigen lassen, falls der Schaden 0 ist.
+* FIXED: Beim Schlachtauftrag kommt keine neue Gruppe.
+
+2010-08-13 Tamino Dauth <tamino@cdauth.eu>
+* Character buttons can not be hidden since they're hero icons. Heros have to be removed!
+
+2010-08-12 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Add Kunos daughter.
+
+2010-08-11 Tamino Dauth <tamino@cdauth.eu>
+* Dago and Björn need talk infos that player can ask for hunting trainer for Kuno's daughter.
+* Fix documents of Kuno and his quest with OpenOffice.
+* Add talk implementations of NPCS "Fulco", "Guntrich", "Heimrich", "Irmina", "Markward" and "Ricman".
+* Add routine implementations.
+
+2010-07-30 Tamino Dauth <tamino@cdauth.eu>
+* Add some more creature spawn points!
+
+2010-08-02 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Add auto skill functionality for computer controlled players.
+
+2010-07-26 Tamino Dauth <tamino@cdauth.eu>
+* Sisgards unit sharing should create a hero icon (AHeroIcon).
+* Wigberhts and Ricmans unit sharing should also create a hero icon (AHeroIcon).
+* Add struct AHenchman which allows you to get a henchman for one or more characters (which uses the same shrine and is also being revived).
+
+2010-07-19 Tamino Dauth <tamino@cdauth.eu>
+* Textures of Frottys doodads do not work.
+
+2010-07-10 Tamino Dauth <tamino@cdauth.eu>
+* Terrain fix after bridge please!
+* Increase start attributes for single character?
+
+2010-05-30 Tamino Dauth <tamino@cdauth.eu>
+* "Genesung" geht nicht auf eigene und unverwundbare Einheiten.
+* "Riese" kann keine neutral feindlichen Einheiten verschlingen.
+* FIXED: "Keulenhieb" soll "attack slam" als Animation bekommen.
+* FIXED: "Astraler Quell" Prozentzeichen im Tooltip.
+* Schreinheilung hat keinen Zauberverstärker?
+* FIXED: "Astraler Quell" hat die selbe Id wie "Absorbation"?
+* Show charaters scheme when giving control of allied player.
+* DONE: Improve tooltip of "Baldars Ring" (rename to "Rückverwandlung").
+
+2010-05-25 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: "Keulenhieb" of creature "Riese" should not stun every hit (and remove animation)!
+* "Fressen" of creature "Riese" doesn't cause damage (according to its tooltip) and is not usable on neutral aggressive units.
+* FIXED: "Dummheit" of creature "Riese" needs research.
+* FIXED: Tooltip of "Standarte der schwarzen Legion" has range 0 value.
+* When player selects worker either his character should be selected or not the worker (hide unit?).
+* FIXED: Ally characters aren't being created correctly for player 0 (player 1 got it, computer).
+* Getting many double frees of type ADialogButton when opening grimoire for computer player (1).
+* Implement force-based dialogs for allies!
+* DONE: "Riese" needs "Magen".
+
+2010-05-24 Tamino Dauth <tamino@cdauth.eu>
+* Add more Warcraft like messages.
+* Fix last level XP (GetHeroLevelXP).
+* FIXED: "Stab des Zauberers" sollte einmal vorrätig sein.
+* FIXED: "Stab" hat kein Kauftooltip.
+* FIXED: "Spruchrolle des Totenreichs" hat kein Kauftooltip.
+* "Spruchrolle des Totenreichs" hat keine Abklingzeit.
+* FIXED: "Zauberring" - Wissensbonus stimmt nicht im Tooltip.
+* FIXED: "Zauberhut" - Sichtradiusbonus stimmt nicht im Tooltip.
+* FIXED: "Zauberhut" hat die selbe Id wie der Ring.
+* FIXED: "Zaubermantel" - Regenerationswert wird nicht prozentual angezeigt.
+* Replace "Wigberhts" model by new one.
+* DONE: Fix worker creation.
+* "Junge" has wrong owner.
+* "Langboot" has to be rotated (90 degree).
+* "Genesung" tötet Zaubernden.
+* Drachenbeladen geht nicht auf Verbündete.
+* DONE: Add options to main menu (show worker, characters and multiboard).
+
+2010-05-14 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: "Hieb" hat zu große Reichweite.
+* FIXED: "Bestienjäger" funktioniert nicht bei wilden Kreaturen.
+* FIXED: Improve tooltips of "Heilige Kraft", "Absorbation", "Gewandheit" and "Wut der Elemente".
+* "Emblaze" doesn't work.
+* FIXED: Change text "Ein oder mehrer Arbeiter ...".
+* DONE: Fix "Absorbation" tooltip!!
+* "Wut der Elemente" und "Gewaltsamer Tod" haben die selbe Id!
+* Adding rucksack items seems to be paused when rucksack is opened and character is paused.
+
+2010-05-13 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Change "Linderung" that targets can be invulnerable.
+* FIXED: "Katze verkaufen" needs K as shortcut.
+* FIXED: Ursula kann keine Gegenstände annehmen.
+
+2010-05-11 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Use the new quest methods (fail, complete, enable) in talks for displaying correct messages!
+* DONE: Do also use new convenience methods of ASL's quest system (isCompleted, isFailed ...).
+* Change "( Erledigt )" to "(Erledigt)" (seems to be impossible).
+* Grundfähigkeiten sollten den farbigen Text "Grundzauber" und einen Zeilenumbruch enthalten.
+* Ultimatumfähigkeiten sollten den farbigen Text "Ultimatumzauber X" und einen Zeilenumbruch enthalten.
+* Klassenfarben der Klassen dabei verwenden.
+
+2010-05-01 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Schuss ins Herz nur auf Feinde!
+* FIXED: Schuss ins Herz falsche Ids oder selbe wie Klerikerzauber?, Stufe?
+* FIXED: Gewandheit, Wert ist 0
+* Wilder Blutrausch funktioniert nicht -> Schadenssystem testen!
+* FIXED: Katzen-Tooltip basteln.
+* FIXED: Buch-Tooltips haben Werte 0.
+* "Shooter" and "Absorbation" do have same ids?
+
+2010-04-18 Tamino Dauth <tamino@cdauth.eu>
+* Der Bauer hat keinen Erben - in Dialog mit Mathilda einbauen.
+* Frau des Herzogs einbauen (Dialoge verbinden)
+* Mann und Sohn der Händlerin einbauen.
+* Bauernknechte anständig einbauen, wenn's geht auch mit Dialogen.
+* Die NPCs müssen auch Wasser holen.
+* Am Eingang zum Grauen-Waldes trifft man eine Drachentöterin, die Untote jagt. Sie will in Richtung Norden zur nächsten Stadt. Bevor man bereit ist (Nordmannschlacht), kann man sie bitten, mitzukommen.
+* Talk-Log vervollständigen.
+* Sisgard kann mit zur Nordmannschlacht.
+
+2010-04-11 Tamino Dauth <tamino@cdauth.eu>
+* Das Verhältniss zwischen Lebens- und Manapunkten beträgt in der Regel 2 zu 1. Daher erhält man pro Stärkepunkt auch 30 Lebenspunkte und 15 Manapunkte.
+Ebenso erhöht sich die Lebensregeneration um 0.10 und die Manaregeneration um 0.05 Punkte (pro Stärke- bzw. Wissenspunkt).
+Die Rüstung entspricht normalerweise den Lebenspunkten multipliziert mit 0.01 (siehe Stufenwertetabelle).
+Daher erhält man pro Geschickpunkt 0.30 Rüstung (Voreinstellung in Warcraft TFT).
+Das Angriffstempo wird weiterhin um 0.02 erhöht.
+Da 6 Attributpunkte pro Stufe verteilt werden erhält der Charakter in der Regel etwas weniger Attribute als eine durchschnittliche Einheit der gleichen Stufe (3 Kraftpunkte ergeben 90 Lebenspunkte, der gewöhnliche Stufenbonus beträgt aber 100).
+Damit das auch so bleibt, sollte ein Charakter mit 6 Attributpunkten starten.
+Die Zauber müssen allesamt individuell angepasst und ausgeglichen werden (im PvP-Modus oft extra).
+Besonders starke Zauber, die auch stark sein sollen können durch eine verlängerte Abklingzeit und erhöhte Manakosten angepasst werden.
+Dabei sollten die Manakosten an das Mana der jeweiligen Klasse angepasst werden.
+* FIXED: Wrong ids of spell "Recovery"?
+* FIXED: Wrong tooltip (percentage) of spell "Astral Source" 2000 %.
+* All classes do not have any mana regeneration?
+* "Fire Missile" needs delay and missile.
+* DONE: Fix items of demon.
+* DONE: Add ducks!
+* DONE: Replace expressions "Trefferpunkte" by "Lebenspunkte".
+
+2010-04-09 Tamino Dauth <tamino@cdauth.eu>
+* DEPRECATED: Spell effects aren't created (data from abilities).
+* Fix spell "Abstoßung".
+
+2010-04-08 Tamino Dauth <tamino@cdauth.eu>
+* Use SetDoodadAnimation and SetDoodadAnimationRect to open/close gates and burn/extinguish torches.
+
+2010-04-06 Tamino Dauth <tamino@cdauth.eu>
+* Fix bash script "dmdf-credits" (several tab characters can not be parsed correctly, use lists for various operations).
+
+2010-03-29 Tamino Dauth <tamino@cdauth.eu>
+* Wasserwellenmodell vom Ufer ist neues Wasser.
+* Wasserflag überall in Holzbruck aktivieren.
+* Holzbruck-Tilesets ersetzen.
+* Klippentypen in Holzbruck auf 0 setzen.
+* Maximales Bewegunstempo in Talras erhöhen und neue Funktionen AddMoveSpeed einbauen, welche den wirklichen Wert zurückliefert.
+
+2010-03-21 Tamino Dauth <tamino@cdauth.eu>
+* Fix "Dunkler Diener" und "Dämonendiener".
+* FIXED: Wegelagerer sollen Goldmünzen oder -beutel fallen lassen.
+* FIXED: "Linderung" und "Feuergeschoss" haben die selbe Id.
+
+2010-03-20 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Sisgard verkauft nichts.
+* Dämon aus der Trommelhöhle muss eigene Gegenstände verkaufen.
+* FIXED: Schadensangabe des "Langschwerts" stimmt nicht.
+* FIXED: Schadensangabe des "Edlen Klerikerhelms" stimmt nicht.
+* "Spruchrolle der Geborgenheit" funktioniert nur für den Zaubernden.
+* FIXED: "Elementare Gewalt" ist Ultimate-Zauber?
+
+2010-03-18 Tamino Dauth <tamino@cdauth.eu>
+* Nordmänner stärker machen.
+* Ork- und Dunkelelfenverstärkerungen verändern.
+
+2010-03-14 Tamino Dauth <tamino@cdauth.eu>
+* Reiter der weißen Legion benötigt langsamerer Animation beim Laufen.
+* Bogenschützin schießt den Pfeil zu früh ab (Verzögerung).
+* DONE: Modelle der Münzbeutel ersetzen.
+* Großes Schiffmodell nach oben verschieben.
+* DONE: Add Satyr (to Norsemen quest).
+
+2010-03-13 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: "Magical shockwaves" needs abilities.
+* FIXED: "Repulsion" needs abilities.
+* Necromancer has no mana regeneration?
+* "Magical shockwaves" needs icon.
+* "Repulsion" needs icon.
+* "Dämonendiener" und "Dunkler Diener" haben die selbe Id?
+* "Magical Shockwaves" crashes game.
+* Schiff fährt nicht los.
+
+2010-03-12 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Check class selection environment.
+* FIXED: Class descriptions are cut.
+* FIXED: Missing elemental mage class description.
+* DONE: Fackeln am Hügel zu Talras erhöhen.
+* FIXED: WEGWEISER ist nicht gelb.
+* FIXED: Schwebender Text kommt auch bei Beute noch zu spät.
+* Ausrufezeichen in Videos deaktivieren.
+* Kuh steht in Talras?
+* FIXED: Keine Erfahrung!
+* DEPRECATED: Einige Klerikerzauber fehlen?
+* FIXED: Keine Beute bei Nichtcharakter-Einheiten.
+* DEPRECATED (unit type is already used): Send battle transmissions by unit types (during norsemen battle) since Ricman could be dead.
+* DONE: Wigberht and Ricman have to be revived during battle!
+* FIXED: Mitwirkende-Main-Window wird nicht richtig unsichtbar gemacht (Kamera geht weiter, Kameragrenzen bleiben).
+* FIXED: Info-Log zeigt nur die Überschrift.
+* Creature "Todesengel" needs custom missile graphic.
+* Ability "Botschaft des Totenreichs" needs custom graphic.
+
+2010-03-11 Tamino Dauth <tamino@cdauth.eu>
+* Finish text macro DMDF_CREATE_FAVOURITE_ABILITY.
+
+2010-03-10 Tamino Dauth <tamino@cdauth.eu>
+* DONE: All class spell structs should be extended by struct Spell.
+
+2010-03-08 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Divide map and game cheats.
+* DONE: Add custom struct Spell which extends ASpell and replaces struct GrimoireSpell (it should also have member isAvailable that it can be disabled in special missions).
+* DONE: Add methods removeClassSpells, setClassSpellsLevel, setClassSpellsMaxLevel, setSpellsAvailable and setClassSpellsAvailable to struct Grimoire.
+* Improve forest terrain and add planned NPCs (farm, female dragon slayer) etc.
+
+2010-03-07 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Skelette (Klassenauswahl) weiter runterhängen lassen.
+* DONE: Klassenbeschreibungen eintragen.
+* DONE: Check setMovable calls when selecting class and starting game.
+* DONE: Build latest MPQ archives.
+* Double free of type: AInventoryItemData when stacking items (nicht verbrauchbar).
+* DONE: Wegweiser sollte farbliches Präfix Wegweiser erhalten.
+* DONE: Beutetext muss gelb sein, fix function.
+* FIXED: Asl: Missing message "Die Seitengegenstände können nicht verschoben werden.".
+* FIXED: Dago should be owned by allied player during quest.
+* FIXED: Dago läuft nicht weiter.
+* Wenn bei "Sprinten" die Geschwindigkeit zurückgesetzt wird, ist der Charakter zu langsam (Funktion sieht aber richtig aus).
+* DONE: Use SimErr when calling function ACharacter.displayMessage(ACharacter.messageTypeError
+* DEPRECATED: Unearth needs Mana?
+* Fix first camera of video "The Chief.".
+* Add ASL function ParseTimeOfDay and utilities cheat settimeofday.
+* FIXED: Wieland stands in front of Björns house (wrong waypoint?).
+* DONE: Add option DMDF_NPC_ROUTINES.
+* ALayer does not work correctly: New height is ground height + height which causes flying character, unit can leave area without blocks, character can't leave layer correctly
+* ALayer: Can't walk across rivers (water).
+* DONE: Remove debug messages from "Wut der Elemente".
+* DONE: Add cheat "setspellsmax" which sets all spell levels to maximum level.
+* DEPRECATED: Add cheats "canfly" and "cantfly" to ASL for making selected units flyable.
+* Cheats should be used on all selected units!
+* DONE: Rename cheat "outside" to "aosentry".
+* Add several location and location cheats.
+* Add Totem-Items for Ursulas quests.
+* FIXED: Schon gut ich brauche tatsächlich usw. is said by character not "Ursula".
+* FIXED: "Gut." and "Kein Interesse" is shown at twice.
+* FIXED: Trommon's "Natürlich fahre ich auch andere Leute ..." is said by character.
+* FIXED: Ursula should sell cats and books.
+* Use black undead interfaces colors as default (replace human interface).
+* DONE: Remove "Die Kosten errechnen sich aus ..."
+* Remove "x-x Essen:"
+* Remove "(x % Einnahmen)"
+* Remove "Kaum Kosten"
+* Remove "Hohe Kosten"
+* Add custom gold and lumber icon.
+* Use supply as something.
+* FIXED: Camera bounds aren't being reset when closing credits main window.
+* Nach dem Tod im AOS-Bereich, wird der Charakter immer noch zurückgesetzt.
+* FIXED: Heilung der Brunnen im AOS-Bereich geht nicht nur auf Verbündete.
+* Fix GUI inventory.
+
+2010-03-06 Tamino Dauth <tamino@cdauth.eu>
+* Finish custom map creation guide.
+* FIXED: Ricman needs some mana.
+* "Rundumschlag" doesn't work.
+* UNEARTH is displayed but doesn't work.
+* Revised GUI structs and extend MainWindow.
+* Complete Ferdiannds and Manfreds relations.
+* Complete Mathildas talk and Ferdinands relations.
+* Add various routines of NPCs.
+
+2010-02-28 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Drop cliff tilesets.
+
+2010-02-21 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Add struct Character which extends ACharater and has grimoire, credits etc. members which are destroyed on destruction of itself.
+
+2010-02-20 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Add ferry boat unit and rects.
+* Bone "bone_head" is missing (dwarf character model).
+* Add yellow description to spell "Revive" which explains how to use the spell (click on terrain).
+
+2010-02-19 Tamino Dauth <tamino@cdauth.eu>
+* Add mushrooms to area in south (below Talras).
+* Add quest of NPC "Björn".
+* Download icons for quests.
+* Finish compile and credits bash scripts.
+
+2010-02-14 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Rename dragon spawn ability.
+
+2010-02-06 Tamino Dauth <tamino@cdauth.eu>
+* FIXED (fix uninitialized values!): There seems to be a module bug when calling thistype.create?
+
+2010-02-03 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Method video() of module Video seems to return an invalid value.
+
+2010-01-21 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Rename creature "Lindwurm" to "Drache" since it's flyable.
+
+2010-01-03 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Implement DMDF_CHARACTER_STATS by creating a struct called CharacterStats.
+
+2010-01-01 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Heimrich should get model "King.mdx".
+* DONE: Arena enemy should get model "Myrmidon.mdx".
+* DONE: Agihard should get model "Captain.mdx".
+* Use model "Behemoth Rider" as enemy orc.
+
+2009-12-31 Tamino Dauth <tamino@cdauth.eu>
+* Note that you can only use 16 different tilesets since the w3e file contains 4 bits tilset indexes.
+
+2009-12-30 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Use "imports/Object Data.w3o" for getting the latest object data!!!!
+* Use new texture tileset ids (try TileSetter).
+
+2009-12-19 Tamino Dauth <tamino@cdauth.eu>
+* Need custom models for creatures: Wegelagerer, Wolf.
+* TerrainOld.slk should be replaced by Terrain.slk to use only custom tilesets and specify custom ids (TileSetter is bugged at the moment so use TerrainOld.slk). Furthermore there shouldn't be a limit for cliff tilesets.
+
+2009-12-15 Tamino Dauth <tamino@cdauth.eu>
+* Complete new inventory system which shows the character model.
+
+2009-12-13 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Can not open grimoire.
+* FIXED: Wigberht's routine ...
+* Missing minimap alt icons.
+* FIXED: Make units unselectable (shrine symbols).
+* FIXED: Unendtecktes Quest
+* FIXED: Goldbeschreibung
+* FIXED: No experience (unsuspend experience, give some and suspend again).
+* Eine Welle zu viel kommt?
+* FIXED: Spawnpoints droppen keine Items und respawnen nicht?
+* Face to head bone funktioniert nicht.
+* Charakter kann keine neutralen Trümmer wie Kisten angreifen?
+* FIXED: Schwertkämpferinnen geben Gold.
+* FIXED: Quellen jeweils dem Spieler geben, der auch die Parteien der AOS kontrolliert, damit nur Verbündete geheilt werden.
+* AOS spawnt nicht weiter.
+
+2009-12-12 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Use JassParser since pjass throws the memory exhausted error.
+
+2009-12-11 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Do not use Zinc mixed up with vJass. This project completely is vJass at the moment!
+
+2009-11-30 Tamino Dauth <tamino@cdauth.eu>
+* DONE: TriggerRegisterUnitStateEvent für Zauberin verwenden.
+* Mit UnitIgnoreAlarm einen Zauber einbauen, welcher bei computergesteuerten Gegnern verursacht, dass diese nicht automatisch Feinde angreifen (z. B. so etwas wie "Blenden").
+* native SetAltMinimapIcon takes string iconPath returns nothing für Schreine verwenden.
+
+2009-11-23 Tamino Dauth <tamino@cdauth.eu>
+* Create custom aura with spell book abilities based on the "channel" ability to imitate buffs.
+
+2009-11-22 Tamino Dauth <tamino@cdauth.eu>
+* DONE: How to configure tile id tileset?
+* How to use custom Terrain.slk file with grimext TileSetter?
+* DONE: JassHelper import bug has to be fixed.
+
+2009-11-21 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Lords_Dirt.blp ist die hässliche Grastextur und eine Klippentextur.
+* DONE: Lords_Grass.blp ist die Felsentextur und eine Kippentextur.
+* DONE: Lordf_Dirt.blp ist eine Grastextur und eine Klippenetextur.
+* DONE: Lordf_Grass.blp ist die Laubtextur und eine Klippentextur.
+* DONE: Lordw_Snow.blp ist die graue Straßentextur und eine Klippentextur.
+* DONE: Lordw_Grass.blp ist die rote Straßentextur und eine Klippentextur.
+* Himmel-Mesh aus einem der Kampagnenhintergründe extrahieren und als Himmelmodell für die Karte Talras verwenden.
+
+2009-11-20 Tamino Dauth <tamino@cdauth.eu>
+* Add video documents template document.
+* Add missing creatures to map "Talras".
+* Add tutorial hints.
+* Compare video documents to document "Spielverlauf".
+* Two cliff files have been selected ("Talras").
+
+2009-11-19 Tamino Dauth <tamino@cdauth.eu>
+* DEPRECATED: Code should use Zinc instead of vJass.
+* DONE: Check librarie requirement cycles.
+
+2009-11-14 Tamino Dauth <tamino@cdauth.eu>
+* Zauber wie "Sprinten" sollten so aufgebaut sein, dass das Bewegungstempo hinzugefügt und entfernt, aber nicht das alte wiederhergestellt wird, sodass der Zauber auch mehrmals gewirkt werden kann.
+
+2009-11-11 Tamino Dauth <tamino@cdauth.eu>
+* Revise Björn's dialog.
+
+2009-11-04 Tamino Dauth <tamino@cdauth.eu>
+* Viele Zauber sind nicht mehrmals von einem Charakter auf unterschiedliche oder dasselbe Ziel zauberbar.
+* Zauber sollten nie von ADamageRecorder erben, da die anderen Daten benötigt werden (von ASpell).
+* Charakterschema fehlt beim Auftrag "Die Nordmänner", eventuell aufgrund der Team-Rohstoffe.
+* "Unentdeckter Quest" anstatt "Noch nicht erhaltener Auftrag".
+* Orks sind zu stark bzw. Nordmänner zu schwach.
+* Auftrag "Die Nordmänner" wird noch vor dem Tod der letzten Welle abgeschlossen und kann wohl zweimal abgeschlossen werden.
+* Bündnisse und Nordmänner werden nicht zurückgesetzt.
+* Am besten alle Nordmänner wiederbeleben.
+* Fliegender Lindwurm wird nicht als Fliegend anvisiert oder Orks können auf fliegende Einheiten draufhauen.
+* "Der Weg nach Holzbruck" wird schon nach "Die Nordmänner" aktiviert, dabei sollte man erst zum Herzog gehen und dann den Auftrag erhalten.
+* Wenn Sisgard dem Charakter die Zauberspruchrolle gibt und der Rucksack geöffnet ist, wird der Gegenstand nicht aktualisiert und liegt noch neben dem Charakter (sprich zwei Rollen). Liegt eventuell auch daran, dass der Charakter die falsche Klasse hatte.
+* Eventuell die Kameradistanz verkürzen, wenn an der Position der Kamera entsprechende Verlauftexturen sind (Blocker) und nicht anhand der zerstörbaren Objekte alles einstellen.
+* Sisgard verursacht keinen Schaden.
+* Truhen wie Erzeugungspunkte implementieren.
+* Keine Krone vom König :-(
+* Wenn von 3 Heiltränken einer abgelegt wird (im Rucksack), sind nur noch zwei da (eventuell falsche Kategorie - Aufladbar).
+* Bei der Arena im Text "Der Gewinner ist ..." steht der Einheiten- und nicht der Spielername.
+* Ursula verkauft keine Katzen.
+* Bei Tellborn ist schon von Anfang an jeden Dialogoption auswählbar.
+
+2009-11-01 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Struktur für statische Schilder und Wegweiser schreiben (mittels Trackables, welche dem Spieler Text anzeigen).
+
+2009-10-31 Tamino Dauth <tamino@cdauth.eu>
+* Wigberhts Tagesablauf wird während des Auftrags "Die Nordmänner" nicht deaktiviert.
+* FIXED: Dago hat Trommons Dialog.
+* Neutral passive Einheiten laufen zurück.
+* Animation des Zaubers "Teleport" wird als Schleife ausgeführt (nicht im Code!).
+* FIXED: Elementare Gewalt nicht anklickbar.
+* Tagesabläufe deaktivieren, wenn Einheiten sterben oder Einheiten nicht sterbbar machen bzw. Bedinung während des Ablaufes einbauen.
+* FIXED: AOS-Höhle kann verlassen werden ohne, dass sich der Dämonencharakter zurückverwandelt.
+* Mathildasdialogoptionen haben keinen Effekt.
+* FIXED: Tobiasdialogoption der Feststellung ist dauerhaft verwendbar.
+* In den Videos "Der Herzog von Talras" und "Der Anführer" wird dauerhaft gewartet.
+
+2009-10-29 Tamino Dauth <tamino@cdauth.eu>
+* Bei Zaubern die Methoden der Struktur AGroup removeEnemiesOfUnit und removeAlliesOfUnit verwenden.
+* Buffsystem in der ASL einbauen oder Buffs korrekt hinzufügen (Buffs sollten auch die Zieleffekte von sich aus enthalten).
+* Zauber brauchen mehr Spezielleffekte und vor allem Klänge, welche auch im Code integriert werden müssen.
+* Bewegung bei Anziehung einbauen.
+
+2009-10-25 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Erste Bodentextur mit der Laubtextur ersetzen.
+* Waldgeister brauchen tolle Zauberfähigkeiten.
+
+2009-10-22 Tamino Dauth <tamino@cdauth.eu>
+* Replace private library functions by static or non-static methods.
+* Charaktergruppe vom Hügel ist zu schnell und wartet auf Orks und Dunkelefen.
+* Zurücklaufbug bei Dago und Feindesgruppe.
+* Klerikerzauber "Schützen" schützt immer nur 4 Schaden?
+* FIXED: Klerikerzauber "Böses hindern" geht auf alle Ziele?
+* FIXED: Grüner Spieler ist mit Neutral Feindlich bzw. dem Besitzer der Orks und Dunkelefen nicht verfeindet oder Nordmänner machen besser gesagt wohl keinen Schaden, ebenso Wigberht.
+* Nach Abstimmung über Auftragsbeginn eventuell noch Nachricht einblenden.
+* Wenn sich der Charakter in einem Drachen oder Zeppelin usw. befindet und zum Auftragsgebiet hinbewegt werden soll, passiert dies nicht (Das erste Gefecht).
+* FIXED: Routine loop action kommt während letzter Schlacht, Tagesablauf Wigberhts deaktivieren?
+* FIXED: Wigberhts Dialog ist während des Gefechts nicht deaktiviert.
+* FIXED: Dunkelelfen schlafen in der Nacht.
+* FIXED: Dunkelelfen machen keinen Schaden.
+* SmartPan zur Verstärkung (nicht sofort panen).
+
+2009-10-18 Tamino Dauth <tamino@cdauth.eu>
+* Drachenanimation beim Be- und Entladen - Nicht möglich
+* Video Die Burg startet nicht (eventuell weil Auftrag "Talras" nicht aktiviert wird)
+* Quest Talras wird nicht erzeugt
+* Routinen testen, Wigberht wird auch während Videosequenzen pausiert, Schleife scheint nicht zu funktionieren, Wigberht stand aber vor seinem Lager (außerhalb halt)
+* Menümusik/-geräusch von Warcraft ersetzen
+* FIXED: Bären-KI eventuell pausieren, sind auch pausiert wenn alle pausiert werden. (Einzelne Einheiten-KI kann nicht pausiert werden, eventuell Besitzerwechsel vornehmen)
+* Sequenzmusik ist viel zu leise.
+* FIXED: Credits-Musik läuft als Spielmusik?! Kommt aber korrekterweise auch in den Mitwirkenden, endet aber nicht beim Schließen der Mitwirkenden
+* Gruppe läuft nicht gleich schnell, Charakter zu schnell im Kampfvideo
+* FIXED: Himmeleffekt im Kampfvideo, durch Wetter?
+* FIXED?: Wenn Charakter oder Soldat die Arena verlässt, muss der Kampf sofort beendet werden. Soldat muss entfernt werden?
+* FIXED: Unentdeckter Quest zu noch nicht erhaltenem Auftrag umbenennen
+* FIXED: Auftrag wurde noch nicht erhalten statt Auftrag ist noch nicht entdeckt
+* Drehung des Lindwurms eventuell langsamer machen (Shift-Drücken funktioniert nicht)
+* Fähre testen
+* FIXED: Sisgard kann nicht vom Lindwurm getragen werden
+* FIXED: Spruchrolleneffekt von Sisgards Rolle ändern
+* Schrein beim Bauernhof hinstellen
+* Schreine auf der Karte markieren, per DMDF-Code nicht im Schreinsystem!
+* DONE: Imps im Schwarzenlegionlager sollen Stein abbauen
+* FIXED: Zurück ist Wer ist der Stärkere von euch beiden
+* Baldars Ring hat auch eine Hufeisenfähigkeit, Animation überprüfen - ?! hat eigentlich nur Metamorphose
+* Blutquellenfähigkeit überprüfen, zu schnelle Heilung?
+* FIXED: Ihr Anteil betrögt
+* Keine Umfallanimation bei Rückverwandlung von Dämon - Nirgends eingestellt, nativ?
+* FIXED: Reichweite vom Lindwurm am Boden deutlich erhöhen, NOCH MEHR
+* Katzenkauf einbauen
+* Debug-Modus nicht testbar, Einheiten fehlen, nichts wird ausgeführt.
+* Lindwurm soll eigentlich nicht ent- und beladen werden können, während er fliegt. Trotz des Entfernens der Fähigkeiten, kann man die Einheiten "herausklicken", also entweder beheben oder Fähigkeiten wieder hinzufügen.
+* Erstes Menschenlied startet nach Klassenwahllied, dann erst kommt das Talraslied.
+* Herzogvideolied LEISE
+* Anfangscharakterklassenwahlmusik kommt nicht, Not Paused kommt und beim Pausieren nichts mehr
+Wird gekämpft, pausieren der Kreaturen am Anfang
+Actors brauchen anderen Besitzer, sobald der Kampf beginnt (gemeinsame Kontrolle mit Nordmannbesitzer?)
+Charakter wird nicht zur Actorposition bewegt (restore)
+Wigberhts Talk während Quest deaktivieren
+Orkeinheiten kein BI
+Dunkelelfen kein BI
+* Eventuell setzt sich nur der Verlauf von Zerstörbaren über den von Klippen und Wasser hinweg (Brückenproblem).
+
+
+2009-10-16 Tamino Dauth <tamino@cdauth.eu>
+* Revise "Ursulas" talk, should sell cats for "Brogos" quest.
+* UNCHANGABLE?: Des Lindwurms Zauberanimation beim Be- und Entladen deaktivieren.
+* Quest "Talras" is not enabled when game starts.
+* If the new routine system of the ASL won't be deprecated, we have to define global routines and add the NPCs to them.
+
+2009-09-02 Tamino Dauth <tamino@cdauth.eu>
+* Add computer controller support.
+
+2009-08-30 Tamino Dauth <tamino@cdauth.eu>
+* When morphed character is revived in AOS it is unmorphed.
+
+2009-08-27 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Fix trade chat event issue.
+* Fix trade offer list issue.
+* FIXED: If video is shown and camera bounds are set, camera position can't move correctly (for example when you're in AOS cave).
+
+2009-08-24 Tamino Dauth <tamino@cdauth.eu>
+* Adding non-favourite spells doesn't work when spell is skilled first time.
+* "Gib mir meine Belohnung" nur anzeigen, wenn Charakter zum Team gehört.
+
+2009-08-12 Tamino Dauth <tamino@cdauth.eu>
+* AWeather soll auch das Himmelmodell miteinbeziehen können.
+* Testweise Verlaufstexturen für diverese Doodads und deren Standardskalierungen erstellen (passen sich leider nur an Drehung und nicht an Skalierung an).
+* Der letzte Befehl soll nach Pausierung der Einheiten wiederhergestellt werden, damit der Tagesablauf weiterlaufen kann.
+* Letzte Videosequenzen und die Schlacht beim Lager der Orks und Dunkelelfen vervollständigen.
+
+2009-08-11 Tamino Dauth <tamino@cdauth.eu>
+* Beim Stapeln nichtaufladbarer Gegenstände bleibt es bei einem Slot, wenn ein Gegenstand auf einen Gegenstand mit einer Aufladung gelegt wird.
+* FIXED: Grabenspinnen haben falschen Besitzer.
+* Grabenspinnen sollen Gegner mit ihrem Netz fesseln können.
+
+2009-08-09 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: If you create items for characters they won't be handled like inventory items since inventory is disabled during talks.
+* Units in AOS do have bounties and custom bounty doesn't work.
+
+2009-08-07 Tamino Dauth <tamino@cdauth.eu>
+* Need custom model for creature spawns.
+* Change human user interface (maybe use undead).
+* Command buttons do not work.
+* FIXED: Osman quest is created when game starts (maybe related to unable to allocate bug).
+* Create a pathing texture for Born's bridge model.
+* Add some creature spawn points to the mountain behind start position.
+
+2009-08-06 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Increase the distance between actor and Ricman in video "The Chief".
+* FIXED: Main menu and tutorial should be destroyed when player leaves game.
+
+2009-08-05 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Quest "Rescue Dago" can be finished before it was created?!
+* Dago needs damage.
+* Bears in "Rescue Dago" look at the character in video since they aren't paused but set invulnerable.
+* Beim Seitenverschieben eines Gegenstands wird nicht wirklich gestapelt.
+* Beim der Gegenstandsaufnahme wird auch nicht immer gestapelt.
+* Nachdem zwei Gegenstände gestapelt wurden, werden sie beim Verschieben nicht mehr entstapelt.
+* Beim Zurücksetzen der Seitengegenstände werden die Aufladungen nicht richtig zurückgesetzt.
+* Flammengegenstand ist nicht aufladbar.
+* Heiltrank ist nicht entstapelbar (falscher Gegenstandstyp?).
+
+2009-08-04 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Credits camera object is wrong.
+* FIXED: Quest creation of dagos quest skips info actions.
+* FIXED: Händler Haid: Man erhält den Auftrag sobald man ihn anspricht.
+* Gespräche müssen während Videos unterbrochen und danach fortgesetzt werden.
+* Entstapeln von Gegenständen nochmal überprüfen.
+* FIXED: Arena betreten: passiert nichts.
+* FIXED: AOS-betreten-Dialog erscheint immer für Spieler 1. Triggerunit ist jedes Mal anders, der Spieler ist aber der gleiche.
+* FIXED: Wenn man die Mitwirkenden schließt gibt es eine Desynchronisation.
+* Wenn der Auftrag "Tod der weißen Armee" aktiviert wird, gibt es einige Fehler und der Thread wird abgebrochen.
+
+2009-08-03 Tamino Dauth <tamino@cdauth.eu>
+* Tobias sollte einen verfaulten Apfel vor sich haben.
+* Tobias braucht ein Modell/Bürger und Bauern brauchen andere Modelle.
+* Sisgards Runenkreis einbauen und Auftrag vervollständigen.
+* Effekte und Icons für Absorbation, Dämpfung und Manaschild herunterladen.
+* Charges von Seitengegenständen richtig zurücksetzen.
+* Gesprächshöhe ist zu hoch.
+* Aus Favoriten entfernen funktioniert bei Zaubererzaubern nicht.
+
+2009-08-02 Tamino Dauth <tamino@cdauth.eu>
+* Umgebungsdaten fehlen im Archiv.
+* Zauberdaten fehlen im Archiv.
+* Blockabilityid stimmt nicht.
+
+2009-08-01 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Use GetSpellTargetX() and GetSpellTargetY().
+
+2009-07-27 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Credits should be accessable by main menu (pressing escape) like the GUI inventory. Credits should be shown as floating text and in character class selection camera view.
+
+2009-07-26 Tamino Dauth <tamino@cdauth.eu>
+* Actor latscht nicht.
+* Wenn Dago die Bären killt, passiert nix.
+* Bären stehen falsch, nicht pausiert?!
+* Nordmannquest nicht gleich am Anfang erschaffen.
+* Nordmannquest ist nach Video ganz abgeschlossen?!
+* Bei Actors nicht Positionen verschieben, sondern originale Einheit verbergen und kopieren.
+
+2009-07-20 Tamino Dauth <tamino@cdauth.eu>
+* Wirtshaus begehbar machen.
+* Charaktere im Wirtshaus: Wirt, Frau des Wirts, Zwerg.
+
+2009-07-18 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Dago läuft nicht los.
+* FIXED: String- und Talk-Vektoren können nicht alloziert werden.
+* Text soll sofort entfernt werden, wenn Spieler einen Dialog überspringt.
+* Gesprächskameraansichten stimmen nicht.
+* Tagesabläufe benötigen eine Wiederaufnahmefunktion, Wigberht muss sich zurückdrehen und mit seinem Kampf fortfahren.
+* Weather ist dauernd 11, und dann dauernd 21 richtige Zufallswerte?
+* Brücke zum Aufstieg nach Talras ist nicht begehbar.
+* FIXED: Bären wehren sich nicht richtig.
+* TheCastle Kameraübergänge sind zu langsam.
+* FIXED: Beim Benchmark wird wohl die falsche Zeit angezeigt.
+
+2009-07-08 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Use spell effects instead of special effects.
+
+2009-06-28 Tamino Dauth <tamino@cdauth.eu>
+* Was passiert mit Tagesabläufen von Charakteren, die während einer Videosequenz "depausiert" werden.
+
+2009-06-27 Tamino Dauth <tamino@cdauth.eu>
+* Beide Charakterklassenauswahlcharaktere werden angezeigt.
+* FIXED: Wetter funktioniert nur bei Spieler 2.
+* FIXED: Ich kam mit meinen Männern aus dem Norden.
+* FIXED: DMDF_CHARACTERS_SCHEME_LEVEL fehlt bei Spieler 1 in der Anzeige.
+* FIXED: Wetter bleibt zu lange?
+* Videomusik zu leise.
+* FIXED: Tooltiptext in Inventar wird beiden Spielern angezeigt.
+* Beim Schließen des Inventars Disconnect.
+* FIXED: Astralwandler hat keine Zauber.
+* DONE: Third-Person-Ansicht aktivierbar machen.
+* DONE: Höhe bei Kamera in Gesprächen überprüfen.
+* FIXED: Spieler zwei kann AOS nicht betreten, setMovable Error, der Dialog kommt bei Spieler 1
+* AOS-Musik kommt bei allen Spielern
+* FIXED: Nach nein beim AOS-Dialog kommt kurz Wiederbelebungstimer
+* FIXED: AOS-Questpings kommen auch nach Verlassen der AOS
+* Wenn Spieler 1 das Spiel verlässt, wird dessen Charakter bei Spieler 2 nicht gelöscht und kein Verlassentext steht in der Charakteranzeige.
+* FIXED: Nach Schließen des Inventars von Spieler 2, kann dieser sich nicht mehr bewegen und ist unbesiegbar. Außerdem kann das Inventar nicht mehr geöffnet werden.
+
+2009-06-25 Tamino Dauth <tamino@cdauth.eu>
+* Stab der Klarheit einbauen.
+* Zutaten-Gegenstände für den Auftrag "Mein Freund der Bär" ausdenken und einbauen.
+* FIXED: Im Zauberbuch ist beim Elementarmagier kein einziger Zauber zu sehen.
+* DONE: Eine Art group-Wrapper implementieren, der Gruppen ähnlich wie Arrays behandelt.
+* FIXED: Klasse stimmt nicht.
+* FIXED: Markward bewegt sich nicht.
+* FIXED: Osman Gräber, keine Startseite
+* FIXED: Stab des Zauberers käuflich machen und Tooltip geben.
+* Bei den zwei Infos vom Auftrag "Mein Freund der Bär, kommt das mit der Liste und lauter alter Müll.
+* Ringtypen hinzufügen
+* Entstapeln geht nach Entstapeln und erneutem Stapeln eines Gegenstandes nicht mehr.
+* Bei einer geringen Anzahl von Dialogbuttons (weniger als eine Seite voll), wird keiner angezeigt?!
+
+2009-06-23 Tamino Dauth <tamino@cdauth.eu>
+* Sollen Zauber zur Laufzeit besser werden, wenn sie zu dieser verbessert werden (durch Stufenerhöhung).
+* Was geschieht mit Zauberverstärkern, wenn derselbe Zauber mehrmals auf eine Einheit gezaubert wurde.
+* Teiler bei Sprüngen wieder auf 100 setzen.
+* Klasse mit vielen Fähigkeiten im Zauberbuch hängt beim Erstellen?
+* Cheats gehen nicht. Auslöseraktion?
+* Zurück-Button sollte am Anfang der nächsten Dialogseite erzeugt werden.
+* Charges von der rechten Seite werden nicht immer zurückgesetzt, bei Tausch der Seitengegenstände.
+* Beim Equippen sofort in den Rucksack?!
+* Bären pausiert?
+* Item type ist oft 0.
+
+2009-06-22 Tamino Dauth <tamino@cdauth.eu>
+* Gegner am Austieg hinter der Charakterstartposition platzieren. Eventuell auch einige Kisten bzw. Verstecke.
+* Video "Der Herzog von Talras" vollenden.
+
+2009-06-21 Tamino Dauth <tamino@cdauth.eu>
+* Benötige Strukturen AJump, AKnockback und ADamageReducer (extends ADamageRecorder).
+* Benötige diverse Verlaufstexturen für Brücken.
+* FIXED: Wir sind fast da kommt bei allen Einheiten.
+* FIXED: Quest ist noch nicht entdeckt (Dago).
+* FIXED: Important action läuft, Dialog kommt aber sofort ohne Buttons.
+* In der Auslöseraktion des Quest-Auslösers wird nicht die Methode setState der Kindstruktur aufgerufen -.-.
+* Models\Items\Spear kann nicht geladen werden.
+* Video The Castle initialisieren, flüssigere Kamerafahrt!
+* FIXED: FarZ?!
+* FIXED: Tellborn fehlen Ladenfähigkeiten
+
+2009-06-20 Tamino Dauth <tamino@cdauth.eu>
+* Wiederbelebung nochmal überprüfen.
+* FIXED: Modell der Sonnenlichtstrahlen ist falsch benannt und funktioniert nicht.
+* Tageshimmel kann nicht geladen werden.
+* Axtmodell geht vermutlich nicht
+* Breitschild ist nicht richtig eingetragen
+* Holzschild ist nicht richtig eingetragen
+* Schwerer Holzschild ist auch nicht richtig eingetragen
+* FIXED: Axt macht 8 Schaden und Fähigkeit ist nicht richtig eingetragen?!
+* Stabschaden wird auch im Inventar addiert.
+* FIXED: Vertauschen der Seitenwechselgegenstände funktioniert nicht so richtig.
+
+2009-06-18 Tamino Dauth <tamino@cdauth.eu>
+* Anscheinend wir gestackt, auch wenn man den Gegenstand nicht auf den anderen legt, er muss nur auf derselben Seite sein?
+* Gegenstand verschwindet immer noch nicht, beim ablegen (Ausrüstungsgegenstand).
+* Unequippend sollte vielleicht auf dem eigenen Slot geschehen.
+
+2009-06-16 (vermutlich auch 17) Tamino Dauth <tamino@cdauth.eu>
+* DONE: SmartPan bei Deaktivierung des Inventars benutzen.
+* Hintergrundbild erscheint nicht im Inventar.
+* Geistliche Schwertkämpferinnen in der AOS gehören entweder dem falschen Spieler oder die Spieler sind verbündet.
+* Beim Stapeln im Rucksack verschwindet ein Gegenstand und die Slots bleiben gleich
+* Beim Anlegen von Gegenständen aus dem Rucksack (Drop auf dem gleichen Slot verschwindet auch der Gegenstand in Slot 0 (Gegenstand wird nur entfernt, aber nichts auf 0 gesetzt, ist nach erneutem Öffnen wieder da)
+* Beim Stapeln ist eine Aufladung zu wenig vorhanden.
+* Beim Droppen eines Gegenstandes auf den Rechtenseitengegenstand, werden beide gedroppt.
+* Beim Droppen auf den Linkenseitengegenstand wird nur der Seitengegenstand gedroppt, der andere verschwindet.
+* Beim Equippen aus dem Rucksack, wird das alte Equipment nicht im Rucksack hinzugefügt.
+* Beim Seitenvorwärtsbewegen erscheint der Gegenstand nicht auf der nächsten Seite.
+* Schauen, ob beim Destacken auch die Daten richtig behandelt werden. Verbrauchbare Gegenstände unbedingt anders behandeln als dauerhafte
+* Beim Stapeln verschwindet der Gegenstand, auf den man den anderen gelegt hat und die Aufladungen werden nicht mehr
+* Beim Entstapeln müssen aufladbare Gegenstände 1 Slot erhalten, beim Einen abziehen und beim anderen auf 1 setzen
+* Beim Ablegen eines Gegenstandes mit 3 Aufladungen werden zwei Gegenstände erzeugt und keiner angelegt
+* Ein Gegenstand mit einer Aufladung befindet sich zwar noch im Inventar, wird aber nicht angezeigt
+* Wenn man entstapeln will, wird oft bewegt und der Gegenstand bleibt einfach im Inventar (auch nach Schließen des Rucksacks)
+* Beim Anlegen aus dem Rucksack heraus, wird zwar der eine Gegenstand, der nun eigentlich in den Rucksack sollte beim Charakter am Boden erzeugt, aber nicht ins Inventar eingefügt
+* Beim Entstapeln aufgeladener Gegenstände hat der entstapelte immer noch keine Aufladung.
+* Funktion Aufräumen einbauen, welche alles mit einander stapelt, was miteinander stapelbar ist.
+* Beim Anlegen aus dem Inventar heraus, wird der Gegenstand, welcher eigentlich im Rucksack erscheinen sollte nur an den Boden gelegt.
+* Checking Index -1, Free Index -1??? beim Rückwärtsbewegen
+* Free Index 4. Nix erscheint bei Index 4.
+* Benutzung eines Gegenstandes ist KEIN DROP!!!! außer es war die letzte Aufladungb
+* Beim Hinzufügen von Gegenständen wird nicht automatisch gestapelt.
+* Entstapeln geht nicht bei aufladbaren Gegenständen?
+* Bei add to rucksack vom Equipment verschwindet der Gegentand nicht, nochmal überprüfen, ob bei der Bewegung von Equipment korrekt zurückgesetzt wird
+* Beim Rückwärtsverschieben auf die linke Seite wird zu erst Slot 0 und nicht Slot 3 überprüft. last index 63, Gegenstand sollte bei add to rucksack verschwinden.
+* Kamera am Fluss, zu langes Warten
+* actor sollte reden
+* Beim Bewegen eines Stapelgegenstandes auf das leere Slot 3, wird es mit Slot 1, leider falsch gestapelt (nur eine Aufladung mehr).
+* Rückwärtsverschiebung beginnt beim alten Slot
+* Index -1 wird überprüft?!
+
+2009-06-15 Tamino Dauth <tamino@cdauth.eu>
+* Auf allen Seiten außer der Seite 0 wurde der Gegenstand immer noch nicht angezeigt als er zum Rucksack hinzugefügt wurde.
+* Bewegt man einen Ausrüstungsgegenstand auf das Slot 0, so wird es vorerst zum richtigen zurückgelegt, bewegt man es nun aber auf Slot 1, so wird es auf Slot 0 verschoben.
+* Wenn man einen Gegenstand über den Rucksack anlegt, so kommt die Nachricht "Zum Rucksack hinzugefügt", allerdings nicht die Nachricht, dass der Gegenstand nicht angelegt werden kann.
+* Wenn ein Gegenstand mit mehreren Aufladungen auf den Boden gelegt wird, so erscheinen dort zwei Gegenstände. Die eine Aufladung wird zwar korrekt abgezogen, der abgelegte Gegenstand mit allen Aufladungen verschwindet jedoch nicht.
+* Aus Favoriten entfernen verringert die Stufe eines Zaubers.
+* Wenn man einen Gegenstand aus dem Rucksack anlegt, so muss sichergestellt werden, dass der bereits angelegte Gegenstand des Typs ausgetauscht wird.
+* Wenn man einen Gegenstand auf Seite 1 einsammelt, der gestapelt werden soll, so wird der linke Rucksackseitenbuttongegenstand gestapelt. Es wird immer im Slot 4 + das eigentliche Slot gestapelt.
+* Beim Ablegen von gestapelten Gegenständen werden nun immer zwei Gegenstände am Boden erzeugt und keiner mehr im Inventar.
+* Wenn ein Gegenstand mit genau einer Aufladung! im Rucksack auf seinem Fach abgelegt und daraufhin am Helden angelegt wird, so verschwindet er gänzlich anstatt nur eine Aufladung.
+* Gegenstände werden (zum Beispiel auf Seite 5) immer noch nicht "live" gestapelt, sondern erst bei erneutem Öffnen.
+
+2009-06-13 Tamino Dauth <tamino@cdauth.eu>
+* Modelle von Fähigkeiten der Ausrüstungsgegenstände werden nicht an ihrem Träger angehängt.
+* vJass bug: Der JassHelper denkt, alle Strukturen seien Schnittstellen und ruft deshalb in ihren Destruktoren nicht den entsprecheneden Auslöser auf.
+* Benötigte Rothirschmodell am besten auch eine Rothirschkuh und ein Hirschkalb.
+* Benötige mindestens zwei Wegelagerermodelle.
+* FIXED: Nahkampfreichweite auf 90 reduzieren (Keiler, Rothirsche).
+* FIXED: Schwebende Texte einer GUI sollten anfangs verborgen werden.
+* Wenn Gegenstand nicht angelegt werden kann (nach dem Aufheben) und er in den Rucksack kommt, wird er trotz des geöffneten Rucksacks nicht angezeigt.
+* Video startet nicht.
+
+2009-06-10 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Tastenkürzel bei Buttons beginnen bei 0
+* Intro startet bei letzter Kamera, vermutlich doch pan, vielleicht durch Deaktivierung der Inventars?
+* DONE: Eigene Zauberpunkte!
+* Erfrierung?
+* Bei gleißendem Licht, Buff manuell adden
+* Bei Feuerirgendwas können keine feindlichen Einheiten angewählt werden
+* Blitzeffekt zeigt nur Todesanimation
+* FIXED: Textures/Effects/Konzentration2.blp kann nicht geladen werden
+
+2009-06-09 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Bei trainierst du nachts kommt hallo
+* Kiste2 funktioniert nicht
+
+2009-06-08 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Bei zurück kommt immer noch Trainierst du nachts?
+* FIXED: Bei bist wohl nicht so gesprächig kommt Hallo
+* FIXED: Hallo wird dauerhaft angezeigt
+* FIXED: Bei Klar kommt Hallo
+* FIXED: Bei Unsinn kommt trainierst du nachts
+
+2009-06-07 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Button action!, mehr passiert nicht
+* GUI wird geöffnet, während Videosequenz (Escape-Taste) sollte nicht möglich sein.
+* Closebutton in Talk scheint zu funktionieren
+* FIXED: Wartet immer noch nicht bei Buttonatkionen
+* FIXED: speech-Funktionen als Funktionen und nicht Methoden implementieren, da diese vermutlich mit evaluate oder execute aufgerufen werden, was die TriggerSleepAction-Anweisungen ignoriert (die darauffolgende Anweisung wird sofort ausgeführt).
+* Methoden werden mit Hilfe von Auslösern implementiert, da eine Funktion erst aufgerufen werden kann, wenn sie vor ihrem Aufruf im Code definiert wurde. Rufen sich zwei Methoden gegenseitig auf, ist dies nicht mehr möglich, daher werden TriggerExecute und TriggerEvaluate verwendet.
+* FIXED: Datei Textures/Kiste.blp fehlt
+* Der Zauber Erfrierung benötigt noch ein Modell für den Erfrierungseffekt bei den Betroffenen.
+* FIXED: Infernoeffekt origin!
+* Alle Zauber während Videosequenz deaktivieren
+* FIXED: Charakter muss zwei Zauberpunkte pro Stufe erhalten (manuell einbauen).
+* FIXED: Hallo hat falschen Effekt.
+* Talkeffekt während Gespräch entfernen?
+* FIXED: Nach Wo hast du so zu kämpfen gelernt kommt Was machst du hier und Wer bist du?
+* FIXED: Bei Hallo kommen zwei Buttons: Bist wohl nicht so gesprächig und Zurück. Erstere öffnet nochmal die beiden Buttons. Zurück erzeugt Trainierst du nachts?
+* Dunkler Diener und der andere Müll stammen von der gleichen Fähigkeit und werden deshalb gleichzeitig gezaubert.
+
+2009-06-06 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Holzschild verstärkt um 5.
+* FIXED: pan muss schneller gehen, bj-Funktion verwenden
+* FIXED: Keilerfähigkeit hat keine Abklingzeit
+* FIXED: Keilerfähigkeit ist rechts oben und hat kein Tooltip
+* Heiltrank hat keine Abklingzeit?
+* Nur der Bonus des Holzschildes verbleibt, wenn der Rucksack geöffnet wird
+* FIXED: Rucksackgegenstände, die in den Rucksack gelegt werden, während dieser geöffnet ist, werden nicht angezeigt
+* Braunbären patroullieren trotz Pausierung (Streifzug)
+* Keiler greifen immer noch nicht an
+* Katzenrune erzeugt Keiler
+* state trigger des Quests "Rettet Dago!" ist null
+* Auswahl bei Videos speichern, clearen und zurücksetzen.
+* Gegenstände werden nicht angelegt, wenn der Rucksack geöffnet ist während man sie einsammeln (obwohl möglich)
+* Testhelm- und Stabfähigkeiten überprüfen, werden nicht hinzugefügt
+* FIXED: Katzenrune wird nicht gestapelt, es bleibt immer exakt eine.
+* FIXED: Bei zu Favoriten hinzufügen erscheint "Remove favourite".
+* FIXED: Gewaffe werden ebenfalls nicht gestapelt
+* Swap item funktioniert nicht richtig
+* FIXED: Bei der Videosequenz "Rettet Dago" ist das Video nicht aktiv (Abbrechen nicht möglich).
+* Im Inventarsystem mit den neuen Funktionen MoveItem usw. arbeiten anstatt den Gegenstand gleich zu droppen.
+* Pfadsystem implementieren, um NPCs wie Drago bestimmte Routen laufen zu lassen
+* DONE: Member der structs AQuestItem und AAbstractQuest umbenennen.
+* Stab wird in slot 4 gestackt?!
+* Wenn ein Gegenstand auf ein leeres Fach gelegt wird, soll einer davon darauf abgelegt werden (bei Gegenständen mit mehreren Aufladungen).
+* Wenn ein Gegenstand aus dem Rucksack an den Boden gelegt wird und mehrere Aufladungen hat, soll davon nur eine abgelegt werden.
+* DONE: Stufe verringern einbauen
+* FIXED: Quests werden nicht erzeugt -.-
+* Beim Droppen eines aufgeladenen Gegenstandes wird der eigentliche mit einer Aufladung weniger zwar erzeugt, aber nicht ins Fach verschoben ...
+* Bei swap items soll das item angelegt werden?!
+* Beim Drop passiert gar nichts
+* FIXED: Richtiges Zerstörbares beim Talrasschrein angeben
+* Next und previous page funktioniert nicht.
+* FIXED (Buttons): Vektor für Spielercharaktere und Dialogbuttons verwenden.
+* Zauber des Elementarmagiers werden teilweise gleichzeitig ausgeführt.
+* FIXED: Wenn Charakter unsichtbar ist (HideUnit) wird der schwebende Text von Fähigkeiten trotzdem angezeigt, deaktivieren!
+* Farbkodierung bei Dialogen stimmt nicht. Nur die erste eckige Klammer ist weiß.
+* Spiel stürzt durch neue next- und previous-Page-Funktion ab.
+
+2009-06-04 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Fix and improve grimoire.
+
+2009-04-16 Tamino Dauth <tamino@cdauth.eu>
+* Improve Kuno's dialog.
+* Add quest "Meine Tochter und der Bär".
+
+2009-04-14 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Add character document of Trommor's friend.
+* Improve Trommor's dialog.
+* Get the river's name and add it to Trommor's character document.
+
+2009-04-09 Tamino Dauth <tamino@cdauth.eu>
+* If a character enters or leaves AOS what should happen with his other units?
+* Move all player units in AOS rect into outside rect of AOS when player's character leaves AOS.
+* Ask for each player unit if it should be moved into AOS when player's character enters AOS.
+* Intro music's volume is too less.
+* Intro's river camera time is too long.
+
+2009-04-05 Tamino Dauth <tamino@cdauth.eu>
+* FIXED: Leaderboard of Aos should be displayed correctly.
+* DONE: Missing icon for ability "Entzünden".

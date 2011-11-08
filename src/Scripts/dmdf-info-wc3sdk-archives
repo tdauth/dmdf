@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source dmdf-init
+
+echo "wc3sdk archives:"
+showMpqInfo $WC3SDK_PATH/archives/Ambient.mpq
+showMpqInfo $WC3SDK_PATH/archives/Asl.mpq
+showMpqInfo $WC3SDK_PATH/archives/Creatures.mpq
+showMpqInfo $WC3SDK_PATH/archives/Interface.mpq
+showMpqInfo $WC3SDK_PATH/archives/Items.mpq
+showMpqInfo $WC3SDK_PATH/archives/Spells.mpq

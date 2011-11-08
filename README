@@ -1,0 +1,11 @@
+This is the 8th version of "Die Macht des Feuers".
+It is the current version.
+
+Available boolean constants:
+DMDF_TRADE enables trade system via dialog
+DMDF_INVENTORY enables advanced graphical inventory system
+DMDF_CHARACTER_MEMORY_ADMINISTRATION enables saving and loading characters from disk
+DMDF_INFO_LOG enables talk log system (GUI)
+DMDF_NPC_ROUTINES enables NPC routines
+DMDF_CHARACTER_STATS enables character stats system (GUI)
+DMDF_VIOLENCE enables blood effects in fights
