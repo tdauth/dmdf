@@ -46,9 +46,9 @@ export ASL_EXTERNAL_PATH=$EXTERNAL_PATH/Projekte/ASL
 echoStats "External Advanced Script Libray is located at \"$ASL_EXTERNAL_PATH\"."
 export DMDF_EXTERNAL_PATH=$EXTERNAL_PATH/Projekte/DMdF
 echoStats "External Die Macht des Feuers is located at \"$DMDF_EXTERNAL_PATH\"."
-export ASL_SMB_PATH=/home/tamino/Desktop/smb/Projekte/ASL
+export ASL_SMB_PATH=~/Desktop/smb/Projekte/ASL
 echoStats "SMB Advanced Script Library is located at \"$ASL_SMB_PATH\"."
-export DMDF_SMB_PATH=/home/tamino/Desktop/smb/Projekte/Die\ Macht\ des\ Feuers
+export DMDF_SMB_PATH=~/Desktop/smb/Projekte/Die\ Macht\ des\ Feuers
 echoStats "SMB Die Macht des Feuers is located at \"$DMDF_SMB_PATH\"."
 export MAP_PATH_TALRAS="$DMDF_PATH/maps/Karte 1 - Talras.w3x"
 echoStats "Map \"Talras\" is located at \"$MAP_PATH_TALRAS\"."
