@@ -405,13 +405,10 @@ endif
 			//call AMovement.init(0.01, 5.0, 30.0, true) //90.0 test
 			call ACharacter.init(true, true, false, true, false, true, false, false, false, true, true, DMDF_INFO_LOG)
 			call AClass.init(1, 1)
-			call AInfo.init(AKeyEscape, 1.0, "speech", "listen")
+			call initSpeechSkip(AKeyEscape, 1.0)
 			call AInventory.init('I001', 'I000', 'A015', false, tr("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt."), null, tr("Rucksack ist voll."),  tr("\"%s\" im Rucksack verstaut."), tr("Gegenstand konnte nicht verschoben werden."), tr("Die Seitengegenstände können nicht abgelegt werden."), tr("Die Seitengegenstände können nicht verschoben werden."), tr("Der Gegendstand gehört einem anderen Spieler."))
-			call ARevival.init(true)
 			call AItemType.init(tr("Gegenstand benötigt eine höhere Stufe."), tr("Gegenstand benötigt mehr Stärke."), tr("Gegenstand benötigt mehr Geschick."), tr("Gegenstand benötigt mehr Wissen."), tr("Gegenstand benötigt eine andere Charakterklasse."))
 			call AQuest.init0(true, true, "Sound\\Interface\\QuestLog.wav", tr("|c00ffcc00NEUER AUFTRAG|r"), tr("|c00ffcc00AUFTRAG ABGESCHLOSSEN|r"), tr("|c00ffcc00AUFTRAG FEHLGESCHLAGEN|r"), tr("|c00ffcc00AUFTRAGS-AKTUALISIERUNG|r"), tr("- %s"))
-			call AShrine.init("Abilities\\Spells\\Items\\TomeOfRetraining\\TomeOfRetrainingCaster.mdl", "Abilities\\Spells\\Demon\\SoulPerservation\\SoulPerservation.wav", null)
-			call ATalk.init("smart", 250.0, "Abilities\\Spells\\Other\\TalkToMe\\TalkToMe.mdl", false, true, tr("Ziel unterhält sich bereits."), tr("Ende"), tr("Zurück"))
 			call AVideo.init(2, 4.0, tr("Spieler %s möchte das Video überspringen."), tr("Video wird übersprungen."))
 			// world systems
 			call AItemSpawnPoint.init(4.0, 60.0, 200.0)
@@ -441,7 +438,6 @@ endif
 static if (DMDF_NPC_ROUTINES) then
 			call Routines.init()
 endif
-			call Shrine.init2()
 			call Spell.init()
 			call initSpells.evaluate() // after classes!
 			// map

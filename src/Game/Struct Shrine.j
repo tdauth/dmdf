@@ -2,7 +2,7 @@ library StructGameShrine requires Asl
 
 	struct Shrine extends AShrine
 		private unit m_unit
-		private static AIntegerVector m_shrines
+		private static AIntegerVector m_shrines = 0
 
 		public method setUnit takes unit whichUnit returns nothing
 			call UnitSetUsesAltIcon(this.m_unit, false)
@@ -22,15 +22,16 @@ library StructGameShrine requires Asl
 		endmethod
 
 		public static method create takes unit whichUnit, destructable usedDestructable, rect discoverRect, rect revivalRect, real facing returns thistype
-			local thistype this = thistype.allocate(usedDestructable, discoverRect, revivalRect, facing)
+			local region discoverRegion = CreateRegion()
+			local thistype this = thistype.allocate(usedDestructable, discoverRegion, revivalRect, facing)
+			call RegionAddRect(discoverRegion, discoverRect)
 			call UnitSetUsesAltIcon(whichUnit, true)
 			set this.m_unit = whichUnit
+			if (thistype.m_shrines == 0) then
+				set thistype.m_shrines = AIntegerVector.create()
+			endif
 			call thistype.m_shrines.pushBack(this)
 			return this
-		endmethod
-
-		public static method init2 takes nothing returns nothing
-			set thistype.m_shrines = AIntegerVector.create()
 		endmethod
 
 		public static method shrines takes nothing returns AIntegerVector

@@ -2,6 +2,7 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 
 	struct SpellScrollOfTheRealmOfTheDead extends ASpell
 		public static constant integer abilityId = 'A066'
+		public static constant real distance = 300.0
 
 		private method condition takes nothing returns boolean
 			local integer i
@@ -12,7 +13,7 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 			set i = 0
 			loop
 				exitwhen (i == Shrine.shrines().size())
-				if (RectContainsCoords(Shrine(Shrine.shrines()[i]).discoverRect(), GetSpellTargetX(), GetSpellTargetY())) then
+				if (GetDistanceBetweenPointsWithoutZ(GetDestructableX(Shrine(Shrine.shrines()[i]).destructable()), GetDestructableY(Shrine(Shrine.shrines()[i]).destructable()), GetSpellTargetX(), GetSpellTargetY()) <= thistype.distance) then
 					return true
 				endif
 				set i = i + 1

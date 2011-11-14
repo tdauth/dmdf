@@ -2871,11 +2871,17 @@ endfunction
 //TESH.alwaysfold=0
 ///! external TileSetter L LgrsFdroFdrtFdrgWsngLgrdWdrtWdroWsnwWrokBdrtBdrhLdroLrokLdrgWgrsLgrsFgrsFgrdFrok
 
+//! import "Import Asl.j"
+//! import "Import Dmdf.j"
+//! import "Talras/Import.j"
+static if (DEBUG_MODE) then
+//! import "Systems/Debug/Text en.j"
+endif
+
 globals
     constant boolean A_RTC = false
     constant boolean A_JAPI = false
     constant boolean A_SYSTEMS = true
-    constant boolean A_OBJECTS = true
     constant boolean A_DEBUG_HANDLES = false
     constant boolean A_DEBUG_NATIVES = false
     constant boolean A_NET = false
@@ -2883,6 +2889,15 @@ globals
     constant real A_MAX_COLLISION_SIZE = 300
     constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
     constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
+    // used by function GetTimeString()
+    constant string A_TEXT_TIME_VALUE = GetLocalizedString("0%1%")
+    constant string A_TEXT_TIME_PAIR = GetLocalizedString("%1%:%2%")
+    // used by ATalk
+    constant string A_TEXT_EXIT = GetLocalizedString("Exit")
+    constant string A_TEXT_BACK = GetLocalizedString("Back")
+    constant string A_TEXT_TARGET_TALKS_ALREADY = GetLocalizedString("Target is already talking.")
+    // used by ADialog
+    constant string A_TEXT_DIALOG_BUTTON = GetLocalizedString("[%1%] %2%")
     constant boolean DMDF_INVENTORY = false
     constant boolean DMDF_TRADE = false
     constant boolean DMDF_CHARACTER_STATS = true
@@ -2891,10 +2906,6 @@ globals
     constant boolean DMDF_CHARACTER_MEMORY_ADMINISTRATION = false
     constant boolean DMDF_VIOLENCE = true
 endglobals
-
-//! import "Import Asl.j"
-//! import "Import Dmdf.j"
-//! import "Talras/Import.j"
 
 // TESTINGS
 function LoopTest2 takes nothing returns nothing
