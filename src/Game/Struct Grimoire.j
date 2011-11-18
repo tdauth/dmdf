@@ -7,198 +7,6 @@
  */
 library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, Spells
 
-	private struct GrimoireSpell extends ASpell
-		private Grimoire m_grimoire
-		private integer m_grimoireAbility
-
-		public method grimoire takes nothing returns Grimoire
-			return this.m_grimoire
-		endmethod
-
-		public method grimoireAbility takes nothing returns integer
-			return this.m_grimoireAbility
-		endmethod
-
-		public method isShown takes nothing returns boolean
-			return GetUnitAbilityLevel(this.grimoire().character().unit(), this.ability()) >= 1 and this.isEnabled() // and is available
-		endmethod
-
-		public method show takes nothing returns nothing
-			debug call Print("Show spell " + GetObjectName(this.ability()) + ".")
-
-			if (this.isShown()) then
-				return
-			endif
-
-			call UnitAddAbility(this.grimoire().character().unit(), this.grimoireAbility())
-			call SetPlayerAbilityAvailable(this.grimoire().character().player(), this.grimoireAbility(), false)
-			call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), 1)
-			call this.enable()
-			//call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), this.level()
-		endmethod
-
-		public method hide takes nothing returns nothing
-			if (not this.isShown()) then
-				return
-			endif
-
-			call this.disable() // disable to prevent casts if some spells have the same id (spell book)
-			call UnitRemoveAbility(this.grimoire().character().unit(), this.grimoireAbility())
-		endmethod
-
-		public stub method onCastCondition takes nothing returns boolean
-			return this.grimoire().character().isMovable()
-		endmethod
-
-		public stub method onCastAction takes nothing returns nothing
-			call super.onCastAction()
-		endmethod
-
-		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbility returns thistype
-			local thistype this = thistype.allocate(grimoire.character(), abilityId, 0, 0, 0)
-			debug call this.print("Creating grimoire ability " + GetObjectName(this.ability()))
-			set this.m_grimoire = grimoire
-			set this.m_grimoireAbility = grimoireAbility
-
-			return this
-		endmethod
-	endstruct
-
-	private struct PreviousPage extends GrimoireSpell
-		public static constant integer id = 'A0AA'
-		public static constant integer grimoireAbilityId = 'A0AY'
-
-		public stub method onCastAction takes nothing returns nothing
-			call this.grimoire().decreasePage()
-		endmethod
-
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
-
-			return this
-		endmethod
-	endstruct
-
-	private struct NextPage extends GrimoireSpell
-		public static constant integer id = 'A0AB'
-		public static constant integer grimoireAbilityId = 'A0AX'
-
-		public stub method onCastAction takes nothing returns nothing
-			call this.grimoire().increasePage()
-		endmethod
-
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
-
-			return this
-		endmethod
-	endstruct
-
-	private struct Quit extends GrimoireSpell
-		public static constant integer id = 'A0AC'
-		public static constant integer grimoireAbilityId = 'A0AQ'
-
-		public stub method onCastAction takes nothing returns nothing
-			debug call this.print("Returning to spell book.")
-			call this.grimoire().showPage()
-		endmethod
-
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
-
-			return this
-		endmethod
-	endstruct
-
-	private struct Increase extends GrimoireSpell
-		public static constant integer id = 'A0AF'
-		public static constant integer grimoireAbilityId = 'A0AV'
-
-		public stub method onCastAction takes nothing returns nothing
-			debug call this.print("Increasing spell")
-			call this.grimoire().increaseSpell()
-		endmethod
-
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
-
-			return this
-		endmethod
-	endstruct
-
-	private struct Decrease extends GrimoireSpell
-		public static constant integer id = 'A0AG'
-		public static constant integer grimoireAbilityId = 'A0AW'
-
-		public stub method onCastAction takes nothing returns nothing
-			debug call this.print("Decreasing spell")
-			call this.grimoire().decreaseSpell()
-		endmethod
-
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
-
-			return this
-		endmethod
-	endstruct
-
-	private struct AddToFavourites extends GrimoireSpell
-		public static constant integer id = 'A0AH'
-		public static constant integer grimoireAbilityId = 'A0AU'
-
-		public stub method onCastAction takes nothing returns nothing
-			debug call this.print("Adding spell to favourites")
-			call this.grimoire().addSpellToFavourites()
-		endmethod
-
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
-
-			return this
-		endmethod
-	endstruct
-
-	private struct RemoveFromFavourites extends GrimoireSpell
-		public static constant integer id = 'A0AI'
-		public static constant integer grimoireAbilityId = 'A0AT'
-
-		public stub method onCastAction takes nothing returns nothing
-			debug call this.print("Removing spell from favourites")
-			call this.grimoire().removeSpellFromFavourites()
-		endmethod
-
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
-
-			return this
-		endmethod
-	endstruct
-
-	struct GrimoireSpellEntry extends GrimoireSpell
-		private Spell m_spell
-
-		public method spell takes nothing returns Spell
-			return this.m_spell
-		endmethod
-
-		public method updateLevel takes nothing returns nothing
-			call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), this.spell().level())
-		endmethod
-
-		public stub method onCastAction takes nothing returns nothing
-			/// \todo cancel order since ability will be removed!
-			//call IssueImmediateOrderById(this.character().unit(), A_ORDER_ID_STUNNED)
-			call this.grimoire().setCurrentSpell(this.spell())
-		endmethod
-
-		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbilityId, Spell spell returns thistype
-			local thistype this = thistype.allocate(grimoire, abilityId, grimoireAbilityId)
-			set this.m_spell = spell
-
-			return this
-		endmethod
-	endstruct
-
 	struct Grimoire extends ASpell
 		public static constant integer maxSpells = 15
 		public static constant integer spellsPerPage = 8
@@ -257,12 +65,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			return this.m_favourites
 		endmethod
 
-		public method setCurrentSpell takes Spell spell returns nothing
-			debug call this.print("Current spell is " + GetObjectName(spell.ability()))
-			set this.m_currentSpell = spell
-			call this.showSpell()
-		endmethod
-
 		public method currentSpell takes nothing returns Spell
 			return this.m_currentSpell
 		endmethod
@@ -309,37 +111,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		endmethod
 
 		/**
-		 * Should be called for computer controlled players which do not skill their spells in grimoire.
-		 * \note High-skilled spells are prefered. First skilled spell is taken randomly!
-		 */
-		public method autoSkill takes nothing returns nothing
-			local AIntegerVector skillableSpells = Spell.skillableClassSpells(this.character())
-			local integer i
-			local Spell spell
-			if (skillableSpells.size() > 0) then
-				loop
-					exitwhen (this.skillPoints() == 0)
-					set i = 0
-					set spell = skillableSpells.random()
-					loop
-						exitwhen (i == skillableSpells.size())
-						if (Spell(skillableSpells[i]).level() > spell.level()) then
-							set spell = skillableSpells[i]
-						endif
-						set i = i + 1
-					endloop
-					if (not this.m_spells.contains(spell)) then
-						call this.addSpell(spell)
-					endif
-					call this.setSpellLevelWithoutConditions(spell, spell.level() + 1)
-				endloop
-			debug else
-				debug call this.print("No more skillable spells")
-			endif
-			call skillableSpells.destroy()
-		endmethod
-
-		/**
 		 * \return Returns the number of learned spells (spells which have level of at least 1).
 		 */
 		public method learnedSpells takes nothing returns integer
@@ -353,6 +124,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 				set i = i + 1
 			endloop
 			return result
+		endmethod
+
+		public method removeSkillPoints takes integer skillPoints returns nothing
+			set this.m_skillPoints = IMaxBJ(0, this.m_skillPoints - skillPoints)
+			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
 		endmethod
 
 		/**
@@ -369,14 +145,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
 			// auto skill
 			if (GetPlayerController(this.character().player()) == MAP_CONTROL_COMPUTER) then
-				call this.autoSkill()
+				call this.autoSkill.evaluate()
 				call this.character().displayMessageToAllOthers(ACharacter.messageTypeInfo, Format(tr("Die Zauberpunkte für %1% wurden automatisch verteilt.")).s(this.character().name()).result())
 			endif
-		endmethod
-
-		public method removeSkillPoints takes integer skillPoints returns nothing
-			set this.m_skillPoints = IMaxBJ(0, this.m_skillPoints - skillPoints)
-			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
 		endmethod
 
 		public method spellIndex takes Spell spell returns integer
@@ -397,6 +168,60 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 
 		public method spells takes nothing returns integer
 			return this.m_spells.size()
+		endmethod
+
+		private method learnFavouriteSpell takes Spell spell returns nothing
+			local integer favouriteAbility = spell.favouriteAbility()
+			call this.m_favourites.pushBack(spell)
+			call spell.add()
+			call spell.setLevel(1)
+			call spell.onLearn.evaluate()
+		endmethod
+
+		private method unlearnFavouriteSpell takes Spell spell returns nothing
+			call spell.onUnlearn.evaluate()
+			call this.m_favourites.remove(spell)
+			call spell.remove()
+		endmethod
+
+		private method learnSpell takes Spell spell returns nothing
+			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
+			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
+			call spell.setLevel(1)
+			call spell.onLearn.evaluate()
+		endmethod
+
+		private method unlearnSpell takes Spell spell returns nothing
+			call spell.onUnlearn.evaluate()
+			call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
+			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), true)
+			call spell.remove()
+		endmethod
+
+		private method addFavouriteSpell takes Spell spell returns boolean
+			local integer level = spell.level()
+			local integer favouriteAbility = spell.favouriteAbility()
+			if (this.m_favourites.size() == thistype.maxFavourites) then
+				return false
+			endif
+			call this.m_favourites.pushBack(spell)
+			call UnitRemoveAbility(this.character().unit(), favouriteAbility)
+			call spell.add()
+			call spell.setLevel(level)
+			return true
+		endmethod
+
+		private method removeFavouriteSpell takes Spell spell returns boolean
+			local integer level = spell.level()
+			if (not this.m_favourites.contains(spell)) then
+				return false
+			endif
+			call this.m_favourites.remove(spell)
+			call spell.remove()
+			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
+			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
+			call spell.setLevel(level)
+			return true
 		endmethod
 
 		/// Adds spell \p spell to grimoire. If \p spellType is \ref Spell.spellTypeDefault it will be added with level 1.
@@ -435,25 +260,6 @@ endif
 			endif
 			call this.m_spells.erase(index)
 			return true
-		endmethod
-
-		/// If you do not need the spell instance anymore remember destroying it by .destroy().
-		public method removeSpell takes ASpell spell returns boolean
-			return this.removeSpellByIndex(this.m_spells.find(spell))
-		endmethod
-
-		public method setSpellAvailableByIndex takes integer index, boolean available returns nothing
-static if (DEBUG_MODE) then
-			if (index < 0 or index >= this.m_spells.size()) then
-				call this.printMethodError("setSpellAvailableByIndex", "Wrong spell index: " + I2S(index) + ".")
-				return
-			endif
-endif
-			call Spell(this.m_spells[index]).setAvailable(available)
-		endmethod
-
-		public method setSpellAvailable takes Spell spell, boolean available returns nothing
-			call this.setSpellAvailableByIndex(this.m_spells.find(spell), available)
 		endmethod
 
 		/// For internal usage (Grimoire.autoSkill).
@@ -500,7 +306,7 @@ endif
 			endif
 
 			if (spell.isGrimoireEntryShown()) then
-				call spell.grimoireEntry().updateLevel()
+				call spell.grimoireEntry().updateLevel.evaluate()
 			endif
 
 			return true
@@ -508,6 +314,56 @@ endif
 
 		public method setSpellLevelWithoutConditions takes Spell spell, integer level returns boolean
 			return this.setSpellLevelByIndexWithoutConditions(this.m_spells.find(spell), level)
+		endmethod
+
+		/**
+		 * Should be called for computer controlled players which do not skill their spells in grimoire.
+		 * \note High-skilled spells are prefered. First skilled spell is taken randomly!
+		 */
+		public method autoSkill takes nothing returns nothing
+			local AIntegerVector skillableSpells = Spell.skillableClassSpells(this.character())
+			local integer i
+			local Spell spell
+			if (skillableSpells.size() > 0) then
+				loop
+					exitwhen (this.skillPoints() == 0)
+					set i = 0
+					set spell = skillableSpells.random()
+					loop
+						exitwhen (i == skillableSpells.size())
+						if (Spell(skillableSpells[i]).level() > spell.level()) then
+							set spell = skillableSpells[i]
+						endif
+						set i = i + 1
+					endloop
+					if (not this.m_spells.contains(spell)) then
+						call this.addSpell(spell)
+					endif
+					call this.setSpellLevelWithoutConditions(spell, spell.level() + 1)
+				endloop
+			debug else
+				debug call this.print("No more skillable spells")
+			endif
+			call skillableSpells.destroy()
+		endmethod
+
+		/// If you do not need the spell instance anymore remember destroying it by .destroy().
+		public method removeSpell takes ASpell spell returns boolean
+			return this.removeSpellByIndex(this.m_spells.find(spell))
+		endmethod
+
+		public method setSpellAvailableByIndex takes integer index, boolean available returns nothing
+static if (DEBUG_MODE) then
+			if (index < 0 or index >= this.m_spells.size()) then
+				call this.printMethodError("setSpellAvailableByIndex", "Wrong spell index: " + I2S(index) + ".")
+				return
+			endif
+endif
+			call Spell(this.m_spells[index]).setAvailable(available)
+		endmethod
+
+		public method setSpellAvailable takes Spell spell, boolean available returns nothing
+			call this.setSpellAvailableByIndex(this.m_spells.find(spell), available)
 		endmethod
 
 		public method setSpellLevelByIndex takes integer index, integer level returns boolean
@@ -720,60 +576,6 @@ endif
 			endloop
 		endmethod
 
-		private method learnFavouriteSpell takes Spell spell returns nothing
-			local integer favouriteAbility = spell.favouriteAbility()
-			call this.m_favourites.pushBack(spell)
-			call spell.add()
-			call spell.setLevel(1)
-			call spell.onLearn.evaluate()
-		endmethod
-
-		private method unlearnFavouriteSpell takes Spell spell returns nothing
-			call spell.onUnlearn.evaluate()
-			call this.m_favourites.remove(spell)
-			call spell.remove()
-		endmethod
-
-		private method learnSpell takes Spell spell returns nothing
-			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
-			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
-			call spell.setLevel(1)
-			call spell.onLearn.evaluate()
-		endmethod
-
-		private method unlearnSpell takes Spell spell returns nothing
-			call spell.onUnlearn.evaluate()
-			call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
-			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), true)
-			call spell.remove()
-		endmethod
-
-		private method addFavouriteSpell takes Spell spell returns boolean
-			local integer level = spell.level()
-			local integer favouriteAbility = spell.favouriteAbility()
-			if (this.m_favourites.size() == thistype.maxFavourites) then
-				return false
-			endif
-			call this.m_favourites.pushBack(spell)
-			call UnitRemoveAbility(this.character().unit(), favouriteAbility)
-			call spell.add()
-			call spell.setLevel(level)
-			return true
-		endmethod
-
-		private method removeFavouriteSpell takes Spell spell returns boolean
-			local integer level = spell.level()
-			if (not this.m_favourites.contains(spell)) then
-				return false
-			endif
-			call this.m_favourites.remove(spell)
-			call spell.remove()
-			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
-			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
-			call spell.setLevel(level)
-			return true
-		endmethod
-
 		/*
 		private static method dialogButtonActionLearnSpell takes ADialogButton dialogButton returns nothing
 			local player user = dialogButton.dialog().player()
@@ -923,32 +725,38 @@ endif
 					set i = i + 1
 				endloop
 
-				call this.m_spellPreviousPage.hide()
-				call this.m_spellNextPage.hide()
+				call this.m_spellPreviousPage.hide.evaluate()
+				call this.m_spellNextPage.hide.evaluate()
 			endif
 
 			if (this.currentSpell().isSkillable()) then
-				call this.m_spellIncrease.show()
+				call this.m_spellIncrease.show.evaluate()
 			elseif (not this.pageIsShown()) then
-				call this.m_spellIncrease.hide()
+				call this.m_spellIncrease.hide.evaluate()
 			endif
 			if (this.currentSpell().level() > 0) then
-				call this.m_spellDecrease.show()
+				call this.m_spellDecrease.show.evaluate()
 
 				if (this.m_favourites.contains(this.currentSpell())) then
-					call this.m_spellRemoveFromFavourites.show()
+					call this.m_spellRemoveFromFavourites.show.evaluate()
 				elseif (this.m_favourites.size() < thistype.maxFavourites) then
-					call this.m_spellAddToFavourites.show()
+					call this.m_spellAddToFavourites.show.evaluate()
 				endif
 			elseif (not this.pageIsShown()) then
-				call this.m_spellDecrease.hide()
-				call this.m_spellRemoveFromFavourites.hide()
-				call this.m_spellAddToFavourites.hide()
+				call this.m_spellDecrease.hide.evaluate()
+				call this.m_spellRemoveFromFavourites.hide.evaluate()
+				call this.m_spellAddToFavourites.hide.evaluate()
 			endif
 
-			call this.m_spellQuit.show()
+			call this.m_spellQuit.show.evaluate()
 			set this.m_pageIsShown = false
 			call IssueImmediateOrderById(this.character().unit(), this.ability()) // open grimoire again (lost all abilities before
+		endmethod
+
+		public method setCurrentSpell takes Spell spell returns nothing
+			debug call this.print("Current spell is " + GetObjectName(spell.ability()))
+			set this.m_currentSpell = spell
+			call this.showSpell()
 		endmethod
 
 		/// \todo Using method without index would improve performance massively!
@@ -957,10 +765,10 @@ endif
 			if (this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() + 1)) then
 				if (not this.pageIsShown()) then
 					if (not this.currentSpell().isSkillable()) then
-						call this.m_spellIncrease.hide()
+						call this.m_spellIncrease.hide.evaluate()
 					endif
 					// since it must be at least level 1 we need no additional check for level > 0!
-					call this.m_spellDecrease.show()
+					call this.m_spellDecrease.show.evaluate()
 				endif
 			endif
 			return false
@@ -971,10 +779,10 @@ endif
 			if (this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() - 1)) then
 				if (not this.pageIsShown()) then
 					if (this.currentSpell().level() == 0) then
-						call this.m_spellDecrease.hide()
+						call this.m_spellDecrease.hide.evaluate()
 					endif
 					if (this.currentSpell().isSkillable()) then
-						call this.m_spellIncrease.show()
+						call this.m_spellIncrease.show.evaluate()
 					endif
 				endif
 			endif
@@ -983,15 +791,15 @@ endif
 
 		public method addSpellToFavourites takes nothing returns nothing
 			if (this.addFavouriteSpell(this.currentSpell())) then
-				call this.m_spellAddToFavourites.hide()
-				call this.m_spellRemoveFromFavourites.show()
+				call this.m_spellAddToFavourites.hide.evaluate()
+				call this.m_spellRemoveFromFavourites.show.evaluate()
 			endif
 		endmethod
 
 		public method removeSpellFromFavourites takes nothing returns nothing
 			if (this.removeFavouriteSpell(this.currentSpell())) then
-				call this.m_spellAddToFavourites.show()
-				call this.m_spellRemoveFromFavourites.hide()
+				call this.m_spellAddToFavourites.show.evaluate()
+				call this.m_spellRemoveFromFavourites.hide.evaluate()
 			endif
 		endmethod
 
@@ -999,14 +807,14 @@ endif
 			local integer i
 			local integer index
 			if (not this.pageIsShown()) then
-				call this.m_spellIncrease.hide()
-				call this.m_spellDecrease.hide()
-				call this.m_spellRemoveFromFavourites.hide()
-				call this.m_spellAddToFavourites.hide()
-				call this.m_spellQuit.hide()
+				call this.m_spellIncrease.hide.evaluate()
+				call this.m_spellDecrease.hide.evaluate()
+				call this.m_spellRemoveFromFavourites.hide.evaluate()
+				call this.m_spellAddToFavourites.hide.evaluate()
+				call this.m_spellQuit.hide.evaluate()
 
-				call this.m_spellPreviousPage.show()
-				call this.m_spellNextPage.show()
+				call this.m_spellPreviousPage.show.evaluate()
+				call this.m_spellNextPage.show.evaluate()
 			endif
 
 			// update current shown spells
@@ -1081,14 +889,14 @@ endif
 			set this.m_currentSpell = 0
 			set this.m_spells = AIntegerVector.create()
 
-			set this.m_spellNextPage = NextPage.create(this)
-			set this.m_spellPreviousPage = PreviousPage.create(this)
-			set this.m_spellQuit = Quit.create(this)
+			set this.m_spellNextPage = NextPage.create.evaluate(this)
+			set this.m_spellPreviousPage = PreviousPage.create.evaluate(this)
+			set this.m_spellQuit = Quit.create.evaluate(this)
 			//call UnitAddAbility(this.unit(), this.m_spellQuit.ability())
-			set this.m_spellIncrease = Increase.create(this)
-			set this.m_spellDecrease = Decrease.create(this)
-			set this.m_spellAddToFavourites = AddToFavourites.create(this)
-			set this.m_spellRemoveFromFavourites = RemoveFromFavourites.create(this)
+			set this.m_spellIncrease = Increase.create.evaluate(this)
+			set this.m_spellDecrease = Decrease.create.evaluate(this)
+			set this.m_spellAddToFavourites = AddToFavourites.create.evaluate(this)
+			set this.m_spellRemoveFromFavourites = RemoveFromFavourites.create.evaluate(this)
 			call this.showPage()
 
 			return this
@@ -1109,13 +917,205 @@ endif
 			//call DmdfHashTable.global().destroyTrigger(this.m_researchTrigger)
 			//set this.m_researchTrigger = null
 
-			call this.m_spellNextPage.destroy()
-			call this.m_spellPreviousPage.destroy()
-			call this.m_spellQuit.destroy()
-			call this.m_spellIncrease.destroy()
-			call this.m_spellDecrease.destroy()
-			call this.m_spellAddToFavourites.destroy()
-			call this.m_spellRemoveFromFavourites.destroy()
+			call this.m_spellNextPage.destroy.evaluate()
+			call this.m_spellPreviousPage.destroy.evaluate()
+			call this.m_spellQuit.destroy.evaluate()
+			call this.m_spellIncrease.destroy.evaluate()
+			call this.m_spellDecrease.destroy.evaluate()
+			call this.m_spellAddToFavourites.destroy.evaluate()
+			call this.m_spellRemoveFromFavourites.destroy.evaluate()
+		endmethod
+	endstruct
+
+	struct GrimoireSpell extends ASpell
+		private Grimoire m_grimoire
+		private integer m_grimoireAbility
+
+		public method grimoire takes nothing returns Grimoire
+			return this.m_grimoire
+		endmethod
+
+		public method grimoireAbility takes nothing returns integer
+			return this.m_grimoireAbility
+		endmethod
+
+		public method isShown takes nothing returns boolean
+			return GetUnitAbilityLevel(this.grimoire().character().unit(), this.ability()) >= 1 and this.isEnabled() // and is available
+		endmethod
+
+		public method show takes nothing returns nothing
+			debug call Print("Show spell " + GetObjectName(this.ability()) + ".")
+
+			if (this.isShown()) then
+				return
+			endif
+
+			call UnitAddAbility(this.grimoire().character().unit(), this.grimoireAbility())
+			call SetPlayerAbilityAvailable(this.grimoire().character().player(), this.grimoireAbility(), false)
+			call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), 1)
+			call this.enable()
+			//call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), this.level()
+		endmethod
+
+		public method hide takes nothing returns nothing
+			if (not this.isShown()) then
+				return
+			endif
+
+			call this.disable() // disable to prevent casts if some spells have the same id (spell book)
+			call UnitRemoveAbility(this.grimoire().character().unit(), this.grimoireAbility())
+		endmethod
+
+		public stub method onCastCondition takes nothing returns boolean
+			return this.grimoire().character().isMovable()
+		endmethod
+
+		public stub method onCastAction takes nothing returns nothing
+			call super.onCastAction()
+		endmethod
+
+		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbility returns thistype
+			local thistype this = thistype.allocate(grimoire.character(), abilityId, 0, 0, 0)
+			debug call this.print("Creating grimoire ability " + GetObjectName(this.ability()))
+			set this.m_grimoire = grimoire
+			set this.m_grimoireAbility = grimoireAbility
+
+			return this
+		endmethod
+	endstruct
+
+	struct PreviousPage extends GrimoireSpell
+		public static constant integer id = 'A0AA'
+		public static constant integer grimoireAbilityId = 'A0AY'
+
+		public stub method onCastAction takes nothing returns nothing
+			call this.grimoire().decreasePage()
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+
+	struct NextPage extends GrimoireSpell
+		public static constant integer id = 'A0AB'
+		public static constant integer grimoireAbilityId = 'A0AX'
+
+		public stub method onCastAction takes nothing returns nothing
+			call this.grimoire().increasePage()
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+
+	struct Quit extends GrimoireSpell
+		public static constant integer id = 'A0AC'
+		public static constant integer grimoireAbilityId = 'A0AQ'
+
+		public stub method onCastAction takes nothing returns nothing
+			debug call this.print("Returning to spell book.")
+			call this.grimoire().showPage()
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+
+	struct Increase extends GrimoireSpell
+		public static constant integer id = 'A0AF'
+		public static constant integer grimoireAbilityId = 'A0AV'
+
+		public stub method onCastAction takes nothing returns nothing
+			debug call this.print("Increasing spell")
+			call this.grimoire().increaseSpell()
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+
+	struct Decrease extends GrimoireSpell
+		public static constant integer id = 'A0AG'
+		public static constant integer grimoireAbilityId = 'A0AW'
+
+		public stub method onCastAction takes nothing returns nothing
+			debug call this.print("Decreasing spell")
+			call this.grimoire().decreaseSpell()
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+
+	struct AddToFavourites extends GrimoireSpell
+		public static constant integer id = 'A0AH'
+		public static constant integer grimoireAbilityId = 'A0AU'
+
+		public stub method onCastAction takes nothing returns nothing
+			debug call this.print("Adding spell to favourites")
+			call this.grimoire().addSpellToFavourites()
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+
+	struct RemoveFromFavourites extends GrimoireSpell
+		public static constant integer id = 'A0AI'
+		public static constant integer grimoireAbilityId = 'A0AT'
+
+		public stub method onCastAction takes nothing returns nothing
+			debug call this.print("Removing spell from favourites")
+			call this.grimoire().removeSpellFromFavourites()
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+
+	struct GrimoireSpellEntry extends GrimoireSpell
+		private Spell m_spell
+
+		public method spell takes nothing returns Spell
+			return this.m_spell
+		endmethod
+
+		public method updateLevel takes nothing returns nothing
+			call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), this.spell().level())
+		endmethod
+
+		public stub method onCastAction takes nothing returns nothing
+			/// \todo cancel order since ability will be removed!
+			//call IssueImmediateOrderById(this.character().unit(), A_ORDER_ID_STUNNED)
+			call this.grimoire().setCurrentSpell(this.spell())
+		endmethod
+
+		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbilityId, Spell spell returns thistype
+			local thistype this = thistype.allocate(grimoire, abilityId, grimoireAbilityId)
+			set this.m_spell = spell
+
+			return this
 		endmethod
 	endstruct
 

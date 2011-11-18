@@ -428,7 +428,7 @@ endif
 			// game guis
 			call Credits.init0.evaluate()
 			//! import "Game/Credits.j"
-			call Fellow.init(tr("%1% hat sich Ihrer Gruppe angeschlossen."), null, tr("%1% hat Ihre Gruppe verlassen."), null, tr("%1% ist gefallen und wird in %2% Sekunden wiederbelebt."), null)
+			call Fellow.init.evaluate(tr("%1% hat sich Ihrer Gruppe angeschlossen."), null, tr("%1% hat Ihre Gruppe verlassen."), null, tr("%1% ist gefallen und wird in %2% Sekunden wiederbelebt."), null)
 static if (DMDF_INVENTORY) then
 			call Inventory.init0.evaluate()
 endif
@@ -498,45 +498,45 @@ endif
 		private static method onCheatActionAddSpells takes ACheat cheat returns nothing
 			local string class = cheat.argument()
 			if (class == "all" or class == null) then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAllOtherClassSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAllOtherClassSpells.evaluate()
 				call Print(tr("Alle anderen Klassenzauber erhalten."))
 			elseif (class == "c") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addClericSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addClericSpells.evaluate()
 				call Print(tr("Alle Klerikerzauber erhalten."))
 			elseif (class == "n") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addNecromancerSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addNecromancerSpells.evaluate()
 				call Print(tr("Alle Nekromantenzauber erhalten."))
 			elseif (class == "d") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addDruidSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addDruidSpells.evaluate()
 				call Print(tr("Alle Druidenzauber erhalten."))
 			elseif (class == "k") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addKnightSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addKnightSpells.evaluate()
 				call Print(tr("Alle Ritterzauber erhalten."))
 			elseif (class == "s") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addDragonSlayerSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addDragonSlayerSpells.evaluate()
 				call Print(tr("Alle Drachentöterzauber erhalten."))
 			elseif (class == "r") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addRangerSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addRangerSpells.evaluate()
 				call Print(tr("Alle Waldläuferzauber erhalten."))
 			elseif (class == "e") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addElementalMageSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addElementalMageSpells.evaluate()
 				call Print(tr("Alle Elementarmagierzauber erhalten."))
 			elseif (class == "a") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAstralModifierSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAstralModifierSpells.evaluate()
 				call Print(tr("Alle Astralwandlerzauber erhalten."))
 			elseif (class == "i") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addIllusionistSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addIllusionistSpells.evaluate()
 				call Print(tr("Alle Illusionistenzauber erhalten."))
 			elseif (class == "w") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addWizardSpells()
+				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addWizardSpells.evaluate()
 				call Print(tr("Alle Zaubererzauber erhalten."))
 			else
-				call Print(StringArg(tr("Unbekanntes Klassenkürzel: \"%i\""), class))
+				call Print(Format(tr("Unbekanntes Klassenkürzel: \"%1%\"")).s(class).result())
 			endif
 		endmethod
 
 		private static method onCheatActionSetSpellsMax takes ACheat cheat returns nothing
-			if (Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().setSpellsMaxLevel()) then
+			if (Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().setSpellsMaxLevel.evaluate()) then
 				call Print(tr("Alle Zauber auf ihre Maximalstufe gesetzt."))
 			else
 				call Print(tr("Nicht genügend Zauberpunkte."))
@@ -545,17 +545,17 @@ endif
 
 		private static method onCheatActionAddSkillPoints takes ACheat cheat returns nothing
 			local integer skillPoints = S2I(cheat.argument())
-			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addSkillPoints(skillPoints)
-			call Print(IntegerArg(tr("%i Zauberpunkt(e) erhalten."), skillPoints))
+			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addSkillPoints.evaluate(skillPoints)
+			call Print(Format(tr("%1% Zauberpunkt(e) erhalten.")).i(skillPoints).result())
 		endmethod
 
 		private static method onCheatActionAddClassSpells takes ACheat cheat returns nothing
-			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addCharacterClassSpells()
+			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addCharacterClassSpells.evaluate()
 			call Print(tr("Alle Klassenzauber erhalten."))
 		endmethod
 
 		private static method onCheatActionAddOtherClassSpells takes ACheat cheat returns nothing
-			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAllOtherClassSpells()
+			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAllOtherClassSpells.evaluate()
 			call Print(tr("Alle anderen Klassenzauber erhalten."))
 		endmethod
 
@@ -580,6 +580,37 @@ static if (DMDF_CHARACTER_STATS) then
 endif
 
 endif
+		/**
+		 * \param musicList File paths should be separated by ; character.
+		 */
+		public static method setMapMusic takes string musicList returns nothing
+			call ClearMapMusic()
+			call StopMusic(false)
+			call SetMapMusic(musicList, true, 0)
+			//call ResumeMusic()
+		endmethod
+
+		/**
+		* Map data structure MapData should always have public static constant string member "mapMusic" which contains a list of music files.
+		* If that value is equal to null music won't be changed.
+		*/
+		public static method setDefaultMapMusic takes nothing returns nothing
+			if (MapData.mapMusic != null) then
+				call thistype.setMapMusic(MapData.mapMusic)
+			endif
+		endmethod
+
+		public static method setMapMusicForPlayer takes player whichPlayer, string musicList returns nothing
+			if (whichPlayer == GetLocalPlayer()) then
+				call thistype.setMapMusic(musicList)
+			endif
+		endmethod
+
+		public static method setDefaultMapMusicForPlayer takes player whichPlayer returns nothing
+			if (whichPlayer == GetLocalPlayer()) then
+				call thistype.setDefaultMapMusic()
+			endif
+		endmethod
 
 		/**
 		* This method usually is called after all players selected their character class.
@@ -687,8 +718,10 @@ endif
 			call thistype.setDefaultMapMusic()
 
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, IntegerArg(tr("Das Spiel beginnt in %i Sekunden."), R2I(MapData.startDelay)))
+			call BJDebugMsg("After game starts")
 
 			call TriggerSleepAction(MapData.startDelay)
+			call BJDebugMsg("After delay")
 			/// has to be called by struct \ref MapData.
 			//call ACharacter.setAllMovable(true)
 			call MapData.start.execute()
@@ -696,8 +729,8 @@ endif
 
 		/// We've got one allied player for shared control with NPCs. Use this method to enable alliance.
 		public static method setAlliedPlayerAlliedToPlayer takes player whichPlayer returns nothing
-			call SetPlayerAllianceStateBJ(whichPlayer, MapData.alliedPlayer(), bj_ALLIANCE_ALLIED_ADVUNITS)
-			call SetPlayerAllianceStateBJ(MapData.alliedPlayer(), whichPlayer, bj_ALLIANCE_ALLIED_ADVUNITS)
+			call SetPlayerAllianceStateBJ(whichPlayer, MapData.alliedPlayer, bj_ALLIANCE_ALLIED_ADVUNITS)
+			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, whichPlayer, bj_ALLIANCE_ALLIED_ADVUNITS)
 			// works!
 			if (Character(Character.playerCharacter(whichPlayer)).showCharactersScheme()) then
 				call ACharactersScheme.showForPlayer(whichPlayer) // hide team resources
@@ -708,8 +741,8 @@ endif
 
 		/// The allied player can also be used for arena fights (one or several characters against NPCs without other characters)
 		public static method setAlliedPlayerUnalliedToPlayer takes player whichPlayer returns nothing
-			call SetPlayerAllianceStateBJ(whichPlayer, MapData.alliedPlayer(), bj_ALLIANCE_UNALLIED)
-			call SetPlayerAllianceStateBJ(MapData.alliedPlayer(), whichPlayer, bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(whichPlayer, MapData.alliedPlayer, bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, whichPlayer, bj_ALLIANCE_UNALLIED)
 		endmethod
 
 		public static method setAlliedPlayerAlliedToCharacter takes Character character returns nothing
@@ -831,38 +864,6 @@ endif
 
 		public static method removeUnitMoveSpeed takes unit whichUnit, real value returns real
 			return thistype.addUnitMoveSpeed(whichUnit, -value)
-		endmethod
-
-		/**
-		 * \param musicList File paths should be separated by ; character.
-		 */
-		public static method setMapMusic takes string musicList returns nothing
-			call ClearMapMusic()
-			call StopMusic(false)
-			call SetMapMusic(musicList, true, 0)
-			//call ResumeMusic()
-		endmethod
-
-		/**
-		* Map data structure MapData should always have public static constant string member "mapMusic" which contains a list of music files.
-		* If that value is equal to null music won't be changed.
-		*/
-		public static method setDefaultMapMusic takes nothing returns nothing
-			if (MapData.mapMusic != null) then
-				call thistype.setMapMusic(MapData.mapMusic)
-			endif
-		endmethod
-
-		public static method setMapMusicForPlayer takes player whichPlayer, string musicList returns nothing
-			if (whichPlayer == GetLocalPlayer()) then
-				call thistype.setMapMusic(musicList)
-			endif
-		endmethod
-
-		public static method setDefaultMapMusicForPlayer takes player whichPlayer returns nothing
-			if (whichPlayer == GetLocalPlayer()) then
-				call thistype.setDefaultMapMusic()
-			endif
 		endmethod
 
 		public static method storedCharactersNextIndex takes nothing returns integer

@@ -124,13 +124,13 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			set i = 0
 			loop
 				exitwhen (i == Credits.contributors)
-				call thistype.showMovingTextTag(Credits.contributorName(i), 14.0, 255, 255, 255, 0)
+				call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 14.0, 255, 255, 255, 0)
 
 				if (wait(3.0)) then
 					return
 				endif
 
-				call thistype.showMovingTextTag(Credits.contributorDescription(i), 14.0, 255, 255, 255, 0)
+				call thistype.showMovingTextTag(Credits.contributorDescription.evaluate(i), 14.0, 255, 255, 255, 0)
 
 				if (wait(3.0)) then
 					return

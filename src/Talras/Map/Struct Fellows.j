@@ -20,8 +20,8 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_dago.setTalk(false)
 			call thistype.m_dago.setRevival(false)
 			call thistype.m_dago.setDescription(tr("Dago ist ein einfacher Jäger."))
-			
-			set thistype.m_sisgard = Fellow.create(Npcs.sisgard(), TalkSisgard.talk())
+
+			set thistype.m_sisgard = Fellow.create(Npcs.sisgard(), TalkSisgard.talk.evaluate())
 			/// @todo Set revival location to Talras
 			call thistype.m_sisgard.setTalk(true)
 			call thistype.m_sisgard.setRevival(true)
@@ -31,10 +31,10 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_sisgard.setRevivalLocation(AVector3.create(GetRectCenterX(Shrines.talrasShrine().revivalRect()), GetRectCenterY(Shrines.talrasShrine().revivalRect()), Shrines.talrasShrine().facing()))
 			call thistype.m_sisgard.setRevivalTime(20.0)
 
-			set thistype.m_mathilda = Fellow.create(Npcs.mathilda(), TalkMathilda.talk())
+			set thistype.m_mathilda = Fellow.create(Npcs.mathilda(), TalkMathilda.talk.evaluate())
 			/// @todo Set revival location to farm
 
-			set thistype.m_wigberht = Fellow.create(Npcs.wigberht(), TalkWigberht.talk())
+			set thistype.m_wigberht = Fellow.create(Npcs.wigberht(), TalkWigberht.talk.evaluate())
 			call thistype.m_wigberht.setTalk(false)
 			call thistype.m_wigberht.setRevival(true)
 			call thistype.m_wigberht.setDescription(tr("Wigberht ist bla"))
@@ -43,7 +43,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_wigberht.setRevivalLocation(AVector3.create(GetRectCenterX(gg_rct_shrine_4_revival), GetRectCenterY(gg_rct_shrine_4_revival), Shrines.hillShrine().facing())) /// \todo Memory leak.
 			call thistype.m_wigberht.setRevivalTime(20.0)
 
-			set thistype.m_ricman = Fellow.create(Npcs.ricman(), TalkRicman.talk())
+			set thistype.m_ricman = Fellow.create(Npcs.ricman(), TalkRicman.talk.evaluate())
 			call thistype.m_ricman.setTalk(false)
 			call thistype.m_ricman.setRevival(true)
 			call thistype.m_ricman.setDescription(tr("Ricman ist bla"))
@@ -51,7 +51,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_ricman.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_ricman.setRevivalLocation(AVector3.create(GetRectCenterX(gg_rct_shrine_4_revival), GetRectCenterY(gg_rct_shrine_4_revival), Shrines.hillShrine().facing())) /// \todo Memory leak.
 			call thistype.m_ricman.setRevivalTime(20.0)
-			
+
 			set thistype.m_dragonSlayer = Fellow.create(Npcs.dragonSlayer(), 0)
 			call thistype.m_dragonSlayer.setTalk(false)
 			call thistype.m_dragonSlayer.setRevival(true)
@@ -59,7 +59,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_dragonSlayer.setRevivalLocation(AVector3.create(GetRectCenterX(gg_rct_shrine_4_revival), GetRectCenterY(gg_rct_shrine_4_revival), Shrines.hillShrine().facing())) /// \todo Memory leak. CHANGE LOCATION
 			call thistype.m_dragonSlayer.setRevivalTime(20.0)
 		endmethod
-		
+
 		public static method dago takes nothing returns Fellow
 			return thistype.m_dago
 		endmethod
@@ -79,7 +79,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 		public static method ricman takes nothing returns Fellow
 			return thistype.m_ricman
 		endmethod
-		
+
 		public static method dragonSlayer takes nothing returns Fellow
 			return thistype.m_dragonSlayer
 		endmethod

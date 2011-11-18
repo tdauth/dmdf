@@ -1,4 +1,4 @@
-library StructMapQuestsQuestTalras requires Asl, StructMapVideosVideoTheDukeOfTalras
+library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen, StructMapVideosVideoTheDukeOfTalras
 
 	struct QuestTalras extends AQuest
 
@@ -59,6 +59,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapVideosVideoTheDukeOfTa
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
 			call this.setDescription(tr("Ihr wollt dem Herzog Heimrich von Talras die Treue schwören und damit in seinen Dienst treten, um euren Lebensunterhalt zu verdienen."))
 			// item 0
+			call BJDebugMsg("Before first quest item")
 			set questItem0 = AQuestItem.create(this, tr("Erreicht die Burg Talras."))
 			call questItem0.setPing(true)
 			call questItem0.setPingCoordinatesFromRect(gg_rct_quest_talras_quest_item_0)
@@ -67,12 +68,14 @@ library StructMapQuestsQuestTalras requires Asl, StructMapVideosVideoTheDukeOfTa
 			call questItem0.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem0.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted0)
 			call questItem0.setReward(AAbstractQuest.rewardExperience, 800)
+			call BJDebugMsg("Before second quest item")
 			// item 1
 			set questItem1 = AQuestItem.create(this, tr("Trefft den Herzog und schwört ihm die Treue."))
 			call questItem1.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted1)
 			call questItem1.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted1)
 			call questItem1.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted1)
 			call questItem1.setReward(AAbstractQuest.rewardExperience, 1000)
+			call BJDebugMsg("After second quest item")
 			return this
 		endmethod
 	endstruct

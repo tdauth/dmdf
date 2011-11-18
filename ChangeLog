@@ -1,3 +1,6 @@
+2011-11-18 Tamino Dauth <tamino@cdauth.eu>
+* Optimized for using JassHelper option [forcemethodevaluate].
+
 2011-11-14 Tamino Dauth <tamino@cdauth.eu>
 * Completed revision of talk of NPC "Agihard".
 * Dropped old stuff (using latest ASL version).

@@ -1,4 +1,4 @@
-library StructMapTalksTalkWieland requires Asl
+library StructMapTalksTalkWieland requires Asl, StructGameClasses
 
 	struct TalkWieland extends ATalk
 

@@ -1,7 +1,7 @@
 library ModuleQuestsQuest
 
 	module Quest
-		private static thistype m_quest
+		private static thistype m_quest = 0
 
 		public static method initQuest takes nothing returns nothing
 			set thistype.m_quest = thistype.create.evaluate()

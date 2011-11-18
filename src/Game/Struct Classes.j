@@ -51,86 +51,86 @@ library StructGameClasses requires Asl, StructGameCharacter
 //static if (not DEBUG_MODE) then
 //			if (character.class() == Classes.m_cleric) then
 //endif
-				call SpellAbatement.create(character)
-				call SpellClarity.create(character)
-				call SpellExorcizeEvil.create(character)
-				call SpellHolyPower.create(character)
-				call SpellHolyWill.create(character)
-				call SpellImpendingDisaster.create(character)
-				call SpellPreventIll.create(character)
-				call SpellProtect.create(character)
-				call SpellRecovery.create(character)
-				call SpellRevive.create(character)
-				call SpellTorment.create(character)
+				call SpellAbatement.create.evaluate(character)
+				call SpellClarity.create.evaluate(character)
+				call SpellExorcizeEvil.create.evaluate(character)
+				call SpellHolyPower.create.evaluate(character)
+				call SpellHolyWill.create.evaluate(character)
+				call SpellImpendingDisaster.create.evaluate(character)
+				call SpellPreventIll.create.evaluate(character)
+				call SpellProtect.create.evaluate(character)
+				call SpellRecovery.create.evaluate(character)
+				call SpellRevive.create.evaluate(character)
+				call SpellTorment.create.evaluate(character)
 //static if (not DEBUG_MODE) then
 //			elseif (character.class() == Classes.m_necromancer) then
 //endif
-				call SpellAncestorPact.create(character)
-				call SpellDarkServant.create(character)
-				call SpellDeathHerald.create(character)
-				call SpellDemonServant.create(character)
-				call SpellSoulThievery.create(character)
-				call SpellViolentDeath.create(character)
-				
+				call SpellAncestorPact.create.evaluate(character)
+				call SpellDarkServant.create.evaluate(character)
+				call SpellDeathHerald.create.evaluate(character)
+				call SpellDemonServant.create.evaluate(character)
+				call SpellSoulThievery.create.evaluate(character)
+				call SpellViolentDeath.create.evaluate(character)
+
 			//elseif (character.class() == thistype.m_druid) then
-				call SpellAwakeningOfTheForest.create(character)
-				call SpellCrowForm.create(character)
-				call SpellBearForm.create(character)
-				call SpellForestFaeriesSpell.create(character)
-				call SpellHerbalCure.create(character)
-				call SpellRelief.create(character)
-				call SpellZoology.create(character)
-			
+				call SpellAwakeningOfTheForest.create.evaluate(character)
+				call SpellCrowForm.create.evaluate(character)
+				call SpellBearForm.create.evaluate(character)
+				call SpellForestFaeriesSpell.create.evaluate(character)
+				call SpellHerbalCure.create.evaluate(character)
+				call SpellRelief.create.evaluate(character)
+				call SpellZoology.create.evaluate(character)
+
 //static if (not DEBUG_MODE) then
 //			elseif (character.class() == Classes.m_knight) then
 //endif
-				call SpellBlock.create(character)
-				call SpellConcentration.create(character)
-				call SpellLivingWill.create(character)
-				call SpellRush.create(character)
-				call SpellSelflessness.create(character)
-				call SpellStab.create(character)
-				call SpellTaunt.create(character)
+				call SpellBlock.create.evaluate(character)
+				call SpellConcentration.create.evaluate(character)
+				call SpellLivingWill.create.evaluate(character)
+				call SpellRush.create.evaluate(character)
+				call SpellSelflessness.create.evaluate(character)
+				call SpellStab.create.evaluate(character)
+				call SpellTaunt.create.evaluate(character)
 //static if (not DEBUG_MODE) then
 //			elseif (character.class() == Classes.m_dragonSlayer) then
 //endif
-				call SpellBeastHunter.create(character)
-				call SpellDaunt.create(character)
-				call SpellFuriousBloodthirstiness.create(character)
-				call SpellSlash.create(character)
-				call SpellSupremacy.create(character)
-				call SpellWeakPoint.create(character)
+				call SpellBeastHunter.create.evaluate(character)
+				call SpellDaunt.create.evaluate(character)
+				call SpellFuriousBloodthirstiness.create.evaluate(character)
+				call SpellSlash.create.evaluate(character)
+				call SpellSupremacy.create.evaluate(character)
+				call SpellWeakPoint.create.evaluate(character)
 //static if (not DEBUG_MODE) then
 //			elseif (character.class() == Classes.m_ranger) then
 //endif
-				call SpellAgility.create(character)
-				call SpellEagleEye.create(character)
-				call SpellShooter.create(character)
-				call SpellShotIntoHeart.create(character)
-				call SpellSprint.create(character)
+				call SpellAgility.create.evaluate(character)
+				call SpellEagleEye.create.evaluate(character)
+				call SpellShooter.create.evaluate(character)
+				call SpellShotIntoHeart.create.evaluate(character)
+				call SpellSprint.create.evaluate(character)
 //static if (not DEBUG_MODE) then
 //			elseif (character.class() == Classes.m_elementalMage) then
 //endif
-				call SpellBlaze.create(character)
-				call SpellEarthPrison.create(character)
-				call SpellElementalForce.create(character)
-				call SpellEmblaze.create(character)
-				call SpellFireMissile.create(character)
-				call SpellFreeze.create(character)
-				call SpellGlisteningLight.create(character)
-				call SpellIceMissile.create(character)
-				call SpellInferno.create(character)
-				call SpellLightning.create(character)
-				call SpellMastery.create(character)
-				call SpellRageOfElements.create(character)
-				call SpellPureEnergy.create(character)
-				call SpellTeleportation.create(character)
-				call SpellUndermine.create(character)
-				
+				call SpellBlaze.create.evaluate(character)
+				call SpellEarthPrison.create.evaluate(character)
+				call SpellElementalForce.create.evaluate(character)
+				call SpellEmblaze.create.evaluate(character)
+				call SpellFireMissile.create.evaluate(character)
+				call SpellFreeze.create.evaluate(character)
+				call SpellGlisteningLight.create.evaluate(character)
+				call SpellIceMissile.create.evaluate(character)
+				call SpellInferno.create.evaluate(character)
+				call SpellLightning.create.evaluate(character)
+				call SpellMastery.create.evaluate(character)
+				call SpellRageOfElements.create.evaluate(character)
+				call SpellPureEnergy.create.evaluate(character)
+				call SpellTeleportation.create.evaluate(character)
+				call SpellUndermine.create.evaluate(character)
+
 //static if (not DEBUG_MODE) then
 //			elseif (character.class() == Classes.m_astralModifier) then
 //endif
-				call SpellTakeOver.create(character)
+				call SpellTakeOver.create.evaluate(character)
 
 //static if (not DEBUG_MODE) then
 //			elseif (character.class() == Classes.m_illusionist) then
@@ -139,22 +139,22 @@ library StructGameClasses requires Asl, StructGameCharacter
 //static if (not DEBUG_MODE) then
 //			elseif (character.class() == Classes.m_wizard) then
 //endif
-				call SpellAbsorbation.create(character)
-				call SpellAdduction.create(character)
-				call SpellArcaneBinding.create(character)
-				call SpellArcaneHunger.create(character)
-				call SpellArcaneProtection.create(character)
-				call SpellArcaneRuse.create(character)
-				call SpellArcaneTime.create(character)
-				call SpellAstralSource.create(character)
-				call SpellBan.create(character)
-				call SpellControlledTimeFlow.create(character)
-				call SpellCurb.create(character)
-				call SpellMagicalShockWaves.create(character)
-				call SpellManaExplosion.create(character)
-				call SpellManaShield.create(character)
-				call SpellManaStream.create(character)
-				call SpellRepulsion.create(character)
+				call SpellAbsorbation.create.evaluate(character)
+				call SpellAdduction.create.evaluate(character)
+				call SpellArcaneBinding.create.evaluate(character)
+				call SpellArcaneHunger.create.evaluate(character)
+				call SpellArcaneProtection.create.evaluate(character)
+				call SpellArcaneRuse.create.evaluate(character)
+				call SpellArcaneTime.create.evaluate(character)
+				call SpellAstralSource.create.evaluate(character)
+				call SpellBan.create.evaluate(character)
+				call SpellControlledTimeFlow.create.evaluate(character)
+				call SpellCurb.create.evaluate(character)
+				call SpellMagicalShockWaves.create.evaluate(character)
+				call SpellManaExplosion.create.evaluate(character)
+				call SpellManaShield.create.evaluate(character)
+				call SpellManaStream.create.evaluate(character)
+				call SpellRepulsion.create.evaluate(character)
 
 //static if (not DEBUG_MODE) then
 //			endif
@@ -199,7 +199,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_necromancer.addDescriptionLine(tr("so muss sie nicht zwangsläufig einem bösen Zweck dienen. Es liegt in jedermanns eigener Hand,"))
 			call thistype.m_necromancer.addDescriptionLine(tr("zu entscheiden, wofür sie genutzt wird."))
 		endmethod
-		
+
 		private static method initDruid takes nothing returns nothing
 			set thistype.m_druid = AClass.create('H00G', "spell", "Sound\\Units\\ClassDruid\\Class.wav")
 			call thistype.m_druid.addDescriptionLine(tr("Druiden sind naturverbundene, ruhige Wanderer, die in Einklang mit ihrer Umwelt leben."))
@@ -245,7 +245,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_elementalMage.addDescriptionLine(tr("wenn sie die Erde unter den Füßen dieser in Flammen aufgehen oder mit einer Welle"))
 			call thistype.m_elementalMage.addDescriptionLine(tr("aus tiefstem Eis die Umwelt erschüttern lassen."))
 		endmethod
-		
+
 		private static method initAstralModifier takes nothing returns nothing
 			set thistype.m_astralModifier = AClass.create('H005', "spell", "Sound\\Units\\ClassAstralModifier\\Class.wav")
 			call thistype.m_astralModifier.addDescriptionLine(tr("Astralwandler sind eng mit der Zwischenwelt und den dortigen Geistern verbunden."))
@@ -306,7 +306,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call SuspendTimeOfDay(true)
 			call SetTimeOfDay(0.0)
 			call ForceCinematicSubtitles(true)
-			call Game.setMapMusic("Music\\CharacterSelection.mp3")
+			call Game.setMapMusic.evaluate("Music\\CharacterSelection.mp3")
 
 			set i = 0
 			loop
@@ -353,7 +353,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		public static method elementalMage takes nothing returns AClass
 			return thistype.m_elementalMage
 		endmethod
-		
+
 		public static method astralModifier takes nothing returns AClass
 			return thistype.m_astralModifier
 		endmethod

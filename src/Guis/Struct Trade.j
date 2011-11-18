@@ -1,4 +1,4 @@
-library StructGuisTrade requires Asl, StructGuisMainMenu
+library StructGuisTrade requires Asl, StructGameCharacter
 
 	private struct Offer
 		private Trade m_trade
@@ -39,7 +39,7 @@ library StructGuisTrade requires Asl, StructGuisMainMenu
 		endmethod
 
 		public method character takes nothing returns Character
-			return this.m_trade.character()
+			return this.m_trade.character.evaluate()
 		endmethod
 
 		public method checkForCharacter takes Character acceptingCharacter returns boolean
@@ -49,7 +49,7 @@ library StructGuisTrade requires Asl, StructGuisMainMenu
 			if (acceptingCharacter.gold() < this.m_goldAmount) then
 				return false
 			endif
-			set character = this.m_trade.character()
+			set character = this.character()
 			set number = 0
 			set i = 0
 			loop
@@ -65,12 +65,12 @@ library StructGuisTrade requires Asl, StructGuisMainMenu
 		endmethod
 
 		public method acceptForCharacter takes Character acceptingCharacter returns boolean
-			local Character character = this.m_trade.character()
+			local Character character = this.character()
 			local AInventoryItemData itemData
 			local integer number
 			local integer i
 			local item whichItem
-			local Offer offer = character.trade().getOffer(this)
+			local Offer offer = character.trade().getOffer.evaluate(this)
 
 			// offer doesn't exist anymore
 			if (offer == 0) then
@@ -163,43 +163,24 @@ library StructGuisTrade requires Asl, StructGuisMainMenu
 			return 0
 		endmethod
 
-		private static method dialogButtonActionCustomOffers takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
-			call this.showCustomOffersDialog()
-		endmethod
+		private method showOffersButtonList takes thistype other returns nothing
+			local ADialogButtonAction dialogButtonAction
+			local integer i
 
-		private static method dialogButtonActionViewOffers takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
-			call this.showViewOffersDialog()
-		endmethod
+			if (other == this) then
+				set dialogButtonAction = thistype.dialogButtonActionCustomOffer
+			else
+				set dialogButtonAction = thistype.dialogButtonActionOffer
+			endif
 
-		private static method dialogButtonActionBackToMainMenu takes ADialogButton dialogButton returns nothing
-			local MainMenu mainMenu = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call mainMenu.showDialog()
-		endmethod
-
-		public method showDialog takes nothing returns nothing
-			call AGui.playerGui(this.m_character.player()).dialog().clear()
-			call AGui.playerGui(this.m_character.player()).dialog().setMessage(tr("Handel"))
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Eigene Angebote"), thistype.dialogButtonActionCustomOffers)
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Angebote betrachten"), thistype.dialogButtonActionViewOffers)
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Zurück zum Hauptmenü"), thistype.dialogButtonActionBackToMainMenu)
-			call AGui.playerGui(this.m_character.player()).dialog().show()
-		endmethod
-
-		private static method dialogButtonActionBack takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
-			call this.showDialog()
-		endmethod
-
-		private static method dialogButtonActionCancelNewOffer takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
-			call this.cancelNewOffer()
-		endmethod
-
-		private static method dialogButtonActionNewOffer takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
-			call this.showNewOfferDialog()
+			call other.m_shownOffers.clear()
+			set i = 0
+			loop
+				exitwhen (i == this.m_offers.size())
+				call AGui.playerGui(other.m_character.player()).dialog().addDialogButtonIndex(GetItemTypeIdName(Offer(this.m_offers[i]).itemTypeId()), dialogButtonAction)
+				call other.m_shownOffers.pushBack(this.m_offers[i])
+				set i = i + 1
+			endloop
 		endmethod
 
 		private method showCustomOffersDialog takes nothing returns nothing
@@ -215,6 +196,11 @@ library StructGuisTrade requires Asl, StructGuisMainMenu
 
 			call this.showOffersButtonList(this)
 			call AGui.playerGui(this.m_character.player()).dialog().show()
+		endmethod
+
+		private static method dialogButtonActionCustomOffers takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
+			call this.showCustomOffersDialog()
 		endmethod
 
 		private method showViewOffersDialog takes nothing returns nothing
@@ -238,6 +224,30 @@ library StructGuisTrade requires Asl, StructGuisMainMenu
 			call AGui.playerGui(this.m_character.player()).dialog().show()
 		endmethod
 
+		private static method dialogButtonActionViewOffers takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
+			call this.showViewOffersDialog()
+		endmethod
+
+		private static method dialogButtonActionBackToMainMenu takes ADialogButton dialogButton returns nothing
+			local MainMenu mainMenu = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			call mainMenu.showDialog.evaluate()
+		endmethod
+
+		public method showDialog takes nothing returns nothing
+			call AGui.playerGui(this.m_character.player()).dialog().clear()
+			call AGui.playerGui(this.m_character.player()).dialog().setMessage(tr("Handel"))
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Eigene Angebote"), thistype.dialogButtonActionCustomOffers)
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Angebote betrachten"), thistype.dialogButtonActionViewOffers)
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Zurück zum Hauptmenü"), thistype.dialogButtonActionBackToMainMenu)
+			call AGui.playerGui(this.m_character.player()).dialog().show()
+		endmethod
+
+		private static method dialogButtonActionBack takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
+			call this.showDialog()
+		endmethod
+
 		private method cancelNewOffer takes nothing returns nothing
 static if (DEBUG_MODE) then
 			if (this.m_currentOffer == 0) then
@@ -256,14 +266,9 @@ endif
 			call this.m_character.displayMessage(ACharacter.messageTypeInfo, tr("Angebotserstellung abgebrochen"))
 		endmethod
 
-		private static method dialogButtonActionBackToCustomOffers takes ADialogButton dialogButton returns nothing
+		private static method dialogButtonActionCancelNewOffer takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
-			call this.showCustomOffersDialog()
-		endmethod
-
-		private static method dialogButtonActionBackOfferItemTypeId takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
-			call this.createNewOffer(dialogButton.index() - 1) //- back button
+			call this.cancelNewOffer()
 		endmethod
 
 		private method showNewOfferDialog takes nothing returns nothing
@@ -309,6 +314,21 @@ endif
 			call AGui.playerGui(this.m_character.player()).dialog().show()
 		endmethod
 
+		private static method dialogButtonActionNewOffer takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
+			call this.showNewOfferDialog()
+		endmethod
+
+		private static method dialogButtonActionBackToCustomOffers takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
+			call this.showCustomOffersDialog()
+		endmethod
+
+		private method editCurrentOfferNumber takes nothing returns nothing
+			call this.m_character.displayMessage(ACharacter.messageTypeInfo, tr("Geben Sie bitte die Anzahl im Chat ein."))
+			call EnableTrigger(this.m_numberTrigger)
+		endmethod
+
 		private method createNewOffer takes integer index returns nothing
 			set this.m_currentOffer = Offer.create(this)
 			debug call this.print("Creating offer with item type id " + I2S(this.m_currentItemTypeIds[index]))
@@ -319,9 +339,19 @@ endif
 			call this.editCurrentOfferNumber()
 		endmethod
 
+		private static method dialogButtonActionBackOfferItemTypeId takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
+			call this.createNewOffer(dialogButton.index() - 1) //- back button
+		endmethod
+
 		private static method dialogButtonActionEditOfferNumber takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
 			call this.editCurrentOfferNumber()
+		endmethod
+
+		private method editCurrentOfferGoldAmount takes nothing returns nothing
+			call this.m_character.displayMessage(ACharacter.messageTypeInfo, tr("Geben Sie bitte den Preis im Chat ein."))
+			call EnableTrigger(this.m_goldAmountTrigger)
 		endmethod
 
 		private static method dialogButtonActionEditOfferGoldAmount takes ADialogButton dialogButton returns nothing
@@ -329,9 +359,19 @@ endif
 			call this.editCurrentOfferGoldAmount()
 		endmethod
 
+		private method removeCurrentOffer takes nothing returns nothing
+			call this.m_currentOffer.destroy()
+			call this.m_offers.remove(this.m_currentOffer)
+			call this.showCustomOffersDialog()
+		endmethod
+
 		private static method dialogButtonActionRemoveOffer takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
 			call this.removeCurrentOffer()
+		endmethod
+
+		private static method getOfferDialogTitle takes Offer offer returns string
+			return IntegerArg(IntegerArg(StringArg(tr("%s|nAnzahl: %i|nPreis: %i"), GetItemTypeIdName(offer.itemTypeId())), offer.number()), offer.goldAmount())
 		endmethod
 
 		private method showCustomOfferDialog takes integer index returns nothing
@@ -352,11 +392,6 @@ endif
 			call this.showViewOffersDialog()
 		endmethod
 
-		private static method dialogButtonActionAcceptOffer takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
-			call this.acceptCurrentOffer()
-		endmethod
-
 		private method showOfferDialog takes integer index returns nothing
 			set this.m_currentOffer = Offer(this.m_shownOffers[index]).copy()
 			call AGui.playerGui(this.m_character.player()).dialog().clear()
@@ -364,22 +399,6 @@ endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Zurück"), thistype.dialogButtonActionBackToOffers)
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Annehmen"), thistype.dialogButtonActionAcceptOffer)
 			call AGui.playerGui(this.m_character.player()).dialog().show()
-		endmethod
-
-		private method editCurrentOfferNumber takes nothing returns nothing
-			call this.m_character.displayMessage(ACharacter.messageTypeInfo, tr("Geben Sie bitte die Anzahl im Chat ein."))
-			call EnableTrigger(this.m_numberTrigger)
-		endmethod
-
-		private method editCurrentOfferGoldAmount takes nothing returns nothing
-			call this.m_character.displayMessage(ACharacter.messageTypeInfo, tr("Geben Sie bitte den Preis im Chat ein."))
-			call EnableTrigger(this.m_goldAmountTrigger)
-		endmethod
-
-		private method removeCurrentOffer takes nothing returns nothing
-			call this.m_currentOffer.destroy()
-			call this.m_offers.remove(this.m_currentOffer)
-			call this.showCustomOffersDialog()
 		endmethod
 
 		private method acceptCurrentOffer takes nothing returns nothing
@@ -402,6 +421,11 @@ endif
 			endif
 		endmethod
 
+		private static method dialogButtonActionAcceptOffer takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
+			call this.acceptCurrentOffer()
+		endmethod
+
 		private static method dialogButtonActionCustomOffer takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
 			debug call Print("Show custom offer")
@@ -411,26 +435,6 @@ endif
 		private static method dialogButtonActionOffer takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).trade()
 			call this.showOfferDialog(dialogButton.index() - 1) //- back button
-		endmethod
-
-		private method showOffersButtonList takes thistype other returns nothing
-			local ADialogButtonAction dialogButtonAction
-			local integer i
-
-			if (other == this) then
-				set dialogButtonAction = thistype.dialogButtonActionCustomOffer
-			else
-				set dialogButtonAction = thistype.dialogButtonActionOffer
-			endif
-
-			call other.m_shownOffers.clear()
-			set i = 0
-			loop
-				exitwhen (i == this.m_offers.size())
-				call AGui.playerGui(other.m_character.player()).dialog().addDialogButtonIndex(GetItemTypeIdName(Offer(this.m_offers[i]).itemTypeId()), dialogButtonAction)
-				call other.m_shownOffers.pushBack(this.m_offers[i])
-				set i = i + 1
-			endloop
 		endmethod
 
 		private static method triggerActionSetNumber takes nothing returns nothing
@@ -521,10 +525,6 @@ endif
 			set this.m_numberTrigger = null
 			call DestroyTrigger(this.m_goldAmountTrigger)
 			set this.m_goldAmountTrigger = null
-		endmethod
-
-		private static method getOfferDialogTitle takes Offer offer returns string
-			return IntegerArg(IntegerArg(StringArg(tr("%s|nAnzahl: %i|nPreis: %i"), GetItemTypeIdName(offer.itemTypeId())), offer.number()), offer.goldAmount())
 		endmethod
 	endstruct
 

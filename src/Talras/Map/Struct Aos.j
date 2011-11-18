@@ -1,4 +1,4 @@
-library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapShrines
+library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, StructMapMapShrines
 
 	struct Aos
 		private static constant real spawnTime = 30.0
@@ -6,9 +6,9 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapShrines
 		private static player m_baldarsUser
 		private static integer m_haldarMembers
 		private static integer m_baldarMembers
-		private static boolean array m_playerHasJoinedHaldar[6] /// @todo @member MapData.maxPlayers
-		private static boolean array m_playerHasJoinedBaldar[6] /// @todo @member MapData.maxPlayers
-		private static integer array m_playerScore[6] /// @todo @member MapData.maxPlayers
+		private static boolean array m_playerHasJoinedHaldar[6] /// \todo \ref MapData.maxPlayers
+		private static boolean array m_playerHasJoinedBaldar[6] /// \todo \ref MapData.maxPlayers
+		private static integer array m_playerScore[6] /// \todo \ref MapData.maxPlayers
 		private static leaderboard m_leaderboard
 		private static trigger m_enterTrigger
 		private static trigger m_leaveTrigger

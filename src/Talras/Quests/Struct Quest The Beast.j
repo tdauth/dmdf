@@ -6,6 +6,10 @@ library StructMapQuestsQuestTheBeast requires Asl
 
 		implement CharacterQuest
 
+		public method talkedToKuno takes nothing returns boolean
+			return this.m_talkedToKuno
+		endmethod
+
 		public method findTracks takes nothing returns nothing
 			set this.m_foundTracks = true
 			call this.displayUpdateMessage(tr("Hinweis erhalten."))
@@ -24,10 +28,6 @@ library StructMapQuestsQuestTheBeast requires Asl
 			if (this.foundTracks()) then
 				call this.questItem(0).complete()
 			endif
-		endmethod
-
-		public method talkedToKuno takes nothing returns boolean
-			return this.m_talkedToKuno
 		endmethod
 
 		public stub method enable takes nothing returns boolean

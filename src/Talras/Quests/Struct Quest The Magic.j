@@ -1,4 +1,4 @@
-library StructMapQuestsQuestTheMagic requires Asl
+library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter
 
 	struct QuestTheMagic extends AQuest
 		public static constant integer itemTypeId = 'I00Z'

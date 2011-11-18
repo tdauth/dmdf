@@ -1,4 +1,4 @@
-library StructGameCharacter requires Asl
+library StructGameCharacter requires Asl, StructGameDmdfHashTable
 
 	struct Character extends ACharacter
 		// constant members
@@ -56,11 +56,6 @@ endif
 
 		public method isViewEnabled takes nothing returns boolean
 			return this.view().isEnabled()
-		endmethod
-
-		public method setShowCharactersScheme takes boolean showCharactersScheme returns nothing
-			set this.m_showCharactersScheme = showCharactersScheme
-			call this.showCharactersSchemeToPlayer()
 		endmethod
 
 		public method showCharactersScheme takes nothing returns boolean
@@ -171,6 +166,11 @@ endif
 			endif
 		endmethod
 
+		public method setShowCharactersScheme takes boolean showCharactersScheme returns nothing
+			set this.m_showCharactersScheme = showCharactersScheme
+			call this.showCharactersSchemeToPlayer()
+		endmethod
+
 		public method morphAbilityId takes nothing returns integer
 			return this.m_morphAbilityId
 		endmethod
@@ -184,13 +184,13 @@ endif
 				return
 			endif
 			call DisableTrigger(this.m_revivalTrigger)
-			call this.grimoire().readd(AIntegerMap(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")))
+			call this.grimoire().readd.evaluate(AIntegerMap(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")))
 			call AIntegerMap(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
 			call DmdfHashTable.global().removeHandleInteger(this.unit(), "SpellLevels")
 			call this.inventory().setEnableAgain(true)
 			call this.inventory().enable()
 		endmethod
-		
+
 		/**
 		* \return Returns the stored map with ability id - level pairs.
 		* \sa Grimoire#spellLevels
@@ -209,7 +209,7 @@ endif
 			if (DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
 				call AIntegerMap(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
 			endif
-			call DmdfHashTable.global().setHandleInteger(this.unit(), "SpellLevels", this.grimoire().spellLevels())
+			call DmdfHashTable.global().setHandleInteger(this.unit(), "SpellLevels", this.grimoire().spellLevels.evaluate())
 			call this.inventory().setEnableAgain(false)
 			call this.inventory().disable()
 			set this.m_morphAbilityId = abilityId
@@ -277,7 +277,7 @@ endif
 			call this.displayXPBonus(xp, message)
 			call this.addExperience(xp, true)
 		endmethod
-		
+
 		public method giveItem takes integer itemTypeId returns nothing
 			local item whichItem = CreateItem(itemTypeId, GetUnitX(this.unit()), GetUnitY(this.unit()))
 			call SetItemPlayer(whichItem, this.player(), true)
@@ -300,7 +300,7 @@ endif
 			if (this.m_heroIcons != 0 or GetPlayerController(this.player()) == MAP_CONTROL_COMPUTER) then // don't create for computer controlled players
 				return
 			endif
-			set this.m_heroIcons = AIntegerVector.createWithSize(Game.playingPlayers(), 0)
+			set this.m_heroIcons = AIntegerVector.createWithSize(Game.playingPlayers.evaluate(), 0)
 			set i = 0
 			loop
 				exitwhen (i == this.m_heroIcons.size())
@@ -447,11 +447,11 @@ endif
 		endmethod
 
 		public static method attributesStartBonus takes nothing returns integer
-			return Game.missingPlayers() * MapData.difficultyStartAttributeBonus
+			return Game.missingPlayers.evaluate() * MapData.difficultyStartAttributeBonus
 		endmethod
 
 		public static method attributesLevelBonus takes nothing returns integer
-			return Game.missingPlayers() * MapData.difficultyLevelAttributeBonus
+			return Game.missingPlayers.evaluate() * MapData.difficultyLevelAttributeBonus
 		endmethod
 
 		/**
@@ -550,7 +550,7 @@ endif
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (thistype.playerCharacter(Player(i)) != 0) then
-					call thistype(thistype.playerCharacter(Player(i))).tutorial().setEnabled(enabled)
+					call thistype(thistype.playerCharacter(Player(i))).tutorial().setEnabled.evaluate(enabled)
 				endif
 				set i = i + 1
 			endloop
@@ -561,7 +561,7 @@ endif
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (thistype.playerCharacter(Player(i)) != 0) then
-					call thistype(thistype.playerCharacter(Player(i))).grimoire().addSkillPoints(skillPoints)
+					call thistype(thistype.playerCharacter(Player(i))).grimoire().addSkillPoints.evaluate(skillPoints)
 				endif
 				set i = i + 1
 			endloop

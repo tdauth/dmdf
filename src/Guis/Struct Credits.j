@@ -44,6 +44,40 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		private integer m_currentContributor
 		private timer m_viewTimer
 
+		public static method addContributor takes string name, string description returns nothing
+			call thistype.m_contributors.pushBack(Contributor.create(name, description))
+		endmethod
+
+		public static method contributorName takes integer index returns string
+			return Contributor(thistype.m_contributors[index]).name()
+		endmethod
+
+		public static method contributorDescription takes integer index returns string
+			return Contributor(thistype.m_contributors[index]).description()
+		endmethod
+
+		public static method contributors takes nothing returns integer
+			return thistype.m_contributors.size()
+		endmethod
+
+		public static method addFile takes string filePath returns nothing
+			call Contributor(thistype.m_contributors.back()).files().pushBack(filePath)
+		endmethod
+
+		/**
+		 * \return Returns view centre x.
+		 */
+		public static method viewX takes nothing returns real
+			return CameraSetupGetDestPositionX(gg_cam_class_selection)
+		endmethod
+
+		/**
+		 * \return Returns view centre y.
+		 */
+		public static method viewY takes nothing returns real
+			return CameraSetupGetDestPositionY(gg_cam_class_selection)
+		endmethod
+
 		private method showContributor takes integer contributorIndex returns nothing
 			local Contributor contributor
 			local string text
@@ -156,40 +190,6 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		public static method init0 takes nothing returns nothing
 			//static members
 			set thistype.m_contributors = AIntegerVector.create()
-		endmethod
-
-		public static method addContributor takes string name, string description returns nothing
-			call thistype.m_contributors.pushBack(Contributor.create(name, description))
-		endmethod
-
-		public static method contributorName takes integer index returns string
-			return Contributor(thistype.m_contributors[index]).name()
-		endmethod
-
-		public static method contributorDescription takes integer index returns string
-			return Contributor(thistype.m_contributors[index]).description()
-		endmethod
-
-		public static method contributors takes nothing returns integer
-			return thistype.m_contributors.size()
-		endmethod
-
-		public static method addFile takes string filePath returns nothing
-			call Contributor(thistype.m_contributors.back()).files().pushBack(filePath)
-		endmethod
-
-		/**
-		* @return Returns view centre x.
-		*/
-		public static method viewX takes nothing returns real
-			return CameraSetupGetDestPositionX(gg_cam_class_selection)
-		endmethod
-
-		/**
-		* @return Returns view centre y.
-		*/
-		public static method viewY takes nothing returns real
-			return CameraSetupGetDestPositionY(gg_cam_class_selection)
 		endmethod
 	endstruct
 

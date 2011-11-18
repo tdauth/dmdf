@@ -1,4 +1,4 @@
-library StructGameShrine requires Asl
+library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 
 	struct Shrine extends AShrine
 		private unit m_unit

@@ -1,4 +1,4 @@
-library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameClasses, StructMapMapNpcs, StructMapQuestsQuestDeathToWhiteLegion
+library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameClasses, StructMapMapAos, StructMapMapNpcs, StructMapQuestsQuestDeathToWhiteLegion
 
 	struct TalkBaldar extends ATalk
 		private boolean array m_gotOffer[6] /// \todo \ref MapData#maxPlayers
@@ -29,7 +29,7 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, false, tr("Hallo."), null)
 			call speech(info, true, tr("Wer bist du und was machst du in meinem Lager?"), null)
 			// (Charakter kennt noch keinen der beiden Brüder)
-			if (not TalkHaldar.talk().infoHasBeenShownToCharacter(0, info.talk().character())) then
+			if (not TalkHaldar.talk.evaluate().infoHasBeenShownToCharacter(0, info.talk().character())) then
 				call speech(info, false, tr("Dein Lager?"), null)
 				call speech(info, true, tr("Ja, mein Lager!"), null)
 				call speech(info, true, tr("Das ist das Lager der schwarzen Legion, meines Heers."), null)

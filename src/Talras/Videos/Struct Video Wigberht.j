@@ -38,8 +38,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			// create farmers
 
 			// create corpses
-			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.alliedPlayer(), UnitTypes.norseman, gg_rct_video_wigberht_corpse_0_position, GetRandomFacing()))
-			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.alliedPlayer(), UnitTypes.norseman, gg_rct_video_wigberht_corpse_1_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.alliedPlayer, UnitTypes.norseman, gg_rct_video_wigberht_corpse_0_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.alliedPlayer, UnitTypes.norseman, gg_rct_video_wigberht_corpse_1_position, GetRandomFacing()))
 			debug call Print("Init 6")
 			// create orcs
 			set this.m_actorOrcLeader = CreateUnitAtRect(Game.hostilePlayer(), UnitTypes.orcLeader, gg_rct_video_wigberht_orc_leaders_position, 237.39)
@@ -191,12 +191,12 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 					return
 				endif
 			endloop
-			
+
 			// flames and kill
 			call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireMissile.mdx", GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3))) /// \todo direction of orc leader!
 			call SetUnitExploded(this.m_actorOrcLeader, true)
 			call KillUnit(this.m_actorOrcLeader)
-			
+
 			// talk with characters
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(1.0)) then
@@ -204,12 +204,12 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			endif
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_wigberht_actor_end)
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_wigberht_wigberht_end)
-			
+
 			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorWigberht))
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorWigberht), thistype.actor())
 
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_14, true, 0.0)
-			
+
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(1.50)) then
 				return
@@ -219,7 +219,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			
+
 			// TEST
 			if (wait(5.0)) then
 				return

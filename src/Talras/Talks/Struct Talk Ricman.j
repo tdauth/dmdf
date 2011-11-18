@@ -132,7 +132,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, false, tr("Und was machst du hier?"), null)
 			call speech(info, true, tr("Ich warte."), null)
 			// (Falls der Charakter Wigberht das Gleiche gefragt hat)
-			if (TalkWigberht.talk().infoHasBeenShownToCharacter(12, info.talk().character())) then
+			if (TalkWigberht.talk.evaluate().infoHasBeenShownToCharacter(12, info.talk().character())) then
 				call speech(info, false, tr("Warten alle Nordmänner auf irgendetwas?"), null)
 				call speech(info, true, tr("Anscheinend."), null)
 			// (Falls der Charakter Wigberht noch nicht das Gleiche gefragt hat)

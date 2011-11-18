@@ -1,4 +1,4 @@
-library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructMapMapFellows, StructMapMapMapData, StructMapMapNpcs, StructMapQuestsQuestRescueDago
+library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructMapMapFellows, StructMapMapNpcs, StructMapQuestsQuestRescueDago
 
 	struct VideoRescueDago0 extends AVideo
 		private unit m_actorBear0
@@ -11,13 +11,13 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructMapM
 			call Game.initVideoSettings()
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_0, true, 0.0)
 			call PlayThematicMusic("Music\\RescueDago.mp3")
-			
+
 			// bears
 			set this.m_actorBear0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0083))
 			call PauseUnit(this.m_actorBear0, true)
 			set this.m_actorBear1 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0027))
 			call PauseUnit(this.m_actorBear1, true)
-			
+
 			// Dago
 			set this.m_actorDago = thistype.unitActor(thistype.saveUnitActor(Npcs.dago()))
 		endmethod
@@ -41,12 +41,12 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructMapM
 			set this.m_actorBear0 = null
 			set this.m_actorBear1 = null
 			set this.m_actorDago = null
-			
+
 			call QuestRescueDago.quest().questItem(0).setState(AAbstractQuest.stateNew)
-			
+
 			call PauseUnit(Npcs.dago(), false)
 			call Fellows.dago().shareWith(0)
-			
+
 			// bears
 			call SetUnitOwner(gg_unit_n008_0083, Player(PLAYER_NEUTRAL_AGGRESSIVE), false)
 			call PauseUnit(gg_unit_n008_0083, false)
@@ -58,9 +58,9 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructMapM
 			call IssueTargetOrder(gg_unit_n008_0083, "attack", Npcs.dago())
 			call IssueTargetOrder(gg_unit_n008_0027, "attack", Npcs.dago())
 			call EndThematicMusic()
-			
+
 			call Game.resetVideoSettings()
-			
+
 			call PanCameraToTimedUnit(Npcs.dago(), 0.0)
 		endmethod
 

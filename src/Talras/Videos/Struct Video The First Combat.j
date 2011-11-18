@@ -1,5 +1,5 @@
 /// @todo Finish this video.
-library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame
+library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructMapQuestsQuestTheNorsemen
 
 	struct VideoTheFirstCombat extends AVideo
 		private integer m_actorWigberht

@@ -2890,14 +2890,14 @@ globals
     constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
     constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
     // used by function GetTimeString()
-    constant string A_TEXT_TIME_VALUE = GetLocalizedString("0%1%")
-    constant string A_TEXT_TIME_PAIR = GetLocalizedString("%1%:%2%")
+    constant string A_TEXT_TIME_VALUE = "0%1%"
+    constant string A_TEXT_TIME_PAIR = "%1%:%2%"
     // used by ATalk
-    constant string A_TEXT_EXIT = GetLocalizedString("Exit")
-    constant string A_TEXT_BACK = GetLocalizedString("Back")
-    constant string A_TEXT_TARGET_TALKS_ALREADY = GetLocalizedString("Target is already talking.")
+    constant string A_TEXT_EXIT = "Exit"
+    constant string A_TEXT_BACK = "Back"
+    constant string A_TEXT_TARGET_TALKS_ALREADY = "Target is already talking."
     // used by ADialog
-    constant string A_TEXT_DIALOG_BUTTON = GetLocalizedString("[%1%] %2%")
+    constant string A_TEXT_DIALOG_BUTTON = "[%1%] %2%"
     constant boolean DMDF_INVENTORY = false
     constant boolean DMDF_TRADE = false
     constant boolean DMDF_CHARACTER_STATS = true

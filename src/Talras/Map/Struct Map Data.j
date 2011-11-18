@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame
+library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, StructMapMapShrines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
 
 	//! inject config
 		/// @todo tr leads to crash
@@ -71,6 +71,7 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant integer computerPlayers = 1 // one additional player for the arena and the last quest
+		public static constant player alliedPlayer = Player(6)
 		public static constant real morning = 6.0
 		public static constant real midday = 12.0
 		public static constant real afternoon = 16.0
@@ -97,26 +98,26 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame
 		/// Required by \ref Game.
 		public static method init takes nothing returns nothing
 			call Aos.init.evaluate()
-			call Arena.init.evaluate(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tr("Sie haben die Arena betreten."), tr("Sie haben die Arena verlassen."), tr("Ein Arenakampf beginnt nun."), tr("Ein Arenakampf endet nun. Der Gewinner ist \"%s\"."))
-			call Arena.addRect.evaluate(gg_rct_arena_0)
-			call Arena.addRect.evaluate(gg_rct_arena_1)
-			call Arena.addRect.evaluate(gg_rct_arena_2)
-			call Arena.addRect.evaluate(gg_rct_arena_3)
-			call Arena.addRect.evaluate(gg_rct_arena_4)
-			call Arena.addStartPoint.evaluate(GetRectCenterX(gg_rct_arena_enemy_0), GetRectCenterY(gg_rct_arena_enemy_0), 180.0)
-			call Arena.addStartPoint.evaluate(GetRectCenterX(gg_rct_arena_enemy_1), GetRectCenterY(gg_rct_arena_enemy_1), 0.0)
-			call FerryBoat.init.evaluate(gg_unit_n02H_0145, 800.0, 800.0, 0.01, 50.0, 12.0, gg_rct_ferry_boat_forward, gg_rct_ferry_boat_forward_terrain, 19.0, gg_rct_ferry_boat_backward, gg_rct_ferry_boat_backward_terrain)
-			call Layers.init.evaluate()
-			call Markers.init.evaluate()
+			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tr("Sie haben die Arena betreten."), tr("Sie haben die Arena verlassen."), tr("Ein Arenakampf beginnt nun."), tr("Ein Arenakampf endet nun. Der Gewinner ist \"%s\"."))
+			call Arena.addRect(gg_rct_arena_0)
+			call Arena.addRect(gg_rct_arena_1)
+			call Arena.addRect(gg_rct_arena_2)
+			call Arena.addRect(gg_rct_arena_3)
+			call Arena.addRect(gg_rct_arena_4)
+			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_0), GetRectCenterY(gg_rct_arena_enemy_0), 180.0)
+			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_1), GetRectCenterY(gg_rct_arena_enemy_1), 0.0)
+			call FerryBoat.init(gg_unit_n02H_0145, 800.0, 800.0, 0.01, 50.0, 12.0, gg_rct_ferry_boat_forward, gg_rct_ferry_boat_forward_terrain, 19.0, gg_rct_ferry_boat_backward, gg_rct_ferry_boat_backward_terrain)
+			call Layers.init()
+			call Markers.init()
 static if (DMDF_NPC_ROUTINES) then
-			call NpcRoutines.init.evaluate()
+			call NpcRoutines.init()
 endif
-			call Shrines.init.evaluate()
-			call SpawnPoints.init.evaluate()
+			call Shrines.init()
+			call SpawnPoints.init()
 			call initMapSpells.evaluate()
 			call initMapTalks.evaluate()
-			call initMapVideos.evaluate()
-			call Fellows.init.evaluate()
+			call initMapVideos()
+			call Fellows.init()
 			// weather
 			call Game.weather().setMinimumChangeTime(20.0)
 			call Game.weather().setMaximumChangeTime(60.0)
@@ -211,51 +212,51 @@ static if (DEBUG_MODE) then
 		endmethod
 
 		private static method onCheatActionRescueDago0 takes ACheat cheat returns nothing
-			call VideoRescueDago0.video().play.evaluate()
+			call VideoRescueDago0.video().play()
 		endmethod
 
 		private static method onCheatActionRescueDago1 takes ACheat cheat returns nothing
-			call VideoRescueDago1.video().play.evaluate()
+			call VideoRescueDago1.video().play()
 		endmethod
 
 		private static method onCheatActionTheCastle takes ACheat cheat returns nothing
-			call VideoTheCastle.video().play.evaluate()
+			call VideoTheCastle.video().play()
 		endmethod
 
 		private static method onCheatActionTheDukeOfTalras takes ACheat cheat returns nothing
-			call VideoTheDukeOfTalras.video().play.evaluate()
+			call VideoTheDukeOfTalras.video().play()
 		endmethod
 
 		private static method onCheatActionTheChief takes ACheat cheat returns nothing
-			call VideoTheChief.video().play.evaluate()
+			call VideoTheChief.video().play()
 		endmethod
 
 		private static method onCheatActionTheFirstCombat takes ACheat cheat returns nothing
-			call VideoTheFirstCombat.video().play.evaluate()
+			call VideoTheFirstCombat.video().play()
 		endmethod
 
 		private static method onCheatActionWigberht takes ACheat cheat returns nothing
-			call VideoWigberht.video().play.evaluate()
+			call VideoWigberht.video().play()
 		endmethod
 
 		private static method onCheatActionANewAlliance takes ACheat cheat returns nothing
-			call VideoANewAlliance.video().play.evaluate()
+			call VideoANewAlliance.video().play()
 		endmethod
 
 		private static method onCheatActionUpstream takes ACheat cheat returns nothing
-			call VideoUpstream.video().play.evaluate()
+			call VideoUpstream.video().play()
 		endmethod
 
 		private static method onCheatActionDragonHunt takes ACheat cheat returns nothing
-			call VideoDragonHunt.video().play.evaluate()
+			call VideoDragonHunt.video().play()
 		endmethod
 
 		private static method onCheatActionDeathVault takes ACheat cheat returns nothing
-			call VideoDeathVault.video().play.evaluate()
+			call VideoDeathVault.video().play()
 		endmethod
 
 		private static method onCheatActionBloodthirstiness takes ACheat cheat returns nothing
-			call VideoBloodthirstiness.video().play.evaluate()
+			call VideoBloodthirstiness.video().play()
 		endmethod
 
 		private static method onCheatActionUnitSpawn takes ACheat cheat returns nothing
@@ -266,16 +267,22 @@ endif
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
 			local integer i
-			call initMapPrimaryQuests.evaluate()
-			call initMapSecundaryQuests.evaluate()
+			call BJDebugMsg("Before primary quests")
+			call initMapPrimaryQuests()
+			call BJDebugMsg("Before secundary quests")
+			call initMapSecundaryQuests()
+			call BJDebugMsg("Before map spells")
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
 				call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
 				set i = i + 1
 			endloop
-			call VideoIntro.video().play.evaluate()
+			call BJDebugMsg("Before video")
+			call VideoIntro.video().play()
+			call BJDebugMsg("After video")
 			call waitForVideo(thistype.videoWaitInterval)
+			call BJDebugMsg("After video real")
 static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
 			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"mapcheats\", um eine Liste sämtlicher Karten-Cheats zu erhalten."))
@@ -302,11 +309,14 @@ static if (DEBUG_MODE) then
 			call ACheat.create("bloodthirstiness", true, thistype.onCheatActionBloodthirstiness)
 			call ACheat.create("unitspawn", true, thistype.onCheatActionUnitSpawn)
 endif
+			call BJDebugMsg("Setting all movable")
 			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
+			call BJDebugMsg("After movable")
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Drücken Sie die Escape-Taste, um ins Haupt-Menü zu gelangen."))
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
-			call QuestTalras.quest().enable.evaluate()
+			call BJDebugMsg("Quest talras id " + I2S(QuestTalras.quest()))
+			call QuestTalras.quest().enable()
 			// start weapons
 			set i = 0
 			loop
@@ -359,10 +369,6 @@ endif
 			return 0.0
 		endmethod
 
-		public static constant method alliedPlayer takes nothing returns player
-			return Player(6)
-		endmethod
-
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
 			call ResetCameraBoundsToMapRectForPlayer(user)
 		endmethod
@@ -390,7 +396,7 @@ endif
 				call thistype.setCameraBoundsToAosForPlayer(user)
 			elseif (false) then /// @todo Tavern area
 				call thistype.setCameraBoundsToTavernForPlayer(user)
-			elseif (QuestTheNorsemen.quest().hasStarted.evaluate()) then
+			elseif (QuestTheNorsemen.quest().hasStarted()) then
 				call thistype.setCameraBoundsToFightAreaForPlayer(user)
 			else
 				call thistype.setCameraBoundsToPlayableAreaForPlayer(user)

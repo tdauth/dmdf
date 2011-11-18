@@ -1,4 +1,4 @@
-library StructMapQuestsQuestALittlePresent requires Asl, StructMapMapNpcs
+library StructMapQuestsQuestALittlePresent requires Asl, StructGameCharacter, StructMapMapNpcs
 
 	struct QuestALittlePresent extends AQuest
 		/// @todo FIXME -> Honigtopf

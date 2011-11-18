@@ -1,9 +1,9 @@
-library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTable
+library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGame
 
 	/**
 	 * Provides unit revival, hero icon, disables routine and talk (talk is optional), shared control with single player or all players.
 	 * Fellow data is directly assigned to its corresponding unit and can therefore be got by static methods which do only require a unit parameter (\ref Fellow#getByUnit).
-	 * When fellows are added to any fellowship their owner is changed to \ref MapData.alliedPlayer().
+	 * When fellows are added to any fellowship their owner is changed to \ref MapData.alliedPlayer.
 	 * \note Use \ref setDisableSellings() to remove sell ability while fellow is in fellowship. This is oftenly necessary to make all unit abilities of the fellow usable for any controlling user.
 	 * \todo If talks are still enabled it should only be available for shared players!
 	 */
@@ -60,42 +60,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			return this.m_hasHeroIcon
 		endmethod
 
-		/**
-		* \param active If this value is true the NPC's talk will be left enabled during fellowship.
-		*/
-		public method setTalk takes boolean active returns nothing
-			if (this.m_hasTalk == active) then
-				return
-			endif
-			set this.m_hasTalk = active
-			if (this.m_talk != 0 and this.isShared()) then
-				if (active) then
-					call this.m_talk.enable()
-				else
-					call this.m_talk.disable()
-				endif
-			endif
-		endmethod
-
 		public method hasTalk takes nothing returns boolean
 			return this.m_hasTalk
-		endmethod
-
-		/**
-		* \param active If this value is true NPC will be revived if he dies during fellowship.
-		*/
-		public method setRevival takes boolean active returns nothing
-			if (this.m_hasRevival == active) then
-				return
-			endif
-			set this.m_hasRevival = active
-			if (this.isShared()) then
-				if (active) then
-					call EnableTrigger(this.m_revivalTrigger)
-				else
-					call DisableTrigger(this.m_revivalTrigger)
-				endif
-			endif
 		endmethod
 
 		public method hasRevival takes nothing returns boolean
@@ -142,22 +108,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			return this.m_revivalTime
 		endmethod
 
-		public method setDisableSellings takes boolean disable returns nothing
-			if (disable == this.m_disableSellings) then
-				return
-			endif
-			set this.m_disableSellings = disable
-			if (disable) then
-				set this.m_sellingsAbilities = AIntegerVector.create()
-			else
-				debug if (this.isShared()) then
-					debug call this.print("Warning: Fellow is already in fellowship. Disabling sellings leads to losing selling ability information.")
-				debug endif
-				call this.m_sellingsAbilities.destroy()
-				set this.m_sellingsAbilities = 0
-			endif
-		endmethod
-
 		public method disableSellings takes nothing returns boolean
 			return this.m_disableSellings
 		endmethod
@@ -180,6 +130,25 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 		// methods
 
+		public method isShared takes nothing returns boolean
+			return DmdfHashTable.global().handleBoolean(this.m_unit, "Fellow:Shared")
+		endmethod
+
+		private method setShared takes boolean shared returns nothing
+			call DmdfHashTable.global().setHandleBoolean(this.m_unit, "Fellow:Shared", shared)
+		endmethod
+
+		private method setActive takes boolean active returns nothing
+			call DmdfHashTable.global().setHandleBoolean(this.m_unit, "Fellow:Active", active)
+		endmethod
+
+		/**
+		* \return Returns true if revival (timer) of fellow is active.
+		*/
+		private method isActive takes nothing returns boolean
+			return DmdfHashTable.global().handleBoolean(this.m_unit, "Fellow:Active")
+		endmethod
+
 		public method isSharedToCharacter takes nothing returns boolean
 			return this.character() != 0 and this.isShared()
 		endmethod
@@ -200,7 +169,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				debug call Print("Share to all characters.")
 				/// \todo If player is in arena this won't work.
 				call Game.setAlliedPlayerAlliedToAllCharacters()
-				call SetUnitOwner(this.m_unit, MapData.alliedPlayer(), true)
+				call SetUnitOwner(this.m_unit, MapData.alliedPlayer, true)
 			endif
 			debug call Print("Fellow 1: " + GetUnitName(this.m_unit))
 			call SetUnitInvulnerable(this.m_unit, false)
@@ -383,23 +352,54 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 		endmethod
 
-		public method isShared takes nothing returns boolean
-			return DmdfHashTable.global().handleBoolean(this.m_unit, "Fellow:Shared")
-		endmethod
-
-		private method setShared takes boolean shared returns nothing
-			call DmdfHashTable.global().setHandleBoolean(this.m_unit, "Fellow:Shared", shared)
-		endmethod
-
-		private method setActive takes boolean active returns nothing
-			call DmdfHashTable.global().setHandleBoolean(this.m_unit, "Fellow:Active", active)
+		/**
+		* \param active If this value is true the NPC's talk will be left enabled during fellowship.
+		*/
+		public method setTalk takes boolean active returns nothing
+			if (this.m_hasTalk == active) then
+				return
+			endif
+			set this.m_hasTalk = active
+			if (this.m_talk != 0 and this.isShared()) then
+				if (active) then
+					call this.m_talk.enable()
+				else
+					call this.m_talk.disable()
+				endif
+			endif
 		endmethod
 
 		/**
-		* \return Returns true if revival (timer) of fellow is active.
+		* \param active If this value is true NPC will be revived if he dies during fellowship.
 		*/
-		private method isActive takes nothing returns boolean
-			return DmdfHashTable.global().handleBoolean(this.m_unit, "Fellow:Active")
+		public method setRevival takes boolean active returns nothing
+			if (this.m_hasRevival == active) then
+				return
+			endif
+			set this.m_hasRevival = active
+			if (this.isShared()) then
+				if (active) then
+					call EnableTrigger(this.m_revivalTrigger)
+				else
+					call DisableTrigger(this.m_revivalTrigger)
+				endif
+			endif
+		endmethod
+
+		public method setDisableSellings takes boolean disable returns nothing
+			if (disable == this.m_disableSellings) then
+				return
+			endif
+			set this.m_disableSellings = disable
+			if (disable) then
+				set this.m_sellingsAbilities = AIntegerVector.create()
+			else
+				debug if (this.isShared()) then
+					debug call this.print("Warning: Fellow is already in fellowship. Disabling sellings leads to losing selling ability information.")
+				debug endif
+				call this.m_sellingsAbilities.destroy()
+				set this.m_sellingsAbilities = 0
+			endif
 		endmethod
 
 		public static method create takes unit whichUnit, ATalk talk returns thistype

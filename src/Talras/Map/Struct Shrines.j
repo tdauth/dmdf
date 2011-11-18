@@ -1,4 +1,4 @@
-library StructMapMapShrines requires Asl
+library StructMapMapShrines requires Asl, StructGameShrine
 
 	struct Shrines
 		private static Shrine m_startShrine

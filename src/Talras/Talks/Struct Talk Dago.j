@@ -1,4 +1,4 @@
-library StructMapTalksTalkDago requires Asl
+library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDown
 
 	struct TalkDago extends ATalk
 
@@ -91,49 +91,49 @@ library StructMapTalksTalkDago requires Asl
 			endif
 			call info.talk().showStartPage()
 		endmethod
-		
+
 		private static method completeBoth takes AInfo info returns nothing
 			call speech(info, true, tr("Gleich beides also? Du bist mir wirklich eine große Hilfe, da werden die Bären nichts zu Lachen haben!"), null)
 			// Auftrag „Brennt die Bären nieder!“ mit Bonus abgeschlossen
 			call QuestBurnTheBearsDown.characterQuest(info.talk().character()).complete()
 			call Character(info.talk().character()).xpBonus(QuestBurnTheBearsDown.xpBonus, QuestBurnTheBearsDown.characterQuest(info.talk().character()).title())
 		endmethod
-		
+
 		private static method complete takes AInfo info returns nothing
 			call speech(info, true, tr("Vielen Dank! Ich werde die Höhle mit den Drecksbären in Flammen aufgehen lassen!"), null)
 			// Auftrag „Brennt die Bären nieder!“ abgeschlossen
 			call QuestBurnTheBearsDown.characterQuest(info.talk().character()).complete()
 		endmethod
-		
+
 		private static method conclusion takes AInfo info returns nothing
 			call speech(info, true, tr("Hier hast du deine versprochene Belohnung."), null)
 			call Character(info.talk().character()).giveItem(QuestBurnTheBearsDown.itemTypeIdDagger)
 			call Character.displayItemAcquiredToAll(tr("STRING 4869"), tr("STRING 4880"))
 			call info.talk().showStartPage()
 		endmethod
-		
+
 		// (Auftrag „Brennt die Bären nieder!“ ist aktiv und Charakter besitzt Zauberspruch)
 		private static method infoCondition6 takes AInfo info returns boolean
 			return QuestBurnTheBearsDown.characterQuest(info.talk().character()).isNew() and Character(info.talk().character()).inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)
 		endmethod
-		
+
 		// Hier ist dein Zauberspruch.
 		private static method infoAction6 takes AInfo info returns nothing
 			if (Character(info.talk().character()).inventory().totalItemTypeCharges(QuestBurnTheBearsDown.itemTypeIdWood) == QuestBurnTheBearsDown.maxWood) then // (Charakter besitzt zudem das Holz)
 				call speech(info, false, tr("Außerdem habe ich noch Holz für dich."), null)
 				call thistype.completeBoth(info)
-				
+
 			else // (Charakter besitzt nur den Zauberspruch)
 				call thistype.complete(info)
 			endif
 			call thistype.conclusion(info)
 		endmethod
-		
+
 		// (Auftrag „Brennt die Bären nieder!“ ist aktiv und Charakter besitzt Holz)
 		private static method infoCondition7 takes AInfo info returns boolean
 			return QuestBurnTheBearsDown.characterQuest(info.talk().character()).isNew() and Character(info.talk().character()).inventory().totalItemTypeCharges(QuestBurnTheBearsDown.itemTypeIdWood) == QuestBurnTheBearsDown.maxWood
 		endmethod
-		
+
 		// Hier ist dein Holz.
 		private static method infoAction7 takes AInfo info returns nothing
 			// (Charakter besitzt zudem den Zauberspruch)

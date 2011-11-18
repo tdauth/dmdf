@@ -9,7 +9,9 @@ static if (DMDF_INVENTORY) then
 endif
 //! import "Guis/Struct Main Menu.j"
 //! import "Guis/Struct Main Window.j"
+static if (DMDF_TRADE) then
 //! import "Guis/Struct Trade.j"
+endif
 
-library Guis requires StructGuisCredits, StructGuisDocument, optional StructGuisInfoLog, optional StructGuisInventory, StructGuisMainMenu, StructGuisMainWindow, StructGuisTrade
+library Guis requires StructGuisCredits, StructGuisDocument, optional StructGuisInfoLog, optional StructGuisInventory, StructGuisMainMenu, StructGuisMainWindow, optional StructGuisTrade
 endlibrary

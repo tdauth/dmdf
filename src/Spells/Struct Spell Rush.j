@@ -1,5 +1,5 @@
 /// Knight
-library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameSpell
+library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, StructGameSpell
 
 	/// Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkte Schaden zu. Wenig Schaden.
 	struct SpellRush extends Spell

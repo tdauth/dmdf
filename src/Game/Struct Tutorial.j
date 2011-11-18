@@ -1,4 +1,4 @@
-library StructGameTutorial requires Asl, StructGameCharacter, StructMapMapMapData
+library StructGameTutorial requires Asl, StructGameCharacter
 
 	/**
 	 * Provides some functionality which helps players to find their way through the game.

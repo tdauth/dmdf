@@ -1,10 +1,10 @@
 library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapNpcs, StructMapTalksTalkLothar, StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent
 
 	struct TalkMathilda extends ATalk
-		private boolean array m_wasOffendedStories[6] /// @todo @member MapData.maxPlayers
-		private boolean array m_wasOffendedSongs[6] /// @todo @member MapData.maxPlayers
-		private boolean array m_toldStory[6] /// @todo @member MapData.maxPlayers
-		private boolean array m_playedSong[6] /// @todo @member MapData.maxPlayers
+		private boolean array m_wasOffendedStories[6] /// \todo \ref MapData.maxPlayers
+		private boolean array m_wasOffendedSongs[6] /// \todo \ref MapData.maxPlayers
+		private boolean array m_toldStory[6] /// \todo \ref MapData.maxPlayers
+		private boolean array m_playedSong[6] /// \todo \ref MapData.maxPlayers
 
 		implement Talk
 
@@ -278,6 +278,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 
 		// Aber sicher doch.
 		private static method infoAction0_0 takes AInfo info returns nothing
+			call speech(info, false, tr("Aber sicher doch."), null)
 			call thistype.showSongs(info)
 		endmethod
 

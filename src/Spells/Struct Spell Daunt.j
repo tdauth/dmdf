@@ -1,5 +1,5 @@
 /// Dragon Slayer
-library StructSpellsSpellDaunt requires Asl, StructGameClasses, StructGameSpell
+library StructSpellsSpellDaunt requires Asl, StructGameClasses, StructGameGame, StructGameSpell
 
 	/// Verringert die Angriffsgeschwindigkeit für 7 Sekunden um X %. 1 Minute Abklingzeit.
 	struct SpellDaunt extends Spell

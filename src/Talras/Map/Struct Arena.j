@@ -1,4 +1,4 @@
-library StructMapMapArena requires Asl, StructMapMapMapData, StructMapQuestsQuestArenaChampion
+library StructMapMapArena requires Asl, StructGameGame, StructMapQuestsQuestArenaChampion
 
 	struct Arena
 		private static constant integer maxUnits = 2
@@ -15,7 +15,7 @@ library StructMapMapArena requires Asl, StructMapMapMapData, StructMapQuestsQues
 		private static ARealVector m_startY
 		private static ARealVector m_startFacing
 		private static AUnitVector m_units
-		private static integer array m_playerScore[6] /// @todo @member MapData.maxPlayers
+		private static integer array m_playerScore[6] /// \todo \ref MapData.maxPlayers
 		private static unit m_winner
 		private static region m_region
 		private static trigger m_killTrigger
@@ -140,8 +140,8 @@ library StructMapMapArena requires Asl, StructMapMapMapData, StructMapQuestsQues
 				call thistype.removeUnit(triggerUnit)
 			else
 				// increase score for computer player
-				set thistype.m_playerScore[GetPlayerId(MapData.alliedPlayer())] = thistype.m_playerScore[GetPlayerId(MapData.alliedPlayer())] + 1
-				call LeaderboardSetItemValue(thistype.m_leaderboard, LeaderboardGetPlayerIndex(thistype.m_leaderboard, MapData.alliedPlayer()), thistype.m_playerScore[GetPlayerId(MapData.alliedPlayer())])
+				set thistype.m_playerScore[GetPlayerId(MapData.alliedPlayer)] = thistype.m_playerScore[GetPlayerId(MapData.alliedPlayer)] + 1
+				call LeaderboardSetItemValue(thistype.m_leaderboard, LeaderboardGetPlayerIndex(thistype.m_leaderboard, MapData.alliedPlayer), thistype.m_playerScore[GetPlayerId(MapData.alliedPlayer)])
 				call LeaderboardSortItemsByValue(thistype.m_leaderboard, true)
 				call thistype.removeCharacter(character)
 			endif
@@ -267,8 +267,8 @@ library StructMapMapArena requires Asl, StructMapMapMapData, StructMapQuestsQues
 			call SetUnitInvulnerable(usedUnit, true)
 			call PauseUnit(usedUnit, true)
 			call LeaderboardAddItemBJ(owner, thistype.m_leaderboard, GetUnitName(usedUnit) + ":", thistype.playerScore(owner))
-			if (Character.getCharacterByUnit(usedUnit) == 0 and owner != MapData.alliedPlayer()) then
-				call SetUnitOwner(usedUnit, MapData.alliedPlayer(), true)
+			if (Character.getCharacterByUnit(usedUnit) == 0 and owner != MapData.alliedPlayer) then
+				call SetUnitOwner(usedUnit, MapData.alliedPlayer, true)
 			elseif (Character.getCharacterByUnit(usedUnit) != 0) then
 				call Game.setAlliedPlayerUnalliedToPlayer(owner)
 				call PanCameraToForPlayer(owner, GetUnitX(usedUnit), GetUnitY(usedUnit))
@@ -299,11 +299,11 @@ library StructMapMapArena requires Asl, StructMapMapMapData, StructMapQuestsQues
 		public static method getRandomEnemy takes integer level returns unit
 			local integer index = GetRandomInt(0, 2)
 			if (index == 0) then
-				return CreateUnit(MapData.alliedPlayer(), 'h00D', 0.0, 0.0, 0.0)
+				return CreateUnit(MapData.alliedPlayer, 'h00D', 0.0, 0.0, 0.0)
 			elseif (index == 1) then
-				return CreateUnit(MapData.alliedPlayer(), 'h00D', 0.0, 0.0, 0.0)
+				return CreateUnit(MapData.alliedPlayer, 'h00D', 0.0, 0.0, 0.0)
 			elseif (index == 2) then
-				return CreateUnit(MapData.alliedPlayer(), 'h00D', 0.0, 0.0, 0.0)
+				return CreateUnit(MapData.alliedPlayer, 'h00D', 0.0, 0.0, 0.0)
 			endif
 			return null
 		endmethod

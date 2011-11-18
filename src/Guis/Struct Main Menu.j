@@ -1,4 +1,4 @@
-library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
+library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial, StructGameGame, StructGuisTrade
 
 	struct MainMenu
 		private Character m_character
@@ -8,13 +8,13 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 		private static method dialogButtonActionSetTutorial takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
 			call this.m_character.tutorial().setEnabled(not this.m_character.tutorial().isEnabled())
-			call this.showDialog()
+			call this.showDialog.evaluate()
 		endmethod
 
 		private static method dialogButtonActionSetView takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
 			call this.m_character.setView(not this.m_character.isViewEnabled())
-			call this.showDialog()
+			call this.showDialog.evaluate()
 		endmethod
 
 		private static method dialogButtonActionSetCharactersScheme takes ADialogButton dialogButton returns nothing
@@ -22,7 +22,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 
 			call this.m_character.setShowCharactersScheme(not this.m_character.showCharactersScheme())
 
-			call this.showDialog()
+			call this.showDialog.evaluate()
 		endmethod
 
 		private static method dialogButtonActionSetCharacters takes ADialogButton dialogButton returns nothing
@@ -30,7 +30,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 
 			call this.m_character.setShowCharacters(not this.m_character.showCharacters())
 
-			call this.showDialog()
+			call this.showDialog.evaluate()
 		endmethod
 
 		private static method dialogButtonActionSetWorker takes ADialogButton dialogButton returns nothing
@@ -38,7 +38,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 
 			call this.m_character.setShowWorker(not this.m_character.showWorker())
 
-			call this.showDialog()
+			call this.showDialog.evaluate()
 		endmethod
 
 		private static method dialogButtonActionSetControl takes ADialogButton dialogButton returns nothing
@@ -46,7 +46,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 
 			call this.m_character.shareControl(not this.m_character.isControlShared())
 
-			call this.showDialog()
+			call this.showDialog.evaluate()
 		endmethod
 
 		private static method dialogButtonActionTrade takes ADialogButton dialogButton returns nothing
@@ -61,12 +61,12 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 
 		private static method dialogButtonActionBackToMainMenu takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.showDialog()
+			call this.showDialog.evaluate()
 		endmethod
 
 		private static method dialogButtonActionBackToCharacterSlotsList takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.showCharacterSlotsList()
+			call this.showCharacterSlotsList.evaluate()
 		endmethod
 
 		private method saveCharacter takes nothing returns nothing
@@ -76,7 +76,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 		private static method dialogButtonActionSaveCharacter takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
 			call this.saveCharacter()
-			call this.showCharacterSlot(this.m_characterSlotIndex)
+			call this.showCharacterSlot.evaluate(this.m_characterSlotIndex)
 		endmethod
 
 		private method loadCharacter takes nothing returns nothing
@@ -86,7 +86,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 		private static method dialogButtonActionLoadCharacter takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
 			call this.loadCharacter()
-			call this.showCharacterSlot(this.m_characterSlotIndex)
+			call this.showCharacterSlot.evaluate(this.m_characterSlotIndex)
 		endmethod
 
 		private method showCharacterSlot takes integer index returns nothing

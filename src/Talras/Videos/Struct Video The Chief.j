@@ -1,4 +1,4 @@
-library StructMapVideosVideoTheChief requires Asl, StructGameGame
+library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapQuestsQuestTheNorsemen
 
 	struct VideoTheChief extends AVideo
 		private unit m_actorWigberht
@@ -21,16 +21,16 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame
 			set this.m_actorRicman = thistype.unitActor(thistype.saveUnitActor(gg_unit_n016_0016))
 			call SetUnitPositionRect(this.m_actorRicman, gg_rct_video_the_chief_ricmans_position)
 			call SetUnitFacing(this.m_actorRicman, 299.92)
-			
+
 			set this.m_actorNorseman0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n01I_0150))
 			call SetUnitPositionRect(this.m_actorNorseman0, gg_rct_video_the_chief_norseman_0)
 			call SetUnitFacing(this.m_actorRicman, 303.74)
-			
+
 			set this.m_actorNorseman1 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n01I_0151))
 			call SetUnitPositionRect(this.m_actorRicman, gg_rct_video_the_chief_norseman_1)
 			call SetUnitFacing(this.m_actorRicman, 168.10)
-			
-			
+
+
 			// hide other norsemen
 			call ShowUnit(gg_unit_n01I_0153, false)
 			call ShowUnit(gg_unit_n01I_0152, false)
@@ -169,11 +169,11 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame
 		public stub method onStopAction takes nothing returns nothing
 			set this.m_actorWigberht = null
 			set this.m_actorRicman = null
-			
+
 			// show other norsemen
 			call ShowUnit(gg_unit_n01I_0153, true)
 			call ShowUnit(gg_unit_n01I_0152, true)
-			
+
 			call Game.resetVideoSettings()
 			call QuestTheNorsemen.quest().questItem(1).setState(AAbstractQuest.stateNew)
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Sprechen Sie Wigberht an, um die Vorhut der Orks anzugreifen."))

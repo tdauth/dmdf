@@ -39,6 +39,42 @@ library StructMapMapFerryBoat requires Asl, StructMapMapNpcs, StructMapTalksTalk
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"FerryBoat\"")
 
+		public static method addUnit takes unit whichUnit returns nothing
+			call PauseUnit(whichUnit, true)
+			call SetUnitInvulnerable(whichUnit, true)
+			call SetUnitPathing(whichUnit, false)
+			/// @todo Set to random location on boat.
+			call SetUnitX(whichUnit, GetUnitX(thistype.m_boat))
+			call SetUnitY(whichUnit, GetUnitY(thistype.m_boat))
+			call SetUnitFacing(whichUnit, GetRandomReal(0.0, 360.0))
+			call thistype.m_units.units().pushBack(whichUnit)
+		endmethod
+
+		public static method addCharacter takes Character character returns nothing
+			call character.displayMessage(Character.messageTypeInfo, tr("Sie betreten die Fähre."))
+			call character.setMovable(false)
+			call thistype.addUnit(character.unit())
+		endmethod
+
+		public static method containsUnit takes unit whichUnit returns boolean
+			return thistype.m_units.units().contains(whichUnit)
+		endmethod
+
+		public static method containsCharacter takes Character character returns boolean
+			return thistype.containsUnit(character.unit())
+		endmethod
+
+		public static method displayMessage takes string message, sound whichSound returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (IsPlayerPlayingUser(Player(i)) and thistype.m_units.hasUnitsOfPlayer(Player(i))) then
+					call TransmissionFromUnitForPlayer(Player(i), gg_unit_n021_0004, message, whichSound)
+				endif
+				set i = i + 1
+			endloop
+		endmethod
+
 		public static method setMovement takes integer movement returns nothing
 static if (DEBUG_MODE) then
 				if (movement == thistype.m_movement) then
@@ -210,42 +246,6 @@ endif
 			set thistype.m_backwardTrigger = CreateTrigger()
 			call TriggerRegisterGameStateEvent(thistype.m_backwardTrigger, GAME_STATE_TIME_OF_DAY, EQUAL, thistype.m_backwardTime)
 			call TriggerAddAction(thistype.m_backwardTrigger, function thistype.triggerActionStartBackward)
-		endmethod
-
-		public static method addUnit takes unit whichUnit returns nothing
-			call PauseUnit(whichUnit, true)
-			call SetUnitInvulnerable(whichUnit, true)
-			call SetUnitPathing(whichUnit, false)
-			/// @todo Set to random location on boat.
-			call SetUnitX(whichUnit, GetUnitX(thistype.m_boat))
-			call SetUnitY(whichUnit, GetUnitY(thistype.m_boat))
-			call SetUnitFacing(whichUnit, GetRandomReal(0.0, 360.0))
-			call thistype.m_units.units().pushBack(whichUnit)
-		endmethod
-
-		public static method addCharacter takes Character character returns nothing
-			call character.displayMessage(Character.messageTypeInfo, tr("Sie betreten die Fähre."))
-			call character.setMovable(false)
-			call thistype.addUnit(character.unit())
-		endmethod
-
-		public static method containsUnit takes unit whichUnit returns boolean
-			return thistype.m_units.units().contains(whichUnit)
-		endmethod
-
-		public static method containsCharacter takes Character character returns boolean
-			return thistype.containsUnit(character.unit())
-		endmethod
-
-		public static method displayMessage takes string message, sound whichSound returns nothing
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (IsPlayerPlayingUser(Player(i)) and thistype.m_units.hasUnitsOfPlayer(Player(i))) then
-					call TransmissionFromUnitForPlayer(Player(i), gg_unit_n021_0004, message, whichSound)
-				endif
-				set i = i + 1
-			endloop
 		endmethod
 	endstruct
 

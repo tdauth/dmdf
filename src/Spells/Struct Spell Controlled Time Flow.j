@@ -1,5 +1,5 @@
 /// Wizard
-library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, StructGameSpell
+library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, StructGameDmdfHashTable, StructGameGame, StructGameSpell
 
 	/// Der Zauberer hält X Sekunden lang die Zeit an. Dabei werden sämtliche Einheiten angehalten und sind angriffs- und bewegungsunfähig. Außerdem wird der Tageszeitzyklus gestoppt. Der Zauberer selbst, sowie Verbündete im Umkreis von Y, können sich mit Z% ihrer Bewegungsgeschwindigkeit weiterhin bewegen.
 	/**
@@ -18,25 +18,25 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 		private static method filter takes nothing returns boolean
 			return true /// \todo Check for buff if spell has been casted several times
 		endmethod
-		
+
 		private static method pauseTarget takes unit whichUnit returns nothing
 			call PauseUnit(whichUnit, true)
 		endmethod
-		
+
 		private static method unpauseTarget takes unit whichUnit returns nothing
 			call PauseUnit(whichUnit, false)
 		endmethod
-		
+
 		/// \todo Add buff.
 		private static method applyAllyEffect takes unit whichUnit returns nothing
-			
+
 			local real bonus = Game.addUnitMoveSpeed(whichUnit, -GetUnitMoveSpeed(whichUnit) * thistype.speed)
 			local effect spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, whichUnit, "origin")
 			call DmdfHashTable.global().setHandleReal(whichUnit, "SpellControlledTimeFlow:MoveSpeedBonus", bonus)
 			call DmdfHashTable.global().setHandleEffect(whichUnit, "SpellControlledTimeFlow:Effect", spellEffect)
 			call Spell.showMoveSpeedTextTag(whichUnit, bonus)
 		endmethod
-		
+
 		/// \todo Add buff.
 		private static method removeAllyEffect takes unit whichUnit returns nothing
 			local real bonus = DmdfHashTable.global().handleReal(whichUnit, "SpellControlledTimeFlow:MoveSpeedBonus")
@@ -46,7 +46,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			set spellEffect = null
 			call Spell.showMoveSpeedTextTag(whichUnit, -bonus)
 		endmethod
-		
+
 		private static method enterCondition takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local AGroup allies = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "allies")
@@ -57,14 +57,14 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			endif
 			return false
 		endmethod
-		
+
 		private method createEnterTrigger takes trigger whichTrigger, AGroup allies returns nothing
 			call TriggerRegisterUnitInRange(whichTrigger, this.character().unit(), thistype.range, null)
 			call TriggerAddCondition(whichTrigger, Condition(function thistype.enterCondition))
 			call DmdfHashTable.global().setHandleInteger(whichTrigger, "this", this)
 			call DmdfHashTable.global().setHandleInteger(whichTrigger, "allies", allies)
 		endmethod
-		
+
 		private static method mapCondition takes nothing returns boolean
 			local AGroup targets = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "targets")
 			call PauseUnit(GetTriggerUnit(), true)
@@ -72,7 +72,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			call targets.units().pushBack(GetTriggerUnit())
 			return false
 		endmethod
-		
+
 		private method createMapTrigger takes trigger whichTrigger, AGroup targets returns region
 			local region rectRegion = CreateRegion()
 			call RegionAddRect(rectRegion, GetPlayableMapRect())
@@ -81,7 +81,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			call DmdfHashTable.global().setHandleInteger(whichTrigger, "targets", targets)
 			return rectRegion
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local real time = thistype.time
@@ -101,7 +101,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 				if (GetDistanceBetweenUnitsWithoutZ(caster, unitGroup.units()[i]) <= thistype.range and GetUnitAllianceStateToUnit(caster, unitGroup.units()[i]) == bj_ALLIANCE_ALLIED) then
 					call allies.units().pushBack(unitGroup.units()[i])
 					call unitGroup.units().erase(i)
-					
+
 				else
 					set i = i + 1
 				endif
@@ -113,7 +113,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			call SuspendTimeOfDay(true)
 			debug call Print("Controlled Time Flow: " + I2S(unitGroup.units().size()) + " units.")
 			debug call Print("Controlled Time Flow: " + I2S(allies.units().size()) + " allies.")
-			
+
 			loop
 				exitwhen (time <= 0.0 or thistype.allyTargetLoopCondition(caster))
 				call TriggerSleepAction(1.0)
@@ -131,11 +131,11 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 				endloop
 				set time = time - 1.0
 			endloop
-			
+
 			call unitGroup.forGroup(thistype.unpauseTarget)
 			call allies.forGroup(thistype.removeAllyEffect)
 			call SuspendTimeOfDay(false)
-			
+
 			set caster = null
 			call DestroyEffect(casterEffect)
 			set casterEffect = null

@@ -1,4 +1,4 @@
-library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, StructMapMapMapData, StructMapMapNpcs, StructMapVideosVideoANewAlliance, StructMapVideosVideoWigberht
+library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, StructMapMapNpcs, StructMapVideosVideoANewAlliance, StructMapVideosVideoWigberht
 
 	private struct WavesDisplay
 		private leaderboard m_leaderboard
@@ -27,7 +27,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call LeaderboardSetLabel(this.m_leaderboard, tr("Verbleibende Wellen"))
 			call LeaderboardSetStyle(this.m_leaderboard, true, true, true, true)
 			call LeaderboardAddItemBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, tr("Feindliche:"), this.m_hostileWaves)
-			call LeaderboardAddItemBJ(MapData.alliedPlayer(), this.m_leaderboard, tr("Verbündete:"), this.m_alliedWaves)
+			call LeaderboardAddItemBJ(MapData.alliedPlayer, this.m_leaderboard, tr("Verbündete:"), this.m_alliedWaves)
 			debug call Print("C")
 			set i = 0
 			loop
@@ -116,6 +116,46 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 			set triggerUnit = null
 			return result
+		endmethod
+
+		private static method groupFunctionRemoveUnit takes unit enumUnit returns nothing
+			call RemoveUnit(enumUnit)
+		endmethod
+
+		private method cleanUpBattleField takes nothing returns nothing
+			local integer i
+			local integer j
+			set this.m_hasStarted = false
+			call this.m_allyStartGroup.destroy() /// @todo Reset them to Norsemen camp
+			call this.m_allyRangerGroup.forGroup(thistype.groupFunctionRemoveUnit)
+			call this.m_allyRangerGroup.destroy()
+			set this.m_allyRangerLeader = null
+			call this.m_allyFarmerGroup.forGroup(thistype.groupFunctionRemoveUnit)
+			call this.m_allyFarmerGroup.destroy()
+			set this.m_allyFarmerLeader = null
+			call this.m_currentGroup.destroy()
+			call DestroyTrigger(this.m_spawnTrigger)
+			set this.m_spawnTrigger = null
+
+			call this.m_wavesDisplay.destroy()
+
+			set i = 0
+			loop
+				exitwhen (i == 4)
+				set j = 0
+				loop
+					exitwhen (j == MapData.maxPlayers)
+					if (this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)] != null) then
+						call DestroyFogModifier(this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)])
+						set this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)] = null
+					endif
+					set j = j + 1
+				endloop
+				set i = i + 1
+			endloop
+
+			call Fellows.wigberht().reset()
+			call Fellows.ricman().reset()
 		endmethod
 
 		private static method triggerActionSpawn takes nothing returns nothing
@@ -225,7 +265,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		private static method groupFunctionChangeOwnerToAlly takes unit enumUnit returns nothing
-			local player allyPlayer = MapData.alliedPlayer()
+			local player allyPlayer = MapData.alliedPlayer
 			call SetUnitOwner(enumUnit, allyPlayer, true)
 			set allyPlayer = null
 		endmethod
@@ -238,7 +278,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		public method startSpawns takes AGroup allyStartGroup, AGroup enemyStartGroup returns nothing
 			local player owner = Player(PLAYER_NEUTRAL_AGGRESSIVE)
-			local player allyPlayer = MapData.alliedPlayer()
+			local player allyPlayer = MapData.alliedPlayer
 			local integer i
 			local player user
 
@@ -274,46 +314,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call Fellows.ricman().shareWith(0)
 		endmethod
 
-		private static method groupFunctionRemoveUnit takes unit enumUnit returns nothing
-			call RemoveUnit(enumUnit)
-		endmethod
-
-		private method cleanUpBattleField takes nothing returns nothing
-			local integer i
-			local integer j
-			set this.m_hasStarted = false
-			call this.m_allyStartGroup.destroy() /// @todo Reset them to Norsemen camp
-			call this.m_allyRangerGroup.forGroup(thistype.groupFunctionRemoveUnit)
-			call this.m_allyRangerGroup.destroy()
-			set this.m_allyRangerLeader = null
-			call this.m_allyFarmerGroup.forGroup(thistype.groupFunctionRemoveUnit)
-			call this.m_allyFarmerGroup.destroy()
-			set this.m_allyFarmerLeader = null
-			call this.m_currentGroup.destroy()
-			call DestroyTrigger(this.m_spawnTrigger)
-			set this.m_spawnTrigger = null
-
-			call this.m_wavesDisplay.destroy()
-
-			set i = 0
-			loop
-				exitwhen (i == 4)
-				set j = 0
-				loop
-					exitwhen (j == MapData.maxPlayers)
-					if (this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)] != null) then
-						call DestroyFogModifier(this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)])
-						set this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)] = null
-					endif
-					set j = j + 1
-				endloop
-				set i = i + 1
-			endloop
-
-			call Fellows.wigberht().reset()
-			call Fellows.ricman().reset()
-		endmethod
-
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger usedTrigger returns nothing
 			local event triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_quest_the_norsemen_quest_item_0)
 			set triggerEvent = null
@@ -327,7 +327,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
-			call VideoTheChief.video().play()
+			call VideoTheChief.video.evaluate().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call questItem.quest().displayUpdate()
 		endmethod

@@ -1,5 +1,5 @@
 /// Ranger
-library StructSpellsSpellSprint requires Asl, StructGameClasses, StructGameSpell
+library StructSpellsSpellSprint requires Asl, StructGameClasses, StructGameGame, StructGameSpell
 
 	/// Der Waldläufer sprintet und erhöht sein Bewegungstempo 3 + X Sekunden lang um 80 %.
 	struct SpellSprint extends Spell
