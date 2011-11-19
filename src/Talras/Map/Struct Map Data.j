@@ -278,11 +278,8 @@ endif
 				call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
 				set i = i + 1
 			endloop
-			call BJDebugMsg("Before video")
 			call VideoIntro.video().play()
-			call BJDebugMsg("After video")
 			call waitForVideo(thistype.videoWaitInterval)
-			call BJDebugMsg("After video real")
 static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
 			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"mapcheats\", um eine Liste sämtlicher Karten-Cheats zu erhalten."))

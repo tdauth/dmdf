@@ -32,6 +32,7 @@ export OPT_PATH=~/Dokumente/Projekte/wc3tools/Warcraft3MapOptimizier
 echoStats "Warcraft III Optimizer is located at \"$OPT_PATH\"."
 export JNGP_PATH=~/Dokumente/Projekte/wc3tools/jassnewgenpack5d
 echoStats "JNGP is located at \"$JNGP_PATH\"."
+#export JASSHELPER_PATH=~/Dokumente/Projekte/wc3tools/0.A.2.B.jasshelper/executable
 export JASSHELPER_PATH=$JNGP_PATH/jasshelper
 echoStats "JassHelper is located at \"$JASSHELPER_PATH\"."
 export ASL_PATH=~/Dokumente/Projekte/asl

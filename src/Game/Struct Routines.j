@@ -31,12 +31,12 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		private static method enterHouseTargetAction takes ARoutineData routineData returns nothing
-			//debug call Print("Unit " + GetUnitName(routineData.routineUnitData().unit()) + " enters house.")
+			debug call Print("Unit " + GetUnitName(routineData.routineUnitData().unit()) + " enters house.")
 			call ShowUnit(routineData.routineUnitData().unit(), false)
 		endmethod
 
 		private static method leaveHouseTargetAction takes ARoutineData routineData returns nothing
-			//debug call Print("Unit " + GetUnitName(routineData.routineUnitData().unit()) + " leaves house.")
+			debug call Print("Unit " + GetUnitName(routineData.routineUnitData().unit()) + " leaves house.")
 			call SetUnitFacing(routineData.routineUnitData().unit(), GetUnitFacing(routineData.routineUnitData().unit()) - 180.0) // turn around
 			call ShowUnit(routineData.routineUnitData().unit(), true)
 		endmethod
@@ -70,7 +70,7 @@ library StructGameRoutines requires Asl
 			//debug call Print("Talk: Found " + I2S(CountUnitsInGroup(whichGroup)) + " possible partners.")
 			set whichUnit = FindClosestUnit(whichGroup, GetUnitX(routineData.routineUnitData().unit()), GetUnitY(routineData.routineUnitData().unit()))
 			//debug call Print(GetUnitName(whichUnit) + " is the closest partner.")
-			
+
 			if (whichUnit != null) then
 				call SetUnitFacingToFaceUnit(routineData.routineUnitData().unit(), whichUnit)
 				call QueueUnitAnimation(routineData.routineUnitData().unit(), "Stand Talk")
