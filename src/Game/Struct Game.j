@@ -412,7 +412,6 @@ endif
 			call AVideo.init(2, 4.0, tr("Spieler %s möchte das Video überspringen."), tr("Video wird übersprungen."))
 			// world systems
 			call AItemSpawnPoint.init(4.0, 60.0, 200.0)
-			call ARoutine.init()
 			call ASpawnPoint.init(60.0, "Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", "Abilities\\Spells\\Orc\\EtherealForm\\SpiritWalkerMorph.wav", 50, true, neutralAggressive, tr("%s wurde für Spieler %s fallen gelassen."))
 			set neutralAggressive = null
 			call AWeather.init()

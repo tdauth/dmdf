@@ -18,89 +18,89 @@ library StructGameRoutines requires Asl
 		private method onDestroy takes nothing returns nothing
 		endmethod
 
-		private static method trainEndAction takes ARoutineData routineData returns nothing
-			call ResetUnitAnimation(routineData.routineUnitData().unit())
+		private static method trainEndAction takes ARoutinePeriod period returns nothing
+			call ResetUnitAnimation(period.unit())
 		endmethod
 
 		/// @todo Should check whether the unit has animation
-		private static method trainTargetAction takes ARoutineData routineData returns nothing
+		private static method trainTargetAction takes ARoutinePeriod period returns nothing
 			local integer index = GetRandomInt(0, thistype.m_trainAnimations.backIndex())
-			call QueueUnitAnimation(routineData.routineUnitData().unit(), thistype.m_trainAnimations[index])
+			call QueueUnitAnimation(period.unit(), thistype.m_trainAnimations[index])
 			call TriggerSleepAction(2.0)
-			call AContinueRoutineLoop(routineData, thistype.trainTargetAction)
+			call AContinueRoutineLoop(period, thistype.trainTargetAction)
 		endmethod
 
-		private static method enterHouseTargetAction takes ARoutineData routineData returns nothing
-			debug call Print("Unit " + GetUnitName(routineData.routineUnitData().unit()) + " enters house.")
-			call ShowUnit(routineData.routineUnitData().unit(), false)
+		private static method enterHouseTargetAction takes ARoutinePeriod period returns nothing
+			debug call Print("Unit " + GetUnitName(period.unit()) + " enters house.")
+			call ShowUnit(period.unit(), false)
 		endmethod
 
-		private static method leaveHouseTargetAction takes ARoutineData routineData returns nothing
-			debug call Print("Unit " + GetUnitName(routineData.routineUnitData().unit()) + " leaves house.")
-			call SetUnitFacing(routineData.routineUnitData().unit(), GetUnitFacing(routineData.routineUnitData().unit()) - 180.0) // turn around
-			call ShowUnit(routineData.routineUnitData().unit(), true)
+		private static method leaveHouseTargetAction takes ARoutinePeriod period returns nothing
+			debug call Print("Unit " + GetUnitName(period.unit()) + " leaves house.")
+			call SetUnitFacing(period.unit(), GetUnitFacing(period.unit()) - 180.0) // turn around
+			call ShowUnit(period.unit(), true)
 		endmethod
 
-		private static method hammerEndAction takes ARoutineData routineData returns nothing
+		private static method hammerEndAction takes ARoutinePeriod period returns nothing
 			//debug call Print("Reset hammer animation.")
-			call ResetUnitAnimation(routineData.routineUnitData().unit())
+			call ResetUnitAnimation(period.unit())
 		endmethod
 
 		/// Animation of villager.
-		private static method hammerTargetAction takes ARoutineData routineData returns nothing
-			call QueueUnitAnimation(routineData.routineUnitData().unit(), "Attack")
-			call PlaySoundFileOnUnit("Buildings\\Human\\Blacksmith\\BlacksmithWhat1.wav", routineData.routineUnitData().unit())
+		private static method hammerTargetAction takes ARoutinePeriod period returns nothing
+			call QueueUnitAnimation(period.unit(), "Attack")
+			call PlaySoundFileOnUnit("Buildings\\Human\\Blacksmith\\BlacksmithWhat1.wav", period.unit())
 			call TriggerSleepAction(1.0)
-			call AContinueRoutineLoop(routineData, thistype.hammerTargetAction)
+			call AContinueRoutineLoop(period, thistype.hammerTargetAction)
 		endmethod
 
-		private static method talkEndAction takes ARoutineData routineData returns nothing
-			call ResetUnitAnimation(routineData.routineUnitData().unit())
+		private static method talkEndAction takes ARoutinePeriod period returns nothing
+			call ResetUnitAnimation(period.unit())
 		endmethod
 
 		private static method talkFilter takes nothing returns boolean
 			return GetOwningPlayer(GetEnumUnit()) == Player(PLAYER_NEUTRAL_PASSIVE) and not IsUnitPaused(GetEnumUnit())
 		endmethod
 
-		private static method talkTargetAction takes ARoutineData routineData returns nothing
+		private static method talkTargetAction takes ARoutinePeriod period returns nothing
 			local group whichGroup = CreateGroup()
 			local unit whichUnit = null
-			//debug call Print("Talk target action.")
-			call GroupEnumUnitsInRange(whichGroup, GetUnitX(routineData.routineUnitData().unit()), GetUnitY(routineData.routineUnitData().unit()), 400.0, Filter(function thistype.talkFilter))
-			//debug call Print("Talk: Found " + I2S(CountUnitsInGroup(whichGroup)) + " possible partners.")
-			set whichUnit = FindClosestUnit(whichGroup, GetUnitX(routineData.routineUnitData().unit()), GetUnitY(routineData.routineUnitData().unit()))
-			//debug call Print(GetUnitName(whichUnit) + " is the closest partner.")
+			debug call Print("Talk target action.")
+			call GroupEnumUnitsInRange(whichGroup, GetUnitX(period.unit()), GetUnitY(period.unit()), 400.0, Filter(function thistype.talkFilter))
+			debug call Print("Talk: Found " + I2S(CountUnitsInGroup(whichGroup)) + " possible partners.")
+			set whichUnit = FindClosestUnit(whichGroup, GetUnitX(period.unit()), GetUnitY(period.unit()))
+			debug call Print(GetUnitName(whichUnit) + " is the closest partner.")
 
 			if (whichUnit != null) then
-				call SetUnitFacingToFaceUnit(routineData.routineUnitData().unit(), whichUnit)
-				call QueueUnitAnimation(routineData.routineUnitData().unit(), "Stand Talk")
+				call SetUnitFacingToFaceUnit(period.unit(), whichUnit)
+				call QueueUnitAnimation(period.unit(), "Stand Talk")
 				debug call Print("Talking to.")
 			endif
 			call DestroyGroup(whichGroup)
 			set whichGroup = null
 			call TriggerSleepAction(1.0)
-			call AContinueRoutineLoop(routineData, thistype.talkTargetAction)
+			call AContinueRoutineLoop(period, thistype.talkTargetAction)
 		endmethod
 
-		private static method drinkEndAction takes ARoutineData routineData returns nothing
-			call ResetUnitAnimation(routineData.routineUnitData().unit())
+		private static method drinkEndAction takes ARoutinePeriod period returns nothing
+			call ResetUnitAnimation(period.unit())
 		endmethod
 
 		/// @todo FIXME
-		private static method drinkTargetAction takes ARoutineData routineData returns nothing
-			call QueueUnitAnimation(routineData.routineUnitData().unit(), "Stand")
+		private static method drinkTargetAction takes ARoutinePeriod period returns nothing
+			call QueueUnitAnimation(period.unit(), "Stand")
 			call TriggerSleepAction(1.0)
-			call AContinueRoutineLoop(routineData, thistype.drinkTargetAction)
+			call AContinueRoutineLoop(period, thistype.drinkTargetAction)
 		endmethod
 
-		private static method harvestEndAction takes ARoutineData routineData returns nothing
-			call ResetUnitAnimation(routineData.routineUnitData().unit())
+		private static method harvestEndAction takes ARoutinePeriod period returns nothing
+			call ResetUnitAnimation(period.unit())
 		endmethod
 
-		private static method harvestTargetAction takes ARoutineData routineData returns nothing
-			call QueueUnitAnimation(routineData.routineUnitData().unit(), "Stand Work")
+		private static method harvestTargetAction takes ARoutinePeriod period returns nothing
+			call QueueUnitAnimation(period.unit(), "Stand Work")
 			call TriggerSleepAction(1.266)
-			call AContinueRoutineLoop(routineData, thistype.harvestTargetAction)
+			call AContinueRoutineLoop(period, thistype.harvestTargetAction)
 		endmethod
 
 		public static method init takes nothing returns nothing

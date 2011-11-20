@@ -173,7 +173,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 			debug call Print("Fellow 1: " + GetUnitName(this.m_unit))
 			call SetUnitInvulnerable(this.m_unit, false)
-			call ARoutine.disableForUnitInAll(this.m_unit)
+			call AUnitRoutine.disableAll(this.m_unit)
 			debug call Print("Fellow 2.")
 			if (not this.m_hasTalk and this.m_talk != 0) then
 				call this.m_talk.disable()
@@ -230,7 +230,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 			call SetUnitOwner(this.m_unit, Player(PLAYER_NEUTRAL_PASSIVE), true)
 			call SetUnitInvulnerable(this.m_unit, true)
-			call ARoutine.enableForUnitInAll(this.m_unit)
+			call AUnitRoutine.enableAll(this.m_unit)
 			if (this.m_talk != 0) then
 				call this.m_talk.enable()
 			endif
