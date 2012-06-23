@@ -113,7 +113,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		// NEW
 		private static ItemType m_dagosDagger
 		private static ItemType m_wingsOfDeathAngel
-		private static ItemType m_vampireWarp
+		private static ItemType m_vampireNecklace
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -284,42 +284,42 @@ library StructGameItemTypes requires Asl, StructGameClasses
 
 			set thistype.m_huntingKnife = ItemType.createSimple('I025', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_huntingKnife.addAbility('A07W', true)
-			
+
 			// artefacts
 			set thistype.m_amuletOfForesight = ItemType.createSimple('I02J', AItemType.equipmentTypeAmulet)
 			call thistype.m_amuletOfForesight.addAbility('A08X', true)
 			call thistype.m_amuletOfForesight.addAbility('AIuv', true)
-		
+
 			set thistype.m_amuletOfTerror = ItemType.createSimple('I01M', AItemType.equipmentTypeAmulet)
-			
+
 			set thistype.m_swordOfDarkness = ItemType.createSimple('I02K', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_swordOfDarkness.addAbility('A095', true)
 			call thistype.m_swordOfDarkness.addAbility('S005', true)
-			
+
 			// slaughter quest
 			set thistype.m_bloodAmulet = ItemType.createSimple('I02L', AItemType.equipmentTypeAmulet)
 			call thistype.m_bloodAmulet.addAbility('A09V', true)
-			
+
 			// Tellborn's items
 			set thistype.m_staffOfClarity = ItemType.createSimple('I02N', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_staffOfClarity.addAbility('AIrm', true)
 			call thistype.m_staffOfClarity.addAbility('A0AD', true)
 			call thistype.m_staffOfClarity.addAbility('A0AE', true)
 			call thistype.m_staffOfClarity.addAbility('AIi4', true)
-			
+
 			// NEW
 			set thistype.m_dagosDagger = ItemType.createSimple('I02O', ItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_dagosDagger.addAbility('A020', true)
 			call thistype.m_dagosDagger.addAbility('A021', true)
-			
+
 			set thistype.m_wingsOfDeathAngel = ItemType.createSimple('I02Q', ItemType.equipmentTypeArmour)
 			call thistype.m_wingsOfDeathAngel.addAbility('A030', true)
 			call thistype.m_wingsOfDeathAngel.addAbility('A02B', true)
 			call thistype.m_wingsOfDeathAngel.addAbility('A022', true)
-			
-			set thistype.m_vampireWarp = ItemType.createSimple('I02T', ItemType.equipmentTypeArmour)
-			call thistype.m_vampireWarp.addAbility('AIi4', true)
-			call thistype.m_vampireWarp.addAbility('A03X', true)
+
+			set thistype.m_vampireNecklace = ItemType.createSimple('I02T', ItemType.equipmentTypeArmour)
+			call thistype.m_vampireNecklace.addAbility('AIi4', true)
+			call thistype.m_vampireNecklace.addAbility('A03X', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType
@@ -333,7 +333,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		public static method longsword takes nothing returns ItemType
 			return thistype.m_longsword
 		endmethod
-		
+
 		public static method swordOfDarkness takes nothing returns ItemType
 			return thistype.m_swordOfDarkness
 		endmethod
