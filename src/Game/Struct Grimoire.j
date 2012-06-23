@@ -289,7 +289,16 @@ endif
 						call this.unlearnSpell(spell)
 					endif
 				else
+					// update to new grimoire entry
+					if ((not this.pageIsShown()) and (this.currentSpell() == spell)) then
+						call spell.hideGrimoireEntry.evaluate()
+					endif
+				
 					call spell.setLevel(level)
+					
+					if ((not this.pageIsShown()) and (this.currentSpell() == spell)) then
+						call spell.showGrimoireEntry.evaluate()
+					endif
 				endif
 			else
 				call this.removeSkillPoints(requiredSkillPoints)
@@ -302,11 +311,16 @@ endif
 					endif
 				endif
 
+				// update to new grimoire entry
+				if ((not this.pageIsShown()) and (this.currentSpell() == spell)) then
+					call spell.hideGrimoireEntry.evaluate()
+				endif
+				
 				call spell.setLevel(level)
-			endif
-
-			if (spell.isGrimoireEntryShown()) then
-				call spell.grimoireEntry().updateLevel.evaluate()
+				
+				if ((not this.pageIsShown()) and (this.currentSpell() == spell)) then
+					call spell.showGrimoireEntry.evaluate()
+				endif
 			endif
 
 			return true
@@ -748,7 +762,11 @@ endif
 				call this.m_spellAddToFavourites.hide.evaluate()
 			endif
 
-			call this.m_spellQuit.show.evaluate()
+			if (this.pageIsShown()) then
+				call this.currentSpell().showGrimoireEntry() // show info about current level
+				call this.m_spellQuit.show.evaluate()
+			endif
+			
 			set this.m_pageIsShown = false
 			call IssueImmediateOrderById(this.character().unit(), this.ability()) // open grimoire again (lost all abilities before
 		endmethod
@@ -769,6 +787,15 @@ endif
 					endif
 					// since it must be at least level 1 we need no additional check for level > 0!
 					call this.m_spellDecrease.show.evaluate()
+					
+					// first level, favourites buttons
+					if (this.currentSpell().level() == 1) then
+						if (this.m_favourites.contains(this.currentSpell())) then
+							call this.m_spellRemoveFromFavourites.show.evaluate()
+						elseif (this.m_favourites.size() < thistype.maxFavourites) then
+							call this.m_spellAddToFavourites.show.evaluate()
+						endif
+					endif
 				endif
 			endif
 			return false
@@ -780,6 +807,8 @@ endif
 				if (not this.pageIsShown()) then
 					if (this.currentSpell().level() == 0) then
 						call this.m_spellDecrease.hide.evaluate()
+						call this.m_spellAddToFavourites.hide.evaluate()
+						call this.m_spellRemoveFromFavourites.hide.evaluate()
 					endif
 					if (this.currentSpell().isSkillable()) then
 						call this.m_spellIncrease.show.evaluate()
@@ -790,14 +819,14 @@ endif
 		endmethod
 
 		public method addSpellToFavourites takes nothing returns nothing
-			if (this.addFavouriteSpell(this.currentSpell())) then
+			if (this.addFavouriteSpell(this.currentSpell()) and (not this.pageIsShown())) then
 				call this.m_spellAddToFavourites.hide.evaluate()
 				call this.m_spellRemoveFromFavourites.show.evaluate()
 			endif
 		endmethod
 
 		public method removeSpellFromFavourites takes nothing returns nothing
-			if (this.removeFavouriteSpell(this.currentSpell())) then
+			if (this.removeFavouriteSpell(this.currentSpell()) and (not this.pageIsShown())) then
 				call this.m_spellAddToFavourites.show.evaluate()
 				call this.m_spellRemoveFromFavourites.hide.evaluate()
 			endif
@@ -806,11 +835,13 @@ endif
 		public method showPage takes nothing returns nothing
 			local integer i
 			local integer index
+			
 			if (not this.pageIsShown()) then
 				call this.m_spellIncrease.hide.evaluate()
 				call this.m_spellDecrease.hide.evaluate()
 				call this.m_spellRemoveFromFavourites.hide.evaluate()
 				call this.m_spellAddToFavourites.hide.evaluate()
+				call this.currentSpell().hideGrimoireEntry() // hide info about current level
 				call this.m_spellQuit.hide.evaluate()
 
 				call this.m_spellPreviousPage.show.evaluate()
@@ -818,6 +849,8 @@ endif
 			endif
 
 			// update current shown spells
+			debug call Print("Before showing page spells.")
+			
 			set i = 0
 			loop
 				exitwhen (i == thistype.spellsPerPage)
@@ -833,6 +866,7 @@ endif
 				set i = i + 1
 			endloop
 
+			debug call Print("After showing page spells.")
 			set this.m_pageIsShown = true
 			call IssueImmediateOrderById(this.character().unit(), this.ability()) // open grimoire again (lost all abilities before
 		endmethod
@@ -1101,14 +1135,13 @@ endif
 			return this.m_spell
 		endmethod
 
-		public method updateLevel takes nothing returns nothing
-			call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), this.spell().level())
-		endmethod
-
 		public stub method onCastAction takes nothing returns nothing
 			/// \todo cancel order since ability will be removed!
 			//call IssueImmediateOrderById(this.character().unit(), A_ORDER_ID_STUNNED)
-			call this.grimoire().setCurrentSpell(this.spell())
+			// can be casted in spell menu as well!
+			if (this.grimoire().pageIsShown()) then
+				call this.grimoire().setCurrentSpell(this.spell())
+			endif
 		endmethod
 
 		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbilityId, Spell spell returns thistype

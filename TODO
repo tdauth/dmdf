@@ -1,3 +1,6 @@
+2012-02-05 Tamino Dauth <tamino@cdauth.eu>
+* Da die Reihenfolge der Zauber eines Zauberbuchs vom Hinzufügen und Entfernen abhängt, muss das dynamische Hinzufügen und Entfernen angepasst werden, damit eine feste Reihenfolge eingehalten wird (noch mal mit Button-Positionen testen).
+
 2011-11-14 Tamino Dauth <tamino@cdauth.eu>
 * Arenawettsystem für Agihards Arena einbauen.
 
@@ -21,7 +24,7 @@
 * Bei der Klassenauswahl Fake-Zauberbuch hinzufügen, in welchem man alle erlernbaren Zauber sieht.
 * Das Zauberbuch wird immer dann verlassen, wenn zu einem Zeitpunkt alle Zauber verschwinden. Bei einem Seitenwechsel oder Wechsel zu einem Zauber sollte daher der Zauberbuchzauber ebenfalls ausgeführt werden.
 * FIXED: Die angezeigte Zauberstufe sollte minimal 1 sein und danach immer die aktuell gelernte Stufe haben.
-* Wenn beim Erhöhen der Stufe ein Zauber das erste Mal erlernt wird, sollte je nachdem, ob der Zauber zu den Favoriten kommt oder nicht (geschieht automatisch) ein entsprechender Button erscheinen und nicht bereits zuvor dort sein!
+* FIXED: Wenn beim Erhöhen der Stufe ein Zauber das erste Mal erlernt wird, sollte je nachdem, ob der Zauber zu den Favoriten kommt oder nicht (geschieht automatisch) ein entsprechender Button erscheinen und nicht bereits zuvor dort sein!
 * Der Charakter zaubert einen Zauber die ganze Zeit ohne Unterbrechung, wenn dieser beim Casten entfernt wird. Casten in diesem Fall abbrechen!!!
 * FIXED: Osman sagt sehr wenig bei Begrüßung, Hallo ist unpassend, wenn man um Hilfe für Guntrich ersucht. Man sollte erst nach einer Begrüßung um Hilfe ersuchen können und Osmans Antwort sollte davon abhängen, ob man Kleriker ist!
 * "Zurück" in Baldars Dialog einbauen.

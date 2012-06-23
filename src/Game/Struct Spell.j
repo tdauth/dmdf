@@ -18,6 +18,23 @@ library StructGameSpell requires Asl, StructGameCharacter
 		///! external ObjectMerger w3a Aspb $FAVOURITE_ABILITY_ID$ anam "
 	//! endtextmacro
 
+	/**
+	 * Custom structure for character spells which support \ref Grimoire API.
+	 * For item spells etc. just use \ref ASpell.
+	 * Each spell which should be usable in grimoire needs extra spell pairs per level which are mainly used for
+	 * spell level icons.
+	 * They can be added using \ref addGrimoireEntry().
+	 * In "Die Macht des Feuers" there are 4 different types of spells:
+	 * <ul>
+	 * <li>normal spells (which can be skilled with required skill points, one per level) - \ref spellTypeNormal</li>
+	 * <li>default spells (which cannot be reskilled/changed and are learned by default - usually one per class) - \ref spellTypeDefault</li>
+	 <li>ultimate 0 (which can be skilled when character has at least level \ref Grimoire.ultimate0Level) - \ref spellTypeUltimate0</li>
+	 <li>ultimate 1 (which can be skilled when character has at least level \ref Grimoire.ultimate1Level) - \ref spellTypeUltimate1</li>
+	 * </ul>
+	 * A spell's type can be specified in constructor.
+	 *
+	 * \ref setAvailable() allows specifying if a spell can be used at all.
+	 */
 	struct Spell extends ASpell
 		public static constant integer spellTypeNormal = 0
 		public static constant integer spellTypeDefault = 1
@@ -49,6 +66,10 @@ library StructGameSpell requires Asl, StructGameCharacter
 		endmethod
 
 		/**
+		 * Adds grimoire entry to the back of existing grimoire entries of this spell - \ref grimoireEntries().
+		 * The spell needs a grimoire entry per level!
+		 * \param abilityId Ability which has info of the spell in its tooltip and maybe uses a level icon.
+		 * \param grimoireAbilityId Ability based on "spell book" which has only \p abilityId in its list.
 		 * \sa thistype#grimoireEntries()
 		 */
 		public method addGrimoireEntry takes integer abilityId, integer grimoireAbilityId returns nothing
@@ -122,13 +143,16 @@ library StructGameSpell requires Asl, StructGameCharacter
 			return true
 		endmethod
 
+		/**
+		 * \return Returns true if the spell is skillable to its next level.
+		 */
 		public method isSkillable takes nothing returns boolean
 			return this.isSkillableTo(this.level() + 1)
 		endmethod
 
 		/**
-		* Use this method for spells which have some spell duration and which can be interrupted by enemies.
-		*/
+		 * Use this method for spells which have some spell duration and which can be interrupted by enemies.
+		 */
 		public stub method interruptEx takes unit whichUnit, boolean stun, boolean snare, boolean sleep returns boolean
 			return (stun and IsUnitType(whichUnit, UNIT_TYPE_STUNNED)) or (snare and IsUnitType(whichUnit, UNIT_TYPE_SNARED)) or (sleep and IsUnitType(whichUnit, UNIT_TYPE_SLEEPING))
 		endmethod
