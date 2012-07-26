@@ -139,6 +139,7 @@ static if (DEBUG_MODE) then
 			call Print("aos")
 			call Print("aosentry")
 			call Print(tr("Video-Cheats:"))
+			call Print("intro")
 			call Print("rescuedago0")
 			call Print("rescuedago1")
 			call Print("thecastle")
@@ -209,6 +210,10 @@ static if (DEBUG_MODE) then
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_aos_outside)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
 			set whichPlayer = null
+		endmethod
+
+		private static method onCheatActionIntro takes ACheat cheat returns nothing
+			call VideoIntro.video().play()
 		endmethod
 
 		private static method onCheatActionRescueDago0 takes ACheat cheat returns nothing
@@ -292,6 +297,7 @@ static if (DEBUG_MODE) then
 			call ACheat.create("forest", true, thistype.onCheatActionForest)
 			call ACheat.create("aos", true, thistype.onCheatActionAos)
 			call ACheat.create("aosentry", true, thistype.onCheatActionAosEntry)
+			call ACheat.create("intro", true, thistype.onCheatActionIntro)
 			call ACheat.create("rescuedago0", true, thistype.onCheatActionRescueDago0)
 			call ACheat.create("rescuedago1", true, thistype.onCheatActionRescueDago1)
 			call ACheat.create("thecastle", true, thistype.onCheatActionTheCastle)

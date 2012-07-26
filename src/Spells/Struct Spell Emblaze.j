@@ -14,7 +14,7 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		/// @todo Was passiert bei mehreren Buffs?
 		private method action takes nothing returns nothing
 			local unit target = GetSpellTargetUnit()
-			local integer damage = GetUnitLevel(target) * thistype.damageLevelFactor * this.level()
+			local integer damage = thistype.damageLevelFactor * this.level()
 			local real time = thistype.time
 			debug call Print("Emblaze: Before buff.")
 			// TODO buggy

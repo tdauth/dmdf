@@ -270,7 +270,7 @@ globals
     rect                    gg_rct_weather_vampire_camp_fog = null
     rect                    gg_rct_worker              = null
     rect                    gg_rct_video_death_vault_medusa = null
-    camerasetup             gg_cam_a_new_alliance_0    = null
+       camerasetup             gg_cam_a_new_alliance_0    = null
     camerasetup             gg_cam_a_new_alliance_1    = null
     camerasetup             gg_cam_a_new_alliance_2    = null
     camerasetup             gg_cam_a_new_alliance_3    = null
@@ -636,6 +636,14 @@ globals
     destructable            gg_dest_B00D_2651          = null
     destructable            gg_dest_B008_8168          = null
     destructable            gg_dest_B008_3006          = null
+    camerasetup             gg_cam_intro_village       = null
+    camerasetup             gg_cam_intro_orc           = null
+    camerasetup             gg_cam_intro_duke          = null
+    camerasetup             gg_cam_intro_start_0       = null
+    camerasetup             gg_cam_intro_start_1       = null
+    trigger                 gg_trg_Video_Intro_new     = null
+    camerasetup             gg_cam_intro_norsemen      = null
+    camerasetup             gg_cam_intro_characters    = null
 endglobals
 
 //===========================================================================
@@ -2860,6 +2868,75 @@ function CreateCameras takes nothing returns nothing
     call CameraSetupSetField(gg_cam_wigberht_9, CAMERA_FIELD_FARZ, 5000.0, 0.0)
     call CameraSetupSetDestPosition(gg_cam_wigberht_9, - 13965.0, 17863.2, 0.0)
 
+     set gg_cam_intro_village=CreateCameraSetup()
+    call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_ROTATION, 227.7, 0.0)
+    call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_ANGLE_OF_ATTACK, 329.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_TARGET_DISTANCE, 1650.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_ROLL, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_FARZ, 5000.0, 0.0)
+    call CameraSetupSetDestPosition(gg_cam_intro_village, - 10287.0, 4599.5, 0.0)
+
+    set gg_cam_intro_orc=CreateCameraSetup()
+    call CameraSetupSetField(gg_cam_intro_orc, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_orc, CAMERA_FIELD_ROTATION, 85.8, 0.0)
+    call CameraSetupSetField(gg_cam_intro_orc, CAMERA_FIELD_ANGLE_OF_ATTACK, 327.5, 0.0)
+    call CameraSetupSetField(gg_cam_intro_orc, CAMERA_FIELD_TARGET_DISTANCE, 578.3, 0.0)
+    call CameraSetupSetField(gg_cam_intro_orc, CAMERA_FIELD_ROLL, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_orc, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_orc, CAMERA_FIELD_FARZ, 5000.0, 0.0)
+    call CameraSetupSetDestPosition(gg_cam_intro_orc, - 14264.8, 19290.8, 0.0)
+
+    set gg_cam_intro_duke=CreateCameraSetup()
+    call CameraSetupSetField(gg_cam_intro_duke, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_duke, CAMERA_FIELD_ROTATION, 91.6, 0.0)
+    call CameraSetupSetField(gg_cam_intro_duke, CAMERA_FIELD_ANGLE_OF_ATTACK, 343.3, 0.0)
+    call CameraSetupSetField(gg_cam_intro_duke, CAMERA_FIELD_TARGET_DISTANCE, 525.7, 0.0)
+    call CameraSetupSetField(gg_cam_intro_duke, CAMERA_FIELD_ROLL, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_duke, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_duke, CAMERA_FIELD_FARZ, 5000.0, 0.0)
+    call CameraSetupSetDestPosition(gg_cam_intro_duke, - 4756.7, 2159.2, 0.0)
+
+    set gg_cam_intro_start_0=CreateCameraSetup()
+    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ROTATION, 270.5, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ANGLE_OF_ATTACK, 278.2, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_TARGET_DISTANCE, 1650.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ROLL, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_FARZ, 5000.0, 0.0)
+    call CameraSetupSetDestPosition(gg_cam_intro_start_0, - 11677.0, 8732.9, 0.0)
+
+    set gg_cam_intro_start_1=CreateCameraSetup()
+    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ROTATION, 270.5, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ANGLE_OF_ATTACK, 278.2, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_TARGET_DISTANCE, 1650.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ROLL, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_FARZ, 5000.0, 0.0)
+    call CameraSetupSetDestPosition(gg_cam_intro_start_1, - 11689.4, 7443.0, 0.0)
+
+    set gg_cam_intro_norsemen=CreateCameraSetup()
+    call CameraSetupSetField(gg_cam_intro_norsemen, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_norsemen, CAMERA_FIELD_ROTATION, 326.6, 0.0)
+    call CameraSetupSetField(gg_cam_intro_norsemen, CAMERA_FIELD_ANGLE_OF_ATTACK, 330.5, 0.0)
+    call CameraSetupSetField(gg_cam_intro_norsemen, CAMERA_FIELD_TARGET_DISTANCE, 3536.9, 0.0)
+    call CameraSetupSetField(gg_cam_intro_norsemen, CAMERA_FIELD_ROLL, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_norsemen, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_norsemen, CAMERA_FIELD_FARZ, 5000.0, 0.0)
+    call CameraSetupSetDestPosition(gg_cam_intro_norsemen, - 454.3, 4345.3, 0.0)
+
+    set gg_cam_intro_characters=CreateCameraSetup()
+    call CameraSetupSetField(gg_cam_intro_characters, CAMERA_FIELD_ZOFFSET, 67.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_characters, CAMERA_FIELD_ROTATION, 178.2, 0.0)
+    call CameraSetupSetField(gg_cam_intro_characters, CAMERA_FIELD_ANGLE_OF_ATTACK, 335.3, 0.0)
+    call CameraSetupSetField(gg_cam_intro_characters, CAMERA_FIELD_TARGET_DISTANCE, 1059.2, 0.0)
+    call CameraSetupSetField(gg_cam_intro_characters, CAMERA_FIELD_ROLL, 0.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_characters, CAMERA_FIELD_FIELD_OF_VIEW, 49.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_characters, CAMERA_FIELD_FARZ, 3000.0, 0.0)
+    call CameraSetupSetDestPosition(gg_cam_intro_characters, - 11004.3, - 2388.0, 0.0)
 endfunction
 
 //***************************************************************************
@@ -2893,9 +2970,9 @@ globals
     constant string A_TEXT_TIME_VALUE = "0%1%"
     constant string A_TEXT_TIME_PAIR = "%1%:%2%"
     // used by ATalk
-    constant string A_TEXT_EXIT = "Exit"
-    constant string A_TEXT_BACK = "Back"
-    constant string A_TEXT_TARGET_TALKS_ALREADY = "Target is already talking."
+    constant string A_TEXT_EXIT = "Ende"
+    constant string A_TEXT_BACK = "Zurück"
+    constant string A_TEXT_TARGET_TALKS_ALREADY = "Ziel unterhält sich bereits."
     // used by ADialog
     constant string A_TEXT_DIALOG_BUTTON = "[%1%] %2%"
     constant boolean DMDF_INVENTORY = false
@@ -3678,6 +3755,37 @@ function InitTrig_Unbezeichneter_Ausl__ser_004_Kopieren takes nothing returns no
 endfunction
 
 //===========================================================================
+// Trigger: Video Intro new
+//
+// neues Intro mit neuem Text:
+// Nachdem die Orks und Dunkelelfen in das Königreich der Menschen eingefallen waren, wussten viele der Adeligen, von denen die meisten in den Frieden hineingeboren wurden, nicht wie sie auf die vermeintliche Invasion reagieren sollten.
+// Da der König, der selbst einen schwachen Willen hatte, keine Truppen an die Grenze seines Reiches entsandt, mussten die dort ansäßigen Fürsten und Herzöge selbst mit dem neuen Feind zurechtkommen.
+// Doch auch das einfachere Volk sahen in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen. So kämpften die einen dafür, ihr bisheriges Leben wie gewohnt fortzusetzen, während die anderen den eigenen Vorteil aus der Furcht der Beteiligten zogen.
+// Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich, wie so viele, von der feindlichen Übermacht enorm bedroht fühlt.
+//===========================================================================
+function Trig_Video_Intro_new_Actions takes nothing returns nothing
+    call CameraSetupApplyForPlayer(true, gg_cam_intro_orc, Player(0), 0.00)
+    call TriggerSleepAction(9.00)
+    call CameraSetupApplyForPlayer(true, gg_cam_intro_start_0, Player(0), 0.00)
+    call TriggerSleepAction(0.50)
+    call CameraSetupApplyForPlayer(true, gg_cam_intro_start_1, Player(0), 10.00)
+    call TriggerSleepAction(9.00)
+    call CameraSetupApplyForPlayer(true, gg_cam_intro_village, Player(0), 0.00)
+    call TriggerSleepAction(9.00)
+    call CameraSetupApplyForPlayer(true, gg_cam_intro_norsemen, Player(0), 0.00)
+    call TriggerSleepAction(5.00)
+    call CameraSetupApplyForPlayer(true, gg_cam_intro_characters, Player(0), 0.00)
+    call TriggerSleepAction(5.00)
+    call CameraSetupApplyForPlayer(true, gg_cam_intro_duke, Player(0), 0.00)
+endfunction
+
+//===========================================================================
+function InitTrig_Video_Intro_new takes nothing returns nothing
+    set gg_trg_Video_Intro_new=CreateTrigger()
+    call TriggerAddAction(gg_trg_Video_Intro_new, function Trig_Video_Intro_new_Actions)
+endfunction
+
+//===========================================================================
 function InitCustomTriggers takes nothing returns nothing
     call InitTrig_Video_Intro()
     call InitTrig_Video_Rescue_Dago_0()
@@ -3700,6 +3808,7 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_Unbezeichneter_Ausl__ser_003()
     call InitTrig_Unbezeichneter_Ausl__ser_004()
     call InitTrig_Unbezeichneter_Ausl__ser_004_Kopieren()
+    call InitTrig_Video_Intro_new()
 endfunction
 
 //===========================================================================

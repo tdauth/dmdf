@@ -1,13 +1,26 @@
+2012-07-25 Tamino Dauth <tamino@cdauth.eu>
+* Im Video hat der Charakter die Sachen aus seinem Rucksack (nicht die Ausrüstung!).
+* Bärenanimation ...
+* Intro vervollständigen (mit Soundaufnahmen testen).
+* Dagos Dolch braucht Modell.
+* Angriffsanimation mit Hiebwaffen ändern!
+* Zombie, dunkler Diener läuft zu schnell und hat keine Todesanimation (Zustand).
+* Zwerg bewegt Beine zu langsam, schwebt halb beim Laufen (langsamer machen?).
+
+2012-07-15 Tamino Dauth <tamino@cdauth.eu>
+* Spruchrolle des Totenreichs wird aktiv verbraucht.
+* FIXED: Emblaze geht nicht (0 Schaden).
+
 2012-06-23 Tamino Dauth <tamino@cdauth.eu>
-* VampireBat.mdx für Vampirkettenfähigkeit verwenden.
+* DONE: VampireBat.mdx für Vampirkettenfähigkeit verwenden.
 * Neue Zauberbuchsymbole verwenden.
-* BTNMagicRing.blp für Zauberring.
-* BTNWizardsHat.blp für Zauberhut.
-* BTNVampireNecklace.blp für Zauberkette.
-* BTNRingOfLatency.blp für Ring der Verborgenheit.
-* BTNNasalHelmet.blp für Nasalhelm.
-* BTNBloodAmulet.blp für Blutamulett.
-* BTNAmuletOfForesight.blp für Amulett der Weitsicht.
+* DONE: BTNMagicRing.blp für Zauberring.
+* DONE: BTNWizardsHat.blp für Zauberhut.
+* DONE: BTNVampireNecklace.blp für Zauberkette.
+* DONE: BTNRingOfLatency.blp für Ring der Verborgenheit.
+* DONE: BTNNasalHelmet.blp für Nasalhelm.
+* DONE: BTNBloodAmulet.blp für Blutamulett.
+* DONE: BTNAmuletOfForesight.blp für Amulett der Weitsicht.
 
 2012-02-05 Tamino Dauth <tamino@cdauth.eu>
 * Da die Reihenfolge der Zauber eines Zauberbuchs vom Hinzufügen und Entfernen abhängt, muss das dynamische Hinzufügen und Entfernen angepasst werden, damit eine feste Reihenfolge eingehalten wird (noch mal mit Button-Positionen testen).

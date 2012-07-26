@@ -6,8 +6,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
-			call SetTimeOfDay(12.00)
-			call CameraSetupApplyForceDuration(gg_cam_intro_0, true, 0.00)
+			call SetTimeOfDay(6.00)
+			call CameraSetupApplyForceDuration(gg_cam_intro_orc, true, 0.00)
 			call SetUnitPositionRect(AVideo.actor(), gg_rct_character_0_start)
 			call SetUnitFacing(AVideo.actor(), 0.0)
 			call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_MUSIC, 1.0) /// @todo test!
@@ -20,44 +20,70 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(0.50)) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_intro_1, true, 25.00)
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Nachdem die Orks und Dunkelelfen in das Königreich der Menschen eingefallen waren, schickte man Boten zum König, die diesem von der vermeintlichen Invasion berichteten."), null)
-			if (wait(24.0)) then
-				return
-			endif
-			call CameraSetupApplyForceDuration(gg_cam_intro_2, true, 25.00)
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Der König aber, der in den Frieden hineingeboren worden war und nicht die Kraft besaß, selbst an der Spitze seiner Truppen in die Schlacht zu ziehen, hielt es nicht für notwendig Truppen an die Grenze seines Reichs zu schicken."), null)
-			if (wait(24.0)) then
-				return
-			endif
-			call CameraSetupApplyForceDuration(gg_cam_intro_3, true, 25.00)
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Stattdessen schickte er die Boten zurück, damit diese sich ein besseres Bild von der Situation machten und erst um Hilfe ersuchen sollten, wenn es denn tatsächlich notwendig wäre."), null)
-			if (wait(24.0)) then
-				return
-			endif
-			call CameraSetupApplyForceDuration(gg_cam_intro_4, true, 25.00)
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Viele Bewohner des Reichs waren anderer Meinung als der König und so zogen sie an die Grenze, um den Feind auf eigene Faust aufzuhalten und in dem Glauben, dass wenn ihnen dies nicht gelänge, womöglich ihre Heimat in Schutt und Asche gelegt würde."), null)
-			if (wait(24.0)) then
-				return
-			endif
-			call CameraSetupApplyForceDuration(gg_cam_intro_5, true, 25.00)
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Unter diesen Kriegsleuten befanden sich auch ein paar Vasallen, die ihr Geschäft mit den bevorstehenden Kämpfen machen wollten. Sie zogen zur Burg Talras, die sich nahe der Grenze befand, um dem dortigen Herzog ihre Dienste anzubieten."), null)
-			if (wait(24.0)) then
-				return
-			endif
-			call CameraSetupApplyForceDuration(gg_cam_intro_6, true, 25.00)
-			if (wait(24.00)) then
-				return
-			endif
-			call CameraSetupApplyForceDuration(gg_cam_intro_end, true, 22.00)
-			if (wait(22.00)) then
-				return
-			endif
-			//character 0 talks
-			call TransmissionFromUnit(AVideo.actor(), tr("Das ist der Weg. Direkt vor uns liegt vermutlich die Burg. Wer weiß? Vielleicht steht sie auch schon in Flammen."), null)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Nachdem die Orks und Dunkelelfen in das Königreich der Menschen eingefallen waren, wussten viele der Adeligen, von denen die meisten in den Frieden hineingeboren wurden, nicht wie sie auf die vermeintliche Invasion reagieren sollten."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
+			call CameraSetupApplyForceDuration(gg_cam_intro_start_0, true, 0.00)
+			call CameraSetupApplyForceDuration(gg_cam_intro_start_1, true, GetSimpleTransmissionDuration(null) + 3.0)
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(1.50)) then
+				return
+			endif
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Da der König, der selbst einen schwachen Willen hatte, keine Truppen an die Grenze seines Reiches entsandt, mussten die dort ansäßigen Fürsten und Herzöge selbst mit dem neuen Feind zurechtkommen."), null)
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
+			call CameraSetupApplyForceDuration(gg_cam_intro_village, true, 0.0)
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Doch auch das einfachere Volk sahen in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen. So kämpften die einen dafür, ihr bisheriges Leben wie gewohnt fortzusetzen, während die anderen den eigenen Vorteil aus der Furcht der Beteiligten zogen."), null)
+			if (wait(4.0)) then // wait until "So kämpften die einen dafür ..."
+				return
+			endif
+
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
+			call CameraSetupApplyForceDuration(gg_cam_intro_norsemen, true, 0.0)
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then // wait until "während die anderen ..."
+				return
+			endif
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
+			call CameraSetupApplyForceDuration(gg_cam_intro_characters, true, 0.0)
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then // wait until end
+				return
+			endif
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
+			call CameraSetupApplyForceDuration(gg_cam_intro_duke, true, 0.00)
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich, wie so viele, von der feindlichen Übermacht enorm bedroht fühlt."), null)
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+
 			set user = null
 			call this.stop()
 		endmethod
