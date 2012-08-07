@@ -1,9 +1,46 @@
+2012-08-0/ Tamino Dauth <tamino@cdauth.eu>
+* Dämpfung: Zaubertooltip Stufenwert anpassen!
+* Endlich Gebiet in die Todeshöhle einfügen, ab dem das Quest beginnt.
+* Donnerwesenvideopunkte einfügen?
+* Todesengel gehört zu 10000% nicht PLAYER_NEUTRAL_AGGRESSIVE!
+* Reihenfolge der Buttons im Zauberbuch ist nicht immer gleich (Koordinaten auf 0 setzen).
+* Dialog mit Trommon: Was wenn bereits Kuno getroffen? Mittlere Quest-Antwort könnte Dialog bei Kuno freischalten, Belohnung, Holzfäller verteidigt.
+* Ein Donnerwesen im Fels versteckt?
+* Kunos Dialog, nicht das genaue Alter der Tochter, hilft bei unbestimmten Dingen, kein Haushalt ...
+* Björns Dialog, jagen?
+* Tellborn, andere Reaktion auf Hallo wenn bereits angesprochen.
+
+2012-08-04 Tamino Dauth <tamino@cdauth.eu>
+* Verwandlung in Dämon funktioniert nicht.
+* Gegenstände für andere Klassen erstellen (Baldars Ring).
+* "Manaexplosion" Stufe 1 scheint eine andere Position als die anderen Stufen zu haben, überprüfen, ansonsten funktioniert das neue Zauberbuch mit Buttons.
+* Beim Anlegen vom "Stab des Zauberers" stürzt das Spiel ab.
+* 30x20 Zahlensymbole rechts unten außerhalb des Randes!
+
+2012-08-03 Tamino Dauth <tamino@cdauth.eu>
+* DONE: "Zurück zum Zauberbuch" wird nicht mehr benötigt.
+* Fellow: timer während Video stoppen.
+* FIXED (ASL): Bestenliste während Video ausblenden.
+
+2012-07-30 Tamino Dauth <tamino@cdauth.eu>
+* DONE: revival trigger in Fellow deaktivieren
+* Talras quest item 2 event geht nicht in Nicht-debug-Modus
+* FIXED: grimoire ability immer auslösen wenn Button neu gesetzt werden, damit es offen bleibt
+* casting-Zeit und -Animation bei Zauberbuch- und Rucksack-Fähigkeiten entfernen!
+* orb-Fähigkeiten für Waffen nutzen, mit Angriffssound, -index und Angriffsanimationen!
+* Spruchrolle des Totenreichs hat in der Fähigkeit viel zu großen Radius
+
+2012-07-28 Tamino Dauth <tamino@cdauth.eu>
+* DONE: Use interface icons for bag and grimoire from "Icons/Interface/Buttons"
+* DONE: Use icons: Pitfall, Alpha and Treefolk.
+
 2012-07-25 Tamino Dauth <tamino@cdauth.eu>
-* Im Video hat der Charakter die Sachen aus seinem Rucksack (nicht die Ausrüstung!).
+* FIXED: Im Video hat der Charakter die Sachen aus seinem Rucksack (nicht die Ausrüstung!).
 * Bärenanimation ...
 * Intro vervollständigen (mit Soundaufnahmen testen).
 * Dagos Dolch braucht Modell.
 * Angriffsanimation mit Hiebwaffen ändern!
+* Infos: niedriger Wert lässt Bewegungsanimation schneller erscheinen:
 * Zombie, dunkler Diener läuft zu schnell und hat keine Todesanimation (Zustand).
 * Zwerg bewegt Beine zu langsam, schwebt halb beim Laufen (langsamer machen?).
 
@@ -13,7 +50,7 @@
 
 2012-06-23 Tamino Dauth <tamino@cdauth.eu>
 * DONE: VampireBat.mdx für Vampirkettenfähigkeit verwenden.
-* Neue Zauberbuchsymbole verwenden.
+* DONE: Neue Zauberbuchsymbole verwenden.
 * DONE: BTNMagicRing.blp für Zauberring.
 * DONE: BTNWizardsHat.blp für Zauberhut.
 * DONE: BTNVampireNecklace.blp für Zauberkette.
@@ -26,7 +63,7 @@
 * Da die Reihenfolge der Zauber eines Zauberbuchs vom Hinzufügen und Entfernen abhängt, muss das dynamische Hinzufügen und Entfernen angepasst werden, damit eine feste Reihenfolge eingehalten wird (noch mal mit Button-Positionen testen).
 
 2011-11-14 Tamino Dauth <tamino@cdauth.eu>
-* Arenawettsystem für Agihards Arena einbauen.
+* DEPRECATED: Arenawettsystem für Agihards Arena einbauen.
 
 2011-11-06 Tamino Dauth <tamino@cdauth.eu>
 * Checkout if there are any MPQ files which are missing in the current archive since all files were taken from /mnt/disk2 not the old /home/tamino partition!!!

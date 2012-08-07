@@ -95,6 +95,9 @@ library StructGameSpell requires Asl, StructGameCharacter
 		endmethod
 
 		public method grimoireEntry takes nothing returns GrimoireSpellEntry
+			if (this.grimoireEntries().empty()) then
+				return 0
+			endif
 			return this.grimoireEntries()[IMaxBJ(this.level() - 1, 0)]
 		endmethod
 

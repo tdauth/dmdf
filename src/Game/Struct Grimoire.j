@@ -7,12 +7,16 @@
  */
 library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, Spells
 
+	/**
+	 * \todo At its current state \ref updateUi() may be called too many times. Please consider that the order of buttons in grimoire should always be equal regardless of which buttons became unavailable.
+	 */
 	struct Grimoire extends ASpell
 		public static constant integer maxSpells = 15
 		public static constant integer spellsPerPage = 8
 		public static constant integer abilityId = 'A0AP'
 		//public static constant integer techIdSkillPoints = 'R005'
 		//public static constant integer unitId = 'h00J'
+		public static constant string shortcut = "Z"
 		public static constant integer maxFavourites = 4
 		public static constant integer ultimate0Level = 12
 		public static constant integer ultimate1Level = 25
@@ -26,11 +30,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		private AIntegerVector m_spells
 		private NextPage m_spellNextPage
 		private PreviousPage m_spellPreviousPage
-		private Quit m_spellQuit
 		private Increase m_spellIncrease
 		private Decrease m_spellDecrease
 		private AddToFavourites m_spellAddToFavourites
 		private RemoveFromFavourites m_spellRemoveFromFavourites
+		private AIntegerVector m_uiGrimoireSpells
 
 		// members
 
@@ -42,8 +46,13 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 
 		public method pages takes nothing returns integer
 			local integer result = this.m_spells.size() / thistype.spellsPerPage
+			// add extra page for remaining spells
 			if (ModuloInteger(this.m_spells.size(), thistype.spellsPerPage) > 0) then
 				set result = result + 1
+			endif
+			// at least one page
+			if (result == 0) then
+				set result = 1
 			endif
 			return result
 		endmethod
@@ -170,18 +179,87 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			return this.m_spells.size()
 		endmethod
 
+		/**
+		 * Updates all buttons properly.
+		 * Central UI update is much easier to maintain!
+		 * \note Add all shown spells to m_uiGrimoireSpells!
+		 */
+		private method updateUi takes nothing returns nothing
+			local integer i
+			local integer index
+
+			set i = 0
+			loop
+				exitwhen (i == this.m_uiGrimoireSpells.size())
+				if (this.m_uiGrimoireSpells[i] != 0) then
+					call GrimoireSpell(this.m_uiGrimoireSpells[i]).hide.evaluate()
+				endif
+				set i = i + 1
+			endloop
+			call this.m_uiGrimoireSpells.clear()
+
+			if (this.pageIsShown()) then
+				call this.m_spellPreviousPage.show.evaluate()
+				call this.m_uiGrimoireSpells.pushBack(this.m_spellPreviousPage)
+				call this.m_spellNextPage.show.evaluate()
+				call this.m_uiGrimoireSpells.pushBack(this.m_spellNextPage)
+
+				set i = 0
+				loop
+					exitwhen (i == thistype.spellsPerPage)
+					set index = Index2D(this.page(), i, thistype.spellsPerPage)
+					if (index >= this.m_spells.size()) then
+						exitwhen (true)
+					endif
+					if (Spell(this.m_spells[index]).available()) then
+						call Spell(this.m_spells[index]).showGrimoireEntry()
+						call this.m_uiGrimoireSpells.pushBack(Spell(this.m_spells[index]).grimoireEntry())
+					endif
+					set i = i + 1
+				endloop
+			else
+				// show in correct order
+				call this.currentSpell().showGrimoireEntry() // show info about current level
+				call this.m_uiGrimoireSpells.pushBack(this.currentSpell().grimoireEntry())
+
+				if (this.currentSpell().isSkillable()) then
+					call this.m_spellIncrease.show.evaluate()
+					call this.m_uiGrimoireSpells.pushBack(this.m_spellIncrease)
+				endif
+				if (this.currentSpell().level() > 0) then
+					call this.m_spellDecrease.show.evaluate()
+					call this.m_uiGrimoireSpells.pushBack(this.m_spellDecrease)
+
+					if (this.m_favourites.contains(this.currentSpell())) then
+						call this.m_spellRemoveFromFavourites.show.evaluate()
+						call this.m_uiGrimoireSpells.pushBack(this.m_spellRemoveFromFavourites)
+					elseif (this.m_favourites.size() < thistype.maxFavourites) then
+						call this.m_spellAddToFavourites.show.evaluate()
+						call this.m_uiGrimoireSpells.pushBack(this.m_spellAddToFavourites)
+					endif
+				endif
+			endif
+
+			debug call Print("after removing ability")
+			//call IssueImmediateOrderById(this.character().unit(), this.ability()) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			call ForceUIKeyBJ(this.character().player(), thistype.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			debug call Print("issued: " + GetObjectName(this.ability()))
+		endmethod
+
 		private method learnFavouriteSpell takes Spell spell returns nothing
 			local integer favouriteAbility = spell.favouriteAbility()
 			call this.m_favourites.pushBack(spell)
 			call spell.add()
 			call spell.setLevel(1)
 			call spell.onLearn.evaluate()
+			call this.updateUi()
 		endmethod
 
 		private method unlearnFavouriteSpell takes Spell spell returns nothing
 			call spell.onUnlearn.evaluate()
 			call this.m_favourites.remove(spell)
 			call spell.remove()
+			call this.updateUi()
 		endmethod
 
 		private method learnSpell takes Spell spell returns nothing
@@ -189,6 +267,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 			call spell.setLevel(1)
 			call spell.onLearn.evaluate()
+			call this.updateUi()
 		endmethod
 
 		private method unlearnSpell takes Spell spell returns nothing
@@ -196,6 +275,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), true)
 			call spell.remove()
+			call this.updateUi()
 		endmethod
 
 		private method addFavouriteSpell takes Spell spell returns boolean
@@ -208,6 +288,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			call UnitRemoveAbility(this.character().unit(), favouriteAbility)
 			call spell.add()
 			call spell.setLevel(level)
+			call this.updateUi()
 			return true
 		endmethod
 
@@ -221,6 +302,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 			call spell.setLevel(level)
+			call this.updateUi()
 			return true
 		endmethod
 
@@ -235,6 +317,8 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 					call this.learnSpell(spell)
 				endif
 			endif
+
+			call this.updateUi()
 		endmethod
 
 		public method removeSpellByIndex takes integer index returns boolean
@@ -259,6 +343,7 @@ endif
 				endif
 			endif
 			call this.m_spells.erase(index)
+			call this.updateUi()
 			return true
 		endmethod
 
@@ -289,16 +374,7 @@ endif
 						call this.unlearnSpell(spell)
 					endif
 				else
-					// update to new grimoire entry
-					if ((not this.pageIsShown()) and (this.currentSpell() == spell)) then
-						call spell.hideGrimoireEntry.evaluate()
-					endif
-				
 					call spell.setLevel(level)
-					
-					if ((not this.pageIsShown()) and (this.currentSpell() == spell)) then
-						call spell.showGrimoireEntry.evaluate()
-					endif
 				endif
 			else
 				call this.removeSkillPoints(requiredSkillPoints)
@@ -311,17 +387,10 @@ endif
 					endif
 				endif
 
-				// update to new grimoire entry
-				if ((not this.pageIsShown()) and (this.currentSpell() == spell)) then
-					call spell.hideGrimoireEntry.evaluate()
-				endif
-				
 				call spell.setLevel(level)
-				
-				if ((not this.pageIsShown()) and (this.currentSpell() == spell)) then
-					call spell.showGrimoireEntry.evaluate()
-				endif
 			endif
+
+			call this.updateUi()
 
 			return true
 		endmethod
@@ -374,6 +443,7 @@ static if (DEBUG_MODE) then
 			endif
 endif
 			call Spell(this.m_spells[index]).setAvailable(available)
+			call this.updateUi()
 		endmethod
 
 		public method setSpellAvailable takes Spell spell, boolean available returns nothing
@@ -417,7 +487,7 @@ endif
 			local integer i = 0
 			loop
 				exitwhen (i == this.m_spells.size())
-				call Spell(this.m_spells[i]).setAvailable(available)
+				call this.setSpellAvailableByIndex(i, available)
 				set i = i + 1
 			endloop
 		endmethod
@@ -590,185 +660,9 @@ endif
 			endloop
 		endmethod
 
-		/*
-		private static method dialogButtonActionLearnSpell takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			local thistype this = Character(ACharacter.playerCharacter(user)).grimoire()
-			call this.removeSkillPoints(1)
-
-			if (this.m_favourites.size() < thistype.maxFavourites) then
-				call this.learnFavouriteSpell(this.m_currentSpell)
-			else
-				call this.learnSpell(this.m_currentSpell)
-			endif
-
-			if (this.learnedSpells() == thistype.maxSpells) then
-				call this.character().displayMessage(ACharacter.messageTypeInfo, tr("Maximale Anzahl möglicher Zauber erlernt."))
-			endif
-
-			call this.showSpellDialog(this.m_currentSpell)
-			set user = null
-		endmethod
-
-		private static method dialogButtonActionIncreaseSpell takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			local thistype this = Character(ACharacter.playerCharacter(user)).grimoire()
-			call this.removeSkillPoints(1)
-			call this.m_currentSpell.increaseLevel()
-			call this.showSpellDialog(this.m_currentSpell)
-			set user = null
-		endmethod
-
-		private static method dialogButtonActionDecreaseSpell takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			local thistype this = Character(ACharacter.playerCharacter(user)).grimoire()
-			call this.addSkillPoints(1)
-
-			if (this.m_currentSpell.level() != 1) then
-				call this.m_currentSpell.decreaseLevel()
-			elseif (this.m_favourites.contains(this.m_currentSpell)) then
-				call this.unlearnFavouriteSpell(this.m_currentSpell)
-			else
-				call this.unlearnSpell(this.m_currentSpell)
-			endif
-
-			call this.showSpellDialog(this.m_currentSpell)
-			set user = null
-		endmethod
-
-		private static method dialogButtonActionAddFavouriteSpell takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			local thistype this = Character(ACharacter.playerCharacter(user)).grimoire()
-			call this.addFavouriteSpell(this.m_currentSpell)
-			debug call Print("Add favourite.")
-			call this.showSpellDialog(this.m_currentSpell)
-			set user = null
-		endmethod
-
-		private static method dialogButtonActionRemoveFavouriteSpell takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			local thistype this = Character(ACharacter.playerCharacter(user)).grimoire()
-			call this.removeFavouriteSpell(this.m_currentSpell)
-			debug call Print("Remove favourite")
-			call this.showSpellDialog(this.m_currentSpell)
-			set user = null
-		endmethod
-
-		private static method dialogButtonActionBack takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			local thistype this = Character(ACharacter.playerCharacter(user)).grimoire()
-			call this.showDialog()
-			set user = null
-		endmethod
-
-		private method showSpellDialog takes Spell spell returns nothing
-			local player user = spell.character().player()
-			local AGui gui = AGui.playerGui(user)
-			local unit characterUnit = spell.character().unit()
-			local string message
-			local AClass class = spell.character().class()
-			set this.m_currentSpell = spell
-			set message = IntegerArg(IntegerArg(StringArg(tr("%s\nStufe: %i\nMaximale Stufe: %i"), spell.name()), spell.level()), spell.getMaxLevel())
-
-			if (spell.spellType() == Spell.spellTypeDefault) then
-				set message = message + tr("\nStandardzauber")
-			elseif (spell.spellType() == Spell.spellTypeUltimate0) then
-				set message = message + tr("\nUltimativ-Zauber 1")
-			elseif (spell.spellType() == Spell.spellTypeUltimate1) then
-				set message = message + tr("\nUltimativ-Zauber 2")
-			endif
-
-			if (not spell.available()) then
-				set message = message + tr("\nNicht verfügbar")
-			endif
-
-			set message = message + IntegerArg(tr("\n%i Zauberpunkte"), this.m_skillPoints)
-			call gui.dialog().clear()
-			call gui.dialog().setMessage(message)
-			call gui.dialog().addDialogButtonIndex(tr("Zurück"), thistype.dialogButtonActionBack)
-
-			// default class spells can not be changed
-			if (spell.spellType() != Spell.spellTypeDefault and spell.available()) then
-				if (spell.level() == 0) then
-					if (spell.isSkillable()) then
-						call gui.dialog().addDialogButtonIndex(tr("Erlernen"), thistype.dialogButtonActionLearnSpell)
-					endif
-				else
-					if (spell.isSkillable()) then
-						call gui.dialog().addDialogButtonIndex(tr("Stufe erhöhen"), thistype.dialogButtonActionIncreaseSpell)
-					endif
-
-					call gui.dialog().addDialogButtonIndex(tr("Stufe verringern"), thistype.dialogButtonActionDecreaseSpell)
-				endif
-			endif
-
-			if (spell.level() > 0) then
-				if (this.m_favourites.contains(spell)) then
-					call gui.dialog().addDialogButtonIndex(tr("Aus Favoriten entfernen"), thistype.dialogButtonActionRemoveFavouriteSpell)
-				elseif (this.m_favourites.size() < thistype.maxFavourites) then
-					call gui.dialog().addDialogButtonIndex(tr("Zu Favoriten hinzufügen"), thistype.dialogButtonActionAddFavouriteSpell)
-				endif
-			endif
-
-			call gui.dialog().show()
-			set user = null
-			set characterUnit = null
-		endmethod
-
-		private static method dialogButtonActionSkillSpell takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			local thistype this = Character(ACharacter.playerCharacter(user)).grimoire()
-			local Spell spell = this.m_spells[dialogButton.index() - 1]
-			call this.showSpellDialog(spell)
-			set user = null
-		endmethod
-		*/
-
 		public method showSpell takes nothing returns nothing
-			local integer index
-			local integer i
-			if (this.pageIsShown()) then
-				set i = 0
-				loop
-					exitwhen (i == thistype.spellsPerPage)
-					set index = Index2D(this.page(), i, thistype.spellsPerPage)
-					if (index >= this.m_spells.size()) then
-						exitwhen (true)
-					endif
-					call Spell(this.m_spells[index]).hideGrimoireEntry()
-					set i = i + 1
-				endloop
-
-				call this.m_spellPreviousPage.hide.evaluate()
-				call this.m_spellNextPage.hide.evaluate()
-			endif
-
-			if (this.currentSpell().isSkillable()) then
-				call this.m_spellIncrease.show.evaluate()
-			elseif (not this.pageIsShown()) then
-				call this.m_spellIncrease.hide.evaluate()
-			endif
-			if (this.currentSpell().level() > 0) then
-				call this.m_spellDecrease.show.evaluate()
-
-				if (this.m_favourites.contains(this.currentSpell())) then
-					call this.m_spellRemoveFromFavourites.show.evaluate()
-				elseif (this.m_favourites.size() < thistype.maxFavourites) then
-					call this.m_spellAddToFavourites.show.evaluate()
-				endif
-			elseif (not this.pageIsShown()) then
-				call this.m_spellDecrease.hide.evaluate()
-				call this.m_spellRemoveFromFavourites.hide.evaluate()
-				call this.m_spellAddToFavourites.hide.evaluate()
-			endif
-
-			if (this.pageIsShown()) then
-				call this.currentSpell().showGrimoireEntry() // show info about current level
-				call this.m_spellQuit.show.evaluate()
-			endif
-			
 			set this.m_pageIsShown = false
-			call IssueImmediateOrderById(this.character().unit(), this.ability()) // open grimoire again (lost all abilities before
+			call this.updateUi()
 		endmethod
 
 		public method setCurrentSpell takes Spell spell returns nothing
@@ -780,100 +674,28 @@ endif
 		/// \todo Using method without index would improve performance massively!
 		public method increaseSpell takes nothing returns boolean
 			debug call this.print("Current spell is " + GetObjectName(this.currentSpell().ability()))
-			if (this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() + 1)) then
-				if (not this.pageIsShown()) then
-					if (not this.currentSpell().isSkillable()) then
-						call this.m_spellIncrease.hide.evaluate()
-					endif
-					// since it must be at least level 1 we need no additional check for level > 0!
-					call this.m_spellDecrease.show.evaluate()
-					
-					// first level, favourites buttons
-					if (this.currentSpell().level() == 1) then
-						if (this.m_favourites.contains(this.currentSpell())) then
-							call this.m_spellRemoveFromFavourites.show.evaluate()
-						elseif (this.m_favourites.size() < thistype.maxFavourites) then
-							call this.m_spellAddToFavourites.show.evaluate()
-						endif
-					endif
-				endif
-			endif
-			return false
+			return this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() + 1)
 		endmethod
 
 		/// \todo Using method without index would improve performance massively!
 		public method decreaseSpell takes nothing returns boolean
-			if (this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() - 1)) then
-				if (not this.pageIsShown()) then
-					if (this.currentSpell().level() == 0) then
-						call this.m_spellDecrease.hide.evaluate()
-						call this.m_spellAddToFavourites.hide.evaluate()
-						call this.m_spellRemoveFromFavourites.hide.evaluate()
-					endif
-					if (this.currentSpell().isSkillable()) then
-						call this.m_spellIncrease.show.evaluate()
-					endif
-				endif
-			endif
-			return false
+			return this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() - 1)
 		endmethod
 
-		public method addSpellToFavourites takes nothing returns nothing
-			if (this.addFavouriteSpell(this.currentSpell()) and (not this.pageIsShown())) then
-				call this.m_spellAddToFavourites.hide.evaluate()
-				call this.m_spellRemoveFromFavourites.show.evaluate()
-			endif
+		public method addSpellToFavourites takes nothing returns boolean
+			return this.addFavouriteSpell(this.currentSpell())
 		endmethod
 
-		public method removeSpellFromFavourites takes nothing returns nothing
-			if (this.removeFavouriteSpell(this.currentSpell()) and (not this.pageIsShown())) then
-				call this.m_spellAddToFavourites.show.evaluate()
-				call this.m_spellRemoveFromFavourites.hide.evaluate()
-			endif
+		public method removeSpellFromFavourites takes nothing returns boolean
+			return this.removeFavouriteSpell(this.currentSpell())
 		endmethod
 
 		public method showPage takes nothing returns nothing
-			local integer i
-			local integer index
-			
-			if (not this.pageIsShown()) then
-				call this.m_spellIncrease.hide.evaluate()
-				call this.m_spellDecrease.hide.evaluate()
-				call this.m_spellRemoveFromFavourites.hide.evaluate()
-				call this.m_spellAddToFavourites.hide.evaluate()
-				call this.currentSpell().hideGrimoireEntry() // hide info about current level
-				call this.m_spellQuit.hide.evaluate()
-
-				call this.m_spellPreviousPage.show.evaluate()
-				call this.m_spellNextPage.show.evaluate()
-			endif
-
-			// update current shown spells
-			debug call Print("Before showing page spells.")
-			
-			set i = 0
-			loop
-				exitwhen (i == thistype.spellsPerPage)
-				set index = Index2D(this.page(), i, thistype.spellsPerPage)
-				if (index >= this.m_spells.size()) then
-					exitwhen (true)
-				endif
-				if (Spell(this.m_spells[index]).available()) then
-					call Spell(this.m_spells[index]).showGrimoireEntry()
-				else
-					call Spell(this.m_spells[index]).hideGrimoireEntry()
-				endif
-				set i = i + 1
-			endloop
-
-			debug call Print("After showing page spells.")
 			set this.m_pageIsShown = true
-			call IssueImmediateOrderById(this.character().unit(), this.ability()) // open grimoire again (lost all abilities before
+			call this.updateUi()
 		endmethod
 
 		public method setPage takes integer page returns boolean
-			local integer index
-			local integer i
 			if (page < 0 or page >= this.pages()) then
 				debug call this.print("Warning: Wrong page value " + I2S(page) + ", maximum is " + I2S(this.pages() - 1))
 				return false
@@ -882,34 +704,24 @@ endif
 			if (page == this.page()) then
 				return true
 			endif
-			set i = 0
-			loop
-				exitwhen (i == thistype.spellsPerPage)
-				set index = Index2D(this.page(), i, thistype.spellsPerPage)
-				if (index >= this.m_spells.size()) then
-					exitwhen (true)
-				endif
-				call Spell(this.m_spells[index]).hideGrimoireEntry()
-				set i = i + 1
-			endloop
 			set this.m_page = page
 			call this.showPage()
 			return true
 		endmethod
 
-		public method increasePage takes nothing returns nothing
+		public method increasePage takes nothing returns boolean
 			if (this.page() + 1 >= this.pages()) then
-				call this.setPage(0)
+				return this.setPage(0)
 			else
-				call this.setPage(this.page() + 1)
+				return this.setPage(this.page() + 1)
 			endif
 		endmethod
 
-		public method decreasePage takes nothing returns nothing
+		public method decreasePage takes nothing returns boolean
 			if (this.page() - 1 < 0) then
-				call this.setPage(this.pages() - 1)
+				return this.setPage(this.pages() - 1)
 			else
-				call this.setPage(this.page() - 1)
+				return this.setPage(this.page() - 1)
 			endif
 		endmethod
 
@@ -918,6 +730,7 @@ endif
 			//set this.m_unit = CreateUnit(character.player(), thistype.unitId, GetUnitX(character.unit()), GetUnitY(character.unit()), 0.0)
 			//call SetUnitInvulnerable(this.unit(), true)
 			set this.m_page = 0
+			set this.m_pageIsShown = false
 			set this.m_skillPoints = 0
 			set this.m_favourites = AIntegerVector.create()
 			set this.m_currentSpell = 0
@@ -925,12 +738,11 @@ endif
 
 			set this.m_spellNextPage = NextPage.create.evaluate(this)
 			set this.m_spellPreviousPage = PreviousPage.create.evaluate(this)
-			set this.m_spellQuit = Quit.create.evaluate(this)
-			//call UnitAddAbility(this.unit(), this.m_spellQuit.ability())
 			set this.m_spellIncrease = Increase.create.evaluate(this)
 			set this.m_spellDecrease = Decrease.create.evaluate(this)
 			set this.m_spellAddToFavourites = AddToFavourites.create.evaluate(this)
 			set this.m_spellRemoveFromFavourites = RemoveFromFavourites.create.evaluate(this)
+			set this.m_uiGrimoireSpells = AIntegerVector.create()
 			call this.showPage()
 
 			return this
@@ -953,11 +765,11 @@ endif
 
 			call this.m_spellNextPage.destroy.evaluate()
 			call this.m_spellPreviousPage.destroy.evaluate()
-			call this.m_spellQuit.destroy.evaluate()
 			call this.m_spellIncrease.destroy.evaluate()
 			call this.m_spellDecrease.destroy.evaluate()
 			call this.m_spellAddToFavourites.destroy.evaluate()
 			call this.m_spellRemoveFromFavourites.destroy.evaluate()
+			call this.m_uiGrimoireSpells.destroy()
 		endmethod
 	endstruct
 
@@ -974,7 +786,7 @@ endif
 		endmethod
 
 		public method isShown takes nothing returns boolean
-			return GetUnitAbilityLevel(this.grimoire().character().unit(), this.ability()) >= 1 and this.isEnabled() // and is available
+			return GetUnitAbilityLevel(this.grimoire().character().unit(), this.grimoireAbility()) > 0
 		endmethod
 
 		public method show takes nothing returns nothing
@@ -1039,22 +851,6 @@ endif
 
 		public stub method onCastAction takes nothing returns nothing
 			call this.grimoire().increasePage()
-		endmethod
-
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
-
-			return this
-		endmethod
-	endstruct
-
-	struct Quit extends GrimoireSpell
-		public static constant integer id = 'A0AC'
-		public static constant integer grimoireAbilityId = 'A0AQ'
-
-		public stub method onCastAction takes nothing returns nothing
-			debug call this.print("Returning to spell book.")
-			call this.grimoire().showPage()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1141,6 +937,8 @@ endif
 			// can be casted in spell menu as well!
 			if (this.grimoire().pageIsShown()) then
 				call this.grimoire().setCurrentSpell(this.spell())
+			else
+				call this.grimoire().showPage()
 			endif
 		endmethod
 

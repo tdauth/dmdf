@@ -21,11 +21,11 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 		endmethod
 
 		private method startPageAction takes nothing returns nothing
-			call this.showUntil(3)
+			call this.showUntil(8)
 		endmethod
 
 		// Hallo.
-		private static method infoAction0 takes AInfo info returns nothing
+		private static method infoActionGreeting takes AInfo info returns nothing
 			call speech(info, false, tr("Hallo."), null)
 			call speech(info, true, tr("Wer bist du und was machst du in meinem Lager?"), null)
 			// (Charakter kennt noch keinen der beiden Brüder)
@@ -33,7 +33,6 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 				call speech(info, false, tr("Dein Lager?"), null)
 				call speech(info, true, tr("Ja, mein Lager!"), null)
 				call speech(info, true, tr("Dies ist das Lager der weißen Legion, meines Heers."), null)
-				call info.talk().showRange(4, 5)
 			// (Charakter hat bereits Baldar getroffen)
 			else
 				call speech(info, false, tr("Bist du Baldars Bruder?"), null)
@@ -52,17 +51,17 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 					call speech(info, true, tr("Gut, lass dir ruhig Zeit. Er wird mich sowieso nicht besiegen können."), null)
 					call thistype(info.talk()).giveOffer() // (Charakter erhält somit das Angebot)
 				endif
-				call info.talk().showStartPage()
 			endif
+			call info.talk().showStartPage()
 		endmethod
 
 		// (Charakter hat ein Angebot bekommen und der Auftrag „Tod der weißen Legion“ ist nicht aktiv)
-		private static method infoCondition1 takes AInfo info returns boolean
+		private static method infoConditionGotOfferAndIsNotActive takes AInfo info returns boolean
 			return thistype(info.talk()).gotOffer(info.talk().character()) and QuestDeathToWhiteLegion.characterQuest(info.talk().character()).isNotUsed()
 		endmethod
 
 		// Ich möchte der weißen Legion beitreten.
-		private static method infoAction1 takes AInfo info returns nothing
+		private static method infoActionIWantToJoin takes AInfo info returns nothing
 			local unit characterUnit = info.talk().character().unit()
 			local item whichItem
 			call speech(info, false, tr("Ich möchte der weißen Legion beitreten."), null)
@@ -94,12 +93,12 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 		endmethod
 
 		// (Auftrag „Tod der schwarzen Legion“ ist aktiv)
-		private static method infoCondition2 takes AInfo info returns boolean
+		private static method infoConditionIsActive takes AInfo info returns boolean
 			return QuestDeathToBlackLegion.characterQuest(info.talk().character()).isNew()
 		endmethod
 
 		// Gib mir meine Belohnung!
-		private static method infoAction2 takes AInfo info returns nothing
+		private static method infoActionReward takes AInfo info returns nothing
 			local integer newScore = Aos.playerScore(info.talk().character().player()) - thistype(info.talk()).m_lastRewardScore[GetPlayerId(info.talk().character().player())]
 			local integer i
 			call speech(info, false, tr("Gib mir meine Belohnung!"), null)
@@ -123,49 +122,48 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			call info.talk().showStartPage()
 		endmethod
 
+		// (Nach Begrüßung)
+		private static method infoConditionAfterGreeting takes AInfo info returns boolean
+			return info.talk().infoHasBeenShown(0)
+		endmethod
+
 		// Welches Heer?
-		private static method infoAction0_0 takes AInfo info returns nothing
+		private static method infoActionWhichArmy takes AInfo info returns nothing
 			call speech(info, false, tr("Welches Heer?"), null)
 			call speech(info, true, tr("Sieh dich um! Dies ist mein Heer. Ich habe diese Krieger geschaffen, um meinen Bruder Baldar zur Vernunft zu bringen."), null)
-			if (info.talk().showInfo(5)) then
-				call info.talk().show()
-			else
-				call info.talk().showStartPage()
-			endif
-		endmethod
-
-		// Weiße Legion?
-		private static method infoAction0_1 takes AInfo info returns nothing
-			call speech(info, false, tr("Weiße Legion?"), null)
-			call speech(info, true, tr("Ja. So nennen wir uns, also mein Gefolge und ich. Wir kämpfen hier schon seit vielen Jahren gegen die schwarze Legion. Sie wird von meinem etwas dümmlichen und aggressiven Bruder Baldar angeführt, einem Erzdämon."), null)
-			call info.talk().showRange(6, 8)
-		endmethod
-
-		// (Zurück)
-		private static method infoAction0_2 takes AInfo info returns nothing
 			call info.talk().showStartPage()
 		endmethod
 
+		// Weiße Legion?
+		private static method infoActionWhiteLegion takes AInfo info returns nothing
+			call speech(info, false, tr("Weiße Legion?"), null)
+			call speech(info, true, tr("Ja. So nennen wir uns, also mein Gefolge und ich. Wir kämpfen hier schon seit vielen Jahren gegen die schwarze Legion. Sie wird von meinem etwas dümmlichen und aggressiven Bruder Baldar angeführt, einem Erzdämon."), null)
+			call info.talk().showStartPage()
+		endmethod
+
+		// (Nach „Weiße Legion?“)
+		private static method infoConditionAfterBlackLegion takes AInfo info returns boolean
+			return info.talk().infoHasBeenShown(4)
+		endmethod
+
 		// Wieso ist dein Bruder ein Erzdämon?
-		private static method infoAction0_1_0 takes AInfo info returns nothing
+		private static method infoActionWhyIsBrother takes AInfo info returns nothing
 			call speech(info, false, tr("Wieso ist dein Bruder ein Erzdämon?"), null)
 			call speech(info, true, tr("Wieso sollte er es nicht sein, dieser Idiot?"), null)
 			call speech(info, false, tr("Geburtsfehler und so ..."), null)
 			call speech(info, true, tr("Sehr lustig. Unsere Familiengeschichte geht dich nichts an, Sterblicher!"), null)
-			call info.talk().showRange(7, 8)
+			call info.talk().showStartPage()
 		endmethod
 
 		// Wieso kämpft ihr gegeneinander?
-		private static method infoAction0_1_1 takes AInfo info returns nothing
+		private static method infoActionWhyDoYouFight takes AInfo info returns nothing
 			call speech(info, false, tr("Wieso kämpft ihr gegeneinander?"), null)
 			call speech(info, true, tr("Was weiß ich? Frag doch meinen Bruder, der fängt immer mit den Streitereien an."), null)
-			call info.talk().showInfo(6)
-			call info.talk().showInfo(8)
-			call info.talk().show()
+			call info.talk().showStartPage()
 		endmethod
 
 		// Wer ist denn der Stärkere von euch beiden?
-		private static method infoAction0_1_2 takes AInfo info returns nothing
+		private static method infoActionWhoIsStronger takes AInfo info returns nothing
 			call speech(info, false, tr("Wer ist denn der Stärkere von euch beiden?"), null)
 			call speech(info, true, tr("(Lacht) Mein Bruder würde dir jetzt vermutlich antworten, dass er der Stärkere ist und das doch selbstverständlich wäre."), null)
 			call speech(info, true, tr("Er war schon immer schwächer, aber das Ganze zieht sich jetzt schon recht lange hin und ich möchte dem ein Ende bereiten. Also hättest du vielleicht Lust mir zu helfen?"), null)
@@ -173,27 +171,18 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			call info.talk().showRange(9, 10)
 		endmethod
 
-		// (Zurück)
-		private static method infoAction0_1_3 takes AInfo info returns nothing
-			if (info.talk().showInfo(4)) then
-				call info.talk().show()
-			else
-				call info.talk().showStartPage()
-			endif
-		endmethod
-
 		// Warum sollte ich?
-		private static method infoAction0_1_2_0 takes AInfo info returns nothing
+		private static method infoActionWhyShouldI takes AInfo info returns nothing
 			call speech(info, false, tr("Warum sollte ich?"), null)
 			call speech(info, true, tr("Weil du dann die Chance bekommst, die böse Brut, die er geschaffen hat ins Jenseits zu befördern. Überleg's dir einfach mal."), null)
-			call info.talk().showRange(6, 7)
+			call info.talk().showStartPage()
 		endmethod
 
 		// Klar!
-		private static method infoAction0_1_2_1 takes AInfo info returns nothing
+		private static method infoActionOfCourse takes AInfo info returns nothing
 			call speech(info, false, tr("Klar!"), null)
 			call speech(info, true, tr("Ein kriegswilliger Mann also. Ich hoffe, dahinter steckt eine gute Absicht und gebe dir noch etwas Zeit. Wenn du's dir überlegt hast, dann melde dich einfach nochmal bei mir."), null)
-			call info.talk().showRange(6, 7)
+			call info.talk().showStartPage()
 		endmethod
 
 		private static method create takes nothing returns thistype
@@ -207,25 +196,19 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			endloop
 
 			// start page
-			call this.addInfo(false, false, 0, thistype.infoAction0, tr("Hallo.")) //0
-			call this.addInfo(false, false, thistype.infoCondition1, thistype.infoAction1, tr("Ich möchte der weißen Legion beitreten.")) //1
-			call this.addInfo(true, false, thistype.infoCondition2, thistype.infoAction2, tr("Gib mir meine Belohnung!")) //2
-			call this.addExitButton() //3
+			call this.addInfo(false, false, 0, thistype.infoActionGreeting, tr("Hallo.")) // 0
+			call this.addInfo(false, false, thistype.infoConditionGotOfferAndIsNotActive, thistype.infoActionIWantToJoin, tr("Ich möchte der weißen Legion beitreten.")) // 1
+			call this.addInfo(true, false, thistype.infoConditionIsActive, thistype.infoActionReward, tr("Gib mir meine Belohnung!")) // 2
+			call this.addInfo(false, false, thistype.infoConditionAfterGreeting, thistype.infoActionWhichArmy, tr("Welches Heer?")) // 3
+			call this.addInfo(false, false, thistype.infoConditionAfterGreeting, thistype.infoActionWhiteLegion, tr("Weiße Legion?")) // 4
+			call this.addInfo(false, false, thistype.infoConditionAfterBlackLegion, thistype.infoActionWhyIsBrother, tr("Wieso ist dein Bruder ein Erzdämon?")) // 5
+			call this.addInfo(false, false, thistype.infoConditionAfterBlackLegion, thistype.infoActionWhyDoYouFight, tr("Wieso kämpft ihr gegeneinander?")) // 6
+			call this.addInfo(false, false, thistype.infoConditionAfterBlackLegion, thistype.infoActionWhoIsStronger, tr("Wer ist denn der Stärkere von euch beiden?")) // 7
+			call this.addExitButton() // 8
 
-			// info 0
-			call this.addInfo(false, false, 0, thistype.infoAction0_0, tr("Welches Heer?")) //4
-			call this.addInfo(false, false, 0, thistype.infoAction0_1, tr("Weiße Legion?")) //5
-			// no back button since you have to talk about this!
-
-			// info 0_1
-			call this.addInfo(false, false, 0, thistype.infoAction0_1_0, tr("Wieso ist dein Bruder ein Erzdämon?")) // 6
-			call this.addInfo(false, false, 0, thistype.infoAction0_1_1, tr("Wieso kämpft ihr gegeneinander?")) // 7
-			call this.addInfo(false, false, 0, thistype.infoAction0_1_2, tr("Wer ist denn der Stärkere von euch beiden?")) // 8
-			// no back button since you have to talk about this!
-
-			// info 0_1_1
-			call this.addInfo(false, false, 0, thistype.infoAction0_1_2_0, tr("Warum sollte ich?")) // 9
-			call this.addInfo(false, false, 0, thistype.infoAction0_1_2_1, tr("Klar!")) // 10
+			// sub info from infoActionWhoIsStronger
+			call this.addInfo(false, false, 0, thistype.infoActionWhyShouldI, tr("Warum sollte ich?")) // 9
+			call this.addInfo(false, false, 0, thistype.infoActionOfCourse, tr("Klar!")) // 10
 
 			return this
 		endmethod

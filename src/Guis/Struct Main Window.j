@@ -35,14 +35,19 @@ library StructGuisMainWindow requires Asl, StructMapMapMapData
 		endmethod
 
 		public static method create takes Character character, rect whichRect returns thistype
-			local thistype this = thistype.createByRect(AGui.playerGui(character.player()), AStyle.human(), whichRect, true, -1)
+			local thistype this = thistype.createByRect(AGui.playerGui(character.player()), AStyle.human(), whichRect)
+			call this.setCameraSetup(gg_cam_main_window)
+			call this.setUseShortcuts(false)
+			call this.setUseSpecialShortcuts(true)
 			call this.setTooltipX(1500.0)
 			call this.setTooltipY(300.0)
+			call this.setTooltipSoundPath("Sound\\Interface\\Hint.wav")
 			set this.m_character = character
 			set this.m_leftWindow = AWindow.create(this, 0.0, 0.0, GetRectWidthBJ(whichRect) / 3.0 - 200.0, GetRectHeightBJ(whichRect))
 			/// @todo set background image
 			set this.m_centerWindow = AWindow.create(this, GetRectWidthBJ(whichRect) / 3.0, 0.0, 400.0, GetRectHeightBJ(whichRect))
 			set this.m_rightWindow = AWindow.create(this, GetRectWidthBJ(whichRect) / 3.0 + 200.0, 0.0, GetRectWidthBJ(whichRect) / 3.0 - 200.0, GetRectHeightBJ(whichRect))
+
 			return this
 		endmethod
 	endstruct

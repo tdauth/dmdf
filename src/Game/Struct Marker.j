@@ -34,7 +34,7 @@ library StructGameMarker requires Asl
 			local player triggerPlayer = GetTriggerPlayer()
 
 			if (ACharacter.playerCharacter(triggerPlayer) != 0) then
-				call ACharacter.playerCharacter(triggerPlayer).displayMessage(ACharacter.messageTypeInfo, Format(tr("Wegweiser \"%1%\"")).s(this.m_message).result())
+				call ACharacter.playerCharacter(triggerPlayer).displayMessage(ACharacter.messageTypeInfo, Format(tr("Wegweiser: „%1%”")).s(this.m_message).result())
 			endif
 
 			set triggeringTrigger = null

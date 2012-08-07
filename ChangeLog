@@ -1,3 +1,17 @@
+2012-08-07 Tamino Dauth <tamino@cdauth.eu>
+* Game.showSpawnPointUnits() and Game.hideSpawnPointUnits() help videos to remove spawn point units during sequences.
+* Grimoire stays open now (use the proper shortcut!).
+* Updated camera objects.
+* Improved videos "Dragon Hunt" and "Death Vault".
+* MainWindow: Made compatible to new ASL API.
+
+2012-08-03 Tamino Dauth <tamino@cdauth.eu>
+* Improved Baldar's and Haldar's talks.
+* Spell button works as "back to grimoire" button now.
+
+2012-07-31 Tamino Dauth <tamino@cdauth.eu>
+* Grimoire: updateUi() is the new central update method for proper order and removal of grimoire buttons.
+
 2012-05-01 Tamino Dauth <tamino@cdauth.eu>
 * Improved grimoire favourite buttons and current level button.
 

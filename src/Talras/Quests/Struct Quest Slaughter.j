@@ -62,18 +62,21 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch weitere seiner Art."), null)
+			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch mehr seiner Art."), null)
 			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.vampires0(), UnitTypes.vampire)
 			call questItem.quest().questItem(1).enable()
 		endmethod
 
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
+			local integer count
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.vampire) then
-				debug call Print("There are still " + I2S(SpawnPoints.vampires0().countUnitsOfType(UnitTypes.vampire)) + " vampires.")
-				if (SpawnPoints.vampires0().countUnitsOfType(UnitTypes.vampire) == 0) then
+				set count = SpawnPoints.vampires0().countUnitsOfType(UnitTypes.vampire)
+				debug call Print("There are still " + I2S(count) + " vampires.")
+				if (count == 0) then
 					return true
 				// get next one to ping
 				else
+					call questItem.quest().displayUpdateMessage(Format(tr("%1%/3 Vampire")).i(3 - count).result())
 					call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.vampires0(), UnitTypes.vampire)
 				endif
 			endif
@@ -87,71 +90,68 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private method stateConditionCompleted2 takes AQuestItem questItem returns boolean
+			debug if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deathAngel) then
+				debug call Print("Death angel count: " + I2S(SpawnPoints.deathAngel().countUnitsOfType(UnitTypes.deathAngel)))
+			debug endif
 			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deathAngel and SpawnPoints.deathAngel().countUnitsOfType(UnitTypes.deathAngel) == 0
 		endmethod
 
 		private static method stateActionCompleted2 takes AQuestItem questItem returns nothing
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Einige untote Drachen haben sich weiter nördlich versammelt. Auf zum Kampf!"), null)
+			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.boneDragons(), UnitTypes.boneDragon)
 			call questItem.quest().questItem(3).enable()
 		endmethod
 
 		private static method stateConditionCompleted3 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.osseousDragon and SpawnPoints.boneDragons().countUnitsOfType(UnitTypes.boneDragon) == 0
-		endmethod
-
-		private method destroyEnterTrigger takes nothing returns nothing
-			call RemoveRegion(this.m_enterRegion)
-			set this.m_enterRegion = null
-			call DmdfHashTable.global().destroyTrigger(this.m_enterTrigger)
-			set this.m_enterTrigger = null
-		endmethod
-
-		private static method triggerConditionEnter takes nothing returns boolean
-			return Character.isUnitCharacter(GetTriggerUnit())
-		endmethod
-
-		private static method triggerActionEnter takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			call this.destroyEnterTrigger()
-			call VideoDeathVault.video().play()
-		endmethod
-
-		private method createEnterTrigger takes nothing returns nothing
-			set this.m_enterRegion = CreateRegion()
-			call RegionAddRect(this.m_enterRegion, null) /// \todo FIXME
-			set this.m_enterTrigger = CreateTrigger()
-			call TriggerRegisterEnterRegion(this.m_enterTrigger, this.m_enterRegion, null)
-			call TriggerAddCondition(this.m_enterTrigger, Condition(function thistype.triggerConditionEnter))
-			call TriggerAddAction(this.m_enterTrigger, function thistype.triggerActionEnter)
-			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger, "this", this)
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.boneDragon and SpawnPoints.boneDragons().countUnitsOfType(UnitTypes.boneDragon) == 0
 		endmethod
 
 		private static method stateActionCompleted3 takes AQuestItem questItem returns nothing
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Ausgezeichnet! In der Nähe befindet sich eine Höhle mit einer geheimen Gruft. Sie wird von Eingeweihten auch „die Todesgruft“ genannt."), null)
-			call thistype(questItem.quest()).createEnterTrigger()
 			call questItem.quest().questItem(4).enable()
 		endmethod
 
+		private static method stateEventCompleted4 takes AQuestItem questItem, trigger whichTrigger returns nothing
+			call TriggerRegisterEnterRegion(whichTrigger, thistype(questItem.quest()).m_enterRegion, null)
+		endmethod
+
 		private static method stateConditionCompleted4 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.medusa().countUnitsOfType(UnitTypes.medusa) == 0
+			return Character.isUnitCharacter(GetTriggerUnit())
 		endmethod
 
 		private static method stateActionCompleted4 takes AQuestItem questItem returns nothing
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Dieses Dreckschlangenvieh! Los, weiter, in die Gruft hinein!"), null)
+			call VideoDeathVault.video().play()
+			call questItem.quest().questItem(5).setState(thistype.stateNew)
+			call questItem.quest().questItem(6).setState(thistype.stateNew)
+			call questItem.quest().displayUpdate()
+			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.medusa(), UnitTypes.medusa)
 		endmethod
 
 		private static method stateConditionCompleted5 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.medusa().countUnitsOfType(UnitTypes.medusa) == 0
 		endmethod
 
 		private static method stateActionCompleted5 takes AQuestItem questItem returns nothing
-			local thistype this = thistype(questItem.quest())
-			if (this.m_enterTrigger != null) then
-				call DisableTrigger(this.m_enterTrigger)
-				call this.destroyEnterTrigger()
+			if (questItem.quest().questItem(6).state() == thistype.stateNew) then
+				call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Dieses Dreckschlangenvieh! Los, weiter, in die Gruft hinein!"), null)
+				call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.deacon)
+			else
+				call Fellows.dragonSlayer().reset()
+				call VideoBloodthirstiness.video().play()
 			endif
-			call Fellows.dragonSlayer().reset()
-			call VideoBloodthirstiness.video().play()
+		endmethod
+
+		private static method stateConditionCompleted6 takes AQuestItem questItem returns boolean
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0
+		endmethod
+
+		private static method stateActionCompleted6 takes AQuestItem questItem returns nothing
+			if (questItem.quest().questItem(5).state() == thistype.stateNew) then
+				call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!"), null)
+			else
+				call Fellows.dragonSlayer().reset()
+				call VideoBloodthirstiness.video().play()
+			endif
 		endmethod
 
 		/// Considers death units (spawn points) and continues searching for the first one with unit type id \p unitTypeId of spawn point \p spawnPoint with an 1 second interval.
@@ -176,6 +176,10 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
 			set this.m_newRegion = CreateRegion()
 			call RegionAddRect(this.m_newRegion, gg_rct_quest_slaughter_enable)
+
+			set this.m_enterRegion = CreateRegion()
+			call RegionAddRect(this.m_enterRegion, null) /// \todo FIXME
+
 			call this.setStateEvent(thistype.stateNew, thistype.stateEventNew)
 			call this.setStateCondition(thistype.stateNew, thistype.stateConditionNew)
 			call this.setStateAction(thistype.stateNew, thistype.stateActionNew)
@@ -202,15 +206,20 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted3)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted3)
 
-			set questItem = AQuestItem.create(this, tr("Tötet die Medusa."))
-			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
+			set questItem = AQuestItem.create(this, tr("Begebt euch zur „Todesgruft“."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted4)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted4)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted4)
 
-			set questItem = AQuestItem.create(this, tr("Tötet den Diakon der Finsternis."))
+			set questItem = AQuestItem.create(this, tr("Tötet die Medusa."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted5)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted5)
+
+			set questItem = AQuestItem.create(this, tr("Tötet den Diakon der Finsternis."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted6)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted6)
 
 			return this
 		endmethod

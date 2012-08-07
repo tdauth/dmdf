@@ -88,19 +88,20 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 				set contributorIndex = thistype.m_contributors.backIndex()
 			endif
 			set contributor = Contributor(this.m_contributors[contributorIndex])
-			debug call Print("1 with contributor " + I2S(contributor))
+			//debug call Print("1 with contributor " + I2S(contributor))
 			set text = Format(tr("%1%\n%2%\n")).s(contributor.name()).s(contributor.description()).result()
-			debug call Print("2")
+			//debug call Print("2")
 			set i = 0
 			loop
 				exitwhen (i == contributor.files().size())
 				set text = Format(tr("%1%* %2%\n")).s(text).s(contributor.files()[i]).result()
 				set i = i + 1
 			endloop
-			debug call Print("3 with text " + text)
+			//debug call Print("Handle id: " + I2S(GetHandleId(this.m_contributorTextTag)))
+			//debug call Print("3 with text " + text)
 			call SetTextTagTextBJ(this.m_contributorTextTag, text, 16.0)
-			call ShowTextTagForPlayer(this.gui().player(), this.m_contributorTextTag, true) // test!!!
-			debug call Print("4")
+			//call ShowTextTagForPlayer(this.gui().player(), this.m_contributorTextTag, true) // test!!!
+			//debug call Print("4")
 			set this.m_currentContributor = contributorIndex
 		endmethod
 
@@ -152,19 +153,19 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			// members
 			set this.m_titleTextTag = CreateTextTag()
 			call SetTextTagColor(this.m_titleTextTag, 255, 0, 0, 0)
-			call SetTextTagPos(this.m_titleTextTag, thistype.viewX() - 150.0, thistype.viewY() + 300.0, 200.0)
+			call SetTextTagPos(this.m_titleTextTag, thistype.viewX() - 150.0, thistype.viewY() + 150.0, 0.0)
 			call SetTextTagVisibility(this.m_titleTextTag, false)
 			call SetTextTagTextBJ(this.m_titleTextTag, tr("Die Macht des Feuers"), 16.0)
 
 			set this.m_headlineTextTag = CreateTextTag()
 			call SetTextTagColor(this.m_headlineTextTag, 91, 9, 255, 0)
-			call SetTextTagPos(this.m_headlineTextTag, thistype.viewX() - 150.0, thistype.viewY() + 200.0, 100.0)
+			call SetTextTagPos(this.m_headlineTextTag, thistype.viewX() - 150.0, thistype.viewY() + 50.0, 0.0)
 			call SetTextTagVisibility(this.m_headlineTextTag, false)
 			call SetTextTagTextBJ(this.m_headlineTextTag, tr("Mitwirkende"), 16.0)
 
 			set this.m_contributorTextTag = CreateTextTag()
 			call SetTextTagColor(this.m_contributorTextTag, 96, 133, 255, 0)
-			call SetTextTagPos(this.m_contributorTextTag, thistype.viewX() - 150.0, thistype.viewY(), 0.0)
+			call SetTextTagPos(this.m_contributorTextTag, thistype.viewX() - 150.0, thistype.viewY() - 100, 0.0)
 			call SetTextTagVisibility(this.m_contributorTextTag, false)
 			call SetTextTagTextBJ(this.m_contributorTextTag, "", 16.0)
 

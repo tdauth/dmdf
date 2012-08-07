@@ -184,6 +184,11 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			set this.m_units = 0
+			call this.addGrimoireEntry('A0BA', 'A0B9')
+			call this.addGrimoireEntry('A0BD', 'A0AQ')
+			call this.addGrimoireEntry('A0BE', 'A0BC')
+			call this.addGrimoireEntry('A0BF', 'A0AC')
+			call this.addGrimoireEntry('A0BG', 'A0BB')
 			return this
 		endmethod
 

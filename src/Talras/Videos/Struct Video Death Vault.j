@@ -1,4 +1,4 @@
-library StructMapVideosVideoDeathVault requires Asl, StructGameGame
+library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMapSpawnPoints
 
 	struct VideoDeathVault extends AVideo
 		private unit m_actorDragonSlayer
@@ -20,12 +20,16 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_death_vault_dragon_slayer)
 			call SetUnitFacing(this.m_actorDragonSlayer, 90.0)
 			call ShowUnit(this.m_actorDragonSlayer, false)
-			
+
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_death_vault_actor)
 			call SetUnitFacing(thistype.actor(), 90.0)
 			call ShowUnit(thistype.actor(), false)
-			
+
+			call Game.hideSpawnPointUnits(SpawnPoints.medusa())
+			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
+
 			set this.m_actorMedusa = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_AGGRESSIVE), UnitTypes.medusa, gg_rct_video_death_vault_medusa, 0.0))
+
 			/// \todo Create groups
 			//private unit m_actorDeacon
 			//private AGroup m_actorsDegenerateSouls
@@ -44,55 +48,55 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_2, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_3, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_4, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_5, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_6, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_7, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_8, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_9, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(2.0)) then
 				return
@@ -102,49 +106,49 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame
 			if (wait(2.0)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_11, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_12, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_13, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_14, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_15, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_16, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_17, true, 1.0)
-			
+
 			if (wait(0.50)) then
 				return
 			endif
-			
+
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(2.0)) then
 				return
@@ -155,29 +159,29 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame
 			if (wait(2.0)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_19, true, 0.0) // front
 			call SetUnitAnimation(this.m_actorDeacon, "Spell")
-			
+
 			if (wait(2.0)) then
 				return
 			endif
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_19, true, 0.0) // start ritual
 			call SetUnitAnimation(this.m_actorDeacon, "Spell Slam")
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_ritual, true, 3.0)
-			
+
 			if (wait(2.50)) then
 				return
 			endif
-			
+
 			/// \todo Create effect
 			//gg_rct_video_death_vault_ritual
-			
+
 			if (wait(2.0)) then
 				return
 			endif
-			
+
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(2.0)) then
 				return
@@ -189,16 +193,18 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame
 			if (wait(2.0)) then
 				return
 			endif
-			
+
 			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Nun aber auf in die Schlacht. Lasst keinen am Leben, hackt alle in Stücke und lasst uns für Ruhm und Ehre sterben!"), null)
-			
+
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			
+
+			call AVideo.setActorsMoveSpeed(200.0) // gleich schnell für normale Bewegung
+
 			call IssueRectOrder(this.m_actorDragonSlayer, "move", gg_rct_video_death_vault_target)
 			call IssueRectOrder(thistype.actor(), "move", gg_rct_video_death_vault_target)
-			
+
 			if (wait(4.0)) then
 				return
 			endif
@@ -207,6 +213,8 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
+			call Game.showSpawnPointUnits(SpawnPoints.medusa())
+			call Game.showSpawnPointUnits(SpawnPoints.deathVault())
 			call Game.resetVideoSettings()
 		endmethod
 

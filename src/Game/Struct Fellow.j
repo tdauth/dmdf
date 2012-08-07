@@ -427,6 +427,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call TriggerAddCondition(this.m_revivalTrigger, Condition(function thistype.triggerConditionRevival))
 			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionRevival)
 			call DmdfHashTable.global().setHandleInteger(this.m_revivalTrigger, "this", this)
+			call DisableTrigger(this.m_revivalTrigger)
 			set this.m_revivalTimer = null
 			set this.m_revivalTimerDialog = null
 			set i = 0

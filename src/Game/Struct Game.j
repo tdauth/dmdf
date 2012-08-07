@@ -395,7 +395,6 @@ endif
 			call AGui.setShortcutAbility('x', 'A011')
 			call AGui.setShortcutAbility('y', 'A012')
 			call AGui.setShortcutAbility('z', 'A013')
-			call AMainWindow.init(gg_cam_main_window, "Sound\\Interface\\Hint.wav")
 			call AWidget.init("Sound\\Interface\\MouseClick1.wav", null)
 			call ACheckBox.init0("", "") /// @todo set correct image file paths
 			call AVote.init(4.0, tr("%1% hat für \"%2%\" gestimmt (%3% Stimme(n))."), tr("Abstimmung wurde mit dem Ergebnis \"%1%\" abgeschlossen (%2% Stimme(n))"))
@@ -943,6 +942,24 @@ endif
 			endif
 
 			return Format("%1% - %2%").s(name).s(suffix).result() /// @todo tr leads to crash if called from map function config
+		endmethod
+
+		public static method hideSpawnPointUnits takes ASpawnPoint spawnPoint returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == spawnPoint.countUnits())
+				call ShowUnit(spawnPoint.unit(i), false)
+				set i = i + 1
+			endloop
+		endmethod
+
+		public static method showSpawnPointUnits takes ASpawnPoint spawnPoint returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == spawnPoint.countUnits())
+				call ShowUnit(spawnPoint.unit(i), true)
+				set i = i + 1
+			endloop
 		endmethod
 	endstruct
 

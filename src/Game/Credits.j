@@ -1,6 +1,6 @@
 // DMdF team
-call Credits.addContributor.evaluate("Tamino Dauth (Baradé)", tr("Projektleiter, Code, Geschichte, Landschaften"))
-call Credits.addContributor.evaluate("Sardor", tr("3d-Grafiker, Klassengestalter, Balancing und Spielgestaltung"))
+call Credits.addContributor.evaluate("Baradé", tr("Projektleiter, Code, Geschichte, Landschaften"))
+call Credits.addContributor.evaluate("Sardor", tr("3D-Grafiker, Klassengestalter, Balancing und Spielgestaltung"))
 call Credits.addContributor.evaluate("Deranor", tr("Spielgestaltung, -ideen und -konzepte, Landschaften, Testen"))
 
 // tools and systems

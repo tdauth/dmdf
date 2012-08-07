@@ -2,7 +2,7 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 
 	struct SpellScrollOfTheRealmOfTheDead extends ASpell
 		public static constant integer abilityId = 'A066'
-		public static constant real distance = 300.0
+		public static constant real distance = 200.0
 
 		private method condition takes nothing returns boolean
 			local integer i

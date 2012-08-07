@@ -2868,7 +2868,7 @@ function CreateCameras takes nothing returns nothing
     call CameraSetupSetField(gg_cam_wigberht_9, CAMERA_FIELD_FARZ, 5000.0, 0.0)
     call CameraSetupSetDestPosition(gg_cam_wigberht_9, - 13965.0, 17863.2, 0.0)
 
-     set gg_cam_intro_village=CreateCameraSetup()
+    set gg_cam_intro_village=CreateCameraSetup()
     call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_ROTATION, 227.7, 0.0)
     call CameraSetupSetField(gg_cam_intro_village, CAMERA_FIELD_ANGLE_OF_ATTACK, 329.0, 0.0)
@@ -2900,23 +2900,23 @@ function CreateCameras takes nothing returns nothing
 
     set gg_cam_intro_start_0=CreateCameraSetup()
     call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
-    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ROTATION, 270.5, 0.0)
-    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ANGLE_OF_ATTACK, 278.2, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ROTATION, 270.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ANGLE_OF_ATTACK, 270.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_TARGET_DISTANCE, 1650.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_ROLL, 0.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_start_0, CAMERA_FIELD_FARZ, 5000.0, 0.0)
-    call CameraSetupSetDestPosition(gg_cam_intro_start_0, - 11677.0, 8732.9, 0.0)
+    call CameraSetupSetDestPosition(gg_cam_intro_start_0, - 11125.0, 8732.9, 0.0)
 
     set gg_cam_intro_start_1=CreateCameraSetup()
     call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
-    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ROTATION, 270.5, 0.0)
-    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ANGLE_OF_ATTACK, 278.2, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ROTATION, 270.0, 0.0)
+    call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ANGLE_OF_ATTACK, 270.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_TARGET_DISTANCE, 1650.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_ROLL, 0.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_start_1, CAMERA_FIELD_FARZ, 5000.0, 0.0)
-    call CameraSetupSetDestPosition(gg_cam_intro_start_1, - 11689.4, 7443.0, 0.0)
+    call CameraSetupSetDestPosition(gg_cam_intro_start_1, - 11125.0, 7443.0, 0.0)
 
     set gg_cam_intro_norsemen=CreateCameraSetup()
     call CameraSetupSetField(gg_cam_intro_norsemen, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
@@ -2937,6 +2937,7 @@ function CreateCameras takes nothing returns nothing
     call CameraSetupSetField(gg_cam_intro_characters, CAMERA_FIELD_FIELD_OF_VIEW, 49.0, 0.0)
     call CameraSetupSetField(gg_cam_intro_characters, CAMERA_FIELD_FARZ, 3000.0, 0.0)
     call CameraSetupSetDestPosition(gg_cam_intro_characters, - 11004.3, - 2388.0, 0.0)
+
 endfunction
 
 //***************************************************************************
