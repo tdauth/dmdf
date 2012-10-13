@@ -1,14 +1,35 @@
-2012-08-0/ Tamino Dauth <tamino@cdauth.eu>
+2012-08-10 Tamino Dauth <tamino@cdauth.eu>
+* UI\Widgets\Console\Human\CommandButton\human-button-lvls-overlay.blp für Zauberbuchsymbole.
+
+2012-08-08 Tamino Dauth <tamino@cdauth.eu>
+* Icons\Creatures\Demons\BTNSchattenefreet.blp  ist da, neu generieren? deaktiviertes Icon generieren!
+* Models/Creatures/Humans/Waldlaeufer.mdx für Dago? Forester.mdx?
+* Ability ids der Morphfähigkeiten von Baldars Ring und SpellAosRing-Instanzen erzeugen.
+* Eventuell verwandelt die Fähigkeit wegen Itemeinstellungen nicht richtig!
+
+2012-08-07 Tamino Dauth <tamino@cdauth.eu>
 * Dämpfung: Zaubertooltip Stufenwert anpassen!
-* Endlich Gebiet in die Todeshöhle einfügen, ab dem das Quest beginnt.
+* DONE: Endlich Gebiet in die Todeshöhle einfügen, ab dem das Quest beginnt.
 * Donnerwesenvideopunkte einfügen?
 * Todesengel gehört zu 10000% nicht PLAYER_NEUTRAL_AGGRESSIVE!
 * Reihenfolge der Buttons im Zauberbuch ist nicht immer gleich (Koordinaten auf 0 setzen).
 * Dialog mit Trommon: Was wenn bereits Kuno getroffen? Mittlere Quest-Antwort könnte Dialog bei Kuno freischalten, Belohnung, Holzfäller verteidigt.
-* Ein Donnerwesen im Fels versteckt?
+* DEPRECATED: Ein Donnerwesen im Fels versteckt?
 * Kunos Dialog, nicht das genaue Alter der Tochter, hilft bei unbestimmten Dingen, kein Haushalt ...
 * Björns Dialog, jagen?
 * Tellborn, andere Reaktion auf Hallo wenn bereits angesprochen.
+* Performance:
+	- AJump und AMissile deaktivieren
+	- ACharactersScheme deaktivieren
+	- sicherstellen dass das alte Grimoire GUI deaktiviert ist
+	- CharacterStats deaktivieren
+	- Trade, InfoLog und Document deaktivieren
+	- Marker deaktivieren
+	- Brücke durch normale Brücke ohne ALayer ersetzen
+	- Damage recorder/events optimieren?
+	- Notfalls: Tagesabläufe deaktivieren
+	- Wetter optimieren (hängt jedes Mal), eventuell deaktivieren
+	- Tutorial deaktivieren
 
 2012-08-04 Tamino Dauth <tamino@cdauth.eu>
 * Verwandlung in Dämon funktioniert nicht.
@@ -103,11 +124,11 @@
 
 2011-06-13 Tamino Dauth <tamino@cdauth.eu>
 * FIXED: Verkommene Seele hat keinen Angriffsschaden.
-* Tötet den Vampirgebieter wird zwar abgeschlossen allerdings kommt keine Meldung (Tötung funktioniert).
+* FIXED (? bricht jetzt bei Todesengel ab): Tötet den Vampirgebieter wird zwar abgeschlossen allerdings kommt keine Meldung (Tötung funktioniert).
 * FIXED: Bei "Fulco" sollte "Meine Zauberkraft ist fast erloschen" erst möglich sein, nachdem man "Du siehst aus wie ein Magier" gesagt hat.
 * FIXED: "Was trägst du da für EINE Kleidung" bei Tellborn!
 * FIXED: "Immer doch" statt "Immer noch" bei Tellborn!
-* Bestenliste (AOS, Timer usw.) während Video ausbelenden, am besten addLeaderboard-Funktion für Charakter. Funktionalität in AVideo einbauen!
+* FIXED: Bestenliste (AOS, Timer usw.) während Video ausbelenden, am besten addLeaderboard-Funktion für Charakter. Funktionalität in AVideo einbauen!
 * Rückverwandlung bei Wiederbelebung vielleicht nicht über Workaround sondern einfach über eine Option, dass der Zauber nicht unterbrochen werden kann ermöglichen?!
 * FIXED: "Stab des Zauberers" benötigt im Tooltip einen Hinweis auf den Schaden.
 * DONE: "Stab der Klarsicht" mit Fernsicht-Fähigkeit einfügen - Tellborn verkauft ihn.

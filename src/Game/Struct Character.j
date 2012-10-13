@@ -184,19 +184,19 @@ endif
 				return
 			endif
 			call DisableTrigger(this.m_revivalTrigger)
-			call this.grimoire().readd.evaluate(AIntegerMap(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")))
-			call AIntegerMap(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
+			call this.grimoire().readd.evaluate(AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")))
+			call AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
 			call DmdfHashTable.global().removeHandleInteger(this.unit(), "SpellLevels")
 			call this.inventory().setEnableAgain(true)
 			call this.inventory().enable()
 		endmethod
 
 		/**
-		* \return Returns the stored map with ability id - level pairs.
+		* \return Returns the stored hash table with ability id - level pairs (parent key - 0, child key - ability id, value - level).
 		* \sa Grimoire#spellLevels
 		*/
-		public method realSpellLevels takes nothing returns AIntegerMap
-			return AIntegerMap(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels"))
+		public method realSpellLevels takes nothing returns AHashTable
+			return AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels"))
 		endmethod
 
 		/**
@@ -207,7 +207,7 @@ endif
 		*/
 		public method morph takes integer abilityId returns nothing
 			if (DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
-				call AIntegerMap(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
+				call AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
 			endif
 			call DmdfHashTable.global().setHandleInteger(this.unit(), "SpellLevels", this.grimoire().spellLevels.evaluate())
 			call this.inventory().setEnableAgain(false)

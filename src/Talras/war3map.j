@@ -270,6 +270,7 @@ globals
     rect                    gg_rct_weather_vampire_camp_fog = null
     rect                    gg_rct_worker              = null
     rect                    gg_rct_video_death_vault_medusa = null
+    rect                    gg_rct_quest_slaughter_death_vault = null
        camerasetup             gg_cam_a_new_alliance_0    = null
     camerasetup             gg_cam_a_new_alliance_1    = null
     camerasetup             gg_cam_a_new_alliance_2    = null
@@ -1698,6 +1699,7 @@ function CreateRegions takes nothing returns nothing
     call EnableWeatherEffect(we, true)
     set gg_rct_worker=Rect(- 19328.0, 16960.0, - 19296.0, 16992.0)
     set gg_rct_video_death_vault_medusa=Rect(- 4256.0, 19360.0, - 4192.0, 19424.0)
+    set gg_rct_quest_slaughter_death_vault=Rect(- 5824.0, 17056.0, - 4704.0, 17792.0)
 endfunction
 
 //***************************************************************************

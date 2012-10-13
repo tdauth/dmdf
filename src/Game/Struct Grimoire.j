@@ -83,17 +83,17 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		/**
 		 * Readds all abilities to the character's unit.
 		 * Useful when character had been morphed for some time.
-		 * \param map Has to be a map with ability id - level pairs.
+		 * \param table Has to be a table with ability id - level entries (parent key - 0, child key - ability id, value - level).
 		 * \sa Grimoire#spellLevels
 		 */
-		public method readd takes AIntegerMap map returns nothing
+		public method readd takes AHashTable table returns nothing
 			local Spell spell
 			local integer level
 			local integer i = 0
 			loop
 				exitwhen (i == this.m_spells.size())
 				set spell = Spell(this.m_spells[i])
-				set level = map[spell.ability()]
+				set level = table.integerByInteger(0, spell.ability())
 				if (this.m_favourites.contains(spell)) then
 					call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
 					call spell.add()
@@ -107,16 +107,16 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			endloop
 		endmethod
 
-		/// \return Returns a newly created map with ability id - level pairs.
-		public method spellLevels takes nothing returns AIntegerMap
-			local AIntegerMap map = AIntegerMap.create()
+		/// \return Returns a newly created hash table with ability id - level entries  (parent key - 0, child key - ability id, value - level).
+		public method spellLevels takes nothing returns AHashTable
+			local AHashTable table = AHashTable.create()
 			local integer i = 0
 			loop
 				exitwhen (i == this.m_spells.size())
-				call map.insert(Spell(this.m_spells[i]).ability(), Spell(this.m_spells[i]).level())
+				call table.setIntegerByInteger(0, Spell(this.m_spells[i]).ability(), Spell(this.m_spells[i]).level())
 				set i = i + 1
 			endloop
-			return map
+			return table
 		endmethod
 
 		/**

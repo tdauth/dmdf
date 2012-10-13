@@ -4,6 +4,7 @@
 * Updated camera objects.
 * Improved videos "Dragon Hunt" and "Death Vault".
 * MainWindow: Made compatible to new ASL API.
+* Replaced AIntegerMap usage by AHashTable usage.
 
 2012-08-03 Tamino Dauth <tamino@cdauth.eu>
 * Improved Baldar's and Haldar's talks.

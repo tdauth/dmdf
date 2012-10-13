@@ -178,7 +178,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call RegionAddRect(this.m_newRegion, gg_rct_quest_slaughter_enable)
 
 			set this.m_enterRegion = CreateRegion()
-			call RegionAddRect(this.m_enterRegion, null) /// \todo FIXME
+			call RegionAddRect(this.m_enterRegion, gg_rct_quest_slaughter_death_vault)
 
 			call this.setStateEvent(thistype.stateNew, thistype.stateEventNew)
 			call this.setStateCondition(thistype.stateNew, thistype.stateConditionNew)
@@ -210,6 +210,9 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted4)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted4)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted4)
+			call questItem.setPing(true)
+			call questItem.setPingCoordinatesFromRect(gg_rct_quest_slaughter_death_vault)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			set questItem = AQuestItem.create(this, tr("Tötet die Medusa."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
