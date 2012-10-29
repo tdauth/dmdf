@@ -5,6 +5,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 		private boolean array m_wasOffendedSongs[6] /// \todo \ref MapData.maxPlayers
 		private boolean array m_toldStory[6] /// \todo \ref MapData.maxPlayers
 		private boolean array m_playedSong[6] /// \todo \ref MapData.maxPlayers
+		private boolean array m_toldThatSleepingInBarn[6] /// \todo \ref MapData.maxPlayers
 
 		implement Talk
 
@@ -56,6 +57,19 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 		private method playedSong takes nothing returns boolean
 			local player user = this.character().player()
 			local boolean result = this.m_playedSong[GetPlayerId(user)]
+			set user = null
+			return result
+		endmethod
+
+		private method tellThatSleepingInBarn takes nothing returns nothing
+			local player user = this.character().player()
+			set this.m_toldThatSleepingInBarn[GetPlayerId(user)] = true
+			set user = null
+		endmethod
+
+		public method toldThatSleepingInBarn takes Character character returns boolean
+			local player user = character.player()
+			local boolean result = this.m_toldThatSleepingInBarn[GetPlayerId(user)]
 			set user = null
 			return result
 		endmethod
@@ -188,6 +202,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 		private static method infoAction8 takes AInfo info returns nothing
 			call speech(info, false, tr("Was machst du in der Scheune?"), null)
 			call speech(info, true, tr("Schlafen, was sonst? Oder soll ich hier draußen erfrieren? Der Bauer Nado, ein sehr höflicher Mann, lässt mich dort umsonst übernachten."), null)
+			call thistype(info.talk()).tellThatSleepingInBarn()
 			call info.talk().showStartPage()
 		endmethod
 

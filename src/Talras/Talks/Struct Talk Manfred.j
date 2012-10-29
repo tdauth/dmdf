@@ -1,4 +1,4 @@
-library StructMapTalksTalkManfred requires Asl
+library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalksTalkMathilda
 
 	struct TalkManfred extends ATalk
 		implement Talk
@@ -33,9 +33,8 @@ library StructMapTalksTalkManfred requires Asl
 		endmethod
 
 		// (Nachdem der Charakter mit Mathilda darüber gesprochen hat)
-		/// @todo FIXME
 		private static method infoCondition2 takes AInfo info returns boolean
-			return true
+			return TalkMathilda.talk().toldThatSleepingInBarn(info.talk().character())
 		endmethod
 
 		// Du lässt Mathilda in deiner Scheune pennen?
@@ -112,7 +111,7 @@ library StructMapTalksTalkManfred requires Asl
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(gg_unit_n01H_0148, thistype.startPageAction)
+			local thistype this = thistype.allocate(Npcs.manfred(), thistype.startPageAction)
 
 			// start page
 			call this.addInfo(false, false, 0, thistype.infoAction0, tr("Hallo.")) // 0

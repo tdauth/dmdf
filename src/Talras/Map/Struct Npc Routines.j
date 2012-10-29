@@ -2,6 +2,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 	struct NpcRoutines
 		private static AUnitRoutine m_wigberhtTraining
+		// castle
 		private static AUnitRoutine m_osmanLeavesHouse
 		private static AUnitRoutine m_osmanEntersHouse
 		private static AUnitRoutine m_wielandLeavesHouse
@@ -9,11 +10,6 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static AUnitRoutine m_wielandTalks
 		private static AUnitRoutine m_wielandDrinks
 		private static AUnitRoutine m_wielandEntersHouse
-		private static AUnitRoutine m_mathildaLeavesHouse
-		private static AUnitRoutine m_mathildaMovesTo0
-		private static AUnitRoutine m_mathildaTalks
-		private static AUnitRoutine m_mathildaMovesTo1
-		private static AUnitRoutine m_mathildaEntersHouse
 		private static AUnitRoutine m_irminaLeavesHouse0
 		private static AUnitRoutine m_irminaMovesTo0
 		private static AUnitRoutine m_irminaEntersHouse0
@@ -25,6 +21,12 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static AUnitRoutine m_einarTalks
 		private static AUnitRoutine m_einarDrinks
 		private static AUnitRoutine m_einarEntersHouse
+		// village/farm
+		private static AUnitRoutine m_mathildaLeavesHouse
+		private static AUnitRoutine m_mathildaMovesTo0
+		private static AUnitRoutine m_mathildaTalks
+		private static AUnitRoutine m_mathildaMovesTo1
+		private static AUnitRoutine m_mathildaEntersHouse
 
 		private static method create takes nothing returns thistype
 			return 0

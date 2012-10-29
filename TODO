@@ -1,3 +1,20 @@
+2012-10-28 Tamino Dauth <tamino@cdauth.eu>
+* Grabenspinnennetz hat keinen sichtbaren Zauberverstärker.
+* Wigberhts Dialog ohne "Zurück".
+* Björn und Dagos Modelle!
+* Neues Intro testen.
+* Dagos Bärentode testen.
+* "Entering unit" stimmt, required unit ist leer!!! - id ist 0, daher ungültige Id, bei Osman geht es, bei Einar usw nicht!
+* Mathildas Hönigtöpfe, Items!!
+* Gebiet für Mathildas Scheunenbereich für Dialoge
+* Bei deaktivierten Tagesabläufen andere Bedingung nehmen?
+* Aus "Mathilda pennt in der Scheune" eine Questreihe machen, Ferdinand miteinbeziehen?
+* Gebiete für Tagesabläufe der NPCs einfügen!
+* deathAngel = 'n02K'???
+* Bob und Oscar vom falschen Spieler in AOS!
+* Wenn Einheiten zwangsweise zurücklaufen, zwei neue Spieler für AOS und einen neuen Spieler für neutrale NPCs (z. B. Dago) hinzufügen!
+* Seit Aufteilung des Intros, rast es manchmal am Anfang durch (falscher Aufruf???).
+
 2012-08-10 Tamino Dauth <tamino@cdauth.eu>
 * UI\Widgets\Console\Human\CommandButton\human-button-lvls-overlay.blp für Zauberbuchsymbole.
 
@@ -950,7 +967,7 @@ Dunkelelfen kein BI
 2009-08-11 Tamino Dauth <tamino@cdauth.eu>
 * Beim Stapeln nichtaufladbarer Gegenstände bleibt es bei einem Slot, wenn ein Gegenstand auf einen Gegenstand mit einer Aufladung gelegt wird.
 * FIXED: Grabenspinnen haben falschen Besitzer.
-* Grabenspinnen sollen Gegner mit ihrem Netz fesseln können.
+* DONE: Grabenspinnen sollen Gegner mit ihrem Netz fesseln können.
 
 2009-08-09 Tamino Dauth <tamino@cdauth.eu>
 * FIXED: If you create items for characters they won't be handled like inventory items since inventory is disabled during talks.

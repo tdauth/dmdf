@@ -47,8 +47,9 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(2.0)) then
 				return
 			endif
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Doch auch das einfachere Volk sahen in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen. So kämpften die einen dafür, ihr bisheriges Leben wie gewohnt fortzusetzen, während die anderen den eigenen Vorteil aus der Furcht der Beteiligten zogen."), null)
-			if (wait(4.0)) then // wait until "So kämpften die einen dafür ..."
+
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Doch auch das einfachere Volk sahen in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen."), null)
+			if (wait(GetSimpleTransmissionDuration(null))) then // wait until "So kämpften die einen dafür ..."
 				return
 			endif
 
@@ -58,9 +59,15 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_intro_norsemen, true, 0.0)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
-			if (wait(2.0)) then // wait until "während die anderen ..."
+			if (wait(2.0)) then
 				return
 			endif
+
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("So kämpften die einen dafür, ihr bisheriges Leben wie gewohnt fortzusetzen …"), null)
+			if (wait(GetSimpleTransmissionDuration(null))) then // wait until "während die anderen …"
+				return
+			endif
+
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(2.0)) then
 				return
@@ -70,6 +77,12 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(2.0)) then // wait until end
 				return
 			endif
+
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("… während die anderen den eigenen Vorteil aus der Furcht der Beteiligten zogen."), null)
+			if (wait(GetSimpleTransmissionDuration(null))) then // wait until end
+				return
+			endif
+
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(2.0)) then
 				return

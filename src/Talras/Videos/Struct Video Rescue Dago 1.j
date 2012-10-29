@@ -13,28 +13,30 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 
 			// bears
 			set this.m_actorBear0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0083))
-			set this.m_actorBear1 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0027))
-			
-			call SetUnitLifeBJ(this.m_actorBear0, 0.0)
-			call UnitSuspendDecay(this.m_actorBear0, true)
 			call SetUnitPositionRect(this.m_actorBear0, gg_rct_video_rescue_dago_bear_0_position)
 			call SetUnitFacing(this.m_actorBear0, 56.02)
-			call SetUnitLifeBJ(this.m_actorBear1, 0.0)
-			call UnitSuspendDecay(this.m_actorBear1, true)
+			call UnitSuspendDecay(this.m_actorBear0, true)
+			call SetUnitLifeBJ(this.m_actorBear0, 0.0)
+
+			set this.m_actorBear1 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0027))
 			call SetUnitPositionRect(this.m_actorBear1, gg_rct_video_rescue_dago_bear_1_position)
 			call SetUnitFacing(this.m_actorBear1, 116.66)
-		
+			call UnitSuspendDecay(this.m_actorBear1, true)
+			call SetUnitLifeBJ(this.m_actorBear1, 0.0)
+
+
+
 			// Dago
 			set this.m_actorDago = thistype.unitActor(thistype.saveUnitActor(gg_unit_n00Q_0028))
 			call SetUnitPositionRect(this.m_actorDago, gg_rct_video_rescue_dago_dagos_position)
 			call SetUnitOwner(this.m_actorDago, Player(PLAYER_NEUTRAL_PASSIVE), true) // change owner since he's shared
-			
+
 			// actor
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_rescue_dago_actors_position)
-			
+
 			call SetUnitFacingToFaceUnit(this.m_actorDago, thistype.actor())
 			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorDago)
-			
+
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_2, true, 0.0)
 		endmethod
 
@@ -68,7 +70,7 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 			set this.m_actorBear0 = null
 			set this.m_actorBear1 = null
 			set this.m_actorDago = null
-			
+
 			// remove bear corpses
 			call RemoveUnit(gg_unit_n008_0083)
 			set gg_unit_n008_0083 = null
@@ -77,9 +79,9 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 
 			call Fellows.dago().reset()
 			call Fellows.dago().destroy()
-		
+
 			call Game.resetVideoSettings()
-			
+
 			call PanCameraToTimedUnit(Npcs.dago(), 0.0)
 		endmethod
 
