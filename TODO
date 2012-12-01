@@ -1,10 +1,17 @@
+2012-12-01 Tamino Dauth <tamino@cdauth.eu>
+* endTrain action muss nicht aufgerufen werden, daher kann Wieland seine Animation behalten (falls Tageszeit manuell verschoben wird, durch trigger)
+* facings, partners und sounds für Routinen festlegen!
+* Kurzschwert, attachment-Fähigkeit mit Schaden wird im Rucksack nicht entfernt.
+* möglichst erreichen, dass Bewegung des Charakters beim Skillen und Aktionen im Rucksack nicht unterbrochen werden.
+* "Verkommene Seele" zum Selbstmörder machen wie Goblin-Randalierer?
+
 2012-10-28 Tamino Dauth <tamino@cdauth.eu>
 * Grabenspinnennetz hat keinen sichtbaren Zauberverstärker.
 * Wigberhts Dialog ohne "Zurück".
 * Björn und Dagos Modelle!
-* Neues Intro testen.
-* Dagos Bärentode testen.
-* "Entering unit" stimmt, required unit ist leer!!! - id ist 0, daher ungültige Id, bei Osman geht es, bei Einar usw nicht!
+* DONE: Neues Intro testen.
+* FIXED: Dagos Bärentode testen.
+* FIXED: "Entering unit" stimmt, required unit ist leer!!! - id ist 0, daher ungültige Id, bei Osman geht es, bei Einar usw nicht!
 * Mathildas Hönigtöpfe, Items!!
 * Gebiet für Mathildas Scheunenbereich für Dialoge
 * Bei deaktivierten Tagesabläufen andere Bedingung nehmen?
@@ -74,7 +81,7 @@
 
 2012-07-25 Tamino Dauth <tamino@cdauth.eu>
 * FIXED: Im Video hat der Charakter die Sachen aus seinem Rucksack (nicht die Ausrüstung!).
-* Bärenanimation ...
+* FIXED: Bärenanimation ...
 * Intro vervollständigen (mit Soundaufnahmen testen).
 * Dagos Dolch braucht Modell.
 * Angriffsanimation mit Hiebwaffen ändern!

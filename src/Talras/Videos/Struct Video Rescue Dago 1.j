@@ -41,6 +41,17 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			// fade delay to skip death animations of bears!!!
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 0.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
+
+
 			call TransmissionFromUnit(this.m_actorDago, tr("Danke, dass Ihr mir geholfen habt! Diese Scheißbären können einen den Kopf kosten, wenn man nicht aufpasst. Aber sag mal, wer seid ihr überhaupt?"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -86,7 +97,9 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate()
+			local thistype this = thistype.allocate()
+			call this.setFadeIn(false) // don't fade in to skip death of bears
+			return this
 		endmethod
 	endstruct
 

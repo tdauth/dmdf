@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, StructMapMapShrines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
+library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, StructMapMapShrines, StructMapMapNpcRoutines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
 
 	//! inject config
 		/// @todo tr leads to crash
@@ -328,6 +328,8 @@ endif
 				call UnitAddItemById(ACharacter.playerCharacter(Player(i)).unit(), ItemTypes.lightWoodenShield().itemType())
 				set i = i + 1
 			endloop
+
+			call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 		endmethod
 
 		/// Required by \ref Classes.

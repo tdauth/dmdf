@@ -1,5 +1,68 @@
 library StructGameRoutines requires Asl
 
+	struct NpcRoutineWithFacing extends AUnitRoutine
+		private real m_facing = 0.0
+
+		public method setFacing takes real facing returns nothing
+			set this.m_facing = facing
+		endmethod
+
+		public method facing takes nothing returns real
+			return this.m_facing
+		endmethod
+	endstruct
+
+	struct NpcLeavesHouseRoutine extends NpcRoutineWithFacing
+
+		public stub method onCondition takes nothing returns boolean
+			return IsUnitHidden(this.unit()) // only leave if had entered - first leave routine is therefore wrong when NPCs aren't placed in their houses at the beginning of game
+		endmethod
+
+	endstruct
+
+	struct NpcRoutineWithOtherNpc extends AUnitRoutine
+		private unit m_partner = null
+
+		public method setPartner takes unit partner returns nothing
+			set this.m_partner = partner
+		endmethod
+
+		public method partner takes nothing returns unit
+			return this.m_partner
+		endmethod
+	endstruct
+
+	struct NpcTalksRoutine extends NpcRoutineWithOtherNpc
+		public static constant integer maxSounds = 4
+		private real m_range = 800.0
+		private sound array m_sounds[thistype.maxSounds]
+		private integer m_soundsCount = 0
+
+		public method setRange takes real range returns nothing
+			set this.m_range = range
+		endmethod
+
+		public method range takes nothing returns real
+			return this.m_range
+		endmethod
+
+		public method soundsCount takes nothing returns integer
+			return this.m_soundsCount
+		endmethod
+
+		public method addSound takes sound whichSound returns nothing
+			if (this.soundsCount() >= thistype.maxSounds) then
+				return
+			endif
+			set this.m_sounds[this.soundsCount()] = whichSound
+			set this.m_soundsCount = this.soundsCount() + 1
+		endmethod
+
+		public method sound takes integer index returns sound
+			return this.m_sounds[index]
+		endmethod
+	endstruct
+
 	struct Routines
 		private static ARoutine m_moveTo
 		private static AStringVector m_trainAnimations
@@ -18,13 +81,18 @@ library StructGameRoutines requires Asl
 		private method onDestroy takes nothing returns nothing
 		endmethod
 
+		private static method moveToTargetAction takes NpcRoutineWithFacing period returns nothing
+			call SetUnitFacing(period.unit(), period.facing())
+		endmethod
+
 		private static method trainEndAction takes ARoutinePeriod period returns nothing
 			call ResetUnitAnimation(period.unit())
 		endmethod
 
 		/// @todo Should check whether the unit has animation
-		private static method trainTargetAction takes ARoutinePeriod period returns nothing
+		private static method trainTargetAction takes NpcRoutineWithFacing period returns nothing
 			local integer index = GetRandomInt(0, thistype.m_trainAnimations.backIndex())
+			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), thistype.m_trainAnimations[index])
 			call TriggerSleepAction(2.0)
 			call AContinueRoutineLoop(period, thistype.trainTargetAction)
@@ -35,9 +103,9 @@ library StructGameRoutines requires Asl
 			call ShowUnit(period.unit(), false)
 		endmethod
 
-		private static method leaveHouseTargetAction takes ARoutinePeriod period returns nothing
+		private static method leaveHouseTargetAction takes NpcLeavesHouseRoutine period returns nothing
 			debug call Print("Unit " + GetUnitName(period.unit()) + " leaves house.")
-			call SetUnitFacing(period.unit(), GetUnitFacing(period.unit()) - 180.0) // turn around
+			call SetUnitFacing(period.unit(), period.facing()) // turn around
 			call ShowUnit(period.unit(), true)
 		endmethod
 
@@ -47,7 +115,8 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		/// Animation of villager.
-		private static method hammerTargetAction takes ARoutinePeriod period returns nothing
+		private static method hammerTargetAction takes NpcRoutineWithFacing period returns nothing
+			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), "Attack")
 			call PlaySoundFileOnUnit("Buildings\\Human\\Blacksmith\\BlacksmithWhat1.wav", period.unit())
 			call TriggerSleepAction(1.0)
@@ -62,22 +131,25 @@ library StructGameRoutines requires Asl
 			return GetOwningPlayer(GetEnumUnit()) == Player(PLAYER_NEUTRAL_PASSIVE) and not IsUnitPaused(GetEnumUnit())
 		endmethod
 
-		private static method talkTargetAction takes ARoutinePeriod period returns nothing
-			local group whichGroup = CreateGroup()
-			local unit whichUnit = null
-			debug call Print("Talk target action.")
-			call GroupEnumUnitsInRange(whichGroup, GetUnitX(period.unit()), GetUnitY(period.unit()), 400.0, Filter(function thistype.talkFilter))
-			debug call Print("Talk: Found " + I2S(CountUnitsInGroup(whichGroup)) + " possible partners.")
-			set whichUnit = FindClosestUnit(whichGroup, GetUnitX(period.unit()), GetUnitY(period.unit()))
-			debug call Print(GetUnitName(whichUnit) + " is the closest partner.")
+		private static method talkTargetAction takes NpcTalksRoutine period returns nothing
+			local sound whichSound = null
+			local real time = 1.0
 
-			if (whichUnit != null) then
-				call SetUnitFacingToFaceUnit(period.unit(), whichUnit)
+			if (period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) then
+				call SetUnitFacingToFaceUnit(period.unit(), period.partner())
 				call QueueUnitAnimation(period.unit(), "Stand Talk")
-				debug call Print("Talking to.")
+				if (period.soundsCount() > 0) then
+					set whichSound = period.sound(GetRandomInt(0, period.soundsCount() - 1))
+					call PlaySoundOnUnitBJ(whichSound, 100.0, period.unit())
+					set time = GetSoundDurationBJ(whichSound) + 1.0
+				endif
+
+				call TriggerSleepAction(time) // TODO check during this time (if sound is played) if partner is being paused in still in range?
+				call AContinueRoutineLoop(period, thistype.talkTargetAction)
+
+				return
 			endif
-			call DestroyGroup(whichGroup)
-			set whichGroup = null
+
 			call TriggerSleepAction(1.0)
 			call AContinueRoutineLoop(period, thistype.talkTargetAction)
 		endmethod
@@ -87,7 +159,8 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		/// @todo FIXME
-		private static method drinkTargetAction takes ARoutinePeriod period returns nothing
+		private static method drinkTargetAction takes NpcRoutineWithFacing period returns nothing
+			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), "Stand")
 			call TriggerSleepAction(1.0)
 			call AContinueRoutineLoop(period, thistype.drinkTargetAction)
@@ -97,14 +170,15 @@ library StructGameRoutines requires Asl
 			call ResetUnitAnimation(period.unit())
 		endmethod
 
-		private static method harvestTargetAction takes ARoutinePeriod period returns nothing
+		private static method harvestTargetAction takes NpcRoutineWithFacing period returns nothing
+			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), "Stand Work")
 			call TriggerSleepAction(1.266)
 			call AContinueRoutineLoop(period, thistype.harvestTargetAction)
 		endmethod
 
 		public static method init takes nothing returns nothing
-			set thistype.m_moveTo = ARoutine.create(true, false, 0, 0, 0)
+			set thistype.m_moveTo = ARoutine.create(true, false, 0, 0, thistype.moveToTargetAction)
 			set thistype.m_trainAnimations = AStringVector.create()
 			call thistype.m_trainAnimations.pushBack("Attack 1")
 			call thistype.m_trainAnimations.pushBack("Attack 2")
