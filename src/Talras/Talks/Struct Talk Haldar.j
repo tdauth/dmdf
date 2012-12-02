@@ -80,11 +80,28 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			call Character(info.talk().character()).giveQuestItem('I01B') // Standarte
 			// Ring
 			if (info.talk().character().class() == Classes.astralModifier()) then
-				call Character(info.talk().character()).giveQuestItem('I015')
-			/// TODO Add item types
+				call Character(info.talk().character()).giveQuestItem('I033')
+			elseif (info.talk().character().class() == Classes.dragonSlayer()) then
+				call Character(info.talk().character()).giveQuestItem('I034')
+			elseif (info.talk().character().class() == Classes.druid()) then
+				call Character(info.talk().character()).giveQuestItem('I035')
+			elseif (info.talk().character().class() == Classes.elementalMage()) then
+				call Character(info.talk().character()).giveQuestItem('I036')
+			elseif (info.talk().character().class() == Classes.illusionist()) then
+				call Character(info.talk().character()).giveQuestItem('I037')
+			elseif (info.talk().character().class() == Classes.cleric()) then
+				call Character(info.talk().character()).giveQuestItem('I038')
+			elseif (info.talk().character().class() == Classes.necromancer()) then
+				call Character(info.talk().character()).giveQuestItem('I039')
+			elseif (info.talk().character().class() == Classes.ranger()) then
+				call Character(info.talk().character()).giveQuestItem('I03B')
+			elseif (info.talk().character().class() == Classes.knight()) then
+				call Character(info.talk().character()).giveQuestItem('I03A')
+			elseif (info.talk().character().class() == Classes.wizard()) then
+				call Character(info.talk().character()).giveQuestItem('I03C')
 			else
 				debug call Print("Warnung: Unsupported class for ring.")
-				call Character(info.talk().character()).giveQuestItem('I015')
+				call Character(info.talk().character()).giveQuestItem('I033')
 			endif
 			call QuestDeathToBlackLegion.characterQuest(info.talk().character()).enable()
 			call info.talk().showStartPage()

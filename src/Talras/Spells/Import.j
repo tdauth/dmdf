@@ -21,6 +21,27 @@ library MapSpells requires StructMapSpellsSpellAmuletOfForesight, StructMapSpell
 		call SpellAmuletOfTerror.create(character)
 		/// \todo Filter class for Baldars ring
 		call SpellAosRing.create(character, 'A04V', true) // Astral Modifier
+		call SpellAosRing.create(character, 'A0BL', true) // Dragon Slayer
+		call SpellAosRing.create(character, 'A0BJ', true) // Druid
+		call SpellAosRing.create(character, 'A0BN', true) // Elemental Mage
+		call SpellAosRing.create(character, 'A0BO', true) // Illusionist
+		call SpellAosRing.create(character, 'A0BH', true) // Cleric
+		call SpellAosRing.create(character, 'A0BI', true) // Necromancer
+		call SpellAosRing.create(character, 'A0BK', true) // Knight
+		call SpellAosRing.create(character, 'A0BM', true) // Ranger
+		call SpellAosRing.create(character, 'A0BP', true) // Wizard
+
+		call SpellAosRing.create(character, 'A0BR', false) // Astral Modifier
+		call SpellAosRing.create(character, 'A0BW', false) // Dragon Slayer
+		call SpellAosRing.create(character, 'A0BU', false) // Druid
+		call SpellAosRing.create(character, 'A0BY', false) // Elemental Mage
+		call SpellAosRing.create(character, 'A0C0', false) // Wizard
+		call SpellAosRing.create(character, 'A0BZ', false) // Illusionist
+		call SpellAosRing.create(character, 'A0BS', false) // Cleric
+		call SpellAosRing.create(character, 'A0BT', false) // Necromancer
+		call SpellAosRing.create(character, 'A0BV', false) // Knight
+		call SpellAosRing.create(character, 'A0BX', false) // Ranger
+
 		call SpellScrollOfTheRealmOfTheDead.create(character)
 	endfunction
 

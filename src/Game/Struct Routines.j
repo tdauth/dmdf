@@ -82,6 +82,8 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		private static method moveToTargetAction takes NpcRoutineWithFacing period returns nothing
+			debug call Print("Unit " + GetUnitName(period.unit()) + " gets new facing in target.")
+			call IssueImmediateOrder(period.unit(), "stop")
 			call SetUnitFacing(period.unit(), period.facing())
 		endmethod
 
@@ -127,15 +129,12 @@ library StructGameRoutines requires Asl
 			call ResetUnitAnimation(period.unit())
 		endmethod
 
-		private static method talkFilter takes nothing returns boolean
-			return GetOwningPlayer(GetEnumUnit()) == Player(PLAYER_NEUTRAL_PASSIVE) and not IsUnitPaused(GetEnumUnit())
-		endmethod
-
 		private static method talkTargetAction takes NpcTalksRoutine period returns nothing
 			local sound whichSound = null
 			local real time = 1.0
 
 			if (period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) then
+				debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
 				call SetUnitFacingToFaceUnit(period.unit(), period.partner())
 				call QueueUnitAnimation(period.unit(), "Stand Talk")
 				if (period.soundsCount() > 0) then

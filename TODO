@@ -1,3 +1,19 @@
+2012-12-02 Tamino Dauth <tamino@cdauth.eu>
+* Tagesabläufe vervollständigen (auch Testsounds testen, Gespräche testen).
+* Donnerwesen in Video auf Gebieten erzeugen.
+* Osman und Ferdinand im Video mit Herzog berücksichtigen.
+* Wenn es morgens ist und NPCs Häuser verlassen überprüfen, ob dies immer geschieht, auch wenn sie zu der Zeit pausiert sind?
+* Björns Winkel stimmt bei der Arbeit nicht.
+* Einars Winkel stimmt beim Verkaufen nicht.
+* Todesengel geht immer noch nicht, trotz richtigen Spielers.
+* neue Spieler in AOS verwenden.
+* neue Items und Fähigkeiten der AOS-Ringe testen.
+* Verkommene Seelen angreifen, auf Explosionen testen.
+* Kurzschwertfähigkeit ersetzen.
+* Modell vom Stab des Zauberers testen/Attachment testen/Absturz?
+* Statt Neutral Passiv muss ein weiterer Weltenspieler her (sonst laufen auch NPCs in Tagesabläufen zurück, nicht nur Dago).
+* Neue Spawn Points mit Einheiten hinzufügen.
+
 2012-12-01 Tamino Dauth <tamino@cdauth.eu>
 * endTrain action muss nicht aufgerufen werden, daher kann Wieland seine Animation behalten (falls Tageszeit manuell verschoben wird, durch trigger)
 * facings, partners und sounds für Routinen festlegen!
@@ -18,7 +34,7 @@
 * Aus "Mathilda pennt in der Scheune" eine Questreihe machen, Ferdinand miteinbeziehen?
 * Gebiete für Tagesabläufe der NPCs einfügen!
 * deathAngel = 'n02K'???
-* Bob und Oscar vom falschen Spieler in AOS!
+* FIXED: Bob und Oscar vom falschen Spieler in AOS!
 * Wenn Einheiten zwangsweise zurücklaufen, zwei neue Spieler für AOS und einen neuen Spieler für neutrale NPCs (z. B. Dago) hinzufügen!
 * Seit Aufteilung des Intros, rast es manchmal am Anfang durch (falscher Aufruf???).
 
@@ -35,7 +51,7 @@
 * Dämpfung: Zaubertooltip Stufenwert anpassen!
 * DONE: Endlich Gebiet in die Todeshöhle einfügen, ab dem das Quest beginnt.
 * Donnerwesenvideopunkte einfügen?
-* Todesengel gehört zu 10000% nicht PLAYER_NEUTRAL_AGGRESSIVE!
+* DEPRECATED: Todesengel gehört zu 10000% nicht PLAYER_NEUTRAL_AGGRESSIVE!
 * Reihenfolge der Buttons im Zauberbuch ist nicht immer gleich (Koordinaten auf 0 setzen).
 * Dialog mit Trommon: Was wenn bereits Kuno getroffen? Mittlere Quest-Antwort könnte Dialog bei Kuno freischalten, Belohnung, Holzfäller verteidigt.
 * DEPRECATED: Ein Donnerwesen im Fels versteckt?
@@ -57,8 +73,8 @@
 
 2012-08-04 Tamino Dauth <tamino@cdauth.eu>
 * Verwandlung in Dämon funktioniert nicht.
-* Gegenstände für andere Klassen erstellen (Baldars Ring).
-* "Manaexplosion" Stufe 1 scheint eine andere Position als die anderen Stufen zu haben, überprüfen, ansonsten funktioniert das neue Zauberbuch mit Buttons.
+* DONE: Gegenstände für andere Klassen erstellen (Baldars Ring).
+* DEPRECATED: "Manaexplosion" Stufe 1 scheint eine andere Position als die anderen Stufen zu haben, überprüfen, ansonsten funktioniert das neue Zauberbuch mit Buttons.
 * Beim Anlegen vom "Stab des Zauberers" stürzt das Spiel ab.
 * 30x20 Zahlensymbole rechts unten außerhalb des Randes!
 

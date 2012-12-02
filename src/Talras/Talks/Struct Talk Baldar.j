@@ -99,7 +99,6 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 				call Character(info.talk().character()).giveQuestItem('I031')
 			elseif (info.talk().character().class() == Classes.wizard()) then
 				call Character(info.talk().character()).giveQuestItem('I032')
-			/// @todo Add item types
 			else
 				debug call Print("Warnung: Unsupported class for ring.")
 				call Character(info.talk().character()).giveQuestItem('I015')
