@@ -71,7 +71,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			local integer count
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.vampire) then
 				set count = SpawnPoints.vampires0().countUnitsOfType(UnitTypes.vampire)
-				debug call Print("There are still " + I2S(count) + " vampires.")
 				if (count == 0) then
 					return true
 				// get next one to ping
@@ -89,10 +88,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.quest().questItem(2).enable()
 		endmethod
 
-		private method stateConditionCompleted2 takes AQuestItem questItem returns boolean
-			debug if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deathAngel) then
-				debug call Print("Death angel count: " + I2S(SpawnPoints.deathAngel().countUnitsOfType(UnitTypes.deathAngel)))
-			debug endif
+		private static method stateConditionCompleted2 takes AQuestItem questItem returns boolean
 			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deathAngel and SpawnPoints.deathAngel().countUnitsOfType(UnitTypes.deathAngel) == 0
 		endmethod
 
@@ -121,6 +117,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		private static method stateActionCompleted4 takes AQuestItem questItem returns nothing
 			call VideoDeathVault.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
 			call questItem.quest().questItem(5).setState(thistype.stateNew)
 			call questItem.quest().questItem(6).setState(thistype.stateNew)
 			call questItem.quest().displayUpdate()

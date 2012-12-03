@@ -8,16 +8,12 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 			return super.enable()
 		endmethod
 
-		private static method stateEventCompleted0 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			local event triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_quest_talras_quest_item_0)
-			set triggerEvent = null
+		private static method stateEventCompleted0 takes AQuestItem questItem, trigger whichTrigger returns nothing
+			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_talras_quest_item_0)
 		endmethod
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = ACharacter.isUnitCharacter(triggerUnit)
-			set triggerUnit = null
-			return result
+			return ACharacter.isUnitCharacter(GetTriggerUnit())
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
@@ -33,16 +29,12 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 			call RemoveDestructable(gg_dest_B004_2337)
 		endmethod
 
-		private static method stateEventCompleted1 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			local event triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_quest_talras_quest_item_1)
-			set triggerEvent = null
+		private static method stateEventCompleted1 takes AQuestItem questItem, trigger whichTrigger returns nothing
+			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_talras_quest_item_1)
 		endmethod
 
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = ACharacter.isUnitCharacter(triggerUnit)
-			set triggerUnit = null
-			return result
+			return ACharacter.isUnitCharacter(GetTriggerUnit())
 		endmethod
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing

@@ -131,7 +131,7 @@ library StructGameRoutines requires Asl
 
 		private static method talkTargetAction takes NpcTalksRoutine period returns nothing
 			local sound whichSound = null
-			local real time = 1.0
+			local real time = 5.0 // usual wait interval
 
 			if (period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) then
 				debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
@@ -143,13 +143,10 @@ library StructGameRoutines requires Asl
 					set time = GetSoundDurationBJ(whichSound) + 1.0
 				endif
 
-				call TriggerSleepAction(time) // TODO check during this time (if sound is played) if partner is being paused in still in range?
-				call AContinueRoutineLoop(period, thistype.talkTargetAction)
-
-				return
+				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
 			endif
 
-			call TriggerSleepAction(1.0)
+			call TriggerSleepAction(time)
 			call AContinueRoutineLoop(period, thistype.talkTargetAction)
 		endmethod
 

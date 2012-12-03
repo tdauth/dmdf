@@ -3193,8 +3193,8 @@ globals
     constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
     constant boolean DMDF_INVENTORY = false
     constant boolean DMDF_TRADE = false
-    constant boolean DMDF_CHARACTER_STATS = true
-    constant boolean DMDF_INFO_LOG = true
+    constant boolean DMDF_CHARACTER_STATS = false
+    constant boolean DMDF_INFO_LOG = false
     constant boolean DMDF_NPC_ROUTINES = true
     constant boolean DMDF_CHARACTER_MEMORY_ADMINISTRATION = false
     constant boolean DMDF_VIOLENCE = true
@@ -3203,9 +3203,9 @@ globals
 	constant string A_TEXT_TIME_VALUE = "0%1%" // GetLocalizedString(
 	constant string A_TEXT_TIME_PAIR = "%1%:%2%" // GetLocalizedString(
 	// used by ATalk
-	constant string A_TEXT_EXIT = "Exit" // GetLocalizedString(
-	constant string A_TEXT_BACK = "Back" // GetLocalizedString(
-	constant string A_TEXT_TARGET_TALKS_ALREADY = "Target is already talking." // GetLocalizedString(
+	constant string A_TEXT_EXIT = "Ende" // GetLocalizedString(
+	constant string A_TEXT_BACK = "Zurück" // GetLocalizedString(
+	constant string A_TEXT_TARGET_TALKS_ALREADY = "Ziel unterhält sich bereits." // GetLocalizedString(
 	// used by ADialog
 	constant string A_TEXT_DIALOG_BUTTON = "[%1%] %2%" // GetLocalizedString(
 endglobals
