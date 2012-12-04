@@ -13,11 +13,6 @@ library StructGameRoutines requires Asl
 	endstruct
 
 	struct NpcLeavesHouseRoutine extends NpcRoutineWithFacing
-
-		public stub method onCondition takes nothing returns boolean
-			return IsUnitHidden(this.unit()) // only leave if had entered - first leave routine is therefore wrong when NPCs aren't placed in their houses at the beginning of game
-		endmethod
-
 	endstruct
 
 	struct NpcRoutineWithOtherNpc extends AUnitRoutine
@@ -105,6 +100,10 @@ library StructGameRoutines requires Asl
 			call ShowUnit(period.unit(), false)
 		endmethod
 
+		private static method leaveHouseCondition takes NpcLeavesHouseRoutine period returns boolean
+			return IsUnitHidden(period.unit()) // only leave if had entered - first leave routine is therefore wrong when NPCs aren't placed in their houses at the beginning of game
+		endmethod
+
 		private static method leaveHouseTargetAction takes NpcLeavesHouseRoutine period returns nothing
 			debug call Print("Unit " + GetUnitName(period.unit()) + " leaves house.")
 			call SetUnitFacing(period.unit(), period.facing()) // turn around
@@ -174,18 +173,18 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		public static method init takes nothing returns nothing
-			set thistype.m_moveTo = ARoutine.create(true, false, 0, 0, thistype.moveToTargetAction)
+			set thistype.m_moveTo = ARoutine.create(true, true, 0, 0, 0, thistype.moveToTargetAction) // NOTE second true means loop that it returns to the position.
 			set thistype.m_trainAnimations = AStringVector.create()
 			call thistype.m_trainAnimations.pushBack("Attack 1")
 			call thistype.m_trainAnimations.pushBack("Attack 2")
 			call thistype.m_trainAnimations.pushBack("Attack 3")
-			set thistype.m_train = ARoutine.create(true, true, 0, thistype.trainEndAction, thistype.trainTargetAction)
-			set thistype.m_enterHouse = ARoutine.create(true, false, 0, 0, thistype.enterHouseTargetAction)
-			set thistype.m_leaveHouse = ARoutine.create(true, false, 0, 0, thistype.leaveHouseTargetAction)
-			set thistype.m_hammer = ARoutine.create(true, true, 0, thistype.hammerEndAction, thistype.hammerTargetAction)
-			set thistype.m_talk = ARoutine.create(true, true, 0, thistype.talkEndAction, thistype.talkTargetAction)
-			set thistype.m_drink = ARoutine.create(true, true, 0, thistype.drinkEndAction, thistype.drinkTargetAction)
-			set thistype.m_harvest = ARoutine.create(true, true, 0, thistype.harvestEndAction, thistype.harvestTargetAction)
+			set thistype.m_train = ARoutine.create(true, true, 0, 0, thistype.trainEndAction, thistype.trainTargetAction)
+			set thistype.m_enterHouse = ARoutine.create(true, false, 0, 0, 0, thistype.enterHouseTargetAction)
+			set thistype.m_leaveHouse = ARoutine.create(true, false, thistype.leaveHouseCondition, 0, 0, thistype.leaveHouseTargetAction)
+			set thistype.m_hammer = ARoutine.create(true, true, 0, 0, thistype.hammerEndAction, thistype.hammerTargetAction)
+			set thistype.m_talk = ARoutine.create(true, true, 0, 0, thistype.talkEndAction, thistype.talkTargetAction)
+			set thistype.m_drink = ARoutine.create(true, true, 0, 0, thistype.drinkEndAction, thistype.drinkTargetAction)
+			set thistype.m_harvest = ARoutine.create(true, true, 0, 0, thistype.harvestEndAction, thistype.harvestTargetAction)
 		endmethod
 
 		public static method moveTo takes nothing returns ARoutine
