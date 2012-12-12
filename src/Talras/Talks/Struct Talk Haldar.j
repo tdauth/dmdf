@@ -37,18 +37,15 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			else
 				call speech(info, false, tr("Bist du Baldars Bruder?"), null)
 				call speech(info, true, tr("Woher weißt du das?"), null)
-				call speech(info, false, tr("Hab mit ihm gesprochen."), null)
-				call speech(info, true, tr("Ich hoffe nur, er hat dir keinen Wurm ins Ohr gesetzt. Seine Wut und Dummheit kennen keine Grenzen!"), null)
-				call speech(info, false, tr("Ganz ruhig, Flügelmann."), null)
-				call speech(info, true, tr("Weißt du eigentlich wen du vor dir hast? Ich bin Haldar, der mächtige Erzengel aus …"), null)
-				call speech(info, false, tr("… einem Kartoffelsack."), null)
-				call speech(info, true, tr("Schweig, du Hund!"), null)
+				call speech(info, false, tr("Ich habe mit ihm gesprochen."), null)
+				call speech(info, true, tr("Ist das so? Ich hoffe nur, er hat dir keinen Wurm ins Ohr gesetzt. Seine Wut und Dummheit kennen keine Grenzen!"), null)
+
 				// (Auftrag „Tod der weißen Legion“ nicht aktiv)
 				if (QuestDeathToWhiteLegion.characterQuest(info.talk().character()).isNotUsed()) then
-					call speech(info, true, tr("Bevor mein dummer Bruder noch auf die Idee kommen sollte, dich anzuwerben, tue ich das lieber."), null)
-					call speech(info, true, tr("Also hast du nicht zufällig Lust, meinem Heer beizutreten, damit ich diesem Kampf hier ein schnelleres Ende bereiten kann?"), null)
-					call speech(info, false, tr("Ich überleg's mir."), null)
-					call speech(info, true, tr("Gut, lass dir ruhig Zeit. Er wird mich sowieso nicht besiegen können."), null)
+					call speech(info, true, tr("Aber bevor mein dummer Bruder noch auf die Idee kommen sollte, dich anzuwerben, tue ich das lieber."), null)
+					call speech(info, true, tr("Möchtest du nicht meinem glorreichen Heer beitreten, damit ich diesem Kampf hier ein schnelleres Ende bereiten kann?"), null)
+					call speech(info, false, tr("Mal sehen."), null)
+					call speech(info, true, tr("Gut, lasse dir ruhig Zeit. Er wird mich sowieso nicht besiegen können."), null)
 					call thistype(info.talk()).giveOffer() // (Charakter erhält somit das Angebot)
 				endif
 			endif
@@ -65,15 +62,17 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			local unit characterUnit = info.talk().character().unit()
 			local item whichItem
 			call speech(info, false, tr("Ich möchte der weißen Legion beitreten."), null)
-			call speech(info, true, tr("Du hast es dir also nochmal gründlich überlegt."), null)
-			call speech(info, true, tr("Gut, zunächst einmal bekommst du diese Standarte hier. Es ist mein weißes Wappen. Und damit du nicht das Gefühl hast, du müsstest hier umsonst kämpfen, hast du hier noch ein paar Goldmünzen und etwas Weihwasser, auch wenn ich Leute eher ungern für Bezahlung kämpfen lasse. Aber was tut man nicht alles im Krieg."), null)
-			call speech(info, true, tr("Gut, ich erkläre dir mal, wie das hier läuft, auf dem „Schlachtfeld“. Es gibt zwei Wege, die die beiden Lager miteinander verbinden. Auf jedem dieser Wege schicken mein Bruder und ich Truppen gegeneinander los. Du kannst dir aussuchen, auf welchem der Wege du kämpfen möchtest. Das ist mir eigentlich egal, solange du kämpfst."), null)
-			call speech(info, true, tr("Da gibt’s nur ein kleines Problem. Mein Bruder und ich haben damals, als wir mit dem Kampf begonnen haben, ausgemacht, dass keiner außer uns beiden sich in den Streit einmischen darf. Die Krieger, die ich schicke, habe ich alle selbst erschaffen, das zählt also nicht als Einmischung."), null)
-			call speech(info, true, tr("Du dagegen würdest gegen die Regeln verstoßen. Ich halte zwar viel von Regeln, aber hier mache selbst ich mal eine Ausnahme, um den Streit zu beenden."), null)
+			call speech(info, true, tr("Das freut mich zu hören! Auf jeden Fall war es eine weise Entscheidung."), null)
+			call speech(info, true, tr("Doch nun zu deiner neuen Aufgabe: zunächst einmal bekommst du diese Standarte hier. Es ist mein ruhmreiches weißes Wappen."), null)
+			call speech(info, true, tr("Damit du nicht das Gefühl hast, du müsstest hier umsonst kämpfen, hast du hier noch ein paar Goldmünzen und etwas Weihwasser, auch wenn ich eigentlich Leute nur sehr ungern gegen einen Sold für mich kämpfen lasse. Aber was tut man nicht alles im Krieg?."), null)
+			call speech(info, true, tr("Gut, nun lasse mich dir erklären, was du auf dem „Schlachtfeld“ zu tun hast. Es gibt zwei Wege, die die beiden Lager miteinander verbinden. Auf beiden Wegen schicken mein Bruder und ich Truppen gegeneinander los. Es steht dir also frei, auf welchem der Wege du für mich kämpfen möchtest."), null)
+			call speech(info, true, tr("Es gibt nur ein kleines Problem dabei. Mein Bruder und ich haben damals, als wir mit dem Kampf gegeneinander begannen, vereinbart, dass keiner außer uns beiden, das Recht besitzt, sich in den Streit einzumischen."), null)
+			call speech(info, true, tr("Die Krieger, die ich schicke, habe ich alle selbst erschaffen, das zählt also nicht als fremde Einmischung."), null)
+			call speech(info, true, tr("Du dagegen würdest gegen die Regeln verstoßen. Für gewöhnlich achte ich Regeln zwar ganz besonders, hierbei aber mache selbst ich einmal eine Ausnahme, um den Streit endlich siegreich zu beenden."), null)
 			call speech(info, false, tr("Also, was soll ich tun?"), null)
 			call speech(info, true, tr("Es gäbe da eine nette Lösung. Bevor du das Schlachtfeld betrittst, benutzt du einen Zauberring von mir, der dich in die Gestalt eines Engels verwandelt."), null)
-			call speech(info, false, tr("Aha."), null)
-			call speech(info, true, tr("Keine Angst, sobald du ihn erneut wirken lässt, wirst du dich natürlich zurückverwandeln."), null)
+			call speech(info, false, tr("Was?"), null)
+			call speech(info, true, tr("Keine Sorge, sobald du ihn erneut wirken lässt, wirst du dich natürlich zurückverwandeln."), null)
 			call speech(info, true, tr("Der Zauber wirkt allerdings nur innerhalb dieser Höhle. Außerhalb ist meine Aura nicht stark genug!"), null)
 			call speech(info, true, tr("Ach so und noch etwas: Hast du genügend Feinde getötet, bekommst du natürlich auch entsprechende Belohnungen, die du dir bei mir persönlich abholen kannst."), null)
 			/// TODO andere Standarte!
@@ -154,7 +153,7 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 		// Weiße Legion?
 		private static method infoActionWhiteLegion takes AInfo info returns nothing
 			call speech(info, false, tr("Weiße Legion?"), null)
-			call speech(info, true, tr("Ja. So nennen wir uns, also mein Gefolge und ich. Wir kämpfen hier schon seit vielen Jahren gegen die schwarze Legion. Sie wird von meinem etwas dümmlichen und aggressiven Bruder Baldar angeführt, einem Erzdämon."), null)
+			call speech(info, true, tr("Ganz genau, so nennen wir uns, mein Gefolge und ich. Wir kämpfen hier schon seit vielen Jahren gegen die schwarze Legion. Sie wird von meinem etwas dümmlichen und aggressiven Bruder Baldar angeführt, einem Erzdämon."), null)
 			call info.talk().showStartPage()
 		endmethod
 
@@ -166,16 +165,14 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 		// Wieso ist dein Bruder ein Erzdämon?
 		private static method infoActionWhyIsBrother takes AInfo info returns nothing
 			call speech(info, false, tr("Wieso ist dein Bruder ein Erzdämon?"), null)
-			call speech(info, true, tr("Wieso sollte er es nicht sein, dieser Idiot?"), null)
-			call speech(info, false, tr("Geburtsfehler und so ..."), null)
-			call speech(info, true, tr("Sehr lustig. Unsere Familiengeschichte geht dich nichts an, Sterblicher!"), null)
+			call speech(info, true, tr("Wieso sollte er es nicht sein, dieser Narr?"), null)
 			call info.talk().showStartPage()
 		endmethod
 
 		// Wieso kämpft ihr gegeneinander?
 		private static method infoActionWhyDoYouFight takes AInfo info returns nothing
 			call speech(info, false, tr("Wieso kämpft ihr gegeneinander?"), null)
-			call speech(info, true, tr("Was weiß ich? Frag doch meinen Bruder, der fängt immer mit den Streitereien an."), null)
+			call speech(info, true, tr("Was weiß ich? Frage doch meinen Bruder, warum er immer Streit anfängt."), null)
 			call info.talk().showStartPage()
 		endmethod
 
@@ -183,22 +180,25 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 		private static method infoActionWhoIsStronger takes AInfo info returns nothing
 			call speech(info, false, tr("Wer ist denn der Stärkere von euch beiden?"), null)
 			call speech(info, true, tr("(Lacht) Mein Bruder würde dir jetzt vermutlich antworten, dass er der Stärkere ist und das doch selbstverständlich wäre."), null)
-			call speech(info, true, tr("Er war schon immer schwächer, aber das Ganze zieht sich jetzt schon recht lange hin und ich möchte dem ein Ende bereiten. Also hättest du vielleicht Lust mir zu helfen?"), null)
-			call thistype(info.talk()).giveOffer() // (Charakter erhält somit das Angebot)
+			call speech(info, true, tr("Er war schon immer schwächer, aber das Ganze zieht sich jetzt schon recht lange hin und ich möchte dem ein Ende bereiten."), null)
+			if (not thistype(info.talk()).gotOffer(info.talk().character()) and QuestDeathToWhiteLegion.characterQuest(info.talk().character()).isNotUsed()) then // (Charakter hat kein Angebot bekommen und der Auftrag „Tod der weißen Legion“ ist nicht aktiv)
+				call speech(info, true, tr("Möchtest du mir dabei helfen?"), null)
+				call thistype(info.talk()).giveOffer() // (Charakter erhält somit das Angebot)
+			endif
 			call info.talk().showRange(9, 10)
 		endmethod
 
 		// Warum sollte ich?
 		private static method infoActionWhyShouldI takes AInfo info returns nothing
 			call speech(info, false, tr("Warum sollte ich?"), null)
-			call speech(info, true, tr("Weil du dann die Chance bekommst, die böse Brut, die er geschaffen hat ins Jenseits zu befördern. Überleg's dir einfach mal."), null)
+			call speech(info, true, tr("Ganz einfach, weil du damit einem ruhmreichen, gerechten Weg folgen würdest. Vielleicht aber auch nur für einen verächtlichen Sold."), null)
 			call info.talk().showStartPage()
 		endmethod
 
 		// Klar!
 		private static method infoActionOfCourse takes AInfo info returns nothing
 			call speech(info, false, tr("Klar!"), null)
-			call speech(info, true, tr("Ein kriegswilliger Mann also. Ich hoffe, dahinter steckt eine gute Absicht und gebe dir noch etwas Zeit. Wenn du's dir überlegt hast, dann melde dich einfach nochmal bei mir."), null)
+			call speech(info, true, tr("Du scheinst mir sehr mutig zu sein. Ich hoffe, dahinter steckt eine ehrenvolle Absicht. Das Beste ist vermutlich, wenn ich dir noch etwas Zeit zum Überlegen gebe."), null)
 			call info.talk().showStartPage()
 		endmethod
 

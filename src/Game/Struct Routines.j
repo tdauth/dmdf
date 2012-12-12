@@ -68,6 +68,8 @@ library StructGameRoutines requires Asl
 		private static ARoutine m_talk
 		private static ARoutine m_drink
 		private static ARoutine m_harvest
+		private static ARoutine m_splitWood
+		private static ARoutine m_sleep
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -161,7 +163,7 @@ library StructGameRoutines requires Asl
 			call AContinueRoutineLoop(period, thistype.drinkTargetAction)
 		endmethod
 
-		private static method harvestEndAction takes ARoutinePeriod period returns nothing
+		private static method harvestEndAction takes NpcRoutineWithFacing period returns nothing
 			call ResetUnitAnimation(period.unit())
 		endmethod
 
@@ -170,6 +172,28 @@ library StructGameRoutines requires Asl
 			call QueueUnitAnimation(period.unit(), "Stand Work")
 			call TriggerSleepAction(1.266)
 			call AContinueRoutineLoop(period, thistype.harvestTargetAction)
+		endmethod
+
+		private static method splitWoodEndAction takes NpcRoutineWithFacing period returns nothing
+			call ResetUnitAnimation(period.unit())
+		endmethod
+
+		private static method splitWoodTargetAction takes NpcRoutineWithFacing period returns nothing
+			call SetUnitFacing(period.unit(), period.facing())
+			call QueueUnitAnimation(period.unit(), "Stand Work")
+			call TriggerSleepAction(1.266)
+			call AContinueRoutineLoop(period, thistype.splitWoodTargetAction)
+		endmethod
+
+		private static method sleepEndAction takes NpcRoutineWithFacing period returns nothing
+			call ResetUnitAnimation(period.unit())
+		endmethod
+
+		private static method sleepTargetAction takes NpcRoutineWithFacing period returns nothing
+			call SetUnitFacing(period.unit(), period.facing())
+			call QueueUnitAnimation(period.unit(), "Death")
+			call TriggerSleepAction(1.266)
+			call AContinueRoutineLoop(period, thistype.sleepTargetAction)
 		endmethod
 
 		public static method init takes nothing returns nothing
@@ -185,6 +209,8 @@ library StructGameRoutines requires Asl
 			set thistype.m_talk = ARoutine.create(true, true, 0, 0, thistype.talkEndAction, thistype.talkTargetAction)
 			set thistype.m_drink = ARoutine.create(true, true, 0, 0, thistype.drinkEndAction, thistype.drinkTargetAction)
 			set thistype.m_harvest = ARoutine.create(true, true, 0, 0, thistype.harvestEndAction, thistype.harvestTargetAction)
+			set thistype.m_splitWood = ARoutine.create(true, true, 0, 0, thistype.splitWoodEndAction, thistype.splitWoodTargetAction)
+			set thistype.m_sleep = ARoutine.create(true, true, 0, 0, thistype.sleepEndAction, thistype.sleepTargetAction)
 		endmethod
 
 		public static method moveTo takes nothing returns ARoutine
@@ -217,6 +243,14 @@ library StructGameRoutines requires Asl
 
 		public static method harvest takes nothing returns ARoutine
 			return thistype.m_harvest
+		endmethod
+
+		public static method splitWood takes nothing returns ARoutine
+			return thistype.m_splitWood
+		endmethod
+
+		public static method sleep takes nothing returns ARoutine
+			return thistype.m_sleep
 		endmethod
 	endstruct
 

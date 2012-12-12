@@ -20,6 +20,7 @@ library MapSpells requires StructMapSpellsSpellAmuletOfForesight, StructMapSpell
 		call SpellAmuletOfForesight.create(character)
 		call SpellAmuletOfTerror.create(character)
 		/// \todo Filter class for Baldars ring
+		// Baldar's ring
 		call SpellAosRing.create(character, 'A04V', true) // Astral Modifier
 		call SpellAosRing.create(character, 'A0BL', true) // Dragon Slayer
 		call SpellAosRing.create(character, 'A0BJ', true) // Druid
@@ -30,7 +31,7 @@ library MapSpells requires StructMapSpellsSpellAmuletOfForesight, StructMapSpell
 		call SpellAosRing.create(character, 'A0BK', true) // Knight
 		call SpellAosRing.create(character, 'A0BM', true) // Ranger
 		call SpellAosRing.create(character, 'A0BP', true) // Wizard
-
+		// Haldar's ring
 		call SpellAosRing.create(character, 'A0BR', false) // Astral Modifier
 		call SpellAosRing.create(character, 'A0BW', false) // Dragon Slayer
 		call SpellAosRing.create(character, 'A0BU', false) // Druid

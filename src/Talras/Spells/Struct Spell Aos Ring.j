@@ -27,12 +27,12 @@ library StructMapSpellsSpellAosRing requires Asl, StructMapMapAos
 					return
 				endif
 				if (Aos.baldarContainsCharacter(this.character())) then
-					debug call Print("Leaves Baldar.")
+					debug call Print("Leaves Baldar with ability id: " + I2S(this.ability()))
 					call Aos.characterLeavesBaldar(this.character())
 					call TriggerSleepAction(0.0) // REQUIRED!!!
 					call Character(this.character()).restoreUnit()
 				else
-					debug call Print("Joins Baldar with character " + I2S(this.character()) + ".")
+					debug call Print("Joins Baldar with character " + I2S(this.character()) + " and ability id: " + I2S(this.ability()))
 					call Aos.characterJoinsBaldar(this.character())
 					call Character(this.character()).morph(this.ability())
 				endif

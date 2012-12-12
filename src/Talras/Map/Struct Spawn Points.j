@@ -2,10 +2,12 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 
 	struct SpawnPoints
 		private static ASpawnPoint m_wolves0
+		private static ASpawnPoint m_wolves1
 		private static ASpawnPoint m_boars0
 		private static ASpawnPoint m_boars1
 		private static ASpawnPoint m_bears0
 		private static ASpawnPoint m_boars2
+		private static ASpawnPoint m_boars3
 		private static ASpawnPoint m_highwaymen0
 		private static ASpawnPoint m_highwaymen1
 		private static ASpawnPoint m_highwaymen2
@@ -58,6 +60,14 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_wolves0.addUnitWithType(gg_unit_n02F_0123, 1.0)
 			call thistype.m_wolves0.addItemType(index, 'I01H', 1.0)
 
+			set thistype.m_wolves1 = ASpawnPoint.create()
+			set index = thistype.m_wolves1.addUnitWithType(gg_unit_n02F_0296, 1.0)
+			call thistype.m_wolves1.addItemType(index, 'I01I', 1.0)
+			set index = thistype.m_wolves1.addUnitWithType(gg_unit_n02F_0297, 1.0)
+			call thistype.m_wolves1.addItemType(index, 'I01H', 1.0)
+			set index = thistype.m_wolves1.addUnitWithType(gg_unit_n02F_0277, 1.0)
+			call thistype.m_wolves1.addItemType(index, 'I01H', 1.0)
+
 			set thistype.m_boars0 = ASpawnPoint.create()
 			set index = thistype.m_boars0.addUnitWithType(gg_unit_n002_0078, 1.0)
 			call thistype.m_boars0.addItemType(index, 'I007', 1.0)
@@ -81,6 +91,18 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			call thistype.m_boars2.addItemType(index, 'I007', 1.0)
 			set index = thistype.m_boars2.addUnitWithType(gg_unit_n002_0124, 1.0)
 			call thistype.m_boars2.addItemType(index, 'I007', 1.0)
+
+			set thistype.m_boars3 = ASpawnPoint.create()
+			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0276, 1.0)
+			call thistype.m_boars3.addItemType(index, 'I007', 1.0)
+			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0275, 1.0)
+			call thistype.m_boars3.addItemType(index, 'I007', 1.0)
+			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0273, 1.0)
+			call thistype.m_boars3.addItemType(index, 'I007', 1.0)
+			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0274, 1.0)
+			call thistype.m_boars3.addItemType(index, 'I007', 1.0)
+			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0272, 1.0)
+			call thistype.m_boars3.addItemType(index, 'I007', 1.0)
 
 			set thistype.m_highwaymen0 = ASpawnPoint.create()
 			set index = thistype.m_highwaymen0.addUnitWithType(gg_unit_n00T_0125, 1.0)

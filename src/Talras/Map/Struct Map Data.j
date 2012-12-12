@@ -44,6 +44,7 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 		public static constant integer ravenJuggler = 'n036'
 		public static constant integer degenerateSoul = 'n038'
 		public static constant integer medusa = 'n033'
+		public static constant integer thunderCreature = 'n034'
 
 		public static constant integer boneDragon = 'n024' /// \todo FIXME
 		public static constant integer osseousDragon = 'n024'
@@ -83,7 +84,7 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 		public static constant integer startSkillPoints = 3
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 25
-		public static constant integer difficultyStartAttributeBonus = 3 // start attribute bonus per missing player
+		public static constant integer difficultyStartAttributeBonus = 4 // start attribute bonus per missing player
 		public static constant integer difficultyLevelAttributeBonus = 2 // level up attribute bonus per missing player
 		public static constant integer workerUnitTypeId = 'h00E'
 
@@ -122,7 +123,7 @@ endif
 			// weather
 			call Game.weather().setMinimumChangeTime(20.0)
 			call Game.weather().setMaximumChangeTime(60.0)
-			call Game.weather().setChangeSky(true)
+			call Game.weather().setChangeSky(false) // TODO prevent lags?
 			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeLordaeronRainHeavy, true)
 			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeLordaeronRainLight, true)
 			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeNoWeather, true)

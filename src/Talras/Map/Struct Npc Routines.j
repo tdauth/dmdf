@@ -78,6 +78,22 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static NpcTalksRoutine m_lotharFlirtsWithMathilda
 		private static NpcRoutineWithFacing m_lotharSells1
 		private static AUnitRoutine m_lotharEntersHouse
+		// Manfred
+		private static NpcLeavesHouseRoutine m_manfredLeavesHouse
+		private static NpcRoutineWithFacing m_manfredCutsWood
+		private static NpcTalksRoutine m_manfredTalksToGuntrich
+		private static NpcTalksRoutine m_manfredTalksToBjoern
+		private static AUnitRoutine m_manfredEntersHouse
+		// Guntrich
+		private static NpcLeavesHouseRoutine m_guntrichLeavesHouse
+		private static NpcRoutineWithFacing m_guntrichStandsOnClimb0
+		private static NpcTalksRoutine m_guntrichTalksToManfred
+		private static NpcRoutineWithFacing m_guntrichStandsOnClimb1
+		private static AUnitRoutine m_guntrichEntersHouse
+		// Ursula
+		private static NpcLeavesHouseRoutine m_ursulaSleeps
+		private static NpcRoutineWithFacing m_ursulaReadsBook
+		private static NpcRoutineWithFacing m_ursulaStandsNearFire
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -217,6 +233,38 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_einarTalks.setPartner(Npcs.wieland())
 			set thistype.m_einarDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.einar(), 14.00, MapData.evening, gg_rct_waypoint_einar_2) // drinks with Wieland in tavern
 			set thistype.m_einarEntersHouse = AUnitRoutine.create(Routines.enterHouse(), Npcs.einar(), MapData.evening, MapData.morning, gg_rct_waypoint_einar_0) // sleep
+
+			// Manfred
+			set thistype.m_manfredLeavesHouse = NpcLeavesHouseRoutine.create(Routines.leaveHouse(), Npcs.manfred(), MapData.morning, MapData.morning, gg_rct_waypoint_manfred_0)
+			set thistype.m_manfredCutsWood = NpcRoutineWithFacing.create(Routines.splitWood(), Npcs.manfred(), MapData.morning, MapData.midday, gg_rct_waypoint_manfred_2)
+			call thistype.m_manfredCutsWood.setFacing(279.37)
+			set thistype.m_manfredTalksToGuntrich = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), MapData.midday, 16.00, gg_rct_waypoint_manfred_3)
+			call thistype.m_manfredTalksToGuntrich.setPartner(Npcs.guntrich())
+			set thistype.m_manfredTalksToBjoern = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), 16.00, MapData.evening, gg_rct_waypoint_manfred_1)
+			call thistype.m_manfredTalksToBjoern.setPartner(Npcs.bjoern())
+			call thistype.m_manfredTalksToBjoern.addSound(gg_snd_PeasantWhat1)
+			call thistype.m_manfredTalksToBjoern.addSound(gg_snd_PeasantWhat2)
+			call thistype.m_manfredTalksToBjoern.addSound(gg_snd_PeasantWhat3)
+			call thistype.m_manfredTalksToBjoern.addSound(gg_snd_PeasantWhat4)
+			set thistype.m_manfredEntersHouse = AUnitRoutine.create(Routines.enterHouse(), Npcs.manfred(), MapData.evening, MapData.morning, gg_rct_waypoint_manfred_0)
+
+			// Guntrich
+			set thistype.m_guntrichLeavesHouse = NpcLeavesHouseRoutine.create(Routines.leaveHouse(), Npcs.guntrich(), MapData.morning, MapData.morning, gg_rct_waypoint_guntrich_0)
+			set thistype.m_guntrichStandsOnClimb0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.guntrich(), MapData.morning, MapData.midday, gg_rct_waypoint_guntrich_1)
+			call thistype.m_guntrichStandsOnClimb0.setFacing(231.25)
+			set thistype.m_guntrichTalksToManfred = NpcTalksRoutine.create(Routines.talk(), Npcs.guntrich(), MapData.midday, 16.00, gg_rct_waypoint_guntrich_2)
+			call thistype.m_guntrichTalksToManfred.setPartner(Npcs.manfred())
+			set thistype.m_guntrichStandsOnClimb1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.guntrich(), 16.00, MapData.evening, gg_rct_waypoint_guntrich_1)
+			call thistype.m_guntrichStandsOnClimb1.setFacing(231.25)
+			set thistype.m_guntrichEntersHouse = AUnitRoutine.create(Routines.enterHouse(), Npcs.guntrich(), MapData.evening, MapData.morning, gg_rct_waypoint_guntrich_0)
+
+			// Ursula
+			set thistype.m_ursulaSleeps = NpcLeavesHouseRoutine.create(Routines.sleep(), Npcs.ursula(), MapData.evening, MapData.morning, gg_rct_waypoint_ursula_0)
+			call thistype.m_ursulaSleeps.setFacing(124.04)
+			set thistype.m_ursulaReadsBook = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.ursula(), MapData.morning, MapData.midday, gg_rct_waypoint_ursula_1)
+			call thistype.m_ursulaReadsBook.setFacing(73.58)
+			set thistype.m_ursulaStandsNearFire = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.ursula(), MapData.midday, MapData.evening, gg_rct_waypoint_ursula_2)
+			call thistype.m_ursulaStandsNearFire.setFacing(20.67)
 
 			// menials
 			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)

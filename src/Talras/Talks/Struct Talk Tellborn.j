@@ -112,7 +112,7 @@ library StructMapTalksTalkTellborn requires Asl
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(gg_unit_n011_0113, thistype.startPageAction)
+			local thistype this = thistype.allocate(Npcs.tellborn(), thistype.startPageAction)
 
 			// start page
 			call this.addInfo(false, false, 0, thistype.infoAction0, tr("Hallo.")) // 0

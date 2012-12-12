@@ -192,7 +192,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			call thistype.m_halberd.addAbility('A07Q', true)
 
 			set thistype.m_shortsword = ItemType.createSimple('I01Y', AItemType.equipmentTypePrimaryWeapon)
-			call thistype.m_shortsword.addAbility('A07H', true)
+			call thistype.m_shortsword.addAbility('A0B8', true) // old, not orb A07H
 
 			set thistype.m_longsword = ItemType.create('I012', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_longsword.addAbility('A04M', true)
@@ -202,8 +202,8 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			call thistype.m_magicAmulet.addAbility('ANss', true)
 
 			set thistype.m_magicCoat = ItemType.create('I01R', AItemType.equipmentTypeArmour, 0, 0, 0, 0, 0)
-			call thistype.m_magicAmulet.addAbility('AIrm', true)
-			call thistype.m_magicAmulet.addAbility('A06I', true)
+			call thistype.m_magicCoat.addAbility('AIrm', true)
+			call thistype.m_magicCoat.addAbility('A06I', true)
 
 			set thistype.m_magicHat = ItemType.create('I01S', AItemType.equipmentTypeHeaddress, 0, 0, 0, 0, 0)
 			call thistype.m_magicHat.addAbility('AImv', true)

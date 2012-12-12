@@ -51,7 +51,7 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower
 		// Erzähl mir mehr von Krepar.
 		private static method infoAction3 takes AInfo info returns nothing
 			call speech(info, false, tr("Erzähl mir mehr von Krepar."), null)
-			call speech(info, true, tr("Krepar ist eine der der vier Götter. Einst war ich eine Dienerin der Kleriker, welche den Gott Urang verehren. Bei diesen lernte ich durch meine Stellung als Bibliothekarin der großen Bibliothek des Ordens in Klerfurt  eine Menge über die alte Gesellschaft, die sich noch mehr zur Natur verbunden fühlte."), null)
+			call speech(info, true, tr("Krepar ist eine der der vier Götter. Einst war ich eine Dienerin der Kleriker, welche den Gott Urang verehren. Bei diesen lernte ich durch meine Stellung als Bibliothekarin der großen Bibliothek des Ordens in Klerfurt eine Menge über die alte Gesellschaft, die sich noch mehr zur Natur verbunden fühlte."), null)
 			call speech(info, true, tr("Damals lebten die Leute noch in einfachen Hütten in den Wäldern und waren eins mit der Natur."), null)
 			call speech(info, true, tr("Druiden, weise Persönlichkeiten, beteten Krepar, die Göttin der Natur und Symbiose an. Auf ihren Rat hörten die Bewohner der kleinen Siedlungen und suchten ihren Rat, wenn es etwas zu bewältigen gab."), null)
 			call speech(info, true, tr("Anders als die heutigen Orden, gab es weniger durch die Herkunft bedingte Herrschaftshierarchien. Man respektierte die Alten und Weisen, denn ihr Rat war meist der beste."), null)

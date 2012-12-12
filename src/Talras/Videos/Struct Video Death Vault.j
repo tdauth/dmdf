@@ -4,6 +4,7 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 		private unit m_actorDragonSlayer
 		private unit m_actorMedusa
 		private unit m_actorDeacon
+		private AGroup m_thunderCreatures
 		private AGroup m_actorsDegenerateSouls
 		private AGroup m_actorsRavenJugglers
 		private AGroup m_actorsDoomedMen
@@ -12,6 +13,8 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
+			call Game.hideSpawnPointUnits(SpawnPoints.medusa())
+			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
 			call SetTimeOfDay(0.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_0, true, 0.0)
@@ -25,10 +28,20 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 			call SetUnitFacing(thistype.actor(), 90.0)
 			call ShowUnit(thistype.actor(), false)
 
-			call Game.hideSpawnPointUnits(SpawnPoints.medusa())
-			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
+			set this.m_actorMedusa = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.medusa, gg_rct_video_death_vault_medusa, 245.38))
 
-			set this.m_actorMedusa = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_AGGRESSIVE), UnitTypes.medusa, gg_rct_video_death_vault_medusa, 0.0))
+			set this.m_thunderCreatures = AGroup.create()
+			call this.m_thunderCreatures.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.thunderCreature, gg_rct_video_death_vault_thunder_creature_0, 272.22)))
+			call this.m_thunderCreatures.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.thunderCreature, gg_rct_video_death_vault_thunder_creature_1, 249.86)))
+			call this.m_thunderCreatures.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.thunderCreature, gg_rct_video_death_vault_thunder_creature_2, 196.11)))
+			call this.m_thunderCreatures.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.thunderCreature, gg_rct_video_death_vault_thunder_creature_3, 131.72)))
+
+			set this.m_actorDeacon = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deacon, gg_rct_video_death_vault_deacon, 359.37))
+
+
+			set this.m_actorsDoomedMen = AGroup.create()
+			call this.m_actorsDoomedMen.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.doomedMan, gg_rct_video_death_vault_doomed_man_0, 11.59)))
+			call this.m_actorsDoomedMen.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.doomedMan, gg_rct_video_death_vault_doomed_man_1, 356.32)))
 
 			/// \todo Create groups
 			//private unit m_actorDeacon
@@ -67,33 +80,33 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 				return
 			endif
 
-			call CameraSetupApplyForceDuration(gg_cam_death_vault_5, true, 1.0)
+			call CameraSetupApplyForceDuration(gg_cam_death_vault_5, true, 2.0)
 
-			if (wait(0.50)) then
+			if (wait(1.50)) then
 				return
 			endif
 
-			call CameraSetupApplyForceDuration(gg_cam_death_vault_6, true, 1.0)
+			call CameraSetupApplyForceDuration(gg_cam_death_vault_6, true, 2.0)
 
-			if (wait(0.50)) then
+			if (wait(1.50)) then
 				return
 			endif
 
-			call CameraSetupApplyForceDuration(gg_cam_death_vault_7, true, 1.0)
+			call CameraSetupApplyForceDuration(gg_cam_death_vault_7, true, 2.0)
 
-			if (wait(0.50)) then
+			if (wait(1.50)) then
 				return
 			endif
 
-			call CameraSetupApplyForceDuration(gg_cam_death_vault_8, true, 1.0)
+			call CameraSetupApplyForceDuration(gg_cam_death_vault_8, true, 2.0)
 
-			if (wait(0.50)) then
+			if (wait(1.50)) then
 				return
 			endif
 
-			call CameraSetupApplyForceDuration(gg_cam_death_vault_9, true, 1.0)
+			call CameraSetupApplyForceDuration(gg_cam_death_vault_9, true, 3.0)
 
-			if (wait(0.50)) then
+			if (wait(6.50)) then // kurzes Standbild auf Medusa
 				return
 			endif
 
@@ -161,14 +174,16 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_19, true, 0.0) // front
-			call SetUnitAnimation(this.m_actorDeacon, "Spell")
+			call QueueUnitAnimation(this.m_actorDeacon, "Spell")
+			//call SetUnitAnimation(this.m_actorDeacon, "Spell")
 
 			if (wait(2.0)) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_19, true, 0.0) // start ritual
-			call SetUnitAnimation(this.m_actorDeacon, "Spell Slam")
+			call QueueUnitAnimation(this.m_actorDeacon, "Spell Slam")
+			//call SetUnitAnimation(this.m_actorDeacon, "Spell Slam")
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_ritual, true, 3.0)
 
 			if (wait(2.50)) then
@@ -200,10 +215,10 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 				return
 			endif
 
-			call AVideo.setActorsMoveSpeed(200.0) // gleich schnell für normale Bewegung
+			call thistype.setActorsMoveSpeed(200.0) // gleich schnell für normale Bewegung
 
+			call IssueTargetOrder(thistype.actor(), "move", this.m_actorDragonSlayer)
 			call IssueRectOrder(this.m_actorDragonSlayer, "move", gg_rct_video_death_vault_target)
-			call IssueRectOrder(thistype.actor(), "move", gg_rct_video_death_vault_target)
 
 			if (wait(4.0)) then
 				return
@@ -213,6 +228,9 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
+			call this.m_thunderCreatures.destroy()
+			call this.m_actorsDoomedMen.destroy()
+
 			call Game.showSpawnPointUnits(SpawnPoints.medusa())
 			call Game.showSpawnPointUnits(SpawnPoints.deathVault())
 			call Game.resetVideoSettings()
