@@ -363,7 +363,7 @@ endif
 			// interface systems
 			call AArrowKeys.init(true)
 			call AThirdPersonCamera.init(true)
-			// object systems
+			// bonus mod systems
 			call AInitBonusMod()
 			// gui systems
 			/// @todo Use localized shortcuts
@@ -494,7 +494,7 @@ endif
 		endmethod
 
 		private static method onCheatActionAddSpells takes ACheat cheat returns nothing
-			local string class = cheat.argument()
+			local string class = StringTrim(cheat.argument())
 			if (class == "all" or class == null) then
 				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAllOtherClassSpells.evaluate()
 				call Print(tr("Alle anderen Klassenzauber erhalten."))
@@ -542,7 +542,7 @@ endif
 		endmethod
 
 		private static method onCheatActionAddSkillPoints takes ACheat cheat returns nothing
-			local integer skillPoints = S2I(cheat.argument())
+			local integer skillPoints = S2I(StringTrim(cheat.argument()))
 			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addSkillPoints.evaluate(skillPoints)
 			call Print(Format(tr("%1% Zauberpunkt(e) erhalten.")).i(skillPoints).result())
 		endmethod
@@ -698,8 +698,8 @@ endif
 			// debug mode allows you to use various cheats
 static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
-			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"cheats\", um eine Liste sämtlicher Spiel-Cheats zu erhalten."))
-			call ACheat.create("cheats", true, thistype.onCheatActionCheats)
+			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"gamecheats\", um eine Liste sämtlicher Spiel-Cheats zu erhalten."))
+			call ACheat.create("gamecheats", true, thistype.onCheatActionCheats)
 			call ACheat.create("cleanup", true, thistype.onCheatActionCleanup)
 			call ACheat.create("classes", true, thistype.onCheatActionClasses)
 			call ACheat.create("addspells", false, thistype.onCheatActionAddSpells)

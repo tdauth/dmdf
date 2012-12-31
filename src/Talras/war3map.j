@@ -3183,10 +3183,8 @@ globals
     constant boolean A_RTC = false
     constant boolean A_JAPI = false
     constant boolean A_SYSTEMS = true
-    constant boolean A_OBJECTS = true
     constant boolean A_DEBUG_HANDLES = false
     constant boolean A_DEBUG_NATIVES = true
-    constant boolean A_NET = false
     constant boolean A_FPS_MOVEMENT = false
     constant real A_MAX_COLLISION_SIZE = 300
     constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10

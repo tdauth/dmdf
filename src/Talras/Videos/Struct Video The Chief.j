@@ -51,9 +51,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapQues
 		public stub method onPlayAction takes nothing returns nothing
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_1, true, 10.0)
 			call IssueRectOrder(thistype.actor(), "move", gg_rct_video_the_chief_actors_target)
-			debug if (IsUnitPaused(thistype.actor())) then
-				debug call Print("Actor is paused!")
-			debug endif
+
 			if (waitForCondition(1.0, thistype.conditionActorIsInTargetRect)) then
 				return
 			endif
