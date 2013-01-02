@@ -198,7 +198,10 @@ endif
 static if (DMDF_INFO_LOG) then
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Info-Log"), thistype.dialogButtonActionInfoLog)
 endif
+
+static if (DMDF_CREDITS) then
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Mitwirkende"), thistype.dialogButtonActionCredits)
+endif
 
 			call AGui.playerGui(this.m_character.player()).dialog().addSimpleDialogButtonIndex(tr("Zurück zum Spiel"))
 

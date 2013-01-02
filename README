@@ -3,7 +3,8 @@ It is the current version.
 
 Available boolean constants:
 DMDF_TRADE enables trade system via dialog
-DMDF_INVENTORY enables advanced graphical inventory system
+DMDF_CREDITS enables credits (GUI)
+DMDF_INVENTORY enables advanced graphical inventory system (GUI)
 DMDF_CHARACTER_MEMORY_ADMINISTRATION enables saving and loading characters from disk
 DMDF_INFO_LOG enables talk log system (GUI)
 DMDF_NPC_ROUTINES enables NPC routines

@@ -582,8 +582,8 @@ endif
 		 * \param musicList File paths should be separated by ; character.
 		 */
 		public static method setMapMusic takes string musicList returns nothing
-			call ClearMapMusic()
 			call StopMusic(false)
+			call ClearMapMusic()
 			call SetMapMusic(musicList, true, 0)
 			//call ResumeMusic()
 		endmethod
@@ -599,14 +599,14 @@ endif
 		endmethod
 
 		public static method setMapMusicForPlayer takes player whichPlayer, string musicList returns nothing
-			if (whichPlayer == GetLocalPlayer()) then
-				call thistype.setMapMusic(musicList)
-			endif
+			call StopMusicForPlayer(whichPlayer, false)
+			call ClearMapMusicForPlayer(whichPlayer)
+			call SetMapMusicForPlayer(whichPlayer, musicList, true, 0)
 		endmethod
 
 		public static method setDefaultMapMusicForPlayer takes player whichPlayer returns nothing
-			if (whichPlayer == GetLocalPlayer()) then
-				call thistype.setDefaultMapMusic()
+			if (MapData.mapMusic != null) then
+				call thistype.setMapMusicForPlayer(whichPlayer, MapData.mapMusic)
 			endif
 		endmethod
 

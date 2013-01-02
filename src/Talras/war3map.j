@@ -3189,6 +3189,7 @@ globals
     constant real A_MAX_COLLISION_SIZE = 300
     constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
     constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
+    constant boolean DMDF_CREDITS = true
     constant boolean DMDF_INVENTORY = false
     constant boolean DMDF_TRADE = false
     constant boolean DMDF_CHARACTER_STATS = false

@@ -10,7 +10,9 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 		private boolean m_showWorker
 		// members
 		private MainMenu m_mainMenu
+static if (DMDF_CREDITS) then
 		private Credits m_credits
+endif
 		private Grimoire m_grimoire
 		private Tutorial m_tutorial
 static if (DMDF_CHARACTER_STATS) then
@@ -93,7 +95,11 @@ endif
 		endmethod
 
 		public method credits takes nothing returns Credits
+static if (DMDF_CREDITS) then
 			return this.m_credits
+else
+			return 0
+endif
 		endmethod
 
 		public method grimoire takes nothing returns Grimoire
@@ -372,7 +378,9 @@ endif
 			set this.m_showWorker = true
 			// members
 			set this.m_mainMenu = MainMenu.create.evaluate(this)
+static if (DMDF_CREDITS) then
 			set this.m_credits = Credits.create.evaluate(this)
+endif
 			set this.m_grimoire = Grimoire.create.evaluate(this)
 			set this.m_tutorial = Tutorial.create.evaluate(this)
 static if (DMDF_CHARACTER_STATS) then
@@ -415,7 +423,9 @@ endif
 
 		public method onDestroy takes nothing returns nothing
 			call this.m_mainMenu.destroy.evaluate()
+static if (DMDF_CREDITS) then
 			call this.m_grimoire.destroy.evaluate()
+endif
 			call this.m_tutorial.destroy.evaluate()
 static if (DMDF_CHARACTER_STATS) then
 			call this.m_characterStats.destroy.evaluate()
