@@ -14,11 +14,11 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_0, true, 0.0)
 
 			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
-			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_bloodthirstiness_dragon_slayer)
+			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_bloodthirstiness_dragon_slayer)
 
-			set this.m_actorDeacon = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deacon, gg_rct_bloodthirstiness_deacon, 0.0))
+			set this.m_actorDeacon = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deacon, gg_rct_video_bloodthirstiness_deacon, 0.0))
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_bloodthirstiness_actor)
+			call SetUnitPositionRect(thistype.actor(), gg_rct_video_bloodthirstiness_actor)
 
 			call SetUnitFacingToFaceUnit(this.m_actorDragonSlayer, this.m_actorDeacon)
 			call SetUnitFacingToFaceUnit(this.m_actorDeacon, this.m_actorDragonSlayer)

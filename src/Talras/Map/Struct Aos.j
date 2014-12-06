@@ -489,6 +489,9 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 				set user = null
 				set i = i + 1
 			endloop
+			
+			call SetPlayerColor(thistype.m_haldarsUser, PLAYER_COLOR_LIGHT_GRAY)
+			call SetPlayerColor(thistype.m_baldarsUser, ConvertPlayerColor(12)) // black
 
 			call thistype.createLeaderboard()
 			call thistype.createEnterTrigger()

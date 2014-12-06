@@ -22,7 +22,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		private string m_description
 		private string m_revivalMessage
 		private sound m_revivalSound
-		private AVector3 m_revivalLocation
 		private real m_revivalTime
 		private boolean m_disableSellings
 		// construction members
@@ -90,14 +89,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 		public method revivalSound takes nothing returns sound
 			return this.m_revivalSound
-		endmethod
-
-		public method setRevivalLocation takes AVector3 revivalLocation returns nothing
-			set this.m_revivalLocation = revivalLocation
-		endmethod
-
-		public method revivalLocation takes nothing returns AVector3
-			return this.m_revivalLocation
 		endmethod
 
 		public method setRevivalTime takes real revivalTime returns nothing
@@ -228,7 +219,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (this.hasRevival()) then
 				call DisableTrigger(this.m_revivalTrigger)
 			endif
-			call SetUnitOwner(this.m_unit, Player(PLAYER_NEUTRAL_PASSIVE), true)
+			call SetUnitOwner(this.m_unit, MapData.neutralPassivePlayer, true)
 			call SetUnitInvulnerable(this.m_unit, true)
 			call AUnitRoutine.enableAll(this.m_unit)
 			if (this.m_talk != 0) then
@@ -260,6 +251,9 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call this.setShared(false)
 		endmethod
 
+		/**
+		 * Revives fellow at position of his death.
+		 */
 		public method revive takes nothing returns nothing
 			debug call Print("Revive")
 			debug call Print("NPC Revival: " + GetUnitName(this.m_unit))
@@ -267,8 +261,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (this.isActive()) then
 				call PauseUnit(this.m_unit, false)
 				call SetUnitInvulnerable(this.m_unit, false)
-				call SetUnitPosition(this.m_unit, this.m_revivalLocation.x(), this.m_revivalLocation.y())
-				call SetUnitFacing(this.m_unit, this.m_revivalLocation.z())
 				call SetUnitLifePercentBJ(this.m_unit, 100)
 				call SetUnitManaPercentBJ(this.m_unit, 30)
 				call ShowUnit(this.m_unit, true)
@@ -413,7 +405,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_description = null
 			set this.m_revivalMessage = null
 			set this.m_revivalSound = null
-			set this.m_revivalLocation = AVector3.create(0.0, 0.0, 0.0)
 			set this.m_revivalTime = MapData.revivalTime
 			set this.m_disableSellings = false
 			// construction members
@@ -448,7 +439,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 		public method onDestroy takes nothing returns nothing
 			local integer i
-			call this.m_revivalLocation.destroy()
 			if (this.m_sellingsAbilities != 0) then
 				call this.m_sellingsAbilities.destroy()
 			endif

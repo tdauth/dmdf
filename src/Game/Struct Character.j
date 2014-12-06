@@ -180,29 +180,32 @@ endif
 		public method morphAbilityId takes nothing returns integer
 			return this.m_morphAbilityId
 		endmethod
+		
+		/**
+		 * \return Returns the stored hash table with ability id - level pairs (parent key - 0, child key - ability id, value - level).
+		 * \sa Grimoire#spellLevels
+		 */
+		public method realSpellLevels takes nothing returns AHashTable
+			return AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels"))
+		endmethod
 
 		/**
-		* \note Has to be called just after the character's unit restores from morphing.
-		*/
+		 * Restores spells and inventory of the character after he has been morphed into another creature with other abilities and without inventory.
+		 * \note Has to be called just after the character's unit restores from morphing.
+		 */
 		public method restoreUnit takes nothing returns nothing
 			if (not DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
 				debug call Print("Has not been morphed before!")
 				return
 			endif
 			call DisableTrigger(this.m_revivalTrigger)
-			call this.grimoire().readd.evaluate(AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")))
-			call AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
+			debug call Print("Readding spell levels")
+			call this.grimoire().readd.evaluate(this.realSpellLevels())
+			call this.realSpellLevels().destroy()
 			call DmdfHashTable.global().removeHandleInteger(this.unit(), "SpellLevels")
+			debug call Print("Enabling inventory again")
 			call this.inventory().setEnableAgain(true)
 			call this.inventory().enable()
-		endmethod
-
-		/**
-		* \return Returns the stored hash table with ability id - level pairs (parent key - 0, child key - ability id, value - level).
-		* \sa Grimoire#spellLevels
-		*/
-		public method realSpellLevels takes nothing returns AHashTable
-			return AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels"))
 		endmethod
 
 		/**
@@ -215,10 +218,21 @@ endif
 			if (DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
 				call AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
 			endif
+			debug call Print("Morphing with ability: " + GetAbilityName(abilityId))
+			
+			debug if (GetUnitAbilityLevel(this.unit(), 'AInv') == 0) then
+			debug call Print("It is too late to store the items! Add a delay for the morphing ability!")
+			debug endif
+			
+			debug call Print("Storing spell levels")
 			call DmdfHashTable.global().setHandleInteger(this.unit(), "SpellLevels", this.grimoire().spellLevels.evaluate())
+			// Make sure it won't be enabled again when the character is set movable.
 			call this.inventory().setEnableAgain(false)
+			debug call Print("Disabling inventory")
+			// Should remove but store all items.
 			call this.inventory().disable()
 			set this.m_morphAbilityId = abilityId
+			// The revival trigger takes care of reviving the correct morphed unit.
 			call EnableTrigger(this.m_revivalTrigger)
 		endmethod
 

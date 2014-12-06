@@ -442,18 +442,31 @@ endif
 			call MapData.init.evaluate()
 			// tutorial GUI, after map data!
 			call Tutorial.init.evaluate()
-			// class selection
-			call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
-			call Classes.showClassSelection() // multiboard is created
-			debug call benchmark.stop()
+			
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (GetPlayerController(Player(i)) != MAP_CONTROL_NONE) then
 					set thistype.m_hiddenUnits[i] = AGroup.create()
 				endif
+				
+				// set allied player and neutral passive player alliance status
+				call SetPlayerAllianceStateBJ(Player(i), MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(MapData.alliedPlayer, Player(i), bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(Player(i), MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, Player(i), bj_ALLIANCE_NEUTRAL)
 				set i = i + 1
 			endloop
+			
+			call SetPlayerAllianceStateBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, Player(PLAYER_NEUTRAL_AGGRESSIVE), bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
+			
+			// class selection
+			call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
+			call Classes.showClassSelection() // multiboard is created
+			debug call benchmark.stop()
 		endmethod
 
 static if (DEBUG_MODE) then
@@ -714,12 +727,6 @@ endif
 endif
 
 			call thistype.setDefaultMapMusic()
-
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, IntegerArg(tr("Das Spiel beginnt in %i Sekunden."), R2I(MapData.startDelay)))
-			call BJDebugMsg("After game starts")
-
-			call TriggerSleepAction(MapData.startDelay)
-			call BJDebugMsg("After delay")
 			/// has to be called by struct \ref MapData.
 			//call ACharacter.setAllMovable(true)
 			call MapData.start.execute()

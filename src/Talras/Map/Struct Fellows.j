@@ -28,7 +28,6 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_sisgard.setDescription(tr("Sisgard ist eine erfahrene Zauberin. Sie kann die Zauber TODO wirken usw."))
 			call thistype.m_sisgard.setRevivalMessage(tr("Lasst uns ein paar Zauber wirken!"))
 			call thistype.m_sisgard.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_sisgard.setRevivalLocation(AVector3.create(GetRectCenterX(Shrines.talrasShrine().revivalRect()), GetRectCenterY(Shrines.talrasShrine().revivalRect()), Shrines.talrasShrine().facing()))
 			call thistype.m_sisgard.setRevivalTime(20.0)
 
 			set thistype.m_mathilda = Fellow.create(Npcs.mathilda(), TalkMathilda.talk.evaluate())
@@ -40,7 +39,6 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_wigberht.setDescription(tr("Wigberht ist bla"))
 			call thistype.m_wigberht.setRevivalMessage(tr("Vorwärts!"))
 			call thistype.m_wigberht.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_wigberht.setRevivalLocation(AVector3.create(GetRectCenterX(gg_rct_shrine_4_revival), GetRectCenterY(gg_rct_shrine_4_revival), Shrines.hillShrine().facing())) /// \todo Memory leak.
 			call thistype.m_wigberht.setRevivalTime(20.0)
 
 			set thistype.m_ricman = Fellow.create(Npcs.ricman(), TalkRicman.talk.evaluate())
@@ -49,14 +47,12 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_ricman.setDescription(tr("Ricman ist bla"))
 			call thistype.m_ricman.setRevivalMessage(tr("Ihr Hundesöhne, mich besiegt man nicht so leicht!"))
 			call thistype.m_ricman.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_ricman.setRevivalLocation(AVector3.create(GetRectCenterX(gg_rct_shrine_4_revival), GetRectCenterY(gg_rct_shrine_4_revival), Shrines.hillShrine().facing())) /// \todo Memory leak.
 			call thistype.m_ricman.setRevivalTime(20.0)
 
 			set thistype.m_dragonSlayer = Fellow.create(Npcs.dragonSlayer(), 0)
 			call thistype.m_dragonSlayer.setTalk(false)
 			call thistype.m_dragonSlayer.setRevival(true)
 			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_dragonSlayer.setRevivalLocation(AVector3.create(GetRectCenterX(gg_rct_shrine_4_revival), GetRectCenterY(gg_rct_shrine_4_revival), Shrines.hillShrine().facing())) /// \todo Memory leak. CHANGE LOCATION
 			call thistype.m_dragonSlayer.setRevivalTime(20.0)
 		endmethod
 

@@ -59,6 +59,11 @@ library MapTalks requires StructMapTalksTalkAgihard, StructMapTalksTalkBaldar, S
 		call TalkUrsula.initTalk()
 		call TalkWieland.initTalk()
 		call TalkWigberht.initTalk()
+		// guardians
+		call TalkTalrasGuardian.create(gg_unit_n015_0149)
+		call TalkTalrasGuardian.create(gg_unit_n005_0119)
+		call TalkTalrasGuardian.create(gg_unit_n015_0118)
+		call TalkTalrasGuardian.create(gg_unit_n015_0456)
 	endfunction
 
 endlibrary

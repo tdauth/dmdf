@@ -168,7 +168,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(0, tr("Metzelei"))
 			local AQuestItem questItem
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp")
 			call this.setDescription(tr("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, um anderen von ihren Heldentaten zu berichten."))
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
 			set this.m_newRegion = CreateRegion()

@@ -51,25 +51,56 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			return this
 		endmethod
 	endstruct
+	
+	struct RangeItemType extends ItemType
+	
+		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
+			debug call Print("Range item attach")
+			call AddUnitAnimationProperties(whichUnit, "Throw", true)
+		endmethod
+		
+		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
+			debug call Print("Range item drop")
+			call AddUnitAnimationProperties(whichUnit, "Throw", false)
+		endmethod
+
+	endstruct
+	
+	struct DefenceItemType extends ItemType
+	
+		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
+			debug call Print("Defend item attach")
+			call AddUnitAnimationProperties(whichUnit, "Defend", true)
+		endmethod
+		
+		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
+			debug call Print("Defend item drop")
+			call AddUnitAnimationProperties(whichUnit, "Defend", false)
+		endmethod
+
+	endstruct
+	
+	struct MeleeItemType extends ItemType
+	endstruct
 
 	/// Do not add usable abilities, only permanents!
 	struct ItemTypes
 		private static ItemType m_preciousClericHelmet
 		private static ItemType m_bigDoubleAxe
 		private static ItemType m_vassalLance
-		private static ItemType m_ricmansShield
+		private static DefenceItemType m_ricmansShield
 		private static ItemType m_ricmansSpear
 		private static ItemType m_ringOfLatency
 		private static ItemType m_staffOfNecromancer
 		private static ItemType m_staffOfWizard
-		private static ItemType m_expandedShield
+		private static DefenceItemType m_expandedShield
 		private static ItemType m_axe
-		private static ItemType m_woodenShield
-		private static ItemType m_lightWoodenShield
+		private static DefenceItemType m_woodenShield
+		private static DefenceItemType m_lightWoodenShield
 		private static ItemType m_protectionRing
-		private static ItemType m_heavyWoodenShield
+		private static DefenceItemType m_heavyWoodenShield
 		private static ItemType m_staff
-		private static ItemType m_vassalShield
+		private static DefenceItemType m_vassalShield
 		private static ItemType m_mace
 		private static ItemType m_morningStar
 		private static ItemType m_halberd
@@ -79,7 +110,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		private static ItemType m_magicCoat
 		private static ItemType m_magicHat
 		private static ItemType m_magicRing
-		private static ItemType m_bonesBow
+		private static RangeItemType m_bonesBow
 		private static ItemType m_torch
 		private static ItemType m_bannerOfTheBlackLegion
 		private static ItemType m_bannerOfTheWhiteLegion
@@ -90,7 +121,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		private static ItemType m_kettleHat
 		private static ItemType m_leatherArmourPlate
 		private static ItemType m_dragonArmourPlate
-		private static ItemType m_largeRoundedBuckler
+		private static DefenceItemType m_largeRoundedBuckler
 		private static ItemType m_dart
 		// Wieland's items
 		private static ItemType m_knightsArmour
@@ -99,8 +130,8 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		// Björn's items
 		private static ItemType m_cloak
 		private static ItemType m_hood
-		private static ItemType m_huntingBow
-		private static ItemType m_longBow
+		private static RangeItemType m_huntingBow
+		private static RangeItemType m_longBow
 		private static ItemType m_huntingKnife
 		// artefacts
 		private static ItemType m_amuletOfForesight

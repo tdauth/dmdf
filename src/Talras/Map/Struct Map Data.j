@@ -74,19 +74,22 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 		public static constant integer maxPlayers = 6
 		public static constant integer computerPlayers = 1 // one additional player for the arena and the last quest
 		public static constant player alliedPlayer = Player(6)
+		public static constant player neutralPassivePlayer = Player(7)
 		public static constant real morning = 6.0
 		public static constant real midday = 12.0
 		public static constant real afternoon = 16.0
 		public static constant real evening = 18.0
 		public static constant real videoWaitInterval = 1.0
 		public static constant real revivalTime = 20.0
-		public static constant real startDelay = 5.0
 		public static constant integer startSkillPoints = 3
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 25
 		public static constant integer difficultyStartAttributeBonus = 4 // start attribute bonus per missing player
 		public static constant integer difficultyLevelAttributeBonus = 2 // level up attribute bonus per missing player
 		public static constant integer workerUnitTypeId = 'h00E'
+		
+		private static region m_welcomeRegion
+		private static trigger m_welcomeTalrasTrigger
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -95,6 +98,21 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
+		endmethod
+		
+		private static method triggerConditionWelcomeTalras takes nothing returns boolean
+			return ACharacter.isUnitCharacter(GetTriggerUnit())
+		endmethod
+		
+		private static method triggerActionWelcomeTalras takes nothing returns nothing
+			local force humans = GetPlayersByMapControl(MAP_CONTROL_USER)
+			call TransmissionFromUnitWithNameBJ(humans, gg_unit_n015_0149, tr("Krieger"), null, tr("Willkommen in Talras!"), bj_TIMETYPE_ADD, 0.0, false)
+			call DisableTrigger(GetTriggeringTrigger())
+			call DestroyForce(humans)
+			set humans = null
+			call RemoveRegion(thistype.m_welcomeRegion)
+			set thistype.m_welcomeRegion = null
+			call DestroyTrigger(GetTriggeringTrigger())
 		endmethod
 
 		/// Required by \ref Game.
@@ -108,7 +126,6 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 			call Arena.addRect(gg_rct_arena_4)
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_0), GetRectCenterY(gg_rct_arena_enemy_0), 180.0)
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_1), GetRectCenterY(gg_rct_arena_enemy_1), 0.0)
-			call FerryBoat.init(gg_unit_n02H_0145, 800.0, 800.0, 0.01, 50.0, 12.0, gg_rct_ferry_boat_forward, gg_rct_ferry_boat_forward_terrain, 19.0, gg_rct_ferry_boat_backward, gg_rct_ferry_boat_backward_terrain)
 			call Layers.init()
 			call Markers.init()
 static if (DMDF_NPC_ROUTINES) then
@@ -128,11 +145,19 @@ endif
 			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeLordaeronRainLight, true)
 			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeNoWeather, true)
 			call Game.weather().addRect(gg_rct_area_playable)
+			
+			set thistype.m_welcomeTalrasTrigger = CreateTrigger()
+			set thistype.m_welcomeRegion = CreateRegion()
+			call RegionAddRect(thistype.m_welcomeRegion, gg_rct_quest_talras_quest_item_0)
+			call TriggerRegisterEnterRegion(thistype.m_welcomeTalrasTrigger, thistype.m_welcomeRegion, null)
+			call TriggerAddCondition(thistype.m_welcomeTalrasTrigger, Condition(function thistype.triggerConditionWelcomeTalras))
+			call TriggerAddAction(thistype.m_welcomeTalrasTrigger, function thistype.triggerActionWelcomeTalras)
 		endmethod
 
 static if (DEBUG_MODE) then
 		private static method onCheatActionMapCheats takes ACheat cheat returns nothing
 			call Print(tr("Örtlichkeiten-Cheats:"))
+			call Print("bonus")
 			call Print("start")
 			call Print("castle")
 			call Print("talras")
@@ -156,6 +181,14 @@ static if (DEBUG_MODE) then
 			call Print("bloodthirstiness")
 			call Print(tr("Erzeugungs-Cheats:"))
 			call Print("unitspawns")
+		endmethod
+		
+		private static method onCheatActionBonus takes ACheat cheat returns nothing
+			local player whichPlayer = GetTriggerPlayer()
+			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_cheat_bonus)
+			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
+			call SetCameraBoundsToRectForPlayerBJ(whichPlayer, gg_rct_bonus)
+			set whichPlayer = null
 		endmethod
 
 		private static method onCheatActionStart takes ACheat cheat returns nothing
@@ -291,6 +324,7 @@ static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
 			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"mapcheats\", um eine Liste sämtlicher Karten-Cheats zu erhalten."))
 			call ACheat.create("mapcheats", true, thistype.onCheatActionMapCheats)
+			call ACheat.create("bonus", true, thistype.onCheatActionBonus)
 			call ACheat.create("start", true, thistype.onCheatActionStart)
 			call ACheat.create("camp", true, thistype.onCheatActionCamp)
 			call ACheat.create("castle", true, thistype.onCheatActionCastle)

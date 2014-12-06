@@ -1,0 +1,1 @@
+To add range items like bows you have to create a custom item type.

@@ -23,7 +23,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructMapM
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			if (wait(2.0)) then
+			if (wait(1.0)) then
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_1, true, 0.0)

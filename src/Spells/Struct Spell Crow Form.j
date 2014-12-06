@@ -9,16 +9,17 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 		private static constant integer armorAbilityId = 'A094'
 
 		public stub method onMorph takes nothing returns nothing
+			local integer level
 			call super.onMorph()
-			debug call Print("Crow Form: Morph!")
-			call SetUnitAbilityLevel(this.character().unit(), thistype.manaAbilityId, Character(this.character()).realSpellLevels().integerByInteger(0, thistype.abilityId))
-			call SetUnitAbilityLevel(this.character().unit(), thistype.armorAbilityId, Character(this.character()).realSpellLevels().integerByInteger(0, thistype.abilityId))
+			set level = Character(this.character()).realSpellLevels().integerByInteger(0, thistype.abilityId)
+			debug call Print("Crow Form: Morph! Level: " + I2S(level))
+			call SetUnitAbilityLevel(this.character().unit(), thistype.manaAbilityId, level)
+			call SetUnitAbilityLevel(this.character().unit(), thistype.armorAbilityId, level)
 		endmethod
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			call this.setUnitTypeId('H00G')
-			call this.setCastTime(0.0)
 
 			return this
 		endmethod

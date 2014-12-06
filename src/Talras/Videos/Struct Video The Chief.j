@@ -24,11 +24,11 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapQues
 
 			set this.m_actorNorseman0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n01I_0150))
 			call SetUnitPositionRect(this.m_actorNorseman0, gg_rct_video_the_chief_norseman_0)
-			call SetUnitFacing(this.m_actorRicman, 303.74)
+			call SetUnitFacing(this.m_actorNorseman0, 303.74)
 
 			set this.m_actorNorseman1 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n01I_0151))
-			call SetUnitPositionRect(this.m_actorRicman, gg_rct_video_the_chief_norseman_1)
-			call SetUnitFacing(this.m_actorRicman, 168.10)
+			call SetUnitPositionRect(this.m_actorNorseman1, gg_rct_video_the_chief_norseman_1)
+			call SetUnitFacing(this.m_actorNorseman1, 168.10)
 
 
 			// hide other norsemen

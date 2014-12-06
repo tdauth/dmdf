@@ -31,7 +31,7 @@ library StructMapQuestsQuestTheBeast requires Asl
 		endmethod
 
 		public stub method enable takes nothing returns boolean
-			return super.enableUntil(0)
+			return super.enableUntil(1)
 		endmethod
 
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger whichTrigger returns nothing
@@ -52,7 +52,7 @@ library StructMapQuestsQuestTheBeast requires Asl
 			local AQuestItem questItem1
 			set this.m_foundTracks = false
 			set this.m_talkedToKuno = false
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("Icons\\Creatures\\Demons\\BTNBestienhaeuptling.blp")
 			call this.setDescription(tr("Die Schamanin Tanka und ihr Gefährte, der Bärenmensch Brogo, benötigen bei ihrer Suche nach einer Bestie Hilfe. Das Ungeheuer soll im Alleingang alle Bärenmenschen Brogos Stammes bis auf ihn selbst ausgerottet haben."))
 			call this.setReward(AAbstractQuest.rewardExperience, 300)
 			call this.setReward(AAbstractQuest.rewardGold, 30)

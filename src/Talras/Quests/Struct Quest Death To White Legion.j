@@ -16,7 +16,7 @@ library StructMapQuestsQuestDeathToWhiteLegion requires Asl
 			local thistype this = thistype.allocate(character, tr("Tod der weißen Legion"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("Icons\\Creatures\\Demons\\BTNBurningOne.blp")
 			call this.setDescription(tr("Baldar, der Erzdämon, möchte von dir, dass du die weiße Legion, deren Anführer der Erzengel Haldar, Baldars Bruder, ist, vernichtest."))
 			call this.setReward(AAbstractQuest.rewardExperience, 2000)
 			call this.setReward(AAbstractQuest.rewardSkillPoints, 1)

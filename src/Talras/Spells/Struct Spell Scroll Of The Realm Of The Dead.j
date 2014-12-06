@@ -2,7 +2,7 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 
 	struct SpellScrollOfTheRealmOfTheDead extends ASpell
 		public static constant integer abilityId = 'A066'
-		public static constant real distance = 200.0
+		public static constant real distance = 400.0
 
 		private method condition takes nothing returns boolean
 			local integer i
@@ -10,12 +10,14 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sichtbar sein."))
 				return false
 			endif
+			debug call Print("Shrines: " + I2S(Shrine.shrines().size()))
 			set i = 0
 			loop
 				exitwhen (i == Shrine.shrines().size())
 				if (GetDistanceBetweenPointsWithoutZ(GetDestructableX(Shrine(Shrine.shrines()[i]).destructable()), GetDestructableY(Shrine(Shrine.shrines()[i]).destructable()), GetSpellTargetX(), GetSpellTargetY()) <= thistype.distance) then
 					return true
 				endif
+				debug call Print("Checked shrine: " + I2S(Shrine(Shrine.shrines()[i])))
 				set i = i + 1
 			endloop
 			call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sich in der Nähe eines Wiederbelebungsschreins befinden."))

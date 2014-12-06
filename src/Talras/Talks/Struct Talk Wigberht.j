@@ -8,59 +8,59 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 
 		implement Talk
 
-		private method startPageAction takes nothing returns nothing
-			call this.showUntil(7)
+		private method startPageAction takes ACharacter character returns nothing
+			call this.showUntil(7, character)
 		endmethod
 
 		// (Falls der Auftrag “Die Nordmänner” noch nicht erhalten wurde)
-		private static method infoCondition0 takes AInfo info returns boolean
+		private static method infoCondition0 takes AInfo info, ACharacter character returns boolean
 			return QuestTheNorsemen.quest().isNotUsed()
 		endmethod
 
 		// Hallo.
-		private static method infoAction0 takes AInfo info returns nothing
-			call speech(info, false, tr("Hallo."), thistype.m_soundCHello)
-			call speech(info, true, tr("Hallo."), thistype.m_soundNHello)
-			call info.talk().showRange(8, 9)
+		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Hallo."), thistype.m_soundCHello)
+			call speech(info, character, true, tr("Hallo."), thistype.m_soundNHello)
+			call info.talk().showRange(8, 9, character)
 		endmethod
 
 		// (Wenn es gerade Nacht ist und Wigberht trainiert)
-		private static method infoCondition1 takes AInfo info returns boolean
+		private static method infoCondition1 takes AInfo info, ACharacter character returns boolean
 			return GetTimeOfDay() >= 18.00 or GetTimeOfDay() <= 5.00
 		endmethod
 
 		// Trainierst du nachts?
-		private static method infoAction1 takes AInfo info returns nothing
-			call speech(info, false, tr("Trainierst du nachts?"), null)
-			call speech(info, true, tr("Wie du siehst."), null)
-			call speech(info, false, tr("Und wann schläfst du mal?"), null)
-			call speech(info, true, tr("Nie."), null)
-			call speech(info, false, tr("Nie?"), null)
-			call speech(info, true, tr("(Belehrend) Der wahre Krieger ist immer bereit."), null)
-			call info.talk().showStartPage()
+		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Trainierst du nachts?"), null)
+			call speech(info, character, true, tr("Wie du siehst."), null)
+			call speech(info, character, false, tr("Und wann schläfst du mal?"), null)
+			call speech(info, character, true, tr("Nie."), null)
+			call speech(info, character, false, tr("Nie?"), null)
+			call speech(info, character, true, tr("(Belehrend) Der wahre Krieger ist immer bereit."), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// (Nach erfolgreichem Abschluss des zweiten Ziels des Auftrags “Die Nordmänner”)
-		private static method infoCondition2And3 takes AInfo info returns boolean
+		private static method infoCondition2And3 takes AInfo info, ACharacter character returns boolean
 			return QuestTheNorsemen.quest().questItem(1).isCompleted()
 		endmethod
 
 		// Wo hast du so zu kämpfen gelernt?
-		private static method infoAction2 takes AInfo info returns nothing
-			call speech(info, false, tr("Wo hast du so zu kämpfen gelernt?"), null)
-			call speech(info, true, tr("Erfahrung. Wenn du erst einmal so viele Gegner wie ich getötet hast, kommt das von ganz alleine. Wieso fragst du überhaupt. Hab ich dich etwa so beeindruckt (Lacht)?"), null)
-			call info.talk().showRange(10, 11)
+		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Wo hast du so zu kämpfen gelernt?"), null)
+			call speech(info, character, true, tr("Erfahrung. Wenn du erst einmal so viele Gegner wie ich getötet hast, kommt das von ganz alleine. Wieso fragst du überhaupt. Hab ich dich etwa so beeindruckt (Lacht)?"), null)
+			call info.talk().showRange(10, 11, character)
 		endmethod
 
 		// Was trägst du da für eine Rüstung?
-		private static method infoAction3 takes AInfo info returns nothing
-			call speech(info, false, tr("Was trägst du da für eine Rüstung?"), null)
-			call speech(info, true, tr("Diese Rüstung gehörte einst meinem Vater. Sie wird schon seit Jahrhunderten von Vater zu Sohn weitergegeben. Sie wurde vom Schmied Hrodo aus dem Erz meiner Heimat gefertigt. So eine Rüstung wirst du kein zweites Mal finden."), null)
-			call info.talk().showStartPage()
+		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Was trägst du da für eine Rüstung?"), null)
+			call speech(info, character, true, tr("Diese Rüstung gehörte einst meinem Vater. Sie wird schon seit Jahrhunderten von Vater zu Sohn weitergegeben. Sie wurde vom Schmied Hrodo aus dem Erz meiner Heimat gefertigt. So eine Rüstung wirst du kein zweites Mal finden."), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// (Nach Erhalt des zweiten Ziels des Auftrags “Die Nordmänner”, falls dieses noch nicht abgeschlossen ist)
-		private static method infoCondition4 takes AInfo info returns boolean
+		private static method infoCondition4 takes AInfo info, ACharacter character returns boolean
 			return QuestTheNorsemen.quest().questItem(1).isNew()
 		endmethod
 
@@ -70,10 +70,10 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		endmethod
 
 		// Lass uns in den Kampf ziehen!
-		private static method infoAction4 takes AInfo info returns nothing
-			call speech(info, false, tr("Lass uns in den Kampf ziehen!"), null)
-			call speech(info, true, tr("Gut. Wenn ihr alle bereit seid, kann's losgehen."), null)
-			call info.talk().close()
+		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Lass uns in den Kampf ziehen!"), null)
+			call speech(info, character, true, tr("Gut. Wenn ihr alle bereit seid, kann's losgehen."), null)
+			call info.talk().close(character)
 			// start vote
 			if (thistype.m_vote0 == 0) then
 				set thistype.m_vote0 = AVote.create(tr("Wann wollen Sie den Kampf gegen die Orks beginnen?"))
@@ -87,24 +87,24 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		endmethod
 
 		// (Auftrag “Der Weg nach Holzbruck” ist aktiv)
-		private static method infoCondition5 takes AInfo info returns boolean
+		private static method infoCondition5 takes AInfo info, ACharacter character returns boolean
 			return QuestTheWayToHolzbruck.quest().isNew()
 		endmethod
 
 		// Fahrt uns nach Holzbruck!
-		private static method infoAction5 takes AInfo info returns nothing
-			call speech(info, false, tr("Fahrt uns nach Holzbruck!"), null)
-			call speech(info, true, tr("Was?"), null)
-			call speech(info, false, tr("Der Herzog benötigt Verstärkung aus Holzbruck, einer nördlichen, am Fluss liegenden Stadt. Du wolltest in den Norden, nimm uns bis nach Holzbruck mit!"), null)
-			call speech(info, true, tr("Hm, dieser Herzog scheint ja wirklich sehr besorgt zu sein. Du hast Recht, wir wollten so bald wie möglich in den Norden aufbrechen und hatten eigentlich damit gerechnet, hier noch die versprochene Hilfe zu leisten."), null)
-			call speech(info, true, tr("Also gut. Wir nehmen euch in unserem Langboot mit, insofern ihr kräftig genug seid, es auch vorwärts zu bewegen, wenn wir keinen Fahrtwind haben."), null)
-			call speech(info, true, tr("Meldet euch bei mir, wenn ihr so weit seid."), null)
+		private static method infoAction5 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Fahrt uns nach Holzbruck!"), null)
+			call speech(info, character, true, tr("Was?"), null)
+			call speech(info, character, false, tr("Der Herzog benötigt Verstärkung aus Holzbruck, einer nördlichen, am Fluss liegenden Stadt. Du wolltest in den Norden, nimm uns bis nach Holzbruck mit!"), null)
+			call speech(info, character, true, tr("Hm, dieser Herzog scheint ja wirklich sehr besorgt zu sein. Du hast Recht, wir wollten so bald wie möglich in den Norden aufbrechen und hatten eigentlich damit gerechnet, hier noch die versprochene Hilfe zu leisten."), null)
+			call speech(info, character, true, tr("Also gut. Wir nehmen euch in unserem Langboot mit, insofern ihr kräftig genug seid, es auch vorwärts zu bewegen, wenn wir keinen Fahrtwind haben."), null)
+			call speech(info, character, true, tr("Meldet euch bei mir, wenn ihr so weit seid."), null)
 			call QuestTheWayToHolzbruck.quest().complete()
-			call info.talk().showStartPage()
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// (Auftrag “Der Weg nach Holzbruck” ist abgeschlossen)
-		private static method infoCondition6 takes AInfo info returns boolean
+		private static method infoCondition6 takes AInfo info, ACharacter character returns boolean
 			return QuestTheWayToHolzbruck.quest().isCompleted()
 		endmethod
 
@@ -114,10 +114,10 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		endmethod
 
 		// Wir sind so weit.
-		private static method infoAction6 takes AInfo info returns nothing
-			call speech(info, false, tr("Wir sind so weit."), null)
-			call speech(info, true, tr("Seid ihr auch sicher? Die Fahrt wird vermutlich sehr lange dauern."), null)
-			call info.talk().close()
+		private static method infoAction6 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Wir sind so weit."), null)
+			call speech(info, character, true, tr("Seid ihr auch sicher? Die Fahrt wird vermutlich sehr lange dauern."), null)
+			call info.talk().close(character)
 			// start vote
 			if (thistype.m_vote1 == 0) then
 				set thistype.m_vote1 = AVote.create(tr("Wann wollen Sie nach Holzbruck fahren (und das Spiel somit beenden)?"))
@@ -131,53 +131,53 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		endmethod
 
 		// Bist wohl nicht so gesprächig?
-		private static method infoAction0_0 takes AInfo info returns nothing
-			call speech(info, false, tr("Bist wohl nicht so gesprächig?"), null)
-			call speech(info, true, tr("Nein."), null)
-			call info.talk().showRange(12, 14)
+		private static method infoAction0_0 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Bist wohl nicht so gesprächig?"), null)
+			call speech(info, character, true, tr("Nein."), null)
+			call info.talk().showRange(12, 14, character)
 		endmethod
 
 		// Klar.
-		private static method infoAction2_0 takes AInfo info returns nothing
-			call speech(info, false, tr("Klar."), null)
-			call info.talk().showStartPage()
+		private static method infoAction2_0 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Klar."), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// Unsinn! Ich wollte nur mal wissen, wieso du kämpfst wie ein Schweinehirte aus der Gosse.
-		private static method infoAction2_1 takes AInfo info returns nothing
-			call speech(info, false, tr("Unsinn! Ich wollte nur mal wissen, wieso du kämpfst wie ein Schweinehirte aus der Gosse."), null)
-			call speech(info, true, tr("Na ja, ich musste ja lange genug auf euch aufpassen ..."), null)
-			call info.talk().showStartPage()
+		private static method infoAction2_1 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Unsinn! Ich wollte nur mal wissen, wieso du kämpfst wie ein Schweinehirte aus der Gosse."), null)
+			call speech(info, character, true, tr("Na ja, ich musste ja lange genug auf euch aufpassen ..."), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// Was machst du hier?
-		private static method infoAction0_0_0 takes AInfo info returns nothing
-			call speech(info, false, tr("Was machst du hier?"), null)
-			call speech(info, true, tr("Ich warte."), null)
+		private static method infoAction0_0_0 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Was machst du hier?"), null)
+			call speech(info, character, true, tr("Ich warte."), null)
 			// (Falls der Charakter Ricman das Gleiche gefragt hat)
-			if (TalkRicman.talk().infoHasBeenShownToCharacter(9, info.talk().character())) then
-				call speech(info, false, tr("Warten alle Nordmänner auf irgendetwas?"), null)
-				call speech(info, true, tr("Anscheinend."), null)
+			if (TalkRicman.talk().infoHasBeenShownToCharacter(9, character)) then
+				call speech(info, character, false, tr("Warten alle Nordmänner auf irgendetwas?"), null)
+				call speech(info, character, true, tr("Anscheinend."), null)
 			else
-				call speech(info, false, tr("Und worauf?"), null)
-				call speech(info, true, tr("Auf den Feind."), null)
-				call speech(info, false, tr("Du meinst die Orks?"), null)
-				call speech(info, true, tr("Exakt."), null)
+				call speech(info, character, false, tr("Und worauf?"), null)
+				call speech(info, character, true, tr("Auf den Feind."), null)
+				call speech(info, character, false, tr("Du meinst die Orks?"), null)
+				call speech(info, character, true, tr("Exakt."), null)
 			endif
 
-			call info.talk().showRange(12, 14)
+			call info.talk().showRange(12, 14, character)
 		endmethod
 
 		// Wer bist du?
-		private static method infoAction0_0_1 takes AInfo info returns nothing
-			call speech(info, false, tr("Wer bist du?"), null)
-			call speech(info, true, tr("Mein Name ist Wigberht."), null)
-			call speech(info, false, tr("Und was machst du hier?"), null)
-			call speech(info, true, tr("Ich kam mit meinen Männern aus dem Norden."), null)
-			call speech(info, false, tr("Aus dem Norden?"), null)
-			call speech(info, true, tr("Ja, vom nordwestlichen Gebirge."), null)
+		private static method infoAction0_0_1 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Wer bist du?"), null)
+			call speech(info, character, true, tr("Mein Name ist Wigberht."), null)
+			call speech(info, character, false, tr("Und was machst du hier?"), null)
+			call speech(info, character, true, tr("Ich kam mit meinen Männern aus dem Norden."), null)
+			call speech(info, character, false, tr("Aus dem Norden?"), null)
+			call speech(info, character, true, tr("Ja, vom nordwestlichen Gebirge."), null)
 
-			call info.talk().showRange(12, 14)
+			call info.talk().showRange(12, 14, character)
 		endmethod
 
 		private static method create takes nothing returns thistype

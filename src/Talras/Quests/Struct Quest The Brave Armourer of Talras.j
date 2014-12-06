@@ -12,7 +12,7 @@ library StructMapQuestsQuestTheBraveArmourerOfTalras requires Asl
 			local thistype this = thistype.allocate(character, tr("Talras' mutiger Waffenmeister"))
 			local AQuestItem questItem0
 
-			call this.setIconPath("") /// @todo FIXME
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNFootman.blp") // Icon of Agihard
 			call this.setDescription(tr("Die Händlerin Irmina hat viel für den Waffenmeister Agihard übrig. Daraus könnte vielleicht mal mehr werden, vielleicht ist es auch schon mehr. Man weiß es nicht ..."))
 			call this.setReward(AAbstractQuest.rewardExperience, 100)
 			// item 0

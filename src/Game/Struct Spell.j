@@ -247,14 +247,15 @@ library StructGameSpell requires Asl, StructGameCharacter
 		endmethod
 
 		/**
-		* @return Returns an integer vector filled with all global existing spells of character @param character with class @param class.
-		*/
+		 * @return Returns an integer vector filled with all global existing spells of character @param character with class @param class.
+		 */
 		public static method classSpells takes Character character, AClass class returns AIntegerVector
 			local AIntegerVector result = AIntegerVector.create()
 			local integer i = 0
 			loop
 				exitwhen (i == thistype.m_spells.size())
 				if (thistype(thistype.m_spells[i]).character() == character and thistype(thistype.m_spells[i]).class() == class) then
+					debug call Print("Class spell: " + GetAbilityName(thistype(thistype.m_spells[i]).ability()))
 					call result.pushBack(thistype.m_spells[i])
 				endif
 				set i = i + 1

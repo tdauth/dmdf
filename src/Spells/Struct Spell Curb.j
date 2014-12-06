@@ -132,6 +132,8 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			local real j
 			local integer k
 			local AGroup unitGroup
+			local location center
+			local rect whichRect
 			debug call Print("Casting spell Curb.")
 			if (this.m_units == 0) then
 				debug call Print("Creating unit and damage recorder vector.")
@@ -140,22 +142,16 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			endif
 			debug call Print("Creating region and adding cells.")
 			set this.m_region = CreateRegion()
-			/// @todo Set curb cycle.
-			set i = 0.0
-			loop
-				exitwhen (i >= 360.0)
-				set j = 0.0
-				loop
-					exitwhen (j >= thistype.range)
-					call RegionAddCell(this.m_region, GetPolarProjectionX(GetUnitX(caster), i, j), GetPolarProjectionY(GetUnitY(caster), i, j))
-					set j = j + 1.0
-				endloop
-				set i = i + 1.0
-			endloop
+			set center = Location(GetUnitX(caster), GetUnitY(caster))
+			// rect is still a square!
+			set whichRect = GetRectFromCircleBJ(center, thistype.range)
+			call RegionAddRect(this.m_region, whichRect)
+			debug call Print("After creating region")
 			// add units in rect
 			set unitGroup = AGroup.create()
 			call unitGroup.addUnitsInRange(GetUnitX(caster), GetUnitY(caster), thistype.range, null)
 			call unitGroup.removeEnemiesOfUnit(caster)
+			debug call Print("After removing enemies of unit.")
 			set k = 0
 			loop
 				exitwhen (k == unitGroup.units().size())

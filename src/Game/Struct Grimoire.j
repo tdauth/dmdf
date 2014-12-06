@@ -90,18 +90,32 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			local Spell spell
 			local integer level
 			local integer i = 0
+			debug call Print("Readding spells with count: " + I2S(this.m_spells.size()))
 			loop
 				exitwhen (i == this.m_spells.size())
 				set spell = Spell(this.m_spells[i])
+				
+				debug call Print("Spell id: " + I2S(integer(spell)))
+				
+				debug if (not table.hasIntegerByInteger(0, spell.ability())) then
+				debug call Print("Missing ability: " + GetAbilityName(spell.ability()) + " when readding spells")
+				debug endif
+				
 				set level = table.integerByInteger(0, spell.ability())
-				if (this.m_favourites.contains(spell)) then
-					call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
-					call spell.add()
-					call spell.setLevel(level)
-				else
-					call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
-					call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
-					call spell.setLevel(level)
+				
+				debug call Print("Ability: " + GetAbilityName(spell.ability()) + " with restored level " + I2S(level))
+				
+				// only add if it has been there before!
+				if (level > 0) then
+					if (this.m_favourites.contains(spell)) then
+						call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
+						call spell.add()
+						call spell.setLevel(level)
+					else
+						call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
+						call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
+						call spell.setLevel(level)
+					endif
 				endif
 				set i = i + 1
 			endloop

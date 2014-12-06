@@ -4,47 +4,47 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 
 		implement Talk
 
-		private method startPageAction takes nothing returns nothing
-			if (not this.showInfo(0)) then
-				call this.showRange(1, 4)
+		private method startPageAction takes ACharacter character returns nothing
+			if (not this.showInfo(0, character)) then
+				call this.showRange(1, 4, character)
 			endif
 		endmethod
 
 		// (Automatisch)
-		private static method infoAction0 takes AInfo info returns nothing
-			call speech(info, true, tr("Gegrüßt seist du! Ich hoffe du und deine Leute, ihr benehmt euch anständig in der Burg und gegenüber dem Herzog, nun, da ihr ihm immerhin eure Treue geschworen habt."), null)
-			call speech(info, false, tr("Sicher."), null)
-			call info.talk().showStartPage()
+		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, true, tr("Gegrüßt seist du! Ich hoffe du und deine Leute, ihr benehmt euch anständig in der Burg und gegenüber dem Herzog, nun, da ihr ihm immerhin eure Treue geschworen habt."), null)
+			call speech(info, character, false, tr("Sicher."), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// Wie ist die Lage?
-		private static method infoAction1 takes AInfo info returns nothing
-			call speech(info, false, tr("Wie ist die Lage?"), null)
+		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Wie ist die Lage?"), null)
 			// (Auftrag „Die Nordmänner“ ist aktiv)
 			if (QuestTheNorsemen.quest().isNew()) then
-				call speech(info, true, tr("Heikel. Ihr solltet die Nordmänner um Unterstützung bitten, damit wir alle wieder ruhiger schlafen können."), null)
+				call speech(info, character, true, tr("Heikel. Ihr solltet die Nordmänner um Unterstützung bitten, damit wir alle wieder ruhiger schlafen können."), null)
 			// (Auftrag „Die Nordmänner“ ist abgeschlossen)
 			else
-				call speech(info, true, tr("Besser. Wenn ihr Verstärkung aus Holzbruck herbeischaffen könnt, haben wir eine echte Chance und durch den Sieg der Nordmänner über die Dunkelefen und Orks, haben wir zunächst etwas Ruhe und Zeit, um uns auf weitere Gefechte vorzubereiten."), null)
+				call speech(info, character, true, tr("Besser. Wenn ihr Verstärkung aus Holzbruck herbeischaffen könnt, haben wir eine echte Chance und durch den Sieg der Nordmänner über die Dunkelefen und Orks, haben wir zunächst etwas Ruhe und Zeit, um uns auf weitere Gefechte vorzubereiten."), null)
 			endif
-			call info.talk().showStartPage()
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// Woher kommst du?
-		private static method infoAction2 takes AInfo info returns nothing
-			call speech(info, false, tr("Woher kommst du?"), null)
-			call speech(info, true, tr("Meine Burg befindet sich südwestlich von hier. Sie ist selbstverständlich kleiner als diese, aber macht auch Einiges her."), null)
-			call speech(info, true, tr("Wie auch der Herzog, habe ich mein Lehen von meinem Vater geerbt. Mir unterstehen einige Knechte, Bauern und Leibeigene. Meine Besitztümer …"), null)
-			call speech(info, false, tr("Schon gut."), null)
-			call info.talk().showStartPage()
+		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Woher kommst du?"), null)
+			call speech(info, character, true, tr("Meine Burg befindet sich südwestlich von hier. Sie ist selbstverständlich kleiner als diese, aber macht auch Einiges her."), null)
+			call speech(info, character, true, tr("Wie auch der Herzog, habe ich mein Lehen von meinem Vater geerbt. Mir unterstehen einige Knechte, Bauern und Leibeigene. Meine Besitztümer …"), null)
+			call speech(info, character, false, tr("Schon gut."), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// Was genau machst du hier?
-		private static method infoAction3 takes AInfo info returns nothing
-			call speech(info, false, tr("Was genau machst du hier?"), null)
-			call speech(info, true, tr("Ich unterstütze den Herzog so gut ich kann bei seinem Kampf gegen den Feind. Wenn es nach mir ginge, müsste hier eine ganze Schar von Rittern stehen, aber die scheinen dieser Tage wohl etwas Besseres mit ihrer Zeit anfangen zu wissen."), null)
-			call speech(info, true, tr("Vermutlich kümmern sie sich um ihre eigenen Ländereien und sind viel zu feige, dem Feind an der Front ins Auge zu blicken."), null)
-			call info.talk().showStartPage()
+		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Was genau machst du hier?"), null)
+			call speech(info, character, true, tr("Ich unterstütze den Herzog so gut ich kann bei seinem Kampf gegen den Feind. Wenn es nach mir ginge, müsste hier eine ganze Schar von Rittern stehen, aber die scheinen dieser Tage wohl etwas Besseres mit ihrer Zeit anfangen zu wissen."), null)
+			call speech(info, character, true, tr("Vermutlich kümmern sie sich um ihre eigenen Ländereien und sind viel zu feige, dem Feind an der Front ins Auge zu blicken."), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		private static method create takes nothing returns thistype

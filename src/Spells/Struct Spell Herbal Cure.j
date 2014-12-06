@@ -3,7 +3,7 @@ library StructSpellsHerbalCure requires Asl, StructGameClasses, StructGameSpell
 
 	/// Heilt X Leben eines nicht-mechanischen Verbündeten während Y Sekunden. Hat eine Reichweite von Z.
 	struct SpellHerbalCure extends Spell
-		public static constant integer abilityId = 'A0JA'
+		public static constant integer abilityId = 'A0AJ'
 		public static constant integer favouriteAbilityId = 'A0AK'
 		public static constant integer maxLevel = 1
 		

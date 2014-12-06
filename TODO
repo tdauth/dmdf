@@ -1,5 +1,65 @@
+2014-11-22 Tamino Dauth <tamino@cdauth.eu>
+* Models\Creatures\Humans\HumanMaleFarmer.mdl für Knechte auf dem Bauernhof funktioniert nicht. Wurde vorerst zurückgesetzt.
+* Quest Blood Thristiness überarbeitet. Logischere Dialoge mit der Elfin, warum jagt sie die Kreaturen? - ist gar nicht soo schlecht
+* DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
+* Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
+* Burgvideo deutlich kürzer und sinnvoller machen (Charaktere zeigen?)
+* FIXED: Knechte arbeiten auch noch um 2 Uhr morgens.
+* Verschwinden in Häusern funktioniert nicht.
+* DONE: Gefährten nicht an Schreinen wiederbeleben, sondern an ihrem Todespunkt (einfacher zu finden!)
+* Drachentöterin ist zu schwach!
+* "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein.
+* Druide:
+	* Erwachen des Waldes hat kein Icon
+	* Erwachen des Waldes hat falsche Position
+	* 2 Fähigkeiten werden in den Favoriten nicht angezeigt (Bärengestalt?, Kräuterheilung?): Bärengestalt gefixt.
+	* Verwandlung zur Krähe funktioniert, jedoch liegen die Items am Boden!
+	* Außerdem sind die Zauber nach der Rückverwandlung zum Charakter alle Stufe 1!!!
+	* Verwandlung mit Baldars Ring macht nichts, Rückverwandlung fehlt. Nach Wiederbelebung ist Rückverwandlung da und bewirkt Verwandlung in Dämon. Rückverwandlung bewirkt dann Verwandlung in Krähe vermutlich wegen selber ID.
+* Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
+* Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
+* Trommon Dialoge mit Überfahrt entfernen (Bezahlung usw.)
+* Trommon Tagesablauf auf Fähre ändern, auch bei Kuno
+* FIXED: Der Jäger Björn wird deiner Tochter etwas beibringen ist sofort aktiv.
+* Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird.
+* Fernkampf : UNIT_TYPE_RANGED_ATTACKER native UnitAddType                  takes unit whichUnit, unittype whichUnitType returns boolean
+* Fernkampf: Animationstag hinzufügen beim Anlegen: AddUnitAnimationProperties(whichUnit, "", add)
+* Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle? Fulco will die Zauberkraft der Hexen im Norden.
+* Tanka von Tellborn erzählen und umgekehrt, Quest "Schamanen", Informationsaustausch! "Sie hat führt auch eine haarige Kreatur mit sich!" Zusammenarbeit bei der Suche nach der Bestie?
+* Kuno: Einbauen "Diese Wälder sind gefährlich! Hier hausen starke Kreaturen, nehmt euch in Acht!"
+* FIXED: Tankas Handelsfähigkeit fehlt, kann sie handeln?
+* FIXED: "Die Bestie" braucht Icon - Kreatur
+* "Katzen für Brogo" braucht Icon - Katze
+* FIXED: Waldfurien droppen nichts.
+* DONE: Osmans neuen Auftrag "Der dunkle Kult" einbauen.
+* FIXED: Osman verkauft nichts.
+* FIXED: "The Chief" Ricmans Position.
+* Medusa und Helfer respawnen nicht.
+* "Der dunkle Kult": Egal wann der Diakon getötet wird bzw. alle, muss es bereits abgeschlossen sein, solange der Charakter in der Nähe war.
+* In Videos alle Handelsfähigkeiten deaktivieren (Schlachtvideo am Ende)
+* Weniger Wellen im letzten Auftrag?
+* Leaderboard im letzten Auftrag: dunkle Schrift heller machen
+* Einheiten von neutral passiv laufen in Video zurück! Anderen Spieler für Videocharaktere!!!
+* Letzter Auftrag, statt pan eventuell Videosequenz, die das Spiel unterbricht und die Ansicht danach wiederherstellt.
+* Schlachten im letzten Auftrag in Videos fixen. Einheiten müssen gegeneinander kämpfen.
+* Nach letzter Schlacht Wigberht und Ricman vollständig heilen, Nordmanner wieder im Lager platzieren!
+* Video Wigberht fixen, wie er gegen die Orks kämpft.
+* Wenn ein Gefolgsmann entlassen wird und sein Tagesablauf wieder aktiviert wird, sofort einreihen und richtiger Tätigkeit nachgehen.
+* Abschlussfahrt funktioniert nicht.
+
+2014-10-05 Tamino Dauth <tamino@cdauth.eu>
+* Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.
+* Die Animationsmodi für das neue Charaktermodell festlegen.
+* Das Modell für Dämpfung ins Archiv aufnehmen.
+* Alle Icons nach ReplaceableTextures verschieben und alle Pfade im Objekteditor anpassen.
+* Kameragranzen ausdehnen.
+* Große Felsen verkleinern: Lieber Plateaus mit Bäumen, welche die Sicht nicht so sehr einschränken.
+* Terrain sichtbarer machen.
+* Blocker platzieren.
+* Gespräche gleichzeitig mit mehreren Spielern erlauben!!!!
+
 2012-12-12 Tamino Dauth <tamino@cdauth.eu>
-* rename blood thirstiness rects with video prefix.
+* DONE: rename blood thirstiness rects with video prefix.
 * Haldars und Baldars Dialoge überarbeiten: Weißen Legion, Welches Heer? eventuell ganz umstrukturieren, Baldar noch dunkler und erhabener erscheinen lassen. Umgangssprache entfernen.
 
 2012-12-03 Tamino Dauth <tamino@cdauth.eu>
@@ -11,7 +71,7 @@
 * Abschlussvideo gibt es nicht.
 * Quest-Belohnung/Aktualisierung erst nach Abschlussvideo!
 * Wieland und Einar sollen länger miteinander reden, nicht in die Kneipe gehen?
-* Farben der weißen und schwarzen Legion setzen.
+* DONE: Farben der weißen und schwarzen Legion setzen.
 * Nach Klassenwahl sollte Kamera fixiert bleiben!
 * Donnerwesen oder anderes Viech im Norden gehört Spieler 1.
 * Baldars Ring Id für Zauberer müsste stimmen, dennoch klappt Verwandlung in Dämon nicht (alles überprüfen).
@@ -32,18 +92,18 @@
 * Verkommene Seelen angreifen, auf Explosionen testen.
 * DONE: Kurzschwertfähigkeit ersetzen.
 * Modell vom Stab des Zauberers testen/Attachment testen/Absturz?
-* Statt Neutral Passiv muss ein weiterer Weltenspieler her (sonst laufen auch NPCs in Tagesabläufen zurück, nicht nur Dago).
+* DONE: Statt Neutral Passiv muss ein weiterer Weltenspieler her (sonst laufen auch NPCs in Tagesabläufen zurück, nicht nur Dago).
 * DONE: Neue Spawn Points mit Einheiten hinzufügen.
 
 2012-12-01 Tamino Dauth <tamino@cdauth.eu>
 * endTrain action muss nicht aufgerufen werden, daher kann Wieland seine Animation behalten (falls Tageszeit manuell verschoben wird, durch trigger)
 * facings, partners und sounds für Routinen festlegen!
-* Kurzschwert, attachment-Fähigkeit mit Schaden wird im Rucksack nicht entfernt.
+* FIXED: Kurzschwert, attachment-Fähigkeit mit Schaden wird im Rucksack nicht entfernt.
 * möglichst erreichen, dass Bewegung des Charakters beim Skillen und Aktionen im Rucksack nicht unterbrochen werden.
-* "Verkommene Seele" zum Selbstmörder machen wie Goblin-Randalierer?
+* DONE: "Verkommene Seele" zum Selbstmörder machen wie Goblin-Randalierer?
 
 2012-10-28 Tamino Dauth <tamino@cdauth.eu>
-* Grabenspinnennetz hat keinen sichtbaren Zauberverstärker.
+* FIXED: Grabenspinnennetz hat keinen sichtbaren Zauberverstärker.
 * Wigberhts Dialog ohne "Zurück".
 * Björn und Dagos Modelle!
 * DONE: Neues Intro testen.

@@ -100,6 +100,12 @@ library StructGameRoutines requires Asl
 		private static method enterHouseTargetAction takes ARoutinePeriod period returns nothing
 			debug call Print("Unit " + GetUnitName(period.unit()) + " enters house.")
 			call ShowUnit(period.unit(), false)
+			debug call Print("After entering house")
+			debug if (IsUnitHidden(period.unit())) then
+			debug call Print("It is hidden")
+			debug else
+			debug call Print("It is not hidden")
+			debug endif
 		endmethod
 
 		private static method leaveHouseCondition takes NpcLeavesHouseRoutine period returns boolean
