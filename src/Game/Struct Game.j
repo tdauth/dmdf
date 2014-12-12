@@ -1,5 +1,14 @@
 library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 
+	// helps finding stops on metamorphosis spells
+	private function PrintImmediateStop takes unit whichUnit, string whichOrder returns nothing
+		if (whichOrder == "stop") then
+			debug call Print("Immediate stop on " + GetUnitName(whichUnit))
+		endif
+	endfunction
+
+	hook IssueImmediateOrder PrintImmediateStop
+
 	/**
 	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
 	 * As in Warcraft III itself characters do not necessarily have to kill enemies theirselfs (e. g. with a final hit).
@@ -31,7 +40,8 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 			// unallied and in range
 			//debug call Print("Alliance state to died unit: " + I2S(GetUnitAllianceStateToUnit(character.unit(), whichUnit)) + ".")
 			//debug call Print("Alliance state to killing unit: " + I2S(GetUnitAllianceStateToUnit(character.unit(), killingUnit)) + ".")
-			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) == bj_ALLIANCE_UNALLIED and (GetUnitAllianceStateToUnit(character.unit(), killingUnit) == bj_ALLIANCE_ALLIED or character.player() == GetOwningPlayer(killingUnit)) and ((thistype.range > 0.0 and GetDistanceBetweenUnitsWithZ(character.unit(), whichUnit) <= thistype.range) or thistype.range <= 0.0)) then
+			// never give XP for buildings. for example boxes are buildings as well
+			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) == bj_ALLIANCE_UNALLIED and (GetUnitAllianceStateToUnit(character.unit(), killingUnit) == bj_ALLIANCE_ALLIED or character.player() == GetOwningPlayer(killingUnit)) and ((thistype.range > 0.0 and GetDistanceBetweenUnitsWithZ(character.unit(), whichUnit) <= thistype.range) or thistype.range <= 0.0) and not IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
 				/// @todo FIXME, DMdF customized XP formula
 				//set result = thistype.damageFactor * GetUnitDamage(whichUnit) + thistype.damageTypeWeightFactor * GetUnitDamageType(whichUnit) + thistype.armourFactor * GetUnitArmour(whichUnit) + thistype.armourTypeWeightFactor * GetUnitArmourType(whichUnit) + thistype.hpFactor * GetUnitState(whichUnit, UNIT_STATE_LIFE) + thistype.manaFactor * GetUnitState(whichUnit, UNIT_STATE_MANA) + thistype.levelFactor * GetUnitLevel(whichUnit)
 				// Warcraft 3 default XP formula
@@ -96,7 +106,8 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 		endmethod
 
 		public static method unitBountyForCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
-			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) != bj_ALLIANCE_UNALLIED or (GetUnitAllianceStateToUnit(character.unit(), killingUnit) != bj_ALLIANCE_ALLIED and character.player() != GetOwningPlayer(killingUnit))) then
+			// never give bounty for buildings. For example boxes are buildings.
+			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) != bj_ALLIANCE_UNALLIED or (GetUnitAllianceStateToUnit(character.unit(), killingUnit) != bj_ALLIANCE_ALLIED and character.player() != GetOwningPlayer(killingUnit)) and not IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
 				return 0
 			endif
 			return thistype.unitBounty(whichUnit) / ACharacter.countAllPlaying()
@@ -342,7 +353,6 @@ endif
 
 		/// Most ASL systems are initialized here.
 		private static method onInit takes nothing returns nothing
-			local player neutralAggressive = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 			local integer i
 			debug local ABenchmark benchmark
 			// Advanced Script Library
@@ -410,9 +420,7 @@ endif
 			call AQuest.init0(true, true, "Sound\\Interface\\QuestLog.wav", tr("|c00ffcc00NEUER AUFTRAG|r"), tr("|c00ffcc00AUFTRAG ABGESCHLOSSEN|r"), tr("|c00ffcc00AUFTRAG FEHLGESCHLAGEN|r"), tr("|c00ffcc00AUFTRAGS-AKTUALISIERUNG|r"), tr("- %s"))
 			call AVideo.init(2, 4.0, tr("Spieler %s möchte das Video überspringen."), tr("Video wird übersprungen."))
 			// world systems
-			call AItemSpawnPoint.init(4.0, 60.0, 200.0)
-			call ASpawnPoint.init(60.0, "Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", "Abilities\\Spells\\Orc\\EtherealForm\\SpiritWalkerMorph.wav", 50, true, neutralAggressive, tr("%s wurde für Spieler %s fallen gelassen."))
-			set neutralAggressive = null
+			call ASpawnPoint.init()
 			call AWeather.init()
 			// Die Macht des Feuers
 			// game
@@ -550,7 +558,7 @@ endif
 			if (Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().setSpellsMaxLevel.evaluate()) then
 				call Print(tr("Alle Zauber auf ihre Maximalstufe gesetzt."))
 			else
-				call Print(tr("Nicht genügend Zauberpunkte."))
+				call Print(tr("Konnte nicht alle Zauber ihre Maximulstufe setzen (eventuell nicht genügend Zauberpunkte)."))
 			endif
 		endmethod
 

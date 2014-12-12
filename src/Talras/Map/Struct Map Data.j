@@ -4,9 +4,9 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 		/// @todo tr leads to crash
 		call SetMapName("Talras") // Game.mapName("Talras")
 		call SetMapDescription("Wählen Sie zunächst Ihre Charakterklasse aus. Diese Auswahl ist für die restliche Spielzeit unwiderruflich.\n- Drücken Sie die linke oder rechte Pfeiltaste, um die angezeigte Charakterklasse zu wechseln.\n- Drücken Sie die Escape-Taste, um die angezeigte Charakterklasse auszuwählen.")
-		call SetPlayers(9)
-		call SetTeams(9)
-		call SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
+		call SetPlayers( 10 )
+		call SetTeams( 10 )
+		call SetGamePlacement( MAP_PLACEMENT_TEAMS_TOGETHER )
 
 		call DefineStartLocation( 0, -22592.0, 18944.0 )
 		call DefineStartLocation( 1, -22592.0, 18944.0 )
@@ -17,10 +17,12 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 		call DefineStartLocation( 6, -22592.0, 18944.0 )
 		call DefineStartLocation( 7, -22592.0, 18944.0 )
 		call DefineStartLocation( 8, -22592.0, 18944.0 )
+		call DefineStartLocation( 9, -22592.0, 18944.0 )
+
 		// Player setup
-		call InitCustomPlayerSlots()
-		call InitCustomTeams()
-		call InitAllyPriorities()
+		call InitCustomPlayerSlots(  )
+		call InitCustomTeams(  )
+		call InitAllyPriorities(  )
 
 		call PlayMusic("Music\\LoadingScreen.mp3") /// WARNING: If file does not exist, game crashes?
 	//! endinject
@@ -35,6 +37,8 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 		public static constant integer orcLeader = 'n02P'
 		public static constant integer darkElfSatyr = 'n02O'
 		public static constant integer norseman = 'n01I'
+		public static constant integer ranger = 'n03F'
+		public static constant integer armedVillager = 'n03H'
 
 		public static constant integer deathAngel = 'n02K'
 		public static constant integer vampire = 'n02L'
@@ -75,10 +79,11 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 		public static constant integer computerPlayers = 1 // one additional player for the arena and the last quest
 		public static constant player alliedPlayer = Player(6)
 		public static constant player neutralPassivePlayer = Player(7)
-		public static constant real morning = 6.0
+		// make morning early and evening late to keep NPCs in their houses for a short time
+		public static constant real morning = 5.0
 		public static constant real midday = 12.0
 		public static constant real afternoon = 16.0
-		public static constant real evening = 18.0
+		public static constant real evening = 22.0
 		public static constant real videoWaitInterval = 1.0
 		public static constant real revivalTime = 20.0
 		public static constant integer startSkillPoints = 3
@@ -235,7 +240,7 @@ static if (DEBUG_MODE) then
 
 		private static method onCheatActionAos takes ACheat cheat returns nothing
 			local player whichPlayer = GetTriggerPlayer()
-			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_shrine_1_discover)
+			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_shrine_baldar_discover)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
 			set whichPlayer = null
 		endmethod
@@ -437,8 +442,8 @@ endif
 				call thistype.setCameraBoundsToAosForPlayer(user)
 			elseif (false) then /// @todo Tavern area
 				call thistype.setCameraBoundsToTavernForPlayer(user)
-			elseif (QuestTheNorsemen.quest().hasStarted()) then
-				call thistype.setCameraBoundsToFightAreaForPlayer(user)
+			//elseif (QuestTheNorsemen.quest().hasStarted()) then
+			//	call thistype.setCameraBoundsToFightAreaForPlayer(user)
 			else
 				call thistype.setCameraBoundsToPlayableAreaForPlayer(user)
 			endif

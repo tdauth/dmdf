@@ -1,4 +1,4 @@
-library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructMapMapFellows, StructMapMapNpcs, StructMapQuestsQuestRescueDago
+library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGameTutorial, StructMapMapFellows, StructMapMapNpcs, StructMapQuestsQuestRescueDago
 
 	struct VideoRescueDago0 extends AVideo
 		private unit m_actorBear0
@@ -46,6 +46,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructMapM
 
 			call PauseUnit(Npcs.dago(), false)
 			call Fellows.dago().shareWith(0)
+			call Tutorial.printTip(tr("Dago kann nun von allen Spielern gemeinsam kontrolliert werden. Es gibt verschiedene Gefährten, die sich im Spielverlauf anschließen und die Gruppe wieder verlassen."))
 
 			// bears
 			call SetUnitOwner(gg_unit_n008_0083, Player(PLAYER_NEUTRAL_AGGRESSIVE), false)

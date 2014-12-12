@@ -109,8 +109,10 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		endmethod
 
 		private static method resultAction1 takes AVote vote returns nothing
-			call VideoUpstream.video().play()
-			call thistype.m_vote1.destroy()
+			if (vote.result() == 0) then
+				call VideoUpstream.video().play()
+				call thistype.m_vote1.destroy()
+			endif
 		endmethod
 
 		// Wir sind so weit.

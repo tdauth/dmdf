@@ -63,7 +63,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 			local thistype this = thistype.allocate(character, tr("Brennt die Bären nieder!"))
 			local AQuestItem questItem
 
-			call this.setIconPath("Units\\Creeps\\GrizzlyBear\\GrizzlyBear.blp")
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNLiquidFire.blp")
 			call this.setDescription(tr("Dago, der Jäger, möchte gerne in der Bärenhöhle Feuer legen, um die dort verbliebenen Bären zu töten. Allerdings benötigt er dafür entsprechende Mittel."))
 			call this.setReward(thistype.rewardExperience, 500)
 			call this.setReward(thistype.rewardGold, 200)

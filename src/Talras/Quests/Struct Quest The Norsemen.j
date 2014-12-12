@@ -27,6 +27,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call LeaderboardSetLabel(this.m_leaderboard, tr("Verbleibende Wellen"))
 			call LeaderboardSetStyle(this.m_leaderboard, true, true, true, true)
 			call LeaderboardAddItemBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, tr("Feindliche:"), this.m_hostileWaves)
+			// don't make it black
+			call LeaderboardSetPlayerItemLabelColorBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, 100, 80, 20, 0)
+			call LeaderboardSetPlayerItemValueColorBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, 100, 80, 20, 0)
 			call LeaderboardAddItemBJ(MapData.alliedPlayer, this.m_leaderboard, tr("Verbündete:"), this.m_alliedWaves)
 			debug call Print("C")
 			set i = 0
@@ -49,7 +52,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 	endstruct
 
 	struct QuestTheNorsemen extends AQuest
-		public static constant integer maxWaves = 8
+		public static constant integer maxWaves = 5
 		public static constant integer maxAlliedWaves = 2
 		private boolean m_hasStarted
 		private AGroup m_allyStartGroup
@@ -88,7 +91,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			endif
 			if (not result and this.m_currentGroup.units().size() == 5) then // Gruppen müssen immer größer als 5 sein
 				// rangers (ally spawn)
-				if (this.m_currentGroupIndex == 4) then
+				if (this.m_currentGroupIndex == 1) then
 					call this.m_wavesDisplay.decreaseAllies()
 					set i = 0
 					loop
@@ -99,18 +102,20 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 						set i = i + 1
 					endloop
 					set this.m_allyRangerGroup = AGroup.create()
-					set this.m_allyRangerLeader = null
-					/// @todo Create ranger group
-					call TransmissionFromUnit(gg_unit_n016_0016, tr("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!"), null) /// @todo Message from ranger leader
+					call this.m_allyRangerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.ranger, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
+					set this.m_allyRangerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03G', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
+					call this.m_allyRangerGroup.units().pushBack(this.m_allyRangerLeader)
 					call SmartCameraPanRect(gg_rct_quest_the_norsemen_ally_spawn_0, 0.0)
+					call TransmissionFromUnit(this.m_allyRangerLeader, tr("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!"), null)
 				// farmers (ally spawn)
-				elseif (this.m_currentGroupIndex == 6) then
+				elseif (this.m_currentGroupIndex == 3) then
 					call this.m_wavesDisplay.decreaseAllies()
 					set this.m_allyFarmerGroup = AGroup.create()
-					set this.m_allyFarmerLeader = null
-					/// @todo Create farmer group
-					call TransmissionFromUnit(null, tr("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!"), null) /// @todo Message from farmer leader
+					call this.m_allyFarmerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.armedVillager, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
+					set this.m_allyFarmerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03I', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
+					call this.m_allyFarmerGroup.units().pushBack(this.m_allyFarmerLeader)
 					call SmartCameraPanRect(gg_rct_quest_the_norsemen_ally_spawn_0, 0.0)
+					call TransmissionFromUnit(this.m_allyFarmerLeader, tr("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!"), null)
 				endif
 			endif
 
@@ -153,9 +158,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				endloop
 				set i = i + 1
 			endloop
-
-			call Fellows.wigberht().reset()
-			call Fellows.ricman().reset()
 		endmethod
 
 		private static method triggerActionSpawn takes nothing returns nothing
@@ -190,70 +192,45 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 					set i = i + 1
 				endloop
 
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(2, UnitTypes.orcCrossbow, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(2, UnitTypes.orcPython, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcCrossbow, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcPython, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(2, UnitTypes.orcWarlock, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(2, UnitTypes.darkElfSatyr, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcWarlock, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.darkElfSatyr, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
 
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(2, UnitTypes.orcCrossbow, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(2, UnitTypes.orcPython, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcCrossbow, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcPython, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
 				call TransmissionFromUnit(gg_unit_n016_0016, tr("Diese verdammten Hunde haben Verstärkung gerufen. Macht euch bereit Männer!"), null)
 				call SmartCameraPanRect(gg_rct_quest_the_norsemen_enemy_spawn_1, 0.0)
 
 			elseif (this.m_currentGroupIndex == 2) then
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
 
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
 				call TransmissionFromUnit(gg_unit_n016_0016, tr("Schon wieder ein neuer Trupp."), null)
 			elseif (this.m_currentGroupIndex == 3) then
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
 
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(gg_unit_n016_0016, tr("Verdammt, wo haben die sich alle verkrochen? Schlachtet sie!"), null)
+				call TransmissionFromUnit(gg_unit_n016_0016, tr("Schlachtet sie!"), null)
 			elseif (this.m_currentGroupIndex == 4) then
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
 
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(gg_unit_n016_0016, tr("Hört das denn nie auf? Ich hab ja Zeit und Lust jeden verdammten Ork und Dunkelelf in dieser Welt ins Jenseits zu schicken."), null)
-			elseif (this.m_currentGroupIndex == 5) then
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
-
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
-
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
-
-				call TransmissionFromUnit(gg_unit_n004_0038, tr("Bastarde, kommt her und spürt meine Klinge!"), null)
-			elseif (this.m_currentGroupIndex == 6) then
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
-
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
-
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
-
-				call TransmissionFromUnit(this.m_allyRangerLeader, tr("Scheiße, das sind einfach zu viele!"), null)
-			elseif (this.m_currentGroupIndex == 7) then
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
-
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
-
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
-
-				/// @todo Enorm starke Krieger, letzte Welle
-				call TransmissionFromUnit(gg_unit_n004_0038, tr("Es scheint interessant zu werden."), null)
+				call TransmissionFromUnit(gg_unit_n016_0016, tr("Kommt schon Männer! Wir haben es fast geschafft!"), null)
 			endif
 			call this.m_currentGroup.pointOrder("patrol", GetRectCenterX(gg_rct_quest_the_norsemen_enemy_target), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_target))
 			set owner = null
@@ -281,6 +258,17 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			local player allyPlayer = MapData.alliedPlayer
 			local integer i
 			local player user
+			
+			// hide orc spawn point
+			call SpawnPoints.orcs0().disable()
+			set i = 0
+			loop
+				exitwhen (i == SpawnPoints.orcs0().countUnits())
+				call PauseUnit(SpawnPoints.orcs0().unit(i), true)
+				call ShowUnit(SpawnPoints.orcs0().unit(i), true)
+				set i = i + 1
+			endloop
+			
 
 			set this.m_allyStartGroup = allyStartGroup
 			set this.m_spawnTrigger = CreateTrigger()
@@ -333,11 +321,32 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
+			local unit whichUnit
 			debug call Print("Quest The Norsemen target 1 completed -> starting with video Wigberht")
 			call VideoWigberht.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call questItem.quest().questItem(2).setState(AAbstractQuest.stateNew)
 			call questItem.quest().displayUpdate()
+			
+			call Fellows.wigberht().reset()
+			call Fellows.ricman().reset()
+			
+			// the orc spawn point will be disabled forever. The camp is now in hands of norsemen, villagers and rangers
+			// new NPCs?
+			call SpawnPoints.destroyOrcs0()
+			
+			set whichUnit = CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_waypoint_orc_camp_norseman_0, 196.87)
+			call SetUnitInvulnerable(whichUnit, true)
+			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_waypoint_orc_camp_norseman_1, 353.13)
+			call SetUnitInvulnerable(whichUnit, true)
+			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_waypoint_orc_camp_norseman_2, 243.49)
+			call SetUnitInvulnerable(whichUnit, true)
+			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.armedVillager, gg_rct_waypoint_orc_camp_villager_0, 7.50)
+			call SetUnitInvulnerable(whichUnit, true)
+			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.armedVillager, gg_rct_waypoint_orc_camp_villager_1, 230.15)
+			call SetUnitInvulnerable(whichUnit, true)
+			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.ranger, gg_rct_waypoint_orc_camp_ranger_0, 296.12)
+			call SetUnitInvulnerable(whichUnit, true)
 		endmethod
 
 		private static method stateEventCompleted2 takes AQuestItem questItem, trigger usedTrigger returns nothing

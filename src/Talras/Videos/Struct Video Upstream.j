@@ -2,7 +2,8 @@
 library StructMapVideosVideoUpstream requires Asl, StructGameGame
 
 	struct VideoUpstream extends AVideo
-
+		private integer m_actorBoat
+	
 		implement Video
 
 		private static method playMusic takes nothing returns nothing
@@ -17,39 +18,42 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
 			call SetTimeOfDay(19.0)
+			
+			set this.m_actorBoat = AVideo.saveUnitActor(gg_unit_n02E_0103)
+			
 			call thistype.playMusic.execute()
 			call CameraSetupApplyForceDuration(gg_cam_upstream_0, true, 0.0)
 		endmethod
 
-		private static method continueShipRoute takes nothing returns nothing
+		private method continueShipRoute takes nothing returns nothing
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_2, gg_unit_n02E_0103))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_2,  thistype.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
-			call IssueRectOrder(gg_unit_n02E_0103, "move", gg_rct_video_upstream_ship_3)
+			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_3)
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_3, gg_unit_n02E_0103))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_3, thistype.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
-			call IssueRectOrder(gg_unit_n02E_0103, "move", gg_rct_video_upstream_ship_4)
+			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_4)
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_4, gg_unit_n02E_0103))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_4, thistype.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
-			call IssueRectOrder(gg_unit_n02E_0103, "move", gg_rct_video_upstream_ship_5)
+			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_5)
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_5, gg_unit_n02E_0103))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_5, thistype.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
-			call IssueRectOrder(gg_unit_n02E_0103, "move", gg_rct_video_upstream_ship_6)
+			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_6)
 		endmethod
 
 		private static method showMovingTextTag takes string text, real size, integer red, integer green, integer blue, integer alpha returns nothing
@@ -89,31 +93,31 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_upstream_4, true, 0.0)
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
-			call IssueRectOrder(gg_unit_n02E_0103, "move", gg_rct_video_upstream_ship_0)
+			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_0)
 
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_0, gg_unit_n02E_0103))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_0, thistype.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
 
 			call CameraSetupApplyForceDuration(gg_cam_upstream_5, true, 0.0)
-			call IssueRectOrder(gg_unit_n02E_0103, "move", gg_rct_video_upstream_ship_1)
+			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_1)
 
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_1, gg_unit_n02E_0103))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_1, thistype.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
 
 			call CameraSetupApplyForceDuration(gg_cam_upstream_6, true, 0.0)
-			call IssueRectOrder(gg_unit_n02E_0103, "move", gg_rct_video_upstream_ship_2)
+			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_2)
 
-			call thistype.continueShipRoute.execute()
+			call this.continueShipRoute.execute()
 
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Wird das Video übersprungen, so wird das Spiel für alle Spieler beendet."))
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Wird das Video übersprungen, so endet das Spiel für alle Spieler."))
 
 			call thistype.showMovingTextTag("Die Macht des Feuers", 16, 255, 0, 0, 0)
 

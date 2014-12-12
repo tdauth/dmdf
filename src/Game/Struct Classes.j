@@ -75,11 +75,17 @@ library StructGameClasses requires Asl, StructGameCharacter
 			//elseif (character.class() == thistype.m_druid) then
 				call SpellAwakeningOfTheForest.create.evaluate(character)
 				call SpellCrowForm.create.evaluate(character)
+				call SpellDryadSource.create.evaluate(character)
 				call SpellBearForm.create.evaluate(character)
 				call SpellForestFaeriesSpell.create.evaluate(character)
 				call SpellHerbalCure.create.evaluate(character)
 				call SpellRelief.create.evaluate(character)
 				call SpellZoology.create.evaluate(character)
+				call SpellGrove.create.evaluate(character)
+				call SpellTreefolk.create.evaluate(character)
+				call SpellForestWoodFists.create.evaluate(character)
+				call SpellTendrils.create.evaluate(character)
+				call SpellWrathOfTheForest.create.evaluate(character)
 
 //static if (not DEBUG_MODE) then
 //			elseif (character.class() == Classes.m_knight) then

@@ -19,6 +19,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Aos\"")
 
 		public static method continueSpawn takes nothing returns nothing
+			debug call Print("Continue spawn!")
 			call PauseTimerBJ(false, thistype.m_spawnTimer)
 		endmethod
 
@@ -288,6 +289,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			local group baldarsGroup0 = CreateGroup()
 			local group baldarsGroup1 = CreateGroup()
 			local unit createdUnit
+			debug call Print("AOS Spawn!")
 			// Haldar
 			if (not IsUnitPaused(gg_unit_n00K_0040)) then
 				call SetUnitAnimation(gg_unit_n00K_0040, "Spell Slam")

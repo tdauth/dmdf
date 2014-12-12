@@ -48,7 +48,7 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hier ist die Krone."), null)
 			call speech(info, character, true, tr("Gib her!"), null)
-			call character.inventory().removeFromRucksackByTypeId(QuestTheKingsCrown.crownItemTypeId, false) // Krone geben
+			call character.inventory().removeItemType(QuestTheKingsCrown.crownItemTypeId) // Krone geben
 			call speech(info, character, true, tr("Tatsächlich! Das ist die Krone aus den Sagen. Sag, was ahst du mit dem König gemacht?"), null)
 			call speech(info, character, false, tr("Rate mal."), null)
 			call speech(info, character, true, tr("So so, dann ist er also tot? Na ja, vielleicht findet er so seinen Frieden, kann mir eigentlich egal sein. Ich danke dir, das ist mir wirklich einige Goldmünzen wert!"), null)

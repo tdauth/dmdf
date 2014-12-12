@@ -22,11 +22,6 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 			call questItem.quest().questItem(1).enable()
 			// open the gate
 			call SetDoodadAnimationRect(gg_rct_doodad_gate_talras, 'D053', "Death", false)
-			// remove gate blockers
-			call RemoveDestructable(gg_dest_B004_2334)
-			call RemoveDestructable(gg_dest_B004_2335)
-			call RemoveDestructable(gg_dest_B004_2336)
-			call RemoveDestructable(gg_dest_B004_2337)
 		endmethod
 
 		private static method stateEventCompleted1 takes AQuestItem questItem, trigger whichTrigger returns nothing

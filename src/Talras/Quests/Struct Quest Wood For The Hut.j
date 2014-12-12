@@ -16,7 +16,7 @@ library StructMapQuestsQuestWoodForTheHut requires Asl
 			local thistype this = thistype.allocate(character, tr("Holz für die Hütte"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBundleOfLumber.blp")
 			call this.setDescription(tr("Der Fährmann Trommon braucht etwas Holz für die Reparatur seiner Hütte. Da er sich nicht traut, den Holzfäller Kuno selbst darum zu bitten, musst du dich darum kümmern."))
 			call this.setReward(AAbstractQuest.rewardExperience, 400)
 			call this.setReward(AAbstractQuest.rewardGold, 10)

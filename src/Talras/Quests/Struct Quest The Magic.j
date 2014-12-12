@@ -35,7 +35,7 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter
 			local thistype this = thistype.allocate(character, tr("Die Zauberkunst"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNSnazzyScroll.blp")
 			call this.setDescription(tr("Sisgard, die Zauberin, möchte, dass du ihr beweist, dass du der Zauberkunst mächtig bist. Vorher ist sie nicht bereit mit dir umher zu ziehen. Dazu hat sie dir eine Zauberspruchrolle mitgegeben, welche du in einem Runensteinkreis im Dunkelwald benutzen sollst."))
 			call this.setReward(AAbstractQuest.rewardExperience, 500)
 			// item 0

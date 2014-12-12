@@ -120,7 +120,7 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower
 		private static method infoAction7 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hier hast du deinen Totem wieder."), null)
 			// Charakter gibt Ursula den Totem zurück.
-			call character.inventory().removeFromRucksackByTypeId(QuestTheOaksPower.itemTypeId, false)
+			call character.inventory().removeItemType(QuestTheOaksPower.itemTypeId)
 			call speech(info, character, true, tr("Du hast es also geschafft? Gut gemacht. Pass auf, ich gebe dir einen anderen Totem mit einem Teil der Seele dieser Kreatur."), null)
 			call speech(info, character, true, tr("Mit dem Toten wirst du in der Lage sein, die Kreatur herbeizurufen, zumindest mit einem Teil ihrer ursprünglichen Stärke. Allerdings wird sie keinen eigenen Instinkt haben und dir stets treu ergeben sein."), null)
 			call speech(info, character, true, tr("Ziehe einen guten Nutzen daraus und behandle sie gut. Hier hast du noch ein paar Goldmünzen für deine Hilfe. Nun kann ich endlich eins werden mit diesen Wesen und mein Wissen mit ihm teilen."), null)

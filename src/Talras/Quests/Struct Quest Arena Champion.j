@@ -12,7 +12,7 @@ library StructMapQuestsQuestArenaChampion requires Asl, StructMapMapNpcs
 			local thistype this = thistype.allocate(character, tr("Arenameister"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNFootman.blp")
 			call this.setDescription(tr("Agihard gibt jedem, der es schafft mindestens fünf Gegner in seiner Arena zu besiegen, eine besondere Belohnung."))
 			call this.setReward(thistype.rewardExperience, 500)
 			call this.setReward(thistype.rewardGold, 30)

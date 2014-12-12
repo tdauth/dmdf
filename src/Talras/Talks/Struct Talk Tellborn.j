@@ -1,4 +1,4 @@
-library StructMapTalksTalkTellborn requires Asl
+library StructMapTalksTalkTellborn requires Asl, StructMapTalksTalkFulco
 
 	struct TalkTellborn extends ATalk
 
@@ -18,7 +18,7 @@ library StructMapTalksTalkTellborn requires Asl
 			call speech(info, character, true, tr("Meinen Freund Fulco hast du sicherlich schon bemerkt. Das ist der Bär da in der Ecke. Aber keine Angst, eigentlich ist er ein Mensch."), null)
 			call speech(info, character, true, tr("Du musst wissen, mir ist da ein kleines Missgeschick passiert."), null)
 			// (Fulco hats erzählt)
-			if (true) then /// @todo FIXME
+			if (TalkFulco.talk().infoHasBeenShownToCharacter(0, character)) then
 				call speech(info, character, false, tr("Ja, Fulco hat's mir schon erzählt."), null)
 				call speech(info, character, true, tr("Dann weißt du ja Bescheid. Es tut mir wirklich schrecklich leid, das Ganze."), null)
 			else
@@ -31,9 +31,9 @@ library StructMapTalksTalkTellborn requires Asl
 			call info.talk().showStartPage(character)
 		endmethod
 
-		// (Charakter hat vom Missgeschick erfahren)
+		// (Nach Begrüßung)
 		private static method infoCondition1 takes AInfo info, ACharacter character returns boolean
-			return true /// @todo FIXME
+			return info.talk().infoHasBeenShownToCharacter(0, character)
 		endmethod
 
 		// Kann ich dir irgendwie bei deinem Missgeschick helfen?
@@ -45,19 +45,29 @@ library StructMapTalksTalkTellborn requires Asl
 			call info.talk().showRange(6, 7, character)
 		endmethod
 
-		// (Charakter hat alle Zutaten im Inventar)
-		private static method infoCondition2 takes AInfo info, ACharacter character returns boolean
-			return true /// @todo FIXME
+		// (Auftrag „Mein Freund der Bär“ ist aktiv und Charakter hat alle Zutaten im Inventar)
+		private static method infoCondition2 takes AInfo info, Character character returns boolean
+			return QuestMyFriendTheBear.characterQuest(character).isNew() and character.inventory().hasItemType('I03F') and character.inventory().hasItemType('I03G') and character.inventory().hasItemType('I03H')
 		endmethod
 
 		// Hier hast du deine Zutaten.
-		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction2 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Hier hast du deine Zutaten."), null)
-			/// @todo Zutaten geben
+			/// Zutaten geben
+			call character.inventory().removeItemType('I03F')
+			call character.inventory().removeItemType('I03G')
+			call character.inventory().removeItemType('I03H')
 			call speech(info, character, true, tr("Danke! Du hast es tatsächlich geschafft. Ich bin begeistert. Leider fehlen mir doch noch ein paar weitere Zutaten, um den Trank brauen zu können, der meinen Freund zurückverwandelt."), null)
 			call speech(info, character, true, tr("Aber es sollte kein Problem sein, die selbst zusammenzusuchen."), null)
 			call speech(info, character, true, tr("Hier hast du deine Belohnung, hast sie dir wirklich verdient!"), null)
 			call QuestMyFriendTheBear.characterQuest(character).complete()
+			// 4 Spruchrollen der Geborgenheit
+			call character.giveItem('I00U')
+			call character.giveItem('I00U')
+			call character.giveItem('I00U')
+			call character.giveItem('I00U')
+			// Tellborns Geisterrune
+			call character.giveItem('I03I')
 			call info.talk().showStartPage(character)
 		endmethod
 

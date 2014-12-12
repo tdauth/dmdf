@@ -122,24 +122,27 @@ library StructGameSpell requires Asl, StructGameCharacter
 				return false
 			endif
 			if (Character(this.character()).grimoire().learnedSpells.evaluate() == Grimoire.maxSpells and this.level() == 0) then
+				debug call Print("Maximum of grimoire spells reached: " + I2S(Character(this.character()).grimoire().learnedSpells.evaluate()) + " - " + this.name())
 				return false
 			endif
 			if (not this.available()) then
+				debug call Print("Spell is not available: " + this.name())
 				return false
 			endif
 			if (Character(this.character()).grimoire().skillPoints.evaluate() < level - this.level()) then
+				debug call Print("Not enough skill points: " + this.name())
 				return false
 			endif
 			if (this.level() == this.getMaxLevel()) then
+				debug call Print("Maximum level: " + this.name())
 				return false
 			endif
-			if (this.spellType() == thistype.spellTypeDefault) then
-				if (level == 1) then
-					return true
-				endif
+			if (this.spellType() == thistype.spellTypeDefault and level >= 1) then
+				debug call Print("Default level: " + this.name())
 				return false
 			endif
 			if (this.spellType() == thistype.spellTypeDefault or (this.spellType() == thistype.spellTypeUltimate0 and GetHeroLevel(this.character().unit()) < Grimoire.ultimate0Level) or (this.spellType() == thistype.spellTypeUltimate1 and GetHeroLevel(this.character().unit()) < Grimoire.ultimate1Level)) then
+				debug call Print("Ultimate required: " + this.name())
 				return false
 			endif
 

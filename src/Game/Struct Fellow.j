@@ -34,6 +34,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		private timerdialog m_revivalTimerDialog
 		private AHeroIcon array m_heroIcon[6] /// @todo MapData.maxPlayers
 		private AIntegerVector m_sellingsAbilities
+		private boolean m_trades
 
 		//! runtextmacro A_STRUCT_DEBUG("\"Fellow\"")
 
@@ -165,6 +166,15 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			debug call Print("Fellow 1: " + GetUnitName(this.m_unit))
 			call SetUnitInvulnerable(this.m_unit, false)
 			call AUnitRoutine.disableAll(this.m_unit)
+			
+			set this.m_trades = (GetUnitAbilityLevel(this.m_unit, 'Aneu') > 0 or GetUnitAbilityLevel(this.m_unit, 'Asid') > 0 or GetUnitAbilityLevel(this.m_unit, 'Apit') > 0)
+			
+			if (this.m_trades) then
+				call UnitRemoveAbility(this.m_unit, 'Aneu')
+				call UnitRemoveAbility(this.m_unit, 'Asid')
+				call UnitRemoveAbility(this.m_unit, 'Apit')
+			endif
+			
 			debug call Print("Fellow 2.")
 			if (not this.m_hasTalk and this.m_talk != 0) then
 				call this.m_talk.disable()
@@ -222,6 +232,13 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call SetUnitOwner(this.m_unit, MapData.neutralPassivePlayer, true)
 			call SetUnitInvulnerable(this.m_unit, true)
 			call AUnitRoutine.enableAll(this.m_unit)
+			
+			if (this.m_trades) then
+				call UnitAddAbility(this.m_unit, 'Aneu')
+				call UnitAddAbility(this.m_unit, 'Asid')
+				call UnitAddAbility(this.m_unit, 'Apit')
+			endif
+			
 			if (this.m_talk != 0) then
 				call this.m_talk.enable()
 			endif
@@ -433,6 +450,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endloop
 			call this.setActive(false)
 			call DmdfHashTable.global().setHandleInteger(this.m_unit, "Fellow", this)
+			set this.m_trades = false
 
 			return this
 		endmethod

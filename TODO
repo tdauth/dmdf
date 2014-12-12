@@ -7,7 +7,7 @@
 * FIXED: Knechte arbeiten auch noch um 2 Uhr morgens.
 * Verschwinden in Häusern funktioniert nicht.
 * DONE: Gefährten nicht an Schreinen wiederbeleben, sondern an ihrem Todespunkt (einfacher zu finden!)
-* Drachentöterin ist zu schwach!
+* FIXED: Drachentöterin ist zu schwach!
 * "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein.
 * Druide:
 	* Erwachen des Waldes hat kein Icon
@@ -37,15 +37,36 @@
 * Medusa und Helfer respawnen nicht.
 * "Der dunkle Kult": Egal wann der Diakon getötet wird bzw. alle, muss es bereits abgeschlossen sein, solange der Charakter in der Nähe war.
 * In Videos alle Handelsfähigkeiten deaktivieren (Schlachtvideo am Ende)
-* Weniger Wellen im letzten Auftrag?
-* Leaderboard im letzten Auftrag: dunkle Schrift heller machen
+* FIXED: Weniger Wellen im letzten Auftrag?
+* FIXED: Leaderboard im letzten Auftrag: dunkle Schrift heller machen
 * Einheiten von neutral passiv laufen in Video zurück! Anderen Spieler für Videocharaktere!!!
 * Letzter Auftrag, statt pan eventuell Videosequenz, die das Spiel unterbricht und die Ansicht danach wiederherstellt.
 * Schlachten im letzten Auftrag in Videos fixen. Einheiten müssen gegeneinander kämpfen.
 * Nach letzter Schlacht Wigberht und Ricman vollständig heilen, Nordmanner wieder im Lager platzieren!
 * Video Wigberht fixen, wie er gegen die Orks kämpft.
 * Wenn ein Gefolgsmann entlassen wird und sein Tagesablauf wieder aktiviert wird, sofort einreihen und richtiger Tätigkeit nachgehen.
-* Abschlussfahrt funktioniert nicht.
+* FIXED: Abschlussfahrt funktioniert nicht.
+* DONE: Weniger feindliche Wellen beim letzten Auftrag, mit weniger Einheiten
+* FIXED: Gefolgsleute Handelsfähigkeiten deaktivieren.
+* DONE: Spawn Points im Lager einfügen
+* DONE: Spawn Points während des letzten Auftrags deaktivieren
+* FIXED: Kameragrenzen während des letzten Auftrags deaktivieren: Charaktere haben mehr Freiheit.
+* Dialog mit Björn über Dago, wird alles automatisch ausgeführt.
+* FIXED: Dialog mit Tellborn, man kann sofort die Zutaten geben und über das Problem seines Freundes sprechen!
+* Dialog mit Sisgard, sie folgt einem nur, falls sie sich nur mit einem einzelnen Charakter unterhält, ansonsten beschäftigt!
+* Dialog mit Wigberht: Fahr beginnt auch wenn Später abgestimmt wurde. Double free of AIntegerList - AVote bug?
+* FIXED: Verkaufte Einheiten im AOS benötigen Kosten und Tooltips.
+* FIXED: Engelslocken sollten Icon eines Items haben.
+* AOS spawns finden nicht statt, nur erste Welle? Nach zwei Spawns ist Schluss.
+* Wenn Charakter verwandelt ist und im Dialog Gegenstände erhält, hat er kein Inventar. Gegenstände liegen dann dort. Kann nur unverwandelt ansprechen oder egal?
+* Bei Rückverwandlung wird Zustand des Zauberbuchs nicht wiederhergestellt. Keine Fähigkeiten im Zauberbuch aktiv!
+* Verwandlung in Bär funktioniert immer noch nicht manchmal, Charakter wird einfach nicht verwandelt ebenso im AOS. Unterbrechung?
+* Item spawns fixen.
+* Kisten sollten nun keine Beute oder Erfahrung mehr geben
+* Statt einsammelbarem Gold immer verbrauchbare Gegenstände droppen, die einem Spieler gehören!
+* anstatt Items gleich zu verteilen einfach das Item n mal droppen?
+* Ankunfts und Tageszeitevents in ARoutine überprüfen. Manchmal kommt Sisgard nicht aus dem Haus, wenn die Tageszeit nach 5 Uhr wird.
+* Spawn Point im Orklager: Einheiten im letzten Quest entfernen vor der Schlacht!
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.
@@ -56,7 +77,7 @@
 * Große Felsen verkleinern: Lieber Plateaus mit Bäumen, welche die Sicht nicht so sehr einschränken.
 * Terrain sichtbarer machen.
 * Blocker platzieren.
-* Gespräche gleichzeitig mit mehreren Spielern erlauben!!!!
+* FIXED: Gespräche gleichzeitig mit mehreren Spielern erlauben!!!!
 
 2012-12-12 Tamino Dauth <tamino@cdauth.eu>
 * DONE: rename blood thirstiness rects with video prefix.
@@ -73,7 +94,7 @@
 * Wieland und Einar sollen länger miteinander reden, nicht in die Kneipe gehen?
 * DONE: Farben der weißen und schwarzen Legion setzen.
 * Nach Klassenwahl sollte Kamera fixiert bleiben!
-* Donnerwesen oder anderes Viech im Norden gehört Spieler 1.
+* FIXED: Donnerwesen oder anderes Viech im Norden gehört Spieler 1.
 * Baldars Ring Id für Zauberer müsste stimmen, dennoch klappt Verwandlung in Dämon nicht (alles überprüfen).
 * Performancetests: Hängt nur unter Linux, liegt an neuen Tagesabläufen?
 * rechte Seite ist bei schwarzer Legion leicht stärker durch Dämon.
@@ -89,7 +110,7 @@
 * DEPRECATED: Todesengel geht immer noch nicht, trotz richtigen Spielers.
 * DONE: neue Spieler in AOS verwenden.
 * neue Items und Fähigkeiten der AOS-Ringe testen.
-* Verkommene Seelen angreifen, auf Explosionen testen.
+* DONE: Verkommene Seelen angreifen, auf Explosionen testen.
 * DONE: Kurzschwertfähigkeit ersetzen.
 * Modell vom Stab des Zauberers testen/Attachment testen/Absturz?
 * DONE: Statt Neutral Passiv muss ein weiterer Weltenspieler her (sonst laufen auch NPCs in Tagesabläufen zurück, nicht nur Dago).
@@ -146,7 +167,7 @@
 	- CharacterStats deaktivieren
 	- Trade, InfoLog und Document deaktivieren
 	- Marker deaktivieren
-	- Brücke durch normale Brücke ohne ALayer ersetzen
+	- DONE: Brücke durch normale Brücke ohne ALayer ersetzen
 	- Damage recorder/events optimieren?
 	- Notfalls: Tagesabläufe deaktivieren
 	- Wetter optimieren (hängt jedes Mal), eventuell deaktivieren

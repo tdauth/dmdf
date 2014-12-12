@@ -394,6 +394,8 @@ endif
 				call this.removeSkillPoints(requiredSkillPoints)
 
 				if (spell.level() == 0) then
+					debug call Print("Learning spell: " + spell.name() + " having " + I2S(this.m_favourites.size()) + " favorite spells.")
+				
 					if (this.m_favourites.size() < thistype.maxFavourites) then
 						call this.learnFavouriteSpell(spell)
 					else
@@ -520,21 +522,26 @@ endif
 
 		public method setSpellsMaxLevel takes nothing returns boolean
 			local integer i = 0
+			local boolean result = true
 			loop
-				exitwhen (i == this.m_spells.size())
+				exitwhen (i == this.m_spells.size() or this.skillPoints() == 0)
+				// do not cancel the loop if it fails It might fail for another reason than having not enough skill points
 				if (not this.setSpellMaxLevelByIndex(i)) then
-					return false
+					set result = false
 				endif
 				set i = i + 1
 			endloop
-			return true
+			return result
 		endmethod
 
 		public method addSpells takes AIntegerVector integerVector, boolean destroyVector returns nothing
 			local integer i = 0
 			loop
 				exitwhen (i == integerVector.size())
-				call this.addSpell(Spell(integerVector[i]))
+				// do not add spells twice
+				if (not this.m_spells.contains(Spell(integerVector[i]))) then
+					call this.addSpell(Spell(integerVector[i]))
+				endif
 				set i = i + 1
 			endloop
 			if (destroyVector) then
@@ -805,6 +812,7 @@ endif
 
 		public method show takes nothing returns nothing
 			debug call Print("Show spell " + GetObjectName(this.ability()) + ".")
+			debug call Print("Grimoire ability " + GetObjectName(this.grimoireAbility()) + ".")
 
 			if (this.isShown()) then
 				return

@@ -10,7 +10,7 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(0, tr("Der Weg nach Holzbruck"))
 			local AQuestItem questItem0
-			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNShip.blp")
 			call this.setDescription(tr("Da der Herzog noch mehr Verbündete benötigt, sollt ihr in die flussaufwärts gelegene Stadt Holzbruck ziehen, um dort weitere Kriegsleute zu sammeln."))
 			// item 0
 			set questItem0 = AQuestItem.create(this, tr("Bittet die Nordmänner, euch nach Holzbruck zu bringen."))

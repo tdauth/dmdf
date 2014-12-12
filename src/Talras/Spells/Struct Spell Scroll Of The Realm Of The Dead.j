@@ -6,6 +6,8 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 
 		private method condition takes nothing returns boolean
 			local integer i
+			local Shrine shrine
+			local real dist
 			if (IsMaskedToPlayer(GetSpellTargetX(), GetSpellTargetY(), this.character().player())) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sichtbar sein."))
 				return false
@@ -14,10 +16,12 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 			set i = 0
 			loop
 				exitwhen (i == Shrine.shrines().size())
-				if (GetDistanceBetweenPointsWithoutZ(GetDestructableX(Shrine(Shrine.shrines()[i]).destructable()), GetDestructableY(Shrine(Shrine.shrines()[i]).destructable()), GetSpellTargetX(), GetSpellTargetY()) <= thistype.distance) then
+				set shrine = Shrine(Shrine.shrines()[i])
+				set dist = GetDistanceBetweenPointsWithoutZ(GetDestructableX(shrine.destructable()), GetDestructableY(shrine.destructable()), GetSpellTargetX(), GetSpellTargetY())
+				if (dist <= thistype.distance) then
 					return true
 				endif
-				debug call Print("Checked shrine: " + I2S(Shrine(Shrine.shrines()[i])))
+				debug call Print("Checked shrine: " + I2S(Shrine(Shrine.shrines()[i])) + " with distance " + R2S(dist))
 				set i = i + 1
 			endloop
 			call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sich in der Nähe eines Wiederbelebungsschreins befinden."))

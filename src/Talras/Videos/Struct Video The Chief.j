@@ -21,6 +21,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapQues
 			set this.m_actorRicman = thistype.unitActor(thistype.saveUnitActor(gg_unit_n016_0016))
 			call SetUnitPositionRect(this.m_actorRicman, gg_rct_video_the_chief_ricmans_position)
 			call SetUnitFacing(this.m_actorRicman, 299.92)
+			call UnitRemoveAbility(this.m_actorRicman, 'Aneu') // disable arrow
 
 			set this.m_actorNorseman0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n01I_0150))
 			call SetUnitPositionRect(this.m_actorNorseman0, gg_rct_video_the_chief_norseman_0)

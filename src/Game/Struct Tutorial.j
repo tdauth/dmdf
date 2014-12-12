@@ -1,4 +1,4 @@
-library StructGameTutorial requires Asl, StructGameCharacter
+library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoint
 
 	/**
 	 * Provides some functionality which helps players to find their way through the game.
@@ -111,8 +111,8 @@ library StructGameTutorial requires Asl, StructGameCharacter
 			call thistype.m_infos.pushBack(tr("Erlauben Sie Ihren Mitspielern die Kontrolle im Hauptmenü, damit diese Ihren Charakter steuern können."))
 
 			// time
-			call thistype.m_infos.pushBack(Format(tr("Getötete Gegner erscheinen, %1% Sekunden nachdem ihre gesamte Gruppe ausgelöscht wurde, automatisch wieder.")).i(R2I(ASpawnPoint.time())).result())
-			call thistype.m_infos.pushBack(Format(tr("Eingesammelte oder vernichtete Gegenstände erscheinen nach %1% Sekunden automatisch wieder.")).i(R2I(AItemSpawnPoint.time())).result())
+			call thistype.m_infos.pushBack(Format(tr("Getötete Gegner erscheinen, %1% Sekunden nachdem ihre gesamte Gruppe ausgelöscht wurde, automatisch wieder.")).i(R2I(SpawnPoint.respawnTime)).result())
+			call thistype.m_infos.pushBack(Format(tr("Eingesammelte oder vernichtete Gegenstände erscheinen nach %1% Sekunden automatisch wieder.")).i(R2I(ItemSpawnPoint.respawnTime)).result())
 			call thistype.m_infos.pushBack(Format(tr("Getötete Charaktere werden automatisch nach %1% Sekunden an ihrem aktivierten Schrein wiederbelebt. Dies wird in einem kleinen Fenster am oberen Bildschirmrand angezeigt.")).i(R2I(MapData.revivalTime)).result())
 
 			// optional
@@ -134,6 +134,20 @@ endif
 
 static if (DMDF_CHARACTER_MEMORY_ADMINISTRATION) then
 endif
+		endmethod
+		
+		/**
+		 * Prints a hint message to all players which have the tip system enabled.
+		 */
+		public static method printTip takes string tip returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (Character(Character.playerCharacter(Player(i))).tutorial().isEnabled()) then
+					call Character(Character.playerCharacter(Player(i))).displayHint(tip)
+				endif
+				set i = i + 1
+			endloop
 		endmethod
 	endstruct
 

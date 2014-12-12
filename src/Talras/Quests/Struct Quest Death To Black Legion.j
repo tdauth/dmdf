@@ -16,7 +16,7 @@ library StructMapQuestsQuestDeathToBlackLegion requires Asl
 			local thistype this = thistype.allocate(character, tr("Tod der schwarzen Legion"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNArthas.blp")
 			call this.setDescription(tr("Haldar, der Erzengel, möchte von dir, dass du die schwarze Legion, deren Anführer der Erzdämon Baldar, Haldars Bruder, ist, vernichtest."))
 			call this.setReward(AAbstractQuest.rewardExperience, 2000)
 			call this.setReward(AAbstractQuest.rewardSkillPoints, 1)

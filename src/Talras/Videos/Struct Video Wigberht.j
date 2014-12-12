@@ -26,6 +26,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			set this.m_actorRicman = thistype.saveUnitActor(gg_unit_n016_0016)
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_wigberht_ricmans_position)
 			call SetUnitFacing(thistype.unitActor(this.m_actorRicman), 342.35)
+			call UnitRemoveAbility(thistype.unitActor(this.m_actorRicman), 'Aneu') // disable arrow
 			debug call Print("Init 4")
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_wigberht_actors_position)
 			call SetUnitFacing(thistype.actor(), 206.90)
@@ -38,18 +39,21 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			// create farmers
 
 			// create corpses
-			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.alliedPlayer, UnitTypes.norseman, gg_rct_video_wigberht_corpse_0_position, GetRandomFacing()))
-			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.alliedPlayer, UnitTypes.norseman, gg_rct_video_wigberht_corpse_1_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(Player(7), UnitTypes.norseman, gg_rct_video_wigberht_corpse_0_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(Player(7), UnitTypes.norseman, gg_rct_video_wigberht_corpse_1_position, GetRandomFacing()))
+			
+			call thistype.setActorsOwner(Player(7)) // change player to make sure that units do not walk back!
 			debug call Print("Init 6")
 			// create orcs
-			set this.m_actorOrcLeader = CreateUnitAtRect(Game.hostilePlayer(), UnitTypes.orcLeader, gg_rct_video_wigberht_orc_leaders_position, 237.39)
-			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Game.hostilePlayer(), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_0, 308.79))
-			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Game.hostilePlayer(), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_1, 200.36))
-			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Game.hostilePlayer(), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_2, 327.94))
-			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Game.hostilePlayer(), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_3, 160.66))
-			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Game.hostilePlayer(), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_4, 250.86))
-			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Game.hostilePlayer(), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_5, 215.00))
+			set this.m_actorOrcLeader = CreateUnitAtRect(Player(8), UnitTypes.orcLeader, gg_rct_video_wigberht_orc_leaders_position, 237.39)
+			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Player(8), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_0, 308.79))
+			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Player(8), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_1, 200.36))
+			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Player(8), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_2, 327.94))
+			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Player(8), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_3, 160.66))
+			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Player(8), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_4, 250.86))
+			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(Player(8), UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_5, 215.00))
 			debug call Print("Init 7")
+			
 		endmethod
 
 		private static method setMoveSpeed takes unit whichUnit returns nothing

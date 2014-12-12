@@ -1,38 +1,40 @@
-library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
+library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpawnPoint
 
 	struct SpawnPoints
-		private static ASpawnPoint m_wolves0
-		private static ASpawnPoint m_wolves1
-		private static ASpawnPoint m_boars0
-		private static ASpawnPoint m_boars1
-		private static ASpawnPoint m_bears0
-		private static ASpawnPoint m_boars2
-		private static ASpawnPoint m_boars3
-		private static ASpawnPoint m_highwaymen0
-		private static ASpawnPoint m_highwaymen1
-		private static ASpawnPoint m_highwaymen2
-		private static ASpawnPoint m_deers0
-		private static ASpawnPoint m_ditchSpiders0
-		private static ASpawnPoint m_ditchSpiders1
-		private static ASpawnPoint m_box0
-		private static ASpawnPoint m_box1
-		private static ASpawnPoint m_box2
-		private static ASpawnPoint m_giants0
-		private static AItemSpawnPoint m_mushroom0
-		private static ASpawnPoint m_vampireLord0
-		private static ASpawnPoint m_vampires0
-		private static ASpawnPoint m_box3
-		private static ASpawnPoint m_undeadsWithKing
-		private static ASpawnPoint m_medusa
-		private static ASpawnPoint m_deathVault
-		private static ASpawnPoint m_deathAngel
-		private static ASpawnPoint m_boneDragons
-		private static ASpawnPoint m_giant
-		private static ASpawnPoint m_witch0
-		private static ASpawnPoint m_witch1
-		private static ASpawnPoint m_witch2
-		private static ASpawnPoint m_witches
-		private static ASpawnPoint m_wildCreatures
+		private static SpawnPoint m_wolves0
+		private static SpawnPoint m_wolves1
+		private static SpawnPoint m_boars0
+		private static SpawnPoint m_boars1
+		private static SpawnPoint m_bears0
+		private static SpawnPoint m_boars2
+		private static SpawnPoint m_boars3
+		private static SpawnPoint m_highwaymen0
+		private static SpawnPoint m_highwaymen1
+		private static SpawnPoint m_highwaymen2
+		private static SpawnPoint m_deers0
+		private static SpawnPoint m_ditchSpiders0
+		private static SpawnPoint m_ditchSpiders1
+		private static SpawnPoint m_box0
+		private static SpawnPoint m_box1
+		private static SpawnPoint m_box2
+		private static SpawnPoint m_giants0
+		private static ItemSpawnPoint m_mushroom0
+		private static SpawnPoint m_vampireLord0
+		private static SpawnPoint m_vampires0
+		private static SpawnPoint m_box3
+		private static SpawnPoint m_undeadsWithKing
+		private static SpawnPoint m_medusaBoxes
+		private static SpawnPoint m_medusa
+		private static SpawnPoint m_deathVault
+		private static SpawnPoint m_deathAngel
+		private static SpawnPoint m_boneDragons
+		private static SpawnPoint m_giant
+		private static SpawnPoint m_witch0
+		private static SpawnPoint m_witch1
+		private static SpawnPoint m_witch2
+		private static SpawnPoint m_witches
+		private static SpawnPoint m_wildCreatures
+		private static SpawnPoint m_orcs0
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -44,7 +46,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 		/// \todo change unit type
 		public static method init takes nothing returns nothing
 			local integer index
-			set thistype.m_wolves0 = ASpawnPoint.create()
+			set thistype.m_wolves0 = SpawnPoint.create()
 			set index = thistype.m_wolves0.addUnitWithType(gg_unit_n02G_0140, 1.0)
 			call thistype.m_wolves0.addItemType(index, 'I01I', 1.0)
 			set index = thistype.m_wolves0.addUnitWithType(gg_unit_n02F_0139, 1.0)
@@ -60,7 +62,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_wolves0.addUnitWithType(gg_unit_n02F_0123, 1.0)
 			call thistype.m_wolves0.addItemType(index, 'I01H', 1.0)
 
-			set thistype.m_wolves1 = ASpawnPoint.create()
+			set thistype.m_wolves1 = SpawnPoint.create()
 			set index = thistype.m_wolves1.addUnitWithType(gg_unit_n02F_0296, 1.0)
 			call thistype.m_wolves1.addItemType(index, 'I01I', 1.0)
 			set index = thistype.m_wolves1.addUnitWithType(gg_unit_n02F_0297, 1.0)
@@ -68,7 +70,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_wolves1.addUnitWithType(gg_unit_n02F_0277, 1.0)
 			call thistype.m_wolves1.addItemType(index, 'I01H', 1.0)
 
-			set thistype.m_boars0 = ASpawnPoint.create()
+			set thistype.m_boars0 = SpawnPoint.create()
 			set index = thistype.m_boars0.addUnitWithType(gg_unit_n002_0078, 1.0)
 			call thistype.m_boars0.addItemType(index, 'I007', 1.0)
 			set index = thistype.m_boars0.addUnitWithType(gg_unit_n002_0079, 1.0)
@@ -76,23 +78,23 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_boars0.addUnitWithType(gg_unit_n002_0080, 1.0)
 			call thistype.m_boars0.addItemType(index, 'I007', 1.0)
 
-			set thistype.m_boars1 = ASpawnPoint.create()
+			set thistype.m_boars1 = SpawnPoint.create()
 			set index = thistype.m_boars1.addUnitWithType(gg_unit_n002_0076, 1.0)
 			call thistype.m_boars1.addItemType(index, 'I007', 1.0)
 			set index = thistype.m_boars1.addUnitWithType(gg_unit_n002_0077, 1.0)
 			call thistype.m_boars1.addItemType(index, 'I007', 1.0)
 
-			set thistype.m_bears0 = ASpawnPoint.create()
+			set thistype.m_bears0 = SpawnPoint.create()
 			set index = thistype.m_bears0.addUnitWithType(gg_unit_n008_0121, 1.0)
 			call thistype.m_bears0.addItemType(index, 'I01J', 1.0)
 
-			set thistype.m_boars2 = ASpawnPoint.create()
+			set thistype.m_boars2 = SpawnPoint.create()
 			set index = thistype.m_boars2.addUnitWithType(gg_unit_n002_0122, 1.0)
 			call thistype.m_boars2.addItemType(index, 'I007', 1.0)
 			set index = thistype.m_boars2.addUnitWithType(gg_unit_n002_0124, 1.0)
 			call thistype.m_boars2.addItemType(index, 'I007', 1.0)
 
-			set thistype.m_boars3 = ASpawnPoint.create()
+			set thistype.m_boars3 = SpawnPoint.create()
 			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0276, 1.0)
 			call thistype.m_boars3.addItemType(index, 'I007', 1.0)
 			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0275, 1.0)
@@ -104,7 +106,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0272, 1.0)
 			call thistype.m_boars3.addItemType(index, 'I007', 1.0)
 
-			set thistype.m_highwaymen0 = ASpawnPoint.create()
+			set thistype.m_highwaymen0 = SpawnPoint.create()
 			set index = thistype.m_highwaymen0.addUnitWithType(gg_unit_n00T_0125, 1.0)
 			call thistype.m_highwaymen0.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen0.addItemType(index, 'I00T', 0.50)
@@ -115,7 +117,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			call thistype.m_highwaymen0.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen0.addItemType(index, 'I00T', 0.50)
 
-			set thistype.m_highwaymen1 = ASpawnPoint.create()
+			set thistype.m_highwaymen1 = SpawnPoint.create()
 			set index = thistype.m_highwaymen1.addUnitWithType(gg_unit_n00T_0126, 1.0)
 			call thistype.m_highwaymen1.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen1.addItemType(index, 'I00T', 0.50)
@@ -123,7 +125,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			call thistype.m_highwaymen1.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen1.addItemType(index, 'I00T', 0.50)
 
-			set thistype.m_highwaymen2 = ASpawnPoint.create()
+			set thistype.m_highwaymen2 = SpawnPoint.create()
 			set index = thistype.m_highwaymen2.addUnitWithType(gg_unit_n00T_0130, 1.0)
 			call thistype.m_highwaymen2.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen2.addItemType(index, 'I00T', 0.50)
@@ -131,7 +133,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			call thistype.m_highwaymen2.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen2.addItemType(index, 'I00T', 0.50)
 
-			set thistype.m_deers0 = ASpawnPoint.create()
+			set thistype.m_deers0 = SpawnPoint.create()
 			set index = thistype.m_deers0.addUnitWithType(gg_unit_n00V_0132, 1.0)
 			call thistype.m_deers0.addItemType(index, 'I00P', 1.0)
 			set index = thistype.m_deers0.addUnitWithType(gg_unit_n00V_0133, 1.0)
@@ -139,26 +141,26 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_deers0.addUnitWithType(gg_unit_n00V_0134, 1.0)
 			call thistype.m_deers0.addItemType(index, 'I00P', 1.0)
 
-			set thistype.m_ditchSpiders0 = ASpawnPoint.create()
+			set thistype.m_ditchSpiders0 = SpawnPoint.create()
 			set index = thistype.m_ditchSpiders0.addUnitWithType(gg_unit_n01E_0075, 1.0)
 
-			set thistype.m_ditchSpiders1 = ASpawnPoint.create()
+			set thistype.m_ditchSpiders1 = SpawnPoint.create()
 			set index = thistype.m_ditchSpiders1.addUnitWithType(gg_unit_n01E_0070, 1.0)
 			set index = thistype.m_ditchSpiders1.addUnitWithType(gg_unit_n01E_0074, 1.0)
 
-			set thistype.m_box0 = ASpawnPoint.create()
+			set thistype.m_box0 = SpawnPoint.create()
 			set index = thistype.m_box0.addUnitWithType(gg_unit_n02C_0059, 1.0)
 			call thistype.m_box0.addItemType(index, 'I00A', 1.0)
 
-			set thistype.m_box1 = ASpawnPoint.create()
+			set thistype.m_box1 = SpawnPoint.create()
 			set index = thistype.m_box1.addUnitWithType(gg_unit_n02C_0060, 1.0)
 			call thistype.m_box1.addItemType(index, 'I01G', 1.0)
 
-			set thistype.m_box2 = ASpawnPoint.create()
+			set thistype.m_box2 = SpawnPoint.create()
 			set index = thistype.m_box2.addUnitWithType(gg_unit_n02C_0061, 1.0)
 			call thistype.m_box2.addItemType(index, 'I00D', 1.0)
 
-			set thistype.m_giants0 = ASpawnPoint.create()
+			set thistype.m_giants0 = SpawnPoint.create()
 			set index = thistype.m_giants0.addUnitWithType(gg_unit_n02R_0035, 1.0)
 			call thistype.m_giants0.addItemType(index, 'I01Z', 1.0)
 			set index = thistype.m_giants0.addUnitWithType(gg_unit_n02R_0036, 1.0)
@@ -166,9 +168,9 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_giants0.addUnitWithType(gg_unit_n02R_0037, 1.0)
 			call thistype.m_giants0.addItemType(index, 'I01Z', 1.0)
 
-			set thistype.m_mushroom0 = AItemSpawnPoint.create(gg_item_I01K_0238, 1.0)
+			set thistype.m_mushroom0 = ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0238, 1.0)
 
-			set thistype.m_vampireLord0 = ASpawnPoint.create()
+			set thistype.m_vampireLord0 = SpawnPoint.create()
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n010_0110, 1.0)
 			call thistype.m_vampireLord0.addItemType(index, 'I013', 1.0)
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n00Z_0106, 1.0)
@@ -178,7 +180,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n00Z_0108, 1.0)
 			call thistype.m_vampireLord0.addItemType(index, 'I00G', 1.0)
 
-			set thistype.m_vampires0 = ASpawnPoint.create()
+			set thistype.m_vampires0 = SpawnPoint.create()
 			// vampires
 			set index = thistype.m_vampires0.addUnitWithType(gg_unit_n02L_0161, 1.0)
 			call thistype.m_vampires0.addItemType(index, 'I02I', 1.0)
@@ -199,7 +201,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_vampires0.addUnitWithType(gg_unit_n01O_0188, 1.0)
 			set index = thistype.m_vampires0.addUnitWithType(gg_unit_n01O_0189, 1.0)
 
-			set thistype.m_box3 = ASpawnPoint.create()
+			set thistype.m_box3 = SpawnPoint.create()
 			set index = thistype.m_box3.addUnitWithType(gg_unit_n02C_0236, 1.0)
 			call thistype.m_box3.addItemType(index, 'I01M', 1.0)
 			call thistype.m_box3.addItemType(index, 'I00A', 1.0)
@@ -207,7 +209,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			call thistype.m_box3.addItemType(index, 'I013', 1.0)
 			call thistype.m_box3.addItemType(index, 'I00D', 1.0)
 
-			set thistype.m_undeadsWithKing = ASpawnPoint.create()
+			set thistype.m_undeadsWithKing = SpawnPoint.create()
 			set index = thistype.m_undeadsWithKing.addUnitWithType(gg_unit_n01P_0068, 1.0)
 			call thistype.m_undeadsWithKing.addItemType(index, ItemTypes.swordOfDarkness().itemType(), 1.0)
 			set index = thistype.m_undeadsWithKing.addUnitWithType(gg_unit_n00Z_0067, 1.0)
@@ -247,22 +249,24 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_undeadsWithKing.addUnitWithType(gg_unit_n01O_0163, 1.0)
 			set index = thistype.m_undeadsWithKing.addUnitWithType(gg_unit_n01O_0165, 1.0)
 
-			set thistype.m_medusa = ASpawnPoint.create()
-			// boxes
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n02C_0281, 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n02C_0280, 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n02C_0282, 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n032_0268, 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n031_0279, 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n032_0278, 1.0)
+			// make boxes a separate spawn point, otherwise boxes might be left over
+			set thistype.m_medusaBoxes = SpawnPoint.create()
+			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n02C_0281, 1.0)
+			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n02C_0280, 1.0)
+			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n02C_0282, 1.0)
+			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n032_0268, 1.0)
+			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n031_0279, 1.0)
+			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n032_0278, 1.0)
+			
 			// units
+			set thistype.m_medusa = SpawnPoint.create()
 			set index = thistype.m_medusa.addUnitWithType(gg_unit_n033_0239, 1.0)
 			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0265, 1.0)
 			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0290, 1.0)
 			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0289, 1.0)
 			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0291, 1.0)
 
-			set thistype.m_deathVault = ASpawnPoint.create()
+			set thistype.m_deathVault = SpawnPoint.create()
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n035_0299, 1.0)
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n037_0301, 1.0)
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n03B_0302, 1.0)
@@ -292,33 +296,33 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n038_0327, 1.0)
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n038_0328, 1.0)
 
-			set thistype.m_deathAngel = ASpawnPoint.create()
+			set thistype.m_deathAngel = SpawnPoint.create()
 			set index = thistype.m_deathAngel.addUnitWithType(gg_unit_n02K_0160, 1.0)
 			set index = thistype.m_deathAngel.addUnitWithType(gg_unit_n00Y_0185, 1.0)
 			set index = thistype.m_deathAngel.addUnitWithType(gg_unit_n00Y_0184, 1.0)
 			set index = thistype.m_deathAngel.addUnitWithType(gg_unit_n00Y_0183, 1.0)
 
-			set thistype.m_boneDragons = ASpawnPoint.create()
+			set thistype.m_boneDragons = SpawnPoint.create()
 			set index = thistype.m_boneDragons.addUnitWithType(gg_unit_n024_0033, 1.0)
 			set index = thistype.m_boneDragons.addUnitWithType(gg_unit_n024_0032, 1.0)
 			set index = thistype.m_boneDragons.addUnitWithType(gg_unit_n024_0031, 1.0)
 
-			set thistype.m_giant = ASpawnPoint.create()
+			set thistype.m_giant = SpawnPoint.create()
 			set index = thistype.m_giant.addUnitWithType(gg_unit_n02R_0253, 1.0)
 
-			set thistype.m_witch0 = ASpawnPoint.create()
+			set thistype.m_witch0 = SpawnPoint.create()
 			set index = thistype.m_witch0.addUnitWithType(gg_unit_h00F_0242, 1.0)
 			call thistype.m_witch0.addItemType(index, 'I03E', 0.60)
 
-			set thistype.m_witch1 = ASpawnPoint.create()
+			set thistype.m_witch1 = SpawnPoint.create()
 			set index = thistype.m_witch1.addUnitWithType(gg_unit_h00F_0241, 1.0)
 			call thistype.m_witch1.addItemType(index, 'I03E', 0.60)
 
-			set thistype.m_witch2 = ASpawnPoint.create()
+			set thistype.m_witch2 = SpawnPoint.create()
 			set index = thistype.m_witch2.addUnitWithType(gg_unit_h00F_0244, 1.0)
 			call thistype.m_witch2.addItemType(index, 'I03E', 0.60)
 
-			set thistype.m_witches = ASpawnPoint.create()
+			set thistype.m_witches = SpawnPoint.create()
 			set index = thistype.m_witches.addUnitWithType(gg_unit_h00F_0246, 1.0)
 			call thistype.m_witches.addItemType(index, 'I00B', 1.0)
 			call thistype.m_witches.addItemType(index, 'I00C', 1.0)
@@ -335,10 +339,22 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			call thistype.m_witches.addItemType(index, 'I00F', 0.60)
 			call thistype.m_witches.addItemType(index, 'I03E', 0.60)
 
-			set thistype.m_wildCreatures = ASpawnPoint.create()
+			set thistype.m_wildCreatures = SpawnPoint.create()
 			set index = thistype.m_wildCreatures.addUnitWithType(gg_unit_n02Q_0402, 1.0)
 			set index = thistype.m_wildCreatures.addUnitWithType(gg_unit_n02Q_0404, 1.0)
 			set index = thistype.m_wildCreatures.addUnitWithType(gg_unit_n02Q_0403, 1.0)
+			
+			set thistype.m_orcs0 = SpawnPoint.create()
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01A_0221, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n019_0222, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n019_0224, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n019_0223, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01F_0229, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01G_0230, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01V_0321, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01G_0225, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01W_0323, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01X_0322, 1.0)
 		endmethod
 
 		public static method spawn takes nothing returns nothing
@@ -350,28 +366,37 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes
 			//call thistype.m_spawnPointBoars5.spawn()
 		endmethod
 
-		public static method vampireLord0 takes nothing returns ASpawnPoint
+		public static method vampireLord0 takes nothing returns SpawnPoint
 			return thistype.m_vampireLord0
 		endmethod
 
-		public static method vampires0 takes nothing returns ASpawnPoint
+		public static method vampires0 takes nothing returns SpawnPoint
 			return thistype.m_vampires0
 		endmethod
 
-		public static method medusa takes nothing returns ASpawnPoint
+		public static method medusa takes nothing returns SpawnPoint
 			return thistype.m_medusa
 		endmethod
 
-		public static method deathVault takes nothing returns ASpawnPoint
+		public static method deathVault takes nothing returns SpawnPoint
 			return thistype.m_deathVault
 		endmethod
 
-		public static method deathAngel takes nothing returns ASpawnPoint
+		public static method deathAngel takes nothing returns SpawnPoint
 			return thistype.m_deathAngel
 		endmethod
 
-		public static method boneDragons takes nothing returns ASpawnPoint
+		public static method boneDragons takes nothing returns SpawnPoint
 			return thistype.m_boneDragons
+		endmethod
+		
+		public static method orcs0 takes nothing returns SpawnPoint
+			return thistype.m_orcs0
+		endmethod
+		
+		public static method destroyOrcs0 takes nothing returns nothing
+			call thistype.m_orcs0.destroy()
+			set thistype.m_orcs0 = 0
 		endmethod
 	endstruct
 

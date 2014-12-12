@@ -26,8 +26,8 @@ library StructMapMapShrines requires Asl, StructGameShrine
 
 			set thistype.m_aosShrineNeutral = Shrine.create(gg_unit_n02D_0084, gg_dest_B008_8168, gg_rct_shrine_5_discover, gg_rct_shrine_5_revival, 90.0)
 
-			// Haldar
-			set thistype.m_aosShrineBaldar = Shrine.create(gg_unit_n02D_0085, gg_dest_B008_0354, gg_rct_shrine_1_discover, gg_rct_shrine_1_revival, 270.0)
+			set thistype.m_aosShrineHaldar = Shrine.create(gg_unit_n02D_0091, gg_dest_B008_2815, gg_rct_shrine_haldar_discover, gg_rct_shrine_haldar_revival, 230.61)
+			set thistype.m_aosShrineBaldar = Shrine.create(gg_unit_n02D_0085, gg_dest_B008_0354, gg_rct_shrine_baldar_discover, gg_rct_shrine_baldar_revival, 270.0)
 
 			set thistype.m_aosShrineOutside = Shrine.create(gg_unit_n02D_0082, gg_dest_B008_0363, gg_rct_shrine_2_discover, gg_rct_shrine_2_revival, 0.0)
 
