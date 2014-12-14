@@ -15,7 +15,7 @@ library StructMapQuestsQuestGoldForTheTradingPermission requires Asl
 		private static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, tr("Gold für die Handelserlaubnis"))
 			local AQuestItem questItem0
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
 			call this.setDescription(tr("Der Händler Haid darf seine Waren nicht in der Burg Talras verkaufen, da ihm die benötigte Handelsgenehmigung fehlt. Leider fehlen ihm die nötigen Goldmünzen, um sich beim Vogt eine solche Handelsgenehmigung zu erwerben."))
 			call this.setReward(thistype.rewardExperience, 400)
 			//item 0

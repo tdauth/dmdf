@@ -32,9 +32,9 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 			call info.talk().showRange(7, 8, character)
 		endmethod
 
-		// (Nachdem der Charakter mit Mathilda darüber gesprochen hat)
+		// (Nach Begrüßung und nachdem der Charakter mit Mathilda darüber gesprochen hat)
 		private static method infoCondition2 takes AInfo info, ACharacter character returns boolean
-			return TalkMathilda.talk().toldThatSleepingInBarn(character)
+			return info.talk().infoHasBeenShownToCharacter(0, character) and TalkMathilda.talk().toldThatSleepingInBarn(character)
 		endmethod
 
 		// Du lässt Mathilda in deiner Scheune pennen?

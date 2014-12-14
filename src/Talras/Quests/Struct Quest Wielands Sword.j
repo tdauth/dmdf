@@ -12,8 +12,8 @@ library StructMapQuestsQuestWielandsSword requires Asl
 			local thistype this = thistype.allocate(character, tr("Wielands Schwert"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
-			call this.setDescription(tr("Der Schmied Wieland aus Talras möchte, dass du für ihn herausfindest, wie viel der Waffenhändler Einar für das von Wieland gertigte Schwert verlangt."))
+			call this.setIconPath("Icons\\Items\\BTNLongsword.blp")
+			call this.setDescription(tr("Der Schmied Wieland aus Talras möchte, dass du für ihn herausfindest, wie viel der Waffenhändler Einar für das von Wieland gefertigte Schwert verlangt."))
 			call this.setReward(AAbstractQuest.rewardExperience, 300)
 			// item 0
 			set questItem0 = AQuestItem.create(this, tr("Finde heraus, wie viel Einar für das Schwert verlangt."))

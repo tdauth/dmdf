@@ -42,7 +42,7 @@ library StructMapQuestsQuestTheKingsCrown requires Asl
 			local thistype this = thistype.allocate(character, tr("Des Königs Krone"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("Icons\\Creatures\\Undeads\\BTNSkeletonKing.blp")
 			call this.setDescription(tr("Der Schmied Wieland aus Talras möchte, dass du den König der Untoten findest und ihm seine Krone abnimmst. Wieland möchte sie seinem Sohn schenken, sobald dieser vom Kriegsdienst zurückkehrt."))
 			call this.setReward(AAbstractQuest.rewardExperience, 800)
 			call this.setReward(AAbstractQuest.rewardGold, 200)

@@ -68,7 +68,9 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			call speech(info, character, true, tr("Für jeden Sieg bekommst du ein paar Goldmünzen. Wenn du jedoch öfter als fünfmal gewinnst, erhältst du einen besonderen Preis."), null)
 			call speech(info, character, true, tr("Allerdings will ich noch nicht verraten, um was genau es sich dabei handelt. Mitmachen lohnt sich aber auf jeden Fall!"), null)
 			call speech(info, character, true, tr("Ach ja, den Preis gibt es natürlich nur einmal für jeden, der das schafft. Sonst werde ich ja noch arm (Lacht)."), null)
-			call QuestArenaChampion.characterQuest(character).enable()
+			if (QuestArenaChampion.characterQuest(character).isNotUsed()) then
+				call QuestArenaChampion.characterQuest(character).enable()
+			endif
 			call info.talk().showStartPage(character)
 		endmethod
 

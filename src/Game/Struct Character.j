@@ -27,11 +27,13 @@ endif
 static if (DMDF_TRADE) then
 		private Trade m_trade
 endif
+		private AIntegerVector m_classSpells /// Only \ref Spell instances not \ref ASpell instances!
+
 		private trigger m_workerTrigger
-		private integer m_morphAbilityId
-		private trigger m_revivalTrigger
 		private AIntegerVector m_heroIcons
 		private unit m_worker
+		private integer m_morphAbilityId
+		private boolean m_isMorphed
 
 		// dynamic members
 
@@ -145,6 +147,18 @@ else
 			return 0
 endif
 		endmethod
+		
+		public method addClassSpell takes Spell spell returns nothing
+			call this.m_classSpells.pushBack(spell)
+		endmethod
+		
+		/**
+		 * Since \ref ACharacter.spells() contains all spells belonging to the character it includes non class spells such as
+		 * "Grimoire" or "Add to Favorites". This container stores only class spells which should be listed in the grimoire for example.
+		 */
+		public method classSpells takes nothing returns AIntegerVector
+			return this.m_classSpells
+		endmethod
 
 		/**
 		* Shows characters scheme to characer's player if enabled.
@@ -176,10 +190,6 @@ endif
 			set this.m_showCharactersScheme = showCharactersScheme
 			call this.showCharactersSchemeToPlayer()
 		endmethod
-
-		public method morphAbilityId takes nothing returns integer
-			return this.m_morphAbilityId
-		endmethod
 		
 		/**
 		 * \return Returns the stored hash table with ability id - level pairs (parent key - 0, child key - ability id, value - level).
@@ -188,17 +198,24 @@ endif
 		public method realSpellLevels takes nothing returns AHashTable
 			return AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels"))
 		endmethod
+		
+		public method isMorphed takes nothing returns boolean
+			return this.m_isMorphed
+		endmethod
 
 		/**
 		 * Restores spells and inventory of the character after he has been morphed into another creature with other abilities and without inventory.
 		 * \note Has to be called just after the character's unit restores from morphing.
 		 */
-		public method restoreUnit takes nothing returns nothing
+		public method restoreUnit takes integer abilityId returns boolean
 			if (not DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
 				debug call Print("Has not been morphed before!")
-				return
+				return false
 			endif
-			call DisableTrigger(this.m_revivalTrigger)
+			if (abilityId != this.m_morphAbilityId) then
+				debug call Print("Restoring from ability " + GetAbilityName(abilityId) + " while being morphed with ability " + GetAbilityName(this.m_morphAbilityId))
+				return false
+			endif
 			debug call Print("Readding spell levels")
 			call this.grimoire().readd.evaluate(this.realSpellLevels())
 			call this.realSpellLevels().destroy()
@@ -206,6 +223,11 @@ endif
 			debug call Print("Enabling inventory again")
 			call this.inventory().setEnableAgain(true)
 			call this.inventory().enable()
+			debug call Print("Restoring Grimoire UI")
+			call this.grimoire().updateUi.evaluate()
+			set this.m_isMorphed = false
+			
+			return true
 		endmethod
 
 		/**
@@ -214,7 +236,13 @@ endif
 		* \note Has to be called just before the character's unit morphes.
 		* \param abilityId Id of the ability which has to be casted to morph the character.
 		*/
-		public method morph takes integer abilityId returns nothing
+		public method morph takes integer abilityId returns boolean
+			if (this.isMorphed()) then
+				debug call Print("Morphing with ability: " + GetAbilityName(abilityId) + " is already morphed.")
+			
+				return false
+			endif
+		
 			if (DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
 				call AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
 			endif
@@ -231,9 +259,10 @@ endif
 			debug call Print("Disabling inventory")
 			// Should remove but store all items.
 			call this.inventory().disable()
+			set this.m_isMorphed = true
 			set this.m_morphAbilityId = abilityId
-			// The revival trigger takes care of reviving the correct morphed unit.
-			call EnableTrigger(this.m_revivalTrigger)
+			
+			return true
 		endmethod
 
 		private method displayQuestMessage takes integer messageType, string message returns nothing
@@ -358,31 +387,6 @@ endif
 			call DmdfHashTable.global().setHandleInteger(this.m_workerTrigger, "this", this)
 		endmethod
 
-		private static method triggerActionMorphAgain takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			local Spell spell = this.spellByAbilityId(this.morphAbilityId()) // not in grimoire!
-			if (spell == 0) then
-				debug call Print("Error: No morph spell has been found.")
-				return
-			endif
-			call spell.disable()
-			debug call Print("Unit type name " + GetObjectName(GetUnitTypeId(GetTriggerUnit())))
-			call UnitAddAbility(this.unit(), this.morphAbilityId())
-			call IssueImmediateOrderById(this.unit(), this.morphAbilityId())
-			debug call Print("Unit type name " + GetObjectName(GetUnitTypeId(GetTriggerUnit())))
-			debug call Print("Has been revived, ordering ability: " + GetObjectName(this.morphAbilityId()))
-			debug call Print("Order id of Baldars Ring (based on string) is " + I2S(OrderId("metamorphosis")) + " ")
-			call spell.enable()
-		endmethod
-
-		private method createRevivalTrigger takes nothing returns nothing
-			set this.m_revivalTrigger = CreateTrigger()
-			call TriggerRegisterUnitEvent(this.m_revivalTrigger, this.unit(), EVENT_UNIT_HERO_REVIVE_FINISH)
-			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionMorphAgain)
-			call DmdfHashTable.global().setHandleInteger(this.m_revivalTrigger, "this", this)
-			call DisableTrigger(this.m_revivalTrigger)
-		endmethod
-
 		public static method create takes player whichPlayer, unit whichUnit returns thistype
 			local thistype this = thistype.allocate(whichPlayer, whichUnit)
 			// dynamic members
@@ -409,9 +413,10 @@ endif
 static if (DMDF_TRADE) then
 			set this.m_trade = Trade.create.evaluate(this)
 endif
+			set this.m_classSpells = AIntegerVector.create()
 			set this.m_heroIcons = 0
 			call this.createWorkerTrigger()
-			call this.createRevivalTrigger()
+			set this.m_isMorphed = false
 
 			return this
 		endmethod
@@ -453,10 +458,10 @@ endif
 static if (DMDF_TRADE) then
 			call this.m_trade.destroy.evaluate()
 endif
+			call this.m_classSpells.destroy()
+			set this.m_classSpells = 0
 			call this.destroyHeroIcons()
 			call this.destroyWorkerTrigger()
-			call DmdfHashTable.global().destroyTrigger(this.m_revivalTrigger)
-			set this.m_revivalTrigger = null
 		endmethod
 
 		public static method createHeroIconsForAll takes nothing returns nothing

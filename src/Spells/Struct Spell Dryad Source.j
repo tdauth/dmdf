@@ -12,7 +12,7 @@ library StructSpellsSpellDryadSource requires Asl, StructGameClasses, StructGame
 			call this.addGrimoireEntry('A0CW', 'A0CU')
 			call this.addGrimoireEntry('A0CX', 'A0D0')
 			call this.addGrimoireEntry('A0CY', 'A0D1')
-			call this.addGrimoireEntry('A0D2', 'A0CZ')
+			call this.addGrimoireEntry('A0CZ', 'A0D2')
 			
 			return this
 		endmethod

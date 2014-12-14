@@ -54,19 +54,39 @@ library StructGameItemTypes requires Asl, StructGameClasses
 	
 	struct RangeItemType extends ItemType
 	
+		public static method createSimpleRange takes integer itemType, integer equipmentType returns thistype
+			return thistype.allocate(itemType, equipmentType, 0, 0, 0, 0, 0)
+		endmethod
+	
+		// Attack Throw 6
+		// Attack Throw 7
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Range item attach")
-			call AddUnitAnimationProperties(whichUnit, "Throw", true)
+			call AddUnitAnimationProperties(whichUnit, "Throw 7", true)
+			
+			call SetPlayerTechResearched(GetOwningPlayer(whichUnit), MapData.meleeResearchId, 0)
+			call SetPlayerTechMaxAllowed(GetOwningPlayer(whichUnit), MapData.meleeResearchId, 0)
+			call SetPlayerTechMaxAllowed(GetOwningPlayer(whichUnit), MapData.rangeResearchId, 1)
+			call SetPlayerTechResearched(GetOwningPlayer(whichUnit), MapData.rangeResearchId, 1)
 		endmethod
 		
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Range item drop")
-			call AddUnitAnimationProperties(whichUnit, "Throw", false)
+			call AddUnitAnimationProperties(whichUnit, "Throw 7", false)
+
+			call SetPlayerTechResearched(GetOwningPlayer(whichUnit), MapData.rangeResearchId, 0)
+			call SetPlayerTechMaxAllowed(GetOwningPlayer(whichUnit), MapData.rangeResearchId, 0)
+			call SetPlayerTechMaxAllowed(GetOwningPlayer(whichUnit), MapData.meleeResearchId, 1)
+			call SetPlayerTechResearched(GetOwningPlayer(whichUnit), MapData.meleeResearchId, 1)
 		endmethod
 
 	endstruct
 	
 	struct DefenceItemType extends ItemType
+	
+		public static method createSimpleDefence takes integer itemType, integer equipmentType returns thistype
+			return thistype.allocate(itemType, equipmentType, 0, 0, 0, 0, 0)
+		endmethod
 	
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Defend item attach")
@@ -81,6 +101,17 @@ library StructGameItemTypes requires Asl, StructGameClasses
 	endstruct
 	
 	struct MeleeItemType extends ItemType
+	
+		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
+			debug call Print("Melee item attach")
+			//call AddUnitAnimationProperties(whichUnit, "Throw", true)
+		endmethod
+		
+		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
+			debug call Print("Melee item drop")
+			//call AddUnitAnimationProperties(whichUnit, "Throw", false)
+			//call SetPlayerTechResearched(GetOwningPlayer(whichUnit), 'R007', 0)
+		endmethod
 	endstruct
 
 	/// Do not add usable abilities, only permanents!
@@ -165,7 +196,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			set thistype.m_vassalLance = ItemType.createSimple('I00K', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_vassalLance.addAbility('A02G', true)
 
-			set thistype.m_ricmansShield = ItemType.createSimple('I00M', AItemType.equipmentTypeSecondaryWeapon)
+			set thistype.m_ricmansShield = DefenceItemType.createSimpleDefence('I00M', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_ricmansShield.addAbility('A02K', true)
 			call thistype.m_ricmansShield.addAbility('AIs6', true)
 
@@ -188,28 +219,28 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			call thistype.m_staffOfWizard.addAbility('A02N', false)
 			call thistype.m_staffOfWizard.addAbility('AIi6', true)
 
-			set thistype.m_expandedShield = ItemType.create('I006', AItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
+			set thistype.m_expandedShield = DefenceItemType.createSimpleDefence('I006', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_expandedShield.addAbility('A01S', true)
 
 			set thistype.m_axe = ItemType.create('I00Q', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_axe.addAbility('A02P', true)
 
-			set thistype.m_woodenShield = ItemType.create('I005', AItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
+			set thistype.m_woodenShield = DefenceItemType.createSimpleDefence('I005', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_woodenShield.addAbility('A01T', true)
 
-			set thistype.m_lightWoodenShield = ItemType.create('I00N', AItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
+			set thistype.m_lightWoodenShield = DefenceItemType.createSimpleDefence('I00N', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_lightWoodenShield.addAbility('A02M', true)
 
 			set thistype.m_protectionRing = ItemType.create('I00W', AItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
 			call thistype.m_protectionRing.addAbility('AId3', true)
 
-			set thistype.m_heavyWoodenShield = ItemType.create('I00O', AItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
+			set thistype.m_heavyWoodenShield = DefenceItemType.createSimpleDefence('I00O', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_heavyWoodenShield.addAbility('A016', true)
 
 			set thistype.m_staff = ItemType.create('I003', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_staff.addAbility('A02L', true)
 
-			set thistype.m_vassalShield = ItemType.create('I00Y', AItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
+			set thistype.m_vassalShield = DefenceItemType.createSimpleDefence('I00Y', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_vassalShield.addAbility('A049', true)
 
 			set thistype.m_mace = ItemType.create('I011', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
@@ -246,7 +277,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			call thistype.m_magicRing.addAbility('AIi3', true)
 
 			/// \todo two-handed
-			set thistype.m_bonesBow = ItemType.createSimple('I013', AItemType.equipmentTypePrimaryWeapon)
+			set thistype.m_bonesBow = RangeItemType.createSimpleRange('I013', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_bonesBow.addAbility('A07M', true)
 
 			set thistype.m_torch = ItemType.createSimple('I02G', AItemType.equipmentTypePrimaryWeapon)
@@ -306,10 +337,10 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			call thistype.m_hood.addAbility('A04N', true)
 			call thistype.m_hood.addAbility('S003', true)
 
-			set thistype.m_huntingBow = ItemType.createSimple('I020', AItemType.equipmentTypePrimaryWeapon)
+			set thistype.m_huntingBow = RangeItemType.createSimpleRange('I020', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_huntingBow.addAbility('A07N', true)
 
-			set thistype.m_longBow = ItemType.createSimple('I021', AItemType.equipmentTypePrimaryWeapon)
+			set thistype.m_longBow = RangeItemType.createSimpleRange('I021', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_longBow.addAbility('A07O', true)
 			call thistype.m_longBow.addAbility('A07P', true)
 

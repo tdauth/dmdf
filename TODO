@@ -39,7 +39,7 @@
 * In Videos alle Handelsfähigkeiten deaktivieren (Schlachtvideo am Ende)
 * FIXED: Weniger Wellen im letzten Auftrag?
 * FIXED: Leaderboard im letzten Auftrag: dunkle Schrift heller machen
-* Einheiten von neutral passiv laufen in Video zurück! Anderen Spieler für Videocharaktere!!!
+* FIXED: Einheiten von neutral passiv laufen in Video zurück! Anderen Spieler für Videocharaktere!!!
 * Letzter Auftrag, statt pan eventuell Videosequenz, die das Spiel unterbricht und die Ansicht danach wiederherstellt.
 * Schlachten im letzten Auftrag in Videos fixen. Einheiten müssen gegeneinander kämpfen.
 * Nach letzter Schlacht Wigberht und Ricman vollständig heilen, Nordmanner wieder im Lager platzieren!
@@ -67,6 +67,20 @@
 * anstatt Items gleich zu verteilen einfach das Item n mal droppen?
 * Ankunfts und Tageszeitevents in ARoutine überprüfen. Manchmal kommt Sisgard nicht aus dem Haus, wenn die Tageszeit nach 5 Uhr wird.
 * Spawn Point im Orklager: Einheiten im letzten Quest entfernen vor der Schlacht!
+* Bei "Zauberstufe erhöhen" ist schon das Icon des Zaubers verschwunden. Vermutlich weil einzelne Fähigkeiten nicht absorb sind oder grimoire entries fehlen. IDs im Grimoire Entry waren vertauscht.
+* Alle Zauberbuchfähigkeiten müssen "absorb" sein.
+* FIXED: Zauberbuchfähigkeit Stufen geben und je nach Skillpoints auf Stufe setzen!
+* Immediate stop bricht Zauberbuch hinzufügen etc. ab?!
+* Tool schreiben dass die MMP-Datei der Minimap nimmt, ein Gebiet ausschneidet und ein Bild mit einer bestimmten Größe daraus erzeugt.
+* Diakon lebt nach Video in dem er umgebracht wurde wieder?!
+* Drachentöterin wurde nach Medusavideo entfernt, ist nicht unsterblich?!
+* Ursula: Dialog einbauen falls man Druide ist!
+* Geisterstunde: Hinweis sollte erscheinen wenn man zur Mühle geht. Nichts erkennbar! Außerdem Hinweis einblenden wenn man die Mitte des AOS betritt und Questziel abschließen.
+* removeItemType() funktioniert nicht, haben eine oder keine Aufladung aber verschwinden nicht.
+* Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen!
+* Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
+* Schwert- und Schildhand vertauschen, damit Animation für Schild stimmt.
+* AOS-Verwandlung stürtzt ab da ja das Item während des Ausführens der Fähigkeit entfernt wird.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

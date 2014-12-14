@@ -1,25 +1,40 @@
 /// Druid
-library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis
+library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis, StructSpellsSpellAlpha
 
-	struct SpellCrowForm extends SpellMetamorphosis
-		public static constant integer abilityId = 'A091'
-		public static constant integer favouriteAbilityId = 'A092'
-		public static constant integer maxLevel = 5
-		private static constant integer manaAbilityId = 'A093'
-		private static constant integer armorAbilityId = 'A094'
+	struct SpellCrowFormMetamorphosis extends SpellMetamorphosis
 
 		public stub method onMorph takes nothing returns nothing
 			local integer level
+			local integer alphaLevel = 0
 			call super.onMorph()
-			set level = Character(this.character()).realSpellLevels().integerByInteger(0, thistype.abilityId)
+			set level = Character(this.character()).realSpellLevels().integerByInteger(0, SpellCrowForm.abilityId)
 			debug call Print("Crow Form: Morph! Level: " + I2S(level))
-			call SetUnitAbilityLevel(this.character().unit(), thistype.manaAbilityId, level)
-			call SetUnitAbilityLevel(this.character().unit(), thistype.armorAbilityId, level)
+			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.manaAbilityId, level)
+			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.armorAbilityId, level)
+			
+			set alphaLevel =  Character(this.character()).realSpellLevels().integerByInteger(0, SpellAlpha.abilityId)
+			debug call Print("Crow Form: Alpha Level: " + I2S(level))
+			
+			if (alphaLevel > 0) then
+				debug call Print("Adding Alpha spell since Alpha is skilled: " + GetAbilityName(SpellAlpha.castAbilityId))
+				call UnitAddAbility(this.character().unit(), SpellAlpha.castAbilityId)
+			endif
 		endmethod
+		
+	endstruct
+
+	struct SpellCrowForm extends Spell
+		public static constant integer abilityId = 'A091'
+		public static constant integer favouriteAbilityId = 'A092'
+		public static constant integer maxLevel = 5
+		public static constant integer manaAbilityId = 'A093'
+		public static constant integer armorAbilityId = 'A094'
+		private SpellCrowFormMetamorphosis m_metamorphosis
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
-			call this.setUnitTypeId('H00G')
+			set this.m_metamorphosis = SpellCrowFormMetamorphosis.create(character, thistype.abilityId)
+			call this.m_metamorphosis.setUnitTypeId('H00H')
 			call this.addGrimoireEntry('A0CH', 'A0CI')
 			call this.addGrimoireEntry('A0CJ', 'A0CN')
 			call this.addGrimoireEntry('A0CK', 'A0CO')
@@ -27,6 +42,11 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			call this.addGrimoireEntry('A0CP', 'A0CM')
 
 			return this
+		endmethod
+		
+		public method onDestroy takes nothing returns nothing
+			call this.m_metamorphosis.destroy()
+			set this.m_metamorphosis = 0
 		endmethod
 	endstruct
 

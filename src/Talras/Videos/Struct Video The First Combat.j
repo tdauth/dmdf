@@ -18,6 +18,10 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call PlayThematicMusic("Music\\TheFirstCombat.mp3")
 			call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_0, true, 0.0)
+			
+			call SetPlayerAllianceStateBJ(MapData.haldarPlayer, MapData.baldarPlayer, bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(MapData.baldarPlayer, MapData.haldarPlayer, bj_ALLIANCE_UNALLIED)
+			
 			set this.m_firstActorGroup = CreateGroup()
 			set this.m_firstAllyGroup = CreateGroup()
 			// Wigberht, 0
@@ -69,84 +73,84 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n01I_0153)
 
 			call AVideo.setActorsMoveSpeed(200.0) // gleich schnell für normale Bewegung
-			call thistype.setActorsOwner(Player(7)) // change player to make sure that units do not walk back!
+			call thistype.setActorsOwner(MapData.haldarPlayer) // change player to make sure that units do not walk back!
 			//orcs and dark elves
 			set this.m_secondActorGroup = CreateGroup()
 			set this.m_firstEnemyGroup = CreateGroup()
 			//orc leader, 6
-			set createdUnit = CreateUnitAtRect(Player(8), 'n01F', gg_rct_video_the_first_combat_orc_leader, 107.04)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01F', gg_rct_video_the_first_combat_orc_leader, 107.04)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(6))
 			//orc 0, 7 - Armbrustschütze
-			set createdUnit = CreateUnitAtRect(Player(8), 'n01A', gg_rct_video_the_first_combat_orc_0, 56.55)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01A', gg_rct_video_the_first_combat_orc_0, 56.55)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(7))
 			//orc 1, 8 - Hexer
-			set createdUnit = CreateUnitAtRect(Player(8), 'n018', gg_rct_video_the_first_combat_orc_1, 224.73)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n018', gg_rct_video_the_first_combat_orc_1, 224.73)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(8))
 			//orc 2, 9 - Krieger
-			set createdUnit = CreateUnitAtRect(Player(8), 'n019', gg_rct_video_the_first_combat_orc_2, 139.98)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n019', gg_rct_video_the_first_combat_orc_2, 139.98)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(9))
 			//orc 3, 10 - Krieger
-			set createdUnit = CreateUnitAtRect(Player(8), 'n019', gg_rct_video_the_first_combat_orc_3, 25.90)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n019', gg_rct_video_the_first_combat_orc_3, 25.90)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(10))
 			//orc 4, 11 - Armbrustschütze
-			set createdUnit = CreateUnitAtRect(Player(8), 'n01A', gg_rct_video_the_first_combat_orc_4, 125.81)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01A', gg_rct_video_the_first_combat_orc_4, 125.81)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(11))
 			//orc 5, 12 - Berserkerin
-			set createdUnit = CreateUnitAtRect(Player(8), 'n01G', gg_rct_video_the_first_combat_orc_5, 331.54)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01G', gg_rct_video_the_first_combat_orc_5, 331.54)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(12))
 			//orc 6, 13 - Armbrustschütze
-			set createdUnit = CreateUnitAtRect(Player(8), 'n01A', gg_rct_video_the_first_combat_orc_6, 297.26)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01A', gg_rct_video_the_first_combat_orc_6, 297.26)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(13))
 			//orc 7, 14 - Krieger
-			set createdUnit = CreateUnitAtRect(Player(8), 'n019', gg_rct_video_the_first_combat_orc_7, 267.69)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n019', gg_rct_video_the_first_combat_orc_7, 267.69)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(14))
 			//dark elf 0, 15 - Waldgeist (männlich)
-			set createdUnit = CreateUnitAtRect(Player(8), 'n01W', gg_rct_video_the_first_combat_dark_elf_0, 316.95)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01W', gg_rct_video_the_first_combat_dark_elf_0, 316.95)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(15))
 			//dark elf 1, 16 - Botin
-			set createdUnit = CreateUnitAtRect(Player(8), 'n01V', gg_rct_video_the_first_combat_dark_elf_1, 99.77)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01V', gg_rct_video_the_first_combat_dark_elf_1, 99.77)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(16))
 			//dark elf 2, 17 - Satyr
-			set createdUnit = CreateUnitAtRect(Player(8), 'n02O', gg_rct_video_the_first_combat_dark_elf_2, 240.36)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n02O', gg_rct_video_the_first_combat_dark_elf_2, 240.36)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
 			call GroupAddUnit(this.m_secondActorGroup, AVideo.unitActor(17))
 			//dark elf 3, 18 - Waldgeist (weiblich)
-			set createdUnit = CreateUnitAtRect(Player(8), 'n01X', gg_rct_video_the_first_combat_dark_elf_3, 17.00)
+			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01X', gg_rct_video_the_first_combat_dark_elf_3, 17.00)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
 			call AVideo.saveUnitActor(createdUnit)
 			set createdUnit = null
@@ -247,7 +251,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 				return
 			endif
 			call thistype.setActorsMoveSpeed(200.0)
-			call GroupPointOrder(this.m_firstActorGroup, "move", GetRectCenterX(gg_rct_video_the_first_combat_battle_field), GetRectCenterY(gg_rct_video_the_first_combat_battle_field))
+			call GroupPointOrder(this.m_firstActorGroup, "attack", GetRectCenterX(gg_rct_video_the_first_combat_battle_field), GetRectCenterY(gg_rct_video_the_first_combat_battle_field))
 			if (wait(1.0)) then
 				return
 			endif
@@ -256,7 +260,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			if (wait(3.0)) then
 				return
 			endif
-			call GroupPointOrder(this.m_secondActorGroup, "move", GetRectCenterX(gg_rct_video_the_first_combat_battle_field), GetRectCenterY(gg_rct_video_the_first_combat_battle_field))
+			call GroupPointOrder(this.m_secondActorGroup, "attack", GetRectCenterX(gg_rct_video_the_first_combat_battle_field), GetRectCenterY(gg_rct_video_the_first_combat_battle_field))
 			if (wait(2.0)) then
 				return
 			endif

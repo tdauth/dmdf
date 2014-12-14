@@ -46,7 +46,7 @@ library StructMapQuestsQuestTheOaksPower requires Asl
 			local thistype this = thistype.allocate(character, tr("Die Kraft der Eiche"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNTreeOfEternity.blp")
 			call this.setDescription(tr("Ursula möchte, dass du die Seele einer wilden Kreatur unter einer alten Eiche einfängst und sie ihr bringst, damit sie wilden Kreaturen, die sich seit Neustem bei der Eiche aufhalten verstehen lernen kann. Dazu hat sie dir ein Totem mitgegeben, mit welchem du die Seele einfangen kannst."))
 			call this.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted)
 			call this.setReward(AAbstractQuest.rewardExperience, 500)

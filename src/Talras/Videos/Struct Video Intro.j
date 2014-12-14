@@ -48,7 +48,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Doch auch das einfachere Volk sahen in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen."), null)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Doch auch das einfachere Volk sah in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then // wait until "So kämpften die einen dafür ..."
 				return
 			endif
@@ -78,7 +78,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("… während die anderen den eigenen Vorteil aus der Furcht der Beteiligten zogen."), null)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("… während die anderen den eigenen Vorteil aus der Sache zogen."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then // wait until end
 				return
 			endif
@@ -92,7 +92,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(2.0)) then
 				return
 			endif
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich, wie so viele, von der feindlichen Übermacht enorm bedroht fühlt."), null)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich wie viele andere Adelige von der feindlichen Übermacht bedroht fühlt."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif

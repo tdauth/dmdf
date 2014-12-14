@@ -26,7 +26,7 @@ library StructMapQuestsQuestWitchingHour requires Asl, StructMapMapNpcs
 		private static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, tr("Geisterstunde"))
 			local AQuestItem questItem
-			call this.setIconPath("") /// \todo FIXME
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNGhostOfKelThuzad.blp")
 			call this.setDescription(tr("Der Müller Guntrich traut sich nicht mehr zu seiner Mühle auf dem Berg nahe des Bauernhofs, da es dort seiner Meinung nach spukt."))
 			//800 Erfahrung, 30 Goldmünzen, 3 Brotlaibe, 1 Zauberpunkt
 			call this.setReward(thistype.rewardExperience, 800)

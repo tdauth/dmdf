@@ -63,7 +63,7 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// (Auftragsziel 1 des Auftrags „Ein kleines Geschenk“ ist abgeschlossen, Auftrag ist noch aktiv)
 		private static method infoCondition4 takes AInfo info, ACharacter character returns boolean
-			return QuestALittlePresent.characterQuest(character).questItem(0).isCompleted() and QuestALittlePresent(QuestTheBeast.characterQuest(character)).isNew()
+			return QuestALittlePresent.characterQuest(character).questItem(0).isCompleted() and QuestALittlePresent(QuestTheBeast.characterQuest(character)).questItem(1).isNew()
 		endmethod
 
 		// Ich habe Mathilda deinen Honigtopf gegeben.
@@ -81,7 +81,7 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// (Auftragsziel 1 des Auftrags „Ein großes Geschenk“ ist abgeschlossen, Auftrag ist noch aktiv)
 		private static method infoCondition5 takes AInfo info, ACharacter character returns boolean
-			return QuestABigPresent.characterQuest(character).questItem(0).isCompleted() and QuestABigPresent.characterQuest(character).isNew()
+			return QuestABigPresent.characterQuest(character).questItem(0).isCompleted() and QuestABigPresent.characterQuest(character).questItem(1).isNew()
 		endmethod
 
 		// Ich habe Mathilda deinen großen Honigtopf gegeben.

@@ -12,7 +12,7 @@ library StructMapQuestsQuestThePaedophilliacCleric requires Asl
 			local thistype this = thistype.allocate(character, tr("Der pädophile Kleriker"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNVillagerKid.blp")
 			call this.setDescription(tr("Osman, der Burgkleriker, war wohl von deiner überaus menschlichen Art nicht so ganz begeistert. Er will sich beim Herzog über dich beschweren, was nicht unbedingt gute Folgen für dich hätte, da du ja sozusagen für ihn arbeiten möchtest."))
 			// item 0
 			set questItem0 = AQuestItem.create(this, tr("Schwärze Osman beim Herzog an."))

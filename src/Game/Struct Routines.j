@@ -79,7 +79,7 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		private static method moveToTargetAction takes NpcRoutineWithFacing period returns nothing
-			debug call Print("Unit " + GetUnitName(period.unit()) + " gets new facing in target.")
+			//debug call Print("Unit " + GetUnitName(period.unit()) + " gets new facing in target.")
 			call IssueImmediateOrder(period.unit(), "stop")
 			call SetUnitFacing(period.unit(), period.facing())
 		endmethod
@@ -98,14 +98,14 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		private static method enterHouseTargetAction takes ARoutinePeriod period returns nothing
-			debug call Print("Unit " + GetUnitName(period.unit()) + " enters house.")
+			//debug call Print("Unit " + GetUnitName(period.unit()) + " enters house.")
 			call ShowUnit(period.unit(), false)
-			debug call Print("After entering house")
-			debug if (IsUnitHidden(period.unit())) then
-			debug call Print("It is hidden")
-			debug else
-			debug call Print("It is not hidden")
-			debug endif
+			//debug call Print("After entering house")
+			//debug if (IsUnitHidden(period.unit())) then
+			//debug call Print("It is hidden")
+			//debug else
+			//debug call Print("It is not hidden")
+			//debug endif
 		endmethod
 
 		private static method leaveHouseCondition takes NpcLeavesHouseRoutine period returns boolean
@@ -113,7 +113,7 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		private static method leaveHouseTargetAction takes NpcLeavesHouseRoutine period returns nothing
-			debug call Print("Unit " + GetUnitName(period.unit()) + " leaves house.")
+			//debug call Print("Unit " + GetUnitName(period.unit()) + " leaves house.")
 			call SetUnitFacing(period.unit(), period.facing()) // turn around
 			call ShowUnit(period.unit(), true)
 		endmethod

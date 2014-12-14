@@ -107,7 +107,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 
 		public static method unitBountyForCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
 			// never give bounty for buildings. For example boxes are buildings.
-			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) != bj_ALLIANCE_UNALLIED or (GetUnitAllianceStateToUnit(character.unit(), killingUnit) != bj_ALLIANCE_ALLIED and character.player() != GetOwningPlayer(killingUnit)) and not IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
+			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) != bj_ALLIANCE_UNALLIED or (GetUnitAllianceStateToUnit(character.unit(), killingUnit) != bj_ALLIANCE_ALLIED and character.player() != GetOwningPlayer(killingUnit)) or IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
 				return 0
 			endif
 			return thistype.unitBounty(whichUnit) / ACharacter.countAllPlaying()
@@ -444,7 +444,6 @@ endif
 static if (DMDF_NPC_ROUTINES) then
 			call Routines.init()
 endif
-			call Spell.init()
 			call initSpells.evaluate() // after classes!
 			// map
 			call MapData.init.evaluate()
@@ -457,6 +456,14 @@ endif
 				if (GetPlayerController(Player(i)) != MAP_CONTROL_NONE) then
 					set thistype.m_hiddenUnits[i] = AGroup.create()
 				endif
+
+				// set melee to default
+				// when range items are equipped the range research will be level 1 and the melee 0
+				// both attack types are enabled by default therefore the range has to be disabled
+				// the melee research does also enable ONLY attack 1
+				// if both attack types are not enabled by default, the icon for the range attack type will be hidden!
+				call SetPlayerTechResearched(Player(i), MapData.rangeResearchId, 0)
+				call SetPlayerTechResearched(Player(i), MapData.meleeResearchId, 1)
 				
 				// set allied player and neutral passive player alliance status
 				call SetPlayerAllianceStateBJ(Player(i), MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)

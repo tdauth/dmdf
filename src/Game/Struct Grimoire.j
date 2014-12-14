@@ -12,7 +12,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 	 */
 	struct Grimoire extends ASpell
 		public static constant integer maxSpells = 15
-		public static constant integer spellsPerPage = 8
+		public static constant integer spellsPerPage = 9
 		public static constant integer abilityId = 'A0AP'
 		//public static constant integer techIdSkillPoints = 'R005'
 		//public static constant integer unitId = 'h00J'
@@ -148,9 +148,23 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			endloop
 			return result
 		endmethod
+		
+		/**
+		 * The ability for the grimoire must have level 0 - 100 for displaying the number of available skill points.
+		 */
+		public method setSkillPoints takes integer skillPoints returns nothing
+			set this.m_skillPoints = skillPoints
+			if (skillPoints < 0) then
+				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 0)
+			elseif (skillPoints > 100) then
+				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 100)
+			else
+				call SetUnitAbilityLevel(this.character().unit(), this.ability(), skillPoints)
+			endif
+		endmethod
 
 		public method removeSkillPoints takes integer skillPoints returns nothing
-			set this.m_skillPoints = IMaxBJ(0, this.m_skillPoints - skillPoints)
+			call this.setSkillPoints(IMaxBJ(0, this.m_skillPoints - skillPoints))
 			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
 		endmethod
 
@@ -164,7 +178,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 				call this.removeSkillPoints(-1 * skillPoints)
 				return
 			endif
-			set this.m_skillPoints = this.m_skillPoints + skillPoints
+			call this.setSkillPoints(this.m_skillPoints + skillPoints)
 			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
 			// auto skill
 			if (GetPlayerController(this.character().player()) == MAP_CONTROL_COMPUTER) then
@@ -198,10 +212,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		 * Central UI update is much easier to maintain!
 		 * \note Add all shown spells to m_uiGrimoireSpells!
 		 */
-		private method updateUi takes nothing returns nothing
+		public method updateUi takes nothing returns nothing
 			local integer i
 			local integer index
 
+			call Print("Hiding spells with count in grimoire: " + I2S(this.m_uiGrimoireSpells.size()))
 			set i = 0
 			loop
 				exitwhen (i == this.m_uiGrimoireSpells.size())
@@ -218,16 +233,22 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 				call this.m_spellNextPage.show.evaluate()
 				call this.m_uiGrimoireSpells.pushBack(this.m_spellNextPage)
 
+				debug call Print("Showing " + I2S(thistype.spellsPerPage) + " spells")
 				set i = 0
 				loop
 					exitwhen (i == thistype.spellsPerPage)
 					set index = Index2D(this.page(), i, thistype.spellsPerPage)
+					debug call Print("Index " + I2S(index))
 					if (index >= this.m_spells.size()) then
+						debug call Print("Reached spell count at " + I2S(index))
 						exitwhen (true)
 					endif
 					if (Spell(this.m_spells[index]).available()) then
+						debug call Print("Is available spell: " + I2S(Spell(this.m_spells[index])))
 						call Spell(this.m_spells[index]).showGrimoireEntry()
 						call this.m_uiGrimoireSpells.pushBack(Spell(this.m_spells[index]).grimoireEntry())
+					debug else
+						debug call Print("Spell " + Spell(this.m_spells[index]).name() + " is not available!")
 					endif
 					set i = i + 1
 				endloop
@@ -646,6 +667,7 @@ endif
 
 		public method removeClassSpells takes AClass class returns nothing
 			local integer i = 0
+			debug call Print("Remove class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() == class) then
@@ -661,6 +683,7 @@ endif
 
 		public method removeAllClassSpells takes nothing returns nothing
 			local integer i = 0
+			debug call Print("Remove all class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() != 0) then
@@ -672,6 +695,7 @@ endif
 
 		public method removeAllOtherClassSpells takes nothing returns nothing
 			local integer i = 0
+			debug call Print("Remove all other class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() != this.character().class()) then
@@ -731,6 +755,7 @@ endif
 		endmethod
 
 		public method increasePage takes nothing returns boolean
+			debug call Print("We have " + I2S(this.pages()) + " with " + I2S(this.m_spells.size()) + " spells total")
 			if (this.page() + 1 >= this.pages()) then
 				return this.setPage(0)
 			else

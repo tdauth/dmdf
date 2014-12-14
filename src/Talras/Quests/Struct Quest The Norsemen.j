@@ -264,8 +264,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			set i = 0
 			loop
 				exitwhen (i == SpawnPoints.orcs0().countUnits())
+				debug call Print("Pausing and hiding orc spawn point unit: " + GetUnitName(SpawnPoints.orcs0().unit(i)))
 				call PauseUnit(SpawnPoints.orcs0().unit(i), true)
-				call ShowUnit(SpawnPoints.orcs0().unit(i), true)
+				call ShowUnit(SpawnPoints.orcs0().unit(i), false)
 				set i = i + 1
 			endloop
 			

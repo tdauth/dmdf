@@ -3,6 +3,7 @@
 //! import "Spells/Struct Spell Absorbation.j"
 //! import "Spells/Struct Spell Adduction.j"
 //! import "Spells/Struct Spell Agility.j"
+//! import "Spells/Struct Spell Alpha.j"
 //! import "Spells/Struct Spell Ancestor Pact.j"
 //! import "Spells/Struct Spell An Eye For An Eye.j"
 //! import "Spells/Struct Spell Arcane Binding.j"
@@ -16,9 +17,12 @@
 //! import "Spells/Struct Spell Bear Form.j"
 //! import "Spells/Struct Spell Beast Hunter.j"
 //! import "Spells/Struct Spell Blaze.j"
+//! import "Spells/Struct Spell Blessing.j"
 //! import "Spells/Struct Spell Block.j"
+//! import "Spells/Struct Spell Burning Arrows.j"
 //! import "Spells/Struct Spell Cat Rune.j"
 //! import "Spells/Struct Spell Clarity.j"
+//! import "Spells/Struct Spell Colossus.j"
 //! import "Spells/Struct Spell Concentration.j"
 //! import "Spells/Struct Spell Controlled Time Flow.j"
 //! import "Spells/Struct Spell Cow Nova.j"
@@ -36,6 +40,7 @@
 //! import "Spells/Struct Spell Emblaze.j"
 //! import "Spells/Struct Spell Exorcize Evil.j"
 //! import "Spells/Struct Spell Fire Missile.j"
+//! import "Spells/Struct Spell Forest Castle.j"
 //! import "Spells/Struct Spell Forest Faeries Spell.j"
 //! import "Spells/Struct Spell Forest Wood Fists.j"
 //! import "Spells/Struct Spell Freeze.j"
@@ -58,6 +63,9 @@
 //! import "Spells/Struct Spell Mana Stream.j"
 //! import "Spells/Struct Spell Mastery.j"
 //! import "Spells/Struct Spell Metamorphosis.j"
+//! import "Spells/Struct Spell Necromancy.j"
+//! import "Spells/Struct Spell Plague.j"
+//! import "Spells/Struct Spell Poisoned Arrows.j"
 //! import "Spells/Struct Spell Prevent Ill.j"
 //! import "Spells/Struct Spell Protect.j"
 //! import "Spells/Struct Spell Pure Energy.j"
@@ -88,9 +96,10 @@
 //! import "Spells/Struct Spell Violent Death.j"
 //! import "Spells/Struct Spell Weak Point.j"
 //! import "Spells/Struct Spell Wrath Of The Forest.j"
+//! import "Spells/Struct Spell Worlds Portal.j"
 //! import "Spells/Struct Spell Zoology.j"
 
-library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement, StructSpellsSpellAbsorbation, StructSpellsSpellAdduction, StructSpellsSpellAgility, StructSpellsSpellAncestorPact, StructSpellsSpellAnEyeForAnEye, StructSpellsSpellArcaneBinding, StructSpellsSpellArcaneHunger, StructSpellsSpellArcaneProtection, StructSpellsSpellArcaneRuse, StructSpellsSpellArcaneTime, StructSpellsSpellAstralSource,  StructSpellsSpellBan, StructSpellsSpellAwakeningOfTheForest, StructSpellsSpellBearForm, StructSpellsSpellBeastHunter, StructSpellsSpellBlaze, StructSpellsSpellBlock, StructSpellsSpellCatRune, StructSpellsSpellClarity, StructSpellsSpellConcentration, StructSpellsSpellControlledTimeFlow, StructSpellsSpellCowNova, StructSpellsSpellCrowForm, StructSpellsSpellCurb, StructSpellsSpellDarkServant, StructSpellsSpellDaunt, StructSpellsSpellDeathHerald, StructSpellsSpellDemonServant, StructSpellsSpellDryadSource, StructSpellsSpellEagleEye, StructSpellsSpellEarthPrison, StructSpellsSpellElementalForce, StructSpellsSpellElementalMageDamageSpell, StructSpellsSpellEmblaze, StructSpellsSpellExorcizeEvil, StructSpellsSpellFireMissile, StructSpellsSpellForestFaeriesSpell, StructSpellsSpellForestWoodFists, StructSpellsSpellFreeze, StructSpellsSpellFuriousBloodthirstiness, StructSpellsSpellGlisteningLight, StructSpellsSpellGrove, StructSpellsSpellHolyPower, StructSpellsSpellHolyWill, StructSpellsSpellIceAge, StructSpellsSpellIceMissile, StructSpellsSpellImpendingDisaster, StructSpellsSpellInferno, StructSpellsSpellJumpAttack, StructSpellsSpellLightning, StructSpellsSpellLivingWill, StructSpellsSpellMagicalShockWaves, StructSpellsSpellManaExplosion, StructSpellsSpellManaShield, StructSpellsSpellManaStream, StructSpellsSpellMastery, StructSpellsSpellMetamorphosis, StructSpellsSpellPreventIll, StructSpellsSpellProtect, StructSpellsSpellPureEnergy, StructSpellsSpellRageOfElements, StructSpellsSpellRecovery, StructSpellsSpellRelief, StructSpellsSpellRepulsion, StructSpellsSpellResolution, StructSpellsSpellRush, StructSpellsSpellRevive, StructSpellsSpellSelectDestination, StructSpellsSpellSelflessness, StructSpellsSpellShooter, StructSpellsSpellShotIntoHeart, StructSpellsSpellSlash, StructSpellsSpellSoulThievery, StructSpellsSpellSprint, StructSpellsSpellStab, StructSpellsSpellSupremacy, StructSpellsSpellTakeOver, StructSpellsSpellTaunt, StructSpellsSpellTeleportation, StructSpellsSpellTendrils, StructSpellsSpellTorment, StructSpellsSpellTreefolk, StructSpellsSpellUndermine, StructSpellsSpellViolentDeath, StructSpellsSpellWeakPoint, StructSpellsSpellWrathOfTheForest, StructSpellsSpellZoology
+library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement, StructSpellsSpellAbsorbation, StructSpellsSpellAdduction, StructSpellsSpellAgility, StructSpellsSpellAlpha, StructSpellsSpellAncestorPact, StructSpellsSpellAnEyeForAnEye, StructSpellsSpellArcaneBinding, StructSpellsSpellArcaneHunger, StructSpellsSpellArcaneProtection, StructSpellsSpellArcaneRuse, StructSpellsSpellArcaneTime, StructSpellsSpellAstralSource,  StructSpellsSpellBan, StructSpellsSpellAwakeningOfTheForest, StructSpellsSpellBearForm, StructSpellsSpellBeastHunter, StructSpellsSpellBlaze, StructSpellsSpellBlessing, StructSpellsSpellBlock, StructSpellsSpellBurningArrows, StructSpellsSpellCatRune, StructSpellsSpellClarity, StructSpellsSpellColossus, StructSpellsSpellConcentration, StructSpellsSpellControlledTimeFlow, StructSpellsSpellCowNova, StructSpellsSpellCrowForm, StructSpellsSpellCurb, StructSpellsSpellDarkServant, StructSpellsSpellDaunt, StructSpellsSpellDeathHerald, StructSpellsSpellDemonServant, StructSpellsSpellDryadSource, StructSpellsSpellEagleEye, StructSpellsSpellEarthPrison, StructSpellsSpellElementalForce, StructSpellsSpellElementalMageDamageSpell, StructSpellsSpellEmblaze, StructSpellsSpellExorcizeEvil, StructSpellsSpellFireMissile, StructSpellsSpellForestCastle, StructSpellsSpellForestFaeriesSpell, StructSpellsSpellForestWoodFists, StructSpellsSpellFreeze, StructSpellsSpellFuriousBloodthirstiness, StructSpellsSpellGlisteningLight, StructSpellsSpellGrove, StructSpellsSpellHolyPower, StructSpellsSpellHolyWill, StructSpellsSpellIceAge, StructSpellsSpellIceMissile, StructSpellsSpellImpendingDisaster, StructSpellsSpellInferno, StructSpellsSpellJumpAttack, StructSpellsSpellLightning, StructSpellsSpellLivingWill, StructSpellsSpellMagicalShockWaves, StructSpellsSpellManaExplosion, StructSpellsSpellManaShield, StructSpellsSpellManaStream, StructSpellsSpellMastery, StructSpellsSpellMetamorphosis, StructSpellsSpellNecromancy, StructSpellsSpellPlague, StructSpellsSpellPoisonedArrows, StructSpellsSpellPreventIll, StructSpellsSpellProtect, StructSpellsSpellPureEnergy, StructSpellsSpellRageOfElements, StructSpellsSpellRecovery, StructSpellsSpellRelief, StructSpellsSpellRepulsion, StructSpellsSpellResolution, StructSpellsSpellRush, StructSpellsSpellRevive, StructSpellsSpellSelectDestination, StructSpellsSpellSelflessness, StructSpellsSpellShooter, StructSpellsSpellShotIntoHeart, StructSpellsSpellSlash, StructSpellsSpellSoulThievery, StructSpellsSpellSprint, StructSpellsSpellStab, StructSpellsSpellSupremacy, StructSpellsSpellTakeOver, StructSpellsSpellTaunt, StructSpellsSpellTeleportation, StructSpellsSpellTendrils, StructSpellsSpellTorment, StructSpellsSpellTreefolk, StructSpellsSpellUndermine, StructSpellsSpellViolentDeath, StructSpellsSpellWeakPoint, StructSpellsSpellWrathOfTheForest, StructSpellsSpellWorldsPortal, StructSpellsSpellZoology
 
 	/// Init non-character spells!
 	function initSpells takes nothing returns nothing

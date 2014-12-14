@@ -1,5 +1,5 @@
 /// Metamorphosis
-library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter
+library StructSpellsSpellCharacterMetamorphosis requires Asl, StructSpellsSpellMetamorphosis
 
 	/**
 	 * \brief Generic abstract spell for metamorphosis.
@@ -10,21 +10,11 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter
 	 * 
 	 * \note All morph spells need a short delay in which \ref Character#morph() can be called which stores spells and items safely!
 	 */
-	struct SpellMetamorphosis
-		private Character m_character
-		private integer m_ability
+	struct SpellMetamorphosis extends ASpell
 		private integer m_unitTypeId
 		private trigger m_channelTrigger
 		private trigger m_revivalTrigger
 		private boolean m_isMorphed
-		
-		public method character takes nothing returns Character
-			return this.m_character
-		endmethod
-		
-		public method ability takes nothing returns integer
-			return this.m_ability
-		endmethod
 		
 		public method setUnitTypeId takes integer unitTypeId returns nothing
 			set this.m_unitTypeId = unitTypeId
@@ -49,7 +39,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter
 		
 		// Called with .evaluate()
 		public stub method canRestore takes nothing returns boolean
-			return true
+			return false
 		endmethod
 		
 		/// Called after unit has been restored.
@@ -73,13 +63,12 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter
 		
 		private static method triggerConditionStart takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			debug call Print("Condition start for spell: " + GetObjectName(this.ability()))
+			debug call Print("Condition Start. Waiting for spell: " + GetObjectName(this.ability()))
 			return GetSpellAbilityId() == this.ability()
 		endmethod
 		
 		private static method triggerActionStart takes nothing returns nothing
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			debug call Print("Start for spell: " + GetObjectName(this.ability()))
 			// morph
 			if (not Character(this.character()).isMorphed()) then
 				if (this.canMorph.evaluate()) then
@@ -87,13 +76,9 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter
 					debug if (GetUnitTypeId(this.character().unit()) == this.unitTypeId()) then
 						debug call Print("Error: Already morphed!")
 					debug endif
-					if (Character(this.character()).morph(this.ability())) then
-						debug call Print("Morphed successfully for spell: " + GetObjectName(this.ability()))
-						set this.m_isMorphed = true
-						call this.onMorph.execute()
-					endif
+					call Character(this.character()).morph(this.ability())
+					call this.onMorph.execute()
 				else
-					debug call Print("Cannot morph for spell: " + GetObjectName(this.ability()))
 					call IssueImmediateOrder(this.character().unit(), "stop")
 				endif
 			// restore
@@ -102,13 +87,9 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter
 					debug call Print("Waiting for restoration")
 					call thistype.waitForRestoration(this.character().unit(), this.unitTypeId())
 					debug call Print("Restore from morph with spell: "  + GetAbilityName(this.ability()))
-					if (Character(this.character()).restoreUnit(this.ability())) then
-						debug call Print("Restored successfully for spell: " + GetObjectName(this.ability()))
-						set this.m_isMorphed = false
-						call this.onRestore.execute()
-					endif
+					call Character(this.character()).restoreUnit()
+					call this.onRestore.execute()
 				else
-					debug call Print("Cannot restore for spell: " + GetObjectName(this.ability()))
 					call IssueImmediateOrder(this.character().unit(), "stop")
 				endif
 			endif
@@ -116,17 +97,12 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter
 		
 		private static method triggerConditionRevival takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			debug call Print("Revival: " + GetAbilityName(this.ability()))
-			debug if (this.isMorphed()) then
-			debug call Print("Is morphed")
-			debug endif
+			debug call Print("Revival!")
 			return this.isMorphed()
 		endmethod
 		
-		public static method create takes Character character, integer abilityId returns thistype
-			local thistype this = thistype.allocate()
-			set this.m_character = character
-			set this.m_ability = abilityId
+		public static method create takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction  returns thistype
+			local thistype this = thistype.allocate(character, class, spellType, maxLevel, abilityId, favouriteAbility, upgradeAction, castCondition, castAction)
 			set this.m_unitTypeId = 0
 			
 			set this.m_channelTrigger = CreateTrigger()

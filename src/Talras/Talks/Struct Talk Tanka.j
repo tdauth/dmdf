@@ -1,4 +1,4 @@
-library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo
+library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMapQuestsQuestShamansInTalras
 
 	struct TalkTanka extends ATalk
 		private static constant integer rewardGold = 30
@@ -15,7 +15,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo
 		endmethod
 
 		private method startPageAction takes ACharacter character returns nothing
-			call this.showUntil(10, character)
+			call this.showUntil(12, character)
 		endmethod
 
 		// Hallo.
@@ -124,6 +124,8 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo
 			// (Beide Hinweise wurden angesprochen)
 			if (thistype(info.talk()).hints(character.player()) == 2) then
 				call thistype.completeHints(info, character)
+			else
+				call info.talk().showStartPage(character)
 			endif
 		endmethod
 
@@ -146,6 +148,8 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo
 			// (Beide Hinweise wurden angesprochen)
 			if (thistype(info.talk()).hints(character.player()) == 2) then
 				call thistype.completeHints(info, character)
+			else
+				call info.talk().showStartPage(character)
 			endif
 		endmethod
 
@@ -177,8 +181,77 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo
 		// Zeig mir wie man …
 		private static method infoAction9 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Zeig mir wie man …"), null)
-			call info.talk().showRange(11, 15, character)
+			call info.talk().showRange(13, 17, character)
 		endmethod
+		
+		// (Nach „Hallo“ und Charakter hat mit Tellborn gesprochen und Auftrag „Schamanen in Talras“ noch nicht erhalten)
+		private static method infoConditionYouKnowTellborn takes AInfo info, ACharacter character returns boolean
+			return info.talk().infoHasBeenShownToCharacter(0, character) and TalkTellborn.talk.evaluate().infoHasBeenShownToCharacter(0, character) and QuestShamansInTalras.characterQuest(character).isNotUsed()
+		endmethod
+		
+		// Kennst du Tellborn?
+		private static method infoActionYouKnowTellborn takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Kennst du Tellborn?"), null)
+			call speech(info, character, true, tr("Wen?"), null)
+			call speech(info, character, false, tr("Tellborn, einen Schamanen, der sich weiter südlich von hier aufhält."), null)
+			call speech(info, character, true, tr("Ich bin ja nicht gerade lange in dieser Gegend, daher kenne ich auch niemanden hier."), null)
+			call speech(info, character, true, tr("Aber sag, ist er wirklich ein Schamane oder behauptet er das nur von sich?"), null)
+			call speech(info, character, false, tr("Also …"), null)
+			call speech(info, character, true, tr("Es ist immer wieder ein Ereignis seinesgleichen in den entlegensten Teilen dieser Welt anzutreffen. Vielleicht sollte ich mich einmal mit ihm unterhalten."), null)
+			call speech(info, character, true, tr("Leider kann ich Brogo hier nicht einfach sitzen lassen. Willst du vielleicht diesem „Tellborn“ ein Schreiben von mir überbringen?"), null)
+			
+			call info.talk().showRange(18, 19, character)
+		endmethod
+		
+		// (Charakter hat „Brief an Tanka“ dabei)
+		private static method infoConditionLetterFromTellborn  takes AInfo info, ACharacter character returns boolean
+			return character.inventory().hasItemType('I03K')
+		endmethod
+		
+		// Hier ist ein Brief von Tellborn.
+		private static method infoActionLetterFromTellborn takes AInfo info, Character character returns nothing
+			call speech(info, character, false, tr("Hier ist ein Brief von Tellborn."), null)
+			// (Charakter hat zuvor das Schreiben für Tellborn an diesen geliefert)
+			if (QuestShamansInTalras.characterQuest(character).questItem(1).isCompleted()) then
+				call speech(info, character, true, tr("Er hat sich also die Mühe gemacht zu antworten. Immerhin! Nun gib schon her, ich will wissen, was er schreibt."), null)
+				call speech(info, character, false, tr("Hier hast du den Brief."), null)
+				// „Brief an Tanka“ übergeben
+				call character.inventory().removeItemType('I03K')
+				call speech(info, character, true, tr(" Vielen Dank! Zu gerne will ich wissen, was hinter ihm steckt. Hier nimm dies als Belohnung."), null)
+				// Auftrag „Schamanen in Talras“ abgeschlossen
+				call QuestShamansInTalras.characterQuest(character).complete()
+				// Tankas Belohnung überreichen
+				call character.giveItem('I00B')
+				call character.giveItem('I00B')
+				call character.giveItem('I00B')
+				call character.giveItem('I00B')
+				call character.giveItem('I00C')
+				call character.giveItem('I00C')
+				call character.giveItem('I00C')
+				call character.giveItem('I00C')
+				call character.giveItem('I03L')
+			// (Charakter kommt zum ersten Mal im Aufrag von Tellborn)
+			else
+				call speech(info, character, true, tr("Von wem?"), null)
+				call speech(info, character, false, tr("Von Tellborn, einem Schamanen südlich von hier. Ich habe ihm von dir erzählt, da ihr offensichtlich beide Schamanen seid."), null)
+				call speech(info, character, true, tr("Wie bitte? Wie konntest du … was schreibt er denn?"), null)
+				call speech(info, character, false, tr("Hier, lies selbst."), null)
+				// „Brief an Tanka“ übergeben
+				call character.inventory().removeItemType('I03K')
+				call speech(info, character, true, tr("(Liest) Aha, unglaublich! Ich muss ihm sofort antworten. Lauf ja nicht weg!"), null)
+				call speech(info, character, false, tr("Schon gut."), null)
+				call speech(info, character, true, tr("(Verfasst ein Schreiben)"), null)
+				call speech(info, character, true, tr("So, da hast du ein Schreiben für ihn. Bring es ihm so schnell wie möglich!"), null)
+				// Auftragsziel 1 des Auftrags „Schamanen in Talras“ abgeschlossen
+				call QuestShamansInTalras.characterQuest(character).questItem(0).complete()
+				// Auftragsziel 2 des Auftrags „Schamanen in Talras“ aktiviert
+				call QuestShamansInTalras.characterQuest(character).questItem(1).enable()
+				// „Schreiben für Tellborn“ erhalten
+				call character.giveQuestItem('I03J')
+			endif
+			call info.talk().showStartPage(character)
+		endmethod
+		
 
 		// (Auftrag „Die Bestie“ ist abgeschlossen)
 		private static method infoCondition8_0and1 takes AInfo info, ACharacter character returns boolean
@@ -189,14 +262,16 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo
 		private static method infoAction8_0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("… seine Waffen vergiftet."), null)
 			/// @todo Charakter erhält Gegenstand „Angriffs-Totem“
-			call info.talk().show(character.player())
+			call speech(info, character, true, tr("Tja, der Entwickler dieser Mod sollte das mal einbauen!"), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// … seinen Körper entflammt.
 		private static method infoAction8_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("… seinen Körper entflammt."), null)
 			/// @todo Charakter erhält Gegenstand „Verteidigungs-Totem“
-			call info.talk().show(character.player())
+			call speech(info, character, true, tr("Tja, der Entwickler dieser Mod sollte das mal einbauen!"), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// (Auftrag „Die Bestie“ und Auftrag „Katzen für Brogo“ sind abgeschlossen)
@@ -208,14 +283,38 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo
 		private static method infoAction8_2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("… seinen Schmerz teilt."), null)
 			/// @todo Charakter erhält Gegenstand „Geistes-Totem“
-			call info.talk().show(character.player())
+			call speech(info, character, true, tr("Tja, der Entwickler dieser Mod sollte das mal einbauen!"), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// … seinen Körper vervielfacht.
 		private static method infoAction8_3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("… seinen Körper vervielfacht."), null)
 			/// @todo Charakter erhält Gegenstand „Körper-Totem“
-			call info.talk().show(character.player())
+			call speech(info, character, true, tr("Tja, der Entwickler dieser Mod sollte das mal einbauen!"), null)
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// Klar.
+		private static method infoActionYouKnowTellborn_Sure  takes AInfo info, Character character returns nothing
+			call speech(info, character, false, tr("Klar."), null)
+			call speech(info, character, true, tr("Ich danke dir! Warte kurz bis ich das Schreiben aufgesetzt habe."), null)
+			call speech(info, character, true, tr("(Setzt ein Schreiben auf)"), null)
+			call speech(info, character, true, tr("So, hier hast du es. Mal sehen, was er dazu sagt …"), null)
+			// Neuer Auftrag „Schamanen in Talras“
+			call QuestShamansInTalras.characterQuest(character).enable()
+			// Auftragsziel 2 aktiviert
+			call QuestShamansInTalras.characterQuest(character).questItem(1).enable()
+			// „Schreiben für Tellborn“ erhalten
+			call character.giveQuestItem('I03J')
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// Nein.
+		private static method infoActionYouKnowTellborn_No takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Nein."), null)
+			call speech(info, character, true, tr("chade, überlege es dir doch noch einmal."), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		private static method create takes nothing returns thistype
@@ -237,14 +336,20 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo
 			call this.addInfo(false, false, thistype.infoCondition7, thistype.infoAction7, tr("Der Holzfäller Kuno hat die Bestie gesehen.")) // 7
 			call this.addInfo(false, false, thistype.infoCondition8, thistype.infoAction8, tr("Bring mir was bei!")) // 8
 			call this.addInfo(true, false, thistype.infoCondition9, thistype.infoAction9, tr("Zeig mir wie man …")) // 9
-			call this.addExitButton() // 10
+			call this.addInfo(true, false, thistype.infoConditionYouKnowTellborn, thistype.infoActionYouKnowTellborn, tr("Kennst du Tellborn?")) // 10
+			call this.addInfo(false, false, thistype.infoConditionLetterFromTellborn, thistype.infoActionLetterFromTellborn, tr("Hier ist ein Brief von Tellborn.")) // 11
+			call this.addExitButton() // 12
 
 			// info 8
-			call this.addInfo(true, false, thistype.infoCondition8_0and1, thistype.infoAction8_0, tr("… seine Waffen vergiftet.")) // 11
-			call this.addInfo(true, false, thistype.infoCondition8_0and1, thistype.infoAction8_1, tr("… seinen Körper entflammt.")) // 12
-			call this.addInfo(true, false, thistype.infoCondition8_2and3, thistype.infoAction8_2, tr("… seinen Schmerz teilt.")) // 13
-			call this.addInfo(true, false, thistype.infoCondition8_2and3, thistype.infoAction8_3, tr("… seinen Körper vervielfacht.")) // 14
-			call this.addBackToStartPageButton() // 15
+			call this.addInfo(true, false, thistype.infoCondition8_0and1, thistype.infoAction8_0, tr("… seine Waffen vergiftet.")) // 13
+			call this.addInfo(true, false, thistype.infoCondition8_0and1, thistype.infoAction8_1, tr("… seinen Körper entflammt.")) // 14
+			call this.addInfo(true, false, thistype.infoCondition8_2and3, thistype.infoAction8_2, tr("… seinen Schmerz teilt.")) // 15
+			call this.addInfo(true, false, thistype.infoCondition8_2and3, thistype.infoAction8_3, tr("… seinen Körper vervielfacht.")) // 16
+			call this.addBackToStartPageButton() // 17
+			
+			// info 10
+			call this.addInfo(true, false, 0, thistype.infoActionYouKnowTellborn_Sure, tr("Klar.")) // 18
+			call this.addInfo(true, false, 0, thistype.infoActionYouKnowTellborn_No, tr("Nein.")) // 19
 
 			return this
 		endmethod

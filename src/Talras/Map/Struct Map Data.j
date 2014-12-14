@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, StructMapMapShrines, StructMapMapNpcRoutines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
+library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameGame, StructMapMapShrines, StructMapMapNpcRoutines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
 
 	//! inject config
 		/// @todo tr leads to crash
@@ -92,6 +92,10 @@ library StructMapMapMapData requires Asl, StructGameCharacter, StructGameGame, S
 		public static constant integer difficultyStartAttributeBonus = 4 // start attribute bonus per missing player
 		public static constant integer difficultyLevelAttributeBonus = 2 // level up attribute bonus per missing player
 		public static constant integer workerUnitTypeId = 'h00E'
+		public static constant integer meleeResearchId =  'R007'
+		public static constant integer rangeResearchId =  'R006'
+		public static constant player haldarPlayer = Player(10)
+		public static constant player baldarPlayer = Player(11)
 		
 		private static region m_welcomeRegion
 		private static trigger m_welcomeTalrasTrigger
@@ -325,6 +329,7 @@ endif
 			endloop
 			call VideoIntro.video().play()
 			call waitForVideo(thistype.videoWaitInterval)
+			debug call Print("Waited successfully for intro video.")
 static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
 			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"mapcheats\", um eine Liste sämtlicher Karten-Cheats zu erhalten."))
@@ -365,8 +370,13 @@ endif
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
-				call UnitAddItemById(ACharacter.playerCharacter(Player(i)).unit(), ItemTypes.shortword().itemType())
-				call UnitAddItemById(ACharacter.playerCharacter(Player(i)).unit(), ItemTypes.lightWoodenShield().itemType())
+				if (Character(Character.playerCharacter(Player(i))).class() == Classes.ranger()) then
+					// Hunting Bow
+					call UnitAddItemById(Character.playerCharacter(Player(i)).unit(), 'I020')
+				else
+					call UnitAddItemById(ACharacter.playerCharacter(Player(i)).unit(), ItemTypes.shortword().itemType())
+					call UnitAddItemById(ACharacter.playerCharacter(Player(i)).unit(), ItemTypes.lightWoodenShield().itemType())
+				endif
 				set i = i + 1
 			endloop
 

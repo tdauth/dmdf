@@ -469,8 +469,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		public static method init takes nothing returns nothing
 			local integer i
 			local player user
-			set thistype.m_haldarsUser = Player(7) // don't use neutral victim since units will return like creeps!
-			set thistype.m_baldarsUser = Player(8)
+			set thistype.m_haldarsUser = MapData.haldarPlayer // don't use neutral victim since units will return like creeps!
+			set thistype.m_baldarsUser = MapData.baldarPlayer
 			set thistype.m_haldarMembers = 0
 			set thistype.m_baldarMembers = 0
 			set thistype.m_characterHasEntered = false

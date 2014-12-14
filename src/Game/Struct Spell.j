@@ -40,7 +40,6 @@ library StructGameSpell requires Asl, StructGameCharacter
 		public static constant integer spellTypeDefault = 1
 		public static constant integer spellTypeUltimate0 = 2
 		public static constant integer spellTypeUltimate1 = 3
-		private static AIntegerVector m_spells
 		private integer m_favouriteAbility
 		private integer m_maxLevel
 		private integer m_spellType
@@ -196,6 +195,8 @@ library StructGameSpell requires Asl, StructGameCharacter
 		public method showGrimoireEntry takes nothing returns nothing
 			if (this.grimoireEntry() != 0) then
 				call this.grimoireEntry().show.evaluate()
+			debug else
+				debug call Print("Missing grimoire entry for spell " + GetObjectName(this.ability()) + " with level " + I2S(this.level()))
 			endif
 			//call SetPlayerTechMaxAllowed(this.character().player(), this.tech(), this.getMaxLevel())
 			//call SetPlayerTechResearched(this.character().player(), this.tech(), this.level())
@@ -226,9 +227,8 @@ library StructGameSpell requires Asl, StructGameCharacter
 			set this.m_class = class
 			set this.m_available = true
 			set this.m_grimoireEntries = AIntegerVector.createWithSize(maxLevel + 1, 0)
-			call thistype.m_spells.pushBack(this)
-			set this.m_index = thistype.m_spells.backIndex()
-
+			call character.addClassSpell(this)
+			
 			return this
 		endmethod
 
@@ -242,24 +242,21 @@ library StructGameSpell requires Asl, StructGameCharacter
 				set i = i + 1
 			endloop
 			call this.m_grimoireEntries.destroy()
-			call thistype.m_spells.erase(this.m_index)
-		endmethod
-
-		public static method init takes nothing returns nothing
-			set thistype.m_spells = AIntegerVector.create()
+			call Character(this.character()).classSpells().remove(this)
 		endmethod
 
 		/**
-		 * @return Returns an integer vector filled with all global existing spells of character @param character with class @param class.
+		 * \return Returns an integer vector filled with all global existing spells of character \p character with class \p class.
 		 */
 		public static method classSpells takes Character character, AClass class returns AIntegerVector
 			local AIntegerVector result = AIntegerVector.create()
 			local integer i = 0
+			debug call Print("Getting class spells of class " + Classes.className(class) + " with couting all spells: " + I2S(character.classSpells().size()))
 			loop
-				exitwhen (i == thistype.m_spells.size())
-				if (thistype(thistype.m_spells[i]).character() == character and thistype(thistype.m_spells[i]).class() == class) then
-					debug call Print("Class spell: " + GetAbilityName(thistype(thistype.m_spells[i]).ability()))
-					call result.pushBack(thistype.m_spells[i])
+				exitwhen (i == character.classSpells().size())
+				if (thistype(character.classSpells()[i]).class() == class) then
+					debug call Print("Class spell: " + GetAbilityName(thistype(character.classSpells()[i]).ability()))
+					call result.pushBack(character.classSpells()[i])
 				endif
 				set i = i + 1
 			endloop
@@ -270,9 +267,10 @@ library StructGameSpell requires Asl, StructGameCharacter
 			local AIntegerVector result = AIntegerVector.create()
 			local integer i = 0
 			loop
-				exitwhen (i == thistype.m_spells.size())
-				if (thistype(thistype.m_spells[i]).character() == character and thistype(thistype.m_spells[i]).class() != class) then
-					call result.pushBack(thistype.m_spells[i])
+				exitwhen (i == character.classSpells().size())
+				if (thistype(character.classSpells()[i]).class() != class) then
+					debug call Print("Non class spell: " + GetAbilityName(thistype(character.classSpells()[i]).ability()))
+					call result.pushBack(thistype(character.classSpells()[i]))
 				endif
 				set i = i + 1
 			endloop
@@ -291,9 +289,9 @@ library StructGameSpell requires Asl, StructGameCharacter
 			local AIntegerVector result = AIntegerVector.create()
 			local integer i = 0
 			loop
-				exitwhen (i == thistype.m_spells.size())
-				if (thistype(thistype.m_spells[i]).character() == character and thistype(thistype.m_spells[i]).isSkillable()) then
-					call result.pushBack(thistype.m_spells[i])
+				exitwhen (i == character.classSpells().size())
+				if (thistype(character.classSpells()[i]).isSkillable()) then
+					call result.pushBack(thistype(character.classSpells()[i]))
 				endif
 				set i = i + 1
 			endloop
@@ -304,9 +302,9 @@ library StructGameSpell requires Asl, StructGameCharacter
 			local AIntegerVector result = AIntegerVector.create()
 			local integer i = 0
 			loop
-				exitwhen (i == thistype.m_spells.size())
-				if (thistype(thistype.m_spells[i]).character() == character and thistype(thistype.m_spells[i]).isSkillable() and thistype(thistype.m_spells[i]).class() == character.class()) then
-					call result.pushBack(thistype.m_spells[i])
+				exitwhen (i == character.classSpells().size())
+				if (thistype(character.classSpells()[i]).isSkillable() and thistype(character.classSpells()[i]).class() == character.class()) then
+					call result.pushBack(thistype(character.classSpells()[i]))
 				endif
 				set i = i + 1
 			endloop

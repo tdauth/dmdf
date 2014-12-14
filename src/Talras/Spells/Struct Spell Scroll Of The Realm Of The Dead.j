@@ -17,11 +17,11 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 			loop
 				exitwhen (i == Shrine.shrines().size())
 				set shrine = Shrine(Shrine.shrines()[i])
-				set dist = GetDistanceBetweenPointsWithoutZ(GetDestructableX(shrine.destructable()), GetDestructableY(shrine.destructable()), GetSpellTargetX(), GetSpellTargetY())
+				set dist = GetDistanceBetweenPointsWithoutZ(GetRectCenterX(shrine.revivalRect()), GetRectCenterY(shrine.revivalRect()), GetSpellTargetX(), GetSpellTargetY())
 				if (dist <= thistype.distance) then
 					return true
 				endif
-				debug call Print("Checked shrine: " + I2S(Shrine(Shrine.shrines()[i])) + " with distance " + R2S(dist))
+				debug call Print("Checked shrine: " + I2S(shrine) + " with distance " + R2S(dist))
 				set i = i + 1
 			endloop
 			call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sich in der Nähe eines Wiederbelebungsschreins befinden."))

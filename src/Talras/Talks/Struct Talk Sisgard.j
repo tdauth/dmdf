@@ -104,10 +104,17 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 		// Gehen wir.
 		private static method infoAction5 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Gehen wir."), null)
-			call speech(info, character, true, tr("Na wenn du mich so nett bittest. Kann's gar nicht erwarten. Geh voraus, ich folge dir."), null)
-			call info.talk().close(character)
-			call Fellows.sisgard().shareWith(character)
-			call IssueTargetOrder(info.talk().unit(), "move", character.unit())
+			// (Unterhält sich noch mit anderen Charakteren)
+			if (info.talk().characters().size() > 1) then
+				call speech(info, character, true, tr("Ich unterhalte mich gerade noch. Danach kann ich dir folgen."), null)
+				call info.talk().showStartPage(character)
+			// (Unterhält sich nur mit dem aktuellen Charakter)
+			else
+				call speech(info, character, true, tr("Na wenn du mich so nett bittest. Kann's gar nicht erwarten. Geh voraus, ich folge dir."), null)
+				call info.talk().close(character)
+				call Fellows.sisgard().shareWith(character)
+				call IssueTargetOrder(info.talk().unit(), "move", character.unit())
+			endif
 		endmethod
 
 		// (Folgt dem Charakter)
