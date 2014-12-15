@@ -253,10 +253,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 					set i = i + 1
 				endloop
 			else
-				// show in correct order
-				call this.currentSpell().showGrimoireEntry() // show info about current level
-				call this.m_uiGrimoireSpells.pushBack(this.currentSpell().grimoireEntry())
-
 				if (this.currentSpell().isSkillable()) then
 					call this.m_spellIncrease.show.evaluate()
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellIncrease)
@@ -273,6 +269,10 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 						call this.m_uiGrimoireSpells.pushBack(this.m_spellAddToFavourites)
 					endif
 				endif
+				
+				// show in correct order, always show the spell entry itself as last one since it will become the last one whenever its level changes!
+				call this.currentSpell().showGrimoireEntry() // show info about current level
+				call this.m_uiGrimoireSpells.pushBack(this.currentSpell().grimoireEntry())
 			endif
 
 			debug call Print("after removing ability")
@@ -561,6 +561,7 @@ endif
 				exitwhen (i == integerVector.size())
 				// do not add spells twice
 				if (not this.m_spells.contains(Spell(integerVector[i]))) then
+					debug call Print("Adding NEW spell " + GetAbilityName(Spell(integerVector[i]).ability()))
 					call this.addSpell(Spell(integerVector[i]))
 				endif
 				set i = i + 1
@@ -632,6 +633,19 @@ endif
 			elseif (class == Classes.wizard()) then
 				call this.addWizardSpells()
 			endif
+		endmethod
+		
+		public method addClassSpellsFromCharacter takes Character character returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == character.classSpells().size())
+				// do not add spells twice
+				if (not this.m_spells.contains(Spell(character.classSpells()[i]))) then
+					debug call Print("Adding NEW spell " + GetAbilityName(Spell(character.classSpells()[i]).ability()))
+					call this.addSpell(Spell(character.classSpells()[i]))
+				endif
+				set i = i + 1
+			endloop
 		endmethod
 
 		public method addCharacterClassSpells takes nothing returns nothing

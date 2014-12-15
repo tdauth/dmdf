@@ -8,7 +8,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 	 * All provided infos can be disabled via \ref setEnabled().
 	 */
 	struct Tutorial
-		private static constant real infoTimerDuration = 30.0
+		private static constant real infoTimerDuration = 20.0
 		// static members
 		private static AStringVector m_infos
 		// dynamic members

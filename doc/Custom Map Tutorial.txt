@@ -191,3 +191,13 @@ Steps:
 * Check all model texture paths
 * Generate and compress new MPQ archive with best algorithms
 * Generate exe file by adding newly created MPQ archive
+
+Creating the minimap for a map which uses custom camera bounds:
+- export Minimap in WE (File -> Export Minimap, not only playable area but without icons etc.)
+- open Minimap file in Gimp, select the actual Minimap area and fit the image to that size
+- you can also export the Minimap with rects and use that image as background layer to align the selection.
+- , scale background to 256x256, aligh the layer with the minimap to the exact center
+- create another layer in background with 256x256 and fill it with black
+- import the tga file in WE and renamde the path to "war3mapMap.tga"
+- since the neutral building icons position might not find in the preview you can also import the file and use the path "war3mapPreview.tga"
+- in this case you could export the Minimap WITH neutral buildings

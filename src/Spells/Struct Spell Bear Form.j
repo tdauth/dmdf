@@ -1,11 +1,12 @@
 /// Druid
-library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis
+library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis, StructSpellsSpellAlpha, StructSpellsSpellZoology
 
 	struct SpellBearFormMetamorphosis extends SpellMetamorphosis
 		
 		public stub method onMorph takes nothing returns nothing
 			local integer level
 			local integer alphaLevel = 0
+			local integer zoologyLevel = 0
 			call super.onMorph()
 			set level = Character(this.character()).realSpellLevels().integerByInteger(0, SpellBearForm.abilityId)
 			debug call Print("Bear Form: Morph! Level: " + I2S(level))
@@ -18,6 +19,15 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			if (alphaLevel > 0) then
 				debug call Print("Adding Alpha spell since Alpha is skilled: " + GetAbilityName(SpellAlpha.castAbilityId))
 				call UnitAddAbility(this.character().unit(), SpellAlpha.castAbilityId)
+			endif
+			
+			set zoologyLevel =  Character(this.character()).realSpellLevels().integerByInteger(0, SpellZoology.abilityId)
+			debug call Print("Bear Form: Zoology Level: " + I2S(zoologyLevel))
+			
+			if (zoologyLevel > 0) then
+				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
+				call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
+				call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
 			endif
 		endmethod
 	endstruct

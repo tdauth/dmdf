@@ -1,11 +1,12 @@
 /// Druid
-library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis, StructSpellsSpellAlpha
+library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis, StructSpellsSpellAlpha, StructSpellsSpellZoology
 
 	struct SpellCrowFormMetamorphosis extends SpellMetamorphosis
 
 		public stub method onMorph takes nothing returns nothing
 			local integer level
 			local integer alphaLevel = 0
+			local integer zoologyLevel = 0
 			call super.onMorph()
 			set level = Character(this.character()).realSpellLevels().integerByInteger(0, SpellCrowForm.abilityId)
 			debug call Print("Crow Form: Morph! Level: " + I2S(level))
@@ -13,11 +14,20 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.armorAbilityId, level)
 			
 			set alphaLevel =  Character(this.character()).realSpellLevels().integerByInteger(0, SpellAlpha.abilityId)
-			debug call Print("Crow Form: Alpha Level: " + I2S(level))
+			debug call Print("Crow Form: Alpha Level: " + I2S(alphaLevel))
 			
 			if (alphaLevel > 0) then
 				debug call Print("Adding Alpha spell since Alpha is skilled: " + GetAbilityName(SpellAlpha.castAbilityId))
 				call UnitAddAbility(this.character().unit(), SpellAlpha.castAbilityId)
+			endif
+			
+			set zoologyLevel =  Character(this.character()).realSpellLevels().integerByInteger(0, SpellZoology.abilityId)
+			debug call Print("Crow Form: Zoology Level: " + I2S(zoologyLevel))
+			
+			if (zoologyLevel > 0) then
+				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
+				call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
+				call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
 			endif
 		endmethod
 		
@@ -38,8 +48,8 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			call this.addGrimoireEntry('A0CH', 'A0CI')
 			call this.addGrimoireEntry('A0CJ', 'A0CN')
 			call this.addGrimoireEntry('A0CK', 'A0CO')
-			call this.addGrimoireEntry('A0CL', 'A0CQ')
-			call this.addGrimoireEntry('A0CP', 'A0CM')
+			call this.addGrimoireEntry('A0CL', 'A0CP')
+			call this.addGrimoireEntry('A0CM', 'A0CQ')
 
 			return this
 		endmethod

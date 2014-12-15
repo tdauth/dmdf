@@ -196,7 +196,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			if (this.grimoireEntry() != 0) then
 				call this.grimoireEntry().show.evaluate()
 			debug else
-				debug call Print("Missing grimoire entry for spell " + GetObjectName(this.ability()) + " with level " + I2S(this.level()))
+				//debug call Print("Missing grimoire entry for spell " + GetObjectName(this.ability()) + " with level " + I2S(this.level()))
 			endif
 			//call SetPlayerTechMaxAllowed(this.character().player(), this.tech(), this.getMaxLevel())
 			//call SetPlayerTechResearched(this.character().player(), this.tech(), this.level())

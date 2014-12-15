@@ -328,6 +328,7 @@ endif
 				set i = i + 1
 			endloop
 			call VideoIntro.video().play()
+			debug call Print("Waiting for video intro")
 			call waitForVideo(thistype.videoWaitInterval)
 			debug call Print("Waited successfully for intro video.")
 static if (DEBUG_MODE) then

@@ -11,8 +11,8 @@ library StructSpellsSpellForestWoodFists requires Asl, StructGameClasses, Struct
 			call this.addGrimoireEntry('A0DR', 'A0DW')
 			call this.addGrimoireEntry('A0DS', 'A0DX')
 			call this.addGrimoireEntry('A0DT', 'A0DY')
-			call this.addGrimoireEntry('A0DU', 'A0E0')
-			call this.addGrimoireEntry('A0DZ', 'A0DV')
+			call this.addGrimoireEntry('A0DU', 'A0DZ')
+			call this.addGrimoireEntry('A0DV', 'A0E0')
 			
 			return this
 		endmethod

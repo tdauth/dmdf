@@ -12,7 +12,7 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 			call this.addGrimoireEntry('A0DI', 'A0DN')
 			call this.addGrimoireEntry('A0DJ', 'A0DO')
 			call this.addGrimoireEntry('A0DK', 'A0DP')
-			call this.addGrimoireEntry('A0DQ', 'A0DL')
+			call this.addGrimoireEntry('A0DL', 'A0DQ')
 			
 			return this
 		endmethod

@@ -61,13 +61,13 @@
 * Wenn Charakter verwandelt ist und im Dialog Gegenstände erhält, hat er kein Inventar. Gegenstände liegen dann dort. Kann nur unverwandelt ansprechen oder egal?
 * Bei Rückverwandlung wird Zustand des Zauberbuchs nicht wiederhergestellt. Keine Fähigkeiten im Zauberbuch aktiv!
 * Verwandlung in Bär funktioniert immer noch nicht manchmal, Charakter wird einfach nicht verwandelt ebenso im AOS. Unterbrechung?
-* Item spawns fixen.
-* Kisten sollten nun keine Beute oder Erfahrung mehr geben
+* DONE: Item spawns fixen.
+* FIXED: Kisten sollten nun keine Beute oder Erfahrung mehr geben
 * Statt einsammelbarem Gold immer verbrauchbare Gegenstände droppen, die einem Spieler gehören!
 * anstatt Items gleich zu verteilen einfach das Item n mal droppen?
 * Ankunfts und Tageszeitevents in ARoutine überprüfen. Manchmal kommt Sisgard nicht aus dem Haus, wenn die Tageszeit nach 5 Uhr wird.
 * Spawn Point im Orklager: Einheiten im letzten Quest entfernen vor der Schlacht!
-* Bei "Zauberstufe erhöhen" ist schon das Icon des Zaubers verschwunden. Vermutlich weil einzelne Fähigkeiten nicht absorb sind oder grimoire entries fehlen. IDs im Grimoire Entry waren vertauscht.
+* RIGHT: Bei "Zauberstufe erhöhen" ist schon das Icon des Zaubers verschwunden. Vermutlich weil einzelne Fähigkeiten nicht absorb sind oder grimoire entries fehlen. IDs im Grimoire Entry waren vertauscht.
 * Alle Zauberbuchfähigkeiten müssen "absorb" sein.
 * FIXED: Zauberbuchfähigkeit Stufen geben und je nach Skillpoints auf Stufe setzen!
 * Immediate stop bricht Zauberbuch hinzufügen etc. ab?!
@@ -81,6 +81,16 @@
 * Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
 * Schwert- und Schildhand vertauschen, damit Animation für Schild stimmt.
 * AOS-Verwandlung stürtzt ab da ja das Item während des Ausführens der Fähigkeit entfernt wird.
+* Beim Druiden werden am Anfang gar nicht alle Klassenspells zu den grimoire spells hinzugefügt, siehe wenn "addspells d" aufgerufen wird! Klassen-IDs stimmen überein.
+* SpellWrathOfTheForest (Zorn des Waldes) ist der letzte Zauber der noch NEU hinzugefügt wird
+* addClassSpellsFromCharacter() in Klassenauswahl verwenden, dann müssen nicht alle Zauber gesammelt werden.
+* AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
+* Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
+* Wache Willkommen in Talras erscheint nur bei extra Gebiet!
+* Agihard "Lass mich in die Arena" nur wenn er in der Nähe der Arena steht!
+* Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt.
+* Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer.
+* Zauberbuch: Je nachdem wie viel Ausgabe stattfindet werden weniger Zauber erzeugt. Vermutlich ein Funktionsaufrufslimit. Funktionsaufrufe reduzieren, nur einmal updateUI aufrufen oder weniger Debug-Ausgaben.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

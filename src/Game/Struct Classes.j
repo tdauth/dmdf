@@ -154,7 +154,13 @@ library StructGameClasses requires Asl, StructGameCharacter
 			debug return
 			debug endif
 			
-			call character.grimoire().addClassSpells.evaluate(class)
+			call character.grimoire().addClassSpellsFromCharacter.evaluate(character)
+			
+			debug call Print("Added class spells for class " + I2S(class))
+			debug call Print("Druid class is " + I2S(thistype.m_druid))
+			debug if (IsUnitPaused(character.unit())) then
+			debug call Print("Character is already paused!")
+			debug endif
 
 			call SpellCowNova.create.evaluate(character) /// @todo test
 
@@ -166,6 +172,8 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, StringArg(StringArg(tr("%s hat die Klasse \"%s\" gewählt."), character.name()), GetUnitName(character.unit())), character.player())
 			if (not last) then
 				call character.displayMessage(ACharacter.messageTypeInfo, tr("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben."))
+			else
+				 call Game.start.execute()
 			endif
 		endmethod
 
@@ -296,7 +304,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			local integer i
 			local player whichPlayer
 
-			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, thistype.m_cleric, thistype.m_wizard, thistype.characterCreationAction, Game.start, "", "", "", tr("%s (%i/%i)"), tr("Stärke: %i"), tr("Geschick: %i"), tr("Wissen: %i"), tr("Fähigkeiten"), tr("Beschreibung"))
+			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, thistype.m_cleric, thistype.m_wizard, thistype.characterCreationAction, "", "", "", tr("%s (%i/%i)"), tr("Stärke: %i"), tr("Geschick: %i"), tr("Wissen: %i"), tr("Fähigkeiten"), tr("Beschreibung"))
 
 			call SuspendTimeOfDay(true)
 			call SetTimeOfDay(0.0)

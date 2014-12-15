@@ -12,7 +12,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 			call this.addGrimoireEntry('A0FM', 'A0FR')
 			call this.addGrimoireEntry('A0FN', 'A0FS')
 			call this.addGrimoireEntry('A0FO', 'A0FT')
-			call this.addGrimoireEntry('A0FU', 'A0FP')
+			call this.addGrimoireEntry('A0FP', 'A0FU')
 			
 			return this
 		endmethod
