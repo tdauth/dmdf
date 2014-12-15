@@ -95,12 +95,14 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			call unitGroup.addUnitsInRect(GetPlayableMapRect(), Filter(function thistype.filter))
 			debug call Print("Controlled Time Flow: " + I2S(unitGroup.units().size()) + " units.")
 			// drop all allies in range
+			// TODO it might be better for the perfomance to get allies in range and THEN to exclude them from the group. Otherwise too many iterations
 			set i = 0
 			loop
 				exitwhen (i == unitGroup.units().size())
 				if (GetDistanceBetweenUnitsWithoutZ(caster, unitGroup.units()[i]) <= thistype.range and GetUnitAllianceStateToUnit(caster, unitGroup.units()[i]) == bj_ALLIANCE_ALLIED) then
 					call allies.units().pushBack(unitGroup.units()[i])
 					call unitGroup.units().erase(i)
+					debug call Print("Got ally " + GetUnitName(unitGroup.units()[i]) + " in range remaining units " + I2S(unitGroup.units().size()))
 
 				else
 					set i = i + 1
@@ -150,7 +152,10 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.wizard(), Spell.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0K3', 'A0K4')
+			
+			return this
 		endmethod
 	endstruct
 

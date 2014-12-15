@@ -8,7 +8,12 @@ library StructSpellsSpellForestFaeriesSpell requires Asl, StructGameClasses, Str
 		
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
-
+			call this.addGrimoireEntry('A0J5', 'A0JA')
+			call this.addGrimoireEntry('A0J6', 'A0JB')
+			call this.addGrimoireEntry('A0J7', 'A0JC')
+			call this.addGrimoireEntry('A0J8', 'A0JD')
+			call this.addGrimoireEntry('A0J9', 'A0JE')
+			
 			return this
 		endmethod
 	endstruct

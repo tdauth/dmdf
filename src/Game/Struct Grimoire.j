@@ -216,7 +216,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			local integer i
 			local integer index
 
-			call Print("Hiding spells with count in grimoire: " + I2S(this.m_uiGrimoireSpells.size()))
+			debug call Print("Hiding spells with count in grimoire: " + I2S(this.m_uiGrimoireSpells.size()))
 			set i = 0
 			loop
 				exitwhen (i == this.m_uiGrimoireSpells.size())

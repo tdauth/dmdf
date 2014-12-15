@@ -2,7 +2,7 @@
 library StructSpellsSpellColossus requires Asl, StructGameClasses, StructGameSpell
 
 	struct SpellColossus extends Spell
-		public static constant integer abilityId = 'A0FV'
+		public static constant integer abilityId = 'A0K5'
 		public static constant integer favouriteAbilityId = 'A0FW'
 		public static constant integer maxLevel = 5
 		

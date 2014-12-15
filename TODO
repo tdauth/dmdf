@@ -25,7 +25,7 @@
 * Fernkampf : UNIT_TYPE_RANGED_ATTACKER native UnitAddType                  takes unit whichUnit, unittype whichUnitType returns boolean
 * Fernkampf: Animationstag hinzufügen beim Anlegen: AddUnitAnimationProperties(whichUnit, "", add)
 * Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle? Fulco will die Zauberkraft der Hexen im Norden.
-* Tanka von Tellborn erzählen und umgekehrt, Quest "Schamanen", Informationsaustausch! "Sie hat führt auch eine haarige Kreatur mit sich!" Zusammenarbeit bei der Suche nach der Bestie?
+* DONE: Tanka von Tellborn erzählen und umgekehrt, Quest "Schamanen", Informationsaustausch! "Sie hat führt auch eine haarige Kreatur mit sich!" Zusammenarbeit bei der Suche nach der Bestie?
 * Kuno: Einbauen "Diese Wälder sind gefährlich! Hier hausen starke Kreaturen, nehmt euch in Acht!"
 * FIXED: Tankas Handelsfähigkeit fehlt, kann sie handeln?
 * FIXED: "Die Bestie" braucht Icon - Kreatur
@@ -91,6 +91,15 @@
 * Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt.
 * Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer.
 * Zauberbuch: Je nachdem wie viel Ausgabe stattfindet werden weniger Zauber erzeugt. Vermutlich ein Funktionsaufrufslimit. Funktionsaufrufe reduzieren, nur einmal updateUI aufrufen oder weniger Debug-Ausgaben.
+* Zauber "Dryade" ersetzen oder sinnvolle Beschwörung mit Heilung und Natur?
+* "Krähengestalt" darf nicht aus Zauberbuch heraus gewirkt werden, sonst stürtzt das Spiel ab, vermutlich das Gleiche für "Bärengestalt".
+* Wenn am Anfang nichts passiert wurde einmal überprüft ob das Video zu Ende ist, danach nicht mehr. Nichts passiert. Die Ausgabe des Überspringens kam danach. Überspringen parallel - Fehler?
+* Wenn ein Zauber im Zauberbuch geöffnet ist und der Charakter ein Level aufsteigt muss updateUi() aufgerufen werden!
+* AOS-Gebiet: oben auf Plataeus Sichtfeldblocker platzieren!
+* AOS-Gebiet: Bob muss Gegenstände verkaufen.
+* AOS-Gebiet: Die Dämonenhändler sichtbarer machen.
+* AOS-Gebiet: Oscar und Dämon sollen Dialoge bekommen. Leiden unter der Herrschaft von Haldar und Baldar.
+* Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

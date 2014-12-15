@@ -10,7 +10,14 @@ library StructSpellsSpellDarkServant requires Asl, StructGameClasses, StructGame
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			call this.addGrimoireEntry('A0IV', 'A0J0')
+			call this.addGrimoireEntry('A0IW', 'A0J1')
+			call this.addGrimoireEntry('A0IX', 'A0J2')
+			call this.addGrimoireEntry('A0IY', 'A0J3')
+			call this.addGrimoireEntry('A0IZ', 'A0J4')
+			
+			return this
 		endmethod
 	endstruct
 

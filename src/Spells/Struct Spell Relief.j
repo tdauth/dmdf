@@ -8,7 +8,12 @@ library StructSpellsSpellRelief requires Asl, StructGameClasses, StructGameSpell
 		
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
-
+			call this.addGrimoireEntry('A0JF', 'A0JK')
+			call this.addGrimoireEntry('A0JG', 'A0JL')
+			call this.addGrimoireEntry('A0JH', 'A0JM')
+			call this.addGrimoireEntry('A0JI', 'A0JN')
+			call this.addGrimoireEntry('A0JJ', 'A0JO')
+			
 			return this
 		endmethod
 	endstruct

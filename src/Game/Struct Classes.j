@@ -48,7 +48,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			 * Create all class spells for each character in debug mode.
 			 */
 			// cleric spells
-			if (class == Classes.m_cleric) then
+			if (class == thistype.m_cleric) then
 				call SpellAbatement.create.evaluate(character)
 				call SpellClarity.create.evaluate(character)
 				call SpellExorcizeEvil.create.evaluate(character)
@@ -61,9 +61,11 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellRevive.create.evaluate(character)
 				call SpellTorment.create.evaluate(character)
 				call SpellBlessing.create.evaluate(character)
-			elseif (class == Classes.m_necromancer) then
+			elseif (class == thistype.m_necromancer) then
 				call SpellAncestorPact.create.evaluate(character)
+				call SpellConsume.create.evaluate(character)
 				call SpellDarkServant.create.evaluate(character)
+				call SpellDarkSpell.create.evaluate(character)
 				call SpellDeathHerald.create.evaluate(character)
 				call SpellDemonServant.create.evaluate(character)
 				call SpellSoulThievery.create.evaluate(character)
@@ -87,15 +89,16 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellWrathOfTheForest.create.evaluate(character)
 				call SpellForestCastle.create.evaluate(character)
 				call SpellAlpha.create.evaluate(character)
-			elseif (class == Classes.m_knight) then
+			elseif (class == thistype.m_knight) then
 				call SpellBlock.create.evaluate(character)
 				call SpellConcentration.create.evaluate(character)
 				call SpellLivingWill.create.evaluate(character)
+				call SpellRigidity.create.evaluate(character)
 				call SpellRush.create.evaluate(character)
 				call SpellSelflessness.create.evaluate(character)
 				call SpellStab.create.evaluate(character)
 				call SpellTaunt.create.evaluate(character)
-			elseif (class == Classes.m_dragonSlayer) then
+			elseif (class == thistype.m_dragonSlayer) then
 				call SpellBeastHunter.create.evaluate(character)
 				call SpellDaunt.create.evaluate(character)
 				call SpellFuriousBloodthirstiness.create.evaluate(character)
@@ -103,7 +106,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellSupremacy.create.evaluate(character)
 				call SpellWeakPoint.create.evaluate(character)
 				call SpellColossus.create.evaluate(character)
-			elseif (class == Classes.m_ranger) then
+			elseif (class == thistype.m_ranger) then
 				call SpellAgility.create.evaluate(character)
 				call SpellEagleEye.create.evaluate(character)
 				call SpellShooter.create.evaluate(character)
@@ -111,7 +114,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellSprint.create.evaluate(character)
 				call SpellPoisonedArrows.create.evaluate(character)
 				call SpellBurningArrows.create.evaluate(character)
-			elseif (class == Classes.m_elementalMage) then
+			elseif (class == thistype.m_elementalMage) then
 				call SpellBlaze.create.evaluate(character)
 				call SpellEarthPrison.create.evaluate(character)
 				call SpellElementalForce.create.evaluate(character)
@@ -127,10 +130,10 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellPureEnergy.create.evaluate(character)
 				call SpellTeleportation.create.evaluate(character)
 				call SpellUndermine.create.evaluate(character)
-			elseif (class == Classes.m_astralModifier) then
+			elseif (class == thistype.m_astralModifier) then
 				call SpellTakeOver.create.evaluate(character)
-			elseif (class == Classes.m_illusionist) then
-			elseif (class == Classes.m_wizard) then
+			elseif (class == thistype.m_illusionist) then
+			elseif (class == thistype.m_wizard) then
 				call SpellAbsorbation.create.evaluate(character)
 				call SpellAdduction.create.evaluate(character)
 				call SpellArcaneBinding.create.evaluate(character)

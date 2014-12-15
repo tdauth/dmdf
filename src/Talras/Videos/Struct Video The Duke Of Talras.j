@@ -3,6 +3,8 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 	struct VideoTheDukeOfTalras extends AVideo
 		private integer m_actorHeimrich
 		private integer m_actorMarkward
+		private integer m_actorOsman
+		private integer m_actorFerdinand
 
 		implement Video
 
@@ -17,6 +19,14 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 
 			set this.m_actorMarkward = AVideo.saveUnitActor(gg_unit_n014_0117)
 			call SetUnitPositionRect(AVideo.unitActor(this.m_actorMarkward), gg_rct_video_the_duke_of_talras_markwards_position)
+			
+			set this.m_actorOsman = AVideo.saveUnitActor(Npcs.osman())
+			call SetUnitPositionRect(AVideo.unitActor(this.m_actorOsman), gg_rct_video_the_duke_of_talras_osmans_position)
+			call SetUnitFacing(AVideo.unitActor(this.m_actorOsman), 290.39)
+			
+			set this.m_actorFerdinand = AVideo.saveUnitActor(Npcs.ferdinand())
+			call SetUnitPositionRect(AVideo.unitActor(this.m_actorFerdinand), gg_rct_video_the_duke_of_talras_ferdinands_position)
+			call SetUnitFacing(AVideo.unitActor(this.m_actorFerdinand), 257.48)
 
 			call SetUnitPositionRect(AVideo.actor(), gg_rct_video_the_duke_of_talras_actors_position)
 

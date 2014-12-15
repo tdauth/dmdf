@@ -26,8 +26,8 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			
 			if (zoologyLevel > 0) then
 				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
-				call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
-				call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
+				//call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
+				//call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
 			endif
 		endmethod
 	endstruct
