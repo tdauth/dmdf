@@ -5,7 +5,7 @@
 * Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
 * Burgvideo deutlich kürzer und sinnvoller machen (Charaktere zeigen?)
 * FIXED: Knechte arbeiten auch noch um 2 Uhr morgens.
-* Verschwinden in Häusern funktioniert nicht.
+* Verschwinden in Häusern funktioniert nicht. Siehe Tagesablaufbug, wenn die Funktionen in falscher Reihenfolge aufgerufen werden (endet und startet).
 * DONE: Gefährten nicht an Schreinen wiederbeleben, sondern an ihrem Todespunkt (einfacher zu finden!)
 * FIXED: Drachentöterin ist zu schwach!
 * "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein.
@@ -18,7 +18,7 @@
 	* Verwandlung mit Baldars Ring macht nichts, Rückverwandlung fehlt. Nach Wiederbelebung ist Rückverwandlung da und bewirkt Verwandlung in Dämon. Rückverwandlung bewirkt dann Verwandlung in Krähe vermutlich wegen selber ID.
 * Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
 * Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
-* Trommon Dialoge mit Überfahrt entfernen (Bezahlung usw.)
+* DONE: Trommon Dialoge mit Überfahrt entfernen (Bezahlung usw.)
 * Trommon Tagesablauf auf Fähre ändern, auch bei Kuno
 * FIXED: Der Jäger Björn wird deiner Tochter etwas beibringen ist sofort aktiv.
 * Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird.
@@ -36,7 +36,7 @@
 * FIXED: "The Chief" Ricmans Position.
 * Medusa und Helfer respawnen nicht.
 * "Der dunkle Kult": Egal wann der Diakon getötet wird bzw. alle, muss es bereits abgeschlossen sein, solange der Charakter in der Nähe war.
-* In Videos alle Handelsfähigkeiten deaktivieren (Schlachtvideo am Ende)
+* FIXED: In Videos alle Handelsfähigkeiten deaktivieren (Schlachtvideo am Ende)
 * FIXED: Weniger Wellen im letzten Auftrag?
 * FIXED: Leaderboard im letzten Auftrag: dunkle Schrift heller machen
 * FIXED: Einheiten von neutral passiv laufen in Video zurück! Anderen Spieler für Videocharaktere!!!
@@ -53,14 +53,14 @@
 * FIXED: Kameragrenzen während des letzten Auftrags deaktivieren: Charaktere haben mehr Freiheit.
 * Dialog mit Björn über Dago, wird alles automatisch ausgeführt.
 * FIXED: Dialog mit Tellborn, man kann sofort die Zutaten geben und über das Problem seines Freundes sprechen!
-* Dialog mit Sisgard, sie folgt einem nur, falls sie sich nur mit einem einzelnen Charakter unterhält, ansonsten beschäftigt!
+* FIXED: Dialog mit Sisgard, sie folgt einem nur, falls sie sich nur mit einem einzelnen Charakter unterhält, ansonsten beschäftigt!
 * Dialog mit Wigberht: Fahr beginnt auch wenn Später abgestimmt wurde. Double free of AIntegerList - AVote bug?
 * FIXED: Verkaufte Einheiten im AOS benötigen Kosten und Tooltips.
 * FIXED: Engelslocken sollten Icon eines Items haben.
 * AOS spawns finden nicht statt, nur erste Welle? Nach zwei Spawns ist Schluss.
 * Wenn Charakter verwandelt ist und im Dialog Gegenstände erhält, hat er kein Inventar. Gegenstände liegen dann dort. Kann nur unverwandelt ansprechen oder egal?
-* Bei Rückverwandlung wird Zustand des Zauberbuchs nicht wiederhergestellt. Keine Fähigkeiten im Zauberbuch aktiv!
-* Verwandlung in Bär funktioniert immer noch nicht manchmal, Charakter wird einfach nicht verwandelt ebenso im AOS. Unterbrechung?
+* FIXED: Bei Rückverwandlung wird Zustand des Zauberbuchs nicht wiederhergestellt. Keine Fähigkeiten im Zauberbuch aktiv!
+* FIXED: Verwandlung in Bär funktioniert immer noch nicht manchmal, Charakter wird einfach nicht verwandelt ebenso im AOS. Unterbrechung?
 * DONE: Item spawns fixen.
 * FIXED: Kisten sollten nun keine Beute oder Erfahrung mehr geben
 * Statt einsammelbarem Gold immer verbrauchbare Gegenstände droppen, die einem Spieler gehören!
@@ -76,30 +76,52 @@
 * Drachentöterin wurde nach Medusavideo entfernt, ist nicht unsterblich?!
 * Ursula: Dialog einbauen falls man Druide ist!
 * Geisterstunde: Hinweis sollte erscheinen wenn man zur Mühle geht. Nichts erkennbar! Außerdem Hinweis einblenden wenn man die Mitte des AOS betritt und Questziel abschließen.
-* removeItemType() funktioniert nicht, haben eine oder keine Aufladung aber verschwinden nicht.
-* Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen!
+* removeItemType() funktioniert nicht, haben eine oder keine Aufladung aber verschwinden nicht. Funktioniert NUR nicht wenn das Item gerade nicht sichtbar ist?
+* Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
+* FIXED: Außerdem wird die Anzahl der Aufladungen nicht mehr beim Ablegen oder verkaufen aktualisiert.
 * Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
 * Schwert- und Schildhand vertauschen, damit Animation für Schild stimmt.
-* AOS-Verwandlung stürtzt ab da ja das Item während des Ausführens der Fähigkeit entfernt wird.
 * Beim Druiden werden am Anfang gar nicht alle Klassenspells zu den grimoire spells hinzugefügt, siehe wenn "addspells d" aufgerufen wird! Klassen-IDs stimmen überein.
 * SpellWrathOfTheForest (Zorn des Waldes) ist der letzte Zauber der noch NEU hinzugefügt wird
 * addClassSpellsFromCharacter() in Klassenauswahl verwenden, dann müssen nicht alle Zauber gesammelt werden.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
-* Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
 * Wache Willkommen in Talras erscheint nur bei extra Gebiet!
 * Agihard "Lass mich in die Arena" nur wenn er in der Nähe der Arena steht!
 * Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt.
 * Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer.
 * Zauberbuch: Je nachdem wie viel Ausgabe stattfindet werden weniger Zauber erzeugt. Vermutlich ein Funktionsaufrufslimit. Funktionsaufrufe reduzieren, nur einmal updateUI aufrufen oder weniger Debug-Ausgaben.
 * Zauber "Dryade" ersetzen oder sinnvolle Beschwörung mit Heilung und Natur?
-* "Krähengestalt" darf nicht aus Zauberbuch heraus gewirkt werden, sonst stürtzt das Spiel ab, vermutlich das Gleiche für "Bärengestalt".
 * Wenn am Anfang nichts passiert wurde einmal überprüft ob das Video zu Ende ist, danach nicht mehr. Nichts passiert. Die Ausgabe des Überspringens kam danach. Überspringen parallel - Fehler?
-* Wenn ein Zauber im Zauberbuch geöffnet ist und der Charakter ein Level aufsteigt muss updateUi() aufgerufen werden!
-* AOS-Gebiet: oben auf Plataeus Sichtfeldblocker platzieren!
+* FIXED: Wenn ein Zauber im Zauberbuch geöffnet ist und der Charakter ein Level aufsteigt muss updateUi() aufgerufen werden!
+* AOS-Gebiet: oben auf Plateaus Sichtfeldblocker platzieren!
 * AOS-Gebiet: Bob muss Gegenstände verkaufen.
 * AOS-Gebiet: Die Dämonenhändler sichtbarer machen.
 * AOS-Gebiet: Oscar und Dämon sollen Dialoge bekommen. Leiden unter der Herrschaft von Haldar und Baldar.
-* Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren.
+* Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren. Vermutlich checkState()!
+* Helden wählen etc. deaktivieren wenn Einheit ins Haus geht.
+* Vermutlich verursacht EndThematicMusic() beim Beenden eines Videos dass die Human-Musik gespielt wird. Die aktuelle Musik muss daher nach jedem Video wiederhergestellt werden! Game.resetVideoSettings()! setMapMusic() hat nichts gebracht!
+* GetSpellTargetX() geht nirgendwo, außer VERMUTLICH direkt im Trigger. Daten anders übergeben?
+* Trommons Tagesablauf wurde überarbeitet. Im Code anpassen.
+* Schlafen gehen funktioniert immer noch nicht bei manuellem Setzen der Tageszeit.
+* Taverne, Kameraeinstellungen zurücksetzen.
+* Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
+* AOS-Verwandlung stürtzt ab da ja das Item während des Ausführens der Fähigkeit entfernt wird.
+* Metamorphose stürtzt immer ab wenn Fähigkeit entfernt wird. Daher Fähigkeit manuell während des Zauberns hinzufügen. Ist nur weil das Inventar manuell entfernt wird und das Zauberbuch nicht zur verwandelten Einheit übernommen wird (wegen speziellen Grimoiresystems mit gleichen IDs?)
+* "Krähengestalt" darf nicht aus Zauberbuch heraus gewirkt werden, sonst stürtzt das Spiel ab, vermutlich das Gleiche für "Bärengestalt".
+* Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
+* Bei manueller Metamorphose wird die Fähigkeit in anderen Auslösern ungültig. Komischerweise ist es die permanente Fähigkeit, die eigentlich nicht entfernt werden sollte.
+* Bei überarbeiteter Version: Stürzt bei automatischem Order ab. Vielleicht müssen alle Zauberbücher manuell vorher entfernt werden?!
+* Manuelle Metamorphose liegt NICHT an mehreren Metamorphosezaubern.
+* Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
+* Feuergeschoss etc. funktionieren alle vielleicht nicht weil GetSpellTarget() auch nicht geht?
+* Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
+* Mehr Orks: http://www.hiveworkshop.com/forums/models-530/orcveteran-259649/?prev=r%3D20%26page%3D3 und alternate Version
+* Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/ 
+* fogmodifier vom Quest "The Norsemen" sind am Anfang aktiv.
+* Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schreib wiederbelebt werden.
+* Stab der Unsterblichkeit entfernen. Sollte Questbelohnung von "Die Nordmänner" werden.
+* Eigentlich benötigen die Zauberbuchfähigkeiten 6 verschiedene! Die letzte entspricht der ausgelernten Stufe und gibt nur noch einmal die Werte an. Ansonsten wird immer die der nächsten Stufe angezeigt und nicht der aktuellen!
+* Neue Quests von Markward: Dialoge bei Manfred, Kuno, Björn und Dago einbauen, Gebiete und Pfeilplatzierung ermöglichen. Modell für Karren herunterladen.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

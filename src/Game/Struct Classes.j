@@ -98,6 +98,8 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellSelflessness.create.evaluate(character)
 				call SpellStab.create.evaluate(character)
 				call SpellTaunt.create.evaluate(character)
+				call SpellAuraOfRedemption.create.evaluate(character)
+				call SpellAuraOfAuthority.create.evaluate(character)
 			elseif (class == thistype.m_dragonSlayer) then
 				call SpellBeastHunter.create.evaluate(character)
 				call SpellDaunt.create.evaluate(character)
@@ -114,6 +116,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellSprint.create.evaluate(character)
 				call SpellPoisonedArrows.create.evaluate(character)
 				call SpellBurningArrows.create.evaluate(character)
+				call SpellFrozenArrows.create.evaluate(character)
 			elseif (class == thistype.m_elementalMage) then
 				call SpellBlaze.create.evaluate(character)
 				call SpellEarthPrison.create.evaluate(character)
@@ -307,7 +310,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			local integer i
 			local player whichPlayer
 
-			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, thistype.m_cleric, thistype.m_wizard, thistype.characterCreationAction, "", "", "", tr("%s (%i/%i)"), tr("Stärke: %i"), tr("Geschick: %i"), tr("Wissen: %i"), tr("Fähigkeiten"), tr("Beschreibung"))
+			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, thistype.m_cleric, thistype.m_wizard, thistype.characterCreationAction, "", "", "", tr("%s (%i/%i)"), tr("Stärke: %i"), tr("Geschick: %i"), tr("Wissen: %i"), tr("Fähigkeiten"))
 
 			call SuspendTimeOfDay(true)
 			call SetTimeOfDay(0.0)

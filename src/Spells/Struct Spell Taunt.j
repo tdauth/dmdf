@@ -25,6 +25,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			local unit caster = this.character().unit()
 			local unit target = GetSpellTargetUnit()
 			local real time = 5.0
+			debug call Print("Taunt on target: " + GetUnitName(target))
 			call ShowGeneralFadingTextTagForPlayer(null, tr("Verspotten"), GetUnitX(target), GetUnitY(target), 255, 255, 255, 255)
 			set this.m_target = target
 			call IssueTargetOrder(target, "attack", caster)
@@ -79,6 +80,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
 			local unit triggerUnit = GetTriggerUnit() //or this.m_target
 			local unit caster = this.character().unit()
+			call ShowGeneralFadingTextTagForPlayer(null, tr("Greife den Ritter an!"), GetUnitX(triggerUnit), GetUnitY(triggerUnit), 255, 255, 255, 255)
 			call IssueTargetOrder(triggerUnit, "attack", caster)
 			set triggeringTrigger = null
 			set triggerUnit = null
@@ -102,6 +104,12 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0LV', 'A0LM')
+			call this.addGrimoireEntry('A0LW', 'A0M1')
+			call this.addGrimoireEntry('A0LX', 'A0M2')
+			call this.addGrimoireEntry('A0LY', 'A0M3')
+			call this.addGrimoireEntry('A0LZ', 'A0M4')
+			
 			set this.m_damageRecorder = 0
 
 			call this.createOrderTrigger()

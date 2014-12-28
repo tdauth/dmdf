@@ -34,7 +34,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 	endstruct
 
 	struct SpellCrowForm extends Spell
-		public static constant integer abilityId = 'A091'
+		public static constant integer abilityId = 'A0KZ'
 		public static constant integer favouriteAbilityId = 'A092'
 		public static constant integer maxLevel = 5
 		public static constant integer manaAbilityId = 'A093'
@@ -45,6 +45,9 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.m_metamorphosis = SpellCrowFormMetamorphosis.create(character, thistype.abilityId)
 			call this.m_metamorphosis.setUnitTypeId('H00H')
+			call this.m_metamorphosis.setFavoriteAbility(thistype.favouriteAbilityId)
+			call this.m_metamorphosis.setOrderString("ravenform")
+			call this.m_metamorphosis.setUnorderString("unravenform")
 			call this.addGrimoireEntry('A0CH', 'A0CI')
 			call this.addGrimoireEntry('A0CJ', 'A0CN')
 			call this.addGrimoireEntry('A0CK', 'A0CO')

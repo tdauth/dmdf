@@ -6,9 +6,10 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 		public static constant integer abilityId = 'A01A'
 		public static constant integer favouriteAbilityId = 'A03N'
 		public static constant integer maxLevel = 5
-		private static constant real time = 10.0
+		private static constant real time = 6.0
 		private static constant real radius = 400.0
-		private static constant real damageLevelValue = 50.0
+		private static constant real damageStartValue = 30.0
+		private static constant real damageLevelValue = 15.0
 
 		private static method filterCondition takes nothing returns boolean
 			local unit filterUnit = GetFilterUnit()
@@ -24,7 +25,7 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 			local group targets = CreateGroup()
 			local conditionfunc condition = Condition(function thistype.filterCondition)
 			local unit firstOfGroup
-			local real damage = thistype.damageLevelValue * this.level()
+			local real damage = thistype.damageStartValue + thistype.damageLevelValue * this.level()
 			local real newDamage
 			loop
 				exitwhen (time <= 0.0 or ASpell.allyTargetLoopCondition(caster))
@@ -55,7 +56,14 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0KF', 'A0KK')
+			call this.addGrimoireEntry('A0KG', 'A0KL')
+			call this.addGrimoireEntry('A0KH', 'A0KM')
+			call this.addGrimoireEntry('A0KI', 'A0KN')
+			call this.addGrimoireEntry('A0KJ', 'A0KO')
+			
+			return this
 		endmethod
 	endstruct
 

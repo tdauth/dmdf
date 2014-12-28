@@ -40,8 +40,13 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 		endmethod
 
 		private method action takes nothing returns nothing
-			local unit caster = this.character().unit()
-			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
+			local unit caster
+			local effect casterEffect
+			if (not this.condition()) then
+				return
+			endif
+			set caster = this.character().unit()
+			set casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
 			debug call Print("Spell Scroll Of The Realm!")
 			call SetUnitPosition(caster, GetSpellTargetX(), GetSpellTargetY())
 			call TriggerSleepAction(0.0)
@@ -52,7 +57,7 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action)
+			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action)
 		endmethod
 	endstruct
 

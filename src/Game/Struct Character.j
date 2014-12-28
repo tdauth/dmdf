@@ -254,11 +254,13 @@ endif
 			
 			debug call Print("Storing spell levels")
 			call DmdfHashTable.global().setHandleInteger(this.unit(), "SpellLevels", this.grimoire().spellLevels.evaluate())
+			
 			// Make sure it won't be enabled again when the character is set movable.
 			call this.inventory().setEnableAgain(false)
 			debug call Print("Disabling inventory")
 			// Should remove but store all items.
 			call this.inventory().disable()
+			
 			set this.m_isMorphed = true
 			set this.m_morphAbilityId = abilityId
 			

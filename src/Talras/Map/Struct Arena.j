@@ -48,6 +48,9 @@ library StructMapMapArena requires Asl, StructGameGame, StructMapQuestsQuestAren
 				call Game.setAlliedPlayerAlliedToPlayer(owner)
 				call PanCameraToForPlayer(owner, GetUnitX(usedUnit), GetUnitY(usedUnit))
 				call ShowLeaderboardForPlayer(owner, thistype.m_leaderboard, false)
+				// remove player item to make sure the leaderboard is not restored after cinematics
+				// remove item after hiding since hiding sets the leaderboard of the player
+				call LeaderboardRemovePlayerItemBJ(owner, thistype.m_leaderboard)
 			// remove newly created NPC units
 			else
 				call RemoveUnit(usedUnit)

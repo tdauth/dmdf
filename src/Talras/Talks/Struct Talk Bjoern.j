@@ -128,7 +128,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 				endif
 			// (Dago lebt)
 			else
-				call speech(info, character, false, tr("Ja, habe ich."), null)
+				call speech(info, character, false, tr("Ja, bin ich."), null)
 				if (QuestMushroomSearch.characterQuest(character).state() == AAbstractQuest.stateNotUsed and QuestBurnTheBearsDown.characterQuest(character) == AAbstractQuest.stateNotUsed) then
 					// (Charakter spielt mit anderen und weiß nichts von den Pilzen oder der Niederbrennung der Bären)
 					if (ACharacter.countAllPlaying() > 1) then
@@ -199,7 +199,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		// Das geht dich überhaupt nichts an!
 		private static method infoAction0_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Das geht dich überhaupt nichts an!"), null)
-			call speech(info, character, true, tr("Ich wollte nur wissen, ob du vielleicht meinen Freund Dago getroffen hast."), null)
+			call speech(info, character, true, tr("Ich wollte nur wissen, ob du vielleicht meinen Freund Dago begegnet bist."), null)
 			call thistype.infoAction0_0And0_1(info, character)
 		endmethod
 

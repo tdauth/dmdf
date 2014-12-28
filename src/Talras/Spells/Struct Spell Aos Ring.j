@@ -103,6 +103,7 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 			else
 				call this.setUnitTypeId(this.getUnitTypeIdHaldar())
 			endif
+			call this.setOrderString("metamorphosis")
 			
 			return this
 		endmethod

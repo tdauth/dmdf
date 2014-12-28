@@ -12,9 +12,12 @@
 //! import "Talras/Quests/Struct Quest Mushroom Search.j"
 //! import "Talras/Quests/Struct Quest My Friend The Bear.j"
 //! import "Talras/Quests/Struct Quest Protect The People.j"
+//! import "Talras/Quests/Struct Quest Seeds For The Garden.j"
+//! import "Talras/Quests/Struct Quest Reinforcement For Talras.j"
 //! import "Talras/Quests/Struct Quest Rescue Dago.j"
 //! import "Talras/Quests/Struct Quest Shamans In Talras.j"
 //! import "Talras/Quests/Struct Quest Slaughter.j"
+//! import "Talras/Quests/Struct Quest Supply For Talras.j"
 //! import "Talras/Quests/Struct Quest Talras.j"
 //! import "Talras/Quests/Struct Quest The Beast.j"
 //! import "Talras/Quests/Struct Quest The Brave Armourer Of Talras.j"
@@ -30,7 +33,7 @@
 //! import "Talras/Quests/Struct Quest Witching Hour.j"
 //! import "Talras/Quests/Struct Quest Wood For The Hut.j"
 
-library MapQuests requires StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent, StructMapQuestsQuestAmongTheWeaponsPeasants, StructMapQuestsQuestArenaChampion, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCatsForBrogo, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestDeathToBlackLegion, StructMapQuestsQuestDeathToWhiteLegion, StructMapQuestsQuestGoldForTheTradingPermission, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestMushroomSearch, StructMapQuestsQuestMyFriendTheBear, StructMapQuestsQuestProtectThePeople, StructMapQuestsQuestRescueDago, StructMapQuestsQuestShamansInTalras, StructMapQuestsQuestSlaughter, StructMapQuestsQuestTalras, StructMapQuestsQuestTheBeast, StructMapQuestsQuestTheBraveArmourerOfTalras, StructMapQuestsQuestTheDarkCult, StructMapQuestsQuestTheHolyPotato, StructMapQuestsQuestTheKingsCrown, StructMapQuestsQuestTheMagic, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestTheOaksPower, StructMapQuestsQuestThePaedophilliacCleric, StructMapQuestsQuestTheWayToHolzbruck, StructMapQuestsQuestWielandsSword, StructMapQuestsQuestWitchingHour, StructMapQuestsQuestWoodForTheHut
+library MapQuests requires StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent, StructMapQuestsQuestAmongTheWeaponsPeasants, StructMapQuestsQuestArenaChampion, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCatsForBrogo, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestDeathToBlackLegion, StructMapQuestsQuestDeathToWhiteLegion, StructMapQuestsQuestGoldForTheTradingPermission, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestMushroomSearch, StructMapQuestsQuestMyFriendTheBear, StructMapQuestsQuestProtectThePeople, StructMapQuestsQuestSeedsForTheGarden, StructMapQuestsQuestReinforcementForTalras, StructMapQuestsQuestRescueDago, StructMapQuestsQuestShamansInTalras, StructMapQuestsQuestSlaughter, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestTalras, StructMapQuestsQuestTheBeast, StructMapQuestsQuestTheBraveArmourerOfTalras, StructMapQuestsQuestTheDarkCult, StructMapQuestsQuestTheHolyPotato, StructMapQuestsQuestTheKingsCrown, StructMapQuestsQuestTheMagic, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestTheOaksPower, StructMapQuestsQuestThePaedophilliacCleric, StructMapQuestsQuestTheWayToHolzbruck, StructMapQuestsQuestWielandsSword, StructMapQuestsQuestWitchingHour, StructMapQuestsQuestWoodForTheHut
 
 	function initMapPrimaryQuests takes nothing returns nothing
 		call QuestTalras.initQuest()
@@ -55,7 +58,10 @@ library MapQuests requires StructMapQuestsQuestABigPresent, StructMapQuestsQuest
 		call QuestMushroomSearch.initQuest()
 		call QuestMyFriendTheBear.initQuest()
 		call QuestProtectThePeople.initQuest()
+		call QuestReinforcementForTalras.initQuest()
+		call QuestSeedsForTheGarden.initQuest()
 		call QuestShamansInTalras.initQuest()
+		call QuestSupplyForTalras.initQuest()
 		call QuestTheBeast.initQuest()
 		call QuestTheBraveArmourerOfTalras.initQuest()
 		call QuestTheDarkCult.initQuest()

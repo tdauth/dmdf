@@ -2,15 +2,15 @@
 library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpell
 
 	/**
-	* Ein befreundetes Ziel erleidet X% weniger Schaden. Kanalisierter Zauber. Max. 10 Sekunden.
-	* Mittelmäßig viel, soll kein Notknopf sein.
-	*/
+	 * Ein befreundetes Ziel erleidet X% weniger Schaden. Kanalisierter Zauber. Max. 10 Sekunden.
+	 * Mittelmäßig viel, soll kein Notknopf sein.
+	 */
 	struct SpellProtect extends Spell
 		public static constant integer abilityId = 'A050'
 		public static constant integer favouriteAbilityId = 'A051'
 		public static constant integer maxLevel = 5
-		private static constant real damageLevelValue = 0.20
-		private static constant real damageLevelFactor = 0.10
+		private static constant real damageLevelValue = 0.15
+		private static constant real damageLevelFactor = 0.05
 		private static constant real time = 10.0
 
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
@@ -41,7 +41,14 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			return thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A091', 'A0LE')
+			call this.addGrimoireEntry('A0lA', 'A0LF')
+			call this.addGrimoireEntry('A0LB', 'A0LG')
+			call this.addGrimoireEntry('A0LC', 'A0LH')
+			call this.addGrimoireEntry('A0LD', 'A0LI')
+			
+			return this
 		endmethod
 	endstruct
 

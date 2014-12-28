@@ -2,6 +2,9 @@ library StructGameSpell requires Asl, StructGameCharacter
 
 	/**
 	* @todo Use icon path and name etc. from ability with @param ABILITY_ID
+	* w3a means ability.
+	* "Aspb" is the base ID of spell book
+	* "ANcl" is the base ID of channel
 	* anam - name
 	* ansf - editor suffix
 	* aart - icon
@@ -17,6 +20,79 @@ library StructGameSpell requires Asl, StructGameCharacter
 	//! textmacro DMDF_CREATE_FAVOURITE_ABILITY takes FAVOURITE_ABILITY_ID, ABILITY_ID
 		///! external ObjectMerger w3a Aspb $FAVOURITE_ABILITY_ID$ anam "
 	//! endtextmacro
+	
+	//! textmacro DMDF_CREATE_GRIMOIRE_ABILITY_PAIR takes NAME, CLASS, LEVEL, SPELL_ID, GRIMOIRE_ABILITY_ID
+		///! external ObjectMerger w3a Aspb $GRIMOIRE_ABILITY_ID$ anam "$NAME$ - Stufe $LEVEL$" ansf "(Zauberbuchfähigkeit - $CLASS$)"
+	//! endtextmacro
+	
+	/// \todo Fix arithmetic operations, take base Ids, print addGrimoireEntry into a separate JASS file which later will be imported, use an array for base Ids like "whindwalk" to always use the same ones
+	//! externalblock extension=lua ObjectMerger $FILENAME$
+		//! i function createFavoriteAbility(name, class, abilityId, spellAbilityId, icon)
+		//! i setobjecttype("abilities")
+		//! i createobject("Aspb", abilityId)
+		//! i makechange(current, "anam", name)
+		//! i makechange(current, "ansf", "(Favoritenfähigkeit - "..class..")")
+		//! i makechange(current, "spb5", "1", "spellbook")
+		//! i makechange(current, "spb2", "1", "0")
+		//! i makechange(current, "spb4", "1", "1")
+		//! i makechange(current, "spb3", "1", "1")
+		//! i makechange(current, "spb1", "1", spellAbilityId)
+		//! i makechange(current, "aite", "0")
+		//! i makechange(current, "arac", "human")
+		//! i makechange(current, "aart", icon)
+		//! i end
+	
+		//! i function createGrimoireAbilityPair(name, tooltip, class, level, baseId, abilityId, grimoireAbilityId, icon )
+		//! i setobjecttype("abilities")
+		
+		//! i createobject("ANcl", abilityId)
+		//! i makechange(current, "anam", name.." - Stufe "..level)
+		//! i makechange(current, "ansf", "(Zauberbuch - "..class..")")
+		//! i makechange(current, "atp1", "1", name.."[|cffffcc00Stufe "..level.."|r]")
+		//! i makechange(current, "aub1", "1", tooltip)
+		//! i makechange(current, "Ncl6", "1", baseId)
+		//! i makechange(current, "Ncl5", "1", 0)
+		//! i makechange(current, "Ncl1", "1", 0.0)
+		//! i makechange(current, "Ncl4", "1", 0.0)
+		//! i makechange(current, "Ncl3", "1", 1)
+		//! i makechange(current, "abpx", 0)
+		//! i makechange(current, "aani", "")
+		//! i makechange(current, "ahky", "")
+		//! i makechange(current, "aeat", "")
+		//! i makechange(current, "acat", "")
+		//! i makechange(current, "acap", "")
+		//! i makechange(current, "atat", "")
+		//! i makechange(current, "ata0", "")
+		//! i makechange(current, "achd", 0)
+		//! i makechange(current, "aord", 0)
+		//! i makechange(current, "aher", "0")
+		//! i makechange(current, "alev", "1")
+		//! i makechange(current, "arac", "human")
+		//! i makechange(current, "aran", "1", "0.00")
+		//! i makechange(current, "aart", icon)
+		
+		//! i createobject("Aspb", grimoireAbilityId)
+		//! i makechange(current, "anam", name.." - Stufe "..level)
+		//! i makechange(current, "ansf", "(Zauberbuchfähigkeit - "..class..")")
+		//! i makechange(current, "spb5", "1", "absorb")
+		//! i makechange(current, "spb2", "1", "0")
+		//! i makechange(current, "spb4", "1", "1")
+		//! i makechange(current, "spb3", "1", "1")
+		//! i makechange(current, "spb1", "1", abilityId)
+		//! i makechange(current, "aart", icon)
+		//! i makechange(current, "aite", "0")
+		//! i makechange(current, "arac", "human")
+		//! i end
+		
+		//! i function createGrimoireSpell(name, tooltip, icon, class, levels, abilityId, baseId, startId)
+			//! i createFavoriteAbility(name, class, startId, abilityId, icon)
+			////! i for i=1, levels do
+			//	//! i createGrimoireAbilityPair(name, tooltip, class, i, baseId, tonumber(startId) + 1 + i, tonumber(startId) + 2 + i, icon)
+			////! i end
+		//! i end
+		
+		//! i createGrimoireSpell("Testzauber", "Dieser Zauber besitzt einen tollen Effekt", "", "Kleriker", 5, "A000", "windwalk", "AY00")
+	//! endexternalblock
 
 	/**
 	 * Custom structure for character spells which support \ref Grimoire API.

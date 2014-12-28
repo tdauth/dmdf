@@ -1,6 +1,7 @@
 library StructMapMapTavern requires Asl
 
 	struct Tavern
+		private static region m_region
 		private static trigger m_enterTrigger
 		private static trigger m_leaveTrigger
 
@@ -22,8 +23,6 @@ library StructMapMapTavern requires Asl
 			local unit triggerUnit = GetTriggerUnit()
 			local ACharacter character = ACharacter.getCharacterByUnit(triggerUnit)
 			local player user = character.player()
-			call character.setRect(gg_rct_tavern_enter)
-			call character.setFacing(225.0)
 			call MapData.setCameraBoundsToTavernForPlayer.evaluate(user)
 			call character.panCameraSmart()
 			if (not character.view().isEnabled()) then
@@ -40,7 +39,7 @@ library StructMapMapTavern requires Asl
 			local triggercondition triggerCondition
 			local triggeraction triggerAction
 			set thistype.m_enterTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterEnterRectSimple(thistype.m_enterTrigger, gg_rct_area_tavern)
+			set triggerEvent = TriggerRegisterEnterRegion(thistype.m_enterTrigger, thistype.m_region, null)
 			set conditionFunction = Condition(function thistype.triggerConditionIsCharacter)
 			set triggerCondition = TriggerAddCondition(thistype.m_enterTrigger, conditionFunction)
 			set triggerAction = TriggerAddAction(thistype.m_enterTrigger, function thistype.triggerActionEnter)
@@ -54,8 +53,6 @@ library StructMapMapTavern requires Asl
 			local unit triggerUnit = GetTriggerUnit()
 			local ACharacter character = ACharacter.getCharacterByUnit(triggerUnit)
 			local player user = character.player()
-			call character.setRect(gg_rct_tavern_leave)
-			call character.setFacing(45.0)
 			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(user)
 			call character.panCameraSmart()
 			call character.displayMessage(ACharacter.messageTypeInfo, tr("Sie haben das Wirtshaus verlassen."))
@@ -68,7 +65,7 @@ library StructMapMapTavern requires Asl
 			local triggercondition triggerCondition
 			local triggeraction triggerAction
 			set thistype.m_leaveTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterLeaveRectSimple(thistype.m_leaveTrigger, gg_rct_area_tavern)
+			set triggerEvent = TriggerRegisterLeaveRegion(thistype.m_leaveTrigger, thistype.m_region, null)
 			set conditionFunction = Condition(function thistype.triggerConditionIsCharacter)
 			set triggerCondition = TriggerAddCondition(thistype.m_leaveTrigger, conditionFunction)
 			set triggerAction = TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
@@ -79,12 +76,18 @@ library StructMapMapTavern requires Asl
 		endmethod
 
 		public static method init takes nothing returns nothing
+			set thistype.m_region = CreateRegion()
+			 call RegionAddRect(thistype.m_region, gg_rct_area_tavern_0)
+			 call RegionAddRect(thistype.m_region, gg_rct_area_tavern_1)
+			 call RegionAddRect(thistype.m_region, gg_rct_area_tavern_2)
+			 call RegionAddRect(thistype.m_region, gg_rct_area_tavern_3)
+			 call RegionAddRect(thistype.m_region, gg_rct_area_tavern_4)
+			 call RegionAddRect(thistype.m_region, gg_rct_area_tavern_5)
+			 call RegionAddRect(thistype.m_region, gg_rct_area_tavern_6)
+			 call RegionAddRect(thistype.m_region, gg_rct_area_tavern_7)
+			 call RegionAddRect(thistype.m_region, gg_rct_area_tavern_8)
 			call thistype.createEnterTrigger()
 			call thistype.createLeaveTrigger()
-		endmethod
-
-		public static method areaContainsCharacter takes ACharacter character returns boolean
-			return RectContainsUnit(gg_rct_area_tavern, character.unit())
 		endmethod
 	endstruct
 

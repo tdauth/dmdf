@@ -7,7 +7,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		// Sisgard
 		private static NpcLeavesHouseRoutine m_sisgardLeavesHouse
 		private static NpcRoutineWithFacing m_sisgardStandsNearHerHouse
-		private static AUnitRoutine m_sisgardEntersHouse
+		private static NpcEntersHouseRoutine m_sisgardEntersHouse
 		// Agihard
 		private static NpcLeavesHouseRoutine m_agihardLeavesHouse
 		private static NpcRoutineWithFacing m_agihardStandsNearArena
@@ -110,9 +110,11 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 			// Sisgard
 			set thistype.m_sisgardLeavesHouse = NpcLeavesHouseRoutine.create(Routines.leaveHouse(), Npcs.sisgard(), MapData.morning, MapData.morning, gg_rct_waypoint_sisgard_1)
+			call thistype.m_sisgardLeavesHouse.setHasChooseHero(true)
 			set thistype.m_sisgardStandsNearHerHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.sisgard(), MapData.morning, MapData.evening, gg_rct_waypoint_sisgard_0)
 			call thistype.m_sisgardStandsNearHerHouse.setFacing(211.35)
-			set thistype.m_sisgardEntersHouse = AUnitRoutine.create(Routines.enterHouse(), Npcs.sisgard(), MapData.evening, MapData.morning, gg_rct_waypoint_sisgard_1)
+			set thistype.m_sisgardEntersHouse = NpcEntersHouseRoutine.create(Routines.enterHouse(), Npcs.sisgard(), MapData.evening, MapData.morning, gg_rct_waypoint_sisgard_1)
+			call thistype.m_sisgardEntersHouse.setHasChooseHero(true)
 
 			// Agihard
 			set thistype.m_agihardLeavesHouse = NpcLeavesHouseRoutine.create(Routines.leaveHouse(), Npcs.agihard(), MapData.morning, MapData.morning, gg_rct_waypoint_agihard_1)
@@ -164,6 +166,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_ferdinandStandsInCastle.setFacing(191.10)
 			set thistype.m_ferdinandTalksToHeimrich = NpcTalksRoutine.create(Routines.talk(), Npcs.ferdinand(), 13.00, MapData.evening, gg_rct_waypoint_ferdinand_2)
 			call thistype.m_ferdinandTalksToHeimrich.setPartner(Npcs.heimrich())
+			call thistype.m_ferdinandTalksToHeimrich.setFacing(90.0)
 			set thistype.m_ferdinandEntersHouse = AUnitRoutine.create(Routines.enterHouse(), Npcs.ferdinand(), MapData.evening, MapData.morning, gg_rct_waypoint_ferdinand_0)
 
 			// Heimrich
@@ -192,6 +195,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_wielandHammers.setFacing(90.0)
 			set thistype.m_wielandTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.wieland(), 13.00, 14.00, gg_rct_waypoint_wieland_1)
 			call thistype.m_wielandTalks.setPartner(Npcs.einar())
+			call thistype.m_wielandTalks.setFacing(203.95)
 			set thistype.m_wielandDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.wieland(), 14.00, MapData.evening, gg_rct_waypoint_wieland_2)
 			set thistype.m_wielandEntersHouse = AUnitRoutine.create(Routines.enterHouse(), Npcs.wieland(), 22.00, MapData.morning, gg_rct_waypoint_wieland_3)
 
@@ -201,6 +205,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_mathildaMovesTo0.setFacing(74.69)
 			set thistype.m_mathildaTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.mathilda(), 13.00, 16.00, gg_rct_waypoint_mathilda_0)
 			call thistype.m_mathildaTalks.setPartner(Npcs.lothar())
+			call thistype.m_mathildaTalks.setFacing(19.11)
 			set thistype.m_mathildaMovesTo1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.mathilda(), 16.00, MapData.evening, gg_rct_waypoint_mathilda_0)
 			call thistype.m_mathildaMovesTo1.setFacing(74.69)
 			set thistype.m_mathildaEntersHouse = AUnitRoutine.create(Routines.enterHouse(), Npcs.mathilda(), MapData.evening, MapData.morning, gg_rct_waypoint_mathilda_1)
@@ -211,6 +216,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_lotharSells0.setFacing(93.32)
 			set thistype.m_lotharFlirtsWithMathilda = NpcTalksRoutine.create(Routines.talk(), Npcs.lothar(), 13.00, 16.00, gg_rct_waypoint_lothar_1)
 			call thistype.m_lotharFlirtsWithMathilda.setPartner(Npcs.mathilda())
+			call thistype.m_lotharFlirtsWithMathilda.setFacing(180.0)
 			set thistype.m_lotharSells1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.lothar(), 16.00, MapData.evening, gg_rct_waypoint_lothar_0)
 			call thistype.m_lotharSells1.setFacing(93.32)
 			set thistype.m_lotharEntersHouse = AUnitRoutine.create(Routines.enterHouse(), Npcs.lothar(), MapData.evening, MapData.morning, gg_rct_waypoint_lothar_2)

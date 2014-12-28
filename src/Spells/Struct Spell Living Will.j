@@ -17,7 +17,10 @@ library StructSpellsSpellLivingWill requires Asl, StructGameClasses, StructGameS
 		endmethod
 
 		public static method create takes ACharacter character returns SpellLivingWill
-			return thistype.allocate(character, Classes.knight(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0LJ', 'A0LK')
+			
+			return this
 		endmethod
 	endstruct
 

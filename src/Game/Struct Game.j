@@ -804,7 +804,7 @@ endif
 		endmethod
 
 		private static method filterShownUnit takes nothing returns boolean
-			return IsUnitHidden(GetFilterUnit())
+			return not IsUnitHidden(GetFilterUnit())
 		endmethod
 
 		private static method hideUnit takes unit whichUnit returns nothing
@@ -836,6 +836,16 @@ endif
 					call AGroup(thistype.m_hiddenUnits[i]).addUnitsOfPlayer(Player(i), Filter(function thistype.filterShownUnit))
 					call AGroup(thistype.m_hiddenUnits[i]).forGroup(thistype.hideUnit)
 				endif
+				set i = i + 1
+			endloop
+			// Disable all abilities which might be annoying it a video
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYER_SLOTS)
+				call SetPlayerAbilityAvailable(Player(i), 'Aneu', false)
+				call SetPlayerAbilityAvailable(Player(i), 'Ane2', false)
+				call SetPlayerAbilityAvailable(Player(i), 'Asid', false)
+				call SetPlayerAbilityAvailable(Player(i), 'Apit', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -870,6 +880,21 @@ endif
 				endif
 				set i = i + 1
 			endloop
+			// Enable all abilities which might be annoying it a video
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYER_SLOTS)
+				call SetPlayerAbilityAvailable(Player(i), 'Aneu', true)
+				call SetPlayerAbilityAvailable(Player(i), 'Ane2', true)
+				call SetPlayerAbilityAvailable(Player(i), 'Asid', true)
+				call SetPlayerAbilityAvailable(Player(i), 'Apit', true)
+				set i = i + 1
+			endloop
+			
+			/*
+			 * Make sure that not default wc3 music is played.
+			 */
+			call thistype.setDefaultMapMusic()
 		endmethod
 
 		public static method addUnitMoveSpeed takes unit whichUnit, real value returns real

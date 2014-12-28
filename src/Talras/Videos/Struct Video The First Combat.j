@@ -158,6 +158,18 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 
 			call GroupPointOrder(this.m_firstActorGroup, "move", GetRectCenterX(gg_rct_video_the_first_combat_first_target), GetRectCenterY(gg_rct_video_the_first_combat_first_target))
 		endmethod
+		
+		private static method groupFunctionSetHaldar takes nothing returns nothing
+			local unit enumUnit = GetEnumUnit()
+			call SetUnitOwner(enumUnit, MapData.haldarPlayer, false)
+			set enumUnit = null
+		endmethod
+		
+		private static method groupFunctionSetBaldar takes nothing returns nothing
+			local unit enumUnit = GetEnumUnit()
+			call SetUnitOwner(enumUnit, MapData.baldarPlayer, false)
+			set enumUnit = null
+		endmethod
 
 		private static method groupFunctionMoveBehindHill takes nothing returns nothing
 			local unit enumUnit = GetEnumUnit()
@@ -180,6 +192,8 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call ForGroup(this.m_firstActorGroup, function thistype.groupFunctionSetHaldar)
+			call ForGroup(this.m_secondActorGroup, function thistype.groupFunctionSetBaldar)
 			if (wait(3.0)) then
 				return
 			endif

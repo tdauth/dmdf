@@ -259,6 +259,22 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			local integer i
 			local player user
 			
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (IsPlayerPlayingUser(Player(i))) then
+					set this.m_spawnFogModifiers[Index2D(0, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_0), 600.0, true, true)
+					call FogModifierStop(this.m_spawnFogModifiers[Index2D(0, i, MapData.maxPlayers)])
+					set this.m_spawnFogModifiers[Index2D(1, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_1), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_1), 600.0, true, true)
+					call FogModifierStop(this.m_spawnFogModifiers[Index2D(1, i, MapData.maxPlayers)])
+					set this.m_spawnFogModifiers[Index2D(2, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_2), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_2), 600.0, true, true)
+					call FogModifierStop(this.m_spawnFogModifiers[Index2D(2, i, MapData.maxPlayers)])
+					set this.m_spawnFogModifiers[Index2D(3, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_ally_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_ally_spawn_0), 600.0, true, true)
+					call FogModifierStop(this.m_spawnFogModifiers[Index2D(3, i, MapData.maxPlayers)])
+				endif
+				set i = i + 1
+			endloop
+			
 			// hide orc spawn point
 			call SpawnPoints.orcs0().disable()
 			set i = 0
@@ -370,7 +386,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(0, tr("Die Nordmänner"))
-			local integer i
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			local AQuestItem questItem2
@@ -409,18 +424,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			set this.m_currentGroup = 0
 			set this.m_currentGroupIndex = 0
 			set this.m_spawnTrigger = null
-
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (IsPlayerPlayingUser(Player(i))) then
-					set this.m_spawnFogModifiers[Index2D(0, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_0), 600.0, true, true)
-					set this.m_spawnFogModifiers[Index2D(1, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_1), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_1), 600.0, true, true)
-					set this.m_spawnFogModifiers[Index2D(2, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_2), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_2), 600.0, true, true)
-					set this.m_spawnFogModifiers[Index2D(3, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_ally_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_ally_spawn_0), 600.0, true, true)
-				endif
-				set i = i + 1
-			endloop
 
 			return this
 		endmethod

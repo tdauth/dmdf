@@ -1,11 +1,11 @@
-library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower
+library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower, StructMapQuestsQuestSeedsForTheGarden
 
 	struct TalkUrsula extends ATalk
 
 		implement Talk
 
 		private method startPageAction takes ACharacter character returns nothing
-			call this.showUntil(9, character)
+			call this.showUntil(10, character)
 		endmethod
 
 		// Was machst du hier?
@@ -91,7 +91,7 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower
 			call speech(info, character, true, tr("Dazu gebe ich dir diesen Totem. Bring mir den Geist von einer der Kreaturen, damit ich sie verstehen lerne und mich mit ihnen anfreunden kann und ich werde dir etwas schenken."), null)
 			call speech(info, character, false, tr("Und was?"), null)
 			call speech(info, character, true, tr("Das siehst du dann noch."), null)
-			call info.talk().showRange(10, 11, character)
+			call info.talk().showRange(11, 12, character)
 		endmethod
 
 		// (Nachdem der Charakter gefragt hat, ob er irgendwie helfen kann)
@@ -147,6 +147,21 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower
 			call speech(info, character, true, tr("Wenn du mir versprichst dich gut um sie zu kümmern, werde ich dir auch sie verkaufen."), null)
 			call info.talk().showStartPage(character)
 		endmethod
+		
+		// (Auftragsziel 1 des Auftrags „Samen für den Garten“ ist aktiv, permanent)
+		private static method infoConditionSeedForTheGarden takes AInfo info, ACharacter character returns boolean
+			return QuestSeedsForTheGarden.characterQuest(character).questItem(0).isNew()
+		endmethod
+		
+		// Trommon benötigt ein paar Samen für seinen Garten.
+		private static method infoActionSeedForTheGarden takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Trommon benötigt ein paar Samen für seinen Garten."), null)
+			call speech(info, character, true, tr("Trommon der Fährmann?"), null)
+			call speech(info, character, false, tr("Ja."), null)
+			call speech(info, character, true, tr("Tatsächlich, er will sich also als Gärtner versuchen? Nun, wenn er so viel Vertrauen in mich setzt, muss ich ihn wohl dafür belohnen."), null)
+			call speech(info, character, true, tr("Hat er dir denn etwas mitgegeben um mich zu bezahlen?"), null)
+			call info.talk().showRange(13, 14, character)
+		endmethod
 
 		// Gut.
 		private static method infoAction5_0 takes AInfo info, ACharacter character returns nothing
@@ -168,6 +183,32 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower
 			call speech(info, character, true, tr("Wie du meinst."), null)
 			call info.talk().showStartPage(character)
 		endmethod
+		
+		// (Charakter hat mindestens 50 Goldmünzen, permanent)
+		private static method infoConditionEnoughGold takes AInfo info, ACharacter character returns boolean
+			return character.gold() >= 50
+		endmethod
+		
+		// Ja.
+		private static method infoActionSeedForTheGarden_Yes takes AInfo info, Character character returns nothing
+			call speech(info, character, false, tr("Ja."), null)
+			call speech(info, character, true, tr("Gut, gib mir die Goldmünzen und du erhältst einen sehr wertvollen, magischen Samen."), null)
+			call speech(info, character, true, tr("Aber was daraus entstehen wird bleibt ein Geheimnis."), null)
+			// Goldmünzen entfernen
+			call character.removeGold(50)
+			// „Magischer Samen“ erhalten
+			call character.giveQuestItem('I03N')
+			// Auftragsziel 1 des Auftrags „Samen für den Garten“ abgeschlossen
+			call QuestSeedsForTheGarden.characterQuest(character).questItem(0).complete()
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// Nein.
+		private static method infoActionSeedForTheGarden_No takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Nein."), null)
+			call speech(info, character, true, tr("Tut mir Leid aber ganz umsonst werde ich das nicht entbehren."), null)
+			call info.talk().showStartPage(character)
+		endmethod
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(gg_unit_n01U_0203, thistype.startPageAction)
@@ -182,11 +223,16 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower
 			call this.addInfo(false, false, thistype.infoCondition6, thistype.infoAction6, tr("Du kannst die Geister wilder Kreaturen einfangen?")) // 6
 			call this.addInfo(false, false, thistype.infoCondition7, thistype.infoAction7, tr("Hier hast du deinen Totem wieder.")) // 7
 			call this.addInfo(false, false, thistype.infoCondition8, thistype.infoAction8, tr("Verkaufst du auch was?")) // 8
-			call this.addExitButton() // 9
+			call this.addInfo(true, false, thistype.infoConditionSeedForTheGarden, thistype.infoActionSeedForTheGarden, tr("Trommon benötigt ein paar Samen für seinen Garten.")) // 9
+			call this.addExitButton() // 10
 
 			// info 5
-			call this.addInfo(false, false, 0, thistype.infoAction5_0, tr("Gut.")) // 10
-			call this.addInfo(false, false, 0, thistype.infoAction5_1, tr("Kein Interesse.")) // 11
+			call this.addInfo(false, false, 0, thistype.infoAction5_0, tr("Gut.")) // 11
+			call this.addInfo(false, false, 0, thistype.infoAction5_1, tr("Kein Interesse.")) // 12
+			
+			// info 9
+			call this.addInfo(true, false, thistype.infoConditionEnoughGold, thistype.infoActionSeedForTheGarden_Yes, tr("Ja.")) // 13
+			call this.addInfo(true, false, 0, thistype.infoActionSeedForTheGarden_No, tr("Nein.")) // 14
 
 			return this
 		endmethod

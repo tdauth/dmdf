@@ -5,7 +5,7 @@
  * Spells can be added to favourites and therefore be removed from the grimoire sub menu by using the "spell book" bug/exploit that abilities can be hidden, so each spell ability needs a corresponding favourites ability based on "spell book" which contains the spell ability and has the same spell book id as the grimoire sub menu ability.
  * \note Warcraft III's hero skills simply cannot be used since they are limited up to 5.
  */
-library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, Spells
+library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 
 	/**
 	 * \todo At its current state \ref updateUi() may be called too many times. Please consider that the order of buttons in grimoire should always be equal regardless of which buttons became unavailable.
@@ -150,64 +150,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		endmethod
 		
 		/**
-		 * The ability for the grimoire must have level 0 - 100 for displaying the number of available skill points.
-		 */
-		public method setSkillPoints takes integer skillPoints returns nothing
-			set this.m_skillPoints = skillPoints
-			if (skillPoints < 0) then
-				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 0)
-			elseif (skillPoints > 100) then
-				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 100)
-			else
-				call SetUnitAbilityLevel(this.character().unit(), this.ability(), skillPoints)
-			endif
-		endmethod
-
-		public method removeSkillPoints takes integer skillPoints returns nothing
-			call this.setSkillPoints(IMaxBJ(0, this.m_skillPoints - skillPoints))
-			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
-		endmethod
-
-		/**
-		 * Adds skill points to grimoire and calls \ref thistype#autoSkill() if controller is computer.
-		 */
-		public method addSkillPoints takes integer skillPoints returns nothing
-			if (skillPoints == 0) then
-				return
-			elseif (skillPoints < 0) then
-				call this.removeSkillPoints(-1 * skillPoints)
-				return
-			endif
-			call this.setSkillPoints(this.m_skillPoints + skillPoints)
-			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
-			// auto skill
-			if (GetPlayerController(this.character().player()) == MAP_CONTROL_COMPUTER) then
-				call this.autoSkill.evaluate()
-				call this.character().displayMessageToAllOthers(ACharacter.messageTypeInfo, Format(tr("Die Zauberpunkte für %1% wurden automatisch verteilt.")).s(this.character().name()).result())
-			endif
-		endmethod
-
-		public method spellIndex takes Spell spell returns integer
-			return this.m_spells.find(spell)
-		endmethod
-
-		public method spellByAbilityId takes integer abilityId returns Spell
-			local integer i = 0
-			loop
-				exitwhen (i == this.m_spells.size())
-				if (Spell(this.m_spells[i]).ability() == abilityId) then
-					return Spell(this.m_spells[i])
-				endif
-				set i = i + 1
-			endloop
-			return 0
-		endmethod
-
-		public method spells takes nothing returns integer
-			return this.m_spells.size()
-		endmethod
-
-		/**
 		 * Updates all buttons properly.
 		 * Central UI update is much easier to maintain!
 		 * \note Add all shown spells to m_uiGrimoireSpells!
@@ -280,6 +222,68 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			call ForceUIKeyBJ(this.character().player(), thistype.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
 			debug call Print("issued: " + GetObjectName(this.ability()))
 		endmethod
+		
+		/**
+		 * The ability for the grimoire must have level 0 - 100 for displaying the number of available skill points.
+		 */
+		public method setSkillPoints takes integer skillPoints returns nothing
+			set this.m_skillPoints = skillPoints
+			if (skillPoints < 0) then
+				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 0)
+			elseif (skillPoints > 100) then
+				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 100)
+			else
+				call SetUnitAbilityLevel(this.character().unit(), this.ability(), skillPoints)
+			endif
+			/*
+			 * Update the User Interface. The selected skill might become skillable!
+			 */
+			call this.updateUi()
+		endmethod
+
+		public method removeSkillPoints takes integer skillPoints returns nothing
+			call this.setSkillPoints(IMaxBJ(0, this.m_skillPoints - skillPoints))
+			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
+		endmethod
+
+		/**
+		 * Adds skill points to grimoire and calls \ref thistype#autoSkill() if controller is computer.
+		 */
+		public method addSkillPoints takes integer skillPoints returns nothing
+			if (skillPoints == 0) then
+				return
+			elseif (skillPoints < 0) then
+				call this.removeSkillPoints(-1 * skillPoints)
+				return
+			endif
+			call this.setSkillPoints(this.m_skillPoints + skillPoints)
+			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
+			// auto skill
+			if (GetPlayerController(this.character().player()) == MAP_CONTROL_COMPUTER) then
+				call this.autoSkill.evaluate()
+				call this.character().displayMessageToAllOthers(ACharacter.messageTypeInfo, Format(tr("Die Zauberpunkte für %1% wurden automatisch verteilt.")).s(this.character().name()).result())
+			endif
+		endmethod
+
+		public method spellIndex takes Spell spell returns integer
+			return this.m_spells.find(spell)
+		endmethod
+
+		public method spellByAbilityId takes integer abilityId returns Spell
+			local integer i = 0
+			loop
+				exitwhen (i == this.m_spells.size())
+				if (Spell(this.m_spells[i]).ability() == abilityId) then
+					return Spell(this.m_spells[i])
+				endif
+				set i = i + 1
+			endloop
+			return 0
+		endmethod
+
+		public method spells takes nothing returns integer
+			return this.m_spells.size()
+		endmethod
 
 		private method learnFavouriteSpell takes Spell spell returns nothing
 			local integer favouriteAbility = spell.favouriteAbility()
@@ -311,6 +315,17 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), true)
 			call spell.remove()
 			call this.updateUi()
+		endmethod
+		
+		private method removeSpellFromUnit takes Spell spell returns nothing
+			if (this.m_favourites.contains(spell)) then
+				call this.m_favourites.remove(spell)
+				call spell.remove()
+			else
+				call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
+				call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), true)
+				call spell.remove()
+			endif
 		endmethod
 
 		private method addFavouriteSpell takes Spell spell returns boolean
@@ -481,6 +496,22 @@ static if (DEBUG_MODE) then
 endif
 			call Spell(this.m_spells[index]).setAvailable(available)
 			call this.updateUi()
+		endmethod
+		
+		/**
+		 * This does neither unlearn nor completely remove spells from the grimoire.
+		 * It just clears the spells from the character's unit.
+		 * This can be useful before casting dummy spells.
+		 * It also removes the grimoire spell itself from the unit.
+		 */
+		public method removeAllSpellsFromUnit takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == this.m_spells.size())
+				call this.removeSpellFromUnit(Spell(this.m_spells[i]))
+				set i = i + 1
+			endloop
+			call UnitRemoveAbility(this.character().unit(), this.ability())
 		endmethod
 
 		public method setSpellAvailable takes Spell spell, boolean available returns nothing

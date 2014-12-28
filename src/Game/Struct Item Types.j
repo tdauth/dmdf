@@ -41,6 +41,17 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		public method description takes nothing returns string
 			return this.m_description
 		endmethod
+		
+		/*
+		* TODO
+		 * Knight has the ability to increase armory from items.
+		 * Get the item's armor bonus by adding a dummy unit with inventory and calculating it when adding and removing the item.
+		 */
+		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
+		endmethod
+		
+		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
+		endmethod
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
 			local thistype this = thistype.allocate(itemType, equipmentType, requiredLevel, requiredStrength, requiredAgility, requiredIntelligence, requiredClass)

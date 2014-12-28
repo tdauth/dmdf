@@ -73,6 +73,11 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
+		
+		// (Nach Begrüßung, Agihard befindet sich in der Nähe der Arena)
+		private static method infoConditionAfterHelloNearArena takes AInfo info, ACharacter character returns boolean
+			return thistype.infoConditionAfterHello(info, character) and GetDistanceBetweenPointsWithoutZ(GetUnitX(Npcs.agihard()), GetUnitY(Npcs.agihard()), GetRectCenterX(gg_rct_arena), GetRectCenterY(gg_rct_arena)) < 1200.0
+		endmethod
 
 		// Lass mich in die Arena!
 		private static method infoActionLetMeIn takes AInfo info, ACharacter character returns nothing
@@ -192,7 +197,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			set this.m_whichArena = this.addInfo(false, false, thistype.infoConditionBeforeArena, thistype.infoActionWhichArena, tr("Welche Arena?"))
 			set this.m_anyRules = this.addInfo(true, false, thistype.infoConditionAfterHello, thistype.infoActionAnyRules, tr("Gibt es bestimmte Regeln in der Arena?"))
 			set this.m_whatToWin = this.addInfo(true, false, thistype.infoConditionAfterHello, thistype.infoActionWhatToWin, tr("Was gibt es zu gewinnen?"))
-			set this.m_letMeIn = this.addInfo(true, false, thistype.infoConditionAfterHello, thistype.infoActionLetMeIn, tr("Lass mich in die Arena!"))
+			set this.m_letMeIn = this.addInfo(true, false, thistype.infoConditionAfterHelloNearArena, thistype.infoActionLetMeIn, tr("Lass mich in die Arena!"))
 			set this.m_iCompleted = this.addInfo(true, false, thistype.infoConditionICompleted, thistype.infoActionICompleted, tr("Ich habe fünfmal gewonnen!"))
 			set this.m_servantOfDuke = this.addInfo(false, false, thistype.infoConditionAfterHello, thistype.infoActionServantOfDuke, tr("Dienst du dem Herzog?"))
 			set this.m_aboutWeapons = this.addInfo(true, false, thistype.infoConditionAboutWeapons, thistype.infoActionAboutWeapons, tr("Kennst du dich mit Waffen aus?"))

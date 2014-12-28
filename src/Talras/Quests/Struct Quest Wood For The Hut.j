@@ -27,7 +27,7 @@ library StructMapQuestsQuestWoodForTheHut requires Asl
 			call questItem0.setPingUnit(gg_unit_n022_0009)
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			//item 1
-			set questItem1 = AQuestItem.create(this, tr("Berichte Trommon davon."))
+			set questItem1 = AQuestItem.create(this, tr("Bringe die Bretter zu Trommon."))
 			call questItem1.setPing(true)
 			call questItem1.setPingUnit(gg_unit_n021_0004)
 			call questItem1.setPingColour(100.0, 100.0, 100.0)

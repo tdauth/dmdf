@@ -40,13 +40,15 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 		endmethod
 
 		// Du kennst doch Trommon …
-		private static method infoActionKnowsTrommon takes AInfo info, ACharacter character returns nothing
+		private static method infoActionKnowsTrommon takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Du kennst doch Trommon …"), null)
-			call speech(info, character, true, tr("Klar, ist ja mein Freund."), null)
+			call speech(info, character, true, tr("Sicher, wir beide sind gute Freunde."), null)
 			call speech(info, character, false, tr("Hast du dir mal seine Hütte angeschaut? Noch ein paar Unwetter und er kann sich eine neue bauen."), null)
-			call speech(info, character, true, tr("Ja, hast ja Recht. Vielleicht sollte ich ihm mal bei der Reparatur helfen …"), null)
-			call speech(info, character, false, tr("Ich mache dir einen Vorschlag: Du gibst  mir ein paar Bretter mit und ich geb' sie ihm dann. Ich schätze mal, das würde schon reichen."), null)
-			call speech(info, character, true, tr("Gute Idee, hier hast du deine Bretter. Ich habe sowieso zu viele."), null)
+			call speech(info, character, true, tr("Ja, du hast ja Recht. Vielleicht sollte ich ihm mal bei der Reparatur helfen …"), null)
+			call speech(info, character, false, tr("Ich mache dir einen Vorschlag: Du gibst  mir ein paar Bretter mit und ich gebe sie dann ihm. Ich schätze mal, das würde schon reichen."), null)
+			call speech(info, character, true, tr("Gute Idee, hier hast du deine Bretter. Ich habe sowieso ein paar übrig."), null)
+			// Charakter erhält Bretter
+			call character.giveQuestItem('I03P')
 			call QuestWoodForTheHut.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)
 		endmethod

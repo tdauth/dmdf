@@ -142,6 +142,7 @@ static if (DMDF_NPC_ROUTINES) then
 endif
 			call Shrines.init()
 			call SpawnPoints.init()
+			call Tavern.init()
 			call initMapSpells.evaluate()
 			call initMapTalks.evaluate()
 			call initMapVideos()
@@ -162,6 +163,40 @@ endif
 			call TriggerAddCondition(thistype.m_welcomeTalrasTrigger, Condition(function thistype.triggerConditionWelcomeTalras))
 			call TriggerAddAction(thistype.m_welcomeTalrasTrigger, function thistype.triggerActionWelcomeTalras)
 		endmethod
+		
+		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
+			call ResetCameraBoundsToMapRectForPlayer(user)
+		endmethod
+
+		/// Required by \ref Classes.
+		public static method setCameraBoundsToPlayableAreaForPlayer takes player user returns nothing
+			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_playable)
+		endmethod
+
+		public static method setCameraBoundsToTavernForPlayer takes player user returns nothing
+			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_tavern_bounds)
+		endmethod
+
+		public static method setCameraBoundsToAosForPlayer takes player user returns nothing
+			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_aos)
+		endmethod
+
+		public static method setCameraBoundsToFightAreaForPlayer takes player user returns nothing
+			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_quest_the_norsemen_fight_area)
+		endmethod
+
+		/// Required by \ref Game.
+		public static method resetCameraBoundsForPlayer takes player user returns nothing
+			if (Aos.areaContainsCharacter.evaluate(ACharacter.playerCharacter(user))) then
+				call thistype.setCameraBoundsToAosForPlayer(user)
+			elseif (false) then /// @todo Tavern area
+				call thistype.setCameraBoundsToTavernForPlayer(user)
+			//elseif (QuestTheNorsemen.quest().hasStarted()) then
+			//	call thistype.setCameraBoundsToFightAreaForPlayer(user)
+			else
+				call thistype.setCameraBoundsToPlayableAreaForPlayer(user)
+			endif
+		endmethod
 
 static if (DEBUG_MODE) then
 		private static method onCheatActionMapCheats takes ACheat cheat returns nothing
@@ -174,6 +209,7 @@ static if (DEBUG_MODE) then
 			call Print("forest")
 			call Print("aos")
 			call Print("aosentry")
+			call Print("tavern")
 			call Print(tr("Video-Cheats:"))
 			call Print("intro")
 			call Print("rescuedago0")
@@ -204,6 +240,7 @@ static if (DEBUG_MODE) then
 			local player whichPlayer = GetTriggerPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_cheat_start)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
+			call thistype.setCameraBoundsToPlayableAreaForPlayer(whichPlayer)
 			set whichPlayer = null
 		endmethod
 
@@ -211,6 +248,7 @@ static if (DEBUG_MODE) then
 			local player whichPlayer = GetTriggerPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_cheat_camp)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
+			call thistype.setCameraBoundsToPlayableAreaForPlayer(whichPlayer)
 			set whichPlayer = null
 		endmethod
 
@@ -218,6 +256,7 @@ static if (DEBUG_MODE) then
 			local player whichPlayer = GetTriggerPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_cheat_castle)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
+			call thistype.setCameraBoundsToPlayableAreaForPlayer(whichPlayer)
 			set whichPlayer = null
 		endmethod
 
@@ -225,6 +264,7 @@ static if (DEBUG_MODE) then
 			local player whichPlayer = GetTriggerPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_cheat_talras)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
+			call thistype.setCameraBoundsToPlayableAreaForPlayer(whichPlayer)
 			set whichPlayer = null
 		endmethod
 
@@ -232,6 +272,7 @@ static if (DEBUG_MODE) then
 			local player whichPlayer = GetTriggerPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_cheat_farm)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
+			call thistype.setCameraBoundsToPlayableAreaForPlayer(whichPlayer)
 			set whichPlayer = null
 		endmethod
 
@@ -239,6 +280,7 @@ static if (DEBUG_MODE) then
 			local player whichPlayer = GetTriggerPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_cheat_forest)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
+			call thistype.setCameraBoundsToPlayableAreaForPlayer(whichPlayer)
 			set whichPlayer = null
 		endmethod
 
@@ -246,12 +288,21 @@ static if (DEBUG_MODE) then
 			local player whichPlayer = GetTriggerPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_shrine_baldar_discover)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
+			call thistype.setCameraBoundsToPlayableAreaForPlayer(whichPlayer)
 			set whichPlayer = null
 		endmethod
 
 		private static method onCheatActionAosEntry takes ACheat cheat returns nothing
 			local player whichPlayer = GetTriggerPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_aos_outside)
+			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
+			call thistype.setCameraBoundsToPlayableAreaForPlayer(whichPlayer)
+			set whichPlayer = null
+		endmethod
+		
+		private static method onCheatActionTavern takes ACheat cheat returns nothing
+			local player whichPlayer = GetTriggerPlayer()
+			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_area_tavern_bounds)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
 			set whichPlayer = null
 		endmethod
@@ -321,15 +372,18 @@ endif
 			call BJDebugMsg("Before secundary quests")
 			call initMapSecundaryQuests()
 			call BJDebugMsg("Before map spells")
+			
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
 				call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
 				set i = i + 1
 			endloop
-			call VideoIntro.video().play()
+			
+			call SetUserInterfaceForPlayer(Player(0), true, true) // TEST
+			//call VideoIntro.video().play() // TEST
 			debug call Print("Waiting for video intro")
-			call waitForVideo(thistype.videoWaitInterval)
+			//call waitForVideo(thistype.videoWaitInterval) TEST
 			debug call Print("Waited successfully for intro video.")
 static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
@@ -344,6 +398,7 @@ static if (DEBUG_MODE) then
 			call ACheat.create("forest", true, thistype.onCheatActionForest)
 			call ACheat.create("aos", true, thistype.onCheatActionAos)
 			call ACheat.create("aosentry", true, thistype.onCheatActionAosEntry)
+			call ACheat.create("tavern", true, thistype.onCheatActionTavern)
 			call ACheat.create("intro", true, thistype.onCheatActionIntro)
 			call ACheat.create("rescuedago0", true, thistype.onCheatActionRescueDago0)
 			call ACheat.create("rescuedago1", true, thistype.onCheatActionRescueDago1)
@@ -424,40 +479,6 @@ endif
 				return GetRectCenterY(gg_rct_character_5_start)
 			endif
 			return 0.0
-		endmethod
-
-		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
-			call ResetCameraBoundsToMapRectForPlayer(user)
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method setCameraBoundsToPlayableAreaForPlayer takes player user returns nothing
-			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_playable)
-		endmethod
-
-		public static method setCameraBoundsToTavernForPlayer takes player user returns nothing
-			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_tavern)
-		endmethod
-
-		public static method setCameraBoundsToAosForPlayer takes player user returns nothing
-			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_aos)
-		endmethod
-
-		public static method setCameraBoundsToFightAreaForPlayer takes player user returns nothing
-			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_quest_the_norsemen_fight_area)
-		endmethod
-
-		/// Required by \ref Game.
-		public static method resetCameraBoundsForPlayer takes player user returns nothing
-			if (Aos.areaContainsCharacter.evaluate(ACharacter.playerCharacter(user))) then
-				call thistype.setCameraBoundsToAosForPlayer(user)
-			elseif (false) then /// @todo Tavern area
-				call thistype.setCameraBoundsToTavernForPlayer(user)
-			//elseif (QuestTheNorsemen.quest().hasStarted()) then
-			//	call thistype.setCameraBoundsToFightAreaForPlayer(user)
-			else
-				call thistype.setCameraBoundsToPlayableAreaForPlayer(user)
-			endif
 		endmethod
 	endstruct
 

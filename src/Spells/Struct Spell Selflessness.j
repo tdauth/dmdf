@@ -55,13 +55,20 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 		endmethod
 
 		public static method create takes Character character returns thistype
+			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			call this.addGrimoireEntry('A0LL', 'A0LQ')
+			call this.addGrimoireEntry('A0LM', 'A0LR')
+			call this.addGrimoireEntry('A0LN', 'A0LS')
+			call this.addGrimoireEntry('A0LO', 'A0LT')
+			call this.addGrimoireEntry('A0LP', 'A0LU')
+			
 			if (thistype.casterBuff == 0) then
 				set thistype.casterBuff = ABuff.create(thistype.casterBuffId)
 			endif
 			if (thistype.targetBuff == 0) then
 				set thistype.targetBuff = ABuff.create(thistype.targetBuffId)
 			endif
-			return thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			return this
 		endmethod
 
 		private static method onInit takes nothing returns nothing

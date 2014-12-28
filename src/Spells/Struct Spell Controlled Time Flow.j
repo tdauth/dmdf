@@ -6,12 +6,14 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 	* Whenever an allied unit comes into range it is added to group of allies and unpaused.
 	* All allied units in ranged are checked each second for still being in range. If not they are paused again.
 	* \todo Add buff and check for multiple casts.
+	* \todo hook pause and unpause - NPCs etc.
+	* \todo Fix entering and leaving range triggers
 	*/
 	struct SpellControlledTimeFlow extends Spell
 		public static constant integer abilityId = 'A09O'
 		public static constant integer favouriteAbilityId = 'A09N'
 		public static constant integer maxLevel = 1
-		private static constant real time = 7
+		private static constant real time = 7.0
 		private static constant real range = 600.0
 		private static constant real speed = 0.20
 
@@ -92,26 +94,32 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			local trigger enterTrigger = CreateTrigger()
 			local trigger mapTrigger = CreateTrigger()
 			local region mapRegion
+			call allies.addUnitsInRange(GetUnitX(caster), GetUnitY(caster), thistype.range, null)
 			call unitGroup.addUnitsInRect(GetPlayableMapRect(), Filter(function thistype.filter))
 			debug call Print("Controlled Time Flow: " + I2S(unitGroup.units().size()) + " units.")
 			// drop all allies in range
 			// TODO it might be better for the perfomance to get allies in range and THEN to exclude them from the group. Otherwise too many iterations
 			set i = 0
 			loop
-				exitwhen (i == unitGroup.units().size())
-				if (GetDistanceBetweenUnitsWithoutZ(caster, unitGroup.units()[i]) <= thistype.range and GetUnitAllianceStateToUnit(caster, unitGroup.units()[i]) == bj_ALLIANCE_ALLIED) then
-					call allies.units().pushBack(unitGroup.units()[i])
-					call unitGroup.units().erase(i)
+				exitwhen (i == allies.units().size())
+				if (GetUnitAllianceStateToUnit(caster, allies.units()[i]) != bj_ALLIANCE_ALLIED) then
+					call allies.units().erase(i)
 					debug call Print("Got ally " + GetUnitName(unitGroup.units()[i]) + " in range remaining units " + I2S(unitGroup.units().size()))
-
+				// remove all allies from the targets
 				else
+					call unitGroup.units().remove(allies.units()[i])
 					set i = i + 1
 				endif
 			endloop
+			debug call Print("Remaining targets: " + I2S(unitGroup.units().size()) + " and remaining allies: " + I2S(allies.units().size()))
 			call unitGroup.forGroup(thistype.pauseTarget)
+			debug call Print("After pausing")
 			call allies.forGroup(thistype.applyAllyEffect)
+			debug call Print("After applying ally effect")
 			call this.createEnterTrigger(enterTrigger, allies)
+			debug call Print("After creating trigger")
 			set mapRegion = this.createMapTrigger(mapTrigger, unitGroup)
+			debug call Print("After creating map trigger")
 			call SuspendTimeOfDay(true)
 			debug call Print("Controlled Time Flow: " + I2S(unitGroup.units().size()) + " units.")
 			debug call Print("Controlled Time Flow: " + I2S(allies.units().size()) + " allies.")
@@ -122,15 +130,16 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 				// check for range of allies
 				set i = 0
 				loop
-					exitwhen (i == unitGroup.units().size())
-					if (not IsUnitInRange(caster, unitGroup.units()[i], thistype.range)) then
-						call thistype.removeAllyEffect(unitGroup.units()[i])
-						call PauseUnit(unitGroup.units()[i], true)
-						call unitGroup.units().erase(i)
+					exitwhen (i == allies.units().size())
+					if (not IsUnitInRange(caster, allies.units()[i], thistype.range)) then
+						call thistype.removeAllyEffect(allies.units()[i])
+						call PauseUnit(allies.units()[i], true)
+						call allies.units().erase(i)
 					else
 						set i = i + 1
 					endif
 				endloop
+				// TODO check via event and trigger
 				set time = time - 1.0
 			endloop
 

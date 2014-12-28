@@ -56,6 +56,9 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapQues
 			if (waitForCondition(1.0, thistype.conditionActorIsInTargetRect)) then
 				return
 			endif
+			call SetUnitFacingToFaceUnit(this.m_actorRicman, thistype.actor())
+			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorRicman)
+			
 			if (wait(1.0)) then
 				return
 			endif
@@ -74,6 +77,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapQues
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_3, true, 0.0)
 			call TransmissionFromUnit(this.m_actorWigberht, tr("Lass sie!"), null)
+			call SetUnitAnimation(this.m_actorWigberht, "Spell")
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif

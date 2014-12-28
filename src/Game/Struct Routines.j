@@ -11,8 +11,29 @@ library StructGameRoutines requires Asl
 			return this.m_facing
 		endmethod
 	endstruct
+	
+	struct NpcEntersHouseRoutine extends AUnitRoutine
+		private boolean m_hasChooseHero = false
+		
+		public method setHasChooseHero takes boolean hasChooseHero returns nothing
+			set this.m_hasChooseHero = hasChooseHero
+		endmethod
+		
+		public method hasChooseHero takes nothing returns boolean
+			return this.m_hasChooseHero
+		endmethod
+	endstruct
 
 	struct NpcLeavesHouseRoutine extends NpcRoutineWithFacing
+		private boolean m_hasChooseHero = false
+		
+		public method setHasChooseHero takes boolean hasChooseHero returns nothing
+			set this.m_hasChooseHero = hasChooseHero
+		endmethod
+		
+		public method hasChooseHero takes nothing returns boolean
+			return this.m_hasChooseHero
+		endmethod
 	endstruct
 
 	struct NpcRoutineWithOtherNpc extends AUnitRoutine
@@ -32,6 +53,15 @@ library StructGameRoutines requires Asl
 		private real m_range = 800.0
 		private sound array m_sounds[thistype.maxSounds]
 		private integer m_soundsCount = 0
+		private real m_facing = 0.0
+
+		public method setFacing takes real facing returns nothing
+			set this.m_facing = facing
+		endmethod
+
+		public method facing takes nothing returns real
+			return this.m_facing
+		endmethod
 
 		public method setRange takes real range returns nothing
 			set this.m_range = range
@@ -97,9 +127,13 @@ library StructGameRoutines requires Asl
 			call AContinueRoutineLoop(period, thistype.trainTargetAction)
 		endmethod
 
-		private static method enterHouseTargetAction takes ARoutinePeriod period returns nothing
+		private static method enterHouseTargetAction takes NpcEntersHouseRoutine period returns nothing
 			//debug call Print("Unit " + GetUnitName(period.unit()) + " enters house.")
 			call ShowUnit(period.unit(), false)
+			if (period.hasChooseHero()) then
+				call UnitRemoveAbility(period.unit(), 'Aneu')
+			endif
+			// TODO disable trading ability/hero selection
 			//debug call Print("After entering house")
 			//debug if (IsUnitHidden(period.unit())) then
 			//debug call Print("It is hidden")
@@ -116,6 +150,10 @@ library StructGameRoutines requires Asl
 			//debug call Print("Unit " + GetUnitName(period.unit()) + " leaves house.")
 			call SetUnitFacing(period.unit(), period.facing()) // turn around
 			call ShowUnit(period.unit(), true)
+			if (period.hasChooseHero()) then
+				call UnitAddAbility(period.unit(), 'Aneu')
+			endif
+			// TODO enable trading ability/hero selection
 		endmethod
 
 		private static method hammerEndAction takes ARoutinePeriod period returns nothing
@@ -139,6 +177,14 @@ library StructGameRoutines requires Asl
 		private static method talkTargetAction takes NpcTalksRoutine period returns nothing
 			local sound whichSound = null
 			local real time = 5.0 // usual wait interval
+			
+			debug if (period.partner() == null) then
+			debug call Print("Period with " + GetUnitName(period.unit()) + " has no partner!")
+			debug endif
+			
+			debug if (GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) > period.range()) then
+			debug call Print("Period with " + GetUnitName(period.unit()) + " has too big distance!")
+			debug endif
 
 			if (period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) then
 				debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
@@ -151,6 +197,12 @@ library StructGameRoutines requires Asl
 				endif
 
 				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
+				call TriggerSleepAction(time)
+			else
+				// set at least facing properly
+				call SetUnitFacing(period.unit(), period.facing())
+				// set a smaller interval to check the condition faster.
+				set time = 2.0
 			endif
 
 			call TriggerSleepAction(time)

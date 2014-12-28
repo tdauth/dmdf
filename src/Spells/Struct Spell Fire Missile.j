@@ -14,6 +14,7 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 			local real damage = this.level() * thistype.damageFactor
 			local real time
 			local effect burnEffect
+			debug call Print("Fire missile on " + GetUnitName(target))
 			set damage = damage +  SpellElementalMageDamageSpell(this).damageBonusFactor() * damage
 			call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_FIRE)
 			call ShowBashTextTagForPlayer(null, GetUnitX(target), GetUnitY(target), R2I(damage))
@@ -36,7 +37,14 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0KP', 'A0KU')
+			call this.addGrimoireEntry('A0KQ', 'A0KV')
+			call this.addGrimoireEntry('A0KR', 'A0KW')
+			call this.addGrimoireEntry('A0KS', 'A0KX')
+			call this.addGrimoireEntry('A0KT', 'A0KY')
+			
+			return this
 		endmethod
 	endstruct
 
