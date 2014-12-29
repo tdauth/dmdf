@@ -1,4 +1,4 @@
-library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestKunosDaughter
+library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestReinforcementForTalras
 
 	struct TalkBjoern extends ATalk
 		private static constant integer smallGoldReward = 20
@@ -11,12 +11,16 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		private AInfo m_whatAreYouDoingHere
 		private AInfo m_skins
 		private AInfo m_apprentice
+		private AInfo m_arrows
+		private AInfo m_arrowsDone
+		private AInfo m_exit
 		private AInfo m_fromFarAway
 		private AInfo m_noneOfYourBusiness
 		private AInfo m_coins
 		private AInfo m_halfOfYourReward
 		private boolean m_toldDeath
 		private integer m_toldBearFight
+		private boolean m_bonus
 
 		implement Talk
 
@@ -24,7 +28,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			if (not this.infoHasBeenShownToCharacter(this.m_hi.index(), character)) then
 				call this.showInfo(this.m_hi.index(), character)
 			else
-				call this.showUntil(this.m_apprentice.index() + 1, character)
+				call this.showUntil(this.m_exit.index(), character)
 			endif
 		endmethod
 
@@ -108,6 +112,59 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call speech(info, character, true, tr("Sag ihm, ich werde seine Tochter ausbilden, wenn er sie vorbeischickt. Es kostet ihn natürlich nichts."), null)
 			call speech(info, character, false, tr("Mache ich."), null)
 			call QuestKunosDaughter.characterQuest(character).questItem(0).complete()
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// (Auftragsziel 3 des Auftrags „Die Befestigung von Talras“ ist aktiv)
+		private static method infoConditionArrows takes AInfo info, ACharacter character returns boolean
+			return QuestReinforcementForTalras.characterQuest(character).questItem(2).isNew()
+		endmethod
+
+		// Kannst du Pfeile herstellen? 
+		private static method infoActionArrows takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Kannst du Pfeile herstellen?"), null)
+			call speech(info, character, true, tr("Klar, wieso fragst du?"), null)
+			call speech(info, character, false, tr("Markward benötigt Pfeile zur Verteidigung der Burg."), null)
+			call speech(info, character, true, tr("Ich sehe schon es handelt sich um eine wichtige Angelegenheit. Pass auf ich fertige neue Pfeile an und gebe ihm noch ein paar von mir."), null)
+			call speech(info, character, true, tr("Das dauert allerdings eine Weile. Komm in zwei Tagen noch einmal vorbei."), null)
+			// Auftragsziel 3 des Auftrags „Die Befestigung von Talras“ abgeschlossen
+			call QuestReinforcementForTalras.characterQuest(character).questItem(2).setState(AAbstractQuest.stateCompleted)
+			// Auftragsziel 4 des Auftrags „Die Befestigung von Talras“ aktiviert
+			call QuestReinforcementForTalras.characterQuest(character).questItem(3).setState(AAbstractQuest.stateNew)
+			call QuestReinforcementForTalras.characterQuest(character).displayUpdate()
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// (Auftragsziel 4 des Auftrags „Die Befestigung von Talras“ ist aktiv)
+		private static method infoConditionArrowsDone takes AInfo info, ACharacter character returns boolean
+			return QuestReinforcementForTalras.characterQuest(character).questItem(3).isNew()
+		endmethod
+
+		// Sind die Pfeile fertig?
+		private static method infoActionArrowsDone takes AInfo info, Character character returns nothing
+			local thistype this = thistype(info.talk())
+			call speech(info, character, false, tr("Sind die Pfeile fertig?"), null)
+			// (Zwei Tage sind vergangen)
+			if (QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character)).twoDaysPassed()) then
+				call speech(info, character, true, tr("Ja, hier hast du sie. Am besten du platzierst sie an strategisch wichtigen Orten in der Burg."), null)
+				call speech(info, character, true, tr("Markward wird dich sowieso früher oder später mit den Pfeilen losschicken."), null)
+				// Charakter erhält Pfeilbündel
+				call character.giveQuestItem('I03U')
+				// Auftragsziel 4 des Auftrags „Die Befestigung von Talras“ abgeschlossen
+				call QuestReinforcementForTalras.characterQuest(character).questItem(3).setState(AAbstractQuest.stateCompleted)
+				// Auftragsziel 5 des Auftrags „Die Befestigung von Talras“ aktiviert
+				call QuestReinforcementForTalras.characterQuest(character).questItem(4).setState(AAbstractQuest.stateNew)
+				call QuestReinforcementForTalras.characterQuest(character).displayUpdate()
+			// (Weniger als eine Stunde vergangen)
+			elseif (QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character)).lessThanOneHourPassed() and not this.m_bonus) then
+				call speech(info, character, true, tr("Du bist ja lustig. Es ist noch nicht mal eine Stunde vergangen!"), null)
+				// Erfahrungsbonus „Ungeduld“
+				call character.xpBonus(50, tr("Ungeduld"))
+				set this.m_bonus = true
+			// (Noch keine zwei Tage vergangen)
+			else
+				call speech(info, character, false, tr("Nein, du musst dich noch etwas gedulden."), null)
+			endif
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -229,23 +286,26 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(gg_unit_n02U_0142, thistype.startPageAction)
 			set this.m_toldDeath = false
+			set this.m_bonus = false
 			set this.m_toldBearFight = 0
 
 			// start page
-			set this.m_hi = this.addInfo(false, true, 0, thistype.infoAction0, null) // 0
-			set this.m_aboutDago = this.addInfo(false, false, 0, thistype.infoAction1, tr("Woher kennst du Dago?")) // 1
-			set this.m_whatAreYouDoingHere = this.addInfo(false, false, thistype.infoCondition2, thistype.infoAction2, tr("Was machst du hier?")) // 2
-			set this.m_skins = this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tr("Ich habe hier drei Riesen-Felle.")) // 3
-			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tr("Suchst du einen Schüler?")) // 4
-			call this.addExitButton() // 5
+			set this.m_hi = this.addInfo(false, true, 0, thistype.infoAction0, null)
+			set this.m_aboutDago = this.addInfo(false, false, 0, thistype.infoAction1, tr("Woher kennst du Dago?"))
+			set this.m_whatAreYouDoingHere = this.addInfo(false, false, thistype.infoCondition2, thistype.infoAction2, tr("Was machst du hier?"))
+			set this.m_skins = this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tr("Ich habe hier drei Riesen-Felle."))
+			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tr("Suchst du einen Schüler?"))
+			set this.m_arrows = this.addInfo(false, false, thistype.infoConditionArrows, thistype.infoActionArrows, tr("Kannst du Pfeile herstellen?"))
+			set this.m_arrowsDone = this.addInfo(true, false, thistype.infoConditionArrowsDone, thistype.infoActionArrowsDone, tr("Sind die Pfeile fertig?"))
+			set this.m_exit = this.addExitButton()
 
 			// info 0
-			set this.m_fromFarAway = this.addInfo(false, false, 0, thistype.infoAction0_0, tr("Von weit her.")) // 6
-			set this.m_noneOfYourBusiness = this.addInfo(false, false, 0, thistype.infoAction0_1, tr("Das geht dich überhaupt nichts an!")) // 7
+			set this.m_fromFarAway = this.addInfo(false, false, 0, thistype.infoAction0_0, tr("Von weit her."))
+			set this.m_noneOfYourBusiness = this.addInfo(false, false, 0, thistype.infoAction0_1, tr("Das geht dich überhaupt nichts an!"))
 
 			// info 2
-			set this.m_coins = this.addInfo(false, false, 0, thistype.infoAction2_0, Format(tr("%1% Goldmünzen.")).i(thistype.goldReward1).result()) // 8
-			set this.m_halfOfYourReward = this.addInfo(false, false, 0, thistype.infoAction2_1, tr("Die Hälfte deines Gewinns.")) // 9
+			set this.m_coins = this.addInfo(false, false, 0, thistype.infoAction2_0, Format(tr("%1% Goldmünzen.")).i(thistype.goldReward1).result())
+			set this.m_halfOfYourReward = this.addInfo(false, false, 0, thistype.infoAction2_1, tr("Die Hälfte deines Gewinns."))
 
 			return this
 		endmethod

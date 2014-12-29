@@ -162,12 +162,14 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		private static method groupFunctionSetHaldar takes nothing returns nothing
 			local unit enumUnit = GetEnumUnit()
 			call SetUnitOwner(enumUnit, MapData.haldarPlayer, false)
+			call SetUnitInvulnerable(enumUnit, false)
 			set enumUnit = null
 		endmethod
 		
 		private static method groupFunctionSetBaldar takes nothing returns nothing
 			local unit enumUnit = GetEnumUnit()
 			call SetUnitOwner(enumUnit, MapData.baldarPlayer, false)
+			call SetUnitInvulnerable(enumUnit, false)
 			set enumUnit = null
 		endmethod
 

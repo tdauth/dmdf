@@ -26,6 +26,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 	//! endtextmacro
 	
 	/// \todo Fix arithmetic operations, take base Ids, print addGrimoireEntry into a separate JASS file which later will be imported, use an array for base Ids like "whindwalk" to always use the same ones
+	/*
 	//! externalblock extension=lua ObjectMerger $FILENAME$
 		//! i function createFavoriteAbility(name, class, abilityId, spellAbilityId, icon)
 		//! i setobjecttype("abilities")
@@ -93,7 +94,8 @@ library StructGameSpell requires Asl, StructGameCharacter
 		
 		//! i createGrimoireSpell("Testzauber", "Dieser Zauber besitzt einen tollen Effekt", "", "Kleriker", 5, "A000", "windwalk", "AY00")
 	//! endexternalblock
-
+	*/
+	
 	/**
 	 * Custom structure for character spells which support \ref Grimoire API.
 	 * For item spells etc. just use \ref ASpell.
@@ -296,7 +298,11 @@ library StructGameSpell requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction returns thistype
-			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction)
+			/*
+			 * Make sure that GetSpellTargetX() and other event data works properly.
+			 * EVENT_UNIT_SPELL_ENDCAST would NOT work and is reserved for grimoire entries.
+			 */
+			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, EVENT_UNIT_SPELL_CHANNEL)
 			set this.m_favouriteAbility = favouriteAbility
 			set this.m_maxLevel = maxLevel
 			set this.m_spellType = spellType

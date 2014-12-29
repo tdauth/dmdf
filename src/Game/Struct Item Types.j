@@ -127,6 +127,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 
 	/// Do not add usable abilities, only permanents!
 	struct ItemTypes
+		private static ItemType m_blessedSword // Markwards item
 		private static ItemType m_preciousClericHelmet
 		private static ItemType m_bigDoubleAxe
 		private static ItemType m_vassalLance
@@ -197,6 +198,10 @@ library StructGameItemTypes requires Asl, StructGameClasses
 
 		public static method init takes nothing returns nothing
 			//integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns AItemType
+			set thistype.m_blessedSword = ItemType.createSimple('I03R', AItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_blessedSword.addAbility('Alcs', true)
+			call thistype.m_blessedSword.addAbility('A04M', true)
+			
 			set thistype.m_preciousClericHelmet = ItemType.createSimple('I00I', AItemType.equipmentTypeHeaddress)
 			call thistype.m_preciousClericHelmet.addAbility('A02E', true)
 

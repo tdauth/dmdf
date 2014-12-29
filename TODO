@@ -24,6 +24,7 @@
 * Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird.
 * Fernkampf : UNIT_TYPE_RANGED_ATTACKER native UnitAddType                  takes unit whichUnit, unittype whichUnitType returns boolean
 * Fernkampf: Animationstag hinzufügen beim Anlegen: AddUnitAnimationProperties(whichUnit, "", add)
+* Fernkampf: Verschiedene Klassen sollen mit Fernkampfwaffe starten: Kleriker, Nekromant, Elementarmagier, Zauberer, Druide?
 * Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle? Fulco will die Zauberkraft der Hexen im Norden.
 * DONE: Tanka von Tellborn erzählen und umgekehrt, Quest "Schamanen", Informationsaustausch! "Sie hat führt auch eine haarige Kreatur mit sich!" Zusammenarbeit bei der Suche nach der Bestie?
 * Kuno: Einbauen "Diese Wälder sind gefährlich! Hier hausen starke Kreaturen, nehmt euch in Acht!"
@@ -73,7 +74,9 @@
 * Immediate stop bricht Zauberbuch hinzufügen etc. ab?!
 * Tool schreiben dass die MMP-Datei der Minimap nimmt, ein Gebiet ausschneidet und ein Bild mit einer bestimmten Größe daraus erzeugt.
 * Diakon lebt nach Video in dem er umgebracht wurde wieder?!
-* Drachentöterin wurde nach Medusavideo entfernt, ist nicht unsterblich?!
+* Drachentöterin wurde nach Medusavideo entfernt, ist nicht unsterblich?! Vermutlich wird eine Copy der actorin gemacht die hidden ist!!! Kann nicht sein AUnitActor hat ShowUnit(true).
+* FIXED: Wiederbelebungstimer von Gefolgsleuten während Video stoppen.
+* Da Drachentöterin initial unverwundbar ist sie es bei Rückverwandlung zur Schwertkämpferin auch!
 * Ursula: Dialog einbauen falls man Druide ist!
 * Geisterstunde: Hinweis sollte erscheinen wenn man zur Mühle geht. Nichts erkennbar! Außerdem Hinweis einblenden wenn man die Mitte des AOS betritt und Questziel abschließen.
 * removeItemType() funktioniert nicht, haben eine oder keine Aufladung aber verschwinden nicht. Funktioniert NUR nicht wenn das Item gerade nicht sichtbar ist?
@@ -117,11 +120,18 @@
 * Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
 * Mehr Orks: http://www.hiveworkshop.com/forums/models-530/orcveteran-259649/?prev=r%3D20%26page%3D3 und alternate Version
 * Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/ 
-* fogmodifier vom Quest "The Norsemen" sind am Anfang aktiv.
-* Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schreib wiederbelebt werden.
+* FIXED: fogmodifier vom Quest "The Norsemen" sind am Anfang aktiv.
+* Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schrein wiederbelebt werden.
 * Stab der Unsterblichkeit entfernen. Sollte Questbelohnung von "Die Nordmänner" werden.
 * Eigentlich benötigen die Zauberbuchfähigkeiten 6 verschiedene! Die letzte entspricht der ausgelernten Stufe und gibt nur noch einmal die Werte an. Ansonsten wird immer die der nächsten Stufe angezeigt und nicht der aktuellen!
 * Neue Quests von Markward: Dialoge bei Manfred, Kuno, Björn und Dago einbauen, Gebiete und Pfeilplatzierung ermöglichen. Modell für Karren herunterladen.
+* Tagesabläufe vom Schlafengehen komplett entfernen. Stört den Spielfluss.
+* Spieler für Arena und Gefolgsleute aufteilen. 2. Spieler einbauen.
+* Irgendwer in der Todesgruft kann Tote beschwören. Funktioniert jedoch nicht bei den eigenen Untoten? nur bei den Donnerwesen. Sollte bei allem funktionieren -> mehr Gegner.
+* Beim Video in der Todesgruft Predigt vom Diakon einbauen.
+* Video "Das erste Gefecht" kämpfen immer noch nicht gegeneinander.
+* Video "Das erste Gefecht" vor Heil dir Vater in Richtung drehen.
+* DONE: SPELL_CHANNEL muss verwendet werden damit GetSpellTargetX() funktioniert. Jedoch pausieren Grimoire-Zauber dann die Einheit dauerhaft. Hat etwas mit dem Zauberbuch usw. zu tun?
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

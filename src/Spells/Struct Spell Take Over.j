@@ -45,6 +45,8 @@ library StructSpellsSpellTakeOver requires Asl, StructGameClasses, StructGameSpe
 			call ShowUnit(caster, false)
 			call SetUnitInvulnerable(caster, true)
 			call PauseUnit(caster, true)
+			debug call Print("Caster: " + GetUnitName(caster))
+			debug call Print("Target: " + GetUnitName(target))
 			set oldUser = GetOwningPlayer(target)
 			call SetUnitOwner(target, this.character().player(), true)
 			set oldUnit = this.character().unit()

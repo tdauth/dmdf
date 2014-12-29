@@ -15,6 +15,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		private static sound m_infoSoundLeave
 		private static string m_infoMessageDeath
 		private static sound m_infoSoundDeath
+		// static members
+		private static AIntegerVector m_fellows
 		// dynamic members
 		private boolean m_hasHeroIcon
 		private boolean m_hasTalk
@@ -24,6 +26,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		private sound m_revivalSound
 		private real m_revivalTime
 		private boolean m_disableSellings
+		private string m_deathAnimation
+		private real m_deathDuration
 		// construction members
 		private unit m_unit
 		private ATalk m_talk
@@ -102,6 +106,22 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 		public method disableSellings takes nothing returns boolean
 			return this.m_disableSellings
+		endmethod
+		
+		public method setDeathAnimation takes string animation returns nothing
+			set this.m_deathAnimation = animation
+		endmethod
+	
+		public method deathAnimation takes nothing returns string
+			return this.m_deathAnimation
+		endmethod
+		
+		public method setDeathDuration takes real duration returns nothing
+			set this.m_deathDuration = duration
+		endmethod
+		
+		public method deathDuration takes nothing returns real
+			return this.m_deathDuration
 		endmethod
 
 		// construction members
@@ -291,6 +311,20 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				debug call Print("Unit is not dead?!")
 			endif
 		endmethod
+		
+		/**
+		 * If the revival timer is running this resumes or pauses the timer.
+		 * Can be useful during video sequences.
+		 */
+		public method pauseRevival takes boolean pause returns nothing
+			if (this.m_revivalTimer != null) then
+				if (pause) then
+					call PauseTimer(this.m_revivalTimer)
+				else
+					call ResumeTimer(this.m_revivalTimer)
+				endif
+			endif
+		endmethod
 
 		private static method timerFunctionRevive takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this")
@@ -331,8 +365,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				// apply dissipate animation
 				set animationUnit = CopyUnit(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), GetUnitFacing(this.m_unit), bj_UNIT_STATE_METHOD_MAXIMUM)
 				call ShowUnit(animationUnit, true)
-				call SetUnitAnimation(animationUnit, "Dissipate")
-				call thistype.removeUnitAfter(animationUnit, 2.0)
+				call SetUnitAnimation(animationUnit, this.deathAnimation())
+				call thistype.removeUnitAfter(animationUnit, this.deathDuration())
 
 				if (thistype.m_infoMessageDeath != null) then
 					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageDeath).u(this.m_unit).i(R2I(this.m_revivalTime)).result())
@@ -424,6 +458,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_revivalSound = null
 			set this.m_revivalTime = MapData.revivalTime
 			set this.m_disableSellings = false
+			set this.m_deathAnimation = "Dissipate"
+			set this.m_deathDuration = 2.0
 			// construction members
 			set this.m_unit = whichUnit
 			set this.m_talk = talk
@@ -451,6 +487,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call this.setActive(false)
 			call DmdfHashTable.global().setHandleInteger(this.m_unit, "Fellow", this)
 			set this.m_trades = false
+			
+			call thistype.m_fellows.pushBack(this)
 
 			return this
 		endmethod
@@ -480,6 +518,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call DmdfHashTable.global().removeHandleBoolean(this.m_unit, "Fellow:Shared")
 			call DmdfHashTable.global().removeHandleBoolean(this.m_unit, "Fellow:Active")
 			call DmdfHashTable.global().removeHandleInteger(this.m_unit, "Fellow")
+			call thistype.m_fellows.remove(this)
 		endmethod
 
 		public static method init takes string infoMessageJoin, sound infoSoundJoin, string infoMessageLeave, sound infoSoundLeave, string infoMessageDeath, sound infoSoundDeath returns nothing
@@ -490,6 +529,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set thistype.m_infoSoundLeave = infoSoundLeave
 			set thistype.m_infoMessageDeath = infoMessageDeath
 			set thistype.m_infoSoundDeath = infoSoundDeath
+			// static members
+			set thistype.m_fellows = AIntegerList.create()
 		endmethod
 
 		public static method getByUnit takes unit whichUnit returns thistype
@@ -521,6 +562,17 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 			call this.revive()
 			return true
+		endmethod
+		
+		public static method pauseAllRevivals takes boolean pause returns nothing
+			local AIntegerListIterator iterator = thistype.m_fellows.begin()
+			debug call Print("Getting iterator " + I2S(iterator) + " of list " + I2S(thistype.m_fellows))
+			loop
+				exitwhen (not iterator.isValid())
+				call thistype(iterator.data()).pauseRevival(pause)
+				call iterator.next()
+			endloop
+			call iterator.destroy()
 		endmethod
 	endstruct
 

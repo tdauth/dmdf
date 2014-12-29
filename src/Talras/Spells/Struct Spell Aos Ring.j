@@ -116,7 +116,7 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 		private SpellAosRingMetamorphosis m_metamorphosis
 		
 		public static method create takes Character character, integer abilityId, boolean baldar returns thistype
-			local thistype this = thistype.allocate(character, abilityId, 0, 0, 0)
+			local thistype this = thistype.allocate(character, abilityId, 0, 0, 0, EVENT_UNIT_SPELL_CHANNEL)
 			set this.m_metamorphosis = SpellAosRingMetamorphosis.create(character, abilityId, baldar)
 			
 			return this

@@ -52,7 +52,7 @@ library StructMapSpellsSpellAmuletOfTerror requires Asl
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action)
+			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
 		endmethod
 	endstruct
 

@@ -34,29 +34,20 @@ library StructMapMapTavern requires Asl
 		endmethod
 
 		private static method createEnterTrigger takes nothing returns nothing
-			local event triggerEvent
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_enterTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterEnterRegion(thistype.m_enterTrigger, thistype.m_region, null)
-			set conditionFunction = Condition(function thistype.triggerConditionIsCharacter)
-			set triggerCondition = TriggerAddCondition(thistype.m_enterTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_enterTrigger, function thistype.triggerActionEnter)
-			set triggerEvent = null
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerRegisterEnterRegion(thistype.m_enterTrigger, thistype.m_region, null)
+			call TriggerAddCondition(thistype.m_enterTrigger, Condition(function thistype.triggerConditionIsCharacter))
+			call TriggerAddAction(thistype.m_enterTrigger, function thistype.triggerActionEnter)
 		endmethod
 
 		private static method triggerActionLeave takes nothing returns nothing
-			local unit triggerUnit = GetTriggerUnit()
-			local ACharacter character = ACharacter.getCharacterByUnit(triggerUnit)
-			local player user = character.player()
-			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(user)
-			call character.panCameraSmart()
+			local ACharacter character = ACharacter.getCharacterByUnit(GetTriggerUnit())
+			if (not character.view().isEnabled()) then
+				call ResetToGameCameraForPlayer(character.player(), 0.0)
+				call character.panCameraSmart()
+			endif
+			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(character.player())
 			call character.displayMessage(ACharacter.messageTypeInfo, tr("Sie haben das Wirtshaus verlassen."))
-			set triggerUnit = null
 		endmethod
 
 		private static method createLeaveTrigger takes nothing returns nothing

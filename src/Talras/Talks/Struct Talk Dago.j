@@ -1,8 +1,20 @@
-library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDown
+library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestReinforcementForTalras
 
 	struct TalkDago extends ATalk
 
 		implement Talk
+		
+		private AInfo m_hi
+		private AInfo m_castle
+		private AInfo m_tastyMushrooms
+		private AInfo m_orcs
+		private AInfo m_area
+		private AInfo m_iHaveMushrooms
+		private AInfo m_spell
+		private AInfo m_wood
+		private AInfo m_apprentice
+		private AInfo m_arrows
+		private AInfo m_exit
 		
 		private AInfo m_whatKindOfMushrooms
 		private AInfo m_goodLuck
@@ -11,13 +23,13 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		private AInfo m_no
 
 		private method startPageAction takes ACharacter character returns nothing
-			if (not this.showInfo(0, character)) then
-				call this.showRange(1, 9, character)
+			if (not this.showInfo(this.m_hi.index(), character)) then
+				call this.showRange(this.m_castle.index(), this.m_exit.index(), character)
 			endif
 		endmethod
 
 		// He du! Danke, dass ihr mich vor den Bären gerettet habt!
-		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, true, tr("He du! Danke, dass ihr mich vor den Bären gerettet habt!"), null)
 			call speech(info, character, true, tr("Ich wette, dass sich da noch ein paar von diesen Bestien in der Höhle verkrochen haben."), null)
 			call speech(info, character, true, tr("Aber keine Sorge. Um die werde ich mich selbst kümmern."), null)
@@ -31,7 +43,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		endmethod
 
 		// Willst du nicht mal langsam in die Burg?
-		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionCastle takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Willst du nicht mal langsam in die Burg?"), null)
 			call speech(info, character, true, tr("Nein, ich muss erst mehr Pilze finden."), null)
@@ -39,12 +51,12 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		endmethod
 
 		// (Nach „Willst du nicht mal langsam in die Burg?“)
-		private static method infoCondition2 takes AInfo info, ACharacter character returns boolean
+		private static method infoConditionTastyMushrooms takes AInfo info, ACharacter character returns boolean
 			return info.talk().infoHasBeenShownToCharacter(1, character)
 		endmethod
 
 		// Gibt’s hier leckere Pilze?
-		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionTastyMushrooms takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Gibt’s hier leckere Pilze?"), null)
 			call speech(info, character, true, tr("Ja, aber leider finde ich davon kaum welche."), null)
 			call speech(info, character, true, tr("Vielleicht hätten mich die Bären lieber fressen sollen. Am Ende stehe ich noch mit leeren Händen vor dem Herzog (Lacht)."), null)
@@ -52,7 +64,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		endmethod
 
 		// Schon was von den Orks gehört?
-		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionOrcs takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Schon was von den Orks gehört?"), null)
 			call speech(info, character, true, tr("Hör mir bloß auf mit diesen verdammten Orks! Jeder hier spricht von nichts anderem mehr und unser Herzog ist sowieso unfähig. Aber was red' ich da?"), null)
 			call speech(info, character, true, tr("Sollen die Orks endlich kommen und uns alle töten. Das Warten ist das, was einen fertigmacht."), null)
@@ -61,7 +73,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		endmethod
 
 		// Was weißt du über die Gegend hier?
-		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionArea takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was weißt du über die Gegend hier?"), null)
 			call speech(info, character, true, tr("Einiges. Ich wurde immerhin hier geboren. Mann, wie die Zeit vergeht! Aber ich werde sowieso nicht mehr lange leben. Heute habt ihr mich zwar gerettet, aber morgen schon werden mich die Orks töten."), null)
 			call speech(info, character, true, tr("Manchmal frage ich mich wirklich, welchen Sinn es macht, sich noch weiter abzumühen und auf seinen sicheren Tod zu warten."), null)
@@ -75,12 +87,12 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		endmethod
 
 		// (Auftrag „Pilzsuche ist aktiv und Charakter hat Pilze dabei)
-		private static method infoCondition5 takes AInfo info, ACharacter character returns boolean
+		private static method infoConditionIHaveMushrooms takes AInfo info, ACharacter character returns boolean
 			return QuestMushroomSearch.characterQuest(character).isNew() and true /// @todo FIXME
 		endmethod
 
 		// Ich habe hier ein paar Pilze.
-		private static method infoAction5 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionIHaveMushrooms takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Ich habe hier ein paar Pilze."), null)
 			if (false) then /// @todo FIXME
 				// (Pilze sind essbar, aber noch nicht genug)
@@ -120,12 +132,12 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		endmethod
 
 		// (Auftrag „Brennt die Bären nieder!“ ist aktiv und Charakter besitzt Zauberspruch)
-		private static method infoCondition6 takes AInfo info, ACharacter character returns boolean
+		private static method infoConditionSpell takes AInfo info, ACharacter character returns boolean
 			return QuestBurnTheBearsDown.characterQuest(character).isNew() and Character(character).inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)
 		endmethod
 
 		// Hier ist dein Zauberspruch.
-		private static method infoAction6 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionSpell takes AInfo info, ACharacter character returns nothing
 			if (Character(character).inventory().totalItemTypeCharges(QuestBurnTheBearsDown.itemTypeIdWood) == QuestBurnTheBearsDown.maxWood) then // (Charakter besitzt zudem das Holz)
 				call speech(info, character, false, tr("Außerdem habe ich noch Holz für dich."), null)
 				call thistype.completeBoth(info, character)
@@ -137,12 +149,12 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		endmethod
 
 		// (Auftrag „Brennt die Bären nieder!“ ist aktiv und Charakter besitzt Holz)
-		private static method infoCondition7 takes AInfo info, ACharacter character returns boolean
+		private static method infoConditionWood takes AInfo info, ACharacter character returns boolean
 			return QuestBurnTheBearsDown.characterQuest(character).isNew() and Character(character).inventory().totalItemTypeCharges(QuestBurnTheBearsDown.itemTypeIdWood) == QuestBurnTheBearsDown.maxWood
 		endmethod
 
 		// Hier ist dein Holz.
-		private static method infoAction7 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionWood takes AInfo info, ACharacter character returns nothing
 			// (Charakter besitzt zudem den Zauberspruch)
 			if (Character(character).inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)) then
 				call speech(info, character, false, tr("Außerdem habe ich noch einen Zauberspruch für dich."), null)
@@ -164,9 +176,23 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call speech(info, character, true, tr("Einen Schüler? Nein, für so etwas habe ich keine Zeit!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
+		
+		// (Auftragsziel 3 des Auftrags „Die Befestigung von Talras“ ist aktiv)
+		private static method infoConditionArrows takes AInfo info, ACharacter character returns boolean
+			return QuestReinforcementForTalras.characterQuest(character).questItem(2).isNew()
+		endmethod
+
+		// Kannst du Pfeile herstellen?
+		private static method infoActionArrows takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Kannst du Pfeile herstellen?"), null)
+			call speech(info, character, true, tr("Natürlich kann ich das. Ich bin ja schließlich Jäger. Wieso fragst du denn?"), null)
+			call speech(info, character, false, tr("Markward benötigt Pfeile zur Verteidigung der Burg."), null)
+			call speech(info, character, true, tr("So, braucht er die? Ich brauche aber selbst welche und außerdem habe ich gerade sowieso keine Zeit. Sprich mal mit Björn, der lässt sich gerne ausnutzen (grinst)."), null)
+			call info.talk().showStartPage(character)
+		endmethod
 
 		// Was denn für Pilze?
-		private static method infoAction1_0 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionCastle_WhatKindOfMushrooms takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Was denn für Pilze?"), null)
 			call speech(info, character, true, tr("Ach alle Möglichen, Hauptsache essbar."), null)
@@ -175,14 +201,14 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		endmethod
 
 		// Na dann mal viel Spaß!
-		private static method infoAction1_1 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionCastle_GoodLuck takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Na dann mal viel Spaß!"), null)
 			call speech(info, character, true, tr("Danke."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Klar.
-		private static method infoAction1_0_0 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionCastle_WhatKindOfMushrooms_Yes takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Klar."), null)
 			call speech(info, character, true, tr("Das find ich aber nett. Selten geworden, dass jemand einem seine Hilfe anbietet."), null)
 			// Neuer Auftrag „Pilzsuche“
@@ -191,34 +217,35 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		endmethod
 
 		// Nein.
-		private static method infoAction1_0_1 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionCastle_WhatKindOfMushrooms_No takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Nein."), null)
 			call speech(info, character, true, tr("Schade."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(gg_unit_n00Q_0028, thistype.startPageAction)
+			local thistype this = thistype.allocate(Npcs.dago(), thistype.startPageAction)
 
 			// start page
-			call this.addInfo(false, true, 0, thistype.infoAction0, null) // 0
-			call this.addInfo(false, false, 0, thistype.infoAction1, tr("Willst du nicht mal langsam in die Burg?")) // 1
-			call this.addInfo(false, false, thistype.infoCondition2, thistype.infoAction2, tr("Gibt’s hier leckere Pilze?")) // 2
-			call this.addInfo(false, false, 0, thistype.infoAction3, tr("Schon was von den Orks gehört?")) // 3
-			call this.addInfo(false, false, 0, thistype.infoAction4, tr("Was weißt du über die Gegend hier?")) // 4
-			call this.addInfo(false, false, thistype.infoCondition5, thistype.infoAction5, tr("Ich habe hier ein paar Pilze.")) // 5
-			call this.addInfo(false, false, thistype.infoCondition6, thistype.infoAction6, tr("Hier ist dein Zauberspruch.")) // 6
-			call this.addInfo(false, false, thistype.infoCondition7, thistype.infoAction7, tr("Hier ist dein Holz.")) // 7
-			call this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tr("Suchst du einen Schüler?")) // 8
-			call this.addExitButton() // 9
+			set this.m_hi = this.addInfo(false, true, 0, thistype.infoActionHi, null)
+			set this.m_castle = this.addInfo(false, false, 0, thistype.infoActionCastle, tr("Willst du nicht mal langsam in die Burg?"))
+			set this.m_tastyMushrooms = this.addInfo(false, false, thistype.infoConditionTastyMushrooms, thistype.infoActionTastyMushrooms, tr("Gibt’s hier leckere Pilze?"))
+			set this.m_orcs = this.addInfo(false, false, 0, thistype.infoActionOrcs, tr("Schon was von den Orks gehört?"))
+			set this.m_area = this.addInfo(false, false, 0, thistype.infoActionArea, tr("Was weißt du über die Gegend hier?"))
+			set this.m_iHaveMushrooms = this.addInfo(false, false, thistype.infoConditionIHaveMushrooms, thistype.infoActionIHaveMushrooms, tr("Ich habe hier ein paar Pilze."))
+			set this.m_spell = this.addInfo(false, false, thistype.infoConditionSpell, thistype.infoActionSpell, tr("Hier ist dein Zauberspruch."))
+			set this.m_wood = this.addInfo(false, false, thistype.infoConditionWood, thistype.infoActionWood, tr("Hier ist dein Holz."))
+			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tr("Suchst du einen Schüler?"))
+			set this.m_arrows = this.addInfo(false, false, thistype.infoConditionArrows, thistype.infoActionArrows, tr("Kannst du Pfeile herstellen?"))
+			set this.m_exit = this.addExitButton()
 
 			// info 1
-			set this.m_whatKindOfMushrooms = this.addInfo(false, false, 0, thistype.infoAction1_0, tr("Was denn für Pilze?"))
-			set this.m_goodLuck = this.addInfo(false, false, 0, thistype.infoAction1_1, tr("Na dann mal viel Spaß!"))
+			set this.m_whatKindOfMushrooms = this.addInfo(false, false, 0, thistype.infoActionCastle_WhatKindOfMushrooms, tr("Was denn für Pilze?"))
+			set this.m_goodLuck = this.addInfo(false, false, 0, thistype.infoActionCastle_GoodLuck, tr("Na dann mal viel Spaß!"))
 
 			// info 1_0
-			set this.m_ofCourse = this.addInfo(false, false, 0, thistype.infoAction1_0_0, tr("Klar."))
-			set this.m_no = this.addInfo(false, false, 0, thistype.infoAction1_0_1, tr("Nein."))
+			set this.m_ofCourse = this.addInfo(false, false, 0, thistype.infoActionCastle_WhatKindOfMushrooms_Yes, tr("Klar."))
+			set this.m_no = this.addInfo(false, false, 0, thistype.infoActionCastle_WhatKindOfMushrooms_No, tr("Nein."))
 
 			return this
 		endmethod

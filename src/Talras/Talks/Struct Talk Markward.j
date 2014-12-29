@@ -72,6 +72,7 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			call speech(info, character, true, tr("Nimm dieses Schwert Waffenbruder auf dass es dir in deinen bevorstehenden Kämpfen von Nutzen sein möge."), null)
 			// Charakter erhält Schwert
 			call character.giveItem('I03R')
+			call character.displayItemAcquired(GetObjectName('I03R'), "")
 			call info.talk().showStartPage(character)
 		endmethod
 		
@@ -88,7 +89,7 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 		
 		// (Auftragsziel 1 des Auftrags „Die Versorgung von Talras“ ist abgeschlossen und Auftrag ist noch aktiv)
 		private static method infoConditionFirstHelpDone takes AInfo info, ACharacter character returns boolean
-			return QuestSupplyForTalras.characterQuest(character).questItem(0).isCompleted() and  QuestSupplyForTalras.characterQuest(character).questItem(1).isNew()
+			return QuestSupplyForTalras.characterQuest(character).questItem(0).isCompleted() and  QuestSupplyForTalras.characterQuest(character).isNew()
 		endmethod
 		
 		// Manfred schickt Vorräte in die Burg.
@@ -122,7 +123,7 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			call speech(info, character, true, tr("Wegen den Befestigungen kannst du mit dem Holzfäller Kuno sprechen. Er lebt im Nordosten etwas abgeschieden im Wald. Sag ihm, dass er uns über Manfred Holz liefern muss."), null)
 			call speech(info, character, true, tr("Wegen der Pfeile würde ich mit den Jägern der Burg sprechen. Das sind Dago und Björn."), null)
 			// Neuer Auftrag „Die Befestigung von Talras“
-			call QuestReinforcementForTalras.characterQuest(character).complete()
+			call QuestReinforcementForTalras.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
 		

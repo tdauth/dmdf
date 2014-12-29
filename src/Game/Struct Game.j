@@ -414,7 +414,7 @@ endif
 			//call AMovement.init(0.01, 5.0, 30.0, true) //90.0 test
 			call ACharacter.init(true, true, false, true, false, true, false, false, false, true, true, DMDF_INFO_LOG)
 			call AClass.init(1, 1)
-			call initSpeechSkip(AKeyEscape, 1.0)
+			call initSpeechSkip(AKeyEscape, 0.10)
 			call AInventory.init('I001', 'I000', 'A015', false, tr("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt."), null, tr("Rucksack ist voll."),  tr("\"%s\" im Rucksack verstaut."), tr("Gegenstand konnte nicht verschoben werden."), tr("Die Seitengegenstände können nicht abgelegt werden."), tr("Die Seitengegenstände können nicht verschoben werden."), tr("Der Gegendstand gehört einem anderen Spieler."))
 			call AItemType.init(tr("Gegenstand benötigt eine höhere Stufe."), tr("Gegenstand benötigt mehr Stärke."), tr("Gegenstand benötigt mehr Geschick."), tr("Gegenstand benötigt mehr Wissen."), tr("Gegenstand benötigt eine andere Charakterklasse."))
 			call AQuest.init0(true, true, "Sound\\Interface\\QuestLog.wav", tr("|c00ffcc00NEUER AUFTRAG|r"), tr("|c00ffcc00AUFTRAG ABGESCHLOSSEN|r"), tr("|c00ffcc00AUFTRAG FEHLGESCHLAGEN|r"), tr("|c00ffcc00AUFTRAGS-AKTUALISIERUNG|r"), tr("- %s"))
@@ -824,6 +824,7 @@ endif
 		public static method initVideoSettings takes nothing returns nothing
 			local integer i
 			call thistype.m_weather.disable()
+			call Fellow.pauseAllRevivals.evaluate(true)
 			call DisableTrigger(thistype.m_levelTrigger)
 			call DisableTrigger(thistype.m_killTrigger)
 			//call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_UI, 1.0) /// @todo TEST
@@ -895,6 +896,7 @@ endif
 			 * Make sure that not default wc3 music is played.
 			 */
 			call thistype.setDefaultMapMusic()
+			call Fellow.pauseAllRevivals.evaluate(false)
 		endmethod
 
 		public static method addUnitMoveSpeed takes unit whichUnit, real value returns real

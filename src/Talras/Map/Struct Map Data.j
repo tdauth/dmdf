@@ -382,7 +382,7 @@ endif
 			
 			call VideoIntro.video().play() // TEST
 			debug call Print("Waiting for video intro")
-			call waitForVideo(thistype.videoWaitInterval) TEST
+			call waitForVideo(thistype.videoWaitInterval)
 			debug call Print("Waited successfully for intro video.")
 static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
