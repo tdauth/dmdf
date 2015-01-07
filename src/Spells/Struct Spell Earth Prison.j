@@ -9,12 +9,14 @@ library StructSpellsSpellEarthPrison requires Asl, StructGameClasses, StructGame
 		public static constant integer favouriteAbilityId = 'A03I'
 		public static constant integer maxLevel = 5
 		public static constant integer buffId = 'B005'
-		private static constant real timeLevelValue = 2.0 // Zeit-Stufenfaktor (ab Stufe 1)
+		private static constant real timeStartValue = 1.5
+		private static constant real timeLevelValue = 0.5 // Zeit-Stufenfaktor (ab Stufe 1)
 
 		private method action takes nothing returns nothing
 			local unit target = GetSpellTargetUnit()
 			local ADamageRecorder damageRecorder
-			local real time = thistype.timeLevelValue
+			local real time = thistype.timeStartValue + thistype.timeLevelValue * this.level()
+			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "overhead")
 			call UnitRemoveBuffs(target, false, true)
 			call PauseUnit(target, true)
 			call UnitAddAbility(target, thistype.buffId)
@@ -28,6 +30,8 @@ library StructSpellsSpellEarthPrison requires Asl, StructGameClasses, StructGame
 			call UnitRemoveAbility(target, thistype.buffId)
 			call damageRecorder.destroy()
 			call PauseUnit(target, false)
+			call DestroyEffect(targetEffect)
+			set targetEffect = null
 			set target = null
 		endmethod
 

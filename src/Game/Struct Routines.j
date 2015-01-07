@@ -228,6 +228,7 @@ library StructGameRoutines requires Asl
 		private static method harvestTargetAction takes NpcRoutineWithFacing period returns nothing
 			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), "Stand Work")
+			call PlaySoundFileOnUnit("Abilities\\Weapons\\Axe\\AxeMissile1.wav", period.unit())
 			call TriggerSleepAction(1.266)
 			call AContinueRoutineLoop(period, thistype.harvestTargetAction)
 		endmethod

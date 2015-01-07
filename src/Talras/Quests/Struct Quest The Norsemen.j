@@ -123,15 +123,14 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			return result
 		endmethod
 
-		private static method groupFunctionRemoveUnit takes unit enumUnit returns nothing
-			call RemoveUnit(enumUnit)
-		endmethod
-
 		private method cleanUpBattleField takes nothing returns nothing
 			local integer i
 			local integer j
 			set this.m_hasStarted = false
-			call this.m_allyStartGroup.destroy() /// @todo Reset them to Norsemen camp
+			call this.m_allyStartGroup.units().remove(Npcs.wigberht())
+			call this.m_allyStartGroup.units().remove(Npcs.ricman())
+			call this.m_allyStartGroup.forGroup(thistype.groupFunctionRemoveUnit)
+			call this.m_allyStartGroup.destroy()
 			call this.m_allyRangerGroup.forGroup(thistype.groupFunctionRemoveUnit)
 			call this.m_allyRangerGroup.destroy()
 			set this.m_allyRangerLeader = null
@@ -336,8 +335,13 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call waitForVideo(MapData.videoWaitInterval)
 			call questItem.quest().displayUpdate()
 		endmethod
+		
+		private static method groupFunctionRemoveUnit takes unit enumUnit returns nothing
+			call RemoveUnit(enumUnit)
+		endmethod
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
 			local unit whichUnit
 			debug call Print("Quest The Norsemen target 1 completed -> starting with video Wigberht")
 			call VideoWigberht.video().play()
@@ -352,6 +356,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			// new NPCs?
 			call SpawnPoints.destroyOrcs0()
 			
+			/*
+			 * Create Norsemen
+			 */
 			set whichUnit = CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_waypoint_orc_camp_norseman_0, 196.87)
 			call SetUnitInvulnerable(whichUnit, true)
 			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_waypoint_orc_camp_norseman_1, 353.13)

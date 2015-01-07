@@ -5,9 +5,10 @@ library StructSpellsSpellBlaze requires Asl, StructSpellsSpellElementalMageDamag
 		public static constant integer abilityId = 'A01E'
 		public static constant integer favouriteAbilityId = 'A03L'
 		public static constant integer maxLevel = 5
-		private static constant real radius = 400.0 //15 Meter
-		private static constant real damageLevelValue = 50.0
-		private static constant real damageLevelBonus = 10.0
+		private static constant real radius = 300.0
+		private static constant real damageStartValue = 20.0
+		private static constant real damageLevelValue = 10.0
+		private static constant real damageLevelBonus = 2.0
 
 		private static method filter takes nothing returns boolean
 			local unit filterUnit = GetFilterUnit()
@@ -44,7 +45,7 @@ library StructSpellsSpellBlaze requires Asl, StructSpellsSpellElementalMageDamag
 					endif
 					set target = null
 				endloop
-				set damage = damage + this.level() * thistype.damageLevelValue
+				set damage = damage + thistype.damageStartValue + this.level() * thistype.damageLevelValue
 				set spellEffects = AEffectVector.create()
 				set i = 0
 				loop

@@ -1,4 +1,4 @@
-library StructMapMapArena requires Asl, StructGameGame, StructMapQuestsQuestArenaChampion
+library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, StructMapQuestsQuestArenaChampion
 
 	struct Arena
 		private static constant integer maxUnits = 2
@@ -45,7 +45,6 @@ library StructMapMapArena requires Asl, StructGameGame, StructMapQuestsQuestAren
 					call IssueImmediateOrder(usedUnit, "stop")
 				endif
 
-				call Game.setAlliedPlayerAlliedToPlayer(owner)
 				call PanCameraToForPlayer(owner, GetUnitX(usedUnit), GetUnitY(usedUnit))
 				call ShowLeaderboardForPlayer(owner, thistype.m_leaderboard, false)
 				// remove player item to make sure the leaderboard is not restored after cinematics
@@ -143,8 +142,8 @@ library StructMapMapArena requires Asl, StructGameGame, StructMapQuestsQuestAren
 				call thistype.removeUnit(triggerUnit)
 			else
 				// increase score for computer player
-				set thistype.m_playerScore[GetPlayerId(MapData.alliedPlayer)] = thistype.m_playerScore[GetPlayerId(MapData.alliedPlayer)] + 1
-				call LeaderboardSetItemValue(thistype.m_leaderboard, LeaderboardGetPlayerIndex(thistype.m_leaderboard, MapData.alliedPlayer), thistype.m_playerScore[GetPlayerId(MapData.alliedPlayer)])
+				set thistype.m_playerScore[GetPlayerId(MapData.arenaPlayer)] = thistype.m_playerScore[GetPlayerId(MapData.arenaPlayer)] + 1
+				call LeaderboardSetItemValue(thistype.m_leaderboard, LeaderboardGetPlayerIndex(thistype.m_leaderboard, MapData.arenaPlayer), thistype.m_playerScore[GetPlayerId(MapData.arenaPlayer)])
 				call LeaderboardSortItemsByValue(thistype.m_leaderboard, true)
 				call thistype.removeCharacter(character)
 			endif
@@ -270,10 +269,9 @@ library StructMapMapArena requires Asl, StructGameGame, StructMapQuestsQuestAren
 			call SetUnitInvulnerable(usedUnit, true)
 			call PauseUnit(usedUnit, true)
 			call LeaderboardAddItemBJ(owner, thistype.m_leaderboard, GetUnitName(usedUnit) + ":", thistype.playerScore(owner))
-			if (Character.getCharacterByUnit(usedUnit) == 0 and owner != MapData.alliedPlayer) then
-				call SetUnitOwner(usedUnit, MapData.alliedPlayer, true)
+			if (Character.getCharacterByUnit(usedUnit) == 0 and owner != MapData.arenaPlayer) then
+				call SetUnitOwner(usedUnit, MapData.arenaPlayer, true)
 			elseif (Character.getCharacterByUnit(usedUnit) != 0) then
-				call Game.setAlliedPlayerUnalliedToPlayer(owner)
 				call PanCameraToForPlayer(owner, GetUnitX(usedUnit), GetUnitY(usedUnit))
 				call ShowLeaderboardForPlayer(owner, thistype.m_leaderboard, true)
 			endif
@@ -299,14 +297,21 @@ library StructMapMapArena requires Asl, StructGameGame, StructMapQuestsQuestAren
 		* @todo Fix unit types.
 		* h00D is level 6 enemy.
 		*/
-		public static method getRandomEnemy takes integer level returns unit
-			local integer index = GetRandomInt(0, 2)
-			if (index == 0) then
-				return CreateUnit(MapData.alliedPlayer, 'h00D', 0.0, 0.0, 0.0)
-			elseif (index == 1) then
-				return CreateUnit(MapData.alliedPlayer, 'h00D', 0.0, 0.0, 0.0)
-			elseif (index == 2) then
-				return CreateUnit(MapData.alliedPlayer, 'h00D', 0.0, 0.0, 0.0)
+		public static method getRandomEnemy takes ACharacter character returns unit
+			if (Classes.isChaplain(character.class())) then
+				return CreateUnit(MapData.arenaPlayer, 'h019', 0.0, 0.0, 0.0)
+			elseif (Classes.isMage(character.class())) then
+				if (character.level() < 6) then
+					return CreateUnit(MapData.arenaPlayer, 'h018', 0.0, 0.0, 0.0)
+				else
+					return CreateUnit(MapData.arenaPlayer, 'h01A', 0.0, 0.0, 0.0)
+				endif
+			elseif (Classes.isWarrior(character.class())) then
+				if (character.level() < 6) then
+					return CreateUnit(MapData.arenaPlayer, 'h017', 0.0, 0.0, 0.0)
+				else
+					return CreateUnit(MapData.arenaPlayer, 'h00D', 0.0, 0.0, 0.0)
+				endif
 			endif
 			return null
 		endmethod

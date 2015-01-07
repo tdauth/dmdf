@@ -85,16 +85,34 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call speech(info, character, true, tr("Und pass auf, wenn du durch die Wälder hier ziehst. Hier gibt’s außer den wilden Tieren auch noch Wegelagerer, die dir für ein paar Goldmünzen die Haut bei lebendigem Leibe abziehen würden. Ganz zu schweigen von den Kreaturen, die sich nördlich des Hofes und am Ostufer des Flusses rumtreiben."), null)
 			call info.talk().showStartPage(character)
 		endmethod
+		
+		private static method hasMushrooms takes ACharacter character returns boolean
+			return (character.inventory().hasItemType('I01L') or character.inventory().hasItemType('I01K') or character.inventory().hasItemType('I03Y')) // NOTE alle Pilze hinzufügen
+		endmethod
+		
+		private static method mushroomsAreTasty takes ACharacter character returns boolean
+			return (character.inventory().hasItemType('I01L') or character.inventory().hasItemType('I01K')) // NOTE alle Pilze hinzufügen
+		endmethod
 
 		// (Auftrag „Pilzsuche ist aktiv und Charakter hat Pilze dabei)
 		private static method infoConditionIHaveMushrooms takes AInfo info, ACharacter character returns boolean
-			return QuestMushroomSearch.characterQuest(character).isNew() and true /// @todo FIXME
+			return QuestMushroomSearch.characterQuest(character).isNew() and thistype.hasMushrooms(character)
 		endmethod
 
 		// Ich habe hier ein paar Pilze.
 		private static method infoActionIHaveMushrooms takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Ich habe hier ein paar Pilze."), null)
-			if (false) then /// @todo FIXME
+			if (thistype.mushroomsAreTasty(character)) then
+				// Steinpilz ist essbar
+				if (character.inventory().hasItemType('I01L')) then
+					// Pilz entfernen
+					call character.inventory().removeItemType('I01L')
+				// Pfifferling ist essbar
+				elseif (character.inventory().hasItemType('I01K')) then
+					// Pilz entfernen
+					call character.inventory().removeItemType('I01K')
+				endif
 				// (Pilze sind essbar, aber noch nicht genug)
 				if (not QuestMushroomSearch.characterQuest(character).addMushroom()) then
 					call speech(info, character, true, tr("Sehr gut, danke. Ich brauche aber noch mehr essbare Pilze."), null)
@@ -231,8 +249,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			set this.m_castle = this.addInfo(false, false, 0, thistype.infoActionCastle, tr("Willst du nicht mal langsam in die Burg?"))
 			set this.m_tastyMushrooms = this.addInfo(false, false, thistype.infoConditionTastyMushrooms, thistype.infoActionTastyMushrooms, tr("Gibt’s hier leckere Pilze?"))
 			set this.m_orcs = this.addInfo(false, false, 0, thistype.infoActionOrcs, tr("Schon was von den Orks gehört?"))
-			set this.m_area = this.addInfo(false, false, 0, thistype.infoActionArea, tr("Was weißt du über die Gegend hier?"))
-			set this.m_iHaveMushrooms = this.addInfo(false, false, thistype.infoConditionIHaveMushrooms, thistype.infoActionIHaveMushrooms, tr("Ich habe hier ein paar Pilze."))
+			set this.m_area = this.addInfo(true, false, 0, thistype.infoActionArea, tr("Was weißt du über die Gegend hier?"))
+			set this.m_iHaveMushrooms = this.addInfo(true, false, thistype.infoConditionIHaveMushrooms, thistype.infoActionIHaveMushrooms, tr("Ich habe hier ein paar Pilze."))
 			set this.m_spell = this.addInfo(false, false, thistype.infoConditionSpell, thistype.infoActionSpell, tr("Hier ist dein Zauberspruch."))
 			set this.m_wood = this.addInfo(false, false, thistype.infoConditionWood, thistype.infoActionWood, tr("Hier ist dein Holz."))
 			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tr("Suchst du einen Schüler?"))

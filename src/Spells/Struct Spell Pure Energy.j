@@ -2,9 +2,9 @@
 library StructSpellsSpellPureEnergy requires Asl, StructGameClasses, StructGameSpell
 
 	/**
-	* Der Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu. 5 Minuten Abklingzeit.
-	* Kostet restliches Mana - und wird von Elementare Gewalt betroffen. Wer schlau ist … ;)
-	*/
+	 * Der Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu. 5 Minuten Abklingzeit.
+	 * Kostet restliches Mana - und wird von Elementare Gewalt betroffen. Wer schlau ist … ;)
+	 */
 	struct SpellPureEnergy extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A01X'
 		public static constant integer favouriteAbilityId = 'A03O'

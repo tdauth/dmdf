@@ -1,8 +1,7 @@
 library StructMapQuestsQuestABigPresent requires Asl, StructGameCharacter, StructMapMapNpcs
 
 	struct QuestABigPresent extends AQuest
-		/// @todo FIXME -> großer Honigtopf
-		public static constant integer itemTypeId = 0
+		public static constant integer itemTypeId = 'I03X'
 
 		implement CharacterQuest
 
@@ -13,22 +12,21 @@ library StructMapQuestsQuestABigPresent requires Asl, StructGameCharacter, Struc
 
 		private static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, tr("Ein großes Geschenk"))
-			local AQuestItem questItem0
-			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			local AQuestItem questItem
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBarrel.blp")
 			call this.setDescription(tr("Da Lothar mit Mathildas Reaktion auf sein Geschenk nicht zufrieden war, hat er dir nun aufgetragen, ihr einen noch größeren Honigtopf zu überreichen, um seiner Liebe zu ihr noch größeren Ausdruck zu verleihen."))
 			call this.setReward(AAbstractQuest.rewardExperience, 200)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Überreiche Mathilda Lothars großen Honigtopf."))
-			call questItem0.setPing(true)
-			call questItem0.setPingUnit(Npcs.mathilda())
-			call questItem0.setPingColour(100.0, 100.0, 100.0)
-			call questItem0.setReward(AAbstractQuest.rewardExperience, 50)
+			set questItem = AQuestItem.create(this, tr("Überreiche Mathilda Lothars großen Honigtopf."))
+			call questItem.setPing(true)
+			call questItem.setPingUnit(Npcs.mathilda())
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setReward(AAbstractQuest.rewardExperience, 50)
 			// item 1
-			set questItem1 = AQuestItem.create(this, tr("Berichte Lothar davon."))
-			call questItem1.setPing(true)
-			call questItem1.setPingUnit(Npcs.lothar())
-			call questItem1.setPingColour(100.0, 100.0, 100.0)
+			set questItem = AQuestItem.create(this, tr("Berichte Lothar davon."))
+			call questItem.setPing(true)
+			call questItem.setPingUnit(Npcs.lothar())
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			return this
 		endmethod

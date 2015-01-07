@@ -1,8 +1,7 @@
 library StructMapQuestsQuestALittlePresent requires Asl, StructGameCharacter, StructMapMapNpcs
 
 	struct QuestALittlePresent extends AQuest
-		/// @todo FIXME -> Honigtopf
-		public static constant integer itemTypeId = 0
+		public static constant integer itemTypeId = 'I03W'
 
 		implement CharacterQuest
 
@@ -15,7 +14,7 @@ library StructMapQuestsQuestALittlePresent requires Asl, StructGameCharacter, St
 			local thistype this = thistype.allocate(character, tr("Ein kleines Geschenk"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBarrel.blp")
 			call this.setDescription(tr("Der dicke Händler Lothar hat dich gebeten, Mathilda einen Topf seines besten Honigs als Zeichen seiner Liebe zu ihr zu überreichen."))
 			call this.setReward(AAbstractQuest.rewardExperience, 200)
 			// item 0

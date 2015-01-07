@@ -1,4 +1,4 @@
-library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial, StructGameGame, StructGuisTrade
+library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial, StructGameGame
 
 	struct MainMenu
 		private Character m_character
@@ -49,78 +49,9 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 			call this.showDialog.evaluate()
 		endmethod
 
-		private static method dialogButtonActionTrade takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.m_character.trade().showDialog()
-		endmethod
-
-		private static method dialogButtonActionInventory takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.m_character.guiInventory().show()
-		endmethod
-
 		private static method dialogButtonActionBackToMainMenu takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
 			call this.showDialog.evaluate()
-		endmethod
-
-		private static method dialogButtonActionBackToCharacterSlotsList takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.showCharacterSlotsList.evaluate()
-		endmethod
-
-		private method saveCharacter takes nothing returns nothing
-			call Game.storeCharacter(this.m_character, this.m_characterSlotIndex)
-		endmethod
-
-		private static method dialogButtonActionSaveCharacter takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.saveCharacter()
-			call this.showCharacterSlot.evaluate(this.m_characterSlotIndex)
-		endmethod
-
-		private method loadCharacter takes nothing returns nothing
-			call Game.restoreCharacter(this.m_character, this.m_characterSlotIndex, GetUnitX(this.m_character.unit()), GetUnitY(this.m_character.unit()), GetUnitFacing(this.m_character.unit()))
-		endmethod
-
-		private static method dialogButtonActionLoadCharacter takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.loadCharacter()
-			call this.showCharacterSlot.evaluate(this.m_characterSlotIndex)
-		endmethod
-
-		private method showCharacterSlot takes integer index returns nothing
-			set this.m_characterSlotIndex = index
-			call AGui.playerGui(this.m_character.player()).dialog().clear()
-			call AGui.playerGui(this.m_character.player()).dialog().setMessage(IntegerArg(tr("Charakterfach %i"), index))
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Zurück zur Liste"), thistype.dialogButtonActionBackToCharacterSlotsList)
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Speichern"), thistype.dialogButtonActionSaveCharacter)
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Laden"), thistype.dialogButtonActionLoadCharacter)
-			call AGui.playerGui(this.m_character.player()).dialog().show()
-		endmethod
-
-		private static method dialogButtonActionSelectCharacterSlot takes ADialogButton dialogButton returns nothing
-			call Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu().showCharacterSlot(dialogButton.index() - 1)
-		endmethod
-
-		private method showCharacterSlotsList takes nothing returns nothing
-			local integer i
-			local integer size = Game.storedCharactersNextIndex()
-			call AGui.playerGui(this.m_character.player()).dialog().clear()
-			call AGui.playerGui(this.m_character.player()).dialog().setMessage(tr("Charakterfächer-Liste"))
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Zurück zum Hauptmenü"), thistype.dialogButtonActionBackToMainMenu)
-			set i = 0
-			loop
-				exitwhen (i == size)
-				call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(IntegerArg(tr("Charakter %i"), i), thistype.dialogButtonActionSelectCharacterSlot)
-				set i = i + 1
-			endloop
-			call AGui.playerGui(this.m_character.player()).dialog().show()
-		endmethod
-
-		private static method dialogButtonActionCharacterMemoryAdministration takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.showCharacterSlotsList()
 		endmethod
 
 		private static method dialogButtonActionInfoLog takes ADialogButton dialogButton returns nothing
@@ -183,18 +114,6 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 			endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetControl)
 
-static if (DMDF_TRADE) then
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Handel"), thistype.dialogButtonActionTrade)
-endif
-
-static if (DMDF_INVENTORY) then
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Inventar"), thistype.dialogButtonActionInventory)
-endif
-
-static if (DMDF_CHARACTER_MEMORY_ADMINISTRATION) then
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Charakterspeicher-Verwaltung"), thistype.dialogButtonActionCharacterMemoryAdministration)
-endif
-
 static if (DMDF_INFO_LOG) then
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Info-Log"), thistype.dialogButtonActionInfoLog)
 endif
@@ -224,19 +143,18 @@ endif
 		endmethod
 
 		private method createKeyTrigger takes nothing returns nothing
-			local event triggerEvent
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
+			local integer i = 0
 			set this.m_keyTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterKeyEventForPlayer(this.m_character.player(), this.m_keyTrigger, AKeyEscape, true)
-			set conditionFunction = Condition(function thistype.triggerConditionShow)
-			set triggerCondition = TriggerAddCondition(this.m_keyTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(this.m_keyTrigger, function thistype.triggerActionShow)
-			set triggerEvent = null
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYERS)
+				if (IsPlayerPlayingUser(Player(i))) then
+					call TriggerRegisterPlayerChatEvent(this.m_keyTrigger, Player(i), "-menu", true)
+				endif
+				set i = i + 1
+			endloop
+			call TriggerAddCondition(this.m_keyTrigger, Condition(function thistype.triggerConditionShow))
+			call TriggerAddAction(this.m_keyTrigger, function thistype.triggerActionShow)
 		endmethod
 
 		public static method create takes Character character returns thistype

@@ -1,28 +1,28 @@
 library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameGame, StructMapMapShrines, StructMapMapNpcRoutines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
 
 	//! inject config
-		/// @todo tr leads to crash
-		call SetMapName("Talras") // Game.mapName("Talras")
-		call SetMapDescription("Wählen Sie zunächst Ihre Charakterklasse aus. Diese Auswahl ist für die restliche Spielzeit unwiderruflich.\n- Drücken Sie die linke oder rechte Pfeiltaste, um die angezeigte Charakterklasse zu wechseln.\n- Drücken Sie die Escape-Taste, um die angezeigte Charakterklasse auszuwählen.")
-		call SetPlayers( 10 )
-		call SetTeams( 10 )
-		call SetGamePlacement( MAP_PLACEMENT_TEAMS_TOGETHER )
+		call SetMapName("TRIGSTR_001")
+		call SetMapDescription("")
+		call SetPlayers(11)
+		call SetTeams(11)
+		call SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
 
-		call DefineStartLocation( 0, -22592.0, 18944.0 )
-		call DefineStartLocation( 1, -22592.0, 18944.0 )
-		call DefineStartLocation( 2, -22592.0, 18944.0 )
-		call DefineStartLocation( 3, -22592.0, 18944.0 )
-		call DefineStartLocation( 4, -22592.0, 18944.0 )
-		call DefineStartLocation( 5, -22592.0, 18944.0 )
-		call DefineStartLocation( 6, -22592.0, 18944.0 )
-		call DefineStartLocation( 7, -22592.0, 18944.0 )
-		call DefineStartLocation( 8, -22592.0, 18944.0 )
-		call DefineStartLocation( 9, -22592.0, 18944.0 )
+		call DefineStartLocation(0, - 22592.0, 18944.0)
+		call DefineStartLocation(1, - 22592.0, 18944.0)
+		call DefineStartLocation(2, - 22592.0, 18944.0)
+		call DefineStartLocation(3, - 22592.0, 18944.0)
+		call DefineStartLocation(4, - 22592.0, 18944.0)
+		call DefineStartLocation(5, - 22592.0, 18944.0)
+		call DefineStartLocation(6, - 22592.0, 18944.0)
+		call DefineStartLocation(7, - 22592.0, 18944.0)
+		call DefineStartLocation(8, - 22592.0, 18944.0)
+		call DefineStartLocation(9, - 22592.0, 18944.0)
+		call DefineStartLocation(10, - 22592.0, 18944.0)
 
 		// Player setup
-		call InitCustomPlayerSlots(  )
-		call InitCustomTeams(  )
-		call InitAllyPriorities(  )
+		call InitCustomPlayerSlots()
+		call InitCustomTeams()
+		call InitAllyPriorities()
 
 		call PlayMusic("Music\\LoadingScreen.mp3") /// WARNING: If file does not exist, game crashes?
 	//! endinject
@@ -79,11 +79,12 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer computerPlayers = 1 // one additional player for the arena and the last quest
 		public static constant player alliedPlayer = Player(6)
 		public static constant player neutralPassivePlayer = Player(7)
+		public static constant player arenaPlayer = Player(8)
 		// make morning early and evening late to keep NPCs in their houses for a short time
 		public static constant real morning = 5.0
 		public static constant real midday = 12.0
 		public static constant real afternoon = 16.0
-		public static constant real evening = 22.0
+		public static constant real evening = 0.0
 		public static constant real videoWaitInterval = 1.0
 		public static constant real revivalTime = 20.0
 		public static constant integer startSkillPoints = 3
@@ -366,6 +367,7 @@ endif
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
+			local ACheat cheat
 			local integer i
 			call BJDebugMsg("Before primary quests")
 			call initMapPrimaryQuests()
@@ -387,7 +389,9 @@ endif
 static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
 			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"mapcheats\", um eine Liste sämtlicher Karten-Cheats zu erhalten."))
-			call ACheat.create("mapcheats", true, thistype.onCheatActionMapCheats)
+			debug call Print("Before creating \"mapcheats\"")
+			set cheat = ACheat.create("mapcheats", true, thistype.onCheatActionMapCheats)
+			debug call Print("After creating \"mapcheats\": " + I2S(cheat))
 			call ACheat.create("bonus", true, thistype.onCheatActionBonus)
 			call ACheat.create("start", true, thistype.onCheatActionStart)
 			call ACheat.create("camp", true, thistype.onCheatActionCamp)
@@ -412,6 +416,7 @@ static if (DEBUG_MODE) then
 			call ACheat.create("deathvault", true, thistype.onCheatActionDeathVault)
 			call ACheat.create("bloodthirstiness", true, thistype.onCheatActionBloodthirstiness)
 			call ACheat.create("unitspawn", true, thistype.onCheatActionUnitSpawn)
+			debug call Print("Before creating all cheats")
 endif
 			call BJDebugMsg("Setting all movable")
 			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
@@ -428,10 +433,15 @@ endif
 				if (Character(Character.playerCharacter(Player(i))).class() == Classes.ranger()) then
 					// Hunting Bow
 					call UnitAddItemById(Character.playerCharacter(Player(i)).unit(), 'I020')
+				elseif (Character(Character.playerCharacter(Player(i))).class() == Classes.cleric() or Character(Character.playerCharacter(Player(i))).class() == Classes.necromancer() or Character(Character.playerCharacter(Player(i))).class() == Classes.elementalMage() or Character(Character.playerCharacter(Player(i))).class() == Classes.wizard() or Character(Character.playerCharacter(Player(i))).class() == Classes.illusionist()) then	
+					// Haunted Staff
+					call UnitAddItemById(Character.playerCharacter(Player(i)).unit(), 'I03V')
 				else
 					call UnitAddItemById(ACharacter.playerCharacter(Player(i)).unit(), ItemTypes.shortword().itemType())
 					call UnitAddItemById(ACharacter.playerCharacter(Player(i)).unit(), ItemTypes.lightWoodenShield().itemType())
 				endif
+				// scroll of death to teleport from the beginning, otherwise characters must walk long ways
+				call UnitAddItemById(Character.playerCharacter(Player(i)).unit(), 'I01N')
 				set i = i + 1
 			endloop
 

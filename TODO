@@ -2,7 +2,7 @@
 * Models\Creatures\Humans\HumanMaleFarmer.mdl für Knechte auf dem Bauernhof funktioniert nicht. Wurde vorerst zurückgesetzt.
 * Quest Blood Thristiness überarbeitet. Logischere Dialoge mit der Elfin, warum jagt sie die Kreaturen? - ist gar nicht soo schlecht
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
-* Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
+* FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
 * Burgvideo deutlich kürzer und sinnvoller machen (Charaktere zeigen?)
 * FIXED: Knechte arbeiten auch noch um 2 Uhr morgens.
 * Verschwinden in Häusern funktioniert nicht. Siehe Tagesablaufbug, wenn die Funktionen in falscher Reihenfolge aufgerufen werden (endet und startet).
@@ -35,7 +35,7 @@
 * DONE: Osmans neuen Auftrag "Der dunkle Kult" einbauen.
 * FIXED: Osman verkauft nichts.
 * FIXED: "The Chief" Ricmans Position.
-* Medusa und Helfer respawnen nicht.
+* DONE: Medusa und Helfer respawnen nicht (lag an den zugehörigen Kisten).
 * "Der dunkle Kult": Egal wann der Diakon getötet wird bzw. alle, muss es bereits abgeschlossen sein, solange der Charakter in der Nähe war.
 * FIXED: In Videos alle Handelsfähigkeiten deaktivieren (Schlachtvideo am Ende)
 * FIXED: Weniger Wellen im letzten Auftrag?
@@ -79,7 +79,7 @@
 * Da Drachentöterin initial unverwundbar ist sie es bei Rückverwandlung zur Schwertkämpferin auch!
 * Ursula: Dialog einbauen falls man Druide ist!
 * Geisterstunde: Hinweis sollte erscheinen wenn man zur Mühle geht. Nichts erkennbar! Außerdem Hinweis einblenden wenn man die Mitte des AOS betritt und Questziel abschließen.
-* removeItemType() funktioniert nicht, haben eine oder keine Aufladung aber verschwinden nicht. Funktioniert NUR nicht wenn das Item gerade nicht sichtbar ist?
+* FIXED: removeItemType() funktioniert nicht, haben eine oder keine Aufladung aber verschwinden nicht. Funktioniert NUR nicht wenn das Item gerade nicht sichtbar ist?
 * Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
 * FIXED: Außerdem wird die Anzahl der Aufladungen nicht mehr beim Ablegen oder verkaufen aktualisiert.
 * Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
@@ -89,7 +89,7 @@
 * addClassSpellsFromCharacter() in Klassenauswahl verwenden, dann müssen nicht alle Zauber gesammelt werden.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
 * Wache Willkommen in Talras erscheint nur bei extra Gebiet!
-* Agihard "Lass mich in die Arena" nur wenn er in der Nähe der Arena steht!
+* FIXED: Agihard "Lass mich in die Arena" nur wenn er in der Nähe der Arena steht!
 * Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt.
 * Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer.
 * Zauberbuch: Je nachdem wie viel Ausgabe stattfindet werden weniger Zauber erzeugt. Vermutlich ein Funktionsaufrufslimit. Funktionsaufrufe reduzieren, nur einmal updateUI aufrufen oder weniger Debug-Ausgaben.
@@ -101,12 +101,13 @@
 * AOS-Gebiet: Die Dämonenhändler sichtbarer machen.
 * AOS-Gebiet: Oscar und Dämon sollen Dialoge bekommen. Leiden unter der Herrschaft von Haldar und Baldar.
 * Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren. Vermutlich checkState()!
+* Liegt nicht an checkstate aber obwohl QuestTalras.initQuest() vor QuestRescueDago aufgerufen wird, ist das Quest über dem Quest Rescue Dago, normal?
 * Helden wählen etc. deaktivieren wenn Einheit ins Haus geht.
 * Vermutlich verursacht EndThematicMusic() beim Beenden eines Videos dass die Human-Musik gespielt wird. Die aktuelle Musik muss daher nach jedem Video wiederhergestellt werden! Game.resetVideoSettings()! setMapMusic() hat nichts gebracht!
-* GetSpellTargetX() geht nirgendwo, außer VERMUTLICH direkt im Trigger. Daten anders übergeben?
+* DONE: GetSpellTargetX() geht nirgendwo, außer VERMUTLICH direkt im Trigger. Daten anders übergeben?
 * Trommons Tagesablauf wurde überarbeitet. Im Code anpassen.
 * Schlafen gehen funktioniert immer noch nicht bei manuellem Setzen der Tageszeit.
-* Taverne, Kameraeinstellungen zurücksetzen.
+* FIXED: Taverne, Kameraeinstellungen zurücksetzen.
 * Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
 * AOS-Verwandlung stürtzt ab da ja das Item während des Ausführens der Fähigkeit entfernt wird.
 * Metamorphose stürtzt immer ab wenn Fähigkeit entfernt wird. Daher Fähigkeit manuell während des Zauberns hinzufügen. Ist nur weil das Inventar manuell entfernt wird und das Zauberbuch nicht zur verwandelten Einheit übernommen wird (wegen speziellen Grimoiresystems mit gleichen IDs?)
@@ -116,7 +117,7 @@
 * Bei überarbeiteter Version: Stürzt bei automatischem Order ab. Vielleicht müssen alle Zauberbücher manuell vorher entfernt werden?!
 * Manuelle Metamorphose liegt NICHT an mehreren Metamorphosezaubern.
 * Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
-* Feuergeschoss etc. funktionieren alle vielleicht nicht weil GetSpellTarget() auch nicht geht?
+* DONE: Feuergeschoss etc. funktionieren alle vielleicht nicht weil GetSpellTarget() auch nicht geht?
 * Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
 * Mehr Orks: http://www.hiveworkshop.com/forums/models-530/orcveteran-259649/?prev=r%3D20%26page%3D3 und alternate Version
 * Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/ 
@@ -126,12 +127,66 @@
 * Eigentlich benötigen die Zauberbuchfähigkeiten 6 verschiedene! Die letzte entspricht der ausgelernten Stufe und gibt nur noch einmal die Werte an. Ansonsten wird immer die der nächsten Stufe angezeigt und nicht der aktuellen!
 * Neue Quests von Markward: Dialoge bei Manfred, Kuno, Björn und Dago einbauen, Gebiete und Pfeilplatzierung ermöglichen. Modell für Karren herunterladen.
 * Tagesabläufe vom Schlafengehen komplett entfernen. Stört den Spielfluss.
-* Spieler für Arena und Gefolgsleute aufteilen. 2. Spieler einbauen.
+* DONE: Spieler für Arena und Gefolgsleute aufteilen. 2. Spieler einbauen.
 * Irgendwer in der Todesgruft kann Tote beschwören. Funktioniert jedoch nicht bei den eigenen Untoten? nur bei den Donnerwesen. Sollte bei allem funktionieren -> mehr Gegner.
 * Beim Video in der Todesgruft Predigt vom Diakon einbauen.
 * Video "Das erste Gefecht" kämpfen immer noch nicht gegeneinander.
 * Video "Das erste Gefecht" vor Heil dir Vater in Richtung drehen.
 * DONE: SPELL_CHANNEL muss verwendet werden damit GetSpellTargetX() funktioniert. Jedoch pausieren Grimoire-Zauber dann die Einheit dauerhaft. Hat etwas mit dem Zauberbuch usw. zu tun?
+* Gruft des Todes: Unholde Startmana vollmachen.
+* DONE: Gruft des Todes: Rabengaukler brauchen unbedingt Fähigkeiten, sind die Mehrheit der Gegner.
+* DONE: Gruft des Todes: Diakon kann mehr Viecher beschwören und außerdem noch Fähigkeiten erhalten.
+* Gruft des Todes: Missgeburt braucht Fähigkeiten.
+* Skeletthexenmeister braucht mehr Fähigkeiten.
+* Manaregenerationsrate bei Creeps deutlich erhöhen.
+* Knochendrachen benötigen Fähigkeiten.
+* Skelettflammenkrieger benötigt Fähigkeiten.
+* Berserkerin benötigt Fähigkeiten.
+* Pythonkriegerin benötigt Schlangenbeschwörung.
+* Todesengel braucht einige Fähigkeiten - Boss
+* Grabenspinne: Passives Spinnengift und Giftstachel.
+* Medusa braucht mehr Leben und mehr Mana - Boss
+* Dämonendiener und Dunkler Dienen haben denselben order bzw. die selbe Fähigkeit?
+* DONE: Schrein beim Todesengel einbauen.
+* DONE: Wegelagerer an Guntrichs Mühle platzieren.
+* Guntrichs Dialog: Wegelagerer bei der Mühle? mit Geisterstunde verbinden - Neues Quest einbauen "Wegelagerer vertreiben"?
+* Osmans Quest nur aktivierbar machen falls man ihn nicht als Kleriker beleidigt hat. Ansonsten erst mal eine Abfrage einbauen.
+* Am besten Osmans Beleidigung rauslöschen und auch das Quest mit dem Anschwärzen beim Herzog.
+* FIXED: Man kann bei der Befestigung Talras alle Pfeile im selben Gebiet platzieren.
+* DONE: Befestigung Talras: Pfeilmarkierungen deutlicher machen.
+* FIXED: Befestigung Talras: Nur 5 Pfeilbündel!
+* DONE: Schrein bei Tanka einbauen.
+* DONE: Spruchrolle des Totenreichs als Startgegenstand.
+* Dagos Brennt die Bären nieder endlich fixen.
+* Dagos Pilze fixen.
+* Bei Questupdates immer manuelles setState() und dann displayUpdateMessage().
+* FIXED: Quests: displayUpdateMessage() müsste anderen Sound abspielen und eventuell keinen Flash erzeugen.
+* FIXED: Hauptmenü nicht auf Escape-Taste da diese als Tastenkürzel dient. Chat-Befehl.
+* DONE: Altes Handelssystem entfernen.
+* DONE: Altes Inventarysystem entfernen.
+* Arena: Mehr Gegner, klassenabhängig.
+* Agihard, Arena: "Wer kämpft in deiner Arena?" - "Leute aus dem ganzen Land, Namensauflistung!".
+* DONE: Auto skill bei PC-Spielern ist nutzlos geworden. Das neue Zauberbuch funktioniert auch vom Verbündeten aus. Daher Autoskill entfernen!
+* DONE: Quest "Magischer Samen" fixen.
+* Bei Wiederbelebung in Metamorphose rückverwandeln.
+* DONE: Lothars Honigtopfquest fixen.
+* Lothar: Neues Quest mit Weinreben auf dem Mühlberg. Weinreben ernten.
+* FIXED: Goldmünzenbeutel von Wegelagerern durch einsammelbares Item ersetzen. Sonst bekommt Frontmann alle. Außerdem deutlich weniger Gold.
+* Goldmünzenbeutel: Beutelmodell.
+* FIXED: Heil- und Manatränke: VIEL MEHR Aufladungen bei Händlern.
+* Haid muss mehr Gegenstände verkaufen.
+* Töten von Gegnern muss weniger Gold geben.
+* Tränke viel billiger machen.
+* Apfel viel zu teuer.
+* Felle, Gewaffe, Pilze geben zu viel Geld.
+* Ricmans "Und was machst du hier?" direkt auf Startseite anzeigen.
+* Nekromant: Dämonendiener für 5 verschiedene Stufen erzeugen.
+* Nekromant: Dunklen Diener für 5 verschiedene Stufen erzeugen.
+* Druide: Heilquelle kleiner machen, länger pro Stufe und andere Einheit?
+* Druide: Manaquelle kleiner machen, länger pro Stufe und andere Einheit?
+* Nach letzter Schlacht: Nordmänner zurück zu Neutral Passiv, entlassen.
+* Ricman: Beutezug korrigieren.
+* Ricman: Erlernbare Fähigkeiten als Drachentöter sollen Grimoire Spells werden und im Zauberbuch erscheinen.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.
@@ -190,7 +245,7 @@
 
 2012-10-28 Tamino Dauth <tamino@cdauth.eu>
 * FIXED: Grabenspinnennetz hat keinen sichtbaren Zauberverstärker.
-* Wigberhts Dialog ohne "Zurück".
+* FIXED: Wigberhts Dialog ohne "Zurück".
 * Björn und Dagos Modelle!
 * DONE: Neues Intro testen.
 * FIXED: Dagos Bärentode testen.

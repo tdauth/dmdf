@@ -190,9 +190,12 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 			call speech(info, character, true, tr("Hm, ich vertraue dir mal. Hab vielen Dank und nimm das hier als Belohnung."), null)
 			call speech(info, character, true, tr("Wenn du willst kannst du ihn selbst einpflanzen."), null)
 			// Auftragsziel 2 des Auftrags „Samen für den Garten“ abgeschlossen
-			call QuestSeedsForTheGarden.characterQuest(character).questItem(1).complete()
+			call QuestSeedsForTheGarden.characterQuest(character).questItem(1).setState(AAbstractQuest.stateCompleted)
 			// Auftragsziel 3 des Auftrags „Samen für den Garten“ aktiviert
-			call QuestSeedsForTheGarden.characterQuest(character).questItem(2).enable()
+			call QuestSeedsForTheGarden.characterQuest(character).questItem(2).setState(AAbstractQuest.stateNew)
+			// Auftragsziel 4 des Auftrags „Samen für den Garten“ aktiviert
+			call QuestSeedsForTheGarden.characterQuest(character).questItem(3).setState(AAbstractQuest.stateNew)
+			call QuestSeedsForTheGarden.characterQuest(character).displayUpdate()
 			call info.talk().showStartPage(character)
 		endmethod
 		

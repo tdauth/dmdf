@@ -1,7 +1,7 @@
 library StructMapQuestsQuestMushroomSearch requires Asl
 
 	struct QuestMushroomSearch extends AQuest
-		private static constant integer requiredMushrooms = 6
+		private static constant integer requiredMushrooms = 4
 		private integer m_mushrooms
 
 		implement CharacterQuest

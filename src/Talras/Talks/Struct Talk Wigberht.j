@@ -7,70 +7,154 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		private static AVote m_vote1
 
 		implement Talk
+		
+		private AInfo m_hi
+		private AInfo m_talkingTooMuch
+		private AInfo m_whatAreYouDoing
+		private AInfo m_whoAreYou
+		private AInfo m_trainingAtNight
+		private AInfo m_tellMeAboutYourHome
+		private AInfo m_yourArmour
+		private AInfo m_letUsAttack
+		private AInfo m_orcsAndDarkElvesAreDone
+		private AInfo m_bringUsToHolzbruck
+		private AInfo m_weAreReady
+		private AInfo m_exit
 
 		private method startPageAction takes ACharacter character returns nothing
-			call this.showUntil(7, character)
+			call this.showUntil(this.m_exit.index(), character)
 		endmethod
 
 		// (Falls der Auftrag “Die Nordmänner” noch nicht erhalten wurde)
-		private static method infoCondition0 takes AInfo info, ACharacter character returns boolean
+		private static method infoConditionHi takes AInfo info, ACharacter character returns boolean
 			return QuestTheNorsemen.quest().isNotUsed()
 		endmethod
 
 		// Hallo.
-		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hallo."), thistype.m_soundCHello)
 			call speech(info, character, true, tr("Hallo."), thistype.m_soundNHello)
-			call info.talk().showRange(8, 9, character)
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// (Nach Begrüßung)
+		private static method infoConditionTalkingTooMuch takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
+			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character)
+		endmethod
+		
+		// Du bist wohl nicht so gesprächig?
+		private static method infoActionTalkingTooMuch takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Bist wohl nicht so gesprächig?"), null)
+			call speech(info, character, true, tr("Nein."), null)
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		public method askedWhatAreYoDoing takes ACharacter character returns boolean
+			return this.infoHasBeenShownToCharacter(this.m_whatAreYouDoing.index(), character)
+		endmethod
+		
+		// (Nach Begrüßung)
+		private static method infoConditionWhatAreYouDoing takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
+			return this.infoHasBeenShownToCharacter(this.m_hi.index(), character)
+		endmethod
+		
+		// Was machst du hier?
+		private static method infoActionWhatAreYouDoing takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Was machst du hier?"), null)
+			call speech(info, character, true, tr("Ich warte."), null)
+			// (Falls der Charakter Ricman das Gleiche gefragt hat)
+			if (TalkRicman.talk().askedWhatAreYoDoing(character)) then
+				call speech(info, character, false, tr("Warten alle Nordmänner auf irgendetwas?"), null)
+				call speech(info, character, true, tr("Anscheinend."), null)
+			else
+				call speech(info, character, false, tr("Und worauf?"), null)
+				call speech(info, character, true, tr("Auf den Feind."), null)
+				call speech(info, character, false, tr("Du meinst die Orks?"), null)
+				call speech(info, character, true, tr("Exakt."), null)
+			endif
+
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// (Nach Begrüßung)
+		private static method infoConditionWhoAreYou takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
+			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character)
+		endmethod
+		
+		// Wer bist du?
+		private static method infoActionWhoAreYou takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Wer bist du?"), null)
+			call speech(info, character, true, tr("Mein Name ist Wigberht."), null)
+			call speech(info, character, false, tr("Und was machst du hier?"), null)
+			call speech(info, character, true, tr("Ich kam mit meinen Männern aus dem Norden."), null)
+			call speech(info, character, false, tr("Aus dem Norden?"), null)
+			call speech(info, character, true, tr("Ja, vom nordwestlichen Gebirge."), null)
+
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// (Wenn es gerade Nacht ist und Wigberht trainiert)
-		private static method infoCondition1 takes AInfo info, ACharacter character returns boolean
+		private static method infoConditionTrainingAtNight takes AInfo info, ACharacter character returns boolean
 			return GetTimeOfDay() >= 18.00 or GetTimeOfDay() <= 5.00
 		endmethod
 
 		// Trainierst du nachts?
-		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionTrainingAtNight takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Trainierst du nachts?"), null)
 			call speech(info, character, true, tr("Wie du siehst."), null)
 			call speech(info, character, false, tr("Und wann schläfst du mal?"), null)
 			call speech(info, character, true, tr("Nie."), null)
-			call speech(info, character, false, tr("Nie?"), null)
-			call speech(info, character, true, tr("(Belehrend) Der wahre Krieger ist immer bereit."), null)
 			call info.talk().showStartPage(character)
 		endmethod
-
-		// (Nach erfolgreichem Abschluss des zweiten Ziels des Auftrags “Die Nordmänner”)
-		private static method infoCondition2And3 takes AInfo info, ACharacter character returns boolean
-			return QuestTheNorsemen.quest().questItem(1).isCompleted()
+		
+		// (Nach „Wer bist du?“)
+		private static method infoConditionTellMeAboutYourHome takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
+			return info.talk().infoHasBeenShownToCharacter(this.m_whoAreYou.index(), character) or not QuestTheNorsemen.quest().isNotUsed()
 		endmethod
-
-		// Wo hast du so zu kämpfen gelernt?
-		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wo hast du so zu kämpfen gelernt?"), null)
-			call speech(info, character, true, tr("Erfahrung. Wenn du erst einmal so viele Gegner wie ich getötet hast, kommt das von ganz alleine. Wieso fragst du überhaupt. Hab ich dich etwa so beeindruckt (Lacht)?"), null)
-			call info.talk().showRange(10, 11, character)
+		
+		// Erzähl mir etwas über deine Heimat.
+		private static method infoActionTellMeAboutYourHome takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Erzähl mir etwas über deine Heimat."), null)
+			
+			call speech(info, character, true, tr("Dafür habe ich keine Zeit. Ich muss trainieren."), null)
+			call speech(info, character, false, tr("Nun komm schon."), null)
+			call speech(info, character, true, tr("Meine Heimat ist das Gebirge im Nordwesten. Dort wo noch Schnee liegt um diese Jahreszeit. Es ist eine raue Gegend mit wilden, blutrünstigen Kreaturen."), null)
+			call speech(info, character, true, tr("Ich werde sie bis zum Ende gegen die Orks und Dunkelelfen verteidigen."), null)
+			
+			call info.talk().showStartPage(character)
 		endmethod
-
+		
+		// (Nach Begrüßung)
+		private static method infoConditionYourArmour takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
+			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character) or not QuestTheNorsemen.quest().isNotUsed()
+		endmethod
+		
 		// Was trägst du da für eine Rüstung?
-		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionYourArmour takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was trägst du da für eine Rüstung?"), null)
 			call speech(info, character, true, tr("Diese Rüstung gehörte einst meinem Vater. Sie wird schon seit Jahrhunderten von Vater zu Sohn weitergegeben. Sie wurde vom Schmied Hrodo aus dem Erz meiner Heimat gefertigt. So eine Rüstung wirst du kein zweites Mal finden."), null)
 			call info.talk().showStartPage(character)
 		endmethod
-
+		
 		// (Nach Erhalt des zweiten Ziels des Auftrags “Die Nordmänner”, falls dieses noch nicht abgeschlossen ist)
-		private static method infoCondition4 takes AInfo info, ACharacter character returns boolean
+		private static method infoConditionLetUsAttack takes AInfo info, ACharacter character returns boolean
 			return QuestTheNorsemen.quest().questItem(1).isNew()
 		endmethod
 
 		private static method resultAction0 takes AVote vote returns nothing
-			call VideoTheFirstCombat.video().play()
-			call thistype.m_vote0.destroy()
+			if (vote.result() == 0) then
+				call VideoTheFirstCombat.video().play()
+				call thistype.m_vote0.destroy()
+			endif
 		endmethod
 
 		// Lass uns in den Kampf ziehen!
-		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionLetUsAttack takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Lass uns in den Kampf ziehen!"), null)
 			call speech(info, character, true, tr("Gut. Wenn ihr alle bereit seid, kann's losgehen."), null)
 			call info.talk().close(character)
@@ -86,14 +170,28 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			call thistype.m_vote0.start()
 		endmethod
 
+		// (Nach erfolgreichem Abschluss des zweiten Ziels des Auftrags “Die Nordmänner”)
+		private static method infoConditionOrcsAndDarkElvesAreDone takes AInfo info, ACharacter character returns boolean
+			return QuestTheNorsemen.quest().questItem(1).isCompleted()
+		endmethod
+
+		// Wir haben die Orks und Dunkelelfen besiegt.
+		private static method infoActionOrcsAndDarkElvesAreDone takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Wir haben die Orks und Dunkelelfen besiegt."), null)
+			call speech(info, character, true, tr("Besiegt? Wir haben eine Schlacht gegen eine kleine Vorhut der Orks und Dunkelelfen gewonnen."), null)
+			call speech(info, character, true, tr("Wir können nicht ruhen, ehe wir nicht meinen Vater befreit haben und wenn wir dafür das gesamte Heer dieser widerlichen Kreaturen abschlachten müssen."), null)
+			call speech(info, character, true, tr("Ich möchte euch aber für eure Hilfe danken. Gehe zu Ricman, er hat eine Belohnung für dich."), null)
+			call info.talk().showStartPage(character)
+		endmethod
+
 		// (Auftrag “Der Weg nach Holzbruck” ist aktiv)
-		private static method infoCondition5 takes AInfo info, ACharacter character returns boolean
+		private static method infoConditionBringUsToHolzbruck takes AInfo info, ACharacter character returns boolean
 			return QuestTheWayToHolzbruck.quest().isNew()
 		endmethod
 
-		// Fahrt uns nach Holzbruck!
-		private static method infoAction5 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Fahrt uns nach Holzbruck!"), null)
+		// Bringt uns nach Holzbruck!
+		private static method infoActionBringUsToHolzbruck takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Bringt uns nach Holzbruck!"), null)
 			call speech(info, character, true, tr("Was?"), null)
 			call speech(info, character, false, tr("Der Herzog benötigt Verstärkung aus Holzbruck, einer nördlichen, am Fluss liegenden Stadt. Du wolltest in den Norden, nimm uns bis nach Holzbruck mit!"), null)
 			call speech(info, character, true, tr("Hm, dieser Herzog scheint ja wirklich sehr besorgt zu sein. Du hast Recht, wir wollten so bald wie möglich in den Norden aufbrechen und hatten eigentlich damit gerechnet, hier noch die versprochene Hilfe zu leisten."), null)
@@ -104,7 +202,7 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		endmethod
 
 		// (Auftrag “Der Weg nach Holzbruck” ist abgeschlossen)
-		private static method infoCondition6 takes AInfo info, ACharacter character returns boolean
+		private static method infoConditionWeAreReady takes AInfo info, ACharacter character returns boolean
 			return QuestTheWayToHolzbruck.quest().isCompleted()
 		endmethod
 
@@ -116,7 +214,7 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		endmethod
 
 		// Wir sind so weit.
-		private static method infoAction6 takes AInfo info, ACharacter character returns nothing
+		private static method infoActionWeAreReady takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wir sind so weit."), null)
 			call speech(info, character, true, tr("Seid ihr auch sicher? Die Fahrt wird vermutlich sehr lange dauern."), null)
 			call info.talk().close(character)
@@ -132,81 +230,22 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			call thistype.m_vote1.start()
 		endmethod
 
-		// Bist wohl nicht so gesprächig?
-		private static method infoAction0_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Bist wohl nicht so gesprächig?"), null)
-			call speech(info, character, true, tr("Nein."), null)
-			call info.talk().showRange(12, 14, character)
-		endmethod
-
-		// Klar.
-		private static method infoAction2_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Klar."), null)
-			call info.talk().showStartPage(character)
-		endmethod
-
-		// Unsinn! Ich wollte nur mal wissen, wieso du kämpfst wie ein Schweinehirte aus der Gosse.
-		private static method infoAction2_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Unsinn! Ich wollte nur mal wissen, wieso du kämpfst wie ein Schweinehirte aus der Gosse."), null)
-			call speech(info, character, true, tr("Na ja, ich musste ja lange genug auf euch aufpassen ..."), null)
-			call info.talk().showStartPage(character)
-		endmethod
-
-		// Was machst du hier?
-		private static method infoAction0_0_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was machst du hier?"), null)
-			call speech(info, character, true, tr("Ich warte."), null)
-			// (Falls der Charakter Ricman das Gleiche gefragt hat)
-			if (TalkRicman.talk().infoHasBeenShownToCharacter(9, character)) then
-				call speech(info, character, false, tr("Warten alle Nordmänner auf irgendetwas?"), null)
-				call speech(info, character, true, tr("Anscheinend."), null)
-			else
-				call speech(info, character, false, tr("Und worauf?"), null)
-				call speech(info, character, true, tr("Auf den Feind."), null)
-				call speech(info, character, false, tr("Du meinst die Orks?"), null)
-				call speech(info, character, true, tr("Exakt."), null)
-			endif
-
-			call info.talk().showRange(12, 14, character)
-		endmethod
-
-		// Wer bist du?
-		private static method infoAction0_0_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wer bist du?"), null)
-			call speech(info, character, true, tr("Mein Name ist Wigberht."), null)
-			call speech(info, character, false, tr("Und was machst du hier?"), null)
-			call speech(info, character, true, tr("Ich kam mit meinen Männern aus dem Norden."), null)
-			call speech(info, character, false, tr("Aus dem Norden?"), null)
-			call speech(info, character, true, tr("Ja, vom nordwestlichen Gebirge."), null)
-
-			call info.talk().showRange(12, 14, character)
-		endmethod
-
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.wigberht(), thistype.startPageAction)
-
+			
 			// start page
-			call this.addInfo(false, false, thistype.infoCondition0, thistype.infoAction0, tr("Hallo.")) // 0
-			call this.addInfo(true, false, thistype.infoCondition1, thistype.infoAction1, tr("Trainierst du nachts?")) // 1
-			call this.addInfo(false, false, thistype.infoCondition2And3, thistype.infoAction2, tr("Wo hast du so zu kämpfen gelernt?")) // 2
-			call this.addInfo(false, false, thistype.infoCondition2And3, thistype.infoAction3, tr("Was trägst du da für eine Rüstung?")) // 3
-			call this.addInfo(true, false, thistype.infoCondition4, thistype.infoAction4, tr("Lass uns in den Kampf ziehen!")) // 4
-			call this.addInfo(false, false, thistype.infoCondition5, thistype.infoAction5, tr("Fahrt uns nach Holzbruck.")) // 5
-			call this.addInfo(false, false, thistype.infoCondition6, thistype.infoAction6, tr("Wir sind so weit.")) // 6
-			call this.addExitButton() // 7
-
-			// info 0
-			call this.addInfo(false, false, 0, thistype.infoAction0_0, tr("Bist wohl nicht so gesprächig?")) // 8
-			call this.addBackToStartPageButton() // 9
-
-			// info 2
-			call this.addInfo(true, false, 0, thistype.infoAction2_0, tr("Klar.")) // 10
-			call this.addInfo(true, false, 0, thistype.infoAction2_1, tr("Unsinn! Ich wollte nur mal wissen, wieso du kämpfst wie ein Schweinehirte aus der Gosse.")) // 11
-
-			// info 0 0
-			call this.addInfo(false, false, 0, thistype.infoAction0_0_0, tr("Was machst du hier?")) // 12
-			call this.addInfo(false, false, 0, thistype.infoAction0_0_1, tr("Wer bist du?")) // 13
-			call this.addBackToStartPageButton() // 14
+			set this.m_hi = this.addInfo(false, false, thistype.infoConditionHi, thistype.infoActionHi, tr("Hallo."))
+			set this.m_talkingTooMuch = this.addInfo(false, false, thistype.infoConditionTalkingTooMuch, thistype.infoActionTalkingTooMuch, tr("Du bist wohl nicht so gesprächig?"))
+			set this.m_whatAreYouDoing = this.addInfo(false, false, thistype.infoConditionWhatAreYouDoing, thistype.infoActionWhatAreYouDoing, tr("Was machst du hier?"))
+			set this.m_whoAreYou = this.addInfo(false, false, thistype.infoConditionWhoAreYou, thistype.infoActionWhoAreYou, tr("Wer bist du?"))
+			set this.m_trainingAtNight = this.addInfo(true, false, thistype.infoConditionTrainingAtNight, thistype.infoActionTrainingAtNight, tr("Trainierst du nachts?"))
+			set this.m_tellMeAboutYourHome =  this.addInfo(true, false, thistype.infoConditionTellMeAboutYourHome, thistype.infoActionTellMeAboutYourHome, tr("Erzähl mir etwas über deine Heimat."))
+			set this.m_yourArmour = this.addInfo(false, false, thistype.infoConditionYourArmour, thistype.infoActionYourArmour, tr("Was trägst du da für eine Rüstung?"))
+			set this.m_letUsAttack = this.addInfo(true, false, thistype.infoConditionLetUsAttack, thistype.infoActionLetUsAttack, tr("Lass uns in den Kampf ziehen!"))
+			set this.m_orcsAndDarkElvesAreDone = this.addInfo(false, false, thistype.infoConditionOrcsAndDarkElvesAreDone, thistype.infoActionOrcsAndDarkElvesAreDone, tr("Wir haben die Orks und Dunkelelfen besiegt."))
+			set this.m_bringUsToHolzbruck = this.addInfo(false, false, thistype.infoConditionBringUsToHolzbruck, thistype.infoActionBringUsToHolzbruck, tr("Bringt uns nach Holzbruck."))
+			set this.m_weAreReady = this.addInfo(true, false, thistype.infoConditionWeAreReady, thistype.infoActionWeAreReady, tr("Wir sind so weit."))
+			set this.m_exit = this.addExitButton()
 
 			return this
 		endmethod

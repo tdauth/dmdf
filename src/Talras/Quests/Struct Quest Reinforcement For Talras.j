@@ -3,7 +3,9 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 	struct QuestReinforcementForTalras extends AQuest
 		private timer m_timer
 		private integer m_arrowsCounter = 0
-		private destructable array arrowsMarker[5]
+		private static constant integer maxArrows = 5
+		private trigger array m_arrowTriggers[thistype.maxArrows]
+		private destructable array arrowsMarker[thistype.maxArrows]
 	
 		implement CharacterQuest
 
@@ -39,6 +41,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 		
 		private static method stateActionCompletedStartTimer takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
+			local integer i
 			set this.m_timer = CreateTimer()
 			// wait two days
 			// TODO 960.0
@@ -54,28 +57,27 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 			call SetDestructableInvulnerable(this.arrowsMarker[3], true)
 			set this.arrowsMarker[4] =  CreateDestructable('B00L', GetRectCenterX(gg_rct_quest_reinforcement_for_talras_arrows_4), GetRectCenterY(gg_rct_quest_reinforcement_for_talras_arrows_4), 0.0, 1.0, 0)
 			call SetDestructableInvulnerable(this.arrowsMarker[4], true)
+			
+			set i = 0
+			loop
+				exitwhen (i == thistype.maxArrows)
+				call EnableTrigger(this.m_arrowTriggers[i])
+				set i = i + 1
+			endloop
 		endmethod
 		
-		private static method stateEventCompletedPlaceArrows takes AQuestItem questItem, trigger whichTrigger returns nothing
-			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_reinforcement_for_talras_arrows_0)
-			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_reinforcement_for_talras_arrows_1)
-			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_reinforcement_for_talras_arrows_2)
-			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_reinforcement_for_talras_arrows_3)
-			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_reinforcement_for_talras_arrows_4)
-		endmethod
-
-		private static method stateConditionCompletedPlaceArrows takes AQuestItem questItem returns boolean
-			local boolean result = GetTriggerUnit() == questItem.character().unit() and questItem.character().inventory().hasItemType('I03U')
-			local thistype this = thistype(questItem.quest())
+		private static method stateConditionCompletedPlaceArrows takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local boolean result = GetTriggerUnit() == this.character().unit() and this.character().inventory().hasItemType('I03U')
 			local destructable box
 			
 			if (result) then
 				call this.character().inventory().removeItemType('I03U')
-				set box = CreateDestructable('B00K', GetUnitX(questItem.character().unit()), GetUnitY(questItem.character().unit()), 0.0, 1.0, 0)
+				set box = CreateDestructable('B00K', GetUnitX(this.character().unit()), GetUnitY(this.character().unit()), 0.0, 1.0, 0)
 				call SetDestructableInvulnerable(box, true)
 				set this.m_arrowsCounter = this.m_arrowsCounter + 1
 				
-				call questItem.quest().displayUpdateMessage(Format(tr("%1%/5 Pfeilbündel platziert")).i(5 - this.m_arrowsCounter).result())
+				call this.displayUpdateMessage(Format(tr("%1%/5 Pfeilbündel platziert")).i(5 - this.m_arrowsCounter).result())
 				
 				return this.m_arrowsCounter == 5
 			endif
@@ -83,16 +85,39 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 			return false
 		endmethod
 		
-		private static method stateActionCompletedPlaceArrows takes AQuestItem questItem returns nothing
-			local thistype this = thistype(questItem.quest())
+		private static method stateActionCompletedPlaceArrows takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local integer i = 0
 			loop
-				exitwhen (i == 5)
+				exitwhen (i == thistype.maxArrows)
 				call RemoveDestructable(this.arrowsMarker[i])
 				set this.arrowsMarker[i] = null
 				set i = i + 1
 			endloop
-			call questItem.quest().displayUpdate()
+			call DisableTrigger(GetTriggeringTrigger()) // make sure arrows cannot be placed twice
+			call this.displayUpdate()
+		endmethod
+		
+		private method createArrowTriggers takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.maxArrows)
+				set this.m_arrowTriggers[i] = CreateTrigger()
+				
+				call TriggerAddCondition(this.m_arrowTriggers[i], Condition(function thistype.stateConditionCompletedPlaceArrows))
+				call TriggerAddAction(this.m_arrowTriggers[i], function thistype.stateActionCompletedPlaceArrows)
+				call DmdfHashTable.global().setHandleInteger(this.m_arrowTriggers[i], "this", this)
+				
+				call DisableTrigger(this.m_arrowTriggers[i])
+				
+				set i = i + 1
+			endloop
+			
+			call TriggerRegisterEnterRectSimple(this.m_arrowTriggers[0], gg_rct_quest_reinforcement_for_talras_arrows_0)
+			call TriggerRegisterEnterRectSimple(this.m_arrowTriggers[1], gg_rct_quest_reinforcement_for_talras_arrows_1)
+			call TriggerRegisterEnterRectSimple(this.m_arrowTriggers[2], gg_rct_quest_reinforcement_for_talras_arrows_2)
+			call TriggerRegisterEnterRectSimple(this.m_arrowTriggers[3], gg_rct_quest_reinforcement_for_talras_arrows_3)
+			call TriggerRegisterEnterRectSimple(this.m_arrowTriggers[4], gg_rct_quest_reinforcement_for_talras_arrows_4)
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
@@ -131,9 +156,6 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 			
 			// item 4
 			set questItem0 = AQuestItem.create(this, tr("Platziere die Pfeile an den vorgesehenen Positionen."))
-			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedPlaceArrows)
-			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedPlaceArrows)
-			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedPlaceArrows)
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.bjoern()) // TODO set rects
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
@@ -143,6 +165,8 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.markward())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
+			
+			call this.createArrowTriggers()
 
 			return this
 		endmethod

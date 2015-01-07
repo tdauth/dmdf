@@ -49,6 +49,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			 */
 			// cleric spells
 			if (class == thistype.m_cleric) then
+				call SpellMaertyrer.create.evaluate(character)
 				call SpellAbatement.create.evaluate(character)
 				call SpellClarity.create.evaluate(character)
 				call SpellExorcizeEvil.create.evaluate(character)
@@ -130,8 +131,11 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellLightning.create.evaluate(character)
 				call SpellMastery.create.evaluate(character)
 				call SpellRageOfElements.create.evaluate(character)
+				debug call Print("Before Pure Energy")
 				call SpellPureEnergy.create.evaluate(character)
+				debug call Print("Before Teleportation")
 				call SpellTeleportation.create.evaluate(character)
+				debug call Print("Before Undermine")
 				call SpellUndermine.create.evaluate(character)
 			elseif (class == thistype.m_astralModifier) then
 				call SpellTakeOver.create.evaluate(character)

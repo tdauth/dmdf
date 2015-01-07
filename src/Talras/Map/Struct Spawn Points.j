@@ -14,11 +14,18 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_deers0
 		private static SpawnPoint m_ditchSpiders0
 		private static SpawnPoint m_ditchSpiders1
+		private static SpawnPoint m_banditsAtGuntrichsMill
 		private static SpawnPoint m_box0
 		private static SpawnPoint m_box1
 		private static SpawnPoint m_box2
 		private static SpawnPoint m_giants0
 		private static ItemSpawnPoint m_mushroom0
+		private static ItemSpawnPoint m_mushroom1
+		private static ItemSpawnPoint m_mushroom2
+		private static ItemSpawnPoint m_mushroom3
+		private static ItemSpawnPoint m_mushroom4
+		private static ItemSpawnPoint m_mushroom5
+		private static ItemSpawnPoint m_mushroom6
 		private static SpawnPoint m_vampireLord0
 		private static SpawnPoint m_vampires0
 		private static SpawnPoint m_box3
@@ -147,6 +154,13 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set thistype.m_ditchSpiders1 = SpawnPoint.create()
 			set index = thistype.m_ditchSpiders1.addUnitWithType(gg_unit_n01E_0070, 1.0)
 			set index = thistype.m_ditchSpiders1.addUnitWithType(gg_unit_n01E_0074, 1.0)
+			
+			set thistype.m_banditsAtGuntrichsMill = SpawnPoint.create()
+			set index = thistype.m_banditsAtGuntrichsMill.addUnitWithType(gg_unit_n00T_0491, 1.0)
+			set index = thistype.m_banditsAtGuntrichsMill.addUnitWithType(gg_unit_n00T_0492, 1.0)
+			set index = thistype.m_banditsAtGuntrichsMill.addUnitWithType(gg_unit_n00U_0494, 1.0)
+			set index = thistype.m_banditsAtGuntrichsMill.addUnitWithType(gg_unit_n00U_0493, 1.0)
+			set index = thistype.m_banditsAtGuntrichsMill.addUnitWithType(gg_unit_n00U_0495, 1.0)
 
 			set thistype.m_box0 = SpawnPoint.create()
 			set index = thistype.m_box0.addUnitWithType(gg_unit_n02C_0059, 1.0)
@@ -169,7 +183,13 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_giants0.addItemType(index, 'I01Z', 1.0)
 
 			set thistype.m_mushroom0 = ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0238, 1.0)
-
+			set thistype.m_mushroom1 = ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0205, 1.0)
+			set thistype.m_mushroom2 = ItemSpawnPoint.createFromItemWithType(gg_item_I03Y_0207, 1.0)
+			set thistype.m_mushroom3 = ItemSpawnPoint.createFromItemWithType(gg_item_I03Y_0206, 1.0)
+			set thistype.m_mushroom4 = ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0211, 1.0)
+			set thistype.m_mushroom5 = ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0213, 1.0)
+			set thistype.m_mushroom6 = ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0214, 1.0)
+	
 			set thistype.m_vampireLord0 = SpawnPoint.create()
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n010_0110, 1.0)
 			call thistype.m_vampireLord0.addItemType(index, 'I013', 1.0)

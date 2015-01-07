@@ -21,12 +21,6 @@ endif
 static if (DMDF_INFO_LOG) then
 		private InfoLog m_infoLog
 endif
-static if (DMDF_INVENTORY) then
-		private Inventory m_guiInventory
-endif
-static if (DMDF_TRADE) then
-		private Trade m_trade
-endif
 		private AIntegerVector m_classSpells /// Only \ref Spell instances not \ref ASpell instances!
 
 		private trigger m_workerTrigger
@@ -129,24 +123,6 @@ else
 			return 0
 endif
 		endmethod
-
-/// @todo static ifs do not prevent import of files, otherwise graphical inventory wouldn't require this method
-		public method guiInventory takes nothing returns Inventory
-static if (DMDF_INVENTORY) then
-			return this.m_guiInventory
-else
-			return 0
-endif
-		endmethod
-
-/// @todo static ifs do not prevent import of files, otherwise main menu wouldn't require this method
-		public method trade takes nothing returns Trade
-static if (DMDF_TRADE) then
-			return this.m_trade
-else
-			return 0
-endif
-		endmethod
 		
 		public method addClassSpell takes Spell spell returns nothing
 			call this.m_classSpells.pushBack(spell)
@@ -199,12 +175,39 @@ endif
 			return AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels"))
 		endmethod
 		
+		public method clearRealSpellLevels takes nothing returns boolean
+			if (DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
+				call this.realSpellLevels().destroy()
+				call DmdfHashTable.global().removeHandleInteger(this.unit(), "SpellLevels")
+				
+				return true
+			endif
+			
+			return false
+		endmethod
+		
+		public method updateRealSpellLevels takes nothing returns nothing
+			call this.clearRealSpellLevels()
+			call DmdfHashTable.global().setHandleInteger(this.unit(), "SpellLevels", this.grimoire().spellLevels.evaluate())
+		endmethod
+		
+		public method restoreRealSpellLevels takes nothing returns boolean
+			if (DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
+				call this.grimoire().readd.evaluate(this.realSpellLevels())
+				
+				return true
+			endif
+			
+			return false
+		endmethod
+		
 		public method isMorphed takes nothing returns boolean
 			return this.m_isMorphed
 		endmethod
 
 		/**
 		 * Restores spells and inventory of the character after he has been morphed into another creature with other abilities and without inventory.
+		 * The spell levels has been stored in \ref realSpellLevels() while calling \ref morph().
 		 * \note Has to be called just after the character's unit restores from morphing.
 		 */
 		public method restoreUnit takes integer abilityId returns boolean
@@ -217,9 +220,8 @@ endif
 				return false
 			endif
 			debug call Print("Readding spell levels")
-			call this.grimoire().readd.evaluate(this.realSpellLevels())
-			call this.realSpellLevels().destroy()
-			call DmdfHashTable.global().removeHandleInteger(this.unit(), "SpellLevels")
+			call this.restoreRealSpellLevels()
+			call this.clearRealSpellLevels()
 			debug call Print("Enabling inventory again")
 			call this.inventory().setEnableAgain(true)
 			call this.inventory().enable()
@@ -243,9 +245,6 @@ endif
 				return false
 			endif
 		
-			if (DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
-				call AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels")).destroy()
-			endif
 			debug call Print("Morphing with ability: " + GetAbilityName(abilityId))
 			
 			debug if (GetUnitAbilityLevel(this.unit(), 'AInv') == 0) then
@@ -253,7 +252,7 @@ endif
 			debug endif
 			
 			debug call Print("Storing spell levels")
-			call DmdfHashTable.global().setHandleInteger(this.unit(), "SpellLevels", this.grimoire().spellLevels.evaluate())
+			call this.updateRealSpellLevels()
 			
 			// Make sure it won't be enabled again when the character is set movable.
 			call this.inventory().setEnableAgain(false)
@@ -409,12 +408,7 @@ endif
 static if (DMDF_INFO_LOG) then
 			set this.m_infoLog = InfoLog.create.evaluate(this)
 endif
-static if (DMDF_INVENTORY) then
-			set this.m_guiInventory = Inventory.create.evaluate(this)
-endif
-static if (DMDF_TRADE) then
-			set this.m_trade = Trade.create.evaluate(this)
-endif
+
 			set this.m_classSpells = AIntegerVector.create()
 			set this.m_heroIcons = 0
 			call this.createWorkerTrigger()
@@ -453,12 +447,6 @@ static if (DMDF_CHARACTER_STATS) then
 endif
 static if (DMDF_INFO_LOG) then
 			call this.m_infoLog.destroy.evaluate()
-endif
-static if (DMDF_INVENTORY) then
-			call this.m_guiInventory.destroy.evaluate()
-endif
-static if (DMDF_TRADE) then
-			call this.m_trade.destroy.evaluate()
 endif
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0

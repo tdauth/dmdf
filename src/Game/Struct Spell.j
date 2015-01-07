@@ -196,6 +196,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 
 		public method isSkillableTo takes integer level returns boolean
 			if (level < 0) then
+				debug call Print("Level is less than 0: " + I2S(level))
 				return false
 			endif
 			if (Character(this.character()).grimoire().learnedSpells.evaluate() == Grimoire.maxSpells and this.level() == 0) then

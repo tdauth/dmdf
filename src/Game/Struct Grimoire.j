@@ -108,10 +108,12 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				// only add if it has been there before!
 				if (level > 0) then
 					if (this.m_favourites.contains(spell)) then
+						debug call Print("Is a favorite spell")
 						call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
 						call spell.add()
 						call spell.setLevel(level)
 					else
+						debug call Print("Is not a favorite spell")
 						call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
 						call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 						call spell.setLevel(level)
@@ -158,7 +160,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			local integer i
 			local integer index
 
-			debug call Print("Hiding spells with count in grimoire: " + I2S(this.m_uiGrimoireSpells.size()))
+			//debug call Print("Hiding spells with count in grimoire: " + I2S(this.m_uiGrimoireSpells.size()))
 			set i = 0
 			loop
 				exitwhen (i == this.m_uiGrimoireSpells.size())
@@ -175,18 +177,18 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				call this.m_spellNextPage.show.evaluate()
 				call this.m_uiGrimoireSpells.pushBack(this.m_spellNextPage)
 
-				debug call Print("Showing " + I2S(thistype.spellsPerPage) + " spells")
+				//debug call Print("Showing " + I2S(thistype.spellsPerPage) + " spells")
 				set i = 0
 				loop
 					exitwhen (i == thistype.spellsPerPage)
 					set index = Index2D(this.page(), i, thistype.spellsPerPage)
-					debug call Print("Index " + I2S(index))
+					//debug call Print("Index " + I2S(index))
 					if (index >= this.m_spells.size()) then
-						debug call Print("Reached spell count at " + I2S(index))
+						//debug call Print("Reached spell count at " + I2S(index))
 						exitwhen (true)
 					endif
 					if (Spell(this.m_spells[index]).available()) then
-						debug call Print("Is available spell: " + I2S(Spell(this.m_spells[index])))
+						//debug call Print("Is available spell: " + I2S(Spell(this.m_spells[index])))
 						call Spell(this.m_spells[index]).showGrimoireEntry()
 						call this.m_uiGrimoireSpells.pushBack(Spell(this.m_spells[index]).grimoireEntry())
 					debug else
@@ -217,11 +219,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				call this.m_uiGrimoireSpells.pushBack(this.currentSpell().grimoireEntry())
 			endif
 
-			debug call Print("after removing ability")
+			//debug call Print("after removing ability")
 			//call IssueImmediateOrderById(this.character().unit(), this.ability()) // WORKAROUND: whenever an ability is being removed it closes grimoire
 			// TODO if trigger player is not owner of the character!
 			call ForceUIKeyBJ(this.character().player(), thistype.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			debug call Print("issued: " + GetObjectName(this.ability()))
+			//debug call Print("issued: " + GetObjectName(this.ability()))
 		endmethod
 		
 		/**
@@ -248,7 +250,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		endmethod
 
 		/**
-		 * Adds skill points to grimoire and calls \ref thistype#autoSkill() if controller is computer.
+		 * Adds skill points to grimoire.
 		 */
 		public method addSkillPoints takes integer skillPoints returns nothing
 			if (skillPoints == 0) then
@@ -259,11 +261,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			endif
 			call this.setSkillPoints(this.m_skillPoints + skillPoints)
 			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
-			// auto skill
-			if (GetPlayerController(this.character().player()) == MAP_CONTROL_COMPUTER) then
-				call this.autoSkill.evaluate()
-				call this.character().displayMessageToAllOthers(ACharacter.messageTypeInfo, Format(tr("Die Zauberpunkte für %1% wurden automatisch verteilt.")).s(this.character().name()).result())
-			endif
 		endmethod
 
 		public method spellIndex takes Spell spell returns integer
@@ -318,9 +315,12 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call this.updateUi()
 		endmethod
 		
+		/**
+		 * The spell is being removed from the unit only.
+		 * It remains in \ref favorites() if it is a favorite spell.
+		 */
 		private method removeSpellFromUnit takes Spell spell returns nothing
 			if (this.m_favourites.contains(spell)) then
-				call this.m_favourites.remove(spell)
 				call spell.remove()
 			else
 				call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
@@ -415,6 +415,8 @@ endif
 			if (requiredSkillPoints == 0) then
 				return true
 			endif
+			
+			debug call Print("Successfully skilling " + GetAbilityName(spell.ability()) + " to level " + I2S(level))
 
 			if (requiredSkillPoints < 0) then
 				call this.addSkillPoints(-1 * requiredSkillPoints)
@@ -450,37 +452,6 @@ endif
 
 		public method setSpellLevelWithoutConditions takes Spell spell, integer level returns boolean
 			return this.setSpellLevelByIndexWithoutConditions(this.m_spells.find(spell), level)
-		endmethod
-
-		/**
-		 * Should be called for computer controlled players which do not skill their spells in grimoire.
-		 * \note High-skilled spells are prefered. First skilled spell is taken randomly!
-		 */
-		public method autoSkill takes nothing returns nothing
-			local AIntegerVector skillableSpells = Spell.skillableClassSpells(this.character())
-			local integer i
-			local Spell spell
-			if (skillableSpells.size() > 0) then
-				loop
-					exitwhen (this.skillPoints() == 0)
-					set i = 0
-					set spell = skillableSpells.random()
-					loop
-						exitwhen (i == skillableSpells.size())
-						if (Spell(skillableSpells[i]).level() > spell.level()) then
-							set spell = skillableSpells[i]
-						endif
-						set i = i + 1
-					endloop
-					if (not this.m_spells.contains(spell)) then
-						call this.addSpell(spell)
-					endif
-					call this.setSpellLevelWithoutConditions(spell, spell.level() + 1)
-				endloop
-			debug else
-				debug call this.print("No more skillable spells")
-			endif
-			call skillableSpells.destroy()
 		endmethod
 
 		/// If you do not need the spell instance anymore remember destroying it by .destroy().
@@ -528,6 +499,7 @@ static if (DEBUG_MODE) then
 			endif
 endif
 			set spell = Spell(this.m_spells[index])
+
 			if (not spell.isSkillableTo(level)) then
 				return false
 			endif
@@ -543,6 +515,10 @@ static if (DEBUG_MODE) then
 			if (index < 0 or index >= this.m_spells.size()) then
 				call this.printMethodError("setSpellMaxLevelByIndex", "Wrong spell index: " + I2S(index) + ".")
 				return false
+			endif
+			
+			if (Spell(this.m_spells[index]).getMaxLevel() <= 0) then
+				call this.printMethodError("setSpellMaxLevelByIndex", "Level is <= 0 " + I2S(level))
 			endif
 endif
 			return this.setSpellLevelByIndex(index, Spell(this.m_spells[index]).getMaxLevel())

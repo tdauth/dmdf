@@ -86,7 +86,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 
 		// (Auftragsziel 1 des Auftrags „Ein kleines Geschenk“ ist aktiv, Charakter hat den Honigtopf dabei)
 		private static method infoCondition3 takes AInfo info, ACharacter character returns boolean
-			return QuestALittlePresent.characterQuest(character).questItem(0).isNew() and true /// @todo FIXME
+			return QuestALittlePresent.characterQuest(character).questItem(0).isNew() and character.inventory().hasItemType(QuestALittlePresent.itemTypeId)
 		endmethod
 
 		// Hier hast du einen Honigtopf!
@@ -98,7 +98,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 			call speech(info, character, false, tr("Ähm …"), null)
 			call speech(info, character, true, tr("Na gut, gib schon her! Ich will ja nicht, dass er sich noch das Leben nimmt."), null)
 			// Honigtopf für Mathilda wird übergeben
-			/// @todo FIXME
+			call character.inventory().removeItemType(QuestALittlePresent.itemTypeId)
 			// Auftragsziel 1 des Auftrags „Ein kleines Geschenk“ abgeschlossen
 			call QuestALittlePresent.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)
@@ -106,7 +106,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 
 		// (Auftragsziel 1 des Auftrags „Ein großes Geschenk“ ist aktiv, Charakter hat den großen Honigtopf dabei)
 		private static method infoCondition4 takes AInfo info, ACharacter character returns boolean
-			return QuestABigPresent.characterQuest(character).questItem(0).isNew() and true /// @todo FIXME
+			return QuestABigPresent.characterQuest(character).questItem(0).isNew() and character.inventory().hasItemType(QuestABigPresent.itemTypeId)
 		endmethod
 
 		// Hier hast du einen großen Honigtopf!
@@ -115,7 +115,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 			call speech(info, character, true, tr("Also jetzt reicht es wirklich! Ich meine, was bildet er sich denn ein? Nur weil wir ab und zu miteinander plaudern."), null)
 			call speech(info, character, true, tr("Gib schon her! Ich will nicht als Herzensbrecherin enden."), null)
 			// Honigtopf für Mathilda wird übergeben
-			/// @todo FIXME
+			call character.inventory().removeItemType(QuestABigPresent.itemTypeId)
 			// Auftragsziel 1 des Auftrags „Ein großes Geschenk“ abgeschlossen
 			call QuestABigPresent.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)

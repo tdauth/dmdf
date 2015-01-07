@@ -188,6 +188,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		private static ItemType m_dagosDagger
 		private static ItemType m_wingsOfDeathAngel
 		private static ItemType m_vampireNecklace
+		private static RangeItemType m_hauntedStaff
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -398,6 +399,9 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			set thistype.m_vampireNecklace = ItemType.createSimple('I02T', ItemType.equipmentTypeArmour)
 			call thistype.m_vampireNecklace.addAbility('AIi4', true)
 			call thistype.m_vampireNecklace.addAbility('A03X', true)
+			
+			set thistype.m_hauntedStaff = ItemType.createSimple('I03V', ItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_hauntedStaff.addAbility('A0NB', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType

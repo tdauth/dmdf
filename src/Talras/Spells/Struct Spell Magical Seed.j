@@ -36,6 +36,7 @@ library StructMapSpellsSpellMagicalSeed requires Asl, StructMapMapMapData, Struc
 				return
 			endif
 			
+			call QuestSeedsForTheGarden.characterQuest(this.character()).questItem(2).complete()
 			set whichUnit = CreateUnit(this.character().player(), 'e001', GetSpellTargetX(), GetSpellTargetY(), 0.0)
 			call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\Tranquility\\Tranquility.mdx", whichUnit, "overhead"))
 		endmethod

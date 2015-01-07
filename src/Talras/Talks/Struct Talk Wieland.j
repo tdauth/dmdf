@@ -82,7 +82,7 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses
 			call speech(info, character, true, tr("Leider hat's ihm die Schmiedekunst nicht so angetan, wie ich mir das erhofft hatte. Wir haben uns im Streit getrennt und er meinte noch zu mir \"Ich werde für dich arbeiten, wenn du mir die Krone eines Königs schenkst\"."), null)
 			call speech(info, character, true, tr("Das war nur aus Zorn heraus als schlechter Scherz gemeint, aber ich will ihm zeigen, wie ernst es mir mit ihm ist."), null)
 			call speech(info, character, true, tr("Die alten Sagen, die mir mein Vater erzählte, als ich noch selbst ein junger Bursche war, handelten oft von den Untoten. Wiederauferstandene Tote, die keinen Frieden finden konnten und nun alles töten wollen, was noch atmet."), null)
-			call speech(info, character, true, tr("Diese Untoten haben auch einen König. Man sagt, er streife irgendwoe außerhalb von Talras umher und mache die Gegend mit seinen Kriegern unsicher."), null)
+			call speech(info, character, true, tr("Diese Untoten haben auch einen König. Man sagt, er streife irgendwo außerhalb von Talras umher und mache die Gegend mit seinen Kriegern unsicher."), null)
 			call speech(info, character, true, tr("Ein König, der einst über dieses Land hier herrschte. Für dich hört sich das vielleicht nach Gespenstergeschichten an, aber ich glaube daran, denn mein Vater selbst hat ihn gesehen."), null)
 			call speech(info, character, true, tr("Ich möchte, dass du mir seine Krone bringst, damit ich sie meinem Sohn überreichen kann, wenn er zurückkehrt."), null)
 			call info.talk().showRange(10, 12, character)

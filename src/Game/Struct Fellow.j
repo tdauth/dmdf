@@ -572,7 +572,9 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call thistype(iterator.data()).pauseRevival(pause)
 				call iterator.next()
 			endloop
+			debug call Print("Before destroying iterator")
 			call iterator.destroy()
+			debug call Print("After destroying iterator")
 		endmethod
 	endstruct
 

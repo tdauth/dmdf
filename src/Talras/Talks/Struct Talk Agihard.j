@@ -89,7 +89,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			else
 				call speech(info, character, true, tr("Gut, und halte dich an die Regeln!"), null)
 				call info.talk().close(character)
-				set arenaEnemy = Arena.getRandomEnemy(character.level())
+				set arenaEnemy = Arena.getRandomEnemy(character)
 				call Arena.addUnit(arenaEnemy)
 				set arenaEnemy = null
 				call Arena.addCharacter(character)

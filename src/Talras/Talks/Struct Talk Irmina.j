@@ -264,7 +264,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			call speech(info, character, true, tr("Ich weiß, ich sollte nicht so daherreden, aber was ich empfinde, ist nun mal da. Ich wünschte nur, er käme eines Tages mal zu mir, um etwas zu kaufen, dann könnte ich mich nett mit ihm unterhalten."), null)
 			call speech(info, character, false, tr("Unterhalten ..."), null)
 			call speech(info, character, true, tr("Ja! Ich würde ihm auch was umsonst geben."), null)
-			call speech(info, character, false, tr("Davon bin ich überzeugt (lacht)."), null)
+			call speech(info, character, false, tr("Genau."), null)
 			// Neuer Auftrag: „Talras' mutiger Waffenmeister“
 			call QuestTheBraveArmourerOfTalras.characterQuest(character).enable()
 			call info.talk().showStartPage(character)

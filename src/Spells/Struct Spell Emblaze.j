@@ -7,7 +7,7 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		public static constant integer favouriteAbilityId = 'A03H'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00D'
-		private static constant real time = 120.0
+		private static constant real time = 30.0
 		private static constant integer damageLevelFactor = 10
 		private static ABuff m_buff
 
