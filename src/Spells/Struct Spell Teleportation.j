@@ -39,10 +39,12 @@ library StructSpellsSpellTeleportation requires Asl, StructGameClasses, StructGa
 			
 			call this.character().setX(GetSpellTargetX())
 			call this.character().setY(GetSpellTargetY())
-			call IssueImmediateOrder(caster, "stop")
 			call ResetUnitAnimation(caster)
 			set damageRecorder = ADamageRecorder.create(this.character().unit())
 			call damageRecorder.setOnDamageAction(thistype.onDamageAction)
+			call TriggerSleepAction(0.0)
+			// immediate stopping disables cooldown!
+			call IssueImmediateOrder(caster, "stop")
 			loop
 				exitwhen (time <= 0.0 or IsUnitDeadBJ(caster) or not this.isLearned())
 				call TriggerSleepAction(1.0)

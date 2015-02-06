@@ -3,6 +3,7 @@
 //! import "Talras/Talks/Struct Talk Bjoern.j"
 //! import "Talras/Talks/Struct Talk Brogo.j"
 //! import "Talras/Talks/Struct Talk Dago.j"
+//! import "Talras/Talks/Struct Talk Dragon Slayer.j"
 //! import "Talras/Talks/Struct Talk Einar.j"
 //! import "Talras/Talks/Struct Talk Ferdinand.j"
 //! import "Talras/Talks/Struct Talk Fulco.j"
@@ -28,7 +29,7 @@
 //! import "Talras/Talks/Struct Talk Wieland.j"
 //! import "Talras/Talks/Struct Talk Wigberht.j"
 
-library MapTalks requires StructMapTalksTalkAgihard, StructMapTalksTalkBaldar, StructMapTalksTalkBjoern, StructMapTalksTalkBrogo, StructMapTalksTalkDago, StructMapTalksTalkEinar, StructMapTalksTalkFerdinand, StructMapTalksTalkFulco, StructMapTalksTalkGuntrich, StructMapTalksTalkHaid, StructMapTalksTalkHaldar, StructMapTalksTalkHeimrich, StructMapTalksTalkIrmina, StructMapTalksTalkKuno, StructMapTalksTalkLothar, StructMapTalksTalkManfred, StructMapTalksTalkMarkward, StructMapTalksTalkMathilda, StructMapTalksTalkOsman, StructMapTalksTalkRicman, StructMapTalksTalkSisgard, StructMapTalksTalkTalrasGuardian, StructMapTalksTalkTanka, StructMapTalksTalkTellborn, StructMapTalksTalkTrommon, StructMapTalksTalkTobias, StructMapTalksTalkUrsula, StructMapTalksTalkWieland, StructMapTalksTalkWigberht
+library MapTalks requires StructMapTalksTalkAgihard, StructMapTalksTalkBaldar, StructMapTalksTalkBjoern, StructMapTalksTalkBrogo, StructMapTalksTalkDago, StructMapTalksTalkDragonSlayer, StructMapTalksTalkEinar, StructMapTalksTalkFerdinand, StructMapTalksTalkFulco, StructMapTalksTalkGuntrich, StructMapTalksTalkHaid, StructMapTalksTalkHaldar, StructMapTalksTalkHeimrich, StructMapTalksTalkIrmina, StructMapTalksTalkKuno, StructMapTalksTalkLothar, StructMapTalksTalkManfred, StructMapTalksTalkMarkward, StructMapTalksTalkMathilda, StructMapTalksTalkOsman, StructMapTalksTalkRicman, StructMapTalksTalkSisgard, StructMapTalksTalkTalrasGuardian, StructMapTalksTalkTanka, StructMapTalksTalkTellborn, StructMapTalksTalkTrommon, StructMapTalksTalkTobias, StructMapTalksTalkUrsula, StructMapTalksTalkWieland, StructMapTalksTalkWigberht
 
 	function initMapTalks takes nothing returns nothing
 		call TalkAgihard.initTalk()
@@ -36,6 +37,7 @@ library MapTalks requires StructMapTalksTalkAgihard, StructMapTalksTalkBaldar, S
 		call TalkBjoern.initTalk()
 		call TalkBrogo.initTalk()
 		// dagos talk is created after quest "Rescue Dago"
+		// dragon slayer talk is created after quest "Slaughter"
 		call TalkEinar.initTalk()
 		call TalkFerdinand.initTalk()
 		call TalkFulco.initTalk()

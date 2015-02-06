@@ -5,7 +5,7 @@
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
 * Burgvideo deutlich kürzer und sinnvoller machen (Charaktere zeigen?)
 * FIXED: Knechte arbeiten auch noch um 2 Uhr morgens.
-* Verschwinden in Häusern funktioniert nicht. Siehe Tagesablaufbug, wenn die Funktionen in falscher Reihenfolge aufgerufen werden (endet und startet).
+* DEPRECATED (kein Verschwinden mehr): Verschwinden in Häusern funktioniert nicht. Siehe Tagesablaufbug, wenn die Funktionen in falscher Reihenfolge aufgerufen werden (endet und startet).
 * DONE: Gefährten nicht an Schreinen wiederbeleben, sondern an ihrem Todespunkt (einfacher zu finden!)
 * FIXED: Drachentöterin ist zu schwach!
 * "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein.
@@ -100,9 +100,10 @@
 * AOS-Gebiet: Bob muss Gegenstände verkaufen.
 * AOS-Gebiet: Die Dämonenhändler sichtbarer machen.
 * AOS-Gebiet: Oscar und Dämon sollen Dialoge bekommen. Leiden unter der Herrschaft von Haldar und Baldar.
-* Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren. Vermutlich checkState()!
-* Liegt nicht an checkstate aber obwohl QuestTalras.initQuest() vor QuestRescueDago aufgerufen wird, ist das Quest über dem Quest Rescue Dago, normal?
-* Helden wählen etc. deaktivieren wenn Einheit ins Haus geht.
+* Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren. Vermutlich checkState()! State ist richtig - Quest muss nachträglich deaktiviert werden?! Passiert nur manchmal.
+	* Quest ist auch aktiv und kann abgeschlossen werden, wird nur nicht im Quest-Log angezeigt!
+	* Liegt nicht an checkstate aber obwohl QuestTalras.initQuest() vor QuestRescueDago aufgerufen wird, ist das Quest über dem Quest Rescue Dago, normal?
+* FIXED: Helden wählen etc. deaktivieren wenn Einheit ins Haus geht.
 * Vermutlich verursacht EndThematicMusic() beim Beenden eines Videos dass die Human-Musik gespielt wird. Die aktuelle Musik muss daher nach jedem Video wiederhergestellt werden! Game.resetVideoSettings()! setMapMusic() hat nichts gebracht!
 * DONE: GetSpellTargetX() geht nirgendwo, außer VERMUTLICH direkt im Trigger. Daten anders übergeben?
 * Trommons Tagesablauf wurde überarbeitet. Im Code anpassen.
@@ -123,7 +124,7 @@
 * Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/ 
 * FIXED: fogmodifier vom Quest "The Norsemen" sind am Anfang aktiv.
 * Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schrein wiederbelebt werden.
-* Stab der Unsterblichkeit entfernen. Sollte Questbelohnung von "Die Nordmänner" werden.
+* DONE: Stab der Unsterblichkeit entfernen. Sollte Questbelohnung von "Die Nordmänner" werden.
 * Eigentlich benötigen die Zauberbuchfähigkeiten 6 verschiedene! Die letzte entspricht der ausgelernten Stufe und gibt nur noch einmal die Werte an. Ansonsten wird immer die der nächsten Stufe angezeigt und nicht der aktuellen!
 * Neue Quests von Markward: Dialoge bei Manfred, Kuno, Björn und Dago einbauen, Gebiete und Pfeilplatzierung ermöglichen. Modell für Karren herunterladen.
 * Tagesabläufe vom Schlafengehen komplett entfernen. Stört den Spielfluss.
@@ -133,7 +134,7 @@
 * Video "Das erste Gefecht" kämpfen immer noch nicht gegeneinander.
 * Video "Das erste Gefecht" vor Heil dir Vater in Richtung drehen.
 * DONE: SPELL_CHANNEL muss verwendet werden damit GetSpellTargetX() funktioniert. Jedoch pausieren Grimoire-Zauber dann die Einheit dauerhaft. Hat etwas mit dem Zauberbuch usw. zu tun?
-* Gruft des Todes: Unholde Startmana vollmachen.
+* FIXED: Gruft des Todes: Unholde Startmana vollmachen.
 * DONE: Gruft des Todes: Rabengaukler brauchen unbedingt Fähigkeiten, sind die Mehrheit der Gegner.
 * DONE: Gruft des Todes: Diakon kann mehr Viecher beschwören und außerdem noch Fähigkeiten erhalten.
 * Gruft des Todes: Missgeburt braucht Fähigkeiten.
@@ -187,6 +188,42 @@
 * Nach letzter Schlacht: Nordmänner zurück zu Neutral Passiv, entlassen.
 * Ricman: Beutezug korrigieren.
 * Ricman: Erlernbare Fähigkeiten als Drachentöter sollen Grimoire Spells werden und im Zauberbuch erscheinen.
+* Falls noch mehr Quests: Einar hat wenig zu sagen.
+* Sisgards Quest nicht einfach ablehnbar machen!
+* Trommons Quest nicht einfach ablehnbar machen!
+* Character.giveItem() und giveQuestItem() sollte die Items immer im Rucksack platzieren falls noch Platz ist und nicht auf dem Boden falls das Inventar voll und der Rucksack offen ist.
+* Alle Talk Members static machen, da es immer genau eine Talk-Instanz gibt -> Performance
+* Mit SharpCraft debuggen - optlimit etc.
+* ACharacter.displayMessage() entfernen und durch QuestMessageBJ() ersetzen. Eventuell QuestMessageBJ() für einzelnen Spieler anbieten?
+* ACharacter.setMovable() entfernen und durch jeweilige Funktionen ersetzen.
+* Viele unnötige Helpermethoden in ACharacter rauswerfen.
+* Dago retten - Bedingung einbauen, Dago darf das Gebiet nicht verlassen, sonst ist der Auftrag fehlgeschlagen! Ansonsten kann man mit Dago alles abmetzeln!
+* Gefolgsleute müssen Helden sein - wegen des Icons: Dago, Sisgard, Wigberht, Ricman.
+* Wenn man Kuno auf dem Bauernhof anspricht sollte er sagen "Ich habe zu tun". Ansonsten sind die Sätze unlogisch.
+* Schrein direkt beim Bauernhof platzieren.
+* Video "Wigberht" fixen.
+* Osman: Sollte im Zusammenhang mit dem Kultquest den Begriff „Todesgruft“ erwähnen. So wird sie laut Drachentöterin von Eingeweihten genannt. Er muss bereits davon gehört haben.
+* Drachentöterin: Hat nun ein Gespräch, muss aber noch geschrieben werden:
+	* Über die Bedeutung der Todesgruft informieren, wenn Quest von Osman erhalten wurde.
+	* Neues Quest "Das Heldenepos": Man schreibt ihre Taten auf -> innovatives Quest überlegen.
+	* Neues Quest "Die Hochelfen": Unterstützung der Hochelfen für den Herzog und das Grenzgebiet -> Holzbruck?
+	* Verbindung mit Ricman's Quest "Der gezähmte Drache" -> man kann der Drachentöterin davon berichten.
+* Drachentöterin benötigt Tagesablauf der nach dem Quest "Metzelei" aktiviert wird: Sie muss nach Talras gehen.
+* Viel viel viel mehr Schreine platzieren. Sind auch Teleportmöglichkeiten!
+* Mehr Kreaturen oder sammelbare Items platzieren. Die Karte ist viel zu leer -> mehr Spawn Points.
+* Quest-Pings deaktivierbar machen (pro Spieler).
+* Quest-Pings manuell durch Hauptmenü erlauben.
+* DONE: Schreinmarkierungen auf der Minimap fixen: Sind extrem wichtig ansonsten findet man sich überhaupt nicht zurecht. Selbe Markierung wie Portale?!
+* Warum sind Feldarbeiter unsichtbar.
+* Feldarbeiter sollen sich abends vor der Scheune unterhalten.
+* FIXED: thistype.unitActor(thistype.createUnitActorAtRect()) scheint bei Videos nicht zu funktionieren. Bei saveUnitActor() funktioniert es aber. Unterschied zu createUnitActorAtRect?!
+	* AActorInterface hätte als Cast verwendet werden müssen!
+* Waldläufer bei letzter Schlacht kommen manchmal zweimal.
+* Spawns bei letzter Schlacht fixen - Gegener laufen nicht aufs Schlachtfeld, da Neutral Feindlich.
+* Gefolgsleute schickt wegen Computerkontrolle oft Einheiten automatisch zurück.
+* Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
+* Video: Wigberht: Nach Jump tötet er den Orkanführer nicht richtig.
+
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

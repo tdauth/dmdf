@@ -21,7 +21,7 @@ library StructMapQuestsQuestMushroomSearch requires Asl
 
 			set this.m_mushrooms = 0
 
-			call this.setIconPath("war3mapImported\\BTNMushroom.blp")
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMushroom.blp")
 			call this.setDescription(tr("Der Jäger Dago benötigt einige essbare Pilze für den Herzog von Talras."))
 			call this.setReward(AAbstractQuest.rewardExperience, 50)
 			call this.setReward(AAbstractQuest.rewardGold, 10)

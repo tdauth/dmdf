@@ -5,6 +5,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
+			call BJDebugMsg("Enable quest talras")
 			return super.enable()
 		endmethod
 

@@ -90,7 +90,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer startSkillPoints = 3
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 25
-		public static constant integer difficultyStartAttributeBonus = 4 // start attribute bonus per missing player
+		public static constant integer difficultyStartAttributeBonus = 5 // start attribute bonus per missing player
 		public static constant integer difficultyLevelAttributeBonus = 2 // level up attribute bonus per missing player
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static constant integer meleeResearchId =  'R007'
@@ -98,6 +98,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant player haldarPlayer = Player(10)
 		public static constant player baldarPlayer = Player(11)
 		
+		private static boolean m_startedGameAfterIntro = false
 		private static region m_welcomeRegion
 		private static trigger m_welcomeTalrasTrigger
 
@@ -363,32 +364,11 @@ static if (DEBUG_MODE) then
 		private static method onCheatActionUnitSpawn takes ACheat cheat returns nothing
 			call UnitTypes.spawn(GetTriggerPlayer(), GetUnitX(Character.playerCharacter(GetTriggerPlayer()).unit()), GetUnitY(Character.playerCharacter(GetTriggerPlayer()).unit()))
 		endmethod
-endif
-
-		/// Required by \ref Game.
-		public static method start takes nothing returns nothing
+		
+		private static method createCheats takes nothing returns nothing
 			local ACheat cheat
-			local integer i
-			call BJDebugMsg("Before primary quests")
-			call initMapPrimaryQuests()
-			call BJDebugMsg("Before secundary quests")
-			call initMapSecundaryQuests()
-			call BJDebugMsg("Before map spells")
-			
-			set i = 0
-			loop
-				exitwhen (i == thistype.maxPlayers)
-				call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
-				set i = i + 1
-			endloop
-			
-			call VideoIntro.video().play() // TEST
-			debug call Print("Waiting for video intro")
-			call waitForVideo(thistype.videoWaitInterval)
-			debug call Print("Waited successfully for intro video.")
-static if (DEBUG_MODE) then
-			call Print(tr("|c00ffcc00TEST-MODUS|r"))
-			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"mapcheats\", um eine Liste sämtlicher Karten-Cheats zu erhalten."))
+			debug call Print(tr("|c00ffcc00TEST-MODUS|r"))
+			debug call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"mapcheats\", um eine Liste sämtlicher Karten-Cheats zu erhalten."))
 			debug call Print("Before creating \"mapcheats\"")
 			set cheat = ACheat.create("mapcheats", true, thistype.onCheatActionMapCheats)
 			debug call Print("After creating \"mapcheats\": " + I2S(cheat))
@@ -417,7 +397,50 @@ static if (DEBUG_MODE) then
 			call ACheat.create("bloodthirstiness", true, thistype.onCheatActionBloodthirstiness)
 			call ACheat.create("unitspawn", true, thistype.onCheatActionUnitSpawn)
 			debug call Print("Before creating all cheats")
+		endmethod
 endif
+
+		/// Required by \ref Game.
+		public static method start takes nothing returns nothing
+			local integer i
+			call BJDebugMsg("Before primary quests")
+			call initMapPrimaryQuests()
+			call BJDebugMsg("Before secundary quests")
+			call initMapSecundaryQuests()
+			call BJDebugMsg("Before map spells")
+			
+			set i = 0
+			loop
+				exitwhen (i == thistype.maxPlayers)
+				call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
+				set i = i + 1
+			endloop
+			
+			call VideoIntro.video().play()
+		endmethod
+		
+		/**
+		 * This method should be called after the intro has been shown.
+		 * It uses a boolean variable to make sure it is only called once in case the video "Intro" is run via a cheat
+		 * multiple times.
+		 *
+		 * The function enables the main quest "Talras", starts NPC routines and adds start items to characters.
+		 *
+		 * It is called in the onStopAction() of the video intro with .evaluate() which means it is called after unpausing all units and restoring all player data.
+		 */
+		public static method startAfterIntro takes nothing returns nothing
+			local ACheat cheat
+			local integer i
+			
+			// call the following code only once in case the intro is showed multiple times
+			if (thistype.m_startedGameAfterIntro) then
+				return
+			endif
+			set thistype.m_startedGameAfterIntro = true
+			
+			debug call Print("Waited successfully for intro video.")
+
+			debug call thistype.createCheats()
 			call BJDebugMsg("Setting all movable")
 			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
 			call BJDebugMsg("After movable")
@@ -426,6 +449,8 @@ endif
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
 			call BJDebugMsg("Quest talras id " + I2S(QuestTalras.quest()))
 			call QuestTalras.quest().enable()
+			call BJDebugMsg("After enabling quest talras " + I2S(QuestTalras.quest()))
+			call BJDebugMsg("State is " + I2S(QuestTalras.quest().state()))
 			// start weapons
 			set i = 0
 			loop

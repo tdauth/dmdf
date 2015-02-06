@@ -106,7 +106,14 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_9, true, 3.0)
 
-			if (wait(6.50)) then // kurzes Standbild auf Medusa
+			if (wait(3.00)) then // kurzes Standbild auf Medusa
+				return
+			endif
+			
+			// Animation der Medusa
+			call QueueUnitAnimation(this.m_actorMedusa, "Spell")
+			
+			if (wait(3.50)) then // kurzes Standbild auf Medusa
 				return
 			endif
 

@@ -21,7 +21,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			if (wait(1.50)) then
+			if (wait(1.0)) then
 				return
 			endif
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
@@ -33,9 +33,9 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 			if (wait(1.0)) then
 				return
 			endif
-			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, thistype.actor(), 1.50)
+			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, thistype.actor(), 0.50)
 
-			if (wait(1.50)) then
+			if (wait(0.50)) then
 				return
 			endif
 
@@ -46,9 +46,9 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_2, true, 0.0)
-			call SetUnitFacingToFaceUnitTimed(thistype.actor(), this.m_actorDragonSlayer, 1.50)
+			call SetUnitFacingToFaceUnitTimed(thistype.actor(), this.m_actorDragonSlayer, 0.50)
 
-			if (wait(2.50)) then
+			if (wait(1.50)) then
 				return
 			endif
 
@@ -148,7 +148,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_1, true, 0.0)
 
-			call TransmissionFromUnit(thistype.actor(), tr("Aber ansonsten ..."), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Ach so ..."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

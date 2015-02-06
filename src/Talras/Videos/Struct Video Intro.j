@@ -111,6 +111,10 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		public stub method onStopAction takes nothing returns nothing
 			call EndThematicMusic()
 			call Game.resetVideoSettings()
+			
+			// now start the game
+			// call by .evaluate() since after the onStopAction() which is also called with .evaluate() there are some further actions
+			call MapData.startAfterIntro.evaluate()
 		endmethod
 
 		private static method create takes nothing returns thistype

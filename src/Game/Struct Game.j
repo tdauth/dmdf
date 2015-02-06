@@ -651,7 +651,6 @@ endif
 			call SuspendTimeOfDay(false)
 			call SetCreepCampFilterState(true)
 			call SetAllyColorFilterState(0)
-			call SetAltMinimapIcon("UI\\MiniMap\\MinimapIcon\\MinimapIconStartLoc.blp")
 			call thistype.m_weather.start()
 			call ACharactersScheme.init(1.0, true, true, true, 10, GameExperience.maxExperienceFormula, 10, 10, tr("Charaktere"), tr("Stufe"), tr("Hat das Spiel verlassen."))
 			call ACharactersScheme.setExperienceBarValueIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL8.tga")
@@ -866,7 +865,6 @@ endif
 
 		public static method resetVideoSettings takes nothing returns nothing
 			local integer i
-			call AVideo.restoreUnitActors()
 			call thistype.resetCameraBounds()
 			call thistype.m_weather.enable()
 			call EnableTrigger(thistype.m_levelTrigger)

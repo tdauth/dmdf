@@ -127,14 +127,19 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private static method stateConditionCompleted5 takes AQuestItem questItem returns boolean
 			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.medusa().countUnitsOfType(UnitTypes.medusa) == 0
 		endmethod
+		
+		private static method finishQuest takes nothing returns nothing
+			call Fellows.dragonSlayer().reset()
+			call TalkDragonSlayer.initTalk()
+			call VideoBloodthirstiness.video().play()
+		endmethod
 
 		private static method stateActionCompleted5 takes AQuestItem questItem returns nothing
 			if (questItem.quest().questItem(6).state() == thistype.stateNew) then
 				call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Dieses Dreckschlangenvieh! Los, weiter, in die Gruft hinein!"), null)
 				call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.deacon)
 			else
-				call Fellows.dragonSlayer().reset()
-				call VideoBloodthirstiness.video().play()
+				call thistype.finishQuest()
 			endif
 		endmethod
 
@@ -146,8 +151,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			if (questItem.quest().questItem(5).state() == thistype.stateNew) then
 				call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!"), null)
 			else
-				call Fellows.dragonSlayer().reset()
-				call VideoBloodthirstiness.video().play()
+				call thistype.finishQuest()
 			endif
 		endmethod
 
@@ -169,7 +173,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			local thistype this = thistype.allocate(0, tr("Metzelei"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp")
-			call this.setDescription(tr("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, um anderen von ihren Heldentaten zu berichten."))
+			call this.setDescription(tr("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten zu berichten könnt."))
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
 			set this.m_newRegion = CreateRegion()
 			call RegionAddRect(this.m_newRegion, gg_rct_quest_slaughter_enable)

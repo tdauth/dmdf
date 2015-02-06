@@ -51,6 +51,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			if (class == thistype.m_cleric) then
 				call SpellMaertyrer.create.evaluate(character)
 				call SpellAbatement.create.evaluate(character)
+				call SpellBlind.create.evaluate(character)
 				call SpellClarity.create.evaluate(character)
 				call SpellExorcizeEvil.create.evaluate(character)
 				call SpellHolyPower.create.evaluate(character)

@@ -5,8 +5,6 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 		private static AIntegerVector m_shrines = 0
 
 		public method setUnit takes unit whichUnit returns nothing
-			call UnitSetUsesAltIcon(this.m_unit, false)
-			call UnitSetUsesAltIcon(whichUnit, true)
 			set this.m_unit = whichUnit
 		endmethod
 
@@ -25,7 +23,6 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 			local region discoverRegion = CreateRegion()
 			local thistype this = thistype.allocate(usedDestructable, discoverRegion, revivalRect, facing)
 			call RegionAddRect(discoverRegion, discoverRect)
-			call UnitSetUsesAltIcon(whichUnit, true)
 			set this.m_unit = whichUnit
 			if (thistype.m_shrines == 0) then
 				set thistype.m_shrines = AIntegerVector.create()
@@ -34,6 +31,9 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 			return this
 		endmethod
 
+		/**
+		 * \return Returns a list of all Shrine instances. Useful for teleport spells for example.
+		 */
 		public static method shrines takes nothing returns AIntegerVector
 			return thistype.m_shrines
 		endmethod

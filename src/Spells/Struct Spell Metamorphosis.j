@@ -120,6 +120,10 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		private static method triggerActionStart takes nothing returns nothing
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local boolean result = false
+			/*
+			 * Disable trigger to make sure that it does not react on manually issued order in this trigger.
+			 * Otherwise it would result in an endless loop.
+			 */
 			call DisableTrigger(this.m_channelTrigger)
 			call IssueImmediateOrder(this.character().unit(), "stop") // stop spell immediately
 			debug call Print("Start for spell: " + GetObjectName(this.ability()))
@@ -165,6 +169,8 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						debug else
 						debug call Print("Unable to make permanent: " + GetAbilityName(this.ability()))
 						debug endif
+						
+						debug call Print("Casting dummy ability with order: " + this.orderString())
 			
 						/*
 						 * Use the corresponding order string to cast the added permanent "dummy" ability.
@@ -176,11 +182,12 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						else
 							debug call Print("Error on calling order " + this.orderString())
 						endif
+						
+						// wait that this current trigger does not react on the manually issued order.
+						call TriggerSleepAction(0.0)
 					else
 						debug call Print("Error on morphing.")
 					endif
-					
-					debug call Print("Enabling trigger")
 					
 				debug else
 					debug call Print("Cannot morph for spell: " + GetObjectName(this.ability()))
@@ -203,6 +210,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						 */
 						call thistype.waitForRestoration(this.character().unit(), this.unitTypeId())
 						debug call Print("Restore from morph with spell: "  + GetAbilityName(this.ability()))
+						debug call Print("Trigger ability is: "  + GetAbilityName(GetSpellAbilityId()))
 						// wait until all triggers have been run which have spell events to avoid any null abilities
 						// without this call the game crashes since other triggers are called based on an already removed ability
 						call TriggerSleepAction(0.0)
@@ -227,6 +235,8 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 				endif
 			endif
 			
+			debug call Print("Enabling trigger")
+
 			call EnableTrigger(this.m_channelTrigger)
 		endmethod
 		

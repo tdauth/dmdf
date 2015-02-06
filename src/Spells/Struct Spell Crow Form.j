@@ -4,6 +4,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 	struct SpellCrowFormMetamorphosis extends SpellMetamorphosis
 
 		public stub method onMorph takes nothing returns nothing
+			/*
 			local integer level
 			local integer alphaLevel = 0
 			local integer zoologyLevel = 0
@@ -29,6 +30,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 				//call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
 				//call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
 			endif
+			*/
 		endmethod
 		
 	endstruct

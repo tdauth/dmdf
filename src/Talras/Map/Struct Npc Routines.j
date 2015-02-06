@@ -244,13 +244,13 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 			// menials
 			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)
-			call AUnitRoutine.create(Routines.enterHouse(), gg_unit_n02J_0013, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
+			call AUnitRoutine.create(Routines.moveTo(), gg_unit_n02J_0013, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
 			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0157, MapData.morning, MapData.evening, gg_rct_waypoint_menial_1)
-			call AUnitRoutine.create(Routines.enterHouse(), gg_unit_n02J_0157, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
+			call AUnitRoutine.create(Routines.moveTo(), gg_unit_n02J_0157, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
 			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0159, MapData.morning, MapData.evening, gg_rct_waypoint_menial_2)
-			call AUnitRoutine.create(Routines.enterHouse(), gg_unit_n02J_0159, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
+			call AUnitRoutine.create(Routines.moveTo(), gg_unit_n02J_0159, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
 			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0158, MapData.morning, MapData.evening, gg_rct_waypoint_menial_3)
-			call AUnitRoutine.create(Routines.enterHouse(), gg_unit_n02J_0158, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
+			call AUnitRoutine.create(Routines.moveTo(), gg_unit_n02J_0158, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
 		endmethod
 
 		// NOTE manual start ALL!
