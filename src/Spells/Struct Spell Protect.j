@@ -43,7 +43,7 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 		public static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			call this.addGrimoireEntry('A091', 'A0LE')
-			call this.addGrimoireEntry('A0lA', 'A0LF')
+			call this.addGrimoireEntry('A0LA', 'A0LF')
 			call this.addGrimoireEntry('A0LB', 'A0LG')
 			call this.addGrimoireEntry('A0LC', 'A0LH')
 			call this.addGrimoireEntry('A0LD', 'A0LI')

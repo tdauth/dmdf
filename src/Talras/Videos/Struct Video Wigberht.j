@@ -11,6 +11,10 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 		private AGroup m_orcGuardians
 
 		implement Video
+		
+		private static method holdPosition takes unit whichUnit returns nothing
+			call IssueImmediateOrder(whichUnit, "holdposition")
+		endmethod
 
 		public stub method onInitAction takes nothing returns nothing
 			debug call Print("Init 1")
@@ -22,14 +26,17 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			set this.m_actorWigberht = thistype.saveUnitActor(Npcs.wigberht())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_wigberht_wigberhts_position)
 			call SetUnitFacing(thistype.unitActor(this.m_actorWigberht), 90.0)
+			call IssueImmediateOrder(thistype.unitActor(this.m_actorWigberht), "holdposition")
 			debug call Print("Init 3")
 			set this.m_actorRicman = thistype.saveUnitActor(Npcs.ricman())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_wigberht_ricmans_position)
 			call SetUnitFacing(thistype.unitActor(this.m_actorRicman), 342.35)
 			call UnitRemoveAbility(thistype.unitActor(this.m_actorRicman), 'Aneu') // disable arrow
+			call IssueImmediateOrder(thistype.unitActor(this.m_actorRicman), "holdposition")
 			debug call Print("Init 4")
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_wigberht_actors_position)
 			call SetUnitFacing(thistype.actor(), 206.90)
+			call IssueImmediateOrder(thistype.actor(), "holdposition")
 
 			set this.m_staticActors = AGroup.create()
 			set this.m_orcGuardians = AGroup.create()
@@ -48,15 +55,18 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.norseman, gg_rct_video_wigberht_corpse_1_position, GetRandomFacing()))
 			
 			call thistype.setActorsOwner(MapData.haldarPlayer) // change player to make sure that units do not walk back!
+			call this.m_staticActors.forGroup(thistype.holdPosition)
 			debug call Print("Init 6")
 			// create orcs
 			set this.m_actorOrcLeader = CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcLeader, gg_rct_video_wigberht_orc_leaders_position, 237.39)
+			call IssueImmediateOrder(this.m_actorOrcLeader, "holdposition")
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_0, 308.79))
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_1, 200.36))
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_2, 327.94))
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_3, 160.66))
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_4, 250.86))
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_5, 215.00))
+			call this.m_orcGuardians.forGroup(thistype.holdPosition)
 			debug call Print("Init 7")
 			
 		endmethod

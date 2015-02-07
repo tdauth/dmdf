@@ -223,7 +223,24 @@
 * Gefolgsleute schickt wegen Computerkontrolle oft Einheiten automatisch zurück.
 * Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
 * Video: Wigberht: Nach Jump tötet er den Orkanführer nicht richtig.
-
+* DONE: Marker entfernen, nutzlos.
+* DONE: Layer entfernen, nutzlos.
+* FIXED: "Schützen" - Stufe 2 falsch?
+* "Märtyrer" blockieren wenn keine Verbündeten im Umkreis sind. Ansonsten ziemlich sinnlos!
+* "Märtyrer" keine Gebäude oder mechanische Einheiten heilen!
+* "Blenden" ist viel zu mies - Dauer ist viel zu lange!
+* FIXED: Man kann Lothar nicht vom Honigtopf berichten.
+* Metamorphose: Nach Rückverwandlung können Befehle nicht mehr unterbrochen werden!
+* Hellebarde: Schmetterangriff muss Icon verlieren!!! Gegenstandsfähigkeit!
+* Standarte: Befehlsaura muss Icon verlieren!!! Gegenstandsfähigkeit!
+* Video "Das erste Gefecht": Einheiten blockieren sich gegenseitig beim Laufen. Nicht in der selben Gruppe?!
+* Ricman sollte während der letzten Schlacht die Helden anwählen und Gegenstandskauf/Verkaufsfähigkeit entfernt bekommen.
+* Ricman sollte mehr über den Stab der Unsterblichkeit berichten. Wirkt alles zu aufgesetzt. Warum will er unbedingt einen Drachen aus den alten Sagen?
+* Bei Gesprächen unter NPCs öfters warten und nicht dauernd Sounds abspielen!
+* "Drohendes Unheil" auch auf sich selbst.
+* "Reinheit" Effekt verbessern, Abklingzeit verringern?
+* FIXED: "Drohendes Unheil" existiert zweimal. Einmal mit nur einer Stufe.
+* FIXED: "Heiliger Wille" auf sich selbst.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

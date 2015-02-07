@@ -411,8 +411,7 @@ endif
 			// character systems
 			call AAbstractQuest.init(15.0, "Sound\\Interface\\QuestNew.wav", "Sound\\Interface\\QuestCompleted.wav", "Sound\\Interface\\QuestFailed.wav", tr("%s"), tr("|cffc3dbff%s (Abgeschlossen)|r"), tr("%s (|c00ff0000Fehlgeschlagen|r)"), tr("+%i Stufe(n)"), tr("+%i Fähigkeitenpunkt(e)"), tr("+%i Erfahrung"), tr("+%i Stärke"), tr("+%i Geschick"), tr("+%i Wissen"), tr("+%i Goldmünze(n)"), tr("+%i Holz"))
 			call ABuff.init()
-			//call AMovement.init(0.01, 5.0, 30.0, true) //90.0 test
-			call ACharacter.init(true, true, false, true, false, true, false, false, false, true, true, DMDF_INFO_LOG)
+			call ACharacter.init(true, true, false, true, false, true, true, true, DMDF_INFO_LOG)
 			call AClass.init(1, 1)
 			call initSpeechSkip(AKeyEscape, 0.10)
 			call AInventory.init('I001', 'I000', 'A015', false, tr("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt."), null, tr("Rucksack ist voll."),  tr("\"%s\" im Rucksack verstaut."), tr("Gegenstand konnte nicht verschoben werden."), tr("Die Seitengegenstände können nicht abgelegt werden."), tr("Die Seitengegenstände können nicht verschoben werden."), tr("Der Gegendstand gehört einem anderen Spieler."))
@@ -649,8 +648,8 @@ endif
 			local integer levelBonus
 			call StopMusic(false)
 			call SuspendTimeOfDay(false)
-			call SetCreepCampFilterState(true)
-			call SetAllyColorFilterState(0)
+			//call SetCreepCampFilterState(true)
+			//call SetAllyColorFilterState(0)
 			call thistype.m_weather.start()
 			call ACharactersScheme.init(1.0, true, true, true, 10, GameExperience.maxExperienceFormula, 10, 10, tr("Charaktere"), tr("Stufe"), tr("Hat das Spiel verlassen."))
 			call ACharactersScheme.setExperienceBarValueIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL8.tga")

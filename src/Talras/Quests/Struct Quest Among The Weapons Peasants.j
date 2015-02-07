@@ -12,7 +12,7 @@ library StructMapQuestsQuestAmongTheWeaponsPeasants requires Asl
 			local thistype this = thistype.allocate(character, tr("Zu den Waffen, Bauern!"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMilitia.blp")
 			call this.setDescription(tr("Der Bauer Manfred beschwert sich darüber, dass der Herzog keine Wachen zu seinem Hof schickt, die diesen im Falle eines Angriffs beschützen könnten. Außerdem beklagt er sich über den von ihm und seinen Leuten geforderten einjährigen Kriegsdienst."))
 			call this.setReward(AAbstractQuest.rewardExperience, 500)
 			call this.setReward(AAbstractQuest.rewardGold, 300)

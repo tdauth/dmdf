@@ -137,8 +137,6 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call Arena.addRect(gg_rct_arena_4)
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_0), GetRectCenterY(gg_rct_arena_enemy_0), 180.0)
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_1), GetRectCenterY(gg_rct_arena_enemy_1), 0.0)
-			call Layers.init()
-			call Markers.init()
 static if (DMDF_NPC_ROUTINES) then
 			call NpcRoutines.init()
 endif

@@ -150,10 +150,13 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 			set thistype.m_ditchSpiders0 = SpawnPoint.create()
 			set index = thistype.m_ditchSpiders0.addUnitWithType(gg_unit_n01E_0075, 1.0)
+			call thistype.m_ditchSpiders0.addItemType(index, 'I041', 1.0)
 
 			set thistype.m_ditchSpiders1 = SpawnPoint.create()
 			set index = thistype.m_ditchSpiders1.addUnitWithType(gg_unit_n01E_0070, 1.0)
+			call thistype.m_ditchSpiders1.addItemType(index, 'I041', 1.0)
 			set index = thistype.m_ditchSpiders1.addUnitWithType(gg_unit_n01E_0074, 1.0)
+			call thistype.m_ditchSpiders1.addItemType(index, 'I041', 1.0)
 			
 			set thistype.m_banditsAtGuntrichsMill = SpawnPoint.create()
 			set index = thistype.m_banditsAtGuntrichsMill.addUnitWithType(gg_unit_n00T_0491, 1.0)

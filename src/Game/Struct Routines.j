@@ -193,7 +193,7 @@ library StructGameRoutines requires Asl
 				if (period.soundsCount() > 0) then
 					set whichSound = period.sound(GetRandomInt(0, period.soundsCount() - 1))
 					call PlaySoundOnUnitBJ(whichSound, 100.0, period.unit())
-					set time = GetSoundDurationBJ(whichSound) + 1.0
+					set time = GetSoundDurationBJ(whichSound) + 6.0 // set + 6 otherwise we have loop sounds all the time
 				endif
 
 				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!

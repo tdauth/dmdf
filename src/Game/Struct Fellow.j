@@ -251,6 +251,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 			call SetUnitOwner(this.m_unit, MapData.neutralPassivePlayer, true)
 			call SetUnitInvulnerable(this.m_unit, true)
+			call SetUnitLifePercentBJ(this.m_unit, 100.0)
 			call AUnitRoutine.enableAll(this.m_unit)
 			
 			if (this.m_trades) then
