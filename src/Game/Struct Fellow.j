@@ -574,6 +574,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call iterator.next()
 			endloop
 			debug call Print("Before destroying iterator")
+			// TODO double free
 			call iterator.destroy()
 			debug call Print("After destroying iterator")
 		endmethod

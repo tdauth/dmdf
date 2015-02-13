@@ -49,6 +49,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			 */
 			// cleric spells
 			if (class == thistype.m_cleric) then
+				call SpellAstralSource.create.evaluate(character)
 				call SpellMaertyrer.create.evaluate(character)
 				call SpellAbatement.create.evaluate(character)
 				call SpellBlind.create.evaluate(character)
@@ -149,7 +150,6 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellArcaneProtection.create.evaluate(character)
 				call SpellArcaneRuse.create.evaluate(character)
 				call SpellArcaneTime.create.evaluate(character)
-				call SpellAstralSource.create.evaluate(character)
 				call SpellBan.create.evaluate(character)
 				call SpellControlledTimeFlow.create.evaluate(character)
 				call SpellCurb.create.evaluate(character)

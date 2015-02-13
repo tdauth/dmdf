@@ -49,6 +49,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call waitForVideo(MapData.videoWaitInterval)
 			call this.questItem(0).setState(thistype.stateNew)
 			call this.displayState()
+			debug call Print("Sharing fellow: " + I2S(Fellows.dragonSlayer()))
 			call Fellows.dragonSlayer().shareWith(0)
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!"), null)
 		endmethod

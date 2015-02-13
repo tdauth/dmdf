@@ -19,6 +19,9 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 		private static constant real lifeLevelValue = 0.10
 		private static constant real manaStartValue = 0.30
 		private static constant real manaLevelValue = 0.10
+		private static constant integer ressurectAbilityId = 'A0O2'
+		private static constant integer reviverUnitTypeId = 'n01B'
+		private static unit reviver
 
 		private static method filter takes nothing returns boolean
 			return IsUnitDeadBJ(GetFilterUnit())
@@ -28,45 +31,64 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 			local group whichGroup = CreateGroup()
 			local AGroup unitGroup = AGroup.create()
 			local unit caster
+			local unit member
 			local integer i
 			local real oldDistance
 			local boolean isHero
 			local boolean isAlly
+			local boolean smallerDistance = false
 			local real distance
 			local unit target
 			local effect targetEffect
+			local boolean success = false
 			local real life
 			local real mana
 			call GroupEnumUnitsInRange(whichGroup, GetSpellTargetX(), GetSpellTargetY(), thistype.radius, Filter(function thistype.filter))
-			call unitGroup.addGroup(whichGroup, true, false) // destroys groupA
+			call unitGroup.addGroup(whichGroup, true, false) // destroys whichGroup
 			set whichGroup = null
+			debug call Print("Possible targets " + I2S(unitGroup.units().size()))
+			set caster = this.character().unit()
 
 			if (not unitGroup.units().empty()) then
-				set caster = this.character().unit()
 				call unitGroup.removeEnemiesOfUnit(caster)
 				if (not unitGroup.units().empty()) then
-					set oldDistance = 99999999999999.0
+					set oldDistance = 0.0
 					set isHero = false
 					set isAlly = false
 					set target = null
 					set i = 0
 					loop
 						exitwhen (i == unitGroup.units().size())
-						set distance = GetDistanceBetweenUnits(caster, unitGroup.units()[i], 0.0, 0.0)
-						if (distance < oldDistance) then
-							if ((distance < oldDistance and (target == null or (GetUnitAllianceStateToUnit(caster, unitGroup.units()[i]) == bj_ALLIANCE_ALLIED or not isAlly or (GetUnitAllianceStateToUnit(caster, unitGroup.units()[i]) == bj_ALLIANCE_ALLIED and IsUnitType(unitGroup.units()[i], UNIT_TYPE_HERO)) or (not isAlly and IsUnitType(unitGroup.units()[i], UNIT_TYPE_HERO)))) or (target == null or (GetUnitAllianceStateToUnit(caster, unitGroup.units()[i]) == bj_ALLIANCE_ALLIED and not isAlly) or ((GetUnitAllianceStateToUnit(caster, unitGroup.units()[i]) == bj_ALLIANCE_ALLIED or (GetUnitAllianceStateToUnit(caster, unitGroup.units()[i]) != bj_ALLIANCE_ALLIED and not isAlly)) and IsUnitType(unitGroup.units()[i], UNIT_TYPE_HERO) and not isHero)))) then
-								set oldDistance = distance
-								set isHero = IsUnitType(unitGroup.units()[i], UNIT_TYPE_HERO)
-								set isAlly = GetUnitAllianceStateToUnit(caster, unitGroup.units()[i]) == bj_ALLIANCE_ALLIED
-								set target = null
-								set target = unitGroup.units()[i]
-							endif
+						set member = unitGroup.units()[i]
+						set distance = GetDistanceBetweenUnits(caster, member, 0.0, 0.0)
+						set smallerDistance = distance < oldDistance
+						if (target == null or (GetUnitAllianceStateToUnit(caster, member) == bj_ALLIANCE_ALLIED and (not isAlly or smallerDistance or (IsUnitType(member, UNIT_TYPE_HERO) and not isHero))) or (GetUnitAllianceStateToUnit(caster, member) != bj_ALLIANCE_ALLIED and not isAlly and (smallerDistance or (IsUnitType(member, UNIT_TYPE_HERO) and not isHero)))) then
+							set oldDistance = distance
+							set isHero = IsUnitType(member, UNIT_TYPE_HERO)
+							set isAlly = GetUnitAllianceStateToUnit(caster, member) == bj_ALLIANCE_ALLIED
+							set target = null
+							set target = member
 						endif
+						set member = null
 						set i = i + 1
 					endloop
 					debug if (target == null) then
 						debug call Print("Revive error, no target")
 					debug endif
+					
+					// uses the following system as inspiration: http://www.hiveworkshop.com/forums/jass-resources-412/snippet-reviveunit-186696/
+					// is hero
+					if (IsUnitType(target, UNIT_TYPE_HERO) == true) then
+						set success = ReviveHero(target, GetUnitX(target), GetUnitY(target), false)
+					// is no hero: use dummy caster
+					else
+						call SetUnitX(reviver, GetUnitX(target))
+						call SetUnitY(reviver, GetUnitY(target))
+						call PauseUnit(thistype.reviver, false)
+						set success = IssueImmediateOrderById(reviver, 852094)
+						call PauseUnit(thistype.reviver, true)
+					endif
+					
 					set targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "origin")
 					set life = GetUnitState(target, UNIT_STATE_MAX_LIFE) * (thistype.lifeStartValue + this.level() * thistype.lifeLevelValue)
 					set mana = GetUnitState(target, UNIT_STATE_MAX_MANA) * (thistype.manaStartValue + this.level() * thistype.manaLevelValue)
@@ -78,17 +100,35 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 					call DestroyEffect(targetEffect)
 					set targetEffect = null
 				else
+					call IssueImmediateOrder(caster, "stop")
 					call this.character().displayMessage(ACharacter.messageTypeError, tr("Kein totes Ziel gefunden."))
 				endif
-				set caster = null
 			else
+				call IssueImmediateOrder(caster, "stop")
 				call this.character().displayMessage(ACharacter.messageTypeError, tr("Kein totes Ziel gefunden."))
 			endif
+			set caster = null
 			call unitGroup.destroy()
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0O3', 'A0O8')
+			call this.addGrimoireEntry('A0O4', 'A0O9')
+			call this.addGrimoireEntry('A0O5', 'A0OA')
+			call this.addGrimoireEntry('A0O6', 'A0OB')
+			call this.addGrimoireEntry('A0O7', 'A0OC')
+			
+			return this
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.reviver = CreateUnit(Player(15), thistype.reviverUnitTypeId, 0.0, 0.0, 0)
+			call SetUnitPathing(thistype.reviver, false)
+			call PauseUnit(thistype.reviver, true)
+			call SetUnitInvulnerable(thistype.reviver, true)
+			call ShowUnit(thistype.reviver, false)
+			call UnitAddAbility(thistype.reviver, thistype.ressurectAbilityId)
 		endmethod
 	endstruct
 

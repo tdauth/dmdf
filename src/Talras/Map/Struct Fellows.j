@@ -49,7 +49,8 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_ricman.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_ricman.setRevivalTime(20.0)
 
-			set thistype.m_dragonSlayer = Fellow.create(Npcs.dragonSlayer(), TalkDragonSlayer.talk.evaluate())
+			// talk is created after the quest
+			set thistype.m_dragonSlayer = Fellow.create(Npcs.dragonSlayer(), 0)
 			call thistype.m_dragonSlayer.setTalk(false)
 			call thistype.m_dragonSlayer.setRevival(true)
 			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME

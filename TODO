@@ -226,9 +226,9 @@
 * DONE: Marker entfernen, nutzlos.
 * DONE: Layer entfernen, nutzlos.
 * FIXED: "Schützen" - Stufe 2 falsch?
-* "Märtyrer" blockieren wenn keine Verbündeten im Umkreis sind. Ansonsten ziemlich sinnlos!
-* "Märtyrer" keine Gebäude oder mechanische Einheiten heilen!
-* "Blenden" ist viel zu mies - Dauer ist viel zu lange!
+* FIXED: "Märtyrer" blockieren wenn keine Verbündeten im Umkreis sind. Ansonsten ziemlich sinnlos!
+* FIXED: "Märtyrer" keine Gebäude oder mechanische Einheiten heilen!
+* FIXED: "Blenden" ist viel zu mies - Dauer ist viel zu lange!
 * FIXED: Man kann Lothar nicht vom Honigtopf berichten.
 * Metamorphose: Nach Rückverwandlung können Befehle nicht mehr unterbrochen werden!
 * Hellebarde: Schmetterangriff muss Icon verlieren!!! Gegenstandsfähigkeit!
@@ -236,11 +236,22 @@
 * Video "Das erste Gefecht": Einheiten blockieren sich gegenseitig beim Laufen. Nicht in der selben Gruppe?!
 * Ricman sollte während der letzten Schlacht die Helden anwählen und Gegenstandskauf/Verkaufsfähigkeit entfernt bekommen.
 * Ricman sollte mehr über den Stab der Unsterblichkeit berichten. Wirkt alles zu aufgesetzt. Warum will er unbedingt einen Drachen aus den alten Sagen?
-* Bei Gesprächen unter NPCs öfters warten und nicht dauernd Sounds abspielen!
-* "Drohendes Unheil" auch auf sich selbst.
-* "Reinheit" Effekt verbessern, Abklingzeit verringern?
+* FIXED: Bei Gesprächen unter NPCs öfters warten und nicht dauernd Sounds abspielen!
+* FIXED: "Drohendes Unheil" auch auf sich selbst.
+* FIXED: "Drohendes Unheil" kürzere Abklingzeit dafür nicht so stark.
+* FIXED: "Reinheit" Effekt verbessern, Abklingzeit verringern?
 * FIXED: "Drohendes Unheil" existiert zweimal. Einmal mit nur einer Stufe.
 * FIXED: "Heiliger Wille" auf sich selbst.
+* Wiederbeleben fixen: Einheiten suchen wie bisher. Herausfinden, ob die gefundene Einheit (aussortiert nach Priorität) ein Held ist oder nicht. Falls sie ein Held ist, mit ReviveHero() wiederbeleben und Werte setzen. Falls sie kein Held ist, kann sie nur mit einer auf "Auferstehung" basierenden Fähigkeit wiederbelebt werden. Dazu muss ein Dummycaster erzeugt und positioniert werden: http://www.hiveworkshop.com/forums/jass-resources-412/snippet-reviveunit-186696/
+* Arena: Kills werden nicht hochgezählt, wenn einer die Arena verlässt.
+* Der Zauber "Wiederbeleben" muss den Timer eines Charakters und Fellows unterbrechen.
+* Der Zauber "Wiederbelben" muss Gebäude usw. rausfiltern. Alles was normalerweise nicht durch "Auferstehung" wiederbelebt wird, muss herausgefiltert werden!
+* Beim Zauber "Linderung" Tooltips fixen und abbrechen falls Ziel bereits volle Gesundheit hat.
+* FIXED: Beim Zauber "Reihnheit" die Reichweite erhöhen.
+* Beim Zauber "Heiliger Wille" die Abklingzeit senken, notfalls Effekt verschlechtern.
+* Beim Zauber "Drohendes Unheil" sicherstellen, dass der Zauber pro Einheit nur einmal gleichzeitig angewandt werden kann.
+* Leider erlaubt der Zauber "Drohendes Unheil" auch, dass man z. B. bevor man in den Kampf zieht den Effekt auf alle Einheiten zaubert. Daher muss der Effekt zeitlich begrenzt werden!
+* Märtyrer blockieren, wenn alle Verbündeten volle Werte haben.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.
