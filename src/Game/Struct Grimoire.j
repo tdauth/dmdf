@@ -8,6 +8,8 @@
 library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 
 	/**
+	 * \brief The grimoire of a character allows the player to skill any abilities of the character. It avoids a limit of 6 hero abilities.
+	 * 
 	 * \todo At its current state \ref updateUi() may be called too many times. Please consider that the order of buttons in grimoire should always be equal regardless of which buttons became unavailable.
 	 */
 	struct Grimoire extends ASpell

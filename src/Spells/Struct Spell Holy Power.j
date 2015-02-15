@@ -7,6 +7,16 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 		public static constant integer favouriteAbilityId = 'A032'
 		public static constant integer maxLevel = 1
 		private static constant real manaFactor = 0.50
+		
+		private method condition takes nothing returns boolean
+			local unit caster = this.character().unit()
+			local boolean result = GetUnitState(caster, UNIT_STATE_MANA) < GetUnitState(caster, UNIT_STATE_MAX_MANA)
+			if (not result) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Hat bereits volles Mana."))
+			endif
+			set caster = null
+			return result
+		endmethod
 
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
@@ -20,7 +30,7 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			return  thistype.allocate(character, Classes.cleric(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			return  thistype.allocate(character, Classes.cleric(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 

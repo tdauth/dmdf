@@ -1,46 +1,9 @@
 library StructGameItemTypes requires Asl, StructGameClasses
 
 	/**
-	* Provides advanced information for GUI inventories etc.
-	*/
+	 * \brief Default item type struct for all item types in DMdF.
+	 */
 	struct ItemType extends AItemType
-		// dynamic members
-		private integer m_goldCost
-		private string m_iconFilePath
-		private string m_name
-		private string m_description
-
-		public method setGoldCost takes integer goldCost returns nothing
-			set this.m_goldCost = goldCost
-		endmethod
-
-		public method goldCost takes nothing returns integer
-			return this.m_goldCost
-		endmethod
-
-		public method setIconFilePath takes string iconFilePath returns nothing
-			set this.m_iconFilePath = iconFilePath
-		endmethod
-
-		public method iconFilePath takes nothing returns string
-			return this.m_iconFilePath
-		endmethod
-
-		public method setName takes string name returns nothing
-			set this.m_name = name
-		endmethod
-
-		public method name takes nothing returns string
-			return this.m_name
-		endmethod
-
-		public method setDescription takes string description returns nothing
-			set this.m_description = description
-		endmethod
-
-		public method description takes nothing returns string
-			return this.m_description
-		endmethod
 		
 		/*
 		* TODO
@@ -55,14 +18,15 @@ library StructGameItemTypes requires Asl, StructGameClasses
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
 			local thistype this = thistype.allocate(itemType, equipmentType, requiredLevel, requiredStrength, requiredAgility, requiredIntelligence, requiredClass)
-			set this.m_goldCost = 0
-			set this.m_iconFilePath = ""
-			set this.m_name = ""
-			set this.m_description = ""
+
 			return this
 		endmethod
 	endstruct
 	
+	/**
+	 * \brief Item type for all range based weapons.
+	 * This item type should enable the proper attack animations for characters as well as range attack when being equipped.
+	 */
 	struct RangeItemType extends ItemType
 	
 		public static method createSimpleRange takes integer itemType, integer equipmentType returns thistype

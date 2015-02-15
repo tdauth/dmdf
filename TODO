@@ -64,10 +64,10 @@
 * FIXED: Verwandlung in Bär funktioniert immer noch nicht manchmal, Charakter wird einfach nicht verwandelt ebenso im AOS. Unterbrechung?
 * DONE: Item spawns fixen.
 * FIXED: Kisten sollten nun keine Beute oder Erfahrung mehr geben
-* Statt einsammelbarem Gold immer verbrauchbare Gegenstände droppen, die einem Spieler gehören!
+* FIXED: Statt einsammelbarem Gold immer verbrauchbare Gegenstände droppen, die einem Spieler gehören!
 * anstatt Items gleich zu verteilen einfach das Item n mal droppen?
-* Ankunfts und Tageszeitevents in ARoutine überprüfen. Manchmal kommt Sisgard nicht aus dem Haus, wenn die Tageszeit nach 5 Uhr wird.
-* Spawn Point im Orklager: Einheiten im letzten Quest entfernen vor der Schlacht!
+* DEPRECATED: Ankunfts und Tageszeitevents in ARoutine überprüfen. Manchmal kommt Sisgard nicht aus dem Haus, wenn die Tageszeit nach 5 Uhr wird.
+* FIXED: Spawn Point im Orklager: Einheiten im letzten Quest entfernen vor der Schlacht!
 * RIGHT: Bei "Zauberstufe erhöhen" ist schon das Icon des Zaubers verschwunden. Vermutlich weil einzelne Fähigkeiten nicht absorb sind oder grimoire entries fehlen. IDs im Grimoire Entry waren vertauscht.
 * Alle Zauberbuchfähigkeiten müssen "absorb" sein.
 * FIXED: Zauberbuchfähigkeit Stufen geben und je nach Skillpoints auf Stufe setzen!
@@ -214,6 +214,7 @@
 * Quest-Pings deaktivierbar machen (pro Spieler).
 * Quest-Pings manuell durch Hauptmenü erlauben.
 * DONE: Schreinmarkierungen auf der Minimap fixen: Sind extrem wichtig ansonsten findet man sich überhaupt nicht zurecht. Selbe Markierung wie Portale?!
+* Schreinmarkierungen auf der Minimap werden im Editor korrekt angezeigt aber nicht im Spiel, manuelle Minikartenersetzung?!
 * Warum sind Feldarbeiter unsichtbar.
 * Feldarbeiter sollen sich abends vor der Scheune unterhalten.
 * FIXED: thistype.unitActor(thistype.createUnitActorAtRect()) scheint bei Videos nicht zu funktionieren. Bei saveUnitActor() funktioniert es aber. Unterschied zu createUnitActorAtRect?!
@@ -242,16 +243,24 @@
 * FIXED: "Reinheit" Effekt verbessern, Abklingzeit verringern?
 * FIXED: "Drohendes Unheil" existiert zweimal. Einmal mit nur einer Stufe.
 * FIXED: "Heiliger Wille" auf sich selbst.
-* Wiederbeleben fixen: Einheiten suchen wie bisher. Herausfinden, ob die gefundene Einheit (aussortiert nach Priorität) ein Held ist oder nicht. Falls sie ein Held ist, mit ReviveHero() wiederbeleben und Werte setzen. Falls sie kein Held ist, kann sie nur mit einer auf "Auferstehung" basierenden Fähigkeit wiederbelebt werden. Dazu muss ein Dummycaster erzeugt und positioniert werden: http://www.hiveworkshop.com/forums/jass-resources-412/snippet-reviveunit-186696/
+* DONE: Wiederbeleben fixen: Einheiten suchen wie bisher. Herausfinden, ob die gefundene Einheit (aussortiert nach Priorität) ein Held ist oder nicht. Falls sie ein Held ist, mit ReviveHero() wiederbeleben und Werte setzen. Falls sie kein Held ist, kann sie nur mit einer auf "Auferstehung" basierenden Fähigkeit wiederbelebt werden. Dazu muss ein Dummycaster erzeugt und positioniert werden: http://www.hiveworkshop.com/forums/jass-resources-412/snippet-reviveunit-186696/
 * Arena: Kills werden nicht hochgezählt, wenn einer die Arena verlässt.
 * Der Zauber "Wiederbeleben" muss den Timer eines Charakters und Fellows unterbrechen.
-* Der Zauber "Wiederbelben" muss Gebäude usw. rausfiltern. Alles was normalerweise nicht durch "Auferstehung" wiederbelebt wird, muss herausgefiltert werden!
+* Der Zauber "Wiederbeleben" muss Gebäude usw. rausfiltern. Alles was normalerweise nicht durch "Auferstehung" wiederbelebt wird, muss herausgefiltert werden!
 * Beim Zauber "Linderung" Tooltips fixen und abbrechen falls Ziel bereits volle Gesundheit hat.
 * FIXED: Beim Zauber "Reihnheit" die Reichweite erhöhen.
 * Beim Zauber "Heiliger Wille" die Abklingzeit senken, notfalls Effekt verschlechtern.
 * Beim Zauber "Drohendes Unheil" sicherstellen, dass der Zauber pro Einheit nur einmal gleichzeitig angewandt werden kann.
 * Leider erlaubt der Zauber "Drohendes Unheil" auch, dass man z. B. bevor man in den Kampf zieht den Effekt auf alle Einheiten zaubert. Daher muss der Effekt zeitlich begrenzt werden!
 * Märtyrer blockieren, wenn alle Verbündeten volle Werte haben.
+* DONE: DMdF ItemType besitzt unnötige Attribute für das GUI-Inventar, das nicht mehr verwendet wird -> entfernen.
+* Tutorial: Schreintipp für alle Gebiete von Anfang an aktivieren, auch für aktivierten Schrein.
+* Tutorial: Zunächst einblenden, dass man mit "-mainmenu" ins Haupt-Menü kommt.
+* Tutorial: Einblenden, dass man eine Teleportationsrolle dabei hat.
+* Creep-Lager-Icons funktionieren im Editor aber nicht im Spiel.
+* FIXED: "Heilige Kraft" blockieren wenn Mana bereits voll ist.
+* "Märtyrer" verbraucht Mana auch wenn der Zauber gestoppt wird. Vermutlich muss der Test in die Condition ausgelagert werden.
+* "Wiederbeleben" - beschworene Einheiten rausfiltern.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

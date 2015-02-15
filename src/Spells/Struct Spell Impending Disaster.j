@@ -23,7 +23,15 @@ library StructSpellsSpellImpendingDisaster requires Asl, StructGameClasses, Stru
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.cleric(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.allocate(character, Classes.cleric(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			
+			call this.addGrimoireEntry('A0ON', 'A0OS')
+			call this.addGrimoireEntry('A0OM', 'A0OT')
+			call this.addGrimoireEntry('A0OP', 'A0OU')
+			call this.addGrimoireEntry('A0OQ', 'A0OV')
+			call this.addGrimoireEntry('A0OR', 'A0OW')
+			
+			return this
 		endmethod
 	endstruct
 

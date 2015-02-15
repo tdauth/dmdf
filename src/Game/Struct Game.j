@@ -1,5 +1,6 @@
 library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 
+	// TEST
 	// helps finding stops on metamorphosis spells
 	private function PrintImmediateStop takes unit whichUnit, string whichOrder returns nothing
 		if (whichOrder == "stop") then
@@ -25,6 +26,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 		private static constant real levelFactor = 100.0
 		private static constant real summands = 7.0
 		private static constant real dividend = 10.0
+		/// \note If the range is 0.0 or smaller it is ignored.
 		private static constant real range = 0.0
 		private static constant real unitsFactor = 1.0
 		private static constant real alliedUnitsFactor = 1.0
@@ -35,6 +37,14 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 			return GetHeroMaxXP(hero)
 		endmethod
 
+		/**
+		 * Calculates the given experience for \p character from unit \p whichUnit which is killed by \p killingUnit.
+		 * Depending on the alliance between owners the character only gets experience when the killed unit is unallied to the
+		 * character and the killing unit is allied to or owned by the owner of \p character.
+		 * Besides it checks if the character is in range if \ref thistype.range is greater than 0.0.
+		 * If the initial conditions are true the experience is calculated from the factors depending on the unit type and player of \p killingUnit.
+		 * The actual experience without any factors from a unit is calculated using \ref GetUnitXP()
+		 */
 		public static method unitExperienceForCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
 			local real result = 0.0
 			// unallied and in range
@@ -101,6 +111,9 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 	 */
 	struct GameBounty
 
+		/**
+		 * \todo In Warcraft III the bounty is set in the object editor for each unit. This formula tries to calculate it in a meaningful way but at the moment the bounty seems to be too big.
+		 */
 		public static method unitBounty takes unit whichUnit returns integer
 			return R2I(GetUnitState(whichUnit, UNIT_STATE_MAX_LIFE) + GetUnitState(whichUnit, UNIT_STATE_MAX_MANA)) / 10 + GetUnitLevel(whichUnit) * 10 /// @todo Get the right formula.
 		endmethod
@@ -157,7 +170,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 		private method onDestroy takes nothing returns nothing
 		endmethod
 
-		/// Access weather by @struct MapData.
+		/// Access weather by \ref MapData.
 		public static method weather takes nothing returns AWeather
 			return thistype.m_weather
 		endmethod
@@ -201,6 +214,11 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 			call iterator.destroy()
 		endmethod
 
+		/**
+		 * The violence system enables blood effects on killing units.
+		 * \ref randomBigBloodEffectPath() is used when the killed unit takes a lot of damage at once.
+		 * The damage handler \ref onDamageActionViolence() creates blood effects but only if \ref DMDF_VIOLENCE is set to true.
+		 */
 static if (DMDF_VIOLENCE) then
 		private static constant method bloodEffectPathDeath takes integer index returns string
 			if (index == 0) then
@@ -313,20 +331,16 @@ endif
 		endmethod
 
 		private static method createLevelTrigger takes nothing returns nothing
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_levelTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_levelTrigger, EVENT_PLAYER_HERO_LEVEL)
-			set conditionFunction = Condition(function thistype.triggerConditionLevel)
-			set triggerCondition = TriggerAddCondition(thistype.m_levelTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_levelTrigger, function thistype.triggerActionLevel)
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerAddCondition(thistype.m_levelTrigger, Condition(function thistype.triggerConditionLevel))
+			call TriggerAddAction(thistype.m_levelTrigger, function thistype.triggerActionLevel)
 		endmethod
 
 		private static method triggerActionKill takes nothing returns nothing
+			/*
+			 * Characters get only experience if a creep is being killed.
+			 */
 			if (GetOwningPlayer(GetTriggerUnit()) == Player(PLAYER_NEUTRAL_AGGRESSIVE)) then
 				call GameExperience.distributeUnitExperience(GetTriggerUnit(), GetKillingUnit())
 				call GameBounty.distributeUnitBounty(GetTriggerUnit(), GetKillingUnit())
