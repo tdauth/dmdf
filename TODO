@@ -78,7 +78,7 @@
 * FIXED: Wiederbelebungstimer von Gefolgsleuten während Video stoppen.
 * Da Drachentöterin initial unverwundbar ist sie es bei Rückverwandlung zur Schwertkämpferin auch!
 * Ursula: Dialog einbauen falls man Druide ist!
-* Geisterstunde: Hinweis sollte erscheinen wenn man zur Mühle geht. Nichts erkennbar! Außerdem Hinweis einblenden wenn man die Mitte des AOS betritt und Questziel abschließen.
+* FIXED: Geisterstunde: Hinweis sollte erscheinen wenn man zur Mühle geht. Nichts erkennbar! Außerdem Hinweis einblenden wenn man die Mitte des AOS betritt und Questziel abschließen.
 * FIXED: removeItemType() funktioniert nicht, haben eine oder keine Aufladung aber verschwinden nicht. Funktioniert NUR nicht wenn das Item gerade nicht sichtbar ist?
 * Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
 * FIXED: Außerdem wird die Anzahl der Aufladungen nicht mehr beim Ablegen oder verkaufen aktualisiert.
@@ -189,7 +189,7 @@
 * Ricman: Beutezug korrigieren.
 * Ricman: Erlernbare Fähigkeiten als Drachentöter sollen Grimoire Spells werden und im Zauberbuch erscheinen.
 * Falls noch mehr Quests: Einar hat wenig zu sagen.
-* Sisgards Quest nicht einfach ablehnbar machen!
+* FIXED: Sisgards Quest nicht einfach ablehnbar machen!
 * Trommons Quest nicht einfach ablehnbar machen!
 * Character.giveItem() und giveQuestItem() sollte die Items immer im Rucksack platzieren falls noch Platz ist und nicht auf dem Boden falls das Inventar voll und der Rucksack offen ist.
 * Alle Talk Members static machen, da es immer genau eine Talk-Instanz gibt -> Performance
@@ -198,7 +198,7 @@
 * ACharacter.setMovable() entfernen und durch jeweilige Funktionen ersetzen.
 * Viele unnötige Helpermethoden in ACharacter rauswerfen.
 * Dago retten - Bedingung einbauen, Dago darf das Gebiet nicht verlassen, sonst ist der Auftrag fehlgeschlagen! Ansonsten kann man mit Dago alles abmetzeln!
-* Gefolgsleute müssen Helden sein - wegen des Icons: Dago, Sisgard, Wigberht, Ricman.
+* DONE: Gefolgsleute müssen Helden sein - wegen des Icons: Dago, Sisgard, Wigberht, Ricman.
 * Wenn man Kuno auf dem Bauernhof anspricht sollte er sagen "Ich habe zu tun". Ansonsten sind die Sätze unlogisch.
 * Schrein direkt beim Bauernhof platzieren.
 * Video "Wigberht" fixen.
@@ -215,15 +215,15 @@
 * Quest-Pings manuell durch Hauptmenü erlauben.
 * DONE: Schreinmarkierungen auf der Minimap fixen: Sind extrem wichtig ansonsten findet man sich überhaupt nicht zurecht. Selbe Markierung wie Portale?!
 * Schreinmarkierungen auf der Minimap werden im Editor korrekt angezeigt aber nicht im Spiel, manuelle Minikartenersetzung?!
-* Warum sind Feldarbeiter unsichtbar.
-* Feldarbeiter sollen sich abends vor der Scheune unterhalten.
+* FIXED: Warum sind Feldarbeiter unsichtbar.
+* DONE: Feldarbeiter sollen sich abends vor der Scheune unterhalten.
 * FIXED: thistype.unitActor(thistype.createUnitActorAtRect()) scheint bei Videos nicht zu funktionieren. Bei saveUnitActor() funktioniert es aber. Unterschied zu createUnitActorAtRect?!
 	* AActorInterface hätte als Cast verwendet werden müssen!
 * Waldläufer bei letzter Schlacht kommen manchmal zweimal.
 * Spawns bei letzter Schlacht fixen - Gegener laufen nicht aufs Schlachtfeld, da Neutral Feindlich.
 * Gefolgsleute schickt wegen Computerkontrolle oft Einheiten automatisch zurück.
 * Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
-* Video: Wigberht: Nach Jump tötet er den Orkanführer nicht richtig.
+* FIXED: Video: Wigberht: Nach Jump tötet er den Orkanführer nicht richtig.
 * DONE: Marker entfernen, nutzlos.
 * DONE: Layer entfernen, nutzlos.
 * FIXED: "Schützen" - Stufe 2 falsch?
@@ -244,15 +244,15 @@
 * FIXED: "Drohendes Unheil" existiert zweimal. Einmal mit nur einer Stufe.
 * FIXED: "Heiliger Wille" auf sich selbst.
 * DONE: Wiederbeleben fixen: Einheiten suchen wie bisher. Herausfinden, ob die gefundene Einheit (aussortiert nach Priorität) ein Held ist oder nicht. Falls sie ein Held ist, mit ReviveHero() wiederbeleben und Werte setzen. Falls sie kein Held ist, kann sie nur mit einer auf "Auferstehung" basierenden Fähigkeit wiederbelebt werden. Dazu muss ein Dummycaster erzeugt und positioniert werden: http://www.hiveworkshop.com/forums/jass-resources-412/snippet-reviveunit-186696/
-* Arena: Kills werden nicht hochgezählt, wenn einer die Arena verlässt.
-* Der Zauber "Wiederbeleben" muss den Timer eines Charakters und Fellows unterbrechen.
-* Der Zauber "Wiederbeleben" muss Gebäude usw. rausfiltern. Alles was normalerweise nicht durch "Auferstehung" wiederbelebt wird, muss herausgefiltert werden!
-* Beim Zauber "Linderung" Tooltips fixen und abbrechen falls Ziel bereits volle Gesundheit hat.
+* FIXED: Arena: Kills werden nicht hochgezählt, wenn einer die Arena verlässt.
+* FIXED: Der Zauber "Wiederbeleben" muss den Timer eines Charakters und Fellows unterbrechen.
+* FIXED: Der Zauber "Wiederbeleben" muss Gebäude usw. rausfiltern. Alles was normalerweise nicht durch "Auferstehung" wiederbelebt wird, muss herausgefiltert werden!
+* FIXED: Beim Zauber "Linderung" Tooltips fixen und abbrechen falls Ziel bereits volle Gesundheit hat.
 * FIXED: Beim Zauber "Reihnheit" die Reichweite erhöhen.
-* Beim Zauber "Heiliger Wille" die Abklingzeit senken, notfalls Effekt verschlechtern.
+* FIXED: Beim Zauber "Heiliger Wille" die Abklingzeit senken, notfalls Effekt verschlechtern.
 * Beim Zauber "Drohendes Unheil" sicherstellen, dass der Zauber pro Einheit nur einmal gleichzeitig angewandt werden kann.
 * Leider erlaubt der Zauber "Drohendes Unheil" auch, dass man z. B. bevor man in den Kampf zieht den Effekt auf alle Einheiten zaubert. Daher muss der Effekt zeitlich begrenzt werden!
-* Märtyrer blockieren, wenn alle Verbündeten volle Werte haben.
+* FIXED: Märtyrer blockieren, wenn alle Verbündeten volle Werte haben.
 * DONE: DMdF ItemType besitzt unnötige Attribute für das GUI-Inventar, das nicht mehr verwendet wird -> entfernen.
 * Tutorial: Schreintipp für alle Gebiete von Anfang an aktivieren, auch für aktivierten Schrein.
 * Tutorial: Zunächst einblenden, dass man mit "-mainmenu" ins Haupt-Menü kommt.
@@ -260,7 +260,35 @@
 * Creep-Lager-Icons funktionieren im Editor aber nicht im Spiel.
 * FIXED: "Heilige Kraft" blockieren wenn Mana bereits voll ist.
 * "Märtyrer" verbraucht Mana auch wenn der Zauber gestoppt wird. Vermutlich muss der Test in die Condition ausgelagert werden.
-* "Wiederbeleben" - beschworene Einheiten rausfiltern.
+* FIXED: "Wiederbeleben" - beschworene Einheiten rausfiltern.
+* Klassenzauber auf Basis von "Mana und Leben auffüllen"?
+* DONE: Orkanführer mit Fähigkeiten ausstatten und in der letzten Angriffswelle mitspawnen!
+* "Dämonendiener" es können mehrere gleichzeitig beschworen werden.
+* "Dämonendiener" Stufe 3 eindeutig zu stark.
+* FIXED: "Totenbeschwörung" viel zu starke Skelette und Tooltip fixen.
+* FIXED: Spieler die nicht in der Arena sind scheinen auch feindlich mit dem Spieler Arenagegner zu sein!
+* FIXED: Double free ADialogButton wenn der Charakter eines computergesteuerten Spielers die AOS-Höhle betreten will!!!
+* AOS: Portale verwenden. Besser für Wegfindung, kein Dialog und Charakter verlässt automatisch Team -> verwandelt sich zurück.
+* FIXED: "Heilige Kraft" - Geringere Abklingzeit.
+* FIXED: "Wiederbeleben" - Effekt zeigen!
+* FIXED: "Pilzsuche" muss mehr Erfahrung geben.
+* Vampirgebietergruppe muss viel mehr droppen. Artefakte, Tränke, am besten Runen!
+* "Genesung" schadet dem Kleriker selbst. Sollte heilen aber ohne dem Kleriker selbst Leben abzuziehen.
+* FIXED: Amulett des Schreckens - Effekt prüfen, verbessern (eventuell Stille mit Angriff UND Zaubern für kurze Zeit). Außerdem Index-Fehler.
+* FIXED: "Wiederbeleben" - Einheiten werde nicht wiederbelebt - Fehler.
+* FIXED: Helden auf "Kann erweckt werden, verfällt." oder so setzen damit die Leiche nicht sofort verschwindet, nützlich für "Wiederbeleben".
+* Todesengel hat eine zu starke Lebensabsaugefähgikeit.
+* FIXED: "Böses bannen" - zu lange Abklingzeit.
+* "Böses bannen" hängt irgendwie.
+* FIXED: "Drohendes Unheil" - zu lange Abklingzeit, Manakosten dafür hoch.
+* DONE: Sisgards Dialog überarbeiten.
+* DONE: Sisgards Auftrag "Der magische Schild" umsetzen.
+* DONE: Sisgards Auftrag "Der Geist des Meisters" umsetzen.
+* Gefolgsleute - Handelsfähigkeiten erfolgreich deaktivieren und Gegenstände entfernen.
+* Sisgard braucht Zauberfähigkeiten.
+* Nekromantenartefakt für Sisgards Auftrag einbauen (besondere Fähigkeit).
+* Tränke für Sisgards Aufträge geben?
+* Die Startbrücke endlich breiter machen!
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

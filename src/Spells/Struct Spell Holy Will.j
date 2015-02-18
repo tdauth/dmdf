@@ -31,7 +31,11 @@ library StructSpellsSpellHolyWill requires Asl, StructGameClasses, StructGameSpe
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.cleric(), thistype.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.allocate(character, Classes.cleric(), thistype.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			
+			call this.addGrimoireEntry('A0PJ', 'A0PK')
+			
+			return this
 		endmethod
 	endstruct
 

@@ -168,9 +168,9 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 			call info.talk().showStartPage(character)
 		endmethod
 
-		// (Mathilda geht in oder kommt aus der Scheune)
+		// (Nach Begrüßung und Mathilda geht in oder kommt aus der Scheune)
 		private static method infoCondition8 takes AInfo info, ACharacter character returns boolean
-			return true /// @todo FIXME
+			return info.talk().infoHasBeenShownToCharacter(0, character) and RectContainsUnit(gg_rct_quest_supply_for_talras_supply_0, Npcs.mathilda())
 		endmethod
 
 		// Was machst du in der Scheune?

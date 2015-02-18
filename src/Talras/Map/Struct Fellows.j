@@ -55,8 +55,6 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_dragonSlayer.setRevival(true)
 			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_dragonSlayer.setRevivalTime(20.0)
-			call thistype.m_dragonSlayer.setDeathAnimation("Death")
-			call thistype.m_dragonSlayer.setDeathDuration(1.967)
 		endmethod
 
 		public static method dago takes nothing returns Fellow

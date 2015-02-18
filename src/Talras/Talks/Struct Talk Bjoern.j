@@ -171,7 +171,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		private static method infoAction0_0And0_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, true, tr("Er jagt irgendwo südöstlich der Burg und sollte eigentlich längst schon zurückgekehrt sein."), null)
 			// (Dago ist tot)
-			if (IsUnitDeadBJ(gg_unit_n00Q_0028)) then
+			if (IsUnitDeadBJ(Npcs.dago())) then
 				call speech(info, character, false, tr("Dago ist tot. Die Bären haben ihn gefressen."), null)
 				// (Ist der erste Charakter, der vom Tod Dagos erzählt)
 				if (not thistype(info.talk()).m_toldDeath) then
@@ -284,7 +284,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(gg_unit_n02U_0142, thistype.startPageAction)
+			local thistype this = thistype.allocate(Npcs.bjoern(), thistype.startPageAction)
 			set this.m_toldDeath = false
 			set this.m_bonus = false
 			set this.m_toldBearFight = 0

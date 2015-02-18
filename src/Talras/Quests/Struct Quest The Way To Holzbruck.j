@@ -1,4 +1,4 @@
-library StructMapQuestsQuestTheWayToHolzbruck requires Asl
+library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs
 
 	struct QuestTheWayToHolzbruck extends AQuest
 		implement Quest
@@ -15,7 +15,7 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl
 			// item 0
 			set questItem0 = AQuestItem.create(this, tr("Bittet die Nordmänner, euch nach Holzbruck zu bringen."))
 			call questItem0.setPing(true)
-			call questItem0.setPingUnit(gg_unit_n004_0038)
+			call questItem0.setPingUnit(Npcs.wigberht())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			call questItem0.setReward(AAbstractQuest.rewardExperience, 1000)
 			return this

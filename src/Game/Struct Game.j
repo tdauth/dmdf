@@ -711,7 +711,14 @@ endif
 			// enable tutorial by default for beginners
 			call Character.setTutorialForAll(true)
 
-			call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
+
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYER_SLOTS)
+				call SetPlayerHandicapXP(Player(i), 0.0)
+				set i = i + 1
+			endloop
+			//call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
 
 			call Character.addSkillGrimoirePointsToAll(MapData.startSkillPoints)
 

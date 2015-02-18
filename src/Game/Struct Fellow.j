@@ -1,11 +1,14 @@
 library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGame
 
 	/**
-	 * Provides unit revival, hero icon, disables routine and talk (talk is optional), shared control with single player or all players.
+	 * \brief Fellows are hero unit NPCs which can be shared with one or all character owners.
+	 * Provides a hero revival timer and disables routine and talk (talk is optional).
+	 * Besides it shares control with a single player or all players.
 	 * Fellow data is directly assigned to its corresponding unit and can therefore be got by static methods which do only require a unit parameter (\ref Fellow#getByUnit).
 	 * When fellows are added to any fellowship their owner is changed to \ref MapData.alliedPlayer.
 	 * \note Use \ref setDisableSellings() to remove sell ability while fellow is in fellowship. This is oftenly necessary to make all unit abilities of the fellow usable for any controlling user.
 	 * \todo If talks are still enabled it should only be available for shared players!
+	 * \note Fellow units must be heroes for proper revival.
 	 */
 	struct Fellow
 		// static initialization members
@@ -18,7 +21,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		// static members
 		private static AIntegerVector m_fellows
 		// dynamic members
-		private boolean m_hasHeroIcon
 		private boolean m_hasTalk
 		private boolean m_hasRevival
 		private string m_description
@@ -26,8 +28,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		private sound m_revivalSound
 		private real m_revivalTime
 		private boolean m_disableSellings
-		private string m_deathAnimation
-		private real m_deathDuration
 		// construction members
 		private unit m_unit
 		private ATalk m_talk
@@ -36,33 +36,13 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		private trigger m_revivalTrigger
 		private timer m_revivalTimer
 		private timerdialog m_revivalTimerDialog
-		private AHeroIcon array m_heroIcon[6] /// @todo MapData.maxPlayers
 		private AIntegerVector m_sellingsAbilities
 		private boolean m_trades
+		private boolean m_isShared
 
 		//! runtextmacro A_STRUCT_DEBUG("\"Fellow\"")
 
 		// dynamic members
-
-		public method setHeroIcon takes boolean active returns nothing
-			local integer i
-			if (active == this.m_hasHeroIcon) then
-				return
-			endif
-			set this.m_hasHeroIcon = active
-			set i = 0
-			loop
-				if (this.m_heroIcon[i] != 0) then
-					call this.m_heroIcon[i].setEnabled(active)
-				endif
-				set i = i + 1
-				exitwhen (i == MapData.maxPlayers)
-			endloop
-		endmethod
-
-		public method hasHeroIcon takes nothing returns boolean
-			return this.m_hasHeroIcon
-		endmethod
 
 		public method hasTalk takes nothing returns boolean
 			return this.m_hasTalk
@@ -107,22 +87,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		public method disableSellings takes nothing returns boolean
 			return this.m_disableSellings
 		endmethod
-		
-		public method setDeathAnimation takes string animation returns nothing
-			set this.m_deathAnimation = animation
-		endmethod
-	
-		public method deathAnimation takes nothing returns string
-			return this.m_deathAnimation
-		endmethod
-		
-		public method setDeathDuration takes real duration returns nothing
-			set this.m_deathDuration = duration
-		endmethod
-		
-		public method deathDuration takes nothing returns real
-			return this.m_deathDuration
-		endmethod
 
 		// construction members
 
@@ -141,24 +105,13 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		endmethod
 
 		// methods
+		
+		private method setShared takes boolean shared returns nothing
+			set this.m_isShared = shared
+		endmethod
 
 		public method isShared takes nothing returns boolean
-			return DmdfHashTable.global().handleBoolean(this.m_unit, "Fellow:Shared")
-		endmethod
-
-		private method setShared takes boolean shared returns nothing
-			call DmdfHashTable.global().setHandleBoolean(this.m_unit, "Fellow:Shared", shared)
-		endmethod
-
-		private method setActive takes boolean active returns nothing
-			call DmdfHashTable.global().setHandleBoolean(this.m_unit, "Fellow:Active", active)
-		endmethod
-
-		/**
-		* \return Returns true if revival (timer) of fellow is active.
-		*/
-		private method isActive takes nothing returns boolean
-			return DmdfHashTable.global().handleBoolean(this.m_unit, "Fellow:Active")
+			return this.m_isShared
 		endmethod
 
 		public method isSharedToCharacter takes nothing returns boolean
@@ -166,10 +119,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		endmethod
 
 		/**
-		* \param character If this value is 0 control is shared with all players (allied player).
-		*/
+		 * Shares the fellow with a specific character owner or all players.
+		 * \param character If this value is 0 control is shared with all players (allied player).
+		 */
 		public method shareWith takes Character character returns nothing
-			local integer i
 			debug call Print("Fellow: Unit name is " + GetUnitName(this.unit()))
 			debug call Print("Before setShared(true)")
 			call this.setShared(true)
@@ -183,41 +136,29 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call Game.setAlliedPlayerAlliedToAllCharacters()
 				call SetUnitOwner(this.m_unit, MapData.alliedPlayer, true)
 			endif
-			debug call Print("Fellow 1: " + GetUnitName(this.m_unit))
+
 			call SetUnitInvulnerable(this.m_unit, false)
 			call AUnitRoutine.disableAll(this.m_unit)
 			
 			set this.m_trades = (GetUnitAbilityLevel(this.m_unit, 'Aneu') > 0 or GetUnitAbilityLevel(this.m_unit, 'Asid') > 0 or GetUnitAbilityLevel(this.m_unit, 'Apit') > 0)
 			
 			if (this.m_trades) then
+				debug call Print("Has trades remove the abilities!")
 				call UnitRemoveAbility(this.m_unit, 'Aneu')
 				call UnitRemoveAbility(this.m_unit, 'Asid')
 				call UnitRemoveAbility(this.m_unit, 'Apit')
+				call SetItemTypeSlots(this.m_unit, 0)
 			endif
 			
-			debug call Print("Fellow 2.")
 			if (not this.m_hasTalk and this.m_talk != 0) then
 				call this.m_talk.disable()
 			endif
 			if (this.disableSellings()) then
 				/// \todo Remove selling ability using m_sellingsAbilities
 			endif
-			debug call Print("Fellow 3.")
-			if (this.m_hasHeroIcon) then
-				set i = 0
-				loop
-					exitwhen (i == MapData.maxPlayers)
-					if (this.m_heroIcon[i] != 0 and (character == 0 or GetPlayerId(character.player()) == i)) then
-						call this.m_heroIcon[i].start()
-					endif
-					set i = i + 1
-				endloop
-			endif
-			debug call Print("Fellow 4.")
 			if (this.hasRevival()) then
 				call EnableTrigger(this.m_revivalTrigger)
 			endif
-			debug call Print("Fellow 5.")
 			if (thistype.m_infoMessageJoin != null) then
 				if (character == 0) then
 					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageJoin).u(this.m_unit).result())
@@ -225,7 +166,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 					call character.displayMessage(Character.messageTypeInfo, Format(thistype.m_infoMessageJoin).u(this.m_unit).result())
 				endif
 			endif
-			debug call Print("Fellow 6.")
 			if (thistype.m_infoSoundJoin != null) then
 				if (character == 0) then
 					call StartSound(thistype.m_infoSoundJoin)
@@ -233,7 +173,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 					call PlaySoundForPlayer(character.player(), thistype.m_infoSoundJoin)
 				endif
 			endif
-			debug call Print("Fellow 7.")
 			if (this.description() != null) then
 				if (character == 0) then
 					call Character.displayUnitAcquiredToAll(GetUnitName(this.unit()), this.description())
@@ -241,9 +180,12 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 					call character.displayUnitAcquired(GetUnitName(this.unit()), this.description())
 				endif
 			endif
-			debug call Print("Fellow 8.")
 		endmethod
 
+		/**
+		 * Removes fellow from the characters group by resetting its owner and making it a normal NPC again.
+		 * It enables the NPCs talk and trading abilities if he had some.
+		 */
 		public method reset takes nothing returns nothing
 			local integer i
 			if (this.hasRevival()) then
@@ -258,6 +200,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call UnitAddAbility(this.m_unit, 'Aneu')
 				call UnitAddAbility(this.m_unit, 'Asid')
 				call UnitAddAbility(this.m_unit, 'Apit')
+				call SetItemTypeSlots(this.m_unit, 12)
 			endif
 			
 			if (this.m_talk != 0) then
@@ -286,28 +229,23 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 					call PlaySoundForPlayer(this.m_character.player(), thistype.m_infoSoundLeave)
 				endif
 			endif
+			set this.m_character = 0
 			call this.setShared(false)
 		endmethod
 
 		/**
 		 * Revives fellow at position of his death.
+		 * Does nothing if the fellow is not dead actually.
 		 */
 		public method revive takes nothing returns nothing
 			debug call Print("Revive")
 			debug call Print("NPC Revival: " + GetUnitName(this.m_unit))
 
-			if (this.isActive()) then
-				call PauseUnit(this.m_unit, false)
-				call SetUnitInvulnerable(this.m_unit, false)
-				call SetUnitLifePercentBJ(this.m_unit, 100)
-				call SetUnitManaPercentBJ(this.m_unit, 30)
-				call ShowUnit(this.m_unit, true)
-				call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Other\\Awaken\\Awaken.mdx", this.m_unit, "origin"))
-				call PlaySoundFileOnUnit("Abilities\\Spells\\Human\\ReviveHuman\\ReviveHuman.wav", this.m_unit)
+			if (IsUnitDeadBJ(this.m_unit)) then
+				call ReviveHero(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), true)
 				if (this.m_revivalMessage != null) then
 					call TransmissionFromUnit(this.m_unit, this.m_revivalMessage, this.m_revivalSound)
 				endif
-				call this.setActive(false)
 			debug else
 				debug call Print("Unit is not dead?!")
 			endif
@@ -326,6 +264,17 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				endif
 			endif
 		endmethod
+		
+		/**
+		 * Ends the revival without actually reviving the fellow.
+		 * Has to be used carefully for example when the fellow is being revived manually.
+		 */
+		public method endRevival takes nothing returns nothing
+			if (this.m_revivalTimer != null) then
+				call PauseTimer(this.m_revivalTimer)
+				call TimerDialogDisplay(this.m_revivalTimerDialog, false)
+			endif
+		endmethod
 
 		private static method timerFunctionRevive takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this")
@@ -333,41 +282,12 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call this.revive()
 		endmethod
 
-		private static method triggerConditionRevival takes nothing returns boolean
-			return GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) - GetEventDamage() <= 0.0
-		endmethod
-
-		private static method timerFunctionRemoval takes nothing returns nothing
-			call RemoveUnit(DmdfHashTable.global().handleUnit(GetExpiredTimer(), "Unit"))
-			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
-		endmethod
-
-		/// Uses synchronized time!
-		private static method removeUnitAfter takes unit whichUnit, real time returns nothing
-			local timer t = CreateTimer()
-			call TimerStart(t, time, false, function thistype.timerFunctionRemoval)
-			call DmdfHashTable.global().setHandleUnit(t, "Unit", whichUnit)
-			set t = null
-		endmethod
-
 		private static method triggerActionRevival takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local unit animationUnit
-			call DisableTrigger(GetTriggeringTrigger())
 			debug call Print("Unit is " + GetUnitName(this.m_unit))
 
-			if (this.m_hasRevival) then
-				call SetUnitInvulnerable(this.m_unit, true)
-				call PauseUnit(this.m_unit, true)
-				call ShowUnit(this.m_unit, false)
-				call SetUnitLifePercentBJ(this.m_unit, 100)
-				call this.setActive(true)
-
-				// apply dissipate animation
-				set animationUnit = CopyUnit(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), GetUnitFacing(this.m_unit), bj_UNIT_STATE_METHOD_MAXIMUM)
-				call ShowUnit(animationUnit, true)
-				call SetUnitAnimation(animationUnit, this.deathAnimation())
-				call thistype.removeUnitAfter(animationUnit, this.deathDuration())
+			if (this.hasRevival()) then
 
 				if (thistype.m_infoMessageDeath != null) then
 					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageDeath).u(this.m_unit).i(R2I(this.m_revivalTime)).result())
@@ -389,7 +309,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 					endif
 					call TimerStart(this.m_revivalTimer, this.m_revivalTime, false, function thistype.timerFunctionRevive)
 					call TimerDialogDisplay(this.m_revivalTimerDialog, true)
-					call EnableTrigger(GetTriggeringTrigger())
 				endif
 			else
 				call this.reset()
@@ -448,10 +367,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 		public static method create takes unit whichUnit, ATalk talk returns thistype
 			local thistype this = thistype.allocate()
-			local integer i
 			debug call this.print("Creating for unit " + GetUnitName(whichUnit))
 			// dynamic members
-			set this.m_hasHeroIcon = true
 			set this.m_hasTalk = false
 			set this.m_hasRevival = true
 			set this.m_description = null
@@ -459,8 +376,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_revivalSound = null
 			set this.m_revivalTime = MapData.revivalTime
 			set this.m_disableSellings = false
-			set this.m_deathAnimation = "Dissipate"
-			set this.m_deathDuration = 2.0
 			// construction members
 			set this.m_unit = whichUnit
 			set this.m_talk = talk
@@ -468,26 +383,15 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_character = 0
 			set this.m_sellingsAbilities = 0
 			set this.m_revivalTrigger = CreateTrigger()
-			call TriggerRegisterUnitEvent(this.m_revivalTrigger, whichUnit, EVENT_UNIT_DAMAGED)
-			call TriggerAddCondition(this.m_revivalTrigger, Condition(function thistype.triggerConditionRevival))
+			call TriggerRegisterUnitEvent(this.m_revivalTrigger, whichUnit, EVENT_UNIT_DEATH)
 			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionRevival)
 			call DmdfHashTable.global().setHandleInteger(this.m_revivalTrigger, "this", this)
 			call DisableTrigger(this.m_revivalTrigger)
 			set this.m_revivalTimer = null
 			set this.m_revivalTimerDialog = null
-			set i = 0
-			loop
-				if (IsPlayerPlayingUser(Player(i))) then
-					set this.m_heroIcon[i] = AHeroIcon.create(whichUnit, Player(i), Character.heroIconRefreshTime, GetRectCenterX(gg_rct_character), GetRectCenterY(gg_rct_character), 0.0)
-				else
-					set this.m_heroIcon[i] = 0
-				endif
-				set i = i + 1
-				exitwhen (i == MapData.maxPlayers)
-			endloop
-			call this.setActive(false)
 			call DmdfHashTable.global().setHandleInteger(this.m_unit, "Fellow", this)
 			set this.m_trades = false
+			set this.m_isShared = false
 			
 			call thistype.m_fellows.pushBack(this)
 
@@ -495,7 +399,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
-			local integer i
 			if (this.m_sellingsAbilities != 0) then
 				call this.m_sellingsAbilities.destroy()
 			endif
@@ -508,16 +411,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call DestroyTimerDialog(this.m_revivalTimerDialog)
 				set this.m_revivalTimerDialog = null
 			endif
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (this.m_heroIcon[i] != 0) then
-					call this.m_heroIcon[i].destroy()
-				endif
-				set i = i + 1
-			endloop
-			call DmdfHashTable.global().removeHandleBoolean(this.m_unit, "Fellow:Shared")
-			call DmdfHashTable.global().removeHandleBoolean(this.m_unit, "Fellow:Active")
 			call DmdfHashTable.global().removeHandleInteger(this.m_unit, "Fellow")
 			call thistype.m_fellows.remove(this)
 		endmethod

@@ -101,6 +101,9 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		private static boolean m_startedGameAfterIntro = false
 		private static region m_welcomeRegion
 		private static trigger m_welcomeTalrasTrigger
+		private static region m_portalsHintRegion
+		private static trigger m_portalsHintTrigger
+		private static boolean array m_portalsHintShown[6]
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -124,6 +127,15 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call RemoveRegion(thistype.m_welcomeRegion)
 			set thistype.m_welcomeRegion = null
 			call DestroyTrigger(GetTriggeringTrigger())
+		endmethod
+		
+		private static method triggerConditionPortalsHint takes nothing returns boolean
+			return ACharacter.isUnitCharacter(GetTriggerUnit()) and not thistype.m_portalsHintShown[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]
+		endmethod
+		
+		private static method triggerActionPortalsHint takes nothing returns nothing
+			call Character(ACharacter.getCharacterByUnit(GetTriggerUnit())).displayHint("Magische Kreise auf der Karte dienen als Portale. Schicken Sie Einheiten auf die Kreise, um sie an verschiedene Punkte auf der Karte zu bewegen.")
+			set thistype.m_portalsHintShown[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = true
 		endmethod
 
 		/// Required by \ref Game.
@@ -156,12 +168,22 @@ endif
 			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeNoWeather, true)
 			call Game.weather().addRect(gg_rct_area_playable)
 			
+			// player should look like neutral passive
+			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
+			
 			set thistype.m_welcomeTalrasTrigger = CreateTrigger()
 			set thistype.m_welcomeRegion = CreateRegion()
 			call RegionAddRect(thistype.m_welcomeRegion, gg_rct_quest_talras_quest_item_0)
 			call TriggerRegisterEnterRegion(thistype.m_welcomeTalrasTrigger, thistype.m_welcomeRegion, null)
 			call TriggerAddCondition(thistype.m_welcomeTalrasTrigger, Condition(function thistype.triggerConditionWelcomeTalras))
 			call TriggerAddAction(thistype.m_welcomeTalrasTrigger, function thistype.triggerActionWelcomeTalras)
+			
+			set thistype.m_portalsHintTrigger = CreateTrigger()
+			set thistype.m_portalsHintRegion = CreateRegion()
+			call RegionAddRect(thistype.m_portalsHintRegion, gg_rct_hint_portals)
+			call TriggerRegisterEnterRegion(thistype.m_portalsHintTrigger, thistype.m_portalsHintRegion, null)
+			call TriggerAddCondition(thistype.m_portalsHintTrigger, Condition(function thistype.triggerConditionPortalsHint))
+			call TriggerAddAction(thistype.m_portalsHintTrigger, function thistype.triggerActionPortalsHint)
 		endmethod
 		
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing

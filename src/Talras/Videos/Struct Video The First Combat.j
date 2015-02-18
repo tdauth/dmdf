@@ -1,5 +1,5 @@
 /// @todo Finish this video.
-library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructMapQuestsQuestTheNorsemen
+library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen
 
 	struct VideoTheFirstCombat extends AVideo
 		private integer m_actorWigberht
@@ -25,19 +25,19 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			set this.m_firstActorGroup = CreateGroup()
 			set this.m_firstAllyGroup = CreateGroup()
 			// Wigberht, 0
-			set this.m_actorWigberht = AVideo.saveUnitActor(gg_unit_n004_0038)
+			set this.m_actorWigberht = AVideo.saveUnitActor(Npcs.wigberht())
 			call SetUnitX(AVideo.unitActor(this.m_actorWigberht), GetRectCenterX(gg_rct_video_the_first_combat_wigberhts_position))
 			call SetUnitY(AVideo.unitActor(this.m_actorWigberht), GetRectCenterY(gg_rct_video_the_first_combat_wigberhts_position))
 			call SetUnitFacing(AVideo.unitActor(this.m_actorWigberht), 144.91)
 			call GroupAddUnit(this.m_firstActorGroup, AVideo.unitActor(this.m_actorWigberht))
-			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n004_0038)
+			call GroupAddUnit(this.m_firstAllyGroup, Npcs.wigberht())
 			// Ricman, 1
-			set this.m_actorRicman = AVideo.saveUnitActor(gg_unit_n016_0016)
+			set this.m_actorRicman = AVideo.saveUnitActor(Npcs.ricman())
 			call SetUnitX(AVideo.unitActor(this.m_actorRicman), GetRectCenterX(gg_rct_video_the_first_combat_ricmans_position))
 			call SetUnitY(AVideo.unitActor(this.m_actorRicman), GetRectCenterY(gg_rct_video_the_first_combat_ricmans_position))
 			call SetUnitFacing(AVideo.unitActor(this.m_actorRicman), 151.33)
 			call GroupAddUnit(this.m_firstActorGroup, AVideo.unitActor(this.m_actorRicman))
-			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n016_0016)
+			call GroupAddUnit(this.m_firstAllyGroup, Npcs.ricman())
 			//actor, do not add to first ally group!
 			call SetUnitX(AVideo.actor(), GetRectCenterX(gg_rct_video_the_first_combat_actors_position))
 			call SetUnitY(AVideo.actor(), GetRectCenterY(gg_rct_video_the_first_combat_actors_position))

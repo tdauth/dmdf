@@ -224,7 +224,13 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			//debug call Print("after removing ability")
 			//call IssueImmediateOrderById(this.character().unit(), this.ability()) // WORKAROUND: whenever an ability is being removed it closes grimoire
 			// TODO if trigger player is not owner of the character!
-			call ForceUIKeyBJ(this.character().player(), thistype.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			debug call Print("Issued UI key for player: " + GetPlayerName(this.character().player()))
+			debug call Print("Trigger player is: " + GetPlayerName(GetTriggerPlayer()))
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), thistype.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
 			//debug call Print("issued: " + GetObjectName(this.ability()))
 		endmethod
 		
@@ -860,8 +866,8 @@ endif
 		endmethod
 
 		public method show takes nothing returns nothing
-			debug call Print("Show spell " + GetObjectName(this.ability()) + ".")
-			debug call Print("Grimoire ability " + GetObjectName(this.grimoireAbility()) + ".")
+			//debug call Print("Show spell " + GetObjectName(this.ability()) + ".")
+			//debug call Print("Grimoire ability " + GetObjectName(this.grimoireAbility()) + ".")
 
 			if (this.isShown()) then
 				return

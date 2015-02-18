@@ -54,6 +54,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			else
 				call RemoveUnit(usedUnit)
 			endif
+			
+			call SetPlayerAllianceStateBJ(owner, MapData.arenaPlayer, bj_ALLIANCE_ALLIED)
+			call SetPlayerAllianceStateBJ(MapData.arenaPlayer, owner, bj_ALLIANCE_ALLIED)
+			
 			set usedUnit = null
 			set owner = null
 		endmethod
@@ -121,30 +125,38 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		endmethod
 
 		private static method createKillTrigger takes nothing returns nothing
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_killTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_killTrigger, EVENT_PLAYER_UNIT_DEATH)
-			set conditionFunction = Condition(function thistype.triggerConditionIsFromArena)
-			set triggerCondition = TriggerAddCondition(thistype.m_killTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_killTrigger, function thistype.triggerActionKill)
-			call DestroyCondition(conditionFunction)
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerAddCondition(thistype.m_killTrigger, Condition(function thistype.triggerConditionIsFromArena))
+			call TriggerAddAction(thistype.m_killTrigger, function thistype.triggerActionKill)
 		endmethod
 
 		private static method triggerActionLeave takes nothing returns nothing
 			local unit triggerUnit = GetTriggerUnit()
 			local ACharacter character = ACharacter.getCharacterByUnit(triggerUnit)
+			local integer i
 			if (character == 0) then
+				// increase score for all other unit's owner
+				set i = 0
+				loop
+					exitwhen (i == thistype.m_units.size())
+					if (GetOwningPlayer(thistype.m_units[i]) != GetOwningPlayer(triggerUnit)) then
+						set thistype.m_playerScore[GetPlayerId(GetOwningPlayer(thistype.m_units[i]))] = thistype.m_playerScore[GetPlayerId(GetOwningPlayer(thistype.m_units[i]))] + 1
+						call LeaderboardSetItemValue(thistype.m_leaderboard, LeaderboardGetPlayerIndex(thistype.m_leaderboard, GetOwningPlayer(thistype.m_units[i])), thistype.m_playerScore[GetPlayerId(GetOwningPlayer(thistype.m_units[i]))])
+						call LeaderboardSortItemsByValue(thistype.m_leaderboard, true)
+					endif
+					set i = i + 1
+				endloop
+				
+				// remove unit
 				call thistype.removeUnit(triggerUnit)
 			else
 				// increase score for computer player
 				set thistype.m_playerScore[GetPlayerId(MapData.arenaPlayer)] = thistype.m_playerScore[GetPlayerId(MapData.arenaPlayer)] + 1
 				call LeaderboardSetItemValue(thistype.m_leaderboard, LeaderboardGetPlayerIndex(thistype.m_leaderboard, MapData.arenaPlayer), thistype.m_playerScore[GetPlayerId(MapData.arenaPlayer)])
 				call LeaderboardSortItemsByValue(thistype.m_leaderboard, true)
+				
+				// remove character
 				call thistype.removeCharacter(character)
 			endif
 			set triggerUnit = null
@@ -152,20 +164,11 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		endmethod
 
 		private static method createLeaveTrigger takes nothing returns nothing
-			local event triggerEvent
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_leaveTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterLeaveRegion(thistype.m_leaveTrigger, thistype.m_region, null)
-			set conditionFunction = Condition(function thistype.triggerConditionIsFromArena)
-			set triggerCondition = TriggerAddCondition(thistype.m_leaveTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
+			call TriggerRegisterLeaveRegion(thistype.m_leaveTrigger, thistype.m_region, null)
+			call TriggerAddCondition(thistype.m_leaveTrigger, Condition(function thistype.triggerConditionIsFromArena))
+			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 			call DisableTrigger(thistype.m_leaveTrigger)
-			call DestroyCondition(conditionFunction)
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
 		endmethod
 
 		private static method createLeaderboard takes nothing returns nothing
@@ -194,6 +197,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				set thistype.m_playerScore[i] = 0
+				call SetPlayerAllianceStateBJ(Player(i), MapData.arenaPlayer, bj_ALLIANCE_ALLIED)
+				call SetPlayerAllianceStateBJ(MapData.arenaPlayer, Player(i), bj_ALLIANCE_ALLIED)
 				set i = i + 1
 			endloop
 			set thistype.m_winner = null
@@ -278,6 +283,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			if (thistype.m_units.size() == thistype.maxUnits) then
 				call thistype.startFight()
 			endif
+			
+			call SetPlayerAllianceStateBJ(owner, MapData.arenaPlayer, bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(MapData.arenaPlayer, owner, bj_ALLIANCE_UNALLIED)
+			
 			set owner = null
 		endmethod
 

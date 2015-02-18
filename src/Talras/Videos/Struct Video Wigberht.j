@@ -26,7 +26,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			set this.m_actorWigberht = thistype.saveUnitActor(Npcs.wigberht())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_wigberht_wigberhts_position)
 			call SetUnitFacing(thistype.unitActor(this.m_actorWigberht), 90.0)
-			call IssueImmediateOrder(thistype.unitActor(this.m_actorWigberht), "holdposition")
+			call IssueImmediateOrder(thistype.unitActor(this.m_actorWigberht), "stop")
 			debug call Print("Init 3")
 			set this.m_actorRicman = thistype.saveUnitActor(Npcs.ricman())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_wigberht_ricmans_position)
@@ -215,34 +215,40 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireMissile.mdx", GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3))) /// \todo direction of orc leader!
 			call SetUnitExploded(this.m_actorOrcLeader, true)
 			call KillUnit(this.m_actorOrcLeader)
+			
+			if (wait(5.0)) then
+				return
+			endif
 
 			// talk with characters
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(1.0)) then
 				return
 			endif
+			
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_wigberht_actor_end)
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_wigberht_ricman_end)
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_wigberht_wigberht_end)
+			call ResetUnitAnimation(thistype.unitActor(this.m_actorWigberht))
 
 			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorWigberht))
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorWigberht), thistype.actor())
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorRicman), thistype.actor())
 
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_14, true, 0.0)
 
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			
 			if (wait(1.50)) then
 				return
 			endif
 
 			call TransmissionFromUnit(thistype.unitActor(this.m_actorWigberht), tr("Ihr habt mir bewiesen, dass ihr kämpfen könnt und Mut besitzt. Berichtet dem Herzog, dass wir ihn gegen die Dunkelelfen und Orks unterstützen werden."), null)
+			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			// TEST
-			if (wait(5.0)) then
-				return
-			endif
 			debug call Print("before stop")
 			call this.stop()
 			debug call Print("After stop")

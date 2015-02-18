@@ -8,7 +8,11 @@ library StructSpellsSpellExorcizeEvil requires Asl, StructGameClasses, StructGam
 		public static constant integer maxLevel = 1
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.cleric(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			
+			call this.addGrimoireEntry('A0P7', 'A0P8')
+			
+			return this
 		endmethod
 	endstruct
 

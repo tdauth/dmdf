@@ -31,11 +31,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			local player user = character.player()
 			call PlayMusic("Music\\TheDrumCave.mp3") /// @todo for user
 			call MapData.setCameraBoundsToAosForPlayer.evaluate(user)
-			call SetUnitToRandomPointOnRect(character.unit(), gg_rct_aos_no_team_start)
-			call character.setFacing(180.0)
 			call character.setCamera()
-			call character.setMovable(true)
-			call Shrines.aosShrineNeutral().enableForCharacter(character, false)
 			if (not thistype.m_characterHasEntered) then
 				set thistype.m_characterHasEntered = true
 				/// @todo Play video The Vision.
@@ -52,11 +48,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			local player user = character.player()
 			call StopMusic(false) /// @todo for user
 			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(user) // set camera bounds before rect!
-			call character.setRect(gg_rct_aos_outside)
-			call character.setFacing(270.0)
 			call character.setCamera()
-			call character.setMovable(true)
-			call Shrines.aosShrineOutside().enableForCharacter(character, false)
 			set user = null
 		endmethod
 
@@ -177,109 +169,40 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call LeaderboardDisplay(thistype.m_leaderboard, false)
 		endmethod
 
-		private static method triggerConditionEnter takes nothing returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = ACharacter.isUnitCharacter(triggerUnit)
-			set triggerUnit = null
-			return result
-		endmethod
-
-		private static method dialogButtonActionEnterYes takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			call thistype.characterJoins(ACharacter.playerCharacter(user))
-			set user = null
-		endmethod
-
-		private static method dialogButtonActionEnterNo takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			call ACharacter.playerCharacter(user).setMovable(true)
-			set user = null
+		private static method triggerConditionIsCharacter takes nothing returns boolean
+			return ACharacter.isUnitCharacter(GetTriggerUnit())
 		endmethod
 
 		private static method triggerActionEnter takes nothing returns nothing
 			local unit triggerUnit = GetTriggerUnit()
 			local Character character = ACharacter.getCharacterByUnit(triggerUnit)
 			local player user = character.player()
-			call character.setMovable(false)
-			call AGui.playerGui(user).dialog().clear()
-			call AGui.playerGui(user).dialog().setMessage(tr("Möchten Sie die Höhle betreten?"))
-			call AGui.playerGui(user).dialog().addDialogButton(tr("Ja"), 'J', thistype.dialogButtonActionEnterYes)
-			call AGui.playerGui(user).dialog().addDialogButton(tr("Nein"), 'N', thistype.dialogButtonActionEnterNo)
-			call AGui.playerGui(user).dialog().show()
+			call thistype.characterJoins(character)
 			set triggerUnit = null
 			set user = null
 		endmethod
 
 		private static method createEnterTrigger takes nothing returns nothing
-			local event triggerEvent
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_enterTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterEnterRectSimple(thistype.m_enterTrigger, gg_rct_aos_enter)
-			set conditionFunction = Condition(function thistype.triggerConditionEnter)
-			set triggerCondition = TriggerAddCondition(thistype.m_enterTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_enterTrigger, function thistype.triggerActionEnter)
-			set triggerEvent = null
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
-		endmethod
-
-		private static method dialogButtonActionLeaveYes takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			call thistype.characterLeaves(ACharacter.playerCharacter(user))
-			set user = null
-		endmethod
-
-		private static method dialogButtonActionLeaveNo takes ADialogButton dialogButton returns nothing
-			local player user = dialogButton.dialog().player()
-			call ACharacter.playerCharacter(user).setMovable(true)
-			set user = null
-		endmethod
-
-		private static method triggerConditionLeave takes nothing returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local Character character = ACharacter.getCharacterByUnit(triggerUnit)
-			local boolean result = false
-			if (character != 0) then
-				set result = not thistype.teamContainsCharacter(character)
-				if (not result) then
-					call character.displayMessage(ACharacter.messageTypeError, tr("Sie müssen sich zurückverwandeln, bevor Sie die Höhle verlassen."))
-				endif
-			endif
-			set triggerUnit = null
-			return result
+			call TriggerRegisterEnterRectSimple(thistype.m_enterTrigger, gg_rct_area_aos)
+			call TriggerAddCondition(thistype.m_enterTrigger, Condition(function thistype.triggerConditionIsCharacter))
+			call TriggerAddAction(thistype.m_enterTrigger, function thistype.triggerActionEnter)
 		endmethod
 
 		private static method triggerActionLeave takes nothing returns nothing
 			local unit triggerUnit = GetTriggerUnit()
 			local Character character = ACharacter.getCharacterByUnit(triggerUnit)
 			local player user = character.player()
-			call character.setMovable(false)
-			call AGui.playerGui(user).dialog().clear()
-			call AGui.playerGui(user).dialog().setMessage(tr("Möchten Sie die Höhle verlassen?"))
-			call AGui.playerGui(user).dialog().addDialogButton(tr("Ja"), 'J', thistype.dialogButtonActionLeaveYes)
-			call AGui.playerGui(user).dialog().addDialogButton(tr("Nein"), 'N', thistype.dialogButtonActionLeaveNo)
-			call AGui.playerGui(user).dialog().show()
+			call thistype.characterLeaves(character)
 			set triggerUnit = null
 			set user = null
 		endmethod
 
 		private static method createLeaveTrigger takes nothing returns nothing
-			local event triggerEvent
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_leaveTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterEnterRectSimple(thistype.m_leaveTrigger, gg_rct_aos_leave)
-			set conditionFunction = Condition(function thistype.triggerConditionLeave)
-			set triggerCondition = TriggerAddCondition(thistype.m_leaveTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
-			set triggerEvent = null
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerRegisterLeaveRectSimple(thistype.m_leaveTrigger, gg_rct_area_aos)
+			call TriggerAddCondition(thistype.m_leaveTrigger, Condition(function thistype.triggerConditionIsCharacter))
+			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 		endmethod
 
 		private static method timerFunctionSpawn takes nothing returns nothing

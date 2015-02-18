@@ -8,6 +8,14 @@ library StructSpellsSpellAbatement requires Asl, StructGameClasses, StructGameSp
 		public static constant integer maxLevel = 5
 		private static constant real healStartValue = 50.0
 		private static constant real healLevelValue = 50.0
+		
+		private method condition takes nothing returns boolean
+			local boolean result = GetUnitState(GetSpellTargetUnit(), UNIT_STATE_LIFE) < GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MAX_LIFE)
+			if (not result) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel hat bereits volle Gesundheit."))
+			endif
+			return result
+		endmethod
 
 		private method action takes nothing returns nothing
 			local unit target = GetSpellTargetUnit()
@@ -22,7 +30,7 @@ library StructSpellsSpellAbatement requires Asl, StructGameClasses, StructGameSp
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
 			call this.addGrimoireEntry('A0OD', 'A0OI')
 			call this.addGrimoireEntry('A0OE', 'A0OJ')

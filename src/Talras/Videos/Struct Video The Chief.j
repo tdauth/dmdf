@@ -1,4 +1,4 @@
-library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapQuestsQuestTheNorsemen
+library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen
 
 	struct VideoTheChief extends AVideo
 		private unit m_actorWigberht
@@ -14,11 +14,11 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapQues
 			call PlayThematicMusic("Music\\TheChief.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_0, true, 0.0)
 
-			set this.m_actorWigberht = thistype.unitActor(thistype.saveUnitActor(gg_unit_n004_0038))
+			set this.m_actorWigberht = thistype.unitActor(thistype.saveUnitActor(Npcs.wigberht()))
 			call SetUnitPositionRect(this.m_actorWigberht, gg_rct_video_the_chief_wigberhts_position)
 			call SetUnitFacing(this.m_actorWigberht, 257.38)
 
-			set this.m_actorRicman = thistype.unitActor(thistype.saveUnitActor(gg_unit_n016_0016))
+			set this.m_actorRicman = thistype.unitActor(thistype.saveUnitActor(Npcs.ricman()))
 			call SetUnitPositionRect(this.m_actorRicman, gg_rct_video_the_chief_ricmans_position)
 			call SetUnitFacing(this.m_actorRicman, 299.92)
 			call UnitRemoveAbility(this.m_actorRicman, 'Aneu') // disable arrow

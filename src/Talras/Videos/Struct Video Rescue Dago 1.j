@@ -27,7 +27,7 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 
 
 			// Dago
-			set this.m_actorDago = thistype.unitActor(thistype.saveUnitActor(gg_unit_n00Q_0028))
+			set this.m_actorDago = thistype.unitActor(thistype.saveUnitActor(Npcs.dago()))
 			call SetUnitPositionRect(this.m_actorDago, gg_rct_video_rescue_dago_dagos_position)
 			call SetUnitOwner(this.m_actorDago, Player(PLAYER_NEUTRAL_PASSIVE), true) // change owner since he's shared
 

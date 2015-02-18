@@ -5,7 +5,9 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 		// castle
 		// Sisgard
+		private static ARoutine m_sisgardCastSpellRoutine
 		private static NpcRoutineWithFacing m_sisgardStandsNearHerHouse
+		private static NpcRoutineWithFacing m_sisgardCastsSpells
 		// Agihard
 		private static NpcRoutineWithFacing m_agihardStandsNearArena
 		// Björn
@@ -42,6 +44,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 		// village/farm
 		// Mathilda
+		private static NpcTalksRoutine m_mathildaTalksAtBarn
 		private static NpcRoutineWithFacing m_mathildaMovesTo0
 		private static NpcTalksRoutine m_mathildaTalks
 		private static NpcRoutineWithFacing m_mathildaMovesTo1
@@ -80,6 +83,24 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 		private method onDestroy takes nothing returns nothing
 		endmethod
+		
+		private static method sisgardCastSpellEndAction takes NpcRoutineWithFacing period returns nothing
+			call ResetUnitAnimation(period.unit())
+		endmethod
+
+		private static method sisgardCastSpellTargetAction takes NpcRoutineWithFacing period returns nothing
+			call SetUnitFacing(period.unit(), period.facing())
+			call QueueUnitAnimation(period.unit(), "Spell")
+			call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Darksummoning\\DarkSummonTarget.mdl", period.unit(), "chest"))
+			call TriggerSleepAction(1.0)
+			call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Undead\\Darksummoning\\DarkSummonTarget.mdl", GetRectCenterX(gg_rct_waypoint_sisgard_spell_0), GetRectCenterY(gg_rct_waypoint_sisgard_spell_0)))
+			call TriggerSleepAction(1.0)
+			call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Undead\\Darksummoning\\DarkSummonTarget.mdl", GetRectCenterX(gg_rct_waypoint_sisgard_spell_1), GetRectCenterY(gg_rct_waypoint_sisgard_spell_1)))
+			call TriggerSleepAction(1.0)
+			call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Undead\\Darksummoning\\DarkSummonTarget.mdl", GetRectCenterX(gg_rct_waypoint_sisgard_spell_2), GetRectCenterY(gg_rct_waypoint_sisgard_spell_2)))
+			call TriggerSleepAction(4.0)
+			call AContinueRoutineLoop(period, thistype.sisgardCastSpellTargetAction)
+		endmethod
 
 		// NOTE take a look into struct Routines which ARoutinePeriod sub types you have to create and which parameters you could set for them!!!
 		public static method init takes nothing returns nothing
@@ -88,8 +109,11 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_wigberhtTraining.setFacing(252.39)
 
 			// Sisgard
-			set thistype.m_sisgardStandsNearHerHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.sisgard(), 0.0, 23.59, gg_rct_waypoint_sisgard_0)
+			set thistype.m_sisgardStandsNearHerHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.sisgard(), MapData.evening, MapData.midday, gg_rct_waypoint_sisgard_0)
 			call thistype.m_sisgardStandsNearHerHouse.setFacing(211.35)
+			set thistype.m_sisgardCastSpellRoutine = ARoutine.create(true, true, 0, 0, thistype.sisgardCastSpellEndAction, thistype.sisgardCastSpellTargetAction)
+			set thistype.m_sisgardCastsSpells = NpcRoutineWithFacing.create(thistype.m_sisgardCastSpellRoutine, Npcs.sisgard(), MapData.midday, MapData.evening, gg_rct_waypoint_sisgard_1)
+			call thistype.m_sisgardCastsSpells.setFacing(95.26)
 
 			// Agihard
 			set thistype.m_agihardStandsNearArena = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.agihard(), 0.0, 23.59, gg_rct_waypoint_agihard_0)
@@ -155,7 +179,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_wielandDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.wieland(), 14.00, MapData.evening, gg_rct_waypoint_wieland_2)
 			
 			// Mathilda
-			set thistype.m_mathildaMovesTo0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.mathilda(), MapData.evening, 13.00, gg_rct_waypoint_mathilda_0)
+			set thistype.m_mathildaTalksAtBarn = NpcTalksRoutine.create(Routines.moveTo(), Npcs.mathilda(), MapData.evening, MapData.morning, gg_rct_waypoint_mathilda_1)
+			call thistype.m_mathildaTalksAtBarn.setPartner(gg_unit_n02J_0013)
+			call thistype.m_mathildaTalksAtBarn.setFacing(118.56)
+			set thistype.m_mathildaMovesTo0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.mathilda(), MapData.morning, 13.00, gg_rct_waypoint_mathilda_0)
 			call thistype.m_mathildaMovesTo0.setFacing(74.69)
 			set thistype.m_mathildaTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.mathilda(), 13.00, 16.00, gg_rct_waypoint_mathilda_0)
 			call thistype.m_mathildaTalks.setPartner(Npcs.lothar())

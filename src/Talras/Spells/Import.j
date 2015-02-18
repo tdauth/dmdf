@@ -1,11 +1,10 @@
 //! import "Talras/Spells/Struct Spell Amulet Of Foresight.j"
-//! import "Talras/Spells/Struct Spell Amulet Of Terror.j"
 //! import "Talras/Spells/Struct Spell Aos Ring.j"
 //! import "Talras/Spells/Struct Spell Magical Seed.j"
 //! import "Talras/Spells/Struct Spell Scroll Of The Realm Of The Dead.j"
 //! import "Talras/Spells/Struct Spell Unearth.j"
 
-library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesight, StructMapSpellsSpellAmuletOfTerror, StructMapSpellsSpellAosRing, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellScrollOfTheRealmOfTheDead, StructMapSpellsSpellUnearth
+library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesight, StructMapSpellsSpellAosRing, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellScrollOfTheRealmOfTheDead, StructMapSpellsSpellUnearth
 
 	/// Init non-character spells!
 	function initMapSpells takes nothing returns nothing
@@ -19,7 +18,6 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesi
 
 	function initMapCharacterSpells takes Character character returns nothing
 		call SpellAmuletOfForesight.create(character)
-		call SpellAmuletOfTerror.create(character)
 		/// \todo Filter class for Baldars ring
 		// Baldar's ring
 		if (character.class() == Classes.astralModifier()) then

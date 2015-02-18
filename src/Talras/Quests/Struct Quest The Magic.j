@@ -1,12 +1,14 @@
-library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter
+library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter, StructMapMapNpcs
 
 	struct QuestTheMagic extends AQuest
 		public static constant integer itemTypeId = 'I00Z'
+		private trigger m_hintTrigger
 
 		implement CharacterQuest
 
 		public stub method enable takes nothing returns boolean
 			call Character(this.character()).giveQuestItem(thistype.itemTypeId)
+			call EnableTrigger(this.m_hintTrigger)
 			return super.enableUntil(0)
 		endmethod
 
@@ -27,8 +29,19 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
-			call questItem.quest().character().displayMessage(ACharacter.messageTypeInfo, tr("Es passiert nichts ..."))
-			call questItem.quest().questItem(1).enable()
+			local thistype this = thistype(questItem.quest())
+			call DmdfHashTable.global().destroyTrigger(this.m_hintTrigger)
+			set this.m_hintTrigger = null
+			call this.displayUpdateMessage(tr("Es passiert nichts ..."))
+			call this.questItem(1).enable()
+		endmethod
+		
+		private static method triggerConditionHint takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			if (GetTriggerUnit() == this.character().unit()) then
+				call this.displayUpdateMessage(tr("Runensteinkreis gefunden."))
+			endif
+			return false
 		endmethod
 
 		private static method create takes Character character returns thistype
@@ -49,9 +62,16 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter
 			// item 1
 			set questItem1 = AQuestItem.create(this, tr("Berichte Sisgard davon."))
 			call questItem1.setPing(true)
-			call questItem1.setPingUnit(gg_unit_n01B_0144)
+			call questItem1.setPingUnit(Npcs.sisgard())
 			call questItem1.setPingColour(100.0, 100.0, 100.0)
 			//call questItem1.setState(AAbstractQuest.stateNew)
+			
+			set this.m_hintTrigger = CreateTrigger()
+			call TriggerRegisterEnterRectSimple(this.m_hintTrigger, gg_rct_weather_rune_circle)
+			call TriggerAddCondition(this.m_hintTrigger, Condition(function thistype.triggerConditionHint))
+			call DmdfHashTable.global().setHandleInteger(this.m_hintTrigger, "this", this)
+			call DisableTrigger(this.m_hintTrigger)
+			
 			return this
 		endmethod
 	endstruct

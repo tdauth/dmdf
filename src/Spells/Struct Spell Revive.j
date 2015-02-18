@@ -1,5 +1,5 @@
 /// Cleric
-library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
+library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell, StructGameFellow
 
 	/**
 	* Lässt eine befreundete Einheit mit X% ihrer Lebens- und Y% ihrer Manapunkte wieder auferstehen.
@@ -20,11 +20,14 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 		private static constant real manaStartValue = 0.30
 		private static constant real manaLevelValue = 0.10
 		private static constant integer ressurectAbilityId = 'A0O2'
-		private static constant integer reviverUnitTypeId = 'n01B'
+		private static constant integer reviverUnitTypeId = 'h01B'
 		private static unit reviver
 
+		/**
+		 * Summoned or structure units should not be revived.
+		 */
 		private static method filter takes nothing returns boolean
-			return IsUnitDeadBJ(GetFilterUnit())
+			return IsUnitDeadBJ(GetFilterUnit()) and not IsUnitType(GetFilterUnit(), UNIT_TYPE_STRUCTURE) and not IsUnitType(GetFilterUnit(), UNIT_TYPE_SUMMONED)
 		endmethod
 
 		private method action takes nothing returns nothing
@@ -76,6 +79,8 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 						debug call Print("Revive error, no target")
 					debug endif
 					
+					debug call Print("Target is: " + GetUnitName(target))
+					
 					// uses the following system as inspiration: http://www.hiveworkshop.com/forums/jass-resources-412/snippet-reviveunit-186696/
 					// is hero
 					if (IsUnitType(target, UNIT_TYPE_HERO) == true) then
@@ -85,8 +90,17 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 						call SetUnitX(reviver, GetUnitX(target))
 						call SetUnitY(reviver, GetUnitY(target))
 						call PauseUnit(thistype.reviver, false)
-						set success = IssueImmediateOrderById(reviver, 852094)
+						set success = IssueImmediateOrder(reviver, "resurrection")
 						call PauseUnit(thistype.reviver, true)
+					endif
+					
+					// make sure that automatic revivals are canceled or hidden
+					if (success) then
+						if (ACharacter.isUnitCharacter(target)) then
+							call ACharacter.getCharacterByUnit(target).revival().end()
+						elseif (Fellow.getByUnit(target) != 0) then
+							call Fellow.getByUnit(target).endRevival()
+						endif
 					endif
 					
 					set targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "origin")

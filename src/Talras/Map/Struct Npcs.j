@@ -47,8 +47,9 @@ library StructMapMapNpcs
 			set thistype.m_bjoern = gg_unit_n02U_0142
 			set thistype.m_bjoernsWife = gg_unit_n02V_0146
 			set thistype.m_brogo = gg_unit_n020_0012
-			set thistype.m_dago = gg_unit_n00Q_0028
-			set thistype.m_dragonSlayer = gg_unit_n02I_0156
+			set thistype.m_dago = gg_unit_H01D_0144
+			set thistype.m_dragonSlayer = gg_unit_H01F_0038
+			call SetUnitInvulnerable(thistype.m_dragonSlayer, true) // set invulnerable manually since it has a metamorphosis skill
 			set thistype.m_einar = gg_unit_n01Z_0155
 			set thistype.m_ferdinand = gg_unit_n01J_0154
 			set thistype.m_fulco = gg_unit_n012_0115
@@ -64,15 +65,15 @@ library StructMapMapNpcs
 			set thistype.m_markward = gg_unit_n014_0117
 			set thistype.m_mathilda = gg_unit_n01T_0202
 			set thistype.m_osman = gg_unit_n00R_0101
-			set thistype.m_ricman = gg_unit_n016_0016
-			set thistype.m_sisgard = gg_unit_n01B_0144
+			set thistype.m_ricman = gg_unit_H01E_0028
+			set thistype.m_sisgard = gg_unit_H014_0156
 			set thistype.m_tanka = gg_unit_n023_0011
 			set thistype.m_tellborn = gg_unit_n011_0113
 			set thistype.m_tobias = gg_unit_n01C_0064
 			set thistype.m_trommon = gg_unit_n021_0004
 			set thistype.m_ursula = gg_unit_n01U_0203
 			set thistype.m_wieland = gg_unit_n01Y_0006
-			set thistype.m_wigberht = gg_unit_n004_0038
+			set thistype.m_wigberht = gg_unit_H01C_0228
 		endmethod
 
 		public static method agihard takes nothing returns unit

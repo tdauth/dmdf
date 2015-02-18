@@ -203,7 +203,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcCrossbow, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcPython, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(gg_unit_n016_0016, tr("Diese verdammten Hunde haben Verstärkung gerufen. Macht euch bereit Männer!"), null)
+				call TransmissionFromUnit(Npcs.ricman(), tr("Diese verdammten Hunde haben Verstärkung gerufen. Macht euch bereit Männer!"), null)
 				call SmartCameraPanRect(gg_rct_quest_the_norsemen_enemy_spawn_1, 0.0)
 
 			elseif (this.m_currentGroupIndex == 2) then
@@ -213,7 +213,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(gg_unit_n016_0016, tr("Schon wieder ein neuer Trupp."), null)
+				call TransmissionFromUnit(Npcs.ricman(), tr("Schon wieder ein neuer Trupp."), null)
 			elseif (this.m_currentGroupIndex == 3) then
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 
@@ -221,15 +221,16 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(gg_unit_n016_0016, tr("Schlachtet sie!"), null)
+				call TransmissionFromUnit(Npcs.ricman(), tr("Schlachtet sie!"), null)
 			elseif (this.m_currentGroupIndex == 4) then
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
+				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcLeader, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
 
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(gg_unit_n016_0016, tr("Kommt schon Männer! Wir haben es fast geschafft!"), null)
+				call TransmissionFromUnit(Npcs.ricman(), tr("Kommt schon Männer! Wir haben es fast geschafft!"), null)
 			endif
 			call this.m_currentGroup.pointOrder("patrol", GetRectCenterX(gg_rct_quest_the_norsemen_enemy_target), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_target))
 			set owner = null
@@ -334,6 +335,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call VideoTheChief.video.evaluate().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call questItem.quest().displayUpdate()
+			call questItem.quest().displayUpdateMessage("Sprecht mit Wigberht.")
 		endmethod
 		
 		private static method groupFunctionRemoveUnit takes unit enumUnit returns nothing
@@ -411,7 +413,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			set questItem1 = AQuestItem.create(this, tr("Beweist eure Kampfstärke, indem ihr die Nordmänner im Kampf unterstützt."))
 			call questItem1.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted1)
 			call questItem1.setPing(true)
-			call questItem1.setPingUnit(gg_unit_n004_0038)
+			call questItem1.setPingUnit(Npcs.wigberht())
 			call questItem1.setPingColour(100.0, 100.0, 100.0)
 			call questItem1.setReward(AAbstractQuest.rewardExperience, 5000)
 			// item 2

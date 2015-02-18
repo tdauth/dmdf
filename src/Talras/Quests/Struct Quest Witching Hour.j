@@ -8,12 +8,21 @@ library StructMapQuestsQuestWitchingHour requires Asl, StructMapMapNpcs
 			return super.enableUntil(0)
 		endmethod
 
-		private static method stateEventCompleted1 takes AQuestItem questItem, trigger whichTrigger returns nothing
+		private static method stateEventCompleted2 takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_area_aos)
+			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_witching_hour_mill)
 		endmethod
 
-		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
-			return GetTriggerUnit() == questItem.character().unit()
+		private static method stateConditionCompleted2 takes AQuestItem questItem returns boolean
+			if (GetTriggerUnit() == questItem.character().unit()) then
+				if (RectContainsUnit(gg_rct_area_aos, GetTriggerUnit())) then
+					call questItem.quest().displayUpdateMessage("Du hast eine Höhle entdeckt aus der das Trommeln kommt.")
+					return true
+				endif
+				call questItem.quest().displayUpdateMessage("Bei der Mühle ist nichts Auffälliges zu finden, was auf Geister hinweist. Das Trommeln muss von einem anderen Ort kommen.")
+			endif
+		
+			return false
 		endmethod
 
 		private static method stateActionCompleted takes AQuestItem questItem returns nothing
@@ -48,6 +57,8 @@ library StructMapQuestsQuestWitchingHour requires Asl, StructMapMapNpcs
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			// item 2
 			set questItem = AQuestItem.create(this, tr("Kümmere dich selbst um das Problem, indem du zur Mühle gehst und die Gegend dort erkundest."))
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted2)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateConditionCompleted2)
 			call questItem.setReward(thistype.rewardExperience, 200)
 			// item 3
 			set questItem = AQuestItem.create(this, tr("Berichte Guntrich von deiner Entdeckung."))
