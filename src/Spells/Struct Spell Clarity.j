@@ -15,7 +15,15 @@ library StructSpellsSpellClarity requires Asl, StructGameClasses, StructGameSpel
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			
+			call this.addGrimoireEntry('A0OX', 'A0P2')
+			call this.addGrimoireEntry('A0OY', 'A0P3')
+			call this.addGrimoireEntry('A0OZ', 'A0P4')
+			call this.addGrimoireEntry('A0P0', 'A0P5')
+			call this.addGrimoireEntry('A0P1', 'A0P6')
+			
+			return this
 		endmethod
 	endstruct
 

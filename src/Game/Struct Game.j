@@ -428,7 +428,7 @@ endif
 			call ACharacter.init(true, true, false, true, false, true, true, true, DMDF_INFO_LOG)
 			call AClass.init(1, 1)
 			call initSpeechSkip(AKeyEscape, 0.10)
-			call AInventory.init('I001', 'I000', 'A015', false, tr("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt."), null, tr("Rucksack ist voll."),  tr("\"%s\" im Rucksack verstaut."), tr("Gegenstand konnte nicht verschoben werden."), tr("Die Seitengegenstände können nicht abgelegt werden."), tr("Die Seitengegenstände können nicht verschoben werden."), tr("Der Gegendstand gehört einem anderen Spieler."))
+			call AInventory.init('I001', 'I000', 'A015', false, tr("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt."), null, tr("Rucksack ist voll."), null, tr("Gegenstand konnte nicht verschoben werden."), tr("Die Seitengegenstände können nicht abgelegt werden."), tr("Die Seitengegenstände können nicht verschoben werden."), tr("Der Gegendstand gehört einem anderen Spieler."))
 			call AItemType.init(tr("Gegenstand benötigt eine höhere Stufe."), tr("Gegenstand benötigt mehr Stärke."), tr("Gegenstand benötigt mehr Geschick."), tr("Gegenstand benötigt mehr Wissen."), tr("Gegenstand benötigt eine andere Charakterklasse."))
 			call AQuest.init0(true, true, "Sound\\Interface\\QuestLog.wav", tr("|c00ffcc00NEUER AUFTRAG|r"), tr("|c00ffcc00AUFTRAG ABGESCHLOSSEN|r"), tr("|c00ffcc00AUFTRAG FEHLGESCHLAGEN|r"), tr("|c00ffcc00AUFTRAGS-AKTUALISIERUNG|r"), tr("- %s"))
 			call AVideo.init(2, 4.0, tr("Spieler %s möchte das Video überspringen."), tr("Video wird übersprungen."))

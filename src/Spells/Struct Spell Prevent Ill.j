@@ -44,7 +44,15 @@ library StructSpellsSpellPreventIll requires Asl, StructGameClasses, StructGameS
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			
+			call this.addGrimoireEntry('A0QN', 'A0QS')
+			call this.addGrimoireEntry('A0QO', 'A0QT')
+			call this.addGrimoireEntry('A0QP', 'A0QU')
+			call this.addGrimoireEntry('A0QQ', 'A0QV')
+			call this.addGrimoireEntry('A0QR', 'A0QW')
+			
+			return this
 		endmethod
 	endstruct
 

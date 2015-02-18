@@ -64,6 +64,8 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellRevive.create.evaluate(character)
 				call SpellTorment.create.evaluate(character)
 				call SpellBlessing.create.evaluate(character)
+				call SpellConversion.create.evaluate(character)
+				call SpellGodsFavor.create.evaluate(character)
 			elseif (class == thistype.m_necromancer) then
 				call SpellAncestorPact.create.evaluate(character)
 				call SpellConsume.create.evaluate(character)
