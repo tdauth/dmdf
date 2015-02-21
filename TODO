@@ -110,13 +110,6 @@
 * Schlafen gehen funktioniert immer noch nicht bei manuellem Setzen der Tageszeit.
 * FIXED: Taverne, Kameraeinstellungen zurücksetzen.
 * Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
-* AOS-Verwandlung stürtzt ab da ja das Item während des Ausführens der Fähigkeit entfernt wird.
-* Metamorphose stürtzt immer ab wenn Fähigkeit entfernt wird. Daher Fähigkeit manuell während des Zauberns hinzufügen. Ist nur weil das Inventar manuell entfernt wird und das Zauberbuch nicht zur verwandelten Einheit übernommen wird (wegen speziellen Grimoiresystems mit gleichen IDs?)
-* "Krähengestalt" darf nicht aus Zauberbuch heraus gewirkt werden, sonst stürtzt das Spiel ab, vermutlich das Gleiche für "Bärengestalt".
-* Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
-* Bei manueller Metamorphose wird die Fähigkeit in anderen Auslösern ungültig. Komischerweise ist es die permanente Fähigkeit, die eigentlich nicht entfernt werden sollte.
-* Bei überarbeiteter Version: Stürzt bei automatischem Order ab. Vielleicht müssen alle Zauberbücher manuell vorher entfernt werden?!
-* Manuelle Metamorphose liegt NICHT an mehreren Metamorphosezaubern.
 * Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
 * DONE: Feuergeschoss etc. funktionieren alle vielleicht nicht weil GetSpellTarget() auch nicht geht?
 * Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
@@ -169,7 +162,6 @@
 * Agihard, Arena: "Wer kämpft in deiner Arena?" - "Leute aus dem ganzen Land, Namensauflistung!".
 * DONE: Auto skill bei PC-Spielern ist nutzlos geworden. Das neue Zauberbuch funktioniert auch vom Verbündeten aus. Daher Autoskill entfernen!
 * DONE: Quest "Magischer Samen" fixen.
-* Bei Wiederbelebung in Metamorphose rückverwandeln.
 * DONE: Lothars Honigtopfquest fixen.
 * Lothar: Neues Quest mit Weinreben auf dem Mühlberg. Weinreben ernten.
 * FIXED: Goldmünzenbeutel von Wegelagerern durch einsammelbares Item ersetzen. Sonst bekommt Frontmann alle. Außerdem deutlich weniger Gold.
@@ -214,7 +206,7 @@
 * Quest-Pings deaktivierbar machen (pro Spieler).
 * Quest-Pings manuell durch Hauptmenü erlauben.
 * DONE: Schreinmarkierungen auf der Minimap fixen: Sind extrem wichtig ansonsten findet man sich überhaupt nicht zurecht. Selbe Markierung wie Portale?!
-* Schreinmarkierungen auf der Minimap werden im Editor korrekt angezeigt aber nicht im Spiel, manuelle Minikartenersetzung?!
+* FIXED: Schreinmarkierungen auf der Minimap werden im Editor korrekt angezeigt aber nicht im Spiel, manuelle Minikartenersetzung?! - lag an Heuschreckenfähigkeit
 * FIXED: Warum sind Feldarbeiter unsichtbar.
 * DONE: Feldarbeiter sollen sich abends vor der Scheune unterhalten.
 * FIXED: thistype.unitActor(thistype.createUnitActorAtRect()) scheint bei Videos nicht zu funktionieren. Bei saveUnitActor() funktioniert es aber. Unterschied zu createUnitActorAtRect?!
@@ -231,7 +223,6 @@
 * FIXED: "Märtyrer" keine Gebäude oder mechanische Einheiten heilen!
 * FIXED: "Blenden" ist viel zu mies - Dauer ist viel zu lange!
 * FIXED: Man kann Lothar nicht vom Honigtopf berichten.
-* Metamorphose: Nach Rückverwandlung können Befehle nicht mehr unterbrochen werden!
 * Hellebarde: Schmetterangriff muss Icon verlieren!!! Gegenstandsfähigkeit!
 * Standarte: Befehlsaura muss Icon verlieren!!! Gegenstandsfähigkeit!
 * Video "Das erste Gefecht": Einheiten blockieren sich gegenseitig beim Laufen. Nicht in der selben Gruppe?!
@@ -268,7 +259,7 @@
 * FIXED: "Totenbeschwörung" viel zu starke Skelette und Tooltip fixen.
 * FIXED: Spieler die nicht in der Arena sind scheinen auch feindlich mit dem Spieler Arenagegner zu sein!
 * FIXED: Double free ADialogButton wenn der Charakter eines computergesteuerten Spielers die AOS-Höhle betreten will!!!
-* AOS: Portale verwenden. Besser für Wegfindung, kein Dialog und Charakter verlässt automatisch Team -> verwandelt sich zurück.
+* FIXED: AOS: Portale verwenden. Besser für Wegfindung, kein Dialog und Charakter verlässt automatisch Team -> verwandelt sich zurück.
 * FIXED: "Heilige Kraft" - Geringere Abklingzeit.
 * FIXED: "Wiederbeleben" - Effekt zeigen!
 * FIXED: "Pilzsuche" muss mehr Erfahrung geben.
@@ -286,9 +277,29 @@
 * DONE: Sisgards Auftrag "Der Geist des Meisters" umsetzen.
 * Gefolgsleute - Handelsfähigkeiten erfolgreich deaktivieren und Gegenstände entfernen.
 * Sisgard braucht Zauberfähigkeiten.
-* Nekromantenartefakt für Sisgards Auftrag einbauen (besondere Fähigkeit).
+* DONE: Nekromantenartefakt für Sisgards Auftrag einbauen (besondere Fähigkeit).
 * Tränke für Sisgards Aufträge geben?
 * Die Startbrücke endlich breiter machen!
+* FIXED: Sisgards neues Quest: Gespräch sofort deaktivieren während ihr Meister beschworen wird.
+Metamorphose-Bugs:
+* FIXED: AOS-Verwandlung stürtzt ab da ja das Item während des Ausführens der Fähigkeit entfernt wird.
+* FIXED: Metamorphose stürtzt immer ab wenn Fähigkeit entfernt wird. Daher Fähigkeit manuell während des Zauberns hinzufügen. Ist nur weil das Inventar manuell entfernt wird und das Zauberbuch nicht zur verwandelten Einheit übernommen wird (wegen speziellen Grimoiresystems mit gleichen IDs?)
+* FIXED: "Krähengestalt" darf nicht aus Zauberbuch heraus gewirkt werden, sonst stürtzt das Spiel ab, vermutlich das Gleiche für "Bärengestalt".
+* Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
+* FIXED: Bei manueller Metamorphose wird die Fähigkeit in anderen Auslösern ungültig. Komischerweise ist es die permanente Fähigkeit, die eigentlich nicht entfernt werden sollte.
+* FIXED: Bei überarbeiteter Version: Stürzt bei automatischem Order ab. Vielleicht müssen alle Zauberbücher manuell vorher entfernt werden?!
+* FIXED: Manuelle Metamorphose liegt NICHT an mehreren Metamorphosezaubern.
+* FIXED: Metamorphose: Nach Rückverwandlung können Befehle nicht mehr unterbrochen werden! -> TriggerSleepAction() nach stoppen bei Rückverwandlung und dann erst rückverwandeln.
+* FIXED: Bei Wiederbelebung in Metamorphose rückverwandeln.
+* FIXED:  Metamorphose: Bei zweiter Verwandlung stürtzt das Spiel ab. Liegt nicht an Verwandlung selbst, sondern stürtzt bereits durch das Entfernen der Zauber ab! Lag auch an keinem vorhandenen TriggerSleepAction()-Aufruf bei Rückverwandlung.
+* FIXED: Metamorphose: Stürtzt noch früher ab auch wenn gar nichts ausgeführt wird und Items automatisch durch wc3 gedroppt werden. Vermutlich ist der Zauber nach dem neuen Hinzufügen fehlerhaft?
+* FIXED: Metamorphose: Rückverwandlung macht vermutlich alles kaputt, da Einheit auch nicht mehr richtig bewegt werden kann!
+* FIXED: Metamorphose: Laufbug wird versacht durch stoppen und sofortiges Ausführen des Verwandlungsbefehls. Wartezeit zwischen Stoppen und Rückverwandlung wird benötigt.
+* FIXED: Metamorphose: Bei manueller Ausführung des Zaubers kostet er Mana, Mana vorher auffüllen und dann wieder zurücksetzen.
+* Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
+* FIXED: Metamorphose: Bei Wiederblebung wird onRestore() nicht aufgerufen.
+* Letzte Schlacht, Tötungsevent nicht auf Neutral Feindlich begrenzen. Einheiten könnten übernommen werden (vom Kleriker).
+* FIXED: "Trainierst du nachts?" nach Begrüßung.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.

@@ -153,6 +153,8 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		private static ItemType m_wingsOfDeathAngel
 		private static ItemType m_vampireNecklace
 		private static RangeItemType m_hauntedStaff
+		// Sisgard's reward
+		private static ItemType m_necromancerHelmet
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -366,6 +368,13 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			
 			set thistype.m_hauntedStaff = ItemType.createSimple('I03V', ItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_hauntedStaff.addAbility('A0NB', true)
+			
+			// Sisgard's reward
+			set thistype.m_necromancerHelmet = ItemType.createSimple('I044', ItemType.equipmentTypeHeaddress)
+			call thistype.m_necromancerHelmet.addAbility('AId4', true)
+			call thistype.m_necromancerHelmet.addAbility('AIi4', true)
+			call thistype.m_necromancerHelmet.addAbility('AIva', false)
+			
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType

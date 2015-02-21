@@ -20,6 +20,7 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local unit master
 			local effect whichEffect
+			call TalkSisgard.talk.evaluate().disable() // prevent any talks which would lead to side effects
 			call PauseUnit(Npcs.sisgard(), true)
 			call SetUnitInvulnerable(Npcs.sisgard(), true)
 			call TransmissionFromUnit(Npcs.sisgard(), tr("Da sind wir, nun lasse ich den Zauber wirken!"), null)
@@ -59,6 +60,7 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 			call TriggerSleepAction(GetSimpleTransmissionDuration(null))
 			call PauseUnit(Npcs.sisgard(), false)
 			call SetUnitInvulnerable(Npcs.sisgard(), false)
+			call TalkSisgard.talk.evaluate().enable()
 			call questItem.quest().questItem(1).enable()
 		endmethod
 

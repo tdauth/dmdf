@@ -26,7 +26,6 @@ endif
 		private trigger m_workerTrigger
 		private AIntegerVector m_heroIcons
 		private unit m_worker
-		private integer m_morphAbilityId
 		private boolean m_isMorphed
 
 		// dynamic members
@@ -210,13 +209,9 @@ endif
 		 * The spell levels has been stored in \ref realSpellLevels() while calling \ref morph().
 		 * \note Has to be called just after the character's unit restores from morphing.
 		 */
-		public method restoreUnit takes integer abilityId returns boolean
+		public method restoreUnit takes nothing returns boolean
 			if (not DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
 				debug call Print("Has not been morphed before!")
-				return false
-			endif
-			if (abilityId != this.m_morphAbilityId) then
-				debug call Print("Restoring from ability " + GetAbilityName(abilityId) + " while being morphed with ability " + GetAbilityName(this.m_morphAbilityId))
 				return false
 			endif
 			debug call Print("Readding spell levels")
@@ -227,6 +222,7 @@ endif
 			call this.inventory().enable()
 			debug call Print("Restoring Grimoire UI")
 			call this.grimoire().updateUi.evaluate()
+			debug call Print("After restoring grimoire UI")
 			set this.m_isMorphed = false
 			
 			return true
@@ -238,15 +234,7 @@ endif
 		* \note Has to be called just before the character's unit morphes.
 		* \param abilityId Id of the ability which has to be casted to morph the character.
 		*/
-		public method morph takes integer abilityId returns boolean
-			if (this.isMorphed()) then
-				debug call Print("Morphing with ability: " + GetAbilityName(abilityId) + " is already morphed.")
-			
-				return false
-			endif
-		
-			debug call Print("Morphing with ability: " + GetAbilityName(abilityId))
-			
+		public method morph takes nothing returns boolean
 			debug if (GetUnitAbilityLevel(this.unit(), 'AInv') == 0) then
 			debug call Print("It is too late to store the items! Add a delay for the morphing ability!")
 			debug endif
@@ -259,9 +247,9 @@ endif
 			debug call Print("Disabling inventory")
 			// Should remove but store all items.
 			call this.inventory().disable()
+			debug call Print("After disabling inventory")
 			
 			set this.m_isMorphed = true
-			set this.m_morphAbilityId = abilityId
 			
 			return true
 		endmethod

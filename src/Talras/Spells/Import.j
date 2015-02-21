@@ -19,10 +19,9 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesi
 	function initMapCharacterSpells takes Character character returns nothing
 		call SpellAmuletOfForesight.create(character)
 		/// \todo Filter class for Baldars ring
-		// Baldar's ring
+		// Baldar's and Haldar's rings
 		if (character.class() == Classes.astralModifier()) then
 			call SpellAosRing.create(character, 'A04V', true) // Astral Modifier
-			// Haldar's ring
 			call SpellAosRing.create(character, 'A0BR', false) // Astral Modifier
 		elseif (character.class() == Classes.dragonSlayer()) then
 			call SpellAosRing.create(character, 'A0BL', true) // Dragon Slayer

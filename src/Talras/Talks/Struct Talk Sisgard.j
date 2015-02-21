@@ -199,7 +199,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 		endmethod
 
 		// Ich habe den magischen Schild ausprobiert.
-		private static method infoActionTriedTheShield takes AInfo info, ACharacter character returns nothing
+		private static method infoActionTriedTheShield takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Ich habe den magischen Schild ausprobiert."), null)
 			call speech(info, character, true, tr("Und du lebst noch, also muss es funktioniert haben!"), null)
 			call speech(info, character, false, tr("Ja, das hat es. Ein Glück für mich!"), null)
@@ -209,6 +209,13 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, true, tr("Ich habe die Zauberspruchrollen natürlich präpariert, um zu erfahren, ob du sie richtig gewirkt hast und wie ich sehe hast du mich nicht belogen. Von mir aus können wir jederzeit gemeinsam losziehen."), null)
 			// Auftrag „Der magische Schild“ abgeschlossen
 			call QuestTheMagicalShield.characterQuest(character).complete()
+			// Belohung übergeben
+			call character.giveItem('I00D')
+			call character.giveItem('I00D')
+			call character.giveItem('I00D')
+			call character.giveItem('I00E')
+			call character.giveItem('I00E')
+			call character.giveItem('I00E')
 			call info.talk().showStartPage(character)
 		endmethod
 		
@@ -251,14 +258,22 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 		endmethod
 
 		// Du hast deinen Meister wieder getroffen!
-		private static method infoActionMetYourMaster takes AInfo info, ACharacter character returns nothing
+		private static method infoActionMetYourMaster takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Du hast deinen Meister wieder getroffen!"), null)
 			call speech(info, character, true, tr("Ja, das habe ich! Ich kann dir gar nicht sagen wie sehr ich nun in deiner Schuld stehe Fremder."), null)
 			call speech(info, character, true, tr("Ich schenke dir zum Dank dieses mächtige Artefakt, das uns der Nekromant damals überreichte. Es soll von nun an dir gehören."), null)
 			call speech(info, character, true, tr("Du hast mir Erlösung gebracht und dafür danke ich dir auf ewig!"), null)
 			// Auftrag „Der Geist des Meisters“ abgeschlossen
 			call QuestTheGhostOfTheMaster.characterQuest(character).complete()
-			// TODO Artefakt übergeben
+			// Belohungsgegenstände
+			call character.giveItem('I045')
+			call character.giveItem('I045')
+			call character.giveItem('I0FF')
+			call character.giveItem('I0FF')
+			call character.giveItem('I00G')
+			call character.giveItem('I00G')
+			// Artefakt übergeben
+			call character.giveItem('I044')
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -282,6 +297,8 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 				call speech(info, character, true, tr("Na wenn du mich so nett bittest. Kann's gar nicht erwarten. Geh voraus, ich folge dir."), null)
 				call info.talk().close(character)
 				call Fellows.sisgard().shareWith(character)
+				call UnitAddAbility(Npcs.sisgard(), 'A0PY')
+				call UnitAddAbility(Npcs.sisgard(), 'A0QY')
 				call IssueTargetOrder(info.talk().unit(), "move", character.unit())
 			endif
 		endmethod
@@ -296,6 +313,8 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, false, tr("Ich komm alleine klar."), null)
 			call speech(info, character, true, tr("Gut, du weißt ja, wo du mich findest."), null)
 			call info.talk().close(character)
+			call UnitRemoveAbility(Npcs.sisgard(), 'A0PY')
+			call UnitRemoveAbility(Npcs.sisgard(), 'A0QY')
 			call Fellows.sisgard().reset()
 		endmethod
 

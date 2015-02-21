@@ -26,8 +26,8 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			
 			if (zoologyLevel > 0) then
 				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
-				//call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
-				//call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
+				call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
+				call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
 			endif
 		endmethod
 	endstruct
@@ -47,6 +47,7 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			call this.m_metamorphosis.setFavoriteAbility(thistype.favouriteAbilityId)
 			call this.m_metamorphosis.setOrderString("bearform")
 			call this.m_metamorphosis.setUnorderString("unbearform")
+			call this.m_metamorphosis.setManaCost(50.0)
 			call this.addGrimoireEntry('A0C7', 'A0CC')
 			call this.addGrimoireEntry('A0C8', 'A0CD')
 			call this.addGrimoireEntry('A0C9', 'A0CE')

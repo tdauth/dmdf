@@ -4,7 +4,6 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 	struct SpellCrowFormMetamorphosis extends SpellMetamorphosis
 
 		public stub method onMorph takes nothing returns nothing
-			/*
 			local integer level
 			local integer alphaLevel = 0
 			local integer zoologyLevel = 0
@@ -27,10 +26,9 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			
 			if (zoologyLevel > 0) then
 				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
-				//call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
-				//call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
+				call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
+				call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
 			endif
-			*/
 		endmethod
 		
 	endstruct
@@ -50,6 +48,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			call this.m_metamorphosis.setFavoriteAbility(thistype.favouriteAbilityId)
 			call this.m_metamorphosis.setOrderString("ravenform")
 			call this.m_metamorphosis.setUnorderString("unravenform")
+			call this.m_metamorphosis.setManaCost(50.0)
 			call this.addGrimoireEntry('A0CH', 'A0CI')
 			call this.addGrimoireEntry('A0CJ', 'A0CN')
 			call this.addGrimoireEntry('A0CK', 'A0CO')

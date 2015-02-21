@@ -17,6 +17,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		private integer m_unitTypeId
 		private string m_orderString
 		private string m_unorderString
+		private real m_manaCost
 		private trigger m_channelTrigger
 		private trigger m_revivalTrigger
 		private boolean m_isMorphed
@@ -61,6 +62,19 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			return this.m_unorderString
 		endmethod
 		
+		public method setManaCost takes real manaCost returns nothing
+			set this.m_manaCost = manaCost
+		endmethod
+		
+		/**
+		 * If there is any mana cost to the metamorphosis ability it has to be specified to make sure that
+		 * it does always succeed if there is enough mana.
+		 * The mana cost is required for the dummy ability which is added automatically permanently and cast by this system.
+		 */
+		public method manaCost takes nothing returns real
+			return this.m_manaCost
+		endmethod
+		
 		public method isMorphed takes nothing returns boolean
 			return this.m_isMorphed
 		endmethod
@@ -74,7 +88,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			return true
 		endmethod
 		
-		/// Called after unit has morphed.
+		/// Called after unit has morphed with .evaluate().
 		public stub method onMorph takes nothing returns nothing
 		endmethod
 		
@@ -83,13 +97,15 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			return true
 		endmethod
 		
-		/// Called after unit has been restored.
+		/// Called after unit has been restored with .evaluate().
 		public stub method onRestore takes nothing returns nothing
 		endmethod
 		
+		/**
+		 * Waits until \p whichUnit's type becomes \p unitTypeId.
+		 */
 		public static method waitForRestoration takes unit whichUnit, integer unitTypeId returns nothing
 			loop
-				debug call Print("Checking if unit is no more: " + GetObjectName(unitTypeId) + ": " + I2S(unitTypeId))
 				exitwhen (GetUnitTypeId(whichUnit) != unitTypeId)
 				call TriggerSleepAction(1.0)
 			endloop
@@ -105,80 +121,83 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		private static method triggerConditionStart takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local boolean result = GetSpellAbilityId() != null and GetSpellAbilityId() == this.ability() and GetTriggerUnit() == this.character().unit()
-			debug call Print("Condition start for spell: " + GetAbilityName(this.ability()) + " with casted spell " + GetAbilityName(GetSpellAbilityId()) + " and caster " + GetUnitName(GetTriggerUnit()))
-			debug if (GetSpellAbilityId() == null) then
-			debug call Print("Spell is null")
-			debug endif
-			debug if (result) then
-			debug call Print("Success")
-			debug else
-			debug call Print("Fail")
-			debug endif
 			return result
+		endmethod
+		
+		/**
+		 * Restores inventory and grimoire of a character.
+		 * Calls \ref onRestore() with .evaluate() and changes \ref isMorphed()
+		 * \note Does not issue any order/ability.
+		 */
+		private method restoreUnit takes nothing returns boolean
+			/**
+			 * Now readd all removed abilities and restory the inventory.
+			 */
+			if (Character(this.character()).restoreUnit()) then
+				set this.m_isMorphed = false
+				call this.onRestore.evaluate()
+				
+				return true
+			endif
+			
+			return false
 		endmethod
 		
 		private static method triggerActionStart takes nothing returns nothing
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local boolean result = false
+			
 			/*
 			 * Disable trigger to make sure that it does not react on manually issued order in this trigger.
 			 * Otherwise it would result in an endless loop.
 			 */
 			call DisableTrigger(this.m_channelTrigger)
+			/*
+			 * Stop the spell immediately since we have to check if morph or restoration is allowed.
+			 * In case of morph we have to store spell levels and inventory and to remove it first.
+			 */
 			call IssueImmediateOrder(this.character().unit(), "stop") // stop spell immediately
 			debug call Print("Start for spell: " + GetObjectName(this.ability()))
 			
 			// morph
 			if (not Character(this.character()).isMorphed()) then
-				debug call Print("Is not morphed")
 				if (this.canMorph.evaluate()) then
-					debug call Print("Can morph")
-					
 					/*
 					 * Now store everything before casting the ability.
 					 */
-					if (Character(this.character()).morph(this.ability())) then
+					if (Character(this.character()).morph()) then
 						debug if (GetUnitTypeId(this.character().unit()) == this.unitTypeId()) then
 							debug call Print("Error: Already morphed!")
 						debug endif
-						debug call Print("Morphed successfully for spell: " + GetObjectName(this.ability()))
 						
 						// wait until all triggers have been run which have spell events to avoid any null abilities
 						// without this call the game crashes since other triggers are called based on an already removed ability
 						call TriggerSleepAction(0.0)
 						
 						/*
-						 *  The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.	
-						 * Removing all grimoire abilities including the ability itself is only done for safety to make sure that no grimoire
-						 * ability is being cast which is in a spell book.
-						 */
+						*  The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.	
+						* Removing all grimoire abilities including the ability itself is only done for safety to make sure that no grimoire
+						* ability is being cast which is in a spell book.
+						*/
 						call Character(this.character()).grimoire().removeAllSpellsFromUnit()
 						
 						/**
 						 * Now add a permanent "dummy" ability which is neither in a spell book nor belongs to any item.
 						 */
-						set result = UnitAddAbility(this.character().unit(), this.ability())
-						debug if (result) then
-						debug call Print("Successfully added: " + GetAbilityName(this.ability()))
-						debug else
-						debug call Print("Unable to add: " + GetAbilityName(this.ability()))
-						debug endif
-						set result = UnitMakeAbilityPermanent(this.character().unit(), true, this.ability())
-						debug if (result) then
-						debug call Print("Successfully made permanent: " + GetAbilityName(this.ability()))
-						debug else
-						debug call Print("Unable to make permanent: " + GetAbilityName(this.ability()))
-						debug endif
-						
-						debug call Print("Casting dummy ability with order: " + this.orderString())
+						call UnitAddAbility(this.character().unit(), this.ability())
+						call UnitMakeAbilityPermanent(this.character().unit(), true, this.ability())
 			
+						/*
+						 * Make sure that the unit has full mana.
+						 */
+						call SetUnitState(this.character().unit(), UNIT_STATE_MANA, GetUnitState(this.character().unit(), UNIT_STATE_MANA) + this.manaCost())
 						/*
 						 * Use the corresponding order string to cast the added permanent "dummy" ability.
 						 */
 						if (IssueImmediateOrder(this.character().unit(), this.orderString())) then
-							debug call Print("Successful morph with spell: " + GetAbilityName(this.ability()))
+							set this.m_isMorphed = true
 							// morph spells are expected to morph immediately
-							call this.onMorph.execute()
+							call this.onMorph.evaluate()
 						else
 							debug call Print("Error on calling order " + this.orderString())
 						endif
@@ -188,14 +207,26 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 					else
 						debug call Print("Error on morphing.")
 					endif
-					
 				debug else
 					debug call Print("Cannot morph for spell: " + GetObjectName(this.ability()))
 				endif
 			// restore
 			else
+				/*
+				 * If this overwritten method returns false restoration is canceled.
+				 */
 				if (this.canRestore.evaluate()) then
-					debug call Print("Restoring from metamorphosis with ability " + GetAbilityName(this.ability()))
+					/**
+					 * wait time is required after stopping otherwise if the order is issued immediately after stopping the unit cannot be moved around properly.
+					 * Orders cannot be canceled anymore.
+					 */
+					call TriggerSleepAction(0.0)
+					
+					/*
+					 * Make sure that the unit has full mana.
+					 */
+					call SetUnitState(this.character().unit(), UNIT_STATE_MANA, GetUnitState(this.character().unit(), UNIT_STATE_MANA) + this.manaCost())
+					
 					/*
 					 * Order ability again.
 					 * In this case no replacement dummy ability is required since the morphed unit never has an inventory nor a spell book.
@@ -203,14 +234,11 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 					 * Therefore the order string must be ordered again.
 					 */
 					if (IssueImmediateOrder(this.character().unit(), this.orderString())) then
-						debug call Print("Waiting for restoration")
 						/*
 						 * Wait until the unit has unmorphed successfully since the casting time is not known.
 						 * This also waits with the removal of the "dummy" ability so it won't be null in any other trigger.
 						 */
 						call thistype.waitForRestoration(this.character().unit(), this.unitTypeId())
-						debug call Print("Restore from morph with spell: "  + GetAbilityName(this.ability()))
-						debug call Print("Trigger ability is: "  + GetAbilityName(GetSpellAbilityId()))
 						// wait until all triggers have been run which have spell events to avoid any null abilities
 						// without this call the game crashes since other triggers are called based on an already removed ability
 						call TriggerSleepAction(0.0)
@@ -221,32 +249,31 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						/**
 						 * Now readd all removed abilities and restory the inventory.
 						 */
-						if (Character(this.character()).restoreUnit(this.ability())) then
-							debug call Print("Restored successfully for spell: " + GetObjectName(this.ability()))
-							set this.m_isMorphed = false
-							call this.onRestore.execute()
-						endif
+						call this.restoreUnit()
 					debug else
 						debug call Print("Error on calling unorder " + this.orderString())
 					endif
+					
 				debug else
 					debug call Print("Cannot restore for spell: " + GetObjectName(this.ability()))
 					
 				endif
 			endif
 			
-			debug call Print("Enabling trigger")
-
 			call EnableTrigger(this.m_channelTrigger)
 		endmethod
 		
 		private static method triggerConditionRevival takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			debug call Print("Revival: " + GetAbilityName(this.ability()))
-			debug if (this.isMorphed()) then
-			debug call Print("Is morphed")
-			debug endif
 			return this.isMorphed()
+		endmethod
+		
+		private static method triggerActionRevival takes nothing returns nothing
+			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			/**
+			 * Now readd all removed abilities and restory the inventory.
+			 */
+			call this.restoreUnit()
 		endmethod
 		
 		public static method create takes Character character, integer abilityId returns thistype
@@ -255,6 +282,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			set this.m_favoriteAbility = 0
 			set this.m_ability = abilityId
 			set this.m_unitTypeId = 0
+			set this.m_manaCost = 0.0
 			
 			set this.m_channelTrigger = CreateTrigger()
 			// register action before cast has finished!
@@ -264,10 +292,11 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			call AHashTable.global().setHandleInteger(this.m_channelTrigger, "this", this)
 			
 			// unmorph unit if it is being revived and has been morphed
+			// when a character is revived it has automatically its original unit form but needs to be restored (skills etc.)
 			set this.m_revivalTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(this.m_revivalTrigger, this.character().unit(), EVENT_UNIT_HERO_REVIVE_FINISH)
 			call TriggerAddCondition(this.m_revivalTrigger, Condition(function thistype.triggerConditionRevival))
-			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionStart)
+			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionRevival)
 			call AHashTable.global().setHandleInteger(this.m_revivalTrigger, "this", this)
 			
 			return this
