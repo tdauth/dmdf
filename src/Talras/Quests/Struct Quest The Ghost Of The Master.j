@@ -52,10 +52,11 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 			call TransmissionFromUnit(master, tr("Lebe wohl!"), null)
 			call TriggerSleepAction(GetSimpleTransmissionDuration(null))
 			call QueueUnitAnimation(master, "Spell")
-			call TriggerSleepAction(2.0)
+			call TriggerSleepAction(4.0)
 			call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Undead\\Darksummoning\\DarkSummonTarget.mdl", GetRectCenterX(gg_rct_quest_the_ghost_of_the_master_graveyard_spell), GetRectCenterY(gg_rct_quest_the_ghost_of_the_master_graveyard_spell)))
 			call RemoveUnit(master)
 			set master = null
+			call TriggerSleepAction(2.0)
 			call TransmissionFromUnit(Npcs.sisgard(), tr("Meister? Das ist doch wieder typisch für ihn! Er ist eben einfach zu menschenscheu."), null)
 			call TriggerSleepAction(GetSimpleTransmissionDuration(null))
 			call PauseUnit(Npcs.sisgard(), false)

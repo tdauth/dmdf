@@ -297,8 +297,6 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 				call speech(info, character, true, tr("Na wenn du mich so nett bittest. Kann's gar nicht erwarten. Geh voraus, ich folge dir."), null)
 				call info.talk().close(character)
 				call Fellows.sisgard().shareWith(character)
-				call UnitAddAbility(Npcs.sisgard(), 'A0PY')
-				call UnitAddAbility(Npcs.sisgard(), 'A0QY')
 				call IssueTargetOrder(info.talk().unit(), "move", character.unit())
 			endif
 		endmethod
@@ -313,8 +311,6 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, false, tr("Ich komm alleine klar."), null)
 			call speech(info, character, true, tr("Gut, du weißt ja, wo du mich findest."), null)
 			call info.talk().close(character)
-			call UnitRemoveAbility(Npcs.sisgard(), 'A0PY')
-			call UnitRemoveAbility(Npcs.sisgard(), 'A0QY')
 			call Fellows.sisgard().reset()
 		endmethod
 

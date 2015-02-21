@@ -33,7 +33,7 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 					set this.m_shieldEffect = null
 					return true
 				else
-					call UnitDamageTargetBJ(GetTriggerUnit(), GetTriggerUnit(), 1000.0, ATTACK_TYPE_PIERCE, DAMAGE_TYPE_NORMAL)
+					call UnitDamageTargetBJ(GetTriggerUnit(), GetTriggerUnit(), 5000.0, ATTACK_TYPE_PIERCE, DAMAGE_TYPE_NORMAL)
 				endif
 			endif
 			

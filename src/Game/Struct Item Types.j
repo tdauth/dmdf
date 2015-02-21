@@ -371,7 +371,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			
 			// Sisgard's reward
 			set thistype.m_necromancerHelmet = ItemType.createSimple('I044', ItemType.equipmentTypeHeaddress)
-			call thistype.m_necromancerHelmet.addAbility('AId4', true)
+			call thistype.m_necromancerHelmet.addAbility('AId5', true)
 			call thistype.m_necromancerHelmet.addAbility('AIi4', true)
 			call thistype.m_necromancerHelmet.addAbility('AIva', false)
 			

@@ -300,6 +300,9 @@ Metamorphose-Bugs:
 * FIXED: Metamorphose: Bei Wiederblebung wird onRestore() nicht aufgerufen.
 * Letzte Schlacht, Tötungsevent nicht auf Neutral Feindlich begrenzen. Einheiten könnten übernommen werden (vom Kleriker).
 * FIXED: "Trainierst du nachts?" nach Begrüßung.
+* FIXED: Bei Gefolgsleuten Ricman und Sisgard einen Stand einbauen, der die Gegenstände verkauft. Vorteil ist: Auch wenn die Gefolgsleute unterwegs sind, können Gegenstände erworben werden. Außerdem müssen Handelsfähigkeiten nicht deaktiviert werden.
+* DONE: Nekromant sollte als Untoter klassifiziert sein. Kann sich selbst heilen.
+* "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Einfach auf Basis der Monstrositätsfähigkeit neu erstellen.
 
 2014-10-05 Tamino Dauth <tamino@cdauth.eu>
 * Wenn ein Neben-Quest abgeschlossen wird, sollten die Verbündeten NPCs von computergesteuerten Spielern die Erfahrung erhalten, falls das Quest insgesamt das erste Mal abgeschlossen wird. Dadurch sind sie auf dem selben Stand wie ein Charakter eines von Menschen gesteuerten Spielers.
