@@ -408,7 +408,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call questItem0.setPing(true)
 			call questItem0.setPingCoordinatesFromRect(gg_rct_quest_the_norsemen_ping)
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
-			call questItem0.setReward(AAbstractQuest.rewardExperience, 1000)
+			call questItem0.setReward(AAbstractQuest.rewardExperience, 500)
 			// item 1
 			set questItem1 = AQuestItem.create(this, tr("Beweist eure Kampfstärke, indem ihr die Nordmänner im Kampf unterstützt."))
 			call questItem1.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted1)

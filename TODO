@@ -146,9 +146,9 @@
 * Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
 * Letzte Schlacht, Tötungsevent nicht auf Neutral Feindlich begrenzen. Einheiten könnten übernommen werden (vom Kleriker).
 * "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Kleriker muss Fernkämpfer sein.
-* OpLimit in Klassenauswahl: addClassSpellsFromCharacter.evaluate(character) hilft nicht.
-* Grimoire: Nicht immer UI aktualisieren, updateUi als Parameter übergeben z. B. bei mehreren Zaubern auf einmal sparen
-* Grimoire.updateUi() - Performance verbessern z. B. wenn die Seite sich nicht geändert hat oder wenn der aktuelle Zauber sich nicht geändert hat.
+* FIXED: OpLimit in Klassenauswahl: addClassSpellsFromCharacter.evaluate(character) hilft nicht.
+* FIXED: Grimoire: Nicht immer UI aktualisieren, updateUi als Parameter übergeben z. B. bei mehreren Zaubern auf einmal sparen
+* DEPRECATED: Grimoire.updateUi() - Performance verbessern z. B. wenn die Seite sich nicht geändert hat oder wenn der aktuelle Zauber sich nicht geändert hat.
 * Seitenwechsel für Zauberbuch in Klassenauswahl einfügen.
 * Für alle Klassen alle Zauber in Klassenauswahl anzeigen lassen.
 * ASL-Änderungen für AClass, AClassSelection und ACharacter einbauen.
@@ -162,6 +162,10 @@
 * Es gab schon mal den Fall, dass Dago abgebremst wurde und er daraufhin den Weg nicht mehr fand. Vielleicht durch Timer absichern, dass Dago tatsächlich zur Burg geht.
 * Auftrag mit Dago fehlschlagen lassen wenn man mit ihm flieht.
 * Verstecktes Quest einbauen: "Gerissene Schafe" - wenn man die Wölfe am Anfang entdeckt erhält man diesen Auftrag. Dann kann man Manfred oder so davon berichten.
+* Irminas Tagesablauf. Steht den ganzen Tag da und verkauft Sachen.
+* Wielands Schwert fixen und in Dialog von Einar einbauen.
+* Beide Quests von Wieland NICHT ablehnbar machen!
+* FIXED: Erfahrung beim Auftrag Talras für die ersten Ziele reduzieren, dafür für letzte Schlacht erhöhen.
 
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.

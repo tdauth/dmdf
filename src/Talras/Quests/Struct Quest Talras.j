@@ -55,14 +55,14 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 			call questItem0.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted0)
 			call questItem0.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem0.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted0)
-			call questItem0.setReward(AAbstractQuest.rewardExperience, 800)
+			call questItem0.setReward(AAbstractQuest.rewardExperience, 500)
 			call BJDebugMsg("Before second quest item")
 			// item 1
 			set questItem1 = AQuestItem.create(this, tr("Trefft den Herzog und schwört ihm die Treue."))
 			call questItem1.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted1)
 			call questItem1.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted1)
 			call questItem1.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted1)
-			call questItem1.setReward(AAbstractQuest.rewardExperience, 1000)
+			call questItem1.setReward(AAbstractQuest.rewardExperience, 500)
 			call BJDebugMsg("After second quest item")
 			return this
 		endmethod

@@ -772,7 +772,7 @@ endif
 
 		/// \todo Using method without index would improve performance massively!
 		public method decreaseSpell takes nothing returns boolean
-			return this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() - 1, false)
+			return this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() - 1, true)
 		endmethod
 
 		public method addSpellToFavourites takes nothing returns boolean
