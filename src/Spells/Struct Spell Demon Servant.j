@@ -2,7 +2,7 @@
 library StructSpellsSpellDemonServant requires Asl, StructGameClasses, StructGameSpell
 
 	struct SpellDemonServant extends Spell
-		public static constant integer abilityId = 'A01V'
+		public static constant integer abilityId = 'A0RU'
 		public static constant integer favouriteAbilityId = 'A037'
 		public static constant integer maxLevel = 5
 

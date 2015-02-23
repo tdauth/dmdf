@@ -11,7 +11,15 @@ library StructSpellsSpellSoulThievery requires Asl, StructGameClasses, StructGam
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			
+			call this.addGrimoireEntry('A01V', 'A0RZ')
+			call this.addGrimoireEntry('A0RV', 'A0S0')
+			call this.addGrimoireEntry('A0RW', 'A0S1')
+			call this.addGrimoireEntry('A0RX', 'A0S2')
+			call this.addGrimoireEntry('A0RY', 'A0S3')
+			
+			return this
 		endmethod
 	endstruct
 

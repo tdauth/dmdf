@@ -575,7 +575,19 @@ endif
 		endmethod
 
 		private static method onCheatActionSetSpellsMax takes ACheat cheat returns nothing
-			if (Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().setSpellsMaxLevel.evaluate()) then
+			local Grimoire grimoire = Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire()
+			local integer i = 0
+			local boolean result = true
+			// try for every spell and do not exit before since it returns false on having the maximum level already
+			loop
+				exitwhen (i == grimoire.spells())
+				if (not grimoire.setSpellMaxLevelByIndex(i, false)) then
+					set result = false
+				endif
+				set i = i + 1
+			endloop
+			call grimoire.updateUi()
+			if (result) then
 				call Print(tr("Alle Zauber auf ihre Maximalstufe gesetzt."))
 			else
 				call Print(tr("Konnte nicht alle Zauber ihre Maximulstufe setzen (eventuell nicht genügend Zauberpunkte)."))

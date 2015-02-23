@@ -32,7 +32,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			set thistype.m_wizard = 0
 		endmethod
 
-		private static method displayMessageToAllPlayingUsers takes real time, string message, player excludingPlayer returns nothing
+		public static method displayMessageToAllPlayingUsers takes real time, string message, player excludingPlayer returns nothing
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
@@ -42,14 +42,15 @@ library StructGameClasses requires Asl, StructGameCharacter
 				set i = i + 1
 			endloop
 		endmethod
-
-		private static method selectClassFunction takes Character character, AClass class, boolean last returns nothing
-			/**
-			 * Create all class spells for each character in debug mode.
-			 */
-			// cleric spells
+		
+		public static method createClassAbilities takes AClass class, unit whichUnit returns nothing
 			if (class == thistype.m_cleric) then
-				call SpellAstralSource.create.evaluate(character)
+				//call SpellAstralSource.create.evaluate(character)
+				call UnitAddAbility(whichUnit, SpellMaertyrer.classSelectionGrimoireAbilityId)
+				call SetPlayerAbilityAvailable(GetOwningPlayer(whichUnit), SpellMaertyrer.classSelectionGrimoireAbilityId, false)
+				call UnitAddAbility(whichUnit, SpellMaertyrer.classSelectionAbilityId)
+				
+				/*
 				call SpellMaertyrer.create.evaluate(character)
 				call SpellAbatement.create.evaluate(character)
 				call SpellBlind.create.evaluate(character)
@@ -160,38 +161,15 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SpellManaShield.create.evaluate(character)
 				call SpellManaStream.create.evaluate(character)
 				call SpellRepulsion.create.evaluate(character)
-			endif
-			
-			debug if (class != character.class()) then
-			debug call Print("Error!!!!!!!!!!!!")
-			debug return
-			debug endif
-			
-			call character.grimoire().addClassSpellsFromCharacter.evaluate(character)
-			
-			debug call Print("Added class spells for class " + I2S(class))
-			debug call Print("Druid class is " + I2S(thistype.m_druid))
-			debug if (IsUnitPaused(character.unit())) then
-			debug call Print("Character is already paused!")
-			debug endif
-
-			call SpellCowNova.create.evaluate(character) /// @todo test
-
-			call character.setMovable(false)
-			call character.revival().setTime(MapData.revivalTime)
-			call SetUserInterfaceForPlayer(character.player(), false, false)
-			call CameraSetupApplyForPlayer(false, gg_cam_class_selection, character.player(), 0.0)
-			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(character.player())
-			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, StringArg(StringArg(tr("%s hat die Klasse \"%s\" gewählt."), character.name()), GetUnitName(character.unit())), character.player())
-			if (not last) then
-				call character.displayMessage(ACharacter.messageTypeInfo, tr("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben."))
-			else
-				 call Game.start.execute()
+				*/
 			endif
 		endmethod
-
+		
 		private static method initCleric takes nothing returns nothing
 			set thistype.m_cleric = AClass.create('H000', "spell", "Sound\\Units\\ClassCleric\\Class.wav")
+			call thistype.m_cleric.setStrPerLevel(1.50)
+			call thistype.m_cleric.setAgiPerLevel(1.50)
+			call thistype.m_cleric.setIntPerLevel(3.0)
 			//thistype.m_cleric.setAbilityIconPath(0, "");
 			//thistype.m_cleric.setUsedAbility(0, 0);
 			call thistype.m_cleric.addDescriptionLine(tr("Kleriker sind meist gottesfürchtige Menschen,"))
@@ -304,20 +282,16 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.initWizard()
 		endmethod
 
-		private static method characterCreationAction takes AClassSelection classSelection, unit whichUnit returns ACharacter
-			return Character.create(classSelection.player(), whichUnit)
-		endmethod
-
 		/**
 		* Since \ref AClassSelection.init is called which creates a multiboard, this method
 		* mustn't be called during map initialization beside you use a \ref TriggerSleepAction call.
 		*/
 		public static method showClassSelection takes nothing returns nothing
-			local AClassSelection classSelection
+			local ClassSelection classSelection
 			local integer i
 			local player whichPlayer
 
-			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, thistype.m_cleric, thistype.m_wizard, thistype.characterCreationAction, "", "", "", tr("%s (%i/%i)"), tr("Stärke: %i"), tr("Geschick: %i"), tr("Wissen: %i"), tr("Fähigkeiten"))
+			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, thistype.m_cleric, thistype.m_wizard, "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tr("%s (%i/%i)"), tr("Stärke pro Stufe: %r"), tr("Geschick pro Stufe: %r"), tr("Wissen pro Stufe: %r"))
 
 			call SuspendTimeOfDay(true)
 			call SetTimeOfDay(0.0)
@@ -330,7 +304,11 @@ library StructGameClasses requires Asl, StructGameCharacter
 				set whichPlayer = Player(i)
 
 				if (GetPlayerSlotState(whichPlayer) != PLAYER_SLOT_STATE_EMPTY) then
-					set classSelection = AClassSelection.create(whichPlayer, MapData.startX.evaluate(i), MapData.startY.evaluate(i), 0.0, thistype.selectClassFunction)
+					set classSelection = ClassSelection.create.evaluate(whichPlayer)
+					call classSelection.setStartX(MapData.startX.evaluate(i))
+					call classSelection.setStartY(MapData.startY.evaluate(i))
+					call classSelection.setStartFacing(0.0)
+					call classSelection.setShowAttributes(true)
 					call classSelection.show()
 				endif
 

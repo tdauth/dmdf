@@ -3,6 +3,7 @@ static if (DMDF_CHARACTER_STATS) then
 //! import "Game/Struct Character Stats.j"
 endif
 //! import "Game/Struct Classes.j"
+//! import "Game/Struct Class Selection.j"
 //! import "Game/Struct Fellow.j"
 //! import "Game/Struct Dmdf Hash Table.j"
 //! import "Game/Struct Game.j"
@@ -18,5 +19,5 @@ endif
 //! import "Game/Struct Spell.j"
 //! import "Game/Struct Tutorial.j"
 
-library Game requires StructGameCharacter, optional StructCharacterStats, StructGameClasses, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameNpcRevival, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTutorial
+library Game requires StructGameCharacter, optional StructCharacterStats, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameNpcRevival, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTutorial
 endlibrary

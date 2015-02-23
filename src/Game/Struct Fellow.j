@@ -333,8 +333,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		endmethod
 
 		/**
-		* \param active If this value is true NPC will be revived if he dies during fellowship.
-		*/
+		 * \param active If this value is true NPC will be revived if he dies during fellowship.
+		 */
 		public method setRevival takes boolean active returns nothing
 			if (this.m_hasRevival == active) then
 				return

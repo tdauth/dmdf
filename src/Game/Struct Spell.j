@@ -211,7 +211,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 				debug call Print("Not enough skill points: " + this.name())
 				return false
 			endif
-			if (this.level() == this.getMaxLevel()) then
+			if (this.level() == this.getMaxLevel() and level > this.level()) then
 				debug call Print("Maximum level: " + this.name())
 				return false
 			endif
@@ -255,6 +255,10 @@ library StructGameSpell requires Asl, StructGameCharacter
 
 		/// Is called before spell is being removed from grimoire (via .evaluate()).
 		public stub method onUnlearn takes nothing returns nothing
+		endmethod
+		
+		public stub method setLevel takes integer level returns nothing
+			call super.setLevel(level)
 		endmethod
 
 		public stub method onCastCondition takes nothing returns boolean

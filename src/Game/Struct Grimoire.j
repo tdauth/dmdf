@@ -36,6 +36,10 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		private Decrease m_spellDecrease
 		private AddToFavourites m_spellAddToFavourites
 		private RemoveFromFavourites m_spellRemoveFromFavourites
+		/**
+		 * The currently visible \ref GrimoireSpell instances which are shown in the UI.
+		 * Might also contain 0 entries depending on the spell!
+		 */
 		private AIntegerVector m_uiGrimoireSpells
 
 		// members
@@ -46,6 +50,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		endmethod
 		*/
 
+		/**
+		 * \return Returns the number of pages which depends on \ref spells() and \ref spellsPerPage. 
+		 */
 		public method pages takes nothing returns integer
 			local integer result = this.m_spells.size() / thistype.spellsPerPage
 			// add extra page for remaining spells
@@ -59,14 +66,23 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			return result
 		endmethod
 
+		/**
+		 * \return Returns the currently open page.
+		 */
 		public method page takes nothing returns integer
 			return this.m_page
 		endmethod
 
+		/**
+		 * \return Returns true if the page with spells is shown. Otherwise it returns false which means that a single spell is open.
+		 */
 		public method pageIsShown takes nothing returns boolean
 			return this.m_pageIsShown
 		endmethod
 
+		/**
+		 * \return Returns the number of skill points the character does have.
+		 */
 		public method skillPoints takes nothing returns integer
 			return this.m_skillPoints
 		endmethod
@@ -76,6 +92,10 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			return this.m_favourites
 		endmethod
 
+		/**
+		 * \return Returns the currently enabled spell.
+		 * \note This value can be 0 if no spell is enabled at all.
+		 */
 		public method currentSpell takes nothing returns Spell
 			return this.m_currentSpell
 		endmethod
@@ -179,20 +199,20 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				call this.m_spellNextPage.show.evaluate()
 				call this.m_uiGrimoireSpells.pushBack(this.m_spellNextPage)
 
-				//debug call Print("Showing " + I2S(thistype.spellsPerPage) + " spells")
 				set i = 0
 				loop
 					exitwhen (i == thistype.spellsPerPage)
 					set index = Index2D(this.page(), i, thistype.spellsPerPage)
-					//debug call Print("Index " + I2S(index))
+					
 					if (index >= this.m_spells.size()) then
-						//debug call Print("Reached spell count at " + I2S(index))
 						exitwhen (true)
 					endif
 					if (Spell(this.m_spells[index]).available()) then
-						//debug call Print("Is available spell: " + I2S(Spell(this.m_spells[index])))
 						call Spell(this.m_spells[index]).showGrimoireEntry()
 						call this.m_uiGrimoireSpells.pushBack(Spell(this.m_spells[index]).grimoireEntry())
+						debug if (Spell(this.m_spells[index]).grimoireEntry() == 0) then
+							debug call Print("Spell " + GetAbilityName(Spell(this.m_spells[index]).ability()) + " is missing grimoire entry for level " + I2S(Spell(this.m_spells[index]).level()))
+						debug endif
 					debug else
 						debug call Print("Spell " + Spell(this.m_spells[index]).name() + " is not available!")
 					endif
@@ -297,14 +317,12 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call spell.add()
 			call spell.setLevel(1)
 			call spell.onLearn.evaluate()
-			call this.updateUi()
 		endmethod
 
 		private method unlearnFavouriteSpell takes Spell spell returns nothing
 			call spell.onUnlearn.evaluate()
 			call this.m_favourites.remove(spell)
 			call spell.remove()
-			call this.updateUi()
 		endmethod
 
 		private method learnSpell takes Spell spell returns nothing
@@ -312,7 +330,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 			call spell.setLevel(1)
 			call spell.onLearn.evaluate()
-			call this.updateUi()
 		endmethod
 
 		private method unlearnSpell takes Spell spell returns nothing
@@ -320,7 +337,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), true)
 			call spell.remove()
-			call this.updateUi()
 		endmethod
 		
 		/**
@@ -347,7 +363,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call UnitRemoveAbility(this.character().unit(), favouriteAbility)
 			call spell.add()
 			call spell.setLevel(level)
-			call this.updateUi()
+
 			return true
 		endmethod
 
@@ -361,12 +377,12 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 			call spell.setLevel(level)
-			call this.updateUi()
+			
 			return true
 		endmethod
 
 		/// Adds spell \p spell to grimoire. If \p spellType is \ref Spell.spellTypeDefault it will be added with level 1.
-		public method addSpell takes Spell spell returns nothing
+		public method addSpell takes Spell spell, boolean updateUi returns nothing
 			call this.m_spells.pushBack(spell)
 
 			if (spell.spellType() == Spell.spellTypeDefault) then
@@ -376,11 +392,13 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 					call this.learnSpell(spell)
 				endif
 			endif
-
-			call this.updateUi()
+			
+			if (updateUi) then
+				call this.updateUi()
+			endif
 		endmethod
 
-		public method removeSpellByIndex takes integer index returns boolean
+		public method removeSpellByIndex takes integer index, boolean updateUi returns boolean
 			local Spell spell
 static if (DEBUG_MODE) then
 			if (index < 0 or index >= this.m_spells.size()) then
@@ -402,7 +420,11 @@ endif
 				endif
 			endif
 			call this.m_spells.erase(index)
-			call this.updateUi()
+			
+			if (updateUi) then
+				call this.updateUi()
+			endif
+
 			return true
 		endmethod
 
@@ -453,21 +475,23 @@ endif
 				call spell.setLevel(level)
 			endif
 
-			call this.updateUi()
-
 			return true
 		endmethod
 
-		public method setSpellLevelWithoutConditions takes Spell spell, integer level returns boolean
-			return this.setSpellLevelByIndexWithoutConditions(this.m_spells.find(spell), level)
+		public method setSpellLevelWithoutConditions takes Spell spell, integer level, boolean updateUi returns boolean
+			local boolean result = this.setSpellLevelByIndexWithoutConditions(this.m_spells.find(spell), level)
+			if (updateUi) then
+				call this.updateUi()
+			endif
+			return result
 		endmethod
 
 		/// If you do not need the spell instance anymore remember destroying it by .destroy().
-		public method removeSpell takes ASpell spell returns boolean
-			return this.removeSpellByIndex(this.m_spells.find(spell))
+		public method removeSpell takes Spell spell, boolean updateUi returns boolean
+			return this.removeSpellByIndex(this.m_spells.find(spell), updateUi)
 		endmethod
 
-		public method setSpellAvailableByIndex takes integer index, boolean available returns nothing
+		public method setSpellAvailableByIndex takes integer index, boolean available, boolean updateUi returns nothing
 static if (DEBUG_MODE) then
 			if (index < 0 or index >= this.m_spells.size()) then
 				call this.printMethodError("setSpellAvailableByIndex", "Wrong spell index: " + I2S(index) + ".")
@@ -475,7 +499,13 @@ static if (DEBUG_MODE) then
 			endif
 endif
 			call Spell(this.m_spells[index]).setAvailable(available)
-			call this.updateUi()
+			if (updateUi) then
+				call this.updateUi()
+			endif
+		endmethod
+		
+		public method setSpellAvailable takes Spell spell, boolean available, boolean updateUi returns nothing
+			call this.setSpellAvailableByIndex(this.m_spells.find(spell), available, updateUi)
 		endmethod
 		
 		/**
@@ -494,11 +524,8 @@ endif
 			call UnitRemoveAbility(this.character().unit(), this.ability())
 		endmethod
 
-		public method setSpellAvailable takes Spell spell, boolean available returns nothing
-			call this.setSpellAvailableByIndex(this.m_spells.find(spell), available)
-		endmethod
-
-		public method setSpellLevelByIndex takes integer index, integer level returns boolean
+		public method setSpellLevelByIndex takes integer index, integer level, boolean updateUi returns boolean
+			local boolean result = false
 			local Spell spell
 static if (DEBUG_MODE) then
 			if (index < 0 or index >= this.m_spells.size()) then
@@ -511,14 +538,21 @@ endif
 			if (not spell.isSkillableTo(level)) then
 				return false
 			endif
-			return this.setSpellLevelByIndexWithoutConditions(index, level)
+			
+			set result = this.setSpellLevelByIndexWithoutConditions(index, level)
+			
+			if (updateUi) then
+				call this.updateUi()
+			endif
+			
+			return result
 		endmethod
 
-		public method setSpellLevel takes Spell spell, integer level returns boolean
-			return this.setSpellLevelByIndex(this.m_spells.find(spell), level)
+		public method setSpellLevel takes Spell spell, integer level, boolean updateUi returns boolean
+			return this.setSpellLevelByIndex(this.m_spells.find(spell), level, updateUi)
 		endmethod
 
-		public method setSpellMaxLevelByIndex takes integer index returns boolean
+		public method setSpellMaxLevelByIndex takes integer index, boolean updateUi returns boolean
 static if (DEBUG_MODE) then
 			if (index < 0 or index >= this.m_spells.size()) then
 				call this.printMethodError("setSpellMaxLevelByIndex", "Wrong spell index: " + I2S(index) + ".")
@@ -529,48 +563,19 @@ static if (DEBUG_MODE) then
 				call this.printMethodError("setSpellMaxLevelByIndex", "Level is <= 0 " + I2S(level))
 			endif
 endif
-			return this.setSpellLevelByIndex(index, Spell(this.m_spells[index]).getMaxLevel())
+			return this.setSpellLevelByIndex(index, Spell(this.m_spells[index]).getMaxLevel(), updateUi)
 		endmethod
 
-		public method setSpellMaxLevel takes Spell spell returns boolean
-			return this.setSpellMaxLevelByIndex(this.m_spells.find(spell))
+		public method setSpellMaxLevel takes Spell spell, boolean updateUi returns boolean
+			return this.setSpellMaxLevelByIndex(this.m_spells.find(spell), updateUi)
 		endmethod
 
-		public method setSpellsAvailable takes boolean available returns nothing
-			local integer i = 0
-			loop
-				exitwhen (i == this.m_spells.size())
-				call this.setSpellAvailableByIndex(i, available)
-				set i = i + 1
-			endloop
-		endmethod
-
-		public method setSpellsLevel takes integer level returns boolean
-			local integer i = 0
-			loop
-				exitwhen (i == this.m_spells.size())
-				if (not this.setSpellLevelByIndex(i, level)) then
-					return false
-				endif
-				set i = i + 1
-			endloop
-			return true
-		endmethod
-
-		public method setSpellsMaxLevel takes nothing returns boolean
-			local integer i = 0
-			local boolean result = true
-			loop
-				exitwhen (i == this.m_spells.size() or this.skillPoints() == 0)
-				// do not cancel the loop if it fails It might fail for another reason than having not enough skill points
-				if (not this.setSpellMaxLevelByIndex(i)) then
-					set result = false
-				endif
-				set i = i + 1
-			endloop
-			return result
-		endmethod
-
+		/**
+		 * More performant way of adding multiple spells since it does only update the grimoire GUI once at the end.
+		 * Adds all \ref Spell instances from \p integerVector to the grimoire if it does not already contain such an entry.
+		 * Afterwards it updates the UI and destroys the vector but only if specified.
+		 * \param destroyVector If this value is true the vector will be destroyed after being used.
+		 */
 		public method addSpells takes AIntegerVector integerVector, boolean destroyVector returns nothing
 			local integer i = 0
 			loop
@@ -578,10 +583,12 @@ endif
 				// do not add spells twice
 				if (not this.m_spells.contains(Spell(integerVector[i]))) then
 					debug call Print("Adding NEW spell " + GetAbilityName(Spell(integerVector[i]).ability()))
-					call this.addSpell(Spell(integerVector[i]))
+					call this.addSpell(Spell(integerVector[i]), false)
 				endif
 				set i = i + 1
 			endloop
+			// update UI once which should improve the performance massively if the vector is big
+			call this.updateUi()
 			if (destroyVector) then
 				call integerVector.destroy()
 			endif
@@ -652,16 +659,18 @@ endif
 		endmethod
 		
 		public method addClassSpellsFromCharacter takes Character character returns nothing
+			local AIntegerVector spells = AIntegerVector.create()
 			local integer i = 0
 			loop
 				exitwhen (i == character.classSpells().size())
 				// do not add spells twice
 				if (not this.m_spells.contains(Spell(character.classSpells()[i]))) then
 					debug call Print("Adding NEW spell " + GetAbilityName(Spell(character.classSpells()[i]).ability()))
-					call this.addSpell(Spell(character.classSpells()[i]))
+					call spells.pushBack(Spell(character.classSpells()[i]))
 				endif
 				set i = i + 1
 			endloop
+			call this.addSpells(spells, true)
 		endmethod
 
 		public method addCharacterClassSpells takes nothing returns nothing
@@ -695,44 +704,53 @@ endif
 			call this.addSpells(Spell.nonCharacterClassSpells(this.character()), true)
 		endmethod
 
-		public method removeClassSpells takes AClass class returns nothing
+		public method removeClassSpells takes AClass class, boolean updateUi returns nothing
 			local integer i = 0
 			debug call Print("Remove class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() == class) then
-					call this.removeSpellByIndex(i)
+					call this.removeSpellByIndex(i, false)
 				endif
 				set i = i + 1
 			endloop
+			if (updateUi) then
+				call this.updateUi()
+			endif
 		endmethod
 
-		public method removeCharacterClassSpells takes nothing returns nothing
-			call this.removeClassSpells(this.character().class())
+		public method removeCharacterClassSpells takes boolean updateUi returns nothing
+			call this.removeClassSpells(this.character().class(), updateUi)
 		endmethod
 
-		public method removeAllClassSpells takes nothing returns nothing
+		public method removeAllClassSpells takes boolean updateUi returns nothing
 			local integer i = 0
 			debug call Print("Remove all class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() != 0) then
-					call this.removeSpellByIndex(i)
+					call this.removeSpellByIndex(i, false)
 				endif
 				set i = i + 1
 			endloop
+			if (updateUi) then
+				call this.updateUi()
+			endif
 		endmethod
 
-		public method removeAllOtherClassSpells takes nothing returns nothing
+		public method removeAllOtherClassSpells takes boolean updateUi returns nothing
 			local integer i = 0
 			debug call Print("Remove all other class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() != this.character().class()) then
-					call this.removeSpellByIndex(i)
+					call this.removeSpellByIndex(i, false)
 				endif
 				set i = i + 1
 			endloop
+			if (updateUi) then
+				call this.updateUi()
+			endif
 		endmethod
 
 		public method showSpell takes nothing returns nothing
@@ -749,20 +767,24 @@ endif
 		/// \todo Using method without index would improve performance massively!
 		public method increaseSpell takes nothing returns boolean
 			debug call this.print("Current spell is " + GetObjectName(this.currentSpell().ability()))
-			return this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() + 1)
+			return this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() + 1, true)
 		endmethod
 
 		/// \todo Using method without index would improve performance massively!
 		public method decreaseSpell takes nothing returns boolean
-			return this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() - 1)
+			return this.setSpellLevelByIndex(this.spellIndex(this.currentSpell()), this.currentSpell().level() - 1, false)
 		endmethod
 
 		public method addSpellToFavourites takes nothing returns boolean
-			return this.addFavouriteSpell(this.currentSpell())
+			local boolean result = this.addFavouriteSpell(this.currentSpell())
+			call this.updateUi()
+			return result
 		endmethod
 
 		public method removeSpellFromFavourites takes nothing returns boolean
-			return this.removeFavouriteSpell(this.currentSpell())
+			local boolean result = this.removeFavouriteSpell(this.currentSpell())
+			call this.updateUi()
+			return result
 		endmethod
 
 		public method showPage takes nothing returns nothing
@@ -866,9 +888,6 @@ endif
 		endmethod
 
 		public method show takes nothing returns nothing
-			//debug call Print("Show spell " + GetObjectName(this.ability()) + ".")
-			//debug call Print("Grimoire ability " + GetObjectName(this.grimoireAbility()) + ".")
-
 			if (this.isShown()) then
 				return
 			endif
@@ -877,7 +896,6 @@ endif
 			call SetPlayerAbilityAvailable(this.grimoire().character().player(), this.grimoireAbility(), false)
 			call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), 1)
 			call this.enable()
-			//call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), this.level()
 		endmethod
 
 		public method hide takes nothing returns nothing
@@ -903,7 +921,6 @@ endif
 			 * Since the grimoire buttons do not need any event data like GetSpellTargetX() this event is just okay.
 			 */
 			local thistype this = thistype.allocate(grimoire.character(), abilityId, 0, 0, 0, EVENT_UNIT_SPELL_ENDCAST)
-			debug call this.print("Creating grimoire ability " + GetObjectName(this.ability()))
 			set this.m_grimoire = grimoire
 			set this.m_grimoireAbility = grimoireAbility
 
@@ -1005,6 +1022,9 @@ endif
 		endmethod
 	endstruct
 
+	/**
+	 * \brief A grimoire spell entry is an entry which for a single \ref Spell instance in the grimoire which corresponds to a specific level of that spell.
+	 */
 	struct GrimoireSpellEntry extends GrimoireSpell
 		private Spell m_spell
 

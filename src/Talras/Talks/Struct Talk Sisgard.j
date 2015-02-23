@@ -157,11 +157,18 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 		endmethod
 
 		// Gar nichts.
-		private static method infoActionBeenAtTheRunes_Nothing takes AInfo info, ACharacter character returns nothing
+		private static method infoActionBeenAtTheRunes_Nothing takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Gar nichts."), null)
 			call speech(info, character, true, tr("Ich hatte nichts anderes erwartet. Das war nur ein Test, um zu sehen, ob du eine ehrliche Haut bist."), null)
 			call speech(info, character, true, tr("Von mir aus können wir jederzeit gemeinsam losziehen."), null)
 			call QuestTheMagic.characterQuest(character).complete()
+			// Belohung übergeben
+			call character.giveItem('I00D')
+			call character.giveItem('I00D')
+			call character.giveItem('I00D')
+			call character.giveItem('I00E')
+			call character.giveItem('I00E')
+			call character.giveItem('I00E')
 			call info.talk().showStartPage(character)
 		endmethod
 		

@@ -186,6 +186,21 @@ endif
 			call TriggerAddAction(thistype.m_portalsHintTrigger, function thistype.triggerActionPortalsHint)
 		endmethod
 		
+		public static method createClassItems takes AClass class, unit whichUnit returns nothing
+			if (class == Classes.ranger()) then
+				// Hunting Bow
+				call UnitAddItemById(whichUnit, 'I020')
+			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard() or class == Classes.illusionist()) then	
+				// Haunted Staff
+				call UnitAddItemById(whichUnit, 'I03V')
+			else
+				call UnitAddItemById(whichUnit, ItemTypes.shortword().itemType())
+				call UnitAddItemById(whichUnit, ItemTypes.lightWoodenShield().itemType())
+			endif
+			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
+			call UnitAddItemById(whichUnit, 'I01N')
+		endmethod
+		
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
 			call ResetCameraBoundsToMapRectForPlayer(user)
 		endmethod
@@ -433,6 +448,7 @@ endif
 			loop
 				exitwhen (i == thistype.maxPlayers)
 				call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
+				call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
 				set i = i + 1
 			endloop
 			
@@ -471,24 +487,6 @@ endif
 			call QuestTalras.quest().enable()
 			call BJDebugMsg("After enabling quest talras " + I2S(QuestTalras.quest()))
 			call BJDebugMsg("State is " + I2S(QuestTalras.quest().state()))
-			// start weapons
-			set i = 0
-			loop
-				exitwhen (i == thistype.maxPlayers)
-				if (Character(Character.playerCharacter(Player(i))).class() == Classes.ranger()) then
-					// Hunting Bow
-					call UnitAddItemById(Character.playerCharacter(Player(i)).unit(), 'I020')
-				elseif (Character(Character.playerCharacter(Player(i))).class() == Classes.cleric() or Character(Character.playerCharacter(Player(i))).class() == Classes.necromancer() or Character(Character.playerCharacter(Player(i))).class() == Classes.elementalMage() or Character(Character.playerCharacter(Player(i))).class() == Classes.wizard() or Character(Character.playerCharacter(Player(i))).class() == Classes.illusionist()) then	
-					// Haunted Staff
-					call UnitAddItemById(Character.playerCharacter(Player(i)).unit(), 'I03V')
-				else
-					call UnitAddItemById(ACharacter.playerCharacter(Player(i)).unit(), ItemTypes.shortword().itemType())
-					call UnitAddItemById(ACharacter.playerCharacter(Player(i)).unit(), ItemTypes.lightWoodenShield().itemType())
-				endif
-				// scroll of death to teleport from the beginning, otherwise characters must walk long ways
-				call UnitAddItemById(Character.playerCharacter(Player(i)).unit(), 'I01N')
-				set i = i + 1
-			endloop
 
 			call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 		endmethod
