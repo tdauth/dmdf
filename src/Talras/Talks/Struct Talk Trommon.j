@@ -43,9 +43,6 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 				call speech(info, character, true, tr("Hier hast du einen Apfel."), null)
 				// Charakter erhält einen Apfel
 				call character.giveItem('I03O')
-			elseif (character.class() == Classes.astralModifier()) then
-				call speech(info, character, false, tr("Die Geister."), null)
-				call speech(info, character, true, tr("Klingt beängstigend. Na ja, wer weiß schon, was sich hier in dieser Gegend so rumtreibt."), null)
 			elseif (character.class() == Classes.knight()) then
 				call speech(info, character, false, tr("Die Pflicht."), null)
 				call speech(info, character, true, tr("So so, du bist also ein Pflichtbewusster. Na dazu sag' ich mal nichts."), null)
@@ -60,9 +57,6 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 			elseif (character.class() == Classes.elementalMage()) then
 				call speech(info, character, false, tr("Der Wille."), null)
 				call speech(info, character, true, tr("Der Wille? Was gibt’s hier schon zu erreichen oder holen? Ich meine, mir gefällt’s hier, aber mit dieser Meinung gehöre ich zu einer kleinen Minderheit."), null)
-			elseif (character.class() == Classes.illusionist()) then
-				call speech(info, character, false, tr("Die Freiheit."), null)
-				call speech(info, character, true, tr("Freiheit! Na ja, ich möchte deine Träume nicht zerstören, aber wirklich frei ist in dieser Zeit keiner. Selbst ich muss meinem Herzog dienen und ihm regelmäßig etwas von meinem Hab und Gut abgeben. (Lachend) Ist natürlich freiwillig."), null)
 			elseif (character.class() == Classes.wizard()) then
 				call speech(info, character, false, tr("Die Neugier."), null)
 				call speech(info, character, true, tr("Ich bin vermutlich zu alt, um neugierig zu sein. Aber vielleicht bringt sie dich ja eines Tages weiter als mich. Trotzdem, ich will mich nicht beklagen. Mir geht’s doch eigentlich recht gut."), null)

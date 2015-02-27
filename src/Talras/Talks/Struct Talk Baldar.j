@@ -74,16 +74,12 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, true, tr("Ach so und noch etwas: Hast du genügend Krieger getötet, bekommst du natürlich auch entsprechende Belohnungen, die du dir bei mir persönlich abholen kannst."), null)
 			call Character(character).giveQuestItem('I01B') // Standarte
 			// Ring
-			if (character.class() == Classes.astralModifier()) then
-				call Character(character).giveQuestItem('I015')
-			elseif (character.class() == Classes.dragonSlayer()) then
+			if (character.class() == Classes.dragonSlayer()) then
 				call Character(character).giveQuestItem('I02U')
 			elseif (character.class() == Classes.druid()) then
 				call Character(character).giveQuestItem('I02V')
 			elseif (character.class() == Classes.elementalMage()) then
 				call Character(character).giveQuestItem('I02W')
-			elseif (character.class() == Classes.illusionist()) then
-				call Character(character).giveQuestItem('I02X')
 			elseif (character.class() == Classes.cleric()) then
 				call Character(character).giveQuestItem('I02Y')
 			elseif (character.class() == Classes.necromancer()) then

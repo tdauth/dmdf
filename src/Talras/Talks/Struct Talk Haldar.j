@@ -73,16 +73,12 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			/// TODO andere Standarte!
 			call Character(character).giveQuestItem('I01B') // Standarte
 			// Ring
-			if (character.class() == Classes.astralModifier()) then
-				call Character(character).giveQuestItem('I033')
-			elseif (character.class() == Classes.dragonSlayer()) then
+			if (character.class() == Classes.dragonSlayer()) then
 				call Character(character).giveQuestItem('I034')
 			elseif (character.class() == Classes.druid()) then
 				call Character(character).giveQuestItem('I035')
 			elseif (character.class() == Classes.elementalMage()) then
 				call Character(character).giveQuestItem('I036')
-			elseif (character.class() == Classes.illusionist()) then
-				call Character(character).giveQuestItem('I037')
 			elseif (character.class() == Classes.cleric()) then
 				call Character(character).giveQuestItem('I038')
 			elseif (character.class() == Classes.necromancer()) then

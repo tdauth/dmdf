@@ -20,10 +20,7 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesi
 		call SpellAmuletOfForesight.create(character)
 		/// \todo Filter class for Baldars ring
 		// Baldar's and Haldar's rings
-		if (character.class() == Classes.astralModifier()) then
-			call SpellAosRing.create(character, 'A04V', true) // Astral Modifier
-			call SpellAosRing.create(character, 'A0BR', false) // Astral Modifier
-		elseif (character.class() == Classes.dragonSlayer()) then
+		if (character.class() == Classes.dragonSlayer()) then
 			call SpellAosRing.create(character, 'A0BL', true) // Dragon Slayer
 			call SpellAosRing.create(character, 'A0BW', false) // Dragon Slayer
 		elseif (character.class() == Classes.druid()) then
@@ -32,9 +29,6 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesi
 		elseif (character.class() == Classes.elementalMage()) then
 			call SpellAosRing.create(character, 'A0BN', true) // Elemental Mage
 			call SpellAosRing.create(character, 'A0BY', false) // Elemental Mage
-		elseif (character.class() == Classes.illusionist()) then
-			call SpellAosRing.create(character, 'A0BO', true) // Illusionist
-			call SpellAosRing.create(character, 'A0BZ', false) // Illusionist
 		elseif (character.class() == Classes.cleric()) then
 			call SpellAosRing.create(character, 'A0BH', true) // Cleric
 			call SpellAosRing.create(character, 'A0BS', false) // Cleric

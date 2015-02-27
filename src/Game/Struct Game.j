@@ -115,7 +115,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 		 * \todo In Warcraft III the bounty is set in the object editor for each unit. This formula tries to calculate it in a meaningful way but at the moment the bounty seems to be too big.
 		 */
 		public static method unitBounty takes unit whichUnit returns integer
-			return R2I(GetUnitState(whichUnit, UNIT_STATE_MAX_LIFE) + GetUnitState(whichUnit, UNIT_STATE_MAX_MANA)) / 10 + GetUnitLevel(whichUnit) * 10 /// @todo Get the right formula.
+			return GetUnitLevel(whichUnit) * 2 /// @todo Get the right formula.
 		endmethod
 
 		public static method unitBountyForCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
@@ -529,8 +529,6 @@ endif
 			call Print(StringArg(tr("%s - \"s\""), Classes.className(Classes.dragonSlayer())))
 			call Print(StringArg(tr("%s - \"r\""), Classes.className(Classes.ranger())))
 			call Print(StringArg(tr("%s - \"e\""), Classes.className(Classes.elementalMage())))
-			call Print(StringArg(tr("%s - \"a\""), Classes.className(Classes.astralModifier())))
-			call Print(StringArg(tr("%s - \"i\""), Classes.className(Classes.illusionist())))
 			call Print(StringArg(tr("%s - \"w\""), Classes.className(Classes.wizard())))
 		endmethod
 
@@ -560,12 +558,6 @@ endif
 			elseif (class == "e") then
 				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addElementalMageSpells.evaluate()
 				call Print(tr("Alle Elementarmagierzauber erhalten."))
-			elseif (class == "a") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAstralModifierSpells.evaluate()
-				call Print(tr("Alle Astralwandlerzauber erhalten."))
-			elseif (class == "i") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addIllusionistSpells.evaluate()
-				call Print(tr("Alle Illusionistenzauber erhalten."))
 			elseif (class == "w") then
 				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addWizardSpells.evaluate()
 				call Print(tr("Alle Zaubererzauber erhalten."))

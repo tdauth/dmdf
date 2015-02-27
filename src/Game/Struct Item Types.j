@@ -155,6 +155,10 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		private static RangeItemType m_hauntedStaff
 		// Sisgard's reward
 		private static ItemType m_necromancerHelmet
+		// Ursula's items
+		private static ItemType m_druidCloak
+		private static RangeItemType m_druidStaff
+		private static ItemType m_druidBoots
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -375,6 +379,17 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			call thistype.m_necromancerHelmet.addAbility('AIi4', true)
 			call thistype.m_necromancerHelmet.addAbility('AIva', false)
 			
+			// Ursuala's items
+			set thistype.m_druidCloak = ItemType.createSimple('I015', ItemType.equipmentTypeArmour)
+			call thistype.m_druidCloak.addAbility('AIi3', true)
+			call thistype.m_druidCloak.addAbility('AId3', true)
+			
+			set thistype.m_druidStaff = RangeItemType.createSimpleRange('I02X', AItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_druidStaff.addAbility('A044', false)
+			call thistype.m_druidStaff.addAbility('A01K', true)
+			
+			set thistype.m_druidBoots = ItemType.createSimple('I033', ItemType.equipmentTypeArmour)
+			call thistype.m_druidBoots.addAbility('A04V', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType

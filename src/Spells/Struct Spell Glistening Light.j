@@ -10,6 +10,7 @@ library StructSpellsSpellGlisteningLight requires Asl, StructGameClasses, Struct
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local unit target = GetSpellTargetUnit()
+			local effect spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "origin")
 			local real time = this.level() + thistype.timeSummand
 			call PauseUnit(target, true)
 			loop
@@ -18,6 +19,8 @@ library StructSpellsSpellGlisteningLight requires Asl, StructGameClasses, Struct
 				set time = time - 1.0
 			endloop
 			call PauseUnit(target, false)
+			call DestroyEffect(spellEffect)
+			set spellEffect = null
 			set caster = null
 			set target = null
 		endmethod

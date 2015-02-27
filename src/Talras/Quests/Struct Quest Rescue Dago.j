@@ -96,7 +96,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			local thistype this = thistype.allocate(0, tr("Rettet Dago!"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
-			call this.setIconPath("Icons\\Creatures\\Humans\\BTNAttentaeter.tga")
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNAttentaeter.tga")
 			call this.setDescription(tr("Dago wird vor einer Höhle von zwei Bären angegriffen. Ihr müsst ihm zu Hilfe eilen."))
 			call this.setStateEvent(thistype.stateNew, thistype.stateEventNew)
 			call this.setStateCondition(thistype.stateNew, thistype.stateConditionNew)

@@ -25,10 +25,6 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 				return 'H010'
 			elseif (this.character().class() == Classes.elementalMage()) then
 				return 'H011'
-			elseif (this.character().class() == Classes.astralModifier()) then
-				return 'H00U'
-			elseif (this.character().class() == Classes.illusionist()) then
-				return 'H013'
 			elseif (this.character().class() == Classes.wizard()) then
 				return 'H012'
 			endif
@@ -54,10 +50,6 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 				return 'H00Q'
 			elseif (this.character().class() == Classes.elementalMage()) then
 				return 'H00R'
-			elseif (this.character().class() == Classes.astralModifier()) then
-				return 'H00C'
-			elseif (this.character().class() == Classes.illusionist()) then
-				return 'H00S'
 			elseif (this.character().class() == Classes.wizard()) then
 				return 'H00T'
 			endif

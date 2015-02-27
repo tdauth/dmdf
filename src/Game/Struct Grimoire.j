@@ -622,14 +622,6 @@ endif
 			call this.addSpells(Spell.classSpells(this.character(), Classes.elementalMage()), true)
 		endmethod
 
-		public method addAstralModifierSpells takes nothing returns nothing
-			call this.addSpells(Spell.classSpells(this.character(), Classes.astralModifier()), true)
-		endmethod
-
-		public method addIllusionistSpells takes nothing returns nothing
-			call this.addSpells(Spell.classSpells(this.character(), Classes.illusionist()), true)
-		endmethod
-
 		public method addWizardSpells takes nothing returns nothing
 			call this.addSpells(Spell.classSpells(this.character(), Classes.wizard()), true)
 		endmethod
@@ -649,10 +641,6 @@ endif
 				call this.addRangerSpells()
 			elseif (class == Classes.elementalMage()) then
 				call this.addElementalMageSpells()
-			elseif (class == Classes.astralModifier()) then
-				call this.addAstralModifierSpells()
-			elseif (class == Classes.illusionist()) then
-				call this.addIllusionistSpells()
 			elseif (class == Classes.wizard()) then
 				call this.addWizardSpells()
 			endif
@@ -691,8 +679,6 @@ endif
 			call this.addClassSpells(Classes.dragonSlayer())
 			call this.addClassSpells(Classes.ranger())
 			call this.addClassSpells(Classes.elementalMage())
-			call this.addClassSpells(Classes.astralModifier())
-			call this.addClassSpells(Classes.illusionist())
 			call this.addClassSpells(Classes.wizard())
 		endmethod
 

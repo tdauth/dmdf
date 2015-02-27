@@ -319,18 +319,22 @@ endif
 		public method giveItem takes integer itemTypeId returns nothing
 			local item whichItem = CreateItem(itemTypeId, GetUnitX(this.unit()), GetUnitY(this.unit()))
 			call SetItemPlayer(whichItem, this.player(), true)
-			call UnitAddItem(this.unit(), whichItem)
+			// make sure it is put into the rucksack if possible and that it works even if the character is morphed and has no inventory ability.
+			call this.inventory().addItem(whichItem)
+			//call UnitAddItem(this.unit(), whichItem)
 		endmethod
 
 		/**
-		* Makes item invulnerable, changes its owner to owner of character, makes it unpawnable and gives it to the character automatically.
-		*/
+		 * Makes item invulnerable, changes its owner to owner of character, makes it unpawnable and gives it to the character automatically.
+		 */
 		public method giveQuestItem takes integer itemTypeId returns nothing
 			local item whichItem = CreateItem(itemTypeId, GetUnitX(this.unit()), GetUnitY(this.unit()))
 			call SetItemPawnable(whichItem, false)
 			call SetItemInvulnerable(whichItem, true)
 			call SetItemPlayer(whichItem, this.player(), true)
-			call UnitAddItem(this.unit(), whichItem)
+			// make sure it is put into the rucksack if possible and that it works even if the character is morphed and has no inventory ability.
+			call this.inventory().addItem(whichItem)
+			//call UnitAddItem(this.unit(), whichItem)
 		endmethod
 
 		public method createHeroIcons takes nothing returns nothing

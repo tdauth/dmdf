@@ -1,7 +1,7 @@
-library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, StructMapMapShrines
+library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, StructMapMapShrines, StructMapMapNpcs
 
 	struct Aos
-		private static constant real spawnTime = 30.0
+		private static constant real spawnTime = 60.0
 		private static player m_haldarsUser
 		private static player m_baldarsUser
 		private static integer m_haldarMembers
@@ -18,6 +18,9 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Aos\"")
 
+		/**
+		 * Continues the AOS spawn on both sides.
+		 */
 		public static method continueSpawn takes nothing returns nothing
 			debug call Print("Continue spawn!")
 			call PauseTimerBJ(false, thistype.m_spawnTimer)
@@ -25,6 +28,117 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 
 		public static method pauseSpawn takes nothing returns nothing
 			call PauseTimerBJ(true, thistype.m_spawnTimer)
+		endmethod
+		
+		private static method timerFunctionSpawn takes nothing returns nothing
+			local effect createdEffect
+			local group haldarsGroup0 = CreateGroup()
+			local group haldarsGroup1 = CreateGroup()
+			local group baldarsGroup0 = CreateGroup()
+			local group baldarsGroup1 = CreateGroup()
+			local unit createdUnit
+			debug call Print("AOS Spawn!")
+			// Haldar
+			if (not IsUnitPaused(Npcs.haldar())) then
+				call SetUnitAnimation(Npcs.haldar(), "Spell Slam")
+				call ResetUnitAnimation(Npcs.haldar())
+				call DestroyEffect(AddSpecialEffect("Models\\Effects\\TeleportationZaubernder.mdx", GetUnitX(Npcs.haldar()), GetUnitY(Npcs.haldar())))
+			endif
+			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0)))
+			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1)))
+			// the white legion - group 0
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n029', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n026', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			call GroupAddUnit(baldarsGroup0, createdUnit)
+			set createdUnit = null
+			// the white legion - group 1
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n029', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n00M', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			call GroupAddUnit(haldarsGroup0, createdUnit)
+			set createdUnit = null
+			// move
+			call GroupPointOrder(haldarsGroup0, "patrol", GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0))
+			call GroupPointOrder(haldarsGroup1, "patrol", GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1))
+			// baldar
+			if (not IsUnitPaused(Npcs.baldar())) then
+				call SetUnitAnimation(Npcs.baldar(), "Spell Slam")
+				call ResetUnitAnimation(Npcs.baldar())
+				call DestroyEffect(AddSpecialEffect("Models\\Effects\\TeleportationZaubernder.mdx", GetUnitX(Npcs.baldar()), GetUnitY(Npcs.baldar())))
+			endif
+			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0)))
+			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1)))
+			// the black legion - group 0
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00G', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
+			call GroupAddUnit(baldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
+			call GroupAddUnit(baldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
+			call GroupAddUnit(baldarsGroup0, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
+			call GroupAddUnit(baldarsGroup0, createdUnit)
+			set createdUnit = null
+			// the black legion - group 1
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00J', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
+			call GroupAddUnit(baldarsGroup1, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00J', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
+			call GroupAddUnit(baldarsGroup1, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
+			call GroupAddUnit(baldarsGroup1, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
+			call GroupAddUnit(baldarsGroup1, createdUnit)
+			set createdUnit = null
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
+			call GroupAddUnit(baldarsGroup1, createdUnit)
+			set createdUnit = null
+			// move
+			call GroupPointOrder(baldarsGroup0, "patrol", GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0))
+			call GroupPointOrder(baldarsGroup1, "patrol", GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1))
+
+			call DestroyGroup(haldarsGroup0)
+			set haldarsGroup0 = null
+			call DestroyGroup(haldarsGroup1)
+			set haldarsGroup1 = null
+			call DestroyGroup(baldarsGroup0)
+			set baldarsGroup0 = null
+			call DestroyGroup(baldarsGroup1)
+			set baldarsGroup1 = null
+			
+			debug call Print("AOS Spawn End!")
+			debug call Print("AOS timeout: " + R2S(TimerGetTimeout(thistype.m_spawnTimer)))
 		endmethod
 
 		public static method characterJoins takes Character character returns nothing
@@ -39,7 +153,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 				call IssueTargetOrder(gg_unit_u001_0190, "harvest", gg_dest_B00D_2651)
 				call IssueTargetOrder(gg_unit_u001_0191, "harvest", gg_dest_B00D_8151)
 				call IssueTargetOrder(gg_unit_u001_0192, "harvest", gg_dest_B00D_2623)
-				call thistype.continueSpawn()
+				
+				call TimerStart(thistype.m_spawnTimer, thistype.spawnTime, true, function thistype.timerFunctionSpawn)
 			endif
 			set user = null
 		endmethod
@@ -205,127 +320,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 		endmethod
 
-		private static method timerFunctionSpawn takes nothing returns nothing
-			local effect createdEffect
-			local group haldarsGroup0 = CreateGroup()
-			local group haldarsGroup1 = CreateGroup()
-			local group baldarsGroup0 = CreateGroup()
-			local group baldarsGroup1 = CreateGroup()
-			local unit createdUnit
-			debug call Print("AOS Spawn!")
-			// Haldar
-			if (not IsUnitPaused(gg_unit_n00K_0040)) then
-				call SetUnitAnimation(gg_unit_n00K_0040, "Spell Slam")
-				call ResetUnitAnimation(gg_unit_n00K_0040)
-				set createdEffect = AddSpecialEffect("Models\\Effects\\TeleportationZaubernder.mdx", GetUnitX(gg_unit_n00K_0040), GetUnitY(gg_unit_n00K_0040))
-				call DestroyEffect(createdEffect)
-				set createdEffect = null
-			endif
-			set createdEffect = AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0))
-			call DestroyEffect(createdEffect)
-			set createdEffect = null
-			set createdEffect = AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1))
-			call DestroyEffect(createdEffect)
-			set createdEffect = null
-			// the white legion - group 0
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n029', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n026', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
-			call GroupAddUnit(baldarsGroup0, createdUnit)
-			set createdUnit = null
-			// the white legion - group 1
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n029', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n00M', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			// move
-			call GroupPointOrder(haldarsGroup0, "patrol", GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0))
-			call GroupPointOrder(haldarsGroup1, "patrol", GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1))
-			// baldar
-			if (not IsUnitPaused(gg_unit_n00L_0026)) then
-				call SetUnitAnimation(gg_unit_n00L_0026, "Spell Slam")
-				call ResetUnitAnimation(gg_unit_n00L_0026)
-				set createdEffect = AddSpecialEffect("Models\\Effects\\TeleportationZaubernder.mdx", GetUnitX(gg_unit_n00L_0026), GetUnitY(gg_unit_n00L_0026))
-				call DestroyEffect(createdEffect)
-				set createdEffect = null
-			endif
-			set createdEffect = AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0))
-			call DestroyEffect(createdEffect)
-			set createdEffect = null
-			set createdEffect = AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1))
-			call DestroyEffect(createdEffect)
-			set createdEffect = null
-			// the black legion - group 0
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00G', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
-			call GroupAddUnit(baldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
-			call GroupAddUnit(baldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
-			call GroupAddUnit(baldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
-			call GroupAddUnit(baldarsGroup0, createdUnit)
-			set createdUnit = null
-			// the black legion - group 1
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00J', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
-			call GroupAddUnit(baldarsGroup1, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
-			call GroupAddUnit(baldarsGroup1, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
-			call GroupAddUnit(baldarsGroup1, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
-			call GroupAddUnit(baldarsGroup1, createdUnit)
-			set createdUnit = null
-			// move
-			call GroupPointOrder(baldarsGroup0, "patrol", GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0))
-			call GroupPointOrder(baldarsGroup1, "patrol", GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1))
-
-			call DestroyGroup(haldarsGroup0)
-			set haldarsGroup0 = null
-			call DestroyGroup(haldarsGroup1)
-			set haldarsGroup1 = null
-			call DestroyGroup(baldarsGroup0)
-			set baldarsGroup0 = null
-			call DestroyGroup(baldarsGroup1)
-			set baldarsGroup1 = null
-		endmethod
-
 		private static method createSpawnTimer takes nothing returns nothing
 			set thistype.m_spawnTimer = CreateTimer()
-			call TimerStart(thistype.m_spawnTimer, thistype.spawnTime, true, function thistype.timerFunctionSpawn)
-			call thistype.pauseSpawn()
 		endmethod
 
 		/// All player units can score (for example summoned units).
@@ -360,17 +356,10 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		endmethod
 
 		private static method createScoreTrigger takes nothing returns nothing
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_scoreTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_scoreTrigger, EVENT_PLAYER_UNIT_DEATH)
-			set conditionFunction = Condition(function thistype.triggerConditionScore)
-			set triggerCondition = TriggerAddCondition(thistype.m_scoreTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_scoreTrigger, function thistype.triggerActionScore)
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerAddCondition(thistype.m_scoreTrigger, Condition(function thistype.triggerConditionScore))
+			call TriggerAddAction(thistype.m_scoreTrigger, function thistype.triggerActionScore)
 		endmethod
 
 		private static method initStartUnits takes nothing returns nothing
@@ -442,6 +431,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		endmethod
 
 		private static method destroySpawnTimer takes nothing returns nothing
+			call PauseTimerBJ(true, thistype.m_spawnTimer)
 			call DestroyTimer(thistype.m_spawnTimer)
 			set thistype.m_spawnTimer = null
 		endmethod
@@ -470,6 +460,9 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 
 		// static members
 
+		/**
+		 * \return Returns the score in the AOS of a single player. The score is calculated by the last hits on enemies in the enemy AOS team.
+		 */
 		public static method playerScore takes player user returns integer
 			return thistype.m_playerScore[GetPlayerId(user)]
 		endmethod

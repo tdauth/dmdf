@@ -194,7 +194,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call SetUnitOwner(this.m_unit, MapData.neutralPassivePlayer, true)
 			call SetUnitInvulnerable(this.m_unit, true)
 			call SetUnitLifePercentBJ(this.m_unit, 100.0)
-			call AUnitRoutine.enableAll(this.m_unit)
 			
 			if (this.m_trades) then
 				call UnitAddAbility(this.m_unit, 'Aneu')
@@ -229,6 +228,11 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 					call PlaySoundForPlayer(this.m_character.player(), thistype.m_infoSoundLeave)
 				endif
 			endif
+			
+			call AUnitRoutine.enableAll(this.m_unit)
+			// restart old routine immediately
+			call AUnitRoutine.manualStart(this.m_unit)
+			
 			set this.m_character = 0
 			call this.setShared(false)
 		endmethod

@@ -263,6 +263,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			endif
 			// Waffen heben und brüllen
 			call ForGroup(this.m_firstActorGroup, function thistype.groupFunctionStandVictory)
+			call SetUnitAnimation(AVideo.actor(), "Stand Victory 21")
 			if (wait(2.0)) then
 				return
 			endif

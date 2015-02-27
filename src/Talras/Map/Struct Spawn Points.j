@@ -42,6 +42,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_witches
 		private static SpawnPoint m_wildCreatures
 		private static SpawnPoint m_orcs0
+		private static SpawnPoint m_cornEaters0
+		private static SpawnPoint m_cornEaters1
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -117,12 +119,16 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_highwaymen0.addUnitWithType(gg_unit_n00T_0125, 1.0)
 			call thistype.m_highwaymen0.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen0.addItemType(index, 'I00T', 0.50)
+			call thistype.m_highwaymen0.addItemType(index, 'rhe2', 0.50)
+			call thistype.m_highwaymen0.addItemType(index, 'rman', 0.50)
 			set index = thistype.m_highwaymen0.addUnitWithType(gg_unit_n00U_0128, 1.0)
 			call thistype.m_highwaymen0.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen0.addItemType(index, 'I00T', 0.50)
 			set index = thistype.m_highwaymen0.addUnitWithType(gg_unit_n00U_0127, 1.0)
 			call thistype.m_highwaymen0.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen0.addItemType(index, 'I00T', 0.50)
+			call thistype.m_highwaymen0.addItemType(index, 'rhe2', 0.50)
+			call thistype.m_highwaymen0.addItemType(index, 'rman', 0.50)
 
 			set thistype.m_highwaymen1 = SpawnPoint.create()
 			set index = thistype.m_highwaymen1.addUnitWithType(gg_unit_n00T_0126, 1.0)
@@ -131,6 +137,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_highwaymen1.addUnitWithType(gg_unit_n00U_0129, 1.0)
 			call thistype.m_highwaymen1.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen1.addItemType(index, 'I00T', 0.50)
+			call thistype.m_highwaymen1.addItemType(index, 'rhe2', 0.50)
+			call thistype.m_highwaymen1.addItemType(index, 'rman', 0.50)
 
 			set thistype.m_highwaymen2 = SpawnPoint.create()
 			set index = thistype.m_highwaymen2.addUnitWithType(gg_unit_n00T_0130, 1.0)
@@ -139,6 +147,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_highwaymen2.addUnitWithType(gg_unit_n00T_0131, 1.0)
 			call thistype.m_highwaymen2.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen2.addItemType(index, 'I00T', 0.50)
+			call thistype.m_highwaymen2.addItemType(index, 'rhe2', 0.50)
+			call thistype.m_highwaymen2.addItemType(index, 'rman', 0.50)
 
 			set thistype.m_deers0 = SpawnPoint.create()
 			set index = thistype.m_deers0.addUnitWithType(gg_unit_n00V_0132, 1.0)
@@ -288,6 +298,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0290, 1.0)
 			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0289, 1.0)
 			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0291, 1.0)
+			set index = thistype.m_medusa.addUnitWithType(gg_unit_n043_0486, 1.0)
 
 			set thistype.m_deathVault = SpawnPoint.create()
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n035_0299, 1.0)
@@ -378,6 +389,19 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01G_0225, 1.0)
 			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01W_0323, 1.0)
 			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01X_0322, 1.0)
+			
+			set thistype.m_cornEaters0 = SpawnPoint.create()
+			set index = thistype.m_cornEaters0.addUnitWithType(gg_unit_n016_0478, 1.0)
+			call thistype.m_cornEaters0.addItemType(index, 'whwd', 1.0)
+			set thistype.m_cornEaters1 = SpawnPoint.create()
+			set index = thistype.m_cornEaters1.addUnitWithType(gg_unit_n016_0473, 1.0)
+			call thistype.m_cornEaters1.addItemType(index, 'whwd', 1.0)
+			set index = thistype.m_cornEaters1.addUnitWithType(gg_unit_n016_0474, 1.0)
+			call thistype.m_cornEaters1.addItemType(index, 'whwd', 1.0)
+			call thistype.m_cornEaters1.addItemType(index, 'I047', 1.0)
+			set index = thistype.m_cornEaters1.addUnitWithType(gg_unit_n016_0472, 1.0)
+			call thistype.m_cornEaters1.addItemType(index, 'whwd', 1.0)
+			call thistype.m_cornEaters1.addItemType(index, 'I046', 0.50)
 		endmethod
 
 		public static method spawn takes nothing returns nothing

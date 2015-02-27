@@ -109,9 +109,6 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 				call speech(info, character, true, tr("Und du bist wohl ein Zauberer. Freut mich dich kennenzulernen. Hier trifft man nicht oft andere Zauberer."), null)
 				call speech(info, character, true, tr("Pass auf, ich schenke dir einige Zauberspruchrollen."), null)
 				/// @todo Charakter erhält Zauberspruchrollen
-			elseif (character.class() == Classes.illusionist() or character.class() == Classes.elementalMage()) then
-				call speech(info, character, true, tr("Na ja, die Kunst der Magie dürfte wohl auch dir vertraut sein."), null)
-				call speech(info, character, true, tr("Aber ja, ich bin eine Zauberin. Ich vermag es meine Zauberkraft und die der anderen zu beherrschen."), null)
 			else
 				call speech(info, character, true, tr("Ja, ich bin eine Zauberin. Deshalb verkaufe ich ja auch Zauber und Tränke. Alles was das Magier- oder Zaubererherz begehrt."), null)
 			endif

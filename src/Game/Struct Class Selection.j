@@ -111,9 +111,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellTeleportation.create(character)
 				debug call Print("Before Undermine")
 				call SpellUndermine.create(character)
-			elseif (class == Classes.astralModifier()) then
-				call SpellTakeOver.create(character)
-			elseif (class == Classes.illusionist()) then
 			elseif (class == Classes.wizard()) then
 				call SpellAbsorbation.create(character)
 				call SpellAdduction.create(character)

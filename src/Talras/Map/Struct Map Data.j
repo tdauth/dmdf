@@ -190,7 +190,7 @@ endif
 			if (class == Classes.ranger()) then
 				// Hunting Bow
 				call UnitAddItemById(whichUnit, 'I020')
-			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard() or class == Classes.illusionist()) then	
+			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard()) then	
 				// Haunted Staff
 				call UnitAddItemById(whichUnit, 'I03V')
 			else

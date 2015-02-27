@@ -64,7 +64,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 				return
 			endif
 
-			call SetUnitAnimation(AVideo.actor(), "Stand Victory Alternate")
+			call SetUnitAnimation(AVideo.actor(), "Stand Victory 25")
 
 			if (wait(1.0)) then
 				return
