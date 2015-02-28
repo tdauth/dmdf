@@ -179,10 +179,26 @@
 * FIXED: "Heil dir Vater!"-Animation genau festlegen.
 * Abfahrt nach Holzbruck macht keinen Sinn. Nordmänner wollen sich durch die Reihen der Orks schlagen, Herzog will die Nordmänner als Verbündete.
 * Eventuell anderes Ende - der König kommt.
-* Letzte Schlacht nicht über Abstimmung starten, da sich die Charaktere noch in Gesprächen befinden können. Stattdessen müssen sich alle Charaktere sammeln.
+* FIXED: Letzte Schlacht nicht über Abstimmung starten, da sich die Charaktere noch in Gesprächen befinden können. Stattdessen müssen sich alle Charaktere sammeln.
 * DONE: Pilzicons fixen (3 Stück)
 * DONE: Für alle Klassen Stufenattribute einbauen.
 * DONE: Illusionist und Astralwandler rauswerfen. Zu komplizierte Klassen, außerdem bleiben mehr Zauber für andere Klassen.
+* FIXED: Beute durch Anzahl der Spieler teilen.
+* FIXED: Erfahrung durch Anzahl der Spieler teilen.
+* FIXED: "Die Nordmänner" - Ziel ändern zu: "Sammelt euch nahe des Orklagers".
+* DONE: Wigberhts Dialog an neue Questziele anpassen.
+* Ricmans Speerwurf macht keinen Schaden. Gameplaykonstanten?
+* "Blenden" länger machen dafür Manakosten höher.
+* Bei letzter Schlacht sollte Orkanführer etwas sagen wenn er auftaucht.
+* Bei letzter Schlacht sollten Gegner Items droppen, auch Runen etc. und vor allem der Orkanführer für jeden Charakter ein Artefakt.
+* Ricman hat keinen Tagesablauf, macht sich nach dem letzten Quest bemerkbar.
+* Das Sammeln für die Fahrt nach Holzbruck ebenfalls per Gebiet machen.
+* Sisgard sollte Rolle der Massenteleportatio verkaufen, nützlich für Truppen wie beim Nekromanten.
+* Sisgard sollte Sobi-Maske verkaufen.
+* Aus Metzelei-Auftrag sollte Jagd nach Deranor werden. Deranor ist verantwortlich für den Kult und die Untoten im Wald, er befindet sich in dem Dungeon, dass durch ein Portal erreichbar ist. Das Portal wird aktiviert, wenn man das Quest mit der Drachentöterin abschließt. Danach will sie mit einem Deranor vernichten, das war ihr Auftrag. Man kann Osman danach auch berichten, was hinter dem Kult eigentlich steckt.
+* Alle SpawnPoints während Video pausieren.
+* Dialog mit Drachenöterin über Deranor verbessern.
+* Töten des Diakons funktioniert nicht in Video!
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

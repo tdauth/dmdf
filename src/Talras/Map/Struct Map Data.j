@@ -155,6 +155,7 @@ endif
 			call Shrines.init()
 			call SpawnPoints.init()
 			call Tavern.init()
+			call Tomb.init.evaluate()
 			call initMapSpells.evaluate()
 			call initMapTalks.evaluate()
 			call initMapVideos()
@@ -218,8 +219,8 @@ endif
 			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_aos)
 		endmethod
 
-		public static method setCameraBoundsToFightAreaForPlayer takes player user returns nothing
-			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_quest_the_norsemen_fight_area)
+		public static method setCameraBoundsToTombForPlayer takes player user returns nothing
+			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_tomb)
 		endmethod
 
 		/// Required by \ref Game.
@@ -228,8 +229,6 @@ endif
 				call thistype.setCameraBoundsToAosForPlayer(user)
 			elseif (false) then /// @todo Tavern area
 				call thistype.setCameraBoundsToTavernForPlayer(user)
-			//elseif (QuestTheNorsemen.quest().hasStarted()) then
-			//	call thistype.setCameraBoundsToFightAreaForPlayer(user)
 			else
 				call thistype.setCameraBoundsToPlayableAreaForPlayer(user)
 			endif

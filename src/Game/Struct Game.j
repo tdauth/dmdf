@@ -73,7 +73,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 		endmethod
 
 		public static method giveUnitExperienceToCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
-			local integer experience = thistype.unitExperienceForCharacter(character, whichUnit, killingUnit)
+			local integer experience = thistype.unitExperienceForCharacter(character, whichUnit, killingUnit) / ACharacter.countAll()
 			//debug call Print("Experience: " + I2S(experience))
 			if (experience > 0) then
 				call ShowGeneralFadingTextTagForPlayer(character.player(), IntegerArg(tr("+%i"), experience), GetUnitX(character.unit()), GetUnitY(character.unit()), 255, 0, 255, 255)
@@ -127,7 +127,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 		endmethod
 
 		public static method giveBountyToCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
-			local integer bounty = thistype.unitBountyForCharacter(character, whichUnit, killingUnit)
+			local integer bounty = thistype.unitBountyForCharacter(character, whichUnit, killingUnit) / ACharacter.countAll()
 			if (bounty > 0) then
 				call Bounty(character.player(), GetUnitX(whichUnit), GetUnitY(whichUnit), bounty)
 			endif
@@ -463,6 +463,16 @@ endif
 			// tutorial GUI, after map data!
 			call Tutorial.init.evaluate()
 			
+			/*
+			 * DMdF uses a custom XP system.
+			 */
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYER_SLOTS)
+				call SetPlayerHandicapXP(Player(i), 0.0)
+				set i = i + 1
+			endloop
+			
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
@@ -716,12 +726,6 @@ endif
 			call Character.setTutorialForAll(true)
 
 
-			set i = 0
-			loop
-				exitwhen (i == bj_MAX_PLAYER_SLOTS)
-				call SetPlayerHandicapXP(Player(i), 0.0)
-				set i = i + 1
-			endloop
 			//call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
 
 			call Character.addSkillGrimoirePointsToAll(MapData.startSkillPoints)

@@ -2,6 +2,8 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 	struct NpcRoutines
 		private static NpcRoutineWithFacing m_wigberhtTraining
+		// Ricman
+		private static NpcRoutineWithFacing m_ricmanStands
 
 		// castle
 		// Sisgard
@@ -107,6 +109,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			// Wigberht
 			set thistype.m_wigberhtTraining = NpcRoutineWithFacing.create(Routines.train(), Npcs.wigberht(), 18.00, 5.00, gg_rct_waypoint_wigberht_training)
 			call thistype.m_wigberhtTraining.setFacing(252.39)
+			
+			// Ricman
+			set thistype.m_ricmanStands = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.ricman(), 0.0, 23.59, gg_rct_waypoint_ricman)
+			call thistype.m_ricmanStands.setFacing(353.10)
 
 			// Sisgard
 			set thistype.m_sisgardStandsNearHerHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.sisgard(), MapData.evening, MapData.midday, gg_rct_waypoint_sisgard_0)

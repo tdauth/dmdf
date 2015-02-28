@@ -3,7 +3,6 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 	struct TalkWigberht extends ATalk
 		private static sound m_soundCHello
 		private static sound m_soundNHello
-		private static AVote m_vote0
 		private static AVote m_vote1
 
 		implement Talk
@@ -147,28 +146,12 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			return QuestTheNorsemen.quest().questItem(1).isNew()
 		endmethod
 
-		private static method resultAction0 takes AVote vote returns nothing
-			if (vote.result() == 0) then
-				call VideoTheFirstCombat.video().play()
-				call thistype.m_vote0.destroy()
-			endif
-		endmethod
-
 		// Lass uns in den Kampf ziehen!
 		private static method infoActionLetUsAttack takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Lass uns in den Kampf ziehen!"), null)
-			call speech(info, character, true, tr("Gut. Wenn ihr alle bereit seid, kann's losgehen."), null)
-			call info.talk().close(character)
-			// start vote
-			if (thistype.m_vote0 == 0) then
-				set thistype.m_vote0 = AVote.create(tr("Wann wollen Sie den Kampf gegen die Orks beginnen?"))
-				call thistype.m_vote0.setResultAction(thistype.resultAction0)
-				call thistype.m_vote0.setRecognizePlayerLeavings(true)
-				call thistype.m_vote0.addChoice(tr("Sofort"))
-				call thistype.m_vote0.addChoice(tr("Später"))
-				call thistype.m_vote0.addForce(GetPlayingUsers())
-			endif
-			call thistype.m_vote0.start()
+			call speech(info, character, true, tr("Gut, wenn ihr alle bereit seid ziehen wir los. Wir sammeln uns nahe des nordwestlichen Orklagers."), null)
+			call speech(info, character, true, tr("Und dann schlachten wir sie alle ab!"), null)
+			call info.talk().showStartPage(character)
 		endmethod
 
 		// (Nach erfolgreichem Abschluss des zweiten Ziels des Auftrags “Die Nordmänner”)
@@ -222,8 +205,8 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			// start vote
 			if (thistype.m_vote1 == 0) then
 				set thistype.m_vote1 = AVote.create(tr("Wann wollen Sie nach Holzbruck fahren (und das Spiel somit beenden)?"))
-				call thistype.m_vote0.setResultAction(thistype.resultAction1)
-				call thistype.m_vote0.setRecognizePlayerLeavings(true)
+				call thistype.m_vote1.setResultAction(thistype.resultAction1)
+				call thistype.m_vote1.setRecognizePlayerLeavings(true)
 				call thistype.m_vote1.addChoice(tr("Sofort"))
 				call thistype.m_vote1.addChoice(tr("Später"))
 				call thistype.m_vote1.addForce(GetPlayingUsers())
@@ -264,7 +247,6 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			call SetSoundChannel(thistype.m_soundNHello, 0)
 			call SetSoundVolume(thistype.m_soundNHello, 127)
 			call SetSoundPitch(thistype.m_soundNHello, 1.0)
-			set thistype.m_vote0 = 0
 			set thistype.m_vote1 = 0
 		endmethod
 	endstruct

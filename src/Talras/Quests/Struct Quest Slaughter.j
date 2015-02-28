@@ -131,8 +131,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 		
 		private static method finishQuest takes nothing returns nothing
-			call Fellows.dragonSlayer().reset()
-			call TalkDragonSlayer.initTalk()
 			call VideoBloodthirstiness.video().play()
 		endmethod
 

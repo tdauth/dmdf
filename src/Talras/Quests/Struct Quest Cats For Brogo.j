@@ -11,7 +11,7 @@ library StructMapQuestsQuestCatsForBrogo requires Asl
 		private static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, tr("Katzen für Brogo"))
 			local AQuestItem questItem0
-			call this.setIconPath("") /// @todo fixme
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNblacktabbycat.blp")
 			call this.setDescription(tr("Brogo, der Bärenmensch, möchte gerne Katzen haben, damit er diese streicheln kann."))
 			call this.setReward(AAbstractQuest.rewardExperience, 500)
 			//item 0
