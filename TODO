@@ -145,7 +145,7 @@
 * Die Startbrücke endlich breiter machen!
 * Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
 * Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
-* Letzte Schlacht, Tötungsevent nicht auf Neutral Feindlich begrenzen. Einheiten könnten übernommen werden (vom Kleriker).
+* FIXED: Letzte Schlacht, Tötungsevent nicht auf Neutral Feindlich begrenzen. Einheiten könnten übernommen werden (vom Kleriker).
 * "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Kleriker muss Fernkämpfer sein.
 * FIXED: OpLimit in Klassenauswahl: addClassSpellsFromCharacter.evaluate(character) hilft nicht.
 * FIXED: Grimoire: Nicht immer UI aktualisieren, updateUi als Parameter übergeben z. B. bei mehreren Zaubern auf einmal sparen
@@ -159,7 +159,7 @@
 * ASL: AClassSelection - Tastensteuerung optional machen (dynamisch).
 * Wegelagerer sollten verschiedene Gegenstände droppen, nicht nur Goldmünzenbeutel.
 * AClassSelection: Multiboard ist zu breit.
-* AClassSelection: Multiboard speichert Minimierung nicht, wird immer wieder maximiert.
+* FIXED: AClassSelection: Multiboard speichert Minimierung nicht, wird immer wieder maximiert.
 * Es gab schon mal den Fall, dass Dago abgebremst wurde und er daraufhin den Weg nicht mehr fand. Vielleicht durch Timer absichern, dass Dago tatsächlich zur Burg geht.
 * Auftrag mit Dago fehlschlagen lassen wenn man mit ihm flieht.
 * Verstecktes Quest einbauen: "Gerissene Schafe" - wenn man die Wölfe am Anfang entdeckt erhält man diesen Auftrag. Dann kann man Manfred oder so davon berichten.
@@ -189,16 +189,17 @@
 * DONE: Wigberhts Dialog an neue Questziele anpassen.
 * Ricmans Speerwurf macht keinen Schaden. Gameplaykonstanten?
 * "Blenden" länger machen dafür Manakosten höher.
-* Bei letzter Schlacht sollte Orkanführer etwas sagen wenn er auftaucht.
+* DONE: Bei letzter Schlacht sollte Orkanführer etwas sagen wenn er auftaucht.
 * Bei letzter Schlacht sollten Gegner Items droppen, auch Runen etc. und vor allem der Orkanführer für jeden Charakter ein Artefakt.
-* Ricman hat keinen Tagesablauf, macht sich nach dem letzten Quest bemerkbar.
+* FIXED: Ricman hat keinen Tagesablauf, macht sich nach dem letzten Quest bemerkbar.
 * Das Sammeln für die Fahrt nach Holzbruck ebenfalls per Gebiet machen.
-* Sisgard sollte Rolle der Massenteleportatio verkaufen, nützlich für Truppen wie beim Nekromanten.
-* Sisgard sollte Sobi-Maske verkaufen.
+* DONE: Sisgard sollte Rolle der Massenteleportation verkaufen, nützlich für Truppen wie beim Nekromanten.
+* DONE: Sisgard sollte Sobi-Maske verkaufen.
 * Aus Metzelei-Auftrag sollte Jagd nach Deranor werden. Deranor ist verantwortlich für den Kult und die Untoten im Wald, er befindet sich in dem Dungeon, dass durch ein Portal erreichbar ist. Das Portal wird aktiviert, wenn man das Quest mit der Drachentöterin abschließt. Danach will sie mit einem Deranor vernichten, das war ihr Auftrag. Man kann Osman danach auch berichten, was hinter dem Kult eigentlich steckt.
-* Alle SpawnPoints während Video pausieren.
+* DONE: Alle SpawnPoints während Video pausieren.
 * Dialog mit Drachenöterin über Deranor verbessern.
 * Töten des Diakons funktioniert nicht in Video!
+* DONE: Respawn-Zeit für Gegner länger, stört Spielfluss.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

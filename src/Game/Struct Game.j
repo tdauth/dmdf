@@ -852,6 +852,8 @@ endif
 			local integer i
 			call thistype.m_weather.disable()
 			call Fellow.pauseAllRevivals.evaluate(true)
+			call SpawnPoint.pauseAll()
+			call ItemSpawnPoint.pauseAll()
 			call DisableTrigger(thistype.m_levelTrigger)
 			call DisableTrigger(thistype.m_killTrigger)
 			//call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_UI, 1.0) /// @todo TEST
@@ -923,6 +925,8 @@ endif
 			 */
 			call thistype.setDefaultMapMusic()
 			call Fellow.pauseAllRevivals.evaluate(false)
+			call SpawnPoint.resumeAll()
+			call ItemSpawnPoint.resumeAll()
 		endmethod
 
 		public static method addUnitMoveSpeed takes unit whichUnit, real value returns real

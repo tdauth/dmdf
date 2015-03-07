@@ -166,6 +166,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			local player owner = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 			local integer i
 			local integer j
+			local unit orcLeader
 			call this.m_currentGroup.units().clear()
 
 			// killed last wave -> quest item 1 completed
@@ -228,11 +229,13 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
-				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcLeader, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
+				set orcLeader = CreateUnit(owner, UnitTypes.orcLeader, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_1), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_1), 270.0)
+				call this.m_currentGroup.units().pushBack(orcLeader)
+				
 
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(Npcs.ricman(), tr("Kommt schon Männer! Wir haben es fast geschafft!"), null)
+				call TransmissionFromUnit(orcLeader, tr("Ihr elenden Menschen, euer Ende ist nah!"), null)
 			endif
 			call this.m_currentGroup.pointOrder("patrol", GetRectCenterX(gg_rct_quest_the_norsemen_enemy_target), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_target))
 			set owner = null
@@ -256,7 +259,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		public method startSpawns takes AGroup allyStartGroup, AGroup enemyStartGroup returns nothing
-			local player owner = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 			local player allyPlayer = MapData.alliedPlayer
 			local integer i
 			local player user
@@ -291,10 +293,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 			set this.m_allyStartGroup = allyStartGroup
 			set this.m_spawnTrigger = CreateTrigger()
-			call TriggerRegisterPlayerUnitEvent(this.m_spawnTrigger, owner, EVENT_PLAYER_UNIT_DEATH, null)
+			call TriggerRegisterAnyUnitEventBJ(this.m_spawnTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(this.m_spawnTrigger, Condition(function thistype.triggerConditionSpawn))
 			call TriggerAddAction(this.m_spawnTrigger, function thistype.triggerActionSpawn)
-			set owner = null
 
 			set this.m_wavesDisplay = WavesDisplay.create()
 

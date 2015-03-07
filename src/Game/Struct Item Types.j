@@ -155,6 +155,8 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		private static RangeItemType m_hauntedStaff
 		// Sisgard's reward
 		private static ItemType m_necromancerHelmet
+		// Sisgard's items
+		private static ItemType m_amuletOfWisdom
 		// Ursula's items
 		private static ItemType m_druidCloak
 		private static RangeItemType m_druidStaff
@@ -378,6 +380,10 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			call thistype.m_necromancerHelmet.addAbility('AId5', true)
 			call thistype.m_necromancerHelmet.addAbility('AIi4', true)
 			call thistype.m_necromancerHelmet.addAbility('AIva', false)
+			
+			// Sisgard's items
+			set thistype.m_amuletOfWisdom = ItemType.createSimple('I048', ItemType.equipmentTypeAmulet)
+			call thistype.m_amuletOfWisdom.addAbility('AIrm', true)
 			
 			// Ursuala's items
 			set thistype.m_druidCloak = ItemType.createSimple('I015', ItemType.equipmentTypeArmour)
