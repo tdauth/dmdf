@@ -8,13 +8,14 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00D'
 		private static constant real time = 30.0
-		private static constant integer damageLevelFactor = 10
+		private static constant integer damageStartValue = 5
+		private static constant integer damageLevelFactor = 5
 		private static ABuff m_buff
 
 		/// @todo Was passiert bei mehreren Buffs?
 		private method action takes nothing returns nothing
 			local unit target = GetSpellTargetUnit()
-			local integer damage = thistype.damageLevelFactor * this.level()
+			local integer damage = thistype.damageStartValue + thistype.damageLevelFactor * this.level()
 			local real time = thistype.time
 			debug call Print("Emblaze: Before buff.")
 			// TODO buggy
@@ -35,7 +36,14 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0TR', 'A0TW')
+			call this.addGrimoireEntry('A0TS', 'A0TX')
+			call this.addGrimoireEntry('A0TT', 'A0TY')
+			call this.addGrimoireEntry('A0TU', 'A0TZ')
+			call this.addGrimoireEntry('A0TV', 'A0U0')
+			
+			return this
 		endmethod
 
 		private static method onInit takes nothing returns nothing

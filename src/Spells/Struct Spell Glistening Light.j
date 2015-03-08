@@ -26,7 +26,15 @@ library StructSpellsSpellGlisteningLight requires Asl, StructGameClasses, Struct
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			
+			call this.addGrimoireEntry('A0UB', 'A0UG')
+			call this.addGrimoireEntry('A0UC', 'A0UH')
+			call this.addGrimoireEntry('A0UD', 'A0UI')
+			call this.addGrimoireEntry('A0UE', 'A0UJ')
+			call this.addGrimoireEntry('A0UF', 'A0UK')
+			
+			return this
 		endmethod
 	endstruct
 

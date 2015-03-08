@@ -437,11 +437,8 @@ endif
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
 			local integer i
-			call BJDebugMsg("Before primary quests")
 			call initMapPrimaryQuests()
-			call BJDebugMsg("Before secundary quests")
 			call initMapSecundaryQuests()
-			call BJDebugMsg("Before map spells")
 			
 			set i = 0
 			loop
@@ -476,16 +473,12 @@ endif
 			debug call Print("Waited successfully for intro video.")
 
 			debug call thistype.createCheats()
-			call BJDebugMsg("Setting all movable")
+			
 			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
-			call BJDebugMsg("After movable")
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Drücken Sie die Escape-Taste, um ins Haupt-Menü zu gelangen."))
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
-			call BJDebugMsg("Quest talras id " + I2S(QuestTalras.quest()))
 			call QuestTalras.quest().enable()
-			call BJDebugMsg("After enabling quest talras " + I2S(QuestTalras.quest()))
-			call BJDebugMsg("State is " + I2S(QuestTalras.quest().state()))
 
 			call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 		endmethod

@@ -77,7 +77,14 @@ library StructSpellsSpellBlaze requires Asl, StructSpellsSpellElementalMageDamag
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0U1', 'A0U6')
+			call this.addGrimoireEntry('A0U2', 'A0U7')
+			call this.addGrimoireEntry('A0U3', 'A0U8')
+			call this.addGrimoireEntry('A0U4', 'A0U9')
+			call this.addGrimoireEntry('A0U5', 'A0UA')
+			
+			return this
 		endmethod
 	endstruct
 

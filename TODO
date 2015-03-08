@@ -27,16 +27,16 @@
 * Immediate stop bricht Zauberbuch hinzufügen etc. ab?!
 * Tool schreiben dass die MMP-Datei der Minimap nimmt, ein Gebiet ausschneidet und ein Bild mit einer bestimmten Größe daraus erzeugt.
 * Diakon lebt nach Video in dem er umgebracht wurde wieder?!
-* Drachentöterin wurde nach Medusavideo entfernt, ist nicht unsterblich?! Vermutlich wird eine Copy der actorin gemacht die hidden ist!!! Kann nicht sein AUnitActor hat ShowUnit(true).
+* DEPRECATED: Drachentöterin wurde nach Medusavideo entfernt, ist nicht unsterblich?! Vermutlich wird eine Copy der actorin gemacht die hidden ist!!! Kann nicht sein AUnitActor hat ShowUnit(true).
 * Ursula: Dialog einbauen falls man Druide ist!
 * Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
 * Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
 * Schwert- und Schildhand vertauschen, damit Animation für Schild stimmt.
 * FIXED: Beim Druiden werden am Anfang gar nicht alle Klassenspells zu den grimoire spells hinzugefügt, siehe wenn "addspells d" aufgerufen wird! Klassen-IDs stimmen überein. (OpLimit im Debugmodus)
-* SpellWrathOfTheForest (Zorn des Waldes) ist der letzte Zauber der noch NEU hinzugefügt wird
+* FIXED: SpellWrathOfTheForest (Zorn des Waldes) ist der letzte Zauber der noch NEU hinzugefügt wird
 * FIXED: addClassSpellsFromCharacter() in Klassenauswahl verwenden, dann müssen nicht alle Zauber gesammelt werden.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
-* Wache Willkommen in Talras erscheint nur bei extra Gebiet!
+* DEPRECATED: Wache Willkommen in Talras erscheint nur bei extra Gebiet!
 * Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt.
 * Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer.
 * FIXED: Zauberbuch: Je nachdem wie viel Ausgabe stattfindet werden weniger Zauber erzeugt. Vermutlich ein Funktionsaufrufslimit. Funktionsaufrufe reduzieren, nur einmal updateUI aufrufen oder weniger Debug-Ausgaben.
@@ -92,6 +92,7 @@
 * Ricmans "Und was machst du hier?" direkt auf Startseite anzeigen.
 * Nekromant: Dämonendiener für 5 verschiedene Stufen erzeugen.
 * Nekromant: Dunklen Diener für 5 verschiedene Stufen erzeugen.
+* Nekromant: Grundzauber "Todesbote" sollte "Pestkarren" heißen. Erzeugt einen Pestkarren mit den selben Fähigkeiten!
 * Druide: Heilquelle kleiner machen, länger pro Stufe und andere Einheit?
 * Druide: Manaquelle kleiner machen, länger pro Stufe und andere Einheit?
 * Nach letzter Schlacht: Nordmänner zurück zu Neutral Passiv, entlassen.
@@ -107,7 +108,7 @@
 * Viele unnötige Helpermethoden in ACharacter rauswerfen.
 * Dago retten - Bedingung einbauen, Dago darf das Gebiet nicht verlassen, sonst ist der Auftrag fehlgeschlagen! Ansonsten kann man mit Dago alles abmetzeln!
 * Wenn man Kuno auf dem Bauernhof anspricht sollte er sagen "Ich habe zu tun". Ansonsten sind die Sätze unlogisch.
-* Schrein direkt beim Bauernhof platzieren.
+* DONE: Schrein direkt beim Bauernhof platzieren.
 * Video "Wigberht" fixen.
 * Osman: Sollte im Zusammenhang mit dem Kultquest den Begriff „Todesgruft“ erwähnen. So wird sie laut Drachentöterin von Eingeweihten genannt. Er muss bereits davon gehört haben.
 * Drachentöterin: Hat nun ein Gespräch, muss aber noch geschrieben werden:
@@ -200,6 +201,12 @@
 * Dialog mit Drachenöterin über Deranor verbessern.
 * Töten des Diakons funktioniert nicht in Video!
 * DONE: Respawn-Zeit für Gegner länger, stört Spielfluss.
+* FIXED: wc3 Helden haben als Startattribute insgesamt 50 Punkte. In DMdF haben sie 45.
+* Bei allen Tötungsquests den Spieler Neutral Aggressiv entfernen. Einheiten könnten übernommen worden sein!
+* Sisgard: Frage "Was machst du wenn die Orks und Dunkelelfen kommen?".
+* Irmina: Agihards Quest nicht ablehnbar machen "Also Agihard" sollte einfach auf der Hauptseite angezeigt werden.
+* Arenameister und Talras' mutiger Waffenmeister haben dasselbe Icon.
+* Wiederbelebungsbug erneut. Nach Video "Das erste Gefecht" wurde während des Spiels Charakter 0 getötet und kein Wiederbelebungstimer gestartet. Es erschien auch kein Timerdialog.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

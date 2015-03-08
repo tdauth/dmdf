@@ -100,7 +100,14 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0UV', 'A0V0')
+			call this.addGrimoireEntry('A0UW', 'A0V1')
+			call this.addGrimoireEntry('A0UX', 'A0V2')
+			call this.addGrimoireEntry('A0UY', 'A0V3')
+			call this.addGrimoireEntry('A0UZ', 'A0V4')
+			
+			return this
 		endmethod
 	endstruct
 

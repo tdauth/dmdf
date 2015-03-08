@@ -1,4 +1,4 @@
-library StructMapTalksTalkHaid requires Asl
+library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 
 	struct TalkHaid extends ATalk
 		private boolean array m_completedWithCostKnowledge[6] /// @todo MapData.maxPlayers
@@ -30,7 +30,7 @@ library StructMapTalksTalkHaid requires Asl
 			call speech(info, character, false, tr("Wer bist du?"), null)
 			call speech(info, character, true, tr("Ich bin Haid, ein fahrender Händler aus Trammar. Interessierst du dich zufällig für eine meiner Waren?"), null)
 			call speech(info, character, false, tr("Was verkaufst du denn?"), null)
-			call speech(info, character, true, tr("Alles was man im Alltag gebrauchen kann: Brot, Äpfel, Wurst, Geschirr und noch vieles mehr."), null)
+			call speech(info, character, true, tr("Etwas zu essen und alles was man im Alltag gebrauchen kann: Brot, Äpfel, Wurst, Geschirr und noch vieles mehr."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -75,7 +75,7 @@ library StructMapTalksTalkHaid requires Asl
 		private static method infoActionWhatDoesTheKingSay takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was sagt denn der König?"), null)
 			call speech(info, character, true, tr("Der König? Dieser miese Sack, der behauptet doch glatt, dass es sich nur um kleinere Überfälle handele. Hab's nicht glauben wollen als ich's von einem Jäger gehört habe."), null)
-			call speech(info, character, true, tr("Verdammte Scheiße, wozu haben wir denn den ganzen Adel mit all seinen Vasallen. Wollen die sich ewig nur um ihr beschisses Gut streiten?"), null)
+			call speech(info, character, true, tr("Verdammte Scheiße, wozu haben wir denn den ganzen Adel mit all seinen Vasallen. Wollen die sich ewig nur um ihr beschissenes Gut streiten?"), null)
 			call speech(info, character, true, tr("Die sollen gefälligst ein Heer aufstellen! Ich hab viele gute Freunde in Trammer verloren. Dieser Dreckskönig, wenn ich ..."), null)
 			call speech(info, character, true, tr("Erzähl aber keinem, dass ich so von ihm geredet habe, sonst lande ich noch am Pranger oder schlimmer noch am Galgen."), null)
 			call speech(info, character, false, tr("Keine Sorge."), null)
@@ -94,7 +94,7 @@ library StructMapTalksTalkHaid requires Asl
 			call speech(info, character, true, tr("Du willst mir helfen? Wieso solltest du das tun?"), null)
 			call speech(info, character, false, tr("Wieso nicht?"), null)
 			call speech(info, character, true, tr("Wenn du mir wirklich helfen willst, dann gib mir ein paar Goldmünzen, damit ich den Vogt dafür bezahlen kann, in die Burg eingelassen zu werden."), null)
-			call speech(info, character, false, tr("Wie viel brauchst du denn?"), null)
+			call speech(info, character, false, tr("Wie viele brauchst du denn?"), null)
 			call speech(info, character, true, tr("40 Goldmünzen würden schon reichen."), null)
 			call QuestGoldForTheTradingPermission.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
@@ -109,7 +109,7 @@ library StructMapTalksTalkHaid requires Asl
 		endmethod
 
 		// Hier hast du deine Goldmünzen.
-		private static method infoActionGold takes AInfo info, ACharacter character returns nothing
+		private static method infoActionGold takes AInfo info, Character character returns nothing
 			local player user = character.player()
 			if (TalkFerdinand.talk().knowsCost(character)) then // Charakter hat vom Vogt erfahren, wie viel eine Handelsgenehmigung kostet.
 				call speech(info, character, false, tr("Hier hast du deine 10 Goldmünzen. Hab mal mit dem Vogt gesprochen. Willst du mich verarschen oder was?"), null)
@@ -123,7 +123,10 @@ library StructMapTalksTalkHaid requires Asl
 				call speech(info, character, true, tr("Danke vielmals. Hier hast du eine kleine Stärkung."), null)
 				call SetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) - 40)
 				// kleine Stärkung geben (nichts ändern)
-				// FIXME
+				call character.giveItem('I03O')
+				call character.giveItem('I03O')
+				call character.giveItem('I016')
+				call character.giveItem('I016')
 			endif
 			call QuestGoldForTheTradingPermission.characterQuest(character).complete()
 			call info.talk().showStartPage(character)

@@ -38,7 +38,15 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			
+			call this.addGrimoireEntry('A0T7', 'A0TC')
+			call this.addGrimoireEntry('A0T8', 'A0TD')
+			call this.addGrimoireEntry('A0T9', 'A0TE')
+			call this.addGrimoireEntry('A0TA', 'A0TF')
+			call this.addGrimoireEntry('A0TB', 'A0TG')
+			
+			return this
 		endmethod
 	endstruct
 

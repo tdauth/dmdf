@@ -81,7 +81,14 @@ library StructSpellsSpellIceAge requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0TH', 'A0TM')
+			call this.addGrimoireEntry('A0TI', 'A0TN')
+			call this.addGrimoireEntry('A0TJ', 'A0TO')
+			call this.addGrimoireEntry('A0TK', 'A0TP')
+			call this.addGrimoireEntry('A0TL', 'A0TQ')
+			
+			return this
 		endmethod
 	endstruct
 

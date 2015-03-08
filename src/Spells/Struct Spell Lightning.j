@@ -24,7 +24,14 @@ library StructSpellsSpellLightning requires Asl, StructSpellsSpellElementalMageD
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			return thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0UL', 'A0UQ')
+			call this.addGrimoireEntry('A0UM', 'A0UR')
+			call this.addGrimoireEntry('A0UN', 'A0US')
+			call this.addGrimoireEntry('A0UO', 'A0UT')
+			call this.addGrimoireEntry('A0UP', 'A0UU')
+			
+			return this
 		endmethod
 	endstruct
 
