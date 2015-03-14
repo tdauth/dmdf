@@ -1,6 +1,13 @@
 library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpawnPoint
 
 	struct SpawnPoints
+		// wolves start 0
+		private static SpawnPoint m_wolvesStart0
+		// wolves start 1
+		private static SpawnPoint m_wolvesStart1
+		// boars start 0
+		private static SpawnPoint m_boarsStart0
+   
 		private static SpawnPoint m_wolves0
 		private static SpawnPoint m_wolves1
 		private static SpawnPoint m_boars0
@@ -55,6 +62,34 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		/// \todo change unit type
 		public static method init takes nothing returns nothing
 			local integer index
+			
+			 // wolves start 0
+			set thistype.m_wolvesStart0 = SpawnPoint.create()
+			set index = thistype.m_wolvesStart0.addUnitWithType(gg_unit_n02F_0502, 1.0)
+			call thistype.m_wolvesStart0.addItemType(index, 'I01H', 1.0)
+			set index = thistype.m_wolvesStart0.addUnitWithType(gg_unit_n02F_0500, 1.0)
+			call thistype.m_wolvesStart0.addItemType(index, 'I01H', 1.0)
+			set index = thistype.m_wolvesStart0.addUnitWithType(gg_unit_n02F_0501, 1.0)
+			call thistype.m_wolvesStart0.addItemType(index, 'I01H', 1.0)
+			call thistype.m_wolvesStart0.addItemType(index, 'rhe1', 1.0)
+			// wolves start 1
+			set thistype.m_wolvesStart1 = SpawnPoint.create()
+			set index = thistype.m_wolvesStart1.addUnitWithType(gg_unit_n02F_0503, 1.0)
+			call thistype.m_wolvesStart1.addItemType(index, 'I01H', 1.0)
+			call thistype.m_wolvesStart1.addItemType(index, 'rman', 1.0)
+			set index = thistype.m_wolvesStart1.addUnitWithType(gg_unit_n02F_0504, 1.0)
+			call thistype.m_wolvesStart1.addItemType(index, 'I01H', 1.0)
+			
+			// boars start 0
+			set thistype.m_boarsStart0 = SpawnPoint.create()
+			set index = thistype.m_boarsStart0.addUnitWithType(gg_unit_n002_0505, 1.0)
+			call thistype.m_boarsStart0.addItemType(index, 'I007', 1.0)
+			set index = thistype.m_boarsStart0.addUnitWithType(gg_unit_n002_0507, 1.0)
+			call thistype.m_boarsStart0.addItemType(index, 'I007', 1.0)
+			set index = thistype.m_boarsStart0.addUnitWithType(gg_unit_n002_0506, 1.0)
+			call thistype.m_boarsStart0.addItemType(index, 'I007', 1.0)
+			call thistype.m_boarsStart0.addItemType(index, 'rhe2', 1.0)
+			
 			set thistype.m_wolves0 = SpawnPoint.create()
 			set index = thistype.m_wolves0.addUnitWithType(gg_unit_n02G_0140, 1.0)
 			call thistype.m_wolves0.addItemType(index, 'I01I', 1.0)

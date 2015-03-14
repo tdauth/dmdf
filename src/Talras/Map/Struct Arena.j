@@ -108,6 +108,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			local player killerOwner
 			local integer i
 			local integer aliveCount = 0
+			// TODO check if the owner of the killer has a unit in the Arena not if the killer is in the arena
 			if (thistype.m_units.contains(killer)) then
 				set killerOwner = GetOwningPlayer(killer)
 				set thistype.m_playerScore[GetPlayerId(killerOwner)] = thistype.m_playerScore[GetPlayerId(killerOwner)] + 1

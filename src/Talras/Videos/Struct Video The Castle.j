@@ -14,6 +14,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			// actor
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_the_castle_character)
 			call SetUnitFacing(thistype.actor(), 182.64)
+			call IssuePointOrder(thistype.actor(), "move", GetRectCenterX(gg_rct_video_the_castle_character_target), GetRectCenterY(gg_rct_video_the_castle_character_target))
 		endmethod
 
 		/*
@@ -35,8 +36,6 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
     call TriggerSleepAction( 4.00 )
     */
 		public stub method onPlayAction takes nothing returns nothing
-		
-			call IssuePointOrder(thistype.actor(), "move", GetRectCenterX(gg_rct_video_the_castle_character_target), GetRectCenterY(gg_rct_video_the_castle_character_target))
 
 			if (wait(2.50)) then
 				return

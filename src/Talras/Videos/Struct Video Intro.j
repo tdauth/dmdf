@@ -9,8 +9,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			call Game.initVideoSettings()
 			call SetTimeOfDay(6.00)
 			call CameraSetupApplyForceDuration(gg_cam_intro_orc, true, 0.00)
-			call SetUnitPositionRect(AVideo.actor(), gg_rct_character_0_start)
-			call SetUnitFacing(AVideo.actor(), 0.0)
+			call SetUnitPositionRect(thistype.actor(), gg_rct_video_intro_character)
+			call SetUnitFacing(thistype.actor(), 0.0)
 			
 			set this.worker0 = thistype.saveUnitActor(gg_unit_n02J_0013)
 			call SetUnitPositionRect(thistype.unitActor(this.worker0), gg_rct_video_intro_worker_position)

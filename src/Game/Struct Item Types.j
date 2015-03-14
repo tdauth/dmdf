@@ -179,6 +179,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_druidCloak
 		private static RangeItemType m_druidStaff
 		private static ItemType m_druidBoots
+		
+		// corn eaters items
+		private static ItemType m_manaAmulet
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -414,6 +417,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			set thistype.m_druidBoots = ItemType.createSimple('I033', ItemType.equipmentTypeArmour)
 			call thistype.m_druidBoots.addAbility('A04V', true)
+			
+			// corn eaters items
+			set thistype.m_manaAmulet = ItemType.createSimple('I046', ItemType.equipmentTypeAmulet)
+			call thistype.m_manaAmulet.addAbility('AIbm', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType
