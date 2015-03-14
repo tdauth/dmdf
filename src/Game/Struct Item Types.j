@@ -1,4 +1,4 @@
-library StructGameItemTypes requires Asl, StructGameClasses
+library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 	/**
 	 * \brief Default item type struct for all item types in DMdF.
@@ -26,6 +26,12 @@ library StructGameItemTypes requires Asl, StructGameClasses
 	/**
 	 * \brief Item type for all range based weapons.
 	 * This item type should enable the proper attack animations for characters as well as range attack when being equipped.
+	 * Since disabling techs does not work in Warcraft III we use the followig solution:
+	 * http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/
+	 * For this solution two unit types must exist. One with range attack and the other with melee attack.
+	 *
+	 * \note For specifying any missile graphics you can use a damage ability based on 'AIsb' and specify one. Set the chance for the effect to 0.0 to disable it.
+	 * \note Note that orbs do not stack so it can only be used if there is only one weapon.
 	 */
 	struct RangeItemType extends ItemType
 	
@@ -36,23 +42,38 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		// Attack Throw 6
 		// Attack Throw 7
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
+			local Character character = ACharacter.getCharacterByUnit(whichUnit)
 			debug call Print("Range item attach")
-			call AddUnitAnimationProperties(whichUnit, "Throw 7", true)
 			
-			call SetPlayerTechResearched(GetOwningPlayer(whichUnit), MapData.meleeResearchId, 0)
-			call SetPlayerTechMaxAllowed(GetOwningPlayer(whichUnit), MapData.meleeResearchId, 0)
-			call SetPlayerTechMaxAllowed(GetOwningPlayer(whichUnit), MapData.rangeResearchId, 1)
-			call SetPlayerTechResearched(GetOwningPlayer(whichUnit), MapData.rangeResearchId, 1)
+			if (character != 0) then
+				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityId(character.class())) + " to unit " + GetUnitName(whichUnit))
+				call character.updateRealSpellLevels()
+				call UnitAddAbility(whichUnit, Classes.classRangeAbilityId(character.class()))
+				call UnitRemoveAbility(whichUnit, Classes.classRangeAbilityId(character.class()))
+				call character.restoreRealSpellLevels()
+				call character.clearRealSpellLevels()
+				call character.grimoire().updateUi.evaluate()
+				// TODO add abilities of inventory?!
+				
+				call AddUnitAnimationProperties(whichUnit, "Throw 7", true)
+			endif
 		endmethod
 		
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
+			local Character character = ACharacter.getCharacterByUnit(whichUnit)
 			debug call Print("Range item drop")
-			call AddUnitAnimationProperties(whichUnit, "Throw 7", false)
-
-			call SetPlayerTechResearched(GetOwningPlayer(whichUnit), MapData.rangeResearchId, 0)
-			call SetPlayerTechMaxAllowed(GetOwningPlayer(whichUnit), MapData.rangeResearchId, 0)
-			call SetPlayerTechMaxAllowed(GetOwningPlayer(whichUnit), MapData.meleeResearchId, 1)
-			call SetPlayerTechResearched(GetOwningPlayer(whichUnit), MapData.meleeResearchId, 1)
+			
+			if (character != 0) then
+				debug call Print("Adding and removing ability " + GetObjectName(Classes.classMeleeAbilityId(character.class())) + " to unit " + GetUnitName(whichUnit))
+				call character.updateRealSpellLevels()
+				call UnitAddAbility(whichUnit, Classes.classMeleeAbilityId(character.class()))
+				call UnitRemoveAbility(whichUnit, Classes.classMeleeAbilityId(character.class()))
+				call character.restoreRealSpellLevels()
+				call character.clearRealSpellLevels()
+				call character.grimoire().updateUi.evaluate()
+				
+				call AddUnitAnimationProperties(whichUnit, "Throw 7", false)
+			endif
 		endmethod
 
 	endstruct
@@ -79,13 +100,10 @@ library StructGameItemTypes requires Asl, StructGameClasses
 	
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Melee item attach")
-			//call AddUnitAnimationProperties(whichUnit, "Throw", true)
 		endmethod
 		
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Melee item drop")
-			//call AddUnitAnimationProperties(whichUnit, "Throw", false)
-			//call SetPlayerTechResearched(GetOwningPlayer(whichUnit), 'R007', 0)
 		endmethod
 	endstruct
 
@@ -129,7 +147,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 		private static ItemType m_leatherArmourPlate
 		private static ItemType m_dragonArmourPlate
 		private static DefenceItemType m_largeRoundedBuckler
-		private static ItemType m_dart
+		private static RangeItemType m_dart
 		// Wieland's items
 		private static ItemType m_knightsArmour
 		private static ItemType m_bascinet
@@ -304,7 +322,7 @@ library StructGameItemTypes requires Asl, StructGameClasses
 			set thistype.m_largeRoundedBuckler = ItemType.createSimple('I02A', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_largeRoundedBuckler.addAbility('A081', true)
 
-			set thistype.m_dart = ItemType.createSimple('I029', AItemType.equipmentTypePrimaryWeapon)
+			set thistype.m_dart = RangeItemType.createSimple('I029', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_dart.addAbility('A080', true)
 
 			// Wieland's items

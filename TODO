@@ -8,9 +8,13 @@
 * FIXED: Trommon Tagesablauf auf Fähre ändern.
 * FIXED: Kunos Tagesablauf auf Fähre ändern.
 * Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird.
-* Fernkampf : UNIT_TYPE_RANGED_ATTACKER native UnitAddType                  takes unit whichUnit, unittype whichUnitType returns boolean
-* Fernkampf: Animationstag hinzufügen beim Anlegen: AddUnitAnimationProperties(whichUnit, "", add)
-* Fernkampf: Verschiedene Klassen sollen mit Fernkampfwaffe starten: Kleriker, Nekromant, Elementarmagier, Zauberer, Druide?
+* Metamorphose: Ist mit passiver Verwandlung eventuell sicherer, Cast-Zeit kontrollierbar: http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/
+* DEPRECATED: Fernkampf : UNIT_TYPE_RANGED_ATTACKER native UnitAddType                  takes unit whichUnit, unittype whichUnitType returns boolean
+* DONE: Fernkampf: Animationstag hinzufügen beim Anlegen: AddUnitAnimationProperties(whichUnit, "", add)
+* DONE: Fernkampf: Verschiedene Klassen sollen mit Fernkampfwaffe starten: Kleriker, Nekromant, Elementarmagier, Zauberer, Druide?
+* DONE: Fernkampf: http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/
+* DONE: Fernkampf: Ausbaustufen entfernen.
+* DEPRECATED: Fernkampf: Waffenfähigkeiten müssen auf Klauen des Angriffs Schadensbonus basieren und niemals auf Orbfähigkeiten!!! Diese aktivieren Angriffsindex!!!
 * Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle? Fulco will die Zauberkraft der Hexen im Norden.
 * Kuno: Einbauen "Diese Wälder sind gefährlich! Hier hausen starke Kreaturen, nehmt euch in Acht!"
 * "Katzen für Brogo" braucht Icon - Katze
@@ -63,8 +67,8 @@
 * Beim Video in der Todesgruft Predigt vom Diakon einbauen.
 * Gruft des Todes: Missgeburt braucht Fähigkeiten.
 * DONE: Skeletthexenmeister braucht mehr Fähigkeiten.
-* Manaregenerationsrate bei Creeps deutlich erhöhen.
-* Knochendrachen benötigen Fähigkeiten.
+* DONE: Manaregenerationsrate bei Creeps deutlich erhöhen.
+* DONE: Knochendrachen benötigen Fähigkeiten.
 * DONE: Skelettflammenkrieger benötigt Fähigkeiten.
 * Berserkerin benötigt Fähigkeiten.
 * DONE: Pythonkriegerin benötigt Schlangenbeschwörung.
@@ -85,7 +89,7 @@
 * Lothar: Neues Quest mit Weinreben auf dem Mühlberg. Weinreben ernten.
 * Goldmünzenbeutel: Beutelmodell.
 * Haid muss mehr Gegenstände verkaufen.
-* Töten von Gegnern muss weniger Gold geben.
+* FIXED: Töten von Gegnern muss weniger Gold geben.
 * FIXED: Tränke viel billiger machen.
 * FIXED: Apfel viel zu teuer.
 * FIXED: Felle, Gewaffe, Pilze geben zu viel Geld.
@@ -207,6 +211,9 @@
 * Irmina: Agihards Quest nicht ablehnbar machen "Also Agihard" sollte einfach auf der Hauptseite angezeigt werden.
 * Arenameister und Talras' mutiger Waffenmeister haben dasselbe Icon.
 * Wiederbelebungsbug erneut. Nach Video "Das erste Gefecht" wurde während des Spiels Charakter 0 getötet und kein Wiederbelebungstimer gestartet. Es erschien auch kein Timerdialog.
+* Bei allen Videosequenzen sollte nach der Ausblendung des Schwarzfilters bereits die Kamera in Bewegung sein. Sonst wirkt es nicht flüssig.
+* Bei allen Videotransmissions nicht einfach abbrechen und Portrait entfernen, sondern warten, so wie in wc3-Kampagne.
+* Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

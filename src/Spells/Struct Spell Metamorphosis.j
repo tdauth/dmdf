@@ -9,6 +9,8 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 	 * Besides it uses \ref EVENT_UNIT_HERO_REVIVE_FINISH to unmorph the character when being revived unmorphed.
 	 * 
 	 * \note All morph spells need a short delay in which \ref Character#morph() can be called which stores spells and items safely!
+	 * 
+	 * \todo Check out http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/ which might be a safer method.
 	 */
 	struct SpellMetamorphosis
 		private Character m_character

@@ -393,6 +393,64 @@ library StructGameClasses requires Asl, StructGameCharacter
 			endif
 			return tr("Unbekannt")
 		endmethod
+		
+		public static method classMeleeAbilityId takes AClass class returns integer
+			if (class == thistype.cleric()) then
+				debug call Print("Cleric")
+				return 'A0C2'
+			elseif (class == thistype.necromancer()) then
+				debug call Print("Necromancer")
+				return 'A0V5'
+			elseif (class == thistype.druid()) then
+				debug call Print("Druid")
+				return 'A0V6'
+			elseif (class == thistype.knight()) then
+				debug call Print("Knight")
+				return 'A0V7'
+			elseif (class == thistype.dragonSlayer()) then
+				debug call Print("Dragon Slayer")
+				return 'A0V8'
+			elseif (class == thistype.ranger()) then
+				debug call Print("Ranger")
+				return 'A0V9'
+			elseif (class == thistype.elementalMage()) then
+				debug call Print("Elemental Mage")
+				return 'A0VA'
+			elseif (class == thistype.wizard()) then
+				debug call Print("Wizard")
+				return 'A0VB'
+			endif
+			return 0
+		endmethod
+		
+		public static method classRangeAbilityId takes AClass class returns integer
+			if (class == thistype.cleric()) then
+				debug call Print("Cleric")
+				return 'A0C1'
+			elseif (class == thistype.necromancer()) then
+				debug call Print("Necromancer")
+				return 'A0VC'
+			elseif (class == thistype.druid()) then
+				debug call Print("Druid")
+				return 'A0VD'
+			elseif (class == thistype.knight()) then
+				debug call Print("Knight")
+				return 'A0VE'
+			elseif (class == thistype.dragonSlayer()) then
+				debug call Print("Dragon Slayer")
+				return 'A0VF'
+			elseif (class == thistype.ranger()) then
+				debug call Print("Ranger")
+				return 'A0VG'
+			elseif (class == thistype.elementalMage()) then
+				debug call Print("Elemental Mage")
+				return 'A0VH'
+			elseif (class == thistype.wizard()) then
+				debug call Print("Wizard")
+				return 'A0VI'
+			endif
+			return 0
+		endmethod
 	endstruct
 
 endlibrary
