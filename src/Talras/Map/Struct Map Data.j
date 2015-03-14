@@ -52,6 +52,8 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 
 		public static constant integer boneDragon = 'n024' /// \todo FIXME
 		public static constant integer osseousDragon = 'n024'
+		
+		public static constant integer deranor = 'u00A'
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -260,6 +262,7 @@ static if (DEBUG_MODE) then
 			call Print("dragonhunt")
 			call Print("deathvault")
 			call Print("bloodthirstiness")
+			call Print("deranor")
 			call Print(tr("Erzeugungs-Cheats:"))
 			call Print("unitspawns")
 		endmethod
@@ -394,6 +397,14 @@ static if (DEBUG_MODE) then
 		private static method onCheatActionBloodthirstiness takes ACheat cheat returns nothing
 			call VideoBloodthirstiness.video().play()
 		endmethod
+		
+		private static method onCheatActionDeranor takes ACheat cheat returns nothing
+			call VideoDeranor.video().play()
+		endmethod
+		
+		private static method onCheatActionDeranorsDeath takes ACheat cheat returns nothing
+			call VideoDeranorsDeath.video().play()
+		endmethod
 
 		private static method onCheatActionUnitSpawn takes ACheat cheat returns nothing
 			call UnitTypes.spawn(GetTriggerPlayer(), GetUnitX(Character.playerCharacter(GetTriggerPlayer()).unit()), GetUnitY(Character.playerCharacter(GetTriggerPlayer()).unit()))
@@ -429,6 +440,8 @@ static if (DEBUG_MODE) then
 			call ACheat.create("dragonhunt", true, thistype.onCheatActionDragonHunt)
 			call ACheat.create("deathvault", true, thistype.onCheatActionDeathVault)
 			call ACheat.create("bloodthirstiness", true, thistype.onCheatActionBloodthirstiness)
+			call ACheat.create("deranor", true, thistype.onCheatActionDeranor)
+			call ACheat.create("deranorsdeath", true, thistype.onCheatActionDeranorsDeath)
 			call ACheat.create("unitspawn", true, thistype.onCheatActionUnitSpawn)
 			debug call Print("Before creating all cheats")
 		endmethod

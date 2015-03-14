@@ -179,6 +179,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_druidCloak
 		private static RangeItemType m_druidStaff
 		private static ItemType m_druidBoots
+		// Deranor's artefact
+		private static ItemType m_deranorsCrownPiece
 		
 		// corn eaters items
 		private static ItemType m_manaAmulet
@@ -417,6 +419,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			set thistype.m_druidBoots = ItemType.createSimple('I033', ItemType.equipmentTypeArmour)
 			call thistype.m_druidBoots.addAbility('A04V', true)
+			
+			// Deranor's artefact
+			set thistype.m_deranorsCrownPiece =  ItemType.createSimple('I04A', ItemType.equipmentTypeAmulet)
+			call thistype.m_deranorsCrownPiece.addAbility('AImx', true)
+			call thistype.m_deranorsCrownPiece.addAbility('AIx2', true)
 			
 			// corn eaters items
 			set thistype.m_manaAmulet = ItemType.createSimple('I046', ItemType.equipmentTypeAmulet)

@@ -1,6 +1,8 @@
 //! import "Talras/Videos/Struct Video A New Alliance.j"
 //! import "Talras/Videos/Struct Video Bloodthirstiness.j"
 //! import "Talras/Videos/Struct Video Death Vault.j"
+//! import "Talras/Videos/Struct Video Deranor.j"
+//! import "Talras/Videos/Struct Video Deranors Death.j"
 //! import "Talras/Videos/Struct Video Dragon Hunt.j"
 //! import "Talras/Videos/Struct Video Intro.j"
 //! import "Talras/Videos/Struct Video Rescue Dago 0.j"
@@ -12,12 +14,14 @@
 //! import "Talras/Videos/Struct Video Upstream.j"
 //! import "Talras/Videos/Struct Video Wigberht.j"
 
-library MapVideos requires StructMapVideosVideoANewAlliance, StructMapVideosVideoBloodthirstiness, StructMapVideosVideoDeathVault, StructMapVideosVideoDragonHunt, StructMapVideosVideoIntro, StructMapVideosVideoRescueDago0, StructMapVideosVideoRescueDago1, StructMapVideosVideoTheCastle, StructMapVideosVideoTheChief, StructMapVideosVideoTheDukeOfTalras, StructMapVideosVideoTheFirstCombat, StructMapVideosVideoUpstream, StructMapVideosVideoWigberht
+library MapVideos requires StructMapVideosVideoANewAlliance, StructMapVideosVideoBloodthirstiness, StructMapVideosVideoDeathVault, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath, StructMapVideosVideoDragonHunt, StructMapVideosVideoIntro, StructMapVideosVideoRescueDago0, StructMapVideosVideoRescueDago1, StructMapVideosVideoTheCastle, StructMapVideosVideoTheChief, StructMapVideosVideoTheDukeOfTalras, StructMapVideosVideoTheFirstCombat, StructMapVideosVideoUpstream, StructMapVideosVideoWigberht
 
 	function initMapVideos takes nothing returns nothing
 		call VideoANewAlliance.initVideo()
 		call VideoBloodthirstiness.initVideo()
 		call VideoDeathVault.initVideo()
+		call VideoDeranor.initVideo()
+		call VideoDeranorsDeath.initVideo()
 		call VideoDragonHunt.initVideo()
 		call VideoIntro.initVideo()
 		call VideoRescueDago0.initVideo()

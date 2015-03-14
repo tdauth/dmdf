@@ -1,4 +1,4 @@
-library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcs
+library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcs, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath
 
 	struct QuestDeranor extends AQuest
 
@@ -10,21 +10,17 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			/// \todo JassHelper bug
 			//call AQuest.distributeRewards()
 			/*
-			Blutamulett
-			Drachenschuppe
-			2 große Heiltränke
-			2 große Manatränke
-			*/
+			 * Zacken von Deranors Krone
+			 * 3 Schattensteine
+			 */
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (Character.playerCharacter(Player(i)) != 0) then
-					call Character(Character.playerCharacter(Player(i))).giveItem('I02L')
-					call Character(Character.playerCharacter(Player(i))).giveItem('I02M')
-					call Character(Character.playerCharacter(Player(i))).giveItem('I00B')
-					call Character(Character.playerCharacter(Player(i))).giveItem('I00B')
-					call Character(Character.playerCharacter(Player(i))).giveItem('I00C')
-					call Character(Character.playerCharacter(Player(i))).giveItem('I00C')
+					call Character(Character.playerCharacter(Player(i))).giveItem('I04A')
+					call Character(Character.playerCharacter(Player(i))).giveItem('I04B')
+					call Character(Character.playerCharacter(Player(i))).giveItem('I04B')
+					call Character(Character.playerCharacter(Player(i))).giveItem('I04B')
 				endif
 				set i = i + 1
 			endloop
@@ -52,9 +48,8 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			// TODO play video
 			call this.questItem(1).enable()
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Seht euch dieses Gewölbe an! Hier muss Deranor sich versteckt halten."), null)
+			call VideoDeranor.video().play()
 		endmethod
 		
 		private static method stateEventCompleted1 takes AQuestItem questItem, trigger usedTrigger returns nothing
@@ -69,9 +64,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			call Fellows.dragonSlayer().reset()
 			call TalkDragonSlayer.initTalk()
 			
-			// TODO play video
-			//call VideoRescueDago1.video.evaluate().play()
-			//call waitForVideo(MapData.videoWaitInterval)
+			call VideoDeranorsDeath.video().play()
 		endmethod
 
 		private static method create takes nothing returns thistype

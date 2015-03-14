@@ -155,6 +155,10 @@
 * Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
 * ATalk braucht Attribut name, da Helden mit Eigennamen sonst den falschen Namen haben.
 * Arena: Für das Punkten muss nachgesehen werden ob der Owner des Killers eine Einheit in der Arena hat. Denn auch beschworene Einheiten können toten.
+* Button zum Durchschalten der Dungeons (Schreinbutton?).
+* Charaktere brauchen unbedingt Hero Glow. Anderenfalls kann man Spieler nicht auseinanderhalten.
+* Mehr Items.
+* ASL: ASpawnPoint - itemtable verwenden, mehrere Items möglich!
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
