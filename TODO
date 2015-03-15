@@ -160,11 +160,12 @@
 * Mehr Items.
 * ASL: ASpawnPoint - itemtable verwenden, mehrere Items möglich!
 * Video Wigberht: Frost statt Feuerwelle
-* Video Wigberht: AJump-Geschwindigkeit steuern, mehr Updates, langsamer Sprung abgeglichen mit Animationsgeschwindigkeit
-* Video Wigberht: Wigberht pausieren nachdem er die Orks erreicht und die terraindeformation startet.
+* FIXED: Video Wigberht: AJump-Geschwindigkeit steuern, mehr Updates, langsamer Sprung abgeglichen mit Animationsgeschwindigkeit
+* FIXED: Video Wigberht: Wigberht pausieren nachdem er die Orks erreicht und die terraindeformation startet.
 * Video Wigberht: Weniger Kameras um die Orks zu sehen, weniger Kameras um die terraindeformation und den Tot der Orks zu sehen.
 * Video Wigberht: Siegesanimation nachdem der Orkanführer getötet wurde.
-* Video Wigberht: Orks wehren sich auf Schlachtfeld nicht.
+* FIXED: Video Wigberht: Orks wehren sich auf Schlachtfeld nicht.
+* VIdeo Wigberht: Corpses are not dead.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

@@ -5,6 +5,8 @@ library StructSpellsSpellAbatement requires Asl, StructGameClasses, StructGameSp
 	struct SpellAbatement extends Spell
 		public static constant integer abilityId = 'A04W'
 		public static constant integer favouriteAbilityId = 'A04X'
+		public static constant integer classSelectionAbilityId = 'A0OD'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0OI'
 		public static constant integer maxLevel = 5
 		private static constant real healStartValue = 50.0
 		private static constant real healLevelValue = 50.0

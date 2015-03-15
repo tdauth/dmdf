@@ -28,6 +28,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 		private static constant real dividend = 10.0
 		/// \note If the range is 0.0 or smaller it is ignored.
 		private static constant real range = 0.0
+		private static constant real xpHandicap = 0.10 // this XP factor is used to reduce the actual gained experience such as in the Bonus Campaign. We want to prevent the characters from leveling too fast. In the Bonus Campaign it is 10 % and on difficulty hard it is even 7 %.
 		private static constant real unitsFactor = 1.0
 		private static constant real alliedUnitsFactor = 1.0
 		private static constant real characterFactor = 1.0
@@ -55,7 +56,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 				/// @todo FIXME, DMdF customized XP formula
 				//set result = thistype.damageFactor * GetUnitDamage(whichUnit) + thistype.damageTypeWeightFactor * GetUnitDamageType(whichUnit) + thistype.armourFactor * GetUnitArmour(whichUnit) + thistype.armourTypeWeightFactor * GetUnitArmourType(whichUnit) + thistype.hpFactor * GetUnitState(whichUnit, UNIT_STATE_LIFE) + thistype.manaFactor * GetUnitState(whichUnit, UNIT_STATE_MANA) + thistype.levelFactor * GetUnitLevel(whichUnit)
 				// Warcraft 3 default XP formula
-				set result = I2R(GetUnitXP(whichUnit))
+				set result = I2R(GetUnitXP(whichUnit)) * thistype.xpHandicap
 				//debug call Print("Result is " + R2S(result))
 				//set result = result / (thistype.summands * (thistype.dividend - Game.missingPlayers.evaluate()))
 				if (killingUnit == character.unit()) then
@@ -72,6 +73,11 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 			return R2I(result)
 		endmethod
 
+		/**
+		 * Gives a character the XP gained for killing unit \p whichUnit by the killer \p killingUnit.
+		 * The XP is always divided by the number of players. Otherwise the game would be too easy for multiple players.
+		 * \return Returns the XP.
+		 */
 		public static method giveUnitExperienceToCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
 			local integer experience = thistype.unitExperienceForCharacter(character, whichUnit, killingUnit) / ACharacter.countAll()
 			//debug call Print("Experience: " + I2S(experience))
@@ -383,7 +389,7 @@ endif
 			// environment systems
 			call ADamageRecorder.init(true, thistype.onDamageAction, false)
 			call AMissile.init(1.00, 9.80665, false) /// @todo Set correct refresh rate.
-			call AJump.init(1.00, null) /// @todo Set correct refresh rate.
+			call AJump.init(0.05, null)
 			// interface systems
 			call AArrowKeys.init(true)
 			call AThirdPersonCamera.init(true)

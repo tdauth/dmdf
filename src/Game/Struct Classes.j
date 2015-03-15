@@ -50,6 +50,10 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call SetPlayerAbilityAvailable(GetOwningPlayer(whichUnit), SpellMaertyrer.classSelectionGrimoireAbilityId, false)
 				call UnitAddAbility(whichUnit, SpellMaertyrer.classSelectionAbilityId)
 				
+				call UnitAddAbility(whichUnit, SpellAbatement.classSelectionGrimoireAbilityId)
+				call SetPlayerAbilityAvailable(GetOwningPlayer(whichUnit), SpellAbatement.classSelectionGrimoireAbilityId, false)
+				call UnitAddAbility(whichUnit, SpellAbatement.classSelectionAbilityId)
+				
 				/*
 				call SpellMaertyrer.create.evaluate(character)
 				call SpellAbatement.create.evaluate(character)
