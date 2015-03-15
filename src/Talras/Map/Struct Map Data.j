@@ -263,8 +263,10 @@ static if (DEBUG_MODE) then
 			call Print("deathvault")
 			call Print("bloodthirstiness")
 			call Print("deranor")
+			call Print("deranorsdeath")
 			call Print(tr("Erzeugungs-Cheats:"))
 			call Print("unitspawns")
+			call Print("testspawnpoint")
 		endmethod
 		
 		private static method onCheatActionBonus takes ACheat cheat returns nothing
@@ -410,6 +412,10 @@ static if (DEBUG_MODE) then
 			call UnitTypes.spawn(GetTriggerPlayer(), GetUnitX(Character.playerCharacter(GetTriggerPlayer()).unit()), GetUnitY(Character.playerCharacter(GetTriggerPlayer()).unit()))
 		endmethod
 		
+		private static method onCheatActionTestSpawnPoint takes ACheat cheat returns nothing
+			call TestSpawnPoint.spawn()
+		endmethod
+		
 		private static method createCheats takes nothing returns nothing
 			local ACheat cheat
 			debug call Print(tr("|c00ffcc00TEST-MODUS|r"))
@@ -443,6 +449,7 @@ static if (DEBUG_MODE) then
 			call ACheat.create("deranor", true, thistype.onCheatActionDeranor)
 			call ACheat.create("deranorsdeath", true, thistype.onCheatActionDeranorsDeath)
 			call ACheat.create("unitspawn", true, thistype.onCheatActionUnitSpawn)
+			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)
 			debug call Print("Before creating all cheats")
 		endmethod
 endif

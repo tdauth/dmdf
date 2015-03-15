@@ -184,6 +184,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		
 		// corn eaters items
 		private static ItemType m_manaAmulet
+		
+		// bandits drops
+		private static ItemType m_ringOfProtection2
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -428,6 +431,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			// corn eaters items
 			set thistype.m_manaAmulet = ItemType.createSimple('I046', ItemType.equipmentTypeAmulet)
 			call thistype.m_manaAmulet.addAbility('AIbm', true)
+			
+			set thistype.m_ringOfProtection2 =  ItemType.createSimple('I04C', ItemType.equipmentTypeAmulet)
+			call thistype.m_ringOfProtection2.addAbility('AId2', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType

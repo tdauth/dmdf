@@ -3,7 +3,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 
 	struct VideoWigberht extends AVideo
 		private static constant real wigberhtMoveSpeed = 200.0
-		private static constant real orcMoveSpeed = 300.0
+		private static constant real orcMoveSpeed = 120.0 // make them much slower than Wigberht
 		private integer m_actorWigberht
 		private integer m_actorRicman
 		private unit m_actorOrcLeader
@@ -17,30 +17,47 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 		endmethod
 
 		public stub method onInitAction takes nothing returns nothing
-			debug call Print("Init 1")
+			local integer i
 			call Game.initVideoSettings()
+			
+			// it should be destroyed at this point but not when debugging, make sure it is hidden
+			if (SpawnPoints.orcs0() != 0) then
+				call SpawnPoints.orcs0().disable()
+				set i = 0
+				loop
+					exitwhen (i == SpawnPoints.orcs0().countUnits())
+					debug call Print("Pausing and hiding orc spawn point unit: " + GetUnitName(SpawnPoints.orcs0().unit(i)))
+					call PauseUnit(SpawnPoints.orcs0().unit(i), true)
+					call ShowUnit(SpawnPoints.orcs0().unit(i), false)
+					set i = i + 1
+				endloop
+			endif
+			
 			call SetTimeOfDay(20.00)
 			call PlayThematicMusic("Music\\Wigberht.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_0, true, 0.0)
-			debug call Print("Init 2")
+			
+			call SetPlayerAllianceStateBJ(MapData.haldarPlayer, MapData.baldarPlayer, bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(MapData.baldarPlayer, MapData.haldarPlayer, bj_ALLIANCE_UNALLIED)
+			
 			set this.m_actorWigberht = thistype.saveUnitActor(Npcs.wigberht())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_wigberht_wigberhts_position)
 			call SetUnitFacing(thistype.unitActor(this.m_actorWigberht), 90.0)
-			call IssueImmediateOrder(thistype.unitActor(this.m_actorWigberht), "stop")
-			debug call Print("Init 3")
+			call SetUnitOwner(thistype.unitActor(this.m_actorWigberht), MapData.haldarPlayer, false)
+			call PauseUnit(thistype.unitActor(this.m_actorWigberht), true)
+			
 			set this.m_actorRicman = thistype.saveUnitActor(Npcs.ricman())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_wigberht_ricmans_position)
 			call SetUnitFacing(thistype.unitActor(this.m_actorRicman), 342.35)
 			call UnitRemoveAbility(thistype.unitActor(this.m_actorRicman), 'Aneu') // disable arrow
-			call IssueImmediateOrder(thistype.unitActor(this.m_actorRicman), "holdposition")
-			debug call Print("Init 4")
+			call SetUnitOwner(thistype.unitActor(this.m_actorRicman), MapData.haldarPlayer, false)
+			
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_wigberht_actors_position)
 			call SetUnitFacing(thistype.actor(), 206.90)
-			call IssueImmediateOrder(thistype.actor(), "holdposition")
 
 			set this.m_staticActors = AGroup.create()
 			set this.m_orcGuardians = AGroup.create()
-			debug call Print("Init 5")
+			
 			// create norsemen
 			// create rangers
 			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.haldarPlayer, UnitTypes.ranger, gg_rct_video_wigberht_ranger_0_position, GetRandomFacing()))
@@ -49,6 +66,13 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.haldarPlayer, UnitTypes.armedVillager, gg_rct_video_wigberht_farmer_0_position, GetRandomFacing()))
 			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.haldarPlayer, UnitTypes.armedVillager, gg_rct_video_wigberht_farmer_1_position, GetRandomFacing()))
 			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.haldarPlayer, UnitTypes.armedVillager, gg_rct_video_wigberht_farmer_2_position, GetRandomFacing()))
+			
+			// create fighting orcs
+			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_fighting_position_0, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_fighting_position_1, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_fighting_position_2, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_fighting_position_3, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_fighting_position_4, GetRandomFacing()))
 
 			// create corpses
 			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.norseman, gg_rct_video_wigberht_corpse_0_position, GetRandomFacing()))
@@ -56,8 +80,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			
 			call thistype.setActorsOwner(MapData.haldarPlayer) // change player to make sure that units do not walk back!
 			call this.m_staticActors.forGroup(thistype.holdPosition)
-			debug call Print("Init 6")
-			// create orcs
+			
+			// create orcs with leader
 			set this.m_actorOrcLeader = CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcLeader, gg_rct_video_wigberht_orc_leaders_position, 237.39)
 			call IssueImmediateOrder(this.m_actorOrcLeader, "holdposition")
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_0, 308.79))
@@ -67,7 +91,12 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_4, 250.86))
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_5, 215.00))
 			call this.m_orcGuardians.forGroup(thistype.holdPosition)
-			debug call Print("Init 7")
+			set i = 0
+			loop
+				exitwhen (i == this.m_orcGuardians.units().size())
+				call SetUnitFacingToFaceUnit(this.m_orcGuardians.units()[i], thistype.unitActor(this.m_actorWigberht))
+				set i = i + 1
+			endloop
 			
 		endmethod
 
@@ -76,12 +105,13 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 		endmethod
 
 		private static method kill takes unit whichUnit returns nothing
-			call SetUnitExploded(whichUnit, true)
+			//call SetUnitExploded(whichUnit, true)
 			call KillUnit(whichUnit)
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 			local terraindeformation terrainDeformation
+			local effect whichEffect
 			local AJump jump
 			/// @todo Do some fights on battlefield?
 			if (wait(4.0)) then
@@ -140,7 +170,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			call SetUnitFacingToFaceUnit(this.m_actorOrcLeader, this.m_orcGuardians.units()[0])
+			call SetUnitFacingToFaceUnitTimed(this.m_actorOrcLeader, this.m_orcGuardians.units()[0], 0.30)
 			if (wait(0.50)) then
 				return
 			endif
@@ -150,7 +180,9 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			endif
 			// view from sky
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_9, true, 0.0)
+			// make them much slower than Wigberht that he reaches his target before tham and makes his attack
 			call this.m_orcGuardians.forGroup(thistype.setMoveSpeed)
+			call PauseUnit(thistype.unitActor(this.m_actorWigberht), false)
 			call SetUnitMoveSpeed(thistype.unitActor(this.m_actorWigberht), thistype.wigberhtMoveSpeed)
 			call this.m_orcGuardians.pointOrder("move", GetRectCenterX(gg_rct_video_wigberht_orc_target), GetRectCenterY(gg_rct_video_wigberht_orc_target))
 			call IssueRectOrder(thistype.unitActor(this.m_actorWigberht), "move", gg_rct_video_wigberht_wigberht_target)
@@ -161,6 +193,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 					return
 				endif
 			endloop
+			call IssueImmediateOrder(thistype.unitActor(this.m_actorWigberht), "holdposition")
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_10, true, 0.0)
 			call QueueUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Attack Slam")
 			if (wait(1.50)) then
@@ -168,15 +201,24 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			endif
 			call QueueUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Stand Ready")
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_11, true, 0.0)
-			set terrainDeformation = TerrainDeformCrater(GetRectCenterX(gg_rct_video_wigberht_orc_target), GetRectCenterY(gg_rct_video_wigberht_orc_target), 400.0, 200.0, 5, false)
+			if (wait(1.50)) then
+				return
+			endif
+			set terrainDeformation = TerrainDeformWave(GetRectCenterX(gg_rct_video_wigberht_wigberht_target), GetRectCenterY(gg_rct_video_wigberht_wigberht_target), GetRectCenterX(gg_rct_video_wigberht_orc_target), GetRectCenterY(gg_rct_video_wigberht_orc_target), 400.0, 100.0, 400.0, 50.0, 5, 5)
+			//TerrainDeformCrater(GetRectCenterX(gg_rct_video_wigberht_orc_target), GetRectCenterY(gg_rct_video_wigberht_orc_target), 400.0, 200.0, 5, false)
 			if (wait(3.0)) then
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_12, true, 0.0)
+			if (wait(2.0)) then
+				return
+			endif
 			call this.m_orcGuardians.forGroup(thistype.kill)
 			if (wait(2.0)) then
 				return
 			endif
+			// face back to wigberht before attacking
+			call SetUnitFacingToFaceUnit(this.m_actorOrcLeader, thistype.unitActor(this.m_actorWigberht))
 			call TerrainDeformStop(terrainDeformation, 0)
 			set terrainDeformation = null
 			// move to leader
@@ -201,7 +243,11 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 					return
 				endif
 			endloop
+			call IssueImmediateOrder(thistype.unitActor(this.m_actorWigberht), "holdposition")
+			call IssueImmediateOrder(this.m_actorOrcLeader, "holdposition")
 			// wigberhts fire attack
+			call SetUnitTimeScale(thistype.unitActor(this.m_actorWigberht), 0.80)
+			call SetUnitTimeScale(this.m_actorOrcLeader, 0.80)
 			call QueueUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Attack Slam")
 			set jump = AJump.create(thistype.unitActor(this.m_actorWigberht), 400.0, GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3), 0)
 			loop
@@ -210,13 +256,24 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 					return
 				endif
 			endloop
+			
+			if (wait(1.0)) then
+				return
+			endif
 
 			// flames and kill
-			call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireMissile.mdx", GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3))) /// \todo direction of orc leader!
-			call SetUnitExploded(this.m_actorOrcLeader, true)
+			set whichEffect = AddSpecialEffect("Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireMissile.mdx", GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3)) /// \todo direction of orc leader!
+			//call SetUnitExploded(this.m_actorOrcLeader, true)
 			call KillUnit(this.m_actorOrcLeader)
 			
-			if (wait(5.0)) then
+			if (wait(2.0)) then
+				return
+			endif
+			
+			call DestroyEffect(whichEffect)
+			set whichEffect = null
+			
+			if (wait(2.0)) then
 				return
 			endif
 
@@ -236,6 +293,10 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorRicman), thistype.actor())
 
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_14, true, 0.0)
+			
+			if (wait(1.0)) then
+				return
+			endif
 
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
@@ -244,6 +305,12 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			endif
 
 			call TransmissionFromUnit(thistype.unitActor(this.m_actorWigberht), tr("Ihr habt mir bewiesen, dass ihr kämpfen könnt und Mut besitzt. Berichtet dem Herzog, dass wir ihn gegen die Dunkelelfen und Orks unterstützen werden."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorWigberht), tr("Danach begeben wir uns weiter auf die Suche nach meinem Vater. Sollten jedoch keine Feinde eintreffen, so müssen wir irgendwann aufbrechen."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -274,7 +341,6 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			debug call Print("Wigberht 7")
 			debug call Print("Wigberht 8")
 			call Game.resetVideoSettings()
-			debug call Print("Wigberht 9")
 		endmethod
 
 		private static method create takes nothing returns thistype

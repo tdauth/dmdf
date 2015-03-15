@@ -1,5 +1,62 @@
 library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpawnPoint
 
+	struct TestSpawnPoint
+		private static ARandomCreepIdGenerator m_randomCreepIdGenerator
+		private static AAbstractIdItem m_testUnit0Member0
+		private static AIdSet m_testUnit0IdSet
+		private static AUnitSpawn m_testUnit0Spawn
+		private static AAbstractIdItem m_testUnit0ItemSet0Member0
+		private static AAbstractIdItem m_testUnit0ItemSet0Member1
+		private static AIdSet m_testUnit0ItemSet0
+		private static AAbstractIdItem m_testUnit0ItemSet1Member0
+		private static AAbstractIdItem m_testUnit0ItemSet1Member1
+		private static AIdSet m_testUnit0ItemSet1
+		private static AAbstractIdItem m_testUnit0ItemSet2Member0
+		private static AAbstractIdItem m_testUnit0ItemSet2Member1
+		private static AIdSet m_testUnit0ItemSet2
+		private static AIdTable m_testUnit0ItemTable
+		private static AItemDrop m_testUnit0ItemDrop
+	
+		public static method spawn takes nothing returns nothing
+			// TEST
+			set thistype.m_randomCreepIdGenerator = ARandomCreepIdGenerator.create(5)
+			set thistype.m_testUnit0Member0 = AAbstractIdItem.createWithGenerator(thistype.m_randomCreepIdGenerator, 100)
+			
+			set thistype.m_testUnit0IdSet = AIdSet.create()
+			call thistype.m_testUnit0IdSet.addItem(thistype.m_testUnit0Member0)
+			
+			set thistype.m_testUnit0Spawn = AUnitSpawn.create()
+			call thistype.m_testUnit0Spawn.setLocation(GetRectCenter(gg_rct_character_0_start))
+			call thistype.m_testUnit0Spawn.setSet(thistype.m_testUnit0IdSet)
+			
+			set thistype.m_testUnit0ItemSet0Member0 = AAbstractIdItem.create('whwd', 50)
+			set thistype.m_testUnit0ItemSet0Member1 = AAbstractIdItem.create('whwd', 50)
+			set thistype.m_testUnit0ItemSet0 = AIdSet.create()
+			call thistype.m_testUnit0ItemSet0.addItem(thistype.m_testUnit0ItemSet0Member0)
+			call thistype.m_testUnit0ItemSet0.addItem(thistype.m_testUnit0ItemSet0Member1)
+		
+			set thistype.m_testUnit0ItemSet1Member0 = AAbstractIdItem.create('whwd', 50)
+			set thistype.m_testUnit0ItemSet1Member1 = AAbstractIdItem.create('whwd', 50)
+			set thistype.m_testUnit0ItemSet1 = AIdSet.create()
+			call thistype.m_testUnit0ItemSet1.addItem(thistype.m_testUnit0ItemSet0Member0)
+			call thistype.m_testUnit0ItemSet1.addItem(thistype.m_testUnit0ItemSet0Member1)
+			
+			set thistype.m_testUnit0ItemSet2Member0 = AAbstractIdItem.create('whwd', 50)
+			set thistype.m_testUnit0ItemSet2Member1 = AAbstractIdItem.create('whwd', 50)
+			set thistype.m_testUnit0ItemSet2 = AIdSet.create()
+			call thistype.m_testUnit0ItemSet2.addItem(thistype.m_testUnit0ItemSet0Member0)
+			call thistype.m_testUnit0ItemSet2.addItem(thistype.m_testUnit0ItemSet0Member1)
+		
+			set thistype.m_testUnit0ItemTable = AIdTable.create()
+			call thistype.m_testUnit0ItemTable.addSet(thistype.m_testUnit0ItemSet0)
+			call thistype.m_testUnit0ItemTable.addSet(thistype.m_testUnit0ItemSet1)
+			call thistype.m_testUnit0ItemTable.addSet(thistype.m_testUnit0ItemSet2)
+			
+			set thistype.m_testUnit0ItemDrop = AItemDrop.createForUnit(thistype.m_testUnit0Spawn.onSpawn())
+			call thistype.m_testUnit0ItemDrop.setTable(thistype.m_testUnit0ItemDrop)
+		endmethod
+	endstruct
+
 	struct SpawnPoints
 		// wolves start 0
 		private static SpawnPoint m_wolvesStart0
@@ -161,6 +218,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_highwaymen0.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen0.addItemType(index, 'I00T', 0.50)
 			call thistype.m_highwaymen0.addItemType(index, 'I049', 0.50)
+			call thistype.m_highwaymen0.addItemType(index, 'I04C', 0.50)
 			set index = thistype.m_highwaymen0.addUnitWithType(gg_unit_n00U_0127, 1.0)
 			call thistype.m_highwaymen0.addItemType(index, 'I00S', 0.50)
 			call thistype.m_highwaymen0.addItemType(index, 'I00T', 0.50)
