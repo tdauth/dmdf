@@ -112,6 +112,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				debug call Print("Before Undermine")
 				call SpellUndermine.create(character)
 			elseif (class == Classes.wizard()) then
+				// TODO drop Anziehung und Abstoßung und Arkane Bindung
 				call SpellAbsorbation.create(character)
 				call SpellAdduction.create(character)
 				call SpellArcaneBinding.create(character)
@@ -122,10 +123,12 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellBan.create(character)
 				call SpellControlledTimeFlow.create(character)
 				call SpellCurb.create(character)
+				call SpellFeedBack.create(character)
 				call SpellMagicalShockWaves.create(character)
 				call SpellManaExplosion.create(character)
 				call SpellManaShield.create(character)
 				call SpellManaStream.create(character)
+				call SpellMultiply.create(character)
 				call SpellRepulsion.create(character)
 			endif
 			

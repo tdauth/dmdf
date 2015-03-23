@@ -50,6 +50,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				// remove player item to make sure the leaderboard is not restored after cinematics
 				// remove item after hiding since hiding sets the leaderboard of the player
 				call LeaderboardRemovePlayerItemBJ(owner, thistype.m_leaderboard)
+				// fixes cinematic display of a leaderboard
+				call PlayerSetLeaderboard(owner, null)
 			// remove newly created NPC units
 			else
 				call RemoveUnit(usedUnit)
@@ -97,19 +99,22 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		endmethod
 
 		private static method triggerConditionIsFromArena takes nothing returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = thistype.m_units.contains(triggerUnit)
-			set triggerUnit = null
-			return result
+			return thistype.m_units.contains(GetTriggerUnit())
 		endmethod
 
 		private static method triggerActionKill takes nothing returns nothing
 			local unit killer = GetKillingUnit()
 			local player killerOwner
-			local integer i
-			local integer aliveCount = 0
-			// TODO check if the owner of the killer has a unit in the Arena not if the killer is in the arena
-			if (thistype.m_units.contains(killer)) then
+			local boolean killerIsFromArenaPlayer = false
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.m_units.size() or killerIsFromArenaPlayer)
+				if (GetOwningPlayer(killer) == GetOwningPlayer(thistype.m_units[i])) then
+					set killerIsFromArenaPlayer = true
+				endif
+				set i = i + 1
+			endloop
+			if (killerIsFromArenaPlayer) then
 				set killerOwner = GetOwningPlayer(killer)
 				set thistype.m_playerScore[GetPlayerId(killerOwner)] = thistype.m_playerScore[GetPlayerId(killerOwner)] + 1
 				if (thistype.m_playerScore[GetPlayerId(killerOwner)] == 5 and ACharacter.playerCharacter(killerOwner) != 0) then

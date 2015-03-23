@@ -516,7 +516,6 @@ endif
 static if (DEBUG_MODE) then
 		private static method onCheatActionCheats takes ACheat cheat returns nothing
 			call Print(tr("Spiel-Cheats:"))
-			call Print(tr("cleanup - Räumt den Rucksack des Charakters auf."))
 			call Print(tr("classes - Listet alle verfügbaren Klassenkürzel auf."))
 			call Print(tr("addspells <Klasse> - Der Charakter erhält sämtliche Zauber der Klasse im Zauberbuch (keine Klassenangabe oder \"all\" bewirken das Hinzufügen aller Zauber der anderen Klassen)."))
 			call Print(tr("setspellsmax <Klasse> - Alle Zauber des Charakters der Klasse werden auf ihre Maximalstufe gesetzt (keine Klassenangabe oder \"all\" bewirken das Setzen aller Klassenzauber)."))
@@ -527,13 +526,6 @@ static if (DEBUG_MODE) then
 static if (DMDF_CHARACTER_STATS) then
 			call Print(tr("stats - Zeigt die Statistik des Spielercharakters an."))
 endif
-		endmethod
-
-		private static method onCheatActionCleanup takes ACheat cheat returns nothing
-			local player whichPlayer = GetTriggerPlayer()
-			call Print(tr("Rucksack wird aufgeräumt."))
-			call ACharacter.playerCharacter(whichPlayer).inventory().cleanUpRucksack()
-			set whichPlayer = null
 		endmethod
 
 		private static method onCheatActionClasses takes ACheat cheat returns nothing
@@ -761,7 +753,6 @@ static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
 			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"gamecheats\", um eine Liste sämtlicher Spiel-Cheats zu erhalten."))
 			call ACheat.create("gamecheats", true, thistype.onCheatActionCheats)
-			call ACheat.create("cleanup", true, thistype.onCheatActionCleanup)
 			call ACheat.create("classes", true, thistype.onCheatActionClasses)
 			call ACheat.create("addspells", false, thistype.onCheatActionAddSpells)
 			call ACheat.create("addskillpoints", false, thistype.onCheatActionAddSkillPoints)

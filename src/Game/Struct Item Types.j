@@ -43,18 +43,44 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// Attack Throw 7
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			local Character character = ACharacter.getCharacterByUnit(whichUnit)
+			local integer i
 			debug call Print("Range item attach")
 			
 			if (character != 0) then
 				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityId(character.class())) + " to unit " + GetUnitName(whichUnit))
+				/**
+				 * Make sure the current spell levels are up to date for later restoration.
+				 */
 				call character.updateRealSpellLevels()
+				/*
+				 * These two lines of code do the passive transformation to a range fighting unit.
+				 */
 				call UnitAddAbility(whichUnit, Classes.classRangeAbilityId(character.class()))
 				call UnitRemoveAbility(whichUnit, Classes.classRangeAbilityId(character.class()))
+				/*
+				 * Now the spell levels have to be readded and the grimoire needs to be updated since all abilities are gone.
+				 */
 				call character.restoreRealSpellLevels()
 				call character.clearRealSpellLevels()
 				call character.grimoire().updateUi.evaluate()
-				// TODO add abilities of inventory?!
+				/*
+				 * The equipment abilities are not permanent and are being removed if the rucksack is open when the item is equipped.
+				 * Therefore they have to be readded manually.
+				 */
+				if (character.inventory().rucksackIsEnabled()) then
+					set i = 0
+					loop
+						exitwhen (i == AInventory.maxEquipmentTypes)
+						if (character.inventory().equipmentItemData(i) != 0 and  AItemType.itemTypeOfItemTypeId(character.inventory().equipmentItemData(i).itemTypeId()) != 0) then
+							call AItemType.itemTypeOfItemTypeId(character.inventory().equipmentItemData(i).itemTypeId()).addPermanentAbilities(character.unit())
+						endif
+						set i = i + 1
+					endloop
+				endif
 				
+				/**
+				 * The throw tag should lead the character to do range fighting animations instead of melee ones.
+				 */
 				call AddUnitAnimationProperties(whichUnit, "Throw 7", true)
 			endif
 		endmethod
@@ -158,10 +184,21 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static RangeItemType m_huntingBow
 		private static RangeItemType m_longBow
 		private static ItemType m_huntingKnife
+		private static ItemType m_bootsOfSpeed
 		// artefacts
 		private static ItemType m_amuletOfForesight
 		private static ItemType m_amuletOfTerror
 		private static ItemType m_swordOfDarkness
+		
+		private static ItemType m_amuletOfStrength
+		private static ItemType m_amuletOfLife
+		private static ItemType m_bloodyDragonAxe
+		private static ItemType m_hornOfFighting
+		private static ItemType m_hornOfLife
+		private static ItemType m_hornOfProtection
+		private static ItemType m_demonSkull
+		private static RangeItemType m_staffOfFreezing
+		private static RangeItemType m_staffOfSlowing
 		// slaughter quest
 		private static ItemType m_bloodAmulet
 		// Tellborn's items
@@ -361,6 +398,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_huntingKnife = ItemType.createSimple('I025', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_huntingKnife.addAbility('A07W', true)
+			
+			set thistype.m_bootsOfSpeed = ItemType.createSimple('I04M', AItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_bootsOfSpeed.addAbility('AIms', true)
 
 			// artefacts
 			set thistype.m_amuletOfForesight = ItemType.createSimple('I02J', AItemType.equipmentTypeAmulet)
@@ -372,6 +412,34 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_swordOfDarkness = ItemType.createSimple('I02K', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_swordOfDarkness.addAbility('A095', true)
 			call thistype.m_swordOfDarkness.addAbility('S005', true)
+			
+			set thistype.m_amuletOfStrength = ItemType.createSimple('I04D', AItemType.equipmentTypeAmulet)
+			call thistype.m_amuletOfStrength.addAbility('AIs1', true)
+			
+			set thistype.m_amuletOfLife = ItemType.createSimple('I04K', AItemType.equipmentTypeAmulet)
+			call thistype.m_amuletOfLife.addAbility('A0VS', true)
+			
+			set thistype.m_bloodyDragonAxe = ItemType.create('I04E', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, Classes.dragonSlayer())
+			call thistype.m_bloodyDragonAxe.addAbility('A0VM', true)
+			
+			set thistype.m_hornOfFighting = ItemType.createSimple('I04G', AItemType.equipmentTypeAmulet)
+			call thistype.m_hornOfFighting.addAbility('A0VO', true)
+			
+			set thistype.m_hornOfLife = ItemType.createSimple('I04I', AItemType.equipmentTypeAmulet)
+			call thistype.m_hornOfLife.addAbility('A0VQ', true)
+			
+			set thistype.m_hornOfProtection = ItemType.createSimple('I04H', AItemType.equipmentTypeAmulet)
+			call thistype.m_hornOfProtection.addAbility('A0VP', true)
+			
+			set thistype.m_demonSkull = ItemType.create('I04L', AItemType.equipmentTypeAmulet, 0, 0, 0, 0, Classes.necromancer())
+			call thistype.m_demonSkull.addAbility('A0VT', true)
+			call thistype.m_demonSkull.addAbility('AIi4', true)
+
+			set thistype.m_staffOfFreezing = RangeItemType.createSimpleRange('I04J', AItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_staffOfFreezing.addAbility('A0VR', true)
+			
+			set thistype.m_staffOfSlowing = RangeItemType.createSimpleRange('I04F', AItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_staffOfSlowing.addAbility('A0VL', true)
 
 			// slaughter quest
 			set thistype.m_bloodAmulet = ItemType.createSimple('I02L', AItemType.equipmentTypeAmulet)

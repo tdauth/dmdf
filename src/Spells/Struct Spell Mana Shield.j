@@ -37,6 +37,11 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 			set manaCost = absorbedDamage * manaCostPerDamagePoint
 			/// @todo Show casting effect
 			call SetUnitState(caster, UNIT_STATE_MANA, GetUnitState(caster, UNIT_STATE_MANA) - manaCost)
+			
+			if (GetUnitState(caster, UNIT_STATE_MANA) <= 0.0) then
+				set disable = true
+			endif
+			
 			call SetUnitState(caster, UNIT_STATE_LIFE, GetUnitState(caster, UNIT_STATE_LIFE) + absorbedDamage)
 			call thistype.showDamageAbsorbationTextTag(caster, absorbedDamage)
 
@@ -79,6 +84,12 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 			set this.m_damageRecorder = 0
 			set this.m_absorbedDamage = 0.0
 			set this.m_effect = null
+			
+			call this.addGrimoireEntry('A0W6', 'A0WB')
+			call this.addGrimoireEntry('A0W7', 'A0WC')
+			call this.addGrimoireEntry('A0W8', 'A0WD')
+			call this.addGrimoireEntry('A0W9', 'A0WE')
+			call this.addGrimoireEntry('A0WA', 'A0WF')
 
 			return this
 		endmethod

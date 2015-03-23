@@ -18,7 +18,7 @@
 * Tool schreiben dass die MMP-Datei der Minimap nimmt, ein Gebiet ausschneidet und ein Bild mit einer bestimmten Größe daraus erzeugt.
 * Diakon lebt nach Video in dem er umgebracht wurde wieder?!
 * Ursula: Dialog einbauen falls man Druide ist!
-* Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
+* FIXED: Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
 * Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
 * Schwert- und Schildhand vertauschen, damit Animation für Schild stimmt.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
@@ -151,10 +151,10 @@
 * Arenameister und Talras' mutiger Waffenmeister haben dasselbe Icon.
 * Wiederbelebungsbug erneut. Nach Video "Das erste Gefecht" wurde während des Spiels Charakter 0 getötet und kein Wiederbelebungstimer gestartet. Es erschien auch kein Timerdialog.
 * Bei allen Videosequenzen sollte nach der Ausblendung des Schwarzfilters bereits die Kamera in Bewegung sein. Sonst wirkt es nicht flüssig.
-* Bei allen Videotransmissions nicht einfach abbrechen und Portrait entfernen, sondern warten, so wie in wc3-Kampagne.
+* Bei allen Videotransmissions nicht einfach abbrechen und Portrait entfernen, sondern warten, so wie in wc3-Kampagne. Einfach TransmissionFromUnitWithNameBJ() verwenden.
 * Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
 * ATalk braucht Attribut name, da Helden mit Eigennamen sonst den falschen Namen haben.
-* Arena: Für das Punkten muss nachgesehen werden ob der Owner des Killers eine Einheit in der Arena hat. Denn auch beschworene Einheiten können toten.
+* FIXED: Arena: Für das Punkten muss nachgesehen werden ob der Owner des Killers eine Einheit in der Arena hat. Denn auch beschworene Einheiten können toten.
 * Button zum Durchschalten der Dungeons (Schreinbutton?).
 * Charaktere brauchen unbedingt Hero Glow. Anderenfalls kann man Spieler nicht auseinanderhalten.
 * Mehr Items.
@@ -165,7 +165,16 @@
 * Video Wigberht: Weniger Kameras um die Orks zu sehen, weniger Kameras um die terraindeformation und den Tot der Orks zu sehen.
 * Video Wigberht: Siegesanimation nachdem der Orkanführer getötet wurde.
 * FIXED: Video Wigberht: Orks wehren sich auf Schlachtfeld nicht.
-* VIdeo Wigberht: Corpses are not dead.
+* Video Wigberht: Corpses are not dead.
+* Meister der Nekromantie: Tooltips und Icons fixen. Zauberverstärker.
+* Rückkopplung beim Zauberer zieht kein Mana ab. Gameplaykonstanten?!
+* FIXED: AInventory: Gegenstand mit 2 Aufladungen über Seitengegenstand auf vorherige Seite. Dort liegt im letzten Fach gleicher Gegenstand also zusammengeführt - eine Aufladung zu wenig.
+* AInventory: Seitengegenstände besser nicht ablegbar machen, order abfangen? Müssen ablegbar sein damit man Gegenstände auf Seiten verschieben kann.
+* AInventory: TriggerSleepAction() entfernen oder eindämmen.
+* Letzte Abstimmung bei Wigberht ebenfalls durch Gebietssammlung ersetzen.
+* Video The Castle: Übergänge zu schnell. Erzähler soll etwas zur Burg sagen?
+* FIXED: Manaschild sollte bei keinem Mana ausgehen.
+* FIXED: Beim Anlegen einer Fernkampfwaffe werden durch die Verwandlung die Gegenstandseffekte nicht hinzugefügt, wenn der Rucksack geöffnet ist. In diesem Fall müssten sie manuell nochmal hinzugefügt werden, obwohl sie eigentlich permanent sein sollten.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
