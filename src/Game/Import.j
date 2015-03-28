@@ -10,7 +10,6 @@ endif
 //! import "Game/Struct Grimoire.j"
 //! import "Game/Struct Item Types.j"
 //! import "Game/Interface Map Data Interface.j"
-//! import "Game/Struct Npc Revival.j"
 static if (DMDF_NPC_ROUTINES) then
 //! import "Game/Struct Routines.j"
 endif
@@ -19,5 +18,5 @@ endif
 //! import "Game/Struct Spell.j"
 //! import "Game/Struct Tutorial.j"
 
-library Game requires StructGameCharacter, optional StructCharacterStats, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameNpcRevival, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTutorial
+library Game requires StructGameCharacter, optional StructCharacterStats, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameItemTypes, InterfaceGameMapDataInterface, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTutorial
 endlibrary

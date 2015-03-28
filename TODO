@@ -165,7 +165,7 @@
 * Video Wigberht: Weniger Kameras um die Orks zu sehen, weniger Kameras um die terraindeformation und den Tot der Orks zu sehen.
 * Video Wigberht: Siegesanimation nachdem der Orkanführer getötet wurde.
 * FIXED: Video Wigberht: Orks wehren sich auf Schlachtfeld nicht.
-* Video Wigberht: Corpses are not dead.
+* FIXED: Video Wigberht: Corpses are not dead.
 * Meister der Nekromantie: Tooltips und Icons fixen. Zauberverstärker.
 * Rückkopplung beim Zauberer zieht kein Mana ab. Gameplaykonstanten?!
 * FIXED: AInventory: Gegenstand mit 2 Aufladungen über Seitengegenstand auf vorherige Seite. Dort liegt im letzten Fach gleicher Gegenstand also zusammengeführt - eine Aufladung zu wenig.
@@ -175,6 +175,31 @@
 * Video The Castle: Übergänge zu schnell. Erzähler soll etwas zur Burg sagen?
 * FIXED: Manaschild sollte bei keinem Mana ausgehen.
 * FIXED: Beim Anlegen einer Fernkampfwaffe werden durch die Verwandlung die Gegenstandseffekte nicht hinzugefügt, wenn der Rucksack geöffnet ist. In diesem Fall müssten sie manuell nochmal hinzugefügt werden, obwohl sie eigentlich permanent sein sollten.
+* FIXED: Für Spieler 2 wurde ein Hero Icon erzeugt, das auf den eigenen Helden verweist?!
+* AInventory: Gegenstände die man besitzt, kann man keinem anderen Charakter geben! Bei Übergabe den Owner auf den neuen Spieler setzen oder so.
+* Großen Felsvorsprung über Bärenhöhle entfernen.
+* FIXED: Falls Charakter von menschlichem Spieler kontrolliert wird und Order von Verbündetem erfolgt (dank gemeinsamer Kontrolle) sollte er trotzdem keinen NPC ansprechen.
+* FIXED: Da Nebenquests für einzelne Spieler funktionieren, Titel nicht mehr mit Spielerfarbe versehen.
+* DEPRECATED: Bärengestalt, Schadensfähigkeit ist Stufe 1 (soll auch so sein, gehört zur Bärengestalt nicht zur Tierkunde).
+* 2 Items werden für Spieler 1 gedroppt und dann erst wieder 1 Item für Spieler 2.
+* DONE: Tipp einbauen wenn man zu Dago oder Haid läuft, dass NPCs angesprochen werden können.
+* Nordmänner kämpfen in Video gegen Drachentöterin. Was wenn Gefährten dabei sind?!
+* Video: Grundsätzlich alle Einheiten von Gefolgsleuten hiden, außer die, von welchen actor erzeugt werden.
+* Video: Werden actor von Gefolgsleuten erzeugt oder auch Charakteren, dann vorher zwangswiederbeleben, sonst fehlen sie wie Ricman bei letzter Schlacht.
+* Ricman gehört nach letzter Schlacht auf einmal der weißen Legion?!
+* Letzte Schlacht: Wellen sollen Spieler baldar gehören und die Bündnisse korrekt setzen. Dann laufen sie nicht zurück.
+* Letzte Schlacht auch Dunkelelfen spawnen mit mehr Fähigkeiten, macht die Schlacht interessanter.
+* Orkanführer mehr Leben, stärker.
+* FIXED: Waldläufer spawnen sogar drei mal.
+* Böses bannen stärker, geringere Abklingzeit.
+* FIXED: Spruchrolle des Totenreichs nur Schreine pingen, die bereits erkundet sind.
+* Alphafähigkeit wird in Verwandlung nicht angezeigt.
+* Baldars Dialog: Spieler 2 bekommt nur Ende angezeigt?!
+* Haldars Dialog: Spieler 2 bekommt nur Ende angezeigt?!
+* FIXED: Klassenauswahl: desync ShowUnitForPlayer. Stattdessen Ghost-Fähigkeit geben und gemeinsame Sicht entfernen.
+* Holzbruck ins Repo aufnehmen.
+* FIXED: Wenn Baumhirte beschworen wird, soll er direkt ausgewurzelt werden.
+* DONE: Toranimationen auf offen einstellen.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

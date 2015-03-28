@@ -1,12 +1,9 @@
 library StructGameCharacter requires Asl, StructGameDmdfHashTable
 
 	struct Character extends ACharacter
-		// constant members
-		public static constant real heroIconRefreshTime = 1.0
 		// dynamic members
 		private boolean m_isInPvp
 		private boolean m_showCharactersScheme
-		private boolean m_showCharacters
 		private boolean m_showWorker
 		// members
 		private MainMenu m_mainMenu
@@ -24,7 +21,6 @@ endif
 		private AIntegerVector m_classSpells /// Only \ref Spell instances not \ref ASpell instances!
 
 		private trigger m_workerTrigger
-		private AIntegerVector m_heroIcons
 		private unit m_worker
 		private boolean m_isMorphed
 
@@ -57,21 +53,6 @@ endif
 
 		public method showCharactersScheme takes nothing returns boolean
 			return this.m_showCharactersScheme
-		endmethod
-
-		public method setShowCharacters takes boolean showCharacters returns nothing
-			local integer i
-			set this.m_showCharacters = showCharacters
-			set i = 0
-			loop
-				exitwhen (i == this.m_heroIcons.size())
-				call AHeroIcon(this.m_heroIcons[i]).setEnabled(showCharacters)
-				set i = i + 1
-			endloop
-		endmethod
-
-		public method showCharacters takes nothing returns boolean
-			return this.m_showCharacters
 		endmethod
 
 		public method setShowWorker takes boolean show returns nothing
@@ -337,22 +318,6 @@ endif
 			//call UnitAddItem(this.unit(), whichItem)
 		endmethod
 
-		public method createHeroIcons takes nothing returns nothing
-			local integer i
-			if (this.m_heroIcons != 0 or GetPlayerController(this.player()) == MAP_CONTROL_COMPUTER) then // don't create for computer controlled players
-				return
-			endif
-			set this.m_heroIcons = AIntegerVector.createWithSize(Game.playingPlayers.evaluate(), 0)
-			set i = 0
-			loop
-				exitwhen (i == this.m_heroIcons.size())
-				if (i != GetPlayerId(this.player())) then
-					set this.m_heroIcons[i] = AHeroIcon.create(thistype.playerCharacter(Player(i)).unit(), this.player(), thistype.heroIconRefreshTime, GetRectCenterX(gg_rct_character), GetRectCenterY(gg_rct_character), 0.0)
-				endif
-				set i = i + 1
-			endloop
-		endmethod
-
 		private static method triggerConditionWorker takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			return GetTriggerPlayer() == this.player() and ACharacter.playerCharacter(GetTriggerPlayer()).shrine() != 0
@@ -385,7 +350,6 @@ endif
 			// dynamic members
 			set this.m_isInPvp = false
 			set this.m_showCharactersScheme = false
-			set this.m_showCharacters = true
 			set this.m_showWorker = true
 			// members
 			set this.m_mainMenu = MainMenu.create.evaluate(this)
@@ -402,23 +366,10 @@ static if (DMDF_INFO_LOG) then
 endif
 
 			set this.m_classSpells = AIntegerVector.create()
-			set this.m_heroIcons = 0
 			call this.createWorkerTrigger()
 			set this.m_isMorphed = false
 
 			return this
-		endmethod
-
-		private method destroyHeroIcons takes nothing returns nothing
-			if (this.m_heroIcons == 0) then
-				return
-			endif
-			loop
-				exitwhen (this.m_heroIcons.empty())
-				call AHeroIcon(this.m_heroIcons.back()).destroy()
-				call this.m_heroIcons.popBack()
-			endloop
-			call this.m_heroIcons.destroy()
 		endmethod
 
 		private method destroyWorkerTrigger takes nothing returns nothing
@@ -442,19 +393,7 @@ static if (DMDF_INFO_LOG) then
 endif
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0
-			call this.destroyHeroIcons()
 			call this.destroyWorkerTrigger()
-		endmethod
-
-		public static method createHeroIconsForAll takes nothing returns nothing
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (thistype.playerCharacter(Player(i)) != 0) then
-					call thistype(thistype.playerCharacter(Player(i))).createHeroIcons()
-				endif
-				set i = i + 1
-			endloop
 		endmethod
 
 		public static method attributesStartBonus takes nothing returns integer

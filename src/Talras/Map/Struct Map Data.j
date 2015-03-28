@@ -95,17 +95,20 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer difficultyStartAttributeBonus = 5 // start attribute bonus per missing player
 		public static constant integer difficultyLevelAttributeBonus = 2 // level up attribute bonus per missing player
 		public static constant integer workerUnitTypeId = 'h00E'
-		public static constant integer meleeResearchId =  'R007'
-		public static constant integer rangeResearchId =  'R006'
 		public static constant player haldarPlayer = Player(10)
 		public static constant player baldarPlayer = Player(11)
 		
 		private static boolean m_startedGameAfterIntro = false
 		private static region m_welcomeRegion
 		private static trigger m_welcomeTalrasTrigger
+		
 		private static region m_portalsHintRegion
 		private static trigger m_portalsHintTrigger
 		private static boolean array m_portalsHintShown[6]
+		
+		private static region m_talkHintRegion
+		private static trigger m_talkHintTrigger
+		private static boolean array m_talkHintShown[6]
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -138,6 +141,15 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		private static method triggerActionPortalsHint takes nothing returns nothing
 			call Character(ACharacter.getCharacterByUnit(GetTriggerUnit())).displayHint("Magische Kreise auf der Karte dienen als Portale. Schicken Sie Einheiten auf die Kreise, um sie an verschiedene Punkte auf der Karte zu bewegen.")
 			set thistype.m_portalsHintShown[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = true
+		endmethod
+		
+		private static method triggerConditionTalkHint takes nothing returns boolean
+			return ACharacter.isUnitCharacter(GetTriggerUnit()) and not thistype.m_talkHintShown[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]
+		endmethod
+		
+		private static method triggerActionTalkHint takes nothing returns nothing
+			call Character(ACharacter.getCharacterByUnit(GetTriggerUnit())).displayHint("Schicken Sie ihren Charakter in der Nähe eines NPCs mit Ausrufezeichen auf diesen, um ihn anzusprechen.")
+			set thistype.m_talkHintShown[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = true
 		endmethod
 
 		/// Required by \ref Game.
@@ -187,6 +199,13 @@ endif
 			call TriggerRegisterEnterRegion(thistype.m_portalsHintTrigger, thistype.m_portalsHintRegion, null)
 			call TriggerAddCondition(thistype.m_portalsHintTrigger, Condition(function thistype.triggerConditionPortalsHint))
 			call TriggerAddAction(thistype.m_portalsHintTrigger, function thistype.triggerActionPortalsHint)
+			
+			set thistype.m_talkHintRegion = CreateRegion()
+			set thistype.m_talkHintTrigger = CreateTrigger()
+			call RegionAddRect(thistype.m_talkHintRegion, gg_rct_hint_talk)
+			call TriggerRegisterEnterRegion(thistype.m_talkHintTrigger, thistype.m_talkHintRegion, null)
+			call TriggerAddCondition(thistype.m_talkHintTrigger, Condition(function thistype.triggerConditionTalkHint))
+			call TriggerAddAction(thistype.m_talkHintTrigger, function thistype.triggerActionTalkHint)
 		endmethod
 		
 		public static method createClassItems takes AClass class, unit whichUnit returns nothing

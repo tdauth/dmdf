@@ -65,7 +65,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private trigger m_spawnTrigger
 		private WavesDisplay m_wavesDisplay
 		private fogmodifier array m_spawnFogModifiers[4]
-		private fogmodifier m_assemblyPointFogModifier
+		private fogmodifier array m_assemblyPointFogModifier[6] // todo MapData.maxPlayers
 		private destructable array m_assemblyPointMarker[4]
 
 		implement Quest
@@ -90,34 +90,35 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			if (this.m_currentGroup.units().contains(triggerUnit)) then
 				call this.m_currentGroup.units().remove(triggerUnit)
 				set result = this.m_currentGroup.units().empty()
-			endif
-			if (not result and this.m_currentGroup.units().size() == 5) then // Gruppen müssen immer größer als 5 sein
-				// rangers (ally spawn)
-				if (this.m_currentGroupIndex == 1) then
-					call this.m_wavesDisplay.decreaseAllies()
-					set i = 0
-					loop
-						exitwhen (i == MapData.maxPlayers)
-						if (IsPlayerPlayingUser(Player(i))) then
-							call FogModifierStart(this.m_spawnFogModifiers[Index2D(3, i, MapData.maxPlayers)])
-						endif
-						set i = i + 1
-					endloop
-					set this.m_allyRangerGroup = AGroup.create()
-					call this.m_allyRangerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.ranger, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
-					set this.m_allyRangerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03G', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
-					call this.m_allyRangerGroup.units().pushBack(this.m_allyRangerLeader)
-					call SmartCameraPanRect(gg_rct_quest_the_norsemen_ally_spawn_0, 0.0)
-					call TransmissionFromUnit(this.m_allyRangerLeader, tr("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!"), null)
-				// farmers (ally spawn)
-				elseif (this.m_currentGroupIndex == 3) then
-					call this.m_wavesDisplay.decreaseAllies()
-					set this.m_allyFarmerGroup = AGroup.create()
-					call this.m_allyFarmerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.armedVillager, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
-					set this.m_allyFarmerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03I', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
-					call this.m_allyFarmerGroup.units().pushBack(this.m_allyFarmerLeader)
-					call SmartCameraPanRect(gg_rct_quest_the_norsemen_ally_spawn_0, 0.0)
-					call TransmissionFromUnit(this.m_allyFarmerLeader, tr("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!"), null)
+			
+				if (not result and this.m_currentGroup.units().size() == 5) then // Gruppen müssen immer größer als 5 sein
+					// rangers (ally spawn)
+					if (this.m_currentGroupIndex == 1) then
+						call this.m_wavesDisplay.decreaseAllies()
+						set i = 0
+						loop
+							exitwhen (i == MapData.maxPlayers)
+							if (IsPlayerPlayingUser(Player(i))) then
+								call FogModifierStart(this.m_spawnFogModifiers[Index2D(3, i, MapData.maxPlayers)])
+							endif
+							set i = i + 1
+						endloop
+						set this.m_allyRangerGroup = AGroup.create()
+						call this.m_allyRangerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.ranger, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
+						set this.m_allyRangerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03G', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
+						call this.m_allyRangerGroup.units().pushBack(this.m_allyRangerLeader)
+						call SmartCameraPanRect(gg_rct_quest_the_norsemen_ally_spawn_0, 0.0)
+						call TransmissionFromUnit(this.m_allyRangerLeader, tr("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!"), null)
+					// farmers (ally spawn)
+					elseif (this.m_currentGroupIndex == 3) then
+						call this.m_wavesDisplay.decreaseAllies()
+						set this.m_allyFarmerGroup = AGroup.create()
+						call this.m_allyFarmerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.armedVillager, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
+						set this.m_allyFarmerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03I', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
+						call this.m_allyFarmerGroup.units().pushBack(this.m_allyFarmerLeader)
+						call SmartCameraPanRect(gg_rct_quest_the_norsemen_ally_spawn_0, 0.0)
+						call TransmissionFromUnit(this.m_allyFarmerLeader, tr("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!"), null)
+					endif
 				endif
 			endif
 
@@ -163,7 +164,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		private static method triggerActionSpawn takes nothing returns nothing
 			local thistype this = thistype.quest()
-			local player owner = Player(PLAYER_NEUTRAL_AGGRESSIVE)
+			local player owner = MapData.baldarPlayer
 			local integer i
 			local integer j
 			local unit orcLeader
@@ -253,7 +254,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		private static method groupFunctionChangeOwnerToEnemy takes unit enumUnit returns nothing
-			local player enemyPlayer = Player(PLAYER_NEUTRAL_AGGRESSIVE)
+			local player enemyPlayer = MapData.baldarPlayer
 			call SetUnitOwner(enumUnit, enemyPlayer, true)
 			set enemyPlayer = null
 		endmethod
@@ -336,12 +337,18 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
+			local integer i
 			call VideoTheChief.video.evaluate().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call questItem.quest().questItem(1).enable()
 			// create a visible effect on the map that it is easier to find the rect
-			set this.m_assemblyPointFogModifier = CreateFogModifierRect(Player(0), FOG_OF_WAR_VISIBLE, gg_rct_quest_the_norsemen_assembly_point, true, true)
-			call FogModifierStart(this.m_assemblyPointFogModifier)
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				set this.m_assemblyPointFogModifier[i] = CreateFogModifierRect(Player(i), FOG_OF_WAR_VISIBLE, gg_rct_quest_the_norsemen_assembly_point, true, true)
+				call FogModifierStart(this.m_assemblyPointFogModifier[i])
+				set i = i + 1
+			endloop
 			set this.m_assemblyPointMarker[0] = CreateDestructable('B00N', GetRectCenterX(gg_rct_quest_the_norsemen_assembly_point_marker_0), GetRectCenterY(gg_rct_quest_the_norsemen_assembly_point_marker_0), 0.0, 1.0,  0)
 			call SetDestructableInvulnerable(this.m_assemblyPointMarker[0], true)
 			set this.m_assemblyPointMarker[1] = CreateDestructable('B00N', GetRectCenterX(gg_rct_quest_the_norsemen_assembly_point_marker_1), GetRectCenterY(gg_rct_quest_the_norsemen_assembly_point_marker_1), 0.0, 1.0,  0)
@@ -379,9 +386,12 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			local integer i
-			call DestroyFogModifier(this.m_assemblyPointFogModifier)
-			set this.m_assemblyPointFogModifier = null
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call DestroyFogModifier(this.m_assemblyPointFogModifier[i])
+				set this.m_assemblyPointFogModifier[i] = null
+			endloop
 			set i = 0
 			loop
 				exitwhen (i == 4)

@@ -36,6 +36,8 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
     call TriggerSleepAction( 4.00 )
     */
 		public stub method onPlayAction takes nothing returns nothing
+		
+			call SetDoodadAnimationRect(gg_rct_gate_0, 'D085', "Death", false)
 
 			if (wait(2.50)) then
 				return
@@ -47,7 +49,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			if (wait(2.50)) then
+			if (wait(4.0)) then
 				return
 			endif
 			
@@ -57,7 +59,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			if (wait(2.50)) then
+			if (wait(4.0)) then
 				return
 			endif
 			
@@ -91,7 +93,9 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			if (wait(3.0)) then
+			call SetDoodadAnimationRect(gg_rct_gate_1, 'D085', "Death", false)
+			
+			if (wait(4.0)) then
 				return
 			endif
 			
@@ -101,6 +105,9 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 		public stub method onStopAction takes nothing returns nothing
 			call EndThematicMusic()
 			call Game.resetVideoSettings()
+			
+			call SetDoodadAnimationRect(gg_rct_gate_0, 'D085', "Death", false)
+			call SetDoodadAnimationRect(gg_rct_gate_1, 'D085', "Death", false)
 		endmethod
 
 		private static method create takes nothing returns thistype

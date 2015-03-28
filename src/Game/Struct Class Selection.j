@@ -12,6 +12,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		private trigger m_spellPagesTrigger
 		
 		public stub method onSelectClass takes Character character, AClass class, boolean last returns nothing
+			local integer i
+			local integer j
 			/**
 			 * Create all class spells for each character in debug mode.
 			 */
@@ -132,20 +134,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellRepulsion.create(character)
 			endif
 			
-			debug if (class != character.class()) then
-			debug call Print("Error!!!!!!!!!!!!")
-			debug return
-			debug endif
-			
 			// evaluate this calls since it may exceed the operations limit. Each time a spell is being added it updates the whole grimoire UI which takes many operations.
 			// TODO add spells without massive UI updates to improve the performance.
 			call character.grimoire().addClassSpellsFromCharacter.evaluate(character)
 			
-			debug call Print("Added class spells for class " + I2S(class))
-			debug call Print("Druid class is " + I2S(Classes.druid()))
-			debug if (IsUnitPaused(character.unit())) then
-			debug call Print("Character is already paused!")
-			debug endif
 
 			call SpellCowNova.create(character) /// @todo test
 
@@ -156,6 +148,21 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call CameraSetupApplyForPlayer(false, gg_cam_class_selection, character.player(), 0.0)
 			call MapData.setCameraBoundsToPlayableAreaForPlayer(character.player())
 			call Classes.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, StringArg(StringArg(tr("%s hat die Klasse \"%s\" gewählt."), character.name()), GetUnitName(character.unit())), character.player())
+			
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				set j = 0
+				loop
+					exitwhen (j == MapData.maxPlayers)
+					if (i != j) then
+						call SetPlayerAllianceStateBJ(Player(i), Player(j), bj_ALLIANCE_ALLIED_VISION)
+					endif
+					set j = j + 1
+				endloop
+				set i = i + 1
+			endloop
+			
 			if (not last) then
 				debug call Print("Do not start the game")
 				call character.displayMessage(ACharacter.messageTypeInfo, tr("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben."))
@@ -170,6 +177,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		public stub method onCreate takes unit whichUnit returns nothing
+			local integer i
 			// remove standard abilities
 			call UnitRemoveAbility(whichUnit, 'AInv')
 			call UnitRemoveAbility(whichUnit, 'A02Z')
@@ -189,6 +197,17 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call UnitAddAbility(whichUnit, 'A0R2')
 			// TODO add two abilities two change the grimoire pages
 			// TODO add trigger which handles the grimoire pages change
+			
+			// remove shared vision
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_ALLIED)
+				set i = i + 1
+			endloop
+			
+			// add ghost ability but without making transparent
+			call UnitAddAbility(whichUnit, 'Aeth')
 			
 			call Classes.createClassAbilities(this.class(), whichUnit)
 		endmethod

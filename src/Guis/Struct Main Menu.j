@@ -25,14 +25,6 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 			call this.showDialog.evaluate()
 		endmethod
 
-		private static method dialogButtonActionSetCharacters takes ADialogButton dialogButton returns nothing
-			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-
-			call this.m_character.setShowCharacters(not this.m_character.showCharacters())
-
-			call this.showDialog.evaluate()
-		endmethod
-
 		private static method dialogButtonActionSetWorker takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
 
@@ -92,13 +84,6 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 				set message = tr("Charaktere-Anzeige aktivieren")
 			endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetCharactersScheme)
-
-			if (this.m_character.showCharacters()) then
-				set message = tr("Charaktere-Buttons deaktivieren")
-			else
-				set message = tr("Charaktere-Buttons aktivieren")
-			endif
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetCharacters)
 
 			if (this.m_character.showWorker()) then
 				set message = tr("Schrein-Button deaktivieren")

@@ -485,14 +485,6 @@ endif
 				if (GetPlayerController(Player(i)) != MAP_CONTROL_NONE) then
 					set thistype.m_hiddenUnits[i] = AGroup.create()
 				endif
-
-				// set melee to default
-				// when range items are equipped the range research will be level 1 and the melee 0
-				// both attack types are enabled by default therefore the range has to be disabled
-				// the melee research does also enable ONLY attack 1
-				// if both attack types are not enabled by default, the icon for the range attack type will be hidden!
-				call SetPlayerTechResearched(Player(i), MapData.rangeResearchId, 0)
-				call SetPlayerTechResearched(Player(i), MapData.meleeResearchId, 1)
 				
 				// set allied player and neutral passive player alliance status
 				call SetPlayerAllianceStateBJ(Player(i), MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
@@ -717,7 +709,6 @@ endif
 			call Character.showCharactersSchemeToAll()
 
 			// create after character creation (character should be F1)
-			call Character.createHeroIconsForAll()
 			// disable RPG view
 			call Character.setViewForAll(false)
 			// enable tutorial by default for beginners

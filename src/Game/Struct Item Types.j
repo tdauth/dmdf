@@ -446,7 +446,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_bloodAmulet.addAbility('A09V', true)
 
 			// Tellborn's items
-			set thistype.m_staffOfClarity = ItemType.createSimple('I02N', AItemType.equipmentTypePrimaryWeapon)
+			set thistype.m_staffOfClarity = RangeItemType.create('I02N', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_staffOfClarity.addAbility('AIrm', true)
 			call thistype.m_staffOfClarity.addAbility('A0AD', true)
 			call thistype.m_staffOfClarity.addAbility('A0AE', true)
@@ -488,7 +488,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_druidStaff.addAbility('A044', false)
 			call thistype.m_druidStaff.addAbility('A01K', true)
 			
-			set thistype.m_druidBoots = ItemType.createSimple('I033', ItemType.equipmentTypeArmour)
+			set thistype.m_druidBoots = ItemType.createSimple('I033', ItemType.equipmentTypeAmulet)
 			call thistype.m_druidBoots.addAbility('A04V', true)
 			
 			// Deranor's artefact

@@ -69,8 +69,14 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.haldarPlayer, UnitTypes.armedVillager, gg_rct_video_wigberht_farmer_2_position, GetRandomFacing()))
 
 			// create corpses
-			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.norseman, gg_rct_video_wigberht_corpse_0_position, GetRandomFacing()))
-			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.norseman, gg_rct_video_wigberht_corpse_1_position, GetRandomFacing()))
+			// NOTE norsemen and orcs have no decay animations! Corpses do not work.
+			// Following types have decay animations: orcCrossbow, ranger, armedVillager
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.ranger, gg_rct_video_wigberht_corpse_0_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.ranger, gg_rct_video_wigberht_corpse_1_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.armedVillager, gg_rct_video_wigberht_corpse_2_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.armedVillager, gg_rct_video_wigberht_corpse_3_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.armedVillager, gg_rct_video_wigberht_corpse_4_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.haldarPlayer, UnitTypes.armedVillager, gg_rct_video_wigberht_corpse_5_position, GetRandomFacing()))
 			
 			// change the owner of actor and ricman to haldar that they participate in fighting
 			call thistype.setActorsOwner(MapData.haldarPlayer) // change player to make sure that units do not walk back!
@@ -81,6 +87,19 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_fighting_position_2, GetRandomFacing()))
 			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_fighting_position_3, GetRandomFacing()))
 			call this.m_staticActors.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_fighting_position_4, GetRandomFacing()))
+			
+			// create corpses
+			// NOTE norsemen and orcs have no decay animations! Corpses do not work.
+			// Following types have decay animations: orcCrossbow, ranger, armedVillager
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.baldarPlayer, UnitTypes.orcCrossbow, gg_rct_video_wigberht_corpse_6_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.baldarPlayer, UnitTypes.orcCrossbow, gg_rct_video_wigberht_corpse_7_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.baldarPlayer, UnitTypes.orcCrossbow, gg_rct_video_wigberht_corpse_8_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.baldarPlayer, UnitTypes.orcCrossbow, gg_rct_video_wigberht_corpse_9_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.baldarPlayer, UnitTypes.orcCrossbow, gg_rct_video_wigberht_corpse_10_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.baldarPlayer, UnitTypes.orcCrossbow, gg_rct_video_wigberht_corpse_11_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.baldarPlayer, UnitTypes.orcCrossbow, gg_rct_video_wigberht_corpse_12_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.baldarPlayer, UnitTypes.orcCrossbow, gg_rct_video_wigberht_corpse_13_position, GetRandomFacing()))
+			call this.m_staticActors.units().pushBack(CreateCorpseAtRect(MapData.baldarPlayer, UnitTypes.orcCrossbow, gg_rct_video_wigberht_corpse_14_position, GetRandomFacing()))
 			
 			// create orcs with leader
 			set this.m_actorOrcLeader = CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcLeader, gg_rct_video_wigberht_orc_leaders_position, 237.39)

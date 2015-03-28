@@ -13,7 +13,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.manaAbilityId, level)
 			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.armorAbilityId, level)
 			
-			set alphaLevel =  Character(this.character()).realSpellLevels().integerByInteger(0, SpellAlpha.abilityId)
+			set alphaLevel = Character(this.character()).realSpellLevels().integerByInteger(0, SpellAlpha.abilityId)
 			debug call Print("Crow Form: Alpha Level: " + I2S(alphaLevel))
 			
 			if (alphaLevel > 0) then

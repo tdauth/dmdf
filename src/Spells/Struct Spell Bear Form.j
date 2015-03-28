@@ -13,7 +13,7 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			call SetUnitAbilityLevel(this.character().unit(), SpellBearForm.lifeAbilityId, level)
 			call SetUnitAbilityLevel(this.character().unit(), SpellBearForm.damageAbilityId, level)
 			
-			set alphaLevel =  Character(this.character()).realSpellLevels().integerByInteger(0, SpellAlpha.abilityId)
+			set alphaLevel = Character(this.character()).realSpellLevels().integerByInteger(0, SpellAlpha.abilityId)
 			debug call Print("Bear Form: Alpha Level: " + I2S(level))
 			
 			if (alphaLevel > 0) then

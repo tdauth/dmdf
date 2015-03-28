@@ -5,9 +5,26 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 		public static constant integer abilityId = 'A0E1'
 		public static constant integer favouriteAbilityId = 'A0B7'
 		public static constant integer maxLevel = 5
+		private trigger m_summonTrigger
+		
+		private static method triggerConditionSummon takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			return GetSummoningUnit() == this.character().unit() and GetUnitTypeId(GetSummonedUnit()) == 'e000'
+		endmethod
+		
+		private static method triggerActionSummon takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			call IssueImmediateOrder(GetSummonedUnit(), "unroot")
+		endmethod
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			set this.m_summonTrigger = CreateTrigger()
+			call TriggerRegisterUnitEvent(this.m_summonTrigger, character.unit(), EVENT_UNIT_SUMMON)
+			call TriggerAddCondition(this.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
+			call TriggerAddAction(this.m_summonTrigger, function thistype.triggerActionSummon)
+			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, "this", this)
+			
 			call this.addGrimoireEntry('A0DH', 'A0DM')
 			call this.addGrimoireEntry('A0DI', 'A0DN')
 			call this.addGrimoireEntry('A0DJ', 'A0DO')
@@ -15,6 +32,11 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 			call this.addGrimoireEntry('A0DL', 'A0DQ')
 			
 			return this
+		endmethod
+		
+		public method onDestroy takes nothing returns nothing
+			call DmdfHashTable.global().destroyTrigger(this.m_summonTrigger)
+			set this.m_summonTrigger = null
 		endmethod
 	endstruct
 
