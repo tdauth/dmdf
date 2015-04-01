@@ -37,7 +37,7 @@ library StructMapQuestsQuestWitchingHour requires Asl, StructMapMapNpcs
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNGhostOfKelThuzad.blp")
 			call this.setDescription(tr("Der Müller Guntrich traut sich nicht mehr zu seiner Mühle auf dem Berg nahe des Bauernhofs, da es dort seiner Meinung nach spukt."))
-			//800 Erfahrung, 30 Goldmünzen, 3 Brotlaibe, 1 Zauberpunkt
+			// 800 Erfahrung, 30 Goldmünzen, 3 Brotlaibe, 1 Zauberpunkt
 			call this.setReward(thistype.rewardExperience, 800)
 			call this.setReward(thistype.rewardGold, 30)
 			call this.setReward(thistype.rewardSkillPoints, 1)
@@ -57,6 +57,7 @@ library StructMapQuestsQuestWitchingHour requires Asl, StructMapMapNpcs
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			// item 2
 			set questItem = AQuestItem.create(this, tr("Kümmere dich selbst um das Problem, indem du zur Mühle gehst und die Gegend dort erkundest."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted2)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted2)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateConditionCompleted2)
 			call questItem.setReward(thistype.rewardExperience, 200)

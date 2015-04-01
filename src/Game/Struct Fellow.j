@@ -285,7 +285,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call TimerDialogDisplay(this.m_revivalTimerDialog, false)
 			call this.revive()
 		endmethod
-
+		
 		private static method triggerActionRevival takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local unit animationUnit
@@ -462,12 +462,26 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			return true
 		endmethod
 		
-		public static method pauseAllRevivals takes boolean pause returns nothing
+		private method reviveForVideo takes nothing returns nothing
+			if (this.m_revivalTimer != null) then
+				call PauseTimer(this.m_revivalTimer)
+				call TimerDialogDisplay(this.m_revivalTimerDialog, false)
+			endif
+			
+			if (IsUnitDeadBJ(this.m_unit)) then
+				call ReviveHero(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), false)
+			endif
+		endmethod
+		
+		/**
+		 * Since fellows usually should not be dead in a video they will be revived manually before the video starts.
+		 */
+		public static method reviveAllForVideo takes nothing returns nothing
 			local AIntegerListIterator iterator = thistype.m_fellows.begin()
 			debug call Print("Getting iterator " + I2S(iterator) + " of list " + I2S(thistype.m_fellows))
 			loop
 				exitwhen (not iterator.isValid())
-				call thistype(iterator.data()).pauseRevival(pause)
+				call thistype(iterator.data()).reviveForVideo()
 				call iterator.next()
 			endloop
 			debug call Print("Before destroying iterator")

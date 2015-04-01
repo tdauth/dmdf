@@ -23,8 +23,8 @@
 * Schwert- und Schildhand vertauschen, damit Animation für Schild stimmt.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
 * Grabenspinne: Passives Spinnengift und Giftstachel.
-* Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt.
-* Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer.
+* Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt. Selbst nachdem die Bestenliste des Spielers manuell auf null gesetzt wurde, verschwindet sie nicht.
+* Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer. Dialog bei Guntrich aktivieren, nachdem man bei der Mühle war -> neues Quest "Vertreibe die Plünderer".
 * Zauber "Dryade" ersetzen oder sinnvolle Beschwörung mit Heilung und Natur?
 * Wenn am Anfang nichts passiert wurde einmal überprüft ob das Video zu Ende ist, danach nicht mehr. Nichts passiert. Die Ausgabe des Überspringens kam danach. Überspringen parallel - Fehler?
 * AOS-Gebiet: oben auf Plateaus Sichtfeldblocker platzieren!
@@ -34,6 +34,7 @@
 * Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren. Vermutlich checkState()! State ist richtig - Quest muss nachträglich deaktiviert werden?! Passiert nur manchmal.
 	* Quest ist auch aktiv und kann abgeschlossen werden, wird nur nicht im Quest-Log angezeigt!
 	* Liegt nicht an checkstate aber obwohl QuestTalras.initQuest() vor QuestRescueDago aufgerufen wird, ist das Quest über dem Quest Rescue Dago, normal?
+	* Vermutlich wurde das OpLimit überschritten. Nachdem die Grimoire-Funktionen vereinfacht wurden (Parameter updateUi) und es weniger Aufrufe gab, trat der Fehler nicht mehr auf.
 * Vermutlich verursacht EndThematicMusic() beim Beenden eines Videos dass die Human-Musik gespielt wird. Die aktuelle Musik muss daher nach jedem Video wiederhergestellt werden! Game.resetVideoSettings()! setMapMusic() hat nichts gebracht!
 * Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
 * Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
@@ -67,14 +68,14 @@
 * Ricman: Erlernbare Fähigkeiten als Drachentöter sollen Grimoire Spells werden und im Zauberbuch erscheinen.
 * Falls noch mehr Quests: Einar hat wenig zu sagen.
 * Trommons Quest nicht einfach ablehnbar machen!
-* Character.giveItem() und giveQuestItem() sollte die Items immer im Rucksack platzieren falls noch Platz ist und nicht auf dem Boden falls das Inventar voll und der Rucksack offen ist.
+* FIXED: Character.giveItem() und giveQuestItem() sollte die Items immer im Rucksack platzieren falls noch Platz ist und nicht auf dem Boden falls das Inventar voll und der Rucksack offen ist.
 * Alle Talk Members static machen, da es immer genau eine Talk-Instanz gibt -> Performance
 * Mit SharpCraft debuggen - optlimit etc.
 * ACharacter.displayMessage() entfernen und durch QuestMessageBJ() ersetzen. Eventuell QuestMessageBJ() für einzelnen Spieler anbieten?
 * ACharacter.setMovable() entfernen und durch jeweilige Funktionen ersetzen.
 * Viele unnötige Helpermethoden in ACharacter rauswerfen.
 * Dago retten - Bedingung einbauen, Dago darf das Gebiet nicht verlassen, sonst ist der Auftrag fehlgeschlagen! Ansonsten kann man mit Dago alles abmetzeln!
-* Wenn man Kuno auf dem Bauernhof anspricht sollte er sagen "Ich habe zu tun". Ansonsten sind die Sätze unlogisch.
+* FIXED: Wenn man Kuno nicht im Wald anspricht sollte er sagen "Ich habe zu tun". Ansonsten sind die Sätze unlogisch.
 * Video "Wigberht" fixen.
 * Osman: Sollte im Zusammenhang mit dem Kultquest den Begriff „Todesgruft“ erwähnen. So wird sie laut Drachentöterin von Eingeweihten genannt. Er muss bereits davon gehört haben.
 * Drachentöterin: Hat nun ein Gespräch, muss aber noch geschrieben werden:
@@ -87,8 +88,8 @@
 * Mehr Kreaturen oder sammelbare Items platzieren. Die Karte ist viel zu leer -> mehr Spawn Points.
 * Quest-Pings deaktivierbar machen (pro Spieler).
 * Quest-Pings manuell durch Hauptmenü erlauben.
-* Waldläufer bei letzter Schlacht kommen manchmal zweimal.
-* Spawns bei letzter Schlacht fixen - Gegener laufen nicht aufs Schlachtfeld, da Neutral Feindlich.
+* FIXED: Waldläufer bei letzter Schlacht kommen manchmal zweimal.
+* FIXED: Spawns bei letzter Schlacht fixen - Gegener laufen nicht aufs Schlachtfeld, da Neutral Feindlich.
 * Gefolgsleute schickt wegen Computerkontrolle oft Einheiten automatisch zurück.
 * Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
 * Hellebarde: Schmetterangriff muss Icon verlieren!!! Gegenstandsfähigkeit!
@@ -139,19 +140,19 @@
 * Abfahrt nach Holzbruck macht keinen Sinn. Nordmänner wollen sich durch die Reihen der Orks schlagen, Herzog will die Nordmänner als Verbündete.
 * Eventuell anderes Ende - der König kommt.
 * Ricmans Speerwurf macht keinen Schaden. Gameplaykonstanten?
-* "Blenden" länger machen dafür Manakosten höher.
+* FIXED: "Blenden" länger machen dafür Abklingzeit höher.
 * Bei letzter Schlacht sollten Gegner Items droppen, auch Runen etc. und vor allem der Orkanführer für jeden Charakter ein Artefakt.
 * Das Sammeln für die Fahrt nach Holzbruck ebenfalls per Gebiet machen.
 * Aus Metzelei-Auftrag sollte Jagd nach Deranor werden. Deranor ist verantwortlich für den Kult und die Untoten im Wald, er befindet sich in dem Dungeon, dass durch ein Portal erreichbar ist. Das Portal wird aktiviert, wenn man das Quest mit der Drachentöterin abschließt. Danach will sie mit einem Deranor vernichten, das war ihr Auftrag. Man kann Osman danach auch berichten, was hinter dem Kult eigentlich steckt.
 * Dialog mit Drachenöterin über Deranor verbessern.
-* Töten des Diakons funktioniert nicht in Video!
+* FIXED: Töten des Diakons funktioniert nicht in Video!
 * Bei allen Tötungsquests den Spieler Neutral Aggressiv entfernen. Einheiten könnten übernommen worden sein!
 * Sisgard: Frage "Was machst du wenn die Orks und Dunkelelfen kommen?".
 * Irmina: Agihards Quest nicht ablehnbar machen "Also Agihard" sollte einfach auf der Hauptseite angezeigt werden.
 * Arenameister und Talras' mutiger Waffenmeister haben dasselbe Icon.
 * Wiederbelebungsbug erneut. Nach Video "Das erste Gefecht" wurde während des Spiels Charakter 0 getötet und kein Wiederbelebungstimer gestartet. Es erschien auch kein Timerdialog.
 * Bei allen Videosequenzen sollte nach der Ausblendung des Schwarzfilters bereits die Kamera in Bewegung sein. Sonst wirkt es nicht flüssig.
-* Bei allen Videotransmissions nicht einfach abbrechen und Portrait entfernen, sondern warten, so wie in wc3-Kampagne. Einfach TransmissionFromUnitWithNameBJ() verwenden.
+* FIXED: Bei allen Videotransmissions nicht einfach abbrechen und Portrait entfernen, sondern warten, so wie in wc3-Kampagne. Einfach TransmissionFromUnitWithNameBJ() verwenden.
 * Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
 * ATalk braucht Attribut name, da Helden mit Eigennamen sonst den falschen Namen haben.
 * FIXED: Arena: Für das Punkten muss nachgesehen werden ob der Owner des Killers eine Einheit in der Arena hat. Denn auch beschworene Einheiten können toten.
@@ -185,21 +186,38 @@
 * DONE: Tipp einbauen wenn man zu Dago oder Haid läuft, dass NPCs angesprochen werden können.
 * Nordmänner kämpfen in Video gegen Drachentöterin. Was wenn Gefährten dabei sind?!
 * Video: Grundsätzlich alle Einheiten von Gefolgsleuten hiden, außer die, von welchen actor erzeugt werden.
-* Video: Werden actor von Gefolgsleuten erzeugt oder auch Charakteren, dann vorher zwangswiederbeleben, sonst fehlen sie wie Ricman bei letzter Schlacht.
+* FIXED: Video: Werden actor von Gefolgsleuten erzeugt oder auch Charakteren, dann vorher zwangswiederbeleben, sonst fehlen sie wie Ricman bei letzter Schlacht.
 * Ricman gehört nach letzter Schlacht auf einmal der weißen Legion?!
 * Letzte Schlacht: Wellen sollen Spieler baldar gehören und die Bündnisse korrekt setzen. Dann laufen sie nicht zurück.
 * Letzte Schlacht auch Dunkelelfen spawnen mit mehr Fähigkeiten, macht die Schlacht interessanter.
-* Orkanführer mehr Leben, stärker.
+* DONE: Orkanführer mehr Leben, stärker.
 * FIXED: Waldläufer spawnen sogar drei mal.
-* Böses bannen stärker, geringere Abklingzeit.
+* DONE: Böses bannen stärker, geringere Abklingzeit.
 * FIXED: Spruchrolle des Totenreichs nur Schreine pingen, die bereits erkundet sind.
 * Alphafähigkeit wird in Verwandlung nicht angezeigt.
 * Baldars Dialog: Spieler 2 bekommt nur Ende angezeigt?!
 * Haldars Dialog: Spieler 2 bekommt nur Ende angezeigt?!
 * FIXED: Klassenauswahl: desync ShowUnitForPlayer. Stattdessen Ghost-Fähigkeit geben und gemeinsame Sicht entfernen.
-* Holzbruck ins Repo aufnehmen.
+* DONE: Holzbruck ins Repo aufnehmen.
 * FIXED: Wenn Baumhirte beschworen wird, soll er direkt ausgewurzelt werden.
 * DONE: Toranimationen auf offen einstellen.
+* FIXED: Video The Castle: Bewegungsgeschwindigkeit des Charakters verlangsamen, damit er nicht vor dem Tor stehen bleibt.
+* Veraltete Zauber der Klassen komplett aus dem Projekt entfernen. Siehe struct ClassSelection.
+* Selbstlosigkeit funktioniert im Zauberbuch nicht.
+* Klassenauswahl: Feindlich machen ohne shared vision, damit Unsichtbarkeit wirklich funktioniert.
+* FIXED: Text "Sie befinden sich in einer Wiederholung" entfernen.
+* Ansprechen durch anderen Spieler funktioniert immer noch für menschliche Charaktere!
+* Das innere Tor ist offen, das äußere jedoch nicht.
+* Tobias erzählt von einer Kartoffel. Kartoffeln waren im Mittelalter unbekannt. Der Charakter sollte fragen, was eine Kartoffel ist und Tobias erzählt von Übersee.
+* FIXED: Guntrichs Ziel bei der Mühle selbst zu erkunden wird nicht erfüllt.
+* Nach Verwandlung in Dämon und Wiederbelebung ist Verwandlungsfähigkeit noch am Charakter.
+* Sichtfeldblocker in Trommelhöhle besser platzieren.
+* Weniger Erfahrung für Nebenquests und Hauptquests, vor allem am Anfang. Erfahrung auch durch Spielerzahl teilen?!
+* FIXED: Nekromant: Verzehren und Totenbeschwörung haben dieselbe Zauberbuch-ID.
+* FIXED: Erwachen des Waldes ist viel zu stark.
+* FIXED: Beschworene dunkle Diener haben Nekromantie obwohl nicht geskillt.
+* Wenn Seitengegenstand anderem Charakter gegeben wird, wird er nicht richtig zurück gesetzt. Pickup sollte Seitengegenstand einfach entfernen.
+* Belichtungsfehler herausfinden und fixen. Die Schatten sind viel zu dunkel?!
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

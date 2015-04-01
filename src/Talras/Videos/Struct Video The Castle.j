@@ -15,6 +15,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_the_castle_character)
 			call SetUnitFacing(thistype.actor(), 182.64)
 			call IssuePointOrder(thistype.actor(), "move", GetRectCenterX(gg_rct_video_the_castle_character_target), GetRectCenterY(gg_rct_video_the_castle_character_target))
+			call SetUnitMoveSpeed(thistype.actor(), 150.0)
 		endmethod
 
 		/*
@@ -49,7 +50,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			if (wait(4.0)) then
+			if (wait(5.0)) then
 				return
 			endif
 			
@@ -59,7 +60,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			if (wait(4.0)) then
+			if (wait(5.0)) then
 				return
 			endif
 			

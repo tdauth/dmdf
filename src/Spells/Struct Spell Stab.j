@@ -1,4 +1,4 @@
-/// Knight
+// Knight
 library StructSpellsSpellStab requires Asl, StructGameClasses, StructGameSpell
 
 	/// Fügt dem angewählten Ziel X Punkte Schaden zu.
@@ -19,7 +19,15 @@ library StructSpellsSpellStab requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			return thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			
+			call this.addGrimoireEntry('A0Y2', 'A0Y7')
+			call this.addGrimoireEntry('A0Y3', 'A0Y8')
+			call this.addGrimoireEntry('A0Y4', 'A0Y9')
+			call this.addGrimoireEntry('A0Y5', 'A0YA')
+			call this.addGrimoireEntry('A0Y6', 'A0YB')
+			
+			return this
 		endmethod
 	endstruct
 

@@ -30,7 +30,11 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			return  thistype.allocate(character, Classes.cleric(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			
+			call this.addGrimoireEntry('A0X4', 'A0X5')
+			
+			return this
 		endmethod
 	endstruct
 

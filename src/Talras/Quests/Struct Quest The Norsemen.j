@@ -391,6 +391,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				exitwhen (i == MapData.maxPlayers)
 				call DestroyFogModifier(this.m_assemblyPointFogModifier[i])
 				set this.m_assemblyPointFogModifier[i] = null
+				set i = i + 1
 			endloop
 			set i = 0
 			loop

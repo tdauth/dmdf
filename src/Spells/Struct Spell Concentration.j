@@ -29,6 +29,13 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 			set this.effectTimer = CreateTimer()
 			call TimerStart(this.effectTimer, thistype.interval, true, function thistype.timerFunction)
 			call DmdfHashTable.global().setHandleInteger(this.effectTimer, "this", this)
+			
+			call this.addGrimoireEntry('A0XI', 'A0XN')
+			call this.addGrimoireEntry('A0XJ', 'A0XO')
+			call this.addGrimoireEntry('A0XK', 'A0XP')
+			call this.addGrimoireEntry('A0XL', 'A0XQ')
+			call this.addGrimoireEntry('A0XM', 'A0XR')
+			
 			return this
 		endmethod
 

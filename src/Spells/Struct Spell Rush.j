@@ -40,7 +40,15 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			return thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			
+			call this.addGrimoireEntry('A0XS', 'A0XX')
+			call this.addGrimoireEntry('A0XT', 'A0XY')
+			call this.addGrimoireEntry('A0XU', 'A0XZ')
+			call this.addGrimoireEntry('A0XV', 'A0Y0')
+			call this.addGrimoireEntry('A0XW', 'A0Y1')
+			
+			return this
 		endmethod
 	endstruct
 

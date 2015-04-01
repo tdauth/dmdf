@@ -2,9 +2,9 @@
 library StructSpellsSpellBlock requires Asl, StructGameClasses, StructGameSpell
 
 	/**
-	* Passiv. Der Ritter hat eine 5%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden um 20/40/60/80/100% zu verringern.
-	* Sollte durch Gegenstände beeinflusst werden.
-	*/
+	 * Passiv. Der Ritter hat eine 5%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden um 20/40/60/80/100% zu verringern.
+	 * Sollte durch Gegenstände beeinflusst werden.
+	 */
 	struct SpellBlock extends Spell
 		public static constant integer abilityId = 'A01P'
 		public static constant integer favouriteAbilityId = 'A035'
@@ -32,6 +32,13 @@ library StructSpellsSpellBlock requires Asl, StructGameClasses, StructGameSpell
 			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.m_damageRecorder = ADamageRecorder.create(character.unit())
 			call this.m_damageRecorder.setOnDamageAction(thistype.action)
+			
+			call this.addGrimoireEntry('A0X8', 'A0XD')
+			call this.addGrimoireEntry('A0X9', 'A0XE')
+			call this.addGrimoireEntry('A0XA', 'A0XF')
+			call this.addGrimoireEntry('A0XB', 'A0XG')
+			call this.addGrimoireEntry('A0XC', 'A0XH')
+			
 			return this
 		endmethod
 

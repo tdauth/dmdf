@@ -733,12 +733,6 @@ endif
 				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhält Ihr Charakter auf jedes seiner Attribute einen Bonus von %2% Punkten. Zudem erhält Ihr Charakter pro Stufenaufstieg auf jedes seiner Attribute einen Bonus von %3% Punkten und sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).i(startBonus).i(Character.attributesLevelBonus()).result())
 			endif
 
-			// just a little notice that you're watching a replay
-			if (not IsInGameEx()) then
-				call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("|c00ffcc00WIEDERHOLUNG|r"))
-				call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Sie befinden sich in der Wiederholung eines Spiels, welches bereits stattgefunden hat."))
-			endif
-
 			// debug mode allows you to use various cheats
 static if (DEBUG_MODE) then
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
@@ -839,7 +833,7 @@ endif
 		public static method initVideoSettings takes nothing returns nothing
 			local integer i
 			call thistype.m_weather.disable()
-			call Fellow.pauseAllRevivals.evaluate(true)
+			call Fellow.reviveAllForVideo.evaluate()
 			call SpawnPoint.pauseAll()
 			call ItemSpawnPoint.pauseAll()
 			call DisableTrigger(thistype.m_levelTrigger)
@@ -912,7 +906,6 @@ endif
 			 * Make sure that not default wc3 music is played.
 			 */
 			call thistype.setDefaultMapMusic()
-			call Fellow.pauseAllRevivals.evaluate(false)
 			call SpawnPoint.resumeAll()
 			call ItemSpawnPoint.resumeAll()
 		endmethod

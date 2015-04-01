@@ -3,11 +3,30 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 	struct TalkKuno extends ATalk
 		private AInfo m_lonely_0
 		private AInfo m_lonely_1
+		private AInfo m_busy
 
 		implement Talk
 
+		private static method isInForest takes nothing returns boolean
+			return RectContainsUnit(gg_rct_kuno_forest, Npcs.kuno())
+		endmethod
+		
+		// (Falls Kuno nicht im Wald ist)
+		private static method infoConditionBusy takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
+			return not thistype.isInForest()
+		endmethod
+		
+		private static method infoActionBusy takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
+			call speech(info, character, true, tr("Nicht jetzt, ich habe zu tun!"), null)
+			call this.close(character)
+		endmethod
+		
 		private method startPageAction takes ACharacter character returns nothing
-			call this.showUntil(5, character)
+			if (not this.showInfo(this.m_busy.index(), character)) then
+				call this.showUntil(5, character)
+			endif
 		endmethod
 
 		// Hallo.
@@ -126,6 +145,8 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 			// info 1
 			set this.m_lonely_0 = this.addInfo(false, false, 0, thistype.infoActionLonely_0, tr("Was will sie denn später mal machen?")) // 6
 			set this.m_lonely_1 = this.addInfo(false, false, 0, thistype.infoActionLonely_1, tr("Sie packt das schon.")) // 7
+			
+			set this.m_busy = this.addInfo(true, true, thistype.infoConditionBusy, thistype.infoActionBusy, null)
 
 			return this
 		endmethod

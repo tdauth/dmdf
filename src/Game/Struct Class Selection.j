@@ -19,7 +19,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 */
 			// cleric spells
 			if (class == Classes.cleric()) then
-				call SpellAstralSource.create(character)
+				// deprecated
+				//call SpellAstralSource.create(character)
 				call SpellMaertyrer.create(character)
 				call SpellAbatement.create(character)
 				call SpellBlind.create(character)
@@ -32,7 +33,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellProtect.create(character)
 				call SpellRecovery.create(character)
 				call SpellRevive.create(character)
-				call SpellTorment.create(character)
+				// deprecated
+				//call SpellTorment.create(character)
 				call SpellBlessing.create(character)
 				call SpellConversion.create(character)
 				call SpellGodsFavor.create(character)
@@ -44,7 +46,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellDeathHerald.create(character)
 				call SpellDemonServant.create(character)
 				call SpellSoulThievery.create(character)
-				call SpellViolentDeath.create(character)
+				// deprecated
+				//call SpellViolentDeath.create(character)
 				call SpellWorldsPortal.create(character)
 				call SpellNecromancy.create(character)
 				call SpellPlague.create(character)
@@ -152,14 +155,13 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				set j = 0
-				loop
-					exitwhen (j == MapData.maxPlayers)
-					if (i != j) then
-						call SetPlayerAllianceStateBJ(Player(i), Player(j), bj_ALLIANCE_ALLIED_VISION)
+				if (i != GetPlayerId(this.player())) then
+					if (GetPlayerController(this.player()) == MAP_CONTROL_USER and GetPlayerSlotState(this.player()) == PLAYER_SLOT_STATE_PLAYING) then
+						call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+					else
+						call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
 					endif
-					set j = j + 1
-				endloop
+				endif
 				set i = i + 1
 			endloop
 			
@@ -202,7 +204,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_ALLIED)
+				call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_UNALLIED)
 				set i = i + 1
 			endloop
 			
