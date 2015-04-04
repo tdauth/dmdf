@@ -2,8 +2,8 @@
 library StructSpellsSpellPreventIll requires Asl, StructGameClasses, StructGameSpell
 
 	/**
-	* Kann auf Untote und Dämonen angewandt werden und verlangsamt ihre Bewegungs- und Angriffsgeschwindigkeit auf X %. Hält Y Sekunden.
-	*/
+	 * Kann auf Untote und Dämonen angewandt werden und verlangsamt ihre Bewegungs- und Angriffsgeschwindigkeit auf X %. Hält Y Sekunden.
+	 */
 	struct SpellPreventIll extends Spell
 		public static constant integer abilityId = 'A055'
 		public static constant integer favouriteAbilityId = 'A054'

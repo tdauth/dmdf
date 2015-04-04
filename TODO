@@ -218,6 +218,8 @@
 * FIXED: Beschworene dunkle Diener haben Nekromantie obwohl nicht geskillt.
 * Wenn Seitengegenstand anderem Charakter gegeben wird, wird er nicht richtig zurück gesetzt. Pickup sollte Seitengegenstand einfach entfernen.
 * Belichtungsfehler herausfinden und fixen. Die Schatten sind viel zu dunkel?!
+* Bekehrung zeitbeschränkt machen.
+* Blitzschlag bekommt keine Verstärkung durch Wut der Elemente.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
