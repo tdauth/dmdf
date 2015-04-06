@@ -52,7 +52,7 @@ library StructMapQuestsQuestTheBeast requires Asl
 			local AQuestItem questItem1
 			set this.m_foundTracks = false
 			set this.m_talkedToKuno = false
-			call this.setIconPath("Icons\\Creatures\\Demons\\BTNBestienhaeuptling.blp")
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBestienhaeuptling.blp")
 			call this.setDescription(tr("Die Schamanin Tanka und ihr Gefährte, der Bärenmensch Brogo, benötigen bei ihrer Suche nach einer Bestie Hilfe. Das Ungeheuer soll im Alleingang alle Bärenmenschen Brogos Stammes bis auf ihn selbst ausgerottet haben."))
 			call this.setReward(AAbstractQuest.rewardExperience, 300)
 			call this.setReward(AAbstractQuest.rewardGold, 30)

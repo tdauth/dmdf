@@ -29,7 +29,10 @@ library StructSpellsSpellPureEnergy requires Asl, StructGameClasses, StructGameS
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Spell.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Spell.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0ZK', 'A0ZL')
+			
+			return this
 		endmethod
 
 		private static method onInit takes nothing returns nothing

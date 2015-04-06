@@ -24,12 +24,14 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 			// freeze
 			set freezeEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "chest")
 			call SetUnitMoveSpeed(target, moveSpeed)
+			debug call Print("New move speed: " + R2S(moveSpeed) + " and old move speed " + R2S(oldMoveSpeed))
 			set time = thistype.time
 			loop
 				exitwhen (time <= 0.0 or ASpell.enemyTargetLoopCondition(target))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop
+			debug call Print("Resetting old move speed")
 			call SetUnitMoveSpeed(target, oldMoveSpeed)
 			set caster = null
 			set target = null

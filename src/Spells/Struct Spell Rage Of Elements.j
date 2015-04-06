@@ -42,7 +42,10 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0ZN', 'A0ZM')
+			
+			return this
 		endmethod
 	endstruct
 

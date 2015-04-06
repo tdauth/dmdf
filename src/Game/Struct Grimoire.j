@@ -261,10 +261,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			set this.m_skillPoints = skillPoints
 			if (skillPoints < 0) then
 				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 0)
-			elseif (skillPoints > 100) then
+			// use + 1 since the first level is for 0 skill points
+			elseif (skillPoints > 99) then
 				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 100)
 			else
-				call SetUnitAbilityLevel(this.character().unit(), this.ability(), skillPoints)
+				call SetUnitAbilityLevel(this.character().unit(), this.ability(), skillPoints + 1)
 			endif
 			/*
 			 * Update the User Interface. The selected skill might become skillable!

@@ -47,7 +47,10 @@ library StructSpellsSpellElementalForce requires Asl, StructSpellsSpellElemental
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			return thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0Z8', 'A0Z9')
+			
+			return this
 		endmethod
 	endstruct
 

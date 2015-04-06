@@ -57,8 +57,12 @@ library StructSpellsSpellFuriousBloodthirstiness requires Asl, StructGameClasses
 		endmethod
 
 		public static method create takes Character character returns thistype
+			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A0YW', 'A0YX')
+			
 			call Game.registerOnDamageActionOnce(thistype.onDamageAction)
-			return thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			
+			return this
 		endmethod
 	endstruct
 
