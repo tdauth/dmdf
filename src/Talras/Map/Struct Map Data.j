@@ -78,7 +78,6 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 	struct MapData extends MapDataInterface
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
-		public static constant integer computerPlayers = 1 // one additional player for the arena and the last quest
 		public static constant player alliedPlayer = Player(6)
 		public static constant player neutralPassivePlayer = Player(7)
 		public static constant player arenaPlayer = Player(8)
@@ -95,6 +94,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer difficultyStartAttributeBonus = 5 // start attribute bonus per missing player
 		public static constant integer difficultyLevelAttributeBonus = 2 // level up attribute bonus per missing player
 		public static constant integer workerUnitTypeId = 'h00E'
+		public static constant player orcPlayer = Player(9)
 		public static constant player haldarPlayer = Player(10)
 		public static constant player baldarPlayer = Player(11)
 		
@@ -154,6 +154,19 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 
 		/// Required by \ref Game.
 		public static method init takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAllianceStateBJ(Player(i), MapData.orcPlayer, bj_ALLIANCE_UNALLIED)
+				call SetPlayerAllianceStateBJ(MapData.orcPlayer, Player(i), bj_ALLIANCE_UNALLIED)
+				set i = i + 1
+			endloop
+			
+			call SetPlayerAllianceStateBJ(MapData.orcPlayer, Player(PLAYER_NEUTRAL_AGGRESSIVE), bj_ALLIANCE_ALLIED)
+			call SetPlayerAllianceStateBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), MapData.orcPlayer, bj_ALLIANCE_ALLIED)
+			call SetPlayerAllianceStateBJ(MapData.orcPlayer, MapData.alliedPlayer, bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.orcPlayer, bj_ALLIANCE_UNALLIED)
+			
 			call Aos.init.evaluate()
 			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tr("Sie haben die Arena betreten."), tr("Sie haben die Arena verlassen."), tr("Ein Arenakampf beginnt nun."), tr("Ein Arenakampf endet nun. Der Gewinner ist \"%s\"."))
 			call Arena.addRect(gg_rct_arena_0)
@@ -562,6 +575,10 @@ endif
 				return GetRectCenterY(gg_rct_character_5_start)
 			endif
 			return 0.0
+		endmethod
+		
+		public static method playerGivesXP takes player whichPlayer returns boolean
+			return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE) or whichPlayer == thistype.orcPlayer
 		endmethod
 	endstruct
 

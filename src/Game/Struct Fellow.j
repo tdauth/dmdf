@@ -236,6 +236,24 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_character = 0
 			call this.setShared(false)
 		endmethod
+		
+		/**
+		 * Revive always at the first character's enabled revival.
+		 */
+		private method reviveAtActiveShrine takes boolean showEffect returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (Character.playerCharacter(Player(i)) != 0 and Character.playerCharacter(Player(i)).revival() != 0) then
+					call ReviveHero(this.m_unit, Character.playerCharacter(Player(i)).revival().x(), Character.playerCharacter(Player(i)).revival().y(), showEffect)
+					
+					return
+				endif
+				set i = i + 1
+			endloop
+			debug call Print("Missing revival!")
+			call ReviveHero(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), showEffect)
+		endmethod
 
 		/**
 		 * Revives fellow at position of his death.
@@ -246,7 +264,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			debug call Print("NPC Revival: " + GetUnitName(this.m_unit))
 
 			if (IsUnitDeadBJ(this.m_unit)) then
-				call ReviveHero(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), true)
+				call this.reviveAtActiveShrine(true)
 				if (this.m_revivalMessage != null) then
 					call TransmissionFromUnit(this.m_unit, this.m_revivalMessage, this.m_revivalSound)
 				endif
@@ -469,7 +487,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 			
 			if (IsUnitDeadBJ(this.m_unit)) then
-				call ReviveHero(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), false)
+				call this.reviveAtActiveShrine(false)
 			endif
 		endmethod
 		

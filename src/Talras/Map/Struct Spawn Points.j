@@ -511,6 +511,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01G_0225, 1.0)
 			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01W_0323, 1.0)
 			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01X_0322, 1.0)
+			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n044_0538, 1.0)
 			
 			set thistype.m_cornEaters0 = SpawnPoint.create()
 			set index = thistype.m_cornEaters0.addUnitWithType(gg_unit_n016_0478, 1.0)

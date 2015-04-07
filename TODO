@@ -5,43 +5,45 @@
 * Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
 * Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird.
 * Metamorphose: Ist mit passiver Verwandlung eventuell sicherer, Cast-Zeit kontrollierbar: http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/
-* Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle? Fulco will die Zauberkraft der Hexen im Norden.
+* Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle?
+* Fulco will die Zauberkraft der Hexen im Norden. Neues Quest.
 * Kuno: Einbauen "Diese Wälder sind gefährlich! Hier hausen starke Kreaturen, nehmt euch in Acht!"
-* "Katzen für Brogo" braucht Icon - Katze
+* FIXED: "Katzen für Brogo" braucht Icon - Katze
 * "Der dunkle Kult": Egal wann der Diakon getötet wird bzw. alle, muss es bereits abgeschlossen sein, solange der Charakter in der Nähe war.
 * Letzter Auftrag, statt pan eventuell Videosequenz, die das Spiel unterbricht und die Ansicht danach wiederherstellt.
-* Video Wigberht fixen, wie er gegen die Orks kämpft.
+* FIXED: Video Wigberht fixen, wie er gegen die Orks kämpft.
 * Dialog mit Björn über Dago, wird alles automatisch ausgeführt.
 * Wenn Charakter verwandelt ist und im Dialog Gegenstände erhält, hat er kein Inventar. Gegenstände liegen dann dort. Kann nur unverwandelt ansprechen oder egal?
 * anstatt Items gleich zu verteilen einfach das Item n mal droppen?
 * Immediate stop bricht Zauberbuch hinzufügen etc. ab?!
-* Tool schreiben dass die MMP-Datei der Minimap nimmt, ein Gebiet ausschneidet und ein Bild mit einer bestimmten Größe daraus erzeugt.
+* Tool schreiben, das die MMP-Datei der Minimap nimmt, ein Gebiet ausschneidet und ein Bild mit einer bestimmten Größe daraus erzeugt.
 * Diakon lebt nach Video in dem er umgebracht wurde wieder?!
 * Ursula: Dialog einbauen falls man Druide ist!
 * FIXED: Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
 * Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
-* Schwert- und Schildhand vertauschen, damit Animation für Schild stimmt.
+* Schwert- und Schildhand bei sämtlichen Waffen vertauschen, damit Animation für Schild stimmt.
+* Schild Attachmentpunkt ändern, ist sonst in der Hand des Charakters.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
 * Grabenspinne: Passives Spinnengift und Giftstachel.
 * Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt. Selbst nachdem die Bestenliste des Spielers manuell auf null gesetzt wurde, verschwindet sie nicht.
 * Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer. Dialog bei Guntrich aktivieren, nachdem man bei der Mühle war -> neues Quest "Vertreibe die Plünderer".
 * Zauber "Dryade" ersetzen oder sinnvolle Beschwörung mit Heilung und Natur?
-* Wenn am Anfang nichts passiert wurde einmal überprüft ob das Video zu Ende ist, danach nicht mehr. Nichts passiert. Die Ausgabe des Überspringens kam danach. Überspringen parallel - Fehler?
+* DEPRECATED: Wenn am Anfang nichts passiert wurde einmal überprüft ob das Video zu Ende ist, danach nicht mehr. Nichts passiert. Die Ausgabe des Überspringens kam danach. Überspringen parallel - Fehler?
 * AOS-Gebiet: oben auf Plateaus Sichtfeldblocker platzieren!
 * AOS-Gebiet: Bob muss Gegenstände verkaufen.
 * AOS-Gebiet: Die Dämonenhändler sichtbarer machen.
 * AOS-Gebiet: Oscar und Dämon sollen Dialoge bekommen. Leiden unter der Herrschaft von Haldar und Baldar.
-* Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren. Vermutlich checkState()! State ist richtig - Quest muss nachträglich deaktiviert werden?! Passiert nur manchmal.
+* FIXED: Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren. Vermutlich checkState()! State ist richtig - Quest muss nachträglich deaktiviert werden?! Passiert nur manchmal.
 	* Quest ist auch aktiv und kann abgeschlossen werden, wird nur nicht im Quest-Log angezeigt!
 	* Liegt nicht an checkstate aber obwohl QuestTalras.initQuest() vor QuestRescueDago aufgerufen wird, ist das Quest über dem Quest Rescue Dago, normal?
-	* Vermutlich wurde das OpLimit überschritten. Nachdem die Grimoire-Funktionen vereinfacht wurden (Parameter updateUi) und es weniger Aufrufe gab, trat der Fehler nicht mehr auf.
+	* SOLUTION: Vermutlich wurde das OpLimit überschritten. Nachdem die Grimoire-Funktionen vereinfacht wurden (Parameter updateUi) und es weniger Aufrufe gab, trat der Fehler nicht mehr auf.
 * Vermutlich verursacht EndThematicMusic() beim Beenden eines Videos dass die Human-Musik gespielt wird. Die aktuelle Musik muss daher nach jedem Video wiederhergestellt werden! Game.resetVideoSettings()! setMapMusic() hat nichts gebracht!
 * Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
 * Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
 * Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
 * Mehr Orks: http://www.hiveworkshop.com/forums/models-530/orcveteran-259649/?prev=r%3D20%26page%3D3 und alternate Version
 * Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/ 
-* Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schrein wiederbelebt werden.
+* FIXED: Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schrein wiederbelebt werden.
 * Eigentlich benötigen die Zauberbuchfähigkeiten 6 verschiedene! Die letzte entspricht der ausgelernten Stufe und gibt nur noch einmal die Werte an. Ansonsten wird immer die der nächsten Stufe angezeigt und nicht der aktuellen!
 * Irgendwer in der Todesgruft kann Tote beschwören. Funktioniert jedoch nicht bei den eigenen Untoten? nur bei den Donnerwesen. Sollte bei allem funktionieren -> mehr Gegner.
 * Beim Video in der Todesgruft Predigt vom Diakon einbauen.
@@ -208,7 +210,7 @@
 * Klassenauswahl: Feindlich machen ohne shared vision, damit Unsichtbarkeit wirklich funktioniert.
 * FIXED: Text "Sie befinden sich in einer Wiederholung" entfernen.
 * Ansprechen durch anderen Spieler funktioniert immer noch für menschliche Charaktere!
-* Das innere Tor ist offen, das äußere jedoch nicht.
+* FIXED: Das innere Tor ist offen, das äußere jedoch nicht.
 * Tobias erzählt von einer Kartoffel. Kartoffeln waren im Mittelalter unbekannt. Der Charakter sollte fragen, was eine Kartoffel ist und Tobias erzählt von Übersee.
 * FIXED: Guntrichs Ziel bei der Mühle selbst zu erkunden wird nicht erfüllt.
 * Nach Verwandlung in Dämon und Wiederbelebung ist Verwandlungsfähigkeit noch am Charakter.
@@ -219,8 +221,11 @@
 * FIXED: Beschworene dunkle Diener haben Nekromantie obwohl nicht geskillt.
 * Wenn Seitengegenstand anderem Charakter gegeben wird, wird er nicht richtig zurück gesetzt. Pickup sollte Seitengegenstand einfach entfernen.
 * Belichtungsfehler herausfinden und fixen. Die Schatten sind viel zu dunkel?!
-* Bekehrung zeitbeschränkt machen.
-* Blitzschlag bekommt keine Verstärkung durch Wut der Elemente.
+* FIXED: Bekehrung zeitbeschränkt machen. Sonst kann man sich eine Armee aufbauen!
+* DEPRECATED: Blitzschlag bekommt keine Verstärkung durch Wut der Elemente.
+* Ricman und Wigberht einfach nach letzter Schlacht automatisch ins Lager bewegen. Ansonsten verwirrend.
+* config injection mit neuen Spielern!
+* Bei letzter Schlacht sollen sich zur Sicherheit Einheiten nicht töten können?
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

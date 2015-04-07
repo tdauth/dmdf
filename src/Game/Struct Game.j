@@ -185,12 +185,8 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 			return Player(PLAYER_NEUTRAL_AGGRESSIVE)
 		endmethod
 
-		public static method playingPlayers takes nothing returns integer
-			return CountPlayingPlayers() - MapData.computerPlayers
-		endmethod
-
 		public static method missingPlayers takes nothing returns integer
-			return MapData.maxPlayers - thistype.playingPlayers()
+			return MapData.maxPlayers - CountPlayingUsers()
 		endmethod
 
 		public static method registerOnDamageAction takes ADamageRecorderOnDamageAction onDamageAction returns nothing
@@ -347,7 +343,7 @@ endif
 			/*
 			 * Characters get only experience if a creep is being killed.
 			 */
-			if (GetOwningPlayer(GetTriggerUnit()) == Player(PLAYER_NEUTRAL_AGGRESSIVE)) then
+			if (MapData.playerGivesXP.evaluate(GetOwningPlayer(GetTriggerUnit()))) then
 				call GameExperience.distributeUnitExperience(GetTriggerUnit(), GetKillingUnit())
 				call GameBounty.distributeUnitBounty(GetTriggerUnit(), GetKillingUnit())
 			endif
@@ -720,7 +716,6 @@ endif
 			call Character.addSkillGrimoirePointsToAll(MapData.startSkillPoints)
 
 			// get difficulty
-			set playingPlayers = thistype.playingPlayers()
 			set missingPlayers = thistype.missingPlayers()
 
 			// decrease difficulty for others if players are missing

@@ -15,7 +15,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local integer i
 			local integer j
 			/**
-			 * Create all class spells for each character in debug mode.
+			 * Create all spells depending on the selected class.
 			 */
 			// cleric spells
 			if (class == Classes.cleric()) then
