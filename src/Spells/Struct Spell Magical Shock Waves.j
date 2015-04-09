@@ -20,7 +20,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 
 		private static method filter takes nothing returns boolean
 			local unit filterUnit = GetFilterUnit()
-			local boolean result = not IsUnitDeadBJ(filterUnit)
+			local boolean result = not IsUnitDeadBJ(filterUnit) and not (GetUnitState(filterUnit, UNIT_STATE_MAX_MANA) > 0.0)
 			set filterUnit = null
 			return result
 		endmethod
@@ -37,10 +37,6 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			set target = null
 		endmethod
 		
-		private static method hasNoMana takes unit whichUnit returns boolean
-			return GetUnitState(whichUnit, UNIT_STATE_MAX_MANA) == 0.0
-		endmethod
-		
 		private method condition takes nothing returns boolean
 			local unit caster = this.character().unit()
 			local group targetGroup = CreateGroup()
@@ -50,8 +46,8 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			call GroupEnumUnitsInRange(targetGroup, GetUnitX(caster), GetUnitY(caster), thistype.range, filter)
 			call targets.addGroup(targetGroup, true, false)
 			set targetGroup = null
+			debug call Print("Before removing allies: " + I2S(targets.units().size()))
 			call targets.removeAlliesOfUnit(caster)
-			call targets.units().removeIf(thistype.hasNoMana)
 			set result = not targets.units().empty()
 			call targets.destroy()
 			set caster = null
@@ -77,7 +73,6 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			call targets.addGroup(targetGroup, true, false)
 			set targetGroup = null
 			call targets.removeAlliesOfUnit(caster)
-			call targets.units().removeIf(thistype.hasNoMana)
 			if (not targets.units().empty()) then
 				set damageRecorders = AIntegerVector.create()
 				set i = 0
@@ -131,7 +126,14 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A100', 'A105')
+			call this.addGrimoireEntry('A101', 'A106')
+			call this.addGrimoireEntry('A102', 'A107')
+			call this.addGrimoireEntry('A103', 'A108')
+			call this.addGrimoireEntry('A104', 'A109')
+			
+			return this
 		endmethod
 	endstruct
 

@@ -9,7 +9,8 @@ library StructSpellsSpellArcaneRuse requires Asl, StructGameClasses, StructGameS
 		
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
-
+			call this.addGrimoireEntry('A10K', 'A10L')
+			
 			return this
 		endmethod
 	endstruct

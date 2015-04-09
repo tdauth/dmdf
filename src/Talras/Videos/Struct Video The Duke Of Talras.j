@@ -20,9 +20,9 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 			set this.m_actorMarkward = AVideo.saveUnitActor(gg_unit_n014_0117)
 			call SetUnitPositionRect(AVideo.unitActor(this.m_actorMarkward), gg_rct_video_the_duke_of_talras_markwards_position)
 			
-			set this.m_actorOsman = AVideo.saveUnitActor(Npcs.osman())
-			call SetUnitPositionRect(AVideo.unitActor(this.m_actorOsman), gg_rct_video_the_duke_of_talras_osmans_position)
-			call SetUnitFacing(AVideo.unitActor(this.m_actorOsman), 290.39)
+			set this.m_actorOsman = thistype.saveUnitActor(Npcs.osman())
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorOsman), gg_rct_video_the_duke_of_talras_osmans_position)
+			call SetUnitFacing(thistype.unitActor(this.m_actorOsman), 290.39)
 			
 			set this.m_actorFerdinand = AVideo.saveUnitActor(Npcs.ferdinand())
 			call SetUnitPositionRect(AVideo.unitActor(this.m_actorFerdinand), gg_rct_video_the_duke_of_talras_ferdinands_position)

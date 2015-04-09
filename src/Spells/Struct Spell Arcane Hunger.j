@@ -127,7 +127,14 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A10A', 'A10F')
+			call this.addGrimoireEntry('A10B', 'A10G')
+			call this.addGrimoireEntry('A10C', 'A10H')
+			call this.addGrimoireEntry('A10D', 'A10I')
+			call this.addGrimoireEntry('A10E', 'A10J')
+			
+			return this
 		endmethod
 	endstruct
 

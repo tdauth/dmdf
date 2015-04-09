@@ -8,7 +8,14 @@ library StructSpellsSpellShotIntoHeart requires Asl, StructGameClasses, StructGa
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.ranger(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.allocate(character, Classes.ranger(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			call this.addGrimoireEntry('A116', 'A11B')
+			call this.addGrimoireEntry('A117', 'A11C')
+			call this.addGrimoireEntry('A118', 'A11D')
+			call this.addGrimoireEntry('A119', 'A11E')
+			call this.addGrimoireEntry('A11A', 'A11F')
+			
+			return this
 		endmethod
 	endstruct
 

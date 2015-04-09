@@ -1,28 +1,29 @@
 library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameGame, StructMapMapShrines, StructMapMapNpcRoutines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
 
 	//! inject config
-		call SetMapName("TRIGSTR_001")
-		call SetMapDescription("")
-		call SetPlayers(11)
-		call SetTeams(11)
-		call SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
+		 call SetMapName( "TRIGSTR_001" )
+		call SetMapDescription( "" )
+		call SetPlayers( 12 )
+		call SetTeams( 12 )
+		call SetGamePlacement( MAP_PLACEMENT_TEAMS_TOGETHER )
 
-		call DefineStartLocation(0, - 22592.0, 18944.0)
-		call DefineStartLocation(1, - 22592.0, 18944.0)
-		call DefineStartLocation(2, - 22592.0, 18944.0)
-		call DefineStartLocation(3, - 22592.0, 18944.0)
-		call DefineStartLocation(4, - 22592.0, 18944.0)
-		call DefineStartLocation(5, - 22592.0, 18944.0)
-		call DefineStartLocation(6, - 22592.0, 18944.0)
-		call DefineStartLocation(7, - 22592.0, 18944.0)
-		call DefineStartLocation(8, - 22592.0, 18944.0)
-		call DefineStartLocation(9, - 22592.0, 18944.0)
-		call DefineStartLocation(10, - 22592.0, 18944.0)
+		call DefineStartLocation( 0, -22592.0, 18944.0 )
+		call DefineStartLocation( 1, -22592.0, 18944.0 )
+		call DefineStartLocation( 2, -22592.0, 18944.0 )
+		call DefineStartLocation( 3, -22592.0, 18944.0 )
+		call DefineStartLocation( 4, -22592.0, 18944.0 )
+		call DefineStartLocation( 5, -22592.0, 18944.0 )
+		call DefineStartLocation( 6, -22592.0, 18944.0 )
+		call DefineStartLocation( 7, -22592.0, 18944.0 )
+		call DefineStartLocation( 8, -22592.0, 18944.0 )
+		call DefineStartLocation( 9, -22592.0, 18944.0 )
+		call DefineStartLocation( 10, -22592.0, 18944.0 )
+		call DefineStartLocation( 11, -22592.0, 18944.0 )
 
 		// Player setup
-		call InitCustomPlayerSlots()
-		call InitCustomTeams()
-		call InitAllyPriorities()
+		call InitCustomPlayerSlots(  )
+		call InitCustomTeams(  )
+		call InitAllyPriorities(  )
 
 		call PlayMusic("Music\\LoadingScreen.mp3") /// WARNING: If file does not exist, game crashes?
 	//! endinject

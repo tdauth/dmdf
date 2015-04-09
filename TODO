@@ -224,8 +224,13 @@
 * FIXED: Bekehrung zeitbeschränkt machen. Sonst kann man sich eine Armee aufbauen!
 * DEPRECATED: Blitzschlag bekommt keine Verstärkung durch Wut der Elemente.
 * Ricman und Wigberht einfach nach letzter Schlacht automatisch ins Lager bewegen. Ansonsten verwirrend.
-* config injection mit neuen Spielern!
+* FIXED: config injection mit neuen Spielern!
 * Bei letzter Schlacht sollen sich zur Sicherheit Einheiten nicht töten können?
+* Wigberht "Erzähl mir was über deine Heimat" "Nun komm schon" erzählt einfach direkt etwas.
+* Weniger Erfahrung für die leppische Hauptquests. Man steigt viel zu schnell auf.
+* Dämpfung sollte nicht nur Magieschaden reduzieren.
+* FIXED: Vervielfachung: Sollten immer mehr prozentualen Schaden verursachen, pro Stufe.
+* Manaexplosion stärker machen.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

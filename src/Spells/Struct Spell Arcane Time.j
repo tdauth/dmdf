@@ -81,7 +81,14 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A10M', 'A10R')
+			call this.addGrimoireEntry('A10N', 'A10S')
+			call this.addGrimoireEntry('A10O', 'A10T')
+			call this.addGrimoireEntry('A10P', 'A10U')
+			call this.addGrimoireEntry('A10Q', 'A10V')
+			
+			return this
 		endmethod
 	endstruct
 
