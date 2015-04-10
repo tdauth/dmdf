@@ -1,6 +1,7 @@
 /// Elemental Mage
 library StructSpellsSpellBlaze requires Asl, StructSpellsSpellElementalMageDamageSpell
 
+	// Feuersbrunst
 	struct SpellBlaze extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A01E'
 		public static constant integer favouriteAbilityId = 'A03L'

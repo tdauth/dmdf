@@ -6,8 +6,8 @@ library StructSpellsSpellLightning requires Asl, StructSpellsSpellElementalMageD
 		public static constant integer abilityId = 'A018'
 		public static constant integer favouriteAbilityId = 'A02C'
 		public static constant integer maxLevel = 5
-		private static constant real startDamageValue = 60.0
-		private static constant real levelDamageFactor = 40.0
+		private static constant real startDamageValue = 0.0
+		private static constant real levelDamageFactor = 100.0
 
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()

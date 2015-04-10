@@ -12,18 +12,20 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 		private method action takes nothing returns nothing
 			local unit characterUnit = this.character().unit()
 			local unit target = GetSpellTargetUnit()
-			local real bonus = Game.addUnitMoveSpeed(target, GetUnitMoveSpeed(target)  * thistype.speedFactor)
+			local real bonus = Game.addUnitMoveSpeed(characterUnit, GetUnitMoveSpeed(characterUnit) * thistype.speedFactor)
 			call IssueTargetOrder(characterUnit, "attack", target)
 			loop
-				exitwhen (ASpell.enemyTargetLoopCondition(target) or GetUnitCurrentOrder(characterUnit) != OrderId("attack"))
+				exitwhen (thistype.enemyTargetLoopCondition(target) or GetUnitCurrentOrder(characterUnit) != OrderId("attack"))
 				if (GetDistanceBetweenUnits(characterUnit, target, 0.0, 0.0) <= 300.0) then
 					debug call Print("Stop!")
 					call IssueImmediateOrder(characterUnit, "stop")
 					debug call Print("Attack animation")
 					call SetUnitAnimation(characterUnit, "attack")
 					debug call Print("Add ability")
+					// dummy ability
 					call UnitAddAbility(characterUnit, 'A01R')
 					call IssueTargetOrderById(characterUnit, 'A01R', target)
+					call TriggerSleepAction(0.0) // wait for cast
 					call UnitRemoveAbility(characterUnit, 'A01R')
 					call UnitDamageTargetBJ(characterUnit, target, this.level() * thistype.damageFactor, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
 					call ShowBashTextTagForPlayer(this.character().player(), GetWidgetX(target), GetWidgetY(target), R2I(this.level() * thistype.damageFactor))

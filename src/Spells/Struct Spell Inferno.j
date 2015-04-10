@@ -8,8 +8,8 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 		public static constant integer maxLevel = 5
 		private static constant real time = 6.0
 		private static constant real radius = 400.0
-		private static constant real damageStartValue = 30.0
-		private static constant real damageLevelValue = 15.0
+		private static constant real damageStartValue = 20.0
+		private static constant real damageLevelValue = 10.0
 
 		private static method filterCondition takes nothing returns boolean
 			local unit filterUnit = GetFilterUnit()

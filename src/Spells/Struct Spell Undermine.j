@@ -1,6 +1,7 @@
 /// Elemental Mage
 library StructSpellsSpellUndermine requires Asl, StructGameClasses, StructGameSpell
 
+	/// Zehren
 	/// Der Elementarmagier bekommt X Manapunkte für Y Leben pro Sekunde zurück. Er kann an dieser Fähigkeit sterben.
 	struct SpellUndermine extends Spell
 		public static constant integer abilityId = 'A01G'
@@ -11,8 +12,8 @@ library StructSpellsSpellUndermine requires Asl, StructGameClasses, StructGameSp
 		/// @todo Was passiert bei mehreren Buffs?
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
-			local real manaValue = 10.0 + 10.0 * this.level() * 0.10
-			local real lifeValue = 15.0 - 15.0 * this.level() * 0.10
+			local real manaValue = 10.0 + 10.0 * this.level()
+			local real lifeValue = 10.0
 			call IssueImmediateOrder(caster, "stop")
 			/// \todo Add custom buff in channel ability
 			//call UnitAddAbility(caster, thistype.buffId)
