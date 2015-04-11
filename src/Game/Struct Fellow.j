@@ -502,10 +502,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call thistype(iterator.data()).reviveForVideo()
 				call iterator.next()
 			endloop
-			debug call Print("Before destroying iterator")
+			debug call Print("Before destroying iterator " + I2S(iterator))
 			// TODO double free
 			call iterator.destroy()
-			debug call Print("After destroying iterator")
+			debug call Print("After destroying iterator" + I2S(iterator))
 		endmethod
 	endstruct
 

@@ -6,8 +6,7 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 		public static constant integer abilityId = 'A05O'
 		public static constant integer favouriteAbilityId = 'A05P'
 		public static constant integer maxLevel = 5
-		private static constant real rangeStartValue = 300.0
-		private static constant real rangeLevelValue = 100.0
+		private static constant real range = 900.0
 		private static constant real timeStartValue = 5.0
 		private static constant real timeLevelValue = 2.0
 		private static constant real manaStartPercentage = 6.0
@@ -20,10 +19,6 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 			return result
 		endmethod
 		
-		private method range takes nothing returns real
-			return thistype.rangeStartValue + this.level() * thistype.rangeLevelValue
-		endmethod
-		
 		private method time takes nothing returns real
 			return thistype.timeStartValue + this.level() * thistype.timeLevelValue
 		endmethod
@@ -32,22 +27,29 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 			return thistype.manaStartPercentage + this.level() * thistype.manaLevelPercentage
 		endmethod
 		
-		private method condition takes nothing returns boolean
+		/**
+		 * \return Returns valid targets. You have to destroy the return value manually.
+		 */
+		private method targets takes nothing returns AGroup
 			local unit caster = this.character().unit()
 			local group targetGroup = CreateGroup()
 			local filterfunc filter = Filter(function thistype.filter)
 			local AGroup targets = AGroup.create()
 			local boolean result
-			call GroupEnumUnitsInRange(targetGroup, GetUnitX(caster), GetUnitY(caster), this.range(), filter)
-			debug call Print("Arcane Hunger: Adding units in range of " + R2S(this.range()) + ".")
+			call GroupEnumUnitsInRange(targetGroup, GetUnitX(caster), GetUnitY(caster), thistype.range, filter)
+			debug call Print("Arcane Hunger: Adding units in range of " + R2S(thistype.range) + ".")
 			call targets.addGroup(targetGroup, true, false)
 			call targets.removeAlliesOfUnit(caster)
-			debug call Print("Arcane Hunger: After removing allies we still have " + I2S(targets.units().size()) + " targets left.")
-			set targetGroup = null
-			set result = not targets.units().empty()
-			set caster = null
 			call DestroyFilter(filter)
 			set filter = null
+			set caster = null
+			
+			return targets
+		endmethod
+		
+		private method condition takes nothing returns boolean
+			local AGroup targets = this.targets()
+			local boolean result = not targets.units().empty()
 			call targets.destroy()
 			
 			if (not result) then
@@ -59,18 +61,13 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
-			local group targetGroup = CreateGroup()
-			local filterfunc filter = Filter(function thistype.filter)
-			local AGroup targets = AGroup.create()
+			local AGroup targets = this.targets()
 			local AIntegerVector dynamicLightnings
 			local integer i
 			local unit target
 			local real time
 			local real mana
-			call GroupEnumUnitsInRange(targetGroup, GetUnitX(caster), GetUnitY(caster), this.range(), filter)
-			call targets.addGroup(targetGroup, true, false)
-			call targets.removeAlliesOfUnit(caster)
-			set targetGroup = null
+			
 			// TODO checked already in condition if empty
 			if (not targets.units().empty()) then
 				set dynamicLightnings = AIntegerVector.create()
@@ -121,8 +118,6 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 			endif
 		
 			set caster = null
-			call DestroyFilter(filter)
-			set filter = null
 			call targets.destroy()
 		endmethod
 
