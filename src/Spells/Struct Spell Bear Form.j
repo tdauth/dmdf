@@ -28,6 +28,30 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
 				call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
 				call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
+				
+				// zoology level 1 ability for bear form
+				// Gebrüll
+				call UnitAddAbility(this.character().unit(), 'A11S')
+				
+				// Prankenhieb
+				if (zoologyLevel > 1) then
+					call UnitAddAbility(this.character().unit(), 'A11Z')
+				endif
+
+				// Tollwut
+				if (zoologyLevel > 2) then
+					call UnitAddAbility(this.character().unit(), 'A120')
+				endif
+				
+				// Winterschlaf
+				if (zoologyLevel > 3) then
+					call UnitAddAbility(this.character().unit(), 'A121')
+				endif
+				
+				// Bärenhöhle
+				if (zoologyLevel > 4) then
+					call UnitAddAbility(this.character().unit(), 'A122')
+				endif
 			endif
 		endmethod
 	endstruct

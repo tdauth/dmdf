@@ -73,6 +73,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellBlock.create(character)
 				call SpellConcentration.create(character)
 				call SpellLivingWill.create(character)
+				call SpellResolution.create(character)
 				call SpellRigidity.create(character)
 				call SpellRush.create(character)
 				call SpellSelflessness.create(character)

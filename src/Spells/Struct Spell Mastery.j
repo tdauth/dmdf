@@ -1,13 +1,13 @@
 /// Elemental Mage
 library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpell
 
-	/// Grundfähigkeit: Passiv. Der Elementarmagier regeneriert alle 60 Sekunden X Mana.
+	/// Passiv. Der Elementarmagier regeneriert alle 60 Sekunden X Mana.
 	struct SpellMastery extends Spell
 		public static constant integer abilityId = 'A01F'
 		public static constant integer favouriteAbilityId = 'A034'
 		public static constant integer maxLevel = 5
-		private static constant real interval = 60.0 //constant, does not change per level.
-		private static constant real manaLevelValue = 10.0 //changes per level.
+		private static constant real interval = 10.0 //constant, does not change per level.
+		private static constant real manaLevelValue = 0.05 //changes per level.
 		private timer m_effectTimer
 
 		private static method timerFunction takes nothing returns nothing
@@ -17,7 +17,7 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			local real mana
 			local effect spellEffect
 			if (this.level() > 0) then
-				set mana = this.level() * thistype.manaLevelValue
+				set mana = GetUnitState(caster, UNIT_STATE_MAX_MANA) * this.level() * thistype.manaLevelValue
 				debug call Print("Mastery with " + R2S(mana) + " Mana.")
 				if (mana > 0) then
 					set caster = this.character().unit()
@@ -39,6 +39,12 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			set this.m_effectTimer = CreateTimer()
 			call TimerStart(this.m_effectTimer, thistype.interval, true, function thistype.timerFunction)
 			call DmdfHashTable.global().setHandleInteger(this.m_effectTimer, "this", this)
+			call this.addGrimoireEntry('A11I', 'A11N')
+			call this.addGrimoireEntry('A11J', 'A11O')
+			call this.addGrimoireEntry('A11K', 'A11P')
+			call this.addGrimoireEntry('A11L', 'A11Q')
+			call this.addGrimoireEntry('A11M', 'A11R')
+			
 			return this
 		endmethod
 
