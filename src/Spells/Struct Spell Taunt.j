@@ -1,77 +1,47 @@
 /// Knight
 library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 
-	/// Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an.
-	/// Bei höheren Stufen noch Schadensreduzierung.
-	struct SpellTaunt extends Spell
-		public static constant integer abilityId = 'A02O'
-		public static constant integer favouriteAbilityId = 'A042'
-		public static constant integer maxLevel = 5
-		private static constant real damageLevelFactor = 0.10
+	struct BuffTaunt
 		private trigger m_orderTrigger
+		private Spell m_spell
 		private unit m_target
 		private ADamageRecorder m_damageRecorder
-
+		
+		public method start takes real time returns nothing
+			local real elapsedTime = 0.0
+			call DmdfHashTable.global().setHandleInteger(this.m_target, "tauntBuff", this)
+			call EnableTrigger(this.m_orderTrigger)
+			call this.m_damageRecorder.enable()
+			loop
+				exitwhen (elapsedTime >= time or IsUnitDeadBJ(this.m_target) or IsUnitSpellImmune(this.m_target))
+				call TriggerSleepAction(1.0)
+				set elapsedTime = elapsedTime - 1.0
+			endloop
+			call DisableTrigger(this.m_orderTrigger)
+			call this.m_damageRecorder.disable()
+			call DmdfHashTable.global().removeHandleInteger(this.m_target, "tauntBuff")
+		endmethod
+		
 		/// @todo Just block if damaging unit is ability target?
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
 			local unit target = damageRecorder.target()
-			local real blockedDamage = GetEventDamage() * GetUnitAbilityLevel(target, thistype.abilityId) * thistype.damageLevelFactor
+			local thistype this = DmdfHashTable.global().handleInteger(target, "tauntBuff")
+			local real blockedDamage = GetEventDamage() * this.m_spell.level() * SpellTaunt.damageLevelFactor
 			call SetUnitLifeBJ(target, GetUnitState(target, UNIT_STATE_LIFE) + blockedDamage)
 			call Spell.showDamageAbsorbationTextTag(target, blockedDamage)
 			set target = null
 		endmethod
-
-		private method action takes nothing returns nothing
-			local unit caster = this.character().unit()
-			local unit target = GetSpellTargetUnit()
-			local real time = 5.0
-			debug call Print("Taunt on target: " + GetUnitName(target))
-			call ShowGeneralFadingTextTagForPlayer(null, tr("Verspotten"), GetUnitX(target), GetUnitY(target), 255, 255, 255, 255)
-			set this.m_target = target
-			call IssueTargetOrder(target, "attack", caster)
-			call EnableTrigger(this.m_orderTrigger)
-			if (this.level() > 1) then
-				if (this.m_damageRecorder == 0) then
-					set this.m_damageRecorder = ADamageRecorder.create(caster)
-					call this.m_damageRecorder.setOnDamageAction(thistype.onDamageAction)
-				else
-					call this.m_damageRecorder.enable()
-				endif
-			endif
-			loop
-				exitwhen (time <= 0.0 or IsUnitDeadBJ(target) or IsUnitSpellImmune(target) or IsUnitDeadBJ(caster) or not this.isLearned())
-				set time = time - 1.0
-				call TriggerSleepAction(5.0)
-			endloop
-			call DisableTrigger(this.m_orderTrigger)
-			set this.m_target = null
-			if (this.level() > 1) then
-				call this.m_damageRecorder.disable()
-			endif
-			set caster = null
-			set target = null
-		endmethod
-
+		
 		/// @todo Just if it's an attack order?
 		private static method triggerConditionOrder takes nothing returns boolean
-			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
-			local unit triggerUnit = GetTriggerUnit()
-			local unit targetUnit
-			local unit caster
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local boolean result = false
-			if (triggerUnit == this.m_target and GetIssuedOrderId() == OrderId("attack")) then
-				set targetUnit = GetOrderTargetUnit()
-				set caster = this.character().unit()
-				if (targetUnit != caster) then
-					debug call this.print("Want attack another one!")
+			if (GetTriggerUnit() == this.m_target and GetIssuedOrderId() == OrderId("attack")) then
+				if (GetOrderTargetUnit() != this.m_spell.character().unit()) then
+					debug call Print("Want attack another one!")
 					set result = true
 				endif
-				set caster = null
-				set targetUnit = null
 			endif
-			set triggeringTrigger = null
-			set triggerUnit = null
 			return result
 		endmethod
 
@@ -79,7 +49,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			local trigger triggeringTrigger = GetTriggeringTrigger()
 			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
 			local unit triggerUnit = GetTriggerUnit() //or this.m_target
-			local unit caster = this.character().unit()
+			local unit caster = this.m_spell.character().unit()
 			call ShowGeneralFadingTextTagForPlayer(null, tr("Greife den Ritter an!"), GetUnitX(triggerUnit), GetUnitY(triggerUnit), 255, 255, 255, 255)
 			call IssueTargetOrder(triggerUnit, "attack", caster)
 			set triggeringTrigger = null
@@ -88,18 +58,77 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		private method createOrderTrigger takes nothing returns nothing
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			call TriggerRegisterAnyUnitEventBJ(this.m_orderTrigger, EVENT_PLAYER_UNIT_ISSUED_UNIT_ORDER)
-			set conditionFunction = Condition(function thistype.triggerConditionOrder)
-			set triggerCondition = TriggerAddCondition(this.m_orderTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(this.m_orderTrigger, function thistype.triggerActionOrder)
+			call TriggerAddCondition(this.m_orderTrigger, Condition(function thistype.triggerConditionOrder))
+			call TriggerAddAction(this.m_orderTrigger, function thistype.triggerActionOrder)
 			call DmdfHashTable.global().setHandleInteger(this.m_orderTrigger, "this", this)
 			call DisableTrigger(this.m_orderTrigger)
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+		endmethod
+		
+		public static method create takes Spell spell, unit target, real time returns thistype
+			local thistype this = thistype.allocate()
+			set this.m_spell = spell
+			set this.m_target = target
+			set this.m_damageRecorder = ADamageRecorder.create(target)
+			call this.m_damageRecorder.setOnDamageAction(thistype.onDamageAction)
+			call this.m_damageRecorder.disable()
+
+			call this.createOrderTrigger()
+			
+			return this
+		endmethod
+		
+		private method destroyOrderTrigger takes nothing returns nothing
+			call DmdfHashTable.global().destroyTrigger(this.m_orderTrigger)
+			set this.m_orderTrigger = null
+		endmethod
+
+		public method onDestroy takes nothing returns nothing
+			set this.m_target = null
+
+			call this.destroyOrderTrigger()
+			
+			if (this.m_damageRecorder != 0) then
+				call this.m_damageRecorder.destroy()
+			endif
+		endmethod
+	endstruct
+
+	/// Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an.
+	/// Bei höheren Stufen noch Schadensreduzierung.
+	/// TODO wird der Zauber zerstört, so sollten alle Buffs sofort gelöscht werden?
+	struct SpellTaunt extends Spell
+		public static constant integer abilityId = 'A02O'
+		public static constant integer favouriteAbilityId = 'A042'
+		public static constant integer maxLevel = 5
+		public static constant real timeStartValue = 4.0
+		public static constant real timeLevelFactor = 1.0
+		public static constant real damageStartValue = 90.0
+		public static constant real damageLevelFactor = 0.10
+		
+		private method condition takes nothing returns boolean
+			if (IsUnitType(GetSpellTargetUnit(), UNIT_TYPE_RESISTANT)) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel ist magieressistent."))
+				return false
+			elseif (IsUnitType(GetSpellTargetUnit(), UNIT_TYPE_MAGIC_IMMUNE)) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel ist zauberimmun."))
+				return false
+			endif
+			
+			return true
+		endmethod
+
+		private method action takes nothing returns nothing
+			local unit caster = this.character().unit()
+			local unit target = GetSpellTargetUnit()
+			local real time = thistype.timeStartValue + thistype.timeLevelFactor * this.level()
+			local BuffTaunt buffTaunt = BuffTaunt.create(this, target, time) 
+			debug call Print("Taunt on target: " + GetUnitName(target) + " with time " + R2S(time))
+			call ShowGeneralFadingTextTagForPlayer(null, tr("Verspotten"), GetUnitX(target), GetUnitY(target), 255, 255, 255, 255)
+			call buffTaunt.start(time)
+			call buffTaunt.destroy()
+			set caster = null
+			set target = null
 		endmethod
 
 		public static method create takes Character character returns thistype
@@ -110,24 +139,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			call this.addGrimoireEntry('A0LY', 'A0M3')
 			call this.addGrimoireEntry('A0LZ', 'A0M4')
 			
-			set this.m_damageRecorder = 0
-
-			call this.createOrderTrigger()
 			return this
-		endmethod
-
-		private method destroyOrderTrigger takes nothing returns nothing
-			call DmdfHashTable.global().destroyTrigger(this.m_orderTrigger)
-			set this.m_orderTrigger = null
-		endmethod
-
-		public method onDestroy takes nothing returns nothing
-			set this.m_target = null
-
-			call this.destroyOrderTrigger()
-			if (this.m_damageRecorder != 0) then
-				call this.m_damageRecorder.destroy()
-			endif
 		endmethod
 	endstruct
 

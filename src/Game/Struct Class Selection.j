@@ -111,11 +111,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellLightning.create(character)
 				call SpellMastery.create(character)
 				call SpellRageOfElements.create(character)
-				debug call Print("Before Pure Energy")
 				call SpellPureEnergy.create(character)
-				debug call Print("Before Teleportation")
 				call SpellTeleportation.create(character)
-				debug call Print("Before Undermine")
 				call SpellUndermine.create(character)
 			elseif (class == Classes.wizard()) then
 				// TODO drop Anziehung und Abstoßung und Arkane Bindung

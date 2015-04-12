@@ -197,6 +197,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						 * Use the corresponding order string to cast the added permanent "dummy" ability.
 						 */
 						if (IssueImmediateOrder(this.character().unit(), this.orderString())) then
+							call thistype.waitForMorph(this.character().unit(), this.unitTypeId())
 							set this.m_isMorphed = true
 							// morph spells are expected to morph immediately
 							call this.onMorph.evaluate()

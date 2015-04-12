@@ -11,7 +11,12 @@ library StructSpellsSpellResolution requires Asl, StructGameClasses, StructGameS
 		public static constant real lifeStartValue = 50.0
 		
 		private method condition takes nothing returns boolean
-			return UnitHasBuffsEx(GetTriggerUnit(), false, true, true, false, true, true, false)
+			local boolean result = UnitHasBuffsEx(GetTriggerUnit(), false, true, true, false, true, true, false)
+			if (not result) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Keine negativen Effekte."))
+			endif
+			
+			return result
 		endmethod
 
 		private method action takes nothing returns nothing
