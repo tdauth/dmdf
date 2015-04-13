@@ -95,7 +95,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
 			call SetDoodadAnimationRect(gg_rct_gate_1, 'D085', "Death", false)
-			call SetDoodadAnimationRect(gg_rct_gate_2, 'D085', "Death", false)
+			call SetDoodadAnimationRect(gg_rct_gate_2, 'D053', "Death", false)
 			
 			if (wait(4.0)) then
 				return
@@ -110,7 +110,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			
 			call SetDoodadAnimationRect(gg_rct_gate_0, 'D085', "Death", false)
 			call SetDoodadAnimationRect(gg_rct_gate_1, 'D085', "Death", false)
-			call SetDoodadAnimationRect(gg_rct_gate_2, 'D085', "Death", false)
+			call SetDoodadAnimationRect(gg_rct_gate_2, 'D053', "Death", false)
 		endmethod
 
 		private static method create takes nothing returns thistype
