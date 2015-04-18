@@ -331,6 +331,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.sisgard(), thistype.startPageAction)
+			call this.setName(tr("Sisgard"))
 			
 			set thistype.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tr("Hallo."))
 			set thistype.m_hi_whyNot = this.addInfo(false, false, 0, thistype.infoActionHi_WhyNot, tr("Wieso nicht?"))

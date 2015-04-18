@@ -399,7 +399,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_huntingKnife = ItemType.createSimple('I025', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_huntingKnife.addAbility('A07W', true)
 			
-			set thistype.m_bootsOfSpeed = ItemType.createSimple('I04M', AItemType.equipmentTypePrimaryWeapon)
+			set thistype.m_bootsOfSpeed = ItemType.createSimple('I04M', AItemType.equipmentTypeAmulet)
 			call thistype.m_bootsOfSpeed.addAbility('AIms', true)
 
 			// artefacts

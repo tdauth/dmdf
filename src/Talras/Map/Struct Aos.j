@@ -141,6 +141,10 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			debug call Print("AOS timeout: " + R2S(TimerGetTimeout(thistype.m_spawnTimer)))
 		endmethod
 
+		/**
+		 * Character \p character joins the AOS area which changes the music and the camera bounds.
+		 * \note If this is the first time a character enters the area, the AOS spawns start. This reduces performance issues if nobody ever enters the AOS area.
+		 */
 		public static method characterJoins takes Character character returns nothing
 			local player user = character.player()
 			call PlayMusic("Music\\TheDrumCave.mp3") /// @todo for user
@@ -166,6 +170,55 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call character.setCamera()
 			set user = null
 		endmethod
+		
+		private static method setCharacterAllianceStateToOthers takes Character character, boolean haldar returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (thistype.m_playerHasJoinedHaldar[i] and haldar) then
+					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
+					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+				elseif (thistype.m_playerHasJoinedHaldar[i] and not haldar) then
+					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_UNALLIED)
+					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_UNALLIED)
+				elseif (thistype.m_playerHasJoinedBaldar[i] and haldar) then
+					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_UNALLIED)
+					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_UNALLIED)
+				elseif (thistype.m_playerHasJoinedBaldar[i] and not haldar) then
+					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
+					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+				else
+					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
+					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+				endif
+				set i = i + 1
+			endloop
+			if (haldar) then
+				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, character.player(), bj_ALLIANCE_ALLIED_VISION)
+				call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, character.player(), bj_ALLIANCE_UNALLIED)
+				call SetPlayerAllianceStateBJ(character.player(), thistype.m_haldarsUser, bj_ALLIANCE_ALLIED)
+				call SetPlayerAllianceStateBJ(character.player(), thistype.m_baldarsUser, bj_ALLIANCE_UNALLIED)
+			else
+				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, character.player(), bj_ALLIANCE_UNALLIED)
+				call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, character.player(), bj_ALLIANCE_ALLIED_VISION)
+				call SetPlayerAllianceStateBJ(character.player(), thistype.m_haldarsUser, bj_ALLIANCE_UNALLIED)
+				call SetPlayerAllianceStateBJ(character.player(), thistype.m_baldarsUser, bj_ALLIANCE_ALLIED)
+			endif
+		endmethod
+		
+		private static method resetCharacterAllianceStateToOthers takes Character character returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
+				call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+				set i = i + 1
+			endloop
+				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, character.player(), bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, character.player(), bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(character.player(), thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(character.player(), thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
+		endmethod
 
 		public static method characterJoinsHaldar takes Character character returns nothing
 			local player user
@@ -178,10 +231,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call Shrines.aosShrineHaldar().enableForCharacter(character, false)
 			set thistype.m_playerHasJoinedHaldar[GetPlayerId(user)] = true
 			set thistype.m_haldarMembers = thistype.m_haldarMembers + 1
-			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, user, bj_ALLIANCE_ALLIED_VISION)
-			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, user, bj_ALLIANCE_UNALLIED)
-			call SetPlayerAllianceStateBJ(user, thistype.m_haldarsUser, bj_ALLIANCE_ALLIED)
-			call SetPlayerAllianceStateBJ(user, thistype.m_baldarsUser, bj_ALLIANCE_UNALLIED)
+			call thistype.setCharacterAllianceStateToOthers(character, true)
 			call LeaderboardAddItemBJ(user, thistype.m_leaderboard, character.name(), thistype.m_playerScore[GetPlayerId(user)])
 			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, true)
 			call character.setIsInPvp(true)
@@ -195,10 +245,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			set thistype.m_haldarMembers = thistype.m_haldarMembers - 1
 			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, false)
 			call LeaderboardRemovePlayerItem(thistype.m_leaderboard, user)
-			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, user, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, user, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(user, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(user, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
+			call thistype.resetCharacterAllianceStateToOthers(character)
 			call character.setIsInPvp(false)
 			set user = null
 		endmethod
@@ -214,10 +261,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call Shrines.aosShrineBaldar().enableForCharacter(character, false)
 			set thistype.m_playerHasJoinedBaldar[GetPlayerId(user)] = true
 			set thistype.m_baldarMembers = thistype.m_baldarMembers + 1
-			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, user, bj_ALLIANCE_UNALLIED)
-			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, user, bj_ALLIANCE_ALLIED_VISION)
-			call SetPlayerAllianceStateBJ(user, thistype.m_haldarsUser, bj_ALLIANCE_UNALLIED)
-			call SetPlayerAllianceStateBJ(user, thistype.m_baldarsUser, bj_ALLIANCE_ALLIED)
+			call thistype.setCharacterAllianceStateToOthers(character, false)
 			call LeaderboardAddItemBJ(user, thistype.m_leaderboard, character.name(), thistype.m_playerScore[GetPlayerId(user)])
 			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, true)
 			call character.setIsInPvp(true)
@@ -231,10 +275,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			set thistype.m_baldarMembers = thistype.m_baldarMembers - 1
 			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, false)
 			call LeaderboardRemovePlayerItem(thistype.m_leaderboard, user)
-			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, user, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, user, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(user, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(user, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
+			call thistype.resetCharacterAllianceStateToOthers(character)
 			call character.setIsInPvp(false)
 			set user = null
 		endmethod

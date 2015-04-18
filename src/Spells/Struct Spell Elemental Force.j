@@ -1,13 +1,13 @@
 /// Elemental Mage
 library StructSpellsSpellElementalForce requires Asl, StructSpellsSpellElementalMageDamageSpell
 
-	/// Erhöht den Schaden durch Elementarzauber 10 Sekunden lang um 50 %. 3 Minuten Abklingzeit.
+	/// Erhöht den Schaden durch Elementarzauber 20 Sekunden lang um 80 %. 3 Minuten Abklingzeit.
 	struct SpellElementalForce extends Spell
 		public static constant integer abilityId = 'A045'
 		public static constant integer favouriteAbilityId = 'A046'
 		public static constant integer maxLevel = 1
-		private static constant real damageBonusFactor = 0.50
-		private static constant real time = 10.0
+		private static constant real damageBonusFactor = 0.80
+		private static constant real time = 20.0
 
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()

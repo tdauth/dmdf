@@ -135,6 +135,12 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellRepulsion.create(character)
 			endif
 			
+			/*
+			 * Add hero glow.
+			 */
+			call UnitAddAbility(character.unit(), 'A12G')
+			call UnitMakeAbilityPermanent(character.unit(), true, 'A12G')
+			
 			// evaluate this calls since it may exceed the operations limit. Each time a spell is being added it updates the whole grimoire UI which takes many operations.
 			// TODO add spells without massive UI updates to improve the performance.
 			call character.grimoire().addClassSpellsFromCharacter.evaluate(character)
@@ -207,7 +213,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endloop
 			
 			// add ghost ability but without making transparent
-			call UnitAddAbility(whichUnit, 'Aeth')
+			call UnitAddAbility(whichUnit, 'Agho')
 			
 			call Classes.createClassAbilities(this.class(), whichUnit)
 		endmethod

@@ -26,8 +26,6 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			
 			if (zoologyLevel > 0) then
 				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
-				call UnitAddAbility(this.character().unit(), SpellZoology.abilityId)
-				call SetUnitAbilityLevel(this.character().unit(), SpellZoology.abilityId, zoologyLevel)
 				
 				// zoology level 1 ability for crow form
 				// Junges

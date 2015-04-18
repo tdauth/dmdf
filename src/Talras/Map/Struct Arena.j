@@ -74,8 +74,6 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 		public static method removeCharacter takes ACharacter character returns nothing
 			call thistype.removeUnit(character.unit())
-			call character.revival().enable()
-			call character.revival().setEnableAgain(true)
 			call character.displayMessage(ACharacter.messageTypeInfo, thistype.m_textLeave)
 		endmethod
 
@@ -298,8 +296,6 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 		public static method addCharacter takes ACharacter character returns nothing
 			call thistype.addUnit(character.unit())
-			call character.revival().disable()
-			call character.revival().setEnableAgain(false)
 			call character.displayMessage(ACharacter.messageTypeInfo, thistype.m_textEnter)
 		endmethod
 
@@ -309,9 +305,9 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		endmethod
 
 		/**
-		* @todo Fix unit types.
-		* h00D is level 6 enemy.
-		*/
+		 * @todo Fix unit types.
+		 * h00D is level 6 enemy.
+		 */
 		public static method getRandomEnemy takes ACharacter character returns unit
 			if (Classes.isChaplain(character.class())) then
 				return CreateUnit(MapData.arenaPlayer, 'h019', 0.0, 0.0, 0.0)
@@ -331,16 +327,25 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			return null
 		endmethod
 
+		/**
+		 * Ends the fight by disabling the kill and leave triggers, removes all units and displays who won.
+		 */
 		private static method endFight takes nothing returns nothing
+			local ACharacter character = ACharacter.getCharacterByUnit(thistype.m_winner)
+			local string winnerName
+			if (character != 0) then
+				set winnerName = GetPlayerName(character.player())
+			else
+				set winnerName = GetUnitName(thistype.m_winner)
+			endif
 			// pause units
 			call DisableTrigger(thistype.m_killTrigger)
 			call DisableTrigger(thistype.m_leaveTrigger)
-			call TriggerSleepAction(3.0)
 			loop
 				exitwhen (thistype.m_units.empty())
 				call thistype.removeUnitByIndex(thistype.m_units.backIndex())
 			endloop
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, StringArg(thistype.m_textEndFight, GetUnitName(thistype.m_winner)))
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, StringArg(thistype.m_textEndFight, winnerName))
 		endmethod
 	endstruct
 

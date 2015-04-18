@@ -19,7 +19,6 @@ library StructSpellsSpellPureEnergy requires Asl, StructGameClasses, StructGameS
 			call AttachSoundToUnit(thistype.soundTargetEffect, target)
 			//SetSoundVolumeBJ ?
 			call StartSound(thistype.soundTargetEffect)
-			call SetUnitState(caster, UNIT_STATE_MANA, 0)
 			call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
 			call ShowBashTextTagForPlayer(null, GetWidgetX(target), GetWidgetY(target), R2I(damage))
 			set caster = null

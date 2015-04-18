@@ -316,6 +316,10 @@ library StructGameClasses requires Asl, StructGameCharacter
 				set whichPlayer = null
 				set i = i + 1
 			endloop
+			/*
+			 * Wait until players are ready to realize.
+			 */
+			call TriggerSleepAction(4.0)
 			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, tr("Wählen Sie zunächst Ihre Charakterklasse aus. Diese Auswahl ist für die restliche Spielzeit unwiderruflich."), null)
 			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, tr("- Drücken Sie die linke oder rechte Pfeiltaste, um die angezeigte Charakterklasse zu wechseln."), null)
 			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, tr("- Drücken Sie die Escape-Taste, um die angezeigte Charakterklasse auszuwählen."), null)

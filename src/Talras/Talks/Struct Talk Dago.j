@@ -243,6 +243,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.dago(), thistype.startPageAction)
+			call this.setName(tr("Dago"))
 
 			// start page
 			set this.m_hi = this.addInfo(false, true, 0, thistype.infoActionHi, null)

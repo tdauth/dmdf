@@ -29,7 +29,9 @@ library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMap
 				endif
 				set i = i + 1
 			endloop
-			call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sich in der Nähe eines Wiederbelebungsschreins befinden."))
+			if (not result) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sich in der Nähe eines Wiederbelebungsschreins befinden."))
+			endif
 			return result
 		endmethod
 

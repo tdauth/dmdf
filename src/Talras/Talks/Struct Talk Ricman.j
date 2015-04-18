@@ -314,6 +314,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.ricman(), thistype.startPageAction)
+			call this.setName(tr("Ricman"))
 			// start page
 			set this.m_hi = this.addInfo(false, true, thistype.infoConditionHi, thistype.infoActionHi, null)
 			set this.m_whoAreYou = this.addInfo(false, false, thistype.infoConditionWhoAreYou, thistype.infoActionWhoAreYou, tr("Wer bist du?"))

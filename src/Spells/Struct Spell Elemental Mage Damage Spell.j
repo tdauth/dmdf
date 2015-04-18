@@ -17,7 +17,7 @@ library StructSpellsSpellElementalMageDamageSpell requires Asl, StructGameClasse
 		endmethod
 
 		public static method spellIsDamageSpell takes ASpell spell returns boolean
-			return spell.ability() == SpellBlaze.abilityId or spell.ability() == SpellIceAge.abilityId or spell.ability() == SpellFireMissile.abilityId or  spell.ability() == SpellIceMissile.abilityId or spell.ability() == SpellInferno.abilityId or spell.ability() == SpellPureEnergy.abilityId
+			return spell.ability() == SpellBlaze.abilityId or spell.ability() == SpellIceAge.abilityId or spell.ability() == SpellFireMissile.abilityId or spell.ability() == SpellIceMissile.abilityId or spell.ability() == SpellInferno.abilityId or spell.ability() == SpellPureEnergy.abilityId or spell.ability() == SpellLightning.abilityId
 		endmethod
 
 		public static method create takes Character character, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbilityId, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction returns thistype

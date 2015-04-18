@@ -293,13 +293,24 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set thistype.m_box2 = SpawnPoint.create()
 			set index = thistype.m_box2.addUnitWithType(gg_unit_n02C_0061, 1.0)
 			call thistype.m_box2.addItemType(index, 'I00D', 1.0)
+			
+			set thistype.m_giant = SpawnPoint.create()
+			set index = thistype.m_giant.addUnitWithType(gg_unit_n02R_0253, 1.0)
+			/*
+			 * Make sure these items are always dropped since they are required for Björn's quest.
+			 */
+			call thistype.m_giant.addItemType(index, 'I01Z', 1.0)
+			call thistype.m_giant.addItemType(index, 'I01Z', 1.0)
 
 			set thistype.m_giants0 = SpawnPoint.create()
 			set index = thistype.m_giants0.addUnitWithType(gg_unit_n02R_0035, 1.0)
 			call thistype.m_giants0.addItemType(index, 'I01Z', 1.0)
+			call thistype.m_giants0.addItemType(index, 'I01Z', 1.0)
 			set index = thistype.m_giants0.addUnitWithType(gg_unit_n02R_0036, 1.0)
 			call thistype.m_giants0.addItemType(index, 'I01Z', 1.0)
+			call thistype.m_giants0.addItemType(index, 'I01Z', 1.0)
 			set index = thistype.m_giants0.addUnitWithType(gg_unit_n02R_0037, 1.0)
+			call thistype.m_giants0.addItemType(index, 'I01Z', 1.0)
 			call thistype.m_giants0.addItemType(index, 'I01Z', 1.0)
 
 			set thistype.m_mushroom0 = ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0238, 1.0)
@@ -462,13 +473,10 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_boneDragons.addUnitWithType(gg_unit_n024_0033, 1.0)
 			set index = thistype.m_boneDragons.addUnitWithType(gg_unit_n024_0032, 1.0)
 			set index = thistype.m_boneDragons.addUnitWithType(gg_unit_n024_0031, 1.0)
-
-			set thistype.m_giant = SpawnPoint.create()
-			set index = thistype.m_giant.addUnitWithType(gg_unit_n02R_0253, 1.0)
-
+			
 			set thistype.m_witch0 = SpawnPoint.create()
 			set index = thistype.m_witch0.addUnitWithType(gg_unit_h00F_0242, 1.0)
-			call thistype.m_witch0.addItemType(index, 'I03E', 0.60)
+			call thistype.m_witch0.addItemType(index, 'I03E', 1.0)
 
 			set thistype.m_witch1 = SpawnPoint.create()
 			set index = thistype.m_witch1.addUnitWithType(gg_unit_h00F_0241, 1.0)
