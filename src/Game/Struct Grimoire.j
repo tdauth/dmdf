@@ -36,6 +36,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		private Decrease m_spellDecrease
 		private AddToFavourites m_spellAddToFavourites
 		private RemoveFromFavourites m_spellRemoveFromFavourites
+		private BackToGrimoire m_spellBackToGrimoire
 		/**
 		 * The currently visible \ref GrimoireSpell instances which are shown in the UI.
 		 * Might also contain 0 entries depending on the spell!
@@ -239,6 +240,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				// show in correct order, always show the spell entry itself as last one since it will become the last one whenever its level changes!
 				call this.currentSpell().showGrimoireEntry() // show info about current level
 				call this.m_uiGrimoireSpells.pushBack(this.currentSpell().grimoireEntry())
+				
+				// show an ability to return back to the spells overview
+				// in fact the grimoire spell itself has the same functionality but it is not recognizable by the user
+				call this.m_spellBackToGrimoire.show.evaluate()
+				call this.m_uiGrimoireSpells.pushBack(this.m_spellBackToGrimoire)
 			endif
 
 			//debug call Print("after removing ability")
@@ -827,6 +833,7 @@ endif
 			set this.m_spellDecrease = Decrease.create.evaluate(this)
 			set this.m_spellAddToFavourites = AddToFavourites.create.evaluate(this)
 			set this.m_spellRemoveFromFavourites = RemoveFromFavourites.create.evaluate(this)
+			set this.m_spellBackToGrimoire = BackToGrimoire.create.evaluate(this)
 			set this.m_uiGrimoireSpells = AIntegerVector.create()
 			call this.showPage()
 
@@ -854,6 +861,7 @@ endif
 			call this.m_spellDecrease.destroy.evaluate()
 			call this.m_spellAddToFavourites.destroy.evaluate()
 			call this.m_spellRemoveFromFavourites.destroy.evaluate()
+			call this.m_spellBackToGrimoire.destroy.evaluate()
 			call this.m_uiGrimoireSpells.destroy()
 		endmethod
 	endstruct
@@ -1000,6 +1008,25 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Removing spell from favourites")
 			call this.grimoire().removeSpellFromFavourites()
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+	
+	/**
+	 * This ability allows the user to get back to the overview of all grimoire spells when a specific spell is activated.
+	 */
+	struct BackToGrimoire extends GrimoireSpell
+		public static constant integer id = 'A13F'
+		public static constant integer grimoireAbilityId = 'A13G'
+
+		public stub method onCastAction takes nothing returns nothing
+			debug call this.print("Going back to grimoire")
+			call this.grimoire().showPage()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype

@@ -238,14 +238,14 @@
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
-* Klasseninfo zu schnell weg!!!
+* FIXED: Klasseninfo zu schnell weg!!!
 * Pfeiltastensymbole Klassenauswahl ändern.
-* Klassenauswahl mit Dialog bestätigen.
+* FIXED: Klassenauswahl mit Dialog bestätigen.
 * Tastenkürzel in Klassenauswahl deaktivieren.
 * Immer noch beide Klassen sichtbar.
 * Klassenzauber reinmachen.
-* Schwierigkeitsgradmeldung viel zu schnell. Tipp am Anfang: Gold und Erfahrung werden gleichmäßig verteilt, egal wo sich die Spieler befinden.
-* Zurückbutton im Zauberbuch, wenn man einen Zauber aktiviert.
+* FIXED: Schwierigkeitsgradmeldung viel zu schnell. Tipp am Anfang: Gold und Erfahrung werden gleichmäßig verteilt, egal wo sich die Spieler befinden.
+* DONE: Zurückbutton im Zauberbuch, wenn man einen Zauber aktiviert.
 * Dago-Video: "Sagt mal"
 * FIXED: Dago-Dialog: "Ich habe hier einen Pilz" statt mehrere
 * Trainierst du nachts, kommt schon abends 19 Uhr
@@ -274,7 +274,7 @@ Test mit zwei menschlichen Spielern:
 * Lothar und Björn und Guntrich brauchen anderes Modell.
 * Lothar: Quest ist ablehnbar, ändern.
 * Ultimatumzauber - ins Tooltip schreiben ab welcher Stufe.
-* Vorratswage fährt zurück, anderes Modell.
+* Vorratswagen fährt zurück, anderes Modell.
 * Orkgruppe im Norden lässt nichts fallen.
 * Vampirgebieter lässt zu wenig fallen.
 * Orklager Zeugs reinlegen, Kisten.
@@ -284,13 +284,13 @@ Test mit zwei menschlichen Spielern:
 * FIXED: Riesenfell immer droppen.
 * FIXED: Riesenfellquest kann man schon mit zwei Fellen beenden und sie werden nicht entfernt.
 * FIXED: Sisgards Dialog wird allen angezeigt.
-* NPCs sollen unterbrechen wenn man einkauft.
+* NPCs sollen unterbrechen wenn man einkauft. Alternativ, NPCS langsamer machen.
 * FIXED: Schuhe sind Nahkampfwaffe.
 * FIXED: Verbeugenanimation zeigt random animations in Video "Der Herzog von Talras".
 * Pfeilbündelquest ist verbuggt. Björn stellt Pfeile her ohne dass Kuno Holz gibt. Kuno gibt kein Holz, kein Dialog.
 * Pfeilbündelquest Zielreihenfolge stimmt gar nicht.
-* Die Bestie: Suche nach Hinweisen, keine Einblendung und kein Abschluss von Ziel 1.
-* Wilde Kreaturen droppen nichts.
+* FIXED: Die Bestie: Suche nach Hinweisen, keine Einblendung und kein Abschluss von Ziel 1.
+* FIXED: Wilde Kreaturen droppen nichts.
 * Baldars Dialog: Lieber ja dann überlege es dir noch einmal.
 * FIXED: Imps haben Beute.
 * FIXED: AOS: Spieler sind nicht verfeindet.
@@ -298,6 +298,9 @@ Test mit zwei menschlichen Spielern:
 * Gegner viel viel stärker machen.
 * Gegner viel zu schwach: Am besten keinen Attributbonus pro Stufe, stattdessen Handycap für Neutral Feindlich.
 * Lothar: Wie wärs mal mit Blumen oder so sollte Quest nicht abbrechen.
+* Creeps brauchen mehr negative Buffs.
+* Waldfurien sind so schwach - sollen Riesen beschwören, Riesen stammen von Waldfurien - wtf effekt. könnten auch Felle droppen.
+* Für Computerspieler beim Autoselect der Klasse deutlich die Performance erhöhen! Klassenauswahl muss nicht erst angezeigt werden!
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

@@ -12,9 +12,11 @@ library StructMapQuestsQuestTheBeast requires Asl
 
 		public method findTracks takes nothing returns nothing
 			set this.m_foundTracks = true
-			call this.displayUpdateMessage(tr("Hinweis erhalten."))
+			call this.displayUpdateMessage(tr("Hinweis erhalten: Auf dem Boden befinden sich Blutspuren. Das könnte Tanka interessieren!"))
 			if (this.talkedToKuno()) then
 				call this.questItem(0).complete()
+			else
+				call this.displayUpdateMessage(tr("Finde noch mehr Hinweise!"))
 			endif
 		endmethod
 
@@ -27,6 +29,8 @@ library StructMapQuestsQuestTheBeast requires Asl
 			call this.displayUpdateMessage(tr("Hinweis erhalten."))
 			if (this.foundTracks()) then
 				call this.questItem(0).complete()
+			else
+				call this.displayUpdateMessage(tr("Finde noch mehr Hinweise!"))
 			endif
 		endmethod
 
@@ -57,7 +61,7 @@ library StructMapQuestsQuestTheBeast requires Asl
 			call this.setReward(AAbstractQuest.rewardExperience, 300)
 			call this.setReward(AAbstractQuest.rewardGold, 30)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Such nach Hinweisen bezüglich des Ungeheuers."))
+			set questItem0 = AQuestItem.create(this, tr("Suche nach Hinweisen bezüglich des Ungeheuers."))
 			call questItem0.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted0)
 			call questItem0.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted0)
 			/// @todo Add event, condition and action (display message ...)

@@ -505,8 +505,17 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 			set thistype.m_wildCreatures = SpawnPoint.create()
 			set index = thistype.m_wildCreatures.addUnitWithType(gg_unit_n02Q_0402, 1.0)
+			call thistype.m_wildCreatures.addItemType(index, 'rhe2', 0.50)
+			call thistype.m_wildCreatures.addItemType(index, 'I04O', 0.60)
+			call thistype.m_wildCreatures.addItemType(index, 'I04P', 0.30)
 			set index = thistype.m_wildCreatures.addUnitWithType(gg_unit_n02Q_0404, 1.0)
+			call thistype.m_wildCreatures.addItemType(index, 'I04O', 0.60)
+			call thistype.m_wildCreatures.addItemType(index, 'rhe2', 0.50)
+			call thistype.m_wildCreatures.addItemType(index, 'I04P', 0.30)
 			set index = thistype.m_wildCreatures.addUnitWithType(gg_unit_n02Q_0403, 1.0)
+			call thistype.m_wildCreatures.addItemType(index, 'I04O', 0.60)
+			call thistype.m_wildCreatures.addItemType(index, 'rhe2', 0.50)
+			call thistype.m_wildCreatures.addItemType(index, 'I04P', 0.30)
 			
 			set thistype.m_orcs0 = SpawnPoint.create()
 			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01A_0221, 1.0)

@@ -14,6 +14,7 @@ library StructMapSpellsSpellScrollOfCollector requires Asl, StructMapMapMapData
 		private method condition takes nothing returns boolean
 			local filterfunc filter = Filter(function thistype.filterFunc)
 			call EnumItemsInRect(bj_mapInitialPlayableArea, filter, function thistype.collect)
+			call DestroyEffect(AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, GetTriggerUnit(), "origin"))
 			
 			return true
 		endmethod

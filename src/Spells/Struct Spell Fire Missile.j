@@ -18,7 +18,7 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 			local real time
 			local effect burnEffect
 			debug call Print("Fire missile on " + GetUnitName(target))
-			set damage = damage +  SpellElementalMageDamageSpell(this).damageBonusFactor() * damage
+			set damage = damage + SpellElementalMageDamageSpell(this).damageBonusFactor() * damage
 			call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_FIRE)
 			call ShowBashTextTagForPlayer(null, GetUnitX(target), GetUnitY(target), R2I(damage))
 			//burn target

@@ -73,7 +73,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 		private static method triggerActionKill takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this") 
 			call DisableTrigger(GetTriggeringTrigger())
-			call this.character().displayHint(tr("Wenn Ihr Charakter einen Unhold tötet, erhalten alle Charaktere gleichmäßig viel Erfahrung und Beute für diesen."))
+			call this.character().displayHint(tr("Immer wenn Ihr Charakter einen Unhold tötet, erhalten alle Charaktere gleichmäßig viel Erfahrung und Beute für diesen."))
 			set this.m_killTrigger = null
 			call DestroyTrigger(GetTriggeringTrigger())
 		endmethod

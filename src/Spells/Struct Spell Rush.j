@@ -13,6 +13,7 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 			local unit characterUnit = this.character().unit()
 			local unit target = GetSpellTargetUnit()
 			local real bonus = Game.addUnitMoveSpeed(characterUnit, GetUnitMoveSpeed(characterUnit) * thistype.speedFactor)
+			debug call Print("Bonus: " + R2S(bonus))
 			call IssueTargetOrder(characterUnit, "attack", target)
 			loop
 				exitwhen (thistype.enemyTargetLoopCondition(target) or GetUnitCurrentOrder(characterUnit) != OrderId("attack"))
@@ -36,6 +37,7 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 				call TriggerSleepAction(1.0)
 				debug call Print("After loop wait action")
 			endloop
+			debug call Print("Removing bonus: " + R2S(bonus))
 			call Game.removeUnitMoveSpeed(target, bonus)
 			set characterUnit = null
 			set target = null

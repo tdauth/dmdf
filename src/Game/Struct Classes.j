@@ -56,17 +56,6 @@ library StructGameClasses requires Asl, StructGameCharacter
 			set thistype.m_illusionist = 0
 			set thistype.m_wizard = 0
 		endmethod
-
-		public static method displayMessageToAllPlayingUsers takes real time, string message, player excludingPlayer returns nothing
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (GetPlayerSlotState(Player(i)) != PLAYER_SLOT_STATE_EMPTY and GetPlayerController(Player(i)) == MAP_CONTROL_USER and Player(i) != excludingPlayer) then
-					call DisplayTimedTextToPlayer(Player(i), 0.0, 0.0, time, message)
-				endif
-				set i = i + 1
-			endloop
-		endmethod
 		
 		public static method createClassAbilitiesWithEntries takes unit whichUnit, AIntegerVector grimoireEntries, integer page, integer spellsPerPage returns nothing
 			local integer i
@@ -211,48 +200,6 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.initRanger()
 			call thistype.initElementalMage()
 			call thistype.initWizard()
-		endmethod
-
-		/**
-		* Since \ref AClassSelection.init is called which creates a multiboard, this method
-		* mustn't be called during map initialization beside you use a \ref TriggerSleepAction call.
-		*/
-		public static method showClassSelection takes nothing returns nothing
-			local ClassSelection classSelection
-			local integer i
-			local player whichPlayer
-
-			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, thistype.m_cleric, thistype.m_wizard, "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tr("%s (%i/%i)"), tr("Stärke pro Stufe: %r"), tr("Geschick pro Stufe: %r"), tr("Wissen pro Stufe: %r"))
-
-			call SuspendTimeOfDay(true)
-			call SetTimeOfDay(0.0)
-			call ForceCinematicSubtitles(true)
-			call Game.setMapMusic.evaluate("Music\\CharacterSelection.mp3")
-
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				set whichPlayer = Player(i)
-
-				if (GetPlayerSlotState(whichPlayer) != PLAYER_SLOT_STATE_EMPTY) then
-					set classSelection = ClassSelection.create.evaluate(whichPlayer)
-					call classSelection.setStartX(MapData.startX.evaluate(i))
-					call classSelection.setStartY(MapData.startY.evaluate(i))
-					call classSelection.setStartFacing(0.0)
-					call classSelection.setShowAttributes(true)
-					call classSelection.show()
-				endif
-
-				set whichPlayer = null
-				set i = i + 1
-			endloop
-			/*
-			 * Wait until players are ready to realize.
-			 */
-			call TriggerSleepAction(4.0)
-			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, tr("Wählen Sie zunächst Ihre Charakterklasse aus. Diese Auswahl ist für die restliche Spielzeit unwiderruflich."), null)
-			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, tr("- Drücken Sie die linke oder rechte Pfeiltaste, um die angezeigte Charakterklasse zu wechseln."), null)
-			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, tr("- Drücken Sie die Escape-Taste, um die angezeigte Charakterklasse auszuwählen."), null)
 		endmethod
 
 		public static method cleric takes nothing returns AClass

@@ -541,11 +541,11 @@ endif
 			set missingPlayers = Game.missingPlayers()
 
 			// decrease difficulty for others if players are missing
-			set handicap = missingPlayers * 0.05
+			set handicap = 1.0 - missingPlayers * 0.05
 			if (handicap > 0.0) then
 				call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
-				
-				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2%. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).r(handicap).result())
+				call TriggerSleepAction(4.0)
+				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).r(handicap).result())
 			endif
 		endmethod
 

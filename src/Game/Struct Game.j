@@ -466,6 +466,10 @@ endif
 				set i = i + 1
 			endloop
 			
+			/*
+			 * Setup initial alliances:
+			 * Players must be  neutral to the allied and to the neutral passive player of the map.
+			 */
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
@@ -488,7 +492,7 @@ endif
 			
 			// class selection
 			call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
-			call Classes.showClassSelection() // multiboard is created
+			call ClassSelection.showClassSelection.evaluate() // multiboard is created
 			debug call benchmark.stop()
 		endmethod
 

@@ -224,6 +224,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		
 		// bandits drops
 		private static ItemType m_ringOfProtection2
+		
+		// wild creatures
+		private static ItemType m_amuletOfLore
+		private static ItemType m_ringOfProtection3
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -500,8 +504,14 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_manaAmulet = ItemType.createSimple('I046', ItemType.equipmentTypeAmulet)
 			call thistype.m_manaAmulet.addAbility('AIbm', true)
 			
-			set thistype.m_ringOfProtection2 =  ItemType.createSimple('I04C', ItemType.equipmentTypeAmulet)
+			set thistype.m_ringOfProtection2 = ItemType.createSimple('I04C', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfProtection2.addAbility('AId2', true)
+			
+			// wild creatures
+			set thistype.m_amuletOfLore = ItemType.createSimple('I04O', ItemType.equipmentTypeAmulet)
+			call thistype.m_amuletOfLore.addAbility('AIi1', true)
+			set thistype.m_ringOfProtection3 = ItemType.createSimple('I04P', ItemType.equipmentTypeAmulet)
+			call thistype.m_ringOfProtection3.addAbility('AId3', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType
