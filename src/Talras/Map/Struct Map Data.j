@@ -516,6 +516,8 @@ endif
 		public static method startAfterIntro takes nothing returns nothing
 			local ACheat cheat
 			local integer i
+			local integer missingPlayers
+			local real handicap
 			
 			// call the following code only once in case the intro is showed multiple times
 			if (thistype.m_startedGameAfterIntro) then
@@ -534,6 +536,17 @@ endif
 			call QuestTalras.quest().enable()
 
 			call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
+			
+			// get difficulty
+			set missingPlayers = Game.missingPlayers()
+
+			// decrease difficulty for others if players are missing
+			set handicap = missingPlayers * 0.05
+			if (handicap > 0.0) then
+				call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
+				
+				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2%. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).r(handicap).result())
+			endif
 		endmethod
 
 		/// Required by \ref Classes.

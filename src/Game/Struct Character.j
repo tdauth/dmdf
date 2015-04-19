@@ -396,14 +396,6 @@ endif
 			call this.destroyWorkerTrigger()
 		endmethod
 
-		public static method attributesStartBonus takes nothing returns integer
-			return Game.missingPlayers.evaluate() * MapData.difficultyStartAttributeBonus
-		endmethod
-
-		public static method attributesLevelBonus takes nothing returns integer
-			return Game.missingPlayers.evaluate() * MapData.difficultyLevelAttributeBonus
-		endmethod
-
 		/**
 		* \sa thistype#showCharactersSchemeToPlayer
 		*/

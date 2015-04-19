@@ -8,6 +8,8 @@ library StructSpellsSpellClarity requires Asl, StructGameClasses, StructGameSpel
 	struct SpellClarity extends Spell
 		public static constant integer abilityId = 'A052'
 		public static constant integer favouriteAbilityId = 'A053'
+		public static constant integer classSelectionAbilityId = 'A0OX'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0P2'
 		public static constant integer maxLevel = 5
 
 		private method action takes nothing returns nothing

@@ -81,13 +81,16 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 		// (Auftragsziel 1 des Auftrags ￼„Felle für die Bauern￼“ abgeschlossen und Charakter hat tatsächlich drei Riesen-Felle)
 		private static method infoCondition3 takes AInfo info, ACharacter character returns boolean
-			return QuestCoatsForThePeasants.characterQuest(character).questItem(0).isCompleted() and true /// @todo FIXME
+			return QuestCoatsForThePeasants.characterQuest(character).questItem(0).isCompleted() and character.inventory().totalItemTypeCharges('I01Z') >= 3
 		endmethod
 
 		// Ich habe hier drei Riesen-Felle.
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Ich habe hier drei Riesen-Felle."), null)
+			call character.inventory().removeItemType('I01Z')
+			call character.inventory().removeItemType('I01Z')
+			call character.inventory().removeItemType('I01Z')
 			call speech(info, character, true, tr("Willst du mich verarschen oder was? ... Tatsächlich! Verdammt, wie hast du das angestellt?"), null)
 			call speech(info, character, false, tr("Mit Gewalt."), null)
 			call speech(info, character, true, tr("Mann, vor dir sollte man sich besser in Acht nehmen. Scheinst ja ein harter Brocken zu sein. Wie viel willst du für die Felle?"), null)

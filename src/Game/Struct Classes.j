@@ -1,7 +1,32 @@
 library StructGameClasses requires Asl, StructGameCharacter
 
+	struct ClassGrimoireEntry
+		private integer m_abilityId
+		private integer m_grimoireAbilityId
+		
+		public method show takes unit whichUnit returns nothing
+			call UnitAddAbility(whichUnit, this.m_grimoireAbilityId)
+			call SetPlayerAbilityAvailable(GetOwningPlayer(whichUnit), this.m_grimoireAbilityId, false)
+			call UnitAddAbility(whichUnit, this.m_abilityId)
+		endmethod
+		
+		public method hide takes unit whichUnit returns nothing
+			call UnitRemoveAbility(whichUnit, this.m_abilityId)
+			call UnitRemoveAbility(whichUnit, this.m_grimoireAbilityId)
+		endmethod
+		
+		public static method create takes integer abilityId, integer grimoireAbilityId returns thistype
+			local thistype this = thistype.allocate()
+			set this.m_abilityId = abilityId
+			set this.m_grimoireAbilityId = grimoireAbilityId
+			
+			return this
+		endmethod
+	endstruct
+
 	struct Classes
 		private static AClass m_cleric
+		private static AIntegerVector m_clericGrimoireEntries
 		private static AClass m_necromancer
 		private static AClass m_druid
 		private static AClass m_knight
@@ -43,129 +68,28 @@ library StructGameClasses requires Asl, StructGameCharacter
 			endloop
 		endmethod
 		
-		public static method createClassAbilities takes AClass class, unit whichUnit returns nothing
+		public static method createClassAbilitiesWithEntries takes unit whichUnit, AIntegerVector grimoireEntries, integer page, integer spellsPerPage returns nothing
+			local integer i
+			local integer index
+			set i = 0
+			loop
+				exitwhen (i == spellsPerPage)
+				set index = Index2D(page, i, spellsPerPage)
+				if (index >= grimoireEntries.size()) then
+					exitwhen (true)
+				endif
+				call ClassGrimoireEntry(grimoireEntries[index]).show(whichUnit)
+				set i = i + 1
+			endloop
+		endmethod
+		
+		/**
+		 * Creates grimoire abilities of the specified class \p class for \p whichUnit at \p page using at maximum \p spellsPerPage.
+		 * The grimoire abilities are used in the class selection to inform the selecting player which spells are available for each class.
+		 */
+		public static method createClassAbilities takes AClass class, unit whichUnit, integer page, integer spellsPerPage returns nothing
 			if (class == thistype.m_cleric) then
-				//call SpellAstralSource.create.evaluate(character)
-				call UnitAddAbility(whichUnit, SpellMaertyrer.classSelectionGrimoireAbilityId)
-				call SetPlayerAbilityAvailable(GetOwningPlayer(whichUnit), SpellMaertyrer.classSelectionGrimoireAbilityId, false)
-				call UnitAddAbility(whichUnit, SpellMaertyrer.classSelectionAbilityId)
-				
-				call UnitAddAbility(whichUnit, SpellAbatement.classSelectionGrimoireAbilityId)
-				call SetPlayerAbilityAvailable(GetOwningPlayer(whichUnit), SpellAbatement.classSelectionGrimoireAbilityId, false)
-				call UnitAddAbility(whichUnit, SpellAbatement.classSelectionAbilityId)
-				
-				/*
-				call SpellMaertyrer.create.evaluate(character)
-				call SpellAbatement.create.evaluate(character)
-				call SpellBlind.create.evaluate(character)
-				call SpellClarity.create.evaluate(character)
-				call SpellExorcizeEvil.create.evaluate(character)
-				call SpellHolyPower.create.evaluate(character)
-				call SpellHolyWill.create.evaluate(character)
-				call SpellImpendingDisaster.create.evaluate(character)
-				call SpellPreventIll.create.evaluate(character)
-				call SpellProtect.create.evaluate(character)
-				call SpellRecovery.create.evaluate(character)
-				call SpellRevive.create.evaluate(character)
-				call SpellTorment.create.evaluate(character)
-				call SpellBlessing.create.evaluate(character)
-				call SpellConversion.create.evaluate(character)
-				call SpellGodsFavor.create.evaluate(character)
-			elseif (class == thistype.m_necromancer) then
-				call SpellAncestorPact.create.evaluate(character)
-				call SpellConsume.create.evaluate(character)
-				call SpellDarkServant.create.evaluate(character)
-				call SpellDarkSpell.create.evaluate(character)
-				call SpellDeathHerald.create.evaluate(character)
-				call SpellDemonServant.create.evaluate(character)
-				call SpellSoulThievery.create.evaluate(character)
-				call SpellViolentDeath.create.evaluate(character)
-				call SpellWorldsPortal.create.evaluate(character)
-				call SpellNecromancy.create.evaluate(character)
-				call SpellPlague.create.evaluate(character)
-			elseif (class == thistype.m_druid) then
-				call SpellAwakeningOfTheForest.create.evaluate(character)
-				call SpellCrowForm.create.evaluate(character)
-				call SpellDryadSource.create.evaluate(character)
-				call SpellBearForm.create.evaluate(character)
-				call SpellForestFaeriesSpell.create.evaluate(character)
-				call SpellHerbalCure.create.evaluate(character)
-				call SpellRelief.create.evaluate(character)
-				call SpellZoology.create.evaluate(character)
-				call SpellGrove.create.evaluate(character)
-				call SpellTreefolk.create.evaluate(character)
-				call SpellForestWoodFists.create.evaluate(character)
-				call SpellTendrils.create.evaluate(character)
-				call SpellWrathOfTheForest.create.evaluate(character)
-				call SpellForestCastle.create.evaluate(character)
-				call SpellAlpha.create.evaluate(character)
-			elseif (class == thistype.m_knight) then
-				call SpellBlock.create.evaluate(character)
-				call SpellConcentration.create.evaluate(character)
-				call SpellLivingWill.create.evaluate(character)
-				call SpellRigidity.create.evaluate(character)
-				call SpellRush.create.evaluate(character)
-				call SpellSelflessness.create.evaluate(character)
-				call SpellStab.create.evaluate(character)
-				call SpellTaunt.create.evaluate(character)
-				call SpellAuraOfRedemption.create.evaluate(character)
-				call SpellAuraOfAuthority.create.evaluate(character)
-			elseif (class == thistype.m_dragonSlayer) then
-				call SpellBeastHunter.create.evaluate(character)
-				call SpellDaunt.create.evaluate(character)
-				call SpellFuriousBloodthirstiness.create.evaluate(character)
-				call SpellSlash.create.evaluate(character)
-				call SpellSupremacy.create.evaluate(character)
-				call SpellWeakPoint.create.evaluate(character)
-				call SpellColossus.create.evaluate(character)
-			elseif (class == thistype.m_ranger) then
-				call SpellAgility.create.evaluate(character)
-				call SpellEagleEye.create.evaluate(character)
-				call SpellShooter.create.evaluate(character)
-				call SpellShotIntoHeart.create.evaluate(character)
-				call SpellSprint.create.evaluate(character)
-				call SpellPoisonedArrows.create.evaluate(character)
-				call SpellBurningArrows.create.evaluate(character)
-				call SpellFrozenArrows.create.evaluate(character)
-			elseif (class == thistype.m_elementalMage) then
-				call SpellBlaze.create.evaluate(character)
-				call SpellEarthPrison.create.evaluate(character)
-				call SpellElementalForce.create.evaluate(character)
-				call SpellEmblaze.create.evaluate(character)
-				call SpellFireMissile.create.evaluate(character)
-				call SpellFreeze.create.evaluate(character)
-				call SpellGlisteningLight.create.evaluate(character)
-				call SpellIceMissile.create.evaluate(character)
-				call SpellInferno.create.evaluate(character)
-				call SpellLightning.create.evaluate(character)
-				call SpellMastery.create.evaluate(character)
-				call SpellRageOfElements.create.evaluate(character)
-				debug call Print("Before Pure Energy")
-				call SpellPureEnergy.create.evaluate(character)
-				debug call Print("Before Teleportation")
-				call SpellTeleportation.create.evaluate(character)
-				debug call Print("Before Undermine")
-				call SpellUndermine.create.evaluate(character)
-			elseif (class == thistype.m_astralModifier) then
-				call SpellTakeOver.create.evaluate(character)
-			elseif (class == thistype.m_illusionist) then
-			elseif (class == thistype.m_wizard) then
-				call SpellAbsorbation.create.evaluate(character)
-				call SpellAdduction.create.evaluate(character)
-				call SpellArcaneBinding.create.evaluate(character)
-				call SpellArcaneHunger.create.evaluate(character)
-				call SpellArcaneProtection.create.evaluate(character)
-				call SpellArcaneRuse.create.evaluate(character)
-				call SpellArcaneTime.create.evaluate(character)
-				call SpellBan.create.evaluate(character)
-				call SpellControlledTimeFlow.create.evaluate(character)
-				call SpellCurb.create.evaluate(character)
-				call SpellMagicalShockWaves.create.evaluate(character)
-				call SpellManaExplosion.create.evaluate(character)
-				call SpellManaShield.create.evaluate(character)
-				call SpellManaStream.create.evaluate(character)
-				call SpellRepulsion.create.evaluate(character)
-				*/
+				call thistype.createClassAbilitiesWithEntries(whichUnit, thistype.m_clericGrimoireEntries, page, spellsPerPage)
 			endif
 		endmethod
 		
@@ -181,6 +105,12 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_cleric.addDescriptionLine(tr("Ihre offensiven Fähigkeiten jedoch, sind stark eingeschränkt"))
 			call thistype.m_cleric.addDescriptionLine(tr("und alleine sind sie häufig nicht in der Lage, mächtige Feinde"))
 			call thistype.m_cleric.addDescriptionLine(tr("zu bezwingen."))
+			
+			set thistype.m_clericGrimoireEntries = AIntegerVector.create()
+			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMaertyrer.classSelectionAbilityId, SpellMaertyrer.classSelectionGrimoireAbilityId))
+			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAbatement.classSelectionAbilityId, SpellAbatement.classSelectionGrimoireAbilityId))
+			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlind.classSelectionAbilityId, SpellBlind.classSelectionGrimoireAbilityId))
+			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellClarity.classSelectionAbilityId, SpellClarity.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initNecromancer takes nothing returns nothing

@@ -18,6 +18,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 		// members
 		private boolean m_hasEnteredShrine
 		private timer m_infoTimer
+		private trigger m_killTrigger
 
 		public method setEnabled takes boolean enabled returns nothing
 			set this.m_isEnabled = enabled
@@ -63,6 +64,19 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call TimerStart(this.m_infoTimer, thistype.infoTimerDuration, true, function thistype.timerFunctionInfo)
 			call PauseTimer(this.m_infoTimer)
 		endmethod
+		
+		private static method triggerConditionKill takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this") 
+			return GetKillingUnit() == this.character().unit() and this.isEnabled() and MapData.playerGivesXP.evaluate(GetOwningPlayer(GetTriggerUnit()))
+		endmethod
+		
+		private static method triggerActionKill takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this") 
+			call DisableTrigger(GetTriggeringTrigger())
+			call this.character().displayHint(tr("Wenn Ihr Charakter einen Unhold tötet, erhalten alle Charaktere gleichmäßig viel Erfahrung und Beute für diesen."))
+			set this.m_killTrigger = null
+			call DestroyTrigger(GetTriggeringTrigger())
+		endmethod
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate()
@@ -75,6 +89,15 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 
 			call this.createInfoTimer()
 			call this.setEnabled(false)
+			
+			/*
+			 * This trigger shows information about XP and bounty share of killing enemies.
+			 */
+			set this.m_killTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(this.m_killTrigger, EVENT_PLAYER_UNIT_DEATH)
+			call TriggerAddCondition(this.m_killTrigger, Condition(function thistype.triggerConditionKill))
+			call TriggerAddAction(this.m_killTrigger, function thistype.triggerActionKill)
+			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, "this", this)
 
 			return this
 		endmethod
@@ -84,6 +107,9 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call PauseTimer(this.m_infoTimer)
 			call DmdfHashTable.global().destroyTimer(this.m_infoTimer)
 			set this.m_infoTimer = null
+			if (this.m_killTrigger != null) then
+				call DmdfHashTable.global().destroyTrigger(this.m_killTrigger)
+			endif
 		endmethod
 
 		public static method infos takes nothing returns AStringVector

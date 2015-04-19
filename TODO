@@ -247,14 +247,13 @@ Test mit zwei menschlichen Spielern:
 * Schwierigkeitsgradmeldung viel zu schnell. Tipp am Anfang: Gold und Erfahrung werden gleichmäßig verteilt, egal wo sich die Spieler befinden.
 * Zurückbutton im Zauberbuch, wenn man einen Zauber aktiviert.
 * Dago-Video: "Sagt mal"
-* Dago-Dialog: "Ich habe hier einen Pilz" statt mehrere
+* FIXED: Dago-Dialog: "Ich habe hier einen Pilz" statt mehrere
 * Trainierst du nachts, kommt schon abends 19 Uhr
 * Felsvorsprung entfernen
 * Inventarfehler: Spieler 2 macht Inventar auf und zu und Gegenstände liegen auf einmal am Boden! Nur wenn das Inventar vorher voll war.
 * NPC-Tipp-Gebiet von Dago kleiner machen als Gebiet mit Schreintipp. Tipp sollte anzeigen: NPCs mit Ausrufezeichen können angesprochen werden.
-* Langboot sollte mehr Leben haben!
+* FIXED: Langboot sollte mehr Leben haben!
 * Langboot Schattenradius erhöhen poppt sonst auf.
-* Gegner viel viel stärker machen.
 * FIXED: Fehlermeldung bei Rolle des Totenreichs und Teleport geht trotzdem.
 * Händler Haid's Quest gibt zu viel Erfahrung.
 * FIXED: Gewinner der Arena: Spielername.
@@ -264,13 +263,13 @@ Test mit zwei menschlichen Spielern:
 * Arenagegner viel zu schwach!!!
 * Irmina: Zutatenliste geben und daraufhinweisen! Dann hat man sie überall dabei.
 * Agihard: Arenachampion Belohnung Gegenstände??? Nach jedem Kampf Gold!
-* Wieland sagt knn statt kann.
-* Irmina: ein wenig klein.
+* FIXED: Wieland sagt knn statt kann.
+* FIXED: Irmina: ein wenig klein.
 * Wachendialog fertig machen.
 * Gesegnetes Schwert zwei mal oder Inventarfehler.
 * Markwards gesegnetes Schwert nicht verkaufbar.
 * Trotz Bogen kann man Schild tragen, Zweihandwaffen.
-* Spruchrolle einbauen, die Gegenstände für Mana herteleportiert, die einem gehören.
+* DONE: Spruchrolle einbauen, die Gegenstände für Mana herteleportiert, die einem gehören.
 * Vorräte anderes Icon.
 * Lothar und Björn und Guntrich brauchen anderes Modell.
 * Lothar: Quest ist ablehnbar, ändern.
@@ -282,20 +281,23 @@ Test mit zwei menschlichen Spielern:
 * Passive Zauber automatisch nicht in die Favoriten.
 * Aus Favoriten entfernen fehlt?!
 * Ansicht weiter weg machen, möglich machen über Hauptmenü.
-* Riesenfell immer droppen.
-* Riesenfellquest kann man schon mit zwei Fellen beenden und sie werden nicht entfernt.
+* FIXED: Riesenfell immer droppen.
+* FIXED: Riesenfellquest kann man schon mit zwei Fellen beenden und sie werden nicht entfernt.
 * FIXED: Sisgards Dialog wird allen angezeigt.
 * NPCs sollen unterbrechen wenn man einkauft.
 * FIXED: Schuhe sind Nahkampfwaffe.
-* Verbeugenanimation zeigt random animations in Video "Der Herzog von Talras".
+* FIXED: Verbeugenanimation zeigt random animations in Video "Der Herzog von Talras".
 * Pfeilbündelquest ist verbuggt. Björn stellt Pfeile her ohne dass Kuno Holz gibt. Kuno gibt kein Holz, kein Dialog.
 * Pfeilbündelquest Zielreihenfolge stimmt gar nicht.
 * Die Bestie: Suche nach Hinweisen, keine Einblendung und kein Abschluss von Ziel 1.
 * Wilde Kreaturen droppen nichts.
 * Baldars Dialog: Lieber ja dann überlege es dir noch einmal.
 * FIXED: Imps haben Beute.
-* AOS: Spieler sind nicht verfeindet.
+* FIXED: AOS: Spieler sind nicht verfeindet.
 * AOS: Charaktere werden nicht wiederbelebt. Kein Timerdialog gar nichts. Gestorben in Verwandlung.
+* Gegner viel viel stärker machen.
+* Gegner viel zu schwach: Am besten keinen Attributbonus pro Stufe, stattdessen Handycap für Neutral Feindlich.
+* Lothar: Wie wärs mal mit Blumen oder so sollte Quest nicht abbrechen.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

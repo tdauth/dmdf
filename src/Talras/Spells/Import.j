@@ -1,10 +1,11 @@
 //! import "Talras/Spells/Struct Spell Amulet Of Foresight.j"
 //! import "Talras/Spells/Struct Spell Aos Ring.j"
 //! import "Talras/Spells/Struct Spell Magical Seed.j"
+//! import "Talras/Spells/Struct Spell Scroll Of Collector.j"
 //! import "Talras/Spells/Struct Spell Scroll Of The Realm Of The Dead.j"
 //! import "Talras/Spells/Struct Spell Unearth.j"
 
-library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesight, StructMapSpellsSpellAosRing, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellScrollOfTheRealmOfTheDead, StructMapSpellsSpellUnearth
+library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesight, StructMapSpellsSpellAosRing, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellScrollOfCollector, StructMapSpellsSpellScrollOfTheRealmOfTheDead, StructMapSpellsSpellUnearth
 
 	/// Init non-character spells!
 	function initMapSpells takes nothing returns nothing
@@ -47,6 +48,7 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesi
 		endif
 
 		call SpellMagicalSeed.create(character)
+		call SpellScrollOfCollector.create(character)
 		call SpellScrollOfTheRealmOfTheDead.create(character)
 	endfunction
 

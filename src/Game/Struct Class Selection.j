@@ -6,9 +6,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 	 * Besides it adds start items to the corresponding class.
 	 */
 	struct ClassSelection extends AClassSelection
-		public static constant integer maxPages = 2
+		public static constant integer spellsPerPage = 5
 		private trigger m_classChangeTrigger
-		private integer m_spellPage = 0
+		private integer m_page = 0
 		private trigger m_spellPagesTrigger
 		
 		public stub method onSelectClass takes Character character, AClass class, boolean last returns nothing
@@ -81,6 +81,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellTaunt.create(character)
 				call SpellAuraOfRedemption.create(character)
 				call SpellAuraOfAuthority.create(character)
+				call SpellAuraOfIronSkin.create(character)
 			elseif (class == Classes.dragonSlayer()) then
 				call SpellBeastHunter.create(character)
 				call SpellDaunt.create(character)
@@ -92,6 +93,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			elseif (class == Classes.ranger()) then
 				call SpellAgility.create(character)
 				call SpellEagleEye.create(character)
+				call SpellHailOfArrows.create(character)
+				call SpellLieInWait.create(character)
 				call SpellShooter.create(character)
 				call SpellShotIntoHeart.create(character)
 				call SpellSprint.create(character)
@@ -215,7 +218,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			// add ghost ability but without making transparent
 			call UnitAddAbility(whichUnit, 'Agho')
 			
-			call Classes.createClassAbilities(this.class(), whichUnit)
+			/*
+			 * Adds all class grimoire spells of the current page.
+			 */
+			set this.m_page = 0
+			call Classes.createClassAbilities(this.class(), whichUnit, this.m_page, thistype.spellsPerPage)
 		endmethod
 		
 		public stub method onPlayerLeaves takes player whichPlayer, boolean last returns nothing
@@ -229,6 +236,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			return GetTriggerUnit() == this.classUnit() and (GetSpellAbilityId() == 'A0R0' or GetSpellAbilityId() == 'A0NB' or GetSpellAbilityId() == 'A0R1')
 		endmethod
 		
+		private static method dialogButtonActionSelectClass takes ADialogButton dialogButton returns nothing
+			local thistype this = AClassSelection.playerClassSelection(dialogButton.dialog().player())
+			call this.selectClass()
+		endmethod
+		
 		private static method triggerActionChange takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			if (GetSpellAbilityId() == 'A0NB') then
@@ -236,7 +248,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			elseif (GetSpellAbilityId() == 'A0R0') then
 				call this.changeToPrevious()
 			elseif (GetSpellAbilityId() == 'A0R1') then
-				call this.selectClass()
+				call AGui.playerGui(this.player()).dialog().clear()
+				call AGui.playerGui(this.player()).dialog().setMessage(tr("Klasse auswählen?"))
+				call AGui.playerGui(this.player()).dialog().addDialogButtonIndex(tr("OK"), thistype.dialogButtonActionSelectClass)
+				call AGui.playerGui(this.player()).dialog().addSimpleDialogButtonIndex(tr("Abbrechen"))
+				call AGui.playerGui(this.player()).dialog().show()
 			endif
 		endmethod
 		

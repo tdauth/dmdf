@@ -136,7 +136,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Kannst du mir auch was Spezielles brauen oder mischen?
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Kannst du mir auch was Spezielles brauen oder mischen?"), null)
-			call speech(info, character, true, tr("Natürlich, aber das kostet dich auch ein Wenig und du musst mir die Zutaten beschaffen."), null)
+			call speech(info, character, true, tr("Natürlich, aber das kostet dich auch ein wenig und du musst mir die Zutaten beschaffen."), null)
 			call speech(info, character, true, tr("Ich muss hier nämlich meinen Laden führen und ich habe keine Lust mich noch um einen Bauern oder Jäger zu kümmern, der das für mich macht."), null)
 			call speech(info, character, true, tr("Am besten gebe ich dir Abschriften meiner Zutaten- und Preislisten für besondere Tränke. Manche Zutaten sind sehr selten, was ja auch erklärt, warum ich sie nicht in meinem Sortiment habe."), null)
 			/**

@@ -4,6 +4,8 @@ library StructSpellsSpellBlind requires Asl, StructGameClasses, StructGameSpell
 	struct SpellBlind extends Spell
 		public static constant integer abilityId = 'A0NP'
 		public static constant integer favouriteAbilityId = 'A0NQ'
+		public static constant integer classSelectionAbilityId = 'A0NR'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0NW'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

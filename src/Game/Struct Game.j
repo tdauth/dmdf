@@ -314,15 +314,6 @@ endif
 			local integer bonus
 			call character.grimoire().addSkillPoints.evaluate(MapData.levelSpellPoints)
 
-			// decrease difficulty
-			set bonus = Character.attributesLevelBonus()
-			if (bonus > 0) then
-				debug call Print("Difficulty is easier, adding attribute bonus " + I2S(bonus))
-				call ModifyHeroStat(bj_HEROSTAT_STR, triggerUnit, bj_MODIFYMETHOD_ADD, bonus)
-				call ModifyHeroStat(bj_HEROSTAT_AGI, triggerUnit, bj_MODIFYMETHOD_ADD, bonus)
-				call ModifyHeroStat(bj_HEROSTAT_INT, triggerUnit, bj_MODIFYMETHOD_ADD, bonus)
-			endif
-
 			// reached last level TODO: maybe we should give him a little present
 			if (GetHeroLevel(triggerUnit) == MapData.maxLevel) then
 				call character.displayFinalLevel(tr("Sie haben die letzte Stufe erreicht."))
@@ -656,10 +647,6 @@ endif
 		*/
 		public static method start takes nothing returns nothing
 			local integer i
-			local integer playingPlayers
-			local integer missingPlayers
-			local integer startBonus
-			local integer levelBonus
 			call StopMusic(false)
 			call SuspendTimeOfDay(false)
 			//call SetCreepCampFilterState(true)
@@ -714,19 +701,6 @@ endif
 			//call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
 
 			call Character.addSkillGrimoirePointsToAll(MapData.startSkillPoints)
-
-			// get difficulty
-			set missingPlayers = thistype.missingPlayers()
-
-			// decrease difficulty for others if players are missing
-			set startBonus = Character.attributesStartBonus()
-			if (startBonus > 0) then
-
-				call ACharacter.addStrengthToAll(startBonus)
-				call ACharacter.addAgilityToAll(startBonus)
-				call ACharacter.addIntelligenceToAll(startBonus)
-				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhält Ihr Charakter auf jedes seiner Attribute einen Bonus von %2% Punkten. Zudem erhält Ihr Charakter pro Stufenaufstieg auf jedes seiner Attribute einen Bonus von %3% Punkten und sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).i(startBonus).i(Character.attributesLevelBonus()).result())
-			endif
 
 			// debug mode allows you to use various cheats
 static if (DEBUG_MODE) then

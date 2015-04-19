@@ -18,7 +18,7 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses
 		// Kannst du mir das Schmieden beibringen?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Kannst du mir das Schmieden beibringen?"), null)
-			call speech(info, character, true, tr("Sonst noch was? Weißt du, wie lange es dauert, jemandem das beizubringen? Mein Sohn übernimmt das hier mal und da knn er keine Konkurrenz gebrauchen."), null)
+			call speech(info, character, true, tr("Sonst noch was? Weißt du, wie lange es dauert, jemandem das beizubringen? Mein Sohn übernimmt das hier mal und da kann er keine Konkurrenz gebrauchen."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
