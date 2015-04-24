@@ -301,6 +301,7 @@ Test mit zwei menschlichen Spielern:
 * Creeps brauchen mehr negative Buffs.
 * Waldfurien sind so schwach - sollen Riesen beschwören, Riesen stammen von Waldfurien - wtf effekt. könnten auch Felle droppen.
 * Für Computerspieler beim Autoselect der Klasse deutlich die Performance erhöhen! Klassenauswahl muss nicht erst angezeigt werden!
+* Rückverwandlung von Bärengestalt und Krähengestalt ändert das maximale Leben oder Mana. Einfach passive Transformation nehmen.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

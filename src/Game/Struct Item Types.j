@@ -228,6 +228,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// wild creatures
 		private static ItemType m_amuletOfLore
 		private static ItemType m_ringOfProtection3
+		
+		// orcs
+		private static ItemType m_crownOfKarornForest
+		private static ItemType m_orcAxe
+		private static ItemType m_orcCrossBow
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -512,6 +517,18 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_amuletOfLore.addAbility('AIi1', true)
 			set thistype.m_ringOfProtection3 = ItemType.createSimple('I04P', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfProtection3.addAbility('AId3', true)
+			
+			// orcs
+			set thistype.m_crownOfKarornForest = ItemType.createSimple('I04R', ItemType.equipmentTypeHeaddress)
+			call thistype.m_crownOfKarornForest.addAbility('AIi3', true)
+			call thistype.m_crownOfKarornForest.addAbility('AId3', true)
+			
+			set thistype.m_orcAxe = ItemType.createSimple('I04S', ItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_orcAxe.addAbility('A13T', true)
+			call thistype.m_orcAxe.addAbility('A13S', true)
+			
+			set thistype.m_orcCrossBow = RangeItemType.create('I04T', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_orcCrossBow.addAbility('AItk', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType
