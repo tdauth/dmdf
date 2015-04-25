@@ -22,29 +22,29 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesi
 		/// \todo Filter class for Baldars ring
 		// Baldar's and Haldar's rings
 		if (character.class() == Classes.dragonSlayer()) then
-			call SpellAosRing.create(character, 'A0BL', true) // Dragon Slayer
-			call SpellAosRing.create(character, 'A0BW', false) // Dragon Slayer
+			call SpellAosRing.create(character, 'A146', 'A13Y', 'A0BL', true) // Dragon Slayer
+			call SpellAosRing.create(character, 'A14M', 'A14E', 'A0BW', false) // Dragon Slayer
 		elseif (character.class() == Classes.druid()) then
-			call SpellAosRing.create(character, 'A0BJ', true) // Druid
-			call SpellAosRing.create(character, 'A0BU', false) // Druid
+			call SpellAosRing.create(character, 'A14D', 'A13Z', 'A0BJ', true) // Druid
+			call SpellAosRing.create(character, 'A14O', 'A14F', 'A0BU', false) // Druid
 		elseif (character.class() == Classes.elementalMage()) then
-			call SpellAosRing.create(character, 'A0BN', true) // Elemental Mage
-			call SpellAosRing.create(character, 'A0BY', false) // Elemental Mage
+			call SpellAosRing.create(character, 'A14C', 'A140', 'A0BN', true) // Elemental Mage
+			call SpellAosRing.create(character, 'A14T', 'A14G', 'A0BY', false) // Elemental Mage
 		elseif (character.class() == Classes.cleric()) then
-			call SpellAosRing.create(character, 'A0BH', true) // Cleric
-			call SpellAosRing.create(character, 'A0BS', false) // Cleric
+			call SpellAosRing.create(character, 'A148', 'A141', 'A0BH', true) // Cleric
+			call SpellAosRing.create(character, 'A14N', 'A14H', 'A0BS', false) // Cleric
 		elseif (character.class() == Classes.necromancer()) then
-			call SpellAosRing.create(character, 'A0BI', true) // Necromancer
-			call SpellAosRing.create(character, 'A0BT', false) // Necromancer
+			call SpellAosRing.create(character, 'A149', 'A142', 'A0BI', true) // Necromancer
+			call SpellAosRing.create(character, 'A14P', 'A14I', 'A0BT', false) // Necromancer
 		elseif (character.class() == Classes.knight()) then
-			call SpellAosRing.create(character, 'A0BK', true) // Knight
-			call SpellAosRing.create(character, 'A0BV', false) // Knight
+			call SpellAosRing.create(character, 'A147', 'A143', 'A0BK', true) // Knight
+			call SpellAosRing.create(character, 'A14Q', 'A14J', 'A0BV', false) // Knight
 		elseif (character.class() == Classes.ranger()) then
-			call SpellAosRing.create(character, 'A0BM', true) // Ranger
-			call SpellAosRing.create(character, 'A0BX', false) // Ranger
+			call SpellAosRing.create(character, 'A14A', 'A144', 'A0BM', true) // Ranger
+			call SpellAosRing.create(character, 'A14R', 'A14K', 'A14K', false) // Ranger
 		elseif (character.class() == Classes.wizard()) then
-			call SpellAosRing.create(character, 'A0BP', true) // Wizard
-			call SpellAosRing.create(character, 'A0C0', false) // Wizard
+			call SpellAosRing.create(character, 'A14B', 'A145', 'A0BP', true) // Wizard
+			call SpellAosRing.create(character, 'A14S', 'A14L', 'A14L', false) // Wizard
 		endif
 
 		call SpellMagicalSeed.create(character)

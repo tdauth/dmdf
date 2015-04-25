@@ -504,6 +504,17 @@ endif
 			call VideoIntro.video().play()
 		endmethod
 		
+		private static method applyHandicap takes nothing returns nothing
+			local integer missingPlayers =  Game.missingPlayers()
+			local real handicap = 1.0 - missingPlayers * 0.05
+			// decrease difficulty for others if players are missing
+			if (handicap > 0.0) then
+				call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
+				call TriggerSleepAction(4.0)
+				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).r(handicap * 100.0).result())
+			endif
+		endmethod
+		
 		/**
 		 * This method should be called after the intro has been shown.
 		 * It uses a boolean variable to make sure it is only called once in case the video "Intro" is run via a cheat
@@ -514,11 +525,6 @@ endif
 		 * It is called in the onStopAction() of the video intro with .evaluate() which means it is called after unpausing all units and restoring all player data.
 		 */
 		public static method startAfterIntro takes nothing returns nothing
-			local ACheat cheat
-			local integer i
-			local integer missingPlayers
-			local real handicap
-			
 			// call the following code only once in case the intro is showed multiple times
 			if (thistype.m_startedGameAfterIntro) then
 				return
@@ -537,16 +543,8 @@ endif
 
 			call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 			
-			// get difficulty
-			set missingPlayers = Game.missingPlayers()
-
-			// decrease difficulty for others if players are missing
-			set handicap = 1.0 - missingPlayers * 0.05
-			if (handicap > 0.0) then
-				call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
-				call TriggerSleepAction(4.0)
-				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).r(handicap).result())
-			endif
+			// execute because of trigger sleep action
+			call thistype.applyHandicap.execute()
 		endmethod
 
 		/// Required by \ref Classes.

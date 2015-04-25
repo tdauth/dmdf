@@ -10,6 +10,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			call super.onMorph()
 			set level = Character(this.character()).realSpellLevels().integerByInteger(0, SpellCrowForm.abilityId)
 			debug call Print("Crow Form: Morph! Level: " + I2S(level))
+			
 			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.manaAbilityId, level)
 			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.armorAbilityId, level)
 			
@@ -56,21 +57,16 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 	endstruct
 
 	struct SpellCrowForm extends Spell
-		public static constant integer abilityId = 'A0KZ'
+		public static constant integer abilityId = 'A13U'
 		public static constant integer favouriteAbilityId = 'A092'
 		public static constant integer maxLevel = 5
-		public static constant integer manaAbilityId = 'A093'
+		public static constant integer manaAbilityId = 'A14A'
 		public static constant integer armorAbilityId = 'A094'
 		private SpellCrowFormMetamorphosis m_metamorphosis
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
-			set this.m_metamorphosis = SpellCrowFormMetamorphosis.create(character, thistype.abilityId)
-			call this.m_metamorphosis.setUnitTypeId('H00H')
-			call this.m_metamorphosis.setFavoriteAbility(thistype.favouriteAbilityId)
-			call this.m_metamorphosis.setOrderString("ravenform")
-			call this.m_metamorphosis.setUnorderString("unravenform")
-			call this.m_metamorphosis.setManaCost(50.0)
+			set this.m_metamorphosis = SpellCrowFormMetamorphosis.create(character, thistype.abilityId, 'A0KZ', 'A13V')
 			call this.addGrimoireEntry('A0CH', 'A0CI')
 			call this.addGrimoireEntry('A0CJ', 'A0CN')
 			call this.addGrimoireEntry('A0CK', 'A0CO')

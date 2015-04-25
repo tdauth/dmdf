@@ -104,6 +104,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 	endstruct
 	
+	/**
+	 * \brief Item type for defense items like shields.
+	 */
 	struct DefenceItemType extends ItemType
 	
 		public static method createSimpleDefence takes integer itemType, integer equipmentType returns thistype
@@ -133,7 +136,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 	endstruct
 
-	/// Do not add usable abilities, only permanents!
+	/**
+	 * \brief Static class which stores all global item types of the mod.
+	 * \note Do not add usable abilities, only permanents!
+	 */
 	struct ItemTypes
 		private static ItemType m_blessedSword // Markwards item
 		private static ItemType m_preciousClericHelmet

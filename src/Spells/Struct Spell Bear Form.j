@@ -10,6 +10,7 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			call super.onMorph()
 			set level = Character(this.character()).realSpellLevels().integerByInteger(0, SpellBearForm.abilityId)
 			debug call Print("Bear Form: Morph! Level: " + I2S(level))
+			
 			call SetUnitAbilityLevel(this.character().unit(), SpellBearForm.lifeAbilityId, level)
 			call SetUnitAbilityLevel(this.character().unit(), SpellBearForm.damageAbilityId, level)
 			
@@ -55,7 +56,7 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 	endstruct
 	
 	struct SpellBearForm extends Spell
-		public static constant integer abilityId = 'A09H'
+		public static constant integer abilityId = 'A13X'
 		public static constant integer favouriteAbilityId = 'A09S'
 		public static constant integer maxLevel = 5
 		public static constant integer lifeAbilityId = 'A09Q'
@@ -64,12 +65,7 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
-			set this.m_metamorphosis = SpellBearFormMetamorphosis.create(character, thistype.abilityId)
-			call this.m_metamorphosis.setUnitTypeId('H00I')
-			call this.m_metamorphosis.setFavoriteAbility(thistype.favouriteAbilityId)
-			call this.m_metamorphosis.setOrderString("bearform")
-			call this.m_metamorphosis.setUnorderString("unbearform")
-			call this.m_metamorphosis.setManaCost(50.0)
+			set this.m_metamorphosis = SpellBearFormMetamorphosis.create(character, thistype.abilityId, 'A09H', 'A13W')
 			call this.addGrimoireEntry('A0C7', 'A0CC')
 			call this.addGrimoireEntry('A0C8', 'A0CD')
 			call this.addGrimoireEntry('A0C9', 'A0CE')

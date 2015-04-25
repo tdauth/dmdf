@@ -2,7 +2,7 @@
 library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, StructGameGrimoire
 
 	/**
-	 * \brief Generic abstract spell for metamorphosis.
+	 * \brief Generic abstract spell for metamorphosis which allows specific behaviour on transformation and reset to the original unit.
 	 * 
 	 * Uses \ref EVENT_UNIT_SPELL_CHANNEL to be executed before the unit is morphed to successfully store the inventory items.
 	 * 
@@ -14,12 +14,9 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 	 */
 	struct SpellMetamorphosis
 		private Character m_character
-		private integer m_ability
-		private integer m_favoriteAbility
-		private integer m_unitTypeId
-		private string m_orderString
-		private string m_unorderString
-		private real m_manaCost
+		private integer m_abilityId
+		private integer m_morphAbilityId
+		private integer m_unmorphAbilityId
 		private trigger m_channelTrigger
 		private trigger m_revivalTrigger
 		private boolean m_isMorphed
@@ -28,55 +25,24 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			return this.m_character
 		endmethod
 		
-		public method ability takes nothing returns integer
-			return this.m_ability
-		endmethod
-		
-		public method setFavoriteAbility takes integer favoriteAbility returns nothing
-			set this.m_favoriteAbility = favoriteAbility
-		endmethod
-		
-		public method favoriteAbility takes nothing returns integer
-			return this.m_favoriteAbility
-		endmethod
-		
-		public method setUnitTypeId takes integer unitTypeId returns nothing
-			set this.m_unitTypeId = unitTypeId
-		endmethod
-		
-		public method unitTypeId takes nothing returns integer
-			return this.m_unitTypeId
-		endmethod
-		
-		public method setOrderString takes string orderString returns nothing
-			set this.m_orderString = orderString
-		endmethod
-		
-		public method orderString takes nothing returns string
-			return this.m_orderString
-		endmethod
-		
-		public method setUnorderString takes string unorderString returns nothing
-			set this.m_unorderString = unorderString
-		endmethod
-		
-		public method unorderString takes nothing returns string
-			return this.m_unorderString
-		endmethod
-		
-		public method setManaCost takes real manaCost returns nothing
-			set this.m_manaCost = manaCost
-		endmethod
-		
 		/**
-		 * If there is any mana cost to the metamorphosis ability it has to be specified to make sure that
-		 * it does always succeed if there is enough mana.
-		 * The mana cost is required for the dummy ability which is added automatically permanently and cast by this system.
+		 * \return Returns the ability which casts the unit transformation.
 		 */
-		public method manaCost takes nothing returns real
-			return this.m_manaCost
+		public method abilityId takes nothing returns integer
+			return this.m_abilityId
 		endmethod
 		
+		public method morphAbilityId takes nothing returns integer
+			return this.m_morphAbilityId
+		endmethod
+		
+		public method unmorphAbilityId takes nothing returns integer
+			return this.m_unmorphAbilityId
+		endmethod
+
+		/**
+		 * \return Returns true if the unit is morphed with this specific spell.
+		 */
 		public method isMorphed takes nothing returns boolean
 			return this.m_isMorphed
 		endmethod
@@ -103,27 +69,39 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		public stub method onRestore takes nothing returns nothing
 		endmethod
 		
-		/**
-		 * Waits until \p whichUnit's type becomes \p unitTypeId.
-		 */
-		public static method waitForRestoration takes unit whichUnit, integer unitTypeId returns nothing
-			loop
-				exitwhen (GetUnitTypeId(whichUnit) != unitTypeId)
-				call TriggerSleepAction(1.0)
-			endloop
-		endmethod
-		
-		public static method waitForMorph takes unit whichUnit, integer unitTypeId returns nothing
-			loop
-				exitwhen (GetUnitTypeId(whichUnit) == unitTypeId)
-				call TriggerSleepAction(1.0)
-			endloop
-		endmethod
-		
 		private static method triggerConditionStart takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			local boolean result = GetSpellAbilityId() != null and GetSpellAbilityId() == this.ability() and GetTriggerUnit() == this.character().unit()
+			local boolean result = GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId() and GetTriggerUnit() == this.character().unit()
 			return result
+		endmethod
+		
+		/**
+		 * Morphs the character.
+		 */
+		private method morph takes nothing returns nothing
+			if (this.canMorph.evaluate()) then
+				if (Character(this.character()).morph()) then	
+					/*
+					* The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.	
+					* Removing all grimoire abilities including the ability itself is only done for safety to make sure that no grimoire
+					* ability is being cast which is in a spell book.
+					*/
+					call Character(this.character()).grimoire().removeAllSpellsFromUnit()
+					
+					/*
+					 * These two lines of code do the passive transformation to a range fighting unit.
+					 */
+					call UnitAddAbility(this.character().unit(), this.morphAbilityId())
+					call UnitRemoveAbility(this.character().unit(), this.morphAbilityId())
+					set this.m_isMorphed = true
+					
+					// add unmorph spell
+					call UnitAddAbility(this.character().unit(), this.abilityId())
+			
+					// morph spells are expected to morph immediately
+					call this.onMorph.evaluate()
+				endif
+			endif
 		endmethod
 		
 		/**
@@ -132,14 +110,24 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		 * \note Does not issue any order/ability.
 		 */
 		private method restoreUnit takes nothing returns boolean
-			/**
-			 * Now readd all removed abilities and restory the inventory.
+			/*
+			 * If this overwritten method returns false restoration is canceled.
 			 */
-			if (Character(this.character()).restoreUnit()) then
-				set this.m_isMorphed = false
-				call this.onRestore.evaluate()
-				
-				return true
+			if (this.canRestore.evaluate()) then
+				/*
+				 * These two lines of code do the passive transformation to a range fighting unit.
+				 */
+				call UnitAddAbility(this.character().unit(), this.unmorphAbilityId())
+				call UnitRemoveAbility(this.character().unit(), this.unmorphAbilityId())
+				/**
+				 * Now readd all removed abilities and restory the inventory.
+				 */
+				if (Character(this.character()).restoreUnit()) then
+					set this.m_isMorphed = false
+					call this.onRestore.evaluate()
+					
+					return true
+				endif
 			endif
 			
 			return false
@@ -159,108 +147,17 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			 * In case of morph we have to store spell levels and inventory and to remove it first.
 			 */
 			call IssueImmediateOrder(this.character().unit(), "stop") // stop spell immediately
-			debug call Print("Start for spell: " + GetObjectName(this.ability()))
+			debug call Print("Start for spell: " + GetObjectName(this.abilityId()))
 			
 			// morph
 			if (not Character(this.character()).isMorphed()) then
-				if (this.canMorph.evaluate()) then
-					/*
-					 * Now store everything before casting the ability.
-					 */
-					if (Character(this.character()).morph()) then
-						debug if (GetUnitTypeId(this.character().unit()) == this.unitTypeId()) then
-							debug call Print("Error: Already morphed!")
-						debug endif
-						
-						// wait until all triggers have been run which have spell events to avoid any null abilities
-						// without this call the game crashes since other triggers are called based on an already removed ability
-						call TriggerSleepAction(0.0)
-						
-						/*
-						*  The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.	
-						* Removing all grimoire abilities including the ability itself is only done for safety to make sure that no grimoire
-						* ability is being cast which is in a spell book.
-						*/
-						call Character(this.character()).grimoire().removeAllSpellsFromUnit()
-						
-						/**
-						 * Now add a permanent "dummy" ability which is neither in a spell book nor belongs to any item.
-						 */
-						call UnitAddAbility(this.character().unit(), this.ability())
-						call UnitMakeAbilityPermanent(this.character().unit(), true, this.ability())
-			
-						/*
-						 * Make sure that the unit has full mana.
-						 */
-						call SetUnitState(this.character().unit(), UNIT_STATE_MANA, GetUnitState(this.character().unit(), UNIT_STATE_MANA) + this.manaCost())
-						/*
-						 * Use the corresponding order string to cast the added permanent "dummy" ability.
-						 */
-						if (IssueImmediateOrder(this.character().unit(), this.orderString())) then
-							call thistype.waitForMorph(this.character().unit(), this.unitTypeId())
-							set this.m_isMorphed = true
-							// morph spells are expected to morph immediately
-							call this.onMorph.evaluate()
-						else
-							debug call Print("Error on calling order " + this.orderString())
-						endif
-						
-						// wait that this current trigger does not react on the manually issued order.
-						call TriggerSleepAction(0.0)
-					else
-						debug call Print("Error on morphing.")
-					endif
-				debug else
-					debug call Print("Cannot morph for spell: " + GetObjectName(this.ability()))
-				endif
+				call this.morph()
 			// restore
 			else
-				/*
-				 * If this overwritten method returns false restoration is canceled.
-				 */
-				if (this.canRestore.evaluate()) then
-					/**
-					 * wait time is required after stopping otherwise if the order is issued immediately after stopping the unit cannot be moved around properly.
-					 * Orders cannot be canceled anymore.
-					 */
-					call TriggerSleepAction(0.0)
-					
-					/*
-					 * Make sure that the unit has full mana.
-					 */
-					call SetUnitState(this.character().unit(), UNIT_STATE_MANA, GetUnitState(this.character().unit(), UNIT_STATE_MANA) + this.manaCost())
-					
-					/*
-					 * Order ability again.
-					 * In this case no replacement dummy ability is required since the morphed unit never has an inventory nor a spell book.
-					 * After stopping the unit immediately the ability becomes mysteriosely to the order string as if the unit had been unmorphed successfully.
-					 * Therefore the order string must be ordered again.
-					 */
-					if (IssueImmediateOrder(this.character().unit(), this.orderString())) then
-						/*
-						 * Wait until the unit has unmorphed successfully since the casting time is not known.
-						 * This also waits with the removal of the "dummy" ability so it won't be null in any other trigger.
-						 */
-						call thistype.waitForRestoration(this.character().unit(), this.unitTypeId())
-						// wait until all triggers have been run which have spell events to avoid any null abilities
-						// without this call the game crashes since other triggers are called based on an already removed ability
-						call TriggerSleepAction(0.0)
-						/*
-						 * Remove the permant "dummy" ability".
-						 */
-						call UnitRemoveAbility(this.character().unit(), this.ability())
-						/**
-						 * Now readd all removed abilities and restory the inventory.
-						 */
-						call this.restoreUnit()
-					debug else
-						debug call Print("Error on calling unorder " + this.orderString())
-					endif
-					
-				debug else
-					debug call Print("Cannot restore for spell: " + GetObjectName(this.ability()))
-					
-				endif
+				/**
+				* Now readd all removed abilities and restory the inventory.
+				*/
+				call this.restoreUnit()
 			endif
 			
 			call EnableTrigger(this.m_channelTrigger)
@@ -279,13 +176,12 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			call this.restoreUnit()
 		endmethod
 		
-		public static method create takes Character character, integer abilityId returns thistype
+		public static method create takes Character character, integer abilityId, integer morphAbilityId, integer unmorphAbilityId returns thistype
 			local thistype this = thistype.allocate()
 			set this.m_character = character
-			set this.m_favoriteAbility = 0
-			set this.m_ability = abilityId
-			set this.m_unitTypeId = 0
-			set this.m_manaCost = 0.0
+			set this.m_abilityId = abilityId
+			set this.m_morphAbilityId = morphAbilityId
+			set this.m_unmorphAbilityId = unmorphAbilityId
 			
 			set this.m_channelTrigger = CreateTrigger()
 			// register action before cast has finished!
