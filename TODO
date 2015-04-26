@@ -4,7 +4,7 @@
 * Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
 * Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
 * Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird.
-* Metamorphose: Ist mit passiver Verwandlung eventuell sicherer, Cast-Zeit kontrollierbar: http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/
+* FIXED: Metamorphose: Ist mit passiver Verwandlung eventuell sicherer, Cast-Zeit kontrollierbar: http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/
 * Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle?
 * Fulco will die Zauberkraft der Hexen im Norden. Neues Quest.
 * Kuno: Einbauen "Diese Wälder sind gefährlich! Hier hausen starke Kreaturen, nehmt euch in Acht!"
@@ -15,7 +15,7 @@
 * Dialog mit Björn über Dago, wird alles automatisch ausgeführt.
 * Wenn Charakter verwandelt ist und im Dialog Gegenstände erhält, hat er kein Inventar. Gegenstände liegen dann dort. Kann nur unverwandelt ansprechen oder egal?
 * anstatt Items gleich zu verteilen einfach das Item n mal droppen?
-* Immediate stop bricht Zauberbuch hinzufügen etc. ab?!
+* DEPREACATED: Immediate stop bricht Zauberbuch hinzufügen etc. ab?!
 * Tool schreiben, das die MMP-Datei der Minimap nimmt, ein Gebiet ausschneidet und ein Bild mit einer bestimmten Größe daraus erzeugt.
 * Diakon lebt nach Video in dem er umgebracht wurde wieder?!
 * Ursula: Dialog einbauen falls man Druide ist!
@@ -40,7 +40,7 @@
 * Vermutlich verursacht EndThematicMusic() beim Beenden eines Videos dass die Human-Musik gespielt wird. Die aktuelle Musik muss daher nach jedem Video wiederhergestellt werden! Game.resetVideoSettings()! setMapMusic() hat nichts gebracht!
 * Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
 * Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
-* Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
+* DONE: Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
 * Mehr Orks: http://www.hiveworkshop.com/forums/models-530/orcveteran-259649/?prev=r%3D20%26page%3D3 und alternate Version
 * Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/ 
 * FIXED: Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schrein wiederbelebt werden.
@@ -62,9 +62,9 @@
 * Ricmans "Und was machst du hier?" direkt auf Startseite anzeigen.
 * Nekromant: Dämonendiener für 5 verschiedene Stufen erzeugen.
 * Nekromant: Dunklen Diener für 5 verschiedene Stufen erzeugen.
-* Nekromant: Grundzauber "Todesbote" sollte "Pestkarren" heißen. Erzeugt einen Pestkarren mit den selben Fähigkeiten!
-* Druide: Heilquelle kleiner machen, länger pro Stufe und andere Einheit?
-* Druide: Manaquelle kleiner machen, länger pro Stufe und andere Einheit?
+* DONE: Nekromant: Grundzauber "Todesbote" sollte "Pestkarren" heißen. Erzeugt einen Pestkarren mit den selben Fähigkeiten!
+* DONE: Druide: Heilquelle kleiner machen, länger pro Stufe und andere Einheit?
+* DONE: Druide: Manaquelle kleiner machen, länger pro Stufe und andere Einheit?
 * Nach letzter Schlacht: Nordmänner zurück zu Neutral Passiv, entlassen.
 * Ricman: Beutezug korrigieren.
 * Ricman: Erlernbare Fähigkeiten als Drachentöter sollen Grimoire Spells werden und im Zauberbuch erscheinen.
@@ -78,7 +78,7 @@
 * Viele unnötige Helpermethoden in ACharacter rauswerfen.
 * Dago retten - Bedingung einbauen, Dago darf das Gebiet nicht verlassen, sonst ist der Auftrag fehlgeschlagen! Ansonsten kann man mit Dago alles abmetzeln!
 * FIXED: Wenn man Kuno nicht im Wald anspricht sollte er sagen "Ich habe zu tun". Ansonsten sind die Sätze unlogisch.
-* Video "Wigberht" fixen.
+* DONE: Video "Wigberht" fixen.
 * Osman: Sollte im Zusammenhang mit dem Kultquest den Begriff „Todesgruft“ erwähnen. So wird sie laut Drachentöterin von Eingeweihten genannt. Er muss bereits davon gehört haben.
 * Drachentöterin: Hat nun ein Gespräch, muss aber noch geschrieben werden:
 	* Über die Bedeutung der Todesgruft informieren, wenn Quest von Osman erhalten wurde.
@@ -160,7 +160,7 @@
 * ATalk braucht Attribut name, da Helden mit Eigennamen sonst den falschen Namen haben.
 * FIXED: Arena: Für das Punkten muss nachgesehen werden ob der Owner des Killers eine Einheit in der Arena hat. Denn auch beschworene Einheiten können toten.
 * Button zum Durchschalten der Dungeons (Schreinbutton?).
-* Charaktere brauchen unbedingt Hero Glow. Anderenfalls kann man Spieler nicht auseinanderhalten.
+* FIXED: Charaktere brauchen unbedingt Hero Glow. Anderenfalls kann man Spieler nicht auseinanderhalten.
 * Mehr Items.
 * ASL: ASpawnPoint - itemtable verwenden, mehrere Items möglich!
 * Video Wigberht: Frost statt Feuerwelle
@@ -176,7 +176,8 @@
 * AInventory: Seitengegenstände besser nicht ablegbar machen, order abfangen? Müssen ablegbar sein damit man Gegenstände auf Seiten verschieben kann.
 * AInventory: TriggerSleepAction() entfernen oder eindämmen.
 * Letzte Abstimmung bei Wigberht ebenfalls durch Gebietssammlung ersetzen.
-* Video The Castle: Übergänge zu schnell. Erzähler soll etwas zur Burg sagen?
+* FIXED: Video The Castle: Übergänge zu schnell.
+* DEPREACTED: Video The Castle: Erzähler soll etwas zur Burg sagen?
 * FIXED: Manaschild sollte bei keinem Mana ausgehen.
 * FIXED: Beim Anlegen einer Fernkampfwaffe werden durch die Verwandlung die Gegenstandseffekte nicht hinzugefügt, wenn der Rucksack geöffnet ist. In diesem Fall müssten sie manuell nochmal hinzugefügt werden, obwohl sie eigentlich permanent sein sollten.
 * FIXED: Für Spieler 2 wurde ein Hero Icon erzeugt, das auf den eigenen Helden verweist?!
@@ -206,14 +207,14 @@
 * DONE: Toranimationen auf offen einstellen.
 * FIXED: Video The Castle: Bewegungsgeschwindigkeit des Charakters verlangsamen, damit er nicht vor dem Tor stehen bleibt.
 * Veraltete Zauber der Klassen komplett aus dem Projekt entfernen. Siehe struct ClassSelection.
-* Selbstlosigkeit funktioniert im Zauberbuch nicht.
-* Klassenauswahl: Feindlich machen ohne shared vision, damit Unsichtbarkeit wirklich funktioniert.
+* Selbstlosigkeit funktioniert im Zauberbuch nicht. Klick auf Fähigkeit bewirkt nichts.
+* DONE: Klassenauswahl: Vertex Coloring lokal ändern, damit Einheit unsichtbar ist.
 * FIXED: Text "Sie befinden sich in einer Wiederholung" entfernen.
-* Ansprechen durch anderen Spieler funktioniert immer noch für menschliche Charaktere!
+* Ansprechen durch anderen Spieler funktioniert immer noch für menschliche Charaktere! Problem: Trigger player ist immer der Besitzer der Einheit, nicht der der den Befehl gibt.
 * FIXED: Das innere Tor ist offen, das äußere jedoch nicht.
 * Tobias erzählt von einer Kartoffel. Kartoffeln waren im Mittelalter unbekannt. Der Charakter sollte fragen, was eine Kartoffel ist und Tobias erzählt von Übersee.
 * FIXED: Guntrichs Ziel bei der Mühle selbst zu erkunden wird nicht erfüllt.
-* Nach Verwandlung in Dämon und Wiederbelebung ist Verwandlungsfähigkeit noch am Charakter.
+* FIXED: Nach Verwandlung in Dämon und Wiederbelebung ist Verwandlungsfähigkeit noch am Charakter.
 * Sichtfeldblocker in Trommelhöhle besser platzieren.
 * Weniger Erfahrung für Nebenquests und Hauptquests, vor allem am Anfang. Erfahrung auch durch Spielerzahl teilen?!
 * FIXED: Nekromant: Verzehren und Totenbeschwörung haben dieselbe Zauberbuch-ID.
@@ -228,13 +229,17 @@
 * Bei letzter Schlacht sollen sich zur Sicherheit Einheiten nicht töten können?
 * Wigberht "Erzähl mir was über deine Heimat" "Nun komm schon" erzählt einfach direkt etwas.
 * Weniger Erfahrung für die leppische Hauptquests. Man steigt viel zu schnell auf.
-* Dämpfung sollte nicht nur Magieschaden reduzieren.
+* Dämpfung sollte nicht nur Magieschaden reduzieren. Der Effekt bringt sonst zu wenig, da wenige Einheiten Magieschaden verursachen. Vielleicht auch allgemein vor Schaden schützen von Einheiten, die Mana besitzen.
 * FIXED: Vervielfachung: Sollten immer mehr prozentualen Schaden verursachen, pro Stufe.
 * Manaexplosion stärker machen.
 * Zauberbuch und Rucksack öffnen in Zauberfähigkeiten verschieben. Zauberfähigkeiten umbenennen. Dadurch hätte man bis zu 6 Favoriten!
 * The Frozen Throne-Logo links oben im Hauptmenü durch "Die Macht des Feuers"-Schriftzug ersetzen.
 * Zunächst neutrale Gebäude von Minikarte ausblenden, in release-Map Sympol-MMP-Datei entfernen bzw. nur die Datei für das Hauptmenü!
 * Entzünden von Elementarmagier funktioniert nicht per Buff. Kann mehrmals gemacht werden!
+* Kisten und Fässer brauchen Zerstöranimation.
+* Bärgengestalt braucht Verwandlungsanimation (per Code).
+* Krähengestalt braucht Verwandlungsanimation (per Code).
+* Drop AGui and all initialization except for ADialog! This should reduce the code overhead.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
@@ -277,7 +282,7 @@ Test mit zwei menschlichen Spielern:
 * Vorratswagen fährt zurück, anderes Modell.
 * FIXED: Orkgruppe im Norden lässt nichts fallen.
 * Vampirgebieter lässt zu wenig fallen.
-* Orklager Zeugs reinlegen, Kisten.
+* DONE: Orklager Zeugs reinlegen, Kisten.
 * Passive Zauber automatisch nicht in die Favoriten.
 * Aus Favoriten entfernen fehlt?!
 * Ansicht weiter weg machen, möglich machen über Hauptmenü.
@@ -299,7 +304,8 @@ Test mit zwei menschlichen Spielern:
 * Gegner viel zu schwach: Am besten keinen Attributbonus pro Stufe, stattdessen Handycap für Neutral Feindlich.
 * Lothar: Wie wärs mal mit Blumen oder so sollte Quest nicht abbrechen.
 * Creeps brauchen mehr negative Buffs.
-* Waldfurien sind so schwach - sollen Riesen beschwören, Riesen stammen von Waldfurien - wtf effekt. könnten auch Felle droppen.
+* DONE: Waldfurien sind so schwach - sollen Riesen beschwören, Riesen stammen von Waldfurien - wtf effekt. könnten auch Felle droppen.
+* Waldfurienriesen sollen Felle droppen.
 * Für Computerspieler beim Autoselect der Klasse deutlich die Performance erhöhen! Klassenauswahl muss nicht erst angezeigt werden!
 * FIXED: Rückverwandlung von Bärengestalt und Krähengestalt ändert das maximale Leben oder Mana. Einfach passive Transformation nehmen. Liegt vermutlich an SetUnitState(). War die Manasteigerungsfähigkeit bei Krähengestalt.
 

@@ -4,6 +4,8 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 	struct SpellZoology extends Spell
 		public static constant integer abilityId = 'A09T'
 		public static constant integer favouriteAbilityId = 'A09U'
+		public static constant integer classSelectionAbilityId = 'A0EN'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0ES'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

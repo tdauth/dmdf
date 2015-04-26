@@ -8,6 +8,8 @@ library StructSpellsSpellBlock requires Asl, StructGameClasses, StructGameSpell
 	struct SpellBlock extends Spell
 		public static constant integer abilityId = 'A01P'
 		public static constant integer favouriteAbilityId = 'A035'
+		public static constant integer classSelectionAbilityId = 'A0X8'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0XD'
 		public static constant integer maxLevel = 5
 		private static constant integer chance = 30
 		private static constant real damageStartValue = 0.10

@@ -4,6 +4,8 @@ library StructSpellsSpellColossus requires Asl, StructGameClasses, StructGameSpe
 	struct SpellColossus extends Spell
 		public static constant integer abilityId = 'A0K5'
 		public static constant integer favouriteAbilityId = 'A0FW'
+		public static constant integer classSelectionAbilityId = 'A0FX'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0G2'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

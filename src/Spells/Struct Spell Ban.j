@@ -4,6 +4,8 @@ library StructSpellsSpellBan requires Asl, StructGameClasses, StructGameSpell
 	struct SpellBan extends Spell
 		public static constant integer abilityId = 'A0A6'
 		public static constant integer favouriteAbilityId = 'A0A7'
+		public static constant integer classSelectionAbilityId = 'A0WS'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0WX'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

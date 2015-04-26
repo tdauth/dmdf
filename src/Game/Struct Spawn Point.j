@@ -3,6 +3,7 @@ library StructGameSpawnPoint requires Asl
 	/**
 	 * \brief Spawn point with the default values of DMdF.
 	 * Spawn points have to be stored in a static list since they must be paused in a video.
+	 * \sa ItemSpawnPoint
 	 */
 	struct SpawnPoint extends ASpawnPoint
 		public static constant real respawnTime = 240.0
@@ -52,6 +53,11 @@ library StructGameSpawnPoint requires Asl
 		endmethod
 	endstruct
 	
+	/**
+	 * \brief A spawn point for items which uses a uniform respawn time per spawn point of \ref respawnTime.
+	 * Like \ref SpawnPoint it allows global storage of all item spawn points and pausing as well resuming durion video sequences.
+	 * \sa SpawnPoint
+	 */
 	struct ItemSpawnPoint extends AItemSpawnPoint
 		public static constant real respawnTime = 20.0
 		private static AIntegerList m_spawnPoints

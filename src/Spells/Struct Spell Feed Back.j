@@ -7,6 +7,8 @@ library StructSpellsSpellFeedBack requires Asl, StructGameClasses, StructGameSpe
 	struct SpellFeedBack extends Spell
 		public static constant integer abilityId = 'A0VU'
 		public static constant integer favouriteAbilityId = 'A0VV'
+		public static constant integer classSelectionAbilityId = 'A0VW'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0W1'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

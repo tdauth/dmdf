@@ -4,6 +4,8 @@ library StructSpellsSpellLieInWait requires Asl, StructGameClasses, StructGameSp
 	struct SpellLieInWait extends Spell
 		public static constant integer abilityId = 'A12R'
 		public static constant integer favouriteAbilityId = 'A12S'
+		public static constant integer classSelectionAbilityId = 'A12T'
+		public static constant integer classSelectionGrimoireAbilityId = 'A12Y'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

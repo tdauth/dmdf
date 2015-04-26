@@ -4,6 +4,8 @@ library StructSpellsSpellAuraOfAuthority requires Asl, StructGameClasses, Struct
 	struct SpellAuraOfAuthority extends Spell
 		public static constant integer abilityId = 'A0MH'
 		public static constant integer favouriteAbilityId = 'A0MI'
+		public static constant integer classSelectionAbilityId = 'A0MJ'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0MO'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

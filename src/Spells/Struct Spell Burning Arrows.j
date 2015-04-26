@@ -4,6 +4,8 @@ library StructSpellsSpellBurningArrows requires Asl, StructGameClasses, StructGa
 	struct SpellBurningArrows extends Spell
 		public static constant integer abilityId = 'A0GS'
 		public static constant integer favouriteAbilityId = 'A0GT'
+		public static constant integer classSelectionAbilityId = 'A0GU'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0GZ'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

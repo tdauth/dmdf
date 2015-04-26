@@ -5,6 +5,8 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 	struct SpellHolyPower extends Spell
 		public static constant integer abilityId = 'A01Y'
 		public static constant integer favouriteAbilityId = 'A032'
+		public static constant integer classSelectionAbilityId = 'A0X4'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0X5'
 		public static constant integer maxLevel = 1
 		private static constant real manaFactor = 0.50
 		

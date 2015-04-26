@@ -8,6 +8,8 @@ library StructSpellsSpellRecovery requires Asl, StructGameClasses, StructGameSpe
 	struct SpellRecovery extends Spell
 		public static constant integer abilityId = 'A06A'
 		public static constant integer favouriteAbilityId = 'A06B'
+		public static constant integer classSelectionAbilityId = 'A0P9'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0PE'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

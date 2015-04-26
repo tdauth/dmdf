@@ -5,6 +5,8 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 	struct SpellRageOfElements extends Spell
 		public static constant integer abilityId = 'A01J'
 		public static constant integer favouriteAbilityId = 'A03Q'
+		public static constant integer classSelectionAbilityId = 'A0ZN'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0ZM'
 		public static constant integer maxLevel = 1
 		private static constant real damageBonusFactor = 0.30
 		private static constant real time = 10.0

@@ -5,6 +5,8 @@ library StructSpellsSpellAuraOfRedemption requires Asl, StructGameClasses, Struc
 	struct SpellAuraOfRedemption extends Spell
 		public static constant integer abilityId = 'A0M5'
 		public static constant integer favouriteAbilityId = 'A0M6'
+		public static constant integer classSelectionAbilityId = 'A0M7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0MC'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

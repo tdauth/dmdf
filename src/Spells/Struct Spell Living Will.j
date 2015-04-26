@@ -5,6 +5,8 @@ library StructSpellsSpellLivingWill requires Asl, StructGameClasses, StructGameS
 	struct SpellLivingWill extends Spell
 		public static constant integer abilityId = 'A01N'
 		public static constant integer favouriteAbilityId = 'A03R'
+		public static constant integer classSelectionAbilityId = 'A0LJ'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0LK'
 		public static constant integer maxLevel = 1
 		private static constant real spellTime = 5.0
 		private static constant real hitPointsPercentageAmount = 50.0

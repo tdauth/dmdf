@@ -4,9 +4,12 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 	 * Class selection allows change of class through abilities of the unit as well as displaying
 	 * all available class spells in a spell book.
 	 * Besides it adds start items to the corresponding class.
+	 *
+	 * This advanced class selection therefore allows the user to get much more information about the selected class.
+	 * Fore safety it displays a confirmation dialog when selecting the class.
 	 */
 	struct ClassSelection extends AClassSelection
-		public static constant integer spellsPerPage = 5
+		public static constant integer spellsPerPage = 9
 		public static constant real infoDuration = 40.0
 		private trigger m_classChangeTrigger
 		private integer m_page = 0
@@ -134,10 +137,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellTeleportation.create(character)
 				call SpellUndermine.create(character)
 			elseif (class == Classes.wizard()) then
-				// TODO drop Anziehung und Abstoßung und Arkane Bindung
 				call SpellAbsorbation.create(character)
-				call SpellAdduction.create(character)
-				call SpellArcaneBinding.create(character)
+				//deprecated call SpellAdduction.create(character)
+				//deprecated call SpellArcaneBinding.create(character)
 				call SpellArcaneHunger.create(character)
 				call SpellArcaneProtection.create(character)
 				call SpellArcaneRuse.create(character)
@@ -151,11 +153,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellManaShield.create(character)
 				call SpellManaStream.create(character)
 				call SpellMultiply.create(character)
-				call SpellRepulsion.create(character)
+				// deprecated call SpellRepulsion.create(character)
 			endif
 			
 			// evaluate this calls since it may exceed the operations limit. Each time a spell is being added it updates the whole grimoire UI which takes many operations.
-			// TODO add spells without massive UI updates to improve the performance.
 			call character.grimoire().addClassSpellsFromCharacter.evaluate(character)
 			
 
@@ -226,8 +227,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call UnitAddAbility(whichUnit, 'A0R1')
 			// grimoire
 			call UnitAddAbility(whichUnit, 'A0R2')
-			// TODO add two abilities two change the grimoire pages
-			// TODO add trigger which handles the grimoire pages change
 			
 			// remove shared vision
 			set i = 0
@@ -298,6 +297,34 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endif
 		endmethod
 		
+		private static method triggerConditionChangeSpellsPage takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			return GetTriggerUnit() == this.classUnit() and (GetSpellAbilityId() == Classes.classAbilitiesNextPageAbilityId() or GetSpellAbilityId() == Classes.classAbilitiesPreviousPageAbilityId())
+		endmethod
+		
+		private static method triggerActionChangeSpellsPage takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			
+			if (GetSpellAbilityId() == Classes.classAbilitiesNextPageAbilityId()) then
+				if (this.m_page == Classes.maxGrimoireEntriesPages(this.class(), thistype.spellsPerPage) - 1) then
+					set this.m_page = 0
+				else
+					set this.m_page = this.m_page + 1
+				endif
+			elseif (GetSpellAbilityId() == Classes.classAbilitiesPreviousPageAbilityId()) then
+				if (this.m_page == 0) then
+					set this.m_page = Classes.maxGrimoireEntriesPages(this.class(), thistype.spellsPerPage) - 1
+				else
+					set this.m_page = this.m_page - 1
+				endif
+			endif
+			
+			debug call Print("New page " + I2S(this.m_page) + " with max pages " + I2S(Classes.maxGrimoireEntriesPages(this.class(), thistype.spellsPerPage)))
+			
+			call Classes.createClassAbilities(this.class(), this.classUnit(), this.m_page, thistype.spellsPerPage)
+			call ForceUIKeyBJ(GetTriggerPlayer(), "Z") // WORKAROUND: whenever an ability is being removed it closes grimoire
+		endmethod
+		
 		public static method create takes player user returns thistype
 			local thistype this = thistype.allocate(user)
 			
@@ -307,7 +334,20 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call TriggerAddAction(this.m_classChangeTrigger, function thistype.triggerActionChange)
 			call DmdfHashTable.global().setHandleInteger(this.m_classChangeTrigger, "this", this)
 			
+			set this.m_spellPagesTrigger = CreateTrigger()
+			call TriggerRegisterPlayerUnitEvent(this.m_spellPagesTrigger, user, EVENT_PLAYER_UNIT_SPELL_CHANNEL, null)
+			call TriggerAddCondition(this.m_spellPagesTrigger, Condition(function thistype.triggerConditionChangeSpellsPage))
+			call TriggerAddAction(this.m_spellPagesTrigger, function thistype.triggerActionChangeSpellsPage)
+			call DmdfHashTable.global().setHandleInteger(this.m_spellPagesTrigger, "this", this)
+			
 			return this
+		endmethod
+		
+		public method onDestroy takes nothing returns nothing
+			call DmdfHashTable.global().destroyTrigger(this.m_classChangeTrigger)
+			set this.m_classChangeTrigger = null
+			call DmdfHashTable.global().destroyTrigger(this.m_spellPagesTrigger)
+			set this.m_spellPagesTrigger = null
 		endmethod
 		
 		/**

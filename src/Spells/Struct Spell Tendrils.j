@@ -4,6 +4,8 @@ library StructSpellsSpellTendrils requires Asl, StructGameClasses, StructGameSpe
 	struct SpellTendrils extends Spell
 		public static constant integer abilityId = 'A0DG'
 		public static constant integer favouriteAbilityId = 'A0E2'
+		public static constant integer classSelectionAbilityId = 'A0E3'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0E8'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

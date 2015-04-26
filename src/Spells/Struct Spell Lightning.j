@@ -5,6 +5,8 @@ library StructSpellsSpellLightning requires Asl, StructSpellsSpellElementalMageD
 	struct SpellLightning extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A018'
 		public static constant integer favouriteAbilityId = 'A02C'
+		public static constant integer classSelectionAbilityId = 'A0UL'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0UQ'
 		public static constant integer maxLevel = 5
 		private static constant real startDamageValue = 0.0
 		private static constant real levelDamageFactor = 100.0

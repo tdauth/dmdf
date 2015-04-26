@@ -1,5 +1,8 @@
 library StructMapMapNpcs
 
+	/**
+	 * \brief Static struct which stores global instances of the NPCs for simplified access.
+	 */
 	struct Npcs
 		private static unit m_agihard
 		private static unit m_baldar

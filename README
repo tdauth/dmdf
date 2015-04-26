@@ -1,6 +1,9 @@
 This is the 8th version of "Die Macht des Feuers".
 It is the current version.
 
+"Die Macht des Feuers" (engl. The Power of Fire) is a cooperative RPG multiplayer modification for Warcraft III: The Frozen Throne.
+All source code is under the GPLv3.
+
 Available boolean constants:
 DMDF_CREDITS enables credits (GUI)
 DMDF_INFO_LOG enables talk log system (GUI)

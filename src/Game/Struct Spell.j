@@ -106,16 +106,26 @@ library StructGameSpell requires Asl, StructGameCharacter
 	 * <ul>
 	 * <li>normal spells (which can be skilled with required skill points, one per level) - \ref spellTypeNormal</li>
 	 * <li>default spells (which cannot be reskilled/changed and are learned by default - usually one per class) - \ref spellTypeDefault</li>
-	 <li>ultimate 0 (which can be skilled when character has at least level \ref Grimoire.ultimate0Level) - \ref spellTypeUltimate0</li>
-	 <li>ultimate 1 (which can be skilled when character has at least level \ref Grimoire.ultimate1Level) - \ref spellTypeUltimate1</li>
+	 * <li>ultimate 0 (which can be skilled when character has at least level \ref Grimoire.ultimate0Level) - \ref spellTypeUltimate0</li>
+	 * <li>ultimate 1 (which can be skilled when character has at least level \ref Grimoire.ultimate1Level) - \ref spellTypeUltimate1</li>
 	 * </ul>
 	 * A spell's type can be specified in constructor.
 	 *
 	 * \ref setAvailable() allows specifying if a spell can be used at all.
 	 */
 	struct Spell extends ASpell
+		/**
+		 * Normal spells are usually skillable up to level 5. They have no special dependencies.
+		 */
 		public static constant integer spellTypeNormal = 0
+		/**
+		 * Default spells cannot be reskilled. They are skilled from the beginning.
+		 * Usually each class has one default spell.
+		 */
 		public static constant integer spellTypeDefault = 1
+		/**
+		 * Ultimate 0 spells have usually only one level and can be skilled when the character reaches level \ref Grimoire.ultimate0Level).
+		 */
 		public static constant integer spellTypeUltimate0 = 2
 		public static constant integer spellTypeUltimate1 = 3
 		private integer m_favouriteAbility
@@ -436,8 +446,14 @@ library StructGameSpell requires Asl, StructGameCharacter
 		endmethod
 
 		public static method showMoveSpeedTextTag takes unit whichUnit, real moveSpeed returns nothing
+			local string sign
 			if (not IsUnitHidden(whichUnit)) then
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("+%i"), R2I(moveSpeed)), GetUnitX(whichUnit), GetUnitY(whichUnit), 202, 198, 255, 255)
+				if (moveSpeed < 0.0) then
+					set sign = ""
+				else
+					set sign = "+"
+				endif
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tr("%s%i"), sign), R2I(moveSpeed)), GetUnitX(whichUnit), GetUnitY(whichUnit), 202, 198, 255, 255)
 			endif
 		endmethod
 

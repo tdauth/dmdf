@@ -5,6 +5,8 @@ library StructSpellsSpellFuriousBloodthirstiness requires Asl, StructGameClasses
 	struct SpellFuriousBloodthirstiness extends Spell
 		public static constant integer abilityId = 'A06S'
 		public static constant integer favouriteAbilityId = 'A06T'
+		public static constant integer classSelectionAbilityId = 'A0YW'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0YX'
 		public static constant integer maxLevel = 1
 		private static constant real lifeUsagePercentage = 0.03 // mustn't be bigger than life min value
 		private static constant real damageBonusPercentage = 0.25

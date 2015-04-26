@@ -12,6 +12,8 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 	struct SpellControlledTimeFlow extends Spell
 		public static constant integer abilityId = 'A09O'
 		public static constant integer favouriteAbilityId = 'A09N'
+		public static constant integer classSelectionAbilityId = 'A0K3'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0K4'
 		public static constant integer maxLevel = 1
 		private static constant real time = 7.0
 		private static constant real range = 600.0

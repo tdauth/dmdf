@@ -5,6 +5,8 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 	struct SpellEmblaze extends Spell
 		public static constant integer abilityId = 'A01C'
 		public static constant integer favouriteAbilityId = 'A03H'
+		public static constant integer classSelectionAbilityId = 'A0TR'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0TW'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00D'
 		private static constant real time = 30.0

@@ -5,6 +5,8 @@ library StructSpellsSpellElementalForce requires Asl, StructSpellsSpellElemental
 	struct SpellElementalForce extends Spell
 		public static constant integer abilityId = 'A045'
 		public static constant integer favouriteAbilityId = 'A046'
+		public static constant integer classSelectionAbilityId = 'A0Z8'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0Z9'
 		public static constant integer maxLevel = 1
 		private static constant real damageBonusFactor = 0.80
 		private static constant real time = 20.0

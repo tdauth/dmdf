@@ -4,6 +4,8 @@ library StructSpellsSpellAwakeningOfTheForest requires Asl, StructGameClasses, S
 	struct SpellAwakeningOfTheForest extends Spell
 		public static constant integer abilityId = 'A09Z'
 		public static constant integer favouriteAbilityId = 'A0A0'
+		public static constant integer classSelectionAbilityId = 'A0JP'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0JU'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

@@ -4,6 +4,8 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 	struct SpellNecromancy extends Spell
 		public static constant integer abilityId = 'A0FJ'
 		public static constant integer favouriteAbilityId = 'A0FK'
+		public static constant integer classSelectionAbilityId = 'A0FL'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0FQ'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

@@ -1,5 +1,30 @@
 library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, StructMapMapShrines, StructMapMapNpcs
 
+	/**
+	 * \brief Provides an API for the map's AOS which is realized in the drum cave where two brothers are fighting each others with armies.
+	 *
+	 * The AOS area is defined in the rect gg_rct_area_aos.
+	 *
+	 * The AOS has two lines and two teams:
+	 * <ul>
+	 * <li>The White Legion of the arch angel Haldar</li>
+	 * <li>The Black Legion of the arch demon Baldar</li>
+	 * </ul>
+	 *
+	 * Each team spawns units periodically at both lines and sends them to the other team's camp.
+	 * The spawn interval is defined by \ref spawnTime.
+	 *
+	 * The players for the two teams are defined in \ref MapData as \ref MapData.haldarPlayer and \ref  MapData.baldarPlayer.
+	 *
+	 * The characters can join one of the teams by using a special ring to transform themselves either in a demon or an angel without inventory and different abilities.
+	 * If they join a team they get the chance not only to fight the other team's computer controlled units but also the other players of the other team.
+	 * The owners of the characters get displayed a leaderboard for all "last hit" kills they do in the AOS area while being in one team.
+	 * The kill count is important to get a reward from either Haldar or Baldar. This is part of the quest. You can use \ref playerScore() to get the corresponding score.
+	 *
+	 * Use \ref init() to initialize the whole AOS system.
+	 *
+	 * \note The spawn starts when the first character enters the area of the AOS. This should reduce the performance if the AOS is not used yet.
+	 */
 	struct Aos
 		private static constant real spawnTime = 60.0
 		private static player m_haldarsUser
@@ -419,6 +444,10 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call SetUnitInvulnerable(gg_unit_n00J_0021, true)
 		endmethod
 
+		/**
+		 * Initializes the whole AOS system. This must be called before using any methods.
+		 * The system can be cleaned up using \ref cleanUp().
+		 */
 		public static method init takes nothing returns nothing
 			local integer i
 			local player user

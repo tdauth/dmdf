@@ -4,6 +4,8 @@ library StructSpellsSpellEagleEye requires Asl, StructGameClasses, StructGameSpe
 	struct SpellEagleEye extends Spell
 		public static constant integer abilityId = 'A068'
 		public static constant integer favouriteAbilityId = 'A069'
+		public static constant integer classSelectionAbilityId = 'A0YC'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0YH'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

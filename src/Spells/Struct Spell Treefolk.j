@@ -4,6 +4,8 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 	struct SpellTreefolk extends Spell
 		public static constant integer abilityId = 'A0E1'
 		public static constant integer favouriteAbilityId = 'A0B7'
+		public static constant integer classSelectionAbilityId = 'A0DH'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0DM'
 		public static constant integer maxLevel = 5
 		private trigger m_summonTrigger
 		

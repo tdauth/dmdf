@@ -6,6 +6,8 @@ library StructSpellsSpellImpendingDisaster requires Asl, StructGameClasses, Stru
 	struct SpellImpendingDisaster extends Spell
 		public static constant integer abilityId = 'A08B'
 		public static constant integer favouriteAbilityId = 'A08C'
+		public static constant integer classSelectionAbilityId = 'A0ON'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0OS'
 		public static constant integer maxLevel = 5
 		private static constant integer startPercentage = 10
 		private static constant integer levelPercentage = 5

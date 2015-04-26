@@ -1,5 +1,9 @@
 library StructMapSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMapMapData
 
+	/**
+	 * \brief The scroll of the realm of the dead allows characters to teleport to any visible revival shrine on the map.
+	 * This item is given to the characters from the start on. It allows much faster traveling to already visible areas.
+	 */
 	struct SpellScrollOfTheRealmOfTheDead extends ASpell
 		public static constant integer abilityId = 'A066'
 		public static constant real distance = 400.0

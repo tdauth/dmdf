@@ -7,6 +7,8 @@ library StructSpellsSpellPreventIll requires Asl, StructGameClasses, StructGameS
 	struct SpellPreventIll extends Spell
 		public static constant integer abilityId = 'A055'
 		public static constant integer favouriteAbilityId = 'A054'
+		public static constant integer classSelectionAbilityId = 'A0QN'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0QS'
 		public static constant integer maxLevel = 5
 		private static constant real speedStartValue = 0.20
 		private static constant real speedLevelValue = 0.10

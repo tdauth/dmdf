@@ -13,6 +13,8 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 	struct SpellRevive extends Spell
 		public static constant integer abilityId = 'A056'
 		public static constant integer favouriteAbilityId = 'A057'
+		public static constant integer classSelectionAbilityId = 'A0O3'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0O8'
 		public static constant integer maxLevel = 5
 		private static constant real radius = 800.0
 		private static constant real lifeStartValue = 0.50

@@ -4,6 +4,8 @@ library StructSpellsSpellGlisteningLight requires Asl, StructGameClasses, Struct
 	struct SpellGlisteningLight extends Spell
 		public static constant integer abilityId = 'A01B'
 		public static constant integer favouriteAbilityId = 'A03M'
+		public static constant integer classSelectionAbilityId = 'A0UB'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0UG'
 		public static constant integer maxLevel = 5
 		private static constant real timeSummand = 2.0
 

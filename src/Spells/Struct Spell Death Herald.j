@@ -7,6 +7,8 @@ library StructSpellsSpellDeathHerald requires Asl, StructGameClasses, StructGame
 	struct SpellDeathHerald extends Spell
 		public static constant integer abilityId = 'A0VK'
 		public static constant integer favouriteAbilityId = 'A08G'
+		public static constant integer classSelectionAbilityId = 'A0X6'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0X7'
 		public static constant integer maxLevel = 1
 
 		public static method create takes Character character returns thistype

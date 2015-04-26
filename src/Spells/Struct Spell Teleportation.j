@@ -4,6 +4,8 @@ library StructSpellsSpellTeleportation requires Asl, StructGameClasses, StructGa
 	struct SpellTeleportation extends Spell
 		public static constant integer abilityId = 'A01I'
 		public static constant integer favouriteAbilityId = 'A03P'
+		public static constant integer classSelectionAbilityId = 'A0L0'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0L5'
 		public static constant integer maxLevel = 5
 		private static constant real damageLevelValue = 0.10 //Schadens-Stufenfaktor (ab Stufe 1)
 		private static constant real time = 5.0 //Zeitkonstante (unverändert)

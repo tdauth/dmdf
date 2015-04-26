@@ -6,6 +6,8 @@ library StructSpellsSpellUndermine requires Asl, StructGameClasses, StructGameSp
 	struct SpellUndermine extends Spell
 		public static constant integer abilityId = 'A01G'
 		public static constant integer favouriteAbilityId = 'A043'
+		public static constant integer classSelectionAbilityId = 'A0ZO'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0ZT'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00E'
 		private boolean m_enabled

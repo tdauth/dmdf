@@ -8,6 +8,8 @@ library StructSpellsSpellPureEnergy requires Asl, StructGameClasses, StructGameS
 	struct SpellPureEnergy extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A01X'
 		public static constant integer favouriteAbilityId = 'A03O'
+		public static constant integer classSelectionAbilityId = 'A0ZK'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0ZL'
 		public static constant integer maxLevel = 1
 		public static sound soundTargetEffect
 

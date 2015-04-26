@@ -5,6 +5,8 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 	struct SpellRush extends Spell
 		public static constant integer abilityId = 'A01Q'
 		public static constant integer favouriteAbilityId = 'A033'
+		public static constant integer classSelectionAbilityId = 'A0XS'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0XX'
 		public static constant integer maxLevel = 5
 		private static constant real speedFactor = 0.80
 		private static constant real damageFactor = 20.0

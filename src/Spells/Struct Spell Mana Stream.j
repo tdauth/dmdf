@@ -5,6 +5,8 @@ library StructSpellsSpellManaStream requires Asl, StructGameClasses, StructGameS
 	struct SpellManaStream extends Spell
 		public static constant integer abilityId = 'A08Q'
 		public static constant integer favouriteAbilityId = 'A08R'
+		public static constant integer classSelectionAbilityId = 'A15H'
+		public static constant integer classSelectionGrimoireAbilityId = 'A15M'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 0 /// @todo FIXME
 		private static constant real time = 5.0
@@ -46,7 +48,14 @@ library StructSpellsSpellManaStream requires Asl, StructGameClasses, StructGameS
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A15H', 'A15M')
+			call this.addGrimoireEntry('A15I', 'A15N')
+			call this.addGrimoireEntry('A15J', 'A15O')
+			call this.addGrimoireEntry('A15K', 'A15P')
+			call this.addGrimoireEntry('A15L', 'A15Q')
+			
+			return this
 		endmethod
 	endstruct
 

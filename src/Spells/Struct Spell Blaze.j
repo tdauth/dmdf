@@ -5,6 +5,8 @@ library StructSpellsSpellBlaze requires Asl, StructSpellsSpellElementalMageDamag
 	struct SpellBlaze extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A01E'
 		public static constant integer favouriteAbilityId = 'A03L'
+		public static constant integer classSelectionAbilityId = 'A0U1'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0U6'
 		public static constant integer maxLevel = 5
 		private static constant real radius = 300.0
 		private static constant real damageStartValue = 20.0

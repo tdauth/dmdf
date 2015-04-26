@@ -4,6 +4,8 @@ library StructSpellsSpellConsume requires Asl, StructGameClasses, StructGameSpel
 	struct SpellConsume extends Spell
 		public static constant integer abilityId = 'A0IJ'
 		public static constant integer favouriteAbilityId = 'A0IK'
+		public static constant integer classSelectionAbilityId = 'A0IL'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0IQ'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

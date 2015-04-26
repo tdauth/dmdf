@@ -5,6 +5,8 @@ library StructSpellsSpellManaExplosion requires Asl, StructGameClasses, StructGa
 	struct SpellManaExplosion extends Spell
 		public static constant integer abilityId = 'A08H'
 		public static constant integer favouriteAbilityId = 'A08P'
+		public static constant integer classSelectionAbilityId = 'A0AN'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0B2'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 0 /// @todo FIXME
 		private static constant real manaStartValue = 40.0

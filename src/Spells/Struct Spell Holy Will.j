@@ -5,6 +5,8 @@ library StructSpellsSpellHolyWill requires Asl, StructGameClasses, StructGameSpe
 	struct SpellHolyWill extends Spell
 		public static constant integer abilityId = 'A08D'
 		public static constant integer favouriteAbilityId = 'A08E'
+		public static constant integer classSelectionAbilityId = 'A0PJ'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0PK'
 		public static constant integer maxLevel = 1
 		private static constant integer time = 10
 		private static constant integer percentage = 95

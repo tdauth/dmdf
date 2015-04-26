@@ -4,6 +4,8 @@ library StructSpellsSpellPoisonedArrows requires Asl, StructGameClasses, StructG
 	struct SpellPoisonedArrows extends Spell
 		public static constant integer abilityId = 'A0HX'
 		public static constant integer favouriteAbilityId = 'A0GI'
+		public static constant integer classSelectionAbilityId = 'A0C6'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0GN'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

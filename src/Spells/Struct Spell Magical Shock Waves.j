@@ -12,6 +12,8 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 	struct SpellMagicalShockWaves extends Spell
 		public static constant integer abilityId = 'A05W'
 		public static constant integer favouriteAbilityId = 'A05X'
+		public static constant integer classSelectionAbilityId = 'A100'
+		public static constant integer classSelectionGrimoireAbilityId = 'A105'
 		public static constant integer maxLevel = 5
 		private static constant real range = 600.0
 		private static constant real time = 30.0

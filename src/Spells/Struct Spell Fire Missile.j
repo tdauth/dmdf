@@ -4,6 +4,8 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 	struct SpellFireMissile extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A014'
 		public static constant integer favouriteAbilityId = 'A03K'
+		public static constant integer classSelectionAbilityId = 'A0KP'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0KU'
 		public static constant integer maxLevel = 5
 		private static constant real damageStartValue = 35.0
 		private static constant real damageFactor = 15.0 // Schadens-Stufenfaktor (ab Stufe 1)

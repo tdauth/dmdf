@@ -5,6 +5,8 @@ library StructSpellsSpellShotIntoHeart requires Asl, StructGameClasses, StructGa
 	struct SpellShotIntoHeart extends Spell
 		public static constant integer abilityId = 'A06Q'
 		public static constant integer favouriteAbilityId = 'A06R'
+		public static constant integer classSelectionAbilityId = 'A116'
+		public static constant integer classSelectionGrimoireAbilityId = 'A11B'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

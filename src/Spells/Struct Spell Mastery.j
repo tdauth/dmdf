@@ -5,6 +5,8 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 	struct SpellMastery extends Spell
 		public static constant integer abilityId = 'A01F'
 		public static constant integer favouriteAbilityId = 'A034'
+		public static constant integer classSelectionAbilityId = 'A11I'
+		public static constant integer classSelectionGrimoireAbilityId = 'A11N'
 		public static constant integer maxLevel = 5
 		private static constant real interval = 10.0 //constant, does not change per level.
 		private static constant real manaLevelValue = 0.05 //changes per level.

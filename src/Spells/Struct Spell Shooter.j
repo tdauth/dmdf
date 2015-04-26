@@ -5,6 +5,8 @@ library StructSpellsSpellShooter requires Asl, StructGameClasses, StructGameSpel
 	struct SpellShooter extends Spell
 		public static constant integer abilityId = 'A03S'
 		public static constant integer favouriteAbilityId = 'A03T'
+		public static constant integer classSelectionAbilityId = 'A11G'
+		public static constant integer classSelectionGrimoireAbilityId = 'A11H'
 		public static constant integer maxLevel = 1
 
 		public static method create takes Character character returns thistype

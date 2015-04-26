@@ -7,6 +7,8 @@ library StructSpellsSpellDarkServant requires Asl, StructGameClasses, StructGame
 	struct SpellDarkServant extends Spell
 		public static constant integer abilityId = 'A01U'
 		public static constant integer favouriteAbilityId = 'A036'
+		public static constant integer classSelectionAbilityId = 'A0IV'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0J0'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

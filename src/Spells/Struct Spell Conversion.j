@@ -5,6 +5,8 @@ library StructSpellsSpellConversion requires Asl, StructGameClasses, StructGameS
 	struct SpellConversion extends Spell
 		public static constant integer abilityId = 'A0PZ'
 		public static constant integer favouriteAbilityId = 'A0Q0'
+		public static constant integer classSelectionAbilityId = 'A0Q1'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0Q6'
 		public static constant integer buffId = 'B02F'
 		public static constant integer maxLevel = 5
 		

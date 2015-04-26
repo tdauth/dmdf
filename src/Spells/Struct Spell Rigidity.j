@@ -5,6 +5,8 @@ library StructSpellsSpellRigidity requires Asl, StructGameClasses, StructGameSpe
 	struct SpellRigidity extends Spell
 		public static constant integer abilityId = 'A0JZ'
 		public static constant integer favouriteAbilityId = 'A0K0'
+		public static constant integer classSelectionAbilityId = 'A0K1'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0K2'
 		public static constant integer maxLevel = 1
 		
 		public static method create takes Character character returns thistype

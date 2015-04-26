@@ -5,6 +5,8 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 	struct SpellManaShield extends Spell
 		public static constant integer abilityId = 'A03A'
 		public static constant integer favouriteAbilityId = 'A03E'
+		public static constant integer classSelectionAbilityId = 'A0W6'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0WB'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00G'
 		private static constant real absorbedDamageManaCostStartValue = 6.0 /// Costs per damage point.

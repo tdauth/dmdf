@@ -58,6 +58,8 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 	struct SpellBearForm extends Spell
 		public static constant integer abilityId = 'A13X'
 		public static constant integer favouriteAbilityId = 'A09S'
+		public static constant integer classSelectionAbilityId = 'A0C7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0CC'
 		public static constant integer maxLevel = 5
 		public static constant integer lifeAbilityId = 'A09Q'
 		public static constant integer damageAbilityId = 'A09R'

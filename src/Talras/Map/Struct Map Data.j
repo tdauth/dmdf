@@ -28,6 +28,9 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		call PlayMusic("Music\\LoadingScreen.mp3") /// WARNING: If file does not exist, game crashes?
 	//! endinject
 
+	/**
+	 * \brief A static class which defines unit type ids with identifiers.
+	 */
 	struct UnitTypes
 		public static constant integer orcCrossbow = 'n01A'
 		public static constant integer orcBerserk = 'n01G'
@@ -82,18 +85,15 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant player alliedPlayer = Player(6)
 		public static constant player neutralPassivePlayer = Player(7)
 		public static constant player arenaPlayer = Player(8)
-		// make morning early and evening late to keep NPCs in their houses for a short time
 		public static constant real morning = 5.0
 		public static constant real midday = 12.0
 		public static constant real afternoon = 16.0
-		public static constant real evening = 0.0
+		public static constant real evening = 18.0
 		public static constant real videoWaitInterval = 1.0
 		public static constant real revivalTime = 20.0
 		public static constant integer startSkillPoints = 3
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 25
-		public static constant integer difficultyStartAttributeBonus = 5 // start attribute bonus per missing player
-		public static constant integer difficultyLevelAttributeBonus = 2 // level up attribute bonus per missing player
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static constant player orcPlayer = Player(9)
 		public static constant player haldarPlayer = Player(10)
@@ -222,6 +222,9 @@ endif
 			call TriggerAddAction(thistype.m_talkHintTrigger, function thistype.triggerActionTalkHint)
 		endmethod
 		
+		/**
+		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
+		 */
 		public static method createClassItems takes AClass class, unit whichUnit returns nothing
 			if (class == Classes.ranger()) then
 				// Hunting Bow
@@ -511,7 +514,7 @@ endif
 			if (handicap > 0.0) then
 				call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
 				call TriggerSleepAction(4.0)
-				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).r(handicap * 100.0).result())
+				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
 			endif
 		endmethod
 		
@@ -589,6 +592,9 @@ endif
 			return 0.0
 		endmethod
 		
+		/**
+		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
+		 */
 		public static method playerGivesXP takes player whichPlayer returns boolean
 			return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE) or whichPlayer == thistype.orcPlayer
 		endmethod

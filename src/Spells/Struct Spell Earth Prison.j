@@ -7,6 +7,8 @@ library StructSpellsSpellEarthPrison requires Asl, StructGameClasses, StructGame
 	struct SpellEarthPrison extends Spell
 		public static constant integer abilityId = 'A01H'
 		public static constant integer favouriteAbilityId = 'A03I'
+		public static constant integer classSelectionAbilityId = 'A0ZA'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0ZF'
 		public static constant integer maxLevel = 5
 		public static constant integer buffId = 'B005'
 		private static constant real timeStartValue = 1.5

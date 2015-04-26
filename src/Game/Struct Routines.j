@@ -88,6 +88,10 @@ library StructGameRoutines requires Asl
 		endmethod
 	endstruct
 
+	/**
+	 * \brief Static class which contains all routines of the game.
+	 * These routines can be used for specific NPCs and provide abstract routine actions like talking or training.
+	 */
 	struct Routines
 		private static ARoutine m_moveTo
 		private static AStringVector m_trainAnimations

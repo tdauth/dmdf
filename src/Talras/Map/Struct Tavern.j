@@ -1,5 +1,9 @@
 library StructMapMapTavern requires Asl
 
+	/**
+	 * \brief The tavern ia a specific building at the castle which can be entered via a portal and requires a custom camera view.
+	 * Whenever a character enters the tavern the camera view is changed.
+	 */
 	struct Tavern
 		private static region m_region
 		private static trigger m_enterTrigger
@@ -51,19 +55,10 @@ library StructMapMapTavern requires Asl
 		endmethod
 
 		private static method createLeaveTrigger takes nothing returns nothing
-			local event triggerEvent
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_leaveTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterLeaveRegion(thistype.m_leaveTrigger, thistype.m_region, null)
-			set conditionFunction = Condition(function thistype.triggerConditionIsCharacter)
-			set triggerCondition = TriggerAddCondition(thistype.m_leaveTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
-			set triggerEvent = null
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerRegisterLeaveRegion(thistype.m_leaveTrigger, thistype.m_region, null)
+			call TriggerAddCondition(thistype.m_leaveTrigger, Condition(function thistype.triggerConditionIsCharacter))
+			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 		endmethod
 
 		public static method init takes nothing returns nothing

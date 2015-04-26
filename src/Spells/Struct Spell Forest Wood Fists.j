@@ -4,6 +4,8 @@ library StructSpellsSpellForestWoodFists requires Asl, StructGameClasses, Struct
 	struct SpellForestWoodFists extends Spell
 		public static constant integer abilityId = 'A0A1'
 		public static constant integer favouriteAbilityId = 'A0A2'
+		public static constant integer classSelectionAbilityId = 'A0DR'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0DW'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

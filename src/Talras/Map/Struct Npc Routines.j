@@ -1,5 +1,8 @@
 library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRoutines, StructMapMapNpcs
 
+	/**
+	 * \brief Static struct which stores and initializes all NPC routines for specific NPCs/units.
+	 */
 	struct NpcRoutines
 		private static NpcRoutineWithFacing m_wigberhtTraining
 		// Ricman

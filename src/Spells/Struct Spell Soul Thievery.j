@@ -8,6 +8,8 @@ library StructSpellsSpellSoulThievery requires Asl, StructGameClasses, StructGam
 	struct SpellSoulThievery extends Spell
 		public static constant integer abilityId = 'A06J'
 		public static constant integer favouriteAbilityId = 'A06K'
+		public static constant integer classSelectionAbilityId = 'A01V'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0RZ'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

@@ -4,6 +4,8 @@ library StructSpellsSpellAuraOfIronSkin requires Asl, StructGameClasses, StructG
 	struct SpellAuraOfIronSkin extends Spell
 		public static constant integer abilityId = 'A029'
 		public static constant integer favouriteAbilityId = 'A038'
+		public static constant integer classSelectionAbilityId = 'A134'
+		public static constant integer classSelectionGrimoireAbilityId = 'A139'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

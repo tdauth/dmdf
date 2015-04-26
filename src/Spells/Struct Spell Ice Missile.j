@@ -5,6 +5,8 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 	struct SpellIceMissile extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A017'
 		public static constant integer favouriteAbilityId = 'A039'
+		public static constant integer classSelectionAbilityId = 'A0T7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0TC'
 		public static constant integer maxLevel = 5
 		private static constant real damageFactor = 50.0 // Schadens-Stufenfaktor (ab Stufe 1)
 		private static constant real speedFactor = 0.10 // Angriffs- und Bewegungsgeschwindigkeitsfaktor (ab Stufe 1, prozentual also 10 %)

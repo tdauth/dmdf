@@ -8,6 +8,8 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 	struct SpellProtect extends Spell
 		public static constant integer abilityId = 'A050'
 		public static constant integer favouriteAbilityId = 'A051'
+		public static constant integer classSelectionAbilityId = 'A091'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0LE'
 		public static constant integer maxLevel = 5
 		private static constant real damageLevelValue = 0.15
 		private static constant real damageLevelFactor = 0.05

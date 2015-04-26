@@ -8,6 +8,8 @@ library StructSpellsSpellMasterOfNecromancy requires Asl, StructGameClasses, Str
 	struct SpellMasterOfNecromancy extends Spell
 		public static constant integer abilityId = 'A0SG'
 		public static constant integer favouriteAbilityId = 'A0SH'
+		public static constant integer classSelectionAbilityId = 'A0SI'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0SN'
 		public static constant integer maxLevel = 5
 		public static constant integer damageAbilityId = 'A0WH'
 		public static constant integer defenseAbilityId = 'A0WG'

@@ -1,5 +1,8 @@
 library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData, StructMapMapShrines, StructMapMapNpcs
 
+	/**
+	 * \brief The tomb is an area under the earth which is reigned by Deranor and only can be entered in the quest "Slaughter".
+	 */
 	struct Tomb
 		private static trigger m_enterTrigger
 		private static trigger m_leaveTrigger
@@ -7,6 +10,7 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Tomb\"")
 
 		public static method characterJoins takes Character character returns nothing
+			// TODO Tomb needs different music
 			call PlayMusic("Music\\TheDrumCave.mp3") /// @todo for user
 			call MapData.setCameraBoundsToTombForPlayer.evaluate(character.player())
 			call character.setCamera()

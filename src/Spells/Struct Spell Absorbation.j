@@ -5,6 +5,8 @@ library StructSpellsSpellAbsorbation requires Asl, StructGameClasses, StructGame
 	struct SpellAbsorbation extends Spell
 		public static constant integer abilityId = 'A03C'
 		public static constant integer favouriteAbilityId = 'A03D'
+		public static constant integer classSelectionAbilityId = 'A0C4'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0C5'
 		public static constant integer maxLevel = 1
 		private static constant integer buffId = 'B00I'
 		private static constant real range = 800.0

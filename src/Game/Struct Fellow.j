@@ -387,6 +387,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 		endmethod
 
+		/**
+		 * Creates a new fellow using \p whichUnit as fellow unit.
+		 * \param talk The corresponding talk of the unit. \ref setTalk() affects the talk when the fellow is shared.
+		 */
 		public static method create takes unit whichUnit, ATalk talk returns thistype
 			local thistype this = thistype.allocate()
 			debug call this.print("Creating for unit " + GetUnitName(whichUnit))
@@ -449,6 +453,11 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set thistype.m_fellows = AIntegerList.create()
 		endmethod
 
+		/**
+		 * This method can be used to get a \ref Fellow instance by any unit on the map.
+		 * It simplifies the access to fellows since you do not have to store the instance anywhere.
+		 * \return Returns 0 if \p whichUnit is no fellow. Otherwise it returns the corresponding fellow instance.
+		 */
 		public static method getByUnit takes unit whichUnit returns thistype
 			return DmdfHashTable.global().handleInteger(whichUnit, "Fellow")
 		endmethod

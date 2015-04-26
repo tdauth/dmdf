@@ -5,6 +5,8 @@ library StructSpellsHerbalCure requires Asl, StructGameClasses, StructGameSpell
 	struct SpellHerbalCure extends Spell
 		public static constant integer abilityId = 'A0AJ'
 		public static constant integer favouriteAbilityId = 'A0AK'
+		public static constant integer classSelectionAbilityId = 'A0X2'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0X3'
 		public static constant integer maxLevel = 1
 		
 		public static method create takes Character character returns thistype

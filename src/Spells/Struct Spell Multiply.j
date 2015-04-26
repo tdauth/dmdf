@@ -5,6 +5,8 @@ library StructSpellsSpellMultiply requires Asl, StructGameClasses, StructGameSpe
 	struct SpellMultiply extends Spell
 		public static constant integer abilityId = 'A08T'
 		public static constant integer favouriteAbilityId = 'A08U'
+		public static constant integer classSelectionAbilityId = 'A0WI'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0WN'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

@@ -4,6 +4,8 @@ library StructSpellsSpellFrozenArrows requires Asl, StructGameClasses, StructGam
 	struct SpellFrozenArrows extends Spell
 		public static constant integer abilityId = 'A0MT'
 		public static constant integer favouriteAbilityId = 'A0MU'
+		public static constant integer classSelectionAbilityId = 'A0MV'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0N0'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

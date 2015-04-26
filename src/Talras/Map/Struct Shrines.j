@@ -1,5 +1,8 @@
 library StructMapMapShrines requires Asl, StructGameShrine
 
+	/**
+	 * \brief Static struct which stores and initializes all revival shrines on the map.
+	 */
 	struct Shrines
 		private static Shrine m_startShrine
 		private static Shrine m_aosShrineNeutral

@@ -6,6 +6,8 @@ library StructSpellsSpellResolution requires Asl, StructGameClasses, StructGameS
 	struct SpellResolution extends Spell
 		public static constant integer abilityId = 'A028'
 		public static constant integer favouriteAbilityId = 'A040'
+		public static constant integer classSelectionAbilityId = 'A124'
+		public static constant integer classSelectionGrimoireAbilityId = 'A129'
 		public static constant integer maxLevel = 5
 		public static constant real lifeLevelValue = 100.0
 		public static constant real lifeStartValue = 50.0

@@ -4,6 +4,8 @@ library StructSpellsSpellWrathOfTheForest requires Asl, StructGameClasses, Struc
 	struct SpellWrathOfTheForest extends Spell
 		public static constant integer abilityId = 'A09X'
 		public static constant integer favouriteAbilityId = 'A09Y'
+		public static constant integer classSelectionAbilityId = 'A0ED'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0EI'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

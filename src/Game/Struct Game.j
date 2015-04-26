@@ -186,7 +186,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 		endmethod
 
 		public static method missingPlayers takes nothing returns integer
-			return MapData.maxPlayers - CountPlayingUsers()
+			return GetPlayers() - CountPlayingPlayers()
 		endmethod
 
 		public static method registerOnDamageAction takes ADamageRecorderOnDamageAction onDamageAction returns nothing
@@ -376,6 +376,7 @@ endif
 			// environment systems
 			call ADamageRecorder.init(true, thistype.onDamageAction, false)
 			call AMissile.init(1.00, 9.80665, false) /// @todo Set correct refresh rate.
+			// NOTE AJump is only required for a jump done by Wigberht in the video "Wigberht".
 			call AJump.init(0.05, null)
 			// interface systems
 			call AArrowKeys.init(true)

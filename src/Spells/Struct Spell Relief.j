@@ -4,6 +4,8 @@ library StructSpellsSpellRelief requires Asl, StructGameClasses, StructGameSpell
 	struct SpellRelief extends Spell
 		public static constant integer abilityId = 'A0A4'
 		public static constant integer favouriteAbilityId = 'A0A5'
+		public static constant integer classSelectionAbilityId = 'A0JF'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0JK'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

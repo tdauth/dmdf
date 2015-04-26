@@ -5,6 +5,8 @@ library StructSpellsSpellSupremacy requires Asl, StructGameClasses, StructGameSp
 	struct SpellSupremacy extends Spell
 		public static constant integer abilityId = 'A06W'
 		public static constant integer favouriteAbilityId = 'A06X'
+		public static constant integer classSelectionAbilityId = 'A0YY'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0Z3'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

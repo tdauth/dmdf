@@ -105,7 +105,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	endstruct
 	
 	/**
-	 * \brief Item type for defense items like shields.
+	 * \brief Item type for defense items like bucklers.
 	 */
 	struct DefenceItemType extends ItemType
 	
@@ -139,6 +139,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	/**
 	 * \brief Static class which stores all global item types of the mod.
 	 * \note Do not add usable abilities, only permanents!
+	 * \note Only equipable item types have to be added. Charged usable items or quest items for the bagpack only do not have to be added at all.
 	 */
 	struct ItemTypes
 		private static ItemType m_blessedSword // Markwards item

@@ -5,6 +5,8 @@ library StructSpellsSpellStab requires Asl, StructGameClasses, StructGameSpell
 	struct SpellStab extends Spell
 		public static constant integer abilityId = 'A027'
 		public static constant integer favouriteAbilityId = 'A041'
+		public static constant integer classSelectionAbilityId = 'A0Y2'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0Y7'
 		public static constant integer maxLevel = 5
 		private static constant real damageFactor = 80.0 //Schadens-Stufenfaktor (ab Stufe 1)
 

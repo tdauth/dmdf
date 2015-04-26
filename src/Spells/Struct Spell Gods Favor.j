@@ -5,6 +5,8 @@ library StructSpellsSpellGodsFavor requires Asl, StructGameClasses, StructGameSp
 	struct SpellGodsFavor extends Spell
 		public static constant integer abilityId = 'A0QB'
 		public static constant integer favouriteAbilityId = 'A0QC'
+		public static constant integer classSelectionAbilityId = 'A0QD'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0QI'
 		public static constant integer maxLevel = 5
 		
 

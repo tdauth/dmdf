@@ -4,6 +4,8 @@ library StructSpellsSpellDarkSpell requires Asl, StructGameClasses, StructGameSp
 	struct SpellDarkSpell extends Spell
 		public static constant integer abilityId = 'A0I7'
 		public static constant integer favouriteAbilityId = 'A0I8'
+		public static constant integer classSelectionAbilityId = 'A0I9'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0IE'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

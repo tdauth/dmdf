@@ -100,6 +100,8 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 	struct SpellTaunt extends Spell
 		public static constant integer abilityId = 'A02O'
 		public static constant integer favouriteAbilityId = 'A042'
+		public static constant integer classSelectionAbilityId = 'A0LV'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0LM'
 		public static constant integer maxLevel = 5
 		public static constant real timeStartValue = 4.0
 		public static constant real timeLevelFactor = 1.0

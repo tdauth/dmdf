@@ -59,6 +59,8 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 	struct SpellCrowForm extends Spell
 		public static constant integer abilityId = 'A13U'
 		public static constant integer favouriteAbilityId = 'A092'
+		public static constant integer classSelectionAbilityId = 'A0CH'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0CI'
 		public static constant integer maxLevel = 5
 		public static constant integer manaAbilityId = 'A14A'
 		public static constant integer armorAbilityId = 'A094'

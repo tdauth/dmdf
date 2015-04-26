@@ -4,6 +4,8 @@ library StructSpellsSpellWorldsPortal requires Asl, StructGameClasses, StructGam
 	struct SpellWorldsPortal extends Spell
 		public static constant integer abilityId = 'A0EX'
 		public static constant integer favouriteAbilityId = 'A0EY'
+		public static constant integer classSelectionAbilityId = 'A0EZ'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0F4'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

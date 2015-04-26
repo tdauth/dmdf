@@ -5,6 +5,8 @@ library StructSpellsSpellTorment requires Asl, StructGameClasses, StructGameSpel
 	struct SpellTorment extends Spell
 		public static constant integer abilityId = 'A04Y'
 		public static constant integer favouriteAbilityId = 'A04Z'
+		public static constant integer classSelectionAbilityId = 'A0PL'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0PQ'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

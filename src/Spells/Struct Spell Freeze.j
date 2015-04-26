@@ -5,6 +5,8 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 	struct SpellFreeze extends Spell
 		public static constant integer abilityId = 'A019'
 		public static constant integer favouriteAbilityId = 'A03J'
+		public static constant integer classSelectionAbilityId = 'A0UV'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0V0'
 		public static constant integer buffId = 'B00F'
 		public static constant integer maxLevel = 5
 		private static constant real rangeStartValue = 500.0

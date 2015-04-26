@@ -4,6 +4,8 @@ library StructSpellsSpellArcaneProtection requires Asl, StructGameClasses, Struc
 	struct SpellArcaneProtection extends Spell
 		public static constant integer abilityId = 'A0A8'
 		public static constant integer favouriteAbilityId = 'A0A9'
+		public static constant integer classSelectionAbilityId = 'A0G7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0GC'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

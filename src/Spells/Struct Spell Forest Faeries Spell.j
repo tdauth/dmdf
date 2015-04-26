@@ -4,6 +4,8 @@ library StructSpellsSpellForestFaeriesSpell requires Asl, StructGameClasses, Str
 	struct SpellForestFaeriesSpell extends Spell
 		public static constant integer abilityId = 'A0AL'
 		public static constant integer favouriteAbilityId = 'A0AM'
+		public static constant integer classSelectionAbilityId = 'A0J5'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0JA'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes Character character returns thistype

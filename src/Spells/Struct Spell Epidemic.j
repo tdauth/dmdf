@@ -5,6 +5,8 @@ library StructSpellsSpellEpidemic requires Asl, StructGameClasses, StructGameSpe
 	struct SpellEpidemic extends Spell
 		public static constant integer abilityId = 'A13N'
 		public static constant integer favouriteAbilityId = 'A13O'
+		public static constant integer classSelectionAbilityId = 'A13P'
+		public static constant integer classSelectionGrimoireAbilityId = 'A13Q'
 		public static constant integer maxLevel = 1
 		private static constant real time = 30.0
 		private static constant real interval = 2.0

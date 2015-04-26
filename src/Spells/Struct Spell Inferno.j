@@ -5,6 +5,8 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 	struct SpellInferno extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A01A'
 		public static constant integer favouriteAbilityId = 'A03N'
+		public static constant integer classSelectionAbilityId = 'A0KF'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0KK'
 		public static constant integer maxLevel = 5
 		private static constant real time = 6.0
 		private static constant real radius = 400.0

@@ -5,6 +5,8 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 	struct SpellCurb extends Spell
 		public static constant integer abilityId = 'A03B'
 		public static constant integer favouriteAbilityId = 'A03F'
+		public static constant integer classSelectionAbilityId = 'A0BA'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0B9'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00H'
 		private static constant real time = 15.0

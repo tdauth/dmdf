@@ -7,6 +7,8 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 	struct SpellArcaneTime extends Spell
 		public static constant integer abilityId = 'A08V'
 		public static constant integer favouriteAbilityId = 'A08W'
+		public static constant integer classSelectionAbilityId = 'A10M'
+		public static constant integer classSelectionGrimoireAbilityId = 'A10R'
 		public static constant integer maxLevel = 5
 		private static constant real summonedTimeStartValue = 40.0
 		private static constant real summonedTimeLevelValue = 10.0

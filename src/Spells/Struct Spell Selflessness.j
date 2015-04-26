@@ -5,6 +5,8 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 	struct SpellSelflessness extends Spell
 		public static constant integer abilityId = 'A073'
 		public static constant integer favouriteAbilityId = 'A074'
+		public static constant integer classSelectionAbilityId = 'A0LL'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0LQ'
 		public static constant integer maxLevel = 5
 		private static constant integer casterBuffId = 'B014'
 		private static constant integer targetBuffId = 'B013'

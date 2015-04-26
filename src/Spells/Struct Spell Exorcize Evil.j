@@ -5,6 +5,8 @@ library StructSpellsSpellExorcizeEvil requires Asl, StructGameClasses, StructGam
 	struct SpellExorcizeEvil extends Spell
 		public static constant integer abilityId = 'A08L'
 		public static constant integer favouriteAbilityId = 'A08M'
+		public static constant integer classSelectionAbilityId = 'A0P7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0P8'
 		public static constant integer maxLevel = 1
 
 		public static method create takes Character character returns thistype

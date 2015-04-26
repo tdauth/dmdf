@@ -4,6 +4,8 @@ library StructSpellsSpellGrove requires Asl, StructGameClasses, StructGameSpell
 	struct SpellGrove extends Spell
 		public static constant integer abilityId = 'A0D4'
 		public static constant integer favouriteAbilityId = 'A0D5'
+		public static constant integer classSelectionAbilityId = 'A0D6'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0DB'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype

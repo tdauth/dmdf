@@ -5,6 +5,8 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 	struct SpellConcentration extends Spell
 		public static constant integer abilityId = 'A02A'
 		public static constant integer favouriteAbilityId = 'A03Z'
+		public static constant integer classSelectionAbilityId = 'A0XI'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0XN'
 		public static constant integer maxLevel = 5
 		private static constant real interval = 10.0 //constant, does not change per level.
 		private static constant integer lifeLevelValue = 1 // percentage
