@@ -62,7 +62,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 		public static constant integer classSelectionAbilityId = 'A0CH'
 		public static constant integer classSelectionGrimoireAbilityId = 'A0CI'
 		public static constant integer maxLevel = 5
-		public static constant integer manaAbilityId = 'A14A'
+		public static constant integer manaAbilityId = 'A14U'
 		public static constant integer armorAbilityId = 'A094'
 		private SpellCrowFormMetamorphosis m_metamorphosis
 

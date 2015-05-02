@@ -166,6 +166,10 @@ endif
 			return false
 		endmethod
 		
+		/**
+		 * Stores all grimoire spell levels for later restoration by \ref restoreRealSpellLevels().
+		 * This has to be done for unit transformations since non permanent abilities get lost.
+		 */
 		public method updateRealSpellLevels takes nothing returns nothing
 			call this.clearRealSpellLevels()
 			call DmdfHashTable.global().setHandleInteger(this.unit(), "SpellLevels", this.grimoire().spellLevels.evaluate())
@@ -184,26 +188,57 @@ endif
 		public method isMorphed takes nothing returns boolean
 			return this.m_isMorphed
 		endmethod
+		
+		public method updateGrimoireAfterPassiveTransformation takes nothing returns nothing
+			/*
+			 * Now the spell levels have to be readded and the grimoire needs to be updated since all abilities are gone.
+			 */
+			call this.restoreRealSpellLevels()
+			call this.clearRealSpellLevels()
+			call this.grimoire().updateUi.evaluate()
+		endmethod
+		
+		public method updateInventoryAfterPassiveTransformation takes nothing returns nothing
+			local integer i
+			/*
+			 * The equipment abilities are not permanent and are being removed if the rucksack is open when the item is equipped.
+			 * Therefore they have to be readded manually.
+			 */
+			if (this.inventory().rucksackIsEnabled()) then
+				set i = 0
+				loop
+					exitwhen (i == AInventory.maxEquipmentTypes)
+					if (this.inventory().equipmentItemData(i) != 0 and  AItemType.itemTypeOfItemTypeId(this.inventory().equipmentItemData(i).itemTypeId()) != 0) then
+						call AItemType.itemTypeOfItemTypeId(this.inventory().equipmentItemData(i).itemTypeId()).addPermanentAbilities(this.unit())
+					endif
+					set i = i + 1
+				endloop
+			endif
+		endmethod
 
 		/**
 		 * Restores spells and inventory of the character after he has been morphed into another creature with other abilities and without inventory.
 		 * The spell levels has been stored in \ref realSpellLevels() while calling \ref morph().
 		 * \note Has to be called just after the character's unit restores from morphing.
 		 */
-		public method restoreUnit takes nothing returns boolean
+		public method restoreUnit takes boolean disableInventory returns boolean
 			if (not DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
 				debug call Print("Has not been morphed before!")
 				return false
 			endif
-			debug call Print("Readding spell levels")
-			call this.restoreRealSpellLevels()
-			call this.clearRealSpellLevels()
-			debug call Print("Enabling inventory again")
-			call this.inventory().setEnableAgain(true)
-			call this.inventory().enable()
-			debug call Print("Restoring Grimoire UI")
-			call this.grimoire().updateUi.evaluate()
-			debug call Print("After restoring grimoire UI")
+			
+			if (disableInventory) then
+				debug call Print("Enabling inventory again")
+				call this.inventory().setEnableAgain(true)
+				call this.inventory().enable()
+			else
+				debug call Print("Before updating inventory!")
+				call this.updateInventoryAfterPassiveTransformation()
+				debug call Print("After updating inventory!")
+			endif
+			
+			call this.updateGrimoireAfterPassiveTransformation()
+			
 			set this.m_isMorphed = false
 			
 			return true
@@ -215,20 +250,21 @@ endif
 		* \note Has to be called just before the character's unit morphes.
 		* \param abilityId Id of the ability which has to be casted to morph the character.
 		*/
-		public method morph takes nothing returns boolean
+		public method morph takes boolean disableInventory returns boolean
 			debug if (GetUnitAbilityLevel(this.unit(), 'AInv') == 0) then
 			debug call Print("It is too late to store the items! Add a delay for the morphing ability!")
 			debug endif
 			
-			debug call Print("Storing spell levels")
 			call this.updateRealSpellLevels()
 			
 			// Make sure it won't be enabled again when the character is set movable.
-			call this.inventory().setEnableAgain(false)
-			debug call Print("Disabling inventory")
-			// Should remove but store all items.
-			call this.inventory().disable()
-			debug call Print("After disabling inventory")
+			if (disableInventory) then
+				call this.inventory().setEnableAgain(false)
+				debug call Print("Disabling inventory")
+				// Should remove but store all items.
+				call this.inventory().disable()
+				debug call Print("After disabling inventory")
+			endif
 			
 			set this.m_isMorphed = true
 			

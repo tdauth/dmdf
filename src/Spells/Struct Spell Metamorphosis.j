@@ -17,6 +17,8 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		private integer m_abilityId
 		private integer m_morphAbilityId
 		private integer m_unmorphAbilityId
+		private boolean m_disableGrimoire
+		private boolean m_disableInventory
 		private trigger m_channelTrigger
 		private trigger m_revivalTrigger
 		private boolean m_isMorphed
@@ -38,6 +40,22 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		
 		public method unmorphAbilityId takes nothing returns integer
 			return this.m_unmorphAbilityId
+		endmethod
+		
+		public method setDisableGrimoire takes boolean disable returns nothing
+			set this.m_disableGrimoire = disable
+		endmethod
+		
+		public method disableGrimoire takes nothing returns boolean
+			return this.m_disableGrimoire
+		endmethod
+		
+		public method setDisableInventory takes boolean disable returns nothing
+			set this.m_disableInventory = disable
+		endmethod
+		
+		public method disableInventory takes nothing returns boolean
+			return this.m_disableInventory
 		endmethod
 
 		/**
@@ -80,13 +98,15 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		 */
 		private method morph takes nothing returns nothing
 			if (this.canMorph.evaluate()) then
-				if (Character(this.character()).morph()) then	
+				if (Character(this.character()).morph(this.disableInventory())) then	
 					/*
 					* The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.	
 					* Removing all grimoire abilities including the ability itself is only done for safety to make sure that no grimoire
 					* ability is being cast which is in a spell book.
 					*/
-					call Character(this.character()).grimoire().removeAllSpellsFromUnit()
+					if (this.disableGrimoire()) then
+						call Character(this.character()).grimoire().removeAllSpellsFromUnit()
+					endif
 					
 					/*
 					 * These two lines of code do the passive transformation to a range fighting unit.
@@ -96,7 +116,24 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 					set this.m_isMorphed = true
 					
 					// add unmorph spell
-					call UnitAddAbility(this.character().unit(), this.abilityId())
+					if (this.disableGrimoire() or this.disableInventory()) then
+						call UnitAddAbility(this.character().unit(), this.abilityId())
+					endif
+					
+					/**
+					 * Grimoire spells need to be readded.
+					 */
+					if (not this.disableGrimoire()) then
+						call this.character().updateGrimoireAfterPassiveTransformation()
+					endif
+					
+					/**
+					 * Equipment needs to be shown.
+					 */
+					if (not this.disableInventory()) then
+						call this.character().updateInventoryAfterPassiveTransformation()
+					endif
+			
 			
 					// morph spells are expected to morph immediately
 					call this.onMorph.evaluate()
@@ -114,6 +151,16 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			 * If this overwritten method returns false restoration is canceled.
 			 */
 			if (this.canRestore.evaluate()) then
+			
+				/**
+				 * Store the grimoire spell levels to restore them since non permanent abilities get lost.
+				 * Only store them if the grimoire is active.
+				 * Otherwise they should be stored by the morph before already.
+				 */
+				if (not this.disableGrimoire()) then
+					call this.character().updateRealSpellLevels()
+				endif
+				
 				/*
 				 * These two lines of code do the passive transformation to a range fighting unit.
 				 */
@@ -122,7 +169,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 				/**
 				 * Now readd all removed abilities and restory the inventory.
 				 */
-				if (Character(this.character()).restoreUnit()) then
+				if (Character(this.character()).restoreUnit(this.disableInventory())) then
 					set this.m_isMorphed = false
 					call this.onRestore.evaluate()
 					
@@ -182,6 +229,8 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			set this.m_abilityId = abilityId
 			set this.m_morphAbilityId = morphAbilityId
 			set this.m_unmorphAbilityId = unmorphAbilityId
+			set this.m_disableGrimoire = true
+			set this.m_disableInventory = true
 			
 			set this.m_channelTrigger = CreateTrigger()
 			// register action before cast has finished!

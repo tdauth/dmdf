@@ -1,11 +1,12 @@
 //! import "Talras/Spells/Struct Spell Amulet Of Foresight.j"
 //! import "Talras/Spells/Struct Spell Aos Ring.j"
 //! import "Talras/Spells/Struct Spell Magical Seed.j"
+//! import "Talras/Spells/Struct Spell Ride Sheep.j"
 //! import "Talras/Spells/Struct Spell Scroll Of Collector.j"
 //! import "Talras/Spells/Struct Spell Scroll Of The Realm Of The Dead.j"
 //! import "Talras/Spells/Struct Spell Unearth.j"
 
-library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesight, StructMapSpellsSpellAosRing, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellScrollOfCollector, StructMapSpellsSpellScrollOfTheRealmOfTheDead, StructMapSpellsSpellUnearth
+library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesight, StructMapSpellsSpellAosRing, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellRideSheep, StructMapSpellsSpellScrollOfCollector, StructMapSpellsSpellScrollOfTheRealmOfTheDead, StructMapSpellsSpellUnearth
 
 	/// Init non-character spells!
 	function initMapSpells takes nothing returns nothing
@@ -25,7 +26,7 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesi
 			call SpellAosRing.create(character, 'A146', 'A13Y', 'A0BL', true) // Dragon Slayer
 			call SpellAosRing.create(character, 'A14M', 'A14E', 'A0BW', false) // Dragon Slayer
 			// ride a sheep
-			call SpellMetamorphosis.create(character, 'A15R', 'A15S', 'A15T')
+			call SpellRideSheep.create(character, 'A15R', 'A15S', 'A15T')
 		elseif (character.class() == Classes.druid()) then
 			call SpellAosRing.create(character, 'A14D', 'A13Z', 'A0BJ', true) // Druid
 			call SpellAosRing.create(character, 'A14O', 'A14F', 'A0BU', false) // Druid

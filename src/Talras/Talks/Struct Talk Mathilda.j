@@ -311,9 +311,9 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 		private static method infoAction10_0 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Das Lied des Krieges."), null)
-			call speech(info, character, true, tr("Der Rittersmann, von unweit her\nward vom König selbst gerufen\ner kam in Rüstung, samt dem Speer\nmit Legenden, die ihn schufen"), null)
-			call speech(info, character, true, tr("Träumte er von Ruhm und Stolz\nso war sein Speer doch nur aus Holz\nund als er vor dem Drachen stand\nsetzte dieser ihn in Brand"), null)
-			call speech(info, character, true, tr("So brannten Ritter und die Sagen\nan denen sich die Jungen laben\nAm Ende bleibt der Tod, nicht mehr\nso lange ist es gar nicht her!"), null)
+			call speech(info, character, true, tr("Der Rittersmann, von unweit her, ward vom König selbst gerufen, er kam in Rüstung, samt dem Speer, mit Legenden, die ihn schufen"), null)
+			call speech(info, character, true, tr("Träumte er von Ruhm und Stolz, so war sein Speer doch nur aus Holz, und als er vor dem Drachen stand, setzte dieser ihn in Brand"), null)
+			call speech(info, character, true, tr("So brannten Ritter und die Sagen, an denen sich die Jungen laben, Am Ende bleibt der Tod, nicht mehr, so lange ist es gar nicht her!"), null)
 
 			// Erfahrungsbonus (Hört das Lied zum ersten Mal)
 			if (not this.playedSong(character.player())) then
@@ -327,9 +327,9 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 		private static method infoAction10_1 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Der Wandersmann."), null)
-			call speech(info, character, true, tr("Der Tag neigt sich dem Ende zu\nund alle Vögel werden müde\nnur einer, der gibt keine Ruh'\nin seiner Heimat ist man prüde"), null)
-			call speech(info, character, true, tr("Er lief, ja rannte über Berge\ntraf fremde Wesen, auch die Zwerge\ndoch sollt er einen Menschen sehn\nwürd' er gleich wieder rückwärts gehen\nsich glücklich an den Seinen rächen\ngar jedem mal das Herz zerstechen\ndenn jeder seiner eignen Leut'\nhat zu viel Liebe stets gescheut"), null)
-			call speech(info, character, true, tr("Ja dort in seiner alten Heimat\nist weder Mauer, noch ein Tor\ndoch wär' ihm eine neue Bleibe\ngar lieber als das triste Moor"), null)
+			call speech(info, character, true, tr("Der Tag neigt sich dem Ende zu, und alle Vögel werden müde, nur einer, der gibt keine Ruh', in seiner Heimat ist man prüde"), null)
+			call speech(info, character, true, tr("Er lief, ja rannte über Berge, traf fremde Wesen, auch die Zwerge, doch sollt er einen Menschen sehn, würd' er gleich wieder rückwärts gehen, sich glücklich an den Seinen rächen, gar jedem mal das Herz zerstechen, denn jeder seiner eignen Leut', hat zu viel Liebe stets gescheut"), null)
+			call speech(info, character, true, tr("Ja dort in seiner alten Heimat, ist weder Mauer, noch ein Tor, doch wär' ihm eine neue Bleibe, gar lieber als das triste Moor"), null)
 			
 			// Erfahrungsbonus (Hört das Lied zum ersten Mal)
 			if (not this.playedSong(character.player())) then
@@ -343,9 +343,9 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 		private static method infoAction10_2 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Die Waldgeister."), null)
-			call speech(info, character, true, tr("Im alten Wald, am großen Fluss\ndurch den ich täglich waten muss\ndort traf ich traurig wie ich war\ndie mystisch schöne Geisterschaar"), null)
-			call speech(info, character, true, tr("Sie gaben mir, was ich vermisst\ndoch war es eine große List\nDenn wollten sie nicht meinen Segen\nstattdessen nur den eignen Regen\nder kommt, wenn man aus einem Rachen\nmal etwas hört wie sanftes Lachen"), null)
-			call speech(info, character, true, tr("Und wenns vergeht, ist's auch nicht schlimm\nder Geist behält ja seine Stimm'\nkann Lieder singen, selbst oft lachen\ner muss nun über gar nichts wachen\ngestorben ist er sowieso\ndoch fragt mein Herz sich wo"), null)
+			call speech(info, character, true, tr("Im alten Wald, am großen Fluss, durch den ich täglich waten muss, dort traf ich traurig wie ich war, die mystisch schöne Geisterschaar"), null)
+			call speech(info, character, true, tr("Sie gaben mir, was ich vermisst, doch war es eine große List, Denn wollten sie nicht meinen Segen, stattdessen nur den eignen Regen, der kommt, wenn man aus einem Rachen, mal etwas hört wie sanftes Lachen"), null)
+			call speech(info, character, true, tr("Und wenns vergeht, ist's auch nicht schlimm, der Geist behält ja seine Stimm', kann Lieder singen, selbst oft lachen, er muss nun über gar nichts wachen, gestorben ist er sowieso, doch fragt mein Herz sich wo"), null)
 			
 			// Erfahrungsbonus (Hört das Lied zum ersten Mal)
 			if (not this.playedSong(character.player())) then

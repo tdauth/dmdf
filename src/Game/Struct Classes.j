@@ -76,23 +76,6 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 
 		private static method onInit takes nothing returns nothing
-			set thistype.m_cleric = 0
-			set thistype.m_clericGrimoireEntries = 0
-			set thistype.m_necromancer = 0
-			set thistype.m_necromancerGrimoireEntries = 0
-			set thistype.m_druid = 0
-			set thistype.m_druidGrimoireEntries = 0
-			set thistype.m_knight = 0
-			set thistype.m_knightGrimoireEntries = 0
-			set thistype.m_dragonSlayer = 0
-			set thistype.m_dragonSlayerGrimoireEntries = 0
-			set thistype.m_ranger = 0
-			set thistype.m_rangerGrimoireEntries = 0
-			set thistype.m_elementalMage = 0
-			set thistype.m_elementalMageGrimoireEntries = 0
-			set thistype.m_wizard = 0
-			set thistype.m_wizardGrimoireEntries = 0
-			
 			set thistype.m_nextPageGrimoireEntry = ClassGrimoireEntry.create('A0AB', 'A0AX')
 			set thistype.m_previousPageGrimoireEntry = ClassGrimoireEntry.create('A0AA', 'A0AY')
 		endmethod
@@ -132,13 +115,21 @@ library StructGameClasses requires Asl, StructGameCharacter
 			endloop
 		endmethod
 		
+		/**
+		 * \note Similar to \ref Grimoire#pages()
+		 */
 		public static method maxGrimoireEntriesPages takes AIntegerVector grimoireEntries, integer spellsPerPage returns integer
 			local integer result = grimoireEntries.size() / spellsPerPage
+			debug call Print("Result: " + I2S(result) + " with size " + I2S(grimoireEntries.size()) + " of entries " + I2S(grimoireEntries) + " and spells per page " + I2S(spellsPerPage))
 			if (ModuloInteger(grimoireEntries.size(), spellsPerPage) > 0) then
+				debug call Print("+1")
 				set result = result + 1
+			debug else
+				debug call Print("Not +1")
 			endif
 			// set at least 1 page
 			if (result == 0) then
+				debug call Print("Result was 0 setting it to 1")
 				set result = 1
 			endif
 			
@@ -146,6 +137,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 		
 		private static method classGrimoireEntries takes AClass class returns AIntegerVector
+			debug call Print("Getting class grimoire entries")
 			if (class == thistype.m_cleric) then
 				return thistype.m_clericGrimoireEntries
 			elseif (class == thistype.m_necromancer) then
@@ -163,6 +155,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			elseif (class == thistype.m_wizard) then
 				return thistype.m_wizardGrimoireEntries
 			endif
+			debug call Print("Invalid class " + I2S(class))
 			return 0
 		endmethod
 		
@@ -178,7 +171,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 		 * \return Returns the maximum number of pages for class \p class using \p spellsPerPage.
 		 */
 		public static method maxClassAbilitiesPages takes AClass class, integer spellsPerPage returns integer
-			return thistype.maxGrimoireEntriesPages(thistype.classGrimoireEntries(class), spellsPerPage)
+			local AIntegerVector grimoireEntries = thistype.classGrimoireEntries(class)
+			debug call Print("Grimoire entries size " + I2S(grimoireEntries.size()))
+			return thistype.maxGrimoireEntriesPages(grimoireEntries, spellsPerPage)
 		endmethod
 		
 		private static method initCleric takes nothing returns nothing
@@ -399,6 +394,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellManaShield.classSelectionAbilityId, SpellManaShield.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellManaStream.classSelectionAbilityId, SpellManaStream.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMultiply.classSelectionAbilityId, SpellMultiply.classSelectionGrimoireAbilityId))
+			debug call Print("Size of wizard grimoire entries " + I2S(thistype.m_wizardGrimoireEntries.size()))
 		endmethod
 
 		public static method init takes nothing returns nothing

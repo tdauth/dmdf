@@ -328,10 +328,13 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_vampireLord0.addItemType(index, 'I04G', 0.60)
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n00Z_0106, 1.0)
 			call thistype.m_vampireLord0.addItemType(index, 'I00C', 1.0)
+			call thistype.m_vampireLord0.addItemType(index, 'I04V', 1.0)
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n00Z_0107, 1.0)
 			call thistype.m_vampireLord0.addItemType(index, 'I00C', 1.0)
+			call thistype.m_vampireLord0.addItemType(index, 'I04V', 1.0)
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n00Z_0108, 1.0)
 			call thistype.m_vampireLord0.addItemType(index, 'I00G', 1.0)
+			call thistype.m_vampireLord0.addItemType(index, 'I04V', 1.0)
 
 			set thistype.m_vampires0 = SpawnPoint.create()
 			// vampires
