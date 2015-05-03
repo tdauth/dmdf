@@ -33,27 +33,29 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 			local integer count
 			local boolean completed = false
 			local boolean new = false
-			if (GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeIdScroll and this.questItem(1).isNotUsed()) then
-				if (this.questItem(0).isNew()) then
-					call this.questItem(0).setState(thistype.stateCompleted)
-				endif
-				call this.questItem(1).setState(thistype.stateNew)
-				call this.displayUpdate()
-			elseif (GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeIdWood) then
-				if (this.questItem(0).isNew()) then
-					call this.questItem(0).setState(thistype.stateCompleted)
-					set completed = true
-				endif
-				if (this.questItem(2).isNotUsed()) then
-					call this.questItem(2).setState(thistype.stateNew)
-					set new = true
-				endif
-				if (new or completed) then
+			if (GetTriggerUnit() == this.character().unit()) then
+				if (GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeIdScroll and this.questItem(1).isNotUsed()) then
+					if (this.questItem(0).isNew()) then
+						call this.questItem(0).setState(thistype.stateCompleted)
+					endif
+					call this.questItem(1).setState(thistype.stateNew)
 					call this.displayUpdate()
-				endif
-				set count = this.character().inventory().totalItemTypeCharges(thistype.itemTypeIdWood)
-				if (count <= thistype.maxWood or new) then
-					call this.displayUpdateMessage(Format(tr("%1% von %1% Holzbrettern.")).i(count).i(thistype.maxWood).result())
+				elseif (GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeIdWood) then
+					if (this.questItem(0).isNew()) then
+						call this.questItem(0).setState(thistype.stateCompleted)
+						set completed = true
+					endif
+					if (this.questItem(2).isNotUsed()) then
+						call this.questItem(2).setState(thistype.stateNew)
+						set new = true
+					endif
+					if (new or completed) then
+						call this.displayUpdate()
+					endif
+					set count = this.character().inventory().totalItemTypeCharges(thistype.itemTypeIdWood)
+					if (count <= thistype.maxWood or new) then
+						call this.displayUpdateMessage(Format(tr("%1% von %1% Holzbrettern.")).i(count).i(thistype.maxWood).result())
+					endif
 				endif
 			endif
 			return false
@@ -81,7 +83,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			set this.m_pickupTrigger = CreateTrigger()
-			call TriggerRegisterUnitEvent(this.m_pickupTrigger, character.unit(), EVENT_UNIT_PICKUP_ITEM)
+			call TriggerRegisterAnyUnitEventBJ(this.m_pickupTrigger, EVENT_PLAYER_UNIT_PICKUP_ITEM)
 			call TriggerAddCondition(this.m_pickupTrigger, Condition(function thistype.triggerConditionPickup))
 			call DmdfHashTable.global().setHandleInteger(this.m_pickupTrigger, "this", this)
 			call DisableTrigger(this.m_pickupTrigger)

@@ -1,11 +1,11 @@
-library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs
+library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQuestWielandsSword
 
 	struct TalkEinar extends ATalk
 
 		implement Talk
 
 		private method startPageAction takes ACharacter character returns nothing
-			call this.showUntil(3, character)
+			call this.showUntil(4, character)
 		endmethod
 
 		// Hallo.
@@ -50,6 +50,27 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs
 			call info.talk().showStartPage(character)
 		endmethod
 
+		// (Auftragsziel 1 des Auftrags „Wielands Schwert“ ist aktiv)
+		private static method infoConditionSomethingSpecial takes AInfo info, ACharacter character returns boolean
+			return QuestWielandsSword.characterQuest(character).questItem(0).isNew()
+		endmethod
+		
+		// Verkaufst du auch eine ganz besondere Waffe?
+		private static method infoActionSomethingSpecial takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Verkaufst du auch eine ganz besondere Waffe?"), null)
+			call speech(info, character, true, tr("Solange du genügend Goldmünzen dabei hast, kann ich dir nur die beste Ware anbieten."), null)
+			call speech(info, character, false, tr("Sicher, Gold spielt bei mir keine Rolle."), null)
+			call speech(info, character, true, tr("(Gierig) Na wenn das so ist. Was hältst du denn von diesem Prachtstück hier? Es ist eines der besten Schwerter, die du im ganzen Königreich finden kannst."), null)
+			call speech(info, character, true, tr("Wieland der Schmied von Talras hat es geschmiedet. Seine Kunst ist unerreicht! Mit diesem Schwert wirst du jede Schlacht gewinnen …"), null)
+			call speech(info, character, false, tr("Wie viel?"), null)
+			call speech(info, character, true, tr("Hm, weil ich dich als guten Menschen einschätze sagen wir … 2000 Goldmünzen."), null)
+			call speech(info, character, false, tr("Lass mich noch mal darüber schlafen."), null)
+			call speech(info, character, true, tr("Klar, lass dir nur Zeit. Das Schwert läuft dir nicht davon. Ich bewahre es für dich auf."), null)
+			// Auftragsziel 1 des Auftrags „Wielands Schwert“ abgeschlossen
+			call QuestWielandsSword.characterQuest(character).questItem(0).complete()
+			call info.talk().showStartPage(character)
+		endmethod
+		
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.einar(), thistype.startPageAction)
 
@@ -57,7 +78,8 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs
 			call this.addInfo(false, false, 0, thistype.infoAction0, tr("Hallo.")) //0
 			call this.addInfo(false, false, thistype.infoCondition1, thistype.infoAction1, tr("Was hast du denn so im Angebot?")) // 1
 			call this.addInfo(false, false, thistype.infoCondition2, thistype.infoAction2, tr("Woher kommst du?")) // 2
-			call this.addExitButton() // 3
+			call this.addInfo(false, false, thistype.infoConditionSomethingSpecial, thistype.infoActionSomethingSpecial, tr("Verkaufst du auch eine ganz besondere Waffe?")) // 3
+			call this.addExitButton() // 4
 
 			return this
 		endmethod

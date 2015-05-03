@@ -24,7 +24,7 @@
 * Schwert- und Schildhand bei sämtlichen Waffen vertauschen, damit Animation für Schild stimmt.
 * Schild Attachmentpunkt ändern, ist sonst in der Hand des Charakters.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
-* Grabenspinne: Passives Spinnengift und Giftstachel.
+* FIXED: Grabenspinne: Passives Spinnengift und Giftstachel.
 * Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt. Selbst nachdem die Bestenliste des Spielers manuell auf null gesetzt wurde, verschwindet sie nicht.
 * Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer. Dialog bei Guntrich aktivieren, nachdem man bei der Mühle war -> neues Quest "Vertreibe die Plünderer".
 * Zauber "Dryade" ersetzen oder sinnvolle Beschwörung mit Heilung und Natur?
@@ -41,18 +41,18 @@
 * Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
 * Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
 * DONE: Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
-* Mehr Orks: http://www.hiveworkshop.com/forums/models-530/orcveteran-259649/?prev=r%3D20%26page%3D3 und alternate Version
+* DONE: Mehr Orks: http://www.hiveworkshop.com/forums/models-530/orcveteran-259649/?prev=r%3D20%26page%3D3 und alternate Version
 * Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/ 
 * FIXED: Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schrein wiederbelebt werden.
 * Eigentlich benötigen die Zauberbuchfähigkeiten 6 verschiedene! Die letzte entspricht der ausgelernten Stufe und gibt nur noch einmal die Werte an. Ansonsten wird immer die der nächsten Stufe angezeigt und nicht der aktuellen!
 * Irgendwer in der Todesgruft kann Tote beschwören. Funktioniert jedoch nicht bei den eigenen Untoten? nur bei den Donnerwesen. Sollte bei allem funktionieren -> mehr Gegner.
-* Beim Video in der Todesgruft Predigt vom Diakon einbauen.
+* DEPRECATED: Beim Video in der Todesgruft Predigt vom Diakon einbauen.
 * Gruft des Todes: Missgeburt braucht Fähigkeiten.
 * Berserkerin benötigt Fähigkeiten.
 * Guntrichs Dialog: Wegelagerer bei der Mühle? mit Geisterstunde verbinden - Neues Quest einbauen "Wegelagerer vertreiben"?
 * Osmans Quest nur aktivierbar machen falls man ihn nicht als Kleriker beleidigt hat. Ansonsten erst mal eine Abfrage einbauen.
 * Am besten Osmans Beleidigung rauslöschen und auch das Quest mit dem Anschwärzen beim Herzog.
-* Dagos Brennt die Bären nieder endlich fixen.
+* DEPRECATED: Dagos Brennt die Bären nieder endlich fixen.
 * Bei Questupdates immer manuelles setState() und dann displayUpdateMessage().
 * Arena: Mehr Gegner, klassenabhängig.
 * Agihard, Arena: "Wer kämpft in deiner Arena?" - "Leute aus dem ganzen Land, Namensauflistung!".
@@ -60,8 +60,8 @@
 * Goldmünzenbeutel: Beutelmodell.
 * Haid muss mehr Gegenstände verkaufen.
 * Ricmans "Und was machst du hier?" direkt auf Startseite anzeigen.
-* Nekromant: Dämonendiener für 5 verschiedene Stufen erzeugen.
-* Nekromant: Dunklen Diener für 5 verschiedene Stufen erzeugen.
+* DONE: Nekromant: Dämonendiener für 5 verschiedene Stufen erzeugen.
+* DONE: Nekromant: Dunklen Diener für 5 verschiedene Stufen erzeugen.
 * DONE: Nekromant: Grundzauber "Todesbote" sollte "Pestkarren" heißen. Erzeugt einen Pestkarren mit den selben Fähigkeiten!
 * DONE: Druide: Heilquelle kleiner machen, länger pro Stufe und andere Einheit?
 * DONE: Druide: Manaquelle kleiner machen, länger pro Stufe und andere Einheit?
@@ -116,20 +116,21 @@
 * Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
 * Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
 * "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Kleriker muss Fernkämpfer sein.
-* Seitenwechsel für Zauberbuch in Klassenauswahl einfügen.
+* DONE: Seitenwechsel für Zauberbuch in Klassenauswahl einfügen.
 * Für alle Klassen alle Zauber in Klassenauswahl anzeigen lassen.
 * ASL-Änderungen für AClass, AClassSelection und ACharacter einbauen.
 * ASL: Mehr API-Kommentare.
 * ASL: AClassSelection - Multiboard-Anzeige optional machen (dynamisch).
 * ASL: AClassSelection - Drehung optional machen (dynamisch).
-* ASL: AClassSelection - Tastensteuerung optional machen (dynamisch).
-* Wegelagerer sollten verschiedene Gegenstände droppen, nicht nur Goldmünzenbeutel.
+* DONE: ASL: AClassSelection - Tastensteuerung optional machen (dynamisch).
+* DONE: Wegelagerer sollten verschiedene Gegenstände droppen, nicht nur Goldmünzenbeutel.
 * AClassSelection: Multiboard ist zu breit.
 * Es gab schon mal den Fall, dass Dago abgebremst wurde und er daraufhin den Weg nicht mehr fand. Vielleicht durch Timer absichern, dass Dago tatsächlich zur Burg geht.
 * Auftrag mit Dago fehlschlagen lassen wenn man mit ihm flieht.
-* Verstecktes Quest einbauen: "Gerissene Schafe" - wenn man die Wölfe am Anfang entdeckt erhält man diesen Auftrag. Dann kann man Manfred oder so davon berichten.
+* DONE (Schafsjunge): Verstecktes Quest einbauen: "Gerissene Schafe" - wenn man die Wölfe am Anfang entdeckt erhält man diesen Auftrag. Dann kann man Manfred oder so davon berichten.
 * Irminas Tagesablauf. Steht den ganzen Tag da und verkauft Sachen.
-* Wielands Schwert fixen und in Dialog von Einar einbauen.
+* DONE: Wielands Schwert fixen und in Dialog von Einar einbauen.
+* DONE: Wielands Schwert: Belohnungsgegenstand einbauen.
 * Beide Quests von Wieland NICHT ablehnbar machen!
 * Engel in AOS braucht Fähigkeiten: 4 - 6
 * Dämon in AOS braucht Fähigkeiten: 4 - 6
@@ -157,7 +158,7 @@
 * Bei allen Videosequenzen sollte nach der Ausblendung des Schwarzfilters bereits die Kamera in Bewegung sein. Sonst wirkt es nicht flüssig.
 * FIXED: Bei allen Videotransmissions nicht einfach abbrechen und Portrait entfernen, sondern warten, so wie in wc3-Kampagne. Einfach TransmissionFromUnitWithNameBJ() verwenden.
 * Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
-* ATalk braucht Attribut name, da Helden mit Eigennamen sonst den falschen Namen haben.
+* DONE: ATalk braucht Attribut name, da Helden mit Eigennamen sonst den falschen Namen haben.
 * FIXED: Arena: Für das Punkten muss nachgesehen werden ob der Owner des Killers eine Einheit in der Arena hat. Denn auch beschworene Einheiten können toten.
 * Button zum Durchschalten der Dungeons (Schreinbutton?).
 * FIXED: Charaktere brauchen unbedingt Hero Glow. Anderenfalls kann man Spieler nicht auseinanderhalten.
@@ -170,7 +171,7 @@
 * Video Wigberht: Siegesanimation nachdem der Orkanführer getötet wurde.
 * FIXED: Video Wigberht: Orks wehren sich auf Schlachtfeld nicht.
 * FIXED: Video Wigberht: Corpses are not dead.
-* Meister der Nekromantie: Tooltips und Icons fixen. Zauberverstärker.
+* FIXED: Meister der Nekromantie: Tooltips und Icons fixen. Zauberverstärker.
 * Rückkopplung beim Zauberer zieht kein Mana ab. Gameplaykonstanten?!
 * FIXED: AInventory: Gegenstand mit 2 Aufladungen über Seitengegenstand auf vorherige Seite. Dort liegt im letzten Fach gleicher Gegenstand also zusammengeführt - eine Aufladung zu wenig.
 * AInventory: Seitengegenstände besser nicht ablegbar machen, order abfangen? Müssen ablegbar sein damit man Gegenstände auf Seiten verschieben kann.
@@ -266,6 +267,8 @@
 * Beleidigung gegenüber Mathilda rausnehmen.
 * Verwandlung ins Schaf muss berücksichtigen ob Nah- oder Fernkampfwaffe.
 * Nah- oder Fernkampfwaffe muss berücksichtigen ob Schaf oder kein Schaf.
+* DONE: Lederpanzer braucht Modell.
+* FIXED: Spiel stürzt beim Skillen von Koloss ab.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

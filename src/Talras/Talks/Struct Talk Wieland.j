@@ -1,4 +1,4 @@
-library StructMapTalksTalkWieland requires Asl, StructGameClasses
+library StructMapTalksTalkWieland requires Asl, StructGameClasses, StructMapQuestsQuestWielandsSword
 
 	struct TalkWieland extends ATalk
 
@@ -59,7 +59,7 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses
 
 		// (Auftrag „Wielands Schwert“ ist aktiv und Auftragsziel 1 ist abgeschlossen)
 		private static method infoCondition4 takes AInfo info, ACharacter character returns boolean
-			return QuestWielandsSword.characterQuest(character).isNew() and QuestTheKingsCrown.characterQuest(character).questItem(0).isCompleted()
+			return QuestWielandsSword.characterQuest(character).isNew() and QuestWielandsSword.characterQuest(character).questItem(0).isCompleted()
 		endmethod
 
 		// Ich habe mit Einar gesprochen.
@@ -71,7 +71,6 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses
 			call speech(info, character, false, tr("Ja."), null)
 			call speech(info, character, true, tr("Dieser Halsabschneider! Nächstes Mal kann er mir 2000 Goldmünzen bezahlen, damit ich ihn nicht umhaue! Danke, das war sehr wichtig für mich. Pass auf, ich gebe dir eine gute Waffe, weil du mir geholfen hast, schon zweimal."), null)
 			call speech(info, character, true, tr("Achte gut darauf, es ist ein sehr gutes Schwert und pass auf dich auf, aber ich glaube, dass wohl eher deine Feinde auf sich aufpassen sollten."), null)
-			// Schwert geben
 			call QuestWielandsSword.characterQuest(character).questItem(1).complete()
 			call info.talk().showStartPage(character)
 		endmethod
