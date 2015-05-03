@@ -74,20 +74,11 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		private method createEnterTrigger takes nothing returns nothing
-			local event triggerEvent
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set this.m_enterTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterEnterRegionSimple(this.m_enterTrigger, this.m_region)
-			set conditionFunction = Condition(function thistype.triggerConditionIsAllied)
-			set triggerCondition = TriggerAddCondition(this.m_enterTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(this.m_enterTrigger, function thistype.triggerActionEnter)
+			call TriggerRegisterEnterRegionSimple(this.m_enterTrigger, this.m_region)
+			call TriggerAddCondition(this.m_enterTrigger, Condition(function thistype.triggerConditionIsAllied))
+			call TriggerAddAction(this.m_enterTrigger, function thistype.triggerActionEnter)
 			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger, "this", this)
-			set triggerEvent = null
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
 		endmethod
 
 		private static method triggerActionLeave takes nothing returns nothing
@@ -100,20 +91,11 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		private method createLeaveTrigger takes nothing returns nothing
-			local event triggerEvent
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set this.m_leaveTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterLeaveRegionSimple(this.m_leaveTrigger, this.m_region)
-			set conditionFunction = Condition(function thistype.triggerConditionIsAllied)
-			set triggerCondition = TriggerAddCondition(this.m_leaveTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(this.m_leaveTrigger, function thistype.triggerActionLeave)
+			call TriggerRegisterLeaveRegionSimple(this.m_leaveTrigger, this.m_region)
+			call TriggerAddCondition(this.m_leaveTrigger, Condition(function thistype.triggerConditionIsAllied))
+			call TriggerAddAction(this.m_leaveTrigger, function thistype.triggerActionLeave)
 			call DmdfHashTable.global().setHandleInteger(this.m_leaveTrigger, "this", this)
-			set triggerEvent = null
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
 		endmethod
 
 		private method destroyEnterTrigger takes nothing returns nothing

@@ -162,6 +162,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			call SpellCowNova.create(character) /// @todo test
 
+			call initCharacterSpells(character)
 			call MapData.createClassItems(class, character.unit())
 			call character.setMovable(false)
 			call character.revival().setTime(MapData.revivalTime)
@@ -235,16 +236,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_UNALLIED)
 				set i = i + 1
 			endloop
-			
-			// add ghost ability but without making transparent
-			//call UnitAddAbility(whichUnit, 'Agho')
-			
-			/*
-			 * Make the character invisible for all other players since all class selections share the same rect.
-			 */
-			if (GetLocalPlayer() != this.player()) then
-				call SetUnitVertexColor(whichUnit, 255, 255, 255, 0)
-			endif
 			
 			/*
 			 * Adds all class grimoire spells of the first grimoire page.

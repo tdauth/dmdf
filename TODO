@@ -253,6 +253,19 @@
 * FIXED: Bärgengestalt hat falsches Tooltip.
 * Bärengestalt. Lebensbug. Am besten auch keine Lebensbonusfähigkeit sondern Lebensregeneration.
 * FIXED: Rothirsch und Grabenspinne stärker machen.
+* Inventarfähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
+* Grimoirefähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
+* Inventar- und Grimoirefähigkeiten bei Verwandlung falls gefordert explizit entfernen, anstatt hinzuzufügen.
+* Schafsjunge vielleicht Hirtenjunge nennen?
+* Schafsjunge Satz "Was verkaufst du denn?".
+* Schafsjunge soll Wolle usw. verkaufen.
+* Wolle und Questbelohnung einbauen.
+* 2 neue Quests von Schafsjungen testen.
+* Schafsjunge: "Kannst du mir sagen, wo ich die Rudelführer finde?".
+* FIXED: 2 neue Quests: displayUpdateMessage() wenn Ziel erfolgreich war.
+* Beleidigung gegenüber Mathilda rausnehmen.
+* Verwandlung ins Schaf muss berücksichtigen ob Nah- oder Fernkampfwaffe.
+* Nah- oder Fernkampfwaffe muss berücksichtigen ob Schaf oder kein Schaf.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
@@ -260,7 +273,7 @@ Test mit zwei menschlichen Spielern:
 * Pfeiltastensymbole Klassenauswahl ändern.
 * FIXED: Klassenauswahl mit Dialog bestätigen.
 * Tastenkürzel in Klassenauswahl deaktivieren.
-* Immer noch beide Klassen sichtbar.
+* FIXED: Immer noch beide Klassen sichtbar.
 * DONE: Klassenzauber reinmachen.
 * FIXED: Schwierigkeitsgradmeldung viel zu schnell. Tipp am Anfang: Gold und Erfahrung werden gleichmäßig verteilt, egal wo sich die Spieler befinden.
 * DONE: Zurückbutton im Zauberbuch, wenn man einen Zauber aktiviert.
@@ -315,7 +328,7 @@ Test mit zwei menschlichen Spielern:
 * AOS: Charaktere werden nicht wiederbelebt. Kein Timerdialog gar nichts. Gestorben in Verwandlung.
 * Gegner viel viel stärker machen.
 * DONE: Gegner viel zu schwach: Am besten keinen Attributbonus pro Stufe, stattdessen Handycap für Neutral Feindlich.
-* Lothar: Wie wärs mal mit Blumen oder so sollte Quest nicht abbrechen.
+* FIXED: Lothar: Wie wärs mal mit Blumen oder so sollte Quest nicht abbrechen.
 * Creeps brauchen mehr negative Buffs. Die negativen Buffs können von anderen Zaubern genutzt und blockiert werden. Hexer, Kornfresser, Knochendrachen.
 * DONE: Waldfurien sind so schwach - sollen Riesen beschwören, Riesen stammen von Waldfurien - wtf effekt. könnten auch Felle droppen.
 * Waldfurienriesen sollen Felle droppen.

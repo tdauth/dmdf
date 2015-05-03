@@ -4,12 +4,19 @@ library StructMapSpellsSpellRideSheep requires Asl, StructGameClasses, StructSpe
 	struct SpellRideSheep extends SpellMetamorphosis
 	
 		public stub method onMorph takes nothing returns nothing
+			/*
+			 * Make sure other animation tags are removed before.
+			 */
+			call AddUnitAnimationProperties(this.character().unit(), RangeItemType.animationProperties, false)
+			call AddUnitAnimationProperties(this.character().unit(), DefenceItemType.animationProperties, false)
 			/**
 			 * This tag adds the sheep.
 			 * Actually it is already set for the unit but somehow is removed on passive hero transformation.
 			 */
-			//call AddUnitAnimationProperties(this.character().unit(), "Upgrade", true)
+			call AddUnitAnimationProperties(this.character().unit(), "Upgrade", true)
 			//debug call Print("After adding animation property to unit " + GetUnitName(this.character().unit()))
+			// This line suffices as a "refresh" to show the new animation name
+			call SetUnitAnimation(this.character().unit(), "stand")
 		endmethod
 		
 		public stub method onRestore takes nothing returns nothing

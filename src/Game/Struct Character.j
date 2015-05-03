@@ -189,6 +189,9 @@ endif
 			return this.m_isMorphed
 		endmethod
 		
+		/**
+		 * Usually on passive hero transformation the grimoire abilities get lost, so they must be readded.
+		 */
 		public method updateGrimoireAfterPassiveTransformation takes nothing returns nothing
 			/*
 			 * Now the spell levels have to be readded and the grimoire needs to be updated since all abilities are gone.
@@ -196,24 +199,6 @@ endif
 			call this.restoreRealSpellLevels()
 			call this.clearRealSpellLevels()
 			call this.grimoire().updateUi.evaluate()
-		endmethod
-		
-		public method updateInventoryAfterPassiveTransformation takes nothing returns nothing
-			local integer i
-			/*
-			 * The equipment abilities are not permanent and are being removed if the rucksack is open when the item is equipped.
-			 * Therefore they have to be readded manually.
-			 */
-			if (this.inventory().rucksackIsEnabled()) then
-				set i = 0
-				loop
-					exitwhen (i == AInventory.maxEquipmentTypes)
-					if (this.inventory().equipmentItemData(i) != 0 and  AItemType.itemTypeOfItemTypeId(this.inventory().equipmentItemData(i).itemTypeId()) != 0) then
-						call AItemType.itemTypeOfItemTypeId(this.inventory().equipmentItemData(i).itemTypeId()).addPermanentAbilities(this.unit())
-					endif
-					set i = i + 1
-				endloop
-			endif
 		endmethod
 
 		/**
@@ -231,10 +216,6 @@ endif
 				debug call Print("Enabling inventory again")
 				call this.inventory().setEnableAgain(true)
 				call this.inventory().enable()
-			else
-				debug call Print("Before updating inventory!")
-				call this.updateInventoryAfterPassiveTransformation()
-				debug call Print("After updating inventory!")
 			endif
 			
 			call this.updateGrimoireAfterPassiveTransformation()
@@ -261,7 +242,7 @@ endif
 			if (disableInventory) then
 				call this.inventory().setEnableAgain(false)
 				debug call Print("Disabling inventory")
-				// Should remove but store all items.
+				// Should remove but store all items and their permanently added abilities if the rucksack is open!
 				call this.inventory().disable()
 				debug call Print("After disabling inventory")
 			endif

@@ -113,6 +113,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 					 */
 					call UnitAddAbility(this.character().unit(), this.morphAbilityId())
 					call UnitRemoveAbility(this.character().unit(), this.morphAbilityId())
+					
 					set this.m_isMorphed = true
 					
 					// add unmorph spell
@@ -126,14 +127,6 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 					if (not this.disableGrimoire()) then
 						call this.character().updateGrimoireAfterPassiveTransformation()
 					endif
-					
-					/**
-					 * Equipment needs to be shown.
-					 */
-					if (not this.disableInventory()) then
-						call this.character().updateInventoryAfterPassiveTransformation()
-					endif
-			
 			
 					// morph spells are expected to morph immediately
 					call this.onMorph.evaluate()

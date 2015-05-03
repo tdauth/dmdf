@@ -222,7 +222,8 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 			// Charakter erhält Erfahrungsbonus aufgrund seiner weisen Art.
 			call Character(character).xpBonus(50, tr("Weisheitsbonus.
 			"))
-			call info.talk().showStartPage(character)
+			// Achtung: Hier wird wieder die Seite mit „In Ordnung“ angezeigt. Diese Auswahl verhindert nicht, dass der Auftrag angenommen werden kann.
+			call info.talk().showRange(17, 19, character)
 		endmethod
 
 		// Sie hat sich sehr gefreut.

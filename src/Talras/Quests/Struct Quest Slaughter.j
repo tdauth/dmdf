@@ -56,7 +56,8 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateEventCompleted takes AQuestItem questItem, trigger whichTrigger returns nothing
-			call TriggerRegisterPlayerUnitEvent(whichTrigger, Player(PLAYER_NEUTRAL_AGGRESSIVE), EVENT_PLAYER_UNIT_DEATH, null)
+			// the units owner might be different due to abilities
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean

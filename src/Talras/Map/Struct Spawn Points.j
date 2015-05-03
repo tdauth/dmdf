@@ -640,6 +640,10 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_orcs0.destroy()
 			set thistype.m_orcs0 = 0
 		endmethod
+		
+		public static method banditsAtGuntrichsMill takes nothing returns SpawnPoint
+			return thistype.m_banditsAtGuntrichsMill
+		endmethod
 	endstruct
 
 endlibrary

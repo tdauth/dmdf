@@ -34,6 +34,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	 * \note Note that orbs do not stack so it can only be used if there is only one weapon.
 	 */
 	struct RangeItemType extends ItemType
+		public static constant string animationProperties = "Throw 7"
 	
 		public static method createSimpleRange takes integer itemType, integer equipmentType returns thistype
 			return thistype.allocate(itemType, equipmentType, 0, 0, 0, 0, 0)
@@ -46,6 +47,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			local integer i
 			debug call Print("Range item attach")
 			
+			// TODO unmorph before if it is morphed already
 			if (character != 0) then
 				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityId(character.class())) + " to unit " + GetUnitName(whichUnit))
 				/**
@@ -63,25 +65,12 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call character.restoreRealSpellLevels()
 				call character.clearRealSpellLevels()
 				call character.grimoire().updateUi.evaluate()
-				/*
-				 * The equipment abilities are not permanent and are being removed if the rucksack is open when the item is equipped.
-				 * Therefore they have to be readded manually.
-				 */
-				if (character.inventory().rucksackIsEnabled()) then
-					set i = 0
-					loop
-						exitwhen (i == AInventory.maxEquipmentTypes)
-						if (character.inventory().equipmentItemData(i) != 0 and  AItemType.itemTypeOfItemTypeId(character.inventory().equipmentItemData(i).itemTypeId()) != 0) then
-							call AItemType.itemTypeOfItemTypeId(character.inventory().equipmentItemData(i).itemTypeId()).addPermanentAbilities(character.unit())
-						endif
-						set i = i + 1
-					endloop
-				endif
 				
 				/**
 				 * The throw tag should lead the character to do range fighting animations instead of melee ones.
 				 */
-				call AddUnitAnimationProperties(whichUnit, "Throw 7", true)
+				 // TODO the index is not recognized
+				call AddUnitAnimationProperties(whichUnit, thistype.animationProperties, true)
 			endif
 		endmethod
 		
@@ -98,7 +87,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call character.clearRealSpellLevels()
 				call character.grimoire().updateUi.evaluate()
 				
-				call AddUnitAnimationProperties(whichUnit, "Throw 7", false)
+				// TODO the index is not recognized
+				call AddUnitAnimationProperties(whichUnit, thistype.animationProperties, false)
 			endif
 		endmethod
 
@@ -108,6 +98,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	 * \brief Item type for defense items like bucklers.
 	 */
 	struct DefenceItemType extends ItemType
+		public static constant string animationProperties = "Defend"
 	
 		public static method createSimpleDefence takes integer itemType, integer equipmentType returns thistype
 			return thistype.allocate(itemType, equipmentType, 0, 0, 0, 0, 0)
@@ -115,12 +106,12 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Defend item attach")
-			call AddUnitAnimationProperties(whichUnit, "Defend", true)
+			call AddUnitAnimationProperties(whichUnit, thistype.animationProperties, true)
 		endmethod
 		
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Defend item drop")
-			call AddUnitAnimationProperties(whichUnit, "Defend", false)
+			call AddUnitAnimationProperties(whichUnit, thistype.animationProperties, false)
 		endmethod
 
 	endstruct
@@ -192,6 +183,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static RangeItemType m_longBow
 		private static ItemType m_huntingKnife
 		private static ItemType m_bootsOfSpeed
+		private static ItemType m_quiver
 		// artefacts
 		private static ItemType m_amuletOfForesight
 		private static ItemType m_amuletOfTerror
@@ -417,6 +409,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			set thistype.m_bootsOfSpeed = ItemType.createSimple('I04M', AItemType.equipmentTypeAmulet)
 			call thistype.m_bootsOfSpeed.addAbility('AIms', true)
+			
+			set thistype.m_quiver = ItemType.createSimple('I04W', AItemType.equipmentTypeAmulet)
+			call thistype.m_quiver.addAbility('A160', true)
+			
 
 			// artefacts
 			set thistype.m_amuletOfForesight = ItemType.createSimple('I02J', AItemType.equipmentTypeAmulet)
