@@ -10,28 +10,30 @@ library StructSpellsSpellManaStream requires Asl, StructGameClasses, StructGameS
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 0 /// @todo FIXME
 		private static constant real time = 5.0
-		private static constant real loopDamageStartValue = 100.0
-		private static constant real loopDamageLevelValue = 50.0
-		private static constant real damageStartValue = 200.0
-		private static constant real damageLevelValue = 100.0
+		private static constant real loopDamageStartValue = 10.0
+		private static constant real loopDamageLevelValue = 5.0
+		private static constant real damageStartValue = 100.0
+		private static constant real damageLevelValue = 50.0
 
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local unit target = GetSpellTargetUnit()
-			local ADynamicLightning dynamicLightning = ADynamicLightning.create(null, "XXXX", 0.01, caster, target) /// @todo drain mana lightning
+			local ADynamicLightning dynamicLightning = ADynamicLightning.create(null, "DRAM", 0.01, caster, target)
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
-			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
+			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "chest")
 			local effect areaEffect
 			local real loopDamage = thistype.loopDamageStartValue + this.level() * thistype.loopDamageLevelValue
 			local real damage = thistype.damageStartValue + this.level() * thistype.damageLevelValue
 			local real time = thistype.time
+			call dynamicLightning.setDestroyOnDeath(false) // prevent double free
 			loop
-				exitwhen (ASpell.enemyTargetLoopCondition(target))
+				exitwhen (ASpell.enemyTargetLoopCondition(target) or time <= 0.0 or IsUnitDeadBJ(caster))
 				call UnitDamageTargetBJ(caster, target, loopDamage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
+				call ShowBashTextTagForPlayer(null, GetUnitX(target), GetUnitY(target), R2I(loopDamage))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop
-			if (not ASpell.enemyTargetLoopCondition(target)) then
+			if (not ASpell.enemyTargetLoopCondition(target) and not IsUnitDeadBJ(caster)) then
 				set areaEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_AREA_EFFECT, target, "origin")
 				call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
 				call ShowBashTextTagForPlayer(null, GetUnitX(target), GetUnitY(target), R2I(damage))

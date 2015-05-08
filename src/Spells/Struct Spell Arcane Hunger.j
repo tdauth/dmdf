@@ -64,6 +64,7 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local AGroup targets = this.targets()
+			local ADynamicLightning dynamicLightning
 			local AIntegerVector dynamicLightnings
 			local integer i
 			local unit target
@@ -78,7 +79,9 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 					exitwhen (i == targets.units().size())
 					set target = targets.units().at(i)
 					debug call Print("Arcane Hunger: Target " + GetUnitName(target))
-					call dynamicLightnings.pushBack(ADynamicLightning.create(null, "DRAM", 0.01, caster, target))
+					set dynamicLightning = ADynamicLightning.create(null, "DRAM", 0.01, caster, target)
+					call dynamicLightning.setDestroyOnDeath(false) // prevent double free
+					call dynamicLightnings.pushBack(dynamicLightning)
 					set target = null
 					set i = i + 1
 				endloop

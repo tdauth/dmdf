@@ -19,10 +19,9 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			local real mana
 			local effect spellEffect
 			if (this.level() > 0) then
+				set caster = this.character().unit()
 				set mana = GetUnitState(caster, UNIT_STATE_MAX_MANA) * this.level() * thistype.manaLevelValue
-				debug call Print("Mastery with " + R2S(mana) + " Mana.")
 				if (mana > 0) then
-					set caster = this.character().unit()
 					call SetUnitState(caster, UNIT_STATE_MANA, GetUnitState(caster, UNIT_STATE_MANA) + mana)
 					if (not IsUnitHidden(caster)) then
 						set spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
@@ -30,8 +29,8 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 						call DestroyEffect(spellEffect)
 						set spellEffect = null
 					endif
-					set caster = null
 				endif
+				set caster = null
 			endif
 			set expiredTimer = null
 		endmethod

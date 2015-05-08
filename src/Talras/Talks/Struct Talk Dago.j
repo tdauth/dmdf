@@ -99,10 +99,10 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			return QuestMushroomSearch.characterQuest(character).isNew() and thistype.hasMushrooms(character)
 		endmethod
 
-		// Ich habe hier einen paar Pilz.
+		// Ich habe hier einen Pilz.
 		private static method infoActionIHaveMushrooms takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Ich habe hier einen paar Pilz."), null)
+			call speech(info, character, false, tr("Ich habe hier einen Pilz."), null)
 			if (thistype.mushroomsAreTasty(character)) then
 				// Steinpilz ist essbar
 				if (character.inventory().hasItemType('I01L')) then

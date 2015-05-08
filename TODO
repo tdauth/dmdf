@@ -269,6 +269,30 @@
 * Nah- oder Fernkampfwaffe muss berücksichtigen ob Schaf oder kein Schaf.
 * DONE: Lederpanzer braucht Modell.
 * FIXED: Spiel stürzt beim Skillen von Koloss ab.
+* FIXED (kein Code für Blitz): Manastrom auf Gegner lässt Spiel abstürzen.
+* FIXED: Manastrom double free of ADynamicLightning.
+* FIXED: Manastrom zu viel Schaden.
+* FIXED: Manastrom kostet kein Mana, Abklingzeit.
+* FIXED: Magische Schockwellen kostet keine Mana.
+* FIXED: Magische Schockwellen Abklingzeit.
+* Magische Schockwellen Effekt.
+* Verbannen und Kontrollierter Zeitfluss haben dieselbe ID im Zauberbuch.
+* Verspotten (Ritter) blockiert Schaden auf Gegner?!
+* Björn gibt keine Goldmünzen (real).
+* FIXED: Beherrschung hat keinen Effekt.
+* Erste Gruppe mit Rudelführer respawnt nicht?
+* Lothar: Dialogoptionen sind nach Quest mit Mathilda einfach weg.
+* Markwards Quest: Man kann kein Holz von Kuno besorgen (Dialog).
+* Markwards Quest: Pfeilplatzieung immer an der selben Position möglich.
+* Markwards Quest: Bei 0 Pfeilplatzierungen kein Ende!
+* FIXED: Verbannen Tooltip: Hält 0 Sekunden.
+* FIXED: Manastrom: Zauberbuchtooltip mit Stufenwerten.
+* FIXED: Magische Schockwellen: Zauberbuchtooltip mit Stufenwerten.
+* Manaschild: Zauberbuchtooltip mit Stufenwerten.
+* FIXED: Magische Schockwellen: Spielabsturz wenn Einheit angegriffen wird.
+* FIXED: Arkaner Hunger: Manakosten.
+* FIXED: Arkaner Hunger: Abklingzeit.
+* FIXED: Arkaner Hunger: Double Free ADynamicLightning.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
