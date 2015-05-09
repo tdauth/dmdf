@@ -315,7 +315,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_halberd.addAbility('A07Q', true)
 
 			set thistype.m_shortsword = ItemType.createSimple('I01Y', AItemType.equipmentTypePrimaryWeapon)
-			call thistype.m_shortsword.addAbility('A0B8', true) // old, not orb A07H
+			call thistype.m_shortsword.addAbility('A07H', true)
 
 			set thistype.m_longsword = ItemType.create('I012', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_longsword.addAbility('A04M', true)
@@ -480,7 +480,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_vampireNecklace.addAbility('A03X', true)
 			
 			set thistype.m_hauntedStaff = RangeItemType.create('I03V', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
-			call thistype.m_hauntedStaff.addAbility('A0QZ', true)
+			call thistype.m_hauntedStaff.addAbility('A17B', true)
 			
 			// Sisgard's reward
 			set thistype.m_necromancerHelmet = ItemType.createSimple('I044', ItemType.equipmentTypeHeaddress)

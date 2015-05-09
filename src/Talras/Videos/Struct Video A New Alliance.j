@@ -1,4 +1,4 @@
-library StructMapVideosVideoANewAlliance requires Asl, StructGameGame
+library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMapQuestsQuestANewAlliance
 
 	struct VideoANewAlliance extends AVideo
 		private integer m_actorHeimrich
@@ -12,35 +12,35 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame
 			call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_0, true, 0.0)
 
-			set this.m_actorHeimrich = AVideo.saveUnitActor(gg_unit_n013_0116)
-			call SetUnitPositionRect(AVideo.unitActor(this.m_actorHeimrich), gg_rct_video_a_new_alliance_heimrichs_position)
+			set this.m_actorHeimrich = thistype.saveUnitActor(gg_unit_n013_0116)
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorHeimrich), gg_rct_video_a_new_alliance_heimrichs_position)
 
-			set this.m_actorMarkward = AVideo.saveUnitActor(gg_unit_n014_0117)
-			call SetUnitPositionRect(AVideo.unitActor(this.m_actorMarkward), gg_rct_video_a_new_alliance_markwards_position)
+			set this.m_actorMarkward = thistype.saveUnitActor(gg_unit_n014_0117)
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorMarkward), gg_rct_video_a_new_alliance_markwards_position)
 
-			call SetUnitPositionRect(AVideo.actor(), gg_rct_video_a_new_alliance_actors_position)
+			call SetUnitPositionRect(thistype.actor(), gg_rct_video_a_new_alliance_actors_position)
 
-			call SetUnitFacingToFaceUnit(AVideo.unitActor(this.m_actorHeimrich), AVideo.actor())
-			call SetUnitFacingToFaceUnit(AVideo.unitActor(this.m_actorMarkward), AVideo.actor())
-			call SetUnitFacingToFaceUnit(AVideo.actor(), AVideo.unitActor(this.m_actorHeimrich))
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorHeimrich), thistype.actor())
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorMarkward), thistype.actor())
+			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorHeimrich))
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(AVideo.unitActor(this.m_actorHeimrich), tr("Was haben sie zu mir berichten?"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Was haben sie zu mir berichten?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_1, true, 0.0)
-			call TransmissionFromUnit(AVideo.actor(), tr("Die Nordmänner sind bereit sich mit Euch zu verbünden. Sie werden Euch beim Kampf gegen die Dunkelelfen und Orks unterstützen￼."), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Die Nordmänner sind bereit sich mit Euch zu verbünden. Sie werden Euch beim Kampf gegen die Dunkelelfen und Orks unterstützen￼."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_0, true, 0.0)
-			call TransmissionFromUnit(AVideo.unitActor(this.m_actorHeimrich), tr("Dies freut mich zu hören. Jedoch brauche ich noch mehr Verbündete, um eine echte Chance gegen unseren Feind zu haben. Markward wird ihnen ihren nächsten Auftrag erteilen und sie für ih￼r￼e Dienste entlohnen."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Dies freut mich zu hören. Jedoch brauche ich noch mehr Verbündete, um eine echte Chance gegen unseren Feind zu haben. Markward wird ihnen ihren nächsten Auftrag erteilen und sie für ih￼r￼e Dienste entlohnen."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -48,44 +48,56 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_2, true, 0.0)
 
-			call IssueRectOrder(AVideo.unitActor(this.m_actorHeimrich), "move", gg_rct_video_a_new_alliance_heimrichs_new_position)
+			call IssueRectOrder(thistype.unitActor(this.m_actorHeimrich), "move", gg_rct_video_a_new_alliance_heimrichs_new_position)
 
 			if (wait(2.0)) then
 				return
 			endif
 
-			call SetUnitLookAt(AVideo.actor(), "bone_head", AVideo.unitActor(this.m_actorMarkward), 0.0, 0.0, 90.0)
-			call IssueRectOrder(AVideo.unitActor(this.m_actorMarkward), "move", gg_rct_video_a_new_alliance_markwards_new_position)
+			call SetUnitLookAt(thistype.actor(), "bone_head", thistype.unitActor(this.m_actorMarkward), 0.0, 0.0, 90.0)
+			call IssueRectOrder(thistype.unitActor(this.m_actorMarkward), "move", gg_rct_video_a_new_alliance_markwards_new_position)
 
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_a_new_alliance_markwards_new_position, AVideo.unitActor(this.m_actorMarkward)))
+				exitwhen (RectContainsUnit(gg_rct_video_a_new_alliance_markwards_new_position, thistype.unitActor(this.m_actorMarkward)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
 
-			call SetUnitFacingToFaceUnit(AVideo.unitActor(this.m_actorMarkward), AVideo.actor())
-			call SetUnitFacingToFaceUnit(AVideo.actor(), AVideo.unitActor(this.m_actorMarkward))
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorMarkward), thistype.actor())
+			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorMarkward))
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_0, true, 0.0)
-			call TransmissionFromUnit(AVideo.unitActor(this.m_actorMarkward), tr("Das war gute Arbeit. Mir ist von dem Kampf zu Ohren gekommen. Mit den Nordmännern haben wir ein paar starke Verbündete gewonnen."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Das war gute Arbeit. Mir ist von dem Kampf zu Ohren gekommen. Mit den Nordmännern haben wir ein paar starke Verbündete gewonnen."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(AVideo.unitActor(this.m_actorMarkward), tr("Leider reicht das dem Herzog nicht aus. Er möchte absolut sicher gehen und deshalb benötigt er noch mehr Unterstützung. Flussaufwärts befindet sich eine Stadt namens Holzbruck. Sie ist eine reiche, unabhängige Handelsstadt, gut befestigt und mit einer Vielzahl von Kriegsleuten."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Leider reicht das dem Herzog nicht aus. Er möchte absolut sicher gehen und deshalb benötigt er noch mehr Unterstützung. Uns ist von einer Hochelfin zu Ohren gekommen, die durch diese Ländereien zieht. Durch sie könnten wir Kontakte zu den Hochelfen knüpfen"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(AVideo.unitActor(this.m_actorMarkward), tr("Deren Stadtrat kö￼n￼nte uns weitere Unterstützung schicken. Nun könntet ihr euch natürlich einfach auf den W￼eg machen, jedoch ist dieser sehr lang und beschwerl￼ich, da es außer dem Fluss keine direkte Verbi￼ndung nach Holzbruck gibt."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Mir scheint es so als würden unsere eigenen Leute uns in diesem Kampf gar im Stich lassen. Der König hat bis jetzt keinerlei Unterstützung gesandt."), null)
+
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Doch bald werden die Orks und Dunkelelfen mit einem größeren Heer die Grenze überschreiten. Dieses kleine Gefecht war erst der Anfang."), null)
+
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir erhielten Berichte von Überfällen an der Grenze und sogar von größeren Truppenbewegungen. Uns bleibt nun keine Zeit mehr und den König oder den restlichen Adel vom Ernst der Lage zu überzeugen scheint zwecklos."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(AVideo.unitActor(this.m_actorMarkward), tr("Dabei kommt euch das Langboot der Nordmänner sehr gelegen, allerdings müsstet ihr sie natürlich auch davon überzeugen￼, euch nach Holzbruck zu bringen. Wie ihr das anstellt oder ob ihr doch lieber den Fußweg nehmt, soll euch überlassen sein. Hier ist euer Lohn für eure bisherigen Dienste. Abermals wünsche ich euch viel Glück!"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Findet die Hochelfin und bringt sie um jeden Preis hier her. Hier habt ihr noch den Lohn für eure treuen Dienste. Viel Glück!"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -96,8 +108,9 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame
 
 		public stub method onStopAction takes nothing returns nothing
 			call Game.resetVideoSettings()
-			call QuestTheWayToHolzbruck.quest().enable()
-			call Character.displayHintToAll(tr("Die aktuelle Version von “Die Macht des Feuers” endet hier. Sobald die Reise nach Holzbruck angetreten wird, ist das Spiel zu Ende."))
+			call QuestANewAlliance.quest().enable()
+			//call QuestTheWayToHolzbruck.quest().enable()
+			//call Character.displayHintToAll(tr("Die aktuelle Version von “Die Macht des Feuers” endet hier. Sobald die Reise nach Holzbruck angetreten wird, ist das Spiel zu Ende."))
 			/// @todo Play sound with spoken message text.
 		endmethod
 

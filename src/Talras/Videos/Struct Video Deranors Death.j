@@ -91,6 +91,10 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 
 		public stub method onStopAction takes nothing returns nothing
 			call Game.resetVideoSettings()
+			// move her to Talras
+			call SetUnitX(Npcs.dragonSlayer(), GetRectCenterX(gg_rct_quest_a_new_alliance))
+			call SetUnitY(Npcs.dragonSlayer(), GetRectCenterY(gg_rct_quest_a_new_alliance))
+			call SetUnitFacing(Npcs.dragonSlayer(), 265.36)
 		endmethod
 
 		private static method create takes nothing returns thistype

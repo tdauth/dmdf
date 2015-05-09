@@ -70,7 +70,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 		// Ist das dein Haus?
 		private static method infoActionYourHouse takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Ist das dein Haus?"), null)
-			call speech(info, character, true, tr("Ja, ich habe es für einen guten Preis erworben. Ich lies mich hier nieder nachdem mein Meister vor einigen Jahren mit mir nach Talras ging und bald darauf starb."), null)
+			call speech(info, character, true, tr("Ja, ich habe es für einen guten Preis erworben. Ich ließ mich hier nieder nachdem mein Meister vor einigen Jahren mit mir nach Talras ging und bald darauf starb."), null)
 			call speech(info, character, true, tr("Er war schon sehr alt und diese Gegend hier war seine Heimat. Er erinnerte sich sogar an die Zeit als hier noch keine Burg stand."), null)
 			call info.talk().showStartPage(character)
 		endmethod

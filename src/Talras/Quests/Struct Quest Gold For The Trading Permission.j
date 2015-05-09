@@ -5,7 +5,7 @@ library StructMapQuestsQuestGoldForTheTradingPermission requires Asl
 		implement CharacterQuest
 
 		public method improveReward takes nothing returns nothing
-			call this.setReward(thistype.rewardExperience, 500)
+			call this.setReward(thistype.rewardExperience, 50)
 		endmethod
 
 		public stub method enable takes nothing returns boolean

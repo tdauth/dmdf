@@ -107,7 +107,7 @@
 * Creep-Lager-Icons funktionieren im Editor aber nicht im Spiel.
 * "Märtyrer" verbraucht Mana auch wenn der Zauber gestoppt wird. Vermutlich muss der Test in die Condition ausgelagert werden.
 * Klassenzauber auf Basis von "Mana und Leben auffüllen"?
-* "Dämonendiener" es können mehrere gleichzeitig beschworen werden.
+* FIXED: "Dämonendiener" es können mehrere gleichzeitig beschworen werden.
 * "Dämonendiener" Stufe 3 eindeutig zu stark.
 * Vampirgebietergruppe muss viel mehr droppen. Artefakte, Tränke, am besten Runen!
 * "Genesung" schadet dem Kleriker selbst. Sollte heilen aber ohne dem Kleriker selbst Leben abzuziehen.
@@ -117,7 +117,7 @@
 * Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
 * "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Kleriker muss Fernkämpfer sein.
 * DONE: Seitenwechsel für Zauberbuch in Klassenauswahl einfügen.
-* Für alle Klassen alle Zauber in Klassenauswahl anzeigen lassen.
+* DONE: Für alle Klassen alle Zauber in Klassenauswahl anzeigen lassen.
 * ASL-Änderungen für AClass, AClassSelection und ACharacter einbauen.
 * ASL: Mehr API-Kommentare.
 * ASL: AClassSelection - Multiboard-Anzeige optional machen (dynamisch).
@@ -139,10 +139,8 @@
 * AOS-Hauptgebäude einbauen und Auftrag abschließbar machen.
 * AOS: Spieler benachrichtigen (auf ganzer Karte) wenn ein AOS-Gebäude oder Ähnliches angegriffen wird.
 * AOS: Der Sieg einer Partei sollte nicht die gesamte Story verändern jedoch Einfluss auf den Auftrag "Geisterstunde" nehmen.
-* "Verzauberter Stab" ermöglicht mit Feuerkugelfähigkeit Flächenschaden!
-* Kurzschwert ermöglicht Fehlschlag hat Verderbniskugel!
-* Abfahrt nach Holzbruck macht keinen Sinn. Nordmänner wollen sich durch die Reihen der Orks schlagen, Herzog will die Nordmänner als Verbündete.
-* Eventuell anderes Ende - der König kommt.
+* FIXED: "Verzauberter Stab" ermöglicht mit Feuerkugelfähigkeit Flächenschaden!
+* FIXED: Kurzschwert ermöglicht Fehlschlag hat Verderbniskugel!
 * Ricmans Speerwurf macht keinen Schaden. Gameplaykonstanten?
 * FIXED: "Blenden" länger machen dafür Abklingzeit höher.
 * Bei letzter Schlacht sollten Gegner Items droppen, auch Runen etc. und vor allem der Orkanführer für jeden Charakter ein Artefakt.
@@ -294,8 +292,22 @@
 * FIXED: Arkaner Hunger: Abklingzeit.
 * FIXED: Arkaner Hunger: Double Free ADynamicLightning.
 * FIXED: Absorbation und arkane Zeit haben dieselbe Zauber-ID im Zauberbuch.
-* Arkane List: Icon fehlt wenn autospell aktiv ist.
+* FIXED: Arkane List: Icon fehlt wenn autospell aktiv ist.
 * Manastrom abbrechen wenn Ziel außer Reichweite ist.
+* Schafverwandlung klappt nicht direkt wenn man Fernkampfwaffe trägt. Was passiert bei AOS-Verwandlung falls man Fernkampfwaffe trägt??
+* Irmina sagt die Zutaten wären selten, sind nun aber sehr einfach auffindbare Gegenstände.
+* Arkane Zeit: Prüfen ob überhaupt Zauberverstärker auf Ziel sind ansonsten abbrechen.
+* Arkane Zeit Tooltip fixen.
+* Abfahrt nach Holzbruck macht keinen Sinn. Nordmänner wollen sich durch die Reihen der Orks schlagen, Herzog will die Nordmänner als Verbündete.
+* Eventuell anderes Ende - der König kommt.
+* Auftrag "Krieg" einbauen.
+* Video "Heuert die Hochelfin an" einbauen.
+* Neuen Auftrag nach "Krieg" - "Aufmarsch der Dunkelelfen".
+* Danach kommt dann "Der Weg nach Holzbruck".
+* Die Nordmänner: Bei Video "Der Anführer" Sammelgebiet für Charaktere verwenden.
+* Orks und Dunkelelfen geben keine XP.
+* Berichtet dem Herzog von eurem Erfolg in Sammelgebiet.
+* Video Wigberht: Falls Orks nicht getötet wurden (die von Wigberht getötet werden) werden diese nicht nach dem Video entfernt.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
@@ -312,23 +324,23 @@ Test mit zwei menschlichen Spielern:
 * Trainierst du nachts, kommt schon abends 19 Uhr
 * Felsvorsprung entfernen
 * Inventarfehler: Spieler 2 macht Inventar auf und zu und Gegenstände liegen auf einmal am Boden! Nur wenn das Inventar vorher voll war.
-* NPC-Tipp-Gebiet von Dago kleiner machen als Gebiet mit Schreintipp. Tipp sollte anzeigen: NPCs mit Ausrufezeichen können angesprochen werden.
+* FIXED: NPC-Tipp-Gebiet von Dago kleiner machen als Gebiet mit Schreintipp. Tipp sollte anzeigen: NPCs mit Ausrufezeichen können angesprochen werden.
 * FIXED: Langboot sollte mehr Leben haben!
 * Langboot Schattenradius erhöhen poppt sonst auf.
 * FIXED: Fehlermeldung bei Rolle des Totenreichs und Teleport geht trotzdem.
-* Händler Haid's Quest gibt zu viel Erfahrung.
+* FIXED: Händler Haid's Quest gibt zu viel Erfahrung.
 * FIXED: Gewinner der Arena: Spielername.
-* Sisgard: lies mich hier nieder.
+* FIXED: Sisgard: lies mich hier nieder.
 * FIXED: Helden: Eigennamen anzeigen in ATalk.
 * Irmina: Agiharddialog nicht so lächerlich und ablehnbar.
-* Arenagegner viel zu schwach!!!
-* Irmina: Zutatenliste geben und daraufhinweisen! Dann hat man sie überall dabei.
+* FIXED: Arenagegner viel zu schwach!!!
+* FIXED: Irmina: Zutatenliste geben und daraufhinweisen! Dann hat man sie überall dabei.
 * Agihard: Arenachampion Belohnung Gegenstände??? Nach jedem Kampf Gold!
 * FIXED: Wieland sagt knn statt kann.
 * FIXED: Irmina: ein wenig klein.
 * Wachendialog fertig machen.
 * Gesegnetes Schwert zwei mal oder Inventarfehler.
-* Markwards gesegnetes Schwert nicht verkaufbar.
+* FIXED: Markwards gesegnetes Schwert nicht verkaufbar.
 * Trotz Bogen kann man Schild tragen, Zweihandwaffen.
 * DONE: Spruchrolle einbauen, die Gegenstände für Mana herteleportiert, die einem gehören.
 * Vorräte anderes Icon.

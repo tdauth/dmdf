@@ -1,18 +1,17 @@
 library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMapQuestsQuestTheBraveArmourerOfTalras, StructMapQuestsQuestTheWayToHolzbruck
 
 	struct TalkIrmina extends ATalk
-		/// @todo Set ids
 		private static constant real potionTime = 30.0
 		private static constant integer strengthPotion = 'I01T'
 		private static constant integer dexterityPotion = 'I01U'
 		private static constant integer purificationPotion = 'I01V'
-		private timer array m_potionTimer[12] // MapData.maxPlayers
+		private timer array m_potionTimer[6] // MapData.maxPlayers
 
 		implement Talk
 
 		private method showPotionInfo takes Character character returns nothing
 			if (TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]) > 0.0) then
-				call character.displayHint(Format(tr("Irminas %1% benötigt noch %2% bis zur Fertigstellung.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion"))).time(R2I(TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]))).result())
+				call character.displayHint(Format(tr("Irminas %1% benötigt noch %2% Sekunden bis zur Fertigstellung.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion"))).time(R2I(TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]))).result())
 			else
 				call character.displayItemAcquired(GetItemTypeIdName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion")), Format(tr("Irminas %1% wurde fertiggestellt.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion"))).result())
 			endif
@@ -52,26 +51,37 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		private static method potionRessources takes integer potion returns AIntegerVector
 			local AIntegerVector result = AIntegerVector.create()
 			if (potion == thistype.strengthPotion) then
+				// Fliegenpilz
+				call result.pushBack('I03Y')
+				// Fleischkeule
+				call result.pushBack('I017')
 				return result
 			elseif (potion == thistype.dexterityPotion) then
+				// Steinpilz
+				call result.pushBack('I01L')
+				// Apfel
+				call result.pushBack('I03O')
 				return result
 			elseif (potion == thistype.purificationPotion) then
+				// Reinigungstrank
+				call result.pushBack('I041')
 				return result
 			endif
 			return result
 		endmethod
 
-		/// @todo Set ressources
-		private method hasPotionRessources takes ACharacter character, integer potion returns boolean
+		private method hasPotionRessources takes Character character, integer potion returns boolean
 			local AIntegerVector itemTypes = thistype.potionRessources(potion)
 			local boolean result = true
-			if (potion == thistype.strengthPotion) then
-				//
-			elseif (potion == thistype.dexterityPotion) then
-				//
-			elseif (potion == thistype.purificationPotion) then
-				//
-			endif
+			local integer i = 0
+			loop
+				exitwhen (i == itemTypes.size())
+				if (not character.inventory().hasItemType(itemTypes[i])) then
+					set result = false
+					exitwhen (true)
+				endif
+				set i = i + 1
+			endloop
 			call itemTypes.destroy()
 			return result
 		endmethod
@@ -87,7 +97,6 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			return 0
 		endmethod
 
-		/// @todo Set prices
 		private method hasPotionMoney takes Character character, integer potion returns boolean
 			return GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) >= thistype.potionMoney(potion)
 		endmethod
@@ -134,18 +143,16 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		endmethod
 
 		// Kannst du mir auch was Spezielles brauen oder mischen?
-		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction2 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Kannst du mir auch was Spezielles brauen oder mischen?"), null)
 			call speech(info, character, true, tr("Natürlich, aber das kostet dich auch ein wenig und du musst mir die Zutaten beschaffen."), null)
 			call speech(info, character, true, tr("Ich muss hier nämlich meinen Laden führen und ich habe keine Lust mich noch um einen Bauern oder Jäger zu kümmern, der das für mich macht."), null)
 			call speech(info, character, true, tr("Am besten gebe ich dir Abschriften meiner Zutaten- und Preislisten für besondere Tränke. Manche Zutaten sind sehr selten, was ja auch erklärt, warum ich sie nicht in meinem Sortiment habe."), null)
 			/**
-			TODO
-			Charakter erhält:
-			Stärketrank-Zutaten
-			Geschicklichkeitstrank-Zutaten
-			Reinigungstrank-Zutaten
-			*/
+			 * Charakter erhält Zutatenliste.
+			 */
+			call character.giveQuestItem('I050')
+			call character.displayItemAcquired(GetObjectName('I050'), tr("Listet alle Zutaten für Tränke von Irmina auf."))
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -190,11 +197,13 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		endmethod
 
 		// Ich gehe nach Holzbruck.
-		private static method infoAction5 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction5 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Ich gehe nach Holzbruck."), null)
 			call speech(info, character, true, tr("Tatsächlich? Nun, ich wünsche dir viel Glück und bitte sieh nach meinem Mann! Sein Name ist Lambert. Hier, nimm noch diese Tränke! Ich hoffe, sie werden dir von Nutzen sein."), null)
 			// Charakter erhält Heiltränke
-			/// @todo GIVE HIM
+			call character.giveItem('I00B')
+			call character.giveItem('I00B')
+			call character.giveItem('I00B')
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -288,7 +297,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 				set i = 0
 				loop
 					exitwhen (i == ressources.size())
-					/// @todo DO IT, remove resources!
+					call character.inventory().removeItemType(ressources[i])
 					set i = i + 1
 				endloop
 				call ressources.destroy()
