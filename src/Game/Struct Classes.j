@@ -394,6 +394,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellManaShield.classSelectionAbilityId, SpellManaShield.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellManaStream.classSelectionAbilityId, SpellManaStream.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMultiply.classSelectionAbilityId, SpellMultiply.classSelectionGrimoireAbilityId))
+			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellTransfer.classSelectionAbilityId, SpellTransfer.classSelectionGrimoireAbilityId))
 			debug call Print("Size of wizard grimoire entries " + I2S(thistype.m_wizardGrimoireEntries.size()))
 		endmethod
 

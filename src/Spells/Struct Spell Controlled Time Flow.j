@@ -99,8 +99,9 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			call allies.addUnitsInRange(GetUnitX(caster), GetUnitY(caster), thistype.range, null)
 			call unitGroup.addUnitsInRect(GetPlayableMapRect(), Filter(function thistype.filter))
 			debug call Print("Controlled Time Flow: " + I2S(unitGroup.units().size()) + " units.")
+			debug call Print("Controlled Time Flow: " + I2S(allies.units().size()) + " allies.")
 			// drop all allies in range
-			// TODO it might be better for the perfomance to get allies in range and THEN to exclude them from the group. Otherwise too many iterations
+			// it might be better for the perfomance to get allies in range and THEN to exclude them from the group. Otherwise too many iterations
 			set i = 0
 			loop
 				exitwhen (i == allies.units().size())

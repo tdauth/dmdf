@@ -260,6 +260,64 @@ endif
 		public static method setCameraBoundsToTombForPlayer takes player user returns nothing
 			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_tomb)
 		endmethod
+		
+		public static method classRangeAbilityId takes Character character returns integer
+			// dragon slayer
+			if (GetUnitTypeId(character.unit()) == 'H01J') then
+				return 'A16I'
+			// cleric
+			elseif (GetUnitTypeId(character.unit()) == 'H01L') then
+				return 'A16J'
+			// necromancer
+			elseif (GetUnitTypeId(character.unit()) == 'H01N') then
+				return 'A16K'
+			// druid
+			elseif (GetUnitTypeId(character.unit()) == 'H01P') then
+				return 'A16L'
+			// knight
+			elseif (GetUnitTypeId(character.unit()) == 'H01R') then
+				return 'A16M'
+			// ranger
+			elseif (GetUnitTypeId(character.unit()) == 'H01T') then
+				return 'A16N'
+			// elemental mage
+			elseif (GetUnitTypeId(character.unit()) == 'H01V') then
+				return 'A16O'
+			// wizard
+			elseif (GetUnitTypeId(character.unit()) == 'H01X') then
+				return 'A16P'
+			endif
+			return Classes.classRangeAbilityId(character.class())
+		endmethod
+		
+		public static method classMeleeAbilityId takes Character character returns integer
+			// dragon slayer
+			if (GetUnitTypeId(character.unit()) == 'H01K') then
+				return 'A16H'
+			// cleric
+			elseif (GetUnitTypeId(character.unit()) == 'H01M') then
+				return 'A16S'
+			// necromancer
+			elseif (GetUnitTypeId(character.unit()) == 'H01O') then
+				return 'A16T'
+			// druid
+			elseif (GetUnitTypeId(character.unit()) == 'H01Q') then
+				return 'A16Q'
+			// knight
+			elseif (GetUnitTypeId(character.unit()) == 'H01S') then
+				return 'A16U'
+			// ranger
+			elseif (GetUnitTypeId(character.unit()) == 'H01U') then
+				return 'A16V'
+			// elemental mage
+			elseif (GetUnitTypeId(character.unit()) == 'H01W') then
+				return 'A16R'
+			// wizard
+			elseif (GetUnitTypeId(character.unit()) == 'H01Y') then
+				return 'A16W'
+			endif
+			return Classes.classMeleeAbilityId(character.class())
+		endmethod
 
 		/// Required by \ref Game.
 		public static method resetCameraBoundsForPlayer takes player user returns nothing

@@ -153,6 +153,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellManaShield.create(character)
 				call SpellManaStream.create(character)
 				call SpellMultiply.create(character)
+				call SpellTransfer.create(character)
 				// deprecated call SpellRepulsion.create(character)
 			endif
 			

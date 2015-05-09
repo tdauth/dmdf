@@ -77,9 +77,17 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 				call SetDestructableInvulnerable(box, true)
 				set this.m_arrowsCounter = this.m_arrowsCounter + 1
 				
-				call this.displayUpdateMessage(Format(tr("%1%/5 Pfeilbündel platziert")).i(5 - this.m_arrowsCounter).result())
+				call this.displayUpdateMessage(Format(tr("%1%/5 Pfeilbündel platziert")).i(this.m_arrowsCounter).result())
 				
-				return this.m_arrowsCounter == 5
+				/*
+				 * Prevent multiple placements at the same place.
+				 */
+				if (this.m_arrowsCounter != 5) then
+					call DisableTrigger(GetTriggeringTrigger())
+					return false
+				else
+					return true
+				endif
 			endif
 			
 			return false
@@ -95,6 +103,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 				set i = i + 1
 			endloop
 			call DisableTrigger(GetTriggeringTrigger()) // make sure arrows cannot be placed twice
+			call this.questItem(4).setState(thistype.stateCompleted)
 			call this.displayUpdate()
 		endmethod
 		

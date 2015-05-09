@@ -293,6 +293,9 @@
 * FIXED: Arkaner Hunger: Manakosten.
 * FIXED: Arkaner Hunger: Abklingzeit.
 * FIXED: Arkaner Hunger: Double Free ADynamicLightning.
+* FIXED: Absorbation und arkane Zeit haben dieselbe Zauber-ID im Zauberbuch.
+* Arkane List: Icon fehlt wenn autospell aktiv ist.
+* Manastrom abbrechen wenn Ziel außer Reichweite ist.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
@@ -331,7 +334,7 @@ Test mit zwei menschlichen Spielern:
 * Vorräte anderes Icon.
 * Lothar und Björn und Guntrich brauchen anderes Modell. Es gibt noch Villagermodelle auf Hive.
 * Lothar: Quest ist ablehnbar, ändern.
-* Ultimatumzauber - ins Tooltip schreiben ab welcher Stufe.
+* Ultimatumzauber - ins Tooltip schreiben ab welcher Stufe. Besser noch einen Button mit der benötigten Stufe einfügen. Sofort sichtbar.
 * Vorratswagen fährt zurück, anderes Modell.
 * FIXED: Orkgruppe im Norden lässt nichts fallen.
 * Vampirgebieter lässt zu wenig fallen.

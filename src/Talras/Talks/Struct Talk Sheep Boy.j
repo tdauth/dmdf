@@ -83,7 +83,8 @@ library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, Struct
 		private static method infoActionWhereAreWolves takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wo finde ich die Rudelführer?"), null)
 			call speech(info, character, true, tr("Einen habe ich neulich am Rande dieses Berges gesehen. Weiter nördlich vom Aufstieg."), null)
-			call speech(info, character, true, tr("Auch habe ich von Angriffen weit im Südwesten gehört. Reisende auf dem Weg nach Talras sollen dort Vieh an Wölfe verloren haben."), null)
+			call speech(info, character, true, tr("Ich habe auch von Angriffen weit im Südwesten gehört. Reisende auf dem Weg nach Talras sollen dort Vieh an Wölfe verloren haben."), null)
+			call speech(info, character, true, tr("Töte sie alle!"), null)
 		
 			call info.talk().showStartPage(character)
 		endmethod

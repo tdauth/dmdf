@@ -145,6 +145,7 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 			call speech(info, character, true, tr("Von den Katzen, die mir zulaufen. Hier in der Gegend scheint es von Katzen nur so zu wimmeln. Ich teile mein Essen mit ihnen und sie leben mit mir zusammen."), null)
 			call speech(info, character, true, tr("Da es wohl immer mehr werden, werde ich mich vermutlich von einigen von ihnen trennen  müssen, wenn ich nicht selbst verhungern will."), null)
 			call speech(info, character, true, tr("Wenn du mir versprichst dich gut um sie zu kümmern, werde ich dir auch sie verkaufen."), null)
+			call speech(info, character, true, tr("Außerdem habe ich noch einige Gegenstände, um einen wahren Druiden auszurüsten. Vielleicht interessiert du dich ja dafür."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 		

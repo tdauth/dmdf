@@ -49,7 +49,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			// TODO unmorph before if it is morphed already
 			if (character != 0) then
-				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityId(character.class())) + " to unit " + GetUnitName(whichUnit))
+				debug call Print("Adding and removing ability " + GetObjectName(MapData.classRangeAbilityId.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
 				/**
 				 * Make sure the current spell levels are up to date for later restoration.
 				 */
@@ -57,8 +57,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				/*
 				 * These two lines of code do the passive transformation to a range fighting unit.
 				 */
-				call UnitAddAbility(whichUnit, Classes.classRangeAbilityId(character.class()))
-				call UnitRemoveAbility(whichUnit, Classes.classRangeAbilityId(character.class()))
+				call UnitAddAbility(whichUnit, MapData.classRangeAbilityId.evaluate(character))
+				call UnitRemoveAbility(whichUnit, MapData.classRangeAbilityId.evaluate(character))
 				/*
 				 * Now the spell levels have to be readded and the grimoire needs to be updated since all abilities are gone.
 				 */
@@ -79,10 +79,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			debug call Print("Range item drop")
 			
 			if (character != 0) then
-				debug call Print("Adding and removing ability " + GetObjectName(Classes.classMeleeAbilityId(character.class())) + " to unit " + GetUnitName(whichUnit))
+				debug call Print("Adding and removing ability " + GetObjectName(MapData.classMeleeAbilityId.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
 				call character.updateRealSpellLevels()
-				call UnitAddAbility(whichUnit, Classes.classMeleeAbilityId(character.class()))
-				call UnitRemoveAbility(whichUnit, Classes.classMeleeAbilityId(character.class()))
+				call UnitAddAbility(whichUnit, MapData.classMeleeAbilityId.evaluate(character))
+				call UnitRemoveAbility(whichUnit, MapData.classMeleeAbilityId.evaluate(character))
 				call character.restoreRealSpellLevels()
 				call character.clearRealSpellLevels()
 				call character.grimoire().updateUi.evaluate()
@@ -214,6 +214,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// Ursula's items
 		private static ItemType m_druidCloak
 		private static RangeItemType m_druidStaff
+		private static RangeItemType m_staffOfBan
 		private static ItemType m_druidBoots
 		// Deranor's artefact
 		private static ItemType m_deranorsCrownPiece
@@ -499,6 +500,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_druidStaff = RangeItemType.createSimpleRange('I02X', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_druidStaff.addAbility('A044', false)
 			call thistype.m_druidStaff.addAbility('A01K', true)
+			
+			set thistype.m_staffOfBan = RangeItemType.createSimpleRange('I04Z', AItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_staffOfBan.addAbility('A16F', true)
+			call thistype.m_staffOfBan.addAbility('A16G', false)
 			
 			set thistype.m_druidBoots = ItemType.createSimple('I033', ItemType.equipmentTypeAmulet)
 			call thistype.m_druidBoots.addAbility('A04V', true)
