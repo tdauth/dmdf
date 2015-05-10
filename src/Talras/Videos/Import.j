@@ -5,6 +5,7 @@
 //! import "Talras/Videos/Struct Video Deranors Death.j"
 //! import "Talras/Videos/Struct Video Dragon Hunt.j"
 //! import "Talras/Videos/Struct Video Intro.j"
+//! import "Talras/Videos/Struct Video Recruit The High Elf.j"
 //! import "Talras/Videos/Struct Video Rescue Dago 0.j"
 //! import "Talras/Videos/Struct Video Rescue Dago 1.j"
 //! import "Talras/Videos/Struct Video The Castle.j"
@@ -14,7 +15,7 @@
 //! import "Talras/Videos/Struct Video Upstream.j"
 //! import "Talras/Videos/Struct Video Wigberht.j"
 
-library MapVideos requires StructMapVideosVideoANewAlliance, StructMapVideosVideoBloodthirstiness, StructMapVideosVideoDeathVault, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath, StructMapVideosVideoDragonHunt, StructMapVideosVideoIntro, StructMapVideosVideoRescueDago0, StructMapVideosVideoRescueDago1, StructMapVideosVideoTheCastle, StructMapVideosVideoTheChief, StructMapVideosVideoTheDukeOfTalras, StructMapVideosVideoTheFirstCombat, StructMapVideosVideoUpstream, StructMapVideosVideoWigberht
+library MapVideos requires StructMapVideosVideoANewAlliance, StructMapVideosVideoBloodthirstiness, StructMapVideosVideoDeathVault, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath, StructMapVideosVideoDragonHunt, StructMapVideosVideoIntro, StructMapVideosVideoRecruitTheHighElf, StructMapVideosVideoRescueDago0, StructMapVideosVideoRescueDago1, StructMapVideosVideoTheCastle, StructMapVideosVideoTheChief, StructMapVideosVideoTheDukeOfTalras, StructMapVideosVideoTheFirstCombat, StructMapVideosVideoUpstream, StructMapVideosVideoWigberht
 
 	function initMapVideos takes nothing returns nothing
 		call VideoANewAlliance.initVideo()
@@ -24,6 +25,7 @@ library MapVideos requires StructMapVideosVideoANewAlliance, StructMapVideosVide
 		call VideoDeranorsDeath.initVideo()
 		call VideoDragonHunt.initVideo()
 		call VideoIntro.initVideo()
+		call VideoRecruitTheHighElf.initVideo()
 		call VideoRescueDago0.initVideo()
 		call VideoRescueDago1.initVideo()
 		call VideoTheCastle.initVideo()

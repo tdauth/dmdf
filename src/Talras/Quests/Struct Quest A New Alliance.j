@@ -1,12 +1,12 @@
-library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea
+library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, StructMapVideosVideoRecruitTheHighElf
 
 	struct QuestAreaANewAlliance extends QuestArea
 	
 		public stub method onStart takes nothing returns nothing
-			// TODO play cinematic
 			call QuestANewAlliance.quest.evaluate().questItem(0).setState(AQuest.stateCompleted)
 			call QuestANewAlliance.quest.evaluate().questItem(1).setState(AQuest.stateCompleted)
 			call QuestANewAlliance.quest.evaluate().displayUpdate()
+			call VideoRecruitTheHighElf.video().play()
 		endmethod
 	
 		public static method create takes rect whichRect returns thistype

@@ -109,9 +109,6 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 		public stub method onStopAction takes nothing returns nothing
 			call Game.resetVideoSettings()
 			call QuestANewAlliance.quest().enable()
-			//call QuestTheWayToHolzbruck.quest().enable()
-			//call Character.displayHintToAll(tr("Die aktuelle Version von “Die Macht des Feuers” endet hier. Sobald die Reise nach Holzbruck angetreten wird, ist das Spiel zu Ende."))
-			/// @todo Play sound with spoken message text.
 		endmethod
 
 		private static method create takes nothing returns thistype
