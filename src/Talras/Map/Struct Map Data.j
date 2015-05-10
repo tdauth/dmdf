@@ -169,7 +169,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.orcPlayer, bj_ALLIANCE_UNALLIED)
 			
 			call Aos.init.evaluate()
-			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tr("Sie haben die Arena betreten."), tr("Sie haben die Arena verlassen."), tr("Ein Arenakampf beginnt nun."), tr("Ein Arenakampf endet nun. Der Gewinner ist \"%s\"."))
+			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tr("Sie haben die Arena betreten."), tr("Sie haben die Arena verlassen."), tr("Ein Arenakampf beginnt nun."), tr("Ein Arenakampf endet nun. Der Gewinner ist \"%1%\" und er bekommt %2% Goldmünzen."))
 			call Arena.addRect(gg_rct_arena_0)
 			call Arena.addRect(gg_rct_arena_1)
 			call Arena.addRect(gg_rct_arena_2)
@@ -323,6 +323,8 @@ endif
 		public static method resetCameraBoundsForPlayer takes player user returns nothing
 			if (Aos.areaContainsCharacter.evaluate(ACharacter.playerCharacter(user))) then
 				call thistype.setCameraBoundsToAosForPlayer(user)
+			elseif (Tomb.areaContainsCharacter.evaluate(ACharacter.playerCharacter(user))) then
+				call thistype.setCameraBoundsToTombForPlayer(user)
 			elseif (false) then /// @todo Tavern area
 				call thistype.setCameraBoundsToTavernForPlayer(user)
 			else
@@ -358,6 +360,7 @@ static if (DEBUG_MODE) then
 			call Print("bloodthirstiness")
 			call Print("deranor")
 			call Print("deranorsdeath")
+			call Print("recruitthehighelf")
 			call Print(tr("Erzeugungs-Cheats:"))
 			call Print("unitspawns")
 			call Print("testspawnpoint")
@@ -501,6 +504,10 @@ static if (DEBUG_MODE) then
 		private static method onCheatActionDeranorsDeath takes ACheat cheat returns nothing
 			call VideoDeranorsDeath.video().play()
 		endmethod
+		
+		private static method onCheatActionRecruitTheHighElf takes ACheat cheat returns nothing
+			call VideoRecruitTheHighElf.video().play()
+		endmethod
 
 		private static method onCheatActionUnitSpawn takes ACheat cheat returns nothing
 			call UnitTypes.spawn(GetTriggerPlayer(), GetUnitX(Character.playerCharacter(GetTriggerPlayer()).unit()), GetUnitY(Character.playerCharacter(GetTriggerPlayer()).unit()))
@@ -542,6 +549,7 @@ static if (DEBUG_MODE) then
 			call ACheat.create("bloodthirstiness", true, thistype.onCheatActionBloodthirstiness)
 			call ACheat.create("deranor", true, thistype.onCheatActionDeranor)
 			call ACheat.create("deranorsdeath", true, thistype.onCheatActionDeranorsDeath)
+			call ACheat.create("recruitthehighelf", true, thistype.onCheatActionRecruitTheHighElf)
 			call ACheat.create("unitspawn", true, thistype.onCheatActionUnitSpawn)
 			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)
 			debug call Print("Before creating all cheats")

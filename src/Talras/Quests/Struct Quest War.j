@@ -16,13 +16,14 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
+			local boolean result = super.enable()
 			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemLumberFromKuno).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateNew)
 
-			return super.enable()
+			return result
 		endmethod
 		
 		public stub method distributeRewards takes nothing returns nothing

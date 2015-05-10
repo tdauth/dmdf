@@ -140,7 +140,6 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call thistype.m_infos.pushBack(Format(tr("Getötete Gegner erscheinen, %1% Sekunden nachdem ihre gesamte Gruppe ausgelöscht wurde, automatisch wieder.")).i(R2I(SpawnPoint.respawnTime)).result())
 			call thistype.m_infos.pushBack(Format(tr("Eingesammelte oder vernichtete Gegenstände erscheinen nach %1% Sekunden automatisch wieder.")).i(R2I(ItemSpawnPoint.respawnTime)).result())
 			call thistype.m_infos.pushBack(Format(tr("Getötete Charaktere werden automatisch nach %1% Sekunden an ihrem aktivierten Schrein wiederbelebt. Dies wird in einem kleinen Fenster am oberen Bildschirmrand angezeigt.")).i(R2I(MapData.revivalTime)).result())
-			call thistype.m_infos.pushBack(Format(tr("Zwischen %1% und %2% Uhr legen sich viele Bewohner schlafen. Sie können in dieser Zeit nicht angesprochen werden, da sie sich in ihren Häusern befinden.")).i(R2I(MapData.evening)).i(R2I(MapData.morning)).result())
 
 			// optional
 static if (DMDF_INVENTORY) then

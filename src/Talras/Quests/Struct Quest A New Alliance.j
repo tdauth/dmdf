@@ -1,6 +1,10 @@
-library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, StructMapVideosVideoRecruitTheHighElf
+library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, StructMapVideosVideoRecruitTheHighElf, StructMapQuestsQuestDeranor
 
 	struct QuestAreaANewAlliance extends QuestArea
+	
+		public stub method onCheck takes nothing returns boolean
+			return QuestDeranor.quest().isCompleted()
+		endmethod
 	
 		public stub method onStart takes nothing returns nothing
 			call QuestANewAlliance.quest.evaluate().questItem(0).setState(AQuest.stateCompleted)

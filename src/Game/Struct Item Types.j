@@ -480,7 +480,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_vampireNecklace.addAbility('A03X', true)
 			
 			set thistype.m_hauntedStaff = RangeItemType.create('I03V', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
-			call thistype.m_hauntedStaff.addAbility('A17B', true)
+			call thistype.m_hauntedStaff.addAbility('A0B8', true)
 			
 			// Sisgard's reward
 			set thistype.m_necromancerHelmet = ItemType.createSimple('I044', ItemType.equipmentTypeHeaddress)

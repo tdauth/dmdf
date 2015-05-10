@@ -5,8 +5,8 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 	struct SpellRageOfElements extends Spell
 		public static constant integer abilityId = 'A01J'
 		public static constant integer favouriteAbilityId = 'A03Q'
-		public static constant integer classSelectionAbilityId = 'A0ZN'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0ZM'
+		public static constant integer classSelectionAbilityId = 'A0ZM'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0ZN'
 		public static constant integer maxLevel = 1
 		private static constant real damageBonusFactor = 0.30
 		private static constant real time = 10.0
@@ -45,7 +45,7 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
-			call this.addGrimoireEntry('A0ZN', 'A0ZM')
+			call this.addGrimoireEntry('A0ZM', 'A0ZN')
 			
 			return this
 		endmethod

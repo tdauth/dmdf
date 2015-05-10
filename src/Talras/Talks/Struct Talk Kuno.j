@@ -1,6 +1,14 @@
-library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestTheBeast, StructMapQuestsQuestWoodForTheHut
+library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestTheBeast, StructMapQuestsQuestWoodForTheHut, StructMapQuestsQuestReinforcementForTalras, StructMapQuestsQuestWar
 
 	struct TalkKuno extends ATalk
+		private AInfo m_hi
+		private AInfo m_lonely
+		private AInfo m_knowsTrommon
+		private AInfo m_beast
+		private AInfo m_kunosDaughter
+		private AInfo m_markwardNeedsLumber
+		private AInfo m_exit
+	
 		private AInfo m_lonely_0
 		private AInfo m_lonely_1
 		private AInfo m_busy
@@ -25,7 +33,7 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 		
 		private method startPageAction takes ACharacter character returns nothing
 			if (not this.showInfo(this.m_busy.index(), character)) then
-				call this.showUntil(5, character)
+				call this.showUntil(this.m_exit.index(), character)
 			endif
 		endmethod
 
@@ -39,7 +47,8 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 
 		// (Nach Begrüßung)
 		private static method infoConditionLonely takes AInfo info, ACharacter character returns boolean
-			return info.talk().infoHasBeenShownToCharacter(0, character)
+			local thistype this = thistype(info.talk())
+			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
 
 		// Fühlst du dich nicht einsam?
@@ -112,6 +121,32 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 			call character.giveItem('I01L')
 			call info.talk().showStartPage(character)
 		endmethod
+		
+		// (Auftragsziel 1 des Auftrags „Die Befestigung von Talras“ ist aktiv und Auftragsziel 2 ist noch nicht aktiviert)
+		private static method infoConditionMarkwardNeedsLumber takes AInfo info, ACharacter character returns boolean
+			return QuestReinforcementForTalras.characterQuest(character).questItem(0).isNew() and not QuestReinforcementForTalras.characterQuest(character).questItem(1).isNew()
+		endmethod
+
+		// Markward benötigt Holz für die Burg.
+		private static method infoActionMarkwardNeedsLumber takes AInfo info, Character character returns nothing
+			call speech(info, character, false, tr("Markward benötigt Holz für die Burg."), null)
+			// (Auftragsziel 6 des Auftrags „Krieg“ ist aktiv oder abgeschlossen)
+			if (QuestWar.quest().isNew() or QuestWar.quest().isCompleted()) then
+				call speech(info, character, true, tr("Noch mehr Holz und dies mal für die Burg?"), null)
+			endif
+			call speech(info, character, true, tr("Die scheinen sich dort oben ja gewaltig in die Hosen zu machen. Das passiert eben wenn der eine Herrscher dem anderen Herrscher eins auf die Mütze geben will."), null)
+			call speech(info, character, true, tr("Ich habe es meiner Tochter immer gesagt, dieser Herzog ist ..."), null)
+			call speech(info, character, false, tr("…"), null)
+			call speech(info, character, true, tr("Aber gut bevor sie meine Hütte dem Erdboden gleichmachen komme ich seinem Wunsch lieber nach. Allerdings hat das seinen Preis, wenn sie mir schon nichts zahlen wollen."), null)
+			call speech(info, character, true, tr("Allerdings werde ich mir nicht die Arbeit machen und es zu Heimrich schleppen. Ich krieche doch nicht vor diesem eingebildeten Schnösel. Du kannst das Holz zu Manfred bringen und er schickt es dann den Berg hinauf."), null)
+			call speech(info, character, true, tr("Das ist ein gerechter Handel und du hast nicht ganze Arbeit."), null)
+			// Auftragsziel 2 des Auftrags „Die Befestigung von Talras“ wird aktiviert.
+			call QuestReinforcementForTalras.characterQuest(character).questItem(1).setState(AAbstractQuest.stateNew)
+			call QuestReinforcementForTalras.characterQuest(character).displayUpdate()
+			// Charakter erhält das Holz.
+			call character.giveItem('I051')
+			call info.talk().showStartPage(character)
+		endmethod
 
 		// Was will sie denn später mal machen?
 		private static method infoActionLonely_0 takes AInfo info, ACharacter character returns nothing
@@ -133,14 +168,15 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(gg_unit_n022_0009, thistype.startPageAction)
-
+			
 			// start page
-			call this.addInfo(false, false, 0, thistype.infoActionHi, tr("Hallo.")) // 0
-			call this.addInfo(false, false, thistype.infoConditionLonely, thistype.infoActionLonely, tr("Fühlst du dich nicht einsam?")) // 1
-			call this.addInfo(false, false, thistype.infoConditionKnowsTrommon, thistype.infoActionKnowsTrommon, tr("Du kennst doch Trommon ...")) // 2
-			call this.addInfo(false, false, thistype.infoConditionBeast, thistype.infoActionBeast, tr("Hast du in letzter Zeit irgendwas Auffälliges bemerkt?")) // 3
-			call this.addInfo(false, false, thistype.infoConditionKunosDaughter, thistype.infoActionKunosDaughter, tr("Der Jäger Björn wird deiner Tochter etwas beibringen.")) // 4
-			call this.addExitButton() // 5
+			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tr("Hallo.")) // 0
+			set this.m_lonely = this.addInfo(false, false, thistype.infoConditionLonely, thistype.infoActionLonely, tr("Fühlst du dich nicht einsam?")) // 1
+			set this.m_knowsTrommon = this.addInfo(false, false, thistype.infoConditionKnowsTrommon, thistype.infoActionKnowsTrommon, tr("Du kennst doch Trommon ...")) // 2
+			set this.m_beast = this.addInfo(false, false, thistype.infoConditionBeast, thistype.infoActionBeast, tr("Hast du in letzter Zeit irgendwas Auffälliges bemerkt?")) // 3
+			set this.m_kunosDaughter = this.addInfo(false, false, thistype.infoConditionKunosDaughter, thistype.infoActionKunosDaughter, tr("Der Jäger Björn wird deiner Tochter etwas beibringen.")) // 4
+			set this.m_markwardNeedsLumber = this.addInfo(false, false, thistype.infoConditionMarkwardNeedsLumber, thistype.infoActionMarkwardNeedsLumber, tr("Markward benötigt Holz für die Burg.")) // 4
+			set this.m_exit = this.addExitButton() // 5
 
 			// info 1
 			set this.m_lonely_0 = this.addInfo(false, false, 0, thistype.infoActionLonely_0, tr("Was will sie denn später mal machen?")) // 6

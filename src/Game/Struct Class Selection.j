@@ -298,20 +298,18 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			
 			if (GetSpellAbilityId() == Classes.classAbilitiesNextPageAbilityId()) then
-				if (this.m_page == Classes.maxGrimoireEntriesPages(this.class(), thistype.spellsPerPage) - 1) then
+				if (this.m_page == Classes.maxClassAbilitiesPages(this.class(), thistype.spellsPerPage) - 1) then
 					set this.m_page = 0
 				else
 					set this.m_page = this.m_page + 1
 				endif
 			elseif (GetSpellAbilityId() == Classes.classAbilitiesPreviousPageAbilityId()) then
 				if (this.m_page == 0) then
-					set this.m_page = Classes.maxGrimoireEntriesPages(this.class(), thistype.spellsPerPage) - 1
+					set this.m_page = Classes.maxClassAbilitiesPages(this.class(), thistype.spellsPerPage) - 1
 				else
 					set this.m_page = this.m_page - 1
 				endif
 			endif
-			
-			debug call Print("New page " + I2S(this.m_page) + " with max pages " + I2S(Classes.maxGrimoireEntriesPages(this.class(), thistype.spellsPerPage)))
 			
 			call Classes.createClassAbilities(this.class(), this.classUnit(), this.m_page, thistype.spellsPerPage)
 			call ForceUIKeyBJ(GetTriggerPlayer(), "Z") // WORKAROUND: whenever an ability is being removed it closes grimoire
@@ -371,6 +369,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 					call classSelection.setStartY(MapData.startY(i))
 					call classSelection.setStartFacing(0.0)
 					call classSelection.setShowAttributes(true)
+					call classSelection.enableArrowKeySelection(false)
+					call classSelection.enableEscapeKeySelection(false)
 					call classSelection.show()
 				endif
 

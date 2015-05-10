@@ -98,7 +98,7 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		// (Nach Begrüßung und wenn es gerade Nacht ist und Wigberht trainiert)
 		private static method infoConditionTrainingAtNight takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
-			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character) and GetTimeOfDay() >= 18.00 or GetTimeOfDay() <= 5.00
+			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character) and GetTimeOfDay() >= 22.00 or GetTimeOfDay() <= 5.00
 		endmethod
 
 		// Trainierst du nachts?

@@ -6,6 +6,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 		private integer m_actorGuntrich
 		private integer m_actorHeimrich
 		private integer m_actorMarkward
+		private integer m_actorFerdinand
 	
 		implement Video
 
@@ -36,6 +37,9 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 			
 			set this.m_actorMarkward = thistype.saveUnitActor(Npcs.markward())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorMarkward), gg_rct_video_recruit_the_high_elf_markward)
+			
+			set this.m_actorFerdinand = thistype.saveUnitActor(Npcs.ferdinand())
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorFerdinand), gg_rct_video_recruit_the_high_elf_ferdinand)
 			
 			call CameraSetupApplyForceDuration(gg_cam_recruit_the_high_elf_initial_view, true, 0.0)
 			
@@ -178,6 +182,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 			
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorHeimrich), thistype.unitActor(this.m_actorDragonSlayer))
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorMarkward), thistype.unitActor(this.m_actorDragonSlayer))
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorFerdinand), thistype.unitActor(this.m_actorDragonSlayer))
 			
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
@@ -223,7 +228,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call CameraSetupApplyForceDuration(gg_cam_recruit_the_high_elf_character_view, true, 0.0)
+			call CameraSetupApplyForceDuration(gg_cam_recruit_the_high_elf_character_view_castle, true, 0.0)
 			
 			if (wait(1.0)) then
 				return

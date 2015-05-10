@@ -350,11 +350,7 @@ endif
 		/// @todo What's about AOS players?
 		private static method createKillTrigger takes nothing returns nothing
 			set thistype.m_killTrigger = CreateTrigger()
-static if (DMDF_VIOLENCE) then
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_killTrigger, EVENT_PLAYER_UNIT_DEATH)
-else
-			call TriggerRegisterPlayerUnitEvent(thistype.m_killTrigger,  Player(PLAYER_NEUTRAL_AGGRESSIVE), EVENT_PLAYER_UNIT_DEATH, null)
-endif
 			call TriggerAddAction(thistype.m_killTrigger, function thistype.triggerActionKill)
 		endmethod
 

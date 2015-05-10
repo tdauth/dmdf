@@ -54,6 +54,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		private static method triggerActionEnter takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			call this.cleanupRect()
+			call DisableTrigger(GetTriggeringTrigger())
 			call this.onStart.execute()
 		endmethod
 		

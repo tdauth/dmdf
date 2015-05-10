@@ -29,7 +29,7 @@ library StructSpellsSpellTransfer requires Asl, StructGameClasses, StructGameSpe
 				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel hat kein Mana."))
 				return false
 			elseif (not isAlly and not (GetUnitState(this.character().unit(), UNIT_STATE_MANA) < GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MAX_MANA))) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Charater hat bereits volles Mana."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Charakter hat bereits volles Mana."))
 				return false
 			endif
 			

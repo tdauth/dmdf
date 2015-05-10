@@ -20,6 +20,13 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 			return true
 		endmethod
 		
+		private static method stateActionCompletedSendLumber takes AQuestItem questItem returns nothing
+			local unit cart = CreateUnit(MapData.neutralPassivePlayer, 'h01Z', GetUnitX(Npcs.manfred()), GetUnitY(Npcs.manfred()), 0.0)
+			call SetUnitInvulnerable(cart, true)
+			call IssuePointOrder(cart, "move", GetRectCenterX(gg_rct_quest_reinforcements_of_talras_cart_destination), GetRectCenterY(gg_rct_quest_reinforcements_of_talras_cart_destination))
+			set cart = null
+		endmethod
+		
 		/**
 		 * One day has 480 seconds
 		 * That means two days are 960 seconds.
@@ -146,6 +153,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 
 			// item 1
 			set questItem0 = AQuestItem.create(this, tr("Bringe Kunos Holz zum Bauern Manfred."))
+			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedSendLumber)
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.manfred())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)

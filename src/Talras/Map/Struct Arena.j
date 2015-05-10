@@ -1,6 +1,7 @@
 library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, StructMapQuestsQuestArenaChampion
 
 	struct Arena
+		public static constant integer rewardGold = 100
 		private static constant integer maxUnits = 2
 		// static construction members
 		private static real m_outsideX
@@ -20,6 +21,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static region m_region
 		private static trigger m_killTrigger
 		private static trigger m_leaveTrigger
+		private static trigger m_pvpTrigger
 		private static leaderboard m_leaderboard
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Arena\"")
@@ -27,6 +29,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		public static method removeUnitByIndex takes integer index returns nothing
 			local unit usedUnit = thistype.m_units[index]
 			local player owner = GetOwningPlayer(usedUnit)
+			local integer i
 			call thistype.m_units.erase(index)
 			call LeaderboardRemoveItem(thistype.m_leaderboard, index)
 			if (ACharacter.getCharacterByUnit(usedUnit) != 0) then
@@ -44,6 +47,11 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 					call PauseUnit(usedUnit, false)
 					call IssueImmediateOrder(usedUnit, "stop")
 				endif
+				
+				// TODO triggered before revival starts
+				if (ACharacter.getCharacterByUnit(usedUnit).revival() != 0) then
+					call ACharacter.getCharacterByUnit(usedUnit).revival().end()
+				endif
 
 				call PanCameraToForPlayer(owner, GetUnitX(usedUnit), GetUnitY(usedUnit))
 				call ShowLeaderboardForPlayer(owner, thistype.m_leaderboard, false)
@@ -52,6 +60,24 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				call LeaderboardRemovePlayerItemBJ(owner, thistype.m_leaderboard)
 				// fixes cinematic display of a leaderboard
 				call PlayerSetLeaderboard(owner, null)
+				
+				/*
+				 * Since only one character can be in the arena of a player the alliances can be reset safely.
+				 */
+				set i = 0
+				loop
+					exitwhen (i == MapData.maxPlayers)
+					if (i != GetPlayerId(owner)) then
+						if (GetPlayerController(owner) == MAP_CONTROL_COMPUTER or GetPlayerController(Player(i)) == MAP_CONTROL_COMPUTER) then
+							call SetPlayerAllianceStateBJ(owner, Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
+							call SetPlayerAllianceStateBJ(Player(i), owner, bj_ALLIANCE_ALLIED_ADVUNITS)
+						else
+							call SetPlayerAllianceStateBJ(owner, Player(i), bj_ALLIANCE_ALLIED_VISION)
+							call SetPlayerAllianceStateBJ(Player(i), owner, bj_ALLIANCE_ALLIED_VISION)
+						endif
+					endif
+					set i = i + 1
+				endloop
 			// remove newly created NPC units
 			else
 				call RemoveUnit(usedUnit)
@@ -174,6 +200,45 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 			call DisableTrigger(thistype.m_leaveTrigger)
 		endmethod
+		
+		private static method filterPvp takes nothing returns boolean
+			return ACharacter.isUnitCharacter(GetFilterUnit())
+		endmethod
+		
+		private static method triggerConditionPvp takes nothing returns boolean
+			local AGroup unitsInRect
+			local integer i
+			local integer missing
+			if (ACharacter.isUnitCharacter(GetTriggerUnit())) then
+				if (thistype.isFree.evaluate()) then
+					set unitsInRect = AGroup.create()
+					call unitsInRect.addUnitsInRect(gg_rct_arena_pvp, Filter(function thistype.filterPvp))
+					call unitsInRect.units().pushBack(GetTriggerUnit())
+					if (unitsInRect.units().size() >= thistype.maxUnits) then
+						set i = 0
+						loop
+							exitwhen (i == thistype.maxUnits)
+							call thistype.addCharacter.evaluate(ACharacter.getCharacterByUnit(unitsInRect.units()[i]))
+							set i = i + 1
+						endloop
+					else
+						set missing = thistype.maxUnits - unitsInRect.units().size()
+						call Character.displayHintToAll(Format(trp("Es fehlt noch %1% ein Charakter für einen Pvp-Arenakampf.", "Es fehlen noch %1% Charaktere für einen PvP-Arenakampf.", missing)).i(missing).result())
+					endif
+					call unitsInRect.destroy()
+				else
+					call Character(Character.getCharacterByUnit(GetTriggerUnit())).displayHint(tr("Die Arena ist momentan belegt."))
+				endif
+			endif
+			
+			return false
+		endmethod
+		
+		private static method createPvpTrigger takes nothing returns nothing
+			set thistype.m_pvpTrigger = CreateTrigger()
+			call TriggerRegisterEnterRectSimple(thistype.m_pvpTrigger, gg_rct_arena_pvp)
+			call TriggerAddCondition(thistype.m_pvpTrigger, Condition(function thistype.triggerConditionPvp))
+		endmethod
 
 		private static method createLeaderboard takes nothing returns nothing
 			set thistype.m_leaderboard = CreateLeaderboard()
@@ -210,6 +275,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 			call thistype.createKillTrigger()
 			call thistype.createLeaveTrigger()
+			call thistype.createPvpTrigger()
 			call thistype.createLeaderboard()
 		endmethod
 
@@ -226,6 +292,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			set thistype.m_killTrigger = null
 			call DestroyTrigger(thistype.m_leaveTrigger)
 			set thistype.m_leaveTrigger = null
+			call DestroyTrigger(thistype.m_pvpTrigger)
+			set thistype.m_pvpTrigger = null
 			call DestroyLeaderboard(thistype.m_leaderboard)
 			set thistype.m_leaderboard = null
 		endmethod
@@ -271,13 +339,22 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 		public static method addUnit takes unit usedUnit returns nothing
 			local player owner = GetOwningPlayer(usedUnit)
+			local integer i
+			local string title
 			call thistype.m_units.pushBack(usedUnit)
 			call SetUnitX(usedUnit, thistype.m_startX[thistype.m_units.backIndex()])
 			call SetUnitY(usedUnit, thistype.m_startY[thistype.m_units.backIndex()])
 			call SetUnitFacing(usedUnit, thistype.m_startFacing[thistype.m_units.backIndex()])
 			call SetUnitInvulnerable(usedUnit, true)
 			call PauseUnit(usedUnit, true)
-			call LeaderboardAddItemBJ(owner, thistype.m_leaderboard, GetUnitName(usedUnit) + ":", thistype.playerScore(owner))
+			
+			if (Character.getCharacterByUnit(usedUnit) != 0) then
+				set title = GetPlayerName(owner)
+			else
+				set title = GetUnitName(usedUnit)
+			endif
+			
+			call LeaderboardAddItemBJ(owner, thistype.m_leaderboard, title + ":", thistype.playerScore(owner))
 			if (Character.getCharacterByUnit(usedUnit) == 0 and owner != MapData.arenaPlayer) then
 				call SetUnitOwner(usedUnit, MapData.arenaPlayer, true)
 			elseif (Character.getCharacterByUnit(usedUnit) != 0) then
@@ -290,6 +367,16 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			
 			call SetPlayerAllianceStateBJ(owner, MapData.arenaPlayer, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(MapData.arenaPlayer, owner, bj_ALLIANCE_UNALLIED)
+			
+			set i = 0
+			loop
+				exitwhen (i == thistype.m_units.size())
+				if (Character.getCharacterByUnit(thistype.m_units[i]) != 0 and thistype.m_units[i] != usedUnit and GetOwningPlayer(thistype.m_units[i]) != owner) then
+					call SetPlayerAllianceStateBJ(owner, GetOwningPlayer(thistype.m_units[i]), bj_ALLIANCE_UNALLIED)
+					call SetPlayerAllianceStateBJ(GetOwningPlayer(thistype.m_units[i]), owner, bj_ALLIANCE_UNALLIED)
+				endif
+				set i = i + 1
+			endloop
 			
 			set owner = null
 		endmethod
@@ -345,7 +432,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				exitwhen (thistype.m_units.empty())
 				call thistype.removeUnitByIndex(thistype.m_units.backIndex())
 			endloop
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, StringArg(thistype.m_textEndFight, winnerName))
+			call AdjustPlayerStateSimpleBJ(GetOwningPlayer(thistype.m_winner), PLAYER_STATE_RESOURCE_GOLD, thistype.rewardGold)
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, Format(thistype.m_textEndFight).s(winnerName).i(thistype.rewardGold).result())
 		endmethod
 	endstruct
 

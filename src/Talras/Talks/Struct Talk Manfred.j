@@ -1,4 +1,4 @@
-library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalksTalkMathilda, StructMapQuestsQuestSupplyForTalras
+library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalksTalkMathilda, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestReinforcementForTalras
 
 	struct TalkManfred extends ATalk
 	
@@ -10,6 +10,7 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		private AInfo m_talkedToFerdinand
 		private AInfo m_markwardNeedsSupply
 		private AInfo m_supply
+		private AInfo m_lumber
 		private AInfo m_exit
 		
 		private AInfo m_hi_Yes
@@ -137,6 +138,31 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 			call QuestSupplyForTalras.characterQuest(character).displayUpdate()
 			call info.talk().showStartPage(character)
 		endmethod
+		
+		// (Auftragsziel 2 des Auftrags „Die Befestigung von Talras“ ist aktiv und Charakter hat das Holz dabei)
+		private static method infoConditionLumber takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
+			return QuestReinforcementForTalras.characterQuest(character).questItem(1).isNew() and character.inventory().hasItemType('I051')
+		endmethod
+
+		// Bring dieses Holz zur Burg.
+		private static method infoActionLumber takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Bring dieses Holz zur Burg."), null)
+			call speech(info, character, true, tr("Was?! Was erlaubst du dir?"), null)
+			call speech(info, character, false, tr("Markward benötigt das Holz für die Burg. Es stammt von Kuno und der hat mir gesagt du würdest es zur Burg schaffen."), null)
+			call speech(info, character, true, tr("Kuno? Verdammt, na gut. Kuno ist ein netter Kerl und verkauft uns immer gute Waren. Aber dieser Markward meint wohl wir machen die ganze Drecksarbeit für ihn."), null)
+			call speech(info, character, true, tr("Wenn die Orks und Dunkelelfen hier einfallen, gehen wir doch als erste drauf, das kann ich dir versichern …"), null)
+			call speech(info, character, false, tr("…"), null)
+			call speech(info, character, true, tr("Schon gut ich schicke das Holz zur Burg, gib schon her!"), null)
+			// Charakter verliert Kunos Holz
+			call character.inventory().removeItemType('I051')
+			// Auftragsziel 1 des Auftrags „Die Befestigung von Talras“ abgeschlossen
+			call QuestReinforcementForTalras.characterQuest(character).questItem(0).setState(AAbstractQuest.stateCompleted)
+			// Auftragsziel 2 des Auftrags „Die Befestigung von Talras“ abgeschlossen
+			call QuestReinforcementForTalras.characterQuest(character).questItem(1).setState(AAbstractQuest.stateCompleted)
+			call QuestReinforcementForTalras.characterQuest(character).displayUpdate()
+			call info.talk().showStartPage(character)
+		endmethod
 
 		// Ja.
 		private static method infoActionHi_Yes takes AInfo info, ACharacter character returns nothing
@@ -183,6 +209,7 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 			set this.m_talkedToFerdinand = this.addInfo(false, false, thistype.infoConditionTalkedToFerdinand, thistype.infoActionTalkedToFerdinand, tr("Ich habe mit dem Vogt gesprochen."))
 			set this.m_markwardNeedsSupply = this.addInfo(false, false, thistype.infoConditionMarkwardNeedsSupply, thistype.infoActionMarkwardNeedsSupply, tr("Markward benötigt Vorräte in der Burg."))
 			set this.m_supply = this.addInfo(false, false, thistype.infoConditionSupply, thistype.infoActionSupply, tr("Hier sind die Vorräte."))
+			set this.m_lumber = this.addInfo(false, false, thistype.infoConditionLumber, thistype.infoActionLumber, tr("Bring dieses Holz zur Burg."))
 			set this.m_exit = this.addExitButton()
 
 			// info 0

@@ -191,7 +191,7 @@
 * Video: Grundsätzlich alle Einheiten von Gefolgsleuten hiden, außer die, von welchen actor erzeugt werden.
 * FIXED: Video: Werden actor von Gefolgsleuten erzeugt oder auch Charakteren, dann vorher zwangswiederbeleben, sonst fehlen sie wie Ricman bei letzter Schlacht.
 * Ricman gehört nach letzter Schlacht auf einmal der weißen Legion?!
-* Letzte Schlacht: Wellen sollen Spieler baldar gehören und die Bündnisse korrekt setzen. Dann laufen sie nicht zurück.
+* DEPRECATED: Letzte Schlacht: Wellen sollen Spieler baldar gehören und die Bündnisse korrekt setzen. Dann laufen sie nicht zurück.
 * Letzte Schlacht auch Dunkelelfen spawnen mit mehr Fähigkeiten, macht die Schlacht interessanter.
 * DONE: Orkanführer mehr Leben, stärker.
 * FIXED: Waldläufer spawnen sogar drei mal.
@@ -221,9 +221,9 @@
 * FIXED: Beschworene dunkle Diener haben Nekromantie obwohl nicht geskillt.
 * Wenn Seitengegenstand anderem Charakter gegeben wird, wird er nicht richtig zurück gesetzt. Pickup sollte Seitengegenstand einfach entfernen.
 * Belichtungsfehler herausfinden und fixen. Die Schatten sind viel zu dunkel?! Der Belichtungsfehler stammt vom falschen Skymodell. Das Wetter ändert manchmal das Skymodell? Dann funktioniert die Belichtung wieder. Am besten in jedem Video das Skymodell festsetzen und danach mit AWeather wieder zurücksetzen. Falsch AWeather hat changeSky() auf false. Liegt an Uhrzeit?
-* The Castle: Skymodell.
-* Intro: Skymodell.
-* Verhindern, dass falsches Skymodell gesetzt wird.
+* FIXED: The Castle: Skymodell.
+* FIXED: Intro: Skymodell.
+* DEPRECATED: Verhindern, dass falsches Skymodell gesetzt wird.
 * Initialskymodell für Karte Talras setzen.
 * FIXED: Bekehrung zeitbeschränkt machen. Sonst kann man sich eine Armee aufbauen!
 * DEPRECATED: Blitzschlag bekommt keine Verstärkung durch Wut der Elemente.
@@ -234,25 +234,25 @@
 * Weniger Erfahrung für die leppische Hauptquests. Man steigt viel zu schnell auf.
 * Dämpfung sollte nicht nur Magieschaden reduzieren. Der Effekt bringt sonst zu wenig, da wenige Einheiten Magieschaden verursachen. Vielleicht auch allgemein vor Schaden schützen von Einheiten, die Mana besitzen.
 * FIXED: Vervielfachung: Sollten immer mehr prozentualen Schaden verursachen, pro Stufe.
-* Manaexplosion stärker machen.
+* DONE: Manaexplosion stärker machen.
 * Zauberbuch und Rucksack öffnen in Zauberfähigkeiten verschieben. Zauberfähigkeiten umbenennen. Dadurch hätte man bis zu 6 Favoriten!
 * The Frozen Throne-Logo links oben im Hauptmenü durch "Die Macht des Feuers"-Schriftzug ersetzen.
 * Zunächst neutrale Gebäude von Minikarte ausblenden, in release-Map Sympol-MMP-Datei entfernen bzw. nur die Datei für das Hauptmenü!
-* Entzünden von Elementarmagier funktioniert nicht per Buff. Kann mehrmals gemacht werden!
+* Entzünden von Elementarmagier funktioniert nicht per Buff. Kann mehrmals gemacht werden und macht einen Verbündeten unendliche stark!
 * Kisten und Fässer brauchen Zerstöranimation.
 * Bärgengestalt braucht Verwandlungsanimation (per Code).
 * Krähengestalt braucht Verwandlungsanimation (per Code).
 * Drop AGui and all initialization except for ADialog! This should reduce the code overhead.
-* Seitenwechsel der Zauber in Klassenauswahl fixen.
-* Animation auf Schaf für gekauftes Schaf fixen.
-* Schaffähigkeiten für alle anderen Klassen einbauen.
+* FIXED: Seitenwechsel der Zauber in Klassenauswahl fixen.
+* FIXED: Animation auf Schaf für gekauftes Schaf fixen.
+* FIXED: Schaffähigkeiten für alle anderen Klassen einbauen.
 * FIXED: In Dialog als Namen des Charakters den Spielernamen anzeigen.
-* Wilde Kreaturen können nicht in die Luft schießen.
-* Wenn beim Wiederaktivieren des Equipments z. B. nach Rückverwandlung von Krähengestalt die Items nicht im Inventar landen (weil der Charakter z. B. stirbt), sondern auf dem Boden sollten sie auch als 0-Wert im Equipment gespeichert werden. Ansonsten werden sie verdoppelt.
+* FIXED: Wilde Kreaturen können nicht in die Luft schießen.
+* FIXED: Wenn beim Wiederaktivieren des Equipments z. B. nach Rückverwandlung von Krähengestalt die Items nicht im Inventar landen (weil der Charakter z. B. stirbt), sondern auf dem Boden sollten sie auch als 0-Wert im Equipment gespeichert werden. Ansonsten werden sie verdoppelt.
 * FIXED: Bärgengestalt hat falsches Tooltip.
 * Bärengestalt. Lebensbug. Am besten auch keine Lebensbonusfähigkeit sondern Lebensregeneration.
 * FIXED: Rothirsch und Grabenspinne stärker machen.
-* Inventarfähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
+* DONE: Inventarfähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
 * Grimoirefähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
 * Inventar- und Grimoirefähigkeiten bei Verwandlung falls gefordert explizit entfernen, anstatt hinzuzufügen.
 * Schafsjunge vielleicht Hirtenjunge nennen?
@@ -281,8 +281,8 @@
 * Erste Gruppe mit Rudelführer respawnt nicht?
 * Lothar: Dialogoptionen sind nach Quest mit Mathilda einfach weg.
 * Markwards Quest: Man kann kein Holz von Kuno besorgen (Dialog).
-* Markwards Quest: Pfeilplatzieung immer an der selben Position möglich.
-* Markwards Quest: Bei 0 Pfeilplatzierungen kein Ende!
+* FIXED: Markwards Quest: Pfeilplatzieung immer an der selben Position möglich.
+* FIXED: Markwards Quest: Bei 0 Pfeilplatzierungen kein Ende!
 * FIXED: Verbannen Tooltip: Hält 0 Sekunden.
 * FIXED: Manastrom: Zauberbuchtooltip mit Stufenwerten.
 * FIXED: Magische Schockwellen: Zauberbuchtooltip mit Stufenwerten.
@@ -294,34 +294,54 @@
 * FIXED: Absorbation und arkane Zeit haben dieselbe Zauber-ID im Zauberbuch.
 * FIXED: Arkane List: Icon fehlt wenn autospell aktiv ist.
 * Manastrom abbrechen wenn Ziel außer Reichweite ist.
-* Schafverwandlung klappt nicht direkt wenn man Fernkampfwaffe trägt. Was passiert bei AOS-Verwandlung falls man Fernkampfwaffe trägt??
+* Schafverwandlung klappt nicht direkt wenn man Fernkampfwaffe trägt. Was passiert bei AOS-Verwandlung falls man Fernkampfwaffe trägt?? Vor Verwandlung sollte immer Nahkampfwaffe angelegt sein??
 * Irmina sagt die Zutaten wären selten, sind nun aber sehr einfach auffindbare Gegenstände.
 * Arkane Zeit: Prüfen ob überhaupt Zauberverstärker auf Ziel sind ansonsten abbrechen.
 * Arkane Zeit Tooltip fixen.
 * Abfahrt nach Holzbruck macht keinen Sinn. Nordmänner wollen sich durch die Reihen der Orks schlagen, Herzog will die Nordmänner als Verbündete.
-* Eventuell anderes Ende - der König kommt.
+* DEPRECATED: Eventuell anderes Ende - der König kommt.
 * Auftrag "Krieg" einbauen.
-* Video "Heuert die Hochelfin an" einbauen.
+* DONE: Video "Heuert die Hochelfin an" einbauen.
 * Neuen Auftrag nach "Krieg" - "Aufmarsch der Dunkelelfen".
 * Danach kommt dann "Der Weg nach Holzbruck".
 * Die Nordmänner: Bei Video "Der Anführer" Sammelgebiet für Charaktere verwenden.
 * Orks und Dunkelelfen geben keine XP.
 * Berichtet dem Herzog von eurem Erfolg in Sammelgebiet.
 * Video Wigberht: Falls Orks nicht getötet wurden (die von Wigberht getötet werden) werden diese nicht nach dem Video entfernt.
+* Mit Wigberht reden sollte nur 200 Erfahrung geben.
+* Sammeln sollte nur 200 Erfahrung geben.
+* Orks laufen zurück bei letzter Schlacht.
+* Timerdialogtext bei Fellow-Wiederbelebung sollte Eigennamen enthalten.
+* Drachentöterin und Sisgard usw. während Video als Fellow unbesiegbar machen und hiden? Wird sonst angegriffen.
+* Quest Metzelei: Tötungsreihenfolge sollte egal sein.
+* FIXED: Nach Video "Deranor der Schreckliche" werden Kameragrenzen falsch resetet (nicht zur Höhle).
+* FIXED: Verzauberter Stab: Geschoss fehlt. Muss doch Orbfähigkeit sein, ansonsten geht Geschoss nicht.
+* Verzauberter Stab: Kürzer machen.
+* Heimrich "Was geschieht nun?" neues Quest beachten und Fahrt nach Holzrbruck separat prüfen.
+* Markward: "Wie ist die Lage?" neues Quest beachten.
+* Irmina: Fahrt nach Holzbruck prüfen, neues Quest.
+* FIXED: QuestArea deaktivieren, nachdem einmal aktiviert!!!
+* Drachentöterin sollte Laden auf dem Bauernhof bekommen, wo man Schattensteine kaufen kann.
+* Versorgung von Talras: 200 Erfahrung?
+* Befestigung von Talras: Klassenabhängiger Gegenstand.
+* DONE: Agihards Arena: PvP ermöglichen.
+* Manastrom muss abbrechen sobald Charakter gestunt wurde.
+* Agihard einbauen "Gegen wen kann ich kämpfen?". Beschreibung des Pvp-Kampfes.
+* FIXED: Wut der Elemente hat keine Grimoire Ability.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
 * FIXED: Klasseninfo zu schnell weg!!!
 * Pfeiltastensymbole Klassenauswahl ändern.
 * FIXED: Klassenauswahl mit Dialog bestätigen.
-* Tastenkürzel in Klassenauswahl deaktivieren.
+* FIXED: Tastenkürzel in Klassenauswahl deaktivieren.
 * FIXED: Immer noch beide Klassen sichtbar.
 * DONE: Klassenzauber reinmachen.
 * FIXED: Schwierigkeitsgradmeldung viel zu schnell. Tipp am Anfang: Gold und Erfahrung werden gleichmäßig verteilt, egal wo sich die Spieler befinden.
 * DONE: Zurückbutton im Zauberbuch, wenn man einen Zauber aktiviert.
 * Dago-Video: "Sagt mal"
 * FIXED: Dago-Dialog: "Ich habe hier einen Pilz" statt mehrere
-* Trainierst du nachts, kommt schon abends 19 Uhr
+* FIXED: Trainierst du nachts, kommt schon abends 19 Uhr
 * Felsvorsprung entfernen
 * Inventarfehler: Spieler 2 macht Inventar auf und zu und Gegenstände liegen auf einmal am Boden! Nur wenn das Inventar vorher voll war.
 * FIXED: NPC-Tipp-Gebiet von Dago kleiner machen als Gebiet mit Schreintipp. Tipp sollte anzeigen: NPCs mit Ausrufezeichen können angesprochen werden.
@@ -335,7 +355,8 @@ Test mit zwei menschlichen Spielern:
 * Irmina: Agiharddialog nicht so lächerlich und ablehnbar.
 * FIXED: Arenagegner viel zu schwach!!!
 * FIXED: Irmina: Zutatenliste geben und daraufhinweisen! Dann hat man sie überall dabei.
-* Agihard: Arenachampion Belohnung Gegenstände??? Nach jedem Kampf Gold!
+* FIXED: Agihard: Nach jedem Kampf Gold!
+* Agihard: Arenachampion Belohnung Gegenstände???
 * FIXED: Wieland sagt knn statt kann.
 * FIXED: Irmina: ein wenig klein.
 * Wachendialog fertig machen.
@@ -347,7 +368,8 @@ Test mit zwei menschlichen Spielern:
 * Lothar und Björn und Guntrich brauchen anderes Modell. Es gibt noch Villagermodelle auf Hive.
 * Lothar: Quest ist ablehnbar, ändern.
 * Ultimatumzauber - ins Tooltip schreiben ab welcher Stufe. Besser noch einen Button mit der benötigten Stufe einfügen. Sofort sichtbar.
-* Vorratswagen fährt zurück, anderes Modell.
+* FIXED: Vorratswagen anderes Modell.
+* Vorratswagen fährt zurück
 * FIXED: Orkgruppe im Norden lässt nichts fallen.
 * Vampirgebieter lässt zu wenig fallen.
 * DONE: Orklager Zeugs reinlegen, Kisten.
@@ -357,11 +379,11 @@ Test mit zwei menschlichen Spielern:
 * FIXED: Riesenfell immer droppen.
 * FIXED: Riesenfellquest kann man schon mit zwei Fellen beenden und sie werden nicht entfernt.
 * FIXED: Sisgards Dialog wird allen angezeigt.
-* NPCs sollen unterbrechen wenn man einkauft. Alternativ, NPCS langsamer machen.
+* NPCs sollen unterbrechen wenn man einkauft. Alternativ, NPCS langsamer machen oder statische Läden platzieren.
 * FIXED: Schuhe sind Nahkampfwaffe.
 * FIXED: Verbeugenanimation zeigt random animations in Video "Der Herzog von Talras".
-* Pfeilbündelquest ist verbuggt. Björn stellt Pfeile her ohne dass Kuno Holz gibt. Kuno gibt kein Holz, kein Dialog.
-* Pfeilbündelquest Zielreihenfolge stimmt gar nicht.
+* FIXED: Pfeilbündelquest ist verbuggt. Björn stellt Pfeile her ohne dass Kuno Holz gibt. Kuno gibt kein Holz, kein Dialog.
+* FIXED: Pfeilbündelquest Zielreihenfolge stimmt gar nicht.
 * FIXED: Die Bestie: Suche nach Hinweisen, keine Einblendung und kein Abschluss von Ziel 1.
 * FIXED: Wilde Kreaturen droppen nichts.
 * Baldars Dialog: Lieber ja dann überlege es dir noch einmal.
