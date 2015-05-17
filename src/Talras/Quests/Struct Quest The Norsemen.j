@@ -50,6 +50,35 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			set this.m_leaderboard = null
 		endmethod
 	endstruct
+	
+	struct QuestAreaTheNorsemenBattle extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoTheFirstCombat.video.evaluate().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			call QuestTheNorsemen.quest.evaluate().questItem(1).setState(AAbstractQuest.stateCompleted)
+			call QuestTheNorsemen.quest.evaluate().questItem(2).setState(AAbstractQuest.stateNew)
+			call QuestTheNorsemen.quest.evaluate().displayState()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+	
+	struct QuestAreaTheNorsemenHeimrich extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoANewAlliance.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			call QuestTheNorsemen.quest.evaluate().questItem(3).setState(AAbstractQuest.stateCompleted)
+			call QuestTheNorsemen.quest.evaluate().displayState()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
 
 	struct QuestTheNorsemen extends AQuest
 		public static constant integer maxWaves = 5
@@ -65,8 +94,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private trigger m_spawnTrigger
 		private WavesDisplay m_wavesDisplay
 		private fogmodifier array m_spawnFogModifiers[4]
-		private fogmodifier array m_assemblyPointFogModifier[6] // todo MapData.maxPlayers
-		private destructable array m_assemblyPointMarker[4]
+		private QuestAreaTheNorsemenBattle m_questAreaBattle
+		private QuestAreaTheNorsemenHeimrich m_questAreaHeimrich
 
 		implement Quest
 
@@ -353,68 +382,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call VideoTheChief.video.evaluate().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call questItem.quest().questItem(1).enable()
-			// create a visible effect on the map that it is easier to find the rect
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				set this.m_assemblyPointFogModifier[i] = CreateFogModifierRect(Player(i), FOG_OF_WAR_VISIBLE, gg_rct_quest_the_norsemen_assembly_point, true, true)
-				call FogModifierStart(this.m_assemblyPointFogModifier[i])
-				set i = i + 1
-			endloop
-			set this.m_assemblyPointMarker[0] = CreateDestructable('B00N', GetRectCenterX(gg_rct_quest_the_norsemen_assembly_point_marker_0), GetRectCenterY(gg_rct_quest_the_norsemen_assembly_point_marker_0), 0.0, 1.0,  0)
-			call SetDestructableInvulnerable(this.m_assemblyPointMarker[0], true)
-			set this.m_assemblyPointMarker[1] = CreateDestructable('B00N', GetRectCenterX(gg_rct_quest_the_norsemen_assembly_point_marker_1), GetRectCenterY(gg_rct_quest_the_norsemen_assembly_point_marker_1), 0.0, 1.0,  0)
-			call SetDestructableInvulnerable(this.m_assemblyPointMarker[1], true)
-			set this.m_assemblyPointMarker[2] = CreateDestructable('B00N', GetRectCenterX(gg_rct_quest_the_norsemen_assembly_point_marker_2), GetRectCenterY(gg_rct_quest_the_norsemen_assembly_point_marker_2), 90.0, 1.0,  0)
-			call SetDestructableInvulnerable(this.m_assemblyPointMarker[2], true)
-			set this.m_assemblyPointMarker[3] = CreateDestructable('B00N', GetRectCenterX(gg_rct_quest_the_norsemen_assembly_point_marker_3), GetRectCenterY(gg_rct_quest_the_norsemen_assembly_point_marker_3), 90.0, 1.0,  0)
-			call SetDestructableInvulnerable(this.m_assemblyPointMarker[3], true)
-		endmethod
-		
-		private static method stateEventCompleted1 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			call TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_quest_the_norsemen_assembly_point)
-		endmethod
-
-		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
-			local thistype this = thistype(questItem.quest())
-			local integer i
-			local integer charactersCount
-			if (ACharacter.isUnitCharacter(GetTriggerUnit())) then
-				set i = 0
-				set charactersCount = 0
-				loop
-					exitwhen (i == MapData.maxPlayers)
-					if (ACharacter.playerCharacter(Player(i)) != 0 and RectContainsUnit(gg_rct_quest_the_norsemen_assembly_point, ACharacter.playerCharacter(Player(i)).unit()) and  ACharacter.playerCharacter(Player(i)).isMovable()) then
-						set charactersCount = charactersCount + 1
-					endif
-					set i = i + 1
-				endloop
-				call this.displayUpdateMessage(Format(tr("%1%/%2% Charakteren bereit.")).i(charactersCount).i(ACharacter.countAll()).result())
-				
-				return charactersCount == ACharacter.countAll()
-			endif
-			return false
-		endmethod
-
-		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
-			local thistype this = thistype(questItem.quest())
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call DestroyFogModifier(this.m_assemblyPointFogModifier[i])
-				set this.m_assemblyPointFogModifier[i] = null
-				set i = i + 1
-			endloop
-			set i = 0
-			loop
-				exitwhen (i == 4)
-				call RemoveDestructable(this.m_assemblyPointMarker[i])
-				set this.m_assemblyPointMarker[i] = null
-				set i = i + 1
-			endloop
-			call VideoTheFirstCombat.video.evaluate().play()
-			call waitForVideo(MapData.videoWaitInterval)
-			call questItem.quest().questItem(2).enable()
+			set this.m_questAreaBattle = QuestAreaTheNorsemenBattle.create(gg_rct_quest_the_norsemen_assembly_point)
 		endmethod
 		
 		private static method groupFunctionRemoveUnit takes unit enumUnit returns nothing
@@ -452,24 +420,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call SetUnitInvulnerable(whichUnit, true)
 			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.ranger, gg_rct_waypoint_orc_camp_ranger_0, 296.12)
 			call SetUnitInvulnerable(whichUnit, true)
-		endmethod
-
-		private static method stateEventCompleted3 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			local event triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_quest_talras_quest_item_1) // same rect!
-			set triggerEvent = null
-		endmethod
-
-		private static method stateConditionCompleted3 takes AQuestItem questItem returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = ACharacter.isUnitCharacter(triggerUnit) and QuestTheNorsemen.quest().questItem(1).state() == AAbstractQuest.stateCompleted
-			set triggerUnit = null
-			return result
-		endmethod
-
-		private static method stateActionCompleted3 takes AQuestItem questItem returns nothing
-			call VideoANewAlliance.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
-			call questItem.quest().displayState()
+			
+			set this.m_questAreaHeimrich = QuestAreaTheNorsemenHeimrich.create(gg_rct_quest_talras_quest_item_1)
 		endmethod
 
 		private static method create takes nothing returns thistype
@@ -491,9 +443,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call questItem0.setReward(AAbstractQuest.rewardExperience, 500)
 			// item 1
 			set questItem1 = AQuestItem.create(this, tr("Sammelt euch nahe des nordwestlichen Orklagers mit den Nordmännern."))
-			call questItem1.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted1)
-			call questItem1.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted1)
-			call questItem1.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted1)
 			call questItem1.setPing(true)
 			call questItem1.setPingRect(gg_rct_quest_the_norsemen_assembly_point)
 			call questItem1.setPingColour(100.0, 100.0, 100.0)
@@ -507,9 +456,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call questItem2.setReward(AAbstractQuest.rewardExperience, 5000)
 			// item 3
 			set questItem3 = AQuestItem.create(this, tr("Berichtet dem Herzog von eurem Erfolg."))
-			call questItem3.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted3)
-			call questItem3.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted3)
-			call questItem3.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted3)
 			call questItem3.setPing(true)
 			call questItem3.setPingUnit(gg_unit_n013_0116)
 			call questItem3.setPingColour(100.0, 100.0, 100.0)

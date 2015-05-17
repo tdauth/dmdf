@@ -1,9 +1,27 @@
 library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs
 
+	struct QuestAreaTheWayToHolzbruck extends QuestArea
+	
+		public stub method onCheck takes nothing returns boolean
+			return QuestTheWayToHolzbruck.quest().isCompleted()
+		endmethod
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoUpstream.video().play()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+
 	struct QuestTheWayToHolzbruck extends AQuest
+		private QuestAreaTheWayToHolzbruck m_questArea
+	
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
+			set this.m_questArea = QuestAreaTheWayToHolzbruck.create(gg_rct_quest_the_way_to_holzbruck)
 			return super.enable()
 		endmethod
 

@@ -3,7 +3,6 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 	struct TalkWigberht extends ATalk
 		private static sound m_soundCHello
 		private static sound m_soundNHello
-		private static AVote m_vote1
 
 		implement Talk
 		
@@ -17,7 +16,6 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		private AInfo m_letUsAttack
 		private AInfo m_orcsAndDarkElvesAreDone
 		private AInfo m_bringUsToHolzbruck
-		private AInfo m_weAreReady
 		private AInfo m_exit
 
 		private method startPageAction takes ACharacter character returns nothing
@@ -185,35 +183,6 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			call info.talk().showStartPage(character)
 		endmethod
 
-		// (Auftrag “Der Weg nach Holzbruck” ist abgeschlossen)
-		private static method infoConditionWeAreReady takes AInfo info, ACharacter character returns boolean
-			return QuestTheWayToHolzbruck.quest().isCompleted()
-		endmethod
-
-		private static method resultAction1 takes AVote vote returns nothing
-			if (vote.result() == 0) then
-				call VideoUpstream.video().play()
-				call thistype.m_vote1.destroy()
-			endif
-		endmethod
-
-		// Wir sind so weit.
-		private static method infoActionWeAreReady takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wir sind so weit."), null)
-			call speech(info, character, true, tr("Seid ihr auch sicher? Die Fahrt wird vermutlich sehr lange dauern."), null)
-			call info.talk().close(character)
-			// start vote
-			if (thistype.m_vote1 == 0) then
-				set thistype.m_vote1 = AVote.create(tr("Wann wollen Sie nach Holzbruck fahren (und das Spiel somit beenden)?"))
-				call thistype.m_vote1.setResultAction(thistype.resultAction1)
-				call thistype.m_vote1.setRecognizePlayerLeavings(true)
-				call thistype.m_vote1.addChoice(tr("Sofort"))
-				call thistype.m_vote1.addChoice(tr("Später"))
-				call thistype.m_vote1.addForce(GetPlayingUsers())
-			endif
-			call thistype.m_vote1.start()
-		endmethod
-
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.wigberht(), thistype.startPageAction)
 			call this.setName(tr("Wigberht"))
@@ -229,7 +198,6 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			set this.m_letUsAttack = this.addInfo(true, false, thistype.infoConditionLetUsAttack, thistype.infoActionLetUsAttack, tr("Lass uns in den Kampf ziehen!"))
 			set this.m_orcsAndDarkElvesAreDone = this.addInfo(false, false, thistype.infoConditionOrcsAndDarkElvesAreDone, thistype.infoActionOrcsAndDarkElvesAreDone, tr("Wir haben die Orks und Dunkelelfen besiegt."))
 			set this.m_bringUsToHolzbruck = this.addInfo(false, false, thistype.infoConditionBringUsToHolzbruck, thistype.infoActionBringUsToHolzbruck, tr("Bringt uns nach Holzbruck."))
-			set this.m_weAreReady = this.addInfo(true, false, thistype.infoConditionWeAreReady, thistype.infoActionWeAreReady, tr("Wir sind so weit."))
 			set this.m_exit = this.addExitButton()
 
 			return this
@@ -248,7 +216,6 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			call SetSoundChannel(thistype.m_soundNHello, 0)
 			call SetSoundVolume(thistype.m_soundNHello, 127)
 			call SetSoundPitch(thistype.m_soundNHello, 1.0)
-			set thistype.m_vote1 = 0
 		endmethod
 	endstruct
 

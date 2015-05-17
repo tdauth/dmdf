@@ -48,7 +48,7 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 			call speech(info, character, true, tr("Ich hab mir das hier nach und nach aufgebaut. Meine Eltern waren hart arbeitende Leute und hatten kaum genug zum Leben. Eigentlich müsste ich mit dem zufrieden sein, was ich habe."), null)
 			call speech(info, character, true, tr("Aber dieser verdammte Adel macht es einem ja nicht gerade leicht. Also, ich halte vom Herzog nicht allzu viel. Er sollte mir lieber mal ein paar Leute schicken, die auf meine Felder und Leute aufpassen, wenn es wirklich stimmt, dass der Feind schon recht nah ist."), null)
 			call speech(info, character, true, tr("Am Ende lassen die uns wahrscheinlich nicht mal in die Burg. Der Herzog hat jetzt auch noch unseren Kriegsdienst auf ein Jahr eingefordert, falls der Feind hier aufkreuzt. Als ob ich nicht genug zu tun hätte."), null)
-			call this.showRange(this.m_aboutTheDuke_Yes.index(), m_aboutTheDuke_No.index(), character)
+			call this.showRange(this.m_aboutTheDuke_Yes.index(), this.m_aboutTheDuke_No.index(), character)
 		endmethod
 
 		// (Nach Begrüßung und nachdem der Charakter mit Mathilda darüber gesprochen hat)

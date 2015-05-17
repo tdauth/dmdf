@@ -240,6 +240,13 @@ endif
 			
 			// Make sure it won't be enabled again when the character is set movable.
 			if (disableInventory) then
+				/*
+				 * Make sure it is a melee character before it morphes since all morph spells are based on melee characters.
+				 * Otherwise one would have to create morph abilities for range and melee characters.
+				 */
+				call UnitAddAbility(this.unit(), MapData.classMeleeAbilityId.evaluate(this))
+				call UnitRemoveAbility(this.unit(), MapData.classMeleeAbilityId.evaluate(this))
+			
 				call this.inventory().setEnableAgain(false)
 				debug call Print("Disabling inventory")
 				// Should remove but store all items and their permanently added abilities if the rucksack is open!

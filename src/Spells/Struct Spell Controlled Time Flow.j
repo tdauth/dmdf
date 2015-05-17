@@ -110,7 +110,10 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 					debug call Print("Got ally " + GetUnitName(unitGroup.units()[i]) + " in range remaining units " + I2S(unitGroup.units().size()))
 				// remove all allies from the targets
 				else
+					debug call Print("Removing ally from all units " + GetUnitName(allies.units()[i]))
+					// FIXME seems to be too slow and the method cancels here.
 					call unitGroup.units().remove(allies.units()[i])
+					debug call Print("Done Removal!")
 					set i = i + 1
 				endif
 			endloop

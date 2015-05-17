@@ -1,5 +1,15 @@
 library StructMapQuestsQuestWar requires Asl, StructGameQuestArea
 
+	struct QuestAreaWarWieland extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoWieland.video().play()
+		endmethod
+	endstruct
+	
+	struct QuestAreaWarIronFromTheDrumCave extends QuestArea
+	endstruct
+
 	struct QuestWar extends AQuest
 		public static constant integer questItemWeaponsFromWieland = 0
 		public static constant integer questItemIronFromTheDrumCave = 1
@@ -12,11 +22,14 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea
 		public static constant integer questItemRecruit = 8
 		public static constant integer questItemGetRecruits = 9
 		public static constant integer questItemReportHeimrich = 10
+		private QuestAreaWarWieland m_questAreaWieland
+		private QuestAreaWarIronFromTheDrumCave m_questAreaIronFromTheDrumCave
 
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
 			local boolean result = super.enable()
+			set this.m_questAreaWieland = QuestAreaWarWieland.create(gg_rct_quest_war_wieland)
 			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemLumberFromKuno).setState(thistype.stateNew)
@@ -24,6 +37,11 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateNew)
 
 			return result
+		endmethod
+		
+		public method enableIronFromTheDrumCave takes nothing returns nothing
+			set this.m_questAreaIronFromTheDrumCave = QuestAreaWarIronFromTheDrumCave.create(gg_rct_quest_war_iron_from_the_drum_cave)
+			call QuestWar.quest().questItem(QuestWar.questItemIronFromTheDrumCave).enable()
 		endmethod
 		
 		public stub method distributeRewards takes nothing returns nothing

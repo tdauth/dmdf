@@ -213,8 +213,13 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
 					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
 				else
-					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
-					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+					if (character.player() == MAP_CONTROL_COMPUTER or GetPlayerController(Player(i)) == MAP_CONTROL_COMPUTER) then
+						call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_ADVUNITS)
+						call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
+					else
+						call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
+						call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+					endif
 				endif
 				set i = i + 1
 			endloop
@@ -235,8 +240,13 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
-				call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+				if (character.player() == MAP_CONTROL_COMPUTER or GetPlayerController(Player(i)) == MAP_CONTROL_COMPUTER) then
+					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_ADVUNITS)
+					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
+				else
+					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
+					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+				endif
 				set i = i + 1
 			endloop
 				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, character.player(), bj_ALLIANCE_NEUTRAL)
@@ -464,12 +474,10 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				set user = Player(i)
-				if (IsPlayerPlayingUser(user)) then
-					call SetPlayerAllianceStateBJ(user, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
-					call SetPlayerAllianceStateBJ(user, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
-					call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, user, bj_ALLIANCE_NEUTRAL)
-					call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, user, bj_ALLIANCE_NEUTRAL)
-				endif
+				call SetPlayerAllianceStateBJ(user, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(user, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, user, bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, user, bj_ALLIANCE_NEUTRAL)
 				set user = null
 				set i = i + 1
 			endloop

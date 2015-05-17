@@ -4,6 +4,43 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	 * \brief Default item type struct for all item types in DMdF.
 	 */
 	struct ItemType extends AItemType
+		private static AIntegerVector m_twoSlotItems
+		
+		public stub method checkRequirement takes ACharacter character returns boolean
+			local integer i
+			if (this.equipmentType() == AItemType.equipmentTypeSecondaryWeapon and character.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0) then
+				set i = 0
+				loop
+					exitwhen (i == thistype.m_twoSlotItems.size())
+					if (character.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId() == thistype.m_twoSlotItems[i]) then
+						call character.displayMessage(ACharacter.messageTypeError, tr("Charakter trägt Gegenstand, der beide Slots benötigt."))
+						return false
+					endif
+					set i = i + 1
+				endloop
+			elseif (character.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0) then
+				set i = 0
+				loop
+					exitwhen (i == thistype.m_twoSlotItems.size())
+					if (this.itemType() == thistype.m_twoSlotItems[i]) then
+						call character.displayMessage(ACharacter.messageTypeError, tr("Gegenstand benötigt beide Slots."))
+						return false
+					endif
+					set i = i + 1
+				endloop
+			endif
+		
+			return super.checkRequirement(character)
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			// TODO Alle Zweihandwaffen
+			set thistype.m_twoSlotItems = AIntegerVector.create()
+			call thistype.m_twoSlotItems.pushBack('I013')
+			call thistype.m_twoSlotItems.pushBack('I020')
+			call thistype.m_twoSlotItems.pushBack('I021')
+			call thistype.m_twoSlotItems.pushBack('I04T')
+		endmethod
 		
 		/*
 		* TODO
@@ -233,6 +270,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_crownOfKarornForest
 		private static ItemType m_orcAxe
 		private static ItemType m_orcCrossBow
+		// Markward
+		private static ItemType m_ringOfStrength
+		private static ItemType m_ringOfWisdom
+		private static ItemType m_ringOfDexterity
+		private static ItemType m_ringOfLoyality
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -537,6 +579,16 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			set thistype.m_orcCrossBow = RangeItemType.create('I04T', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_orcCrossBow.addAbility('AItk', true)
+			
+			// Markward
+			set thistype.m_ringOfStrength = ItemType.createSimple('I053', ItemType.equipmentTypeAmulet)
+			call thistype.m_ringOfStrength.addAbility('AIs3', true)
+			set thistype.m_ringOfWisdom = ItemType.createSimple('I055', ItemType.equipmentTypeAmulet)
+			call thistype.m_ringOfWisdom.addAbility('AIi3', true)
+			set thistype.m_ringOfDexterity = ItemType.createSimple('I055', ItemType.equipmentTypeAmulet)
+			call thistype.m_ringOfDexterity.addAbility('AIa3', true)
+			set thistype.m_ringOfLoyality = ItemType.createSimple('I055', ItemType.equipmentTypeAmulet)
+			call thistype.m_ringOfLoyality.addAbility('AIx2', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType

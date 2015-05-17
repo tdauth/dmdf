@@ -567,7 +567,7 @@ static if (DEBUG_MODE) then
 			endif
 			
 			if (Spell(this.m_spells[index]).getMaxLevel() <= 0) then
-				call this.printMethodError("setSpellMaxLevelByIndex", "Level is <= 0 " + I2S(level))
+				call this.printMethodError("setSpellMaxLevelByIndex", "Max level is <= 0 " + I2S(Spell(this.m_spells[index]).getMaxLevel()))
 			endif
 endif
 			return this.setSpellLevelByIndex(index, Spell(this.m_spells[index]).getMaxLevel(), updateUi)

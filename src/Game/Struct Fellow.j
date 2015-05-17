@@ -450,7 +450,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set thistype.m_infoMessageDeath = infoMessageDeath
 			set thistype.m_infoSoundDeath = infoSoundDeath
 			// static members
-			set thistype.m_fellows = AIntegerList.create()
+			set thistype.m_fellows = AIntegerVector.create()
 		endmethod
 
 		/**
@@ -504,10 +504,11 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 * Since fellows usually should not be dead in a video they will be revived manually before the video starts.
 		 */
 		public static method reviveAllForVideo takes nothing returns nothing
-			local AIntegerListIterator iterator = thistype.m_fellows.begin()
+			local AIntegerVectorIterator iterator = thistype.m_fellows.begin()
 			debug call Print("Getting iterator " + I2S(iterator) + " of list " + I2S(thistype.m_fellows))
 			loop
 				exitwhen (not iterator.isValid())
+				debug call Print("Reviving fellow unit " + GetUnitName(thistype(iterator.data()).unit()))
 				call thistype(iterator.data()).reviveForVideo()
 				call iterator.next()
 			endloop

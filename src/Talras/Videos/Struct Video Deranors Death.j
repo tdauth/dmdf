@@ -90,11 +90,14 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
+			local unit shop
 			call Game.resetVideoSettings()
 			// move her to Talras
 			call SetUnitX(Npcs.dragonSlayer(), GetRectCenterX(gg_rct_quest_a_new_alliance))
 			call SetUnitY(Npcs.dragonSlayer(), GetRectCenterY(gg_rct_quest_a_new_alliance))
 			call SetUnitFacing(Npcs.dragonSlayer(), 265.36)
+			set shop = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 'n04E', GetRectCenterX(gg_rct_dragon_slayer_shop), GetRectCenterY(gg_rct_dragon_slayer_shop), 0.0)
+			call SetUnitInvulnerable(shop, true)
 		endmethod
 
 		private static method create takes nothing returns thistype

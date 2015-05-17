@@ -89,10 +89,10 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 						set success = ReviveHero(target, GetUnitX(target), GetUnitY(target), false)
 					// is no hero: use dummy caster
 					else
-						call SetUnitX(reviver, GetUnitX(target))
-						call SetUnitY(reviver, GetUnitY(target))
+						call SetUnitX(thistype.reviver, GetUnitX(target))
+						call SetUnitY(thistype.reviver, GetUnitY(target))
 						call PauseUnit(thistype.reviver, false)
-						set success = IssueImmediateOrder(reviver, "resurrection")
+						set success = IssueImmediateOrder(thistype.reviver, "resurrection")
 						call PauseUnit(thistype.reviver, true)
 					endif
 					

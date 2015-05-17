@@ -1,9 +1,48 @@
 library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcs, StructMapMapSpawnPoints, StructMapVideosVideoBloodthirstiness, StructMapVideosVideoDeathVault, StructMapVideosVideoDragonHunt
 
+	struct QuestAreaSlaughter extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoDragonHunt.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			call QuestSlaughter.quest.evaluate().setState(AAbstractQuest.stateNew)
+			call QuestSlaughter.quest.evaluate().questItem(0).setState(AAbstractQuest.stateNew)
+			call QuestSlaughter.quest.evaluate().displayState()
+			debug call Print("Sharing fellow: " + I2S(Fellows.dragonSlayer()))
+			call Fellows.dragonSlayer().shareWith(0)
+			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), "Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.")
+			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!"), null)
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+	
+	struct QuestAreaSlaughterEnter extends QuestArea
+	
+		public stub method onCheck takes nothing returns boolean
+			return QuestDeranor.quest().isCompleted()
+		endmethod
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoDeathVault.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			call QuestSlaughter.quest.evaluate().questItem(4).setState(AAbstractQuest.stateCompleted)
+			call QuestSlaughter.quest.evaluate().questItem(5).setState(AAbstractQuest.stateNew)
+			call QuestSlaughter.quest.evaluate().questItem(6).setState(AAbstractQuest.stateNew)
+			call QuestSlaughter.quest.evaluate().displayUpdate()
+			call QuestSlaughter.quest.evaluate().setPingByUnitTypeId.execute(SpawnPoints.medusa(), UnitTypes.medusa)
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+
 	struct QuestSlaughter extends AQuest
-		private region m_newRegion
-		private region m_enterRegion
-		private trigger m_enterTrigger
+		private QuestAreaSlaughter m_questArea
+		private QuestAreaSlaughterEnter m_questAreaEnter
 
 		implement Quest
 
@@ -34,25 +73,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 			call Character.displayItemAcquiredToAll(tr("STRING 4000"), tr("STRING 4001"))
 			call Character.displayItemAcquiredToAll(tr("STRING 4003"), tr("STRING 4004"))
-		endmethod
-
-		private method stateEventNew takes trigger whichTrigger returns nothing
-			call TriggerRegisterEnterRegion(whichTrigger, this.m_newRegion, null)
-		endmethod
-
-		private method stateConditionNew takes nothing returns boolean
-			return Character.isUnitCharacter(GetTriggerUnit())
-		endmethod
-
-		private method stateActionNew takes nothing returns nothing
-			call VideoDragonHunt.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
-			call this.questItem(0).setState(thistype.stateNew)
-			call this.displayState()
-			debug call Print("Sharing fellow: " + I2S(Fellows.dragonSlayer()))
-			call Fellows.dragonSlayer().shareWith(0)
-			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), "Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.")
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!"), null)
 		endmethod
 
 		private static method stateEventCompleted takes AQuestItem questItem, trigger whichTrigger returns nothing
@@ -107,15 +127,8 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		private static method stateActionCompleted3 takes AQuestItem questItem returns nothing
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Ausgezeichnet! In der Nähe befindet sich eine Höhle mit einer geheimen Gruft. Sie wird von Eingeweihten auch „die Todesgruft“ genannt."), null)
+			set thistype(questItem.quest()).m_questAreaEnter = QuestAreaSlaughterEnter.create(gg_rct_quest_slaughter_death_vault)
 			call questItem.quest().questItem(4).enable()
-		endmethod
-
-		private static method stateEventCompleted4 takes AQuestItem questItem, trigger whichTrigger returns nothing
-			call TriggerRegisterEnterRegion(whichTrigger, thistype(questItem.quest()).m_enterRegion, null)
-		endmethod
-
-		private static method stateConditionCompleted4 takes AQuestItem questItem returns boolean
-			return Character.isUnitCharacter(GetTriggerUnit())
 		endmethod
 
 		private static method stateActionCompleted4 takes AQuestItem questItem returns nothing
@@ -157,7 +170,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		/// Considers death units (spawn points) and continues searching for the first one with unit type id \p unitTypeId of spawn point \p spawnPoint with an 1 second interval.
-		private method setPingByUnitTypeId takes ASpawnPoint spawnPoint, integer unitTypeId returns nothing
+		public method setPingByUnitTypeId takes ASpawnPoint spawnPoint, integer unitTypeId returns nothing
 			local unit whichUnit = spawnPoint.firstUnitOfType(unitTypeId)
 			if (whichUnit == null) then
 				call this.setPing(false)
@@ -176,15 +189,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp")
 			call this.setDescription(tr("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten zu berichten könnt."))
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
-			set this.m_newRegion = CreateRegion()
-			call RegionAddRect(this.m_newRegion, gg_rct_quest_slaughter_enable)
-
-			set this.m_enterRegion = CreateRegion()
-			call RegionAddRect(this.m_enterRegion, gg_rct_quest_slaughter_death_vault)
-
-			call this.setStateEvent(thistype.stateNew, thistype.stateEventNew)
-			call this.setStateCondition(thistype.stateNew, thistype.stateConditionNew)
-			call this.setStateAction(thistype.stateNew, thistype.stateActionNew)
+			set this.m_questArea = QuestAreaSlaughter.create(gg_rct_quest_slaughter_enable)
 
 			set questItem = AQuestItem.create(this, tr("Tötet den Vampirgebieter."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
@@ -209,9 +214,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted3)
 
 			set questItem = AQuestItem.create(this, tr("Begebt euch zur „Todesgruft“."))
-			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted4)
-			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted4)
-			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted4)
 			call questItem.setPing(true)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_slaughter_death_vault)
 			call questItem.setPingColour(100.0, 100.0, 100.0)

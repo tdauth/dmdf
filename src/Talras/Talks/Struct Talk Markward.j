@@ -172,8 +172,16 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 		private static method infoActionSecondHelpDone takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Ihr seid nun bereit für eine Belagerung."), null)
 			call speech(info, character, true, tr("Das stimmt hoffentlich. Wir stehen schwer in deiner Schuld dafür. Nimm diesen Gegenstand als Belohnung."), null)
-			// TODO Charakter erhält besonderen klassenabhängigen Gegenstand.
-			//call character.giveItem('I03R')
+			// Charakter erhält besonderen klassenabhängigen Gegenstand.
+			if (character.class() == Classes.cleric() or character.class() == Classes.necromancer() or character.class() == Classes.druid() or character.class() == Classes.elementalMage() or character.class() == Classes.ranger()) then
+				call character.giveItem('I052')
+			elseif (character.class() == Classes.dragonSlayer()) then
+				call character.giveItem('I053')
+			elseif (character.class() == Classes.knight()) then
+				call character.giveItem('I055')
+			elseif (character.class() == Classes.ranger()) then
+				call character.giveItem('I054')
+			endif
 			// Auftrag „Die Befestigung von Talras“ abgeschlossen
 			call QuestReinforcementForTalras.characterQuest(character).complete()
 			call info.talk().showStartPage(character)

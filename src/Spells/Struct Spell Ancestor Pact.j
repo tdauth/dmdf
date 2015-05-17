@@ -15,30 +15,42 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 		private static constant real lifePercentageLevelValue = 10.0 // ab Stufe 1
 		private static constant real manaPercentage = 0.0
 		private static constant real manaPercentageLevelValue = 10.0 // ab Stufe 1
-		private AGroup unitGroup
-		private unit target
 
 		private static method unitFilter takes nothing returns boolean
 			return IsUnitDeadBJ(GetFilterUnit())
 		endmethod
 		
+		private method targets takes nothing returns AGroup
+			local AGroup targets = AGroup.create()
+			call targets.addUnitsInRangeCounted(GetSpellTargetX(), GetSpellTargetY(), thistype.targetRadius, Filter(function thistype.unitFilter), 1)
+			return targets
+		endmethod
+		
+		private method target takes nothing returns unit
+			local AGroup targets = this.targets()
+			local unit result
+			
+			if (not targets.units().empty()) then
+				set result = targets.units()[0]
+			endif
+			call targets.destroy()
+			
+			return result
+		endmethod
+		
 		public stub method onCastCondition takes nothing returns boolean
-			set this.target = null
-			call this.unitGroup.units().clear()
-			call this.unitGroup.addUnitsInRangeCounted(GetSpellTargetX(), GetSpellTargetY(), thistype.targetRadius, Filter(function thistype.unitFilter), 1)
-			if (this.unitGroup.units().empty()) then
-				call this.unitGroup.destroy()
+			local unit target = this.target()
+			
+			if (target == null) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tr("Kein totes Ziel gefunden."))
+				
 				return false
 			endif
-			
-			set this.target = this.unitGroup.units()[0]
-			call this.unitGroup.units().clear()
 			
 			if (GetUnitState(this.character().unit(), UNIT_STATE_LIFE) < GetUnitState(this.character().unit(), UNIT_STATE_MAX_LIFE)) then
 				return true
 			elseif (GetUnitState(this.character().unit(), UNIT_STATE_MANA) < GetUnitState(this.character().unit(), UNIT_STATE_MAX_MANA)) then
-				if (GetUnitState(this.target, UNIT_STATE_MAX_MANA) > 0.0) then
+				if (GetUnitState(target, UNIT_STATE_MAX_MANA) > 0.0) then
 					return true
 				else
 					call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel hat kein Mana."))
@@ -51,11 +63,12 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 		endmethod
 
 		public stub method onCastAction takes nothing returns nothing
+			local unit target = this.target() // not necessarily the same unit but that's just okay
 			local real life
 			local real mana
-			set life =  GetUnitState(this.target, UNIT_STATE_MAX_LIFE) * (thistype.lifePercentage + (this.level() - 1) * thistype.lifePercentageLevelValue)
+			set life =  GetUnitState(target, UNIT_STATE_MAX_LIFE) * (thistype.lifePercentage + (this.level() - 1) * thistype.lifePercentageLevelValue)
 			set life = RMinBJ(life, GetUnitMissingLife(this.character().unit()))
-			set mana = GetUnitState(this.target, UNIT_STATE_MAX_MANA) * (thistype.manaPercentage + (this.level() - 1) * thistype.manaPercentageLevelValue)
+			set mana = GetUnitState(target, UNIT_STATE_MAX_MANA) * (thistype.manaPercentage + (this.level() - 1) * thistype.manaPercentageLevelValue)
 			set mana = RMinBJ(mana, GetUnitMissingMana(this.character().unit()))
 			
 			if (life > 0.0) then
@@ -68,14 +81,12 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 				call thistype.showManaTextTag(this.character().unit(), mana)
 			endif
 			
-			call unitGroup.destroy()
-			call RemoveUnit(this.target)
-			set this.target = null
+			call RemoveUnit(target)
+			set target = null
 		endmethod
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
-			set this.unitGroup = AGroup.create()
 			
 			call this.addGrimoireEntry('A0RK', 'A0RP')
 			call this.addGrimoireEntry('A0RL', 'A0RQ')
@@ -84,10 +95,6 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 			call this.addGrimoireEntry('A0RO', 'A0RT')
 			
 			return this
-		endmethod
-		
-		public method onDestroy takes nothing returns nothing
-			call this.unitGroup.destroy()
 		endmethod
 	endstruct
 

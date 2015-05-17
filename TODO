@@ -105,7 +105,7 @@
 * Tutorial: Zunächst einblenden, dass man mit "-mainmenu" ins Haupt-Menü kommt.
 * Tutorial: Einblenden, dass man eine Teleportationsrolle dabei hat.
 * Creep-Lager-Icons funktionieren im Editor aber nicht im Spiel.
-* "Märtyrer" verbraucht Mana auch wenn der Zauber gestoppt wird. Vermutlich muss der Test in die Condition ausgelagert werden.
+* FIXED: "Märtyrer" verbraucht Mana auch wenn der Zauber gestoppt wird. Vermutlich muss der Test in die Condition ausgelagert werden.
 * Klassenzauber auf Basis von "Mana und Leben auffüllen"?
 * FIXED: "Dämonendiener" es können mehrere gleichzeitig beschworen werden.
 * "Dämonendiener" Stufe 3 eindeutig zu stark.
@@ -174,13 +174,13 @@
 * FIXED: AInventory: Gegenstand mit 2 Aufladungen über Seitengegenstand auf vorherige Seite. Dort liegt im letzten Fach gleicher Gegenstand also zusammengeführt - eine Aufladung zu wenig.
 * AInventory: Seitengegenstände besser nicht ablegbar machen, order abfangen? Müssen ablegbar sein damit man Gegenstände auf Seiten verschieben kann.
 * AInventory: TriggerSleepAction() entfernen oder eindämmen.
-* Letzte Abstimmung bei Wigberht ebenfalls durch Gebietssammlung ersetzen.
+* FIXED: Letzte Abstimmung bei Wigberht ebenfalls durch Gebietssammlung ersetzen.
 * FIXED: Video The Castle: Übergänge zu schnell.
 * DEPREACTED: Video The Castle: Erzähler soll etwas zur Burg sagen?
 * FIXED: Manaschild sollte bei keinem Mana ausgehen.
 * FIXED: Beim Anlegen einer Fernkampfwaffe werden durch die Verwandlung die Gegenstandseffekte nicht hinzugefügt, wenn der Rucksack geöffnet ist. In diesem Fall müssten sie manuell nochmal hinzugefügt werden, obwohl sie eigentlich permanent sein sollten.
 * FIXED: Für Spieler 2 wurde ein Hero Icon erzeugt, das auf den eigenen Helden verweist?!
-* AInventory: Gegenstände die man besitzt, kann man keinem anderen Charakter geben! Bei Übergabe den Owner auf den neuen Spieler setzen oder so.
+* FIXED: AInventory: Gegenstände die man besitzt, kann man keinem anderen Charakter geben! Bei Übergabe den Owner auf den neuen Spieler setzen oder so.
 * Großen Felsvorsprung über Bärenhöhle entfernen.
 * FIXED: Falls Charakter von menschlichem Spieler kontrolliert wird und Order von Verbündetem erfolgt (dank gemeinsamer Kontrolle) sollte er trotzdem keinen NPC ansprechen.
 * FIXED: Da Nebenquests für einzelne Spieler funktionieren, Titel nicht mehr mit Spielerfarbe versehen.
@@ -250,7 +250,7 @@
 * FIXED: Wilde Kreaturen können nicht in die Luft schießen.
 * FIXED: Wenn beim Wiederaktivieren des Equipments z. B. nach Rückverwandlung von Krähengestalt die Items nicht im Inventar landen (weil der Charakter z. B. stirbt), sondern auf dem Boden sollten sie auch als 0-Wert im Equipment gespeichert werden. Ansonsten werden sie verdoppelt.
 * FIXED: Bärgengestalt hat falsches Tooltip.
-* Bärengestalt. Lebensbug. Am besten auch keine Lebensbonusfähigkeit sondern Lebensregeneration.
+* FIXED: Bärengestalt. Lebensbug. Am besten auch keine Lebensbonusfähigkeit sondern Lebensregeneration.
 * FIXED: Rothirsch und Grabenspinne stärker machen.
 * DONE: Inventarfähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
 * Grimoirefähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
@@ -259,12 +259,11 @@
 * Schafsjunge Satz "Was verkaufst du denn?".
 * Schafsjunge soll Wolle usw. verkaufen.
 * Wolle und Questbelohnung einbauen.
-* 2 neue Quests von Schafsjungen testen.
-* Schafsjunge: "Kannst du mir sagen, wo ich die Rudelführer finde?".
+* DONE: 2 neue Quests von Schafsjungen testen.
+* DONE: Schafsjunge: "Kannst du mir sagen, wo ich die Rudelführer finde?".
 * FIXED: 2 neue Quests: displayUpdateMessage() wenn Ziel erfolgreich war.
 * Beleidigung gegenüber Mathilda rausnehmen.
-* Verwandlung ins Schaf muss berücksichtigen ob Nah- oder Fernkampfwaffe.
-* Nah- oder Fernkampfwaffe muss berücksichtigen ob Schaf oder kein Schaf.
+* FIXED, wird immer Nahkämpfer vor Verwandlung? Nah- oder Fernkampfwaffe muss berücksichtigen ob Schaf oder kein Schaf.
 * DONE: Lederpanzer braucht Modell.
 * FIXED: Spiel stürzt beim Skillen von Koloss ab.
 * FIXED (kein Code für Blitz): Manastrom auf Gegner lässt Spiel abstürzen.
@@ -286,15 +285,15 @@
 * FIXED: Verbannen Tooltip: Hält 0 Sekunden.
 * FIXED: Manastrom: Zauberbuchtooltip mit Stufenwerten.
 * FIXED: Magische Schockwellen: Zauberbuchtooltip mit Stufenwerten.
-* Manaschild: Zauberbuchtooltip mit Stufenwerten.
+* FIXED: Manaschild: Zauberbuchtooltip mit Stufenwerten.
 * FIXED: Magische Schockwellen: Spielabsturz wenn Einheit angegriffen wird.
 * FIXED: Arkaner Hunger: Manakosten.
 * FIXED: Arkaner Hunger: Abklingzeit.
 * FIXED: Arkaner Hunger: Double Free ADynamicLightning.
 * FIXED: Absorbation und arkane Zeit haben dieselbe Zauber-ID im Zauberbuch.
 * FIXED: Arkane List: Icon fehlt wenn autospell aktiv ist.
-* Manastrom abbrechen wenn Ziel außer Reichweite ist.
-* Schafverwandlung klappt nicht direkt wenn man Fernkampfwaffe trägt. Was passiert bei AOS-Verwandlung falls man Fernkampfwaffe trägt?? Vor Verwandlung sollte immer Nahkampfwaffe angelegt sein??
+* FIXED: Verwandlung ins Schaf muss berücksichtigen ob Nah- oder Fernkampfwaffe.
+* FIXED (Charakter ist vor Verwandlung immer automatisch Nahkämpfer, bei Rückverwandlung wird er erst nach der Rückverwandlung automatisch zum Fernkämpfer wenn die Inventargegenstände angelegt werden): Schafverwandlung klappt nicht direkt wenn man Fernkampfwaffe trägt. Was passiert bei AOS-Verwandlung falls man Fernkampfwaffe trägt?? Vor Verwandlung sollte immer Nahkampfwaffe angelegt sein!!
 * Irmina sagt die Zutaten wären selten, sind nun aber sehr einfach auffindbare Gegenstände.
 * Arkane Zeit: Prüfen ob überhaupt Zauberverstärker auf Ziel sind ansonsten abbrechen.
 * Arkane Zeit Tooltip fixen.
@@ -306,28 +305,37 @@
 * Danach kommt dann "Der Weg nach Holzbruck".
 * Die Nordmänner: Bei Video "Der Anführer" Sammelgebiet für Charaktere verwenden.
 * Orks und Dunkelelfen geben keine XP.
-* Berichtet dem Herzog von eurem Erfolg in Sammelgebiet.
+* FIXED: Berichtet dem Herzog von eurem Erfolg in Sammelgebiet.
 * Video Wigberht: Falls Orks nicht getötet wurden (die von Wigberht getötet werden) werden diese nicht nach dem Video entfernt.
 * Mit Wigberht reden sollte nur 200 Erfahrung geben.
 * Sammeln sollte nur 200 Erfahrung geben.
-* Orks laufen zurück bei letzter Schlacht.
+* Orks laufen zurück bei letzter Schlacht (nicht patroullieren?).
 * Timerdialogtext bei Fellow-Wiederbelebung sollte Eigennamen enthalten.
 * Drachentöterin und Sisgard usw. während Video als Fellow unbesiegbar machen und hiden? Wird sonst angegriffen.
 * Quest Metzelei: Tötungsreihenfolge sollte egal sein.
 * FIXED: Nach Video "Deranor der Schreckliche" werden Kameragrenzen falsch resetet (nicht zur Höhle).
 * FIXED: Verzauberter Stab: Geschoss fehlt. Muss doch Orbfähigkeit sein, ansonsten geht Geschoss nicht.
 * Verzauberter Stab: Kürzer machen.
-* Heimrich "Was geschieht nun?" neues Quest beachten und Fahrt nach Holzrbruck separat prüfen.
+* Heimrich "Was geschieht nun?" neues Quest beachten und Fahrt nach Holzbruck separat prüfen.
 * Markward: "Wie ist die Lage?" neues Quest beachten.
 * Irmina: Fahrt nach Holzbruck prüfen, neues Quest.
 * FIXED: QuestArea deaktivieren, nachdem einmal aktiviert!!!
-* Drachentöterin sollte Laden auf dem Bauernhof bekommen, wo man Schattensteine kaufen kann.
+* DONE: Drachentöterin sollte Laden auf dem Bauernhof bekommen, wo man Schattensteine kaufen kann.
 * Versorgung von Talras: 200 Erfahrung?
-* Befestigung von Talras: Klassenabhängiger Gegenstand.
+* FIXED: Befestigung von Talras: Klassenabhängiger Gegenstand.
 * DONE: Agihards Arena: PvP ermöglichen.
-* Manastrom muss abbrechen sobald Charakter gestunt wurde.
+* FIXED: Manastrom muss abbrechen sobald Charakter gestunt wurde.
+* FIXED: Manastrom abbrechen wenn Ziel außer Reichweite ist.
 * Agihard einbauen "Gegen wen kann ich kämpfen?". Beschreibung des Pvp-Kampfes.
 * FIXED: Wut der Elemente hat keine Grimoire Ability.
+* FIXED: Schwarze Legion ist mit Computerspielern verfeindet (nach Arena?).
+* FIXED: Nachdem Charakter AOS beigetreten ist, kann er Computerspieler nicht mehr steuern.
+* FIXED: AInventory: Disable muss nun die permanenten Fähigkeiten von der Einheit entfernen.
+* Stäbe sollen Zweihandwaffen sein?
+* Sisgard, Dago, Wigberht, Ricman und Drachentöterin benötigen Stufenattribute und fixe Stufe.
+* Sisgard, Ricman und Drachentöterin benötigen mehr interessante Fähigkeiten.
+* Magische Schockwellen: Effekt muss enden, wenn Charakter stirbt.
+* Wurfspeer ist keine Fernkampfwaffe.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
@@ -398,6 +406,7 @@ Test mit zwei menschlichen Spielern:
 * Waldfurienriesen sollen Felle droppen.
 * Für Computerspieler beim Autoselect der Klasse deutlich die Performance erhöhen! Klassenauswahl muss nicht erst angezeigt werden!
 * FIXED: Rückverwandlung von Bärengestalt und Krähengestalt ändert das maximale Leben oder Mana. Einfach passive Transformation nehmen. Liegt vermutlich an SetUnitState(). War die Manasteigerungsfähigkeit bei Krähengestalt.
+* FIXED: Primär- und Sekundär-Aufträge umbenennen: Gemeinsame Aufrträge, Eigene Aufträge.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
