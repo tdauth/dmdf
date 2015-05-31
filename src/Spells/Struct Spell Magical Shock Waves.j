@@ -118,7 +118,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 
 				set time = thistype.time
 				loop
-					exitwhen (time <= 0.0 or targets.units().empty())
+					exitwhen (time <= 0.0 or targets.units().empty() or IsUnitDeadBJ(caster))
 					call TriggerSleepAction(1.0)
 					/*
 					 * Check all targets and filter out invalid targets.

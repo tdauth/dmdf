@@ -1,4 +1,4 @@
-library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen
+library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapNpcs
 
 	struct VideoTheChief extends AVideo
 		private unit m_actorWigberht
@@ -178,7 +178,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			call ShowUnit(gg_unit_n01I_0152, true)
 
 			call Game.resetVideoSettings()
-			call QuestTheNorsemen.quest().questItem(1).setState(AAbstractQuest.stateNew)
+			call QuestTheNorsemen.quest.evaluate().questItem(1).setState(AAbstractQuest.stateNew)
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Sprechen Sie Wigberht an, um die Vorhut der Orks anzugreifen."))
 		endmethod
 

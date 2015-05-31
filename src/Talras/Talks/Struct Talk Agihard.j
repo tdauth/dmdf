@@ -105,6 +105,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		private static method infoActionICompleted takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Ich habe fünfmal gewonnen!"), null)
 			call speech(info, character, true, tr("Tatsächlich! Du scheinst mir ein sehr starker Kämpfer zu sein. Nun gut, du hast dir deine Belohnung ehrenhaft verdient. Hier hast du sie."), null)
+			// TODO besondere Belohnung, Gegenstand
 			call QuestArenaChampion.characterQuest(character).questItem(1).complete()
 			call info.talk().showStartPage(character)
 		endmethod

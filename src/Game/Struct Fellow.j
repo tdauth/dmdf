@@ -304,6 +304,11 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call this.revive()
 		endmethod
 		
+		private static method triggerConditionRevival takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			return GetTriggerUnit() == this.unit()
+		endmethod
+		
 		private static method triggerActionRevival takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local unit animationUnit
@@ -409,7 +414,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_character = 0
 			set this.m_sellingsAbilities = 0
 			set this.m_revivalTrigger = CreateTrigger()
-			call TriggerRegisterUnitEvent(this.m_revivalTrigger, whichUnit, EVENT_UNIT_DEATH)
+			call TriggerRegisterAnyUnitEventBJ(this.m_revivalTrigger, EVENT_PLAYER_UNIT_DEATH)
+			call TriggerAddCondition(this.m_revivalTrigger, Condition(function thistype.triggerConditionRevival))
 			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionRevival)
 			call DmdfHashTable.global().setHandleInteger(this.m_revivalTrigger, "this", this)
 			call DisableTrigger(this.m_revivalTrigger)
@@ -419,7 +425,9 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_trades = false
 			set this.m_isShared = false
 			
+			debug call Print("Before pushing back")
 			call thistype.m_fellows.pushBack(this)
+			debug call Print("After pushing back")
 
 			return this
 		endmethod
@@ -505,13 +513,17 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 */
 		public static method reviveAllForVideo takes nothing returns nothing
 			local AIntegerVectorIterator iterator = thistype.m_fellows.begin()
-			debug call Print("Getting iterator " + I2S(iterator) + " of list " + I2S(thistype.m_fellows))
+			debug call Print("Getting iterator " + I2S(iterator) + " of list " + I2S(thistype.m_fellows) + " with size " + I2S(thistype.m_fellows.size()))
 			loop
 				exitwhen (not iterator.isValid())
+				debug call Print("Step")
 				debug call Print("Reviving fellow unit " + GetUnitName(thistype(iterator.data()).unit()))
 				call thistype(iterator.data()).reviveForVideo()
 				call iterator.next()
 			endloop
+			debug if (not iterator.isValid()) then
+			debug call Print("Iterator is not valid")
+			debug endif
 			debug call Print("Before destroying iterator " + I2S(iterator))
 			// TODO double free
 			call iterator.destroy()

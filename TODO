@@ -279,7 +279,7 @@
 * FIXED: Beherrschung hat keinen Effekt.
 * Erste Gruppe mit Rudelführer respawnt nicht?
 * Lothar: Dialogoptionen sind nach Quest mit Mathilda einfach weg.
-* Markwards Quest: Man kann kein Holz von Kuno besorgen (Dialog).
+* FIXED: Markwards Quest: Man kann kein Holz von Kuno besorgen (Dialog).
 * FIXED: Markwards Quest: Pfeilplatzieung immer an der selben Position möglich.
 * FIXED: Markwards Quest: Bei 0 Pfeilplatzierungen kein Ende!
 * FIXED: Verbannen Tooltip: Hält 0 Sekunden.
@@ -304,7 +304,7 @@
 * Neuen Auftrag nach "Krieg" - "Aufmarsch der Dunkelelfen".
 * Danach kommt dann "Der Weg nach Holzbruck".
 * Die Nordmänner: Bei Video "Der Anführer" Sammelgebiet für Charaktere verwenden.
-* Orks und Dunkelelfen geben keine XP.
+* DEPRECATED: Orks und Dunkelelfen geben keine XP.
 * FIXED: Berichtet dem Herzog von eurem Erfolg in Sammelgebiet.
 * Video Wigberht: Falls Orks nicht getötet wurden (die von Wigberht getötet werden) werden diese nicht nach dem Video entfernt.
 * Mit Wigberht reden sollte nur 200 Erfahrung geben.
@@ -334,13 +334,23 @@
 * Stäbe sollen Zweihandwaffen sein?
 * Sisgard, Dago, Wigberht, Ricman und Drachentöterin benötigen Stufenattribute und fixe Stufe.
 * Sisgard, Ricman und Drachentöterin benötigen mehr interessante Fähigkeiten.
-* Magische Schockwellen: Effekt muss enden, wenn Charakter stirbt.
-* Wurfspeer ist keine Fernkampfwaffe.
+* FIXED: Magische Schockwellen: Effekt muss enden, wenn Charakter stirbt.
+* FIXED: Wurfspeer ist keine Fernkampfwaffe.
+* Brotlaib braucht Icon.
+* Metzelei: Drachentöterin wird nicht geshared.
+* Das erste Gefecht: Ricman und Wigberht werden zwar geshared, behalten aber Dialog und Unbesiegbarkeit. Werden nach Video Wigberht auch nicht resettet. Nach dem Video werden auch keine Verbündeten im Lager platziert. Und man kann dem Herzog nicht berichten.
+* Anscheinend schlägt Fellow-Erzeugung fehl, da die Liste leer ist. Es liegt nicht am Konstruktor von Fellow. Vermutlich am Zeitpunkt und der Methode von Fellow.init(). Es liegt auch nicht daran, dass AIntegerVector nicht richtig erzeugt wurde.
+* Das erste Gefecht: Gegner deutlich schwächer machen da das Quest sehr schnell nach Beginn des Spiels abgeschlossen werden kann.
+* FIXED: Hieb: Zauberbuchtooltip.
+* FIXED: Einschüchtern: Zauberbuchtooltip.
+* "Gehen wir." nicht auswählbar nach erfolgreichem Abschluss von "Die Zauberkunst".
+* FIXED: Todesengel hat kein Geschoss.
+* Erfrierunng: Prüfen ob überhaupt gültige Ziele in Reichweite sind.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
 * FIXED: Klasseninfo zu schnell weg!!!
-* Pfeiltastensymbole Klassenauswahl ändern.
+* FIXED: Pfeiltastensymbole Klassenauswahl ändern.
 * FIXED: Klassenauswahl mit Dialog bestätigen.
 * FIXED: Tastenkürzel in Klassenauswahl deaktivieren.
 * FIXED: Immer noch beide Klassen sichtbar.

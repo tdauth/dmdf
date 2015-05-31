@@ -16,11 +16,13 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 		endmethod
 
 		public static method init takes nothing returns nothing
+			debug call Print("Before dago")
 			set thistype.m_dago = Fellow.create(Npcs.dago(), 0)
 			call thistype.m_dago.setTalk(false)
 			call thistype.m_dago.setRevival(false)
 			call thistype.m_dago.setDescription(tr("Dago ist ein einfacher Jäger."))
 
+			debug call Print("Before sisgard")
 			set thistype.m_sisgard = Fellow.create(Npcs.sisgard(), TalkSisgard.talk.evaluate())
 			/// @todo Set revival location to Talras
 			call thistype.m_sisgard.setTalk(true)

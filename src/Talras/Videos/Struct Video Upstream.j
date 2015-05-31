@@ -1,4 +1,3 @@
-/// @todo Finish this video.
 library StructMapVideosVideoUpstream requires Asl, StructGameGame
 
 	struct VideoUpstream extends AVideo

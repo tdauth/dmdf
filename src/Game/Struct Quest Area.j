@@ -1,16 +1,30 @@
 library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHashTable
 
+	/**
+	 * \brief A quest are is a visible marked rect on the map for all players where all characters must move to to activate an event.
+	 * It is mostly used to ensure that all characters are at a certain point when the event starts and are movable and not in talks or something else.
+	 */
 	struct QuestArea
 		private fogmodifier array m_assemblyPointFogModifier[6]
 		private destructable array m_assemblyPointMarker[4]
 		private rect m_rect
 		private trigger m_enterTrigger
 		
+		/**
+		 * Checks for a user specified condition which must be true to activate the event at all.
+		 * Otherwise not even a message is shown when a character enters.
+		 * \note Is called with .evaluate().
+		 * \return Returns true if the event can be activated yet.
+		 */
 		public stub method onCheck takes nothing returns boolean
 			return true
 		endmethod
 		
+		/**
+		 * \note Is called with .execute().
+		 */
 		public stub method onStart takes nothing returns nothing
+			debug call Print("Super onStart")
 		endmethod
 		
 		private method cleanupRect takes nothing returns nothing
@@ -46,6 +60,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 				endloop
 				call Character.displayHintToAll(Format(tr("%1%/%2% Charakteren bereit.")).i(charactersCount).i(ACharacter.countAll()).result())
 				
+				// TODO if condition is true immediately make characters unmovable and make them movable after the action call?
 				return charactersCount == ACharacter.countAll()
 			endif
 			return false
@@ -54,7 +69,11 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		private static method triggerActionEnter takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			call this.cleanupRect()
-			call DisableTrigger(GetTriggeringTrigger())
+			//call DisableTrigger(GetTriggeringTrigger())
+			/*
+			 * Must be executed since it contains TriggerSleepAction() calls most of the time like playing videos and waiting for them.
+			 * FIXME It seems that the methods stop at some point. Maybe because of disabling the trigger?
+			 */
 			call this.onStart.execute()
 		endmethod
 		

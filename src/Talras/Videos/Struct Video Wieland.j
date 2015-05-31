@@ -1,4 +1,4 @@
-library StructMapVideosVideoWieland requires Asl, StructGameGame, StructMapQuestsQuestWar
+library StructMapVideosVideoWieland requires Asl, StructGameGame
 
 	struct VideoWieland extends AVideo
 		private unit m_actorWieland
@@ -75,7 +75,7 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame, StructMapQuest
 			set this.m_actorWieland = null
 
 			call Game.resetVideoSettings()
-			call QuestWar.quest().enableIronFromTheDrumCave()
+			call QuestWar.quest.evaluate().enableIronFromTheDrumCave.evaluate()
 		endmethod
 
 		private static method create takes nothing returns thistype

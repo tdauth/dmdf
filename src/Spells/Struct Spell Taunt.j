@@ -22,13 +22,15 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			call DmdfHashTable.global().removeHandleInteger(this.m_target, "tauntBuff")
 		endmethod
 		
-		/// @todo Just block if damaging unit is ability target?
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local unit target = damageRecorder.target()
+			local unit target = damageRecorder.target() // character
 			local thistype this = DmdfHashTable.global().handleInteger(target, "tauntBuff")
-			local real blockedDamage = GetEventDamage() * this.m_spell.level() * SpellTaunt.damageLevelFactor
-			call SetUnitLifeBJ(target, GetUnitState(target, UNIT_STATE_LIFE) + blockedDamage)
-			call Spell.showDamageAbsorbationTextTag(target, blockedDamage)
+			local real blockedDamage = 0.0
+			if (GetEventDamageSource() == this.m_target) then
+				set blockedDamage = GetEventDamage() * this.m_spell.level() * SpellTaunt.damageLevelFactor
+				call SetUnitLifeBJ(target, GetUnitState(target, UNIT_STATE_LIFE) + blockedDamage)
+				call Spell.showDamageAbsorbationTextTag(target, blockedDamage)
+			endif
 			set target = null
 		endmethod
 		
@@ -69,7 +71,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			local thistype this = thistype.allocate()
 			set this.m_spell = spell
 			set this.m_target = target
-			set this.m_damageRecorder = ADamageRecorder.create(target)
+			set this.m_damageRecorder = ADamageRecorder.create(spell.character().unit())
 			call this.m_damageRecorder.setOnDamageAction(thistype.onDamageAction)
 			call this.m_damageRecorder.disable()
 

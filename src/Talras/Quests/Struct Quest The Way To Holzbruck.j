@@ -1,9 +1,9 @@
-library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs
+library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs, StructMapVideosVideoUpstream
 
 	struct QuestAreaTheWayToHolzbruck extends QuestArea
 	
 		public stub method onCheck takes nothing returns boolean
-			return QuestTheWayToHolzbruck.quest().isCompleted()
+			return QuestTheWayToHolzbruck.quest.evaluate().isCompleted()
 		endmethod
 	
 		public stub method onStart takes nothing returns nothing

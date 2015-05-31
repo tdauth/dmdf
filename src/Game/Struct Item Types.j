@@ -418,7 +418,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_largeRoundedBuckler = ItemType.createSimple('I02A', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_largeRoundedBuckler.addAbility('A081', true)
 
-			set thistype.m_dart = RangeItemType.createSimple('I029', AItemType.equipmentTypePrimaryWeapon)
+			set thistype.m_dart = RangeItemType.createSimpleRange('I029', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_dart.addAbility('A080', true)
 
 			// Wieland's items

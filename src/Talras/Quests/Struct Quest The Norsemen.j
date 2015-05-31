@@ -1,4 +1,4 @@
-library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, StructMapMapNpcs, StructMapVideosVideoANewAlliance, StructMapVideosVideoWigberht
+library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, StructMapMapNpcs, StructMapVideosVideoANewAlliance, StructMapVideosVideoTheChief, StructMapVideosVideoTheFirstCombat, StructMapVideosVideoWigberht
 
 	private struct WavesDisplay
 		private leaderboard m_leaderboard
@@ -54,7 +54,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 	struct QuestAreaTheNorsemenBattle extends QuestArea
 	
 		public stub method onStart takes nothing returns nothing
-			call VideoTheFirstCombat.video.evaluate().play()
+			call VideoTheFirstCombat.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call QuestTheNorsemen.quest.evaluate().questItem(1).setState(AAbstractQuest.stateCompleted)
 			call QuestTheNorsemen.quest.evaluate().questItem(2).setState(AAbstractQuest.stateNew)
@@ -379,7 +379,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			local integer i
-			call VideoTheChief.video.evaluate().play()
+			call VideoTheChief.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call questItem.quest().questItem(1).enable()
 			set this.m_questAreaBattle = QuestAreaTheNorsemenBattle.create(gg_rct_quest_the_norsemen_assembly_point)

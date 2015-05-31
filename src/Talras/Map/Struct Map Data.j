@@ -168,6 +168,8 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call SetPlayerAllianceStateBJ(MapData.orcPlayer, MapData.alliedPlayer, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.orcPlayer, bj_ALLIANCE_UNALLIED)
 			
+			debug call Print("MapData init 1")
+			
 			call Aos.init.evaluate()
 			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tr("Sie haben die Arena betreten."), tr("Sie haben die Arena verlassen."), tr("Ein Arenakampf beginnt nun."), tr("Ein Arenakampf endet nun. Der Gewinner ist \"%1%\" und er bekommt %2% Goldmünzen."))
 			call Arena.addRect(gg_rct_arena_0)
@@ -177,17 +179,24 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call Arena.addRect(gg_rct_arena_4)
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_0), GetRectCenterY(gg_rct_arena_enemy_0), 180.0)
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_1), GetRectCenterY(gg_rct_arena_enemy_1), 0.0)
+			
+			debug call Print("MapData init 2")
+			
 static if (DMDF_NPC_ROUTINES) then
 			call NpcRoutines.init()
 endif
 			call Shrines.init()
 			call SpawnPoints.init()
 			call Tavern.init()
+			debug call Print("MapData init 3")
 			call Tomb.init.evaluate()
 			call initMapSpells.evaluate()
 			call initMapTalks.evaluate()
+			debug call Print("MapData init 4")
 			call initMapVideos()
-			call Fellows.init()
+			debug call Print("MapData init 5")
+			call Fellows.init() // init after talks
+			debug call Print("MapData init 6")
 			// weather
 			call Game.weather().setMinimumChangeTime(20.0)
 			call Game.weather().setMaximumChangeTime(60.0)

@@ -14,8 +14,8 @@ library StructMapQuestsQuestArenaChampion requires Asl, StructMapMapNpcs
 			local AQuestItem questItem1
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNFootman.blp")
 			call this.setDescription(tr("Agihard gibt jedem, der es schafft mindestens fünf Gegner in seiner Arena zu besiegen, eine besondere Belohnung."))
-			call this.setReward(thistype.rewardExperience, 500)
-			call this.setReward(thistype.rewardGold, 30)
+			call this.setReward(thistype.rewardExperience, 200)
+			call this.setReward(thistype.rewardGold, 60)
 			// item 0
 			set questItem0 = AQuestItem.create(this, tr("Besiege mindestens fünf Gegner in der Arena."))
 			call questItem0.setPing(true)

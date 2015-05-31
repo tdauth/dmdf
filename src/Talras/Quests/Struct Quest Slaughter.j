@@ -5,11 +5,17 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		public stub method onStart takes nothing returns nothing
 			call VideoDragonHunt.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
+			debug call Print("After Video")
 			call QuestSlaughter.quest.evaluate().setState(AAbstractQuest.stateNew)
+			debug call Print("After setting state to new")
 			call QuestSlaughter.quest.evaluate().questItem(0).setState(AAbstractQuest.stateNew)
+			debug call Print("After setting state to new 2")
 			call QuestSlaughter.quest.evaluate().displayState()
+			debug call Print("After displaying state")
+			debug call Print("Fellow: " + GetUnitName(Npcs.dragonSlayer()))
 			debug call Print("Sharing fellow: " + I2S(Fellows.dragonSlayer()))
 			call Fellows.dragonSlayer().shareWith(0)
+			debug call Print("After sharing a fellow")
 			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), "Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.")
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!"), null)
 		endmethod

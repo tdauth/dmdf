@@ -1,5 +1,4 @@
-/// @todo Finish this video.
-library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen
+library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructMapMapNpcs
 
 	struct VideoTheFirstCombat extends AVideo
 		private integer m_actorWigberht
@@ -299,7 +298,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			set this.m_firstEnemyGroup = null
 			// camera bounds reset is unnecessary
 			call Game.resetVideoSettings()
-			call QuestTheNorsemen.quest().startSpawns(firstAllyGroup, firstEnemyGroup) // don't destroy groups!
+			call QuestTheNorsemen.quest.evaluate().startSpawns.evaluate(firstAllyGroup, firstEnemyGroup) // don't destroy groups!
 		endmethod
 
 		private static method create takes nothing returns thistype
