@@ -332,14 +332,15 @@
 * FIXED: Nachdem Charakter AOS beigetreten ist, kann er Computerspieler nicht mehr steuern.
 * FIXED: AInventory: Disable muss nun die permanenten Fähigkeiten von der Einheit entfernen.
 * Stäbe sollen Zweihandwaffen sein?
-* Sisgard, Dago, Wigberht, Ricman und Drachentöterin benötigen Stufenattribute und fixe Stufe.
+* FIXED: Sisgard, Dago, Wigberht, Ricman und Drachentöterin benötigen Stufenattribute und fixe Stufe.
 * Sisgard, Ricman und Drachentöterin benötigen mehr interessante Fähigkeiten.
 * FIXED: Magische Schockwellen: Effekt muss enden, wenn Charakter stirbt.
 * FIXED: Wurfspeer ist keine Fernkampfwaffe.
 * Brotlaib braucht Icon.
-* Metzelei: Drachentöterin wird nicht geshared.
-* Das erste Gefecht: Ricman und Wigberht werden zwar geshared, behalten aber Dialog und Unbesiegbarkeit. Werden nach Video Wigberht auch nicht resettet. Nach dem Video werden auch keine Verbündeten im Lager platziert. Und man kann dem Herzog nicht berichten.
-* Anscheinend schlägt Fellow-Erzeugung fehl, da die Liste leer ist. Es liegt nicht am Konstruktor von Fellow. Vermutlich am Zeitpunkt und der Methode von Fellow.init(). Es liegt auch nicht daran, dass AIntegerVector nicht richtig erzeugt wurde.
+* FIXED: Das Problem des Sharings war, dass die Fellows nicht mehr erzeugt wurden. In MapData.init(), welches von onInit aus Game aufgerufen wurde, wurde das OpLimit erreicht. Trotz .evaluate() bei den Methoden wurden diese nicht mit TriggerEvaluate() aufgerufen (JassHelper-Fehler?). Nun mit ForForce wird das OpLimit erfolgreich umgangen. Siehe auch: http://www.hiveworkshop.com/forums/triggers-scripts-269/does-evaluate-prevent-oplimit-266717/
+* FIXED: Metzelei: Drachentöterin wird nicht geshared.
+* FIXED: Das erste Gefecht: Ricman und Wigberht werden zwar geshared, behalten aber Dialog und Unbesiegbarkeit. Werden nach Video Wigberht auch nicht resettet. Nach dem Video werden auch keine Verbündeten im Lager platziert. Und man kann dem Herzog nicht berichten.
+* FIXED: Anscheinend schlägt Fellow-Erzeugung fehl, da die Liste leer ist. Es liegt nicht am Konstruktor von Fellow. Vermutlich am Zeitpunkt und der Methode von Fellow.init(). Es liegt auch nicht daran, dass AIntegerVector nicht richtig erzeugt wurde.
 * Das erste Gefecht: Gegner deutlich schwächer machen da das Quest sehr schnell nach Beginn des Spiels abgeschlossen werden kann.
 * FIXED: Hieb: Zauberbuchtooltip.
 * FIXED: Einschüchtern: Zauberbuchtooltip.

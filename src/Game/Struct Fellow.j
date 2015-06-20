@@ -260,8 +260,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 * Does nothing if the fellow is not dead actually.
 		 */
 		public method revive takes nothing returns nothing
-			debug call Print("Revive")
-			debug call Print("NPC Revival: " + GetUnitName(this.m_unit))
 
 			if (IsUnitDeadBJ(this.m_unit)) then
 				call this.reviveAtActiveShrine(true)
@@ -398,7 +396,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 */
 		public static method create takes unit whichUnit, ATalk talk returns thistype
 			local thistype this = thistype.allocate()
-			debug call this.print("Creating for unit " + GetUnitName(whichUnit))
 			// dynamic members
 			set this.m_hasTalk = false
 			set this.m_hasRevival = true
@@ -425,10 +422,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_trades = false
 			set this.m_isShared = false
 			
-			debug call Print("Before pushing back")
 			call thistype.m_fellows.pushBack(this)
-			debug call Print("After pushing back")
-
+			
 			return this
 		endmethod
 
@@ -513,21 +508,12 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 */
 		public static method reviveAllForVideo takes nothing returns nothing
 			local AIntegerVectorIterator iterator = thistype.m_fellows.begin()
-			debug call Print("Getting iterator " + I2S(iterator) + " of list " + I2S(thistype.m_fellows) + " with size " + I2S(thistype.m_fellows.size()))
 			loop
 				exitwhen (not iterator.isValid())
-				debug call Print("Step")
-				debug call Print("Reviving fellow unit " + GetUnitName(thistype(iterator.data()).unit()))
 				call thistype(iterator.data()).reviveForVideo()
 				call iterator.next()
 			endloop
-			debug if (not iterator.isValid()) then
-			debug call Print("Iterator is not valid")
-			debug endif
-			debug call Print("Before destroying iterator " + I2S(iterator))
-			// TODO double free
 			call iterator.destroy()
-			debug call Print("After destroying iterator" + I2S(iterator))
 		endmethod
 	endstruct
 

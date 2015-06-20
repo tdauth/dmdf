@@ -68,11 +68,14 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 
 		private static method triggerActionEnter takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			/*
+			 * A quest are should only be used once.
+			 * Therefore it will be disabled automatically.
+			 */
 			call this.cleanupRect()
-			//call DisableTrigger(GetTriggeringTrigger())
+			call DisableTrigger(GetTriggeringTrigger())
 			/*
 			 * Must be executed since it contains TriggerSleepAction() calls most of the time like playing videos and waiting for them.
-			 * FIXME It seems that the methods stop at some point. Maybe because of disabling the trigger?
 			 */
 			call this.onStart.execute()
 		endmethod

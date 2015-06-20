@@ -1,15 +1,5 @@
 library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
 
-	// TEST
-	// helps finding stops on metamorphosis spells
-	private function PrintImmediateStop takes unit whichUnit, string whichOrder returns nothing
-		if (whichOrder == "stop") then
-			debug call Print("Immediate stop on " + GetUnitName(whichUnit))
-		endif
-	endfunction
-
-	hook IssueImmediateOrder PrintImmediateStop
-
 	/**
 	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
 	 * As in Warcraft III itself characters do not necessarily have to kill enemies theirselfs (e. g. with a final hit).

@@ -152,8 +152,9 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call Character(ACharacter.getCharacterByUnit(GetTriggerUnit())).displayHint("Schicken Sie ihren Charakter in der Nähe eines NPCs mit Ausrufezeichen auf diesen, um ihn anzusprechen.")
 			set thistype.m_talkHintShown[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = true
 		endmethod
-
+		
 		/// Required by \ref Game.
+		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
 		public static method init takes nothing returns nothing
 			local integer i = 0
 			loop
@@ -168,8 +169,6 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call SetPlayerAllianceStateBJ(MapData.orcPlayer, MapData.alliedPlayer, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.orcPlayer, bj_ALLIANCE_UNALLIED)
 			
-			debug call Print("MapData init 1")
-			
 			call Aos.init.evaluate()
 			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tr("Sie haben die Arena betreten."), tr("Sie haben die Arena verlassen."), tr("Ein Arenakampf beginnt nun."), tr("Ein Arenakampf endet nun. Der Gewinner ist \"%1%\" und er bekommt %2% Goldmünzen."))
 			call Arena.addRect(gg_rct_arena_0)
@@ -180,23 +179,26 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_0), GetRectCenterY(gg_rct_arena_enemy_0), 180.0)
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_1), GetRectCenterY(gg_rct_arena_enemy_1), 0.0)
 			
-			debug call Print("MapData init 2")
-			
 static if (DMDF_NPC_ROUTINES) then
-			call NpcRoutines.init()
+			/*
+			 * Extract this call since it contains many many calls which should be executed in a different trigger to avoid OpLimit.
+			 * Usually you would simply use .evaluate() which is synchronous and evaluates a trigger which has its own OpLimit.
+			 * Unfortunately for calling already declared methods with .evaluate() the JassHelper does not generate such a trigger evaluation.
+			 * This workaround can be used for parameterless functions and calls the function with a separate OpLimit as well.
+			 */
+			call ForForce(bj_FORCE_PLAYER[0], function NpcRoutines.init)
 endif
 			call Shrines.init()
-			call SpawnPoints.init()
-			call Tavern.init()
-			debug call Print("MapData init 3")
-			call Tomb.init.evaluate()
+			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
+			call ForForce(bj_FORCE_PLAYER[0], function Tavern.init)
+			call ForForce(bj_FORCE_PLAYER[0], function Tomb.init)
+			/*
+			 * For functions the JassHelper always generates a TriggerEvaluate() call.
+			 */
 			call initMapSpells.evaluate()
 			call initMapTalks.evaluate()
-			debug call Print("MapData init 4")
-			call initMapVideos()
-			debug call Print("MapData init 5")
-			call Fellows.init() // init after talks
-			debug call Print("MapData init 6")
+			call initMapVideos.evaluate()
+			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
 			// weather
 			call Game.weather().setMinimumChangeTime(20.0)
 			call Game.weather().setMaximumChangeTime(60.0)

@@ -130,7 +130,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um Ihre Primär- und Sekundäraufträge zu sehen.")).k("F9").result())
 
 			// main menu/settings
-			call thistype.m_infos.pushBack(Format(tr("Geben Sie \"-menu\" im Chat ein, um ins Hauptmenü des Spiels zu gelangen. Dort können Sie diverse Spieleinstellungen vornehmen.")).k("Escape").result())
+			call thistype.m_infos.pushBack(tr("Geben Sie \"-menu\" im Chat ein, um ins Hauptmenü des Spiels zu gelangen. Dort können Sie diverse Spieleinstellungen vornehmen."))
 			call thistype.m_infos.pushBack(tr("Aktivieren Sie die 3rd-Person-Kamera im Hauptmenü, um eine rollenspielähnlichere Ansicht Ihres Charakters zu erhalten."))
 			call thistype.m_infos.pushBack(tr("Aktivieren Sie die Charakter-Anzeige im Hauptmenü, um in der rechten oberen Bildschirmecke Informationen über Ihren und Ihre verbündeten Charaktere angezeigt zu bekommen."))
 			call thistype.m_infos.pushBack(tr("Aktivieren Sie die Charakter-Buttons im Hauptmenü, um am linken Bildschirmrand Symbole Ihrer verbündeten Charaktere angezeigt zu bekommen, falls Sie sich nicht bereits die Kontrolle mit ihnen teilen."))

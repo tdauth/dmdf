@@ -12,12 +12,7 @@ library StructMapSpellsSpellMagicalSeed requires Asl, StructMapMapMapData, Struc
 		private method action takes nothing returns nothing
 			local unit whichUnit
 			local real dist = GetDistanceBetweenPointsWithoutZ(GetRectCenterX(gg_rct_trommons_vegetable_garden), GetRectCenterY(gg_rct_trommons_vegetable_garden), GetSpellTargetX(), GetSpellTargetY())
-			// TEST
-			debug call Print("Location 1: " + R2S(GetLocationX(GetSpellTargetLoc())) + " and " + R2S(GetLocationY(GetSpellTargetLoc())))
-			debug call Print("Location 2: " + R2S(GetSpellTargetX()) + " and " + R2S(GetSpellTargetY()))
-			debug call Print("Ability name: " + GetObjectName(GetSpellAbilityId()))
-			debug call Print("Instance " + I2S(this))
-			debug call Print("Player: " + GetPlayerName(Player(0)))
+
 			call PingMinimapExForPlayer(Player(0), GetSpellTargetX(), GetSpellTargetY(), 10.0, 100, 100, 100, false)
 			
 			if (not QuestSeedsForTheGarden.characterQuest(this.character()).questItem(2).isNew()) then
