@@ -27,10 +27,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 	
 	struct QuestAreaSlaughterEnter extends QuestArea
 	
-		public stub method onCheck takes nothing returns boolean
-			return QuestDeranor.quest().isCompleted()
-		endmethod
-	
 		public stub method onStart takes nothing returns nothing
 			call VideoDeathVault.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
