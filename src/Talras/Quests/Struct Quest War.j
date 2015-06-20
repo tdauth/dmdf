@@ -34,13 +34,15 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
-			local boolean result = super.enable()
+			local boolean result = this.setState(thistype.stateNew)
 			set this.m_questAreaWieland = QuestAreaWarWieland.create(gg_rct_quest_war_wieland)
 			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemLumberFromKuno).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateNew)
+			
+			call this.displayState()
 
 			return result
 		endmethod

@@ -347,6 +347,13 @@
 * "Gehen wir." nicht auswählbar nach erfolgreichem Abschluss von "Die Zauberkunst".
 * FIXED: Todesengel hat kein Geschoss.
 * Erfrierunng: Prüfen ob überhaupt gültige Ziele in Reichweite sind.
+* FIXED: Video bei Drachentöterin, Björn und Manfred stehen im Weg.
+* FIXED: Gift- und Frostpfeile kosten kein Mana.
+* FIXED: Wie kommt er zu diesem Schluss?
+* FIXED: Schattenstein, 6 Aufladungen.
+* FIXED: Auftrag "Krieg", alle Ziele sind direkt aktiv.
+* FIXED: Schmied Wieland!.
+* Waldläufer wird durch Sprinten eventuell sehr langsam. Hängt mit Lauern zusammen??
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

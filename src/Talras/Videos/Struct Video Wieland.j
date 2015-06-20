@@ -29,7 +29,7 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				endif
 			endloop
 		
-			call TransmissionFromUnit(thistype.actor(), tr("Schmied Wieland!."), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Schmied Wieland!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
