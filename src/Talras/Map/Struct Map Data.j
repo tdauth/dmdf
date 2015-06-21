@@ -58,6 +58,8 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer osseousDragon = 'n024'
 		
 		public static constant integer deranor = 'u00A'
+		
+		public static constant integer cornEater = 'n016'
 
 		private static method create takes nothing returns thistype
 			return 0

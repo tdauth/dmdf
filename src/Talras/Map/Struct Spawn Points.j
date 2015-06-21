@@ -684,6 +684,14 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		public static method banditsAtGuntrichsMill takes nothing returns SpawnPoint
 			return thistype.m_banditsAtGuntrichsMill
 		endmethod
+		
+		public static method cornEaters0 takes nothing returns SpawnPoint
+			return thistype.m_cornEaters0
+		endmethod
+		
+		public static method cornEaters1 takes nothing returns SpawnPoint
+			return thistype.m_cornEaters1
+		endmethod
 	endstruct
 
 endlibrary

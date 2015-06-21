@@ -23,6 +23,7 @@ library StructMapMapNpcs
 		private static unit m_kunosDaughter
 		private static unit m_lothar
 		private static unit m_manfred
+		private static unit m_manfredsDog
 		private static unit m_markward
 		private static unit m_mathilda
 		private static unit m_osman
@@ -66,6 +67,7 @@ library StructMapMapNpcs
 			set thistype.m_kunosDaughter = gg_unit_n02S_0065
 			set thistype.m_lothar = gg_unit_n030_0240
 			set thistype.m_manfred = gg_unit_n01H_0148
+			set thistype.m_manfredsDog = gg_unit_n02Z_0143
 			set thistype.m_markward = gg_unit_n014_0117
 			set thistype.m_mathilda = gg_unit_n01T_0202
 			set thistype.m_osman = gg_unit_n00R_0101
@@ -155,6 +157,10 @@ library StructMapMapNpcs
 
 		public static method manfred takes nothing returns unit
 			return thistype.m_manfred
+		endmethod
+		
+		public static method manfredsDog takes nothing returns unit
+			return thistype.m_manfredsDog
 		endmethod
 
 		public static method markward takes nothing returns unit

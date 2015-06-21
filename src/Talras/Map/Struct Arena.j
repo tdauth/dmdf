@@ -223,7 +223,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 						endloop
 					else
 						set missing = thistype.maxUnits - unitsInRect.units().size()
-						call Character.displayHintToAll(Format(trp("Es fehlt noch %1% ein Charakter für einen Pvp-Arenakampf.", "Es fehlen noch %1% Charaktere für einen PvP-Arenakampf.", missing)).i(missing).result())
+						call Character.displayHintToAll(Format(trp("Es fehlt noch %1% ein Charakter für einen PvP-Arenakampf.", "Es fehlen noch %1% Charaktere für einen PvP-Arenakampf.", missing)).i(missing).result())
 					endif
 					call unitsInRect.destroy()
 				else
