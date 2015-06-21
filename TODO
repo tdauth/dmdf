@@ -354,6 +354,8 @@
 * FIXED: Auftrag "Krieg", alle Ziele sind direkt aktiv.
 * FIXED: Schmied Wieland!.
 * Waldläufer wird durch Sprinten eventuell sehr langsam. Hängt mit Lauern zusammen??
+* Imps können nicht bei Wieland abgegeben werden.
+* Auftrag "Krieg": Videos schreiben und einbauen.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

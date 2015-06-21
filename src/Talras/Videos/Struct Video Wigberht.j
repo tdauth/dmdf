@@ -344,9 +344,9 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 		public stub method onStopAction takes nothing returns nothing
 			call RemoveUnit(this.m_actorOrcLeader)
 			set this.m_actorOrcLeader = null
-			call this.m_staticActors.units().forEach(thistype.groupFunctionRemove)
+			call this.m_staticActors.forGroup(thistype.groupFunctionRemove)
 			call this.m_staticActors.destroy()
-			call this.m_orcGuardians.units().forEach(thistype.groupFunctionRemove)
+			call this.m_orcGuardians.forGroup(thistype.groupFunctionRemove)
 			call this.m_orcGuardians.destroy()
 			call Game.resetVideoSettings()
 		endmethod
