@@ -1,4 +1,4 @@
-library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVideosVideoIronFromTheDrumCave, StructMapVideosVideoWieland, StructMapVideosVideoManfred
+library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVideosVideoIronFromTheDrumCave, StructMapVideosVideoWeaponsFromWieland, StructMapVideosVideoWieland, StructMapVideosVideoManfred
 
 	struct QuestAreaWarWieland extends QuestArea
 	
@@ -10,6 +10,18 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	struct QuestAreaWarIronFromTheDrumCave extends QuestArea
 		public stub method onStart takes nothing returns nothing
 			call VideoIronFromTheDrumCave.video().play()
+		endmethod
+	endstruct
+	
+	/**
+	 * Dummy quest area for the imps.
+	 */
+	struct QuestAreaWarImpTarget extends QuestArea
+		public stub method onCheck takes nothing returns boolean
+			return false
+		endmethod
+	
+		public stub method onStart takes nothing returns nothing
 		endmethod
 	endstruct
 	
@@ -30,19 +42,21 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	struct QuestWar extends AQuest
 		public static constant integer questItemWeaponsFromWieland = 0
 		public static constant integer questItemIronFromTheDrumCave = 1
-		public static constant integer questItemSupplyFromManfred = 2
-		public static constant integer questItemKillTheCornEaters = 3
-		public static constant integer questItemReportManfred = 4
-		public static constant integer questItemLumberFromKuno = 5
-		public static constant integer questItemKillTheWitches = 6
-		public static constant integer questItemTrapsFromBjoern = 7
-		public static constant integer questItemPlaceTraps = 8
-		public static constant integer questItemRecruit = 9
-		public static constant integer questItemGetRecruits = 10
-		public static constant integer questItemReportHeimrich = 11
+		public static constant integer questItemMoveImpsToWieland = 2
+		public static constant integer questItemSupplyFromManfred = 3
+		public static constant integer questItemKillTheCornEaters = 4
+		public static constant integer questItemReportManfred = 5
+		public static constant integer questItemLumberFromKuno = 6
+		public static constant integer questItemKillTheWitches = 7
+		public static constant integer questItemTrapsFromBjoern = 8
+		public static constant integer questItemPlaceTraps = 9
+		public static constant integer questItemRecruit = 10
+		public static constant integer questItemGetRecruits = 11
+		public static constant integer questItemReportHeimrich = 12
 		public static constant integer maxImps = 4
 		private QuestAreaWarWieland m_questAreaWieland
 		private QuestAreaWarIronFromTheDrumCave m_questAreaIronFromTheDrumCave
+		private QuestAreaWarImpTarget m_questAreaImpTarget
 		private QuestAreaWarManfred m_questAreaManfred
 		private QuestAreaWarReportManfred m_questAreaReportManfred
 		private timer m_impSpawnTimer
@@ -94,6 +108,11 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			endif
 		endmethod
 		
+		/**
+		 * There will be spawd \ref thistype.maxImps which the players can move to Wieland.
+		 * If they do not survive new Imps will be spawned.
+		 * This is a bit like the Goblin quest in the Bonus Campaign except that the imps should survive their journey.
+		 */
 		public method enableImpSpawn takes nothing returns nothing
 			local integer i
 			set this.m_imps = AGroup.create()
@@ -107,6 +126,10 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 				set i = i + 1
 			endloop
 			call Game.setAlliedPlayerAlliedToAllCharacters()
+			call SmartCameraPanRect(gg_rct_quest_war_imp_spawn, 0.0)
+			set this.m_questAreaImpTarget = QuestAreaWarImpTarget.create(gg_rct_quest_war_wieland)
+			call this.questItem(thistype.questItemMoveImpsToWieland).setState(thistype.stateNew)
+			call this.displayUpdate()
 			call this.displayUpdateMessage(tr("Neue Imps stehen zur Verfügung."))
 		endmethod
 		
@@ -116,13 +139,19 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			return null
 		endmethod
 		
+		/**
+		 * Whenever an Imp reaches Wieland he will be paused and made invulnerable.
+		 * If all Imps (\ref thistype.maxImps) have reached their target the quest item will be completed.
+		 */
 		private static method stateConditionCompletedImps takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
 			local integer i
 			local integer counter = 0
 			if (this.m_imps.units().contains(GetTriggerUnit())) then
+				debug call Print("Is imp!")
 				call SetUnitInvulnerable(GetTriggerUnit(), true)
 				call PauseUnit(GetTriggerUnit(), true)
+				debug call Print("After setting Imp up")
 				set i = 0
 				loop
 					exitwhen (i == thistype.maxImps)
@@ -132,10 +161,13 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 					set i = i + 1
 				endloop
 				set counter = counter + 1 // entering unit
+				debug call Print("After counting " + I2S(counter))
 				
 				call questItem.quest().displayUpdateMessage(Format(tr("%1%/%2% Imps.")).i(counter).i(thistype.maxImps).result())
 				
 				return counter == thistype.maxImps
+			debug else
+				debug call Print("Is no Imp!")
 			endif
 			
 			return false
@@ -147,12 +179,30 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 
 		private static method stateActionCompletedImps takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
+			local unit cart
+			/*
+			 * Cleanup Imps.
+			 * TODO Do something funny!
+			 */
 			call this.m_imps.forGroup(thistype.groupFunctionRemove)
 			call this.m_imps.destroy()
 			set this.m_imps = 0
 			call DmdfHashTable.global().destroyTimer(this.m_impSpawnTimer)
 			set this.m_impSpawnTimer = null
-			// TODO play video
+			call this.m_questAreaImpTarget.destroy()
+			
+			call VideoWeaponsFromWieland.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			
+			/*
+			 * TODO Would be much cooler when the Imps take weapons to the former Orc camp.
+			 */
+			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateCompleted)
+			call this.displayUpdate()
+			 
+			set cart = CreateUnit(MapData.neutralPassivePlayer, 'h020', GetUnitX(Npcs.wieland()), GetUnitY(Npcs.wieland()), 0.0)
+			call SetUnitInvulnerable(cart, true)
+			call IssuePointOrder(cart, "move", GetRectCenterX(gg_rct_quest_war_cart_destination), GetRectCenterY(gg_rct_quest_war_cart_destination))
 		endmethod
 		
 		/// Considers death units (spawn points) and continues searching for the first one with unit type id \p unitTypeId of spawn point \p spawnPoint with an 1 second interval.
@@ -180,18 +230,24 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
 
+		/**
+		 * There is two spawn points for Corn Eaters at the moment.
+		 * Both have to be checked for all units being dead.
+		 * If so the quest item will be completed.
+		 * The ping is always moved to the next living Corn Eater.
+		 */
 		private static method stateConditionCompletedKillTheCornEaters takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
 			local integer count0
 			local integer count1
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.cornEater) then
-				set count0 = SpawnPoints.cornEaters0().countUnitsOfType(UnitTypes.vampire)
-				set count1 = SpawnPoints.cornEaters1().countUnitsOfType(UnitTypes.vampire)
+				set count0 = SpawnPoints.cornEaters0().countUnitsOfType(UnitTypes.cornEater)
+				set count1 = SpawnPoints.cornEaters1().countUnitsOfType(UnitTypes.cornEater)
 				if (count0 == 0 and count1 == 0) then
 					return true
 				// get next one to ping
 				else
-					call questItem.quest().displayUpdateMessage(Format(tr("%1%/4 Kornfresser")).i(4 - count0 - count1).result())
+					call this.displayUpdateMessage(Format(tr("%1%/4 Kornfresser")).i(4 - count0 - count1).result())
 					if (count0 > 0) then
 						call this.setPingByUnitTypeId.execute(questItem, SpawnPoints.cornEaters0(), UnitTypes.cornEater)
 					else
@@ -202,16 +258,27 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			return false
 		endmethod
 		
+		/**
+		 * After the Corn Eaters have been killed the characters must report Manfred.
+		 * The same rect is used as for talking to him in the first place.
+		 */
 		private static method stateActionCompletedKillTheCornEaters takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
+			call this.questItem(thistype.questItemReportManfred).setState(thistype.stateNew)
+			call this.displayUpdate()
 			set this.m_questAreaReportManfred = QuestAreaWarReportManfred.create(gg_rct_quest_war_manfred)
 		endmethod
 		
+		/**
+		 * When the characters reported to Manfred he sends a cart to the former Orc camp to provide some supply.
+		 */
 		private static method stateActionCompletedReportManfred takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			local unit cart = CreateUnit(MapData.neutralPassivePlayer, 'h016', GetUnitX(Npcs.manfred()), GetUnitY(Npcs.manfred()), 0.0)
 			call SetUnitInvulnerable(cart, true)
 			call IssuePointOrder(cart, "move", GetRectCenterX(gg_rct_quest_war_cart_destination), GetRectCenterY(gg_rct_quest_war_cart_destination))
+			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateCompleted)
+			call this.displayUpdate()
 			set cart = null
 		endmethod
 		
@@ -234,8 +301,16 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_wieland)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
+			
 			// quest item questItemIronFromTheDrumCave
 			set questItem = AQuestItem.create(this, tr("Besorgt Eisen aus der Trommelhöhle."))
+			
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_war_iron_from_the_drum_cave)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			
+			// quest item questItemMoveImpsToWieland
+			set questItem = AQuestItem.create(this, tr("Bringt die Imps aus der Trommelhöhle zu Wieland."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedImps)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedImps)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedImps)

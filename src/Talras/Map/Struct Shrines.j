@@ -20,6 +20,7 @@ library StructMapMapShrines requires Asl, StructGameShrine
 		private static Shrine m_tanka
 		private static Shrine m_farm
 		private static Shrine m_norsemen
+		private static Shrine m_tomb
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -59,6 +60,8 @@ library StructMapMapShrines requires Asl, StructGameShrine
 			set thistype.m_farm = Shrine.create(gg_unit_n02D_0215, gg_dest_B008_21755, gg_rct_shrine_farm_discover, gg_rct_shrine_farm_revival, 128.61)
 			
 			set thistype.m_norsemen = Shrine.create(gg_unit_n02D_0216, gg_dest_B008_21758, gg_rct_shrine_norsemen_discover, gg_rct_shrine_norsemen_revival, 235.58)
+			
+			set thistype.m_tomb = Shrine.create(gg_unit_n02D_0262, gg_dest_B008_30012, gg_rct_shrine_tomb_discover, gg_rct_shrine_tomb_revival, 188.82)
 		endmethod
 
 		public static method startShrine takes nothing returns Shrine

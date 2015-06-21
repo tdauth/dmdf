@@ -1,0 +1,2 @@
+ rm "E:\Warcraft III\Maps\DMDF\release\Karte 1 - Talras.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 1 - Talras.w3x" --do "E:\Warcraft III\Maps\DMDF\release\Karte 1 - Talras.w3x" --checkall --exit

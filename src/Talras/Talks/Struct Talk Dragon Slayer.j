@@ -11,6 +11,7 @@ library StructMapTalksTalkDragonSlayer requires Asl, StructGameClasses, StructMa
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.dragonSlayer(), thistype.startPageAction)
+			call this.setName(tr("Drachentöterin"))
 			
 			set this.m_exit = this.addExitButton()
 

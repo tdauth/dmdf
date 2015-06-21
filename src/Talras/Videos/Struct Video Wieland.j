@@ -14,7 +14,7 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 			set this.m_actorWieland = thistype.unitActor(thistype.saveUnitActor(Npcs.wieland()))
 			call SetUnitPositionRect(this.m_actorWieland, gg_rct_video_wieland_wieland)
 			call SetUnitFacing(this.m_actorWieland, 227.57)
-			call SetUnitAnimation(this.m_actorWieland, "Attack First")
+			call QueueUnitAnimation(this.m_actorWieland, "Attack First")
 
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_wieland_actor)
 			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorWieland)

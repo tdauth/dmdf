@@ -33,6 +33,7 @@ library StructSpellsSpellPreventIll requires Asl, StructGameClasses, StructGameS
 			local real speed = (thistype.speedStartValue + thistype.speedLevelValue * this.level()) * GetUnitMoveSpeed(target)
 			local real oldSpeed = GetUnitMoveSpeed(target)
 			local real time = thistype.timeStartValue + thistype.timeLevelValue * this.level()
+			call thistype.showMoveSpeedTextTag(target, speed)
 			call SetUnitMoveSpeed(target, speed)
 			loop
 				exitwhen (time <= 0.0 or ASpell.enemyTargetLoopCondition(target))

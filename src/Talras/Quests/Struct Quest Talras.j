@@ -1,11 +1,13 @@
 library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen, StructMapVideosVideoTheDukeOfTalras
 
 	struct QuestTalras extends AQuest
+		public static constant integer questItemReachTheCastle = 0
+		public static constant integer questItemMeetHeimrich = 1
 
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
-			return super.enable()
+			return this.enableUntil(thistype.questItemReachTheCastle)
 		endmethod
 
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger whichTrigger returns nothing
@@ -19,7 +21,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			call VideoTheCastle.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
-			call questItem.quest().questItem(1).enable()
+			call questItem.quest().questItem(thistype.questItemMeetHeimrich).enable()
 			// open the gate
 			call SetDoodadAnimationRect(gg_rct_doodad_gate_talras, 'D053', "Death", false)
 		endmethod
@@ -50,16 +52,16 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 			call questItem0.setPing(true)
 			call questItem0.setPingCoordinatesFromRect(gg_rct_quest_talras_quest_item_0)
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
-			call questItem0.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted0)
-			call questItem0.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted0)
-			call questItem0.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted0)
-			call questItem0.setReward(AAbstractQuest.rewardExperience, 100)
+			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
+			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
+			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
+			call questItem0.setReward(thistype.rewardExperience, 100)
 			// item 1
 			set questItem1 = AQuestItem.create(this, tr("Trefft den Herzog und schwört ihm die Treue."))
-			call questItem1.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted1)
-			call questItem1.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted1)
-			call questItem1.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted1)
-			call questItem1.setReward(AAbstractQuest.rewardExperience, 400)
+			call questItem1.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted1)
+			call questItem1.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted1)
+			call questItem1.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted1)
+			call questItem1.setReward(thistype.rewardExperience, 400)
 			
 			return this
 		endmethod

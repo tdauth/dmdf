@@ -46,18 +46,24 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 
 		private static method triggerConditionEnter takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local ACharacter enteringCharacter = ACharacter.getCharacterByUnit(GetTriggerUnit())
 			local integer i
 			local integer charactersCount
-			if (ACharacter.isUnitCharacter(GetTriggerUnit()) and this.onCheck.evaluate()) then
+			if (enteringCharacter != 0 and this.onCheck.evaluate()) then
 				set i = 0
-				set charactersCount = 0
+				/*
+				 * Start with count of one since the entering character will always be counted with.
+				 * Sometimes he is not recognized to be already in the rect so just assume he is in it.
+				 */
+				set charactersCount = 1
 				loop
 					exitwhen (i == MapData.maxPlayers)
-					if (ACharacter.playerCharacter(Player(i)) != 0 and RectContainsUnit(this.m_rect, ACharacter.playerCharacter(Player(i)).unit()) and  ACharacter.playerCharacter(Player(i)).isMovable()) then
+					if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)) != enteringCharacter and RectContainsUnit(this.m_rect, ACharacter.playerCharacter(Player(i)).unit()) and  ACharacter.playerCharacter(Player(i)).isMovable()) then
 						set charactersCount = charactersCount + 1
 					endif
 					set i = i + 1
 				endloop
+				
 				call Character.displayHintToAll(Format(tr("%1%/%2% Charakteren bereit.")).i(charactersCount).i(ACharacter.countAll()).result())
 				
 				// TODO if condition is true immediately make characters unmovable and make them movable after the action call?

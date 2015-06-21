@@ -43,6 +43,13 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 	endstruct
 
 	struct QuestSlaughter extends AQuest
+		public static constant integer questItemKillTheVampireLord = 0
+		public static constant integer questItemKillTheVampires = 1
+		public static constant integer questItemKillTheDeathAngel = 2
+		public static constant integer questItemKillTheBoneDragons = 3
+		public static constant integer questItemEnterTheDeathVault = 4
+		public static constant integer questItemKillTheMedusa = 5
+		public static constant integer questItemKillTheDiacon = 6
 		private QuestAreaSlaughter m_questArea
 		private QuestAreaSlaughterEnter m_questAreaEnter
 

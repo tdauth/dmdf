@@ -100,6 +100,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_medusaBoxes
 		private static SpawnPoint m_medusa
 		private static SpawnPoint m_deathVault
+		private static SpawnPoint m_deathVaultBoxes0
+		private static SpawnPoint m_deathVaultBoxes1
 		private static SpawnPoint m_deathAngel
 		private static SpawnPoint m_boneDragons
 		private static SpawnPoint m_giant
@@ -494,6 +496,36 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n038_0326, 1.0)
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n038_0327, 1.0)
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n038_0328, 1.0)
+			
+			set thistype.m_deathVaultBoxes0 = SpawnPoint.create()
+			set index = thistype.m_deathVaultBoxes0.addUnitWithType(gg_unit_n02C_0360, 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I00B', 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I056', 1.0)
+			set index = thistype.m_deathVaultBoxes0.addUnitWithType(gg_unit_n02C_0364, 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I00A', 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I00D', 1.0)
+			set index = thistype.m_deathVaultBoxes0.addUnitWithType(gg_unit_n04B_0361, 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I00C', 1.0)
+			set index = thistype.m_deathVaultBoxes0.addUnitWithType(gg_unit_n04B_0362, 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I00B', 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I00A', 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I00D', 1.0)
+			set index = thistype.m_deathVaultBoxes0.addUnitWithType(gg_unit_n04B_0363, 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I00C', 1.0)
+			call thistype.m_deathVaultBoxes0.addItemType(index, 'I056', 1.0)
+			
+			set thistype.m_deathVaultBoxes1 = SpawnPoint.create()
+			set index = thistype.m_deathVaultBoxes1.addUnitWithType(gg_unit_n02C_0367, 1.0)
+			call thistype.m_deathVaultBoxes1.addItemType(index, 'I00A', 1.0)
+			call thistype.m_deathVaultBoxes1.addItemType(index, 'I00D', 1.0)
+			set index = thistype.m_deathVaultBoxes1.addUnitWithType(gg_unit_n02C_0366, 1.0)
+			call thistype.m_deathVaultBoxes1.addItemType(index, 'I00B', 1.0)
+			call thistype.m_deathVaultBoxes1.addItemType(index, 'I00D', 1.0)
+			call thistype.m_deathVaultBoxes1.addItemType(index, 'I056', 1.0)
+			set index = thistype.m_deathVaultBoxes1.addUnitWithType(gg_unit_n02C_0365, 1.0)
+			call thistype.m_deathVaultBoxes1.addItemType(index, 'I00A', 1.0)
+			call thistype.m_deathVaultBoxes1.addItemType(index, 'I00D', 1.0)
+			call thistype.m_deathVaultBoxes1.addItemType(index, 'I056', 1.0)
 
 			set thistype.m_deathAngel = SpawnPoint.create()
 			set index = thistype.m_deathAngel.addUnitWithType(gg_unit_n02K_0160, 1.0)

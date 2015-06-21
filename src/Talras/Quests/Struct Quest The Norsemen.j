@@ -19,11 +19,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		public static method create takes nothing returns thistype
 			local thistype this = thistype.allocate()
 			local integer i
-			debug call Print("A")
 			set this.m_leaderboard = CreateLeaderboard()
 			set this.m_hostileWaves = QuestTheNorsemen.maxWaves - 1
 			set this.m_alliedWaves = QuestTheNorsemen.maxAlliedWaves
-			debug call Print("B")
 			call LeaderboardSetLabel(this.m_leaderboard, tr("Verbleibende Wellen"))
 			call LeaderboardSetStyle(this.m_leaderboard, true, true, true, true)
 			call LeaderboardAddItemBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, tr("Feindliche:"), this.m_hostileWaves)
@@ -31,7 +29,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call LeaderboardSetPlayerItemLabelColorBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, 100, 80, 20, 0)
 			call LeaderboardSetPlayerItemValueColorBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, 100, 80, 20, 0)
 			call LeaderboardAddItemBJ(MapData.alliedPlayer, this.m_leaderboard, tr("Verbündete:"), this.m_alliedWaves)
-			debug call Print("C")
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
@@ -40,7 +37,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			endloop
 
 			call LeaderboardDisplay(this.m_leaderboard, true)
-			debug call Print("D")
 
 			return this
 		endmethod
@@ -81,8 +77,18 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 	endstruct
 
 	struct QuestTheNorsemen extends AQuest
+		/**
+		 * The number of enemy waves of Orcs and Dark Elves which the Norsemen and characters have to fight.
+		 */
 		public static constant integer maxWaves = 5
+		/**
+		 * The number of allied waves which support the Norsemen and the characters.
+		 */
 		public static constant integer maxAlliedWaves = 2
+		public static constant integer questItemMeetTheNorsemen = 0
+		public static constant integer questItemMeetAtTheBattlefield = 1
+		public static constant integer questItemFight = 2
+		public static constant integer questItemReportHeimrich = 3
 		private boolean m_hasStarted
 		private AGroup m_allyStartGroup
 		private AGroup m_allyRangerGroup
@@ -108,9 +114,13 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		// methods
 
 		public stub method enable takes nothing returns boolean
-			return super.enableUntil(0)
+			return super.enableUntil(thistype.questItemMeetTheNorsemen)
 		endmethod
 
+		/**
+		 * Everytime a unit dies which belongs to the enemy group it will be checked if it was the last of the group to create a new spawn wave or to complete the quest.
+		 * Allied groups will be spawned in between while some of the enemy group's units are still alive.
+		 */
 		private static method triggerConditionSpawn takes nothing returns boolean
 			local thistype this = thistype.quest()
 			local unit triggerUnit = GetTriggerUnit()
@@ -169,6 +179,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call this.m_allyFarmerGroup.forGroup(thistype.groupFunctionRemoveUnit)
 			call this.m_allyFarmerGroup.destroy()
 			set this.m_allyFarmerLeader = null
+			call this.m_currentGroup.forGroup(thistype.groupFunctionRemoveUnit)
 			call this.m_currentGroup.destroy()
 			call DestroyTrigger(this.m_spawnTrigger)
 			set this.m_spawnTrigger = null
@@ -190,6 +201,11 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				set i = i + 1
 			endloop
 		endmethod
+		
+		public method completeFight takes nothing returns boolean
+			call this.cleanUpBattleField()
+			return QuestTheNorsemen.quest().questItem(2).setState(AAbstractQuest.stateCompleted) // video Wigberht is played in quest completion action
+		endmethod
 
 		private static method triggerActionSpawn takes nothing returns nothing
 			local thistype this = thistype.quest()
@@ -201,8 +217,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 			// killed last wave -> quest item 1 completed
 			if (this.m_currentGroupIndex + 1 == thistype.maxWaves) then
-				call this.cleanUpBattleField()
-				call QuestTheNorsemen.quest().questItem(2).setState(AAbstractQuest.stateCompleted) // video Wigberht is played in quest completion action
+				call this.completeFight() // video Wigberht is played in quest completion action
 				return
 			endif
 			set this.m_currentGroupIndex = this.m_currentGroupIndex + 1
@@ -300,6 +315,10 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			set enemyPlayer = null
 		endmethod
 
+		/**
+		 * Starts the battle and enables spawning the new waves.
+		 * The old spawn points at the camp are disabled and Wigberht and Ricman are shared as fellows as well as the Norsemen.
+		 */
 		public method startSpawns takes AGroup allyStartGroup, AGroup enemyStartGroup returns nothing
 			local player allyPlayer = MapData.alliedPlayer
 			local integer i
@@ -426,40 +445,37 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(0, tr("Die Nordmänner"))
-			local AQuestItem questItem0
-			local AQuestItem questItem1
-			local AQuestItem questItem2
-			local AQuestItem questItem3
+			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
 			call this.setDescription(tr("Der Herzog will, dass ihr die Nordmänner vor der Burg auf seine Seite zieht, damit er neue Verbündete für den bevorstehenden Krieg gewinnt."))
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Begebt euch zu den Nordmännern vor der Burg."))
-			call questItem0.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted0)
-			call questItem0.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted0)
-			call questItem0.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted0)
-			call questItem0.setPing(true)
-			call questItem0.setPingCoordinatesFromRect(gg_rct_quest_the_norsemen_ping)
-			call questItem0.setPingColour(100.0, 100.0, 100.0)
-			call questItem0.setReward(AAbstractQuest.rewardExperience, 500)
+			set questItem = AQuestItem.create(this, tr("Begebt euch zu den Nordmännern vor der Burg."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
+			call questItem.setPing(true)
+			call questItem.setPingCoordinatesFromRect(gg_rct_quest_the_norsemen_ping)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setReward(thistype.rewardExperience, 500)
 			// item 1
-			set questItem1 = AQuestItem.create(this, tr("Sammelt euch nahe des nordwestlichen Orklagers mit den Nordmännern."))
-			call questItem1.setPing(true)
-			call questItem1.setPingRect(gg_rct_quest_the_norsemen_assembly_point)
-			call questItem1.setPingColour(100.0, 100.0, 100.0)
-			call questItem1.setReward(AAbstractQuest.rewardExperience, 500)
-			// item 1
-			set questItem2 = AQuestItem.create(this, tr("Beweist eure Kampfstärke, indem ihr die Nordmänner im Kampf unterstützt."))
-			call questItem2.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted2)
-			call questItem2.setPing(true)
-			call questItem2.setPingUnit(Npcs.wigberht())
-			call questItem2.setPingColour(100.0, 100.0, 100.0)
-			call questItem2.setReward(AAbstractQuest.rewardExperience, 5000)
+			set questItem = AQuestItem.create(this, tr("Sammelt euch nahe des nordwestlichen Orklagers mit den Nordmännern."))
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_the_norsemen_assembly_point)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setReward(thistype.rewardExperience, 500)
+			// item 2
+			set questItem = AQuestItem.create(this, tr("Beweist eure Kampfstärke, indem ihr die Nordmänner im Kampf unterstützt."))
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted2)
+			call questItem.setPing(true)
+			call questItem.setPingUnit(Npcs.wigberht())
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setReward(thistype.rewardExperience, 5000)
 			// item 3
-			set questItem3 = AQuestItem.create(this, tr("Berichtet dem Herzog von eurem Erfolg."))
-			call questItem3.setPing(true)
-			call questItem3.setPingUnit(gg_unit_n013_0116)
-			call questItem3.setPingColour(100.0, 100.0, 100.0)
-			call questItem3.setReward(AAbstractQuest.rewardExperience, 3000)
+			set questItem = AQuestItem.create(this, tr("Berichtet dem Herzog von eurem Erfolg."))
+			call questItem.setPing(true)
+			call questItem.setPingUnit(gg_unit_n013_0116)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setReward(thistype.rewardExperience, 3000)
 			// members
 			set this.m_hasStarted = false
 			set this.m_allyStartGroup = 0

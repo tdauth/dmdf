@@ -482,6 +482,15 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 				set i = i + 1
 			endloop
 			
+			/*
+			 * It is important to set these relationship neutral since the Imps of the quest "War" are from player MapData.alliedPlayer.
+			 */
+			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
+			
+			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
+			
 			call SetPlayerColor(thistype.m_haldarsUser, PLAYER_COLOR_LIGHT_GRAY)
 			call SetPlayerColor(thistype.m_baldarsUser, ConvertPlayerColor(12)) // black
 

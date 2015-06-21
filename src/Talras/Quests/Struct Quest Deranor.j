@@ -1,6 +1,8 @@
 library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcs, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath
 
 	struct QuestDeranor extends AQuest
+		public static constant integer questItemEnterTheTomb = 0
+		public static constant integer questItemKillDeranor = 1
 
 		implement Quest
 
@@ -35,7 +37,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			call WaygateSetDestination(gg_unit_n02I_0295, GetRectCenterX(gg_rct_tomb_outside), GetRectCenterY(gg_rct_tomb_outside))
 			call WaygateActivate(gg_unit_n02I_0295, true)
 			
-			return super.enableUntil(0)
+			return super.enableUntil(thistype.questItemEnterTheTomb)
 		endmethod
 		
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger usedTrigger returns nothing

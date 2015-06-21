@@ -17,7 +17,7 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 			
 			set this.m_actorImp = thistype.unitActor(thistype.saveUnitActor(gg_unit_u001_0190))
 			call SetUnitPositionRect(this.m_actorImp, gg_rct_video_iron_from_the_drum_cave_imp)
-			call SetUnitAnimation(this.m_actorImp , "Attack")
+			call QueueUnitAnimation(this.m_actorImp , "Attack")
 			
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_iron_from_the_drum_cave_actor)
 			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorBaldar)

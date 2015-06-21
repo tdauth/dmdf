@@ -374,6 +374,12 @@ static if (DEBUG_MODE) then
 			call Print("deranor")
 			call Print("deranorsdeath")
 			call Print("recruitthehighelf")
+			call Print(tr("Handlungs-Cheats:"))
+			call Print("aftertalras")
+			call Print("afterthenorsemen")
+			call Print("afterslaughter")
+			call Print("afterderanor")
+			call Print("afterthebattle")
 			call Print(tr("Erzeugungs-Cheats:"))
 			call Print("unitspawns")
 			call Print("testspawnpoint")
@@ -521,6 +527,240 @@ static if (DEBUG_MODE) then
 		private static method onCheatActionRecruitTheHighElf takes ACheat cheat returns nothing
 			call VideoRecruitTheHighElf.video().play()
 		endmethod
+		
+		private static method moveCharactersToRect takes rect whichRect returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYERS)
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					call SetUnitX(ACharacter.playerCharacter(Player(i)).unit(), GetRectCenterX(whichRect))
+					call SetUnitY(ACharacter.playerCharacter(Player(i)).unit(), GetRectCenterY(whichRect))
+				endif
+				set i = i + 1
+			endloop
+		endmethod
+		
+		private static method makeCharactersInvulnerable takes boolean invulnerable returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYERS)
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					call SetUnitInvulnerable(ACharacter.playerCharacter(Player(i)).unit(), invulnerable)
+				endif
+				set i = i + 1
+			endloop
+		endmethod
+		
+		private static method onCheatActionAfterTalras takes ACheat cheat returns nothing
+			call thistype.makeCharactersInvulnerable(true)
+			if (not QuestTalras.quest.evaluate().isCompleted()) then
+				if (not QuestTalras.quest.evaluate().isNew()) then
+					debug call Print("New quest Talras")
+					if (not QuestTalras.quest.evaluate().enable()) then
+						debug call Print("Failed enabling quest Talras")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTalras.quest.evaluate().questItem(QuestTalras.questItemReachTheCastle).isCompleted()) then
+					debug call Print("Complete quest item 0 Talras")
+					/*
+					 * Plays video "The Castle".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_talras_quest_item_0)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					if (not  QuestTalras.quest.evaluate().questItem(QuestTalras.questItemReachTheCastle).isCompleted()) then
+						debug call Print("Failed completing quest item meet at reach the castle.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTalras.quest.evaluate().questItem(QuestTalras.questItemMeetHeimrich).isCompleted()) then
+					debug call Print("Complete quest item 1 Talras")
+					/*
+					 * Plays video "The Duke of Talras".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_talras_quest_item_1)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+				endif
+			endif
+			call thistype.makeCharactersInvulnerable(false)
+		endmethod
+		
+		private static method onCheatActionAfterTheNorsemen takes ACheat cheat returns nothing
+			call thistype.makeCharactersInvulnerable(true)
+			if (not QuestTalras.quest().isCompleted()) then
+				debug call Print("Quest Talras must be completed before.")
+				call thistype.makeCharactersInvulnerable(false)
+				return
+			endif
+			/*
+			 * Quest The Norsemen must be at least new now.
+			 */
+			if (not QuestTheNorsemen.quest.evaluate().isCompleted()) then
+				if (not QuestTheNorsemen.quest.evaluate().isNew()) then
+					if (not QuestTheNorsemen.quest.evaluate().enable()) then
+						debug call Print("Failed enabling quest The Norsemen")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+			
+				if (not QuestTheNorsemen.quest.evaluate().questItem.evaluate(QuestTheNorsemen.questItemMeetTheNorsemen).isCompleted()) then
+					/*
+					 * Plays video "The Chief".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_the_norsemen_quest_item_0)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					if (not  QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetTheNorsemen).isCompleted()) then
+						debug call Print("Failed completing quest item meet at the norsemen.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheBattlefield).isCompleted()) then
+					/*
+					 * Plays video "The First combat".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_the_norsemen_assembly_point)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					if (not  QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheBattlefield).isCompleted()) then
+						debug call Print("Failed completing quest item meet at the battlefield.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemFight).isCompleted()) then
+					/*
+					 * Plays video "Wigberht".
+					 */
+					/*
+					 * TODO cleanup does not work! Remove fighting troops, disable leaderboard etc.
+					 * TODO Does not change the state!
+					 */
+					if (QuestTheNorsemen.quest.evaluate().completeFight()) then
+						call TriggerSleepAction(AVideo.waitTime() + 2.0)
+						call waitForVideo(MapData.videoWaitInterval)
+						call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					else
+						debug call Print("Failed completing quest item fight.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemReportHeimrich).isCompleted()) then
+					/*
+					 * Plays video "A new alliance"
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_talras_quest_item_1)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+				endif
+			endif
+			call thistype.makeCharactersInvulnerable(false)
+		endmethod
+		
+		private static method onCheatActionAfterSlaughter takes ACheat cheat returns nothing
+			call thistype.makeCharactersInvulnerable(true)
+			if (not QuestSlaughter.quest().isCompleted()) then
+				if (not QuestSlaughter.quest().isNew()) then
+					if (not QuestSlaughter.quest().enable()) then
+						debug call Print("Enabling quest Slaughter failed.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+			
+				// TODO it would be safer to complete the single quest items
+				call QuestSlaughter.quest().complete()
+				call TriggerSleepAction(AVideo.waitTime() + 2.0)
+				call waitForVideo(MapData.videoWaitInterval)
+				call TriggerSleepAction(AVideo.waitTime() + 2.0)
+			endif
+			call thistype.makeCharactersInvulnerable(false)
+		endmethod
+		
+		private static method onCheatActionAfterDeranor takes ACheat cheat returns nothing
+			call thistype.makeCharactersInvulnerable(true)
+			
+			if (not QuestSlaughter.quest().isCompleted()) then
+				debug call Print("Quest Slaughter must be completed before.")
+				call thistype.makeCharactersInvulnerable(false)
+				return
+			endif
+			
+			if (not QuestDeranor.quest().isCompleted()) then
+				if (not QuestDeranor.quest().isNew()) then
+					if (not QuestDeranor.quest().enable()) then
+						debug call Print("Enabling quest Deranor failed.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+			
+				if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemEnterTheTomb).isCompleted()) then
+					/*
+					 * Plays video "Deranor".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_area_tomb)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemEnterTheTomb).isCompleted()) then
+						debug call Print("Failed to complete enter the tomb.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemKillDeranor).isCompleted()) then
+					/*
+					 * Plays video "Deranor's Death".
+					 */
+					call KillUnit(gg_unit_u00A_0353)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemKillDeranor).isCompleted()) then
+						debug call Print("Failed to complete kill deranor.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+			endif
+			call thistype.makeCharactersInvulnerable(false)
+		endmethod
+		
+		/**
+		 * This cheat action tries to emulate that the battle with the norseman has been done and now the quest "A new alliance" is active.
+		 * Therefore the following quests have been completed:
+		 * Talras
+		 * The Norsemen
+		 * Slaughter
+		 * Deranor
+		 *
+		 * All events which happened by these quests must be emulated.
+		 */
+		private static method onCheatActionAfterTheBattle takes ACheat cheat returns nothing
+			call thistype.onCheatActionAfterTalras(cheat)
+			call thistype.onCheatActionAfterTheNorsemen(cheat)
+			call thistype.onCheatActionAfterSlaughter(cheat)
+			call thistype.onCheatActionAfterDeranor(cheat)
+		endmethod
 
 		private static method onCheatActionUnitSpawn takes ACheat cheat returns nothing
 			call UnitTypes.spawn(GetTriggerPlayer(), GetUnitX(Character.playerCharacter(GetTriggerPlayer()).unit()), GetUnitY(Character.playerCharacter(GetTriggerPlayer()).unit()))
@@ -547,6 +787,7 @@ static if (DEBUG_MODE) then
 			call ACheat.create("aos", true, thistype.onCheatActionAos)
 			call ACheat.create("aosentry", true, thistype.onCheatActionAosEntry)
 			call ACheat.create("tavern", true, thistype.onCheatActionTavern)
+			// videos
 			call ACheat.create("intro", true, thistype.onCheatActionIntro)
 			call ACheat.create("rescuedago0", true, thistype.onCheatActionRescueDago0)
 			call ACheat.create("rescuedago1", true, thistype.onCheatActionRescueDago1)
@@ -563,6 +804,13 @@ static if (DEBUG_MODE) then
 			call ACheat.create("deranor", true, thistype.onCheatActionDeranor)
 			call ACheat.create("deranorsdeath", true, thistype.onCheatActionDeranorsDeath)
 			call ACheat.create("recruitthehighelf", true, thistype.onCheatActionRecruitTheHighElf)
+			// plot cheats
+			call ACheat.create("aftertalras", true, thistype.onCheatActionAfterTalras)
+			call ACheat.create("afterthenorsemen", true, thistype.onCheatActionAfterTheNorsemen)
+			call ACheat.create("afterslaughter", true, thistype.onCheatActionAfterSlaughter)
+			call ACheat.create("afterderanor", true, thistype.onCheatActionAfterDeranor)
+			call ACheat.create("afterthebattle", true, thistype.onCheatActionAfterTheBattle)
+			// test cheats
 			call ACheat.create("unitspawn", true, thistype.onCheatActionUnitSpawn)
 			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)
 			debug call Print("Before creating all cheats")
