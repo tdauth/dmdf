@@ -167,6 +167,16 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			endif
 		endmethod
 		
+		/**
+		 * Makes \p whichUnit invulnerable and changes its owner.
+		 */
+		private method setupUnitAtDestination takes unit whichUnit returns nothing
+			call SetUnitInvulnerable(whichUnit, true)
+			call SetUnitOwner(whichUnit, MapData.neutralPassivePlayer, true)
+			call SetUnitPathing(whichUnit, false)
+			call IssueImmediateOrder(whichUnit, "stop")
+		endmethod
+		
 		/*
 		 * The characters have to move to the Drum Cave and talk to Baldar who has an iron mine.
 		 */
@@ -227,10 +237,8 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.displayUpdateMessage(tr("Neue Imps stehen zur Verfügung."))
 		endmethod
 		
-		private static method stateEventCompletedImps takes AQuestItem questItem, trigger whichTrigger returns event
+		private static method stateEventCompletedImps takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_war_wieland)
-			
-			return null
 		endmethod
 		
 		/**
@@ -244,8 +252,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			debug call Print("Condition for imps!")
 			if (this.m_imps.units().contains(GetTriggerUnit())) then
 				debug call Print("Is imp!")
-				call SetUnitInvulnerable(GetTriggerUnit(), true)
-				call PauseUnit(GetTriggerUnit(), true)
+				call this.setupUnitAtDestination(GetTriggerUnit())
 				debug call Print("After setting Imp up")
 				set i = 0
 				loop
@@ -300,6 +307,8 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call TimerStart(this.m_weaponCartSpawnTimer, 20.0, true, function thistype.timerFunctionSpawnWeaponCart)
 			call Game.setAlliedPlayerAlliedToAllCharacters()
 			
+			// TODO destroy the elapsed timer
+			
 			call this.enableCartDestination()
 		endmethod
 
@@ -323,18 +332,30 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			/*
 			 * TODO Would be much cooler when the Imps take weapons to the former Orc camp.
 			 */
-			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemIronFromTheDrumCave).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemWaitForWielandsWeapons).setState(thistype.stateNew)
 			call this.displayUpdate()
 			
-			// TODO start timer
 			set this.m_wielandsWeaponsTimer = CreateTimer()
 			call TimerStart(this.m_wielandsWeaponsTimer, 30.0, false, function thistype.timerFunctionWielandsWeapons)
-			/*
-			set cart = CreateUnit(MapData.neutralPassivePlayer, 'h020', GetUnitX(Npcs.wieland()), GetUnitY(Npcs.wieland()), 0.0)
-			call SetUnitInvulnerable(cart, true)
-			call IssuePointOrder(cart, "move", GetRectCenterX(gg_rct_quest_war_cart_destination), GetRectCenterY(gg_rct_quest_war_cart_destination))
-			*/
+		endmethod
+		
+		private static method stateEventCompletedMoveWielandsWeaponsToTheCamp takes AQuestItem questItem, trigger whichTrigger returns nothing
+			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_war_cart_destination)
+		endmethod
+		
+		private static method stateConditionCompletedMoveWielandsWeaponsToTheCamp takes AQuestItem questItem returns boolean
+			local thistype this = thistype(questItem.quest())
+			return GetTriggerUnit() == this.m_weaponCart
+		endmethod
+		
+		private static method stateActionCompletedMoveWielandsWeaponsToTheCamp takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
+			
+			call this.setupUnitAtDestination(GetTriggerUnit())
+			
+			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateCompleted)
+			call this.displayState()
 		endmethod
 		
 		/// Considers death units (spawn points) and continues searching for the first one with unit type id \p unitTypeId of spawn point \p spawnPoint with an 1 second interval.
@@ -496,6 +517,12 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			endif
 		endmethod
 		
+		/**
+		 * Kuno gives the characters a cart with lumber.
+		 * It is owned by \ref MapData.alliedPlayer and has to be moved to the camp.
+		 * Whenever it is killed a new one spawns at Kuno's house.
+		 * It is checked periodically if it is killed.
+		 */
 		public method enableMoveKunosLumberToTheCamp takes nothing returns nothing
 			call this.questItem(thistype.questItemReportKuno).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemMoveKunosLumberToTheCamp).setState(thistype.stateNew)
@@ -520,9 +547,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		
 		private static method stateActionCompletedMoveKunosLumberToTheCamp takes AQuestItem questItem returns nothing
 			local thistype this = thistype.quest()
-			call SetUnitInvulnerable(this.m_kunosCart, true)
-			call SetUnitOwner(this.m_kunosCart, MapData.neutralPassivePlayer, true)
-			call IssueImmediateOrder(this.m_kunosCart, "stop")
+			call this.setupUnitAtDestination(this.m_kunosCart)
 			call PauseTimer(this.m_kunosCartSpawnTimer)
 			call DestroyTimer(this.m_kunosCartSpawnTimer)
 			set this.m_kunosCartSpawnTimer = null
@@ -549,6 +574,10 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.enableCartDestination()
 		endmethod
 		
+		/**
+		 * The recruits can be bought by any player from a building at the farm.
+		 * Whenever a recruit is bought its owner is changed to \ref MapData.alliedPlayer and it has to be moved to the camp until \ref thistype.maxRecruits units are at the camp.
+		 */
 		public method enableGetRecruits takes nothing returns nothing
 			call this.questItem(thistype.questItemGetRecruits).setState(thistype.stateNew)
 			call this.displayUpdate()
@@ -558,17 +587,14 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call TriggerAddAction(this.m_recruitTrigger, function thistype.triggerActionRecruit)
 		endmethod
 		
-		private static method stateEventCompletedGetRecruits takes AQuestItem questItem, trigger whichTrigger returns event
+		private static method stateEventCompletedGetRecruits takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_war_cart_destination)
-			
-			return null
 		endmethod
 		
 		private static method stateConditionCompletedGetRecruits takes AQuestItem questItem returns boolean
 			local thistype this = thistype.quest()
 			if (GetUnitTypeId(GetTriggerUnit()) == 'n02J' and GetOwningPlayer(GetTriggerUnit()) == MapData.alliedPlayer) then
-				call SetUnitInvulnerable(GetTriggerUnit(), true)
-				call IssueImmediateOrder(GetTriggerUnit(), "stop")
+				call this.setupUnitAtDestination(GetTriggerUnit())
 				set this.m_recruitCounter = this.m_recruitCounter + 1
 				
 				call this.displayUpdateMessage(Format(tr("%1%/%2% Rekruten")).i(this.m_recruitCounter).i(thistype.maxRecruits).result())

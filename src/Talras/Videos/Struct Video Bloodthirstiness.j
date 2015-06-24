@@ -23,11 +23,10 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 			call SetUnitFacingToFaceUnit(this.m_actorDragonSlayer, this.m_actorDeacon)
 			call SetUnitFacingToFaceUnit(this.m_actorDeacon, this.m_actorDragonSlayer)
 			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorDeacon)
-
-			call PauseUnit(this.m_actorDragonSlayer, true)
-			call PauseUnit(thistype.actor(), true)
-			call PauseUnit(thistype.actor(), true)
-
+			
+			call IssueImmediateOrder(this.m_actorDragonSlayer, "halt")
+			call IssueImmediateOrder(this.m_actorDeacon, "halt")
+			call IssueImmediateOrder(thistype.actor(), "halt")
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing

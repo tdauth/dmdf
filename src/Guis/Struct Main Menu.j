@@ -1,9 +1,12 @@
 library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial, StructGameGame
 
+	/**
+	 * \brief The main menu can be accessed using the chat command "-menu". It allows various game settings for each player.
+	 */
 	struct MainMenu
 		private Character m_character
 		private trigger m_keyTrigger
-		private integer m_characterSlotIndex
+		private real m_cameraDistance
 
 		private static method dialogButtonActionSetTutorial takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
@@ -41,8 +44,17 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 			call this.showDialog.evaluate()
 		endmethod
 
-		private static method dialogButtonActionBackToMainMenu takes ADialogButton dialogButton returns nothing
+		private static method dialogButtonActionIncreaseCameraDistance takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			set this.m_cameraDistance = this.m_cameraDistance + 500.0
+			call SetCameraFieldForPlayer(dialogButton.dialog().player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
+			call this.showDialog.evaluate()
+		endmethod
+		
+		private static method dialogButtonActionDecreaseCameraDistance takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			set this.m_cameraDistance = this.m_cameraDistance - 500.0
+			call SetCameraFieldForPlayer(dialogButton.dialog().player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
 			call this.showDialog.evaluate()
 		endmethod
 
@@ -98,6 +110,10 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 				set message = tr("Kontrolle erlauben")
 			endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetControl)
+			
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Kameraentfernung vergrößern"), thistype.dialogButtonActionIncreaseCameraDistance)
+			
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Kameraentfernung verkleinern"), thistype.dialogButtonActionDecreaseCameraDistance)
 
 static if (DMDF_INFO_LOG) then
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Info-Log"), thistype.dialogButtonActionInfoLog)
@@ -146,7 +162,7 @@ endif
 			local thistype this = thistype.allocate()
 			set this.m_character = character
 			call this.createKeyTrigger()
-			set this.m_characterSlotIndex = 0
+			set this.m_cameraDistance = bj_CAMERA_DEFAULT_DISTANCE
 
 			return this
 		endmethod

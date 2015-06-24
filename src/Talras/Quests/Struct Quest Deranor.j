@@ -51,6 +51,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			call this.questItem(1).enable()
+			// TODO Maybe enable the shrine for all characters?
 			call VideoDeranor.video().play()
 		endmethod
 		

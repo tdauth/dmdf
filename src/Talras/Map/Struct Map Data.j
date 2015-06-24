@@ -359,6 +359,8 @@ static if (DEBUG_MODE) then
 			call Print("aos")
 			call Print("aosentry")
 			call Print("tavern")
+			call Print("tomb")
+			call Print("orccamp")
 			call Print(tr("Video-Cheats:"))
 			call Print("intro")
 			call Print("rescuedago0")
@@ -464,6 +466,16 @@ static if (DEBUG_MODE) then
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_area_tavern_bounds)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
 			set whichPlayer = null
+		endmethod
+		
+		private static method onCheatActionTomb takes ACheat cheat returns nothing
+			call ACharacter.playerCharacter(GetTriggerPlayer()).setRect(gg_rct_cheat_tomb)
+			call IssueImmediateOrder(ACharacter.playerCharacter(GetTriggerPlayer()).unit(), "stop")
+		endmethod
+		
+		private static method onCheatActionOrcCamp takes ACheat cheat returns nothing
+			call ACharacter.playerCharacter(GetTriggerPlayer()).setRect(gg_rct_cheat_orc_camp)
+			call IssueImmediateOrder(ACharacter.playerCharacter(GetTriggerPlayer()).unit(), "stop")
 		endmethod
 
 		private static method onCheatActionIntro takes ACheat cheat returns nothing
@@ -789,6 +801,8 @@ static if (DEBUG_MODE) then
 			call ACheat.create("aos", true, thistype.onCheatActionAos)
 			call ACheat.create("aosentry", true, thistype.onCheatActionAosEntry)
 			call ACheat.create("tavern", true, thistype.onCheatActionTavern)
+			call ACheat.create("tomb", true, thistype.onCheatActionTomb)
+			call ACheat.create("orccamp", true, thistype.onCheatActionOrcCamp)
 			// videos
 			call ACheat.create("intro", true, thistype.onCheatActionIntro)
 			call ACheat.create("rescuedago0", true, thistype.onCheatActionRescueDago0)
