@@ -882,7 +882,7 @@ endif
 			debug call thistype.createCheats()
 			
 			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Drücken Sie die Escape-Taste, um ins Haupt-Menü zu gelangen."))
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Geben Sie \"-menu\" im Chat ein, um ins Haupt-Menü zu gelangen."))
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
 			call QuestTalras.quest().enable()
