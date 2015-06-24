@@ -3,6 +3,8 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 	struct VideoRecruitTheHighElf extends AVideo
 		private integer m_actorDragonSlayer
 		private integer m_actorManfred
+		// Place Manfred's dog. Otherwise he might block the way to the high elf.
+		private integer m_actorManfredsDog
 		private integer m_actorGuntrich
 		private integer m_actorHeimrich
 		private integer m_actorMarkward
@@ -26,10 +28,14 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 			set this.m_actorManfred = thistype.saveUnitActor(Npcs.manfred())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorManfred), gg_rct_video_recruit_the_high_elf_manfred)
 			
+			set this.m_actorManfredsDog = thistype.saveUnitActor(Npcs.manfredsDog())
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorManfredsDog), gg_rct_video_recruit_the_high_elf_manfreds_dog)
+			
 			set this.m_actorGuntrich = thistype.saveUnitActor(Npcs.guntrich())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorGuntrich), gg_rct_video_recruit_the_high_elf_guntrich)
 			
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorManfred), thistype.unitActor(this.m_actorGuntrich))
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorManfredsDog), thistype.unitActor(this.m_actorGuntrich))
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorGuntrich), thistype.unitActor(this.m_actorManfred))
 			
 			set this.m_actorHeimrich = thistype.saveUnitActor(Npcs.heimrich())
