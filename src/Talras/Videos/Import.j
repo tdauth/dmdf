@@ -9,6 +9,7 @@
 //! import "Talras/Videos/Struct Video Iron From The Drum Cave.j"
 //! import "Talras/Videos/Struct Video Kuno.j"
 //! import "Talras/Videos/Struct Video Manfred.j"
+//! import "Talras/Videos/Struct Video Prepare For The Defense.j"
 //! import "Talras/Videos/Struct Video Recruit.j"
 //! import "Talras/Videos/Struct Video Recruit The High Elf.j"
 //! import "Talras/Videos/Struct Video Report Kuno.j"
@@ -24,7 +25,7 @@
 //! import "Talras/Videos/Struct Video Wieland.j"
 //! import "Talras/Videos/Struct Video Wigberht.j"
 
-library MapVideos requires StructMapVideosVideoANewAlliance, StructMapVideosVideoBjoern, StructMapVideosVideoBloodthirstiness, StructMapVideosVideoDeathVault, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath, StructMapVideosVideoDragonHunt, StructMapVideosVideoIntro, StructMapVideosVideoIronFromTheDrumCave, StructMapVideosVideoKuno, StructMapVideosVideoManfred, StructMapVideosVideoRecruit, StructMapVideosVideoRecruitTheHighElf, StructMapVideosVideoReportKuno, StructMapVideosVideoReportManfred, StructMapVideosVideoRescueDago0, StructMapVideosVideoRescueDago1, StructMapVideosVideoTheCastle, StructMapVideosVideoTheChief, StructMapVideosVideoTheDukeOfTalras, StructMapVideosVideoTheFirstCombat, StructMapVideosVideoUpstream, StructMapVideosVideoWeaponsFromWieland, StructMapVideosVideoWieland, StructMapVideosVideoWigberht
+library MapVideos requires StructMapVideosVideoANewAlliance, StructMapVideosVideoBjoern, StructMapVideosVideoBloodthirstiness, StructMapVideosVideoDeathVault, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath, StructMapVideosVideoDragonHunt, StructMapVideosVideoIntro, StructMapVideosVideoIronFromTheDrumCave, StructMapVideosVideoKuno, StructMapVideosVideoManfred, StructMapVideosVideoPrepareForTheDefense, StructMapVideosVideoRecruit, StructMapVideosVideoRecruitTheHighElf, StructMapVideosVideoReportKuno, StructMapVideosVideoReportManfred, StructMapVideosVideoRescueDago0, StructMapVideosVideoRescueDago1, StructMapVideosVideoTheCastle, StructMapVideosVideoTheChief, StructMapVideosVideoTheDukeOfTalras, StructMapVideosVideoTheFirstCombat, StructMapVideosVideoUpstream, StructMapVideosVideoWeaponsFromWieland, StructMapVideosVideoWieland, StructMapVideosVideoWigberht
 
 	function initMapVideos takes nothing returns nothing
 		call VideoANewAlliance.initVideo()
@@ -38,6 +39,7 @@ library MapVideos requires StructMapVideosVideoANewAlliance, StructMapVideosVide
 		call VideoIronFromTheDrumCave.initVideo()
 		call VideoKuno.initVideo()
 		call VideoManfred.initVideo()
+		call VideoPrepareForTheDefense.initVideo()
 		call VideoRecruit.initVideo()
 		call VideoRecruitTheHighElf.initVideo()
 		call VideoReportKuno.initVideo()

@@ -356,6 +356,9 @@
 * Waldläufer wird durch Sprinten eventuell sehr langsam. Hängt mit Lauern zusammen??
 * Imps können nicht bei Wieland abgegeben werden.
 * Auftrag "Krieg": Videos schreiben und einbauen.
+* Computer-Kontrolle vom Spieler MapData.alliedPlayer deaktivieren. Knechte laufen zurück usw. usw.
+* Extramarkierung für die Fallenplatzierung am Außenposten einbauen. Es muss deutlich werden wo die Fallen hinkommen.
+* Auftrag "Krieg" aufteilen, ist viel zu unübersichtlich: Waffen von Wieland, Holz von Kuno, Nahrung von Manfred, Fallen von Björn, Rekruten vom Bauernhof.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

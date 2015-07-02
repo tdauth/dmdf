@@ -4,6 +4,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	 * \brief Default item type struct for all item types in DMdF.
 	 */
 	struct ItemType extends AItemType
+		public static constant string twoSlotAnimationProperties = "Alternate"
 		private static AIntegerVector m_twoSlotItems
 		
 		public stub method checkRequirement takes ACharacter character returns boolean
@@ -48,9 +49,35 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		 * Get the item's armor bonus by adding a dummy unit with inventory and calculating it when adding and removing the item.
 		 */
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
+			local ACharacter character = ACharacter.getCharacterByUnit(whichUnit)
+			local boolean twoSlotItem = thistype.m_twoSlotItems.contains(this.itemType())
+			
+			/*
+			 * If he carries only one weapon there is only these sword fight animations for melee weapons.
+			 * Therefore if he carries no buckler and it is a melee item use the same animations.
+			 */
+			if (twoSlotItem or (not twoSlotItem and this.equipmentType() == thistype.equipmentTypePrimaryWeapon and character.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0)) then
+				/**
+				 * The "Alternate" tag should lead the character to do two hand melee fighting animations instead normal ones.
+				 */
+				call AddUnitAnimationProperties(whichUnit, thistype.twoSlotAnimationProperties, true)
+			endif
 		endmethod
 		
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
+			local ACharacter character = ACharacter.getCharacterByUnit(whichUnit)
+			local boolean twoSlotItem = thistype.m_twoSlotItems.contains(this.itemType())
+			
+			/*
+			 * If he carries only one weapon there is only these sword fight animations for melee weapons.
+			 * Therefore if he carries no buckler and it is a melee item use the same animations.
+			 */
+			if (twoSlotItem or (not twoSlotItem and this.equipmentType() == thistype.equipmentTypePrimaryWeapon and character.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0)) then
+				/**
+				 * The "Alternate" tag should lead the character to do two hand melee fighting animations instead normal ones.
+				 */
+				call AddUnitAnimationProperties(whichUnit, thistype.twoSlotAnimationProperties, false)
+			endif
 		endmethod
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype

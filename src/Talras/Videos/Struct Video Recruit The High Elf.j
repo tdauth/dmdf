@@ -2,6 +2,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 
 	struct VideoRecruitTheHighElf extends AVideo
 		private integer m_actorDragonSlayer
+		private integer m_actorWorker
 		private integer m_actorManfred
 		// Place Manfred's dog. Otherwise he might block the way to the high elf.
 		private integer m_actorManfredsDog
@@ -24,6 +25,11 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 			
 			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorDragonSlayer))
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorDragonSlayer), thistype.actor())
+			
+			set this.m_actorWorker = thistype.saveUnitActor(gg_unit_n02J_0159)
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorWorker), gg_rct_waypoint_menial_3)
+			call SetUnitFacing(thistype.unitActor(this.m_actorWorker), 210.68)
+			call SetUnitAnimation(thistype.unitActor(this.m_actorWorker), "Stand Work")
 			
 			set this.m_actorManfred = thistype.saveUnitActor(Npcs.manfred())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorManfred), gg_rct_video_recruit_the_high_elf_manfred)

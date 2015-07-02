@@ -60,6 +60,19 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		endmethod
 	endstruct
 	
+	/**
+	 * Dummy quest area for the placement of traps.
+	 */
+	struct QuestAreaWarBjoernPlaceTraps extends QuestArea
+	
+		public stub method onCheck takes nothing returns boolean
+			return false
+		endmethod
+	
+		public stub method onStart takes nothing returns nothing
+		endmethod
+	endstruct
+	
 	struct QuestAreaWarRecruit extends QuestArea
 	
 		public stub method onStart takes nothing returns nothing
@@ -75,10 +88,19 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		public stub method onStart takes nothing returns nothing
 		endmethod
 	endstruct
+	
+	struct QuestAreaWarReportHeimrich extends QuestArea
+		public stub method onCheck takes nothing returns boolean
+			// TODO change moveManfredsSupplyToTheCamp
+			return QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemLumberFromKuno).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemPlaceTraps).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemGetRecruits).state() == QuestWar.stateCompleted
+		endmethod
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoPrepareForTheDefense.video().play()
+		endmethod
+	endstruct
 
-	// TODO add quest items to bring weapons, lumber and supply manually to the orc camp
-	// TODO add some time until the weapons are finished, timer
-	// TODO remove leaks, destroy quest areas etc.
+	// TODO add quest item wait for the traps.
 	struct QuestWar extends AQuest
 		public static constant integer questItemWeaponsFromWieland = 0
 		public static constant integer questItemIronFromTheDrumCave = 1
@@ -88,15 +110,17 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		public static constant integer questItemSupplyFromManfred = 5
 		public static constant integer questItemKillTheCornEaters = 6
 		public static constant integer questItemReportManfred = 7
-		public static constant integer questItemLumberFromKuno = 8
-		public static constant integer questItemKillTheWitches = 9
-		public static constant integer questItemReportKuno = 10
-		public static constant integer questItemMoveKunosLumberToTheCamp = 11
-		public static constant integer questItemTrapsFromBjoern = 12
-		public static constant integer questItemPlaceTraps = 13
-		public static constant integer questItemRecruit = 14
-		public static constant integer questItemGetRecruits = 15
-		public static constant integer questItemReportHeimrich = 16
+		public static constant integer questItemWaitForManfredsSupply = 8
+		public static constant integer questItemMoveManfredsSupplyToTheCamp = 9
+		public static constant integer questItemLumberFromKuno = 10
+		public static constant integer questItemKillTheWitches = 11
+		public static constant integer questItemReportKuno = 12
+		public static constant integer questItemMoveKunosLumberToTheCamp = 13
+		public static constant integer questItemTrapsFromBjoern = 14
+		public static constant integer questItemPlaceTraps = 15
+		public static constant integer questItemRecruit = 16
+		public static constant integer questItemGetRecruits = 17
+		public static constant integer questItemReportHeimrich = 18
 		public static constant integer maxImps = 4
 		private QuestAreaWarWieland m_questAreaWieland
 		private QuestAreaWarIronFromTheDrumCave m_questAreaIronFromTheDrumCave
@@ -106,7 +130,9 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		private QuestAreaWarKuno m_questAreaKuno
 		private QuestAreaWarReportKuno m_questAreaReportKuno
 		private QuestAreaWarBjoern m_questAreaBjoern
+		private QuestAreaWarBjoernPlaceTraps m_questAreaBjoernPlaceTraps
 		private QuestAreaWarRecruit m_questAreaRecruit
+		private QuestAreaWarReportHeimrich m_questAreaReportHeimrich
 		/**
 		 * Quest area without effect to mark the destination of all carts.
 		 */
@@ -120,12 +146,28 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		private unit m_weaponCart
 		private AGroup m_imps
 		/*
+		 * Manfred
+		 */
+		private unit m_supplyCart
+		private timer m_supplyCartSpawnTimer
+		private timer m_manfredsSupplyTimer
+		/*
 		 * Kuno
 		 */
 		public static constant integer witchSpawnPoints = 4
 		private boolean array m_killedWitches[thistype.witchSpawnPoints]
 		private timer m_kunosCartSpawnTimer
 		private unit m_kunosCart
+		
+		/*
+		 * Björn
+		 */
+		 public static constant integer maxSpawnedTraps = 5
+		 public static constant integer maxPlacedTraps = 10
+		 public static constant integer trapItemTypeId = 'I057'
+		 private timer m_bjoernsTrapsSpawnTimer
+		 private item array m_spawnedTraps[thistype.maxSpawnedTraps]
+		 private integer m_trapsCounter
 		
 		/*
 		 * Recruits
@@ -144,6 +186,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			set this.m_questAreaKuno = QuestAreaWarKuno.create(gg_rct_quest_war_kuno)
 			set this.m_questAreaBjoern = QuestAreaWarBjoern.create(gg_rct_quest_war_bjoern)
 			set this.m_questAreaRecruit = QuestAreaWarRecruit.create(gg_rct_quest_war_farm)
+			set this.m_questAreaReportHeimrich = QuestAreaWarReportHeimrich.create(gg_rct_quest_war_heimrich)
 			set this.m_questAreaCartDestination = 0
 			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateNew)
@@ -171,10 +214,11 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		 * Makes \p whichUnit invulnerable and changes its owner.
 		 */
 		private method setupUnitAtDestination takes unit whichUnit returns nothing
-			call SetUnitInvulnerable(whichUnit, true)
-			call SetUnitOwner(whichUnit, MapData.neutralPassivePlayer, true)
 			call SetUnitPathing(whichUnit, false)
+			debug call Print("Disable unit pathing of unit " + GetUnitName(whichUnit))
+			call SetUnitOwner(whichUnit, MapData.neutralPassivePlayer, true)
 			call IssueImmediateOrder(whichUnit, "stop")
+			call SetUnitInvulnerable(whichUnit, true)
 		endmethod
 		
 		/*
@@ -354,6 +398,11 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			
 			call this.setupUnitAtDestination(GetTriggerUnit())
 			
+			set this.m_weaponCart = null
+			call PauseTimer(this.m_weaponCartSpawnTimer)
+			call DestroyTimer(this.m_weaponCartSpawnTimer)
+			set this.m_weaponCartSpawnTimer = null
+			
 			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateCompleted)
 			call this.displayState()
 		endmethod
@@ -422,17 +471,68 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			set this.m_questAreaReportManfred = QuestAreaWarReportManfred.create(gg_rct_quest_war_manfred)
 		endmethod
 		
+		private static method timerFunctionSpawnSupplyCart takes nothing returns nothing
+			local thistype this = thistype.quest()
+			if (IsUnitDeadBJ(this.m_supplyCart)) then
+				set this.m_supplyCart = CreateUnit(MapData.alliedPlayer, 'h022', GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 0.0)
+				call this.displayUpdateMessage(tr("Eine neue Nahrungslieferung steht zur Verfügung."))
+				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 5.0, 255, 255, 255, true)
+				
+				call Game.setAlliedPlayerAlliedToAllCharacters()
+			endif
+		endmethod
+		
+		private static method timerFunctionManfredsSupply takes nothing returns nothing
+			local thistype this = thistype.quest()
+			call this.questItem(thistype.questItemWaitForManfredsSupply).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemMoveManfredsSupplyToTheCamp).setState(thistype.stateNew)
+			call this.displayUpdate()
+			
+			set this.m_supplyCart = CreateUnit(MapData.alliedPlayer, 'h022', GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 0.0)
+			set this.m_supplyCartSpawnTimer = CreateTimer()
+			call TimerStart(this.m_supplyCartSpawnTimer, 20.0, true, function thistype.timerFunctionSpawnSupplyCart)
+			call Game.setAlliedPlayerAlliedToAllCharacters()
+			call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 5.0, 255, 255, 255, true)
+			
+			// TODO destroy the elapsed timer
+			
+			call this.enableCartDestination()
+		endmethod
+		
 		/**
 		 * When the characters reported to Manfred he sends a cart to the former Orc camp to provide some supply.
 		 */
 		private static method stateActionCompletedReportManfred takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			local unit cart = CreateUnit(MapData.neutralPassivePlayer, 'h016', GetUnitX(Npcs.manfred()), GetUnitY(Npcs.manfred()), 0.0)
-			call SetUnitInvulnerable(cart, true)
-			call IssuePointOrder(cart, "move", GetRectCenterX(gg_rct_quest_war_cart_destination), GetRectCenterY(gg_rct_quest_war_cart_destination))
-			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateCompleted)
+			
+			set this.m_manfredsSupplyTimer = CreateTimer()
+			call TimerStart(this.m_manfredsSupplyTimer, 30.0, false, function thistype.timerFunctionManfredsSupply)
+			
+			call this.questItem(thistype.questItemWaitForManfredsSupply).setState(thistype.stateNew)
 			call this.displayUpdate()
-			set cart = null
+		endmethod
+		
+		private static method stateEventCompletedMoveManfredsSupplyToTheCamp takes AQuestItem questItem, trigger whichTrigger returns nothing
+			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_war_cart_destination)
+		endmethod
+		
+		private static method stateConditionCompletedMoveManfredsSupplyToTheCamp takes AQuestItem questItem returns boolean
+			local thistype this = thistype(questItem.quest())
+			return GetTriggerUnit() == this.m_supplyCart
+		endmethod
+		
+		private static method stateActionCompletedMoveManfredsSupplyToTheCamp takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
+			
+			call this.setupUnitAtDestination(GetTriggerUnit())
+			
+			set this.m_supplyCart = null
+			call PauseTimer(this.m_supplyCartSpawnTimer)
+			call DestroyTimer(this.m_supplyCartSpawnTimer)
+			set this.m_supplyCartSpawnTimer = null
+			
+			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateCompleted)
+			call this.displayState()
 		endmethod
 		
 		public method enableKillTheWitches takes nothing returns nothing
@@ -556,8 +656,78 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.displayUpdate()
 		endmethod
 		
+		private static method timerFunctionSpawnBjoernsTraps takes nothing returns nothing
+			local thistype this = thistype.quest()
+			local boolean spawned = false
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.maxSpawnedTraps)
+				if (this.m_spawnedTraps[i] == null or GetItemLifeBJ(this.m_spawnedTraps[i]) <= 0.0 or IsItemOwned(this.m_spawnedTraps[i])) then
+					set this.m_spawnedTraps[i] = CreateItem(thistype.trapItemTypeId, GetRectCenterX(gg_rct_quest_war_bjoern_traps), GetRectCenterY(gg_rct_quest_war_bjoern_traps))
+					set spawned = true
+				endif
+				set i = i + 1
+			endloop
+			
+			if (spawned) then
+				call this.displayUpdateMessage(tr("Neue Fallen verfügbar."))
+				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_bjoern_traps), GetRectCenterY(gg_rct_quest_war_bjoern_traps), 5.0, 255, 255, 255, true)
+			endif
+		endmethod
+		
+		/**
+		 * Items are spawned at Kuno's place for all players.
+		 * If one player decides to not use them but picks them up there will be always a constant number of traps in the rect until the quest item is finished.
+		 * It takes some time to respawn the traps.
+		 *
+		 * The items are spawned with an initial delay since Björn has to produce them.
+		 */
 		public method enablePlaceTraps takes nothing returns nothing
 			call this.questItem(thistype.questItemPlaceTraps).setState(thistype.stateNew)
+			call this.displayUpdate()
+			
+			set this.m_trapsCounter = 0
+			set this.m_bjoernsTrapsSpawnTimer = CreateTimer()
+			call TimerStart(this.m_bjoernsTrapsSpawnTimer, 20.0, true, function thistype.timerFunctionSpawnBjoernsTraps)
+			
+			set this.m_questAreaBjoernPlaceTraps = QuestAreaWarBjoernPlaceTraps.create(gg_rct_quest_war_bjoern_place_traps)
+		endmethod
+		
+		private static method stateEventCompletedPlaceTraps takes AQuestItem questItem, trigger whichTrigger returns nothing
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_ISSUED_POINT_ORDER)
+		endmethod
+		
+		private static method stateConditionCompletedPlaceTraps takes AQuestItem questItem returns boolean
+			local thistype this = thistype.quest()
+			if (GetSpellAbilityId() == 'A0QZ' and RectContainsCoords(gg_rct_quest_war_bjoern_place_traps, GetSpellTargetX(), GetSpellTargetY())) then
+				set this.m_trapsCounter = this.m_trapsCounter + 1
+				call this.displayUpdateMessage(Format(tr("%1%/%2% Fallen platziert.")).i(this.m_trapsCounter).i(thistype.maxPlacedTraps).result())
+				
+				return this.m_trapsCounter == thistype.maxPlacedTraps
+			endif
+			
+			return false
+		endmethod
+		
+		private static method stateActionCompletedPlaceTraps takes AQuestItem questItem returns nothing
+			local thistype this = thistype.quest()
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.maxSpawnedTraps)
+				if (RectContainsItem(this.m_spawnedTraps[i], gg_rct_quest_war_bjoern_traps)) then
+					call RemoveItem(this.m_spawnedTraps[i])
+				endif
+				set this.m_spawnedTraps[i] = null
+				set i = i + 1
+			endloop
+			
+			call PauseTimer(this.m_bjoernsTrapsSpawnTimer)
+			call DestroyTimer(this.m_bjoernsTrapsSpawnTimer)
+			set this.m_bjoernsTrapsSpawnTimer = null
+			
+			call this.m_questAreaBjoernPlaceTraps.destroy()
+			set this.m_questAreaBjoernPlaceTraps = 0
+			
 			call this.displayUpdate()
 		endmethod
 		
@@ -609,6 +779,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local thistype this = thistype.quest()
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateCompleted)
 			call this.displayState()
+			// TODO sell other recruits and distribute the costs to all players equally.
 		endmethod
 		
 		public stub method distributeRewards takes nothing returns nothing
@@ -648,12 +819,15 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPingRect(gg_rct_quest_war_wieland)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
-			// questItemWaitForWielandsWeapons = 3
+			// questItemWaitForWielandsWeapons
 			set questItem = AQuestItem.create(this, tr("Wartet bis Wieland die Waffen hergestellt hat."))
 			
 			
-			// questItemMoveWielandWeaponsToTheCamp = 4
+			// questItemMoveWielandWeaponsToTheCamp
 			set questItem = AQuestItem.create(this, tr("Bringt Wielands Waffen sicher zum Außenposten."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedMoveWielandsWeaponsToTheCamp)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedMoveWielandsWeaponsToTheCamp)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedMoveWielandsWeaponsToTheCamp)
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_cart_destination)
@@ -675,6 +849,19 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			// quest item questItemReportManfred
 			set questItem = AQuestItem.create(this, tr("Berichtet Manfred davon."))
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedReportManfred)
+			
+			// questItemWaitForManfredsSupply
+			set questItem = AQuestItem.create(this, tr("Wartet bis Manfred die Nahrung aufgeladen hat."))
+		
+			// questItemMoveManfredsSupplyToTheCamp
+			set questItem = AQuestItem.create(this, tr("Bringt Manfreds Nahrung sicher zum Außenposten."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedMoveManfredsSupplyToTheCamp)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedMoveManfredsSupplyToTheCamp)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedMoveManfredsSupplyToTheCamp)
+			
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_war_cart_destination)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemLumberFromKuno
 			set questItem = AQuestItem.create(this, tr("Besorgt Holz vom Holzfäller Kuno."))
@@ -714,7 +901,14 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemPlaceTraps
-			set questItem = AQuestItem.create(this, tr("Platziert die Fallen rund um den Außenposten."))
+			set questItem = AQuestItem.create(this, tr("Platziert zehn Fallen vor der östlichen Mauer des Außenpostens."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedPlaceTraps)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedPlaceTraps)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedPlaceTraps)
+			
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_war_bjoern_place_traps)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemRecruit
 			set questItem = AQuestItem.create(this, tr("Rekrutiert kriegstaugliche Leute auf dem Bauernhof."))
@@ -735,6 +929,10 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			
 			// quest item questItemReportHeimrich
 			set questItem = AQuestItem.create(this, tr("Berichtet Heimrich von Eurem Erfolg."))
+			
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_war_heimrich)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			return this
 		endmethod
