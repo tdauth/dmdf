@@ -71,8 +71,42 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			// TODO Finish dialog, drum cave iron.
-
+			call TransmissionFromUnit(thistype.actor(), tr("Markward schickt mich. Der Außenposten muss befestigt werden um die Orks und Dunkelelfen abzuwehren."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.m_actorWieland, tr("Ja ja schon gut, ich werde die Waffen herstellen. Allerdings braucht man dafür selbstverständlich auch Eisen und daran mangelt es in Talras."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.m_actorWieland, tr("Wenn der Herzog die Waffen will, dann soll er mir das Eisen dafür geben. Zaubern kann ich leider nicht."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(thistype.actor(), tr("Wo finde ich Eisen in dieser Gegend?"), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			// TODO Bezug zum untoten König herstellen
+			call TransmissionFromUnit(this.m_actorWieland, tr("In Talras? Keine Ahnung, nirgendwo?! Hmm man erzählt sich die Legende von unterirdischen Gewölben im Mühlberg. Vielleicht brigt dieser Berg ja Eisen. Falls nicht müsst ihr wohl nach Holzbruck aufbrechen. Dafür könnt ihr euch dann beim Herzog bedanken."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.m_actorWieland, tr("Bringt mir Eisen und ich schmiede euch die besten Waffen mit denen ihr die verfluchten Orks und Dunkelelfen aufschlitzen könnte wie gemestetes Vieh. Die Bezahlung werde ich noch mit dem Vogt aushandeln. Ich will dabei ja nicht leer ausgehen."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
 			
 			call this.stop()
 		endmethod

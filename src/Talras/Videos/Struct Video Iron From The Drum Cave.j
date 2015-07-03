@@ -67,10 +67,22 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 			
 			call TransmissionFromUnit(this.m_actorBaldar, tr("Ich kann euch einen Teil meines Eisens geben. Meine Imps können es für euch zur Burg transportieren, jedoch brauche ich die kräftigsten Imps hier bei mir. Ich schicke euch also die schwachen Imps. Ihr müsst sie auf ihrem Weg beschützen, ansonsten werden sie vermutlich von wilden Kreaturen umgebracht."), null)
 			
-			if (wait(1.50)) then
+			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Hört gut zu, ich möchte euch ein kleines Geheimnis anvertrauen. Diese Imps sind nicht das, was ich mir unter fürchterlichen Dämonen vorgestellt habe. Sie sind schwach, faul, ja es sind armselige Kreaturen."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Es ist wohl besser sie umgehend loszuwerden, aber töten nein! Sie sind meine Schöpfung, das würde ich nicht über's ... über mich bringen. Verschafft ihnen eine Bleibe nachdem sie ihren Dienst für euch getan haben, dann sind wir quitt."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+
 			call CameraSetupApplyForceDuration(gg_cam_iron_from_the_drum_cave_mine_2, true, 4.00)
 			
 			if (wait(3.50)) then

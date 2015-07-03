@@ -360,7 +360,7 @@
 * Extramarkierung für die Fallenplatzierung am Außenposten einbauen. Es muss deutlich werden wo die Fallen hinkommen.
 * Auftrag "Krieg" aufteilen, ist viel zu unübersichtlich: Waffen von Wieland, Holz von Kuno, Nahrung von Manfred, Fallen von Björn, Rekruten vom Bauernhof.
 * Video-Fade kürzer machen: Siehe Bonus-Kampagne.
-* Pfeilhagel verursacht keinen Schaden.
+* FIXED: Pfeilhagel verursacht keinen Schaden. Der originale Zauberverstärker muss erhalten bleiben: http://www.wc3c.net/showthread.php?t=101804
 * Charakterübersicht: Balken sind nicht ausgefüllt obwohl volle Werte (Leben, Mana).
 
 Test mit zwei menschlichen Spielern:

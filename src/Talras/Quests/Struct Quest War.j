@@ -319,8 +319,12 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			return false
 		endmethod
 		
-		private static method groupFunctionRemove takes unit whichUnit returns nothing
-			call RemoveUnit(whichUnit)
+		private static method groupFunctionHide takes unit whichUnit returns nothing
+			call ShowUnit(whichUnit, false)
+		endmethod
+		
+		private static method groupFunctionShow takes unit whichUnit returns nothing
+			call ShowUnit(whichUnit, true)
 		endmethod
 		
 		private static method timerFunctionSpawnWeaponCart takes nothing returns nothing
@@ -359,12 +363,10 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		private static method stateActionCompletedImps takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			/*
-			 * Cleanup Imps.
-			 * TODO Do something funny!
+			 * The Imps need a new home now! It is shown in the video.
 			 */
-			call this.m_imps.forGroup(thistype.groupFunctionRemove)
-			call this.m_imps.destroy()
-			set this.m_imps = 0
+			call this.m_imps.forGroup(thistype.groupFunctionHide)
+			
 			call PauseTimer(this.m_impSpawnTimer)
 			call DestroyTimer(this.m_impSpawnTimer)
 			set this.m_impSpawnTimer = null
@@ -372,6 +374,26 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			
 			call VideoWeaponsFromWieland.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
+			
+			/*
+			 * Give the imps a new home.
+			 */
+			call this.m_imps.forGroup(thistype.groupFunctionShow)
+			call SetUnitX(this.m_imps.units()[0], GetRectCenterX(gg_rct_waypoint_imp_0))
+			call SetUnitY(this.m_imps.units()[0], GetRectCenterY(gg_rct_waypoint_imp_0))
+			call SetUnitFacing(this.m_imps.units()[0], 90.91)
+			call SetUnitAnimation(this.m_imps.units()[0], "Attack")
+			call SetUnitX(this.m_imps.units()[1], GetRectCenterX(gg_rct_waypoint_imp_1))
+			call SetUnitY(this.m_imps.units()[1], GetRectCenterY(gg_rct_waypoint_imp_1))
+			call SetUnitFacing(this.m_imps.units()[1], 47.63)
+			call SetUnitAnimation(this.m_imps.units()[1], "Attack")
+			call SetUnitX(this.m_imps.units()[2], GetRectCenterX(gg_rct_waypoint_imp_2))
+			call SetUnitY(this.m_imps.units()[2], GetRectCenterY(gg_rct_waypoint_imp_2))
+			call SetUnitFacing(this.m_imps.units()[2], 91.56)
+			call SetUnitAnimation(this.m_imps.units()[2], "Attack")
+			call SetUnitX(this.m_imps.units()[3], GetRectCenterX(gg_rct_waypoint_imp_3))
+			call SetUnitY(this.m_imps.units()[3], GetRectCenterY(gg_rct_waypoint_imp_3))
+			call SetUnitFacing(this.m_imps.units()[3], 163.31)
 			
 			/*
 			 * TODO Would be much cooler when the Imps take weapons to the former Orc camp.
@@ -694,7 +716,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		endmethod
 		
 		private static method stateEventCompletedPlaceTraps takes AQuestItem questItem, trigger whichTrigger returns nothing
-			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_ISSUED_POINT_ORDER)
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
 		endmethod
 		
 		private static method stateConditionCompletedPlaceTraps takes AQuestItem questItem returns boolean
