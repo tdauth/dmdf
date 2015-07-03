@@ -777,6 +777,12 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		
 		private static method stateActionCompletedGetRecruits takes AQuestItem questItem returns nothing
 			local thistype this = thistype.quest()
+			
+			call RemoveUnit(this.m_recruitBuilding)
+			set this.m_recruitBuilding = null
+			call DestroyTrigger(this.m_recruitTrigger)
+			set this.m_recruitTrigger = null
+			
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateCompleted)
 			call this.displayState()
 			// TODO sell other recruits and distribute the costs to all players equally.

@@ -170,7 +170,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call SetUserInterfaceForPlayer(character.player(), false, false)
 			call CameraSetupApplyForPlayer(false, gg_cam_class_selection, character.player(), 0.0)
 			call MapData.setCameraBoundsToPlayableAreaForPlayer(character.player())
-			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, StringArg(StringArg(tr("%s hat die Klasse \"%s\" gewählt."), character.name()), GetUnitName(character.unit())), character.player())
+			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, Format(tre("%s hat die Klasse \"%s\" gewählt.", "%s has choosen the class \"%s\".")).s(character.name()).s(GetUnitName(character.unit())).result(), character.player())
 			
 			set i = 0
 			loop
@@ -193,7 +193,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			
 			if (not last) then
 				debug call Print("Do not start the game")
-				call character.displayMessage(ACharacter.messageTypeInfo, tr("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben."))
+				call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
 			else
 				debug call Print("Start game")
 				 call Game.start.execute()
@@ -282,9 +282,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				 * Pop up a confirmation dialog in case the player selected a class by mistake.
 				 */
 				call AGui.playerGui(this.player()).dialog().clear()
-				call AGui.playerGui(this.player()).dialog().setMessage(tr("Klasse auswählen?"))
-				call AGui.playerGui(this.player()).dialog().addDialogButtonIndex(tr("OK"), thistype.dialogButtonActionSelectClass)
-				call AGui.playerGui(this.player()).dialog().addSimpleDialogButtonIndex(tr("Abbrechen"))
+				call AGui.playerGui(this.player()).dialog().setMessage(tre("Klasse auswählen?", "Choose class?"))
+				call AGui.playerGui(this.player()).dialog().addDialogButtonIndex(tre("OK", "OK"), thistype.dialogButtonActionSelectClass)
+				call AGui.playerGui(this.player()).dialog().addSimpleDialogButtonIndex(tre("Abbrechen", "Cancel"))
 				call AGui.playerGui(this.player()).dialog().show()
 			endif
 		endmethod
@@ -351,7 +351,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local integer i
 			local player whichPlayer
 
-			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tr("%s (%i/%i)"), tr("Stärke pro Stufe: %r"), tr("Geschick pro Stufe: %r"), tr("Wissen pro Stufe: %r"))
+			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
 
 			call SuspendTimeOfDay(true)
 			call SetTimeOfDay(0.0)
@@ -382,11 +382,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * Then display informations about how to select the class as long as possible to keep players informed.
 			 */
 			call TriggerSleepAction(4.0)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tr("Wählen Sie zunächst Ihre Charakterklasse aus. Diese Auswahl ist für die restliche Spielzeit unwiderruflich!"), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tr("- Drücken Sie die Pfeilsymbole rechts unten, um die angezeigte Charakterklasse zu wechseln."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tr("- Drücken Sie das Charaktersymbol rechts unten, um die angezeigte Charakterklasse auszuwählen."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tr("- Auf dem Zauberbuchsymbol rechts unten, können die Klassenzauber betrachtet werden."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tr("- Im Inventar befinden sich die Anfangsgegenstände der Klasse."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Wählen Sie zunächst Ihre Charakterklasse aus. Diese Auswahl ist für die restliche Spielzeit unwiderruflich!", "Choose your character class first. This selection is irrevocable for the rest of the game."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Drücken Sie die Pfeilsymbole rechts unten, um die angezeigte Charakterklasse zu wechseln.", "- Press the arrow key icons at the bottom right to change the shown character class."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Drücken Sie das Charaktersymbol rechts unten, um die angezeigte Charakterklasse auszuwählen.", "- Press the character icon at the bottom right to select the shown character class."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Auf dem Zauberbuchsymbol rechts unten, können die Klassenzauber betrachtet werden.", "- At the grimoire icon at the bottom right the class spells can be viewed."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Im Inventar befinden sich die Anfangsgegenstände der Klasse.", "- In the inventory are the start items of the class."), null)
 		endmethod
 		
 	endstruct

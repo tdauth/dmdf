@@ -65,6 +65,12 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
+			call TransmissionFromUnit(this.m_actorWieland, tr("Der Herzog braucht immer Waffen! Wie stellt er sich das vor, bin ich doch der einzige Schmied in Talras? Ich habe jetzt schon genug zu tun."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
 			// TODO Finish dialog, drum cave iron.
 
 			

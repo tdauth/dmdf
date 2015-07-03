@@ -1,6 +1,7 @@
 static if (DMDF_CREDITS) then
 //! import "Guis/Struct Credits.j"
 endif
+// TODO DEPRECATED
 ///! import "Guis/Struct Grimoire.j"
 static if (DMDF_INFO_LOG) then
 //! import "Guis/Struct Info Log.j"

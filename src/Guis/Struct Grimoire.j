@@ -122,7 +122,7 @@ library StructGuisGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			// auto skill
 			if (GetPlayerController(this.character().player()) == MAP_CONTROL_COMPUTER) then
 				call this.autoSkill()
-				call this.character().displayMessageToAllOthers(ACharacter.messageTypeInfo, Format(tr("Die Zauberpunkte für %1% wurden automatisch verteilt.")).s(this.character().name()).result())
+				call this.character().displayMessageToAllOthers(ACharacter.messageTypeInfo, Format(tre("Die Zauberpunkte für %1% wurden automatisch verteilt.", "The skill points have been distributed automatically for %1%.")).s(this.character().name()).result())
 			endif
 		endmethod
 
@@ -524,7 +524,7 @@ endif
 			endif
 
 			if (this.learnedSpells() == thistype.maxSpells) then
-				call this.character().displayMessage(ACharacter.messageTypeInfo, tr("Maximale Anzahl möglicher Zauber erlernt."))
+				call this.character().displayMessage(ACharacter.messageTypeInfo, tre("Maximale Anzahl möglicher Zauber erlernt.", "Learned maximum number of possible spells."))
 			endif
 
 			call this.showSpellDialog(this.m_currentSpell)
@@ -589,7 +589,7 @@ endif
 			local string message
 			local AClass class = spell.character().class()
 			set this.m_currentSpell = spell
-			set message = IntegerArg(IntegerArg(StringArg(tr("%s\nStufe: %i\nMaximale Stufe: %i"), spell.name()), spell.level()), spell.getMaxLevel())
+			set message = Format(tre("%1%\nStufe: %2%\nMaximale Stufe: %3%", "%1%\nLevel: %2%\nMaximum level: %3%").s(spell.name()).i(spell.level()).i(spell.getMaxLevel()).result()
 
 			if (spell.spellType() == Spell.spellTypeDefault) then
 				set message = message + tr("\nStandardzauber")

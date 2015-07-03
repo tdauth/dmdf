@@ -74,56 +74,56 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 			call AGui.playerGui(this.m_character.player()).dialog().setMessage(tr("Haupt-Menü"))
 
 			if (this.m_character.tutorial().isEnabled()) then
-				set message = tr("Tutorial deaktivieren")
+				set message = tre("Tutorial deaktivieren", "Disable tutorial")
 			else
-				set message = tr("Tutorial aktivieren")
+				set message = tre("Tutorial aktivieren", "Enable tutorial")
 			endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetTutorial)
 
 			if (ACharacter.useViewSystem()) then
 				if (this.m_character.view().isEnabled()) then
-					set message = tr("3rd-Person-Kamera deaktivieren")
+					set message = tre("3rd-Person-Kamera deaktivieren", "Disable 3rd person camera")
 				else
-					set message = tr("3rd-Person-Kamera aktivieren")
+					set message = tre("3rd-Person-Kamera aktivieren", "Enable 3rd person camera")
 				endif
 
 				call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetView)
 			endif
 
 			if (this.m_character.showCharactersScheme()) then
-				set message = tr("Charaktere-Anzeige deaktivieren")
+				set message = tre("Charaktere-Anzeige deaktivieren", "Disable characters view")
 			else
-				set message = tr("Charaktere-Anzeige aktivieren")
+				set message = tre("Charaktere-Anzeige aktivieren", "Enable characters view")
 			endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetCharactersScheme)
 
 			if (this.m_character.showWorker()) then
-				set message = tr("Schrein-Button deaktivieren")
+				set message = tre("Schrein-Button deaktivieren", "Disable shrine button")
 			else
-				set message = tr("Schrein-Button aktivieren")
+				set message = tre("Schrein-Button aktivieren", "Enable shrine button")
 			endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetWorker)
 
 			if (this.m_character.isControlShared()) then
-				set message = tr("Kontrolle entziehen")
+				set message = tre("Kontrolle entziehen", "Disallow control")
 			else
-				set message = tr("Kontrolle erlauben")
+				set message = tre("Kontrolle erlauben", "Share control")
 			endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetControl)
 			
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Kameraentfernung vergrößern"), thistype.dialogButtonActionIncreaseCameraDistance)
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Kameraentfernung vergrößern", "Increase camera distance"), thistype.dialogButtonActionIncreaseCameraDistance)
 			
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Kameraentfernung verkleinern"), thistype.dialogButtonActionDecreaseCameraDistance)
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Kameraentfernung verkleinern", "Decrease camera distance"), thistype.dialogButtonActionDecreaseCameraDistance)
 
 static if (DMDF_INFO_LOG) then
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Info-Log"), thistype.dialogButtonActionInfoLog)
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Info-Log", "Info log"), thistype.dialogButtonActionInfoLog)
 endif
 
 static if (DMDF_CREDITS) then
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tr("Mitwirkende"), thistype.dialogButtonActionCredits)
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Mitwirkende", "Credits"), thistype.dialogButtonActionCredits)
 endif
 
-			call AGui.playerGui(this.m_character.player()).dialog().addSimpleDialogButtonIndex(tr("Zurück zum Spiel"))
+			call AGui.playerGui(this.m_character.player()).dialog().addSimpleDialogButtonIndex(tre("Zurück zum Spiel", "Back to game"))
 
 			call AGui.playerGui(this.m_character.player()).dialog().show()
 		endmethod

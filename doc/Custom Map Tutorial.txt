@@ -201,3 +201,7 @@ Creating the minimap for a map which uses custom camera bounds:
 - import the tga file in WE and renamde the path to "war3mapMap.tga"
 - since the neutral building icons position might not find in the preview you can also import the file and use the path "war3mapPreview.tga"
 - in this case you could export the Minimap WITH neutral buildings
+
+For using the minimap as preview minimap without neutral building markers which will have wrong positions the file must be converted to "war3mapPreview.tga"
+with RLE compression, format TRUE COLOR, 0 bits Alpha channel (remove Alpha channel), and orientation bottom left.
+You can use BLPLab for this and just select "Remove Alpha channel" and the compression check boxes.

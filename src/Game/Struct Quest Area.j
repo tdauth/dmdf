@@ -64,7 +64,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 					set i = i + 1
 				endloop
 				
-				call Character.displayHintToAll(Format(tr("%1%/%2% Charakteren bereit.")).i(charactersCount).i(ACharacter.countAll()).result())
+				call Character.displayHintToAll(Format(tre("%1%/%2% Charakteren bereit.", "%1%/%2% characters are ready.")).i(charactersCount).i(ACharacter.countAll()).result())
 				
 				// TODO if condition is true immediately make characters unmovable and make them movable after the action call?
 				return charactersCount == ACharacter.countAll()

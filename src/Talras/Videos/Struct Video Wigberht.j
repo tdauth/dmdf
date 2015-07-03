@@ -180,7 +180,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			if (wait(0.50)) then
 				return
 			endif
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorWigberht), tr("Geh mir aus dem Weg Untier, du bist kein würdiger Gegner für mich!"), null)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tr("Wigberht"), tr("Geh mir aus dem Weg Untier, du bist kein würdiger Gegner für mich!"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -215,21 +215,21 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			call IssueImmediateOrder(thistype.unitActor(this.m_actorWigberht), "holdposition")
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_10, true, 0.0)
 			call QueueUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Attack Slam")
-			if (wait(1.50)) then
+			if (wait(1.0)) then
 				return
 			endif
 			call QueueUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Stand Ready")
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_11, true, 0.0)
-			if (wait(1.50)) then
+			if (wait(1.0)) then
 				return
 			endif
 			set terrainDeformation = TerrainDeformWave(GetRectCenterX(gg_rct_video_wigberht_wigberht_target), GetRectCenterY(gg_rct_video_wigberht_wigberht_target), GetRectCenterX(gg_rct_video_wigberht_orc_target), GetRectCenterY(gg_rct_video_wigberht_orc_target), 400.0, 100.0, 400.0, 50.0, 5, 5)
 			//TerrainDeformCrater(GetRectCenterX(gg_rct_video_wigberht_orc_target), GetRectCenterY(gg_rct_video_wigberht_orc_target), 400.0, 200.0, 5, false)
-			if (wait(2.0)) then
+			if (wait(0.5)) then
 				return
 			endif
 			call this.m_orcGuardians.forGroup(thistype.kill)
-			if (wait(2.0)) then
+			if (wait(1.0)) then
 				return
 			endif
 			// face back to wigberht before attacking
@@ -322,13 +322,13 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorWigberht), tr("Ihr habt mir bewiesen, dass ihr kämpfen könnt und Mut besitzt. Berichtet dem Herzog, dass wir ihn gegen die Dunkelelfen und Orks unterstützen werden."), null)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tr("Wigberht"), tr("Ihr habt mir bewiesen, dass ihr kämpfen könnt und Mut besitzt. Berichtet dem Herzog, dass wir ihn gegen die Dunkelelfen und Orks unterstützen werden."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorWigberht), tr("Danach begeben wir uns weiter auf die Suche nach meinem Vater. Sollten jedoch keine Feinde eintreffen, so müssen wir irgendwann aufbrechen."), null)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tr("Wigberht"), tr("Danach begeben wir uns weiter auf die Suche nach meinem Vater. Sollten jedoch keine Feinde eintreffen, so müssen wir irgendwann aufbrechen."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

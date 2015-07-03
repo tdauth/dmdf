@@ -1,4 +1,4 @@
-library StructGameSpawnPoint requires Asl
+library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 
 	/**
 	 * \brief Spawn point with the default values of DMdF.
@@ -17,7 +17,7 @@ library StructGameSpawnPoint requires Asl
 			call this.setDropChance(70)
 			call this.setDistributeItems(true)
 			call this.setOwner(Player(PLAYER_NEUTRAL_AGGRESSIVE))
-			call this.setTextDistributeItem( tr("%s wurde für Spieler %s fallen gelassen."))
+			call this.setTextDistributeItem(tre("%s wurde für Spieler %s fallen gelassen.", "%s has been dropped for player %s."))
 			
 			call thistype.m_spawnPoints.pushBack(this)
 	

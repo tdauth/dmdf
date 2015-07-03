@@ -237,7 +237,7 @@
 * DONE: Manaexplosion stärker machen.
 * Zauberbuch und Rucksack öffnen in Zauberfähigkeiten verschieben. Zauberfähigkeiten umbenennen. Dadurch hätte man bis zu 6 Favoriten!
 * The Frozen Throne-Logo links oben im Hauptmenü durch "Die Macht des Feuers"-Schriftzug ersetzen.
-* Zunächst neutrale Gebäude von Minikarte ausblenden, in release-Map Sympol-MMP-Datei entfernen bzw. nur die Datei für das Hauptmenü!
+* FIXED: Zunächst neutrale Gebäude von Minikarte ausblenden, in release-Map Sympol-MMP-Datei entfernen bzw. nur die Datei für das Hauptmenü! war3mapPreview.tga sollte einfach eingefügt werden. Ersetzt nur das Preview im Hauptmenü! Das sollte die Version der Minikarte sein!
 * Entzünden von Elementarmagier funktioniert nicht per Buff. Kann mehrmals gemacht werden und macht einen Verbündeten unendliche stark!
 * Kisten und Fässer brauchen Zerstöranimation.
 * Bärgengestalt braucht Verwandlungsanimation (per Code).
@@ -359,6 +359,9 @@
 * Computer-Kontrolle vom Spieler MapData.alliedPlayer deaktivieren. Knechte laufen zurück usw. usw.
 * Extramarkierung für die Fallenplatzierung am Außenposten einbauen. Es muss deutlich werden wo die Fallen hinkommen.
 * Auftrag "Krieg" aufteilen, ist viel zu unübersichtlich: Waffen von Wieland, Holz von Kuno, Nahrung von Manfred, Fallen von Björn, Rekruten vom Bauernhof.
+* Video-Fade kürzer machen: Siehe Bonus-Kampagne.
+* Pfeilhagel verursacht keinen Schaden.
+* Charakterübersicht: Balken sind nicht ausgefüllt obwohl volle Werte (Leben, Mana).
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

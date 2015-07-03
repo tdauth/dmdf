@@ -1,4 +1,4 @@
-library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes
+library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, LibraryGameLanguage
 
 	/**
 	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
@@ -306,8 +306,8 @@ endif
 
 			// reached last level TODO: maybe we should give him a little present
 			if (GetHeroLevel(triggerUnit) == MapData.maxLevel) then
-				call character.displayFinalLevel(tr("Sie haben die letzte Stufe erreicht."))
-				call character.displayFinalLevelToAllOthers(StringArg(tr("%s hat die letzte Stufe erreicht."), character.name()))
+				call character.displayFinalLevel(tre("Sie haben die letzte Stufe erreicht.", "You have reached the final level."))
+				call character.displayFinalLevelToAllOthers(Format(tre("%1% hat die letzte Stufe erreicht.", "%1% has reached the final level.")).s(character.name()).result())
 			endif
 
 			set triggerUnit = null
@@ -371,8 +371,8 @@ endif
 			call AInitBonusMod()
 			// gui systems
 			/// @todo Use localized shortcuts
-			call ADialog.init('V',  'N', tr("Vorherige Seite"), tr("Nächste Seite"), tr("%s|n(%i/%i)"))
-			call AGui.init('h003', 0.0, 0.0, tr("OK"), sc("DMDF_GUI_OK_SHORTCUT"))
+			call ADialog.init('V',  'N', tre("Vorherige Seite", "Previous page"), tre("Nächste Seite", "Next page"), tre("%s|n(%i/%i)", "%s|n(%i/%i)"))
+			call AGui.init('h003', 0.0, 0.0, tre("OK", "OK"), sc("DMDF_GUI_OK_SHORTCUT"))
 			call AGui.setShortcutAbility('a', 'A003')
 			call AGui.setShortcutAbility('b', 'A00F')
 			call AGui.setShortcutAbility('c', 'A00G')
@@ -403,15 +403,15 @@ endif
 			call ACheckBox.init0("", "") /// @todo set correct image file paths
 			call AVote.init(4.0, tr("%1% hat für \"%2%\" gestimmt (%3% Stimme(n))."), tr("Abstimmung wurde mit dem Ergebnis \"%1%\" abgeschlossen (%2% Stimme(n))"))
 			// character systems
-			call AAbstractQuest.init(15.0, "Sound\\Interface\\QuestNew.wav", "Sound\\Interface\\QuestCompleted.wav", "Sound\\Interface\\QuestFailed.wav", tr("%s"), tr("|cffc3dbff%s (Abgeschlossen)|r"), tr("%s (|c00ff0000Fehlgeschlagen|r)"), tr("+%i Stufe(n)"), tr("+%i Fähigkeitenpunkt(e)"), tr("+%i Erfahrung"), tr("+%i Stärke"), tr("+%i Geschick"), tr("+%i Wissen"), tr("+%i Goldmünze(n)"), tr("+%i Holz"))
+			call AAbstractQuest.init(15.0, "Sound\\Interface\\QuestNew.wav", "Sound\\Interface\\QuestCompleted.wav", "Sound\\Interface\\QuestFailed.wav", tre("%s", "%s"), tre("|cffc3dbff%s (Abgeschlossen)|r", "|cffc3dbff%s (Completed)|r"), tre("%s (|c00ff0000Fehlgeschlagen|r)", "%s (|c00ff0000Failed|r)"), tre("+%i Stufe(n)", "+%i level(s)"), tre("+%i Fähigkeitenpunkt(e)", "+%i skill point(s)"), tre("+%i Erfahrung", "+%i experience"), tre("+%i Stärke", "+%i strength"), tre("+%i Geschick", "+%i dexterity"), tre("+%i Wissen", "+%i lore"), tre("+%i Goldmünze(n)", "+%i gold coin(s)"), tre("+%i Holz", "+%i lumber"))
 			call ABuff.init()
 			call ACharacter.init(true, true, false, true, false, true, true, true, DMDF_INFO_LOG)
 			call AClass.init(1, 1)
 			call initSpeechSkip(AKeyEscape, 0.10)
-			call AInventory.init('I001', 'I000', 'A015', false, tr("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt."), null, tr("Rucksack ist voll."), null, tr("Gegenstand konnte nicht verschoben werden."), tr("Die Seitengegenstände können nicht abgelegt werden."), tr("Die Seitengegenstände können nicht verschoben werden."), tr("Der Gegendstand gehört einem anderen Spieler."))
-			call AItemType.init(tr("Gegenstand benötigt eine höhere Stufe."), tr("Gegenstand benötigt mehr Stärke."), tr("Gegenstand benötigt mehr Geschick."), tr("Gegenstand benötigt mehr Wissen."), tr("Gegenstand benötigt eine andere Charakterklasse."))
-			call AQuest.init0(true, true, "Sound\\Interface\\QuestLog.wav", tr("|c00ffcc00NEUER AUFTRAG|r"), tr("|c00ffcc00AUFTRAG ABGESCHLOSSEN|r"), tr("|c00ffcc00AUFTRAG FEHLGESCHLAGEN|r"), tr("|c00ffcc00AUFTRAGS-AKTUALISIERUNG|r"), tr("- %s"))
-			call AVideo.init(2, 4.0, tr("Spieler %s möchte das Video überspringen."), tr("Video wird übersprungen."))
+			call AInventory.init('I001', 'I000', 'A015', false, tre("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt.", "Equipment slot is already used by another item."), null, tre("Rucksack ist voll.", "Backpack is full."), null, tre("Gegenstand konnte nicht verschoben werden.", "Item cannot be moved"), tre("Die Seitengegenstände können nicht abgelegt werden.", "The page items cannot be dropped."), tre("Die Seitengegenstände können nicht verschoben werden.", "The page items cannot be moved."), tre("Der Gegendstand gehört einem anderen Spieler.", "This item belongs to another player."))
+			call AItemType.init(tre("Gegenstand benötigt eine höhere Stufe.", "Item requires a higher level."), tre("Gegenstand benötigt mehr Stärke.", "Item requires more strength."), tre("Gegenstand benötigt mehr Geschick.", "Items requires more dexterity."), tre("Gegenstand benötigt mehr Wissen.", "Item requires more lore."), tre("Gegenstand benötigt eine andere Charakterklasse.", "Item requires another character class."))
+			call AQuest.init0(true, true, "Sound\\Interface\\QuestLog.wav", tre("|c00ffcc00NEUER AUFTRAG|r", "|c00ffcc00NEW QUEST|r"), tre("|c00ffcc00AUFTRAG ABGESCHLOSSEN|r", "|c00ffcc00QUEST COMPLETED|r"), tre("|c00ffcc00AUFTRAG FEHLGESCHLAGEN|r", "|c00ffcc00QUEST FAILED|r"), tre("|c00ffcc00AUFTRAGS-AKTUALISIERUNG|r", "|c00ffcc00QUEST UPDATE|r"), tre("- %s", "- %s"))
+			call AVideo.init(2, 4.0, tre("Spieler %s möchte das Video überspringen.", "Player %s wants to skip the video."), tre("Video wird übersprungen.", "Video has been skipped."))
 			// world systems
 			call ASpawnPoint.init()
 			call AWeather.init()
@@ -427,7 +427,7 @@ endif
 			// game guis
 			call Credits.init0.evaluate()
 			//! import "Game/Credits.j"
-			call Fellow.init.evaluate(tr("%1% hat sich Ihrer Gruppe angeschlossen."), null, tr("%1% hat Ihre Gruppe verlassen."), null, tr("%1% ist gefallen und wird in %2% Sekunden wiederbelebt."), null)
+			call Fellow.init.evaluate(tre("%1% hat sich Ihrer Gruppe angeschlossen.", "%1% has joined your group."), null, tre("%1% hat Ihre Gruppe verlassen.", "%1% has left your group"), null, tre("%1% ist gefallen und wird in %2% Sekunden wiederbelebt.", "%1% has fallen and will be revived in %2% seconds."), null)
 static if (DMDF_INVENTORY) then
 			call Inventory.init0.evaluate()
 endif
@@ -643,7 +643,7 @@ endif
 			//call SetCreepCampFilterState(true)
 			//call SetAllyColorFilterState(0)
 			call thistype.m_weather.start()
-			call ACharactersScheme.init(1.0, true, true, true, 10, GameExperience.maxExperienceFormula, 10, 10, tr("Charaktere"), tr("Stufe"), tr("Hat das Spiel verlassen."))
+			call ACharactersScheme.init(1.0, true, true, true, 10, GameExperience.maxExperienceFormula, 10, 10, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."))
 			call ACharactersScheme.setExperienceBarValueIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL8.tga")
 			call ACharactersScheme.setExperienceBarEmptyIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL0.tga")
 			set i = 1
