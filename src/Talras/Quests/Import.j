@@ -25,6 +25,7 @@
 //! import "Talras/Quests/Struct Quest The Beast.j"
 //! import "Talras/Quests/Struct Quest The Brave Armourer Of Talras.j"
 //! import "Talras/Quests/Struct Quest The Dark Cult.j"
+//! import "Talras/Quests/Struct Quest The Defense Of Talras.j"
 //! import "Talras/Quests/Struct Quest The Dragon.j"
 //! import "Talras/Quests/Struct Quest The Ghost Of The Master.j"
 //! import "Talras/Quests/Struct Quest The Holy Potato.j"
@@ -41,7 +42,7 @@
 //! import "Talras/Quests/Struct Quest Wolves Hunt.j"
 //! import "Talras/Quests/Struct Quest Wood For The Hut.j"
 
-library MapQuests requires StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestAmongTheWeaponsPeasants, StructMapQuestsQuestArenaChampion, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCatsForBrogo, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestDeathToBlackLegion, StructMapQuestsQuestDeathToWhiteLegion, StructMapQuestsQuestDeranor, StructMapQuestsQuestGoldForTheTradingPermission, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestMushroomSearch, StructMapQuestsQuestMyFriendTheBear, StructMapQuestsQuestProtectThePeople, StructMapQuestsQuestSeedsForTheGarden, StructMapQuestsQuestReinforcementForTalras, StructMapQuestsQuestRescueDago, StructMapQuestsQuestShamansInTalras, StructMapQuestsQuestSlaughter, StructMapQuestsQuestStormingTheMill, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestTalras, StructMapQuestsQuestTheBeast, StructMapQuestsQuestTheBraveArmourerOfTalras, StructMapQuestsQuestTheDarkCult, StructMapQuestsQuestTheDragon, StructMapQuestsQuestTheGhostOfTheMaster, StructMapQuestsQuestTheHolyPotato, StructMapQuestsQuestTheKingsCrown, StructMapQuestsQuestTheMagic, StructMapQuestsQuestTheMagicalShield, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestTheOaksPower, StructMapQuestsQuestThePaedophilliacCleric, StructMapQuestsQuestTheWayToHolzbruck, StructMapQuestsQuestWar, StructMapQuestsQuestWielandsSword, StructMapQuestsQuestWitchingHour, StructMapQuestsQuestWolvesHunt, StructMapQuestsQuestWoodForTheHut
+library MapQuests requires StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestAmongTheWeaponsPeasants, StructMapQuestsQuestArenaChampion, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCatsForBrogo, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestDeathToBlackLegion, StructMapQuestsQuestDeathToWhiteLegion, StructMapQuestsQuestDeranor, StructMapQuestsQuestGoldForTheTradingPermission, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestMushroomSearch, StructMapQuestsQuestMyFriendTheBear, StructMapQuestsQuestProtectThePeople, StructMapQuestsQuestSeedsForTheGarden, StructMapQuestsQuestReinforcementForTalras, StructMapQuestsQuestRescueDago, StructMapQuestsQuestShamansInTalras, StructMapQuestsQuestSlaughter, StructMapQuestsQuestStormingTheMill, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestTalras, StructMapQuestsQuestTheBeast, StructMapQuestsQuestTheBraveArmourerOfTalras, StructMapQuestsQuestTheDarkCult, StructMapQuestsQuestTheDefenseOfTalras, StructMapQuestsQuestTheDragon, StructMapQuestsQuestTheGhostOfTheMaster, StructMapQuestsQuestTheHolyPotato, StructMapQuestsQuestTheKingsCrown, StructMapQuestsQuestTheMagic, StructMapQuestsQuestTheMagicalShield, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestTheOaksPower, StructMapQuestsQuestThePaedophilliacCleric, StructMapQuestsQuestTheWayToHolzbruck, StructMapQuestsQuestWar, StructMapQuestsQuestWielandsSword, StructMapQuestsQuestWitchingHour, StructMapQuestsQuestWolvesHunt, StructMapQuestsQuestWoodForTheHut
 
 	function initMapPrimaryQuests takes nothing returns nothing
 		call QuestANewAlliance.initQuest()
@@ -49,6 +50,7 @@ library MapQuests requires StructMapQuestsQuestABigPresent, StructMapQuestsQuest
 		call QuestRescueDago.initQuest()
 		call QuestSlaughter.initQuest()
 		call QuestDeranor.initQuest()
+		call QuestTheDefenseOfTalras.initQuest()
 		call QuestTheNorsemen.initQuest()
 		call QuestTheWayToHolzbruck.initQuest()
 		call QuestWar.initQuest()

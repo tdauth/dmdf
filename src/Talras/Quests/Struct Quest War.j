@@ -1,4 +1,4 @@
-library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVideosVideoIronFromTheDrumCave, StructMapVideosVideoKuno, StructMapVideosVideoWeaponsFromWieland, StructMapVideosVideoWieland, StructMapVideosVideoManfred
+library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVideosVideoIronFromTheDrumCave, StructMapVideosVideoKuno, StructMapVideosVideoPrepareForTheDefense, StructMapVideosVideoWeaponsFromWieland, StructMapVideosVideoWieland, StructMapVideosVideoManfred
 
 	struct QuestAreaWarWieland extends QuestArea
 	
@@ -18,6 +18,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	 */
 	struct QuestAreaWarImpTarget extends QuestArea
 		public stub method onCheck takes nothing returns boolean
+			call Character.displayHintToAll(tr("In dieses Gebiet müssen die Imps gebracht werden."))
 			return false
 		endmethod
 	
@@ -66,6 +67,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	struct QuestAreaWarBjoernPlaceTraps extends QuestArea
 	
 		public stub method onCheck takes nothing returns boolean
+			call Character.displayHintToAll(tr("In diesem Gebiet müssen Björns Fallen platziert werden."))
 			return false
 		endmethod
 	
@@ -82,6 +84,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	
 	struct QuestAreaWarCartDestination extends QuestArea
 		public stub method onCheck takes nothing returns boolean
+			call Character.displayHintToAll(tr("In dieses Gebiet müssen die Versorgungswagen und die Knechte gebracht werden."))
 			return false
 		endmethod
 	
@@ -92,7 +95,12 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	struct QuestAreaWarReportHeimrich extends QuestArea
 		public stub method onCheck takes nothing returns boolean
 			// TODO change moveManfredsSupplyToTheCamp
-			return QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemLumberFromKuno).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemPlaceTraps).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemGetRecruits).state() == QuestWar.stateCompleted
+			local boolean result = QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemLumberFromKuno).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemPlaceTraps).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemGetRecruits).state() == QuestWar.stateCompleted
+			if (not result) then
+				call Character.displayHintToAll(tr("Schließen Sie zunächst den Auftrag \"Krieg\" ab. Danach können Sie dem Herzog Bericht erstatten."))
+			endif
+			
+			return result
 		endmethod
 	
 		public stub method onStart takes nothing returns nothing
@@ -193,6 +201,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.questItem(thistype.questItemLumberFromKuno).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateNew)
+			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
 			
 			set this.m_recruitCounter = 0
 			
@@ -214,6 +223,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		 * Makes \p whichUnit invulnerable and changes its owner.
 		 */
 		private method setupUnitAtDestination takes unit whichUnit returns nothing
+			debug call Print("Setup unit " + GetUnitName(whichUnit))
 			call SetUnitPathing(whichUnit, false)
 			debug call Print("Disable unit pathing of unit " + GetUnitName(whichUnit))
 			call SetUnitOwner(whichUnit, MapData.neutralPassivePlayer, true)
@@ -323,8 +333,11 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call ShowUnit(whichUnit, false)
 		endmethod
 		
-		private static method groupFunctionShow takes unit whichUnit returns nothing
+		private static method groupFunctionShowAndMakeMovable takes unit whichUnit returns nothing
 			call ShowUnit(whichUnit, true)
+			call PauseUnit(whichUnit, false)
+			call SetUnitPathing(whichUnit, true)
+			call IssueImmediateOrder(whichUnit, "halt")
 		endmethod
 		
 		private static method timerFunctionSpawnWeaponCart takes nothing returns nothing
@@ -378,7 +391,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			/*
 			 * Give the imps a new home.
 			 */
-			call this.m_imps.forGroup(thistype.groupFunctionShow)
+			call this.m_imps.forGroup(thistype.groupFunctionShowAndMakeMovable)
 			call SetUnitX(this.m_imps.units()[0], GetRectCenterX(gg_rct_waypoint_imp_0))
 			call SetUnitY(this.m_imps.units()[0], GetRectCenterY(gg_rct_waypoint_imp_0))
 			call SetUnitFacing(this.m_imps.units()[0], 90.91)
@@ -750,6 +763,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.m_questAreaBjoernPlaceTraps.destroy()
 			set this.m_questAreaBjoernPlaceTraps = 0
 			
+			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateCompleted)
 			call this.displayUpdate()
 		endmethod
 		
@@ -810,6 +824,12 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			// TODO sell other recruits and distribute the costs to all players equally.
 		endmethod
 		
+		private static method stateActionCompletedReportHeimrich takes AQuestItem questItem returns nothing
+			local thistype this = thistype.quest()
+			call this.m_questAreaCartDestination.destroy()
+			set this.m_questAreaCartDestination = 0
+		endmethod
+		
 		public stub method distributeRewards takes nothing returns nothing
 			// TODO besonderer Gegenstand für die Klasse
 			//call AAbstractQuest.distributeRewards()
@@ -821,7 +841,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
 			call this.setDescription(tr("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden."))
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
-			call this.setReward(AAbstractQuest.rewardGold, 500)
+			call this.setReward(AAbstractQuest.rewardGold, 1000)
 
 			// quest item questItemWeaponsFromWieland
 			set questItem = AQuestItem.create(this, tr("Besorgt Waffen vom Schmied Wieland."))
@@ -957,6 +977,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			
 			// quest item questItemReportHeimrich
 			set questItem = AQuestItem.create(this, tr("Berichtet Heimrich von Eurem Erfolg."))
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedReportHeimrich)
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_heimrich)

@@ -1,10 +1,11 @@
-library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
+library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame, StructMapQuestsQuestTheDefenseOfTalras
 
 	struct VideoPrepareForTheDefense extends AVideo
 		private integer m_actorHeimrich
 		private integer m_actorMarkward
 		private integer m_actorOsman
 		private integer m_actorFerdinand
+		// TODO add Wigberht, Ricman and Dragon Slayer
 
 		implement Video
 
@@ -51,6 +52,9 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 
 		public stub method onStopAction takes nothing returns nothing
 			call Game.resetVideoSettings()
+			
+			call QuestWar.quest.evaluate().complete()
+			call QuestTheDefenseOfTalras.quest().enable()
 		endmethod
 
 		private static method create takes nothing returns thistype

@@ -583,9 +583,9 @@ static if (DEBUG_MODE) then
 					 * Plays video "The Castle".
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_talras_quest_item_0)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					if (not  QuestTalras.quest.evaluate().questItem(QuestTalras.questItemReachTheCastle).isCompleted()) then
 						debug call Print("Failed completing quest item meet at reach the castle.")
 						call thistype.makeCharactersInvulnerable(false)
@@ -599,9 +599,9 @@ static if (DEBUG_MODE) then
 					 * Plays video "The Duke of Talras".
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_talras_quest_item_1)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 				endif
 			endif
 			call thistype.makeCharactersInvulnerable(false)
@@ -631,9 +631,9 @@ static if (DEBUG_MODE) then
 					 * Plays video "The Chief".
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_the_norsemen_quest_item_0)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					if (not  QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetTheNorsemen).isCompleted()) then
 						debug call Print("Failed completing quest item meet at the norsemen.")
 						call thistype.makeCharactersInvulnerable(false)
@@ -646,9 +646,9 @@ static if (DEBUG_MODE) then
 					 * Plays video "The First combat".
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_the_norsemen_assembly_point)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					if (not  QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheBattlefield).isCompleted()) then
 						debug call Print("Failed completing quest item meet at the battlefield.")
 						call thistype.makeCharactersInvulnerable(false)
@@ -665,9 +665,9 @@ static if (DEBUG_MODE) then
 					 * TODO Does not change the state!
 					 */
 					if (QuestTheNorsemen.quest.evaluate().completeFight()) then
-						call TriggerSleepAction(AVideo.waitTime() + 2.0)
+						call TriggerSleepAction(2.0 + 2.0)
 						call waitForVideo(MapData.videoWaitInterval)
-						call TriggerSleepAction(AVideo.waitTime() + 2.0)
+						call TriggerSleepAction(2.0 + 2.0)
 					else
 						debug call Print("Failed completing quest item fight.")
 						call thistype.makeCharactersInvulnerable(false)
@@ -680,9 +680,9 @@ static if (DEBUG_MODE) then
 					 * Plays video "A new alliance"
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_talras_quest_item_1)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 				endif
 			endif
 			call thistype.makeCharactersInvulnerable(false)
@@ -701,9 +701,9 @@ static if (DEBUG_MODE) then
 			
 				// TODO it would be safer to complete the single quest items
 				call QuestSlaughter.quest().complete()
-				call TriggerSleepAction(AVideo.waitTime() + 2.0)
+				call TriggerSleepAction(2.0 + 2.0)
 				call waitForVideo(MapData.videoWaitInterval)
-				call TriggerSleepAction(AVideo.waitTime() + 2.0)
+				call TriggerSleepAction(2.0 + 2.0)
 			endif
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
@@ -731,9 +731,9 @@ static if (DEBUG_MODE) then
 					 * Plays video "Deranor".
 					 */
 					call thistype.moveCharactersToRect(gg_rct_area_tomb)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemEnterTheTomb).isCompleted()) then
 						debug call Print("Failed to complete enter the tomb.")
 						call thistype.makeCharactersInvulnerable(false)
@@ -746,9 +746,9 @@ static if (DEBUG_MODE) then
 					 * Plays video "Deranor's Death".
 					 */
 					call KillUnit(gg_unit_u00A_0353)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
-					call TriggerSleepAction(AVideo.waitTime() + 2.0)
+					call TriggerSleepAction(2.0 + 2.0)
 					if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemKillDeranor).isCompleted()) then
 						debug call Print("Failed to complete kill deranor.")
 						call thistype.makeCharactersInvulnerable(false)

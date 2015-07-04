@@ -3,6 +3,7 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 	struct VideoRecruit extends AVideo
 		private unit m_actorFerdinand
 		private unit m_actorManfred
+		private unit m_actorWorker0
 
 		implement Video
 
@@ -17,8 +18,16 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 			
 			set this.m_actorManfred = thistype.unitActor(thistype.saveUnitActor(Npcs.manfred()))
 			call SetUnitPositionRect(this.m_actorManfred, gg_rct_video_recruit_manfred)
+			
+			set this.m_actorWorker0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n02J_0159))
+			call SetUnitPositionRect(this.m_actorWorker0, gg_rct_video_recruit_worker_0)
 
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_recruit_actor)
+			
+			call SetUnitFacingToFaceUnit(this.m_actorFerdinand, this.m_actorManfred)
+			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorManfred)
+			call SetUnitFacingToFaceUnit(this.m_actorManfred, this.m_actorFerdinand)
+			call SetUnitFacingToFaceUnit(this.m_actorWorker0, this.m_actorFerdinand)
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
@@ -28,6 +37,28 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
+			
+			call TransmissionFromUnit(this.m_actorFerdinand, tr("Die Zeit ist nun gekommen da der Herzog eure Dienste einfordert. Lange Zeit durftet ihr wie König leben vom Lande eures Herzogs. Er ließ euch teilhaben an seinem Reichtum und ihr konntet in Frieden leben."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.m_actorManfred, tr("Heuchler!"), null)
+			call QueueUnitAnimation(this.m_actorManfred, "Attack First")
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.m_actorWorker0, tr("Scharlatan!"), null)
+			call QueueUnitAnimation(this.m_actorWorker0, "Attack")
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			// TODO Obst werfen!
 			
 			// TODO Finish dialog, drum cave iron.
 

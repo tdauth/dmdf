@@ -119,7 +119,10 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate()
+			local thistype this = thistype.allocate()
+			call this.setPlayFilterTime(0.0)
+			
+			return this
 		endmethod
 	endstruct
 

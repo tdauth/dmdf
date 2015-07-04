@@ -37,13 +37,6 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			loop
-				exitwhen (RectContainsUnit(gg_rct_video_wieland_actor_target, thistype.actor()))
-				if (wait(1.0)) then
-					return
-				endif
-			endloop
-		
 			call TransmissionFromUnit(thistype.actor(), tr("Schmied Wieland!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then

@@ -117,6 +117,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		// drum cave
 		private static SpawnPoint m_skeletons0
 		private static SpawnPoint m_skeletons1
+		
+		private static SpawnPoint m_bearMen0
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -669,6 +671,15 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_skeletons1.addUnitWithType(gg_unit_n00Y_0261, 1.0)
 			set index = thistype.m_skeletons1.addUnitWithType(gg_unit_n01O_0258, 1.0)
 			set index = thistype.m_skeletons1.addUnitWithType(gg_unit_n01O_0260, 1.0)
+			
+			// bear men 0
+			set thistype.m_bearMen0 = SpawnPoint.create()
+			set index = thistype.m_bearMen0.addUnitWithType(gg_unit_n04G_0369, 1.0)
+			call thistype.m_bearMen0.addItemType(index, 'I058', 1.0)
+			set index = thistype.m_bearMen0.addUnitWithType(gg_unit_n04G_0368, 1.0)
+			call thistype.m_bearMen0.addItemType(index, 'I058', 1.0)
+			set index = thistype.m_bearMen0.addUnitWithType(gg_unit_n04G_0370, 1.0)
+			call thistype.m_bearMen0.addItemType(index, 'I058', 1.0)
 		endmethod
 
 		public static method spawn takes nothing returns nothing
