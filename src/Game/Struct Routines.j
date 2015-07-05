@@ -182,16 +182,20 @@ library StructGameRoutines requires Asl
 			local sound whichSound = null
 			local real time = 5.0 // usual wait interval
 			
+			/*
 			debug if (period.partner() == null) then
 			debug call Print("Period with " + GetUnitName(period.unit()) + " has no partner!")
 			debug endif
+			*/
 			
+			/*
 			debug if (GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) > period.range()) then
 			debug call Print("Period with " + GetUnitName(period.unit()) + " has too big distance!")
 			debug endif
-
+			*/
+			
 			if (period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) then
-				debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
+				//debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
 				call SetUnitFacingToFaceUnit(period.unit(), period.partner())
 				call QueueUnitAnimation(period.unit(), "Stand Talk")
 				if (period.soundsCount() > 0) then

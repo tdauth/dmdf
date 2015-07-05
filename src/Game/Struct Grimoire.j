@@ -113,12 +113,12 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			local Spell spell
 			local integer level
 			local integer i = 0
-			debug call Print("Readding spells with count: " + I2S(this.m_spells.size()))
+			//debug call Print("Readding spells with count: " + I2S(this.m_spells.size()))
 			loop
 				exitwhen (i == this.m_spells.size())
 				set spell = Spell(this.m_spells[i])
 				
-				debug call Print("Spell id: " + I2S(integer(spell)))
+				//debug call Print("Spell id: " + I2S(integer(spell)))
 				
 				debug if (not table.hasIntegerByInteger(0, spell.ability())) then
 				debug call Print("Missing ability: " + GetAbilityName(spell.ability()) + " when readding spells")
@@ -126,17 +126,17 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				
 				set level = table.integerByInteger(0, spell.ability())
 				
-				debug call Print("Ability: " + GetAbilityName(spell.ability()) + " with restored level " + I2S(level))
+				//debug call Print("Ability: " + GetAbilityName(spell.ability()) + " with restored level " + I2S(level))
 				
 				// only add if it has been there before!
 				if (level > 0) then
 					if (this.m_favourites.contains(spell)) then
-						debug call Print("Is a favorite spell")
+						//debug call Print("Is a favorite spell")
 						call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
 						call spell.add()
 						call spell.setLevel(level)
 					else
-						debug call Print("Is not a favorite spell")
+						//debug call Print("Is not a favorite spell")
 						call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
 						call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 						call spell.setLevel(level)
@@ -250,8 +250,8 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			//debug call Print("after removing ability")
 			//call IssueImmediateOrderById(this.character().unit(), this.ability()) // WORKAROUND: whenever an ability is being removed it closes grimoire
 			// TODO if trigger player is not owner of the character!
-			debug call Print("Issued UI key for player: " + GetPlayerName(this.character().player()))
-			debug call Print("Trigger player is: " + GetPlayerName(GetTriggerPlayer()))
+			//debug call Print("Issued UI key for player: " + GetPlayerName(this.character().player()))
+			//debug call Print("Trigger player is: " + GetPlayerName(GetTriggerPlayer()))
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
 			if (GetTriggerPlayer() != null) then
@@ -453,7 +453,7 @@ endif
 				return true
 			endif
 			
-			debug call Print("Successfully skilling " + GetAbilityName(spell.ability()) + " to level " + I2S(level))
+			//debug call Print("Successfully skilling " + GetAbilityName(spell.ability()) + " to level " + I2S(level))
 
 			if (requiredSkillPoints < 0) then
 				call this.addSkillPoints(-1 * requiredSkillPoints)
@@ -470,7 +470,7 @@ endif
 				call this.removeSkillPoints(requiredSkillPoints)
 
 				if (spell.level() == 0) then
-					debug call Print("Learning spell: " + spell.name() + " having " + I2S(this.m_favourites.size()) + " favorite spells.")
+					//debug call Print("Learning spell: " + spell.name() + " having " + I2S(this.m_favourites.size()) + " favorite spells.")
 				
 					if (this.m_favourites.size() < thistype.maxFavourites) then
 						call this.learnFavouriteSpell(spell)
@@ -589,7 +589,7 @@ endif
 				exitwhen (i == integerVector.size())
 				// do not add spells twice
 				if (not this.m_spells.contains(Spell(integerVector[i]))) then
-					debug call Print("Adding NEW spell " + GetAbilityName(Spell(integerVector[i]).ability()))
+					//debug call Print("Adding NEW spell " + GetAbilityName(Spell(integerVector[i]).ability()))
 					call this.addSpell(Spell(integerVector[i]), false)
 				endif
 				set i = i + 1
@@ -660,7 +660,7 @@ endif
 				exitwhen (i == character.classSpells().size())
 				// do not add spells twice
 				if (not this.m_spells.contains(Spell(character.classSpells()[i]))) then
-					debug call Print("Adding NEW spell " + GetAbilityName(Spell(character.classSpells()[i]).ability()))
+					//debug call Print("Adding NEW spell " + GetAbilityName(Spell(character.classSpells()[i]).ability()))
 					call spells.pushBack(Spell(character.classSpells()[i]))
 				endif
 				set i = i + 1
@@ -699,7 +699,7 @@ endif
 
 		public method removeClassSpells takes AClass class, boolean updateUi returns nothing
 			local integer i = 0
-			debug call Print("Remove class spells")
+			//debug call Print("Remove class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() == class) then
@@ -718,7 +718,7 @@ endif
 
 		public method removeAllClassSpells takes boolean updateUi returns nothing
 			local integer i = 0
-			debug call Print("Remove all class spells")
+			//debug call Print("Remove all class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() != 0) then
@@ -733,7 +733,7 @@ endif
 
 		public method removeAllOtherClassSpells takes boolean updateUi returns nothing
 			local integer i = 0
-			debug call Print("Remove all other class spells")
+			//debug call Print("Remove all other class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() != this.character().class()) then
@@ -790,7 +790,7 @@ endif
 				debug call this.print("Warning: Wrong page value " + I2S(page) + ", maximum is " + I2S(this.pages() - 1))
 				return false
 			endif
-			debug call this.print("Set page to " + I2S(page))
+			//debug call this.print("Set page to " + I2S(page))
 			if (page == this.page()) then
 				return true
 			endif
@@ -800,7 +800,7 @@ endif
 		endmethod
 
 		public method increasePage takes nothing returns boolean
-			debug call Print("We have " + I2S(this.pages()) + " with " + I2S(this.m_spells.size()) + " spells total")
+			//debug call Print("We have " + I2S(this.pages()) + " with " + I2S(this.m_spells.size()) + " spells total")
 			if (this.page() + 1 >= this.pages()) then
 				return this.setPage(0)
 			else

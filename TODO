@@ -363,6 +363,8 @@
 * FIXED: Pfeilhagel verursacht keinen Schaden. Der originale Zauberverstärker muss erhalten bleiben: http://www.wc3c.net/showthread.php?t=101804
 * Charakterübersicht: Balken sind nicht ausgefüllt obwohl volle Werte (Leben, Mana).
 * Björn muss etwas über den Hundezwinger sagen.
+* FIXED (OpLimit): Mit neuem SpawnPoint-System enthalten die SpawnPoints oftmals nicht die Einheiten vom Start.
+* Vervielfachung: Vorher Rucksack schließen, ansonsten haben Spiegelbilder Items aus dem Rucksack.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

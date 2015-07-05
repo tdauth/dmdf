@@ -14,10 +14,9 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			call this.setTime(thistype.respawnTime)
 			call this.setEffectFilePath("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl")
 			call this.setSoundFilePath("Abilities\\Spells\\Orc\\EtherealForm\\SpiritWalkerMorph.wav")
-			call this.setDropChance(70)
 			call this.setDistributeItems(true)
 			call this.setOwner(Player(PLAYER_NEUTRAL_AGGRESSIVE))
-			call this.setTextDistributeItem(tre("%s wurde für Spieler %s fallen gelassen.", "%s has been dropped for player %s."))
+			call this.setTextDistributeItem(tre("%1% wurde für Spieler %2% fallen gelassen.", "%1% has been dropped for player %2%."))
 			
 			call thistype.m_spawnPoints.pushBack(this)
 	
