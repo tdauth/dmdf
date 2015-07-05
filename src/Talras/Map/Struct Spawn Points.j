@@ -700,6 +700,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			/**
 			 * Start with new OpLimit since it takes many many operations.
 			 */
+			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init0)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init1)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init2)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init3)

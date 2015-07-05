@@ -30,7 +30,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 			if (wait(1.0)) then
 				return
 			endif
-			call TransmissionFromUnit(this.m_actorDago, tr("Verdammte Mistviecher!"), null)
+			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Verdammte Mistviecher!"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
