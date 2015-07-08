@@ -6,6 +6,8 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 	struct Tomb
 		private static trigger m_enterTrigger
 		private static trigger m_leaveTrigger
+		private static trigger m_shakeTrigger
+		private static boolean array m_playerJoined[6] /// TODO MapData.maxPlayers
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Tomb\"")
 
@@ -14,20 +16,23 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 			call PlayMusic("Music\\TheDrumCave.mp3") /// @todo for user
 			call MapData.setCameraBoundsToTombForPlayer.evaluate(character.player())
 			call character.setCamera()
+			set thistype.m_playerJoined[GetPlayerId(character.player())] = true
 		endmethod
 
 		public static method characterLeaves takes Character character returns nothing
 			call StopMusic(false) /// @todo for user
 			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(character.player()) // set camera bounds before rect!
 			call character.setCamera()
+			set thistype.m_playerJoined[GetPlayerId(character.player())] = false
 		endmethod
 
 		public static method areaContainsCharacter takes Character character returns boolean
-			return RectContainsUnit(gg_rct_area_tomb, character.unit())
+			return RectContainsUnit(gg_rct_area_tomb, character.unit()) or RectContainsUnit(gg_rct_area_tomb_1, character.unit())
 		endmethod
 
-		private static method triggerConditionIsCharacter takes nothing returns boolean
-			return ACharacter.isUnitCharacter(GetTriggerUnit())
+		private static method triggerConditionEnter takes nothing returns boolean
+			local ACharacter character = ACharacter.getCharacterByUnit(GetTriggerUnit())
+			return character != 0 and not thistype.m_playerJoined[GetPlayerId(character.player())] 
 		endmethod
 
 		private static method triggerActionEnter takes nothing returns nothing
@@ -42,8 +47,13 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 		private static method createEnterTrigger takes nothing returns nothing
 			set thistype.m_enterTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(thistype.m_enterTrigger, gg_rct_area_tomb)
-			call TriggerAddCondition(thistype.m_enterTrigger, Condition(function thistype.triggerConditionIsCharacter))
+			call TriggerRegisterEnterRectSimple(thistype.m_enterTrigger, gg_rct_area_tomb_1)
+			call TriggerAddCondition(thistype.m_enterTrigger, Condition(function thistype.triggerConditionEnter))
 			call TriggerAddAction(thistype.m_enterTrigger, function thistype.triggerActionEnter)
+		endmethod
+		
+		private static method triggerConditionLeave takes nothing returns boolean
+			return ACharacter.isUnitCharacter(GetTriggerUnit()) and not RectContainsUnit(gg_rct_area_tomb, GetTriggerUnit()) and not RectContainsUnit(gg_rct_area_tomb_1, GetTriggerUnit())
 		endmethod
 
 		private static method triggerActionLeave takes nothing returns nothing
@@ -58,13 +68,54 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 		private static method createLeaveTrigger takes nothing returns nothing
 			set thistype.m_leaveTrigger = CreateTrigger()
 			call TriggerRegisterLeaveRectSimple(thistype.m_leaveTrigger, gg_rct_area_tomb)
-			call TriggerAddCondition(thistype.m_leaveTrigger, Condition(function thistype.triggerConditionIsCharacter))
+			call TriggerRegisterLeaveRectSimple(thistype.m_leaveTrigger, gg_rct_area_tomb_1)
+			call TriggerAddCondition(thistype.m_leaveTrigger, Condition(function thistype.triggerConditionLeave))
 			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
+		endmethod
+		
+		private static method triggerConditionShake takes nothing returns boolean
+			return GetTriggerUnit() == gg_unit_u00A_0353 and GetSpellAbilityId() == 'A0BR'
+		endmethod
+		
+		private static method triggerActionShake takes nothing returns nothing
+			local force whichForce = CreateForce()
+			local integer i = 0
+			debug call Print("Shake!")
+			/*
+			 * Shake the camera for all players  which see the tomb.
+			 */
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (thistype.areaContainsCharacter(ACharacter.playerCharacter(Player(i)))) then
+					call CameraSetEQNoiseForPlayer(Player(i), 5.0)
+					call ForceAddPlayer(whichForce, Player(i))
+				endif
+				set i = i + 1
+			endloop
+			call TriggerSleepAction(4.0)
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (IsPlayerInForce(Player(i), whichForce)) then
+					call CameraClearNoiseForPlayer(Player(i))
+				endif
+				set i = i + 1
+			endloop
+			call ForceClear(whichForce)
+			call DestroyForce(whichForce)
+			set whichForce = null
+		endmethod
+		
+		private static method createShakeTrigger takes nothing returns nothing
+			set thistype.m_shakeTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_shakeTrigger, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			call TriggerAddCondition(thistype.m_shakeTrigger, Condition(function thistype.triggerConditionShake))
+			call TriggerAddAction(thistype.m_shakeTrigger, function thistype.triggerActionShake)
 		endmethod
 
 		public static method init takes nothing returns nothing
 			call thistype.createEnterTrigger()
 			call thistype.createLeaveTrigger()
+			call thistype.createShakeTrigger()
 		endmethod
 
 		private static method destroyEnterTrigger takes nothing returns nothing
@@ -76,10 +127,16 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 			call DestroyTrigger(thistype.m_leaveTrigger)
 			set thistype.m_leaveTrigger = null
 		endmethod
+		
+		private static method destroyShakeTrigger takes nothing returns nothing
+			call DestroyTrigger(thistype.m_shakeTrigger)
+			set thistype.m_shakeTrigger = null
+		endmethod
 
 		public static method cleanUp takes nothing returns nothing
 			call thistype.destroyEnterTrigger()
 			call thistype.destroyLeaveTrigger()
+			call thistype.destroyShakeTrigger()
 		endmethod
 	endstruct
 

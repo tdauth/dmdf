@@ -225,6 +225,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		private method setupUnitAtDestination takes unit whichUnit returns nothing
 			debug call Print("Setup unit " + GetUnitName(whichUnit))
 			call SetUnitPathing(whichUnit, false)
+			call UnitAddAbility(whichUnit, 'Aloc') // makes the unit unselectable and disables collision
 			debug call Print("Disable unit pathing of unit " + GetUnitName(whichUnit))
 			call SetUnitOwner(whichUnit, MapData.neutralPassivePlayer, true)
 			call IssueImmediateOrder(whichUnit, "stop")
@@ -289,6 +290,23 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			debug call Print("state condition: " + I2S(this.questItem(thistype.questItemMoveImpsToWieland).stateCondition(thistype.stateCompleted)))
 			call this.displayUpdate()
 			call this.displayUpdateMessage(tr("Neue Imps stehen zur Verfügung."))
+		endmethod
+		
+		/**
+		 * Debugging function.
+		 *
+		 * Moves all Imps to Wieland to finish the quest item.
+		 */
+		public method moveImpsToWieland takes nothing returns nothing
+			local integer i
+			call thistype.timerFunctionSpawnImps()
+			set i = 0
+			loop
+				exitwhen (i == this.m_imps.units().size())
+				call SetUnitX(this.m_imps.units()[i], GetRectCenterX(gg_rct_quest_war_wieland))
+				call SetUnitY(this.m_imps.units()[i], GetRectCenterY(gg_rct_quest_war_wieland))
+				set i = i + 1
+			endloop
 		endmethod
 		
 		private static method stateEventCompletedImps takes AQuestItem questItem, trigger whichTrigger returns nothing

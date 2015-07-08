@@ -18,6 +18,10 @@ library StructMapVideosVideoHolzbruck requires Asl, StructGameGame, StructMapQue
 
 		public stub method onPlayAction takes nothing returns nothing
 			// TODO Finish this video
+			
+			if (wait(4.0)) then // wait until end
+				return
+			endif
 
 			call this.stop()
 		endmethod

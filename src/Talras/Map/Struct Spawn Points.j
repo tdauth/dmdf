@@ -118,6 +118,9 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_skeletons0
 		private static SpawnPoint m_skeletons1
 		
+		// tomb (Deranor)
+		//private static SpawnPoint m_
+		
 		private static SpawnPoint m_bearMen0
 
 		private static method create takes nothing returns thistype

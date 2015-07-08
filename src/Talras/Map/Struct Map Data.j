@@ -775,6 +775,120 @@ static if (DEBUG_MODE) then
 			call thistype.onCheatActionAfterSlaughter(cheat)
 			call thistype.onCheatActionAfterDeranor(cheat)
 		endmethod
+		
+		private static method onCheatActionAfterANewAlliance takes ACheat cheat returns nothing
+			call thistype.onCheatActionAfterTheBattle(cheat)
+		
+			call thistype.makeCharactersInvulnerable(true)
+			
+			if (not QuestDeranor.quest().isCompleted()) then
+				debug call Print("Quest Deranor must be completed before.")
+				call thistype.makeCharactersInvulnerable(false)
+				return
+			endif
+			
+			
+			if (not QuestANewAlliance.quest().isCompleted()) then
+				/*
+				 * Plays video "A New Alliance".
+				 */
+				call thistype.moveCharactersToRect(gg_rct_quest_a_new_alliance)
+				
+				call TriggerSleepAction(2.0 + 2.0)
+				call waitForVideo(MapData.videoWaitInterval)
+				call TriggerSleepAction(2.0 + 2.0)
+				if (not QuestANewAlliance.quest.evaluate().isCompleted()) then
+					debug call Print("Failed to complete quest Deranor.")
+					call thistype.makeCharactersInvulnerable(false)
+					return
+				endif
+			endif
+			
+			call thistype.makeCharactersInvulnerable(false)
+		endmethod
+		
+		private static method onCheatActionAfterWar takes ACheat cheat returns nothing
+			call thistype.onCheatActionAfterANewAlliance(cheat)
+
+			call thistype.makeCharactersInvulnerable(true)
+			
+			if (not QuestANewAlliance.quest().isCompleted()) then
+				debug call Print("Quest A New Alliance must be completed before.")
+				call thistype.makeCharactersInvulnerable(false)
+				return
+			endif
+			
+			if (not QuestWar.quest.evaluate().isCompleted()) then
+			
+				if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).isCompleted()) then
+					/*
+					 * Plays video "Wieland".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_war_wieland)
+					
+					call TriggerSleepAction(2.0 + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(2.0 + 2.0)
+				
+					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemIronFromTheDrumCave).isCompleted()) then
+						/*
+						* Plays video "Iron From The Drum Cave".
+						*/
+						call thistype.moveCharactersToRect(gg_rct_quest_war_iron_from_the_drum_cave)
+						
+						call TriggerSleepAction(2.0 + 2.0)
+						call waitForVideo(MapData.videoWaitInterval)
+						call TriggerSleepAction(2.0 + 2.0)
+						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemIronFromTheDrumCave).isCompleted()) then
+							debug call Print("Failed to complete quest item iron from the drum cave.")
+							call thistype.makeCharactersInvulnerable(false)
+							return
+						endif
+					endif
+				
+					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveImpsToWieland).isCompleted()) then
+						/*
+						* Plays video "Weapons From Wieland".
+						*/
+						call QuestWar.quest.evaluate().moveImpsToWieland()
+						call TriggerSleepAction(2.0 + 2.0)
+						call waitForVideo(MapData.videoWaitInterval)
+						call TriggerSleepAction(2.0 + 2.0)
+						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveImpsToWieland).isCompleted()) then
+							debug call Print("Failed to complete quest item move imps to wieland.")
+							call thistype.makeCharactersInvulnerable(false)
+							return
+						endif
+					endif
+					
+					/*
+					TODO move weapons cart to destination
+					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).isCompleted()) then
+						debug call Print("Failed to complete quest item weapons from wieland.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+					*/
+				endif
+				
+				if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).isCompleted()) then
+					/*
+					 * Plays video "Manfred".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_war_manfred)
+					call TriggerSleepAction(2.0 + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(2.0 + 2.0)
+					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).isCompleted()) then
+						debug call Print("Failed to complete quest item manfred.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+			endif
+			
+			call thistype.makeCharactersInvulnerable(false)
+		endmethod
 
 		private static method onCheatActionUnitSpawn takes ACheat cheat returns nothing
 			call UnitTypes.spawn(GetTriggerPlayer(), GetUnitX(Character.playerCharacter(GetTriggerPlayer()).unit()), GetUnitY(Character.playerCharacter(GetTriggerPlayer()).unit()))
@@ -826,6 +940,8 @@ static if (DEBUG_MODE) then
 			call ACheat.create("afterslaughter", true, thistype.onCheatActionAfterSlaughter)
 			call ACheat.create("afterderanor", true, thistype.onCheatActionAfterDeranor)
 			call ACheat.create("afterthebattle", true, thistype.onCheatActionAfterTheBattle)
+			call ACheat.create("afteranewalliance", true, thistype.onCheatActionAfterANewAlliance)
+			call ACheat.create("afterwar", true, thistype.onCheatActionAfterWar)
 			// test cheats
 			call ACheat.create("unitspawn", true, thistype.onCheatActionUnitSpawn)
 			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)
