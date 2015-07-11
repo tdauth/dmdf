@@ -17,6 +17,8 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		private AInfo m_yourDogs
 		private AInfo m_yourFalcons
 		private AInfo m_hunt
+		private AInfo m_whereAnimals
+		private AInfo m_explainHunt
 		private AInfo m_animals
 		private AInfo m_exit
 		private AInfo m_fromFarAway
@@ -247,6 +249,36 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call info.talk().showStartPage(character)
 		endmethod
 		
+		// (Auftragsziel 1 des Auftrags „Rebhuhnjagd“ ist aktiv)
+		private static method infoConditionWhereAnimals takes AInfo info, ACharacter character returns boolean
+			return QuestPerdixHunt.characterQuest(character).questItem(0).isNew()
+		endmethod
+		
+		// Wo finde ich Rebhühner?
+		private static method infoActionWhereAnimals takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Wo finde ich Rebhühner?"), null)
+			call speech(info, character, true, tr("Ich gehe immer in der Nähe des Friedhofs am Bauernhof jagen."), null)
+			call speech(info, character, true, tr("Westlich davon befindet sich eine kleine Wiese zwischen dem Friedhof und den Kühen. Dort gibt es einige Rebhühner."), null)
+			
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// (Auftragsziel 1 des Auftrags „Rebhuhnjagd“ ist aktiv)
+		private static method infoConditionExplainHunt takes AInfo info, ACharacter character returns boolean
+			return QuestPerdixHunt.characterQuest(character).questItem(0).isNew()
+		endmethod
+		
+		// Erkläre mir noch mal die Rebhuhnjagd.
+		private static method infoActionExplainHunt takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Erkläre mir noch mal die Rebhuhnjagd."), null)
+			
+			call speech(info, character, true, tr("So, ich dachte du bist ein erfahrener Jäger? Schon gut, jeder fängt mal klein an."), null)
+			call speech(info, character, true, tr("Du schickst deinen Vorstehhund los, um das Rebhuhn aufzuspüren. Hat er es aufgespürt, schickst du deinen Jagdfalken in die Nähe. Er hält sich bereit."), null)
+			call speech(info, character, true, tr("Dein Vorstehhund muss dann das Rebhuhn aufscheuchen. Es fliegt los und dein Falke greift es sich. Lass dir aber nicht zu viel Zeit, sonst verschwindet das Rebhuhn wieder."), null)
+			
+			call info.talk().showStartPage(character)
+		endmethod
+		
 		// (Auftragsziel 1 des Auftrags „Rebhuhnjagd“ ist abgeschlossen und Charakter hat fünf tote Rebhühner im Rucksack)
 		private static method infoConditionAnimals takes AInfo info, ACharacter character returns boolean
 			return QuestPerdixHunt.characterQuest(character).questItem(0).isCompleted() and character.inventory().totalItemTypeCharges('I059') == QuestPerdixHunt.maxAnimals
@@ -399,6 +431,8 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			set this.m_yourDogs = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourDogs, tr("Ist das dein Hundezwinger?"))
 			set this.m_yourFalcons = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourFalcons, tr("Ist das dein Falkenkäfig?"))
 			set this.m_hunt = this.addInfo(false, false, 0, thistype.infoActionHunt, tr("Geh mit mir auf die Jagd."))
+			set this.m_whereAnimals = this.addInfo(true, false, thistype.infoConditionWhereAnimals, thistype.infoActionWhereAnimals, tr("Wo finde ich Rebhühner?"))
+			set this.m_explainHunt = this.addInfo(true, false, thistype.infoConditionExplainHunt, thistype.infoActionExplainHunt, tr("Erkläre mir noch mal die Rebhuhnjagd."))
 			set this.m_animals = this.addInfo(false, false, thistype.infoConditionAnimals, thistype.infoActionAnimals, tr("Ich habe die Rebhühner."))
 			
 			set this.m_exit = this.addExitButton()

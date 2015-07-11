@@ -367,6 +367,11 @@
 * Vervielfachung: Vorher Rucksack schließen, ansonsten haben Spiegelbilder Items aus dem Rucksack.
 * QuestWar (stattdessen Heuschreckenfähigkeit): setupUnitAtDestination -> das Unit-Pathing wird nicht deaktiviert. Und das obwohl "Disable unit pathing for Knecht" kommt.
 * QuestWar: Imps bei Wieland loop attack nicht einmalig! Tagesabläufe!
+* Dämpfung: Effektpfad geht nicht.
+* Rebhuhnjagd: Rebhuhnmodell.
+* Rebhuhnjagd: Icons für die drei Jagdfähigkeiten.
+* Jagdfalke: Braucht mehr Fähigkeiten. Muss auch in anderen Kämpfen von Nutzen sein.
+* Jagdhunde: Brauchen mehr Fähigkeiten. Müssen auch in anderen Kämpfen von Nutzen sein.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

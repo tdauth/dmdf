@@ -22,7 +22,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 			local thistype this = thistype.allocate()
 			set this.m_timer = CreateTimer()
 			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
-			call TimerStart(this.m_timer, 20.0, false, function thistype.timerFunction)
+			call TimerStart(this.m_timer, 10.0, false, function thistype.timerFunction)
 			set this.m_timerDialog = CreateTimerDialog(this.m_timer)
 			call TimerDialogSetTitle(this.m_timerDialog, tr("Zeit bis das Rebhuhn wegfliegt"))
 			call TimerDialogDisplayForPlayerBJ(true, this.m_timerDialog, whichPlayer)
@@ -63,16 +63,15 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 			// Wild aufspüren
 			if (GetSpellAbilityId() == 'A17E') then
 				if (RectContainsUnit(gg_rct_quest_perdix_hunt, GetTriggerUnit())) then
-					if (GetRandomInt(0, 2) == 1) then
+					if (GetRandomInt(0, 100) <= 80) then
 						set animal = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 'n04N', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 0.0)
-						call SetUnitInvulnerable(animal, true)
 						call DmdfHashTable.global().setHandleInteger(animal, "timer", HuntTimer.create(this.character().player(), animal))
 						call this.displayUpdateMessage(tr("Jage das Rebhuhn!"))
 					else
-						call this.displayUpdateMessage(tr("Kein Wild aufgespürt."))
+						call this.displayUpdateMessage(tr("Kein Wild aufgespürt. Versuche es noch einmal."))
 					endif
 				else
-					call this.displayUpdateMessage(tr("Kein Wild aufgespürt."))
+					call this.displayUpdateMessage(tr("Kein Wild aufgespürt. Hier scheint es keine Rebhühner zu geben. Versuche es woanders."))
 				endif
 			// Wild aufscheuchen
 			elseif (GetSpellAbilityId() == 'A17F') then
@@ -109,12 +108,15 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNWarEagle.blp")
 			call this.setDescription(tr("Der Jäger Björn aus Talras benötigt Rebhühner für den Herzog Heimrich. Um Rebhühner zu jagen braucht man einen Vorstehhund und einen Jagdfalken. Der Vorstehhund muss das Rebhuhn aufspüren und der Falke muss darüber abwarten. Sobald der Vorstehhund das Rebhuhn aufgescheucht hat und es losfliegt, stürzt der Falke sich darauf. Rebhühner befinden sich meist auf der Wiese neben dem Friedhof beim Bauernhof."))
-			call this.setReward(AAbstractQuest.rewardExperience, 300)
-			call this.setReward(AAbstractQuest.rewardGold, 30)
+			call this.setReward(AAbstractQuest.rewardExperience, 400)
+			call this.setReward(AAbstractQuest.rewardGold, 200)
 			
 			set this.m_counter = 0
 			// item 0
 			set questItem = AQuestItem.create(this, tr("Jage fünf Rebhühner."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedHunt)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedHunt)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedHunt)
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_perdix_hunt)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
