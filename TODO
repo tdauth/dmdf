@@ -365,7 +365,7 @@
 * Björn muss etwas über den Hundezwinger sagen.
 * FIXED (OpLimit): Mit neuem SpawnPoint-System enthalten die SpawnPoints oftmals nicht die Einheiten vom Start.
 * Vervielfachung: Vorher Rucksack schließen, ansonsten haben Spiegelbilder Items aus dem Rucksack.
-* QuestWar: setupUnitAtDestination -> das Unit-Pathing wird nicht deaktiviert. Und das obwohl "Disable unit pathing for Knecht" kommt.
+* QuestWar (stattdessen Heuschreckenfähigkeit): setupUnitAtDestination -> das Unit-Pathing wird nicht deaktiviert. Und das obwohl "Disable unit pathing for Knecht" kommt.
 * QuestWar: Imps bei Wieland loop attack nicht einmalig! Tagesabläufe!
 
 Test mit zwei menschlichen Spielern:

@@ -33,6 +33,24 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 				return
 			endif
 			
+			call TransmissionFromUnit(this.m_actorBjoern, tr("Was gibt es?"), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.m_actorBjoern, tr("Der Herzog benötigt Fallen zur Verteidigung eines Außenpostens."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.m_actorBjoern, tr("Ist es etwa soweit? Ist der Feind so nah?"), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
 			// TODO Finish dialog, drum cave iron.
 
 			

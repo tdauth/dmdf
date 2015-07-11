@@ -1,4 +1,4 @@
-library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestReinforcementForTalras
+library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestPerdixHunt, StructMapQuestsQuestReinforcementForTalras
 
 	struct TalkBjoern extends ATalk
 		private static constant integer smallGoldReward = 20
@@ -13,6 +13,11 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		private AInfo m_apprentice
 		private AInfo m_arrows
 		private AInfo m_arrowsDone
+		private AInfo m_whatDoYouSell
+		private AInfo m_yourDogs
+		private AInfo m_yourFalcons
+		private AInfo m_hunt
+		private AInfo m_animals
 		private AInfo m_exit
 		private AInfo m_fromFarAway
 		private AInfo m_noneOfYourBusiness
@@ -170,6 +175,95 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
+		
+		// Was verkaufst du?
+		private static method infoActionWhatDoYouSell takes AInfo info, Character character returns nothing
+			call speech(info, character, false, tr("Was verkaufst du?"), null)
+			call speech(info, character, true, tr("Alles was ein Jäger so gebrauchen kann. Einen guten Bogen, warme Bekleidung, Pfeile, Fallen und Messer. Sieh es dir einfach an."), null)
+			
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// (Björn befindet sich in der Burg)
+		private static method infoConditionBjoernIsInCastle takes AInfo info, ACharacter character returns boolean
+			return RectContainsUnit(gg_rct_area_bjoern, Npcs.bjoern())
+		endmethod
+		
+		// Ist das dein Hundezwinger?
+		private static method infoActionYourDogs takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Ist das dein Hundezwinger?"), null)
+			
+			call speech(info, character, true, tr("In der Tat, aber eigentlich gehört er dem Herzog. Dago und ich kümmern uns jedoch um die Hunde."), null)
+			
+			// (Dago ist tot)
+			if (IsUnitDeadBJ(Npcs.dago())) then
+				call speech(info, character, false, tr("Nun muss ich mich wohl alleine um sie kümmern."), null)
+			endif
+		
+			call speech(info, character, true, tr("Die Hunde wurden von uns zu den besten Jagdhunden weit und breit ausgebildet. Sie spüren jeden Fuchs und jeden Hasen auf. Ich bin ganz besonders stolz auf sie."), null)
+			call speech(info, character, true, tr("Der Herzog veranstaltet nur selten eine Treibjagd, zu besonderen Anlässen. Wenn es soweit ist, dann müssen sie gut vorbereitet sein."), null)
+			call speech(info, character, false, tr("Verkaufst du auch Hunde?"), null)
+			call speech(info, character, true, tr("Was?! Was erlaubst du dir? Diese Hunde sind mir ans Herz gewachsen. Nie würde ich sie hergeben."), null)
+			call speech(info, character, false, tr("Ich dachte sie gehören dem Herzog."), null)
+			call speech(info, character, true, tr("Ja, sicher … also gut. Der Herog hat tatsächlich zu viele Hunde. Die vermehren sich auch wie die Karnickel. Wenn du einen angemessenen Preis bezahlst, dann kannst du einen Hund haben."), null)
+			call speech(info, character, true, tr("Aber bitte behandele sie gut. Du weißt nicht wie lange ich mit einigen schon zusammenlebe. Da baut man eine Bindung auf die stärker ist als zu manchem Menschen."), null)
+
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// Ist das dein Falkenkäfig?
+		private static method infoActionYourFalcons takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Ist das dein Falkenkäfig?"), null)
+			
+			call speech(info, character, true, tr(" Ja das ist er. Die Falken darin gehören allerdings dem Herzog. Dago und ich haben diese Falken für ihn ausgebildet."), null)
+		
+			// (Dago ist tot)
+			if (IsUnitDeadBJ(Npcs.dago())) then
+				call speech(info, character, false, tr("Aber jetzt bin ich wohl alleine für sich verantwortlich (traurig)."), null)
+			endif
+			call speech(info, character, true, tr("Die Falknerei ist eine schwierige Art des Jagens, musst du wissen. Es erfordert viel Geduld und Übung, bis ein Falke ausgebildet ist. Diese Tiere besitzen einen großen persönlichen Wert für mich."), null)
+			call speech(info, character, true, tr("Aber auch für den Adel sind sie von unschätzbarem Wert. Ein ausgebildeter Jagdfalke ist fast unbezahlbar."), null)
+			call speech(info, character, true, tr("Ich hoffe der Herzog geht bald wieder auf eine Jagd mit ihnen. Das ist das größte Erlebnis für einen einfachen Jäger wie mich."), null)
+			call speech(info, character, false, tr("Kann man sie auch kaufen?"), null)
+			call speech(info, character, true, tr("Sicher, wenn du die nötigen Goldmünzen dabei hast. Das glaube ich aber kaum. Vielleicht hat der Herzog ja noch Schulden bei irgendwem, aber er gestattet tatsächlich den Verkauf dieser wunderbaren Tiere."), null)
+		
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// Geh mit mir auf die Jagd.
+		private static method infoActionHunt takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Geh mit mir auf die Jagd."), null)
+			
+			call speech(info, character, true, tr("Tut mir leid, ich habe gerade keine Zeit dafür. Kennst du dich denn überhaupt damit aus?"), null)
+			call speech(info, character, false, tr("Bestimmt."), null)
+			call speech(info, character, true, tr("Wenn du einen Vorstehhund und einen Jagdfalken hast, dann kannst du Rebhühner jagen. Der Vorstehhund zeigt dir, dass er das Huhn gefunden hat. Der Falke wartet in der Luft ab, dann lässt du vom Vorstehhund das Wild hochjagen und der Falke stürzt sich darauf."), null)
+			call speech(info, character, true, tr("Das ist nicht so einfach, aber wenn du ein erfahrener Jäger bist schaffst du das sicher. Allerdings kann ich mir nicht vorstellen, dass du dir einen Jagdfalken leisten kannst."), null)
+			call speech(info, character, true, tr("Der Herzog verspeist Rebhühner als hätte er hunderte davon in der Küche herumliegen. Du würdest mir also einen großen Gefallen tun, wenn du welche für mich jagst."), null)
+			call speech(info, character, true, tr("Ich könnte dich dafür natürlich auch bezahlen."), null)
+		
+			// Neuer Auftrag „Rebhuhnjagd“
+			call QuestPerdixHunt.characterQuest(character).enable()
+		
+			call info.talk().showStartPage(character)
+		endmethod
+		
+		// (Auftragsziel 1 des Auftrags „Rebhuhnjagd“ ist abgeschlossen und Charakter hat fünf tote Rebhühner im Rucksack)
+		private static method infoConditionAnimals takes AInfo info, ACharacter character returns boolean
+			return QuestPerdixHunt.characterQuest(character).questItem(0).isCompleted() and character.inventory().totalItemTypeCharges('I059') == QuestPerdixHunt.maxAnimals
+		endmethod
+		
+		// Ich habe die Rebhühner.
+		private static method infoActionAnimals takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Ich habe die Rebhühner."), null)
+			call speech(info, character, true, tr("Tatsächlich? Du scheinst ja ein fähiger Mann zu sein. Hier hast du deine Belohnung. Hab vielen Dank für die Mühe, da wird sich der Herzog freuen!"), null)
+			// Rebhühner aus Rucksack entfernen
+			call character.inventory().removeItemTypeCount('I059', QuestPerdixHunt.maxAnimals)
+			// Auftrag „Rebhuhnjagd“ abgeschlossen
+			call QuestPerdixHunt.characterQuest(character).complete()
+		
+			call info.talk().showStartPage(character)
+		endmethod
+		
 
 		private static method infoAction0_0And0_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, true, tr("Er jagt irgendwo südöstlich der Burg und sollte eigentlich längst schon zurückgekehrt sein."), null)
@@ -300,6 +394,13 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tr("Suchst du einen Schüler?"))
 			set this.m_arrows = this.addInfo(false, false, thistype.infoConditionArrows, thistype.infoActionArrows, tr("Kannst du Pfeile herstellen?"))
 			set this.m_arrowsDone = this.addInfo(true, false, thistype.infoConditionArrowsDone, thistype.infoActionArrowsDone, tr("Sind die Pfeile fertig?"))
+			
+			set this.m_whatDoYouSell = this.addInfo(true, false, 0, thistype.infoActionWhatDoYouSell, tr("Was verkaufst du?"))
+			set this.m_yourDogs = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourDogs, tr("Ist das dein Hundezwinger?"))
+			set this.m_yourFalcons = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourFalcons, tr("Ist das dein Falkenkäfig?"))
+			set this.m_hunt = this.addInfo(false, false, 0, thistype.infoActionHunt, tr("Geh mit mir auf die Jagd."))
+			set this.m_animals = this.addInfo(false, false, thistype.infoConditionAnimals, thistype.infoActionAnimals, tr("Ich habe die Rebhühner."))
+			
 			set this.m_exit = this.addExitButton()
 
 			// info 0
