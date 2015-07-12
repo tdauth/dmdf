@@ -18,11 +18,11 @@ library StructMapQuestsQuestMyFriendTheBear requires Asl
 			call this.setReward(AAbstractQuest.rewardExperience, 2000)
 			call this.setReward(AAbstractQuest.rewardGold, 1200)
 			//item 0
-			set questItem0 = AQuestItem.create(this, tr("Suche nach Dämonenasche"))
+			set questItem0 = AQuestItem.create(this, tr("Suche nach Dämonenasche."))
 			//item 1
-			set questItem1 = AQuestItem.create(this, tr("Suche nach Engelslocken"))
+			set questItem1 = AQuestItem.create(this, tr("Suche nach Engelslocken."))
 			//item 1
-			set questItem2 = AQuestItem.create(this, tr("Suche nach Schamanenkraut"))
+			set questItem2 = AQuestItem.create(this, tr("Suche nach Schamanenkraut."))
 			
 			return this
 		endmethod

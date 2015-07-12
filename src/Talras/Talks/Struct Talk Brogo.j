@@ -61,9 +61,9 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 			return this.m_cats.size()
 		endmethod
 
-		private method characterHasAlmostReachedCatMaximum takes ACharacter character, integer newCats returns boolean
+		private method characterHasReachedMaximum takes ACharacter character, integer newCats returns boolean
 			local player owner = character.player()
-			local boolean result = this.m_playerCatCount[GetPlayerId(owner)] + newCats == thistype.maxCats - 1
+			local boolean result = this.m_playerCatCount[GetPlayerId(owner)] + newCats >= thistype.maxCats
 			set owner = null
 			return result
 		endmethod
@@ -104,7 +104,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 				call character.displayMessage(ACharacter.messageTypeInfo, IntegerArg(tr("Erfahrungsbonus +%i"), thistype.experienceBonus))
 				call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, StringArg(tr("%s hat den Katzenbonus erhalten"), character.name()))
 			// (Brogo hat schon Katzen, egal von welchem Charakter und Charakter hat noch nicht die Maximalanzahl seiner geschenkten Katzen erreicht)
-			elseif (not talk.characterHasAlmostReachedCatMaximum(character, countedCats)) then
+			elseif (not talk.characterHasReachedMaximum(character, countedCats)) then
 				// (Charakter hat eine Katze)
 				if (countedCats == 1) then
 					call speech(info, character, true, tr("Toll, noch eine Katze."), null)
@@ -114,7 +114,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 				endif
 				call speech(info, character, true, tr("Streicheln macht Brogo Spaß. Brogo will aber noch mehr Katzen."), null)
 			// (Brogo hat schon Katzen, egal von welchem Charakter und Charakter hat die Maximalanzahl seiner geschenkten Katzen erreicht)
-			elseif (talk.cats() > 0 and talk.characterHasAlmostReachedCatMaximum(character, countedCats)) then
+			elseif (talk.cats() > 0 and talk.characterHasReachedMaximum(character, countedCats)) then
 				// (Charakter hat eine Katze)
 				if (countedCats == 1) then
 					call speech(info, character, true, tr("Toll, noch eine Katze."), null)

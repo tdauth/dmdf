@@ -27,17 +27,12 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 			set cart = null
 		endmethod
 		
-		/**
-		 * One day has 480 seconds
-		 * That means two days are 960 seconds.
-		 * That means one hour is 20 seconds.
-		 */
-		public method twoDaysPassed takes nothing returns boolean
+		public method oneMinutePassed takes nothing returns boolean
 			return this.m_timer != null and TimerGetRemaining(this.m_timer) <= 0.0
 		endmethod
 		
-		public method lessThanOneHourPassed takes nothing returns boolean
-			return this.m_timer != null and TimerGetElapsed(this.m_timer) < 20.0
+		public method lessThanFiveSecondsPassed takes nothing returns boolean
+			return this.m_timer != null and TimerGetElapsed(this.m_timer) < 5.0
 		endmethod
 		
 		private static method timerFunction takes nothing returns nothing
@@ -51,8 +46,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 			local integer i
 			set this.m_timer = CreateTimer()
 			// wait two days
-			// TODO 960.0
-			call TimerStart(this.m_timer, 20.0, false, function thistype.timerFunction)
+			call TimerStart(this.m_timer, 60.0, false, function thistype.timerFunction)
 			call AHashTable.global().setHandleInteger(this.m_timer, "this", this)
 			set this.arrowsMarker[0] =  CreateDestructable('B00L', GetRectCenterX(gg_rct_quest_reinforcement_for_talras_arrows_0), GetRectCenterY(gg_rct_quest_reinforcement_for_talras_arrows_0), 0.0, 1.0, 0)
 			call SetDestructableInvulnerable(this.arrowsMarker[0], true)
@@ -166,7 +160,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 3
-			set questItem0 = AQuestItem.create(this, tr("Warte zwei Tage auf Björns Pfeile."))
+			set questItem0 = AQuestItem.create(this, tr("Warte bis Björn die Pfeile hergestellt hat"))
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.bjoern())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)

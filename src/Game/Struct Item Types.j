@@ -610,9 +610,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			// Markward
 			set thistype.m_ringOfStrength = ItemType.createSimple('I053', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfStrength.addAbility('AIs3', true)
-			set thistype.m_ringOfWisdom = ItemType.createSimple('I055', ItemType.equipmentTypeAmulet)
+			set thistype.m_ringOfWisdom = ItemType.createSimple('I052', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfWisdom.addAbility('AIi3', true)
-			set thistype.m_ringOfDexterity = ItemType.createSimple('I055', ItemType.equipmentTypeAmulet)
+			set thistype.m_ringOfDexterity = ItemType.createSimple('I054', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfDexterity.addAbility('AIa3', true)
 			set thistype.m_ringOfLoyality = ItemType.createSimple('I055', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfLoyality.addAbility('AIx2', true)

@@ -1,4 +1,4 @@
-library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestReinforcementForTalras
+library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestReinforcementForTalras, StructMapQuestsQuestWar
 
 	struct TalkMarkward extends ATalk
 		private AInfo m_hi
@@ -35,6 +35,14 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			// (Auftrag „Die Nordmänner“ ist aktiv)
 			if (QuestTheNorsemen.quest().isNew()) then
 				call speech(info, character, true, tr("Heikel. Ihr solltet die Nordmänner um Unterstützung bitten, damit wir alle wieder ruhiger schlafen können."), null)
+			// (Auftrag „Ein neues Bündnis“ ist aktiv)
+			elseif (QuestANewAlliance.quest().isNew()) then
+				call speech(info, character, true, tr("Schlecht. Wir brauchen dringend Verstärkung. Sollten die Orks und Dunkelelfen hier eintreffen, können wir sie mit unseren wenigen Männern kaum aufhalten."), null)
+				call speech(info, character, true, tr("Ihr müsst die Hochelfin ausfindig machen. Vielleicht kann sie uns weiterhelfen."), null)
+			// (Auftrag „Krieg“ ist aktiv)
+			elseif (QuestWar.quest().isNew()) then
+				call speech(info, character, true, tr("Schlecht. Helft uns den Außenposten zu befestigen. Wenn wir ihn gegen einen Teil der feindlichen Truppen halten können, verschafft uns das Zeit auch die Burg zu verteidigen."), null)
+				call speech(info, character, true, tr("Vielleicht schaffen wir es die ersten Wellen der Orks und Dunkelelfen abzuwehren, aber nur wenn der Außenposten tatsächlich gut befestigt ist. Unser Schicksal liegt in euren Händen."), null)
 			// (Auftrag „Die Nordmänner“ ist abgeschlossen)
 			else
 				call speech(info, character, true, tr("Besser. Wenn ihr Verstärkung aus Holzbruck herbeischaffen könnt, haben wir eine echte Chance und durch den Sieg der Nordmänner über die Dunkelefen und Orks, haben wir zunächst etwas Ruhe und Zeit, um uns auf weitere Gefechte vorzubereiten."), null)

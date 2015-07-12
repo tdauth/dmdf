@@ -1,4 +1,4 @@
-library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen
+library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestWar
 
 	struct TalkHeimrich extends ATalk
 
@@ -45,6 +45,12 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 			// (Auftrag „Die Nordmänner“ ist aktiv)
 			if (QuestTheNorsemen.quest().isNew()) then
 				call speech(info, character, true, tr("Sorgt Er nur dafür, dass jene wilden Nordmänner sich meiner anschließen, damit wir aus dem Krieg als Sieger hervorgehen."), null)
+			// (Auftrag „Ein neues Bündnis“ ist aktiv)
+			elseif (QuestANewAlliance.quest().isNew()) then
+				call speech(info, character, true, tr("Er muss die Hochelfin ausfindig machen, die sich irgendwo in Talras aufhält und sie hierher bringen. Ich benötige noch mehr Unterstützung gegen den Feind."), null)
+			// (Auftrag „Krieg“ ist aktiv)
+			elseif (QuestWar.quest().isNew()) then
+				call speech(info, character, true, tr("Er muss den eroberten Außenposten befestigen lassen. Der Außenposten wird uns hoffentlich eine Zeit lang vor den Angriffen des Feindes schützen."), null)
 			// (Auftrag „Der Weg nach Holzbruck“ ist aktiv)
 			else
 				call speech(info, character, true, tr("Er muss mit den Seefahrern Richtung Norden nach Holzbruck ziehen, um dort mehr Kriegsfähige zu finden, damit wir eine Chance gegen den Feind haben."), null)

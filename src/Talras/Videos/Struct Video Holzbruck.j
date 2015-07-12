@@ -1,4 +1,4 @@
-library StructMapVideosVideoHolzbruck requires Asl, StructGameGame, StructMapQuestsQuestTheWayToHolzbruck
+library StructMapVideosVideoHolzbruck requires Asl, StructGameGame
 
 	struct VideoHolzbruck extends AVideo
 		private integer m_actorHeimrich
@@ -28,8 +28,6 @@ library StructMapVideosVideoHolzbruck requires Asl, StructGameGame, StructMapQue
 
 		public stub method onStopAction takes nothing returns nothing
 			call Game.resetVideoSettings()
-			
-			call QuestTheWayToHolzbruck.quest().enable()
 		endmethod
 
 		private static method create takes nothing returns thistype

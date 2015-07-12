@@ -130,6 +130,8 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		public static constant integer questItemGetRecruits = 17
 		public static constant integer questItemReportHeimrich = 18
 		public static constant integer maxImps = 4
+		public static constant real constructionTime = 30.0
+		public static constant real respawnTime = 20.0
 		private QuestAreaWarWieland m_questAreaWieland
 		private QuestAreaWarIronFromTheDrumCave m_questAreaIronFromTheDrumCave
 		private QuestAreaWarImpTarget m_questAreaImpTarget
@@ -276,7 +278,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local integer i
 			set this.m_imps = AGroup.create()
 			set this.m_impSpawnTimer = CreateTimer()
-			call TimerStart(this.m_impSpawnTimer, 20.0, true, function thistype.timerFunctionSpawnImps)
+			call TimerStart(this.m_impSpawnTimer, thistype.respawnTime, true, function thistype.timerFunctionSpawnImps)
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxImps)
@@ -351,11 +353,12 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call ShowUnit(whichUnit, false)
 		endmethod
 		
-		private static method groupFunctionShowAndMakeMovable takes unit whichUnit returns nothing
+		private static method groupFunctionShowAndMakeMovableAndChangeOwner takes unit whichUnit returns nothing
 			call ShowUnit(whichUnit, true)
 			call PauseUnit(whichUnit, false)
 			call SetUnitPathing(whichUnit, true)
 			call IssueImmediateOrder(whichUnit, "halt")
+			call SetUnitOwner(whichUnit, MapData.neutralPassivePlayer, true)
 		endmethod
 		
 		private static method timerFunctionSpawnWeaponCart takes nothing returns nothing
@@ -383,7 +386,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			
 			set this.m_weaponCart = CreateUnit(MapData.alliedPlayer, 'h020', GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 0.0)
 			set this.m_weaponCartSpawnTimer = CreateTimer()
-			call TimerStart(this.m_weaponCartSpawnTimer, 20.0, true, function thistype.timerFunctionSpawnWeaponCart)
+			call TimerStart(this.m_weaponCartSpawnTimer, thistype.respawnTime, true, function thistype.timerFunctionSpawnWeaponCart)
 			call Game.setAlliedPlayerAlliedToAllCharacters()
 			
 			// TODO destroy the elapsed timer
@@ -409,7 +412,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			/*
 			 * Give the imps a new home.
 			 */
-			call this.m_imps.forGroup(thistype.groupFunctionShowAndMakeMovable)
+			call this.m_imps.forGroup(thistype.groupFunctionShowAndMakeMovableAndChangeOwner)
 			call SetUnitX(this.m_imps.units()[0], GetRectCenterX(gg_rct_waypoint_imp_0))
 			call SetUnitY(this.m_imps.units()[0], GetRectCenterY(gg_rct_waypoint_imp_0))
 			call SetUnitFacing(this.m_imps.units()[0], 90.91)
@@ -434,7 +437,16 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.displayUpdate()
 			
 			set this.m_wielandsWeaponsTimer = CreateTimer()
-			call TimerStart(this.m_wielandsWeaponsTimer, 30.0, false, function thistype.timerFunctionWielandsWeapons)
+			call TimerStart(this.m_wielandsWeaponsTimer, thistype.constructionTime, false, function thistype.timerFunctionWielandsWeapons)
+		endmethod
+		
+		/**
+		 * Debugging method to finish the quest.
+		 */
+		public method moveWeaponsCartToCamp takes nothing returns nothing
+			call thistype.timerFunctionSpawnWeaponCart() // respawn
+			call SetUnitX(this.m_weaponCart, GetRectCenterX(gg_rct_quest_war_cart_destination))
+			call SetUnitY(this.m_weaponCart, GetRectCenterY(gg_rct_quest_war_cart_destination))
 		endmethod
 		
 		private static method stateEventCompletedMoveWielandsWeaponsToTheCamp takes AQuestItem questItem, trigger whichTrigger returns nothing
@@ -543,7 +555,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			
 			set this.m_supplyCart = CreateUnit(MapData.alliedPlayer, 'h022', GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 0.0)
 			set this.m_supplyCartSpawnTimer = CreateTimer()
-			call TimerStart(this.m_supplyCartSpawnTimer, 20.0, true, function thistype.timerFunctionSpawnSupplyCart)
+			call TimerStart(this.m_supplyCartSpawnTimer, thistype.respawnTime, true, function thistype.timerFunctionSpawnSupplyCart)
 			call Game.setAlliedPlayerAlliedToAllCharacters()
 			call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 5.0, 255, 255, 255, true)
 			
@@ -559,10 +571,19 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local thistype this = thistype(questItem.quest())
 			
 			set this.m_manfredsSupplyTimer = CreateTimer()
-			call TimerStart(this.m_manfredsSupplyTimer, 30.0, false, function thistype.timerFunctionManfredsSupply)
+			call TimerStart(this.m_manfredsSupplyTimer, thistype.constructionTime, false, function thistype.timerFunctionManfredsSupply)
 			
 			call this.questItem(thistype.questItemWaitForManfredsSupply).setState(thistype.stateNew)
 			call this.displayUpdate()
+		endmethod
+		
+		/**
+		 * Test method.
+		 */
+		public method moveSupplyCartToCamp takes nothing returns nothing
+			call thistype.timerFunctionSpawnSupplyCart()
+			call SetUnitX(this.m_supplyCart, GetRectCenterX(gg_rct_quest_war_cart_destination))
+			call SetUnitY(this.m_supplyCart, GetRectCenterY(gg_rct_quest_war_cart_destination))
 		endmethod
 		
 		private static method stateEventCompletedMoveManfredsSupplyToTheCamp takes AQuestItem questItem, trigger whichTrigger returns nothing
@@ -684,9 +705,15 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			// TODO enable respawn timer
 			set this.m_kunosCart = CreateUnit(MapData.alliedPlayer, 'h021', GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 0.0)
 			set this.m_kunosCartSpawnTimer = CreateTimer()
-			call TimerStart(this.m_kunosCartSpawnTimer, 20.0, true, function thistype.timerFunctionSpawnKunosCart)
+			call TimerStart(this.m_kunosCartSpawnTimer, thistype.respawnTime, true, function thistype.timerFunctionSpawnKunosCart)
 			call Game.setAlliedPlayerAlliedToAllCharacters()
 			call this.enableCartDestination()
+		endmethod
+		
+		public method moveLumberCartToCamp takes nothing returns nothing
+			call thistype.timerFunctionSpawnKunosCart()
+			call SetUnitX(this.m_kunosCart, GetRectCenterX(gg_rct_quest_war_cart_destination))
+			call SetUnitY(this.m_kunosCart, GetRectCenterY(gg_rct_quest_war_cart_destination))
 		endmethod
 		
 		private static method stateEventCompletedMoveKunosLumberToTheCamp takes AQuestItem questItem, trigger whichTrigger returns nothing
@@ -741,7 +768,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			
 			set this.m_trapsCounter = 0
 			set this.m_bjoernsTrapsSpawnTimer = CreateTimer()
-			call TimerStart(this.m_bjoernsTrapsSpawnTimer, 20.0, true, function thistype.timerFunctionSpawnBjoernsTraps)
+			call TimerStart(this.m_bjoernsTrapsSpawnTimer, thistype.respawnTime, true, function thistype.timerFunctionSpawnBjoernsTraps)
 			
 			set this.m_questAreaBjoernPlaceTraps = QuestAreaWarBjoernPlaceTraps.create(gg_rct_quest_war_bjoern_place_traps)
 		endmethod

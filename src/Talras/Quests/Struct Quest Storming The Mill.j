@@ -29,11 +29,23 @@ library StructMapQuestsQuestStormingTheMill requires Asl, StructMapMapNpcs, Stru
 		endmethod
 
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
-			return SpawnPoints.banditsAtGuntrichsMill().countUnits() == 0 and GetUnitTypeId(questItem.character().unit()) == 'H01J' // TODO add unit types for all classes
+			local thistype this = thistype(questItem.quest())
+			local integer unitTypeId = GetUnitTypeId(questItem.character().unit())
+			local integer count = 0
+			if (SpawnPoints.banditsAtGuntrichsMill().contains(GetTriggerUnit()) and RectContainsUnit(gg_rct_quest_storming_the_mill_bandits, questItem.character().unit()) and (unitTypeId == 'H01K' or unitTypeId == 'H01J' or unitTypeId == 'H01P' or unitTypeId == 'H01Q' or unitTypeId == 'H01W' or unitTypeId == 'H01V' or unitTypeId == 'H01M' or unitTypeId == 'H01L' or unitTypeId == 'H01O' or unitTypeId == 'H01N' or unitTypeId == 'H01S' or unitTypeId == 'H01R' or unitTypeId == 'H01U' or unitTypeId == 'H01T' or unitTypeId == 'H01Y' or unitTypeId == 'H01X')) then
+				set count = SpawnPoints.banditsAtGuntrichsMill().countUnits()
+				call this.displayUpdateMessage(Format(tr("%1%/%2% Wegelagerer")).i(count).i(SpawnPoints.banditsAtGuntrichsMill().countMembers()).result())
+				return count == 0
+			endif
+			
+			return false
 		endmethod
 		
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
-			call questItem.quest().displayUpdate()
+			/*
+			 * Complete even without the first item since he might have bought a sheep already.
+			 */
+			call questItem.quest().complete()
 		endmethod
 		
 		private static method stateActionCompleted takes AQuest whichQuest returns nothing

@@ -136,7 +136,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call speech(info, character, true, tr("Klar, wieso fragst du?"), null)
 			call speech(info, character, false, tr("Markward benötigt Pfeile zur Verteidigung der Burg."), null)
 			call speech(info, character, true, tr("Ich sehe schon es handelt sich um eine wichtige Angelegenheit. Pass auf ich fertige neue Pfeile an und gebe ihm noch ein paar von mir."), null)
-			call speech(info, character, true, tr("Das dauert allerdings eine Weile. Komm in zwei Tagen noch einmal vorbei."), null)
+			call speech(info, character, true, tr("Das dauert allerdings eine Weile. Komm später noch einmal vorbei."), null)
 			// Auftragsziel 3 des Auftrags „Die Befestigung von Talras“ abgeschlossen
 			call QuestReinforcementForTalras.characterQuest(character).questItem(2).setState(AAbstractQuest.stateCompleted)
 			// Auftragsziel 4 des Auftrags „Die Befestigung von Talras“ aktiviert
@@ -154,8 +154,8 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		private static method infoActionArrowsDone takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Sind die Pfeile fertig?"), null)
-			// (Zwei Tage sind vergangen)
-			if (QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character)).twoDaysPassed()) then
+			// (Genügend Zeit ist vergangen)
+			if (QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character)).oneMinutePassed()) then
 				call speech(info, character, true, tr("Ja, hier hast du sie. Am besten du platzierst sie an strategisch wichtigen Orten in der Burg."), null)
 				call speech(info, character, true, tr("Markward wird dich sowieso früher oder später mit den Pfeilen losschicken."), null)
 				// Charakter erhält Pfeilbündel
@@ -165,9 +165,9 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 				// Auftragsziel 5 des Auftrags „Die Befestigung von Talras“ aktiviert
 				call QuestReinforcementForTalras.characterQuest(character).questItem(4).setState(AAbstractQuest.stateNew)
 				call QuestReinforcementForTalras.characterQuest(character).displayUpdate()
-			// (Weniger als eine Stunde vergangen)
-			elseif (QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character)).lessThanOneHourPassed() and not this.m_bonus) then
-				call speech(info, character, true, tr("Du bist ja lustig. Es ist noch nicht mal eine Stunde vergangen!"), null)
+			// (Weniger als fünf Sekunden sind vergangen)
+			elseif (QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character)).lessThanFiveSecondsPassed() and not this.m_bonus) then
+				call speech(info, character, true, tr("Du bist ja lustig. Es sind noch nicht einmal fünf Sekunden vergangen!"), null)
 				// Erfahrungsbonus „Ungeduld“
 				call character.xpBonus(50, tr("Ungeduld"))
 				set this.m_bonus = true

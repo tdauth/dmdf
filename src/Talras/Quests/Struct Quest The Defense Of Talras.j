@@ -1,4 +1,4 @@
-library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapVideosVideoHolzbruck
+library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQuestTheWayToHolzbruck, StructMapVideosVideoHolzbruck
 
 	struct QuestAreaQuestTheDefenseOfTalras extends QuestArea
 	
@@ -32,6 +32,8 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapVideosVide
 			local thistype this = thistype(thistype.quest())
 			call this.complete()
 			call VideoHolzbruck.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			call QuestTheWayToHolzbruck.quest().enable()
 		endmethod
 		
 		public method enableTimer takes nothing returns nothing

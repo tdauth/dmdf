@@ -316,8 +316,8 @@
 * FIXED: Nach Video "Deranor der Schreckliche" werden Kameragrenzen falsch resetet (nicht zur Höhle).
 * FIXED: Verzauberter Stab: Geschoss fehlt. Muss doch Orbfähigkeit sein, ansonsten geht Geschoss nicht.
 * Verzauberter Stab: Kürzer machen.
-* Heimrich "Was geschieht nun?" neues Quest beachten und Fahrt nach Holzbruck separat prüfen.
-* Markward: "Wie ist die Lage?" neues Quest beachten.
+* FIXED: Heimrich "Was geschieht nun?" neues Quest beachten und Fahrt nach Holzbruck separat prüfen.
+* FIXED: Markward: "Wie ist die Lage?" neues Quest beachten.
 * Irmina: Fahrt nach Holzbruck prüfen, neues Quest.
 * FIXED: QuestArea deaktivieren, nachdem einmal aktiviert!!!
 * DONE: Drachentöterin sollte Laden auf dem Bauernhof bekommen, wo man Schattensteine kaufen kann.
@@ -354,15 +354,15 @@
 * FIXED: Auftrag "Krieg", alle Ziele sind direkt aktiv.
 * FIXED: Schmied Wieland!.
 * Waldläufer wird durch Sprinten eventuell sehr langsam. Hängt mit Lauern zusammen??
-* Imps können nicht bei Wieland abgegeben werden.
+* FIXED: Imps können nicht bei Wieland abgegeben werden.
 * Auftrag "Krieg": Videos schreiben und einbauen.
 * Computer-Kontrolle vom Spieler MapData.alliedPlayer deaktivieren. Knechte laufen zurück usw. usw.
 * Extramarkierung für die Fallenplatzierung am Außenposten einbauen. Es muss deutlich werden wo die Fallen hinkommen.
 * Auftrag "Krieg" aufteilen, ist viel zu unübersichtlich: Waffen von Wieland, Holz von Kuno, Nahrung von Manfred, Fallen von Björn, Rekruten vom Bauernhof.
-* Video-Fade kürzer machen: Siehe Bonus-Kampagne.
+* FIXED: Video-Fade kürzer machen: Siehe Bonus-Kampagne.
 * FIXED: Pfeilhagel verursacht keinen Schaden. Der originale Zauberverstärker muss erhalten bleiben: http://www.wc3c.net/showthread.php?t=101804
 * Charakterübersicht: Balken sind nicht ausgefüllt obwohl volle Werte (Leben, Mana).
-* Björn muss etwas über den Hundezwinger sagen.
+* FIXED: Björn muss etwas über den Hundezwinger sagen.
 * FIXED (OpLimit): Mit neuem SpawnPoint-System enthalten die SpawnPoints oftmals nicht die Einheiten vom Start.
 * Vervielfachung: Vorher Rucksack schließen, ansonsten haben Spiegelbilder Items aus dem Rucksack.
 * QuestWar (stattdessen Heuschreckenfähigkeit): setupUnitAtDestination -> das Unit-Pathing wird nicht deaktiviert. Und das obwohl "Disable unit pathing for Knecht" kommt.
@@ -372,6 +372,8 @@
 * Rebhuhnjagd: Icons für die drei Jagdfähigkeiten.
 * Jagdfalke: Braucht mehr Fähigkeiten. Muss auch in anderen Kämpfen von Nutzen sein.
 * Jagdhunde: Brauchen mehr Fähigkeiten. Müssen auch in anderen Kämpfen von Nutzen sein.
+* Zauberring-Icon: disabled icon fehlt.
+* Ring der Weisheit: Hat keinen ItemType.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
@@ -406,7 +408,7 @@ Test mit zwei menschlichen Spielern:
 * Wachendialog fertig machen.
 * Gesegnetes Schwert zwei mal oder Inventarfehler.
 * FIXED: Markwards gesegnetes Schwert nicht verkaufbar.
-* Trotz Bogen kann man Schild tragen, Zweihandwaffen.
+* FIXED: Trotz Bogen kann man Schild tragen, Zweihandwaffen.
 * DONE: Spruchrolle einbauen, die Gegenstände für Mana herteleportiert, die einem gehören.
 * Vorräte anderes Icon.
 * Lothar und Björn und Guntrich brauchen anderes Modell. Es gibt noch Villagermodelle auf Hive.
@@ -419,7 +421,7 @@ Test mit zwei menschlichen Spielern:
 * DONE: Orklager Zeugs reinlegen, Kisten.
 * Passive Zauber automatisch nicht in die Favoriten.
 * Aus Favoriten entfernen fehlt?!
-* Ansicht weiter weg machen, möglich machen über Hauptmenü.
+* FIXED: Ansicht weiter weg machen, möglich machen über Hauptmenü.
 * FIXED: Riesenfell immer droppen.
 * FIXED: Riesenfellquest kann man schon mit zwei Fellen beenden und sie werden nicht entfernt.
 * FIXED: Sisgards Dialog wird allen angezeigt.

@@ -17,11 +17,14 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 		endmethod
 		
 		private static method stateEventCompleted2 takes AQuestItem questItem, trigger whichTrigger returns nothing
-			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_the_dark_cult)
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
 
 		private static method stateConditionCompleted2 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0
+			/*
+			 * Whenever a unit dies and the deacon is already dead finish this quest.
+			 */
+			return SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0
 		endmethod
 
 		private static method create takes ACharacter character returns thistype

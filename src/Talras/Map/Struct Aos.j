@@ -442,10 +442,6 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			//haldars camp
 			//baldars camp
 			//call SetUnitOwner(gg_unit_h00B_0200, thistype.m_baldarsUser, true)
-			call SetUnitOwner(gg_unit_h00B_0005, thistype.m_baldarsUser, true)
-			call SetUnitOwner(gg_unit_h00B_0023, thistype.m_baldarsUser, true)
-			call SetUnitOwner(gg_unit_h00B_0024, thistype.m_baldarsUser, true)
-			call SetUnitOwner(gg_unit_h00B_0025, thistype.m_baldarsUser, true)
 			//call SetUnitOwner(gg_unit_u000_0010, thistype.m_baldarsUser, true) // Lager
 			call SetUnitOwner(gg_unit_u001_0190, thistype.m_baldarsUser, true) // worker
 			call SetUnitOwner(gg_unit_u001_0191, thistype.m_baldarsUser, true) // worker
