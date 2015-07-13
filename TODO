@@ -373,7 +373,19 @@
 * Jagdfalke: Braucht mehr Fähigkeiten. Muss auch in anderen Kämpfen von Nutzen sein.
 * Jagdhunde: Brauchen mehr Fähigkeiten. Müssen auch in anderen Kämpfen von Nutzen sein.
 * Zauberring-Icon: disabled icon fehlt.
-* Ring der Weisheit: Hat keinen ItemType.
+* FIXED: Ring der Weisheit: Hat keinen ItemType.
+* Nordmänner schwächer machen.
+* Ricman und Wigberht schwächer machen, siehe Orks und Dunkelelfen.
+* Wigberht actor in video Wigberht und character actor werden beim Überspringen nicht immer entfernt!
+* Drachentöterin läuft in Videos immer weg sobald Gegner in der Nähe sind!
+* Quest "Die Verteidigung von Talras": Video "Holzbruck" wird nicht richtig abgespielt, neues Quest wird nicht richtig aktiviert.
+* Wiederbelebungen während Video pausieren.
+* Klippen unterhalb von Fulco mit Blockern versehen, ansonsten läuft Wigberht dorthin.
+* Cheat "afterwar": Immer wenn Charaktere in Gebiet bewegt werden muss geprüft werden ob sie sich bereits darin befinden. In diesem Fall müssen sie zuvor wegbewegt werden.
+* FIXED: Armbrustschütze rechts oben im Orklager gehört nicht zum Spawn Point.
+* Video "Upstream": Das Schiff sollte gerade ausfahren und sich nicht ständig drehen.
+* Video "Upstream": Der Erzähler muss so da stehen, dass man das Gelände unterhalb des Berges noch sieht.
+* Video "Upstream": Die Drachentöterin sollte mit fahren.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

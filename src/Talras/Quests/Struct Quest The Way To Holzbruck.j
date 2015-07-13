@@ -3,7 +3,7 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs, St
 	struct QuestAreaTheWayToHolzbruck extends QuestArea
 	
 		public stub method onCheck takes nothing returns boolean
-			return QuestTheWayToHolzbruck.quest.evaluate().isCompleted()
+			return true
 		endmethod
 	
 		public stub method onStart takes nothing returns nothing
@@ -29,9 +29,9 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs, St
 			local thistype this = thistype.allocate(0, tr("Der Weg nach Holzbruck"))
 			local AQuestItem questItem0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNShip.blp")
-			call this.setDescription(tr("Da der Herzog noch mehr Verbündete benötigt, sollt ihr in die flussaufwärts gelegene Stadt Holzbruck ziehen, um dort weitere Kriegsleute zu sammeln."))
+			call this.setDescription(tr("Da der Herzog noch mehr Verbündete benötigt, sollt ihr in die flussaufwärts gelegene Stadt Holzbruck ziehen, um dort weitere Kriegsleute zu sammeln. ACHTUNG: Das Spiel endet mit diesem Auftrag!"))
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Bittet die Nordmänner, euch nach Holzbruck zu bringen."))
+			set questItem0 = AQuestItem.create(this, tr("Bittet die Nordmänner, euch nach Holzbruck zu bringen (ACHTUNG: Das Spiel endet hier!)."))
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.wigberht())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)

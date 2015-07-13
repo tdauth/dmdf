@@ -87,7 +87,7 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (thistype.areaContainsCharacter(ACharacter.playerCharacter(Player(i)))) then
-					call CameraSetEQNoiseForPlayer(Player(i), 5.0)
+					call CameraSetTargetNoiseForPlayer(Player(i), 5.0, 5.0)
 					call ForceAddPlayer(whichForce, Player(i))
 				endif
 				set i = i + 1
@@ -96,7 +96,10 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (IsPlayerInForce(Player(i), whichForce)) then
+					debug call Print("Disable noise for player " + GetPlayerName(Player(i)))
 					call CameraClearNoiseForPlayer(Player(i))
+					// TODO not during video
+					call ResetToGameCameraForPlayer(Player(i), 0.0)
 				endif
 				set i = i + 1
 			endloop

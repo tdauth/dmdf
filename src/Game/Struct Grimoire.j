@@ -827,8 +827,8 @@ endif
 			set this.m_currentSpell = 0
 			set this.m_spells = AIntegerVector.create()
 
-			set this.m_spellNextPage = NextPage.create.evaluate(this)
 			set this.m_spellPreviousPage = PreviousPage.create.evaluate(this)
+			set this.m_spellNextPage = NextPage.create.evaluate(this)
 			set this.m_spellIncrease = Increase.create.evaluate(this)
 			set this.m_spellDecrease = Decrease.create.evaluate(this)
 			set this.m_spellAddToFavourites = AddToFavourites.create.evaluate(this)

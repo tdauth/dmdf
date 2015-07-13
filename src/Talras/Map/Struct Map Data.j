@@ -543,6 +543,10 @@ static if (DEBUG_MODE) then
 			call VideoRecruitTheHighElf.video().play()
 		endmethod
 		
+		private static method onCheatActionHolzbruck takes ACheat cheat returns nothing
+			call VideoHolzbruck.video().play()
+		endmethod
+		
 		private static method moveCharactersToRect takes rect whichRect returns nothing
 			local integer i = 0
 			loop
@@ -1147,6 +1151,7 @@ static if (DEBUG_MODE) then
 			call ACheat.create("deranor", true, thistype.onCheatActionDeranor)
 			call ACheat.create("deranorsdeath", true, thistype.onCheatActionDeranorsDeath)
 			call ACheat.create("recruitthehighelf", true, thistype.onCheatActionRecruitTheHighElf)
+			call ACheat.create("holzbruck", true, thistype.onCheatActionHolzbruck)
 			// plot cheats
 			call ACheat.create("aftertalras", true, thistype.onCheatActionAfterTalras)
 			call ACheat.create("afterthenorsemen", true, thistype.onCheatActionAfterTheNorsemen)
