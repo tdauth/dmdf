@@ -179,7 +179,6 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 
 			call Game.resetVideoSettings()
 			call QuestTheNorsemen.quest.evaluate().questItem(1).setState(AAbstractQuest.stateNew)
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Sprechen Sie Wigberht an, um die Vorhut der Orks anzugreifen."))
 		endmethod
 
 		private static method create takes nothing returns thistype

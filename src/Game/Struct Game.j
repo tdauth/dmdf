@@ -176,7 +176,15 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, L
 		endmethod
 
 		public static method missingPlayers takes nothing returns integer
-			return GetPlayers() - CountPlayingPlayers()
+			local integer result = 0
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (GetPlayerController(Player(i)) != MAP_CONTROL_NONE) then
+					set result = result + 1
+				endif
+				set i = i + 1
+			endloop
 		endmethod
 
 		public static method registerOnDamageAction takes ADamageRecorderOnDamageAction onDamageAction returns nothing
@@ -301,9 +309,16 @@ endif
 		private static method triggerActionLevel takes nothing returns nothing
 			local unit triggerUnit = GetTriggerUnit()
 			local Character character = ACharacter.getCharacterByUnit(triggerUnit)
-			local integer bonus
-			call character.grimoire().addSkillPoints.evaluate(MapData.levelSpellPoints)
-
+			local integer levels = GetHeroLevel(triggerUnit) - character.grimoire().heroLevel.evaluate()
+			local integer i = 0
+			loop
+				exitwhen (i == levels)
+				call character.grimoire().addSkillPoints.evaluate(MapData.levelSpellPoints)
+				set i = i + 1
+			endloop
+			debug call Print("Levels: " + I2S(levels))
+			call character.grimoire().setHeroLevel.evaluate(GetHeroLevel(triggerUnit))
+			
 			// reached last level TODO: maybe we should give him a little present
 			if (GetHeroLevel(triggerUnit) == MapData.maxLevel) then
 				call character.displayFinalLevel(tre("Sie haben die letzte Stufe erreicht.", "You have reached the final level."))
@@ -790,9 +805,20 @@ endif
 		 * - Hides all items.
 		 * - Hides all character owner units.
 		 * - Removes specific buffs.
+		 * - Disables all sell abilities for all players to prevent arrows in videos.
 		 */
 		public static method initVideoSettings takes nothing returns nothing
 			local integer i
+			// Disable all abilities which might be annoying it a video
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYER_SLOTS)
+				call SetPlayerAbilityAvailable(Player(i), 'Aneu', false)
+				call SetPlayerAbilityAvailable(Player(i), 'Ane2', false)
+				call SetPlayerAbilityAvailable(Player(i), 'Asid', false)
+				call SetPlayerAbilityAvailable(Player(i), 'Apit', false)
+				set i = i + 1
+			endloop
 			call thistype.m_weather.disable()
 			call Fellow.reviveAllForVideo.evaluate()
 			call SpawnPoint.pauseAll()
@@ -809,16 +835,6 @@ endif
 					call AGroup(thistype.m_hiddenUnits[i]).addUnitsOfPlayer(Player(i), Filter(function thistype.filterShownUnit))
 					call AGroup(thistype.m_hiddenUnits[i]).forGroup(thistype.hideUnit)
 				endif
-				set i = i + 1
-			endloop
-			// Disable all abilities which might be annoying it a video
-			set i = 0
-			loop
-				exitwhen (i == bj_MAX_PLAYER_SLOTS)
-				call SetPlayerAbilityAvailable(Player(i), 'Aneu', false)
-				call SetPlayerAbilityAvailable(Player(i), 'Ane2', false)
-				call SetPlayerAbilityAvailable(Player(i), 'Asid', false)
-				call SetPlayerAbilityAvailable(Player(i), 'Apit', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -838,20 +854,6 @@ endif
 
 		public static method resetVideoSettings takes nothing returns nothing
 			local integer i
-			call thistype.resetCameraBounds()
-			call thistype.m_weather.enable()
-			call EnableTrigger(thistype.m_levelTrigger)
-			call EnableTrigger(thistype.m_killTrigger)
-			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterHiddenItem), function thistype.showItem)
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (Character.playerCharacter(Player(i)) != 0) then
-					call AGroup(thistype.m_hiddenUnits[i]).forGroup(thistype.showUnit)
-					call AGroup(thistype.m_hiddenUnits[i]).units().clear()
-				endif
-				set i = i + 1
-			endloop
 			// Enable all abilities which might be annoying it a video
 			set i = 0
 			loop
@@ -862,13 +864,26 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'Apit', true)
 				set i = i + 1
 			endloop
-			
+			call thistype.resetCameraBounds()
+			call thistype.m_weather.enable()
+			call EnableTrigger(thistype.m_levelTrigger)
+			call EnableTrigger(thistype.m_killTrigger)
 			/*
 			 * Make sure that not default wc3 music is played.
 			 */
 			call thistype.setDefaultMapMusic()
 			call SpawnPoint.resumeAll()
 			call ItemSpawnPoint.resumeAll()
+			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterHiddenItem), function thistype.showItem)
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (Character.playerCharacter(Player(i)) != 0) then
+					call AGroup(thistype.m_hiddenUnits[i]).forGroup(thistype.showUnit)
+					call AGroup(thistype.m_hiddenUnits[i]).units().clear()
+				endif
+				set i = i + 1
+			endloop
 		endmethod
 
 		public static method addUnitMoveSpeed takes unit whichUnit, real value returns real

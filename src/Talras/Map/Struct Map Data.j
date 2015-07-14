@@ -1188,7 +1188,7 @@ endif
 			local integer missingPlayers =  Game.missingPlayers()
 			local real handicap = 1.0 - missingPlayers * 0.05
 			// decrease difficulty for others if players are missing
-			if (handicap > 0.0) then
+			if (missingPlayers > 0) then
 				call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
 				call TriggerSleepAction(4.0)
 				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())

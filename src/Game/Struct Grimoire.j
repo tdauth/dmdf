@@ -26,6 +26,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		//private unit m_unit
 		private integer m_page
 		private boolean m_pageIsShown
+		private integer m_heroLevel
 		private integer m_skillPoints
 		private AIntegerVector m_favourites
 		private Spell m_currentSpell
@@ -258,6 +259,19 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				call ForceUIKeyBJ(GetTriggerPlayer(), thistype.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
 			endif
 			//debug call Print("issued: " + GetObjectName(this.ability()))
+		endmethod
+		
+		/**
+		 * Sets the character's hero level to \p heroLevel.
+		 * This does not actually change any hero level but stores the current hero level which is required for reacting on level up events.
+		 * Since level up events may occur once if multiple levels have been gained too this value allows you to check what was the old level.
+		 */
+		public method setHeroLevel takes integer heroLevel returns nothing
+			set this.m_heroLevel = heroLevel
+		endmethod
+		
+		public method heroLevel takes nothing returns integer
+			return this.m_heroLevel
 		endmethod
 		
 		/**
@@ -822,6 +836,7 @@ endif
 			//call SetUnitInvulnerable(this.unit(), true)
 			set this.m_page = 0
 			set this.m_pageIsShown = false
+			set this.m_heroLevel = 0
 			set this.m_skillPoints = 0
 			set this.m_favourites = AIntegerVector.create()
 			set this.m_currentSpell = 0

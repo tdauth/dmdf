@@ -17,6 +17,30 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 		private static constant real timeStartValue = 30.0
 		private static constant real timeLevelValue = -5.0
 		
+		private method condition takes nothing returns boolean
+			if (IsUnitType(GetSpellTargetUnit(), UNIT_TYPE_SUMMONED)) then
+				return true
+			elseif (GetUnitAllianceStateToUnit(this.character().unit(), GetSpellTargetUnit()) == bj_ALLIANCE_UNALLIED) then
+				// TODO all negative magic stuff
+				if (UnitHasBuffsEx(GetSpellTargetUnit(), true, false, true, true, false, false, false)) then
+					return true
+				else
+					call this.character().displayMessage(ACharacter.messageTypeError, tr("Gegner hat keine positiven Zauberverstärker."))
+				endif
+			else
+				// TODO all positive magic stuff
+				if (UnitHasBuffsEx(GetSpellTargetUnit(), false, true, true, true, false, false, false)) then
+					return true
+				else
+					call this.character().displayMessage(ACharacter.messageTypeError, tr("Verbündeter hat keine negativen Zauberverstärker."))
+				endif
+			endif
+			
+			call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel muss eine beschworene Einheit oder eine Einheit mit Zauberverstärkern sein."))
+			
+			return false
+		endmethod
+		
 		private method action takes nothing returns nothing
 			local real time
 			debug call Print("Arcane Time!")
@@ -83,7 +107,7 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			call this.addGrimoireEntry('A10M', 'A10R')
 			call this.addGrimoireEntry('A10N', 'A10S')
 			call this.addGrimoireEntry('A10O', 'A10T')
