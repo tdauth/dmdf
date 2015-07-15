@@ -12,8 +12,8 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was machst du hier?"), null)
 			call speech(info, character, true, tr("Leben. Dies ist mein Heim, Fremder. Vielleicht etwas ungewohnt für einen aus unserem Königreich Stammenden, aber hier lässt es sich durchaus leben."), null)
-			call speech(info, character, true, tr("Ich bin Ursula, Waldläuferin, Druidin und Heilerin. Das heißt, ich bin keine Jägerin, denn ich respektiere das Leben, sei es nun das eines Menschen, Hochelfen, Tieres oder sonst irgendeines. Druidin bedeutet, dass ich an die Göttin Krepar, die Göttin der Natur, glaube."), null)
-			call speech(info, character, true, tr("Ich weiß, viele Leute haben sich den Göttern abgewandt, selbst im Adel ist es mehr eine Art Zeitvertreib und Symbolik für Wohlstand und Rechtschaffenheit geworden. Aber ich glaube aus dem tiefsten Herzen heraus."), null)
+			call speech(info, character, true, tr("Ich bin Ursula, Waldläuferin, Druidin und Heilerin. Das heißt, ich bin keine Jägerin, denn ich respektiere das Leben, sei es nun das eines Menschen, Hochelfen, Tieres oder eines anderen Lebewesens. Druidin bedeutet, dass ich an die Göttin Krepar, die Göttin der Natur, glaube."), null)
+			call speech(info, character, true, tr("Ich weiß, viele Leute haben sich von den Göttern abgewandt, selbst im Adel ist es mehr zu einer Art Zeitvertreib und Symbolik für Wohlstand und Rechtschaffenheit geworden. Aber ich glaube aus meinem tiefsten Inneren heraus."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -51,7 +51,7 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 		// Erzähl mir mehr von Krepar.
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Erzähl mir mehr von Krepar."), null)
-			call speech(info, character, true, tr("Krepar ist eine der der vier Götter. Einst war ich eine Dienerin der Kleriker, welche den Gott Urang verehren. Bei diesen lernte ich durch meine Stellung als Bibliothekarin der großen Bibliothek des Ordens in Klerfurt eine Menge über die alte Gesellschaft, die sich noch mehr zur Natur verbunden fühlte."), null)
+			call speech(info, character, true, tr("Krepar ist eine der vier Götter. Einst war ich eine Dienerin der Kleriker, welche den Gott Urkarus verehren. Bei diesen lernte ich durch meine Stellung als Bibliothekarin der großen Bibliothek des Ordens in Klerfurt eine Menge über die alte Gesellschaft, die sich noch stärker zur Natur verbunden fühlte."), null)
 			call speech(info, character, true, tr("Damals lebten die Leute noch in einfachen Hütten in den Wäldern und waren eins mit der Natur."), null)
 			call speech(info, character, true, tr("Druiden, weise Persönlichkeiten, beteten Krepar, die Göttin der Natur und Symbiose an. Auf ihren Rat hörten die Bewohner der kleinen Siedlungen und suchten ihren Rat, wenn es etwas zu bewältigen gab."), null)
 			call speech(info, character, true, tr("Anders als die heutigen Orden, gab es weniger durch die Herkunft bedingte Herrschaftshierarchien. Man respektierte die Alten und Weisen, denn ihr Rat war meist der beste."), null)
@@ -85,10 +85,10 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 			call speech(info, character, true, tr("Sehe ich denn aus als bräuchte ich Hilfe?"), null)
 			call speech(info, character, false, tr("Na ja …"), null)
 			call speech(info, character, true, tr("Schon gut, ich brauche tatsächlich Hilfe."), null)
-			call speech(info, character, true, tr("Ganz in der Nähe gibt es eine alte Eiche. Sie spendete mir stets Schatten während meiner langen Stunden des Nachdenkens. Doch nun haben starke, wilde Kreaturen die Eiche für sich in Anspruch genommen."), null)
+			call speech(info, character, true, tr("Ganz in der Nähe gibt es eine alte Eiche. Sie spendete mir stets Schatten während meiner langen Stunden des Philosophierens über dieses einfache Leben, das Krepar mir geschenkt hat. Doch nun haben starke, wilde Kreaturen die Eiche für sich in Anspruch genommen."), null)
 			call speech(info, character, true, tr("Da aber auch sie Geschöpfe Krepars sind, möchte ich, dass du sie nicht tötest, sondern ihre Geister einfängst."), null)
 			call speech(info, character, false, tr("Wie soll ich das anstellen?"), null)
-			call speech(info, character, true, tr("Dazu gebe ich dir diesen Totem. Bring mir den Geist von einer der Kreaturen, damit ich sie verstehen lerne und mich mit ihnen anfreunden kann und ich werde dir etwas schenken."), null)
+			call speech(info, character, true, tr("Dazu gebe ich dir diesen Totem. Bringe mir den Geist von einer der Kreaturen, damit ich sie verstehen lerne und mich mit ihnen anfreunden kann und ich werde dir etwas schenken."), null)
 			call speech(info, character, false, tr("Und was?"), null)
 			call speech(info, character, true, tr("Das siehst du dann noch."), null)
 			call info.talk().showRange(11, 12, character)
@@ -102,8 +102,8 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 		// Du kannst die Geister wilder Kreaturen einfangen?
 		private static method infoAction6 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Du kannst die Geister wilder Kreaturen einfangen?"), null)
-			call speech(info, character, true, tr("Ja, jeder kann das. Man braucht nur Geduld und muss von der Vorstellung der Vorherrschaft seiner eigenen Rasse wegkommen. Zeige dem Lebewesen deinen Respekt. Wenn du das beherrscht, wird es auch dich respektieren und das ermöglicht dir, zu seinem Geist durchzudringen."), null)
-			call speech(info, character, true, tr("Natürlich lernt man das nicht mal eben so, vielleicht ist „einfangen“ auch das falsche Wort. Man versucht vielmehr eins zu werden mit der Kreatur und wenn sie deine gute Absicht bemerkt, lässt sie dich an ihren Geist."), null)
+			call speech(info, character, true, tr("Ja, jeder kann das. Man braucht nur Geduld und muss von der Vorstellung der Vorherrschaft seiner eigenen Art wegkommen. Zeige dem Lebewesen deinen Respekt. Wenn du das beherrscht, wird es auch dich respektieren und das ermöglicht dir, zu seinem Geist durchzudringen."), null)
+			call speech(info, character, true, tr("Natürlich lernt man das nicht mal eben so, vielleicht ist „einfangen“ auch das falsche Wort. Man versucht vielmehr eins zu werden mit der Kreatur und wenn sie deine gute Absicht bemerkt, lässt sie dich an ihren Geist heran."), null)
 			call speech(info, character, false, tr("Aber was ist daran eine gute Absicht?"), null)
 			call speech(info, character, true, tr("Nun, ich lasse den Geist ja wieder frei, nachdem wir Informationen miteinander ausgetauscht haben."), null)
 			call speech(info, character, false, tr("Informationen?"), null)
@@ -121,9 +121,9 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 			call speech(info, character, false, tr("Hier hast du deinen Totem wieder."), null)
 			// Charakter gibt Ursula den Totem zurück.
 			call character.inventory().removeItemType(QuestTheOaksPower.itemTypeId)
-			call speech(info, character, true, tr("Du hast es also geschafft? Gut gemacht. Pass auf, ich gebe dir einen anderen Totem mit einem Teil der Seele dieser Kreatur."), null)
-			call speech(info, character, true, tr("Mit dem Toten wirst du in der Lage sein, die Kreatur herbeizurufen, zumindest mit einem Teil ihrer ursprünglichen Stärke. Allerdings wird sie keinen eigenen Instinkt haben und dir stets treu ergeben sein."), null)
-			call speech(info, character, true, tr("Ziehe einen guten Nutzen daraus und behandle sie gut. Hier hast du noch ein paar Goldmünzen für deine Hilfe. Nun kann ich endlich eins werden mit diesen Wesen und mein Wissen mit ihm teilen."), null)
+			call speech(info, character, true, tr("Du hast es also geschafft? Gut gemacht. Pass auf, ich gebe dir einen anderen Totem mit einem Teil der Kraft dieser Kreatur."), null)
+			call speech(info, character, true, tr("Mit dem Toten wirst du in der Lage sein, die Kreatur herbeizurufen, zumindest mit einem Teil ihrer ursprünglichen Stärke. Allerdings wird sie nicht ihrem eigenen Instinkt folgen, sondern dir stattdessen stets treu ergeben sein."), null)
+			call speech(info, character, true, tr("Ziehe einen guten Nutzen daraus und behandle sie gut. Hier hast du noch ein paar Goldmünzen für deine Hilfe. Nun kann ich endlich eins werden mit diesen Wesen und mein Wissen mit ihnen teilen und auch von ihnen lernen."), null)
 			// Auftrag „Die Kraft der Eiche“ abgeschlossen.
 			call QuestTheOaksPower.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
