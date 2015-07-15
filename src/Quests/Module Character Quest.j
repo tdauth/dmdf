@@ -4,15 +4,12 @@ library ModuleQuestsCharacterQuest requires Asl
 		private static thistype array m_characterQuest[6] /// @todo MapData.maxPlayers
 
 		public static method initQuest takes nothing returns nothing
-			local player user
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				set user = Player(i)
-				if (ACharacter.playerCharacter(user) != 0) then
-					set thistype.m_characterQuest[i] = thistype.create.evaluate(ACharacter.playerCharacter(user))
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					set thistype.m_characterQuest[i] = thistype.create.evaluate(ACharacter.playerCharacter(Player(i)))
 				endif
-				set user = null
 				set i = i + 1
 			endloop
 		endmethod

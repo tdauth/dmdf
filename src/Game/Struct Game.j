@@ -155,7 +155,6 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, L
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions
 		private static AWeather m_weather
-		private static trigger m_levelTrigger
 		private static trigger m_killTrigger
 		private static AIntegerVector array m_hiddenUnits[6] /// \todo \ref MapData.maxPlayers
 
@@ -185,6 +184,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, L
 				endif
 				set i = i + 1
 			endloop
+			return result
 		endmethod
 
 		public static method registerOnDamageAction takes ADamageRecorderOnDamageAction onDamageAction returns nothing
@@ -298,43 +298,6 @@ endif
 			set thistype.m_weather = AWeather.create()
 		endmethod
 
-		private static method triggerConditionLevel takes nothing returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = ACharacter.isUnitCharacter(triggerUnit)
-			set triggerUnit = null
-
-			return result
-		endmethod
-
-		private static method triggerActionLevel takes nothing returns nothing
-			local unit triggerUnit = GetTriggerUnit()
-			local Character character = ACharacter.getCharacterByUnit(triggerUnit)
-			local integer levels = GetHeroLevel(triggerUnit) - character.grimoire().heroLevel.evaluate()
-			local integer i = 0
-			loop
-				exitwhen (i == levels)
-				call character.grimoire().addSkillPoints.evaluate(MapData.levelSpellPoints)
-				set i = i + 1
-			endloop
-			debug call Print("Levels: " + I2S(levels))
-			call character.grimoire().setHeroLevel.evaluate(GetHeroLevel(triggerUnit))
-			
-			// reached last level TODO: maybe we should give him a little present
-			if (GetHeroLevel(triggerUnit) == MapData.maxLevel) then
-				call character.displayFinalLevel(tre("Sie haben die letzte Stufe erreicht.", "You have reached the final level."))
-				call character.displayFinalLevelToAllOthers(Format(tre("%1% hat die letzte Stufe erreicht.", "%1% has reached the final level.")).s(character.name()).result())
-			endif
-
-			set triggerUnit = null
-		endmethod
-
-		private static method createLevelTrigger takes nothing returns nothing
-			set thistype.m_levelTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(thistype.m_levelTrigger, EVENT_PLAYER_HERO_LEVEL)
-			call TriggerAddCondition(thistype.m_levelTrigger, Condition(function thistype.triggerConditionLevel))
-			call TriggerAddAction(thistype.m_levelTrigger, function thistype.triggerActionLevel)
-		endmethod
-
 		private static method triggerActionKill takes nothing returns nothing
 			/*
 			 * Characters get only experience if a creep is being killed.
@@ -438,7 +401,6 @@ static if (DMDF_VIOLENCE) then
 			call thistype.registerOnDamageActionOnce(thistype.onDamageActionViolence) // blood/violence system
 endif
 			call thistype.createWeather()
-			call thistype.createLevelTrigger()
 			call thistype.createKillTrigger()
 			// game guis
 			call Credits.init0.evaluate()
@@ -817,13 +779,16 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'Ane2', false)
 				call SetPlayerAbilityAvailable(Player(i), 'Asid', false)
 				call SetPlayerAbilityAvailable(Player(i), 'Apit', false)
+				
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					call Character(ACharacter.playerCharacter(Player(i))).grimoire().disableLevelTrigger()
+				endif
 				set i = i + 1
 			endloop
 			call thistype.m_weather.disable()
 			call Fellow.reviveAllForVideo.evaluate()
 			call SpawnPoint.pauseAll()
 			call ItemSpawnPoint.pauseAll()
-			call DisableTrigger(thistype.m_levelTrigger)
 			call DisableTrigger(thistype.m_killTrigger)
 			//call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_UI, 1.0) /// @todo TEST
 			call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_MUSIC, 1.0)
@@ -862,11 +827,15 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'Ane2', true)
 				call SetPlayerAbilityAvailable(Player(i), 'Asid', true)
 				call SetPlayerAbilityAvailable(Player(i), 'Apit', true)
+				
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					call Character(ACharacter.playerCharacter(Player(i))).grimoire().enableLevelTrigger()
+				endif
+				
 				set i = i + 1
 			endloop
 			call thistype.resetCameraBounds()
 			call thistype.m_weather.enable()
-			call EnableTrigger(thistype.m_levelTrigger)
 			call EnableTrigger(thistype.m_killTrigger)
 			/*
 			 * Make sure that not default wc3 music is played.

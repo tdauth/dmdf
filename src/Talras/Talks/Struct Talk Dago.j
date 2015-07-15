@@ -35,7 +35,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call speech(info, character, true, tr("Aber keine Sorge. Um die werde ich mich selbst kümmern."), null)
 			call speech(info, character, true, tr("Ich hab auch schon einen Plan. Ich stecke einfach die ganze verdammte Höhle in Brand und lasse diese Scheißviecher elendlich verrecken!"), null)
 			call speech(info, character, true, tr("Allerdings bräuchte ich dazu entweder ne verdammte Menge Holz oder einen guten Zauberspruch."), null)
-			call speech(info, character, true, tr("Also wenn du mal einen für mich hast ... ich würde dich selbstverständlich dafür entlohnen. Also nochmal danke für die Hilfe vorhin!"), null)
+			call speech(info, character, true, tr("Also wenn du mal einen für mich hast … ich würde dich selbstverständlich dafür entlohnen. Und noch mal danke für die Hilfe vorhin!"), null)
 			debug call Print("Before quest creation.")
 			call QuestBurnTheBearsDown.characterQuest(character).enable()
 			debug call Print("After quest creation.")
@@ -80,7 +80,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call speech(info, character, false, tr("Die Gegend hier …"), null)
 			call speech(info, character, true, tr("Ja, tut mir leid. Ich bin vom Thema abgewichen. Also, es gibt hier natürlich einmal die Burg Talras, welche dem Herzog oder besser gesagt dessen Familie gehört. Dann sind da noch die Bauern auf dem Hof im Westen. Die haben das Land vom Herzog gepachtet und sind nicht besonders gut auf ihn zu sprechen."), null)
 			call speech(info, character, true, tr("Noch weiter westlich vom Bauernhof befindet sich der Mühlberg, auf welchem Guntrichs Mühle steht und manchmal die Kühe oder Schafe der Bauern grasen."), null)
-			call speech(info, character, true, tr("Wir Jagdleute leben in der Burg. Wahrscheinlich wirst du auch noch einige Aussiedler wie den Fährmann Trommon finden, die lieber für sich leben. Ach so und seit einer Weile sind einige Krieger aus dem Norden hier angekommen. Sie haben ihr Lager etwas weiter nördlich am Fluss aufgeschlagen."), null)
+			call speech(info, character, true, tr("Wir Jagdleute leben in der Burg. Wahrscheinlich wirst du auch noch einige Aussiedler wie den Fährmann Trommon treffen, die lieber für sich leben. Ach so und vor einer Weile sind einige Krieger aus dem Norden hier angekommen. Sie haben ihr Lager etwas weiter nördlich am Fluss aufgeschlagen."), null)
 			call speech(info, character, true, tr("Weiß der Teufel, was die hier wollen!"), null)
 			call speech(info, character, true, tr("Und pass auf, wenn du durch die Wälder hier ziehst. Hier gibt’s außer den wilden Tieren auch noch Wegelagerer, die dir für ein paar Goldmünzen die Haut bei lebendigem Leibe abziehen würden. Ganz zu schweigen von den Kreaturen, die sich nördlich des Hofes und am Ostufer des Flusses rumtreiben."), null)
 			call info.talk().showStartPage(character)
@@ -228,7 +228,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Klar.
 		private static method infoActionCastle_WhatKindOfMushrooms_Yes takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Klar."), null)
-			call speech(info, character, true, tr("Das find ich aber nett. Selten geworden, dass jemand einem seine Hilfe anbietet."), null)
+			call speech(info, character, true, tr("Das finde ich aber nett. Ist selten geworden, dass jemand einem seine Hilfe anbietet."), null)
 			// Neuer Auftrag „Pilzsuche“
 			call QuestMushroomSearch.characterQuest(character).enable()
 			call info.talk().showStartPage(character)

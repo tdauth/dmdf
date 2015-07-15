@@ -1176,8 +1176,10 @@ endif
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
-				call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
-				call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
+					call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
+				endif
 				set i = i + 1
 			endloop
 			

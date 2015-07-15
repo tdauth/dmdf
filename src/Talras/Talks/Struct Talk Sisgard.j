@@ -78,7 +78,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 		// Was genau verkaufst du?
 		private static method infoActionWhatDoYouSell takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was genau verkaufst du?"), null)
-			call speech(info, character, true, tr("Tränke und magische Gegenstände aller Art. Falls du ein Zauberer oder Magier bist wirst du bei mir genau das Richtige finden."), null)
+			call speech(info, character, true, tr("Tränke und magische Gegenstände aller Art. Falls du ein Zauberer oder Magier bist, wirst du bei mir genau das Richtige finden."), null)
 			call speech(info, character, true, tr("Ich biete nur das Beste an, was ich auch selbst verwenden würde."), null)
 			call info.talk().showStartPage(character)
 		endmethod
@@ -93,8 +93,8 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, false, tr("Erzähl mir mehr von deinem Meister."), null)
 			call speech(info, character, true, tr("So, dich interessiert das also? Hmm, die meisten Leute würgen mich irgendwann ab, wenn ich mal wieder das Schwärmen von alten Zeiten anfange."), null)
 			call speech(info, character, true, tr("Mein Meister war ein großer Zauberer und sein Wissen war so umfassend, dass er selbst bei den Magiern der Hochelfen, welche sich eher mit den Elementen als mit der magischen Kraft und deren Beherrschung beschäftigen, ein hohes Ansehen genoss."), null)
-			call speech(info, character, true, tr("Das erste Mal traf ich ihn im Kloster eines Klerikerordens, in welches mich meine Eltern geschickt hatten. Leider ist das oft die einzige Möglichkeit an Bildung ranzukommen und auch wenn sie es gut meinten, dieses ganze Beten und Huldigen war todlangweilig."), null)
-			call speech(info, character, true, tr("Mein Meister war also auf der Durchreise und suchte einen Ort zum Übernachten. Ich war neugierig und fragte ihn über alles aus und da er schon lange keinen Schüler mehr gehabt hatte, bot ich  mich ihm als solchen an."), null)
+			call speech(info, character, true, tr("Das erste Mal traf ich ihn im Kloster eines Klerikerordens, in welches mich meine Eltern geschickt hatten. Leider ist das oft die einzige Möglichkeit an Bildung heranzukommen und auch wenn sie es gut meinten, dieses ganze Beten und Huldigen war todlangweilig."), null)
+			call speech(info, character, true, tr("Mein Meister war also auf der Durchreise und suchte einen Ort zum Übernachten. Ich war neugierig und fragte ihn über alles aus und da er schon lange keinen Schüler mehr gehabt hatte, bot ich mich ihm als solchen an."), null)
 			call speech(info, character, true, tr("Schließlich willigte er gegen meine Erwartungen ein und von diesem Zeitpunkt an war ich eine Schülerin der Zauberkunst."), null)
 			call speech(info, character, true, tr("Er hat mich vieles gelehrt und ihm verdanke ich so ziemlich alles, was ich heute bin. Er nahm mich mit ins Königreich der Hochelfen und Zwerge und selbst durch die Gebirge der Orks zogen wir. Wir trotzten allen Gefahren ..."), null)
 			call speech(info, character, true, tr("Doch was rede ich da. Das ist längst Vergangenheit und nun bin ich nicht mehr als eine einfache Händlerin, die ihre verbliebene Zeit weiterhin für die Studien der Zauberkünste nutzt."), null)
@@ -127,7 +127,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, true, tr("Beherrscht du denn auch die Zauberkunst?"), null)
 			call speech(info, character, false, tr("Sicher."), null)
 			call speech(info, character, true, tr("Beweise es mir! In der Nähe gibt es einen Wald, wir nennen ihn den Dunkelwald. In diesem Wald stehen einige Runensteine, die dort vor einer Ewigkeit errichtet wurden. Mein Meister sprach von einer außergewöhnlichen Aura, welche diese Steine umgibt."), null)
-			call speech(info, character, true, tr("Er gab mir vor seinem Tod einige Zauberspruchrollen, mit welchen es mir möglich sein sollte, jene Aura zu nutzen. Nimm eine dieser Zauberspruchrollen, geh zu den Runensteinen und probier aus, was passiert, dann komm wieder und berichte mir davon."), null)
+			call speech(info, character, true, tr("Er gab mir vor seinem Tod einige Zauberspruchrollen, mit welchen es mir möglich sein sollte, jene Aura zu nutzen. Nimm eine dieser Zauberspruchrollen, geh zu den Runensteinen und probiere aus, was passiert wenn du sie wirken lässt, dann komm wieder und berichte mir davon."), null)
 			call QuestTheMagic.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
@@ -190,7 +190,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, false, tr("Das hört sich gefährlich an."), null)
 			call speech(info, character, true, tr("Das ist es auch, deshalb habe ich den Zauber noch nicht ausprobiert. Sei aber nicht so dumm und wirke die Zauber in falscher Reihenfolge. Hier hast du die beiden Zauberspruchrollen."), null)
 			call speech(info, character, true, tr("Wenn du diesen Auftrag erfüllst, hast du mein Vertrauen wieder erlangt, aber belüge mich dies mal nicht!"), null)
-			call speech(info, character, false, tr("Wenn er nicht funktioniert dann sehen wir uns wohl kaum wieder."), null)
+			call speech(info, character, false, tr("Wenn der Zauber nicht funktioniert dann sehen wir uns wohl kaum wieder."), null)
 			call speech(info, character, true, tr("Habe etwas mehr Vertrauen in meine Zauberkünste!"), null)
 			// Neuer Auftrag „Der magische Schild“
 			call QuestTheMagicalShield.characterQuest(character).enable()
@@ -298,7 +298,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 				call info.talk().showStartPage(character)
 			// (Unterhält sich nur mit dem aktuellen Charakter)
 			else
-				call speech(info, character, true, tr("Na wenn du mich so nett bittest. Kann's gar nicht erwarten. Geh voraus, ich folge dir."), null)
+				call speech(info, character, true, tr("Na wenn du mich so nett bittest. Kann's gar nicht erwarten. Gehe voraus, ich folge dir."), null)
 				call info.talk().close(character)
 				call Fellows.sisgard().shareWith(character)
 				call IssueTargetOrder(info.talk().unit(), "move", character.unit())
@@ -325,7 +325,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 
 		// Ich hab zu tun.
 		private static method infoActionBusy takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Ich hab zu tun."), null)
+			call speech(info, character, true, tr("Ich habe zu tun."), null)
 			call info.talk().close(character)
 		endmethod
 

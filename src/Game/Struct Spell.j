@@ -128,6 +128,10 @@ library StructGameSpell requires Asl, StructGameCharacter
 		 */
 		public static constant integer spellTypeUltimate0 = 2
 		public static constant integer spellTypeUltimate1 = 3
+		/**
+		 * The level has to be stored since it might get lost when loading the map.
+		 */
+		private integer m_savedLevel
 		private integer m_favouriteAbility
 		private integer m_maxLevel
 		private integer m_spellType
@@ -269,6 +273,12 @@ library StructGameSpell requires Asl, StructGameCharacter
 		
 		public stub method setLevel takes integer level returns nothing
 			call super.setLevel(level)
+			set this.m_savedLevel = level
+			debug call Print("Set saved level to " + I2S(level) + " of spell " + GetAbilityName(this.ability()))
+		endmethod
+		
+		public method savedLevel takes nothing returns integer
+			return this.m_savedLevel
 		endmethod
 
 		public stub method onCastCondition takes nothing returns boolean
@@ -318,6 +328,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			 * EVENT_UNIT_SPELL_ENDCAST would NOT work and is reserved for grimoire entries.
 			 */
 			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, EVENT_UNIT_SPELL_CHANNEL)
+			set this.m_savedLevel = 0
 			set this.m_favouriteAbility = favouriteAbility
 			set this.m_maxLevel = maxLevel
 			set this.m_spellType = spellType

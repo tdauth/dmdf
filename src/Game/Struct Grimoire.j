@@ -16,19 +16,17 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		public static constant integer maxSpells = 15
 		public static constant integer spellsPerPage = 9
 		public static constant integer abilityId = 'A0AP'
-		//public static constant integer techIdSkillPoints = 'R005'
-		//public static constant integer unitId = 'h00J'
 		public static constant string shortcut = "Z"
 		public static constant integer maxFavourites = 4
 		public static constant integer ultimate0Level = 12
 		public static constant integer ultimate1Level = 25
 		// members
-		//private unit m_unit
 		private integer m_page
 		private boolean m_pageIsShown
 		private integer m_heroLevel
 		private integer m_skillPoints
 		private AIntegerVector m_favourites
+		private AIntegerVector m_learnedSpells
 		private Spell m_currentSpell
 		private AIntegerVector m_spells
 		private NextPage m_spellNextPage
@@ -38,6 +36,8 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		private AddToFavourites m_spellAddToFavourites
 		private RemoveFromFavourites m_spellRemoveFromFavourites
 		private BackToGrimoire m_spellBackToGrimoire
+		private trigger m_levelTrigger
+		private trigger m_loadTrigger
 		/**
 		 * The currently visible \ref GrimoireSpell instances which are shown in the UI.
 		 * Might also contain 0 entries depending on the spell!
@@ -163,16 +163,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		 * \return Returns the number of learned spells (spells which have level of at least 1).
 		 */
 		public method learnedSpells takes nothing returns integer
-			local integer result = 0
-			local integer i = 0
-			loop
-				exitwhen (i == this.m_spells.size())
-				if (Spell(this.m_spells[i]).level() > 0) then
-					set result = result + 1
-				endif
-				set i = i + 1
-			endloop
-			return result
+			return this.m_learnedSpells.size()
 		endmethod
 		
 		/**
@@ -266,7 +257,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		 * This does not actually change any hero level but stores the current hero level which is required for reacting on level up events.
 		 * Since level up events may occur once if multiple levels have been gained too this value allows you to check what was the old level.
 		 */
-		public method setHeroLevel takes integer heroLevel returns nothing
+		private method setHeroLevel takes integer heroLevel returns nothing
 			set this.m_heroLevel = heroLevel
 		endmethod
 		
@@ -334,26 +325,34 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 
 		private method learnFavouriteSpell takes Spell spell returns nothing
 			local integer favouriteAbility = spell.favouriteAbility()
+			debug call Print("Learning favorite spell " + GetAbilityName(spell.ability()))
 			call this.m_favourites.pushBack(spell)
+			call this.m_learnedSpells.pushBack(spell)
 			call spell.add()
 			call spell.setLevel(1)
 			call spell.onLearn.evaluate()
 		endmethod
 
 		private method unlearnFavouriteSpell takes Spell spell returns nothing
+			debug call Print("Learning favorite spell " + GetAbilityName(spell.ability()))
 			call spell.onUnlearn.evaluate()
 			call this.m_favourites.remove(spell)
+			call this.m_learnedSpells.remove(spell)
 			call spell.remove()
 		endmethod
 
 		private method learnSpell takes Spell spell returns nothing
+			debug call Print("Learning spell " + GetAbilityName(spell.ability()))
 			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
+			call this.m_learnedSpells.pushBack(spell)
 			call spell.setLevel(1)
 			call spell.onLearn.evaluate()
 		endmethod
 
 		private method unlearnSpell takes Spell spell returns nothing
+			debug call Print("Unlearning spell " + GetAbilityName(spell.ability()))
+			call this.m_learnedSpells.remove(spell)
 			call spell.onUnlearn.evaluate()
 			call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), true)
@@ -404,6 +403,10 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 
 		/// Adds spell \p spell to grimoire. If \p spellType is \ref Spell.spellTypeDefault it will be added with level 1.
 		public method addSpell takes Spell spell, boolean updateUi returns nothing
+			debug if (this.m_spells.contains(spell)) then
+			debug call Print("Contains already spell: " + GetAbilityName(spell.ability()))
+			debug endif
+		
 			call this.m_spells.pushBack(spell)
 
 			if (spell.spellType() == Spell.spellTypeDefault) then
@@ -829,6 +832,72 @@ endif
 				return this.setPage(this.page() - 1)
 			endif
 		endmethod
+		
+		public method enableLevelTrigger takes nothing returns nothing
+			call EnableTrigger(this.m_levelTrigger)
+		endmethod
+		
+		public method disableLevelTrigger takes nothing returns nothing
+			call DisableTrigger(this.m_levelTrigger)
+		endmethod
+		
+		private static method triggerConditionLevel takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			return GetTriggerUnit() == this.character().unit()
+		endmethod
+
+		private static method triggerActionLevel takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local integer levels = GetHeroLevel(GetTriggerUnit()) - this.heroLevel()
+			local Character character = Character(this.character())
+			local integer i = 0
+			loop
+				exitwhen (i == levels)
+				call this.addSkillPoints(MapData.levelSpellPoints)
+				set i = i + 1
+			endloop
+			debug call Print("Levels: " + I2S(levels))
+			call this.setHeroLevel(GetHeroLevel(GetTriggerUnit()))
+			
+			// reached last level TODO: maybe we should give him a little present
+			if (GetHeroLevel(GetTriggerUnit()) == MapData.maxLevel) then
+				call character.displayFinalLevel(tre("Sie haben die letzte Stufe erreicht.", "You have reached the final level."))
+				call character.displayFinalLevelToAllOthers(Format(tre("%1% hat die letzte Stufe erreicht.", "%1% has reached the final level.")).s(character.name()).result())
+			endif
+		endmethod
+
+		private method createLevelTrigger takes nothing returns nothing
+			set this.m_levelTrigger = CreateTrigger()
+			call DmdfHashTable.global().setHandleInteger(this.m_levelTrigger, "this", this)
+			call TriggerRegisterAnyUnitEventBJ(this.m_levelTrigger, EVENT_PLAYER_HERO_LEVEL)
+			call TriggerAddCondition(this.m_levelTrigger, Condition(function thistype.triggerConditionLevel))
+			call TriggerAddAction(this.m_levelTrigger, function thistype.triggerActionLevel)
+		endmethod
+		
+		/**
+		 * Whenever the game is loaded the spell levels of the non favorite spells are reset to one.
+		 */
+		private static method triggerActionLoad takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local integer i = 0
+			// TODO only update abilities which are NOT in the favorites.
+			loop
+				exitwhen (i == this.m_learnedSpells.size())
+				call Spell(this.m_learnedSpells[i]).setLevel(Spell(this.m_learnedSpells[i]).savedLevel())
+				debug call Print("Updating level of spell " + GetAbilityName(Spell(this.m_learnedSpells[i]).ability()) + " to level " + I2S(Spell(this.m_learnedSpells[i]).savedLevel()))
+				set i = i + 1
+			endloop
+			debug call Print("Learned spells count: " + I2S(this.m_learnedSpells.size()))
+			debug call Print("Total spells count: " + I2S(this.spells()))
+			debug call Print("Loaded game")
+		endmethod
+		
+		private method createLoadTrigger takes nothing returns nothing
+			set this.m_loadTrigger = CreateTrigger()
+			call DmdfHashTable.global().setHandleInteger(this.m_levelTrigger, "this", this)
+			call TriggerRegisterGameEvent(this.m_loadTrigger, EVENT_GAME_LOADED)
+			call TriggerAddAction(this.m_loadTrigger, function thistype.triggerActionLoad)
+		endmethod
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, thistype.abilityId, 0, 0, 0, EVENT_UNIT_SPELL_CHANNEL)
@@ -836,9 +905,10 @@ endif
 			//call SetUnitInvulnerable(this.unit(), true)
 			set this.m_page = 0
 			set this.m_pageIsShown = false
-			set this.m_heroLevel = 0
+			set this.m_heroLevel = 1 // heroes start with level 1
 			set this.m_skillPoints = 0
 			set this.m_favourites = AIntegerVector.create()
+			set this.m_learnedSpells = AIntegerVector.create()
 			set this.m_currentSpell = 0
 			set this.m_spells = AIntegerVector.create()
 
@@ -851,6 +921,8 @@ endif
 			set this.m_spellBackToGrimoire = BackToGrimoire.create.evaluate(this)
 			set this.m_uiGrimoireSpells = AIntegerVector.create()
 			call this.showPage()
+			call this.createLevelTrigger()
+			call this.createLoadTrigger()
 
 			return this
 		endmethod
@@ -859,6 +931,7 @@ endif
 			//call RemoveUnit(this.unit())
 			//set this.m_unit = null
 			call this.m_favourites.destroy()
+			call this.m_learnedSpells.destroy()
 
 			loop
 				exitwhen (this.m_spells.empty())
@@ -878,6 +951,12 @@ endif
 			call this.m_spellRemoveFromFavourites.destroy.evaluate()
 			call this.m_spellBackToGrimoire.destroy.evaluate()
 			call this.m_uiGrimoireSpells.destroy()
+			
+			call DmdfHashTable.global().destroyTrigger(this.m_levelTrigger)
+			set this.m_levelTrigger = null
+			
+			call DmdfHashTable.global().destroyTrigger(this.m_loadTrigger)
+			set this.m_loadTrigger = null
 		endmethod
 	endstruct
 

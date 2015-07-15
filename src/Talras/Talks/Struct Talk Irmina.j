@@ -221,7 +221,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 				call info.talk().showRange(13, 16, character)
 			elseif (thistype(info.talk()).createsPotion(character)) then
 			// (Irmina braut bereits einen speziellen Trank für den Charakter)
-				call speech(info, character, true, tr("Ich braue dir doch bereits einen. Warte erstmal bis der fertig ist, dann sehen wir weiter!"), null)
+				call speech(info, character, true, tr("Ich braue dir doch bereits einen. Warte erst mal bis der fertig ist, dann sehen wir weiter!"), null)
 				call thistype(thistype.talk()).showPotionInfo(character)
 				call info.talk().showStartPage(character)
 			// (Irmina braut keinen speziellen Trank, der Charakter hat sich den letzten aber noch nicht abgeholt)
@@ -263,7 +263,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Nein.
 		private static method infoAction0_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Nein."), null)
-			call speech(info, character, true, tr("Toll, sind den Leuten auf einmal die Goldmünzen ausgegangen oder was? Plötzlich, bei Kriegsgefahr sparen sie alle, dabei sollten sie es doch lieber jetzt nochmal ausgeben. Wie auch immer, ist ja deine Sache."), null)
+			call speech(info, character, true, tr("Toll, sind den Leuten auf einmal die Goldmünzen ausgegangen oder was? Plötzlich, bei Kriegsgefahr sparen sie alle, dabei sollten sie es doch lieber jetzt noch mal ausgeben. Wie auch immer, ist ja deine Sache."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
