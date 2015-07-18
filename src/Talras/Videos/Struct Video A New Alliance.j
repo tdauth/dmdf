@@ -112,7 +112,7 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate()
+			return thistype.allocate(true)
 		endmethod
 	endstruct
 

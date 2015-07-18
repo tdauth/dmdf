@@ -411,7 +411,7 @@
 * DEPRECATED (nach Wiederbelebung ist alles wie vorher): Vielleicht der gleiche Bug wie beim Laden einer Karte, dass die Fähigkeiten auf einman nicht in den Favoriten Stufe 1 sind?! kann eigentlich nicht sein, da die Fähigkeit nicht verfügbar ist.
 * Dämon und Erzengel im AOS sind zu langsam, langsamer als Charakter.
 * Dämonen in AOS sind stärker als Engel. Gleich stark machen.
-* Ladebildschirm rechte Hälfte fixen.
+* FIXED: Ladebildschirm rechte Hälfte fixen.
 * Benötigte Stufe für Ultimates in Tooltip eintragen.
 * Alle Hinweise in Tooltips in einheitlicher Farbe.
 * Ursulas Druidensatz einbauen.
@@ -435,6 +435,9 @@
 * AInventory: Wenn Gegenstand auf das freie Slot im Rucksack gelegt wird, muss es zurückgesetzt werden. Besser noch: So lässt man den Gegenstand mit allen Aufladungen liegen.
 * Spruchrolle einbauen, die eine Gruppe zu einem Schrein teleportiert.
 * Agihards "Lass mich in die Arena" so umbauen wie es im Dialog steht.
+* Drop wenn Item einem nicht gehört funktioniert oft nicht, Item bleibt im Inventar!
+* Banditen droppen zu viel.
+* FIXED: AVideo: Der actor bleibt beim Skip öfter erhalten (im Nicht-Debug-Mode). thistype.m_actor wird 0?
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

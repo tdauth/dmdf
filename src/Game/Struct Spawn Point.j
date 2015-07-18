@@ -6,7 +6,7 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 	 * \sa ItemSpawnPoint
 	 */
 	struct SpawnPoint extends ASpawnPoint
-		public static constant real respawnTime = 45.0
+		public static constant real respawnTime = 90.0
 		private static AIntegerList m_spawnPoints
 	
 		public static method create takes nothing returns thistype

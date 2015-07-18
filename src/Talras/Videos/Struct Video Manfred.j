@@ -48,7 +48,7 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate()
+			return thistype.allocate(true)
 		endmethod
 	endstruct
 

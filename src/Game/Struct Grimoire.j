@@ -900,11 +900,15 @@ endif
 		private static method triggerActionLoad takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
 			local integer i = 0
-			// TODO only update abilities which are NOT in the favorites.
 			loop
 				exitwhen (i == this.m_learnedSpells.size())
-				call Spell(this.m_learnedSpells[i]).setLevel(Spell(this.m_learnedSpells[i]).savedLevel())
-				debug call Print("Updating level of spell " + GetAbilityName(Spell(this.m_learnedSpells[i]).ability()) + " to level " + I2S(Spell(this.m_learnedSpells[i]).savedLevel()))
+				/*
+				 * Favorite spells still have the proper levels.
+				 */
+				if (not this.m_favourites.contains(Spell(this.m_learnedSpells[i]))) then
+					call Spell(this.m_learnedSpells[i]).setLevel(Spell(this.m_learnedSpells[i]).savedLevel())
+					debug call Print("Updating level of spell " + GetAbilityName(Spell(this.m_learnedSpells[i]).ability()) + " to level " + I2S(Spell(this.m_learnedSpells[i]).savedLevel()))
+				endif
 				set i = i + 1
 			endloop
 			debug call Print("Learned spells count: " + I2S(this.m_learnedSpells.size()))

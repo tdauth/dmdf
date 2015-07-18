@@ -72,7 +72,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 			call SetUnitInvulnerable(gg_unit_n008_0083, true)
 			call PauseUnit(gg_unit_n008_0027, true)
 			call SetUnitInvulnerable(gg_unit_n008_0027, true)
-			return thistype.allocate()
+			return thistype.allocate(true)
 		endmethod
 	endstruct
 

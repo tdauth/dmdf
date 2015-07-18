@@ -244,7 +244,7 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate()
+			return thistype.allocate(true)
 		endmethod
 	endstruct
 

@@ -182,7 +182,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate()
+			return thistype.allocate(true)
 		endmethod
 	endstruct
 

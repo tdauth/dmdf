@@ -15,7 +15,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_the_castle_character)
 			call SetUnitFacing(thistype.actor(), 182.64)
 			call IssuePointOrder(thistype.actor(), "move", GetRectCenterX(gg_rct_video_the_castle_character_target), GetRectCenterY(gg_rct_video_the_castle_character_target))
-			call SetUnitMoveSpeed(thistype.actor(), 150.0)
+			call SetUnitMoveSpeed(thistype.actor(), 200.0)
 		endmethod
 
 		/*
@@ -114,7 +114,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate()
+			return thistype.allocate(true)
 		endmethod
 	endstruct
 

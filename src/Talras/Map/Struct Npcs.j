@@ -81,6 +81,14 @@ library StructMapMapNpcs
 			set thistype.m_wieland = gg_unit_n01Y_0006
 			set thistype.m_wigberht = gg_unit_H01C_0228
 			set thistype.m_sheepBoy = gg_unit_n02B_0058
+			
+			/*
+			 * Make guardians invulnerable.
+			 */
+			call SetUnitInvulnerable(gg_unit_n015_0149, true)
+			call SetUnitInvulnerable(gg_unit_n005_0119, true)
+			call SetUnitInvulnerable(gg_unit_n015_0118, true)
+			call SetUnitInvulnerable(gg_unit_n015_0456, true)
 		endmethod
 
 		public static method agihard takes nothing returns unit
