@@ -16,6 +16,10 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		public static constant integer maxSpells = 15
 		public static constant integer spellsPerPage = 9
 		public static constant integer abilityId = 'A0AP'
+		/**
+		 * Dummy ability ID to specify the icon's position.
+		 */
+		public static constant integer dummyAbilityId = 'A17O'
 		public static constant string shortcut = "Z"
 		public static constant integer maxFavourites = 4
 		public static constant integer ultimate0Level = 12
@@ -948,6 +952,8 @@ endif
 			call this.createLevelTrigger()
 			call this.createLoadTrigger()
 
+			call SetPlayerAbilityAvailable(character.player(), thistype.dummyAbilityId, false)
+			
 			return this
 		endmethod
 

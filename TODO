@@ -431,13 +431,14 @@
 * Level-Trigger des Grimoire triggert nicht.
 * Spruchrollen günstiger machen.
 * Waffen bei Einar usw. viel mehr Aufladungen.
-* Respawn-Zeit für Creeps länger machen.
+* FIXED: Respawn-Zeit für Creeps länger machen.
 * AInventory: Wenn Gegenstand auf das freie Slot im Rucksack gelegt wird, muss es zurückgesetzt werden. Besser noch: So lässt man den Gegenstand mit allen Aufladungen liegen.
 * Spruchrolle einbauen, die eine Gruppe zu einem Schrein teleportiert.
 * Agihards "Lass mich in die Arena" so umbauen wie es im Dialog steht.
 * Drop wenn Item einem nicht gehört funktioniert oft nicht, Item bleibt im Inventar!
 * Banditen droppen zu viel.
 * FIXED: AVideo: Der actor bleibt beim Skip öfter erhalten (im Nicht-Debug-Mode). thistype.m_actor wird 0?
+* http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/set-spell-ui-position-spellbook-240242/ mit Dummy-Zaubern die Icon-Positionen bestimmen.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

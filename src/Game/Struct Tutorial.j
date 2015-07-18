@@ -117,6 +117,8 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 		endmethod
 
 		public static method init takes nothing returns nothing
+			local quest whichQuest
+			local questitem questItem
 			set thistype.m_infos = AStringVector.create()
 
 			// real infos
@@ -157,6 +159,22 @@ endif
 static if (DMDF_NPC_ROUTINES) then
 			call thistype.m_infos.pushBack(tr("Computergesteuerte Charaktere in Städten, Dörfern oder außerhalb haben individuelle Tagesabläufe. Wundern Sie sich nicht, falls Sie Charaktere nicht immer an denselben Orten antreffen."))
 endif
+
+			/*
+			 * Hint quest entries:
+			 */
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tr("Info: Rucksack"))
+			call QuestSetDescription(whichQuest, tr("Mit der Rucksackfähigkeit kann der Rucksack geöffnet werden. Es werden drei Gegenstände pro Seite angezeigt."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPackBeast.blp")
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("Rechtsklick auf Gegenstand und Linksklick auf anderen Gegenstand stapelt oder vertauscht die Gegenstände."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("Rechtsklick auf Gegenstand und Linksklick auf den Boden legt eine Ladung des Gegenstands ab."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("Rechtsklick auf Gegenstand und Linksklick auf anderen Charakter gibt dem anderen eine Ladung des Gegenstands."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("Rechtsklick auf Gegenstand und Linksklick auf das vierte freie Slot legt den Gegenstand mit allen Ladungen ab."))
 		endmethod
 		
 		/**

@@ -26,6 +26,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 	//! endtextmacro
 	
 	/// \todo Fix arithmetic operations, take base Ids, print addGrimoireEntry into a separate JASS file which later will be imported, use an array for base Ids like "whindwalk" to always use the same ones
+	/// \todo Add dummy ability n times in the spell book to specify the icon position
 	/*
 	//! externalblock extension=lua ObjectMerger $FILENAME$
 		//! i function createFavoriteAbility(name, class, abilityId, spellAbilityId, icon)
