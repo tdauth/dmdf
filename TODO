@@ -237,7 +237,7 @@
 * FIXED: Vervielfachung: Sollten immer mehr prozentualen Schaden verursachen, pro Stufe.
 * DONE: Manaexplosion stärker machen.
 * Zauberbuch und Rucksack öffnen in Zauberfähigkeiten verschieben. Zauberfähigkeiten umbenennen. Dadurch hätte man bis zu 6 Favoriten!
-* The Frozen Throne-Logo links oben im Hauptmenü durch "Die Macht des Feuers"-Schriftzug ersetzen.
+* FIXED: The Frozen Throne-Logo links oben im Hauptmenü durch "Die Macht des Feuers"-Schriftzug ersetzen. Pfad: ReplaceableTextures\WorldEditUI\WarcraftIIIFTLogo.blp
 * FIXED: Zunächst neutrale Gebäude von Minikarte ausblenden, in release-Map Sympol-MMP-Datei entfernen bzw. nur die Datei für das Hauptmenü! war3mapPreview.tga sollte einfach eingefügt werden. Ersetzt nur das Preview im Hauptmenü! Das sollte die Version der Minikarte sein!
 * Entzünden von Elementarmagier funktioniert nicht per Buff. Kann mehrmals gemacht werden und macht einen Verbündeten unendliche stark!
 * Kisten und Fässer brauchen Zerstöranimation.
@@ -392,22 +392,23 @@
 * Arkane Zeit: Beschwörungszeit bei Gegnern weiter reduzieren.
 * Was passiert mit dem Handicap der Creeps wenn ein Spieler das Spiel verlässt.
 * Nekromant: Maximum an Skeletten.
-* Rebhuhn wird für beide Spieler abgeschlossen.
+* FIXED: Rebhuhn wird für beide Spieler abgeschlossen.
 * 2/2 Rudelführer obwohl nur einer getötet wurde.
 * Eiserne Haut, Aura der Rücknahme, Autorität, Stich.
-* Drachentöterin hat höhere Priorität, Helden sollten vorne sein.
-* Aus Favoriten entfernen wird bei Spieler 2 nicht angezeigt. Hat 3 Zauber und dann 4 Zauber, Ritter, geht nie.
-* Schattenefreet aus Weltenportal verursacht Flächenschaden.
+* FIXED (Priorität auf 20 gesetzt): Drachentöterin hat höhere Priorität, Helden sollten vorne sein.
+* DEPRECATED (Stimmt nicht): Schattenefreet aus Weltenportal verursacht Flächenschaden.
 * Verhindern dass Arenagegner Leute außerhalb der Arena angreift.
-* Mathilda kann mitgenommen werden, wird nicht wiederbelebt.
+* FIXED: Mathilda kann mitgenommen werden, wird nicht wiederbelebt.
 * 2. Vorratswagen ist wieder zurückgefahren, Spieler 2.
-* Metzelei: Auftragsbeschreibung.
+* FIXED: Metzelei: Auftragsbeschreibung.
 * Kopfbedeckung bleibt oft im Inventar, wenn man in den Rucksack geht.
 * Seitengegenstand wurde einfach im Rucksack rechts oben erzeugt.
 * KOPFBEDECKUNG KRONE DES KARORNWALDES IST IMMER IM ERSTEN FACH DES RUCKSACKS.
-* Beim Laden sind alle Zauber die NICHT in den Favoriten sind nur noch Stufe 1!!! Warcraft-3-Ladebug. EINDEUTIG LADEBUG, reproduzierbar.
+* FIXED (Workaround mit Load-Event): Beim Laden sind alle Zauber die NICHT in den Favoriten sind nur noch Stufe 1!!! Warcraft-3-Ladebug. EINDEUTIG LADEBUG, reproduzierbar.
+* Aus Favoriten entfernen wird bei Spieler 2 nicht angezeigt. Hat 3 Zauber und dann 4 Zauber, Ritter, geht nie.
 * Bei Spieler 2 kam nicht zu Favoriten hinzufügen, Zauber waren automatisch in den Favoriten (Auren). Sobald sie einen fünften Zauber geskillt hat, war dieser auf einmal MIT ALLEN FAVORITEN nicht mehr in den Favoriten. Liegt eventuell an Wiederbelebung (wenn beide tot sind?!?!). Nach Wiederbelebung passierte mir das gleiche, alle Zauber waren nicht mehr in den Favoriten, hatte auch 5 Zauber, einer davon war schon in den Fähigkeiten.
 * Aus Favoriten entfernen kam bei mir AUCH NICHT!!!!! Limit von GrimoireEntries?????!?!?!
+* DEPRECATED (nach Wiederbelebung ist alles wie vorher): Vielleicht der gleiche Bug wie beim Laden einer Karte, dass die Fähigkeiten auf einman nicht in den Favoriten Stufe 1 sind?! kann eigentlich nicht sein, da die Fähigkeit nicht verfügbar ist.
 * Dämon und Erzengel im AOS sind zu langsam, langsamer als Charakter.
 * Dämonen in AOS sind stärker als Engel. Gleich stark machen.
 * Ladebildschirm rechte Hälfte fixen.
@@ -415,6 +416,25 @@
 * Alle Hinweise in Tooltips in einheitlicher Farbe.
 * Ursulas Druidensatz einbauen.
 * Mathildas Auftrag und Schalmei einbauen.
+* Spielnachrichten loggen und mit "-history" zugänglich machen.
+* Den Befehl "-help" einbauen, da man ihn standardmäßig ausprobieren würde.
+* Markwards Belohnungsgegenstand für Ritter ist zu gut.
+* FIXED: Anstürmen - Geschwindigkeitsbonus geht nicht mehr weg. Vermutlich Fehler mit Game.addUnitMoveSpeed() oder Game.removeUnitMoveSpeed(). Anscheinend remove, denn beim Remove kam der richtige Wert, aber der Charakter blieb schnell.
+* Anstürmen: "attack" verhindert Abklingzeit des Zaubers?
+* Anstürmen: Stun geht nicht. Lieber dummy erzeugen.
+* FIXED: Anstürmen Tooltip fehlt.
+* Konzentration ist zu schlecht.
+* Wenn Stich direkt tötet, benötigt es keine Abklingzeit.
+* FIXED: Verspotten: Verhinderter Schaden geht entweder nicht oder wird nicht angezeigt.
+* Verspotten: Keine Abklingzeit.
+* Alle Fähigkeiten aus Klassenauswahl preloaden. Reduziert Lag.
+* Level-Trigger des Grimoire triggert nicht.
+* Spruchrollen günstiger machen.
+* Waffen bei Einar usw. viel mehr Aufladungen.
+* Respawn-Zeit für Creeps länger machen.
+* AInventory: Wenn Gegenstand auf das freie Slot im Rucksack gelegt wird, muss es zurückgesetzt werden. Besser noch: So lässt man den Gegenstand mit allen Aufladungen liegen.
+* Spruchrolle einbauen, die eine Gruppe zu einem Schrein teleportiert.
+* Agihards "Lass mich in die Arena" so umbauen wie es im Dialog steht.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

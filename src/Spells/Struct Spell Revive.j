@@ -93,6 +93,7 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 						call SetUnitY(thistype.reviver, GetUnitY(target))
 						call PauseUnit(thistype.reviver, false)
 						set success = IssueImmediateOrder(thistype.reviver, "resurrection")
+						call TriggerSleepAction(0.0) // TODO necessary?
 						call PauseUnit(thistype.reviver, true)
 					endif
 					

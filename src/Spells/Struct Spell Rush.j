@@ -10,12 +10,15 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 		public static constant integer maxLevel = 5
 		private static constant real speedFactor = 0.80
 		private static constant real damageFactor = 20.0
+		private static constant integer dummyUnitTypeId = 'h025'
 
 		private method action takes nothing returns nothing
 			local unit characterUnit = this.character().unit()
 			local unit target = GetSpellTargetUnit()
 			local real bonus = Game.addUnitMoveSpeed(characterUnit, GetUnitMoveSpeed(characterUnit) * thistype.speedFactor)
+			local unit dummy
 			debug call Print("Bonus: " + R2S(bonus))
+			call TriggerSleepAction(0.0) // Wait. Otherwise the cooldown will be canceled.
 			call IssueTargetOrder(characterUnit, "attack", target)
 			loop
 				exitwhen (thistype.enemyTargetLoopCondition(target) or GetUnitCurrentOrder(characterUnit) != OrderId("attack"))
@@ -26,10 +29,13 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 					call SetUnitAnimation(characterUnit, "attack")
 					debug call Print("Add ability")
 					// dummy ability
-					call UnitAddAbility(characterUnit, 'A01R')
-					call IssueTargetOrderById(characterUnit, 'A01R', target)
+					set dummy = CreateUnit(GetOwningPlayer(characterUnit), thistype.dummyUnitTypeId, GetUnitX(characterUnit), GetUnitY(characterUnit), 0.0)
+					call UnitAddAbility(dummy, 'A01R')
+					call SetUnitInvulnerable(dummy, true)
+					call IssueTargetOrder(dummy, "thunderbold", target)
 					call TriggerSleepAction(0.0) // wait for cast
-					call UnitRemoveAbility(characterUnit, 'A01R')
+					call RemoveUnit(dummy)
+					set dummy = null
 					call UnitDamageTargetBJ(characterUnit, target, this.level() * thistype.damageFactor, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
 					call ShowBashTextTagForPlayer(this.character().player(), GetWidgetX(target), GetWidgetY(target), R2I(this.level() * thistype.damageFactor))
 					call ResetUnitAnimation(characterUnit)
@@ -40,7 +46,7 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 				debug call Print("After loop wait action")
 			endloop
 			debug call Print("Removing bonus: " + R2S(bonus))
-			call Game.removeUnitMoveSpeed(target, bonus)
+			call Game.removeUnitMoveSpeed(characterUnit, bonus)
 			set characterUnit = null
 			set target = null
 		endmethod

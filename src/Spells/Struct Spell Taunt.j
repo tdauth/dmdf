@@ -15,23 +15,34 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			loop
 				exitwhen (elapsedTime >= time or IsUnitDeadBJ(this.m_target) or IsUnitSpellImmune(this.m_target))
 				call TriggerSleepAction(1.0)
-				set elapsedTime = elapsedTime - 1.0
+				set elapsedTime = elapsedTime + 1.0
 			endloop
+			debug call Print("End taunt effect")
 			call DisableTrigger(this.m_orderTrigger)
 			call this.m_damageRecorder.disable()
 			call DmdfHashTable.global().removeHandleInteger(this.m_target, "tauntBuff")
 		endmethod
 		
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local unit target = damageRecorder.target() // character
-			local thistype this = DmdfHashTable.global().handleInteger(target, "tauntBuff")
+			local thistype this = 0
+			local Character character
 			local real blockedDamage = 0.0
-			if (GetEventDamageSource() == this.m_target) then
-				set blockedDamage = GetEventDamage() * this.m_spell.level() * SpellTaunt.damageLevelFactor
-				call SetUnitLifeBJ(target, GetUnitState(target, UNIT_STATE_LIFE) + blockedDamage)
-				call Spell.showDamageAbsorbationTextTag(target, blockedDamage)
+			debug call Print("OnDamage: " + GetUnitName(damageRecorder.target()))
+			debug call Print("Source: " + GetUnitName(GetEventDamageSource()))
+			if (DmdfHashTable.global().hasHandleInteger(GetEventDamageSource(), "tauntBuff")) then
+				set this = thistype(DmdfHashTable.global().handleInteger(GetEventDamageSource(), "tauntBuff"))
+				set character = ACharacter.getCharacterByUnit(damageRecorder.target())
+				if (character != 0 and this.m_spell.character() == character) then
+					debug call Print("Block")
+					set blockedDamage = GetEventDamage() * this.m_spell.level() * SpellTaunt.damageLevelFactor
+					call SetUnitLifeBJ(damageRecorder.target(), GetUnitState(damageRecorder.target(), UNIT_STATE_LIFE) + blockedDamage)
+					call Spell.showDamageAbsorbationTextTag(damageRecorder.target(), blockedDamage)
+				debug elseif (character == 0) then
+					debug call Print("Taunt: Damage Recorder target has no character.")
+				endif
+			debug else
+				debug call Print("has no buff stored for unit " + GetUnitName(GetEventDamageSource()))
 			endif
-			set target = null
 		endmethod
 		
 		/// @todo Just if it's an attack order?
@@ -117,6 +128,9 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			elseif (IsUnitType(GetSpellTargetUnit(), UNIT_TYPE_MAGIC_IMMUNE)) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel ist zauberimmun."))
 				return false
+			elseif (DmdfHashTable.global().hasHandleInteger(GetSpellTargetUnit(), "tauntBuff")) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel wird bereits verspottet."))
+				return false
 			endif
 			
 			return true
@@ -130,13 +144,15 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			debug call Print("Taunt on target: " + GetUnitName(target) + " with time " + R2S(time))
 			call ShowGeneralFadingTextTagForPlayer(null, tr("Verspotten"), GetUnitX(target), GetUnitY(target), 255, 255, 255, 255)
 			call buffTaunt.start(time)
+			debug call Print("Finish")
 			call buffTaunt.destroy()
+			set buffTaunt = 0
 			set caster = null
 			set target = null
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			call this.addGrimoireEntry('A0LV', 'A0M0')
 			call this.addGrimoireEntry('A0LW', 'A0M1')
 			call this.addGrimoireEntry('A0LX', 'A0M2')

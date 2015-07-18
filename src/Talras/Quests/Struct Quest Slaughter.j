@@ -196,7 +196,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			local thistype this = thistype.allocate(0, tr("Metzelei"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCorpseExplode.blp")
-			call this.setDescription(tr("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten zu berichten könnt."))
+			call this.setDescription(tr("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten berichten könnt."))
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
 			set this.m_questArea = QuestAreaSlaughter.create(gg_rct_quest_slaughter_enable)
 

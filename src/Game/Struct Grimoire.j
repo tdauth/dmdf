@@ -26,8 +26,14 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		private integer m_heroLevel
 		private integer m_skillPoints
 		private AIntegerVector m_favourites
+		/**
+		 * Contains all \ref Spell instances which are learned.
+		 */
 		private AIntegerVector m_learnedSpells
 		private Spell m_currentSpell
+		/**
+		 * Contains all \ref Spell instances which belong to the grimoire but need not necessarily be learned.
+		 */
 		private AIntegerVector m_spells
 		private NextPage m_spellNextPage
 		private PreviousPage m_spellPreviousPage
@@ -37,7 +43,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		private RemoveFromFavourites m_spellRemoveFromFavourites
 		private BackToGrimoire m_spellBackToGrimoire
 		private trigger m_levelTrigger
+		/**
+		 * Since Warcraft III has the bug that when the game is loaded abilities in the spell book are reset to level 1 they have to be changed manually on each map loading.
+		 */
 		private trigger m_loadTrigger
+		
 		/**
 		 * The currently visible \ref GrimoireSpell instances which are shown in the UI.
 		 * Might also contain 0 entries depending on the spell!
@@ -176,6 +186,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			local integer index
 
 			//debug call Print("Hiding spells with count in grimoire: " + I2S(this.m_uiGrimoireSpells.size()))
+			/*
+			 * Remove all old buttons before adding new ones.
+			 */
 			set i = 0
 			loop
 				exitwhen (i == this.m_uiGrimoireSpells.size())
@@ -211,6 +224,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 					endif
 					set i = i + 1
 				endloop
+			/*
+			 * Display current spell.
+			 */
 			else
 				if (this.currentSpell().isSkillable()) then
 					call this.m_spellIncrease.show.evaluate()
@@ -221,12 +237,18 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellDecrease)
 
 					if (this.m_favourites.contains(this.currentSpell())) then
+						debug call Print("Spell is part of favorites.")
 						call this.m_spellRemoveFromFavourites.show.evaluate()
 						call this.m_uiGrimoireSpells.pushBack(this.m_spellRemoveFromFavourites)
 					elseif (this.m_favourites.size() < thistype.maxFavourites) then
+						debug call Print("Spell is not part of favorites and favorites are not full.")
 						call this.m_spellAddToFavourites.show.evaluate()
 						call this.m_uiGrimoireSpells.pushBack(this.m_spellAddToFavourites)
+					debug else
+						debug call Print("Spell is not part of favorites but favorites are full.")
 					endif
+				debug else
+					debug call Print("Spell is level 0")
 				endif
 				
 				// show in correct order, always show the spell entry itself as last one since it will become the last one whenever its level changes!
@@ -239,17 +261,12 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				call this.m_uiGrimoireSpells.pushBack(this.m_spellBackToGrimoire)
 			endif
 
-			//debug call Print("after removing ability")
-			//call IssueImmediateOrderById(this.character().unit(), this.ability()) // WORKAROUND: whenever an ability is being removed it closes grimoire
 			// TODO if trigger player is not owner of the character!
-			//debug call Print("Issued UI key for player: " + GetPlayerName(this.character().player()))
-			//debug call Print("Trigger player is: " + GetPlayerName(GetTriggerPlayer()))
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
 			if (GetTriggerPlayer() != null) then
 				call ForceUIKeyBJ(GetTriggerPlayer(), thistype.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
 			endif
-			//debug call Print("issued: " + GetObjectName(this.ability()))
 		endmethod
 		
 		/**
@@ -286,7 +303,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 
 		public method removeSkillPoints takes integer skillPoints returns nothing
 			call this.setSkillPoints(IMaxBJ(0, this.m_skillPoints - skillPoints))
-			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
 		endmethod
 
 		/**
@@ -300,7 +316,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				return
 			endif
 			call this.setSkillPoints(this.m_skillPoints + skillPoints)
-			//call SetPlayerTechResearched(this.character().player(), thistype.techIdSkillPoints, this.skillPoints())
 		endmethod
 
 		public method spellIndex takes Spell spell returns integer
@@ -319,6 +334,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			return 0
 		endmethod
 
+		/**
+		 * \return Returns the number of all spells which belong to the grimoire but are not necessarily skilled at any level.
+		 */
 		public method spells takes nothing returns integer
 			return this.m_spells.size()
 		endmethod
@@ -334,7 +352,10 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		endmethod
 
 		private method unlearnFavouriteSpell takes Spell spell returns nothing
-			debug call Print("Learning favorite spell " + GetAbilityName(spell.ability()))
+			debug call Print("Unlearning favorite spell " + GetAbilityName(spell.ability()))
+			debug if (not this.m_favourites.contains(spell)) then
+			debug call Print("Spell is not part of favorites!")
+			debug endif
 			call spell.onUnlearn.evaluate()
 			call this.m_favourites.remove(spell)
 			call this.m_learnedSpells.remove(spell)
@@ -352,6 +373,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 
 		private method unlearnSpell takes Spell spell returns nothing
 			debug call Print("Unlearning spell " + GetAbilityName(spell.ability()))
+			debug if (this.m_favourites.contains(spell)) then
+			debug call Print("Spell is part of favorites!")
+			debug endif
 			call this.m_learnedSpells.remove(spell)
 			call spell.onUnlearn.evaluate()
 			call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
@@ -842,20 +866,16 @@ endif
 		endmethod
 		
 		private static method triggerConditionLevel takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			debug call Print("Level condition with unit " + GetUnitName(GetTriggerUnit()))
 			return GetTriggerUnit() == this.character().unit()
 		endmethod
 
 		private static method triggerActionLevel takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
 			local integer levels = GetHeroLevel(GetTriggerUnit()) - this.heroLevel()
 			local Character character = Character(this.character())
-			local integer i = 0
-			loop
-				exitwhen (i == levels)
-				call this.addSkillPoints(MapData.levelSpellPoints)
-				set i = i + 1
-			endloop
+			call this.addSkillPoints(MapData.levelSpellPoints * levels)
 			debug call Print("Levels: " + I2S(levels))
 			call this.setHeroLevel(GetHeroLevel(GetTriggerUnit()))
 			
@@ -868,17 +888,17 @@ endif
 
 		private method createLevelTrigger takes nothing returns nothing
 			set this.m_levelTrigger = CreateTrigger()
-			call DmdfHashTable.global().setHandleInteger(this.m_levelTrigger, "this", this)
 			call TriggerRegisterAnyUnitEventBJ(this.m_levelTrigger, EVENT_PLAYER_HERO_LEVEL)
 			call TriggerAddCondition(this.m_levelTrigger, Condition(function thistype.triggerConditionLevel))
 			call TriggerAddAction(this.m_levelTrigger, function thistype.triggerActionLevel)
+			call DmdfHashTable.global().setHandleInteger(this.m_levelTrigger, "this", this)
 		endmethod
 		
 		/**
 		 * Whenever the game is loaded the spell levels of the non favorite spells are reset to one.
 		 */
 		private static method triggerActionLoad takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
 			local integer i = 0
 			// TODO only update abilities which are NOT in the favorites.
 			loop
@@ -894,9 +914,9 @@ endif
 		
 		private method createLoadTrigger takes nothing returns nothing
 			set this.m_loadTrigger = CreateTrigger()
-			call DmdfHashTable.global().setHandleInteger(this.m_levelTrigger, "this", this)
 			call TriggerRegisterGameEvent(this.m_loadTrigger, EVENT_GAME_LOADED)
 			call TriggerAddAction(this.m_loadTrigger, function thistype.triggerActionLoad)
+			call DmdfHashTable.global().setHandleInteger(this.m_loadTrigger, "this", this)
 		endmethod
 
 		public static method create takes Character character returns thistype

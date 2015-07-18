@@ -179,7 +179,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, L
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				if (GetPlayerController(Player(i)) != MAP_CONTROL_NONE) then
+				if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_EMPTY) then
 					set result = result + 1
 				endif
 				set i = i + 1

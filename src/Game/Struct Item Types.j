@@ -41,6 +41,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_twoSlotItems.pushBack('I020')
 			call thistype.m_twoSlotItems.pushBack('I021')
 			call thistype.m_twoSlotItems.pushBack('I04T')
+			call thistype.m_twoSlotItems.pushBack('I05B')
+			call thistype.m_twoSlotItems.pushBack('I05C')
 		endmethod
 		
 		/*
@@ -201,6 +203,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_preciousClericHelmet
 		private static ItemType m_bigDoubleAxe
 		private static ItemType m_vassalLance
+		
+		// Ricman
 		private static DefenceItemType m_ricmansShield
 		private static ItemType m_ricmansSpear
 		private static ItemType m_ringOfLatency
@@ -222,6 +226,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_magicAmulet
 		private static ItemType m_magicCoat
 		private static ItemType m_magicHat
+		private static ItemType m_powerfulMagicHat
 		private static ItemType m_magicRing
 		private static RangeItemType m_bonesBow
 		private static ItemType m_torch
@@ -236,6 +241,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_dragonArmourPlate
 		private static DefenceItemType m_largeRoundedBuckler
 		private static RangeItemType m_dart
+		private static ItemType m_nordicWarHammer
 		// Wieland's items
 		private static ItemType m_knightsArmour
 		private static ItemType m_bascinet
@@ -302,6 +308,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_ringOfWisdom
 		private static ItemType m_ringOfDexterity
 		private static ItemType m_ringOfLoyality
+		
+		// death vault drops
+		private static ItemType m_deathScythe
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -401,6 +410,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_magicHat.addAbility('AImv', true)
 			call thistype.m_magicHat.addAbility('A06H', true)
 			call thistype.m_magicHat.addAbility('A06G', true)
+			
+			set thistype.m_powerfulMagicHat = ItemType.create('I05A', AItemType.equipmentTypeHeaddress, 0, 0, 0, 0, 0)
+			call thistype.m_powerfulMagicHat.addAbility('A17J', true)
 
 			set thistype.m_magicRing = ItemType.create('I01P', AItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
 			call thistype.m_magicRing.addAbility('AImz', true)
@@ -447,6 +459,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_dart = RangeItemType.createSimpleRange('I029', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_dart.addAbility('A080', true)
+			
+			set thistype.m_nordicWarHammer = ItemType.create('I05C', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_nordicWarHammer.addAbility('A17M', true)
+			call thistype.m_nordicWarHammer.addAbility('A17N', true)
 
 			// Wieland's items
 			set thistype.m_knightsArmour = ItemType.createSimple('I026', AItemType.equipmentTypeArmour)
@@ -616,6 +632,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_ringOfDexterity.addAbility('AIa3', true)
 			set thistype.m_ringOfLoyality = ItemType.createSimple('I055', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfLoyality.addAbility('AIx2', true)
+			
+			// death vault drops
+			set thistype.m_deathScythe = ItemType.create('I05B', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_deathScythe.addAbility('A17K', true)
+			call thistype.m_deathScythe.addAbility('A17L', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType

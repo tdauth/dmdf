@@ -8,12 +8,13 @@ library StructSpellsSpellStab requires Asl, StructGameClasses, StructGameSpell
 		public static constant integer classSelectionAbilityId = 'A0Y2'
 		public static constant integer classSelectionGrimoireAbilityId = 'A0Y7'
 		public static constant integer maxLevel = 5
-		private static constant real damageFactor = 80.0 //Schadens-Stufenfaktor (ab Stufe 1)
+		private static constant real damageFactor = 80.0
 
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local unit target = GetSpellTargetUnit()
 			local real damage = this.level() * thistype.damageFactor
+			call TriggerSleepAction(0.0) // killing the unit with stab prevents the cooldown!
 			call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
 			call Spell.showDamageTextTag(target, damage)
 			set target = null

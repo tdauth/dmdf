@@ -373,6 +373,8 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 				set this.m_playedSong[i] = false
 				set i = i + 1
 			endloop
+			
+			call this.setName(tr("Mathilda"))
 
 			// start page
 			call this.addInfo(false, false, 0, thistype.infoAction0, tr("Hallo.")) // 0

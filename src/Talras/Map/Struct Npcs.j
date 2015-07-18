@@ -69,7 +69,7 @@ library StructMapMapNpcs
 			set thistype.m_manfred = gg_unit_n01H_0148
 			set thistype.m_manfredsDog = gg_unit_n02Z_0143
 			set thistype.m_markward = gg_unit_n014_0117
-			set thistype.m_mathilda = gg_unit_n01T_0202
+			set thistype.m_mathilda = gg_unit_H024_0412
 			set thistype.m_osman = gg_unit_n00R_0101
 			set thistype.m_ricman = gg_unit_H01E_0028
 			set thistype.m_sisgard = gg_unit_H014_0156

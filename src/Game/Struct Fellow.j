@@ -24,6 +24,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		private boolean m_hasTalk
 		private boolean m_hasRevival
 		private string m_description
+		private string m_revivalTitle
 		private string m_revivalMessage
 		private sound m_revivalSound
 		private real m_revivalTime
@@ -58,6 +59,14 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 		public method description takes nothing returns string
 			return this.m_description
+		endmethod
+		
+		public method setRevivalTitle takes string title returns nothing
+			set this.m_revivalTitle = title
+		endmethod
+		
+		public method revivalTitle takes nothing returns string
+			return this.m_revivalTitle
 		endmethod
 
 		public method setRevivalMessage takes string revivalMessage returns nothing
@@ -329,7 +338,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 						set this.m_revivalTimer = CreateTimer()
 						call DmdfHashTable.global().setHandleInteger(this.m_revivalTimer, "this", this)
 						set this.m_revivalTimerDialog = CreateTimerDialog(this.m_revivalTimer)
-						call TimerDialogSetTitle(this.m_revivalTimerDialog, StringArg(tr("%s:"), GetUnitName(this.m_unit)))
+						call TimerDialogSetTitle(this.m_revivalTimerDialog, this.revivalTitle())
 						call TimerDialogSetTitleColor(this.m_revivalTimerDialog, GetPlayerColorRed(GetPlayerColor(GetOwningPlayer(this.m_unit))), GetPlayerColorGreen(GetPlayerColor(GetOwningPlayer(this.m_unit))), GetPlayerColorBlue(GetPlayerColor(GetOwningPlayer(this.m_unit))), 0)
 					endif
 					call TimerStart(this.m_revivalTimer, this.m_revivalTime, false, function thistype.timerFunctionRevive)
@@ -400,6 +409,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_hasTalk = false
 			set this.m_hasRevival = true
 			set this.m_description = null
+			set this.m_revivalTitle = GetUnitName(whichUnit)
 			set this.m_revivalMessage = null
 			set this.m_revivalSound = null
 			set this.m_revivalTime = MapData.revivalTime

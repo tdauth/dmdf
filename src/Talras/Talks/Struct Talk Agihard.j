@@ -113,7 +113,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Dienst du dem Herzog?
 		private static method infoActionServantOfDuke takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Dienst du dem Herzog?"), null)
-			call speech(info, character, true, tr("Wegen meiner Rüstung oder was? Ja, ich bin der Waffenmeister der Burg. Schon mein Vater diente Heimrichs Vater und ich bin stolz sein Erbe weiterzutragen."), null)
+			call speech(info, character, true, tr("Wegen meiner Rüstung oder was? Ja, ich bin der Waffenmeister der Burg. Schon mein Vater diente Heimrichs Vater und ich bin stolz, sein Erbe weiterzutragen."), null)
 			call speech(info, character, false, tr("Dein Vater?"), null)
 			call speech(info, character, true, tr("Ja, er war ein großer Mann. Er war der beste Waffenmeister weit und breit und lehrte viele große Krieger das Kämpfen."), null)
 			call info.talk().showStartPage(character)
@@ -130,6 +130,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			call speech(info, character, true, tr("Natürlich, worum geht's denn?"), null)
 			call speech(info, character, false, tr("Wo finde ich gute Waffen?"), null)
 			call speech(info, character, true, tr("(Lachend) Bei mir natürlich. Nein, im Ernst. Einar verkauft auch ganz gute Waffen und Wieland, der Burgschmied, verkauft sehr gute Rüstungen und Helme."), null)
+			call speech(info, character, true, tr("Ich selbst verkaufe ganz gute Schilde."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -163,7 +164,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			if (sayIt) then
 				call speech(info, character, true, tr("Also gut ... aber du darfst es niemandem erzählen!"), null)
 				call speech(info, character, false, tr("Keine Sorge!"), null)
-				call speech(info, character, true, tr("Ich glaube Markward, der treue Ritter unseres Herzogs Heimrich, würde dem Feind lieber mutig entgegenziehen, als hier in der Burg zu verroten."), null)
+				call speech(info, character, true, tr("Ich glaube Markward, der treue Ritter unseres Herzogs Heimrich, würde dem Feind lieber mutig entgegenziehen, als hier in der Burg zu verrotten."), null)
 				call speech(info, character, true, tr("Doch Heimrich ist anderer Meinung. Loyal wie er nun mal ist, unterwirft sich Markward natürlich dem Willen des Herzogs."), null)
 				call speech(info, character, true, tr("Manche glauben, dass Heimrich auf irgendetwas Bestimmtes wartet. Das ist allerdings nur ein Gerücht und erzähl niemandem, dass du das von mir hast!"), null)
 				// Erfahrungsbonus

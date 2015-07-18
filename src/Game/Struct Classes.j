@@ -153,6 +153,28 @@ library StructGameClasses requires Asl, StructGameCharacter
 			return 0
 		endmethod
 		
+		
+		private static method preloadAbilitiesFromVector takes AIntegerVector vector returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == vector.size())
+				call AbilityPreload(ClassGrimoireEntry(vector[i]).abilityId())
+				call AbilityPreload(ClassGrimoireEntry(vector[i]).grimoireAbilityId())
+				set i = i + 1
+			endloop
+		endmethod
+		
+		private static method preloadAbilities takes nothing returns nothing
+			call thistype.preloadAbilitiesFromVector(thistype.m_clericGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector(thistype.m_necromancerGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector(thistype.m_druidGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector(thistype.m_knightGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector(thistype.m_dragonSlayerGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector(thistype.m_rangerGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector(thistype.m_elementalMageGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector(thistype.m_wizardGrimoireEntries)
+		endmethod
+		
 		/**
 		 * Creates grimoire abilities of the specified class \p class for \p whichUnit at \p page using at maximum \p spellsPerPage.
 		 * The grimoire abilities are used in the class selection to inform the selecting player which spells are available for each class.
@@ -400,6 +422,11 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.initRanger()
 			call thistype.initElementalMage()
 			call thistype.initWizard()
+			/*
+			 * Decreases the lag when changing to classes for the first time.
+			 * This might take many many abilities, so start with a new OpLimit.
+			 */
+			call ForForce(bj_FORCE_PLAYER[0], function thistype.preloadAbilities)
 		endmethod
 
 		public static method cleric takes nothing returns AClass

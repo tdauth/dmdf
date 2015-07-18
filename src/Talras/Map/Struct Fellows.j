@@ -28,6 +28,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_sisgard.setTalk(true)
 			call thistype.m_sisgard.setRevival(true)
 			call thistype.m_sisgard.setDescription(tr("Sisgard ist eine erfahrene Zauberin. Sie kann die Zauber TODO wirken usw."))
+			call thistype.m_sisgard.setRevivalTitle(tr("Sisgard"))
 			call thistype.m_sisgard.setRevivalMessage(tr("Lasst uns ein paar Zauber wirken!"))
 			call thistype.m_sisgard.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_sisgard.setRevivalTime(20.0)
@@ -38,7 +39,8 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			set thistype.m_wigberht = Fellow.create(Npcs.wigberht(), TalkWigberht.talk.evaluate())
 			call thistype.m_wigberht.setTalk(false)
 			call thistype.m_wigberht.setRevival(true)
-			call thistype.m_wigberht.setDescription(tr("Wigberht ist bla"))
+			call thistype.m_wigberht.setDescription(tr("Wigberht ist der Prinz der Nordmänner. Er ist ein starker Nahkämpfer und besitzt die Fähigkeiten 'Ruf des Nordens', 'Unbeugsamkeit' und 'Rundumhieb'."))
+			call thistype.m_wigberht.setRevivalTitle(tr("Wigberht"))
 			call thistype.m_wigberht.setRevivalMessage(tr("Vorwärts!"))
 			call thistype.m_wigberht.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_wigberht.setRevivalTime(20.0)
@@ -46,7 +48,8 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			set thistype.m_ricman = Fellow.create(Npcs.ricman(), TalkRicman.talk.evaluate())
 			call thistype.m_ricman.setTalk(false)
 			call thistype.m_ricman.setRevival(true)
-			call thistype.m_ricman.setDescription(tr("Ricman ist bla"))
+			call thistype.m_ricman.setDescription(tr("Ricman ist die rechte Hand von Wigberht. Er ist ein starker Nahkämpfer und besitzt die Fähigkeiten 'Loyalität', 'Speerwurf' und 'Schildblock'."))
+			call thistype.m_ricman.setRevivalTitle(tr("Ricman"))
 			call thistype.m_ricman.setRevivalMessage(tr("Ihr Hundesöhne, mich besiegt man nicht so leicht!"))
 			call thistype.m_ricman.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_ricman.setRevivalTime(20.0)
@@ -54,6 +57,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			// talk is created after the quest
 			set thistype.m_dragonSlayer = Fellow.create(Npcs.dragonSlayer(), 0)
 			call thistype.m_dragonSlayer.setTalk(false)
+			call thistype.m_dragonSlayer.setRevivalTitle(tr("Drachentöterin"))
 			call thistype.m_dragonSlayer.setRevival(true)
 			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_dragonSlayer.setRevivalTime(20.0)

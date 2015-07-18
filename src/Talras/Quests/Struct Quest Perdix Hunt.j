@@ -60,38 +60,44 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 		private static method stateConditionCompletedHunt takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
 			local unit animal
-			// Wild aufspüren
-			if (GetSpellAbilityId() == 'A17E') then
-				if (RectContainsUnit(gg_rct_quest_perdix_hunt, GetTriggerUnit())) then
-					if (GetRandomInt(0, 100) <= 80) then
-						set animal = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 'n04N', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 0.0)
-						call DmdfHashTable.global().setHandleInteger(animal, "timer", HuntTimer.create(this.character().player(), animal))
-						call this.displayUpdateMessage(tr("Jage das Rebhuhn!"))
+			/*
+			 * Run the quest only for the current character.
+			 * Otherwise animal will be spawned twice etc.
+			 */
+			if (GetOwningPlayer(GetTriggerUnit()) == this.character().player()) then
+				// Wild aufspüren
+				if (GetSpellAbilityId() == 'A17E') then
+					if (RectContainsUnit(gg_rct_quest_perdix_hunt, GetTriggerUnit())) then
+						if (GetRandomInt(0, 100) <= 80) then
+							set animal = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 'n04N', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 0.0)
+							call DmdfHashTable.global().setHandleInteger(animal, "timer", HuntTimer.create(this.character().player(), animal))
+							call this.displayUpdateMessage(tr("Jage das Rebhuhn!"))
+						else
+							call this.displayUpdateMessage(tr("Kein Wild aufgespürt. Versuche es noch einmal."))
+						endif
 					else
-						call this.displayUpdateMessage(tr("Kein Wild aufgespürt. Versuche es noch einmal."))
+						call this.displayUpdateMessage(tr("Kein Wild aufgespürt. Hier scheint es keine Rebhühner zu geben. Versuche es woanders."))
 					endif
-				else
-					call this.displayUpdateMessage(tr("Kein Wild aufgespürt. Hier scheint es keine Rebhühner zu geben. Versuche es woanders."))
-				endif
-			// Wild aufscheuchen
-			elseif (GetSpellAbilityId() == 'A17F') then
-				if (GetUnitTypeId(GetSpellTargetUnit()) == 'n04N') then
-					call IssueImmediateOrder(GetSpellTargetUnit(), "ravenform") // abheben
-					call this.displayUpdateMessage(tr("Lass den Falken los!"))
-				endif
-			// Wild greifen
-			elseif (GetSpellAbilityId() == 'A17G') then
-				if (GetUnitTypeId(GetSpellTargetUnit()) == 'n04O') then
-					call HuntTimer(DmdfHashTable.global().handleInteger(GetSpellTargetUnit(), "timer")).destroy()
-					call DmdfHashTable.global().destroyUnit(GetSpellTargetUnit())
-					
-					call Character(this.character()).giveQuestItem('I059')
-					
-					set this.m_counter = this.m_counter + 1
-					
-					call this.displayUpdateMessage(Format(tr("%1%/%2% Rebhühnern.")).i(this.m_counter).i(thistype.maxAnimals).result())
-					
-					return this.m_counter == thistype.maxAnimals
+				// Wild aufscheuchen
+				elseif (GetSpellAbilityId() == 'A17F') then
+					if (GetUnitTypeId(GetSpellTargetUnit()) == 'n04N') then
+						call IssueImmediateOrder(GetSpellTargetUnit(), "ravenform") // abheben
+						call this.displayUpdateMessage(tr("Lass den Falken los!"))
+					endif
+				// Wild greifen
+				elseif (GetSpellAbilityId() == 'A17G') then
+					if (GetUnitTypeId(GetSpellTargetUnit()) == 'n04O') then
+						call HuntTimer(DmdfHashTable.global().handleInteger(GetSpellTargetUnit(), "timer")).destroy()
+						call DmdfHashTable.global().destroyUnit(GetSpellTargetUnit())
+						
+						call Character(this.character()).giveQuestItem('I059')
+						
+						set this.m_counter = this.m_counter + 1
+						
+						call this.displayUpdateMessage(Format(tr("%1%/%2% Rebhühnern.")).i(this.m_counter).i(thistype.maxAnimals).result())
+						
+						return this.m_counter == thistype.maxAnimals
+					endif
 				endif
 			endif
 			

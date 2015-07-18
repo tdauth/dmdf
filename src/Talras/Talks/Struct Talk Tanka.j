@@ -33,11 +33,11 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		// Wer bist du?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wer bist du?"), null)
-			call speech(info, character, true, tr("Mein Name ist Tanka. Ich bin eine Schamanin und versuch ja nicht mich übers Ohr zu hauen, sonst haut mein Gefährte Brogo dich um."), null)
+			call speech(info, character, true, tr("Mein Name ist Tanka. Ich bin eine Schamanin und versuche ja nicht mich übers Ohr zu hauen, sonst haut mein Gefährte Brogo dich um."), null)
 			// (Charakter hat noch nicht mit Brogo gesprochen)
 			if (not TalkBrogo.talk().characterHasTalkedTo(character)) then
 				call speech(info, character, false, tr("Wer ist Brogo?"), null)
-				call speech(info, character, true, tr("Na das haarige Viech da neben mir. Er ist mein treuer Gefährte und beschützt mich vor den gröbsten Gefahren dieser Gegend."), null)
+				call speech(info, character, true, tr("Na der große Bärenmensch da neben mir. Er ist mein treuer Gefährte und beschützt mich vor den größten Gefahren dieser Gegend."), null)
 			// (Charakter hat bereits mit Brogo gesprochen)
 			else
 				call speech(info, character, false ,tr("Schon klar."), null)
@@ -80,7 +80,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Handelst du auch mit irgendwas?"), null)
 			call speech(info, character, true, tr("Allerdings. Als Schamanin kann man seine Freizeit ganz gut nutzen, um diverse Zaubergegenstände und Tränke herzustellen, wenn man das nötige Wissen und die benötigten Zutaten hat."), null)
-			call speech(info, character, true, tr("Also wenn du lustige Sachen mit deinen Gegnern anstellen willst, bist du bei mir genau richtig. Aber ich warne dich Fremder: Mit diesen einfachen Zaubertricks wirst du nichts gegen mich ausrichten können!"), null)
+			call speech(info, character, true, tr("Also wenn du verrückte Sachen mit deinen Gegnern anstellen willst, bist du bei mir genau richtig. Aber ich warne dich Fremder: Mit diesen einfachen Zaubertricks wirst du nichts gegen mich ausrichten können!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -92,7 +92,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		// Was für ein Ungeheuer war das?
 		private static method infoAction5 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was für ein Ungeheuer war das?"), null)
-			call speech(info, character, true, tr("Na, ein ziemlich großes eben. Diese Bestie ist verdammt blutrünstig und verdammt stark. Du musst wissen, dass Brogos Stamm nicht gerade klein war. Das Viech hat bestimmt zwanzig oder mehr Bärenmenschen getötet und da waren auch voll ausgewachsene dabei."), null)
+			call speech(info, character, true, tr("Na, ein ziemlich großes eben. Diese Bestie ist verdammt blutrünstig und verdammt stark. Du musst wissen, dass Brogos Stamm nicht gerade klein war. Dieses Untier hat bestimmt zwanzig oder mehr Bärenmenschen getötet und da waren auch voll ausgewachsene dabei."), null)
 			call speech(info, character, true, tr("Brogo ist ja noch recht jung, so ein ausgewachsener Bärenmensch ist wesentlich größer und stärker, also kannst du dir ausrechnen, wie stark die Bestie ist."), null)
 			call speech(info, character, true, tr("Wir folgten der Fährte dieser Bestie bis hier her. Aber hier sind die Spuren zu undeutlich und Brogo konnte die Fährte nicht wieder aufnehmen. Vermutlich hat es zu lange gedauert, bis wir uns auf die Suche nach ihr machten."), null)
 			call speech(info, character, true, tr("Brogo war ja auch schwer verwundet. Na ja, wenn du irgendeinen Hinweis in der Umgebung findest, dann gib mir einfach Bescheid."), null)
@@ -262,7 +262,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		private static method infoAction8_0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("… seine Waffen vergiftet."), null)
 			/// @todo Charakter erhält Gegenstand „Angriffs-Totem“
-			call speech(info, character, true, tr("Tja, der Entwickler dieser Mod sollte das mal einbauen!"), null)
+			call speech(info, character, true, tr("Sieh zu und lerne!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -270,7 +270,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		private static method infoAction8_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("… seinen Körper entflammt."), null)
 			/// @todo Charakter erhält Gegenstand „Verteidigungs-Totem“
-			call speech(info, character, true, tr("Tja, der Entwickler dieser Mod sollte das mal einbauen!"), null)
+			call speech(info, character, true, tr("Sieh zu und lerne!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -283,7 +283,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		private static method infoAction8_2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("… seinen Schmerz teilt."), null)
 			/// @todo Charakter erhält Gegenstand „Geistes-Totem“
-			call speech(info, character, true, tr("Tja, der Entwickler dieser Mod sollte das mal einbauen!"), null)
+			call speech(info, character, true, tr("Sieh zu und lerne!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -291,7 +291,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		private static method infoAction8_3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("… seinen Körper vervielfacht."), null)
 			/// @todo Charakter erhält Gegenstand „Körper-Totem“
-			call speech(info, character, true, tr("Tja, der Entwickler dieser Mod sollte das mal einbauen!"), null)
+			call speech(info, character, true, tr("Sieh zu und lerne!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
 		

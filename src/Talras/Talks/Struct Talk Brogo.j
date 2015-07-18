@@ -62,10 +62,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 		endmethod
 
 		private method characterHasReachedMaximum takes ACharacter character, integer newCats returns boolean
-			local player owner = character.player()
-			local boolean result = this.m_playerCatCount[GetPlayerId(owner)] + newCats >= thistype.maxCats
-			set owner = null
-			return result
+			return this.m_playerCatCount[GetPlayerId(character.player())] + newCats >= thistype.maxCats
 		endmethod
 
 		private method startPageAction takes ACharacter character returns nothing
@@ -91,6 +88,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 		private static method giveCatsToBrogo takes AInfo info, ACharacter character returns nothing
 			local thistype talk = info.talk()
 			local integer countedCats = talk.countCats(character.player())
+			debug call Print("Count cats: " + I2S(countedCats))
 			// (Ist Brogos erste Katze)
 			if (talk.cats() == 0) then
 				// (Charakter hat eine Katze)
@@ -103,8 +101,8 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 				call character.addExperience(thistype.experienceBonus, true)
 				call character.displayMessage(ACharacter.messageTypeInfo, IntegerArg(tr("Erfahrungsbonus +%i"), thistype.experienceBonus))
 				call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, StringArg(tr("%s hat den Katzenbonus erhalten"), character.name()))
-			// (Brogo hat schon Katzen, egal von welchem Charakter und Charakter hat noch nicht die Maximalanzahl seiner geschenkten Katzen erreicht)
-			elseif (not talk.characterHasReachedMaximum(character, countedCats)) then
+			// (Brogo hat schon Katzen, egal von welchem Charakter)
+			else
 				// (Charakter hat eine Katze)
 				if (countedCats == 1) then
 					call speech(info, character, true, tr("Toll, noch eine Katze."), null)
@@ -112,19 +110,15 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 				else
 					call speech(info, character, true, tr("Toll, noch mehr Katzen."), null)
 				endif
-				call speech(info, character, true, tr("Streicheln macht Brogo Spaß. Brogo will aber noch mehr Katzen."), null)
-			// (Brogo hat schon Katzen, egal von welchem Charakter und Charakter hat die Maximalanzahl seiner geschenkten Katzen erreicht)
-			elseif (talk.cats() > 0 and talk.characterHasReachedMaximum(character, countedCats)) then
-				// (Charakter hat eine Katze)
-				if (countedCats == 1) then
-					call speech(info, character, true, tr("Toll, noch eine Katze."), null)
-				// (Charakter hat mehrere Katzen)
-				else
-					call speech(info, character, true, tr("Toll, noch mehr Katzen."), null)
-				endif
+			endif
+			// (Brogos Maximalanzahl der geschenkten Katzen erreicht)
+			if (talk.characterHasReachedMaximum(character, countedCats)) then
 				call speech(info, character, true, tr("Jetzt aber genug Katzen. Brogo gibt dir Belohnung und dankt dir für Katzen."), null)
 				call speech(info, character, true, tr("Belohnung ist Waffe von Troll. Brogo hat getötet viele Trolle. Trolle böser als Katzen."), null)
 				call QuestCatsForBrogo.characterQuest(character).questItem(0).complete()
+			// (Brogos Maximalanzahl der geschenkten Katzen noch nicht erreicht)
+			else
+				call speech(info, character, true, tr("Streicheln macht Brogo Spaß. Brogo will aber noch mehr Katzen."), null)
 			endif
 			call talk.addCats(character.player())
 		endmethod
