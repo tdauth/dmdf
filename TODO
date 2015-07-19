@@ -451,6 +451,7 @@
 * AInventory: Drop wird trotzdem registriert, obwohl der Trigger disabled wird.
 * FIXED: Charakter ist im Video immer hidden.
 * Intro: Dorfbewohner und Nordmänner als actors einfügen, ansonsten abhängig von der Tageszeit.
+* Beim letzten Video beim Überspringen einen Dialog anzeigen lassen "Spiel beenden?" und das pro Spieler. Nicht gemeinsam überspringen!
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

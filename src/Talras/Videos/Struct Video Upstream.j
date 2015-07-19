@@ -21,6 +21,25 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 				call TriggerSleepAction(415.0) /// @todo Replace by WaitForMusic or something else (more exact).
 			endloop
 		endmethod
+		
+		private static method dialogButtonActionYes takes ADialogButton dialogButton returns nothing
+			if (dialogButton.dialog().player() == GetLocalPlayer()) then
+				call EndGame(true)
+			endif
+		endmethod
+		
+		private static method dialogButtonActionNo takes ADialogButton dialogButton returns nothing
+		endmethod
+		
+		public stub method onSkipCondition takes player skippingPlayer, integer skipablePlayers returns boolean
+			call AGui.playerGui(skippingPlayer).dialog().clear()
+			call AGui.playerGui(skippingPlayer).dialog().setMessage(tr("Spiel verlassen?"))
+			call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tr("Ja"), thistype.dialogButtonActionYes)
+			call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tr("Nein"), thistype.dialogButtonActionNo)
+			call AGui.playerGui(skippingPlayer).dialog().show()
+		
+			return false
+		endmethod
 
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
@@ -183,7 +202,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 
 			call this.continueShipRoute.execute()
 
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Wird das Video übersprungen, so endet das Spiel für alle Spieler."))
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Wenn Sie das Video überspringen, können Sie das Spiel verlassen."))
 			
 			if (wait(3.0)) then
 				return
@@ -198,16 +217,23 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			set i = 0
 			loop
 				exitwhen (i == Credits.contributors.evaluate())
-				call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 14.0, 255, 255, 255, 0)
+				
+				if (not Credits.contributorIsTitle.evaluate(i)) then
+					call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 14.0, 255, 255, 255, 0)
+				else
+					call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 16.0, 255, 0, 0, 0)
+				endif
 
 				if (wait(3.00)) then
 					return
 				endif
 
-				call thistype.showMovingTextTag(Credits.contributorDescription.evaluate(i), 14.0, 255, 255, 255, 0)
+				if (not Credits.contributorIsTitle.evaluate(i)) then
+					call thistype.showMovingTextTag(Credits.contributorDescription.evaluate(i), 14.0, 255, 255, 255, 0)
 
-				if (wait(5.0)) then
-					return
+					if (wait(5.0)) then
+						return
+					endif
 				endif
 
 				set i = i + 1
@@ -219,13 +245,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 				return
 			endif
 
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Das Spiel wird in 8 Sekunden automatisch beendet."))
-
-			if (wait(8.0)) then
-				return
-			endif
-
-			call this.stop()
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Überspringen Sie das Video, um das Spiel zu verlassen."))
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing

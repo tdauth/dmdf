@@ -784,6 +784,10 @@ endif
 				
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().disableLevelTrigger()
+					
+					if (Character(ACharacter.playerCharacter(Player(i))).credits() != 0 and  Character(ACharacter.playerCharacter(Player(i))).credits().isShown()) then
+						call Character(ACharacter.playerCharacter(Player(i))).credits().hide()
+					endif
 				endif
 				set i = i + 1
 			endloop

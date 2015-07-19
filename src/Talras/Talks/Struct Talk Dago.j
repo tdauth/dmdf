@@ -30,8 +30,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		// He du! Danke, dass ihr mich vor den Bären gerettet habt!
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("He du! Danke, dass ihr mich vor den Bären gerettet habt!"), null)
-			call speech(info, character, true, tr("Ich wette, dass sich da noch ein paar von diesen Bestien in der Höhle verkrochen haben."), null)
+			call speech(info, character, true, tr("He du! Danke, dass ihr mich vor den Bären gerettet habt!"), gg_snd_Dago1)
+			call speech(info, character, true, tr("Ich wette, dass sich da noch ein paar von diesen Bestien in der Höhle verkrochen haben."), gg_snd_Dago2)
 			call speech(info, character, true, tr("Aber keine Sorge. Um die werde ich mich selbst kümmern."), null)
 			call speech(info, character, true, tr("Ich hab auch schon einen Plan. Ich stecke einfach die ganze verdammte Höhle in Brand und lasse diese Scheißviecher elendlich verrecken!"), null)
 			call speech(info, character, true, tr("Allerdings bräuchte ich dazu entweder ne verdammte Menge Holz oder einen guten Zauberspruch."), null)

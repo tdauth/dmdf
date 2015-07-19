@@ -123,6 +123,14 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			 * Hint quest entries:
 			 */
 			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tr("Info: Chat-Befehle"))
+			call QuestSetDescription(whichQuest, tr("Die obigen Befehle können im Chat verwendet werden."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPackBeast.blp")
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("\"-menu\" öffnet das Hauptmenü."))
+			call QuestSetCompleted(whichQuest, true)
+			 
+			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tr("Info: Rucksack"))
 			call QuestSetDescription(whichQuest, tr("Mit der Rucksackfähigkeit kann der Rucksack geöffnet werden. Es werden drei Gegenstände pro Seite angezeigt."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPackBeast.blp")
