@@ -71,6 +71,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_wolves1
 		private static SpawnPoint m_wolves2
 		private static SpawnPoint m_wolves3
+		private static SpawnPoint m_wolves4
 		private static SpawnPoint m_boars0
 		private static SpawnPoint m_boars1
 		private static SpawnPoint m_bears0
@@ -206,7 +207,6 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_wolves2.addNewItemType(index, 'I01I', 1.0)
 			set index = thistype.m_wolves2.addUnitWithType(gg_unit_n02F_0016, 1.0)
 			call thistype.m_wolves2.addNewItemType(index, 'I01H', 1.0)
-			
 
 			/*
 			 * Wolves below the cows.
@@ -218,6 +218,17 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_wolves3.addNewItemType(index, 'I01H', 1.0)
 			set index = thistype.m_wolves3.addUnitWithType(gg_unit_n02F_0418, 1.0)
 			call thistype.m_wolves3.addNewItemType(index, 'I01H', 1.0)
+			
+			/*
+			 * wolves below the mill hill.
+			 */
+			set thistype.m_wolves4 = SpawnPoint.create()
+			set index = thistype.m_wolves4.addUnitWithType(gg_unit_n02F_0460, 1.0)
+			call thistype.m_wolves4.addNewItemType(index, 'I01H', 1.0)
+			set index = thistype.m_wolves4.addUnitWithType(gg_unit_n02F_0459, 1.0)
+			call thistype.m_wolves4.addNewItemType(index, 'I01H', 1.0)
+			set index = thistype.m_wolves4.addUnitWithType(gg_unit_n02G_0458, 1.0)
+			call thistype.m_wolves4.addNewItemType(index, 'I01I', 1.0)
 			
 			set thistype.m_boars0 = SpawnPoint.create()
 			set index = thistype.m_boars0.addUnitWithType(gg_unit_n002_0078, 1.0)

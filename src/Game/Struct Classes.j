@@ -209,9 +209,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAbatement.classSelectionAbilityId, SpellAbatement.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlind.classSelectionAbilityId, SpellBlind.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellClarity.classSelectionAbilityId, SpellClarity.classSelectionGrimoireAbilityId))
-			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellExorcizeEvil.classSelectionAbilityId, SpellExorcizeEvil.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellHolyPower.classSelectionAbilityId, SpellHolyPower.classSelectionGrimoireAbilityId))
-			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellHolyWill.classSelectionAbilityId, SpellHolyWill.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellImpendingDisaster.classSelectionAbilityId, SpellImpendingDisaster.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellPreventIll.classSelectionAbilityId, SpellPreventIll.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellProtect.classSelectionAbilityId, SpellProtect.classSelectionGrimoireAbilityId))
@@ -220,6 +218,10 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlessing.classSelectionAbilityId, SpellBlessing.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellConversion.classSelectionAbilityId, SpellConversion.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellGodsFavor.classSelectionAbilityId, SpellGodsFavor.classSelectionGrimoireAbilityId))
+			
+			// ultimates on page 2
+			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellExorcizeEvil.classSelectionAbilityId, SpellExorcizeEvil.classSelectionGrimoireAbilityId))
+			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellHolyWill.classSelectionAbilityId, SpellHolyWill.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initNecromancer takes nothing returns nothing

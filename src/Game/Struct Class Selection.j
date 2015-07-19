@@ -43,9 +43,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellAbatement.create(character)
 				call SpellBlind.create(character)
 				call SpellClarity.create(character)
-				call SpellExorcizeEvil.create(character)
 				call SpellHolyPower.create(character)
-				call SpellHolyWill.create(character)
 				call SpellImpendingDisaster.create(character)
 				call SpellPreventIll.create(character)
 				call SpellProtect.create(character)
@@ -56,6 +54,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellBlessing.create(character)
 				call SpellConversion.create(character)
 				call SpellGodsFavor.create(character)
+				
+				// ultimates on page 2
+				call SpellExorcizeEvil.create(character)
+				call SpellHolyWill.create(character)
 			elseif (class == Classes.necromancer()) then
 				call SpellAncestorPact.create(character)
 				call SpellConsume.create(character)

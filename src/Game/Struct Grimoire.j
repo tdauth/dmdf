@@ -232,6 +232,15 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			 * Display current spell.
 			 */
 			else
+				// show in correct order, always show the spell entry itself as last one since it will become the last one whenever its level changes!
+				call this.currentSpell().showGrimoireEntry() // show info about current level
+				call this.m_uiGrimoireSpells.pushBack(this.currentSpell().grimoireEntry())
+			
+				// show an ability to return back to the spells overview
+				// in fact the grimoire spell itself has the same functionality but it is not recognizable by the user
+				call this.m_spellBackToGrimoire.show.evaluate()
+				call this.m_uiGrimoireSpells.pushBack(this.m_spellBackToGrimoire)
+				
 				if (this.currentSpell().isSkillable()) then
 					call this.m_spellIncrease.show.evaluate()
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellIncrease)
@@ -254,15 +263,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				debug else
 					debug call Print("Spell is level 0")
 				endif
-				
-				// show in correct order, always show the spell entry itself as last one since it will become the last one whenever its level changes!
-				call this.currentSpell().showGrimoireEntry() // show info about current level
-				call this.m_uiGrimoireSpells.pushBack(this.currentSpell().grimoireEntry())
-				
-				// show an ability to return back to the spells overview
-				// in fact the grimoire spell itself has the same functionality but it is not recognizable by the user
-				call this.m_spellBackToGrimoire.show.evaluate()
-				call this.m_uiGrimoireSpells.pushBack(this.m_spellBackToGrimoire)
 			endif
 
 			// TODO if trigger player is not owner of the character!
