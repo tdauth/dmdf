@@ -175,6 +175,31 @@ endif
 			call QuestItemSetDescription(questItem, tr("Rechtsklick auf Gegenstand und Linksklick auf anderen Charakter gibt dem anderen eine Ladung des Gegenstands."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tr("Rechtsklick auf Gegenstand und Linksklick auf das vierte freie Slot legt den Gegenstand mit allen Ladungen ab."))
+			
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tr("Info: Schreine"))
+			call QuestSetDescription(whichQuest, tr("Schreine dienen der Wiederbelebung und Heilung des Charakters. Es kann immer nur ein Schrein aktiviert werden. An diesem Schrein wird der Charakter nach 20 Sekunden wiederbelebt, wenn er gestorben ist. Den Aktiven Schrein erreicht man über das Symbol links unten oder mit F8. Zu allen erkundeten Schreinen kann sich der Charakter mit Hilfe der Spruchrolle des Totenreichs teleportieren."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNResStone.blp")
+			
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tr("Info: Gespräche mit NPCs"))
+			call QuestSetDescription(whichQuest, tr("NPCs mit Ausrufezeichen bieten Gespräche an. Befindet sich der Charakter in der Nähe eines NPCs und hat man den Charakter ausgewählt, so kann man mit einem Rechtsklick auf den NPC ein Gespräch beginnen. Einzelne Sätze können mit Escape übersprungen werden."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNResStone.blp")
+			
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tr("Info: Erfahrung"))
+			call QuestSetDescription(whichQuest, tr("Die maximale Stufe ist 25. Auf Stufe 12 und Stufe 25 kann jeweils eine Ultimate-Fähigkeit erlernt werden. Erfahrung vom Töten von Unholden wird gleichmäßig auf alle Charaktere in der gesamten Karte verteilt. Aufträge geben weitaus mehr Erfahrung als das Töten von Unholden."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNResStone.blp")
+			
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tr("Info: Goldmünzen"))
+			call QuestSetDescription(whichQuest, tr("Goldmünzen erhält man für Aufträge und das Töten von Unholden. Die Goldmünzen durch das Töten von Unholden werden gleichmäßig an alle Charaktere auf der Karte verteilt. Aufträge geben weitaus mehr Goldmünzen als das Töten von Unholden."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
+			
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tr("Info: Zauber"))
+			call QuestSetDescription(whichQuest, tr("Jede Klasse besitzt 15 verschiedene Zauber. Diese können im Einheitenmenü \"Zauber erlernen\" des Charakters erlernt werden. Einen Grundzauber dessen Stufe stets eins ist und der von Anfang erlernt wurde. Zwei Ultimate-Zauber mit einer Stufe, die auf Stufe 12 und auf Stufe 25 erlernt werden können und zwölf gewöhnliche Zauber mit jeweils fünf Stufen. Das Erhöhen der Stufe eines Zaubers kostet einen Zauberpunkt. Pro Stufe erhält ein Charakter zwei Zauberpunkt. Er startet jedoch mit bereits drei Zauberpunkten. Zauberstufen können jederzeit wieder zurückgesetzt werden."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSpellBook.blp")
 		endmethod
 		
 		/**

@@ -439,6 +439,8 @@
 * Banditen droppen zu viel.
 * FIXED: AVideo: Der actor bleibt beim Skip öfter erhalten (im Nicht-Debug-Mode). thistype.m_actor wird 0?
 * http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/set-spell-ui-position-spellbook-240242/ mit Dummy-Zaubern die Icon-Positionen bestimmen.
+* speech() dauert manchmal ewig bis eine weiter kommt, muss mit Escape abgebrochen werden. Vor allem dann wenn ein Sound abgespielt wird.
+* FIXED: Was passiert wenn wait() im Video noch weiterläuft, zu Ende läuft und skip schon ausgeführt wird. Sollte skip() nicht vom wait() aus aufgerufen werden?
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
