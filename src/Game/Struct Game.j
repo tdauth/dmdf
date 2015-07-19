@@ -752,7 +752,7 @@ endif
 		endmethod
 
 		private static method filterShownUnit takes nothing returns boolean
-			return not IsUnitHidden(GetFilterUnit())
+			return not IsUnitHidden(GetFilterUnit()) and not AVideo.unitIsActor(GetFilterUnit())
 		endmethod
 
 		private static method hideUnit takes unit whichUnit returns nothing
@@ -766,9 +766,10 @@ endif
 		 * - Disables gold and experience by kills.
 		 * - Setups music volume.
 		 * - Hides all items.
-		 * - Hides all character owner units.
+		 * - Hides all character owner units except actors.
 		 * - Removes specific buffs.
 		 * - Disables all sell abilities for all players to prevent arrows in videos.
+		 * - Disables shrine auras.
 		 */
 		public static method initVideoSettings takes nothing returns nothing
 			local integer i
@@ -790,6 +791,7 @@ endif
 			call Fellow.reviveAllForVideo.evaluate()
 			call SpawnPoint.pauseAll()
 			call ItemSpawnPoint.pauseAll()
+			call Shrine.disableAllAuras()
 			call DisableTrigger(thistype.m_killTrigger)
 			//call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_UI, 1.0) /// @todo TEST
 			call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_MUSIC, 1.0)
@@ -844,6 +846,7 @@ endif
 			call thistype.setDefaultMapMusic()
 			call SpawnPoint.resumeAll()
 			call ItemSpawnPoint.resumeAll()
+			call Shrine.enableAllAuras()
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterHiddenItem), function thistype.showItem)
 			set i = 0
 			loop

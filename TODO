@@ -449,6 +449,8 @@
 * AInventory: In der order trigger action muss eventuell nicht für alle 0 Sekunden gewartet werden. Items vorher entfernen/stoppen?
 * Gegenstände eines anderen Spielers aufzuheben funktioniert noch vor allem wenn der Rucksack geöffnet ist. Item bleibt in manchen Fällen im Inventar! Geht aber auch bei Ausrüstung. Jedoch ist Gegenstand in jedem Fall bereits im Inventar bei dem Event! Fehler in der Funktion addItem()? Eigentlich müsste dann aber immer "Error on dropping item " + GetItemName(usedItem)) kommen. Außer der pickup trigger wird zeitweise deaktiviert und registriert den Pickup nicht. Das passiert nur in disable() und unitAddItemToSlotById()-
 * AInventory: Drop wird trotzdem registriert, obwohl der Trigger disabled wird.
+* FIXED: Charakter ist im Video immer hidden.
+* Intro: Dorfbewohner und Nordmänner als actors einfügen, ansonsten abhängig von der Tageszeit.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

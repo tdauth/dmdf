@@ -37,6 +37,16 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 		public static method shrines takes nothing returns AIntegerVector
 			return thistype.m_shrines
 		endmethod
+		
+		public static method enableAllAuras takes nothing returns nothing
+			call SetPlayerAbilityAvailable(MapData.neutralPassivePlayer, 'A09C', true)
+			call SetPlayerAbilityAvailable(MapData.neutralPassivePlayer, 'A09D', true)
+		endmethod
+		
+		public static method disableAllAuras takes nothing returns nothing
+			call SetPlayerAbilityAvailable(MapData.neutralPassivePlayer, 'A09C', false)
+			call SetPlayerAbilityAvailable(MapData.neutralPassivePlayer, 'A09D', false)
+		endmethod
 
 	endstruct
 

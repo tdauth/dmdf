@@ -170,9 +170,9 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 			if (thistype.m_infoMessageJoin != null) then
 				if (character == 0) then
-					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageJoin).u(this.m_unit).result())
+					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageJoin).s(this.revivalTitle()).result())
 				else
-					call character.displayMessage(Character.messageTypeInfo, Format(thistype.m_infoMessageJoin).u(this.m_unit).result())
+					call character.displayMessage(Character.messageTypeInfo, Format(thistype.m_infoMessageJoin).s(this.revivalTitle()).result())
 				endif
 			endif
 			if (thistype.m_infoSoundJoin != null) then
@@ -224,9 +224,9 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 			if (thistype.m_infoMessageLeave != null) then
 				if (this.m_character == 0) then
-					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageLeave).u(this.m_unit).result())
+					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageLeave).s(this.revivalTitle()).result())
 				else
-					call this.m_character.displayMessage(Character.messageTypeInfo, Format(thistype.m_infoMessageLeave).u(this.m_unit).result())
+					call this.m_character.displayMessage(Character.messageTypeInfo, Format(thistype.m_infoMessageLeave).s(this.revivalTitle()).result())
 				endif
 			endif
 
