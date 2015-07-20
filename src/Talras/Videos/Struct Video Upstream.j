@@ -29,6 +29,11 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 		endmethod
 		
 		private static method dialogButtonActionNo takes ADialogButton dialogButton returns nothing
+			local force whichForce = CreateForce()
+			call ForceAddPlayer(whichForce, dialogButton.dialog().player())
+			call CinematicModeBJ(true, whichForce)
+			call DestroyForce(whichForce)
+			set whichForce = null
 		endmethod
 		
 		public stub method onSkipCondition takes player skippingPlayer, integer skipablePlayers returns boolean

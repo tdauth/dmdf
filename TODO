@@ -451,7 +451,13 @@
 * AInventory: Drop wird trotzdem registriert, obwohl der Trigger disabled wird.
 * FIXED: Charakter ist im Video immer hidden.
 * Intro: Dorfbewohner und Nordmänner als actors einfügen, ansonsten abhängig von der Tageszeit.
-* Beim letzten Video beim Überspringen einen Dialog anzeigen lassen "Spiel beenden?" und das pro Spieler. Nicht gemeinsam überspringen!
+* FIXED: Beim letzten Video beim Überspringen einen Dialog anzeigen lassen "Spiel beenden?" und das pro Spieler. Nicht gemeinsam überspringen!
+* FIXED: Beim Dialog im letzten Video bei Abbruch wieder korrekten Cinematic-Mode herstellen.
+* Dago: Ist in Dialog zu leise. Bonus-Kampagne verwendet  call SetSpeechVolumeGroupsBJ(  ) und call VolumeGroupResetBJ(  ) um Transmission außerhalb von Videos. Außerdem WaitForSoundBJ um zu warten.
+* FIXED: AInfo: speech() braucht ohne Abbruch ewig. Verzögert SetCinematicSceneForPlayer() von sich aus schon?!
+* DEPRECATED: Neuer Ansatz. In Skip-Trigger wird einfach der Sound gekillt und in Funktion selbst WaitForSoundBJ verwendet. Ginge jedoch nur wenn ein Sound pro Spieler.
+* Magische Schockwellen -> Effekt fehlt.
+* AInfo: Durch neue Lösung hängt des Skippen des Textes. Skip-Trigger einbauen -> Text direkt clearen.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

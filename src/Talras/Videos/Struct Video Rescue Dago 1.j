@@ -52,8 +52,8 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 			endif
 
 
-			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Danke, dass Ihr mir geholfen habt! Diese Scheißbären können einen den Kopf kosten, wenn man nicht aufpasst. Aber sagt mal, wer seid ihr überhaupt?"), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Danke, dass Ihr mir geholfen habt! Diese Scheißbären können einen den Kopf kosten, wenn man nicht aufpasst. Aber sagt mal, wer seid ihr überhaupt?"), gg_snd_DagoRescueDago2)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DagoRescueDago2))) then
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_3, true, 0.0)
@@ -62,16 +62,16 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_2, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Süden? Na da wärt ihr wohl besser geblieben, jetzt da wohl erneut ein Krieg ausbrechen wird. Aber gut, ihr seid ja Söldner."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Süden? Na da wärt ihr wohl besser geblieben, jetzt da wohl erneut ein Krieg ausbrechen wird. Aber gut, ihr seid ja Söldner."), gg_snd_DagoRescueDago3)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DagoRescueDago3))) then
 				return
 			endif
-			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Mein Name ist übrigens Dago. Ich komme aus Talras und bin Jäger, wie man unschwer erkennen kann. Eigentlich sollte ich ein Tier für den Herzog erlegen."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Mein Name ist übrigens Dago. Ich komme aus Talras und bin Jäger, wie man unschwer erkennen kann. Eigentlich sollte ich ein Tier für den Herzog erlegen."), gg_snd_DagoRescueDago4)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DagoRescueDago4))) then
 				return
 			endif
-			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Mit den beiden Pelzviechern hier ist mir mehr als genug geholfen! Also trödeln wir nicht lange herum. Folgt mir einfach, ich führe euch zum Burgeingang."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Mit den beiden Pelzviechern hier ist mir mehr als genug geholfen! Also trödeln wir nicht lange herum. Folgt mir einfach, ich führe euch zum Burgeingang."), gg_snd_DagoRescueDago5)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DagoRescueDago5))) then
 				return
 			endif
 			call this.stop()

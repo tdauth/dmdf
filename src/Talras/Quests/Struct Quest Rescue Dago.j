@@ -81,10 +81,10 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3))
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3), thistype.rectRange)) then
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4))
-					call TransmissionFromUnit(Npcs.dago(), tr("Wir sind fast da."), null)
+					call TransmissionFromUnit(Npcs.dago(), tr("Wir sind fast da."), gg_snd_DagoRescueDago6)
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4), thistype.rectRange)) then
 					call SetUnitFacing(Npcs.dago(), 265.0)
-					call TransmissionFromUnit(Npcs.dago(), tr("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich."), null)
+					call TransmissionFromUnit(Npcs.dago(), tr("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich."), gg_snd_DagoRescueDago7)
 					call TalkDago.initTalk()
 					return true
 				endif
