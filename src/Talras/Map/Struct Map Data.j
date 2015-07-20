@@ -62,6 +62,8 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer cornEater = 'n016'
 		
 		public static constant integer witch = 'h00F'
+		
+		public static constant integer giant = 'n02R'
 
 		private static method create takes nothing returns thistype
 			return 0

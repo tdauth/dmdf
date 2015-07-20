@@ -9,6 +9,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 		private integer m_actorNorseman1
 		private integer m_actorKuno
 		private integer m_actorKunosDaughter
+		private integer m_actorGiant
 		private AGroup m_group
 	
 		implement Video
@@ -37,6 +38,11 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 		endmethod
 		
 		public stub method onSkipCondition takes player skippingPlayer, integer skipablePlayers returns boolean
+			local force whichForce = CreateForce()
+			call ForceAddPlayer(whichForce, skippingPlayer)
+			call CinematicModeBJ(false, whichForce)
+			call DestroyForce(whichForce)
+			set whichForce = null
 			call AGui.playerGui(skippingPlayer).dialog().clear()
 			call AGui.playerGui(skippingPlayer).dialog().setMessage(tr("Spiel verlassen?"))
 			call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tr("Ja"), thistype.dialogButtonActionYes)
@@ -85,6 +91,9 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorKunosDaughter), gg_rct_video_upstream_kunos_daughter)
 			call SetUnitFacing(thistype.unitActor(this.m_actorKunosDaughter), 106.44)
 			
+			set this.m_actorGiant = thistype.createUnitActorAtRect(MapData.alliedPlayer, UnitTypes.giant, gg_rct_video_upstream_giant_start, 272.22)
+			call SetUnitColor(thistype.unitActor(this.m_actorGiant), GetPlayerColor(Player(PLAYER_NEUTRAL_PASSIVE)))
+			
 			set this.m_group = AGroup.create()
 			call this.m_group.units().pushBack(thistype.actor())
 			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorWigberht))
@@ -94,6 +103,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			
 			call thistype.playMusic.execute()
 			call CameraSetupApplyForceDuration(gg_cam_upstream_0, true, 0.0)
+			call CameraSetupApplyForceDuration(gg_cam_upstream_1, true, 8.0)
 		endmethod
 
 		private method continueShipRoute takes nothing returns nothing
@@ -147,7 +157,6 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 			local integer i
-			call CameraSetupApplyForceDuration(gg_cam_upstream_1, true, 6.0)
 
 			if (wait(5.0)) then
 				return
@@ -246,11 +255,62 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 
 			call thistype.showMovingTextTag(tr("Vielen Dank fürs Spielen."), 16.0, 255, 255, 255, 0)
 
-			if (wait(3.0)) then
+			if (wait(4.0)) then
 				return
 			endif
-
+			
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Überspringen Sie das Video, um das Spiel zu verlassen."))
+			
+			call IssueRectOrder(thistype.unitActor(this.m_actorGiant), "move", gg_rct_video_upstream_giant_target)
+			
+			loop
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_giant_target, thistype.unitActor(this.m_actorGiant)))
+
+				if (wait(1.0)) then
+					return
+				endif
+			endloop
+			
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorGiant), thistype.unitActor(this.m_actorBoat))
+			
+			call SetUnitAnimation(thistype.unitActor(this.m_actorGiant), "Attack Slam")
+			
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorGiant), tr("Haaalt! Wartet doch! Ich will auch mit, nehmt mich mit! Diese Karte ist langweilig!"), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorKuno), thistype.unitActor(this.m_actorGiant))
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorKunosDaughter), thistype.unitActor(this.m_actorGiant))
+			
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorKuno), tr("Was soll denn das? Verschwinde! Ich sehe überhaupt nichts!"), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorKunosDaughter), tr("Ja, wir sehen gar nichts! Du stehst in unserem Sichtfeld."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorGiant), thistype.unitActor(this.m_actorKuno))
+			
+			if (wait(1.0)) then
+				return
+			endif
+			
+			call SetUnitAnimation(thistype.unitActor(this.m_actorGiant), "Stand")
+			call SetUnitAnimationByIndex(thistype.unitActor(this.m_actorGiant), 3)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorGiant), tr("Oh, ich bitte um Verzeihung."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call IssueRectOrder(thistype.unitActor(this.m_actorGiant), "move", gg_rct_video_upstream_giant_start)
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing

@@ -173,7 +173,11 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 				set i = i + 1
 			endloop
 
-			call thistype.showMovingTextTag(text, fontSize, 255, 0, 0, 0, this.gui().player())
+			if (contributor.isTitle()) then
+				call thistype.showMovingTextTag(text, fontSize, 255, 0, 0, 0, this.gui().player())
+			else
+				call thistype.showMovingTextTag(text, fontSize, 255, 255, 255, 0, this.gui().player())
+			endif
 			
 			set this.m_currentContributor = contributorIndex
 			
