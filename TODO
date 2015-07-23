@@ -458,6 +458,7 @@
 * DEPRECATED: Neuer Ansatz. In Skip-Trigger wird einfach der Sound gekillt und in Funktion selbst WaitForSoundBJ verwendet. Ginge jedoch nur wenn ein Sound pro Spieler.
 * Magische Schockwellen -> Effekt fehlt.
 * AInfo: Durch neue Lösung hängt des Skippen des Textes. Skip-Trigger einbauen -> Text direkt clearen.
+* Wenn ein Gegenstand aufgehoben wird, sollte er im Rucksack nach Möglichkeit auf der geöffneten Seite landen.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
