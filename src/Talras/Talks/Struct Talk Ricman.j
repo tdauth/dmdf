@@ -84,9 +84,9 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		// Was ist das für ein großer Hammer?
 		private static method infoActionAboutYourWeapon takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was ist das für ein großer Hammer?"), null)
-			call speech(info, character, true, tr("Ein Erbstück meiner Familie. Damit wurden schon viele Orks getötet aber leider nur wenige Dunkelelfen."), null)
+			call speech(info, character, true, tr("Ein Erbstück meiner Familie. Damit wurden schon viele Orks getötet, aber leider nur wenige Dunkelelfen."), null)
 			call speech(info, character, false, tr("Du magst Dunkelelfen wohl nicht besonders?"), null)
-			call speech(info, character, true, tr("Diese Orks sind hirnlose Bestien. Stark wie Bären, aber dumm. Dunkelefen sind gerissene, geschickte Krieger. Vor ihnen solltest du dich in Acht nehmen."), null)
+			call speech(info, character, true, tr("Diese Orks sind hirnlose Bestien. Stark wie Bären, aber dumm. Dunkelefen dagegen sind gerissene, geschickte Krieger. Vor ihnen solltest du dich in Acht nehmen!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -172,7 +172,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, false, tr("Ich bin auf dem Drachen geritten."), null)
 			call speech(info, character, true, tr("Das wird ja immer besser! Jetzt kommen wir aber zu meinem eigentlichen Anliegen."), null)
 			call speech(info, character, true, tr("Ich muss zugeben dich ausgenutzt zu haben, ich selbst hätte es nicht gewagt einen Drachen herbeizurufen geschweigedenn auf seinen Rücken zu steigen."), null)
-			call speech(info, character, true, tr("Bevor wir uns nach Talras aufmachten habe ich diese Gegend in alten Schriften studiert."), null)
+			call speech(info, character, true, tr("Bevor wir uns nach Talras aufmachten habe ich die Geschichte dieser Gegend in alten Schriften studiert."), null)
 			call speech(info, character, true, tr("Vor langer langer Zeit sollen auch hier noch Drachen gelebt haben. Vielleicht kannst du mit Hilfe des Drachens einen verlassenen Drachenhorst ausfindig machen."), null)
 			call speech(info, character, true, tr("Vielleicht gibt es dort sogar noch Dracheneier. Wenn sie nicht ausgebrütet wurden, müssten sie noch gut erhalten sein. Ein Drachenei kann unbeschadet die Ewigkeit überdauern."), null)
 			// Auftragsziel 4 des Auftrags „Der gezähmte Drache“ abgeschlossen
@@ -193,7 +193,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, false, tr("Hier sind einige Dracheneier."), null)
 			
 			call speech(info, character, true, tr("Bei den Göttern, das gibt es doch nicht! Du hast tatsächlich Dracheneier dabei! Weißt du eigentlich wie viel die Wert sind?"), null)
-			call speech(info, character, true, tr("Unbezahlbar sind die, das kann ich dir sagen. Pass auf, lass sie mich für dich verwahren bis wir nach Holzbruck kommen. Ich gebe dir zum Dank auch eine wertvolle Belohnung."), null)
+			call speech(info, character, true, tr("Unbezahlbar sind die, das kann ich dir sagen. Pass auf, lass sie mich für dich verwahren. Ich gebe dir zum Dank auch eine wertvolle Belohnung."), null)
 			call speech(info, character, false, tr("Na gut, hier hast du sie."), null)
 			// Dracheneier übergeben
 			call character.inventory().removeItemType('I03Z')
@@ -248,7 +248,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		private static method teachAbility takes AInfo info, Character character, integer gold, integer skillPoints, integer abilityId returns boolean
 			// (Charakter hat nicht genügend Goldmünzen)
 			if (character.gold() < gold) then
-				call speech(info, character, true, tr("Willst du mich verarschen? Besorg dir erstmal ein paar Goldmünzen!"), null)
+				call speech(info, character, true, tr("Willst du mich verarschen? Besorge dir erst mal ein paar Goldmünzen!"), null)
 				return false
 			endif
 

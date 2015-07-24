@@ -459,6 +459,7 @@
 * Magische Schockwellen -> Effekt fehlt.
 * AInfo: Durch neue Lösung hängt des Skippen des Textes. Skip-Trigger einbauen -> Text direkt clearen.
 * Wenn ein Gegenstand aufgehoben wird, sollte er im Rucksack nach Möglichkeit auf der geöffneten Seite landen.
+* Minikarte muss leicht nach links verschoben werden.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
