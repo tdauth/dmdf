@@ -47,6 +47,17 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 	endstruct
 	
+	struct QuestAreaTheNorsemenTheChief extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call QuestTheNorsemen.quest.evaluate().enableTheBattle.execute()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+	
 	struct QuestAreaTheNorsemenBattle extends QuestArea
 	
 		public stub method onStart takes nothing returns nothing
@@ -100,6 +111,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private trigger m_spawnTrigger
 		private WavesDisplay m_wavesDisplay
 		private fogmodifier array m_spawnFogModifiers[4]
+		private QuestAreaTheNorsemenTheChief m_questAreaTheChief
 		private QuestAreaTheNorsemenBattle m_questAreaBattle
 		private QuestAreaTheNorsemenHeimrich m_questAreaHeimrich
 
@@ -114,6 +126,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		// methods
 
 		public stub method enable takes nothing returns boolean
+			set this.m_questAreaTheChief = QuestAreaTheNorsemenTheChief.create(gg_rct_quest_the_norsemen_quest_item_0)
 			return super.enableUntil(thistype.questItemMeetTheNorsemen)
 		endmethod
 
@@ -395,12 +408,10 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			return result
 		endmethod
 
-		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
-			local thistype this = thistype(questItem.quest())
-			local integer i
+		public method enableTheBattle takes nothing returns nothing
 			call VideoTheChief.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
-			call questItem.quest().questItem(1).enable()
+			call this.questItem(1).enable()
 			set this.m_questAreaBattle = QuestAreaTheNorsemenBattle.create(gg_rct_quest_the_norsemen_assembly_point)
 		endmethod
 		
@@ -449,10 +460,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
 			call this.setDescription(tr("Der Herzog will, dass ihr die Nordmänner vor der Burg auf seine Seite zieht, damit er neue Verbündete für den bevorstehenden Krieg gewinnt."))
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Begebt euch zu den Nordmännern vor der Burg."))
-			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
-			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
-			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
+			set questItem = AQuestItem.create(this, tr("Begebt euch zum Lager der Nordmänner östlich von der Burg."))
+
 			call questItem.setPing(true)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_the_norsemen_ping)
 			call questItem.setPingColour(100.0, 100.0, 100.0)

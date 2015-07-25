@@ -199,6 +199,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
 			else
 				debug call Print("Start game")
+				call thistype.endTimer()
 				 call Game.start.execute()
 			endif
 		endmethod
