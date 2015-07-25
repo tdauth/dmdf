@@ -432,34 +432,37 @@
 * Spruchrollen günstiger machen.
 * Waffen bei Einar usw. viel mehr Aufladungen.
 * FIXED: Respawn-Zeit für Creeps länger machen.
-* AInventory: Wenn Gegenstand auf das freie Slot im Rucksack gelegt wird, muss es zurückgesetzt werden. Besser noch: So lässt man den Gegenstand mit allen Aufladungen liegen.
+* FIXED: AInventory: Wenn Gegenstand auf das freie Slot im Rucksack gelegt wird, muss es zurückgesetzt werden. Besser noch: So lässt man den Gegenstand mit allen Aufladungen liegen.
 * Spruchrolle einbauen, die eine Gruppe zu einem Schrein teleportiert.
 * Agihards "Lass mich in die Arena" so umbauen wie es im Dialog steht.
-* Drop wenn Item einem nicht gehört funktioniert oft nicht, Item bleibt im Inventar!
 * Banditen droppen zu viel.
 * FIXED: AVideo: Der actor bleibt beim Skip öfter erhalten (im Nicht-Debug-Mode). thistype.m_actor wird 0?
 * http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/set-spell-ui-position-spellbook-240242/ mit Dummy-Zaubern die Icon-Positionen bestimmen.
-* speech() dauert manchmal ewig bis eine weiter kommt, muss mit Escape abgebrochen werden. Vor allem dann wenn ein Sound abgespielt wird.
+* FIXED: speech() dauert manchmal ewig bis eine weiter kommt, muss mit Escape abgebrochen werden. Vor allem dann wenn ein Sound abgespielt wird.
 * FIXED: Was passiert wenn wait() im Video noch weiterläuft, zu Ende läuft und skip schon ausgeführt wird. Sollte skip() nicht vom wait() aus aufgerufen werden?
 * Alle Zauber mit Icon-Position auf 0 | 2 setzen, damit sie unten positioniert werden.
 * FIXED: Die Icons wenn ein Zauber bearbeitet wird in der ersten Reihe anordnen bzw. den Zauber selbst davor.
 * Wenn Gegenstand auf die nächste oder vorherige Seite verschoben wird, dann nicht n mal weiter verschieben. Falls nichts frei ist lassen.
 * Ultimativzauber auf Seite 2 packen.
 * Alle call TriggerSleepAction(0.0)-Aufrufe durch Timer ersetzen, da es automatisch zu 0.2 oder so wird.
-* AInventory: In der order trigger action muss eventuell nicht für alle 0 Sekunden gewartet werden. Items vorher entfernen/stoppen?
-* Gegenstände eines anderen Spielers aufzuheben funktioniert noch vor allem wenn der Rucksack geöffnet ist. Item bleibt in manchen Fällen im Inventar! Geht aber auch bei Ausrüstung. Jedoch ist Gegenstand in jedem Fall bereits im Inventar bei dem Event! Fehler in der Funktion addItem()? Eigentlich müsste dann aber immer "Error on dropping item " + GetItemName(usedItem)) kommen. Außer der pickup trigger wird zeitweise deaktiviert und registriert den Pickup nicht. Das passiert nur in disable() und unitAddItemToSlotById()-
-* AInventory: Drop wird trotzdem registriert, obwohl der Trigger disabled wird.
 * FIXED: Charakter ist im Video immer hidden.
 * Intro: Dorfbewohner und Nordmänner als actors einfügen, ansonsten abhängig von der Tageszeit.
 * FIXED: Beim letzten Video beim Überspringen einen Dialog anzeigen lassen "Spiel beenden?" und das pro Spieler. Nicht gemeinsam überspringen!
 * FIXED: Beim Dialog im letzten Video bei Abbruch wieder korrekten Cinematic-Mode herstellen.
-* Dago: Ist in Dialog zu leise. Bonus-Kampagne verwendet  call SetSpeechVolumeGroupsBJ(  ) und call VolumeGroupResetBJ(  ) um Transmission außerhalb von Videos. Außerdem WaitForSoundBJ um zu warten.
+* Dago: Ist in Dialog zu leise. Bonus-Kampagne verwendet  call SetSpeechVolumeGroupsBJ(  ) und call VolumeGroupResetBJ(  ) um Transmission außerhalb von Videos. Außerdem WaitForSoundBJ um zu warten. Vermutlich liegt es jedoch nicht daran, da es inzwischen eingebaut wurde.
+* Dago, Schafshirte und Tanka: Sound-Lautstärke an die wc3-Sounds angleichen.
 * FIXED: AInfo: speech() braucht ohne Abbruch ewig. Verzögert SetCinematicSceneForPlayer() von sich aus schon?!
 * DEPRECATED: Neuer Ansatz. In Skip-Trigger wird einfach der Sound gekillt und in Funktion selbst WaitForSoundBJ verwendet. Ginge jedoch nur wenn ein Sound pro Spieler.
 * Magische Schockwellen -> Effekt fehlt.
 * AInfo: Durch neue Lösung hängt des Skippen des Textes. Skip-Trigger einbauen -> Text direkt clearen.
-* Wenn ein Gegenstand aufgehoben wird, sollte er im Rucksack nach Möglichkeit auf der geöffneten Seite landen.
+* AInventory: Wenn ein Gegenstand aufgehoben wird, sollte er im Rucksack nach Möglichkeit auf der geöffneten Seite landen.
 * Minikarte muss leicht nach links verschoben werden.
+* AInventory: In der order trigger action muss eventuell nicht für alle 0 Sekunden gewartet werden. Items vorher entfernen/stoppen?
+* AInventory: Drop wird trotzdem registriert, obwohl der Trigger disabled wird.
+* Drop wenn Item einem nicht gehört funktioniert oft nicht, Item bleibt im Inventar!
+* Gegenstände eines anderen Spielers aufzuheben funktioniert noch vor allem wenn der Rucksack geöffnet ist. Item bleibt in manchen Fällen im Inventar! Geht aber auch bei Ausrüstung. Jedoch ist Gegenstand in jedem Fall bereits im Inventar bei dem Event! Fehler in der Funktion addItem()? Eigentlich müsste dann aber immer "Error on dropping item " + GetItemName(usedItem)) kommen. Außer der pickup trigger wird zeitweise deaktiviert und registriert den Pickup nicht. Das passiert nur in disable() und unitAddItemToSlotById()-
+* "Begebt euch zu den Nordmännern vor der Burg" - östlich vor der Burg.
+* Nach jedem Video automatisch Ansicht zum Charakter setzen.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

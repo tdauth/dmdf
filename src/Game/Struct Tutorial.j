@@ -167,13 +167,19 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tr("Info: Gespräche mit NPCs"))
 			call QuestSetDescription(whichQuest, tr("NPCs mit Ausrufezeichen bieten Gespräche an. Befindet sich der Charakter in der Nähe eines NPCs und hat man den Charakter ausgewählt, so kann man mit einem Rechtsklick auf den NPC ein Gespräch beginnen. Einzelne Sätze können mit Escape übersprungen werden."))
-			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNResStone.blp")
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp")
+			call QuestSetCompleted(whichQuest, true)
+			
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tr("Info: Händler"))
+			call QuestSetDescription(whichQuest, tr("Einige der NPCs verkaufen Waren an einem Stand. Andere verkaufen Waren aus ihrerer Kiste."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNMerchant.blp")
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tr("Info: Erfahrung"))
 			call QuestSetDescription(whichQuest, tr("Die maximale Stufe ist 25. Auf Stufe 12 und Stufe 25 kann jeweils eine Ultimate-Fähigkeit erlernt werden. Erfahrung vom Töten von Unholden wird gleichmäßig auf alle Charaktere in der gesamten Karte verteilt. Aufträge geben weitaus mehr Erfahrung als das Töten von Unholden."))
-			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNResStone.blp")
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNStatUp.blp")
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
