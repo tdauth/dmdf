@@ -172,7 +172,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tr("Info: Händler"))
-			call QuestSetDescription(whichQuest, tr("Einige der NPCs verkaufen Waren an einem Stand. Andere verkaufen Waren aus ihrerer Kiste."))
+			call QuestSetDescription(whichQuest, tr("Einige der NPCs verkaufen Waren an einem Stand. Andere verkaufen Waren aus ihrer Kiste."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNMerchant.blp")
 			call QuestSetCompleted(whichQuest, true)
 			
@@ -201,8 +201,8 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			// real infos
 
 			// icon shortcuts
-			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um in den Rucksack Ihres Charakters zu öffnen bzw. zu schließen.")).k("").result())
-			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um in das Zauberbuch Ihres Charakters zu gelangen und die %2%-Taste, um es wieder zu verlassen.")).k("").k("").result())
+			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um in den Rucksack Ihres Charakters zu öffnen bzw. zu schließen.")).k("R").result())
+			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um in das Zauberbuch Ihres Charakters zu gelangen und die %2%-Taste, um es wieder zu verlassen.")).k("Z").k("Escape").result())
 			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um Ihren Charakter auszuwählen.")).k("F1").result())
 			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%- - %2%-Tasten , um einen Mitstreitercharakter auszuwählen.")).k("F2").k("F7").result())
 			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um zu Ihrem derzeitig aktivierten Schrein zu gelangen.")).k("F8").result())

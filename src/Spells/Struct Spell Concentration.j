@@ -9,7 +9,7 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 		public static constant integer classSelectionGrimoireAbilityId = 'A0XN'
 		public static constant integer maxLevel = 5
 		private static constant real interval = 10.0 //constant, does not change per level.
-		private static constant integer lifeLevelValue = 1 // percentage
+		private static constant integer lifeLevelValue = 5 // percentage
 		private timer effectTimer
 
 		private static method timerFunction takes nothing returns nothing

@@ -11,6 +11,7 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 		private static constant real speedFactor = 0.80
 		private static constant real damageFactor = 20.0
 		private static constant integer dummyUnitTypeId = 'h025'
+		private unit dummy
 
 		private method action takes nothing returns nothing
 			local unit characterUnit = this.character().unit()
@@ -29,13 +30,12 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 					call SetUnitAnimation(characterUnit, "attack")
 					debug call Print("Add ability")
 					// dummy ability
-					set dummy = CreateUnit(GetOwningPlayer(characterUnit), thistype.dummyUnitTypeId, GetUnitX(characterUnit), GetUnitY(characterUnit), 0.0)
-					call UnitAddAbility(dummy, 'A01R')
-					call SetUnitInvulnerable(dummy, true)
-					call IssueTargetOrder(dummy, "thunderbold", target)
-					call TriggerSleepAction(0.0) // wait for cast
-					call RemoveUnit(dummy)
-					set dummy = null
+					call SetUnitX(this.dummy, GetUnitX(target))
+					call SetUnitY(this.dummy, GetUnitY(target))
+					if (not IssueTargetOrder(this.dummy, "thunderbold", target)) then
+						debug call Print("Error on ordering thunderbold.")
+					endif
+					
 					call UnitDamageTargetBJ(characterUnit, target, this.level() * thistype.damageFactor, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
 					call ShowBashTextTagForPlayer(this.character().player(), GetWidgetX(target), GetWidgetY(target), R2I(this.level() * thistype.damageFactor))
 					call ResetUnitAnimation(characterUnit)
@@ -54,6 +54,11 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 		public static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			
+			set this.dummy = CreateUnit(GetOwningPlayer(character.unit()), thistype.dummyUnitTypeId, GetUnitX(character.unit()), GetUnitY(character.unit()), 0.0)
+			call SetUnitInvulnerable(this.dummy, true)
+			call ShowUnit(this.dummy, false)
+			call UnitAddAbility(this.dummy, 'A01R')
+			
 			call this.addGrimoireEntry('A0XS', 'A0XX')
 			call this.addGrimoireEntry('A0XT', 'A0XY')
 			call this.addGrimoireEntry('A0XU', 'A0XZ')
@@ -61,6 +66,11 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 			call this.addGrimoireEntry('A0XW', 'A0Y1')
 			
 			return this
+		endmethod
+		
+		public method onDestroy takes nothing returns nothing
+			call RemoveUnit(this.dummy)
+			set this.dummy = null
 		endmethod
 	endstruct
 

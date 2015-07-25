@@ -622,7 +622,7 @@ endif
 			//call SetCreepCampFilterState(true)
 			//call SetAllyColorFilterState(0)
 			call thistype.m_weather.start()
-			call ACharactersScheme.init(1.0, true, true, true, 10, GameExperience.maxExperienceFormula, 10, 10, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."))
+			call ACharactersScheme.init(1.0, true, true, true, 10, GameExperience.maxExperienceFormula, 10, 10, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
 			call ACharactersScheme.setExperienceBarValueIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL8.tga")
 			call ACharactersScheme.setExperienceBarEmptyIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL0.tga")
 			set i = 1
@@ -837,6 +837,7 @@ endif
 				
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().enableLevelTrigger()
+					call ACharacter.playerCharacter(Player(i)).panCamera()
 				endif
 				
 				set i = i + 1

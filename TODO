@@ -423,7 +423,7 @@
 * Anstürmen: "attack" verhindert Abklingzeit des Zaubers?
 * Anstürmen: Stun geht nicht. Lieber dummy erzeugen.
 * FIXED: Anstürmen Tooltip fehlt.
-* Konzentration ist zu schlecht.
+* FIXED: Konzentration ist zu schlecht.
 * Wenn Stich direkt tötet, benötigt es keine Abklingzeit.
 * FIXED: Verspotten: Verhinderter Schaden geht entweder nicht oder wird nicht angezeigt.
 * Verspotten: Keine Abklingzeit.
@@ -462,7 +462,27 @@
 * Drop wenn Item einem nicht gehört funktioniert oft nicht, Item bleibt im Inventar!
 * Gegenstände eines anderen Spielers aufzuheben funktioniert noch vor allem wenn der Rucksack geöffnet ist. Item bleibt in manchen Fällen im Inventar! Geht aber auch bei Ausrüstung. Jedoch ist Gegenstand in jedem Fall bereits im Inventar bei dem Event! Fehler in der Funktion addItem()? Eigentlich müsste dann aber immer "Error on dropping item " + GetItemName(usedItem)) kommen. Außer der pickup trigger wird zeitweise deaktiviert und registriert den Pickup nicht. Das passiert nur in disable() und unitAddItemToSlotById()-
 * "Begebt euch zu den Nordmännern vor der Burg" - östlich vor der Burg.
-* Nach jedem Video automatisch Ansicht zum Charakter setzen.
+* FIXED: Nach jedem Video automatisch Ansicht zum Charakter setzen.
+* Pick all units and remove buffs from shrine auras.
+* Charakteranzeige ist zu breit. Text nimmt zu viel Platz ein. Der Text sollte im Block dargestellt werden. Gold muss angezeigt werden.
+* AVideo: Bei skip muss der aktuelle Sound unterbrochen werden.
+* FIXED: Timer für Klassenauswahl einbauen, ansonsten blockiert ein Spieler.
+* Nicht ausblenden beim Warten, Spieler müssen das Spiel verlassen können.
+* Weniger Gold in Arenakampf.
+* Dach über Wieland entfernen.
+* FIXED: Spieler kann Video zweimal überspringen, zählt 2 mal.
+* Kein Gold für PvP kill.
+* Ricman wurde während des Videos "Wigberht" wiederbelebt. Daher kam auch sein Dialog und er stand zwei mal da. Vor jedem Video alle Fellows wiederbeleben.
+* Immer wenn Dialogtexte im Dialog kommen UI ausblenden, damit Texte unten kommen. Chat muss noch benutzbar sein.
+* Kollision von Einheiten kleiner machen.
+* Einheitenskalierungen verbessern.
+* Jägermodell für Dago, keine Assassine.
+* Blocker in Burg und auf Felsen einbauen.
+* Arena: Wenn Spieler hilft dann killen.
+* Gegenstände nach Besitzer einfärben.
+* Björn's Dialog verbuggt: Weiß nicht wo Dago ist aber hat vom Kampf gehört? Nicht verbuggt, hat vom Kampf von einem Freund gehört. Dann sollte er aber wissen wo Dago ist.
+* Auftrag "Die Nordmänner": Sammelgebiet im Lager der Nordmänner machen.
+* Auftrag "Die Nordmänner": Bei Verstärkung und gegnerischen Wellen kurzen Cinematic oder Spiel anhalten.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

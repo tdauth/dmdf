@@ -2,6 +2,12 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 
 	struct VideoIntro extends AVideo
 		private integer worker0
+		private integer m_actorMathilda
+		private integer m_actorLothar
+		private integer m_actorManfred
+		private integer m_actorManfredsDog
+		private integer m_actorHeimrich
+		private integer m_actorMarkward
 
 		implement Video
 
@@ -17,6 +23,15 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			call SetUnitPositionRect(thistype.unitActor(this.worker0), gg_rct_video_intro_worker_position)
 			call SetUnitFacing(thistype.unitActor(this.worker0), 168.59)
 			call QueueUnitAnimation(thistype.unitActor(this.worker0), "Stand Work")
+			
+			/*
+			private integer m_actorMathilda
+			private integer m_actorLothar
+			private integer m_actorManfred
+			private integer m_actorManfredsDog
+			private integer m_actorHeimrich
+			private integer m_actorMarkward
+			*/
 			
 			call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_MUSIC, 1.0) /// @todo test!
 		endmethod

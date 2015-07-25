@@ -39,7 +39,7 @@ library StructMapQuestsQuestStormingTheMill requires Asl, StructMapMapNpcs, Stru
 					call this.displayUpdateMessage(Format(tr("%1%/%2% Wegelagerer")).i(count).i(SpawnPoints.banditsAtGuntrichsMill().countMembers()).result())
 					return count == 0
 				else
-					call this.displayUpdateMessage(tr("Sie müssen die Wegelagerer auf dem Schaf töten."))
+					call this.displayUpdateMessage(tr("Sie müssen die Wegelagerer von einem Schaf aus töten."))
 				endif
 			endif
 			

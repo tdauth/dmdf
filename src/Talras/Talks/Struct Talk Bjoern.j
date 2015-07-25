@@ -207,7 +207,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call speech(info, character, false, tr("Verkaufst du auch Hunde?"), null)
 			call speech(info, character, true, tr("Was?! Was erlaubst du dir? Diese Hunde sind mir ans Herz gewachsen. Nie würde ich sie hergeben."), null)
 			call speech(info, character, false, tr("Ich dachte sie gehören dem Herzog."), null)
-			call speech(info, character, true, tr("Ja, sicher … also gut. Der Herog hat tatsächlich zu viele Hunde. Die vermehren sich auch wie die Karnickel. Wenn du einen angemessenen Preis bezahlst, dann kannst du einen Hund haben."), null)
+			call speech(info, character, true, tr("Ja, sicher … also gut. Der Herzog hat tatsächlich zu viele Hunde. Die vermehren sich auch wie die Karnickel. Wenn du einen angemessenen Preis bezahlst, dann kannst du einen Hund haben."), null)
 			call speech(info, character, true, tr("Aber bitte behandele sie gut. Du weißt nicht wie lange ich mit einigen schon zusammenlebe. Da baut man eine Bindung auf die stärker ist als zu manchem Menschen."), null)
 
 			call info.talk().showStartPage(character)
@@ -217,7 +217,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		private static method infoActionYourFalcons takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Ist das dein Falkenkäfig?"), null)
 			
-			call speech(info, character, true, tr(" Ja das ist er. Die Falken darin gehören allerdings dem Herzog. Dago und ich haben diese Falken für ihn ausgebildet."), null)
+			call speech(info, character, true, tr("Ja das ist er. Die Falken darin gehören allerdings dem Herzog. Dago und ich haben diese Falken für ihn ausgebildet."), null)
 		
 			// (Dago ist tot)
 			if (IsUnitDeadBJ(Npcs.dago())) then

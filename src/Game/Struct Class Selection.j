@@ -169,9 +169,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call MapData.createClassItems(class, character.unit())
 			call character.setMovable(false)
 			call character.revival().setTime(MapData.revivalTime)
-			call SetUserInterfaceForPlayer(character.player(), false, false)
-			call CameraSetupApplyForPlayer(false, gg_cam_class_selection, character.player(), 0.0)
+			//call SetUserInterfaceForPlayer(character.player(), false, false)
+			//call CameraSetupApplyForPlayer(false, gg_cam_class_selection, character.player(), 0.0)
 			call MapData.setCameraBoundsToPlayableAreaForPlayer(character.player())
+			call character.panCamera()
 			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, Format(tre("%s hat die Klasse \"%s\" gewählt.", "%s has choosen the class \"%s\".")).s(character.name()).s(GetUnitName(character.unit())).result(), character.player())
 			
 			set i = 0
@@ -379,6 +380,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				set whichPlayer = null
 				set i = i + 1
 			endloop
+			
+			debug call Print("Starting timer")
+			call ClassSelection.startTimer(tr("Klassenauswahl:"), 120.0)
+			
 			/*
 			 * Wait until players are ready to realize.
 			 * Then display informations about how to select the class as long as possible to keep players informed.
