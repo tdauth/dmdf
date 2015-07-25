@@ -409,6 +409,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		public method enableTheBattle takes nothing returns nothing
+			call this.questItem(0).complete()
 			call VideoTheChief.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call this.questItem(1).enable()

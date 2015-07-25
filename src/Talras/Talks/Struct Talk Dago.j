@@ -75,7 +75,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Was weißt du über die Gegend hier?
 		private static method infoActionArea takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was weißt du über die Gegend hier?"), null)
-			call speech(info, character, true, tr("Einiges. Ich wurde immerhin hier geboren. Mann, wie die Zeit vergeht! Aber ich werde sowieso nicht mehr lange leben. Heute habt ihr mich zwar gerettet, aber morgen schon werden mich die Orks töten."), null)
+			call speech(info, character, true, tr("Einiges. Ich wurde immerhin hier geboren. Mann, wie die Zeit vergeht! Aber ich werde sowieso nicht mehr lange leben. Heute habt ihr mich zwar gerettet, aber morgen schon werden mich die Orks töten."), gg_snd_Dago18)
 			call speech(info, character, true, tr("Manchmal frage ich mich wirklich, welchen Sinn es macht, sich noch weiter abzumühen und auf seinen sicheren Tod zu warten."), gg_snd_Dago19)
 			call speech(info, character, false, tr("Die Gegend hier …"), null)
 			call speech(info, character, true, tr("Ja, tut mir leid. Ich bin vom Thema abgewichen. Also, es gibt hier natürlich einmal die Burg Talras, welche dem Herzog oder besser gesagt dessen Familie gehört. Dann sind da noch die Bauern auf dem Hof im Westen. Die haben das Land vom Herzog gepachtet und sind nicht besonders gut auf ihn zu sprechen."), gg_snd_Dago20)
