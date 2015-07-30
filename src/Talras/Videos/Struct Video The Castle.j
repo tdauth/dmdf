@@ -36,6 +36,15 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
     call CameraSetupApplyForPlayer( true, gg_cam_new_the_castle_7, Player(0), 0.00 )
     call TriggerSleepAction( 4.00 )
     */
+    
+    /*
+     * Erzähler:
+     * So betraten unsere Helden die alte Burg Talras um dem Herzog die Treue zu schwören, doch was ihnen durch den Kopf ging war nicht etwa die Treue zu ihren Artgenossen, sondern viel mehr wie viele Goldmünzen der Herzog locker machen würde.
+     * 
+     * Die Burg Talras schützte das umliegende Land vor Überfällen doch würde sie auch einer Invasion der Orks und Dunkelelfen stand halten?
+     *
+     * Eines war unseren Freunden jedoch klar: Es gab viel zu tun.
+     */
 		public stub method onPlayAction takes nothing returns nothing
 		
 			call SetDoodadAnimationRect(gg_rct_gate_0, 'D085', "Death", false)

@@ -126,6 +126,17 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 					 */
 					if (not this.disableGrimoire()) then
 						call this.character().updateGrimoireAfterPassiveTransformation()
+						
+						/*
+						 * Add skill spell and abilities spell.
+						 */
+						if (GetUnitAbilityLevel(this.character().unit(), Grimoire.spellsAbilityId) == 0) then
+							call UnitAddAbility(this.character().unit(), Grimoire.spellsAbilityId)
+						endif
+						if (GetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId) == 0) then
+							call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
+							call SetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId, this.character().skillPoints())
+						endif
 					endif
 			
 					// morph spells are expected to morph immediately

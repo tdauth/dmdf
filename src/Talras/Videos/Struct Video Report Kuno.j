@@ -33,6 +33,24 @@ library StructMapVideosVideoReportKuno requires Asl, StructGameGame
 				return
 			endif
 			
+			call TransmissionFromUnit(thistype.actor(), tr("Die Hexen sind tot."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Ich danke euch vielmahls. Endlich kann ich wieder ruhig schlafen. Ich werde das Holz für euch aufladen."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Hoffen wir dass der Herzog im Stande ist den Feind aufzuhalten. Noch mehr Unruhe kann ich nicht gebrauchen."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
 			call this.stop()
 		endmethod
 

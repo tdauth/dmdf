@@ -24,8 +24,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		endmethod
 
 		private method stateEventFailed takes trigger whichTrigger returns nothing
-			local event triggerEvent = TriggerRegisterUnitEvent(whichTrigger, Npcs.dago(), EVENT_UNIT_DEATH)
-			set triggerEvent = null
+			call TriggerRegisterUnitEvent(whichTrigger, Npcs.dago(), EVENT_UNIT_DEATH)
 		endmethod
 
 		private method stateActionFailed takes nothing returns nothing
@@ -39,10 +38,8 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		endmethod
 
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			local event triggerEvent = TriggerRegisterUnitEvent(usedTrigger, gg_unit_n008_0083, EVENT_UNIT_DEATH)
-			set triggerEvent = null
-			set triggerEvent = TriggerRegisterUnitEvent(usedTrigger, gg_unit_n008_0027, EVENT_UNIT_DEATH)
-			set triggerEvent = null
+			call TriggerRegisterUnitEvent(usedTrigger, gg_unit_n008_0083, EVENT_UNIT_DEATH)
+			call TriggerRegisterUnitEvent(usedTrigger, gg_unit_n008_0027, EVENT_UNIT_DEATH)
 		endmethod
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
@@ -81,10 +78,10 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3))
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3), thistype.rectRange)) then
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4))
-					call TransmissionFromUnit(Npcs.dago(), tr("Wir sind fast da."), gg_snd_DagoRescueDago6)
+					call TransmissionFromUnitWithName(Npcs.dago(), tr("Dago"), tr("Wir sind fast da."), gg_snd_DagoRescueDago6)
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4), thistype.rectRange)) then
 					call SetUnitFacing(Npcs.dago(), 265.0)
-					call TransmissionFromUnit(Npcs.dago(), tr("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich."), gg_snd_DagoRescueDago7)
+					call TransmissionFromUnitWithName(Npcs.dago(), tr("Dago"), tr("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich."), gg_snd_DagoRescueDago7)
 					call TalkDago.initTalk()
 					return true
 				endif

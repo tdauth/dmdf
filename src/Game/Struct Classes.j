@@ -158,6 +158,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			local integer i = 0
 			loop
 				exitwhen (i == vector.size())
+				debug call Print("Preloading " + GetAbilityName(ClassGrimoireEntry(vector[i]).abilityId()))
 				call AbilityPreload(ClassGrimoireEntry(vector[i]).abilityId())
 				call AbilityPreload(ClassGrimoireEntry(vector[i]).grimoireAbilityId())
 				set i = i + 1
@@ -354,6 +355,8 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellPoisonedArrows.classSelectionAbilityId, SpellPoisonedArrows.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBurningArrows.classSelectionAbilityId, SpellBurningArrows.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFrozenArrows.classSelectionAbilityId, SpellFrozenArrows.classSelectionGrimoireAbilityId))
+			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMultiShot.classSelectionAbilityId, SpellMultiShot.classSelectionGrimoireAbilityId))
+			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellTrap.classSelectionAbilityId, SpellTrap.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initElementalMage takes nothing returns nothing

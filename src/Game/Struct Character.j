@@ -272,17 +272,17 @@ endif
 		endmethod
 
 		public method displayUnitAcquired takes string unitName, string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_UNITACQUIRED, Format(tr("|cff87ceebNEUE EINHEIT ERHALTEN|r|n%1% - %2%")).s(unitName).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_UNITACQUIRED, Format(tr("|cff87ceebNEUE EINHEIT ERHALTEN\n%1% - %2%")).s(unitName).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questHintSound)
 		endmethod
 
 		public method displayItemAcquired takes string itemName, string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_ITEMACQUIRED, Format(tr("|cff87ceebNEUEN GEGENSTAND ERHALTEN|r|n%1% - %2%")).s(itemName).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_ITEMACQUIRED, Format(tr("|cff87ceebNEUEN GEGENSTAND ERHALTEN\n%1% - %2%")).s(itemName).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questHintSound)
 		endmethod
 
 		public method displayAbilityAcquired takes string abilityName, string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tr("|cff87ceebNEUE FÄHIGKEIT ERHALTEN|r|n%1% - %2%")).s(abilityName).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tr("|cff87ceebNEUE FÄHIGKEIT ERHALTEN\n%1% - %2%")).s(abilityName).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questHintSound)
 		endmethod
 
@@ -312,7 +312,7 @@ endif
 		endmethod
 
 		public method displayXPBonus takes integer xp, string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tr("|cff87ceebERFAHRUNGSBONUS ERHALTEN|r|n%1% - %2%")).i(xp).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tr("|cff87ceebERFAHRUNGSBONUS ERHALTEN\n%1% - %2%")).i(xp).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questHintSound)
 		endmethod
 

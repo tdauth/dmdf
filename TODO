@@ -409,7 +409,7 @@
 * Bei Spieler 2 kam nicht zu Favoriten hinzufügen, Zauber waren automatisch in den Favoriten (Auren). Sobald sie einen fünften Zauber geskillt hat, war dieser auf einmal MIT ALLEN FAVORITEN nicht mehr in den Favoriten. Liegt eventuell an Wiederbelebung (wenn beide tot sind?!?!). Nach Wiederbelebung passierte mir das gleiche, alle Zauber waren nicht mehr in den Favoriten, hatte auch 5 Zauber, einer davon war schon in den Fähigkeiten.
 * Aus Favoriten entfernen kam bei mir AUCH NICHT!!!!! Limit von GrimoireEntries?????!?!?!
 * DEPRECATED (nach Wiederbelebung ist alles wie vorher): Vielleicht der gleiche Bug wie beim Laden einer Karte, dass die Fähigkeiten auf einman nicht in den Favoriten Stufe 1 sind?! kann eigentlich nicht sein, da die Fähigkeit nicht verfügbar ist.
-* Dämon und Erzengel im AOS sind zu langsam, langsamer als Charakter.
+* DEPRECATED (haben eben keine Items): Dämon und Erzengel im AOS sind zu langsam, langsamer als Charakter.
 * Dämonen in AOS sind stärker als Engel. Gleich stark machen.
 * FIXED: Ladebildschirm rechte Hälfte fixen.
 * Benötigte Stufe für Ultimates in Tooltip eintragen.
@@ -457,11 +457,11 @@
 * AInfo: Durch neue Lösung hängt des Skippen des Textes. Skip-Trigger einbauen -> Text direkt clearen.
 * AInventory: Wenn ein Gegenstand aufgehoben wird, sollte er im Rucksack nach Möglichkeit auf der geöffneten Seite landen.
 * Minikarte muss leicht nach links verschoben werden.
-* AInventory: In der order trigger action muss eventuell nicht für alle 0 Sekunden gewartet werden. Items vorher entfernen/stoppen?
+* DEPRECATED: AInventory: In der order trigger action muss eventuell nicht für alle 0 Sekunden gewartet werden. Items vorher entfernen/stoppen?
 * AInventory: Drop wird trotzdem registriert, obwohl der Trigger disabled wird.
-* Drop wenn Item einem nicht gehört funktioniert oft nicht, Item bleibt im Inventar!
-* Gegenstände eines anderen Spielers aufzuheben funktioniert noch vor allem wenn der Rucksack geöffnet ist. Item bleibt in manchen Fällen im Inventar! Geht aber auch bei Ausrüstung. Jedoch ist Gegenstand in jedem Fall bereits im Inventar bei dem Event! Fehler in der Funktion addItem()? Eigentlich müsste dann aber immer "Error on dropping item " + GetItemName(usedItem)) kommen. Außer der pickup trigger wird zeitweise deaktiviert und registriert den Pickup nicht. Das passiert nur in disable() und unitAddItemToSlotById()-
-* "Begebt euch zu den Nordmännern vor der Burg" - östlich vor der Burg.
+* FIXED: Drop wenn Item einem nicht gehört funktioniert oft nicht, Item bleibt im Inventar!
+* FIXED: Gegenstände eines anderen Spielers aufzuheben funktioniert noch vor allem wenn der Rucksack geöffnet ist. Item bleibt in manchen Fällen im Inventar! Geht aber auch bei Ausrüstung. Jedoch ist Gegenstand in jedem Fall bereits im Inventar bei dem Event! Fehler in der Funktion addItem()? Eigentlich müsste dann aber immer "Error on dropping item " + GetItemName(usedItem)) kommen. Außer der pickup trigger wird zeitweise deaktiviert und registriert den Pickup nicht. Das passiert nur in disable() und unitAddItemToSlotById()-
+* FIXED: "Begebt euch zu den Nordmännern vor der Burg" - östlich vor der Burg.
 * FIXED: Nach jedem Video automatisch Ansicht zum Charakter setzen.
 * Pick all units and remove buffs from shrine auras.
 * Charakteranzeige ist zu breit. Text nimmt zu viel Platz ein. Der Text sollte im Block dargestellt werden. Gold muss angezeigt werden.
@@ -483,6 +483,18 @@
 * Björn's Dialog verbuggt: Weiß nicht wo Dago ist aber hat vom Kampf gehört? Nicht verbuggt, hat vom Kampf von einem Freund gehört. Dann sollte er aber wissen wo Dago ist.
 * Auftrag "Die Nordmänner": Sammelgebiet im Lager der Nordmänner machen.
 * Auftrag "Die Nordmänner": Bei Verstärkung und gegnerischen Wellen kurzen Cinematic oder Spiel anhalten.
+* AVideo: Charakter kann Geschwindigkeitsbonus haben der erhalten bleibt - Mantel.
+* Ricman braucht anderes Modell, muss sich abheben.
+* Auftrag "Die Verteidigung von Talras": Video sollte mögliche Angriffspunkte und Verteidigung erklären.
+* Orks kopieren und stärker machen als bei Auftrag "Die Nordmänner".
+* Orks bei Auftrag "Die Nordmänner" wesentlich schwächer machen.
+* Tor sollte geöffnet und geschlossen werden können.
+* Arbeiter sollten Barrikade errichten können.
+* Arbeiter sollten Katapulte und Ballistas bauen können.
+* Schrein im Außenposten einbauen der während des Quests aktiviert werden kann. Den Schrein außerhalb deaktivieren.
+* Video "Prepare For The Defense": Herzog muss überrascht wirken und Markward begeistern, dass alle Aufträge erfüllt wurden. Große Belohnung.
+* Knechte sollen Tunnel graben können. So kann man sich Versorgung in den Außenposten holen.
+* Mehr Interaktion bei mehreren Spielern.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

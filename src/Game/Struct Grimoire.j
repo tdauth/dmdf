@@ -16,10 +16,15 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		public static constant integer maxSpells = 15
 		public static constant integer spellsPerPage = 9
 		public static constant integer abilityId = 'A0AP'
+		public static constant integer spellsAbilityId = 'A02Z'
 		/**
 		 * Dummy ability ID to specify the icon's position.
 		 */
 		public static constant integer dummyAbilityId = 'A17O'
+		/**
+		 * Dummy hero ability ID. This ability is disabled for all players but must be added to each character to show the skillpoints in the hero icon.
+		 */
+		public static constant integer dummyHeroAbilityId = 'A17P'
 		public static constant string shortcut = "Z"
 		public static constant integer maxFavourites = 4
 		public static constant integer ultimate0Level = 12
@@ -299,6 +304,13 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			else
 				call SetUnitAbilityLevel(this.character().unit(), this.ability(), skillPoints + 1)
 			endif
+			
+			/**
+			 * This is necessary to show the skill points in the hero icon.
+			 */
+			call ModifyHeroSkillPoints(this.character().unit(), bj_MODIFYMETHOD_SET, skillPoints)
+			debug call Print("Setting skill points to " + I2S(skillPoints))
+			
 			/*
 			 * Update the User Interface. The selected skill might become skillable!
 			 */

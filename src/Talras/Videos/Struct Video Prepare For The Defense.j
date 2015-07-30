@@ -1,4 +1,4 @@
-library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame, StructMapQuestsQuestTheDefenseOfTalras
+library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 
 	struct VideoPrepareForTheDefense extends AVideo
 		private integer m_actorHeimrich
@@ -39,7 +39,13 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame, S
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Macht euch bereit!"), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Wir haben den Auftrag erfüllt."), null)
+
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+		
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Macht euch bereit!"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -54,7 +60,7 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame, S
 			call Game.resetVideoSettings()
 			
 			call QuestWar.quest.evaluate().complete()
-			call QuestTheDefenseOfTalras.quest().enable()
+			call QuestTheDefenseOfTalras.quest.evaluate().enable.evaluate()
 		endmethod
 
 		private static method create takes nothing returns thistype

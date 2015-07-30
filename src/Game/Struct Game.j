@@ -429,6 +429,7 @@ endif
 				exitwhen (i == bj_MAX_PLAYER_SLOTS)
 				call SetPlayerHandicapXP(Player(i), 0.0)
 				call SetPlayerAbilityAvailable(Player(i), Grimoire.dummyAbilityId, false)
+				call SetPlayerAbilityAvailable(Player(i), Grimoire.dummyHeroAbilityId, false)
 				set i = i + 1
 			endloop
 			

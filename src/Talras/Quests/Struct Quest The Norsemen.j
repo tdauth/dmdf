@@ -114,7 +114,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private QuestAreaTheNorsemenTheChief m_questAreaTheChief
 		private QuestAreaTheNorsemenBattle m_questAreaBattle
 		private QuestAreaTheNorsemenHeimrich m_questAreaHeimrich
-
+		private AGroup m_finalNorsemen
+		
 		implement Quest
 
 		// members
@@ -439,20 +440,37 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			/*
 			 * Create Norsemen
 			 */
+			set this.m_finalNorsemen = AGroup.create()
 			set whichUnit = CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_waypoint_orc_camp_norseman_0, 196.87)
 			call SetUnitInvulnerable(whichUnit, true)
+			call this.m_finalNorsemen.units().pushBack(whichUnit)
 			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_waypoint_orc_camp_norseman_1, 353.13)
 			call SetUnitInvulnerable(whichUnit, true)
+			call this.m_finalNorsemen.units().pushBack(whichUnit)
 			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_waypoint_orc_camp_norseman_2, 243.49)
 			call SetUnitInvulnerable(whichUnit, true)
+			call this.m_finalNorsemen.units().pushBack(whichUnit)
 			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.armedVillager, gg_rct_waypoint_orc_camp_villager_0, 7.50)
 			call SetUnitInvulnerable(whichUnit, true)
+			call this.m_finalNorsemen.units().pushBack(whichUnit)
 			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.armedVillager, gg_rct_waypoint_orc_camp_villager_1, 230.15)
 			call SetUnitInvulnerable(whichUnit, true)
+			call this.m_finalNorsemen.units().pushBack(whichUnit)
 			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.ranger, gg_rct_waypoint_orc_camp_ranger_0, 296.12)
 			call SetUnitInvulnerable(whichUnit, true)
+			call this.m_finalNorsemen.units().pushBack(whichUnit)
 			
 			set this.m_questAreaHeimrich = QuestAreaTheNorsemenHeimrich.create(gg_rct_quest_talras_quest_item_1)
+		endmethod
+		
+		private static method forEachFunctionRemoveUnit takes unit whichUnit returns nothing
+			call RemoveUnit(whichUnit)
+		endmethod
+		
+		public method cleanFinalNorsemen takes nothing returns nothing
+			call this.m_finalNorsemen.units().forEach(thistype.forEachFunctionRemoveUnit)
+			call this.m_finalNorsemen.destroy()
+			set this.m_finalNorsemen = 0
 		endmethod
 
 		private static method create takes nothing returns thistype

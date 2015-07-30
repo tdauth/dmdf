@@ -185,9 +185,32 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		 public static constant integer maxRecruits = 5
 		 private unit m_recruitBuilding
 		 private trigger m_recruitTrigger
-		 private integer m_recruitCounter
+		 private AGroup m_recruits
 
 		implement Quest
+		
+		public method cleanUnits takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.maxRecruits)
+				call RemoveUnit(this.m_recruits.units()[i])
+				set i = i + 1
+			endloop
+			call this.m_recruits.destroy()
+			set this.m_recruits = 0
+			
+			// Wieland
+			call RemoveUnit(this.m_weaponCart)
+			set this.m_weaponCart = null
+		
+			// Manfred
+			call RemoveUnit(this.m_supplyCart)
+			set this.m_supplyCart = null
+			
+			// Kuno
+			call RemoveUnit(this.m_kunosCart)
+			set this.m_kunosCart = null
+		endmethod
 
 		public stub method enable takes nothing returns boolean
 			local boolean result = this.setState(thistype.stateNew)
@@ -204,8 +227,6 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
-			
-			set this.m_recruitCounter = 0
 			
 			call this.displayState()
 
@@ -463,7 +484,6 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			
 			call this.setupUnitAtDestination(GetTriggerUnit())
 			
-			set this.m_weaponCart = null
 			call PauseTimer(this.m_weaponCartSpawnTimer)
 			call DestroyTimer(this.m_weaponCartSpawnTimer)
 			set this.m_weaponCartSpawnTimer = null
@@ -833,6 +853,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.questItem(thistype.questItemGetRecruits).setState(thistype.stateNew)
 			call this.displayUpdate()
 			set this.m_recruitBuilding = CreateUnit(MapData.alliedPlayer, 'n04F', GetRectCenterX(gg_rct_quest_war_recruit_building), GetRectCenterY(gg_rct_quest_war_recruit_building), 0.0)
+			set this.m_recruits = AGroup.create()
 			set this.m_recruitTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(this.m_recruitTrigger, this.m_recruitBuilding, EVENT_UNIT_SELL)
 			call TriggerAddAction(this.m_recruitTrigger, function thistype.triggerActionRecruit)
@@ -846,11 +867,11 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local thistype this = thistype.quest()
 			if (GetUnitTypeId(GetTriggerUnit()) == 'n02J' and GetOwningPlayer(GetTriggerUnit()) == MapData.alliedPlayer) then
 				call this.setupUnitAtDestination(GetTriggerUnit())
-				set this.m_recruitCounter = this.m_recruitCounter + 1
+				call this.m_recruits.units().pushBack(GetTriggerUnit())
 				
-				call this.displayUpdateMessage(Format(tr("%1%/%2% Rekruten")).i(this.m_recruitCounter).i(thistype.maxRecruits).result())
+				call this.displayUpdateMessage(Format(tr("%1%/%2% Rekruten")).i(this.m_recruits.units().size()).i(thistype.maxRecruits).result())
 				
-				return this.m_recruitCounter == thistype.maxRecruits
+				return this.m_recruits.units().size() == thistype.maxRecruits
 			endif
 			
 			return false

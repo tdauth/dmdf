@@ -122,6 +122,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellPoisonedArrows.create(character)
 				call SpellBurningArrows.create(character)
 				call SpellFrozenArrows.create(character)
+				call SpellMultiShot.create(character)
+				call SpellTrap.create(character)
 			elseif (class == Classes.elementalMage()) then
 				call SpellBlaze.create(character)
 				call SpellEarthPrison.create(character)
@@ -233,6 +235,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call UnitAddAbility(whichUnit, 'A0R1')
 			// grimoire
 			call UnitAddAbility(whichUnit, 'A0R2')
+			
+			call ModifyHeroSkillPoints(whichUnit, bj_MODIFYMETHOD_SET, 0) 
 			
 			// remove shared vision
 			set i = 0
