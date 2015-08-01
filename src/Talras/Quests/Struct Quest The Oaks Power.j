@@ -1,8 +1,9 @@
-library StructMapQuestsQuestTheOaksPower requires Asl
+library StructMapQuestsQuestTheOaksPower requires Asl, StructGameCharacter
 
 	struct QuestTheOaksPower extends AQuest
 		public static constant integer unitTypeId = 'n02Q'
 		public static constant integer itemTypeId = 'I01O'
+		public static constant integer rewardItemTypeId = 'I05D'
 		private static constant integer abilityId = 'A067'
 
 		implement CharacterQuest
@@ -12,7 +13,8 @@ library StructMapQuestsQuestTheOaksPower requires Asl
 		endmethod
 
 		private static method stateActionCompleted takes AQuest whichQuest returns nothing
-			call UnitAddItemById(whichQuest.character().unit(), thistype.itemTypeId)
+			call UnitAddItemById(whichQuest.character().unit(), thistype.rewardItemTypeId)
+			call Character(whichQuest.character()).displayItemAcquired(tr("Ursulas Totem"), tr("Beschwört eine wilde Kreatur."))
 		endmethod
 
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger whichTrigger returns nothing

@@ -81,6 +81,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_deers0
 		private static SpawnPoint m_ditchSpiders0
 		private static SpawnPoint m_ditchSpiders1
+		private static SpawnPoint m_ditchSpiders2
 		private static SpawnPoint m_banditsAtGuntrichsMill
 		private static SpawnPoint m_box0
 		private static SpawnPoint m_box1
@@ -333,6 +334,12 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_ditchSpiders1.addNewItemType(index, 'I041', 1.0)
 			set index = thistype.m_ditchSpiders1.addUnitWithType(gg_unit_n01E_0074, 1.0)
 			call thistype.m_ditchSpiders1.addNewItemType(index, 'I041', 1.0)
+
+			set thistype.m_ditchSpiders2 = SpawnPoint.create()
+			set index = thistype.m_ditchSpiders2.addUnitWithType(gg_unit_n01D_0024, 1.0)
+			call thistype.m_ditchSpiders2.addNewItemType(index, 'I041', 1.0)
+			set index = thistype.m_ditchSpiders2.addUnitWithType(gg_unit_n01D_0023, 1.0)
+			call thistype.m_ditchSpiders2.addNewItemType(index, 'I041', 1.0)
 		endmethod
 		
 		private static method init1 takes nothing returns nothing

@@ -70,8 +70,7 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, true, tr("Keine Sorge, sobald du ihn erneut wirken lässt, wirst du dich natürlich zurückverwandeln."), null)
 			call speech(info, character, true, tr("Der Zauber wirkt allerdings nur innerhalb dieser Höhle. Außerhalb ist meine Aura nicht stark genug!"), null)
 			call speech(info, character, true, tr("Ach so und noch etwas: Hast du genügend Feinde getötet, bekommst du natürlich auch entsprechende Belohnungen, die du dir bei mir persönlich abholen kannst."), null)
-			/// TODO andere Standarte!
-			call Character(character).giveQuestItem('I01B') // Standarte
+			call Character(character).giveQuestItem('I01C') // Standarte
 			// Ring
 			if (character.class() == Classes.dragonSlayer()) then
 				call Character(character).giveQuestItem('I034')

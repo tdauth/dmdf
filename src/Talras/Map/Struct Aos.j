@@ -37,7 +37,10 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		private static leaderboard m_leaderboard
 		private static trigger m_enterTrigger
 		private static trigger m_leaveTrigger
+		private static trigger m_haldarsAreaTrigger
+		private static trigger m_baldarsAreaTrigger
 		private static timer m_spawnTimer
+		private static timerdialog m_spawnTimerDialog
 		private static trigger m_scoreTrigger
 		private static boolean m_characterHasEntered
 
@@ -72,41 +75,29 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0)))
 			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1)))
 			// the white legion - group 0
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n029', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n051', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
 			call GroupAddUnit(haldarsGroup0, createdUnit)
 			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n052', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
 			call GroupAddUnit(haldarsGroup0, createdUnit)
 			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n052', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
 			call GroupAddUnit(haldarsGroup0, createdUnit)
 			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n052', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
 			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n026', GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0), 270.0)
-			call GroupAddUnit(baldarsGroup0, createdUnit)
 			set createdUnit = null
 			// the white legion - group 1
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n029', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n054', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
 			call GroupAddUnit(haldarsGroup0, createdUnit)
 			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n053', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
 			call GroupAddUnit(haldarsGroup0, createdUnit)
 			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n028', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n053', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
 			call GroupAddUnit(haldarsGroup0, createdUnit)
 			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n027', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
-			call GroupAddUnit(haldarsGroup0, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n00M', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
+			set createdUnit = CreateUnit(thistype.m_haldarsUser, 'n053', GetRectCenterX(gg_rct_haldar_spawn_point_1), GetRectCenterY(gg_rct_haldar_spawn_point_1), 270.0)
 			call GroupAddUnit(haldarsGroup0, createdUnit)
 			set createdUnit = null
 			// move
@@ -121,23 +112,20 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0)))
 			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1)))
 			// the black legion - group 0
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00G', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00J', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
 			call GroupAddUnit(baldarsGroup0, createdUnit)
 			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00N', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
 			call GroupAddUnit(baldarsGroup0, createdUnit)
 			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00N', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
 			call GroupAddUnit(baldarsGroup0, createdUnit)
 			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00N', GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0), 90.0)
 			call GroupAddUnit(baldarsGroup0, createdUnit)
 			set createdUnit = null
 			// the black legion - group 1
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00J', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
-			call GroupAddUnit(baldarsGroup1, createdUnit)
-			set createdUnit = null
-			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00J', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
+			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00G', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
 			call GroupAddUnit(baldarsGroup1, createdUnit)
 			set createdUnit = null
 			set createdUnit = CreateUnit(thistype.m_baldarsUser, 'n00I', GetRectCenterX(gg_rct_baldar_spawn_point_1), GetRectCenterY(gg_rct_baldar_spawn_point_1), 90.0)
@@ -183,6 +171,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 				call IssueTargetOrder(gg_unit_u001_0191, "harvest", gg_dest_B00D_8151)
 				call IssueTargetOrder(gg_unit_u001_0192, "harvest", gg_dest_B00D_2623)
 				
+				call thistype.timerFunctionSpawn()
 				call TimerStart(thistype.m_spawnTimer, thistype.spawnTime, true, function thistype.timerFunctionSpawn)
 			endif
 			set user = null
@@ -263,6 +252,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call character.displayMessage(ACharacter.messageTypeInfo, tr("Sie sind Haldars Truppe beigetreten."))
 			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg("%s ist Haldars Truppe beigetreten.", character.name()))
 			set user = character.player()
+			call TimerDialogDisplayForPlayerBJ(true, thistype.m_spawnTimerDialog, user)
 			call Shrines.aosShrineHaldar().enableForCharacter(character, false)
 			set thistype.m_playerHasJoinedHaldar[GetPlayerId(user)] = true
 			set thistype.m_haldarMembers = thistype.m_haldarMembers + 1
@@ -275,6 +265,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 
 		public static method characterLeavesHaldar takes Character character returns nothing
 			local player user = character.player()
+			call TimerDialogDisplayForPlayerBJ(false, thistype.m_spawnTimerDialog, user)
 			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tr("%s hat das Schlachtfeld und somit Haldars Truppe verlassen."), character.name()))
 			set thistype.m_playerHasJoinedHaldar[GetPlayerId(user)] = false
 			set thistype.m_haldarMembers = thistype.m_haldarMembers - 1
@@ -293,6 +284,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call character.displayMessage(ACharacter.messageTypeInfo, tr("Sie sind Baldars Truppe beigetreten."))
 			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tr("%s ist Baldars Truppe beigetreten."), character.name()))
 			set user = character.player()
+			call TimerDialogDisplayForPlayerBJ(true, thistype.m_spawnTimerDialog, user)
 			call Shrines.aosShrineBaldar().enableForCharacter(character, false)
 			set thistype.m_playerHasJoinedBaldar[GetPlayerId(user)] = true
 			set thistype.m_baldarMembers = thistype.m_baldarMembers + 1
@@ -305,6 +297,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 
 		public static method characterLeavesBaldar takes Character character returns nothing
 			local player user = character.player()
+			call TimerDialogDisplayForPlayerBJ(false, thistype.m_spawnTimerDialog, user)
 			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tr("%s hat das Schlachtfeld und somit Baldars Truppe verlassen."), character.name()))
 			set thistype.m_playerHasJoinedBaldar[GetPlayerId(user)] = false
 			set thistype.m_baldarMembers = thistype.m_baldarMembers - 1
@@ -395,9 +388,52 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call TriggerAddCondition(thistype.m_leaveTrigger, Condition(function thistype.triggerConditionIsCharacter))
 			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 		endmethod
+		
+		private static method triggerConditionIsEnemyOfHaldar takes nothing returns boolean
+			return IsUnitEnemy(GetTriggerUnit(), thistype.m_haldarsUser)
+		endmethod
+		
+		private static method triggerActionKillEnemyOfHaldar takes nothing returns nothing
+			local effect whichEffect = AddSpecialEffectTarget("Models\\Effects\\Blitzschlag.mdl", GetTriggerUnit(), "origin")
+			call SetUnitExploded(GetTriggerUnit(), true)
+			call KillUnit(GetTriggerUnit())
+			call TriggerSleepAction(2.0)
+			call DestroyEffect(whichEffect)
+			set whichEffect = null
+		endmethod
+		
+		private static method createHaldarsAreaTrigger takes nothing returns nothing
+			set thistype.m_haldarsAreaTrigger = CreateTrigger()
+			call TriggerRegisterEnterRectSimple(thistype.m_haldarsAreaTrigger, gg_rct_haldars_area)
+			call TriggerAddCondition(thistype.m_haldarsAreaTrigger, Condition(function thistype.triggerConditionIsEnemyOfHaldar))
+			call TriggerAddAction(thistype.m_haldarsAreaTrigger, function thistype.triggerActionKillEnemyOfHaldar)
+		endmethod
+		
+		private static method triggerConditionIsEnemyOfBaldar takes nothing returns boolean
+			return IsUnitEnemy(GetTriggerUnit(), thistype.m_baldarsUser)
+		endmethod
+		
+		private static method triggerActionKillEnemyOfBaldar takes nothing returns nothing
+			local effect whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Demon\\RainOfFire\\RainOfFireTarget.mdl", GetTriggerUnit(), "origin")
+			call SetUnitExploded(GetTriggerUnit(), true)
+			call KillUnit(GetTriggerUnit())
+			call TriggerSleepAction(2.0)
+			call DestroyEffect(whichEffect)
+			set whichEffect = null
+		endmethod
+		
+		private static method createBaldarsAreaTrigger takes nothing returns nothing
+			set thistype.m_baldarsAreaTrigger = CreateTrigger()
+			call TriggerRegisterEnterRectSimple(thistype.m_baldarsAreaTrigger, gg_rct_baldars_area)
+			call TriggerAddCondition(thistype.m_baldarsAreaTrigger, Condition(function thistype.triggerConditionIsEnemyOfBaldar))
+			call TriggerAddAction(thistype.m_baldarsAreaTrigger, function thistype.triggerActionKillEnemyOfBaldar)
+		endmethod
 
 		private static method createSpawnTimer takes nothing returns nothing
 			set thistype.m_spawnTimer = CreateTimer()
+			set thistype.m_spawnTimerDialog = CreateTimerDialog(thistype.m_spawnTimer)
+			call TimerDialogSetTitle(thistype.m_spawnTimerDialog, tr("Nächste Angriffswelle:"))
+			call TimerDialogDisplay(thistype.m_spawnTimerDialog, false)
 		endmethod
 
 		/// All player units can score (for example summoned units).
@@ -496,6 +532,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call thistype.createSpawnTimer()
 			call thistype.createScoreTrigger()
 			call thistype.initStartUnits()
+			call thistype.createHaldarsAreaTrigger()
+			call thistype.createBaldarsAreaTrigger()
 		endmethod
 
 		private static method destroyLeaderboard takes nothing returns nothing
@@ -512,8 +550,20 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call DestroyTrigger(thistype.m_leaveTrigger)
 			set thistype.m_leaveTrigger = null
 		endmethod
+		
+		private static method destroyHaldarsAreaTrigger takes nothing returns nothing
+			call DestroyTrigger(thistype.m_haldarsAreaTrigger)
+			set thistype.m_haldarsAreaTrigger = null
+		endmethod
+		
+		private static method destroyBaldarsAreaTrigger takes nothing returns nothing
+			call DestroyTrigger(thistype.m_baldarsAreaTrigger)
+			set thistype.m_baldarsAreaTrigger = null
+		endmethod
 
 		private static method destroySpawnTimer takes nothing returns nothing
+			call DestroyTimerDialog(thistype.m_spawnTimerDialog)
+			set thistype.m_spawnTimerDialog = null
 			call PauseTimerBJ(true, thistype.m_spawnTimer)
 			call DestroyTimer(thistype.m_spawnTimer)
 			set thistype.m_spawnTimer = null
@@ -536,6 +586,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call thistype.destroyLeaderboard()
 			call thistype.destroyEnterTrigger()
 			call thistype.destroyLeaveTrigger()
+			call thistype.destroyHaldarsAreaTrigger()
+			call thistype.destroyBaldarsAreaTrigger()
 			call thistype.destroySpawnTimer()
 			call thistype.destroyScoreTrigger()
 			call thistype.cleanUpStartUnits()
