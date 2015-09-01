@@ -94,6 +94,11 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static ItemSpawnPoint m_mushroom4
 		private static ItemSpawnPoint m_mushroom5
 		private static ItemSpawnPoint m_mushroom6
+		private static ItemSpawnPoint m_healingHerbals0
+		private static ItemSpawnPoint m_healingHerbals1
+		private static ItemSpawnPoint m_healingHerbals2
+		private static ItemSpawnPoint m_healingHerbals3
+		private static ItemSpawnPoint m_healingHerbals4
 		private static SpawnPoint m_vampireLord0
 		private static SpawnPoint m_vampires0
 		private static SpawnPoint m_box3
@@ -390,7 +395,13 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set thistype.m_mushroom4 = ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0211, 1.0)
 			set thistype.m_mushroom5 = ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0213, 1.0)
 			set thistype.m_mushroom6 = ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0214, 1.0)
-	
+			
+			set thistype.m_healingHerbals0 = ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0426, 1.0)
+			set thistype.m_healingHerbals1 = ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0428, 1.0)
+			set thistype.m_healingHerbals2 = ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0429, 1.0)
+			set thistype.m_healingHerbals3 = ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0425, 1.0)
+			set thistype.m_healingHerbals4 = ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0427, 1.0)
+			
 			set thistype.m_vampireLord0 = SpawnPoint.create()
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n010_0110, 1.0)
 			call thistype.m_vampireLord0.addNewItemType(index, 'I013', 1.0)

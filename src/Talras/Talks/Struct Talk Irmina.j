@@ -117,7 +117,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Hallo.
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Hallo. Möchtest du zufällig etwas bei mir kaufen?"), null)
+			call speech(info, character, true, tr("Hallo. Möchtest du zufällig etwas bei mir kaufen?"), gg_snd_Irmina1)
 			call info.talk().showRange(9, 10, character)
 		endmethod
 
@@ -129,11 +129,11 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Wer bist du?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wer bist du?"), null)
-			call speech(info, character, true, tr("Ich bin Irmina und sowohl der Stand hier als auch das Haus daneben gehören meinem Mann und mir. Ich verkaufe hier meine Ware, also falls du was brauchst ..."), null)
-			call speech(info, character, true, tr("Ich kenne mich mit Kräutern und anderen Pflanzen bestens aus und weiß, wie man sich alle möglichen nützlichen Dinge zusammenmischt. Man könnte fast sagen, ich sei eine Alchemistin."), null)
+			call speech(info, character, true, tr("Ich bin Irmina und sowohl der Stand hier als auch das Haus daneben gehören meinem Mann und mir. Ich verkaufe hier meine Ware, also falls du was brauchst ..."), gg_snd_Irmina5)
+			call speech(info, character, true, tr("Ich kenne mich mit Kräutern und anderen Pflanzen bestens aus und weiß, wie man sich alle möglichen nützlichen Dinge zusammenmischt. Man könnte fast sagen, ich sei eine Alchemistin."), gg_snd_Irmina6)
 			call speech(info, character, false, tr("Klingt gut."), null)
-			call speech(info, character, true, tr("Das will ich doch meinen. Ich mache auch gerechte Preise, denn ich habe selbst genug zum Leben und wenn mein Mann wieder aus Holzbruck zurückkehrt, dann werde ich vermutlich mein Geschäft schließen und mich meinen Studien widmen."), null)
-			call speech(info, character, true, tr("Das bringt nämlich letztlich mehr als die harte Arbeit hier."), null)
+			call speech(info, character, true, tr("Das will ich doch meinen. Ich mache auch gerechte Preise, denn ich habe selbst genug zum Leben und wenn mein Mann wieder aus Holzbruck zurückkehrt, dann werde ich vermutlich mein Geschäft schließen und mich meinen Studien widmen."), gg_snd_Irmina7)
+			call speech(info, character, true, tr("Das bringt nämlich letztlich mehr als die harte Arbeit hier."), gg_snd_Irmina8)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -145,9 +145,9 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Kannst du mir auch was Spezielles brauen oder mischen?
 		private static method infoAction2 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Kannst du mir auch was Spezielles brauen oder mischen?"), null)
-			call speech(info, character, true, tr("Natürlich, aber das kostet dich auch ein wenig und du musst mir die Zutaten beschaffen."), null)
-			call speech(info, character, true, tr("Ich muss hier nämlich meinen Laden führen und ich habe keine Lust mich noch um einen Bauern oder Jäger zu kümmern, der das für mich macht."), null)
-			call speech(info, character, true, tr("Am besten gebe ich dir Abschriften meiner Zutaten- und Preislisten für besondere Tränke. Manche Zutaten sind sehr selten, was ja auch erklärt, warum ich sie nicht in meinem Sortiment habe."), null)
+			call speech(info, character, true, tr("Natürlich, aber das kostet dich auch ein wenig und du musst mir die Zutaten beschaffen."), gg_snd_Irmina9)
+			call speech(info, character, true, tr("Ich muss hier nämlich meinen Laden führen und ich habe keine Lust mich noch um einen Bauern oder Jäger zu kümmern, der das für mich macht."), gg_snd_Irmina10)
+			call speech(info, character, true, tr("Am besten gebe ich dir Abschriften meiner Zutaten- und Preislisten für besondere Tränke. Manche Zutaten sind sehr selten, was ja auch erklärt, warum ich sie nicht in meinem Sortiment habe."), gg_snd_Irmina11)
 			/**
 			 * Charakter erhält Zutatenliste.
 			 */
@@ -159,13 +159,13 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Was macht dein Mann in Holzbruck?
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, true, tr("Was macht dein Mann in Holzbruck?"), null)
-			call speech(info, character, false, tr("Er hat dort Geschäfte zu erledigen. Er ist ein wohlhabender Kaufmann und handelt mit Salz, dem weißen Gold. Vor ein paar Monaten ist er mit einigen Wagen aufgebrochen, um sein Salz in Holzbruck zu verkaufen."), null)
-			call speech(info, character, true, tr("Du musst wissen, dass er ursprünglich aus Holzbruck kommt und sich hier nur meinetwegen niedergelassen hat."), null)
-			call speech(info, character, true, tr("Ich bin froh, einen solchen Mann getroffen und geheiratet zu haben. Meine Eltern waren einfache Leute und mussten noch viel härter arbeiten als ich und nun haben wir unser eigenes Haus hier und mir geht’s eigentlich recht gut."), null)
-			call speech(info, character, true, tr("Na ja, jetzt da Krieg herrschen wird, sollten wir vielleicht woanders hingehen. Holzbruck gefällt mir zwar, aber das ist ja noch näher an der Grenze. Ich hoffe nur, dass meinem Mann nichts passiert."), null)
-			call speech(info, character, true, tr("Er ist zwar ein netter Kerl, aber kein besonders starker. Ich glaube, er würde den Feinden, die in unser Königreich einfallen eher einen Handel vorschlagen als ihnen mit dem Schwert entgegenzutreten. Ganz anders als Agihard … (seufzt)"), null)
+			call speech(info, character, false, tr("Er hat dort Geschäfte zu erledigen. Er ist ein wohlhabender Kaufmann und handelt mit Salz, dem weißen Gold. Vor ein paar Monaten ist er mit einigen Wagen aufgebrochen, um sein Salz in Holzbruck zu verkaufen."), gg_snd_Irmina12)
+			call speech(info, character, true, tr("Du musst wissen, dass er ursprünglich aus Holzbruck kommt und sich hier nur meinetwegen niedergelassen hat."), gg_snd_Irmina13)
+			call speech(info, character, true, tr("Ich bin froh, einen solchen Mann getroffen und geheiratet zu haben. Meine Eltern waren einfache Leute und mussten noch viel härter arbeiten als ich und nun haben wir unser eigenes Haus hier und mir geht’s eigentlich recht gut."), gg_snd_Irmina14)
+			call speech(info, character, true, tr("Na ja, jetzt da Krieg herrschen wird, sollten wir vielleicht woanders hingehen. Holzbruck gefällt mir zwar, aber das ist ja noch näher an der Grenze. Ich hoffe nur, dass meinem Mann nichts passiert."), gg_snd_Irmina15)
+			call speech(info, character, true, tr("Er ist zwar ein netter Kerl, aber kein besonders starker. Ich glaube, er würde den Feinden, die in unser Königreich einfallen eher einen Handel vorschlagen als ihnen mit dem Schwert entgegenzutreten. Ganz anders als Agihard … (seufzt)"), gg_snd_Irmina16)
 			call speech(info, character, false, tr("Agihard?"), null)
-			call speech(info, character, true, tr("Ja, der Waffenmeister von Talras. Das ist ein starker Krieger. Egal was andere von ihm denken, ich weiß, dass er ein gutes Herz hat und Mut noch dazu. Ich glaube, er ist nur etwas einsam."), null)
+			call speech(info, character, true, tr("Ja, der Waffenmeister von Talras. Das ist ein starker Krieger. Egal was andere von ihm denken, ich weiß, dass er ein gutes Herz hat und Mut noch dazu. Ich glaube, er ist nur etwas einsam."), gg_snd_Irmina17)
 			call info.talk().showRange(11, 12, character)
 		endmethod
 
@@ -177,15 +177,15 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Agihard mag dich.
 		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Agihard mag dich."), null)
-			call speech(info, character, true, tr("Was … äh .. wie bitte? Hast du etwa mit ihm gesprochen?"), null)
+			call speech(info, character, true, tr("Was … äh .. wie bitte? Hast du etwa mit ihm gesprochen?"), gg_snd_Irmina21)
 			call speech(info, character, false, tr("Ja."), null)
-			call speech(info, character, true, tr("Du hast ihm doch nicht erzählt, was ich dir gesagt habe, oder?"), null)
+			call speech(info, character, true, tr("Du hast ihm doch nicht erzählt, was ich dir gesagt habe, oder?"), gg_snd_Irmina22)
 			call speech(info, character, false, tr("Also …"), null)
-			call speech(info, character, true, tr("Wie konntest du nur? Jetzt denkt er bestimmt etwas Falsches von mir."), null)
+			call speech(info, character, true, tr("Wie konntest du nur? Jetzt denkt er bestimmt etwas Falsches von mir."), gg_snd_Irmina23)
 			call speech(info, character, false, tr("…"), null)
-			call speech(info, character, true, tr("Was … also was hat er denn gesagt, also was genau?"), null)
+			call speech(info, character, true, tr("Was … also was hat er denn gesagt, also was genau?"), gg_snd_Irmina24)
 			call speech(info, character, false, tr("Er meinte nur, dass er dich sehr gerne hat und vielleicht mal in nächster Zeit bei dir vorbeischaut."), null)
-			call speech(info, character, true, tr("Tatsächlich! Ich meine, tatsächlich? Das wäre toll. Endlich mal eine gute Neuigkeit. Hier hast du ein paar Salben, danke!"), null)
+			call speech(info, character, true, tr("Tatsächlich! Ich meine, tatsächlich? Das wäre toll. Endlich mal eine gute Neuigkeit. Hier hast du ein paar Salben, danke!"), gg_snd_Irmina25)
 			// Auftrag „Talras' mutiger Waffenmeister“ abgeschlossen
 			call QuestTheBraveArmourerOfTalras.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
@@ -199,7 +199,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Ich gehe nach Holzbruck.
 		private static method infoAction5 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Ich gehe nach Holzbruck."), null)
-			call speech(info, character, true, tr("Tatsächlich? Nun, ich wünsche dir viel Glück und bitte sieh nach meinem Mann! Sein Name ist Lambert. Hier, nimm noch diese Tränke! Ich hoffe, sie werden dir von Nutzen sein."), null)
+			call speech(info, character, true, tr("Tatsächlich? Nun, ich wünsche dir viel Glück und bitte sieh nach meinem Mann! Sein Name ist Lambert. Hier, nimm noch diese Tränke! Ich hoffe, sie werden dir von Nutzen sein."), gg_snd_Irmina26)
 			// Charakter erhält Heiltränke
 			call character.giveItem('I00B')
 			call character.giveItem('I00B')
@@ -217,16 +217,16 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			call speech(info, character, false, tr("Braue mir einen speziellen Trank!"), null)
 			// (Irmina braut keinen speziellen Trank für den Charakter)
 			if (not thistype(info.talk()).createsPotion(character)) then
-				call speech(info, character, true, tr("Gut, wenn du die Zutaten und Goldmünzen hast. Welcher darf's denn sein?"), null)
+				call speech(info, character, true, tr("Gut, wenn du die Zutaten und Goldmünzen hast. Welcher darf's denn sein?"), gg_snd_Irmina27)
 				call info.talk().showRange(13, 16, character)
 			elseif (thistype(info.talk()).createsPotion(character)) then
 			// (Irmina braut bereits einen speziellen Trank für den Charakter)
-				call speech(info, character, true, tr("Ich braue dir doch bereits einen. Warte erst mal bis der fertig ist, dann sehen wir weiter!"), null)
+				call speech(info, character, true, tr("Ich braue dir doch bereits einen. Warte erst mal bis der fertig ist, dann sehen wir weiter!"), gg_snd_Irmina31)
 				call thistype(thistype.talk()).showPotionInfo(character)
 				call info.talk().showStartPage(character)
 			// (Irmina braut keinen speziellen Trank, der Charakter hat sich den letzten aber noch nicht abgeholt)
 			elseif (thistype(info.talk()).finishedPotion(character)) then
-				call speech(info, character, true, tr("Gut, hier hast du noch deinen letzten Trank und welcher darf's als Nächstes sein?"), null)
+				call speech(info, character, true, tr("Gut, hier hast du noch deinen letzten Trank und welcher darf's als Nächstes sein?"), gg_snd_Irmina32)
 				call thistype(info.talk()).finishPotionCreation(character)
 				call info.talk().showRange(13, 16, character)
 			endif
@@ -242,11 +242,11 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			call speech(info, character, false, tr("Hast du den Trank für mich?"), null)
 			// (Der Trank ist fertig)
 			if (thistype(thistype.talk()).finishedPotion(character)) then
-				call speech(info, character, true, tr("Ja. Bitteschön, hier hast du ihn."), null)
+				call speech(info, character, true, tr("Ja. Bitteschön, hier hast du ihn."), gg_snd_Irmina33)
 				call thistype(thistype.talk()).finishPotionCreation(character)
 			// (Der Trank ist noch nicht fertig)
 			else
-				call speech(info, character, false, tr("Nein. Es dauert noch eine Weile."), null)
+				call speech(info, character, false, tr("Nein. Es dauert noch eine Weile."), gg_snd_Irmina34)
 				call thistype(thistype.talk()).showPotionInfo(character)
 			endif
 			call info.talk().showStartPage(character)
@@ -255,24 +255,24 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Was verkaufst du denn?
 		private static method infoAction0_0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was verkaufst du denn?"), null)
-			call speech(info, character, true, tr("Alles was man braucht, um den Alltag, ob nun den eines gewöhnlichen Bürgers oder eines Kriegers, gut zu überstehen. Tränke, Salben, Kräuter, Lebensmittel und noch ein paar andere Sachen."), null)
-			call speech(info, character, true, tr("Sieh's dir einfach mal an!"), null)
+			call speech(info, character, true, tr("Alles was man braucht, um den Alltag, ob nun den eines gewöhnlichen Bürgers oder eines Kriegers, gut zu überstehen. Tränke, Salben, Kräuter, Lebensmittel und noch ein paar andere Sachen."), gg_snd_Irmina2)
+			call speech(info, character, true, tr("Sieh's dir einfach mal an!"), gg_snd_Irmina3)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Nein.
 		private static method infoAction0_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Nein."), null)
-			call speech(info, character, true, tr("Toll, sind den Leuten auf einmal die Goldmünzen ausgegangen oder was? Plötzlich, bei Kriegsgefahr sparen sie alle, dabei sollten sie es doch lieber jetzt noch mal ausgeben. Wie auch immer, ist ja deine Sache."), null)
+			call speech(info, character, true, tr("Toll, sind den Leuten auf einmal die Goldmünzen ausgegangen oder was? Plötzlich, bei Kriegsgefahr sparen sie alle, dabei sollten sie es doch lieber jetzt noch mal ausgeben. Wie auch immer, ist ja deine Sache."), gg_snd_Irmina4)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Also Agihard, der mutige Waffenmeister!
 		private static method infoAction3_0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Also Agihard, der mutige Waffenmeister!"), null)
-			call speech(info, character, true, tr("Ich weiß, ich sollte nicht so daherreden, aber was ich empfinde, ist nun mal da. Ich wünschte nur, er käme eines Tages mal zu mir, um etwas zu kaufen, dann könnte ich mich nett mit ihm unterhalten."), null)
+			call speech(info, character, true, tr("Ich weiß, ich sollte nicht so daherreden, aber was ich empfinde, ist nun mal da. Ich wünschte nur, er käme eines Tages mal zu mir, um etwas zu kaufen, dann könnte ich mich nett mit ihm unterhalten."), gg_snd_Irmina18)
 			call speech(info, character, false, tr("Unterhalten ..."), null)
-			call speech(info, character, true, tr("Ja! Ich würde ihm auch was umsonst geben."), null)
+			call speech(info, character, true, tr("Ja! Ich würde ihm auch was umsonst geben."), gg_snd_Irmina19)
 			call speech(info, character, false, tr("Genau."), null)
 			// Neuer Auftrag: „Talras' mutiger Waffenmeister“
 			call QuestTheBraveArmourerOfTalras.characterQuest(character).enable()
@@ -281,7 +281,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 		// Glückwunsch!
 		private static method infoAction3_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Ja, Glück wünsche ich ihm wahrlich (seufzt)."), null)
+			call speech(info, character, true, tr("Ja, Glück wünsche ich ihm wahrlich (seufzt)."), gg_snd_Irmina20)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -290,7 +290,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			local integer i
 			// (Charakter hat die nötigen Zutaten und die geforderten Goldmünzen)
 			if (thistype(info.talk()).hasPotionRessources(character, potion) and thistype(info.talk()).hasPotionMoney(character, potion)) then
-				call speech(info, character, true, tr("Gut, komm in ein paar Minuten wieder!"), null)
+				call speech(info, character, true, tr("Gut, komm in ein paar Minuten wieder!"), gg_snd_Irmina28)
 				// Charakter gibt Irmina die Zutaten.
 				call character.removeGold(thistype.potionMoney(potion)) // remove gold
 				set ressources = thistype.potionRessources(potion)
@@ -305,11 +305,11 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 				call info.talk().showStartPage(character) // return to start page
 			// (Dem Charakter fehlen die nötigen Zutaten)
 			elseif (not thistype(info.talk()).hasPotionRessources(character, potion)) then
-				call speech(info, character, true, tr("Und wie ohne die nötigen Zutaten?"), null)
+				call speech(info, character, true, tr("Und wie ohne die nötigen Zutaten?"), gg_snd_Irmina29)
 				call info.talk().showRange(13, 16, character)
 			// (Dem Charakter fehlen die geforderten Goldmünzen)
 			else
-				call speech(info, character, true, tr("Ohne Bezahlung sicher nicht!"), null)
+				call speech(info, character, true, tr("Ohne Bezahlung sicher nicht!"), gg_snd_Irmina30)
 				call info.talk().showRange(13, 16, character)
 			endif
 		endmethod

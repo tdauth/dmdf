@@ -21,7 +21,7 @@
 * Ursula: Dialog einbauen falls man Druide ist!
 * FIXED: Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
 * Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
-* Schwert- und Schildhand bei sämtlichen Waffen vertauschen, damit Animation für Schild stimmt.
+* FIXED: Schwert- und Schildhand bei sämtlichen Waffen vertauschen, damit Animation für Schild stimmt.
 * Schild Attachmentpunkt ändern, ist sonst in der Hand des Charakters.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
 * FIXED: Grabenspinne: Passives Spinnengift und Giftstachel.

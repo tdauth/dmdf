@@ -8,6 +8,10 @@ call Credits.addContributor.evaluate("Jojo", tre("Tests", "Tests"))
 call Credits.addTitle.evaluate(tre("Sprecher", "Voices"))
 call Credits.addContributor.evaluate("Stephanie Preis", tr("Tanka"))
 call Credits.addContributor.evaluate("Jan Langer", tr("Dago"))
+call Credits.addContributor.evaluate("Jenleo", tr("Irmina"))
+call Credits.addContributor.evaluate("Rainer", tr("Erzähler"))
+call Credits.addContributor.evaluate("Jens", tr("Kuno"))
+call Credits.addContributor.evaluate("wer.n wilke", tr("Ricman"))
 
 // tools and systems
 call Credits.addTitle.evaluate(tr("Tools und Systeme"))

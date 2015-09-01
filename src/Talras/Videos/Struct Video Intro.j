@@ -115,7 +115,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(2.0)) then
 				return
 			endif
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich wie viele andere Adelige von der feindlichen Übermacht bedroht fühlt."), gg_snd_ErzaehlerIntro6)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich, wie viele andere Adelige, von der feindlichen Übermacht bedroht fühlt."), gg_snd_ErzaehlerIntro6)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro6))) then
 				return
 			endif
