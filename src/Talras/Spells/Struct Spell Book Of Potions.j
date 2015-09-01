@@ -28,5 +28,31 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
 		endmethod
 	endstruct
+	
+	struct SpellBookOfPotionsManaPotion extends ASpell
+		public static constant integer abilityId = 'A18S'
+
+		private method condition takes nothing returns boolean
+			if (this.character().inventory().hasItemType('I05L')) then
+				debug call Print("Success")
+				return true
+			endif
+			
+			debug call Print("Fail")
+			call this.character().displayMessage(ACharacter.messageTypeError, tr("Benötigte Rohstoffe fehlen."))
+			
+			return false
+		endmethod
+		
+		private method action takes nothing returns nothing
+			call this.character().inventory().removeItemType('I05L')
+			call Character(this.character()).displayItemAcquired(GetObjectName('I00D'), tr("Hergestellt."))
+			call Character(this.character()).giveItem('I00D')
+		endmethod
+
+		public static method create takes Character character returns thistype
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
+		endmethod
+	endstruct
 
 endlibrary

@@ -418,8 +418,6 @@ endif
 			call initSpells.evaluate() // after classes!
 			// map
 			call MapData.init.evaluate()
-			// tutorial GUI, after map data!
-			call Tutorial.init.evaluate()
 			
 			/*
 			 * DMdF uses a custom XP system.
@@ -689,7 +687,6 @@ static if (DMDF_CHARACTER_STATS) then
 			call ACheat.create("stats", true, thistype.onCheatActionStats)
 endif
 endif
-
 			call thistype.setDefaultMapMusic()
 			/// has to be called by struct \ref MapData.
 			//call ACharacter.setAllMovable(true)

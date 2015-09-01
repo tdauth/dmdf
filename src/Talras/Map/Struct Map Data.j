@@ -1175,6 +1175,9 @@ endif
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
 			
+			// tutorial GUI, after creating quests. Should be listed at the bottom of finished quests.
+			call Tutorial.init.evaluate()
+			
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
