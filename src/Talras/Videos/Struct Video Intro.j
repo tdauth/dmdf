@@ -43,8 +43,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(0.50)) then
 				return
 			endif
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Nachdem die Orks und Dunkelelfen in das Königreich der Menschen eingefallen waren, wussten viele der Adeligen, von denen die meisten in den Frieden hineingeboren wurden, nicht wie sie auf die vermeintliche Invasion reagieren sollten."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Nachdem die Orks und Dunkelelfen in das Königreich der Menschen eingefallen waren, wussten viele der Adeligen, von denen die meisten in den Frieden hineingeboren wurden, nicht wie sie auf die vermeintliche Invasion reagieren sollten."), gg_snd_ErzaehlerIntro1)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro1))) then
 				return
 			endif
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
@@ -52,13 +52,13 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_intro_start_0, true, 0.00)
-			call CameraSetupApplyForceDuration(gg_cam_intro_start_1, true, GetSimpleTransmissionDuration(null) + 3.0)
+			call CameraSetupApplyForceDuration(gg_cam_intro_start_1, true, GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro2) + 3.0)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(1.50)) then
 				return
 			endif
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Da der König, der selbst einen schwachen Willen hatte, keine Truppen an die Grenze seines Reiches entsandt, mussten die dort ansäßigen Fürsten und Herzöge selbst mit dem neuen Feind zurechtkommen."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Da der König, der selbst einen schwachen Willen hatte, keine Truppen an die Grenze seines Reiches entsandt, mussten die dort ansäßigen Fürsten und Herzöge selbst mit dem neuen Feind zurechtkommen."), gg_snd_ErzaehlerIntro2)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro2))) then
 				return
 			endif
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
@@ -71,8 +71,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Doch auch das einfachere Volk sah in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then // wait until "So kämpften die einen dafür ..."
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Doch auch das einfachere Volk sah in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen."), gg_snd_ErzaehlerIntro3)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro3))) then // wait until "So kämpften die einen dafür ..."
 				return
 			endif
 
@@ -86,8 +86,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("So kämpften die einen dafür, ihr bisheriges Leben wie gewohnt fortzusetzen …"), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then // wait until "während die anderen …"
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("So kämpften die einen dafür, ihr bisheriges Leben wie gewohnt fortzusetzen …"), gg_snd_ErzaehlerIntro4)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro4))) then // wait until "während die anderen …"
 				return
 			endif
 
@@ -101,8 +101,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("… während die anderen den eigenen Vorteil aus der Sache zogen."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then // wait until end
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("… während die anderen den eigenen Vorteil aus der Sache zogen."), gg_snd_ErzaehlerIntro5)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro5))) then // wait until end
 				return
 			endif
 
@@ -115,8 +115,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(2.0)) then
 				return
 			endif
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich wie viele andere Adelige von der feindlichen Übermacht bedroht fühlt."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich wie viele andere Adelige von der feindlichen Übermacht bedroht fühlt."), gg_snd_ErzaehlerIntro6)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro6))) then
 				return
 			endif
 

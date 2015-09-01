@@ -1,3 +1,7 @@
+/*
+ * TODO
+ Wigberht: Folgt mir Männer. Wir müssen ihre Belagerungswaffen zerstören!
+ */
 library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQuestTheWayToHolzbruck, StructMapVideosVideoHolzbruck, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestWar
 
 	struct QuestAreaQuestTheDefenseOfTalras extends QuestArea

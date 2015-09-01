@@ -242,10 +242,12 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static DefenceItemType m_largeRoundedBuckler
 		private static RangeItemType m_dart
 		private static ItemType m_nordicWarHammer
+		private static ItemType m_nordicWarHelmet
 		// Wieland's items
 		private static ItemType m_knightsArmour
 		private static ItemType m_bascinet
 		private static ItemType m_greatHelm
+		private static ItemType m_knightHelmet
 		// Björn's items
 		private static ItemType m_cloak
 		private static ItemType m_hood
@@ -463,6 +465,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_nordicWarHammer = ItemType.create('I05C', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_nordicWarHammer.addAbility('A17M', true)
 			call thistype.m_nordicWarHammer.addAbility('A17N', true)
+			
+			set thistype.m_nordicWarHelmet = ItemType.create('I05E', AItemType.equipmentTypeHeaddress, 0, 0, 0, 0, 0)
+			call thistype.m_nordicWarHelmet.addAbility('A18J', true)
 
 			// Wieland's items
 			set thistype.m_knightsArmour = ItemType.createSimple('I026', AItemType.equipmentTypeArmour)
@@ -473,6 +478,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_greatHelm = ItemType.createSimple('I028', AItemType.equipmentTypeHeaddress)
 			call thistype.m_greatHelm.addAbility('A07Z', true)
+			
+			set thistype.m_knightHelmet = ItemType.createSimple('I05F', AItemType.equipmentTypeHeaddress)
+			call thistype.m_knightHelmet.addAbility('A18K', true)
 
 			// Björn's items
 			set thistype.m_cloak = ItemType.createSimple('I023', AItemType.equipmentTypeArmour)

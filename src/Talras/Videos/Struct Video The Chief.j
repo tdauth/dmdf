@@ -147,7 +147,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_7, true, 0.0)
-			call TransmissionFromUnitWithName(thistype.actor(), tr("Wigberht"), tr("Und was wird aus dem Bündnis?"), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Und was wird aus dem Bündnis?"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif

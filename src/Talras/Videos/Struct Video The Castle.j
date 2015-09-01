@@ -46,6 +46,9 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
      * Eines war unseren Freunden jedoch klar: Es gab viel zu tun.
      */
 		public stub method onPlayAction takes nothing returns nothing
+			local player user = Player(PLAYER_NEUTRAL_PASSIVE)
+			
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("So betraten unsere Helden die alte Burg Talras um dem Herzog die Treue zu schwören, doch was ihnen durch den Kopf ging war nicht etwa die Treue zu ihren Artgenossen, sondern viel mehr wie viele Goldmünzen der Herzog locker machen würde."), gg_snd_ErzaehlerDieBurg1)
 		
 			call SetDoodadAnimationRect(gg_rct_gate_0, 'D085', "Death", false)
 
@@ -59,7 +62,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			if (wait(5.0)) then
+			if (wait(RMaxBJ(GetSimpleTransmissionDuration(gg_snd_ErzaehlerDieBurg1) - 2.50 - 2.50 - 0.5, 0.0))) then
 				return
 			endif
 			
@@ -69,7 +72,9 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			if (wait(5.0)) then
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Die Burg Talras schützte das umliegende Land vor Überfällen doch würde sie auch einer Invasion der Orks und Dunkelelfen stand halten?"), gg_snd_ErzaehlerDieBurg2)
+			
+			if (wait(5.0)) then // TODO Transmission duration
 				return
 			endif
 			
@@ -99,6 +104,10 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			call TriggerSleepAction(2.50)
+			
+			// make sure the sound played to the end before the next one starts
+			call TriggerSleepAction(RMaxBJ(GetSimpleTransmissionDuration(gg_snd_ErzaehlerDieBurg2) - 5.0 - 2.50 -0.50 - 3.0 - 3.0 - 3.0 - 2.50, 0.0))
+			
 			call CameraSetupApplyForceDuration(gg_cam_new_the_castle_7, true, 0.0)
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
@@ -106,11 +115,15 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call SetDoodadAnimationRect(gg_rct_gate_1, 'D085', "Death", false)
 			call SetDoodadAnimationRect(gg_rct_gate_2, 'D053', "Death", false)
 			
-			if (wait(4.0)) then
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr(" Eines war unseren Freunden jedoch klar: Es gab viel zu tun."), gg_snd_ErzaehlerDieBurg3)
+			
+			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerDieBurg3))) then
 				return
 			endif
 			
 			call this.stop()
+			
+			set user = null
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
