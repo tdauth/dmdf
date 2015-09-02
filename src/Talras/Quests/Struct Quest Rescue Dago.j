@@ -2,6 +2,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 
 	struct QuestRescueDago extends AQuest
 		private static constant real rectRange = 500.0
+		private timer m_timer
 
 		implement Quest
 
@@ -45,11 +46,32 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
 			return IsUnitDeadBJ(gg_unit_n008_0027) and IsUnitDeadBJ(gg_unit_n008_0083)
 		endmethod
+		
+		private static method timerFunctionMove takes nothing returns nothing
+			if (GetUnitCurrentOrder(Npcs.dago()) != OrderId("move")) then
+				if (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_0), GetRectCenterY(gg_rct_waypoint_dago_0), thistype.rectRange)) then
+					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_1), GetRectCenterY(gg_rct_waypoint_dago_1))
+				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_1), GetRectCenterY(gg_rct_waypoint_dago_1), thistype.rectRange)) then
+					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_2), GetRectCenterY(gg_rct_waypoint_dago_2))
+				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_2), GetRectCenterY(gg_rct_waypoint_dago_2), thistype.rectRange)) then
+					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3))
+				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3), thistype.rectRange)) then
+					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4))
+				else
+					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_0), GetRectCenterY(gg_rct_waypoint_dago_0))
+				endif
+			endif
+		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
 			call VideoRescueDago1.video.evaluate().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_0), GetRectCenterY(gg_rct_waypoint_dago_0))
+			/*
+			 * This timer makes sure that Dago keeps on moving even if he is blocked by units. Otherwise the quest will never be completed.
+			 */
+			call TimerStart(this.m_timer, 10.0, true, function thistype.timerFunctionMove)
 			call questItem.quest().questItem(1).enable()
 		endmethod
 
@@ -67,6 +89,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		endmethod
 
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
+			local thistype this = thistype(questItem.quest())
 			local unit enteringUnit = GetEnteringUnit()
 			debug call Print("Checking Rescue Dago state condition!")
 			if (enteringUnit == Npcs.dago()) then
@@ -83,6 +106,10 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 					call SetUnitFacing(Npcs.dago(), 265.0)
 					call TransmissionFromUnitWithName(Npcs.dago(), tr("Dago"), tr("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich."), gg_snd_DagoRescueDago7)
 					call TalkDago.initTalk()
+					call PauseTimer(this.m_timer)
+					call DestroyTimer(this.m_timer)
+					set this.m_timer = null
+					
 					return true
 				endif
 			endif
@@ -93,6 +120,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			local thistype this = thistype.allocate(0, tr("Rettet Dago!"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
+			set this.m_timer = CreateTimer()
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNAttentaeter.tga")
 			call this.setDescription(tr("Dago wird vor einer Höhle von zwei Bären angegriffen. Ihr müsst ihm zu Hilfe eilen."))
 			call this.setStateEvent(thistype.stateNew, thistype.stateEventNew)

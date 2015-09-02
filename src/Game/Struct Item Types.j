@@ -248,6 +248,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_bascinet
 		private static ItemType m_greatHelm
 		private static ItemType m_knightHelmet
+		private static ItemType m_fineKnightHelmet
 		// Björn's items
 		private static ItemType m_cloak
 		private static ItemType m_hood
@@ -434,7 +435,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_bannerOfTheWhiteLegion = ItemType.createSimple('I01C', ItemType.equipmentTypeAmulet)
 			call thistype.m_bannerOfTheWhiteLegion.addAbility('A059', true)
 
-			set thistype.m_circleOfElements = ItemType.createSimple('I02H', ItemType.equipmentTypePrimaryWeapon)
+			set thistype.m_circleOfElements = ItemType.create('I02H', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, Classes.elementalMage())
 			call thistype.m_circleOfElements.addAbility('A08A', true)
 			call thistype.m_circleOfElements.addAbility('AIrm', true)
 			call thistype.m_circleOfElements.addAbility('AIi6', true)
@@ -478,9 +479,14 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_greatHelm = ItemType.createSimple('I028', AItemType.equipmentTypeHeaddress)
 			call thistype.m_greatHelm.addAbility('A07Z', true)
+			call thistype.m_greatHelm.addAbility('AIs6', true)
 			
 			set thistype.m_knightHelmet = ItemType.createSimple('I05F', AItemType.equipmentTypeHeaddress)
 			call thistype.m_knightHelmet.addAbility('A18K', true)
+			
+			set thistype.m_fineKnightHelmet = ItemType.createSimple('I05N', AItemType.equipmentTypeHeaddress)
+			call thistype.m_fineKnightHelmet.addAbility('A18W', true)
+			call thistype.m_fineKnightHelmet.addAbility('AIs3', true)
 
 			// Björn's items
 			set thistype.m_cloak = ItemType.createSimple('I023', AItemType.equipmentTypeArmour)
@@ -577,7 +583,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			// Sisgard's reward
 			set thistype.m_necromancerHelmet = ItemType.createSimple('I044', ItemType.equipmentTypeHeaddress)
-			call thistype.m_necromancerHelmet.addAbility('AId5', true)
+			call thistype.m_necromancerHelmet.addAbility('A18X', true)
 			call thistype.m_necromancerHelmet.addAbility('AIi4', true)
 			call thistype.m_necromancerHelmet.addAbility('AIva', false)
 			

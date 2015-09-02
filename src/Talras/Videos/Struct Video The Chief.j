@@ -63,16 +63,16 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_2, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorRicman, tr("Ricman"), tr("Was wollt ihr hier?"), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitWithName(this.m_actorRicman, tr("Ricman"), tr("Was wollt ihr hier?"), gg_snd_RicmanTheChiefRicman1)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheChiefRicman1))) then
 				return
 			endif
 			call TransmissionFromUnit(AVideo.actor(), tr("Wir wollen mit Eurem Anführer sprechen. Der Herzog von Talras schickt uns."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			call TransmissionFromUnitWithName(this.m_actorRicman, tr("Ricman"), tr("Der Herzog von Talras? Wieso kommt er nicht persönlich? Macht dass ihr wegkommt!"), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitWithName(this.m_actorRicman, tr("Ricman"), tr("Der Herzog von Talras? Wieso kommt er nicht persönlich? Macht dass ihr wegkommt!"), gg_snd_RicmanTheChiefRicman2)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheChiefRicman2))) then
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_3, true, 0.0)

@@ -1,7 +1,7 @@
 library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, StructMapQuestsQuestArenaChampion
 
 	struct Arena
-		public static constant integer rewardGold = 100
+		public static constant integer rewardGold = 30
 		private static constant integer maxUnits = 2
 		// static construction members
 		private static real m_outsideX

@@ -63,6 +63,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			/*
 			Blutamulett
 			Drachenschuppe
+			2 Götzenbilder
 			2 große Heiltränke
 			2 große Manatränke
 			*/
@@ -76,6 +77,8 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 					call Character(Character.playerCharacter(Player(i))).giveItem('I00B')
 					call Character(Character.playerCharacter(Player(i))).giveItem('I00C')
 					call Character(Character.playerCharacter(Player(i))).giveItem('I00C')
+					call Character(Character.playerCharacter(Player(i))).giveItem('I05O')
+					call Character(Character.playerCharacter(Player(i))).giveItem('I05O')
 				endif
 				set i = i + 1
 			endloop

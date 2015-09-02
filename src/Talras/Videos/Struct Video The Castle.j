@@ -72,7 +72,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Die Burg Talras schützte das umliegende Land vor Überfällen doch würde sie auch einer Invasion der Orks und Dunkelelfen stand halten?"), gg_snd_ErzaehlerDieBurg2)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Die Burg Talras schützte das umliegende Land vor Überfällen, doch würde sie auch einer Invasion der Orks und Dunkelelfen stand halten?"), gg_snd_ErzaehlerDieBurg2)
 			
 			if (wait(5.0)) then // TODO Transmission duration
 				return

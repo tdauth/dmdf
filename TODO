@@ -465,18 +465,18 @@
 * FIXED: Nach jedem Video automatisch Ansicht zum Charakter setzen.
 * Pick all units and remove buffs from shrine auras.
 * Charakteranzeige ist zu breit. Text nimmt zu viel Platz ein. Der Text sollte im Block dargestellt werden. Gold muss angezeigt werden.
-* AVideo: Bei skip muss der aktuelle Sound unterbrochen werden.
+* FIXED: AVideo: Bei skip muss der aktuelle Sound unterbrochen werden.
 * FIXED: Timer für Klassenauswahl einbauen, ansonsten blockiert ein Spieler.
-* Nicht ausblenden beim Warten, Spieler müssen das Spiel verlassen können.
+* FIXED: Nicht ausblenden beim Warten, Spieler müssen das Spiel verlassen können.
 * Weniger Gold in Arenakampf.
-* Dach über Wieland entfernen.
+* DONE: Dach über Wieland entfernen.
 * FIXED: Spieler kann Video zweimal überspringen, zählt 2 mal.
 * Kein Gold für PvP kill.
 * Ricman wurde während des Videos "Wigberht" wiederbelebt. Daher kam auch sein Dialog und er stand zwei mal da. Vor jedem Video alle Fellows wiederbeleben.
-* Immer wenn Dialogtexte im Dialog kommen UI ausblenden, damit Texte unten kommen. Chat muss noch benutzbar sein.
+* Immer wenn Dialogtexte im Dialog kommen UI ausblenden, damit Texte unten kommen. Chat muss noch benutzbar sein. Funktioniert nicht, da Chat nicht mehr verwendet werden kann.
 * Kollision von Einheiten kleiner machen.
 * Einheitenskalierungen verbessern.
-* Jägermodell für Dago, keine Assassine.
+* FIXED: Jägermodell für Dago, keine Assassine.
 * Blocker in Burg und auf Felsen einbauen.
 * Arena: Wenn Spieler hilft dann killen.
 * Gegenstände nach Besitzer einfärben.
