@@ -47,6 +47,23 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		
 		implement Quest
 		
+		private static method stateEventCompletedDefendAgainstOrcs takes AQuestItem whichQuestItem, trigger whichTrigger returns nothing
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
+		endmethod
+		
+		private static method stateConditionCompletedDefendAgainstOrcs takes AQuestItem whichQuestItem, trigger whichTrigger returns boolean
+			local thistype this = thistype(whichQuestItem.quest())
+			if (this.m_orcs.units().contains(GetTriggerUnit())) then
+				call this.m_orcs.units().remove(GetTriggerUnit())
+				
+				if (this.m_orcs.units().empty()) then
+					call whichQuestItem.setState(thistype.stateCompleted)
+					call this.enableOrcArtillery.evaluate()
+				endif
+			endif
+			return false
+		endmethod
+		
 		private static method stateEventCompletedDestroyArtillery takes AQuestItem whichQuestItem, trigger whichTrigger returns nothing
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
@@ -104,8 +121,10 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			if (this.m_orcWavesCounter < thistype.maxOrcWaves) then
 				call this.startTimer.evaluate()
 			else
-				call this.questItem(thistype.questItemDefendAgainstOrcs).setState(thistype.stateCompleted)
-				call this.enableOrcArtillery()
+				call DestroyTimerDialog(this.m_timerDialog)
+				set this.m_timerDialog = null
+				call PauseTimer(this.m_timer)
+				call DestroyTimer(this.m_timer)
 			endif
 		endmethod
 		
@@ -113,7 +132,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			if (this.m_timer == null) then
 				set this.m_timer = CreateTimer()
 			endif
-			call TimerStart(this.m_timer, 20.0, false, function thistype.timerFunctionOrcWave)
+			call TimerStart(this.m_timer, 40.0, false, function thistype.timerFunctionOrcWave)
 			if (this.m_timerDialog == null) then
 				set this.m_timerDialog = CreateTimerDialog(this.m_timer)
 			endif
@@ -147,7 +166,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
-					call ACharacter.playerCharacter(Player(i)).setShrine(Shrines.orcCamp())
+					call Shrines.orcCamp().enableForCharacter(ACharacter.playerCharacter(Player(i)), false)
 				endif
 				set i = i + 1
 			endloop
@@ -233,6 +252,8 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			
 			// item 2
 			set questItem = AQuestItem.create(this, tr("Verteidigt euch gegen die Orks."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedDefendAgainstOrcs)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedDefendAgainstOrcs)
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
