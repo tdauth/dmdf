@@ -2,6 +2,7 @@ library StructMapMapBuildings requires StructGameCharacter
 
 	struct Buildings
 		private static trigger m_usageTrigger
+		private static trigger m_summonTrigger
 		private static trigger m_deathTrigger
 		private static unit array m_buildings
 		
@@ -10,7 +11,7 @@ library StructMapMapBuildings requires StructGameCharacter
 			local AClass class = 0
 			if (character != 0) then
 				set class = character.class()
-				if (GetSpellAbilityId() == 'A191' or GetSpellAbilityId() == 'A192' or GetSpellAbilityId() == 'A190') then
+				if (GetSpellAbilityId() == 'A191' or GetSpellAbilityId() == 'A192' or GetSpellAbilityId() == 'A190' or GetSpellAbilityId() == 'A19E') then
 					if (thistype.m_buildings[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] != null) then
 						call IssueImmediateOrder(GetTriggerUnit(), "stop")
 						call SimError(GetOwningPlayer(GetTriggerUnit()), tr("Sie haben bereits ein Gebäude errichtet."))
@@ -23,13 +24,21 @@ library StructMapMapBuildings requires StructGameCharacter
 					elseif (GetSpellAbilityId() == 'A190' and class != Classes.elementalMage() and class != Classes.wizard()) then
 						call IssueImmediateOrder(GetTriggerUnit(), "stop")
 						call SimError(GetOwningPlayer(GetTriggerUnit()), tr("Sie sind weder Elementarmagier noch Zauberer."))
-					else
-						set thistype.m_buildings[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = GetSummonedUnit()
-						call Character.displayHintToAll(Format(tr("%1% hat das Gebäude %2% errichtet. Kommt und besucht es!")).s(GetPlayerName(character.player())).s(GetUnitName(GetSummonedUnit())).result())
-						call PingMinimapEx(GetUnitX(GetSummonedUnit()), GetUnitY(GetSummonedUnit()), 5.0, PercentTo255(100), PercentTo255(100), PercentTo255(100), false)
-						debug call Print("Summoned unit: " + GetUnitName(GetSummonedUnit()))
+					elseif (GetSpellAbilityId() == 'A19E' and class != Classes.druid() and class != Classes.ranger()) then
+						call IssueImmediateOrder(GetTriggerUnit(), "stop")
+						call SimError(GetOwningPlayer(GetTriggerUnit()), tr("Sie sind weder Druide noch Waldläufer."))
 					endif
 				endif
+			endif
+			return false
+		endmethod
+		
+		private static method triggerConditionSummon takes nothing returns boolean
+			if (GetUnitTypeId(GetConstructedStructure()) == 'h027' or GetUnitTypeId(GetConstructedStructure()) == 'h028' or GetUnitTypeId(GetConstructedStructure()) == 'h029' or GetUnitTypeId(GetConstructedStructure()) == 'h02C') then
+				set thistype.m_buildings[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = GetConstructedStructure()
+				call Character.displayHintToAll(Format(tr("%1% hat das Gebäude %2% errichtet. Kommt und besucht es!")).s(GetPlayerName(GetOwningPlayer(GetConstructedStructure()))).s(GetUnitName(GetConstructedStructure())).result())
+				call PingMinimapEx(GetUnitX(GetConstructedStructure()), GetUnitY(GetConstructedStructure()), 5.0, PercentTo255(100), PercentTo255(100), PercentTo255(100), false)
+				debug call Print("Summoned unit: " + GetUnitName(GetConstructedStructure()))
 			endif
 			return false
 		endmethod
@@ -50,8 +59,12 @@ library StructMapMapBuildings requires StructGameCharacter
 		
 		private static method onInit takes nothing returns nothing
 			set thistype.m_usageTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(thistype.m_usageTrigger, EVENT_PLAYER_UNIT_SUMMON)
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_usageTrigger, EVENT_PLAYER_UNIT_SPELL_CAST)
 			call TriggerAddCondition(thistype.m_usageTrigger, Condition(function thistype.triggerConditionUsage))
+			
+			set thistype.m_summonTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_summonTrigger, EVENT_PLAYER_UNIT_CONSTRUCT_FINISH)
+			call TriggerAddCondition(thistype.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
 			
 			set thistype.m_deathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_deathTrigger, EVENT_PLAYER_UNIT_DEATH)

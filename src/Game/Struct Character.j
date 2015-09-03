@@ -147,6 +147,11 @@ endif
 			call this.showCharactersSchemeToPlayer()
 		endmethod
 		
+		public stub method onRevival takes nothing returns nothing
+			call SetUnitLifePercentBJ(this.unit(), 50.0)
+			call SetUnitManaPercentBJ(this.unit(), 10.0)
+		endmethod
+		
 		/**
 		 * \return Returns the stored hash table with ability id - level pairs (parent key - 0, child key - ability id, value - level).
 		 * \sa Grimoire#spellLevels

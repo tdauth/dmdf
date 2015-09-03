@@ -27,8 +27,8 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 				set i = i + 1
 			endloop
 
-			call Character.displayItemAcquiredToAll(tr("STRING 4000"), tr("STRING 4001"))
-			call Character.displayItemAcquiredToAll(tr("STRING 4003"), tr("STRING 4004"))
+			call Character.displayItemAcquiredToAll(GetObjectName('I04A'), tr("Ein verzauberter Zacken der Krone Deranors des Schrecklichen."))
+			call Character.displayItemAcquiredToAll(GetObjectName('I04B'), tr("Ruft einen Schattenriesen herbei."))
 		endmethod
 		
 		public stub method enable takes nothing returns boolean

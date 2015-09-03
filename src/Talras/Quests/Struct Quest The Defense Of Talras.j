@@ -29,6 +29,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		public static constant integer questItemMoveToCamp = 0
 		public static constant integer questItemPrepare = 1
 		public static constant integer questItemDefendAgainstOrcs = 2
+		public static constant integer questItemDestroyArtillery = 3
 		public static constant integer maxOrcWaves = 5
 		private QuestAreaQuestTheDefenseOfTalras m_questArea
 		// TEST Finish the quest after 20 seconds, temporary solution.
@@ -41,25 +42,70 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		private AGroup m_siege
 		private AGroup m_orcs
 		private integer m_orcWavesCounter
+		private AGroup m_orcSiege
+		private AGroup m_orcSiegeWarriors
 		
 		implement Quest
+		
+		private static method stateEventCompletedDestroyArtillery takes AQuestItem whichQuestItem, trigger whichTrigger returns nothing
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
+		endmethod
+		
+		private static method stateConditionCompletedDestroyArtillery takes AQuestItem whichQuestItem returns boolean
+			local thistype this = thistype(whichQuestItem.quest())
+			if (this.m_orcSiege.units().contains(GetTriggerUnit())) then
+				call this.m_orcSiege.units().remove(GetTriggerUnit())
+				call this.displayUpdateMessage(Format(trp("%1% Belagerungswaffen verbleiben.", "%1% Belagerungswaffe verbleibt.", this.m_orcSiege.units().size())).i(this.m_orcSiege.units()).result())
+				
+				return this.m_orcSiege.units().empty()
+			endif
+			
+			return false
+		endmethod
+		
+		private static method stateActionCompletedDestroyArtillery takes AQuestItem whichQuestItem returns nothing
+			local thistype this = thistype(whichQuestItem.quest())
+			// TEST
+			call this.complete()
+		endmethod
+	
+		private method enableOrcArtillery takes nothing returns nothing
+			set this.m_orcSiege = AGroup.create()
+			call this.m_orcSiege.addGroup(CreateUnitsAtRect(1, 'o003', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_trebuchet_0, 180.0), true, false)
+			call this.m_orcSiege.addGroup(CreateUnitsAtRect(1, 'o003', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_trebuchet_1, 180.0), true, false)
+			call this.m_orcSiege.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras), GetRectCenterY(gg_rct_quest_the_defense_of_talras))
+			set this.m_orcSiegeWarriors = AGroup.create()
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_0, 180.0), true, false)
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01W', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_0, 180.0), true, false)
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01X', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_0, 180.0), true, false)
+			
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_1, 180.0), true, false)
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01W', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_1, 180.0), true, false)
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01X', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_1, 180.0), true, false)
+			
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_2, 180.0), true, false)
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01W', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_2, 180.0), true, false)
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01X', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_2, 180.0), true, false)
+			// FIXME Create orc siege stuff
+		endmethod
 		
 		private static method timerFunctionOrcWave takes nothing returns nothing
 			local thistype this = thistype.quest()
 			set this.m_orcWavesCounter = this.m_orcWavesCounter + 1
-			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n019', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_0, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n019', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_1, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n019', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_2, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n019', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_3, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n019', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_4, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n019', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_5, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n019', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_6, 90.0), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_0, 90.0), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_1, 90.0), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_2, 90.0), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_3, 90.0), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_4, 90.0), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_5, 90.0), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_6, 90.0), true, false)
 			call this.m_warriors.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras_orc_target), GetRectCenterY(gg_rct_quest_the_defense_of_talras_orc_target))
 			
 			if (this.m_orcWavesCounter < thistype.maxOrcWaves) then
 				call this.startTimer.evaluate()
 			else
-				// FIXME Create orc siege stuff
+				call this.questItem(thistype.questItemDefendAgainstOrcs).setState(thistype.stateCompleted)
+				call this.enableOrcArtillery()
 			endif
 		endmethod
 		
@@ -90,8 +136,21 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 		
 		public method enableTimer takes nothing returns nothing
+			local integer i
 			call QuestTheNorsemen.quest().cleanFinalNorsemen()
 			call QuestWar.quest().cleanUnits()
+			
+			/*
+			 * This shrine is finally used here.
+			 */
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					call ACharacter.playerCharacter(Player(i)).setShrine(Shrines.orcCamp())
+				endif
+				set i = i + 1
+			endloop
 		
 			/*
 			 * Setup the camp.
@@ -176,6 +235,16 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			set questItem = AQuestItem.create(this, tr("Verteidigt euch gegen die Orks."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setReward(thistype.rewardExperience, 1000)
+			
+			// item 3
+			set questItem = AQuestItem.create(this, tr("Vernichtet die Belagerungswaffen der Orks."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedDestroyArtillery)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedDestroyArtillery)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedDestroyArtillery)
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras_trebuchet_1)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 1000)
 			

@@ -21,6 +21,7 @@ library StructMapMapShrines requires Asl, StructGameShrine
 		private static Shrine m_farm
 		private static Shrine m_norsemen
 		private static Shrine m_tomb
+		private static Shrine m_orcCamp
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -62,6 +63,11 @@ library StructMapMapShrines requires Asl, StructGameShrine
 			set thistype.m_norsemen = Shrine.create(gg_unit_n02D_0216, gg_dest_B008_21758, gg_rct_shrine_norsemen_discover, gg_rct_shrine_norsemen_revival, 235.58)
 			
 			set thistype.m_tomb = Shrine.create(gg_unit_n02D_0262, gg_dest_B008_30012, gg_rct_shrine_tomb_discover, gg_rct_shrine_tomb_revival, 188.82)
+			
+			/*
+			 * Used after finishing the quest The Norsemen.
+			 */
+			set thistype.m_orcCamp = 0
 		endmethod
 
 		public static method startShrine takes nothing returns Shrine
@@ -98,6 +104,14 @@ library StructMapMapShrines requires Asl, StructGameShrine
 		
 		public static method trommonShrine takes nothing returns Shrine
 			return thistype.m_trommonShrine
+		endmethod
+		
+		public static method initOrcCamp takes nothing returns nothing
+			set thistype.m_orcCamp = Shrine.create(gg_unit_n02D_0463, gg_dest_B008_32530, gg_rct_shrine_orc_camp_discover, gg_rct_shrine_orc_camp_revival, 319.94)
+		endmethod
+		
+		public static method orcCamp takes nothing returns Shrine
+			return thistype.m_orcCamp
 		endmethod
 	endstruct
 

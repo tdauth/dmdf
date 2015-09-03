@@ -83,8 +83,8 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 				set i = i + 1
 			endloop
 
-			call Character.displayItemAcquiredToAll(tr("STRING 4000"), tr("STRING 4001"))
-			call Character.displayItemAcquiredToAll(tr("STRING 4003"), tr("STRING 4004"))
+			call Character.displayItemAcquiredToAll(GetObjectName('I02L'), tr("Ein Teil des am Träger verursachten Schadens wird auf den Verursacher zurückgeworfen."))
+			call Character.displayItemAcquiredToAll(GetObjectName('I02M'), tr("Macht den Verzehrenden eine Zeit lang unverwundbar."))
 		endmethod
 
 		private static method stateEventCompleted takes AQuestItem questItem, trigger whichTrigger returns nothing

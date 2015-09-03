@@ -460,6 +460,11 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call SetUnitInvulnerable(whichUnit, true)
 			call this.m_finalNorsemen.units().pushBack(whichUnit)
 			
+			/*
+			 * This shrine is finally used here.
+			 */
+			call Shrines.initOrcCamp()
+			
 			set this.m_questAreaHeimrich = QuestAreaTheNorsemenHeimrich.create(gg_rct_quest_talras_quest_item_1)
 		endmethod
 		

@@ -87,6 +87,11 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_box1
 		private static SpawnPoint m_box2
 		private static SpawnPoint m_giants0
+		// start
+		private static ItemSpawnPoint m_healingHerbStart0
+		private static ItemSpawnPoint m_healingHerbStart1
+		private static ItemSpawnPoint m_manaHerbStart0
+		// near Dago
 		private static ItemSpawnPoint m_mushroom0
 		private static ItemSpawnPoint m_mushroom1
 		private static ItemSpawnPoint m_mushroom2
@@ -391,6 +396,15 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_giants0.addUnitWithType(gg_unit_n02R_0037, 1.0)
 			call thistype.m_giants0.addNewItemType(index, 'I01Z', 1.0)
 			call thistype.m_giants0.addNewItemType(index, 'I01Z', 1.0)
+			
+			
+			// start
+			set thistype.m_healingHerbStart0 = ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0448, 1.0)
+			set thistype.m_healingHerbStart1 = ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0449, 1.0)
+			
+			set thistype.m_manaHerbStart0 = ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0450, 1.0)
+			
+			// near Dago
 
 			set thistype.m_mushroom0 = ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0238, 1.0)
 			set thistype.m_mushroom1 = ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0205, 1.0)

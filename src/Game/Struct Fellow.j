@@ -184,9 +184,9 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 			if (this.description() != null) then
 				if (character == 0) then
-					call Character.displayUnitAcquiredToAll(GetUnitName(this.unit()), this.description())
+					call Character.displayUnitAcquiredToAll(this.revivalTitle(), this.description())
 				else
-					call character.displayUnitAcquired(GetUnitName(this.unit()), this.description())
+					call character.displayUnitAcquired(this.revivalTitle(), this.description())
 				endif
 			endif
 		endmethod

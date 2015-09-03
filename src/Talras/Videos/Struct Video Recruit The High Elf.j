@@ -168,7 +168,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Dann kommt mit zum Herzog und erzählt ihm davon!"), null)
+			call TransmissionFromUnit(thistype.actor(), tr("So kommt mit zum Herzog und erzählt ihm davon!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
