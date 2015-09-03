@@ -19,6 +19,7 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses, StructMapQues
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Kannst du mir das Schmieden beibringen?"), null)
 			call speech(info, character, true, tr("Sonst noch was? Weißt du, wie lange es dauert, jemandem das beizubringen? Mein Sohn übernimmt das hier mal und da kann er keine Konkurrenz gebrauchen."), null)
+			call speech(info, character, true, tr("Allerdings kann ich dir ein Buch mit Anleitungen verkaufen. Vielleicht bringst du es dir ja selbst bei (lacht höhnisch)!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -34,7 +35,7 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses, StructMapQues
 			elseif (character.class() == Classes.ranger()) then // (Charakter ist Waldläufer)
 				call speech(info, character, true, tr("Vermutlich zu schwer für dich."), null)
 			else // (Charakter ist Drachentöter)
-				call speech(info, character, true, tr("Nichts für jeden dahergelaufenen Burschen."), null)
+				call speech(info, character, true, tr("Nichts für einen dahergelaufenen Burschen."), null)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
@@ -49,7 +50,7 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses, StructMapQues
 			call speech(info, character, false, tr("Hier ist die Krone."), null)
 			call speech(info, character, true, tr("Gib her!"), null)
 			call character.inventory().removeItemType(QuestTheKingsCrown.crownItemTypeId) // Krone geben
-			call speech(info, character, true, tr("Tatsächlich! Das ist die Krone aus den Sagen. Sag, was ahst du mit dem König gemacht?"), null)
+			call speech(info, character, true, tr("Tatsächlich! Das ist die Krone aus den Sagen. Sprich, was hast du mit dem König angestellt?"), null)
 			call speech(info, character, false, tr("Rate mal."), null)
 			call speech(info, character, true, tr("So so, dann ist er also tot? Na ja, vielleicht findet er so seinen Frieden, kann mir eigentlich egal sein. Ich danke dir, das ist mir wirklich einige Goldmünzen wert!"), null)
 			call QuestTheKingsCrown.characterQuest(character).questItem(1).complete()
@@ -69,20 +70,20 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses, StructMapQues
 			call speech(info, character, false, tr("2000 Goldmünzen."), null)
 			call speech(info, character, true, tr("Was? Verdammter Hundesohn! Bist du dir sicher?"), null)
 			call speech(info, character, false, tr("Ja."), null)
-			call speech(info, character, true, tr("Dieser Halsabschneider! Nächstes Mal kann er mir 2000 Goldmünzen bezahlen, damit ich ihn nicht umhaue! Danke, das war sehr wichtig für mich. Pass auf, ich gebe dir eine gute Waffe, weil du mir geholfen hast, schon zweimal."), null)
+			call speech(info, character, true, tr("Dieser Halsabschneider! Nächstes Mal kann er mir 2000 Goldmünzen bezahlen, damit ich ihn nicht umhaue! Danke, die Sache war mir sehr wichtig. Pass auf, ich gebe dir eine gute Waffe, weil du mir geholfen hast, schon zweimal."), null)
 			call speech(info, character, true, tr("Achte gut darauf, es ist ein sehr gutes Schwert und pass auf dich auf, aber ich glaube, dass wohl eher deine Feinde auf sich aufpassen sollten."), null)
 			call QuestWielandsSword.characterQuest(character).questItem(1).complete()
 			call info.talk().showStartPage(character)
 		endmethod
 
 		private static method info0_0Talk takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Also erstmal hallo, ich bin Wieland, der Schmied von Talras. Wenn du irgendwas geschmiedet haben willst, bin ich dein Mann."), null)
+			call speech(info, character, true, tr("Also erst mal hallo, ich bin Wieland, der Schmied von Talras. Wenn du irgendwas geschmiedet haben willst, bin ich dein Mann."), null)
 			call speech(info, character, true, tr("Nun zu meinem Problem: Mein Sohn Wieland ist gerade irgendwo im Norden bei einem Ritter und dient diesem als Krieger. Wenn er zurückkommt, dann will ich, dass er für mich arbeitet."), null)
 			call speech(info, character, true, tr("Leider hat's ihm die Schmiedekunst nicht so angetan, wie ich mir das erhofft hatte. Wir haben uns im Streit getrennt und er meinte noch zu mir \"Ich werde für dich arbeiten, wenn du mir die Krone eines Königs schenkst\"."), null)
 			call speech(info, character, true, tr("Das war nur aus Zorn heraus als schlechter Scherz gemeint, aber ich will ihm zeigen, wie ernst es mir mit ihm ist."), null)
 			call speech(info, character, true, tr("Die alten Sagen, die mir mein Vater erzählte, als ich noch selbst ein junger Bursche war, handelten oft von den Untoten. Wiederauferstandene Tote, die keinen Frieden finden konnten und nun alles töten wollen, was noch atmet."), null)
 			call speech(info, character, true, tr("Diese Untoten haben auch einen König. Man sagt, er streife irgendwo außerhalb von Talras umher und mache die Gegend mit seinen Kriegern unsicher."), null)
-			call speech(info, character, true, tr("Ein König, der einst über dieses Land hier herrschte. Für dich hört sich das vielleicht nach Gespenstergeschichten an, aber ich glaube daran, denn mein Vater selbst hat ihn gesehen."), null)
+			call speech(info, character, true, tr("Ein König, der einst über dieses Land hier herrschte. Für dich hört sich das vielleicht nach Gespenstergeschichten an, aber ich glaube daran, denn mein Vater hat ihn selbst gesehen."), null)
 			call speech(info, character, true, tr("Ich möchte, dass du mir seine Krone bringst, damit ich sie meinem Sohn überreichen kann, wenn er zurückkehrt."), null)
 			call info.talk().showRange(10, 12, character)
 		endmethod

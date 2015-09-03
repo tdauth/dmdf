@@ -79,7 +79,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call speech(info, character, false, tr("Was machst du hier?"), null)
 			call speech(info, character, true, tr("Ich verkaufe dem Bauern Manfred Felle. Allerdings fehlen mir noch ￼Riesen-Felle. Die Viecher sind einfach zu stark für mich und ich bleibe lieber am Leben als dass ich ein besseres Geschäft mache."), null)
 			call speech(info, character, false, tr("￼Riesen-Felle?"), null)
-			call speech(info, character, true, tr("Ja, östlich vom Fluss leben einige ￼Riesen. Die sind großen und haben folglich große Felle, die man sehr teuer verkaufen kann. Du müsstest mit Trommons Fähre rüberfahren."), null)
+			call speech(info, character, true, tr("Ja, östlich vom Fluss leben einige ￼Riesen. Die sind groß und haben folglich große Felle, die man sehr teuer verkaufen kann. Du müsstest mit Trommons Fähre rüberfahren."), null)
 			call speech(info, character, true, tr("Allerdings würde ich dir das nicht empfehlen, da die Viecher einfach verdammt aggressiv und stark sind. Mit drei dieser verdammten Felle hätte ich bestimmt den Gewinn eines ganzen Jahres drinnen."), null)
 			// Neuer Auftrag ￼„Felle für die Bauern￼“
 			call QuestCoatsForThePeasants.characterQuest(character).enable()
@@ -117,7 +117,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call speech(info, character, true, tr("Möglich, ich würde es jedoch nicht umsonst tun! Um wen geht es denn?"), null)
 			call speech(info, character, false, tr("Um Kunos Tochter."), null)
 			call speech(info, character, true, tr("Kunos Tochter?! Na sowas, damit hätte ich jetzt nicht gerechnet. Also wenn das so ist …"), null)
-			call speech(info, character, true, tr("Kuno liefert Holz an den Bauernhof auf dem ich als Kind aufgewachsen bin. Er ist ein anständiger Kerl."), null)
+			call speech(info, character, true, tr("Kuno liefert Holz an den Bauernhof auf dem ich selbst Felle verkaufe. Er ist ein anständiger Kerl."), null)
 			call speech(info, character, true, tr("Er lebt da draußen ganz alleine mit seiner Tochter im Wald. Es könnte nicht schaden, wenn sie sich in der Wildnis besser zurechtfände. Immerhin ist das ein verdammt gefährlicher Wald."), null)
 			call speech(info, character, true, tr("Sag ihm, ich werde seine Tochter ausbilden, wenn er sie vorbeischickt. Es kostet ihn natürlich nichts."), null)
 			call speech(info, character, false, tr("Mache ich."), null)
@@ -223,7 +223,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			if (IsUnitDeadBJ(Npcs.dago())) then
 				call speech(info, character, false, tr("Aber jetzt bin ich wohl alleine für sich verantwortlich (traurig)."), null)
 			endif
-			call speech(info, character, true, tr("Die Falknerei ist eine schwierige Art des Jagens, musst du wissen. Es erfordert viel Geduld und Übung, bis ein Falke ausgebildet ist. Diese Tiere besitzen einen großen persönlichen Wert für mich."), null)
+			call speech(info, character, true, tr("Die Falknerei ist eine schwierige Form der Jagd, musst du wissen. Es erfordert viel Geduld und Übung, bis ein Falke ausgebildet ist. Diese Tiere besitzen einen großen persönlichen Wert für mich."), null)
 			call speech(info, character, true, tr("Aber auch für den Adel sind sie von unschätzbarem Wert. Ein ausgebildeter Jagdfalke ist fast unbezahlbar."), null)
 			call speech(info, character, true, tr("Ich hoffe der Herzog geht bald wieder auf eine Jagd mit ihnen. Das ist das größte Erlebnis für einen einfachen Jäger wie mich."), null)
 			call speech(info, character, false, tr("Kann man sie auch kaufen?"), null)
@@ -238,8 +238,8 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			
 			call speech(info, character, true, tr("Tut mir leid, ich habe gerade keine Zeit dafür. Kennst du dich denn überhaupt damit aus?"), null)
 			call speech(info, character, false, tr("Bestimmt."), null)
-			call speech(info, character, true, tr("Wenn du einen Vorstehhund und einen Jagdfalken hast, dann kannst du Rebhühner jagen. Der Vorstehhund zeigt dir, dass er das Huhn gefunden hat. Der Falke wartet in der Luft ab, dann lässt du vom Vorstehhund das Wild hochjagen und der Falke stürzt sich darauf."), null)
-			call speech(info, character, true, tr("Das ist nicht so einfach, aber wenn du ein erfahrener Jäger bist schaffst du das sicher. Allerdings kann ich mir nicht vorstellen, dass du dir einen Jagdfalken leisten kannst."), null)
+			call speech(info, character, true, tr("Gut, dann geh doch selbst jagen. Wenn du einen Vorstehhund und einen Jagdfalken hast, dann kannst du Rebhühner jagen. Der Vorstehhund zeigt dir, dass er das Huhn gefunden hat. Der Falke wartet in der Luft ab, dann lässt du das Wild vom Vorstehhund aufscheuchen und der Falke stürzt sich darauf."), null)
+			call speech(info, character, true, tr("Das ist nicht so einfach, aber wenn du ein erfahrener Jäger bist, schaffst du das sicher. Allerdings kann ich mir nicht vorstellen, dass du dir einen Jagdfalken leisten kannst."), null)
 			call speech(info, character, true, tr("Der Herzog verspeist Rebhühner als hätte er hunderte davon in der Küche herumliegen. Du würdest mir also einen großen Gefallen tun, wenn du welche für mich jagst."), null)
 			call speech(info, character, true, tr("Ich könnte dich dafür natürlich auch bezahlen."), null)
 		
@@ -305,7 +305,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 				// (Ist der erste Charakter, der vom Tod Dagos erzählt)
 				if (not thistype(info.talk()).m_toldDeath) then
 					call speech(info, character, true, tr("So eine Scheiße! Diese verdammten Bären!  Moment, bist du dir überhaupt sicher, dass es Dago war?"), null)
-					call speech(info, character, false, tr("Wenn er eine Armbrust bei sich trug und einen Mantel an hatte, dann war es wohl Dago."), null)
+					call speech(info, character, false, tr("Wenn er einen Bogen bei sich trug und Jagdkleidung an hatte, dann war es wohl Dago."), null)
 					call speech(info, character, true, tr("Ja, das tat er. Das gibt’s doch nicht. Getötet von Bären, der Arme."), null)
 					set thistype(info.talk()).m_toldDeath = true
 				// (Ist nicht erste Charakter, der vom Tod Dagos erzählt)

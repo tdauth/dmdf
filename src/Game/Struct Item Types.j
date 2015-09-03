@@ -6,6 +6,16 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	struct ItemType extends AItemType
 		public static constant string twoSlotAnimationProperties = "Alternate"
 		private static AIntegerVector m_twoSlotItems
+		private integer m_spellBookAbility
+		private integer m_hiddenAbility
+		
+		public method setSpellBookAbility takes integer spellBookAbility returns nothing
+			set this.m_spellBookAbility = spellBookAbility
+		endmethod
+		
+		public method setHiddenAbility takes integer hiddenAbility returns nothing
+			set this.m_hiddenAbility = hiddenAbility
+		endmethod
 		
 		public stub method checkRequirement takes ACharacter character returns boolean
 			local integer i
@@ -32,6 +42,30 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			endif
 		
 			return super.checkRequirement(character)
+		endmethod
+		
+		public stub method onAddPermanentAbilities takes unit who returns nothing
+			if (this.m_spellBookAbility != 0) then
+				debug call Print("Disable spell book")
+				call SetPlayerAbilityAvailable(GetOwningPlayer(who), this.m_spellBookAbility, true)
+				call SetPlayerAbilityAvailable(GetOwningPlayer(who), this.m_spellBookAbility, false)
+			endif
+		endmethod
+		
+		public stub method onRemovePermanentAbilities takes unit who returns nothing
+			if (this.m_hiddenAbility != 0) then
+				debug call Print("Remove hidden ability: " + GetObjectName(this.m_hiddenAbility))
+				if (UnitRemoveAbility(who, this.m_hiddenAbility)) then
+					debug call Print("Successfull removal.")
+				debug else
+					debug call Print("Unsuccessful removal.")
+				endif
+			endif
+			if (this.m_spellBookAbility != 0) then
+				debug call Print("Disable spell book")
+				call SetPlayerAbilityAvailable(GetOwningPlayer(who), this.m_spellBookAbility, true)
+				call SetPlayerAbilityAvailable(GetOwningPlayer(who), this.m_spellBookAbility, false)
+			endif
 		endmethod
 		
 		private static method onInit takes nothing returns nothing
@@ -84,7 +118,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
 			local thistype this = thistype.allocate(itemType, equipmentType, requiredLevel, requiredStrength, requiredAgility, requiredIntelligence, requiredClass)
-
+			set this.m_spellBookAbility = 0
+			set this.m_hiddenAbility = 0
+			
 			return this
 		endmethod
 	endstruct
@@ -131,6 +167,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call character.restoreRealSpellLevels()
 				call character.clearRealSpellLevels()
 				call character.grimoire().updateUi.evaluate()
+				
+				// make sure that spell book abilities don't lose their effect
+				call this.addPermanentAbilities(character.unit())
 				
 				/**
 				 * The throw tag should lead the character to do range fighting animations instead of melee ones.
@@ -320,6 +359,17 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			local integer i
+			// disable the spell book ability to get a passive ability without icon
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYERS)
+				call SetPlayerAbilityAvailable(Player(i), 'A19N', false)
+				set i = i + 1
+			endloop
 		endmethod
 
 		public static method init takes nothing returns nothing
@@ -579,7 +629,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_vampireNecklace.addAbility('A03X', true)
 			
 			set thistype.m_hauntedStaff = RangeItemType.create('I03V', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
-			call thistype.m_hauntedStaff.addAbility('A0B8', true)
+			call thistype.m_hauntedStaff.addAbility('A19N', true)
+			// The actual ability has to be added too that it will be removed when permanent abilities are being removed. Otherwise its icon will appear.
+			call thistype.m_hauntedStaff.setHiddenAbility('A0B8')
+			call thistype.m_hauntedStaff.setSpellBookAbility('A19N')
 			
 			// Sisgard's reward
 			set thistype.m_necromancerHelmet = ItemType.createSimple('I044', ItemType.equipmentTypeHeaddress)

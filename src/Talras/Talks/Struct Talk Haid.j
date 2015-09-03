@@ -59,8 +59,8 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 			call speech(info, character, true, tr("Wo kommst du denn her oder gefällt dir der Ausdruck etwa nicht? Du glaubst doch nicht das Geschwafel unseres verehrten Herrn Königs oder doch?"), null)
 			call speech(info, character, true, tr("Jeder hier weiß, dass diese verdammten Dunkelelfen einen Packt mit den Orks geschlossen haben. Ich habe selbst gesehen, wie diese Schweinehunde meine Heimatstadt Trammar in Flammen aufgehen ließen."), null)
 			call speech(info, character, true, tr("Bin gerade nochmal so mit dem Leben davon gekommen! Der König unterschätzt die Lage vollkommen. Trammar war verdammt gut befestigt und wurde innerhalb eines einzigen Tages eingenommen."), null)
-			call speech(info, character, true, tr("Diese Burg hier hat zwar eine bessere Lage, aber das wird ihr nichts nützen wenn erstmal hunderte von Orks und Dunkelefen hier anrücken."), null)
-			call speech(info, character, true, tr("Aber welche Wahl hab ich denn? Ich muss mir ein paar Goldmünzen dazu verdienen und vom Gewinn Leben. Danach hau ich so schnell wie möglich ab und dir würde ich genau das Gleiche raten."), null)
+			call speech(info, character, true, tr("Diese Burg hier hat zwar eine bessere Lage, aber das wird ihr nichts nützen wenn erst mal hunderte von Orks und Dunkelefen hier anrücken."), null)
+			call speech(info, character, true, tr("Aber welche Wahl hab ich denn? Ich muss mir ein paar Goldmünzen dazu verdienen und vom Gewinn leben. Danach hau ich so schnell wie möglich ab und dir würde ich genau das Gleiche raten."), null)
 			call speech(info, character, true, tr("Sicher, du wirst hier bestimmt einige treffen, die frohen Mutes dem Feind trotzen wollen, aber haben die etwa ihre Heimat untergehen sehen? Ich sag's dir Junge: Dieses Königreich wird untergehen!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
@@ -112,7 +112,7 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 		private static method infoActionGold takes AInfo info, Character character returns nothing
 			local player user = character.player()
 			if (TalkFerdinand.talk().knowsCost(character)) then // Charakter hat vom Vogt erfahren, wie viel eine Handelsgenehmigung kostet.
-				call speech(info, character, false, tr("Hier hast du deine 10 Goldmünzen. Hab mal mit dem Vogt gesprochen. Willst du mich verarschen oder was?"), null)
+				call speech(info, character, false, tr("Hier hast du deine 10 Goldmünzen. Ich habe mal mit dem Vogt gesprochen. Willst du mich verarschen oder was?"), null)
 				call speech(info, character, true, tr("Tut mir leid, aber so ist nun mal das Leben. Kriegst auch eine große Stärkung mit dazu."), null)
 				call SetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) - 10)
 				// große Stärkung geben
