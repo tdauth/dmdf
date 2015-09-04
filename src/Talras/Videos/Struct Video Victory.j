@@ -8,3 +8,5 @@ Erzähler: So siegten die Menschen über die Orks und Dunkelelfen in einer Schla
 Erzähler: Ich aber hatte die Verwundeten zu versorgen, die Verwundeten meiner Artgenossen - den Dunkelelfen. Doch genug von mir.
 
 Drachentöterin: Mein König hat mir gestattet euch auf eurer weiteren Reise zu begleiten. Er sieht großen Nutzen darin, mehr über die Orks und Dunkelelfen in Erfahrung zu bringen. Das bedeutet, wir werden gemeinsam nach Holzbruck aufbrechen.
+
+Heimrich: Freude, Jubel, jauchzet und frohlocket, es ist vollbracht! Der Feind ist niedergestreckt, besiegt, die Hochelfen sind eingetroffen. Es hätte nicht schöner ausgehen können. Markward wird ihnen alle erdenklichen Wünsche erfüllen und sie mit ihrer nächsten Mission vertraut machen. Das war wirklich ausgezeichnete Arbeit!

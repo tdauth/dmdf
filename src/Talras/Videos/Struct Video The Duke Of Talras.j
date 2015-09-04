@@ -79,7 +79,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_0, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Auf dann! Mein getreuer Ritter Markward wird sie mit ihrere Aufgabe vertraut machen und sie ein wenig über die Situation aufklären."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Auf dann! Mein getreuer Ritter Markward wird sie mit ihrer Aufgabe vertraut machen und sie ein wenig über die Situation aufklären."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null) + 2.0)) then
 				return

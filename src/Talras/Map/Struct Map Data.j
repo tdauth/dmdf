@@ -242,7 +242,7 @@ endif
 		/**
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
-		public static method createClassItems takes AClass class, unit whichUnit returns nothing
+		public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
 			if (class == Classes.ranger()) then
 				// Hunting Bow
 				call UnitAddItemById(whichUnit, 'I020')
@@ -255,6 +255,22 @@ endif
 			endif
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call UnitAddItemById(whichUnit, 'I01N')
+			
+			call UnitAddItemById(whichUnit, 'I00A')
+			call UnitAddItemById(whichUnit, 'I00D')
+		endmethod
+		
+		/**
+		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
+		 */
+		public static method createClassItems takes AClass class, unit whichUnit returns nothing
+			call thistype.createClassSelectionItems(class, whichUnit)
+			call UnitAddItemById(whichUnit, 'I00A')
+			call UnitAddItemById(whichUnit, 'I00A')
+			call UnitAddItemById(whichUnit, 'I00A')
+			call UnitAddItemById(whichUnit, 'I00D')
+			call UnitAddItemById(whichUnit, 'I00D')
+			call UnitAddItemById(whichUnit, 'I00D')
 		endmethod
 		
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing

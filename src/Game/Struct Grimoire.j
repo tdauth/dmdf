@@ -1188,8 +1188,6 @@ endif
 			// can be casted in spell menu as well!
 			if (this.grimoire().pageIsShown()) then
 				call this.grimoire().setCurrentSpell(this.spell())
-			else
-				call this.grimoire().showPage()
 			endif
 		endmethod
 

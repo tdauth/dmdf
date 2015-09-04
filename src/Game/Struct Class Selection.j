@@ -226,7 +226,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * This helps to inform the player about start items since he can see them but not use them.
 			 * The inventory ability should not allow to drop any of the items nor to use them.
 			 */
-			call MapData.createClassItems(this.class(), whichUnit)
+			call MapData.createClassSelectionItems(this.class(), whichUnit)
 			
 			// change classes and select class
 			call UnitAddAbility(whichUnit, 'A0NB')

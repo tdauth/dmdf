@@ -1,4 +1,4 @@
-library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestWar
+library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestTheDefenseOfTalras, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestWar
 
 	struct TalkHeimrich extends ATalk
 
@@ -51,9 +51,12 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 			// (Auftrag „Krieg“ ist aktiv)
 			elseif (QuestWar.quest().isNew()) then
 				call speech(info, character, true, tr("Er muss den eroberten Außenposten befestigen lassen. Der Außenposten wird uns hoffentlich eine Zeit lang vor den Angriffen des Feindes schützen."), null)
+			// (Auftrag „Die Verteidigung von Holzbruck“ ist aktiv)
+			elseif (QuestTheDefenseOfTalras.quest().isNew()) then
+				call speech(info, character, true, tr("Er muss den Außenposten gegen die Orks und Dunkelelfen verteidigen. Sie dürfen die Burg nicht erreichen!"), null)
 			// (Auftrag „Der Weg nach Holzbruck“ ist aktiv)
 			else
-				call speech(info, character, true, tr("Er muss mit den Seefahrern Richtung Norden nach Holzbruck ziehen, um dort mehr Kriegsfähige zu finden, damit wir eine Chance gegen den Feind haben."), null)
+				call speech(info, character, true, tr("Er muss mit den Seefahrern in Richtung Norden nach Holzbruck ziehen, um dort mehr Kriegsfähige zu finden, damit wir eine Chance gegen den Feind haben."), null)
 			endif
 
 			call info.talk().showStartPage(character)

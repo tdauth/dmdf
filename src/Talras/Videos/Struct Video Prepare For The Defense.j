@@ -93,7 +93,7 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Der König der Hochelfen? Das hört sich besser an als erwartet. So lasst uns keine Zeit verschwenden. Macht euch bereit!"), null)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Der König der Hochelfen? Das hört sich besser an als erwartet. So lasst uns keine Zeit verschwenden. Machen sie sich bereit!"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -111,7 +111,7 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Ich? Also ... ich, ich werde hier mit Markward ausharren. Wir halten die letzte Bastion gemeinsam. Erst wenn das Dorf gefallen ist und die tapferen Dorfbewohner ihr letztes Blut vergossen haben, wird der Feind sich mit uns anlegen müssen. Nicht wahr Markward?"), null)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Ich? Also ... ich, ich werde hier mit Markward ausharren. Wir halten die letzte Bastion gemeinsam. Erst wenn das Dorf gefallen ist und die tapferen Dorfbewohner ihr letztes Blut vergossen haben, wird der Feind sich mit uns anlegen müssen. Nicht wahr Markward (ängstlich)?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

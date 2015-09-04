@@ -442,9 +442,9 @@
 * FIXED: Was passiert wenn wait() im Video noch weiterläuft, zu Ende läuft und skip schon ausgeführt wird. Sollte skip() nicht vom wait() aus aufgerufen werden?
 * Alle Zauber mit Icon-Position auf 0 | 2 setzen, damit sie unten positioniert werden.
 * FIXED: Die Icons wenn ein Zauber bearbeitet wird in der ersten Reihe anordnen bzw. den Zauber selbst davor.
-* Wenn Gegenstand auf die nächste oder vorherige Seite verschoben wird, dann nicht n mal weiter verschieben. Falls nichts frei ist lassen.
+* FIXED: Wenn Gegenstand auf die nächste oder vorherige Seite verschoben wird, dann nicht n mal weiter verschieben. Falls nichts frei ist lassen.
 * Ultimativzauber auf Seite 2 packen.
-* Alle call TriggerSleepAction(0.0)-Aufrufe durch Timer ersetzen, da es automatisch zu 0.2 oder so wird.
+* FIXED: Alle call TriggerSleepAction(0.0)-Aufrufe durch Timer ersetzen, da es automatisch zu 0.2 oder so wird.
 * FIXED: Charakter ist im Video immer hidden.
 * Intro: Dorfbewohner und Nordmänner als actors einfügen, ansonsten abhängig von der Tageszeit.
 * FIXED: Beim letzten Video beim Überspringen einen Dialog anzeigen lassen "Spiel beenden?" und das pro Spieler. Nicht gemeinsam überspringen!
@@ -505,6 +505,31 @@
 * FIXED: Tanka und Haid brauchen einen Marktstand.
 * Drachentöter Zauber: Beute. Erhält einen zufälligen Gegenstand aus einem Laden in der Karte.
 * Kisten allmählich durch Marktstände ersetzen. Man findet sie ansonsten nicht.
+* Björn: Dialog war verbuggt. Dialog aufgepoppt obwohl beendet, Spieler 2, dann unbesiegbar.
+* Nekromant: Dämon war zu stark.
+* FIXED: Feedback wenn Gegenstand in Rucksack kommt.
+* Medusa und Diakon in eine Spawngruppe, ansonsten kaum schaffbar..
+* Drachentöterin läuft in Video in dem sie den Diakon umbringt einfach weg.
+* Desync bei erster Waldläuferverstärkung.
+* Effekt von Spellicon im Zauberbuch entfernen (Zurück zum Zauberbuch)
+* Zurück zum Zauberbuch links unten platzieren.
+* Crash bei Mitwirkenden.
+* Shops: Pfeile über Shops anzeigen und nicht über Chrakter, bringt mehr.
+* Dialoge wie in Gaias starten über Button.
+* Ausrufezeichen entfernen.
+* Rohstoffe, in Tooltip schreiben, dass sie zur Verwendung hergestellt werden können.
+* Multiboard standardmäßig aktivieren.
+* Multiboard Spielernummer raus, einheitliche Größe, Goldanzeige fixen, Klasse durch Icon zeigen, Level und XP kleiner oder raus.
+* Drachentöterin in Video bei Deranors Gruft PAUSIEREN.
+* Drachentöterin in Videos Das erste Gefecht und Wigberht platzieren, falls geshared!!!
+* Wackeln bei Deranors Zauber wird nicht zurückgesetzt. Aber nach Video mit ResetGameCamera().
+* Höhen der Brücken wie beim Sichtfeldblocker verändern, eventuell erhöht das die Kameransicht?
+* Deranors Dungeon Kameragrenzen zu eng (rechts).
+* Blocker bei Eingang zur Gruft.
+* Quest Area für Rettet Dago.
+* Quest Area für The Castle.
+* Quest Area für The Duke Of Talras.
+* Verspotten hat keine Abklingzeit.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
