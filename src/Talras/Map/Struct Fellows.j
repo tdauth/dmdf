@@ -58,6 +58,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			set thistype.m_dragonSlayer = Fellow.create(Npcs.dragonSlayer(), 0)
 			call thistype.m_dragonSlayer.setTalk(false)
 			call thistype.m_dragonSlayer.setRevivalTitle(tr("Drachentöterin"))
+			call thistype.m_dragonSlayer.setRevivalMessage(tr("Für das Königreich der Hochelfen!"))
 			call thistype.m_dragonSlayer.setRevival(true)
 			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_dragonSlayer.setRevivalTime(20.0)

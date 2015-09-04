@@ -495,6 +495,16 @@
 * Video "Prepare For The Defense": Herzog muss überrascht wirken und Markward begeistern, dass alle Aufträge erfüllt wurden. Große Belohnung.
 * Knechte sollen Tunnel graben können. So kann man sich Versorgung in den Außenposten holen.
 * Mehr Interaktion bei mehreren Spielern: Dararos sollte mit Hochelfen eintreffen und mit Interaktion sollte ein Zauber gewirkt werden. Charaktere müssen auf magischen Kreisen ausharren?
+* Storyidee für Die Verteidigung von Talras: Dararos taucht auf und bekämpft den Fürst der Dunkelelfen. Der Fürst der Dunkelelfen taucht auf, da Deranor von der Hochelfin vertrieben wurde. Es kommt heraus, dass der Fürst der Dunkelelfen und Deranor gemeinsame Sache machen. Es kommt auch heraus, dass Dararos und der Fürst der Dunkelelfen Brüder sind.
+* Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
+* DEPRECATED: Klauen des Angriffs basierte Fähigkeiten für Fernkampfwaffen testen. Wenn Geschoss angezeigt wird, dann diese Fähigkeiten als Basisfähigkeiten verwenden, da sie kein Icon haben. Geschoss geht NICHT.
+* DEPRECATED: Frostkugelfähigkeit hat auch ein Icon. Auf keinen Fall Langsamkeitskugel verwenden. Geht nicht, da sich Frostkugeleffekt dann nicht deaktivieren lässt.
+* Alle Langsamkeitskugelfähigkeiten müssen nun den Channel-basierten Dummy-Effekt verwenden.
+* Stab des Druiden usw. brauchen Orb-basierte Fähigkeit, ansonsten wird kein eigenes Geschoss verwendet.
+* FIXED: Fulco und Tellborn sollten einen gemeinsamen Marktstand haben. Ist sonst schwer zu finden und zu merken.
+* FIXED: Tanka und Haid brauchen einen Marktstand.
+* Drachentöter Zauber: Beute. Erhält einen zufälligen Gegenstand aus einem Laden in der Karte.
+* Kisten allmählich durch Marktstände ersetzen. Man findet sie ansonsten nicht.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

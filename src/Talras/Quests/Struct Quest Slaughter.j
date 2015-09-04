@@ -118,7 +118,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Erst gestern beobachtete ich einen dunklen Engel des Todes, weiter östlich. Lasst ihn uns vernichten!"), null)
+			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Erst gestern beobachtete ich einen dunklen Engel des Todes, weiter östlich. Lasst uns ihn vernichten!"), null)
 			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathAngel(), UnitTypes.deathAngel)
 			call questItem.quest().questItem(2).enable()
 		endmethod
@@ -162,7 +162,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		private static method stateActionCompleted5 takes AQuestItem questItem returns nothing
 			if (questItem.quest().questItem(6).state() == thistype.stateNew) then
-				call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Dieses Dreckschlangenvieh! Los, weiter, in die Gruft hinein!"), null)
+				call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!"), null)
 				call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.deacon)
 			else
 				call thistype.finishQuest()

@@ -32,19 +32,19 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			call ShowUnit(this.m_actorDragonSlayer, true)
 			call ShowUnit(thistype.actor(), true)
 		
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Seht euch das an. In diesem mächtigen unterirdischen Gewölbe muss er sich versteckt halten. Nun werden wir Deranor dem Schrecklichen ein ebenso schreckliches Ende bereiten."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Seht euch das an! In diesem mächtigen unterirdischen Gewölbe muss er sich versteckt halten. Nun werden wir Deranor dem Schrecklichen ein ebenso schreckliches Ende bereiten."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Eine halbe Ewigkeit trieb er sein Unwesen in den Todessümpfen und kein Mensch wagte es je diese Sümpfe zu betreten. Nur zu gut wissen sie, dass irgendwo dort seine finstere Burg stehen muss. Die Burg von der aus er das Land mit Tod und Verfall überzieht."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Eine halbe Ewigkeit trieb er sein Unwesen in den Todessümpfen und kein Mensch wagte es je diese Sümpfe zu betreten. Nur zu gut wissen die Menschen, dass irgendwo dort seine finstere Burg stehen muss. Die Burg von der aus er das Land mit Tod und Verfall überzieht."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Um diesen \"Menschen\" oder was er auch gewesen sein mag ist es nicht schade. Lasst uns in unser letztes Gefecht ziehen und mögen euch Götter vor seinem Fluch beschützen!"), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Um diesen \"Menschen\", oder was er auch gewesen sein mag, ist es nicht schade. Lasst uns in unser letztes Gefecht ziehen und mögen euch die Götter vor seinem Fluch beschützen!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

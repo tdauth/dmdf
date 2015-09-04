@@ -6,16 +6,6 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	struct ItemType extends AItemType
 		public static constant string twoSlotAnimationProperties = "Alternate"
 		private static AIntegerVector m_twoSlotItems
-		private integer m_spellBookAbility
-		private integer m_hiddenAbility
-		
-		public method setSpellBookAbility takes integer spellBookAbility returns nothing
-			set this.m_spellBookAbility = spellBookAbility
-		endmethod
-		
-		public method setHiddenAbility takes integer hiddenAbility returns nothing
-			set this.m_hiddenAbility = hiddenAbility
-		endmethod
 		
 		public stub method checkRequirement takes ACharacter character returns boolean
 			local integer i
@@ -42,30 +32,6 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			endif
 		
 			return super.checkRequirement(character)
-		endmethod
-		
-		public stub method onAddPermanentAbilities takes unit who returns nothing
-			if (this.m_spellBookAbility != 0) then
-				debug call Print("Disable spell book")
-				call SetPlayerAbilityAvailable(GetOwningPlayer(who), this.m_spellBookAbility, true)
-				call SetPlayerAbilityAvailable(GetOwningPlayer(who), this.m_spellBookAbility, false)
-			endif
-		endmethod
-		
-		public stub method onRemovePermanentAbilities takes unit who returns nothing
-			if (this.m_hiddenAbility != 0) then
-				debug call Print("Remove hidden ability: " + GetObjectName(this.m_hiddenAbility))
-				if (UnitRemoveAbility(who, this.m_hiddenAbility)) then
-					debug call Print("Successfull removal.")
-				debug else
-					debug call Print("Unsuccessful removal.")
-				endif
-			endif
-			if (this.m_spellBookAbility != 0) then
-				debug call Print("Disable spell book")
-				call SetPlayerAbilityAvailable(GetOwningPlayer(who), this.m_spellBookAbility, true)
-				call SetPlayerAbilityAvailable(GetOwningPlayer(who), this.m_spellBookAbility, false)
-			endif
 		endmethod
 		
 		private static method onInit takes nothing returns nothing
@@ -118,8 +84,6 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
 			local thistype this = thistype.allocate(itemType, equipmentType, requiredLevel, requiredStrength, requiredAgility, requiredIntelligence, requiredClass)
-			set this.m_spellBookAbility = 0
-			set this.m_hiddenAbility = 0
 			
 			return this
 		endmethod
@@ -167,9 +131,6 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call character.restoreRealSpellLevels()
 				call character.clearRealSpellLevels()
 				call character.grimoire().updateUi.evaluate()
-				
-				// make sure that spell book abilities don't lose their effect
-				call this.addPermanentAbilities(character.unit())
 				
 				/**
 				 * The throw tag should lead the character to do range fighting animations instead of melee ones.
@@ -368,6 +329,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			loop
 				exitwhen (i == bj_MAX_PLAYERS)
 				call SetPlayerAbilityAvailable(Player(i), 'A19N', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A19S', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A19T', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A19U', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A19V', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A19W', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -383,7 +349,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_bigDoubleAxe = ItemType.createSimple('I00J', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_bigDoubleAxe.addAbility('A02F', true)
-			call thistype.m_bigDoubleAxe.addAbility('AIcs', true)
+			call thistype.m_bigDoubleAxe.addAbility('A19S', true)
 
 			set thistype.m_vassalLance = ItemType.createSimple('I00K', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_vassalLance.addAbility('A02G', true)
@@ -443,7 +409,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_halberd = ItemType.create('I01X', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_halberd.addAbility('A07G', true)
-			call thistype.m_halberd.addAbility('A07Q', true)
+			call thistype.m_halberd.addAbility('A19N', true)
 
 			set thistype.m_shortsword = ItemType.createSimple('I01Y', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_shortsword.addAbility('A07H', true)
@@ -453,11 +419,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_magicAmulet = ItemType.create('I01Q', AItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
 			call thistype.m_magicAmulet.addAbility('AI2m', true)
-			call thistype.m_magicAmulet.addAbility('ANss', true)
+			call thistype.m_magicAmulet.addAbility('A19U', true)
 
 			set thistype.m_magicCoat = ItemType.create('I01R', AItemType.equipmentTypeArmour, 0, 0, 0, 0, 0)
 			call thistype.m_magicCoat.addAbility('AIrm', true)
-			call thistype.m_magicCoat.addAbility('A06I', true)
+			call thistype.m_magicCoat.addAbility('A19V', true)
 
 			set thistype.m_magicHat = ItemType.create('I01S', AItemType.equipmentTypeHeaddress, 0, 0, 0, 0, 0)
 			call thistype.m_magicHat.addAbility('AImv', true)
@@ -551,7 +517,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_huntingBow.addAbility('A07N', true)
 
 			set thistype.m_longBow = RangeItemType.createSimpleRange('I021', AItemType.equipmentTypePrimaryWeapon)
-			call thistype.m_longBow.addAbility('A07O', true)
+			call thistype.m_longBow.addAbility('A19T', true)
 			call thistype.m_longBow.addAbility('A07P', true)
 
 			set thistype.m_huntingKnife = ItemType.createSimple('I025', AItemType.equipmentTypePrimaryWeapon)
@@ -611,7 +577,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_staffOfClarity = RangeItemType.create('I02N', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_staffOfClarity.addAbility('AIrm', true)
 			call thistype.m_staffOfClarity.addAbility('A0AD', true)
-			call thistype.m_staffOfClarity.addAbility('A0AE', true)
+			call thistype.m_staffOfClarity.addAbility('A19W', true)
 			call thistype.m_staffOfClarity.addAbility('AIi4', true)
 
 			// NEW
@@ -629,10 +595,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_vampireNecklace.addAbility('A03X', true)
 			
 			set thistype.m_hauntedStaff = RangeItemType.create('I03V', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
-			call thistype.m_hauntedStaff.addAbility('A19N', true)
-			// The actual ability has to be added too that it will be removed when permanent abilities are being removed. Otherwise its icon will appear.
-			call thistype.m_hauntedStaff.setHiddenAbility('A0B8')
-			call thistype.m_hauntedStaff.setSpellBookAbility('A19N')
+			call thistype.m_hauntedStaff.addAbility('A0B8', true)
 			
 			// Sisgard's reward
 			set thistype.m_necromancerHelmet = ItemType.createSimple('I044', ItemType.equipmentTypeHeaddress)

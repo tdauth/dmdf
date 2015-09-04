@@ -90,7 +90,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Es ist nicht nur die pure Kampfeslust, die mich hier her trieb, nein es war ein Auftrag. Ein Auftrag von König Dararos ganz persönlich."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Es ist nicht nur die pure Kampfeslust, die mich hier her trieb, nein es war ein Auftrag. Ein Auftrag von König Dararos höchst persönlich."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -114,19 +114,19 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Wenn die Hochelfen eine große stärke besitzen sollten, dann wäre es die des Wissens. Wir haben schon seit langer Zeit die Geschehnisse in dieser Welt beeinflusst. Auch die Menschen stehen gewissermaßen unter unserer Obhut. Wir sind gut versorgt mit Informationen."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Wenn die Hochelfen eine große Stärke besitzen sollten, dann wäre es die des Wissens. Wir haben schon seit langer Zeit die Geschehnisse in dieser Welt beeinflusst. Auch die Menschen stehen gewissermaßen unter unserer Obhut. Wir sind gut versorgt mit Informationen."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Vertraut mir und ihr werden dafür belohnt. Ich will euch nichts Böses, mein Auftrag ist es diesen Deranor aufzuhalten und eine Gefahr mehr, die dieses Königreich bedroht zu bannen."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Vertraut mir und ihr werden dafür belohnt. Ich will euch nichts Böses, mein Auftrag ist es diesen Deranor aufzuhalten und eine Gefahr mehr, die dieses Königreich bedroht, zu bannen."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Doch nehmt euch in Acht! Ich weiß, dass ihr große Krieger seid, doch Deranor der Schreckliche ist einer der stärksten Nekromanten, die diese Welt je gesehen hat. Wenn ihr mir nun folgt, dann tut es mit dem Wissen, dass ihr vielleicht niemals lebend zurückkehren werden."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Doch nehmt euch in Acht! Ich weiß, dass ihr große Krieger seid, doch Deranor der Schreckliche ist einer der stärksten Nekromanten, die diese Welt je gesehen hat. Wenn ihr mir nun folgt, dann tut es mit dem Wissen, dass ihr vielleicht niemals lebend zurückkehren werdet."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

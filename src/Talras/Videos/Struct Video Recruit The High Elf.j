@@ -126,7 +126,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorDragonSlayer), tr("Doch wie sollte ich dem Herzog von Hilfe sein. Mein Auftrag ist erfüllt und bald kehre ich in unsere Hauptstadt zurück und erstatte König Dararos Bericht."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorDragonSlayer), tr("Doch wie sollte ich dem Herzog von Nutzen sein. Mein Auftrag ist erfüllt und bald kehre ich in unsere Hauptstadt zurück und erstatte König Dararos Bericht."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

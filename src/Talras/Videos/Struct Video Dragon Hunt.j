@@ -104,7 +104,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_4, true, 0.0)
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Ich kam hierher, aus Tfjahn, dem Königreich der Hochelfen, um einen Drachen zu besiegen. Man sagte mir, in Mittilant, diesem Königreich, gäbe es davon noch wenige. Aber hier habe ich nur stinkende Feldarbeiter und untotes Vieh gefunden."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Ich kam hierher, aus Tfjahn, dem Königreich der Hochelfen, um einen Drachen zu besiegen. Man sagte mir, in Mittilant, diesem Königreich, gäbe es davon noch wenige. Aber hier habe ich nur einfache Feldarbeiter und untotes Vieh gefunden."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -124,7 +124,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_3, true, 0.0)
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Ich muss schlachten, ich will alles vernichten, töten, dieses verfluchte Königreich!"), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Ich muss schlachten, ich will alles vernichten, töten! Dieses verfluchte Königreich!"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

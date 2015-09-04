@@ -99,13 +99,13 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorDragonSlayer), tr("Drachentöterin"), tr("Ich muss zugeben, dass es mich selbst ein wenig verwundert, dass mein König ein so großes Interesse an der Sache hat. Nichtsdestotrotz können uns die Truppen der Hochelfen von großem Nutzen sein, wenn sie rechtzeitig eintreffen."), null)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorDragonSlayer), tr("Drachentöterin"), tr("Ich muss zugeben, dass es mich selbst ein wenig überrascht, dass mein König ein so großes Interesse an der Sache hat. Nichtsdestotrotz können uns die Truppen der Hochelfen von großem Nutzen sein, wenn sie rechtzeitig eintreffen."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorDragonSlayer), tr("Drachentöterin"), tr("Verzeiht mir die Frage, aber wo werdet ihr euch postieren, verehrter Herzog?"), null)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorDragonSlayer), tr("Drachentöterin"), tr("Verzeiht mir die Frage, aber wo werdet IHR euch postieren, verehrter Herzog?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

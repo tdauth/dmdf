@@ -1,6 +1,8 @@
 /*
  * TODO
  Wigberht: Folgt mir Männer. Wir müssen ihre Belagerungswaffen zerstören!
+ 
+ Drachentöterin: Auf ihr Hochelfen, ihr Brüder und Schwestern! Für König Dararos!
  */
 library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQuestTheWayToHolzbruck, StructMapVideosVideoHolzbruck, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestWar
 
