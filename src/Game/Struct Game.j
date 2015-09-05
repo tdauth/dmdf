@@ -610,53 +610,60 @@ endif
 				call thistype.setMapMusicForPlayer(whichPlayer, MapData.mapMusic)
 			endif
 		endmethod
-
-		/**
-		* This method usually is called after all players selected their character class.
-		*/
-		public static method start takes nothing returns nothing
+		
+		private static method initCharactersScheme takes nothing returns nothing
 			local integer i
-			call StopMusic(false)
-			call SuspendTimeOfDay(false)
-			//call SetCreepCampFilterState(true)
-			//call SetAllyColorFilterState(0)
-			call thistype.m_weather.start()
-			call ACharactersScheme.init(1.0, true, true, true, 10, GameExperience.maxExperienceFormula, 10, 10, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
+			call ACharactersScheme.init(1.0, true, true, true, 20, GameExperience.maxExperienceFormula, 20, 20, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
+			call ACharactersScheme.setBarWidths(0.003)
 			call ACharactersScheme.setExperienceBarValueIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL8.tga")
 			call ACharactersScheme.setExperienceBarEmptyIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL0.tga")
 			set i = 1
 			loop
-				exitwhen (i == 9)
+				exitwhen (i == 19)
 				call ACharactersScheme.setExperienceBarValueIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM8.tga")
 				call ACharactersScheme.setExperienceBarEmptyIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM0.tga")
 				set i = i + 1
 			endloop
-			call ACharactersScheme.setExperienceBarValueIcon(9, "Icons\\Interface\\Bars\\Experience\\ExperienceR8.tga")
-			call ACharactersScheme.setExperienceBarEmptyIcon(9, "Icons\\Interface\\Bars\\Experience\\ExperienceR0.tga")
+			call ACharactersScheme.setExperienceBarValueIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR8.tga")
+			call ACharactersScheme.setExperienceBarEmptyIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR0.tga")
 
 			call ACharactersScheme.setHitPointsBarValueIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL2.tga")
 			call ACharactersScheme.setHitPointsBarEmptyIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL0.tga")
 			set i = 1
 			loop
-				exitwhen (i == 9)
+				exitwhen (i == 19)
 				call ACharactersScheme.setHitPointsBarValueIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM2.tga")
 				call ACharactersScheme.setHitPointsBarEmptyIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM0.tga")
 				set i = i + 1
 			endloop
-			call ACharactersScheme.setHitPointsBarValueIcon(9, "Icons\\Interface\\Bars\\Chunk\\ChunkR2.tga")
-			call ACharactersScheme.setHitPointsBarEmptyIcon(9, "Icons\\Interface\\Bars\\Chunk\\ChunkR0.tga")
+			call ACharactersScheme.setHitPointsBarValueIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR2.tga")
+			call ACharactersScheme.setHitPointsBarEmptyIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR0.tga")
 
 			call ACharactersScheme.setManaBarValueIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL8.tga")
 			call ACharactersScheme.setManaBarEmptyIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL0.tga")
 			set i = 1
 			loop
-				exitwhen (i == 9)
+				exitwhen (i == 19)
 				call ACharactersScheme.setManaBarValueIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM8.tga")
 				call ACharactersScheme.setManaBarEmptyIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM0.tga")
 				set i = i + 1
 			endloop
-			call ACharactersScheme.setManaBarValueIcon(9, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
-			call ACharactersScheme.setManaBarEmptyIcon(9, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
+			call ACharactersScheme.setManaBarValueIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
+			call ACharactersScheme.setManaBarEmptyIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
+		endmethod
+
+		/**
+		* This method usually is called after all players selected their character class.
+		*/
+		public static method start takes nothing returns nothing
+			call StopMusic(false)
+			call SuspendTimeOfDay(false)
+			//call SetCreepCampFilterState(true)
+			//call SetAllyColorFilterState(0)
+			call thistype.m_weather.start()
+			
+			call ForForce(bj_FORCE_PLAYER[0], function thistype.initCharactersScheme)
+			
 			// shows only if enabled
 			call Character.showCharactersSchemeToAll()
 

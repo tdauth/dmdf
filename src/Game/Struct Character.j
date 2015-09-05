@@ -378,7 +378,7 @@ endif
 			local thistype this = thistype.allocate(whichPlayer, whichUnit)
 			// dynamic members
 			set this.m_isInPvp = false
-			set this.m_showCharactersScheme = false
+			set this.m_showCharactersScheme = true
 			set this.m_showWorker = true
 			// members
 			set this.m_mainMenu = MainMenu.create.evaluate(this)

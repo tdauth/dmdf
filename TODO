@@ -530,6 +530,9 @@
 * Quest Area für The Castle.
 * Quest Area für The Duke Of Talras.
 * Verspotten hat keine Abklingzeit.
+* Bei Spieler 2 werden eindeutig bestimmte Dialoge nicht angezeigt. Zu viele struct-Instanzen? Falls ja alle Dialoge static machen!!!
+* Rettet Dago: Bären sollten auf Dago zugehen.
+* Das erste Gefecht: Clipping und Kamerafahrt.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

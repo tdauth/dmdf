@@ -184,6 +184,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			/*
 			 * Restart auto change timer.
 			 */
+			call PauseTimer(this.m_autoChangeTimer)
 			call TimerStart(this.m_autoChangeTimer, 4.0, false, function thistype.timerFunctionAutoChange)
 		endmethod
 		
