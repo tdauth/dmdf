@@ -212,9 +212,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 		endmethod
 		
 		private static method triggerConditionDeath takes nothing returns boolean
+			local integer killerPlayerId
 			if (ACharacter.isUnitCharacter(GetTriggerUnit()) and GetOwningPlayer(GetKillingUnit()) != GetOwningPlayer(GetTriggerUnit())) then
-				set thistype.m_score[GetPlayerId(GetOwningPlayer(GetKillingUnit()))] = thistype.m_score[GetPlayerId(GetOwningPlayer(GetKillingUnit()))] + 1
-				call LeaderboardSetPlayerItemValueBJ(GetOwningPlayer(GetKillingUnit()), thistype.m_leaderboard, thistype.m_score[GetPlayerId(GetOwningPlayer(GetKillingUnit()))])
+				set killerPlayerId = GetPlayerId(GetOwningPlayer(GetKillingUnit()))
+				set thistype.m_score[killerPlayerId] = thistype.m_score[killerPlayerId] + 1
+				call LeaderboardSetPlayerItemValueBJ(GetOwningPlayer(GetKillingUnit()), thistype.m_leaderboard, thistype.m_score[killerPlayerId])
 				call LeaderboardSortItemsByValue(thistype.m_leaderboard, false)
 			endif
 			
