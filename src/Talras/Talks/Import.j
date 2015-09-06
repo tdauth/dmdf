@@ -33,6 +33,7 @@
 library MapTalks requires StructMapTalksTalkAgihard, StructMapTalksTalkBaldar, StructMapTalksTalkBjoern, StructMapTalksTalkBrogo, StructMapTalksTalkDago, StructMapTalksTalkDragonSlayer, StructMapTalksTalkEinar, StructMapTalksTalkFerdinand, StructMapTalksTalkFulco, StructMapTalksTalkGuntrich, StructMapTalksTalkHaid, StructMapTalksTalkHaldar, StructMapTalksTalkHeimrich, StructMapTalksTalkIrmina, StructMapTalksTalkKuno, StructMapTalksTalkLothar, StructMapTalksTalkManfred, StructMapTalksTalkMarkward, StructMapTalksTalkMathilda, StructMapTalksTalkOsman, StructMapTalksTalkRicman, StructMapTalksTalkSheepBoy, StructMapTalksTalkSisgard, StructMapTalksTalkTalrasGuardian, StructMapTalksTalkTanka, StructMapTalksTalkTellborn, StructMapTalksTalkTrommon, StructMapTalksTalkTobias, StructMapTalksTalkUrsula, StructMapTalksTalkWieland, StructMapTalksTalkWigberht
 
 	function initMapTalks takes nothing returns nothing
+		local ATalk talk
 		call TalkAgihard.initTalk()
 		call TalkBaldar.initTalk()
 		call TalkBjoern.initTalk()
@@ -64,10 +65,14 @@ library MapTalks requires StructMapTalksTalkAgihard, StructMapTalksTalkBaldar, S
 		call TalkWieland.initTalk()
 		call TalkWigberht.initTalk()
 		// guardians
-		call TalkTalrasGuardian.create(gg_unit_n015_0149)
-		call TalkTalrasGuardian.create(gg_unit_n005_0119)
-		call TalkTalrasGuardian.create(gg_unit_n015_0118)
-		call TalkTalrasGuardian.create(gg_unit_n015_0456)
+		set talk = TalkTalrasGuardian.create(gg_unit_n015_0149)
+		call talk.setEffectPath(null)
+		set talk = TalkTalrasGuardian.create(gg_unit_n005_0119)
+		call talk.setEffectPath(null)
+		set talk = TalkTalrasGuardian.create(gg_unit_n015_0118)
+		call talk.setEffectPath(null)
+		set talk = TalkTalrasGuardian.create(gg_unit_n015_0456)
+		call talk.setEffectPath(null)
 	endfunction
 
 endlibrary

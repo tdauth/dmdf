@@ -160,7 +160,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 						call this.m_allyRangerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.ranger, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
 						set this.m_allyRangerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03G', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
 						call this.m_allyRangerGroup.units().pushBack(this.m_allyRangerLeader)
-						call SmartCameraPanRect(gg_rct_quest_the_norsemen_ally_spawn_0, 0.0)
+						
+						call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_ally_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_ally_spawn_0), bj_RESCUE_PING_TIME)
+						
 						call TransmissionFromUnit(this.m_allyRangerLeader, tr("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!"), null)
 					// farmers (ally spawn)
 					elseif (this.m_currentGroupIndex == 3) then
@@ -169,7 +171,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 						call this.m_allyFarmerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.armedVillager, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
 						set this.m_allyFarmerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03I', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
 						call this.m_allyFarmerGroup.units().pushBack(this.m_allyFarmerLeader)
-						call SmartCameraPanRect(gg_rct_quest_the_norsemen_ally_spawn_0, 0.0)
+						
+						call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_ally_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_ally_spawn_0), bj_RESCUE_PING_TIME)
+	
 						call TransmissionFromUnit(this.m_allyFarmerLeader, tr("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!"), null)
 					endif
 				endif
@@ -269,8 +273,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
 				call TransmissionFromUnit(Npcs.ricman(), tr("Diese verdammten Hunde haben Verstärkung gerufen. Macht euch bereit Männer!"), gg_snd_RicmanTheNorsemenRicman1)
-				call SmartCameraPanRect(gg_rct_quest_the_norsemen_enemy_spawn_1, 0.0)
-
+				
+				call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_1), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_1), bj_RESCUE_PING_TIME)
 			elseif (this.m_currentGroupIndex == 2) then
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)

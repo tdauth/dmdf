@@ -202,7 +202,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			else
 				debug call Print("Start game")
 				call thistype.endTimer()
-				 call Game.start.execute()
+				call Game.start.execute()
 			endif
 		endmethod
 		

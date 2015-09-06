@@ -15,6 +15,7 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_deranor_dragon_slayer)
 			call SetUnitFacing(this.m_actorDragonSlayer, 270.0)
 			call ShowUnit(this.m_actorDragonSlayer, false)
+			call IssueImmediateOrder(this.m_actorDragonSlayer, "stop")
 
 			set this.m_actorDeranor = thistype.unitActor(thistype.saveUnitActor(gg_unit_u00A_0353))
 			

@@ -1,8 +1,9 @@
-library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructMapMapNpcs
+library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructMapMapFellows, StructMapMapNpcs
 
 	struct VideoTheFirstCombat extends AVideo
 		private integer m_actorWigberht
 		private integer m_actorRicman
+		private integer m_actorDragonSlayer
 		private group m_firstActorGroup
 		private group m_secondActorGroup
 		private group m_firstAllyGroup
@@ -17,6 +18,8 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call PlayThematicMusic("Music\\TheFirstCombat.mp3")
 			call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_0, true, 0.0)
+			
+			call Fellows.hideDragonSlayerInVideo()
 			
 			call SetPlayerAllianceStateBJ(MapData.haldarPlayer, MapData.baldarPlayer, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(MapData.baldarPlayer, MapData.haldarPlayer, bj_ALLIANCE_UNALLIED)

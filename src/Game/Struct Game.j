@@ -204,7 +204,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, L
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
 			local AIntegerListIterator iterator = thistype.m_onDamageActions.begin()
 			//debug call Print("DAMAGE RECORDER")
-			//debug call Print("Damage recorder list id :" + I2S(thistype.m_onDamageActions) + " and size: " + thistype.m_onDamageActions.size())
+			debug call Print("Damage recorder list id :" + I2S(thistype.m_onDamageActions) + " and size: " + thistype.m_onDamageActions.size())
 			loop
 				exitwhen (not iterator.isValid())
 				//debug call Print("Damage recorder")
@@ -445,8 +445,9 @@ endif
 				// set allied player and neutral passive player alliance status
 				call SetPlayerAllianceStateBJ(Player(i), MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
 				call SetPlayerAllianceStateBJ(MapData.alliedPlayer, Player(i), bj_ALLIANCE_NEUTRAL)
-				call SetPlayerAllianceStateBJ(Player(i), MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
-				call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, Player(i), bj_ALLIANCE_NEUTRAL)
+				// they have to be allied and not neutral. Otherwise shared shop won't work.
+				call SetPlayerAllianceStateBJ(Player(i), MapData.neutralPassivePlayer, bj_ALLIANCE_ALLIED)
+				call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, Player(i), bj_ALLIANCE_ALLIED)
 				set i = i + 1
 			endloop
 			

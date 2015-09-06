@@ -1,5 +1,5 @@
 /// @todo Finish this video.
-library StructMapVideosVideoWigberht requires Asl, StructGameGame
+library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapFellows
 
 	struct VideoWigberht extends AVideo
 		private static constant real wigberhtMoveSpeed = 200.0
@@ -36,6 +36,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame
 			call SetTimeOfDay(20.00)
 			call PlayThematicMusic("Music\\Wigberht.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_0, true, 0.0)
+			
+			call Fellows.hideDragonSlayerInVideo()
 			
 			call SetPlayerAllianceStateBJ(MapData.haldarPlayer, MapData.baldarPlayer, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(MapData.baldarPlayer, MapData.haldarPlayer, bj_ALLIANCE_UNALLIED)

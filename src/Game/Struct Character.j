@@ -148,8 +148,8 @@ endif
 		endmethod
 		
 		public stub method onRevival takes nothing returns nothing
-			call SetUnitLifePercentBJ(this.unit(), 50.0)
-			call SetUnitManaPercentBJ(this.unit(), 10.0)
+			call SetUnitLifePercentBJ(this.unit(), MapData.revivalLifePercentage)
+			call SetUnitManaPercentBJ(this.unit(), MapData.revivalManaPercentage)
 		endmethod
 		
 		/**

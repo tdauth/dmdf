@@ -87,6 +87,12 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 		public static method dragonSlayer takes nothing returns Fellow
 			return thistype.m_dragonSlayer
 		endmethod
+		
+		public static method hideDragonSlayerInVideo takes nothing returns nothing
+			local integer actorIndex = AVideo.saveUnitActor(Npcs.dragonSlayer())
+			call ShowUnit(AVideo.unitActor(actorIndex), false)
+			call PauseUnit(AVideo.unitActor(actorIndex), true)
+		endmethod
 	endstruct
 
 endlibrary
