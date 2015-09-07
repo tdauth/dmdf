@@ -74,6 +74,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellParasite.create(character)
 				call SpellMasterOfNecromancy.create(character)
 				call SpellEpidemic.create(character)
+				call SpellDamnedGround.create(character)
 			elseif (class == Classes.druid()) then
 				call SpellAwakeningOfTheForest.create(character)
 				call SpellCrowForm.create(character)
@@ -107,10 +108,12 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellBeastHunter.create(character)
 				call SpellDaunt.create(character)
 				call SpellFuriousBloodthirstiness.create(character)
+				call SpellRaid.create(character)
 				call SpellSlash.create(character)
 				call SpellSupremacy.create(character)
 				call SpellWeakPoint.create(character)
 				call SpellColossus.create(character)
+				call SpellRob.create(character)
 			elseif (class == Classes.ranger()) then
 				call SpellAgility.create(character)
 				call SpellEagleEye.create(character)

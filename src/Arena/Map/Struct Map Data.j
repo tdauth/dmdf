@@ -17,6 +17,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 25
 		public static constant integer workerUnitTypeId = 'h00E'
+		public static constant integer maxScore = 50
 		private static trigger m_safeEnterTrigger
 		private static trigger m_safeLeaveTrigger
 		private static Shrine m_shrine
@@ -211,13 +212,44 @@ library StructMapMapMapData requires Asl, StructGameGame
 			return false
 		endmethod
 		
+		private static method randomWord takes nothing returns string
+			local integer random = GetRandomInt(0, 3)
+			if (random == 0) then
+				return tr("zermalmt")
+			elseif (random == 1) then
+				return tr("geplättet")
+			elseif (random == 2) then
+				return tr("abgeschlachtet")
+			endif
+			
+			return tr("gezeigt wo der Hammer hängt")
+		endmethod
+		
+		private static method victory takes player whichPlayer returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.maxPlayers)
+				if (i != GetPlayerId(whichPlayer)) then
+					call MeleeDefeatDialogBJ(Player(i), false)
+				endif
+				set i = i + 1
+			endloop
+			call MeleeVictoryDialogBJ(whichPlayer, false)
+		endmethod
+		
 		private static method triggerConditionDeath takes nothing returns boolean
 			local integer killerPlayerId
-			if (ACharacter.isUnitCharacter(GetTriggerUnit()) and GetOwningPlayer(GetKillingUnit()) != GetOwningPlayer(GetTriggerUnit())) then
+			if (GetKillingUnit() != null and ACharacter.isUnitCharacter(GetTriggerUnit()) and GetOwningPlayer(GetKillingUnit()) != GetOwningPlayer(GetTriggerUnit())) then
+				call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, Format(tr("%1% hat %2% %3%.")).s(GetPlayerName(GetOwningPlayer(GetKillingUnit()))).s(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))).s(thistype.randomWord()).result())
+			
 				set killerPlayerId = GetPlayerId(GetOwningPlayer(GetKillingUnit()))
 				set thistype.m_score[killerPlayerId] = thistype.m_score[killerPlayerId] + 1
 				call LeaderboardSetPlayerItemValueBJ(GetOwningPlayer(GetKillingUnit()), thistype.m_leaderboard, thistype.m_score[killerPlayerId])
 				call LeaderboardSortItemsByValue(thistype.m_leaderboard, false)
+				
+				if (thistype.m_score[killerPlayerId] == thistype.maxScore) then
+					call thistype.victory(GetOwningPlayer(GetKillingUnit()))
+				endif
 			endif
 			
 			return false
@@ -260,6 +292,9 @@ library StructMapMapMapData requires Asl, StructGameGame
 			endloop
 			
 			call Character.showCharactersSchemeToAll()
+			
+			
+			call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, Format(tr("Schlachtet euch gegenseitig für Ruhm und Ehre in der Arena ab. Gewonnen hat derjenige, der zuerst %1% Gegner niedergestreckt hat.")).i(thistype.maxScore).result())
 		endmethod
 		
 		private static method setupCharacter takes player whichPlayer returns nothing
@@ -279,6 +314,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 				call thistype.m_shrine.enableForCharacter(ACharacter.playerCharacter(whichPlayer), false)
 				call ACharacter.playerCharacter(whichPlayer).setMovable(true)
 				call ACharacter.playerCharacter(whichPlayer).panCamera()
+				call Character.setTutorialForAll(false) // no need in a PvP map
 				
 				call LeaderboardAddItemBJ(whichPlayer, thistype.m_leaderboard, GetPlayerName(whichPlayer), 0)
 				

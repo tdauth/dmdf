@@ -254,6 +254,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellParasite.classSelectionAbilityId, SpellParasite.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMasterOfNecromancy.classSelectionAbilityId, SpellMasterOfNecromancy.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellEpidemic.classSelectionAbilityId, SpellEpidemic.classSelectionGrimoireAbilityId))
+			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDamnedGround.classSelectionAbilityId, SpellDamnedGround.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initDruid takes nothing returns nothing
@@ -331,6 +332,8 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellSupremacy.classSelectionAbilityId, SpellSupremacy.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellWeakPoint.classSelectionAbilityId, SpellWeakPoint.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellColossus.classSelectionAbilityId, SpellColossus.classSelectionGrimoireAbilityId))
+			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRaid.classSelectionAbilityId, SpellRaid.classSelectionGrimoireAbilityId))
+			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRob.classSelectionAbilityId, SpellRob.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initRanger takes nothing returns nothing
