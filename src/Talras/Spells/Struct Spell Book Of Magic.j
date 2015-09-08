@@ -111,5 +111,87 @@ library StructMapSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
 		endmethod
 	endstruct
+	
+	struct SpellBookOfMagicScrollOfAncestors extends ASpell
+		public static constant integer abilityId = 'A19Y'
+
+		private method condition takes nothing returns boolean
+			if (this.character().inventory().totalItemTypeCharges('I05I') >= 3) then
+				debug call Print("Success")
+				return true
+			endif
+			
+			debug call Print("Fail")
+			call this.character().displayMessage(ACharacter.messageTypeError, tr("Benötigte Rohstoffe fehlen."))
+			
+			return false
+		endmethod
+		
+		private method action takes nothing returns nothing
+			call this.character().inventory().removeItemType('I05I')
+			call this.character().inventory().removeItemType('I05I')
+			call this.character().inventory().removeItemType('I05I')
+			call Character(this.character()).displayItemAcquired(GetObjectName('I05T'), tr("Hergestellt."))
+			call Character(this.character()).giveItem('I05T')
+		endmethod
+
+		public static method create takes Character character returns thistype
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
+		endmethod
+	endstruct
+	
+	struct SpellBookOfMagicScrollOfCollector extends ASpell
+		public static constant integer abilityId = 'A1AC'
+
+		private method condition takes nothing returns boolean
+			if (this.character().inventory().hasItemType('I03Y') and this.character().inventory().hasItemType('I05K')) then
+				debug call Print("Success")
+				return true
+			endif
+			
+			debug call Print("Fail")
+			call this.character().displayMessage(ACharacter.messageTypeError, tr("Benötigte Rohstoffe fehlen."))
+			
+			return false
+		endmethod
+		
+		private method action takes nothing returns nothing
+			call this.character().inventory().removeItemType('I03Y')
+			call this.character().inventory().removeItemType('I05K')
+			call Character(this.character()).displayItemAcquired(GetObjectName('I04N'), tr("Hergestellt."))
+			call Character(this.character()).giveItem('I04N')
+		endmethod
+
+		public static method create takes Character character returns thistype
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
+		endmethod
+	endstruct
+	
+	struct SpellBookOfMagicScrollOfWay extends ASpell
+		public static constant integer abilityId = 'A1A7'
+
+		private method condition takes nothing returns boolean
+			if (this.character().inventory().hasItemType('I047')) then
+				debug call Print("Success")
+				return true
+			endif
+			
+			debug call Print("Fail")
+			call this.character().displayMessage(ACharacter.messageTypeError, tr("Benötigte Rohstoffe fehlen."))
+			
+			return false
+		endmethod
+		
+		private method action takes nothing returns nothing
+			call this.character().inventory().removeItemType('I047')
+
+			call Character(this.character()).displayItemAcquired(GetObjectName('I037'), tr("Hergestellt."))
+			call Character(this.character()).giveItem('I037')
+		endmethod
+
+		public static method create takes Character character returns thistype
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
+		endmethod
+	endstruct
 
 endlibrary

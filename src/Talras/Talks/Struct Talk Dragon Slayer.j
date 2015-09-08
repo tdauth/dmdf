@@ -1,6 +1,6 @@
 library StructMapTalksTalkDragonSlayer requires Asl, StructGameClasses, StructMapMapArena, StructMapMapNpcs
 
-	struct TalkDragonSlayer extends ATalk
+	struct TalkDragonSlayer extends Talk
 		private AInfo m_exit
 
 		implement Talk

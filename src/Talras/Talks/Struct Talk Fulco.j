@@ -1,6 +1,6 @@
 library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuestsQuestMyFriendTheBear
 
-	struct TalkFulco extends ATalk
+	struct TalkFulco extends Talk
 
 		implement Talk
 

@@ -1,6 +1,6 @@
 library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMapNpcs, StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent
 
-	struct TalkLothar extends ATalk
+	struct TalkLothar extends Talk
 		private boolean array m_saidTruth[6] /// \todo MapData.maxplayers
 
 		implement Talk

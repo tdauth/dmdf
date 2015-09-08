@@ -22,6 +22,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static trigger m_killTrigger
 		private static trigger m_leaveTrigger
 		private static trigger m_pvpTrigger
+		private static trigger m_damageTrigger
 		private static leaderboard m_leaderboard
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Arena\"")
@@ -273,6 +274,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			set thistype.m_winner = null
 			set thistype.m_region = CreateRegion()
 
+			set thistype.m_damageTrigger = null
 			call thistype.createKillTrigger()
 			call thistype.createLeaveTrigger()
 			call thistype.createPvpTrigger()
@@ -296,6 +298,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			set thistype.m_pvpTrigger = null
 			call DestroyLeaderboard(thistype.m_leaderboard)
 			set thistype.m_leaderboard = null
+			call thistype.destroyDamageTrigger.evaluate()
 		endmethod
 
 		// static members
@@ -323,6 +326,42 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.m_startY.pushBack(y)
 			call thistype.m_startFacing.pushBack(facing)
 		endmethod
+		
+		private static method triggerConditionDamage takes nothing returns boolean
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.m_units.size())
+				if (GetOwningPlayer(GetEventDamageSource()) == GetOwningPlayer(thistype.m_units[i])) then
+					return false
+				endif
+				set i = i + 1
+			endloop
+			call Character.displayWarningToAll(Format(tr("Die Einheit %1% wurde hingerichtet weil sie sich in einen Arenakampf eingemischt hat.")).s(GetUnitName(GetEventDamageSource())).result())
+			call KillUnit(GetEventDamageSource())
+			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
+			
+			return false
+		endmethod
+		
+		private static method destroyDamageTrigger takes nothing returns nothing
+			if (thistype.m_damageTrigger != null) then
+				call DestroyTrigger(thistype.m_damageTrigger)
+				set thistype.m_damageTrigger = null
+			endif
+		endmethod
+		
+		private static method refreshDamageTrigger takes nothing returns nothing
+			local integer i
+			call thistype.destroyDamageTrigger()
+			set thistype.m_damageTrigger = CreateTrigger()
+			set i = 0
+			loop
+				exitwhen (i == thistype.m_units.size())
+				call TriggerRegisterUnitEvent(thistype.m_damageTrigger, thistype.m_units[i], EVENT_UNIT_DAMAGED)
+				set i = i + 1
+			endloop
+			call TriggerAddCondition(thistype.m_damageTrigger, Condition(function thistype.triggerConditionDamage))
+		endmethod
 
 		private static method startFight takes nothing returns nothing
 			local integer i = 0
@@ -334,6 +373,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			endloop
 			call EnableTrigger(thistype.m_killTrigger)
 			call EnableTrigger(thistype.m_leaveTrigger)
+			call thistype.refreshDamageTrigger()
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, thistype.m_textStartFight)
 		endmethod
 
@@ -426,6 +466,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				set winnerName = GetUnitName(thistype.m_winner)
 			endif
 			// pause units
+			call thistype.destroyDamageTrigger()
 			call DisableTrigger(thistype.m_killTrigger)
 			call DisableTrigger(thistype.m_leaveTrigger)
 			loop

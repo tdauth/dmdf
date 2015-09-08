@@ -1,6 +1,6 @@
 library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestReinforcementForTalras
 
-	struct TalkDago extends ATalk
+	struct TalkDago extends Talk
 
 		implement Talk
 		

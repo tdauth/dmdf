@@ -1,27 +1,27 @@
 library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, StructMapMapNpcs, StructMapTalksTalkDago
 
+	struct QuestAreaRescueDago extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoRescueDago0.video.evaluate().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			call QuestRescueDago.quest.evaluate().enable.evaluate()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+
 	struct QuestRescueDago extends AQuest
 		private static constant real rectRange = 500.0
 		private timer m_timer
+		private QuestAreaRescueDago m_questArea
 
 		implement Quest
-
-		private method stateEventNew takes trigger usedTrigger returns nothing
-			local event triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_quest_rescue_dago_enable)
-			set triggerEvent = null
-		endmethod
-
-		private method stateConditionNew takes nothing returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = ACharacter.isUnitCharacter(triggerUnit)
-			set triggerUnit = null
-			return result
-		endmethod
-
-		private method stateActionNew takes nothing returns nothing
-			call VideoRescueDago0.video.evaluate().play()
-			call waitForVideo(MapData.videoWaitInterval)
-			call this.displayState()
+		
+		public stub method enable takes nothing returns boolean
+			return super.enableUntil(1)
 		endmethod
 
 		private method stateEventFailed takes trigger whichTrigger returns nothing
@@ -123,9 +123,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			set this.m_timer = CreateTimer()
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNAttentaeter.tga")
 			call this.setDescription(tr("Dago wird vor einer Höhle von zwei Bären angegriffen. Ihr müsst ihm zu Hilfe eilen."))
-			call this.setStateEvent(thistype.stateNew, thistype.stateEventNew)
-			call this.setStateCondition(thistype.stateNew, thistype.stateConditionNew)
-			call this.setStateAction(thistype.stateNew, thistype.stateActionNew)
+			
 			call this.setStateEvent(thistype.stateFailed, thistype.stateEventFailed)
 			call this.setStateAction(thistype.stateFailed, thistype.stateActionFailed)
 			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)
@@ -144,6 +142,8 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			call questItem1.setPingColour(100.0, 100.0, 100.0)
 			call questItem1.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted1)
 			call questItem1.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted1)
+			
+			set this.m_questArea = QuestAreaRescueDago.create(gg_rct_quest_rescue_dago_enable)
 
 			return this
 		endmethod

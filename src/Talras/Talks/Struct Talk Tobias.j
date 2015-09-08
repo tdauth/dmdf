@@ -1,6 +1,6 @@
 library StructMapTalksTalkTobias requires Asl
 
-	struct TalkTobias extends ATalk
+	struct TalkTobias extends Talk
 
 		implement Talk
 

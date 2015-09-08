@@ -1,6 +1,6 @@
 library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, StructMapMapNpcs, StructMapQuestsQuestWolvesHunt, StructMapQuestsQuestStormingTheMill
 
-	struct TalkSheepBoy extends ATalk
+	struct TalkSheepBoy extends Talk
 	
 		implement Talk
 		

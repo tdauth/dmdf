@@ -1,6 +1,6 @@
 library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen, StructMapTalksTalkRicman
 
-	struct TalkWigberht extends ATalk
+	struct TalkWigberht extends Talk
 		private static sound m_soundCHello
 		private static sound m_soundNHello
 

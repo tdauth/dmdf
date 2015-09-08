@@ -1,6 +1,6 @@
 library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalksTalkMathilda, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestReinforcementForTalras
 
-	struct TalkManfred extends ATalk
+	struct TalkManfred extends Talk
 	
 		implement Talk
 		

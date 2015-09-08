@@ -1,6 +1,6 @@
 library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestTheBeast, StructMapQuestsQuestWoodForTheHut, StructMapQuestsQuestReinforcementForTalras, StructMapQuestsQuestWar
 
-	struct TalkKuno extends ATalk
+	struct TalkKuno extends Talk
 		private AInfo m_hi
 		private AInfo m_lonely
 		private AInfo m_knowsTrommon

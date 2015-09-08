@@ -204,7 +204,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, L
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
 			local AIntegerListIterator iterator = thistype.m_onDamageActions.begin()
 			//debug call Print("DAMAGE RECORDER")
-			debug call Print("Damage recorder list id :" + I2S(thistype.m_onDamageActions) + " and size: " + I2S(thistype.m_onDamageActions.size()))
+			//debug call Print("Damage recorder list id :" + I2S(thistype.m_onDamageActions) + " and size: " + I2S(thistype.m_onDamageActions.size()))
 			loop
 				exitwhen (not iterator.isValid())
 				//debug call Print("Damage recorder")

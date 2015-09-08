@@ -1,6 +1,6 @@
 library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameClasses, StructMapMapAos, StructMapMapNpcs, StructMapQuestsQuestDeathToBlackLegion
 
-	struct TalkHaldar extends ATalk
+	struct TalkHaldar extends Talk
 		private boolean array m_gotOffer[6] /// \todo \ref MapData.maxPlayers
 		private integer array m_lastRewardScore[6] /// \todo \ref MapData#maxPlayers
 

@@ -1,6 +1,6 @@
 library StructMapTalksTalkWieland requires Asl, StructGameClasses, StructMapQuestsQuestWielandsSword
 
-	struct TalkWieland extends ATalk
+	struct TalkWieland extends Talk
 
 		implement Talk
 

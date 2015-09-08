@@ -1,6 +1,6 @@
 library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 
-	struct TalkBrogo extends ATalk
+	struct TalkBrogo extends Talk
 		private static constant integer experienceBonus = 50
 		private static constant integer catUnitTypeId = 'n00B'
 		private static constant integer maxCats = 5

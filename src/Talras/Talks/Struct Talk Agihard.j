@@ -1,6 +1,6 @@
 library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapArena, StructMapMapNpcs
 
-	struct TalkAgihard extends ATalk
+	struct TalkAgihard extends Talk
 		public static constant integer xpBonus = 100
 		private AInfo m_hello
 		private AInfo m_whichArena

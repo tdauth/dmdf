@@ -1,6 +1,6 @@
 library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestTheDefenseOfTalras, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestWar
 
-	struct TalkHeimrich extends ATalk
+	struct TalkHeimrich extends Talk
 
 		implement Talk
 

@@ -426,8 +426,8 @@ endif
 		endmethod
 
 		/**
-		* \sa thistype#showCharactersSchemeToPlayer
-		*/
+		 * \sa thistype#showCharactersSchemeToPlayer
+		 */
 		public static method showCharactersSchemeToAll takes nothing returns nothing
 			local integer i = 0
 			loop

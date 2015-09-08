@@ -1,6 +1,6 @@
 library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMapQuestsQuestTheBraveArmourerOfTalras, StructMapQuestsQuestTheWayToHolzbruck
 
-	struct TalkIrmina extends ATalk
+	struct TalkIrmina extends Talk
 		private static constant real potionTime = 30.0
 		private static constant integer strengthPotion = 'I01T'
 		private static constant integer dexterityPotion = 'I01U'

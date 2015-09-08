@@ -274,7 +274,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// slaughter quest
 		private static ItemType m_bloodAmulet
 		// Tellborn's items
-		private static ItemType m_staffOfClarity
+		private static RangeItemType m_staffOfClarity
+		private static ItemType m_shamanMask
 		// NEW
 		private static ItemType m_dagosDagger
 		private static ItemType m_wingsOfDeathAngel
@@ -579,6 +580,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_staffOfClarity.addAbility('A0AD', true)
 			call thistype.m_staffOfClarity.addAbility('A19W', true)
 			call thistype.m_staffOfClarity.addAbility('AIi4', true)
+			
+			set thistype.m_shamanMask = ItemType.createSimple('I05V', ItemType.equipmentTypeHeaddress)
+			call thistype.m_shamanMask.addAbility('AIi4', true)
+			call thistype.m_shamanMask.addAbility('A1AE', true)
 
 			// NEW
 			set thistype.m_dagosDagger = ItemType.createSimple('I02O', ItemType.equipmentTypePrimaryWeapon)

@@ -1,6 +1,6 @@
 library StructMapTalksTalkTellborn requires Asl, StructMapTalksTalkFulco, StructMapTalksTalkTanka, StructMapQuestsQuestShamansInTalras
 
-	struct TalkTellborn extends ATalk
+	struct TalkTellborn extends Talk
 
 		implement Talk
 

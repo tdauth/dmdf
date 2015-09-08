@@ -1,6 +1,6 @@
 library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameClasses, StructMapMapNpcs, StructMapMapFellows, StructMapQuestsQuestTheMagic, StructMapQuestsQuestTheMagicalShield, StructMapQuestsQuestTheGhostOfTheMaster
 
-	struct TalkSisgard extends ATalk
+	struct TalkSisgard extends Talk
 		private static AInfo m_hi
 		private static AInfo m_hi_whyNot
 		private static AInfo m_hi_no

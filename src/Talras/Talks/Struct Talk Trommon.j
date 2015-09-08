@@ -1,6 +1,6 @@
 library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQuestsQuestWoodForTheHut, StructMapQuestsQuestSeedsForTheGarden
 
-	struct TalkTrommon extends ATalk
+	struct TalkTrommon extends Talk
 		private static constant integer goldCost = 10
 		private boolean array m_hasPaid[6] /// @todo @member MapData.maxPlayers
 		private boolean array m_wasOffended[6] /// @todo @member MapData.maxPlayers

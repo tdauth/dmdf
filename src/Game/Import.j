@@ -17,8 +17,9 @@ endif
 //! import "Game/Struct Shrine.j"
 //! import "Game/Struct Spawn Point.j"
 //! import "Game/Struct Spell.j"
+//! import "Game/Struct Talk.j"
 //! import "Game/Struct Tutorial.j"
 //! import "Game/Library Language.j"
 
-library Game requires StructGameCharacter, optional StructCharacterStats, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTutorial, LibraryGameLanguage
+library Game requires StructGameCharacter, optional StructCharacterStats, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTutorial, LibraryGameLanguage
 endlibrary

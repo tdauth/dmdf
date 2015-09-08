@@ -46,22 +46,49 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 		
 		private static method onInit takes nothing returns nothing
 			// TODO fill more items
+			
+			// level 1 items
 			set thistype.m_itemPools[0] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I016', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I017', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I03Y', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I009', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I00E', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I01K', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I01L', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I047', 1.0)
 			
+			// level 2 items
 			set thistype.m_itemPools[1] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I03O', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I01F', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I05K', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I00A', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I05L', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I00D', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I049', 1.0)
 			
+			// level 3 items
 			set thistype.m_itemPools[2] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I057', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I01G', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I05M', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I02R', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I00B', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I00C', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I041', 1.0)
 			
+			// level 4 items
 			set thistype.m_itemPools[3] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I00F', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I02I', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I00G', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I056', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I04N', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I045', 1.0)
+			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I024', 1.0)
 			
+			// level 5 items
 			set thistype.m_itemPools[4] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[4], 'I04Q', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[4], 'I00U', 1.0)

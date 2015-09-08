@@ -1,6 +1,6 @@
 library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower, StructMapQuestsQuestSeedsForTheGarden
 
-	struct TalkUrsula extends ATalk
+	struct TalkUrsula extends Talk
 
 		implement Talk
 

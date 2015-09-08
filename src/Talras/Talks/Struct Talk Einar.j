@@ -1,6 +1,6 @@
 library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQuestWielandsSword
 
-	struct TalkEinar extends ATalk
+	struct TalkEinar extends Talk
 
 		implement Talk
 

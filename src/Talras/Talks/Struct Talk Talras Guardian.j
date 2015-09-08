@@ -1,6 +1,6 @@
 library StructMapTalksTalkTalrasGuardian requires Asl, StructMapQuestsQuestTalras
 
-	struct TalkTalrasGuardian extends ATalk
+	struct TalkTalrasGuardian extends Talk
 
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(3, character)

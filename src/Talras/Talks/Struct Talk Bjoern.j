@@ -1,6 +1,6 @@
 library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestPerdixHunt, StructMapQuestsQuestReinforcementForTalras
 
-	struct TalkBjoern extends ATalk
+	struct TalkBjoern extends Talk
 		private static constant integer smallGoldReward = 20
 		private static constant integer bigGoldReward = 100
 		// Riesen-Felle

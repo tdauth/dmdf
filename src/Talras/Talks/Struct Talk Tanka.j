@@ -1,6 +1,6 @@
 library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMapQuestsQuestShamansInTalras
 
-	struct TalkTanka extends ATalk
+	struct TalkTanka extends Talk
 		private static constant integer rewardGold = 30
 		private integer array m_hints[6] /// @todo @member MapData.maxPlayers, vJass bug
 

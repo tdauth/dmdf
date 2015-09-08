@@ -464,11 +464,11 @@
 * FIXED: "Begebt euch zu den Nordmännern vor der Burg" - östlich vor der Burg.
 * FIXED: Nach jedem Video automatisch Ansicht zum Charakter setzen.
 * Pick all units and remove buffs from shrine auras.
-* Charakteranzeige ist zu breit. Text nimmt zu viel Platz ein. Der Text sollte im Block dargestellt werden. Gold muss angezeigt werden.
+* FIXED: Charakteranzeige ist zu breit. Text nimmt zu viel Platz ein. Der Text sollte im Block dargestellt werden. Gold muss angezeigt werden.
 * FIXED: AVideo: Bei skip muss der aktuelle Sound unterbrochen werden.
 * FIXED: Timer für Klassenauswahl einbauen, ansonsten blockiert ein Spieler.
 * FIXED: Nicht ausblenden beim Warten, Spieler müssen das Spiel verlassen können.
-* Weniger Gold in Arenakampf.
+* FIXED: Weniger Gold in Arenakampf.
 * DONE: Dach über Wieland entfernen.
 * FIXED: Spieler kann Video zweimal überspringen, zählt 2 mal.
 * Kein Gold für PvP kill.
@@ -483,7 +483,7 @@
 * Björn's Dialog verbuggt: Weiß nicht wo Dago ist aber hat vom Kampf gehört? Nicht verbuggt, hat vom Kampf von einem Freund gehört. Dann sollte er aber wissen wo Dago ist.
 * Auftrag "Die Nordmänner": Sammelgebiet im Lager der Nordmänner machen.
 * Auftrag "Die Nordmänner": Bei Verstärkung und gegnerischen Wellen kurzen Cinematic oder Spiel anhalten.
-* AVideo: Charakter kann Geschwindigkeitsbonus haben der erhalten bleibt - Mantel.
+* AVideo: Charakter kann Geschwindigkeitsbonus haben der erhalten bleibt - Mantel. Dieser muss manuell zurückgesetzt werden. Einfach actor() auf feste Geschwindigkeit setzen?
 * Ricman braucht anderes Modell, muss sich abheben.
 * Auftrag "Die Verteidigung von Talras": Video sollte mögliche Angriffspunkte und Verteidigung erklären.
 * Orks kopieren und stärker machen als bei Auftrag "Die Nordmänner".
@@ -525,9 +525,9 @@
 * Höhen der Brücken wie beim Sichtfeldblocker verändern, eventuell erhöht das die Kameransicht?
 * Deranors Dungeon Kameragrenzen zu eng (rechts).
 * Blocker bei Eingang zur Gruft.
-* Quest Area für Rettet Dago.
-* Quest Area für The Castle.
-* Quest Area für The Duke Of Talras.
+* FIXED: Quest Area für Rettet Dago.
+* FIXED: Quest Area für The Castle.
+* FIXED: Quest Area für The Duke Of Talras.
 * FIXED: Verspotten hat keine Abklingzeit.
 * Björn: Dialog war verbuggt. Dialog aufgepoppt obwohl beendet, Spieler 2, dann unbesiegbar.
 * Bei Spieler 2 werden eindeutig bestimmte Dialoge nicht angezeigt. Zu viele struct-Instanzen? Falls ja alle Dialoge static machen!!!

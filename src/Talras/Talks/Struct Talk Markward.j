@@ -1,6 +1,6 @@
 library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestReinforcementForTalras, StructMapQuestsQuestWar
 
-	struct TalkMarkward extends ATalk
+	struct TalkMarkward extends Talk
 		private AInfo m_hi
 		private AInfo m_whatsUp
 		private AInfo m_whereFrom

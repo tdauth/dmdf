@@ -1,6 +1,6 @@
 library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 
-	struct TalkHaid extends ATalk
+	struct TalkHaid extends Talk
 		private boolean array m_completedWithCostKnowledge[6] /// @todo MapData.maxPlayers
 		private AInfo m_whoAreYou
 		private AInfo m_notInCastle

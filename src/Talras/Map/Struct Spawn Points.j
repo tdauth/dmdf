@@ -128,6 +128,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_orcs0
 		private static SpawnPoint m_cornEaters0
 		private static SpawnPoint m_cornEaters1
+		private static SpawnPoint m_spiderQueen
 		
 		// drum cave
 		private static SpawnPoint m_skeletons0
@@ -764,6 +765,21 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_cornEaters1.addUnitWithType(gg_unit_n016_0472, 1.0)
 			call thistype.m_cornEaters1.addNewItemType(index, 'whwd', 1.0)
 			call thistype.m_cornEaters1.addNewItemType(index, 'I046', 0.50)
+			
+			 // spawn point spider queen
+			set thistype.m_spiderQueen = SpawnPoint.create()
+			set index = thistype.m_spiderQueen.addUnitWithType(gg_unit_n05F_0389, 1.0)
+			call thistype.m_spiderQueen.addNewItemType(index, 'I041', 1.0)
+			call thistype.m_spiderQueen.addNewItemType(index, 'I05U', 1.0)
+			call thistype.m_spiderQueen.addNewItemType(index, 'I05U', 1.0)
+			call thistype.m_spiderQueen.addNewItemType(index, 'I05U', 1.0)
+			set index = thistype.m_spiderQueen.addUnitWithType(gg_unit_n01D_0390, 1.0)
+			call thistype.m_spiderQueen.addNewItemType(index, 'I041', 1.0)
+			set index = thistype.m_spiderQueen.addUnitWithType(gg_unit_n01D_0391, 1.0)
+			call thistype.m_spiderQueen.addNewItemType(index, 'I041', 1.0)
+			set index = thistype.m_spiderQueen.addUnitWithType(gg_unit_n01D_0392, 1.0)
+			call thistype.m_spiderQueen.addNewItemType(index, 'I041', 1.0)
+
 			
 			// drum cave
 			set thistype.m_skeletons0 = SpawnPoint.create()

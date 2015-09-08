@@ -1,6 +1,6 @@
 library StructMapTalksTalkGuntrich requires Asl, StructMapMapNpcs, StructMapQuestsQuestWitchingHour
 
-	struct TalkGuntrich extends ATalk
+	struct TalkGuntrich extends Talk
 
 		implement Talk
 
