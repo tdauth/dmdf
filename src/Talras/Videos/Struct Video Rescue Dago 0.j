@@ -4,8 +4,13 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 		private unit m_actorBear0
 		private unit m_actorBear1
 		private unit m_actorDago
+		private trigger m_damageTrigger
 
 		implement Video
+		
+		private static method triggerConditionDamage takes nothing returns nothing
+			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
+		endmethod
 
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
@@ -14,15 +19,28 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 
 			// bears
 			set this.m_actorBear0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0083))
-			call PauseUnit(this.m_actorBear0, true)
+			call IssueImmediateOrder(this.m_actorBear0, "stop")
+			//call SetUnitMoveSpeed(this.m_actorBear0, 150.0)
 			set this.m_actorBear1 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0027))
-			call PauseUnit(this.m_actorBear1, true)
+			call IssueImmediateOrder(this.m_actorBear1, "stop")
+			//call SetUnitMoveSpeed(this.m_actorBear1, 150.0)
 
 			// Dago
 			set this.m_actorDago = thistype.unitActor(thistype.saveUnitActor(Npcs.dago()))
+			call IssueImmediateOrder(this.m_actorDago, "stop")
+			
+			set this.m_damageTrigger = CreateTrigger()
+			call TriggerRegisterUnitEvent(this.m_damageTrigger, this.m_actorBear0, EVENT_UNIT_DAMAGED)
+			call TriggerRegisterUnitEvent(this.m_damageTrigger, this.m_actorBear1, EVENT_UNIT_DAMAGED)
+			call TriggerRegisterUnitEvent(this.m_damageTrigger, this.m_actorDago, EVENT_UNIT_DAMAGED)
+			call TriggerAddCondition(this.m_damageTrigger, Condition(function thistype.triggerConditionDamage))
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call IssueTargetOrder(this.m_actorBear0, "attack", this.m_actorDago)
+			call IssueTargetOrder(this.m_actorBear1, "attack", this.m_actorDago)
+			call IssueTargetOrder(this.m_actorDago, "attack", this.m_actorBear0)
+			call PlaySoundBJ(gg_snd_GrizzlyBearReady1)
 			if (wait(1.0)) then
 				return
 			endif
@@ -41,6 +59,10 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 			set this.m_actorBear0 = null
 			set this.m_actorBear1 = null
 			set this.m_actorDago = null
+			if (this.m_damageTrigger != null) then
+				call DestroyTrigger(this.m_damageTrigger)
+				set this.m_damageTrigger = null
+			endif
 
 			call QuestRescueDago.quest().questItem(0).setState(AAbstractQuest.stateNew)
 
@@ -66,7 +88,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			call PauseUnit(Npcs.dago(), true)
+			call PauseUnit(Npcs.dago(), false)
 			call SetUnitInvulnerable(Npcs.dago(), true)
 			call PauseUnit(gg_unit_n008_0083, true)
 			call SetUnitInvulnerable(gg_unit_n008_0083, true)

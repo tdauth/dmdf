@@ -8,7 +8,6 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
-			call Game.hideSpawnPointUnits(SpawnPoints.medusa())
 			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
 			call SetTimeOfDay(0.0)
 			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_0, true, 0.0)
@@ -142,7 +141,6 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
-			call Game.showSpawnPointUnits(SpawnPoints.medusa())
 			call Game.showSpawnPointUnits(SpawnPoints.deathVault())
 			call Game.resetVideoSettings()
 			

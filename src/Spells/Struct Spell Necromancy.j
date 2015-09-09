@@ -30,8 +30,18 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			
 			 if (GetSummoningUnit() == this.character().unit() and thistype.isUnitOfType(GetSummonedUnit())) then
-				call this.m_units.units().pushBack(GetSummonedUnit())
-				debug call Print("Summoned " + GetUnitName(GetSummonedUnit()))
+				/*
+				 * While the spell is canceled if alreay 6 minions exist it might be that the spell summons more than one minion and therefore the limit is reached.
+				 * In this case the longest existing minions are killed and therefore replaced.
+				 */
+				if (this.m_units.units().size() == thistype.maxUnits) then
+					call KillUnit(this.m_units.units()[0])
+					set this.m_units.units()[0] = GetSummonedUnit()
+				else
+					call this.m_units.units().pushBack(GetSummonedUnit())
+				endif
+				
+				debug call Print("Summoned " + GetUnitName(GetSummonedUnit()) + " with " + I2S(this.m_units.units().size()) + " minions.")
 			endif
 			
 			return false

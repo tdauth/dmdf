@@ -10,7 +10,7 @@ library StructSpellsSpellRaid requires Asl, StructGameClasses, StructGameSpell
 		private static itempool array m_itemPools[5]
 		
 		private method levelItemPool takes nothing returns itempool
-			return thistype.m_itemPools[GetRandomInt(0, this.level())]
+			return thistype.m_itemPools[GetRandomInt(0, this.level() - 1)]
 		endmethod
 		
 		private method action takes nothing returns nothing
@@ -24,9 +24,17 @@ native PlaceRandomItem          takes itempool whichItemPool, real x, real y ret
 ChooseRandomItem         takes integer level returns integer
 native ChooseRandomItemEx       takes itemtype whichType, integer level returns integer
 */
-			local item whichItem = PlaceRandomItem(this.levelItemPool(), GetUnitX(this.character().unit()), GetUnitY(this.character().unit()))
-			call SetItemPlayer(whichItem, this.character().player(), true)
-			call Character(this.character()).displayItemAcquired(GetItemName(whichItem), "Beutezug.")
+			local item whichItem
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					set whichItem = PlaceRandomItem(this.levelItemPool(), GetUnitX(ACharacter.playerCharacter(Player(i)).unit()), GetUnitY(ACharacter.playerCharacter(Player(i)).unit()))
+					call SetItemPlayer(whichItem, Player(i), true)
+					call Character(ACharacter.playerCharacter(Player(i))).displayItemAcquired(GetItemName(whichItem), "Beutezug.")
+				endif
+				set i = i + 1
+			endloop
 		endmethod
 
 		public static method create takes Character character returns thistype

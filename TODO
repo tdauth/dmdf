@@ -1,9 +1,9 @@
 2014-11-22 Tamino Dauth <tamino@cdauth.eu>
 * Quest Blood Thristiness überarbeitet. Logischere Dialoge mit der Elfin, warum jagt sie die Kreaturen? - ist gar nicht soo schlecht
-* "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein. Liegt evenutell aber nur eventuell daran, dass Computerspieler die Kontrolle hat und den Zauber jedes Mal rückgängig macht?
-* Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
+* FIXED: "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein. Liegt evenutell aber nur eventuell daran, dass Computerspieler die Kontrolle hat und den Zauber jedes Mal rückgängig macht? Lag an Computerspieler.
+* FIXED: Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
 * Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
-* Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird.
+* FIXED: Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird. Zauberbuch anwenden, um Icon zu verbergen.
 * FIXED: Metamorphose: Ist mit passiver Verwandlung eventuell sicherer, Cast-Zeit kontrollierbar: http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/
 * Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle?
 * Fulco will die Zauberkraft der Hexen im Norden. Neues Quest.
@@ -25,7 +25,7 @@
 * Schild Attachmentpunkt ändern, ist sonst in der Hand des Charakters.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
 * FIXED: Grabenspinne: Passives Spinnengift und Giftstachel.
-* Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt. Selbst nachdem die Bestenliste des Spielers manuell auf null gesetzt wurde, verschwindet sie nicht.
+* FIXED: Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt. Selbst nachdem die Bestenliste des Spielers manuell auf null gesetzt wurde, verschwindet sie nicht.
 * Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer. Dialog bei Guntrich aktivieren, nachdem man bei der Mühle war -> neues Quest "Vertreibe die Plünderer".
 * Guntrichs Auftrag "Geisterstunde": Neues Ziel einbauen, dass man selbst herausfinden muss woher das Trommeln kommt.
 * Guntrichs Dialog: Wegelagerer bei der Mühle? mit Geisterstunde verbinden - Neues Quest einbauen "Wegelagerer vertreiben"?
@@ -74,9 +74,9 @@
 * FIXED: Character.giveItem() und giveQuestItem() sollte die Items immer im Rucksack platzieren falls noch Platz ist und nicht auf dem Boden falls das Inventar voll und der Rucksack offen ist.
 * Alle Talk Members static machen, da es immer genau eine Talk-Instanz gibt -> Performance
 * Mit SharpCraft debuggen - optlimit etc.
-* ACharacter.displayMessage() entfernen und durch QuestMessageBJ() ersetzen. Eventuell QuestMessageBJ() für einzelnen Spieler anbieten?
+* ACharacter.displayMessage() entfernen und durch QuestMessageBJ() ersetzen. Eventuell QuestMessageBJ() für einzelnen Spieler anbieten? Neue Funktion QuestMessageForPlayer() aus der ASL verwenden.
 * ACharacter.setMovable() entfernen und durch jeweilige Funktionen ersetzen.
-* Viele unnötige Helpermethoden in ACharacter rauswerfen.
+* Viele unnötige Helpermethoden aus ACharacter rauswerfen.
 * Dago retten - Bedingung einbauen, Dago darf das Gebiet nicht verlassen, sonst ist der Auftrag fehlgeschlagen! Ansonsten kann man mit Dago alles abmetzeln!
 * FIXED: Wenn man Kuno nicht im Wald anspricht sollte er sagen "Ich habe zu tun". Ansonsten sind die Sätze unlogisch.
 * DONE: Video "Wigberht" fixen.
@@ -93,11 +93,11 @@
 * Quest-Pings manuell durch Hauptmenü erlauben.
 * FIXED: Waldläufer bei letzter Schlacht kommen manchmal zweimal.
 * FIXED: Spawns bei letzter Schlacht fixen - Gegener laufen nicht aufs Schlachtfeld, da Neutral Feindlich.
-* Gefolgsleute schickt wegen Computerkontrolle oft Einheiten automatisch zurück.
+* FIXED: Gefolgsleute schickt wegen Computerkontrolle oft Einheiten automatisch zurück. Gibt jetzt keine Computerkontrolle mehr.
 * Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
-* Hellebarde: Schmetterangriff muss Icon verlieren!!! Gegenstandsfähigkeit!
-* Standarte: Befehlsaura muss Icon verlieren!!! Gegenstandsfähigkeit!
-* Video "Das erste Gefecht": Einheiten blockieren sich gegenseitig beim Laufen. Nicht in der selben Gruppe?!
+* FIXED: Hellebarde: Schmetterangriff muss Icon verlieren!!! Gegenstandsfähigkeit! Zauberbuchfähigkeit erstellen.
+* FIXED: Standarte: Befehlsaura muss Icon verlieren!!! Gegenstandsfähigkeit! Zauberbuchfähigkeit erstellen.
+* Video "Das erste Gefecht": Einheiten blockieren sich gegenseitig beim Laufen. Nicht in der selben Gruppe?! Abstände vergrößern, Geschwindigkeit anpassen auch bei Items!
 * DEPRECATED: Ricman sollte während der letzten Schlacht die Helden anwählen und Gegenstandskauf/Verkaufsfähigkeit entfernt bekommen.
 * Ricman sollte mehr über den Stab der Unsterblichkeit berichten. Wirkt alles zu aufgesetzt. Warum will er unbedingt einen Drachen aus den alten Sagen?
 * Beim Zauber "Drohendes Unheil" sicherstellen, dass der Zauber pro Einheit nur einmal gleichzeitig angewandt werden kann.
@@ -109,32 +109,32 @@
 * FIXED: "Märtyrer" verbraucht Mana auch wenn der Zauber gestoppt wird. Vermutlich muss der Test in die Condition ausgelagert werden.
 * Klassenzauber auf Basis von "Mana und Leben auffüllen"?
 * FIXED: "Dämonendiener" es können mehrere gleichzeitig beschworen werden.
-* "Dämonendiener" Stufe 3 eindeutig zu stark.
+* FIXED: "Dämonendiener" Stufe 3 eindeutig zu stark.
 * Vampirgebietergruppe muss viel mehr droppen. Artefakte, Tränke, am besten Runen!
 * "Genesung" schadet dem Kleriker selbst. Sollte heilen aber ohne dem Kleriker selbst Leben abzuziehen.
-* "Böses bannen" hängt irgendwie.
+* "Böses bannen" hängt extrem.
 * Die Startbrücke endlich breiter machen!
 * Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
 * Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
-* "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Kleriker muss Fernkämpfer sein.
+* "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Nekromant muss Fernkämpfer sein.
 * DONE: Seitenwechsel für Zauberbuch in Klassenauswahl einfügen.
 * DONE: Für alle Klassen alle Zauber in Klassenauswahl anzeigen lassen.
-* ASL-Änderungen für AClass, AClassSelection und ACharacter einbauen.
+* DONE: ASL-Änderungen für AClass, AClassSelection und ACharacter einbauen.
 * ASL: Mehr API-Kommentare.
 * ASL: AClassSelection - Multiboard-Anzeige optional machen (dynamisch).
 * ASL: AClassSelection - Drehung optional machen (dynamisch).
 * DONE: ASL: AClassSelection - Tastensteuerung optional machen (dynamisch).
 * DONE: Wegelagerer sollten verschiedene Gegenstände droppen, nicht nur Goldmünzenbeutel.
-* AClassSelection: Multiboard ist zu breit.
-* Es gab schon mal den Fall, dass Dago abgebremst wurde und er daraufhin den Weg nicht mehr fand. Vielleicht durch Timer absichern, dass Dago tatsächlich zur Burg geht.
+* AClassSelection: Multiboard ist zu breit. Die Breite nicht automatisch berechnen, sondern wie bei ACharactersScheme dynamisch festlegen lassen.
+* FIXED: Es gab schon mal den Fall, dass Dago abgebremst wurde und er daraufhin den Weg nicht mehr fand. Vielleicht durch Timer absichern, dass Dago tatsächlich zur Burg geht.
 * Auftrag mit Dago fehlschlagen lassen wenn man mit ihm flieht.
 * DONE (Schafsjunge): Verstecktes Quest einbauen: "Gerissene Schafe" - wenn man die Wölfe am Anfang entdeckt erhält man diesen Auftrag. Dann kann man Manfred oder so davon berichten.
 * Irminas Tagesablauf. Steht den ganzen Tag da und verkauft Sachen.
 * DONE: Wielands Schwert fixen und in Dialog von Einar einbauen.
 * DONE: Wielands Schwert: Belohnungsgegenstand einbauen.
 * Beide Quests von Wieland NICHT ablehnbar machen!
-* Engel in AOS braucht Fähigkeiten: 4 - 6
-* Dämon in AOS braucht Fähigkeiten: 4 - 6
+* DEPRECATED: Engel in AOS braucht Fähigkeiten: 4 - 6. Besitzt Klassenfähigkeiten.
+* DEPRECATED: Dämon in AOS braucht Fähigkeiten: 4 - 6. Besitzt Klassenfähigkeiten.
 * Haldar und Balder: Ich möchte aus der ... Legion austreten.
 * Haldar und Baldar gleichmäßigen Zutritt erlauben! Damit Teams gleich groß sind.
 * AOS-Hauptgebäude einbauen und Auftrag abschließbar machen.
@@ -142,11 +142,12 @@
 * AOS: Der Sieg einer Partei sollte nicht die gesamte Story verändern jedoch Einfluss auf den Auftrag "Geisterstunde" nehmen.
 * FIXED: "Verzauberter Stab" ermöglicht mit Feuerkugelfähigkeit Flächenschaden!
 * FIXED: Kurzschwert ermöglicht Fehlschlag hat Verderbniskugel!
-* Ricmans Speerwurf macht keinen Schaden. Gameplaykonstanten?
+* DEPRECATED: Ricmans Speerwurf macht keinen Schaden. Gameplaykonstanten? Ist nun ein Hammerwurf, da Ricman einen Hammer trägt und keinen Speer.
 * FIXED: "Blenden" länger machen dafür Abklingzeit höher.
 * Bei letzter Schlacht sollten Gegner Items droppen, auch Runen etc. und vor allem der Orkanführer für jeden Charakter ein Artefakt.
-* Das Sammeln für die Fahrt nach Holzbruck ebenfalls per Gebiet machen.
-* Aus Metzelei-Auftrag sollte Jagd nach Deranor werden. Deranor ist verantwortlich für den Kult und die Untoten im Wald, er befindet sich in dem Dungeon, dass durch ein Portal erreichbar ist. Das Portal wird aktiviert, wenn man das Quest mit der Drachentöterin abschließt. Danach will sie mit einem Deranor vernichten, das war ihr Auftrag. Man kann Osman danach auch berichten, was hinter dem Kult eigentlich steckt.
+* FIXED: Das Sammeln für die Fahrt nach Holzbruck ebenfalls per Gebiet machen.
+* DONE: Aus Metzelei-Auftrag sollte Jagd nach Deranor werden. Deranor ist verantwortlich für den Kult und die Untoten im Wald, er befindet sich in dem Dungeon, dass durch ein Portal erreichbar ist. Das Portal wird aktiviert, wenn man das Quest mit der Drachentöterin abschließt. Danach will sie mit einem Deranor vernichten, das war ihr Auftrag.
+* Quest Deranor: Man kann Osman danach auch berichten, was hinter dem Kult eigentlich steckt.
 * Dialog mit Drachenöterin über Deranor verbessern.
 * FIXED: Töten des Diakons funktioniert nicht in Video!
 * Bei allen Tötungsquests den Spieler Neutral Aggressiv entfernen. Einheiten könnten übernommen worden sein!
@@ -161,7 +162,6 @@
 * FIXED: Arena: Für das Punkten muss nachgesehen werden ob der Owner des Killers eine Einheit in der Arena hat. Denn auch beschworene Einheiten können toten.
 * Button zum Durchschalten der Dungeons (Schreinbutton?).
 * FIXED: Charaktere brauchen unbedingt Hero Glow. Anderenfalls kann man Spieler nicht auseinanderhalten.
-* Mehr Items.
 * FIXED: ASL: ASpawnPoint - itempool verwenden, mehrere Items möglich!
 * Video Wigberht: Frost statt Feuerwelle
 * FIXED: Video Wigberht: AJump-Geschwindigkeit steuern, mehr Updates, langsamer Sprung abgeglichen mit Animationsgeschwindigkeit
@@ -173,8 +173,8 @@
 * FIXED: Meister der Nekromantie: Tooltips und Icons fixen. Zauberverstärker.
 * Rückkopplung beim Zauberer zieht kein Mana ab. Gameplaykonstanten?!
 * FIXED: AInventory: Gegenstand mit 2 Aufladungen über Seitengegenstand auf vorherige Seite. Dort liegt im letzten Fach gleicher Gegenstand also zusammengeführt - eine Aufladung zu wenig.
-* AInventory: Seitengegenstände besser nicht ablegbar machen, order abfangen? Müssen ablegbar sein damit man Gegenstände auf Seiten verschieben kann.
-* AInventory: TriggerSleepAction() entfernen oder eindämmen.
+* DEPRECATED: AInventory: Seitengegenstände besser nicht ablegbar machen, order abfangen? Müssen ablegbar sein damit man Gegenstände auf Seiten verschieben kann.
+* FIXED: AInventory: TriggerSleepAction() entfernen. Durch 0-Timer ersetzen, da TriggerSleepAction() erst nach 0.02 Sekunden oder so ausgeführt wird -> Data Races.
 * FIXED: Letzte Abstimmung bei Wigberht ebenfalls durch Gebietssammlung ersetzen.
 * FIXED: Video The Castle: Übergänge zu schnell.
 * DEPREACTED: Video The Castle: Erzähler soll etwas zur Burg sagen?
@@ -199,8 +199,6 @@
 * DONE: Böses bannen stärker, geringere Abklingzeit.
 * FIXED: Spruchrolle des Totenreichs nur Schreine pingen, die bereits erkundet sind.
 * Alphafähigkeit wird in Verwandlung nicht angezeigt.
-* Baldars Dialog: Spieler 2 bekommt nur Ende angezeigt?!
-* Haldars Dialog: Spieler 2 bekommt nur Ende angezeigt?!
 * FIXED: Klassenauswahl: desync ShowUnitForPlayer. Stattdessen Ghost-Fähigkeit geben und gemeinsame Sicht entfernen.
 * DONE: Holzbruck ins Repo aufnehmen.
 * FIXED: Wenn Baumhirte beschworen wird, soll er direkt ausgewurzelt werden.
@@ -230,7 +228,7 @@
 * DEPRECATED: Blitzschlag bekommt keine Verstärkung durch Wut der Elemente.
 * Ricman und Wigberht einfach nach letzter Schlacht automatisch ins Lager bewegen. Ansonsten verwirrend.
 * FIXED: config injection mit neuen Spielern!
-* Bei letzter Schlacht sollen sich zur Sicherheit Einheiten nicht töten können?
+* Bei letzter Schlacht sollen sich zur Sicherheit Einheiten nicht töten können? Damage event verwenden und Leben wieder auffüllen so wie beim ersten Dago-Video.
 * Wigberht "Erzähl mir was über deine Heimat" "Nun komm schon" erzählt einfach direkt etwas.
 * Weniger Erfahrung für die leppische Hauptquests. Man steigt viel zu schnell auf.
 * Dämpfung sollte nicht nur Magieschaden reduzieren. Der Effekt bringt sonst zu wenig, da wenige Einheiten Magieschaden verursachen. Vielleicht auch allgemein vor Schaden schützen von Einheiten, die Mana besitzen.
@@ -243,7 +241,7 @@
 * Kisten und Fässer brauchen Zerstöranimation.
 * Bärgengestalt braucht Verwandlungsanimation (per Code).
 * Krähengestalt braucht Verwandlungsanimation (per Code).
-* Drop AGui and all initialization except for ADialog! This should reduce the code overhead.
+* DEPRECATED: Drop AGui and all initialization except for ADialog! This should reduce the code overhead. Mitwirkende werden benötigt?
 * FIXED: Seitenwechsel der Zauber in Klassenauswahl fixen.
 * FIXED: Animation auf Schaf für gekauftes Schaf fixen.
 * FIXED: Schaffähigkeiten für alle anderen Klassen einbauen.
@@ -311,7 +309,7 @@
 * Mit Wigberht reden sollte nur 200 Erfahrung geben.
 * Sammeln sollte nur 200 Erfahrung geben.
 * Orks laufen zurück bei letzter Schlacht (nicht patroullieren?).
-* Timerdialogtext bei Fellow-Wiederbelebung sollte Eigennamen enthalten.
+* FIXED: Timerdialogtext bei Fellow-Wiederbelebung sollte Eigennamen enthalten.
 * Drachentöterin und Sisgard usw. während Video als Fellow unbesiegbar machen und hiden? Wird sonst angegriffen.
 * Quest Metzelei: Tötungsreihenfolge sollte egal sein. Zumindest bist zur Todesgruft.
 * FIXED: Nach Video "Deranor der Schreckliche" werden Kameragrenzen falsch resetet (nicht zur Höhle).
@@ -337,7 +335,7 @@
 * Sisgard, Ricman und Drachentöterin benötigen mehr interessante Fähigkeiten.
 * FIXED: Magische Schockwellen: Effekt muss enden, wenn Charakter stirbt.
 * FIXED: Wurfspeer ist keine Fernkampfwaffe.
-* Brotlaib braucht Icon.
+* FIXED: Brotlaib braucht Icon.
 * FIXED: Das Problem des Sharings war, dass die Fellows nicht mehr erzeugt wurden. In MapData.init(), welches von onInit aus Game aufgerufen wurde, wurde das OpLimit erreicht. Trotz .evaluate() bei den Methoden wurden diese nicht mit TriggerEvaluate() aufgerufen (JassHelper-Fehler?). Nun mit ForForce wird das OpLimit erfolgreich umgangen. Siehe auch: http://www.hiveworkshop.com/forums/triggers-scripts-269/does-evaluate-prevent-oplimit-266717/
 * FIXED: Metzelei: Drachentöterin wird nicht geshared.
 * FIXED: Das erste Gefecht: Ricman und Wigberht werden zwar geshared, behalten aber Dialog und Unbesiegbarkeit. Werden nach Video Wigberht auch nicht resettet. Nach dem Video werden auch keine Verbündeten im Lager platziert. Und man kann dem Herzog nicht berichten.
@@ -368,7 +366,7 @@
 * Vervielfachung: Vorher Rucksack schließen, ansonsten haben Spiegelbilder Items aus dem Rucksack.
 * QuestWar (stattdessen Heuschreckenfähigkeit): setupUnitAtDestination -> das Unit-Pathing wird nicht deaktiviert. Und das obwohl "Disable unit pathing for Knecht" kommt.
 * QuestWar: Imps bei Wieland loop attack nicht einmalig! Tagesabläufe!
-* Dämpfung: Effektpfad geht nicht.
+* FIXED: Dämpfung: Effektpfad geht nicht.
 * Rebhuhnjagd: Rebhuhnmodell.
 * Rebhuhnjagd: Icons für die drei Jagdfähigkeiten.
 * Jagdfalke: Braucht mehr Fähigkeiten. Muss auch in anderen Kämpfen von Nutzen sein.
@@ -391,7 +389,7 @@
 * FIXED: Arkane Zeit: Nur auf beschworene Einheiten.
 * Arkane Zeit: Beschwörungszeit bei Gegnern weiter reduzieren.
 * Was passiert mit dem Handicap der Creeps wenn ein Spieler das Spiel verlässt.
-* Nekromant: Maximum an Skeletten.
+* FIXED: Nekromant: Maximum an Skeletten.
 * FIXED: Rebhuhn wird für beide Spieler abgeschlossen.
 * 2/2 Rudelführer obwohl nur einer getötet wurde.
 * Eiserne Haut, Aura der Rücknahme, Autorität, Stich.
@@ -399,21 +397,21 @@
 * DEPRECATED (Stimmt nicht): Schattenefreet aus Weltenportal verursacht Flächenschaden.
 * Verhindern dass Arenagegner Leute außerhalb der Arena angreift.
 * FIXED: Mathilda kann mitgenommen werden, wird nicht wiederbelebt.
-* 2. Vorratswagen ist wieder zurückgefahren, Spieler 2.
+* 2. Vorratswagen ist wieder zurückgefahren, Spieler 2. Timer einbauen wie bei Dago!
 * FIXED: Metzelei: Auftragsbeschreibung.
-* Kopfbedeckung bleibt oft im Inventar, wenn man in den Rucksack geht.
-* Seitengegenstand wurde einfach im Rucksack rechts oben erzeugt.
-* KOPFBEDECKUNG KRONE DES KARORNWALDES IST IMMER IM ERSTEN FACH DES RUCKSACKS.
+* FIXED: Kopfbedeckung bleibt oft im Inventar, wenn man in den Rucksack geht. Lag an Inventarbug wegen TriggerSleepAction().
+* FIXED: Seitengegenstand wurde einfach im Rucksack rechts oben erzeugt. Lag an Inventarbug wegen TriggerSleepAction().
+* FIXED: KOPFBEDECKUNG KRONE DES KARORNWALDES IST IMMER IM ERSTEN FACH DES RUCKSACKS. Lag an Inventarbug wegen TriggerSleepAction().
 * FIXED (Workaround mit Load-Event): Beim Laden sind alle Zauber die NICHT in den Favoriten sind nur noch Stufe 1!!! Warcraft-3-Ladebug. EINDEUTIG LADEBUG, reproduzierbar.
 * Aus Favoriten entfernen wird bei Spieler 2 nicht angezeigt. Hat 3 Zauber und dann 4 Zauber, Ritter, geht nie.
 * Bei Spieler 2 kam nicht zu Favoriten hinzufügen, Zauber waren automatisch in den Favoriten (Auren). Sobald sie einen fünften Zauber geskillt hat, war dieser auf einmal MIT ALLEN FAVORITEN nicht mehr in den Favoriten. Liegt eventuell an Wiederbelebung (wenn beide tot sind?!?!). Nach Wiederbelebung passierte mir das gleiche, alle Zauber waren nicht mehr in den Favoriten, hatte auch 5 Zauber, einer davon war schon in den Fähigkeiten.
 * Aus Favoriten entfernen kam bei mir AUCH NICHT!!!!! Limit von GrimoireEntries?????!?!?!
 * DEPRECATED (nach Wiederbelebung ist alles wie vorher): Vielleicht der gleiche Bug wie beim Laden einer Karte, dass die Fähigkeiten auf einman nicht in den Favoriten Stufe 1 sind?! kann eigentlich nicht sein, da die Fähigkeit nicht verfügbar ist.
 * DEPRECATED (haben eben keine Items): Dämon und Erzengel im AOS sind zu langsam, langsamer als Charakter.
-* Dämonen in AOS sind stärker als Engel. Gleich stark machen.
+* FIXED: Dämonen in AOS sind stärker als Engel. Gleich stark machen.
 * FIXED: Ladebildschirm rechte Hälfte fixen.
 * Benötigte Stufe für Ultimates in Tooltip eintragen.
-* Alle Hinweise in Tooltips in einheitlicher Farbe.
+* Alle Hinweise in Tooltips in einheitlicher Farbe. Das gelb aus Warcraft benutzen, da es am besten lesbar ist.
 * Ursulas Druidensatz einbauen.
 * Mathildas Auftrag und Schalmei einbauen.
 * Spielnachrichten loggen und mit "-history" zugänglich machen.
@@ -426,9 +424,9 @@
 * FIXED: Konzentration ist zu schlecht.
 * Wenn Stich direkt tötet, benötigt es keine Abklingzeit.
 * FIXED: Verspotten: Verhinderter Schaden geht entweder nicht oder wird nicht angezeigt.
-* Verspotten: Keine Abklingzeit.
+* FIXED: Verspotten: Keine Abklingzeit.
 * Alle Fähigkeiten aus Klassenauswahl preloaden. Reduziert Lag.
-* Level-Trigger des Grimoire triggert nicht.
+* DEPRECATED: Level-Trigger des Grimoire triggert nicht.
 * Spruchrollen günstiger machen.
 * Waffen bei Einar usw. viel mehr Aufladungen.
 * FIXED: Respawn-Zeit für Creeps länger machen.
@@ -479,7 +477,10 @@
 * FIXED: Jägermodell für Dago, keine Assassine.
 * Blocker in Burg und auf Felsen einbauen.
 * Arena: Wenn Spieler hilft dann killen.
-* Gegenstände nach Besitzer einfärben.
+* FIXED: Gegenstände nach Besitzer einfärben.
+* HeroGlow für Ringmodell.
+* HeroGlow für Schwertmodell.
+* HeroGlow für Schildmodell.
 * Björn's Dialog verbuggt: Weiß nicht wo Dago ist aber hat vom Kampf gehört? Nicht verbuggt, hat vom Kampf von einem Freund gehört. Dann sollte er aber wissen wo Dago ist.
 * Auftrag "Die Nordmänner": Sammelgebiet im Lager der Nordmänner machen.
 * Auftrag "Die Nordmänner": Bei Verstärkung und gegnerischen Wellen kurzen Cinematic oder Spiel anhalten.
@@ -507,7 +508,7 @@
 * Kisten allmählich durch Marktstände ersetzen. Man findet sie ansonsten nicht.
 * FIXED: Nekromant: Dämon war zu stark.
 * FIXED: Feedback wenn Gegenstand in Rucksack kommt.
-* Medusa und Diakon in eine Spawngruppe, ansonsten kaum schaffbar. Vielleicht aber auch witzige Herausforderung.
+* FIXED: Medusa und Diakon in eine Spawngruppe, ansonsten kaum schaffbar. Vielleicht aber auch witzige Herausforderung.
 * FIXED: Drachentöterin läuft in Video in dem sie den Diakon umbringt einfach weg.
 * Desync bei erster Waldläuferverstärkung.
 * FIXED: Effekt von Spellicon im Zauberbuch entfernen (Zurück zum Zauberbuch)
@@ -529,10 +530,15 @@
 * FIXED: Quest Area für The Castle.
 * FIXED: Quest Area für The Duke Of Talras.
 * FIXED: Verspotten hat keine Abklingzeit.
+* Baldars Dialog: Spieler 2 bekommt nur Ende angezeigt?!
+* Haldars Dialog: Spieler 2 bekommt nur Ende angezeigt?!
 * Björn: Dialog war verbuggt. Dialog aufgepoppt obwohl beendet, Spieler 2, dann unbesiegbar.
 * Bei Spieler 2 werden eindeutig bestimmte Dialoge nicht angezeigt. Zu viele struct-Instanzen? Falls ja alle Dialoge static machen!!!
-* Rettet Dago: Bären sollten auf Dago zugehen.
 * Das erste Gefecht: Clipping und Kamerafahrt.
+* FIXED: GameArea: Energiewand auf Breite und Länge de Rects skalieren.
+* FIXED: Beutezug: Allen Verbündeten einen zufälligen Gegenstand geben, ansonsten unfair.
+* Arena: Autoskill fixen. Bricht vermutlich schlicht wegen des OpLimits ab.
+* Rettet Dago Video 1: Bären sollen Dago angreifen, Sound einbauen, mehr Action.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

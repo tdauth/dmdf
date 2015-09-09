@@ -5,10 +5,18 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 	 * It is mostly used to ensure that all characters are at a certain point when the event starts and are movable and not in talks or something else.
 	 */
 	struct QuestArea
-		private fogmodifier array m_assemblyPointFogModifier[6]
+		private fogmodifier array m_assemblyPointFogModifier[6] /// \todo MapData.maxPlayers
 		private destructable array m_assemblyPointMarker[4]
 		private rect m_rect
 		private trigger m_enterTrigger
+		/**
+		 * The destructable type ID of an energie wall.
+		 */
+		private static constant integer destructableId = 'B00N'
+		/**
+		 * The length of an energie wall with scaling 1.0.
+		 */
+		private static constant real defaultLength = 6 * bj_CELLWIDTH
 		
 		/**
 		 * Checks for a user specified condition which must be true to activate the event at all.
@@ -86,6 +94,10 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			call this.onStart.execute()
 		endmethod
 		
+		/**
+		 * Creates a new quest area in rect \p whichRect.
+		 * This shows an energie wall around the rect and checks for condition \ref onCheck() when a character enters.
+		 */
 		public static method create takes rect whichRect returns thistype
 			local thistype this = thistype.allocate()
 			local integer i
@@ -97,6 +109,8 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			local real topY
 			local real bottomX
 			local real bottomY
+			local real verticalScaling
+			local real horizontalScaling
 			set this.m_rect = whichRect
 			// create a visible effect on the map that it is easier to find the rect
 			set i = 0
@@ -116,13 +130,23 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			set bottomX = GetRectCenterX(this.m_rect)
 			set bottomY = GetRectMinY(this.m_rect)
 			
-			set this.m_assemblyPointMarker[0] = CreateDestructable('B00N', rightX, rightY, 0.0, 1.0,  0)
+			set verticalScaling = (GetRectMaxY(this.m_rect) - GetRectMinY(this.m_rect)) / thistype.defaultLength
+			set horizontalScaling = (GetRectMaxX(this.m_rect) - GetRectMinX(this.m_rect)) / thistype.defaultLength
+			
+			// right
+			set this.m_assemblyPointMarker[0] = CreateDestructable(thistype.destructableId, rightX, rightY, 0.0, verticalScaling,  0)
 			call SetDestructableInvulnerable(this.m_assemblyPointMarker[0], true)
-			set this.m_assemblyPointMarker[1] = CreateDestructable('B00N', leftX, leftY, 0.0, 1.0,  0)
+			
+			// left
+			set this.m_assemblyPointMarker[1] = CreateDestructable(thistype.destructableId, leftX, leftY, 0.0, verticalScaling,  0)
 			call SetDestructableInvulnerable(this.m_assemblyPointMarker[1], true)
-			set this.m_assemblyPointMarker[2] = CreateDestructable('B00N', topX, topY, 90.0, 1.0,  0)
+			
+			// top
+			set this.m_assemblyPointMarker[2] = CreateDestructable(thistype.destructableId, topX, topY, 90.0, horizontalScaling,  0)
 			call SetDestructableInvulnerable(this.m_assemblyPointMarker[2], true)
-			set this.m_assemblyPointMarker[3] = CreateDestructable('B00N', bottomX, bottomY, 90.0, 1.0,  0)
+			
+			// bottom
+			set this.m_assemblyPointMarker[3] = CreateDestructable(thistype.destructableId, bottomX, bottomY, 90.0, horizontalScaling,  0)
 			call SetDestructableInvulnerable(this.m_assemblyPointMarker[3], true)
 			
 			set this.m_enterTrigger = CreateTrigger()

@@ -34,7 +34,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call QuestSlaughter.quest.evaluate().questItem(5).setState(AAbstractQuest.stateNew)
 			call QuestSlaughter.quest.evaluate().questItem(6).setState(AAbstractQuest.stateNew)
 			call QuestSlaughter.quest.evaluate().displayUpdate()
-			call QuestSlaughter.quest.evaluate().setPingByUnitTypeId.execute(SpawnPoints.medusa(), UnitTypes.medusa)
+			call QuestSlaughter.quest.evaluate().setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.medusa)
 		endmethod
 	
 		public static method create takes rect whichRect returns thistype
@@ -149,11 +149,11 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.quest().questItem(5).setState(thistype.stateNew)
 			call questItem.quest().questItem(6).setState(thistype.stateNew)
 			call questItem.quest().displayUpdate()
-			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.medusa(), UnitTypes.medusa)
+			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.medusa)
 		endmethod
 
 		private static method stateConditionCompleted5 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.medusa().countUnitsOfType(UnitTypes.medusa) == 0
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.medusa) == 0
 		endmethod
 		
 		private static method finishQuest takes nothing returns nothing

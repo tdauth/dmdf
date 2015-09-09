@@ -335,6 +335,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A19U', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A19V', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A19W', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1AF', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1AG', false)
 				set i = i + 1
 			endloop
 		endmethod

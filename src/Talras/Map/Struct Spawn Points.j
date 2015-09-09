@@ -113,7 +113,6 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_box3
 		private static SpawnPoint m_undeadsWithKing
 		private static SpawnPoint m_medusaBoxes
-		private static SpawnPoint m_medusa
 		private static SpawnPoint m_deathVault
 		private static SpawnPoint m_deathVaultBoxes0
 		private static SpawnPoint m_deathVaultBoxes1
@@ -541,21 +540,21 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n032_0278, 1.0)
 			
 			// units
-			set thistype.m_medusa = SpawnPoint.create()
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n033_0239, 1.0)
-			call thistype.m_medusa.addNewItemType(index, 'I04J', 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0265, 1.0)
-			call thistype.m_medusa.addNewItemType(index, 'rhe3', 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0290, 1.0)
-			call thistype.m_medusa.addNewItemType(index, 'rhe3', 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0289, 1.0)
-			call thistype.m_medusa.addNewItemType(index, 'rhe3', 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n034_0291, 1.0)
-			call thistype.m_medusa.addNewItemType(index, 'rma2', 1.0)
-			set index = thistype.m_medusa.addUnitWithType(gg_unit_n043_0486, 1.0)
-			call thistype.m_medusa.addNewItemType(index, 'rma2', 1.0)
-
 			set thistype.m_deathVault = SpawnPoint.create()
+			// medusa
+			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n033_0239, 1.0)
+			call thistype.m_deathVault.addNewItemType(index, 'I04J', 1.0)
+			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n034_0265, 1.0)
+			call thistype.m_deathVault.addNewItemType(index, 'rhe3', 1.0)
+			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n034_0290, 1.0)
+			call thistype.m_deathVault.addNewItemType(index, 'rhe3', 1.0)
+			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n034_0289, 1.0)
+			call thistype.m_deathVault.addNewItemType(index, 'rhe3', 1.0)
+			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n034_0291, 1.0)
+			call thistype.m_deathVault.addNewItemType(index, 'rma2', 1.0)
+			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n043_0486, 1.0)
+			call thistype.m_deathVault.addNewItemType(index, 'rma2', 1.0)
+			// diacon
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n035_0299, 1.0)
 			call thistype.m_deathVault.addNewItemType(index, 'I04E', 1.0)
 			call thistype.m_deathVault.addNewItemType(index, 'I04K', 1.0)
@@ -836,10 +835,6 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 		public static method vampires0 takes nothing returns SpawnPoint
 			return thistype.m_vampires0
-		endmethod
-
-		public static method medusa takes nothing returns SpawnPoint
-			return thistype.m_medusa
 		endmethod
 
 		public static method deathVault takes nothing returns SpawnPoint

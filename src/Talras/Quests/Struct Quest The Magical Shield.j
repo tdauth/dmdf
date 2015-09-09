@@ -23,7 +23,7 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 			if (GetItemTypeId(GetManipulatedItem()) == thistype.shieldItemTypeId) then
 				if (not this.m_shieldEnabled) then
 					set this.m_shieldEnabled = true
-					set this.m_shieldEffect = AddSpecialEffectTarget("war3mapImported\\SlowTime.mdx", GetTriggerUnit(), "chest")
+					set this.m_shieldEffect = AddSpecialEffectTarget("Abilities\\ForceFieldNocolour\\FieldBASE.mdx", GetTriggerUnit(), "chest")
 				endif
 			elseif (GetItemTypeId(GetManipulatedItem()) == thistype.arrowsItemTypeId) then
 				// TODO use arrow effect

@@ -13,7 +13,6 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
-			call Game.hideSpawnPointUnits(SpawnPoints.medusa())
 			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
 			call SetTimeOfDay(0.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
@@ -238,7 +237,6 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 			call this.m_thunderCreatures.destroy()
 			call this.m_actorsDoomedMen.destroy()
 
-			call Game.showSpawnPointUnits(SpawnPoints.medusa())
 			call Game.showSpawnPointUnits(SpawnPoints.deathVault())
 			call Game.resetVideoSettings()
 		endmethod
