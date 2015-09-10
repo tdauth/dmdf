@@ -20,26 +20,35 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 			// bears
 			set this.m_actorBear0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0083))
 			call IssueImmediateOrder(this.m_actorBear0, "stop")
+			call SetUnitInvulnerable(this.m_actorBear0, false)
 			//call SetUnitMoveSpeed(this.m_actorBear0, 150.0)
 			set this.m_actorBear1 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0027))
 			call IssueImmediateOrder(this.m_actorBear1, "stop")
+			call SetUnitInvulnerable(this.m_actorBear1, false)
 			//call SetUnitMoveSpeed(this.m_actorBear1, 150.0)
 
 			// Dago
 			set this.m_actorDago = thistype.unitActor(thistype.saveUnitActor(Npcs.dago()))
 			call IssueImmediateOrder(this.m_actorDago, "stop")
+			call SetUnitInvulnerable(this.m_actorDago, false)
+			
+			call ShowUnit(thistype.actor(), false)
+			call SetUnitInvulnerable(thistype.actor(), true)
+			call PauseUnit(thistype.actor(), true)
 			
 			set this.m_damageTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(this.m_damageTrigger, this.m_actorBear0, EVENT_UNIT_DAMAGED)
 			call TriggerRegisterUnitEvent(this.m_damageTrigger, this.m_actorBear1, EVENT_UNIT_DAMAGED)
 			call TriggerRegisterUnitEvent(this.m_damageTrigger, this.m_actorDago, EVENT_UNIT_DAMAGED)
 			call TriggerAddCondition(this.m_damageTrigger, Condition(function thistype.triggerConditionDamage))
-		endmethod
-
-		public stub method onPlayAction takes nothing returns nothing
+			
 			call IssueTargetOrder(this.m_actorBear0, "attack", this.m_actorDago)
 			call IssueTargetOrder(this.m_actorBear1, "attack", this.m_actorDago)
 			call IssueTargetOrder(this.m_actorDago, "attack", this.m_actorBear0)
+		endmethod
+
+		public stub method onPlayAction takes nothing returns nothing
+			
 			call PlaySoundBJ(gg_snd_GrizzlyBearReady1)
 			if (wait(1.0)) then
 				return
@@ -88,7 +97,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			call PauseUnit(Npcs.dago(), false)
+			call PauseUnit(Npcs.dago(), true)
 			call SetUnitInvulnerable(Npcs.dago(), true)
 			call PauseUnit(gg_unit_n008_0083, true)
 			call SetUnitInvulnerable(gg_unit_n008_0083, true)

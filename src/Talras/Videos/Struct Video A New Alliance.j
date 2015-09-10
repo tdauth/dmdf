@@ -73,7 +73,7 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Leider reicht das dem Herzog nicht aus. Er möchte absolut sicher gehen und deshalb benötigt er noch mehr Unterstützung. Uns ist von einer Hochelfin zu Ohren gekommen, die durch diese Ländereien zieht. Durch sie könnten wir Kontakte zu den Hochelfen knüpfen"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Leider reicht das dem Herzog nicht aus. Er möchte absolut sicher gehen und deshalb benötigt er noch mehr Unterstützung. Uns ist von einer Hochelfin zu Ohren gekommen, die durch diese Ländereien zieht. Durch sie könnten wir Kontakte zu den Hochelfen knüpfen."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

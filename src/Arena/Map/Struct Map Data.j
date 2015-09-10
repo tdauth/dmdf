@@ -319,6 +319,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 				call LeaderboardAddItemBJ(whichPlayer, thistype.m_leaderboard, GetPlayerName(whichPlayer), 0)
 				
 				call SetUnitInvulnerable(ACharacter.playerCharacter(whichPlayer).unit(), true)
+				// evaluate because of OpLimit
 				call thistype.autoSkill.evaluate(whichPlayer)
 			endif
 		endmethod
@@ -330,13 +331,18 @@ library StructMapMapMapData requires Asl, StructGameGame
 			// try for every spell and do not exit before since it returns false on having the maximum level already
 			loop
 				exitwhen (i == grimoire.spells())
-				if (not grimoire.setSpellMaxLevelByIndex.evaluate(i, false)) then
+				// evaluate because of OpLimit
+				if (not thistype.autoSkillGrimoireSpell.evaluate(grimoire, i)) then
 					set result = false
-					debug call Print("Failed at " + GetObjectName(grimoire.spells()[i].ability()))
+					debug call Print("Failed at " + GetObjectName(grimoire.spell(i).ability()))
 				endif
 				set i = i + 1
 			endloop
 			call grimoire.updateUi.evaluate()
+		endmethod
+		
+		private static method autoSkillGrimoireSpell takes Grimoire grimoire, integer index returns boolean
+			return grimoire.setSpellMaxLevelByIndex.evaluate(index, false)
 		endmethod
 
 		/// Required by \ref Classes.

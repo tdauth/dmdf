@@ -539,6 +539,7 @@
 * FIXED: Beutezug: Allen Verbündeten einen zufälligen Gegenstand geben, ansonsten unfair.
 * Arena: Autoskill fixen. Bricht vermutlich schlicht wegen des OpLimits ab.
 * Rettet Dago Video 1: Bären sollen Dago angreifen, Sound einbauen, mehr Action.
+* FIXED: Bekehrung: Sollte die Einheit am Ende nicht töten sondern die Kontrolle zurückgeben.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

@@ -272,7 +272,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcPython, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(Npcs.ricman(), tr("Diese verdammten Hunde haben Verstärkung gerufen. Macht euch bereit Männer!"), gg_snd_RicmanTheNorsemenRicman1)
+				call TransmissionFromUnitWithName(Npcs.ricman(), tr("Ricman"), tr("Diese verdammten Hunde haben Verstärkung gerufen. Macht euch bereit Männer!"), gg_snd_RicmanTheNorsemenRicman1)
 				
 				call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_1), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_1), bj_RESCUE_PING_TIME)
 			elseif (this.m_currentGroupIndex == 2) then
@@ -285,7 +285,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(Npcs.ricman(), tr("Schon wieder ein neuer Trupp."), gg_snd_RicmanTheNorsemenRicman2) // TODO wrong sound
+				call TransmissionFromUnitWithName(Npcs.ricman(), tr("Ricman"), tr("Schon wieder ein neuer Trupp."), gg_snd_RicmanTheNorsemenRicman2) // TODO wrong sound
 			elseif (this.m_currentGroupIndex == 3) then
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
@@ -296,7 +296,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(Npcs.ricman(), tr("Schlachtet sie!"), gg_snd_RicmanTheNorsemenRicman3)
+				call TransmissionFromUnitWithName(Npcs.ricman(), tr("Ricman"), tr("Schlachtet sie!"), gg_snd_RicmanTheNorsemenRicman3)
 			elseif (this.m_currentGroupIndex == 4) then
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)

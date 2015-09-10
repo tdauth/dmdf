@@ -23,6 +23,7 @@
 //! import "Talras/Quests/Struct Quest Storming The Mill.j"
 //! import "Talras/Quests/Struct Quest Supply For Talras.j"
 //! import "Talras/Quests/Struct Quest Talras.j"
+//! import "Talras/Quests/Struct Quest The Author.j"
 //! import "Talras/Quests/Struct Quest The Beast.j"
 //! import "Talras/Quests/Struct Quest The Brave Armourer Of Talras.j"
 //! import "Talras/Quests/Struct Quest The Dark Cult.j"
@@ -43,7 +44,7 @@
 //! import "Talras/Quests/Struct Quest Wolves Hunt.j"
 //! import "Talras/Quests/Struct Quest Wood For The Hut.j"
 
-library MapQuests requires StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestAmongTheWeaponsPeasants, StructMapQuestsQuestArenaChampion, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCatsForBrogo, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestDeathToBlackLegion, StructMapQuestsQuestDeathToWhiteLegion, StructMapQuestsQuestDeranor, StructMapQuestsQuestGoldForTheTradingPermission, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestMushroomSearch, StructMapQuestsQuestMyFriendTheBear, StructMapQuestsQuestPerdixHunt, StructMapQuestsQuestProtectThePeople, StructMapQuestsQuestSeedsForTheGarden, StructMapQuestsQuestReinforcementForTalras, StructMapQuestsQuestRescueDago, StructMapQuestsQuestShamansInTalras, StructMapQuestsQuestSlaughter, StructMapQuestsQuestStormingTheMill, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestTalras, StructMapQuestsQuestTheBeast, StructMapQuestsQuestTheBraveArmourerOfTalras, StructMapQuestsQuestTheDarkCult, StructMapQuestsQuestTheDefenseOfTalras, StructMapQuestsQuestTheDragon, StructMapQuestsQuestTheGhostOfTheMaster, StructMapQuestsQuestTheHolyPotato, StructMapQuestsQuestTheKingsCrown, StructMapQuestsQuestTheMagic, StructMapQuestsQuestTheMagicalShield, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestTheOaksPower, StructMapQuestsQuestThePaedophilliacCleric, StructMapQuestsQuestTheWayToHolzbruck, StructMapQuestsQuestWar, StructMapQuestsQuestWielandsSword, StructMapQuestsQuestWitchingHour, StructMapQuestsQuestWolvesHunt, StructMapQuestsQuestWoodForTheHut
+library MapQuests requires StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent, StructMapQuestsQuestANewAlliance, StructMapQuestsQuestAmongTheWeaponsPeasants, StructMapQuestsQuestArenaChampion, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestCatsForBrogo, StructMapQuestsQuestCoatsForThePeasants, StructMapQuestsQuestDeathToBlackLegion, StructMapQuestsQuestDeathToWhiteLegion, StructMapQuestsQuestDeranor, StructMapQuestsQuestGoldForTheTradingPermission, StructMapQuestsQuestKunosDaughter, StructMapQuestsQuestMushroomSearch, StructMapQuestsQuestMyFriendTheBear, StructMapQuestsQuestPerdixHunt, StructMapQuestsQuestProtectThePeople, StructMapQuestsQuestSeedsForTheGarden, StructMapQuestsQuestReinforcementForTalras, StructMapQuestsQuestTheAuthor, StructMapQuestsQuestRescueDago, StructMapQuestsQuestShamansInTalras, StructMapQuestsQuestSlaughter, StructMapQuestsQuestStormingTheMill, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestTalras, StructMapQuestsQuestTheBeast, StructMapQuestsQuestTheBraveArmourerOfTalras, StructMapQuestsQuestTheDarkCult, StructMapQuestsQuestTheDefenseOfTalras, StructMapQuestsQuestTheDragon, StructMapQuestsQuestTheGhostOfTheMaster, StructMapQuestsQuestTheHolyPotato, StructMapQuestsQuestTheKingsCrown, StructMapQuestsQuestTheMagic, StructMapQuestsQuestTheMagicalShield, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestTheOaksPower, StructMapQuestsQuestThePaedophilliacCleric, StructMapQuestsQuestTheWayToHolzbruck, StructMapQuestsQuestWar, StructMapQuestsQuestWielandsSword, StructMapQuestsQuestWitchingHour, StructMapQuestsQuestWolvesHunt, StructMapQuestsQuestWoodForTheHut
 
 	function initMapPrimaryQuests takes nothing returns nothing
 		call QuestANewAlliance.initQuest()
@@ -78,6 +79,7 @@ library MapQuests requires StructMapQuestsQuestABigPresent, StructMapQuestsQuest
 		call QuestShamansInTalras.initQuest()
 		call QuestStormingTheMill.initQuest()
 		call QuestSupplyForTalras.initQuest()
+		call QuestTheAuthor.initQuest()
 		call QuestTheBeast.initQuest()
 		call QuestTheBraveArmourerOfTalras.initQuest()
 		call QuestTheDarkCult.initQuest()

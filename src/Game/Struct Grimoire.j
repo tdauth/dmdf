@@ -333,6 +333,10 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			endif
 			call this.setSkillPoints(this.m_skillPoints + skillPoints)
 		endmethod
+		
+		public method spell takes integer index returns Spell
+			return this.m_spells[index]
+		endmethod
 
 		public method spellIndex takes Spell spell returns integer
 			return this.m_spells.find(spell)

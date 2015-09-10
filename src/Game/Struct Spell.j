@@ -322,13 +322,9 @@ library StructGameSpell requires Asl, StructGameCharacter
 			return GrimoireSpellEntry(this.grimoireEntries()[this.level()]).isShown.evaluate()
 			//return GetPlayerTechMaxAllowed(this.character().player(), this.tech()) == this.getMaxLevel()
 		endmethod
-
-		public static method create takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction returns thistype
-			/*
-			 * Make sure that GetSpellTargetX() and other event data works properly.
-			 * EVENT_UNIT_SPELL_ENDCAST would NOT work and is reserved for grimoire entries.
-			 */
-			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, EVENT_UNIT_SPELL_CHANNEL)
+		
+		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, unitevent unitEvent returns thistype
+			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, unitEvent)
 			set this.m_savedLevel = 0
 			set this.m_favouriteAbility = favouriteAbility
 			set this.m_maxLevel = maxLevel
@@ -339,6 +335,14 @@ library StructGameSpell requires Asl, StructGameCharacter
 			call character.addClassSpell(this)
 			
 			return this
+		endmethod
+
+		public static method create takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction returns thistype
+			/*
+			 * Make sure that GetSpellTargetX() and other event data works properly.
+			 * EVENT_UNIT_SPELL_ENDCAST would NOT work and is reserved for grimoire entries.
+			 */
+			return thistype.createWithEvent(character, class, spellType, maxLevel, abilityId, favouriteAbility, upgradeAction, castCondition, castAction, EVENT_UNIT_SPELL_CHANNEL)
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
