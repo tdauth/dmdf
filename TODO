@@ -540,6 +540,10 @@
 * Arena: Autoskill fixen. Bricht vermutlich schlicht wegen des OpLimits ab.
 * Rettet Dago Video 1: Bären sollen Dago angreifen, Sound einbauen, mehr Action.
 * FIXED: Bekehrung: Sollte die Einheit am Ende nicht töten sondern die Kontrolle zurückgeben.
+* Verwandlung und Levelup öffnen automatisch das Zauberbuch!
+* Schaf reiten ermöglicht Verwandlung in andere Gestalten durch das Inventar während man auf einem Schaf reitet. Sollte nicht zugelassen werden. Nur eine Verwandlung zulassen, ansonsten Verschachtelung.
+* Transparente Bäume.
+* Klerikerzauber: Schutz durch Anzahl erkundeter Schreine?
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

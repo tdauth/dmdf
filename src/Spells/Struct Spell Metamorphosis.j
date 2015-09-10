@@ -97,51 +97,58 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		 * Morphs the character.
 		 */
 		private method morph takes nothing returns nothing
-			if (this.canMorph.evaluate()) then
-				if (Character(this.character()).morph(this.disableInventory())) then	
-					/*
-					* The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.	
-					* Removing all grimoire abilities including the ability itself is only done for safety to make sure that no grimoire
-					* ability is being cast which is in a spell book.
-					*/
-					if (this.disableGrimoire()) then
-						call Character(this.character()).grimoire().removeAllSpellsFromUnit()
-					endif
-					
-					/*
-					 * These two lines of code do the passive transformation to a range fighting unit.
-					 */
-					call UnitAddAbility(this.character().unit(), this.morphAbilityId())
-					call UnitRemoveAbility(this.character().unit(), this.morphAbilityId())
-					
-					set this.m_isMorphed = true
-					
-					// add unmorph spell
-					if (this.disableGrimoire() or this.disableInventory()) then
-						call UnitAddAbility(this.character().unit(), this.abilityId())
-					endif
-					
-					/**
-					 * Grimoire spells need to be readded.
-					 */
-					if (not this.disableGrimoire()) then
-						call this.character().updateGrimoireAfterPassiveTransformation()
+			/*
+			 * Only allow one metamorphosis at a time.
+			 */
+			if (not this.isMorphed()) then
+				if (this.canMorph.evaluate()) then
+					if (Character(this.character()).morph(this.disableInventory())) then	
+						/*
+						 * The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.	
+						 * Removing all grimoire abilities including the ability itself is only done for safety to make sure that no grimoire
+						 * ability is being cast which is in a spell book.
+						 */
+						if (this.disableGrimoire()) then
+							call Character(this.character()).grimoire().removeAllSpellsFromUnit()
+						endif
 						
 						/*
-						 * Add skill spell and abilities spell.
+						 * These two lines of code do the passive transformation to a range fighting unit.
 						 */
-						if (GetUnitAbilityLevel(this.character().unit(), Grimoire.spellsAbilityId) == 0) then
-							call UnitAddAbility(this.character().unit(), Grimoire.spellsAbilityId)
+						call UnitAddAbility(this.character().unit(), this.morphAbilityId())
+						call UnitRemoveAbility(this.character().unit(), this.morphAbilityId())
+						
+						set this.m_isMorphed = true
+						
+						// add unmorph spell
+						if (this.disableGrimoire() or this.disableInventory()) then
+							call UnitAddAbility(this.character().unit(), this.abilityId())
 						endif
-						if (GetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId) == 0) then
-							call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
-							call SetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId, this.character().skillPoints())
+						
+						/**
+						 * Grimoire spells need to be readded.
+						 */
+						if (not this.disableGrimoire()) then
+							call this.character().updateGrimoireAfterPassiveTransformation()
+							
+							/*
+							 * Add skill spell and abilities spell.
+							 */
+							if (GetUnitAbilityLevel(this.character().unit(), Grimoire.spellsAbilityId) == 0) then
+								call UnitAddAbility(this.character().unit(), Grimoire.spellsAbilityId)
+							endif
+							if (GetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId) == 0) then
+								call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
+								call SetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId, this.character().skillPoints())
+							endif
 						endif
+				
+						// morph spells are expected to morph immediately
+						call this.onMorph.evaluate()
 					endif
-			
-					// morph spells are expected to morph immediately
-					call this.onMorph.evaluate()
 				endif
+			else
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Charakter ist bereits verwandelt."))
 			endif
 		endmethod
 		

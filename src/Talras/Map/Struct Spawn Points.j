@@ -544,6 +544,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			// medusa
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n033_0239, 1.0)
 			call thistype.m_deathVault.addNewItemType(index, 'I04J', 1.0)
+			call thistype.m_deathVault.addNewItemType(index, 'I05W', 1.0)
+			call thistype.m_deathVault.addNewItemType(index, 'I02S', 1.0)
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n034_0265, 1.0)
 			call thistype.m_deathVault.addNewItemType(index, 'rhe3', 1.0)
 			set index = thistype.m_deathVault.addUnitWithType(gg_unit_n034_0290, 1.0)
