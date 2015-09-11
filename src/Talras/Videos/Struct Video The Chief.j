@@ -76,9 +76,9 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_3, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Lass sie!"), null)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Lass sie!"), gg_snd_Wigberht29)
 			call SetUnitAnimation(this.m_actorWigberht, "Spell")
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht29))) then
 				return
 			endif
 			call SetUnitFacingToFaceUnit(this.m_actorWigberht,  this.m_actorRicman)
@@ -98,72 +98,72 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			call SetUnitFacingToFaceUnit(this.m_actorRicman, this.m_actorWigberht)
 			call SetUnitFacingToFaceUnit(this.m_actorWigberht, thistype.actor())
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Was wollt ihr von mir?"), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Was wollt ihr von mir?"), gg_snd_Wigberht30)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht30))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_7, true, 0.0)
+
 			call TransmissionFromUnit(thistype.actor(), tr("Heimrich, der Herzog von Talras, möchte wissen, ob er ein Bündnis mit Euch und Euren Männern eingehen kann. Er braucht Unterstützung im Kampf gegen den Feind."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Wieso sollte ich ein Bündnis mit ihm eingehen?"), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Wieso sollte ich ein Bündnis mit ihm eingehen?"), gg_snd_Wigberht31)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht31))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_7, true, 0.0)
+
 			call TransmissionFromUnit(thistype.actor(), tr("Gemeinsam habt ihr eine größere Chance den Feind zu bezwingen."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Den Feind zu bezwingen? Seht, ich werde euch erklären, warum meine Männer und ich hier sind. Mein Vater, ein Kriegsherr des Nordens, wurde von Dunkelfelfen verschleppt. Wir folgten ihnen bis hier her."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Den Feind zu bezwingen? Seht, ich werde euch erklären, warum meine Männer und ich hier sind. Mein Vater, ein Kriegsherr des Nordens, wurde von Dunkelfelfen verschleppt. Wir folgten ihnen bis hier her."), gg_snd_Wigberht32)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht32))) then
 				return
 			endif
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Wir machen hier Rast, um herauszufinden wie groß das Heer der Orks ist, das in dieses Land eingefallen ist und dann greifen wir es an. Wir müssen uns durch ihre Linien schlagen, um den Dunkelelfen weiter folgen zu können."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Wir machen hier Rast, um herauszufinden wie groß das Heer der Orks ist, das in dieses Land eingefallen ist und dann greifen wir es an. Wir müssen uns durch ihre Linien schlagen, um den Dunkelelfen weiter folgen zu können."), gg_snd_Wigberht33)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht33))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_7, true, 0.0)
+
 			call TransmissionFromUnit(thistype.actor(), tr("Ihr paar wollt das Heer der Orks angreifen? Das ist Wahnsinn."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Der einzige Weg führt durch die Reihen der Orks. Wir haben keine Wahl. Dieser Herzog, der euch schickt, harrt in seiner Burg aus bis der Feind ihn angreift oder aushungern lässt. Wir sind keine Feiglinge, wir stellen uns dem Feind."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Der einzige Weg führt durch die Reihen der Orks. Wir haben keine Wahl. Dieser Herzog, der euch schickt, harrt in seiner Burg aus bis der Feind ihn angreift oder aushungern lässt. Wir sind keine Feiglinge, wir stellen uns dem Feind."), gg_snd_Wigberht34)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht34))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_7, true, 0.0)
+
 			call TransmissionFromUnit(thistype.actor(), tr("Und wann wollt ihr angreifen?"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Einer unserer Späher hat gestern eine Vorhut der Orks entdeckt. Sie befindet sich irgendwo im nördlichen Wald. Sobald wir bereit sind, schlagen wir zu. Wenn es euch beliebt dann kommt mit. Ihr seht aus, als würdet ihr gerne ein paar Orks abschlachten."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Einer unserer Späher hat gestern eine Vorhut der Orks entdeckt. Sie befindet sich irgendwo im nördlichen Wald. Sobald wir bereit sind, schlagen wir zu. Wenn es euch beliebt dann kommt mit. Ihr seht aus, als würdet ihr gerne ein paar Orks abschlachten."), gg_snd_Wigberht35)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht35))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_7, true, 0.0)
+
 			call TransmissionFromUnit(thistype.actor(), tr("Und was wird aus dem Bündnis?"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Beweist mir, dass ihr kampfstark seid und ich werde mir überlegen, ob wir noch eine Weile hier bleiben, um den Herzog zu unterstützen."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Beweist mir, dass ihr kampfstark seid und ich werde mir überlegen, ob wir noch eine Weile hier bleiben, um den Herzog zu unterstützen."), gg_snd_Wigberht36)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht36))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_7, true, 0.0)
+
 			call TransmissionFromUnit(thistype.actor(), tr("Sieht aus als hätten wir keine Wahl."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Exakt."), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Exakt."), gg_snd_Wigberht37)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht37))) then
 				return
 			endif
 			call this.stop()

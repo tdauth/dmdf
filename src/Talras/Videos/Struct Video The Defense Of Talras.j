@@ -3,5 +3,4 @@ Ricman: Wenn ihr sterben solltet, seid euch gewiss ihr seid ehrenvoll gestorben 
 Ricman: Ihr wisst sie haben uns unseren König genommen, dafür nehmen wir ihnen das Leben! Schlachtet sie ab, lasst keinen am Leben!
 Ricman: Auf dann, ein letztes Mal vor dem Morgengrauen! Kämpft für euren König, für seinen Sohn Wigberht, für die Ehre und für den Norden!
 
-
 Wigberht: Du denkst, du könntest mir Angst machen? Höre, ich habe den Tod gesehen und er ließ mich kalt. Ich sah den Schrecken, den deine Sippe über mein Volk brachte, doch er ließ mich kalt. Dein Tod aber wird mir Freude bereiten!
