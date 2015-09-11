@@ -23,10 +23,6 @@ library StructMapSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 				exitwhen (i == Shrine.shrines().size())
 				set shrine = Shrine(Shrine.shrines()[i])
 				set dist = GetDistanceBetweenPointsWithoutZ(GetRectCenterX(shrine.revivalRect()), GetRectCenterY(shrine.revivalRect()), GetSpellTargetX(), GetSpellTargetY())
-				// pings all available shrines
-				if (not IsMaskedToPlayer(GetRectCenterX(shrine.revivalRect()), GetRectCenterY(shrine.revivalRect()), this.character().player())) then
-					call PingMinimapExForPlayer(Player(0), GetRectCenterX(shrine.revivalRect()), GetRectCenterY(shrine.revivalRect()), 10.0, 100, 200, 100, false)
-				endif
 				if (dist <= thistype.distance) then
 					set result = true
 				endif
