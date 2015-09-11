@@ -504,7 +504,7 @@
 * Stab des Druiden usw. brauchen Orb-basierte Fähigkeit, ansonsten wird kein eigenes Geschoss verwendet.
 * FIXED: Fulco und Tellborn sollten einen gemeinsamen Marktstand haben. Ist sonst schwer zu finden und zu merken.
 * FIXED: Tanka und Haid brauchen einen Marktstand.
-* Drachentöter Zauber: Beute. Erhält einen zufälligen Gegenstand aus einem Laden in der Karte.
+* DEPRECATED: Drachentöter Zauber: Beute. Erhält einen zufälligen Gegenstand aus einem Laden in der Karte.
 * Kisten allmählich durch Marktstände ersetzen. Man findet sie ansonsten nicht.
 * FIXED: Nekromant: Dämon war zu stark.
 * FIXED: Feedback wenn Gegenstand in Rucksack kommt.
@@ -537,13 +537,17 @@
 * Das erste Gefecht: Clipping und Kamerafahrt.
 * FIXED: GameArea: Energiewand auf Breite und Länge de Rects skalieren.
 * FIXED: Beutezug: Allen Verbündeten einen zufälligen Gegenstand geben, ansonsten unfair.
-* Arena: Autoskill fixen. Bricht vermutlich schlicht wegen des OpLimits ab.
-* Rettet Dago Video 1: Bären sollen Dago angreifen, Sound einbauen, mehr Action.
+* FIXED: Arena: Autoskill fixen. Bricht vermutlich schlicht wegen des OpLimits ab.
+* FIXED: Rettet Dago Video 1: Bären sollen Dago angreifen, Sound einbauen, mehr Action.
 * FIXED: Bekehrung: Sollte die Einheit am Ende nicht töten sondern die Kontrolle zurückgeben.
 * Verwandlung und Levelup öffnen automatisch das Zauberbuch!
-* Schaf reiten ermöglicht Verwandlung in andere Gestalten durch das Inventar während man auf einem Schaf reitet. Sollte nicht zugelassen werden. Nur eine Verwandlung zulassen, ansonsten Verschachtelung.
+* FIXED: Schaf reiten ermöglicht Verwandlung in andere Gestalten durch das Inventar während man auf einem Schaf reitet. Sollte nicht zugelassen werden. Nur eine Verwandlung zulassen, ansonsten Verschachtelung.
 * Transparente Bäume.
 * Klerikerzauber: Schutz durch Anzahl erkundeter Schreine?
+* Video "The First Combat": Vier Nordmänner stehen nebeneinander auf dem Hügel aber nicht Ricman.
+* Video "The Chief": Plötzliche cuts umbauen.
+* Video "The First Combat": Große Kameradrehungen ersetzen durch ein paar Ansichten und Fades.
+* Video "Wigberht": Terrain deformation raus. Wigberht tötet stattdessen jeden Ork mit einem Schlag.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
