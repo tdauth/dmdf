@@ -133,10 +133,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_bjoernWorksAtFurs.setFacing(35.48)
 			set thistype.m_bjoernTalksToHisWife = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoern(), 14.00, 16.00, gg_rct_waypoint_bjoern_2)
 			call thistype.m_bjoernTalksToHisWife.setPartner(Npcs.bjoernsWife())
-			call thistype.m_bjoernTalksToHisWife.addSound(gg_snd_PeasantWhat1)
-			call thistype.m_bjoernTalksToHisWife.addSound(gg_snd_PeasantWhat2)
-			call thistype.m_bjoernTalksToHisWife.addSound(gg_snd_PeasantWhat3)
-			call thistype.m_bjoernTalksToHisWife.addSound(gg_snd_PeasantWhat4)
+			call thistype.m_bjoernTalksToHisWife.addSound(tr("Ja mein Lord!"), gg_snd_PeasantWhat1)
+			call thistype.m_bjoernTalksToHisWife.addSound(tr("Was ist?"), gg_snd_PeasantWhat2)
+			call thistype.m_bjoernTalksToHisWife.addSound(tr("Mehr Arbeit?"), gg_snd_PeasantWhat3)
+			call thistype.m_bjoernTalksToHisWife.addSound(tr("Was?"), gg_snd_PeasantWhat4)
 			set thistype.m_bjoernTalksToManfred = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoern(), 16.00, MapData.evening, gg_rct_waypoint_bjoern_3)
 			call thistype.m_bjoernTalksToManfred.setPartner(Npcs.manfred())
 
@@ -145,10 +145,6 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_bjoernsWifeStandsNearFire0.setFacing(183.27)
 			set thistype.m_bjoernsWifeTalksToBjoern = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoernsWife(), 14.00, 16.00, gg_rct_waypoint_bjoerns_wife)
 			call thistype.m_bjoernsWifeTalksToBjoern.setPartner(Npcs.bjoern())
-			call thistype.m_bjoernsWifeTalksToBjoern.addSound(gg_snd_PeasantWhat1)
-			call thistype.m_bjoernsWifeTalksToBjoern.addSound(gg_snd_PeasantWhat2)
-			call thistype.m_bjoernsWifeTalksToBjoern.addSound(gg_snd_PeasantWhat3)
-			call thistype.m_bjoernsWifeTalksToBjoern.addSound(gg_snd_PeasantWhat4)
 			set thistype.m_bjoernsWifeStandsNearFire1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.bjoernsWife(), 16.00, MapData.evening, gg_rct_waypoint_bjoerns_wife)
 			call thistype.m_bjoernsWifeStandsNearFire1.setFacing(183.27)
 
@@ -170,8 +166,15 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			// Heimrich
 			set thistype.m_heimrichTalksToMarkward = NpcTalksRoutine.create(Routines.talk(), Npcs.heimrich(), MapData.evening, 13.00, gg_rct_waypoint_heimrich_1)
 			call thistype.m_heimrichTalksToMarkward.setPartner(Npcs.markward())
+			call thistype.m_heimrichTalksToMarkward.addSound(tr("Was erlaubt sich das einfache Volk?"), gg_snd_Heimrich12)
+			call thistype.m_heimrichTalksToMarkward.addSound(tr("Wir müssen uns auf den Krieg vorbereiten."), gg_snd_Heimrich13)
+			call thistype.m_heimrichTalksToMarkward.addSound(tr("Hat Er sich um alles Nötige gekümmert?"), gg_snd_Heimrich14)
+			call thistype.m_heimrichTalksToMarkward.addSound(tr("Bald werden sie hier einfallen und dann?"), gg_snd_Heimrich15)
 			set thistype.m_heimrichTalksToFerdinand = NpcTalksRoutine.create(Routines.talk(), Npcs.heimrich(), 13.00, MapData.evening, gg_rct_waypoint_heimrich_1)
-			call thistype.m_heimrichTalksToFerdinand.setPartner(Npcs.ferdinand())
+			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Was erlaubt sich das einfache Volk?"), gg_snd_Heimrich12)
+			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Wir müssen uns auf den Krieg vorbereiten."), gg_snd_Heimrich13)
+			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Hat Er sich um alles Nötige gekümmert?"), gg_snd_Heimrich14)
+			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Bald werden sie hier einfallen und dann?"), gg_snd_Heimrich15)
 
 			// Markward
 			set thistype.m_markwardTalksToHeimrich = NpcTalksRoutine.create(Routines.talk(), Npcs.markward(), MapData.evening, 13.00, gg_rct_waypoint_markward_1)
@@ -226,10 +229,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_manfredTalksToGuntrich.setPartner(Npcs.guntrich())
 			set thistype.m_manfredTalksToBjoern = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), 16.00, MapData.evening, gg_rct_waypoint_manfred_1)
 			call thistype.m_manfredTalksToBjoern.setPartner(Npcs.bjoern())
-			call thistype.m_manfredTalksToBjoern.addSound(gg_snd_PeasantWhat1)
-			call thistype.m_manfredTalksToBjoern.addSound(gg_snd_PeasantWhat2)
-			call thistype.m_manfredTalksToBjoern.addSound(gg_snd_PeasantWhat3)
-			call thistype.m_manfredTalksToBjoern.addSound(gg_snd_PeasantWhat4)
+			call thistype.m_manfredTalksToBjoern.addSound(tr("Ja mein Lord!"), gg_snd_PeasantWhat1)
+			call thistype.m_manfredTalksToBjoern.addSound(tr("Was ist?"), gg_snd_PeasantWhat2)
+			call thistype.m_manfredTalksToBjoern.addSound(tr("Mehr Arbeit?"), gg_snd_PeasantWhat3)
+			call thistype.m_manfredTalksToBjoern.addSound(tr("Was?"), gg_snd_PeasantWhat4)
 
 			// Guntrich
 			set thistype.m_guntrichStandsOnClimb0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.guntrich(), MapData.evening, MapData.midday, gg_rct_waypoint_guntrich_1)
@@ -262,10 +265,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_kunoTalksToHisDaughter = NpcTalksRoutine.create(Routines.talk(), Npcs.kuno(), 16.0, MapData.evening, gg_rct_waypoint_kuno_0)
 			call thistype.m_kunoTalksToHisDaughter.setPartner(Npcs.kunosDaughter())
 			call thistype.m_kunoTalksToHisDaughter.setFacing(357.00)
-			call thistype.m_kunoTalksToHisDaughter.addSound(gg_snd_PeasantWhat1)
-			call thistype.m_kunoTalksToHisDaughter.addSound(gg_snd_PeasantWhat2)
-			call thistype.m_kunoTalksToHisDaughter.addSound(gg_snd_PeasantWhat3)
-			call thistype.m_kunoTalksToHisDaughter.addSound(gg_snd_PeasantWhat4)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Ja mein Lord!"), gg_snd_PeasantWhat1)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Was ist?"), gg_snd_PeasantWhat2)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Mehr Arbeit?"), gg_snd_PeasantWhat3)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Was?"), gg_snd_PeasantWhat4)
 			
 			// Kuno's daughter
 			set thistype.m_kunosDaughterStandsInFrontOfTheHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.kunosDaughter(), MapData.evening, 16.0, gg_rct_waypoint_kunos_daughter_1)
@@ -273,10 +276,6 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_kunosDaughterTalksToKuno = NpcTalksRoutine.create(Routines.talk(), Npcs.kunosDaughter(), 16.0, MapData.evening, gg_rct_waypoint_kunos_daughter_0)
 			call thistype.m_kunosDaughterTalksToKuno.setPartner(Npcs.kuno())
 			call thistype.m_kunosDaughterTalksToKuno.setFacing(35.21)
-			call thistype.m_kunosDaughterTalksToKuno.addSound(gg_snd_PeasantWhat1)
-			call thistype.m_kunosDaughterTalksToKuno.addSound(gg_snd_PeasantWhat2)
-			call thistype.m_kunosDaughterTalksToKuno.addSound(gg_snd_PeasantWhat3)
-			call thistype.m_kunosDaughterTalksToKuno.addSound(gg_snd_PeasantWhat4)
 
 			// menials
 			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)

@@ -52,6 +52,7 @@ library StructGameRoutines requires Asl
 		public static constant integer maxSounds = 4
 		private real m_range = 800.0
 		private sound array m_sounds[thistype.maxSounds]
+		private string array m_soundTexts[thistype.maxSounds]
 		private integer m_soundsCount = 0
 		private real m_facing = 0.0
 
@@ -75,12 +76,17 @@ library StructGameRoutines requires Asl
 			return this.m_soundsCount
 		endmethod
 
-		public method addSound takes sound whichSound returns nothing
+		public method addSound takes string text, sound whichSound returns nothing
 			if (this.soundsCount() >= thistype.maxSounds) then
 				return
 			endif
 			set this.m_sounds[this.soundsCount()] = whichSound
+			set this.m_soundTexts[this.soundsCount()] = text
 			set this.m_soundsCount = this.soundsCount() + 1
+		endmethod
+		
+		public method text takes integer index returns string
+			return this.m_soundTexts[index]
 		endmethod
 
 		public method sound takes integer index returns sound
@@ -180,6 +186,8 @@ library StructGameRoutines requires Asl
 
 		private static method talkTargetAction takes NpcTalksRoutine period returns nothing
 			local sound whichSound = null
+			local texttag whichTextTag = null
+			local integer index
 			local real time = 5.0 // usual wait interval
 			
 			/*
@@ -198,22 +206,35 @@ library StructGameRoutines requires Asl
 				//debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
 				call SetUnitFacingToFaceUnit(period.unit(), period.partner())
 				call QueueUnitAnimation(period.unit(), "Stand Talk")
+				set index = GetRandomInt(0, period.soundsCount() - 1)
 				if (period.soundsCount() > 0) then
-					set whichSound = period.sound(GetRandomInt(0, period.soundsCount() - 1))
+					set whichSound = period.sound(index)
 					call PlaySoundOnUnitBJ(whichSound, 100.0, period.unit())
 					set time = GetSoundDurationBJ(whichSound) + 6.0 // set + 6 otherwise we have loop sounds all the time
 				endif
+				
+				set whichTextTag = CreateTextTag()
+				call SetTextTagText(whichTextTag, period.text(index), 12)
+				call SetTextTagPos(whichTextTag, GetUnitX(period.unit()), GetUnitY(period.unit()), 50.0)
+				call SetTextTagColor(whichTextTag, 255, 255, 255, 0)
+				call SetTextTagPermanent(whichTextTag, true)
+				call SetTextTagVisibility(whichTextTag, true)
 
 				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
 				call TriggerSleepAction(time)
+				
+				//call StopSoundBJ(whichSound, false)
+				call DestroyTextTag(whichTextTag)
+				set whichTextTag = null
 			else
 				// set at least facing properly
 				call SetUnitFacing(period.unit(), period.facing())
 				// set a smaller interval to check the condition faster.
 				set time = 2.0
+				
+				call TriggerSleepAction(time)
 			endif
 
-			call TriggerSleepAction(time)
 			call AContinueRoutineLoop(period, thistype.talkTargetAction)
 		endmethod
 
