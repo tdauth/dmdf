@@ -9,12 +9,33 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		private unit m_actorOrcLeader
 		private AGroup m_staticActors
 		private AGroup m_orcGuardians
+		private AGroup m_hiddenCorpses
 		private trigger m_killTrigger
 
 		implement Video
 		
+		private static method filterIsDead takes nothing returns boolean
+			return IsUnitDeadBJ(GetFilterUnit())
+		endmethod
+		
+		private static method groupFunctionHide takes unit whichUnit returns nothing
+			call ShowUnit(whichUnit, false)
+		endmethod
+		
 		private static method holdPosition takes unit whichUnit returns nothing
 			call IssueImmediateOrder(whichUnit, "holdposition")
+		endmethod
+		
+		private method allGuardsAreDead takes nothing returns boolean
+			local integer i = 0
+			loop
+				exitwhen (i == this.m_orcGuardians.units().size())
+				if (not IsUnitDeadBJ(this.m_orcGuardians.units()[i])) then
+					return false
+				endif
+				set i = i + 1
+			endloop
+			return true
 		endmethod
 		
 		private static method triggerConditionKill takes nothing returns boolean
@@ -22,6 +43,12 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			if (this.m_orcGuardians.units().contains(GetTriggerUnit()) and GetEventDamageSource() == thistype.unitActor(this.m_actorWigberht)) then
 				call KillUnit(GetTriggerUnit())
 				call DestroyEffect(AddSpecialEffect("Models\\Effects\\BloodExplosionSpecial1.mdx", GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit())))
+				/*
+				 * Don't run further.
+				 */
+				if (this.allGuardsAreDead()) then
+					call IssueImmediateOrder(thistype.unitActor(this.m_actorWigberht), "holdposition")
+				endif
 			endif
 			
 			return false
@@ -52,6 +79,10 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			
 			call SetPlayerAllianceStateBJ(MapData.haldarPlayer, MapData.baldarPlayer, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(MapData.baldarPlayer, MapData.haldarPlayer, bj_ALLIANCE_UNALLIED)
+			
+			set this.m_hiddenCorpses = AGroup.create()
+			call this.m_hiddenCorpses.addUnitsInRect(gg_rct_video_wigberht_corpse_free_area, Filter(function thistype.filterIsDead))
+			call this.m_hiddenCorpses.forGroup(thistype.groupFunctionHide)
 			
 			set this.m_actorWigberht = thistype.saveUnitActor(Npcs.wigberht())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_wigberht_wigberhts_position)
@@ -154,9 +185,6 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			local integer i
-			local boolean allDead = false
-			local boolean foundDead = false
 			local effect whichEffect // TODO leaks on stop
 			local AJump jump // TODO leaks on stop
 			
@@ -228,23 +256,17 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			// make them much slower than Wigberht that he reaches his target before tham and makes his attack
 			call this.m_orcGuardians.forGroup(thistype.setMoveSpeed)
 			call PauseUnit(thistype.unitActor(this.m_actorWigberht), false)
+			call SetUnitInvulnerable(thistype.unitActor(this.m_actorWigberht), false)
 			call SetUnitMoveSpeed(thistype.unitActor(this.m_actorWigberht), thistype.wigberhtMoveSpeed)
-			call this.m_orcGuardians.targetOrder("attack", thistype.unitActor(this.m_actorWigberht))
+			if (not this.m_orcGuardians.targetOrder("attack", thistype.unitActor(this.m_actorWigberht))) then
+				debug call Print("ORDER FAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIILED")
+			endif
 			call IssueTargetOrder(thistype.unitActor(this.m_actorWigberht), "attack",  this.m_orcGuardians.units().front())
 
 			loop
-				exitwhen (allDead)
-				set i = 0
-				loop
-					exitwhen (i == this.m_orcGuardians.units().size() or foundDead)
-					if (not IsUnitDeadBJ(this.m_orcGuardians.units()[i])) then
-						set foundDead = true
-					endif
-					set i = i + 1
-				endloop
-				if (not foundDead) then
-					set allDead = true
-				elseif (GetUnitCurrentOrder(thistype.unitActor(this.m_actorWigberht)) != OrderId("attack")) then
+				exitwhen (this.allGuardsAreDead())
+				
+				if (GetUnitCurrentOrder(thistype.unitActor(this.m_actorWigberht)) != OrderId("attack")) then
 					call IssueTargetOrder(thistype.unitActor(this.m_actorWigberht), "attack",  this.firstLivingGuard())
 				endif
 				if (wait(1.0)) then
@@ -363,8 +385,16 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		private static method groupFunctionRemove takes unit whichUnit returns nothing
 			call RemoveUnit(whichUnit)
 		endmethod
+		
+		private static method groupFunctionShow takes unit whichUnit returns nothing
+			call ShowUnit(whichUnit, true)
+		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
+			call this.m_hiddenCorpses.forGroup(thistype.groupFunctionShow)
+			call this.m_hiddenCorpses.destroy()
+			set this.m_hiddenCorpses = 0
+		
 			call RemoveUnit(this.m_actorOrcLeader)
 			set this.m_actorOrcLeader = null
 			call this.m_staticActors.forGroup(thistype.groupFunctionRemove)

@@ -1,4 +1,4 @@
-library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, LibraryGameLanguage
+library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameRoutines, LibraryGameLanguage
 
 	/**
 	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
@@ -804,6 +804,7 @@ endif
 			call SpawnPoint.pauseAll()
 			call ItemSpawnPoint.pauseAll()
 			call Shrine.disableAllAuras()
+			call Routines.destroyTextTags()
 			call DisableTrigger(thistype.m_killTrigger)
 			//call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_UI, 1.0) /// @todo TEST
 			call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_MUSIC, 1.0)

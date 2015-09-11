@@ -100,7 +100,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			/*
 			 * Only allow one metamorphosis at a time.
 			 */
-			if (not this.isMorphed()) then
+			if (not this.character().isMorphed()) then
 				if (this.canMorph.evaluate()) then
 					if (Character(this.character()).morph(this.disableInventory())) then	
 						/*

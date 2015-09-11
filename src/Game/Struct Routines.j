@@ -110,6 +110,7 @@ library StructGameRoutines requires Asl
 		private static ARoutine m_harvest
 		private static ARoutine m_splitWood
 		private static ARoutine m_sleep
+		private static ATextTagVector m_textTags
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -190,18 +191,6 @@ library StructGameRoutines requires Asl
 			local integer index
 			local real time = 5.0 // usual wait interval
 			
-			/*
-			debug if (period.partner() == null) then
-			debug call Print("Period with " + GetUnitName(period.unit()) + " has no partner!")
-			debug endif
-			*/
-			
-			/*
-			debug if (GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) > period.range()) then
-			debug call Print("Period with " + GetUnitName(period.unit()) + " has too big distance!")
-			debug endif
-			*/
-			
 			if (period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) then
 				//debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
 				call SetUnitFacingToFaceUnit(period.unit(), period.partner())
@@ -214,18 +203,25 @@ library StructGameRoutines requires Asl
 				endif
 				
 				set whichTextTag = CreateTextTag()
-				call SetTextTagText(whichTextTag, period.text(index), 12)
-				call SetTextTagPos(whichTextTag, GetUnitX(period.unit()), GetUnitY(period.unit()), 50.0)
+				call SetTextTagTextBJ(whichTextTag, period.text(index), 10.0)
+				call SetTextTagPosUnit(whichTextTag, period.unit(),  0.0)
 				call SetTextTagColor(whichTextTag, 255, 255, 255, 0)
-				call SetTextTagPermanent(whichTextTag, true)
 				call SetTextTagVisibility(whichTextTag, true)
+				call SetTextTagPermanent(whichTextTag, true)
+				
+				call thistype.m_textTags.pushBack(whichTextTag)
 
 				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
 				call TriggerSleepAction(time)
 				
 				//call StopSoundBJ(whichSound, false)
-				call DestroyTextTag(whichTextTag)
-				set whichTextTag = null
+				// TODO A set would be more efficient.
+				if (thistype.m_textTags.contains(whichTextTag)) then
+					call thistype.m_textTags.remove(whichTextTag)
+					call SetTextTagVisibility(whichTextTag, false)
+					call DestroyTextTag(whichTextTag)
+					set whichTextTag = null
+				endif
 			else
 				// set at least facing properly
 				call SetUnitFacing(period.unit(), period.facing())
@@ -299,6 +295,7 @@ library StructGameRoutines requires Asl
 			set thistype.m_harvest = ARoutine.create(true, true, 0, 0, thistype.harvestEndAction, thistype.harvestTargetAction)
 			set thistype.m_splitWood = ARoutine.create(true, true, 0, 0, thistype.splitWoodEndAction, thistype.splitWoodTargetAction)
 			set thistype.m_sleep = ARoutine.create(true, true, 0, 0, thistype.sleepEndAction, thistype.sleepTargetAction)
+			set thistype.m_textTags = ATextTagVector.create()
 		endmethod
 
 		public static method moveTo takes nothing returns ARoutine
@@ -339,6 +336,15 @@ library StructGameRoutines requires Asl
 
 		public static method sleep takes nothing returns ARoutine
 			return thistype.m_sleep
+		endmethod
+		
+		private static method forEachDestroyTextTag takes texttag whichTextTag returns nothing
+			call DestroyTextTag(whichTextTag)
+		endmethod
+		
+		public static method destroyTextTags takes nothing returns nothing
+			call thistype.m_textTags.forEach(thistype.forEachDestroyTextTag)
+			call thistype.m_textTags.clear()
 		endmethod
 	endstruct
 

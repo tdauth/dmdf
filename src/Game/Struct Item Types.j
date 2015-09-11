@@ -449,10 +449,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_torch.addAbility('A087', true)
 
 			set thistype.m_bannerOfTheBlackLegion = ItemType.createSimple('I01B', ItemType.equipmentTypeAmulet)
-			call thistype.m_bannerOfTheBlackLegion.addAbility('A058', true)
+			call thistype.m_bannerOfTheBlackLegion.addAbility('A1AF', true)
 
 			set thistype.m_bannerOfTheWhiteLegion = ItemType.createSimple('I01C', ItemType.equipmentTypeAmulet)
-			call thistype.m_bannerOfTheWhiteLegion.addAbility('A059', true)
+			call thistype.m_bannerOfTheWhiteLegion.addAbility('A1AG', true)
 
 			set thistype.m_circleOfElements = ItemType.create('I02H', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, Classes.elementalMage())
 			call thistype.m_circleOfElements.addAbility('A08A', true)

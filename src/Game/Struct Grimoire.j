@@ -893,14 +893,26 @@ endif
 
 		private static method triggerActionLevel takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
-			local integer levels = GetHeroLevel(GetTriggerUnit()) - this.heroLevel()
+			local integer newLevel = GetHeroLevel(GetTriggerUnit())
+			local integer oldLevel = this.heroLevel()
+			local integer levels = newLevel - oldLevel
 			local Character character = Character(this.character())
+			
 			call this.addSkillPoints(MapData.levelSpellPoints * levels)
 			debug call Print("Levels: " + I2S(levels))
-			call this.setHeroLevel(GetHeroLevel(GetTriggerUnit()))
+			
+			if (oldLevel < thistype.ultimate0Level and newLevel >= thistype.ultimate0Level) then
+				call character.displayHint(Format(tr("Sie haben Stufe %1% erreicht. Der erste Ultimativzauber kann nun erlernt werden.")).i(thistype.ultimate0Level).result())
+			endif
+			
+			if (oldLevel < thistype.ultimate1Level and newLevel >= thistype.ultimate1Level) then
+				call character.displayHint(Format(tr("Sie haben Stufe %1% erreicht. Der zweite Ultimativzauber kann nun erlernt werden.")).i(thistype.ultimate1Level).result())
+			endif
+			
+			call this.setHeroLevel(newLevel)
 			
 			// reached last level TODO: maybe we should give him a little present
-			if (GetHeroLevel(GetTriggerUnit()) == MapData.maxLevel) then
+			if (newLevel == MapData.maxLevel) then
 				call character.displayFinalLevel(tre("Sie haben die letzte Stufe erreicht.", "You have reached the final level."))
 				call character.displayFinalLevelToAllOthers(Format(tre("%1% hat die letzte Stufe erreicht.", "%1% has reached the final level.")).s(character.name()).result())
 			endif

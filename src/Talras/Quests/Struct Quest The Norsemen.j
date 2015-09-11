@@ -164,6 +164,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 						call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_ally_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_ally_spawn_0), bj_RESCUE_PING_TIME)
 						
 						call TransmissionFromUnit(this.m_allyRangerLeader, tr("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!"), null)
+						call Character.displayUnitAcquiredToAll(tr("Waldläufer"), tr("Waldläufer sind geschickte Fernkämpfer, die ihre Gegner mit vergifteten Pfeilen beschießen können."))
 					// farmers (ally spawn)
 					elseif (this.m_currentGroupIndex == 3) then
 						call this.m_wavesDisplay.decreaseAllies()
@@ -175,6 +176,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 						call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_ally_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_ally_spawn_0), bj_RESCUE_PING_TIME)
 	
 						call TransmissionFromUnit(this.m_allyFarmerLeader, tr("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!"), null)
+						call Character.displayUnitAcquiredToAll(tr("Bewaffnete Dorfbewohner"), tr("Bewaffnete Dorfbewohner sind mutige Fernkämpfer, die ihre Gegner mit Brandpfeilen beschießen können."))
 					endif
 				endif
 			endif

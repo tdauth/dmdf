@@ -23,6 +23,7 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_deranor_actor)
 			call SetUnitFacing(thistype.actor(), 270.0)
 			call ShowUnit(thistype.actor(), false)
+			call IssueImmediateOrder(thistype.actor(), "stop")
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
@@ -31,7 +32,9 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			endif
 			
 			call ShowUnit(this.m_actorDragonSlayer, true)
+			call IssueImmediateOrder(this.m_actorDragonSlayer, "stop")
 			call ShowUnit(thistype.actor(), true)
+			call IssueImmediateOrder(thistype.actor(), "stop")
 		
 			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Seht euch das an! In diesem mächtigen unterirdischen Gewölbe muss er sich versteckt halten. Nun werden wir Deranor dem Schrecklichen ein ebenso schreckliches Ende bereiten."), null)
 			

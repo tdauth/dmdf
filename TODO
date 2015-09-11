@@ -547,7 +547,10 @@
 * Video "The First Combat": Vier Nordmänner stehen nebeneinander auf dem Hügel aber nicht Ricman.
 * Video "The Chief": Plötzliche cuts umbauen.
 * Video "The First Combat": Große Kameradrehungen ersetzen durch ein paar Ansichten und Fades.
+* Video "The First Combat:" Zwei Dunkelelfen hinten laufen nicht mit.
 * Video "Wigberht": Terrain deformation raus. Wigberht tötet stattdessen jeden Ork mit einem Schlag.
+* Hörner Icon verbergen.
+* FIXED: Standarte der schwarzen Legion: Icon ist noch sichtbar.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

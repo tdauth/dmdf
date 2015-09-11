@@ -3,7 +3,12 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 	struct QuestAreaANewAlliance extends QuestArea
 	
 		public stub method onCheck takes nothing returns boolean
-			return QuestDeranor.quest().isCompleted()
+			if (not QuestDeranor.quest().isCompleted()) then
+				call Character.displayHintToAll(tr("Sie müssen erst den Auftrag \"Deranor\" abschließen bevor dieser Auftrag begonnen werden kann."))
+				return false
+			endif
+			
+			return true
 		endmethod
 	
 		public stub method onStart takes nothing returns nothing

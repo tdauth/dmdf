@@ -226,6 +226,7 @@ endif
 			call this.updateGrimoireAfterPassiveTransformation()
 			
 			set this.m_isMorphed = false
+			debug call this.print("RESTORED")
 			
 			return true
 		endmethod
@@ -260,6 +261,7 @@ endif
 			endif
 			
 			set this.m_isMorphed = true
+			debug call this.print("MORPHED")
 			
 			return true
 		endmethod
