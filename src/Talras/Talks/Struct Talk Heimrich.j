@@ -11,7 +11,7 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 		// Ich grüße Euch.
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Ich grüße Euch."), null)
-			call speech(info, character, true, tr("Hat Er nicht einen Auftrag? Falls es Schwierigkeiten gibt, sollte Er sich zunächst an meinen getreuen Ritter Markward oder meinen Vogt Ferdinand wenden."), null)
+			call speech(info, character, true, tr("Hat Er nicht einen Auftrag? Falls es Schwierigkeiten gibt, sollte Er sich zunächst an meinen getreuen Ritter Markward oder meinen Vogt Ferdinand wenden."), gg_snd_Heimrich1)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -23,18 +23,18 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 		// Was ist mit Eurer Frau und Euren Nachkommen?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was ist mit Eurer Frau und Euren Nachkommen?"), null)
-			call speech(info, character, true, tr("Sie befinden sich bei meinem Vetter, in Sicherheit. Ich würde sie niemals der Gefahr hier aussetzen. Aber Er soll mir erklären, weshalb es Ihn interessiert."), null)
+			call speech(info, character, true, tr("Sie befinden sich bei meinem Vetter, in Sicherheit. Ich würde sie niemals der Gefahr hier aussetzen. Aber Er soll mir erklären, weshalb es Ihn interessiert."), gg_snd_Heimrich2)
 			call speech(info, character, false, tr("Ich war nur besorgt um Euch …"), null)
-			call speech(info, character, true, tr("So? Dann danke ich Ihm für Seine Anteilnahme, jedoch sollte Er sich nun wieder um die benötigte Verstärkung kümmern."), null)
+			call speech(info, character, true, tr("So? Dann danke ich Ihm für Seine Anteilnahme, jedoch sollte Er sich nun wieder um die benötigte Verstärkung kümmern."), gg_snd_Heimrich3)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Habt Ihr diese Burg errichtet?
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Habt Ihr diese Burg errichtet?"), null)
-			call speech(info, character, true, tr("Talras wird von meinem Geschlecht seit drei Generationen bewohnt. Mein Großvater bekam dieses Land und den Titel eines Ritters vom König für seine Tapferkeit im Krieg."), null)
-			call speech(info, character, true, tr("Er ließ die einfache Holzbefestigung ausbauen, mit Stein und heute ist es eine stattliche Burg. Zusammen mit der Zeit vor meinem Großvater ist sie fast zweihundert Jahre alt."), null)
-			call speech(info, character, true, tr("Ebenfalls ein stattliches Alter. Ich fürchte jedoch dieser Tage um mein Erbe. Falls die Feinde es mir nehmen sollten, bin ich ein armer Mann, wie es einst mein Großvater war."), null)
+			call speech(info, character, true, tr("Talras wird von meinem Geschlecht seit drei Generationen bewohnt. Mein Großvater bekam dieses Land und den Titel eines Ritters vom König für seine Tapferkeit im Krieg."), gg_snd_Heimrich4)
+			call speech(info, character, true, tr("Er ließ die einfache Holzbefestigung ausbauen, mit Stein und heute ist es eine stattliche Burg. Zusammen mit der Zeit vor meinem Großvater ist sie fast zweihundert Jahre alt."), gg_snd_Heimrich5)
+			call speech(info, character, true, tr("Ebenfalls ein stattliches Alter. Ich fürchte jedoch dieser Tage um mein Erbe. Falls die Feinde es mir nehmen sollten, bin ich ein armer Mann, wie es einst mein Großvater war."), gg_snd_Heimrich6)
 			call speech(info, character, false, tr("So so …"), null)
 			call info.talk().showStartPage(character)
 		endmethod
@@ -44,19 +44,19 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 			call speech(info, character, false, tr("Was geschieht nun?"), null)
 			// (Auftrag „Die Nordmänner“ ist aktiv)
 			if (QuestTheNorsemen.quest().isNew()) then
-				call speech(info, character, true, tr("Sorgt Er nur dafür, dass jene wilden Nordmänner sich meiner anschließen, damit wir aus dem Krieg als Sieger hervorgehen."), null)
+				call speech(info, character, true, tr("Sorgt Er nur dafür, dass jene wilden Nordmänner sich meiner anschließen, damit wir aus dem Krieg als Sieger hervorgehen."), gg_snd_Heimrich7)
 			// (Auftrag „Ein neues Bündnis“ ist aktiv)
 			elseif (QuestANewAlliance.quest().isNew()) then
-				call speech(info, character, true, tr("Er muss die Hochelfin ausfindig machen, die sich irgendwo in Talras aufhält und sie hierher bringen. Ich benötige noch mehr Unterstützung gegen den Feind."), null)
+				call speech(info, character, true, tr("Er muss die Hochelfin ausfindig machen, die sich irgendwo in Talras aufhält und sie hierher bringen. Ich benötige noch mehr Unterstützung gegen den Feind."), gg_snd_Heimrich8)
 			// (Auftrag „Krieg“ ist aktiv)
 			elseif (QuestWar.quest().isNew()) then
-				call speech(info, character, true, tr("Er muss den eroberten Außenposten befestigen lassen. Der Außenposten wird uns hoffentlich eine Zeit lang vor den Angriffen des Feindes schützen."), null)
-			// (Auftrag „Die Verteidigung von Holzbruck“ ist aktiv)
+				call speech(info, character, true, tr("Er muss den eroberten Außenposten befestigen lassen. Der Außenposten wird uns hoffentlich eine Zeit lang vor den Angriffen des Feindes schützen."), gg_snd_Heimrich9)
+			// (Auftrag „Die Verteidigung von Talras ist aktiv)
 			elseif (QuestTheDefenseOfTalras.quest().isNew()) then
-				call speech(info, character, true, tr("Er muss den Außenposten gegen die Orks und Dunkelelfen verteidigen. Sie dürfen die Burg nicht erreichen!"), null)
+				call speech(info, character, true, tr("Er muss den Außenposten gegen die Orks und Dunkelelfen verteidigen. Sie dürfen die Burg nicht erreichen!"), gg_snd_Heimrich10)
 			// (Auftrag „Der Weg nach Holzbruck“ ist aktiv)
 			else
-				call speech(info, character, true, tr("Er muss mit den Seefahrern in Richtung Norden nach Holzbruck ziehen, um dort mehr Kriegsfähige zu finden, damit wir eine Chance gegen den Feind haben."), null)
+				call speech(info, character, true, tr("Er muss mit den Seefahrern in Richtung Norden nach Holzbruck ziehen, um dort mehr Kriegsfähige zu finden, damit wir eine Chance gegen den Feind haben."), gg_snd_Heimrich11)
 			endif
 
 			call info.talk().showStartPage(character)
