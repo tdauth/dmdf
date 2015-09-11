@@ -437,6 +437,12 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call Fellows.wigberht().reset()
 			call Fellows.ricman().reset()
 			
+			call SetUnitX(Npcs.wigberht(), GetRectCenterX(gg_rct_waypoint_wigberht_training))
+			call SetUnitY(Npcs.wigberht(), GetRectCenterY(gg_rct_waypoint_wigberht_training))
+			
+			call SetUnitX(Npcs.ricman(), GetRectCenterX(gg_rct_waypoint_ricman))
+			call SetUnitY(Npcs.ricman(), GetRectCenterY(gg_rct_waypoint_ricman))
+			
 			// the orc spawn point will be disabled forever. The camp is now in hands of norsemen, villagers and rangers
 			// new NPCs?
 			call SpawnPoints.destroyOrcs0()
