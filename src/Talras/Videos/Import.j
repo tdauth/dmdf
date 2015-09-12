@@ -58,6 +58,7 @@ library MapVideos requires StructMapVideosVideoANewAlliance, StructMapVideosVide
 		call VideoTheDukeOfTalras.initVideo()
 		call VideoTheFirstCombat.initVideo()
 		call VideoUpstream.initVideo()
+		call VideoVictory.initVideo()
 		call VideoWeaponsFromWieland.initVideo()
 		call VideoWieland.initVideo()
 		call VideoWigberht.initVideo()

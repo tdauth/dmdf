@@ -91,13 +91,12 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
 		
-		private static method stateConditionCompletedDefendAgainstOrcs takes AQuestItem whichQuestItem, trigger whichTrigger returns boolean
+		private static method stateConditionCompletedDefendAgainstOrcs takes AQuestItem whichQuestItem returns boolean
 			local thistype this = thistype(whichQuestItem.quest())
 			if (this.m_orcs.units().contains(GetTriggerUnit())) then
 				call this.m_orcs.units().remove(GetTriggerUnit())
 				
 				if (this.m_orcs.units().empty() and this.m_orcWavesCounter == thistype.maxOrcWaves) then
-					call whichQuestItem.setState(thistype.stateCompleted)
 					call this.enableOrcArtillery.evaluate()
 				endif
 			endif
@@ -112,7 +111,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			local thistype this = thistype(whichQuestItem.quest())
 			if (this.m_orcSiege.units().contains(GetTriggerUnit())) then
 				call this.m_orcSiege.units().remove(GetTriggerUnit())
-				call this.displayUpdateMessage(Format(trp("%1% Belagerungswaffen verbleiben.", "%1% Belagerungswaffe verbleibt.", this.m_orcSiege.units().size())).i(this.m_orcSiege.units()).result())
+				call this.displayUpdateMessage(Format(trp("%1% Belagerungswaffen verbleibt.", "%1% Belagerungswaffe verbleiben.", this.m_orcSiege.units().size())).i(this.m_orcSiege.units().size()).result())
 				
 				return this.m_orcSiege.units().empty()
 			endif
@@ -122,6 +121,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		
 		private static method stateActionCompletedDestroyArtillery takes AQuestItem whichQuestItem returns nothing
 			local thistype this = thistype(whichQuestItem.quest())
+			local unit dararos
 
 			call VideoDararos.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
@@ -130,8 +130,13 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			 * TODO Create Dararos and the high elves.
 			 */
 			 set this.m_highElves = AGroup.create()
-			 call Fellows.initDararos(CreateUnit(MapData.alliedPlayer, 'H02F', GetRectCenterX(gg_rct_quest_the_defense_of_talras_dararos), GetRectCenterY(gg_rct_quest_the_defense_of_talras_dararos), 0.0))
-			 call Fellows.dararos().shareWith(0)
+			 set dararos = CreateUnit(MapData.alliedPlayer, 'H02F', GetRectCenterX(gg_rct_quest_the_defense_of_talras_dararos), GetRectCenterY(gg_rct_quest_the_defense_of_talras_dararos), 0.0)
+			 call SetHeroLevel(dararos, 20, false)
+			 call Fellows.initDararos(dararos)
+			 call Fellows.dararos().shareWithAll()
+			 
+			 call this.m_highElves.addGroup(CreateUnitsAtRect(8, 'n05I', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_high_elf_archers, 0.0), true, false)
+			 call this.m_highElves.addGroup(CreateUnitsAtRect(8, 'h02H', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_high_elf_warriors, 0.0), true, false)
 			 
 			 /*
 			  * TODO Create the final orcs from everywhere
@@ -142,6 +147,8 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			
 			call this.questItem(thistype.questItemDefeatTheEnemy).setState(thistype.stateNew)
 			call this.displayState()
+			
+			call Character.displayUnitAcquiredToAll(tr("Dararos"), tr("Dararos ist der König der Hochelfen. Er ist ein mächtiger Zauberer."))
 		endmethod
 		
 		private static method stateEventCompletedDefeatTheEnemy takes AQuestItem questItem, trigger whichTrigger returns nothing
@@ -152,6 +159,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			local thistype this = thistype(questItem.quest())
 			if (this.m_finalOrcs.units().contains(GetTriggerUnit())) then
 				call this.m_finalOrcs.units().remove(GetTriggerUnit())
+				debug call Print("Remaining final orcs: " + I2S(this.m_finalOrcs.units().size()))
 				
 				return this.m_finalOrcs.units().empty()
 			endif
@@ -167,6 +175,21 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			set this.m_finalOrcs = 0
 			call VideoVictory.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
+			
+			call Fellows.ricman().reset()
+			call Fellows.wigberht().reset()
+			
+			
+			call SetUnitX(Npcs.wigberht(), GetRectCenterX(gg_rct_waypoint_wigberht_training))
+			call SetUnitY(Npcs.wigberht(), GetRectCenterY(gg_rct_waypoint_wigberht_training))
+			
+			call SetUnitX(Npcs.ricman(), GetRectCenterX(gg_rct_waypoint_ricman))
+			call SetUnitY(Npcs.ricman(), GetRectCenterY(gg_rct_waypoint_ricman))
+			/*
+			 * TODO build up a camp with high elves and dararos.
+			 */
+			call Fellows.dararos().reset()
+			 
 			set this.m_questAreaReportHeimrich = QuestAreaQuestTheDefenseOfTalrasReportHeimrich.create(gg_rct_quest_the_defense_of_talras_heimrich)
 			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
 			call this.displayState()
@@ -176,33 +199,66 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			set this.m_orcSiege = AGroup.create()
 			call this.m_orcSiege.addGroup(CreateUnitsAtRect(1, 'o003', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_trebuchet_0, 180.0), true, false)
 			call this.m_orcSiege.addGroup(CreateUnitsAtRect(1, 'o003', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_trebuchet_1, 180.0), true, false)
-			call this.m_orcSiege.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras), GetRectCenterY(gg_rct_quest_the_defense_of_talras))
+			call this.m_orcSiege.pointOrder("attackground", GetRectCenterX(gg_rct_quest_the_defense_of_talras), GetRectCenterY(gg_rct_quest_the_defense_of_talras))
 			set this.m_orcSiegeWarriors = AGroup.create()
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_0, 180.0), true, false)
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01W', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_0, 180.0), true, false)
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01X', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_0, 180.0), true, false)
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n05H', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_0, 180.0), true, false)
 			
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_1, 180.0), true, false)
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01W', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_1, 180.0), true, false)
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01X', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_1, 180.0), true, false)
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n05H', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_1, 180.0), true, false)
 			
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_2, 180.0), true, false)
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01W', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_2, 180.0), true, false)
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n01X', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_2, 180.0), true, false)
+			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n05H', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_spawn_2, 180.0), true, false)
 			// FIXME Create orc siege stuff
+			
+			// orc wall
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_0, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_1, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_2, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_3, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_4, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_5, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_6, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_7, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_8, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_9, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_10, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_11, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_12, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_13, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_14, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_15, 180.0)
+			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_16, 180.0)
+			
+			// TODO more wall and cross bow men behind the walls.
+			
+			call this.questItem(thistype.questItemDefendAgainstOrcs).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemDestroyArtillery).setState(thistype.stateNew)
+			call this.displayState()
 		endmethod
 		
 		private static method timerFunctionOrcWave takes nothing returns nothing
 			local thistype this = thistype.quest()
+			local AGroup currentGroup = AGroup.create()
 			set this.m_orcWavesCounter = this.m_orcWavesCounter + 1
-			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_0, 90.0), true, false)
-			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_1, 90.0), true, false)
-			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_2, 90.0), true, false)
-			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_3, 90.0), true, false)
-			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_4, 90.0), true, false)
-			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_5, 90.0), true, false)
-			call this.m_orcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_6, 90.0), true, false)
-			call this.m_orcs.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras_orc_target), GetRectCenterY(gg_rct_quest_the_defense_of_talras_orc_target))
+			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_0, 90.0), true, false)
+			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_1, 90.0), true, false)
+			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_2, 90.0), true, false)
+			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_3, 90.0), true, false)
+			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_4, 90.0), true, false)
+			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_5, 90.0), true, false)
+			call currentGroup.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_6, 90.0), true, false)
+			call currentGroup.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras_orc_target), GetRectCenterY(gg_rct_quest_the_defense_of_talras_orc_target))
+			
+			call this.m_orcs.addOther(currentGroup)
+			call currentGroup.destroy()
+			set currentGroup = 0
 			
 			if (this.m_orcWavesCounter < thistype.maxOrcWaves) then
 				call this.startOrcWavesTimer.evaluate()
@@ -259,6 +315,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			local integer i
 			call QuestTheNorsemen.quest().cleanFinalNorsemen()
 			call QuestWar.quest().cleanUnits()
+			call QuestWar.quest().placeTraps()
 			
 			/*
 			 * This shrine is finally used here.
@@ -302,7 +359,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			/*
 			 * The allied player needs a lot of gold to build something.
 			 */
-			call AdjustPlayerStateBJ(20000, MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD)
+			call AdjustPlayerStateBJ(5000, MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD)
 		
 			if (this.m_timer == null) then
 				set this.m_timer = CreateTimer()

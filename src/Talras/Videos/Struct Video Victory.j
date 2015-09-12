@@ -1,5 +1,9 @@
 /*
-Szene 1 - Dararos und die Drachentöterin:
+
+Szene 1 - Wigberht der Schlächter:
+Wigberht: Du denkst, du könntest mir Angst machen? Höre, ich habe den Tod gesehen und er ließ mich kalt. Ich sah den Schrecken, den deine Sippe über mein Volk brachte, doch er ließ mich kalt. Dein Tod aber wird mir Freude bereiten!
+
+Szene 2 - Dararos und die Drachentöterin:
 Drachentöterin: Mein König, ich wusste nicht, dass Ihr Euch persönlich auf den Weg macht.
 Dararos: <Name> (aus Buch) es musste sein. Deranors Verschwinden hat den Fürsten der Dunkelelfen aus seiner Festung gelockt. Ich konnte nicht zögern mir diese Chance entgehen zu lassen.
 Dararos: Wir werden jedoch erst mehr Männer sammeln und dann in Richtung Norden ziehen. Vielleicht können wir ihn auf offenem Felde stellen.

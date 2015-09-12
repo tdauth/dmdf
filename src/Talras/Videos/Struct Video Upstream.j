@@ -4,6 +4,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 		private integer m_actorBoat
 		private integer m_actorWigberht
 		private integer m_actorRicman
+		private integer m_actorDragonSlayer
 		private integer m_actorNarrator
 		private integer m_actorNorseman0
 		private integer m_actorNorseman1
@@ -75,6 +76,10 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_upstream_ricman)
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorRicman), thistype.unitActor(this.m_actorBoat))
 			
+			set this.m_actorDragonSlayer = thistype.saveUnitActor(Npcs.dragonSlayer())
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorDragonSlayer), gg_rct_video_upstream_dragon_slayer)
+			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorDragonSlayer), thistype.unitActor(this.m_actorBoat))
+			
 			set this.m_actorNarrator = thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n00W', gg_rct_video_upstream_narrator, GetRandomFacing())
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorNarrator), thistype.unitActor(this.m_actorBoat))
 			
@@ -98,6 +103,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			call this.m_group.units().pushBack(thistype.actor())
 			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorWigberht))
 			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorRicman))
+			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorDragonSlayer))
 			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorNorseman0))
 			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorNorseman1))
 			
@@ -231,16 +237,6 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			set i = 0
 			loop
 				exitwhen (i == Credits.contributors.evaluate())
-				
-				if (not Credits.contributorIsTitle.evaluate(i)) then
-					call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 14.0, 255, 255, 255, 0)
-				else
-					call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 16.0, 255, 0, 0, 0)
-				endif
-
-				if (wait(3.00)) then
-					return
-				endif
 
 				if (not Credits.contributorIsTitle.evaluate(i)) then
 					call thistype.showMovingTextTag(Credits.contributorDescription.evaluate(i), 14.0, 255, 255, 255, 0)
@@ -248,6 +244,16 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 					if (wait(5.0)) then
 						return
 					endif
+				endif
+				
+				if (wait(2.00)) then
+					return
+				endif
+				
+				if (not Credits.contributorIsTitle.evaluate(i)) then
+					call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 14.0, 255, 255, 255, 0)
+				else
+					call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 16.0, 255, 0, 0, 0)
 				endif
 
 				set i = i + 1
@@ -311,6 +317,16 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			endif
 			
 			call IssueRectOrder(thistype.unitActor(this.m_actorGiant), "move", gg_rct_video_upstream_giant_start)
+			
+			loop
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_giant_start, thistype.unitActor(this.m_actorGiant)))
+
+				if (wait(1.0)) then
+					return
+				endif
+			endloop
+			
+			call EndGame(true)
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing

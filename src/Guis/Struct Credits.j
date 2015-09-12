@@ -163,7 +163,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 				set fontSize = 20.0
 				set text = contributor.name()
 			else
-				set text = Format(tr("%1%\n%2%\n")).s(contributor.name()).s(contributor.description()).result()
+				set text = Format(tr("%1%\n%2%\n")).s(contributor.description()).s(contributor.name()).result()
 			endif
 
 			set i = 0

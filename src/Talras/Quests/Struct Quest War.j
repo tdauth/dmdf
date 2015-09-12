@@ -177,6 +177,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		 public static constant integer trapItemTypeId = 'I057'
 		 private timer m_bjoernsTrapsSpawnTimer
 		 private item array m_spawnedTraps[thistype.maxSpawnedTraps]
+		 private ALocationVector m_traps
 		 private integer m_trapsCounter
 		
 		/*
@@ -798,11 +799,33 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
 		endmethod
 		
+		private method addTrap takes real x, real y returns nothing
+			call this.m_traps.pushBack(Location(x, y))
+			set this.m_trapsCounter = this.m_trapsCounter + 1
+			call this.displayUpdateMessage(Format(tr("%1%/%2% Fallen platziert.")).i(this.m_trapsCounter).i(thistype.maxPlacedTraps).result())
+		endmethod
+		
+		/**
+		 * Places all traps as trap units at the locations which have been specified.
+		 * This destroys and clears the stored locations afterwards to avoid memory leaks.
+		 */
+		public method placeTraps takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == this.m_traps.size())
+				call CreateUnit(MapData.alliedPlayer, 'n02W', GetLocationX(this.m_traps[i]), GetLocationY(this.m_traps[i]), 0.0)
+				call RemoveLocation(this.m_traps[i])
+				set this.m_traps[i] = null
+				set i = i + 1
+			endloop
+			call this.m_traps.destroy()
+			set this.m_traps = 0
+		endmethod
+		
 		private static method stateConditionCompletedPlaceTraps takes AQuestItem questItem returns boolean
 			local thistype this = thistype.quest()
 			if (GetSpellAbilityId() == 'A0QZ' and RectContainsCoords(gg_rct_quest_war_bjoern_place_traps, GetSpellTargetX(), GetSpellTargetY())) then
-				set this.m_trapsCounter = this.m_trapsCounter + 1
-				call this.displayUpdateMessage(Format(tr("%1%/%2% Fallen platziert.")).i(this.m_trapsCounter).i(thistype.maxPlacedTraps).result())
+				call this.addTrap(GetSpellTargetX(), GetSpellTargetY())
 				
 				return this.m_trapsCounter == thistype.maxPlacedTraps
 			endif

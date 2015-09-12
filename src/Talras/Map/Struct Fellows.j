@@ -101,12 +101,12 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 		
 		public static method initDararos takes unit whichUnit returns nothing
 			set thistype.m_dararos = Fellow.create(whichUnit, 0)
-			call thistype.m_dragonSlayer.setTalk(false)
-			call thistype.m_dragonSlayer.setRevivalTitle(tr("Dararos"))
-			call thistype.m_dragonSlayer.setRevivalMessage(tr("Ich grüße Euch!"))
-			call thistype.m_dragonSlayer.setRevival(true)
-			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_dragonSlayer.setRevivalTime(20.0)
+			call thistype.m_dararos.setTalk(false)
+			call thistype.m_dararos.setRevivalTitle(tr("Dararos"))
+			call thistype.m_dararos.setRevivalMessage(tr("Ich grüße Euch!"))
+			call thistype.m_dararos.setRevival(true)
+			call thistype.m_dararos.setRevivalSound(null) /// \todo FIXME
+			call thistype.m_dararos.setRevivalTime(20.0)
 		endmethod
 	endstruct
 

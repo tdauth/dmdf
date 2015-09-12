@@ -554,6 +554,14 @@
 * Zacken von Deranors Krone: Icon verbergen.
 * Göttergunst: Autocast-Icon disabled-Version fehlt.
 * FIXED: Standarte der schwarzen Legion: Icon ist noch sichtbar.
+* Für Bestehlen die Stufen der NPCs höher als 0 setzen.
+* DONE: Quest Krieg: Fallengebiet vor dem Tor machen weil von dort später die ersten Orks angerifen.
+* DONE: Quest Krieg: Fallenplatzierung soll tatsächlich Fallen für später platzieren. Zunächst unbesiegbar und deaktiviert und bei erster Ork-Welle aktivieren.
+* FIXED: Quest Die Verteidigung von Talras: 5000 Goldmünzen reichen für den Verbündeten locker aus.
+* Die Verteidigung von Talras: Orks schwächer machen, dafür mehr.
+* Falle: Soll nur feindlichen Einheiten schaden!!!
+* Tor beladen: Auch Verbündete zulassen.
+* Reinheit: Stoppen falls keine Buffs da sind.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

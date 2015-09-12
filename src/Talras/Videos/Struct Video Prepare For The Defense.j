@@ -35,9 +35,9 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 			
 			
 			set this.m_actorWigberht = thistype.saveUnitActor(Npcs.wigberht())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_prepare_for_the_defense_dragon_slayer)
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_prepare_for_the_defense_wigberht)
 			set this.m_actorRicman = thistype.saveUnitActor(Npcs.ricman())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_prepare_for_the_defense_dragon_slayer)
+			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_prepare_for_the_defense_ricman)
 			set this.m_actorDragonSlayer = thistype.saveUnitActor(Npcs.dragonSlayer())
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorDragonSlayer), gg_rct_video_prepare_for_the_defense_dragon_slayer)
 
