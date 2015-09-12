@@ -4,7 +4,7 @@
  
  Drachentöterin: Auf ihr Hochelfen, ihr Brüder und Schwestern! Für König Dararos!
  */
-library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQuestTheWayToHolzbruck, StructMapVideosVideoHolzbruck, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestWar
+library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQuestTheWayToHolzbruck, StructMapVideosVideoTheDefenseOfTalras, StructMapVideosVideoVictory, StructMapVideosVideoHolzbruck, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestWar
 
 	struct QuestAreaQuestTheDefenseOfTalras extends QuestArea
 	
@@ -13,9 +13,29 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 	
 		public stub method onStart takes nothing returns nothing
-			//call VideoUpstream.video().play()
-			// TEST
+			call VideoTheDefenseOfTalras.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
 			call QuestTheDefenseOfTalras.quest.evaluate().enableTimer.evaluate()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+	
+	struct QuestAreaQuestTheDefenseOfTalrasReportHeimrich extends QuestArea
+	
+		public stub method onCheck takes nothing returns boolean
+			return true
+		endmethod
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoHolzbruck.video().play()
+			debug call Print("After finish")
+			call waitForVideo(MapData.videoWaitInterval)
+			debug call Print("After wait")
+			call QuestTheDefenseOfTalras.quest.evaluate().complete()
+			call QuestTheWayToHolzbruck.quest().enable()
 		endmethod
 	
 		public static method create takes rect whichRect returns thistype
@@ -25,27 +45,45 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 
 	/*
 	 * TODO
-	 * A battle with Wigberht, Ricman, Dragon Slayer and some characters helping out, Tobias and Haldar and Baldar.
+	 * A battle with Wigberht, Ricman, Dragon Slayer and the arriving Dararos.
+	 * You fight waves of Orcs and Dark Elves, destroy their artillery and finally their commander with the help of Dararos.
 	 */
 	struct QuestTheDefenseOfTalras extends AQuest
 		public static constant integer questItemMoveToCamp = 0
 		public static constant integer questItemPrepare = 1
 		public static constant integer questItemDefendAgainstOrcs = 2
 		public static constant integer questItemDestroyArtillery = 3
+		public static constant integer questItemDefeatTheEnemy = 4
+		public static constant integer questItemReportHeimrich = 5
 		public static constant integer maxOrcWaves = 5
 		private QuestAreaQuestTheDefenseOfTalras m_questArea
-		// TEST Finish the quest after 20 seconds, temporary solution.
+
 		private timer m_timer
 		private timerdialog m_timerDialog
+		
+		private timer m_orcWavesTimer
+		private timerdialog m_orcWavesTimerDialog
+		
 		private unit m_recruitBuilding
 		private unit m_shop
 		private AGroup m_recruits
 		private AGroup m_warriors
 		private AGroup m_siege
+		
+		// questItemDefendAgainstOrcs
 		private AGroup m_orcs
 		private integer m_orcWavesCounter
+		
+		// questItemDestroyArtillery
 		private AGroup m_orcSiege
 		private AGroup m_orcSiegeWarriors
+		
+		// questItemDefeatTheEnemy
+		private AGroup m_highElves
+		private AGroup m_finalOrcs
+		
+		// questItemReportHeimrich
+		private QuestAreaQuestTheDefenseOfTalrasReportHeimrich m_questAreaReportHeimrich
 		
 		implement Quest
 		
@@ -58,7 +96,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			if (this.m_orcs.units().contains(GetTriggerUnit())) then
 				call this.m_orcs.units().remove(GetTriggerUnit())
 				
-				if (this.m_orcs.units().empty()) then
+				if (this.m_orcs.units().empty() and this.m_orcWavesCounter == thistype.maxOrcWaves) then
 					call whichQuestItem.setState(thistype.stateCompleted)
 					call this.enableOrcArtillery.evaluate()
 				endif
@@ -84,8 +122,54 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		
 		private static method stateActionCompletedDestroyArtillery takes AQuestItem whichQuestItem returns nothing
 			local thistype this = thistype(whichQuestItem.quest())
-			// TEST
-			call this.complete()
+
+			call VideoDararos.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			
+			/*
+			 * TODO Create Dararos and the high elves.
+			 */
+			 set this.m_highElves = AGroup.create()
+			 call Fellows.initDararos(CreateUnit(MapData.alliedPlayer, 'H02F', GetRectCenterX(gg_rct_quest_the_defense_of_talras_dararos), GetRectCenterY(gg_rct_quest_the_defense_of_talras_dararos), 0.0))
+			 call Fellows.dararos().shareWith(0)
+			 
+			 /*
+			  * TODO Create the final orcs from everywhere
+			  */
+			 set this.m_finalOrcs = AGroup.create()
+			 
+			 call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs, 90.0), true, false)
+			
+			call this.questItem(thistype.questItemDefeatTheEnemy).setState(thistype.stateNew)
+			call this.displayState()
+		endmethod
+		
+		private static method stateEventCompletedDefeatTheEnemy takes AQuestItem questItem, trigger whichTrigger returns nothing
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
+		endmethod
+		
+		private static method stateConditionCompletedDefeatTheEnemy takes AQuestItem questItem returns boolean
+			local thistype this = thistype(questItem.quest())
+			if (this.m_finalOrcs.units().contains(GetTriggerUnit())) then
+				call this.m_finalOrcs.units().remove(GetTriggerUnit())
+				
+				return this.m_finalOrcs.units().empty()
+			endif
+			
+			return false
+		endmethod
+		
+		private static method stateActionCompletedDefeatTheEnemy takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
+			call this.m_highElves.destroy()
+			set this.m_highElves = 0
+			call this.m_finalOrcs.destroy()
+			set this.m_finalOrcs = 0
+			call VideoVictory.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			set this.m_questAreaReportHeimrich = QuestAreaQuestTheDefenseOfTalrasReportHeimrich.create(gg_rct_quest_the_defense_of_talras_heimrich)
+			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
+			call this.displayState()
 		endmethod
 	
 		private method enableOrcArtillery takes nothing returns nothing
@@ -111,51 +195,66 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		private static method timerFunctionOrcWave takes nothing returns nothing
 			local thistype this = thistype.quest()
 			set this.m_orcWavesCounter = this.m_orcWavesCounter + 1
-			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_0, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_1, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_2, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_3, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_4, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_5, 90.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_6, 90.0), true, false)
-			call this.m_warriors.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras_orc_target), GetRectCenterY(gg_rct_quest_the_defense_of_talras_orc_target))
+			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_0, 90.0), true, false)
+			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_1, 90.0), true, false)
+			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_2, 90.0), true, false)
+			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_3, 90.0), true, false)
+			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_4, 90.0), true, false)
+			call this.m_orcs.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_5, 90.0), true, false)
+			call this.m_orcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_6, 90.0), true, false)
+			call this.m_orcs.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras_orc_target), GetRectCenterY(gg_rct_quest_the_defense_of_talras_orc_target))
 			
 			if (this.m_orcWavesCounter < thistype.maxOrcWaves) then
-				call this.startTimer.evaluate()
+				call this.startOrcWavesTimer.evaluate()
 			else
-				call DestroyTimerDialog(this.m_timerDialog)
-				set this.m_timerDialog = null
-				call PauseTimer(this.m_timer)
-				call DestroyTimer(this.m_timer)
+				call DestroyTimerDialog(this.m_orcWavesTimerDialog)
+				set this.m_orcWavesTimerDialog = null
+				call PauseTimer(this.m_orcWavesTimer)
+				call DestroyTimer(this.m_orcWavesTimer)
+				set this.m_orcWavesTimer = null
 			endif
 		endmethod
 		
-		private method startTimer takes nothing returns nothing
-			if (this.m_timer == null) then
-				set this.m_timer = CreateTimer()
+		private method startOrcWavesTimer takes nothing returns nothing
+			if (this.m_orcWavesTimer == null) then
+				set this.m_orcWavesTimer = CreateTimer()
 			endif
-			call TimerStart(this.m_timer, 40.0, false, function thistype.timerFunctionOrcWave)
-			if (this.m_timerDialog == null) then
-				set this.m_timerDialog = CreateTimerDialog(this.m_timer)
+			call TimerStart(this.m_orcWavesTimer, 40.0, false, function thistype.timerFunctionOrcWave)
+			if (this.m_orcWavesTimerDialog == null) then
+				set this.m_orcWavesTimerDialog = CreateTimerDialog(this.m_orcWavesTimer)
 			endif
-			call TimerDialogSetTitle(this.m_timerDialog, tr("Ork-Welle:"))
-			call TimerDialogDisplay(this.m_timerDialog, true)
+			call TimerDialogSetTitle(this.m_orcWavesTimerDialog, tr("Ork-Welle:"))
+			call TimerDialogDisplay(this.m_orcWavesTimerDialog, true)
 		endmethod
 		
+		/*
+		 * Enables the quest item to defend against the orcs and starts spawning orc waves.
+		 */
 		public method enableDefendAgainstOrcs takes nothing returns nothing
 			set this.m_orcs = AGroup.create()
 			call this.questItem(thistype.questItemDefendAgainstOrcs).enable()
 			set this.m_orcWavesCounter = 0
 			
-			call this.startTimer()
+			call thistype.timerFunctionOrcWave()
 		endmethod
 		
 		private static method timerFunctionFinish takes nothing returns nothing
 			local thistype this = thistype.quest()
+			
+			call DestroyTimerDialog(this.m_timerDialog)
+			set this.m_timerDialog = null
+			call PauseTimer(this.m_timer)
+			call DestroyTimer(this.m_timer)
+			set this.m_timer = null
+			
 			call this.questItem(thistype.questItemPrepare).setState(thistype.stateCompleted)
+			
 			call this.enableDefendAgainstOrcs()
 		endmethod
 		
+		/*
+		 * Creates all allied units and starts the preparation timer.
+		 */
 		public method enableTimer takes nothing returns nothing
 			local integer i
 			call QuestTheNorsemen.quest().cleanFinalNorsemen()
@@ -188,24 +287,27 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			set this.m_siege = AGroup.create()
 			call this.m_siege.addGroup(CreateUnitsAtRect(2, 'n007', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_siege, 270.0), true, false)
 			 
-			call Fellows.dragonSlayer().shareWith(0)
+			call Fellows.dragonSlayer().shareWithAll()
 			call SetUnitPositionRect(Fellows.dragonSlayer().unit(), gg_rct_quest_the_defense_of_talras_dragon_slayer)
 			call SetUnitFacing(Fellows.dragonSlayer().unit(), 270.0)
 			
-			call Fellows.wigberht().shareWith(0)
+			call Fellows.wigberht().shareWithAll()
 			call SetUnitPositionRect(Fellows.wigberht().unit(), gg_rct_quest_the_defense_of_talras_wigberht)
 			call SetUnitFacing(Fellows.wigberht().unit(), 270.0)
 			
-			call Fellows.ricman().shareWith(0)
+			call Fellows.ricman().shareWithAll()
 			call SetUnitPositionRect(Fellows.ricman().unit(), gg_rct_quest_the_defense_of_talras_ricman)
 			call SetUnitFacing(Fellows.ricman().unit(), 270.0)
 			
+			/*
+			 * The allied player needs a lot of gold to build something.
+			 */
 			call AdjustPlayerStateBJ(20000, MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD)
 		
 			if (this.m_timer == null) then
 				set this.m_timer = CreateTimer()
 			endif
-			call TimerStart(this.m_timer, 180.0, false, function thistype.timerFunctionFinish)
+			call TimerStart(this.m_timer, 360.0, false, function thistype.timerFunctionFinish)
 			if (this.m_timerDialog == null) then
 				set this.m_timerDialog = CreateTimerDialog(this.m_timer)
 			endif
@@ -214,20 +316,16 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			
 			call this.questItem(thistype.questItemMoveToCamp).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemPrepare).enable()
+			
+			call Character.displayUnitAcquiredToAll(tr("Knecht"), tr("Ein Knecht kann verschiedene Verteidigungsanlagen errichten wie z. B. Tore, Barrikaden oder Ballistas."))
+
+			call PingMinimap(GetRectCenterX(gg_rct_quest_the_defense_of_talras_recruits), GetRectCenterY(gg_rct_quest_the_defense_of_talras_recruits), bj_RESCUE_PING_TIME)
+			call PanCameraTo(GetRectCenterX(gg_rct_quest_the_defense_of_talras_recruits), GetRectCenterY(gg_rct_quest_the_defense_of_talras_recruits))
 		endmethod
 		
 		public stub method enable takes nothing returns boolean
 			set this.m_questArea = QuestAreaQuestTheDefenseOfTalras.create(gg_rct_quest_the_defense_of_talras)
 			return super.enableUntil(thistype.questItemMoveToCamp)
-		endmethod
-		
-		private static method stateActionCompleted takes thistype this returns nothing
-			debug call Print("Before finish")
-			call VideoHolzbruck.video().play()
-			debug call Print("After finish")
-			call waitForVideo(MapData.videoWaitInterval)
-			debug call Print("After wait")
-			call QuestTheWayToHolzbruck.quest().enable()
 		endmethod
 
 		private static method create takes nothing returns thistype
@@ -237,7 +335,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			set this.m_timerDialog = null
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNGuardTower.blp")
 			call this.setDescription(tr("Ein Teil der Armee der Orks und Dunkelelfen ist in Talras eingetroffen. Verteidigt Talras um jeden Preis gegen die Horden der Orks und Dunkelelfen."))
-			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)
+			
 			// item 0
 			set questItem = AQuestItem.create(this, tr("Begebt euch zum Außenposten und beginnt mit der Verteidigung."))
 			call questItem.setPing(true)
@@ -270,6 +368,20 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras_trebuchet_1)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 1000)
+			
+			// item 4
+			set questItem = AQuestItem.create(this, tr("Besiegt mit Hilfe der Hochelfen den Feind endgültig."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedDefeatTheEnemy)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedDefeatTheEnemy)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedDefeatTheEnemy)
+			call questItem.setReward(thistype.rewardExperience, 1000)
+			
+			// item 5
+			set questItem = AQuestItem.create(this, tr("Berichtet dem Herzog von eurem Sieg."))
+			call questItem.setReward(thistype.rewardExperience, 200)
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras_heimrich)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			return this
 		endmethod

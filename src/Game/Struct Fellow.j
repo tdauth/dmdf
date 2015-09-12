@@ -190,6 +190,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				endif
 			endif
 		endmethod
+		
+		public method shareWithAll takes nothing returns nothing
+			call this.shareWith(0)
+		endmethod
 
 		/**
 		 * Removes fellow from the characters group by resetting its owner and making it a normal NPC again.

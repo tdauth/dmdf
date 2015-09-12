@@ -163,38 +163,28 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		endmethod
 		
 		private static method groupFunctionSetHaldar takes nothing returns nothing
-			local unit enumUnit = GetEnumUnit()
-			call SetUnitOwner(enumUnit, MapData.haldarPlayer, false)
-			call SetUnitInvulnerable(enumUnit, false)
-			set enumUnit = null
+			call SetUnitOwner(GetEnumUnit(), MapData.haldarPlayer, false)
+			call SetUnitInvulnerable(GetEnumUnit(), false)
 		endmethod
 		
 		private static method groupFunctionSetBaldar takes nothing returns nothing
-			local unit enumUnit = GetEnumUnit()
-			call SetUnitOwner(enumUnit, MapData.baldarPlayer, false)
-			call SetUnitInvulnerable(enumUnit, false)
-			set enumUnit = null
+			call SetUnitOwner(GetEnumUnit(), MapData.baldarPlayer, false)
+			call SetUnitInvulnerable(GetEnumUnit(), false)
 		endmethod
 
 		private static method groupFunctionMoveBehindHill takes nothing returns nothing
-			local unit enumUnit = GetEnumUnit()
-			call SetUnitX(enumUnit, GetRectCenterX(gg_rct_video_the_first_combat_hill_waiting))
-			call SetUnitY(enumUnit, GetRectCenterY(gg_rct_video_the_first_combat_hill_waiting))
-			call SetUnitFacing(enumUnit, 270.0)
-			set enumUnit = null
+			call SetUnitX(GetEnumUnit(), GetRectCenterX(gg_rct_video_the_first_combat_hill_waiting))
+			call SetUnitY(GetEnumUnit(), GetRectCenterY(gg_rct_video_the_first_combat_hill_waiting))
+			call SetUnitFacing(GetEnumUnit(), 270.0)
 		endmethod
 
 		private static method groupFunctionStandVictory takes nothing returns nothing
-			local unit enumUnit = GetEnumUnit()
-			call SetUnitAnimation(enumUnit, "Stand Victory")
+			call SetUnitAnimation(GetEnumUnit(), "Stand Victory")
 			call PlaySoundBJ(gg_snd_BattleRoar)
-			set enumUnit = null
 		endmethod
 
 		private static method groupFunctionLookAtHill takes nothing returns nothing
-			local unit enumUnit = GetEnumUnit()
-			call SetUnitFacingToFaceRectTimed(enumUnit, gg_rct_video_the_first_combat_battle_field, 2.0)
-			set enumUnit = null
+			call SetUnitFacingToFaceRectTimed(GetEnumUnit(), gg_rct_video_the_first_combat_battle_field, 2.0)
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing

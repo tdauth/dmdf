@@ -189,6 +189,9 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 
 		implement Quest
 		
+		/**
+		 * Removes all carts and recruits from their destination.
+		 */
 		public method cleanUnits takes nothing returns nothing
 			local integer i = 0
 			loop
@@ -620,7 +623,6 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			
 			call this.setupUnitAtDestination(GetTriggerUnit())
 			
-			set this.m_supplyCart = null
 			call PauseTimer(this.m_supplyCartSpawnTimer)
 			call DestroyTimer(this.m_supplyCartSpawnTimer)
 			set this.m_supplyCartSpawnTimer = null
@@ -751,7 +753,6 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call PauseTimer(this.m_kunosCartSpawnTimer)
 			call DestroyTimer(this.m_kunosCartSpawnTimer)
 			set this.m_kunosCartSpawnTimer = null
-			set this.m_kunosCart = null
 			call this.questItem(thistype.questItemLumberFromKuno).setState(thistype.stateCompleted)
 			call this.displayUpdate()
 		endmethod

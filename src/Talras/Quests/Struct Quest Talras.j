@@ -42,7 +42,8 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 
 		public method enableDuke takes nothing returns nothing
 			set this.m_questAreaDuke = QuestAreaTalrasDuke.create(gg_rct_quest_talras_quest_item_1)
-			call thistype.quest().questItem(thistype.questItemMeetHeimrich).enable()
+			call this.questItem(thistype.questItemReachTheCastle).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemMeetHeimrich).enable()
 			// open the gate
 			call SetDoodadAnimationRect(gg_rct_doodad_gate_talras, 'D053', "Death", false)
 		endmethod

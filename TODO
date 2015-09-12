@@ -482,17 +482,17 @@
 * HeroGlow für Schwertmodell.
 * HeroGlow für Schildmodell.
 * Björn's Dialog verbuggt: Weiß nicht wo Dago ist aber hat vom Kampf gehört? Nicht verbuggt, hat vom Kampf von einem Freund gehört. Dann sollte er aber wissen wo Dago ist.
-* Auftrag "Die Nordmänner": Sammelgebiet im Lager der Nordmänner machen.
+* FIXED: Auftrag "Die Nordmänner": Sammelgebiet im Lager der Nordmänner machen.
 * Auftrag "Die Nordmänner": Bei Verstärkung und gegnerischen Wellen kurzen Cinematic oder Spiel anhalten.
 * AVideo: Charakter kann Geschwindigkeitsbonus haben der erhalten bleibt - Mantel. Dieser muss manuell zurückgesetzt werden. Einfach actor() auf feste Geschwindigkeit setzen?
 * Ricman braucht anderes Modell, muss sich abheben.
 * Auftrag "Die Verteidigung von Talras": Video sollte mögliche Angriffspunkte und Verteidigung erklären.
 * Orks kopieren und stärker machen als bei Auftrag "Die Nordmänner".
-* Orks bei Auftrag "Die Nordmänner" wesentlich schwächer machen.
+* DONE: Orks bei Auftrag "Die Nordmänner" wesentlich schwächer machen.
 * Tor sollte geöffnet und geschlossen werden können.
 * Arbeiter sollten Barrikade errichten können.
 * Arbeiter sollten Katapulte und Ballistas bauen können.
-* Schrein im Außenposten einbauen der während des Quests aktiviert werden kann. Den Schrein außerhalb deaktivieren.
+* DONE: Schrein im Außenposten einbauen der während des Quests aktiviert werden kann. Den Schrein außerhalb deaktivieren.
 * Video "Prepare For The Defense": Herzog muss überrascht wirken und Markward begeistern, dass alle Aufträge erfüllt wurden. Große Belohnung.
 * Knechte sollen Tunnel graben können. So kann man sich Versorgung in den Außenposten holen.
 * Mehr Interaktion bei mehreren Spielern: Dararos sollte mit Hochelfen eintreffen und mit Interaktion sollte ein Zauber gewirkt werden. Charaktere müssen auf magischen Kreisen ausharren?
@@ -549,7 +549,10 @@
 * Video "The First Combat": Große Kameradrehungen ersetzen durch ein paar Ansichten und Fades.
 * Video "The First Combat:" Zwei Dunkelelfen hinten laufen nicht mit.
 * Video "Wigberht": Terrain deformation raus. Wigberht tötet stattdessen jeden Ork mit einem Schlag.
-* Hörner Icon verbergen.
+* Hörner: Icon verbergen.
+* Blutamulett: Icon verbergen.
+* Zacken von Deranors Krone: Icon verbergen.
+* Göttergunst: Autocast-Icon disabled-Version fehlt.
 * FIXED: Standarte der schwarzen Legion: Icon ist noch sichtbar.
 
 Test mit zwei menschlichen Spielern:

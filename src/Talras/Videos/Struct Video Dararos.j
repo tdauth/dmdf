@@ -1,11 +1,7 @@
-library StructMapVideosVideoHolzbruck requires Asl, StructGameGame
+library StructMapVideosVideoDararos requires Asl, StructGameGame
 
-/*
-Szene 5 - Der Charakter und der Herzog:
-C: Wir haben den Außenposten erfolgreich verteidigt.
-Heimrich: Freude, Jubel, jauchzet und frohlocket, es ist vollbracht! Der Feind ist niedergestreckt, besiegt, die Hochelfen sind eingetroffen. Es hätte nicht schöner ausgehen können. Markward wird ihnen alle erdenklichen Wünsche erfüllen und sie mit ihrer nächsten Mission vertraut machen. Das war wirklich ausgezeichnete Arbeit!
-*/
-	struct VideoHolzbruck extends AVideo
+	// TODO Dararos erscheint mit einer Armee von Hochelfen im letzten Moment.
+	struct VideoDararos extends AVideo
 		private integer m_actorHeimrich
 		private integer m_actorMarkward
 		private integer m_actorOsman
@@ -18,16 +14,33 @@ Heimrich: Freude, Jubel, jauchzet und frohlocket, es ist vollbracht! Der Feind i
 
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
-			call SetTimeOfDay(20.0)
+			call SetTimeOfDay(24.0)
+			call CameraSetupApplyForceDuration(gg_cam_dararos_0, true, 0.0)
+			call CameraSetupApplyForceDuration(gg_cam_dararos_1, true, 4.0)
+			
+			// TODO the final ultimate battle
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			// TODO Finish this video
 			
-			if (wait(4.0)) then // wait until end
+			if (wait(2.0)) then
 				return
 			endif
-
+			
+			call CameraSetupApplyForceDuration(gg_cam_dararos_2, true, 4.0)
+			
+			if (wait(3.50)) then
+				return
+			endif
+			
+			call CameraSetupApplyForceDuration(gg_cam_dararos_3, true, 4.0)
+			
+			if (wait(3.50)) then
+				return
+			endif
+			
+			// TODO arrival of the highelves
+			
 			call this.stop()
 		endmethod
 

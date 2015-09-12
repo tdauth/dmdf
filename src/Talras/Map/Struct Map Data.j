@@ -572,6 +572,14 @@ static if (DEBUG_MODE) then
 			loop
 				exitwhen (i == bj_MAX_PLAYERS)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					/*
+					 * If the character is already standing in the rect move outside first to trigger the event afterwards.
+					 */
+					if (RectContainsUnit(whichRect, ACharacter.playerCharacter(Player(i)).unit())) then
+						call SetUnitX(ACharacter.playerCharacter(Player(i)).unit(), GetRectMaxX(whichRect) + 100.0)
+						call SetUnitY(ACharacter.playerCharacter(Player(i)).unit(), GetRectMaxY(whichRect) + 100.0)
+					endif
+				
 					call SetUnitX(ACharacter.playerCharacter(Player(i)).unit(), GetRectCenterX(whichRect))
 					call SetUnitY(ACharacter.playerCharacter(Player(i)).unit(), GetRectCenterY(whichRect))
 				endif

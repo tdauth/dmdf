@@ -800,11 +800,11 @@ endif
 				set i = i + 1
 			endloop
 			call thistype.m_weather.disable()
-			call Fellow.reviveAllForVideo.evaluate()
-			call SpawnPoint.pauseAll()
-			call ItemSpawnPoint.pauseAll()
-			call Shrine.disableAllAuras()
-			call Routines.destroyTextTags()
+			call ForForce(bj_FORCE_PLAYER[0], function Fellow.reviveAllForVideo)
+			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.pauseAll)
+			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.pauseAll)
+			call ForForce(bj_FORCE_PLAYER[0], function Shrine.disableAllAuras)
+			call ForForce(bj_FORCE_PLAYER[0], function Routines.destroyTextTags)
 			call DisableTrigger(thistype.m_killTrigger)
 			//call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_UI, 1.0) /// @todo TEST
 			call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_MUSIC, 1.0)
@@ -858,9 +858,9 @@ endif
 			 * Make sure that not default wc3 music is played.
 			 */
 			call thistype.setDefaultMapMusic()
-			call SpawnPoint.resumeAll()
-			call ItemSpawnPoint.resumeAll()
-			call Shrine.enableAllAuras()
+			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.resumeAll)
+			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.resumeAll)
+			call ForForce(bj_FORCE_PLAYER[0], function Shrine.enableAllAuras)
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterHiddenItem), function thistype.showItem)
 			set i = 0
 			loop

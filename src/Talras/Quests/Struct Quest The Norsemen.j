@@ -63,8 +63,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		public stub method onStart takes nothing returns nothing
 			call VideoTheFirstCombat.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
-			call QuestTheNorsemen.quest.evaluate().questItem(1).setState(AAbstractQuest.stateCompleted)
-			call QuestTheNorsemen.quest.evaluate().questItem(2).setState(AAbstractQuest.stateNew)
+			call QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheBattlefield).setState(AAbstractQuest.stateCompleted)
+			call QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemFight).setState(AAbstractQuest.stateNew)
 			call QuestTheNorsemen.quest.evaluate().displayState()
 		endmethod
 	
@@ -78,7 +78,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		public stub method onStart takes nothing returns nothing
 			call VideoANewAlliance.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
-			call QuestTheNorsemen.quest.evaluate().questItem(3).setState(AAbstractQuest.stateCompleted)
+			call QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemReportHeimrich).setState(AAbstractQuest.stateCompleted)
 			call QuestTheNorsemen.quest.evaluate().displayState()
 		endmethod
 	
@@ -224,7 +224,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		
 		public method completeFight takes nothing returns boolean
 			call this.cleanUpBattleField()
-			return QuestTheNorsemen.quest().questItem(2).setState(AAbstractQuest.stateCompleted) // video Wigberht is played in quest completion action
+			return QuestTheNorsemen.quest().questItem(thistype.questItemFight).setState(AAbstractQuest.stateCompleted) // video Wigberht is played in quest completion action
 		endmethod
 
 		private static method triggerActionSpawn takes nothing returns nothing
@@ -399,27 +399,15 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call Game.resetCameraBounds() // camera will be set to fight area automatically when spawn has started
 			call ACharacter.panCameraSmartToAll()
 
-			call Fellows.wigberht().shareWith(0)
-			call Fellows.ricman().shareWith(0)
-		endmethod
-
-		private static method stateEventCompleted0 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			local event triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_quest_the_norsemen_quest_item_0)
-			set triggerEvent = null
-		endmethod
-
-		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = ACharacter.isUnitCharacter(triggerUnit)
-			set triggerUnit = null
-			return result
+			call Fellows.wigberht().shareWithAll()
+			call Fellows.ricman().shareWithAll()
 		endmethod
 
 		public method enableTheBattle takes nothing returns nothing
-			call this.questItem(0).complete()
+			call this.questItem(thistype.questItemMeetTheNorsemen).complete()
 			call VideoTheChief.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
-			call this.questItem(1).enable()
+			call this.questItem(thistype.questItemMeetAtTheBattlefield).enable()
 			set this.m_questAreaBattle = QuestAreaTheNorsemenBattle.create(gg_rct_quest_the_norsemen_assembly_point)
 		endmethod
 		

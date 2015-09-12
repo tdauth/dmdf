@@ -7,6 +7,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 		private static Fellow m_wigberht
 		private static Fellow m_ricman
 		private static Fellow m_dragonSlayer
+		private static Fellow m_dararos
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -88,10 +89,24 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			return thistype.m_dragonSlayer
 		endmethod
 		
+		public static method dararos takes nothing returns Fellow
+			return thistype.m_dararos
+		endmethod
+		
 		public static method hideDragonSlayerInVideo takes nothing returns nothing
 			local integer actorIndex = AVideo.saveUnitActor(Npcs.dragonSlayer())
 			call ShowUnit(AVideo.unitActor(actorIndex), false)
 			call PauseUnit(AVideo.unitActor(actorIndex), true)
+		endmethod
+		
+		public static method initDararos takes unit whichUnit returns nothing
+			set thistype.m_dararos = Fellow.create(whichUnit, 0)
+			call thistype.m_dragonSlayer.setTalk(false)
+			call thistype.m_dragonSlayer.setRevivalTitle(tr("Dararos"))
+			call thistype.m_dragonSlayer.setRevivalMessage(tr("Ich grüße Euch!"))
+			call thistype.m_dragonSlayer.setRevival(true)
+			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
+			call thistype.m_dragonSlayer.setRevivalTime(20.0)
 		endmethod
 	endstruct
 
