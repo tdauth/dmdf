@@ -94,15 +94,14 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			
-			// TODO Bezug zum untoten König herstellen
-			call TransmissionFromUnit(this.m_actorWieland, tr("In Talras? Keine Ahnung, nirgendwo?! Hmm man erzählt sich die Legende von unterirdischen Gewölben im Mühlberg. Vielleicht brigt dieser Berg ja Eisen. Falls nicht müsst ihr wohl nach Holzbruck aufbrechen. Dafür könnt ihr euch dann beim Herzog bedanken."), null)
+
+			call TransmissionFromUnit(this.m_actorWieland, tr("In Talras? Keine Ahnung, nirgendwo?! Hmm man erzählt sich die Legende von unterirdischen Gewölben im Mühlberg. Vielleicht birgt dieser Berg ja Eisen. Falls nicht musst du wohl nach Holzbruck aufbrechen. Dafür kannst du dich dann beim Herzog bedanken."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Bringt mir Eisen und ich schmiede euch die besten Waffen mit denen ihr die verfluchten Orks und Dunkelelfen aufschlitzen könnte wie gemestetes Vieh. Die Bezahlung werde ich noch mit dem Vogt aushandeln. Ich will dabei ja nicht leer ausgehen."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Bringt mir das Eisen und ich schmiede euch die besten Waffen in ganz Talras, mit denen ihr die verfluchten Orks und Dunkelelfen aufschlitzen könnt wie gemestetes Vieh. Die Bezahlung werde ich noch mit dem Vogt aushandeln. Ich will dabei ja nicht leer ausgehen."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

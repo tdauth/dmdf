@@ -158,8 +158,8 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 		// Was macht dein Mann in Holzbruck?
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Was macht dein Mann in Holzbruck?"), null)
-			call speech(info, character, false, tr("Er hat dort Geschäfte zu erledigen. Er ist ein wohlhabender Kaufmann und handelt mit Salz, dem weißen Gold. Vor ein paar Monaten ist er mit einigen Wagen aufgebrochen, um sein Salz in Holzbruck zu verkaufen."), gg_snd_Irmina12)
+			call speech(info, character, false, tr("Was macht dein Mann in Holzbruck?"), null)
+			call speech(info, character, true, tr("Er hat dort Geschäfte zu erledigen. Er ist ein wohlhabender Kaufmann und handelt mit Salz, dem weißen Gold. Vor ein paar Monaten ist er mit einigen Wagen aufgebrochen, um sein Salz in Holzbruck zu verkaufen."), gg_snd_Irmina12)
 			call speech(info, character, true, tr("Du musst wissen, dass er ursprünglich aus Holzbruck kommt und sich hier nur meinetwegen niedergelassen hat."), gg_snd_Irmina13)
 			call speech(info, character, true, tr("Ich bin froh, einen solchen Mann getroffen und geheiratet zu haben. Meine Eltern waren einfache Leute und mussten noch viel härter arbeiten als ich und nun haben wir unser eigenes Haus hier und mir geht’s eigentlich recht gut."), gg_snd_Irmina14)
 			call speech(info, character, true, tr("Na ja, jetzt da Krieg herrschen wird, sollten wir vielleicht woanders hingehen. Holzbruck gefällt mir zwar, aber das ist ja noch näher an der Grenze. Ich hoffe nur, dass meinem Mann nichts passiert."), gg_snd_Irmina15)

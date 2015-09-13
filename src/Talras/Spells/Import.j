@@ -2,6 +2,7 @@
 //! import "Talras/Spells/Struct Spell Aos Ring.j"
 //! import "Talras/Spells/Struct Spell Book Of Magic.j"
 //! import "Talras/Spells/Struct Spell Book Of Potions.j"
+//! import "Talras/Spells/Struct Spell Book Of Smith Craft.j"
 //! import "Talras/Spells/Struct Spell Magical Seed.j"
 //! import "Talras/Spells/Struct Spell Neck Stone.j"
 //! import "Talras/Spells/Struct Spell Open Gate.j"
@@ -11,7 +12,7 @@
 //! import "Talras/Spells/Struct Spell Scroll Of The Realm Of The Dead.j"
 //! import "Talras/Spells/Struct Spell Unearth.j"
 
-library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesight, StructMapSpellsSpellAosRing, StructMapSpellsSpellBookOfMagic, StructMapSpellsSpellBookOfPotions, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellNeckStone, StructMapSpellsSpellOpenGate, StructMapSpellsSpellRideSheep, StructMapSpellsSpellScrollOfAncestors, StructMapSpellsSpellScrollOfCollector, StructMapSpellsSpellScrollOfTheRealmOfTheDead, StructMapSpellsSpellUnearth
+library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesight, StructMapSpellsSpellAosRing, StructMapSpellsSpellBookOfMagic, StructMapSpellsSpellBookOfPotions, StructMapSpellsSpellBookOfSmithCraft, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellNeckStone, StructMapSpellsSpellOpenGate, StructMapSpellsSpellRideSheep, StructMapSpellsSpellScrollOfAncestors, StructMapSpellsSpellScrollOfCollector, StructMapSpellsSpellScrollOfTheRealmOfTheDead, StructMapSpellsSpellUnearth
 
 	/// Init non-character spells!
 	function initMapSpells takes nothing returns nothing
@@ -95,6 +96,8 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesi
 		call SpellBookOfPotionsHealPotion.create(character)
 		call SpellBookOfPotionsManaPotion.create(character)
 		call SpellBookOfPotionsPoison.create(character)
+		call SpellBookOfSmithCraftIron.create(character)
+		call SpellBookOfSmithCraftShortSword.create(character)
 		call SpellMagicalSeed.create(character)
 		call SpellScrollOfAncestors.create(character)
 		call SpellScrollOfCollector.create(character)

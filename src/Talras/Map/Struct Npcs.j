@@ -38,6 +38,7 @@ library StructMapMapNpcs
 		private static unit m_wigberht
 		private static unit m_sheepBoy
 		private static unit m_carsten
+		private static unit m_dararos
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -83,6 +84,7 @@ library StructMapMapNpcs
 			set thistype.m_wigberht = gg_unit_H01C_0228
 			set thistype.m_sheepBoy = gg_unit_n02B_0058
 			set thistype.m_carsten = gg_unit_n05G_0393
+			set thistype.m_dararos = null
 			
 			/*
 			 * Make guardians invulnerable.
@@ -227,6 +229,14 @@ library StructMapMapNpcs
 		
 		public static method carsten takes nothing returns unit
 			return thistype.m_carsten
+		endmethod
+		
+		public static method initDararos takes unit whichUnit returns nothing
+			 set thistype.m_dararos = whichUnit
+		endmethod
+		
+		public static method dararos takes nothing returns unit
+			return thistype.m_dararos
 		endmethod
 	endstruct
 

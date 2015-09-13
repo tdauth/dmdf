@@ -171,6 +171,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_heimrichTalksToMarkward.addSound(tr("Hat Er sich um alles Nötige gekümmert?"), gg_snd_Heimrich14)
 			call thistype.m_heimrichTalksToMarkward.addSound(tr("Bald werden sie hier einfallen und dann?"), gg_snd_Heimrich15)
 			set thistype.m_heimrichTalksToFerdinand = NpcTalksRoutine.create(Routines.talk(), Npcs.heimrich(), 13.00, MapData.evening, gg_rct_waypoint_heimrich_1)
+			call thistype.m_heimrichTalksToFerdinand.setPartner(Npcs.ferdinand())
 			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Was erlaubt sich das einfache Volk?"), gg_snd_Heimrich12)
 			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Wir müssen uns auf den Krieg vorbereiten."), gg_snd_Heimrich13)
 			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Hat Er sich um alles Nötige gekümmert?"), gg_snd_Heimrich14)
@@ -185,10 +186,14 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			// Wieland
 			set thistype.m_wielandHammers = NpcRoutineWithFacing.create(Routines.hammer(), Npcs.wieland(), MapData.evening, 13.00, gg_rct_waypoint_wieland_0)
 			call thistype.m_wielandHammers.setFacing(90.0)
-			set thistype.m_wielandTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.wieland(), 13.00, 14.00, gg_rct_waypoint_wieland_1)
+			set thistype.m_wielandTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.wieland(), 13.00, MapData.evening, gg_rct_waypoint_wieland_1)
 			call thistype.m_wielandTalks.setPartner(Npcs.einar())
 			call thistype.m_wielandTalks.setFacing(203.95)
-			set thistype.m_wielandDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.wieland(), 14.00, MapData.evening, gg_rct_waypoint_wieland_2)
+			call thistype.m_wielandTalks.addSound(tr("Wie viele Waffen brauchst du denn?"), gg_snd_Wieland38)
+			call thistype.m_wielandTalks.addSound(tr("Bei der Bezahlung kann ich meine Schmiede auch gleich schließen."), gg_snd_Wieland39)
+			call thistype.m_wielandTalks.addSound(tr("Einar, du verdammter Hundesohn!"), gg_snd_Wieland40)
+			call thistype.m_wielandTalks.addSound(tr("Hör mir auf mit den Orks!"), gg_snd_Wieland41)
+			//set thistype.m_wielandDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.wieland(), 14.00, MapData.evening, gg_rct_waypoint_wieland_2)
 			
 			// Mathilda
 			set thistype.m_mathildaTalksAtBarn = NpcTalksRoutine.create(Routines.moveTo(), Npcs.mathilda(), MapData.evening, MapData.morning, gg_rct_waypoint_mathilda_1)
@@ -218,9 +223,9 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			// Einar
 			set thistype.m_einarSells = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.einar(), MapData.evening, 13.00, gg_rct_waypoint_einar_1) // sell
 			call thistype.m_einarSells.setFacing(35.83)
-			set thistype.m_einarTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.einar(), 13.00, 14.00, gg_rct_waypoint_einar_1) // talk to Wieland
+			set thistype.m_einarTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.einar(), 13.00, MapData.evening, gg_rct_waypoint_einar_1) // talk to Wieland
 			call thistype.m_einarTalks.setPartner(Npcs.wieland())
-			set thistype.m_einarDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.einar(), 14.00, MapData.evening, gg_rct_waypoint_einar_2) // drinks with Wieland in tavern
+			//set thistype.m_einarDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.einar(), 14.00, MapData.evening, gg_rct_waypoint_einar_2) // drinks with Wieland in tavern
 
 			// Manfred
 			set thistype.m_manfredCutsWood = NpcRoutineWithFacing.create(Routines.splitWood(), Npcs.manfred(), MapData.evening, MapData.midday, gg_rct_waypoint_manfred_2)

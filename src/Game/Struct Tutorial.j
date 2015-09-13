@@ -128,6 +128,8 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPackBeast.blp")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tr("\"-menu\" öffnet das Hauptmenü."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("\"-history n\" zeigt die n letzten Spielnachrichten an (standardmäßig fünf)."))
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()

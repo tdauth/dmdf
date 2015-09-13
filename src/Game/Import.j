@@ -8,6 +8,7 @@ endif
 //! import "Game/Struct Dmdf Hash Table.j"
 //! import "Game/Struct Game.j"
 //! import "Game/Struct Grimoire.j"
+//! import "Game/Struct History.j"
 //! import "Game/Struct Item Types.j"
 //! import "Game/Interface Map Data Interface.j"
 //! import "Game/Struct Quest Area.j"
@@ -21,5 +22,5 @@ endif
 //! import "Game/Struct Tutorial.j"
 //! import "Game/Library Language.j"
 
-library Game requires StructGameCharacter, optional StructCharacterStats, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTutorial, LibraryGameLanguage
+library Game requires StructGameCharacter, optional StructCharacterStats, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTutorial, LibraryGameLanguage
 endlibrary

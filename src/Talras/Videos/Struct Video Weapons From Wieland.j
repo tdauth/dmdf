@@ -58,7 +58,7 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Das sind eure neuen Gehilfen!"), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Das sind deine neuen Gehilfen!"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -70,7 +70,7 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Seht Wieland, es ist so. Sie bringen euch das Eisen das ihr braucht. Ihr könnt nun eure Waffen schmieden. Fragt nicht woher sie kommen. Wisst dass sie uns teure Dienste erwiesen haben und nehmt sie als eure Gehilfen an."), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Sieh Wieland, es ist so: Sie bringen dir das Eisen, das du brauchst. Du kannst nun deine Waffen schmieden. Frag erst gar nicht woher sie kommen, das ist unwichtig. Du musst nur wissen, dass sie mir teure Dienste erwiesen haben. Nimm sie einfach als deine Gehilfen an."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -82,7 +82,7 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Sie kommen sogar ohne Nahrung aus ... denke ich. Sie werden alles tun, was ihr ihnen befiehlt. Ihr Meister hat sie ... er braucht sie nicht mehr."), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Sie kommen sogar ohne Nahrung aus ... denke ich. Sie werden alles tun, was du ihnen befiehlst. Ihr Meister hat sie ... er braucht sie nicht mehr."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -104,7 +104,7 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 			
 			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorWieland)
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Schon gut, aber dass sie mir hier nichts durcheinander bringen. Sie sollen das Eisen dort hinten ablegen. Ich werde eine Weile brauchen, bis die Waffen fertig sind. Wartet einfach solange."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Schon gut, aber dass sie mir hier nichts durcheinander bringen. Sie sollen das Eisen dort hinten ablegen. Ich werde eine Weile brauchen, bis die Waffen fertig sind. Warte einfach solange."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

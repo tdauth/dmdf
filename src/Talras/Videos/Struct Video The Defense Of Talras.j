@@ -33,13 +33,13 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_the_defense_of_talras_actor)
 			
 			set this.m_warriors = AGroup.create()
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n01I', MapData.baldarPlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n015', MapData.baldarPlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n005', MapData.baldarPlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n03H', MapData.baldarPlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n01I', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n015', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n005', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n03H', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
 			set this.m_villager0 = this.m_warriors.units().back()
 			set this.m_villager1 = this.m_warriors.units()[this.m_warriors.units().size() - 2]
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n03F', MapData.baldarPlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n03F', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
 			
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorRicman), this.m_warriors.units().front())
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorWigberht), thistype.unitActor(this.m_actorRicman))
@@ -60,7 +60,7 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 			
 			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorRicman), tr("Ricman"), tr("Männer, macht euch bereit für euer letztes Gefecht. Heute mag der Tag gekommen sein, da wir allesamt das Zeitliche segnen, doch vorher zahlen wir es diesen Bastarden heim."), gg_snd_RicmanTheDefenseOfTalrasRicman1)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheDefenseOfTalrasRicman1))) then
 				return
 			endif
 			

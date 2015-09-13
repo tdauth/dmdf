@@ -2,19 +2,18 @@ library StructMapVideosVideoDararos requires Asl, StructGameGame
 
 	// TODO Dararos erscheint mit einer Armee von Hochelfen im letzten Moment.
 	struct VideoDararos extends AVideo
-		private integer m_actorHeimrich
-		private integer m_actorMarkward
-		private integer m_actorOsman
-		private integer m_actorFerdinand
-		private integer m_actorWigberht
-		private integer m_actorRicman
-		private integer m_actorDragonSlayer
+		private unit m_actorDararos
 
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
 			call SetTimeOfDay(24.0)
+			
+			set this.m_actorDararos = thistype.unitActor(thistype.saveUnitActor(Npcs.dararos()))
+			call SetUnitPositionRect(this.m_actorDararos, gg_rct_video_dararos_dararos)
+			call SetUnitFacing(this.m_actorDararos, 0.0)
+			
 			call CameraSetupApplyForceDuration(gg_cam_dararos_0, true, 0.0)
 			call CameraSetupApplyForceDuration(gg_cam_dararos_1, true, 4.0)
 			

@@ -549,9 +549,9 @@
 * Video "The First Combat": Große Kameradrehungen ersetzen durch ein paar Ansichten und Fades.
 * Video "The First Combat:" Zwei Dunkelelfen hinten laufen nicht mit.
 * Video "Wigberht": Terrain deformation raus. Wigberht tötet stattdessen jeden Ork mit einem Schlag.
-* Hörner: Icon verbergen.
-* Blutamulett: Icon verbergen.
-* Zacken von Deranors Krone: Icon verbergen.
+* FIXED: Hörner: Icon verbergen.
+* FIXED: Blutamulett: Icon verbergen.
+* FIXED: Zacken von Deranors Krone: Icon verbergen.
 * Göttergunst: Autocast-Icon disabled-Version fehlt.
 * FIXED: Standarte der schwarzen Legion: Icon ist noch sichtbar.
 * Für Bestehlen die Stufen der NPCs höher als 0 setzen.
@@ -560,8 +560,17 @@
 * FIXED: Quest Die Verteidigung von Talras: 5000 Goldmünzen reichen für den Verbündeten locker aus.
 * Die Verteidigung von Talras: Orks schwächer machen, dafür mehr.
 * Falle: Soll nur feindlichen Einheiten schaden!!!
-* Tor beladen: Auch Verbündete zulassen.
+* FIXED: Tor beladen: Auch Verbündete zulassen.
 * Reinheit: Stoppen falls keine Buffs da sind.
+* FIXED: Tagesablaufgesprächstext nur anzeigen, wenn NPC sichtbar ist.
+* DONE: Buch der Schmiedekunst in Wielands Laden einfügen.
+* Menschliche Soldaten in Die Verteidigung von Talras stärker machen.
+* Verstärkungseinheiten kopieren und stärker machen, auch teurer.
+* Kurzes Video mit Belagerungswaffen einbauen.
+* Gebiet mit Belagerungswaffen sichtbar machen.
+* Ein Tutorial über 3D-Sounds lesen und die 3D-Sounds für Gespräche zwischen NPCs richtig einstellen.
+* Die Zauberbuchfähigkeiten für Icons von Gegenstände brauchen eine andere ID als spellbook. Ansonsten werden die Zauber in den Zauberfähigkeiten angezeigt?
+* VideoTheDefenseOfTalras: Erzeugte Besatzer des Außenpostens verbergen. Am besten bei Betreten des Gebietes direkt entfernen. Werden zu Beginn des Quests sowieso entfernt.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

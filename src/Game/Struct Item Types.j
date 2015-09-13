@@ -337,6 +337,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A19W', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1AF', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1AG', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1B6', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1B7', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1B8', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1B9', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1BA', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -554,13 +559,13 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_bloodyDragonAxe.addAbility('A0VM', true)
 			
 			set thistype.m_hornOfFighting = ItemType.createSimple('I04G', AItemType.equipmentTypeAmulet)
-			call thistype.m_hornOfFighting.addAbility('A0VO', true)
+			call thistype.m_hornOfFighting.addAbility('A1B6', true)
 			
 			set thistype.m_hornOfLife = ItemType.createSimple('I04I', AItemType.equipmentTypeAmulet)
-			call thistype.m_hornOfLife.addAbility('A0VQ', true)
+			call thistype.m_hornOfLife.addAbility('A1B7', true)
 			
 			set thistype.m_hornOfProtection = ItemType.createSimple('I04H', AItemType.equipmentTypeAmulet)
-			call thistype.m_hornOfProtection.addAbility('A0VP', true)
+			call thistype.m_hornOfProtection.addAbility('A1B8', true)
 			
 			set thistype.m_demonSkull = ItemType.create('I04L', AItemType.equipmentTypeAmulet, 0, 0, 0, 0, Classes.necromancer())
 			call thistype.m_demonSkull.addAbility('A0VT', true)
@@ -574,7 +579,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			// slaughter quest
 			set thistype.m_bloodAmulet = ItemType.createSimple('I02L', AItemType.equipmentTypeAmulet)
-			call thistype.m_bloodAmulet.addAbility('A09V', true)
+			call thistype.m_bloodAmulet.addAbility('A1B9', true)
 
 			// Tellborn's items
 			set thistype.m_staffOfClarity = RangeItemType.create('I02N', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
@@ -632,7 +637,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			// Deranor's artefact
 			set thistype.m_deranorsCrownPiece =  ItemType.createSimple('I04A', ItemType.equipmentTypeAmulet)
-			call thistype.m_deranorsCrownPiece.addAbility('AImx', true)
+			call thistype.m_deranorsCrownPiece.addAbility('A1BA', true)
 			call thistype.m_deranorsCrownPiece.addAbility('AIx2', true)
 			
 			// corn eaters items

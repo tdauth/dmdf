@@ -174,9 +174,9 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorNarrator), tr("So segelten sie gemeinsam mit den Nordmännern nach Holzbruck. Doch was dort geschah ist eine andere Geschichte ..."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorNarrator), tr("So segelten sie gemeinsam mit den Nordmännern nach Holzbruck. Doch was dort geschah ist eine andere Geschichte ..."), gg_snd_ErzaehlerFlussaufwaerts1)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerFlussaufwaerts1))) then
 				return
 			endif
 			
@@ -240,20 +240,21 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 
 				if (not Credits.contributorIsTitle.evaluate(i)) then
 					call thistype.showMovingTextTag(Credits.contributorDescription.evaluate(i), 14.0, 255, 255, 255, 0)
-
-					if (wait(5.0)) then
+					
+					if (wait(2.00)) then
 						return
 					endif
 				endif
-				
-				if (wait(2.00)) then
-					return
-				endif
+	
 				
 				if (not Credits.contributorIsTitle.evaluate(i)) then
 					call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 14.0, 255, 255, 255, 0)
 				else
 					call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 16.0, 255, 0, 0, 0)
+				endif
+				
+				if (wait(5.0)) then
+					return
 				endif
 
 				set i = i + 1

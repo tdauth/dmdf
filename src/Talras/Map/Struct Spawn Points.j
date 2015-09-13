@@ -108,6 +108,20 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static ItemSpawnPoint m_manaHerb1
 		private static ItemSpawnPoint m_manaHerb2
 		private static ItemSpawnPoint m_manaHerb3
+		
+		// drum cave
+		private static ItemSpawnPoint m_iron0
+		private static ItemSpawnPoint m_iron1
+		private static ItemSpawnPoint m_iron2
+		private static ItemSpawnPoint m_iron3
+		private static ItemSpawnPoint m_iron4
+		private static ItemSpawnPoint m_iron5
+		private static ItemSpawnPoint m_iron6
+		private static ItemSpawnPoint m_iron7
+		private static ItemSpawnPoint m_iron8
+		private static ItemSpawnPoint m_iron9
+		
+		
 		private static SpawnPoint m_vampireLord0
 		private static SpawnPoint m_vampires0
 		private static SpawnPoint m_box3
@@ -424,6 +438,20 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set thistype.m_manaHerb1 = ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0430, 1.0)
 			set thistype.m_manaHerb2 = ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0432, 1.0)
 			set thistype.m_manaHerb3 = ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0433, 1.0)
+			
+			
+			// drum cave
+			set thistype.m_iron0 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0399, 1.0)
+			set thistype.m_iron1 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0398, 1.0)
+			set thistype.m_iron2 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0435, 1.0)
+			set thistype.m_iron3 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0434, 1.0)
+			set thistype.m_iron4 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0436, 1.0)
+			set thistype.m_iron5 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0437, 1.0)
+			set thistype.m_iron6 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0396, 1.0)
+			set thistype.m_iron7 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0395, 1.0)
+			set thistype.m_iron8 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0397, 1.0)
+			set thistype.m_iron9 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0394, 1.0)
+
 			
 			set thistype.m_vampireLord0 = SpawnPoint.create()
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n010_0110, 1.0)

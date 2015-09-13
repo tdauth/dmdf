@@ -189,7 +189,7 @@ library StructGameRoutines requires Asl
 			local sound whichSound = null
 			local texttag whichTextTag = null
 			local integer index
-			local real time = 5.0 // usual wait interval
+			local integer i
 			
 			if (period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) then
 				//debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
@@ -199,36 +199,47 @@ library StructGameRoutines requires Asl
 				if (period.soundsCount() > 0) then
 					set whichSound = period.sound(index)
 					call PlaySoundOnUnitBJ(whichSound, 100.0, period.unit())
-					set time = GetSoundDurationBJ(whichSound) + 6.0 // set + 6 otherwise we have loop sounds all the time
 				endif
 				
 				set whichTextTag = CreateTextTag()
 				call SetTextTagTextBJ(whichTextTag, period.text(index), 10.0)
 				call SetTextTagPosUnit(whichTextTag, period.unit(),  0.0)
 				call SetTextTagColor(whichTextTag, 255, 255, 255, 0)
-				call SetTextTagVisibility(whichTextTag, true)
+				call SetTextTagVisibility(whichTextTag, false)
 				call SetTextTagPermanent(whichTextTag, true)
+				
+				/*
+				 * Only show the text tag if the unit is not masked. Otherwise it will appear at a masked unit.
+				 */
+				set i = 0
+				loop
+					exitwhen (i == MapData.maxPlayers)
+					if (not IsUnitMasked(period.unit(), Player(i))) then
+						call ShowTextTagForPlayer(Player(i), whichTextTag, true)
+					endif
+					set i = i + 1
+				endloop
 				
 				call thistype.m_textTags.pushBack(whichTextTag)
 
 				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
-				call TriggerSleepAction(time)
+				call TriggerSleepAction(GetSoundDurationBJ(whichSound))
 				
 				//call StopSoundBJ(whichSound, false)
 				// TODO A set would be more efficient.
 				if (thistype.m_textTags.contains(whichTextTag)) then
 					call thistype.m_textTags.remove(whichTextTag)
-					call SetTextTagVisibility(whichTextTag, false)
 					call DestroyTextTag(whichTextTag)
 					set whichTextTag = null
 				endif
+				
+				call TriggerSleepAction(6.0) // set + 6 otherwise we have loop sounds all the time
 			else
 				// set at least facing properly
 				call SetUnitFacing(period.unit(), period.facing())
 				// set a smaller interval to check the condition faster.
-				set time = 2.0
 				
-				call TriggerSleepAction(time)
+				call TriggerSleepAction(2.0)
 			endif
 
 			call AContinueRoutineLoop(period, thistype.talkTargetAction)
