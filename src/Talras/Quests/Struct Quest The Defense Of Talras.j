@@ -141,12 +141,9 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call VideoDararos.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			
-			/*
-			 * TODO Create Dararos and the high elves.
-			 */
+			call Fellows.dararos().shareWithAll()
+
 			 set this.m_highElves = AGroup.create()
-			 call this.m_highElves.units().pushBack(Npcs.dararos())
-			 call Fellows.dararos().shareWithAll()
 			 
 			 call this.m_highElves.addGroup(CreateUnitsAtRect(12, 'n05I', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_high_elf_archers, 0.0), true, false)
 			 call this.m_highElves.addGroup(CreateUnitsAtRect(12, 'h02H', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_high_elf_warriors, 0.0), true, false)
@@ -228,8 +225,14 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			return false
 		endmethod
 		
+		private static method forGroupRemoveUnit takes unit whichUnit returns nothing
+			call RemoveUnit(whichUnit)
+		endmethod
+		
 		private static method stateActionCompletedDefeatTheEnemy takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
+			local unit guard
+			call this.m_highElves.forGroup(thistype.forGroupRemoveUnit)
 			call this.m_highElves.destroy()
 			set this.m_highElves = 0
 			call this.m_finalOrcs.destroy()
@@ -247,10 +250,32 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call SetUnitX(Npcs.ricman(), GetRectCenterX(gg_rct_waypoint_ricman))
 			call SetUnitY(Npcs.ricman(), GetRectCenterY(gg_rct_waypoint_ricman))
 			/*
-			 * TODO build up a camp with high elves and dararos.
+			 * Build up a camp with high elves and dararos.
 			 */
 			call Fellows.dararos().reset()
-			 
+			
+			call SetUnitPositionRectFacing(Npcs.dararos(), gg_rct_quest_the_defense_of_talras_camp_dararos, 270.0)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_0, 0.0)
+			call SetUnitInvulnerable(guard, true)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_1, 0.0)
+			call SetUnitInvulnerable(guard, true)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_2, 270.0)
+			call SetUnitInvulnerable(guard, true)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_3, 270.0)
+			call SetUnitInvulnerable(guard, true)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_4, 0.0)
+			call SetUnitInvulnerable(guard, true)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_5, 180.0)
+			call SetUnitInvulnerable(guard, true)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_6, 90.0)
+			call SetUnitInvulnerable(guard, true)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02I', gg_rct_quest_the_defense_of_talras_camp_guard_7, 270.0)
+			call SetUnitInvulnerable(guard, true)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_8, 270.0)
+			call SetUnitInvulnerable(guard, true)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02I', gg_rct_quest_the_defense_of_talras_camp_guard_9, 270.0)
+			call SetUnitInvulnerable(guard, true)
+			
 			set this.m_questAreaReportHeimrich = QuestAreaQuestTheDefenseOfTalrasReportHeimrich.create(gg_rct_quest_the_defense_of_talras_heimrich)
 			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
 			call this.displayState()
