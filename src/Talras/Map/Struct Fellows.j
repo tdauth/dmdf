@@ -32,7 +32,9 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_sisgard.setRevivalTitle(tr("Sisgard"))
 			call thistype.m_sisgard.setRevivalMessage(tr("Lasst uns ein paar Zauber wirken!"))
 			call thistype.m_sisgard.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_sisgard.setRevivalTime(20.0)
+			call thistype.m_sisgard.setRevivalTime(MapData.revivalTime)
+			call thistype.m_sisgard.addAbility('A0PY')
+			call thistype.m_sisgard.addAbility('A0QY')
 
 			set thistype.m_mathilda = Fellow.create(Npcs.mathilda(), TalkMathilda.talk.evaluate())
 			/// @todo Set revival location to farm
@@ -44,7 +46,10 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_wigberht.setRevivalTitle(tr("Wigberht"))
 			call thistype.m_wigberht.setRevivalMessage(tr("Vorwärts!"))
 			call thistype.m_wigberht.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_wigberht.setRevivalTime(20.0)
+			call thistype.m_wigberht.setRevivalTime(MapData.revivalTime)
+			call thistype.m_wigberht.addAbility('A0N5')
+			call thistype.m_wigberht.addAbility('A05F')
+			call thistype.m_wigberht.addAbility('A05I')
 
 			set thistype.m_ricman = Fellow.create(Npcs.ricman(), TalkRicman.talk.evaluate())
 			call thistype.m_ricman.setTalk(false)
@@ -53,7 +58,10 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_ricman.setRevivalTitle(tr("Ricman"))
 			call thistype.m_ricman.setRevivalMessage(tr("Ihr Hundesöhne, mich besiegt man nicht so leicht!"))
 			call thistype.m_ricman.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_ricman.setRevivalTime(20.0)
+			call thistype.m_ricman.setRevivalTime(MapData.revivalTime)
+			call thistype.m_ricman.addAbility('A19M')
+			call thistype.m_ricman.addAbility('A05G')
+			call thistype.m_ricman.addAbility('A05J')
 
 			// talk is created after the quest
 			set thistype.m_dragonSlayer = Fellow.create(Npcs.dragonSlayer(), 0)
@@ -62,7 +70,10 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_dragonSlayer.setRevivalMessage(tr("Für das Königreich der Hochelfen!"))
 			call thistype.m_dragonSlayer.setRevival(true)
 			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_dragonSlayer.setRevivalTime(20.0)
+			call thistype.m_dragonSlayer.setRevivalTime(MapData.revivalTime)
+			call thistype.m_dragonSlayer.addAbility('A18T')
+			call thistype.m_dragonSlayer.addAbility('A0PW')
+			call thistype.m_dragonSlayer.addAbility('A09P')
 		endmethod
 
 		public static method dago takes nothing returns Fellow
@@ -106,7 +117,11 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_dararos.setRevivalMessage(tr("Ich grüße Euch!"))
 			call thistype.m_dararos.setRevival(true)
 			call thistype.m_dararos.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_dararos.setRevivalTime(20.0)
+			call thistype.m_dararos.setRevivalTime(MapData.revivalTime)
+			call thistype.m_dararos.addAbility('A1B2')
+			call thistype.m_dararos.addAbility('A1B5')
+			call thistype.m_dararos.addAbility('A1B3')
+			call thistype.m_dararos.addAbility('A1B4')
 		endmethod
 	endstruct
 

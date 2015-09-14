@@ -29,6 +29,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		private sound m_revivalSound
 		private real m_revivalTime
 		private boolean m_disableSellings
+		private AIntegerVector m_abilities
 		// construction members
 		private unit m_unit
 		private ATalk m_talk
@@ -96,6 +97,14 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		public method disableSellings takes nothing returns boolean
 			return this.m_disableSellings
 		endmethod
+		
+		public method addAbility takes integer abilityId returns nothing
+			call this.m_abilities.pushBack(abilityId)
+		endmethod
+		
+		public method removeAbility takes integer abilityId returns nothing
+			call this.m_abilities.remove(abilityId)
+		endmethod
 
 		// construction members
 
@@ -132,6 +141,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 * \param character If this value is 0 control is shared with all players (allied player).
 		 */
 		public method shareWith takes Character character returns nothing
+			local integer i
 			debug call Print("Fellow: Unit name is " + GetUnitName(this.unit()))
 			debug call Print("Before setShared(true)")
 			call this.setShared(true)
@@ -161,10 +171,18 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			
 			if (not this.m_hasTalk and this.m_talk != 0) then
 				call this.m_talk.disable()
+				call RemoveUnitFromStock(this.m_unit, 'n05E')
 			endif
 			if (this.disableSellings()) then
 				/// \todo Remove selling ability using m_sellingsAbilities
 			endif
+			set i = 0
+			loop
+				exitwhen (i == this.m_abilities.size())
+				call UnitAddAbility(this.m_unit, this.m_abilities[i])
+				call UnitMakeAbilityPermanent(this.m_unit, true, this.m_abilities[i])
+				set i = i + 1
+			endloop
 			if (this.hasRevival()) then
 				call EnableTrigger(this.m_revivalTrigger)
 			endif
@@ -208,6 +226,13 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call SetUnitInvulnerable(this.m_unit, true)
 			call SetUnitLifePercentBJ(this.m_unit, 100.0)
 			
+			set i = 0
+			loop
+				exitwhen (i == this.m_abilities.size())
+				call UnitRemoveAbility(this.m_unit, this.m_abilities[i])
+				set i = i + 1
+			endloop
+			
 			if (this.m_trades) then
 				call UnitAddAbility(this.m_unit, 'Aneu')
 				call UnitAddAbility(this.m_unit, 'Asid')
@@ -217,6 +242,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			
 			if (this.m_talk != 0) then
 				call this.m_talk.enable()
+				call AddUnitToStock(this.m_unit, 'n05E', 1, 1)
 			endif
 			if (this.disableSellings()) then
 				set i = 0
@@ -418,6 +444,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_revivalSound = null
 			set this.m_revivalTime = MapData.revivalTime
 			set this.m_disableSellings = false
+			set this.m_abilities = AIntegerVector.create()
 			// construction members
 			set this.m_unit = whichUnit
 			set this.m_talk = talk
@@ -442,6 +469,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
+			call this.m_abilities.destroy()
+			set this.m_abilities = 0
 			if (this.m_sellingsAbilities != 0) then
 				call this.m_sellingsAbilities.destroy()
 			endif

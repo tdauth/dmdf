@@ -16,15 +16,20 @@ library StructGameTalk requires Asl
 		private static method triggerActionSell takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
 			
+			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
 			debug call Print("Buying unit " + GetUnitName(GetBuyingUnit()))
-				
+			
+			// wait since the selling unit is being paused
+			call TriggerSleepAction(0.0)
+			
 			//if (ACharacter.isUnitCharacter(GetBuyingUnit())) then
 			if (GetPlayerController(GetOwningPlayer(GetSoldUnit())) == MAP_CONTROL_USER and ACharacter.playerCharacter(GetOwningPlayer(GetSoldUnit())) != 0 and IsUnitInRange(ACharacter.playerCharacter(GetOwningPlayer(GetSoldUnit())).unit(), this.unit(), 600.0)) then
 				call this.openForCharacter(ACharacter.playerCharacter(GetOwningPlayer(GetSoldUnit())))
 			endif
 			
-			call SetUnitInvulnerable(GetSoldUnit(), true)
-			call PauseUnit(GetSoldUnit(), true)
+			//call SetUnitInvulnerable(GetSoldUnit(), true)
+			//call PauseUnit(GetSoldUnit(), true)
+			//call TriggerSleepAction(0.0)
 			call RemoveUnit(GetSoldUnit())
 		endmethod
 		
@@ -38,6 +43,7 @@ library StructGameTalk requires Asl
 			call DmdfHashTable.global().setHandleInteger(this.m_sellTrigger, "this", this)
 			
 			call UnitAddAbility(whichUnit, 'A19X')
+			//call AddUnitToStock(whichUnit, 'n05E', 1, 1)
 			
 			return this
 		endmethod
