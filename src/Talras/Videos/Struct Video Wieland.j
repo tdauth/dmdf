@@ -53,9 +53,9 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Was gibt es?"), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Was gibt es?"), gg_snd_Wieland_a)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_a))) then
 				return
 			endif
 			
@@ -65,9 +65,9 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Der Herzog braucht immer Waffen! Wie stellt er sich das vor, bin ich doch der einzige Schmied in Talras? Ich habe jetzt schon genug zu tun."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Der Herzog braucht immer Waffen! Wie stellt er sich das vor, bin ich doch der einzige Schmied in Talras? Ich habe jetzt schon genug zu tun."), gg_snd_Wieland_b)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_b))) then
 				return
 			endif
 			
@@ -77,15 +77,15 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Ja ja schon gut, ich werde die Waffen herstellen. Allerdings braucht man dafür selbstverständlich auch Eisen und daran mangelt es in Talras."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Ja ja schon gut, ich werde die Waffen herstellen. Allerdings braucht man dafür selbstverständlich auch Eisen und daran mangelt es in Talras."), gg_snd_Wieland_c)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_c))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Wenn der Herzog die Waffen will, dann soll er mir das Eisen dafür geben. Zaubern kann ich leider nicht."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Wenn der Herzog die Waffen will, dann soll er mir das Eisen dafür geben. Zaubern kann ich leider nicht."), gg_snd_Wieland_d)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_d))) then
 				return
 			endif
 			
@@ -95,15 +95,15 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_actorWieland, tr("In Talras? Keine Ahnung, nirgendwo?! Hmm man erzählt sich die Legende von unterirdischen Gewölben im Mühlberg. Vielleicht birgt dieser Berg ja Eisen. Falls nicht musst du wohl nach Holzbruck aufbrechen. Dafür kannst du dich dann beim Herzog bedanken."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("In Talras? Keine Ahnung, nirgendwo?! Hmm man erzählt sich die Legende von unterirdischen Gewölben im Mühlberg. Vielleicht birgt dieser Berg ja Eisen. Falls nicht musst du wohl nach Holzbruck aufbrechen. Dafür kannst du dich dann beim Herzog bedanken."), gg_snd_Wieland_e)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_e))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Bringt mir das Eisen und ich schmiede euch die besten Waffen in ganz Talras, mit denen ihr die verfluchten Orks und Dunkelelfen aufschlitzen könnt wie gemestetes Vieh. Die Bezahlung werde ich noch mit dem Vogt aushandeln. Ich will dabei ja nicht leer ausgehen."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Bringt mir das Eisen und ich schmiede euch die besten Waffen in ganz Talras, mit denen ihr die verfluchten Orks und Dunkelelfen aufschlitzen könnt wie gemestetes Vieh. Die Bezahlung werde ich noch mit dem Vogt aushandeln. Ich will dabei ja nicht leer ausgehen."), gg_snd_Wieland_f)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_f))) then
 				return
 			endif
 			

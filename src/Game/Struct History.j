@@ -123,9 +123,10 @@ library StructGameHistory requires Asl
 	endfunction
 	*/
 
-	hook DisplayTextToPlayer DisplayTextToPlayerHook
-	hook DisplayTimedTextToPlayer DisplayTimedTextToPlayerHook
-	hook DisplayTimedTextFromPlayer DisplayTimedTextFromPlayerHook
+	// FIXME GetLocalPlayer() - local code
+	//hook DisplayTextToPlayer DisplayTextToPlayerHook
+	//hook DisplayTimedTextToPlayer DisplayTimedTextToPlayerHook
+	//hook DisplayTimedTextFromPlayer DisplayTimedTextFromPlayerHook
 	//hook SetCinematicScene SetCinematicSceneHook
 	
 endlibrary

@@ -360,6 +360,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFrozenArrows.classSelectionAbilityId, SpellFrozenArrows.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMultiShot.classSelectionAbilityId, SpellMultiShot.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellTrap.classSelectionAbilityId, SpellTrap.classSelectionGrimoireAbilityId))
+			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellKennels.classSelectionAbilityId, SpellKennels.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initElementalMage takes nothing returns nothing

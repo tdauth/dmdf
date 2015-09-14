@@ -46,15 +46,15 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 			call ResetUnitAnimation(this.m_actorWieland)
 			call SetUnitFacingToFaceUnit(this.m_actorWieland, thistype.actor())
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Was sind das für Kreaturen?"), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Was sind das für Kreaturen?"), gg_snd_Wieland_g)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_g))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_imps.units().front(), tr("Bereit zur Arbeit!"), null)
+			call TransmissionFromUnit(this.m_imps.units().front(), tr("Bereit zur Arbeit!"), gg_snd_PeonReady1)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_PeonReady1))) then
 				return
 			endif
 			
@@ -64,9 +64,9 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Was zum ..."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Was zum ..."), gg_snd_Wieland_h)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_h))) then
 				return
 			endif
 			
@@ -76,9 +76,9 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Aber ..."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Aber ..."), gg_snd_Wieland_i)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_i))) then
 				return
 			endif
 			
@@ -96,17 +96,17 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_imps.units().front(), tr("Meister?"), null)
+			call TransmissionFromUnit(this.m_imps.units().front(), tr("Meister?"), gg_snd_GruntWhat3)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_GruntWhat3))) then
 				return
 			endif
 			
 			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorWieland)
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Schon gut, aber dass sie mir hier nichts durcheinander bringen. Sie sollen das Eisen dort hinten ablegen. Ich werde eine Weile brauchen, bis die Waffen fertig sind. Warte einfach solange."), null)
+			call TransmissionFromUnit(this.m_actorWieland, tr("Schon gut, aber dass sie mir hier nichts durcheinander bringen. Sie sollen das Eisen dort hinten ablegen. Ich werde eine Weile brauchen, bis die Waffen fertig sind. Warte einfach solange."), gg_snd_Wieland_j)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_j))) then
 				return
 			endif
 			

@@ -566,11 +566,24 @@
 * DONE: Buch der Schmiedekunst in Wielands Laden einfügen.
 * Menschliche Soldaten in Die Verteidigung von Talras stärker machen.
 * Verstärkungseinheiten kopieren und stärker machen, auch teurer.
-* Kurzes Video mit Belagerungswaffen einbauen.
-* Gebiet mit Belagerungswaffen sichtbar machen.
+* The Defense of Talras: Angriffsorder beheben.
+* Kurzes Video mit Belagerungswaffen einbauen oder Pan.
+* FIXED: Gebiet mit Belagerungswaffen sichtbar machen.
 * Ein Tutorial über 3D-Sounds lesen und die 3D-Sounds für Gespräche zwischen NPCs richtig einstellen.
 * Die Zauberbuchfähigkeiten für Icons von Gegenstände brauchen eine andere ID als spellbook. Ansonsten werden die Zauber in den Zauberfähigkeiten angezeigt?
 * VideoTheDefenseOfTalras: Erzeugte Besatzer des Außenpostens verbergen. Am besten bei Betreten des Gebietes direkt entfernen. Werden zu Beginn des Quests sowieso entfernt.
+* Gesprächstagesabläufe: Sound soll für einen Spieler nur abgespielt werden wenn die Einheit sichtbar ist, so wie Texttag.
+* Drachentöterin läuft in Videos immer noch weg. Wieso bringt der "stop"-Befehl nichts?! Computer KI??
+* Götzenbild-Zauber fixen.
+* Drachenschuppe bei Drachentöterin verkaufen.
+* FIXED: Schütze braucht passives Icon.
+* FIXED: Brandpfeile, passives Icon für Zauber verwenden.
+* Sprinten zur Sicherheit auf Standardfähigkeit basieren lassen und auch Angriffsgeschwindikeit erhöhen.
+* Ricman: Schildblock entfernen oder ersetzen, trägt keinen Schild.
+* Nordmänner: Hero Glow entfernen.
+* Fellows: Abilities manuell in Liste übergeben, damit sie nur bei einem Share verwendet werden können. Ansonsten können sie durch Gemeinsamer Laden auch verwendet werden, wenn der NPC nicht geshart wurde.
+* Der Waldläufer tötet sich durch irgendeine Fähigkeit selbst. Brandpfeile? Mehrfachschuss? Lauern? Sprinten?
+* Rechte Hälfte des Ladebildschirms beim Laden im Singleplayer wurde nicht ersetzt.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

@@ -13,8 +13,12 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 	
 		public stub method onStart takes nothing returns nothing
+			call QuestTheNorsemen.quest().cleanFinalNorsemen()
+			call QuestWar.quest().cleanUnits()
+			
 			call VideoTheDefenseOfTalras.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
+			
 			call QuestTheDefenseOfTalras.quest.evaluate().enableTimer.evaluate()
 		endmethod
 	
@@ -344,17 +348,25 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.displayState()
 		endmethod
 		
+		private static method forGroupIgnoreGuardsPosition takes unit whichUnit returns nothing
+			call RemoveGuardPosition(whichUnit)
+		endmethod
+		
 		private static method timerFunctionOrcWave takes nothing returns nothing
 			local thistype this = thistype.quest()
 			local AGroup currentGroup = AGroup.create()
 			set this.m_orcWavesCounter = this.m_orcWavesCounter + 1
 			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_0, 90.0), true, false)
+			call currentGroup.addGroup(CreateUnitsAtRect(1, 'o004', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_0, 90.0), true, false)
 			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_1, 90.0), true, false)
+			call currentGroup.addGroup(CreateUnitsAtRect(1, 'o004', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_1, 90.0), true, false)
 			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_2, 90.0), true, false)
 			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_3, 90.0), true, false)
 			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_4, 90.0), true, false)
 			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_5, 90.0), true, false)
 			call currentGroup.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_6, 90.0), true, false)
+			call currentGroup.addGroup(CreateUnitsAtRect(1, 'o004', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_6, 90.0), true, false)
+			call currentGroup.forGroup(thistype.forGroupIgnoreGuardsPosition)
 			call currentGroup.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras_orc_target), GetRectCenterY(gg_rct_quest_the_defense_of_talras_orc_target))
 			
 			call this.m_orcs.addOther(currentGroup)
@@ -414,8 +426,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		 */
 		public method enableTimer takes nothing returns nothing
 			local integer i
-			call QuestTheNorsemen.quest().cleanFinalNorsemen()
-			call QuestWar.quest().cleanUnits()
+			
 			call QuestWar.quest().placeTraps()
 			
 			/*
@@ -463,7 +474,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			/*
 			 * The allied player needs a lot of gold to build something.
 			 */
-			call AdjustPlayerStateBJ(5000, MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD)
+			call AdjustPlayerStateBJ(3000, MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD)
 		
 			if (this.m_timer == null) then
 				set this.m_timer = CreateTimer()

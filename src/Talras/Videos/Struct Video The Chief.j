@@ -39,6 +39,9 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_the_chief_actors_position)
 			call SetUnitFacing(thistype.actor(), 123.64)
 			call SetUnitMoveSpeed(thistype.actor(), 200.0)
+			
+			call CameraSetupApplyForceDuration(gg_cam_the_chief_1, true, 10.0)
+			call IssueRectOrder(thistype.actor(), "move", gg_rct_video_the_chief_actors_target)
 		endmethod
 
 		private static method conditionActorIsInTargetRect takes AVideo this returns boolean
@@ -50,8 +53,6 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_1, true, 10.0)
-			call IssueRectOrder(thistype.actor(), "move", gg_rct_video_the_chief_actors_target)
 
 			if (waitForCondition(1.0, thistype.conditionActorIsInTargetRect)) then
 				return
