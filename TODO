@@ -581,9 +581,10 @@
 * Sprinten zur Sicherheit auf Standardfähigkeit basieren lassen und auch Angriffsgeschwindikeit erhöhen.
 * Ricman: Schildblock entfernen oder ersetzen, trägt keinen Schild.
 * Nordmänner: Hero Glow entfernen.
-* Fellows: Abilities manuell in Liste übergeben, damit sie nur bei einem Share verwendet werden können. Ansonsten können sie durch Gemeinsamer Laden auch verwendet werden, wenn der NPC nicht geshart wurde.
+* DONE: Fellows: Abilities manuell in Liste übergeben, damit sie nur bei einem Share verwendet werden können. Ansonsten können sie durch Gemeinsamer Laden auch verwendet werden, wenn der NPC nicht geshart wurde.
 * Der Waldläufer tötet sich durch irgendeine Fähigkeit selbst. Brandpfeile? Mehrfachschuss? Lauern? Sprinten?
 * Rechte Hälfte des Ladebildschirms beim Laden im Singleplayer wurde nicht ersetzt.
+* Gewandheit: Benötigt passives Icon.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

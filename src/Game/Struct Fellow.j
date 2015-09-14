@@ -389,8 +389,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_hasTalk = active
 			if (this.m_talk != 0 and this.isShared()) then
 				if (active) then
+					call AddUnitToStock(this.m_unit, 'n05E', 1, 1)
 					call this.m_talk.enable()
 				else
+					call RemoveUnitFromStock(this.m_unit, 'n05E')
 					call this.m_talk.disable()
 				endif
 			endif
