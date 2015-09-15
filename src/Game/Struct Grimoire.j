@@ -902,11 +902,11 @@ endif
 			debug call Print("Levels: " + I2S(levels))
 			
 			if (oldLevel < thistype.ultimate0Level and newLevel >= thistype.ultimate0Level) then
-				call character.displayHint(Format(tr("Sie haben Stufe %1% erreicht. Der erste Ultimativzauber kann nun erlernt werden.")).i(thistype.ultimate0Level).result())
+				call character.displayHint(Format(tre("Sie haben Stufe %1% erreicht. Der erste Ultimativzauber kann nun erlernt werden.", "You have reached level %1%. The first ultimate spell can be learned now.")).i(thistype.ultimate0Level).result())
 			endif
 			
 			if (oldLevel < thistype.ultimate1Level and newLevel >= thistype.ultimate1Level) then
-				call character.displayHint(Format(tr("Sie haben Stufe %1% erreicht. Der zweite Ultimativzauber kann nun erlernt werden.")).i(thistype.ultimate1Level).result())
+				call character.displayHint(Format(tre("Sie haben Stufe %1% erreicht. Der zweite Ultimativzauber kann nun erlernt werden.", "You have reached level %1%. The second ultimate spell can be learned now.")).i(thistype.ultimate1Level).result())
 			endif
 			
 			call this.setHeroLevel(newLevel)

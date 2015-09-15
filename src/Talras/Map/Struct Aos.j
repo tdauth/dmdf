@@ -249,8 +249,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call character.setRect(gg_rct_haldar_start)
 			call character.setFacing(270.0)
 			call character.panCameraSmart()
-			call character.displayMessage(ACharacter.messageTypeInfo, tr("Sie sind Haldars Truppe beigetreten."))
-			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg("%s ist Haldars Truppe beigetreten.", character.name()))
+			call character.displayMessage(ACharacter.messageTypeInfo, tre("Sie sind Haldars Truppe beigetreten.", "You have joined Haldar's troops."))
+			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tre("%s ist Haldars Truppe beigetreten.", "%s has joined Haldar's troops."), character.name()))
 			set user = character.player()
 			call TimerDialogDisplayForPlayerBJ(true, thistype.m_spawnTimerDialog, user)
 			call Shrines.aosShrineHaldar().enableForCharacter(character, false)
@@ -266,7 +266,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		public static method characterLeavesHaldar takes Character character returns nothing
 			local player user = character.player()
 			call TimerDialogDisplayForPlayerBJ(false, thistype.m_spawnTimerDialog, user)
-			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tr("%s hat das Schlachtfeld und somit Haldars Truppe verlassen."), character.name()))
+			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tre("%s hat das Schlachtfeld und somit Haldars Truppe verlassen.", "%s has left the battlefield and therefore Haldar's troops."), character.name()))
 			set thistype.m_playerHasJoinedHaldar[GetPlayerId(user)] = false
 			set thistype.m_haldarMembers = thistype.m_haldarMembers - 1
 			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, false)
@@ -281,8 +281,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call character.setRect(gg_rct_baldar_start)
 			call character.setFacing(90.0)
 			call character.panCameraSmart()
-			call character.displayMessage(ACharacter.messageTypeInfo, tr("Sie sind Baldars Truppe beigetreten."))
-			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tr("%s ist Baldars Truppe beigetreten."), character.name()))
+			call character.displayMessage(ACharacter.messageTypeInfo, tre("Sie sind Baldars Truppe beigetreten.", "You have joined Baldar's troops."))
+			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tre("%s ist Baldars Truppe beigetreten.", "%s has joined Baldar's troops."), character.name()))
 			set user = character.player()
 			call TimerDialogDisplayForPlayerBJ(true, thistype.m_spawnTimerDialog, user)
 			call Shrines.aosShrineBaldar().enableForCharacter(character, false)
@@ -298,7 +298,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		public static method characterLeavesBaldar takes Character character returns nothing
 			local player user = character.player()
 			call TimerDialogDisplayForPlayerBJ(false, thistype.m_spawnTimerDialog, user)
-			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tr("%s hat das Schlachtfeld und somit Baldars Truppe verlassen."), character.name()))
+			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tre("%s hat das Schlachtfeld und somit Baldars Truppe verlassen.", "%s has left the battlefield and therefore Baldar's troops."), character.name()))
 			set thistype.m_playerHasJoinedBaldar[GetPlayerId(user)] = false
 			set thistype.m_baldarMembers = thistype.m_baldarMembers - 1
 			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, false)
@@ -337,7 +337,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			//local integer i
 			//local player user
 			set thistype.m_leaderboard = CreateLeaderboard()
-			call LeaderboardSetLabel(thistype.m_leaderboard, tr("Schlachtfeld-Rangliste:"))
+			call LeaderboardSetLabel(thistype.m_leaderboard, tre("Schlachtfeld-Rangliste:", "Battlefield ranking:"))
 			call LeaderboardSetStyle(thistype.m_leaderboard, true, true, true, true)
 			//Usually not required because ShowLeaderboardForPlayer does the same work.
 			//set i = 0
@@ -432,7 +432,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		private static method createSpawnTimer takes nothing returns nothing
 			set thistype.m_spawnTimer = CreateTimer()
 			set thistype.m_spawnTimerDialog = CreateTimerDialog(thistype.m_spawnTimer)
-			call TimerDialogSetTitle(thistype.m_spawnTimerDialog, tr("Nächste Angriffswelle:"))
+			call TimerDialogSetTitle(thistype.m_spawnTimerDialog, tre("Nächste Angriffswelle:", "Next attack wave:"))
 			call TimerDialogDisplay(thistype.m_spawnTimerDialog, false)
 		endmethod
 

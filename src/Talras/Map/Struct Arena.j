@@ -228,7 +228,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 					endif
 					call unitsInRect.destroy()
 				else
-					call Character(Character.getCharacterByUnit(GetTriggerUnit())).displayHint(tr("Die Arena ist momentan belegt."))
+					call Character(Character.getCharacterByUnit(GetTriggerUnit())).displayHint(tre("Die Arena ist momentan belegt.", "The arena is occupied at the moment."))
 				endif
 			endif
 			
@@ -243,7 +243,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 		private static method createLeaderboard takes nothing returns nothing
 			set thistype.m_leaderboard = CreateLeaderboard()
-			call LeaderboardSetLabel(thistype.m_leaderboard, tr("Arena:"))
+			call LeaderboardSetLabel(thistype.m_leaderboard, tre("Arena:", "Arena:"))
 			call LeaderboardSetStyle(thistype.m_leaderboard, true, true, true, true)
 			call LeaderboardDisplay(thistype.m_leaderboard, false)
 		endmethod
@@ -336,7 +336,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				endif
 				set i = i + 1
 			endloop
-			call Character.displayWarningToAll(Format(tr("Die Einheit %1% wurde hingerichtet weil sie sich in einen Arenakampf eingemischt hat.")).s(GetUnitName(GetEventDamageSource())).result())
+			call Character.displayWarningToAll(Format(tre("Die Einheit %1% wurde hingerichtet weil sie sich in einen Arenakampf eingemischt hat.", "The unit %1% has been executed since it interfered in an arena fight.")).s(GetUnitName(GetEventDamageSource())).result())
 			call KillUnit(GetEventDamageSource())
 			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
 			

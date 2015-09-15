@@ -52,25 +52,25 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 			endif
 
 
-			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Danke, dass Ihr mir geholfen habt! Diese Scheißbären können einen den Kopf kosten, wenn man nicht aufpasst. Aber sagt mal, wer seid ihr überhaupt?"), gg_snd_DagoRescueDago2)
+			call TransmissionFromUnitWithName(this.m_actorDago, tre("Dago", "Dago"), tre("Danke, dass Ihr mir geholfen habt! Diese Scheißbären können einen den Kopf kosten, wenn man nicht aufpasst. Aber sagt mal, wer seid ihr überhaupt?", "Thank you for helping me! This damned bears can cost somebody their head if you are not careful. Who are you, anyway?"), gg_snd_DagoRescueDago2)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DagoRescueDago2))) then
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_3, true, 0.0)
-			call TransmissionFromUnit(thistype.actor(), tr("Wir sind Söldner aus dem Süden, auf dem Weg nach Talras."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Wir sind Söldner aus dem Süden, auf dem Weg nach Talras.", "We are mercenaries from the south on the way to Talras."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_2, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Süden? Na da wärt ihr wohl besser geblieben, jetzt da wohl erneut ein Krieg ausbrechen wird. Aber gut, ihr seid ja Söldner."), gg_snd_DagoRescueDago3)
+			call TransmissionFromUnitWithName(this.m_actorDago, tre("Dago", "Dago"), tre("Süden? Na da wärt ihr wohl besser geblieben, jetzt da wohl erneut ein Krieg ausbrechen wird. Aber gut, ihr seid ja Söldner.", "South? You should better have stayed there now that probably there will be war again. But anyway, you are mercenaries."), gg_snd_DagoRescueDago3)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DagoRescueDago3))) then
 				return
 			endif
-			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Mein Name ist übrigens Dago. Ich komme aus Talras und bin Jäger, wie man unschwer erkennen kann. Eigentlich sollte ich ein Tier für den Herzog erlegen."), gg_snd_DagoRescueDago4)
+			call TransmissionFromUnitWithName(this.m_actorDago, tre("Dago", "Dago"), tre("Mein Name ist übrigens Dago. Ich komme aus Talras und bin Jäger, wie man unschwer erkennen kann. Eigentlich sollte ich ein Tier für den Herzog erlegen.", "By the way, may name is Dago. I am from Talras and I am a hunter as you can easily see. Actually, I should hunt down an animal for the duke."), gg_snd_DagoRescueDago4)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DagoRescueDago4))) then
 				return
 			endif
-			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Mit den beiden Pelzviechern hier ist mir mehr als genug geholfen! Also trödeln wir nicht lange herum. Folgt mir einfach, ich führe euch zum Burgeingang."), gg_snd_DagoRescueDago5)
+			call TransmissionFromUnitWithName(this.m_actorDago, tre("Dago", "Dago"), tre("Mit den beiden Pelzviechern hier ist mir mehr als genug geholfen! Also trödeln wir nicht lange herum. Folgt mir einfach, ich führe euch zum Burgeingang.", "These two fur animals are more than enough help to me! So do not waste much time. Just follow me, I lead you to the castle's gate."), gg_snd_DagoRescueDago5)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DagoRescueDago5))) then
 				return
 			endif

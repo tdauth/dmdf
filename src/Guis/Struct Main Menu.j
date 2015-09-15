@@ -71,7 +71,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 		public method showDialog takes nothing returns nothing
 			local string message
 			call AGui.playerGui(this.m_character.player()).dialog().clear()
-			call AGui.playerGui(this.m_character.player()).dialog().setMessage(tr("Haupt-Menü"))
+			call AGui.playerGui(this.m_character.player()).dialog().setMessage(tre("Haupt-Menü", "Main Menu"))
 
 			if (this.m_character.tutorial().isEnabled()) then
 				set message = tre("Tutorial deaktivieren", "Disable tutorial")

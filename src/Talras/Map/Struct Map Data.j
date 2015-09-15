@@ -134,7 +134,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		
 		private static method triggerActionWelcomeTalras takes nothing returns nothing
 			local force humans = GetPlayersByMapControl(MAP_CONTROL_USER)
-			call TransmissionFromUnitWithNameBJ(humans, gg_unit_n015_0149, tr("Krieger"), null, tr("Willkommen in Talras!"), bj_TIMETYPE_ADD, 0.0, false)
+			call TransmissionFromUnitWithNameBJ(humans, gg_unit_n015_0149, tre("Krieger", "Warrior"), null, tre("Willkommen in Talras!", "Welcome to Talras!"), bj_TIMETYPE_ADD, 0.0, false)
 			call DisableTrigger(GetTriggeringTrigger())
 			call DestroyForce(humans)
 			set humans = null
@@ -178,7 +178,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.orcPlayer, bj_ALLIANCE_UNALLIED)
 			
 			call Aos.init.evaluate()
-			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tr("Sie haben die Arena betreten."), tr("Sie haben die Arena verlassen."), tr("Ein Arenakampf beginnt nun."), tr("Ein Arenakampf endet nun. Der Gewinner ist \"%1%\" und er bekommt %2% Goldmünzen."))
+			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tre("Sie haben die Arena betreten.", "You have entered the arena."), tre("Sie haben die Arena verlassen.", "You have left the arena."), tre("Ein Arenakampf beginnt nun.", "An arena fight is starting now."), tre("Ein Arenakampf endet nun. Der Gewinner ist \"%1%\" und er bekommt %2% Goldmünzen.", "An arena fight is ending now. The winner is \"%1%\" and gets %2% gold coins."))
 			call Arena.addRect(gg_rct_arena_0)
 			call Arena.addRect(gg_rct_arena_1)
 			call Arena.addRect(gg_rct_arena_2)
@@ -1224,7 +1224,7 @@ endif
 			if (missingPlayers > 0) then
 				call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
 				call TriggerSleepAction(4.0)
-				call Character.displayDifficultyToAll(Format(tr("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.")).s(trp("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
+				call Character.displayDifficultyToAll(Format(tre("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.", "Since you are starting the game without %1% players the enemies get a handicap of %2% %. Besides your character gains more experience as well as more gold coins from killing enemies.")).s(trpe("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), "one more", Format("%1% more").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
 			endif
 		endmethod
 		
@@ -1249,7 +1249,7 @@ endif
 			debug call thistype.createCheats()
 			
 			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Geben Sie \"-menu\" im Chat ein, um ins Haupt-Menü zu gelangen."))
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Geben Sie \"-menu\" im Chat ein, um ins Haupt-Menü zu gelangen.", "Enter \"-menu\" into the chat to reach the main menu."))
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
 			call QuestTalras.quest().enable()

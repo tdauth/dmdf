@@ -21,16 +21,16 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			set thistype.m_dago = Fellow.create(Npcs.dago(), 0)
 			call thistype.m_dago.setTalk(false)
 			call thistype.m_dago.setRevival(false)
-			call thistype.m_dago.setDescription(tr("Dago ist ein einfacher Jäger."))
+			call thistype.m_dago.setDescription(tre("Dago ist ein einfacher Jäger.", "Dago is a simple hunter."))
 
 			debug call Print("Before sisgard")
 			set thistype.m_sisgard = Fellow.create(Npcs.sisgard(), TalkSisgard.talk.evaluate())
 			/// @todo Set revival location to Talras
 			call thistype.m_sisgard.setTalk(true)
 			call thistype.m_sisgard.setRevival(true)
-			call thistype.m_sisgard.setDescription(tr("Sisgard ist eine erfahrene Zauberin. Sie kann die Zauber TODO wirken usw."))
-			call thistype.m_sisgard.setRevivalTitle(tr("Sisgard"))
-			call thistype.m_sisgard.setRevivalMessage(tr("Lasst uns ein paar Zauber wirken!"))
+			call thistype.m_sisgard.setDescription(tre("Sisgard ist eine erfahrene Zauberin. Sie kann die Zauber TODO wirken usw.", "Sisgard is an experienced sorceress."))
+			call thistype.m_sisgard.setRevivalTitle(tre("Sisgard", "Sisgard"))
+			call thistype.m_sisgard.setRevivalMessage(tre("Lasst uns ein paar Zauber wirken!", "Let us cast some spells!"))
 			call thistype.m_sisgard.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_sisgard.setRevivalTime(MapData.revivalTime)
 			call thistype.m_sisgard.addAbility('A0PY')
@@ -42,9 +42,9 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			set thistype.m_wigberht = Fellow.create(Npcs.wigberht(), TalkWigberht.talk.evaluate())
 			call thistype.m_wigberht.setTalk(false)
 			call thistype.m_wigberht.setRevival(true)
-			call thistype.m_wigberht.setDescription(tr("Wigberht ist der Prinz der Nordmänner. Er ist ein starker Nahkämpfer und besitzt die Fähigkeiten 'Ruf des Nordens', 'Unbeugsamkeit' und 'Rundumhieb'."))
-			call thistype.m_wigberht.setRevivalTitle(tr("Wigberht"))
-			call thistype.m_wigberht.setRevivalMessage(tr("Vorwärts!"))
+			call thistype.m_wigberht.setDescription(tre("Wigberht ist der Prinz der Nordmänner. Er ist ein starker Nahkämpfer und besitzt die Fähigkeiten 'Ruf des Nordens', 'Unbeugsamkeit' und 'Rundumhieb'.", "Wigberht is the prince of the Norsemen. He is a strong melee fighter and has the abilities 'Call of the North', 'Rigidity' and 'All round blow'." ))
+			call thistype.m_wigberht.setRevivalTitle(tre("Wigberht", "Wigberht"))
+			call thistype.m_wigberht.setRevivalMessage(tre("Vorwärts!", "Forward!"))
 			call thistype.m_wigberht.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_wigberht.setRevivalTime(MapData.revivalTime)
 			call thistype.m_wigberht.addAbility('A0N5')
@@ -54,9 +54,9 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			set thistype.m_ricman = Fellow.create(Npcs.ricman(), TalkRicman.talk.evaluate())
 			call thistype.m_ricman.setTalk(false)
 			call thistype.m_ricman.setRevival(true)
-			call thistype.m_ricman.setDescription(tr("Ricman ist die rechte Hand von Wigberht. Er ist ein starker Nahkämpfer und besitzt die Fähigkeiten 'Loyalität', 'Speerwurf' und 'Schildblock'."))
-			call thistype.m_ricman.setRevivalTitle(tr("Ricman"))
-			call thistype.m_ricman.setRevivalMessage(tr("Ihr Hundesöhne, mich besiegt man nicht so leicht!"))
+			call thistype.m_ricman.setDescription(tre("Ricman ist die rechte Hand von Wigberht. Er ist ein starker Nahkämpfer und besitzt die Fähigkeiten 'Loyalität', 'Sturmschlag' und 'Schildblock'.", "Ricman is the right hand of Wigberht. He is a strong melee fighter and has the abilities 'Loyalty', 'Storm bolt' and 'Shield Block'."))
+			call thistype.m_ricman.setRevivalTitle(tre("Ricman", "Ricman"))
+			call thistype.m_ricman.setRevivalMessage(tre("Ihr Hundesöhne, mich besiegt man nicht so leicht!", "You bastards, you do not defeat me that easy!"))
 			call thistype.m_ricman.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_ricman.setRevivalTime(MapData.revivalTime)
 			call thistype.m_ricman.addAbility('A19M')
@@ -66,8 +66,8 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			// talk is created after the quest
 			set thistype.m_dragonSlayer = Fellow.create(Npcs.dragonSlayer(), 0)
 			call thistype.m_dragonSlayer.setTalk(false)
-			call thistype.m_dragonSlayer.setRevivalTitle(tr("Drachentöterin"))
-			call thistype.m_dragonSlayer.setRevivalMessage(tr("Für das Königreich der Hochelfen!"))
+			call thistype.m_dragonSlayer.setRevivalTitle(tre("Drachentöterin", "Dragon Slayer"))
+			call thistype.m_dragonSlayer.setRevivalMessage(tre("Für das Königreich der Hochelfen!", "For the kingdom of the high elves!"))
 			call thistype.m_dragonSlayer.setRevival(true)
 			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_dragonSlayer.setRevivalTime(MapData.revivalTime)
@@ -113,8 +113,8 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 		public static method initDararos takes unit whichUnit returns nothing
 			set thistype.m_dararos = Fellow.create(whichUnit, 0)
 			call thistype.m_dararos.setTalk(false)
-			call thistype.m_dararos.setRevivalTitle(tr("Dararos"))
-			call thistype.m_dararos.setRevivalMessage(tr("Ich grüße Euch!"))
+			call thistype.m_dararos.setRevivalTitle(tre("Dararos", "Dararos"))
+			call thistype.m_dararos.setRevivalMessage(tre("Ich grüße Euch!", "I greet you!"))
 			call thistype.m_dararos.setRevival(true)
 			call thistype.m_dararos.setRevivalSound(null) /// \todo FIXME
 			call thistype.m_dararos.setRevivalTime(MapData.revivalTime)

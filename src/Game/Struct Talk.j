@@ -33,6 +33,7 @@ library StructGameTalk requires Asl
 			call DmdfHashTable.global().setHandleInteger(whichTimer, "this", this) 
 			call DmdfHashTable.global().setHandleUnit(whichTimer, "soldunit", GetSoldUnit()) 
 			
+			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
 			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
 			debug call Print("Buying unit " + GetUnitName(GetBuyingUnit()))
 			call SetUnitInvulnerable(GetSoldUnit(), true)

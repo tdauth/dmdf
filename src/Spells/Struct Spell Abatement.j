@@ -14,7 +14,7 @@ library StructSpellsSpellAbatement requires Asl, StructGameClasses, StructGameSp
 		private method condition takes nothing returns boolean
 			local boolean result = GetUnitState(GetSpellTargetUnit(), UNIT_STATE_LIFE) < GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MAX_LIFE)
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel hat bereits volle Gesundheit."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel hat bereits volle Gesundheit.", "Target already has full health."))
 			endif
 			return result
 		endmethod

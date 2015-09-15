@@ -30,7 +30,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 
 		private method stateActionFailed takes nothing returns nothing
 			call Fellows.dago().destroy()
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeError, tr("Dago wurde getötet!"))
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeError, tre("Dago wurde getötet!", "Dago has been killed!"))
 			call this.displayState()
 		endmethod
 
@@ -101,10 +101,10 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3))
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3), thistype.rectRange)) then
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4))
-					call TransmissionFromUnitWithName(Npcs.dago(), tr("Dago"), tr("Wir sind fast da."), gg_snd_DagoRescueDago6)
+					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("Wir sind fast da.", "We are almost there."), gg_snd_DagoRescueDago6)
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4), thistype.rectRange)) then
 					call SetUnitFacing(Npcs.dago(), 265.0)
-					call TransmissionFromUnitWithName(Npcs.dago(), tr("Dago"), tr("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich."), gg_snd_DagoRescueDago7)
+					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich.", "Fine, if you follow the way you reach the castle's gate. I will join you later but now I have to collect some mushrooms in the area. For the duke of course."), gg_snd_DagoRescueDago7)
 					call TalkDago.initTalk()
 					call PauseTimer(this.m_timer)
 					call DestroyTimer(this.m_timer)
@@ -117,18 +117,18 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tr("Rettet Dago!"))
+			local thistype this = thistype.allocate(0, tre("Rettet Dago!", "Rescue Dago!"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			set this.m_timer = CreateTimer()
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNAttentaeter.tga")
-			call this.setDescription(tr("Dago wird vor einer Höhle von zwei Bären angegriffen. Ihr müsst ihm zu Hilfe eilen."))
+			call this.setDescription(tre("Dago wird vor einer Höhle von zwei Bären angegriffen. Ihr müsst ihm zu Hilfe eilen.", "Dago is being attacked by two bears in front of a cage. You must help him."))
 			
 			call this.setStateEvent(thistype.stateFailed, thistype.stateEventFailed)
 			call this.setStateAction(thistype.stateFailed, thistype.stateActionFailed)
 			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Helft Dago die Bären zu töten."))
+			set questItem0 = AQuestItem.create(this, tre("Helft Dago die Bären zu töten.", "Help Dago to kill the bears."))
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.dago())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
@@ -136,7 +136,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 			// item 1
-			set questItem1 = AQuestItem.create(this, tr("Folgt Dago zum Burgeingang."))
+			set questItem1 = AQuestItem.create(this, tre("Folgt Dago zum Burgeingang.", "Follow Dago to the castle's gate."))
 			call questItem1.setPing(true)
 			call questItem1.setPingUnit(Npcs.dago())
 			call questItem1.setPingColour(100.0, 100.0, 100.0)

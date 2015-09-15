@@ -57,7 +57,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 			if (wait(1.0)) then
 				return
 			endif
-			call TransmissionFromUnitWithName(this.m_actorDago, tr("Dago"), tr("Verdammte Mistviecher!"), gg_snd_DagoRescueDago1)
+			call TransmissionFromUnitWithName(this.m_actorDago, tre("Dago", "Dago"), tre("Verdammte Mistviecher!", "Damned animals!"), gg_snd_DagoRescueDago1)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DagoRescueDago1))) then
 				return
 			endif
@@ -77,7 +77,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 
 			call PauseUnit(Npcs.dago(), false)
 			call Fellows.dago().shareWith(0)
-			call Tutorial.printTip(tr("Dago kann nun von allen Spielern gemeinsam kontrolliert werden. Es gibt verschiedene Gefährten, die sich im Spielverlauf anschließen und die Gruppe wieder verlassen."))
+			call Tutorial.printTip(tre("Dago kann nun von allen Spielern gemeinsam kontrolliert werden. Es gibt verschiedene Gefährten, die sich im Spielverlauf anschließen und die Gruppe wieder verlassen.", "Dago can now be controlled by all players together. There is different fellows who join you during the game and then leave the group again."))
 
 			// bears
 			call SetUnitOwner(gg_unit_n008_0083, Player(PLAYER_NEUTRAL_AGGRESSIVE), false)

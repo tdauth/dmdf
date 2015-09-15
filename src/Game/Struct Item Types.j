@@ -14,7 +14,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				loop
 					exitwhen (i == thistype.m_twoSlotItems.size())
 					if (character.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId() == thistype.m_twoSlotItems[i]) then
-						call character.displayMessage(ACharacter.messageTypeError, tr("Charakter trägt Gegenstand, der beide Slots benötigt."))
+						call character.displayMessage(ACharacter.messageTypeError, tre("Charakter trägt Gegenstand, der beide Slots benötigt.", "Character wears item which requires both slots."))
 						return false
 					endif
 					set i = i + 1
@@ -24,7 +24,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				loop
 					exitwhen (i == thistype.m_twoSlotItems.size())
 					if (this.itemType() == thistype.m_twoSlotItems[i]) then
-						call character.displayMessage(ACharacter.messageTypeError, tr("Gegenstand benötigt beide Slots."))
+						call character.displayMessage(ACharacter.messageTypeError, tre("Gegenstand benötigt beide Slots.", "The item requires both slots."))
 						return false
 					endif
 					set i = i + 1
