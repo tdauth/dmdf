@@ -28,13 +28,13 @@ Tamino Dauth
 STRING 5
 // Fähigkeiten: A0QD (Göttergunst - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung eines Verbündeten für eine bestimmte Zeit.|n|n|cffffcc00Stufe 1|r - <A0QB,DataB1> Rüstung für <A0QB,Dur1> Sekunden. |n|cffffcc00Stufe 2|r - <A0QB,DataB2> Rüstung für <A0QB,Dur2> Sekunden. |n|cffffcc00Stufe 3|r - <A0QB,DataB3> Rüstung für <A0QB,Dur3> Sekunden. |n|cffffcc00Stufe 4|r - <A0QB,DataB4> Rüstung für <A0QB,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0QB,DataB5> Rüstung für <A0QB,Dur5> Sekunden.
+Increases the armour of an ally for a certain time.|n|n|cffffcc00Level 1|r - <A0QB,DataB1> armour for <A0QB,Dur1> seconds. |n|cffffcc00Level 2|r - <A0QB,DataB2> armour for <A0QB,Dur2> seconds. |n|cffffcc00Level 3|r - <A0QB,DataB3> armour for <A0QB,Dur3> seconds. |n|cffffcc00Level 4|r - <A0QB,DataB4> armour for <A0QB,Dur4> seconds.|n|cffffcc00Stufe 5|r - <A0QB,DataB5> armour for <A0QB,Dur5> seconds.
 }
 
 STRING 6
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+Drains up to 120 mana from an enemy, deals doubled damage to the enemy and transfers the mana to the wizard.
 }
 
 STRING 7
@@ -58,7 +58,7 @@ Wizard
 STRING 10
 // Gegenstände: I04A (Zacken von Deranors Krone), Name (Name (unam))
 {
-Zacken von Deranors Krone
+Spike of Deranor's crown
 }
 
 STRING 11
@@ -76,13 +76,13 @@ Cow
 STRING 13
 // Einheiten: n001 (Widder), Name (Name (unam))
 {
-Widder
+Ram
 }
 
 STRING 14
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+Drains up to 140 mana from an enemy, deals doubled damage to the enemy and transfers the mana to the wizard.
 }
 
 STRING 15
@@ -94,13 +94,13 @@ Dragon
 STRING 16
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+Drains up to 180 mana from an enemy, deals doubled damage to the enemy and transfers the mana to the wizard.
 }
 
 STRING 17
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+Drains up to 240 mana from an enemy, deals doubled damage to the enemy and transfers the mana to the wizard.
 }
 
 STRING 18
@@ -124,7 +124,7 @@ Ballista
 STRING 21
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Manaexplosion [|cffffcc00Stufe 2|r]
+Mana explosion [|cffffcc00Level 2|r]
 }
 
 STRING 22
@@ -160,7 +160,7 @@ Cleric
 STRING 27
 // Gegenstände: I04A (Zacken von Deranors Krone), Description (Beschreibung (ides))
 {
-Ein verzauberter Zacken der Krone Deranors des Schrecklichen.
+A haunted spike of the crown of Deranor the Terrible.
 }
 
 STRING 28
@@ -178,7 +178,7 @@ Necromancer
 STRING 30
 // Gegenstände: I04A (Zacken von Deranors Krone), Tip (Tooltipp - Einfach (utip))
 {
-Zacken von Deranors Krone kaufen
+Buy spike of Deranor's crown
 }
 
 STRING 31
@@ -190,13 +190,13 @@ STRING 31
 STRING 32
 // Gegenstände: I015 (Druidenmantel), Name (Name (unam))
 {
-Druidenmantel
+Druid cloak
 }
 
 STRING 33
 // Gegenstände: I04A (Zacken von Deranors Krone), Ubertip (Tooltipp - Erweitert (utub))
 {
-Macht den Träger zauberimmun. Erhöht die Stärke des Trägers um <AIx2,DataC1>, das Geschick um <AIx2,DataA1> und das Wissen um <AIx2,DataB1>.
+Makes the wearing unit magic immune. Increases the strength of the wearing unit by <AIx2,DataC1>, the dexterity by <AIx2,DataA1> and the lore by <AIx2,DataB1>.
 }
 
 STRING 34
@@ -220,7 +220,7 @@ Shadow Stone
 STRING 37
 // Einheiten: H007 (Drachentöter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse)
+(Character class)
 }
 
 STRING 38
@@ -238,7 +238,7 @@ Summons a shadow giant.
 STRING 40
 // Einheiten: H008 (Waldläufer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse)
+(Character class)
 }
 
 STRING 41
@@ -256,7 +256,7 @@ Buy shadow stone
 STRING 43
 // Einheiten: H009 (Elementarmagier), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse)
+(Character class)
 }
 
 STRING 44
@@ -268,13 +268,13 @@ Elemental Mage
 STRING 45
 // Gegenstände: I015 (Druidenmantel), Description (Beschreibung (ides))
 {
-Erhöht das Wissen und die Rüstung.
+Increases the lore and armour.
 }
 
 STRING 46
 // Einheiten: H00G (Druide), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse)
+(Character class)
 }
 
 STRING 47
@@ -286,31 +286,31 @@ STRING 47
 STRING 48
 // Gegenstände: I015 (Druidenmantel), Tip (Tooltipp - Einfach (utip))
 {
-Druidenmantel kaufen
+Buy a druid cloak
 }
 
 STRING 49
 // Gegenstände: I02X (Stab eines Druiden), Name (Name (unam))
 {
-Stab eines Druiden
+Staff of a druid
 }
 
 STRING 50
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Manaexplosion [|cffffcc00Stufe 3|r]
+Mana explosion [|cffffcc00Level 3|r]
 }
 
 STRING 51
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Manaexplosion [|cffffcc00Stufe 4|r]
+Mana explosion [|cffffcc00Level 4|r]
 }
 
 STRING 52
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Manaexplosion [|cffffcc00Stufe 5|r]
+Mana explosion [|cffffcc00Level 5|r]
 }
 
 STRING 53
@@ -322,7 +322,7 @@ Göttergunst [|cffffcc00Stufe 3|r]
 STRING 54
 // Zerstörbare Objekte: B000 (Verlauf-Blocker), Name (Name (bnam))
 {
-Verlauf-Blocker
+Pathing blocker
 }
 
 STRING 55
@@ -334,7 +334,7 @@ STRING 55
 STRING 56
 // Zerstörbare Objekte: B001 (Verlauf-Blocker), Name (Name (bnam))
 {
-Verlauf-Blocker
+Pathing blocker
 }
 
 STRING 57
@@ -346,7 +346,7 @@ STRING 57
 STRING 58
 // Zerstörbare Objekte: B002 (Verlauf-Blocker), Name (Name (bnam))
 {
-Verlauf-Blocker
+Pathing blocker
 }
 
 STRING 59
@@ -358,7 +358,7 @@ STRING 59
 STRING 60
 // Zerstörbare Objekte: B003 (Verlauf-Blocker), Name (Name (bnam))
 {
-Verlauf-Blocker
+Pathing blocker
 }
 
 STRING 61
@@ -370,7 +370,7 @@ STRING 61
 STRING 62
 // Zerstörbare Objekte: B004 (Verlauf-Blocker), Name (Name (bnam))
 {
-Verlauf-Blocker
+Pathing blocker
 }
 
 STRING 63
@@ -382,7 +382,7 @@ STRING 63
 STRING 64
 // Zerstörbare Objekte: B005 (Verlauf-Blocker), Name (Name (bnam))
 {
-Verlauf-Blocker
+Pathing blocker
 }
 
 STRING 65
@@ -394,7 +394,7 @@ STRING 65
 STRING 66
 // Zerstörbare Objekte: B006 (Verlauf-Blocker), Name (Name (bnam))
 {
-Verlauf-Blocker
+Pathing blocker
 }
 
 STRING 67
@@ -406,7 +406,7 @@ STRING 67
 STRING 68
 // Zerstörbare Objekte: B007 (Verlauf-Blocker), Name (Name (bnam))
 {
-Verlauf-Blocker
+Pathing blocker
 }
 
 STRING 69
@@ -3766,25 +3766,25 @@ Z
 STRING 628
 // Einheiten: n00E (Feuergeschoss), Name (Name (unam))
 {
-Feuergeschoss
+Fire missile
 }
 
 STRING 629
 // Fähigkeiten: A014 (Feuergeschoss), Name (Name (anam))
 {
-Feuergeschoss
+Fire missile
 }
 
 STRING 630
 // Fähigkeiten: A03K (Feuergeschoss), Name (Name (anam))
 {
-Feuergeschoss
+Fire missile
 }
 
 STRING 631
 // Fähigkeiten: A01X (Pure Energie), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss
+Fire missile
 }
 
 STRING 632
@@ -3826,13 +3826,13 @@ STRING 637
 STRING 638
 // Fähigkeiten: A01X (Pure Energie), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss
+Fire missile
 }
 
 STRING 639
 // Fähigkeiten: A01X (Pure Energie), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss
+Fire missile
 }
 
 STRING 640
@@ -3844,7 +3844,7 @@ Manaexplosion [|cffffcc00Stufe 3|r]
 STRING 641
 // Fähigkeiten: A015 (Rucksack öffnen), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00R|rucksack öffnen/schließen
+Open/close rucksack
 }
 
 STRING 642
@@ -3932,13 +3932,13 @@ Anstürmen [|cffffcc00Stufe %d|r] erlernen
 
 STRING 656
 {
-Die Macht des Feuers
+The Power of Fire
 }
 
 STRING 657
 // Gegenstände: I002 (Ricmans Speer), Name (Name (unam))
 {
-Ricmans Speer
+Ricman's spear
 }
 
 STRING 658
@@ -3974,7 +3974,7 @@ Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 663
 // Gegenstände: I003 (Stab), Name (Name (unam))
 {
-Stab
+Staff
 }
 
 STRING 664
@@ -4057,37 +4057,37 @@ Geöffnetes Buch 3 (Grasland)
 
 STRING 677
 {
-Geschick
+Dexterity
 }
 
 STRING 678
 {
-Geschick:
+Dexterity:
 }
 
 STRING 679
 {
-Wissen:
+Lore:
 }
 
 STRING 680
 {
-Stärke:
+Strength:
 }
 
 STRING 681
 {
-Wissen
+Lore
 }
 
 STRING 682
 {
-Wissen
+Lore
 }
 
 STRING 683
 {
-Stärke
+Strength
 }
 
 STRING 684
@@ -4104,51 +4104,51 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 
 STRING 686
 {
-Aufträge (|Cfffed312F9|R)
+Missions (|Cfffed312F9|R)
 }
 
 STRING 687
 {
-Auftragsbeschreibung
+Mission description
 }
 
 STRING 688
 {
-Auftragsstatus:
+Mission state:
 }
 
 STRING 689
 {
-Aufträge
+Missions
 }
 
 STRING 690
 // Einheiten: n04E (Stand der Drachentöterin), Name (Name (unam))
 {
-Stand der Drachentöterin
+Stand of the dragon slayer
 }
 
 STRING 691
 // Gegenstände: I052 (Ring der Weisheit), Name (Name (unam))
 {
-Ring der Weisheit
+Ring of wisdom
 }
 
 STRING 692
 {
-Auftragsfenster (|Cfffed312F9|R)
+Mission window (|Cfffed312F9|R)
 }
 
 STRING 693
 // Einheiten: n00D (Schiff), Name (Name (unam))
 {
-Schiff
+Ship
 }
 
 STRING 694
 // Fähigkeiten: A017 (Eisgeschoss), Name (Name (anam))
 {
-Eisgeschoss
+Ice missile
 }
 
 STRING 695
@@ -11622,7 +11622,7 @@ Erhöht den Schaden um <A01K,DataA1>. Erlaubt zusätzlich eine Gebietsheilung vo
 STRING 1940
 // Fähigkeiten: A015 (Rucksack öffnen), Name (Name (anam))
 {
-Rucksack öffnen
+Open rucksack
 }
 
 STRING 1941
@@ -11716,7 +11716,7 @@ Stellt bei Benutzung <A04Q,DataA1> Trefferpunkte wieder her.
 STRING 1956
 // Fähigkeiten: A01L (Rucksackseite wechseln), Name (Name (anam))
 {
-Rucksackseite wechseln
+Change rucksack bag
 }
 
 STRING 1957
@@ -21721,7 +21721,9 @@ STRING 3634
 STRING 3635
 // Fähigkeiten: A015 (Rucksack öffnen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Im Rucksack können zusätzliche Gegenstände verstaut werden. Er besitzt 32 verschiedene Taschen mit jeweils vier unterschiedlichen Fächern. Gegenstände des gleichen Typs werden automatisch gestapelt. Wenn ein Gegenstand mit mehreren Aufladungen in ein Fach seiner bisherigen Rucksacktasche verschoben oder abgelegt wird, so wird nur eine Aufladnung verschoben bzw. abgelegt. Im Rucksack verstaute Gegenstände können mit einer Platzierung auf ihr bisheriges Fach angelegt werden. Angelegte Gegenstände auf diese Weise im Rucksack verstaut werden.
+In the rucksack additional items can be stored. It contains 32 different bags with four different slots each. Items of the same type will be stacked automatically.
+When an item with several charges is moved to or dropped on a slot in its current rucksack bag only one charge will be moved or rather dropped. Items which are stored
+in the rucksack can be dropped by placing them on the current slot. Equipped items can be moved to the rucksack by this method.
 }
 
 STRING 3636
