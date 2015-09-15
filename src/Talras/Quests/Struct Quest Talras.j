@@ -49,19 +49,19 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tr("Talras"))
+			local thistype this = thistype.allocate(0, tre("Talras", "Talras"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
-			call this.setDescription(tr("Ihr wollt dem Herzog Heimrich von Talras die Treue schwören und damit in seinen Dienst treten, um euren Lebensunterhalt zu verdienen."))
+			call this.setDescription(tre("Ihr wollt dem Herzog Heimrich von Talras die Treue schwören und damit in seinen Dienst treten, um euren Lebensunterhalt zu verdienen.", "You want to pledge loyalty to the duke Heimrich of Talras and therefore enter into his services to earn your living."))
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Erreicht die Burg Talras."))
+			set questItem0 = AQuestItem.create(this, tre("Erreicht die Burg Talras.", "Reach the castle Talras."))
 			call questItem0.setPing(true)
 			call questItem0.setPingCoordinatesFromRect(gg_rct_quest_talras_quest_item_0)
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			call questItem0.setReward(thistype.rewardExperience, 100)
 			// item 1
-			set questItem1 = AQuestItem.create(this, tr("Trefft den Herzog und schwört ihm die Treue."))
+			set questItem1 = AQuestItem.create(this, tre("Trefft den Herzog und schwört ihm die Treue.", "Meet the duke and pledge loyalty to him."))
 			call questItem1.setReward(thistype.rewardExperience, 400)
 			
 			return this

@@ -585,6 +585,7 @@
 * Der Waldläufer tötet sich durch irgendeine Fähigkeit selbst. Brandpfeile? Mehrfachschuss? Lauern? Sprinten?
 * Rechte Hälfte des Ladebildschirms beim Laden im Singleplayer wurde nicht ersetzt.
 * Gewandheit: Benötigt passives Icon.
+* Zukünftiger Release-Vorgang: Optimizer jedoch nur mit Skriptoptimierungen damit war3map.wts unverändert bleibt. Karte kopieren und englische wts-Datei einfügen.
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

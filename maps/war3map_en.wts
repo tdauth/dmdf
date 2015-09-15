@@ -1,12 +1,12 @@
 ﻿STRING 0
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 1
 {
-Talras 0.3
+Talras 0.4
 }
 
 STRING 2
@@ -1108,7 +1108,7 @@ Schmiede (Grasland)
 STRING 185
 // Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 186
@@ -3844,7 +3844,7 @@ Manaexplosion [|cffffcc00Stufe 3|r]
 STRING 641
 // Fähigkeiten: A015 (Rucksack öffnen), Tip (Tooltipp - Normal (atp1))
 {
-Open/close rucksack
+Open/close rucksack (|cffffcc00R|r)
 }
 
 STRING 642
@@ -3927,7 +3927,7 @@ Göttergunst - Stufe 4
 STRING 655
 // Fähigkeiten: A0G0 (Koloss - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 656
@@ -3944,7 +3944,7 @@ Ricman's spear
 STRING 658
 // Fähigkeiten: A0G0 (Koloss - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
-Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
 
 STRING 659
@@ -5282,13 +5282,13 @@ Teleportiert den Elementarmagier an einen erkundeten Punkt auf der Karte und abs
 STRING 883
 // Fähigkeiten: A094 (Krähengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A094,DataA2>.
+Increases the armour by <A094,DataA2>.
 }
 
 STRING 884
 // Fähigkeiten: A094 (Krähengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A094,DataA3>.
+Increases the armour by <A094,DataA3>.
 }
 
 STRING 885
@@ -5300,24 +5300,24 @@ Erhöht den Schaden und erlaubt die Heilung mehrerer Verbündeter.
 STRING 886
 // Fähigkeiten: A094 (Krähengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A094,DataA4>.
+Increases the armour by <A094,DataA4>.
 }
 
 STRING 887
 // Fähigkeiten: A094 (Krähengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A094,DataA5>.
+Increases the armour by <A094,DataA5>.
 }
 
 STRING 888
 {
-Orks und Dunkelelfen
+Orcs and Dark Elves
 }
 
 STRING 889
 // Fähigkeiten: A0AA (Vorherige Seite), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00V|rorherige Seite
+Pre|cffffcc00v|rious page
 }
 
 STRING 890
@@ -5347,7 +5347,7 @@ Selbstlosigkeit
 STRING 894
 // Fähigkeiten: A0AB (Nächste Seite), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00N|rächste Seite
+|cffffcc00N|ext page
 }
 
 STRING 895
@@ -5358,7 +5358,7 @@ Testhelm
 
 STRING 896
 {
-Feinde
+Enemies
 }
 
 STRING 897
@@ -5508,7 +5508,7 @@ Lebenswille
 STRING 921
 // Einheiten: h025 (Anstürmen - Stun - Caster), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Ritter)
+(Knight)
 }
 
 STRING 922
@@ -5526,7 +5526,7 @@ Beschwört für <A0D3,Dur5> Sekunden eine heilende Quelle, die bei Verbündeten 
 STRING 924
 // Fähigkeiten: A0NB (Nächste Klasse), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wechselt zur nächsten Klasse.
+Changes to the next class.
 }
 
 STRING 925
@@ -5670,19 +5670,19 @@ Passiv. Der Ritter hat eine 5%ige Chance, Angriffe auf ihn abzublocken und ihren
 STRING 948
 // Fähigkeiten: A033 (Anstürmen), Name (Name (anam))
 {
-Anstürmen
+Rush
 }
 
 STRING 949
 // Fähigkeiten: A01Q (Anstürmen), Name (Name (anam))
 {
-Anstürmen
+Rush
 }
 
 STRING 950
 // Fähigkeiten: A01R (Anstürmen), Name (Name (anam))
 {
-Anstürmen
+Rush
 }
 
 STRING 951
@@ -6108,7 +6108,7 @@ STRING 1020
 STRING 1021
 // Fähigkeiten: A0I1 (Dämonendiener - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 1022
@@ -6576,25 +6576,25 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 STRING 1099
 // Fähigkeiten: A0NB (Nächste Klasse), Tip (Tooltipp - Normal (atp1))
 {
-Nächste Klasse
+Next class
 }
 
 STRING 1100
 // Fähigkeiten: A0NB (Nächste Klasse), EditorSuffix (Editor-Suffix (ansf))
 {
-(Klassenauswahl)
+(Class selection)
 }
 
 STRING 1101
 // Fähigkeiten: A0NB (Nächste Klasse), Name (Name (anam))
 {
-Nächste Klasse
+Next class
 }
 
 STRING 1102
 // Fähigkeiten: A0K1 (Unbeugsamkeit - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 1103
@@ -6606,7 +6606,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 1104
 // Fähigkeiten: A0R0 (Vorherige Klasse), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wechselt zur vorherigen Klasse.
+Changes to the previous class.
 }
 
 STRING 1105
@@ -6804,7 +6804,7 @@ Dämpfung [|cffffcc00Stufe 4|r]
 STRING 1137
 // Fähigkeiten: A0L1 (Teleportation - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 1138
@@ -6864,25 +6864,25 @@ STRING 1146
 STRING 1147
 // Fähigkeiten: A0R0 (Vorherige Klasse), Tip (Tooltipp - Normal (atp1))
 {
-Vorherige Klasse
+Previous class
 }
 
 STRING 1148
 // Fähigkeiten: A0R0 (Vorherige Klasse), EditorSuffix (Editor-Suffix (ansf))
 {
-(Klassenauswahl)
+(Class selection)
 }
 
 STRING 1149
 // Fähigkeiten: A0R0 (Vorherige Klasse), Name (Name (anam))
 {
-Vorherige Klasse
+Previous class
 }
 
 STRING 1150
 // Fähigkeiten: A02Z (Zauberfähigkeiten), Name (Name (anam))
 {
-Zauberfähigkeiten
+Spells
 }
 
 STRING 1151
@@ -6894,7 +6894,7 @@ STRING 1151
 STRING 1152
 // Fähigkeiten: A0F2 (Weltenportal - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 1153
@@ -6912,7 +6912,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 1155
 // Fähigkeiten: A0R1 (Klasse auswählen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wählt die aktuelle Klasse.
+Selects the current class.
 }
 
 STRING 1156
@@ -6978,31 +6978,31 @@ Dämpfung [|cffffcc00Stufe 5|r]
 STRING 1166
 // Fähigkeiten: A0R1 (Klasse auswählen), Tip (Tooltipp - Normal (atp1))
 {
-Klasse auswählen
+Select class
 }
 
 STRING 1167
 // Einheiten: n002 (Keiler), Name (Name (unam))
 {
-Keiler
+Wild boar
 }
 
 STRING 1168
 // Gegenstände: I007 (Gewaff), Name (Name (unam))
 {
-Gewaff
+Fangs
 }
 
 STRING 1169
 // Gegenstände: I007 (Gewaff), Description (Beschreibung (ides))
 {
-Die Eckzähne eines Keilers.
+The fangs of a wild boar.
 }
 
 STRING 1170
 // Gegenstände: I007 (Gewaff), Ubertip (Tooltipp - Erweitert (utub))
 {
-Die Eckzähne eines Keilers.
+The fangs of a wild boar.
 }
 
 STRING 1171
@@ -7014,7 +7014,7 @@ STRING 1171
 STRING 1172
 // Einheiten: n008 (Braunbär), Name (Name (unam))
 {
-Braunbär
+Brown bear
 }
 
 STRING 1173
@@ -7032,7 +7032,7 @@ Prankenhieb
 STRING 1175
 // Fähigkeiten: A024 (Prankenhieb), EditorSuffix (Editor-Suffix (ansf))
 {
-(Braunbär)
+(Brown bear)
 }
 
 STRING 1176
@@ -7122,7 +7122,7 @@ Kleinen M|cffffcc00a|rnatrank kaufen
 STRING 1190
 // Fähigkeiten: A0R2 (Klassenzauber), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Listet alle verfügbaren Zauber der Klasse auf.
+Lists all available spells of the class.
 }
 
 STRING 1191
@@ -7146,7 +7146,7 @@ STRING 1193
 STRING 1194
 // Fähigkeiten: A0L2 (Teleportation - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 1195
@@ -7158,7 +7158,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 1196
 // Fähigkeiten: A0R1 (Klasse auswählen), Name (Name (anam))
 {
-Klasse auswählen
+Select class
 }
 
 STRING 1197
@@ -7404,31 +7404,31 @@ Anziehung [|cffffcc00Stufe 1|r]
 STRING 1237
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 2|r]
+Rush [|cffffcc00Level 2|r]
 }
 
 STRING 1238
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 3|r]
+Rush [|cffffcc00Level 3|r]
 }
 
 STRING 1239
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 4|r]
+Rush [|cffffcc00Level 4|r]
 }
 
 STRING 1240
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 5|r]
+Rush [|cffffcc00Level 5|r]
 }
 
 STRING 1241
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 1|r]
+Rush [|cffffcc00Level 1|r]
 }
 
 STRING 1242
@@ -8184,7 +8184,7 @@ STRING 1366
 STRING 1367
 // Fähigkeiten: A02L (Stab), Name (Name (anam))
 {
-Stab
+Staff
 }
 
 STRING 1368
@@ -8262,37 +8262,37 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1380
 // Einheiten: n00T (Wegelagerer), Name (Name (unam))
 {
-Wegelagerer
+Highwayman
 }
 
 STRING 1381
 // Einheiten: n00U (Wegelagerer), Name (Name (unam))
 {
-Wegelagerer
+Highwayman
 }
 
 STRING 1382
 // Einheiten: n00V (Rothirsch), Name (Name (unam))
 {
-Rothirsch
+Red deer
 }
 
 STRING 1383
 // Gegenstände: I00P (Sommerdecke), Name (Name (unam))
 {
-Sommerdecke
+Summer fur
 }
 
 STRING 1384
 // Gegenstände: I00P (Sommerdecke), Description (Beschreibung (ides))
 {
-Das Sommerfell eines Rothirschs.
+The summer fur of a red deer.
 }
 
 STRING 1385
 // Gegenstände: I00P (Sommerdecke), Ubertip (Tooltipp - Erweitert (utub))
 {
-Das Sommerfell eines Rothirschs.
+The summer fur of a red deer.
 }
 
 STRING 1386
@@ -8304,7 +8304,7 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1387
 // Einheiten: n00W (Erzähler), Name (Name (unam))
 {
-Erzähler
+Narrator
 }
 
 STRING 1388
@@ -8406,7 +8406,7 @@ Verspotten
 STRING 1404
 // Fähigkeiten: A023 (Dämonendiener - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 1405
@@ -8418,7 +8418,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 1406
 // Fähigkeiten: A01Q (Anstürmen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Ritter)
+(Knight)
 }
 
 STRING 1407
@@ -9864,7 +9864,7 @@ Manaschild
 STRING 1647
 // Fähigkeiten: A0E3 (Ranken - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 1648
@@ -9942,7 +9942,7 @@ Dämpfung
 STRING 1660
 // Fähigkeiten: A0F3 (Weltenportal - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 1661
@@ -10248,7 +10248,7 @@ Sprinten
 STRING 1711
 // Fähigkeiten: A0R2 (Klassenzauber), Tip (Tooltipp - Normal (atp1))
 {
-Klassen|cffffcc00z|rauber
+Class spells (|cffffcc00Z|r)
 }
 
 STRING 1712
@@ -11627,7 +11627,7 @@ Open rucksack
 
 STRING 1941
 {
-Version 0.1
+Version 0.4
 }
 
 STRING 1942
@@ -11644,7 +11644,7 @@ STRING 1943
 
 STRING 1944
 {
-|Cffff0000Die Macht des Feuers
+|Cffff0000The Power of Fire
 }
 
 STRING 1945
@@ -13348,7 +13348,7 @@ Z
 STRING 2228
 // Fähigkeiten: A0R2 (Klassenzauber), Name (Name (anam))
 {
-Klassenzauber
+Class spells
 }
 
 STRING 2229
@@ -13990,7 +13990,7 @@ STRING 2334
 STRING 2335
 // Einheiten: n00T (Wegelagerer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Nahkampf)
+(Melee)
 }
 
 STRING 2336
@@ -14002,7 +14002,7 @@ STRING 2336
 STRING 2337
 // Einheiten: h00E (Schrein), Name (Name (unam))
 {
-Schrein
+Shrine
 }
 
 STRING 2338
@@ -14013,22 +14013,22 @@ STRING 2338
 
 STRING 2339
 {
-Vasall 1
+Vassal 1
 }
 
 STRING 2340
 {
-Vasall 2
+Vassal 2
 }
 
 STRING 2341
 {
-Vasall 3
+Vassal 3
 }
 
 STRING 2342
 {
-Vasall 4
+Vassal 4
 }
 
 STRING 2343
@@ -14045,12 +14045,12 @@ STRING 2344
 
 STRING 2345
 {
-Verbündete
+Allies
 }
 
 STRING 2346
 {
-Vasallen
+Vassals
 }
 
 STRING 2347
@@ -14067,7 +14067,7 @@ Gewährt eine Chance von <A0R5,DataA1>%, dass ein Angriff einen Schaden von <A0R
 
 STRING 2349
 {
-Nicht genügend Goldmünzen.
+Not enough gold coins.
 }
 
 STRING 2350
@@ -14094,7 +14094,7 @@ STRING 2353
 
 STRING 2354
 {
-%d Goldmünzen von %s erhalten.
+Got %d gold coins from %s.
 }
 
 STRING 2355
@@ -14104,7 +14104,7 @@ STRING 2355
 
 STRING 2356
 {
-Goldmünzen:
+Gold coins:
 }
 
 STRING 2357
@@ -14150,27 +14150,27 @@ Hero Glow
 
 STRING 2364
 {
-Computergesteuert
+Computer controlled
 }
 
 STRING 2365
 {
-Computergesteuert
+Computer controlled
 }
 
 STRING 2366
 {
-Computergesteuert
+Computer controlled
 }
 
 STRING 2367
 {
-Computergesteuert
+Computer controlled
 }
 
 STRING 2368
 {
-Goldmünzen
+Gold coins
 }
 
 STRING 2369
@@ -14230,7 +14230,7 @@ Dies ist die aktuelle Tageszeit.|N |NDie Tageszeit kann die Sicht von Einheiten 
 
 STRING 2379
 {
-Menschen
+Humans
 }
 
 STRING 2380
@@ -15253,7 +15253,7 @@ Magische Schockwellen
 STRING 2551
 // Fähigkeiten: A0K3 (Kontrollierter Zeitfluss - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 2552
@@ -15355,7 +15355,7 @@ Abstoßung
 STRING 2568
 // Fähigkeiten: A0L3 (Teleportation - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 2569
@@ -16474,7 +16474,7 @@ Ahnenpakt - Stufe 1
 STRING 2755
 // Fähigkeiten: A0C4 (Absorbation - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 2756
@@ -16852,25 +16852,25 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 2818
 // Fähigkeiten: A06S (Wilder Blutrausch), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 2|r]
+Rush [|cffffcc00Level 2|r]
 }
 
 STRING 2819
 // Fähigkeiten: A06S (Wilder Blutrausch), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 3|r]
+Rush [|cffffcc00Level 3|r]
 }
 
 STRING 2820
 // Fähigkeiten: A06S (Wilder Blutrausch), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 4|r]
+Rush [|cffffcc00Level 4|r]
 }
 
 STRING 2821
 // Fähigkeiten: A06S (Wilder Blutrausch), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 5|r]
+Rush [|cffffcc00Level 5|r]
 }
 
 STRING 2822
@@ -16894,7 +16894,7 @@ Wilder Blutrausch
 STRING 2825
 // Fähigkeiten: A0E4 (Ranken - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
 {
-Anstürmen [|cffffcc00Stufe %d|r] erlernen
+Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 2826
@@ -16996,7 +16996,7 @@ STRING 2841
 STRING 2842
 // Gegenstände: I040 (Drachenfeuer), Name (Name (unam))
 {
-Drachenfeuer
+Dragon fire
 }
 
 STRING 2843
@@ -17008,7 +17008,7 @@ STRING 2843
 STRING 2844
 // Fähigkeiten: A04B (Drachenfeuer), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00D|rrachenfeuer
+|cffffcc00D|rragon fire
 }
 
 STRING 2845
@@ -17026,7 +17026,7 @@ D
 STRING 2847
 // Fähigkeiten: A04B (Drachenfeuer), Name (Name (anam))
 {
-Drachenfeuer
+Dragon fire
 }
 
 STRING 2848
@@ -17038,7 +17038,7 @@ STRING 2848
 STRING 2849
 // Fähigkeiten: A06U (Drachenfeuer), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00D|rrachenfeuer
+|cffffcc00D|rragon fire
 }
 
 STRING 2850
@@ -17088,12 +17088,12 @@ Charaktere nehmen bei Stich-, Magie- und Belagerungsangriffen nur reduzierten Sc
 
 STRING 2858
 {
-Hauptattribut:
+Main attribute:
 }
 
 STRING 2859
 {
-Zauber:
+Spells:
 }
 
 STRING 2860
@@ -17108,7 +17108,7 @@ Besitz (%s)
 
 STRING 2862
 {
-Aktiver Schrein (|Cfffed312F8|R)
+Active shrine (|Cfffed312F8|R)
 }
 
 STRING 2863
@@ -20322,22 +20322,22 @@ Wiederbelebungsschrein muss angewählt werden.
 
 STRING 3399
 {
-Der Charakter hat die maximale Stufe.
+The character has the maximum level.
 }
 
 STRING 3400
 {
-Der Charakter hat volle Gesundheit.
+The character has full health.
 }
 
 STRING 3401
 {
-Typ: |Cffffcc00Charakter|R
+Type: |Cffffcc00Character|R
 }
 
 STRING 3402
 {
-Typ: |Cffffcc00Charakter|R
+Type: |Cffffcc00Character|R
 }
 
 STRING 3403
@@ -20357,27 +20357,27 @@ Charakter-Angriffe richten bei verstärkter Rüstung reduzierten Schaden an.
 
 STRING 3406
 {
-|cffffff00Hauptattribut|r
+|cffffff00Main attribute|r
 }
 
 STRING 3407
 {
-Mitspieler
+Teammates
 }
 
 STRING 3408
 {
-Mit-spieler
+Team-mates
 }
 
 STRING 3409
 {
-Charakter-Attribute:
+Character attributes:
 }
 
 STRING 3410
 {
-Mitspieler (|Cfffed312F11|R)
+Teammates (|Cfffed312F11|R)
 }
 
 STRING 3411
@@ -20387,7 +20387,7 @@ Charakter-Punkte
 
 STRING 3412
 {
-Charakter-Stufe:
+Character level:
 }
 
 STRING 3413
@@ -20402,17 +20402,17 @@ Wird am Schrein wiederbelebt
 
 STRING 3415
 {
-Charaktere
+Characters
 }
 
 STRING 3416
 {
-Mitspieler-Fenster (|Cfffed312F11|R)
+Teammates window (|Cfffed312F11|R)
 }
 
 STRING 3417
 {
-Klicken Sie hier,|Num zum aktiven Schrein Ihres Charakters zu gelangen.
+Click here|Nto get to the active shrine of your character.
 }
 
 STRING 3418
@@ -24922,7 +24922,7 @@ Dämpfung [|cffffcc00Stufe 5|r]
 STRING 4168
 // Fähigkeiten: A0AA (Vorherige Seite), Name (Name (anam))
 {
-Vorherige Seite
+Previous page
 }
 
 STRING 4169
@@ -24934,7 +24934,7 @@ STRING 4169
 STRING 4170
 // Fähigkeiten: A0AY (Vorherige Seite), Name (Name (anam))
 {
-Vorherige Seite
+Previous page
 }
 
 STRING 4171
@@ -30537,12 +30537,12 @@ In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sow
 
 STRING 5104
 {
-Die weiße Legion
+The white legion
 }
 
 STRING 5105
 {
-Die schwarze Legion
+The black legion
 }
 
 STRING 5106
@@ -51845,7 +51845,7 @@ Diese Einheit steht unter der Wirkung von 'Aura der Autorität'; sie hat einen e
 STRING 8748
 // Einheiten: H002 (Zauberer), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 8749
@@ -53747,7 +53747,7 @@ Nahkampf
 STRING 9061
 // Einheiten: H000 (Kleriker), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 9062
@@ -61428,43 +61428,43 @@ Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünd
 STRING 10335
 // Einheiten: H004 (Nekromant), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10336
 // Einheiten: H006 (Ritter), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10337
 // Einheiten: H007 (Drachentöter), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10338
 // Einheiten: H008 (Waldläufer), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10339
 // Einheiten: H009 (Elementarmagier), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10340
 // Einheiten: H00G (Druide), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10341
 // Einheiten: H005 (Kleriker), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10342
@@ -61476,13 +61476,13 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10343
 // Einheiten: H00A (Nekromant), Name (Name (unam))
 {
-Nekromant
+Necromancer
 }
 
 STRING 10344
 // Einheiten: H00A (Nekromant), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10345
@@ -61494,13 +61494,13 @@ STRING 10345
 STRING 10346
 // Einheiten: H00C (Druide), Name (Name (unam))
 {
-Druide
+Druid
 }
 
 STRING 10347
 // Einheiten: H00C (Druide), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10348
@@ -61512,13 +61512,13 @@ STRING 10348
 STRING 10349
 // Einheiten: H00S (Ritter), Name (Name (unam))
 {
-Ritter
+Knight
 }
 
 STRING 10350
 // Einheiten: H00S (Ritter), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10351
@@ -61530,13 +61530,13 @@ STRING 10351
 STRING 10352
 // Einheiten: H00U (Drachentöter), Name (Name (unam))
 {
-Drachentöter
+Dragon Slayer
 }
 
 STRING 10353
 // Einheiten: H00U (Drachentöter), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10354
@@ -61548,13 +61548,13 @@ STRING 10354
 STRING 10355
 // Einheiten: H013 (Waldläufer), Name (Name (unam))
 {
-Waldläufer
+Ranger
 }
 
 STRING 10356
 // Einheiten: H013 (Waldläufer), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10357
@@ -61566,13 +61566,13 @@ STRING 10357
 STRING 10358
 // Einheiten: H01H (Elementarmagier), Name (Name (unam))
 {
-Elementarmagier
+Elemental Mage
 }
 
 STRING 10359
 // Einheiten: H01H (Elementarmagier), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10360
@@ -61584,13 +61584,13 @@ STRING 10360
 STRING 10361
 // Einheiten: H01I (Zauberer), Name (Name (unam))
 {
-Zauberer
+Wizard
 }
 
 STRING 10362
 // Einheiten: H01I (Zauberer), Propernames (Eigennamen (upro))
 {
-Mensch
+Human
 }
 
 STRING 10363
@@ -65268,7 +65268,8 @@ Arkaner Hunger [|cffffcc00Stufe 3|r]
 STRING 10975
 // Fähigkeiten: A0AB (Nächste Seite), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wechselt zur nächsten Seite des Zauberbuchs. Auf jeder Seite des Zauberbuchs werden erlernbare und erlernte Zauber Ihres Charakters aufgelistet. Klicken Sie auf einen der Zauber, um dessen Stufe zu verändern. Klicken Sie erneut auf den Zauber um zum Zauberbuch zurückzukehren.
+Changes to the next page of the grimoire. On each page of the grimoire learnable and learned spells of your characters are listed. Click at one spell to
+change its level. Click again at the spell to return to the grimoire.
 }
 
 STRING 10976
@@ -73062,20 +73063,20 @@ STRING 12273
 STRING 12274
 // Gegenstände: I000 (Zur nächsten Tasche wechseln), Name (Name (unam))
 {
-Zur nächsten Tasche wechseln
+Change to the next bag
 }
 
 STRING 12275
 // Gegenstände: I000 (Zur nächsten Tasche wechseln), Ubertip (Tooltipp - Erweitert (utub))
 {
-Wechselt bei Benutzung in die nächste Tasche des Rucksacks.
-Legen Sie einen Gegenstand aus dem Rucksack auf diesem Gegenstand ab, um ihn in die nächste Tasche zu verschieben.|nDer Rucksack hat 32 Taschen.
+Changes on usage to the next bag of the rucksack.
+Drop an item from the rucksack on this item to move it into the next bag.|nThe rucksack has 32 bags.
 }
 
 STRING 12276
 // Gegenstände: I001 (Zur vorherigen Tasche wechseln), Name (Name (unam))
 {
-Zur vorherigen Tasche wechseln
+Change to the previous bag
 }
 
 STRING 12277
@@ -78344,12 +78345,12 @@ Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|
 
 STRING 13153
 {
-Gemeinsame Aufträge
+Shared missions
 }
 
 STRING 13154
 {
-Eigene Aufträge
+Own missions
 }
 
 STRING 13155

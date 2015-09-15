@@ -197,13 +197,13 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_cleric.setStrPerLevel(1.50)
 			call thistype.m_cleric.setAgiPerLevel(1.50)
 			call thistype.m_cleric.setIntPerLevel(3.0)
-			call thistype.m_cleric.addDescriptionLine(tr("Kleriker sind meist gottesfürchtige Menschen,"))
-			call thistype.m_cleric.addDescriptionLine(tr("die die Gabe der Heilung erhalten haben. Diese nutzen sie,"))
-			call thistype.m_cleric.addDescriptionLine(tr("um ihre Verbündeten genesen zu lassen, sie vor Schaden zu schützen"))
-			call thistype.m_cleric.addDescriptionLine(tr("und sie von dunkler Magie zu befreien."))
-			call thistype.m_cleric.addDescriptionLine(tr("Ihre offensiven Fähigkeiten jedoch, sind stark eingeschränkt"))
-			call thistype.m_cleric.addDescriptionLine(tr("und alleine sind sie häufig nicht in der Lage, mächtige Feinde"))
-			call thistype.m_cleric.addDescriptionLine(tr("zu bezwingen."))
+			call thistype.m_cleric.addDescriptionLine(tre("Kleriker sind meist gottesfürchtige Menschen,", "Clerics are mostly God-fearing humans"))
+			call thistype.m_cleric.addDescriptionLine(tre("welche die Gabe der Heilung und des Schutzes erhalten haben. Diese nutzen sie,", "who got the gift of healing and protection. They use it"))
+			call thistype.m_cleric.addDescriptionLine(tre("um ihre Verbündeten genesen zu lassen, sie vor Schaden zu schützen", "to let their allies recover, to protect them from damage"))
+			call thistype.m_cleric.addDescriptionLine(tre("und sie von dunkler Magie zu befreien.", "and to free them from dark magic."))
+			call thistype.m_cleric.addDescriptionLine(tre("Ihre offensiven Fähigkeiten jedoch, sind stark eingeschränkt", "Their offensive abilities are largely limited"))
+			call thistype.m_cleric.addDescriptionLine(tre("und alleine sind sie häufig nicht in der Lage, mächtige Feinde", "and they are not capable of defeating"))
+			call thistype.m_cleric.addDescriptionLine(tre("zu bezwingen.", "powerful enemies alone."))
 			
 			set thistype.m_clericGrimoireEntries = AIntegerVector.create()
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMaertyrer.classSelectionAbilityId, SpellMaertyrer.classSelectionGrimoireAbilityId))
@@ -472,24 +472,24 @@ library StructGameClasses requires Asl, StructGameCharacter
 
 		public static method className takes AClass class returns string
 			if (class == Classes.cleric()) then
-				return tr("Kleriker")
+				return tre("Kleriker", "Cleric")
 			elseif (class == Classes.necromancer()) then
-				return tr("Nekromant")
+				return tre("Nekromant", "Necromancer")
 			elseif (class == Classes.druid()) then
-				return tr("Druide")
+				return tre("Druide", "Druid")
 			elseif (class == Classes.knight()) then
-				return tr("Ritter")
+				return tre("Ritter", "Knight")
 			elseif (class == Classes.dragonSlayer()) then
-				return tr("Drachentöter")
+				return tre("Drachentöter", "Dragon Slayer")
 			elseif (class == Classes.ranger()) then
-				return tr("Waldläufer")
+				return tre("Waldläufer", "Ranger")
 			elseif (class == Classes.elementalMage()) then
-				return tr("Elementarmagier")
+				return tre("Elementarmagier", "Elemental Mage")
 			elseif (class == Classes.wizard()) then
-				return tr("Zauberer")
+				return tre("Zauberer", "Wizard")
 			endif
 
-			return tr("Unbekannt")
+			return tre("Unbekannt", "Unknown")
 		endmethod
 
 		public static method isChaplain takes AClass class returns boolean
@@ -502,17 +502,6 @@ library StructGameClasses requires Asl, StructGameCharacter
 
 		public static method isMage takes AClass class returns boolean
 			return class == thistype.elementalMage() or class == thistype.wizard()
-		endmethod
-
-		public static method classCategoryName takes AClass class returns string
-			if (thistype.isChaplain(class)) then
-				return tr("Geistliche")
-			elseif (thistype.isWarrior(class)) then
-				return tr("Krieger")
-			elseif (thistype.isMage(class)) then
-				return tr("Magier")
-			endif
-			return tr("Unbekannt")
 		endmethod
 		
 		public static method classMeleeAbilityId takes AClass class returns integer

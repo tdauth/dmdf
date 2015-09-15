@@ -69,7 +69,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(0.50)) then
 				return
 			endif
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Nachdem die Orks und Dunkelelfen in das Königreich der Menschen eingefallen waren, wussten viele der Adeligen, von denen die meisten in den Frieden hineingeboren wurden, nicht wie sie auf die vermeintliche Invasion reagieren sollten."), gg_snd_ErzaehlerIntro1)
+			call TransmissionFromUnitType('n00W', user, tre("Erzähler", "Narrator"), tre("Nachdem die Orks und Dunkelelfen in das Königreich der Menschen eingefallen waren, wussten viele der Adeligen, von denen die meisten in den Frieden hineingeboren wurden, nicht wie sie auf die vermeintliche Invasion reagieren sollten.", "After the Orcs and Dark Elves invaded the kingdom of the humans, many of the aristocrats, of whom most were born into peace, did not know how to react to the supposed invasion."), gg_snd_ErzaehlerIntro1)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro1))) then
 				return
 			endif
@@ -83,7 +83,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(1.50)) then
 				return
 			endif
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Da der König, der selbst einen schwachen Willen hatte, keine Truppen an die Grenze seines Reiches entsandt, mussten die dort ansäßigen Fürsten und Herzöge selbst mit dem neuen Feind zurechtkommen."), gg_snd_ErzaehlerIntro2)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tre("Da der König, der selbst einen schwachen Willen hatte, keine Truppen an die Grenze seines Reiches entsandt, mussten die dort ansäßigen Fürsten und Herzöge selbst mit dem neuen Feind zurechtkommen.", "Since the king, who himself had a weak will, did not send troops to the border of his empire, the local resident princes and dukes had to deal with the new enemies by themselves."), gg_snd_ErzaehlerIntro2)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro2))) then
 				return
 			endif
@@ -97,7 +97,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Doch auch das einfachere Volk sah in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen."), gg_snd_ErzaehlerIntro3)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tre("Doch auch das einfachere Volk sah in dem bevorstehenden Krieg viele Veränderungen auf sich zu kommen.", "But the simple people as well saw many changes coming by the forthcoming war."), gg_snd_ErzaehlerIntro3)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro3))) then // wait until "So kämpften die einen dafür ..."
 				return
 			endif
@@ -112,7 +112,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("So kämpften die einen dafür, ihr bisheriges Leben wie gewohnt fortzusetzen …"), gg_snd_ErzaehlerIntro4)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tre("So kämpften die einen dafür, ihr bisheriges Leben wie gewohnt fortzusetzen …", "Hence some fought to continue their present life as usual …"), gg_snd_ErzaehlerIntro4)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro4))) then // wait until "während die anderen …"
 				return
 			endif
@@ -127,7 +127,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("… während die anderen den eigenen Vorteil aus der Sache zogen."), gg_snd_ErzaehlerIntro5)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tre("… während die anderen den eigenen Vorteil aus der Sache zogen.", "… while others took their own advantage of it."), gg_snd_ErzaehlerIntro5)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro5))) then // wait until end
 				return
 			endif
@@ -141,7 +141,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			if (wait(2.0)) then
 				return
 			endif
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich, wie viele andere Adelige, von der feindlichen Übermacht bedroht fühlt."), gg_snd_ErzaehlerIntro6)
+			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tre("Unsere Geschichte beginnt unweit der Burg Talras, deren Herzog sich, wie viele andere Adelige, von der feindlichen Übermacht bedroht fühlt.", "Our story begins not far from the castle Talras of which its duke, like many other aristocrats, feels threatened by the hostile superiority."), gg_snd_ErzaehlerIntro6)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerIntro6))) then
 				return
 			endif

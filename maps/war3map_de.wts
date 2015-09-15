@@ -6,7 +6,7 @@ Anstürmen [|cffffcc00Stufe %d|r] erlernen
 
 STRING 1
 {
-Talras 0.3
+Talras 0.4
 }
 
 STRING 2
@@ -52522,7 +52522,12 @@ STRING 8861
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 20 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
+
+
+
+
 Setzt die Dauer beschworener Verbündeter auf 60 Sekunden oder beschworener Gegner auf 15 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -52530,7 +52535,12 @@ STRING 8862
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 15 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
+
+
+
+
 Setzt die Dauer beschworener Verbündeter auf 70 Sekunden oder beschworener Gegner auf 10 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -52538,7 +52548,12 @@ STRING 8863
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 10 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
+
+
+
+
 Setzt die Dauer beschworener Verbündeter auf 80 Sekunden oder beschworener Gegner auf 5 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -52546,7 +52561,12 @@ STRING 8864
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 5 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
+
+
+
+
 Setzt die Dauer beschworener Verbündeter auf 90 Sekunden oder beschworener Gegner auf 0 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -69409,7 +69429,8 @@ STRING 11669
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
 Setzt die Dauer beschworener Verbündeter auf 50 Sekunden oder beschworener Gegner auf 20 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
