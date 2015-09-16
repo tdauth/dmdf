@@ -11,8 +11,10 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 			if (itemTypeId == 'I01Y') then
 				call character.inventory().removeItemType('I01Y')
 				call character.giveQuestItem('I060')
-				call QuestSuppliesForEinar.characterQuest(character).displayUpdateMessage(Format(tr("%1%/%2% Kurzschwertern hergestellt.")).i(QuestSuppliesForEinar.characterQuest(character).m_counter).i(thistype.maxSwords).result())
+				
 				set QuestSuppliesForEinar.characterQuest(character).m_counter = QuestSuppliesForEinar.characterQuest(character).m_counter + 1
+				call QuestSuppliesForEinar.characterQuest(character).displayUpdateMessage(Format(tr("%1%/%2% Kurzschwerter hergestellt.")).i(QuestSuppliesForEinar.characterQuest(character).m_counter).i(thistype.maxSwords).result())
+				
 				if (QuestSuppliesForEinar.characterQuest(character).m_counter == thistype.maxSwords) then
 					call character.removeOnCraftItemFunction(thistype.onCraftItemFunction)
 					call QuestSuppliesForEinar.characterQuest(character).questItem(0).complete()
@@ -30,6 +32,7 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 			local integer i = 0
 			loop
 				exitwhen (i == thistype.maxSwords)
+				debug call Print("Remove item type " + GetObjectName('I060'))
 				call this.character().inventory().removeItemType('I060')
 				set i = i + 1
 			endloop
@@ -42,7 +45,7 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNLongsword.blp")
 			call this.setDescription(tr("Der Waffenhändler Einar aus Talras benötigt fünf geschmiedete Kurzschwerter, die er verkaufen kann. Die Schwerter müsse neu geschmiedet werden. Er möchte keine weiterverkaufte Ware."))
 			call this.setReward(thistype.rewardExperience, 300)
-			call this.setReward(thistype.rewardGold, 200)
+			call this.setReward(thistype.rewardGold, 1000) // 5 * 150 + 250 reward
 			call this.setStateAction(thistype.stateActionCompleted, thistype.stateActionCompleted)
 			
 			// item 0

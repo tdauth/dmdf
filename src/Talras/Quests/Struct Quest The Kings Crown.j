@@ -1,4 +1,4 @@
-library StructMapQuestsQuestTheKingsCrown requires Asl
+library StructMapQuestsQuestTheKingsCrown requires Asl, StructGameCharacter
 
 	struct QuestTheKingsCrown extends AQuest
 		public static constant integer crownItemTypeId = 'I01A'
@@ -10,10 +10,7 @@ library StructMapQuestsQuestTheKingsCrown requires Asl
 		endmethod
 
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger whichTrigger returns nothing
-			local player owner = Player(PLAYER_NEUTRAL_AGGRESSIVE)
-			local event triggerEvent = TriggerRegisterPlayerUnitEvent(whichTrigger, owner, EVENT_PLAYER_UNIT_DEATH, null)
-			set owner = null
-			set triggerEvent = null
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
@@ -30,12 +27,8 @@ library StructMapQuestsQuestTheKingsCrown requires Asl
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
-			local unit characterUnit = questItem.quest().character().unit()
-			local item whichItem = CreateItem(thistype.crownItemTypeId, 0.0, 0.0)
-			call UnitAddItem(characterUnit, whichItem)
+			call Character(questItem.character()).giveQuestItem(thistype.crownItemTypeId)
 			call questItem.quest().questItem(1).enable()
-			set characterUnit = null
-			set whichItem = null
 		endmethod
 
 		private static method create takes Character character returns thistype

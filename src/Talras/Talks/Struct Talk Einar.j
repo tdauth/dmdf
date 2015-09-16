@@ -8,13 +8,15 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private AInfo m_help
 		private AInfo m_forge
 		private AInfo m_weapons
-		private AInfo m_aboutWieland
 		private AInfo m_exit
+		private AInfo m_aboutWieland
 
 		implement Talk
 
 		private method startPageAction takes ACharacter character returns nothing
-			call this.showUntil(this.m_exit.index(), character)
+			if (not this.showInfo(this.m_aboutWieland.index(), character)) then
+				call this.showUntil(this.m_exit.index(), character)
+			endif
 		endmethod
 
 		// Hallo.
@@ -149,8 +151,9 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tr("Kann ich dir irgendwie helfen?"))
 			set this.m_forge = this.addInfo(true, false, thistype.infoConditionForge, thistype.infoActionForge, tr("Wo kann ich hier schmieden?"))
 			set this.m_weapons = this.addInfo(true, false, thistype.infoConditionWeapons, thistype.infoActionWeapons, tr("Hier sind fünf Kurzschwerter."))
-			set this.m_aboutWieland = this.addInfo(false, true, thistype.infoConditionAboutWieland, thistype.infoActionAboutWieland, null)
 			set this.m_exit = this.addExitButton()
+			
+			set this.m_aboutWieland = this.addInfo(false, true, thistype.infoConditionAboutWieland, thistype.infoActionAboutWieland, null)
 
 			return this
 		endmethod

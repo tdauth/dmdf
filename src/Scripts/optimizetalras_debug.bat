@@ -1,2 +1,2 @@
-del "F:\Warcraft III\Maps\DMDF\Karte 1 - Talras.w3x"
-"F:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "F:\Projekte\dmdf\maps\Karte 1 - Talras.w3x" --do "F:\Warcraft III\Maps\DMDF\Karte 1 - Talras.w3x" --checkscriptstuff --exit
+del "E:\Warcraft III\Maps\DMDF\Karte 1 - Talras.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 1 - Talras.w3x" --do "E:\Warcraft III\Maps\DMDF\Karte 1 - Talras.w3x" --checkscriptstuff --exit
