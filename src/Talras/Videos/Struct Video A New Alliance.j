@@ -42,7 +42,7 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_0, true, 0.0)
 			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Dies freut mich zu hören. Jedoch brauche ich noch mehr Verbündete, um eine echte Chance gegen unseren Feind zu haben. Markward wird ihnen ihren nächsten Auftrag erteilen und sie für ih￼r￼e Dienste entlohnen."), gg_snd_Heimrich19)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich19))) then
 				return
 			endif
 
