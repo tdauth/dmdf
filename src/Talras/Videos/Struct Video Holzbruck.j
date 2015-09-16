@@ -3,7 +3,7 @@ library StructMapVideosVideoHolzbruck requires Asl, StructGameGame
 /*
 Szene 5 - Der Charakter und der Herzog:
 C: Wir haben den Außenposten erfolgreich verteidigt.
-Heimrich: Freude, Jubel, jauchzet und frohlocket, es ist vollbracht! Der Feind ist niedergestreckt, besiegt, die Hochelfen sind eingetroffen. Es hätte nicht schöner ausgehen können. Markward wird ihnen alle erdenklichen Wünsche erfüllen und sie mit ihrer nächsten Mission vertraut machen. Das war wirklich ausgezeichnete Arbeit!
+Heimrich: Freude, Jubel, jauchzet und frohlocket, es ist vollbracht! Der Feind ist niedergestreckt, besiegt, die Hochelfen sind eingetroffen. Es hätte nicht schöner ausgehen können. Markward wird ihnen alle erdenklichen Wünsche erfüllen und sie mit ihrer nächsten Mission vertraut machen. Das war wirklich ausgezeichnete Arbeit! gg_snd_Heimrich30
 */
 	struct VideoHolzbruck extends AVideo
 		private integer m_actorHeimrich

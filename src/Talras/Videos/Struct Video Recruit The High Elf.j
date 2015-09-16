@@ -204,7 +204,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Ich grüße Euch Hochelfin, seid willkommen in meiner Burg Talras."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Ich grüße Euch Hochelfin, seid willkommen in meiner Burg Talras."), gg_snd_Heimrich20)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -216,7 +216,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Ich hoffe sie denkt nichts Falsches von uns. Keineswegs wollen wir sie ausnutzen, doch bleibt uns in dieser schwierigen Zeit nichts anderes mehr übrig."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Ich hoffe sie denkt nichts Falsches von uns. Keineswegs wollen wir sie ausnutzen, doch bleibt uns in dieser schwierigen Zeit nichts anderes mehr übrig."), gg_snd_Heimrich21)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -228,7 +228,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Nun gut, habt Dank! Ritter Markward wird alles weitere mit ihr besprechen."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Nun gut, habt Dank! Ritter Markward wird alles weitere mit ihr besprechen."), gg_snd_Heimrich22)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

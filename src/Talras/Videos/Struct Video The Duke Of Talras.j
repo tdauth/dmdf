@@ -38,7 +38,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Nun, sie sind also die Vasallen von denen mir berichtet wurde. Sie sollen rasch sprechen. Was treibt sie in diese Gegend?"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Nun, sie sind also die Vasallen von denen mir berichtet wurde. Sie sollen rasch sprechen. Was treibt sie in diese Gegend?"), gg_snd_Heimrich16)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -52,7 +52,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_0, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Es freut mich zu hören in ihnen weitere Verbündete gegen den Feind gefunden zu haben. Wir benötigen jeden verfügbaren Mann. Sie sollen mir die Treue für das bevorstehende Gefecht schwören und sie werden eine Aufgabe erhalten."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Es freut mich zu hören in ihnen weitere Verbündete gegen den Feind gefunden zu haben. Wir benötigen jeden verfügbaren Mann. Sie sollen mir die Treue für das bevorstehende Gefecht schwören und sie werden eine Aufgabe erhalten."), gg_snd_Heimrich17)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -79,7 +79,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_0, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Auf dann! Mein getreuer Ritter Markward wird sie mit ihrer Aufgabe vertraut machen und sie ein wenig über die Situation aufklären."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Auf dann! Mein getreuer Ritter Markward wird sie mit ihrer Aufgabe vertraut machen und sie ein wenig über die Situation aufklären."), gg_snd_Heimrich18)
 
 			if (wait(GetSimpleTransmissionDuration(null) + 2.0)) then
 				return
