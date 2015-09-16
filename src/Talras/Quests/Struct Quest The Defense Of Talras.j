@@ -209,6 +209,13 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call Character.displayUnitAcquiredToAll(tr("Dararos"), tr("Dararos ist der König der Hochelfen. Er ist ein mächtiger Zauberer."))
 		endmethod
 		
+		public method finishDefeatTheEnemy takes nothing returns nothing
+			if (this.m_finalOrcs == 0) then
+				return
+			endif
+			call this.m_finalOrcs.forGroup(thistype.forGroupKill)
+		endmethod
+		
 		private static method stateEventCompletedDefeatTheEnemy takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
@@ -373,6 +380,15 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.displayState()
 		endmethod
 		
+		public method finishDestroyArtillery takes nothing returns nothing
+			if (this.m_orcSiege == 0) then
+				return
+			endif
+			
+			call this.m_orcSiegeWarriors.forGroup(thistype.forGroupKill)
+			call this.m_orcSiege.forGroup(thistype.forGroupKill)
+		endmethod
+		
 		private static method forGroupIgnoreGuardsPosition takes unit whichUnit returns nothing
 			call RemoveGuardPosition(whichUnit)
 		endmethod
@@ -430,6 +446,20 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			set this.m_orcWavesCounter = 0
 			
 			call thistype.timerFunctionOrcWave()
+		endmethod
+		
+		private static method forGroupKill takes unit whichUnit returns nothing
+			call KillUnit(whichUnit)
+		endmethod
+		
+		public method finishDefendAgainstOrcs takes nothing returns nothing
+			if (this.m_orcWavesTimer == null) then
+				return
+			endif
+			set this.m_orcWavesCounter = thistype.maxOrcWaves - 1
+			call PauseTimer(this.m_orcWavesTimer)
+			call thistype.timerFunctionOrcWave()
+			call this.m_orcs.forGroup(thistype.forGroupKill)
 		endmethod
 		
 		private static method timerFunctionFinish takes nothing returns nothing
@@ -518,6 +548,15 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 
 			call PingMinimap(GetRectCenterX(gg_rct_quest_the_defense_of_talras_recruits), GetRectCenterY(gg_rct_quest_the_defense_of_talras_recruits), bj_RESCUE_PING_TIME)
 			call PanCameraTo(GetRectCenterX(gg_rct_quest_the_defense_of_talras_recruits), GetRectCenterY(gg_rct_quest_the_defense_of_talras_recruits))
+		endmethod
+		
+		public method finishTimer takes nothing returns nothing
+			if (this.m_timer == null or not (TimerGetRemaining(this.m_timer) > 0.0)) then
+				return
+			endif
+			
+			call PauseTimer(this.m_timer)
+			call thistype.timerFunctionFinish()
 		endmethod
 		
 		public stub method enable takes nothing returns boolean

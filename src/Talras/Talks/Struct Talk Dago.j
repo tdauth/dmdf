@@ -30,10 +30,10 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		// He du! Danke, dass ihr mich vor den Bären gerettet habt!
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("He du! Danke, dass ihr mich vor den Bären gerettet habt!"), gg_snd_Dago1)
-			call speech(info, character, true, tr("Ich wette, dass sich da noch ein paar von diesen Bestien in der Höhle verkrochen haben."), gg_snd_Dago2)
-			call speech(info, character, true, tr("Aber keine Sorge. Um die werde ich mich selbst kümmern."), gg_snd_Dago3)
-			call speech(info, character, true, tr("Ich hab auch schon einen Plan. Ich stecke einfach die ganze verdammte Höhle in Brand und lasse diese Scheißviecher elendlich verrecken!"), gg_snd_Dago4)
+			call speech(info, character, true, tre("He du! Danke, dass ihr mich vor den Bären gerettet habt!", "Hey you there! Thank you for rescuing me from the bears!"), gg_snd_Dago1)
+			call speech(info, character, true, tre("Ich wette, dass sich da noch ein paar von diesen Bestien in der Höhle verkrochen haben.", "I'll bet that there are still some beasts hiding in the cave."), gg_snd_Dago2)
+			call speech(info, character, true, tre("Aber keine Sorge. Um die werde ich mich selbst kümmern.", "But don't worry. I will take care of them by myself."), gg_snd_Dago3)
+			call speech(info, character, true, tre("Ich hab auch schon einen Plan. Ich stecke einfach die ganze verdammte Höhle in Brand und lasse diese Scheißviecher elendiglich verrecken!", "I do already have a plan. I just set the whole damned cave ablaze and let these damned animals come to a miserable end wretchedly!"), gg_snd_Dago4)
 			call speech(info, character, true, tr("Allerdings bräuchte ich dazu entweder ne verdammte Menge Holz oder einen guten Zauberspruch."), gg_snd_Dago5)
 			call speech(info, character, true, tr("Also wenn du mal einen für mich hast … ich würde dich selbstverständlich dafür entlohnen. Und noch mal danke für die Hilfe vorhin!"), gg_snd_Dago6)
 

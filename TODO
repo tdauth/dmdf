@@ -69,7 +69,7 @@
 * FIXED: Nach letzter Schlacht: Nordmänner zurück zu Neutral Passiv, entlassen.
 * Ricman: Beutezug korrigieren.
 * Ricman: Erlernbare Fähigkeiten als Drachentöter sollen Grimoire Spells werden und im Zauberbuch erscheinen.
-* Falls noch mehr Quests: Einar hat wenig zu sagen.
+* DONE: Falls noch mehr Quests: Einar hat wenig zu sagen.
 * Trommons Quest nicht einfach ablehnbar machen!
 * FIXED: Character.giveItem() und giveQuestItem() sollte die Items immer im Rucksack platzieren falls noch Platz ist und nicht auf dem Boden falls das Inventar voll und der Rucksack offen ist.
 * Alle Talk Members static machen, da es immer genau eine Talk-Instanz gibt -> Performance
@@ -559,14 +559,14 @@
 * DONE: Quest Krieg: Fallenplatzierung soll tatsächlich Fallen für später platzieren. Zunächst unbesiegbar und deaktiviert und bei erster Ork-Welle aktivieren.
 * FIXED: Quest Die Verteidigung von Talras: 5000 Goldmünzen reichen für den Verbündeten locker aus.
 * Die Verteidigung von Talras: Orks schwächer machen, dafür mehr.
-* Falle: Soll nur feindlichen Einheiten schaden!!!
+* DEPRECATED: Falle: Soll nur feindlichen Einheiten schaden!!!
 * FIXED: Tor beladen: Auch Verbündete zulassen.
 * Reinheit: Stoppen falls keine Buffs da sind.
 * FIXED: Tagesablaufgesprächstext nur anzeigen, wenn NPC sichtbar ist.
 * DONE: Buch der Schmiedekunst in Wielands Laden einfügen.
 * Menschliche Soldaten in Die Verteidigung von Talras stärker machen.
 * Verstärkungseinheiten kopieren und stärker machen, auch teurer.
-* The Defense of Talras: Angriffsorder beheben.
+* The Defense of Talras: Angriffsorder von Wellen beheben (Zurücklaufen).
 * Kurzes Video mit Belagerungswaffen einbauen oder Pan.
 * FIXED: Gebiet mit Belagerungswaffen sichtbar machen.
 * Ein Tutorial über 3D-Sounds lesen und die 3D-Sounds für Gespräche zwischen NPCs richtig einstellen.
@@ -583,9 +583,11 @@
 * Nordmänner: Hero Glow entfernen.
 * DONE: Fellows: Abilities manuell in Liste übergeben, damit sie nur bei einem Share verwendet werden können. Ansonsten können sie durch Gemeinsamer Laden auch verwendet werden, wenn der NPC nicht geshart wurde.
 * Der Waldläufer tötet sich durch irgendeine Fähigkeit selbst. Brandpfeile? Mehrfachschuss? Lauern? Sprinten?
-* Rechte Hälfte des Ladebildschirms beim Laden im Singleplayer wurde nicht ersetzt.
+* FIXED: Rechte Hälfte des Ladebildschirms beim Laden im Singleplayer wurde nicht ersetzt.
 * Gewandheit: Benötigt passives Icon.
 * Zukünftiger Release-Vorgang: Optimizer jedoch nur mit Skriptoptimierungen damit war3map.wts unverändert bleibt. Karte kopieren und englische wts-Datei einfügen.
+* Wie bei Originaltransmissions weißen Indicator bei der sprechenden Einheit anzeigen!
+* Elementarmagier statt gleißendem Licht/Erdgefängnis, zu viele Stunzauber, Steingolem beschwören?
 
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!

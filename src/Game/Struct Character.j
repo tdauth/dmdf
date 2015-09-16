@@ -1,10 +1,21 @@
 library StructGameCharacter requires Asl, StructGameDmdfHashTable
 
+	/**
+	 * This function interface can be used to react to crafting events.
+	 * Functions which match to this interface can be registered via \ref Character#addOnCraftItemFunction() and will be called whenever the character crafts an item.
+	 */
+	function interface CharacterOnCraftItemFunction takes Character character, integer itemTypeId returns nothing
+
+	/**
+	 * \brief Customized character struct for characters in The Power of Fire.
+	 * This additional specialized struct is required for interaction with \ref Grimoire, \ref MainMenu, \ref InfoLog and metamorphosis spells.
+	 */
 	struct Character extends ACharacter
 		// dynamic members
 		private boolean m_isInPvp
 		private boolean m_showCharactersScheme
 		private boolean m_showWorker
+		private AIntegerVector m_onCraftItemFunctions
 		// members
 		private MainMenu m_mainMenu
 static if (DMDF_CREDITS) then
@@ -62,6 +73,22 @@ endif
 
 		public method showWorker takes nothing returns boolean
 			return this.m_showWorker
+		endmethod
+		
+		public method addOnCraftItemFunction takes CharacterOnCraftItemFunction onCraftItemFunction returns nothing
+			call this.m_onCraftItemFunctions.pushBack(onCraftItemFunction)
+		endmethod
+		
+		public method removeOnCraftItemFunction takes CharacterOnCraftItemFunction onCraftItemFunction returns nothing
+			call this.m_onCraftItemFunctions.remove(onCraftItemFunction)
+		endmethod
+		
+		public method onCraftItemFunctionsCount takes nothing returns integer
+			return this.m_onCraftItemFunctions.size()
+		endmethod
+		
+		public method onCraftItemFunction takes integer index returns CharacterOnCraftItemFunction
+			return this.m_onCraftItemFunctions[index]
 		endmethod
 
 		// members
@@ -265,6 +292,15 @@ endif
 			
 			return true
 		endmethod
+		
+		public method craftItem takes integer itemTypeId returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == this.onCraftItemFunctionsCount())
+				call this.onCraftItemFunction(i).evaluate(this, itemTypeId)
+				set i = i + 1
+			endloop
+		endmethod
 
 		private method displayQuestMessage takes integer messageType, string message returns nothing
 			local force whichForce = GetForceOfPlayer(this.player())
@@ -382,6 +418,7 @@ endif
 			set this.m_isInPvp = false
 			set this.m_showCharactersScheme = true
 			set this.m_showWorker = true
+			set this.m_onCraftItemFunctions = AIntegerVector.create()
 			// members
 			set this.m_mainMenu = MainMenu.create.evaluate(this)
 static if (DMDF_CREDITS) then
@@ -411,6 +448,8 @@ endif
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
+			call this.m_onCraftItemFunctions.destroy()
+		
 			call this.m_mainMenu.destroy.evaluate()
 static if (DMDF_CREDITS) then
 			call this.m_grimoire.destroy.evaluate()

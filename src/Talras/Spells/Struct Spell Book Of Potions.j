@@ -22,6 +22,7 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 			call this.character().inventory().removeItemType('I05K')
 			call Character(this.character()).displayItemAcquired(GetObjectName('I00A'), tr("Hergestellt."))
 			call Character(this.character()).giveItem('I00A')
+			call Character(this.character()).craftItem('I00A')
 		endmethod
 
 		public static method create takes Character character returns thistype
@@ -48,6 +49,7 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 			call this.character().inventory().removeItemType('I05L')
 			call Character(this.character()).displayItemAcquired(GetObjectName('I00D'), tr("Hergestellt."))
 			call Character(this.character()).giveItem('I00D')
+			call Character(this.character()).craftItem('I00D')
 		endmethod
 
 		public static method create takes Character character returns thistype
@@ -75,6 +77,7 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 			call this.character().inventory().removeItemType('I041')
 			call Character(this.character()).displayItemAcquired(GetObjectName('I05M'), tr("Hergestellt."))
 			call Character(this.character()).giveItem('I05M')
+			call Character(this.character()).craftItem('I05M')
 		endmethod
 
 		public static method create takes Character character returns thistype

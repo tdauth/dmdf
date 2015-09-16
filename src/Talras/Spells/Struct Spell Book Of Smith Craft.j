@@ -19,6 +19,7 @@ library StructMapSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
 			call this.character().inventory().removeItemType('I05Y')
 			call Character(this.character()).displayItemAcquired(GetObjectName('I05Z'), tr("Hergestellt."))
 			call Character(this.character()).giveItem('I05Z')
+			call Character(this.character()).craftItem('I05Z')
 		endmethod
 
 		public static method create takes Character character returns thistype
@@ -46,6 +47,7 @@ library StructMapSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
 			call this.character().inventory().removeItemType('I05Z')
 			call Character(this.character()).displayItemAcquired(GetObjectName('I01Y'), tr("Hergestellt."))
 			call Character(this.character()).giveItem('I01Y')
+			call Character(this.character()).craftItem('I01Y')
 		endmethod
 
 		public static method create takes Character character returns thistype

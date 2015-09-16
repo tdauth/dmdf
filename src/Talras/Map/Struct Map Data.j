@@ -391,13 +391,18 @@ static if (DEBUG_MODE) then
 			call Print("thefirstcombat")
 			call Print("wigberht")
 			call Print("anewalliance")
-			call Print("upstream")
 			call Print("dragonhunt")
 			call Print("deathvault")
 			call Print("bloodthirstiness")
 			call Print("deranor")
 			call Print("deranorsdeath")
 			call Print("recruitthehighelf")
+			call Print("prepareforthedefense")
+			call Print("thedefenseoftalras")
+			call Print("dararos")
+			call Print("victory")
+			call Print("holzbruck")
+			call Print("upstream")
 			call Print(tr("Handlungs-Cheats:"))
 			call Print("aftertalras")
 			call Print("afterthenorsemen")
@@ -405,6 +410,7 @@ static if (DEBUG_MODE) then
 			call Print("afterderanor")
 			call Print("afterthebattle")
 			call Print("afterwar")
+			call Print("afterthedefenseoftalras")
 			call Print(tr("Erzeugungs-Cheats:"))
 			call Print("unitspawns")
 			call Print("testspawnpoint")
@@ -535,10 +541,6 @@ static if (DEBUG_MODE) then
 			call VideoANewAlliance.video().play()
 		endmethod
 
-		private static method onCheatActionUpstream takes ACheat cheat returns nothing
-			call VideoUpstream.video().play()
-		endmethod
-
 		private static method onCheatActionDragonHunt takes ACheat cheat returns nothing
 			call VideoDragonHunt.video().play()
 		endmethod
@@ -563,8 +565,28 @@ static if (DEBUG_MODE) then
 			call VideoRecruitTheHighElf.video().play()
 		endmethod
 		
+		private static method onCheatActionPrepareForTheDefense takes ACheat cheat returns nothing
+			call VideoPrepareForTheDefense.video().play()
+		endmethod
+		
+		private static method onCheatActionTheDefenseOfTalras takes ACheat cheat returns nothing
+			call VideoTheDefenseOfTalras.video().play()
+		endmethod
+		
+		private static method onCheatActionDararos takes ACheat cheat returns nothing
+			call VideoDararos.video().play()
+		endmethod
+		
+		private static method onCheatActionVictory takes ACheat cheat returns nothing
+			call VideoVictory.video().play()
+		endmethod
+		
 		private static method onCheatActionHolzbruck takes ACheat cheat returns nothing
 			call VideoHolzbruck.video().play()
+		endmethod
+			
+		private static method onCheatActionUpstream takes ACheat cheat returns nothing
+			call VideoUpstream.video().play()
 		endmethod
 		
 		private static method moveCharactersToRect takes rect whichRect returns nothing
@@ -1134,6 +1156,106 @@ static if (DEBUG_MODE) then
 			
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
+		
+		private static method onCheatActionAfterTheDefenseOfTalras takes ACheat cheat returns nothing
+			local integer i = 0
+			call thistype.onCheatActionAfterWar(cheat)
+
+			call thistype.makeCharactersInvulnerable(true)
+			
+			if (not QuestWar.quest().isCompleted()) then
+				debug call Print("Quest War must be completed before.")
+				call thistype.makeCharactersInvulnerable(false)
+				return
+			endif
+			
+			if (not QuestTheDefenseOfTalras.quest.evaluate().isCompleted()) then
+			
+				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemMoveToCamp).isCompleted()) then
+					/*
+					 * Plays video "The Defense Of Talras".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_the_defense_of_talras)
+					
+					call TriggerSleepAction(2.0 + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(2.0 + 2.0)
+					
+					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemMoveToCamp).isCompleted()) then
+						debug call Print("Error on completing quest item move to camp")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemPrepare).isCompleted()) then
+					call QuestTheDefenseOfTalras.quest.evaluate().finishTimer()
+					
+					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemPrepare).isCompleted()) then
+						debug call Print("Error on completing quest item prepare")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDefendAgainstOrcs).isCompleted()) then
+					call QuestTheDefenseOfTalras.quest.evaluate().finishDefendAgainstOrcs()
+					
+					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDefendAgainstOrcs).isCompleted()) then
+						debug call Print("Error on completing quest item defend against the orcs")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDestroyArtillery).isCompleted()) then
+					call QuestTheDefenseOfTalras.quest.evaluate().finishDestroyArtillery()
+					// plays video "Dararos"
+					call TriggerSleepAction(2.0 + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(2.0 + 2.0)
+					
+					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDestroyArtillery).isCompleted()) then
+						debug call Print("Error on completing quest item destroy artillery")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDefeatTheEnemy).isCompleted()) then
+					call QuestTheDefenseOfTalras.quest.evaluate().finishDefeatTheEnemy()
+					
+					// plays video "Victory"
+					call TriggerSleepAction(2.0 + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(2.0 + 2.0)
+					
+					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDefeatTheEnemy).isCompleted()) then
+						debug call Print("Error on completing quest item defeat the enemy")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemReportHeimrich).isCompleted()) then
+					call thistype.moveCharactersToRect(gg_rct_quest_the_defense_of_talras_heimrich)
+					
+					// plays video "Holzbruck"
+					call TriggerSleepAction(2.0 + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(2.0 + 2.0)
+					
+					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemReportHeimrich).isCompleted()) then
+						debug call Print("Error on completing quest item report heimrich")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+			endif
+			
+			call thistype.makeCharactersInvulnerable(false)
+		endmethod
 
 		private static method onCheatActionUnitSpawn takes ACheat cheat returns nothing
 			call UnitTypes.spawn(GetTriggerPlayer(), GetUnitX(Character.playerCharacter(GetTriggerPlayer()).unit()), GetUnitY(Character.playerCharacter(GetTriggerPlayer()).unit()))
@@ -1172,14 +1294,18 @@ static if (DEBUG_MODE) then
 			call ACheat.create("thefirstcombat", true, thistype.onCheatActionTheFirstCombat)
 			call ACheat.create("wigberht", true, thistype.onCheatActionWigberht)
 			call ACheat.create("anewalliance", true, thistype.onCheatActionANewAlliance)
-			call ACheat.create("upstream", true, thistype.onCheatActionUpstream)
 			call ACheat.create("dragonhunt", true, thistype.onCheatActionDragonHunt)
 			call ACheat.create("deathvault", true, thistype.onCheatActionDeathVault)
 			call ACheat.create("bloodthirstiness", true, thistype.onCheatActionBloodthirstiness)
 			call ACheat.create("deranor", true, thistype.onCheatActionDeranor)
 			call ACheat.create("deranorsdeath", true, thistype.onCheatActionDeranorsDeath)
 			call ACheat.create("recruitthehighelf", true, thistype.onCheatActionRecruitTheHighElf)
+			call ACheat.create("prepareforthedefense", true, thistype.onCheatActionPrepareForTheDefense)
+			call ACheat.create("thedefenseoftalras", true, thistype.onCheatActionTheDefenseOfTalras)
+			call ACheat.create("dararos", true, thistype.onCheatActionDararos)
+			call ACheat.create("victory", true, thistype.onCheatActionVictory)
 			call ACheat.create("holzbruck", true, thistype.onCheatActionHolzbruck)
+			call ACheat.create("upstream", true, thistype.onCheatActionUpstream)
 			// plot cheats
 			call ACheat.create("aftertalras", true, thistype.onCheatActionAfterTalras)
 			call ACheat.create("afterthenorsemen", true, thistype.onCheatActionAfterTheNorsemen)
@@ -1188,6 +1314,7 @@ static if (DEBUG_MODE) then
 			call ACheat.create("afterthebattle", true, thistype.onCheatActionAfterTheBattle)
 			call ACheat.create("afteranewalliance", true, thistype.onCheatActionAfterANewAlliance)
 			call ACheat.create("afterwar", true, thistype.onCheatActionAfterWar)
+			call ACheat.create("afterthedefenseoftalras", true, thistype.onCheatActionAfterTheDefenseOfTalras)
 			// test cheats
 			call ACheat.create("unitspawn", true, thistype.onCheatActionUnitSpawn)
 			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)

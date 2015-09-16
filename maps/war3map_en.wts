@@ -7920,7 +7920,7 @@ Z
 STRING 1323
 // Fähigkeiten: A086 (Stab des Zauberers), Name (Name (anam))
 {
-Stab des Zauberers
+Staff of the wizard
 }
 
 STRING 1324
@@ -7938,7 +7938,7 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1326
 // Gegenstände: I00I (Edler Klerikerhelm), Name (Name (unam))
 {
-Edler Klerikerhelm
+Fine cleric helmet
 }
 
 STRING 1327
@@ -7956,7 +7956,7 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1329
 // Gegenstände: I00J (Große Doppelaxt), Name (Name (unam))
 {
-Große Doppelaxt
+Big double axe
 }
 
 STRING 1330
@@ -7968,13 +7968,13 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1331
 // Gegenstände: I00J (Große Doppelaxt), Description (Beschreibung (ides))
 {
-Eine große Doppelaxt.
+A big double axe.
 }
 
 STRING 1332
 // Fähigkeiten: A02E (Edler Klerikerhelm), Name (Name (anam))
 {
-Edler Klerikerhelm
+Fine cleric helmet
 }
 
 STRING 1333
@@ -7986,13 +7986,13 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1334
 // Fähigkeiten: A02F (Große Doppelaxt), Name (Name (anam))
 {
-Große Doppelaxt
+Big double axe
 }
 
 STRING 1335
 // Gegenstände: I00K (Vasallenlanze), Name (Name (unam))
 {
-Vasallenlanze
+Vassal lance
 }
 
 STRING 1336
@@ -8004,31 +8004,31 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1337
 // Gegenstände: I00K (Vasallenlanze), Description (Beschreibung (ides))
 {
-Die Lanze eines Vasallen.
+The lance of a vassal.
 }
 
 STRING 1338
 // Gegenstände: I00L (Stab des Totenbeschwörers), Name (Name (unam))
 {
-Stab des Totenbeschwörers
+Staff of the necromancer
 }
 
 STRING 1339
 // Gegenstände: I00L (Stab des Totenbeschwörers), Ubertip (Tooltipp - Erweitert (utub))
 {
-Gewährt einen Mana-Bonus von <A02H,DataA1>, einen Manaregenerationsbonus von <AIrm,DataA1> und einen Wissensbonus von <AIi4,DataA1>. Zudem können mit Hilfe des Stabs <A02I,DataA1> Zombies aus Leichen beschworen werden.
+Grants a mana bonus of <A02H,DataA1>, a mana regeneration bonus of <AIrm,DataA1> and a lore bonus of <AIi4,DataA1>. Besides <A02I,DataA1> zombies can be summoned from corpses with the help of the staff.
 }
 
 STRING 1340
 // Gegenstände: I00L (Stab des Totenbeschwörers), Description (Beschreibung (ides))
 {
-Ein mächtiger Stab, welcher sich vermutlich einst im Besitz eines Nekromanten befand.
+A powerful staff which probably was owned by a necromancer once.
 }
 
 STRING 1341
 // Fähigkeiten: A02G (Vasallenlanze), Name (Name (anam))
 {
-Vasallenlanze
+Vassal lance
 }
 
 STRING 1342
@@ -8040,7 +8040,7 @@ STRING 1342
 STRING 1343
 // Fähigkeiten: A02H (Stab des Totenbeschwörers), Name (Name (anam))
 {
-Stab des Totenbeschwörers
+Staff of the necromancer
 }
 
 STRING 1344
@@ -8052,7 +8052,7 @@ STRING 1344
 STRING 1345
 // Fähigkeiten: A02I (Stab des Totenbeschwörers), Name (Name (anam))
 {
-Stab des Totenbeschwörers
+Staff of the necromancer
 }
 
 STRING 1346
@@ -8064,49 +8064,49 @@ STRING 1346
 STRING 1347
 // Gegenstände: I002 (Ricmans Speer), Description (Beschreibung (ides))
 {
-Der mächtige Speer des Nordmanns Ricman.
+The powerful spear of the norseman Ricman.
 }
 
 STRING 1348
 // Gegenstände: I002 (Ricmans Speer), Ubertip (Tooltipp - Erweitert (utub))
 {
-Gewährt einen Schadensbonus von <A02J,DataA1> und einen Kraftbonus von <AIs6,DataA1>.
+Grants a damage bonus of <A02J,DataA1>  and a strength bonus of <AIs6,DataA1>.
 }
 
 STRING 1349
 // Gegenstände: I003 (Stab), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A02L,DataA1>.
+Increases the damage by <A02L,DataA1>.
 }
 
 STRING 1350
 // Gegenstände: I005 (Holzschild), Description (Beschreibung (ides))
 {
-Verstärkt die Rüstung um <A01T,DataA1>.
+Strengthens the armour by <A01T,DataA1>.
 }
 
 STRING 1351
 // Gegenstände: I005 (Holzschild), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A01T,DataA1>.
+Strengthens the armour by <A01T,DataA1>.
 }
 
 STRING 1352
 // Gegenstände: I00M (Ricmans Schild), Name (Name (unam))
 {
-Ricmans Schild
+Ricman's buckler
 }
 
 STRING 1353
 // Gegenstände: I00M (Ricmans Schild), Description (Beschreibung (ides))
 {
-Der mächtige Schild des Nordmanns Ricman.
+The powerful buckler of the norseman Ricman.
 }
 
 STRING 1354
 // Gegenstände: I00M (Ricmans Schild), Ubertip (Tooltipp - Erweitert (utub))
 {
-Gewährt einen Rüstungsbonus von <A02K,DataA1> und einen Kraftbonus von <AIs6,DataA1>.
+Grants an armour bonus of <A02K,DataA1> and a strength bonus of <AIs6,DataA1>.
 }
 
 STRING 1355
@@ -22714,7 +22714,7 @@ Holz von Kuno für Markward.|nDer Bauer Manfred bringt das Holz zur Burg Talras.
 STRING 3800
 // Gegenstände: I03V (Verzauberter Stab), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A0B8,DataA1>.
+Increases the damage by <A0B8,DataA1>.
 }
 
 STRING 3801
@@ -25642,7 +25642,7 @@ Erhöht den Schaden um <A0VL,DataA1>. Außerdem hat der Träger die Chance sein 
 STRING 4288
 // Gegenstände: I03V (Verzauberter Stab), Description (Beschreibung (ides))
 {
-Ein verzauberter Stab.
+A haunted staff.
 }
 
 STRING 4289
@@ -52977,13 +52977,13 @@ Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 8932
 // Gegenstände: I03V (Verzauberter Stab), Name (Name (unam))
 {
-Verzauberter Stab
+Haunted staff
 }
 
 STRING 8933
 // Gegenstände: I04J (Stab der Vereisung), Description (Beschreibung (ides))
 {
-Ein verzauberter Stab.
+A haunted staff.
 }
 
 STRING 8934
@@ -53007,7 +53007,7 @@ STRING 8936
 STRING 8937
 // Fähigkeiten: A0B8 (Verzauberter Stab), Name (Name (anam))
 {
-Verzauberter Stab
+Haunted staff
 }
 
 STRING 8938
@@ -53648,12 +53648,12 @@ Der Kleriker opfert sich selbst und regeneriert dadurch Leben und Mana seiner Ve
 
 STRING 9044
 {
-Gefolgsleute
+Fellows
 }
 
 STRING 9045
 {
-Arenagegner
+Arena opponents
 }
 
 STRING 9046
