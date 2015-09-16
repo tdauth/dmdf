@@ -103,6 +103,8 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 				
 				if (this.m_orcs.units().empty() and this.m_orcWavesCounter == thistype.maxOrcWaves) then
 					call this.enableOrcArtillery.evaluate()
+					
+					return true
 				endif
 			endif
 			return false
@@ -250,6 +252,10 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call Fellows.ricman().reset()
 			call Fellows.wigberht().reset()
 			
+			call RemoveUnit(this.m_recruitBuilding)
+			set this.m_recruitBuilding = null
+			call RemoveUnit(this.m_shop)
+			set this.m_shop = null
 			
 			call SetUnitX(Npcs.wigberht(), GetRectCenterX(gg_rct_waypoint_wigberht_training))
 			call SetUnitY(Npcs.wigberht(), GetRectCenterY(gg_rct_waypoint_wigberht_training))
@@ -276,11 +282,11 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call SetUnitInvulnerable(guard, true)
 			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_6, 90.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02I', gg_rct_quest_the_defense_of_talras_camp_guard_7, 270.0)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'n05I', gg_rct_quest_the_defense_of_talras_camp_guard_7, 270.0)
 			call SetUnitInvulnerable(guard, true)
 			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_8, 270.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02I', gg_rct_quest_the_defense_of_talras_camp_guard_9, 270.0)
+			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'n05I', gg_rct_quest_the_defense_of_talras_camp_guard_9, 270.0)
 			call SetUnitInvulnerable(guard, true)
 			
 			set this.m_questAreaReportHeimrich = QuestAreaQuestTheDefenseOfTalrasReportHeimrich.create(gg_rct_quest_the_defense_of_talras_heimrich)
