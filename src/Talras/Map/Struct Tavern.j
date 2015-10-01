@@ -32,7 +32,7 @@ library StructMapMapTavern requires Asl
 			if (not character.view().isEnabled()) then
 				call CameraSetupApplyForPlayer(true, gg_cam_tavern, user, 0.0)
 			endif
-			call character.displayMessage(ACharacter.messageTypeInfo, tr("Sie haben das Wirtshaus betreten."))
+			call character.displayMessage(ACharacter.messageTypeInfo, tre("Sie haben das Wirtshaus betreten.", "You have entered the tavern."))
 			set triggerUnit = null
 			set user = null
 		endmethod
@@ -51,7 +51,7 @@ library StructMapMapTavern requires Asl
 				call character.panCameraSmart()
 			endif
 			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(character.player())
-			call character.displayMessage(ACharacter.messageTypeInfo, tr("Sie haben das Wirtshaus verlassen."))
+			call character.displayMessage(ACharacter.messageTypeInfo, tre("Sie haben das Wirtshaus verlassen.", "You have left the tavern."))
 		endmethod
 
 		private static method createLeaveTrigger takes nothing returns nothing

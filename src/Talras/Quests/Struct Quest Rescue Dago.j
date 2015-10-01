@@ -29,6 +29,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		endmethod
 
 		private method stateActionFailed takes nothing returns nothing
+			call Fellows.dago().reset() // prevent the hero icon from being permanently shown
 			call Fellows.dago().destroy()
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeError, tre("Dago wurde getötet!", "Dago has been killed!"))
 			call this.displayState()

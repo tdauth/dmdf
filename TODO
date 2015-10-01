@@ -589,6 +589,34 @@
 * Wie bei Originaltransmissions weißen Indicator bei der sprechenden Einheit anzeigen!
 * Elementarmagier statt gleißendem Licht/Erdgefängnis, zu viele Stunzauber, Steingolem beschwören?
 
+TODO:
+- Texte der NPCs hiden falls das Gebiet nicht sichtbar ist.
+- Sounds nur abspielen wenn Gebiet sichtbar ist und Charakter in der Nähe.
+- Sounddistanzen fixen (Schmiedesound)
+- Schmiedesound leiser
+- Objektdatenkompression: Kann es sein, dass modified-Werte gespeichert bleiben, auch wenn man die Stufe einer Fähigkeit verringert oder sie zu einer Gegenstands- oder Einheitenfähigkeit macht?
+- Objektdatenkompression: w3o zu SLK-Dateien?
+- Change owner of Dago when he dies, back from allied player!
+- pans zu Charakter bei rescue Dago.
+- Quest-Pings mit Pans als Durchschaltemenü im Haupt-Menü.
+- Hauptmenü-Einträge um Leaderboards zu verbergen
+- FDF-Dateien aus custom exe entfernen. Ansonsten ist die Mod immer Deutsch.
+- Taverne entfernen
+- Weniger Regen
+
+- Transparenz der Bäume.:
+        - http://www.hiveworkshop.com/forums/world-editor-help-zone-98/opacity-trees-266330/
+        - http://www.hiveworkshop.com/forums/world-editor-help-zone-98/tree-occlusion-trigger-250007/
+        - Folglich: Auf Occlusion scheißen, Transparenzanimation einfügen und ausführen.
+
+ShowDestructable            takes destructable d, boolean flag returns nothing
+EnableOcclusion              takes boolean flag returns nothing
+native          GetDestructableOccluderHeight takes destructable d returns real
+native          SetDestructableOccluderHeight takes destructable d, real height returns nothing
+
+native SetDoodadAnimation       takes real x, real y, real radius, integer doodadID, boolean nearestOnly, string animName, boolean animRandom returns nothing
+native SetDoodadAnimationRect   takes rect r, integer doodadID, string animName, boolean animRandom returns nothing
+
 Test mit zwei menschlichen Spielern:
 * FIXED: Schwarze Legion Menschen andere heißen "Mensch"?!
 * FIXED: Klasseninfo zu schnell weg!!!
