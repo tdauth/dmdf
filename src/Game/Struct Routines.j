@@ -188,6 +188,7 @@ library StructGameRoutines requires Asl
 		private static method talkTargetAction takes NpcTalksRoutine period returns nothing
 			local sound whichSound = null
 			local texttag whichTextTag = null
+			local boolean isVisibleAndInRange
 			local integer index
 			local integer i
 			
@@ -198,7 +199,15 @@ library StructGameRoutines requires Asl
 				set index = GetRandomInt(0, period.soundsCount() - 1)
 				if (period.soundsCount() > 0) then
 					set whichSound = period.sound(index)
-					call PlaySoundOnUnitBJ(whichSound, 100.0, period.unit())
+					
+					set i = 0
+					loop
+						exitwhen (i == MapData.maxPlayers)
+						if (ACharacter.playerCharacter(Player(i)) != 0 and GetDistanceBetweenUnitsWithoutZ(period.unit(), ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(period.unit(), Player(i)) and Player(i) == GetLocalPlayer()) then
+							call PlaySoundOnUnitBJ(whichSound, 100.0, period.unit())
+						endif
+						set i = i + 1
+					endloop
 				endif
 				
 				set whichTextTag = CreateTextTag()
@@ -214,7 +223,7 @@ library StructGameRoutines requires Asl
 				set i = 0
 				loop
 					exitwhen (i == MapData.maxPlayers)
-					if (not IsUnitMasked(period.unit(), Player(i))) then
+					if (ACharacter.playerCharacter(Player(i)) != 0 and GetDistanceBetweenUnitsWithoutZ(period.unit(), ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(period.unit(), Player(i))) then
 						call ShowTextTagForPlayer(Player(i), whichTextTag, true)
 					endif
 					set i = i + 1

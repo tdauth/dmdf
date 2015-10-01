@@ -1331,12 +1331,16 @@ endif
 			// tutorial GUI, after creating quests. Should be listed at the bottom of finished quests.
 			call Tutorial.init.evaluate()
 			
+			call AddDoodadOcclusion('D029')
+			
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
 					call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
+					
+					call AddUnitOcclusion(ACharacter.playerCharacter(Player(i)).unit())
 				endif
 				set i = i + 1
 			endloop

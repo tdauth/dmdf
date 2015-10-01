@@ -856,6 +856,7 @@ endif
 				return true
 			endif
 			set this.m_page = page
+			call this.character().displayMessage(ACharacter.messageTypeInfo, Format(tre("Seite %1%/%2%", "Page %1%/%2%")).i(page).i(this.pages()).result())
 			call this.showPage()
 			return true
 		endmethod

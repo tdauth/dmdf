@@ -28,9 +28,9 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 		// Wer bist du?
 		private static method infoActionWhoAreYou takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wer bist du?"), null)
-			call speech(info, character, true, tr("Ich bin Haid, ein fahrender Händler aus Trammar. Interessierst du dich zufällig für eine meiner Waren?"), null)
+			call speech(info, character, true, tr("Ich bin Haid, ein fahrender Händler aus Trammar. Interessierst du dich zufällig für eine meiner Waren?"), gg_snd_Haid1)
 			call speech(info, character, false, tr("Was verkaufst du denn?"), null)
-			call speech(info, character, true, tr("Etwas zu essen und alles was man im Alltag gebrauchen kann: Brot, Äpfel, Wurst, Geschirr und noch vieles mehr."), null)
+			call speech(info, character, true, tr("Etwas zu essen und alles was man im Alltag gebrauchen kann: Brot, Äpfel, Wurst, Geschirr und noch vieles mehr."), gg_snd_Haid2)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -42,8 +42,8 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 		// Wieso verkaufst du deine Waren nicht in der Burg?
 		private static method infoActionNotInCastle takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wieso verkaufst du deine Waren nicht in der Burg?"), null)
-			call speech(info, character, true, tr("Nun, ich bin ein fahrender Händler und die sieht man hier gar nicht mehr so gerne."), null)
-			call speech(info, character, true, tr("Das Misstrauen ist seit Beginn der Invasion einfach zu groß geworden und hier gibt es schon mehr als genug Händler. Außerdem besitze ich nicht das nötige Kleingeld, um mir einen Platz in in der Burg zu erwerben."), null)
+			call speech(info, character, true, tr("Nun, ich bin ein fahrender Händler und die sieht man hier gar nicht mehr so gerne."), gg_snd_Haid3)
+			call speech(info, character, true, tr("Das Misstrauen ist seit Beginn der Invasion einfach zu groß geworden und hier gibt es schon mehr als genug Händler. Außerdem besitze ich nicht das nötige Kleingeld, um mir einen Platz in in der Burg zu erwerben."), gg_snd_Haid4)
 			call info.talk().showStartPage(character)
 		endmethod
 		
@@ -56,12 +56,12 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 		// Invasion?
 		private static method infoActionInvasion takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Invasion?"), null)
-			call speech(info, character, true, tr("Wo kommst du denn her oder gefällt dir der Ausdruck etwa nicht? Du glaubst doch nicht das Geschwafel unseres verehrten Herrn Königs oder doch?"), null)
-			call speech(info, character, true, tr("Jeder hier weiß, dass diese verdammten Dunkelelfen einen Packt mit den Orks geschlossen haben. Ich habe selbst gesehen, wie diese Schweinehunde meine Heimatstadt Trammar in Flammen aufgehen ließen."), null)
-			call speech(info, character, true, tr("Bin gerade nochmal so mit dem Leben davon gekommen! Der König unterschätzt die Lage vollkommen. Trammar war verdammt gut befestigt und wurde innerhalb eines einzigen Tages eingenommen."), null)
-			call speech(info, character, true, tr("Diese Burg hier hat zwar eine bessere Lage, aber das wird ihr nichts nützen wenn erst mal hunderte von Orks und Dunkelefen hier anrücken."), null)
-			call speech(info, character, true, tr("Aber welche Wahl hab ich denn? Ich muss mir ein paar Goldmünzen dazu verdienen und vom Gewinn leben. Danach hau ich so schnell wie möglich ab und dir würde ich genau das Gleiche raten."), null)
-			call speech(info, character, true, tr("Sicher, du wirst hier bestimmt einige treffen, die frohen Mutes dem Feind trotzen wollen, aber haben die etwa ihre Heimat untergehen sehen? Ich sag's dir Junge: Dieses Königreich wird untergehen!"), null)
+			call speech(info, character, true, tr("Wo kommst du denn her oder gefällt dir der Ausdruck etwa nicht? Du glaubst doch nicht das Geschwafel unseres verehrten Herrn Königs oder doch?"), gg_snd_Haid5)
+			call speech(info, character, true, tr("Jeder hier weiß, dass diese verdammten Dunkelelfen einen Packt mit den Orks geschlossen haben. Ich habe selbst gesehen, wie diese Schweinehunde meine Heimatstadt Trammar in Flammen aufgehen ließen."), gg_snd_Haid6)
+			call speech(info, character, true, tr("Bin gerade nochmal so mit dem Leben davon gekommen! Der König unterschätzt die Lage vollkommen. Trammar war verdammt gut befestigt und wurde innerhalb eines einzigen Tages eingenommen."), gg_snd_Haid7)
+			call speech(info, character, true, tr("Diese Burg hier hat zwar eine bessere Lage, aber das wird ihr nichts nützen wenn erst mal hunderte von Orks und Dunkelefen hier anrücken."), gg_snd_Haid8)
+			call speech(info, character, true, tr("Aber welche Wahl hab ich denn? Ich muss mir ein paar Goldmünzen dazu verdienen und vom Gewinn leben. Danach hau ich so schnell wie möglich ab und dir würde ich genau das Gleiche raten."), gg_snd_Haid9)
+			call speech(info, character, true, tr("Sicher, du wirst hier bestimmt einige treffen, die frohen Mutes dem Feind trotzen wollen, aber haben die etwa ihre Heimat untergehen sehen? Ich sag's dir Junge: Dieses Königreich wird untergehen!"), gg_snd_Haid10)
 			call info.talk().showStartPage(character)
 		endmethod
 		
@@ -74,10 +74,10 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 		// Was sagt denn der König?
 		private static method infoActionWhatDoesTheKingSay takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was sagt denn der König?"), null)
-			call speech(info, character, true, tr("Der König? Dieser miese Sack, der behauptet doch glatt, dass es sich nur um kleinere Überfälle handele. Hab's nicht glauben wollen als ich's von einem Jäger gehört habe."), null)
-			call speech(info, character, true, tr("Verdammte Scheiße, wozu haben wir denn den ganzen Adel mit all seinen Vasallen. Wollen die sich ewig nur um ihr beschissenes Gut streiten?"), null)
-			call speech(info, character, true, tr("Die sollen gefälligst ein Heer aufstellen! Ich hab viele gute Freunde in Trammer verloren. Dieser Dreckskönig, wenn ich ..."), null)
-			call speech(info, character, true, tr("Erzähl aber keinem, dass ich so von ihm geredet habe, sonst lande ich noch am Pranger oder schlimmer noch am Galgen."), null)
+			call speech(info, character, true, tr("Der König? Dieser miese Sack, der behauptet doch glatt, dass es sich nur um kleinere Überfälle handele. Hab's nicht glauben wollen als ich's von einem Jäger gehört habe."), gg_snd_Haid11)
+			call speech(info, character, true, tr("Verdammte Scheiße, wozu haben wir denn den ganzen Adel mit all seinen Vasallen. Wollen die sich ewig nur um ihr beschissenes Gut streiten?"), gg_snd_Haid12)
+			call speech(info, character, true, tr("Die sollen gefälligst ein Heer aufstellen! Ich hab viele gute Freunde in Trammer verloren. Dieser Dreckskönig, wenn ich ..."), gg_snd_Haid13)
+			call speech(info, character, true, tr("Erzähl aber keinem, dass ich so von ihm geredet habe, sonst lande ich noch am Pranger oder schlimmer noch am Galgen."), gg_snd_Haid14)
 			call speech(info, character, false, tr("Keine Sorge."), null)
 			call info.talk().showStartPage(character)
 		endmethod
@@ -91,11 +91,11 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 		// Kann ich dir irgendwie helfen?
 		private static method infoActionHelp takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Kann ich dir irgendwie helfen?"), null)
-			call speech(info, character, true, tr("Du willst mir helfen? Wieso solltest du das tun?"), null)
+			call speech(info, character, true, tr("Du willst mir helfen? Wieso solltest du das tun?"), gg_snd_Haid15)
 			call speech(info, character, false, tr("Wieso nicht?"), null)
-			call speech(info, character, true, tr("Wenn du mir wirklich helfen willst, dann gib mir ein paar Goldmünzen, damit ich den Vogt dafür bezahlen kann, in die Burg eingelassen zu werden."), null)
+			call speech(info, character, true, tr("Wenn du mir wirklich helfen willst, dann gib mir ein paar Goldmünzen, damit ich den Vogt dafür bezahlen kann, in die Burg eingelassen zu werden."), gg_snd_Haid16)
 			call speech(info, character, false, tr("Wie viele brauchst du denn?"), null)
-			call speech(info, character, true, tr("40 Goldmünzen würden schon reichen."), null)
+			call speech(info, character, true, tr("40 Goldmünzen würden schon reichen."), gg_snd_Haid17)
 			call QuestGoldForTheTradingPermission.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
@@ -113,14 +113,14 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 			local player user = character.player()
 			if (TalkFerdinand.talk().knowsCost(character)) then // Charakter hat vom Vogt erfahren, wie viel eine Handelsgenehmigung kostet.
 				call speech(info, character, false, tr("Hier hast du deine 10 Goldmünzen. Ich habe mal mit dem Vogt gesprochen. Willst du mich verarschen oder was?"), null)
-				call speech(info, character, true, tr("Tut mir leid, aber so ist nun mal das Leben. Kriegst auch eine große Stärkung mit dazu."), null)
+				call speech(info, character, true, tr("Tut mir leid, aber so ist nun mal das Leben. Kriegst auch eine große Stärkung mit dazu."), gg_snd_Haid18)
 				call SetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) - 10)
 				// große Stärkung geben
 				call QuestGoldForTheTradingPermission.characterQuest(character).improveReward()
 				call thistype(info.talk()).completeWithCostKnowledge(character.player())
 			else
 				call speech(info, character, false, tr("Hier hast du deine 40 Goldmünzen."), null)
-				call speech(info, character, true, tr("Danke vielmals. Hier hast du eine kleine Stärkung."), null)
+				call speech(info, character, true, tr("Danke vielmals. Hier hast du eine kleine Stärkung."), gg_snd_Haid19)
 				call SetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) - 40)
 				// kleine Stärkung geben (nichts ändern)
 				call character.giveItem('I03O')
@@ -140,9 +140,10 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter
 		// Gib mir meine 30 Goldmünzen!
 		private static method infoActionGoldBack takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Gib mir meine 30 Goldmünzen!"), null)
-			call speech(info, character, true, tr("Was? Welche 30 Goldmünzen?"), null)
+			call speech(info, character, true, tr("Was? Welche 30 Goldmünzen?"), gg_snd_Haid20)
 			call speech(info, character, false, tr("Das weißt du ganz genau, du Penner! Ich hab mal mit dem Vogt gesprochen."), null)
-			call speech(info, character, true, tr("Oh, verdammte Scheiße. Hier hast du sie. Erstick an deinem Scheißgold!"), null)
+			call speech(info, character, true, tr("Oh, verdammte Scheiße. Hier hast du sie. Erstick an deinem Scheißgold!"), gg_snd_Haid21)
+			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) + 30)
 			call info.talk().showStartPage(character)
 		endmethod
 
