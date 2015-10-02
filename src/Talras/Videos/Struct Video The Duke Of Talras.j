@@ -115,7 +115,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_2, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir brauchen jeden Kampffähigen, den wir finden können. Vor einer Weile sind einige merkwürdig aussehende Krieger nach Talras gekommen. Sie kamen von weit her, aus dem Norden, mit einem Schiff."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir brauchen jeden Kampffähigen, den wir finden können. Vor einer Weile sind einige merkwürdig aussehende Krieger nach Talras gekommen. Sie kamen von weit her, aus dem Norden, mit einem Langboot."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -129,7 +129,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_3, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Sie haben ihr Lager nicht weit vor der Burg errichtet. Ihr werdet den Weg schon finden. Viel Glück!"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Sie haben ihr Lager nicht weit vor der Burg errichtet. Verlasst die Burg durch das Osttor, geht den Weg hinunter und dann weiter östlich des Aufstiegs in Richtung Norden. Ihr werdet den Weg schon finden. Viel Glück!"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

@@ -15,24 +15,44 @@ library StructMapSpellsSpellMissions requires Asl, StructGameCharacter, MapQuest
 	struct SpellMissionTalras extends ASpell
 		public static constant integer abilityId = 'A1BZ'
 		
+		private method condition takes nothing returns boolean
+			if (not QuestTalras.quest().isNew()) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Auftrag wurde bereits abgeschlossen."))
+				
+				return false
+			endif
+			
+			return true
+		endmethod
+		
 		private method action takes nothing returns nothing
 			call PanToQuestForPlayer(this.character().player(), QuestTalras.quest())
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
 		endmethod
 	endstruct
 	
 	struct SpellMissionTheNorsemen extends ASpell
 		public static constant integer abilityId = 'A1C0'
 		
+		private method condition takes nothing returns boolean
+			if (not QuestTheNorsemen.quest().isNew()) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Auftrag wurde bereits abgeschlossen."))
+				
+				return false
+			endif
+			
+			return true
+		endmethod
+		
 		private method action takes nothing returns nothing
 			call PanToQuestForPlayer(this.character().player(), QuestTheNorsemen.quest())
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
 		endmethod
 		
 		private static method onInit takes nothing returns nothing

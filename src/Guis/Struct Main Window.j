@@ -34,8 +34,8 @@ library StructGuisMainWindow requires Asl, StructMapMapMapData
 			set whichPlayer = null
 		endmethod
 
-		public static method create takes Character character, rect whichRect returns thistype
-			local thistype this = thistype.createByRect(AGui.playerGui(character.player()), AStyle.human(), whichRect)
+		public static method create takes Character character, AStyle style, rect whichRect returns thistype
+			local thistype this = thistype.createByRect(AGui.playerGui(character.player()), style, whichRect)
 			call this.setCameraSetup(gg_cam_main_window)
 			call this.setUseShortcuts(false)
 			call this.setUseSpecialShortcuts(true)

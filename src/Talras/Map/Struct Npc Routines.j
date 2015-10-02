@@ -37,7 +37,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static NpcTalksRoutine m_markwardTalksToHeimrich
 		private static NpcRoutineWithFacing m_markwardStandsInCastle
 		// Wieland
-		private static NpcRoutineWithFacing m_wielandHammers
+		private static NpcHammerRoutine m_wielandHammers
 		private static NpcTalksRoutine m_wielandTalks
 		private static AUnitRoutine m_wielandDrinks
 		// Irmina
@@ -200,8 +200,9 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_markwardStandsInCastle.setFacing(248.05)
 
 			// Wieland
-			set thistype.m_wielandHammers = NpcRoutineWithFacing.create(Routines.hammer(), Npcs.wieland(), MapData.evening, 13.00, gg_rct_waypoint_wieland_0)
+			set thistype.m_wielandHammers = NpcHammerRoutine.create(Routines.hammer(), Npcs.wieland(), MapData.evening, 13.00, gg_rct_waypoint_wieland_0)
 			call thistype.m_wielandHammers.setFacing(90.0)
+			call thistype.m_wielandHammers.setSound(gg_snd_BlacksmithWhat1)
 			set thistype.m_wielandTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.wieland(), 13.00, MapData.evening, gg_rct_waypoint_wieland_1)
 			call thistype.m_wielandTalks.setPartner(Npcs.einar())
 			call thistype.m_wielandTalks.setFacing(203.95)

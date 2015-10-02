@@ -179,7 +179,7 @@ Releasing map
 Steps:
 * Check equality of object data to other maps.
 * Generate map shadows when saving map.
-* Generate string translation files for selected languages by using jasstrans.
+* Generate string translation files for selected languages by using the function tre() and by extracting the war3map.wts file merging it with the current German one and with the English one and translating remaining untranslated German strings.
 * Generate map file name by using new version.
 
 Releasing DMdF version
@@ -205,3 +205,8 @@ Creating the minimap for a map which uses custom camera bounds:
 For using the minimap as preview minimap without neutral building markers which will have wrong positions the file must be converted to "war3mapPreview.tga"
 with RLE compression, format TRUE COLOR, 0 bits Alpha channel (remove Alpha channel), and orientation bottom left.
 You can use BLPLab for this and just select "Remove Alpha channel" and the compression check boxes.
+
+Optimize map files:
+- Use war3mapoptimizer of Vexorian but do not optimize war3map.wts files to still provide multiple languages.
+- Use the ultimate map SLK optimizer to optimize the object data and reduce the loading time but again to not optimize the war3map.wts file.
+- Now create an English and a German version of the map with the same name and the same data/direcotry but replace the war3map.wts file for the English version.

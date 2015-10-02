@@ -161,7 +161,7 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, gg_rct_main_window_info_log)
+			local thistype this = thistype.allocate(character, AStyle.human(), gg_rct_main_window_info_log)
 			call this.setTooltipX(1100.0)
 			call this.setTooltipY(300.0)
 			//call this.setTooltipBackgroundImageFilePath("") /// @todo Set tooltip window, CRASHES GAME!

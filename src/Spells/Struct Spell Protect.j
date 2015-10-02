@@ -28,16 +28,21 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 			local unit target = GetSpellTargetUnit()
 			local real damage = thistype.damageLevelValue + this.level() * thistype.damageLevelFactor
 			local real time = thistype.time
+			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET,  target, "chest")
+			local ADynamicLightning whichLightning = ADynamicLightning.create(null, "HWPB", 0.01, caster, target) 
 			local ADamageRecorder damageRecorder = ADamageRecorder.create(target)
 			call damageRecorder.setOnDamageAction(thistype.onDamageAction)
 			call DmdfHashTable.global().setReal("SpellProtect" + I2S(damageRecorder), "damage", damage)
 			loop
-				exitwhen (time <= 0.0 or ASpell.allyChannelLoopCondition(caster) or ASpell.allyTargetLoopCondition(target))
+				exitwhen (time <= 0.0 or ASpell.allyChannelLoopCondition(caster) or ASpell.allyTargetLoopCondition(target) or GetUnitCurrentOrder(caster) != OrderId("ambush"))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop
 			call DmdfHashTable.global().removeReal("SpellProtect" + I2S(damageRecorder), "damage")
 			call damageRecorder.destroy()
+			call whichLightning.destroy()
+			call DestroyEffect(targetEffect)
+			set targetEffect = null
 			set caster = null
 			set target = null
 		endmethod

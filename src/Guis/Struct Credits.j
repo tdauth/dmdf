@@ -1,5 +1,26 @@
 library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindow, StructMapMapMapData
 
+	private struct Style extends AStyle
+		private static Style m_style
+	
+		private static method create takes nothing returns thistype
+			local thistype this = thistype.allocate()
+			call this.setFrameTopImageFilePath(null)
+			call this.setFrameBottomImageFilePath(null)
+			call this.setFrameLeftImageFilePath(null)
+			call this.setFrameRightImageFilePath(null)
+			return this
+		endmethod
+		
+		public static method style takes nothing returns thistype
+			return thistype.m_style
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.m_style = thistype.create()
+		endmethod
+	endstruct
+
 	private struct Contributor
 		private boolean m_isTitle
 		private string m_name
@@ -197,7 +218,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, gg_rct_main_window_credits)
+			local thistype this = thistype.allocate(character, Style.style(), gg_rct_main_window_credits)
 			// members
 			set this.m_currentContributor = 0
 			set this.m_viewTimer = CreateTimer()

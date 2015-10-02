@@ -1,7 +1,7 @@
 library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameGame, StructMapMapShrines, StructMapMapNpcRoutines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
 
 	//! inject config
-		 call SetMapName( "TRIGSTR_001" )
+		call SetMapName( "TRIGSTR_001" )
 		call SetMapDescription( "" )
 		call SetPlayers( 12 )
 		call SetTeams( 12 )
@@ -1333,6 +1333,10 @@ endif
 			// tutorial GUI, after creating quests. Should be listed at the bottom of finished quests.
 			call Tutorial.init.evaluate()
 			
+			// castle bridge
+			call SetDestructableOccluderHeight(gg_dest_B00H_2439, bj_CLIFFHEIGHT * GetTerrainCliffLevel(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)))
+			call SetDestructableOccluderHeight(gg_dest_B00G_0022, bj_CLIFFHEIGHT * GetTerrainCliffLevel(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)))
+			
 			call AddDoodadOcclusion('D029')
 			
 			set i = 0
@@ -1352,7 +1356,7 @@ endif
 		
 		private static method applyHandicap takes nothing returns nothing
 			local integer missingPlayers =  Game.missingPlayers()
-			local real handicap = 1.0 - missingPlayers * 0.05
+			local real handicap = 1.0 - missingPlayers * 0.10
 			// decrease difficulty for others if players are missing
 			if (missingPlayers > 0) then
 				call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)

@@ -28,10 +28,8 @@ library StructGameTreeTransparency initializer init requires Asl
 		local integer j
 		local real camX = GetCameraTargetPositionX()
 		local real camY = GetCameraTargetPositionY()
-		debug call Print("Unit count: " + I2S(unitcount))
 		loop
 			exitwhen i >= unitcount
-			debug call Print("Raw count: " + I2S(rawcount))
 			set j = 0
 			loop
 				exitwhen j >= rawcount
@@ -58,11 +56,9 @@ library StructGameTreeTransparency initializer init requires Asl
 					if GetUnitX(U[i]) != X[i] or GetUnitY(U[i]) != Y[i] then
 						set X[i] = GetUnitX(U[i])
 						set Y[i] = GetUnitY(U[i])
-						call PingMinimap(X[i], Y[i], 2.0)
 						set j = 0
 						loop
 							exitwhen j >= rawcount
-							debug call Print("Animate: " + GetObjectName(raw[j]))
 							call SetDoodadAnimation(X[i], Y[i], OCCLUSION_RADIUS, raw[j], false, "stand alternate", false)
 							set j = j+1
 						endloop

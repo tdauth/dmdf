@@ -35,16 +35,15 @@ library StructMapQuestsQuestWolvesHunt requires Asl, StructMapMapNpcs
 				loop
 					exitwhen (i == thistype.maxRects)
 					if (this.m_flag[i]) then
-						set this.m_flag[i] = true
 						set count = count + 1
 					endif
-					set i= i + 1
+					set i = i + 1
 				endloop
 				if (count == thistype.maxRects) then
 					return true
 				// get next one to ping
 				else
-					call questItem.quest().displayUpdateMessage(Format(tr("%1%/%2% Rudelführer")).i(thistype.maxRects - count).i(thistype.maxRects).result())
+					call questItem.quest().displayUpdateMessage(Format(tr("%1%/%2% Rudelführer")).i(count).i(thistype.maxRects).result())
 				endif
 			endif
 			return false

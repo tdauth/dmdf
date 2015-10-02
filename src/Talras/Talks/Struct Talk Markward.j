@@ -41,11 +41,11 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 				call speech(info, character, true, tr("Ihr müsst die Hochelfin ausfindig machen. Vielleicht kann sie uns weiterhelfen."), null)
 			// (Auftrag „Krieg“ ist aktiv)
 			elseif (QuestWar.quest().isNew()) then
-				call speech(info, character, true, tr("Schlecht. Helft uns den Außenposten zu befestigen. Wenn wir ihn gegen einen Teil der feindlichen Truppen halten können, verschafft uns das Zeit auch die Burg zu verteidigen."), null)
-				call speech(info, character, true, tr("Vielleicht schaffen wir es die ersten Wellen der Orks und Dunkelelfen abzuwehren, aber nur wenn der Außenposten tatsächlich gut befestigt ist. Unser Schicksal liegt in euren Händen."), null)
+				call speech(info, character, true, tr("Schlecht. Helft uns den Außenposten zu befestigen. Wenn wir ihn gegen einen Teil der feindlichen Truppen halten können, verschafft uns das die nötige Zeit auch die Burg zu verteidigen."), null)
+				call speech(info, character, true, tr("Vielleicht schaffen wir es, die ersten Wellen der Orks und Dunkelelfen abzuwehren, aber nur wenn der Außenposten tatsächlich gut befestigt ist. Unser Schicksal liegt in euren Händen."), null)
 			// (Auftrag „Die Nordmänner“ ist abgeschlossen)
 			else
-				call speech(info, character, true, tr("Besser. Wenn ihr Verstärkung aus Holzbruck herbeischaffen könnt, haben wir eine echte Chance und durch den Sieg der Nordmänner über die Dunkelefen und Orks, haben wir zunächst etwas Ruhe und Zeit, um uns auf weitere Gefechte vorzubereiten."), null)
+				call speech(info, character, true, tr("Besser. Wenn ihr Verstärkung aus Holzbruck herbeischaffen könnt, haben wir eine echte Chance und durch den Sieg der Hochelfen und Nordmänner über die Dunkelefen und Orks, haben wir zunächst etwas Ruhe und Zeit, um uns auf weitere Gefechte vorzubereiten."), null)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
@@ -63,7 +63,7 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 		private static method infoActionWhatAreYouDoing takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was genau machst du hier?"), null)
 			call speech(info, character, true, tr("Ich unterstütze den Herzog so gut ich kann bei seinem Kampf gegen den Feind. Wenn es nach mir ginge, müsste hier eine ganze Schar von Rittern stehen, aber die scheinen dieser Tage wohl etwas Besseres mit ihrer Zeit anfangen zu wissen."), null)
-			call speech(info, character, true, tr("Vermutlich kümmern sie sich um ihre eigenen Ländereien und sind viel zu feige, dem Feind an der Front ins Auge zu blicken."), null)
+			call speech(info, character, true, tr("Vermutlich kümmern sie sich um ihre eigenen Ländereien und sind viel zu feige, dem Feind direkt ins Auge zu blicken."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 		
@@ -87,7 +87,7 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 		// Kann ich sonst noch etwas tun?
 		private static method infoActionFirstHelp takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Kann ich sonst noch etwas tun?"), null)
-			call speech(info, character, true, tr("Sicher, es gibt sehr viel zu tun. Sollte der Feind zahlmäßig überlegen sein, so müssen wir uns in der Burg verschanzen und auf Hilfe hoffen."), null)
+			call speech(info, character, true, tr("Sicher, es gibt sehr viel zu tun. Sollte der Feind zahlenmäßig überlegen sein, so müssen wir uns in der Burg verschanzen und auf Hilfe hoffen."), null)
 			call speech(info, character, true, tr("Eine Belagerung ist eine ernste Sache. Haben sie uns erst umzingelt, so müssen wir mit den Vorräten auskommen, die wir eingelagert haben."), null)
 			call speech(info, character, true, tr("Das sind aber nicht gerade viele. Die meisten unserer Männer sind mit anderen Sachen beschäftigt. Du könntest mit dem Bauern Manfred sprechen und dafür sorgen, dass er Karren mit Vorräten in die Burg schickt."), null)
 			// Neuer Auftrag „Die Versorgung von Talras“
@@ -126,8 +126,8 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 		private static method infoActionSecondHelp takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Gibt es noch etwas zu tun?"), null)
 			call speech(info, character, true, tr("Ich sehe schon du bist ein zuverlässiger Mann. Leute wie dich können wir sehr gut gebrauchen."), null)
-			call speech(info, character, true, tr("Um der Belagerung besser standzuhalten würde es nicht Schaden die Befestigungen dieser doch schon alten Burg zu verstärken."), null)
-			call speech(info, character, true, tr("Außerdem sollten auf den Mauern in Türmen genügend Pfeile für die Bogenschützen platziert werden."), null)
+			call speech(info, character, true, tr("Um der Belagerung besser standzuhalten, würde es nicht schaden die Befestigungen dieser doch schon alten Burg zu verstärken."), null)
+			call speech(info, character, true, tr("Außerdem sollten auf den Mauern und in den Türmen genügend Pfeile für die Bogenschützen platziert werden."), null)
 			call speech(info, character, true, tr("Wegen den Befestigungen kannst du mit dem Holzfäller Kuno sprechen. Er lebt im Nordosten etwas abgeschieden im Wald. Sag ihm, dass er uns über Manfred Holz liefern muss."), null)
 			call speech(info, character, true, tr("Wegen der Pfeile würde ich mit den Jägern der Burg sprechen. Das sind Dago und Björn."), null)
 			// Neuer Auftrag „Die Befestigung von Talras“

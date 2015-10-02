@@ -12,6 +12,18 @@ library StructGameRoutines requires Asl
 		endmethod
 	endstruct
 	
+	struct NpcHammerRoutine extends NpcRoutineWithFacing
+		private sound m_sound
+		
+		public method setSound takes sound whichSound returns nothing
+			set this.m_sound = whichSound
+		endmethod
+		
+		public method sound takes nothing returns sound
+			return this.m_sound
+		endmethod
+	endstruct
+	
 	struct NpcEntersHouseRoutine extends AUnitRoutine
 		private boolean m_hasChooseHero = false
 		
@@ -173,10 +185,10 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		/// Animation of villager.
-		private static method hammerTargetAction takes NpcRoutineWithFacing period returns nothing
+		private static method hammerTargetAction takes NpcHammerRoutine period returns nothing
 			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), "Attack")
-			call PlaySoundFileOnUnit("Buildings\\Human\\Blacksmith\\BlacksmithWhat1.wav", period.unit())
+			call PlaySoundOnUnitBJ(period.sound(), 100.0, period.unit())
 			call TriggerSleepAction(1.0)
 			call AContinueRoutineLoop(period, thistype.hammerTargetAction)
 		endmethod

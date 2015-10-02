@@ -231,8 +231,6 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_wolves1.addNewItemType(index, 'I01H', 1.0)
 
 			set thistype.m_wolves2 = SpawnPoint.create()
-			set index = thistype.m_wolves2.addUnitWithType(gg_unit_n02F_0204, 1.0)
-			call thistype.m_wolves2.addNewItemType(index, 'I01I', 1.0)
 			set index = thistype.m_wolves2.addUnitWithType(gg_unit_n02F_0016, 1.0)
 			call thistype.m_wolves2.addNewItemType(index, 'I01H', 1.0)
 
