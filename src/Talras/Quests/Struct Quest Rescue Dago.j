@@ -3,9 +3,16 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 	struct QuestAreaRescueDago extends QuestArea
 	
 		public stub method onStart takes nothing returns nothing
+			local integer i
 			call VideoRescueDago0.video.evaluate().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call QuestRescueDago.quest.evaluate().enable.evaluate()
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SmartCameraPanWithZForPlayer(Player(i), GetUnitX(Npcs.dago()), GetUnitY(Npcs.dago()), 0.0, 0.0)
+				set i = i + 1
+			endloop
 		endmethod
 	
 		public static method create takes rect whichRect returns thistype

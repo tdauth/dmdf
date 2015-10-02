@@ -1,4 +1,4 @@
-library StructMapMapNpcs
+library StructMapMapNpcs requires StructGameDmdfHashTable
 
 	/**
 	 * \brief Static struct which stores global instances of the NPCs for simplified access.
@@ -12,6 +12,7 @@ library StructMapMapNpcs
 		private static unit m_dago
 		private static unit m_dragonSlayer
 		private static unit m_einar
+		private static unit m_einarsShop
 		private static unit m_ferdinand
 		private static unit m_fulco
 		private static unit m_guntrich
@@ -19,6 +20,7 @@ library StructMapMapNpcs
 		private static unit m_haldar
 		private static unit m_heimrich
 		private static unit m_irmina
+		private static unit m_irminasShop
 		private static unit m_kuno
 		private static unit m_kunosDaughter
 		private static unit m_lothar
@@ -39,12 +41,68 @@ library StructMapMapNpcs
 		private static unit m_sheepBoy
 		private static unit m_carsten
 		private static unit m_dararos
+		private static unit m_osmansShop
+		private static unit m_bjoernsShop
+		private static unit m_agihardsShop
+		private static trigger m_sellTrigger
 
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
+		endmethod
+		
+		private static method triggerConditionSell takes nothing returns boolean
+			if (GetUnitTypeId(GetSoldUnit()) == 'n05Y') then
+				return true
+			endif
+			
+			return false
+		endmethod
+		
+		private static method timerFunctionSelectShop takes nothing returns nothing
+			local unit sellingUnit = thistype(DmdfHashTable.global().handleUnit(GetExpiredTimer(), "sellingunit"))
+			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), "soldunit")
+			
+			if (sellingUnit == thistype.m_einar) then
+				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_einarsShop), GetUnitY(thistype.m_einarsShop), 0.0, 0.0)
+				call SelectUnitForPlayerSingle(thistype.m_einarsShop, GetOwningPlayer(soldUnit))
+			elseif (sellingUnit == thistype.m_irmina) then
+				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_irminasShop), GetUnitY(thistype.m_irminasShop), 0.0, 0.0)
+				call SelectUnitForPlayerSingle(thistype.m_irminasShop, GetOwningPlayer(soldUnit))
+			elseif (sellingUnit == thistype.m_osman) then
+				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_osmansShop), GetUnitY(thistype.m_osmansShop), 0.0, 0.0)
+				call SelectUnitForPlayerSingle(thistype.m_osmansShop, GetOwningPlayer(soldUnit))
+			elseif (sellingUnit == thistype.m_bjoern) then
+				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_bjoernsShop), GetUnitY(thistype.m_bjoernsShop), 0.0, 0.0)
+				call SelectUnitForPlayerSingle(thistype.m_bjoernsShop, GetOwningPlayer(soldUnit))
+			elseif (sellingUnit == thistype.m_agihard) then
+				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_agihardsShop), GetUnitY(thistype.m_agihardsShop), 0.0, 0.0)
+				call SelectUnitForPlayerSingle(thistype.m_agihardsShop, GetOwningPlayer(soldUnit))
+			endif
+			
+			call RemoveUnit(soldUnit)
+			
+			
+			call PauseTimer(GetExpiredTimer())
+			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
+		endmethod
+		
+		private static method triggerActionSell takes nothing returns nothing
+			local timer whichTimer = CreateTimer()
+			call DmdfHashTable.global().setHandleUnit(whichTimer, "sellingunit", GetSellingUnit()) 
+			call DmdfHashTable.global().setHandleUnit(whichTimer, "soldunit", GetSoldUnit()) 
+			
+			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
+			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
+			debug call Print("Buying unit " + GetUnitName(GetBuyingUnit()))
+			call SetUnitInvulnerable(GetSoldUnit(), true)
+			call ShowUnit(GetSoldUnit(), false)
+			call PauseUnit(GetSoldUnit(), true)
+			
+			// wait since the selling unit is being paused
+			call TimerStart(whichTimer, 0.0, false, function thistype.timerFunctionSelectShop)
 		endmethod
 
 		/// This method is and has to be called after unit creation.
@@ -58,6 +116,7 @@ library StructMapMapNpcs
 			set thistype.m_dragonSlayer = gg_unit_H01F_0038
 			call SetUnitInvulnerable(thistype.m_dragonSlayer, true) // set invulnerable manually since it has a metamorphosis skill
 			set thistype.m_einar = gg_unit_n01Z_0155
+			set thistype.m_einarsShop = gg_unit_n04S_0410
 			set thistype.m_ferdinand = gg_unit_n01J_0154
 			set thistype.m_fulco = gg_unit_n012_0115
 			set thistype.m_guntrich = gg_unit_n02T_0141
@@ -65,6 +124,7 @@ library StructMapMapNpcs
 			set thistype.m_haldar = gg_unit_n00K_0040
 			set thistype.m_heimrich = gg_unit_n013_0116
 			set thistype.m_irmina = gg_unit_n01S_0201
+			set thistype.m_irminasShop = gg_unit_n04T_0409
 			set thistype.m_kuno = gg_unit_n022_0009
 			set thistype.m_kunosDaughter = gg_unit_n02S_0065
 			set thistype.m_lothar = gg_unit_n030_0240
@@ -73,6 +133,9 @@ library StructMapMapNpcs
 			set thistype.m_markward = gg_unit_n014_0117
 			set thistype.m_mathilda = gg_unit_H024_0412
 			set thistype.m_osman = gg_unit_n00R_0101
+			set thistype.m_osmansShop = gg_unit_n04R_0408
+			set thistype.m_bjoernsShop = gg_unit_n04U_0411
+			set thistype.m_agihardsShop = gg_unit_n04W_0413
 			set thistype.m_ricman = gg_unit_H01E_0028
 			set thistype.m_sisgard = gg_unit_H014_0156
 			set thistype.m_tanka = gg_unit_n023_0011
@@ -93,6 +156,11 @@ library StructMapMapNpcs
 			call SetUnitInvulnerable(gg_unit_n005_0119, true)
 			call SetUnitInvulnerable(gg_unit_n015_0118, true)
 			call SetUnitInvulnerable(gg_unit_n015_0456, true)
+			
+			set thistype.m_sellTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_sellTrigger, EVENT_PLAYER_UNIT_SELL)
+			call TriggerAddCondition(thistype.m_sellTrigger, Condition(function thistype.triggerConditionSell))
+			call TriggerAddAction(thistype.m_sellTrigger, function thistype.triggerActionSell)
 		endmethod
 
 		public static method agihard takes nothing returns unit

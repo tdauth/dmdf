@@ -127,6 +127,12 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		// methods
 
 		public stub method enable takes nothing returns boolean
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAbilityAvailable(Player(i), SpellMissionTheNorsemen.abilityId, true)
+				set i = i + 1
+			endloop
 			set this.m_questAreaTheChief = QuestAreaTheNorsemenTheChief.create(gg_rct_quest_the_norsemen_quest_item_0)
 			return super.enableUntil(thistype.questItemMeetTheNorsemen)
 		endmethod

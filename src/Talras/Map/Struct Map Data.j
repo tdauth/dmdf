@@ -273,6 +273,8 @@ endif
 			call UnitAddItemById(whichUnit, 'I00D')
 			call UnitAddItemById(whichUnit, 'I00D')
 			call UnitAddItemById(whichUnit, 'I00D')
+			
+			call SetItemInvulnerable(UnitAddItemById(whichUnit, 'I061'), true)
 		endmethod
 		
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing

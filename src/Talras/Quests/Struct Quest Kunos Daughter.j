@@ -1,4 +1,4 @@
-library StructMapQuestsQuestKunosDaughter requires Asl
+library StructMapQuestsQuestKunosDaughter requires Asl, StructMapMapNpcs
 
 	struct QuestKunosDaughter extends AQuest
 

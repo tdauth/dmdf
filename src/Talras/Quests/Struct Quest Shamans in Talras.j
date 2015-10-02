@@ -1,4 +1,4 @@
-library StructMapQuestsQuestShamansInTalras requires Asl
+library StructMapQuestsQuestShamansInTalras requires Asl, StructMapMapNpcs
 
 	struct QuestShamansInTalras extends AQuest
 
