@@ -295,7 +295,8 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_knight.addDescriptionLine(tr("Der Ritter ist ein starker Kämpfer, der an vorderster Front steht und eine dicke Rüstung trägt,"))
 			call thistype.m_knight.addDescriptionLine(tr("die ihn besonders überlebensfähig macht."))
 			call thistype.m_knight.addDescriptionLine(tr("Er sorgt dafür, dass seine Feinde die weniger gut geschützten Nah- und Fernkämpfer nicht erreichen."))
-			call thistype.m_knight.addDescriptionLine(tr("Durch seine kämpferische Ausstrahlung ist er in der Lage, die Moral und Kampfkraft seiner Gefährten zu steigern."))
+			call thistype.m_knight.addDescriptionLine(tr("Durch seine kämpferische Ausstrahlung ist er in der Lage, die Moral und Kampfkraft"))
+			call thistype.m_knight.addDescriptionLine(tr("seiner Gefährten zu steigern."))
 			
 			set thistype.m_knightGrimoireEntries = AIntegerVector.create()
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlock.classSelectionAbilityId, SpellBlock.classSelectionGrimoireAbilityId))

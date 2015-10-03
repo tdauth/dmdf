@@ -485,19 +485,19 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tr("Die Nordmänner"))
+			local thistype this = thistype.allocate(0, tre("Die Nordmänner", "The Norsemen"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
-			call this.setDescription(tr("Der Herzog will, dass ihr die Nordmänner vor der Burg auf seine Seite zieht, damit er neue Verbündete für den bevorstehenden Krieg gewinnt."))
+			call this.setDescription(tre("Der Herzog will, dass ihr die Nordmänner vor der Burg auf seine Seite zieht, damit er neue Verbündete für den bevorstehenden Krieg gewinnt.", "The duke wants you to win the Norsemen in front of the castle for him for winning new allies for the upcoming war."))
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Begebt euch zum Lager der Nordmänner östlich von der Burg."))
+			set questItem = AQuestItem.create(this, tre("Begebt euch zum Lager der Nordmänner östlich von der Burg.", "Move to the camp of the Norsemen east of the castle."))
 
 			call questItem.setPing(true)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_the_norsemen_ping)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 500)
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Sammelt euch nahe des nordwestlichen Orklagers mit den Nordmännern."))
+			set questItem = AQuestItem.create(this, tre("Sammelt euch nahe des nordwestlichen Orklagers mit den Nordmännern.", "Gather yourselves with the Norsemen near to the north west Orc camp."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_norsemen_assembly_point)
 			call questItem.setPingColour(100.0, 100.0, 100.0)

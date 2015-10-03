@@ -586,13 +586,13 @@
 * FIXED: Rechte Hälfte des Ladebildschirms beim Laden im Singleplayer wurde nicht ersetzt.
 * Gewandheit: Benötigt passives Icon.
 * Zukünftiger Release-Vorgang: Optimizer jedoch nur mit Skriptoptimierungen damit war3map.wts unverändert bleibt. Karte kopieren und englische wts-Datei einfügen.
-* Wie bei Originaltransmissions weißen Indicator bei der sprechenden Einheit anzeigen!
+* FIXED: Wie bei Originaltransmissions weißen Indicator bei der sprechenden Einheit anzeigen!
 * Elementarmagier statt gleißendem Licht/Erdgefängnis, zu viele Stunzauber, Steingolem beschwören?
 
 TODO:
-- Texte der NPCs hiden falls das Gebiet nicht sichtbar ist.
-- Sounds nur abspielen wenn Gebiet sichtbar ist und Charakter in der Nähe.
-- Sounddistanzen fixen (Schmiedesound)
+- FIXED: Texte der NPCs hiden falls das Gebiet nicht sichtbar ist.
+- FIXED: Sounds nur abspielen wenn Gebiet sichtbar ist und Charakter in der Nähe.
+- FIXED: Sounddistanzen fixen (Schmiedesound)
 - FIXED: Schmiedesound leiser
 - Objektdatenkompression: Kann es sein, dass modified-Werte gespeichert bleiben, auch wenn man die Stufe einer Fähigkeit verringert oder sie zu einer Gegenstands- oder Einheitenfähigkeit macht?
 - Objektdatenkompression: w3o zu SLK-Dateien?
@@ -600,11 +600,11 @@ TODO:
 - FIXED: pans zu Dago bei rescue Dago.
 - Quest-Pings mit Pans als Durchschaltemenü im Haupt-Menü.
 - Hauptmenü-Einträge um Leaderboards zu verbergen
-- FDF-Dateien aus custom exe entfernen. Ansonsten ist die Mod immer Deutsch.
-- Taverne entfernen
+- FIXED: FDF-Dateien aus custom exe entfernen. Ansonsten ist die Mod immer Deutsch.
+- DEPRECATED: Taverne entfernen
 - Weniger Regen
 
-- Transparenz der Bäume.:
+- DONE: Transparenz der Bäume.:
         - http://www.hiveworkshop.com/forums/world-editor-help-zone-98/opacity-trees-266330/
         - http://www.hiveworkshop.com/forums/world-editor-help-zone-98/tree-occlusion-trigger-250007/
         - Folglich: Auf Occlusion scheißen, Transparenzanimation einfügen und ausführen.

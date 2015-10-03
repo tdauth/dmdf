@@ -208,5 +208,5 @@ You can use BLPLab for this and just select "Remove Alpha channel" and the compr
 
 Optimize map files:
 - Use war3mapoptimizer of Vexorian but do not optimize war3map.wts files to still provide multiple languages.
-- Use the ultimate map SLK optimizer to optimize the object data and reduce the loading time but again to not optimize the war3map.wts file.
+- Use the ultimate map SLK optimizer to optimize the object data and reduce the loading time but again to not optimize the war3map.wts file. Don't clean the Standard Objects for safety.
 - Now create an English and a German version of the map with the same name and the same data/direcotry but replace the war3map.wts file for the English version.

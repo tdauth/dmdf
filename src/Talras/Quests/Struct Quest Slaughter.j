@@ -3,6 +3,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 	struct QuestAreaSlaughter extends QuestArea
 	
 		public stub method onStart takes nothing returns nothing
+			local integer i
 			call VideoDragonHunt.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			debug call Print("After Video")
@@ -18,6 +19,12 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			debug call Print("After sharing a fellow")
 			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), "Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.")
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!"), null)
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAbilityAvailable(Player(i), SpellMissionSlaughter.abilityId, true)
+				set i = i + 1
+			endloop
 		endmethod
 	
 		public static method create takes rect whichRect returns thistype

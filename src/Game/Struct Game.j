@@ -1,4 +1,4 @@
-library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameRoutines, LibraryGameLanguage
+library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
 
 	/**
 	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
@@ -824,6 +824,7 @@ endif
 				endif
 				set i = i + 1
 			endloop
+			call DisableTransparency()
 		endmethod
 
 		private static method filterHiddenItem takes nothing returns boolean
@@ -877,6 +878,7 @@ endif
 				endif
 				set i = i + 1
 			endloop
+			call EnableTransparency()
 		endmethod
 
 		public static method addUnitMoveSpeed takes unit whichUnit, real value returns real

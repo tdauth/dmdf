@@ -239,6 +239,43 @@ endif
 			call TriggerRegisterEnterRegion(thistype.m_talkHintTrigger, thistype.m_talkHintRegion, null)
 			call TriggerAddCondition(thistype.m_talkHintTrigger, Condition(function thistype.triggerConditionTalkHint))
 			call TriggerAddAction(thistype.m_talkHintTrigger, function thistype.triggerActionTalkHint)
+			
+			call AddDoodadOcclusion('D027')
+			call AddDoodadOcclusion('D028')
+			call AddDoodadOcclusion('D029')
+			call AddDoodadOcclusion('D02A')
+			call AddDoodadOcclusion('D02B')
+			call AddDoodadOcclusion('D02C')
+			call AddDoodadOcclusion('D02D')
+			call AddDoodadOcclusion('D02E')
+			call AddDoodadOcclusion('D02F')
+			call AddDoodadOcclusion('D02G')
+			call AddDoodadOcclusion('D02H')
+			call AddDoodadOcclusion('D02I')
+			call AddDoodadOcclusion('D02J')
+			call AddDoodadOcclusion('D02K')
+			call AddDoodadOcclusion('D074')
+			call AddDoodadOcclusion('D075')
+			call AddDoodadOcclusion('D076')
+			call AddDoodadOcclusion('D077')
+			call AddDoodadOcclusion('D078')
+			call AddDoodadOcclusion('D08E')
+			call AddDoodadOcclusion('D08F')
+			
+			call AddDoodadOcclusion('D02N')
+			call AddDoodadOcclusion('D02O')
+			call AddDoodadOcclusion('D02P')
+			call AddDoodadOcclusion('D02Q')
+			call AddDoodadOcclusion('D02R')
+			call AddDoodadOcclusion('D02S')
+			call AddDoodadOcclusion('D02T')
+			call AddDoodadOcclusion('D02U')
+			call AddDoodadOcclusion('D02V')
+			call AddDoodadOcclusion('D02W')
+			call AddDoodadOcclusion('D02X')
+			call AddDoodadOcclusion('D07B')
+			call AddDoodadOcclusion('D07C')
+			call AddDoodadOcclusion('D07D')
 		endmethod
 		
 		/**
@@ -1336,8 +1373,6 @@ endif
 			// castle bridge
 			call SetDestructableOccluderHeight(gg_dest_B00H_2439, bj_CLIFFHEIGHT * GetTerrainCliffLevel(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)))
 			call SetDestructableOccluderHeight(gg_dest_B00G_0022, bj_CLIFFHEIGHT * GetTerrainCliffLevel(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)))
-			
-			call AddDoodadOcclusion('D029')
 			
 			set i = 0
 			loop

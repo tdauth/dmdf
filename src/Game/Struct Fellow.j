@@ -1,4 +1,4 @@
-library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGame
+library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGame, StructGameTreeTransparency
 
 	/**
 	 * \brief Fellows are hero unit NPCs which can be shared with one or all character owners.
@@ -207,6 +207,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 					call character.displayUnitAcquired(this.revivalTitle(), this.description())
 				endif
 			endif
+			
+			call AddUnitOcclusion(this.m_unit)
 		endmethod
 		
 		public method shareWithAll takes nothing returns nothing
@@ -274,6 +276,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			
 			set this.m_character = 0
 			call this.setShared(false)
+			
+			call RemoveUnitOcclusion(this.m_unit)
 		endmethod
 		
 		/**

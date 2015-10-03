@@ -1,16 +1,23 @@
-// http://www.hiveworkshop.com/forums/triggers-scripts-269/tree-transparency-270310/#post2736405
+/**
+ * The tree transparency system allows you to register Doodad types for which all Doodads will be animated to "Stand Alternate" if they are in range of registered units.
+ * http://www.hiveworkshop.com/forums/triggers-scripts-269/tree-transparency-270310/#post2736405
+ */
 library StructGameTreeTransparency initializer init requires Asl
 
-	globals
-		 private constant real OCCLUSION_RADIUS = 150 //defines the radius around the unit in which doodads are occluded
-		private constant real CAMERA_TARGET_RADIUS = 1000 //defines the radius around the camera target in which doodads are occluded
+	private struct Unit
+		public real x = 0.0
+		public real y = 0.0
+		public unit whichUnit = null
+	endstruct
 
+	globals
+		private constant real OCCLUSION_RADIUS = 700.0 //defines the radius around the unit in which doodads are occluded
+		private constant real CAMERA_TARGET_RADIUS = 1000.0 //defines the radius around the camera target in which doodads are occluded
+
+		private timer Timer
 		private integer array raw
 		private integer rawcount = 0
-		private real array X
-		private real array Y
-		private unit array U
-		private integer unitcount = 0
+		private AIntegerList units
 	endglobals
 
 	function AddDoodadOcclusion takes integer rawcode returns nothing
@@ -19,58 +26,94 @@ library StructGameTreeTransparency initializer init requires Asl
 	endfunction
 
 	function AddUnitOcclusion takes unit u returns nothing
-		set U[unitcount] = u
-		set unitcount = unitcount+1
+		local Unit data = Unit.create()
+		set data.whichUnit = u
+		set data.x = GetUnitX(u)
+		set data.y = GetUnitY(u)
+		call units.pushBack(data)
 	endfunction
-
-	private function periodic takes nothing returns nothing
-		 local integer i = 0
-		local integer j
-		local real camX = GetCameraTargetPositionX()
-		local real camY = GetCameraTargetPositionY()
+	
+	function RemoveUnitOcclusion takes unit u returns boolean
+		local AIntegerListIterator iterator = units.begin()
 		loop
-			exitwhen i >= unitcount
+			exitwhen (not iterator.isValid())
+			if (Unit(iterator.data()).whichUnit == u) then
+				call units.erase(iterator)
+				call iterator.destroy()
+				return true
+			endif
+			call iterator.next()
+		endloop
+		
+		call iterator.destroy()
+		
+		return false
+	endfunction
+	
+	private function ResetTransparency takes nothing returns nothing
+		local AIntegerListIterator iterator = units.begin()
+		local integer j
+		loop
+			exitwhen not iterator.isValid()
 			set j = 0
 			loop
 				exitwhen j >= rawcount
-				call SetDoodadAnimation(X[i], Y[i], OCCLUSION_RADIUS, raw[j], false, "stand", false)
-				set j = j+1
+				call SetDoodadAnimation(Unit(iterator.data()).x, Unit(iterator.data()).y, OCCLUSION_RADIUS, raw[j], false, "stand", false)
+				set j = j + 1
 			endloop
-			set i = i+1
+			call iterator.next()
 		endloop
-		set i = 0
+		
+		call iterator.destroy()
+	endfunction
+	
+	private function periodic takes nothing returns nothing
+		local AIntegerListIterator iterator
+		local integer j
+		local real camX = GetCameraTargetPositionX()
+		local real camY = GetCameraTargetPositionY()
+		call ResetTransparency()
+		set iterator = units.begin()
 		loop
-			exitwhen i >= unitcount
-			if GetUnitTypeId(U[i]) == 0 then
-				//clean up removed units
-				set unitcount = unitcount-1
-				set U[i] = U[unitcount]
-				set X[i] = X[unitcount]
-				set Y[i] = Y[unitcount]
-				set U[unitcount] = null
-				set X[unitcount] = 0
-				set Y[unitcount] = 0
-				set i = i-1
-				else
-				if IsUnitInRangeXY(U[i], camX, camY, CAMERA_TARGET_RADIUS) then
-					if GetUnitX(U[i]) != X[i] or GetUnitY(U[i]) != Y[i] then
-						set X[i] = GetUnitX(U[i])
-						set Y[i] = GetUnitY(U[i])
-						set j = 0
-						loop
-							exitwhen j >= rawcount
-							call SetDoodadAnimation(X[i], Y[i], OCCLUSION_RADIUS, raw[j], false, "stand alternate", false)
-							set j = j+1
-						endloop
-					endif
-				endif
+			exitwhen not iterator.isValid()
+			if (GetUnitTypeId(Unit(iterator.data()).whichUnit) != 0 and not IsUnitDeadBJ(Unit(iterator.data()).whichUnit) and IsUnitInRangeXY(Unit(iterator.data()).whichUnit, camX, camY, CAMERA_TARGET_RADIUS)) then
+				set Unit(iterator.data()).x = GetUnitX(Unit(iterator.data()).whichUnit)
+				set Unit(iterator.data()).y = GetUnitY(Unit(iterator.data()).whichUnit)
+				set j = 0
+				loop
+					exitwhen j >= rawcount
+					call SetDoodadAnimation(Unit(iterator.data()).x, Unit(iterator.data()).y, OCCLUSION_RADIUS, raw[j], false, "stand alternate", false)
+					set j = j + 1
+				endloop
 			endif
-			set i = i+1
+			call iterator.next()
 		endloop
+		
+		call iterator.destroy()
+	endfunction
+	
+	function EnableTransparency takes nothing returns nothing
+		if (Timer == null) then
+			set Timer = CreateTimer()
+			call TimerStart(Timer, 0.1, true, function periodic)
+		endif
+		debug call Print("Enable transparency")
+	endfunction
+	
+	function DisableTransparency takes nothing returns nothing
+		if (Timer != null) then
+			call PauseTimer(Timer)
+			call DestroyTimer(Timer)
+			set Timer = null
+			call ResetTransparency()
+		endif
+		debug call Print("Disable transparency")
 	endfunction
 
 	private function init takes nothing returns nothing
-		call TimerStart(CreateTimer(), 2.0, true, function periodic)
+		set units = AIntegerList.create()
+		set Timer = CreateTimer()
+		call TimerStart(Timer, 0.1, true, function periodic)
 	endfunction
 
 endlibrary
