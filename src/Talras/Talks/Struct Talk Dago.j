@@ -34,8 +34,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call speech(info, character, true, tre("Ich wette, dass sich da noch ein paar von diesen Bestien in der Höhle verkrochen haben.", "I'll bet that there are still some beasts hiding in the cave."), gg_snd_Dago2)
 			call speech(info, character, true, tre("Aber keine Sorge. Um die werde ich mich selbst kümmern.", "But don't worry. I will take care of them by myself."), gg_snd_Dago3)
 			call speech(info, character, true, tre("Ich hab auch schon einen Plan. Ich stecke einfach die ganze verdammte Höhle in Brand und lasse diese Scheißviecher elendiglich verrecken!", "I do already have a plan. I just set the whole damned cave ablaze and let these damned animals come to a miserable end wretchedly!"), gg_snd_Dago4)
-			call speech(info, character, true, tr("Allerdings bräuchte ich dazu entweder ne verdammte Menge Holz oder einen guten Zauberspruch."), gg_snd_Dago5)
-			call speech(info, character, true, tr("Also wenn du mal einen für mich hast … ich würde dich selbstverständlich dafür entlohnen. Und noch mal danke für die Hilfe vorhin!"), gg_snd_Dago6)
+			call speech(info, character, true, tre("Allerdings bräuchte ich dazu entweder ne verdammte Menge Holz oder einen guten Zauberspruch.", "But I need a huge amount of wood or a good spell for that."), gg_snd_Dago5)
+			call speech(info, character, true, tre("Also wenn du mal einen für mich hast … ich würde dich selbstverständlich dafür entlohnen. Und noch mal danke für die Hilfe vorhin!", "So if you have just one for me … naturally I would reward you for it. And again thank you for the help a moment ago."), gg_snd_Dago6)
 
 			call QuestBurnTheBearsDown.characterQuest(character).enable()
 
@@ -45,8 +45,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Willst du nicht mal langsam in die Burg?
 		private static method infoActionCastle takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Willst du nicht mal langsam in die Burg?"), null)
-			call speech(info, character, true, tr("Nein, ich muss erst mehr Pilze finden."), gg_snd_Dago7)
+			call speech(info, character, false, tre("Willst du nicht mal langsam in die Burg?", "Don't you want to go to the castle gradually?"), null)
+			call speech(info, character, true, tre("Nein, ich muss erst mehr Pilze finden.", "No, first I must find more mushrooms."), gg_snd_Dago7)
 			call info.talk().showRange(this.m_whatKindOfMushrooms.index(), this.m_goodLuck.index(), character)
 		endmethod
 

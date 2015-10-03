@@ -34,11 +34,12 @@ library StructMapMapMapData requires Asl, StructGameGame
 		private method onDestroy takes nothing returns nothing
 		endmethod
 		
-
-		
 		/// Required by \ref Game.
 		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
 		public static method init takes nothing returns nothing
+			local quest whichQuest
+			local questitem questItem
+			local NpcTalksRoutine talkRoutine
 			// weather
 			call Game.weather().setMinimumChangeTime(20.0)
 			call Game.weather().setMaximumChangeTime(60.0)
@@ -48,8 +49,28 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeNoWeather, true)
 			call Game.weather().addRect(gg_rct_area_playable)
 			
+			// info
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tre("Regeln", "Rules"))
+			call QuestSetDescription(whichQuest, tre("Zu seiner Belustigung hat Heimrich, der Herzog von Talras, euch gemeinsam in eine Arena werfen lassen aus welcher der Sieg die einzige Möglichkeit zu entkommen ist.", "For his amusement Heimrich, the duke of Talras, has thrown you into an arena from which the victory is the only possibility to escape."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNCorpseExplode.blp")
+			call QuestSetEnabled(whichQuest, true)
+			call QuestSetRequired(whichQuest, true)
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, Format(tre("Tötet einander bis einer der Spieler %1% Punkte erreicht hat.", "Kill each other until one player has reached %1% kills.")).i(thistype.maxScore).result())
+			
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
+			
+			set talkRoutine = NpcTalksRoutine.create(Routines.talk(), gg_unit_n013_0012, 0.0, 24.00, gg_rct_waypoint_heimrich_0)
+			call talkRoutine.setPartner(gg_unit_n014_0038)
+			call talkRoutine.addSound(tr("Was erlaubt sich das einfache Volk?"), gg_snd_Heimrich12)
+			call talkRoutine.addSound(tr("Wir müssen uns auf den Krieg vorbereiten."), gg_snd_Heimrich13)
+			call talkRoutine.addSound(tr("Hat Er sich um alles Nötige gekümmert?"), gg_snd_Heimrich14)
+			call talkRoutine.addSound(tr("Bald werden sie hier einfallen und dann?"), gg_snd_Heimrich15)
+			
+			set talkRoutine = NpcTalksRoutine.create(Routines.talk(), gg_unit_n014_0038, 0.0, 24.00, gg_rct_waypoint_markward_0)
+			call talkRoutine.setPartner(gg_unit_n013_0012)
 		endmethod
 		
 		/**
@@ -215,11 +236,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 		private static method randomWord takes nothing returns string
 			local integer random = GetRandomInt(0, 3)
 			if (random == 0) then
-				return tr("zermalmt")
+				return tre("zermalmt", "crushed")
 			elseif (random == 1) then
-				return tr("geplättet")
+				return tre("geplättet", "nuked")
 			elseif (random == 2) then
-				return tr("abgeschlachtet")
+				return tre("abgeschlachtet", "slaughtered")
 			endif
 			
 			return tr("gezeigt wo der Hammer hängt")
@@ -240,7 +261,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		private static method triggerConditionDeath takes nothing returns boolean
 			local integer killerPlayerId
 			if (GetKillingUnit() != null and ACharacter.isUnitCharacter(GetTriggerUnit()) and GetOwningPlayer(GetKillingUnit()) != GetOwningPlayer(GetTriggerUnit())) then
-				call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, Format(tr("%1% hat %2% %3%.")).s(GetPlayerName(GetOwningPlayer(GetKillingUnit()))).s(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))).s(thistype.randomWord()).result())
+				call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, Format(tre("%1% hat %2% %3%.", "%1% has %2% %3%.")).s(GetPlayerName(GetOwningPlayer(GetKillingUnit()))).s(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))).s(thistype.randomWord()).result())
 			
 				set killerPlayerId = GetPlayerId(GetOwningPlayer(GetKillingUnit()))
 				set thistype.m_score[killerPlayerId] = thistype.m_score[killerPlayerId] + 1
@@ -275,7 +296,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			
 			set thistype.m_shrine = Shrine.create(gg_unit_n02D_0000, gg_dest_B008_0000, gg_rct_shrine_discover, gg_rct_shrine_revival, 312.69)
 			
-			set thistype.m_leaderboard = CreateLeaderboardBJ(bj_FORCE_ALL_PLAYERS, tr("Punkte:"))
+			set thistype.m_leaderboard = CreateLeaderboardBJ(bj_FORCE_ALL_PLAYERS, tre("Punkte:", "Kills:"))
 			
 			set thistype.m_deathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_deathTrigger, EVENT_PLAYER_UNIT_DEATH)
@@ -294,7 +315,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call Character.showCharactersSchemeToAll()
 			
 			
-			call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, Format(tr("Schlachtet euch gegenseitig für Ruhm und Ehre in der Arena ab. Gewonnen hat derjenige, der zuerst %1% Gegner niedergestreckt hat.")).i(thistype.maxScore).result())
+			call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, Format(tre("Schlachtet euch gegenseitig für Ruhm und Ehre in der Arena ab. Gewonnen hat derjenige, der zuerst %1% Gegner niedergestreckt hat.", "Slaughter each other in the arena for glory and honour. The one who slaughtered %1% enemies first has won.")).i(thistype.maxScore).result())
 		endmethod
 		
 		private static method setupCharacter takes player whichPlayer returns nothing

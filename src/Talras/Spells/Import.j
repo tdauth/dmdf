@@ -102,6 +102,7 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAmuletOfForesi
 		call SpellMagicalSeed.create(character)
 		call SpellMissionTalras.create(character)
 		call SpellMissionTheNorsemen.create(character)
+		call SpellMissionSlaughter.create(character)
 		call SpellScrollOfAncestors.create(character)
 		call SpellScrollOfCollector.create(character)
 		call SpellScrollOfTheRealmOfTheDead.create(character)

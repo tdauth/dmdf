@@ -65,4 +65,35 @@ library StructMapSpellsSpellMissions requires Asl, StructGameCharacter, MapQuest
 		endmethod
 	endstruct
 	
+	struct SpellMissionSlaughter extends ASpell
+		public static constant integer abilityId = 'A1C1'
+		
+		private method condition takes nothing returns boolean
+			if (not QuestSlaughter.quest().isNew()) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Auftrag wurde bereits abgeschlossen."))
+				
+				return false
+			endif
+			
+			return true
+		endmethod
+		
+		private method action takes nothing returns nothing
+			call PanToQuestForPlayer(this.character().player(), QuestSlaughter.quest())
+		endmethod
+
+		public static method create takes Character character returns thistype
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_UNIT_SPELL_CHANNEL)
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAbilityAvailable(Player(i), thistype.abilityId, false)
+				set i = i + 1
+			endloop
+		endmethod
+	endstruct
+	
 endlibrary
