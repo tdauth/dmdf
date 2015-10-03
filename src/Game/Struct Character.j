@@ -310,22 +310,22 @@ endif
 		endmethod
 
 		public method displayHint takes string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tr("|cff00ff00TIPP|r - %1%")).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tre("|cff00ff00TIPP|r - %1%", "|cff00ff00HINT|r - %1%")).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questHintSound)
 		endmethod
 
 		public method displayUnitAcquired takes string unitName, string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_UNITACQUIRED, Format(tr("|cff87ceebNEUE EINHEIT ERHALTEN|r\n%1% - %2%")).s(unitName).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_UNITACQUIRED, Format(tre("|cff87ceebNEUE EINHEIT ERHALTEN|r\n%1% - %2%", "|cff87ceebNEW UNIT ACQUIRED|r\n%1% - %2%")).s(unitName).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questHintSound)
 		endmethod
 
 		public method displayItemAcquired takes string itemName, string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_ITEMACQUIRED, Format(tr("|cff87ceebNEUEN GEGENSTAND ERHALTEN|r\n%1% - %2%")).s(itemName).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_ITEMACQUIRED, Format(tre("|cff87ceebNEUEN GEGENSTAND ERHALTEN|r\n%1% - %2%", "|cff87ceebNEW ITEM ACQUIRED|r\n%1% - %2%")).s(itemName).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questHintSound)
 		endmethod
 
 		public method displayAbilityAcquired takes string abilityName, string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tr("|cff87ceebNEUE FÄHIGKEIT ERHALTEN|r\n%1% - %2%")).s(abilityName).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tre("|cff87ceebNEUE FÄHIGKEIT ERHALTEN|r\n%1% - %2%", "|cff87ceebNEW ABILITY ACQUIRED|r\n%1% - %2%")).s(abilityName).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questHintSound)
 		endmethod
 
@@ -336,11 +336,11 @@ endif
 		endmethod
 
 		public method displayDifficulty takes string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tr("|cff00ff00SCHWIERIGKEITSGRAD|r - %1%")).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tre("|cff00ff00SCHWIERIGKEITSGRAD|r - %1%", "|cff00ff00DIFFICULTY|r - %1%")).s(message).result())
 		endmethod
 
 		public method displayFinalLevel takes string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tr("|cff00ff00LETZTE STUFE|r - %1%")).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tre("|cff00ff00LETZTE STUFE|r - %1%", "|cff00ff00LAST LEVEL|r - %1%")).s(message).result())
 		endmethod
 
 		public method displayFinalLevelToAllOthers takes string message returns nothing
@@ -355,7 +355,7 @@ endif
 		endmethod
 
 		public method displayXPBonus takes integer xp, string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tr("|cff87ceebERFAHRUNGSBONUS ERHALTEN\n%1% - %2%")).i(xp).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_HINT, Format(tre("|cff87ceebERFAHRUNGSBONUS ERHALTEN|r\n%1% - %2%", "|cff87ceebACQUIRED EXPERIENCE BONUS|r\n%1% - %2%")).i(xp).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questHintSound)
 		endmethod
 

@@ -12,6 +12,16 @@ library StructMapSpellsSpellNeckStone requires Asl, StructGameClasses, StructMap
 		public stub method onMorph takes nothing returns nothing
 		endmethod
 		
+		public stub method canRestore takes nothing returns boolean
+			if (not IsTerrainPathable(GetUnitX(this.character().unit()), GetUnitY(this.character().unit()), PATHING_TYPE_WALKABILITY)) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Charakter muss sich außerhalb des Wassers befinden."))
+			
+				return false
+			endif
+			
+			return true
+		endmethod
+		
 		/// Called after unit has been restored.
 		public stub method onRestore takes nothing returns nothing
 		endmethod

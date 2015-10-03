@@ -21,6 +21,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			set thistype.m_dago = Fellow.create(Npcs.dago(), 0)
 			call thistype.m_dago.setTalk(false)
 			call thistype.m_dago.setRevival(false)
+			call thistype.m_dago.setRevivalTitle(tre("Dago", "Dago"))
 			call thistype.m_dago.setDescription(tre("Dago ist ein einfacher Jäger.", "Dago is a simple hunter."))
 
 			debug call Print("Before sisgard")

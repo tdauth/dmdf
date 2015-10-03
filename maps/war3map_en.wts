@@ -11,7 +11,7 @@ Talras 0.4
 
 STRING 2
 {
-6
+1-6
 }
 
 STRING 3
@@ -6988,13 +6988,13 @@ Wild boar
 }
 
 STRING 1168
-// Gegenstände: I007 (Gewaff), Name (Name (unam))
+// Gegenstände: I060 (Kurzschwert für Einar), Name (Name (unam))
 {
-Fangs
+Kurzschwert für Einar
 }
 
 STRING 1169
-// Gegenstände: I007 (Gewaff), Description (Beschreibung (ides))
+// Gegenstände: I007 (Hauer), Description (Beschreibung (ides))
 {
 The fangs of a wild boar.
 }
@@ -19460,13 +19460,13 @@ Seelendiebstahl [|cffffcc00Stufe 1|r]
 STRING 3255
 // Gegenstände: I020 (Jagdbogen), Name (Name (unam))
 {
-Jagdbogen
+Hunting Bow
 }
 
 STRING 3256
 // Gegenstände: I020 (Jagdbogen), Description (Beschreibung (ides))
 {
-Der Bogen eines Jägers.
+The bow of a hunter.
 }
 
 STRING 3257
@@ -19478,13 +19478,13 @@ Erhöht den Schaden um <A07N,DataA1>.
 STRING 3258
 // Gegenstände: I020 (Jagdbogen), Tip (Tooltipp - Einfach (utip))
 {
-Jagdbogen kaufen
+Buy Hunting Bow
 }
 
 STRING 3259
 // Gegenstände: I021 (Langbogen), Name (Name (unam))
 {
-Langbogen
+Long Bow
 }
 
 STRING 3260
@@ -36416,10 +36416,171 @@ STRING 6083
 (Kleriker - Ultimativzauber 1)
 }
 
+STRING 6084
+// Gegenstände: I007 (Hauer), Name (Name (unam))
+{
+Fangs
+}
+
+STRING 6085
+// Gegenstände: I00P (Sommerfell), Name (Name (unam))
+{
+Sommerfell
+}
+
+STRING 6086
+// Gegenstände: I060 (Kurzschwert für Einar), Ubertip (Tooltipp - Erweitert (utub))
+{
+Erhöht den Schaden um <A07H,DataA1>.
+}
+
 STRING 6087
 // Fähigkeiten: A0WL (Vervielfachung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch - Zauberer)
+}
+
+STRING 6088
+// Gegenstände: I060 (Kurzschwert für Einar), Tip (Tooltipp - Einfach (utip))
+{
+Buy Short Sword
+}
+
+STRING 6089
+// Fähigkeiten: A01Y (Heilige Kraft), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Basic Spell|r|nRestores 50 % of the maximum mana.|n<A01Y,Cool1> seconds cooldown.
+}
+
+STRING 6090
+// Fähigkeiten: A0X4 (Heilige Kraft - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Basic Spell|r|nRestores 50 % of the maximum mana.|n<A01Y,Cool1> seconds cooldown.
+}
+
+STRING 6091
+// Gegenstände: I061 (Aufträge), Tip (Tooltipp - Einfach (utip))
+{
+Buy Missions
+}
+
+STRING 6092
+// Gegenstände: I061 (Aufträge), Ubertip (Tooltipp - Erweitert (utub))
+{
+A list of current missions to jump to their target locations.
+}
+
+STRING 6093
+// Fähigkeiten: A1BY (Aufträge), Name (Name (anam))
+{
+Missions
+}
+
+STRING 6094
+// Fähigkeiten: A1BZ (Aufträge - Talras), Name (Name (anam))
+{
+Missions - Talras
+}
+
+STRING 6095
+// Fähigkeiten: A1BZ (Aufträge - Talras), Tip (Tooltipp - Normal (atp1))
+{
+Talras
+}
+
+STRING 6096
+// Zerstörbare Objekte: B00X (Testlaubbaum), Name (Name (bnam))
+{
+Testlaubbaum
+}
+
+STRING 6097
+{
+Missions
+}
+
+STRING 6098
+// Einheiten: n05Y (NPC-Laden), Name (Name (unam))
+{
+NPC Shop
+}
+
+STRING 6099
+// Einheiten: n05Y (NPC-Laden), Tip (Tooltipp - Einfach (utip))
+{
+Buy Items
+}
+
+STRING 6100
+// Einheiten: n05Y (NPC-Laden), Ubertip (Tooltipp - Erweitert (utub))
+{
+Changes to the stall of the person.
+}
+
+STRING 6101
+// Fähigkeiten: A1BZ (Aufträge - Talras), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Jumps to the current target location of the mission.
+}
+
+STRING 6102
+// Fähigkeiten: A1C0 (Aufträge - Die Nordmänner), Name (Name (anam))
+{
+Missions - The Norsemen
+}
+
+STRING 6103
+// Fähigkeiten: A1C0 (Aufträge - Die Nordmänner), Tip (Tooltipp - Normal (atp1))
+{
+The Norsemen
+}
+
+STRING 6104
+// Fähigkeiten: A1C0 (Aufträge - Die Nordmänner), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Jumps to the current target location of the mission.
+}
+
+STRING 6105
+// Fähigkeiten: A1C1 (Aufträge - Metzelei), Name (Name (anam))
+{
+Missions - Slaughter
+}
+
+STRING 6106
+// Fähigkeiten: A1C1 (Aufträge - Metzelei), Tip (Tooltipp - Normal (atp1))
+{
+Slaughter
+}
+
+STRING 6107
+// Fähigkeiten: A1C1 (Aufträge - Metzelei), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Jumps to the current target location of the mission.
+}
+
+STRING 6109
+// Fähigkeiten: A1C2 (Langschwert schmieden), Name (Name (anam))
+{
+Forge Long Sword
+}
+
+STRING 6110
+// Fähigkeiten: A1C2 (Langschwert schmieden), Tip (Tooltipp - Normal (atp1))
+{
+Forge Long Sword
+}
+
+STRING 6111
+// Fähigkeiten: A1C2 (Langschwert schmieden), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Increases the damage by <A04M,DataA1>.|n|nRequired materials:|n- 4 Iron
+}
+
+STRING 6112
+// Fähigkeiten: A1C2 (Langschwert schmieden), EditorSuffix (Editor-Suffix (ansf))
+{
+(Buch der Schmiedekunst)
 }
 
 STRING 6178
@@ -58308,7 +58469,7 @@ Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 9815
 // Einheiten: H01D (Jäger), Name (Name (unam))
 {
-Jäger
+Hunter
 }
 
 STRING 9816
@@ -58326,7 +58487,7 @@ STRING 9817
 STRING 9818
 // Einheiten: H01E (Nordmann), Name (Name (unam))
 {
-Nordmann
+Norseman
 }
 
 STRING 9819
@@ -58344,7 +58505,7 @@ STRING 9820
 STRING 9821
 // Einheiten: H01F (Hochelfin), Name (Name (unam))
 {
-Hochelfin
+High Elf
 }
 
 STRING 9822

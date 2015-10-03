@@ -203,6 +203,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_wielandHammers = NpcHammerRoutine.create(Routines.hammer(), Npcs.wieland(), MapData.evening, 13.00, gg_rct_waypoint_wieland_0)
 			call thistype.m_wielandHammers.setFacing(90.0)
 			call thistype.m_wielandHammers.setSound(gg_snd_BlacksmithWhat1)
+			call thistype.m_wielandHammers.setSoundVolume(30.0)
 			set thistype.m_wielandTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.wieland(), 13.00, MapData.evening, gg_rct_waypoint_wieland_1)
 			call thistype.m_wielandTalks.setPartner(Npcs.einar())
 			call thistype.m_wielandTalks.setFacing(203.95)

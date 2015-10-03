@@ -109,6 +109,15 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static ItemSpawnPoint m_manaHerb2
 		private static ItemSpawnPoint m_manaHerb3
 		
+		// way up to the castle
+		private static ItemSpawnPoint m_healingHerb5
+		private static ItemSpawnPoint m_healingHerb6
+		private static ItemSpawnPoint m_manaHerb4
+		private static ItemSpawnPoint m_manaHerb5
+		private static ItemSpawnPoint m_apple0
+		private static ItemSpawnPoint m_apple1
+		private static ItemSpawnPoint m_apple2
+		
 		// drum cave
 		private static ItemSpawnPoint m_iron0
 		private static ItemSpawnPoint m_iron1
@@ -151,6 +160,12 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		//private static SpawnPoint m_
 		
 		private static SpawnPoint m_bearMen0
+		
+		// river
+		private static SpawnPoint m_necks0
+		private static SpawnPoint m_necks1
+		private static SpawnPoint m_necks2
+		private static SpawnPoint m_necks3
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -437,6 +452,14 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set thistype.m_manaHerb2 = ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0432, 1.0)
 			set thistype.m_manaHerb3 = ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0433, 1.0)
 			
+			// way up to the castle
+			set thistype.m_healingHerb5 = ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0204, 1.0)
+			set thistype.m_healingHerb6 = ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0438, 1.0)
+			set thistype.m_manaHerb4 = ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0439, 1.0)
+			set thistype.m_manaHerb5 = ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0442, 1.0)
+			set thistype.m_apple0 = ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0443, 1.0)
+			set thistype.m_apple1 = ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0445, 1.0)
+			set thistype.m_apple2 = ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0444, 1.0)
 			
 			// drum cave
 			set thistype.m_iron0 = ItemSpawnPoint.createFromItemWithType(gg_item_I05Y_0399, 1.0)
@@ -833,6 +856,27 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_bearMen0.addNewItemType(index, 'I058', 1.0)
 			set index = thistype.m_bearMen0.addUnitWithType(gg_unit_n04G_0370, 1.0)
 			call thistype.m_bearMen0.addNewItemType(index, 'I058', 1.0)
+			
+			// river
+			
+			set thistype.m_necks0 = SpawnPoint.create()
+			set index = thistype.m_necks0.addUnitWithType(gg_unit_n05Z_0453, 1.0)
+			set index = thistype.m_necks0.addUnitWithType(gg_unit_n05Z_0466, 1.0)
+			set index = thistype.m_necks0.addUnitWithType(gg_unit_n05Z_0452, 1.0)
+			
+			set thistype.m_necks1 = SpawnPoint.create()
+			set index = thistype.m_necks1.addUnitWithType(gg_unit_n05Z_0451, 1.0)
+			set index = thistype.m_necks1.addUnitWithType(gg_unit_n05Z_0447, 1.0)
+			set index = thistype.m_necks1.addUnitWithType(gg_unit_n05Z_0451, 1.0)
+			
+			set thistype.m_necks2 = SpawnPoint.create()
+			set index = thistype.m_necks2.addUnitWithType(gg_unit_n05Z_0468, 1.0)
+			set index = thistype.m_necks2.addUnitWithType(gg_unit_n05Z_0467, 1.0)
+			
+			set thistype.m_necks3 = SpawnPoint.create()
+			set index = thistype.m_necks3.addUnitWithType(gg_unit_n05Z_0469, 1.0)
+			set index = thistype.m_necks3.addUnitWithType(gg_unit_n05Z_0470, 1.0)
+			set index = thistype.m_necks3.addUnitWithType(gg_unit_n05Z_0471, 1.0)
 		endmethod
 
 		/// \todo change unit type

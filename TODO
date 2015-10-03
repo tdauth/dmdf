@@ -542,7 +542,7 @@
 * FIXED: Bekehrung: Sollte die Einheit am Ende nicht töten sondern die Kontrolle zurückgeben.
 * Verwandlung und Levelup öffnen automatisch das Zauberbuch!
 * FIXED: Schaf reiten ermöglicht Verwandlung in andere Gestalten durch das Inventar während man auf einem Schaf reitet. Sollte nicht zugelassen werden. Nur eine Verwandlung zulassen, ansonsten Verschachtelung.
-* Transparente Bäume.
+* FIXED: Transparente Bäume.
 * Klerikerzauber: Schutz durch Anzahl erkundeter Schreine?
 * Video "The First Combat": Vier Nordmänner stehen nebeneinander auf dem Hügel aber nicht Ricman.
 * Video "The Chief": Plötzliche cuts umbauen.
@@ -554,14 +554,15 @@
 * FIXED: Zacken von Deranors Krone: Icon verbergen.
 * Göttergunst: Autocast-Icon disabled-Version fehlt.
 * FIXED: Standarte der schwarzen Legion: Icon ist noch sichtbar.
-* Für Bestehlen die Stufen der NPCs höher als 0 setzen.
+* FIXED: Für Bestehlen die Stufen der NPCs höher als 0 setzen.
+* FIXED: Bestehlen sollte bei Stufe 0 nicht möglich sein.
 * DONE: Quest Krieg: Fallengebiet vor dem Tor machen weil von dort später die ersten Orks angerifen.
 * DONE: Quest Krieg: Fallenplatzierung soll tatsächlich Fallen für später platzieren. Zunächst unbesiegbar und deaktiviert und bei erster Ork-Welle aktivieren.
 * FIXED: Quest Die Verteidigung von Talras: 5000 Goldmünzen reichen für den Verbündeten locker aus.
 * Die Verteidigung von Talras: Orks schwächer machen, dafür mehr.
 * DEPRECATED: Falle: Soll nur feindlichen Einheiten schaden!!!
 * FIXED: Tor beladen: Auch Verbündete zulassen.
-* Reinheit: Stoppen falls keine Buffs da sind.
+* FIXED: Reinheit: Stoppen falls keine Buffs da sind.
 * FIXED: Tagesablaufgesprächstext nur anzeigen, wenn NPC sichtbar ist.
 * DONE: Buch der Schmiedekunst in Wielands Laden einfügen.
 * Menschliche Soldaten in Die Verteidigung von Talras stärker machen.
@@ -572,10 +573,10 @@
 * Ein Tutorial über 3D-Sounds lesen und die 3D-Sounds für Gespräche zwischen NPCs richtig einstellen.
 * Die Zauberbuchfähigkeiten für Icons von Gegenstände brauchen eine andere ID als spellbook. Ansonsten werden die Zauber in den Zauberfähigkeiten angezeigt?
 * VideoTheDefenseOfTalras: Erzeugte Besatzer des Außenpostens verbergen. Am besten bei Betreten des Gebietes direkt entfernen. Werden zu Beginn des Quests sowieso entfernt.
-* Gesprächstagesabläufe: Sound soll für einen Spieler nur abgespielt werden wenn die Einheit sichtbar ist, so wie Texttag.
+* FIXED: Gesprächstagesabläufe: Sound soll für einen Spieler nur abgespielt werden wenn die Einheit sichtbar ist, so wie Texttag.
 * Drachentöterin läuft in Videos immer noch weg. Wieso bringt der "stop"-Befehl nichts?! Computer KI??
 * Götzenbild-Zauber fixen.
-* Drachenschuppe bei Drachentöterin verkaufen.
+* FIXED: Drachenschuppe bei Drachentöterin verkaufen.
 * FIXED: Schütze braucht passives Icon.
 * FIXED: Brandpfeile, passives Icon für Zauber verwenden.
 * Sprinten zur Sicherheit auf Standardfähigkeit basieren lassen und auch Angriffsgeschwindikeit erhöhen.
@@ -598,7 +599,7 @@ TODO:
 - Objektdatenkompression: w3o zu SLK-Dateien?
 - FIXED: Change owner of Dago when he dies, back from allied player!
 - FIXED: pans zu Dago bei rescue Dago.
-- Quest-Pings mit Pans als Durchschaltemenü im Haupt-Menü.
+- Quest-Pings mit Pans als Durchschaltemenü im Haupt-Menü bzw. als Gegenstand.
 - Hauptmenü-Einträge um Leaderboards zu verbergen
 - FIXED: FDF-Dateien aus custom exe entfernen. Ansonsten ist die Mod immer Deutsch.
 - DEPRECATED: Taverne entfernen
@@ -631,7 +632,7 @@ Test mit zwei menschlichen Spielern:
 * FIXED: Dago-Dialog: "Ich habe hier einen Pilz" statt mehrere
 * FIXED: Trainierst du nachts, kommt schon abends 19 Uhr
 * Felsvorsprung entfernen
-* Inventarfehler: Spieler 2 macht Inventar auf und zu und Gegenstände liegen auf einmal am Boden! Nur wenn das Inventar vorher voll war.
+* DEPRECATED: Inventarfehler: Spieler 2 macht Inventar auf und zu und Gegenstände liegen auf einmal am Boden! Nur wenn das Inventar vorher voll war.
 * FIXED: NPC-Tipp-Gebiet von Dago kleiner machen als Gebiet mit Schreintipp. Tipp sollte anzeigen: NPCs mit Ausrufezeichen können angesprochen werden.
 * FIXED: Langboot sollte mehr Leben haben!
 * Langboot Schattenradius erhöhen poppt sonst auf.

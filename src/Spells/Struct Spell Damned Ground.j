@@ -6,7 +6,9 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 		private timer m_timer
 		private real m_x
 		private real m_y
-		private static constant integer maxTilepoints = 5 * R2I(bj_CELLWIDTH) * 5 * R2I(bj_CELLWIDTH)
+		public static constant integer width = 2 * R2I(bj_CELLWIDTH)
+		public static constant integer height = 2 * R2I(bj_CELLWIDTH)
+		private static constant integer maxTilepoints = 2 * R2I(bj_CELLWIDTH) * 2 * R2I(bj_CELLWIDTH)
 		private boolean array m_damned[thistype.maxTilepoints]
 		private integer array m_terrainType[thistype.maxTilepoints]
 		private integer array m_terrainVariance[thistype.maxTilepoints]
@@ -20,13 +22,13 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 			
 			set i = 0
 			loop
-				exitwhen (i >= 5 * R2I(bj_CELLWIDTH))
+				exitwhen (i >= thistype.width)
 				set j = 0
 				loop
-					exitwhen (j >= 5 * R2I(bj_CELLWIDTH))
+					exitwhen (j >= thistype.height)
 					set x = this.m_x + i
 					set y = this.m_y + j
-					set index = Index2D(i, j, 5 * R2I(bj_CELLWIDTH))
+					set index = Index2D(i, j, thistype.height)
 					if (this.m_damned[index]) then
 						call SetBlightPoint(this.m_spell.character().player(), x, y, false)
 						call SetTerrainType(x, y, this.m_terrainType[index], this.m_terrainVariance[index], 1, 1)
@@ -60,14 +62,14 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 		
 			set i = 0
 			loop
-				exitwhen (i >= 5 * R2I(bj_CELLWIDTH))
+				exitwhen (i >= thistype.width)
 				set j = 0
 				loop
-					exitwhen (j >= 5 * R2I(bj_CELLWIDTH))
+					exitwhen (j >= thistype.height)
 					set x = this.m_x + i
 					set y = this.m_y + j
 					if (not IsPointBlighted(x, y)) then
-						set index = Index2D(i, j, 5 * R2I(bj_CELLWIDTH))
+						set index = Index2D(i, j, thistype.height)
 						set this.m_damned[index] = true
 						set this.m_terrainType[index] = GetTerrainType(x, y)
 						set this.m_terrainVariance[index] = GetTerrainVariance(x, y)

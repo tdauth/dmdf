@@ -18,6 +18,10 @@ library StructSpellsSpellRob requires Asl, StructGameClasses, StructGameSpell
 				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Einheit wurde erst kürzlich bestohlen."))
 				
 				return false
+			elseif (GetUnitLevel(GetSpellTargetUnit()) == 0) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Einheit besitzt Stufe 0."))
+				
+				return false
 			endif
 			
 			return true

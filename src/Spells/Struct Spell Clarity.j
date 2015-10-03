@@ -11,13 +11,23 @@ library StructSpellsSpellClarity requires Asl, StructGameClasses, StructGameSpel
 		public static constant integer classSelectionAbilityId = 'A0OX'
 		public static constant integer classSelectionGrimoireAbilityId = 'A0P2'
 		public static constant integer maxLevel = 5
+		
+		private method condition takes nothing returns boolean
+			if (not UnitHasBuffsEx(GetSpellTargetUnit(), false, true, true, false, false, false, true)) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Einheit besitzt keine negativen Zauberverstärker."))
+			
+				return false
+			endif
+			
+			return true
+		endmethod
 
 		private method action takes nothing returns nothing
 			call UnitRemoveBuffs(GetSpellTargetUnit(), false, true)
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
 			call this.addGrimoireEntry('A0OX', 'A0P2')
 			call this.addGrimoireEntry('A0OY', 'A0P3')

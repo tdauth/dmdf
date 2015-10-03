@@ -14,6 +14,7 @@ library StructGameRoutines requires Asl
 	
 	struct NpcHammerRoutine extends NpcRoutineWithFacing
 		private sound m_sound
+		private real m_soundVolume = 100.0
 		
 		public method setSound takes sound whichSound returns nothing
 			set this.m_sound = whichSound
@@ -21,6 +22,14 @@ library StructGameRoutines requires Asl
 		
 		public method sound takes nothing returns sound
 			return this.m_sound
+		endmethod
+		
+		public method setSoundVolume takes real soundVolume returns nothing
+			set this.m_soundVolume = soundVolume
+		endmethod
+		
+		public method soundVolume takes nothing returns real
+			return this.m_soundVolume
 		endmethod
 	endstruct
 	
@@ -188,7 +197,7 @@ library StructGameRoutines requires Asl
 		private static method hammerTargetAction takes NpcHammerRoutine period returns nothing
 			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), "Attack")
-			call PlaySoundOnUnitBJ(period.sound(), 100.0, period.unit())
+			call PlaySoundOnUnitBJ(period.sound(), period.soundVolume(), period.unit())
 			call TriggerSleepAction(1.0)
 			call AContinueRoutineLoop(period, thistype.hammerTargetAction)
 		endmethod

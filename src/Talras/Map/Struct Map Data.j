@@ -157,7 +157,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		endmethod
 		
 		private static method triggerActionTalkHint takes nothing returns nothing
-			call Character(ACharacter.getCharacterByUnit(GetTriggerUnit())).displayHint("Schicken Sie ihren Charakter in der Nähe eines NPCs mit Ausrufezeichen auf diesen, um ihn anzusprechen.")
+			call Character(ACharacter.getCharacterByUnit(GetTriggerUnit())).displayHint(tre("Schicken Sie ihren Charakter in die Nähe einer Person, um diese anzusprechen. Klicken Sie dazu auf die Person und wählen Sie \"Person ansprechen\" aus.", "Send your character near a person to speak to the person. For that click on the person and select \"Speak to person\"."))
 			set thistype.m_talkHintShown[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = true
 		endmethod
 		
