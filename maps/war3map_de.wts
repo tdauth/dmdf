@@ -11,7 +11,7 @@ Talras 0.4
 
 STRING 2
 {
-6
+1-6
 }
 
 STRING 3
@@ -4118,6 +4118,7 @@ Auftragsstatus:
 }
 
 STRING 689
+// Gegenstände: I061 (Aufträge), Name (Name (unam))
 {
 Aufträge
 }
@@ -6988,19 +6989,19 @@ Keiler
 }
 
 STRING 1168
-// Gegenstände: I007 (Gewaff), Name (Name (unam))
+// Gegenstände: I060 (Kurzschwert für Einar), Name (Name (unam))
 {
-Gewaff
+Kurzschwert für Einar
 }
 
 STRING 1169
-// Gegenstände: I007 (Gewaff), Description (Beschreibung (ides))
+// Gegenstände: I007 (Hauer), Description (Beschreibung (ides))
 {
 Die Eckzähne eines Keilers.
 }
 
 STRING 1170
-// Gegenstände: I007 (Gewaff), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I007 (Hauer), Ubertip (Tooltipp - Erweitert (utub))
 {
 Die Eckzähne eines Keilers.
 }
@@ -8278,19 +8279,19 @@ Rothirsch
 }
 
 STRING 1383
-// Gegenstände: I00P (Sommerdecke), Name (Name (unam))
+// Gegenstände: I01Y (Kurzschwert), Description (Beschreibung (ides))
 {
-Sommerdecke
+Ein Kurzschwert.
 }
 
 STRING 1384
-// Gegenstände: I00P (Sommerdecke), Description (Beschreibung (ides))
+// Gegenstände: I00P (Sommerfell), Description (Beschreibung (ides))
 {
 Das Sommerfell eines Rothirschs.
 }
 
 STRING 1385
-// Gegenstände: I00P (Sommerdecke), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I00P (Sommerfell), Ubertip (Tooltipp - Erweitert (utub))
 {
 Das Sommerfell eines Rothirschs.
 }
@@ -19104,7 +19105,7 @@ Speer kaufen
 }
 
 STRING 3196
-// Gegenstände: I01Y (Kurzschwert), Description (Beschreibung (ides))
+// Gegenstände: I060 (Kurzschwert für Einar), Description (Beschreibung (ides))
 {
 Ein Kurzschwert.
 }
@@ -21857,9 +21858,9 @@ Vervielfachung [|cffffcc00Stufe 5|r]
 }
 
 STRING 3658
-// Fähigkeiten: A01Y (Heilige Kraft), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Gegenstände: I061 (Aufträge), Description (Beschreibung (ides))
 {
-|cffffff00Grundzauber|r|nStellt 50 % des maximal Manas wieder her.|n<A01Y,Cool1> Sekunden Abklingzeit.
+Eine Liste der aktuellen Aufträge.
 }
 
 STRING 3659
@@ -36414,10 +36415,171 @@ STRING 6083
 (Kleriker - Ultimativzauber 1)
 }
 
+STRING 6084
+// Gegenstände: I007 (Hauer), Name (Name (unam))
+{
+Hauer
+}
+
+STRING 6085
+// Gegenstände: I00P (Sommerfell), Name (Name (unam))
+{
+Sommerfell
+}
+
+STRING 6086
+// Gegenstände: I060 (Kurzschwert für Einar), Ubertip (Tooltipp - Erweitert (utub))
+{
+Erhöht den Schaden um <A07H,DataA1>.
+}
+
 STRING 6087
 // Fähigkeiten: A0WL (Vervielfachung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch - Zauberer)
+}
+
+STRING 6088
+// Gegenstände: I060 (Kurzschwert für Einar), Tip (Tooltipp - Einfach (utip))
+{
+Kurzschwert kaufen
+}
+
+STRING 6089
+// Fähigkeiten: A01Y (Heilige Kraft), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber|r|nStellt 50 % des maximal Manas wieder her.|n<A01Y,Cool1> Sekunden Abklingzeit.
+}
+
+STRING 6090
+// Fähigkeiten: A0X4 (Heilige Kraft - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber|r|nStellt 50 % des maximal Manas wieder her.|n<A01Y,Cool1> Sekunden Abklingzeit.
+}
+
+STRING 6091
+// Gegenstände: I061 (Aufträge), Tip (Tooltipp - Einfach (utip))
+{
+Aufträge kaufen
+}
+
+STRING 6092
+// Gegenstände: I061 (Aufträge), Ubertip (Tooltipp - Erweitert (utub))
+{
+Eine Liste der aktuellen Aufträge, um zu deren Zielorten zu springen.
+}
+
+STRING 6093
+// Fähigkeiten: A1BY (Aufträge), Name (Name (anam))
+{
+Aufträge
+}
+
+STRING 6094
+// Fähigkeiten: A1BZ (Aufträge - Talras), Name (Name (anam))
+{
+Aufträge - Talras
+}
+
+STRING 6095
+// Fähigkeiten: A1BZ (Aufträge - Talras), Tip (Tooltipp - Normal (atp1))
+{
+Talras
+}
+
+STRING 6096
+// Zerstörbare Objekte: B00X (Testlaubbaum), Name (Name (bnam))
+{
+Testlaubbaum
+}
+
+STRING 6097
+{
+Aufträge
+}
+
+STRING 6098
+// Einheiten: n05Y (NPC-Laden), Name (Name (unam))
+{
+NPC-Laden
+}
+
+STRING 6099
+// Einheiten: n05Y (NPC-Laden), Tip (Tooltipp - Einfach (utip))
+{
+Gegenstände kaufen
+}
+
+STRING 6100
+// Einheiten: n05Y (NPC-Laden), Ubertip (Tooltipp - Erweitert (utub))
+{
+Wechselt zum Verkaufsstand der Person.
+}
+
+STRING 6101
+// Fähigkeiten: A1BZ (Aufträge - Talras), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Springt zum aktuellen Zielpunkt des Auftrags.
+}
+
+STRING 6102
+// Fähigkeiten: A1C0 (Aufträge - Die Nordmänner), Name (Name (anam))
+{
+Aufträge - Die Nordmänner
+}
+
+STRING 6103
+// Fähigkeiten: A1C0 (Aufträge - Die Nordmänner), Tip (Tooltipp - Normal (atp1))
+{
+Die Nordmänner
+}
+
+STRING 6104
+// Fähigkeiten: A1C0 (Aufträge - Die Nordmänner), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Springt zum aktuellen Zielpunkt des Auftrags.
+}
+
+STRING 6105
+// Fähigkeiten: A1C1 (Aufträge - Metzelei), Name (Name (anam))
+{
+Aufträge - Metzelei
+}
+
+STRING 6106
+// Fähigkeiten: A1C1 (Aufträge - Metzelei), Tip (Tooltipp - Normal (atp1))
+{
+Metzelei
+}
+
+STRING 6107
+// Fähigkeiten: A1C1 (Aufträge - Metzelei), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Springt zum aktuellen Zielpunkt des Auftrags.
+}
+
+STRING 6109
+// Fähigkeiten: A1C2 (Langschwert schmieden), Name (Name (anam))
+{
+Langschwert schmieden
+}
+
+STRING 6110
+// Fähigkeiten: A1C2 (Langschwert schmieden), Tip (Tooltipp - Normal (atp1))
+{
+Langschwert schmieden
+}
+
+STRING 6111
+// Fähigkeiten: A1C2 (Langschwert schmieden), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden um <A04M,DataA1>.|n|nBenötigte Rohstoffe:|n- 4 Eisen
+}
+
+STRING 6112
+// Fähigkeiten: A1C2 (Langschwert schmieden), EditorSuffix (Editor-Suffix (ansf))
+{
+(Buch der Schmiedekunst)
 }
 
 STRING 6178
@@ -49036,12 +49198,6 @@ STRING 8280
 // Fähigkeiten: A0X5 (Heilige Kraft - Stufe 1), Name (Name (anam))
 {
 Heilige Kraft - Stufe 1
-}
-
-STRING 8281
-// Fähigkeiten: A0X4 (Heilige Kraft - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-|cffffff00Grundzauber|r|nStellt 50 % des maximal Manas wieder her.|n<A01Y,Cool1> Sekunden Abklingzeit.
 }
 
 STRING 8282
