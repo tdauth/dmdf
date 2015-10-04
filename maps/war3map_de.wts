@@ -36558,6 +36558,12 @@ STRING 6107
 Springt zum aktuellen Zielpunkt des Auftrags.
 }
 
+STRING 6108
+// Einheiten: n05Z (Verführerische Nixe), Name (Name (unam))
+{
+Verführerische Nixe
+}
+
 STRING 6109
 // Fähigkeiten: A1C2 (Langschwert schmieden), Name (Name (anam))
 {
@@ -36577,9 +36583,57 @@ Erhöht den Schaden um <A04M,DataA1>.|n|nBenötigte Rohstoffe:|n- 4 Eisen
 }
 
 STRING 6112
-// Fähigkeiten: A1C2 (Langschwert schmieden), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1BC (Kurzschwert schmieden), EditorSuffix (Editor-Suffix (ansf))
 {
 (Buch der Schmiedekunst)
+}
+
+STRING 6113
+// Fähigkeiten: A1C3 (Frost-Rüstung), EditorSuffix (Editor-Suffix (ansf))
+{
+ (Automatisches Zaubern) (Verführerische Nixe)
+}
+
+STRING 6114
+// Fähigkeiten: A1C4 (Wirbelsturm), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verführerische Nixe)
+}
+
+STRING 6115
+// Fähigkeiten: A1C5 (Parasit), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verführerische Nixe)
+}
+
+STRING 6116
+// Gegenstände: I062 (Trollketten), Name (Name (unam))
+{
+Trollketten
+}
+
+STRING 6117
+// Gegenstände: I062 (Trollketten), Description (Beschreibung (ides))
+{
+Erlauben das Fesseln von Gegnern.
+}
+
+STRING 6118
+// Gegenstände: I062 (Trollketten), Ubertip (Tooltipp - Erweitert (utub))
+{
+Erlauben das Fesseln von Gegnern.
+}
+
+STRING 6119
+// Gegenstände: I062 (Trollketten), Tip (Tooltipp - Einfach (utip))
+{
+Trollketten kaufen
+}
+
+STRING 6120
+// Fähigkeiten: A1C6 (Trollketten), Name (Name (anam))
+{
+Trollketten
 }
 
 STRING 6178
@@ -92409,7 +92463,7 @@ Erhöht den Schaden um <A07H,DataA1>.|n|nBenötigte Rohstoffe:|n- 2 Eisen
 }
 
 STRING 15472
-// Fähigkeiten: A1BC (Kurzschwert schmieden), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1BD (Erz schmelzen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Buch der Schmiedekunst)
 }
@@ -92433,7 +92487,7 @@ Erzeugt Eisen.|n|nBenötigte Rohstoffe:|n- Erz
 }
 
 STRING 15476
-// Fähigkeiten: A1BD (Erz schmelzen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C2 (Langschwert schmieden), EditorSuffix (Editor-Suffix (ansf))
 {
 (Buch der Schmiedekunst)
 }
