@@ -10,14 +10,16 @@ library StructMapQuestsQuestTheBeast requires Asl
 			return this.m_talkedToKuno
 		endmethod
 
-		public method findTracks takes nothing returns nothing
+		public method findTracks takes nothing returns boolean
 			set this.m_foundTracks = true
 			call this.displayUpdateMessage(tr("Hinweis erhalten: Auf dem Boden befinden sich Blutspuren. Das könnte Tanka interessieren!"))
 			if (this.talkedToKuno()) then
-				call this.questItem(0).complete()
+				return true
 			else
 				call this.displayUpdateMessage(tr("Finde noch mehr Hinweise!"))
 			endif
+			
+			return false
 		endmethod
 
 		public method foundTracks takes nothing returns boolean
@@ -45,9 +47,13 @@ library StructMapQuestsQuestTheBeast requires Asl
 		// return always false since it will be completed by method findTracks
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
 			if (GetTriggerUnit() == questItem.character().unit() and not thistype(questItem.quest()).foundTracks()) then
-				call thistype(questItem.quest()).findTracks()
+				return thistype(questItem.quest()).findTracks()
 			endif
 			return false
+		endmethod
+		
+		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
+			call thistype(questItem.quest()).displayState()
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
@@ -58,13 +64,14 @@ library StructMapQuestsQuestTheBeast requires Asl
 			set this.m_talkedToKuno = false
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBestienhaeuptling.blp")
 			call this.setDescription(tr("Die Schamanin Tanka und ihr Gefährte, der Bärenmensch Brogo, benötigen bei ihrer Suche nach einer Bestie Hilfe. Das Ungeheuer soll im Alleingang alle Bärenmenschen Brogos Stammes bis auf ihn selbst ausgerottet haben."))
-			call this.setReward(AAbstractQuest.rewardExperience, 300)
-			call this.setReward(AAbstractQuest.rewardGold, 30)
+			call this.setReward(thistype.rewardExperience, 300)
+			call this.setReward(thistype.rewardGold, 30)
 			// item 0
 			set questItem0 = AQuestItem.create(this, tr("Suche nach Hinweisen bezüglich des Ungeheuers."))
-			call questItem0.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted0)
-			call questItem0.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted0)
-			/// @todo Add event, condition and action (display message ...)
+			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
+			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
+			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
+
 			// item 1
 			set questItem1 = AQuestItem.create(this, tr("Berichte Tanka von den gefundenen Hinweisen."))
 

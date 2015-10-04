@@ -36,6 +36,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 				debug call Print("Cats maximum has already been reached.")
 			debug endif
 			call SetUnitOwner(cat, newOwner, true)
+			call SetUnitInvulnerable(cat, true)
 			call IssueTargetOrder(cat, "move", gg_unit_n020_0012)
 			call this.m_cats.pushBack(cat)
 			set this.m_playerCatCount[GetPlayerId(owner)] = this.m_playerCatCount[GetPlayerId(owner)] + 1
@@ -85,7 +86,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 		endmethod
 
 		/// @todo Katzen sind normale kaufbare Einheiten, welche vom Käuferspieler gesteuert werden können. Sie werden an Brogo übergeben und stehen am besten um ihn herum (Katzenflut und so).
-		private static method giveCatsToBrogo takes AInfo info, ACharacter character returns nothing
+		private static method giveCatsToBrogo takes AInfo info, Character character returns nothing
 			local thistype talk = info.talk()
 			local integer countedCats = talk.countCats(character.player())
 			debug call Print("Count cats: " + I2S(countedCats))
@@ -116,6 +117,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 				call speech(info, character, true, tr("Jetzt aber genug Katzen. Brogo gibt dir Belohnung und dankt dir für Katzen."), null)
 				call speech(info, character, true, tr("Belohnung ist Waffe von Troll. Brogo hat getötet viele Trolle. Trolle böser als Katzen."), null)
 				call QuestCatsForBrogo.characterQuest(character).questItem(0).complete()
+				call character.giveItem('I062')
 			// (Brogos Maximalanzahl der geschenkten Katzen noch nicht erreicht)
 			else
 				call speech(info, character, true, tr("Streicheln macht Brogo Spaß. Brogo will aber noch mehr Katzen."), null)

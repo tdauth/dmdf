@@ -1,6 +1,10 @@
 library StructGameTalk requires Asl
 
 	struct Talk extends ATalk
+		/**
+		 * This trigger handles sellings of non talk NPCs and removes the sold units for them as well.
+		 */
+		private static trigger m_sellTriggerForNonTalks
 		private trigger m_sellTrigger
 		
 		private static method triggerConditionSell takes nothing returns boolean
@@ -58,12 +62,45 @@ library StructGameTalk requires Asl
 			call UnitAddAbility(whichUnit, 'A19X')
 			call AddUnitToStock(whichUnit, 'n05E', 1, 1)
 			
+			/*
+			 * Store the talk on the unit to detect if the unit has a talk.
+			 * This is necessary for the trigger m_sellTriggerForNonTalks.
+			 */
+			call DmdfHashTable.global().setHandleInteger(whichUnit, "Talk", this)
+			
 			return this
 		endmethod
 		
 		public method onDestroy takes nothing returns nothing
 			call DmdfHashTable.global().destroyTrigger(this.m_sellTrigger)
 			set this.m_sellTrigger = null
+			
+			call DmdfHashTable.global().removeHandleInteger(this.unit(), "Talk")
+		endmethod
+		
+		private static method triggerConditionSellForNonTalks takes nothing returns boolean
+			if (GetUnitTypeId(GetSoldUnit()) == 'n05E' and not DmdfHashTable.global().hasHandleInteger(GetSellingUnit(), "Talk")) then
+				return true
+			endif
+			
+			return false
+		endmethod
+		
+		private static method triggerActionSellForNonTalks takes nothing returns nothing
+			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
+			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
+			debug call Print("Buying unit " + GetUnitName(GetBuyingUnit()))
+			call SetUnitInvulnerable(GetSoldUnit(), true)
+			call ShowUnit(GetSoldUnit(), false)
+			call PauseUnit(GetSoldUnit(), true)
+			call RemoveUnit(GetSoldUnit())
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.m_sellTriggerForNonTalks = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_sellTriggerForNonTalks, EVENT_PLAYER_UNIT_SELL)
+			call TriggerAddCondition(thistype.m_sellTriggerForNonTalks, Condition(function thistype.triggerConditionSellForNonTalks))
+			call TriggerAddAction(thistype.m_sellTriggerForNonTalks, function thistype.triggerActionSellForNonTalks)
 		endmethod
 	
 	endstruct
