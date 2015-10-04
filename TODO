@@ -589,6 +589,9 @@
 * Zukünftiger Release-Vorgang: Optimizer jedoch nur mit Skriptoptimierungen damit war3map.wts unverändert bleibt. Karte kopieren und englische wts-Datei einfügen.
 * FIXED: Wie bei Originaltransmissions weißen Indicator bei der sprechenden Einheit anzeigen!
 * Elementarmagier statt gleißendem Licht/Erdgefängnis, zu viele Stunzauber, Steingolem beschwören?
+* Mitwirkende: Gebiet für Spieler 2 nicht sichtbar.
+* FIXED: Mitwirkende: Floating Text von Spieler 1 wird Spieler 2 angezeigt.
+* DONE: Info-Log: Stürzt ab, deaktivieren.
 
 TODO:
 - FIXED: Texte der NPCs hiden falls das Gebiet nicht sichtbar ist.

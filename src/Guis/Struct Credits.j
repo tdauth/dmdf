@@ -116,7 +116,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			call SetTextTagText(textTag, text, 0.023)
 			call SetTextTagPos(textTag, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), CameraSetupGetField(gg_cam_class_selection, CAMERA_FIELD_ZOFFSET))
 			call SetTextTagColor(textTag, red, green, blue, alpha)
-			call SetTextTagVisibility(textTag, true)
+			call SetTextTagVisibility(textTag, false)
 			call SetTextTagVelocity(textTag, 0.0, 0.020)
 			call ShowTextTagForPlayer(whichPlayer, textTag, true)
 			set textTag = null
