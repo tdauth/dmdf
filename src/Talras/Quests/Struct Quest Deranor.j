@@ -9,8 +9,8 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		public stub method distributeRewards takes nothing returns nothing
 			local integer i
 			local item whichItem
-			/// \todo JassHelper bug
-			//call AQuest.distributeRewards()
+
+			call super.distributeRewards()
 			/*
 			 * Zacken von Deranors Krone
 			 * 3 Schattensteine
@@ -68,6 +68,8 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			call TalkDragonSlayer.initTalk()
 			
 			call VideoDeranorsDeath.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			// wait until the video has played to complete the quest
 		endmethod
 
 		private static method create takes nothing returns thistype

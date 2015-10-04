@@ -218,6 +218,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 
 		public stub method enable takes nothing returns boolean
 			local boolean result = this.setState(thistype.stateNew)
+			local integer i
 			set this.m_questAreaWieland = QuestAreaWarWieland.create(gg_rct_quest_war_wieland)
 			set this.m_questAreaManfred = QuestAreaWarManfred.create(gg_rct_quest_war_manfred)
 			set this.m_questAreaKuno = QuestAreaWarKuno.create(gg_rct_quest_war_kuno)
@@ -231,6 +232,13 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
+			
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAbilityAvailable(Player(i), SpellMissionWar.abilityId, true)
+				set i = i + 1
+			endloop
 			
 			call this.displayState()
 
@@ -922,7 +930,9 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		
 		public stub method distributeRewards takes nothing returns nothing
 			// TODO besonderer Gegenstand für die Klasse
-			//call AAbstractQuest.distributeRewards()
+			
+			// call this method, otherwise the characters do not get their rewards
+			call super.distributeRewards()
 		endmethod
 
 		private static method create takes nothing returns thistype
@@ -930,8 +940,8 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
 			call this.setDescription(tr("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden."))
-			call this.setReward(AAbstractQuest.rewardExperience, 1000)
-			call this.setReward(AAbstractQuest.rewardGold, 1000)
+			call this.setReward(thistype.rewardExperience, 2000)
+			call this.setReward(thistype.rewardGold, 2000)
 
 			// quest item questItemWeaponsFromWieland
 			set questItem = AQuestItem.create(this, tr("Besorgt Waffen vom Schmied Wieland."))

@@ -1,6 +1,7 @@
 library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 
 	private struct HuntTimer
+		public static constant real time = 30.0
 		private player m_player
 		private timer m_timer
 		private timerdialog m_timerDialog
@@ -22,7 +23,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 			local thistype this = thistype.allocate()
 			set this.m_timer = CreateTimer()
 			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
-			call TimerStart(this.m_timer, 10.0, false, function thistype.timerFunction)
+			call TimerStart(this.m_timer, thistype.time, false, function thistype.timerFunction)
 			set this.m_timerDialog = CreateTimerDialog(this.m_timer)
 			call TimerDialogSetTitle(this.m_timerDialog, tr("Zeit bis das Rebhuhn wegfliegt"))
 			call TimerDialogDisplayForPlayerBJ(true, this.m_timerDialog, whichPlayer)

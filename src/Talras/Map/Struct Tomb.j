@@ -6,7 +6,6 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 	struct Tomb
 		private static trigger m_enterTrigger
 		private static trigger m_leaveTrigger
-		private static trigger m_shakeTrigger
 		private static boolean array m_playerJoined[6] /// TODO MapData.maxPlayers
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Tomb\"")
@@ -107,18 +106,10 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 			call DestroyForce(whichForce)
 			set whichForce = null
 		endmethod
-		
-		private static method createShakeTrigger takes nothing returns nothing
-			set thistype.m_shakeTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(thistype.m_shakeTrigger, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
-			call TriggerAddCondition(thistype.m_shakeTrigger, Condition(function thistype.triggerConditionShake))
-			call TriggerAddAction(thistype.m_shakeTrigger, function thistype.triggerActionShake)
-		endmethod
 
 		public static method init takes nothing returns nothing
 			call thistype.createEnterTrigger()
 			call thistype.createLeaveTrigger()
-			call thistype.createShakeTrigger()
 		endmethod
 
 		private static method destroyEnterTrigger takes nothing returns nothing
@@ -130,16 +121,10 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 			call DestroyTrigger(thistype.m_leaveTrigger)
 			set thistype.m_leaveTrigger = null
 		endmethod
-		
-		private static method destroyShakeTrigger takes nothing returns nothing
-			call DestroyTrigger(thistype.m_shakeTrigger)
-			set thistype.m_shakeTrigger = null
-		endmethod
 
 		public static method cleanUp takes nothing returns nothing
 			call thistype.destroyEnterTrigger()
 			call thistype.destroyLeaveTrigger()
-			call thistype.destroyShakeTrigger()
 		endmethod
 	endstruct
 

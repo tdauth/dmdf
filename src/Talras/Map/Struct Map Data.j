@@ -97,8 +97,8 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant real evening = 18.0
 		public static constant real videoWaitInterval = 1.0
 		public static constant real revivalTime = 35.0
-		public static constant real revivalLifePercentage = 50.0
-		public static constant real revivalManaPercentage = 10.0
+		public static constant real revivalLifePercentage = 100.0
+		public static constant real revivalManaPercentage = 100.0
 		public static constant integer startSkillPoints = 3
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 25
@@ -276,6 +276,8 @@ endif
 			call AddDoodadOcclusion('D07B')
 			call AddDoodadOcclusion('D07C')
 			call AddDoodadOcclusion('D07D')
+			
+			call AddDoodadOcclusion('D04K')
 		endmethod
 		
 		/**
@@ -303,6 +305,7 @@ endif
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
 		public static method createClassItems takes AClass class, unit whichUnit returns nothing
+			call SetItemInvulnerable(UnitAddItemById(whichUnit, 'I061'), true)
 			call thistype.createClassSelectionItems(class, whichUnit)
 			call UnitAddItemById(whichUnit, 'I00A')
 			call UnitAddItemById(whichUnit, 'I00A')
@@ -310,8 +313,6 @@ endif
 			call UnitAddItemById(whichUnit, 'I00D')
 			call UnitAddItemById(whichUnit, 'I00D')
 			call UnitAddItemById(whichUnit, 'I00D')
-			
-			call SetItemInvulnerable(UnitAddItemById(whichUnit, 'I061'), true)
 		endmethod
 		
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing

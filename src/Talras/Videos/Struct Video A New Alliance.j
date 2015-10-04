@@ -26,7 +26,7 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Was haben sie zu mir berichten?"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Was haben sie mir zu berichten?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

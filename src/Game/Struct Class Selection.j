@@ -391,7 +391,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endloop
 			
 			debug call Print("Starting timer")
-			call ClassSelection.startTimer(tre("Klassenauswahl:", "Class selection:"), 120.0)
+			call ClassSelection.startTimer(tre("Klassenauswahl:", "Class selection:"), 300.0)
 			
 			/*
 			 * Wait until players are ready to realize.

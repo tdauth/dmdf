@@ -133,6 +133,18 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tre("Info: Aufträge", "Info: Missions"))
+			call QuestSetDescription(whichQuest, tr("Aufträge im Spiel bestehen aus einem oder mehreren Zielen, die allesamt erfüllt werden müssen. Aufträge geben meist Belohnungen wie zusätzliche Erfahrungspunkte, Goldmünzen oder Gegenstände. Gemeinsame Aufträge müssen von allen Spielern gemeinsam erledigt werden, um die Handlung des Spiels voranzubringen. Eigene Aufträge können optional von jedem Spieler einzeln erledigt werden, um zusätzliche Belohnungen zu erhalten."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSpellBookBLS.blp")
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("Gegenstand \"Aufträge\": Ermöglicht die Anzeige der Ziel-Orte von Aufträgen."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("Gemeinsame Aufträge: Müssen von allen Spielern gemeinsam erledigt werden."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("Eigene Aufträge: Kann jeder Spieler für sich selbst erledigen (optional)."))
+			call QuestSetCompleted(whichQuest, true)
+			
+			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Ausrüstung", "Info: Equipment"))
 			call QuestSetDescription(whichQuest, tre("Es gibt fünf verschiede Ausrüstungstypen. Von jedem Typ kann genau ein Gegenstand angelegt werden. Das letzte Fach bleibt dauerhaft leer, damit weiterhin Gegenstände eingesammelt werden können.", "There is five different equipment types. Of each type exactly one item can be equipped. The last slot stays permanently empty to still allow picking up items."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPackBeast.blp")

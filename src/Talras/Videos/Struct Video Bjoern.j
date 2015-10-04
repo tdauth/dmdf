@@ -39,7 +39,7 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tr("Der Herzog benötigt Fallen zur Verteidigung eines Außenpostens."), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Der Herzog benötigt Fallen zur Verteidigung eines Außenpostens."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

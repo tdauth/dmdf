@@ -73,8 +73,16 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
+			local integer i
 			call VideoRescueDago1.video.evaluate().play()
 			call waitForVideo(MapData.videoWaitInterval)
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SmartCameraPanWithZForPlayer(Player(i), GetUnitX(Npcs.dago()), GetUnitY(Npcs.dago()), 0.0, 0.0)
+				call UnitShareVision(Npcs.dago(), Player(i), true)
+				set i = i + 1
+			endloop
 			call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_0), GetRectCenterY(gg_rct_waypoint_dago_0))
 			/*
 			 * This timer makes sure that Dago keeps on moving even if he is blocked by units. Otherwise the quest will never be completed.
@@ -99,6 +107,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
 			local unit enteringUnit = GetEnteringUnit()
+			local integer i
 			debug call Print("Checking Rescue Dago state condition!")
 			if (enteringUnit == Npcs.dago()) then
 				if (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_0), GetRectCenterY(gg_rct_waypoint_dago_0), thistype.rectRange)) then
@@ -111,6 +120,13 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4))
 					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("Wir sind fast da.", "We are almost there."), gg_snd_DagoRescueDago6)
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4), thistype.rectRange)) then
+					set i = 0
+					loop
+						exitwhen (i == MapData.maxPlayers)
+						call UnitShareVision(Npcs.dago(), Player(i), false)
+						set i = i + 1
+					endloop
+				
 					call SetUnitFacing(Npcs.dago(), 265.0)
 					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich.", "Fine, if you follow the way you reach the castle's gate. I will join you later but now I have to collect some mushrooms in the area. For the duke of course."), gg_snd_DagoRescueDago7)
 					call TalkDago.initTalk()
