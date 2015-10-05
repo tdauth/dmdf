@@ -499,20 +499,20 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			// item 1
 			set questItem = AQuestItem.create(this, tre("Sammelt euch nahe des nordwestlichen Orklagers mit den Nordmännern.", "Gather yourselves with the Norsemen near to the north west Orc camp."))
 			call questItem.setPing(true)
-			call questItem.setPingRect(gg_rct_quest_the_norsemen_assembly_point)
+			call questItem.setPingRect(gg_rct_quest_the_norsemen_quest_item_0)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 500)
 			// item 2
 			set questItem = AQuestItem.create(this, tr("Beweist eure Kampfstärke, indem ihr die Nordmänner im Kampf unterstützt."))
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted2)
 			call questItem.setPing(true)
-			call questItem.setPingUnit(Npcs.wigberht())
+			call questItem.setPingRect(gg_rct_quest_the_norsemen_assembly_point)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 5000)
 			// item 3
 			set questItem = AQuestItem.create(this, tr("Berichtet dem Herzog von eurem Erfolg."))
 			call questItem.setPing(true)
-			call questItem.setPingUnit(gg_unit_n013_0116)
+			call questItem.setPingRect(gg_rct_quest_talras_quest_item_1)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 3000)
 			// members

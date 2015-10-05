@@ -47,10 +47,25 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 	struct QuestPerdixHunt extends AQuest
 		public static integer maxAnimals = 5
 		private integer m_counter
+		private trigger m_hintTrigger
 
 		implement CharacterQuest
+		
+		private static method triggerConditionHint takes nothing returns boolean
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			if (GetTriggerUnit() == this.character().unit()) then
+				call Character(this.character()).displayHint(tr("In diesem Gebiet befinden sich Rebhühner."))
+			endif
+		
+			return false
+		endmethod
 
 		public stub method enable takes nothing returns boolean
+			set this.m_hintTrigger = CreateTrigger()
+			call TriggerRegisterEnterRectSimple(this.m_hintTrigger, gg_rct_quest_perdix_hunt)
+			call TriggerAddCondition(this.m_hintTrigger, Condition(function thistype.triggerConditionHint))
+			call DmdfHashTable.global().setHandleInteger(this.m_hintTrigger, "this", this)
+			
 			return super.enable()
 		endmethod
 		
@@ -72,7 +87,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 						if (GetRandomInt(0, 100) <= 80) then
 							set animal = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 'n04N', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 0.0)
 							call DmdfHashTable.global().setHandleInteger(animal, "timer", HuntTimer.create(this.character().player(), animal))
-							call this.displayUpdateMessage(tr("Jage das Rebhuhn!"))
+							call this.displayUpdateMessage(tr("Scheuche das Rebhuhn auf!"))
 						else
 							call this.displayUpdateMessage(tr("Kein Wild aufgespürt. Versuche es noch einmal."))
 						endif
@@ -83,7 +98,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 				elseif (GetSpellAbilityId() == 'A17F') then
 					if (GetUnitTypeId(GetSpellTargetUnit()) == 'n04N') then
 						call IssueImmediateOrder(GetSpellTargetUnit(), "ravenform") // abheben
-						call this.displayUpdateMessage(tr("Lass den Falken los!"))
+						call this.displayUpdateMessage(tr("Greife das Rebhuhn mit dem Jagdfalken!"))
 					endif
 				// Wild greifen
 				elseif (GetSpellAbilityId() == 'A17G') then
@@ -107,7 +122,9 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 		
 		private static method stateActionCompletedHunt takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			call this.displayState()
+			call DmdfHashTable.global().destroyTrigger(this.m_hintTrigger)
+			set this.m_hintTrigger = null
+			call this.displayUpdate()
 		endmethod
 
 		private static method create takes ACharacter character returns thistype

@@ -64,11 +64,10 @@ library StructSpellsSpellRob requires Asl, StructGameClasses, StructGameSpell
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			call this.addGrimoireEntry('A1A5', 'A1A6')
-			// TODO use different abilities
-			call this.addGrimoireEntry('A1A5', 'A1A6')
-			call this.addGrimoireEntry('A1A5', 'A1A6')
-			call this.addGrimoireEntry('A1A5', 'A1A6')
-			call this.addGrimoireEntry('A1A5', 'A1A6')
+			call this.addGrimoireEntry('A1CH', 'A1CL')
+			call this.addGrimoireEntry('A1CI', 'A1CM')
+			call this.addGrimoireEntry('A1CJ', 'A1CN')
+			call this.addGrimoireEntry('A1CK', 'A1CO')
 			
 			set this.m_targets = AUnitList.create()
 

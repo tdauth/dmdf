@@ -99,6 +99,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_wigberht_actors_position)
 			call SetUnitFacing(thistype.actor(), 206.90)
+			call IssueImmediateOrder(thistype.actor(), "holdposition")
 
 			set this.m_staticActors = AGroup.create()
 			set this.m_orcGuardians = AGroup.create()
@@ -308,8 +309,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			// wigberhts fire attack
 			call SetUnitTimeScale(thistype.unitActor(this.m_actorWigberht), 0.80)
 			call SetUnitTimeScale(this.m_actorOrcLeader, 0.80)
-			call QueueUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Attack Slam")
 			set jump = AJump.create(thistype.unitActor(this.m_actorWigberht), 400.0, GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3), 0)
+			call SetUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Attack Slam")
 			loop
 				exitwhen (RectContainsUnit(gg_rct_video_wigberht_wigberht_target_3, thistype.unitActor(this.m_actorWigberht)))
 				if (wait(1.0)) then
@@ -347,8 +348,11 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			endif
 			
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_wigberht_actor_end)
+			call IssueImmediateOrder(thistype.actor(), "holdposition")
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_wigberht_ricman_end)
+			call IssueImmediateOrder(thistype.unitActor(this.m_actorRicman), "holdposition")
 			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_wigberht_wigberht_end)
+			call IssueImmediateOrder(thistype.unitActor(this.m_actorWigberht), "holdposition")
 			call ResetUnitAnimation(thistype.unitActor(this.m_actorWigberht))
 
 			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorWigberht))

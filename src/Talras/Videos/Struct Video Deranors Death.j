@@ -13,6 +13,8 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 
 			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_deranors_death_dragon_slayer)
+			call SetUnitOwner(this.m_actorDragonSlayer, Player(PLAYER_NEUTRAL_PASSIVE), false)
+			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapData.alliedPlayer))
 			call SetUnitFacing(this.m_actorDragonSlayer, 270.0)
 
 			set this.m_actorDeranor = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deranor, gg_rct_video_deranors_death_deranor, 75.0))

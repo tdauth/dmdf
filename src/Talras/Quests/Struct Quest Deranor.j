@@ -1,8 +1,42 @@
 library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcs, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath
 
+	struct QuestAreaDeranor extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			local integer i
+			// hide death spawn point
+			call SpawnPoints.deathVault().disable()
+			set i = 0
+			loop
+				exitwhen (i == SpawnPoints.deathVault().countUnits())
+				debug call Print("Pausing and hiding death vault spawn point unit: " + GetUnitName(SpawnPoints.deathVault().unit(i)))
+				call PauseUnit(SpawnPoints.deathVault().unit(i), true)
+				call ShowUnit(SpawnPoints.deathVault().unit(i), false)
+				set i = i + 1
+			endloop
+		
+			// TODO Maybe enable the shrine for all characters?
+			// TODO Move characters down
+			call VideoDeranor.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			
+			call WaygateSetDestination(gg_unit_n02I_0264, GetRectCenterX(gg_rct_tomb_inside), GetRectCenterY(gg_rct_tomb_inside))
+			call WaygateActivate(gg_unit_n02I_0264, true)
+			call WaygateSetDestination(gg_unit_n02I_0295, GetRectCenterX(gg_rct_tomb_outside), GetRectCenterY(gg_rct_tomb_outside))
+			call WaygateActivate(gg_unit_n02I_0295, true)
+			
+			call QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemEnterTheTomb).enable()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+
 	struct QuestDeranor extends AQuest
 		public static constant integer questItemEnterTheTomb = 0
 		public static constant integer questItemKillDeranor = 1
+		private QuestAreaDeranor m_questArea
 
 		implement Quest
 
@@ -32,27 +66,9 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		endmethod
 		
 		public stub method enable takes nothing returns boolean
-			call WaygateSetDestination(gg_unit_n02I_0264, GetRectCenterX(gg_rct_tomb_inside), GetRectCenterY(gg_rct_tomb_inside))
-			call WaygateActivate(gg_unit_n02I_0264, true)
-			call WaygateSetDestination(gg_unit_n02I_0295, GetRectCenterX(gg_rct_tomb_outside), GetRectCenterY(gg_rct_tomb_outside))
-			call WaygateActivate(gg_unit_n02I_0295, true)
+			set this.m_questArea = QuestAreaDeranor.create(gg_rct_quest_deranor_characters)
 			
 			return super.enableUntil(thistype.questItemEnterTheTomb)
-		endmethod
-		
-		private static method stateEventCompleted0 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			call TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_area_tomb)
-		endmethod
-
-		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
-			return ACharacter.isUnitCharacter(GetTriggerUnit())
-		endmethod
-
-		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
-			local thistype this = thistype(questItem.quest())
-			call this.questItem(1).enable()
-			// TODO Maybe enable the shrine for all characters?
-			call VideoDeranor.video().play()
 		endmethod
 		
 		private static method stateEventCompleted1 takes AQuestItem questItem, trigger usedTrigger returns nothing
@@ -64,12 +80,23 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		endmethod
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
+			local integer i
 			call Fellows.dragonSlayer().reset()
 			call TalkDragonSlayer.initTalk()
 			
 			call VideoDeranorsDeath.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			// wait until the video has played to complete the quest
+			// hide death spawn point
+			call SpawnPoints.deathVault().enable()
+			set i = 0
+			loop
+				exitwhen (i == SpawnPoints.deathVault().countUnits())
+				debug call Print("Unpausing and showing death vault spawn point unit: " + GetUnitName(SpawnPoints.deathVault().unit(i)))
+				call PauseUnit(SpawnPoints.deathVault().unit(i), false)
+				call ShowUnit(SpawnPoints.deathVault().unit(i), true)
+				set i = i + 1
+			endloop
 		endmethod
 
 		private static method create takes nothing returns thistype
@@ -80,9 +107,6 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
 
 			set questItem = AQuestItem.create(this, tr("Betretet das unterirdische Gewölbe."))
-			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
-			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
-			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_tomb_outside)
 			call questItem.setPingColour(100.0, 100.0, 100.0)

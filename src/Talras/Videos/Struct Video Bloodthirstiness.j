@@ -14,6 +14,8 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 
 			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_bloodthirstiness_dragon_slayer)
+			call SetUnitOwner(this.m_actorDragonSlayer, Player(PLAYER_NEUTRAL_PASSIVE), false)
+			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapData.alliedPlayer))
 
 			set this.m_actorDeacon = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deacon, gg_rct_video_bloodthirstiness_deacon, 0.0))
 
@@ -23,9 +25,9 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 			call SetUnitFacingToFaceUnit(this.m_actorDeacon, this.m_actorDragonSlayer)
 			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorDeacon)
 			
-			call IssueImmediateOrder(this.m_actorDragonSlayer, "stop")
-			call IssueImmediateOrder(this.m_actorDeacon, "stop")
-			call IssueImmediateOrder(thistype.actor(), "stop")
+			call IssueImmediateOrder(this.m_actorDragonSlayer, "holdposition")
+			call IssueImmediateOrder(this.m_actorDeacon, "holdposition")
+			call IssueImmediateOrder(thistype.actor(), "holdposition")
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
@@ -54,7 +56,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 			endif
 			
 			// TODO kill
-			call QueueUnitAnimation(this.m_actorDragonSlayer, "Spell")
+			call SetUnitAnimation(this.m_actorDragonSlayer, "Spell")
 			
 			if (wait(2.0)) then
 				return
@@ -63,6 +65,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 			//call SetUnitExploded(this.m_actorDeacon, true)
 			call KillUnit(this.m_actorDeacon)
 			set this.m_actorDeacon = null
+			call ResetUnitAnimation(this.m_actorDragonSlayer)
 
 
 			if (wait(1.0)) then

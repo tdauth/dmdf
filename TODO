@@ -610,22 +610,22 @@ Mehrspielertest (0.4 - 2 Spieler):
 * Video Wigberht: Keine Angriffsanimation gegen Orkanführer.
 * FIXED: Koloss: Icon bei allen Zaubern fixen.
 * FIXED: Koloss: Ist auf Stufe 5 Vergiftete Pfeile.
-* Metzelei und Die Nordmänner Auftragsbuch - Ziele gehen nicht immer.
+* FIXED: Metzelei und Die Nordmänner Auftragsbuch - Ziele gehen nicht immer.
 * Was haben sie mir zu berichten: Kein Sound. gg_snd_Heimrich18 A New Alliance. Sound fehlt anscheinend?
-* Bestehlen und Beutezug Stufe 1 angezeigt obwohl Stufe 5.
+* FIXED: Bestehlen und Beutezug Stufe 1 angezeigt obwohl Stufe 5.
 * Tooltip Missing Horn.
 * FIXED: Auftauchen: Geht nicht auf Land sondern nur im Wasser.
 * FIXED: Abklingzeit Heiltränke und Äpfel usw runterschrauben.
 * Drachentöterin läuft wieder weg bei Verfluchte Missgeburt.
 * Diakon lebt direkt nach Video wieder.
 * FIXED: Wiederbelebung, volle Werte!!!
-* Sammelgebiet vor Deranors Gruft. Dann erst Portal aktivieren.
+* FIXED: Sammelgebiet vor Deranors Gruft. Dann erst Portal aktivieren.
 * FIXED: Quest-Abschluss und Belohnung erst nach Video von Deranors Tod.
 * DEPRECATED: Wackeln bei Deranors Zauber abbrechen.
 * FIXED: Desync durch Wackeln?! Jojo kann keine Tränke mehr benutzen.
 * DEPRECATED: Untere Säule entfernen.
 * FIXED: Säulen transparent machen.
-* Kameragrenzen weiter nach Rechts.
+* FIXED: Kameragrenzen weiter nach Rechts.
 * Video Bauer Manfred vervollständigen.
 * AUFTRAGSBUCH: Krieg, Metzelei, usw.
 * FIXED: Der Herzog benötigt Fallen wird von Björn gesagt.

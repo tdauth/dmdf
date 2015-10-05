@@ -40,11 +40,10 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			call this.addGrimoireEntry('A1A1', 'A1A2')
-			// TODO use different abilities
-			call this.addGrimoireEntry('A1A1', 'A1A2')
-			call this.addGrimoireEntry('A1A1', 'A1A2')
-			call this.addGrimoireEntry('A1A1', 'A1A2')
-			call this.addGrimoireEntry('A1A1', 'A1A2')
+			call this.addGrimoireEntry('A1CP', 'A1CT')
+			call this.addGrimoireEntry('A1CQ', 'A1CU')
+			call this.addGrimoireEntry('A1CR', 'A1CV')
+			call this.addGrimoireEntry('A1CS', 'A1CW')
 
 			return this
 		endmethod

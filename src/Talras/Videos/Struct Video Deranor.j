@@ -3,9 +3,22 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 	struct VideoDeranor extends AVideo
 		private unit m_actorDragonSlayer
 		private unit m_actorDeranor
+		private AGroup m_summonedUnits = 0
 
 		implement Video
+		
+		private static method filterShadowGiant takes nothing returns boolean
+			return GetUnitTypeId(GetFilterUnit()) == 'n039'
+		endmethod
+		
+		private static method forGroupHide takes unit whichUnit returns nothing
+			call ShowUnit(whichUnit, false)
+		endmethod
 
+		private static method forGroupShow takes unit whichUnit returns nothing
+			call ShowUnit(whichUnit, true)
+		endmethod
+		
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
 			call SetTimeOfDay(0.0)
@@ -13,6 +26,8 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 
 			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_deranor_dragon_slayer)
+			call SetUnitOwner(this.m_actorDragonSlayer, Player(PLAYER_NEUTRAL_PASSIVE), false)
+			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapData.alliedPlayer))
 			call SetUnitFacing(this.m_actorDragonSlayer, 270.0)
 			call ShowUnit(this.m_actorDragonSlayer, false)
 			call IssueImmediateOrder(this.m_actorDragonSlayer, "stop")
@@ -102,6 +117,9 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 				return
 			endif
 			
+			set this.m_summonedUnits = AGroup.create()
+			call this.m_summonedUnits.addUnitsInRect(gg_rct_area_tomb, Filter(function thistype.filterShadowGiant))
+			call this.m_summonedUnits.forGroup(thistype.forGroupHide)
 			call CameraSetupApplyForceDuration(gg_cam_deranor_5, true, 0.00)
 			
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
@@ -121,6 +139,12 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 
 		public stub method onStopAction takes nothing returns nothing
 			call Game.resetVideoSettings()
+			
+			if (this.m_summonedUnits != 0) then
+				call this.m_summonedUnits.forGroup(thistype.forGroupShow)
+				call this.m_summonedUnits.destroy()
+				set this.m_summonedUnits = 0
+			endif
 		endmethod
 
 		private static method create takes nothing returns thistype

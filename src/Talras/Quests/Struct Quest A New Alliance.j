@@ -29,6 +29,12 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAbilityAvailable(Player(i), SpellMissionANewAlliance.abilityId, true)
+				set i = i + 1
+			endloop
 			set this.m_questArea = QuestAreaANewAlliance.create(gg_rct_quest_a_new_alliance)
 			return this.enableUntil(1)
 		endmethod
