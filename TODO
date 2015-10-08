@@ -613,7 +613,7 @@ Mehrspielertest (0.4 - 2 Spieler):
 * FIXED: Metzelei und Die Nordmänner Auftragsbuch - Ziele gehen nicht immer.
 * Was haben sie mir zu berichten: Kein Sound. gg_snd_Heimrich18 A New Alliance. Sound fehlt anscheinend?
 * FIXED: Bestehlen und Beutezug Stufe 1 angezeigt obwohl Stufe 5.
-* Tooltip Missing Horn.
+* FIXED: Tooltip Missing Horn.
 * FIXED: Auftauchen: Geht nicht auf Land sondern nur im Wasser.
 * FIXED: Abklingzeit Heiltränke und Äpfel usw runterschrauben.
 * Drachentöterin läuft wieder weg bei Verfluchte Missgeburt.
@@ -626,8 +626,8 @@ Mehrspielertest (0.4 - 2 Spieler):
 * DEPRECATED: Untere Säule entfernen.
 * FIXED: Säulen transparent machen.
 * FIXED: Kameragrenzen weiter nach Rechts.
-* Video Bauer Manfred vervollständigen.
-* AUFTRAGSBUCH: Krieg, Metzelei, usw.
+* FIXED: Video Bauer Manfred vervollständigen.
+* FIXED: AUFTRAGSBUCH: Krieg, Metzelei, usw.
 * FIXED: Der Herzog benötigt Fallen wird von Björn gesagt.
 * Auftrag Krieg in Aufträge aufteilen.
 * Wieland Imps abliefern: Video nicht direkt starten sondern erneut Sammelgebiet.
@@ -646,7 +646,7 @@ Mehrspielertest (0.4 - 2 Spieler):
 * FIXED: "Zur Kathedrale ausbauen" kostet Holz.
 * Nachfrage ob man das Spiel beenden möchte bei letzten Quest.
 * Baupläne dauerhaft behalten, aber nur einmal baubar weil Jojo so blöd war, es abzubrechen.
-* Burg "Bladen" auch auf Verbündete, aber nicht auf NEUTRAL!
+* Burg "Beladen" auch auf Verbündete, aber nicht auf NEUTRAL!
 * Gebäude soll Mana und Leben heilen.
 * Gebäude erkundet Gegend.
 * Handel zwischen Gebäuden mit Pferden. Goldeinkommensquelle.

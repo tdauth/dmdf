@@ -825,7 +825,7 @@ static if (DEBUG_MODE) then
 					/*
 					 * Plays video "Deranor".
 					 */
-					call thistype.moveCharactersToRect(gg_rct_area_tomb)
+					call thistype.moveCharactersToRect(gg_rct_quest_deranor_characters)
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)

@@ -30,15 +30,18 @@ library StructMapVideosVideoReportManfred requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(thistype.actor(), tr("Bauer Manfred!"), null)
+			call TransmissionFromUnit(thistype.actor(), tr("Die Kornfresser sind tot."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			// TODO Finish dialog, drum cave iron.
-
+			call TransmissionFromUnitWithName(this.m_actorManfred, tr("Manfred"), tr("Sehr gut! Damit hast du mir einen großen Gefallen erwiesen. Warte bis ich die Nahrung aufgeladen habe. Du kannst sie dann mitnehmen. Erteilt diesen verdammten Orks und Dunkelelfen eine ordentliche Lektion. Ich hoffe sie lassen sich dann nicht mehr hier blicken."), null)
 			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+
 			call this.stop()
 		endmethod
 

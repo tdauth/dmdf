@@ -9,7 +9,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 	 * Fore safety it displays a confirmation dialog when selecting the class.
 	 */
 	struct ClassSelection extends AClassSelection
-		public static constant integer spellsPerPage = 9
+		public static constant integer spellsPerPage = 8
 		public static constant real infoDuration = 40.0
 		private trigger m_classChangeTrigger
 		private integer m_page = 0

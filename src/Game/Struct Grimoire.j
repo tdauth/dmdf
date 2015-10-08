@@ -14,7 +14,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 	 */
 	struct Grimoire extends ASpell
 		public static constant integer maxSpells = 15
-		public static constant integer spellsPerPage = 9
+		public static constant integer spellsPerPage = 8
 		public static constant integer abilityId = 'A0AP'
 		public static constant integer spellsAbilityId = 'A02Z'
 		/**

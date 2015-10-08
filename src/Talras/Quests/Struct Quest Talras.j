@@ -62,6 +62,9 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 			call questItem0.setReward(thistype.rewardExperience, 100)
 			// item 1
 			set questItem1 = AQuestItem.create(this, tre("Trefft den Herzog und schwört ihm die Treue.", "Meet the duke and pledge loyalty to him."))
+			call questItem1.setPing(true)
+			call questItem1.setPingCoordinatesFromRect(gg_rct_quest_talras_quest_item_1)
+			call questItem1.setPingColour(100.0, 100.0, 100.0)
 			call questItem1.setReward(thistype.rewardExperience, 400)
 			
 			return this

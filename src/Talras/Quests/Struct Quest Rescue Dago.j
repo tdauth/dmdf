@@ -120,12 +120,6 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4))
 					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("Wir sind fast da.", "We are almost there."), gg_snd_DagoRescueDago6)
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4), thistype.rectRange)) then
-					set i = 0
-					loop
-						exitwhen (i == MapData.maxPlayers)
-						call UnitShareVision(Npcs.dago(), Player(i), false)
-						set i = i + 1
-					endloop
 				
 					call SetUnitFacing(Npcs.dago(), 265.0)
 					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich.", "Fine, if you follow the way you reach the castle's gate. I will join you later but now I have to collect some mushrooms in the area. For the duke of course."), gg_snd_DagoRescueDago7)
@@ -133,6 +127,13 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 					call PauseTimer(this.m_timer)
 					call DestroyTimer(this.m_timer)
 					set this.m_timer = null
+					
+					set i = 0
+					loop
+						exitwhen (i == MapData.maxPlayers)
+						call UnitShareVision(Npcs.dago(), Player(i), false)
+						set i = i + 1
+					endloop
 					
 					return true
 				endif
