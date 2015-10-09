@@ -642,7 +642,7 @@ Mehrspielertest (0.4 - 2 Spieler):
 * Letzte Welle: Sollten Mana und Lebensrunen droppen.
 * FIXED: Abklingzeit reduzieren (Heiltrank usw.)
 * Langschwert und Kurzschwert schmieden selbe ID.
-* Großen Heiltrank und großen Manatrank herstellen einbauen.
+* DONE: Großen Heiltrank und großen Manatrank herstellen einbauen.
 * FIXED: "Zur Kathedrale ausbauen" kostet Holz.
 * Nachfrage ob man das Spiel beenden möchte bei letzten Quest.
 * Baupläne dauerhaft behalten, aber nur einmal baubar weil Jojo so blöd war, es abzubrechen.

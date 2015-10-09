@@ -149,7 +149,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			call SetTextTagPos(textTag, CameraSetupGetDestPositionX(gg_cam_upstream_6), CameraSetupGetDestPositionY(gg_cam_upstream_6), CameraSetupGetField(gg_cam_upstream_6, CAMERA_FIELD_ZOFFSET) + 16.0)
 			call SetTextTagColor(textTag, red, green, blue, alpha)
 			call SetTextTagVisibility(textTag, true)
-			call SetTextTagVelocity(textTag, 0.0, 0.020)
+			call SetTextTagVelocity(textTag, 0.0, 0.040)
 			set textTag = null
 		endmethod
 		
@@ -241,7 +241,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 				if (not Credits.contributorIsTitle.evaluate(i)) then
 					call thistype.showMovingTextTag(Credits.contributorDescription.evaluate(i), 14.0, 255, 255, 255, 0)
 					
-					if (wait(2.00)) then
+					if (wait(1.00)) then
 						return
 					endif
 				endif
@@ -253,7 +253,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 					call thistype.showMovingTextTag(Credits.contributorName.evaluate(i), 16.0, 255, 0, 0, 0)
 				endif
 				
-				if (wait(5.0)) then
+				if (wait(2.5)) then
 					return
 				endif
 

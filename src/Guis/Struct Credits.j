@@ -117,7 +117,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			call SetTextTagPos(textTag, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), CameraSetupGetField(gg_cam_class_selection, CAMERA_FIELD_ZOFFSET))
 			call SetTextTagColor(textTag, red, green, blue, alpha)
 			call SetTextTagVisibility(textTag, false)
-			call SetTextTagVelocity(textTag, 0.0, 0.020)
+			call SetTextTagVelocity(textTag, 0.0, 0.040)
 			call ShowTextTagForPlayer(whichPlayer, textTag, true)
 			set textTag = null
 		endmethod
@@ -206,7 +206,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			 * Restart auto change timer.
 			 */
 			call PauseTimer(this.m_autoChangeTimer)
-			call TimerStart(this.m_autoChangeTimer, 4.0, false, function thistype.timerFunctionAutoChange)
+			call TimerStart(this.m_autoChangeTimer, 2.0, false, function thistype.timerFunctionAutoChange)
 		endmethod
 		
 		public method showNextContributor takes nothing returns nothing

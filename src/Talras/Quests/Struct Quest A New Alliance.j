@@ -53,9 +53,9 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 			// quest item 0
 			set questItem = AQuestItem.create(this, tr("Findet die Hochelfin in Talras."))
 			
-			//call questItem.setPing(true)
-			//call questItem.setPingRect(gg_rct_haldar_spawn_point_0)
-			//call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_a_new_alliance)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 			// quest item 1
 			set questItem = AQuestItem.create(this, tr("Überzeugt sie davon sich mit Heimrich dem Herzog zu treffen."))
 

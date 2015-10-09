@@ -25,7 +25,9 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			call WaygateSetDestination(gg_unit_n02I_0295, GetRectCenterX(gg_rct_tomb_outside), GetRectCenterY(gg_rct_tomb_outside))
 			call WaygateActivate(gg_unit_n02I_0295, true)
 			
-			call QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemEnterTheTomb).enable()
+			call QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemEnterTheTomb).setState(QuestDeranor.stateCompleted)
+			call QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemKillDeranor).setState(QuestDeranor.stateNew)
+			call QuestDeranor.quest.evaluate().displayUpdate()
 		endmethod
 	
 		public static method create takes rect whichRect returns thistype

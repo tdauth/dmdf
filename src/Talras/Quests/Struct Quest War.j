@@ -26,6 +26,12 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		endmethod
 	endstruct
 	
+	struct QuestAreaWarReportWieland extends QuestArea
+		public stub method onStart takes nothing returns nothing
+			call QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveImpsToWieland).complete()
+		endmethod
+	endstruct
+	
 	struct QuestAreaWarManfred extends QuestArea
 	
 		public stub method onStart takes nothing returns nothing
@@ -155,6 +161,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		private timer m_weaponCartSpawnTimer
 		private unit m_weaponCart
 		private AGroup m_imps
+		private QuestAreaWarReportWieland m_questAreaReportWieland
 		/*
 		 * Manfred
 		 */
@@ -374,7 +381,9 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 				
 				call questItem.quest().displayUpdateMessage(Format(tr("%1%/%2% Imps.")).i(counter).i(thistype.maxImps).result())
 				
-				return counter == thistype.maxImps
+				if (counter == thistype.maxImps) then
+					set this.m_questAreaReportWieland = QuestAreaWarReportWieland.create(gg_rct_quest_war_wieland)
+				endif
 			debug else
 				debug call Print("Is no Imp!")
 			endif

@@ -942,6 +942,7 @@ static if (DEBUG_MODE) then
 						 * Plays video "Weapons From Wieland".
 						 */
 						call QuestWar.quest.evaluate().moveImpsToWieland()
+						call thistype.moveCharactersToRect(gg_rct_quest_war_wieland)
 						call TriggerSleepAction(2.0 + 2.0)
 						call waitForVideo(MapData.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
