@@ -36637,6 +36637,348 @@ STRING 6120
 Trollketten
 }
 
+STRING 6121
+// Gegenstände: I009 (Kleiner Heiltrank), Ubertip (Tooltipp - Erweitert (utub))
+{
+Heilt bei Benutzung <A1C8,DataA1> Trefferpunkte.
+}
+
+STRING 6122
+// Gegenstände: I00A (Heiltrank), Ubertip (Tooltipp - Erweitert (utub))
+{
+Heilt bei Benutzung <A1C9,DataA1> Trefferpunkte.
+}
+
+STRING 6123
+// Gegenstände: I00B (Großer Heiltrank), Ubertip (Tooltipp - Erweitert (utub))
+{
+Heilt bei Benutzung <A1CA,DataA1> Trefferpunkte.
+}
+
+STRING 6124
+// Gegenstände: I00C (Großer Manatrank), Ubertip (Tooltipp - Erweitert (utub))
+{
+Stellt bei Benutzung <A1CC,DataA1> Mana wieder her.
+}
+
+STRING 6125
+// Gegenstände: I00D (Manatrank), Ubertip (Tooltipp - Erweitert (utub))
+{
+Stellt bei Benutzung <A1CB,DataA1> Mana wieder her.
+}
+
+STRING 6126
+// Gegenstände: I00E (Kleiner Manatrank), Ubertip (Tooltipp - Erweitert (utub))
+{
+Stellt bei Benutzung <A026,DataA1> Mana wieder her.
+}
+
+STRING 6127
+// Gegenstände: I03O (Apfel), Ubertip (Tooltipp - Erweitert (utub))
+{
+Heilt bei Benutzung <A1C7,DataA1> Trefferpunkte.|nBietet <I03O,uses> Aufladung.
+}
+
+STRING 6128
+// Fähigkeiten: A026 (Kleiner Manatrank), EditorSuffix (Editor-Suffix (ansf))
+{
+(50 Mana)
+}
+
+STRING 6129
+// Fähigkeiten: A026 (Kleiner Manatrank), Name (Name (anam))
+{
+Kleiner Manatrank
+}
+
+STRING 6130
+// Fähigkeiten: A06S (Wilder Blutrausch), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 2|r|nDer Drachentöter schlägt in blinder Wut zu. Jeder Schlag verbraucht 3% seiner maximalen Lebensenergie und fügt einen Schadensbonus von 25% seiner maximalen Lebensenergie zu. Kann nur eingesetzt werden bis noch mindestens 10% der maximalen Lebensenergie übrig sind.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+}
+
+STRING 6131
+// Fähigkeiten: A06S (Wilder Blutrausch), EditorSuffix (Editor-Suffix (ansf))
+{
+(Drachentöter - Ultimativzauber 2)
+}
+
+STRING 6132
+// Fähigkeiten: A0YW (Wilder Blutrausch - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nDer Drachentöter schlägt in blinder Wut zu. Jeder Schlag verbraucht 3% seiner maximalen Lebensenergie und fügt einen Schadensbonus von 25% seiner maximalen Lebensenergie zu. Kann nur eingesetzt werden bis noch mindestens 10% der maximalen Lebensenergie übrig sind.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+}
+
+STRING 6133
+// Fähigkeiten: A14V (Bestienjäger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber - Besitzt nur eine Stufe|r|nSchaden gegen wilde Kreaturen wird um 10% erhöht.
+}
+
+STRING 6134
+// Fähigkeiten: A19J (Heilkraut), EditorSuffix (Editor-Suffix (ansf))
+{
+(Heilung)
+}
+
+STRING 6135
+// Gegenstände: I03O (Apfel), Name (Name (unam))
+{
+Apfel
+}
+
+STRING 6136
+// Fähigkeiten: A1C8 (Kleiner Heiltrank), Name (Name (anam))
+{
+Kleiner Heiltrank
+}
+
+STRING 6137
+// Fähigkeiten: A1C8 (Kleiner Heiltrank), EditorSuffix (Editor-Suffix (ansf))
+{
+(50 Leben)
+}
+
+STRING 6138
+// Fähigkeiten: A1C9 (Heiltrank), Name (Name (anam))
+{
+Heiltrank
+}
+
+STRING 6139
+// Fähigkeiten: A1C9 (Heiltrank), EditorSuffix (Editor-Suffix (ansf))
+{
+(250 Leben)
+}
+
+STRING 6140
+// Fähigkeiten: A1CA (Großer Heiltrank), Name (Name (anam))
+{
+Großer Heiltrank
+}
+
+STRING 6141
+// Fähigkeiten: A1CA (Großer Heiltrank), EditorSuffix (Editor-Suffix (ansf))
+{
+(500)
+}
+
+STRING 6142
+// Fähigkeiten: A1CB (Manatrank), Name (Name (anam))
+{
+Manatrank
+}
+
+STRING 6143
+// Fähigkeiten: A1CB (Manatrank), EditorSuffix (Editor-Suffix (ansf))
+{
+(150 Mana)
+}
+
+STRING 6144
+// Fähigkeiten: A1CC (Großer Manatrank), Name (Name (anam))
+{
+Großer Manatrank
+}
+
+STRING 6145
+// Fähigkeiten: A1CC (Großer Manatrank), EditorSuffix (Editor-Suffix (ansf))
+{
+(300 Mana)
+}
+
+STRING 6146
+// Fähigkeiten: A1CD (Aufträge - Krieg), Name (Name (anam))
+{
+Aufträge - Krieg
+}
+
+STRING 6147
+// Fähigkeiten: A1CD (Aufträge - Krieg), Tip (Tooltipp - Normal (atp1))
+{
+Krieg
+}
+
+STRING 6148
+// Fähigkeiten: A1CF (Aufträge - Die Verteidigung von Talras), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Springt zum aktuellen Zielpunkt des Auftrags.
+}
+
+STRING 6149
+// Fähigkeiten: A1CG (Heer der Hochelfen), Tip (Tooltipp - Normal (atp1))
+{
+Heer der Hochelfen
+}
+
+STRING 6150
+// Fähigkeiten: A1CG (Heer der Hochelfen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Ruft Verstärkung aus dem Heer der Hochelfen.
+}
+
+STRING 6151
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Bestiehlt eine Einheit, die nicht dem Spieler gehört. Die Ziel-Einheit kann erst nach 40 Sekunden erneut bestohlen werden. |n|n|cffffcc00Stufe 1|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit.|n|cffffcc00Stufe 2|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 2.|n|cffffcc00Stufe 3|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 3.|n|cffffcc00Stufe 4|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 4.|n|cffffcc00Stufe 5|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 5.
+}
+
+STRING 6152
+// Fähigkeiten: A0MM (Aura der Autorität - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 6153
+// Fähigkeiten: A0IM (Verzehren - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 6154
+// Fähigkeiten: A0IM (Verzehren - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 6155
+// Fähigkeiten: A0IM (Verzehren - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 6156
+// Fähigkeiten: A0IM (Verzehren - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 6157
+// Fähigkeiten: A0IM (Verzehren - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 6158
+// Fähigkeiten: A0ML (Aura der Autorität - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 6159
+// Fähigkeiten: A0ML (Aura der Autorität - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 6160
+// Fähigkeiten: A1A3 (Bestehlen), Tip (Tooltipp - Normal (atp1))
+{
+Bestehlen [|cffffcc00Stufe 2|r]
+}
+
+STRING 6161
+// Fähigkeiten: A0G1 (Koloss - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 6162
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Name (Name (anam))
+{
+Bestehlen - Stufe 2
+}
+
+STRING 6163
+// Fähigkeiten: A0IN (Verzehren - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 6164
+// Fähigkeiten: A0FP (Totenbeschwörung - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 6165
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Bestiehlt eine Einheit, die nicht dem Spieler gehört. Die Ziel-Einheit kann erst nach 40 Sekunden erneut bestohlen werden. |n|n|cffffcc00Stufe 1|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit.|n|cffffcc00Stufe 2|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 2.|n|cffffcc00Stufe 3|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 3.|n|cffffcc00Stufe 4|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 4.|n|cffffcc00Stufe 5|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 5.
+}
+
+STRING 6166
+// Fähigkeiten: A0AN (Manaexplosion - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 6167
+// Fähigkeiten: A0LM (Selbstlosigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 6168
+// Fähigkeiten: A0LM (Selbstlosigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 6169
+// Fähigkeiten: A0LM (Selbstlosigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 6170
+// Fähigkeiten: A0LM (Selbstlosigkeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 6171
+// Fähigkeiten: A0LM (Selbstlosigkeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 6172
+// Fähigkeiten: A0CM (Krähengestalt - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 6173
+// Fähigkeiten: A0CM (Krähengestalt - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 6174
+// Fähigkeiten: A1A3 (Bestehlen), Tip (Tooltipp - Normal (atp1))
+{
+Bestehlen [|cffffcc00Stufe 3|r]
+}
+
+STRING 6175
+// Fähigkeiten: A0FX (Koloss - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 6176
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Name (Name (anam))
+{
+Bestehlen - Stufe 3
+}
+
+STRING 6177
+// Fähigkeiten: A0LN (Selbstlosigkeit - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
 STRING 6178
 // Fähigkeiten: A0FP (Totenbeschwörung - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
@@ -93252,19 +93594,19 @@ Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 15602
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 15603
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 15604
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -93288,13 +93630,13 @@ Hundezwinger - Stufe 4
 }
 
 STRING 15608
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 15609
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -93306,49 +93648,49 @@ Learn spells - 14 skill points (|cffffcc00Z|r)
 }
 
 STRING 15611
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15612
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15613
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15614
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15615
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 15616
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 15617
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 15618
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -93372,13 +93714,13 @@ Hundezwinger - Stufe 5
 }
 
 STRING 15622
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 15623
-// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -94041,5 +94383,667 @@ STRING 15733
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
 |cffffcc00Z|rauber erlernen - 99 Zauberpunkte
+}
+
+STRING 15734
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15735
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 15736
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 15737
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 15738
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 15739
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Bestehlen [|cffffcc00Stufe 4|r]
+}
+
+STRING 15740
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 15741
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Name (Name (anam))
+{
+Bestehlen - Stufe 4
+}
+
+STRING 15742
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 15743
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 15744
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Bestiehlt eine Einheit, die nicht dem Spieler gehört. Die Ziel-Einheit kann erst nach 40 Sekunden erneut bestohlen werden. |n|n|cffffcc00Stufe 1|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit.|n|cffffcc00Stufe 2|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 2.|n|cffffcc00Stufe 3|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 3.|n|cffffcc00Stufe 4|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 4.|n|cffffcc00Stufe 5|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 5.
+}
+
+STRING 15745
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15746
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15747
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15748
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15749
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 15750
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 15751
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 15752
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 15753
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Bestehlen [|cffffcc00Stufe 5|r]
+}
+
+STRING 15754
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 15755
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Name (Name (anam))
+{
+Bestehlen - Stufe 5
+}
+
+STRING 15756
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 15757
+// Fähigkeiten: A1CK (Bestehlen - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 15758
+// Fähigkeiten: A1CL (Bestehlen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 15759
+// Fähigkeiten: A1CL (Bestehlen - Stufe 2), Name (Name (anam))
+{
+Bestehlen - Stufe 2
+}
+
+STRING 15760
+// Fähigkeiten: A1CM (Bestehlen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 15761
+// Fähigkeiten: A1CM (Bestehlen - Stufe 3), Name (Name (anam))
+{
+Bestehlen - Stufe 3
+}
+
+STRING 15762
+// Fähigkeiten: A1CN (Bestehlen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 15763
+// Fähigkeiten: A1CN (Bestehlen - Stufe 4), Name (Name (anam))
+{
+Bestehlen - Stufe 4
+}
+
+STRING 15764
+// Fähigkeiten: A1CO (Bestehlen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 15765
+// Fähigkeiten: A1CO (Bestehlen - Stufe 5), Name (Name (anam))
+{
+Bestehlen - Stufe 5
+}
+
+STRING 15766
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+}
+
+STRING 15767
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15768
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15769
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15770
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15771
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 15772
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 15773
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 15774
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 15775
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Beutezug [|cffffcc00Stufe 2|r]
+}
+
+STRING 15776
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 15777
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Name (Name (anam))
+{
+Beutezug - Stufe 2
+}
+
+STRING 15778
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 15779
+// Fähigkeiten: A1CP (Beutezug - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 15780
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+}
+
+STRING 15781
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15782
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15783
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15784
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15785
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 15786
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 15787
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 15788
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 15789
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Beutezug [|cffffcc00Stufe 3|r]
+}
+
+STRING 15790
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 15791
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Name (Name (anam))
+{
+Beutezug - Stufe 3
+}
+
+STRING 15792
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 15793
+// Fähigkeiten: A1CQ (Beutezug - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 15794
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+}
+
+STRING 15795
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15796
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15797
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15798
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15799
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 15800
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 15801
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 15802
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 15803
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Beutezug [|cffffcc00Stufe 4|r]
+}
+
+STRING 15804
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 15805
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Name (Name (anam))
+{
+Beutezug - Stufe 4
+}
+
+STRING 15806
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 15807
+// Fähigkeiten: A1CR (Beutezug - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 15808
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+}
+
+STRING 15809
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15810
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15811
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15812
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 15813
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 15814
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 15815
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 15816
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 15817
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Beutezug [|cffffcc00Stufe 5|r]
+}
+
+STRING 15818
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 15819
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Name (Name (anam))
+{
+Beutezug - Stufe 5
+}
+
+STRING 15820
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 15821
+// Fähigkeiten: A1CS (Beutezug - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 15822
+// Fähigkeiten: A1CT (Beutezug - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 15823
+// Fähigkeiten: A1CT (Beutezug - Stufe 2), Name (Name (anam))
+{
+Beutezug - Stufe 2
+}
+
+STRING 15824
+// Fähigkeiten: A1CU (Beutezug - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 15825
+// Fähigkeiten: A1CU (Beutezug - Stufe 3), Name (Name (anam))
+{
+Beutezug - Stufe 3
+}
+
+STRING 15826
+// Fähigkeiten: A1CV (Beutezug - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 15827
+// Fähigkeiten: A1CV (Beutezug - Stufe 4), Name (Name (anam))
+{
+Beutezug - Stufe 4
+}
+
+STRING 15828
+// Fähigkeiten: A1CW (Beutezug - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 15829
+// Fähigkeiten: A1CW (Beutezug - Stufe 5), Name (Name (anam))
+{
+Beutezug - Stufe 5
+}
+
+STRING 15830
+// Fähigkeiten: A0VO (Horn des Kampfes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Schaden-Bonus von <A0VO,DataA1,%>%. |nHält <A0VO,Dur1> Sekunden lang an.
+}
+
+STRING 15831
+// Fähigkeiten: A0VP (Horn des Schutzes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Rüstungs-Bonus von <A0VP,DataB1>. |nHält <A0VP,Dur1> Sekunden lang an.
+}
+
+STRING 15832
+// Fähigkeiten: A0VQ (Horn des Lebens), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Lebensregenerations-Bonus von <A0VQ,DataC1>. |nHält <A0VQ,Dur1> Sekunden lang an.
+}
+
+STRING 15833
+// Fähigkeiten: A1B6 (Horn des Kampfes), Name (Name (anam))
+{
+Horn des Kampfes
+}
+
+STRING 15834
+// Fähigkeiten: A1B7 (Horn des Lebens), Name (Name (anam))
+{
+Horn des Lebens
+}
+
+STRING 15835
+// Fähigkeiten: A1B8 (Horn des Schutzes), Name (Name (anam))
+{
+Horn des Schutzes
+}
+
+STRING 15836
+// Gegenstände: I000 (Zur nächsten Tasche wechseln), Ubertip (Tooltipp - Erweitert (utub))
+{
+Wechselt bei Benutzung in die nächste Tasche des Rucksacks.
+Legen Sie einen Gegenstand aus dem Rucksack auf diesem Gegenstand ab, um ihn in die nächste Tasche zu verschieben.|nDer Rucksack hat 30 Taschen.
+}
+
+STRING 15837
+// Gegenstände: I001 (Zur vorherigen Tasche wechseln), Ubertip (Tooltipp - Erweitert (utub))
+{
+Wechselt bei Benutzung in die vorherige Tasche des Rucksacks.
+Legen Sie einen Gegenstand aus dem Rucksack auf diesem Gegenstand ab, um ihn in die vorherige Tasche zu verschieben.|nDer Rucksack hat 30 Taschen.
+}
+
+STRING 15838
+// Fähigkeiten: A0F9 (Waldfestung), EditorSuffix (Editor-Suffix (ansf))
+{
+(Druide - Ultimativzauber 2)
+}
+
+STRING 15839
+// Fähigkeiten: A0FC (Waldfestung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nErzeugt eine Waldfestung aus lebendigen Bäumen, die sie um jeden Preis verteidigen.
+}
+
+STRING 15840
+// Fähigkeiten: A0FF (Alpha), EditorSuffix (Editor-Suffix (ansf))
+{
+(Druide - Ultimativzauber 1)
+}
+
+STRING 15841
+// Fähigkeiten: A0FH (Alpha - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nDer Druide erhöht seine Bewegungs- und Angriffsgeschwindigkeit in Tiergestalt um 100 %.
+}
+
+STRING 15842
+// Fähigkeiten: A1CY (Großen Manatrank herstellen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Stellt verlorenes Mana wieder her.|n|nBenötigte Rohstoffe:|n- 2 Manakräuter
+}
+
+STRING 15843
+// Fähigkeiten: A1CY (Großen Manatrank herstellen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Buch der Tränke)
 }
 

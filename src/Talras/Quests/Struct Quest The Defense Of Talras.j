@@ -129,11 +129,13 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		
 		private method createFogModifiers takes rect whichRect returns nothing
 			local integer i = 0
+			local fogmodifier whichFogModifier
 			local AFogModifierVector playerFogModifiers = AFogModifierVector.create()
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				call playerFogModifiers.pushBack(CreateFogModifierRect(Player(i), FOG_OF_WAR_VISIBLE, whichRect, true, false))
-				call FogModifierStart(playerFogModifiers[i])
+				set whichFogModifier = CreateFogModifierRect(Player(i), FOG_OF_WAR_VISIBLE, whichRect, true, false)
+				call playerFogModifiers.pushBack(whichFogModifier)
+				call FogModifierStart(whichFogModifier)
 				set i = i + 1
 			endloop
 			call this.m_fogModifiers.pushBack(playerFogModifiers)
@@ -298,11 +300,14 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			
 			call SetUnitX(Npcs.ricman(), GetRectCenterX(gg_rct_waypoint_ricman))
 			call SetUnitY(Npcs.ricman(), GetRectCenterY(gg_rct_waypoint_ricman))
+			
+			
 			/*
 			 * Build up a camp with high elves and dararos.
 			 */
 			call Fellows.dararos().reset()
 			
+			call SetUnitPositionRectFacing(Npcs.dragonSlayer(), gg_rct_quest_the_defense_of_talras_camp_dragon_slayer, 270.0)
 			call SetUnitPositionRectFacing(Npcs.dararos(), gg_rct_quest_the_defense_of_talras_camp_dararos, 270.0)
 			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_0, 0.0)
 			call SetUnitInvulnerable(guard, true)

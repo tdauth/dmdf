@@ -151,6 +151,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			call super.onShow()
 			call this.gui().setOnPressShortcutAction(AGui.shortcutArrowRightDown, thistype.onPressShortcutActionRight, this)
 			call this.gui().setOnPressShortcutAction(AGui.shortcutArrowLeftDown, thistype.onPressShortcutActionLeft, this)
+			set this.m_currentContributor = 0 // restart with first
 			call this.showContributor.evaluate(this.m_currentContributor)
 			call MapData.setCameraBoundsToMapForPlayer(whichPlayer)
 			call TimerStart(this.m_viewTimer, 0.01, true, function thistype.timerFunctionView)

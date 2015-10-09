@@ -28,7 +28,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	
 	struct QuestAreaWarReportWieland extends QuestArea
 		public stub method onStart takes nothing returns nothing
-			call QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveImpsToWieland).complete()
+			call QuestWar.quest.evaluate().questItem(QuestWar.questItemReportWieland).complete()
 		endmethod
 	endstruct
 	
@@ -119,22 +119,23 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		public static constant integer questItemWeaponsFromWieland = 0
 		public static constant integer questItemIronFromTheDrumCave = 1
 		public static constant integer questItemMoveImpsToWieland = 2
-		public static constant integer questItemWaitForWielandsWeapons = 3
-		public static constant integer questItemMoveWielandWeaponsToTheCamp = 4
-		public static constant integer questItemSupplyFromManfred = 5
-		public static constant integer questItemKillTheCornEaters = 6
-		public static constant integer questItemReportManfred = 7
-		public static constant integer questItemWaitForManfredsSupply = 8
-		public static constant integer questItemMoveManfredsSupplyToTheCamp = 9
-		public static constant integer questItemLumberFromKuno = 10
-		public static constant integer questItemKillTheWitches = 11
-		public static constant integer questItemReportKuno = 12
-		public static constant integer questItemMoveKunosLumberToTheCamp = 13
-		public static constant integer questItemTrapsFromBjoern = 14
-		public static constant integer questItemPlaceTraps = 15
-		public static constant integer questItemRecruit = 16
-		public static constant integer questItemGetRecruits = 17
-		public static constant integer questItemReportHeimrich = 18
+		public static constant integer questItemReportWieland = 3
+		public static constant integer questItemWaitForWielandsWeapons = 4
+		public static constant integer questItemMoveWielandWeaponsToTheCamp = 5
+		public static constant integer questItemSupplyFromManfred = 6
+		public static constant integer questItemKillTheCornEaters = 7
+		public static constant integer questItemReportManfred = 8
+		public static constant integer questItemWaitForManfredsSupply = 9
+		public static constant integer questItemMoveManfredsSupplyToTheCamp = 10
+		public static constant integer questItemLumberFromKuno = 11
+		public static constant integer questItemKillTheWitches = 12
+		public static constant integer questItemReportKuno = 13
+		public static constant integer questItemMoveKunosLumberToTheCamp = 14
+		public static constant integer questItemTrapsFromBjoern = 15
+		public static constant integer questItemPlaceTraps = 16
+		public static constant integer questItemRecruit = 17
+		public static constant integer questItemGetRecruits = 18
+		public static constant integer questItemReportHeimrich = 19
 		public static constant integer maxImps = 4
 		public static constant real constructionTime = 30.0
 		public static constant real respawnTime = 20.0
@@ -382,13 +383,21 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 				call questItem.quest().displayUpdateMessage(Format(tr("%1%/%2% Imps.")).i(counter).i(thistype.maxImps).result())
 				
 				if (counter == thistype.maxImps) then
-					set this.m_questAreaReportWieland = QuestAreaWarReportWieland.create(gg_rct_quest_war_wieland)
+					return true
 				endif
 			debug else
 				debug call Print("Is no Imp!")
 			endif
 			
 			return false
+		endmethod
+		
+		private static method stateActionCompletedImps takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
+			call this.m_questAreaImpTarget.destroy()
+			set this.m_questAreaReportWieland = QuestAreaWarReportWieland.create(gg_rct_quest_war_wieland)
+			call this.questItem(thistype.questItemReportWieland).setState(thistype.stateNew)
+			call this.displayUpdate()
 		endmethod
 		
 		private static method groupFunctionHide takes unit whichUnit returns nothing
@@ -436,7 +445,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.enableCartDestination()
 		endmethod
 
-		private static method stateActionCompletedImps takes AQuestItem questItem returns nothing
+		private static method stateActionCompletedReportWieland takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			/*
 			 * The Imps need a new home now! It is shown in the video.
@@ -446,7 +455,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call PauseTimer(this.m_impSpawnTimer)
 			call DestroyTimer(this.m_impSpawnTimer)
 			set this.m_impSpawnTimer = null
-			call this.m_questAreaImpTarget.destroy()
+			call this.m_questAreaReportWieland.destroy()
 			
 			call VideoWeaponsFromWieland.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
@@ -971,6 +980,14 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedImps)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedImps)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedImps)
+			
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_war_wieland)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			
+			// questItemReportWieland
+			set questItem = AQuestItem.create(this, tr("Berichtet Wieland davon."))
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedReportWieland)
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_wieland)

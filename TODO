@@ -630,10 +630,11 @@ Mehrspielertest (0.4 - 2 Spieler):
 * FIXED: AUFTRAGSBUCH: Krieg, Metzelei, usw.
 * FIXED: Der Herzog benötigt Fallen wird von Björn gesagt.
 * Auftrag Krieg in Aufträge aufteilen.
-* Wieland Imps abliefern: Video nicht direkt starten sondern erneut Sammelgebiet.
+* FIXED: Wieland Imps abliefern: Video nicht direkt starten sondern erneut Sammelgebiet.
 * FIXED: Krieg muss Erfahrung geben.
 * FIXED: Seitentaschen auf selbes Slot legt es ab!
 * Barrikaden blockieren nicht (Ork-Belagerung).
+* Schrein ist zwischen Barrikaden. Charakter kann sich also hinteleportieren.
 * FIXED: Gegner sichtbar machen letzte Welle.
 * Gegner schwächer machen erste Wellen.
 * FIXED: Orkbarrikade etwas schwächer.
@@ -641,7 +642,7 @@ Mehrspielertest (0.4 - 2 Spieler):
 * FIXED: Nach letzter Schlacht ist Drachentöterin noch im Team.
 * Letzte Welle: Sollten Mana und Lebensrunen droppen.
 * FIXED: Abklingzeit reduzieren (Heiltrank usw.)
-* Langschwert und Kurzschwert schmieden selbe ID.
+* FIXED: Langschwert und Kurzschwert schmieden selbe ID.
 * DONE: Großen Heiltrank und großen Manatrank herstellen einbauen.
 * FIXED: "Zur Kathedrale ausbauen" kostet Holz.
 * Nachfrage ob man das Spiel beenden möchte bei letzten Quest.
@@ -656,7 +657,7 @@ Mehrspielertest (0.4 - 2 Spieler):
 * FIXED: Blocker bei Ricmans Stand.
 * Sammelpunkt für Schreine erlauben? Dorthin laufen die verbündeten Helden?
 * Mitwirkende: Erste Texte erscheinen nicht.
-* Mitwirkende: Texte schneller, Abstände kleiner.
+* FIXED: Mitwirkende: Texte schneller, Abstände kleiner.
 
 TODO:
 - FIXED: Texte der NPCs hiden falls das Gebiet nicht sichtbar ist.

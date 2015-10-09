@@ -938,16 +938,25 @@ static if (DEBUG_MODE) then
 					endif
 				
 					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveImpsToWieland).isCompleted()) then
+						call QuestWar.quest.evaluate().moveImpsToWieland()
+						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveImpsToWieland).isCompleted()) then
+							debug call Print("Failed to complete quest item move imps to wieland.")
+							call thistype.makeCharactersInvulnerable(false)
+							return
+						endif
+
+					endif
+					
+					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemReportWieland).isCompleted()) then
 						/*
 						 * Plays video "Weapons From Wieland".
 						 */
-						call QuestWar.quest.evaluate().moveImpsToWieland()
 						call thistype.moveCharactersToRect(gg_rct_quest_war_wieland)
 						call TriggerSleepAction(2.0 + 2.0)
 						call waitForVideo(MapData.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveImpsToWieland).isCompleted()) then
-							debug call Print("Failed to complete quest item move imps to wieland.")
+						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemReportWieland).isCompleted()) then
+							debug call Print("Failed to complete quest item report wieland.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
