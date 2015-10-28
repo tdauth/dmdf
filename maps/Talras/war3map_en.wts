@@ -36676,7 +36676,7 @@ Stellt bei Benutzung <A026,DataA1> Mana wieder her.
 STRING 6127
 // Gegenstände: I03O (Apfel), Ubertip (Tooltipp - Erweitert (utub))
 {
-Heilt bei Benutzung <A1C7,DataA1> Trefferpunkte.|nBietet <I03O,uses> Aufladung.
+Heals <A1C7,DataA1> hit points on usage.|nProvides <I03O,uses> charges.
 }
 
 STRING 6128
@@ -36724,13 +36724,13 @@ STRING 6134
 STRING 6135
 // Gegenstände: I03O (Apfel), Name (Name (unam))
 {
-Apfel
+Apple
 }
 
 STRING 6136
 // Fähigkeiten: A1C8 (Kleiner Heiltrank), Name (Name (anam))
 {
-Kleiner Heiltrank
+Small Healing Potion
 }
 
 STRING 6137
@@ -36742,7 +36742,7 @@ STRING 6137
 STRING 6138
 // Fähigkeiten: A1C9 (Heiltrank), Name (Name (anam))
 {
-Heiltrank
+Healing Potion
 }
 
 STRING 6139
@@ -47026,13 +47026,13 @@ Heilt bei Benutzung <AIh1,DataA1> Trefferpunkte.|nBietet <I00A,uses> Aufladung.
 STRING 7852
 // Gegenstände: I03O (Apfel), Name (Name (unam))
 {
-Apfel
+Apple
 }
 
 STRING 7853
 // Gegenstände: I03O (Apfel), Tip (Tooltipp - Einfach (utip))
 {
-Apfel kaufen
+Buy Apple
 }
 
 STRING 7854
