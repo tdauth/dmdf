@@ -1,6 +1,13 @@
 library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, StructMapQuestsQuestArenaChampion
 
+	/**
+	 * \brief The arena allows two players to fight each other.
+	 * One can either fight against a computer controlled enemy or against a human controlled enemy.
+	 */
 	struct Arena
+		/**
+		 * For every kill a player gets this reward of gold.
+		 */
 		public static constant integer rewardGold = 10
 		private static constant integer maxUnits = 2
 		// static construction members
@@ -22,6 +29,9 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static trigger m_killTrigger
 		private static trigger m_leaveTrigger
 		private static trigger m_pvpTrigger
+		/**
+		 * Use a damage detection trigger to punish units from outside helping one player.
+		 */
 		private static trigger m_damageTrigger
 		private static leaderboard m_leaderboard
 
@@ -83,6 +93,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			else
 				call RemoveUnit(usedUnit)
 			endif
+			
 			
 			call SetPlayerAllianceStateBJ(owner, MapData.arenaPlayer, bj_ALLIANCE_ALLIED)
 			call SetPlayerAllianceStateBJ(MapData.arenaPlayer, owner, bj_ALLIANCE_ALLIED)
@@ -387,6 +398,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call SetUnitFacing(usedUnit, thistype.m_startFacing[thistype.m_units.backIndex()])
 			call SetUnitInvulnerable(usedUnit, true)
 			call PauseUnit(usedUnit, true)
+			call IssueImmediateOrder(usedUnit, "stop") // prevent the unit from walking out of the arena
+			debug call Print("Stoping " + GetUnitName(usedUnit))
 			
 			if (Character.getCharacterByUnit(usedUnit) != 0) then
 				set title = GetPlayerName(owner)
@@ -453,6 +466,33 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			endif
 			return null
 		endmethod
+		
+		/**
+		 * When ending the fight all attacking units (summoned as well) should be stopped.
+		 */
+		private static method stopAttacks takes nothing returns nothing
+			local integer i
+			local integer j
+			// store all units which are still attacking the unit
+			local AGroup attackingUnits = AGroup.create()
+			call attackingUnits.addUnitsInRange(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 4000.0, null)
+			set i = 0
+			loop
+				exitwhen (i == attackingUnits.units().size())
+				set j = 0
+				loop
+					exitwhen (j == thistype.m_units.size())
+					if (GetOwningPlayer(attackingUnits.units()[i]) == GetOwningPlayer(thistype.m_units[j])) then
+						debug call Print("Stop arena unit " + GetUnitName(attackingUnits.units()[i]))
+						call IssueImmediateOrder(attackingUnits.units()[i], "stop")
+						exitwhen (true)
+					endif
+					set j = j + 1
+				endloop
+				set i = i + 1
+			endloop
+			call attackingUnits.destroy()
+		endmethod
 
 		/**
 		 * Ends the fight by disabling the kill and leave triggers, removes all units and displays who won.
@@ -469,6 +509,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.destroyDamageTrigger()
 			call DisableTrigger(thistype.m_killTrigger)
 			call DisableTrigger(thistype.m_leaveTrigger)
+			call thistype.stopAttacks()
 			loop
 				exitwhen (thistype.m_units.empty())
 				call thistype.removeUnitByIndex(thistype.m_units.backIndex())
