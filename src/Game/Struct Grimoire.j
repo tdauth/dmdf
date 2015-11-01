@@ -269,13 +269,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 					debug call Print("Spell is level 0")
 				endif
 			endif
-
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), thistype.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
 		endmethod
 		
 		/**
@@ -1082,6 +1075,13 @@ endif
 
 		public stub method onCastAction takes nothing returns nothing
 			call this.grimoire().decreasePage()
+			
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1097,6 +1097,13 @@ endif
 
 		public stub method onCastAction takes nothing returns nothing
 			call this.grimoire().increasePage()
+			
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1113,6 +1120,13 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Increasing spell")
 			call this.grimoire().increaseSpell()
+			
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1129,6 +1143,13 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Decreasing spell")
 			call this.grimoire().decreaseSpell()
+			
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1145,6 +1166,13 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Adding spell to favourites")
 			call this.grimoire().addSpellToFavourites()
+			
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1161,6 +1189,13 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Removing spell from favourites")
 			call this.grimoire().removeSpellFromFavourites()
+			
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1180,6 +1215,13 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Going back to grimoire")
 			call this.grimoire().showPage()
+			
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1205,6 +1247,13 @@ endif
 			// can be casted in spell menu as well!
 			if (this.grimoire().pageIsShown()) then
 				call this.grimoire().setCurrentSpell(this.spell())
+				
+				// TODO if trigger player is not owner of the character!
+				// the trigger player is the player who issues the order/ability not necessarily the owner
+				// there fore only re open the grimoire if there is a trigger player
+				if (GetTriggerPlayer() != null) then
+					call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+				endif
 			endif
 		endmethod
 
