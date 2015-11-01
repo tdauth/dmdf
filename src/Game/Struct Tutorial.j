@@ -176,6 +176,10 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetTitle(whichQuest, tre("Info: Schreine", "Info: Shrines"))
 			call QuestSetDescription(whichQuest, Format(tre("Schreine dienen der Wiederbelebung des Charakters. Es kann immer nur ein Schrein aktiviert werden. An diesem Schrein wird der Charakter nach %1% Sekunden wiederbelebt, wenn er gestorben ist. Den aktiven Schrein erreicht man über das Symbol links unten oder mit F8. Zu allen erkundeten Schreinen kann sich der Charakter mit Hilfe der Spruchrolle des Totenreichs teleportieren.", "Shrines are for the revival of the character. There can only be one shrine activated all the time. At this shrine the character will be revived after %1% seconds when he died. The active shrine can be reached over the symbol at the left bottom or by F8. The character can teleport himself to all discovered shrines by using the Scroll of the Realm of the Dead.")).i(R2I(MapData.revivalTime)).result())
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNResStone.blp")
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("Die Spruchrolle des Totenreichs ermöglicht den Teleport zu einem erkundeten Schrein."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("Die Spruchrolle der Ahnen ermöglicht den Teleport zu einem erkundeten Schrein mit verbündeten Einheiten."))
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
