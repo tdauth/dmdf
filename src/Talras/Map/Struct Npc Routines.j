@@ -231,6 +231,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_lotharFlirtsWithMathilda = NpcTalksRoutine.create(Routines.talk(), Npcs.lothar(), 13.00, 16.00, gg_rct_waypoint_lothar_1)
 			call thistype.m_lotharFlirtsWithMathilda.setPartner(Npcs.mathilda())
 			call thistype.m_lotharFlirtsWithMathilda.setFacing(180.0)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tr("Oh du Liebe meines Lebens!"), null)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tr("Möchtest du von meinem Honig kosten?"), null)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tr("Mathilda, oh du holde, schöne, spiele mir ein Lied!"), null)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tr("Willst du mir nicht eine deiner wunderbaren Geschichten erzählen?"), null)
 			set thistype.m_lotharSells1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.lothar(), 16.00, MapData.evening, gg_rct_waypoint_lothar_0)
 			call thistype.m_lotharSells1.setFacing(93.32)
 
