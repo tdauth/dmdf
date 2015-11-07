@@ -1,8 +1,8 @@
 // DMdF team
-call Credits.addContributor.evaluate("Baradé", tre("Projektleitung, Code, Inhalt, Landschaften", "Project leadership, code, content, landscapes"))
-call Credits.addContributor.evaluate("Sardor", tre("Modelle, Klassen, Zauber, Balancing und Inhalt", "Models, classes, spells, balancing and content"))
-call Credits.addContributor.evaluate("Deranor", tre("Inhalt, Landschaften, Tests", "Content, landscapes, tests"))
-call Credits.addContributor.evaluate("Jojo", tre("Tests", "Tests"))
+call Credits.addContributor.evaluate("Tamino Dauth (Baradé)", tre("Projektleitung, Code, Inhalt, Landschaften", "Project leadership, code, content, landscapes"))
+call Credits.addContributor.evaluate("Oliver T. (Sardor)", tre("Modelle, Klassen, Zauber, Balancing und Inhalt", "Models, classes, spells, balancing and content"))
+call Credits.addContributor.evaluate("Andreas B. (Deranor)", tre("Inhalt, Landschaften, Tests", "Content, landscapes, tests"))
+call Credits.addContributor.evaluate("Johanna W.", tre("Tests", "Tests"))
 
 // voices
 call Credits.addTitle.evaluate(tre("Sprecher", "Voices"))

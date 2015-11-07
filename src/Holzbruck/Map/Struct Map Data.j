@@ -2,8 +2,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 	struct MapData extends MapDataInterface
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
-		public static constant integer maxPlayers = 12
-		public static constant player alliedPlayer = null
+		public static constant integer maxPlayers = 6
+		public static constant player alliedPlayer = Player(6)
 		public static constant player neutralPassivePlayer = Player(PLAYER_NEUTRAL_PASSIVE)
 		public static constant real morning = 5.0
 		public static constant real midday = 12.0
@@ -17,13 +17,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 25
 		public static constant integer workerUnitTypeId = 'h00E'
-		public static constant integer maxScore = 50
-		private static trigger m_safeEnterTrigger
-		private static trigger m_safeLeaveTrigger
-		private static Shrine m_shrine
-		private static leaderboard m_leaderboard
-		private static trigger m_deathTrigger
-		private static integer array m_score[12]
 		
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -48,6 +41,45 @@ library StructMapMapMapData requires Asl, StructGameGame
 			
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
+			
+			call AddDoodadOcclusion('D027')
+			call AddDoodadOcclusion('D028')
+			call AddDoodadOcclusion('D029')
+			call AddDoodadOcclusion('D02A')
+			call AddDoodadOcclusion('D02B')
+			call AddDoodadOcclusion('D02C')
+			call AddDoodadOcclusion('D02D')
+			call AddDoodadOcclusion('D02E')
+			call AddDoodadOcclusion('D02F')
+			call AddDoodadOcclusion('D02G')
+			call AddDoodadOcclusion('D02H')
+			call AddDoodadOcclusion('D02I')
+			call AddDoodadOcclusion('D02J')
+			call AddDoodadOcclusion('D02K')
+			call AddDoodadOcclusion('D074')
+			call AddDoodadOcclusion('D075')
+			call AddDoodadOcclusion('D076')
+			call AddDoodadOcclusion('D077')
+			call AddDoodadOcclusion('D078')
+			call AddDoodadOcclusion('D08E')
+			call AddDoodadOcclusion('D08F')
+			
+			call AddDoodadOcclusion('D02N')
+			call AddDoodadOcclusion('D02O')
+			call AddDoodadOcclusion('D02P')
+			call AddDoodadOcclusion('D02Q')
+			call AddDoodadOcclusion('D02R')
+			call AddDoodadOcclusion('D02S')
+			call AddDoodadOcclusion('D02T')
+			call AddDoodadOcclusion('D02U')
+			call AddDoodadOcclusion('D02V')
+			call AddDoodadOcclusion('D02W')
+			call AddDoodadOcclusion('D02X')
+			call AddDoodadOcclusion('D07B')
+			call AddDoodadOcclusion('D07C')
+			call AddDoodadOcclusion('D07D')
+			
+			call AddDoodadOcclusion('D04K')
 		endmethod
 		
 		/**
@@ -93,64 +125,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_playable)
 		endmethod
 
-		public static method classRangeAbilityId takes Character character returns integer
-			// dragon slayer
-			if (GetUnitTypeId(character.unit()) == 'H01J') then
-				return 'A16I'
-			// cleric
-			elseif (GetUnitTypeId(character.unit()) == 'H01L') then
-				return 'A16J'
-			// necromancer
-			elseif (GetUnitTypeId(character.unit()) == 'H01N') then
-				return 'A16K'
-			// druid
-			elseif (GetUnitTypeId(character.unit()) == 'H01P') then
-				return 'A16L'
-			// knight
-			elseif (GetUnitTypeId(character.unit()) == 'H01R') then
-				return 'A16M'
-			// ranger
-			elseif (GetUnitTypeId(character.unit()) == 'H01T') then
-				return 'A16N'
-			// elemental mage
-			elseif (GetUnitTypeId(character.unit()) == 'H01V') then
-				return 'A16O'
-			// wizard
-			elseif (GetUnitTypeId(character.unit()) == 'H01X') then
-				return 'A16P'
-			endif
-			return Classes.classRangeAbilityId(character.class())
-		endmethod
-		
-		public static method classMeleeAbilityId takes Character character returns integer
-			// dragon slayer
-			if (GetUnitTypeId(character.unit()) == 'H01K') then
-				return 'A16H'
-			// cleric
-			elseif (GetUnitTypeId(character.unit()) == 'H01M') then
-				return 'A16S'
-			// necromancer
-			elseif (GetUnitTypeId(character.unit()) == 'H01O') then
-				return 'A16T'
-			// druid
-			elseif (GetUnitTypeId(character.unit()) == 'H01Q') then
-				return 'A16Q'
-			// knight
-			elseif (GetUnitTypeId(character.unit()) == 'H01S') then
-				return 'A16U'
-			// ranger
-			elseif (GetUnitTypeId(character.unit()) == 'H01U') then
-				return 'A16V'
-			// elemental mage
-			elseif (GetUnitTypeId(character.unit()) == 'H01W') then
-				return 'A16R'
-			// wizard
-			elseif (GetUnitTypeId(character.unit()) == 'H01Y') then
-				return 'A16W'
-			endif
-			return Classes.classMeleeAbilityId(character.class())
-		endmethod
-
 		/// Required by \ref Game.
 		public static method resetCameraBoundsForPlayer takes player user returns nothing
 		endmethod
@@ -167,6 +141,18 @@ library StructMapMapMapData requires Asl, StructGameGame
 			
 			// tutorial GUI, after creating quests. Should be listed at the bottom of finished quests.
 			call Tutorial.init.evaluate()
+			
+			set i = 0
+			loop
+				exitwhen (i == thistype.maxPlayers)
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					call ACharacter.playerCharacter(Player(i)).setMovable(true)
+					call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
+					
+					call AddUnitOcclusion(ACharacter.playerCharacter(Player(i)).unit())
+				endif
+				set i = i + 1
+			endloop
 		endmethod
 
 		/// Required by \ref Classes.

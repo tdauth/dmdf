@@ -115,7 +115,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			// TODO unmorph before if it is morphed already
 			if (character != 0) then
-				debug call Print("Adding and removing ability " + GetObjectName(MapData.classRangeAbilityId.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
+				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityIdByCharacter.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
 				/**
 				 * Make sure the current spell levels are up to date for later restoration.
 				 */
@@ -123,8 +123,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				/*
 				 * These two lines of code do the passive transformation to a range fighting unit.
 				 */
-				call UnitAddAbility(whichUnit, MapData.classRangeAbilityId.evaluate(character))
-				call UnitRemoveAbility(whichUnit, MapData.classRangeAbilityId.evaluate(character))
+				call UnitAddAbility(whichUnit, Classes.classRangeAbilityIdByCharacter.evaluate(character))
+				call UnitRemoveAbility(whichUnit, Classes.classRangeAbilityIdByCharacter.evaluate(character))
 				/*
 				 * Now the spell levels have to be readded and the grimoire needs to be updated since all abilities are gone.
 				 */
@@ -145,10 +145,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			debug call Print("Range item drop")
 			
 			if (character != 0) then
-				debug call Print("Adding and removing ability " + GetObjectName(MapData.classMeleeAbilityId.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
+				debug call Print("Adding and removing ability " + GetObjectName(Classes.classMeleeAbilityIdByCharacter.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
 				call character.updateRealSpellLevels()
-				call UnitAddAbility(whichUnit, MapData.classMeleeAbilityId.evaluate(character))
-				call UnitRemoveAbility(whichUnit, MapData.classMeleeAbilityId.evaluate(character))
+				call UnitAddAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter.evaluate(character))
+				call UnitRemoveAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter.evaluate(character))
 				call character.restoreRealSpellLevels()
 				call character.clearRealSpellLevels()
 				call character.grimoire().updateUi.evaluate()
