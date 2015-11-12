@@ -167,15 +167,18 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				call SetPlayerAllianceStateBJ(Player(i), MapData.orcPlayer, bj_ALLIANCE_UNALLIED)
-				call SetPlayerAllianceStateBJ(MapData.orcPlayer, Player(i), bj_ALLIANCE_UNALLIED)
+				/*
+				 * Players must see all Orc enemies.
+				 */
+				call SetPlayerAllianceStateBJ(Player(i), MapData.orcPlayer, bj_ALLIANCE_UNALLIED_VISION)
+				call SetPlayerAllianceStateBJ(MapData.orcPlayer, Player(i), bj_ALLIANCE_UNALLIED_VISION)
 				set i = i + 1
 			endloop
 			
 			call SetPlayerAllianceStateBJ(MapData.orcPlayer, Player(PLAYER_NEUTRAL_AGGRESSIVE), bj_ALLIANCE_ALLIED)
 			call SetPlayerAllianceStateBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), MapData.orcPlayer, bj_ALLIANCE_ALLIED)
-			call SetPlayerAllianceStateBJ(MapData.orcPlayer, MapData.alliedPlayer, bj_ALLIANCE_UNALLIED)
-			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.orcPlayer, bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(MapData.orcPlayer, MapData.alliedPlayer, bj_ALLIANCE_UNALLIED_VISION)
+			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.orcPlayer, bj_ALLIANCE_UNALLIED_VISION)
 			
 			call Aos.init.evaluate()
 			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tre("Sie haben die Arena betreten.", "You have entered the arena."), tre("Sie haben die Arena verlassen.", "You have left the arena."), tre("Ein Arenakampf beginnt nun.", "An arena fight is starting now."), tre("Ein Arenakampf endet nun. Der Gewinner ist \"%1%\" und er bekommt %2% Goldmünzen.", "An arena fight is ending now. The winner is \"%1%\" and gets %2% gold coins."))

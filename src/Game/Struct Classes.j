@@ -193,7 +193,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 		
 		private static method initCleric takes nothing returns nothing
-			set thistype.m_cleric = AClass.create('H000', "spell", "Sound\\Units\\ClassCleric\\Class.wav")
+			set thistype.m_cleric = AClass.create('H000', "spell", "Sound\\Units\\ClassCleric\\Class.wav", 1, 1)
 			call thistype.m_cleric.setStrPerLevel(1.50)
 			call thistype.m_cleric.setAgiPerLevel(1.50)
 			call thistype.m_cleric.setIntPerLevel(3.0)
@@ -226,7 +226,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 
 		private static method initNecromancer takes nothing returns nothing
-			set thistype.m_necromancer = AClass.create('H004', "spell", "Sound\\Units\\ClassNecromancer\\Class.wav")
+			set thistype.m_necromancer = AClass.create('H004', "spell", "Sound\\Units\\ClassNecromancer\\Class.wav", 1, 1)
 			call thistype.m_necromancer.setStrPerLevel(1.50)
 			call thistype.m_necromancer.setAgiPerLevel(1.50)
 			call thistype.m_necromancer.setIntPerLevel(3.0)
@@ -258,7 +258,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 
 		private static method initDruid takes nothing returns nothing
-			set thistype.m_druid = AClass.create('H00G', "spell", "Sound\\Units\\ClassDruid\\Class.wav")
+			set thistype.m_druid = AClass.create('H00G', "spell", "Sound\\Units\\ClassDruid\\Class.wav", 1, 1)
 			call thistype.m_druid.setStrPerLevel(1.50)
 			call thistype.m_druid.setAgiPerLevel(1.50)
 			call thistype.m_druid.setIntPerLevel(3.0)
@@ -288,7 +288,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 
 		private static method initKnight takes nothing returns nothing
-			set thistype.m_knight = AClass.create('H006', "spell", "Sound\\Units\\ClassKnight\\Class.wav")
+			set thistype.m_knight = AClass.create('H006', "spell", "Sound\\Units\\ClassKnight\\Class.wav", 1, 1)
 			call thistype.m_knight.setStrPerLevel(2.0)
 			call thistype.m_knight.setAgiPerLevel(2.0)
 			call thistype.m_knight.setIntPerLevel(2.0)
@@ -314,7 +314,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 
 		private static method initDragonSlayer takes nothing returns nothing
-			set thistype.m_dragonSlayer = AClass.create('H007', "spell", "Sound\\Units\\ClassDragonSlayer\\Class.wav")
+			set thistype.m_dragonSlayer = AClass.create('H007', "spell", "Sound\\Units\\ClassDragonSlayer\\Class.wav", 1, 1)
 			call thistype.m_dragonSlayer.setStrPerLevel(3.0)
 			call thistype.m_dragonSlayer.setAgiPerLevel(1.90)
 			call thistype.m_dragonSlayer.setIntPerLevel(1.10)
@@ -338,7 +338,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 
 		private static method initRanger takes nothing returns nothing
-			set thistype.m_ranger = AClass.create('H008', "spell", "Sound\\Units\\ClassRanger\\Class.wav")
+			set thistype.m_ranger = AClass.create('H008', "spell", "Sound\\Units\\ClassRanger\\Class.wav", 1, 1)
 			call thistype.m_ranger.setStrPerLevel(1.80)
 			call thistype.m_ranger.setAgiPerLevel(3.0)
 			call thistype.m_ranger.setIntPerLevel(1.20)
@@ -365,7 +365,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 
 		private static method initElementalMage takes nothing returns nothing
-			set thistype.m_elementalMage = AClass.create('H009', "spell", "Sound\\Units\\ClassElementalMage\\Class.wav")
+			set thistype.m_elementalMage = AClass.create('H009', "spell", "Sound\\Units\\ClassElementalMage\\Class.wav", 1, 1)
 			call thistype.m_elementalMage.setStrPerLevel(1.50)
 			call thistype.m_elementalMage.setAgiPerLevel(1.50)
 			call thistype.m_elementalMage.setIntPerLevel(3.0)
@@ -394,7 +394,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 
 		private static method initWizard takes nothing returns nothing
-			set thistype.m_wizard = AClass.create('H002', "spell", "Sound\\Units\\ClassWizard\\Class.wav")
+			set thistype.m_wizard = AClass.create('H002', "spell", "Sound\\Units\\ClassWizard\\Class.wav", 1, 1)
 			call thistype.m_wizard.setStrPerLevel(1.50)
 			call thistype.m_wizard.setAgiPerLevel(1.50)
 			call thistype.m_wizard.setIntPerLevel(3.0)

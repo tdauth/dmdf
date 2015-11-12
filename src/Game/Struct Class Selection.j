@@ -327,8 +327,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call ForceUIKeyBJ(GetTriggerPlayer(), "Z") // WORKAROUND: whenever an ability is being removed it closes grimoire
 		endmethod
 		
-		public static method create takes player user returns thistype
-			local thistype this = thistype.allocate(user)
+		public static method create takes player user, camerasetup cameraSetup, boolean hideUserInterface, real x, real y, real facing, real refreshRate, real rotationAngle, AClass firstClass, AClass lastClass, string strengthIconPath, string agilityIconPath, string intelligenceIconPath, string textTitle, string textStrength, string textAgility, string textIntelligence returns thistype
+			local thistype this = thistype.allocate(user, cameraSetup, hideUserInterface, x, y, facing, refreshRate, rotationAngle, firstClass, lastClass, strengthIconPath, agilityIconPath, intelligenceIconPath, textTitle, textStrength, textAgility, textIntelligence)
 			
 			set this.m_classChangeTrigger = CreateTrigger()
 			call TriggerRegisterPlayerUnitEvent(this.m_classChangeTrigger, user, EVENT_PLAYER_UNIT_SPELL_CHANNEL, null)
@@ -362,9 +362,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local ClassSelection classSelection
 			local integer i
 			local player whichPlayer
-
-			call AClassSelection.init(gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
-
+			
 			call SuspendTimeOfDay(true)
 			call SetTimeOfDay(0.0)
 			call ForceCinematicSubtitles(true)
@@ -376,7 +374,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				set whichPlayer = Player(i)
 
 				if (GetPlayerSlotState(whichPlayer) != PLAYER_SLOT_STATE_EMPTY) then
-					set classSelection = ClassSelection.create(whichPlayer)
+					set classSelection = ClassSelection.create(whichPlayer, gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
 					call classSelection.setStartX(MapData.startX(i))
 					call classSelection.setStartY(MapData.startY(i))
 					call classSelection.setStartFacing(0.0)
@@ -384,6 +382,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 					call classSelection.enableArrowKeySelection(false)
 					call classSelection.enableEscapeKeySelection(false)
 					call classSelection.show()
+					call classSelection.minimize(false) // show maximized
 				endif
 
 				set whichPlayer = null

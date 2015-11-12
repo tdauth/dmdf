@@ -81,12 +81,10 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		// questItemDestroyArtillery
 		private AGroup m_orcSiege
 		private AGroup m_orcSiegeWarriors
-		private fogmodifier array m_orcSiegeFogModifiers[12] /// TODO MapData.maxPlayers
 		
 		// questItemDefeatTheEnemy
 		private AGroup m_highElves
 		private AGroup m_finalOrcs
-		private AIntegerVector m_fogModifiers
 		
 		// questItemReportHeimrich
 		private QuestAreaQuestTheDefenseOfTalrasReportHeimrich m_questAreaReportHeimrich
@@ -127,29 +125,8 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			return false
 		endmethod
 		
-		private method createFogModifiers takes rect whichRect returns nothing
-			local integer i = 0
-			local fogmodifier whichFogModifier
-			local AFogModifierVector playerFogModifiers = AFogModifierVector.create()
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				set whichFogModifier = CreateFogModifierRect(Player(i), FOG_OF_WAR_VISIBLE, whichRect, true, false)
-				call playerFogModifiers.pushBack(whichFogModifier)
-				call FogModifierStart(whichFogModifier)
-				set i = i + 1
-			endloop
-			call this.m_fogModifiers.pushBack(playerFogModifiers)
-		endmethod
-		
 		private static method stateActionCompletedDestroyArtillery takes AQuestItem whichQuestItem returns nothing
 			local thistype this = thistype(whichQuestItem.quest())
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call DestroyFogModifier(this.m_orcSiegeFogModifiers[i])
-				set this.m_orcSiegeFogModifiers[i] = null
-				set i = i + 1
-			endloop
 
 			call Npcs.initDararos(CreateUnit(MapData.alliedPlayer, 'H02F', GetRectCenterX(gg_rct_quest_the_defense_of_talras_dararos), GetRectCenterY(gg_rct_quest_the_defense_of_talras_dararos), 0.0))
 			call SetHeroLevel(Npcs.dararos(), 25, false)
@@ -169,7 +146,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			  * TODO Create the final orcs from everywhere
 			  */
 			set this.m_finalOrcs = AGroup.create()
-			set this.m_fogModifiers = AIntegerVector.create()
 			 
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_0, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_0, 90.0), true, false)
@@ -178,7 +154,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_0, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05J', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_0, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05K', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_0, 90.0), true, false)
-			call this.createFogModifiers.evaluate(gg_rct_quest_the_defense_of_talras_final_orcs_0)
 			 
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
@@ -187,7 +162,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05J', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05K', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
-			call this.createFogModifiers.evaluate(gg_rct_quest_the_defense_of_talras_final_orcs_1)
 			
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_2, 180.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_2, 180.0), true, false)
@@ -196,7 +170,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_2, 180.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05J', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_2, 180.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05K', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_2, 180.0), true, false)
-			call this.createFogModifiers.evaluate(gg_rct_quest_the_defense_of_talras_final_orcs_2)
 			
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_3, 180.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_3, 180.0), true, false)
@@ -205,7 +178,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_3, 180.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05J', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_3, 180.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05K', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_3, 180.0), true, false)
-			call this.createFogModifiers.evaluate(gg_rct_quest_the_defense_of_talras_final_orcs_3)
 			 
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_4, 270.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_4, 270.0), true, false)
@@ -214,7 +186,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_4, 270.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05J', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_4, 270.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05K', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_4, 270.0), true, false)
-			call this.createFogModifiers.evaluate(gg_rct_quest_the_defense_of_talras_final_orcs_4)
 			 
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_5, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_5, 90.0), true, false)
@@ -223,7 +194,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_5, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05J', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_5, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05K', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_5, 90.0), true, false)
-			call this.createFogModifiers.evaluate(gg_rct_quest_the_defense_of_talras_final_orcs_5)
 			 
 			call this.m_finalOrcs.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras_orc_target), GetRectCenterY(gg_rct_quest_the_defense_of_talras_orc_target))
 			
@@ -263,21 +233,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		private static method stateActionCompletedDefeatTheEnemy takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			local unit guard
-			local integer i = 0
-			local integer j
-			loop
-				exitwhen (i == this.m_fogModifiers.size())
-				set j = 0
-				loop
-					exitwhen (j == AFogModifierVector(this.m_fogModifiers[i]).size())
-					call DestroyFogModifier(AFogModifierVector(this.m_fogModifiers[i])[j])
-					set j = j + 1
-				endloop
-				call AFogModifierVector(this.m_fogModifiers[i]).destroy()
-				set i = i + 1
-			endloop
-			call this.m_fogModifiers.destroy()
-			set this.m_fogModifiers = 0
 			call this.m_highElves.forGroup(thistype.forGroupRemoveUnit)
 			call this.m_highElves.destroy()
 			set this.m_highElves = 0
@@ -336,7 +291,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 	
 		private method enableOrcArtillery takes nothing returns nothing
-			local integer i
 			set this.m_orcSiege = AGroup.create()
 			call this.m_orcSiege.addGroup(CreateUnitsAtRect(1, 'o003', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_trebuchet_0, 180.0), true, false)
 			call this.m_orcSiege.addGroup(CreateUnitsAtRect(1, 'o003', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_trebuchet_1, 180.0), true, false)
@@ -413,14 +367,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_12_right, 0.0)
 			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_13_right, 0.0)
 			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_14_right, 0.0)
-			
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				set this.m_orcSiegeFogModifiers[i] = CreateFogModifierRect(Player(i), FOG_OF_WAR_VISIBLE, gg_rct_quest_the_defense_of_talras_orc_siege_visibility, true, true)
-				call FogModifierStart(this.m_orcSiegeFogModifiers[i])
-				set i = i + 1
-			endloop
 			
 			call this.questItem(thistype.questItemDefendAgainstOrcs).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemDestroyArtillery).setState(thistype.stateNew)

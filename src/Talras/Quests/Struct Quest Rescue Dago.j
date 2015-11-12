@@ -76,10 +76,10 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			local integer i
 			call VideoRescueDago1.video.evaluate().play()
 			call waitForVideo(MapData.videoWaitInterval)
+			call ACharacter.panCameraSmartToAll()
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				call SmartCameraPanWithZForPlayer(Player(i), GetUnitX(Npcs.dago()), GetUnitY(Npcs.dago()), 0.0, 0.0)
 				call UnitShareVision(Npcs.dago(), Player(i), true)
 				set i = i + 1
 			endloop

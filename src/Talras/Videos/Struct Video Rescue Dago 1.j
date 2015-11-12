@@ -92,8 +92,6 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 			call Fellows.dago().destroy()
 
 			call Game.resetVideoSettings()
-
-			call PanCameraToTimedUnit(Npcs.dago(), 0.0)
 		endmethod
 
 		private static method create takes nothing returns thistype

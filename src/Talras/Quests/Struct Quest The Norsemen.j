@@ -110,7 +110,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private integer m_currentGroupIndex
 		private trigger m_spawnTrigger
 		private WavesDisplay m_wavesDisplay
-		private fogmodifier array m_spawnFogModifiers[4]
 		private QuestAreaTheNorsemenTheChief m_questAreaTheChief
 		private QuestAreaTheNorsemenBattle m_questAreaBattle
 		private QuestAreaTheNorsemenHeimrich m_questAreaHeimrich
@@ -145,7 +144,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			local thistype this = thistype.quest()
 			local unit triggerUnit = GetTriggerUnit()
 			local boolean result = false
-			local integer i
 			if (this.m_currentGroup.units().contains(triggerUnit)) then
 				call this.m_currentGroup.units().remove(triggerUnit)
 				set result = this.m_currentGroup.units().empty()
@@ -154,14 +152,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 					// rangers (ally spawn)
 					if (this.m_currentGroupIndex == 1) then
 						call this.m_wavesDisplay.decreaseAllies()
-						set i = 0
-						loop
-							exitwhen (i == MapData.maxPlayers)
-							if (IsPlayerPlayingUser(Player(i))) then
-								call FogModifierStart(this.m_spawnFogModifiers[Index2D(3, i, MapData.maxPlayers)])
-							endif
-							set i = i + 1
-						endloop
 						set this.m_allyRangerGroup = AGroup.create()
 						call this.m_allyRangerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.ranger, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
 						set this.m_allyRangerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03G', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
@@ -192,8 +182,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		private method cleanUpBattleField takes nothing returns nothing
-			local integer i
-			local integer j
 			set this.m_hasStarted = false
 			call this.m_allyStartGroup.units().remove(Npcs.wigberht())
 			call this.m_allyStartGroup.units().remove(Npcs.ricman())
@@ -211,21 +199,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			set this.m_spawnTrigger = null
 
 			call this.m_wavesDisplay.destroy()
-
-			set i = 0
-			loop
-				exitwhen (i == 4)
-				set j = 0
-				loop
-					exitwhen (j == MapData.maxPlayers)
-					if (this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)] != null) then
-						call DestroyFogModifier(this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)])
-						set this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)] = null
-					endif
-					set j = j + 1
-				endloop
-				set i = i + 1
-			endloop
 		endmethod
 		
 		public method completeFight takes nothing returns boolean
@@ -236,8 +209,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private static method triggerActionSpawn takes nothing returns nothing
 			local thistype this = thistype.quest()
 			local player owner = MapData.orcPlayer
-			local integer i
-			local integer j
 			local unit orcLeader
 			call this.m_currentGroup.units().clear()
 
@@ -250,21 +221,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call this.m_wavesDisplay.decreaseHostiles()
 
 			if (this.m_currentGroupIndex == 1) then
-				// fog modifiers
-				set i = 0
-				loop
-					exitwhen (i == 3)
-					set j = 0
-					loop
-						exitwhen (j == MapData.maxPlayers)
-						if (IsPlayerPlayingUser(Player(j))) then
-							call FogModifierStart(this.m_spawnFogModifiers[Index2D(i, j, MapData.maxPlayers)])
-						endif
-						set j = j + 1
-					endloop
-					set i = i + 1
-				endloop
-
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcCrossbow, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcPython, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
@@ -346,26 +302,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		 * The old spawn points at the camp are disabled and Wigberht and Ricman are shared as fellows as well as the Norsemen.
 		 */
 		public method startSpawns takes AGroup allyStartGroup, AGroup enemyStartGroup returns nothing
-			local player allyPlayer = MapData.alliedPlayer
 			local integer i
-			local player user
-			
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (IsPlayerPlayingUser(Player(i))) then
-					set this.m_spawnFogModifiers[Index2D(0, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_0), 600.0, true, true)
-					call FogModifierStop(this.m_spawnFogModifiers[Index2D(0, i, MapData.maxPlayers)])
-					set this.m_spawnFogModifiers[Index2D(1, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_1), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_1), 600.0, true, true)
-					call FogModifierStop(this.m_spawnFogModifiers[Index2D(1, i, MapData.maxPlayers)])
-					set this.m_spawnFogModifiers[Index2D(2, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_2), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_2), 600.0, true, true)
-					call FogModifierStop(this.m_spawnFogModifiers[Index2D(2, i, MapData.maxPlayers)])
-					set this.m_spawnFogModifiers[Index2D(3, i, MapData.maxPlayers)] = CreateFogModifierRadius(Player(i), FOG_OF_WAR_VISIBLE, GetRectCenterX(gg_rct_quest_the_norsemen_ally_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_ally_spawn_0), 600.0, true, true)
-					call FogModifierStop(this.m_spawnFogModifiers[Index2D(3, i, MapData.maxPlayers)])
-				endif
-				set i = i + 1
-			endloop
-			
 			// hide orc spawn point
 			call SpawnPoints.orcs0().disable()
 			set i = 0

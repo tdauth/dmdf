@@ -877,6 +877,15 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_necks3.addUnitWithType(gg_unit_n05Z_0469, 1.0)
 			set index = thistype.m_necks3.addUnitWithType(gg_unit_n05Z_0470, 1.0)
 			set index = thistype.m_necks3.addUnitWithType(gg_unit_n05Z_0471, 1.0)
+			
+			// near ditch spiders
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03Y_0480, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03Y_0479, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0475, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0476, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0477, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0483, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0482, 1.0)
 		endmethod
 
 		/// \todo change unit type
