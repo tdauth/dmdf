@@ -48,7 +48,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 		public stub method onPlayAction takes nothing returns nothing
 			local player user = Player(PLAYER_NEUTRAL_PASSIVE)
 			
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("So betraten unsere Helden die alte Burg Talras, um dem Herzog die Treue zu schwören. Doch was ihnen durch den Kopf ging war nicht etwa die Treue zu ihren Artgenossen, sondern viel mehr wie viele Goldmünzen der Herzog locker machen würde."), gg_snd_ErzaehlerDieBurg1)
+			call TransmissionFromUnitType('n00W', user, tre("Erzähler", "Narrator"), tre("So betraten unsere Helden die alte Burg Talras, um dem Herzog die Treue zu schwören. Doch was ihnen durch den Kopf ging war nicht etwa die Treue zu ihren Artgenossen, sondern viel mehr wie viele Goldmünzen der Herzog locker machen würde.", "Finally our heroes entered the old castle Talras to swear their loyality to the duke. Anyway, what they were thinking about wasn't their loyality to their fellow species rather than how many gold coins the duke would cough up."), gg_snd_ErzaehlerDieBurg1)
 		
 			call SetDoodadAnimationRect(gg_rct_gate_0, 'D085', "Death", false)
 
@@ -72,7 +72,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Die Burg Talras schützte das umliegende Land vor Überfällen, doch würde sie auch einer Invasion der Orks und Dunkelelfen stand halten?"), gg_snd_ErzaehlerDieBurg2)
+			call TransmissionFromUnitType('n00W', user, tre("Erzähler", "Narrator"), tre("Die Burg Talras schützte das umliegende Land vor Überfällen, doch würde sie auch einer Invasion der Orks und Dunkelelfen stand halten?", "The castle Talras protected the surrounding country from assaults but would it hold out against an invasion of Orcs and Dark Elves as well?"), gg_snd_ErzaehlerDieBurg2)
 			
 			if (wait(5.0)) then // TODO Transmission duration
 				return
@@ -115,7 +115,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call SetDoodadAnimationRect(gg_rct_gate_1, 'D085', "Death", false)
 			call SetDoodadAnimationRect(gg_rct_gate_2, 'D053', "Death", false)
 			
-			call TransmissionFromUnitType('n00W', user, tr("Erzähler"), tr("Eines war unseren Freunden jedoch klar: Es gab viel zu tun."), gg_snd_ErzaehlerDieBurg3)
+			call TransmissionFromUnitType('n00W', user, tre("Erzähler", "Narrator"), tre("Eines war unseren Freunden jedoch klar: Es gab viel zu tun.", "But one thing was clear to our friends: There was much to do."), gg_snd_ErzaehlerDieBurg3)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerDieBurg3))) then
 				return

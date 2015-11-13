@@ -99,9 +99,9 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
-		public static constant integer startSkillPoints = 3
+		public static constant integer startSkillPoints = 4
 		public static constant integer levelSpellPoints = 2
-		public static constant integer maxLevel = 25
+		public static constant integer maxLevel = 30
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static constant player orcPlayer = Player(9)
 		public static constant player haldarPlayer = Player(10)
@@ -1322,9 +1322,6 @@ endif
 			local integer i
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
-			
-			// tutorial GUI, after creating quests. Should be listed at the bottom of finished quests.
-			call Tutorial.init.evaluate()
 			
 			// castle bridge
 			call SetDestructableOccluderHeight(gg_dest_B00H_2439, bj_CLIFFHEIGHT * GetTerrainCliffLevel(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)))

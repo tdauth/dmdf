@@ -13,9 +13,9 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant real revivalTime = 5.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
-		public static constant integer startSkillPoints = 3
+		public static constant integer startSkillPoints = 4
 		public static constant integer levelSpellPoints = 2
-		public static constant integer maxLevel = 25
+		public static constant integer maxLevel = 30
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static constant integer maxScore = 50
 		private static trigger m_safeEnterTrigger
@@ -243,9 +243,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 			set thistype.m_deathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_deathTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(thistype.m_deathTrigger, Condition(function thistype.triggerConditionDeath))
-			
-			// tutorial GUI, after creating quests. Should be listed at the bottom of finished quests.
-			call Tutorial.init.evaluate()
 			
 			set i = 0
 			loop

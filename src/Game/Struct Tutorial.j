@@ -2,28 +2,21 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 
 	/**
 	 * Provides some functionality which helps players to find their way through the game.
-	 * Firstly, you it can show automatic messages using interval \ref infoTimerDuration. All shown messages can be accessed and modified via \ref infos()
-	 * Secondly, it shows a message when a players character enables a shrine the first time.
+	 * It shows a message when a players character enables a shrine the first time.
 	 * Usually there's one Tutorial instance per character which can be accessed via \ref Character#tutorial().
 	 * All provided infos can be disabled via \ref setEnabled().
 	 */
 	struct Tutorial
-		private static constant real infoTimerDuration = 20.0
-		// static members
-		private static AStringVector m_infos
 		// dynamic members
 		private boolean m_isEnabled
 		// construction members
 		private Character m_character
 		// members
 		private boolean m_hasEnteredShrine
-		private timer m_infoTimer
 		private trigger m_killTrigger
 
 		public method setEnabled takes boolean enabled returns nothing
 			set this.m_isEnabled = enabled
-
-			call PauseTimerBJ(not enabled, this.m_infoTimer)
 		endmethod
 
 		public method isEnabled takes nothing returns boolean
@@ -38,33 +31,11 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			return this.m_hasEnteredShrine
 		endmethod
 
-		public method showInfo takes nothing returns nothing
-			call this.m_character.displayHint(thistype.m_infos.random())
-		endmethod
-
 		public method showShrineInfo takes nothing returns nothing
 			call this.m_character.displayHint(Format(tr("Schreine dienen der Wiederbelebung Ihres Charakters. Sobald Ihr Charakter stirbt, wird er nach einer Dauer von %1% Sekunden an seinem aktivierten Schrein wiederbelebt. Es kann immer nur ein Schrein aktiviert sein. Ein Schrein wird aktiviert, indem der Charakter dessen näheres Umfeld betritt. Dabei wird der zuvor aktivierte Schrein automatisch deaktiviert.")).i(R2I(MapData.revivalTime)).result())
 			set this.m_hasEnteredShrine = true
 		endmethod
 
-		private static method timerFunctionInfo takes nothing returns nothing
-			local timer expiredTimer = GetExpiredTimer()
-			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, "this")
-
-			if (this.m_character.isMovable()) then
-				call this.showInfo()
-			endif
-
-			set expiredTimer = null
-		endmethod
-
-		private method createInfoTimer takes nothing returns nothing
-			set this.m_infoTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_infoTimer, "this", this)
-			call TimerStart(this.m_infoTimer, thistype.infoTimerDuration, true, function thistype.timerFunctionInfo)
-			call PauseTimer(this.m_infoTimer)
-		endmethod
-		
 		private static method triggerConditionKill takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this") 
 			return GetKillingUnit() == this.character().unit() and this.isEnabled() and MapData.playerGivesXP.evaluate(GetOwningPlayer(GetTriggerUnit()))
@@ -73,7 +44,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 		private static method triggerActionKill takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this") 
 			call DisableTrigger(GetTriggeringTrigger())
-			call this.character().displayHint(tr("Immer wenn Ihr Charakter einen Unhold tötet, erhalten alle Charaktere gleichmäßig viel Erfahrung und Beute für diesen."))
+			call this.character().displayHint(tre("Immer wenn Ihr Charakter einen Unhold tötet, erhalten alle Charaktere gleichmäßig viel Erfahrung und Beute für diesen.", "Whenever your character kills a creep all characters gain equally much experience and bounty for him."))
 			set this.m_killTrigger = null
 			call DestroyTrigger(GetTriggeringTrigger())
 		endmethod
@@ -87,7 +58,6 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			// members
 			set this.m_hasEnteredShrine = false
 
-			call this.createInfoTimer()
 			call this.setEnabled(false)
 			
 			/*
@@ -104,19 +74,12 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 
 		public method onDestroy takes nothing returns nothing
 			// members
-			call PauseTimer(this.m_infoTimer)
-			call DmdfHashTable.global().destroyTimer(this.m_infoTimer)
-			set this.m_infoTimer = null
 			if (this.m_killTrigger != null) then
 				call DmdfHashTable.global().destroyTrigger(this.m_killTrigger)
 			endif
 		endmethod
-
-		public static method infos takes nothing returns AStringVector
-			return thistype.m_infos
-		endmethod
 		
-		private static method initInfoQuests takes nothing returns nothing
+		private static method onInit takes nothing returns nothing
 			local quest whichQuest
 			local questitem questItem
 			/*
@@ -137,11 +100,11 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetDescription(whichQuest, tr("Aufträge im Spiel bestehen aus einem oder mehreren Zielen, die allesamt erfüllt werden müssen. Aufträge geben meist Belohnungen wie zusätzliche Erfahrungspunkte, Goldmünzen oder Gegenstände. Gemeinsame Aufträge müssen von allen Spielern gemeinsam erledigt werden, um die Handlung des Spiels voranzubringen. Eigene Aufträge können optional von jedem Spieler einzeln erledigt werden, um zusätzliche Belohnungen zu erhalten."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSpellBookBLS.blp")
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tr("Der Gegenstand \"Aufträge\" ermöglicht die Anzeige der Ziel-Orte von Aufträgen."))
+			call QuestItemSetDescription(questItem, tre("Der Gegenstand \"Aufträge\" ermöglicht die Anzeige der Ziel-Orte von Aufträgen.", "The item \"Missions\" allows you to show the target locations of missions."))
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tr("Gemeinsame Aufträge müssen von allen Spielern gemeinsam erledigt werden."))
+			call QuestItemSetDescription(questItem, tre("Gemeinsame Aufträge müssen von allen Spielern gemeinsam erledigt werden.", "Shared missions must be completed together."))
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tr("Eigene Aufträge kann jeder Spieler für sich selbst erledigen (optional)."))
+			call QuestItemSetDescription(questItem, tre("Eigene Aufträge kann jeder Spieler für sich selbst erledigen (optional).", "Custom missions can be solved by every player himself (optionally)."))
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
@@ -155,8 +118,8 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetCompleted(whichQuest, true)
 			 
 			set whichQuest = CreateQuest()
-			call QuestSetTitle(whichQuest, tre("Info: Rucksack", "Info: Rucksack"))
-			call QuestSetDescription(whichQuest, tre("Mit der Rucksackfähigkeit kann der Rucksack geöffnet werden. Es werden drei Gegenstände pro Tasche angezeigt. Die angezeigte Tasche kann gewechselt werden, indem man auf einen der beiden Taschengegenstände klickt.", "With the rucksack ability the rucksack can be open. Three items per bag will be shown. The shown bag can be changed by clicking on one of the two bag items."))
+			call QuestSetTitle(whichQuest, tre("Info: Rucksack", "Info: Backpack"))
+			call QuestSetDescription(whichQuest, tre("Mit der Rucksackfähigkeit kann der Rucksack geöffnet werden. Es werden drei Gegenstände pro Tasche angezeigt. Die angezeigte Tasche kann gewechselt werden, indem man auf einen der beiden Taschengegenstände klickt.", "With the backpack ability the rucksack can be open. Three items per bag will be shown. The shown bag can be changed by clicking on one of the two bag items."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPackBeast.blp")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("RM auf Gegenstand und LM auf denselben Gegenstand rüstet den Gegenstand aus.", "RM on item and LM on the same item equips the item."))
@@ -177,9 +140,9 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetDescription(whichQuest, Format(tre("Schreine dienen der Wiederbelebung des Charakters. Es kann immer nur ein Schrein aktiviert werden. An diesem Schrein wird der Charakter nach %1% Sekunden wiederbelebt, wenn er gestorben ist. Den aktiven Schrein erreicht man über das Symbol links unten oder mit F8. Zu allen erkundeten Schreinen kann sich der Charakter mit Hilfe der Spruchrolle des Totenreichs teleportieren.", "Shrines are for the revival of the character. There can only be one shrine activated all the time. At this shrine the character will be revived after %1% seconds when he died. The active shrine can be reached over the symbol at the left bottom or by F8. The character can teleport himself to all discovered shrines by using the Scroll of the Realm of the Dead.")).i(R2I(MapData.revivalTime)).result())
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNResStone.blp")
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tr("Die Spruchrolle des Totenreichs ermöglicht den Teleport zu einem erkundeten Schrein."))
+			call QuestItemSetDescription(questItem, tre("Die Spruchrolle des Totenreichs ermöglicht den Teleport zu einem erkundeten Schrein.", "The Scroll of the Realm of Death allows teleporting to a discovered shrine."))
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tr("Die Spruchrolle der Ahnen ermöglicht den Teleport zu einem erkundeten Schrein mit verbündeten Einheiten."))
+			call QuestItemSetDescription(questItem, tre("Die Spruchrolle der Ahnen ermöglicht den Teleport zu einem erkundeten Schrein mit verbündeten Einheiten.", "The Scroll of the Ancestors allows teleporting to a discovered shrine together with allied units."))
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
@@ -212,20 +175,20 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Zauber", "Info: Spells"))
-			call QuestSetDescription(whichQuest, tr("Jede Klasse besitzt 15 verschiedene Zauber. Diese können im Einheitenmenü \"Zauber erlernen\" des Charakters erlernt werden. Einen Grundzauber dessen Stufe stets eins ist und der von Anfang erlernt wurde. Zwei Ultimate-Zauber mit einer Stufe, die auf Stufe 12 und auf Stufe 25 erlernt werden können und zwölf gewöhnliche Zauber mit jeweils fünf Stufen. Das Erhöhen der Stufe eines Zaubers kostet einen Zauberpunkt. Pro Stufe erhält ein Charakter zwei Zauberpunkte. Er startet jedoch mit bereits drei Zauberpunkten. Zauberstufen können jederzeit wieder zurückgesetzt werden."))
+			call QuestSetDescription(whichQuest, tre("Jede Klasse besitzt 15 verschiedene Zauber. Diese können im Einheitenmenü \"Zauber erlernen\" des Charakters erlernt werden. Einen Grundzauber dessen Stufe stets eins ist und der von Anfang erlernt wurde. Zwei Ultimativ-Zauber mit einer Stufe, die auf Stufe 12 und auf Stufe 25 erlernt werden können und zwölf gewöhnliche Zauber mit jeweils fünf Stufen. Das Erhöhen der Stufe eines Zaubers kostet einen Zauberpunkt. Pro Stufe erhält ein Charakter zwei Zauberpunkte. Er startet jedoch mit bereits drei Zauberpunkten. Zauberstufen können jederzeit wieder zurückgesetzt werden.", "Each class has 15 different spells. They can be learned in the unit menu \"Learn spells\" of the character. One basic spell of which the level is always one and which is learned from the beginning. Two ultimate spells with one level which can be learned at level 12 and level 25 and twelve usual spells with five levels each. Increasing the level of a spell costs one skill point. Per level a character gains two skill points. Yet he starts with already three skill points. Spell levels can be always be reset."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSpellBook.blp")
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Berufe", "Info: Professions"))
-			call QuestSetDescription(whichQuest, tr("Um bestimmte Gegenstände herzustellen, können Bücher mit Rezepten oder Plänen erworben werden. Darin befindet sich eine Liste der herstellbaren Gegenstände. Jeder Gegenstand benötigt Rohstoffe, die sich im Rucksack befinden müssen, damit der Gegenstand hergestellt werden kann."))
+			call QuestSetDescription(whichQuest, tre("Um bestimmte Gegenstände herzustellen, können Bücher mit Rezepten oder Plänen erworben werden. Darin befindet sich eine Liste der herstellbaren Gegenstände. Jeder Gegenstand benötigt Rohstoffe, die sich im Rucksack befinden müssen, damit der Gegenstand hergestellt werden kann.", "To craft specific items books with receipts or plans can be acquired. They contain a list of craftable items. Each item requires resources which has to be in the backpack that the item can be crafted."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSpellBookBLS.blp")
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tr("Buch der Tränke"))
+			call QuestItemSetDescription(questItem, tre("Buch der Tränke", "Book of Potions"))
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tr("Buch der Schmiedekunst"))
+			call QuestItemSetDescription(questItem, tre("Buch der Schmiedekunst", "Book of Forging"))
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tr("Buch der Magie"))
+			call QuestItemSetDescription(questItem, tre("Buch der Magie", "Book of Magic"))
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
@@ -233,51 +196,6 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetDescription(whichQuest, tr("Jeder Spieler kann einen einzigen Stützpunkt errichten. Der Stützpunkt ist ein Gebäude, das abhängig von der Klasse des Spielercharakters ist. Um einen Stützpunkt zu errichten, muss ein entsprechender Bauplan bei einem Baumeister gekauft werden."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNTinyCastle.blp")
 			call QuestSetCompleted(whichQuest, true)
-		endmethod
-
-		public static method init takes nothing returns nothing
-			set thistype.m_infos = AStringVector.create()
-
-			// real infos
-
-			// icon shortcuts
-			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um in den Rucksack Ihres Charakters zu öffnen bzw. zu schließen.")).s("R").result())
-			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um in das Zauberbuch Ihres Charakters zu gelangen und die %2%-Taste, um es wieder zu verlassen.")).s("Z").s("Escape").result())
-			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um Ihren Charakter auszuwählen.")).s("F1").result())
-			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%- - %2%-Tasten , um einen Mitstreitercharakter auszuwählen.")).s("F2").s("F7").result())
-			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um zu Ihrem derzeitig aktivierten Schrein zu gelangen.")).s("F8").result())
-			call thistype.m_infos.pushBack(Format(tr("Drücken Sie die %1%-Taste, um Ihre Primär- und Sekundäraufträge zu sehen.")).s("F9").result())
-
-			// main menu/settings
-			call thistype.m_infos.pushBack(tr("Geben Sie \"-menu\" im Chat ein, um ins Hauptmenü des Spiels zu gelangen. Dort können Sie diverse Spieleinstellungen vornehmen."))
-			call thistype.m_infos.pushBack(tr("Aktivieren Sie die 3rd-Person-Kamera im Hauptmenü, um eine rollenspielähnlichere Ansicht Ihres Charakters zu erhalten."))
-			call thistype.m_infos.pushBack(tr("Aktivieren Sie die Charakter-Anzeige im Hauptmenü, um in der rechten oberen Bildschirmecke Informationen über Ihren und Ihre verbündeten Charaktere angezeigt zu bekommen."))
-			call thistype.m_infos.pushBack(tr("Aktivieren Sie die Charakter-Buttons im Hauptmenü, um am linken Bildschirmrand Symbole Ihrer verbündeten Charaktere angezeigt zu bekommen, falls Sie sich nicht bereits die Kontrolle mit ihnen teilen."))
-			call thistype.m_infos.pushBack(tr("Erlauben Sie Ihren Mitspielern die Kontrolle im Hauptmenü, damit diese Ihren Charakter steuern können."))
-
-			// time
-			call thistype.m_infos.pushBack(Format(tr("Getötete Gegner erscheinen, %1% Sekunden nachdem ihre gesamte Gruppe ausgelöscht wurde, automatisch wieder.")).i(R2I(SpawnPoint.respawnTime)).result())
-			call thistype.m_infos.pushBack(Format(tr("Eingesammelte oder vernichtete Gegenstände erscheinen nach %1% Sekunden automatisch wieder.")).i(R2I(ItemSpawnPoint.respawnTime)).result())
-			call thistype.m_infos.pushBack(Format(tr("Getötete Charaktere werden automatisch nach %1% Sekunden an ihrem aktivierten Schrein wiederbelebt. Dies wird in einem kleinen Fenster am oberen Bildschirmrand angezeigt.")).i(R2I(MapData.revivalTime)).result())
-
-			// optional
-static if (DMDF_INVENTORY) then
-endif
-
-static if (DMDF_TRADE) then
-endif
-
-static if (DMDF_CHARACTER_STATS) then
-endif
-
-static if (DMDF_INFO_LOG) then
-endif
-
-static if (DMDF_NPC_ROUTINES) then
-			call thistype.m_infos.pushBack(tr("Computergesteuerte Charaktere in Städten, Dörfern oder außerhalb haben individuelle Tagesabläufe. Wundern Sie sich nicht, falls Sie Charaktere nicht immer an denselben Orten antreffen."))
-endif
-
-			call Tutorial.initInfoQuests()
 		endmethod
 		
 		/**

@@ -558,7 +558,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tr("Die Verteidigung von Talras"))
+			local thistype this = thistype.allocate(0, tre("Die Verteidigung von Talras", "The Defense of Talras"))
 			local AQuestItem questItem
 			set this.m_timer = null
 			set this.m_timerDialog = null
@@ -566,21 +566,21 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.setDescription(tr("Ein Teil der Armee der Orks und Dunkelelfen ist in Talras eingetroffen. Verteidigt Talras um jeden Preis gegen die Horden der Orks und Dunkelelfen."))
 			
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Begebt euch zum Außenposten und beginnt mit der Verteidigung."))
+			set questItem = AQuestItem.create(this, tre("Begebt euch zum Außenposten und beginnt mit der Verteidigung.", "Make your way to the outpost and begin with the defense."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 1000)
 			
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Baut eine Verteidigung auf."))
+			set questItem = AQuestItem.create(this, tre("Baut eine Verteidigung auf.", "Construct a defense."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 1000)
 			
 			// item 2
-			set questItem = AQuestItem.create(this, tr("Verteidigt euch gegen die Orks."))
+			set questItem = AQuestItem.create(this, tre("Verteidigt euch gegen die Orks.", "Defend yourselves against the Orcs."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedDefendAgainstOrcs)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedDefendAgainstOrcs)
 			call questItem.setPing(true)
@@ -589,7 +589,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call questItem.setReward(thistype.rewardExperience, 1000)
 			
 			// item 3
-			set questItem = AQuestItem.create(this, tr("Vernichtet die Belagerungswaffen der Orks."))
+			set questItem = AQuestItem.create(this, tre("Vernichtet die Belagerungswaffen der Orks.", "Destroy the siege weapons of the Orcs."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedDestroyArtillery)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedDestroyArtillery)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedDestroyArtillery)
@@ -599,14 +599,14 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call questItem.setReward(thistype.rewardExperience, 1000)
 			
 			// item 4
-			set questItem = AQuestItem.create(this, tr("Besiegt mit Hilfe der Hochelfen den Feind endgültig."))
+			set questItem = AQuestItem.create(this, tre("Besiegt mit Hilfe der Hochelfen den Feind endgültig.", "Defeat the enemy finally with the help of the High Elves."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedDefeatTheEnemy)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedDefeatTheEnemy)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedDefeatTheEnemy)
 			call questItem.setReward(thistype.rewardExperience, 1000)
 			
 			// item 5
-			set questItem = AQuestItem.create(this, tr("Berichtet dem Herzog von eurem Sieg."))
+			set questItem = AQuestItem.create(this, tre("Berichtet dem Herzog von eurem Sieg.", "Report to the duke of your victory."))
 			call questItem.setReward(thistype.rewardExperience, 200)
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras_heimrich)

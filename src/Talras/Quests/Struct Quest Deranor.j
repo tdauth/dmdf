@@ -102,18 +102,18 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tr("Deranor der Schreckliche"))
+			local thistype this = thistype.allocate(0, tre("Deranor der Schreckliche", "Deranor the Terrible"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNPowerLich.blp")
 			call this.setDescription(tr("In der Todesgruft soll es einen Eingang zu einem Gewölbe unter der Erde geben. Dort soll sich der mächtige Nekromant Deranor der Schreckliche aufhalten. Die Drachentöterin bittet euch darum, ihn gemeinsam mit ihr zu vernichten, um Mittillant vor einer weiteren Bedrohung zu bewahren."))
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
 
-			set questItem = AQuestItem.create(this, tr("Betretet das unterirdische Gewölbe."))
+			set questItem = AQuestItem.create(this, tre("Betretet das unterirdische Gewölbe.", "Enter the underground vault."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_tomb_outside)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 
-			set questItem = AQuestItem.create(this, tr("Vernichtet Deranor den Schrecklichen."))
+			set questItem = AQuestItem.create(this, tre("Vernichtet Deranor den Schrecklichen.", "Destroy Deranor the Terrible."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted1)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted1)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted1)

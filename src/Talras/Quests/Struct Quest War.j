@@ -564,7 +564,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 					return true
 				// get next one to ping
 				else
-					call this.displayUpdateMessage(Format(tr("%1%/4 Kornfresser")).i(4 - count0 - count1).result())
+					call this.displayUpdateMessage(Format(tre("%1%/4 Kornfresser", "%1%/4 Corn Eaters")).i(4 - count0 - count1).result())
 					if (count0 > 0) then
 						call this.setPingByUnitTypeId.execute(questItem, SpawnPoints.cornEaters0(), UnitTypes.cornEater)
 					else
@@ -703,7 +703,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 					return true
 				// get next one to ping
 				else
-					call this.displayUpdateMessage(Format(tr("%1%/6 Waldfurien")).i(6 - count0 - count1 - count2 - count3).result())
+					call this.displayUpdateMessage(Format(tre("%1%/6 Waldfurien", "%1%/6 Forest Furies")).i(6 - count0 - count1 - count2 - count3).result())
 					if (count0 > 0) then
 						call this.setPingByUnitTypeId.execute(questItem, SpawnPoints.witch0(), UnitTypes.witch)
 					elseif (count1 > 0) then
@@ -798,7 +798,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			endloop
 			
 			if (spawned) then
-				call this.displayUpdateMessage(tr("Neue Fallen verfügbar."))
+				call this.displayUpdateMessage(tre("Neue Fallen verfügbar.", "New traps are available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_bjoern_traps), GetRectCenterY(gg_rct_quest_war_bjoern_traps), 5.0, 255, 255, 255, true)
 			endif
 		endmethod
@@ -954,7 +954,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tr("Krieg"))
+			local thistype this = thistype.allocate(0, tre("Krieg", "War"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
 			call this.setDescription(tr("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden."))
@@ -962,21 +962,21 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.setReward(thistype.rewardGold, 2000)
 
 			// quest item questItemWeaponsFromWieland
-			set questItem = AQuestItem.create(this, tr("Besorgt Waffen vom Schmied Wieland."))
+			set questItem = AQuestItem.create(this, tre("Besorgt Waffen vom Schmied Wieland.", "Get weapons from the smith Wieland."))
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_wieland)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemIronFromTheDrumCave
-			set questItem = AQuestItem.create(this, tr("Besorgt Eisen aus der Trommelhöhle."))
+			set questItem = AQuestItem.create(this, tre("Besorgt Eisen aus der Trommelhöhle.", "Get iron from the Drum Cave."))
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_iron_from_the_drum_cave)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemMoveImpsToWieland
-			set questItem = AQuestItem.create(this, tr("Bringt die Imps aus der Trommelhöhle zu Wieland."))
+			set questItem = AQuestItem.create(this, tre("Bringt die Imps aus der Trommelhöhle zu Wieland.", "Bring the Imps from the Drum Cave to Wieland."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedImps)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedImps)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedImps)
@@ -986,7 +986,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// questItemReportWieland
-			set questItem = AQuestItem.create(this, tr("Berichtet Wieland davon."))
+			set questItem = AQuestItem.create(this, tre("Berichtet Wieland davon.", "Report Wieland about it."))
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedReportWieland)
 			
 			call questItem.setPing(true)
@@ -994,11 +994,11 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// questItemWaitForWielandsWeapons
-			set questItem = AQuestItem.create(this, tr("Wartet bis Wieland die Waffen hergestellt hat."))
+			set questItem = AQuestItem.create(this, tre("Wartet bis Wieland die Waffen hergestellt hat.", "Wait until Wieland has constructed the weapons."))
 			
 			
 			// questItemMoveWielandWeaponsToTheCamp
-			set questItem = AQuestItem.create(this, tr("Bringt Wielands Waffen sicher zum Außenposten."))
+			set questItem = AQuestItem.create(this, tre("Bringt Wielands Waffen sicher zum Außenposten.", "Move Wieland's weapons safely to the outpost."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedMoveWielandsWeaponsToTheCamp)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedMoveWielandsWeaponsToTheCamp)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedMoveWielandsWeaponsToTheCamp)
@@ -1008,27 +1008,27 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemSupplyFromManfred
-			set questItem = AQuestItem.create(this, tr("Besorgt Nahrung vom Bauern Manfred."))
+			set questItem = AQuestItem.create(this, tre("Besorgt Nahrung vom Bauern Manfred.", "Get food from the farmer Manfred."))
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_manfred)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemKillTheCornEaters
-			set questItem = AQuestItem.create(this, tr("Vernichtet die Kornfresser."))
+			set questItem = AQuestItem.create(this, tre("Vernichtet die Kornfresser.", "Destroy the Corn Eaters."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedKillTheCornEaters)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedKillTheCornEaters)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedKillTheCornEaters)
 			
 			// quest item questItemReportManfred
-			set questItem = AQuestItem.create(this, tr("Berichtet Manfred davon."))
+			set questItem = AQuestItem.create(this, tre("Berichtet Manfred davon.", "Report Manfred about it."))
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedReportManfred)
 			
 			// questItemWaitForManfredsSupply
-			set questItem = AQuestItem.create(this, tr("Wartet bis Manfred die Nahrung aufgeladen hat."))
+			set questItem = AQuestItem.create(this, tre("Wartet bis Manfred die Nahrung aufgeladen hat.", "Wait until Manfred has loaded the food."))
 		
 			// questItemMoveManfredsSupplyToTheCamp
-			set questItem = AQuestItem.create(this, tr("Bringt Manfreds Nahrung sicher zum Außenposten."))
+			set questItem = AQuestItem.create(this, tre("Bringt Manfreds Nahrung sicher zum Außenposten.", "Move Manfred's food safely to the outpost."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedMoveManfredsSupplyToTheCamp)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedMoveManfredsSupplyToTheCamp)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedMoveManfredsSupplyToTheCamp)
@@ -1038,27 +1038,27 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemLumberFromKuno
-			set questItem = AQuestItem.create(this, tr("Besorgt Holz vom Holzfäller Kuno."))
+			set questItem = AQuestItem.create(this, tre("Besorgt Holz vom Holzfäller Kuno.", "Get wood from the lumberjack Kuno."))
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_kuno)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			// quest item questItemKillTheWitches
-			set questItem = AQuestItem.create(this, tr("Vernichtet die Waldfurien."))
+			set questItem = AQuestItem.create(this, tre("Vernichtet die Waldfurien.", "Destroy the Forest Furies."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedKillTheWitches)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedKillTheWitches)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedKillTheWitches)
 			
 			// quest item questItemReportKuno
-			set questItem = AQuestItem.create(this, tr("Berichte Kuno davon."))
+			set questItem = AQuestItem.create(this, tre("Berichte Kuno davon.", "Report Kuno about it."))
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_kuno)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemMoveKunosLumberToTheCamp
-			set questItem = AQuestItem.create(this, tr("Bringt Kunos Holz sicher zum Außenposten."))
+			set questItem = AQuestItem.create(this, tre("Bringt Kunos Holz sicher zum Außenposten.", "Move Kuno's wood safely to the outpost."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedMoveKunosLumberToTheCamp)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedMoveKunosLumberToTheCamp)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedMoveKunosLumberToTheCamp)
@@ -1068,14 +1068,14 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemTrapsFromBjoern
-			set questItem = AQuestItem.create(this, tr("Besorgt Fallen vom Jäger Björn."))
+			set questItem = AQuestItem.create(this, tre("Besorgt Fallen vom Jäger Björn.", "Get traps from the hunter Björn."))
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_bjoern)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemPlaceTraps
-			set questItem = AQuestItem.create(this, tr("Platziert zehn Fallen vor der östlichen Mauer des Außenpostens."))
+			set questItem = AQuestItem.create(this, tre("Platziert zehn Fallen vor dem Tor des Außenpostens.", "Place ten traps in front of the outpost's gate."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedPlaceTraps)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedPlaceTraps)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedPlaceTraps)
@@ -1085,14 +1085,14 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemRecruit
-			set questItem = AQuestItem.create(this, tr("Rekrutiert kriegstaugliche Leute auf dem Bauernhof."))
+			set questItem = AQuestItem.create(this, tre("Rekrutiert kriegstaugliche Leute auf dem Bauernhof.", "Recruit war suitable people at the farm."))
 			
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_farm)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemGetRecruits
-			set questItem = AQuestItem.create(this, tr("Sammelt fünf Rekruten am Außenposten."))
+			set questItem = AQuestItem.create(this, tre("Sammelt fünf Rekruten am Außenposten.", "Gather five recruits at the outpost."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedGetRecruits)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedGetRecruits)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedGetRecruits)
@@ -1102,7 +1102,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemReportHeimrich
-			set questItem = AQuestItem.create(this, tr("Berichtet Heimrich von Eurem Erfolg."))
+			set questItem = AQuestItem.create(this, tre("Berichtet Heimrich von eurem Erfolg.", "Report Heimrich of your success."))
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedReportHeimrich)
 			
 			call questItem.setPing(true)

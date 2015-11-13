@@ -38,21 +38,21 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Nun, sie sind also die Vasallen von denen mir berichtet wurde. Sie sollen rasch sprechen. Was treibt sie in diese Gegend?"), gg_snd_Heimrich16)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tre("Nun, sie sind also die Vasallen von denen mir berichtet wurde. Sie sollen rasch sprechen. Was treibt sie in diese Gegend?", "So, they are the vassals of whom was reported to me. They shall speak fast. What drives them to this area?"), gg_snd_Heimrich16)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich16))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_1, true, 0.0)
-			call TransmissionFromUnit(thistype.actor(), tr("Wir wollen Euch bei Eurem Kampf gegen die Orks und Dunkelelfen unterstützen. Das ist der Grund, warum wir kamen."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Wir wollen Euch bei Eurem Kampf gegen die Orks und Dunkelelfen unterstützen. Das ist der Grund, warum wir kamen.", "We want to support you in your fight against the Orcs and Dark Elves. This is the reason why we came."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_0, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Es freut mich zu hören in ihnen weitere Verbündete gegen den Feind gefunden zu haben. Wir benötigen jeden verfügbaren Mann. Sie sollen mir die Treue für das bevorstehende Gefecht schwören und sie werden eine Aufgabe erhalten."), gg_snd_Heimrich17)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tre("Es freut mich zu hören in ihnen weitere Verbündete gegen den Feind gefunden zu haben. Wir benötigen jeden verfügbaren Mann. Sie sollen mir die Treue für das bevorstehende Gefecht schwören und sie werden eine Aufgabe erhalten.", "It is my pleasure to hear that I found new allies against the enemy in them. We need every available man. They shall pledge loyality to me for the upcoming battle and they will receive a task."), gg_snd_Heimrich17)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich17))) then
 				return
@@ -72,7 +72,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tr("Wir schwören Euch die Treue und werden Euch im bevorstehenden Kampf zur Seite stehen."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Wir schwören Euch die Treue und werden Euch im bevorstehenden Kampf zur Seite stehen.", "We pledge loyality to you and will stand next to you in the upcoming battle."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

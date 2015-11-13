@@ -57,7 +57,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		// Gibt’s hier leckere Pilze?
 		private static method infoActionTastyMushrooms takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Gibt’s hier leckere Pilze?"), null)
+			call speech(info, character, false, tre("Gibt’s hier leckere Pilze?", "Are there delecious mushrooms in this area?"), null)
 			call speech(info, character, true, tr("Ja, aber leider finde ich davon kaum welche."), gg_snd_Dago13)
 			call speech(info, character, true, tr("Vielleicht hätten mich die Bären lieber fressen sollen. Am Ende stehe ich noch mit leeren Händen vor dem Herzog (Lacht)."), gg_snd_Dago14)
 			call info.talk().showStartPage(character)
@@ -247,8 +247,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 			// start page
 			set this.m_hi = this.addInfo(false, true, 0, thistype.infoActionHi, null)
-			set this.m_castle = this.addInfo(false, false, 0, thistype.infoActionCastle, tr("Willst du nicht mal langsam in die Burg?"))
-			set this.m_tastyMushrooms = this.addInfo(false, false, thistype.infoConditionTastyMushrooms, thistype.infoActionTastyMushrooms, tr("Gibt’s hier leckere Pilze?"))
+			set this.m_castle = this.addInfo(false, false, 0, thistype.infoActionCastle, tre("Willst du nicht mal langsam in die Burg?", "Don't you want to go to the castle gradually?"))
+			set this.m_tastyMushrooms = this.addInfo(false, false, thistype.infoConditionTastyMushrooms, thistype.infoActionTastyMushrooms, tre("Gibt’s hier leckere Pilze?", "Are there delecious mushrooms in this area?"))
 			set this.m_orcs = this.addInfo(false, false, 0, thistype.infoActionOrcs, tr("Schon was von den Orks gehört?"))
 			set this.m_area = this.addInfo(true, false, 0, thistype.infoActionArea, tr("Was weißt du über die Gegend hier?"))
 			set this.m_iHaveMushrooms = this.addInfo(true, false, thistype.infoConditionIHaveMushrooms, thistype.infoActionIHaveMushrooms, tr("Ich habe hier einen Pilz."))

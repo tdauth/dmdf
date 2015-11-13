@@ -62,22 +62,22 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 		endmethod
 
 		private static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, tr("Brennt die Bären nieder!"))
+			local thistype this = thistype.allocate(character, tre("Brennt die Bären nieder!", "Burn down the bears!"))
 			local AQuestItem questItem
 
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNLiquidFire.blp")
-			call this.setDescription(tr("Dago, der Jäger, möchte gerne in der Bärenhöhle Feuer legen, um die dort verbliebenen Bären zu töten. Allerdings benötigt er dafür entsprechende Mittel."))
+			call this.setDescription(tre("Dago, der Jäger, möchte gerne in der Bärenhöhle Feuer legen, um die dort verbliebenen Bären zu töten. Allerdings benötigt er dafür entsprechende Mittel.", "Dago the hunter would like to set fire in the bear cave to kill the remaining bears there. However he needs the corresponding resources."))
 			call this.setReward(thistype.rewardExperience, 500)
 			call this.setReward(thistype.rewardGold, 200)
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Such entweder nach Holz oder einem Zauberspruch, mit welchem Dago Feuer legen kann."))
+			set questItem = AQuestItem.create(this, tre("Suche entweder nach Holz oder einem Zauberspruch, mit welchem Dago Feuer legen kann.", "Search either for wood or for a spell which can be used by Dago to set fire."))
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Bring den Zauberspruch zu Dago."))
+			set questItem = AQuestItem.create(this, tre("Bringe den Zauberspruch zu Dago.", "Bring the spell to Dago."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.dago())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			// item 2
-			set questItem = AQuestItem.create(this, tr("Bring das Holz zu Dago."))
+			set questItem = AQuestItem.create(this, tre("Bringe das Holz zu Dago.", "Bring the wood to Dago."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.dago())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
