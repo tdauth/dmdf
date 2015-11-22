@@ -65,7 +65,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		// Schon was von den Orks gehört?
 		private static method infoActionOrcs takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Schon was von den Orks gehört?"), null)
+			call speech(info, character, false, tre("Schon was von den Orks gehört?", "Have you already heard something about the Orcs?"), null)
 			call speech(info, character, true, tr("Hör mir bloß auf mit diesen verdammten Orks! Jeder hier spricht von nichts anderem mehr und unser Herzog ist sowieso unfähig. Aber was red' ich da?"), gg_snd_Dago15)
 			call speech(info, character, true, tr("Sollen die Orks endlich kommen und uns alle töten. Das Warten ist das, was einen fertigmacht."), gg_snd_Dago16)
 			call speech(info, character, true, tr("Ihr habt mir heute das Leben gerettet und dafür bin ich euch sehr dankbar, aber die Orks sind mit zwei Bären nicht zu vergleichen. Die werden euch in Stücke reißen."), gg_snd_Dago17)
@@ -102,7 +102,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Ich habe hier einen Pilz.
 		private static method infoActionIHaveMushrooms takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Ich habe hier einen Pilz."), null)
+			call speech(info, character, false, tre("Ich habe hier einen Pilz.", "I have one mushroom."), null)
 			if (thistype.mushroomsAreTasty(character)) then
 				// Steinpilz ist essbar
 				if (character.inventory().hasItemType('I01L')) then
@@ -212,7 +212,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Was denn für Pilze?
 		private static method infoActionCastle_WhatKindOfMushrooms takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Was denn für Pilze?"), null)
+			call speech(info, character, false, tre("Was denn für Pilze?", "What kind of mushrooms?"), null)
 			call speech(info, character, true, tr("Ach alle Möglichen, Hauptsache essbar."), gg_snd_Dago8)
 			call speech(info, character, true, tr("Wieso fragst du überhaupt? Willst du mir etwa dabei helfen?"), gg_snd_Dago9)
 			call info.talk().showRange(this.m_ofCourse.index(), this.m_no.index(), character)
@@ -236,8 +236,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		// Nein.
 		private static method infoActionCastle_WhatKindOfMushrooms_No takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Nein."), null)
-			call speech(info, character, true, tr("Schade."), gg_snd_Dago11)
+			call speech(info, character, false, tre("Nein.", "No."), null)
+			call speech(info, character, true, tre("Schade.", "Too bad."), gg_snd_Dago11)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -249,11 +249,11 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			set this.m_hi = this.addInfo(false, true, 0, thistype.infoActionHi, null)
 			set this.m_castle = this.addInfo(false, false, 0, thistype.infoActionCastle, tre("Willst du nicht mal langsam in die Burg?", "Don't you want to go to the castle gradually?"))
 			set this.m_tastyMushrooms = this.addInfo(false, false, thistype.infoConditionTastyMushrooms, thistype.infoActionTastyMushrooms, tre("Gibt’s hier leckere Pilze?", "Are there delecious mushrooms in this area?"))
-			set this.m_orcs = this.addInfo(false, false, 0, thistype.infoActionOrcs, tr("Schon was von den Orks gehört?"))
+			set this.m_orcs = this.addInfo(false, false, 0, thistype.infoActionOrcs, tre("Schon was von den Orks gehört?", "Have you already heard something about the Orcs?"))
 			set this.m_area = this.addInfo(true, false, 0, thistype.infoActionArea, tr("Was weißt du über die Gegend hier?"))
-			set this.m_iHaveMushrooms = this.addInfo(true, false, thistype.infoConditionIHaveMushrooms, thistype.infoActionIHaveMushrooms, tr("Ich habe hier einen Pilz."))
-			set this.m_spell = this.addInfo(false, false, thistype.infoConditionSpell, thistype.infoActionSpell, tr("Hier ist dein Zauberspruch."))
-			set this.m_wood = this.addInfo(false, false, thistype.infoConditionWood, thistype.infoActionWood, tr("Hier ist dein Holz."))
+			set this.m_iHaveMushrooms = this.addInfo(true, false, thistype.infoConditionIHaveMushrooms, thistype.infoActionIHaveMushrooms, tre("Ich habe hier einen Pilz.", "I have one mushroom."))
+			set this.m_spell = this.addInfo(false, false, thistype.infoConditionSpell, thistype.infoActionSpell, tre("Hier ist dein Zauberspruch.", "Here is your spell."))
+			set this.m_wood = this.addInfo(false, false, thistype.infoConditionWood, thistype.infoActionWood, tre("Hier ist dein Holz.", "Here is your wood."))
 			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tr("Suchst du einen Schüler?"))
 			set this.m_arrows = this.addInfo(false, false, thistype.infoConditionArrows, thistype.infoActionArrows, tr("Kannst du Pfeile herstellen?"))
 			set this.m_exit = this.addExitButton()
