@@ -58,8 +58,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Gibt’s hier leckere Pilze?
 		private static method infoActionTastyMushrooms takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Gibt’s hier leckere Pilze?", "Are there delecious mushrooms in this area?"), null)
-			call speech(info, character, true, tr("Ja, aber leider finde ich davon kaum welche."), gg_snd_Dago13)
-			call speech(info, character, true, tr("Vielleicht hätten mich die Bären lieber fressen sollen. Am Ende stehe ich noch mit leeren Händen vor dem Herzog (Lacht)."), gg_snd_Dago14)
+			call speech(info, character, true, tre("Ja, aber leider finde ich davon kaum welche.", "Yes, but unfortunately I find hardly any of them."), gg_snd_Dago13)
+			call speech(info, character, true, tre("Vielleicht hätten mich die Bären lieber fressen sollen. Am Ende stehe ich noch mit leeren Händen vor dem Herzog (Lacht).", "Maybe the bears should have rather eaten me. In the end I am standing empty handed in front of the duke (Laughs)."), gg_snd_Dago14)
 			call info.talk().showStartPage(character)
 		endmethod
 

@@ -11,19 +11,19 @@ library StructMapQuestsQuestABigPresent requires Asl, StructGameCharacter, Struc
 		endmethod
 
 		private static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, tr("Ein großes Geschenk"))
+			local thistype this = thistype.allocate(character, tre("Ein großes Geschenk", "A Big Present"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBarrel.blp")
 			call this.setDescription(tr("Da Lothar mit Mathildas Reaktion auf sein Geschenk nicht zufrieden war, hat er dir nun aufgetragen, ihr einen noch größeren Honigtopf zu überreichen, um seiner Liebe zu ihr noch größeren Ausdruck zu verleihen."))
 			call this.setReward(AAbstractQuest.rewardExperience, 200)
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Überreiche Mathilda Lothars großen Honigtopf."))
+			set questItem = AQuestItem.create(this, tre("Überreiche Mathilda Lothars großen Honigtopf.", "Present Mathilda Lothar's big honeypot."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.mathilda())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(AAbstractQuest.rewardExperience, 50)
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Berichte Lothar davon."))
+			set questItem = AQuestItem.create(this, tre("Berichte Lothar davon.", "Report to Lothar about it."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.lothar())
 			call questItem.setPingColour(100.0, 100.0, 100.0)

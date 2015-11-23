@@ -1,4 +1,4 @@
-library StructMapTalksTalkFerdinand requires Asl
+library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWeaponsPeasants
 
 	struct TalkFerdinand extends Talk
 		private boolean array m_knowsCost[6] /// @todo @member MapData.maxPlayers

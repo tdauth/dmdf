@@ -11,20 +11,20 @@ library StructMapQuestsQuestALittlePresent requires Asl, StructGameCharacter, St
 		endmethod
 
 		private static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, tr("Ein kleines Geschenk"))
+			local thistype this = thistype.allocate(character, tre("Ein kleines Geschenk", "A Small Present"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBarrel.blp")
 			call this.setDescription(tr("Der dicke Händler Lothar hat dich gebeten, Mathilda einen Topf seines besten Honigs als Zeichen seiner Liebe zu ihr zu überreichen."))
 			call this.setReward(AAbstractQuest.rewardExperience, 200)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Überreiche Mathilda Lothars Honigtopf."))
+			set questItem0 = AQuestItem.create(this, tre("Überreiche Mathilda Lothars Honigtopf.", "Present Mathilda Lothar's honeypot."))
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.mathilda())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			call questItem0.setReward(AAbstractQuest.rewardExperience, 50)
 			// item 1
-			set questItem1 = AQuestItem.create(this, tr("Berichte Lothar davon."))
+			set questItem1 = AQuestItem.create(this, tre("Berichte Lothar davon.", "Report to Lothar about it."))
 			call questItem1.setPing(true)
 			call questItem1.setPingUnit(Npcs.lothar())
 			call questItem1.setPingColour(100.0, 100.0, 100.0)

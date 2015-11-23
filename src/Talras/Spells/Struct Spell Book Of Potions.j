@@ -13,14 +13,14 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 			endif
 			
 			debug call Print("Fail")
-			call this.character().displayMessage(ACharacter.messageTypeError, tr("Benötigte Rohstoffe fehlen."))
+			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
 			
 			return false
 		endmethod
 		
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05K')
-			call Character(this.character()).displayItemAcquired(GetObjectName('I00A'), tr("Hergestellt."))
+			call Character(this.character()).displayItemAcquired(GetObjectName('I00A'), tre("Hergestellt.", "Crafted."))
 			call Character(this.character()).giveItem('I00A')
 			call Character(this.character()).craftItem('I00A')
 		endmethod
@@ -40,14 +40,14 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 			endif
 			
 			debug call Print("Fail")
-			call this.character().displayMessage(ACharacter.messageTypeError, tr("Benötigte Rohstoffe fehlen."))
+			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
 			
 			return false
 		endmethod
 		
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05L')
-			call Character(this.character()).displayItemAcquired(GetObjectName('I00D'), tr("Hergestellt."))
+			call Character(this.character()).displayItemAcquired(GetObjectName('I00D'), tre("Hergestellt.", "Crafted."))
 			call Character(this.character()).giveItem('I00D')
 			call Character(this.character()).craftItem('I00D')
 		endmethod
@@ -67,7 +67,7 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 			endif
 			
 			debug call Print("Fail")
-			call this.character().displayMessage(ACharacter.messageTypeError, tr("Benötigte Rohstoffe fehlen."))
+			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
 			
 			return false
 		endmethod
@@ -75,7 +75,7 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I041')
 			call this.character().inventory().removeItemType('I041')
-			call Character(this.character()).displayItemAcquired(GetObjectName('I05M'), tr("Hergestellt."))
+			call Character(this.character()).displayItemAcquired(GetObjectName('I05M'), tre("Hergestellt.", "Crafted."))
 			call Character(this.character()).giveItem('I05M')
 			call Character(this.character()).craftItem('I05M')
 		endmethod
@@ -95,7 +95,7 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 			endif
 			
 			debug call Print("Fail")
-			call this.character().displayMessage(ACharacter.messageTypeError, tr("Benötigte Rohstoffe fehlen."))
+			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
 			
 			return false
 		endmethod
@@ -103,7 +103,7 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05K')
 			call this.character().inventory().removeItemType('I05K')
-			call Character(this.character()).displayItemAcquired(GetObjectName('I00B'), tr("Hergestellt."))
+			call Character(this.character()).displayItemAcquired(GetObjectName('I00B'), tre("Hergestellt.", "Crafted."))
 			call Character(this.character()).giveItem('I00B')
 			call Character(this.character()).craftItem('I00B')
 		endmethod
@@ -123,7 +123,7 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 			endif
 			
 			debug call Print("Fail")
-			call this.character().displayMessage(ACharacter.messageTypeError, tr("Benötigte Rohstoffe fehlen."))
+			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
 			
 			return false
 		endmethod
@@ -131,7 +131,7 @@ library StructMapSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05L')
 			call this.character().inventory().removeItemType('I05L')
-			call Character(this.character()).displayItemAcquired(GetObjectName('I00C'), tr("Hergestellt."))
+			call Character(this.character()).displayItemAcquired(GetObjectName('I00C'), tre("Hergestellt.", "Crafted."))
 			call Character(this.character()).giveItem('I00C')
 			call Character(this.character()).craftItem('I00C')
 		endmethod

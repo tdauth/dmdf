@@ -16,17 +16,17 @@ library StructMapQuestsQuestMushroomSearch requires Asl
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Pilzsuche"))
+			local thistype this = thistype.allocate(character, tre("Pilzsuche", "Mushroom Search"))
 			local AQuestItem questItem0
 
 			set this.m_mushrooms = 0
 
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMushroom.blp")
-			call this.setDescription(tr("Der Jäger Dago benötigt einige essbare Pilze für den Herzog von Talras."))
+			call this.setDescription(tre("Der Jäger Dago benötigt einige essbare Pilze für den Herzog von Talras.", "The hunter Dago needs some edible mushrooms for the duke of Talras."))
 			call this.setReward(AAbstractQuest.rewardExperience, 150)
 			call this.setReward(AAbstractQuest.rewardGold, 30)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Sammle einige essbare Pilze für Dago."))
+			set questItem0 = AQuestItem.create(this, tre("Sammle einige essbare Pilze für Dago.", "Collect some ediable mushrooms for Dago."))
 
 			return this
 		endmethod

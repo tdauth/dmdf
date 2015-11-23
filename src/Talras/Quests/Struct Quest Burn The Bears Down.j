@@ -54,7 +54,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 					endif
 					set count = this.character().inventory().totalItemTypeCharges(thistype.itemTypeIdWood)
 					if (count <= thistype.maxWood or new) then
-						call this.displayUpdateMessage(Format(tr("%1% von %1% Holzbrettern.")).i(count).i(thistype.maxWood).result())
+						call this.displayUpdateMessage(Format(tre("%1% von %2% Holzbrettern.", "%1% of %2% wooden boards.")).i(count).i(thistype.maxWood).result())
 					endif
 				endif
 			endif

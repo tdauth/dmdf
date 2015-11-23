@@ -354,7 +354,7 @@ endif
 
 static if (DEBUG_MODE) then
 		private static method onCheatActionMapCheats takes ACheat cheat returns nothing
-			call Print(tr("Örtlichkeiten-Cheats:"))
+			call Print(tre("Örtlichkeiten-Cheats:", "Location Cheats:"))
 			call Print("bonus")
 			call Print("start")
 			call Print("castle")
@@ -366,7 +366,7 @@ static if (DEBUG_MODE) then
 			call Print("tavern")
 			call Print("tomb")
 			call Print("orccamp")
-			call Print(tr("Video-Cheats:"))
+			call Print(tre("Video-Cheats:", "Video Cheats:"))
 			call Print("intro")
 			call Print("rescuedago0")
 			call Print("rescuedago1")
@@ -388,7 +388,7 @@ static if (DEBUG_MODE) then
 			call Print("victory")
 			call Print("holzbruck")
 			call Print("upstream")
-			call Print(tr("Handlungs-Cheats:"))
+			call Print(tre("Handlungs-Cheats:", "Plot Cheats:"))
 			call Print("aftertalras")
 			call Print("afterthenorsemen")
 			call Print("afterslaughter")
@@ -396,7 +396,7 @@ static if (DEBUG_MODE) then
 			call Print("afterthebattle")
 			call Print("afterwar")
 			call Print("afterthedefenseoftalras")
-			call Print(tr("Erzeugungs-Cheats:"))
+			call Print(tre("Erzeugungs-Cheats:", "Spawn Cheats:"))
 			call Print("unitspawns")
 			call Print("testspawnpoint")
 		endmethod
@@ -1262,8 +1262,8 @@ static if (DEBUG_MODE) then
 		
 		private static method createCheats takes nothing returns nothing
 			local ACheat cheat
-			debug call Print(tr("|c00ffcc00TEST-MODUS|r"))
-			debug call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"mapcheats\", um eine Liste sämtlicher Karten-Cheats zu erhalten."))
+			debug call Print(tre("|c00ffcc00TEST-MODUS|r", "|c00ffcc00TEST MODE|r"))
+			debug call Print(tre("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"mapcheats\", um eine Liste sämtlicher Karten-Cheats zu erhalten.", "You are in test mode. Use the cheat \"mapcheats\" to get a list of all map cheats."))
 			debug call Print("Before creating \"mapcheats\"")
 			set cheat = ACheat.create("mapcheats", true, thistype.onCheatActionMapCheats)
 			debug call Print("After creating \"mapcheats\": " + I2S(cheat))

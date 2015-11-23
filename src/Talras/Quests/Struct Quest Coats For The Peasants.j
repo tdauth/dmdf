@@ -1,7 +1,5 @@
-library StructMapQuestsQuestCoatsForThePeasants requires Asl
+library StructMapQuestsQuestCoatsForThePeasants requires Asl, StructMapMapNpcs
 
-	/// @todo Auftragsziel 1 abschließen, wenn der Charakter drei Riesen-Felle hat
-	/// @todo Auftragsziel 2 entfernt bei Abschluss drei Riesen-Felle aus dem Inventar
 	struct QuestCoatsForThePeasants extends AQuest
 		private static constant integer itemTypeId = 'I01Z'
 
@@ -14,43 +12,41 @@ library StructMapQuestsQuestCoatsForThePeasants requires Asl
 		public stub method disable takes nothing returns boolean
 			return super.disable()
 		endmethod
-
-		/// @todo Register event which is fired when unit keeps item (AInventory).
+		
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger whichTrigger returns nothing
-			local event triggerEvent = TriggerRegisterUnitEvent(whichTrigger, questItem.character().unit(),  EVENT_UNIT_PICKUP_ITEM)
-			set triggerEvent = null
+			call TriggerRegisterUnitEvent(whichTrigger, questItem.character().unit(),  EVENT_UNIT_PICKUP_ITEM)
 		endmethod
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
-			return GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeId
+			if (GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeId) then
+				call questItem.quest().displayUpdateMessage(Format(tre("%1%/%2% Riesen-Felle", "%1%/2% Giant Furs")).i(questItem.character().inventory().totalItemTypeCharges(thistype.itemTypeId)).i(3).result())
+				
+				return questItem.character().inventory().totalItemTypeCharges(thistype.itemTypeId) == 3
+			endif
+			
+			return false
 		endmethod
-
-		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
-			/// @todo Remove three items from inventory!
-		endmethod
-
+		
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Felle für die Bauern"))
+			local thistype this = thistype.allocate(character, tre("Felle für die Bauern", "Furs for the Peasants"))
 			local AQuestItem questItem
-			local AQuestItem questItem1
-			call this.setIconPath("") /// @todo fixme
-			call this.setDescription(tr("Der Jäger Björn möchte ein paar Riesen-Felle, um sie an die Bauern zu verkaufen, jedoch traut er sich nicht, selbst einen Riesen zu töten."))
-			call this.setReward(AAbstractQuest.rewardExperience, 500)
-			call this.setReward(AAbstractQuest.rewardSkillPoints, 2)
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNOgreLord.blp")
+			call this.setDescription(tre("Der Jäger Björn möchte ein paar Riesen-Felle, um sie an die Bauern zu verkaufen, jedoch traut er sich nicht, selbst einen Riesen zu töten.", "The hunter Björn wants a few giant furs to sell them to the peasants but he does not dare even to kill a giant."))
+			call this.setReward(thistype.rewardExperience, 500)
+			call this.setReward(thistype.rewardSkillPoints, 2)
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Erbeute drei Riesen-Felle."))
-			call questItem.setReward(AAbstractQuest.rewardExperience, 200)
+			set questItem = AQuestItem.create(this, tre("Erbeute drei Riesen-Felle.", "Loot three giant furs."))
+			call questItem.setReward(thistype.rewardExperience, 200)
 			call questItem.setPing(true)
 			call questItem.setPingCoordinatesFromRect(gg_rct_spawn_point_giants_0)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Bringe die Felle Björn."))
+			set questItem = AQuestItem.create(this, tre("Bringe die Felle Björn.", "Bring the furs to Björn."))
 			call questItem.setPing(true)
-			call questItem.setPingUnit(gg_unit_n02U_0142)
+			call questItem.setPingUnit(Npcs.bjoern())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted1)
 
 			return this
 		endmethod

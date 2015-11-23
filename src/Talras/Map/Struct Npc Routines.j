@@ -182,16 +182,17 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			// Heimrich
 			set thistype.m_heimrichTalksToMarkward = NpcTalksRoutine.create(Routines.talk(), Npcs.heimrich(), MapData.evening, 13.00, gg_rct_waypoint_heimrich_1)
 			call thistype.m_heimrichTalksToMarkward.setPartner(Npcs.markward())
-			call thistype.m_heimrichTalksToMarkward.addSound(tr("Was erlaubt sich das einfache Volk?"), gg_snd_Heimrich12)
-			call thistype.m_heimrichTalksToMarkward.addSound(tr("Wir müssen uns auf den Krieg vorbereiten."), gg_snd_Heimrich13)
-			call thistype.m_heimrichTalksToMarkward.addSound(tr("Hat Er sich um alles Nötige gekümmert?"), gg_snd_Heimrich14)
-			call thistype.m_heimrichTalksToMarkward.addSound(tr("Bald werden sie hier einfallen und dann?"), gg_snd_Heimrich15)
+			call thistype.m_heimrichTalksToMarkward.addSound(tre("Was erlaubt sich das einfache Volk?", "Who does the common people think it is?"), gg_snd_Heimrich12)
+			call thistype.m_heimrichTalksToMarkward.addSound(tre("Wir müssen uns auf den Krieg vorbereiten.", "We have to prepare ourselves for the war."), gg_snd_Heimrich13)
+			call thistype.m_heimrichTalksToMarkward.addSound(tre("Hat Er sich um alles Nötige gekümmert?", "Did he take care of everything necessary?"), gg_snd_Heimrich14)
+			call thistype.m_heimrichTalksToMarkward.addSound(tre("Bald werden sie hier einfallen und dann?", "Soon they will come here and then?"), gg_snd_Heimrich15)
 			set thistype.m_heimrichTalksToFerdinand = NpcTalksRoutine.create(Routines.talk(), Npcs.heimrich(), 13.00, MapData.evening, gg_rct_waypoint_heimrich_1)
 			call thistype.m_heimrichTalksToFerdinand.setPartner(Npcs.ferdinand())
-			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Was erlaubt sich das einfache Volk?"), gg_snd_Heimrich12)
-			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Wir müssen uns auf den Krieg vorbereiten."), gg_snd_Heimrich13)
-			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Hat Er sich um alles Nötige gekümmert?"), gg_snd_Heimrich14)
-			call thistype.m_heimrichTalksToFerdinand.addSound(tr("Bald werden sie hier einfallen und dann?"), gg_snd_Heimrich15)
+			call thistype.m_heimrichTalksToFerdinand.addSound(tre("Was erlaubt sich das einfache Volk?", "Who does the common people think it is?"), gg_snd_Heimrich12)
+			call thistype.m_heimrichTalksToFerdinand.addSound(tre("Wir müssen uns auf den Krieg vorbereiten.", "We have to prepare ourselves for the war."), gg_snd_Heimrich13)
+			call thistype.m_heimrichTalksToFerdinand.addSound(tre("Hat Er sich um alles Nötige gekümmert?", "Did he take care of everything necessary?"), gg_snd_Heimrich14)
+			call thistype.m_heimrichTalksToFerdinand.addSound(tre("Bald werden sie hier einfallen und dann?", "Soon they will come here and then?"), gg_snd_Heimrich15)
+			set thistype.m_heimrichTalksToFerdinand = NpcTalksRoutine.create(Routines.talk(), Npcs.heimrich(), 13.00, MapData.evening, gg_rct_waypoint_heimrich_1)
 
 			// Markward
 			set thistype.m_markwardTalksToHeimrich = NpcTalksRoutine.create(Routines.talk(), Npcs.markward(), MapData.evening, 13.00, gg_rct_waypoint_markward_1)
@@ -207,10 +208,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_wielandTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.wieland(), 13.00, MapData.evening, gg_rct_waypoint_wieland_1)
 			call thistype.m_wielandTalks.setPartner(Npcs.einar())
 			call thistype.m_wielandTalks.setFacing(203.95)
-			call thistype.m_wielandTalks.addSound(tr("Wie viele Waffen brauchst du denn?"), gg_snd_Wieland38)
-			call thistype.m_wielandTalks.addSound(tr("Bei der Bezahlung kann ich meine Schmiede auch gleich schließen."), gg_snd_Wieland39)
-			call thistype.m_wielandTalks.addSound(tr("Einar, du verdammter Hundesohn!"), gg_snd_Wieland40)
-			call thistype.m_wielandTalks.addSound(tr("Hör mir auf mit den Orks!"), gg_snd_Wieland41)
+			call thistype.m_wielandTalks.addSound(tre("Wie viele Waffen brauchst du denn?", "How many weapons do you need?"), gg_snd_Wieland38)
+			call thistype.m_wielandTalks.addSound(tre("Bei der Bezahlung kann ich meine Schmiede auch gleich schließen.", "Considering this paying I could close my forge just now."), gg_snd_Wieland39)
+			call thistype.m_wielandTalks.addSound(tre("Einar, du verdammter Hundesohn!", "Einar, you goddamn bastard!"), gg_snd_Wieland40)
+			call thistype.m_wielandTalks.addSound(tre("Hör mir auf mit den Orks!", "Stop with those Orcs!"), gg_snd_Wieland41)
 			//set thistype.m_wielandDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.wieland(), 14.00, MapData.evening, gg_rct_waypoint_wieland_2)
 			
 			// Mathilda
@@ -231,10 +232,11 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_lotharFlirtsWithMathilda = NpcTalksRoutine.create(Routines.talk(), Npcs.lothar(), 13.00, 16.00, gg_rct_waypoint_lothar_1)
 			call thistype.m_lotharFlirtsWithMathilda.setPartner(Npcs.mathilda())
 			call thistype.m_lotharFlirtsWithMathilda.setFacing(180.0)
-			call thistype.m_lotharFlirtsWithMathilda.addSound(tr("Oh du Liebe meines Lebens!"), null)
-			call thistype.m_lotharFlirtsWithMathilda.addSound(tr("Möchtest du von meinem Honig kosten?"), null)
-			call thistype.m_lotharFlirtsWithMathilda.addSound(tr("Mathilda, oh du holde, schöne, spiele mir ein Lied!"), null)
-			call thistype.m_lotharFlirtsWithMathilda.addSound(tr("Willst du mir nicht eine deiner wunderbaren Geschichten erzählen?"), null)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Oh du Liebe meines Lebens!", "Oh you love of my life!"), null)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Möchtest du von meinem Honig kosten?", "Would you like to taste from my honey?"), null)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Mathilda, oh du holde, schöne, spiele mir ein Lied!", "Mathilda, oh you sweet, beautiful, play a song for me!"), null)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Willst du mir nicht eine deiner wunderbaren Geschichten erzählen?", "Don't you want to tell me one of your wonderful stories?"), null)
+			// TODO add missing sentences
 			set thistype.m_lotharSells1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.lothar(), 16.00, MapData.evening, gg_rct_waypoint_lothar_0)
 			call thistype.m_lotharSells1.setFacing(93.32)
 
@@ -256,10 +258,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_manfredTalksToGuntrich.setPartner(Npcs.guntrich())
 			set thistype.m_manfredTalksToBjoern = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), 16.00, MapData.evening, gg_rct_waypoint_manfred_1)
 			call thistype.m_manfredTalksToBjoern.setPartner(Npcs.bjoern())
-			call thistype.m_manfredTalksToBjoern.addSound(tr("Ja mein Lord!"), gg_snd_PeasantWhat1)
-			call thistype.m_manfredTalksToBjoern.addSound(tr("Was ist?"), gg_snd_PeasantWhat2)
-			call thistype.m_manfredTalksToBjoern.addSound(tr("Mehr Arbeit?"), gg_snd_PeasantWhat3)
-			call thistype.m_manfredTalksToBjoern.addSound(tr("Was?"), gg_snd_PeasantWhat4)
+			call thistype.m_manfredTalksToBjoern.addSound(tre("Ja mein Lord!", "Yes my Lord!"), gg_snd_PeasantWhat1)
+			call thistype.m_manfredTalksToBjoern.addSound(tre("Was ist?", "What is it?"), gg_snd_PeasantWhat2)
+			call thistype.m_manfredTalksToBjoern.addSound(tre("Mehr Arbeit?", "More work?"), gg_snd_PeasantWhat3)
+			call thistype.m_manfredTalksToBjoern.addSound(tre("Was?", "Yes?"), gg_snd_PeasantWhat4)
 
 			// Guntrich
 			set thistype.m_guntrichStandsOnClimb0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.guntrich(), MapData.evening, MapData.midday, gg_rct_waypoint_guntrich_1)
@@ -292,10 +294,11 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_kunoTalksToHisDaughter = NpcTalksRoutine.create(Routines.talk(), Npcs.kuno(), 16.0, MapData.evening, gg_rct_waypoint_kuno_0)
 			call thistype.m_kunoTalksToHisDaughter.setPartner(Npcs.kunosDaughter())
 			call thistype.m_kunoTalksToHisDaughter.setFacing(357.00)
-			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Ja mein Lord!"), gg_snd_PeasantWhat1)
-			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Was ist?"), gg_snd_PeasantWhat2)
-			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Mehr Arbeit?"), gg_snd_PeasantWhat3)
-			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Was?"), gg_snd_PeasantWhat4)
+			// TODO different stuff
+			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Ja mein Lord!", "Yes my Lord!"), gg_snd_PeasantWhat1)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Was ist?", "What is it?"), gg_snd_PeasantWhat2)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Mehr Arbeit?", "More work?"), gg_snd_PeasantWhat3)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Was?", "Yes?"), gg_snd_PeasantWhat4)
 			
 			// Kuno's daughter
 			set thistype.m_kunosDaughterStandsInFrontOfTheHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.kunosDaughter(), MapData.evening, 16.0, gg_rct_waypoint_kunos_daughter_1)

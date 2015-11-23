@@ -18,7 +18,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	 */
 	struct QuestAreaWarImpTarget extends QuestArea
 		public stub method onCheck takes nothing returns boolean
-			call Character.displayHintToAll(tr("In dieses Gebiet müssen die Imps gebracht werden."))
+			call Character.displayHintToAll(tre("In dieses Gebiet müssen die Imps gebracht werden.", "The imps have to be brought in this area."))
 			return false
 		endmethod
 	
@@ -73,7 +73,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	struct QuestAreaWarBjoernPlaceTraps extends QuestArea
 	
 		public stub method onCheck takes nothing returns boolean
-			call Character.displayHintToAll(tr("In diesem Gebiet müssen Björns Fallen platziert werden."))
+			call Character.displayHintToAll(tre("In diesem Gebiet müssen Björns Fallen platziert werden.", "Bjorn's traps have to be placed in this area."))
 			return false
 		endmethod
 	
@@ -919,7 +919,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 				call this.setupUnitAtDestination(GetTriggerUnit())
 				call this.m_recruits.units().pushBack(GetTriggerUnit())
 				
-				call this.displayUpdateMessage(Format(tr("%1%/%2% Rekruten")).i(this.m_recruits.units().size()).i(thistype.maxRecruits).result())
+				call this.displayUpdateMessage(Format(tre("%1%/%2% Rekruten", "%1%/%2% recruits")).i(this.m_recruits.units().size()).i(thistype.maxRecruits).result())
 				
 				return this.m_recruits.units().size() == thistype.maxRecruits
 			endif

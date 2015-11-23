@@ -16,7 +16,7 @@ library StructMapSpellsSpellMagicalSeed requires Asl, StructMapMapMapData, Struc
 			call PingMinimapExForPlayer(Player(0), GetSpellTargetX(), GetSpellTargetY(), 10.0, 100, 100, 100, false)
 			
 			if (not QuestSeedsForTheGarden.characterQuest(this.character()).questItem(2).isNew()) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Der magische Samen ist für Trommon."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Der magische Samen ist für Trommon.", "The magical seed is for Trommon."))
 				
 				return
 			endif

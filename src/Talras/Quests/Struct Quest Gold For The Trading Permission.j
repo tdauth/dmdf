@@ -1,4 +1,4 @@
-library StructMapQuestsQuestGoldForTheTradingPermission requires Asl
+library StructMapQuestsQuestGoldForTheTradingPermission requires Asl, StructMapMapNpcs
 
 	struct QuestGoldForTheTradingPermission extends AQuest
 
@@ -13,15 +13,15 @@ library StructMapQuestsQuestGoldForTheTradingPermission requires Asl
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Gold für die Handelserlaubnis"))
+			local thistype this = thistype.allocate(character, tre("Gold für die Handelserlaubnis", "Gold for the Trading Permission"))
 			local AQuestItem questItem0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
 			call this.setDescription(tr("Der Händler Haid darf seine Waren nicht in der Burg Talras verkaufen, da ihm die benötigte Handelsgenehmigung fehlt. Leider fehlen ihm die nötigen Goldmünzen, um sich beim Vogt eine solche Handelsgenehmigung zu erwerben."))
 			call this.setReward(thistype.rewardExperience, 400)
 			//item 0
-			set questItem0 = AQuestItem.create(this, tr("Gib Händler Haid die benötigten Goldmünzen für eine Handelsgenehmigung in Talras."))
+			set questItem0 = AQuestItem.create(this, tre("Gib Händler Haid die benötigten Goldmünzen für eine Handelsgenehmigung in Talras.", "Give merchant Haid the required gold coins for the trading permission in Talras."))
 			call questItem0.setPing(true)
-			call questItem0.setPingUnit(gg_unit_n017_0137)
+			call questItem0.setPingUnit(Npcs.haid())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			return this
 		endmethod

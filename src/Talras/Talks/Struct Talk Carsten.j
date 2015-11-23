@@ -1,5 +1,9 @@
 library StructMapTalksTalkCarsten requires Asl, StructMapQuestsQuestTheAuthor
 
+	/**
+	 * \brief Carsten is a hidden character placed on a lonely island. He is based on a real author.
+	 * \note If you overlook him in the game he will be suffering on his island forever!
+	 */
 	struct TalkCarsten extends Talk
 
 		implement Talk
