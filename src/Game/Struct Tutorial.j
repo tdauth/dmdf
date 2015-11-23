@@ -32,7 +32,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 		endmethod
 
 		public method showShrineInfo takes nothing returns nothing
-			call this.m_character.displayHint(Format(tr("Schreine dienen der Wiederbelebung Ihres Charakters. Sobald Ihr Charakter stirbt, wird er nach einer Dauer von %1% Sekunden an seinem aktivierten Schrein wiederbelebt. Es kann immer nur ein Schrein aktiviert sein. Ein Schrein wird aktiviert, indem der Charakter dessen näheres Umfeld betritt. Dabei wird der zuvor aktivierte Schrein automatisch deaktiviert.")).i(R2I(MapData.revivalTime)).result())
+			call this.m_character.displayHint(Format(tre("Schreine dienen der Wiederbelebung Ihres Charakters. Sobald Ihr Charakter stirbt, wird er nach einer Dauer von %1% Sekunden an seinem aktivierten Schrein wiederbelebt. Es kann immer nur ein Schrein aktiviert sein. Ein Schrein wird aktiviert, indem der Charakter dessen näheres Umfeld betritt. Dabei wird der zuvor aktivierte Schrein automatisch deaktiviert.", "Shrines serve the revival of your character. As soon as your character dies he will be revived automatically after a duration of %1% seconds at his enabled shrine. There can only be one shrine activated at once. A shrine is being activated when the character enters its near surroundings. Here, the previously activated shrine is disabled automatically.")).i(R2I(MapData.revivalTime)).result())
 			set this.m_hasEnteredShrine = true
 		endmethod
 
@@ -97,7 +97,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Aufträge", "Info: Missions"))
-			call QuestSetDescription(whichQuest, tr("Aufträge im Spiel bestehen aus einem oder mehreren Zielen, die allesamt erfüllt werden müssen. Aufträge geben meist Belohnungen wie zusätzliche Erfahrungspunkte, Goldmünzen oder Gegenstände. Gemeinsame Aufträge müssen von allen Spielern gemeinsam erledigt werden, um die Handlung des Spiels voranzubringen. Eigene Aufträge können optional von jedem Spieler einzeln erledigt werden, um zusätzliche Belohnungen zu erhalten."))
+			call QuestSetDescription(whichQuest, tre("Aufträge im Spiel bestehen aus einem oder mehreren Zielen, die allesamt erfüllt werden müssen. Aufträge geben meist Belohnungen wie zusätzliche Erfahrungspunkte, Goldmünzen oder Gegenstände. Gemeinsame Aufträge müssen von allen Spielern gemeinsam erledigt werden, um die Handlung des Spiels voranzubringen. Eigene Aufträge können optional von jedem Spieler einzeln erledigt werden, um zusätzliche Belohnungen zu erhalten.", "Missions in the game consists of one or several objectives which has to be solved alltogether. Missions mostly give rewards like additional experience points, gold coins or items. Shared missions have to be solved by all players together to continue the plot of the game. Own missions can be solved optionally by each player to get additional rewards."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSpellBookBLS.blp")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Der Gegenstand \"Aufträge\" ermöglicht die Anzeige der Ziel-Orte von Aufträgen.", "The item \"Missions\" allows you to show the target locations of missions."))
@@ -193,7 +193,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Stützpunkte", "Info: Bases"))
-			call QuestSetDescription(whichQuest, tr("Jeder Spieler kann einen einzigen Stützpunkt errichten. Der Stützpunkt ist ein Gebäude, das abhängig von der Klasse des Spielercharakters ist. Um einen Stützpunkt zu errichten, muss ein entsprechender Bauplan bei einem Baumeister gekauft werden."))
+			call QuestSetDescription(whichQuest, tre("Jeder Spieler kann einen einzigen Stützpunkt errichten. Der Stützpunkt ist ein Gebäude, das abhängig von der Klasse des Spielercharakters ist. Um einen Stützpunkt zu errichten, muss ein entsprechender Bauplan bei einem Baumeister gekauft werden.", "Each player can construct one single base. The base is a building which is dependant on the class of the player character. To construct a base a corresponding construction plan has to be purchased from a builder."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNTinyCastle.blp")
 			call QuestSetCompleted(whichQuest, true)
 		endmethod

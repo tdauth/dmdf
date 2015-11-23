@@ -210,24 +210,24 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
 			set this.m_questArea = QuestAreaSlaughter.create(gg_rct_quest_slaughter_enable)
 
-			set questItem = AQuestItem.create(this, tr("Tötet den Vampirgebieter."))
+			set questItem = AQuestItem.create(this, tre("Tötet den Vampirgebieter.", "Kill the Vampire Lord."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 
 			call this.setPingByUnitTypeId.execute(SpawnPoints.vampireLord0(), UnitTypes.vampireLord)
 
-			set questItem = AQuestItem.create(this, tr("Tötet die Vampire."))
+			set questItem = AQuestItem.create(this, tre("Tötet die Vampire.", "Kill the vampires."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted1)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted1)
 
-			set questItem = AQuestItem.create(this, tr("Tötet den Todesengel."))
+			set questItem = AQuestItem.create(this, tre("Tötet den Todesengel.", "Kill the death angel."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted2)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted2)
 
-			set questItem = AQuestItem.create(this, tr("Tötet die Knochendrachen."))
+			set questItem = AQuestItem.create(this, tre("Tötet die Knochendrachen.", "Kill the bone dragons."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted3)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted3)

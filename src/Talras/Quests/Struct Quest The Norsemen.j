@@ -22,13 +22,13 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			set this.m_leaderboard = CreateLeaderboard()
 			set this.m_hostileWaves = QuestTheNorsemen.maxWaves - 1
 			set this.m_alliedWaves = QuestTheNorsemen.maxAlliedWaves
-			call LeaderboardSetLabel(this.m_leaderboard, tr("Verbleibende Wellen"))
+			call LeaderboardSetLabel(this.m_leaderboard, tre("Verbleibende Wellen", "Remaining Waves"))
 			call LeaderboardSetStyle(this.m_leaderboard, true, true, true, true)
-			call LeaderboardAddItemBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, tr("Feindliche:"), this.m_hostileWaves)
+			call LeaderboardAddItemBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, tre("Feindliche:", "Hostile:"), this.m_hostileWaves)
 			// don't make it black
 			call LeaderboardSetPlayerItemLabelColorBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, 100, 80, 20, 0)
 			call LeaderboardSetPlayerItemValueColorBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, 100, 80, 20, 0)
-			call LeaderboardAddItemBJ(MapData.alliedPlayer, this.m_leaderboard, tr("Verbündete:"), this.m_alliedWaves)
+			call LeaderboardAddItemBJ(MapData.alliedPlayer, this.m_leaderboard, tre("Verbündete:", "Allied:"), this.m_alliedWaves)
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)

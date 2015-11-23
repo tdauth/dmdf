@@ -6,7 +6,7 @@ Learn Rush [|cffffcc00Level %d|r]
 
 STRING 1
 {
-Kapitel 1: Talras 0.5
+Chapter 1: Talras 0.5
 }
 
 STRING 2
@@ -11704,13 +11704,13 @@ STRING 1953
 STRING 1954
 // Gegenstände: I016 (Brotlaib), Description (Beschreibung (ides))
 {
-Stellt verlorene Trefferpunkte wieder her.
+Restores missing hit points.
 }
 
 STRING 1955
 // Gegenstände: I016 (Brotlaib), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A04Q,DataA1> Trefferpunkte wieder her.
+Restores <A04Q,DataA1> hit points on usage.
 }
 
 STRING 1956
@@ -11746,13 +11746,13 @@ STRING 1960
 STRING 1961
 // Gegenstände: I016 (Brotlaib), Name (Name (unam))
 {
-Brotlaib
+Loaf
 }
 
 STRING 1962
 // Gegenstände: I016 (Brotlaib), Tip (Tooltipp - Einfach (utip))
 {
-|cffffcc00B|rotlaib kaufen
+Buy Loaf (|cffffcc00B|r)
 }
 
 STRING 1963
@@ -11788,7 +11788,7 @@ S
 STRING 1968
 // Fähigkeiten: A04Q (Brotlaib), Name (Name (anam))
 {
-Brotlaib
+Loaf
 }
 
 STRING 1969
@@ -19782,39 +19782,39 @@ STRING 3308
 }
 
 STRING 3309
-// Gegenstände: I009 (Kleiner Heiltrank), Ubertip (Tooltipp - Erweitert (utub))
+// Fähigkeiten: A1CE (Aufträge - Ein neues Bündnis), Tip (Tooltipp - Normal (atp1))
 {
-Heals <AIhx,DataA1> hitpoints on usage.|nProvides <I009,uses> charges.
+A New Alliance
 }
 
 STRING 3310
-// Gegenstände: I00A (Heiltrank), Ubertip (Tooltipp - Erweitert (utub))
+// Fähigkeiten: A1BZ (Aufträge - Talras), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Heals <AIh1,DataA1> hitpoints on usage.|nProvides <I00A,uses> charges.
+Jumps to the current target location of the mission.
 }
 
 STRING 3311
-// Gegenstände: I00B (Großer Heiltrank), Ubertip (Tooltipp - Erweitert (utub))
+// Fähigkeiten: A1CF (Aufträge - Die Verteidigung von Talras), Name (Name (anam))
 {
-Heals <AIh2,DataA1> hitpoints on usage.|nProvides <I00B,uses> charges.
+Aufträge - Die Verteidigung von Talras
 }
 
 STRING 3312
-// Gegenstände: I00C (Großer Manatrank), Ubertip (Tooltipp - Erweitert (utub))
+// Fähigkeiten: A1CF (Aufträge - Die Verteidigung von Talras), Tip (Tooltipp - Normal (atp1))
 {
-Restores <AIm2,DataA1> mana on usage.|nProvides <I00C,uses> charges.
+The Defense of Talras
 }
 
 STRING 3313
-// Gegenstände: I00D (Manatrank), Ubertip (Tooltipp - Erweitert (utub))
+// Fähigkeiten: A1C0 (Aufträge - Die Nordmänner), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Restores <AIm1,DataA1> mana on usage.|nProvides <I00D,uses> charges.
+Jumps to the current target location of the mission.
 }
 
 STRING 3314
-// Gegenstände: I00E (Kleiner Manatrank), Ubertip (Tooltipp - Erweitert (utub))
+// Fähigkeiten: A1B2 (Die Macht Tfjahns), EditorSuffix (Editor-Suffix (ansf))
 {
-Restores <A026,DataA1> mana on usage.|nProvides <I00E,uses> charges.
+(Dararos)
 }
 
 STRING 3315
@@ -21707,13 +21707,13 @@ Manastrom
 }
 
 STRING 3633
-// Fähigkeiten: A0VB (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VI (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberer)
 }
 
 STRING 3634
-// Fähigkeiten: A0VI (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VU (Rückkopplung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberer)
 }
@@ -24952,7 +24952,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 4173
 // Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4174
@@ -27238,31 +27238,31 @@ STRING 4553
 STRING 4554
 // Fähigkeiten: A0Q2 (Bekehrung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4555
 // Fähigkeiten: A0Q3 (Bekehrung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4556
 // Fähigkeiten: A0Q4 (Bekehrung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4557
 // Fähigkeiten: A0Q5 (Bekehrung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4558
 // Fähigkeiten: A0PZ (Bekehrung), Name (Name (anam))
 {
-Bekehrung
+Conversion
 }
 
 STRING 4559
@@ -27280,7 +27280,7 @@ STRING 4560
 STRING 4561
 // Fähigkeiten: A0Q0 (Bekehrung), Name (Name (anam))
 {
-Bekehrung
+Conversion
 }
 
 STRING 4562
@@ -30537,12 +30537,12 @@ In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sow
 
 STRING 5104
 {
-The white legion
+The White legion
 }
 
 STRING 5105
 {
-The black legion
+The Black legion
 }
 
 STRING 5106
@@ -36640,37 +36640,37 @@ Trollketten
 STRING 6121
 // Gegenstände: I009 (Kleiner Heiltrank), Ubertip (Tooltipp - Erweitert (utub))
 {
-Heilt bei Benutzung <A1C8,DataA1> Trefferpunkte.
+Heals <A1C8,DataA1> hit points on usage.
 }
 
 STRING 6122
 // Gegenstände: I00A (Heiltrank), Ubertip (Tooltipp - Erweitert (utub))
 {
-Heilt bei Benutzung <A1C9,DataA1> Trefferpunkte.
+Heals <A1C9,DataA1> hit points on usage.
 }
 
 STRING 6123
 // Gegenstände: I00B (Großer Heiltrank), Ubertip (Tooltipp - Erweitert (utub))
 {
-Heilt bei Benutzung <A1CA,DataA1> Trefferpunkte.
+Heals <A1CA,DataA1> hit points on usage.
 }
 
 STRING 6124
 // Gegenstände: I00C (Großer Manatrank), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A1CC,DataA1> Mana wieder her.
+Restores <A1CC,DataA1> mana on usage.
 }
 
 STRING 6125
 // Gegenstände: I00D (Manatrank), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A1CB,DataA1> Mana wieder her.
+Restores <A1CB,DataA1> mana on usage.
 }
 
 STRING 6126
 // Gegenstände: I00E (Kleiner Manatrank), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A026,DataA1> Mana wieder her.
+Restores <A026,DataA1> mana on usage.
 }
 
 STRING 6127
@@ -36688,7 +36688,7 @@ STRING 6128
 STRING 6129
 // Fähigkeiten: A026 (Kleiner Manatrank), Name (Name (anam))
 {
-Kleiner Manatrank
+Small Mana Potion
 }
 
 STRING 6130
@@ -54210,7 +54210,7 @@ Fellows
 
 STRING 9045
 {
-Arena opponents
+Arena Opponents
 }
 
 STRING 9046
@@ -59159,31 +59159,31 @@ Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 9864
 // Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 1|r]
+Conversion [|cffffcc00Level 1|r]
 }
 
 STRING 9865
 // Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 2|r]
+Conversion [|cffffcc00Level 2|r]
 }
 
 STRING 9866
 // Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 3|r]
+Conversion [|cffffcc00Level 3|r]
 }
 
 STRING 9867
 // Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 4|r]
+Conversion [|cffffcc00Level 4|r]
 }
 
 STRING 9868
 // Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 5|r]
+Conversion [|cffffcc00Level 5|r]
 }
 
 STRING 9869
@@ -59195,7 +59195,7 @@ STRING 9869
 STRING 9870
 // Zauberverstärker/Effekte: B02F (Bekehrung), EditorName (Name (nur Editor) (fnam))
 {
-Bekehrung
+Conversion
 }
 
 STRING 9871
@@ -59255,7 +59255,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 9880
 // Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 1|r]
+Conversion [|cffffcc00Level 1|r]
 }
 
 STRING 9881
@@ -59267,7 +59267,7 @@ STRING 9881
 STRING 9882
 // Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), Name (Name (anam))
 {
-Bekehrung - Stufe 1
+Conversion - Level 1
 }
 
 STRING 9883
@@ -59319,19 +59319,19 @@ Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 9891
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 9892
-// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 9893
-// Fähigkeiten: A0W8 (Manaschild - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WA (Manaschild - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -59339,7 +59339,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 9894
 // Fähigkeiten: A0Q2 (Bekehrung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 2|r]
+Conversion [|cffffcc00Level 2|r]
 }
 
 STRING 9895
@@ -59351,7 +59351,7 @@ STRING 9895
 STRING 9896
 // Fähigkeiten: A0Q2 (Bekehrung - Stufe 2), Name (Name (anam))
 {
-Bekehrung - Stufe 2
+Conversion - Level 2
 }
 
 STRING 9897
@@ -59423,7 +59423,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 9908
 // Fähigkeiten: A0Q3 (Bekehrung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 3|r]
+Conversion [|cffffcc00Level 3|r]
 }
 
 STRING 9909
@@ -59435,7 +59435,7 @@ STRING 9909
 STRING 9910
 // Fähigkeiten: A0Q3 (Bekehrung - Stufe 3), Name (Name (anam))
 {
-Bekehrung - Stufe 3
+Conversion - Level 3
 }
 
 STRING 9911
@@ -59507,7 +59507,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 9922
 // Fähigkeiten: A0Q4 (Bekehrung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 4|r]
+Conversion [|cffffcc00Level 4|r]
 }
 
 STRING 9923
@@ -59519,7 +59519,7 @@ STRING 9923
 STRING 9924
 // Fähigkeiten: A0Q4 (Bekehrung - Stufe 4), Name (Name (anam))
 {
-Bekehrung - Stufe 4
+Conversion - Level 4
 }
 
 STRING 9925
@@ -59591,7 +59591,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 9936
 // Fähigkeiten: A0Q5 (Bekehrung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 5|r]
+Conversion [|cffffcc00Level 5|r]
 }
 
 STRING 9937
@@ -59603,7 +59603,7 @@ STRING 9937
 STRING 9938
 // Fähigkeiten: A0Q5 (Bekehrung - Stufe 5), Name (Name (anam))
 {
-Bekehrung - Stufe 5
+Conversion - Level 5
 }
 
 STRING 9939
@@ -59627,7 +59627,7 @@ STRING 9941
 STRING 9942
 // Fähigkeiten: A0Q6 (Bekehrung - Stufe 1), Name (Name (anam))
 {
-Bekehrung - Stufe 1
+Conversion - Level 1
 }
 
 STRING 9943
@@ -59639,7 +59639,7 @@ STRING 9943
 STRING 9944
 // Fähigkeiten: A0Q7 (Bekehrung - Stufe 2), Name (Name (anam))
 {
-Bekehrung - Stufe 2
+Conversion - Level 2
 }
 
 STRING 9945
@@ -59651,7 +59651,7 @@ STRING 9945
 STRING 9946
 // Fähigkeiten: A0Q8 (Bekehrung - Stufe 3), Name (Name (anam))
 {
-Bekehrung - Stufe 3
+Conversion - Level 3
 }
 
 STRING 9947
@@ -59663,7 +59663,7 @@ STRING 9947
 STRING 9948
 // Fähigkeiten: A0Q9 (Bekehrung - Stufe 4), Name (Name (anam))
 {
-Bekehrung - Stufe 4
+Conversion - Level 4
 }
 
 STRING 9949
@@ -59675,7 +59675,7 @@ STRING 9949
 STRING 9950
 // Fähigkeiten: A0QA (Bekehrung - Stufe 5), Name (Name (anam))
 {
-Bekehrung - Stufe 5
+Conversion - Level 5
 }
 
 STRING 9951
@@ -81356,25 +81356,25 @@ Barrikade
 STRING 13563
 // Gegenstände: I05J (Buch der Tränke), Name (Name (unam))
 {
-Buch der Tränke
+Book of Potions
 }
 
 STRING 13564
 // Gegenstände: I05J (Buch der Tränke), Description (Beschreibung (ides))
 {
-Ein Buch mit Anleitungen zum Herstellen von Tränken.
+A book with instructions for making potions.
 }
 
 STRING 13566
 // Gegenstände: I05J (Buch der Tränke), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Buch mit Anleitungen zum Herstellen von Tränken.
+A book with instructions for making potions.
 }
 
 STRING 13567
 // Fähigkeiten: A18Q (Buch der Tränke), Name (Name (anam))
 {
-Buch der Tränke
+Book of Potions
 }
 
 STRING 13568
@@ -81386,19 +81386,19 @@ STRING 13568
 STRING 13569
 // Fähigkeiten: A18R (Heiltrank herstellen), Name (Name (anam))
 {
-Heiltrank herstellen
+Craft Healing Potion
 }
 
 STRING 13570
 // Fähigkeiten: A18R (Heiltrank herstellen), Tip (Tooltipp - Normal (atp1))
 {
-Heiltrank herstellen
+Craft Healing Potion
 }
 
 STRING 13571
 // Fähigkeiten: A1CY (Großen Manatrank herstellen), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Ultimativzauber 1|r|nDer Druide erhöht seine Bewegungs- und Angriffsgeschwindigkeit in Tiergestalt um 100 %.
+Craft Big Mana Potion
 }
 
 STRING 13572
@@ -81416,13 +81416,13 @@ STRING 13573
 STRING 13574
 // Gegenstände: I05K (Heilkraut), Name (Name (unam))
 {
-Medicinal Herb
+Healing Herb
 }
 
 STRING 13575
 // Gegenstände: I05K (Heilkraut), Tip (Tooltipp - Einfach (utip))
 {
-Buy Medicinal Herb
+Buy Healing Herb
 }
 
 STRING 13576
@@ -82184,7 +82184,7 @@ STRING 13711
 STRING 13712
 // Fähigkeiten: A19J (Heilkraut), Name (Name (anam))
 {
-Medicinal Herb
+Healing Herb
 }
 
 STRING 13713
@@ -92678,10 +92678,10 @@ Erz
 STRING 15461
 // Gegenstände: I05Y (Erz), Tip (Tooltipp - Einfach (utip))
 {
-Buy Medicinal Herb
+Buy Healing Herb
 }
 
-STRING 15462
+STRING 15462 
 // Gegenstände: I05Y (Erz), Description (Beschreibung (ides))
 {
 Ein einfacher Erzbrocken.
