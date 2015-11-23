@@ -6,7 +6,7 @@ Learn Rush [|cffffcc00Level %d|r]
 
 STRING 1
 {
-Talras 0.4
+Kapitel 1: Talras 0.5
 }
 
 STRING 2
@@ -22,7 +22,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 
 STRING 4
 {
-Tamino Dauth
+Tamino Dauth and Andreas B.
 }
 
 STRING 5
@@ -80532,7 +80532,7 @@ Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Hö
 }
 
 STRING 13425
-// Fähigkeiten: A187 (Falle - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A189 (Falle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
@@ -80544,19 +80544,19 @@ Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 13427
-// Fähigkeiten: A187 (Falle - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A189 (Falle - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 13428
-// Fähigkeiten: A187 (Falle - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A189 (Falle - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 13429
-// Fähigkeiten: A187 (Falle - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A189 (Falle - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -80586,55 +80586,55 @@ Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 13434
-// Fähigkeiten: A187 (Falle - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A189 (Falle - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
 
 STRING 13435
-// Fähigkeiten: A188 (Falle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13436
-// Fähigkeiten: A188 (Falle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13437
-// Fähigkeiten: A188 (Falle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13438
-// Fähigkeiten: A188 (Falle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13439
-// Fähigkeiten: A188 (Falle - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A18A (Falle - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 13440
-// Fähigkeiten: A188 (Falle - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A18A (Falle - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 13441
-// Fähigkeiten: A188 (Falle - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A18A (Falle - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 13442
-// Fähigkeiten: A188 (Falle - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A18A (Falle - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -80658,61 +80658,61 @@ Falle - Stufe 3
 }
 
 STRING 13446
-// Fähigkeiten: A188 (Falle - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A18A (Falle - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 13447
-// Fähigkeiten: A188 (Falle - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A18A (Falle - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
 
 STRING 13448
-// Fähigkeiten: A189 (Falle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13449
-// Fähigkeiten: A189 (Falle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13450
-// Fähigkeiten: A189 (Falle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13451
-// Fähigkeiten: A189 (Falle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13452
-// Fähigkeiten: A189 (Falle - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 13453
-// Fähigkeiten: A189 (Falle - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 13454
-// Fähigkeiten: A189 (Falle - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 13455
-// Fähigkeiten: A189 (Falle - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -80736,61 +80736,61 @@ Falle - Stufe 4
 }
 
 STRING 13459
-// Fähigkeiten: A189 (Falle - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 13460
-// Fähigkeiten: A189 (Falle - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
 
 STRING 13461
-// Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13462
-// Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13463
-// Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13464
-// Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 13465
-// Fähigkeiten: A18A (Falle - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 13466
-// Fähigkeiten: A18A (Falle - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 13467
-// Fähigkeiten: A18A (Falle - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 13468
-// Fähigkeiten: A18A (Falle - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -80814,13 +80814,13 @@ Falle - Stufe 5
 }
 
 STRING 13472
-// Fähigkeiten: A18A (Falle - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 13473
-// Fähigkeiten: A18A (Falle - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -80886,13 +80886,13 @@ Falle - Stufe 5
 }
 
 STRING 13484
-// Zauberverstärker/Effekte: B02I (), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: B02J (Lauern), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Waldläufer)
 }
 
 STRING 13485
-// Zauberverstärker/Effekte: B02J (Lauern), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: X002 (Pfeilhagel Effekt), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Waldläufer)
 }
@@ -81318,9 +81318,9 @@ Spruchrolle der Heilung herstellen
 }
 
 STRING 13556
-// Fähigkeiten: A0FC (Waldfestung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CY (Großen Manatrank herstellen), Name (Name (anam))
 {
-|cffffcc00Ultimativzauber 2|r|nErzeugt eine Waldfestung aus lebendigen Bäumen, die sie um jeden Preis verteidigen.
+Großen Manatrank herstellen
 }
 
 STRING 13557
@@ -81339,12 +81339,6 @@ STRING 13559
 // Fähigkeiten: A18P (Spruchrolle der Zauberkraft herstellen), Tip (Tooltipp - Normal (atp1))
 {
 Spruchrolle der Zauberkraft herstellen
-}
-
-STRING 13560
-// Fähigkeiten: A0FE (Alpha), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-|cffffcc00Ultimativzauber 1|r|nDer Druide erhöht seine Bewegungs- und Angriffsgeschwindigkeit in Tiergestalt um 100 %.
 }
 
 STRING 13561
@@ -81369,12 +81363,6 @@ STRING 13564
 // Gegenstände: I05J (Buch der Tränke), Description (Beschreibung (ides))
 {
 Ein Buch mit Anleitungen zum Herstellen von Tränken.
-}
-
-STRING 13565
-// Fähigkeiten: A0FF (Alpha), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-|cffffcc00Ultimativzauber 1|r|nDer Druide erhöht seine Bewegungs- und Angriffsgeschwindigkeit in Tiergestalt um 100 %.
 }
 
 STRING 13566
@@ -81408,13 +81396,13 @@ Heiltrank herstellen
 }
 
 STRING 13571
-// Fähigkeiten: A0FH (Alpha - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CY (Großen Manatrank herstellen), Tip (Tooltipp - Normal (atp1))
 {
 |cffffcc00Ultimativzauber 1|r|nDer Druide erhöht seine Bewegungs- und Angriffsgeschwindigkeit in Tiergestalt um 100 %.
 }
 
 STRING 13572
-// Fähigkeiten: A18R (Heiltrank herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18S (Manatrank herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Buch der Tränke)
 }
@@ -81534,7 +81522,7 @@ Wächter beschwören
 }
 
 STRING 13592
-// Fähigkeiten: A18S (Manatrank herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18V (Gift herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Buch der Tränke)
 }
@@ -81624,7 +81612,7 @@ Vergiftet einen Gegner.|n|nBenötigte Rohstoffe:|n- 2 mal Spinnengift
 }
 
 STRING 13607
-// Fähigkeiten: A18V (Gift herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1CX (Großen Heiltrank herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Buch der Tränke)
 }
@@ -82184,71 +82172,11 @@ Heals <A19J,DataA1> hitpoints on usage.|nProvides <I05K,uses> charges.
 STRING 13700
 // Gegenstände: I05L (Manakraut), Ubertip (Tooltipp - Erweitert (utub))
 {
-Restores <A19K,DataA1> on usage.|nProvides <I05L,uses> charges.
-}
-
-STRING 13701
-// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
-}
-
-STRING 13702
-// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
-}
-
-STRING 13703
-// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
-}
-
-STRING 13704
-// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
-}
-
-STRING 13705
-// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
-}
-
-STRING 13706
-// Fähigkeiten: A186 (Falle - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
-}
-
-STRING 13707
-// Fähigkeiten: A187 (Falle - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
-}
-
-STRING 13708
-// Fähigkeiten: A188 (Falle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
-}
-
-STRING 13709
-// Fähigkeiten: A189 (Falle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
-}
-
-STRING 13710
-// Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt.
+Stellt bei Benutzung <A19K,DataA1> Mana wieder her.|nBietet <I05L,uses> Aufladung.
 }
 
 STRING 13711
-// Fähigkeiten: A19J (Heilkraut), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
 (Heilung)
 }
@@ -91506,49 +91434,49 @@ Bestiehlt eine Einheit, die nicht dem Spieler gehört. Stiehlt für alle Spieler
 }
 
 STRING 15254
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15255
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15256
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15257
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15258
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 15259
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 15260
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 15261
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -91560,7 +91488,7 @@ Beutezug [|cffffcc00Stufe 1|r]
 }
 
 STRING 15263
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch - Drachentöter)
 }
@@ -91572,13 +91500,13 @@ Beutezug - Stufe 1
 }
 
 STRING 15265
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 15266
-// Fähigkeiten: A1A1 (Beutezug - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -91596,13 +91524,13 @@ Beutezug - Stufe 1
 }
 
 STRING 15269
-// Zauberverstärker/Effekte: B024 (Koloss), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 (Drachentöter)
 }
 
 STRING 15270
-// Fähigkeiten: A1B6 (Horn des Kampfes), Name (Name (anam))
+// Fähigkeiten: A0VO (Horn des Kampfes), Tip (Tooltipp - Normal (atp1))
 {
 Horn des Kampfes
 }
@@ -91614,7 +91542,7 @@ STRING 15271
 }
 
 STRING 15272
-// Fähigkeiten: A1B7 (Horn des Lebens), Name (Name (anam))
+// Fähigkeiten: A0VQ (Horn des Lebens), Tip (Tooltipp - Normal (atp1))
 {
 Horn des Lebens
 }
@@ -91626,7 +91554,7 @@ STRING 15273
 }
 
 STRING 15274
-// Fähigkeiten: A1B8 (Horn des Schutzes), Name (Name (anam))
+// Fähigkeiten: A0VP (Horn des Schutzes), Tip (Tooltipp - Normal (atp1))
 {
 Horn des Schutzes
 }
@@ -91638,7 +91566,7 @@ STRING 15275
 }
 
 STRING 15276
-// Fähigkeiten: A14V (Bestienjäger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 |cffffcc00Grundzauber|r|nSchaden gegen wilde Kreaturen wird um 10% erhöht.
 }
@@ -91668,13 +91596,13 @@ Verwandelt den Träger in eine Nixe.
 }
 
 STRING 15281
-// Fähigkeiten: A1A3 (Bestehlen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Bestehlen [|cffffcc00Stufe 2|r]
 }
 
 STRING 15282
-// Fähigkeiten: A1A3 (Bestehlen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Bestehlen [|cffffcc00Stufe 3|r]
 }
@@ -91734,49 +91662,49 @@ Verwandelt den Träger in eine Nixe.
 }
 
 STRING 15292
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15293
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15294
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15295
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15296
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 15297
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 15298
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 15299
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -91788,7 +91716,7 @@ Bestehlen [|cffffcc00Stufe 1|r]
 }
 
 STRING 15301
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch - Drachentöter)
 }
@@ -91800,13 +91728,13 @@ Bestehlen - Stufe 1
 }
 
 STRING 15303
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1AB (Verfluchter Boden), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 15304
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1AB (Verfluchter Boden), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -91848,49 +91776,49 @@ Bestiehlt eine Einheit, die nicht dem Spieler gehört. Stiehlt für alle Spieler
 }
 
 STRING 15311
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15312
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15313
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15314
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15315
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 15316
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 15317
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 15318
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -91902,7 +91830,7 @@ Bestiehlt eine Einheit, die nicht dem Spieler gehört. Stiehlt für alle Spieler
 }
 
 STRING 15320
-// Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Bestiehlt eine Einheit, die nicht dem Spieler gehört. Die Ziel-Einheit kann erst nach 40 Sekunden erneut bestohlen werden. |n|n|cffffcc00Stufe 1|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit.|n|cffffcc00Stufe 2|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 2.|n|cffffcc00Stufe 3|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 3.|n|cffffcc00Stufe 4|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 4.|n|cffffcc00Stufe 5|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 5.
 }
@@ -91914,13 +91842,13 @@ Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller au
 }
 
 STRING 15322
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 15323
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -92022,13 +91950,13 @@ Verfluchter Boden
 }
 
 STRING 15340
-// Fähigkeiten: A1AB (Verfluchter Boden), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 15341
-// Fähigkeiten: A1AB (Verfluchter Boden), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -92604,7 +92532,7 @@ The power of Tfjahn
 }
 
 STRING 15437
-// Fähigkeiten: A1B2 (Die Macht Tfjahns), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B3 (Auferstehung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dararos)
 }
@@ -92616,7 +92544,7 @@ Ruft alle <A1B2,DataB1> Sekunden eine Welle aus herabfallenden Sternen herbei, d
 }
 
 STRING 15439
-// Fähigkeiten: A1B3 (Auferstehung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B4 (Erdbeben), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dararos)
 }
@@ -92628,7 +92556,7 @@ Holt die sterblichen Überreste von <A1B3,DataA1> befreundeten in der Nähe befi
 }
 
 STRING 15441
-// Fähigkeiten: A1B4 (Erdbeben), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B5 (Attribut-Bonus), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dararos)
 }
@@ -92640,7 +92568,7 @@ Lässt den Boden beben und aufreißen, wodurch im Einflussbereich <A1B4,DataB1> 
 }
 
 STRING 15443
-// Fähigkeiten: A1B5 (Attribut-Bonus), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1CG (Heer der Hochelfen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dararos)
 }
@@ -92814,7 +92742,7 @@ Increases the damage by <A07H,DataA1>.|n|nRequired raw materials:|n- 2 iron
 }
 
 STRING 15472
-// Fähigkeiten: A1BC (Kurzschwert schmieden), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1BD (Erz schmelzen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Buch der Schmiedekunst)
 }
@@ -92838,7 +92766,7 @@ Erzeugt Eisen.|n|nBenötigte Rohstoffe:|n- Erz
 }
 
 STRING 15476
-// Fähigkeiten: A1BD (Erz schmelzen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C2 (Langschwert schmieden), EditorSuffix (Editor-Suffix (ansf))
 {
 (Buch der Schmiedekunst)
 }
@@ -92928,7 +92856,7 @@ Kennels
 }
 
 STRING 15491
-// Einheiten: n05O (Hundezwinger), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n04X (Falle), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Waldläufer - Stufe 1)
 }
@@ -93060,7 +92988,7 @@ Ein Meutehund, der das aufgespürte Tier hetzt und seinem Herrn treu ergeben ist
 }
 
 STRING 15513
-// Einheiten: n05T (Meutehund), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n05O (Hundezwinger), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Waldläufer - Stufe 1)
 }
@@ -93312,49 +93240,49 @@ Learn spells - 10 skill points (|cffffcc00Z|r)
 }
 
 STRING 15555
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15556
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15557
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15558
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15559
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 15560
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 15561
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 15562
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -93378,13 +93306,13 @@ Hundezwinger - Stufe 1
 }
 
 STRING 15566
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 15567
-// Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -93396,49 +93324,49 @@ Learn spells - 11 skill points (|cffffcc00Z|r)
 }
 
 STRING 15569
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15570
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15571
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15572
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15573
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 15574
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 15575
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 15576
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -93462,13 +93390,13 @@ Hundezwinger - Stufe 2
 }
 
 STRING 15580
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 15581
-// Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -93480,49 +93408,49 @@ Learn spells - 12 skill points (|cffffcc00Z|r)
 }
 
 STRING 15583
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15584
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15585
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15586
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15587
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 15588
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 15589
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 15590
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -93546,13 +93474,13 @@ Hundezwinger - Stufe 3
 }
 
 STRING 15594
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 15595
-// Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -93564,31 +93492,31 @@ Learn spells - 13 skill points (|cffffcc00Z|r)
 }
 
 STRING 15597
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15598
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15599
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CI (Bestehlen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15600
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15601
-// Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CH (Bestehlen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
@@ -95029,12 +94957,6 @@ STRING 15840
 (Druide - Ultimativzauber 1)
 }
 
-STRING 15841
-// Fähigkeiten: A0FH (Alpha - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nDer Druide erhöht seine Bewegungs- und Angriffsgeschwindigkeit in Tiergestalt um 100 %.
-}
-
 STRING 15842
 // Fähigkeiten: A1CY (Großen Manatrank herstellen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -95045,5 +94967,689 @@ STRING 15843
 // Fähigkeiten: A1CY (Großen Manatrank herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Buch der Tränke)
+}
+
+STRING 15844
+// Fähigkeiten: A1CZ (Dämonendiener), EditorSuffix (Editor-Suffix (ansf))
+{
+(Nekromant - basiert auf Wasserelementargeist)
+}
+
+STRING 15845
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+{
+Dämonendiener [|cffffcc00Stufe 1|r]
+}
+
+STRING 15846
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+{
+Dämonendiener [|cffffcc00Stufe 2|r]
+}
+
+STRING 15847
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+{
+Dämonendiener [|cffffcc00Stufe 3|r]
+}
+
+STRING 15848
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+{
+Dämonendiener [|cffffcc00Stufe 4|r]
+}
+
+STRING 15849
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+{
+Dämonendiener [|cffffcc00Stufe 5|r]
+}
+
+STRING 15850
+// Fähigkeiten: A1CZ (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Ruft für <A0RU,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+}
+
+STRING 15851
+// Fähigkeiten: A0CR (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
+{
+(Druide - Hain - Stufe 1)
+}
+
+STRING 15852
+// Fähigkeiten: A1D4 (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
+{
+(Druide - Hain - Stufe 2)
+}
+
+STRING 15853
+// Fähigkeiten: A1D5 (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
+{
+(Druide - Hain - Stufe 3)
+}
+
+STRING 15854
+// Fähigkeiten: A1D6 (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
+{
+(Druide - Hain - Stufe 4)
+}
+
+STRING 15855
+// Zauberverstärker/Effekte: B003 (Dämonendiener), Bufftip (Tooltipp (ftip))
+{
+Dämonendiener
+}
+
+STRING 15856
+// Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+}
+
+STRING 15857
+// Fähigkeiten: A0J0 (Dunkle Diener - Stufe 1), Name (Name (anam))
+{
+Dunkle Diener - Stufe 1
+}
+
+STRING 15858
+// Fähigkeiten: A0F1 (Weltenportal - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+}
+
+STRING 15859
+// Fähigkeiten: A0J1 (Dunkle Diener - Stufe 2), Name (Name (anam))
+{
+Dunkle Diener - Stufe 2
+}
+
+STRING 15860
+// Fähigkeiten: A0F2 (Weltenportal - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+}
+
+STRING 15861
+// Fähigkeiten: A0J2 (Dunkle Diener - Stufe 3), Name (Name (anam))
+{
+Dunkle Diener - Stufe 3
+}
+
+STRING 15862
+// Fähigkeiten: A0F3 (Weltenportal - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+}
+
+STRING 15863
+// Fähigkeiten: A0J3 (Dunkle Diener - Stufe 4), Name (Name (anam))
+{
+Dunkle Diener - Stufe 4
+}
+
+STRING 15864
+// Fähigkeiten: A0J4 (Dunkle Diener - Stufe 5), Name (Name (anam))
+{
+Dunkle Diener - Stufe 5
+}
+
+STRING 15865
+// Fähigkeiten: A036 (Dunkle Diener), Name (Name (anam))
+{
+Dunkle Diener
+}
+
+STRING 15866
+// Fähigkeiten: A0IL (Verzehren - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+}
+
+STRING 15867
+// Fähigkeiten: A0IM (Verzehren - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+}
+
+STRING 15868
+// Fähigkeiten: A0IN (Verzehren - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+}
+
+STRING 15869
+// Fähigkeiten: A0IO (Verzehren - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+}
+
+STRING 15870
+// Fähigkeiten: A0IP (Verzehren - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+}
+
+STRING 15871
+// Fähigkeiten: A01U (Dunkle Diener), Name (Name (anam))
+{
+Dunkle Diener
+}
+
+STRING 15872
+// Fähigkeiten: A0IV (Dunkle Diener - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+}
+
+STRING 15873
+// Fähigkeiten: A0IV (Dunkle Diener - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Dunkle Diener [|cffffcc00Stufe 1|r]
+}
+
+STRING 15874
+// Fähigkeiten: A0IV (Dunkle Diener - Stufe 1), Name (Name (anam))
+{
+Dunkle Diener - Stufe 1
+}
+
+STRING 15875
+// Fähigkeiten: A0IW (Dunkle Diener - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+}
+
+STRING 15876
+// Fähigkeiten: A0IW (Dunkle Diener - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Dunkle Diener [|cffffcc00Stufe 2|r]
+}
+
+STRING 15877
+// Fähigkeiten: A0IW (Dunkle Diener - Stufe 2), Name (Name (anam))
+{
+Dunkle Diener - Stufe 2
+}
+
+STRING 15878
+// Fähigkeiten: A0IX (Dunkle Diener - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+}
+
+STRING 15879
+// Fähigkeiten: A0IX (Dunkle Diener - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Dunkle Diener [|cffffcc00Stufe 3|r]
+}
+
+STRING 15880
+// Fähigkeiten: A0IX (Dunkle Diener - Stufe 3), Name (Name (anam))
+{
+Dunkle Diener - Stufe 3
+}
+
+STRING 15881
+// Fähigkeiten: A0IY (Dunkle Diener - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+}
+
+STRING 15882
+// Fähigkeiten: A0IY (Dunkle Diener - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Dunkle Diener [|cffffcc00Stufe 4|r]
+}
+
+STRING 15883
+// Fähigkeiten: A0IY (Dunkle Diener - Stufe 4), Name (Name (anam))
+{
+Dunkle Diener - Stufe 4
+}
+
+STRING 15884
+// Fähigkeiten: A0EZ (Weltenportal - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+}
+
+STRING 15885
+// Fähigkeiten: A0IZ (Dunkle Diener - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+}
+
+STRING 15886
+// Fähigkeiten: A0IZ (Dunkle Diener - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Dunkle Diener [|cffffcc00Stufe 5|r]
+}
+
+STRING 15887
+// Fähigkeiten: A0IZ (Dunkle Diener - Stufe 5), Name (Name (anam))
+{
+Dunkle Diener - Stufe 5
+}
+
+STRING 15888
+// Fähigkeiten: A0Z8 (Elementare Gewalt - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nErhöht den Schaden durch Elementarzauber 20 Sekunden lang um 80 %.|n<A045,Cool1> Sekunden Abklingzeit.
+}
+
+STRING 15889
+// Fähigkeiten: A045 (Elementare Gewalt), EditorSuffix (Editor-Suffix (ansf))
+{
+(Elementarmagier - Ultimativzauber 1)
+}
+
+STRING 15890
+// Fähigkeiten: A01J (Wut der Elemente), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber|r|nErhöht den Schaden durch Elementarzauber 10 Sekunden lang um 30%.|n<A01J,Cool1> Sekunden Abklingzeit.
+}
+
+STRING 15891
+// Fähigkeiten: A01J (Wut der Elemente), EditorSuffix (Editor-Suffix (ansf))
+{
+(Elementarmagier - Grundzauber)
+}
+
+STRING 15892
+// Fähigkeiten: A0AJ (Kräuterheilung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber|r|nHeilt <A0AJ,DataA1> Leben eines nicht-mechanischen Verbündeten während <A0AJ,Dur1> Sekunden.|nHat eine Reichweite von <A0AJ,Rng1>.
+}
+
+STRING 15893
+// Fähigkeiten: A0AJ (Kräuterheilung), EditorSuffix (Editor-Suffix (ansf))
+{
+(Druide - Grundzauber)
+}
+
+STRING 15894
+// Fähigkeiten: A0ZK (Pure Energie - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+}
+
+STRING 15895
+// Fähigkeiten: A01X (Pure Energie), EditorSuffix (Editor-Suffix (ansf))
+{
+(Elementarmagier - Ultimativzauber 2)
+}
+
+STRING 15896
+// Fähigkeiten: A08Z (Arkane List), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberer - Grundzauber)
+}
+
+STRING 15897
+// Fähigkeiten: A0X2 (Kräuterheilung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber|r|nHeilt <A0AJ,DataA1> Leben eines nicht-mechanischen Verbündeten während <A0AJ,Dur1> Sekunden.|nHat eine Reichweite von <A0AJ,Rng1>.
+}
+
+STRING 15898
+// Fähigkeiten: A1D7 (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
+{
+(Druide - Hain - Stufe 5)
+}
+
+STRING 15899
+// Fähigkeiten: A01X (Pure Energie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 2|r|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+}
+
+STRING 15900
+// Fähigkeiten: A0ZM (Wut der Elemente - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber|r|nErhöht den Schaden durch Elementarzauber 10 Sekunden lang um 30%.|n<A01J,Cool1> Sekunden Abklingzeit.
+}
+
+STRING 15901
+// Fähigkeiten: A14V (Bestienjäger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber|r|nSchaden gegen wilde Kreaturen wird um 10% erhöht.
+}
+
+STRING 15902
+// Fähigkeiten: A045 (Elementare Gewalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 1|r|nErhöht den Schaden durch Elementarzauber 20 Sekunden lang um 80 %.|n<A045,Cool1> Sekunden Abklingzeit.
+}
+
+STRING 15903
+// Zauberverstärker/Effekte: B01V (Baumhirte - Hain), Bufftip (Tooltipp (ftip))
+{
+Hain
+}
+
+STRING 15904
+// Fähigkeiten: A0J5 (Waldfeenzauber - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+}
+
+STRING 15905
+// Fähigkeiten: A0D6 (Hain - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+}
+
+STRING 15906
+// Fähigkeiten: A0J6 (Waldfeenzauber - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+}
+
+STRING 15907
+// Fähigkeiten: A0D7 (Hain - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+}
+
+STRING 15908
+// Fähigkeiten: A0J7 (Waldfeenzauber - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+}
+
+STRING 15909
+// Fähigkeiten: A0D8 (Hain - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+}
+
+STRING 15910
+// Fähigkeiten: A0J8 (Waldfeenzauber - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+}
+
+STRING 15911
+// Fähigkeiten: A0D9 (Hain - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+}
+
+STRING 15912
+// Fähigkeiten: A0J9 (Waldfeenzauber - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+}
+
+STRING 15913
+// Fähigkeiten: A0DA (Hain - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+}
+
+STRING 15919
+// Fähigkeiten: A0LL (Selbstlosigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+}
+
+STRING 15920
+// Fähigkeiten: A0LM (Selbstlosigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+}
+
+STRING 15921
+// Fähigkeiten: A0LN (Selbstlosigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+}
+
+STRING 15922
+// Fähigkeiten: A0LO (Selbstlosigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+}
+
+STRING 15923
+// Fähigkeiten: A0LP (Selbstlosigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+}
+
+STRING 15924
+// Einheiten: n05T (Meutehund), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Waldläufer - Stufe 1)
+}
+
+STRING 15925
+// Einheiten: n068 (Falle), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Waldläufer - Stufe 2)
+}
+
+STRING 15926
+// Einheiten: n069 (Falle), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Waldläufer - Stufe 3)
+}
+
+STRING 15927
+// Einheiten: n06A (Falle), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Waldläufer - Stufe 4)
+}
+
+STRING 15928
+// Einheiten: n06B (Falle), Name (Name (unam))
+{
+Falle
+}
+
+STRING 15929
+// Einheiten: n06B (Falle), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Waldläufer - Stufe 5)
+}
+
+STRING 15930
+// Gegenstände: I057 (Falle), Name (Name (unam))
+{
+Falle
+}
+
+STRING 15931
+// Fähigkeiten: A183 (WB-Schaden bei Tod), EditorSuffix (Editor-Suffix (ansf))
+{
+(Waldläufer - Falle - Stufe 1)
+}
+
+STRING 15932
+// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern <A183,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+}
+
+STRING 15933
+// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern <A1D8,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+}
+
+STRING 15934
+// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern <A1D9,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+}
+
+STRING 15935
+// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern <A1DA,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+}
+
+STRING 15936
+// Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern <A1DB,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+}
+
+STRING 15937
+// Fähigkeiten: A184 (Falle), Name (Name (anam))
+{
+Falle
+}
+
+STRING 15938
+// Fähigkeiten: A185 (Falle), Name (Name (anam))
+{
+Falle
+}
+
+STRING 15939
+// Fähigkeiten: A186 (Falle - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+}
+
+STRING 15940
+// Fähigkeiten: A187 (Falle - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+}
+
+STRING 15941
+// Fähigkeiten: A188 (Falle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+}
+
+STRING 15942
+// Fähigkeiten: A189 (Falle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+}
+
+STRING 15943
+// Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+}
+
+STRING 15944
+// Fähigkeiten: A1D8 (WB-Schaden bei Tod), EditorSuffix (Editor-Suffix (ansf))
+{
+(Waldläufer - Falle - Stufe 2)
+}
+
+STRING 15945
+// Fähigkeiten: A1D9 (WB-Schaden bei Tod), EditorSuffix (Editor-Suffix (ansf))
+{
+(Waldläufer - Falle - Stufe 3)
+}
+
+STRING 15946
+// Fähigkeiten: A1DA (WB-Schaden bei Tod), EditorSuffix (Editor-Suffix (ansf))
+{
+(Waldläufer - Falle - Stufe 4)
+}
+
+STRING 15947
+// Fähigkeiten: A1DB (WB-Schaden bei Tod), EditorSuffix (Editor-Suffix (ansf))
+{
+(Waldläufer - Falle - Stufe 5)
+}
+
+STRING 15948
+// Fähigkeiten: A01H (Erdgefängnis), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis zu 2 Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+}
+
+STRING 15949
+// Fähigkeiten: A01H (Erdgefängnis), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis zu 2,5 Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+}
+
+STRING 15950
+// Fähigkeiten: A01H (Erdgefängnis), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis zu 3 Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+}
+
+STRING 15951
+// Fähigkeiten: A01H (Erdgefängnis), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis zu 3,5 Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+}
+
+STRING 15952
+// Fähigkeiten: A01H (Erdgefängnis), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis zu 4 Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+}
+
+STRING 15953
+// Fähigkeiten: A0ZA (Erdgefängnis - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+}
+
+STRING 15954
+// Fähigkeiten: A0ZB (Erdgefängnis - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+}
+
+STRING 15955
+// Fähigkeiten: A0ZC (Erdgefängnis - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+}
+
+STRING 15956
+// Fähigkeiten: A0ZD (Erdgefängnis - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+}
+
+STRING 15957
+// Fähigkeiten: A0ZE (Erdgefängnis - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+}
+
+STRING 15958
+// Fähigkeiten: A0E3 (Ranken - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+}
+
+STRING 15959
+// Fähigkeiten: A0E4 (Ranken - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+}
+
+STRING 15960
+// Fähigkeiten: A0E5 (Ranken - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+}
+
+STRING 15961
+// Fähigkeiten: A0E6 (Ranken - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+}
+
+STRING 15962
+// Fähigkeiten: A0E7 (Ranken - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
 }
 
