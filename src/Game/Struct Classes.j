@@ -318,7 +318,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_dragonSlayer.setStrPerLevel(3.0)
 			call thistype.m_dragonSlayer.setAgiPerLevel(1.90)
 			call thistype.m_dragonSlayer.setIntPerLevel(1.10)
-			call thistype.m_dragonSlayer.addDescriptionLine(tr("Die meisten Drachentöter haben zwar noch nicht einmal einen Drachen zu Gesicht bekommen,", "Most dragon slayers have still not even get a dragon to face"))
+			call thistype.m_dragonSlayer.addDescriptionLine(tre("Die meisten Drachentöter haben zwar noch nicht einmal einen Drachen zu Gesicht bekommen,", "Most dragon slayers have still not even get a dragon to face"))
 			call thistype.m_dragonSlayer.addDescriptionLine(tre("sind aber dennoch äußerst ernstzunehmende Gegner.", "but they are still extremely serious opponents."))
 			call thistype.m_dragonSlayer.addDescriptionLine(tre("Sie agieren sehr offensiv und achten nicht besonders auf ihre Verteidigung,", "They act very aggressively and do not pay particular attention to their defense"))
 			call thistype.m_dragonSlayer.addDescriptionLine(tre("weshalb sie die Anwesenheit eines Ritters häufig nutzen, jedoch nicht schätzen.", "which is why they use the presence of a knight often but do not appreciate it."))

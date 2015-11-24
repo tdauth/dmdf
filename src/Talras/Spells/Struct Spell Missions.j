@@ -14,7 +14,7 @@ library StructMapSpellsSpellMissions requires Asl, StructGameCharacter, MapQuest
 		
 		private method condition takes nothing returns boolean
 			if (not QuestTalras.quest().isNew()) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Auftrag wurde bereits abgeschlossen."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Auftrag wurde bereits abgeschlossen.", "Mission has already been completed."))
 				
 				return false
 			endif
@@ -36,7 +36,7 @@ library StructMapSpellsSpellMissions requires Asl, StructGameCharacter, MapQuest
 		
 		private method condition takes nothing returns boolean
 			if (not QuestTheNorsemen.quest().isNew()) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Auftrag wurde bereits abgeschlossen."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Auftrag wurde bereits abgeschlossen.", "Mission has already been completed."))
 				
 				return false
 			endif
@@ -67,7 +67,7 @@ library StructMapSpellsSpellMissions requires Asl, StructGameCharacter, MapQuest
 		
 		private method condition takes nothing returns boolean
 			if (not QuestSlaughter.quest().isNew()) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Auftrag wurde bereits abgeschlossen."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Auftrag wurde bereits abgeschlossen.", "Mission has already been completed."))
 				
 				return false
 			endif
@@ -98,7 +98,7 @@ library StructMapSpellsSpellMissions requires Asl, StructGameCharacter, MapQuest
 		
 		private method condition takes nothing returns boolean
 			if (not QuestWar.quest().isNew()) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Auftrag wurde bereits abgeschlossen."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Auftrag wurde bereits abgeschlossen.", "Mission has already been completed."))
 				
 				return false
 			endif
@@ -129,7 +129,7 @@ library StructMapSpellsSpellMissions requires Asl, StructGameCharacter, MapQuest
 		
 		private method condition takes nothing returns boolean
 			if (not QuestANewAlliance.quest().isNew()) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Auftrag wurde bereits abgeschlossen."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Auftrag wurde bereits abgeschlossen.", "Mission has already been completed."))
 				
 				return false
 			endif
@@ -160,7 +160,7 @@ library StructMapSpellsSpellMissions requires Asl, StructGameCharacter, MapQuest
 		
 		private method condition takes nothing returns boolean
 			if (not QuestTheDefenseOfTalras.quest().isNew()) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Auftrag wurde bereits abgeschlossen."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Auftrag wurde bereits abgeschlossen.", "Mission has already been completed."))
 				
 				return false
 			endif

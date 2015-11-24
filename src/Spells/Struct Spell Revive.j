@@ -118,11 +118,11 @@ library StructSpellsSpellRevive requires Asl, StructGameClasses, StructGameSpell
 					set targetEffect = null
 				else
 					call IssueImmediateOrder(caster, "stop")
-					call this.character().displayMessage(ACharacter.messageTypeError, tr("Kein totes Ziel gefunden."))
+					call this.character().displayMessage(ACharacter.messageTypeError, tre("Kein totes Ziel gefunden.", "No dead target found."))
 				endif
 			else
 				call IssueImmediateOrder(caster, "stop")
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Kein totes Ziel gefunden."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Kein totes Ziel gefunden.", "No dead target found."))
 			endif
 			set caster = null
 			call unitGroup.destroy()

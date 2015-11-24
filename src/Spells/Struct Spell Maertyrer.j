@@ -40,7 +40,7 @@ library StructSpellsSpellMaertyrer requires Asl, StructGameClasses, StructGameSp
 			local boolean result = not targets.units().isEmpty()
 			call targets.destroy()
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Keine Verbündeten mit nicht aufgefüllten Werten in Reichweite."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine Verbündeten mit nicht aufgefüllten Werten in Reichweite.", "No allies with not full values within reach."))
 			endif
 			return result
 		endmethod

@@ -255,7 +255,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 				return
 			endif
 			call SetUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Spell")
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorWigberht), tr("Heil dir, Vater!"), gg_snd_Wigberht38)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorWigberht), tre("Heil dir, Vater!", "Hail father!"), gg_snd_Wigberht38)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht38))) then
 				return
 			endif

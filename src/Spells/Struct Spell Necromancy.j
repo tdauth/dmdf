@@ -14,7 +14,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 		
 		private method condition takes nothing returns boolean
 			if (this.m_units.units().size() == thistype.maxUnits) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Es wurden bereits 6 Diener beschworen."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Es wurden bereits 6 Diener beschworen.", "There have already been summoned 6 servants."))
 			
 				return false
 			endif

@@ -12,10 +12,10 @@ library StructSpellsSpellTeleportation requires Asl, StructGameClasses, StructGa
 
 		private method condition takes nothing returns boolean
 			if (IsMaskedToPlayer(GetSpellTargetX(), GetSpellTargetY(), this.character().player())) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sichtbar sein."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sichtbar sein.", "Target location has to be visible."))
 				return false
 			elseif (IsUnitType(GetTriggerUnit(), UNIT_TYPE_SNARED)) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Einheit darf nicht gefesselt sein."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Einheit darf nicht gefesselt sein.", "Unit must not be snared."))
 				return false
 			endif
 			

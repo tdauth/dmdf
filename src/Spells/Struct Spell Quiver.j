@@ -14,7 +14,7 @@ library StructSpellsSpellQuiver requires Asl
 					return itemTypeId == 'I020' or itemTypeId == 'I021' or itemTypeId == 'I013'
 				endif
 				
-				call character.displayMessage(ACharacter.messageTypeError, tr("Trägt keinen Bogen."))
+				call character.displayMessage(ACharacter.messageTypeError, tre("Trägt keinen Bogen.", "Does not carry a bow."))
 			endif
 			
 			return false

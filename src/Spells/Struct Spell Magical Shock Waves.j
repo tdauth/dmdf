@@ -86,7 +86,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			set result = not targets.units().empty()
 			call targets.destroy()
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Keine gültigen Ziele in der Nähe."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine gültigen Ziele in der Nähe.", "No valid targets in range."))
 			endif
 			return result
 		endmethod

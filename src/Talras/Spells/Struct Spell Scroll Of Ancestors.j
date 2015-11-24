@@ -15,7 +15,7 @@ library StructMapSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 			local real dist
 			local boolean result = false
 			if (IsMaskedToPlayer(GetSpellTargetX(), GetSpellTargetY(), this.character().player())) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sichtbar sein."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sichtbar sein.", "Target location has to be visible."))
 				return false
 			endif
 			set i = 0
@@ -29,7 +29,7 @@ library StructMapSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 				set i = i + 1
 			endloop
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sich in der Nähe eines Wiederbelebungsschreins befinden."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sich in der Nähe eines Wiederbelebungsschreins befinden.", "Target location has to be in the range of a revival shrine."))
 			endif
 			return result
 		endmethod

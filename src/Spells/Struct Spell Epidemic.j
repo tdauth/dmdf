@@ -63,7 +63,7 @@ library StructSpellsSpellEpidemic requires Asl, StructGameClasses, StructGameSpe
 			local AGroup targets = this.targets(GetTriggerUnit(), GetSpellTargetX(), GetSpellTargetY())
 			local boolean result = not targets.units().isEmpty()
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Keine gültigen Ziele im Gebiet."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine gültigen Ziele im Gebiet.", "No valid targets in area."))
 			endif
 			call targets.destroy()
 			

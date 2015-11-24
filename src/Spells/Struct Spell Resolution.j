@@ -15,7 +15,7 @@ library StructSpellsSpellResolution requires Asl, StructGameClasses, StructGameS
 		private method condition takes nothing returns boolean
 			local boolean result = UnitHasBuffsEx(GetTriggerUnit(), false, true, true, false, true, true, false)
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Keine negativen Effekte."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine negativen Effekte.", "No negative effects."))
 			endif
 			
 			return result

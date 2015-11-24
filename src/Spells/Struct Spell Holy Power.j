@@ -14,7 +14,7 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 			local unit caster = this.character().unit()
 			local boolean result = GetUnitState(caster, UNIT_STATE_MANA) < GetUnitState(caster, UNIT_STATE_MAX_MANA)
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Hat bereits volles Mana."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Hat bereits volles Mana.", "Does already have full mana."))
 			endif
 			set caster = null
 			return result

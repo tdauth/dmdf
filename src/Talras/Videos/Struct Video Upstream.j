@@ -45,9 +45,9 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			call DestroyForce(whichForce)
 			set whichForce = null
 			call AGui.playerGui(skippingPlayer).dialog().clear()
-			call AGui.playerGui(skippingPlayer).dialog().setMessage(tr("Spiel verlassen?"))
-			call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tr("Ja"), thistype.dialogButtonActionYes)
-			call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tr("Nein"), thistype.dialogButtonActionNo)
+			call AGui.playerGui(skippingPlayer).dialog().setMessage(tre("Spiel verlassen?", "Leave game?"))
+			call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tre("Ja", "Yes"), thistype.dialogButtonActionYes)
+			call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tre("Nein", "No"), thistype.dialogButtonActionNo)
 			call AGui.playerGui(skippingPlayer).dialog().show()
 		
 			return false
@@ -174,7 +174,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorNarrator), tr("So segelten sie gemeinsam mit den Nordmännern nach Holzbruck. Doch was dort geschah ist eine andere Geschichte ..."), gg_snd_ErzaehlerFlussaufwaerts1)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorNarrator), tre("So segelten sie gemeinsam mit den Nordmännern nach Holzbruck. Doch was dort geschah ist eine andere Geschichte ...", "So they sailed together with the norsemen to Holzbruck. But what happened there is a different story ..."), gg_snd_ErzaehlerFlussaufwaerts1)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerFlussaufwaerts1))) then
 				return
@@ -222,7 +222,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 
 			call this.continueShipRoute.execute()
 
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Wenn Sie das Video überspringen, können Sie das Spiel verlassen."))
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Wenn Sie das Video überspringen, können Sie das Spiel verlassen.", "If you skip the video, you can leave the game."))
 			
 			if (wait(3.0)) then
 				return
@@ -260,13 +260,13 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 				set i = i + 1
 			endloop
 
-			call thistype.showMovingTextTag(tr("Vielen Dank fürs Spielen."), 16.0, 255, 255, 255, 0)
+			call thistype.showMovingTextTag(tre("Vielen Dank fürs Spielen.", "Thanks for playing."), 16.0, 255, 255, 255, 0)
 
 			if (wait(4.0)) then
 				return
 			endif
 			
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tr("Überspringen Sie das Video, um das Spiel zu verlassen."))
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Überspringen Sie das Video, um das Spiel zu verlassen.", "Skip the video to leave the game."))
 			
 			call IssueRectOrder(thistype.unitActor(this.m_actorGiant), "move", gg_rct_video_upstream_giant_target)
 			

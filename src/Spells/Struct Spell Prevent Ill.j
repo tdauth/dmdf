@@ -20,7 +20,7 @@ library StructSpellsSpellPreventIll requires Asl, StructGameClasses, StructGameS
 			local race unitRace = GetUnitRace(target)
 			local boolean result = unitRace == RACE_DEMON or IsUnitType(target, UNIT_TYPE_UNDEAD)
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel muss ein Dämon oder Untoter sein."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel muss ein Dämon oder Untoter sein.", "Target has to be a demon or undead."))
 			endif
 			set target = null
 			set unitRace = null

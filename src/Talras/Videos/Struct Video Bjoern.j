@@ -27,19 +27,19 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(thistype.actor(), tr("Jäger Björn!"), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Jäger Björn!", "Hunter Björn!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tr("Was gibt es?"), null)
+			call TransmissionFromUnit(this.m_actorBjoern, tre("Was gibt es?", "What is it?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Der Herzog benötigt Fallen zur Verteidigung eines Außenpostens."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Der Herzog benötigt Fallen zur Verteidigung eines Außenpostens.", "The duke needs traps for the defense of an outpost."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

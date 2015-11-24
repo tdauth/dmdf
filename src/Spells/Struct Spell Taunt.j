@@ -63,7 +63,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
 			local unit triggerUnit = GetTriggerUnit() //or this.m_target
 			local unit caster = this.m_spell.character().unit()
-			call ShowGeneralFadingTextTagForPlayer(null, tr("Greife den Ritter an!"), GetUnitX(triggerUnit), GetUnitY(triggerUnit), 255, 255, 255, 255)
+			call ShowGeneralFadingTextTagForPlayer(null, tre("Greife den Ritter an!", "Attack the knight!"), GetUnitX(triggerUnit), GetUnitY(triggerUnit), 255, 255, 255, 255)
 			call IssueTargetOrder(triggerUnit, "attack", caster)
 			set triggeringTrigger = null
 			set triggerUnit = null
@@ -123,13 +123,13 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 		
 		private method condition takes nothing returns boolean
 			if (IsUnitType(GetSpellTargetUnit(), UNIT_TYPE_RESISTANT)) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel ist magieressistent."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel ist magieressistent.", "Target is resistant against magic."))
 				return false
 			elseif (IsUnitType(GetSpellTargetUnit(), UNIT_TYPE_MAGIC_IMMUNE)) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel ist zauberimmun."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel ist zauberimmun.", "Target is immune against spells."))
 				return false
 			elseif (DmdfHashTable.global().hasHandleInteger(GetSpellTargetUnit(), "tauntBuff")) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel wird bereits verspottet."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel wird bereits verspottet.", "Target is already being taunted."))
 				return false
 			endif
 			
@@ -142,7 +142,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			local real time = thistype.timeStartValue + thistype.timeLevelFactor * this.level()
 			local BuffTaunt buffTaunt = BuffTaunt.create(this, target, time) 
 			debug call Print("Taunt on target: " + GetUnitName(target) + " with time " + R2S(time))
-			call ShowGeneralFadingTextTagForPlayer(null, tr("Verspotten"), GetUnitX(target), GetUnitY(target), 255, 255, 255, 255)
+			call ShowGeneralFadingTextTagForPlayer(null, tre("Verspotten", "Taunt"), GetUnitX(target), GetUnitY(target), 255, 255, 255, 255)
 			call buffTaunt.start(time)
 			debug call Print("Finish")
 			call buffTaunt.destroy()

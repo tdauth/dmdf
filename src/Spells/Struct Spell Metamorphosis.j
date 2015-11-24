@@ -148,7 +148,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 					endif
 				endif
 			else
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Charakter ist bereits verwandelt."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Charakter ist bereits verwandelt.", "Character is already transformed."))
 			endif
 		endmethod
 		

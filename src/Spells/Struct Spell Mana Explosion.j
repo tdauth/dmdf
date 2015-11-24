@@ -15,7 +15,7 @@ library StructSpellsSpellManaExplosion requires Asl, StructGameClasses, StructGa
 		private method condition takes nothing returns boolean
 			local boolean result = GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MAX_MANA) > 0
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel benötigt Mana."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel benötigt Mana.", "Target needs mana."))
 			endif
 			return result
 		endmethod
