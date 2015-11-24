@@ -14,7 +14,7 @@ library StructSpellsSpellClarity requires Asl, StructGameClasses, StructGameSpel
 		
 		private method condition takes nothing returns boolean
 			if (not UnitHasBuffsEx(GetSpellTargetUnit(), false, true, true, false, false, false, true)) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Einheit besitzt keine negativen Zauberverstärker."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Einheit besitzt keine negativen Zauberverstärker.", "Target unit has no negative buffs."))
 			
 				return false
 			endif

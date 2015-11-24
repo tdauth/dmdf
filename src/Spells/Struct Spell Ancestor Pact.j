@@ -42,7 +42,7 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 			local unit target = this.target()
 			
 			if (target == null) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Kein totes Ziel gefunden."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Kein totes Ziel gefunden.", "Missing dead target."))
 				
 				return false
 			endif
@@ -53,10 +53,10 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 				if (GetUnitState(target, UNIT_STATE_MAX_MANA) > 0.0) then
 					return true
 				else
-					call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel hat kein Mana."))
+					call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel hat kein Mana.", "Target has no mana."))
 				endif
 			else
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Charakter hat volle Werte."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Charakter hat volle Werte.", "Character has full stats."))
 			endif
 			
 			return false

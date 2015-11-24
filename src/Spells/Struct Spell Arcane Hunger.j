@@ -55,7 +55,7 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 			call targets.destroy()
 			
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Keine verwertbaren Gegner im Umkreis."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine verwertbaren Gegner im Umkreis.", "No explotable enemies in range."))
 			endif
 			
 			return result

@@ -25,18 +25,18 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 				if (UnitHasBuffsEx(GetSpellTargetUnit(), true, false, true, true, false, false, false)) then
 					return true
 				else
-					call this.character().displayMessage(ACharacter.messageTypeError, tr("Gegner hat keine positiven Zauberverstärker."))
+					call this.character().displayMessage(ACharacter.messageTypeError, tre("Gegner hat keine positiven Zauberverstärker.", "Opponent has no positive buffs."))
 				endif
 			else
 				// TODO all positive magic stuff
 				if (UnitHasBuffsEx(GetSpellTargetUnit(), false, true, true, true, false, false, false)) then
 					return true
 				else
-					call this.character().displayMessage(ACharacter.messageTypeError, tr("Verbündeter hat keine negativen Zauberverstärker."))
+					call this.character().displayMessage(ACharacter.messageTypeError, tre("Verbündeter hat keine negativen Zauberverstärker.", "Ally does not have any negative buffs."))
 				endif
 			endif
 			
-			call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel muss eine beschworene Einheit oder eine Einheit mit Zauberverstärkern sein."))
+			call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel muss eine beschworene Einheit oder eine Einheit mit Zauberverstärkern sein.", "Target has to be a summoned unit or a unit with buffs."))
 			
 			return false
 		endmethod

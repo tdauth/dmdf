@@ -32,27 +32,27 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter, StructMa
 			local thistype this = thistype(questItem.quest())
 			call DmdfHashTable.global().destroyTrigger(this.m_hintTrigger)
 			set this.m_hintTrigger = null
-			call this.displayUpdateMessage(tr("Es passiert nichts ..."))
+			call this.displayUpdateMessage(tre("Es passiert nichts ...", "Nothing happens ..."))
 			call this.questItem(1).enable()
 		endmethod
 		
 		private static method triggerConditionHint takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			if (GetTriggerUnit() == this.character().unit()) then
-				call this.displayUpdateMessage(tr("Runensteinkreis gefunden."))
+				call this.displayUpdateMessage(tre("Runensteinkreis gefunden.", "Found runic stone circle."))
 			endif
 			return false
 		endmethod
 
 		private static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, tr("Die Zauberkunst"))
+			local thistype this = thistype.allocate(character, tre("Die Zauberkunst", "The Sorcery"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNSnazzyScroll.blp")
 			call this.setDescription(tr("Sisgard, die Zauberin, möchte, dass du ihr beweist, dass du der Zauberkunst mächtig bist. Vorher ist sie nicht bereit mit dir umher zu ziehen. Dazu hat sie dir eine Zauberspruchrolle mitgegeben, welche du in einem Runensteinkreis im Dunkelwald benutzen sollst."))
 			call this.setReward(AAbstractQuest.rewardExperience, 500)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Suche nach dem Runensteinkreis und benutze dort die Zauberspruchrolle."))
+			set questItem0 = AQuestItem.create(this, tre("Suche nach dem Runensteinkreis und benutze dort die Zauberspruchrolle.", "Search for the runic stone circle and use the scroll there."))
 			call questItem0.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEvent0)
 			call questItem0.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem0.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted0)
@@ -60,7 +60,7 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter, StructMa
 			call questItem0.setPingCoordinatesFromRect(gg_rct_weather_rune_circle)
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			// item 1
-			set questItem1 = AQuestItem.create(this, tr("Berichte Sisgard davon."))
+			set questItem1 = AQuestItem.create(this, tre("Berichte Sisgard davon.", "Report to Sigard about it."))
 			call questItem1.setPing(true)
 			call questItem1.setPingUnit(Npcs.sisgard())
 			call questItem1.setPingColour(100.0, 100.0, 100.0)

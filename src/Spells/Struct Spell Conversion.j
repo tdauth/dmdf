@@ -50,7 +50,7 @@ library StructSpellsSpellConversion requires Asl, StructGameClasses, StructGameS
 		
 		private method condition takes nothing returns boolean
 			if (UnitHasBuffBJ(GetSpellTargetUnit(), thistype.buffId)) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Einheit wurde bereits bekehrt."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Einheit wurde bereits bekehrt.", "Target unit has already been converted."))
 			
 				return false
 			endif

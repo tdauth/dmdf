@@ -12,14 +12,14 @@ library StructSpellsSpellRob requires Asl, StructGameClasses, StructGameSpell
 		
 		private method condition takes nothing returns boolean
 			if (GetOwningPlayer(GetSpellTargetUnit()) == this.character().player()) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Eigene Einheiten können nicht bestohlen werden."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Eigene Einheiten können nicht bestohlen werden.", "Own units can not be robbed."))
 				return false
 			elseif (this.m_targets.contains(GetSpellTargetUnit())) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Einheit wurde erst kürzlich bestohlen."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Einheit wurde erst kürzlich bestohlen.", "Target unit has been robbed recently."))
 				
 				return false
 			elseif (GetUnitLevel(GetSpellTargetUnit()) == 0) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Einheit besitzt Stufe 0."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Einheit besitzt Stufe 0.", "Target unit has level 0."))
 				
 				return false
 			endif

@@ -17,19 +17,19 @@ library StructSpellsSpellTransfer requires Asl, StructGameClasses, StructGameSpe
 			local boolean isAlly = GetUnitAllianceStateToUnit(this.character().unit(), GetSpellTargetUnit()) == bj_ALLIANCE_ALLIED
 			
 			if (not (GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MAX_MANA) > 0.0)) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel hat kein Mana."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel hat kein Mana.", "Target has no mana."))
 				return false
 			elseif (isAlly and not (GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MANA) < GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MAX_MANA))) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel hat bereits volles Mana."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel hat bereits volles Mana.", "Target does already have full mana."))
 				return false
 			elseif (isAlly and not (GetUnitState(this.character().unit(), UNIT_STATE_MANA) > 0.0)) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Charakter hat kein Mana."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Charakter hat kein Mana.", "Character has no mana."))
 				return false
 			elseif (not isAlly and not (GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MANA) > 0.0)) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel hat kein Mana."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel hat kein Mana.", "Target has no mana."))
 				return false
 			elseif (not isAlly and not (GetUnitState(this.character().unit(), UNIT_STATE_MANA) < GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MAX_MANA))) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Charakter hat bereits volles Mana."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Charakter hat bereits volles Mana.", "Character does already have full mana."))
 				return false
 			endif
 			

@@ -331,7 +331,7 @@ endif
 
 		/// \todo How to display/format warnings?
 		public method displayWarning takes string message returns nothing
-			call this.displayQuestMessage(bj_QUESTMESSAGE_WARNING, Format(tr("%1%")).s(message).result())
+			call this.displayQuestMessage(bj_QUESTMESSAGE_WARNING, Format(tre("%1%", "%1%")).s(message).result())
 			//call PlaySoundForPlayer(this.player(), bj_questWarningSound)
 		endmethod
 
