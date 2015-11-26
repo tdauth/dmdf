@@ -106,7 +106,7 @@ Drains up to 240 mana from an enemy, deals doubled damage to the enemy and trans
 STRING 18
 // Einheiten: n005 (Armbrustschütze), Name (Name (unam))
 {
-Armbrustschütze
+Crossbowman
 }
 
 STRING 19
@@ -190,7 +190,7 @@ STRING 31
 STRING 32
 // Gegenstände: I015 (Druidenmantel), Name (Name (unam))
 {
-Druid cloak
+Druid Cloak
 }
 
 STRING 33
@@ -250,7 +250,7 @@ Ranger
 STRING 42
 // Gegenstände: I04B (Schattenstein), Tip (Tooltipp - Einfach (utip))
 {
-Buy shadow stone
+Buy Shadow Stone
 }
 
 STRING 43
@@ -286,7 +286,7 @@ STRING 47
 STRING 48
 // Gegenstände: I015 (Druidenmantel), Tip (Tooltipp - Einfach (utip))
 {
-Buy a druid cloak
+Buy Druid Cloak
 }
 
 STRING 49
@@ -2242,31 +2242,31 @@ Machtentzug
 STRING 374
 // Fähigkeiten: A001 (Machtentzug), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Hält 20(V2) Sekunden lang.
+Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Lasts 20(V2) Sekunden lang.
 }
 
 STRING 375
 // Fähigkeiten: A001 (Machtentzug), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Hält 20(V2) Sekunden lang.
+Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Lasts 20(V2) Sekunden lang.
 }
 
 STRING 376
 // Fähigkeiten: A001 (Machtentzug), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Hält 20(V2) Sekunden lang.
+Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Lasts 20(V2) Sekunden lang.
 }
 
 STRING 377
 // Fähigkeiten: A001 (Machtentzug), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Hält 20(V2) Sekunden lang.
+Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Lasts 20(V2) Sekunden lang.
 }
 
 STRING 378
 // Fähigkeiten: A001 (Machtentzug), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Hält 20(V2) Sekunden lang.
+Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und überträgt es auf den Zauberer. Lasts 20(V2) Sekunden lang.
 }
 
 STRING 379
@@ -2314,31 +2314,31 @@ Machtübertragung
 STRING 386
 // Fähigkeiten: A000 (Machtübertragung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Hält 20(V2) Sekunden lang an.
+Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Lasts 20(V2) Sekunden lang an.
 }
 
 STRING 387
 // Fähigkeiten: A000 (Machtübertragung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Hält 20(V2) Sekunden lang an.
+Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Lasts 20(V2) Sekunden lang an.
 }
 
 STRING 388
 // Fähigkeiten: A000 (Machtübertragung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Hält 20(V2) Sekunden lang an.
+Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Lasts 20(V2) Sekunden lang an.
 }
 
 STRING 389
 // Fähigkeiten: A000 (Machtübertragung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Hält 20(V2) Sekunden lang an.
+Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Lasts 20(V2) Sekunden lang an.
 }
 
 STRING 390
 // Fähigkeiten: A000 (Machtübertragung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Hält 20(V2) Sekunden lang an.
+Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Lasts 20(V2) Sekunden lang an.
 }
 
 STRING 391
@@ -3956,19 +3956,19 @@ Increases the armour of an ally for a certain time.|n|n|cffffcc00Level 1|r - <A0
 STRING 660
 // Fähigkeiten: A0G0 (Koloss - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+Drains up to 120 mana from an opponent and deals double damage to him and transfers the mana to the wizard.
 }
 
 STRING 661
 // Fähigkeiten: A0G0 (Koloss - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+Drains up to 140 mana from an opponent and deals double damage to him and transfers the mana to the wizard.
 }
 
 STRING 662
 // Fähigkeiten: A0G0 (Koloss - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+Drains up to 180 mana from an opponent and deals double damage to him and transfers the mana to the wizard.
 }
 
 STRING 663
@@ -3980,7 +3980,7 @@ Staff
 STRING 664
 // Fähigkeiten: A0G0 (Koloss - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+Drains up to 240 mana from an opponent and deals double damage to him and transfers the mana to the wizard.
 }
 
 STRING 665
@@ -4220,7 +4220,7 @@ STRING 705
 STRING 706
 // Fähigkeiten: A018 (Blitzschlag), Name (Name (anam))
 {
-Blitzschlag
+Lightning
 }
 
 STRING 707
@@ -4292,7 +4292,7 @@ Gods Favor - Level 5
 STRING 718
 // Fähigkeiten: A019 (Erfrierung), Name (Name (anam))
 {
-Erfrierung
+Frostbite
 }
 
 STRING 719
@@ -4400,19 +4400,19 @@ Auf dem Boden unter dem Magier entsteht ein Flammenmeer, das Gegner für X/Sekun
 STRING 736
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 8 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nHält 7 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 8 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 7 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
 }
 
 STRING 737
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 10 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nHält 9 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 10 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 9 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
 }
 
 STRING 738
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 12 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nHält 11 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 12 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 11 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
 }
 
 STRING 739
@@ -4466,25 +4466,25 @@ Der Elementarmagier lähmt sein Ziel für 5 Sekunden.
 STRING 747
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 14 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nHält 13 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 14 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 13 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
 }
 
 STRING 748
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 16 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nHält 15 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 16 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 15 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
 }
 
 STRING 749
 // Fähigkeiten: A10A (Arkaner Hunger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen..|n|n|cffffcc00Stufe 1|r - Saugt 8 % Mana ab. Hält 7 Sekunden.|n|cffffcc00Stufe 2|r - Saugt 10 % Mana ab. Hält 9 Sekunden.|n|cffffcc00Stufe 3|r - Saugt 12 % Mana ab. Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Saugt 14 % Mana ab. Hält 13 Sekunden.|n|cffffcc00Stufe 5|r - Saugt 16 % Mana ab. Hält 15 Sekunden.
+Drains mana per second from each opponent in the range of 900 and transfers it to the wizard. The mana cannot exceed the mana maximum of the wizard.|n|n|cffffcc00Level 1|r - Drains 8 % mana. Lasts 7 seconds.|n|cffffcc00Level 2|r - Drains 10 % mana. Lasts 9 seconds.|n|cffffcc00Level 3|r - Drains 12 % mana. Lasts 11 seconds.|n|cffffcc00Level 4|r - Drains 14 % mana. Lasts 13 seconds.|n|cffffcc00Level 5|r - Drains 16 % mana. Lasts 15 seconds.
 }
 
 STRING 750
 // Fähigkeiten: A10B (Arkaner Hunger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen..|n|n|cffffcc00Stufe 1|r - Saugt 8 % Mana ab. Hält 7 Sekunden.|n|cffffcc00Stufe 2|r - Saugt 10 % Mana ab. Hält 9 Sekunden.|n|cffffcc00Stufe 3|r - Saugt 12 % Mana ab. Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Saugt 14 % Mana ab. Hält 13 Sekunden.|n|cffffcc00Stufe 5|r - Saugt 16 % Mana ab. Hält 15 Sekunden.
+Drains mana per second from each opponent in the range of 900 and transfers it to the wizard. The mana cannot exceed the mana maximum of the wizard.|n|n|cffffcc00Level 1|r - Drains 8 % mana. Lasts 7 seconds.|n|cffffcc00Level 2|r - Drains 10 % mana. Lasts 9 seconds.|n|cffffcc00Level 3|r - Drains 12 % mana. Lasts 11 seconds.|n|cffffcc00Level 4|r - Drains 14 % mana. Lasts 13 seconds.|n|cffffcc00Level 5|r - Drains 16 % mana. Lasts 15 seconds.
 }
 
 STRING 751
@@ -4688,19 +4688,19 @@ Eine Feuersbrunst erfasst ein Gebiet mit einem Durchmesser von 30 Metern und fü
 STRING 784
 // Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen..|n|n|cffffcc00Stufe 1|r - Saugt 8 % Mana ab. Hält 7 Sekunden.|n|cffffcc00Stufe 2|r - Saugt 10 % Mana ab. Hält 9 Sekunden.|n|cffffcc00Stufe 3|r - Saugt 12 % Mana ab. Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Saugt 14 % Mana ab. Hält 13 Sekunden.|n|cffffcc00Stufe 5|r - Saugt 16 % Mana ab. Hält 15 Sekunden.
+Drains mana per second from each opponent in the range of 900 and transfers it to the wizard. The mana cannot exceed the mana maximum of the wizard.|n|n|cffffcc00Level 1|r - Drains 8 % mana. Lasts 7 seconds.|n|cffffcc00Level 2|r - Drains 10 % mana. Lasts 9 seconds.|n|cffffcc00Level 3|r - Drains 12 % mana. Lasts 11 seconds.|n|cffffcc00Level 4|r - Drains 14 % mana. Lasts 13 seconds.|n|cffffcc00Level 5|r - Drains 16 % mana. Lasts 15 seconds.
 }
 
 STRING 785
 // Fähigkeiten: A10D (Arkaner Hunger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen..|n|n|cffffcc00Stufe 1|r - Saugt 8 % Mana ab. Hält 7 Sekunden.|n|cffffcc00Stufe 2|r - Saugt 10 % Mana ab. Hält 9 Sekunden.|n|cffffcc00Stufe 3|r - Saugt 12 % Mana ab. Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Saugt 14 % Mana ab. Hält 13 Sekunden.|n|cffffcc00Stufe 5|r - Saugt 16 % Mana ab. Hält 15 Sekunden.
+Drains mana per second from each opponent in the range of 900 and transfers it to the wizard. The mana cannot exceed the mana maximum of the wizard.|n|n|cffffcc00Level 1|r - Drains 8 % mana. Lasts 7 seconds.|n|cffffcc00Level 2|r - Drains 10 % mana. Lasts 9 seconds.|n|cffffcc00Level 3|r - Drains 12 % mana. Lasts 11 seconds.|n|cffffcc00Level 4|r - Drains 14 % mana. Lasts 13 seconds.|n|cffffcc00Level 5|r - Drains 16 % mana. Lasts 15 seconds.
 }
 
 STRING 786
 // Fähigkeiten: A10E (Arkaner Hunger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen..|n|n|cffffcc00Stufe 1|r - Saugt 8 % Mana ab. Hält 7 Sekunden.|n|cffffcc00Stufe 2|r - Saugt 10 % Mana ab. Hält 9 Sekunden.|n|cffffcc00Stufe 3|r - Saugt 12 % Mana ab. Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Saugt 14 % Mana ab. Hält 13 Sekunden.|n|cffffcc00Stufe 5|r - Saugt 16 % Mana ab. Hält 15 Sekunden.
+Drains mana per second from each opponent in the range of 900 and transfers it to the wizard. The mana cannot exceed the mana maximum of the wizard.|n|n|cffffcc00Level 1|r - Drains 8 % mana. Lasts 7 seconds.|n|cffffcc00Level 2|r - Drains 10 % mana. Lasts 9 seconds.|n|cffffcc00Level 3|r - Drains 12 % mana. Lasts 11 seconds.|n|cffffcc00Level 4|r - Drains 14 % mana. Lasts 13 seconds.|n|cffffcc00Level 5|r - Drains 16 % mana. Lasts 15 seconds.
 }
 
 STRING 787
@@ -5898,7 +5898,7 @@ Dämonendiener
 STRING 986
 // Fähigkeiten: A0K9 (Hieb), EditorSuffix (Editor-Suffix (ansf))
 {
-(Wilde Kreatur)
+(Wild Creature)
 }
 
 STRING 987
@@ -8694,7 +8694,7 @@ Eine Spruchrolle zum Feuerlegen.
 STRING 1452
 // Einheiten: n00X (Niederes Skelett), Name (Name (unam))
 {
-Niederes Skelett
+Lower Skeleton
 }
 
 STRING 1453
@@ -8706,31 +8706,31 @@ Ghul
 STRING 1454
 // Einheiten: n00Z (Skelettmagier), Name (Name (unam))
 {
-Skelettmagier
+Skeleton Mage
 }
 
 STRING 1455
 // Einheiten: n010 (Vampirgebieter), Name (Name (unam))
 {
-Vampirgebieter
+Vampire Lord
 }
 
 STRING 1456
 // Gegenstände: I00S (Goldmünzenbeutel), Name (Name (unam))
 {
-Goldmünzenbeutel
+Gold Coin Bag
 }
 
 STRING 1457
 // Gegenstände: I00S (Goldmünzenbeutel), Ubertip (Tooltipp - Erweitert (utub))
 {
-Gibt dem Spieler bei Benutzung <A02R,DataA1> Goldmünzen.
+Gives the player <A02R,DataA1> gold coins on usage.
 }
 
 STRING 1458
 // Gegenstände: I00S (Goldmünzenbeutel), Description (Beschreibung (ides))
 {
-Gibt dem Spieler Goldmünzen.
+Gives gold coins to the player.
 }
 
 STRING 1459
@@ -8742,13 +8742,13 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1460
 // Gegenstände: I00T (Schwerer Goldmünzenbeutel), Ubertip (Tooltipp - Erweitert (utub))
 {
-Gibt dem Spieler bei Benutzung <A02S,DataA1> Goldmünzen.
+Gives the player <A02S,DataA1> gold coins on usage.
 }
 
 STRING 1461
 // Gegenstände: I00T (Schwerer Goldmünzenbeutel), Description (Beschreibung (ides))
 {
-Gibt dem Spieler Goldmünzen.
+Gives gold coins to the player.
 }
 
 STRING 1462
@@ -8760,7 +8760,7 @@ STRING 1462
 STRING 1463
 // Fähigkeiten: A02R (Goldmünzenbeutel), Name (Name (anam))
 {
-Goldmünzenbeutel
+Gold Coin Bag
 }
 
 STRING 1464
@@ -9606,7 +9606,7 @@ STRING 1603
 STRING 1604
 // Einheiten: u00B (Pestkarren), Name (Name (unam))
 {
-Pestkarren
+Pest Barrow
 }
 
 STRING 1605
@@ -9618,13 +9618,13 @@ STRING 1605
 STRING 1606
 // Fähigkeiten: A08G (Pestkarren), Name (Name (anam))
 {
-Pestkarren
+Pest Barrow
 }
 
 STRING 1607
 // Fähigkeiten: A0VK (Pestkarren), Name (Name (anam))
 {
-Pestkarren
+Pest Barrow
 }
 
 STRING 1608
@@ -9636,7 +9636,7 @@ STRING 1608
 STRING 1609
 // Fähigkeiten: A0VK (Pestkarren), Tip (Tooltipp - Normal (atp1))
 {
-Pestkarren beschwören [|cffffcc00Stufe 1|r]
+Summon Pest Barrow [|cffffcc00Level 1|r]
 }
 
 STRING 1610
@@ -10668,13 +10668,13 @@ Wiederbelebungsschrein (Grasland)
 STRING 1781
 // Einheiten: n01F (Python-Kriegerin), Name (Name (unam))
 {
-Python-Kriegerin
+Python Warrior
 }
 
 STRING 1782
 // Einheiten: n01G (Berserkerin), Name (Name (unam))
 {
-Berserkerin
+Berserker
 }
 
 STRING 1783
@@ -10686,7 +10686,7 @@ Spinnennetz
 STRING 1784
 // Fähigkeiten: A048 (Spinnennetz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Spinnt eine angewählte feindliche Einheit in ein Netz ein. Hält <Aweb,Dur1> Sekunden lang an.
+Spinnt eine angewählte feindliche Einheit in ein Netz ein. Lasts <Aweb,Dur1> Sekunden lang an.
 }
 
 STRING 1785
@@ -10860,7 +10860,7 @@ Sisgards Zauberspruchrolle
 STRING 1813
 // Einheiten: n01I (Nordmann), Name (Name (unam))
 {
-Nordmann
+Norseman
 }
 
 STRING 1814
@@ -10872,7 +10872,7 @@ Ferdinand
 STRING 1815
 // Einheiten: n01K (Schaf), Name (Name (unam))
 {
-Schaf
+Sheep
 }
 
 STRING 1816
@@ -11172,7 +11172,7 @@ STRING 1864
 STRING 1865
 // Einheiten: n01O (Skelett-Bogenschütze), Name (Name (unam))
 {
-Skelett-Bogenschütze
+Skeleton Archer
 }
 
 STRING 1866
@@ -11184,7 +11184,7 @@ STRING 1866
 STRING 1867
 // Einheiten: n01Q (Skelett-Flammenkrieger), Name (Name (unam))
 {
-Skelett-Flammenkrieger
+Skeleton Flames Warrior
 }
 
 STRING 1868
@@ -11908,7 +11908,7 @@ Botin
 STRING 1988
 // Einheiten: n01W (Waldgeist), Name (Name (unam))
 {
-Waldgeist
+Forest Spirit
 }
 
 STRING 1989
@@ -11920,7 +11920,7 @@ STRING 1989
 STRING 1990
 // Einheiten: n01X (Waldgeist), Name (Name (unam))
 {
-Waldgeist
+Forest Spirit
 }
 
 STRING 1991
@@ -13726,7 +13726,7 @@ Tanka
 STRING 2291
 // Einheiten: o000 (Schlange), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Python-Kriegerin)
+(Python Warrior)
 }
 
 STRING 2292
@@ -13738,7 +13738,7 @@ Schlange beschwören
 STRING 2293
 // Fähigkeiten: A0R4 (Schlange beschwören), EditorSuffix (Editor-Suffix (ansf))
 {
-(Python-Kriegerin)
+(Python Warrior)
 }
 
 STRING 2294
@@ -13792,7 +13792,7 @@ Weizenstängel - nicht animiert (Grasland)
 STRING 2302
 // Einheiten: n024 (Knochendrache), Name (Name (unam))
 {
-Knochendrache
+Bone Dragon
 }
 
 STRING 2303
@@ -14110,7 +14110,7 @@ Gold coins:
 STRING 2357
 // Fähigkeiten: A0R6 (Feuerregen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Wellen von Feuer herbei, die Einheiten in einem bestimmten Gebiet verletzen. Jede Welle fügt <A0R6,DataB1> Punkte Anfangsschaden und dann <A0R6,Dur1> Sekunden lang <A0R6,DataE1> Punkte Schaden pro Sekunde zu. |nHält <A0R6,DataA1> Wellen lang an.
+Ruft Wellen von Feuer herbei, die Einheiten in einem bestimmten Gebiet verletzen. Jede Welle fügt <A0R6,DataB1> Punkte Anfangsschaden und dann <A0R6,Dur1> Sekunden lang <A0R6,DataE1> Punkte Schaden pro Sekunde zu. |nLasts <A0R6,DataA1> Wellen lang an.
 }
 
 STRING 2358
@@ -14406,7 +14406,7 @@ STRING 2408
 STRING 2409
 // Fähigkeiten: A05I (Rundumhieb), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Rundumhieb von zerstörerischer Kraft rund um Wigberht, der ihn immun gegen Magie macht und bei in der Nähe befindlichen feindlichen Land-Einheiten pro Sekunde <AOww,DataA1> Punkte Schaden anrichtet. |nHält <AOww,Dur1> Sekunden lang an.
+Verursacht einen Rundumhieb von zerstörerischer Kraft rund um Wigberht, der ihn immun gegen Magie macht und bei in der Nähe befindlichen feindlichen Land-Einheiten pro Sekunde <AOww,DataA1> Punkte Schaden anrichtet. |nLasts <AOww,Dur1> Sekunden lang an.
 }
 
 STRING 2410
@@ -14809,7 +14809,7 @@ Schutz des Königs
 STRING 2477
 // Fähigkeiten: A0R9 (Schutz des Königs), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Frostschild um eine angewählte befreundete Einheit herum. Der Schild erhöht die Rüstung um <A0R9,DataB1> und verlangsamt angreifende Nahkampf-Einheiten für die Dauer von <A0R9,Dur1> Sekunden. |nHält <A0R9,DataA1> Sekunden lang an.
+Erzeugt einen Frostschild um eine angewählte befreundete Einheit herum. Der Schild erhöht die Rüstung um <A0R9,DataB1> und verlangsamt angreifende Nahkampf-Einheiten für die Dauer von <A0R9,Dur1> Sekunden. |nLasts <A0R9,DataA1> Sekunden lang an.
 }
 
 STRING 2478
@@ -15013,7 +15013,7 @@ STRING 2510
 STRING 2511
 // Einheiten: n02K (Todesengel), Name (Name (unam))
 {
-Todesengel
+Death Angel
 }
 
 STRING 2512
@@ -15025,7 +15025,7 @@ Schmerzgebete
 STRING 2513
 // Fähigkeiten: A05S (Schmerzgebete), EditorSuffix (Editor-Suffix (ansf))
 {
-(Todesengel)
+(Death Angel)
 }
 
 STRING 2514
@@ -15037,7 +15037,7 @@ Botschaft des Totenreichs
 STRING 2515
 // Fähigkeiten: A05T (Botschaft des Totenreichs), EditorSuffix (Editor-Suffix (ansf))
 {
-(Todesengel)
+(Death Angel)
 }
 
 STRING 2516
@@ -15049,7 +15049,7 @@ Schmerzgebete
 STRING 2517
 // Fähigkeiten: A0RJ (Todesfinger), EditorSuffix (Editor-Suffix (ansf))
 {
-(Todesengel)
+(Death Angel)
 }
 
 STRING 2518
@@ -15085,13 +15085,13 @@ Diese Einheit steht unter dem Einfluss von 'Botschaft des Totenreichs'; gegen si
 STRING 2523
 // Zauberverstärker/Effekte: B00U (Schmerzgebete), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Todesengel)
+(Death Angel)
 }
 
 STRING 2524
 // Einheiten: n02L (Vampir), Name (Name (unam))
 {
-Vampir
+Vampire
 }
 
 STRING 2525
@@ -15775,7 +15775,7 @@ STRING 2637
 STRING 2638
 // Einheiten: n02Q (Wilde Kreatur), Name (Name (unam))
 {
-Wilde Kreatur
+Wild Creature
 }
 
 STRING 2639
@@ -16279,7 +16279,7 @@ Todesfinger
 STRING 2722
 // Zauberverstärker/Effekte: B00V (Botschaft des Totenreichs), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Todesengel)
+(Death Angel)
 }
 
 STRING 2723
@@ -16528,31 +16528,31 @@ Seelendiebstahl [|cffffcc00Stufe 5|r]
 STRING 2764
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA1> Leben und Mana.|nHält <A06J,Dur1> Sekunden lang an.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA1> Leben und Mana.|nLasts <A06J,Dur1> Sekunden lang an.
 }
 
 STRING 2765
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA2> Leben und Mana.|nHält <A06J,Dur2> Sekunden lang an.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA2> Leben und Mana.|nLasts <A06J,Dur2> Sekunden lang an.
 }
 
 STRING 2766
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA3> Leben und Mana.|nHält <A06J,Dur3> Sekunden lang an.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA3> Leben und Mana.|nLasts <A06J,Dur3> Sekunden lang an.
 }
 
 STRING 2767
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA4> Leben und Mana.|nHält <A06J,Dur4> Sekunden lang an.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA4> Leben und Mana.|nLasts <A06J,Dur4> Sekunden lang an.
 }
 
 STRING 2768
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA5> Leben und Mana.|nHält <A06J,Dur5> Sekunden lang an.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA5> Leben und Mana.|nLasts <A06J,Dur5> Sekunden lang an.
 }
 
 STRING 2769
@@ -16606,7 +16606,7 @@ Manaexplosion [|cffffcc00Stufe 2|r]
 STRING 2777
 // Fähigkeiten: A0K6 (Magie kontrollieren), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldfurie)
+(Forest Fury)
 }
 
 STRING 2778
@@ -16624,7 +16624,7 @@ Machtvernichtung
 STRING 2780
 // Fähigkeiten: A0K8 (Magie-Verteidigung), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldfurie)
+(Forest Fury)
 }
 
 STRING 2781
@@ -16648,7 +16648,7 @@ Sicht
 STRING 2784
 // Fähigkeiten: A06L (Machtentzug), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldfurie)
+(Forest Fury)
 }
 
 STRING 2785
@@ -17600,31 +17600,31 @@ Verringert die Angriffsgeschwindkeit eines Gegners für 7 Sekunden um 20 %.|n<A0
 STRING 2945
 // Fähigkeiten: A0PZ (Bekehrung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner bis Stufe <A0PZ,DataA1>.
+Takes over the control of an opponent up to level <A0PZ,DataA1> for 30 seconds.
 }
 
 STRING 2946
 // Fähigkeiten: A0PZ (Bekehrung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner bis Stufe <A0PZ,DataA2>.
+Takes over the control of an opponent up to level <A0PZ,DataA2> for 30 seconds.
 }
 
 STRING 2947
 // Fähigkeiten: A0PZ (Bekehrung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner bis Stufe <A0PZ,DataA3>.
+Takes over the control of an opponent up to level <A0PZ,DataA3> for 30 seconds.
 }
 
 STRING 2948
 // Fähigkeiten: A0PZ (Bekehrung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner bis Stufe <A0PZ,DataA4>.
+Takes over the control of an opponent up to level <A0PZ,DataA4> for 30 seconds.
 }
 
 STRING 2949
 // Einheiten: n00B (Katze), Tip (Tooltipp - Einfach (utip))
 {
-|cffffcc00K|ratze erwerben
+Purchase Cat (|cffffcc00K|)
 }
 
 STRING 2950
@@ -17936,7 +17936,7 @@ Erhöht die Bewegungsgeschwindigkeit des Trägers und Verbündeter im Umkreis um
 STRING 3001
 // Fähigkeiten: A0T5 (Avatar), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-'Avatar' aktivieren, um Lord Garithos einen Verteidigungs-Bonus von <A0T5,DataA1>, einen Trefferpunkt-Bonus von <A0T5,DataB1>, einen Schadenswirkungs-Bonus von <A0T5,DataC1> sowie Immunität gegen Zauber zu verleihen. |nHält <A0T5,Dur1> Sekunden lang an.
+'Avatar' aktivieren, um Lord Garithos einen Verteidigungs-Bonus von <A0T5,DataA1>, einen Trefferpunkt-Bonus von <A0T5,DataB1>, einen Schadenswirkungs-Bonus von <A0T5,DataC1> sowie Immunität gegen Zauber zu verleihen. |nLasts <A0T5,Dur1> Sekunden lang an.
 }
 
 STRING 3002
@@ -18362,7 +18362,7 @@ Erhöht das Mana um <AImv,DataA1> und den Sichtradius um <A06G,DataA1>. Außerde
 STRING 3072
 // Einheiten: n02R (Riese), Name (Name (unam))
 {
-Riese
+Giant
 }
 
 STRING 3073
@@ -18374,7 +18374,7 @@ STRING 3073
 STRING 3074
 // Fähigkeiten: A077 (Übergewicht), EditorSuffix (Editor-Suffix (ansf))
 {
-(Riese)
+(Giant)
 }
 
 STRING 3075
@@ -18398,7 +18398,7 @@ Dummheit
 STRING 3078
 // Fähigkeiten: A078 (Dummheit), EditorSuffix (Editor-Suffix (ansf))
 {
-(Riese)
+(Giant)
 }
 
 STRING 3079
@@ -18866,7 +18866,7 @@ Bier (Grasland)
 STRING 3156
 // Einheiten: n02S (Kunos Tochter), Name (Name (unam))
 {
-Kunos Tochter
+Kuno's Daughter
 }
 
 STRING 3157
@@ -19310,7 +19310,7 @@ Große Doppelaxt kaufen
 STRING 3230
 // Fähigkeiten: A01V (Seelendiebstahl - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Hält <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Hält <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Hält <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Hält <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Hält <A06J,Dur5> Sekunden.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Lasts <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Lasts <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Lasts <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Lasts <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Lasts <A06J,Dur5> Sekunden.
 }
 
 STRING 3231
@@ -19838,7 +19838,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 3318
 // Fähigkeiten: A0RV (Seelendiebstahl - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Hält <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Hält <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Hält <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Hält <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Hält <A06J,Dur5> Sekunden.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Lasts <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Lasts <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Lasts <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Lasts <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Lasts <A06J,Dur5> Sekunden.
 }
 
 STRING 3319
@@ -20270,7 +20270,7 @@ Eisenhut
 STRING 3390
 // Einheiten: h00F (Waldfurie), Name (Name (unam))
 {
-Waldfurie
+Forest Fury
 }
 
 STRING 3391
@@ -20514,7 +20514,7 @@ Erhöht den Schaden.
 STRING 3434
 // Fähigkeiten: A0RW (Seelendiebstahl - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Hält <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Hält <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Hält <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Hält <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Hält <A06J,Dur5> Sekunden.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Lasts <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Lasts <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Lasts <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Lasts <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Lasts <A06J,Dur5> Sekunden.
 }
 
 STRING 3435
@@ -20772,7 +20772,7 @@ Impeding Disaster
 STRING 3477
 // Fähigkeiten: A0PZ (Bekehrung), EditorSuffix (Editor-Suffix (ansf))
 {
-(Kleriker)
+(Cleric)
 }
 
 STRING 3478
@@ -20916,7 +20916,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 3501
 // Fähigkeiten: A0RX (Seelendiebstahl - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Hält <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Hält <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Hält <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Hält <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Hält <A06J,Dur5> Sekunden.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Lasts <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Lasts <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Lasts <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Lasts <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Lasts <A06J,Dur5> Sekunden.
 }
 
 STRING 3502
@@ -21030,25 +21030,25 @@ Seelendiebstahl - Stufe 4
 STRING 3520
 // Fähigkeiten: A09O (Kontrollierter Zeitfluss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 4% Mana pro Sekunde von allen Gegnern im Umkreis ab und überträgt den Betrag auf den Zauberer.|nHält 9 Sekunden.
+Saugt 4% Mana pro Sekunde von allen Gegnern im Umkreis ab und überträgt den Betrag auf den Zauberer.|nLasts 9 Sekunden.
 }
 
 STRING 3521
 // Fähigkeiten: A09O (Kontrollierter Zeitfluss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 4% Mana pro Sekunde von allen Gegnern im Umkreis ab und überträgt den Betrag auf den Zauberer.|nHält 11 Sekunden.
+Saugt 4% Mana pro Sekunde von allen Gegnern im Umkreis ab und überträgt den Betrag auf den Zauberer.|nLasts 11 Sekunden.
 }
 
 STRING 3522
 // Fähigkeiten: A09O (Kontrollierter Zeitfluss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 4% Mana pro Sekunde von allen Gegnern im Umkreis ab und überträgt den Betrag auf den Zauberer.|nHält 13 Sekunden.
+Saugt 4% Mana pro Sekunde von allen Gegnern im Umkreis ab und überträgt den Betrag auf den Zauberer.|nLasts 13 Sekunden.
 }
 
 STRING 3523
 // Fähigkeiten: A09O (Kontrollierter Zeitfluss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 4% Mana pro Sekunde von allen Gegnern im Umkreis ab und überträgt den Betrag auf den Zauberer.|nHält 15 Sekunden.
+Saugt 4% Mana pro Sekunde von allen Gegnern im Umkreis ab und überträgt den Betrag auf den Zauberer.|nLasts 15 Sekunden.
 }
 
 STRING 3524
@@ -21126,7 +21126,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 3536
 // Fähigkeiten: A0RY (Seelendiebstahl - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Hält <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Hält <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Hält <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Hält <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Hält <A06J,Dur5> Sekunden.
+Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Lasts <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Lasts <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Lasts <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Lasts <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Lasts <A06J,Dur5> Sekunden.
 }
 
 STRING 3537
@@ -22726,25 +22726,25 @@ STRING 3801
 STRING 3802
 // Gegenstände: I02K (Schwert der Finsternis), Name (Name (unam))
 {
-Schwert der Finsternis
+Sword of Darkness
 }
 
 STRING 3803
 // Gegenstände: I02K (Schwert der Finsternis), Description (Beschreibung (ides))
 {
-Ein dunkles, brennendes Schwert.
+A dark, burning sword.
 }
 
 STRING 3804
 // Gegenstände: I02K (Schwert der Finsternis), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A095,DataA1>. Bei einem Treffer werden dem Gegner <S005,DataA1,%>% seines Lebens entzogen.
+Increases the damage by <A095,DataA1>. On hitting an opponent it drains <S005,DataA1,%>% of his life.
 }
 
 STRING 3805
 // Gegenstände: I02K (Schwert der Finsternis), Tip (Tooltipp - Einfach (utip))
 {
-Schwert der Finsternis kaufen
+Buy Sword of Darkness
 }
 
 STRING 3806
@@ -22756,7 +22756,7 @@ STRING 3806
 STRING 3807
 // Fähigkeiten: S005 (Schwert der Finsternis), Name (Name (anam))
 {
-Schwert der Finsternis
+Sword of Darkness
 }
 
 STRING 3808
@@ -22768,7 +22768,7 @@ STRING 3808
 STRING 3809
 // Fähigkeiten: A095 (Schwert der Finsternis), Name (Name (anam))
 {
-Schwert der Finsternis
+Sword of Darkness
 }
 
 STRING 3810
@@ -24028,31 +24028,31 @@ Wrath of the forest [|cffffcc00Stufe 5|r]
 STRING 4019
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.
 }
 
 STRING 4020
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur2> Sekunden lang an.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur2> Sekunden lang an.
 }
 
 STRING 4021
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur3> Sekunden lang an.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur3> Sekunden lang an.
 }
 
 STRING 4022
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur4> Sekunden lang an.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur4> Sekunden lang an.
 }
 
 STRING 4023
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur5> Sekunden lang an.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur5> Sekunden lang an.
 }
 
 STRING 4024
@@ -24112,31 +24112,31 @@ Awakening of the forest [|cffffcc00Stufe 5|r]
 STRING 4033
 // Fähigkeiten: A0JP (Erwachen des Waldes - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC1> Punkte Schaden an. |nHält <A09Z,Dur1> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC1> Punkte Schaden an. |nLasts <A09Z,Dur1> Sekunden lang an.
 }
 
 STRING 4034
 // Fähigkeiten: A0JQ (Erwachen des Waldes - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nHält <A09Z,Dur2> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nLasts <A09Z,Dur2> Sekunden lang an.
 }
 
 STRING 4035
 // Fähigkeiten: A0JR (Erwachen des Waldes - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC3> Punkte Schaden an. |nHält <A09Z,Dur3> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC3> Punkte Schaden an. |nLasts <A09Z,Dur3> Sekunden lang an.
 }
 
 STRING 4036
 // Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC4> Punkte Schaden an. |nHält <A09Z,Dur4> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC4> Punkte Schaden an. |nLasts <A09Z,Dur4> Sekunden lang an.
 }
 
 STRING 4037
 // Fähigkeiten: A0JT (Erwachen des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC5> Punkte Schaden an. |nHält <A09Z,Dur5> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC5> Punkte Schaden an. |nLasts <A09Z,Dur5> Sekunden lang an.
 }
 
 STRING 4038
@@ -24634,31 +24634,31 @@ Arkaner Schutz [|cffffcc00Stufe 5|r]
 STRING 4120
 // Fähigkeiten: A0A8 (Arkaner Schutz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB1>%.|nHält <A0A8,Dur1> Sekunden lang an.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB1>%.|nLasts <A0A8,Dur1> Sekunden lang an.
 }
 
 STRING 4121
 // Fähigkeiten: A0A8 (Arkaner Schutz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB2>%.|nHält <A0A8,Dur2> Sekunden lang an.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB2>%.|nLasts <A0A8,Dur2> Sekunden lang an.
 }
 
 STRING 4122
 // Fähigkeiten: A0A8 (Arkaner Schutz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB3>%.|nHält <A0A8,Dur3> Sekunden lang an.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB3>%.|nLasts <A0A8,Dur3> Sekunden lang an.
 }
 
 STRING 4123
 // Fähigkeiten: A0A8 (Arkaner Schutz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB4>%.|nHält <A0A8,Dur4> Sekunden lang an.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB4>%.|nLasts <A0A8,Dur4> Sekunden lang an.
 }
 
 STRING 4124
 // Fähigkeiten: A0A8 (Arkaner Schutz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB5>%.|nHält <A0A8,Dur5> Sekunden lang an.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels um <A0A8,DataB5>%.|nLasts <A0A8,Dur5> Sekunden lang an.
 }
 
 STRING 4125
@@ -24868,7 +24868,7 @@ Stab der Verzögerung
 STRING 4159
 // Fähigkeiten: A0PZ (Bekehrung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent up to level <A0PZ,DataA5> for 30 seconds.
 }
 
 STRING 4160
@@ -27268,7 +27268,7 @@ Conversion
 STRING 4559
 // Zauberverstärker/Effekte: B02F (Bekehrung), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit wurde bekehrt.
+This unit was converted.
 }
 
 STRING 4560
@@ -28354,31 +28354,31 @@ STRING 4739
 STRING 4740
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden <A0A4,DataA1> Leben heilt. |nHält <A0A4,Dur1> Sekunden lang an.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden <A0A4,DataA1> Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.
 }
 
 STRING 4741
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area2> niedergeht und bei Verbündeten alle <A0A4,DataB2> Sekunden <A0A4,DataA2> Leben heilt. |nHält <A0A4,Dur2> Sekunden lang an.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area2> niedergeht und bei Verbündeten alle <A0A4,DataB2> Sekunden <A0A4,DataA2> Leben heilt. |nLasts <A0A4,Dur2> Sekunden lang an.
 }
 
 STRING 4742
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area3> niedergeht und bei Verbündeten alle <A0A4,DataB3> Sekunden <A0A4,DataA3> Leben heilt. |nHält <A0A4,Dur3> Sekunden lang an.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area3> niedergeht und bei Verbündeten alle <A0A4,DataB3> Sekunden <A0A4,DataA3> Leben heilt. |nLasts <A0A4,Dur3> Sekunden lang an.
 }
 
 STRING 4743
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area4> niedergeht und bei Verbündeten alle <A0A4,DataB4> Sekunden <A0A4,DataA4> Leben heilt. |nHält <A0A4,Dur4> Sekunden lang an.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area4> niedergeht und bei Verbündeten alle <A0A4,DataB4> Sekunden <A0A4,DataA4> Leben heilt. |nLasts <A0A4,Dur4> Sekunden lang an.
 }
 
 STRING 4744
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area5> niedergeht und bei Verbündeten alle <A0A4,DataB5> Sekunden <A0A4,DataA5> Leben heilt. |nHält <A0A4,Dur5> Sekunden lang an.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area5> niedergeht und bei Verbündeten alle <A0A4,DataB5> Sekunden <A0A4,DataA5> Leben heilt. |nLasts <A0A4,Dur5> Sekunden lang an.
 }
 
 STRING 4745
@@ -30154,7 +30154,7 @@ Baldars Ring
 STRING 5040
 // Einheiten: u00A (Deranor der Schreckliche), Name (Name (unam))
 {
-Deranor der Schreckliche
+Deranor the Terrible
 }
 
 STRING 5041
@@ -30166,13 +30166,13 @@ STRING 5041
 STRING 5042
 // Einheiten: n039 (Schattenriese), Name (Name (unam))
 {
-Schattenriese
+Shadow Giant
 }
 
 STRING 5043
 // Fähigkeiten: A0BI (Baldars Ring), Name (Name (anam))
 {
-Baldars Ring
+Baldar's Ring
 }
 
 STRING 5044
@@ -32057,7 +32057,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 5357
 // Fähigkeiten: A123 (Schaden erhöhen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung einer angewählten befreundeten Einheit um <A123,DataA1,%>% und die Rüstung um <A123,DataB1>. |nHält <A123,Dur1> Sekunden lang an.
+Erhöht die Schadenswirkung einer angewählten befreundeten Einheit um <A123,DataA1,%>% und die Rüstung um <A123,DataB1>. |nLasts <A123,Dur1> Sekunden lang an.
 }
 
 STRING 5358
@@ -38314,7 +38314,7 @@ Alpha
 STRING 6400
 // Gegenstände: I05M (Gift), Ubertip (Tooltipp - Erweitert (utub))
 {
-Fügt einem Gegner <A18U,DataD1> Schaden pro Sekunde zu, verringert seine Rüstung um <A18U,DataC1>, sein Angriffstempo um <A18U,DataB1,%> % und sein Bewegunstempo um <A18U,DataA1,%> %.|nHält <A18U,Dur1> Sekunden.
+Fügt einem Gegner <A18U,DataD1> Schaden pro Sekunde zu, verringert seine Rüstung um <A18U,DataC1>, sein Angriffstempo um <A18U,DataB1,%> % und sein Bewegunstempo um <A18U,DataA1,%> %.|nLasts <A18U,Dur1> Sekunden.
 }
 
 STRING 6401
@@ -45910,7 +45910,7 @@ Wohltat - Stufe 5
 STRING 7666
 // Fähigkeiten: A09Z (Erwachen des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC1> Punkte Schaden an. |nHält <A09Z,Dur1> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC1> Punkte Schaden an. |nLasts <A09Z,Dur1> Sekunden lang an.
 }
 
 STRING 7667
@@ -45994,7 +45994,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 7680
 // Fähigkeiten: A09Z (Erwachen des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nHält <A09Z,Dur2> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nLasts <A09Z,Dur2> Sekunden lang an.
 }
 
 STRING 7681
@@ -46078,7 +46078,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 7694
 // Fähigkeiten: A09Z (Erwachen des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC3> Punkte Schaden an. |nHält <A09Z,Dur3> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC3> Punkte Schaden an. |nLasts <A09Z,Dur3> Sekunden lang an.
 }
 
 STRING 7695
@@ -46162,7 +46162,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 7708
 // Fähigkeiten: A09Z (Erwachen des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC4> Punkte Schaden an. |nHält <A09Z,Dur4> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC4> Punkte Schaden an. |nLasts <A09Z,Dur4> Sekunden lang an.
 }
 
 STRING 7709
@@ -46246,7 +46246,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 7722
 // Fähigkeiten: A09Z (Erwachen des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC5> Punkte Schaden an. |nHält <A09Z,Dur5> Sekunden lang an.
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC5> Punkte Schaden an. |nLasts <A09Z,Dur5> Sekunden lang an.
 }
 
 STRING 7723
@@ -46852,7 +46852,7 @@ STRING 7822
 STRING 7823
 // Fähigkeiten: A0FV (Vergiftete Pfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht <A0FV,DataA1> Giftschaden pro Sekunde. |nHält <A0FV,Dur1> Sekunden lang an.
+Verursacht <A0FV,DataA1> Giftschaden pro Sekunde. |nLasts <A0FV,Dur1> Sekunden lang an.
 }
 
 STRING 7824
@@ -46864,19 +46864,19 @@ Vergiftete Pfeile
 STRING 7825
 // Fähigkeiten: A06M (Machtvernichtung), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldfurie)
+(Forest Fury)
 }
 
 STRING 7826
 // Fähigkeiten: A0K7 (Rückkopplung), EditorSuffix (Editor-Suffix (ansf))
 {
-(Walfurie)
+(Forest Fury)
 }
 
 STRING 7827
 // Fähigkeiten: A06N (Sicht), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldfurie)
+(Forest Fury)
 }
 
 STRING 7828
@@ -46894,7 +46894,7 @@ Taverne
 STRING 7830
 // Fähigkeiten: A075 (Vernichtungskugel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Wilde Kreatur)
+(Wild Creature)
 }
 
 STRING 7831
@@ -47062,7 +47062,7 @@ STRING 7857
 STRING 7858
 // Fähigkeiten: A0KC (Kampfrausch), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht bei einer befreundeten Einheit die Angriffsrate um <A0KC,DataA1,%>% und das Bewegungstempo um <A0KC,DataB1,%>%. |nHält <A0KC,Dur1> Sekunden lang an.
+Erhöht bei einer befreundeten Einheit die Angriffsrate um <A0KC,DataA1,%>% und das Bewegungstempo um <A0KC,DataB1,%>%. |nLasts <A0KC,Dur1> Sekunden lang an.
 }
 
 STRING 7859
@@ -49654,7 +49654,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 8290
 // Fähigkeiten: A0X6 (Pestkarren - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Pestkarren [|cffffcc00Stufe 1|r]
+Pest Barrow [|cffffcc00Level 1|r]
 }
 
 STRING 8291
@@ -49666,7 +49666,7 @@ STRING 8291
 STRING 8292
 // Fähigkeiten: A0X6 (Pestkarren - Stufe 1), Name (Name (anam))
 {
-Pestkarren - Stufe 1
+Pest Barrow - Level 1
 }
 
 STRING 8293
@@ -49690,7 +49690,7 @@ STRING 8295
 STRING 8296
 // Fähigkeiten: A0X7 (Pestkarren - Stufe 1), Name (Name (anam))
 {
-Pestkarren - Stufe 1
+Pest Barrow - Level 1
 }
 
 STRING 8297
@@ -51286,7 +51286,7 @@ Manaexplosion [|cffffcc00Stufe 3|r]
 STRING 8562
 // Fähigkeiten: A0JF (Wohltat - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nHält <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
 }
 
 STRING 8563
@@ -51304,7 +51304,7 @@ Aura der Rücknahme
 STRING 8565
 // Fähigkeiten: A0JG (Wohltat - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nHält <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
 }
 
 STRING 8566
@@ -51388,7 +51388,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8579
 // Fähigkeiten: A0JH (Wohltat - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nHält <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
 }
 
 STRING 8580
@@ -51472,7 +51472,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8593
 // Fähigkeiten: A0JI (Wohltat - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nHält <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
 }
 
 STRING 8594
@@ -51556,7 +51556,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8607
 // Fähigkeiten: A0JJ (Wohltat - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nHält <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
 }
 
 STRING 8608
@@ -51850,31 +51850,31 @@ Aura der Autorität [|cffffcc00Stufe 5|r]
 STRING 8656
 // Fähigkeiten: A0ED (Zorn des Waldes - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
 }
 
 STRING 8657
 // Fähigkeiten: A0EE (Zorn des Waldes - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
 }
 
 STRING 8658
 // Fähigkeiten: A0EF (Zorn des Waldes - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
 }
 
 STRING 8659
 // Fähigkeiten: A0EG (Zorn des Waldes - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
 }
 
 STRING 8660
 // Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
 }
 
 STRING 8661
@@ -53056,7 +53056,7 @@ STRING 8856
 STRING 8857
 // Fähigkeiten: A0N5 (Ruf des Nordens), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wigberht brüllt einen Kriegsruf hinaus, der die Kampfkraft seiner Verbündeten stärkt. Gibt in der Nähe befindlichen befreundeten Einheiten einen Schaden-Bonus von <A0N5,DataA1,%>%. |nHält <A0N5,Dur1> Sekunden lang an.
+Wigberht brüllt einen Kriegsruf hinaus, der die Kampfkraft seiner Verbündeten stärkt. Gibt in der Nähe befindlichen befreundeten Einheiten einen Schaden-Bonus von <A0N5,DataA1,%>%. |nLasts <A0N5,Dur1> Sekunden lang an.
 }
 
 STRING 8858
@@ -53336,7 +53336,7 @@ STRING 8898
 STRING 8899
 // Fähigkeiten: A0N6 (Giftige Klingen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht <A0N6,DataA1> Giftschaden pro Sekunde. |nHält <A0N6,Dur1> Sekunden lang an.
+Verursacht <A0N6,DataA1> Giftschaden pro Sekunde. |nLasts <A0N6,Dur1> Sekunden lang an.
 }
 
 STRING 8900
@@ -53438,7 +53438,7 @@ Hindert alle Feinde in einem Zielgebiet daran, <A0NA,Dur1> Sekunden lang Zauber 
 STRING 8916
 // Einheiten: n03N (Skelett-Bogenschütze), Name (Name (unam))
 {
-Skelett-Bogenschütze
+Skeleton Archer
 }
 
 STRING 8917
@@ -53462,13 +53462,13 @@ Reduziert bei Gegnern im Umkreis von <A05S,Area1> die Manaregenerationsrate um <
 STRING 8920
 // Fähigkeiten: A05T (Botschaft des Totenreichs), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt eine Barriere, die verhindert, dass Zauber eine angewählte Einheit beeinflussen. |nHält <A05T,Dur1> Sekunden lang an.
+Erzeugt eine Barriere, die verhindert, dass Zauber eine angewählte Einheit beeinflussen. |nLasts <A05T,Dur1> Sekunden lang an.
 }
 
 STRING 8921
 // Fähigkeiten: A02U (Todesruf), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht bei einer befreundeten Einheit die Angriffsrate um <A02U,DataA1,%>% und das Bewegungstempo um <A02U,DataB1,%>%. |nHält <A02U,Dur1> Sekunden lang an.
+Erhöht bei einer befreundeten Einheit die Angriffsrate um <A02U,DataA1,%>% und das Bewegungstempo um <A02U,DataB1,%>%. |nLasts <A02U,Dur1> Sekunden lang an.
 }
 
 STRING 8922
@@ -53486,7 +53486,7 @@ Lässt <A02V,DataA1> Skelette aus einer Leiche entstehen.
 STRING 8924
 // Fähigkeiten: A02W (Fluch), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einer angewählten feindlichen Einheit die Lebensessenz, indem ihr <A02W,DataA1> Trefferpunkte pro Sekunde entzogen werden, die dann der Zaubernde erhält. |nHält <A02W,Dur1> Sekunden lang an.
+Entzieht einer angewählten feindlichen Einheit die Lebensessenz, indem ihr <A02W,DataA1> Trefferpunkte pro Sekunde entzogen werden, die dann der Zaubernde erhält. |nLasts <A02W,Dur1> Sekunden lang an.
 }
 
 STRING 8925
@@ -55042,7 +55042,7 @@ STRING 9183
 STRING 9184
 // Gegenstände: I02T (Vampirkette), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ruft einen Schwarm mit <A03X,DataA1> Fledermäusen herbe, die <A03X,DataD1,%>% ihres verursachten Schadens als Leben auf den Träger übertragen, wobei maximal <A03X,DataC1> Fledermäuse einen Gegner angreifen.|nHält <A03X,Dur1> Sekunden.|nErhöht außerdem das Wissen um <AIi4,DataB1>.
+Ruft einen Schwarm mit <A03X,DataA1> Fledermäusen herbe, die <A03X,DataD1,%>% ihres verursachten Schadens als Leben auf den Träger übertragen, wobei maximal <A03X,DataC1> Fledermäuse einen Gegner angreifen.|nLasts <A03X,Dur1> Sekunden.|nErhöht außerdem das Wissen um <AIi4,DataB1>.
 }
 
 STRING 9185
@@ -58716,19 +58716,19 @@ Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten 
 STRING 9790
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %. |nHält <A0A1,Dur1> Sekunden lang an.
+Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %. |nLasts <A0A1,Dur1> Sekunden lang an.
 }
 
 STRING 9791
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A2,DataA2,%> %. |nHält <A0A2,Dur2> Sekunden lang an.
+Erhöht die Schadenswirkung eines Verbündeten um <A0A2,DataA2,%> %. |nLasts <A0A2,Dur2> Sekunden lang an.
 }
 
 STRING 9792
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A3,DataA3,%> %. |nHält <A0A3,Dur3> Sekunden lang an.
+Erhöht die Schadenswirkung eines Verbündeten um <A0A3,DataA3,%> %. |nLasts <A0A3,Dur3> Sekunden lang an.
 }
 
 STRING 9793
@@ -58799,7 +58799,7 @@ Trommelhöhle
 STRING 9804
 // Einheiten: H01C (Nordmann), Name (Name (unam))
 {
-Nordmann
+Norseman
 }
 
 STRING 9805
@@ -59039,19 +59039,19 @@ Eine Zauberspruchrolle der Zauberin Sisgard, die einen Pfeilhagel über dem Zaub
 STRING 9844
 // Fähigkeiten: A0G7 (Arkaner Schutz - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
 }
 
 STRING 9845
 // Fähigkeiten: A0G8 (Arkaner Schutz - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
 }
 
 STRING 9846
 // Fähigkeiten: A0G9 (Arkaner Schutz - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
 }
 
 STRING 9847
@@ -59063,13 +59063,13 @@ Der Zauberer erzeugt eine Kuppel und verringert den von ihm und seinen Verbünde
 STRING 9848
 // Fähigkeiten: A0GA (Arkaner Schutz - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
 }
 
 STRING 9849
 // Fähigkeiten: A0GB (Arkaner Schutz - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
 }
 
 STRING 9850
@@ -67782,25 +67782,25 @@ Der Drachentöter erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,
 STRING 11301
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A4,DataA4,%> %. |nHält <A0A4,Dur4> Sekunden lang an.
+Erhöht die Schadenswirkung eines Verbündeten um <A0A4,DataA4,%> %. |nLasts <A0A4,Dur4> Sekunden lang an.
 }
 
 STRING 11302
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A5,DataA5,%> %. |nHält <A0A5,Dur5> Sekunden lang an.
+Erhöht die Schadenswirkung eines Verbündeten um <A0A5,DataA5,%> %. |nLasts <A0A5,Dur5> Sekunden lang an.
 }
 
 STRING 11303
 // Fähigkeiten: A0DR (Waldholzfäuste - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nHält <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
 }
 
 STRING 11304
 // Fähigkeiten: A0DS (Waldholzfäuste - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nHält <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
 }
 
 STRING 11305
@@ -69114,31 +69114,31 @@ Der Waldläufer sprintet und erhöht somit sein Bewegungstempo 17 Sekunden lang 
 STRING 11523
 // Fähigkeiten: A10W (Sprinten - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Hält 5 Sekunden.|n|cffffcc00Stufe 2|r - Hält 8 Sekunden.|n|cffffcc00Stufe 3|r - Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Hält 14 Sekunden.|n|cffffcc00Stufe 5|r - Hält 17 Sekunden.
+Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
 }
 
 STRING 11524
 // Fähigkeiten: A10X (Sprinten - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Hält 5 Sekunden.|n|cffffcc00Stufe 2|r - Hält 8 Sekunden.|n|cffffcc00Stufe 3|r - Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Hält 14 Sekunden.|n|cffffcc00Stufe 5|r - Hält 17 Sekunden.
+Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
 }
 
 STRING 11525
 // Fähigkeiten: A10Y (Sprinten - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Hält 5 Sekunden.|n|cffffcc00Stufe 2|r - Hält 8 Sekunden.|n|cffffcc00Stufe 3|r - Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Hält 14 Sekunden.|n|cffffcc00Stufe 5|r - Hält 17 Sekunden.
+Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
 }
 
 STRING 11526
 // Fähigkeiten: A10Z (Sprinten - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Hält 5 Sekunden.|n|cffffcc00Stufe 2|r - Hält 8 Sekunden.|n|cffffcc00Stufe 3|r - Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Hält 14 Sekunden.|n|cffffcc00Stufe 5|r - Hält 17 Sekunden.
+Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
 }
 
 STRING 11527
 // Fähigkeiten: A110 (Sprinten - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Hält 5 Sekunden.|n|cffffcc00Stufe 2|r - Hält 8 Sekunden.|n|cffffcc00Stufe 3|r - Hält 11 Sekunden.|n|cffffcc00Stufe 4|r - Hält 14 Sekunden.|n|cffffcc00Stufe 5|r - Hält 17 Sekunden.
+Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
 }
 
 STRING 11528
@@ -69773,61 +69773,61 @@ Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3
 STRING 11633
 // Fähigkeiten: A01A (Inferno), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 30 Schaden pro Sekunde verbrennt.|nHält 6 Sekunden.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 30 Schaden pro Sekunde verbrennt.|nLasts 6 Sekunden.
 }
 
 STRING 11634
 // Fähigkeiten: A01A (Inferno), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 40 Schaden pro Sekunde verbrennt.|nHält 6 Sekunden.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 40 Schaden pro Sekunde verbrennt.|nLasts 6 Sekunden.
 }
 
 STRING 11635
 // Fähigkeiten: A01A (Inferno), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 50 Schaden pro Sekunde verbrennt.|nHält 6 Sekunden.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 50 Schaden pro Sekunde verbrennt.|nLasts 6 Sekunden.
 }
 
 STRING 11636
 // Fähigkeiten: A01A (Inferno), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 60 Schaden pro Sekunde verbrennt.|nHält 6 Sekunden.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 60 Schaden pro Sekunde verbrennt.|nLasts 6 Sekunden.
 }
 
 STRING 11637
 // Fähigkeiten: A01A (Inferno), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 70 Schaden pro Sekunde verbrennt.|nHält 6 Sekunden.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 für 70 Schaden pro Sekunde verbrennt.|nLasts 6 Sekunden.
 }
 
 STRING 11638
 // Fähigkeiten: A0KF (Inferno - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nHält 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nLasts 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
 }
 
 STRING 11639
 // Fähigkeiten: A0KG (Inferno - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nHält 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nLasts 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
 }
 
 STRING 11640
 // Fähigkeiten: A0KH (Inferno - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nHält 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nLasts 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
 }
 
 STRING 11641
 // Fähigkeiten: A0KI (Inferno - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nHält 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nLasts 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
 }
 
 STRING 11642
 // Fähigkeiten: A0KJ (Inferno - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nHält 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
+Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nLasts 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
 }
 
 STRING 11643
@@ -71101,19 +71101,19 @@ Standfestigkeit - Stufe 5
 STRING 11854
 // Fähigkeiten: A0DT (Waldholzfäuste - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nHält <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
 }
 
 STRING 11855
 // Fähigkeiten: A0DU (Waldholzfäuste - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nHält <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
 }
 
 STRING 11856
 // Fähigkeiten: A0DV (Waldholzfäuste - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nHält <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
 }
 
 STRING 11857
@@ -72253,61 +72253,61 @@ Spruchrolle des Sammlers
 STRING 12046
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|nHält maximal <A12R,Dur1> Sekuden.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|nLasts maximal <A12R,Dur1> Sekuden.
 }
 
 STRING 12047
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A22R,DataC2> Punkten.|nHält maximal <A22R,Dur2> Sekuden.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A22R,DataC2> Punkten.|nLasts maximal <A22R,Dur2> Sekuden.
 }
 
 STRING 12048
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A32R,DataC3> Punkten.|nHält maximal <A32R,Dur3> Sekuden.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A32R,DataC3> Punkten.|nLasts maximal <A32R,Dur3> Sekuden.
 }
 
 STRING 12049
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A42R,DataC4> Punkten.|nHält maximal <A42R,Dur4> Sekuden.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A42R,DataC4> Punkten.|nLasts maximal <A42R,Dur4> Sekuden.
 }
 
 STRING 12050
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A52R,DataC5> Punkten.|nHält maximal <A52R,Dur5> Sekuden.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A52R,DataC5> Punkten.|nLasts maximal <A52R,Dur5> Sekuden.
 }
 
 STRING 12051
 // Fähigkeiten: A12T (Lauern - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nHält maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
 }
 
 STRING 12052
 // Fähigkeiten: A12U (Lauern - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nHält maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
 }
 
 STRING 12053
 // Fähigkeiten: A12V (Lauern - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nHält maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
 }
 
 STRING 12054
 // Fähigkeiten: A12W (Lauern - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nHält maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
 }
 
 STRING 12055
 // Fähigkeiten: A12X (Lauern - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nHält maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
 }
 
 STRING 12056
@@ -72865,7 +72865,7 @@ STRING 12147
 STRING 12148
 // Fähigkeiten: A13H (Verwandlung), EditorSuffix (Editor-Suffix (ansf))
 {
-(Wilde Kreatur)
+(Wild Creature)
 }
 
 STRING 12149
@@ -72913,7 +72913,7 @@ Riesen beschwören
 STRING 12156
 // Fähigkeiten: A13M (Riesen beschwören), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldfurie)
+(Forest Fury)
 }
 
 STRING 12157
@@ -73363,7 +73363,7 @@ Gift
 STRING 12231
 // Fähigkeiten: A15Z (Gift), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht <A15Z,DataA1> Giftschaden pro Sekunde. |nHält <A15Z,Dur1> Sekunden lang an.
+Verursacht <A15Z,DataA1> Giftschaden pro Sekunde. |nLasts <A15Z,Dur1> Sekunden lang an.
 }
 
 STRING 12232
@@ -73609,7 +73609,7 @@ STRING 12271
 STRING 12272
 // Fähigkeiten: A161 (Giftstachel), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Schleudert eine Säureflasche auf ein Ziel, die beim Einschlag zerbricht und dabei in der Nähe befindliche feindliche Einheiten mit starker Säure bespritzt.|n|nVerringert die Rüstung um <A161,DataC1> Punkte; richtet beim Primärziel pro Sekunde <A161,DataD1> Punkte Schaden an; fügt in der Nähe befindlichen Zielen etwas weniger Schaden zu.|nHält <A161,Dur1> Sekunden lang an.
+Schleudert eine Säureflasche auf ein Ziel, die beim Einschlag zerbricht und dabei in der Nähe befindliche feindliche Einheiten mit starker Säure bespritzt.|n|nVerringert die Rüstung um <A161,DataC1> Punkte; richtet beim Primärziel pro Sekunde <A161,DataD1> Punkte Schaden an; fügt in der Nähe befindlichen Zielen etwas weniger Schaden zu.|nLasts <A161,Dur1> Sekunden lang an.
 }
 
 STRING 12273
@@ -77204,7 +77204,7 @@ Absteigen
 STRING 12871
 // Einheiten: n04G (Wilder Bärenmensch), Name (Name (unam))
 {
-Wilder Bärenmensch
+Wild Bear Man
 }
 
 STRING 12872
@@ -77420,7 +77420,7 @@ Schwächen
 STRING 12907
 // Fähigkeiten: A15W (Schwächen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verringert die Schadenswirkung einer angewählten befreundeten Einheit um <A15W,DataA1,%> % und die Rüstung um <A15W,DataB1>. |nHält <A15W,Dur1> Sekunden lang an.
+Verringert die Schadenswirkung einer angewählten befreundeten Einheit um <A15W,DataA1,%> % und die Rüstung um <A15W,DataB1>. |nLasts <A15W,Dur1> Sekunden lang an.
 }
 
 STRING 12908
@@ -77432,7 +77432,7 @@ STRING 12908
 STRING 12909
 // Fähigkeiten: A15X (Blitzschild), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schild aus elektrischer Energie um die angewählte Einheit herum, der pro Sekunde <A15X,DataA1> Punkte Schaden bei den sie umgebenden Einheiten verursacht. |nHält <A15X,Dur1> Sekunden lang an.
+Erzeugt einen Schild aus elektrischer Energie um die angewählte Einheit herum, der pro Sekunde <A15X,DataA1> Punkte Schaden bei den sie umgebenden Einheiten verursacht. |nLasts <A15X,Dur1> Sekunden lang an.
 }
 
 STRING 12910
@@ -77444,7 +77444,7 @@ STRING 12910
 STRING 12911
 // Fähigkeiten: A15Y (Gebrüll), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt in der Nähe befindlichen befreundeten Einheiten einen Schaden-Bonus von <A15Y,DataA1,%>%. |nHält <A15Y,Dur1> Sekunden lang an.
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Schaden-Bonus von <A15Y,DataA1,%>%. |nLasts <A15Y,Dur1> Sekunden lang an.
 }
 
 STRING 12912
@@ -77535,31 +77535,31 @@ STRING 12925
 STRING 12926
 // Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Hält <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Hält <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Hält <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Hält <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Hält <A0A6,Dur5> Sekunden.
+Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Lasts <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Lasts <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Lasts <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Lasts <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Lasts <A0A6,Dur5> Sekunden.
 }
 
 STRING 12927
 // Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Hält <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Hält <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Hält <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Hält <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Hält <A0A6,Dur5> Sekunden.
+Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Lasts <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Lasts <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Lasts <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Lasts <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Lasts <A0A6,Dur5> Sekunden.
 }
 
 STRING 12928
 // Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Hält <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Hält <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Hält <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Hält <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Hält <A0A6,Dur5> Sekunden.
+Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Lasts <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Lasts <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Lasts <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Lasts <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Lasts <A0A6,Dur5> Sekunden.
 }
 
 STRING 12929
 // Fähigkeiten: A0WV (Verbannen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Hält <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Hält <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Hält <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Hält <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Hält <A0A6,Dur5> Sekunden.
+Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Lasts <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Lasts <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Lasts <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Lasts <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Lasts <A0A6,Dur5> Sekunden.
 }
 
 STRING 12930
 // Fähigkeiten: A0WW (Verbannen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Hält <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Hält <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Hält <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Hält <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Hält <A0A6,Dur5> Sekunden.
+Hindert alle Gegner in einem Gebiet von <A0A6,Area1> in einer Entfernung von maximal <A0A6,Rng1> daran, eine Zeit lang Zauber zu wirken.|nDie Dauer erhöht sich mit der Stufe. |n|n|cffffcc00Stufe 1|r - Lasts <A0A6,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Lasts <A0A6,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Lasts <A0A6,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Lasts <A0A6,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Lasts <A0A6,Dur5> Sekunden.
 }
 
 STRING 12931
@@ -79610,7 +79610,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 13271
 // Fähigkeiten: A13P (Epidemie - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25.|r|nAlle Gegner im Einflussbereich erleiden alle 2 Sekunden 50 Punkte Schaden. Stirbt ein Gegner durch diese Fähigkeit, so breitet sich der Effekt auf weitere Gegner im Umkreis aus.|nHält 30 Sekunden.|n|nBenötigt Stufe 25.
+|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25.|r|nAlle Gegner im Einflussbereich erleiden alle 2 Sekunden 50 Punkte Schaden. Stirbt ein Gegner durch diese Fähigkeit, so breitet sich der Effekt auf weitere Gegner im Umkreis aus.|nLasts 30 Sekunden.|n|nBenötigt Stufe 25.
 }
 
 STRING 13272
@@ -79826,7 +79826,7 @@ STRING 13306
 STRING 13307
 // Fähigkeiten: A13N (Epidemie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimatumzauber 2|r|nAlle Gegner im Einflussbereich erleiden alle 2 Sekunden 50 Punkte Schaden. Stirbt ein Gegner durch diese Fähigkeit, so breitet sich der Effekt auf weitere Gegner im Umkreis aus.|nHält 30 Sekunden.
+|cffffcc00Ultimatumzauber 2|r|nAlle Gegner im Einflussbereich erleiden alle 2 Sekunden 50 Punkte Schaden. Stirbt ein Gegner durch diese Fähigkeit, so breitet sich der Effekt auf weitere Gegner im Umkreis aus.|nLasts 30 Sekunden.
 }
 
 STRING 13308
@@ -79862,7 +79862,7 @@ Beschwört aus <A0FJ,DataA5> Kadavern in der Umgebung untote Diener, die den Nek
 STRING 13313
 // Fähigkeiten: A08K (Todesbote), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Pestkarren lädt alle <A08K,Dur1> Sekunden den Kadaver eines pestkranken Dorfbewohners auf.|nEs können maximal <S004,DataA1> beschworene Kadaver transportiert werden.
+The Pest Barrow loads a corpse of an plague-stricken villager on all <A08K,Dur1> seconds.|nThere can be transported <S004,DataA1> corpses at most.
 }
 
 STRING 13314
@@ -79898,13 +79898,13 @@ Beschwört aus Kadavern in der Umgebung untote Diener, die den Nekromanten eine 
 STRING 13319
 // Fähigkeiten: A0VK (Pestkarren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nBeschwört dauerhaft einen Pestkarren, der Leichen transportieren kann und selbst Leichen erzeugt.
+|cffffcc00Basic Spell|r|nSummons a Pest Barrow permantly which is able to transport corpses and which creates corpses itself.
 }
 
 STRING 13320
 // Fähigkeiten: A0X6 (Pestkarren - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nBeschwört dauerhaft einen Pestkarren, der Leichen transportieren kann und selbst Leichen erzeugt.
+|cffffcc00Basic Spell|r|nSummons a Pest Barrow permantly which is able to transport corpses and which creates corpses itself.
 }
 
 STRING 13321
@@ -81542,7 +81542,7 @@ Stellt verlorenes Mana wieder her.|n|nBenötigte Rohstoffe:|n- Manakraut
 STRING 13595
 // Fähigkeiten: A18T (Wächter beschwören), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört <A18T,DataB1> Wächter. |nHält <A18T,Dur1> Sekunden lang an. |n|n|cffffcc00Greift Land-Einheiten an.|r
+Beschwört <A18T,DataB1> Wächter. |nLasts <A18T,Dur1> Sekunden lang an. |n|n|cffffcc00Greift Land-Einheiten an.|r
 }
 
 STRING 13596
@@ -92540,7 +92540,7 @@ STRING 15437
 STRING 15438
 // Fähigkeiten: A1B2 (Die Macht Tfjahns), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft alle <A1B2,DataB1> Sekunden eine Welle aus herabfallenden Sternen herbei, die in der Nähe befindliche feindliche Einheiten verletzt. Jede Welle richtet <A1B2,DataA1> Punkte Schaden an. |nHält <A1B2,Dur1> Sekunden lang an.
+Ruft alle <A1B2,DataB1> Sekunden eine Welle aus herabfallenden Sternen herbei, die in der Nähe befindliche feindliche Einheiten verletzt. Jede Welle richtet <A1B2,DataA1> Punkte Schaden an. |nLasts <A1B2,Dur1> Sekunden lang an.
 }
 
 STRING 15439
@@ -92564,7 +92564,7 @@ STRING 15441
 STRING 15442
 // Fähigkeiten: A1B4 (Erdbeben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt den Boden beben und aufreißen, wodurch im Einflussbereich <A1B4,DataB1> Punkte Schaden pro Sekunde an Gebäuden entstehen und Einheiten um <A1B4,DataC1,%>% verlangsamt werden. |nHält <A1B4,Dur1> Sekunden lang an.
+Lässt den Boden beben und aufreißen, wodurch im Einflussbereich <A1B4,DataB1> Punkte Schaden pro Sekunde an Gebäuden entstehen und Einheiten um <A1B4,DataC1,%>% verlangsamt werden. |nLasts <A1B4,Dur1> Sekunden lang an.
 }
 
 STRING 15443
@@ -92606,7 +92606,7 @@ STRING 15448
 STRING 15449
 // Einheiten: n05J (Waldgeist), Name (Name (unam))
 {
-Waldgeist
+Forest Spirit
 }
 
 STRING 15450
@@ -92618,7 +92618,7 @@ STRING 15450
 STRING 15451
 // Einheiten: n05K (Waldgeist), Name (Name (unam))
 {
-Waldgeist
+Forest Spirit
 }
 
 STRING 15452
@@ -92630,7 +92630,7 @@ STRING 15452
 STRING 15453
 // Einheiten: n05L (Berserkerin), Name (Name (unam))
 {
-Berserkerin
+Berserker
 }
 
 STRING 15454
@@ -94892,19 +94892,19 @@ Beutezug - Stufe 5
 STRING 15830
 // Fähigkeiten: A0VO (Horn des Kampfes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt in der Nähe befindlichen befreundeten Einheiten einen Schaden-Bonus von <A0VO,DataA1,%>%. |nHält <A0VO,Dur1> Sekunden lang an.
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Schaden-Bonus von <A0VO,DataA1,%>%. |nLasts <A0VO,Dur1> Sekunden lang an.
 }
 
 STRING 15831
 // Fähigkeiten: A0VP (Horn des Schutzes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt in der Nähe befindlichen befreundeten Einheiten einen Rüstungs-Bonus von <A0VP,DataB1>. |nHält <A0VP,Dur1> Sekunden lang an.
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Rüstungs-Bonus von <A0VP,DataB1>. |nLasts <A0VP,Dur1> Sekunden lang an.
 }
 
 STRING 15832
 // Fähigkeiten: A0VQ (Horn des Lebens), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt in der Nähe befindlichen befreundeten Einheiten einen Lebensregenerations-Bonus von <A0VQ,DataC1>. |nHält <A0VQ,Dur1> Sekunden lang an.
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Lebensregenerations-Bonus von <A0VQ,DataC1>. |nLasts <A0VQ,Dur1> Sekunden lang an.
 }
 
 STRING 15833
@@ -95596,31 +95596,31 @@ Der Elementarmagier schließt einen Gegner bis zu 4 Sekunden in einem Erdgefäng
 STRING 15953
 // Fähigkeiten: A0ZA (Erdgefängnis - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
 }
 
 STRING 15954
 // Fähigkeiten: A0ZB (Erdgefängnis - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
 }
 
 STRING 15955
 // Fähigkeiten: A0ZC (Erdgefängnis - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
 }
 
 STRING 15956
 // Fähigkeiten: A0ZD (Erdgefängnis - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
 }
 
 STRING 15957
 // Fähigkeiten: A0ZE (Erdgefängnis - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
 }
 
 STRING 15958
