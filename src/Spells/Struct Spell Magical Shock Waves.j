@@ -95,6 +95,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			local unit caster = this.character().unit()
 			local AGroup targets = this.targets()
 			local AIntegerVector damageRecorders
+			local AEffectVector effects
 			local ADamageRecorder damageRecorder
 			local integer i
 			local unit target
@@ -103,6 +104,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			local terraindeformation array terrainDeformation
 			if (not targets.units().empty()) then
 				set damageRecorders = AIntegerVector.create()
+				set effects = AEffectVector.create()
 				set i = 0
 				loop
 					exitwhen (i == targets.units().size())
@@ -112,6 +114,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 					call DmdfHashTable.global().setInteger("SpellMagicalShockWaves:" + I2S(damageRecorder), "this", this)
 					call damageRecorder.setOnDamageAction(thistype.onDamageAction)
 					call damageRecorders.pushBack(damageRecorder)
+					call effects.pushBack(AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "origin"))
 					set target = null
 					set i = i + 1
 				endloop
@@ -133,6 +136,8 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 							call DmdfHashTable.global().removeInteger("SpellMagicalShockWaves:" + I2S(damageRecorders[i]), "this")
 							call ADamageRecorder(damageRecorders[i]).destroy()
 							call damageRecorders.erase(i)
+							call DestroyEffect(effects[i])
+							set effects[i] = null
 						else
 							set i = i + 1
 						endif
@@ -147,10 +152,13 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 					set damageRecorder = ADamageRecorder(damageRecorders[i])
 					call DmdfHashTable.global().removeInteger("SpellMagicalShockWaves:" + I2S(damageRecorder), "this")
 					call damageRecorder.destroy()
+					call DestroyEffect(effects[i])
+					set effects[i] = null
 					set i = i + 1
 				endloop
 
 				call damageRecorders.destroy()
+				call effects.destroy()
 			endif
 			set caster = null
 			call targets.destroy()

@@ -232,7 +232,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_torch
 		private static ItemType m_bannerOfTheBlackLegion
 		private static ItemType m_bannerOfTheWhiteLegion
-		private static ItemType m_circleOfElements
+		private static RangeItemType m_circleOfElements
 		private static ItemType m_spear
 		// Ricman's items
 		private static ItemType m_nasalHelmet
@@ -459,7 +459,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_bannerOfTheWhiteLegion = ItemType.createSimple('I01C', ItemType.equipmentTypeAmulet)
 			call thistype.m_bannerOfTheWhiteLegion.addAbility('A1AG', true)
 
-			set thistype.m_circleOfElements = ItemType.create('I02H', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, Classes.elementalMage())
+			set thistype.m_circleOfElements = RangeItemType.create('I02H', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, Classes.elementalMage())
 			call thistype.m_circleOfElements.addAbility('A08A', true)
 			call thistype.m_circleOfElements.addAbility('AIrm', true)
 			call thistype.m_circleOfElements.addAbility('AIi6', true)

@@ -34,7 +34,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 			if (wait(1.0)) then
 				return
 			endif
-			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, thistype.actor(), 0.20)
+			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, thistype.actor(), 0.50)
 
 			if (wait(0.50)) then
 				return
