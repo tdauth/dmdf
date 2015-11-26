@@ -11,8 +11,8 @@ library StructGameTreeTransparency initializer init requires Asl
 	endstruct
 
 	globals
-		private constant real OCCLUSION_RADIUS = 700.0 //defines the radius around the unit in which doodads are occluded
-		private constant real CAMERA_TARGET_RADIUS = 1000.0 //defines the radius around the camera target in which doodads are occluded
+		private constant real OCCLUSION_RADIUS = 1200.0 //defines the radius around the unit in which doodads are occluded
+		private constant real CAMERA_TARGET_RADIUS = 1200.0 //defines the radius around the camera target in which doodads are occluded
 
 		private timer Timer
 		private integer array raw

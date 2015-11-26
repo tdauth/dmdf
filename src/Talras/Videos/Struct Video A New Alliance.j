@@ -26,21 +26,21 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Was haben sie mir zu berichten?"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tre("Was haben sie mir zu berichten?", "What do they have to tell me?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_1, true, 0.0)
-			call TransmissionFromUnit(thistype.actor(), tr("Die Nordmänner sind bereit sich mit Euch zu verbünden. Sie werden Euch beim Kampf gegen die Dunkelelfen und Orks unterstützen￼."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Die Nordmänner sind bereit sich mit Euch zu verbünden. Sie werden Euch beim Kampf gegen die Dunkelelfen und Orks unterstützen￼.", "The norsemen are ready to ally with you. They will support you in the fight against the Dark Elves and Orcs."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_0, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Dies freut mich zu hören. Jedoch brauche ich noch mehr Verbündete, um eine echte Chance gegen unseren Feind zu haben. Markward wird ihnen ihren nächsten Auftrag erteilen und sie für ih￼r￼e Dienste entlohnen."), gg_snd_Heimrich19)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tre("Dies freut mich zu hören. Jedoch brauche ich noch mehr Verbündete, um eine echte Chance gegen unseren Feind zu haben. Markward wird ihnen ihren nächsten Auftrag erteilen und sie für ih￼r￼e Dienste entlohnen.", "I am glad to hear this. However, I still need more allies to have a real chance against our enemy. Markward will give them their next mission and pay them for their services."), gg_snd_Heimrich19)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich19))) then
 				return
@@ -67,19 +67,19 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorMarkward), thistype.actor())
 			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorMarkward))
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_0, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Das war gute Arbeit. Mir ist von dem Kampf zu Ohren gekommen. Mit den Nordmännern haben wir ein paar starke Verbündete gewonnen."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Das war gute Arbeit. Mir ist von dem Kampf zu Ohren gekommen. Mit den Nordmännern haben wir ein paar starke Verbündete gewonnen.", "That was good work. It has come to my ears from the battle. With the norsemen we have gained some strong allies."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Leider reicht das dem Herzog nicht aus. Er möchte absolut sicher gehen und deshalb benötigt er noch mehr Unterstützung. Uns ist von einer Hochelfin zu Ohren gekommen, die durch diese Ländereien zieht. Durch sie könnten wir Kontakte zu den Hochelfen knüpfen."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Leider reicht das dem Herzog nicht aus. Er möchte absolut sicher gehen und deshalb benötigt er noch mehr Unterstützung. Uns ist von einer Hochelfin zu Ohren gekommen, die durch diese Ländereien zieht. Durch sie könnten wir Kontakte zu den Hochelfen knüpfen.", "Unfortunately, it is enough for the duke. He wants to be absolutely sure and that's why he still needs more support. A high elf came to our attention who runs through these lands. Through her we could make contact with the High Elves."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Mir scheint es so als würden unsere eigenen Leute uns in diesem Kampf gar im Stich lassen. Der König hat bis jetzt keinerlei Unterstützung gesandt."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Mir scheint es so als würden unsere eigenen Leute uns in diesem Kampf gar im Stich lassen. Der König hat bis jetzt keinerlei Unterstützung gesandt.", "It seems to me as if our own people leave us in the lurch in this struggle. The king has not sent any support so far."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

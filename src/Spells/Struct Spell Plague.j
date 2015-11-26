@@ -2,7 +2,7 @@
 library StructSpellsSpellPlague requires Asl, StructGameClasses, StructGameSpell
 
 	struct SpellPlague extends Spell
-		public static constant integer abilityId = 'A0HG'
+		public static constant integer abilityId = 'A1DD'
 		public static constant integer favouriteAbilityId = 'A0HM'
 		public static constant integer classSelectionAbilityId = 'A0HN'
 		public static constant integer classSelectionGrimoireAbilityId = 'A0HS'
