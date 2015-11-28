@@ -23,9 +23,6 @@ static if (DMDF_CREDITS) then
 endif
 		private Grimoire m_grimoire
 		private Tutorial m_tutorial
-static if (DMDF_CHARACTER_STATS) then
-		private CharacterStats m_characterStats
-endif
 static if (DMDF_INFO_LOG) then
 		private InfoLog m_infoLog
 endif
@@ -34,6 +31,11 @@ endif
 		private trigger m_workerTrigger
 		private unit m_worker
 		private boolean m_isMorphed
+		/**
+		 * Since the Villager255 model is used, animation indices have to be set manually depending on the weapon.
+		 * In this trigger the attack animation of the character is determined.
+		 */
+		private trigger m_animationOrderTrigger
 
 		// dynamic members
 
@@ -111,15 +113,6 @@ endif
 
 		public method tutorial takes nothing returns Tutorial
 			return this.m_tutorial
-		endmethod
-
-/// @todo static ifs do not prevent import of files, otherwise this wouldn't be required
-		public method characterStats takes nothing returns CharacterStats
-static if (DMDF_CHARACTER_STATS) then
-			return this.m_characterStats
-else
-			return 0
-endif
 		endmethod
 
 /// @todo static ifs do not prevent import of files, otherwise info log wouldn't require this method
@@ -411,6 +404,61 @@ endif
 			call TriggerAddAction(this.m_workerTrigger, function thistype.triggerActionWorker)
 			call DmdfHashTable.global().setHandleInteger(this.m_workerTrigger, "this", this)
 		endmethod
+		
+		private static method triggerConditionOrder takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			return this.unit() == GetAttacker()
+		endmethod
+		
+		private static method triggerActionOrder takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local AIntegerVector values = 0
+			if (not this.m_isMorphed) then
+				// Attack 1 - 15, no weapon
+				if (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
+					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(13, 20))
+					debug call Print("Attack without weapon")
+				// Attack Alternate 1 - 9, two handed sword
+				elseif (false) then
+					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(27, 29))
+				// Attack Defend 1 - 2, attack with buckler
+				// basically this should be already provided by the animation tag "defend"
+				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and ItemTypes.itemTypeIdIsBuckler.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 112)
+					debug call Print("Attack with buckler")
+				// Attack throw 6 - 7, bow
+				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsBow.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(122, 123))
+					debug call Print("Attack with bow")
+				// throwing spear
+				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsThrowingSpear.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 119)
+					debug call Print("Attack with a throwing spear")
+				// attacking with spear in melee
+				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsMeleeSpear.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 117)
+					debug call Print("Attack with spear in melee")
+				// attacking with two handed lance
+				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedLance.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 61)
+					debug call Print("Attack with two handed lance")
+				// attacking with two handed hammer
+				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedHammer.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 62)
+					debug call Print("Attack with two handed hammer")
+				// Attack with one left handed weapon
+				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
+					set values = AIntegerVector.create()
+					call values.pushBack(21)
+					call values.pushBack(40)
+					call values.pushBack(23)
+					call values.pushBack(25)
+					call SetUnitAnimationByIndex(GetAttacker(), values.random())
+					call values.destroy()
+					debug call Print("Attack with one left handed weapon")
+				endif
+			endif
+		endmethod
 
 		public static method create takes player whichPlayer, unit whichUnit returns thistype
 			local thistype this = thistype.allocate(whichPlayer, whichUnit)
@@ -426,9 +474,6 @@ static if (DMDF_CREDITS) then
 endif
 			set this.m_grimoire = Grimoire.create.evaluate(this)
 			set this.m_tutorial = Tutorial.create.evaluate(this)
-static if (DMDF_CHARACTER_STATS) then
-			set this.m_characterStats = CharacterStats.create.evaluate(this)
-endif
 static if (DMDF_INFO_LOG) then
 			set this.m_infoLog = InfoLog.create.evaluate(this)
 endif
@@ -436,6 +481,11 @@ endif
 			set this.m_classSpells = AIntegerVector.create()
 			call this.createWorkerTrigger()
 			set this.m_isMorphed = false
+			set this.m_animationOrderTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(this.m_animationOrderTrigger, EVENT_PLAYER_UNIT_ATTACKED)
+			call TriggerAddCondition(this.m_animationOrderTrigger, Condition(function thistype.triggerConditionOrder))
+			call TriggerAddAction(this.m_animationOrderTrigger, function thistype.triggerActionOrder)
+			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, "this", this)
 
 			return this
 		endmethod
@@ -455,15 +505,14 @@ static if (DMDF_CREDITS) then
 			call this.m_grimoire.destroy.evaluate()
 endif
 			call this.m_tutorial.destroy.evaluate()
-static if (DMDF_CHARACTER_STATS) then
-			call this.m_characterStats.destroy.evaluate()
-endif
 static if (DMDF_INFO_LOG) then
 			call this.m_infoLog.destroy.evaluate()
 endif
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0
 			call this.destroyWorkerTrigger()
+			call DmdfHashTable.global().destroyTrigger(this.m_animationOrderTrigger)
+			set this.m_animationOrderTrigger = null
 		endmethod
 
 		/**

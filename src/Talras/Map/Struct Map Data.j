@@ -118,6 +118,11 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		private static region m_talkHintRegion
 		private static trigger m_talkHintTrigger
 		private static boolean array m_talkHintShown[6]
+		
+		private static timer m_rainTimer
+		private static timer m_resetRainTimer
+		private static timer m_thunderTimer
+		private static weathereffect m_rainWeatherEffect
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -211,14 +216,9 @@ endif
 			call initMapVideos.evaluate()
 			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
 			// weather
-			call Game.weather().setMinimumChangeTime(20.0)
-			call Game.weather().setMaximumChangeTime(60.0)
-			call Game.weather().setChangeSky(false) // TODO prevent lags?
-			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeLordaeronRainHeavy, true)
-			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeLordaeronRainLight, true)
-			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeNoWeather, true)
-			call Game.weather().addRect(gg_rct_area_playable)
-			
+			set thistype.m_rainTimer = CreateTimer()
+			set thistype.m_resetRainTimer = CreateTimer()
+			set thistype.m_thunderTimer = CreateTimer()
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 			
@@ -1317,6 +1317,54 @@ static if (DEBUG_MODE) then
 		endmethod
 endif
 
+		private static method timerFunctionThunder takes nothing returns nothing
+			local integer i
+			if (thistype.m_rainWeatherEffect != null) then
+				set i = 0
+				loop
+					exitwhen (i == MapData.maxPlayers)
+					if (GetLocalPlayer() == Player(i)) then
+						// only play thunder if view is in playable area where it rains
+						if (GetCameraTargetPositionX() <= GetRectMaxX(gg_rct_area_playable) and GetCameraTargetPositionX() >= GetRectMinX(gg_rct_area_playable) and GetCameraTargetPositionY() <= GetRectMaxY(gg_rct_area_playable) and GetCameraTargetPositionY() >= GetRectMinY(gg_rct_area_playable)) then
+							call StartSound(gg_snd_RollingThunder1)
+							call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUTIN, 0.20, "ReplaceableTextures\\CameraMasks\\White_mask.blp", 100.0, 100.0, 100.0, 0)
+						endif
+					endif
+					set i = i + 1
+				endloop
+
+				call thistype.startThunderCountdown.evaluate()
+			endif
+		endmethod
+		
+		private static method timerFunctionRestartRain takes nothing returns nothing
+			call RemoveWeatherEffect(thistype.m_rainWeatherEffect)
+			set thistype.m_rainWeatherEffect = null
+			
+			call thistype.startRainCountdown.evaluate()
+		endmethod
+
+		private static method timerFunctionRain takes nothing returns nothing
+			local integer random = GetRandomInt(0, 1)
+			if (random == 0) then
+				set thistype.m_rainWeatherEffect = AddWeatherEffect(gg_rct_area_playable, 'RLlr')
+			else
+				set thistype.m_rainWeatherEffect = AddWeatherEffect(gg_rct_area_playable, 'RLhr')
+			endif
+			call EnableWeatherEffect(thistype.m_rainWeatherEffect, true)
+			
+			call thistype.startThunderCountdown.evaluate()
+			call TimerStart(thistype.m_resetRainTimer, GetRandomReal(20.0, 30.0), false, function thistype.timerFunctionRestartRain)
+		endmethod
+		
+		private static method startThunderCountdown takes nothing returns nothing
+			call TimerStart(thistype.m_thunderTimer, GetRandomReal(15.0, 20.0), false, function thistype.timerFunctionThunder)
+		endmethod
+		
+		private static method startRainCountdown takes nothing returns nothing
+			call TimerStart(thistype.m_rainTimer, GetRandomReal(80.0, 120.0), false, function thistype.timerFunctionRain)
+		endmethod
+
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
 			local integer i
@@ -1338,6 +1386,8 @@ endif
 				endif
 				set i = i + 1
 			endloop
+			
+			call thistype.startRainCountdown()
 			
 			call VideoIntro.video().play()
 		endmethod
@@ -1432,6 +1482,24 @@ endif
 		 */
 		public static method playerGivesXP takes player whichPlayer returns boolean
 			return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE) or whichPlayer == thistype.orcPlayer
+		endmethod
+		
+		public static method initVideoSettings takes nothing returns nothing
+			if (thistype.m_rainWeatherEffect != null) then
+				call EnableWeatherEffect(thistype.m_rainWeatherEffect, false)
+				call PauseTimer(thistype.m_thunderTimer)
+			else
+				call PauseTimer(thistype.m_rainTimer)
+			endif
+		endmethod
+		
+		public static method resetVideoSettings takes nothing returns nothing
+			if (thistype.m_rainWeatherEffect != null) then
+				call EnableWeatherEffect(thistype.m_rainWeatherEffect, true)
+				call ResumeTimer(thistype.m_thunderTimer)
+			else
+				call ResumeTimer(thistype.m_rainTimer)
+			endif
 		endmethod
 	endstruct
 

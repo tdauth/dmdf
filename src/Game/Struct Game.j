@@ -154,7 +154,6 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 	struct Game
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions
-		private static AWeather m_weather
 		private static trigger m_killTrigger
 		private static AIntegerVector array m_hiddenUnits[6] /// \todo \ref MapData.maxPlayers
 
@@ -163,11 +162,6 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
-		endmethod
-
-		/// Access weather by \ref MapData.
-		public static method weather takes nothing returns AWeather
-			return thistype.m_weather
 		endmethod
 
 		public static method hostilePlayer takes nothing returns player
@@ -293,11 +287,6 @@ static if (DMDF_VIOLENCE) then
 			//call PlaySoundFileOnUnit(thistype.randomViolenceSoundPath(), GetTriggerUnit())
 		endmethod
 endif
-
-		private static method createWeather takes nothing returns nothing
-			set thistype.m_weather = AWeather.create()
-		endmethod
-
 		private static method triggerActionKill takes nothing returns nothing
 			/*
 			 * Characters get only experience if a creep is being killed.
@@ -393,14 +382,12 @@ endif
 			call ATalk.init(tre("Ende", "Exit"), tre("Zurück", "Back"), tre("Ziel unterhält sich bereits", "Target does already talk."))
 			// world systems
 			call ASpawnPoint.init()
-			call AWeather.init()
 			// Die Macht des Feuers
 			// game
 			set thistype.m_onDamageActions = AIntegerList.create()
 static if (DMDF_VIOLENCE) then
 			call thistype.registerOnDamageActionOnce(thistype.onDamageActionViolence) // blood/violence system
 endif
-			call thistype.createWeather()
 			call thistype.createKillTrigger()
 			// game guis
 			call Credits.init0.evaluate()
@@ -480,9 +467,6 @@ static if (DEBUG_MODE) then
 			call Print(tr("addclassspells - Der Charakter erhält sämtliche Zauber seiner Klasse im Zauberbuch."))
 			call Print(tr("addotherclassspells - Der Charakter erhält sämtliche Zauber der anderen Klassen im Zauberbuch."))
 			call Print(tr("movable - Der Charakter wird bewegbar oder nicht mehr bewegbar."))
-static if (DMDF_CHARACTER_STATS) then
-			call Print(tr("stats - Zeigt die Statistik des Spielercharakters an."))
-endif
 		endmethod
 
 		private static method onCheatActionClasses takes ACheat cheat returns nothing
@@ -580,13 +564,6 @@ endif
 				call Print(tr("Sie haben keinen Charakter."))
 			endif
 		endmethod
-
-static if (DMDF_CHARACTER_STATS) then
-		private static method onCheatActionStats takes ACheat cheat returns nothing
-			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).characterStats().show()
-		endmethod
-endif
-
 endif
 		/**
 		 * \param musicList File paths should be separated by ; character.
@@ -669,7 +646,6 @@ endif
 			call SuspendTimeOfDay(false)
 			//call SetCreepCampFilterState(true)
 			//call SetAllyColorFilterState(0)
-			call thistype.m_weather.start()
 			
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initCharactersScheme)
 			
@@ -699,9 +675,6 @@ static if (DEBUG_MODE) then
 			call ACheat.create("addclassspells", true, thistype.onCheatActionAddClassSpells)
 			call ACheat.create("addotherclassspells", true, thistype.onCheatActionAddOtherClassSpells)
 			call ACheat.create("movable", true, thistype.onCheatActionMovable)
-static if (DMDF_CHARACTER_STATS) then
-			call ACheat.create("stats", true, thistype.onCheatActionStats)
-endif
 endif
 			call thistype.setDefaultMapMusic()
 			/// has to be called by struct \ref MapData.
@@ -776,7 +749,6 @@ endif
 
 		/**
 		 * Cinematic stuff (from Bonus Campaign)
-		 * - Disables weather.
 		 * - Disables gold and experience by kills.
 		 * - Setups music volume.
 		 * - Hides all items.
@@ -805,7 +777,6 @@ endif
 				endif
 				set i = i + 1
 			endloop
-			call thistype.m_weather.disable()
 			call ForForce(bj_FORCE_PLAYER[0], function Fellow.reviveAllForVideo)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.pauseAll)
 			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.pauseAll)
@@ -825,6 +796,7 @@ endif
 				set i = i + 1
 			endloop
 			call DisableTransparency()
+			call MapData.initVideoSettings.evaluate()
 		endmethod
 
 		private static method filterHiddenItem takes nothing returns boolean
@@ -854,12 +826,12 @@ endif
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().enableLevelTrigger()
 					call ACharacter.playerCharacter(Player(i)).panCamera()
+					call SetCameraFieldForPlayer(Player(i), CAMERA_FIELD_TARGET_DISTANCE, Character(ACharacter.playerCharacter(Player(i))).mainMenu().cameraDistance.evaluate(), 0.0)
 				endif
 				
 				set i = i + 1
 			endloop
 			call thistype.resetCameraBounds()
-			call thistype.m_weather.enable()
 			call EnableTrigger(thistype.m_killTrigger)
 			/*
 			 * Make sure that not default wc3 music is played.
@@ -879,6 +851,7 @@ endif
 				set i = i + 1
 			endloop
 			call EnableTransparency()
+			call MapData.resetVideoSettings.evaluate()
 		endmethod
 
 		public static method addUnitMoveSpeed takes unit whichUnit, real value returns real

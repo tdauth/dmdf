@@ -9,13 +9,13 @@ library StructMapQuestsQuestTheHolyPotato requires Asl
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Die heilige Kartoffel"))
+			local thistype this = thistype.allocate(character, tre("Die heilige Kartoffel", "The Holy Potato"))
 			local AQuestItem questItem0
-			call this.setIconPath("") /// @todo fixme
-			call this.setDescription(tr("Tobias will, dass du ihm hilfst, indem du gar nichts tust."))
+			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNSelectHeroOff.blp")
+			call this.setDescription(tre("Tobias will, dass du ihm hilfst, indem du gar nichts tust.", "Tobias wants you to help him by doing nothing."))
 			call this.setReward(AAbstractQuest.rewardExperience, 50)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Tu gar nichts."))
+			set questItem0 = AQuestItem.create(this, tre("Tue gar nichts.", "Do nothing."))
 
 			return this
 		endmethod

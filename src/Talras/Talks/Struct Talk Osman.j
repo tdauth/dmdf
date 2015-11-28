@@ -61,7 +61,7 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Hallo."), null)
 			if (character.class() == Classes.cleric()) then
-				call speech(info, character, true, tr("Sei gegrüßt werter Bruder. Es ist selten geworden, dass ich einen Glaubensgenossen treffe"), null)
+				call speech(info, character, true, tr("Sei gegrüßt werter Bruder. Es ist selten geworden, dass ich einen Glaubensgenossen treffe."), null)
 				call info.talk().showRange(this.m_youAreKnowBeliever.index(), this.m_itsMyPleasure.index(), character)
 			else
 				call speech(info, character, true, tr("Ich grüße dich."), null)

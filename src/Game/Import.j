@@ -1,7 +1,4 @@
 //! import "Game/Struct Character.j"
-static if (DMDF_CHARACTER_STATS) then
-//! import "Game/Struct Character Stats.j"
-endif
 //! import "Game/Struct Classes.j"
 //! import "Game/Struct Class Selection.j"
 //! import "Game/Struct Fellow.j"
@@ -23,5 +20,5 @@ endif
 //! import "Game/Struct Tutorial.j"
 //! import "Game/Library Language.j"
 
-library Game requires StructGameCharacter, optional StructCharacterStats, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, LibraryGameLanguage
+library Game requires StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, LibraryGameLanguage
 endlibrary

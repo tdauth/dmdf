@@ -40,15 +40,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			local quest whichQuest
 			local questitem questItem
 			local NpcTalksRoutine talkRoutine
-			// weather
-			call Game.weather().setMinimumChangeTime(20.0)
-			call Game.weather().setMaximumChangeTime(60.0)
-			call Game.weather().setChangeSky(false) // TODO prevent lags?
-			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeLordaeronRainHeavy, true)
-			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeLordaeronRainLight, true)
-			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeNoWeather, true)
-			call Game.weather().addRect(gg_rct_area_playable)
-			
+
 			// info
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Regeln", "Rules"))
@@ -320,6 +312,12 @@ library StructMapMapMapData requires Asl, StructGameGame
 		 */
 		public static method playerGivesXP takes player whichPlayer returns boolean
 			return false //whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE) or whichPlayer == thistype.orcPlayer
+		endmethod
+		
+		public static method initVideoSettings takes nothing returns nothing
+		endmethod
+		
+		public static method resetVideoSettings takes nothing returns nothing
 		endmethod
 	endstruct
 

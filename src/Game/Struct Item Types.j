@@ -342,6 +342,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1B8', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1B9', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1BA', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A0RU', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DC', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DE', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -481,7 +484,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_dragonArmourPlate = ItemType.createSimple('I02C', AItemType.equipmentTypeArmour)
 			call thistype.m_dragonArmourPlate.addAbility('A083', true)
 
-			set thistype.m_largeRoundedBuckler = ItemType.createSimple('I02A', AItemType.equipmentTypeSecondaryWeapon)
+			set thistype.m_largeRoundedBuckler = DefenceItemType.create('I02A', AItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_largeRoundedBuckler.addAbility('A081', true)
 
 			set thistype.m_dart = RangeItemType.createSimpleRange('I029', AItemType.equipmentTypePrimaryWeapon)
@@ -489,7 +492,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			set thistype.m_nordicWarHammer = ItemType.create('I05C', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_nordicWarHammer.addAbility('A17M', true)
-			call thistype.m_nordicWarHammer.addAbility('A17N', true)
+			call thistype.m_nordicWarHammer.addAbility('A03U', true)
 			
 			set thistype.m_nordicWarHelmet = ItemType.create('I05E', AItemType.equipmentTypeHeaddress, 0, 0, 0, 0, 0)
 			call thistype.m_nordicWarHelmet.addAbility('A18J', true)
@@ -514,12 +517,12 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			// Björn's items
 			set thistype.m_cloak = ItemType.createSimple('I023', AItemType.equipmentTypeArmour)
-			call thistype.m_cloak.addAbility('A07R', true)
+			call thistype.m_cloak.addAbility('A1DC', true)
 			call thistype.m_cloak.addAbility('A07S', true)
 
 			set thistype.m_hood = ItemType.createSimple('I022', AItemType.equipmentTypeHeaddress)
 			call thistype.m_hood.addAbility('A04N', true)
-			call thistype.m_hood.addAbility('S003', true)
+			call thistype.m_hood.addAbility('A1DE', true)
 
 			set thistype.m_huntingBow = RangeItemType.createSimpleRange('I020', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_huntingBow.addAbility('A07N', true)
@@ -695,6 +698,30 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		public static method swordOfDarkness takes nothing returns ItemType
 			return thistype.m_swordOfDarkness
+		endmethod
+		
+		public static method itemTypeIdIsBuckler takes integer itemTypeId returns boolean
+			return itemTypeId == 'I00M' or itemTypeId == 'I006' or itemTypeId == 'I02A' or itemTypeId == 'I005' or itemTypeId == 'I00N' or itemTypeId == 'I00O' or itemTypeId == 'I00Y' 
+		endmethod
+		
+		public static method itemTypeIdIsBow takes integer itemTypeId returns boolean
+			return itemTypeId == 'I013' or itemTypeId == 'I020' or itemTypeId == 'I021'
+		endmethod
+		
+		public static method itemTypeIdIsThrowingSpear takes integer itemTypeId returns boolean
+			return itemTypeId == 'I029'
+		endmethod
+		
+		public static method itemTypeIdIsMeleeSpear takes integer itemTypeId returns boolean
+			return itemTypeId == 'I002' or itemTypeId == 'I01W' or itemTypeId == 'I00K' or itemTypeId == 'I01X'
+		endmethod
+		
+		public static method itemTypeIdIsTwoHandedLance takes integer itemTypeId returns boolean
+			return itemTypeId == 'I05B'
+		endmethod
+		
+		public static method itemTypeIdIsTwoHandedHammer takes integer itemTypeId returns boolean
+			return itemTypeId == 'I05C'
 		endmethod
 	endstruct
 

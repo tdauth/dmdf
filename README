@@ -8,5 +8,4 @@ Available boolean constants:
 DMDF_CREDITS enables credits (GUI)
 DMDF_INFO_LOG enables talk log system (GUI)
 DMDF_NPC_ROUTINES enables NPC routines
-DMDF_CHARACTER_STATS enables character stats system (GUI)
 DMDF_VIOLENCE enables blood effects in fights

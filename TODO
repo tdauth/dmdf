@@ -634,7 +634,7 @@ Mehrspielertest (0.4 - 2 Spieler):
 * FIXED: Krieg muss Erfahrung geben.
 * FIXED: Seitentaschen auf selbes Slot legt es ab!
 * Barrikaden blockieren nicht (Ork-Belagerung).
-* Schrein ist zwischen Barrikaden. Charakter kann sich also hinteleportieren.
+* FIXED: Schrein ist zwischen Barrikaden. Charakter kann sich also hinteleportieren.
 * FIXED: Gegner sichtbar machen letzte Welle.
 * Gegner schwächer machen erste Wellen.
 * FIXED: Orkbarrikade etwas schwächer.
@@ -645,8 +645,8 @@ Mehrspielertest (0.4 - 2 Spieler):
 * FIXED: Langschwert und Kurzschwert schmieden selbe ID.
 * DONE: Großen Heiltrank und großen Manatrank herstellen einbauen.
 * FIXED: "Zur Kathedrale ausbauen" kostet Holz.
-* Nachfrage ob man das Spiel beenden möchte bei letzten Quest.
-* Baupläne dauerhaft behalten, aber nur einmal baubar weil Jojo so blöd war, es abzubrechen.
+* FIXED: Nachfrage ob man das Spiel beenden möchte bei letzten Quest.
+* FIXED: Baupläne dauerhaft behalten, aber nur einmal baubar weil Jojo so blöd war, es abzubrechen. Dafür sollten sie nicht verkäuflich sein.
 * Burg "Beladen" auch auf Verbündete, aber nicht auf NEUTRAL!
 * Gebäude soll Mana und Leben heilen.
 * Gebäude erkundet Gegend.
@@ -658,6 +658,10 @@ Mehrspielertest (0.4 - 2 Spieler):
 * Sammelpunkt für Schreine erlauben? Dorthin laufen die verbündeten Helden?
 * Mitwirkende: Erste Texte erscheinen nicht.
 * FIXED: Mitwirkende: Texte schneller, Abstände kleiner.
+* FIXED: Diakon nach Tod hiden, ansonsten sieht man dauerhaft den Bluteffekt im Hintergrund.
+* FIXED: Bogen wegen Animation alle in die rechte Hand.
+* FIXED: Schildmodelle um 180 Grad drehen wegen Villager-Modell.
+* Bei defend eine Standanimation auswählen?
 
 TODO:
 - FIXED: Texte der NPCs hiden falls das Gebiet nicht sichtbar ist.
@@ -757,7 +761,8 @@ Test mit zwei menschlichen Spielern:
 * Für Computerspieler beim Autoselect der Klasse deutlich die Performance erhöhen! Klassenauswahl muss nicht erst angezeigt werden!
 * FIXED: Rückverwandlung von Bärengestalt und Krähengestalt ändert das maximale Leben oder Mana. Einfach passive Transformation nehmen. Liegt vermutlich an SetUnitState(). War die Manasteigerungsfähigkeit bei Krähengestalt.
 * FIXED: Primär- und Sekundär-Aufträge umbenennen: Gemeinsame Aufrträge, Eigene Aufträge.
-* Da es zwei Wettertypen mit Regen gibt, regnet es sehr oft. ASL-System anpassen, sodass man pro Wettertyp die Wahrscheinlichkeit und Dauer angeben kann.
+* DEPRECATED: Da es zwei Wettertypen mit Regen gibt, regnet es sehr oft. ASL-System anpassen, sodass man pro Wettertyp die Wahrscheinlichkeit und Dauer angeben kann.
+* ASL-Regensystem entfernen. Stattdessen per Timer selten Regen starten mit Donner- und Blitz-Effekt.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

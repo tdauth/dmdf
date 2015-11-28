@@ -25,6 +25,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		 * Dummy hero ability ID. This ability is disabled for all players but must be added to each character to show the skillpoints in the hero icon.
 		 */
 		public static constant integer dummyHeroAbilityId = 'A17P'
+		/**
+		 * The shortcut is required to reopen the grimoire when it its closed automatically.
+		 */
 		public static constant string shortcut = "Z"
 		public static constant integer maxFavourites = 4
 		public static constant integer ultimate0Level = 12

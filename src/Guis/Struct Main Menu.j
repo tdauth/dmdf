@@ -7,6 +7,10 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 		private Character m_character
 		private trigger m_keyTrigger
 		private real m_cameraDistance
+		
+		public method cameraDistance takes nothing returns real
+			return this.m_cameraDistance
+		endmethod
 
 		private static method dialogButtonActionSetTutorial takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()

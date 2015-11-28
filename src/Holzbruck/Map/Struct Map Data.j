@@ -30,15 +30,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref Game.
 		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
 		public static method init takes nothing returns nothing
-			// weather
-			call Game.weather().setMinimumChangeTime(20.0)
-			call Game.weather().setMaximumChangeTime(60.0)
-			call Game.weather().setChangeSky(false) // TODO prevent lags?
-			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeLordaeronRainHeavy, true)
-			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeLordaeronRainLight, true)
-			call Game.weather().setWeatherTypeAllowed(AWeather.weatherTypeNoWeather, true)
-			call Game.weather().addRect(gg_rct_area_playable)
-			
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 			
@@ -167,6 +158,12 @@ library StructMapMapMapData requires Asl, StructGameGame
 		 */
 		public static method playerGivesXP takes player whichPlayer returns boolean
 			return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE)
+		endmethod
+		
+		public static method initVideoSettings takes nothing returns nothing
+		endmethod
+		
+		public static method resetVideoSettings takes nothing returns nothing
 		endmethod
 	endstruct
 

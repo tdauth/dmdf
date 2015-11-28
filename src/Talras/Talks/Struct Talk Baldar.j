@@ -120,7 +120,7 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 				set i = 0
 				loop
 					exitwhen (i == newScore)
-					call QuestDeathToWhiteLegion.characterQuest(character).distributeRewards()
+					call QuestDeathToWhiteLegion.characterQuest(character).questItem(1).distributeRewards()
 					set i = i + 1
 				endloop
 			// (Charakter hat weniger als zehn neue Tötungspunkte)

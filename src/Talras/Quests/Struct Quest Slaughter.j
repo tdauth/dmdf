@@ -104,6 +104,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
+			call ShowUnit(GetTriggerUnit(), false) // hide him to hide the blood effect
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch mehr seiner Art."), null)
 			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.vampires0(), UnitTypes.vampire)
 			call questItem.quest().questItem(1).enable()

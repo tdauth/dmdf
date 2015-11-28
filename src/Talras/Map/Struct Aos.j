@@ -414,7 +414,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		endmethod
 		
 		private static method triggerActionKillEnemyOfBaldar takes nothing returns nothing
-			local effect whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Demon\\RainOfFire\\RainOfFireTarget.mdx", GetTriggerUnit(), "origin")
+			local effect whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Demon\\RainOfFire\\RainOfFireTarget.mdl", GetTriggerUnit(), "origin")
 			call SetUnitExploded(GetTriggerUnit(), true)
 			call KillUnit(GetTriggerUnit())
 			call TriggerSleepAction(2.0)
