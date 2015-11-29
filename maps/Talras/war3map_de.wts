@@ -314,7 +314,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 53
-// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QF (Göttergunst - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Göttergunst [|cffffcc00Stufe 3|r]
 }
@@ -3308,7 +3308,7 @@ Das Tastenkürzel G.
 }
 
 STRING 552
-// Fähigkeiten: A00K (ASystemGUI - shortcut g), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A08B (Drohendes Unheil), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 G
 }
@@ -3344,7 +3344,7 @@ ASystemGUI - shortcut i
 }
 
 STRING 558
-// Fähigkeiten: A00M (ASystemGUI - shortcut i), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A055 (Böses hindern), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 I
 }
@@ -3356,7 +3356,7 @@ Das Tastenkürzel I.
 }
 
 STRING 560
-// Fähigkeiten: A00M (ASystemGUI - shortcut i), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00M (ASystemGUI - shortcut i), Tip (Tooltipp - Normal (atp1))
 {
 I
 }
@@ -3368,7 +3368,7 @@ ASystemGUI - shortcut j
 }
 
 STRING 562
-// Fähigkeiten: A00N (ASystemGUI - shortcut j), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0H4 (Segen), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 J
 }
@@ -3380,7 +3380,7 @@ Das Tastenkürzel J.
 }
 
 STRING 564
-// Fähigkeiten: A00N (ASystemGUI - shortcut j), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00N (ASystemGUI - shortcut j), Tip (Tooltipp - Normal (atp1))
 {
 J
 }
@@ -3410,7 +3410,7 @@ ASystemGUI - shortcut l
 }
 
 STRING 569
-// Fähigkeiten: A00P (ASystemGUI - shortcut l), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A08D (Heiliger Wille), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 L
 }
@@ -3422,7 +3422,7 @@ Das Tastenkürzel L.
 }
 
 STRING 571
-// Fähigkeiten: A00P (ASystemGUI - shortcut l), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00P (ASystemGUI - shortcut l), Tip (Tooltipp - Normal (atp1))
 {
 L
 }
@@ -3482,7 +3482,7 @@ ASystemGUI - shortcut o
 }
 
 STRING 581
-// Fähigkeiten: A0BQ (Opfer), Unhotkey (Tastaturkürzel - Ausschalten (auhk))
+// Fähigkeiten: A056 (Wiederbeleben), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 O
 }
@@ -3494,7 +3494,7 @@ Das Tastenkürzel O.
 }
 
 STRING 583
-// Fähigkeiten: A0BQ (Opfer), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A0BQ (Opfer), Unhotkey (Tastaturkürzel - Ausschalten (auhk))
 {
 O
 }
@@ -3626,7 +3626,7 @@ ASystemGUI - shortcut u
 }
 
 STRING 605
-// Fähigkeiten: A00Y (ASystemGUI - shortcut u), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A052 (Reinheit), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 U
 }
@@ -3638,7 +3638,7 @@ Das Tastenkürzel U.
 }
 
 STRING 607
-// Fähigkeiten: A00Y (ASystemGUI - shortcut u), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00Y (ASystemGUI - shortcut u), Tip (Tooltipp - Normal (atp1))
 {
 U
 }
@@ -3758,7 +3758,7 @@ Das Tastenkürzel Z.
 }
 
 STRING 627
-// Fähigkeiten: A013 (ASystemGUI - shortcut z), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A050 (Schützen), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 Z
 }
@@ -3907,7 +3907,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 652
-// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QG (Göttergunst - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Göttergunst [|cffffcc00Stufe 4|r]
 }
@@ -4153,7 +4153,7 @@ Eisgeschoss
 }
 
 STRING 695
-// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QH (Göttergunst - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Göttergunst [|cffffcc00Stufe 5|r]
 }
@@ -4423,7 +4423,7 @@ STRING 739
 }
 
 STRING 740
-// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QN (Böses hindern - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Böses hindern [|cffffcc00Stufe 1|r]
 }
@@ -4597,7 +4597,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 769
-// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QO (Böses hindern - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Böses hindern [|cffffcc00Stufe 2|r]
 }
@@ -4789,7 +4789,7 @@ Beherrschung
 }
 
 STRING 801
-// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QP (Böses hindern - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Böses hindern [|cffffcc00Stufe 3|r]
 }
@@ -4896,6 +4896,30 @@ STRING 818
 Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
 }
 
+STRING 819
+// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+{
+Schützen [|cffffcc00Stufe 2|r] (|cffffcc00Z|r)
+}
+
+STRING 820
+// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+{
+Schützen [|cffffcc00Stufe 3|r] (|cffffcc00Z|r)
+}
+
+STRING 821
+// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+{
+Schützen [|cffffcc00Stufe 4|r] (|cffffcc00Z|r)
+}
+
+STRING 822
+// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+{
+Schützen [|cffffcc00Stufe 5|r] (|cffffcc00Z|r)
+}
+
 STRING 823
 // Fähigkeiten: A01G (Zehren), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -4975,7 +4999,7 @@ STRING 835
 }
 
 STRING 836
-// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QQ (Böses hindern - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Böses hindern [|cffffcc00Stufe 4|r]
 }
@@ -5083,7 +5107,7 @@ Blutquelle
 }
 
 STRING 854
-// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QR (Böses hindern - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Böses hindern [|cffffcc00Stufe 5|r]
 }
@@ -5434,6 +5458,18 @@ STRING 912
 (Waldläufer)
 }
 
+STRING 913
+// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+{
+Schützen [|cffffcc00Stufe 1|r] (|cffffcc00Z|r)
+}
+
+STRING 914
+// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+{
+Reinheit [|cffffcc00Stufe 2|r] (|cffffcc00U|r)
+}
+
 STRING 915
 // Fähigkeiten: A027 (Stich), Researchtip (Tooltipp - Erlernen (aret))
 {
@@ -5458,6 +5494,12 @@ STRING 918
 Der Ritter kann 5 Sekunden nach seinem Tod mit 50% seiner Lebensnenergie wiederauferstehen. 15 Minuten Abklingzeit.
 }
 
+STRING 919
+// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+{
+Reinheit [|cffffcc00Stufe 3|r] (|cffffcc00U|r)
+}
+
 STRING 920
 // Fähigkeiten: A03R (Lebenswille), Name (Name (anam))
 {
@@ -5474,6 +5516,12 @@ STRING 922
 // Fähigkeiten: A01O (Anziehung), Name (Name (anam))
 {
 Anziehung
+}
+
+STRING 923
+// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+{
+Reinheit [|cffffcc00Stufe 4|r] (|cffffcc00U|r)
 }
 
 STRING 924
@@ -5686,6 +5734,12 @@ STRING 958
 |cffffcc00Ultimativzauber 1|r|nDer Druide erhöht seine Bewegungs- und Angriffsgeschwindigkeit in Tiergestalt um 100 %. Hält <A0FF,Dur1> Sekunden.
 }
 
+STRING 959
+// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+{
+Reinheit [|cffffcc00Stufe 5|r] (|cffffcc00U|r)
+}
+
 STRING 960
 // Gegenstände: I044 (Helm des Nekromanten), Name (Name (unam))
 {
@@ -5854,6 +5908,30 @@ STRING 987
 Fügt dem Angriff des Zerstörers einen zusätzlichen Schaden von <A075,DataA1> Punkten hinzu und verursacht Wirkungsbereich-Schaden.
 }
 
+STRING 988
+// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+{
+Reinheit [|cffffcc00Stufe 1|r] (|cffffcc00U|r)
+}
+
+STRING 989
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 1|r] (|cffffcc00J|r)
+}
+
+STRING 990
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 2|r] (|cffffcc00J|r)
+}
+
+STRING 991
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 3|r] (|cffffcc00J|r)
+}
+
 STRING 992
 // Fähigkeiten: A194 (Laderaum), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -5903,7 +5981,7 @@ Dämonendiener
 }
 
 STRING 1000
-// Fähigkeiten: A0HG (Seuche), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A06J (Seelendiebstahl), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -5927,7 +6005,7 @@ STRING 1003
 }
 
 STRING 1004
-// Fähigkeiten: A06J (Seelendiebstahl), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0FJ (Totenbeschwörung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -6023,7 +6101,7 @@ Ein Schattengeschoss schädigt den Gegner für <A05W,DataA5> Lebenspunkte.
 }
 
 STRING 1020
-// Fähigkeiten: A0FJ (Totenbeschwörung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0IJ (Verzehren), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -6490,6 +6568,12 @@ STRING 1097
 Erdgefängnis [|cffffcc00Stufe 1|r]
 }
 
+STRING 1098
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 4|r] (|cffffcc00J|r)
+}
+
 STRING 1099
 // Fähigkeiten: A0NB (Nächste Klasse), Tip (Tooltipp - Normal (atp1))
 {
@@ -6593,7 +6677,7 @@ Heilige Kraft
 }
 
 STRING 1116
-// Fähigkeiten: A01Y (Heilige Kraft), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A01Y (Heilige Kraft), Name (Name (anam))
 {
 Heilige Kraft
 }
@@ -6731,7 +6815,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 }
 
 STRING 1139
-// Fähigkeiten: A013 (ASystemGUI - shortcut z), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A013 (ASystemGUI - shortcut z), Tip (Tooltipp - Normal (atp1))
 {
 Z
 }
@@ -7721,7 +7805,7 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 }
 
 STRING 1304
-// Fähigkeiten: A0IJ (Verzehren), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A08N (Ahnenpakt), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -7829,7 +7913,7 @@ S
 }
 
 STRING 1322
-// Fähigkeiten: A0AP (Zauberbuch), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A013 (ASystemGUI - shortcut z), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 Z
 }
@@ -8855,7 +8939,7 @@ Macht den Zaubernden und befreundete Einheiten im Umkreis unsichtbar.
 }
 
 STRING 1493
-// Fähigkeiten: A00K (ASystemGUI - shortcut g), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00K (ASystemGUI - shortcut g), Tip (Tooltipp - Normal (atp1))
 {
 G
 }
@@ -9473,9 +9557,9 @@ STRING 1595
 }
 
 STRING 1596
-// Fähigkeiten: A01Y (Heilige Kraft), Name (Name (anam))
+// Fähigkeiten: A0HM (Seuche), Name (Name (anam))
 {
-Heilige Kraft
+Seuche
 }
 
 STRING 1597
@@ -12081,31 +12165,31 @@ STRING 2030
 }
 
 STRING 2031
-// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0LA (Schützen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Schützen [|cffffcc00Stufe 2|r]
 }
 
 STRING 2032
-// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0LB (Schützen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Schützen [|cffffcc00Stufe 3|r]
 }
 
 STRING 2033
-// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0LC (Schützen - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Schützen [|cffffcc00Stufe 4|r]
 }
 
 STRING 2034
-// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0LD (Schützen - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Schützen [|cffffcc00Stufe 5|r]
 }
 
 STRING 2035
-// Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A091 (Schützen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Schützen [|cffffcc00Stufe 1|r]
 }
@@ -12303,31 +12387,31 @@ STRING 2067
 }
 
 STRING 2068
-// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OY (Reinheit - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Reinheit [|cffffcc00Stufe 2|r]
 }
 
 STRING 2069
-// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OZ (Reinheit - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Reinheit [|cffffcc00Stufe 3|r]
 }
 
 STRING 2070
-// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0P0 (Reinheit - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Reinheit [|cffffcc00Stufe 4|r]
 }
 
 STRING 2071
-// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0P1 (Reinheit - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Reinheit [|cffffcc00Stufe 5|r]
 }
 
 STRING 2072
-// Fähigkeiten: A052 (Reinheit), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OX (Reinheit - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Reinheit [|cffffcc00Stufe 1|r]
 }
@@ -12621,33 +12705,33 @@ Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Geg
 }
 
 STRING 2121
-// Fähigkeiten: A0QO (Böses hindern - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HG (Laden-Pfeil), Name (Name (anam))
 {
-Böses hindern [|cffffcc00Stufe 2|r]
+Laden-Pfeil
 }
 
 STRING 2122
-// Fähigkeiten: A0QP (Böses hindern - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HG (Laden-Pfeil), EditorSuffix (Editor-Suffix (ansf))
 {
-Böses hindern [|cffffcc00Stufe 3|r]
+(Laden)
 }
 
 STRING 2123
-// Fähigkeiten: A0QQ (Böses hindern - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Gegenstände: I05C (Nordischer Kriegshammer), Name (Name (unam))
 {
-Böses hindern [|cffffcc00Stufe 4|r]
+Nordischer Kriegshammer
 }
 
 STRING 2124
-// Fähigkeiten: A0QR (Böses hindern - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0AF (Zauberstufe erhöhen), EditorSuffix (Editor-Suffix (ansf))
 {
-Böses hindern [|cffffcc00Stufe 5|r]
+(Zauberbuch)
 }
 
 STRING 2125
-// Fähigkeiten: A0QN (Böses hindern - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0AG (Zauberstufe verringern), EditorSuffix (Editor-Suffix (ansf))
 {
-Böses hindern [|cffffcc00Stufe 1|r]
+(Zauberbuch)
 }
 
 STRING 2126
@@ -13257,7 +13341,7 @@ STRING 2226
 }
 
 STRING 2227
-// Fähigkeiten: A0R2 (Klassenzauber), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A0AP (Zauberbuch), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 Z
 }
@@ -13269,31 +13353,31 @@ Klassenzauber
 }
 
 STRING 2229
-// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OE (Linderung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Linderung [|cffffcc00Stufe 2|r]
 }
 
 STRING 2230
-// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OF (Linderung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Linderung [|cffffcc00Stufe 3|r]
 }
 
 STRING 2231
-// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OG (Linderung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Linderung [|cffffcc00Stufe 4|r]
 }
 
 STRING 2232
-// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OH (Linderung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Linderung [|cffffcc00Stufe 5|r]
 }
 
 STRING 2233
-// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OD (Linderung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Linderung [|cffffcc00Stufe 1|r]
 }
@@ -15132,33 +15216,33 @@ Bannt positive Zauberverstärker von feindlichen Einheiten und negative Zauberve
 }
 
 STRING 2545
-// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
+// Gegenstände: I022 (Kapuze), Name (Name (unam))
 {
-Magische Schockwellen |cffffcc00Stufe 2|r]
+Kapuze
 }
 
 STRING 2546
-// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0AH (Zu Favoriten hinzufügen), EditorSuffix (Editor-Suffix (ansf))
 {
-Magische Schockwellen |cffffcc00Stufe 3|r]
+(Zauberbuch)
 }
 
 STRING 2547
-// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
+// Gegenstände: I023 (Mantel), Name (Name (unam))
 {
-Magische Schockwellen |cffffcc00Stufe 4|r]
+Mantel
 }
 
 STRING 2548
-// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
+// Einheiten: n06C (Stand des Schafshirten), Name (Name (unam))
 {
-Magische Schockwellen |cffffcc00Stufe 5|r]
+Stand des Schafshirten
 }
 
 STRING 2549
-// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
+// Gegenstände: I064 (Spruchrolle der Kühe), Name (Name (unam))
 {
-Magische Schockwellen |cffffcc00Stufe 1|r]
+Spruchrolle der Kühe
 }
 
 STRING 2550
@@ -16146,7 +16230,7 @@ Gewaltsamer Tod
 }
 
 STRING 2714
-// Fähigkeiten: A08N (Ahnenpakt), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01U (Dunkle Diener), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -16485,7 +16569,7 @@ Seelendiebstahl
 }
 
 STRING 2771
-// Fähigkeiten: A01U (Dunkle Diener), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01W (Schattengeschoss), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -16983,7 +17067,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 2854
-// Fähigkeiten: A00O (ASystemGUI - shortcut k), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A08L (Böses bannen), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 K
 }
@@ -17557,31 +17641,31 @@ STRING 2951
 }
 
 STRING 2952
-// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0O3 (Wiederbeleben - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Wiederbeleben [|cffffcc00Stufe 1|r]
 }
 
 STRING 2953
-// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0O4 (Wiederbeleben - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Wiederbeleben [|cffffcc00Stufe 2|r]
 }
 
 STRING 2954
-// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0O5 (Wiederbeleben - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Wiederbeleben [|cffffcc00Stufe 3|r]
 }
 
 STRING 2955
-// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0O6 (Wiederbeleben - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Wiederbeleben [|cffffcc00Stufe 4|r]
 }
 
 STRING 2956
-// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0O7 (Wiederbeleben - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Wiederbeleben [|cffffcc00Stufe 5|r]
 }
@@ -17773,7 +17857,7 @@ Lebenswille [|cffffcc00Stufe 1|r]
 }
 
 STRING 2988
-// Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CZ (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Ruft für <A0RU,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
 }
@@ -17911,9 +17995,9 @@ Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 3011
-// Fähigkeiten: A0HG (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Gegenstände: I064 (Spruchrolle der Kühe), Tip (Tooltipp - Einfach (utip))
 {
-Verseucht bei jedem Angriff ein Gebiet, in welchem alle Gegner <A0HH,DataA1> Sekunden lang <A0HH,DataB1> Schaden pro Sekunde erleiden. Hält <A0HG,Dur1> Sekunden.|n|cffc3dbffKann nur im Fernkampf angewandt werden.|r
+Spruchrolle der Kühe kaufen
 }
 
 STRING 3012
@@ -19423,7 +19507,7 @@ Langbogen kaufen
 }
 
 STRING 3263
-// Gegenstände: I022 (Kapuze), Name (Name (unam))
+// Fähigkeiten: S003 (Kapuze), Name (Name (anam))
 {
 Kapuze
 }
@@ -19447,7 +19531,7 @@ Seelendiebstahl - Stufe 1
 }
 
 STRING 3267
-// Gegenstände: I023 (Mantel), Name (Name (unam))
+// Fähigkeiten: A07R (Mantel), Name (Name (anam))
 {
 Mantel
 }
@@ -19555,7 +19639,7 @@ STRING 3284
 }
 
 STRING 3285
-// Fähigkeiten: S003 (Kapuze), Name (Name (anam))
+// Fähigkeiten: A04N (Kapuze), Name (Name (anam))
 {
 Kapuze
 }
@@ -19567,7 +19651,7 @@ STRING 3286
 }
 
 STRING 3287
-// Fähigkeiten: A04N (Kapuze), Name (Name (anam))
+// Fähigkeiten: A1DE (Kapuze), Name (Name (anam))
 {
 Kapuze
 }
@@ -19579,7 +19663,7 @@ STRING 3288
 }
 
 STRING 3289
-// Fähigkeiten: A07R (Mantel), Name (Name (anam))
+// Fähigkeiten: A07S (Mantel), Name (Name (anam))
 {
 Mantel
 }
@@ -19591,7 +19675,7 @@ STRING 3290
 }
 
 STRING 3291
-// Fähigkeiten: A07S (Mantel), Name (Name (anam))
+// Fähigkeiten: A1DC (Mantel), Name (Name (anam))
 {
 Mantel
 }
@@ -20627,31 +20711,31 @@ Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 3467
-// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
 {
 Drohendes Unheil [|cffffcc00Stufe 2|r]
 }
 
 STRING 3468
-// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
 {
 Drohendes Unheil [|cffffcc00Stufe 3|r]
 }
 
 STRING 3469
-// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
 {
 Drohendes Unheil [|cffffcc00Stufe 4|r]
 }
 
 STRING 3470
-// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
 {
 Drohendes Unheil [|cffffcc00Stufe 5|r]
 }
 
 STRING 3471
-// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ON (Drohendes Unheil - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Drohendes Unheil [|cffffcc00Stufe 1|r]
 }
@@ -20723,25 +20807,25 @@ STRING 3482
 }
 
 STRING 3483
-// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OO (Drohendes Unheil - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Drohendes Unheil [|cffffcc00Stufe 2|r]
 }
 
 STRING 3484
-// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OP (Drohendes Unheil - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Drohendes Unheil [|cffffcc00Stufe 3|r]
 }
 
 STRING 3485
-// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OQ (Drohendes Unheil - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Drohendes Unheil [|cffffcc00Stufe 4|r]
 }
 
 STRING 3486
-// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OR (Drohendes Unheil - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Drohendes Unheil [|cffffcc00Stufe 5|r]
 }
@@ -20795,27 +20879,27 @@ Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 3495
-// Fähigkeiten: A0HG (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Gegenstände: I064 (Spruchrolle der Kühe), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verseucht bei jedem Angriff ein Gebiet, in welchem alle Gegner <A0HH,DataA2> Sekunden lang <A0HH,DataB2> Schaden pro Sekunde erleiden. Hält <A0HG,Dur2> Sekunden.|n|cffc3dbffKann nur im Fernkampf angewandt werden.|r
+Erzeugt explodierende Kühe.
 }
 
 STRING 3496
-// Fähigkeiten: A0HG (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Gegenstände: I064 (Spruchrolle der Kühe), Description (Beschreibung (ides))
 {
-Verseucht bei jedem Angriff ein Gebiet, in welchem alle Gegner <A0HH,DataA3> Sekunden lang <A0HH,DataB3> Schaden pro Sekunde erleiden. Hält <A0HG,Dur3> Sekunden.|n|cffc3dbffKann nur im Fernkampf angewandt werden.|r
+Erzeugt explodierende Kühe.
 }
 
 STRING 3497
-// Fähigkeiten: A0HG (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1DF (Laden-Pfeil Rune), Name (Name (anam))
 {
-Verseucht bei jedem Angriff ein Gebiet, in welchem alle Gegner <A0HH,DataA4> Sekunden lang <A0HH,DataB4> Schaden pro Sekunde erleiden. Hält <A0HG,Dur4> Sekunden.|n|cffc3dbffKann nur im Fernkampf angewandt werden.|r
+Laden-Pfeil Rune
 }
 
 STRING 3498
-// Fähigkeiten: A0HG (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1DF (Laden-Pfeil Rune), EditorSuffix (Editor-Suffix (ansf))
 {
-Verseucht bei jedem Angriff ein Gebiet, in welchem alle Gegner <A0HH,DataA5> Sekunden lang <A0HH,DataB5> Schaden pro Sekunde erleiden. Hält <A0HG,Dur5> Sekunden.|n|cffc3dbffKann nur im Fernkampf angewandt werden.|r
+(Laden)
 }
 
 STRING 3499
@@ -21233,7 +21317,7 @@ STRING 3567
 }
 
 STRING 3568
-// Fähigkeiten: A08L (Böses bannen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A08M (Böses bannen), Name (Name (anam))
 {
 Böses bannen
 }
@@ -21293,13 +21377,13 @@ STRING 3577
 }
 
 STRING 3578
-// Fähigkeiten: A08M (Böses bannen), Name (Name (anam))
+// Zauberverstärker/Effekte: B01E (Böses bannen), EditorName (Name (nur Editor) (fnam))
 {
 Böses bannen
 }
 
 STRING 3579
-// Zauberverstärker/Effekte: B01E (Böses bannen), EditorName (Name (nur Editor) (fnam))
+// Zauberverstärker/Effekte: B01E (Böses bannen), Bufftip (Tooltipp (ftip))
 {
 Böses bannen
 }
@@ -24763,9 +24847,9 @@ Dunkle Diener [|cffffcc00Stufe 5|r]
 }
 
 STRING 4156
-// Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1DG (Laden-Pfeil Heiltrank), Name (Name (anam))
 {
-Ruft für <A0RU,Dur2> Sekunden einen Dämon Stufe <n03S,level> herbei, der  <n03S,dmgplus2> Schaden verursacht, <n03S,def> Rüstung, <n03S,manaN> Mana und <n03S,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Laden-Pfeil Heiltrank
 }
 
 STRING 4157
@@ -24841,7 +24925,7 @@ Vorherige Seite
 }
 
 STRING 4169
-// Fähigkeiten: A0AF (Zauberstufe erhöhen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0AI (Aus Favoriten entfernen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -24925,7 +25009,7 @@ Nächste Seite
 }
 
 STRING 4183
-// Fähigkeiten: A0AG (Zauberstufe verringern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A13F (Zurück zum Zauberbuch), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -25009,7 +25093,7 @@ Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 4197
-// Fähigkeiten: A0AH (Zu Favoriten hinzufügen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18L (Buch der Magie), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -25171,7 +25255,7 @@ Zauberstufe erhöhen
 }
 
 STRING 4224
-// Fähigkeiten: A0AI (Aus Favoriten entfernen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18Q (Buch der Tränke), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -25255,7 +25339,7 @@ Zauberstufe verringern
 }
 
 STRING 4238
-// Fähigkeiten: A13F (Zurück zum Zauberbuch), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19N (Hellebarde), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -25339,7 +25423,7 @@ Zu Favoriten hinzufügen
 }
 
 STRING 4252
-// Fähigkeiten: A18L (Buch der Magie), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19S (Große Doppelaxt), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -25447,7 +25531,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 }
 
 STRING 4270
-// Fähigkeiten: A01W (Schattengeschoss), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0EX (Weltenportal), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -25531,7 +25615,7 @@ Parasit
 }
 
 STRING 4284
-// Fähigkeiten: A0EX (Weltenportal), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0S4 (Parasit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -25621,7 +25705,7 @@ Erhöht das Wissen des Trägers um <AIi3,DataB1> und die Rüstung des Trägers u
 }
 
 STRING 4299
-// Fähigkeiten: A0RU (Dämonendiener), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0SG (Meister der Nekromantie), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -27445,7 +27529,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 4603
-// Fähigkeiten: A100 (Magische Schockwellen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
 {
 Magische Schockwellen [|cffffcc00Stufe 1|r]
 }
@@ -27523,7 +27607,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 4616
-// Fähigkeiten: A101 (Magische Schockwellen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
 {
 Magische Schockwellen [|cffffcc00Stufe 2|r]
 }
@@ -27601,7 +27685,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 4629
-// Fähigkeiten: A102 (Magische Schockwellen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
 {
 Magische Schockwellen [|cffffcc00Stufe 3|r]
 }
@@ -27679,7 +27763,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 4642
-// Fähigkeiten: A103 (Magische Schockwellen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
 {
 Magische Schockwellen [|cffffcc00Stufe 4|r]
 }
@@ -28639,7 +28723,7 @@ STRING 4801
 }
 
 STRING 4802
-// Fähigkeiten: A104 (Magische Schockwellen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A05W (Magische Schockwellen), Tip (Tooltipp - Normal (atp1))
 {
 Magische Schockwellen [|cffffcc00Stufe 5|r]
 }
@@ -30467,13 +30551,13 @@ Opfer
 }
 
 STRING 5107
-// Fähigkeiten: A00S (ASystemGUI - shortcut o), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0BQ (Opfer), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 O
 }
 
 STRING 5108
-// Fähigkeiten: A00S (ASystemGUI - shortcut o), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00S (ASystemGUI - shortcut o), Tip (Tooltipp - Normal (atp1))
 {
 O
 }
@@ -33169,6 +33253,12 @@ STRING 5556
 (Druide)
 }
 
+STRING 5557
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 5|r] (|cffffcc00J|r)
+}
+
 STRING 5558
 // Einheiten: n065 (Hain), Name (Name (unam))
 {
@@ -33203,6 +33293,36 @@ STRING 5563
 // Fähigkeiten: A0D4 (Hain), Tip (Tooltipp - Normal (atp1))
 {
 Hain beschwören [|cffffcc00Stufe 5|r]
+}
+
+STRING 5564
+// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+{
+Böses hindern [|cffffcc00Stufe 2|r] (|cffffcc00I|r)
+}
+
+STRING 5565
+// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+{
+Böses hindern [|cffffcc00Stufe 3|r] (|cffffcc00I|r)
+}
+
+STRING 5566
+// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+{
+Böses hindern [|cffffcc00Stufe 4|r] (|cffffcc00I|r)
+}
+
+STRING 5567
+// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+{
+Böses hindern [|cffffcc00Stufe 5|r] (|cffffcc00I|r)
+}
+
+STRING 5568
+// Fähigkeiten: A055 (Böses hindern), Tip (Tooltipp - Normal (atp1))
+{
+Böses hindern [|cffffcc00Stufe 1|r] (|cffffcc00I|r)
 }
 
 STRING 5569
@@ -34801,6 +34921,12 @@ STRING 5834
 Ranken
 }
 
+STRING 5835
+// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+{
+Wiederbeleben [|cffffcc00Stufe 2|r] (|cffffcc00O|r)
+}
+
 STRING 5836
 // Fähigkeiten: A0DK (Baumhirte - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -34877,6 +35003,12 @@ STRING 5848
 // Fähigkeiten: A0AN (Manaexplosion - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 5849
+// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+{
+Wiederbeleben [|cffffcc00Stufe 3|r] (|cffffcc00O|r)
 }
 
 STRING 5850
@@ -34957,6 +35089,12 @@ STRING 5862
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
 }
 
+STRING 5863
+// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+{
+Wiederbeleben [|cffffcc00Stufe 4|r] (|cffffcc00O|r)
+}
+
 STRING 5864
 // Fähigkeiten: A0MK (Aura der Autorität - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -35035,6 +35173,12 @@ STRING 5876
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
 }
 
+STRING 5877
+// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+{
+Wiederbeleben [|cffffcc00Stufe 5|r] (|cffffcc00O|r)
+}
+
 STRING 5878
 // Fähigkeiten: A0CL (Krähengestalt - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -35111,6 +35255,12 @@ STRING 5890
 // Fähigkeiten: A0HN (Seuche - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 5891
+// Fähigkeiten: A056 (Wiederbeleben), Tip (Tooltipp - Normal (atp1))
+{
+Wiederbeleben [|cffffcc00Stufe 1|r] (|cffffcc00O|r)
 }
 
 STRING 5892
@@ -36559,9 +36709,9 @@ STRING 6132
 }
 
 STRING 6133
-// Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1DG (Laden-Pfeil Heiltrank), EditorSuffix (Editor-Suffix (ansf))
 {
-Ruft für <A0RU,Dur3> Sekunden einen Dämon Stufe <n03T,level> herbei, der  <n03T,dmgplus3> Schaden verursacht, <n03T,def> Rüstung, <n03T,manaN> Mana und <n03T,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+(Laden)
 }
 
 STRING 6134
@@ -37483,9 +37633,9 @@ Weltenportal
 }
 
 STRING 6287
-// Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1DH (Laden-Pfeil Manatrank), Name (Name (anam))
 {
-Ruft für <A0RU,Dur4> Sekunden einen Dämon Stufe <n03U,level> herbei, der  <n03U,dmgplus4> Schaden verursacht, <n03U,def> Rüstung, <n03U,manaN> Mana und <n03U,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Laden-Pfeil Manatrank
 }
 
 STRING 6288
@@ -37567,9 +37717,9 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 }
 
 STRING 6301
-// Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1DH (Laden-Pfeil Manatrank), EditorSuffix (Editor-Suffix (ansf))
 {
-Ruft für <A0RU,Dur5> Sekunden einen Dämon Stufe <n03V,level> herbei, der  <n03V,dmgplus5> Schaden verursacht, <n03V,def> Rüstung, <n03V,manaN> Mana und <n03V,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+(Laden)
 }
 
 STRING 6302
@@ -38257,13 +38407,13 @@ Alpha - Stufe 1
 }
 
 STRING 6416
-// Fähigkeiten: A0S4 (Parasit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0V5 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
 
 STRING 6417
-// Fähigkeiten: A0SG (Meister der Nekromantie), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VC (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -38911,7 +39061,7 @@ Totenbeschwörung - Stufe 5
 }
 
 STRING 6525
-// Fähigkeiten: A0V5 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A149 (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -38935,7 +39085,7 @@ Weltenportal
 }
 
 STRING 6529
-// Fähigkeiten: A0VC (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A14P (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -41215,31 +41365,31 @@ Segen
 }
 
 STRING 6909
-// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0H6 (Segen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Segen [|cffffcc00Stufe 1|r]
 }
 
 STRING 6910
-// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0H7 (Segen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Segen [|cffffcc00Stufe 2|r]
 }
 
 STRING 6911
-// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0H8 (Segen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Segen [|cffffcc00Stufe 3|r]
 }
 
 STRING 6912
-// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0H9 (Segen - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Segen [|cffffcc00Stufe 4|r]
 }
 
 STRING 6913
-// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HA (Segen - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Segen [|cffffcc00Stufe 5|r]
 }
@@ -41341,9 +41491,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 6930
-// Fähigkeiten: A0H6 (Segen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DI (Laden-Pfeil Schwert), Name (Name (anam))
 {
-Segen [|cffffcc00Stufe 1|r]
+Laden-Pfeil Schwert
 }
 
 STRING 6931
@@ -41425,9 +41575,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 6944
-// Fähigkeiten: A0H7 (Segen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DI (Laden-Pfeil Schwert), EditorSuffix (Editor-Suffix (ansf))
 {
-Segen [|cffffcc00Stufe 2|r]
+(Laden)
 }
 
 STRING 6945
@@ -41509,9 +41659,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 6958
-// Fähigkeiten: A0H8 (Segen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DJ (Laden-Pfeil Schild), Name (Name (anam))
 {
-Segen [|cffffcc00Stufe 3|r]
+Laden-Pfeil Schild
 }
 
 STRING 6959
@@ -41593,9 +41743,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 6972
-// Fähigkeiten: A0H9 (Segen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DJ (Laden-Pfeil Schild), EditorSuffix (Editor-Suffix (ansf))
 {
-Segen [|cffffcc00Stufe 4|r]
+(Laden)
 }
 
 STRING 6973
@@ -41677,9 +41827,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 6986
-// Fähigkeiten: A0HA (Segen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DK (Laden-Pfeil Bogen), Name (Name (anam))
 {
-Segen [|cffffcc00Stufe 5|r]
+Laden-Pfeil Bogen
 }
 
 STRING 6987
@@ -41803,37 +41953,37 @@ STRING 7006
 }
 
 STRING 7007
-// Fähigkeiten: A0HG (Seuche), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HN (Seuche - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 1|r]
 }
 
 STRING 7008
-// Fähigkeiten: A0HG (Seuche), Name (Name (anam))
+// Fähigkeiten: A1DD (Seuche), Name (Name (anam))
 {
 Seuche
 }
 
 STRING 7009
-// Fähigkeiten: A0HG (Seuche), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HO (Seuche - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 2|r]
 }
 
 STRING 7010
-// Fähigkeiten: A0HG (Seuche), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HP (Seuche - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 3|r]
 }
 
 STRING 7011
-// Fähigkeiten: A0HG (Seuche), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HQ (Seuche - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 4|r]
 }
 
 STRING 7012
-// Fähigkeiten: A0HG (Seuche), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HR (Seuche - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 5|r]
 }
@@ -41935,7 +42085,7 @@ STRING 7028
 }
 
 STRING 7029
-// Fähigkeiten: A0HM (Seuche), Name (Name (anam))
+// Zauberverstärker/Effekte: B02T (Seuche), EditorName (Name (nur Editor) (fnam))
 {
 Seuche
 }
@@ -41995,7 +42145,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7039
-// Fähigkeiten: A0HN (Seuche - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 1|r]
 }
@@ -42079,7 +42229,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7053
-// Fähigkeiten: A0HO (Seuche - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 2|r]
 }
@@ -42163,7 +42313,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7067
-// Fähigkeiten: A0HP (Seuche - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 3|r]
 }
@@ -42247,7 +42397,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7081
-// Fähigkeiten: A0HQ (Seuche - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 4|r]
 }
@@ -42331,7 +42481,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7095
-// Fähigkeiten: A0HR (Seuche - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
 Seuche [|cffffcc00Stufe 5|r]
 }
@@ -42421,7 +42571,7 @@ Seuche- Stufe 5
 }
 
 STRING 7110
-// Fähigkeiten: A149 (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1AB (Verfluchter Boden), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -42763,7 +42913,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7167
-// Fähigkeiten: A0RU (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
 Dämonendiener [|cffffcc00Stufe 1|r]
 }
@@ -42847,7 +42997,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7181
-// Fähigkeiten: A0RU (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
 Dämonendiener [|cffffcc00Stufe 2|r]
 }
@@ -42931,7 +43081,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7195
-// Fähigkeiten: A0RU (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
 Dämonendiener [|cffffcc00Stufe 3|r]
 }
@@ -43015,7 +43165,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7209
-// Fähigkeiten: A0RU (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
 Dämonendiener [|cffffcc00Stufe 4|r]
 }
@@ -43099,7 +43249,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 7223
-// Fähigkeiten: A0RU (Dämonendiener), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
 Dämonendiener [|cffffcc00Stufe 5|r]
 }
@@ -43747,7 +43897,7 @@ Dunkler Zauber - Stufe 5
 }
 
 STRING 7331
-// Fähigkeiten: A14P (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DD (Seuche), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -44796,6 +44946,12 @@ STRING 7505
 Dryadenquelle
 }
 
+STRING 7506
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 2|r] (|cffffcc00G|r)
+}
+
 STRING 7507
 // Fähigkeiten: A0NS (Blenden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -44872,6 +45028,12 @@ STRING 7519
 // Fähigkeiten: A0NF (Märtyrer - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 7520
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 3|r] (|cffffcc00G|r)
 }
 
 STRING 7521
@@ -44952,6 +45114,12 @@ STRING 7533
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
 }
 
+STRING 7534
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 4|r] (|cffffcc00G|r)
+}
+
 STRING 7535
 // Fähigkeiten: A0NU (Blenden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -45030,6 +45198,12 @@ STRING 7547
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
 }
 
+STRING 7548
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 5|r] (|cffffcc00G|r)
+}
+
 STRING 7549
 // Fähigkeiten: A0NV (Blenden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -45106,6 +45280,12 @@ STRING 7561
 // Fähigkeiten: A0NI (Märtyrer - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 7562
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 1|r] (|cffffcc00G|r)
 }
 
 STRING 7563
@@ -46513,7 +46693,7 @@ Pfeilhagel [|cffffcc00Stufe 5|r]
 }
 
 STRING 7797
-// Fähigkeiten: A18Q (Buch der Tränke), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19T (Langbogen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -48655,9 +48835,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 8154
-// Fähigkeiten: A091 (Schützen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Zauberverstärker/Effekte: B003 (Dämonendiener), EditorSuffix (Editor-Suffix (fnsf))
 {
-Schützen [|cffffcc00Stufe 1|r]
+(Nekromant)
 }
 
 STRING 8155
@@ -48739,9 +48919,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 8168
-// Fähigkeiten: A0LA (Schützen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DK (Laden-Pfeil Bogen), EditorSuffix (Editor-Suffix (ansf))
 {
-Schützen [|cffffcc00Stufe 2|r]
+(Laden)
 }
 
 STRING 8169
@@ -48823,9 +49003,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 8182
-// Fähigkeiten: A0LB (Schützen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Zauberverstärker/Effekte: B004 (Dunkler Diener), EditorSuffix (Editor-Suffix (fnsf))
 {
-Schützen [|cffffcc00Stufe 3|r]
+(Nekromant)
 }
 
 STRING 8183
@@ -48907,9 +49087,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 8196
-// Fähigkeiten: A0LC (Schützen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DL (Laden-Pfeil Spruchrolle), Name (Name (anam))
 {
-Schützen [|cffffcc00Stufe 4|r]
+Laden-Pfeil Spruchrolle
 }
 
 STRING 8197
@@ -48991,9 +49171,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 8210
-// Fähigkeiten: A0LD (Schützen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DL (Laden-Pfeil Spruchrolle), EditorSuffix (Editor-Suffix (ansf))
 {
-Schützen [|cffffcc00Stufe 5|r]
+(Laden)
 }
 
 STRING 8211
@@ -50082,6 +50262,12 @@ STRING 8391
 (Favoritenfähigkeit - Kleriker)
 }
 
+STRING 8392
+// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
+{
+Heiliger Wille [|cffffcc00Stufe 1|r] (|cffffcc00L|r)
+}
+
 STRING 8393
 // Fähigkeiten: A0QR (Böses hindern - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -50158,6 +50344,12 @@ STRING 8405
 // Fähigkeiten: A0QQ (Böses hindern - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 8406
+// Fähigkeiten: A00K (ASystemGUI - shortcut g), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+G
 }
 
 STRING 8407
@@ -50238,6 +50430,12 @@ STRING 8419
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
 }
 
+STRING 8420
+// Fähigkeiten: A08L (Böses bannen), Tip (Tooltipp - Normal (atp1))
+{
+Böses bannen (|cffffcc00K|r)
+}
+
 STRING 8421
 // Fähigkeiten: A0RL (Ahnenpakt - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -50316,6 +50514,12 @@ STRING 8433
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
 }
 
+STRING 8434
+// Fähigkeiten: A00M (ASystemGUI - shortcut i), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+I
+}
+
 STRING 8435
 // Fähigkeiten: A0RM (Ahnenpakt - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -50392,6 +50596,12 @@ STRING 8447
 // Fähigkeiten: A0R0 (Vorherige Klasse), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 8448
+// Fähigkeiten: A00N (ASystemGUI - shortcut j), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+J
 }
 
 STRING 8449
@@ -53387,31 +53597,31 @@ Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Hö
 }
 
 STRING 8943
-// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NF (Märtyrer - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Märtyrer [|cffffcc00Stufe 2|r]
 }
 
 STRING 8944
-// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NG (Märtyrer - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Märtyrer [|cffffcc00Stufe 3|r]
 }
 
 STRING 8945
-// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NH (Märtyrer - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Märtyrer [|cffffcc00Stufe 4|r]
 }
 
 STRING 8946
-// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NI (Märtyrer - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Märtyrer [|cffffcc00Stufe 5|r]
 }
 
 STRING 8947
-// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NE (Märtyrer - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Märtyrer [|cffffcc00Stufe 1|r]
 }
@@ -53507,9 +53717,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 8963
-// Fähigkeiten: A0NE (Märtyrer - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DM (Laden-Pfeil Helm), Name (Name (anam))
 {
-Märtyrer [|cffffcc00Stufe 1|r]
+Laden-Pfeil Helm
 }
 
 STRING 8964
@@ -53591,9 +53801,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 8977
-// Fähigkeiten: A0NF (Märtyrer - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DM (Laden-Pfeil Helm), EditorSuffix (Editor-Suffix (ansf))
 {
-Märtyrer [|cffffcc00Stufe 2|r]
+(Laden)
 }
 
 STRING 8978
@@ -53675,9 +53885,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 8991
-// Fähigkeiten: A0NG (Märtyrer - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DN (Laden-Pfeil Buch), Name (Name (anam))
 {
-Märtyrer [|cffffcc00Stufe 3|r]
+Laden-Pfeil Buch
 }
 
 STRING 8992
@@ -53759,9 +53969,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9005
-// Fähigkeiten: A0NH (Märtyrer - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DN (Laden-Pfeil Buch), EditorSuffix (Editor-Suffix (ansf))
 {
-Märtyrer [|cffffcc00Stufe 4|r]
+(Laden)
 }
 
 STRING 9006
@@ -53840,12 +54050,6 @@ STRING 9018
 // Fähigkeiten: A0T7 (Eisgeschoss - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9019
-// Fähigkeiten: A0NI (Märtyrer - Stufe 5), Tip (Tooltipp - Normal (atp1))
-{
-Märtyrer [|cffffcc00Stufe 5|r]
 }
 
 STRING 9020
@@ -54223,31 +54427,31 @@ Blenden
 }
 
 STRING 9083
-// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NR (Blenden - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Blenden [|cffffcc00Stufe 1|r]
 }
 
 STRING 9084
-// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NS (Blenden - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Blenden [|cffffcc00Stufe 2|r]
 }
 
 STRING 9085
-// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NT (Blenden - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Blenden [|cffffcc00Stufe 3|r]
 }
 
 STRING 9086
-// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NU (Blenden - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Blenden [|cffffcc00Stufe 4|r]
 }
 
 STRING 9087
-// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NV (Blenden - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Blenden [|cffffcc00Stufe 5|r]
 }
@@ -54348,12 +54552,6 @@ STRING 9103
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9104
-// Fähigkeiten: A0NR (Blenden - Stufe 1), Tip (Tooltipp - Normal (atp1))
-{
-Blenden [|cffffcc00Stufe 1|r]
-}
-
 STRING 9105
 // Fähigkeiten: A0OH (Linderung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -54430,12 +54628,6 @@ STRING 9117
 // Fähigkeiten: A0TA (Eisgeschoss - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9118
-// Fähigkeiten: A0NS (Blenden - Stufe 2), Tip (Tooltipp - Normal (atp1))
-{
-Blenden [|cffffcc00Stufe 2|r]
 }
 
 STRING 9119
@@ -54516,12 +54708,6 @@ STRING 9131
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9132
-// Fähigkeiten: A0NT (Blenden - Stufe 3), Tip (Tooltipp - Normal (atp1))
-{
-Blenden [|cffffcc00Stufe 3|r]
-}
-
 STRING 9133
 // Fähigkeiten: A0OO (Drohendes Unheil - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -54600,12 +54786,6 @@ STRING 9145
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9146
-// Fähigkeiten: A0NU (Blenden - Stufe 4), Tip (Tooltipp - Normal (atp1))
-{
-Blenden [|cffffcc00Stufe 4|r]
-}
-
 STRING 9147
 // Fähigkeiten: A0OP (Drohendes Unheil - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -54682,12 +54862,6 @@ STRING 9159
 // Fähigkeiten: A0TI (Eiszeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9160
-// Fähigkeiten: A0NV (Blenden - Stufe 5), Tip (Tooltipp - Normal (atp1))
-{
-Blenden [|cffffcc00Stufe 5|r]
 }
 
 STRING 9161
@@ -54841,15 +55015,15 @@ Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Hö
 }
 
 STRING 9186
-// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PJ (Heiliger Wille - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Heiliger Wille [|cffffcc00Stufe 1|r]
 }
 
 STRING 9187
-// Zauberverstärker/Effekte: B01E (Böses bannen), Bufftip (Tooltipp (ftip))
+// Zauberverstärker/Effekte: X003 (Seuche (Effekt)), EditorName (Name (nur Editor) (fnam))
 {
-Böses bannen
+Seuche (Effekt)
 }
 
 STRING 9188
@@ -54955,9 +55129,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9205
-// Fähigkeiten: A0O3 (Wiederbeleben - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wiederbeleben [|cffffcc00Stufe 1|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A1DD,DataA1> Schaden alle <A1DD,DataB1> Sekunden und alle Gegner in seiner Umgebung erleiden <A1DD,DataC1> Schaden alle <A1DD,DataD1> Sekunden.
 }
 
 STRING 9206
@@ -55039,9 +55213,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9219
-// Fähigkeiten: A0O4 (Wiederbeleben - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wiederbeleben [|cffffcc00Stufe 2|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A2DD,DataA2> Schaden alle <A2DD,DataB2> Sekunden und alle Gegner in seiner Umgebung erleiden <A2DD,DataC2> Schaden alle <A2DD,DataD2> Sekunden.
 }
 
 STRING 9220
@@ -55123,9 +55297,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9233
-// Fähigkeiten: A0O5 (Wiederbeleben - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wiederbeleben [|cffffcc00Stufe 3|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A3DD,DataA3> Schaden alle <A3DD,DataB3> Sekunden und alle Gegner in seiner Umgebung erleiden <A3DD,DataC3> Schaden alle <A3DD,DataD3> Sekunden.
 }
 
 STRING 9234
@@ -55207,9 +55381,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9247
-// Fähigkeiten: A0O6 (Wiederbeleben - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wiederbeleben [|cffffcc00Stufe 4|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A4DD,DataA4> Schaden alle <A4DD,DataB4> Sekunden und alle Gegner in seiner Umgebung erleiden <A4DD,DataC4> Schaden alle <A4DD,DataD4> Sekunden.
 }
 
 STRING 9248
@@ -55291,9 +55465,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9261
-// Fähigkeiten: A0O7 (Wiederbeleben - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wiederbeleben [|cffffcc00Stufe 5|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A5DD,DataA5> Schaden alle <A5DD,DataB5> Sekunden und alle Gegner in seiner Umgebung erleiden <A5DD,DataC5> Schaden alle <A5DD,DataD5> Sekunden.
 }
 
 STRING 9262
@@ -55537,19 +55711,19 @@ Dämonendiener
 }
 
 STRING 9302
-// Fähigkeiten: A0RU (Dämonendiener), Name (Name (anam))
-{
-Dämonendiener
-}
-
-STRING 9303
 // Fähigkeiten: A1CZ (Dämonendiener), Name (Name (anam))
 {
 Dämonendiener
 }
 
-STRING 9304
+STRING 9303
 // Zauberverstärker/Effekte: B003 (Dämonendiener), EditorName (Name (nur Editor) (fnam))
+{
+Dämonendiener
+}
+
+STRING 9304
+// Zauberverstärker/Effekte: B003 (Dämonendiener), Bufftip (Tooltipp (ftip))
 {
 Dämonendiener
 }
@@ -55719,9 +55893,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9329
-// Fähigkeiten: A0OD (Linderung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A100 (Magische Schockwellen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Linderung [|cffffcc00Stufe 1|r]
+Magische Schockwellen [|cffffcc00Stufe 1|r]
 }
 
 STRING 9330
@@ -55803,9 +55977,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9343
-// Fähigkeiten: A0OE (Linderung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A101 (Magische Schockwellen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Linderung [|cffffcc00Stufe 2|r]
+Magische Schockwellen [|cffffcc00Stufe 2|r]
 }
 
 STRING 9344
@@ -55887,9 +56061,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9357
-// Fähigkeiten: A0OF (Linderung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A102 (Magische Schockwellen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Linderung [|cffffcc00Stufe 3|r]
+Magische Schockwellen [|cffffcc00Stufe 3|r]
 }
 
 STRING 9358
@@ -55970,9 +56144,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9371
-// Fähigkeiten: A0OG (Linderung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A103 (Magische Schockwellen - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Linderung [|cffffcc00Stufe 4|r]
+Magische Schockwellen [|cffffcc00Stufe 4|r]
 }
 
 STRING 9372
@@ -56053,9 +56227,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9385
-// Fähigkeiten: A0OH (Linderung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A104 (Magische Schockwellen - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Linderung [|cffffcc00Stufe 5|r]
+Magische Schockwellen [|cffffcc00Stufe 5|r]
 }
 
 STRING 9386
@@ -56196,12 +56370,6 @@ STRING 9408
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9409
-// Fähigkeiten: A0ON (Drohendes Unheil - Stufe 1), Tip (Tooltipp - Normal (atp1))
-{
-Drohendes Unheil [|cffffcc00Stufe 1|r]
-}
-
 STRING 9410
 // Fähigkeiten: A0PC (Genesung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -56278,12 +56446,6 @@ STRING 9422
 // Fähigkeiten: A0UB (Gleißendes Licht - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9423
-// Fähigkeiten: A0OO (Drohendes Unheil - Stufe 2), Tip (Tooltipp - Normal (atp1))
-{
-Drohendes Unheil [|cffffcc00Stufe 2|r]
 }
 
 STRING 9424
@@ -56364,12 +56526,6 @@ STRING 9436
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9437
-// Fähigkeiten: A0OP (Drohendes Unheil - Stufe 3), Tip (Tooltipp - Normal (atp1))
-{
-Drohendes Unheil [|cffffcc00Stufe 3|r]
-}
-
 STRING 9438
 // Fähigkeiten: A0PJ (Heiliger Wille - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -56448,12 +56604,6 @@ STRING 9450
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9451
-// Fähigkeiten: A0OQ (Drohendes Unheil - Stufe 4), Tip (Tooltipp - Normal (atp1))
-{
-Drohendes Unheil [|cffffcc00Stufe 4|r]
-}
-
 STRING 9452
 // Fähigkeiten: A0PL (Peinigen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -56530,12 +56680,6 @@ STRING 9464
 // Fähigkeiten: A0UE (Gleißendes Licht - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9465
-// Fähigkeiten: A0OR (Drohendes Unheil - Stufe 5), Tip (Tooltipp - Normal (atp1))
-{
-Drohendes Unheil [|cffffcc00Stufe 5|r]
 }
 
 STRING 9466
@@ -56816,12 +56960,6 @@ STRING 9508
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9509
-// Fähigkeiten: A0OX (Reinheit - Stufe 1), Tip (Tooltipp - Normal (atp1))
-{
-Reinheit [|cffffcc00Stufe 1|r]
-}
-
 STRING 9510
 // Fähigkeiten: A0PN (Peinigen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -56898,12 +57036,6 @@ STRING 9522
 // Fähigkeiten: A0UL (Blitzschlag - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9523
-// Fähigkeiten: A0OY (Reinheit - Stufe 2), Tip (Tooltipp - Normal (atp1))
-{
-Reinheit [|cffffcc00Stufe 2|r]
 }
 
 STRING 9524
@@ -56984,12 +57116,6 @@ STRING 9536
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9537
-// Fähigkeiten: A0OZ (Reinheit - Stufe 3), Tip (Tooltipp - Normal (atp1))
-{
-Reinheit [|cffffcc00Stufe 3|r]
-}
-
 STRING 9538
 // Fähigkeiten: A0PP (Peinigen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -57068,12 +57194,6 @@ STRING 9550
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9551
-// Fähigkeiten: A0P0 (Reinheit - Stufe 4), Tip (Tooltipp - Normal (atp1))
-{
-Reinheit [|cffffcc00Stufe 4|r]
-}
-
 STRING 9552
 // Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -57150,12 +57270,6 @@ STRING 9564
 // Fähigkeiten: A0UO (Blitzschlag - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9565
-// Fähigkeiten: A0P1 (Reinheit - Stufe 5), Tip (Tooltipp - Normal (atp1))
-{
-Reinheit [|cffffcc00Stufe 5|r]
 }
 
 STRING 9566
@@ -57878,12 +57992,6 @@ STRING 9685
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9686
-// Fähigkeiten: A0PJ (Heiliger Wille - Stufe 1), Tip (Tooltipp - Normal (atp1))
-{
-Heiliger Wille [|cffffcc00Stufe 1|r]
-}
-
 STRING 9687
 // Fähigkeiten: A0QG (Göttergunst - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -58472,6 +58580,36 @@ STRING 9784
 (Druide - Stufe 1)
 }
 
+STRING 9785
+// Fähigkeiten: A00O (ASystemGUI - shortcut k), Tip (Tooltipp - Normal (atp1))
+{
+K
+}
+
+STRING 9786
+// Fähigkeiten: A00P (ASystemGUI - shortcut l), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+L
+}
+
+STRING 9787
+// Fähigkeiten: A00S (ASystemGUI - shortcut o), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+O
+}
+
+STRING 9788
+// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+{
+Linderung [|cffffcc00Stufe 2|r] (|cffffcc00W|r)
+}
+
+STRING 9789
+// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+{
+Linderung [|cffffcc00Stufe 3|r] (|cffffcc00W|r)
+}
+
 STRING 9790
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -58916,31 +59054,31 @@ Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Hö
 }
 
 STRING 9864
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Bekehrung [|cffffcc00Stufe 1|r]
 }
 
 STRING 9865
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q2 (Bekehrung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Bekehrung [|cffffcc00Stufe 2|r]
 }
 
 STRING 9866
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q3 (Bekehrung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Bekehrung [|cffffcc00Stufe 3|r]
 }
 
 STRING 9867
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q4 (Bekehrung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Bekehrung [|cffffcc00Stufe 4|r]
 }
 
 STRING 9868
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q5 (Bekehrung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Bekehrung [|cffffcc00Stufe 5|r]
 }
@@ -59009,12 +59147,6 @@ STRING 9879
 // Fähigkeiten: A0W9 (Manaschild - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9880
-// Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), Tip (Tooltipp - Normal (atp1))
-{
-Bekehrung [|cffffcc00Stufe 1|r]
 }
 
 STRING 9881
@@ -59095,12 +59227,6 @@ STRING 9893
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9894
-// Fähigkeiten: A0Q2 (Bekehrung - Stufe 2), Tip (Tooltipp - Normal (atp1))
-{
-Bekehrung [|cffffcc00Stufe 2|r]
-}
-
 STRING 9895
 // Fähigkeiten: A0SI (Meister der Nekromantie - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -59177,12 +59303,6 @@ STRING 9907
 // Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9908
-// Fähigkeiten: A0Q3 (Bekehrung - Stufe 3), Tip (Tooltipp - Normal (atp1))
-{
-Bekehrung [|cffffcc00Stufe 3|r]
 }
 
 STRING 9909
@@ -59263,12 +59383,6 @@ STRING 9921
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9922
-// Fähigkeiten: A0Q4 (Bekehrung - Stufe 4), Tip (Tooltipp - Normal (atp1))
-{
-Bekehrung [|cffffcc00Stufe 4|r]
-}
-
 STRING 9923
 // Fähigkeiten: A0SK (Meister der Nekromantie - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -59345,12 +59459,6 @@ STRING 9935
 // Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9936
-// Fähigkeiten: A0Q5 (Bekehrung - Stufe 5), Tip (Tooltipp - Normal (atp1))
-{
-Bekehrung [|cffffcc00Stufe 5|r]
 }
 
 STRING 9937
@@ -59504,33 +59612,15 @@ STRING 9961
 }
 
 STRING 9962
-// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QD (Göttergunst - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Göttergunst [|cffffcc00Stufe 1|r]
 }
 
 STRING 9963
-// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QE (Göttergunst - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Göttergunst [|cffffcc00Stufe 2|r]
-}
-
-STRING 9964
-// Fähigkeiten: A0QF (Göttergunst - Stufe 3), Tip (Tooltipp - Normal (atp1))
-{
-Göttergunst [|cffffcc00Stufe 3|r]
-}
-
-STRING 9965
-// Fähigkeiten: A0QG (Göttergunst - Stufe 4), Tip (Tooltipp - Normal (atp1))
-{
-Göttergunst [|cffffcc00Stufe 4|r]
-}
-
-STRING 9966
-// Fähigkeiten: A0QH (Göttergunst - Stufe 5), Tip (Tooltipp - Normal (atp1))
-{
-Göttergunst [|cffffcc00Stufe 5|r]
 }
 
 STRING 9967
@@ -59629,12 +59719,6 @@ STRING 9982
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9983
-// Fähigkeiten: A0QD (Göttergunst - Stufe 1), Tip (Tooltipp - Normal (atp1))
-{
-Göttergunst [|cffffcc00Stufe 1|r]
-}
-
 STRING 9984
 // Fähigkeiten: A0SM (Meister der Nekromantie - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -59711,12 +59795,6 @@ STRING 9996
 // Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9997
-// Fähigkeiten: A0QE (Göttergunst - Stufe 2), Tip (Tooltipp - Normal (atp1))
-{
-Göttergunst [|cffffcc00Stufe 2|r]
 }
 
 STRING 9998
@@ -61988,7 +62066,7 @@ STRING 10375
 }
 
 STRING 10376
-// Fähigkeiten: A1AB (Verfluchter Boden), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B020 (Weltenportal), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Nekromant)
 }
@@ -62066,7 +62144,7 @@ STRING 10388
 }
 
 STRING 10389
-// Zauberverstärker/Effekte: B003 (Dämonendiener), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: B02C (Parasit), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Nekromant)
 }
@@ -66313,6 +66391,12 @@ STRING 11096
 Elementare Gewalt - Stufe 1
 }
 
+STRING 11097
+// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+{
+Linderung [|cffffcc00Stufe 4|r] (|cffffcc00W|r)
+}
+
 STRING 11098
 // Fähigkeiten: A10A (Arkaner Hunger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -66389,6 +66473,12 @@ STRING 11110
 // Fähigkeiten: A101 (Magische Schockwellen - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 11111
+// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+{
+Linderung [|cffffcc00Stufe 5|r] (|cffffcc00W|r)
 }
 
 STRING 11112
@@ -66469,6 +66559,12 @@ STRING 11124
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
 }
 
+STRING 11125
+// Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
+{
+Linderung [|cffffcc00Stufe 1|r] (|cffffcc00W|r)
+}
+
 STRING 11126
 // Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -66547,6 +66643,12 @@ STRING 11138
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
 }
 
+STRING 11139
+// Fähigkeiten: A04W (Linderung), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+W
+}
+
 STRING 11140
 // Fähigkeiten: A10D (Arkaner Hunger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -66623,6 +66725,12 @@ STRING 11152
 // Fähigkeiten: A104 (Magische Schockwellen - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 11153
+// Fähigkeiten: A00Y (ASystemGUI - shortcut u), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+U
 }
 
 STRING 11154
@@ -74234,7 +74342,7 @@ STRING 12421
 }
 
 STRING 12422
-// Zauberverstärker/Effekte: B004 (Dunkler Diener), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: B02T (Seuche), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Nekromant)
 }
@@ -75205,6 +75313,12 @@ STRING 12583
 Mehrfachschuss [|cffffcc00Stufe 2|r]
 }
 
+STRING 12584
+// Fähigkeiten: A01Y (Heilige Kraft), Tip (Tooltipp - Normal (atp1))
+{
+Heilige Kraft (|cffffcc00Q|r)
+}
+
 STRING 12585
 // Zauberverstärker/Effekte: B024 (Koloss), EditorSuffix (Editor-Suffix (fnsf))
 {
@@ -75218,7 +75332,7 @@ STRING 12586
 }
 
 STRING 12587
-// Zauberverstärker/Effekte: B020 (Weltenportal), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: X003 (Seuche (Effekt)), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Nekromant)
 }
@@ -77075,6 +77189,18 @@ STRING 12896
 // Fähigkeiten: A0D5 (Hain), Name (Name (anam))
 {
 Hain
+}
+
+STRING 12897
+// Fähigkeiten: A01Y (Heilige Kraft), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+Q
+}
+
+STRING 12898
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 2|r] (|cffffcc00F|r)
 }
 
 STRING 12899
@@ -79387,7 +79513,7 @@ Erhöht den Schaden um <A17K,DataA1> und gibt eine Chance von <A17L,DataA1> % de
 }
 
 STRING 13283
-// Gegenstände: I05C (Nordischer Kriegshammer), Name (Name (unam))
+// Fähigkeiten: A17M (Nordischer Kriegshammer), Name (Name (anam))
 {
 Nordischer Kriegshammer
 }
@@ -79441,13 +79567,13 @@ STRING 13291
 }
 
 STRING 13292
-// Fähigkeiten: A17M (Nordischer Kriegshammer), Name (Name (anam))
+// Fähigkeiten: A17N (Nordischer Kriegshammer), Name (Name (anam))
 {
 Nordischer Kriegshammer
 }
 
 STRING 13293
-// Fähigkeiten: A17N (Nordischer Kriegshammer), Name (Name (anam))
+// Fähigkeiten: A0RU (Nordischer Kriegshammer), Name (Name (anam))
 {
 Nordischer Kriegshammer
 }
@@ -79996,6 +80122,12 @@ STRING 13384
 // Fähigkeiten: A17Q (Mine - explodierend), EditorSuffix (Editor-Suffix (ansf))
 {
 (Waldläufer, Falle)
+}
+
+STRING 13385
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 3|r] (|cffffcc00F|r)
 }
 
 STRING 13386
@@ -80935,7 +81067,7 @@ Buch der Magie
 }
 
 STRING 13542
-// Fähigkeiten: A19N (Hellebarde), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19U (Zauberamulett), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -81042,6 +81174,12 @@ STRING 13559
 Spruchrolle der Zauberkraft herstellen
 }
 
+STRING 13560
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 4|r] (|cffffcc00F|r)
+}
+
 STRING 13561
 // Fähigkeiten: A18P (Spruchrolle der Zauberkraft herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -81066,6 +81204,12 @@ STRING 13564
 Ein Buch mit Anleitungen zum Herstellen von Tränken.
 }
 
+STRING 13565
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 5|r] (|cffffcc00F|r)
+}
+
 STRING 13566
 // Gegenstände: I05J (Buch der Tränke), Ubertip (Tooltipp - Erweitert (utub))
 {
@@ -81079,7 +81223,7 @@ Buch der Tränke
 }
 
 STRING 13568
-// Fähigkeiten: A19S (Große Doppelaxt), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19V (Zaubermantel), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -81139,7 +81283,7 @@ Die Zauber des Gebäudes.
 }
 
 STRING 13578
-// Fähigkeiten: A19T (Langbogen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19W (Stab der Klarsicht), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -81874,6 +82018,66 @@ STRING 13700
 // Gegenstände: I05L (Manakraut), Ubertip (Tooltipp - Erweitert (utub))
 {
 Stellt bei Benutzung <A19K,DataA1> Mana wieder her.|nBietet <I05L,uses> Aufladung.
+}
+
+STRING 13701
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 1|r] (|cffffcc00F|r)
+}
+
+STRING 13702
+// Fähigkeiten: A0NC (Märtyrer), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+F
+}
+
+STRING 13703
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blenden [|cffffcc00Stufe 1|r] (|cffffcc00E|r)
+}
+
+STRING 13704
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blenden [|cffffcc00Stufe 2|r] (|cffffcc00E|r)
+}
+
+STRING 13705
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blenden [|cffffcc00Stufe 3|r] (|cffffcc00E|r)
+}
+
+STRING 13706
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blenden [|cffffcc00Stufe 4|r] (|cffffcc00E|r)
+}
+
+STRING 13707
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blenden [|cffffcc00Stufe 5|r] (|cffffcc00E|r)
+}
+
+STRING 13708
+// Fähigkeiten: A0PZ (Bekehrung), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+T
+}
+
+STRING 13709
+// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+{
+Bekehrung [|cffffcc00Stufe 1|r] (|cffffcc00T|r)
+}
+
+STRING 13710
+// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+{
+Bekehrung [|cffffcc00Stufe 2|r] (|cffffcc00T|r)
 }
 
 STRING 13711
@@ -90985,13 +91189,13 @@ Große Doppelaxt
 }
 
 STRING 15229
-// Fähigkeiten: A19U (Zauberamulett), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1AF (Standarte der schwarzen Legion), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
 
 STRING 15230
-// Fähigkeiten: A19V (Zaubermantel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1AG (Standarte der weißen Legion), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91003,7 +91207,7 @@ Zauberamulett
 }
 
 STRING 15232
-// Fähigkeiten: A19W (Stab der Klarsicht), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B6 (Horn des Kampfes), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91015,7 +91219,7 @@ Zaubermantel
 }
 
 STRING 15234
-// Fähigkeiten: A1AF (Standarte der schwarzen Legion), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B7 (Horn des Lebens), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91027,7 +91231,7 @@ Stab der Klarsicht
 }
 
 STRING 15236
-// Fähigkeiten: A1AG (Standarte der weißen Legion), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B8 (Horn des Schutzes), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91237,7 +91441,7 @@ Horn des Kampfes
 }
 
 STRING 15271
-// Fähigkeiten: A1B6 (Horn des Kampfes), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B9 (Blutamulett), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91249,7 +91453,7 @@ Horn des Lebens
 }
 
 STRING 15273
-// Fähigkeiten: A1B7 (Horn des Lebens), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1BA (Zacken von Deranors Krone), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91261,7 +91465,7 @@ Horn des Schutzes
 }
 
 STRING 15275
-// Fähigkeiten: A1B8 (Horn des Schutzes), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1BB (Buch der Schmiedekunst), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91564,12 +91768,6 @@ STRING 15325
 // Fähigkeiten: A1AB (Verfluchter Boden), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden.
-}
-
-STRING 15326
-// Zauberverstärker/Effekte: B02C (Parasit), EditorSuffix (Editor-Suffix (fnsf))
-{
-(Nekromant)
 }
 
 STRING 15327
@@ -92287,7 +92485,7 @@ Verleiht insgesamt <A1B5,DataA1> Punkte zu Beweglichkeit, Intelligenz und Stärk
 }
 
 STRING 15446
-// Fähigkeiten: A1B9 (Blutamulett), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0RU (Nordischer Kriegshammer), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -92299,7 +92497,7 @@ Zacken von Deranors Krone
 }
 
 STRING 15448
-// Fähigkeiten: A1BA (Zacken von Deranors Krone), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DC (Mantel), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -92419,7 +92617,7 @@ Buch der Schmiedekunst
 }
 
 STRING 15468
-// Fähigkeiten: A1BB (Buch der Schmiedekunst), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DE (Kapuze), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -93490,6 +93688,12 @@ STRING 15646
 // Zauberverstärker/Effekte: B02R (), Buffubertip (Tooltipp - Erweitert (fube))
 {
 Ein Meutehund.
+}
+
+STRING 15647
+// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+{
+Bekehrung [|cffffcc00Stufe 3|r] (|cffffcc00T|r)
 }
 
 STRING 15648
@@ -94652,6 +94856,12 @@ STRING 15840
 (Druide - Ultimativzauber 1)
 }
 
+STRING 15841
+// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+{
+Bekehrung [|cffffcc00Stufe 4|r] (|cffffcc00T|r)
+}
+
 STRING 15842
 // Fähigkeiten: A1CY (Großen Manatrank herstellen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -94668,42 +94878,6 @@ STRING 15844
 // Fähigkeiten: A1CZ (Dämonendiener), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant - basiert auf Wasserelementargeist)
-}
-
-STRING 15845
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 1|r]
-}
-
-STRING 15846
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 2|r]
-}
-
-STRING 15847
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 3|r]
-}
-
-STRING 15848
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 4|r]
-}
-
-STRING 15849
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 5|r]
-}
-
-STRING 15850
-// Fähigkeiten: A1CZ (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Ruft für <A0RU,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
 }
 
 STRING 15851
@@ -94728,12 +94902,6 @@ STRING 15854
 // Fähigkeiten: A1D6 (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
 {
 (Druide - Hain - Stufe 4)
-}
-
-STRING 15855
-// Zauberverstärker/Effekte: B003 (Dämonendiener), Bufftip (Tooltipp (ftip))
-{
-Dämonendiener
 }
 
 STRING 15856
@@ -95084,6 +95252,36 @@ STRING 15913
 Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
 }
 
+STRING 15914
+// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+{
+Bekehrung [|cffffcc00Stufe 5|r] (|cffffcc00T|r)
+}
+
+STRING 15915
+// Fähigkeiten: A0QB (Göttergunst), Unhotkey (Tastaturkürzel - Ausschalten (auhk))
+{
+D
+}
+
+STRING 15916
+// Fähigkeiten: A0QB (Göttergunst), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+D
+}
+
+STRING 15917
+// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+{
+Göttergunst [|cffffcc00Stufe 1|r] (|cffffcc00D|r)
+}
+
+STRING 15918
+// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+{
+Göttergunst [|cffffcc00Stufe 2|r] (|cffffcc00D|r)
+}
+
 STRING 15919
 // Fähigkeiten: A0LL (Selbstlosigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -95346,5 +95544,29 @@ STRING 15962
 // Fähigkeiten: A0E7 (Ranken - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+}
+
+STRING 15963
+// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+{
+Göttergunst [|cffffcc00Stufe 3|r] (|cffffcc00D|r)
+}
+
+STRING 15964
+// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+{
+Göttergunst [|cffffcc00Stufe 4|r] (|cffffcc00D|r)
+}
+
+STRING 15965
+// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+{
+Göttergunst [|cffffcc00Stufe 5|r] (|cffffcc00D|r)
+}
+
+STRING 15966
+// Fähigkeiten: A0R2 (Klassenzauber), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+Z
 }
 
