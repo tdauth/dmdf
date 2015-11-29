@@ -13,7 +13,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 			call RemoveUnit(this.m_unit)
 			set this.m_unit = null
 			
-			call QuestPerdixHunt.characterQuest.evaluate(ACharacter.playerCharacter(this.m_player)).displayUpdateMessage(tr("Das Rebhuhn ist weggeflogen!"))
+			call QuestPerdixHunt.characterQuest.evaluate(ACharacter.playerCharacter(this.m_player)).displayUpdateMessage(tre("Das Rebhuhn ist weggeflogen!", "The partridge flew away!"))
 			
 			call this.destroy()
 			
@@ -25,7 +25,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
 			call TimerStart(this.m_timer, thistype.time, false, function thistype.timerFunction)
 			set this.m_timerDialog = CreateTimerDialog(this.m_timer)
-			call TimerDialogSetTitle(this.m_timerDialog, tr("Zeit bis das Rebhuhn wegfliegt"))
+			call TimerDialogSetTitle(this.m_timerDialog, tre("Zeit bis das Rebhuhn wegfliegt", "Time until the partridge flies off"))
 			call TimerDialogDisplayForPlayerBJ(true, this.m_timerDialog, whichPlayer)
 			set this.m_unit = whichUnit
 			set this.m_player = whichPlayer
@@ -54,7 +54,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 		private static method triggerConditionHint takes nothing returns boolean
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
 			if (GetTriggerUnit() == this.character().unit()) then
-				call Character(this.character()).displayHint(tr("In diesem Gebiet befinden sich Rebhühner."))
+				call Character(this.character()).displayHint(tre("In diesem Gebiet befinden sich Rebhühner.", "In this area there are partridges."))
 			endif
 		
 			return false
@@ -87,18 +87,18 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 						if (GetRandomInt(0, 100) <= 80) then
 							set animal = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 'n04N', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 0.0)
 							call DmdfHashTable.global().setHandleInteger(animal, "timer", HuntTimer.create(this.character().player(), animal))
-							call this.displayUpdateMessage(tr("Scheuche das Rebhuhn auf!"))
+							call this.displayUpdateMessage(tre("Scheuche das Rebhuhn auf!", "Rouse the partridge!"))
 						else
-							call this.displayUpdateMessage(tr("Kein Wild aufgespürt. Versuche es noch einmal."))
+							call this.displayUpdateMessage(tre("Kein Wild aufgespürt. Versuche es noch einmal.", "No wild tracked. Try it again."))
 						endif
 					else
-						call this.displayUpdateMessage(tr("Kein Wild aufgespürt. Hier scheint es keine Rebhühner zu geben. Versuche es woanders."))
+						call this.displayUpdateMessage(tre("Kein Wild aufgespürt. Hier scheint es keine Rebhühner zu geben. Versuche es woanders.", "No wild tracked. It seems that here are no partridges. Let's try somewhere else."))
 					endif
 				// Wild aufscheuchen
 				elseif (GetSpellAbilityId() == 'A17F') then
 					if (GetUnitTypeId(GetSpellTargetUnit()) == 'n04N') then
 						call IssueImmediateOrder(GetSpellTargetUnit(), "ravenform") // abheben
-						call this.displayUpdateMessage(tr("Greife das Rebhuhn mit dem Jagdfalken!"))
+						call this.displayUpdateMessage(tre("Greife das Rebhuhn mit dem Jagdfalken!", "Grab the partidge with the hunting falcon!"))
 					endif
 				// Wild greifen
 				elseif (GetSpellAbilityId() == 'A17G') then
@@ -110,7 +110,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 						
 						set this.m_counter = this.m_counter + 1
 						
-						call this.displayUpdateMessage(Format(tr("%1%/%2% Rebhühnern.")).i(this.m_counter).i(thistype.maxAnimals).result())
+						call this.displayUpdateMessage(Format(tre("%1%/%2% Rebhühnern.", "%1%/%2% partridges.")).i(this.m_counter).i(thistype.maxAnimals).result())
 						
 						return this.m_counter == thistype.maxAnimals
 					endif
@@ -128,16 +128,16 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Rebhuhnjagd"))
+			local thistype this = thistype.allocate(character, tre("Rebhuhnjagd", "Partidge Hunting"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNWarEagle.blp")
-			call this.setDescription(tr("Der Jäger Björn aus Talras benötigt Rebhühner für den Herzog Heimrich. Um Rebhühner zu jagen braucht man einen Vorstehhund und einen Jagdfalken. Der Vorstehhund muss das Rebhuhn aufspüren und der Falke muss darüber abwarten. Sobald der Vorstehhund das Rebhuhn aufgescheucht hat und es losfliegt, stürzt der Falke sich darauf. Rebhühner befinden sich meist auf der Wiese neben dem Friedhof beim Bauernhof."))
-			call this.setReward(AAbstractQuest.rewardExperience, 400)
-			call this.setReward(AAbstractQuest.rewardGold, 200)
+			call this.setDescription(tre("Der Jäger Björn aus Talras benötigt Rebhühner für den Herzog Heimrich. Um Rebhühner zu jagen braucht man einen Vorstehhund und einen Jagdfalken. Der Vorstehhund muss das Rebhuhn aufspüren und der Falke muss darüber abwarten. Sobald der Vorstehhund das Rebhuhn aufgescheucht hat und es losfliegt, stürzt der Falke sich darauf. Rebhühner befinden sich meist auf der Wiese neben dem Friedhof beim Bauernhof.", "The hunter Björn from Talras requires partridges for the duke Heimrich. In order to hunt partidges one needs a pointing dog and a hunting falcon. The pointing dog must track the partridge and the falcon must wait for it. Once the pointer dog has roused the partidge and it flies off the falcon pounces on it. Partridges are mostly located in the meadow next to the cemetery at the farm."))
+			call this.setReward(thistype.rewardExperience, 400)
+			call this.setReward(thistype.rewardGold, 200)
 			
 			set this.m_counter = 0
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Jage fünf Rebhühner."))
+			set questItem = AQuestItem.create(this, tre("Jage fünf Rebhühner.", "Hunt five partridges."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedHunt)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedHunt)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedHunt)
@@ -146,7 +146,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Bringe die Rebhühner zu Björn."))
+			set questItem = AQuestItem.create(this, tre("Bringe die Rebhühner zu Björn.", "Bring the partridges to Björn."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.bjoern())
 			call questItem.setPingColour(100.0, 100.0, 100.0)

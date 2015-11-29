@@ -37,7 +37,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 		
 		private static method timerFunction takes nothing returns nothing
 			local thistype this = AHashTable.global().handleInteger(GetExpiredTimer(), "this")
-			call this.displayUpdateMessage(tr("Zwei Tage sind vergangen."))
+			call this.displayUpdateMessage(tre("Zwei Tage sind vergangen.", "Two days have passed."))
 		endmethod
 			
 		
@@ -78,7 +78,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 				call SetDestructableInvulnerable(box, true)
 				set this.m_arrowsCounter = this.m_arrowsCounter + 1
 				
-				call this.displayUpdateMessage(Format(tr("%1%/5 Pfeilbündel platziert")).i(this.m_arrowsCounter).result())
+				call this.displayUpdateMessage(Format(tre("%1%/5 Pfeilbündel platziert", "Placed %1%/5 arrow bundles")).i(this.m_arrowsCounter).result())
 				
 				/*
 				 * Prevent multiple placements at the same place.
@@ -131,48 +131,48 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Die Befestigung von Talras"))
+			local thistype this = thistype.allocate(character, tre("Die Befestigung von Talras", "The Reinforcement of Talras"))
 			local AQuestItem questItem0
 
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNStoneArchitecture.blp")
-			call this.setDescription(tr("Markward, die rechte Hand des Herzogs, will die Burg Talras wegen einer möglichen Belagerung besser befestigen lassen. Dazu braucht er Holz von Kuno und ebenso Pfeile von Dago oder Björn den Jägern in Talras. Die Pfeile müssen auf den Mauern und Türmen platziert werden. Das Holz muss in die Burg gebracht werden."))
+			call this.setDescription(tre("Markward, die rechte Hand des Herzogs, will die Burg Talras wegen einer möglichen Belagerung besser befestigen lassen. Dazu braucht er Holz von Kuno und ebenso Pfeile von Dago oder Björn den Jägern in Talras. Die Pfeile müssen auf den Mauern und Türmen platziert werden. Das Holz muss in die Burg gebracht werden.", "Markward the right hand of the duke wants to let the castle reinforce better because of a possible siege. For this he needs wood from Kuno and as well arrows from Dago or Björn the hunters in Talras. The arrows must be placed on the walls and towers. The wood has to be brought into the castle."))
 			call this.setReward(thistype.rewardExperience, 1000)
 			call this.setReward(thistype.rewardGold, 600)
 			
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Besorge Holz von Kuno."))
+			set questItem0 = AQuestItem.create(this, tre("Besorge Holz von Kuno.", "Get wood from Kuno."))
 			call questItem0.setPing(true)
 			call questItem0.setPingWidget(Npcs.kuno())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 
 			// item 1
-			set questItem0 = AQuestItem.create(this, tr("Bringe Kunos Holz zum Bauern Manfred."))
+			set questItem0 = AQuestItem.create(this, tre("Bringe Kunos Holz zum Bauern Manfred.", "Bring Kuno's wood to the farmer Manfred."))
 			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedSendLumber)
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.manfred())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 2
-			set questItem0 = AQuestItem.create(this, tr("Besorge Pfeile von Dago oder Björn."))
+			set questItem0 = AQuestItem.create(this, tre("Besorge Pfeile von Dago oder Björn.", "Get arrows from Dago or Björn."))
 			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedStartTimer)
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.bjoern())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 3
-			set questItem0 = AQuestItem.create(this, tr("Warte bis Björn die Pfeile hergestellt hat"))
+			set questItem0 = AQuestItem.create(this, tre("Warte bis Björn die Pfeile hergestellt hat.", "Wait until Björn has produced arrows."))
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.bjoern())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 4
-			set questItem0 = AQuestItem.create(this, tr("Platziere die Pfeile an den vorgesehenen Positionen."))
+			set questItem0 = AQuestItem.create(this, tre("Platziere die Pfeile an den vorgesehenen Positionen.", "Place the arrows at the intended positions."))
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.bjoern()) // TODO set rects
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 5
-			set questItem0 = AQuestItem.create(this, tr("Berichte Markward davon."))
+			set questItem0 = AQuestItem.create(this, tre("Berichte Markward davon.", "Report Markward about it."))
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.markward())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)

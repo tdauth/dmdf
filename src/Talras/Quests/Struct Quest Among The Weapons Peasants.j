@@ -13,7 +13,7 @@ library StructMapQuestsQuestAmongTheWeaponsPeasants requires Asl, StructMapMapNp
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMilitia.blp")
-			call this.setDescription(tr("Der Bauer Manfred beschwert sich darüber, dass der Herzog keine Wachen zu seinem Hof schickt, die diesen im Falle eines Angriffs beschützen könnten. Außerdem beklagt er sich über den von ihm und seinen Leuten geforderten einjährigen Kriegsdienst."))
+			call this.setDescription(tre("Der Bauer Manfred beschwert sich darüber, dass der Herzog keine Wachen zu seinem Hof schickt, die diesen im Falle eines Angriffs beschützen könnten. Außerdem beklagt er sich über den von ihm und seinen Leuten geforderten einjährigen Kriegsdienst.", "The farmer Manfred complains that the Duke does not send guards to his farm who could protect it in the event of an attack. He also complains about the one year military service which is required of him and his people."))
 			call this.setReward(thistype.rewardExperience, 500)
 			call this.setReward(thistype.rewardGold, 300)
 			// item 0

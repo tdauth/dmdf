@@ -103,6 +103,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 30
 		public static constant integer workerUnitTypeId = 'h00E'
+		public static sound cowSound = null
 		public static constant player orcPlayer = Player(9)
 		public static constant player haldarPlayer = Player(10)
 		public static constant player baldarPlayer = Player(11)
@@ -1368,6 +1369,7 @@ endif
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
 			local integer i
+			set thistype.cowSound = gg_snd_Cow
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
 			

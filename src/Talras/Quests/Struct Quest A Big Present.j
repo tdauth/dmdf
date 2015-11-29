@@ -14,7 +14,7 @@ library StructMapQuestsQuestABigPresent requires Asl, StructGameCharacter, Struc
 			local thistype this = thistype.allocate(character, tre("Ein großes Geschenk", "A Big Present"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBarrel.blp")
-			call this.setDescription(tr("Da Lothar mit Mathildas Reaktion auf sein Geschenk nicht zufrieden war, hat er dir nun aufgetragen, ihr einen noch größeren Honigtopf zu überreichen, um seiner Liebe zu ihr noch größeren Ausdruck zu verleihen."))
+			call this.setDescription(tre("Da Lothar mit Mathildas Reaktion auf sein Geschenk nicht zufrieden war, hat er dir nun aufgetragen, ihr einen noch größeren Honigtopf zu überreichen, um seiner Liebe zu ihr noch größeren Ausdruck zu verleihen.", "Since Lothar is unhappy with Mathilda's reaction to his present he has now told you to give her an even bigger honeypot to impart his love for her even greater expression."))
 			call this.setReward(AAbstractQuest.rewardExperience, 200)
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Überreiche Mathilda Lothars großen Honigtopf.", "Present Mathilda Lothar's big honeypot."))

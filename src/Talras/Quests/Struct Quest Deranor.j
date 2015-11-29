@@ -105,7 +105,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			local thistype this = thistype.allocate(0, tre("Deranor der Schreckliche", "Deranor the Terrible"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNPowerLich.blp")
-			call this.setDescription(tr("In der Todesgruft soll es einen Eingang zu einem Gewölbe unter der Erde geben. Dort soll sich der mächtige Nekromant Deranor der Schreckliche aufhalten. Die Drachentöterin bittet euch darum, ihn gemeinsam mit ihr zu vernichten, um Mittillant vor einer weiteren Bedrohung zu bewahren."))
+			call this.setDescription(tre("In der Todesgruft soll es einen Eingang zu einem Gewölbe unter der Erde geben. Dort soll sich der mächtige Nekromant Deranor der Schreckliche aufhalten. Die Drachentöterin bittet euch darum, ihn gemeinsam mit ihr zu vernichten, um Mittillant vor einer weiteren Bedrohung zu bewahren.", "In the tomb of death there will be an entrance to the vault under the ground. There the mighty necromancer Deranor the Terrible is believed to be. The dragon slayer asks you to destroy him to destroy him with her in order to preserve Mittilant before a further threat."))
 			call this.setReward(AAbstractQuest.rewardExperience, 1000)
 
 			set questItem = AQuestItem.create(this, tre("Betretet das unterirdische Gewölbe.", "Enter the underground vault."))

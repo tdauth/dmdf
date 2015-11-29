@@ -167,9 +167,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			
 			// evaluate this calls since it may exceed the operations limit. Each time a spell is being added it updates the whole grimoire UI which takes many operations.
 			call character.grimoire().addClassSpellsFromCharacter.evaluate(character)
-			
-
-			call SpellCowNova.create(character) /// @todo test
 
 			call initCharacterSpells(character)
 			call MapData.createClassItems(class, character.unit())

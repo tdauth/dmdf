@@ -33,7 +33,7 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 				set index = i * (pageNumber + 1)
 				if (index < this.m_character.talkLog().infos()) then
 					if (this.m_character.talkLog().info(i).important()) then
-						set description = tr("(Automatisch)")
+						set description = tre("(Automatisch)", "(Automatically)")
 					else
 						set description = this.m_character.talkLog().info(i).description()
 					endif
@@ -64,7 +64,7 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 					if (this.m_character.talkLog().speechToCharacter(this.m_selectedInfo, index)) then
 						set speechText = tr("NPC")
 					else
-						set speechText = tr("Charakter")
+						set speechText = tre("Charakter", "Character")
 					endif
 					// do not add speech text, too long (use tooltip only).
 					//set speechText = speechText + this.m_character.talkLog().speechText(this.m_selectedInfo, index)
@@ -144,7 +144,7 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 			local integer i
 			//call AImage.create("", this, 0.0, 0.0, 1000.0, 1000.0, 0, 0)
 			set this.m_headlineText = AText.create(this, 200.0, 200.0, 50.0, 50.0, "Units\\NightElf\\Wisp\\Wisp.mdx", 0, thistype.onTrackActionHeadline)
-			call this.m_headlineText.setTextAndSize(tr("Info-Log"), 12.0)
+			call this.m_headlineText.setTextAndSize(tre("Info-Log", "Info Log"), 12.0)
 			set i = 0
 			loop
 				exitwhen (i == thistype.entriesPerPage)

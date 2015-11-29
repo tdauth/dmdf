@@ -7,10 +7,21 @@ library StructSpellsSpellCowNova requires Asl, StructGameClasses, StructGameSpel
 		/// @todo Replace by static method, vJass bug.
 		private static method alightAction takes unit usedUnit returns nothing
 			local player owner = GetOwningPlayer(usedUnit)
+			local integer i
+			local AGroup targets = AGroup.create()
+			call targets.addUnitsInRange(GetUnitX(usedUnit), GetUnitY(usedUnit), 600.0, null)
 			// DAMAGE!!!!
-			call UnitDamagePoint(usedUnit, 0.0, 600.0, GetUnitX(usedUnit), GetUnitY(usedUnit), 800.0, true, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL, WEAPON_TYPE_WHOKNOWS)
+			set i = 0
+			loop
+				exitwhen (i == targets.units().size())
+				if (IsUnitEnemy(targets.units()[i], owner)) then
+					call UnitDamageTargetBJ(usedUnit, targets.units()[i], 200.0, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
+				endif
+				set i = i + 1
+			endloop
+			call targets.destroy()
+			// DAMAGE!!!!
 			call ExplodeUnitBJ(usedUnit)
-			call ShowGeneralFadingTextTagForPlayer(owner, tr("DUMMHEIT!"), GetUnitX(usedUnit), GetUnitY(usedUnit), 255, 255, 255, 255)
 			set owner = null
 		endmethod
 
@@ -24,7 +35,8 @@ library StructSpellsSpellCowNova requires Asl, StructGameClasses, StructGameSpel
 				exitwhen (i < 0.0)
 				set cow = CreateUnit(owner, 'n000', GetUnitPolarProjectionX(caster, i, 300.0), GetUnitPolarProjectionY(caster, i, 300.0), i)
 				call AJump.create(cow, 1100.0, GetUnitPolarProjectionX(caster, i, 600.0), GetUnitPolarProjectionY(caster, i, 600.0), thistype.alightAction)
-				call ShowGeneralFadingTextTagForPlayer(owner, tr("DUMMHEIT!"), GetUnitX(cow), GetUnitY(cow), 255, 255, 255, 255)
+				call ShowGeneralFadingTextTagForPlayer(owner, tre("MUH!", "MOO!"), GetUnitX(cow), GetUnitY(cow), 255, 255, 255, 255)
+				call PlaySoundOnUnitBJ(MapData.cowSound, 100.0, cow)
 				set cow = null
 				set i = i - 30.0
 			endloop

@@ -23,10 +23,10 @@ library StructSpellsSpellTakeOver requires Asl, StructGameClasses, StructGameSpe
 			local boolean result = GetUnitLevel(target) <= level
 			debug call Print("TARGET: " + GetUnitName(target))
 			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, IntegerArg(tr("Ziel-Einheit darf maximal Stufe %i haben."), level))
+				call this.character().displayMessage(ACharacter.messageTypeError, IntegerArg(tre("Ziel-Einheit darf maximal Stufe %i haben.", "Target unit must have level %i at most."), level))
 			elseif (IsUnitSpellResistant(target)) then
 				set result = false
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Einheit ist zauberressistent"))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Einheit ist zauberressistent", "Target unit is spell resistant."))
 			endif
 			set target = null
 			return result
@@ -53,7 +53,7 @@ library StructSpellsSpellTakeOver requires Asl, StructGameClasses, StructGameSpe
 			call this.character().replaceUnit(target)
 			call this.character().select(false)
 			call UnitApplyTimedLife(target, thistype.buffId, time + 2.0)
-			call ShowGeneralFadingTextTagForPlayer(null, tr("Übernehmen!"), GetUnitX(target), GetUnitY(target), 255, 255, 255, 255)
+			call ShowGeneralFadingTextTagForPlayer(null, tre("Übernehmen!", "Take over!"), GetUnitX(target), GetUnitY(target), 255, 255, 255, 255)
 			//wait
 			set recorder = ADamageRecorder.create(target)
 			debug call Print("After recorder creation")

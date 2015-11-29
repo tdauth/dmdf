@@ -135,6 +135,7 @@ library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement,
 	endfunction
 	
 	function initCharacterSpells takes Character character returns nothing
+		call SpellCowNova.create(character)
 	endfunction
 
 endlibrary
