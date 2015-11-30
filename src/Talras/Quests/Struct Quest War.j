@@ -907,6 +907,8 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			set this.m_recruitTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(this.m_recruitTrigger, this.m_recruitBuilding, EVENT_UNIT_SELL)
 			call TriggerAddAction(this.m_recruitTrigger, function thistype.triggerActionRecruit)
+			
+			call SmartCameraPan(GetUnitX(this.m_recruitBuilding), GetUnitY(this.m_recruitBuilding), 4.0)
 		endmethod
 		
 		private static method stateEventCompletedGetRecruits takes AQuestItem questItem, trigger whichTrigger returns nothing

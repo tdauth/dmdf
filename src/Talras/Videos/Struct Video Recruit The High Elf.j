@@ -260,33 +260,33 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir haben mit Hilfe der Nordmänner das Lager der Orks und Dunkelelfen besetzt. Sogar Dorfbewohner haben sich kampfbereit gemacht um auf eigene Faust gegen die Feinde vorzugehen."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir haben mit Hilfe der Nordmänner das Lager der Orks und Dunkelelfen besetzt. Sogar Dorfbewohner haben sich kampfbereit gemacht um auf eigene Faust gegen die Feinde vorzugehen."), gg_snd_Markward39)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward39))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir müssen den Kampfgeist der Männer und die Gunst der Stunde nutzen bevor es zu spät ist."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir müssen den Kampfgeist der Männer und die Gunst der Stunde nutzen bevor es zu spät ist."), gg_snd_Markward40)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward40))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Unser Plan sieht vor das eroberte Lager zu befestigen und einen starken Vorposten zu errichten, der die Feinde solange wie möglich aufhalten wird."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Unser Plan sieht vor das eroberte Lager zu befestigen und einen starken Vorposten zu errichten, der die Feinde solange wie möglich aufhalten wird."), gg_snd_Markward41)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward41))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Zunächst müsst ihr dazu das Lager mit Waffen, Nahrung und Holz versorgen. Danach sollten Fallen vor den Mauern aufgestellt werden. Außerdem müssen mehr kriegstaugliche Leute auf dem Bauernhof rekrutiert werden."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Zunächst müsst ihr dazu das Lager mit Waffen, Nahrung und Holz versorgen. Danach sollten Fallen vor den Mauern aufgestellt werden. Außerdem müssen mehr kriegstaugliche Leute auf dem Bauernhof rekrutiert werden."), gg_snd_Markward42)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward42))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Selbstverständlich wird der Herzog euch für eure Dienste wieder entsprechend entlohnen. Viel Glück!"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Selbstverständlich wird der Herzog euch für eure Dienste wieder entsprechend entlohnen. Viel Glück!"), gg_snd_Markward43)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward43))) then
 				return
 			endif
 			

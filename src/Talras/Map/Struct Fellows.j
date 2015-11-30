@@ -38,7 +38,9 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_sisgard.addAbility('A0QY')
 
 			set thistype.m_mathilda = Fellow.create(Npcs.mathilda(), TalkMathilda.talk.evaluate())
-			/// @todo Set revival location to farm
+			call thistype.m_mathilda.setRevival(true)
+			call thistype.m_mathilda.setRevivalTitle(tr("Mathilda"))
+			call thistype.m_mathilda.setDescription(tr("Mathilda ist eine Vagabundin. Sie kann singen und musizieren, sonst nichts."))
 
 			set thistype.m_wigberht = Fellow.create(Npcs.wigberht(), TalkWigberht.talk.evaluate())
 			call thistype.m_wigberht.setTalk(false)

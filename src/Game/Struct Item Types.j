@@ -345,6 +345,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A0RU', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DC', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DE', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DO', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DP', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -450,7 +452,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			/// \todo two-handed
 			set thistype.m_bonesBow = RangeItemType.createSimpleRange('I013', AItemType.equipmentTypePrimaryWeapon)
-			call thistype.m_bonesBow.addAbility('A07M', true)
+			call thistype.m_bonesBow.addAbility('A1DO', true)
 
 			set thistype.m_torch = ItemType.createSimple('I02G', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_torch.addAbility('A088', true)
@@ -578,7 +580,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_staffOfFreezing.addAbility('A0VR', true)
 			
 			set thistype.m_staffOfSlowing = RangeItemType.createSimpleRange('I04F', AItemType.equipmentTypePrimaryWeapon)
-			call thistype.m_staffOfSlowing.addAbility('A0VL', true)
+			call thistype.m_staffOfSlowing.addAbility('A1DP', true)
 
 			// slaughter quest
 			set thistype.m_bloodAmulet = ItemType.createSimple('I02L', AItemType.equipmentTypeAmulet)

@@ -67,39 +67,39 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorMarkward), thistype.actor())
 			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorMarkward))
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_0, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Das war gute Arbeit. Mir ist von dem Kampf zu Ohren gekommen. Mit den Nordmännern haben wir ein paar starke Verbündete gewonnen.", "That was good work. It has come to my ears from the battle. With the norsemen we have gained some strong allies."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Das war gute Arbeit. Mir ist von dem Kampf zu Ohren gekommen. Mit den Nordmännern haben wir ein paar starke Verbündete gewonnen.", "That was good work. It has come to my ears from the battle. With the norsemen we have gained some strong allies."), gg_snd_Markward33)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward33))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Leider reicht das dem Herzog nicht aus. Er möchte absolut sicher gehen und deshalb benötigt er noch mehr Unterstützung. Uns ist von einer Hochelfin zu Ohren gekommen, die durch diese Ländereien zieht. Durch sie könnten wir Kontakte zu den Hochelfen knüpfen.", "Unfortunately, it is enough for the duke. He wants to be absolutely sure and that's why he still needs more support. A high elf came to our attention who runs through these lands. Through her we could make contact with the High Elves."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Leider reicht das dem Herzog nicht aus. Er möchte absolut sicher gehen und deshalb benötigt er noch mehr Unterstützung. Uns ist von einer Hochelfin zu Ohren gekommen, die durch diese Ländereien zieht. Durch sie könnten wir Kontakte zu den Hochelfen knüpfen.", "Unfortunately, it is enough for the duke. He wants to be absolutely sure and that's why he still needs more support. A high elf came to our attention who runs through these lands. Through her we could make contact with the High Elves."), gg_snd_Markward34)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward34))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Mir scheint es so als würden unsere eigenen Leute uns in diesem Kampf gar im Stich lassen. Der König hat bis jetzt keinerlei Unterstützung gesandt.", "It seems to me as if our own people leave us in the lurch in this struggle. The king has not sent any support so far."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Mir scheint es so als würden unsere eigenen Leute uns in diesem Kampf gar im Stich lassen. Der König hat bis jetzt keinerlei Unterstützung gesandt.", "It seems to me as if our own people leave us in the lurch in this struggle. The king has not sent any support so far."), gg_snd_Markward35)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
-				return
-			endif
-			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Doch bald werden die Orks und Dunkelelfen mit einem größeren Heer die Grenze überschreiten. Dieses kleine Gefecht war erst der Anfang."), null)
-
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward35))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir erhielten Berichte von Überfällen an der Grenze und sogar von größeren Truppenbewegungen. Uns bleibt nun keine Zeit mehr und den König oder den restlichen Adel vom Ernst der Lage zu überzeugen scheint zwecklos."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Doch bald werden die Orks und Dunkelelfen mit einem größeren Heer die Grenze überschreiten. Dieses kleine Gefecht war erst der Anfang."), gg_snd_Markward36)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward36))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir erhielten Berichte von Überfällen an der Grenze und sogar von größeren Truppenbewegungen. Uns bleibt nun keine Zeit mehr und den König oder den restlichen Adel vom Ernst der Lage zu überzeugen scheint zwecklos."), gg_snd_Markward37)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward37))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Findet die Hochelfin und bringt sie um jeden Preis hier her. Hier habt ihr noch den Lohn für eure treuen Dienste. Viel Glück!"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Findet die Hochelfin und bringt sie um jeden Preis hier her. Hier habt ihr noch den Lohn für eure treuen Dienste. Viel Glück!"), gg_snd_Markward38)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward38))) then
 				return
 			endif
 

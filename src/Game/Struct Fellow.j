@@ -224,6 +224,11 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (this.hasRevival()) then
 				call DisableTrigger(this.m_revivalTrigger)
 			endif
+			// makes sure the fellow lives
+			if (IsUnitDeadBJ(this.m_unit)) then
+				call this.reviveAtActiveShrine.evaluate(false)
+			endif
+			
 			call SetUnitOwner(this.m_unit, MapData.neutralPassivePlayer, true)
 			call SetUnitInvulnerable(this.m_unit, true)
 			call SetUnitLifePercentBJ(this.m_unit, 100.0)

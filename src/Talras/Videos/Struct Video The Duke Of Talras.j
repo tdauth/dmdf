@@ -108,30 +108,30 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorMarkward), thistype.actor())
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_3, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wie ihr wisst sind die Dunkelelfen mit einem Heer von Orks ins Königreich eingefallen. Es ist nur noch eine Frage der Zeit bis sie auch Talras angreifen werden."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wie ihr wisst sind die Dunkelelfen mit einem Heer von Orks ins Königreich eingefallen. Es ist nur noch eine Frage der Zeit bis sie auch Talras angreifen werden."), gg_snd_Markward29)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward29))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_2, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir brauchen jeden Kampffähigen, den wir finden können. Vor einer Weile sind einige merkwürdig aussehende Krieger nach Talras gekommen. Sie kamen von weit her, aus dem Norden, mit einem Langboot."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir brauchen jeden Kampffähigen, den wir finden können. Vor einer Weile sind einige merkwürdig aussehende Krieger nach Talras gekommen. Sie kamen von weit her, aus dem Norden, mit einem Langboot."), gg_snd_Markward30)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward30))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_1, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Der Herzog ist sich sicher, dass sie wegen des bevorstehenden Krieges hier sind. Eure Aufgabe wird es sein, herauszufinden, ob der Herzog mit ihnen ein Bündnis eingehen kann."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Der Herzog ist sich sicher, dass sie wegen des bevorstehenden Krieges hier sind. Eure Aufgabe wird es sein, herauszufinden, ob der Herzog mit ihnen ein Bündnis eingehen kann."), gg_snd_Markward31)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward31))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_3, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Sie haben ihr Lager nicht weit vor der Burg errichtet. Verlasst die Burg durch das Osttor, geht den Weg hinunter und dann weiter östlich des Aufstiegs in Richtung Norden. Ihr werdet den Weg schon finden. Viel Glück!"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Sie haben ihr Lager nicht weit vor der Burg errichtet. Verlasst die Burg durch das Osttor, geht den Weg hinunter und dann weiter östlich des Aufstiegs in Richtung Norden. Ihr werdet den Weg schon finden. Viel Glück!"), gg_snd_Markward32)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward32))) then
 				return
 			endif
 

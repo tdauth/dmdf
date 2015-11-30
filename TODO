@@ -592,6 +592,9 @@
 * Mitwirkende: Gebiet für Spieler 2 nicht sichtbar.
 * FIXED: Mitwirkende: Floating Text von Spieler 1 wird Spieler 2 angezeigt.
 * DONE: Info-Log: Stürzt ab, deaktivieren.
+* Video Victory einbauen.
+* Video Holzbruck einbauen.
+* FIXED: Gefolgsleute bei einem Reset immer sicherheitshalber wiederbeleben.
 
 Mehrspielertest (0.4 - 2 Spieler):
 * NPC ansprechen verschwindet da NPC im Gespräch immer pausiert wird.
@@ -762,7 +765,10 @@ Test mit zwei menschlichen Spielern:
 * FIXED: Rückverwandlung von Bärengestalt und Krähengestalt ändert das maximale Leben oder Mana. Einfach passive Transformation nehmen. Liegt vermutlich an SetUnitState(). War die Manasteigerungsfähigkeit bei Krähengestalt.
 * FIXED: Primär- und Sekundär-Aufträge umbenennen: Gemeinsame Aufrträge, Eigene Aufträge.
 * DEPRECATED: Da es zwei Wettertypen mit Regen gibt, regnet es sehr oft. ASL-System anpassen, sodass man pro Wettertyp die Wahrscheinlichkeit und Dauer angeben kann.
-* ASL-Regensystem entfernen. Stattdessen per Timer selten Regen starten mit Donner- und Blitz-Effekt.
+* DONE: ASL-Regensystem entfernen. Stattdessen per Timer selten Regen starten mit Donner- und Blitz-Effekt.
+* Es regnet in Videos obwohl das Wetter gestoppt werden sollte.
+* Keine Videos mehr direkt nach Evens: Diakon stirbt, Deranor stirbt, Ork-Belagerungswaffen werden vernichtet, letzte Ork-Welle wird vernichtet.
+* Bei der Verteidigung von Talras zu Beginn auch Nordmänner, Dorfbewohner und Waldläufer platzieren da in Video.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
