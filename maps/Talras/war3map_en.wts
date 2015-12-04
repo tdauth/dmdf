@@ -4272,7 +4272,7 @@ Ein Blitzschlag erfasst das Ziel, verursacht X Punkte Schaden und wirft es um ei
 }
 
 STRING 715
-// Fähigkeiten: A045 (Elementare Gewalt), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A017 (Eisgeschoss), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elementarmagier)
 }
@@ -7912,7 +7912,7 @@ S
 }
 
 STRING 1322
-// Fähigkeiten: A0AP (Zauberbuch), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A013 (ASystemGUI - shortcut z), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 Z
 }
@@ -8938,7 +8938,7 @@ Macht den Zaubernden und befreundete Einheiten im Umkreis unsichtbar.
 }
 
 STRING 1493
-// Fähigkeiten: A00K (ASystemGUI - shortcut g), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00K (ASystemGUI - shortcut g), Tip (Tooltipp - Normal (atp1))
 {
 G
 }
@@ -14651,17 +14651,17 @@ STRING 2449
 
 STRING 2450
 {
-|Cffffff00Geschick|R
+|Cffffff00Dexterity|R
 }
 
 STRING 2451
 {
-|Cffffff00IWissen|R
+|Cffffff00ILore|R
 }
 
 STRING 2452
 {
-|Cffffff00Stärke|R
+|Cffffff00Strength|R
 }
 
 STRING 2453
@@ -14677,7 +14677,7 @@ Auftrag muss erhalten werden
 STRING 2455
 // Einheiten: n02H (Fähre), Name (Name (unam))
 {
-Fähre
+Ferry
 }
 
 STRING 2456
@@ -14803,7 +14803,7 @@ STRING 2475
 STRING 2476
 // Fähigkeiten: A0R9 (Schutz des Königs), Tip (Tooltipp - Normal (atp1))
 {
-Schutz des Königs
+Protection of the King
 }
 
 STRING 2477
@@ -14815,7 +14815,7 @@ Erzeugt einen Frostschild um eine angewählte befreundete Einheit herum. Der Sch
 STRING 2478
 // Zauberverstärker/Effekte: B02A (), Bufftip (Tooltipp (ftip))
 {
-Schutz des Königs
+Protection of the King
 }
 
 STRING 2479
@@ -17994,9 +17994,9 @@ Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 3011
-// Fähigkeiten: A01J (Wut der Elemente), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Gegenstände: I064 (Spruchrolle der Kühe), Tip (Tooltipp - Einfach (utip))
 {
-|cffff0000Gr|r|cff0000ffu|r|cff00ff00n|r|cffffff00d|rzauber|nErhöht den Schaden durch Elementarzauber 10 Sekunden lang um 30%.|n<A01J,Cool1> Sekunden Abklingzeit.
+Buy Scroll of Cows
 }
 
 STRING 3012
@@ -18480,7 +18480,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 }
 
 STRING 3092
-// Fähigkeiten: A0J0 (Dunkler Diener - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0J0 (Dunkle Diener - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuchfähigkeit - Nekromant)
 }
@@ -18564,7 +18564,7 @@ Verleiht dem Riesen eine Chance von <A07A,DataA1>%, bei einem Angriff einen Gegn
 }
 
 STRING 3106
-// Fähigkeiten: A0J1 (Dunkler Diener - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0J1 (Dunkle Diener - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuchfähigkeit - Nekromant)
 }
@@ -19014,7 +19014,7 @@ Ahnenpakt - Stufe 3
 }
 
 STRING 3181
-// Fähigkeiten: A0J2 (Dunkler Diener - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0J2 (Dunkle Diener - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuchfähigkeit - Nekromant)
 }
@@ -19104,7 +19104,7 @@ Speer kaufen
 }
 
 STRING 3196
-// Gegenstände: I01Y (Kurzschwert), Description (Beschreibung (ides))
+// Gegenstände: I060 (Kurzschwert für Einar), Description (Beschreibung (ides))
 {
 A short sword.
 }
@@ -57016,7 +57016,7 @@ Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 9507
-// Fähigkeiten: A0UF (Gleißendes Licht - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
@@ -57025,12 +57025,6 @@ STRING 9508
 // Fähigkeiten: A0UD (Gleißendes Licht - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9509
-// Fähigkeiten: A0OX (Reinheit - Stufe 1), Tip (Tooltipp - Normal (atp1))
-{
-Clarity [|cffffcc00Level 1|r]
 }
 
 STRING 9510
@@ -57064,57 +57058,51 @@ Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünd
 }
 
 STRING 9515
-// Fähigkeiten: A0UO (Blitzschlag - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UV (Erfrierung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9516
-// Fähigkeiten: A0UN (Blitzschlag - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UP (Blitzschlag - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9517
-// Fähigkeiten: A0UN (Blitzschlag - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UP (Blitzschlag - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9518
-// Fähigkeiten: A0UN (Blitzschlag - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UP (Blitzschlag - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9519
-// Fähigkeiten: A0UN (Blitzschlag - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UP (Blitzschlag - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 9520
-// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UO (Blitzschlag - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 9521
-// Fähigkeiten: A0UL (Blitzschlag - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UN (Blitzschlag - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 9522
-// Fähigkeiten: A0UE (Gleißendes Licht - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UL (Blitzschlag - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9523
-// Fähigkeiten: A0OY (Reinheit - Stufe 2), Tip (Tooltipp - Normal (atp1))
-{
-Clarity [|cffffcc00Level 2|r]
 }
 
 STRING 9524
@@ -58827,7 +58815,7 @@ Erhöht die Stärke des Trinkenden dauerhaft um <A07C,DataC1>.
 }
 
 STRING 9809
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
@@ -58847,7 +58835,7 @@ STRING 9811
 STRING 9812
 // Einheiten: H014 (Zauberin), Name (Name (unam))
 {
-Zauberin
+Sorceress
 }
 
 STRING 9813
@@ -58857,7 +58845,7 @@ STRING 9813
 }
 
 STRING 9814
-// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
@@ -58869,7 +58857,7 @@ Hunter
 }
 
 STRING 9816
-// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
@@ -58887,7 +58875,7 @@ Norseman
 }
 
 STRING 9819
-// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
@@ -58905,7 +58893,7 @@ High Elf
 }
 
 STRING 9822
-// Fähigkeiten: A0W7 (Manaschild - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
@@ -58919,11 +58907,11 @@ STRING 9823
 STRING 9824
 // Einheiten: H01G (Hochelfin), Name (Name (unam))
 {
-Hochelfin
+High Elf
 }
 
 STRING 9825
-// Fähigkeiten: A0W0 (Rückkopplung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0W7 (Manaschild - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -58961,7 +58949,7 @@ Eine Aura, die in der Nähe befindlichen befreundeten Einheiten bei Distanzangri
 STRING 9831
 // Fähigkeiten: A0PX (Aura der Drachentöterin), Name (Name (anam))
 {
-Aura der Drachentöterin
+Aura of the Dragon Slayer
 }
 
 STRING 9832
@@ -58973,7 +58961,7 @@ STRING 9832
 STRING 9833
 // Fähigkeiten: A0PX (Aura der Drachentöterin), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Drachentöterin
+Aura of the Dragon Slayer
 }
 
 STRING 9834
@@ -58983,7 +58971,7 @@ Eine Aura, die in der Nähe befindlichen befreundeten Einheiten bei Nahkampfangr
 }
 
 STRING 9835
-// Fähigkeiten: A0W6 (Manaschild - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0W8 (Manaschild - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -59039,19 +59027,19 @@ Eine Zauberspruchrolle der Zauberin Sisgard, die einen Pfeilhagel über dem Zaub
 STRING 9844
 // Fähigkeiten: A0G7 (Arkaner Schutz - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
 }
 
 STRING 9845
 // Fähigkeiten: A0G8 (Arkaner Schutz - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
 }
 
 STRING 9846
 // Fähigkeiten: A0G9 (Arkaner Schutz - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
 }
 
 STRING 9847
@@ -59063,13 +59051,13 @@ Der Zauberer erzeugt eine Kuppel und verringert den von ihm und seinen Verbünde
 STRING 9848
 // Fähigkeiten: A0GA (Arkaner Schutz - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
 }
 
 STRING 9849
 // Fähigkeiten: A0GB (Arkaner Schutz - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Lasts <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Lasts <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Lasts <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Lasts <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Lasts <A0A8,Dur5> Sekunden.
+Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
 }
 
 STRING 9850
@@ -59133,55 +59121,55 @@ Arkaner Hunger - Stufe 2
 }
 
 STRING 9860
-// Fähigkeiten: A0W6 (Manaschild - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0W8 (Manaschild - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 9861
-// Fähigkeiten: A0W6 (Manaschild - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0W8 (Manaschild - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
 
 STRING 9862
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9863
-// Fähigkeiten: A0WA (Manaschild - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9864
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Conversion [|cffffcc00Level 1|r]
 }
 
 STRING 9865
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q2 (Bekehrung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Conversion [|cffffcc00Level 2|r]
 }
 
 STRING 9866
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q3 (Bekehrung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Conversion [|cffffcc00Level 3|r]
 }
 
 STRING 9867
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q4 (Bekehrung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Conversion [|cffffcc00Level 4|r]
 }
 
 STRING 9868
-// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q5 (Bekehrung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Conversion [|cffffcc00Level 5|r]
 }
@@ -59205,57 +59193,51 @@ STRING 9871
 }
 
 STRING 9872
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9873
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9874
-// Fähigkeiten: A0WA (Manaschild - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9875
-// Fähigkeiten: A0WA (Manaschild - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9876
-// Fähigkeiten: A0WA (Manaschild - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 9877
-// Fähigkeiten: A0WA (Manaschild - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 9878
-// Fähigkeiten: A0W8 (Manaschild - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WA (Manaschild - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 9879
-// Fähigkeiten: A0W7 (Manaschild - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9880
-// Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), Tip (Tooltipp - Normal (atp1))
-{
-Conversion [|cffffcc00Level 1|r]
 }
 
 STRING 9881
@@ -59271,13 +59253,13 @@ Conversion - Level 1
 }
 
 STRING 9883
-// Fähigkeiten: A0W7 (Manaschild - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 9884
-// Fähigkeiten: A0W7 (Manaschild - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -59289,31 +59271,31 @@ Entzünden - Stufe 5
 }
 
 STRING 9886
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9887
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9888
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9889
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9890
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
@@ -59336,12 +59318,6 @@ STRING 9893
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
-STRING 9894
-// Fähigkeiten: A0Q2 (Bekehrung - Stufe 2), Tip (Tooltipp - Normal (atp1))
-{
-Conversion [|cffffcc00Level 2|r]
-}
-
 STRING 9895
 // Fähigkeiten: A0SI (Meister der Nekromantie - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -59355,75 +59331,69 @@ Conversion - Level 2
 }
 
 STRING 9897
-// Fähigkeiten: A0W8 (Manaschild - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0WA (Manaschild - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 9898
-// Fähigkeiten: A0W8 (Manaschild - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0WA (Manaschild - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
 
 STRING 9899
-// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 9900
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9901
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9902
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9903
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9904
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 9905
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 9906
-// Fähigkeiten: A0WA (Manaschild - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 9907
-// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9908
-// Fähigkeiten: A0Q3 (Bekehrung - Stufe 3), Tip (Tooltipp - Normal (atp1))
-{
-Conversion [|cffffcc00Level 3|r]
 }
 
 STRING 9909
@@ -59439,75 +59409,69 @@ Conversion - Level 3
 }
 
 STRING 9911
-// Fähigkeiten: A0WA (Manaschild - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 9912
-// Fähigkeiten: A0W9 (Manaschild - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
 
 STRING 9913
-// Fähigkeiten: A0WA (Manaschild - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
 
 STRING 9914
-// Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9915
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9916
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9917
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9918
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 9919
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 9920
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 9921
-// Fähigkeiten: A0WA (Manaschild - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9922
-// Fähigkeiten: A0Q4 (Bekehrung - Stufe 4), Tip (Tooltipp - Normal (atp1))
-{
-Conversion [|cffffcc00Level 4|r]
 }
 
 STRING 9923
@@ -59523,13 +59487,13 @@ Conversion - Level 4
 }
 
 STRING 9925
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 9926
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -59541,57 +59505,51 @@ STRING 9927
 }
 
 STRING 9928
-// Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WV (Verbannen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9929
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9930
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9931
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9932
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 9933
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 9934
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 9935
-// Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9936
-// Fähigkeiten: A0Q5 (Bekehrung - Stufe 5), Tip (Tooltipp - Normal (atp1))
-{
-Conversion [|cffffcc00Level 5|r]
 }
 
 STRING 9937
@@ -59607,13 +59565,13 @@ Conversion - Level 5
 }
 
 STRING 9939
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 9940
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -59745,33 +59703,15 @@ STRING 9961
 }
 
 STRING 9962
-// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QD (Göttergunst - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Gods Favor [|cffffcc00Level 1|r]
 }
 
 STRING 9963
-// Fähigkeiten: A0QB (Göttergunst), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QE (Göttergunst - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Gods Favor [|cffffcc00Level 2|r]
-}
-
-STRING 9964
-// Fähigkeiten: A0QF (Göttergunst - Stufe 3), Tip (Tooltipp - Normal (atp1))
-{
-Gods Favor [|cffffcc00Level 3|r]
-}
-
-STRING 9965
-// Fähigkeiten: A0QG (Göttergunst - Stufe 4), Tip (Tooltipp - Normal (atp1))
-{
-Gods Favor [|cffffcc00Level 4|r]
-}
-
-STRING 9966
-// Fähigkeiten: A0QH (Göttergunst - Stufe 5), Tip (Tooltipp - Normal (atp1))
-{
-Gods Favor [|cffffcc00Level 5|r]
+Gods Favor [|cffffcc00Stufe 2|r]
 }
 
 STRING 9967
@@ -59823,57 +59763,51 @@ Increases the armour of an ally for a certain time.|n|n|cffffcc00Level 1|r - <A0
 }
 
 STRING 9975
-// Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WW (Verbannen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9976
-// Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9977
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9978
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9979
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 9980
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 9981
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 9982
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9983
-// Fähigkeiten: A0QD (Göttergunst - Stufe 1), Tip (Tooltipp - Normal (atp1))
-{
-Gods Favor [|cffffcc00Level 1|r]
 }
 
 STRING 9984
@@ -59889,13 +59823,13 @@ Gods Favor - Level 1
 }
 
 STRING 9986
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
 {
 Learn Rush [|cffffcc00Level %d|r]
 }
 
 STRING 9987
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -59907,57 +59841,51 @@ Increases the armour of an ally for a certain time.|n|n|cffffcc00Level 1|r - <A0
 }
 
 STRING 9989
-// Fähigkeiten: A0WV (Verbannen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0X2 (Kräuterheilung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9990
-// Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WV (Verbannen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9991
-// Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9992
-// Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 9993
-// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WU (Verbannen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 9994
-// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WU (Verbannen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 9995
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 9996
-// Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
-}
-
-STRING 9997
-// Fähigkeiten: A0QE (Göttergunst - Stufe 2), Tip (Tooltipp - Normal (atp1))
-{
-Göttergunst [|cffffcc00Stufe 2|r]
 }
 
 STRING 9998
@@ -60027,55 +59955,55 @@ Entzünden - Stufe 5
 }
 
 STRING 10009
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 10010
-// Fähigkeiten: A0WW (Verbannen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0X4 (Heilige Kraft - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 10011
-// Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WW (Verbannen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 10012
-// Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WV (Verbannen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 10013
-// Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WV (Verbannen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 10014
-// Fähigkeiten: A0WT (Verbannen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WV (Verbannen - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 10015
-// Fähigkeiten: A0WT (Verbannen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WV (Verbannen - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 10016
-// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WU (Verbannen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 10017
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -60099,67 +60027,67 @@ Feuersbrunst - Stufe 1
 }
 
 STRING 10021
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 10022
-// Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
 
 STRING 10023
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 10024
-// Fähigkeiten: A0X2 (Kräuterheilung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0X6 (Pestkarren - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 10025
-// Fähigkeiten: A0WV (Verbannen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0X2 (Kräuterheilung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 10026
-// Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WW (Verbannen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 10027
-// Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0WW (Verbannen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 10028
-// Fähigkeiten: A0WU (Verbannen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WW (Verbannen - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 10029
-// Fähigkeiten: A0WU (Verbannen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WW (Verbannen - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 3|r]
 }
 
 STRING 10030
-// Fähigkeiten: A0WT (Verbannen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WV (Verbannen - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
 
 STRING 10031
-// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WU (Verbannen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
@@ -60183,13 +60111,13 @@ Feuersbrunst - Stufe 2
 }
 
 STRING 10035
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
 {
 Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 10036
-// Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 The knight rushes his target and stuns it for 2 seconds and deals X points damage to it.
 }
@@ -82186,6 +82114,66 @@ STRING 13700
 Stellt bei Benutzung <A19K,DataA1> Mana wieder her.|nBietet <I05L,uses> Aufladung.
 }
 
+STRING 13701
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Martyr [|cffffcc00Level 1|r] (|cffffcc00F|r)
+}
+
+STRING 13702
+// Fähigkeiten: A0NC (Märtyrer), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+F
+}
+
+STRING 13703
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blind [|cffffcc00Level 1|r] (|cffffcc00E|r)
+}
+
+STRING 13704
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blind [|cffffcc00Level 2|r] (|cffffcc00E|r)
+}
+
+STRING 13705
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blind [|cffffcc00Level 3|r] (|cffffcc00E|r)
+}
+
+STRING 13706
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blind [|cffffcc00Level 4|r] (|cffffcc00E|r)
+}
+
+STRING 13707
+// Fähigkeiten: A0NP (Blenden), Tip (Tooltipp - Normal (atp1))
+{
+Blind [|cffffcc00Level 5|r] (|cffffcc00E|r)
+}
+
+STRING 13708
+// Fähigkeiten: A0PZ (Bekehrung), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+T
+}
+
+STRING 13709
+// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+{
+Conversion [|cffffcc00Level 1|r] (|cffffcc00T|r)
+}
+
+STRING 13710
+// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+{
+Conversion [|cffffcc00Level 2|r] (|cffffcc00T|r)
+}
+
 STRING 13711
 // Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -91295,13 +91283,13 @@ Große Doppelaxt
 }
 
 STRING 15229
-// Fähigkeiten: A19U (Zauberamulett), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1AF (Standarte der schwarzen Legion), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
 
 STRING 15230
-// Fähigkeiten: A19V (Zaubermantel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1AG (Standarte der weißen Legion), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91313,7 +91301,7 @@ Zauberamulett
 }
 
 STRING 15232
-// Fähigkeiten: A19W (Stab der Klarsicht), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B6 (Horn des Kampfes), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91325,7 +91313,7 @@ Zaubermantel
 }
 
 STRING 15234
-// Fähigkeiten: A1AF (Standarte der schwarzen Legion), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B7 (Horn des Lebens), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91337,7 +91325,7 @@ Stab der Klarsicht
 }
 
 STRING 15236
-// Fähigkeiten: A1AG (Standarte der weißen Legion), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B8 (Horn des Schutzes), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91345,7 +91333,7 @@ STRING 15236
 STRING 15237
 // Zauberverstärker/Effekte: B01C (Langbogen), EditorName (Name (nur Editor) (fnam))
 {
-Langbogen
+Longbow
 }
 
 STRING 15238
@@ -91547,7 +91535,7 @@ Horn des Kampfes
 }
 
 STRING 15271
-// Fähigkeiten: A1B6 (Horn des Kampfes), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B9 (Blutamulett), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91559,7 +91547,7 @@ Horn des Lebens
 }
 
 STRING 15273
-// Fähigkeiten: A1B7 (Horn des Lebens), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1BA (Zacken von Deranors Krone), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91571,7 +91559,7 @@ Horn des Schutzes
 }
 
 STRING 15275
-// Fähigkeiten: A1B8 (Horn des Schutzes), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1BB (Buch der Schmiedekunst), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91579,7 +91567,7 @@ STRING 15275
 STRING 15276
 // Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nSchaden gegen wilde Kreaturen wird um 10% erhöht.
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 15277
@@ -92527,13 +92515,13 @@ High Elves archer
 STRING 15435
 // Fähigkeiten: A1B2 (Die Macht Tfjahns), Tip (Tooltipp - Normal (atp1))
 {
-The power of Tfjahn
+The Power of Tfjahn
 }
 
 STRING 15436
 // Fähigkeiten: A1B2 (Die Macht Tfjahns), Name (Name (anam))
 {
-The power of Tfjahn
+The Power of Tfjahn
 }
 
 STRING 15437
@@ -92677,7 +92665,7 @@ Ein einfacher Erzbrocken, der zu Eisen verarbeitet werden kann.
 STRING 15460
 // Gegenstände: I05Y (Erz), Name (Name (unam))
 {
-Erz
+Ore
 }
 
 STRING 15461
@@ -92701,7 +92689,7 @@ Ein einfacher Eisenbarren, der zum Schmieden verwendet werden kann.
 STRING 15464
 // Gegenstände: I05Z (Eisen), Name (Name (unam))
 {
-Eisen
+Iron
 }
 
 STRING 15465
@@ -92723,7 +92711,7 @@ Buch der Schmiedekunst
 }
 
 STRING 15468
-// Fähigkeiten: A1BB (Buch der Schmiedekunst), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DE (Kapuze), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -92803,7 +92791,7 @@ Ein Hundezwinger lässt aggressive Hunde frei, sobald der Gegner sich ihnen näh
 STRING 15481
 // Fähigkeiten: A1BE (Hunde freilassen), Name (Name (anam))
 {
-Hunde freilassen
+Release Dogs
 }
 
 STRING 15482
@@ -92827,7 +92815,7 @@ Schattenriese
 STRING 15485
 // Zauberverstärker/Effekte: B02P (), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Dieser Schattenriese ist mächtig.
+This Shadow Giant is powerful.
 }
 
 STRING 15486
@@ -93779,7 +93767,7 @@ Ein Hundezwinger.
 }
 
 STRING 15644
-// Zauberverstärker/Effekte: B02Q (), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: B02R (), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Waldläufer)
 }
@@ -93797,7 +93785,7 @@ Ein Meutehund.
 }
 
 STRING 15647
-// Zauberverstärker/Effekte: B02R (), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
 {
 (Waldläufer)
 }
@@ -94962,6 +94950,12 @@ STRING 15840
 (Druide - Ultimativzauber 1)
 }
 
+STRING 15841
+// Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
+{
+Conversion [|cffffcc00Level 4|r] (|cffffcc00T|r)
+}
+
 STRING 15842
 // Fähigkeiten: A1CY (Großen Manatrank herstellen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
@@ -94978,42 +94972,6 @@ STRING 15844
 // Fähigkeiten: A1CZ (Dämonendiener), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant - basiert auf Wasserelementargeist)
-}
-
-STRING 15845
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 1|r]
-}
-
-STRING 15846
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 2|r]
-}
-
-STRING 15847
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 3|r]
-}
-
-STRING 15848
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 4|r]
-}
-
-STRING 15849
-// Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
-{
-Dämonendiener [|cffffcc00Stufe 5|r]
-}
-
-STRING 15850
-// Fähigkeiten: A1CZ (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
-{
-Ruft für <A0RU,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
 }
 
 STRING 15851
@@ -95038,12 +94996,6 @@ STRING 15854
 // Fähigkeiten: A1D6 (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
 {
 (Druide - Hain - Stufe 4)
-}
-
-STRING 15855
-// Zauberverstärker/Effekte: B003 (Dämonendiener), Bufftip (Tooltipp (ftip))
-{
-Dämonendiener
 }
 
 STRING 15856
@@ -95535,13 +95487,13 @@ Der Waldläufer platziert eine Falle, die bei Gegnern <A1DB,DataB1> Punkte Schad
 STRING 15937
 // Fähigkeiten: A184 (Falle), Name (Name (anam))
 {
-Falle
+Trap
 }
 
 STRING 15938
 // Fähigkeiten: A185 (Falle), Name (Name (anam))
 {
-Falle
+Trap
 }
 
 STRING 15939

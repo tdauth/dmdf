@@ -116,7 +116,7 @@
 * Die Startbrücke endlich breiter machen!
 * Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
 * Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
-* "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Nekromant muss Fernkämpfer sein.
+* DEPRECATED (Seuche basiert auf Ölbrand): "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Nekromant muss Fernkämpfer sein.
 * DONE: Seitenwechsel für Zauberbuch in Klassenauswahl einfügen.
 * DONE: Für alle Klassen alle Zauber in Klassenauswahl anzeigen lassen.
 * DONE: ASL-Änderungen für AClass, AClassSelection und ACharacter einbauen.
@@ -655,7 +655,7 @@ Mehrspielertest (0.4 - 2 Spieler):
 * Gebäude erkundet Gegend.
 * Handel zwischen Gebäuden mit Pferden. Goldeinkommensquelle.
 * Beutezug: Keine ganz schlechten Gegenstände mehr.
-* Nebenquest bei Markward nicht mehr holbar nach Die Verteidigung von Talras.
+* Nebenquest bei Markward nicht mehr holbar nach "Die Verteidigung von Talras".
 * Mathilda bietet kein Gespräch mehr an wenn sie unterwegs ist.
 * FIXED: Blocker bei Ricmans Stand.
 * Sammelpunkt für Schreine erlauben? Dorthin laufen die verbündeten Helden?
@@ -665,6 +665,7 @@ Mehrspielertest (0.4 - 2 Spieler):
 * FIXED: Bogen wegen Animation alle in die rechte Hand.
 * FIXED: Schildmodelle um 180 Grad drehen wegen Villager-Modell.
 * Bei defend eine Standanimation auswählen?
+* Angriffsanimation mit Bogen auf Schaf fixen.
 
 TODO:
 - FIXED: Texte der NPCs hiden falls das Gebiet nicht sichtbar ist.
