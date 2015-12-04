@@ -232,10 +232,12 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_lotharFlirtsWithMathilda = NpcTalksRoutine.create(Routines.talk(), Npcs.lothar(), 13.00, 16.00, gg_rct_waypoint_lothar_1)
 			call thistype.m_lotharFlirtsWithMathilda.setPartner(Npcs.mathilda())
 			call thistype.m_lotharFlirtsWithMathilda.setFacing(180.0)
-			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Oh du Liebe meines Lebens!", "Oh you love of my life!"), null)
-			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Möchtest du von meinem Honig kosten?", "Would you like to taste from my honey?"), null)
-			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Mathilda, oh du holde, schöne, spiele mir ein Lied!", "Mathilda, oh you sweet, beautiful, play a song for me!"), null)
-			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Willst du mir nicht eine deiner wunderbaren Geschichten erzählen?", "Don't you want to tell me one of your wonderful stories?"), null)
+			// NOTE he cannot say this to her, he is to shy as he says in the talk
+			//call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Oh du Liebe meines Lebens!", "Oh you love of my life!"), gg_snd_Lothar55)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Möchtest du von meinem Honig kosten?", "Would you like to taste from my honey?"), gg_snd_Lothar56)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Mathilda, oh du holde, Schöne, spiele mir ein Lied!", "Mathilda, oh you sweet, beautiful, play a song for me!"), gg_snd_Lothar57)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Willst du mir nicht eine deiner wunderbaren Geschichten erzählen?", "Don't you want to tell me one of your wonderful stories?"), gg_snd_Lothar58)
+			call thistype.m_lotharFlirtsWithMathilda.addSound(tre("Koste von meinem Wein, oh du liebliches Wesen!", "Taste from my wine, oh you lovely creature!"), gg_snd_Lothar59)
 			// TODO add missing sentences
 			set thistype.m_lotharSells1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.lothar(), 16.00, MapData.evening, gg_rct_waypoint_lothar_0)
 			call thistype.m_lotharSells1.setFacing(93.32)

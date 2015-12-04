@@ -347,6 +347,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1DE', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DO', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DP', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DQ', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -683,7 +684,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			// death vault drops
 			set thistype.m_deathScythe = ItemType.create('I05B', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_deathScythe.addAbility('A17K', true)
-			call thistype.m_deathScythe.addAbility('A17L', true)
+			call thistype.m_deathScythe.addAbility('A1DQ', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType
