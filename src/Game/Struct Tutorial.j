@@ -159,7 +159,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Erfahrung", "Info: Experience"))
-			call QuestSetDescription(whichQuest, tre("Die maximale Stufe ist 25. Auf Stufe 12 und Stufe 25 kann jeweils eine Ultimate-Fähigkeit erlernt werden. Erfahrung vom Töten von Unholden wird gleichmäßig auf alle Charaktere in der gesamten Karte verteilt. Aufträge geben weitaus mehr Erfahrung als das Töten von Unholden.", "The maximum level is 25. At leve l2 and level 25 each there can be learned an ultimate ability. Experience from killing of creeps will be distributed equally to the characters in the whole map. Quests give much more experience than the killing of creeps."))
+			call QuestSetDescription(whichQuest, tre("Die maximale Stufe ist 30. Auf Stufe 12 und Stufe 25 kann jeweils eine Ultimate-Fähigkeit erlernt werden. Erfahrung vom Töten von Unholden wird gleichmäßig auf alle Charaktere in der gesamten Karte verteilt. Aufträge geben weitaus mehr Erfahrung als das Töten von Unholden.", "The maximum level is 30. At leve l2 and level 25 each there can be learned an ultimate ability. Experience from killing of creeps will be distributed equally to the characters in the whole map. Quests give much more experience than the killing of creeps."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNStatUp.blp")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Erfahrung für Unholde: Unholderfahrung / Anzahl der Spieler", "Experience for creeps: Creep experience / Number of players"))

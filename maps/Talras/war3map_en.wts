@@ -4125,18 +4125,18 @@ Missions
 STRING 690
 // Einheiten: n04E (Stand der Drachentöterin), Name (Name (unam))
 {
-Stand of the dragon slayer
+Stall of the Dragon Slayer
 }
 
 STRING 691
 // Gegenstände: I052 (Ring der Weisheit), Name (Name (unam))
 {
-Ring of wisdom
+Ring of Wisdom
 }
 
 STRING 692
 {
-Mission window (|Cfffed312F9|R)
+Mission Window (|Cfffed312F9|R)
 }
 
 STRING 693
@@ -5856,7 +5856,7 @@ STRING 978
 STRING 979
 // Einheiten: n00P (Dämonendiener), Name (Name (unam))
 {
-Dämonendiener
+Demon Servant
 }
 
 STRING 980
@@ -5892,7 +5892,7 @@ STRING 984
 STRING 985
 // Einheiten: n03S (Dämonendiener), Name (Name (unam))
 {
-Dämonendiener
+Demon Servant
 }
 
 STRING 986
@@ -5940,31 +5940,31 @@ STRING 992
 STRING 993
 // Fähigkeiten: A023 (Dämonendiener - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 1|r]
+Demon Servant [|cffffcc00Level 1|r]
 }
 
 STRING 994
 // Fähigkeiten: A0HY (Dämonendiener - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 2|r]
+Demon Servant [|cffffcc00Level 2|r]
 }
 
 STRING 995
 // Fähigkeiten: A0HZ (Dämonendiener - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 3|r]
+Demon Servant [|cffffcc00Level 3|r]
 }
 
 STRING 996
 // Fähigkeiten: A0I0 (Dämonendiener - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 4|r]
+Demon Servant [|cffffcc00Level 4|r]
 }
 
 STRING 997
 // Fähigkeiten: A0I1 (Dämonendiener - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 5|r]
+Demon Servant [|cffffcc00Level 5|r]
 }
 
 STRING 998
@@ -5976,7 +5976,7 @@ STRING 998
 STRING 999
 // Einheiten: n03T (Dämonendiener), Name (Name (unam))
 {
-Dämonendiener
+Demon Servant
 }
 
 STRING 1000
@@ -5988,7 +5988,7 @@ STRING 1000
 STRING 1001
 // Einheiten: n03U (Dämonendiener), Name (Name (unam))
 {
-Dämonendiener
+Demon Servant
 }
 
 STRING 1002
@@ -6180,7 +6180,7 @@ Teleportation [|cffffcc00Stufe %d|r] erlernen
 STRING 1033
 // Einheiten: n041 (Sisgards Stand), Name (Name (unam))
 {
-Sisgards Stand
+Sisgard's Stall
 }
 
 STRING 1034
@@ -6210,7 +6210,7 @@ STRING 1037
 STRING 1038
 // Einheiten: n042 (Ricmans Stand), Name (Name (unam))
 {
-Ricmans Stand
+Ricman's Stall
 }
 
 STRING 1039
@@ -8274,7 +8274,7 @@ Highwayman
 STRING 1382
 // Einheiten: n00V (Rothirsch), Name (Name (unam))
 {
-Red deer
+Red Deer
 }
 
 STRING 1383
@@ -8772,7 +8772,7 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1465
 // Fähigkeiten: A08F (Verzehren), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren
+Consume
 }
 
 STRING 1466
@@ -8880,7 +8880,7 @@ STRING 1482
 STRING 1483
 // Fähigkeiten: A08F (Verzehren), Name (Name (anam))
 {
-Verzehren
+Consume
 }
 
 STRING 1484
@@ -9720,7 +9720,7 @@ Eisgeschoss
 STRING 1623
 // Einheiten: n03V (Dämonendiener), Name (Name (unam))
 {
-Dämonendiener
+Demon Servant
 }
 
 STRING 1624
@@ -11214,7 +11214,7 @@ Hieb
 STRING 1872
 // Fähigkeiten: A08N (Ahnenpakt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Wandelt 20 % des ursprünglichen Lebens des Ziels zu Leben und 10 % des ursprünglichen Manas des Ziels zu Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. Converts 20 % of the original life of the target into life and 10 % of the original mana of the target into mana.
 }
 
 STRING 1873
@@ -14538,19 +14538,19 @@ Schwerer Goldmünzenbeutel
 STRING 2431
 // Gegenstände: I01J (Bärenfell), Name (Name (unam))
 {
-Bärenfell
+Bear Fur
 }
 
 STRING 2432
 // Gegenstände: I01J (Bärenfell), Description (Beschreibung (ides))
 {
-Das Fell eines Bären.
+The fur of a bear.
 }
 
 STRING 2433
 // Gegenstände: I01J (Bärenfell), Ubertip (Tooltipp - Erweitert (utub))
 {
-Das Fell eines Bären.
+The fur of a bear.
 }
 
 STRING 2434
@@ -15001,7 +15001,7 @@ Diese Einheit verfügt über 'Schutz des Königs'; ihre Rüstungspunkte wurden e
 STRING 2509
 // Einheiten: n02J (Knecht), Name (Name (unam))
 {
-Knecht
+Farmhand
 }
 
 STRING 2510
@@ -15709,7 +15709,7 @@ STRING 2626
 STRING 2627
 // Fähigkeiten: A08N (Ahnenpakt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Wandelt 30 % des ursprünglichen Lebens des Ziels zu Leben und 20 % des ursprünglichen Manas des Ziels zu Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. Converts 30 % of the original life of the target into life and 20 % of the original mana of the target into mana.
 }
 
 STRING 2628
@@ -16285,13 +16285,13 @@ STRING 2722
 STRING 2723
 // Fähigkeiten: A08N (Ahnenpakt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Wandelt 40 % des ursprünglichen Lebens des Ziels zu Leben und 30 % des ursprünglichen Manas des Ziels zu Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. Converts 40 % of the original life of the target into life and 30 % of the original mana of the target into mana.
 }
 
 STRING 2724
 // Fähigkeiten: A08N (Ahnenpakt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Wandelt 50 % des ursprünglichen Lebens des Ziels zu Leben und 40 % des ursprünglichen Manas des Ziels zu Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. Converts 50 % of the original life of the target into life and 40 % of the original mana of the target into mana.
 }
 
 STRING 2725
@@ -16318,13 +16318,13 @@ Zauberring
 STRING 2729
 // Fähigkeiten: A08N (Ahnenpakt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Wandelt 60 % des ursprünglichen Lebens des Ziels zu Leben und 50 % des ursprünglichen Manas des Ziels zu Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. Converts 60 % of the original life of the target into life and 50 % of the original mana of the target into mana.
 }
 
 STRING 2730
 // Fähigkeiten: A0RK (Ahnenpakt - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Er wandelt einen Teil des Lebens und Manas des Kadavers in eigenes Leben und Mana um.|n|n|cffffcc00Stufe 1|r - Wandelt 20 % Leben und 10 % Mana um.|n|cffffcc00Stufe 2|r - Wandelt 30 % Leben und 20 % Mana um.|n|cffffcc00Stufe 3|r - Wandelt 40 % Leben und 30 % Mana um.|n|cffffcc00Stufe 4|r - Wandelt 50 % Leben und 40 % Mana um.|n|cffffcc00Stufe 5|r - Wandelt 60 % Leben und 50 % Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. He converts a part of the life and mana of the corpse into own life and mana.|n|n|cffffcc00Level 1|r - Converts 20 % life and 10 % mana.|n|cffffcc00Level 2|r - Converts 30 % life and 20 % mana.|n|cffffcc00Level 3|r - Converts 40 % life and 30 % mana.|n|cffffcc00Level 4|r - Converts 50 % life and 40 % mana.|n|cffffcc00Level 5|r - Converts 60 % life and 50 % mana.
 }
 
 STRING 2731
@@ -16450,7 +16450,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 2751
 // Fähigkeiten: A0RK (Ahnenpakt - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt [|cffffcc00Stufe 1|r]
+Ancestors Pact [|cffffcc00Level 1|r]
 }
 
 STRING 2752
@@ -16468,7 +16468,7 @@ STRING 2753
 STRING 2754
 // Fähigkeiten: A0RK (Ahnenpakt - Stufe 1), Name (Name (anam))
 {
-Ahnenpakt - Stufe 1
+Ancestors Pact - Level 1
 }
 
 STRING 2755
@@ -16486,7 +16486,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 2757
 // Fähigkeiten: A0RL (Ahnenpakt - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Er wandelt einen Teil des Lebens und Manas des Kadavers in eigenes Leben und Mana um.|n|n|cffffcc00Stufe 1|r - Wandelt 20 % Leben und 10 % Mana um.|n|cffffcc00Stufe 2|r - Wandelt 30 % Leben und 20 % Mana um.|n|cffffcc00Stufe 3|r - Wandelt 40 % Leben und 30 % Mana um.|n|cffffcc00Stufe 4|r - Wandelt 50 % Leben und 40 % Mana um.|n|cffffcc00Stufe 5|r - Wandelt 60 % Leben und 50 % Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. He converts a part of the life and mana of the corpse into own life and mana.|n|n|cffffcc00Level 1|r - Converts 20 % life and 10 % mana.|n|cffffcc00Level 2|r - Converts 30 % life and 20 % mana.|n|cffffcc00Level 3|r - Converts 40 % life and 30 % mana.|n|cffffcc00Level 4|r - Converts 50 % life and 40 % mana.|n|cffffcc00Level 5|r - Converts 60 % life and 50 % mana.
 }
 
 STRING 2758
@@ -16690,7 +16690,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 2791
 // Fähigkeiten: A0RL (Ahnenpakt - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt [|cffffcc00Stufe 2|r]
+Ancestors Pact [|cffffcc00Level 2|r]
 }
 
 STRING 2792
@@ -16822,7 +16822,7 @@ Schuss ins Herz
 STRING 2813
 // Fähigkeiten: A0RL (Ahnenpakt - Stufe 2), Name (Name (anam))
 {
-Ahnenpakt - Stufe 2
+Ancestors Pact - Level 2
 }
 
 STRING 2814
@@ -16942,7 +16942,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 2833
 // Fähigkeiten: A0RM (Ahnenpakt - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Er wandelt einen Teil des Lebens und Manas des Kadavers in eigenes Leben und Mana um.|n|n|cffffcc00Stufe 1|r - Wandelt 20 % Leben und 10 % Mana um.|n|cffffcc00Stufe 2|r - Wandelt 30 % Leben und 20 % Mana um.|n|cffffcc00Stufe 3|r - Wandelt 40 % Leben und 30 % Mana um.|n|cffffcc00Stufe 4|r - Wandelt 50 % Leben und 40 % Mana um.|n|cffffcc00Stufe 5|r - Wandelt 60 % Leben und 50 % Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. He converts a part of the life and mana of the corpse into own life and mana.|n|n|cffffcc00Level 1|r - Converts 20 % life and 10 % mana.|n|cffffcc00Level 2|r - Converts 30 % life and 20 % mana.|n|cffffcc00Level 3|r - Converts 40 % life and 30 % mana.|n|cffffcc00Level 4|r - Converts 50 % life and 40 % mana.|n|cffffcc00Level 5|r - Converts 60 % life and 50 % mana.
 }
 
 STRING 2834
@@ -17204,7 +17204,7 @@ Back to the grimoire
 STRING 2879
 // Fähigkeiten: A0RM (Ahnenpakt - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt [|cffffcc00Stufe 3|r]
+Ancestors Pact [|cffffcc00Level 3|r]
 }
 
 STRING 2880
@@ -17216,7 +17216,7 @@ STRING 2880
 STRING 2881
 // Fähigkeiten: A0RM (Ahnenpakt - Stufe 3), Name (Name (anam))
 {
-Ahnenpakt - Stufe 3
+Ancestors Pact - Level 3
 }
 
 STRING 2882
@@ -17264,7 +17264,7 @@ Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 2889
 // Fähigkeiten: A0RN (Ahnenpakt - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Er wandelt einen Teil des Lebens und Manas des Kadavers in eigenes Leben und Mana um.|n|n|cffffcc00Stufe 1|r - Wandelt 20 % Leben und 10 % Mana um.|n|cffffcc00Stufe 2|r - Wandelt 30 % Leben und 20 % Mana um.|n|cffffcc00Stufe 3|r - Wandelt 40 % Leben und 30 % Mana um.|n|cffffcc00Stufe 4|r - Wandelt 50 % Leben und 40 % Mana um.|n|cffffcc00Stufe 5|r - Wandelt 60 % Leben und 50 % Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. He converts a part of the life and mana of the corpse into own life and mana.|n|n|cffffcc00Level 1|r - Converts 20 % life and 10 % mana.|n|cffffcc00Level 2|r - Converts 30 % life and 20 % mana.|n|cffffcc00Level 3|r - Converts 40 % life and 30 % mana.|n|cffffcc00Level 4|r - Converts 50 % life and 40 % mana.|n|cffffcc00Level 5|r - Converts 60 % life and 50 % mana.
 }
 
 STRING 2890
@@ -17300,7 +17300,7 @@ Flammenhaut
 STRING 2895
 // Fähigkeiten: A06V (Flammenhaut), EditorSuffix (Editor-Suffix (ansf))
 {
-(Dämonendiener)
+(Demon Servant)
 }
 
 STRING 2896
@@ -17312,7 +17312,7 @@ Flammenhaut
 STRING 2897
 // Zauberverstärker/Effekte: B011 (Flammenhaut), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Dämonendiener)
+(Demon Servant)
 }
 
 STRING 2898
@@ -17366,7 +17366,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 2906
 // Fähigkeiten: A0RN (Ahnenpakt - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt [|cffffcc00Stufe 4|r]
+Ancestors Pact [|cffffcc00Level 4|r]
 }
 
 STRING 2907
@@ -17378,7 +17378,7 @@ STRING 2907
 STRING 2908
 // Fähigkeiten: A0RN (Ahnenpakt - Stufe 4), Name (Name (anam))
 {
-Ahnenpakt - Stufe 4
+Ancestors Pact - Level 4
 }
 
 STRING 2909
@@ -17576,7 +17576,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 2941
 // Fähigkeiten: A0RO (Ahnenpakt - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Nekromant regeneriert sein Leben und Mana mit Hilfe eines Kadavers. Er wandelt einen Teil des Lebens und Manas des Kadavers in eigenes Leben und Mana um.|n|n|cffffcc00Stufe 1|r - Wandelt 20 % Leben und 10 % Mana um.|n|cffffcc00Stufe 2|r - Wandelt 30 % Leben und 20 % Mana um.|n|cffffcc00Stufe 3|r - Wandelt 40 % Leben und 30 % Mana um.|n|cffffcc00Stufe 4|r - Wandelt 50 % Leben und 40 % Mana um.|n|cffffcc00Stufe 5|r - Wandelt 60 % Leben und 50 % Mana um.
+The Necromancer regenerates his life and mana with the help of a corpse. He converts a part of the life and mana of the corpse into own life and mana.|n|n|cffffcc00Level 1|r - Converts 20 % life and 10 % mana.|n|cffffcc00Level 2|r - Converts 30 % life and 20 % mana.|n|cffffcc00Level 3|r - Converts 40 % life and 30 % mana.|n|cffffcc00Level 4|r - Converts 50 % life and 40 % mana.|n|cffffcc00Level 5|r - Converts 60 % life and 50 % mana.
 }
 
 STRING 2942
@@ -17838,9 +17838,9 @@ Gewährt eine Chance von <A11Z,DataA1> %, bei einem Angriff <A11Z,DataB1>fachen 
 }
 
 STRING 2985
-// Fähigkeiten: A045 (Elementare Gewalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0I0 (Dämonendiener - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 1|nErhöht den Schaden durch Elementarzauber 20 Sekunden lang um 80 %.|n<A045,Cool1> Sekunden Abklingzeit.
+Summons a demon for <A0RU,Dur1> seconds. The summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r|n|n|cffffcc00Level 1|r - Level <n00P,level>, causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life. |n|cffffcc00Level 2|r - Level <n03S,level>, causes <n03S,dmgplus1> damage and has <n03S,def> armour, <n03S,manaN> mana and <n03S,HP> life. |n|cffffcc00Level 3|r - Level <n03T,level>, causes <n03T,dmgplus1> damage and has <n03T,def> armour, <n03T,manaN> mana and <n03T,HP> life. |n|cffffcc00Level 4|r - Level <n03U,level>, causes <n03U,dmgplus1> damage and has <n03U,def> armour, <n03U,manaN> mana and <n03U,HP> life. |n|cffffcc00Level 5|r - Level <n03V,level>, causes <n03V,dmgplus1> damage and has <n03V,def> armour, <n03V,manaN> mana and <n03V,HP> life.
 }
 
 STRING 2986
@@ -17856,9 +17856,9 @@ Lebenswille [|cffffcc00Stufe 1|r]
 }
 
 STRING 2988
-// Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1CZ (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A0RU,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A0RU,Dur1> seconds which causes <n00P,dmgplus1> damage and has  <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life.|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 2989
@@ -17874,9 +17874,9 @@ Pure Energie [|cffffcc00Stufe 1|r]
 }
 
 STRING 2991
-// Fähigkeiten: A0Z8 (Elementare Gewalt - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A023 (Dämonendiener - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 1|nErhöht den Schaden durch Elementarzauber 10 Sekunden lang um 50 %.|n<A045,Cool1> Sekunden Abklingzeit.
+Summons a demon for <A0RU,Dur1> seconds. The summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r|n|n|cffffcc00Level 1|r - Level <n00P,level>, causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life. |n|cffffcc00Level 2|r - Level <n03S,level>, causes <n03S,dmgplus1> damage and has <n03S,def> armour, <n03S,manaN> mana and <n03S,HP> life. |n|cffffcc00Level 3|r - Level <n03T,level>, causes <n03T,dmgplus1> damage and has <n03T,def> armour, <n03T,manaN> mana and <n03T,HP> life. |n|cffffcc00Level 4|r - Level <n03U,level>, causes <n03U,dmgplus1> damage and has <n03U,def> armour, <n03U,manaN> mana and <n03U,HP> life. |n|cffffcc00Level 5|r - Level <n03V,level>, causes <n03V,dmgplus1> damage and has <n03V,def> armour, <n03V,manaN> mana and <n03V,HP> life.
 }
 
 STRING 2992
@@ -18044,7 +18044,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 3019
 // Fähigkeiten: A0RO (Ahnenpakt - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt [|cffffcc00Stufe 5|r]
+Ancestors Pact [|cffffcc00Level 5|r]
 }
 
 STRING 3020
@@ -18422,7 +18422,7 @@ Fressen
 STRING 3082
 // Fähigkeiten: A0RO (Ahnenpakt - Stufe 5), Name (Name (anam))
 {
-Ahnenpakt - Stufe 5
+Ancestors Pact - Level 5
 }
 
 STRING 3083
@@ -18542,7 +18542,7 @@ Keulenhieb
 STRING 3102
 // Fähigkeiten: A0RP (Ahnenpakt - Stufe 1), Name (Name (anam))
 {
-Ahnenpakt - Stufe 1
+Ancestors Pact - Level 1
 }
 
 STRING 3103
@@ -18626,7 +18626,7 @@ Die Manaregeneration des Klerikers wird um <A06C,DataA5>% erhöht.
 STRING 3116
 // Fähigkeiten: A0RQ (Ahnenpakt - Stufe 2), Name (Name (anam))
 {
-Ahnenpakt - Stufe 2
+Ancestors Pact - Level 2
 }
 
 STRING 3117
@@ -19010,7 +19010,7 @@ Speer
 STRING 3180
 // Fähigkeiten: A0RR (Ahnenpakt - Stufe 3), Name (Name (anam))
 {
-Ahnenpakt - Stufe 3
+Ancestors Pact - Level 3
 }
 
 STRING 3181
@@ -19022,7 +19022,7 @@ STRING 3181
 STRING 3182
 // Fähigkeiten: A0RS (Ahnenpakt - Stufe 4), Name (Name (anam))
 {
-Ahnenpakt - Stufe 4
+Ancestors Pact - Level 4
 }
 
 STRING 3183
@@ -19040,7 +19040,7 @@ Short Sword
 STRING 3185
 // Fähigkeiten: A0RT (Ahnenpakt - Stufe 5), Name (Name (anam))
 {
-Ahnenpakt - Stufe 5
+Ancestors Pact - Level 5
 }
 
 STRING 3186
@@ -20114,7 +20114,7 @@ Wolfsfell kaufen
 STRING 3364
 // Gegenstände: I01J (Bärenfell), Tip (Tooltipp - Einfach (utip))
 {
-Bärenfell kaufen
+Buy Bear Fur
 }
 
 STRING 3365
@@ -20970,7 +20970,7 @@ Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 3510
 // Fähigkeiten: A08I (Ahnenpakt), Name (Name (anam))
 {
-Ahnenpakt
+Ancestors Pact
 }
 
 STRING 3511
@@ -21012,7 +21012,7 @@ STRING 3516
 STRING 3517
 // Fähigkeiten: A08N (Ahnenpakt), Name (Name (anam))
 {
-Ahnenpakt
+Ancestors Pact
 }
 
 STRING 3518
@@ -21156,7 +21156,7 @@ Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 3541
 // Fähigkeiten: A0IJ (Verzehren), Name (Name (anam))
 {
-Verzehren
+Consume
 }
 
 STRING 3542
@@ -21168,7 +21168,7 @@ STRING 3542
 STRING 3543
 // Fähigkeiten: A0IK (Verzehren), Name (Name (anam))
 {
-Verzehren
+Consume
 }
 
 STRING 3544
@@ -21402,7 +21402,7 @@ STRING 3581
 STRING 3582
 // Fähigkeiten: A02T (Verzehren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt einen in der Nähe befindlichen nicht mechanischen Gegner, um <A02T,DataA1> Leben pro Sekunde wiederherzustellen.|nEs kann maximal <A02T,DataB1> Leben wieder hergestellt werden.
+Consumes a nearby non-mechanical opponent to restore <A02T,DataA1> life per second.|n<A02T,DataB1> life can be restored at maxium.
 }
 
 STRING 3583
@@ -21438,7 +21438,7 @@ Fügt einem Gegner <A04Y,DataC5> Schaden zu.
 STRING 3588
 // Fähigkeiten: A08F (Verzehren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt einen in der Nähe befindlichen Kadaver, um <A08F,DataA1> Leben pro Sekunde wiederherzustellen.|nEs kann maximal <A08F,DataB1> Leben wieder hergestellt werden.
+Consumes a nearby non-mechanical opponent to restore <A08F,DataA1> life per second.|n<A08F,DataB1> life can be restored at maxium.
 }
 
 STRING 3589
@@ -21474,31 +21474,31 @@ Spruchrolle des Weges
 STRING 3594
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 2|r]
+Ancestors Pact |cffffcc00Level 2|r]
 }
 
 STRING 3595
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 3|r]
+Ancestors Pact |cffffcc00Level 3|r]
 }
 
 STRING 3596
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 4|r]
+Ancestors Pact |cffffcc00Level 4|r]
 }
 
 STRING 3597
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 5|r]
+Ancestors Pact |cffffcc00Level 5|r]
 }
 
 STRING 3598
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 1|r]
+Ancestors Pact |cffffcc00Level 1|r]
 }
 
 STRING 3599
@@ -21641,9 +21641,9 @@ Stab des Verbannens kaufen
 }
 
 STRING 3622
-// Fähigkeiten: A0ZM (Wut der Elemente - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0HZ (Dämonendiener - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffff0000Gr|r|cff0000ffu|r|cff00ff00n|r|cffffff00d|rzauber|nErhöht den Schaden durch Elementarzauber 10 Sekunden lang um 30%.|n<A01J,Cool1> Sekunden Abklingzeit.
+Summons a demon for <A0RU,Dur1> seconds. The summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r|n|n|cffffcc00Level 1|r - Level <n00P,level>, causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life. |n|cffffcc00Level 2|r - Level <n03S,level>, causes <n03S,dmgplus1> damage and has <n03S,def> armour, <n03S,manaN> mana and <n03S,HP> life. |n|cffffcc00Level 3|r - Level <n03T,level>, causes <n03T,dmgplus1> damage and has <n03T,def> armour, <n03T,manaN> mana and <n03T,HP> life. |n|cffffcc00Level 4|r - Level <n03U,level>, causes <n03U,dmgplus1> damage and has <n03U,def> armour, <n03U,manaN> mana and <n03U,HP> life. |n|cffffcc00Level 5|r - Level <n03V,level>, causes <n03V,dmgplus1> damage and has <n03V,def> armour, <n03V,manaN> mana and <n03V,HP> life.
 }
 
 STRING 3623
@@ -24238,25 +24238,25 @@ Waldholzfäuste [|cffffcc00Stufe 5|r]
 STRING 4054
 // Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A0RU,Dur2> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus2> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A0RU,Dur2> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 4055
 // Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A0RU,Dur3> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus3> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A0RU,Dur3> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 4056
 // Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A0RU,Dur4> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus4> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A0RU,Dur4> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 4057
 // Fähigkeiten: A0RU (Dämonendiener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A0RU,Dur5> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus5> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis.|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A0RU,Dur5> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 4058
@@ -30268,13 +30268,13 @@ STRING 5058
 STRING 5059
 // Einheiten: H00O (Ritter), Name (Name (unam))
 {
-Ritter
+Knight
 }
 
 STRING 5060
 // Einheiten: H00P (Drachentöter), Propernames (Eigennamen (upro))
 {
-Dämon
+Demon
 }
 
 STRING 5061
@@ -30286,13 +30286,13 @@ STRING 5061
 STRING 5062
 // Einheiten: H00P (Drachentöter), Name (Name (unam))
 {
-Drachentöter
+Dragon Slayer
 }
 
 STRING 5063
 // Einheiten: H00Q (Waldläufer), Propernames (Eigennamen (upro))
 {
-Dämon
+Demon
 }
 
 STRING 5064
@@ -30304,13 +30304,13 @@ STRING 5064
 STRING 5065
 // Einheiten: H00Q (Waldläufer), Name (Name (unam))
 {
-Waldläufer
+Ranger
 }
 
 STRING 5066
 // Einheiten: H00R (Elementarmagier), Propernames (Eigennamen (upro))
 {
-Dämon
+Demon
 }
 
 STRING 5067
@@ -30328,7 +30328,7 @@ Elementarmagier
 STRING 5069
 // Einheiten: H00T (Zauberer), Propernames (Eigennamen (upro))
 {
-Dämon
+Demon
 }
 
 STRING 5070
@@ -30340,31 +30340,31 @@ STRING 5070
 STRING 5071
 // Fähigkeiten: A0BR (Dunkelheit), EditorSuffix (Editor-Suffix (ansf))
 {
-(Deranor der Schreckliche)
+(Deranor the Terrible)
 }
 
 STRING 5072
 // Zauberverstärker/Effekte: B021 (Dämon), EditorName (Name (nur Editor) (fnam))
 {
-Dämon
+Demon
 }
 
 STRING 5073
 // Fähigkeiten: A0BR (Dunkelheit), Tip (Tooltipp - Normal (atp1))
 {
-Dunkelheit
+Darkness
 }
 
 STRING 5074
 // Einheiten: H00T (Zauberer), Name (Name (unam))
 {
-Zauberer
+Wizard
 }
 
 STRING 5075
 // Zauberverstärker/Effekte: B021 (Dämon), Bufftip (Tooltipp (ftip))
 {
-Dämon
+Demon
 }
 
 STRING 5076
@@ -30460,13 +30460,13 @@ Verwandelt den Träger in einen Dämon.
 STRING 5091
 // Fähigkeiten: A0BR (Dunkelheit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört Schattenriesen aus den Lüften.
+Summons a Shadow Giant from the air.
 }
 
 STRING 5092
 // Fähigkeiten: A0BZ (Dunkelheit), Name (Name (anam))
 {
-Dunkelheit
+Darkness
 }
 
 STRING 5093
@@ -30484,37 +30484,37 @@ Todesgeschoss
 STRING 5095
 // Fähigkeiten: A0BM (Baldars Ring), Name (Name (anam))
 {
-Baldars Ring
+Baldar's Ring
 }
 
 STRING 5096
 // Fähigkeiten: A0BN (Baldars Ring), Name (Name (anam))
 {
-Baldars Ring
+Baldar's Ring
 }
 
 STRING 5097
 // Fähigkeiten: A0BP (Baldars Ring), Name (Name (anam))
 {
-Baldars Ring
+Baldar's Ring
 }
 
 STRING 5098
 // Fähigkeiten: A13Y (Baldars Ring), Name (Name (anam))
 {
-Baldars Ring
+Baldar's Ring
 }
 
 STRING 5099
 // Fähigkeiten: A13Z (Baldars Ring), Name (Name (anam))
 {
-Baldars Ring
+Baldar's Ring
 }
 
 STRING 5100
 // Fähigkeiten: A0T6 (Todesgeschoss), EditorSuffix (Editor-Suffix (ansf))
 {
-(Deranor der Schreckliche)
+(Deranor the Terrible)
 }
 
 STRING 5101
@@ -30537,12 +30537,12 @@ In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sow
 
 STRING 5104
 {
-The White legion
+The White Legion
 }
 
 STRING 5105
 {
-The Black legion
+The Black Legion
 }
 
 STRING 5106
@@ -30962,7 +30962,7 @@ Rückverwandlung - Haldars Ring
 STRING 5175
 // Einheiten: n02J (Knecht), Tip (Tooltipp - Einfach (utip))
 {
-Knecht anwerben
+Recruit Farmhand
 }
 
 STRING 5176
@@ -42916,7 +42916,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7167
 // Fähigkeiten: A0RU (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 1|r]
+Demon Servant [|cffffcc00Level 1|r]
 }
 
 STRING 7168
@@ -43000,7 +43000,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7181
 // Fähigkeiten: A0RU (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 2|r]
+Demon Servant [|cffffcc00Level 2|r]
 }
 
 STRING 7182
@@ -43084,7 +43084,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7195
 // Fähigkeiten: A0RU (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 3|r]
+Demon Servant [|cffffcc00Level 3|r]
 }
 
 STRING 7196
@@ -46390,7 +46390,7 @@ Erwachen des Waldes - Stufe 5
 STRING 7746
 // Fähigkeiten: A05F (Unbeugsamkeit), Name (Name (anam))
 {
-Unbeugsamkeit
+Rigidity
 }
 
 STRING 7747
@@ -46402,61 +46402,61 @@ Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 7748
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 1|r] aktivieren
+Enable Rigidity [|cffffcc00Level 1|r]
 }
 
 STRING 7749
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 2|r] aktivieren
+Enable Rigidity [|cffffcc00Level 2|r]
 }
 
 STRING 7750
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 3|r] aktivieren
+Enable Rigidity [|cffffcc00Level 3|r]
 }
 
 STRING 7751
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 4|r] aktivieren
+Enable Rigidity [|cffffcc00Level 4|r]
 }
 
 STRING 7752
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 5|r] aktivieren
+Enable Rigidity [|cffffcc00Level 5|r]
 }
 
 STRING 7753
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Untip (Tooltipp - Ausschalten (aut1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 1|r] deaktivieren
+Disable Rigidity [|cffffcc00Level 1|r]
 }
 
 STRING 7754
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Untip (Tooltipp - Ausschalten (aut1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 2|r] deaktivieren
+Disable Rigidity [|cffffcc00Level 2|r]
 }
 
 STRING 7755
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Untip (Tooltipp - Ausschalten (aut1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 3|r] deaktivieren
+Disable Rigidity [|cffffcc00Level 3|r]
 }
 
 STRING 7756
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Untip (Tooltipp - Ausschalten (aut1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 4|r] deaktivieren
+Disable Rigidity [|cffffcc00Level 4|r]
 }
 
 STRING 7757
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Untip (Tooltipp - Ausschalten (aut1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 5|r] deaktivieren
+Disable Rigidity [|cffffcc00Level 5|r]
 }
 
 STRING 7758
@@ -46474,7 +46474,7 @@ STRING 7759
 STRING 7760
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Name (Name (anam))
 {
-Unbeugsamkeit
+Rigidity
 }
 
 STRING 7761
@@ -46582,7 +46582,7 @@ STRING 7777
 STRING 7778
 // Zauberverstärker/Effekte: B023 (Unbeugsamkeit), EditorName (Name (nur Editor) (fnam))
 {
-Unbeugsamkeit
+Rigidity
 }
 
 STRING 7779
@@ -46720,61 +46720,61 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 7801
 // Fähigkeiten: A0IJ (Verzehren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA1> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA1> hitpoints per second. A corpse can be consumed for <A0IJ,Dur1> seconds.
 }
 
 STRING 7802
 // Fähigkeiten: A0IJ (Verzehren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA2> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur2> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA2> hitpoints per second. A corpse can be consumed for <A0IJ,Dur2> seconds.
 }
 
 STRING 7803
 // Fähigkeiten: A0IJ (Verzehren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA3> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur3> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA3> hitpoints per second. A corpse can be consumed for <A0IJ,Dur3> seconds.
 }
 
 STRING 7804
 // Fähigkeiten: A0IJ (Verzehren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA4> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur4> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA4> hitpoints per second. A corpse can be consumed for <A0IJ,Dur4> seconds.
 }
 
 STRING 7805
 // Fähigkeiten: A0IJ (Verzehren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA5> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur5> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA5> hitpoints per second. A corpse can be consumed for <A0IJ,Dur5> seconds.
 }
 
 STRING 7806
 // Fähigkeiten: A0IL (Verzehren - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA1> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA1> hitpoints per second. A corpse can be consumed for <A0IJ,Dur1> seconds.
 }
 
 STRING 7807
 // Fähigkeiten: A0IM (Verzehren - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA2> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur2> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA2> hitpoints per second. A corpse can be consumed for <A0IJ,Dur2> seconds.
 }
 
 STRING 7808
 // Fähigkeiten: A0IN (Verzehren - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA3> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur3> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA3> hitpoints per second. A corpse can be consumed for <A0IJ,Dur3> seconds.
 }
 
 STRING 7809
 // Fähigkeiten: A0IO (Verzehren - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA4> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur4> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA4> hitpoints per second. A corpse can be consumed for <A0IJ,Dur4> seconds.
 }
 
 STRING 7810
 // Fähigkeiten: A0IP (Verzehren - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche, um <A0IJ,DataA5> Trefferpunkte pro Sekunde zu heilen. Eine Leiche kann <A0IJ,Dur5> Sekunden lang verzehrt werden.
+Consumes a nearby corpse to heal <A0IJ,DataA5> hitpoints per second. A corpse can be consumed for <A0IJ,Dur5> seconds.
 }
 
 STRING 7811
@@ -54346,43 +54346,43 @@ Ein großer Honigtopf von Lothar für Mathilda. Er enthält nur den aller aller 
 STRING 9068
 // Gegenstände: I03Y (Fliegenpilz), Name (Name (unam))
 {
-Fliegenpilz
+Fly Agaric
 }
 
 STRING 9069
 // Gegenstände: I03Y (Fliegenpilz), Tip (Tooltipp - Einfach (utip))
 {
-Fliegenpilz kaufen
+Buy Fly Agaric
 }
 
 STRING 9070
 // Gegenstände: I03Y (Fliegenpilz), Description (Beschreibung (ides))
 {
-Vergiftet einen Menschen.
+Poisons a human.
 }
 
 STRING 9071
 // Gegenstände: I03Y (Fliegenpilz), Ubertip (Tooltipp - Erweitert (utub))
 {
-Vergiftet einen Menschen.
+Poisons a human.
 }
 
 STRING 9072
 // Gegenstände: I03Z (Dracheneier), Name (Name (unam))
 {
-Dracheneier
+Dragon Eggs
 }
 
 STRING 9073
 // Gegenstände: I03Z (Dracheneier), Description (Beschreibung (ides))
 {
-Ein paar Dracheneier.
+Some dragon eggs.
 }
 
 STRING 9074
 // Gegenstände: I03Z (Dracheneier), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein paar Dracheneier.
+Some dragon eggs.
 }
 
 STRING 9075
@@ -55744,25 +55744,25 @@ STRING 9300
 STRING 9301
 // Fähigkeiten: A037 (Dämonendiener), Name (Name (anam))
 {
-Dämonendiener
+Demon Servant
 }
 
 STRING 9302
 // Fähigkeiten: A0RU (Dämonendiener), Name (Name (anam))
 {
-Dämonendiener
+Demon Servant
 }
 
 STRING 9303
 // Zauberverstärker/Effekte: B003 (Dämonendiener), EditorName (Name (nur Editor) (fnam))
 {
-Dämonendiener
+Demon Servant
 }
 
 STRING 9304
 // Zauberverstärker/Effekte: B003 (Dämonendiener), Bufftip (Tooltipp (ftip))
 {
-Dämonendiener
+Demon Servant
 }
 
 STRING 9305
@@ -58656,19 +58656,19 @@ STRING 9781
 STRING 9782
 // Fähigkeiten: A0I0 (Dämonendiener - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A01V,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A01V,Dur1> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 9783
 // Fähigkeiten: A0I1 (Dämonendiener - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A01V,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A01V,Dur1> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 9784
 // Fähigkeiten: A023 (Dämonendiener - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A01V,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A01V,Dur1> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 9785
@@ -58763,13 +58763,13 @@ Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 9800
 // Fähigkeiten: A0HY (Dämonendiener - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A01V,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A01V,Dur1> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 9801
 // Fähigkeiten: A0HZ (Dämonendiener - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A01V,Dur1> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00P,dmgplus1> Schaden verursacht, <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben besitzt.|nDer beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r
+Summons a demon level <n00P,level> for <A01V,Dur1> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
 }
 
 STRING 9802
@@ -79123,7 +79123,7 @@ Tor
 STRING 13202
 // Einheiten: n04P (Knecht), Name (Name (unam))
 {
-Knecht
+Farmhand
 }
 
 STRING 13203
@@ -79423,7 +79423,7 @@ Bewaffneten Dorfbewohner ausbilden
 STRING 13252
 // Einheiten: n04P (Knecht), Tip (Tooltipp - Einfach (utip))
 {
-Knecht ausbilden
+Recruit Farmhand
 }
 
 STRING 13253
@@ -82111,7 +82111,7 @@ Heals <A19J,DataA1> hitpoints on usage.|nProvides <I05K,uses> charges.
 STRING 13700
 // Gegenstände: I05L (Manakraut), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A19K,DataA1> Mana wieder her.|nBietet <I05L,uses> Aufladung.
+Restores <A19K,DataA1> mana on usage.|nProvides <I05L,uses> charges.
 }
 
 STRING 13701
@@ -82225,7 +82225,7 @@ STRING 13718
 STRING 13719
 // Einheiten: n05E (NPC ansprechen), Tip (Tooltipp - Einfach (utip))
 {
-Speak to person
+Speak to Person
 }
 
 STRING 13720
@@ -91261,13 +91261,13 @@ Dummy-Effekt für Langsamkeitskugel
 STRING 15225
 // Einheiten: n05B (Haids Stand), Name (Name (unam))
 {
-Haids Stand
+Haid's Stall
 }
 
 STRING 15226
 // Einheiten: n05C (Fulco und Tellborns Stand), Name (Name (unam))
 {
-Fulco und Tellborns Stand
+Fulco's and Tellborn's Stall
 }
 
 STRING 15227
@@ -91339,7 +91339,7 @@ Longbow
 STRING 15238
 // Einheiten: n05D (Tankas Stand), Name (Name (unam))
 {
-Tankas Stand
+Tanka's Stall
 }
 
 STRING 15239
@@ -93793,7 +93793,7 @@ STRING 15647
 STRING 15648
 // Einheiten: n04V (Wielands Stand), Name (Name (unam))
 {
-Wielands Stand
+Wieland's Stall
 }
 
 STRING 15649
@@ -95061,31 +95061,31 @@ Dunkle Diener
 STRING 15866
 // Fähigkeiten: A0IL (Verzehren - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+Consumes a nearby corpse and as a result regenerates hitpoints per second. A corpse can be consumed for <A0IJ,Dur1> seconds. |n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15867
 // Fähigkeiten: A0IM (Verzehren - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+Consumes a nearby corpse and as a result regenerates hitpoints per second. A corpse can be consumed for <A0IJ,Dur1> seconds. |n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15868
 // Fähigkeiten: A0IN (Verzehren - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+Consumes a nearby corpse and as a result regenerates hitpoints per second. A corpse can be consumed for <A0IJ,Dur1> seconds. |n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15869
 // Fähigkeiten: A0IO (Verzehren - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+Consumes a nearby corpse and as a result regenerates hitpoints per second. A corpse can be consumed for <A0IJ,Dur1> seconds. |n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15870
 // Fähigkeiten: A0IP (Verzehren - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+Consumes a nearby corpse and as a result regenerates hitpoints per second. A corpse can be consumed for <A0IJ,Dur1> seconds. |n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15871
