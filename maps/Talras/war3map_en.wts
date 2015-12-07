@@ -15607,7 +15607,7 @@ Diese Einheit wurde von 'Einwurzeln' getroffen; sie kann sich nicht bewegen und 
 STRING 2610
 // Einheiten: n02P (Orkanführer), Name (Name (unam))
 {
-Orkanführer
+Orc Leader
 }
 
 STRING 2611
@@ -24262,7 +24262,7 @@ Summons a demon level <n00P,level> for <A0RU,Dur5> seconds which causes <n00P,dm
 STRING 4058
 // Fähigkeiten: A0SI (Meister der Nekromantie - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten.|n|n|cffffcc00Stufe 1|r -  Gewährt einen Schadensbonus von <A0WH,DataA1,%> % und einen Rüstungsbonus von <A0WG,DataA1>. |n|cffffcc00Stufe 2|r - Gewährt einen Schadensbonus von <A0WH,DataA2,%> % und einen Rüstungsbonus von <A0WG,DataA2>. |n|cffffcc00Stufe 3|r - Gewährt einen Schadensbonus von <A0WH,DataA3,%> % und einen Rüstungsbonus von <A0WG,DataA3>. |n|cffffcc00Stufe 4|r - Gewährt einen Schadensbonus von <A0WH,DataA4,%> % und einen Rüstungsbonus von <A0WG,DataA4>. |n|cffffcc00Stufe 5|r - Gewährt einen Schadensbonus von <A0WH,DataA5,%> % und einen Rüstungsbonus von <A0WG,DataA5>.
+Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  Grants a damage bonus of <A0WH,DataA1,%> % and an armour bonus of <A0WG,DataA1>. |n|cffffcc00Level 2|r - Grants a damage bonus of <A0WH,DataA2,%> % and an armour bonus of <A0WG,DataA2>. |n|cffffcc00Level 3|r - Grants a damage bonus of <A0WH,DataA3,%> % and an armour bonus of <A0WG,DataA3>. |n|cffffcc00Level 4|r - Grants a damage bonus of <A0WH,DataA4,%> % and an armour bonus of <A0WG,DataA4>. |n|cffffcc00Level 5|r - Grants a damage bonus of <A0WH,DataA5,%> % and an armour bonus of <A0WG,DataA5>.
 }
 
 STRING 4059
@@ -24784,25 +24784,25 @@ Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies Stufe <n03R,level> mit
 STRING 4145
 // Fähigkeiten: A01U (Dunkler Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 1|r]
+Dark Servants [|cffffcc00Level 1|r]
 }
 
 STRING 4146
 // Fähigkeiten: A01U (Dunkler Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 2|r]
+Dark Servants[|cffffcc00Level 2|r]
 }
 
 STRING 4147
 // Fähigkeiten: A01U (Dunkler Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 3|r]
+Dark Servants [|cffffcc00Level 3|r]
 }
 
 STRING 4148
 // Fähigkeiten: A01U (Dunkler Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 4|r]
+Dark Servants [|cffffcc00Level 4|r]
 }
 
 STRING 4149
@@ -24844,7 +24844,7 @@ STRING 4154
 STRING 4155
 // Fähigkeiten: A01U (Dunkler Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 5|r]
+Dark Servants [|cffffcc00Level 5|r]
 }
 
 STRING 4156
@@ -25624,13 +25624,13 @@ STRING 4284
 STRING 4285
 // Fähigkeiten: A0SG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 1|r]
+Master of Necromancy [|cffffcc00Level 1|r]
 }
 
 STRING 4286
 // Fähigkeiten: A0SG (Meister der Nekromantie), Name (Name (anam))
 {
-Meister der Nekromantie
+Master of Necromancy
 }
 
 STRING 4287
@@ -25678,25 +25678,25 @@ Stab der Verzögerung
 STRING 4294
 // Fähigkeiten: A0SG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 2|r]
+Master of Necromancy [|cffffcc00Level 2|r]
 }
 
 STRING 4295
 // Fähigkeiten: A0SG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 3|r]
+Master of Necromancy [|cffffcc00Level 3|r]
 }
 
 STRING 4296
 // Fähigkeiten: A0SG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 4|r]
+Master of Necromancy [|cffffcc00Level 4|r]
 }
 
 STRING 4297
 // Fähigkeiten: A0SG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 5|r]
+Master of Necromancy [|cffffcc00Level 5|r]
 }
 
 STRING 4298
@@ -25714,7 +25714,7 @@ STRING 4299
 STRING 4300
 // Fähigkeiten: A0SH (Meister der Nekromantie), Name (Name (anam))
 {
-Meister der Nekromantie
+Master of Necromancy
 }
 
 STRING 4301
@@ -27082,7 +27082,7 @@ STRING 4527
 STRING 4528
 // Fähigkeiten: A0WG (Meister der Nekromantie), Name (Name (anam))
 {
-Meister der Nekromantie
+Master of Necromancy
 }
 
 STRING 4529
@@ -27154,49 +27154,49 @@ STRING 4539
 STRING 4540
 // Fähigkeiten: A0WH (Meister der Nekromantie), Name (Name (anam))
 {
-Meister der Nekromantie
+Master of Necromancy
 }
 
 STRING 4541
 // Fähigkeiten: A0SG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten:|n- Gewährt einen Schadensbonus von <A0WH,DataA1,%>%.|n- Gewährt einen Rüstungsbonus von <A0WG,DataA1>.
+Strengthens summoned undead units of the Necromancer:|n- Grants a damage bonus of <A0WH,DataA1,%>%.|n- Grants an armour bonus of <A0WG,DataA1>.
 }
 
 STRING 4542
 // Fähigkeiten: A0SG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten:|n- Gewährt einen Schadensbonus von <A0WH,DataA2,%>%.|n- Gewährt einen Rüstungsbonus von <A0WG,DataA2>.
+Strengthens summoned undead units of the Necromancer:|n- Grants a damage bonus of <A0WH,DataA2,%>%.|n- Grants an armour bonus of <A0WG,DataA2>.
 }
 
 STRING 4543
 // Fähigkeiten: A0SG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten:|n- Gewährt einen Schadensbonus von <A0WH,DataA3,%>%.|n- Gewährt einen Rüstungsbonus von <A0WG,DataA3>.
+Strengthens summoned undead units of the Necromancer:|n- Grants a damage bonus of <A0WH,DataA3,%>%.|n- Grants an armour bonus of <A0WG,DataA3>.
 }
 
 STRING 4544
 // Fähigkeiten: A0SG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten:|n- Gewährt einen Schadensbonus von <A0WH,DataA4,%>%.|n- Gewährt einen Rüstungsbonus von <A0WG,DataA4>.
+Strengthens summoned undead units of the Necromancer:|n- Grants a damage bonus of <A0WH,DataA4,%>%.|n- Grants an armour bonus of <A0WG,DataA4>.
 }
 
 STRING 4545
 // Fähigkeiten: A0SG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten:|n- Gewährt einen Schadensbonus von <A0WH,DataA5,%>%.|n- Gewährt einen Rüstungsbonus von <A0WG,DataA5>.
+Strengthens summoned undead units of the Necromancer:|n- Grants a damage bonus of <A0WH,DataA5,%>%.|n- Grants an armour bonus of <A0WG,DataA5>.
 }
 
 STRING 4546
 // Zauberverstärker/Effekte: B02D (Meister der Nekromantie), EditorName (Name (nur Editor) (fnam))
 {
-Meister der Nekromantie
+Master of Necromancy
 }
 
 STRING 4547
 // Zauberverstärker/Effekte: B02D (Meister der Nekromantie), Bufftip (Tooltipp (ftip))
 {
-Meister der Nekromantie
+Master of Necromancy
 }
 
 STRING 4548
@@ -27214,13 +27214,13 @@ STRING 4549
 STRING 4550
 // Zauberverstärker/Effekte: B02E (Meister der Nekromantie), EditorName (Name (nur Editor) (fnam))
 {
-Meister der Nekromantie
+Master of Necromancy
 }
 
 STRING 4551
 // Zauberverstärker/Effekte: B02E (Meister der Nekromantie), Bufftip (Tooltipp (ftip))
 {
-Meister der Nekromantie
+Master of Necromancy
 }
 
 STRING 4552
@@ -29854,7 +29854,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 4990
 // Fähigkeiten: A0SI (Meister der Nekromantie - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 1|r]
+Master of Necromancy [|cffffcc00Level 1|r]
 }
 
 STRING 4991
@@ -31274,7 +31274,7 @@ Manaexplosion [|cffffcc00Stufe 3|r]
 STRING 5227
 // Fähigkeiten: A0SJ (Meister der Nekromantie - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 2|r]
+Master of Necromancy [|cffffcc00Level 2|r]
 }
 
 STRING 5228
@@ -32873,7 +32873,7 @@ Dryadenquelle - Stufe 1
 STRING 5493
 // Fähigkeiten: A0SK (Meister der Nekromantie - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 3|r]
+Master of Necromancy [|cffffcc00Level 3|r]
 }
 
 STRING 5494
@@ -34367,7 +34367,7 @@ Ein mächtiger Gefährte.
 STRING 5742
 // Fähigkeiten: A0SJ (Meister der Nekromantie - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten.|n|n|cffffcc00Stufe 1|r -  Gewährt einen Schadensbonus von <A0WH,DataA1,%> % und einen Rüstungsbonus von <A0WG,DataA1>. |n|cffffcc00Stufe 2|r - Gewährt einen Schadensbonus von <A0WH,DataA2,%> % und einen Rüstungsbonus von <A0WG,DataA2>. |n|cffffcc00Stufe 3|r - Gewährt einen Schadensbonus von <A0WH,DataA3,%> % und einen Rüstungsbonus von <A0WG,DataA3>. |n|cffffcc00Stufe 4|r - Gewährt einen Schadensbonus von <A0WH,DataA4,%> % und einen Rüstungsbonus von <A0WG,DataA4>. |n|cffffcc00Stufe 5|r - Gewährt einen Schadensbonus von <A0WH,DataA5,%> % und einen Rüstungsbonus von <A0WG,DataA5>.
+Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  Grants a damage bonus of <A0WH,DataA1,%> % and an armour bonus of <A0WG,DataA1>. |n|cffffcc00Level 2|r - Grants a damage bonus of <A0WH,DataA2,%> % and an armour bonus of <A0WG,DataA2>. |n|cffffcc00Level 3|r - Grants a damage bonus of <A0WH,DataA3,%> % and an armour bonus of <A0WG,DataA3>. |n|cffffcc00Level 4|r - Grants a damage bonus of <A0WH,DataA4,%> % and an armour bonus of <A0WG,DataA4>. |n|cffffcc00Level 5|r - Grants a damage bonus of <A0WH,DataA5,%> % and an armour bonus of <A0WG,DataA5>.
 }
 
 STRING 5743
@@ -34451,7 +34451,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 5756
 // Fähigkeiten: A0SK (Meister der Nekromantie - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten.|n|n|cffffcc00Stufe 1|r -  Gewährt einen Schadensbonus von <A0WH,DataA1,%> % und einen Rüstungsbonus von <A0WG,DataA1>. |n|cffffcc00Stufe 2|r - Gewährt einen Schadensbonus von <A0WH,DataA2,%> % und einen Rüstungsbonus von <A0WG,DataA2>. |n|cffffcc00Stufe 3|r - Gewährt einen Schadensbonus von <A0WH,DataA3,%> % und einen Rüstungsbonus von <A0WG,DataA3>. |n|cffffcc00Stufe 4|r - Gewährt einen Schadensbonus von <A0WH,DataA4,%> % und einen Rüstungsbonus von <A0WG,DataA4>. |n|cffffcc00Stufe 5|r - Gewährt einen Schadensbonus von <A0WH,DataA5,%> % und einen Rüstungsbonus von <A0WG,DataA5>.
+Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  Grants a damage bonus of <A0WH,DataA1,%> % and an armour bonus of <A0WG,DataA1>. |n|cffffcc00Level 2|r - Grants a damage bonus of <A0WH,DataA2,%> % and an armour bonus of <A0WG,DataA2>. |n|cffffcc00Level 3|r - Grants a damage bonus of <A0WH,DataA3,%> % and an armour bonus of <A0WG,DataA3>. |n|cffffcc00Level 4|r - Grants a damage bonus of <A0WH,DataA4,%> % and an armour bonus of <A0WG,DataA4>. |n|cffffcc00Level 5|r - Grants a damage bonus of <A0WH,DataA5,%> % and an armour bonus of <A0WG,DataA5>.
 }
 
 STRING 5757
@@ -34535,7 +34535,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 5770
 // Fähigkeiten: A0SL (Meister der Nekromantie - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten.|n|n|cffffcc00Stufe 1|r -  Gewährt einen Schadensbonus von <A0WH,DataA1,%> % und einen Rüstungsbonus von <A0WG,DataA1>. |n|cffffcc00Stufe 2|r - Gewährt einen Schadensbonus von <A0WH,DataA2,%> % und einen Rüstungsbonus von <A0WG,DataA2>. |n|cffffcc00Stufe 3|r - Gewährt einen Schadensbonus von <A0WH,DataA3,%> % und einen Rüstungsbonus von <A0WG,DataA3>. |n|cffffcc00Stufe 4|r - Gewährt einen Schadensbonus von <A0WH,DataA4,%> % und einen Rüstungsbonus von <A0WG,DataA4>. |n|cffffcc00Stufe 5|r - Gewährt einen Schadensbonus von <A0WH,DataA5,%> % und einen Rüstungsbonus von <A0WG,DataA5>.
+Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  Grants a damage bonus of <A0WH,DataA1,%> % and an armour bonus of <A0WG,DataA1>. |n|cffffcc00Level 2|r - Grants a damage bonus of <A0WH,DataA2,%> % and an armour bonus of <A0WG,DataA2>. |n|cffffcc00Level 3|r - Grants a damage bonus of <A0WH,DataA3,%> % and an armour bonus of <A0WG,DataA3>. |n|cffffcc00Level 4|r - Grants a damage bonus of <A0WH,DataA4,%> % and an armour bonus of <A0WG,DataA4>. |n|cffffcc00Level 5|r - Grants a damage bonus of <A0WH,DataA5,%> % and an armour bonus of <A0WG,DataA5>.
 }
 
 STRING 5771
@@ -34619,7 +34619,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 5784
 // Fähigkeiten: A0SM (Meister der Nekromantie - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stärkt vom Nekromanten beschworene untote Einheiten.|n|n|cffffcc00Stufe 1|r -  Gewährt einen Schadensbonus von <A0WH,DataA1,%> % und einen Rüstungsbonus von <A0WG,DataA1>. |n|cffffcc00Stufe 2|r - Gewährt einen Schadensbonus von <A0WH,DataA2,%> % und einen Rüstungsbonus von <A0WG,DataA2>. |n|cffffcc00Stufe 3|r - Gewährt einen Schadensbonus von <A0WH,DataA3,%> % und einen Rüstungsbonus von <A0WG,DataA3>. |n|cffffcc00Stufe 4|r - Gewährt einen Schadensbonus von <A0WH,DataA4,%> % und einen Rüstungsbonus von <A0WG,DataA4>. |n|cffffcc00Stufe 5|r - Gewährt einen Schadensbonus von <A0WH,DataA5,%> % und einen Rüstungsbonus von <A0WG,DataA5>.
+Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  Grants a damage bonus of <A0WH,DataA1,%> % and an armour bonus of <A0WG,DataA1>. |n|cffffcc00Level 2|r - Grants a damage bonus of <A0WH,DataA2,%> % and an armour bonus of <A0WG,DataA2>. |n|cffffcc00Level 3|r - Grants a damage bonus of <A0WH,DataA3,%> % and an armour bonus of <A0WG,DataA3>. |n|cffffcc00Level 4|r - Grants a damage bonus of <A0WH,DataA4,%> % and an armour bonus of <A0WG,DataA4>. |n|cffffcc00Level 5|r - Grants a damage bonus of <A0WH,DataA5,%> % and an armour bonus of <A0WG,DataA5>.
 }
 
 STRING 5785
@@ -36125,7 +36125,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6035
 // Fähigkeiten: A0SL (Meister der Nekromantie - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 4|r]
+Master of Necromancy [|cffffcc00Level 4|r]
 }
 
 STRING 6036
@@ -37042,7 +37042,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6188
 // Fähigkeiten: A0SM (Meister der Nekromantie - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie [|cffffcc00Stufe 5|r]
+Master of Necromancy [|cffffcc00Level 5|r]
 }
 
 STRING 6189
@@ -43342,37 +43342,37 @@ Dämonendiener - Stufe 5
 STRING 7238
 // Fähigkeiten: A0I7 (Dunkler Zauber), Name (Name (anam))
 {
-Dunkler Zauber
+Dark Spell
 }
 
 STRING 7239
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 1|r]
+Dark Spell [|cffffcc00Level 1|r]
 }
 
 STRING 7240
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 2|r]
+Dark Spell [|cffffcc00Level 2|r]
 }
 
 STRING 7241
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 3|r]
+Dark Spell [|cffffcc00Level 3|r]
 }
 
 STRING 7242
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 4|r]
+Dark Spell [|cffffcc00Level 4|r]
 }
 
 STRING 7243
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 5|r]
+Dark Spell [|cffffcc00Level 5|r]
 }
 
 STRING 7244
@@ -43414,7 +43414,7 @@ STRING 7249
 STRING 7250
 // Fähigkeiten: A0I8 (Dunkler Zauber), Name (Name (anam))
 {
-Dunkler Zauber
+Dark Spell
 }
 
 STRING 7251
@@ -43474,7 +43474,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7260
 // Fähigkeiten: A0I9 (Dunkler Zauber - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 1|r]
+Dark Spell [|cffffcc00Level 1|r]
 }
 
 STRING 7261
@@ -43558,7 +43558,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7274
 // Fähigkeiten: A0IA (Dunkler Zauber - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 2|r]
+Dark Spell [|cffffcc00Level 2|r]
 }
 
 STRING 7275
@@ -43642,7 +43642,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7288
 // Fähigkeiten: A0IB (Dunkler Zauber - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 3|r]
+Dark Spell [|cffffcc00Level 3|r]
 }
 
 STRING 7289
@@ -43726,7 +43726,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7302
 // Fähigkeiten: A0IC (Dunkler Zauber - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 4|r]
+Dark Spell [|cffffcc00Level 4|r]
 }
 
 STRING 7303
@@ -43810,7 +43810,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7316
 // Fähigkeiten: A0ID (Dunkler Zauber - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 5|r]
+Dark Spell [|cffffcc00Level 5|r]
 }
 
 STRING 7317
@@ -56212,7 +56212,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 
 STRING 9376
 {
-Ork:
+Orc:
 }
 
 STRING 9377
@@ -58733,7 +58733,7 @@ Eine Feuersbrunst erfasst ein Gebiet mit einem Radius von 300 und fügt Gegnern 
 
 STRING 9795
 {
-Dämonen:
+Demons:
 }
 
 STRING 9796
@@ -69551,7 +69551,7 @@ Schuss ins Herz - Stufe 5
 
 STRING 11608
 {
-Ork
+Orc
 }
 
 STRING 11609
@@ -70495,7 +70495,7 @@ An allied unit will be protected from an impeding threat. The next attack on it 
 
 STRING 11765
 {
-Dämonen
+Demons
 }
 
 STRING 11766
@@ -95055,7 +95055,7 @@ Dunkle Diener - Stufe 5
 STRING 15865
 // Fähigkeiten: A036 (Dunkle Diener), Name (Name (anam))
 {
-Dunkle Diener
+Dark Servants
 }
 
 STRING 15866
@@ -95091,19 +95091,19 @@ Consumes a nearby corpse and as a result regenerates hitpoints per second. A cor
 STRING 15871
 // Fähigkeiten: A01U (Dunkle Diener), Name (Name (anam))
 {
-Dunkle Diener
+Dark Servants
 }
 
 STRING 15872
 // Fähigkeiten: A0IV (Dunkle Diener - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+Creates two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 15873
 // Fähigkeiten: A0IV (Dunkle Diener - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 1|r]
+Dark Servants [|cffffcc00Level 1|r]
 }
 
 STRING 15874
@@ -95115,13 +95115,13 @@ Dunkle Diener - Stufe 1
 STRING 15875
 // Fähigkeiten: A0IW (Dunkle Diener - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+Creates two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 15876
 // Fähigkeiten: A0IW (Dunkle Diener - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 2|r]
+Dark Servants [|cffffcc00Level 2|r]
 }
 
 STRING 15877
@@ -95133,7 +95133,7 @@ Dunkle Diener - Stufe 2
 STRING 15878
 // Fähigkeiten: A0IX (Dunkle Diener - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+Creates two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 15879
@@ -95151,13 +95151,13 @@ Dunkle Diener - Stufe 3
 STRING 15881
 // Fähigkeiten: A0IY (Dunkle Diener - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+Creates two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 15882
 // Fähigkeiten: A0IY (Dunkle Diener - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 4|r]
+Dark Servants [|cffffcc00Level 4|r]
 }
 
 STRING 15883
@@ -95175,13 +95175,13 @@ Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strö
 STRING 15885
 // Fähigkeiten: A0IZ (Dunkle Diener - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung.
+Creates two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 15886
 // Fähigkeiten: A0IZ (Dunkle Diener - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 5|r]
+Dark Servants [|cffffcc00Level 5|r]
 }
 
 STRING 15887
