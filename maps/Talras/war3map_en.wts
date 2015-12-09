@@ -4310,7 +4310,7 @@ Gods Favor
 STRING 721
 // Zauberverstärker/Effekte: B028 (), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit besitzt 'Göttergunst'; die Rüstung wurde erhöht.
+Diese Einheit besitzt 'Göttergunst'; die Rüstung wurde.
 }
 
 STRING 722
@@ -4400,19 +4400,19 @@ Auf dem Boden unter dem Magier entsteht ein Flammenmeer, das Gegner für X/Sekun
 STRING 736
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 8 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 7 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 8 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 7 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe.
 }
 
 STRING 737
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 10 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 9 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 10 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 9 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe.
 }
 
 STRING 738
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 12 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 11 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 12 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 11 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe.
 }
 
 STRING 739
@@ -4466,13 +4466,13 @@ Der Elementarmagier lähmt sein Ziel für 5 Sekunden.
 STRING 747
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 14 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 13 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 14 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 13 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe.
 }
 
 STRING 748
 // Fähigkeiten: A05O (Arkaner Hunger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Saugt 16 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 15 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe erhöht.
+Saugt 16 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und überträgt es auf den Zauberer. Das Mana kann dabei nicht über das Mana-Maximum des Zauberers hinausgehen.|nLasts 15 Sekunden.|nProzentsatz, Umkreis und Dauer werden mit der Stufe.
 }
 
 STRING 749
@@ -4988,7 +4988,7 @@ Teleportiert den Elementarmagier und absorbiert 5 Sekunden lang X Schaden. 1 Min
 STRING 834
 // Fähigkeiten: A094 (Krähengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A094,DataA1>.
+Increases the armour by <A094,DataA1>.
 }
 
 STRING 835
@@ -6984,7 +6984,7 @@ Select class
 STRING 1167
 // Einheiten: n002 (Keiler), Name (Name (unam))
 {
-Wild boar
+Wild Boar
 }
 
 STRING 1168
@@ -8820,7 +8820,7 @@ Todesruf
 STRING 1473
 // Zauberverstärker/Effekte: B009 (Todesruf), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter dem Einfluss von 'Todesruf'; Angriffsrate und Bewegungstempo sind erhöht.
+Diese Einheit steht unter dem Einfluss von 'Todesruf'; Angriffsrate und Bewegungstempo sind.
 }
 
 STRING 1474
@@ -8988,7 +8988,7 @@ STRING 1500
 STRING 1501
 // Zauberverstärker/Effekte: B00D (Entzünden), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter der Wirkung von 'Entzünden'; Schaden wurde erhöht.
+Diese Einheit steht unter der Wirkung von 'Entzünden'; Schaden wurde.
 }
 
 STRING 1502
@@ -10656,7 +10656,7 @@ STRING 1778
 STRING 1779
 // Zauberverstärker/Effekte: B00J (Schütze), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter der Wirkung von 'Schütze'; ihr Distanzschaden ist erhöht.
+Diese Einheit steht unter der Wirkung von 'Schütze'; ihr Distanzschaden ist.
 }
 
 STRING 1780
@@ -14562,7 +14562,7 @@ Schwerer Goldmünzenbeutel
 STRING 2435
 // Zauberverstärker/Effekte: B029 (), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter der Wirkung von 'Aura des Königs'; Bewegungstempo und Trefferpunkt-Regeneration wurden erhöht.
+Diese Einheit steht unter der Wirkung von 'Aura des Königs'; Bewegungstempo und Trefferpunkt-Regeneration wurden.
 }
 
 STRING 2436
@@ -16492,67 +16492,67 @@ The Necromancer regenerates his life and mana with the help of a corpse. He conv
 STRING 2758
 // Fähigkeiten: A06J (Seelendiebstahl), Name (Name (anam))
 {
-Seelendiebstahl
+Soul Theft
 }
 
 STRING 2759
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 1|r]
+Soul Theft [|cffffcc00Level 1|r]
 }
 
 STRING 2760
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 2|r]
+Soul Theft [|cffffcc00Level 2|r]
 }
 
 STRING 2761
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 3|r]
+Soul Theft [|cffffcc00Level 3|r]
 }
 
 STRING 2762
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 4|r]
+Soul Theft [|cffffcc00Level 4|r]
 }
 
 STRING 2763
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 5|r]
+Soul Theft [|cffffcc00Level 5|r]
 }
 
 STRING 2764
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA1> Leben und Mana.|nLasts <A06J,Dur1> Sekunden lang an.
+Steals the soul from a hostile target and drains <A06J,DataA1> life and mana from it per second.|nLasts for <A06J,Dur1> seconds.
 }
 
 STRING 2765
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA2> Leben und Mana.|nLasts <A06J,Dur2> Sekunden lang an.
+Steals the soul from a hostile target and drains <A06J,DataA2> life and mana from it per second.|nLasts for <A06J,Dur2> seconds.
 }
 
 STRING 2766
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA3> Leben und Mana.|nLasts <A06J,Dur3> Sekunden lang an.
+Steals the soul from a hostile target and drains <A06J,DataA3> life and mana from it per second.|nLasts for <A06J,Dur3> seconds.
 }
 
 STRING 2767
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA4> Leben und Mana.|nLasts <A06J,Dur4> Sekunden lang an.
+Steals the soul from a hostile target and drains <A06J,DataA4> life and mana from it per second.|nLasts for <A06J,Dur4> seconds.
 }
 
 STRING 2768
 // Fähigkeiten: A06J (Seelendiebstahl), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde <A06J,DataA5> Leben und Mana.|nLasts <A06J,Dur5> Sekunden lang an.
+Steals the soul from a hostile target and drains <A06J,DataA5> life and mana from it per second.|nLasts for <A06J,Dur5> seconds.
 }
 
 STRING 2769
@@ -16564,7 +16564,7 @@ STRING 2769
 STRING 2770
 // Fähigkeiten: A06K (Seelendiebstahl), Name (Name (anam))
 {
-Seelendiebstahl
+Soul Theft
 }
 
 STRING 2771
@@ -17582,7 +17582,7 @@ The Necromancer regenerates his life and mana with the help of a corpse. He conv
 STRING 2942
 // Zauberverstärker/Effekte: B012 (Überlegenheit), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter der Wirkung von 'Überlegenheit'; ihre Angriffsgeschwindigkeit ist erhöht.
+Diese Einheit steht unter der Wirkung von 'Überlegenheit'; ihre Angriffsgeschwindigkeit ist.
 }
 
 STRING 2943
@@ -17804,7 +17804,7 @@ Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 2979
 // Zauberverstärker/Effekte: B014 (Selbstlosigkeit), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter der Wirkung von 'Selbstlosigkeit'; ihr erlittener Schaden wird erhöht.
+Diese Einheit steht unter der Wirkung von 'Selbstlosigkeit'; ihr erlittener Schaden wird.
 }
 
 STRING 2980
@@ -18596,31 +18596,31 @@ Rückverwandlung - Baldars Ring
 STRING 3111
 // Fähigkeiten: A06C (Astraler Quell), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Manaregeneration des Klerikers wird um <A06C,DataA1>% erhöht.
+Die Manaregeneration des Klerikers wird um <A06C,DataA1>%.
 }
 
 STRING 3112
 // Fähigkeiten: A06C (Astraler Quell), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Manaregeneration des Klerikers wird um <A06C,DataA2>% erhöht.
+Die Manaregeneration des Klerikers wird um <A06C,DataA2>%.
 }
 
 STRING 3113
 // Fähigkeiten: A06C (Astraler Quell), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Manaregeneration des Klerikers wird um <A06C,DataA3>% erhöht.
+Die Manaregeneration des Klerikers wird um <A06C,DataA3>%.
 }
 
 STRING 3114
 // Fähigkeiten: A06C (Astraler Quell), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Manaregeneration des Klerikers wird um <A06C,DataA4>% erhöht.
+Die Manaregeneration des Klerikers wird um <A06C,DataA4>%.
 }
 
 STRING 3115
 // Fähigkeiten: A06C (Astraler Quell), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Manaregeneration des Klerikers wird um <A06C,DataA5>% erhöht.
+Die Manaregeneration des Klerikers wird um <A06C,DataA5>%.
 }
 
 STRING 3116
@@ -19310,7 +19310,7 @@ Große Doppelaxt kaufen
 STRING 3230
 // Fähigkeiten: A01V (Seelendiebstahl - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Hält <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Hält <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Hält <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Hält <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Hält <A06J,Dur5> Sekunden.
+Steals the soul from a hostile target and drains life and mana from it per second. |n|n|cffffcc00Level 1|r - <A06J,DataA1> life and <A06J,DataB1> mana per second. Lasts for <A06J,Dur1> seconds.|n|cffffcc00Level 2|r - <A06J,DataA2> life and <A06J,DataB2> mana per second. Lasts for <A06J,Dur2> seconds.|n|cffffcc00Level 3|r - <A06J,DataA3> life and <A06J,DataB3> mana per second. Lasts for <A06J,Dur3> seconds.|n|cffffcc00Level 4|r - <A06J,DataA4> life and <A06J,DataB4> mana per second. Lasts for <A06J,Dur4> seconds.|n|cffffcc00Level 5|r - <A06J,DataA5> life and <A06J,DataB5> mana per second. Lasts for <A06J,Dur5> seconds.
 }
 
 STRING 3231
@@ -19454,7 +19454,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 3254
 // Fähigkeiten: A01V (Seelendiebstahl - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 1|r]
+Soul Theft [|cffffcc00Level 1|r]
 }
 
 STRING 3255
@@ -19772,7 +19772,7 @@ Mantel
 STRING 3307
 // Zauberverstärker/Effekte: B01D (Mantel), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit trägt einen Mantel; Bewegungsgeschwindigkeit und Angriffsrate wurden erhöht.
+Diese Einheit trägt einen Mantel; Bewegungsgeschwindigkeit und Angriffsrate wurden.
 }
 
 STRING 3308
@@ -19838,7 +19838,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 3318
 // Fähigkeiten: A0RV (Seelendiebstahl - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Lasts <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Lasts <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Lasts <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Lasts <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Lasts <A06J,Dur5> Sekunden.
+Steals the soul from a hostile target and drains life and mana from it per second. |n|n|cffffcc00Level 1|r - <A06J,DataA1> life and <A06J,DataB1> mana per second. Lasts for <A06J,Dur1> seconds.|n|cffffcc00Level 2|r - <A06J,DataA2> life and <A06J,DataB2> mana per second. Lasts for <A06J,Dur2> seconds.|n|cffffcc00Level 3|r - <A06J,DataA3> life and <A06J,DataB3> mana per second. Lasts for <A06J,Dur3> seconds.|n|cffffcc00Level 4|r - <A06J,DataA4> life and <A06J,DataB4> mana per second. Lasts for <A06J,Dur4> seconds.|n|cffffcc00Level 5|r - <A06J,DataA5> life and <A06J,DataB5> mana per second. Lasts for <A06J,Dur5> seconds.
 }
 
 STRING 3319
@@ -19964,7 +19964,7 @@ Packpferd kaufen
 STRING 3339
 // Fähigkeiten: A0RV (Seelendiebstahl - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 2|r]
+Soul Theft [|cffffcc00Level 2|r]
 }
 
 STRING 3340
@@ -20120,7 +20120,7 @@ Buy Bear Fur
 STRING 3365
 // Fähigkeiten: A0RV (Seelendiebstahl - Stufe 2), Name (Name (anam))
 {
-Seelendiebstahl - Stufe 2
+Soul Theft - Level 2
 }
 
 STRING 3366
@@ -20514,7 +20514,7 @@ Erhöht den Schaden.
 STRING 3434
 // Fähigkeiten: A0RW (Seelendiebstahl - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Lasts <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Lasts <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Lasts <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Lasts <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Lasts <A06J,Dur5> Sekunden.
+Steals the soul from a hostile target and drains life and mana from it per second. |n|n|cffffcc00Level 1|r - <A06J,DataA1> life and <A06J,DataB1> mana per second. Lasts for <A06J,Dur1> seconds.|n|cffffcc00Level 2|r - <A06J,DataA2> life and <A06J,DataB2> mana per second. Lasts for <A06J,Dur2> seconds.|n|cffffcc00Level 3|r - <A06J,DataA3> life and <A06J,DataB3> mana per second. Lasts for <A06J,Dur3> seconds.|n|cffffcc00Level 4|r - <A06J,DataA4> life and <A06J,DataB4> mana per second. Lasts for <A06J,Dur4> seconds.|n|cffffcc00Level 5|r - <A06J,DataA5> life and <A06J,DataB5> mana per second. Lasts for <A06J,Dur5> seconds.
 }
 
 STRING 3435
@@ -20796,7 +20796,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 3481
 // Fähigkeiten: A0RW (Seelendiebstahl - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 3|r]
+Soul Theft [|cffffcc00Level 3|r]
 }
 
 STRING 3482
@@ -20832,7 +20832,7 @@ Impeding Disaster [|cffffcc00Level 5|r]
 STRING 3487
 // Fähigkeiten: A0RW (Seelendiebstahl - Stufe 3), Name (Name (anam))
 {
-Seelendiebstahl - Stufe 3
+Soul Theft - Level 3
 }
 
 STRING 3488
@@ -20916,7 +20916,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 3501
 // Fähigkeiten: A0RX (Seelendiebstahl - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Lasts <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Lasts <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Lasts <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Lasts <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Lasts <A06J,Dur5> Sekunden.
+Steals the soul from a hostile target and drains life and mana from it per second. |n|n|cffffcc00Level 1|r - <A06J,DataA1> life and <A06J,DataB1> mana per second. Lasts for <A06J,Dur1> seconds.|n|cffffcc00Level 2|r - <A06J,DataA2> life and <A06J,DataB2> mana per second. Lasts for <A06J,Dur2> seconds.|n|cffffcc00Level 3|r - <A06J,DataA3> life and <A06J,DataB3> mana per second. Lasts for <A06J,Dur3> seconds.|n|cffffcc00Level 4|r - <A06J,DataA4> life and <A06J,DataB4> mana per second. Lasts for <A06J,Dur4> seconds.|n|cffffcc00Level 5|r - <A06J,DataA5> life and <A06J,DataB5> mana per second. Lasts for <A06J,Dur5> seconds.
 }
 
 STRING 3502
@@ -21000,7 +21000,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 3515
 // Fähigkeiten: A0RX (Seelendiebstahl - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 4|r]
+Soul Theft [|cffffcc00Level 4|r]
 }
 
 STRING 3516
@@ -21024,7 +21024,7 @@ STRING 3518
 STRING 3519
 // Fähigkeiten: A0RX (Seelendiebstahl - Stufe 4), Name (Name (anam))
 {
-Seelendiebstahl - Stufe 4
+Soul Theft - Level 4
 }
 
 STRING 3520
@@ -21126,7 +21126,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 3536
 // Fähigkeiten: A0RY (Seelendiebstahl - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Stiehlt dem feindlichen Ziel seine Seele und entzieht ihm pro Sekunde Leben und Mana. |n|n|cffffcc00Stufe 1|r - <A06J,DataA1> Leben und <A06J,DataB1> Mana pro Sekunde. Lasts <A06J,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A06J,DataA2> Leben und <A06J,DataB2> Mana pro Sekunde. Lasts <A06J,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A06J,DataA3> Leben und <A06J,DataB3> Mana pro Sekunde. Lasts <A06J,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A06J,DataA4> Leben und <A06J,DataB4> Mana pro Sekunde. Lasts <A06J,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A06J,DataA5> Leben und <A06J,DataB5> Mana pro Sekunde. Lasts <A06J,Dur5> Sekunden.
+Steals the soul from a hostile target and drains life and mana from it per second. |n|n|cffffcc00Level 1|r - <A06J,DataA1> life and <A06J,DataB1> mana per second. Lasts for <A06J,Dur1> seconds.|n|cffffcc00Level 2|r - <A06J,DataA2> life and <A06J,DataB2> mana per second. Lasts for <A06J,Dur2> seconds.|n|cffffcc00Level 3|r - <A06J,DataA3> life and <A06J,DataB3> mana per second. Lasts for <A06J,Dur3> seconds.|n|cffffcc00Level 4|r - <A06J,DataA4> life and <A06J,DataB4> mana per second. Lasts for <A06J,Dur4> seconds.|n|cffffcc00Level 5|r - <A06J,DataA5> life and <A06J,DataB5> mana per second. Lasts for <A06J,Dur5> seconds.
 }
 
 STRING 3537
@@ -21198,7 +21198,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 3548
 // Fähigkeiten: A0RY (Seelendiebstahl - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 5|r]
+Soul Theft [|cffffcc00Level 5|r]
 }
 
 STRING 3549
@@ -22168,7 +22168,7 @@ STRING 3708
 STRING 3709
 // Einheiten: H00G (Druide), Name (Name (unam))
 {
-Druide
+Druid
 }
 
 STRING 3710
@@ -22186,7 +22186,7 @@ STRING 3711
 STRING 3712
 // Einheiten: H00H (Druide), Name (Name (unam))
 {
-Druide
+Druid
 }
 
 STRING 3713
@@ -22204,43 +22204,43 @@ STRING 3714
 STRING 3715
 // Fähigkeiten: A093 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 1|r]
+Crow Form [|cffffcc00Level 1|r]
 }
 
 STRING 3716
 // Einheiten: o001 (Nest), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Druide)
+(Druid)
 }
 
 STRING 3717
 // Fähigkeiten: A092 (Krähengestalt), Name (Name (anam))
 {
-Krähengestalt
+Crow Form
 }
 
 STRING 3718
 // Fähigkeiten: A093 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 2|r]
+Crow Form [|cffffcc00Level 2|r]
 }
 
 STRING 3719
 // Fähigkeiten: A093 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 3|r]
+Crow Form [|cffffcc00Level 3|r]
 }
 
 STRING 3720
 // Fähigkeiten: A093 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 4|r]
+Crow Form [|cffffcc00Level 4|r]
 }
 
 STRING 3721
 // Fähigkeiten: A093 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 5|r]
+Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 3722
@@ -22252,79 +22252,79 @@ STRING 3722
 STRING 3723
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 1|r]
+Parasite [|cffffcc00Level 1|r]
 }
 
 STRING 3724
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 2|r]
+Parasite [|cffffcc00Level 2|r]
 }
 
 STRING 3725
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 3|r]
+Parasite [|cffffcc00Level 3|r]
 }
 
 STRING 3726
 // Fähigkeiten: A094 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 1|r]
+Crow Form [|cffffcc00Level 1|r]
 }
 
 STRING 3727
 // Fähigkeiten: A094 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 2|r]
+Crow Form [|cffffcc00Level 2|r]
 }
 
 STRING 3728
 // Fähigkeiten: A094 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 3|r]
+Crow Form [|cffffcc00Level 3|r]
 }
 
 STRING 3729
 // Fähigkeiten: A094 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 4|r]
+Crow Form [|cffffcc00Level 4|r]
 }
 
 STRING 3730
 // Fähigkeiten: A094 (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 5|r]
+Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 3731
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 4|r]
+Parasite [|cffffcc00Level 4|r]
 }
 
 STRING 3732
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 5|r]
+Parasite [|cffffcc00Level 5|r]
 }
 
 STRING 3733
 // Fähigkeiten: A0S4 (Parasit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der <A0S4,Dur1> Sekunden lang <A0S4,DataA1> Punkte Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor, der <A0S4,Cast1> Sekunden lang hält.
+Infects a selected enemy with a lethal parasite who causes <A0S4,DataA1> points damage per second for <A0S4,Dur1> seconds. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse who lasts for <A0S4,Cast1> seconds.
 }
 
 STRING 3734
 // Fähigkeiten: A0S4 (Parasit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der <A0S4,Dur2> Sekunden lang <A0S4,DataA2> Punkte Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor, der <A0S4,Cast2> Sekunden lang hält.
+Infects a selected enemy with a lethal parasite who causes <A0S4,DataA2> points damage per second for <A0S4,Dur2> seconds. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse who lasts for <A0S4,Cast2> seconds.
 }
 
 STRING 3735
 // Fähigkeiten: A0S4 (Parasit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der <A0S4,Dur3> Sekunden lang <A0S4,DataA3> Punkte Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor, der <A0S4,Cast3> Sekunden lang hält.
+Infects a selected enemy with a lethal parasite who causes <A0S4,DataA3> points damage per second for <A0S4,Dur3> seconds. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse who lasts for <A0S4,Cast3> seconds.
 }
 
 STRING 3736
@@ -22336,19 +22336,19 @@ STRING 3736
 STRING 3737
 // Fähigkeiten: A093 (Krähengestalt), Name (Name (anam))
 {
-Krähengestalt
+Crow Form
 }
 
 STRING 3738
 // Fähigkeiten: A0S4 (Parasit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der <A0S4,Dur4> Sekunden lang <A0S4,DataA4> Punkte Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor, der <A0S4,Cast4> Sekunden lang hält.
+Infects a selected enemy with a lethal parasite who causes <A0S4,DataA4> points damage per second for <A0S4,Dur4> seconds. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse who lasts for <A0S4,Cast4> seconds.
 }
 
 STRING 3739
 // Fähigkeiten: A0S4 (Parasit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der <A0S4,Dur5> Sekunden lang <A0S4,DataA5> Punkte Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor, der <A0S4,Cast5> Sekunden lang hält.
+Infects a selected enemy with a lethal parasite who causes <A0S4,DataA5> points damage per second for <A0S4,Dur5> seconds. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse who lasts for <A0S4,Cast5> seconds.
 }
 
 STRING 3740
@@ -22366,7 +22366,7 @@ Parasit
 STRING 3742
 // Fähigkeiten: A0S6 (Parasit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der eine Zeit lang Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor..|n|n|cffffcc00Stufe 1|r - Fügt <A0S4,Dur1> Sekunden lang <A0S4,DataA1> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast1> Sekunden.|n|cffffcc00Stufe 2|r - Fügt <A0S4,Dur2> Sekunden lang <A0S4,DataA2> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast2> Sekunden. |n|cffffcc00Stufe 3|r - Fügt <A0S4,Dur3> Sekunden lang <A0S4,DataA3> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast3> Sekunden.|n|cffffcc00Stufe 4|r - Fügt <A0S4,Dur4> Sekunden lang <A0S4,DataA4> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast4> Sekunden.|n|cffffcc00Stufe 5|r - Fügt <A0S4,Dur5> Sekunden lang <A0S4,DataA5> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast5> Sekunden.
+Infects a selected enemy with a lethal parasite who causes damage per second for some time. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse.|n|n|cffffcc00Level 1|r - Causes <A0S4,DataA1> damage per second for <A0S4,Dur1> seconds. The servant lasts for <A0S4,Cast1> seconds.|n|cffffcc00Level 2|r - Causes <A0S4,DataA2> damage per second for <A0S4,Dur2> seconds. The servant lasts for <A0S4,Cast2> seconds. |n|cffffcc00Level 3|r - Causes <A0S4,DataA3> damage per second for <A0S4,Dur3> seconds. The servant lasts for <A0S4,Cast3> seconds.|n|cffffcc00Level 4|r - Causes <A0S4,DataA4> damage per second for <A0S4,Dur4> seconds. The servant lasts for <A0S4,Cast4> seconds.|n|cffffcc00Level 5|r - Causes <A0S4,DataA5> damage per second for <A0S4,Dur5> seconds. The servant lasts for <A0S4,Cast5> seconds.
 }
 
 STRING 3743
@@ -22378,7 +22378,7 @@ Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 3744
 // Fähigkeiten: A094 (Krähengestalt), Name (Name (anam))
 {
-Krähengestalt
+Crow Form
 }
 
 STRING 3745
@@ -22390,7 +22390,7 @@ Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 3746
 // Fähigkeiten: A0CH (Krähengestalt - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 1|r]
+Crow Form [|cffffcc00Level 1|r]
 }
 
 STRING 3747
@@ -22402,25 +22402,25 @@ Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 3748
 // Fähigkeiten: A0CJ (Krähengestalt - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 2|r]
+Crow Form [|cffffcc00Level 2|r]
 }
 
 STRING 3749
 // Fähigkeiten: A0CK (Krähengestalt - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 3|r]
+Crow Form [|cffffcc00Level 3|r]
 }
 
 STRING 3750
 // Fähigkeiten: A0CL (Krähengestalt - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 4|r]
+Crow Form [|cffffcc00Level 4|r]
 }
 
 STRING 3751
 // Fähigkeiten: A0CM (Krähengestalt - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 5|r]
+Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 3752
@@ -22450,7 +22450,7 @@ Manaexplosion [|cffffcc00Stufe 4|r]
 STRING 3756
 // Fähigkeiten: A0KZ (Krähengestalt), Name (Name (anam))
 {
-Krähengestalt
+Crow Form
 }
 
 STRING 3757
@@ -22468,7 +22468,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 3759
 // Fähigkeiten: A0S6 (Parasit - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 1|r]
+Parasite [|cffffcc00Level 1|r]
 }
 
 STRING 3760
@@ -22480,7 +22480,7 @@ STRING 3760
 STRING 3761
 // Fähigkeiten: A0S6 (Parasit - Stufe 1), Name (Name (anam))
 {
-Parasit - Stufe 1
+Parasite - Level 1
 }
 
 STRING 3762
@@ -22498,7 +22498,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 3764
 // Fähigkeiten: A0S7 (Parasit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der eine Zeit lang Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor..|n|n|cffffcc00Stufe 1|r - Fügt <A0S4,Dur1> Sekunden lang <A0S4,DataA1> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast1> Sekunden.|n|cffffcc00Stufe 2|r - Fügt <A0S4,Dur2> Sekunden lang <A0S4,DataA2> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast2> Sekunden. |n|cffffcc00Stufe 3|r - Fügt <A0S4,Dur3> Sekunden lang <A0S4,DataA3> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast3> Sekunden.|n|cffffcc00Stufe 4|r - Fügt <A0S4,Dur4> Sekunden lang <A0S4,DataA4> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast4> Sekunden.|n|cffffcc00Stufe 5|r - Fügt <A0S4,Dur5> Sekunden lang <A0S4,DataA5> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast5> Sekunden.
+Infects a selected enemy with a lethal parasite who causes damage per second for some time. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse.|n|n|cffffcc00Level 1|r - Causes <A0S4,DataA1> damage per second for <A0S4,Dur1> seconds. The servant lasts for <A0S4,Cast1> seconds.|n|cffffcc00Level 2|r - Causes <A0S4,DataA2> damage per second for <A0S4,Dur2> seconds. The servant lasts for <A0S4,Cast2> seconds. |n|cffffcc00Level 3|r - Causes <A0S4,DataA3> damage per second for <A0S4,Dur3> seconds. The servant lasts for <A0S4,Cast3> seconds.|n|cffffcc00Level 4|r - Causes <A0S4,DataA4> damage per second for <A0S4,Dur4> seconds. The servant lasts for <A0S4,Cast4> seconds.|n|cffffcc00Level 5|r - Causes <A0S4,DataA5> damage per second for <A0S4,Dur5> seconds. The servant lasts for <A0S4,Cast5> seconds.
 }
 
 STRING 3765
@@ -22522,13 +22522,13 @@ Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 3768
 // Fähigkeiten: A13U (Krähengestalt), Name (Name (anam))
 {
-Krähengestalt
+Crow Form
 }
 
 STRING 3769
 // Fähigkeiten: A13V (Krähengestalt), Name (Name (anam))
 {
-Krähengestalt
+Crow Form
 }
 
 STRING 3770
@@ -22546,7 +22546,7 @@ Manaexplosion [|cffffcc00Stufe 2|r]
 STRING 3772
 // Fähigkeiten: A14U (Krähengestalt), Name (Name (anam))
 {
-Krähengestalt
+Crow Form
 }
 
 STRING 3773
@@ -22558,7 +22558,7 @@ STRING 3773
 STRING 3774
 // Zauberverstärker/Effekte: B01I (Krähengestalt), EditorName (Name (nur Editor) (fnam))
 {
-Krähengestalt
+Crow Form
 }
 
 STRING 3775
@@ -22588,7 +22588,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 3779
 // Fähigkeiten: A0S7 (Parasit - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 2|r]
+Parasite [|cffffcc00Level 2|r]
 }
 
 STRING 3780
@@ -22600,7 +22600,7 @@ STRING 3780
 STRING 3781
 // Fähigkeiten: A0S7 (Parasit - Stufe 2), Name (Name (anam))
 {
-Parasit - Stufe 2
+Parasite - Level 2
 }
 
 STRING 3782
@@ -22618,7 +22618,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 3784
 // Fähigkeiten: A0S8 (Parasit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der eine Zeit lang Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor..|n|n|cffffcc00Stufe 1|r - Fügt <A0S4,Dur1> Sekunden lang <A0S4,DataA1> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast1> Sekunden.|n|cffffcc00Stufe 2|r - Fügt <A0S4,Dur2> Sekunden lang <A0S4,DataA2> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast2> Sekunden. |n|cffffcc00Stufe 3|r - Fügt <A0S4,Dur3> Sekunden lang <A0S4,DataA3> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast3> Sekunden.|n|cffffcc00Stufe 4|r - Fügt <A0S4,Dur4> Sekunden lang <A0S4,DataA4> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast4> Sekunden.|n|cffffcc00Stufe 5|r - Fügt <A0S4,Dur5> Sekunden lang <A0S4,DataA5> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast5> Sekunden.
+Infects a selected enemy with a lethal parasite who causes damage per second for some time. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse.|n|n|cffffcc00Level 1|r - Causes <A0S4,DataA1> damage per second for <A0S4,Dur1> seconds. The servant lasts for <A0S4,Cast1> seconds.|n|cffffcc00Level 2|r - Causes <A0S4,DataA2> damage per second for <A0S4,Dur2> seconds. The servant lasts for <A0S4,Cast2> seconds. |n|cffffcc00Level 3|r - Causes <A0S4,DataA3> damage per second for <A0S4,Dur3> seconds. The servant lasts for <A0S4,Cast3> seconds.|n|cffffcc00Level 4|r - Causes <A0S4,DataA4> damage per second for <A0S4,Dur4> seconds. The servant lasts for <A0S4,Cast4> seconds.|n|cffffcc00Level 5|r - Causes <A0S4,DataA5> damage per second for <A0S4,Dur5> seconds. The servant lasts for <A0S4,Cast5> seconds.
 }
 
 STRING 3785
@@ -23026,13 +23026,13 @@ Verkommene Seele
 STRING 3852
 // Einheiten: H00I (Druide), Name (Name (unam))
 {
-Druide
+Druid
 }
 
 STRING 3853
 // Einheiten: H00I (Druide), Propernames (Eigennamen (upro))
 {
-Bär
+Bear
 }
 
 STRING 3854
@@ -23296,7 +23296,7 @@ Manaexplosion [|cffffcc00Stufe 2|r]
 STRING 3897
 // Fähigkeiten: A0S8 (Parasit - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 3|r]
+Parasite [|cffffcc00Level 3|r]
 }
 
 STRING 3898
@@ -23308,7 +23308,7 @@ STRING 3898
 STRING 3899
 // Fähigkeiten: A0S8 (Parasit - Stufe 3), Name (Name (anam))
 {
-Parasit - Stufe 3
+Parasite - Level 3
 }
 
 STRING 3900
@@ -23416,7 +23416,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 3917
 // Fähigkeiten: A0S9 (Parasit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der eine Zeit lang Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor..|n|n|cffffcc00Stufe 1|r - Fügt <A0S4,Dur1> Sekunden lang <A0S4,DataA1> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast1> Sekunden.|n|cffffcc00Stufe 2|r - Fügt <A0S4,Dur2> Sekunden lang <A0S4,DataA2> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast2> Sekunden. |n|cffffcc00Stufe 3|r - Fügt <A0S4,Dur3> Sekunden lang <A0S4,DataA3> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast3> Sekunden.|n|cffffcc00Stufe 4|r - Fügt <A0S4,Dur4> Sekunden lang <A0S4,DataA4> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast4> Sekunden.|n|cffffcc00Stufe 5|r - Fügt <A0S4,Dur5> Sekunden lang <A0S4,DataA5> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast5> Sekunden.
+Infects a selected enemy with a lethal parasite who causes damage per second for some time. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse.|n|n|cffffcc00Level 1|r - Causes <A0S4,DataA1> damage per second for <A0S4,Dur1> seconds. The servant lasts for <A0S4,Cast1> seconds.|n|cffffcc00Level 2|r - Causes <A0S4,DataA2> damage per second for <A0S4,Dur2> seconds. The servant lasts for <A0S4,Cast2> seconds. |n|cffffcc00Level 3|r - Causes <A0S4,DataA3> damage per second for <A0S4,Dur3> seconds. The servant lasts for <A0S4,Cast3> seconds.|n|cffffcc00Level 4|r - Causes <A0S4,DataA4> damage per second for <A0S4,Dur4> seconds. The servant lasts for <A0S4,Cast4> seconds.|n|cffffcc00Level 5|r - Causes <A0S4,DataA5> damage per second for <A0S4,Dur5> seconds. The servant lasts for <A0S4,Cast5> seconds.
 }
 
 STRING 3918
@@ -23860,7 +23860,7 @@ Bear form
 STRING 3991
 // Zauberverstärker/Effekte: B01M (Bärengestalt), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Dieser Druide hat die Gestalt eines Bären angenommen; sein maximales Leben ist erhöht.
+Dieser Druide hat die Gestalt eines Bären angenommen; sein maximales Leben ist.
 }
 
 STRING 3992
@@ -24298,7 +24298,7 @@ Verzweifeltes Gebet
 STRING 4064
 // Fähigkeiten: A0A4 (Wohltat), Name (Name (anam))
 {
-Wohltat
+Relief
 }
 
 STRING 4065
@@ -24310,37 +24310,37 @@ STRING 4065
 STRING 4066
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 1|r]
+Relief [|cffffcc00Level 1|r]
 }
 
 STRING 4067
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 2|r]
+Relief [|cffffcc00Level 2|r]
 }
 
 STRING 4068
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 3|r]
+Relief [|cffffcc00Level 3|r]
 }
 
 STRING 4069
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 4|r]
+Relief [|cffffcc00Level 4|r]
 }
 
 STRING 4070
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 5|r]
+Relief [|cffffcc00Level 5|r]
 }
 
 STRING 4071
 // Fähigkeiten: A0S9 (Parasit - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 4|r]
+Parasite [|cffffcc00Level 4|r]
 }
 
 STRING 4072
@@ -24352,7 +24352,7 @@ STRING 4072
 STRING 4073
 // Fähigkeiten: A0S9 (Parasit - Stufe 4), Name (Name (anam))
 {
-Parasit - Stufe 4
+Parasite - Level 4
 }
 
 STRING 4074
@@ -24376,7 +24376,7 @@ STRING 4076
 STRING 4077
 // Fähigkeiten: A0A5 (Wohltat), Name (Name (anam))
 {
-Wohltat
+Relief
 }
 
 STRING 4078
@@ -24406,7 +24406,7 @@ Waldholzfäuste
 STRING 4082
 // Zauberverstärker/Effekte: B01P (Waldholzfäuste), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit besitzt 'Waldholzfäuste'; ihr Angriffsschaden wurde erhöht.
+Diese Einheit besitzt 'Waldholzfäuste'; ihr Angriffsschaden wurde.
 }
 
 STRING 4083
@@ -24484,7 +24484,7 @@ Füllt das Leben und das Mana des Druiden in Bärengestalt wieder auf.
 STRING 4095
 // Fähigkeiten: A0SA (Parasit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Infiziert einen angewählten Feind mit einem tödlichen Parasiten, der eine Zeit lang Schaden pro Sekunde zufügt. Stirbt die betroffene Einheit, während der Effekt des Parasiten anhält, steigt ein schwacher Diener von ihrem Leichnam empor..|n|n|cffffcc00Stufe 1|r - Fügt <A0S4,Dur1> Sekunden lang <A0S4,DataA1> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast1> Sekunden.|n|cffffcc00Stufe 2|r - Fügt <A0S4,Dur2> Sekunden lang <A0S4,DataA2> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast2> Sekunden. |n|cffffcc00Stufe 3|r - Fügt <A0S4,Dur3> Sekunden lang <A0S4,DataA3> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast3> Sekunden.|n|cffffcc00Stufe 4|r - Fügt <A0S4,Dur4> Sekunden lang <A0S4,DataA4> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast4> Sekunden.|n|cffffcc00Stufe 5|r - Fügt <A0S4,Dur5> Sekunden lang <A0S4,DataA5> Schaden pro Sekunden zu. Der Diener hält <A0S4,Cast5> Sekunden.
+Infects a selected enemy with a lethal parasite who causes damage per second for some time. If the affected unit dies while the effect of the parasite persists, a weak servant rises up from its corpse.|n|n|cffffcc00Level 1|r - Causes <A0S4,DataA1> damage per second for <A0S4,Dur1> seconds. The servant lasts for <A0S4,Cast1> seconds.|n|cffffcc00Level 2|r - Causes <A0S4,DataA2> damage per second for <A0S4,Dur2> seconds. The servant lasts for <A0S4,Cast2> seconds. |n|cffffcc00Level 3|r - Causes <A0S4,DataA3> damage per second for <A0S4,Dur3> seconds. The servant lasts for <A0S4,Cast3> seconds.|n|cffffcc00Level 4|r - Causes <A0S4,DataA4> damage per second for <A0S4,Dur4> seconds. The servant lasts for <A0S4,Cast4> seconds.|n|cffffcc00Level 5|r - Causes <A0S4,DataA5> damage per second for <A0S4,Dur5> seconds. The servant lasts for <A0S4,Cast5> seconds.
 }
 
 STRING 4096
@@ -24826,7 +24826,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 4152
 // Fähigkeiten: A0SA (Parasit - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 5|r]
+Parasite [|cffffcc00Level 5|r]
 }
 
 STRING 4153
@@ -25036,7 +25036,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 4187
 // Fähigkeiten: A0SA (Parasit - Stufe 5), Name (Name (anam))
 {
-Parasit - Stufe 5
+Parasite - Level 5
 }
 
 STRING 4188
@@ -25144,7 +25144,7 @@ Stab der Klarsicht kaufen
 STRING 4205
 // Fähigkeiten: A0SB (Parasit - Stufe 1), Name (Name (anam))
 {
-Parasit - Stufe 1
+Parasite - Level 1
 }
 
 STRING 4206
@@ -25462,7 +25462,7 @@ STRING 4257
 STRING 4258
 // Fähigkeiten: A0SC (Parasit - Stufe 2), Name (Name (anam))
 {
-Parasit - Stufe 2
+Parasite - Level 2
 }
 
 STRING 4259
@@ -25474,7 +25474,7 @@ STRING 4259
 STRING 4260
 // Fähigkeiten: A0SD (Parasit - Stufe 3), Name (Name (anam))
 {
-Parasit - Stufe 3
+Parasite - Level 3
 }
 
 STRING 4261
@@ -25486,7 +25486,7 @@ STRING 4261
 STRING 4262
 // Fähigkeiten: A0SE (Parasit - Stufe 4), Name (Name (anam))
 {
-Parasit - Stufe 4
+Parasite - Level 4
 }
 
 STRING 4263
@@ -25540,7 +25540,7 @@ STRING 4270
 STRING 4271
 // Zauberverstärker/Effekte: B02B (Parasit), EditorName (Name (nur Editor) (fnam))
 {
-Parasit
+Parasite
 }
 
 STRING 4272
@@ -25612,7 +25612,7 @@ STRING 4282
 STRING 4283
 // Zauberverstärker/Effekte: B02C (Parasit), EditorName (Name (nur Editor) (fnam))
 {
-Parasit
+Parasite
 }
 
 STRING 4284
@@ -28354,31 +28354,31 @@ STRING 4739
 STRING 4740
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden <A0A4,DataA1> Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area1> and which heals <A0A4,DataA1> life at allies every <A0A4,DataB1> seconds. |nLasts for <A0A4,Dur1> seconds.
 }
 
 STRING 4741
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area2> niedergeht und bei Verbündeten alle <A0A4,DataB2> Sekunden <A0A4,DataA2> Leben heilt. |nLasts <A0A4,Dur2> Sekunden lang an.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area2> and which heals <A0A4,DataA2> life at allies every <A0A4,DataB1> seconds. |nLasts for <A0A4,Dur2> seconds.
 }
 
 STRING 4742
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area3> niedergeht und bei Verbündeten alle <A0A4,DataB3> Sekunden <A0A4,DataA3> Leben heilt. |nLasts <A0A4,Dur3> Sekunden lang an.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area1> and which heals <A0A4,DataA3> life at allies every <A0A4,DataB3> seconds. |nLasts for <A0A4,Dur3> seconds.
 }
 
 STRING 4743
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area4> niedergeht und bei Verbündeten alle <A0A4,DataB4> Sekunden <A0A4,DataA4> Leben heilt. |nLasts <A0A4,Dur4> Sekunden lang an.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area4> and which heals <A0A4,DataA4> life at allies every <A0A4,DataB4> seconds. |nLasts for <A0A4,Dur4> seconds.
 }
 
 STRING 4744
 // Fähigkeiten: A0A4 (Wohltat), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area5> niedergeht und bei Verbündeten alle <A0A4,DataB5> Sekunden <A0A4,DataA5> Leben heilt. |nLasts <A0A4,Dur5> Sekunden lang an.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area5> and which heals <A0A4,DataA5> life at allies every <A0A4,DataB5> seconds. |nLasts for <A0A4,Dur5> seconds.
 }
 
 STRING 4745
@@ -30232,13 +30232,13 @@ STRING 5052
 STRING 5053
 // Einheiten: H00M (Nekromant), Name (Name (unam))
 {
-Nekromant
+Necromancer
 }
 
 STRING 5054
 // Einheiten: H00N (Druide), Propernames (Eigennamen (upro))
 {
-Dämon
+Demon
 }
 
 STRING 5055
@@ -30250,13 +30250,13 @@ STRING 5055
 STRING 5056
 // Einheiten: H00N (Druide), Name (Name (unam))
 {
-Druide
+Druid
 }
 
 STRING 5057
 // Einheiten: H00O (Ritter), Propernames (Eigennamen (upro))
 {
-Dämon
+Demon
 }
 
 STRING 5058
@@ -31034,37 +31034,37 @@ Necromancer
 STRING 5187
 // Einheiten: H00X (Druide), Name (Name (unam))
 {
-Druide
+Druid
 }
 
 STRING 5188
 // Einheiten: H00Y (Ritter), Name (Name (unam))
 {
-Ritter
+Knight
 }
 
 STRING 5189
 // Einheiten: H00Z (Drachentöter), Name (Name (unam))
 {
-Drachentöter
+Dragon Slayer
 }
 
 STRING 5190
 // Einheiten: H010 (Waldläufer), Name (Name (unam))
 {
-Waldläufer
+Ranger
 }
 
 STRING 5191
 // Einheiten: H011 (Elementarmagier), Name (Name (unam))
 {
-Elementarmagier
+Elementalist
 }
 
 STRING 5192
 // Einheiten: H012 (Zauberer), Name (Name (unam))
 {
-Zauberer
+Wizard
 }
 
 STRING 5193
@@ -46588,7 +46588,7 @@ Rigidity
 STRING 7779
 // Zauberverstärker/Effekte: B023 (Unbeugsamkeit), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter einem 'Unbeugsamkeit'; sie ist unverwundbar und Heileffekte werden erhöht.
+Diese Einheit steht unter einem 'Unbeugsamkeit'; sie ist unverwundbar und Heileffekte werden.
 }
 
 STRING 7780
@@ -48142,31 +48142,31 @@ Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 8038
 // Fähigkeiten: A0KZ (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 8039
 // Fähigkeiten: A0KZ (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 8040
 // Fähigkeiten: A0KZ (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 8041
 // Fähigkeiten: A0KZ (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 8042
 // Fähigkeiten: A0KZ (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 8043
@@ -51286,7 +51286,7 @@ Manaexplosion [|cffffcc00Stufe 3|r]
 STRING 8562
 // Fähigkeiten: A0JF (Wohltat - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area1> and which heals life at allies every <A0A4,DataB1> seconds. |nLasts for <A0A4,Dur1> seconds.|n|n|cffffcc00Level 1|r - Heals <A0A4,DataA1> life per second.|n|cffffcc00Level 2|r - Heals <A0A4,DataA2> life per second.|n|cffffcc00Level 3|r - Heals <A0A4,DataA3> life per second.|n|cffffcc00Level 4|r - Heals <A0A4,DataA4> life per second.|n|cffffcc00Level 5|r - Heals <A0A4,DataA5> life per second.
 }
 
 STRING 8563
@@ -51304,7 +51304,7 @@ Aura der Rücknahme
 STRING 8565
 // Fähigkeiten: A0JG (Wohltat - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area1> and which heals life at allies every <A0A4,DataB1> seconds. |nLasts for <A0A4,Dur1> seconds.|n|n|cffffcc00Level 1|r - Heals <A0A4,DataA1> life per second.|n|cffffcc00Level 2|r - Heals <A0A4,DataA2> life per second.|n|cffffcc00Level 3|r - Heals <A0A4,DataA3> life per second.|n|cffffcc00Level 4|r - Heals <A0A4,DataA4> life per second.|n|cffffcc00Level 5|r - Heals <A0A4,DataA5> life per second.
 }
 
 STRING 8566
@@ -51388,7 +51388,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8579
 // Fähigkeiten: A0JH (Wohltat - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area1> and which heals life at allies every <A0A4,DataB1> seconds. |nLasts for <A0A4,Dur1> seconds.|n|n|cffffcc00Level 1|r - Heals <A0A4,DataA1> life per second.|n|cffffcc00Level 2|r - Heals <A0A4,DataA2> life per second.|n|cffffcc00Level 3|r - Heals <A0A4,DataA3> life per second.|n|cffffcc00Level 4|r - Heals <A0A4,DataA4> life per second.|n|cffffcc00Level 5|r - Heals <A0A4,DataA5> life per second.
 }
 
 STRING 8580
@@ -51472,7 +51472,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8593
 // Fähigkeiten: A0JI (Wohltat - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area1> and which heals life at allies every <A0A4,DataB1> seconds. |nLasts for <A0A4,Dur1> seconds.|n|n|cffffcc00Level 1|r - Heals <A0A4,DataA1> life per second.|n|cffffcc00Level 2|r - Heals <A0A4,DataA2> life per second.|n|cffffcc00Level 3|r - Heals <A0A4,DataA3> life per second.|n|cffffcc00Level 4|r - Heals <A0A4,DataA4> life per second.|n|cffffcc00Level 5|r - Heals <A0A4,DataA5> life per second.
 }
 
 STRING 8594
@@ -51556,7 +51556,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8607
 // Fähigkeiten: A0JJ (Wohltat - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verursacht einen Regen aus heilender Energie, der über einem Gebiet von <A0A4,Area1> niedergeht und bei Verbündeten alle <A0A4,DataB1> Sekunden Leben heilt. |nLasts <A0A4,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r - Heilt <A0A4,DataA1> Leben pro Sekunde.|n|cffffcc00Stufe 2|r - Heilt <A0A4,DataA2> Leben pro Sekunde.|n|cffffcc00Stufe 3|r - Heilt <A0A4,DataA3> Leben pro Sekunde.|n|cffffcc00Stufe 4|r - Heilt <A0A4,DataA4> Leben pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0A4,DataA5> Leben pro Sekunde.
+Causes a rain of healing energy which goes down above an area of <A0A4,Area1> and which heals life at allies every <A0A4,DataB1> seconds. |nLasts for <A0A4,Dur1> seconds.|n|n|cffffcc00Level 1|r - Heals <A0A4,DataA1> life per second.|n|cffffcc00Level 2|r - Heals <A0A4,DataA2> life per second.|n|cffffcc00Level 3|r - Heals <A0A4,DataA3> life per second.|n|cffffcc00Level 4|r - Heals <A0A4,DataA4> life per second.|n|cffffcc00Level 5|r - Heals <A0A4,DataA5> life per second.
 }
 
 STRING 8608
@@ -73375,31 +73375,31 @@ Krähengestalt [|cffffcc00Stufe 5|r]
 STRING 12245
 // Fähigkeiten: A13V (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 12246
 // Fähigkeiten: A13V (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 12247
 // Fähigkeiten: A13V (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 12248
 // Fähigkeiten: A13V (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 12249
 // Fähigkeiten: A13V (Krähengestalt), Unubertip (Tooltipp - Ausschalten - Erweitert (auu1))
 {
-Verwandelt den Druiden zurück in einen Menschen.
+Transforms the druid back into a human.
 }
 
 STRING 12250
@@ -75710,7 +75710,7 @@ Verleiht in der Nähe befindlichen befreundeten Einheiten eine zusätzliche Mana
 STRING 12634
 // Zauberverstärker/Effekte: B01I (Krähengestalt), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Dieser Druide hat die Gestalt einer Krähe angenommen; seine Manaregeneration ist erhöht.
+Dieser Druide hat die Gestalt einer Krähe angenommen; seine Manaregeneration ist.
 }
 
 STRING 12635
@@ -77192,7 +77192,7 @@ Bärengestalt
 STRING 12881
 // Zauberverstärker/Effekte: B02K (Bärengestalt - Lebensregenerationssteigerung), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter der Wirkung von 'Bärengestalt'; Trefferpunkt-Regeneration wurden erhöht.
+Diese Einheit steht unter der Wirkung von 'Bärengestalt'; Trefferpunkt-Regeneration wurden.
 }
 
 STRING 12882
@@ -77210,61 +77210,61 @@ Bärengestalt - Lebensregenerationssteigerung
 STRING 12884
 // Fähigkeiten: A0C7 (Bärengestalt - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Druide verwandelt sich in einen Bären. Die Lebensregenerationsrate und der verursachte Schaden werden erhöht. Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden. |n|n|cffffcc00Stufe 1|r - Die Lebensregenerationsrate wird um <A15V,DataB1,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA1,%> % erhöht.|n|cffffcc00Stufe 2|r - Die Lebensregenerationsrate wird um <A15V,DataB2,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA2,%> % erhöht.|n|cffffcc00Stufe 3|r - Die Lebensregenerationsrate wird um <A15V,DataB3,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA3,%> % erhöht.|n|cffffcc00Stufe 4|r - Die Lebensregenerationsrate wird um <A15V,DataB4,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA4,%> % erhöht.|n|cffffcc00Stufe 5|r - Die Lebensregenerationsrate wird um <A15V,DataB5,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA5,%> % erhöht.
+The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12885
 // Fähigkeiten: A0C8 (Bärengestalt - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Druide verwandelt sich in einen Bären. Die Lebensregenerationsrate und der verursachte Schaden werden erhöht. Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden. |n|n|cffffcc00Stufe 1|r - Die Lebensregenerationsrate wird um <A15V,DataB1,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA1,%> % erhöht.|n|cffffcc00Stufe 2|r - Die Lebensregenerationsrate wird um <A15V,DataB2,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA2,%> % erhöht.|n|cffffcc00Stufe 3|r - Die Lebensregenerationsrate wird um <A15V,DataB3,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA3,%> % erhöht.|n|cffffcc00Stufe 4|r - Die Lebensregenerationsrate wird um <A15V,DataB4,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA4,%> % erhöht.|n|cffffcc00Stufe 5|r - Die Lebensregenerationsrate wird um <A15V,DataB5,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA5,%> % erhöht.
+The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12886
 // Fähigkeiten: A0C9 (Bärengestalt - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Druide verwandelt sich in einen Bären. Die Lebensregenerationsrate und der verursachte Schaden werden erhöht. Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden. |n|n|cffffcc00Stufe 1|r - Die Lebensregenerationsrate wird um <A15V,DataB1,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA1,%> % erhöht.|n|cffffcc00Stufe 2|r - Die Lebensregenerationsrate wird um <A15V,DataB2,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA2,%> % erhöht.|n|cffffcc00Stufe 3|r - Die Lebensregenerationsrate wird um <A15V,DataB3,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA3,%> % erhöht.|n|cffffcc00Stufe 4|r - Die Lebensregenerationsrate wird um <A15V,DataB4,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA4,%> % erhöht.|n|cffffcc00Stufe 5|r - Die Lebensregenerationsrate wird um <A15V,DataB5,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA5,%> % erhöht.
+The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12887
 // Fähigkeiten: A0CA (Bärengestalt - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Druide verwandelt sich in einen Bären. Die Lebensregenerationsrate und der verursachte Schaden werden erhöht. Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden. |n|n|cffffcc00Stufe 1|r - Die Lebensregenerationsrate wird um <A15V,DataB1,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA1,%> % erhöht.|n|cffffcc00Stufe 2|r - Die Lebensregenerationsrate wird um <A15V,DataB2,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA2,%> % erhöht.|n|cffffcc00Stufe 3|r - Die Lebensregenerationsrate wird um <A15V,DataB3,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA3,%> % erhöht.|n|cffffcc00Stufe 4|r - Die Lebensregenerationsrate wird um <A15V,DataB4,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA4,%> % erhöht.|n|cffffcc00Stufe 5|r - Die Lebensregenerationsrate wird um <A15V,DataB5,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA5,%> % erhöht.
+The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12888
 // Fähigkeiten: A0CB (Bärengestalt - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Druide verwandelt sich in einen Bären. Die Lebensregenerationsrate und der verursachte Schaden werden erhöht. Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden. |n|n|cffffcc00Stufe 1|r - Die Lebensregenerationsrate wird um <A15V,DataB1,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA1,%> % erhöht.|n|cffffcc00Stufe 2|r - Die Lebensregenerationsrate wird um <A15V,DataB2,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA2,%> % erhöht.|n|cffffcc00Stufe 3|r - Die Lebensregenerationsrate wird um <A15V,DataB3,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA3,%> % erhöht.|n|cffffcc00Stufe 4|r - Die Lebensregenerationsrate wird um <A15V,DataB4,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA4,%> % erhöht.|n|cffffcc00Stufe 5|r - Die Lebensregenerationsrate wird um <A15V,DataB5,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA5,%> % erhöht.
+The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12889
 // Fähigkeiten: A13X (Bärengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verwandelt den Druiden in einen Bären. Die Lebensregenerationsrate wird um <A15V,DataB1,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA1,%> % erhöht.  Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden.
+Transforms the druid into a bear. The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %. Besides the attack speed is reduced and the druid causes area damage.
 }
 
 STRING 12890
 // Fähigkeiten: A13X (Bärengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verwandelt den Druiden in einen Bären. Die Lebensregenerationsrate wird um <A15V,DataB2,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA2,%> % erhöht.  Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden.
+Transforms the druid into a bear. The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %. Besides the attack speed is reduced and the druid causes area damage.
 }
 
 STRING 12891
 // Fähigkeiten: A13X (Bärengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verwandelt den Druiden in einen Bären. Die Lebensregenerationsrate wird um <A15V,DataB3,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA3,%> % erhöht.  Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden.
+Transforms the druid into a bear. The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %. Besides the attack speed is reduced and the druid causes area damage.
 }
 
 STRING 12892
 // Fähigkeiten: A13X (Bärengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verwandelt den Druiden in einen Bären. Die Lebensregenerationsrate wird um <A15V,DataB4,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA4,%> % erhöht.  Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden.
+Transforms the druid into a bear. The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %. Besides the attack speed is reduced and the druid causes area damage.
 }
 
 STRING 12893
 // Fähigkeiten: A13X (Bärengestalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verwandelt den Druiden in einen Bären. Die Lebensregenerationsrate wird um <A15V,DataB5,%> % erhöht. Der verursachte Schaden wird um <A09R,DataA5,%> % erhöht.  Außerdem wird die Angriffsgeschwindigkeit reduziert und der Druide verursacht Flächenschaden.
+Transforms the druid into a bear. The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %. Besides the attack speed is reduced and the druid causes area damage.
 }
 
 STRING 12894
@@ -78236,7 +78236,7 @@ STRING 13054
 STRING 13055
 // Einheiten: H01P (Druide), Name (Name (unam))
 {
-Druide
+Druid
 }
 
 STRING 13056
@@ -78254,7 +78254,7 @@ STRING 13057
 STRING 13058
 // Einheiten: H01Q (Druide), Name (Name (unam))
 {
-Druide
+Druid
 }
 
 STRING 13059
@@ -79741,7 +79741,7 @@ Learn spells - 6 skill points (|cffffcc00Z|r)
 STRING 13305
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2|r|nDer Ritter wird <A0JZ,Dur1> Sekunden lang unverwundbar. Heileffekte werden in dieser Zeit um 50 % erhöht.
+|cffffcc00Ultimativzauber 2|r|nDer Ritter wird <A0JZ,Dur1> Sekunden lang unverwundbar. Heileffekte werden in dieser Zeit um 50 %.
 }
 
 STRING 13306
@@ -91357,7 +91357,7 @@ Feuertrank kaufen
 STRING 15241
 // Fähigkeiten: A0T2 (Bestienjäger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nSchaden gegen wilde Kreaturen wird um 10% erhöht.
+|cffffcc00Grundzauber|r|nSchaden gegen wilde Kreaturen wird um 10%.
 }
 
 STRING 15242
@@ -93715,13 +93715,13 @@ STRING 15634
 STRING 15635
 // Fähigkeiten: A03S (Schütze), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 % erhöht.
+|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 %.
 }
 
 STRING 15636
 // Fähigkeiten: A11G (Schütze - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 % erhöht.
+|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 %.
 }
 
 STRING 15637
@@ -95271,7 +95271,7 @@ STRING 15900
 STRING 15901
 // Fähigkeiten: A14V (Bestienjäger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nSchaden gegen wilde Kreaturen wird um 10% erhöht.
+|cffffcc00Grundzauber|r|nSchaden gegen wilde Kreaturen wird um 10%.
 }
 
 STRING 15902
