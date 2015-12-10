@@ -209,6 +209,9 @@ library StructGameSpell requires Asl, StructGameCharacter
 			set this.m_available = available
 		endmethod
 
+		/**
+		 * \return Returns true if the spell can be skilled up to level \p level. Otherwise it returns false.
+		 */
 		public method isSkillableTo takes integer level returns boolean
 			if (level < 0) then
 				debug call Print("Level is less than 0: " + I2S(level))

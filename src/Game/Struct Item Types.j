@@ -35,7 +35,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 		
 		private static method onInit takes nothing returns nothing
-			// TODO Alle Zweihandwaffen
+			/**
+			 * All items which require two slots have to be registered here.
+			 * TODO maybe store a boolean attribute instead which can be set?
+			 */
 			set thistype.m_twoSlotItems = AIntegerVector.create()
 			call thistype.m_twoSlotItems.pushBack('I013')
 			call thistype.m_twoSlotItems.pushBack('I020')

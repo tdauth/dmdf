@@ -384,7 +384,6 @@ library StructGameRoutines requires Asl
 		endmethod
 		
 		public static method destroyTextTags takes nothing returns nothing
-			debug call Print("Text tags size: " + I2S(thistype.m_textTags.size()))
 			call thistype.m_textTags.forEach(thistype.forEachDestroyTextTag)
 			call thistype.m_textTags.clear()
 		endmethod

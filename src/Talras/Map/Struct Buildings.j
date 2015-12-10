@@ -2,7 +2,8 @@ library StructMapMapBuildings requires StructGameCharacter
 
 	struct Buildings
 		private static trigger m_usageTrigger
-		private static trigger m_summonTrigger
+		private static trigger m_constructionStartTrigger
+		private static trigger m_constructionFinishTrigger
 		private static trigger m_deathTrigger
 		private static unit array m_buildings
 		
@@ -33,9 +34,20 @@ library StructMapMapBuildings requires StructGameCharacter
 			return false
 		endmethod
 		
-		private static method triggerConditionSummon takes nothing returns boolean
+		private static method triggerConditionConstructionStart takes nothing returns boolean
+			if (GetUnitTypeId(GetConstructingStructure()) == 'h027' or GetUnitTypeId(GetConstructingStructure()) == 'h028' or GetUnitTypeId(GetConstructingStructure()) == 'h029' or GetUnitTypeId(GetConstructingStructure()) == 'h02C') then
+				if (thistype.m_buildings[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] != null) then
+					call IssueImmediateOrder(GetTriggerUnit(), "stop")
+					call SimError(GetOwningPlayer(GetTriggerUnit()), tre("Sie haben bereits ein Gebäude errichtet.", "You have already constructed a building."))
+				else
+					set thistype.m_buildings[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = GetConstructingStructure()
+				endif
+			endif
+			return false
+		endmethod
+		
+		private static method triggerConditionConstructionFinish takes nothing returns boolean
 			if (GetUnitTypeId(GetConstructedStructure()) == 'h027' or GetUnitTypeId(GetConstructedStructure()) == 'h028' or GetUnitTypeId(GetConstructedStructure()) == 'h029' or GetUnitTypeId(GetConstructedStructure()) == 'h02C') then
-				set thistype.m_buildings[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = GetConstructedStructure()
 				call Character.displayHintToAll(Format(tre("%1% hat das Gebäude %2% errichtet. Kommt und besucht es!", "%1% has constructed the building %2%. Come and visit it!")).s(GetPlayerName(GetOwningPlayer(GetConstructedStructure()))).s(GetUnitName(GetConstructedStructure())).result())
 				call PingMinimapEx(GetUnitX(GetConstructedStructure()), GetUnitY(GetConstructedStructure()), 5.0, PercentTo255(100), PercentTo255(100), PercentTo255(100), false)
 				debug call Print("Summoned unit: " + GetUnitName(GetConstructedStructure()))
@@ -62,9 +74,13 @@ library StructMapMapBuildings requires StructGameCharacter
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_usageTrigger, EVENT_PLAYER_UNIT_SPELL_CAST)
 			call TriggerAddCondition(thistype.m_usageTrigger, Condition(function thistype.triggerConditionUsage))
 			
-			set thistype.m_summonTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(thistype.m_summonTrigger, EVENT_PLAYER_UNIT_CONSTRUCT_FINISH)
-			call TriggerAddCondition(thistype.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
+			set thistype.m_constructionStartTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_constructionStartTrigger, EVENT_PLAYER_UNIT_CONSTRUCT_START)
+			call TriggerAddCondition(thistype.m_constructionStartTrigger, Condition(function thistype.triggerConditionConstructionStart))
+			
+			set thistype.m_constructionFinishTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_constructionFinishTrigger, EVENT_PLAYER_UNIT_CONSTRUCT_FINISH)
+			call TriggerAddCondition(thistype.m_constructionFinishTrigger, Condition(function thistype.triggerConditionConstructionFinish))
 			
 			set thistype.m_deathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_deathTrigger, EVENT_PLAYER_UNIT_DEATH)
