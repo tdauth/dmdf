@@ -1,17 +1,11 @@
 2014-11-22 Tamino Dauth <tamino@cdauth.eu>
 * Quest Blood Thristiness überarbeitet. Logischere Dialoge mit der Elfin, warum jagt sie die Kreaturen? - ist gar nicht soo schlecht
-* FIXED: "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein. Liegt evenutell aber nur eventuell daran, dass Computerspieler die Kontrolle hat und den Zauber jedes Mal rückgängig macht? Lag an Computerspieler.
-* FIXED: Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
 * Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
-* FIXED: Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird. Zauberbuch anwenden, um Icon zu verbergen.
-* FIXED: Metamorphose: Ist mit passiver Verwandlung eventuell sicherer, Cast-Zeit kontrollierbar: http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/
 * Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle?
 * Fulco will die Zauberkraft der Hexen im Norden. Neues Quest.
 * Kuno: Einbauen "Diese Wälder sind gefährlich! Hier hausen starke Kreaturen, nehmt euch in Acht!"
-* FIXED: "Katzen für Brogo" braucht Icon - Katze
 * "Der dunkle Kult": Egal wann der Diakon getötet wird bzw. alle, muss es bereits abgeschlossen sein, solange der Charakter in der Nähe war.
 * Letzter Auftrag, statt pan eventuell Videosequenz, die das Spiel unterbricht und die Ansicht danach wiederherstellt.
-* FIXED: Video Wigberht fixen, wie er gegen die Orks kämpft.
 * Dialog mit Björn über Dago, wird alles automatisch ausgeführt.
 * Wenn Charakter verwandelt ist und im Dialog Gegenstände erhält, hat er kein Inventar. Gegenstände liegen dann dort. Kann nur unverwandelt ansprechen oder egal?
 * Anstatt Items gleich zu verteilen einfach das Item n mal droppen?
@@ -19,41 +13,27 @@
 * Tool schreiben, das die MMP-Datei der Minimap nimmt, ein Gebiet ausschneidet und ein Bild mit einer bestimmten Größe daraus erzeugt.
 * Diakon lebt nach Video in dem er umgebracht wurde wieder?!
 * Ursula: Dialog einbauen falls man Druide ist!
-* FIXED: Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
 * Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
-* FIXED: Schwert- und Schildhand bei sämtlichen Waffen vertauschen, damit Animation für Schild stimmt.
 * Schild Attachmentpunkt ändern, ist sonst in der Hand des Charakters.
 * AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
-* FIXED: Grabenspinne: Passives Spinnengift und Giftstachel.
-* FIXED: Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt. Selbst nachdem die Bestenliste des Spielers manuell auf null gesetzt wurde, verschwindet sie nicht.
 * Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer. Dialog bei Guntrich aktivieren, nachdem man bei der Mühle war -> neues Quest "Vertreibe die Plünderer".
 * Guntrichs Auftrag "Geisterstunde": Neues Ziel einbauen, dass man selbst herausfinden muss woher das Trommeln kommt.
 * Guntrichs Dialog: Wegelagerer bei der Mühle? mit Geisterstunde verbinden - Neues Quest einbauen "Wegelagerer vertreiben"?
 * Zauber "Dryade" ersetzen oder sinnvolle Beschwörung mit Heilung und Natur?
-* DEPRECATED: Wenn am Anfang nichts passiert wurde einmal überprüft ob das Video zu Ende ist, danach nicht mehr. Nichts passiert. Die Ausgabe des Überspringens kam danach. Überspringen parallel - Fehler?
 * AOS-Gebiet: oben auf Plateaus Sichtfeldblocker platzieren!
 * AOS-Gebiet: Bob muss Gegenstände verkaufen.
 * AOS-Gebiet: Die Dämonenhändler sichtbarer machen.
 * AOS-Gebiet: Oscar und Dämon sollen Dialoge bekommen. Leiden unter der Herrschaft von Haldar und Baldar.
-* FIXED: Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren. Vermutlich checkState()! State ist richtig - Quest muss nachträglich deaktiviert werden?! Passiert nur manchmal.
-	* Quest ist auch aktiv und kann abgeschlossen werden, wird nur nicht im Quest-Log angezeigt!
-	* Liegt nicht an checkstate aber obwohl QuestTalras.initQuest() vor QuestRescueDago aufgerufen wird, ist das Quest über dem Quest Rescue Dago, normal?
-	* SOLUTION: Vermutlich wurde das OpLimit überschritten. Nachdem die Grimoire-Funktionen vereinfacht wurden (Parameter updateUi) und es weniger Aufrufe gab, trat der Fehler nicht mehr auf.
 * Vermutlich verursacht EndThematicMusic() beim Beenden eines Videos dass die Human-Musik gespielt wird. Die aktuelle Musik muss daher nach jedem Video wiederhergestellt werden! Game.resetVideoSettings()! setMapMusic() hat nichts gebracht!
 * Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
 * Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
-* DONE: Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
-* DONE: Mehr Orks: http://www.hiveworkshop.com/forums/models-530/orcveteran-259649/?prev=r%3D20%26page%3D3 und alternate Version
 * Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/ 
-* FIXED: Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schrein wiederbelebt werden.
 * Eigentlich benötigen die Zauberbuchfähigkeiten 6 verschiedene! Die letzte entspricht der ausgelernten Stufe und gibt nur noch einmal die Werte an. Ansonsten wird immer die der nächsten Stufe angezeigt und nicht der aktuellen!
 * Irgendwer in der Todesgruft kann Tote beschwören. Funktioniert jedoch nicht bei den eigenen Untoten? nur bei den Donnerwesen. Sollte bei allem funktionieren -> mehr Gegner.
-* DEPRECATED: Beim Video in der Todesgruft Predigt vom Diakon einbauen.
 * Gruft des Todes: Missgeburt braucht Fähigkeiten.
 * Berserkerin benötigt Fähigkeiten.
 * Osmans Quest nur aktivierbar machen falls man ihn nicht als Kleriker beleidigt hat. Ansonsten erst mal eine Abfrage einbauen.
 * Am besten Osmans Beleidigung rauslöschen und auch das Quest mit dem Anschwärzen beim Herzog.
-* DEPRECATED: Dagos Brennt die Bären nieder endlich fixen.
 * Bei Questupdates immer manuelles setState() und dann displayUpdateMessage().
 * Arena: Mehr Gegner, klassenabhängig.
 * Agihard, Arena: "Wer kämpft in deiner Arena?" - "Leute aus dem ganzen Land, Namensauflistung!".
@@ -61,25 +41,15 @@
 * Goldmünzenbeutel: Beutelmodell.
 * Haid muss mehr Gegenstände verkaufen.
 * Ricmans "Und was machst du hier?" direkt auf Startseite anzeigen.
-* DONE: Nekromant: Dämonendiener für 5 verschiedene Stufen erzeugen.
-* DONE: Nekromant: Dunklen Diener für 5 verschiedene Stufen erzeugen.
-* DONE: Nekromant: Grundzauber "Todesbote" sollte "Pestkarren" heißen. Erzeugt einen Pestkarren mit den selben Fähigkeiten!
-* DONE: Druide: Heilquelle kleiner machen, länger pro Stufe und andere Einheit?
-* DONE: Druide: Manaquelle kleiner machen, länger pro Stufe und andere Einheit?
-* FIXED: Nach letzter Schlacht: Nordmänner zurück zu Neutral Passiv, entlassen.
 * Ricman: Beutezug korrigieren.
 * Ricman: Erlernbare Fähigkeiten als Drachentöter sollen Grimoire Spells werden und im Zauberbuch erscheinen.
-* DONE: Falls noch mehr Quests: Einar hat wenig zu sagen.
 * Trommons Quest nicht einfach ablehnbar machen!
-* FIXED: Character.giveItem() und giveQuestItem() sollte die Items immer im Rucksack platzieren falls noch Platz ist und nicht auf dem Boden falls das Inventar voll und der Rucksack offen ist.
 * Alle Talk Members static machen, da es immer genau eine Talk-Instanz gibt -> Performance
 * Mit SharpCraft debuggen - optlimit etc.
 * ACharacter.displayMessage() entfernen und durch QuestMessageBJ() ersetzen. Eventuell QuestMessageBJ() für einzelnen Spieler anbieten? Neue Funktion QuestMessageForPlayer() aus der ASL verwenden.
 * ACharacter.setMovable() entfernen und durch jeweilige Funktionen ersetzen.
 * Viele unnötige Helpermethoden aus ACharacter rauswerfen.
 * Dago retten - Bedingung einbauen, Dago darf das Gebiet nicht verlassen, sonst ist der Auftrag fehlgeschlagen! Ansonsten kann man mit Dago alles abmetzeln!
-* FIXED: Wenn man Kuno nicht im Wald anspricht sollte er sagen "Ich habe zu tun". Ansonsten sind die Sätze unlogisch.
-* DONE: Video "Wigberht" fixen.
 * Osman: Sollte im Zusammenhang mit dem Kultquest den Begriff „Todesgruft“ erwähnen. So wird sie laut Drachentöterin von Eingeweihten genannt. Er muss bereits davon gehört haben.
 * Drachentöterin: Hat nun ein Gespräch, muss aber noch geschrieben werden:
 	* Über die Bedeutung der Todesgruft informieren, wenn Quest von Osman erhalten wurde.
@@ -91,14 +61,7 @@
 * Mehr Kreaturen oder sammelbare Items platzieren. Die Karte ist viel zu leer -> mehr Spawn Points.
 * Quest-Pings deaktivierbar machen (pro Spieler).
 * Quest-Pings manuell durch Hauptmenü erlauben.
-* FIXED: Waldläufer bei letzter Schlacht kommen manchmal zweimal.
-* FIXED: Spawns bei letzter Schlacht fixen - Gegener laufen nicht aufs Schlachtfeld, da Neutral Feindlich.
-* FIXED: Gefolgsleute schickt wegen Computerkontrolle oft Einheiten automatisch zurück. Gibt jetzt keine Computerkontrolle mehr.
-* Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
-* FIXED: Hellebarde: Schmetterangriff muss Icon verlieren!!! Gegenstandsfähigkeit! Zauberbuchfähigkeit erstellen.
-* FIXED: Standarte: Befehlsaura muss Icon verlieren!!! Gegenstandsfähigkeit! Zauberbuchfähigkeit erstellen.
 * Video "Das erste Gefecht": Einheiten blockieren sich gegenseitig beim Laufen. Nicht in der selben Gruppe?! Abstände vergrößern, Geschwindigkeit anpassen auch bei Items!
-* DEPRECATED: Ricman sollte während der letzten Schlacht die Helden anwählen und Gegenstandskauf/Verkaufsfähigkeit entfernt bekommen.
 * Ricman sollte mehr über den Stab der Unsterblichkeit berichten. Wirkt alles zu aufgesetzt. Warum will er unbedingt einen Drachen aus den alten Sagen?
 * Beim Zauber "Drohendes Unheil" sicherstellen, dass der Zauber pro Einheit nur einmal gleichzeitig angewandt werden kann.
 * Leider erlaubt der Zauber "Drohendes Unheil" auch, dass man z. B. bevor man in den Kampf zieht den Effekt auf alle Einheiten zaubert. Daher muss der Effekt zeitlich begrenzt werden!
@@ -106,25 +69,64 @@
 * Tutorial: Zunächst einblenden, dass man mit "-mainmenu" ins Haupt-Menü kommt.
 * Tutorial: Einblenden, dass man eine Teleportationsrolle dabei hat.
 * Creep-Lager-Icons funktionieren im Editor aber nicht im Spiel.
-* FIXED: "Märtyrer" verbraucht Mana auch wenn der Zauber gestoppt wird. Vermutlich muss der Test in die Condition ausgelagert werden.
 * Klassenzauber auf Basis von "Mana und Leben auffüllen"?
-* FIXED: "Dämonendiener" es können mehrere gleichzeitig beschworen werden.
-* FIXED: "Dämonendiener" Stufe 3 eindeutig zu stark.
 * Vampirgebietergruppe muss viel mehr droppen. Artefakte, Tränke, am besten Runen!
 * "Genesung" schadet dem Kleriker selbst. Sollte heilen aber ohne dem Kleriker selbst Leben abzuziehen.
 * "Böses bannen" hängt extrem.
 * Die Startbrücke endlich breiter machen!
 * Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
 * Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
+* ASL: Mehr API-Kommentare.
+* ASL: AClassSelection - Multiboard-Anzeige optional machen (dynamisch).
+* ASL: AClassSelection - Drehung optional machen (dynamisch).
+
+* FIXED: "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein. Liegt evenutell aber nur eventuell daran, dass Computerspieler die Kontrolle hat und den Zauber jedes Mal rückgängig macht? Lag an Computerspieler.
+* FIXED: Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
+* FIXED: Standarte der schwarzen Legion benutzt keine Gegenstandsfähigkeit, die unsichtbar ist. Daher wird sie als Icon angezeigt, falls der Rucksack geöffnet wird. Zauberbuch anwenden, um Icon zu verbergen.
+* FIXED: Metamorphose: Ist mit passiver Verwandlung eventuell sicherer, Cast-Zeit kontrollierbar: http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/hero-passive-transformation-198482/
+* FIXED: "Katzen für Brogo" braucht Icon - Katze
+* FIXED: Video Wigberht fixen, wie er gegen die Orks kämpft.
+* FIXED: Bei Benutzung von nicht verderblichen Gegenständen wird eine Aufladung abgezogen! ACHTUNG: NUR WENN EIN SPELL GECASTET WIRD dessen Condition false ist und dann die Einheit direkt stoppt!!!
+* FIXED: Schwert- und Schildhand bei sämtlichen Waffen vertauschen, damit Animation für Schild stimmt.
+* FIXED: Grabenspinne: Passives Spinnengift und Giftstachel.
+* FIXED: Wenn man einmal in der Arena war und dann ein Video kommt, wird danach die Bestenliste wieder angezeigt. Selbst nachdem die Bestenliste des Spielers manuell auf null gesetzt wurde, verschwindet sie nicht.
+* DEPRECATED: Wenn am Anfang nichts passiert wurde einmal überprüft ob das Video zu Ende ist, danach nicht mehr. Nichts passiert. Die Ausgabe des Überspringens kam danach. Überspringen parallel - Fehler?
+* FIXED: Talras ohne Debugmodus erzeugt Quest "Talras" nicht. Quest existiert einfach nicht. Andere Quests funktionieren. Vermutlich checkState()! State ist richtig - Quest muss nachträglich deaktiviert werden?! Passiert nur manchmal.
+	* Quest ist auch aktiv und kann abgeschlossen werden, wird nur nicht im Quest-Log angezeigt!
+	* Liegt nicht an checkstate aber obwohl QuestTalras.initQuest() vor QuestRescueDago aufgerufen wird, ist das Quest über dem Quest Rescue Dago, normal?
+	* SOLUTION: Vermutlich wurde das OpLimit überschritten. Nachdem die Grimoire-Funktionen vereinfacht wurden (Parameter updateUi) und es weniger Aufrufe gab, trat der Fehler nicht mehr auf.
+* DONE: Klassenauswahl: Startgegenstände und Fähigkeiten auflisten.
+* DONE: Mehr Orks: http://www.hiveworkshop.com/forums/models-530/orcveteran-259649/?prev=r%3D20%26page%3D3 und alternate Version
+* FIXED: Wird ein Gefolgsmann wiederbelebt während der Charakter tot ist, muss er auch am aktiven Schrein wiederbelebt werden.
+* DEPRECATED: Beim Video in der Todesgruft Predigt vom Diakon einbauen.
+* DEPRECATED: Dagos Brennt die Bären nieder endlich fixen.
+* DONE: Nekromant: Dämonendiener für 5 verschiedene Stufen erzeugen.
+* DONE: Nekromant: Dunklen Diener für 5 verschiedene Stufen erzeugen.
+* DONE: Nekromant: Grundzauber "Todesbote" sollte "Pestkarren" heißen. Erzeugt einen Pestkarren mit den selben Fähigkeiten!
+* DONE: Druide: Heilquelle kleiner machen, länger pro Stufe und andere Einheit?
+* DONE: Druide: Manaquelle kleiner machen, länger pro Stufe und andere Einheit?
+* FIXED: Nach letzter Schlacht: Nordmänner zurück zu Neutral Passiv, entlassen.
+* DONE: Falls noch mehr Quests: Einar hat wenig zu sagen.
+* FIXED: Character.giveItem() und giveQuestItem() sollte die Items immer im Rucksack platzieren falls noch Platz ist und nicht auf dem Boden falls das Inventar voll und der Rucksack offen ist.
+* FIXED: Wenn man Kuno nicht im Wald anspricht sollte er sagen "Ich habe zu tun". Ansonsten sind die Sätze unlogisch.
+* DONE: Video "Wigberht" fixen.
+* FIXED: Waldläufer bei letzter Schlacht kommen manchmal zweimal.
+* FIXED: Spawns bei letzter Schlacht fixen - Gegener laufen nicht aufs Schlachtfeld, da Neutral Feindlich.
+* FIXED: Gefolgsleute schickt wegen Computerkontrolle oft Einheiten automatisch zurück. Gibt jetzt keine Computerkontrolle mehr.
+* Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
+* FIXED: Hellebarde: Schmetterangriff muss Icon verlieren!!! Gegenstandsfähigkeit! Zauberbuchfähigkeit erstellen.
+* FIXED: Standarte: Befehlsaura muss Icon verlieren!!! Gegenstandsfähigkeit! Zauberbuchfähigkeit erstellen.
+* DEPRECATED: Ricman sollte während der letzten Schlacht die Helden anwählen und Gegenstandskauf/Verkaufsfähigkeit entfernt bekommen.
+* FIXED: "Märtyrer" verbraucht Mana auch wenn der Zauber gestoppt wird. Vermutlich muss der Test in die Condition ausgelagert werden.
+* FIXED: "Dämonendiener" es können mehrere gleichzeitig beschworen werden.
+* FIXED: "Dämonendiener" Stufe 3 eindeutig zu stark.
 * DEPRECATED (Seuche basiert auf Ölbrand): "Seuche" von Nekromant fixen. Ging wahrscheinlich nur bei Flächenschaden oder Fernkampf. Nekromant muss Fernkämpfer sein.
 * DONE: Seitenwechsel für Zauberbuch in Klassenauswahl einfügen.
 * DONE: Für alle Klassen alle Zauber in Klassenauswahl anzeigen lassen.
 * DONE: ASL-Änderungen für AClass, AClassSelection und ACharacter einbauen.
-* ASL: Mehr API-Kommentare.
-* ASL: AClassSelection - Multiboard-Anzeige optional machen (dynamisch).
-* ASL: AClassSelection - Drehung optional machen (dynamisch).
 * DONE: ASL: AClassSelection - Tastensteuerung optional machen (dynamisch).
 * DONE: Wegelagerer sollten verschiedene Gegenstände droppen, nicht nur Goldmünzenbeutel.
+
 * AClassSelection: Multiboard ist zu breit. Die Breite nicht automatisch berechnen, sondern wie bei ACharactersScheme dynamisch festlegen lassen.
 * FIXED: Es gab schon mal den Fall, dass Dago abgebremst wurde und er daraufhin den Weg nicht mehr fand. Vielleicht durch Timer absichern, dass Dago tatsächlich zur Burg geht.
 * Auftrag mit Dago fehlschlagen lassen wenn man mit ihm flieht.

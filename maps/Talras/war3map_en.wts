@@ -21825,37 +21825,37 @@ Totenbeschwörung
 STRING 3652
 // Fähigkeiten: A08T (Vervielfachung), Name (Name (anam))
 {
-Vervielfachung
+Multiplication
 }
 
 STRING 3653
 // Fähigkeiten: A08T (Vervielfachung), Tip (Tooltipp - Normal (atp1))
 {
-Vervielfachung [|cffffcc00Stufe 1|r]
+Multiplication [|cffffcc00Level 1|r]
 }
 
 STRING 3654
 // Fähigkeiten: A08T (Vervielfachung), Tip (Tooltipp - Normal (atp1))
 {
-Vervielfachung [|cffffcc00Stufe 2|r]
+Multiplication [|cffffcc00Level 2|r]
 }
 
 STRING 3655
 // Fähigkeiten: A08T (Vervielfachung), Tip (Tooltipp - Normal (atp1))
 {
-Vervielfachung [|cffffcc00Stufe 3|r]
+Multiplication [|cffffcc00Level 3|r]
 }
 
 STRING 3656
 // Fähigkeiten: A08T (Vervielfachung), Tip (Tooltipp - Normal (atp1))
 {
-Vervielfachung [|cffffcc00Stufe 4|r]
+Multiplication [|cffffcc00Level 4|r]
 }
 
 STRING 3657
 // Fähigkeiten: A08T (Vervielfachung), Tip (Tooltipp - Normal (atp1))
 {
-Vervielfachung [|cffffcc00Stufe 5|r]
+Multiplication [|cffffcc00Level 5|r]
 }
 
 STRING 3658
@@ -21903,13 +21903,13 @@ Manaexplosion [|cffffcc00Stufe 3|r]
 STRING 3665
 // Fähigkeiten: A08U (Vervielfachung), Name (Name (anam))
 {
-Vervielfachung
+Multiplication
 }
 
 STRING 3666
 // Zauberverstärker/Effekte: B01H (Vervielfachung), EditorName (Name (nur Editor) (fnam))
 {
-Vervielfachung
+Multiplication
 }
 
 STRING 3667
@@ -21921,7 +21921,7 @@ Seelendiebstahl - Stufe 5
 STRING 3668
 // Zauberverstärker/Effekte: B01H (Vervielfachung), Bufftip (Tooltipp (ftip))
 {
-Vervielfachung
+Multiplication
 }
 
 STRING 3669
@@ -27424,61 +27424,61 @@ Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strö
 STRING 4585
 // Fähigkeiten: A08T (Vervielfachung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.
+The wizard multiplies himself <A08T,DataA1> times. His multiplications cause <A08T,DataB1,%> % of his damage.
 }
 
 STRING 4586
 // Fähigkeiten: A08T (Vervielfachung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.
+The wizard multiplies himself <A08T,DataA2> times. His multiplications cause <A08T,DataB2,%> % of his damage.
 }
 
 STRING 4587
 // Fähigkeiten: A08T (Vervielfachung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.
+The wizard multiplies himself <A08T,DataA3> times. His multiplications cause <A08T,DataB3,%> % of his damage.
 }
 
 STRING 4588
 // Fähigkeiten: A08T (Vervielfachung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.
+The wizard multiplies himself <A08T,DataA4> times. His multiplications cause <A08T,DataB4,%> % of his damage.
 }
 
 STRING 4589
 // Fähigkeiten: A08T (Vervielfachung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself <A08T,DataA5> times. His multiplications cause <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4590
 // Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications cause a portion of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications cause <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications cause <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications cause <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications cause <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications cause <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4591
 // Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications cause a portion of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications cause <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications cause <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications cause <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications cause <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications cause <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4592
 // Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications cause a portion of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications cause <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications cause <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications cause <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications cause <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications cause <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4593
 // Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications cause a portion of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications cause <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications cause <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications cause <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications cause <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications cause <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4594
 // Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications cause a portion of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications cause <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications cause <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications cause <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications cause <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications cause <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4595
