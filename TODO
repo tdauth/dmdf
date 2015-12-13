@@ -79,6 +79,39 @@
 * ASL: Mehr API-Kommentare.
 * ASL: AClassSelection - Multiboard-Anzeige optional machen (dynamisch).
 * ASL: AClassSelection - Drehung optional machen (dynamisch).
+* AClassSelection: Multiboard ist zu breit. Die Breite nicht automatisch berechnen, sondern wie bei ACharactersScheme dynamisch festlegen lassen.
+* Auftrag mit Dago fehlschlagen lassen wenn man mit ihm flieht.
+* Irminas Tagesablauf. Steht den ganzen Tag da und verkauft Sachen.
+* Beide Quests von Wieland NICHT ablehnbar machen!
+* Haldar und Balder: Ich möchte aus der ... Legion austreten.
+* Haldar und Baldar gleichmäßigen Zutritt erlauben! Damit Teams gleich groß sind.
+* AOS-Hauptgebäude einbauen und Auftrag abschließbar machen.
+* AOS: Spieler benachrichtigen (auf ganzer Karte) wenn ein AOS-Gebäude oder Ähnliches angegriffen wird.
+* AOS: Der Sieg einer Partei sollte nicht die gesamte Story verändern jedoch Einfluss auf den Auftrag "Geisterstunde" nehmen.
+* Bei letzter Schlacht sollten Gegner Items droppen, auch Runen etc. und vor allem der Orkanführer für jeden Charakter ein Artefakt.
+
+
+* Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
+
+
+* Quest Deranor: Man kann Osman danach auch berichten, was hinter dem Kult eigentlich steckt.
+* Dialog mit Drachenöterin über Deranor verbessern.
+* Bei allen Tötungsquests den Spieler Neutral Aggressiv entfernen. Einheiten könnten übernommen worden sein!
+* Sisgard: Frage "Was machst du wenn die Orks und Dunkelelfen kommen?".
+* Irmina: Agihards Quest nicht ablehnbar machen "Also Agihard" sollte einfach auf der Hauptseite angezeigt werden.
+* Arenameister und Talras' mutiger Waffenmeister haben dasselbe Icon.
+* Wiederbelebungsbug erneut. Nach Video "Das erste Gefecht" wurde während des Spiels Charakter 0 getötet und kein Wiederbelebungstimer gestartet. Es erschien auch kein Timerdialog.
+* Bei allen Videosequenzen sollte nach der Ausblendung des Schwarzfilters bereits die Kamera in Bewegung sein. Sonst wirkt es nicht flüssig.
+* Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
+
+* Button zum Durchschalten der Dungeons (Schreinbutton?).
+
+* Video Wigberht: Frost statt Feuerwelle
+* Video Wigberht: Weniger Kameras um die Orks zu sehen, weniger Kameras um die terraindeformation und den Tot der Orks zu sehen.
+* Rückkopplung beim Zauberer zieht kein Mana ab. Gameplaykonstanten?!
+* Großen Felsvorsprung über Bärenhöhle entfernen.
+* 2 Items werden für Spieler 1 gedroppt und dann erst wieder 1 Item für Spieler 2.
+
 
 * FIXED: "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein. Liegt evenutell aber nur eventuell daran, dass Computerspieler die Kontrolle hat und den Zauber jedes Mal rückgängig macht? Lag an Computerspieler.
 * FIXED: Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
@@ -113,7 +146,6 @@
 * FIXED: Waldläufer bei letzter Schlacht kommen manchmal zweimal.
 * FIXED: Spawns bei letzter Schlacht fixen - Gegener laufen nicht aufs Schlachtfeld, da Neutral Feindlich.
 * FIXED: Gefolgsleute schickt wegen Computerkontrolle oft Einheiten automatisch zurück. Gibt jetzt keine Computerkontrolle mehr.
-* Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
 * FIXED: Hellebarde: Schmetterangriff muss Icon verlieren!!! Gegenstandsfähigkeit! Zauberbuchfähigkeit erstellen.
 * FIXED: Standarte: Befehlsaura muss Icon verlieren!!! Gegenstandsfähigkeit! Zauberbuchfähigkeit erstellen.
 * DEPRECATED: Ricman sollte während der letzten Schlacht die Helden anwählen und Gegenstandskauf/Verkaufsfähigkeit entfernt bekommen.
@@ -126,54 +158,30 @@
 * DONE: ASL-Änderungen für AClass, AClassSelection und ACharacter einbauen.
 * DONE: ASL: AClassSelection - Tastensteuerung optional machen (dynamisch).
 * DONE: Wegelagerer sollten verschiedene Gegenstände droppen, nicht nur Goldmünzenbeutel.
-
-* AClassSelection: Multiboard ist zu breit. Die Breite nicht automatisch berechnen, sondern wie bei ACharactersScheme dynamisch festlegen lassen.
 * FIXED: Es gab schon mal den Fall, dass Dago abgebremst wurde und er daraufhin den Weg nicht mehr fand. Vielleicht durch Timer absichern, dass Dago tatsächlich zur Burg geht.
-* Auftrag mit Dago fehlschlagen lassen wenn man mit ihm flieht.
 * DONE (Schafsjunge): Verstecktes Quest einbauen: "Gerissene Schafe" - wenn man die Wölfe am Anfang entdeckt erhält man diesen Auftrag. Dann kann man Manfred oder so davon berichten.
-* Irminas Tagesablauf. Steht den ganzen Tag da und verkauft Sachen.
 * DONE: Wielands Schwert fixen und in Dialog von Einar einbauen.
 * DONE: Wielands Schwert: Belohnungsgegenstand einbauen.
-* Beide Quests von Wieland NICHT ablehnbar machen!
 * DEPRECATED: Engel in AOS braucht Fähigkeiten: 4 - 6. Besitzt Klassenfähigkeiten.
 * DEPRECATED: Dämon in AOS braucht Fähigkeiten: 4 - 6. Besitzt Klassenfähigkeiten.
-* Haldar und Balder: Ich möchte aus der ... Legion austreten.
-* Haldar und Baldar gleichmäßigen Zutritt erlauben! Damit Teams gleich groß sind.
-* AOS-Hauptgebäude einbauen und Auftrag abschließbar machen.
-* AOS: Spieler benachrichtigen (auf ganzer Karte) wenn ein AOS-Gebäude oder Ähnliches angegriffen wird.
-* AOS: Der Sieg einer Partei sollte nicht die gesamte Story verändern jedoch Einfluss auf den Auftrag "Geisterstunde" nehmen.
 * FIXED: "Verzauberter Stab" ermöglicht mit Feuerkugelfähigkeit Flächenschaden!
 * FIXED: Kurzschwert ermöglicht Fehlschlag hat Verderbniskugel!
 * DEPRECATED: Ricmans Speerwurf macht keinen Schaden. Gameplaykonstanten? Ist nun ein Hammerwurf, da Ricman einen Hammer trägt und keinen Speer.
 * FIXED: "Blenden" länger machen dafür Abklingzeit höher.
-* Bei letzter Schlacht sollten Gegner Items droppen, auch Runen etc. und vor allem der Orkanführer für jeden Charakter ein Artefakt.
 * FIXED: Das Sammeln für die Fahrt nach Holzbruck ebenfalls per Gebiet machen.
 * DONE: Aus Metzelei-Auftrag sollte Jagd nach Deranor werden. Deranor ist verantwortlich für den Kult und die Untoten im Wald, er befindet sich in dem Dungeon, dass durch ein Portal erreichbar ist. Das Portal wird aktiviert, wenn man das Quest mit der Drachentöterin abschließt. Danach will sie mit einem Deranor vernichten, das war ihr Auftrag.
-* Quest Deranor: Man kann Osman danach auch berichten, was hinter dem Kult eigentlich steckt.
-* Dialog mit Drachenöterin über Deranor verbessern.
 * FIXED: Töten des Diakons funktioniert nicht in Video!
-* Bei allen Tötungsquests den Spieler Neutral Aggressiv entfernen. Einheiten könnten übernommen worden sein!
-* Sisgard: Frage "Was machst du wenn die Orks und Dunkelelfen kommen?".
-* Irmina: Agihards Quest nicht ablehnbar machen "Also Agihard" sollte einfach auf der Hauptseite angezeigt werden.
-* Arenameister und Talras' mutiger Waffenmeister haben dasselbe Icon.
-* Wiederbelebungsbug erneut. Nach Video "Das erste Gefecht" wurde während des Spiels Charakter 0 getötet und kein Wiederbelebungstimer gestartet. Es erschien auch kein Timerdialog.
-* Bei allen Videosequenzen sollte nach der Ausblendung des Schwarzfilters bereits die Kamera in Bewegung sein. Sonst wirkt es nicht flüssig.
 * FIXED: Bei allen Videotransmissions nicht einfach abbrechen und Portrait entfernen, sondern warten, so wie in wc3-Kampagne. Einfach TransmissionFromUnitWithNameBJ() verwenden.
-* Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
 * DONE: ATalk braucht Attribut name, da Helden mit Eigennamen sonst den falschen Namen haben.
 * FIXED: Arena: Für das Punkten muss nachgesehen werden ob der Owner des Killers eine Einheit in der Arena hat. Denn auch beschworene Einheiten können toten.
-* Button zum Durchschalten der Dungeons (Schreinbutton?).
 * FIXED: Charaktere brauchen unbedingt Hero Glow. Anderenfalls kann man Spieler nicht auseinanderhalten.
 * FIXED: ASL: ASpawnPoint - itempool verwenden, mehrere Items möglich!
-* Video Wigberht: Frost statt Feuerwelle
 * FIXED: Video Wigberht: AJump-Geschwindigkeit steuern, mehr Updates, langsamer Sprung abgeglichen mit Animationsgeschwindigkeit
 * FIXED: Video Wigberht: Wigberht pausieren nachdem er die Orks erreicht und die terraindeformation startet.
-* Video Wigberht: Weniger Kameras um die Orks zu sehen, weniger Kameras um die terraindeformation und den Tot der Orks zu sehen.
 * FIXED: Video Wigberht: Siegesanimation nachdem der Orkanführer getötet wurde.
 * FIXED: Video Wigberht: Orks wehren sich auf Schlachtfeld nicht.
 * FIXED: Video Wigberht: Corpses are not dead.
 * FIXED: Meister der Nekromantie: Tooltips und Icons fixen. Zauberverstärker.
-* Rückkopplung beim Zauberer zieht kein Mana ab. Gameplaykonstanten?!
 * FIXED: AInventory: Gegenstand mit 2 Aufladungen über Seitengegenstand auf vorherige Seite. Dort liegt im letzten Fach gleicher Gegenstand also zusammengeführt - eine Aufladung zu wenig.
 * DEPRECATED: AInventory: Seitengegenstände besser nicht ablegbar machen, order abfangen? Müssen ablegbar sein damit man Gegenstände auf Seiten verschieben kann.
 * FIXED: AInventory: TriggerSleepAction() entfernen. Durch 0-Timer ersetzen, da TriggerSleepAction() erst nach 0.02 Sekunden oder so ausgeführt wird -> Data Races.
@@ -184,11 +192,9 @@
 * FIXED: Beim Anlegen einer Fernkampfwaffe werden durch die Verwandlung die Gegenstandseffekte nicht hinzugefügt, wenn der Rucksack geöffnet ist. In diesem Fall müssten sie manuell nochmal hinzugefügt werden, obwohl sie eigentlich permanent sein sollten.
 * FIXED: Für Spieler 2 wurde ein Hero Icon erzeugt, das auf den eigenen Helden verweist?!
 * FIXED: AInventory: Gegenstände die man besitzt, kann man keinem anderen Charakter geben! Bei Übergabe den Owner auf den neuen Spieler setzen oder so.
-* Großen Felsvorsprung über Bärenhöhle entfernen.
 * FIXED: Falls Charakter von menschlichem Spieler kontrolliert wird und Order von Verbündetem erfolgt (dank gemeinsamer Kontrolle) sollte er trotzdem keinen NPC ansprechen.
 * FIXED: Da Nebenquests für einzelne Spieler funktionieren, Titel nicht mehr mit Spielerfarbe versehen.
 * DEPRECATED: Bärengestalt, Schadensfähigkeit ist Stufe 1 (soll auch so sein, gehört zur Bärengestalt nicht zur Tierkunde).
-* 2 Items werden für Spieler 1 gedroppt und dann erst wieder 1 Item für Spieler 2.
 * DONE: Tipp einbauen wenn man zu Dago oder Haid läuft, dass NPCs angesprochen werden können.
 * Nordmänner kämpfen in Video gegen Drachentöterin. Was wenn Gefährten dabei sind?!
 * Video: Grundsätzlich alle Einheiten von Gefolgsleuten hiden, außer die, von welchen actor erzeugt werden.

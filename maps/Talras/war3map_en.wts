@@ -15883,37 +15883,37 @@ In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sow
 STRING 2656
 // Fähigkeiten: A068 (Adlerauge), Name (Name (anam))
 {
-Adlerauge
+Eagle Eye
 }
 
 STRING 2657
 // Fähigkeiten: A068 (Adlerauge), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 1|r]
+Eagle Eye [|cffffcc00Level 1|r]
 }
 
 STRING 2658
 // Fähigkeiten: A068 (Adlerauge), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 2|r]
+Eagle Eye [|cffffcc00Level 2|r]
 }
 
 STRING 2659
 // Fähigkeiten: A068 (Adlerauge), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 3|r]
+Eagle Eye [|cffffcc00Level 3|r]
 }
 
 STRING 2660
 // Fähigkeiten: A068 (Adlerauge), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 4|r]
+Eagle Eye [|cffffcc00Level 4|r]
 }
 
 STRING 2661
 // Fähigkeiten: A068 (Adlerauge), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 5|r]
+Eagle Eye [|cffffcc00Level 5|r]
 }
 
 STRING 2662
@@ -56692,7 +56692,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 9456
 // Fähigkeiten: A0YC (Adlerauge - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine Chance, doppelten Schaden anzurichten..|n|n|cffffcc00Stufe 1|r - Eine Chance von <A068,DataA1> %.|n|cffffcc00Stufe 2|r - Eine Chance von <A068,DataA2> %.|n|cffffcc00Stufe 3|r - Eine Chance von <A068,DataA3> %.|n|cffffcc00Stufe 4|r - Eine Chance von <A068,DataA4> %.|n|cffffcc00Stufe 5|r - Eine Chance von <A068,DataA5> %.
+The ranger has the chance to cause double damage.|n|n|cffffcc00Level 1|r - A chance of <A068,DataA1> %.|n|cffffcc00Level 2|r - A chance of <A068,DataA2> %.|n|cffffcc00Level 3|r - A chance of <A068,DataA3> %.|n|cffffcc00Level 4|r - A chance of <A068,DataA4> %.|n|cffffcc00Level 5|r - A chance of <A068,DataA5> %.
 }
 
 STRING 9457
@@ -57444,13 +57444,13 @@ Clarity - Level 5
 STRING 9580
 // Fähigkeiten: A0YD (Adlerauge - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine Chance, doppelten Schaden anzurichten..|n|n|cffffcc00Stufe 1|r - Eine Chance von <A068,DataA1> %.|n|cffffcc00Stufe 2|r - Eine Chance von <A068,DataA2> %.|n|cffffcc00Stufe 3|r - Eine Chance von <A068,DataA3> %.|n|cffffcc00Stufe 4|r - Eine Chance von <A068,DataA4> %.|n|cffffcc00Stufe 5|r - Eine Chance von <A068,DataA5> %.
+The ranger has the chance to cause double damage.|n|n|cffffcc00Level 1|r - A chance of <A068,DataA1> %.|n|cffffcc00Level 2|r - A chance of <A068,DataA2> %.|n|cffffcc00Level 3|r - A chance of <A068,DataA3> %.|n|cffffcc00Level 4|r - A chance of <A068,DataA4> %.|n|cffffcc00Level 5|r - A chance of <A068,DataA5> %.
 }
 
 STRING 9581
 // Fähigkeiten: A0YE (Adlerauge - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine Chance, doppelten Schaden anzurichten..|n|n|cffffcc00Stufe 1|r - Eine Chance von <A068,DataA1> %.|n|cffffcc00Stufe 2|r - Eine Chance von <A068,DataA2> %.|n|cffffcc00Stufe 3|r - Eine Chance von <A068,DataA3> %.|n|cffffcc00Stufe 4|r - Eine Chance von <A068,DataA4> %.|n|cffffcc00Stufe 5|r - Eine Chance von <A068,DataA5> %.
+The ranger has the chance to cause double damage.|n|n|cffffcc00Level 1|r - A chance of <A068,DataA1> %.|n|cffffcc00Level 2|r - A chance of <A068,DataA2> %.|n|cffffcc00Level 3|r - A chance of <A068,DataA3> %.|n|cffffcc00Level 4|r - A chance of <A068,DataA4> %.|n|cffffcc00Level 5|r - A chance of <A068,DataA5> %.
 }
 
 STRING 9582
@@ -64067,7 +64067,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10694
 // Fähigkeiten: A0YC (Adlerauge - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 1|r]
+Eagle Eye [|cffffcc00Level 1|r]
 }
 
 STRING 10695
@@ -64079,7 +64079,7 @@ STRING 10695
 STRING 10696
 // Fähigkeiten: A0YC (Adlerauge - Stufe 1), Name (Name (anam))
 {
-Adlerauge - Stufe 1
+Eagle Eye - Level 1
 }
 
 STRING 10697
@@ -64145,7 +64145,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10707
 // Fähigkeiten: A0YD (Adlerauge - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 2|r]
+Eagle Eye [|cffffcc00Level 2|r]
 }
 
 STRING 10708
@@ -64157,7 +64157,7 @@ STRING 10708
 STRING 10709
 // Fähigkeiten: A0YD (Adlerauge - Stufe 2), Name (Name (anam))
 {
-Adlerauge - Stufe 2
+Eagle Eye - Level 2
 }
 
 STRING 10710
@@ -64223,7 +64223,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10720
 // Fähigkeiten: A0YE (Adlerauge - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 3|r]
+Eagle Eye [|cffffcc00Level 3|r]
 }
 
 STRING 10721
@@ -64235,7 +64235,7 @@ STRING 10721
 STRING 10722
 // Fähigkeiten: A0YE (Adlerauge - Stufe 3), Name (Name (anam))
 {
-Adlerauge - Stufe 3
+Eagle Eye - Level 3
 }
 
 STRING 10723
@@ -64301,7 +64301,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10733
 // Fähigkeiten: A0YF (Adlerauge - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 4|r]
+Eagle Eye [|cffffcc00Level 4|r]
 }
 
 STRING 10734
@@ -64313,7 +64313,7 @@ STRING 10734
 STRING 10735
 // Fähigkeiten: A0YF (Adlerauge - Stufe 4), Name (Name (anam))
 {
-Adlerauge - Stufe 4
+Eagle Eye - Level 4
 }
 
 STRING 10736
@@ -64379,7 +64379,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10746
 // Fähigkeiten: A0YG (Adlerauge - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge [|cffffcc00Stufe 5|r]
+Eagle Eye [|cffffcc00Level 5|r]
 }
 
 STRING 10747
@@ -64391,7 +64391,7 @@ STRING 10747
 STRING 10748
 // Fähigkeiten: A0YG (Adlerauge - Stufe 5), Name (Name (anam))
 {
-Adlerauge - Stufe 5
+Eagle Eye - Level 5
 }
 
 STRING 10749
@@ -64415,7 +64415,7 @@ STRING 10751
 STRING 10752
 // Fähigkeiten: A0YH (Adlerauge - Stufe 1), Name (Name (anam))
 {
-Adlerauge - Stufe 1
+Eagle Eye - Level 1
 }
 
 STRING 10753
@@ -64427,7 +64427,7 @@ STRING 10753
 STRING 10754
 // Fähigkeiten: A0YI (Adlerauge - Stufe 2), Name (Name (anam))
 {
-Adlerauge - Stufe 2
+Eagle Eye - Level 2
 }
 
 STRING 10755
@@ -64439,7 +64439,7 @@ STRING 10755
 STRING 10756
 // Fähigkeiten: A0YJ (Adlerauge - Stufe 3), Name (Name (anam))
 {
-Adlerauge - Stufe 3
+Eagle Eye - Level 3
 }
 
 STRING 10757
@@ -64451,7 +64451,7 @@ STRING 10757
 STRING 10758
 // Fähigkeiten: A0YK (Adlerauge - Stufe 4), Name (Name (anam))
 {
-Adlerauge - Stufe 4
+Eagle Eye - Level 4
 }
 
 STRING 10759
@@ -64463,7 +64463,7 @@ STRING 10759
 STRING 10760
 // Fähigkeiten: A0YL (Adlerauge - Stufe 5), Name (Name (anam))
 {
-Adlerauge - Stufe 5
+Eagle Eye - Level 5
 }
 
 STRING 10761
@@ -64997,13 +64997,13 @@ Can be used on undeads and demons and slows down their movement and attack speed
 STRING 10849
 // Fähigkeiten: A0YF (Adlerauge - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine Chance, doppelten Schaden anzurichten..|n|n|cffffcc00Stufe 1|r - Eine Chance von <A068,DataA1> %.|n|cffffcc00Stufe 2|r - Eine Chance von <A068,DataA2> %.|n|cffffcc00Stufe 3|r - Eine Chance von <A068,DataA3> %.|n|cffffcc00Stufe 4|r - Eine Chance von <A068,DataA4> %.|n|cffffcc00Stufe 5|r - Eine Chance von <A068,DataA5> %.
+The ranger has the chance to cause double damage.|n|n|cffffcc00Level 1|r - A chance of <A068,DataA1> %.|n|cffffcc00Level 2|r - A chance of <A068,DataA2> %.|n|cffffcc00Level 3|r - A chance of <A068,DataA3> %.|n|cffffcc00Level 4|r - A chance of <A068,DataA4> %.|n|cffffcc00Level 5|r - A chance of <A068,DataA5> %.
 }
 
 STRING 10850
 // Fähigkeiten: A0YG (Adlerauge - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine Chance, doppelten Schaden anzurichten..|n|n|cffffcc00Stufe 1|r - Eine Chance von <A068,DataA1> %.|n|cffffcc00Stufe 2|r - Eine Chance von <A068,DataA2> %.|n|cffffcc00Stufe 3|r - Eine Chance von <A068,DataA3> %.|n|cffffcc00Stufe 4|r - Eine Chance von <A068,DataA4> %.|n|cffffcc00Stufe 5|r - Eine Chance von <A068,DataA5> %.
+The ranger has the chance to cause double damage.|n|n|cffffcc00Level 1|r - A chance of <A068,DataA1> %.|n|cffffcc00Level 2|r - A chance of <A068,DataA2> %.|n|cffffcc00Level 3|r - A chance of <A068,DataA3> %.|n|cffffcc00Level 4|r - A chance of <A068,DataA4> %.|n|cffffcc00Level 5|r - A chance of <A068,DataA5> %.
 }
 
 STRING 10851
@@ -94921,15 +94921,15 @@ Horn des Schutzes
 STRING 15836
 // Gegenstände: I000 (Zur nächsten Tasche wechseln), Ubertip (Tooltipp - Erweitert (utub))
 {
-Wechselt bei Benutzung in die nächste Tasche des Rucksacks.
-Legen Sie einen Gegenstand aus dem Rucksack auf diesem Gegenstand ab, um ihn in die nächste Tasche zu verschieben.|nDer Rucksack hat 30 Taschen.
+Changes to the next bag of the backpack on usage.
+Drop an item from the backpack on this item to move it into the next bag.|nThe backpack has 30 bags.
 }
 
 STRING 15837
 // Gegenstände: I001 (Zur vorherigen Tasche wechseln), Ubertip (Tooltipp - Erweitert (utub))
 {
-Wechselt bei Benutzung in die vorherige Tasche des Rucksacks.
-Legen Sie einen Gegenstand aus dem Rucksack auf diesem Gegenstand ab, um ihn in die vorherige Tasche zu verschieben.|nDer Rucksack hat 30 Taschen.
+Changes to the previous bag of the backpack on usage.
+Drop an item from the backpack on this item to move it into the previous bag.|nThe backpack has 30 bags.
 }
 
 STRING 15838

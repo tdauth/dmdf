@@ -152,7 +152,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
-			call QuestSetTitle(whichQuest, tre("Info: Händler", "Info: Traders"))
+			call QuestSetTitle(whichQuest, tre("Info: Händler", "Info: Merchants"))
 			call QuestSetDescription(whichQuest, tre("Einige der computergesteuerte Personen verkaufen Waren an einem Stand. Andere verkaufen Waren aus ihrer Kiste. An den Ständen und Kisten können eigene Gegenstände für ihren Wert in Goldmünzen verkauft werden. Dazu muss ein Gegenstand mit einem Rechtsklick ausgewählt und mit einem Linksklick auf dem entsprechenden Stand oder der entsprechenden Kiste platziert werden.", "Some Computer controlled persons sell goods at a stall. Others sell goods from their box. At stalls and boxes own items can be selled for their value in gold coins. For this an item must be selected with a right click and be placed with a left click on the corresponding stall or the corresponding box."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNMerchant.blp")
 			call QuestSetCompleted(whichQuest, true)
