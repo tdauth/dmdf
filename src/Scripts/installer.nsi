@@ -8,7 +8,7 @@ Unicode true
 !define VERSION "0.5"
 
 Name "The Power of Fire"
-OutFile "The Power of Fire.exe"
+OutFile "The Power of Fire${VERSION}.exe"
 InstallDir "$PROGRAMFILES\Warcraft III"
 
 #!define MUI_ICON "path\to\icon.ico"
@@ -36,13 +36,8 @@ InstallDir "$PROGRAMFILES\Warcraft III"
 
 Section "Application" Application
 	SetOutPath "$INSTDIR\"
-	#IfFileExists "$INSTDIR\war3x.mpq" sections missingWarcraft
-	#missingWarcraft:
-	#MessageBox MB_OK "Select Warcraft III directory please."
-	#goto installDir
-	#sections:
 	File "${INPUT_EXE}"
-	CreateShortCut "$DESKTOP\The Power of Fire.lnk" "${INPUT_EXE}" ""
+	CreateShortCut "$DESKTOP\The Power of Fire.lnk" "$INSTDIR\${INPUT_EXE_FILENAME}" ""
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
 SectionEnd
 
@@ -50,7 +45,7 @@ LangString DESC_Application ${LANG_ENGLISH} "The application itself."
 LangString DESC_Application ${LANG_GERMAN} "Die Anwendung selbst."
 
 Section "English Maps" EnglishMaps
-  SetOutPath "$INSTDIR\Maps\The Power of Fire"
+  SetOutPath "$INSTDIR\Maps\The Power of Fire\en"
   File "${INPUT_DIR}\en\Talras${VERSION}.w3x"
 SectionEnd
 
@@ -58,7 +53,7 @@ LangString DESC_EnglishMaps ${LANG_ENGLISH} "Maps of the modification (English).
 LangString DESC_EnglishMaps ${LANG_GERMAN} "Karten der Modifikation (Deutsch)."
 
 Section "German Maps" GermanMaps
-  SetOutPath "$INSTDIR\Maps\The Power of Fire"
+  SetOutPath "$INSTDIR\Maps\The Power of Fire\de"
   File "${INPUT_DIR}\de\Talras${VERSION}.w3x"
   File "${INPUT_DIR}\de\Arena${VERSION}.w3x"
 SectionEnd
