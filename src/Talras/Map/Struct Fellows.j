@@ -39,8 +39,8 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 
 			set thistype.m_mathilda = Fellow.create(Npcs.mathilda(), TalkMathilda.talk.evaluate())
 			call thistype.m_mathilda.setRevival(true)
-			call thistype.m_mathilda.setRevivalTitle(tr("Mathilda"))
-			call thistype.m_mathilda.setDescription(tr("Mathilda ist eine Vagabundin. Sie kann singen und musizieren, sonst nichts."))
+			call thistype.m_mathilda.setRevivalTitle(tre("Mathilda", "Mathilda"))
+			call thistype.m_mathilda.setDescription(tre("Mathilda ist eine Vagabundin. Sie kann singen und musizieren, sonst nichts.", "Mathilda is a vagabond. She can sing and make music, nothing else."))
 
 			set thistype.m_wigberht = Fellow.create(Npcs.wigberht(), TalkWigberht.talk.evaluate())
 			call thistype.m_wigberht.setTalk(false)

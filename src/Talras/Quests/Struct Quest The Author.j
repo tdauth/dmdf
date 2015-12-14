@@ -9,7 +9,7 @@ library StructMapQuestsQuestTheAuthor requires Asl
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Der Autor"))
+			local thistype this = thistype.allocate(character, tre("Der Autor", "The Author"))
 			local AQuestItem questItem0
 
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBanditMage.blp")
@@ -17,7 +17,7 @@ library StructMapQuestsQuestTheAuthor requires Asl
 			call this.setReward(AAbstractQuest.rewardExperience, 150)
 			call this.setReward(AAbstractQuest.rewardGold, 120) // costs of 100 + 20 reward
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Besorge Carsten eine Spruchrolle des Weges."))
+			set questItem0 = AQuestItem.create(this, tre("Besorge Carsten eine Spruchrolle des Weges.", "Get Carsten a Scroll of the Way."))
 
 			return this
 		endmethod

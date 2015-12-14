@@ -19369,7 +19369,7 @@ STRING 3239
 }
 
 STRING 3240
-// Zauberverstärker/Effekte: B01A (Knochenbogen), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A1DO (Knochenbogen), Name (Name (anam))
 {
 Knochenbogen
 }
@@ -19387,7 +19387,7 @@ Zombie
 }
 
 STRING 3243
-// Zauberverstärker/Effekte: B01B (Knochenbogen), EditorName (Name (nur Editor) (fnam))
+// Zauberverstärker/Effekte: B01A (Knochenbogen), EditorName (Name (nur Editor) (fnam))
 {
 Knochenbogen
 }
@@ -21747,12 +21747,6 @@ STRING 3639
 // Zauberverstärker/Effekte: B01F (Fackel), Buffubertip (Tooltipp - Erweitert (fube))
 {
 Diese Einheit wurde angezündet; sie nimmt im Lauf der Zeit Schaden.
-}
-
-STRING 3640
-// Einheiten: h02A (Packpferd), Ubertip (Tooltipp - Erweitert (utub))
-{
-Ein Packpferd kann zum Gebäude eines anderen Spielers geschickt werden, um zu handeln. Jeder Handel gibt beiden Spielern Goldmünzen. Die Menge der Goldmünzen steigt, je weiter die Gebäude voneinander entfernt sind.
 }
 
 STRING 3641
@@ -54052,6 +54046,12 @@ STRING 9018
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9019
+// Einheiten: n01I (Nordmann), Tip (Tooltipp - Einfach (utip))
+{
+Nordmann ausbilden
+}
+
 STRING 9020
 // Fähigkeiten: A0OG (Linderung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -54552,6 +54552,12 @@ STRING 9103
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9104
+// Einheiten: n01I (Nordmann), Ubertip (Tooltipp - Erweitert (utub))
+{
+Ein Nordmann ist ein starker Nahkämpfer.
+}
+
 STRING 9105
 // Fähigkeiten: A0OH (Linderung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -54628,6 +54634,12 @@ STRING 9117
 // Fähigkeiten: A0TA (Eisgeschoss - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9118
+// Gegenstände: I02M (Drachenschuppe), Tip (Tooltipp - Einfach (utip))
+{
+Drachenschuppe kaufen
 }
 
 STRING 9119
@@ -54708,6 +54720,12 @@ STRING 9131
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9132
+// Fähigkeiten: A19U (Zauberamulett), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
+}
+
 STRING 9133
 // Fähigkeiten: A0OO (Drohendes Unheil - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -54786,6 +54804,12 @@ STRING 9145
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9146
+// Fähigkeiten: A1DP (Stab der Verzögerung), Name (Name (anam))
+{
+Stab der Verzögerung
+}
+
 STRING 9147
 // Fähigkeiten: A0OP (Drohendes Unheil - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -54862,6 +54886,12 @@ STRING 9159
 // Fähigkeiten: A0TI (Eiszeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9160
+// Fähigkeiten: A19V (Zaubermantel), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
 }
 
 STRING 9161
@@ -56370,6 +56400,12 @@ STRING 9408
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9409
+// Zauberverstärker/Effekte: B01B (Knochenbogen), EditorName (Name (nur Editor) (fnam))
+{
+Knochenbogen
+}
+
 STRING 9410
 // Fähigkeiten: A0PC (Genesung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -56446,6 +56482,12 @@ STRING 9422
 // Fähigkeiten: A0UB (Gleißendes Licht - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9423
+// Einheiten: n06D (Lothars Kiste), Name (Name (unam))
+{
+Lothars Kiste
 }
 
 STRING 9424
@@ -56526,6 +56568,12 @@ STRING 9436
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9437
+// Einheiten: n06D (Lothars Kiste), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Wein und Honig)
+}
+
 STRING 9438
 // Fähigkeiten: A0PJ (Heiliger Wille - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -56604,6 +56652,12 @@ STRING 9450
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9451
+// Gegenstände: I065 (Honigtopf), Ubertip (Tooltipp - Erweitert (utub))
+{
+Heilt bei Benutzung <A1C9,DataA1> Trefferpunkte.
+}
+
 STRING 9452
 // Fähigkeiten: A0PL (Peinigen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -56680,6 +56734,12 @@ STRING 9464
 // Fähigkeiten: A0UE (Gleißendes Licht - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9465
+// Gegenstände: I065 (Honigtopf), Tip (Tooltipp - Einfach (utip))
+{
+Honigtopf kaufen
 }
 
 STRING 9466
@@ -56960,6 +57020,12 @@ STRING 9508
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9509
+// Gegenstände: I065 (Honigtopf), Name (Name (unam))
+{
+Honigtopf
+}
+
 STRING 9510
 // Fähigkeiten: A0PN (Peinigen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -57036,6 +57102,12 @@ STRING 9522
 // Fähigkeiten: A0UL (Blitzschlag - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9523
+// Gegenstände: I066 (Weinkrug), Ubertip (Tooltipp - Erweitert (utub))
+{
+Heilt bei Benutzung <A1CB,DataA1> Mana und <A1C9,DataA1> Trefferpunkte.
 }
 
 STRING 9524
@@ -57116,6 +57188,12 @@ STRING 9536
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9537
+// Gegenstände: I066 (Weinkrug), Tip (Tooltipp - Einfach (utip))
+{
+Weinkrug kaufen
+}
+
 STRING 9538
 // Fähigkeiten: A0PP (Peinigen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -57194,6 +57272,12 @@ STRING 9550
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9551
+// Gegenstände: I066 (Weinkrug), Name (Name (unam))
+{
+Weinkrug
+}
+
 STRING 9552
 // Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -57270,6 +57354,12 @@ STRING 9564
 // Fähigkeiten: A0UO (Blitzschlag - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9565
+// Gegenstände: I066 (Weinkrug), Description (Beschreibung (ides))
+{
+Stellt verlorene Trefferpunkte und Mana wieder her.
 }
 
 STRING 9566
@@ -57990,6 +58080,12 @@ STRING 9685
 // Fähigkeiten: A0VW (Rückkopplung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9686
+// Gegenstände: I05B (Todessense), Name (Name (unam))
+{
+Todessense
 }
 
 STRING 9687
@@ -59149,6 +59245,12 @@ STRING 9879
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9880
+// Fähigkeiten: A19W (Stab der Klarsicht), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
+}
+
 STRING 9881
 // Fähigkeiten: A0QR (Böses hindern - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -59225,6 +59327,12 @@ STRING 9893
 // Fähigkeiten: A0WA (Manaschild - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9894
+// Einheiten: h02A (Packpferd), Ubertip (Tooltipp - Erweitert (utub))
+{
+Ein Packpferd kann zu einem Marktplatz geschickt werden, um zu handeln. Jeder Handel gibt dem Besitzer Goldmünzen. Die Menge der Goldmünzen steigt, je weiter die Gebäude voneinander entfernt sind.
 }
 
 STRING 9895
@@ -59305,6 +59413,12 @@ STRING 9907
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9908
+// Einheiten: n06E (Marktplatz), Name (Name (unam))
+{
+Marktplatz
+}
+
 STRING 9909
 // Fähigkeiten: A0SJ (Meister der Nekromantie - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -59381,6 +59495,12 @@ STRING 9921
 // Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9922
+// Fähigkeiten: A1DR (Abbauen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Packpferd)
 }
 
 STRING 9923
@@ -72944,7 +73064,7 @@ Mächtiger Zauberhut
 }
 
 STRING 12189
-// Gegenstände: I05B (Todessense), Name (Name (unam))
+// Fähigkeiten: A17K (Todessense), Name (Name (anam))
 {
 Todessense
 }
@@ -79543,13 +79663,13 @@ STRING 13287
 }
 
 STRING 13288
-// Fähigkeiten: A17K (Todessense), Name (Name (anam))
+// Fähigkeiten: A17L (Todessense), Name (Name (anam))
 {
 Todessense
 }
 
 STRING 13289
-// Fähigkeiten: A17L (Todessense), Name (Name (anam))
+// Fähigkeiten: A1DQ (Todessense), Name (Name (anam))
 {
 Todessense
 }
@@ -81067,7 +81187,7 @@ Buch der Magie
 }
 
 STRING 13542
-// Fähigkeiten: A19U (Zauberamulett), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1AF (Standarte der schwarzen Legion), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -81223,7 +81343,7 @@ Buch der Tränke
 }
 
 STRING 13568
-// Fähigkeiten: A19V (Zaubermantel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1AG (Standarte der weißen Legion), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -81283,7 +81403,7 @@ Die Zauber des Gebäudes.
 }
 
 STRING 13578
-// Fähigkeiten: A19W (Stab der Klarsicht), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B6 (Horn des Kampfes), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91189,13 +91309,13 @@ Große Doppelaxt
 }
 
 STRING 15229
-// Fähigkeiten: A1AF (Standarte der schwarzen Legion), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B7 (Horn des Lebens), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
 
 STRING 15230
-// Fähigkeiten: A1AG (Standarte der weißen Legion), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B8 (Horn des Schutzes), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91207,7 +91327,7 @@ Zauberamulett
 }
 
 STRING 15232
-// Fähigkeiten: A1B6 (Horn des Kampfes), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1B9 (Blutamulett), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91219,7 +91339,7 @@ Zaubermantel
 }
 
 STRING 15234
-// Fähigkeiten: A1B7 (Horn des Lebens), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1BA (Zacken von Deranors Krone), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91231,7 +91351,7 @@ Stab der Klarsicht
 }
 
 STRING 15236
-// Fähigkeiten: A1B8 (Horn des Schutzes), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1BB (Buch der Schmiedekunst), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91441,7 +91561,7 @@ Horn des Kampfes
 }
 
 STRING 15271
-// Fähigkeiten: A1B9 (Blutamulett), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0RU (Nordischer Kriegshammer), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91453,7 +91573,7 @@ Horn des Lebens
 }
 
 STRING 15273
-// Fähigkeiten: A1BA (Zacken von Deranors Krone), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DC (Mantel), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91465,7 +91585,7 @@ Horn des Schutzes
 }
 
 STRING 15275
-// Fähigkeiten: A1BB (Buch der Schmiedekunst), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DE (Kapuze), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -92485,7 +92605,7 @@ Verleiht insgesamt <A1B5,DataA1> Punkte zu Beweglichkeit, Intelligenz und Stärk
 }
 
 STRING 15446
-// Fähigkeiten: A0RU (Nordischer Kriegshammer), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DO (Knochenbogen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -92497,7 +92617,7 @@ Zacken von Deranors Krone
 }
 
 STRING 15448
-// Fähigkeiten: A1DC (Mantel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DP (Stab der Verzögerung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -92617,7 +92737,7 @@ Buch der Schmiedekunst
 }
 
 STRING 15468
-// Fähigkeiten: A1DE (Kapuze), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DQ (Todessense), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }

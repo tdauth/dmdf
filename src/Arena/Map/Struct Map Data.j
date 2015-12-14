@@ -17,6 +17,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 30
 		public static constant integer workerUnitTypeId = 'h00E'
+		public static sound cowSound = null
 		public static constant integer maxScore = 50
 		private static trigger m_safeEnterTrigger
 		private static trigger m_safeLeaveTrigger

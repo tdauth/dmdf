@@ -233,17 +233,17 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted3)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted3)
 
-			set questItem = AQuestItem.create(this, tr("Begebt euch zur „Todesgruft“."))
+			set questItem = AQuestItem.create(this, tre("Begebt euch zur „Todesgruft“.", "Move to the \"Death Crypt\"."))
 			call questItem.setPing(true)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_slaughter_death_vault)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 
-			set questItem = AQuestItem.create(this, tr("Tötet die Medusa."))
+			set questItem = AQuestItem.create(this, tre("Tötet die Medusa.", "Kill the Medusa."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted5)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted5)
 
-			set questItem = AQuestItem.create(this, tr("Tötet den Diakon der Finsternis."))
+			set questItem = AQuestItem.create(this, tre("Tötet den Diakon der Finsternis.", "Kill the Deacon of Darkness."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted6)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted6)

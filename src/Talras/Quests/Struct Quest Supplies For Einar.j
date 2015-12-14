@@ -39,7 +39,7 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Nachschub für Einar"))
+			local thistype this = thistype.allocate(character, tre("Nachschub für Einar", "Supplies for Einar"))
 			local AQuestItem questItem
 			set this.m_counter = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNLongsword.blp")
@@ -49,10 +49,10 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 			call this.setStateAction(thistype.stateActionCompleted, thistype.stateActionCompleted)
 			
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Schmiede fünf Kurzschwerter für Einar."))
+			set questItem = AQuestItem.create(this, tre("Schmiede fünf Kurzschwerter für Einar.", "Forge five short swords for Einar."))
 			
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Bringe Einar die geschmiedeten Kurzschwerter."))
+			set questItem = AQuestItem.create(this, tre("Bringe Einar die geschmiedeten Kurzschwerter.", "Bring Einar the forged short swords."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.einar())
 			call questItem.setPingColour(100.0, 100.0, 100.0)

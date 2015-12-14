@@ -25,6 +25,7 @@ call Credits.addContributor.evaluate("comedyfan", tre("Drachentöterin", "Dragon
 call Credits.addContributor.evaluate("Jens", tr("Kuno"))
 call Credits.addContributor.evaluate("Stephanie Preis", tr("Tanka"))
 call Credits.addContributor.evaluate("Carsten Thomas", tr("Carsten"))
+call Credits.addContributor.evaluate("jonasclick", tr("Lothar"))
 
 // tools and systems
 call Credits.addTitle.evaluate(tre("Werkzeuge und Systeme", "Tools and Systems"))

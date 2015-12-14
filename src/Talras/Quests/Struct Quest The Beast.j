@@ -12,11 +12,11 @@ library StructMapQuestsQuestTheBeast requires Asl
 
 		public method findTracks takes nothing returns boolean
 			set this.m_foundTracks = true
-			call this.displayUpdateMessage(tr("Hinweis erhalten: Auf dem Boden befinden sich Blutspuren. Das könnte Tanka interessieren!"))
+			call this.displayUpdateMessage(tre("Hinweis erhalten: Auf dem Boden befinden sich Blutspuren. Das könnte Tanka interessieren!", "Received clue: On the ground there are traces of blood. That might interest Tanka!"))
 			if (this.talkedToKuno()) then
 				return true
 			else
-				call this.displayUpdateMessage(tr("Finde noch mehr Hinweise!"))
+				call this.displayUpdateMessage(tre("Finde noch mehr Hinweise!", "Find even more clues!"))
 			endif
 			
 			return false
@@ -28,11 +28,11 @@ library StructMapQuestsQuestTheBeast requires Asl
 
 		public method talkToKuno takes nothing returns nothing
 			set this.m_talkedToKuno = true
-			call this.displayUpdateMessage(tr("Hinweis erhalten."))
+			call this.displayUpdateMessage(tre("Hinweis erhalten.", "Received clue."))
 			if (this.foundTracks()) then
 				call this.questItem(0).complete()
 			else
-				call this.displayUpdateMessage(tr("Finde noch mehr Hinweise!"))
+				call this.displayUpdateMessage(tre("Finde noch mehr Hinweise!", "Find even more clues!"))
 			endif
 		endmethod
 
@@ -57,7 +57,7 @@ library StructMapQuestsQuestTheBeast requires Asl
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Die Bestie"))
+			local thistype this = thistype.allocate(character, tre("Die Bestie", "The Beast"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			set this.m_foundTracks = false
@@ -67,13 +67,13 @@ library StructMapQuestsQuestTheBeast requires Asl
 			call this.setReward(thistype.rewardExperience, 300)
 			call this.setReward(thistype.rewardGold, 30)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Suche nach Hinweisen bezüglich des Ungeheuers."))
+			set questItem0 = AQuestItem.create(this, tre("Suche nach Hinweisen bezüglich des Ungeheuers.", "Search for clues regarding the monster."))
 			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
 			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 
 			// item 1
-			set questItem1 = AQuestItem.create(this, tr("Berichte Tanka von den gefundenen Hinweisen."))
+			set questItem1 = AQuestItem.create(this, tre("Berichte Tanka von den gefundenen Hinweisen.", "Report Tanka about the found clues."))
 
 			return this
 		endmethod

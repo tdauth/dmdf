@@ -89,11 +89,7 @@
 * AOS: Spieler benachrichtigen (auf ganzer Karte) wenn ein AOS-Gebäude oder Ähnliches angegriffen wird.
 * AOS: Der Sieg einer Partei sollte nicht die gesamte Story verändern jedoch Einfluss auf den Auftrag "Geisterstunde" nehmen.
 * Bei letzter Schlacht sollten Gegner Items droppen, auch Runen etc. und vor allem der Orkanführer für jeden Charakter ein Artefakt.
-
-
 * Video Wigberht: Actors pausieren bis explizit bewegt werden. Bei Schlacht explizit gegeneinander kämpfen, sonst Chaos!
-
-
 * Quest Deranor: Man kann Osman danach auch berichten, was hinter dem Kult eigentlich steckt.
 * Dialog mit Drachenöterin über Deranor verbessern.
 * Bei allen Tötungsquests den Spieler Neutral Aggressiv entfernen. Einheiten könnten übernommen worden sein!
@@ -103,15 +99,31 @@
 * Wiederbelebungsbug erneut. Nach Video "Das erste Gefecht" wurde während des Spiels Charakter 0 getötet und kein Wiederbelebungstimer gestartet. Es erschien auch kein Timerdialog.
 * Bei allen Videosequenzen sollte nach der Ausblendung des Schwarzfilters bereits die Kamera in Bewegung sein. Sonst wirkt es nicht flüssig.
 * Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
-
 * Button zum Durchschalten der Dungeons (Schreinbutton?).
-
 * Video Wigberht: Frost statt Feuerwelle
 * Video Wigberht: Weniger Kameras um die Orks zu sehen, weniger Kameras um die terraindeformation und den Tot der Orks zu sehen.
 * Rückkopplung beim Zauberer zieht kein Mana ab. Gameplaykonstanten?!
 * Großen Felsvorsprung über Bärenhöhle entfernen.
 * 2 Items werden für Spieler 1 gedroppt und dann erst wieder 1 Item für Spieler 2.
-
+* Nordmänner kämpfen in Video gegen Drachentöterin. Was wenn Gefährten dabei sind?!
+* Video: Grundsätzlich alle Einheiten von Gefolgsleuten hiden, außer die, von welchen actor erzeugt werden.
+* Ricman gehört nach letzter Schlacht auf einmal der weißen Legion?!
+* Letzte Schlacht auch Dunkelelfen spawnen mit mehr Fähigkeiten, macht die Schlacht interessanter.
+* Alphafähigkeit wird in Verwandlung nicht angezeigt.
+* Veraltete Zauber der Klassen komplett aus dem Projekt entfernen. Siehe struct ClassSelection.
+* Ansprechen durch anderen Spieler funktioniert immer noch für menschliche Charaktere! Problem: Trigger player ist immer der Besitzer der Einheit, nicht der der den Befehl gibt.
+* Tobias erzählt von einer Kartoffel. Kartoffeln waren im Mittelalter unbekannt. Der Charakter sollte fragen, was eine Kartoffel ist und Tobias erzählt von Übersee.
+* Sichtfeldblocker in Trommelhöhle besser platzieren.
+* Weniger Erfahrung für Nebenquests und Hauptquests, vor allem am Anfang. Erfahrung auch durch Spielerzahl teilen?!
+* Wenn Seitengegenstand anderem Charakter gegeben wird, wird er nicht richtig zurück gesetzt. Pickup sollte Seitengegenstand einfach entfernen.
+* Belichtungsfehler herausfinden und fixen. Die Schatten sind viel zu dunkel?! Der Belichtungsfehler stammt vom falschen Skymodell. Das Wetter ändert manchmal das Skymodell? Dann funktioniert die Belichtung wieder. Am besten in jedem Video das Skymodell festsetzen und danach mit AWeather wieder zurücksetzen. Falsch AWeather hat changeSky() auf false. Liegt an Uhrzeit?
+* Initialskymodell für Karte Talras setzen.
+* Ricman und Wigberht einfach nach letzter Schlacht automatisch ins Lager bewegen. Ansonsten verwirrend.
+* Bei letzter Schlacht sollen sich zur Sicherheit Einheiten nicht töten können? Damage event verwenden und Leben wieder auffüllen so wie beim ersten Dago-Video.
+* Wigberht "Erzähl mir was über deine Heimat" "Nun komm schon" erzählt einfach direkt etwas.
+* Weniger Erfahrung für die leppische Hauptquests. Man steigt viel zu schnell auf.
+* Dämpfung sollte nicht nur Magieschaden reduzieren. Der Effekt bringt sonst zu wenig, da wenige Einheiten Magieschaden verursachen. Vielleicht auch allgemein vor Schaden schützen von Einheiten, die Mana besitzen.
+* Zauberbuch und Rucksack öffnen in Zauberfähigkeiten verschieben. Zauberfähigkeiten umbenennen. Dadurch hätte man bis zu 6 Favoriten!
 
 * FIXED: "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein. Liegt evenutell aber nur eventuell daran, dass Computerspieler die Kontrolle hat und den Zauber jedes Mal rückgängig macht? Lag an Computerspieler.
 * FIXED: Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
@@ -196,53 +208,34 @@
 * FIXED: Da Nebenquests für einzelne Spieler funktionieren, Titel nicht mehr mit Spielerfarbe versehen.
 * DEPRECATED: Bärengestalt, Schadensfähigkeit ist Stufe 1 (soll auch so sein, gehört zur Bärengestalt nicht zur Tierkunde).
 * DONE: Tipp einbauen wenn man zu Dago oder Haid läuft, dass NPCs angesprochen werden können.
-* Nordmänner kämpfen in Video gegen Drachentöterin. Was wenn Gefährten dabei sind?!
-* Video: Grundsätzlich alle Einheiten von Gefolgsleuten hiden, außer die, von welchen actor erzeugt werden.
 * FIXED: Video: Werden actor von Gefolgsleuten erzeugt oder auch Charakteren, dann vorher zwangswiederbeleben, sonst fehlen sie wie Ricman bei letzter Schlacht.
-* Ricman gehört nach letzter Schlacht auf einmal der weißen Legion?!
 * DEPRECATED: Letzte Schlacht: Wellen sollen Spieler baldar gehören und die Bündnisse korrekt setzen. Dann laufen sie nicht zurück.
-* Letzte Schlacht auch Dunkelelfen spawnen mit mehr Fähigkeiten, macht die Schlacht interessanter.
 * DONE: Orkanführer mehr Leben, stärker.
 * FIXED: Waldläufer spawnen sogar drei mal.
 * DONE: Böses bannen stärker, geringere Abklingzeit.
 * FIXED: Spruchrolle des Totenreichs nur Schreine pingen, die bereits erkundet sind.
-* Alphafähigkeit wird in Verwandlung nicht angezeigt.
 * FIXED: Klassenauswahl: desync ShowUnitForPlayer. Stattdessen Ghost-Fähigkeit geben und gemeinsame Sicht entfernen.
 * DONE: Holzbruck ins Repo aufnehmen.
 * FIXED: Wenn Baumhirte beschworen wird, soll er direkt ausgewurzelt werden.
 * DONE: Toranimationen auf offen einstellen.
 * FIXED: Video The Castle: Bewegungsgeschwindigkeit des Charakters verlangsamen, damit er nicht vor dem Tor stehen bleibt.
-* Veraltete Zauber der Klassen komplett aus dem Projekt entfernen. Siehe struct ClassSelection.
 * FIXED: Selbstlosigkeit funktioniert im Zauberbuch nicht. Klick auf Fähigkeit bewirkt nichts.
 * DONE: Klassenauswahl: Vertex Coloring lokal ändern, damit Einheit unsichtbar ist.
 * FIXED: Text "Sie befinden sich in einer Wiederholung" entfernen.
-* Ansprechen durch anderen Spieler funktioniert immer noch für menschliche Charaktere! Problem: Trigger player ist immer der Besitzer der Einheit, nicht der der den Befehl gibt.
 * FIXED: Das innere Tor ist offen, das äußere jedoch nicht.
-* Tobias erzählt von einer Kartoffel. Kartoffeln waren im Mittelalter unbekannt. Der Charakter sollte fragen, was eine Kartoffel ist und Tobias erzählt von Übersee.
 * FIXED: Guntrichs Ziel bei der Mühle selbst zu erkunden wird nicht erfüllt.
 * FIXED: Nach Verwandlung in Dämon und Wiederbelebung ist Verwandlungsfähigkeit noch am Charakter.
-* Sichtfeldblocker in Trommelhöhle besser platzieren.
-* Weniger Erfahrung für Nebenquests und Hauptquests, vor allem am Anfang. Erfahrung auch durch Spielerzahl teilen?!
 * FIXED: Nekromant: Verzehren und Totenbeschwörung haben dieselbe Zauberbuch-ID.
 * FIXED: Erwachen des Waldes ist viel zu stark.
 * FIXED: Beschworene dunkle Diener haben Nekromantie obwohl nicht geskillt.
-* Wenn Seitengegenstand anderem Charakter gegeben wird, wird er nicht richtig zurück gesetzt. Pickup sollte Seitengegenstand einfach entfernen.
-* Belichtungsfehler herausfinden und fixen. Die Schatten sind viel zu dunkel?! Der Belichtungsfehler stammt vom falschen Skymodell. Das Wetter ändert manchmal das Skymodell? Dann funktioniert die Belichtung wieder. Am besten in jedem Video das Skymodell festsetzen und danach mit AWeather wieder zurücksetzen. Falsch AWeather hat changeSky() auf false. Liegt an Uhrzeit?
 * FIXED: The Castle: Skymodell.
 * FIXED: Intro: Skymodell.
 * DEPRECATED: Verhindern, dass falsches Skymodell gesetzt wird.
-* Initialskymodell für Karte Talras setzen.
 * FIXED: Bekehrung zeitbeschränkt machen. Sonst kann man sich eine Armee aufbauen!
 * DEPRECATED: Blitzschlag bekommt keine Verstärkung durch Wut der Elemente.
-* Ricman und Wigberht einfach nach letzter Schlacht automatisch ins Lager bewegen. Ansonsten verwirrend.
 * FIXED: config injection mit neuen Spielern!
-* Bei letzter Schlacht sollen sich zur Sicherheit Einheiten nicht töten können? Damage event verwenden und Leben wieder auffüllen so wie beim ersten Dago-Video.
-* Wigberht "Erzähl mir was über deine Heimat" "Nun komm schon" erzählt einfach direkt etwas.
-* Weniger Erfahrung für die leppische Hauptquests. Man steigt viel zu schnell auf.
-* Dämpfung sollte nicht nur Magieschaden reduzieren. Der Effekt bringt sonst zu wenig, da wenige Einheiten Magieschaden verursachen. Vielleicht auch allgemein vor Schaden schützen von Einheiten, die Mana besitzen.
 * FIXED: Vervielfachung: Sollten immer mehr prozentualen Schaden verursachen, pro Stufe.
 * DONE: Manaexplosion stärker machen.
-* Zauberbuch und Rucksack öffnen in Zauberfähigkeiten verschieben. Zauberfähigkeiten umbenennen. Dadurch hätte man bis zu 6 Favoriten!
 * FIXED: The Frozen Throne-Logo links oben im Hauptmenü durch "Die Macht des Feuers"-Schriftzug ersetzen. Pfad: ReplaceableTextures\WorldEditUI\WarcraftIIIFTLogo.blp
 * FIXED: Zunächst neutrale Gebäude von Minikarte ausblenden, in release-Map Sympol-MMP-Datei entfernen bzw. nur die Datei für das Hauptmenü! war3mapPreview.tga sollte einfach eingefügt werden. Ersetzt nur das Preview im Hauptmenü! Das sollte die Version der Minikarte sein!
 * Entzünden von Elementarmagier funktioniert nicht per Buff. Kann mehrmals gemacht werden und macht einen Verbündeten unendliche stark!
@@ -363,7 +356,7 @@
 * Waldläufer wird durch Sprinten eventuell sehr langsam. Hängt mit Lauern zusammen??
 * FIXED: Imps können nicht bei Wieland abgegeben werden.
 * Auftrag "Krieg": Videos schreiben und einbauen.
-* Computer-Kontrolle vom Spieler MapData.alliedPlayer deaktivieren. Knechte laufen zurück usw. usw.
+* FIXED: Computer-Kontrolle vom Spieler MapData.alliedPlayer deaktivieren. Knechte laufen zurück usw. usw.
 * Extramarkierung für die Fallenplatzierung am Außenposten einbauen. Es muss deutlich werden wo die Fallen hinkommen.
 * Auftrag "Krieg" aufteilen, ist viel zu unübersichtlich: Waffen von Wieland, Holz von Kuno, Nahrung von Manfred, Fallen von Björn, Rekruten vom Bauernhof.
 * FIXED: Video-Fade kürzer machen: Siehe Bonus-Kampagne.
@@ -379,7 +372,7 @@
 * Rebhuhnjagd: Icons für die drei Jagdfähigkeiten.
 * Jagdfalke: Braucht mehr Fähigkeiten. Muss auch in anderen Kämpfen von Nutzen sein.
 * Jagdhunde: Brauchen mehr Fähigkeiten. Müssen auch in anderen Kämpfen von Nutzen sein.
-* Zauberring-Icon: disabled icon fehlt.
+* FIXED: Zauberring-Icon: disabled icon fehlt.
 * FIXED: Ring der Weisheit: Hat keinen ItemType.
 * Nordmänner schwächer machen.
 * Ricman und Wigberht schwächer machen, siehe Orks und Dunkelelfen.
@@ -497,9 +490,9 @@
 * Auftrag "Die Verteidigung von Talras": Video sollte mögliche Angriffspunkte und Verteidigung erklären.
 * Orks kopieren und stärker machen als bei Auftrag "Die Nordmänner".
 * DONE: Orks bei Auftrag "Die Nordmänner" wesentlich schwächer machen.
-* Tor sollte geöffnet und geschlossen werden können.
-* Arbeiter sollten Barrikade errichten können.
-* Arbeiter sollten Katapulte und Ballistas bauen können.
+* DEPRECATED: Tor sollte geöffnet und geschlossen werden können. Besitzen Transportraum.
+* DONE: Arbeiter sollten Barrikade errichten können.
+* DONE: Arbeiter sollten Katapulte und Ballistas bauen können.
 * DONE: Schrein im Außenposten einbauen der während des Quests aktiviert werden kann. Den Schrein außerhalb deaktivieren.
 * Video "Prepare For The Defense": Herzog muss überrascht wirken und Markward begeistern, dass alle Aufträge erfüllt wurden. Große Belohnung.
 * Knechte sollen Tunnel graben können. So kann man sich Versorgung in den Außenposten holen.
@@ -513,26 +506,26 @@
 * FIXED: Fulco und Tellborn sollten einen gemeinsamen Marktstand haben. Ist sonst schwer zu finden und zu merken.
 * FIXED: Tanka und Haid brauchen einen Marktstand.
 * DEPRECATED: Drachentöter Zauber: Beute. Erhält einen zufälligen Gegenstand aus einem Laden in der Karte.
-* Kisten allmählich durch Marktstände ersetzen. Man findet sie ansonsten nicht.
+* Kisten allmählich durch Marktstände ersetzen. Man findet sie ansonsten nicht. Oder alternativ durch schwebende Gegenstände anzeigen lassen.
 * FIXED: Nekromant: Dämon war zu stark.
 * FIXED: Feedback wenn Gegenstand in Rucksack kommt.
 * FIXED: Medusa und Diakon in eine Spawngruppe, ansonsten kaum schaffbar. Vielleicht aber auch witzige Herausforderung.
 * FIXED: Drachentöterin läuft in Video in dem sie den Diakon umbringt einfach weg.
 * Desync bei erster Waldläuferverstärkung.
 * FIXED: Effekt von Spellicon im Zauberbuch entfernen (Zurück zum Zauberbuch)
-* Zurück zum Zauberbuch links unten platzieren.
+* FIXED: Zurück zum Zauberbuch links unten platzieren.
 * Crash bei Mitwirkenden.
-* Shops: Pfeile über Shops anzeigen und nicht über Chrakter, bringt mehr.
-* Dialoge wie in Gaias starten über Button.
+* DONE: Shops: Pfeile über Shops anzeigen und nicht über Chrakter, bringt mehr.
+* DONE: Dialoge wie in Gaias starten über Button.
 * FIXED: Ausrufezeichen entfernen.
 * Rohstoffe, in Tooltip schreiben, dass sie zur Verwendung hergestellt werden können.
 * FIXED: Multiboard standardmäßig aktivieren.
 * FIXED: Multiboard Spielernummer raus, einheitliche Größe, Goldanzeige fixen, Klasse durch Icon zeigen, Level und XP kleiner oder raus.
 * FIXED: Drachentöterin in Video bei Deranors Gruft PAUSIEREN.
 * FIXED: Drachentöterin in Videos Das erste Gefecht und Wigberht platzieren, falls geshared!!!
-* Wackeln bei Deranors Zauber wird nicht zurückgesetzt. Aber nach Video mit ResetGameCamera().
+* DEPRECTED (entfernt): Wackeln bei Deranors Zauber wird nicht zurückgesetzt. Aber nach Video mit ResetGameCamera().
 * Höhen der Brücken wie beim Sichtfeldblocker verändern, eventuell erhöht das die Kameransicht?
-* Deranors Dungeon Kameragrenzen zu eng (rechts).
+* FIXED: Deranors Dungeon Kameragrenzen zu eng (rechts).
 * Blocker bei Eingang zur Gruft.
 * FIXED: Quest Area für Rettet Dago.
 * FIXED: Quest Area für The Castle.
@@ -560,7 +553,7 @@
 * FIXED: Hörner: Icon verbergen.
 * FIXED: Blutamulett: Icon verbergen.
 * FIXED: Zacken von Deranors Krone: Icon verbergen.
-* Göttergunst: Autocast-Icon disabled-Version fehlt.
+* FIXED: Göttergunst: Autocast-Icon disabled-Version fehlt.
 * FIXED: Standarte der schwarzen Legion: Icon ist noch sichtbar.
 * FIXED: Für Bestehlen die Stufen der NPCs höher als 0 setzen.
 * FIXED: Bestehlen sollte bei Stufe 0 nicht möglich sein.
@@ -589,11 +582,11 @@
 * FIXED: Brandpfeile, passives Icon für Zauber verwenden.
 * Sprinten zur Sicherheit auf Standardfähigkeit basieren lassen und auch Angriffsgeschwindikeit erhöhen.
 * Ricman: Schildblock entfernen oder ersetzen, trägt keinen Schild.
-* Nordmänner: Hero Glow entfernen.
+* Nordmänner: Hero Glow entfernen. Unterscheidbar zu Ricman machen.
 * DONE: Fellows: Abilities manuell in Liste übergeben, damit sie nur bei einem Share verwendet werden können. Ansonsten können sie durch Gemeinsamer Laden auch verwendet werden, wenn der NPC nicht geshart wurde.
 * Der Waldläufer tötet sich durch irgendeine Fähigkeit selbst. Brandpfeile? Mehrfachschuss? Lauern? Sprinten?
 * FIXED: Rechte Hälfte des Ladebildschirms beim Laden im Singleplayer wurde nicht ersetzt.
-* Gewandheit: Benötigt passives Icon.
+* FIXED: Gewandheit: Benötigt passives Icon.
 * Zukünftiger Release-Vorgang: Optimizer jedoch nur mit Skriptoptimierungen damit war3map.wts unverändert bleibt. Karte kopieren und englische wts-Datei einfügen.
 * FIXED: Wie bei Originaltransmissions weißen Indicator bei der sprechenden Einheit anzeigen!
 * Elementarmagier statt gleißendem Licht/Erdgefängnis, zu viele Stunzauber, Steingolem beschwören?
@@ -688,7 +681,7 @@ TODO:
 - Hauptmenü-Einträge um Leaderboards zu verbergen
 - FIXED: FDF-Dateien aus custom exe entfernen. Ansonsten ist die Mod immer Deutsch.
 - DEPRECATED: Taverne entfernen
-- Weniger Regen
+- FIXED: Weniger Regen
 
 - DONE: Transparenz der Bäume.:
         - http://www.hiveworkshop.com/forums/world-editor-help-zone-98/opacity-trees-266330/

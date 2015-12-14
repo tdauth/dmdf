@@ -3,7 +3,7 @@
 Unicode true
 
 !define INPUT_DIR "E:\Projekte\dmdf\maps\releases"
-!define INPUT_EXE_FILENAME "Die Macht des Feuers.exe"
+!define INPUT_EXE_FILENAME "The Power of Fire.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
 !define VERSION "0.4"
 
@@ -12,9 +12,13 @@ OutFile "The Power of Fire.exe"
 InstallDir "$PROGRAMFILES\Warcraft III"
 
 #!define MUI_ICON "path\to\icon.ico"
-!define MUI_HEADERIMAGE
-!define MUI_HEADERIMAGE_BITMAP "cropped-dmdf.bmp"
-!define MUI_HEADERIMAGE_RIGHT
+#!define MUI_WELCOMEFINISHPAGE_BITMAP "cropped-dmdf.bmp"
+#!define MUI_HEADERIMAGE
+#!define MUI_HEADERIMAGE_BITMAP "cropped-dmdf.bmp"
+
+!define MUI_ABORTWARNING
+
+!define MUI_DIRECTORYPAGE_TEXT_DESTINATION "Warcraft III directory"
 
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_COMPONENTS
@@ -43,6 +47,7 @@ Section "Application" Application
 SectionEnd
 
 LangString DESC_Application ${LANG_ENGLISH} "The application itself."
+LangString DESC_Application ${LANG_GERMAN} "Die Anwendung selbst."
 
 Section "English Maps" EnglishMaps
   SetOutPath "$INSTDIR\Maps\The Power of Fire"
@@ -50,6 +55,7 @@ Section "English Maps" EnglishMaps
 SectionEnd
 
 LangString DESC_EnglishMaps ${LANG_ENGLISH} "Maps of the modification (English)."
+LangString DESC_EnglishMaps ${LANG_GERMAN} "Karten der Modifikation (Deutsch)."
 
 Section "German Maps" GermanMaps
   SetOutPath "$INSTDIR\Maps\The Power of Fire"
@@ -58,6 +64,7 @@ Section "German Maps" GermanMaps
 SectionEnd
 
 LangString DESC_GermanMaps ${LANG_ENGLISH} "Maps of the modification (German)."
+LangString DESC_GermanMaps ${LANG_GERMAN} "Karten der Modifikation (Deutsch)."
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
   !insertmacro MUI_DESCRIPTION_TEXT ${EnglishMaps} $(DESC_EnglishMaps)

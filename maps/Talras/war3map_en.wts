@@ -3344,7 +3344,7 @@ ASystemGUI - shortcut i
 }
 
 STRING 558
-// Fähigkeiten: A00M (ASystemGUI - shortcut i), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A055 (Böses hindern), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 I
 }
@@ -3356,7 +3356,7 @@ Das Tastenkürzel I.
 }
 
 STRING 560
-// Fähigkeiten: A00M (ASystemGUI - shortcut i), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00M (ASystemGUI - shortcut i), Tip (Tooltipp - Normal (atp1))
 {
 I
 }
@@ -3368,7 +3368,7 @@ ASystemGUI - shortcut j
 }
 
 STRING 562
-// Fähigkeiten: A00N (ASystemGUI - shortcut j), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0H4 (Segen), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 J
 }
@@ -3380,7 +3380,7 @@ Das Tastenkürzel J.
 }
 
 STRING 564
-// Fähigkeiten: A00N (ASystemGUI - shortcut j), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00N (ASystemGUI - shortcut j), Tip (Tooltipp - Normal (atp1))
 {
 J
 }
@@ -3410,7 +3410,7 @@ ASystemGUI - shortcut l
 }
 
 STRING 569
-// Fähigkeiten: A00P (ASystemGUI - shortcut l), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A08D (Heiliger Wille), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 L
 }
@@ -3422,7 +3422,7 @@ Das Tastenkürzel L.
 }
 
 STRING 571
-// Fähigkeiten: A00P (ASystemGUI - shortcut l), Hotkey (Tastaturkürzel - Normal (ahky))
+// Fähigkeiten: A00P (ASystemGUI - shortcut l), Tip (Tooltipp - Normal (atp1))
 {
 L
 }
@@ -27394,31 +27394,31 @@ Schattenefreet anheuern
 STRING 4580
 // Fähigkeiten: A0EX (Weltenportal), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|nEin Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA1> seconds a demon is summoned which lives for <A0EX,DataC1> seconds. The portal holds for <A0EX,Dur1> seconds.|nA demon has <n045,HP> hitpoints and <n045,manaN> mana. He causes <n045,dmgplus1> damage.
 }
 
 STRING 4581
 // Fähigkeiten: A0EX (Weltenportal), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA2> Sekunden wird ein Dämon beschworen, der <A0EX,DataC2> Sekunden lange lebt. Das Portal hält <A0EX,Dur2> Sekunden.|nEin Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA2> seconds a demon is summoned which lives for <A0EX,DataC2> seconds. The portal holds for <A0EX,Dur1> seconds.|nA demon has <n046,HP> hitpoints and <n046,manaN> mana. He causes <n046,dmgplus1> damage.
 }
 
 STRING 4582
 // Fähigkeiten: A0EX (Weltenportal), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA3> Sekunden wird ein Dämon beschworen, der <A0EX,DataC3> Sekunden lange lebt. Das Portal hält <A0EX,Dur3> Sekunden.|nEin Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA3> seconds a demon is summoned which lives for <A0EX,DataC3> seconds. The portal holds for <A0EX,Dur1> seconds.|nA demon has <n047,HP> hitpoints and <n047,manaN> mana. He causes <n047,dmgplus1> damage.
 }
 
 STRING 4583
 // Fähigkeiten: A0EX (Weltenportal), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA4> Sekunden wird ein Dämon beschworen, der <A0EX,DataC4> Sekunden lange lebt. Das Portal hält <A0EX,Dur4> Sekunden.|nEin Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA4> seconds a demon is summoned which lives for <A0EX,DataC4> seconds. The portal holds for <A0EX,Dur1> seconds.|nA demon has <n048,HP> hitpoints and <n048,manaN> mana. He causes <n048,dmgplus1> damage.
 }
 
 STRING 4584
 // Fähigkeiten: A0EX (Weltenportal), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA5> Sekunden wird ein Dämon beschworen, der <A0EX,DataC5> Sekunden lange lebt. Das Portal hält <A0EX,Dur5> Sekunden.|nEin Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA5> seconds a demon is summoned which lives for <A0EX,DataC5> seconds. The portal holds for <A0EX,Dur1> seconds.|nA demon has <n049,HP> hitpoints and <n049,manaN> mana. He causes <n049,dmgplus1> damage.
 }
 
 STRING 4585
@@ -54054,9 +54054,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9019
-// Fähigkeiten: A0NI (Märtyrer - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Einheiten: n01I (Nordmann), Tip (Tooltipp - Einfach (utip))
 {
-Martyr [|cffffcc00Level 5|r]
+Train Norseman
 }
 
 STRING 9020
@@ -54560,9 +54560,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9104
-// Fähigkeiten: A0NR (Blenden - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Einheiten: n01I (Nordmann), Ubertip (Tooltipp - Erweitert (utub))
 {
-Blind [|cffffcc00Level 1|r]
+A Norseman is a strong melee fighter.
 }
 
 STRING 9105
@@ -54812,9 +54812,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9146
-// Fähigkeiten: A0NU (Blenden - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DP (Stab der Verzögerung), Name (Name (anam))
 {
-Blind [|cffffcc00Level 4|r]
+Stab der Verzögerung
 }
 
 STRING 9147
@@ -56744,9 +56744,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 9465
-// Fähigkeiten: A0OR (Drohendes Unheil - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Gegenstände: I065 (Honigtopf), Tip (Tooltipp - Einfach (utip))
 {
-Impeding Disaster [|cffffcc00Level 5|r]
+Buy Honey Pot
 }
 
 STRING 9466
@@ -57025,6 +57025,12 @@ STRING 9508
 // Fähigkeiten: A0UD (Gleißendes Licht - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9509
+// Gegenstände: I065 (Honigtopf), Name (Name (unam))
+{
+Honey Pot
 }
 
 STRING 9510
@@ -91547,7 +91553,7 @@ Horn des Lebens
 }
 
 STRING 15273
-// Fähigkeiten: A1BA (Zacken von Deranors Krone), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DC (Mantel), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -91559,7 +91565,7 @@ Horn des Schutzes
 }
 
 STRING 15275
-// Fähigkeiten: A1BB (Buch der Schmiedekunst), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DE (Kapuze), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -92365,7 +92371,7 @@ Versteinerung
 STRING 15410
 // Fähigkeiten: A1AY (Brandpfeile), Tip (Tooltipp - Normal (atp1))
 {
-Burning arrows
+Burning Arrows
 }
 
 STRING 15411
@@ -92449,7 +92455,7 @@ Barricade
 STRING 15424
 // Einheiten: h02G (Barrikade), Tip (Tooltipp - Einfach (utip))
 {
-Build barricade
+Construct barricade
 }
 
 STRING 15425
@@ -92579,7 +92585,7 @@ Verleiht insgesamt <A1B5,DataA1> Punkte zu Beweglichkeit, Intelligenz und Stärk
 }
 
 STRING 15446
-// Fähigkeiten: A0RU (Nordischer Kriegshammer), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DO (Knochenbogen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -92591,7 +92597,7 @@ Zacken von Deranors Krone
 }
 
 STRING 15448
-// Fähigkeiten: A1DC (Mantel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DP (Stab der Verzögerung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -92711,7 +92717,7 @@ Buch der Schmiedekunst
 }
 
 STRING 15468
-// Fähigkeiten: A1DE (Kapuze), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DQ (Todessense), EditorSuffix (Editor-Suffix (ansf))
 {
 (Zauberbuch)
 }
@@ -93707,7 +93713,7 @@ Hundezwinger - Stufe 5
 }
 
 STRING 15634
-// Zauberverstärker/Effekte: X002 (Pfeilhagel Effekt), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: B02Q (), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Waldläufer)
 }
@@ -93715,13 +93721,13 @@ STRING 15634
 STRING 15635
 // Fähigkeiten: A03S (Schütze), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 %.
+|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 % erhöht.
 }
 
 STRING 15636
 // Fähigkeiten: A11G (Schütze - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 %.
+|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 % erhöht.
 }
 
 STRING 15637
@@ -93787,7 +93793,7 @@ Ein Meutehund.
 STRING 15647
 // Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
 {
-(Waldläufer)
+Conversion [|cffffcc00Level 3|r] (|cffffcc00T|r)
 }
 
 STRING 15648
@@ -94885,19 +94891,19 @@ Beutezug - Stufe 5
 STRING 15830
 // Fähigkeiten: A0VO (Horn des Kampfes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt in der Nähe befindlichen befreundeten Einheiten einen Schaden-Bonus von <A0VO,DataA1,%>%. |nLasts <A0VO,Dur1> Sekunden lang an.
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Schaden-Bonus von <A0VO,DataA1,%>%. |nHält <A0VO,Dur1> Sekunden lang an.
 }
 
 STRING 15831
 // Fähigkeiten: A0VP (Horn des Schutzes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt in der Nähe befindlichen befreundeten Einheiten einen Rüstungs-Bonus von <A0VP,DataB1>. |nLasts <A0VP,Dur1> Sekunden lang an.
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Rüstungs-Bonus von <A0VP,DataB1>. |nHält <A0VP,Dur1> Sekunden lang an.
 }
 
 STRING 15832
 // Fähigkeiten: A0VQ (Horn des Lebens), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gibt in der Nähe befindlichen befreundeten Einheiten einen Lebensregenerations-Bonus von <A0VQ,DataC1>. |nLasts <A0VQ,Dur1> Sekunden lang an.
+Gibt in der Nähe befindlichen befreundeten Einheiten einen Lebensregenerations-Bonus von <A0VQ,DataC1>. |nHält <A0VQ,Dur1> Sekunden lang an.
 }
 
 STRING 15833
@@ -95001,7 +95007,7 @@ STRING 15854
 STRING 15856
 // Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA1> seconds a demon is summoned which lives for <A0EX,DataC1> seconds. The portal holds for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He causes <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He causes <n046,dmgplus2> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He causes <n047,dmgplus3> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He causes <n048,dmgplus4> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He causes <n049,dmgplus5> damage.
 }
 
 STRING 15857
@@ -95013,7 +95019,7 @@ Dunkle Diener - Stufe 1
 STRING 15858
 // Fähigkeiten: A0F1 (Weltenportal - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA1> seconds a demon is summoned which lives for <A0EX,DataC1> seconds. The portal holds for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He causes <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He causes <n046,dmgplus2> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He causes <n047,dmgplus3> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He causes <n048,dmgplus4> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He causes <n049,dmgplus5> damage.
 }
 
 STRING 15859
@@ -95025,7 +95031,7 @@ Dunkle Diener - Stufe 2
 STRING 15860
 // Fähigkeiten: A0F2 (Weltenportal - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA1> seconds a demon is summoned which lives for <A0EX,DataC1> seconds. The portal holds for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He causes <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He causes <n046,dmgplus2> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He causes <n047,dmgplus3> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He causes <n048,dmgplus4> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He causes <n049,dmgplus5> damage.
 }
 
 STRING 15861
@@ -95037,7 +95043,7 @@ Dunkle Diener - Stufe 3
 STRING 15862
 // Fähigkeiten: A0F3 (Weltenportal - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA1> seconds a demon is summoned which lives for <A0EX,DataC1> seconds. The portal holds for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He causes <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He causes <n046,dmgplus2> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He causes <n047,dmgplus3> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He causes <n048,dmgplus4> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He causes <n049,dmgplus5> damage.
 }
 
 STRING 15863
@@ -95169,7 +95175,7 @@ Dunkle Diener - Stufe 4
 STRING 15884
 // Fähigkeiten: A0EZ (Weltenportal - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+Creates a portal to the world of demons through which demons are streaming out of gradually. Every <A0EX,DataA1> seconds a demon is summoned which lives for <A0EX,DataC1> seconds. The portal holds for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He causes <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He causes <n046,dmgplus2> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He causes <n047,dmgplus3> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He causes <n048,dmgplus4> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He causes <n049,dmgplus5> damage.
 }
 
 STRING 15885
@@ -95271,7 +95277,7 @@ STRING 15900
 STRING 15901
 // Fähigkeiten: A14V (Bestienjäger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nSchaden gegen wilde Kreaturen wird um 10%.
+|cffffcc00Grundzauber|r|nSchaden gegen wilde Kreaturen wird um 10% erhöht.
 }
 
 STRING 15902
@@ -95583,31 +95589,31 @@ Der Elementarmagier schließt einen Gegner bis zu 4 Sekunden in einem Erdgefäng
 STRING 15953
 // Fähigkeiten: A0ZA (Erdgefängnis - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
 }
 
 STRING 15954
 // Fähigkeiten: A0ZB (Erdgefängnis - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
 }
 
 STRING 15955
 // Fähigkeiten: A0ZC (Erdgefängnis - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
 }
 
 STRING 15956
 // Fähigkeiten: A0ZD (Erdgefängnis - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
 }
 
 STRING 15957
 // Fähigkeiten: A0ZE (Erdgefängnis - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Lasts 2 Sekunden. |n|cffffcc00Stufe 2|r - Lasts 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Lasts 3 Sekunden. |n|cffffcc00Stufe 4|r - Lasts 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Lasts 4 Sekunden.
+Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
 }
 
 STRING 15958

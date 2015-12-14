@@ -11,7 +11,7 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 		public stub method canMorph takes nothing returns boolean
 			if (not Aos.areaContainsCharacter(this.character())) then
 				debug call Print("Area does not contain character!")
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Sie müssen sich in der Trommelhöhle befinden, um diesen Zauber wirken zu können."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Sie müssen sich in der Trommelhöhle befinden, um diesen Zauber wirken zu können.", "You have to be in the Drum Cave to be able to cast this spell."))
 				
 				return false
 			endif
