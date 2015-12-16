@@ -21,6 +21,12 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs, St
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAbilityAvailable(Player(i), SpellMissionTheWayToHolzbruck.abilityId, true)
+				set i = i + 1
+			endloop
 			set this.m_questArea = QuestAreaTheWayToHolzbruck.create(gg_rct_quest_the_way_to_holzbruck)
 			return super.enable()
 		endmethod

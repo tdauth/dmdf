@@ -410,6 +410,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call SetUnitPathing(whichUnit, true)
 			call IssueImmediateOrder(whichUnit, "halt")
 			call SetUnitOwner(whichUnit, MapData.neutralPassivePlayer, true)
+			call SetUnitInvulnerable(whichUnit, true)
 		endmethod
 		
 		private static method timerFunctionSpawnWeaponCart takes nothing returns nothing

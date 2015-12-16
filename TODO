@@ -124,6 +124,15 @@
 * Weniger Erfahrung für die leppische Hauptquests. Man steigt viel zu schnell auf.
 * Dämpfung sollte nicht nur Magieschaden reduzieren. Der Effekt bringt sonst zu wenig, da wenige Einheiten Magieschaden verursachen. Vielleicht auch allgemein vor Schaden schützen von Einheiten, die Mana besitzen.
 * Zauberbuch und Rucksack öffnen in Zauberfähigkeiten verschieben. Zauberfähigkeiten umbenennen. Dadurch hätte man bis zu 6 Favoriten!
+* FIXED: Kolossfähigkeit verhindert Erleiden von jeglichem Schaden.
+* Mehr Bosse bei letzter Schlacht: Dunkelelfen-Hexer, Kriegsherr der Orks
+* Nach der ersten Schlacht gegen die Orks Sammelgebiet erstellen, Video nicht direkt starten!
+* FIXED: Nach Vernichtung der Belagerungswaffen die Orkbarrikaden automatisch entfernen.
+* Kurze Videsequenz, Hinweis, dass nun Belagerungswaffen herangebracht wurden.
+* Nach letzter Schlacht alle beschworenen Einheiten Dararos' entfernen.
+* Deranors Leibwache muss etwas droppen.
+* Deranors Leibwache sollte respawnen.
+* Drops für Unholde auf Bauernhof und bei linkem Tor.
 
 * FIXED: "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein. Liegt evenutell aber nur eventuell daran, dass Computerspieler die Kontrolle hat und den Zauber jedes Mal rückgängig macht? Lag an Computerspieler.
 * FIXED: Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!

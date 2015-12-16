@@ -11,50 +11,50 @@ library StructSpellsSpellFuriousBloodthirstiness requires Asl, StructGameClasses
 		private static constant real lifeUsagePercentage = 0.03 // mustn't be bigger than life min value
 		private static constant real damageBonusPercentage = 0.25
 		private static constant real lifeMinPercentage = 0.10
+		private static constant string enabledKey = "SpellFuriousBloodthirstiness:IsEnabled"
+		private static constant string damageKey = "SpellFuriousBloodthirstiness:Damage"
 
 		/// Called by globan damage detection system.
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
 			local Character character
 			local real life
 			local real damage
-			// works on neutral and unallied units
-			if (GetUnitAllianceStateToUnit(GetEventDamageSource(), GetTriggerUnit()) == bj_ALLIANCE_ALLIED or not Character.isUnitCharacter(GetEventDamageSource())) then
-				//debug call Print("Allied or " + GetUnitName(GetEventDamageSource()) + " is no character.")
+			// works on neutral and unallied units for the character but only if the ability is learned
+			if (GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) == 0 or GetUnitAllianceStateToUnit(GetEventDamageSource(), GetTriggerUnit()) == bj_ALLIANCE_ALLIED or not Character.isUnitCharacter(GetEventDamageSource())) then
 				return
 			endif
 			set character = Character.getCharacterByUnit(GetEventDamageSource())
-			//debug call Print("Is character " + character.name() + " and target " + GetUnitName(GetTriggerUnit()))
 			// check class and ability
-			if (not DmdfHashTable.global().handleBoolean(GetEventDamageSource(), "SpellFuriousBloodthirstiness:IsEnabled") or DmdfHashTable.global().handleBoolean(GetEventDamageSource(), "SpellFuriousBloodthirstiness:Damage")) then
-				//debug call Print("Is not enabled.")
+			if (not DmdfHashTable.global().hasHandleBoolean(GetEventDamageSource(), thistype.enabledKey) or not DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.enabledKey) or not DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.damageKey)) then
 				return
 			endif
-			if (GetUnitState(GetEventDamageSource(), UNIT_STATE_LIFE) < GetUnitState(GetEventDamageSource(), UNIT_STATE_MAX_LIFE) * thistype.lifeMinPercentage) then
+			// when reached the minimum life stop the ability, otherwise he would die
+			if (GetUnitState(GetEventDamageSource(), UNIT_STATE_LIFE) <= GetUnitState(GetEventDamageSource(), UNIT_STATE_MAX_LIFE) * thistype.lifeMinPercentage) then
 				// end cast
 				debug call Print("End cast")
-				call DmdfHashTable.global().setHandleBoolean(GetEventDamageSource(), "SpellFuriousBloodthirstiness:IsEnabled", false)
+				call DmdfHashTable.global().setHandleBoolean(GetEventDamageSource(), thistype.enabledKey, false)
 				return
 			endif
 			set life = GetUnitState(GetEventDamageSource(), UNIT_STATE_MAX_LIFE) * thistype.lifeUsagePercentage
 			set damage = GetUnitState(GetEventDamageSource(), UNIT_STATE_MAX_LIFE) * thistype.damageBonusPercentage
 			debug call Print(R2S(life) + " is life and " + R2S(damage) + " is damage.")
-			call SetUnitState(GetEventDamageSource(), UNIT_STATE_LIFE, GetUnitState(GetEventDamageSource(), UNIT_STATE_LIFE) - life)
 			// prevents endless damage loop
-			call DmdfHashTable.global().setHandleBoolean(GetEventDamageSource(), "SpellFuriousBloodthirstiness:Damage", true)
+			call DmdfHashTable.global().setHandleBoolean(GetEventDamageSource(), thistype.damageKey, true)
 			call UnitDamageTargetBJ(GetEventDamageSource(), GetTriggerUnit(), damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
-			call DmdfHashTable.global().setHandleBoolean(GetEventDamageSource(), "SpellFuriousBloodthirstiness:Damage", false)
+			call DmdfHashTable.global().setHandleBoolean(GetEventDamageSource(), thistype.damageKey, false)
+			call SetUnitState(GetEventDamageSource(), UNIT_STATE_LIFE, GetUnitState(GetEventDamageSource(), UNIT_STATE_LIFE) - life)
 			call Spell.showLifeCostTextTag(GetEventDamageSource(), life)
 			call Spell.showDamageTextTag(GetTriggerUnit(), damage)
 		endmethod
 
 		private method action takes nothing returns nothing
-			local boolean isEnabled = DmdfHashTable.global().handleBoolean(this.character().unit(), "SpellFuriousBloodthirstiness:IsEnabled")
+			local boolean isEnabled = DmdfHashTable.global().handleBoolean(this.character().unit(), thistype.enabledKey)
 			if (isEnabled) then
 				debug call Print("Is enabled")
-				call DmdfHashTable.global().setHandleBoolean(this.character().unit(), "SpellFuriousBloodthirstiness:IsEnabled", false)
+				call DmdfHashTable.global().setHandleBoolean(this.character().unit(), thistype.enabledKey, false)
 			else
 				debug call Print("Is not enabled")
-				call DmdfHashTable.global().setHandleBoolean(this.character().unit(), "SpellFuriousBloodthirstiness:IsEnabled", true)
+				call DmdfHashTable.global().setHandleBoolean(this.character().unit(), thistype.enabledKey, true)
 			endif
 		endmethod
 

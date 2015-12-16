@@ -10,7 +10,8 @@ library StructSpellsSpellRaid requires Asl, StructGameClasses, StructGameSpell
 		private static itempool array m_itemPools[5]
 		
 		private method levelItemPool takes nothing returns itempool
-			return thistype.m_itemPools[GetRandomInt(0, this.level() - 1)]
+			// prevent that really bad items are placed so make between max level and max level - 2
+			return thistype.m_itemPools[GetRandomInt(IMaxBJ(0, this.level() - 3), this.level() - 1)]
 		endmethod
 		
 		private method action takes nothing returns nothing
@@ -38,7 +39,7 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			call this.addGrimoireEntry('A1A1', 'A1A2')
 			call this.addGrimoireEntry('A1CP', 'A1CT')
 			call this.addGrimoireEntry('A1CQ', 'A1CU')

@@ -166,6 +166,18 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_necks1
 		private static SpawnPoint m_necks2
 		private static SpawnPoint m_necks3
+		
+		// farm
+		private static SpawnPoint m_ditchSpidersFarm0
+		private static SpawnPoint m_wolvesFarm0
+		private static SpawnPoint m_boarsFarm0
+		private static SpawnPoint m_deersFarm0
+		private static SpawnPoint m_necksFarm0
+		
+		// left gate
+		private static SpawnPoint m_boarsLeftGate0
+		private static SpawnPoint m_bearLeftGate0
+		private static SpawnPoint m_wolvesLeftGate0
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -888,10 +900,72 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0483, 1.0)
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0482, 1.0)
 		endmethod
+		
+		private static method initFarm takes nothing returns nothing
+			local integer index
+			set thistype.m_ditchSpidersFarm0 = SpawnPoint.create()
+			set index = thistype.m_ditchSpidersFarm0.addUnitWithType(gg_unit_n01D_0489, 1.0)
+			set index = thistype.m_ditchSpidersFarm0.addUnitWithType(gg_unit_n01D_0488, 1.0)
+		
+			set thistype.m_wolvesFarm0 = SpawnPoint.create()
+			set index = thistype.m_wolvesFarm0.addUnitWithType(gg_unit_n02F_0490, 1.0)
+			set index = thistype.m_wolvesFarm0.addUnitWithType(gg_unit_n02F_0497, 1.0)
+			set index = thistype.m_wolvesFarm0.addUnitWithType(gg_unit_n02F_0496, 1.0)
+			
+			set thistype.m_boarsFarm0 = SpawnPoint.create()
+			set index = thistype.m_boarsFarm0.addUnitWithType(gg_unit_n002_0528, 1.0)
+			set index = thistype.m_boarsFarm0.addUnitWithType(gg_unit_n002_0498, 1.0)
+			set index = thistype.m_boarsFarm0.addUnitWithType(gg_unit_n002_0529, 1.0)
+			
+			set thistype.m_deersFarm0 = SpawnPoint.create()
+			set index = thistype.m_deersFarm0.addUnitWithType(gg_unit_n00V_0530, 1.0)
+			set index = thistype.m_deersFarm0.addUnitWithType(gg_unit_n00V_0531, 1.0)
+			set index = thistype.m_deersFarm0.addUnitWithType(gg_unit_n00V_0532, 1.0)
+			
+			set thistype.m_necksFarm0 = SpawnPoint.create()
+			set index = thistype.m_necksFarm0.addUnitWithType(gg_unit_n05Z_0533, 1.0)
+			set index = thistype.m_necksFarm0.addUnitWithType(gg_unit_n05Z_0534, 1.0)
+			
+			// TODO add item drops for creeps
+		endmethod
+		
+		private static method initLeftGate takes nothing returns nothing
+			local integer index
+			set thistype.m_boarsLeftGate0 = SpawnPoint.create()
+			set index = thistype.m_boarsLeftGate0.addUnitWithType(gg_unit_n002_0536, 1.0)
+			set index = thistype.m_boarsLeftGate0.addUnitWithType(gg_unit_n002_0537, 1.0)
+			set index = thistype.m_boarsLeftGate0.addUnitWithType(gg_unit_n002_0535, 1.0)
+			
+			set thistype.m_bearLeftGate0 = SpawnPoint.create()
+			set index = thistype.m_bearLeftGate0.addUnitWithType(gg_unit_n008_0539, 1.0)
+			
+			set thistype.m_wolvesLeftGate0 = SpawnPoint.create()
+			set index = thistype.m_wolvesLeftGate0.addUnitWithType(gg_unit_n02F_0542, 1.0)
+			set index = thistype.m_wolvesLeftGate0.addUnitWithType(gg_unit_n02F_0543, 1.0)
+			set index = thistype.m_wolvesLeftGate0.addUnitWithType(gg_unit_n02F_0541, 1.0)
+			
+			// TODO add item drops for creeps
+
+			// Items
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0562, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0563, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0564, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0545, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0544, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0546, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0561, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0560, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03Y_0559, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03Y_0558, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0568, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0567, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0567, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0570, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0569, 1.0)
+		endmethod
 
 		/// \todo change unit type
 		public static method init takes nothing returns nothing
-			
 			
 			/**
 			 * Start with new OpLimit since it takes many many operations.
@@ -900,6 +974,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init1)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init2)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init3)
+			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initFarm)
+			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initLeftGate)
 		endmethod
 
 		public static method spawn takes nothing returns nothing

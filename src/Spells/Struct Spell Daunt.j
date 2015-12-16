@@ -27,7 +27,7 @@ library StructSpellsSpellDaunt requires Asl, StructGameClasses, StructGameGame, 
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			call this.addGrimoireEntry('A14X', 'A152')
 			call this.addGrimoireEntry('A14Y', 'A153')
 			call this.addGrimoireEntry('A14Z', 'A154')

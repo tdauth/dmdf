@@ -62,7 +62,7 @@ library StructSpellsSpellRob requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			call this.addGrimoireEntry('A1A5', 'A1A6')
 			call this.addGrimoireEntry('A1CH', 'A1CL')
 			call this.addGrimoireEntry('A1CI', 'A1CM')

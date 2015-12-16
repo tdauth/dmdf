@@ -81,6 +81,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		// questItemDestroyArtillery
 		private AGroup m_orcSiege
 		private AGroup m_orcSiegeWarriors
+		private AGroup m_orcWall
 		
 		// questItemDefeatTheEnemy
 		private AGroup m_highElves
@@ -127,6 +128,12 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		
 		private static method stateActionCompletedDestroyArtillery takes AQuestItem whichQuestItem returns nothing
 			local thistype this = thistype(whichQuestItem.quest())
+			
+			// remove annoying orc wall
+			call this.m_orcWall.forGroup(thistype.forGroupKill)
+			call this.m_orcWall.destroy()
+			call this.m_orcSiege.destroy()
+			call this.m_orcSiegeWarriors.destroy()
 
 			call Npcs.initDararos(CreateUnit(MapData.alliedPlayer, 'H02F', GetRectCenterX(gg_rct_quest_the_defense_of_talras_dararos), GetRectCenterY(gg_rct_quest_the_defense_of_talras_dararos), 0.0))
 			call SetHeroLevel(Npcs.dararos(), MapData.maxLevel, false)
@@ -154,6 +161,9 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_0, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05J', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_0, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05K', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_0, 90.0), true, false)
+			
+			// The ultimate Orc boss
+			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(1, 'o005', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_0, 90.0), true, false)
 			 
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
@@ -194,6 +204,9 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_5, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05J', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_5, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05K', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_5, 90.0), true, false)
+			
+			// The ultimate Dark Elves boss
+			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(1, 'n06F', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_5, 90.0), true, false)
 			 
 			call this.m_finalOrcs.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_defense_of_talras_orc_target), GetRectCenterY(gg_rct_quest_the_defense_of_talras_orc_target))
 			
@@ -323,50 +336,51 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_orcSiegeWarriors.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_crossbow_men_6, 0.0), true, false)
 			
 			// orc wall
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_0, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_1, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_2, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_3, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_4, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_5, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_6, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_7, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_8, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_9, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_10, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_11, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_12, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_13, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_14, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_15, 180.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_16, 180.0)
+			set this.m_orcWall = AGroup.create()
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_0, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_1, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_2, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_3, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_4, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_5, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_6, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_7, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_8, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_9, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_10, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_11, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_12, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_13, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_14, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_15, 180.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_16, 180.0), true, false)
 			
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_0_bottom, 270.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_1_bottom, 270.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_2_bottom, 270.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_3_bottom, 270.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_4_bottom, 270.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_5_bottom, 270.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_6_bottom, 270.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_7_bottom, 270.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_8_bottom, 270.0)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_0_bottom, 270.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_1_bottom, 270.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_2_bottom, 270.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_3_bottom, 270.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_4_bottom, 270.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_5_bottom, 270.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_6_bottom, 270.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_7_bottom, 270.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_8_bottom, 270.0), true, false)
 			
 			
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_0_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_1_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_2_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_3_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_4_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_5_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_6_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_7_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_8_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_9_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_10_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_11_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_12_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_13_right, 0.0)
-			call CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_14_right, 0.0)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_0_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_1_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_2_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_3_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_4_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_5_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_6_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_7_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_8_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_9_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_10_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_11_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_12_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_13_right, 0.0), true, false)
+			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_14_right, 0.0), true, false)
 			
 			call this.questItem(thistype.questItemDefendAgainstOrcs).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemDestroyArtillery).setState(thistype.stateNew)
@@ -380,6 +394,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			
 			call this.m_orcSiegeWarriors.forGroup(thistype.forGroupKill)
 			call this.m_orcSiege.forGroup(thistype.forGroupKill)
+			call this.m_orcWall.forGroup(thistype.forGroupKill)
 		endmethod
 		
 		private static method forGroupIgnoreGuardsPosition takes unit whichUnit returns nothing
@@ -554,6 +569,12 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 		
 		public stub method enable takes nothing returns boolean
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call SetPlayerAbilityAvailable(Player(i), SpellMissionTheDefenseOfTalras.abilityId, true)
+				set i = i + 1
+			endloop
 			set this.m_questArea = QuestAreaQuestTheDefenseOfTalras.create(gg_rct_quest_the_defense_of_talras)
 			return super.enableUntil(thistype.questItemMoveToCamp)
 		endmethod

@@ -1,11 +1,41 @@
 library StructMapMapBuildings requires StructGameCharacter
 
 	struct Buildings
+		private static trigger m_harvestTrigger
+		private static trigger m_bringGoldTrigger
 		private static trigger m_usageTrigger
 		private static trigger m_constructionStartTrigger
 		private static trigger m_constructionFinishTrigger
 		private static trigger m_deathTrigger
 		private static unit array m_buildings
+		private static integer array m_collectedGold[6] // TODO MapData.maxPlayers
+		
+		private static method triggerConditionHarvest takes nothing returns boolean
+			if (GetUnitTypeId(GetTriggerUnit()) == 'h02A' and GetSpellAbilityId() == 'A1DR') then
+				debug call Print("Refill goldgg_unit_n06E_0487")
+				call SetResourceAmount(gg_unit_n06E_0487, GetResourceAmount(gg_unit_n06E_0487) + 10)
+			endif
+			
+			return false
+		endmethod
+		
+		private static method triggerConditionBringGold takes nothing returns boolean
+			local integer actualGold = 10
+			local integer gold = 10
+			if (GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED) > thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())]) then
+				set thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())] = GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED)
+		
+				call TriggerRegisterPlayerStateEvent(thistype.m_bringGoldTrigger, GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED, GREATER_THAN, thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())])
+				
+				set gold = IMaxBJ(1, 10 - R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], gg_unit_n06E_0487) / 1000.0))
+				debug call Print("Gathered gold: " + I2S(gold))
+				if (gold < actualGold) then
+					call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD) - (actualGold - gold))
+				endif
+			endif
+			
+			return false
+		endmethod
 		
 		private static method triggerConditionUsage takes nothing returns boolean
 			local ACharacter character = ACharacter.getCharacterByUnit(GetTriggerUnit())
@@ -70,6 +100,21 @@ library StructMapMapBuildings requires StructGameCharacter
 		endmethod
 		
 		private static method onInit takes nothing returns nothing
+			local integer i
+			set thistype.m_harvestTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_harvestTrigger, EVENT_PLAYER_UNIT_SPELL_CAST)
+			call TriggerAddCondition(thistype.m_harvestTrigger, Condition(function thistype.triggerConditionHarvest))
+		
+			set thistype.m_bringGoldTrigger = CreateTrigger()
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				set thistype.m_collectedGold[i] = 0
+				call TriggerRegisterPlayerStateEvent(thistype.m_bringGoldTrigger, Player(i), PLAYER_STATE_GOLD_GATHERED, GREATER_THAN, thistype.m_collectedGold[i])
+				set i = i + 1
+			endloop
+			call TriggerAddCondition(thistype.m_bringGoldTrigger, Condition(function thistype.triggerConditionBringGold))
+		
 			set thistype.m_usageTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_usageTrigger, EVENT_PLAYER_UNIT_SPELL_CAST)
 			call TriggerAddCondition(thistype.m_usageTrigger, Condition(function thistype.triggerConditionUsage))
