@@ -13,7 +13,8 @@ library StructMapQuestsQuestTheOaksPower requires Asl, StructGameCharacter
 		endmethod
 
 		private static method stateActionCompleted takes AQuest whichQuest returns nothing
-			call UnitAddItemById(whichQuest.character().unit(), thistype.rewardItemTypeId)
+			local Character charater = Character(whichQuest.character())
+			call charater.giveItem(thistype.rewardItemTypeId)
 			call Character(whichQuest.character()).displayItemAcquired(tr("Ursulas Totem"), tr("Beschwört eine wilde Kreatur."))
 		endmethod
 

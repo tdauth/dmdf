@@ -462,6 +462,15 @@ endif
 
 		public static method create takes player whichPlayer, unit whichUnit returns thistype
 			local thistype this = thistype.allocate(whichPlayer, whichUnit)
+			
+			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeHeaddress, 'I06C')
+			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeArmour, 'I06D')
+			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypePrimaryWeapon, 'I06E')
+			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeSecondaryWeapon, 'I06F')
+			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeAmulet, 'I06G')
+			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeAmulet + 1, 'I06G')
+			call this.inventory().updateEquipmentTypePlaceholders()
+			
 			// dynamic members
 			set this.m_isInPvp = false
 			set this.m_showCharactersScheme = true

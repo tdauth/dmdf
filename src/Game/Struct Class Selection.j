@@ -169,7 +169,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call character.grimoire().addClassSpellsFromCharacter.evaluate(character)
 
 			call initCharacterSpells(character)
-			call MapData.createClassItems(class, character.unit())
+			call MapData.createClassItems(character)
 			call character.setMovable(false)
 			call character.revival().setTime(MapData.revivalTime)
 			//call SetUserInterfaceForPlayer(character.player(), false, false)

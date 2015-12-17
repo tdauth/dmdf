@@ -54,13 +54,14 @@ library StructMapQuestsQuestStormingTheMill requires Asl, StructMapMapNpcs, Stru
 		endmethod
 		
 		private static method stateActionCompleted takes AQuest whichQuest returns nothing
+			local Character character = Character(whichQuest.character())
 			// 6 mal Wolle
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
+			call character.giveItem( 'I04X')
+			call character.giveItem( 'I04X')
+			call character.giveItem( 'I04X')
+			call character.giveItem( 'I04X')
+			call character.giveItem( 'I04X')
+			call character.giveItem( 'I04X')
 		endmethod
 
 		private static method create takes Character character returns thistype
