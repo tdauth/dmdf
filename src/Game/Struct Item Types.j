@@ -359,6 +359,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1DQ', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1EB', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1E7', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1EJ', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -533,9 +534,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_fineKnightHelmet.addAbility('A18W', true)
 			call thistype.m_fineKnightHelmet.addAbility('AIs3', true)
 			
-			set thistype.m_ironArmour = ItemType.createSimple('I067', AItemType.equipmentTypeHeaddress)
-			call thistype.m_fineKnightHelmet.addAbility('A1E7', true)
-			call thistype.m_fineKnightHelmet.addAbility('A1E7', true)
+			set thistype.m_ironArmour = ItemType.createSimple('I067', AItemType.equipmentTypeArmour)
+			call thistype.m_ironArmour.addAbility('A1E4', true)
 
 			// Björn's items
 			set thistype.m_cloak = ItemType.createSimple('I023', AItemType.equipmentTypeArmour)
@@ -561,9 +561,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			set thistype.m_quiver = ItemType.createSimple('I04W', AItemType.equipmentTypeAmulet)
 			call thistype.m_quiver.addAbility('A160', true)
-			call thistype.m_quiver.addAbility('A1EC', true)
+			call thistype.m_quiver.addAbility('A1EJ', true)
 			
-			set thistype.m_simpleClothes = ItemType.createSimple('I06B', AItemType.equipmentTypeAmulet)
+			set thistype.m_simpleClothes = ItemType.createSimple('I06B', AItemType.equipmentTypeArmour)
 			call thistype.m_simpleClothes.addAbility('A1EG', true)
 
 			// artefacts
@@ -647,7 +647,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_amuletOfWisdom = ItemType.createSimple('I048', ItemType.equipmentTypeAmulet)
 			call thistype.m_amuletOfWisdom.addAbility('AIrm', true)
 			
-			set thistype.m_mageArmour = ItemType.createSimple('I06A', ItemType.equipmentTypeAmulet)
+			set thistype.m_mageArmour = ItemType.createSimple('I06A', ItemType.equipmentTypeArmour)
 			call thistype.m_mageArmour.addAbility('A1ED', true)
 			call thistype.m_mageArmour.addAbility('A1EF', true)
 			call thistype.m_mageArmour.addAbility('A1EE', true)
