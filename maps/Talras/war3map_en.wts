@@ -5270,7 +5270,7 @@ Teleportiert den Elementarmagier an einen erkundeten Punkt auf der Karte und abs
 STRING 881
 // Fähigkeiten: A0GS (Brandpfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur2> Sekunden lang und erhalten dabei alle <AOGS,DataB2> Sekunden <A0GS,DataA2> vollen Schaden und alle <A0GS,DataD2> Sekunden <A0GS,DataC2> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur2> seconds and get <A0GS,DataA2> full damage every <AOGS,DataB2> seconds and <A0GS,DataC2> half damage every <A0GS,DataD2> seconds while burning.
 }
 
 STRING 882
@@ -10200,13 +10200,13 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1703
 // Fähigkeiten: A03S (Schütze), Name (Name (anam))
 {
-Schütze
+Archer
 }
 
 STRING 1704
 // Fähigkeiten: A03S (Schütze), Tip (Tooltipp - Normal (atp1))
 {
-Schütze [|cffffcc00Stufe 1|r]
+Archer [|cffffcc00Level 1|r]
 }
 
 STRING 1705
@@ -10230,7 +10230,7 @@ STRING 1707
 STRING 1708
 // Fähigkeiten: A03T (Schütze), Name (Name (anam))
 {
-Schütze
+Archer
 }
 
 STRING 1709
@@ -10638,13 +10638,13 @@ Diese Einheit steht unter der Wirkung von 'Absorbation'; verlorenes Mana wird be
 STRING 1776
 // Zauberverstärker/Effekte: B00J (Schütze), EditorName (Name (nur Editor) (fnam))
 {
-Schütze
+Archer
 }
 
 STRING 1777
 // Zauberverstärker/Effekte: B00J (Schütze), Bufftip (Tooltipp (ftip))
 {
-Schütze
+Archer
 }
 
 STRING 1778
@@ -10656,7 +10656,7 @@ STRING 1778
 STRING 1779
 // Zauberverstärker/Effekte: B00J (Schütze), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter der Wirkung von 'Schütze'; ihr Distanzschaden ist.
+This unit is under the effect of 'Archer'; its distance damage is increased.
 }
 
 STRING 1780
@@ -12676,31 +12676,31 @@ ASL
 STRING 2116
 // Fähigkeiten: A0GS (Brandpfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur3> Sekunden lang und erhalten dabei alle <AOGS,DataB3> Sekunden <A0GS,DataA3> vollen Schaden und alle <A0GS,DataD3> Sekunden <A0GS,DataC3> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur3> seconds and get <A0GS,DataA3> full damage every <AOGS,DataB3> seconds and <A0GS,DataC3> half damage every <A0GS,DataD3> seconds while burning.
 }
 
 STRING 2117
 // Fähigkeiten: A0GS (Brandpfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur4> Sekunden lang und erhalten dabei alle <AOGS,DataB4> Sekunden <A0GS,DataA4> vollen Schaden und alle <A0GS,DataD4> Sekunden <A0GS,DataC4> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur4> seconds and get <A0GS,DataA4> full damage every <AOGS,DataB4> seconds and <A0GS,DataC4> half damage every <A0GS,DataD4> seconds while burning.
 }
 
 STRING 2118
 // Fähigkeiten: A0GS (Brandpfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur5> Sekunden lang und erhalten dabei alle <AOGS,DataB5> Sekunden <A0GS,DataA5> vollen Schaden und alle <A0GS,DataD5> Sekunden <A0GS,DataC5> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur5> seconds and get <A0GS,DataA5> full damage every <AOGS,DataB5> seconds and <A0GS,DataC5> half damage every <A0GS,DataD5> seconds while burning.
 }
 
 STRING 2119
 // Fähigkeiten: A0GS (Brandpfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur1> Sekunden lang und erhalten dabei alle <AOGS,DataB1> Sekunden <A0GS,DataA1> vollen Schaden und alle <A0GS,DataD1> Sekunden <A0GS,DataC1> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur1> seconds and get <A0GS,DataA1> full damage every <AOGS,DataB1> seconds and <A0GS,DataC1> half damage every <A0GS,DataD1> seconds while burning.
 }
 
 STRING 2120
 // Fähigkeiten: A0GU (Brandpfeile - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur1> Sekunden lang und erhalten dabei Schaden. |n|n|cffffcc00Stufe 1|r - Alle <AOGS,DataB1> Sekunden <A0GS,DataA1> vollen Schaden und alle <A0GS,DataD1> Sekunden <A0GS,DataC1> halben Schaden.|n|cffffcc00Stufe 2|r - Alle <AOGS,DataB2> Sekunden <A0GS,DataA2> vollen Schaden und alle <A0GS,DataD2> Sekunden <A0GS,DataC2> halben Schaden.|n|cffffcc00Stufe 3|r - Alle <AOGS,DataB3> Sekunden <A0GS,DataA3> vollen Schaden und alle <A0GS,DataD3> Sekunden <A0GS,DataC3> halben Schaden.|n|cffffcc00Stufe 4|r - Alle <AOGS,DataB4> Sekunden <A0GS,DataA4> vollen Schaden und alle <A0GS,DataD4> Sekunden <A0GS,DataC4> halben Schaden.|n|cffffcc00Stufe 5|r - Alle <AOGS,DataB5> Sekunden <A0GS,DataA5> vollen Schaden und alle <A0GS,DataD5> Sekunden <A0GS,DataC5> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur1> seconds and get damage while burning. |n|n|cffffcc00Level 1|r - Every <AOGS,DataB1> seconds <A0GS,DataA1> full damage and every <A0GS,DataD1> seconds <A0GS,DataC1> half damage.|n|cffffcc00Level 2|r - Every <AOGS,DataB2> seconds <A0GS,DataA2> full damage and every <A0GS,DataD2> seconds <A0GS,DataC2> half damage.|n|cffffcc00Level 3|r - Every <AOGS,DataB3> seconds <A0GS,DataA3> full damage and every <A0GS,DataD3> seconds <A0GS,DataC3> half damage.|n|cffffcc00Level 4|r - Every <AOGS,DataB4> seconds <A0GS,DataA4> full damage and every <A0GS,DataD4> seconds <A0GS,DataC4> half damage.|n|cffffcc00Level 5|r - Every <AOGS,DataB5> seconds <A0GS,DataA5> full damage and every <A0GS,DataD5> seconds <A0GS,DataC5> half damage.
 }
 
 STRING 2121
@@ -15919,31 +15919,31 @@ Eagle Eye [|cffffcc00Level 5|r]
 STRING 2662
 // Fähigkeiten: A068 (Adlerauge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine <A068,DataA1>%ige Chance, doppelten Schaden anzurichten.
+The ranger has a chance of <A068,DataA1> % to deal double damage.
 }
 
 STRING 2663
 // Fähigkeiten: A068 (Adlerauge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine <A068,DataA2>%ige Chance, doppelten Schaden anzurichten.
+The ranger has a chance of <A068,DataA2> % to deal double damage.
 }
 
 STRING 2664
 // Fähigkeiten: A068 (Adlerauge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine <A068,DataA3>%ige Chance, doppelten Schaden anzurichten.
+The ranger has a chance of <A068,DataA3> % to deal double damage.
 }
 
 STRING 2665
 // Fähigkeiten: A068 (Adlerauge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine <A068,DataA4>%ige Chance, doppelten Schaden anzurichten.
+The ranger has a chance of <A068,DataA4> % to deal double damage.
 }
 
 STRING 2666
 // Fähigkeiten: A068 (Adlerauge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer hat eine <A068,DataA5>%ige Chance, doppelten Schaden anzurichten.
+The ranger has a chance of <A068,DataA5> % to deal double damage.
 }
 
 STRING 2667
@@ -15955,7 +15955,7 @@ STRING 2667
 STRING 2668
 // Fähigkeiten: A069 (Adlerauge), Name (Name (anam))
 {
-Adlerauge
+Eagle Eye
 }
 
 STRING 2669
@@ -16666,7 +16666,7 @@ Gewandtheit
 STRING 2787
 // Fähigkeiten: A06O (Gewandtheit), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 1|r]
+Agility [|cffffcc00Level 1|r]
 }
 
 STRING 2788
@@ -16702,25 +16702,25 @@ STRING 2792
 STRING 2793
 // Fähigkeiten: A06O (Gewandtheit), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 2|r]
+Agility [|cffffcc00Level 2|r]
 }
 
 STRING 2794
 // Fähigkeiten: A06O (Gewandtheit), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 3|r]
+Agility [|cffffcc00Level 3|r]
 }
 
 STRING 2795
 // Fähigkeiten: A06O (Gewandtheit), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 4|r]
+Agility [|cffffcc00Level 4|r]
 }
 
 STRING 2796
 // Fähigkeiten: A06O (Gewandtheit), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 5|r]
+Agility [|cffffcc00Level 5|r]
 }
 
 STRING 2797
@@ -16738,7 +16738,7 @@ Gewandtheit
 STRING 2799
 // Fähigkeiten: A06Q (Schuss ins Herz), Name (Name (anam))
 {
-Schuss ins Herz
+Shot in the Heart
 }
 
 STRING 2800
@@ -16750,61 +16750,61 @@ STRING 2800
 STRING 2801
 // Fähigkeiten: A06Q (Schuss ins Herz), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 1|r]
+Shot in the Heart [|cffffcc00Level 1|r]
 }
 
 STRING 2802
 // Fähigkeiten: A06Q (Schuss ins Herz), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 2|r]
+Shot in the Heart [|cffffcc00Level 2|r]
 }
 
 STRING 2803
 // Fähigkeiten: A06Q (Schuss ins Herz), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 3|r]
+Shot in the Heart [|cffffcc00Level 3|r]
 }
 
 STRING 2804
 // Fähigkeiten: A06Q (Schuss ins Herz), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 4|r]
+Shot in the Heart [|cffffcc00Level 4|r]
 }
 
 STRING 2805
 // Fähigkeiten: A06Q (Schuss ins Herz), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 5|r]
+Shot in the Heart [|cffffcc00Level 5|r]
 }
 
 STRING 2806
 // Fähigkeiten: A06Q (Schuss ins Herz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt <A06Q ,DataC1> Punkte Schaden zu.
+The ranger shoots into the heart of his target and deals <A06Q,DataC1> points of damage.
 }
 
 STRING 2807
 // Fähigkeiten: A06Q (Schuss ins Herz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt <A06Q ,DataC2> Punkte Schaden zu.
+The ranger shoots into the heart of his target and deals <A06Q,DataC2> points of damage.
 }
 
 STRING 2808
 // Fähigkeiten: A06Q (Schuss ins Herz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt <A06Q ,DataC3> Punkte Schaden zu.
+The ranger shoots into the heart of his target and deals <A06Q,DataC3> points of damage.
 }
 
 STRING 2809
 // Fähigkeiten: A06Q (Schuss ins Herz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt <A06Q ,DataC4> Punkte Schaden zu.
+The ranger shoots into the heart of his target and deals <A06Q,DataC4> points of damage.
 }
 
 STRING 2810
 // Fähigkeiten: A06Q (Schuss ins Herz), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt <A06Q ,DataC5> Punkte Schaden zu.
+The ranger shoots into the heart of his target and deals <A06Q,DataC5> points of damage.
 }
 
 STRING 2811
@@ -16816,7 +16816,7 @@ STRING 2811
 STRING 2812
 // Fähigkeiten: A06R (Schuss ins Herz), Name (Name (anam))
 {
-Schuss ins Herz
+Shot in the Heart
 }
 
 STRING 2813
@@ -18008,31 +18008,31 @@ Manaexplosion [|cffffcc00Stufe 4|r]
 STRING 3013
 // Fähigkeiten: A06O (Gewandtheit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer <A06O,DataA1,%>%igen Chance aus.
+The ranger evades attacks with a chance of <A06O,DataA1,%> %.
 }
 
 STRING 3014
 // Fähigkeiten: A06O (Gewandtheit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer <A06O,DataA2,%>%igen Chance aus.
+The ranger evades attacks with a chance of <A06O,DataA2,%> %.
 }
 
 STRING 3015
 // Fähigkeiten: A06O (Gewandtheit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer <A06O,DataA3,%>%igen Chance aus.
+The ranger evades attacks with a chance of <A06O,DataA3,%> %.
 }
 
 STRING 3016
 // Fähigkeiten: A06O (Gewandtheit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer <A06O,DataA4,%>%igen Chance aus.
+The ranger evades attacks with a chance of <A06O,DataA4,%> %.
 }
 
 STRING 3017
 // Fähigkeiten: A06O (Gewandtheit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer <A06O,DataA5,%>%igen Chance aus.
+The ranger evades attacks with a chance of <A06O,DataA5,%> %.
 }
 
 STRING 3018
@@ -19046,13 +19046,13 @@ Ancestors Pact - Level 5
 STRING 3186
 // Gegenstände: I043 (Pfeilhagel), Name (Name (unam))
 {
-Pfeilhagel
+Hail of Arrows
 }
 
 STRING 3187
 // Fähigkeiten: A12E (Pfeilhagel), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 1|r]
+Hail of Arrows [|cffffcc00Level 1|r]
 }
 
 STRING 3188
@@ -19088,7 +19088,7 @@ Speer
 STRING 3193
 // Fähigkeiten: A12E (Pfeilhagel), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 2|r]
+Hail of Arrows [|cffffcc00Level 2|r]
 }
 
 STRING 3194
@@ -19124,7 +19124,7 @@ Buy Short Sword
 STRING 3199
 // Fähigkeiten: A12E (Pfeilhagel), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 3|r]
+Hail of Arrows [|cffffcc00Level 3|r]
 }
 
 STRING 3200
@@ -23500,7 +23500,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 3931
 // Fähigkeiten: A12E (Pfeilhagel), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 4|r]
+Hail of Arrows [|cffffcc00Level 4|r]
 }
 
 STRING 3932
@@ -31304,7 +31304,7 @@ STRING 5231
 STRING 5232
 // Fähigkeiten: A12E (Pfeilhagel), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der bis zu 32 Punkte Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A12E,Dur1> Sekunden lang betäubt.
+Lets rain a hail of arrows in an area which deals up to 32 points of damage to nearby hostile units and which stuns them for <A12E,Dur1> seconds.
 }
 
 STRING 5233
@@ -31478,7 +31478,7 @@ Bewaffneter Dorfbewohner
 STRING 5261
 // Fähigkeiten: A0GI (Vergiftete Pfeile), Name (Name (anam))
 {
-Vergiftete Pfeile
+Poisoned Arrows
 }
 
 STRING 5262
@@ -40246,31 +40246,31 @@ STRING 6721
 STRING 6722
 // Fähigkeiten: A0C6 (Vergiftete Pfeile - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 1|r]
+Poisoned Arrows [|cffffcc00Level 1|r]
 }
 
 STRING 6723
 // Fähigkeiten: A0GJ (Vergiftete Pfeile - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 2|r]
+Poisoned Arrows [|cffffcc00Level 2|r]
 }
 
 STRING 6724
 // Fähigkeiten: A0GK (Vergiftete Pfeile - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 3|r]
+Poisoned Arrows [|cffffcc00Level 3|r]
 }
 
 STRING 6725
 // Fähigkeiten: A0GL (Vergiftete Pfeile - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 4|r]
+Poisoned Arrows [|cffffcc00Level 4|r]
 }
 
 STRING 6726
 // Fähigkeiten: A0GM (Vergiftete Pfeile - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 5|r]
+Poisoned Arrows [|cffffcc00Level 5|r]
 }
 
 STRING 6727
@@ -40312,7 +40312,7 @@ STRING 6732
 STRING 6733
 // Fähigkeiten: A0FV (Vergiftete Pfeile), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile
+Poisoned Arrows
 }
 
 STRING 6734
@@ -40372,7 +40372,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6743
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 1|r]
+Poisoned Arrows [|cffffcc00Level 1|r]
 }
 
 STRING 6744
@@ -40384,7 +40384,7 @@ STRING 6744
 STRING 6745
 // Fähigkeiten: A0C6 (Vergiftete Pfeile - Stufe 1), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 1
+Poisoned Arrows - Level 1
 }
 
 STRING 6746
@@ -40456,7 +40456,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6757
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 2|r]
+Poisoned Arrows [|cffffcc00Level 2|r]
 }
 
 STRING 6758
@@ -40468,7 +40468,7 @@ STRING 6758
 STRING 6759
 // Fähigkeiten: A0GJ (Vergiftete Pfeile - Stufe 2), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 2
+Poisoned Arrows - Level 2
 }
 
 STRING 6760
@@ -40540,7 +40540,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6771
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 3|r]
+Poisoned Arrows [|cffffcc00Level 3|r]
 }
 
 STRING 6772
@@ -40552,7 +40552,7 @@ STRING 6772
 STRING 6773
 // Fähigkeiten: A0GK (Vergiftete Pfeile - Stufe 3), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 3
+Poisoned Arrows - Level 3
 }
 
 STRING 6774
@@ -40624,7 +40624,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6785
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 4|r]
+Poisoned Arrows [|cffffcc00Level 4|r]
 }
 
 STRING 6786
@@ -40636,7 +40636,7 @@ STRING 6786
 STRING 6787
 // Fähigkeiten: A0GL (Vergiftete Pfeile - Stufe 4), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 4
+Poisoned Arrows - Level 4
 }
 
 STRING 6788
@@ -40708,7 +40708,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6799
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile [|cffffcc00Stufe 5|r]
+Poisoned Arrows [|cffffcc00Level 5|r]
 }
 
 STRING 6800
@@ -40720,7 +40720,7 @@ STRING 6800
 STRING 6801
 // Fähigkeiten: A0GM (Vergiftete Pfeile - Stufe 5), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 5
+Poisoned Arrows - Level 5
 }
 
 STRING 6802
@@ -40744,7 +40744,7 @@ STRING 6804
 STRING 6805
 // Fähigkeiten: A0GN (Vergiftete Pfeile - Stufe 1), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 1
+Poisoned Arrows - Level 1
 }
 
 STRING 6806
@@ -40756,7 +40756,7 @@ STRING 6806
 STRING 6807
 // Fähigkeiten: A0GO (Vergiftete Pfeile - Stufe 2), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 2
+Poisoned Arrows - Level 2
 }
 
 STRING 6808
@@ -40768,7 +40768,7 @@ STRING 6808
 STRING 6809
 // Fähigkeiten: A0GP (Vergiftete Pfeile - Stufe 3), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 3
+Poisoned Arrows - Level 3
 }
 
 STRING 6810
@@ -40780,7 +40780,7 @@ STRING 6810
 STRING 6811
 // Fähigkeiten: A0GQ (Vergiftete Pfeile - Stufe 4), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 4
+Poisoned Arrows - Level 4
 }
 
 STRING 6812
@@ -40792,43 +40792,43 @@ STRING 6812
 STRING 6813
 // Fähigkeiten: A0GR (Vergiftete Pfeile - Stufe 5), Name (Name (anam))
 {
-Vergiftete Pfeile - Stufe 5
+Poisoned Arrows - Level 5
 }
 
 STRING 6814
 // Fähigkeiten: A0GT (Brandpfeile), Name (Name (anam))
 {
-Brandpfeile
+Fire Arrows
 }
 
 STRING 6815
 // Fähigkeiten: A0GS (Brandpfeile), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 1|r]
+Fire Arrows [|cffffcc00Level 1|r]
 }
 
 STRING 6816
 // Fähigkeiten: A0GS (Brandpfeile), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 2|r]
+Fire Arrows [|cffffcc00Level 2|r]
 }
 
 STRING 6817
 // Fähigkeiten: A0GS (Brandpfeile), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 3|r]
+Fire Arrows [|cffffcc00Level 3|r]
 }
 
 STRING 6818
 // Fähigkeiten: A0GS (Brandpfeile), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 4|r]
+Fire Arrows [|cffffcc00Level 4|r]
 }
 
 STRING 6819
 // Fähigkeiten: A0GS (Brandpfeile), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 5|r]
+Fire Arrows [|cffffcc00Level 5|r]
 }
 
 STRING 6820
@@ -40870,7 +40870,7 @@ STRING 6825
 STRING 6826
 // Fähigkeiten: A1AY (Brandpfeile), Name (Name (anam))
 {
-Brandpfeile
+Fire Arrows
 }
 
 STRING 6827
@@ -40930,7 +40930,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6836
 // Fähigkeiten: A0GU (Brandpfeile - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 1|r]
+Fire Arrows [|cffffcc00Level 1|r]
 }
 
 STRING 6837
@@ -41014,7 +41014,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6850
 // Fähigkeiten: A0GV (Brandpfeile - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 2|r]
+Fire Arrows [|cffffcc00Level 2|r]
 }
 
 STRING 6851
@@ -41098,7 +41098,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6864
 // Fähigkeiten: A0GW (Brandpfeile - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 3|r]
+Fire Arrows [|cffffcc00Level 3|r]
 }
 
 STRING 6865
@@ -41182,7 +41182,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6878
 // Fähigkeiten: A0GX (Brandpfeile - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 4|r]
+Fire Arrows [|cffffcc00Level 4|r]
 }
 
 STRING 6879
@@ -41266,7 +41266,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6892
 // Fähigkeiten: A0GY (Brandpfeile - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Brandpfeile [|cffffcc00Stufe 5|r]
+Fire Arrows [|cffffcc00Level 5|r]
 }
 
 STRING 6893
@@ -42748,31 +42748,31 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7139
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren <A0HX,DataB1> Schaden über <A0HX,Dur1> Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden.
+The ranger poisons his arrows and deals additional damage of <A0HX,DataB1> to hit opponents for <A0HX,Dur1> seconds. There can be used only one kind of arrows at a time.
 }
 
 STRING 7140
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren <A0HX,DataB2> Schaden über <A0HX,Dur2> Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden.
+The ranger poisons his arrows and deals additional damage of <A0HX,DataB2> to hit opponents for <A0HX,Dur2> seconds. There can be used only one kind of arrows at a time.
 }
 
 STRING 7141
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren <A0HX,DataB3> Schaden über <A0HX,Dur3> Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden.
+The ranger poisons his arrows and deals additional damage of <A0HX,DataB3> to hit opponents for <A0HX,Dur3> seconds. There can be used only one kind of arrows at a time.
 }
 
 STRING 7142
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren <A0HX,DataB4> Schaden über <A0HX,Dur4> Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden.
+The ranger poisons his arrows and deals additional damage of <A0HX,DataB4> to hit opponents for <A0HX,Dur4> seconds. There can be used only one kind of arrows at a time.
 }
 
 STRING 7143
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren <A0HX,DataB5> Schaden über <A0HX,Dur5> Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden.
+The ranger poisons his arrows and deals additional damage of <A0HX,DataB5> to hit opponents for <A0HX,Dur5> seconds. There can be used only one kind of arrows at a time.
 }
 
 STRING 7144
@@ -46690,7 +46690,7 @@ Kontrollierter Zeitfluss - Stufe 1
 STRING 7796
 // Fähigkeiten: A12E (Pfeilhagel), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 5|r]
+Hail of Arrows [|cffffcc00Level 5|r]
 }
 
 STRING 7797
@@ -46840,7 +46840,7 @@ STRING 7820
 STRING 7821
 // Fähigkeiten: A0FV (Vergiftete Pfeile), Name (Name (anam))
 {
-Vergiftete Pfeile
+Poisoned Arrows
 }
 
 STRING 7822
@@ -52462,31 +52462,31 @@ STRING 8757
 STRING 8758
 // Fähigkeiten: A0MT (Eispfeile), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 1|r]
+Ice Arrows [|cffffcc00Level 1|r]
 }
 
 STRING 8759
 // Fähigkeiten: A0MT (Eispfeile), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 2|r]
+Ice Arrows [|cffffcc00Level 2|r]
 }
 
 STRING 8760
 // Fähigkeiten: A0MT (Eispfeile), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 3|r]
+Ice Arrows [|cffffcc00Level 3|r]
 }
 
 STRING 8761
 // Fähigkeiten: A0MT (Eispfeile), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 4|r]
+Ice Arrows [|cffffcc00Level 4|r]
 }
 
 STRING 8762
 // Fähigkeiten: A0MT (Eispfeile), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 5|r]
+Ice Arrows [|cffffcc00Level 5|r]
 }
 
 STRING 8763
@@ -52528,7 +52528,7 @@ STRING 8768
 STRING 8769
 // Fähigkeiten: A0MU (Eispfeile), Name (Name (anam))
 {
-Eispfeile
+Ice Arrows
 }
 
 STRING 8770
@@ -52588,7 +52588,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 8779
 // Fähigkeiten: A0MV (Eispfeile - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 1|r]
+Ice Arrows [|cffffcc00Level 1|r]
 }
 
 STRING 8780
@@ -52672,7 +52672,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 8793
 // Fähigkeiten: A0MW (Eispfeile - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 2|r]
+Ice Arrows [|cffffcc00Level 2|r]
 }
 
 STRING 8794
@@ -52756,7 +52756,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 8807
 // Fähigkeiten: A0MX (Eispfeile - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 3|r]
+Ice Arrows [|cffffcc00Level 3|r]
 }
 
 STRING 8808
@@ -52840,7 +52840,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 8821
 // Fähigkeiten: A0MY (Eispfeile - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 4|r]
+Ice Arrows [|cffffcc00Level 4|r]
 }
 
 STRING 8822
@@ -52924,7 +52924,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 8835
 // Fähigkeiten: A0MZ (Eispfeile - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile [|cffffcc00Stufe 5|r]
+Ice Arrows [|cffffcc00Level 5|r]
 }
 
 STRING 8836
@@ -56046,7 +56046,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 9348
 // Fähigkeiten: A12E (Pfeilhagel), Name (Name (anam))
 {
-Pfeilhagel
+Hail of Arrows
 }
 
 STRING 9349
@@ -56356,7 +56356,7 @@ Relief - Level 5
 STRING 9400
 // Fähigkeiten: A0GV (Brandpfeile - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur1> Sekunden lang und erhalten dabei Schaden. |n|n|cffffcc00Stufe 1|r - Alle <AOGS,DataB1> Sekunden <A0GS,DataA1> vollen Schaden und alle <A0GS,DataD1> Sekunden <A0GS,DataC1> halben Schaden.|n|cffffcc00Stufe 2|r - Alle <AOGS,DataB2> Sekunden <A0GS,DataA2> vollen Schaden und alle <A0GS,DataD2> Sekunden <A0GS,DataC2> halben Schaden.|n|cffffcc00Stufe 3|r - Alle <AOGS,DataB3> Sekunden <A0GS,DataA3> vollen Schaden und alle <A0GS,DataD3> Sekunden <A0GS,DataC3> halben Schaden.|n|cffffcc00Stufe 4|r - Alle <AOGS,DataB4> Sekunden <A0GS,DataA4> vollen Schaden und alle <A0GS,DataD4> Sekunden <A0GS,DataC4> halben Schaden.|n|cffffcc00Stufe 5|r - Alle <AOGS,DataB5> Sekunden <A0GS,DataA5> vollen Schaden und alle <A0GS,DataD5> Sekunden <A0GS,DataC5> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur1> seconds and get damage while burning. |n|n|cffffcc00Level 1|r - Every <AOGS,DataB1> seconds <A0GS,DataA1> full damage and every <A0GS,DataD1> seconds <A0GS,DataC1> half damage.|n|cffffcc00Level 2|r - Every <AOGS,DataB2> seconds <A0GS,DataA2> full damage and every <A0GS,DataD2> seconds <A0GS,DataC2> half damage.|n|cffffcc00Level 3|r - Every <AOGS,DataB3> seconds <A0GS,DataA3> full damage and every <A0GS,DataD3> seconds <A0GS,DataC3> half damage.|n|cffffcc00Level 4|r - Every <AOGS,DataB4> seconds <A0GS,DataA4> full damage and every <A0GS,DataD4> seconds <A0GS,DataC4> half damage.|n|cffffcc00Level 5|r - Every <AOGS,DataB5> seconds <A0GS,DataA5> full damage and every <A0GS,DataD5> seconds <A0GS,DataC5> half damage.
 }
 
 STRING 9401
@@ -56440,7 +56440,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 9414
 // Fähigkeiten: A0GW (Brandpfeile - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur1> Sekunden lang und erhalten dabei Schaden. |n|n|cffffcc00Stufe 1|r - Alle <AOGS,DataB1> Sekunden <A0GS,DataA1> vollen Schaden und alle <A0GS,DataD1> Sekunden <A0GS,DataC1> halben Schaden.|n|cffffcc00Stufe 2|r - Alle <AOGS,DataB2> Sekunden <A0GS,DataA2> vollen Schaden und alle <A0GS,DataD2> Sekunden <A0GS,DataC2> halben Schaden.|n|cffffcc00Stufe 3|r - Alle <AOGS,DataB3> Sekunden <A0GS,DataA3> vollen Schaden und alle <A0GS,DataD3> Sekunden <A0GS,DataC3> halben Schaden.|n|cffffcc00Stufe 4|r - Alle <AOGS,DataB4> Sekunden <A0GS,DataA4> vollen Schaden und alle <A0GS,DataD4> Sekunden <A0GS,DataC4> halben Schaden.|n|cffffcc00Stufe 5|r - Alle <AOGS,DataB5> Sekunden <A0GS,DataA5> vollen Schaden und alle <A0GS,DataD5> Sekunden <A0GS,DataC5> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur1> seconds and get damage while burning. |n|n|cffffcc00Level 1|r - Every <AOGS,DataB1> seconds <A0GS,DataA1> full damage and every <A0GS,DataD1> seconds <A0GS,DataC1> half damage.|n|cffffcc00Level 2|r - Every <AOGS,DataB2> seconds <A0GS,DataA2> full damage and every <A0GS,DataD2> seconds <A0GS,DataC2> half damage.|n|cffffcc00Level 3|r - Every <AOGS,DataB3> seconds <A0GS,DataA3> full damage and every <A0GS,DataD3> seconds <A0GS,DataC3> half damage.|n|cffffcc00Level 4|r - Every <AOGS,DataB4> seconds <A0GS,DataA4> full damage and every <A0GS,DataD4> seconds <A0GS,DataC4> half damage.|n|cffffcc00Level 5|r - Every <AOGS,DataB5> seconds <A0GS,DataA5> full damage and every <A0GS,DataD5> seconds <A0GS,DataC5> half damage.
 }
 
 STRING 9415
@@ -56524,7 +56524,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 9428
 // Fähigkeiten: A0GX (Brandpfeile - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur1> Sekunden lang und erhalten dabei Schaden. |n|n|cffffcc00Stufe 1|r - Alle <AOGS,DataB1> Sekunden <A0GS,DataA1> vollen Schaden und alle <A0GS,DataD1> Sekunden <A0GS,DataC1> halben Schaden.|n|cffffcc00Stufe 2|r - Alle <AOGS,DataB2> Sekunden <A0GS,DataA2> vollen Schaden und alle <A0GS,DataD2> Sekunden <A0GS,DataC2> halben Schaden.|n|cffffcc00Stufe 3|r - Alle <AOGS,DataB3> Sekunden <A0GS,DataA3> vollen Schaden und alle <A0GS,DataD3> Sekunden <A0GS,DataC3> halben Schaden.|n|cffffcc00Stufe 4|r - Alle <AOGS,DataB4> Sekunden <A0GS,DataA4> vollen Schaden und alle <A0GS,DataD4> Sekunden <A0GS,DataC4> halben Schaden.|n|cffffcc00Stufe 5|r - Alle <AOGS,DataB5> Sekunden <A0GS,DataA5> vollen Schaden und alle <A0GS,DataD5> Sekunden <A0GS,DataC5> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur1> seconds and get damage while burning. |n|n|cffffcc00Level 1|r - Every <AOGS,DataB1> seconds <A0GS,DataA1> full damage and every <A0GS,DataD1> seconds <A0GS,DataC1> half damage.|n|cffffcc00Level 2|r - Every <AOGS,DataB2> seconds <A0GS,DataA2> full damage and every <A0GS,DataD2> seconds <A0GS,DataC2> half damage.|n|cffffcc00Level 3|r - Every <AOGS,DataB3> seconds <A0GS,DataA3> full damage and every <A0GS,DataD3> seconds <A0GS,DataC3> half damage.|n|cffffcc00Level 4|r - Every <AOGS,DataB4> seconds <A0GS,DataA4> full damage and every <A0GS,DataD4> seconds <A0GS,DataC4> half damage.|n|cffffcc00Level 5|r - Every <AOGS,DataB5> seconds <A0GS,DataA5> full damage and every <A0GS,DataD5> seconds <A0GS,DataC5> half damage.
 }
 
 STRING 9429
@@ -56608,7 +56608,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 9442
 // Fähigkeiten: A0GY (Brandpfeile - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer steckt seine Pfeile vor dem Abschießen in Brand. Getroffene Gegner brennen <A0GS,Dur1> Sekunden lang und erhalten dabei Schaden. |n|n|cffffcc00Stufe 1|r - Alle <AOGS,DataB1> Sekunden <A0GS,DataA1> vollen Schaden und alle <A0GS,DataD1> Sekunden <A0GS,DataC1> halben Schaden.|n|cffffcc00Stufe 2|r - Alle <AOGS,DataB2> Sekunden <A0GS,DataA2> vollen Schaden und alle <A0GS,DataD2> Sekunden <A0GS,DataC2> halben Schaden.|n|cffffcc00Stufe 3|r - Alle <AOGS,DataB3> Sekunden <A0GS,DataA3> vollen Schaden und alle <A0GS,DataD3> Sekunden <A0GS,DataC3> halben Schaden.|n|cffffcc00Stufe 4|r - Alle <AOGS,DataB4> Sekunden <A0GS,DataA4> vollen Schaden und alle <A0GS,DataD4> Sekunden <A0GS,DataC4> halben Schaden.|n|cffffcc00Stufe 5|r - Alle <AOGS,DataB5> Sekunden <A0GS,DataA5> vollen Schaden und alle <A0GS,DataD5> Sekunden <A0GS,DataC5> halben Schaden.
+The ranger sets his arrows on fire before releasing them. Hit opponents burn for <A0GS,Dur1> seconds and get damage while burning. |n|n|cffffcc00Level 1|r - Every <AOGS,DataB1> seconds <A0GS,DataA1> full damage and every <A0GS,DataD1> seconds <A0GS,DataC1> half damage.|n|cffffcc00Level 2|r - Every <AOGS,DataB2> seconds <A0GS,DataA2> full damage and every <A0GS,DataD2> seconds <A0GS,DataC2> half damage.|n|cffffcc00Level 3|r - Every <AOGS,DataB3> seconds <A0GS,DataA3> full damage and every <A0GS,DataD3> seconds <A0GS,DataC3> half damage.|n|cffffcc00Level 4|r - Every <AOGS,DataB4> seconds <A0GS,DataA4> full damage and every <A0GS,DataD4> seconds <A0GS,DataC4> half damage.|n|cffffcc00Level 5|r - Every <AOGS,DataB5> seconds <A0GS,DataA5> full damage and every <A0GS,DataD5> seconds <A0GS,DataC5> half damage.
 }
 
 STRING 9443
@@ -59015,7 +59015,7 @@ Eine Zauberspruchrolle der Zauberin Sisgard, die einen magischen Schild erzeugen
 STRING 9841
 // Fähigkeiten: A12F (Pfeilhagel), Name (Name (anam))
 {
-Pfeilhagel
+Hail of Arrows
 }
 
 STRING 9842
@@ -64523,7 +64523,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10769
 // Fähigkeiten: A0YM (Gewandheit - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 1|r]
+Agility [|cffffcc00Level 1|r]
 }
 
 STRING 10770
@@ -64601,7 +64601,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10782
 // Fähigkeiten: A0YN (Gewandheit - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 2|r]
+Agility [|cffffcc00Level 2|r]
 }
 
 STRING 10783
@@ -64679,7 +64679,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10795
 // Fähigkeiten: A0YO (Gewandheit - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 3|r]
+Agility [|cffffcc00Level 3|r]
 }
 
 STRING 10796
@@ -64757,7 +64757,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10808
 // Fähigkeiten: A0YP (Gewandheit - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 4|r]
+Agility [|cffffcc00Level 4|r]
 }
 
 STRING 10809
@@ -64835,7 +64835,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10821
 // Fähigkeiten: A0YQ (Gewandheit - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit [|cffffcc00Stufe 5|r]
+Agility [|cffffcc00Level 5|r]
 }
 
 STRING 10822
@@ -65015,61 +65015,61 @@ The ranger has the chance to cause double damage.|n|n|cffffcc00Level 1|r - A cha
 STRING 10851
 // Fähigkeiten: A0C6 (Vergiftete Pfeile - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren Schaden über mehrere Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden. |n|n|cffffcc00Stufe 1|r -  <A0HX,DataB1> Schaden über <A0HX,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0HX,DataB2> Schaden über <A0HX,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0HX,DataB3> Schaden über <A0HX,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0HX,DataB4> Schaden über <A0HX,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0HX,DataB5> Schaden über <A0HX,Dur5> Sekunden.
+The ranger poisons his arrows and deals additional damage to hit opponents. There can be used only one kind of arrows at a time. |n|n|cffffcc00Level 1|r -  <A0HX,DataB1> damage for <A0HX,Dur1> seconds.|n|cffffcc00Level 2|r - <A0HX,DataB2> damage for <A0HX,Dur2> seconds.|n|cffffcc00Level 3|r - <A0HX,DataB3> damage for <A0HX,Dur3> seconds.|n|cffffcc00Level 4|r - <A0HX,DataB4> damage for <A0HX,Dur4> seconds.|n|cffffcc00Level 5|r - <A0HX,DataB5> damage for <A0HX,Dur5> seconds.
 }
 
 STRING 10852
 // Fähigkeiten: A0GJ (Vergiftete Pfeile - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren Schaden über mehrere Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden. |n|n|cffffcc00Stufe 1|r -  <A0HX,DataB1> Schaden über <A0HX,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0HX,DataB2> Schaden über <A0HX,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0HX,DataB3> Schaden über <A0HX,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0HX,DataB4> Schaden über <A0HX,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0HX,DataB5> Schaden über <A0HX,Dur5> Sekunden.
+The ranger poisons his arrows and deals additional damage to hit opponents. There can be used only one kind of arrows at a time. |n|n|cffffcc00Level 1|r -  <A0HX,DataB1> damage for <A0HX,Dur1> seconds.|n|cffffcc00Level 2|r - <A0HX,DataB2> damage for <A0HX,Dur2> seconds.|n|cffffcc00Level 3|r - <A0HX,DataB3> damage for <A0HX,Dur3> seconds.|n|cffffcc00Level 4|r - <A0HX,DataB4> damage for <A0HX,Dur4> seconds.|n|cffffcc00Level 5|r - <A0HX,DataB5> damage for <A0HX,Dur5> seconds.
 }
 
 STRING 10853
 // Fähigkeiten: A0GK (Vergiftete Pfeile - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren Schaden über mehrere Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden. |n|n|cffffcc00Stufe 1|r -  <A0HX,DataB1> Schaden über <A0HX,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0HX,DataB2> Schaden über <A0HX,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0HX,DataB3> Schaden über <A0HX,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0HX,DataB4> Schaden über <A0HX,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0HX,DataB5> Schaden über <A0HX,Dur5> Sekunden.
+The ranger poisons his arrows and deals additional damage to hit opponents. There can be used only one kind of arrows at a time. |n|n|cffffcc00Level 1|r -  <A0HX,DataB1> damage for <A0HX,Dur1> seconds.|n|cffffcc00Level 2|r - <A0HX,DataB2> damage for <A0HX,Dur2> seconds.|n|cffffcc00Level 3|r - <A0HX,DataB3> damage for <A0HX,Dur3> seconds.|n|cffffcc00Level 4|r - <A0HX,DataB4> damage for <A0HX,Dur4> seconds.|n|cffffcc00Level 5|r - <A0HX,DataB5> damage for <A0HX,Dur5> seconds.
 }
 
 STRING 10854
 // Fähigkeiten: A0GL (Vergiftete Pfeile - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren Schaden über mehrere Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden. |n|n|cffffcc00Stufe 1|r -  <A0HX,DataB1> Schaden über <A0HX,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0HX,DataB2> Schaden über <A0HX,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0HX,DataB3> Schaden über <A0HX,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0HX,DataB4> Schaden über <A0HX,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0HX,DataB5> Schaden über <A0HX,Dur5> Sekunden.
+The ranger poisons his arrows and deals additional damage to hit opponents. There can be used only one kind of arrows at a time. |n|n|cffffcc00Level 1|r -  <A0HX,DataB1> damage for <A0HX,Dur1> seconds.|n|cffffcc00Level 2|r - <A0HX,DataB2> damage for <A0HX,Dur2> seconds.|n|cffffcc00Level 3|r - <A0HX,DataB3> damage for <A0HX,Dur3> seconds.|n|cffffcc00Level 4|r - <A0HX,DataB4> damage for <A0HX,Dur4> seconds.|n|cffffcc00Level 5|r - <A0HX,DataB5> damage for <A0HX,Dur5> seconds.
 }
 
 STRING 10855
 // Fähigkeiten: A0GM (Vergiftete Pfeile - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vergiftet seine Pfeile und fügt getroffenen Gegnern weiteren Schaden über mehrere Sekunden zu. Es kann immer nur eine Art Pfeile verwendet werden. |n|n|cffffcc00Stufe 1|r -  <A0HX,DataB1> Schaden über <A0HX,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0HX,DataB2> Schaden über <A0HX,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0HX,DataB3> Schaden über <A0HX,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0HX,DataB4> Schaden über <A0HX,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0HX,DataB5> Schaden über <A0HX,Dur5> Sekunden.
+The ranger poisons his arrows and deals additional damage to hit opponents. There can be used only one kind of arrows at a time. |n|n|cffffcc00Level 1|r -  <A0HX,DataB1> damage for <A0HX,Dur1> seconds.|n|cffffcc00Level 2|r - <A0HX,DataB2> damage for <A0HX,Dur2> seconds.|n|cffffcc00Level 3|r - <A0HX,DataB3> damage for <A0HX,Dur3> seconds.|n|cffffcc00Level 4|r - <A0HX,DataB4> damage for <A0HX,Dur4> seconds.|n|cffffcc00Level 5|r - <A0HX,DataB5> damage for <A0HX,Dur5> seconds.
 }
 
 STRING 10856
 // Fähigkeiten: A0MT (Eispfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern für <A0MT,Dur1> Sekunden um <A0MT,DataB1,%> %. Außerdem richtet der Waldläufer <A0MT,DataA1,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents by <A0MT,DataB1,%> % for <A0MT,Dur1> seconds. Besides the ranger causes additional damage of <A0MT,DataA1,%> %.
 }
 
 STRING 10857
 // Fähigkeiten: A0MT (Eispfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern für <A0MT,Dur2> Sekunden um <A0MT,DataB2,%> %. Außerdem richtet der Waldläufer <A0MT,DataA2,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents by <A0MT,DataB2,%> % for <A0MT,Dur2> seconds. Besides the ranger causes additional damage of <A0MT,DataA2,%> %.
 }
 
 STRING 10858
 // Fähigkeiten: A0MT (Eispfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern für <A0MT,Dur3> Sekunden um <A0MT,DataB3,%> %. Außerdem richtet der Waldläufer <A0MT,DataA3,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents by <A0MT,DataB3,%> % for <A0MT,Dur3> seconds. Besides the ranger causes additional damage of <A0MT,DataA3,%> %.
 }
 
 STRING 10859
 // Fähigkeiten: A0MT (Eispfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern für <A0MT,Dur4> Sekunden um <A0MT,DataB4,%> %. Außerdem richtet der Waldläufer <A0MT,DataA4,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents by <A0MT,DataB4,%> % for <A0MT,Dur4> seconds. Besides the ranger causes additional damage of <A0MT,DataA4,%> %.
 }
 
 STRING 10860
 // Fähigkeiten: A0MT (Eispfeile), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern für <A0MT,Dur5> Sekunden um <A0MT,DataB5,%> %. Außerdem richtet der Waldläufer <A0MT,DataA5,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents by <A0MT,DataB5,%> % for <A0MT,Dur5> seconds. Besides the ranger causes additional damage of <A0MT,DataA5,%> %.
 }
 
 STRING 10861
@@ -65081,61 +65081,61 @@ Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 10862
 // Fähigkeiten: A0MV (Eispfeile - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern. Außerdem richtet der Waldläufer mehr Schaden an.|n|n|cffffcc00Stufe 1|r - Verlangsamt den Gegner für <A0MT,Dur1> Sekunden um <A0MT,DataB1,%> %. Außerdem richtet der Waldläufer <A0MT,DataA1,%> % mehr Schaden an.|n|cffffcc00Stufe 2|r - Verlangsamt den Gegner für <A0MT,Dur2> Sekunden um <A0MT,DataB2,%> %. Außerdem richtet der Waldläufer <A0MT,DataA2,%> % mehr Schaden an.|n|cffffcc00Stufe 3|r - Verlangsamt den Gegner für <A0MT,Dur3> Sekunden um <A0MT,DataB3,%> %. Außerdem richtet der Waldläufer <A0MT,DataA3,%> % mehr Schaden an.|n|cffffcc00Stufe 4|r - Verlangsamt den Gegner für <A0MT,Dur4> Sekunden um <A0MT,DataB4,%> %. Außerdem richtet der Waldläufer <A0MT,DataA4,%> % mehr Schaden an.|n|cffffcc00Stufe 5|r - Verlangsamt den Gegner für <A0MT,Dur5> Sekunden um <A0MT,DataB5,%> %. Außerdem richtet der Waldläufer <A0MT,DataA5,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents. Besides the ranger causes additional damage.|n|n|cffffcc00Level 1|r - Slows down the opponent for <A0MT,Dur1> seconds by <A0MT,DataB1,%> %. Besides the ranger causes additional damage of <A0MT,DataA1,%> %.|n|cffffcc00Level 2|r - Slows down the opponent for <A0MT,Dur2> seconds by <A0MT,DataB2,%> %. Besides the ranger causes additional damage of <A0MT,DataA2,%> %.|n|cffffcc00Level 3|r - Slows down the opponent for <A0MT,Dur3> seconds by <A0MT,DataB3,%> %. Besides the ranger causes additional damage of <A0MT,DataA3,%> %.|n|cffffcc00Level 4|r - Slows down the opponent for <A0MT,Dur4> seconds by <A0MT,DataB4,%> %. Besides the ranger causes additional damage of <A0MT,DataA4,%> %.|n|cffffcc00Level 5|r - Slows down the opponent for <A0MT,Dur5> seconds by <A0MT,DataB5,%> %. Besides the ranger causes additional damage of <A0MT,DataA5,%> %.
 }
 
 STRING 10863
 // Fähigkeiten: A0MW (Eispfeile - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern. Außerdem richtet der Waldläufer mehr Schaden an.|n|n|cffffcc00Stufe 1|r - Verlangsamt den Gegner für <A0MT,Dur1> Sekunden um <A0MT,DataB1,%> %. Außerdem richtet der Waldläufer <A0MT,DataA1,%> % mehr Schaden an.|n|cffffcc00Stufe 2|r - Verlangsamt den Gegner für <A0MT,Dur2> Sekunden um <A0MT,DataB2,%> %. Außerdem richtet der Waldläufer <A0MT,DataA2,%> % mehr Schaden an.|n|cffffcc00Stufe 3|r - Verlangsamt den Gegner für <A0MT,Dur3> Sekunden um <A0MT,DataB3,%> %. Außerdem richtet der Waldläufer <A0MT,DataA3,%> % mehr Schaden an.|n|cffffcc00Stufe 4|r - Verlangsamt den Gegner für <A0MT,Dur4> Sekunden um <A0MT,DataB4,%> %. Außerdem richtet der Waldläufer <A0MT,DataA4,%> % mehr Schaden an.|n|cffffcc00Stufe 5|r - Verlangsamt den Gegner für <A0MT,Dur5> Sekunden um <A0MT,DataB5,%> %. Außerdem richtet der Waldläufer <A0MT,DataA5,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents. Besides the ranger causes additional damage.|n|n|cffffcc00Level 1|r - Slows down the opponent for <A0MT,Dur1> seconds by <A0MT,DataB1,%> %. Besides the ranger causes additional damage of <A0MT,DataA1,%> %.|n|cffffcc00Level 2|r - Slows down the opponent for <A0MT,Dur2> seconds by <A0MT,DataB2,%> %. Besides the ranger causes additional damage of <A0MT,DataA2,%> %.|n|cffffcc00Level 3|r - Slows down the opponent for <A0MT,Dur3> seconds by <A0MT,DataB3,%> %. Besides the ranger causes additional damage of <A0MT,DataA3,%> %.|n|cffffcc00Level 4|r - Slows down the opponent for <A0MT,Dur4> seconds by <A0MT,DataB4,%> %. Besides the ranger causes additional damage of <A0MT,DataA4,%> %.|n|cffffcc00Level 5|r - Slows down the opponent for <A0MT,Dur5> seconds by <A0MT,DataB5,%> %. Besides the ranger causes additional damage of <A0MT,DataA5,%> %.
 }
 
 STRING 10864
 // Fähigkeiten: A0MX (Eispfeile - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern. Außerdem richtet der Waldläufer mehr Schaden an.|n|n|cffffcc00Stufe 1|r - Verlangsamt den Gegner für <A0MT,Dur1> Sekunden um <A0MT,DataB1,%> %. Außerdem richtet der Waldläufer <A0MT,DataA1,%> % mehr Schaden an.|n|cffffcc00Stufe 2|r - Verlangsamt den Gegner für <A0MT,Dur2> Sekunden um <A0MT,DataB2,%> %. Außerdem richtet der Waldläufer <A0MT,DataA2,%> % mehr Schaden an.|n|cffffcc00Stufe 3|r - Verlangsamt den Gegner für <A0MT,Dur3> Sekunden um <A0MT,DataB3,%> %. Außerdem richtet der Waldläufer <A0MT,DataA3,%> % mehr Schaden an.|n|cffffcc00Stufe 4|r - Verlangsamt den Gegner für <A0MT,Dur4> Sekunden um <A0MT,DataB4,%> %. Außerdem richtet der Waldläufer <A0MT,DataA4,%> % mehr Schaden an.|n|cffffcc00Stufe 5|r - Verlangsamt den Gegner für <A0MT,Dur5> Sekunden um <A0MT,DataB5,%> %. Außerdem richtet der Waldläufer <A0MT,DataA5,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents. Besides the ranger causes additional damage.|n|n|cffffcc00Level 1|r - Slows down the opponent for <A0MT,Dur1> seconds by <A0MT,DataB1,%> %. Besides the ranger causes additional damage of <A0MT,DataA1,%> %.|n|cffffcc00Level 2|r - Slows down the opponent for <A0MT,Dur2> seconds by <A0MT,DataB2,%> %. Besides the ranger causes additional damage of <A0MT,DataA2,%> %.|n|cffffcc00Level 3|r - Slows down the opponent for <A0MT,Dur3> seconds by <A0MT,DataB3,%> %. Besides the ranger causes additional damage of <A0MT,DataA3,%> %.|n|cffffcc00Level 4|r - Slows down the opponent for <A0MT,Dur4> seconds by <A0MT,DataB4,%> %. Besides the ranger causes additional damage of <A0MT,DataA4,%> %.|n|cffffcc00Level 5|r - Slows down the opponent for <A0MT,Dur5> seconds by <A0MT,DataB5,%> %. Besides the ranger causes additional damage of <A0MT,DataA5,%> %.
 }
 
 STRING 10865
 // Fähigkeiten: A0MY (Eispfeile - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern. Außerdem richtet der Waldläufer mehr Schaden an.|n|n|cffffcc00Stufe 1|r - Verlangsamt den Gegner für <A0MT,Dur1> Sekunden um <A0MT,DataB1,%> %. Außerdem richtet der Waldläufer <A0MT,DataA1,%> % mehr Schaden an.|n|cffffcc00Stufe 2|r - Verlangsamt den Gegner für <A0MT,Dur2> Sekunden um <A0MT,DataB2,%> %. Außerdem richtet der Waldläufer <A0MT,DataA2,%> % mehr Schaden an.|n|cffffcc00Stufe 3|r - Verlangsamt den Gegner für <A0MT,Dur3> Sekunden um <A0MT,DataB3,%> %. Außerdem richtet der Waldläufer <A0MT,DataA3,%> % mehr Schaden an.|n|cffffcc00Stufe 4|r - Verlangsamt den Gegner für <A0MT,Dur4> Sekunden um <A0MT,DataB4,%> %. Außerdem richtet der Waldläufer <A0MT,DataA4,%> % mehr Schaden an.|n|cffffcc00Stufe 5|r - Verlangsamt den Gegner für <A0MT,Dur5> Sekunden um <A0MT,DataB5,%> %. Außerdem richtet der Waldläufer <A0MT,DataA5,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents. Besides the ranger causes additional damage.|n|n|cffffcc00Level 1|r - Slows down the opponent for <A0MT,Dur1> seconds by <A0MT,DataB1,%> %. Besides the ranger causes additional damage of <A0MT,DataA1,%> %.|n|cffffcc00Level 2|r - Slows down the opponent for <A0MT,Dur2> seconds by <A0MT,DataB2,%> %. Besides the ranger causes additional damage of <A0MT,DataA2,%> %.|n|cffffcc00Level 3|r - Slows down the opponent for <A0MT,Dur3> seconds by <A0MT,DataB3,%> %. Besides the ranger causes additional damage of <A0MT,DataA3,%> %.|n|cffffcc00Level 4|r - Slows down the opponent for <A0MT,Dur4> seconds by <A0MT,DataB4,%> %. Besides the ranger causes additional damage of <A0MT,DataA4,%> %.|n|cffffcc00Level 5|r - Slows down the opponent for <A0MT,Dur5> seconds by <A0MT,DataB5,%> %. Besides the ranger causes additional damage of <A0MT,DataA5,%> %.
 }
 
 STRING 10866
 // Fähigkeiten: A0MZ (Eispfeile - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer vereist seine Pfeile. Treffer verlangsamen das Bewegungstempo von Gengnern. Außerdem richtet der Waldläufer mehr Schaden an.|n|n|cffffcc00Stufe 1|r - Verlangsamt den Gegner für <A0MT,Dur1> Sekunden um <A0MT,DataB1,%> %. Außerdem richtet der Waldläufer <A0MT,DataA1,%> % mehr Schaden an.|n|cffffcc00Stufe 2|r - Verlangsamt den Gegner für <A0MT,Dur2> Sekunden um <A0MT,DataB2,%> %. Außerdem richtet der Waldläufer <A0MT,DataA2,%> % mehr Schaden an.|n|cffffcc00Stufe 3|r - Verlangsamt den Gegner für <A0MT,Dur3> Sekunden um <A0MT,DataB3,%> %. Außerdem richtet der Waldläufer <A0MT,DataA3,%> % mehr Schaden an.|n|cffffcc00Stufe 4|r - Verlangsamt den Gegner für <A0MT,Dur4> Sekunden um <A0MT,DataB4,%> %. Außerdem richtet der Waldläufer <A0MT,DataA4,%> % mehr Schaden an.|n|cffffcc00Stufe 5|r - Verlangsamt den Gegner für <A0MT,Dur5> Sekunden um <A0MT,DataB5,%> %. Außerdem richtet der Waldläufer <A0MT,DataA5,%> % mehr Schaden an.
+The ranger freezes his arrows. Hits slow down the movement speed of opponents. Besides the ranger causes additional damage.|n|n|cffffcc00Level 1|r - Slows down the opponent for <A0MT,Dur1> seconds by <A0MT,DataB1,%> %. Besides the ranger causes additional damage of <A0MT,DataA1,%> %.|n|cffffcc00Level 2|r - Slows down the opponent for <A0MT,Dur2> seconds by <A0MT,DataB2,%> %. Besides the ranger causes additional damage of <A0MT,DataA2,%> %.|n|cffffcc00Level 3|r - Slows down the opponent for <A0MT,Dur3> seconds by <A0MT,DataB3,%> %. Besides the ranger causes additional damage of <A0MT,DataA3,%> %.|n|cffffcc00Level 4|r - Slows down the opponent for <A0MT,Dur4> seconds by <A0MT,DataB4,%> %. Besides the ranger causes additional damage of <A0MT,DataA4,%> %.|n|cffffcc00Level 5|r - Slows down the opponent for <A0MT,Dur5> seconds by <A0MT,DataB5,%> %. Besides the ranger causes additional damage of <A0MT,DataA5,%> %.
 }
 
 STRING 10867
 // Fähigkeiten: A0YM (Gewandheit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer bestimmten Chance aus.|n|n|cffffcc00Stufe 1|r - <A06O,DataA1,%>%igen Chance. |n|cffffcc00Stufe 2|r - <A06O,DataA2,%>%igen Chance. |n|cffffcc00Stufe 3|r - <A06O,DataA3,%>%igen Chance. |n|cffffcc00Stufe 4|r - <A06O,DataA4,%>%igen Chance. |n|cffffcc00Stufe 5|r - <A06O,DataA5,%>%igen Chance.
+The ranger evades attacks with a certain chance.|n|n|cffffcc00Level 1|r - Chance of <A06O,DataA1,%> %. |n|cffffcc00Level 2|r - Chance of <A06O,DataA2,%> %. |n|cffffcc00Level 3|r - Chance of <A06O,DataA3,%> %. |n|cffffcc00Level 4|r - Chance of <A06O,DataA4,%> %. |n|cffffcc00Level 5|r - Chance of <A06O,DataA5,%> %.
 }
 
 STRING 10868
 // Fähigkeiten: A0YN (Gewandheit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer bestimmten Chance aus.|n|n|cffffcc00Stufe 1|r - <A06O,DataA1,%>%igen Chance. |n|cffffcc00Stufe 2|r - <A06O,DataA2,%>%igen Chance. |n|cffffcc00Stufe 3|r - <A06O,DataA3,%>%igen Chance. |n|cffffcc00Stufe 4|r - <A06O,DataA4,%>%igen Chance. |n|cffffcc00Stufe 5|r - <A06O,DataA5,%>%igen Chance.
+The ranger evades attacks with a certain chance.|n|n|cffffcc00Level 1|r - Chance of <A06O,DataA1,%> %. |n|cffffcc00Level 2|r - Chance of <A06O,DataA2,%> %. |n|cffffcc00Level 3|r - Chance of <A06O,DataA3,%> %. |n|cffffcc00Level 4|r - Chance of <A06O,DataA4,%> %. |n|cffffcc00Level 5|r - Chance of <A06O,DataA5,%> %.
 }
 
 STRING 10869
 // Fähigkeiten: A0YO (Gewandheit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer bestimmten Chance aus.|n|n|cffffcc00Stufe 1|r - <A06O,DataA1,%>%igen Chance. |n|cffffcc00Stufe 2|r - <A06O,DataA2,%>%igen Chance. |n|cffffcc00Stufe 3|r - <A06O,DataA3,%>%igen Chance. |n|cffffcc00Stufe 4|r - <A06O,DataA4,%>%igen Chance. |n|cffffcc00Stufe 5|r - <A06O,DataA5,%>%igen Chance.
+The ranger evades attacks with a certain chance.|n|n|cffffcc00Level 1|r - Chance of <A06O,DataA1,%> %. |n|cffffcc00Level 2|r - Chance of <A06O,DataA2,%> %. |n|cffffcc00Level 3|r - Chance of <A06O,DataA3,%> %. |n|cffffcc00Level 4|r - Chance of <A06O,DataA4,%> %. |n|cffffcc00Level 5|r - Chance of <A06O,DataA5,%> %.
 }
 
 STRING 10870
 // Fähigkeiten: A0YP (Gewandheit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer bestimmten Chance aus.|n|n|cffffcc00Stufe 1|r - <A06O,DataA1,%>%igen Chance. |n|cffffcc00Stufe 2|r - <A06O,DataA2,%>%igen Chance. |n|cffffcc00Stufe 3|r - <A06O,DataA3,%>%igen Chance. |n|cffffcc00Stufe 4|r - <A06O,DataA4,%>%igen Chance. |n|cffffcc00Stufe 5|r - <A06O,DataA5,%>%igen Chance.
+The ranger evades attacks with a certain chance.|n|n|cffffcc00Level 1|r - Chance of <A06O,DataA1,%> %. |n|cffffcc00Level 2|r - Chance of <A06O,DataA2,%> %. |n|cffffcc00Level 3|r - Chance of <A06O,DataA3,%> %. |n|cffffcc00Level 4|r - Chance of <A06O,DataA4,%> %. |n|cffffcc00Level 5|r - Chance of <A06O,DataA5,%> %.
 }
 
 STRING 10871
 // Fähigkeiten: A0YQ (Gewandheit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer weicht Angriffen mit einer bestimmten Chance aus.|n|n|cffffcc00Stufe 1|r - <A06O,DataA1,%>%igen Chance. |n|cffffcc00Stufe 2|r - <A06O,DataA2,%>%igen Chance. |n|cffffcc00Stufe 3|r - <A06O,DataA3,%>%igen Chance. |n|cffffcc00Stufe 4|r - <A06O,DataA4,%>%igen Chance. |n|cffffcc00Stufe 5|r - <A06O,DataA5,%>%igen Chance.
+The ranger evades attacks with a certain chance.|n|n|cffffcc00Level 1|r - Chance of <A06O,DataA1,%> %. |n|cffffcc00Level 2|r - Chance of <A06O,DataA2,%> %. |n|cffffcc00Level 3|r - Chance of <A06O,DataA3,%> %. |n|cffffcc00Level 4|r - Chance of <A06O,DataA4,%> %. |n|cffffcc00Level 5|r - Chance of <A06O,DataA5,%> %.
 }
 
 STRING 10872
@@ -69078,7 +69078,7 @@ Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um
 STRING 11528
 // Fähigkeiten: A116 (Schuss ins Herz - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt ihm Schaden zu.|n|n|cffffcc00Stufe 1|r -Verursacht <A06Q ,DataC1> Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A06Q ,DataC2> Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A06Q ,DataC3> Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A06Q ,DataC4> Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A06Q ,DataC5> Schaden.
+The ranger shoots into the heart of his target and deals damage to it.|n|n|cffffcc00Level 1|r - Deals <A06Q ,DataC1> damage.|n|cffffcc00Level 2|r - Deals <A06Q ,DataC2> damage. |n|cffffcc00Level 3|r - Deals <A06Q ,DataC3> damage.|n|cffffcc00Level 4|r - Deals <A06Q ,DataC4> damage.|n|cffffcc00Level 5|r - Deals <A06Q ,DataC5> damage.
 }
 
 STRING 11529
@@ -69132,7 +69132,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11537
 // Fähigkeiten: A116 (Schuss ins Herz - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 1|r]
+Shot in the Heart [|cffffcc00Level 1|r]
 }
 
 STRING 11538
@@ -69162,7 +69162,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 11542
 // Fähigkeiten: A117 (Schuss ins Herz - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt ihm Schaden zu.|n|n|cffffcc00Stufe 1|r -Verursacht <A06Q ,DataC1> Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A06Q ,DataC2> Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A06Q ,DataC3> Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A06Q ,DataC4> Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A06Q ,DataC5> Schaden.
+The ranger shoots into the heart of his target and deals damage to it.|n|n|cffffcc00Level 1|r - Deals <A06Q ,DataC1> damage.|n|cffffcc00Level 2|r - Deals <A06Q ,DataC2> damage. |n|cffffcc00Level 3|r - Deals <A06Q ,DataC3> damage.|n|cffffcc00Level 4|r - Deals <A06Q ,DataC4> damage.|n|cffffcc00Level 5|r - Deals <A06Q ,DataC5> damage.
 }
 
 STRING 11543
@@ -69216,7 +69216,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11551
 // Fähigkeiten: A117 (Schuss ins Herz - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 2|r]
+Shot in the Heart [|cffffcc00Level 2|r]
 }
 
 STRING 11552
@@ -69246,7 +69246,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 11556
 // Fähigkeiten: A118 (Schuss ins Herz - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt ihm Schaden zu.|n|n|cffffcc00Stufe 1|r -Verursacht <A06Q ,DataC1> Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A06Q ,DataC2> Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A06Q ,DataC3> Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A06Q ,DataC4> Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A06Q ,DataC5> Schaden.
+The ranger shoots into the heart of his target and deals damage to it.|n|n|cffffcc00Level 1|r - Deals <A06Q ,DataC1> damage.|n|cffffcc00Level 2|r - Deals <A06Q ,DataC2> damage. |n|cffffcc00Level 3|r - Deals <A06Q ,DataC3> damage.|n|cffffcc00Level 4|r - Deals <A06Q ,DataC4> damage.|n|cffffcc00Level 5|r - Deals <A06Q ,DataC5> damage.
 }
 
 STRING 11557
@@ -69300,7 +69300,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11565
 // Fähigkeiten: A118 (Schuss ins Herz - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 3|r]
+Shot in the Heart [|cffffcc00Level 3|r]
 }
 
 STRING 11566
@@ -69330,7 +69330,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 11570
 // Fähigkeiten: A119 (Schuss ins Herz - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt ihm Schaden zu.|n|n|cffffcc00Stufe 1|r -Verursacht <A06Q ,DataC1> Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A06Q ,DataC2> Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A06Q ,DataC3> Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A06Q ,DataC4> Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A06Q ,DataC5> Schaden.
+The ranger shoots into the heart of his target and deals damage to it.|n|n|cffffcc00Level 1|r - Deals <A06Q ,DataC1> damage.|n|cffffcc00Level 2|r - Deals <A06Q ,DataC2> damage. |n|cffffcc00Level 3|r - Deals <A06Q ,DataC3> damage.|n|cffffcc00Level 4|r - Deals <A06Q ,DataC4> damage.|n|cffffcc00Level 5|r - Deals <A06Q ,DataC5> damage.
 }
 
 STRING 11571
@@ -69384,7 +69384,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11579
 // Fähigkeiten: A119 (Schuss ins Herz - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 4|r]
+Shot in the Heart [|cffffcc00Level 4|r]
 }
 
 STRING 11580
@@ -69414,7 +69414,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 11584
 // Fähigkeiten: A11A (Schuss ins Herz - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt ins Herz seines Ziels und fügt ihm Schaden zu.|n|n|cffffcc00Stufe 1|r -Verursacht <A06Q ,DataC1> Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A06Q ,DataC2> Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A06Q ,DataC3> Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A06Q ,DataC4> Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A06Q ,DataC5> Schaden.
+The ranger shoots into the heart of his target and deals damage to it.|n|n|cffffcc00Level 1|r - Deals <A06Q ,DataC1> damage.|n|cffffcc00Level 2|r - Deals <A06Q ,DataC2> damage. |n|cffffcc00Level 3|r - Deals <A06Q ,DataC3> damage.|n|cffffcc00Level 4|r - Deals <A06Q ,DataC4> damage.|n|cffffcc00Level 5|r - Deals <A06Q ,DataC5> damage.
 }
 
 STRING 11585
@@ -69468,7 +69468,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11593
 // Fähigkeiten: A11A (Schuss ins Herz - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz [|cffffcc00Stufe 5|r]
+Shot in the Heart [|cffffcc00Level 5|r]
 }
 
 STRING 11594
@@ -69611,7 +69611,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11617
 // Fähigkeiten: A11G (Schütze - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Schütze [|cffffcc00Stufe 1|r]
+Archer [|cffffcc00Level 1|r]
 }
 
 STRING 11618
@@ -70507,25 +70507,25 @@ Demons
 STRING 11766
 // Fähigkeiten: A12E (Pfeilhagel), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der bis zu 64 Punkte Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A22E,Dur2> Sekunden lang betäubt.
+Lets rain a hail of arrows in an area which deals up to 64 points of damage to nearby hostile units and which stuns them for <A12E,Dur2> seconds.
 }
 
 STRING 11767
 // Fähigkeiten: A12E (Pfeilhagel), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der bis zu 96 Punkte Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A32E,Dur3> Sekunden lang betäubt.
+Lets rain a hail of arrows in an area which deals up to 96 points of damage to nearby hostile units and which stuns them for <A12E,Dur3> seconds.
 }
 
 STRING 11768
 // Fähigkeiten: A12E (Pfeilhagel), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der bis zu 128 Punkte Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A42E,Dur4> Sekunden lang betäubt.
+Lets rain a hail of arrows in an area which deals up to 128 points of damage to nearby hostile units and which stuns them for <A12E,Dur4> seconds.
 }
 
 STRING 11769
 // Fähigkeiten: A12E (Pfeilhagel), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der bis zu 160 Punkte Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A52E,Dur5> Sekunden lang betäubt.
+Lets rain a hail of arrows in an area which deals up to 160 points of damage to nearby hostile units and which stuns them for <A12E,Dur5> seconds.
 }
 
 STRING 11770
@@ -71089,7 +71089,7 @@ Diese Einheit steht unter der Wirkung von 'Beherrschung'; sie regeneriert alle 1
 STRING 11863
 // Fähigkeiten: A12H (Pfeilhagel - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A12E,Dur1> Sekunden lang betäubt. |n|n|cffffcc00Stufe 1|r - Verursacht bis zu 32 Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht bis zu 64 Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht bis zu 96 Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht bis zu 128 Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht bis zu 160 Punkte Schaden.
+Lets rain a hail of arrows in an area which deals damage to nearby hostile units and which stuns them for <A12E,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals up to 32 points of damage. |n|cffffcc00Level 2|r - Deals up to 64 points of damage. |n|cffffcc00Level 3|r - Deals up to 96 points of damage. |n|cffffcc00Level 4|r - Deals up to 128 points of damage. |n|cffffcc00Level 5|r - Deals up to 160 points of damage.
 }
 
 STRING 11864
@@ -71143,7 +71143,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11872
 // Fähigkeiten: A12H (Pfeilhagel - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 1|r]
+Hail of Arrows [|cffffcc00Level 1|r]
 }
 
 STRING 11873
@@ -71173,7 +71173,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 11877
 // Fähigkeiten: A12I (Pfeilhagel - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A12E,Dur1> Sekunden lang betäubt. |n|n|cffffcc00Stufe 1|r - Verursacht bis zu 32 Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht bis zu 64 Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht bis zu 96 Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht bis zu 128 Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht bis zu 160 Punkte Schaden.
+Lets rain a hail of arrows in an area which deals damage to nearby hostile units and which stuns them for <A12E,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals up to 32 points of damage. |n|cffffcc00Level 2|r - Deals up to 64 points of damage. |n|cffffcc00Level 3|r - Deals up to 96 points of damage. |n|cffffcc00Level 4|r - Deals up to 128 points of damage. |n|cffffcc00Level 5|r - Deals up to 160 points of damage.
 }
 
 STRING 11878
@@ -71227,7 +71227,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11886
 // Fähigkeiten: A12I (Pfeilhagel - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 2|r]
+Hail of Arrows [|cffffcc00Level 2|r]
 }
 
 STRING 11887
@@ -71257,7 +71257,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 11891
 // Fähigkeiten: A12J (Pfeilhagel - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A12E,Dur1> Sekunden lang betäubt. |n|n|cffffcc00Stufe 1|r - Verursacht bis zu 32 Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht bis zu 64 Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht bis zu 96 Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht bis zu 128 Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht bis zu 160 Punkte Schaden.
+Lets rain a hail of arrows in an area which deals damage to nearby hostile units and which stuns them for <A12E,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals up to 32 points of damage. |n|cffffcc00Level 2|r - Deals up to 64 points of damage. |n|cffffcc00Level 3|r - Deals up to 96 points of damage. |n|cffffcc00Level 4|r - Deals up to 128 points of damage. |n|cffffcc00Level 5|r - Deals up to 160 points of damage.
 }
 
 STRING 11892
@@ -71311,7 +71311,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11900
 // Fähigkeiten: A12J (Pfeilhagel - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 3|r]
+Hail of Arrows [|cffffcc00Level 3|r]
 }
 
 STRING 11901
@@ -71341,7 +71341,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 11905
 // Fähigkeiten: A12K (Pfeilhagel - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A12E,Dur1> Sekunden lang betäubt. |n|n|cffffcc00Stufe 1|r - Verursacht bis zu 32 Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht bis zu 64 Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht bis zu 96 Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht bis zu 128 Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht bis zu 160 Punkte Schaden.
+Lets rain a hail of arrows in an area which deals damage to nearby hostile units and which stuns them for <A12E,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals up to 32 points of damage. |n|cffffcc00Level 2|r - Deals up to 64 points of damage. |n|cffffcc00Level 3|r - Deals up to 96 points of damage. |n|cffffcc00Level 4|r - Deals up to 128 points of damage. |n|cffffcc00Level 5|r - Deals up to 160 points of damage.
 }
 
 STRING 11906
@@ -71395,7 +71395,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11914
 // Fähigkeiten: A12K (Pfeilhagel - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 4|r]
+Hail of Arrows [|cffffcc00Level 4|r]
 }
 
 STRING 11915
@@ -71425,7 +71425,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 11919
 // Fähigkeiten: A12L (Pfeilhagel - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt in einem Gebiet einen Pfeilhagel hinabregnen, der Schaden an in der Nähe befindlichen feindlichen Einheiten verursacht und diese <A12E,Dur1> Sekunden lang betäubt. |n|n|cffffcc00Stufe 1|r - Verursacht bis zu 32 Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht bis zu 64 Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht bis zu 96 Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht bis zu 128 Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht bis zu 160 Punkte Schaden.
+Lets rain a hail of arrows in an area which deals damage to nearby hostile units and which stuns them for <A12E,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals up to 32 points of damage. |n|cffffcc00Level 2|r - Deals up to 64 points of damage. |n|cffffcc00Level 3|r - Deals up to 96 points of damage. |n|cffffcc00Level 4|r - Deals up to 128 points of damage. |n|cffffcc00Level 5|r - Deals up to 160 points of damage.
 }
 
 STRING 11920
@@ -71479,7 +71479,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11928
 // Fähigkeiten: A12L (Pfeilhagel - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel [|cffffcc00Stufe 5|r]
+Hail of Arrows [|cffffcc00Level 5|r]
 }
 
 STRING 11929
@@ -71587,37 +71587,37 @@ STRING 11945
 STRING 11946
 // Fähigkeiten: A12R (Lauern), Name (Name (anam))
 {
-Lauern
+Lying in Wait
 }
 
 STRING 11947
 // Fähigkeiten: A12R (Lauern), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 1|r]
+Lying in Wait [|cffffcc00Level 1|r]
 }
 
 STRING 11948
 // Fähigkeiten: A12R (Lauern), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 2|r]
+Lying in Wait [|cffffcc00Level 2|r]
 }
 
 STRING 11949
 // Fähigkeiten: A12R (Lauern), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 3|r]
+Lying in Wait [|cffffcc00Level 3|r]
 }
 
 STRING 11950
 // Fähigkeiten: A12R (Lauern), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 4|r]
+Lying in Wait [|cffffcc00Level 4|r]
 }
 
 STRING 11951
 // Fähigkeiten: A12R (Lauern), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 5|r]
+Lying in Wait [|cffffcc00Level 5|r]
 }
 
 STRING 11952
@@ -71659,13 +71659,13 @@ STRING 11957
 STRING 11958
 // Fähigkeiten: A12S (Lauern), Name (Name (anam))
 {
-Lauern
+Lying in Wait
 }
 
 STRING 11959
 // Zauberverstärker/Effekte: B02J (Lauern), EditorName (Name (nur Editor) (fnam))
 {
-Lauern
+Lying in Wait
 }
 
 STRING 11960
@@ -71737,7 +71737,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11971
 // Fähigkeiten: A12T (Lauern - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 1|r]
+Lying in Wait [|cffffcc00Level 1|r]
 }
 
 STRING 11972
@@ -71815,7 +71815,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11984
 // Fähigkeiten: A12U (Lauern - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 2|r]
+Lying in Wait [|cffffcc00Level 2|r]
 }
 
 STRING 11985
@@ -71893,7 +71893,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11997
 // Fähigkeiten: A12V (Lauern - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 3|r]
+Lying in Wait [|cffffcc00Level 3|r]
 }
 
 STRING 11998
@@ -71971,7 +71971,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 12010
 // Fähigkeiten: A12W (Lauern - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 4|r]
+Lying in Wait [|cffffcc00Level 4|r]
 }
 
 STRING 12011
@@ -72049,7 +72049,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 12023
 // Fähigkeiten: A12X (Lauern - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Lauern [|cffffcc00Stufe 5|r]
+Lying in Wait [|cffffcc00Level 5|r]
 }
 
 STRING 12024
@@ -72139,7 +72139,7 @@ Lauern - Stufe 5
 STRING 12038
 // Zauberverstärker/Effekte: B02J (Lauern), Bufftip (Tooltipp (ftip))
 {
-Lauern
+Lying in Wait
 }
 
 STRING 12039
@@ -72187,61 +72187,61 @@ Spruchrolle des Sammlers
 STRING 12046
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|nLasts maximal <A12R,Dur1> Sekuden.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage of <A12R,DataC1> points.|nLasts at maximum <A12R,Dur1> seconds.
 }
 
 STRING 12047
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A22R,DataC2> Punkten.|nLasts maximal <A22R,Dur2> Sekuden.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage of <A12R,DataC2> points.|nLasts at maximum <A12R,Dur2> seconds.
 }
 
 STRING 12048
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A32R,DataC3> Punkten.|nLasts maximal <A32R,Dur3> Sekuden.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage of <A12R,DataC3> points.|nLasts at maximum <A12R,Dur3> seconds.
 }
 
 STRING 12049
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A42R,DataC4> Punkten.|nLasts maximal <A42R,Dur4> Sekuden.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage of <A12R,DataC4> points.|nLasts at maximum <A12R,Dur4> seconds.
 }
 
 STRING 12050
 // Fähigkeiten: A12R (Lauern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A52R,DataC5> Punkten.|nLasts maximal <A52R,Dur5> Sekuden.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage of <A12R,DataC5> points.|nLasts at maximum <A12R,Dur5> seconds.
 }
 
 STRING 12051
 // Fähigkeiten: A12T (Lauern - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage.|nLasts at maximum <A12R,Dur1> seconds. |n|n|cffffcc00Stufe 1|r -  Deals an additional damage of <A12R,DataC1> points.|n|cffffcc00Stufe 2|r - Deals an additional damage of <A12R,DataC2> points. |n|cffffcc00Stufe 3|r - Deals an additional damage of <A12R,DataC3> points. |n|cffffcc00Stufe 4|r - Deals an additional damage of <A12R,DataC4> points. |n|cffffcc00Stufe 5|r - Deals an additional damage of <A12R,DataC5> points.
 }
 
 STRING 12052
 // Fähigkeiten: A12U (Lauern - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage.|nLasts at maximum <A12R,Dur1> seconds. |n|n|cffffcc00Stufe 1|r -  Deals an additional damage of <A12R,DataC1> points.|n|cffffcc00Stufe 2|r - Deals an additional damage of <A12R,DataC2> points. |n|cffffcc00Stufe 3|r - Deals an additional damage of <A12R,DataC3> points. |n|cffffcc00Stufe 4|r - Deals an additional damage of <A12R,DataC4> points. |n|cffffcc00Stufe 5|r - Deals an additional damage of <A12R,DataC5> points.
 }
 
 STRING 12053
 // Fähigkeiten: A12V (Lauern - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage.|nLasts at maximum <A12R,Dur1> seconds. |n|n|cffffcc00Stufe 1|r -  Deals an additional damage of <A12R,DataC1> points.|n|cffffcc00Stufe 2|r - Deals an additional damage of <A12R,DataC2> points. |n|cffffcc00Stufe 3|r - Deals an additional damage of <A12R,DataC3> points. |n|cffffcc00Stufe 4|r - Deals an additional damage of <A12R,DataC4> points. |n|cffffcc00Stufe 5|r - Deals an additional damage of <A12R,DataC5> points.
 }
 
 STRING 12054
 // Fähigkeiten: A12W (Lauern - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage.|nLasts at maximum <A12R,Dur1> seconds. |n|n|cffffcc00Stufe 1|r -  Deals an additional damage of <A12R,DataC1> points.|n|cffffcc00Stufe 2|r - Deals an additional damage of <A12R,DataC2> points. |n|cffffcc00Stufe 3|r - Deals an additional damage of <A12R,DataC3> points. |n|cffffcc00Stufe 4|r - Deals an additional damage of <A12R,DataC4> points. |n|cffffcc00Stufe 5|r - Deals an additional damage of <A12R,DataC5> points.
 }
 
 STRING 12055
 // Fähigkeiten: A12X (Lauern - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht den Waldläufer unsichtbar und lässt ihn 30 % langsamer laufen. Wenn der Waldläufer eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden.|nLasts maximal <A12R,Dur1> Sekuden. |n|n|cffffcc00Stufe 1|r -  Verursacht einen zusätzlichen Schaden von <A12R,DataC1> Punkten.|n|cffffcc00Stufe 2|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC2> Punkten. |n|cffffcc00Stufe 3|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC3> Punkten. |n|cffffcc00Stufe 4|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC4> Punkten. |n|cffffcc00Stufe 5|r - Verursacht einen zusätzlichen Schaden von <A12R,DataC5> Punkten.
+Makes the ranger invisible and slows down his movement speed by 30 %. When the ranger attacks a unit to get visible again the attack deals an additional damage.|nLasts at maximum <A12R,Dur1> seconds. |n|n|cffffcc00Stufe 1|r -  Deals an additional damage of <A12R,DataC1> points.|n|cffffcc00Stufe 2|r - Deals an additional damage of <A12R,DataC2> points. |n|cffffcc00Stufe 3|r - Deals an additional damage of <A12R,DataC3> points. |n|cffffcc00Stufe 4|r - Deals an additional damage of <A12R,DataC4> points. |n|cffffcc00Stufe 5|r - Deals an additional damage of <A12R,DataC5> points.
 }
 
 STRING 12056
@@ -75176,7 +75176,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 12544
 // Einheiten: n04X (Falle), Name (Name (unam))
 {
-Falle
+Trap
 }
 
 STRING 12545
@@ -76178,7 +76178,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 12711
 // Fähigkeiten: A0QZ (Falle platzieren), Name (Name (anam))
 {
-Falle platzieren
+Set Trap
 }
 
 STRING 12712
@@ -76262,7 +76262,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 12725
 // Fähigkeiten: A0QZ (Falle platzieren), Tip (Tooltipp - Normal (atp1))
 {
-Falle platzieren
+Set Trap
 }
 
 STRING 12726
@@ -80215,7 +80215,7 @@ Zauber
 STRING 13383
 // Einheiten: n068 (Falle), Name (Name (unam))
 {
-Falle
+Trap
 }
 
 STRING 13384
@@ -80233,7 +80233,7 @@ Martyr [|cffffcc00Level 3|r] (|cffffcc00F|r)
 STRING 13386
 // Einheiten: n069 (Falle), Name (Name (unam))
 {
-Falle
+Trap
 }
 
 STRING 13387
@@ -80299,61 +80299,61 @@ Zauber
 STRING 13397
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 1|r]
+Trap [|cffffcc00Level 1|r]
 }
 
 STRING 13398
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 2|r]
+Trap [|cffffcc00Level 2|r]
 }
 
 STRING 13399
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 3|r]
+Trap [|cffffcc00Level 3|r]
 }
 
 STRING 13400
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 4|r]
+Trap [|cffffcc00Level 4|r]
 }
 
 STRING 13401
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 5|r]
+Trap [|cffffcc00Level 5|r]
 }
 
 STRING 13402
 // Fähigkeiten: A17S (Mehrfachschuss - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger fires additionally more arrows on nearby opponents and deals the caused damage of the ranger with each hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13403
 // Fähigkeiten: A17T (Mehrfachschuss - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger fires additionally more arrows on nearby opponents and deals the caused damage of the ranger with each hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13404
 // Fähigkeiten: A17U (Mehrfachschuss - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger fires additionally more arrows on nearby opponents and deals the caused damage of the ranger with each hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13405
 // Fähigkeiten: A17V (Mehrfachschuss - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger fires additionally more arrows on nearby opponents and deals the caused damage of the ranger with each hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13406
 // Fähigkeiten: A17W (Mehrfachschuss - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger fires additionally more arrows on nearby opponents and deals the caused damage of the ranger with each hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13407
@@ -80365,7 +80365,7 @@ STRING 13407
 STRING 13408
 // Einheiten: n06A (Falle), Name (Name (unam))
 {
-Falle
+Trap
 }
 
 STRING 13409
@@ -80419,7 +80419,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 13417
 // Fähigkeiten: A186 (Falle - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 1|r]
+Trap [|cffffcc00Level 1|r]
 }
 
 STRING 13418
@@ -80497,7 +80497,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 13430
 // Fähigkeiten: A187 (Falle - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 2|r]
+Trap [|cffffcc00Level 2|r]
 }
 
 STRING 13431
@@ -80575,7 +80575,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 13443
 // Fähigkeiten: A188 (Falle - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 3|r]
+Trap [|cffffcc00Level 3|r]
 }
 
 STRING 13444
@@ -80731,7 +80731,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 13469
 // Fähigkeiten: A18A (Falle - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 5|r]
+Trap [|cffffcc00Level 5|r]
 }
 
 STRING 13470
@@ -80833,37 +80833,37 @@ STRING 13485
 STRING 13486
 // Fähigkeiten: A182 (Mehrfachschuss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich 3 Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.
+The ranger fires additionally 3 arrows on nearby opponents and deals the caused damage of the ranger with each hit.
 }
 
 STRING 13487
 // Fähigkeiten: A182 (Mehrfachschuss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich 4 Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.
+The ranger fires additionally 4 arrows on nearby opponents and deals the caused damage of the ranger with each hit.
 }
 
 STRING 13488
 // Fähigkeiten: A182 (Mehrfachschuss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich 5 Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.
+The ranger fires additionally 5 arrows on nearby opponents and deals the caused damage of the ranger with each hit.
 }
 
 STRING 13489
 // Fähigkeiten: A182 (Mehrfachschuss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich 6 Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.
+The ranger fires additionally 6 arrows on nearby opponents and deals the caused damage of the ranger with each hit.
 }
 
 STRING 13490
 // Fähigkeiten: A182 (Mehrfachschuss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich 7 Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.
+The ranger fires additionally 7 arrows on nearby opponents and deals the caused damage of the ranger with each hit.
 }
 
 STRING 13491
 // Einheiten: n04Y (Ricmans Stand), Name (Name (unam))
 {
-Ricmans Stand
+Ricman's Stall
 }
 
 STRING 13492
@@ -93091,67 +93091,67 @@ STRING 15529
 STRING 15530
 // Fähigkeiten: A1BG (Hundezwinger), Name (Name (anam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15531
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 1|r]
+Kennels [|cffffcc00Level 1|r]
 }
 
 STRING 15532
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 2|r]
+Kennels [|cffffcc00Level 2|r]
 }
 
 STRING 15533
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 3|r]
+Kennels [|cffffcc00Level 3|r]
 }
 
 STRING 15534
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 4|r]
+Kennels [|cffffcc00Level 4|r]
 }
 
 STRING 15535
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 5|r]
+Kennels [|cffffcc00Level 5|r]
 }
 
 STRING 15536
 // Fähigkeiten: A1BG (Hundezwinger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der <A1BI,DataA1> Hunde freilässt, wenn er zerstört wird.
+Constructs kennels which releases <A1BI,DataA1> dogs when being destroyed.
 }
 
 STRING 15537
 // Fähigkeiten: A1BG (Hundezwinger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der <A1BJ,DataA1> Hunde freilässt, wenn er zerstört wird.
+Constructs kennels which releases <A1BJ,DataA1> dogs when being destroyed.
 }
 
 STRING 15538
 // Fähigkeiten: A1BG (Hundezwinger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der <A1BK,DataA1> Hunde freilässt, wenn er zerstört wird.
+Constructs kennels which releases <A1BK,DataA1> dogs when being destroyed.
 }
 
 STRING 15539
 // Fähigkeiten: A1BG (Hundezwinger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der <A1BL,DataA1> Hunde freilässt, wenn er zerstört wird.
+Constructs kennels which releases <A1BL,DataA1> dogs when being destroyed.
 }
 
 STRING 15540
 // Fähigkeiten: A1BG (Hundezwinger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der <A1BM,DataA1> Hunde freilässt, wenn er zerstört wird.
+Constructs kennels which releases <A1BM,DataA1> dogs when being destroyed.
 }
 
 STRING 15541
@@ -93163,7 +93163,7 @@ STRING 15541
 STRING 15542
 // Fähigkeiten: A1BI (Hunde freilassen), Name (Name (anam))
 {
-Hunde freilassen
+Release Dogs
 }
 
 STRING 15543
@@ -93175,7 +93175,7 @@ STRING 15543
 STRING 15544
 // Fähigkeiten: A1BJ (Hunde freilassen), Name (Name (anam))
 {
-Hunde freilassen
+Release Dogs
 }
 
 STRING 15545
@@ -93187,7 +93187,7 @@ STRING 15545
 STRING 15546
 // Fähigkeiten: A1BK (Hunde freilassen), Name (Name (anam))
 {
-Hunde freilassen
+Release Dogs
 }
 
 STRING 15547
@@ -93199,7 +93199,7 @@ STRING 15547
 STRING 15548
 // Fähigkeiten: A1BL (Hunde freilassen), Name (Name (anam))
 {
-Hunde freilassen
+Release Dogs
 }
 
 STRING 15549
@@ -93211,7 +93211,7 @@ STRING 15549
 STRING 15550
 // Fähigkeiten: A1BM (Hunde freilassen), Name (Name (anam))
 {
-Hunde freilassen
+Release Dogs
 }
 
 STRING 15551
@@ -93229,7 +93229,7 @@ STRING 15552
 STRING 15553
 // Fähigkeiten: A1BN (Hundezwinger), Name (Name (anam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15554
@@ -93289,7 +93289,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 15563
 // Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 1|r]
+Kennels [|cffffcc00Level 1|r]
 }
 
 STRING 15564
@@ -93373,7 +93373,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 15577
 // Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 2|r]
+Kennels [|cffffcc00Level 2|r]
 }
 
 STRING 15578
@@ -93457,7 +93457,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 15591
 // Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 3|r]
+Kennels [|cffffcc00Level 3|r]
 }
 
 STRING 15592
@@ -93541,7 +93541,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 15605
 // Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 4|r]
+Kennels [|cffffcc00Level 4|r]
 }
 
 STRING 15606
@@ -93625,7 +93625,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 15619
 // Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 5|r]
+Kennels [|cffffcc00Level 5|r]
 }
 
 STRING 15620
@@ -93721,55 +93721,55 @@ STRING 15634
 STRING 15635
 // Fähigkeiten: A03S (Schütze), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 % erhöht.
+|cffffcc00Basic Spell|r|nDamage dealt with range weapons is increased by 50 %.
 }
 
 STRING 15636
 // Fähigkeiten: A11G (Schütze - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 % erhöht.
+|cffffcc00Basic Spell|r|nDamage dealt with range weapons is increased by 50 %.
 }
 
 STRING 15637
 // Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Constructs a kennels which releases dogs when being destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15638
 // Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Constructs a kennels which releases dogs when being destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15639
 // Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Constructs a kennels which releases dogs when being destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15640
 // Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Constructs a kennels which releases dogs when being destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15641
 // Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Constructs a kennels which releases dogs when being destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15642
 // Zauberverstärker/Effekte: B02Q (), Bufftip (Tooltipp (ftip))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15643
 // Zauberverstärker/Effekte: B02Q (), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Ein Hundezwinger.
+A kennels.
 }
 
 STRING 15644
@@ -93781,13 +93781,13 @@ STRING 15644
 STRING 15645
 // Zauberverstärker/Effekte: B02R (), Bufftip (Tooltipp (ftip))
 {
-Meutehund
+Pack Dog
 }
 
 STRING 15646
 // Zauberverstärker/Effekte: B02R (), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Ein Meutehund.
+A pack dog.
 }
 
 STRING 15647
@@ -95439,7 +95439,7 @@ STRING 15927
 STRING 15928
 // Einheiten: n06B (Falle), Name (Name (unam))
 {
-Falle
+Trap
 }
 
 STRING 15929
@@ -95451,7 +95451,7 @@ STRING 15929
 STRING 15930
 // Gegenstände: I057 (Falle), Name (Name (unam))
 {
-Falle
+Trap
 }
 
 STRING 15931
@@ -95463,31 +95463,31 @@ STRING 15931
 STRING 15932
 // Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern <A183,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+The ranger sets a trap which deals <A183,DataB1> points of damage to opponents and which stuns them for some time.
 }
 
 STRING 15933
 // Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern <A1D8,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+The ranger sets a trap which deals <A1D8,DataB1> points of damage to opponents and which stuns them for some time.
 }
 
 STRING 15934
 // Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern <A1D9,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+The ranger sets a trap which deals <A1D9,DataB1> points of damage to opponents and which stuns them for some time.
 }
 
 STRING 15935
 // Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern <A1DA,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+The ranger sets a trap which deals <A1DA,DataB1> points of damage to opponents and which stuns them for some time.
 }
 
 STRING 15936
 // Fähigkeiten: A184 (Falle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern <A1DB,DataB1> Punkte Schaden verursacht und sie eine Zeit lang lähmt.
+The ranger sets a trap which deals <A1DB,DataB1> points of damage to opponents and which stuns them for some time.
 }
 
 STRING 15937
@@ -95505,31 +95505,31 @@ Trap
 STRING 15939
 // Fähigkeiten: A186 (Falle - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger sets a trap which deals damage to opponents and which stuns them for some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15940
 // Fähigkeiten: A187 (Falle - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger sets a trap which deals damage to opponents and which stuns them for some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15941
 // Fähigkeiten: A188 (Falle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger sets a trap which deals damage to opponents and which stuns them for some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15942
 // Fähigkeiten: A189 (Falle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger sets a trap which deals damage to opponents and which stuns them for some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15943
 // Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger sets a trap which deals damage to opponents and which stuns them for some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15944

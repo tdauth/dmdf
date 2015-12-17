@@ -133,6 +133,7 @@
 * Deranors Leibwache muss etwas droppen.
 * Deranors Leibwache sollte respawnen.
 * Drops für Unholde auf Bauernhof und bei linkem Tor.
+* Zauberbuch anstatt Icons mit Zahlen: Falls maximal 7 Heldenfähigkeiten, 2 Seitenbuttons also noch 5 pro Seite? wenn angeklickt wird, dann skill point readd und nur die ability. Die Buttons werden alle als Stufe 1 angezeigt. Nachteil wäre, dass die Buttons auch eine Zahl haben. Vorteil: Helden-Fähigkeiten Icon mit Zahl?
 
 * FIXED: "Meisterschützin" bei Drachentöterin hält nur kurz! Sollte permanent sein. Liegt evenutell aber nur eventuell daran, dass Computerspieler die Kontrolle hat und den Zauber jedes Mal rückgängig macht? Lag an Computerspieler.
 * FIXED: Bei "Spiel laden" stimmt die rechte Seite des Ladebildschirms nicht - ersetzen!
