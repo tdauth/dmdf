@@ -905,26 +905,39 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			local integer index
 			set thistype.m_ditchSpidersFarm0 = SpawnPoint.create()
 			set index = thistype.m_ditchSpidersFarm0.addUnitWithType(gg_unit_n01D_0489, 1.0)
+			call thistype.m_ditchSpidersFarm0.addNewItemType(index, 'I041', 1.0)
 			set index = thistype.m_ditchSpidersFarm0.addUnitWithType(gg_unit_n01D_0488, 1.0)
+			call thistype.m_ditchSpidersFarm0.addNewItemType(index, 'I041', 1.0)
 		
 			set thistype.m_wolvesFarm0 = SpawnPoint.create()
 			set index = thistype.m_wolvesFarm0.addUnitWithType(gg_unit_n02F_0490, 1.0)
+			call thistype.m_wolvesFarm0.addNewItemType(index, 'I01H', 1.0)
 			set index = thistype.m_wolvesFarm0.addUnitWithType(gg_unit_n02F_0497, 1.0)
+			call thistype.m_wolvesFarm0.addNewItemType(index, 'I01H', 1.0)
 			set index = thistype.m_wolvesFarm0.addUnitWithType(gg_unit_n02F_0496, 1.0)
+			call thistype.m_wolvesFarm0.addNewItemType(index, 'I01H', 1.0)
 			
 			set thistype.m_boarsFarm0 = SpawnPoint.create()
 			set index = thistype.m_boarsFarm0.addUnitWithType(gg_unit_n002_0528, 1.0)
+			call thistype.m_boarsFarm0.addNewItemType(index, 'I007', 1.0)
 			set index = thistype.m_boarsFarm0.addUnitWithType(gg_unit_n002_0498, 1.0)
+			call thistype.m_boarsFarm0.addNewItemType(index, 'I007', 1.0)
 			set index = thistype.m_boarsFarm0.addUnitWithType(gg_unit_n002_0529, 1.0)
+			call thistype.m_boarsFarm0.addNewItemType(index, 'I007', 1.0)
 			
 			set thistype.m_deersFarm0 = SpawnPoint.create()
 			set index = thistype.m_deersFarm0.addUnitWithType(gg_unit_n00V_0530, 1.0)
+			call thistype.m_deersFarm0.addNewItemType(index, 'I00P', 1.0)
 			set index = thistype.m_deersFarm0.addUnitWithType(gg_unit_n00V_0531, 1.0)
+			call thistype.m_deersFarm0.addNewItemType(index, 'I00P', 1.0)
 			set index = thistype.m_deersFarm0.addUnitWithType(gg_unit_n00V_0532, 1.0)
+			call thistype.m_deersFarm0.addNewItemType(index, 'I00P', 1.0)
 			
 			set thistype.m_necksFarm0 = SpawnPoint.create()
 			set index = thistype.m_necksFarm0.addUnitWithType(gg_unit_n05Z_0533, 1.0)
+			call thistype.m_necksFarm0.addNewItemType(index, 'I05W', 0.20)
 			set index = thistype.m_necksFarm0.addUnitWithType(gg_unit_n05Z_0534, 1.0)
+			call thistype.m_necksFarm0.addNewItemType(index, 'I05W', 0.20)
 			
 			// TODO add item drops for creeps
 		endmethod
@@ -933,16 +946,26 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			local integer index
 			set thistype.m_boarsLeftGate0 = SpawnPoint.create()
 			set index = thistype.m_boarsLeftGate0.addUnitWithType(gg_unit_n002_0536, 1.0)
+			call thistype.m_boarsLeftGate0.addNewItemType(index, 'I007', 1.0)
 			set index = thistype.m_boarsLeftGate0.addUnitWithType(gg_unit_n002_0537, 1.0)
+			call thistype.m_boarsLeftGate0.addNewItemType(index, 'I007', 1.0)
 			set index = thistype.m_boarsLeftGate0.addUnitWithType(gg_unit_n002_0535, 1.0)
+			call thistype.m_boarsLeftGate0.addNewItemType(index, 'I007', 1.0)
 			
 			set thistype.m_bearLeftGate0 = SpawnPoint.create()
 			set index = thistype.m_bearLeftGate0.addUnitWithType(gg_unit_n008_0539, 1.0)
+			call thistype.m_bearLeftGate0.addNewItemType(index, 'I01J', 1.0)
 			
 			set thistype.m_wolvesLeftGate0 = SpawnPoint.create()
 			set index = thistype.m_wolvesLeftGate0.addUnitWithType(gg_unit_n02F_0542, 1.0)
+			call thistype.m_wolvesLeftGate0.addNewItemType(index, 'I01H', 1.0)
+			call thistype.m_wolvesLeftGate0.addNewItemType(index, 'rhe2', 0.30)
 			set index = thistype.m_wolvesLeftGate0.addUnitWithType(gg_unit_n02F_0543, 1.0)
+			call thistype.m_wolvesLeftGate0.addNewItemType(index, 'I01H', 1.0)
+			call thistype.m_wolvesLeftGate0.addNewItemType(index, 'rhe2', 0.30)
 			set index = thistype.m_wolvesLeftGate0.addUnitWithType(gg_unit_n02F_0541, 1.0)
+			call thistype.m_wolvesLeftGate0.addNewItemType(index, 'I01H', 1.0)
+			call thistype.m_wolvesLeftGate0.addNewItemType(index, 'rman', 0.30)
 			
 			// TODO add item drops for creeps
 

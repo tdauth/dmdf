@@ -27,7 +27,7 @@ library StructMapMapBuildings requires StructGameCharacter
 		
 				call TriggerRegisterPlayerStateEvent(thistype.m_bringGoldTrigger, GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED, GREATER_THAN, thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())])
 				
-				set gold = IMaxBJ(1, 10 - R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], gg_unit_n06E_0487) / 1000.0))
+				set gold = IMaxBJ(1, 10 * R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], gg_unit_n06E_0487) / 1000.0))
 				debug call Print("Gathered gold: " + I2S(gold))
 				if (gold < actualGold) then
 					call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD) - (actualGold - gold))

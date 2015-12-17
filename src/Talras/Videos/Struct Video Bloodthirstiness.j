@@ -10,7 +10,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 			call Game.initVideoSettings()
 			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
 			call SetTimeOfDay(0.0)
-			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_0, true, 0.0)
+			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_2, true, 5.50)
 
 			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_bloodthirstiness_dragon_slayer)
@@ -31,17 +31,10 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			if (wait(1.00)) then
-				return
-			endif
-
-			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_1, true, 0.0)
 
 			if (wait(2.50)) then
 				return
 			endif
-
-			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_2, true, 3.50)
 
 			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Verfluchte Missgeburt!"), null)
 

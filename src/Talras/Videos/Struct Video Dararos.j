@@ -81,6 +81,12 @@ library StructMapVideosVideoDararos requires Asl, StructGameGame
 			
 			// TODO arrival of the highelves
 			
+			call QueueUnitAnimation(this.m_actorDararos, "Spell")
+			
+			if (wait(3.50)) then
+				return
+			endif
+			
 			call this.stop()
 		endmethod
 

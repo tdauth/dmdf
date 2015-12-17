@@ -213,7 +213,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_ringOfLatency
 		private static ItemType m_staffOfNecromancer
 		private static ItemType m_staffOfWizard
+		
+		// Agihard
 		private static DefenceItemType m_expandedShield
+		private static DefenceItemType m_knightBuckler
 		private static ItemType m_axe
 		private static DefenceItemType m_woodenShield
 		private static DefenceItemType m_lightWoodenShield
@@ -252,6 +255,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_greatHelm
 		private static ItemType m_knightHelmet
 		private static ItemType m_fineKnightHelmet
+		private static ItemType m_ironArmour
 		// Björn's items
 		private static ItemType m_cloak
 		private static ItemType m_hood
@@ -260,6 +264,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_huntingKnife
 		private static ItemType m_bootsOfSpeed
 		private static ItemType m_quiver
+		private static ItemType m_simpleClothes
 		// artefacts
 		private static ItemType m_amuletOfForesight
 		private static ItemType m_amuletOfTerror
@@ -288,6 +293,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_necromancerHelmet
 		// Sisgard's items
 		private static ItemType m_amuletOfWisdom
+		private static ItemType m_mageArmour
 		// Ursula's items
 		private static ItemType m_druidCloak
 		private static RangeItemType m_druidStaff
@@ -351,6 +357,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1DO', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DP', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DQ', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1EB', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1E7', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -396,6 +404,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_expandedShield = DefenceItemType.createSimpleDefence('I006', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_expandedShield.addAbility('A01S', true)
+			
+			set thistype.m_knightBuckler = DefenceItemType.createSimpleDefence('I068', AItemType.equipmentTypeSecondaryWeapon)
+			call thistype.m_knightBuckler.addAbility('A1E7', true)
+			call thistype.m_knightBuckler.addAbility('A1E5', true)
 
 			set thistype.m_axe = ItemType.create('I00Q', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_axe.addAbility('A02P', true)
@@ -520,6 +532,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_fineKnightHelmet = ItemType.createSimple('I05N', AItemType.equipmentTypeHeaddress)
 			call thistype.m_fineKnightHelmet.addAbility('A18W', true)
 			call thistype.m_fineKnightHelmet.addAbility('AIs3', true)
+			
+			set thistype.m_ironArmour = ItemType.createSimple('I067', AItemType.equipmentTypeHeaddress)
+			call thistype.m_fineKnightHelmet.addAbility('A1E7', true)
+			call thistype.m_fineKnightHelmet.addAbility('A1E7', true)
 
 			// Björn's items
 			set thistype.m_cloak = ItemType.createSimple('I023', AItemType.equipmentTypeArmour)
@@ -545,7 +561,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			set thistype.m_quiver = ItemType.createSimple('I04W', AItemType.equipmentTypeAmulet)
 			call thistype.m_quiver.addAbility('A160', true)
+			call thistype.m_quiver.addAbility('A1EC', true)
 			
+			set thistype.m_simpleClothes = ItemType.createSimple('I06B', AItemType.equipmentTypeAmulet)
+			call thistype.m_simpleClothes.addAbility('A1EG', true)
 
 			// artefacts
 			set thistype.m_amuletOfForesight = ItemType.createSimple('I02J', AItemType.equipmentTypeAmulet)
@@ -627,6 +646,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			// Sisgard's items
 			set thistype.m_amuletOfWisdom = ItemType.createSimple('I048', ItemType.equipmentTypeAmulet)
 			call thistype.m_amuletOfWisdom.addAbility('AIrm', true)
+			
+			set thistype.m_mageArmour = ItemType.createSimple('I06A', ItemType.equipmentTypeAmulet)
+			call thistype.m_mageArmour.addAbility('A1ED', true)
+			call thistype.m_mageArmour.addAbility('A1EF', true)
+			call thistype.m_mageArmour.addAbility('A1EE', true)
 			
 			// Ursuala's items
 			set thistype.m_druidCloak = ItemType.createSimple('I015', ItemType.equipmentTypeArmour)

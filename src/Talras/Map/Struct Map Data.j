@@ -1206,13 +1206,25 @@ static if (DEBUG_MODE) then
 				
 				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDestroyArtillery).isCompleted()) then
 					call QuestTheDefenseOfTalras.quest.evaluate().finishDestroyArtillery()
-					// plays video "Dararos"
+					
+					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDestroyArtillery).isCompleted()) then
+						debug call Print("Error on completing quest item destroy artillery")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemGatherAtTheCamp).isCompleted()) then
+					/*
+					 * Plays video "Dararos".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_the_defense_of_talras)
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					
-					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDestroyArtillery).isCompleted()) then
-						debug call Print("Error on completing quest item destroy artillery")
+					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemGatherAtTheCamp).isCompleted()) then
+						debug call Print("Error on completing quest item gather at the camp")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif

@@ -27,6 +27,36 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 	endstruct
 	
+	struct QuestAreaQuestTheDefenseOfTalrasGather extends QuestArea
+	
+		public stub method onCheck takes nothing returns boolean
+			return true
+		endmethod
+	
+		public stub method onStart takes nothing returns nothing
+			call QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemGatherAtTheCamp).complete()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+	
+	struct QuestAreaQuestTheDefenseOfTalrasGatherAgain extends QuestArea
+	
+		public stub method onCheck takes nothing returns boolean
+			return true
+		endmethod
+	
+		public stub method onStart takes nothing returns nothing
+			call QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemGatherAtTheCampAgain).complete()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+	
 	struct QuestAreaQuestTheDefenseOfTalrasReportHeimrich extends QuestArea
 	
 		public stub method onCheck takes nothing returns boolean
@@ -57,8 +87,10 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		public static constant integer questItemPrepare = 1
 		public static constant integer questItemDefendAgainstOrcs = 2
 		public static constant integer questItemDestroyArtillery = 3
-		public static constant integer questItemDefeatTheEnemy = 4
-		public static constant integer questItemReportHeimrich = 5
+		public static constant integer questItemGatherAtTheCamp = 4
+		public static constant integer questItemDefeatTheEnemy = 5
+		public static constant integer questItemGatherAtTheCampAgain = 6
+		public static constant integer questItemReportHeimrich = 7
 		public static constant integer maxOrcWaves = 5
 		private QuestAreaQuestTheDefenseOfTalras m_questArea
 
@@ -83,9 +115,15 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		private AGroup m_orcSiegeWarriors
 		private AGroup m_orcWall
 		
+		// questItemGatherAtTheCamp
+		private QuestAreaQuestTheDefenseOfTalrasGather m_questAreaGather
+		
 		// questItemDefeatTheEnemy
 		private AGroup m_highElves
 		private AGroup m_finalOrcs
+		
+		// questItemGatherAtTheCampAgain
+		private QuestAreaQuestTheDefenseOfTalrasGatherAgain m_questAreaGatherAgain
 		
 		// questItemReportHeimrich
 		private QuestAreaQuestTheDefenseOfTalrasReportHeimrich m_questAreaReportHeimrich
@@ -118,7 +156,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			local thistype this = thistype(whichQuestItem.quest())
 			if (this.m_orcSiege.units().contains(GetTriggerUnit())) then
 				call this.m_orcSiege.units().remove(GetTriggerUnit())
-				call this.displayUpdateMessage(Format(trp("%1% Belagerungswaffen verbleiben.", "%1% Belagerungswaffe verbleibt.", this.m_orcSiege.units().size())).i(this.m_orcSiege.units().size()).result())
+				call this.displayUpdateMessage(Format(trp("%1% Belagerungswaffe verbleibt.", "%1% Belagerungswaffen verbleiben.", this.m_orcSiege.units().size())).i(this.m_orcSiege.units().size()).result())
 				
 				return this.m_orcSiege.units().empty()
 			endif
@@ -134,7 +172,15 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_orcWall.destroy()
 			call this.m_orcSiege.destroy()
 			call this.m_orcSiegeWarriors.destroy()
-
+			
+			set this.m_questAreaGather = QuestAreaQuestTheDefenseOfTalrasGather.create(gg_rct_quest_the_defense_of_talras)
+			call this.questItem(thistype.questItemGatherAtTheCamp).setState(thistype.stateNew)
+			call this.displayState()
+		endmethod
+		
+		private static method stateActionCompletedGatherAtTheCamp takes AQuestItem whichQuestItem returns nothing
+			local thistype this = thistype(whichQuestItem.quest())
+			
 			call Npcs.initDararos(CreateUnit(MapData.alliedPlayer, 'H02F', GetRectCenterX(gg_rct_quest_the_defense_of_talras_dararos), GetRectCenterY(gg_rct_quest_the_defense_of_talras_dararos), 0.0))
 			call SetHeroLevel(Npcs.dararos(), MapData.maxLevel, false)
 			call Fellows.initDararos(Npcs.dararos())
@@ -172,6 +218,9 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(2, 'n059', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05J', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05K', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
+			
+			// The ultimate Orc summoner
+			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(1, 'o006', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_1, 90.0), true, false)
 			
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_2, 180.0), true, false)
 			call this.m_finalOrcs.addGroup(CreateUnitsAtRect(4, 'n05A', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_final_orcs_2, 180.0), true, false)
@@ -245,12 +294,22 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		
 		private static method stateActionCompletedDefeatTheEnemy takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			local unit guard
 			call this.m_highElves.forGroup(thistype.forGroupRemoveUnit)
 			call this.m_highElves.destroy()
 			set this.m_highElves = 0
 			call this.m_finalOrcs.destroy()
 			set this.m_finalOrcs = 0
+			
+			set this.m_questAreaGatherAgain = QuestAreaQuestTheDefenseOfTalrasGatherAgain.create(gg_rct_quest_the_defense_of_talras)
+			
+			call this.questItem(thistype.questItemGatherAtTheCampAgain).setState(thistype.stateNew)
+			call this.displayState()
+		endmethod
+		
+		private static method stateActionCompletedGatherAtTheCampAgain takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
+			local unit guard
+			
 			call VideoVictory.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			
@@ -304,6 +363,14 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 	
 		private method enableOrcArtillery takes nothing returns nothing
+			call this.createOrcArtillery.evaluate() // OpLimit
+			
+			call this.questItem(thistype.questItemDefendAgainstOrcs).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemDestroyArtillery).setState(thistype.stateNew)
+			call this.displayState()
+		endmethod
+		
+		private method createOrcArtillery takes nothing returns nothing
 			set this.m_orcSiege = AGroup.create()
 			call this.m_orcSiege.addGroup(CreateUnitsAtRect(1, 'o003', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_trebuchet_0, 180.0), true, false)
 			call this.m_orcSiege.addGroup(CreateUnitsAtRect(1, 'o003', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_trebuchet_1, 180.0), true, false)
@@ -381,10 +448,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_12_right, 0.0), true, false)
 			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_13_right, 0.0), true, false)
 			call this.m_orcWall.addGroup(CreateUnitsAtRect(1, 'h02G', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_siege_wall_14_right, 0.0), true, false)
-			
-			call this.questItem(thistype.questItemDefendAgainstOrcs).setState(thistype.stateCompleted)
-			call this.questItem(thistype.questItemDestroyArtillery).setState(thistype.stateNew)
-			call this.displayState()
 		endmethod
 		
 		public method finishDestroyArtillery takes nothing returns nothing
@@ -621,13 +684,24 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call questItem.setReward(thistype.rewardExperience, 1000)
 			
 			// item 4
+			set questItem = AQuestItem.create(this, tre("Sammelt euch am Außenposten, um euch auf die letzte Angriffswelle vorzubereiten.", "Gather at the outpost to prepare for the final attack wave."))
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedGatherAtTheCamp)
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			
+			// item 5
 			set questItem = AQuestItem.create(this, tre("Besiegt mit Hilfe der Hochelfen den Feind endgültig.", "Defeat the enemy finally with the help of the High Elves."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedDefeatTheEnemy)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedDefeatTheEnemy)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedDefeatTheEnemy)
 			call questItem.setReward(thistype.rewardExperience, 1000)
 			
-			// item 5
+			// item 6 questItemGatherAtTheCampAgain
+			set questItem = AQuestItem.create(this, tre("Sammelt euch erneut am Außenposten.", "Gather again at the outpost."))
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedGatherAtTheCampAgain)
+			
+			// item 6
 			set questItem = AQuestItem.create(this, tre("Berichtet dem Herzog von eurem Sieg.", "Report to the duke of your victory."))
 			call questItem.setReward(thistype.rewardExperience, 200)
 			call questItem.setPing(true)

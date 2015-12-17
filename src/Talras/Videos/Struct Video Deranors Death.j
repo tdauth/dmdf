@@ -22,6 +22,8 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 			
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_deranors_death_actor)
 			call SetUnitFacing(thistype.actor(), 270.0)
+			
+			call IssueImmediateOrder(thistype.actor(), "stop")
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
