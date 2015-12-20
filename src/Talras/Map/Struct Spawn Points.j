@@ -135,10 +135,16 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_vampires0
 		private static SpawnPoint m_box3
 		private static SpawnPoint m_undeadsWithKing
+		
+		// death vault
 		private static SpawnPoint m_medusaBoxes
 		private static SpawnPoint m_deathVault
 		private static SpawnPoint m_deathVaultBoxes0
 		private static SpawnPoint m_deathVaultBoxes1
+		
+		// deranor's tomb
+		private static SpawnPoint m_dearnorsGuard
+		
 		private static SpawnPoint m_deathAngel
 		private static SpawnPoint m_boneDragons
 		private static SpawnPoint m_giant
@@ -986,6 +992,26 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0570, 1.0)
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0569, 1.0)
 		endmethod
+		
+		private static method initDeranorsTomb takes nothing returns nothing
+			local integer index
+			// deranors guard
+			set thistype.m_dearnorsGuard = SpawnPoint.create()
+			set index = thistype.m_dearnorsGuard.addUnitWithType(gg_unit_n06G_0576, 1.0)
+			call thistype.m_dearnorsGuard.addNewItemType(index, 'I06H', 0.30)
+			set index = thistype.m_dearnorsGuard.addUnitWithType(gg_unit_n06G_0575, 1.0)
+			call thistype.m_dearnorsGuard.addNewItemType(index, 'I06H', 0.30)
+			set index = thistype.m_dearnorsGuard.addUnitWithType(gg_unit_n06G_0579, 1.0)
+			call thistype.m_dearnorsGuard.addNewItemType(index, 'I06H', 0.30)
+			set index = thistype.m_dearnorsGuard.addUnitWithType(gg_unit_n06G_0580, 1.0)
+			call thistype.m_dearnorsGuard.addNewItemType(index, 'I06H', 0.30)
+			set index = thistype.m_dearnorsGuard.addUnitWithType(gg_unit_n06G_0581, 1.0)
+			call thistype.m_dearnorsGuard.addNewItemType(index, 'I06H', 0.30)
+			set index = thistype.m_dearnorsGuard.addUnitWithType(gg_unit_n06G_0577, 1.0)
+			call thistype.m_dearnorsGuard.addNewItemType(index, 'I06H', 0.30)
+			set index = thistype.m_dearnorsGuard.addUnitWithType(gg_unit_n06G_0578, 1.0)
+			call thistype.m_dearnorsGuard.addNewItemType(index, 'I06H', 0.30)
+		endmethod
 
 		/// \todo change unit type
 		public static method init takes nothing returns nothing
@@ -999,6 +1025,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init3)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initFarm)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initLeftGate)
+			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initDeranorsTomb)
 		endmethod
 
 		public static method spawn takes nothing returns nothing

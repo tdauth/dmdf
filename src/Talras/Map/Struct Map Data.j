@@ -1401,10 +1401,6 @@ endif
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
 			
-			// castle bridge
-			call SetDestructableOccluderHeight(gg_dest_B00H_2439, bj_CLIFFHEIGHT * GetTerrainCliffLevel(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)))
-			call SetDestructableOccluderHeight(gg_dest_B00G_0022, bj_CLIFFHEIGHT * GetTerrainCliffLevel(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)))
-			
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
@@ -1418,6 +1414,12 @@ endif
 			endloop
 			
 			call thistype.startRainCountdown()
+			
+			// call GetCamOffset after initialization to make sure it returns the correct value
+			call CameraHeight.addRect(gg_rct_bridge_talras_camera_area, GetCamOffset(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)))
+			call CameraHeight.addRect(gg_rct_bridge_talras_down_camera_area, GetCamOffset(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)))
+			call CameraHeight.addRect(gg_rct_bridge_death_vault_0_camera_area, GetCamOffset(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)))
+			call CameraHeight.addRect(gg_rct_bridge_death_vault_1_camera_area, GetCamOffset(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)))
 			
 			call VideoIntro.video().play()
 		endmethod

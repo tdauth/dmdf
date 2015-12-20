@@ -17,6 +17,7 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 			call SetTimeOfDay(0.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_0, true, 0.0)
+			call CameraSetupApplyForceDuration(gg_cam_death_vault_1, true, 3.0)
 
 			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_death_vault_dragon_slayer)
@@ -55,7 +56,6 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 
 		public stub method onPlayAction takes nothing returns nothing
 			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("In dieser Gruft befinden sich zwei starke böse Kreaturen. Zum Einen eine mächtige Medusa und zum Anderen der „Diakon der Finsternis“."), null)
-			call CameraSetupApplyForceDuration(gg_cam_death_vault_1, true, 1.0)
 
 			if (wait(0.50)) then
 				return

@@ -20,11 +20,19 @@ library StructGameTreeTransparency initializer init requires Asl
 		private AIntegerList units
 	endglobals
 
+	/**
+	 * Adds doodad type \p rawcode to the tree transparency system.
+	 * All doodads of this type will be set transparent if a registered unit moves near them and the doodad is in the player's view.
+	 */
 	function AddDoodadOcclusion takes integer rawcode returns nothing
 		set raw[rawcount] = rawcode
 		set rawcount = rawcount+1
 	endfunction
 
+	/**
+	 * Adds unit \p u to the tree transparency system.
+	 * Whenever the unit comes near a registered doodad in range of \ref OCCLUSION_RADIUS and the doodad is in the player's view, it will be set transparent.
+	 */
 	function AddUnitOcclusion takes unit u returns nothing
 		local Unit data = Unit.create()
 		set data.whichUnit = u

@@ -1,4 +1,4 @@
-library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
+library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter, StructGameItemTypes, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
 
 	/**
 	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
@@ -662,6 +662,8 @@ endif
 			//call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
 
 			call Character.addSkillGrimoirePointsToAll(MapData.startSkillPoints)
+			
+			call CameraHeight.start()
 
 			// debug mode allows you to use various cheats
 static if (DEBUG_MODE) then
@@ -796,6 +798,7 @@ endif
 				set i = i + 1
 			endloop
 			call DisableTransparency()
+			call CameraHeight.pause()
 			call MapData.initVideoSettings.evaluate()
 		endmethod
 
@@ -825,7 +828,7 @@ endif
 				
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().enableLevelTrigger()
-					call ACharacter.playerCharacter(Player(i)).panCamera()
+					call ACharacter.playerCharacter(Player(i)).panCameraSmart()
 					call SetCameraFieldForPlayer(Player(i), CAMERA_FIELD_TARGET_DISTANCE, Character(ACharacter.playerCharacter(Player(i))).mainMenu().cameraDistance.evaluate(), 0.0)
 				endif
 				
@@ -851,6 +854,7 @@ endif
 				set i = i + 1
 			endloop
 			call EnableTransparency()
+			call CameraHeight.resume()
 			call MapData.resetVideoSettings.evaluate()
 		endmethod
 

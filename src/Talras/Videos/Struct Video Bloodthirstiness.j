@@ -10,6 +10,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 			call Game.initVideoSettings()
 			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
 			call SetTimeOfDay(0.0)
+			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_1, true, 0.0)
 			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_2, true, 5.50)
 
 			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
