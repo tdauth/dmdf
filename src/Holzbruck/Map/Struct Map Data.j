@@ -80,32 +80,49 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
 			if (class == Classes.ranger()) then
 				// Hunting Bow
-				call UnitAddItemById(whichUnit, 'I020')
+				call UnitAddItemToSlotById(whichUnit, 'I020', 2)
 			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard()) then	
 				// Haunted Staff
-				call UnitAddItemById(whichUnit, 'I03V')
+				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
 			else
-				call UnitAddItemById(whichUnit, ItemTypes.shortword().itemType())
-				call UnitAddItemById(whichUnit, ItemTypes.lightWoodenShield().itemType())
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemType(), 3)
 			endif
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
-			call UnitAddItemById(whichUnit, 'I01N')
+			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
+			call UnitAddItemToSlotById(whichUnit, 'I061', 1)
 			
-			call UnitAddItemById(whichUnit, 'I00A')
-			call UnitAddItemById(whichUnit, 'I00D')
+			call UnitAddItemToSlotById(whichUnit, 'I00A', 4)
+			call UnitAddItemToSlotById(whichUnit, 'I00D', 5)
 		endmethod
 		
 		/**
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
-		public static method createClassItems takes AClass class, unit whichUnit returns nothing
-			call thistype.createClassSelectionItems(class, whichUnit)
-			call UnitAddItemById(whichUnit, 'I00A')
-			call UnitAddItemById(whichUnit, 'I00A')
-			call UnitAddItemById(whichUnit, 'I00A')
-			call UnitAddItemById(whichUnit, 'I00D')
-			call UnitAddItemById(whichUnit, 'I00D')
-			call UnitAddItemById(whichUnit, 'I00D')
+		public static method createClassItems takes Character character returns nothing
+			if (character.class() == Classes.ranger()) then
+				// Hunting Bow
+				call character.giveItem('I020')
+			elseif (character.class() == Classes.cleric() or character.class() == Classes.necromancer() or character.class() == Classes.elementalMage() or character.class() == Classes.wizard()) then	
+				// Haunted Staff
+				call character.giveItem('I03V')
+			else
+				call character.giveItem(ItemTypes.shortword().itemType())
+				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
+			endif
+		
+			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
+			call character.giveItem('I01N')
+			call character.giveQuestItem('I061')
+
+			call character.giveItem('I00A')
+			call character.giveItem('I00A')
+			call character.giveItem('I00A')
+			call character.giveItem('I00A')
+			call character.giveItem('I00D')
+			call character.giveItem('I00D')
+			call character.giveItem('I00D')
+			call character.giveItem('I00D')
 		endmethod
 		
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
