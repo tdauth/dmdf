@@ -29,7 +29,7 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 			endif
 			
 			set revivalLoc = GetUnitLoc(this.unit())
-			set playerUnitLoc = PolarProjectionBJ(revivalLoc, 100.0, GetPlayerId(character.player()) * 360 / MapData.maxPlayers)
+			set playerUnitLoc = PolarProjectionBJ(revivalLoc, 50.0, GetPlayerId(character.player()) * 360 / MapData.maxPlayers)
 			set thistype.m_playerUnits[GetPlayerId(character.player())] = CreateUnitAtLoc(character.player(), thistype.playerUnitId, playerUnitLoc, 0.0)
 			call RemoveLocation(revivalLoc)
 			set revivalLoc = null
