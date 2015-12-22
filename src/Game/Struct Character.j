@@ -28,8 +28,6 @@ static if (DMDF_INFO_LOG) then
 endif
 		private AIntegerVector m_classSpells /// Only \ref Spell instances not \ref ASpell instances!
 
-		private trigger m_workerTrigger
-		private unit m_worker
 		private boolean m_isMorphed
 		/**
 		 * Since the Villager255 model is used, animation indices have to be set manually depending on the weapon.
@@ -70,7 +68,7 @@ endif
 
 		public method setShowWorker takes boolean show returns nothing
 			set this.m_showWorker = show
-			call ShowUnit(this.m_worker, show)
+			call ShowUnit(Shrine.playerUnit.evaluate(GetPlayerId(this.player())), show)
 		endmethod
 
 		public method showWorker takes nothing returns boolean
@@ -391,20 +389,6 @@ endif
 			debug call Print("Selected worker")
 		endmethod
 
-		private method createWorkerTrigger takes nothing returns nothing
-			set this.m_worker = CreateUnit(this.player(), MapData.workerUnitTypeId, GetRectCenterX(gg_rct_worker), GetRectCenterY(gg_rct_worker), 0.0)
-			// Do not hide and pause!
-			//call PauseUnit(this.m_worker, true)
-			call SetUnitInvulnerable(this.m_worker, true)
-			call SetUnitPathing(this.m_worker, false)
-			//call ShowUnit(this.m_worker, false)
-			set this.m_workerTrigger = CreateTrigger()
-			call TriggerRegisterUnitEvent(this.m_workerTrigger, this.m_worker, EVENT_UNIT_SELECTED)
-			call TriggerAddCondition(this.m_workerTrigger, Condition(function thistype.triggerConditionWorker))
-			call TriggerAddAction(this.m_workerTrigger, function thistype.triggerActionWorker)
-			call DmdfHashTable.global().setHandleInteger(this.m_workerTrigger, "this", this)
-		endmethod
-		
 		private static method triggerConditionOrder takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			return this.unit() == GetAttacker()
@@ -488,7 +472,6 @@ static if (DMDF_INFO_LOG) then
 endif
 
 			set this.m_classSpells = AIntegerVector.create()
-			call this.createWorkerTrigger()
 			set this.m_isMorphed = false
 			set this.m_animationOrderTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_animationOrderTrigger, EVENT_PLAYER_UNIT_ATTACKED)
@@ -497,13 +480,6 @@ endif
 			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, "this", this)
 
 			return this
-		endmethod
-
-		private method destroyWorkerTrigger takes nothing returns nothing
-			call RemoveUnit(this.m_worker)
-			set this.m_worker = null
-			call DmdfHashTable.global().destroyTrigger(this.m_workerTrigger)
-			set this.m_workerTrigger = null
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
@@ -519,7 +495,6 @@ static if (DMDF_INFO_LOG) then
 endif
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0
-			call this.destroyWorkerTrigger()
 			call DmdfHashTable.global().destroyTrigger(this.m_animationOrderTrigger)
 			set this.m_animationOrderTrigger = null
 		endmethod

@@ -96,12 +96,14 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static method sisgardCastSpellTargetAction takes NpcRoutineWithFacing period returns nothing
 			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), "Spell")
+			call TriggerSleepAction(1.267)
 			call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl", period.unit(), "chest"))
 			call PlaySoundOnUnitBJ(gg_snd_DispelMagicTarget, 100.0, period.unit())
 			call TriggerSleepAction(1.0)
 			if (not IsUnitPaused(period.unit())) then
 				call SetUnitFacing(period.unit(), period.facing())
 				call QueueUnitAnimation(period.unit(), "Spell")
+				call TriggerSleepAction(1.267)
 				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl", GetRectCenterX(gg_rct_waypoint_sisgard_spell_0), GetRectCenterY(gg_rct_waypoint_sisgard_spell_0)))
 				call PlaySoundOnUnitBJ(gg_snd_DispelMagicTarget, 100.0, period.unit())
 				call TriggerSleepAction(1.0)
@@ -109,6 +111,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			if (not IsUnitPaused(period.unit())) then
 				call SetUnitFacing(period.unit(), period.facing())
 				call QueueUnitAnimation(period.unit(), "Spell")
+				call TriggerSleepAction(1.267)
 				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl", GetRectCenterX(gg_rct_waypoint_sisgard_spell_1), GetRectCenterY(gg_rct_waypoint_sisgard_spell_1)))
 				call PlaySoundOnUnitBJ(gg_snd_DispelMagicTarget, 100.0, period.unit())
 				call TriggerSleepAction(1.0)
@@ -116,6 +119,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			if (not IsUnitPaused(period.unit())) then
 				call SetUnitFacing(period.unit(), period.facing())
 				call QueueUnitAnimation(period.unit(), "Spell")
+				call TriggerSleepAction(1.267)
 				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl", GetRectCenterX(gg_rct_waypoint_sisgard_spell_2), GetRectCenterY(gg_rct_waypoint_sisgard_spell_2)))
 				call PlaySoundOnUnitBJ(gg_snd_DispelMagicTarget, 100.0, period.unit())
 			endif

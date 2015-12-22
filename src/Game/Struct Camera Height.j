@@ -266,8 +266,8 @@ library StructGameCameraHeight requires Asl, GetCamOffset
 			local integer j
 			local real height = 0.0
 			local boolean found = false
-			debug call Print("run")
-			debug call Print("Terrain cliff level: " + I2S(GetTerrainCliffLevel(GetCameraTargetPositionX(), GetCameraTargetPositionY())) + " with distance " + R2S(GetCameraField(CAMERA_FIELD_ZOFFSET)))
+			//debug call Print("run")
+			//debug call Print("Terrain cliff level: " + I2S(GetTerrainCliffLevel(GetCameraTargetPositionX(), GetCameraTargetPositionY())) + " with distance " + R2S(GetCameraField(CAMERA_FIELD_ZOFFSET)))
 			
 			set j = 0
 			loop

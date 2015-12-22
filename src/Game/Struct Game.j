@@ -642,6 +642,7 @@ endif
 		* This method usually is called after all players selected their character class.
 		*/
 		public static method start takes nothing returns nothing
+			local integer i
 			call StopMusic(false)
 			call SuspendTimeOfDay(false)
 			//call SetCreepCampFilterState(true)
@@ -649,14 +650,27 @@ endif
 			
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initCharactersScheme)
 			
-			// shows only if enabled
-			call Character.showCharactersSchemeToAll()
 
 			// create after character creation (character should be F1)
 			// disable RPG view
 			call Character.setViewForAll(false)
 			// enable tutorial by default for beginners
 			call Character.setTutorialForAll(true)
+			
+			// all but one missing, disable characters schema since it is not required
+			if (thistype.missingPlayers() == MapData.maxPlayers - 1) then
+				set i = 0
+				loop
+					exitwhen (i == MapData.maxPlayers)
+					if (ACharacter.playerCharacter(Player(i)) != 0) then
+						call Character(ACharacter.playerCharacter(Player(i))).setShowCharactersScheme(false)
+					endif
+					set i = i + 1
+				endloop
+			endif
+			
+			// shows only if enabled, otherwise hide
+			call Character.showCharactersSchemeToAll()
 
 
 			//call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
@@ -782,7 +796,6 @@ endif
 			call ForForce(bj_FORCE_PLAYER[0], function Fellow.reviveAllForVideo)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.pauseAll)
 			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.pauseAll)
-			call ForForce(bj_FORCE_PLAYER[0], function Shrine.disableAllAuras)
 			call ForForce(bj_FORCE_PLAYER[0], function Routines.destroyTextTags)
 			call DisableTrigger(thistype.m_killTrigger)
 			//call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_UI, 1.0) /// @todo TEST
@@ -842,7 +855,6 @@ endif
 			call thistype.setDefaultMapMusic()
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.resumeAll)
 			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.resumeAll)
-			call ForForce(bj_FORCE_PLAYER[0], function Shrine.enableAllAuras)
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterHiddenItem), function thistype.showItem)
 			set i = 0
 			loop

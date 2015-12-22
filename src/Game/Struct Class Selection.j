@@ -114,6 +114,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellWeakPoint.create(character)
 				call SpellColossus.create(character)
 				call SpellRob.create(character)
+				call SpellMercilessness.create(character)
+				call SpellRage.create(character)
 			elseif (class == Classes.ranger()) then
 				call SpellAgility.create(character)
 				call SpellEagleEye.create(character)

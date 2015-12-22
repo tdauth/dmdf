@@ -560,7 +560,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_bootsOfSpeed.addAbility('AIms', true)
 			
 			set thistype.m_quiver = ItemType.createSimple('I04W', AItemType.equipmentTypeAmulet)
-			call thistype.m_quiver.addAbility('A160', true)
+			call thistype.m_quiver.addAbility('A1EC', true)
 			call thistype.m_quiver.addAbility('A1EJ', true)
 			
 			set thistype.m_simpleClothes = ItemType.createSimple('I06B', AItemType.equipmentTypeArmour)
