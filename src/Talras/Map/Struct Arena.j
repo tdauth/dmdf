@@ -23,7 +23,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static ARealVector m_startY
 		private static ARealVector m_startFacing
 		private static AUnitVector m_units
-		private static integer array m_playerScore[6] /// \todo \ref MapData.maxPlayers
+		private static integer array m_playerScore[12] /// \todo \ref MapData.maxPlayers
 		private static unit m_winner
 		private static region m_region
 		private static trigger m_killTrigger

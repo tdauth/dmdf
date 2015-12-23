@@ -17,7 +17,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		
 		private static trigger m_repickTrigger
 		private static integer array m_repickXp[12] // TODO MapData.maxPlayers
-		private static integer array m_repickSkillPoints[12] // TODO MapData.maxPlayers
+		private static Shrine array m_repickShrine[12] // TODO MapData.maxPlayers
 		private static boolean array m_repickShowCharactersSchema[12] // TODO MapData.maxPlayers
 		private static boolean array m_repickShowWorker[12] // TODO MapData.maxPlayers
 		private static real array m_repickCameraDistance[12] // TODO MapData.maxPlayers
@@ -182,7 +182,16 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call character.grimoire().addClassSpellsFromCharacter.evaluate(character)
 
 			call initCharacterSpells(character)
-			call MapData.createClassItems(character)
+			call MapData.initMapSpells(character)
+			
+			/*
+			 * If it is a repick don't add further items.
+			 * Otherwise it could be used to create more and more items.
+			 */
+			if (not thistype.m_gameStarted) then
+				call MapData.createClassItems(character)
+			endif
+			
 			call character.setMovable(false)
 			call character.revival().setTime(MapData.revivalTime)
 			//call SetUserInterfaceForPlayer(character.player(), false, false)
@@ -190,6 +199,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call MapData.setCameraBoundsToPlayableAreaForPlayer(character.player())
 			call character.panCamera()
 			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, Format(tre("%s hat die Klasse \"%s\" gewählt.", "%s has choosen the class \"%s\".")).s(character.name()).s(GetUnitName(character.unit())).result(), character.player())
+			
+			
+			call AddUnitOcclusion(character.unit())
 			
 			set i = 0
 			loop
@@ -296,24 +308,34 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local boolean repick = ACharacter.playerCharacter(whichPlayer) != 0
 			// repick!!!
 			if (repick) then
-				// TODO store everything, items etc.
+				// TODO store everything, items etc. if items cannot be stored easily just drop them and keep the owner
 				set thistype.m_repickXp[GetPlayerId(whichPlayer)] = GetHeroXP(ACharacter.playerCharacter(whichPlayer).unit())
-				set thistype.m_repickSkillPoints[GetPlayerId(whichPlayer)] = GetHeroSkillPoints(ACharacter.playerCharacter(whichPlayer).unit())
+				set thistype.m_repickShrine[GetPlayerId(whichPlayer)] = ACharacter.playerCharacter(whichPlayer).shrine()
 				set thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showCharactersScheme()
 				set thistype.m_repickShowWorker[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showWorker()
 				set thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).mainMenu().cameraDistance()
 				set thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).isViewEnabled()
+				
+				call ACharacter.playerCharacter(whichPlayer).inventory().dropAll(GetUnitX(ACharacter.playerCharacter(whichPlayer).unit()), GetUnitY(ACharacter.playerCharacter(whichPlayer).unit()))
+				
+				// TODO do not destroy, replace him! only destroy and replace unit
 				call ACharacter.playerCharacter(whichPlayer).destroy()
 			endif
 			call this.selectClass()
 			if (repick) then
 				// restore everything
 				call SetHeroXP(ACharacter.playerCharacter(whichPlayer).unit(), thistype.m_repickXp[GetPlayerId(whichPlayer)], false)
-				call ModifyHeroSkillPoints(ACharacter.playerCharacter(whichPlayer).unit(), bj_MODIFYMETHOD_SET, thistype.m_repickSkillPoints[GetPlayerId(whichPlayer)])
+				// let the player reskill everything
+				call Character(ACharacter.playerCharacter(whichPlayer)).grimoire().setSkillPoints((GetHeroLevel(ACharacter.playerCharacter(whichPlayer).unit()) - 1) * MapData.levelSpellPoints + MapData.startSkillPoints)
+				call thistype.m_repickShrine[GetPlayerId(whichPlayer)].enableForCharacter(ACharacter.playerCharacter(whichPlayer), false)
 				call Character(ACharacter.playerCharacter(whichPlayer)).setShowCharactersScheme(thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)])
 				call Character(ACharacter.playerCharacter(whichPlayer)).setShowWorker(thistype.m_repickShowWorker[GetPlayerId(whichPlayer)])
 				call Character(ACharacter.playerCharacter(whichPlayer)).mainMenu().setCameraDistance(thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)])
 				call Character(ACharacter.playerCharacter(whichPlayer)).setView(thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)])
+				
+				call MapData.resetCameraBoundsForPlayer.evaluate(whichPlayer)
+				call ACharacter.playerCharacter(whichPlayer).panCameraSmart()
+				call ACharacter.playerCharacter(whichPlayer).select(false)
 			endif
 			set whichPlayer = null
 		endmethod
@@ -446,12 +468,13 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method triggerConditionRepick takes nothing returns boolean
-			return ACharacter.playerCharacter(GetTriggerPlayer()) != 0 and ACharacter.playerCharacter(GetTriggerPlayer()).isMovable() and thistype.playerClassSelection(GetTriggerPlayer()) == 0
+			return ACharacter.playerCharacter(GetTriggerPlayer()) != 0 and ACharacter.playerCharacter(GetTriggerPlayer()).isMovable() and not IsUnitDeadBJ(ACharacter.playerCharacter(GetTriggerPlayer()).unit()) and thistype.playerClassSelection(GetTriggerPlayer()) == 0
 		endmethod
 		
 		private static method triggerActionRepick takes nothing returns nothing
 			debug call Print("Repick!")
-			call MapData.resetCameraBoundsForPlayer.evaluate(GetTriggerPlayer())
+			call SetCameraBoundsToRectForPlayerBJ(GetTriggerPlayer(), GetPlayableMapRect())
+			call ACharacter.playerCharacter(GetTriggerPlayer()).setMovable(false)
 			call thistype.createClassSelectionForPlayer(GetTriggerPlayer())
 		endmethod
 		

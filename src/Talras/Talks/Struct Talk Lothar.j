@@ -2,7 +2,7 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 	// TODO add missing sound files and sentences from talk file
 	struct TalkLothar extends Talk
-		private boolean array m_saidTruth[6] /// \todo MapData.maxplayers
+		private boolean array m_saidTruth[12] /// \todo MapData.maxplayers
 
 		implement Talk
 

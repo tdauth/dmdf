@@ -1,7 +1,7 @@
 library ModuleQuestsCharacterQuest requires Asl
 
 	module CharacterQuest
-		private static thistype array m_characterQuest[6] /// @todo MapData.maxPlayers
+		private static thistype array m_characterQuest[12] /// @todo MapData.maxPlayers
 
 		public static method initQuest takes nothing returns nothing
 			local integer i = 0

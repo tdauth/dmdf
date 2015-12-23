@@ -5,7 +5,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 	 * It is mostly used to ensure that all characters are at a certain point when the event starts and are movable and not in talks or something else.
 	 */
 	struct QuestArea
-		private fogmodifier array m_assemblyPointFogModifier[6] /// \todo MapData.maxPlayers
+		private fogmodifier array m_assemblyPointFogModifier[12] /// \todo MapData.maxPlayers
 		private destructable array m_assemblyPointMarker[4]
 		private rect m_rect
 		private trigger m_enterTrigger

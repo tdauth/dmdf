@@ -31,9 +31,9 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		private static player m_baldarsUser
 		private static integer m_haldarMembers
 		private static integer m_baldarMembers
-		private static boolean array m_playerHasJoinedHaldar[6] /// \todo \ref MapData.maxPlayers
-		private static boolean array m_playerHasJoinedBaldar[6] /// \todo \ref MapData.maxPlayers
-		private static integer array m_playerScore[6] /// \todo \ref MapData.maxPlayers
+		private static boolean array m_playerHasJoinedHaldar[12] /// \todo \ref MapData.maxPlayers
+		private static boolean array m_playerHasJoinedBaldar[12] /// \todo \ref MapData.maxPlayers
+		private static integer array m_playerScore[12] /// \todo \ref MapData.maxPlayers
 		private static leaderboard m_leaderboard
 		private static trigger m_enterTrigger
 		private static trigger m_leaveTrigger

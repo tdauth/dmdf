@@ -7,7 +7,7 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 		 * Player units are created on the corresponding shrine of the player's character.
 		 * They should be classified as worker to enable the worker button.
 		 */
-		private static unit array m_playerUnits[6] // TODO MapData.maxPlayers
+		private static unit array m_playerUnits[12] // TODO MapData.maxPlayers
 		private static AIntegerVector m_shrines = 0
 
 		public method setUnit takes unit whichUnit returns nothing

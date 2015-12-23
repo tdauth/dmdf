@@ -155,7 +155,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions
 		private static trigger m_killTrigger
-		private static AIntegerVector array m_hiddenUnits[6] /// \todo \ref MapData.maxPlayers
+		private static AIntegerVector array m_hiddenUnits[12] /// \todo \ref MapData.maxPlayers
 
 		private static method create takes nothing returns thistype
 			return 0

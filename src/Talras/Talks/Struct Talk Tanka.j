@@ -2,7 +2,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 	struct TalkTanka extends Talk
 		private static constant integer rewardGold = 30
-		private integer array m_hints[6] /// @todo @member MapData.maxPlayers, vJass bug
+		private integer array m_hints[12] /// @todo @member MapData.maxPlayers, vJass bug
 
 		implement Talk
 

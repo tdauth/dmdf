@@ -2,8 +2,8 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 
 	struct TalkOsman extends Talk
 		private static constant integer brotherGoldReward = 20
-		private boolean array m_wasOffended[6] /// \todo \ref Game.maxPlayers, vJass bug.
-		private boolean array m_gaveHealPotion[6] /// \todo \refGame.maxPlayers, vJass bug.
+		private boolean array m_wasOffended[12] /// \todo \ref Game.maxPlayers, vJass bug.
+		private boolean array m_gaveHealPotion[12] /// \todo \refGame.maxPlayers, vJass bug.
 		
 		private AInfo m_hi
 		private AInfo m_whatAreYouDoingHere

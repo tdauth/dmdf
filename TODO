@@ -787,11 +787,13 @@ Für Version 0.6:
 * Save/Load-System einführen: Klasse, Stufe/Erfahrung, Attribute?, Gold, Holz?, Zauber nicht, reskillen spart Platz!, Equipment, Items aus Rucksack? Quests kann man noch einmal machen, Spiel beginnt von vorne
 * Während Verwandlung zumindest Zugriff auf Rucksack zulassen, damit Gegenstände eingesammelt werden können und Tränke benutzt.
 * ATimedRevival: Abstraktion von ARevival und dem Revival im struct Fellow.
-* Alle 4 Slots verwenden: http://www.hiveworkshop.com/forums/spells-569/easy-item-stack-n-split-v2-7-4-a-153287/?prev=search%3Dstack%26d%3Dlist%26r%3D20
+* DONE: Alle 4 Slots verwenden: http://www.hiveworkshop.com/forums/spells-569/easy-item-stack-n-split-v2-7-4-a-153287/?prev=search%3Dstack%26d%3Dlist%26r%3D20
+* Wenn man Gegenstände auf den Boden legt (Drop) alle Aufladungen ablegen, wenn man Gegenstände gibt (Order), nur eine Aufladung geben
 * System für korrekte Kamerahöhe bei Brücken: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/camera-height-above-doodads-destructibles-273631/#post2767796
 * Säule und Brücke verschwinden: http://www.wc3c.net/showthread.php?t=90920
-* Disabled Icons für die disabled Icons der Inventarplatzhalter.
+* FIXED: Disabled Icons für die disabled Icons der Inventarplatzhalter.
 * Trotz Werten wie 0.4 droppen Gegenstände bei Spawns immer?
+* Charakter stirbt an Pfeilhagel selbst aber nur wenn auf Gegner angewandt, Gegner sind im Zielgebiet (mit Stufe 5 der Fähigkeit).
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

@@ -8,7 +8,7 @@ library StructMapMapBuildings requires StructGameCharacter
 		private static trigger m_constructionFinishTrigger
 		private static trigger m_deathTrigger
 		private static unit array m_buildings
-		private static integer array m_collectedGold[6] // TODO MapData.maxPlayers
+		private static integer array m_collectedGold[12] // TODO MapData.maxPlayers
 		
 		private static method triggerConditionHarvest takes nothing returns boolean
 			if (GetUnitTypeId(GetTriggerUnit()) == 'h02A' and GetSpellAbilityId() == 'A1DR') then

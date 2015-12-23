@@ -77,8 +77,11 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_bears0
 		private static SpawnPoint m_boars2
 		private static SpawnPoint m_boars3
+		// right from the gate
 		private static SpawnPoint m_highwaymen0
 		private static SpawnPoint m_deers0
+		private static SpawnPoint m_bears1
+		
 		private static SpawnPoint m_ditchSpiders0
 		private static SpawnPoint m_ditchSpiders1
 		private static SpawnPoint m_ditchSpiders2
@@ -383,6 +386,14 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_deers0.addNewItemType(index, 'I00P', 1.0)
 			set index = thistype.m_deers0.addUnitWithType(gg_unit_n00V_0134, 1.0)
 			call thistype.m_deers0.addNewItemType(index, 'I00P', 1.0)
+			
+			set thistype.m_bears1 = SpawnPoint.create()
+			set index = thistype.m_bears1.addUnitWithType(gg_unit_n008_0582, 1.0)
+			call thistype.m_bears1.addNewItemType(index, 'I01J', 1.0)
+			set index = thistype.m_bears1.addUnitWithType(gg_unit_n008_0583, 1.0)
+			call thistype.m_bears1.addNewItemType(index, 'I01J', 1.0)
+			set index = thistype.m_bears1.addUnitWithType(gg_unit_n008_0584, 1.0)
+			call thistype.m_bears1.addNewItemType(index, 'I01J', 1.0)
 
 			set thistype.m_ditchSpiders0 = SpawnPoint.create()
 			set index = thistype.m_ditchSpiders0.addUnitWithType(gg_unit_n01E_0075, 1.0)

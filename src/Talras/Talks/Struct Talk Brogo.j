@@ -6,8 +6,8 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 		private static constant integer maxCats = 5
 		// members
 		private AUnitVector m_cats
-		private integer array m_playerCatCount[6] /// @todo @member MapData.maxPlayers, vJass bug
-		private boolean array m_playerHasTalkedTo[6] /// @todo @member MapData.maxPlayers, vJass bug
+		private integer array m_playerCatCount[12] /// @todo @member MapData.maxPlayers, vJass bug
+		private boolean array m_playerHasTalkedTo[12] /// @todo @member MapData.maxPlayers, vJass bug
 		private AInfo m_hi
 		private AInfo m_hereIsACat
 

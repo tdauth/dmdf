@@ -6,7 +6,7 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 	struct Tomb
 		private static trigger m_enterTrigger
 		private static trigger m_leaveTrigger
-		private static boolean array m_playerJoined[6] /// TODO MapData.maxPlayers
+		private static boolean array m_playerJoined[12] /// TODO MapData.maxPlayers
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Tomb\"")
 

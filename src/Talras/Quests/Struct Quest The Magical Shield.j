@@ -49,7 +49,7 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCurb.blp")
 			call this.setDescription(tr("Sisgard hat einen Zauberspruch kreiert, der einen magischen Schild erschaffen soll, welcher den Zaubernden vor Pfeilen schützt. Da sie den Zauber nicht selbst ausprobieren will, hat sie dir zwei Zauberspruchrollen gegeben, um dich darum zu kümmern."))
-			call this.setReward(AAbstractQuest.rewardExperience, 500)
+			call this.setReward(thistype.rewardExperience, 500)
 			// item 0
 			set questItem = AQuestItem.create(this, tr("Beschwöre den magischen Schild und die Pfeile."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)

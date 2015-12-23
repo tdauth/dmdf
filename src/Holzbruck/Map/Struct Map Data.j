@@ -154,8 +154,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call ACharacter.playerCharacter(Player(i)).setMovable(true)
 					call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
-					
-					call AddUnitOcclusion(ACharacter.playerCharacter(Player(i)).unit())
 				endif
 				set i = i + 1
 			endloop

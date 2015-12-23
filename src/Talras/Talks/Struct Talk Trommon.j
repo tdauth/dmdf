@@ -2,8 +2,8 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 
 	struct TalkTrommon extends Talk
 		private static constant integer goldCost = 10
-		private boolean array m_hasPaid[6] /// @todo @member MapData.maxPlayers
-		private boolean array m_wasOffended[6] /// @todo @member MapData.maxPlayers
+		private boolean array m_hasPaid[12] /// @todo @member MapData.maxPlayers
+		private boolean array m_wasOffended[12] /// @todo @member MapData.maxPlayers
 
 		implement Talk
 

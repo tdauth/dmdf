@@ -114,11 +114,11 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		
 		private static region m_portalsHintRegion
 		private static trigger m_portalsHintTrigger
-		private static boolean array m_portalsHintShown[6]
+		private static boolean array m_portalsHintShown[12]
 		
 		private static region m_talkHintRegion
 		private static trigger m_talkHintTrigger
-		private static boolean array m_talkHintShown[6]
+		private static boolean array m_talkHintShown[12]
 		
 		private static timer m_rainTimer
 		private static timer m_resetRainTimer
@@ -1393,6 +1393,10 @@ endif
 		private static method startRainCountdown takes nothing returns nothing
 			call TimerStart(thistype.m_rainTimer, GetRandomReal(80.0, 120.0), false, function thistype.timerFunctionRain)
 		endmethod
+		
+		public static method initMapSpells takes ACharacter character returns nothing
+			call initMapCharacterSpells.evaluate(character)
+		endmethod
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
@@ -1405,10 +1409,7 @@ endif
 			loop
 				exitwhen (i == thistype.maxPlayers)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
-					call initMapCharacterSpells.evaluate(ACharacter.playerCharacter(Player(i)))
 					call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
-					
-					call AddUnitOcclusion(ACharacter.playerCharacter(Player(i)).unit())
 				endif
 				set i = i + 1
 			endloop

@@ -1,11 +1,11 @@
 library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapNpcs, StructMapTalksTalkLothar, StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent
 
 	struct TalkMathilda extends Talk
-		private boolean array m_wasOffendedStories[6] /// \todo \ref MapData.maxPlayers
-		private boolean array m_wasOffendedSongs[6] /// \todo \ref MapData.maxPlayers
-		private boolean array m_toldStory[6] /// \todo \ref MapData.maxPlayers
-		private boolean array m_playedSong[6] /// \todo \ref MapData.maxPlayers
-		private boolean array m_toldThatSleepingInBarn[6] /// \todo \ref MapData.maxPlayers
+		private boolean array m_wasOffendedStories[12] /// \todo \ref MapData.maxPlayers
+		private boolean array m_wasOffendedSongs[12] /// \todo \ref MapData.maxPlayers
+		private boolean array m_toldStory[12] /// \todo \ref MapData.maxPlayers
+		private boolean array m_playedSong[12] /// \todo \ref MapData.maxPlayers
+		private boolean array m_toldThatSleepingInBarn[12] /// \todo \ref MapData.maxPlayers
 
 		implement Talk
 
