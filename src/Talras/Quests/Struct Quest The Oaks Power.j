@@ -19,14 +19,11 @@ library StructMapQuestsQuestTheOaksPower requires Asl, StructGameCharacter
 		endmethod
 
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger whichTrigger returns nothing
-			local player owner = Player(PLAYER_NEUTRAL_AGGRESSIVE)
-			local event triggerEvent = TriggerRegisterUnitEvent(whichTrigger, questItem.quest().character().unit(), EVENT_UNIT_SPELL_CAST)
-			set owner = null
-			set triggerEvent = null
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_SPELL_CAST)
 		endmethod
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
-			if (GetSpellAbilityId() == thistype.abilityId) then
+			if (GetTriggerUnit() == questItem.character().unit() and GetSpellAbilityId() == thistype.abilityId) then
 				if (GetUnitTypeId(GetSpellTargetUnit()) != thistype.unitTypeId) then
 					call questItem.quest().character().displayMessage(ACharacter.messageTypeError, tr("Der Zauber kann nur auf wilde Kreaturen angewandt werden."))
 				elseif (questItem.quest().questItem(0).state() == thistype.stateCompleted) then

@@ -326,7 +326,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			//return GetPlayerTechMaxAllowed(this.character().player(), this.tech()) == this.getMaxLevel()
 		endmethod
 		
-		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, unitevent unitEvent returns thistype
+		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent returns thistype
 			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, unitEvent)
 			set this.m_savedLevel = 0
 			set this.m_favouriteAbility = favouriteAbility
@@ -345,7 +345,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			 * Make sure that GetSpellTargetX() and other event data works properly.
 			 * EVENT_UNIT_SPELL_ENDCAST would NOT work and is reserved for grimoire entries.
 			 */
-			return thistype.createWithEvent(character, class, spellType, maxLevel, abilityId, favouriteAbility, upgradeAction, castCondition, castAction, EVENT_UNIT_SPELL_CHANNEL)
+			return thistype.createWithEvent(character, class, spellType, maxLevel, abilityId, favouriteAbility, upgradeAction, castCondition, castAction, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
 		endmethod
 
 		public method onDestroy takes nothing returns nothing

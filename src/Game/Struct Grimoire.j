@@ -953,7 +953,7 @@ endif
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, thistype.abilityId, 0, 0, 0, EVENT_UNIT_SPELL_CHANNEL)
+			local thistype this = thistype.allocate(character, thistype.abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
 			//set this.m_unit = CreateUnit(character.player(), thistype.unitId, GetUnitX(character.unit()), GetUnitY(character.unit()), 0.0)
 			//call SetUnitInvulnerable(this.unit(), true)
 			set this.m_page = 0
@@ -1061,10 +1061,10 @@ endif
 
 		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbility returns thistype
 			/*
-			 * Use EVENT_UNIT_SPELL_ENDCAST to prevent any null GetAbilityId() calls when the ability is removed before running trigger events.
+			 * Use EVENT_PLAYER_UNIT_SPELL_ENDCAST to prevent any null GetAbilityId() calls when the ability is removed before running trigger events.
 			 * Since the grimoire buttons do not need any event data like GetSpellTargetX() this event is just okay.
 			 */
-			local thistype this = thistype.allocate(grimoire.character(), abilityId, 0, 0, 0, EVENT_UNIT_SPELL_ENDCAST)
+			local thistype this = thistype.allocate(grimoire.character(), abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_ENDCAST)
 			set this.m_grimoire = grimoire
 			set this.m_grimoireAbility = grimoireAbility
 

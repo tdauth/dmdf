@@ -73,7 +73,7 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 			if (GetKillingUnit() == this.character().unit() and thistype.m_counter[GetPlayerId(this.character().player())] < GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) * 2) then
 				debug call Print("Rage increase counter")
 				set thistype.m_counter[GetPlayerId(this.character().player())] = thistype.m_counter[GetPlayerId(this.character().player())] + 1
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("Rage: %i"),thistype.m_counter[GetPlayerId(this.character().player())]),  GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("Rage: %i"), thistype.m_counter[GetPlayerId(this.character().player())]), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
 			endif
 			
 			return false

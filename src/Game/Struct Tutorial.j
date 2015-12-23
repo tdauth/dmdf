@@ -92,6 +92,8 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("\"-menu\" öffnet das Hauptmenü.", "\"-menu\" opens the main menu."))
 			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tre("\"-repick\" erlaubt die Wahl einer anderen Klasse.", "\"-repick\" allows the selection of a different class."))
+			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("\"-history n\" zeigt die n letzten Spielnachrichten an (standardmäßig fünf).", "\"-history n\" shows the recent n game messages (by default five)."))
 			call QuestSetCompleted(whichQuest, true)
 			

@@ -14,11 +14,11 @@ library StructMapQuestsQuestCoatsForThePeasants requires Asl, StructMapMapNpcs
 		endmethod
 		
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger whichTrigger returns nothing
-			call TriggerRegisterUnitEvent(whichTrigger, questItem.character().unit(),  EVENT_UNIT_PICKUP_ITEM)
+			call TriggerRegisterAnyUnitEventBJ(whichTrigger,  EVENT_PLAYER_UNIT_PICKUP_ITEM)
 		endmethod
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
-			if (GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeId) then
+			if (GetTriggerUnit() == questItem.character().unit() and GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeId) then
 				call questItem.quest().displayUpdateMessage(Format(tre("%1%/%2% Riesen-Felle", "%1%/2% Giant Furs")).i(questItem.character().inventory().totalItemTypeCharges(thistype.itemTypeId)).i(3).result())
 				
 				return questItem.character().inventory().totalItemTypeCharges(thistype.itemTypeId) == 3

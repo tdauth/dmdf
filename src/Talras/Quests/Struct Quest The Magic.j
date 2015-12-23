@@ -13,16 +13,13 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter, StructMa
 		endmethod
 
 		private static method stateEvent0 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			local unit characterUnit = questItem.character().unit()
-			local event triggerEvent = TriggerRegisterUnitEvent(usedTrigger, characterUnit, EVENT_UNIT_USE_ITEM)
-			set characterUnit = null
-			set triggerEvent = null
+			call TriggerRegisterAnyUnitEventBJ(usedTrigger, EVENT_PLAYER_UNIT_USE_ITEM)
 		endmethod
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
 			local item manipulatedItem = GetManipulatedItem()
 			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = GetItemTypeId(manipulatedItem) == thistype.itemTypeId and RectContainsUnit(gg_rct_weather_rune_circle, triggerUnit)
+			local boolean result = triggerUnit == questItem.character().unit() and GetItemTypeId(manipulatedItem) == thistype.itemTypeId and RectContainsUnit(gg_rct_weather_rune_circle, triggerUnit)
 			set manipulatedItem = null
 			set triggerUnit = null
 			return result

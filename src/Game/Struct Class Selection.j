@@ -15,6 +15,15 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		private integer m_page = 0
 		private trigger m_spellPagesTrigger
 		
+		private static trigger m_repickTrigger
+		private static integer array m_repickXp[12] // TODO MapData.maxPlayers
+		private static integer array m_repickSkillPoints[12] // TODO MapData.maxPlayers
+		private static boolean array m_repickShowCharactersSchema[12] // TODO MapData.maxPlayers
+		private static boolean array m_repickShowWorker[12] // TODO MapData.maxPlayers
+		private static real array m_repickCameraDistance[12] // TODO MapData.maxPlayers
+		private static boolean array m_repickViewEnabled[12] // TODO MapData.maxPlayers
+		private static boolean m_gameStarted = false
+		
 		/**
 		 * Displays message \p message to all players except \p excludingPlayer for \p time seconds.
 		 */
@@ -116,6 +125,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellRob.create(character)
 				call SpellMercilessness.create(character)
 				call SpellRage.create(character)
+				call SpellThrillOfVictory.create(character)
+				call SpellReserves.create(character)
 			elseif (class == Classes.ranger()) then
 				call SpellAgility.create(character)
 				call SpellEagleEye.create(character)
@@ -199,13 +210,18 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call UnitAddAbility(character.unit(), 'A13E')
 			call UnitMakeAbilityPermanent(character.unit(), true, 'A13E')
 			
-			if (not last) then
-				debug call Print("Do not start the game")
-				call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
+			if (not thistype.m_gameStarted) then
+				if (not last) then
+					debug call Print("Do not start the game")
+					call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
+				else
+					debug call Print("Start game")
+					call thistype.endTimer()
+					set thistype.m_gameStarted = true
+					call Game.start.execute()
+				endif
 			else
-				debug call Print("Start game")
-				call thistype.endTimer()
-				call Game.start.execute()
+				call character.setMovable(true)
 			endif
 		endmethod
 		
@@ -276,7 +292,30 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		 */
 		private static method dialogButtonActionSelectClass takes ADialogButton dialogButton returns nothing
 			local thistype this = AClassSelection.playerClassSelection(dialogButton.dialog().player())
+			local player whichPlayer = this.player()
+			local boolean repick = ACharacter.playerCharacter(whichPlayer) != 0
+			// repick!!!
+			if (repick) then
+				// TODO store everything, items etc.
+				set thistype.m_repickXp[GetPlayerId(whichPlayer)] = GetHeroXP(ACharacter.playerCharacter(whichPlayer).unit())
+				set thistype.m_repickSkillPoints[GetPlayerId(whichPlayer)] = GetHeroSkillPoints(ACharacter.playerCharacter(whichPlayer).unit())
+				set thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showCharactersScheme()
+				set thistype.m_repickShowWorker[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showWorker()
+				set thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).mainMenu().cameraDistance()
+				set thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).isViewEnabled()
+				call ACharacter.playerCharacter(whichPlayer).destroy()
+			endif
 			call this.selectClass()
+			if (repick) then
+				// restore everything
+				call SetHeroXP(ACharacter.playerCharacter(whichPlayer).unit(), thistype.m_repickXp[GetPlayerId(whichPlayer)], false)
+				call ModifyHeroSkillPoints(ACharacter.playerCharacter(whichPlayer).unit(), bj_MODIFYMETHOD_SET, thistype.m_repickSkillPoints[GetPlayerId(whichPlayer)])
+				call Character(ACharacter.playerCharacter(whichPlayer)).setShowCharactersScheme(thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)])
+				call Character(ACharacter.playerCharacter(whichPlayer)).setShowWorker(thistype.m_repickShowWorker[GetPlayerId(whichPlayer)])
+				call Character(ACharacter.playerCharacter(whichPlayer)).mainMenu().setCameraDistance(thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)])
+				call Character(ACharacter.playerCharacter(whichPlayer)).setView(thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)])
+			endif
+			set whichPlayer = null
 		endmethod
 		
 		private static method triggerActionChange takes nothing returns nothing
@@ -351,6 +390,18 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			set this.m_spellPagesTrigger = null
 		endmethod
 		
+		private static method createClassSelectionForPlayer takes player whichPlayer returns nothing
+			local ClassSelection classSelection = ClassSelection.create(whichPlayer, gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
+			call classSelection.setStartX(MapData.startX(GetPlayerId(whichPlayer)))
+			call classSelection.setStartY(MapData.startY(GetPlayerId(whichPlayer)))
+			call classSelection.setStartFacing(0.0)
+			call classSelection.setShowAttributes(true)
+			call classSelection.enableArrowKeySelection(false)
+			call classSelection.enableEscapeKeySelection(false)
+			call classSelection.show()
+			call classSelection.minimize(false) // show maximized
+		endmethod
+		
 		/**
 		 * Initializes and shows the class selection to all playing players even computer players. 
 		 *
@@ -358,7 +409,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		 * mustn't be called during map initialization beside you use a \ref TriggerSleepAction call.
 		 */
 		public static method showClassSelection takes nothing returns nothing
-			local ClassSelection classSelection
 			local integer i
 			local player whichPlayer
 			
@@ -373,15 +423,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				set whichPlayer = Player(i)
 
 				if (GetPlayerSlotState(whichPlayer) != PLAYER_SLOT_STATE_EMPTY) then
-					set classSelection = ClassSelection.create(whichPlayer, gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
-					call classSelection.setStartX(MapData.startX(i))
-					call classSelection.setStartY(MapData.startY(i))
-					call classSelection.setStartFacing(0.0)
-					call classSelection.setShowAttributes(true)
-					call classSelection.enableArrowKeySelection(false)
-					call classSelection.enableEscapeKeySelection(false)
-					call classSelection.show()
-					call classSelection.minimize(false) // show maximized
+					call thistype.createClassSelectionForPlayer(whichPlayer)
 				endif
 
 				set whichPlayer = null
@@ -401,6 +443,30 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Drücken Sie das Charaktersymbol rechts unten, um die angezeigte Charakterklasse auszuwählen.", "- Press the character icon at the bottom right to select the shown character class."), null)
 			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Auf dem Zauberbuchsymbol rechts unten, können die Klassenzauber betrachtet werden.", "- At the grimoire icon at the bottom right the class spells can be viewed."), null)
 			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Im Inventar befinden sich die Anfangsgegenstände der Klasse.", "- In the inventory are the start items of the class."), null)
+		endmethod
+		
+		private static method triggerConditionRepick takes nothing returns boolean
+			return ACharacter.playerCharacter(GetTriggerPlayer()) != 0 and ACharacter.playerCharacter(GetTriggerPlayer()).isMovable() and thistype.playerClassSelection(GetTriggerPlayer()) == 0
+		endmethod
+		
+		private static method triggerActionRepick takes nothing returns nothing
+			debug call Print("Repick!")
+			call MapData.resetCameraBoundsForPlayer.evaluate(GetTriggerPlayer())
+			call thistype.createClassSelectionForPlayer(GetTriggerPlayer())
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			local integer i
+			set thistype.m_repickTrigger = CreateTrigger()
+			
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call TriggerRegisterPlayerChatEvent(thistype.m_repickTrigger, Player(i), "-repick", true)
+				set i = i + 1
+			endloop
+			call TriggerAddCondition(thistype.m_repickTrigger, Condition(function thistype.triggerConditionRepick))
+			call TriggerAddAction(thistype.m_repickTrigger, function thistype.triggerActionRepick)
 		endmethod
 		
 	endstruct

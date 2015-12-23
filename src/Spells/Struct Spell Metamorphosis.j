@@ -4,7 +4,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 	/**
 	 * \brief Generic abstract spell for metamorphosis which allows specific behaviour on transformation and reset to the original unit.
 	 * 
-	 * Uses \ref EVENT_UNIT_SPELL_CHANNEL to be executed before the unit is morphed to successfully store the inventory items.
+	 * Uses \ref EVENT_PLAYER_UNIT_SPELL_CHANNEL to be executed before the unit is morphed to successfully store the inventory items.
 	 * 
 	 * Besides it uses \ref EVENT_UNIT_HERO_REVIVE_FINISH to unmorph the character when being revived unmorphed.
 	 * 
@@ -89,7 +89,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		
 		private static method triggerConditionStart takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			local boolean result = GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId() and GetTriggerUnit() == this.character().unit()
+			local boolean result = GetTriggerUnit() == this.character().unit() and GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId() and GetTriggerUnit() == this.character().unit()
 			return result
 		endmethod
 		
@@ -245,7 +245,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			
 			set this.m_channelTrigger = CreateTrigger()
 			// register action before cast has finished!
-			call TriggerRegisterUnitEvent(this.m_channelTrigger, this.character().unit(), EVENT_UNIT_SPELL_CHANNEL)
+			call TriggerRegisterAnyUnitEventBJ(this.m_channelTrigger, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
 			call TriggerAddCondition(this.m_channelTrigger, Condition(function thistype.triggerConditionStart))
 			call TriggerAddAction(this.m_channelTrigger, function thistype.triggerActionStart)
 			call AHashTable.global().setHandleInteger(this.m_channelTrigger, "this", this)
@@ -253,6 +253,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			// unmorph unit if it is being revived and has been morphed
 			// when a character is revived it has automatically its original unit form but needs to be restored (skills etc.)
 			set this.m_revivalTrigger = CreateTrigger()
+			// TODO support repick with any event
 			call TriggerRegisterUnitEvent(this.m_revivalTrigger, this.character().unit(), EVENT_UNIT_HERO_REVIVE_FINISH)
 			call TriggerAddCondition(this.m_revivalTrigger, Condition(function thistype.triggerConditionRevival))
 			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionRevival)

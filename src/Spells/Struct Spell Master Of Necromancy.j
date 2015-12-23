@@ -27,7 +27,7 @@ library StructSpellsSpellMasterOfNecromancy requires Asl, StructGameClasses, Str
 	
 		private static method triggerConditionSummon takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			return GetSummoningUnit() == this.character().unit() and IsUnitType(GetSummonedUnit(), UNIT_TYPE_UNDEAD) and GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) > 0
+			return GetTriggerUnit() == this.character().unit() and GetSummoningUnit() == this.character().unit() and IsUnitType(GetSummonedUnit(), UNIT_TYPE_UNDEAD) and GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) > 0
 		endmethod
 		
 		private static method triggerActionSummon takes nothing returns nothing
@@ -42,7 +42,7 @@ library StructSpellsSpellMasterOfNecromancy requires Asl, StructGameClasses, Str
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.m_summonTrigger = CreateTrigger()
-			call TriggerRegisterUnitEvent(this.m_summonTrigger, character.unit(), EVENT_UNIT_SUMMON)
+			call TriggerRegisterAnyUnitEventBJ(this.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)
 			call TriggerAddCondition(this.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
 			call TriggerAddAction(this.m_summonTrigger, function thistype.triggerActionSummon)
 			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, "this", this)
