@@ -26,7 +26,7 @@ library StructSpellsSpellJumpAttack requires Asl
 			local unit caster = GetTriggerUnit()
 			local unit target = GetSpellTargetUnit()
 			call IssueImmediateOrder(caster, "stop")
-			call AJump.create(caster, 800.0, GetUnitX(target), GetUnitY(target), thistype.alightAction)
+			call AJump.create(caster, 800.0, GetUnitX(target), GetUnitY(target), thistype.alightAction, 100.0)
 			set caster = null
 			set target = null
 		endmethod

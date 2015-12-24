@@ -309,7 +309,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			// wigberhts fire attack
 			call SetUnitTimeScale(thistype.unitActor(this.m_actorWigberht), 0.80)
 			call SetUnitTimeScale(this.m_actorOrcLeader, 0.80)
-			set jump = AJump.create(thistype.unitActor(this.m_actorWigberht), 400.0, GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3), 0)
+			set jump = AJump.create(thistype.unitActor(this.m_actorWigberht), 400.0, GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3), 0, 100.0)
 			call SetUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Attack Slam")
 			loop
 				exitwhen (RectContainsUnit(gg_rct_video_wigberht_wigberht_target_3, thistype.unitActor(this.m_actorWigberht)))

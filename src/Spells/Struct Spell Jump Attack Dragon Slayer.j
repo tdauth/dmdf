@@ -30,9 +30,10 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		endmethod
 		
 		public method effect takes nothing returns nothing
-			local real damage = GetUnitAbilityLevel(this.source().unit(), SpellJumpAttackDragonSlayer.abilityId) * 30
+			local real damage = GetUnitAbilityLevel(this.source().unit(), SpellJumpAttackDragonSlayer.abilityId) * 10
 			call UnitDamageTargetBJ(this.source().unit(), this.target(), damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
-			call Spell.showDamageTextTag(this.source().unit(), damage)
+			call Spell.showDamageTextTag(this.target(), damage)
+			call SpellJumpAttackDragonSlayer.stunUnit.evaluate(this.target(), GetUnitAbilityLevel(this.source().unit(), SpellJumpAttackDragonSlayer.abilityId))
 			// TODO stun
 		endmethod
 		
@@ -48,6 +49,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			set this.m_speed = speed
 			set this.m_angle = angle
 			set this.m_distance = distance
+			set this.m_movedDistance = 0.0
 			
 			return this
 		endmethod
@@ -60,10 +62,18 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		public static constant integer classSelectionAbilityId = 'A1GM'
 		public static constant integer classSelectionGrimoireAbilityId = 'A1GR'
 		public static constant integer maxLevel = 5
+		public static constant integer stunAbilityId = 'A1GW'
+		public static constant integer dummyId = 'h02J'
 		private static constant real period = 0.01
+		private static unit m_dummy
 		private static timer m_knockBackTimer
 		private static boolean m_timerIsRunning = false
 		private static AIntegerList m_knockBacks
+		
+		public static method stunUnit takes unit whichUnit, integer level returns nothing
+			call SetUnitAbilityLevel(thistype.m_dummy, thistype.stunAbilityId, level)
+			call IssueTargetOrder(thistype.m_dummy, "firebolt", whichUnit)
+		endmethod
 		
 		private static method filterIsNotDead takes nothing returns boolean
 			return not IsUnitDeadBJ(GetFilterUnit())
@@ -72,7 +82,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		private method targets takes real x, real y returns AGroup
 			local AGroup result = AGroup.create()
 			local integer i = 0
-			call result.addUnitsInRange(x, y, 600.0, Filter(function thistype.filterIsNotDead))
+			call result.addUnitsInRange(x, y, 300.0, Filter(function thistype.filterIsNotDead))
 			loop
 				exitwhen (i == result.units().size())
 				if (not IsUnitEnemy(result.units()[i], this.character().player())) then
@@ -101,23 +111,21 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			local integer i = 0
 			loop
 				exitwhen (i == targets.units().size())
-				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 400.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 200.0))
-				
-				call thistype.startTimer.evaluate()
+				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 50.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 200.0))
 				// TODO custom knockback and damage
 				//call KnockbackTarget(usedUnit, targets.units()[i], GetAngleBetweenUnits(usedUnit, targets.units()[i]), 600.0, 20.0, true, true, false)
 				set i = i + 1
 			endloop
+			call thistype.startTimer.evaluate()
 			call SetUnitAnimation(usedUnit, "Attack Slam")
 			call ResetUnitAnimation(usedUnit)
 			call DmdfHashTable.global().flushKey("SpellJumpAttackDragonSlayer")
 		endmethod
 
 		private method action takes nothing returns nothing
-			call IssueImmediateOrder(GetTriggerUnit(), "stop")
-			call AJump.create(GetTriggerUnit(), 800.0, GetSpellTargetX(), GetSpellTargetY(), thistype.alignAction)
-			call SetUnitAnimation(GetTriggerUnit(), "Attack Slam")
 			call DmdfHashTable.global().setHandleInteger(GetTriggerUnit(), "SpellJumpAttackDragonSlayer", this)
+			call AJump.create(GetTriggerUnit(), 600.0, GetSpellTargetX(), GetSpellTargetY(), thistype.alignAction, 600.0)
+			call SetUnitAnimation(GetTriggerUnit(), "Attack Slam")
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
@@ -134,8 +142,8 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		
 		private static method timerFunctionKnockbacks takes nothing returns nothing
 			local Knockback knockback = 0
-			local location oldPos
-			local location newPos
+			local location oldPos = null
+			local location newPos = null
 			local boolean finish = false
 			local AIntegerListIterator iterator = thistype.m_knockBacks.begin()
 			loop
@@ -144,9 +152,10 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 				call iterator.next()
 				set finish = false
 				set oldPos = Location(GetUnitX(knockback.target()), GetUnitY(knockback.target()))
-				set newPos = PolarProjectionBJ(newPos, knockback.angle(), thistype.period * knockback.speed())
+				set newPos = PolarProjectionBJ(oldPos, thistype.period * knockback.speed(),  knockback.angle())
 				
-				if (IsTerrainWalkable(GetLocationX(newPos), GetLocationY(newPos))) then
+				if (IsTerrainWalkable(GetLocationX(newPos), GetLocationY(newPos), 80.0)) then
+					call SetUnitPositionLoc(knockback.target(), newPos)
 					if (knockback.increaseDistance(thistype.period * knockback.speed())) then
 						set finish = true
 					endif
@@ -160,6 +169,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 				set newPos = null
 				
 				if (finish) then
+					debug call Print("Destroy knockback: " + I2S(knockback))
 					call knockback.effect()
 					call thistype.m_knockBacks.remove(knockback)
 					call knockback.destroy()
@@ -176,13 +186,17 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		
 		private static method startTimer takes nothing returns nothing
 			if (not thistype.m_timerIsRunning) then
-				call TimerStart(thistype.m_knockBackTimer, true, thistype.period, function thistype.timerFunctionKnockbacks)
+				call TimerStart(thistype.m_knockBackTimer, thistype.period, true, function thistype.timerFunctionKnockbacks)
 				set thistype.m_timerIsRunning = true
 			endif
 		endmethod
 		
 		private static method onInit takes nothing returns nothing
+			set thistype.m_dummy = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), thistype.dummyId, 0.0, 0.0, 0.0)
+			call SetUnitInvulnerable(thistype.m_dummy, true)
+			call ShowUnit(thistype.m_dummy, false)
 			set thistype.m_knockBackTimer = CreateTimer()
+			set thistype.m_timerIsRunning = false
 			set thistype.m_knockBacks = AIntegerList.create()
 			call TriggerSleepAction(0.0)
 			call thistype.startTimer()

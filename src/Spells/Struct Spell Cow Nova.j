@@ -34,7 +34,7 @@ library StructSpellsSpellCowNova requires Asl, StructGameClasses, StructGameSpel
 			loop
 				exitwhen (i < 0.0)
 				set cow = CreateUnit(owner, 'n000', GetUnitPolarProjectionX(caster, i, 300.0), GetUnitPolarProjectionY(caster, i, 300.0), i)
-				call AJump.create(cow, 1100.0, GetUnitPolarProjectionX(caster, i, 600.0), GetUnitPolarProjectionY(caster, i, 600.0), thistype.alightAction)
+				call AJump.create(cow, 1100.0, GetUnitPolarProjectionX(caster, i, 600.0), GetUnitPolarProjectionY(caster, i, 600.0), thistype.alightAction, 100.0)
 				call ShowGeneralFadingTextTagForPlayer(owner, tre("MUH!", "MOO!"), GetUnitX(cow), GetUnitY(cow), 255, 255, 255, 255)
 				call PlaySoundOnUnitBJ(MapData.cowSound, 100.0, cow)
 				set cow = null

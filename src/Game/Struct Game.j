@@ -330,7 +330,7 @@ endif
 			call ADamageRecorder.init(true, thistype.onDamageAction, false)
 			call AMissile.init(1.00, 9.80665, false) /// @todo Set correct refresh rate.
 			// NOTE AJump is only required for a jump done by Wigberht in the video "Wigberht".
-			call AJump.init(0.05, null)
+			call AJump.init(0.05)
 			// interface systems
 			call AArrowKeys.init(true)
 			call AThirdPersonCamera.init(true)
