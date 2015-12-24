@@ -4,7 +4,7 @@ library StructSpellsSpellReserves requires Asl, StructGameClasses, StructGameGam
 	/// Passiv. Schlägt der Drachentöter einen Gegner X mal am Stück, wird sein Schaden um Y % erhöht.
 	struct SpellReserves extends Spell
 		public static constant integer abilityId = 'A1FV'
-		public static constant integer favouriteAbilityId = 'A1FW'
+		public static constant integer favouriteAbilityId = 'A1FX'
 		public static constant integer classSelectionAbilityId = 'A1FY'
 		public static constant integer classSelectionGrimoireAbilityId = 'A1G3'
 		public static constant integer maxLevel = 5

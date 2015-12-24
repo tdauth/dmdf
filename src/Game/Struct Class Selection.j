@@ -130,6 +130,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellThrillOfVictory.create(character)
 				call SpellReserves.create(character)
 				call SpellAnEyeForAnEye.create(character)
+				call SpellJumpAttackDragonSlayer.create(character)
 			elseif (class == Classes.ranger()) then
 				call SpellAgility.create(character)
 				call SpellEagleEye.create(character)

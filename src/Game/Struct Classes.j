@@ -340,6 +340,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellThrillOfVictory.classSelectionAbilityId, SpellThrillOfVictory.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellReserves.classSelectionAbilityId, SpellReserves.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAnEyeForAnEye.classSelectionAbilityId, SpellAnEyeForAnEye.classSelectionGrimoireAbilityId))
+			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellJumpAttackDragonSlayer.classSelectionAbilityId, SpellJumpAttackDragonSlayer.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initRanger takes nothing returns nothing

@@ -33,7 +33,7 @@ library StructSpellsSpellMercilessness requires Asl, StructGameClasses, StructGa
 				return
 			endif
 			set damage = thistype.damageLevelValue * GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) * GetHeroLevel(GetEventDamageSource())
-			debug call Print(R2S(damage) + " is damage.")
+			debug call Print("Mercilessness " + R2S(damage) + " is damage.")
 			// prevents endless damage loop
 			call DmdfHashTable.global().setHandleBoolean(GetEventDamageSource(), thistype.damageKey, true)
 			call UnitDamageTargetBJ(GetEventDamageSource(), GetTriggerUnit(), damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
