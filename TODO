@@ -778,8 +778,8 @@ Test mit zwei menschlichen Spielern:
 * FIXED: Primär- und Sekundär-Aufträge umbenennen: Gemeinsame Aufrträge, Eigene Aufträge.
 * DEPRECATED: Da es zwei Wettertypen mit Regen gibt, regnet es sehr oft. ASL-System anpassen, sodass man pro Wettertyp die Wahrscheinlichkeit und Dauer angeben kann.
 * DONE: ASL-Regensystem entfernen. Stattdessen per Timer selten Regen starten mit Donner- und Blitz-Effekt.
-* Es regnet in Videos obwohl das Wetter gestoppt werden sollte.
-* Keine Videos mehr direkt nach Evens: Diakon stirbt, Deranor stirbt, Ork-Belagerungswaffen werden vernichtet, letzte Ork-Welle wird vernichtet.
+* FIXED: Es regnet in Videos obwohl das Wetter gestoppt werden sollte.
+* Keine Videos mehr direkt nach Events: Diakon stirbt, Deranor stirbt, Ork-Belagerungswaffen werden vernichtet, letzte Ork-Welle wird vernichtet.
 * Bei der Verteidigung von Talras zu Beginn auch Nordmänner, Dorfbewohner und Waldläufer platzieren da in Video.
 
 Für Version 0.6:
@@ -794,6 +794,8 @@ Für Version 0.6:
 * FIXED: Disabled Icons für die disabled Icons der Inventarplatzhalter.
 * Trotz Werten wie 0.4 droppen Gegenstände bei Spawns immer?
 * Charakter stirbt an Pfeilhagel selbst aber nur wenn auf Gegner angewandt, Gegner sind im Zielgebiet (mit Stufe 5 der Fähigkeit).
+* Tastenkürzel für alle Klassen
+* Restliche Klassenzauber: Nekromant, Ritter, Drachentöter, Waldläufer
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

@@ -9,6 +9,7 @@ library ModuleQuestsCharacterQuest requires Asl
 				exitwhen (i == MapData.maxPlayers)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					set thistype.m_characterQuest[i] = thistype.create.evaluate(ACharacter.playerCharacter(Player(i)))
+					call Character(ACharacter.playerCharacter(Player(i))).addQuest.evaluate(thistype.m_characterQuest[i])
 				endif
 				set i = i + 1
 			endloop

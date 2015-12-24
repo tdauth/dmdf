@@ -149,6 +149,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (character != 0) then
 				debug call Print("Share to character " + GetPlayerName(character.player()))
 				call SetUnitOwner(this.m_unit, character.player(), true)
+				call character.addFellow(this)
 			else
 				debug call Print("Share to all characters.")
 				/// \todo If player is in arena this won't work.
@@ -278,6 +279,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call AUnitRoutine.enableAll(this.m_unit)
 			// restart old routine immediately
 			call AUnitRoutine.manualStart(this.m_unit)
+			
+			if (this.m_character != 0) then
+				call this.m_character.removeFellow(this)
+			endif
 			
 			set this.m_character = 0
 			call this.setShared(false)

@@ -22,6 +22,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		private static boolean array m_repickShowWorker[12] // TODO MapData.maxPlayers
 		private static real array m_repickCameraDistance[12] // TODO MapData.maxPlayers
 		private static boolean array m_repickViewEnabled[12] // TODO MapData.maxPlayers
+		private static AIntegerVector array m_repickQuests[12] // TODO MapData.maxPlayers
+		private static AIntegerVector array m_repickFellows[12] // TODO MapData.maxPlayers
 		private static boolean m_gameStarted = false
 		
 		/**
@@ -127,6 +129,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellRage.create(character)
 				call SpellThrillOfVictory.create(character)
 				call SpellReserves.create(character)
+				call SpellAnEyeForAnEye.create(character)
 			elseif (class == Classes.ranger()) then
 				call SpellAgility.create(character)
 				call SpellEagleEye.create(character)
@@ -238,7 +241,15 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		public stub method onCharacterCreation takes AClassSelection classSelection, unit whichUnit returns ACharacter
-			return Character.create(classSelection.player(), whichUnit)
+			local AIntegerVector quests = 0
+			local AIntegerVector fellows = 0
+			// repick
+			if (thistype.m_gameStarted) then
+				set quests = thistype.m_repickQuests[GetPlayerId(this.player())]
+				set fellows = thistype.m_repickFellows[GetPlayerId(this.player())]
+			endif
+			
+			return Character.create(classSelection.player(), whichUnit, quests, fellows)
 		endmethod
 		
 		public stub method onCreate takes unit whichUnit returns nothing
@@ -309,12 +320,19 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			// repick!!!
 			if (repick) then
 				// TODO store everything, items etc. if items cannot be stored easily just drop them and keep the owner
+				/*
+				 * Spells and GUIs and character systems like inventory are destroyed and recreated.
+				 * Quests and fellows must be preserved.
+				 * Items will be dropped to preserve them as well.
+				 */
 				set thistype.m_repickXp[GetPlayerId(whichPlayer)] = GetHeroXP(ACharacter.playerCharacter(whichPlayer).unit())
 				set thistype.m_repickShrine[GetPlayerId(whichPlayer)] = ACharacter.playerCharacter(whichPlayer).shrine()
 				set thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showCharactersScheme()
 				set thistype.m_repickShowWorker[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showWorker()
 				set thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).mainMenu().cameraDistance()
 				set thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).isViewEnabled()
+				set thistype.m_repickQuests[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).quests()
+				set thistype.m_repickFellows[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).fellows()
 				
 				call ACharacter.playerCharacter(whichPlayer).inventory().dropAll(GetUnitX(ACharacter.playerCharacter(whichPlayer).unit()), GetUnitY(ACharacter.playerCharacter(whichPlayer).unit()))
 				

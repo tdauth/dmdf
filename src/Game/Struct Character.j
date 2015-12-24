@@ -27,6 +27,13 @@ static if (DMDF_INFO_LOG) then
 		private InfoLog m_infoLog
 endif
 		private AIntegerVector m_classSpells /// Only \ref Spell instances not \ref ASpell instances!
+		
+		/**
+		 * Required for repicking.
+		 * These instances won't be destroyed and therefore must be passed to the new character instance.
+		 */
+		private AIntegerVector m_quests
+		private AIntegerVector m_fellows
 
 		private boolean m_isMorphed
 		/**
@@ -132,6 +139,26 @@ endif
 		 */
 		public method classSpells takes nothing returns AIntegerVector
 			return this.m_classSpells
+		endmethod
+		
+		public method addQuest takes AQuest whichQuest returns nothing
+			call this.m_quests.pushBack(whichQuest)
+		endmethod
+		
+		public method quests takes nothing returns AIntegerVector
+			return this.m_quests
+		endmethod
+		
+		public method addFellow takes Fellow fellow returns nothing
+			call this.m_fellows.pushBack(fellow)
+		endmethod
+		
+		public method removeFellow takes Fellow fellow returns nothing
+			call this.m_fellows.remove(fellow)
+		endmethod
+		
+		public method fellows takes nothing returns AIntegerVector
+			return this.m_fellows
 		endmethod
 
 		/**
@@ -444,7 +471,11 @@ endif
 			endif
 		endmethod
 
-		public static method create takes player whichPlayer, unit whichUnit returns thistype
+		/**
+		 * \param quests Set to 0 on first creation but set to old quests on repick creation.
+		 * \param fellows Set to 0 on first creation but set to old quests on repick creation.
+		 */
+		public static method create takes player whichPlayer, unit whichUnit, AIntegerVector quests, AIntegerVector fellows returns thistype
 			local thistype this = thistype.allocate(whichPlayer, whichUnit)
 			
 			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeHeaddress, 'I06C')
@@ -472,6 +503,14 @@ static if (DMDF_INFO_LOG) then
 endif
 
 			set this.m_classSpells = AIntegerVector.create()
+			set this.m_quests = quests
+			if (this.m_quests == 0) then
+				set this.m_quests = AIntegerVector.create()
+			endif
+			set this.m_fellows = fellows
+			if (this.m_fellows == 0) then
+				set this.m_fellows = AIntegerVector.create()
+			endif
 			set this.m_isMorphed = false
 			set this.m_animationOrderTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_animationOrderTrigger, EVENT_PLAYER_UNIT_ATTACKED)
