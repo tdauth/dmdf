@@ -16,6 +16,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		private trigger m_spellPagesTrigger
 		
 		private static trigger m_repickTrigger
+		private static real array m_repickX[12] // TODO MapData.maxPlayers
+		private static real array m_repickY[12] // TODO MapData.maxPlayers
 		private static integer array m_repickXp[12] // TODO MapData.maxPlayers
 		private static Shrine array m_repickShrine[12] // TODO MapData.maxPlayers
 		private static boolean array m_repickShowCharactersSchema[12] // TODO MapData.maxPlayers
@@ -115,6 +117,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellAuraOfRedemption.create(character)
 				call SpellAuraOfAuthority.create(character)
 				call SpellAuraOfIronSkin.create(character)
+				call SpellConquest.create(character)
 			elseif (class == Classes.dragonSlayer()) then
 				call SpellBeastHunter.create(character)
 				call SpellDaunt.create(character)
@@ -326,6 +329,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				 * Quests and fellows must be preserved.
 				 * Items will be dropped to preserve them as well.
 				 */
+				set thistype.m_repickX[GetPlayerId(whichPlayer)] = GetUnitX(ACharacter.playerCharacter(whichPlayer).unit())
+				set thistype.m_repickY[GetPlayerId(whichPlayer)] = GetUnitY(ACharacter.playerCharacter(whichPlayer).unit())
 				set thistype.m_repickXp[GetPlayerId(whichPlayer)] = GetHeroXP(ACharacter.playerCharacter(whichPlayer).unit())
 				set thistype.m_repickShrine[GetPlayerId(whichPlayer)] = ACharacter.playerCharacter(whichPlayer).shrine()
 				set thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showCharactersScheme()
@@ -343,6 +348,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call this.selectClass()
 			if (repick) then
 				// restore everything
+				call SetUnitX(ACharacter.playerCharacter(whichPlayer).unit(), thistype.m_repickX[GetPlayerId(whichPlayer)])
+				call SetUnitY(ACharacter.playerCharacter(whichPlayer).unit(), thistype.m_repickY[GetPlayerId(whichPlayer)])
 				call SetHeroXP(ACharacter.playerCharacter(whichPlayer).unit(), thistype.m_repickXp[GetPlayerId(whichPlayer)], false)
 				// let the player reskill everything
 				call Character(ACharacter.playerCharacter(whichPlayer)).grimoire().setSkillPoints((GetHeroLevel(ACharacter.playerCharacter(whichPlayer).unit()) - 1) * MapData.levelSpellPoints + MapData.startSkillPoints)

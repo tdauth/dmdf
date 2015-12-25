@@ -65,6 +65,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		public static constant integer stunAbilityId = 'A1GW'
 		public static constant integer dummyId = 'h02J'
 		private static constant real period = 0.01
+		private static constant string key = "SpellJumpAttackDragonSlayer"
 		private static unit m_dummy
 		private static timer m_knockBackTimer
 		private static boolean m_timerIsRunning = false
@@ -85,7 +86,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			call result.addUnitsInRange(x, y, 300.0, Filter(function thistype.filterIsNotDead))
 			loop
 				exitwhen (i == result.units().size())
-				if (not IsUnitEnemy(result.units()[i], this.character().player())) then
+				if (not IsUnitEnemy(result.units()[i], this.character().player()) or IsUnitType(result.units()[i], UNIT_TYPE_FLYING)) then
 					call result.units().erase(i)
 				else
 					set i = i + 1
@@ -106,26 +107,48 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		endmethod
 		
 		private static method alignAction takes unit usedUnit returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(usedUnit, "SpellJumpAttackDragonSlayer")
+			local thistype this = DmdfHashTable.global().handleInteger(usedUnit, thistype.key)
 			local AGroup targets = this.targets(GetUnitX(usedUnit), GetUnitY(usedUnit))
 			local integer i = 0
 			loop
 				exitwhen (i == targets.units().size())
-				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 50.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 200.0))
+				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 50.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 400.0))
 				// TODO custom knockback and damage
 				//call KnockbackTarget(usedUnit, targets.units()[i], GetAngleBetweenUnits(usedUnit, targets.units()[i]), 600.0, 20.0, true, true, false)
 				set i = i + 1
 			endloop
+			debug call Print("Loaded spell " + I2S(this))
 			call thistype.startTimer.evaluate()
 			call SetUnitAnimation(usedUnit, "Attack Slam")
 			call ResetUnitAnimation(usedUnit)
-			call DmdfHashTable.global().flushKey("SpellJumpAttackDragonSlayer")
+			call DmdfHashTable.global().flushKey(thistype.key)
+		endmethod
+		
+		private static method timerFunctionCast takes nothing returns nothing
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
+			local real x = DmdfHashTable.global().handleReal(GetExpiredTimer(), "x")
+			local real y = DmdfHashTable.global().handleReal(GetExpiredTimer(), "y")
+			call IssueImmediateOrder(this.character().unit(), "stop") // prevent endless order on unpausing
+			debug call Print("Store spell " + I2S(this))
+			call AJump.create(this.character().unit(), 600.0, x, y, thistype.alignAction, 400.0)
+			call SetUnitAnimation(this.character().unit(), "Attack Slam") // TODO correct slam animation depending on carried weapons
+			call PauseTimer(GetExpiredTimer())
+			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
 		endmethod
 
 		private method action takes nothing returns nothing
-			call DmdfHashTable.global().setHandleInteger(GetTriggerUnit(), "SpellJumpAttackDragonSlayer", this)
-			call AJump.create(GetTriggerUnit(), 600.0, GetSpellTargetX(), GetSpellTargetY(), thistype.alignAction, 600.0)
-			call SetUnitAnimation(GetTriggerUnit(), "Attack Slam")
+			// store these values before ordering stop, otherwise they are not available anymore
+			local unit caster = GetTriggerUnit()
+			local real x = GetSpellTargetX()
+			local real y = GetSpellTargetY()
+			local timer tmpTimer = CreateTimer()
+			call DmdfHashTable.global().setHandleInteger(caster, thistype.key, this)
+			call DmdfHashTable.global().setHandleInteger(tmpTimer, "this", this)
+			call DmdfHashTable.global().setHandleReal(tmpTimer, "x", x)
+			call DmdfHashTable.global().setHandleReal(tmpTimer, "y", y)
+			// make sure the cooldown works
+			call TimerStart(tmpTimer, 0.0, false, function thistype.timerFunctionCast)
+			set caster = null
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
@@ -146,6 +169,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			local location newPos = null
 			local boolean finish = false
 			local AIntegerListIterator iterator = thistype.m_knockBacks.begin()
+			debug call Print("Size of knockbacks: " + I2S(thistype.m_knockBacks.size()))
 			loop
 				exitwhen (not iterator.isValid())
 				set knockback = Knockback(iterator.data())
@@ -153,8 +177,8 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 				set finish = false
 				set oldPos = Location(GetUnitX(knockback.target()), GetUnitY(knockback.target()))
 				set newPos = PolarProjectionBJ(oldPos, thistype.period * knockback.speed(),  knockback.angle())
-				
-				if (IsTerrainWalkable(GetLocationX(newPos), GetLocationY(newPos), 80.0)) then
+				// function returns inverse value
+				if (IsTerrainPathable(GetLocationX(newPos), GetLocationY(newPos), PATHING_TYPE_WALKABILITY)) then
 					call SetUnitPositionLoc(knockback.target(), newPos)
 					if (knockback.increaseDistance(thistype.period * knockback.speed())) then
 						set finish = true

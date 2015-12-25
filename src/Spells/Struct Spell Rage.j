@@ -20,12 +20,10 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 			local real damage
 			// works on neutral and unallied units for the character but only if the ability is learned
 			if (GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) == 0) then
-				debug call Print("Rage not learned")
 				return
 			endif
 			// check class and ability
 			if (not DmdfHashTable.global().hasHandleBoolean(GetEventDamageSource(), thistype.enabledKey) or DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.damageKey)) then
-				debug call Print("Recursive call or not enabled")
 				return
 			endif
 

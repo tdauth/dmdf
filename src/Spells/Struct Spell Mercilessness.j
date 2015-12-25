@@ -19,7 +19,6 @@ library StructSpellsSpellMercilessness requires Asl, StructGameClasses, StructGa
 			local real damage
 			// works on neutral and unallied units for the character but only if the ability is learned
 			if (GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) == 0) then
-				debug call Print("Mercilessness not learned")
 				return
 			endif
 			
@@ -29,7 +28,6 @@ library StructSpellsSpellMercilessness requires Asl, StructGameClasses, StructGa
 			endif
 			
 			if (DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.damageKey)) then
-				debug call Print("Mercilessness recursive call")
 				return
 			endif
 			set damage = thistype.damageLevelValue * GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) * GetHeroLevel(GetEventDamageSource())

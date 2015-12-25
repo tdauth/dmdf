@@ -22,12 +22,10 @@ library StructSpellsSpellThrillOfVictory requires Asl, StructGameClasses, Struct
 			local real damage
 			// works on neutral and unallied units for the character but only if the ability is learned
 			if (GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) == 0) then
-				debug call Print("Thrill of Victory not learned")
 				return
 			endif
 			
 			if (DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.damageKey)) then
-				debug call Print("Mercilessness recursive call")
 				return
 			endif
 			

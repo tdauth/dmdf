@@ -294,6 +294,13 @@ endif
 			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard()) then	
 				// Haunted Staff
 				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
+			elseif (class == Classes.dragonSlayer()) then
+				// sword and morning star
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
+				call UnitAddItemToSlotById(whichUnit, 'I06I', 3)
+			elseif (class == Classes.druid()) then
+				// simple druid staff
+				call UnitAddItemToSlotById(whichUnit, 'I06J', 2)
 			else
 				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
 				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemType(), 3)
@@ -316,6 +323,13 @@ endif
 			elseif (character.class() == Classes.cleric() or character.class() == Classes.necromancer() or character.class() == Classes.elementalMage() or character.class() == Classes.wizard()) then	
 				// Haunted Staff
 				call character.giveItem('I03V')
+			elseif (character.class() == Classes.dragonSlayer()) then
+				// sword and morning star
+				call character.giveItem(ItemTypes.shortword().itemType())
+				call character.giveItem('I06I')
+			elseif (character.class() == Classes.druid()) then
+				// simple druid staff
+				call character.giveItem('I06J')
 			else
 				call character.giveItem(ItemTypes.shortword().itemType())
 				call character.giveItem(ItemTypes.lightWoodenShield().itemType())

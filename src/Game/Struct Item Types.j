@@ -202,6 +202,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	 * \note Only equipable item types have to be added. Charged usable items or quest items for the bagpack only do not have to be added at all.
 	 */
 	struct ItemTypes
+		// start items
+		private static RangeItemType m_simpleDruidStaff
+	
 		private static ItemType m_blessedSword // Markwards item
 		private static ItemType m_preciousClericHelmet
 		private static ItemType m_bigDoubleAxe
@@ -226,6 +229,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static DefenceItemType m_vassalShield
 		private static ItemType m_mace
 		private static ItemType m_morningStar
+		private static ItemType m_morningStarSecondary
 		private static ItemType m_halberd
 		private static ItemType m_shortsword
 		private static ItemType m_longsword
@@ -366,6 +370,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		public static method init takes nothing returns nothing
 			//integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns AItemType
+			set thistype.m_simpleDruidStaff = RangeItemType.createSimpleRange('I06J', AItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_simpleDruidStaff.addAbility('A01K', true)
+			
 			set thistype.m_blessedSword = ItemType.createSimple('I03R', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_blessedSword.addAbility('Alcs', true)
 			call thistype.m_blessedSword.addAbility('A04M', true)
@@ -436,6 +443,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_morningStar = ItemType.create('I014', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_morningStar.addAbility('A04O', true)
+			
+			set thistype.m_morningStarSecondary = ItemType.create('I06I', AItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_morningStarSecondary.addAbility('A1GX', true)
 
 			set thistype.m_halberd = ItemType.create('I01X', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_halberd.addAbility('A07G', true)

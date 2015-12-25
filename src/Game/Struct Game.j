@@ -576,9 +576,9 @@ endif
 		endmethod
 
 		/**
-		* Map data structure MapData should always have public static constant string member "mapMusic" which contains a list of music files.
-		* If that value is equal to null music won't be changed.
-		*/
+		 * Map data structure MapData should always have public static constant string member "mapMusic" which contains a list of music files.
+		 * If that value is equal to null music won't be changed.
+		 */
 		public static method setDefaultMapMusic takes nothing returns nothing
 			if (MapData.mapMusic != null) then
 				call thistype.setMapMusic(MapData.mapMusic)
