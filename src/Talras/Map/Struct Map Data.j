@@ -729,18 +729,30 @@ static if (DEBUG_MODE) then
 				
 				if (not QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemFight).isCompleted()) then
 					/*
-					 * Plays video "Wigberht".
-					 */
-					/*
 					 * TODO cleanup does not work! Remove fighting troops, disable leaderboard etc.
 					 * TODO Does not change the state!
 					 */
 					if (QuestTheNorsemen.quest.evaluate().completeFight()) then
-						call TriggerSleepAction(2.0 + 2.0)
-						call waitForVideo(MapData.videoWaitInterval)
-						call TriggerSleepAction(2.0 + 2.0)
+						
 					else
 						debug call Print("Failed completing quest item fight.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				
+				if (not QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheOutpost).isCompleted()) then
+					/*
+					 * Plays video "Wigberht".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_the_defense_of_talras)
+					call TriggerSleepAction(2.0 + 2.0)
+					call waitForVideo(MapData.videoWaitInterval)
+					call TriggerSleepAction(2.0 + 2.0)
+					
+					if (not  QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheOutpost).isCompleted()) then
+						debug call Print("Failed completing quest item meet at the outpost.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
@@ -1431,10 +1443,10 @@ endif
 			call thistype.startRainCountdown()
 			
 			// call GetCamOffset after initialization to make sure it returns the correct value
-			call CameraHeight.addRect(gg_rct_bridge_talras_camera_area, GetCamOffset(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)))
-			call CameraHeight.addRect(gg_rct_bridge_talras_down_camera_area, GetCamOffset(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)))
-			call CameraHeight.addRect(gg_rct_bridge_death_vault_0_camera_area, GetCamOffset(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)))
-			call CameraHeight.addRect(gg_rct_bridge_death_vault_1_camera_area, GetCamOffset(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)))
+			call CameraHeight.addRect(gg_rct_bridge_talras_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)) + 50.0)
+			call CameraHeight.addRect(gg_rct_bridge_talras_down_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)) + 50.0)
+			call CameraHeight.addRect(gg_rct_bridge_death_vault_0_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)) + 50.0)
+			call CameraHeight.addRect(gg_rct_bridge_death_vault_1_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)) + 50.0)
 			
 			call VideoIntro.video().play()
 		endmethod

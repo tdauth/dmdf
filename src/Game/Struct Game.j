@@ -572,7 +572,7 @@ endif
 			call StopMusic(false)
 			call ClearMapMusic()
 			call SetMapMusic(musicList, true, 0)
-			//call ResumeMusic()
+			call ResumeMusic()
 		endmethod
 
 		/**
@@ -762,6 +762,28 @@ endif
 			call ShowUnit(whichUnit, false)
 			call UnitRemoveBuffsBJ(bj_REMOVEBUFFS_NONTLIFE, whichUnit)
 		endmethod
+		
+		public static method fadeOut takes nothing returns nothing
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+		endmethod
+		
+		public static method fadeOutWithWait takes nothing returns nothing
+			call thistype.fadeOut()
+			if (wait(1.50)) then
+				return
+			endif
+		endmethod
+		
+		public static method fadeIn takes nothing returns nothing
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+		endmethod
+		
+		public static method fadeInWithWait takes nothing returns nothing
+			call thistype.fadeIn()
+			if (wait(1.50)) then
+				return
+			endif
+		endmethod
 
 		/**
 		 * Cinematic stuff (from Bonus Campaign)
@@ -783,6 +805,18 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'Ane2', false)
 				call SetPlayerAbilityAvailable(Player(i), 'Asid', false)
 				call SetPlayerAbilityAvailable(Player(i), 'Apit', false)
+				
+				// marker abilities
+				call SetPlayerAbilityAvailable(Player(i), 'A0HG', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DK', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DN', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DG', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DM', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DH', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DF', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DJ', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DI', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DL', false)
 				
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().disableLevelTrigger()
@@ -838,6 +872,18 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'Ane2', true)
 				call SetPlayerAbilityAvailable(Player(i), 'Asid', true)
 				call SetPlayerAbilityAvailable(Player(i), 'Apit', true)
+				
+				// marker abilities
+				call SetPlayerAbilityAvailable(Player(i), 'A0HG', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DK', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DN', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DG', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DM', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DH', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DF', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DJ', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DI', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1DL', true)
 				
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().enableLevelTrigger()

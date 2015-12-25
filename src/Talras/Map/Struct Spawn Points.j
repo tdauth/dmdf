@@ -315,6 +315,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_boars2.addNewItemType(index, 'I007', 1.0)
 			set index = thistype.m_boars2.addUnitWithType(gg_unit_n002_0124, 1.0)
 			call thistype.m_boars2.addNewItemType(index, 'I007', 1.0)
+			set index = thistype.m_boars2.addUnitWithType(gg_unit_n06K_0422, 1.0)
+			call thistype.m_boars2.addNewItemType(index, 'I007', 1.0)
 
 			set thistype.m_boars3 = SpawnPoint.create()
 			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0276, 1.0)
@@ -326,6 +328,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0274, 1.0)
 			call thistype.m_boars3.addNewItemType(index, 'I007', 1.0)
 			set index = thistype.m_boars3.addUnitWithType(gg_unit_n002_0272, 1.0)
+			call thistype.m_boars3.addNewItemType(index, 'I007', 1.0)
+			set index = thistype.m_boars3.addUnitWithType(gg_unit_n06K_0423, 1.0)
 			call thistype.m_boars3.addNewItemType(index, 'I007', 1.0)
 
 			set thistype.m_highwaymen0 = SpawnPoint.create()

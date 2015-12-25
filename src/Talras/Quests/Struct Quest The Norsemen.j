@@ -73,6 +73,17 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 	endstruct
 	
+	struct QuestAreaTheNorsemenAfterTheBattle extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call QuestTheNorsemen.quest.evaluate().completeMeetAtTheOutpost.execute()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+	
 	struct QuestAreaTheNorsemenHeimrich extends QuestArea
 	
 		public stub method onStart takes nothing returns nothing
@@ -99,7 +110,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		public static constant integer questItemMeetTheNorsemen = 0
 		public static constant integer questItemMeetAtTheBattlefield = 1
 		public static constant integer questItemFight = 2
-		public static constant integer questItemReportHeimrich = 3
+		public static constant integer questItemMeetAtTheOutpost = 3
+		public static constant integer questItemReportHeimrich = 4
 		private boolean m_hasStarted
 		private AGroup m_allyStartGroup
 		private AGroup m_allyRangerGroup
@@ -112,6 +124,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private WavesDisplay m_wavesDisplay
 		private QuestAreaTheNorsemenTheChief m_questAreaTheChief
 		private QuestAreaTheNorsemenBattle m_questAreaBattle
+		private QuestAreaTheNorsemenAfterTheBattle m_questAreAfterTheBattle
 		private QuestAreaTheNorsemenHeimrich m_questAreaHeimrich
 		private AGroup m_finalNorsemen
 		
@@ -153,11 +166,11 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 					if (this.m_currentGroupIndex == 1) then
 						call this.m_wavesDisplay.decreaseAllies()
 						set this.m_allyRangerGroup = AGroup.create()
-						call this.m_allyRangerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.ranger, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
-						set this.m_allyRangerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03G', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
+						call this.m_allyRangerGroup.addGroup(CreateUnitsAtPoint(5, UnitTypes.ranger, MapData.alliedPlayer, GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0), true, false)
+						set this.m_allyRangerLeader = CreateUnit(MapData.alliedPlayer, 'n03G',  GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0)
 						call this.m_allyRangerGroup.units().pushBack(this.m_allyRangerLeader)
 						
-						call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_ally_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_ally_spawn_0), bj_RESCUE_PING_TIME)
+						call PingMinimap(GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), bj_RESCUE_PING_TIME)
 						
 						call TransmissionFromUnit(this.m_allyRangerLeader, tr("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!"), null)
 						call Character.displayUnitAcquiredToAll(tr("Waldläufer"), tr("Waldläufer sind geschickte Fernkämpfer, die ihre Gegner mit vergifteten Pfeilen beschießen können."))
@@ -165,11 +178,11 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 					elseif (this.m_currentGroupIndex == 3) then
 						call this.m_wavesDisplay.decreaseAllies()
 						set this.m_allyFarmerGroup = AGroup.create()
-						call this.m_allyFarmerGroup.addGroup(CreateUnitsAtRect(5, UnitTypes.armedVillager, MapData.alliedPlayer, gg_rct_quest_the_norsemen_ally_spawn_0, 90.0), true, false)
-						set this.m_allyFarmerLeader = CreateUnitAtRect(MapData.alliedPlayer, 'n03I', gg_rct_quest_the_norsemen_ally_spawn_0, 90.0)
+						call this.m_allyFarmerGroup.addGroup(CreateUnitsAtPoint(5, UnitTypes.armedVillager, MapData.alliedPlayer, GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0), true, false)
+						set this.m_allyFarmerLeader = CreateUnit(MapData.alliedPlayer, 'n03I',  GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0)
 						call this.m_allyFarmerGroup.units().pushBack(this.m_allyFarmerLeader)
 						
-						call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_ally_spawn_0), GetRectCenterY(gg_rct_quest_the_norsemen_ally_spawn_0), bj_RESCUE_PING_TIME)
+						call PingMinimap(GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), bj_RESCUE_PING_TIME)
 	
 						call TransmissionFromUnit(this.m_allyFarmerLeader, tr("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!"), null)
 						call Character.displayUnitAcquiredToAll(tr("Bewaffnete Dorfbewohner"), tr("Bewaffnete Dorfbewohner sind mutige Fernkämpfer, die ihre Gegner mit Brandpfeilen beschießen können."))
@@ -360,12 +373,18 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		private static method stateActionCompleted2 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			local unit whichUnit
 			debug call Print("Quest The Norsemen target 1 completed -> starting with video Wigberht")
+			
+			set this.m_questAreAfterTheBattle = QuestAreaTheNorsemenAfterTheBattle.create(gg_rct_quest_the_defense_of_talras)
+		endmethod
+		
+		public method completeMeetAtTheOutpost takes nothing returns nothing
+			local unit whichUnit
 			call VideoWigberht.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
-			call questItem.quest().questItem(3).setState(AAbstractQuest.stateNew)
-			call questItem.quest().displayUpdate()
+			call this.questItem(thistype.questItemMeetAtTheOutpost).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
+			call this.displayUpdate()
 			
 			call Fellows.wigberht().reset()
 			call Fellows.ricman().reset()
@@ -447,11 +466,16 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 5000)
 			// item 3
+			set questItem = AQuestItem.create(this, tre("Trefft euch am Außenposten.", "Meet at the outpost."))
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			// item 4
 			set questItem = AQuestItem.create(this, tre("Berichtet dem Herzog von eurem Erfolg.", "Report to the Duke of your success."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_talras_quest_item_1)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 3000)
+			call questItem.setReward(thistype.rewardExperience, 500)
 			// members
 			set this.m_hasStarted = false
 			set this.m_allyStartGroup = 0

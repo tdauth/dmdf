@@ -312,6 +312,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAuraOfAuthority.classSelectionAbilityId, SpellAuraOfAuthority.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAuraOfIronSkin.classSelectionAbilityId, SpellAuraOfIronSkin.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellConquest.classSelectionAbilityId, SpellConquest.classSelectionGrimoireAbilityId))
+			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDefend.classSelectionAbilityId, SpellDefend.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initDragonSlayer takes nothing returns nothing

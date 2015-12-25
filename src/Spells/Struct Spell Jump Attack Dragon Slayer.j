@@ -66,14 +66,33 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		public static constant integer dummyId = 'h02J'
 		private static constant real period = 0.01
 		private static constant string key = "SpellJumpAttackDragonSlayer"
-		private static unit m_dummy
 		private static timer m_knockBackTimer
 		private static boolean m_timerIsRunning = false
 		private static AIntegerList m_knockBacks
 		
+		private static method timerFunctionRemoveDummy takes nothing returns nothing
+			local unit dummy = DmdfHashTable.global().handleUnit(GetExpiredTimer(), "dummy")
+			call RemoveUnit(dummy)
+			set dummy = null
+			call PauseTimer(GetExpiredTimer())
+			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
+		endmethod
+		
 		public static method stunUnit takes unit whichUnit, integer level returns nothing
-			call SetUnitAbilityLevel(thistype.m_dummy, thistype.stunAbilityId, level)
-			call IssueTargetOrder(thistype.m_dummy, "firebolt", whichUnit)
+			local unit dummy =  CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), thistype.dummyId, 0.0, 0.0, 0.0)
+			local timer tmpTimer
+			call SetUnitInvulnerable(dummy, true)
+			call SetUnitPathing(dummy, false)
+			call ShowUnit(dummy, false)
+			call SetUnitX(dummy, GetUnitX(whichUnit))
+			call SetUnitY(dummy, GetUnitY(whichUnit))
+			call SetUnitAbilityLevel(dummy, thistype.stunAbilityId, level)
+			call IssueTargetOrder(dummy, "firebolt", whichUnit)
+			set tmpTimer = CreateTimer()
+			call DmdfHashTable.global().setHandleUnit(tmpTimer, "dummy", dummy)
+			call TimerStart(tmpTimer, 0.1, false, function thistype.timerFunctionRemoveDummy)
+			set tmpTimer = null
+			set dummy = null
 		endmethod
 		
 		private static method filterIsNotDead takes nothing returns boolean
@@ -112,7 +131,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			local integer i = 0
 			loop
 				exitwhen (i == targets.units().size())
-				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 50.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 400.0))
+				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 120.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 400.0))
 				// TODO custom knockback and damage
 				//call KnockbackTarget(usedUnit, targets.units()[i], GetAngleBetweenUnits(usedUnit, targets.units()[i]), 600.0, 20.0, true, true, false)
 				set i = i + 1
@@ -169,28 +188,29 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			local location newPos = null
 			local boolean finish = false
 			local AIntegerListIterator iterator = thistype.m_knockBacks.begin()
-			debug call Print("Size of knockbacks: " + I2S(thistype.m_knockBacks.size()))
 			loop
 				exitwhen (not iterator.isValid())
 				set knockback = Knockback(iterator.data())
 				call iterator.next()
-				set finish = false
-				set oldPos = Location(GetUnitX(knockback.target()), GetUnitY(knockback.target()))
-				set newPos = PolarProjectionBJ(oldPos, thistype.period * knockback.speed(),  knockback.angle())
-				// function returns inverse value
-				if (IsTerrainPathable(GetLocationX(newPos), GetLocationY(newPos), PATHING_TYPE_WALKABILITY)) then
-					call SetUnitPositionLoc(knockback.target(), newPos)
-					if (knockback.increaseDistance(thistype.period * knockback.speed())) then
+				set finish = IsUnitDeadBJ(knockback.target())
+				if (not finish) then
+					set oldPos = Location(GetUnitX(knockback.target()), GetUnitY(knockback.target()))
+					set newPos = PolarProjectionBJ(oldPos, thistype.period * knockback.speed(),  knockback.angle())
+					// function returns inverse value
+					if (not IsTerrainPathable(GetLocationX(newPos), GetLocationY(newPos), PATHING_TYPE_WALKABILITY)) then
+						call SetUnitPositionLoc(knockback.target(), newPos)
+						if (knockback.increaseDistance(thistype.period * knockback.speed())) then
+							set finish = true
+						endif
+					// stop at any blocker
+					else
 						set finish = true
 					endif
-				// stop at any blocker
-				else
-					set finish = true
+					call RemoveLocation(oldPos)
+					set oldPos = null
+					call RemoveLocation(newPos)
+					set newPos = null
 				endif
-				call RemoveLocation(oldPos)
-				set oldPos = null
-				call RemoveLocation(newPos)
-				set newPos = null
 				
 				if (finish) then
 					debug call Print("Destroy knockback: " + I2S(knockback))
@@ -216,9 +236,6 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		endmethod
 		
 		private static method onInit takes nothing returns nothing
-			set thistype.m_dummy = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), thistype.dummyId, 0.0, 0.0, 0.0)
-			call SetUnitInvulnerable(thistype.m_dummy, true)
-			call ShowUnit(thistype.m_dummy, false)
 			set thistype.m_knockBackTimer = CreateTimer()
 			set thistype.m_timerIsRunning = false
 			set thistype.m_knockBacks = AIntegerList.create()

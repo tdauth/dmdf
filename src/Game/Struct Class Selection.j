@@ -118,6 +118,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellAuraOfAuthority.create(character)
 				call SpellAuraOfIronSkin.create(character)
 				call SpellConquest.create(character)
+				call SpellDefend.create(character)
 			elseif (class == Classes.dragonSlayer()) then
 				call SpellBeastHunter.create(character)
 				call SpellDaunt.create(character)
@@ -439,14 +440,14 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method createClassSelectionForPlayer takes player whichPlayer returns nothing
-			local ClassSelection classSelection = ClassSelection.create(whichPlayer, gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
+			local ClassSelection classSelection = ClassSelection.create.evaluate(whichPlayer, gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
 			call classSelection.setStartX(MapData.startX(GetPlayerId(whichPlayer)))
 			call classSelection.setStartY(MapData.startY(GetPlayerId(whichPlayer)))
 			call classSelection.setStartFacing(0.0)
 			call classSelection.setShowAttributes(true)
 			call classSelection.enableArrowKeySelection(false)
 			call classSelection.enableEscapeKeySelection(false)
-			call classSelection.show()
+			call classSelection.show.evaluate() // new OpLimit if possible
 			call classSelection.minimize(false) // show maximized
 		endmethod
 		

@@ -73,18 +73,24 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 			call TransmissionFromUnitWithName(this.m_actorRicman, tr("Ricman"), tre("Der Herzog von Talras? Wieso kommt er nicht persönlich? Macht dass ihr wegkommt!", "The duke of Talras? Why doesn't he come himself? Get yourselves out of here!"), gg_snd_RicmanTheChiefRicman2)
-			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheChiefRicman2))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheChiefRicman2) + 1.0)) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_3, true, 0.0)
+			call CameraSetupApplyForceDuration(gg_cam_the_chief_3, true, 3.0)
+			
+			if (wait(3.50)) then
+				return
+			endif
+			
 			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Lass sie!"), gg_snd_Wigberht29)
 			call SetUnitAnimation(this.m_actorWigberht, "Spell")
+			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht29))) then
 				return
 			endif
 			call SetUnitFacingToFaceUnit(this.m_actorWigberht,  this.m_actorRicman)
-			call CameraSetupApplyForceDuration(gg_cam_the_chief_4, true, 6.0)
-			if (wait(5.0)) then
+			call CameraSetupApplyForceDuration(gg_cam_the_chief_4, true, 3.0)
+			if (wait(3.0)) then
 				return
 			endif
 			call IssueRectOrder(this.m_actorRicman, "move", gg_rct_video_the_chief_ricmans_new_position)
@@ -120,9 +126,35 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			endif
 
 			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Den Feind zu bezwingen? Seht, ich werde euch erklären, warum meine Männer und ich hier sind. Mein Vater, ein Kriegsherr des Nordens, wurde von Dunkelfelfen verschleppt. Wir folgten ihnen bis hier her."), gg_snd_Wigberht32)
-			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht32))) then
+			
+			call Game.fadeOutWithWait()
+			// at night
+			call SetTimeOfDay(0.00)
+			call CameraSetupApplyForceDuration(gg_cam_the_chief_raid_0, true, 0.0)
+			call CameraSetupApplyForceDuration(gg_cam_the_chief_raid_1, true, 4.0)
+			call Game.fadeInWithWait()
+			
+			if (wait(2.0)) then
+			endif
+			
+			call Game.fadeOutWithWait()
+			call CameraSetupApplyForceDuration(gg_cam_the_chief_raid_2, true, 0.0)
+			call Game.fadeInWithWait()
+			
+			call QueueUnitAnimationBJ(gg_unit_H01C_0407, "Spell")
+			
+			if (wait(2.0)) then
+			endif
+			
+			if (wait(RMaxBJ(GetSimpleTransmissionDuration(gg_snd_Wigberht32) - 10.0, 0.0))) then
 				return
 			endif
+			
+			call Game.fadeOutWithWait()
+			call SetTimeOfDay(6.00)
+			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
+			call Game.fadeInWithWait()
+			
 			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Wir machen hier Rast, um herauszufinden wie groß das Heer der Orks ist, das in dieses Land eingefallen ist und dann greifen wir es an. Wir müssen uns durch ihre Linien schlagen, um den Dunkelelfen weiter folgen zu können."), gg_snd_Wigberht33)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht33))) then
 				return

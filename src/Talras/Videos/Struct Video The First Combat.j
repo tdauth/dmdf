@@ -184,7 +184,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		endmethod
 
 		private static method groupFunctionLookAtHill takes nothing returns nothing
-			call SetUnitFacingToFaceRectTimed(GetEnumUnit(), gg_rct_video_the_first_combat_battle_field, 2.0)
+			call SetUnitFacingToFaceRectTimed(GetEnumUnit(), gg_rct_video_the_first_combat_battle_field, 1.30)
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
@@ -202,34 +202,25 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 				return
 			endif
 			//filter
-			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
-			if (wait(2.0)) then
-				return
-			endif
+			call Game.fadeOutWithWait()
 			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_3, true, 0.0)
-			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
-			if (wait(2.0)) then
+			call Game.fadeIn()
+			if (wait(3.0)) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_4, true, 6.0)
-			if (wait(5.0)) then
+			
+			//filter
+			call Game.fadeOutWithWait()
+			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_6, true, 0.0)
+			call Game.fadeIn()
+			if (wait(3.0)) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_5, true, 6.0)
-			if (wait(5.0)) then
-				return
-			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_6, true, 6.0)
-			if (wait(4.0)) then
-				return
-			endif
-			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
-			if (wait(2.0)) then
-				return
-			endif
+			
+			call Game.fadeOutWithWait()
 			call ForGroup(this.m_firstActorGroup, function thistype.groupFunctionMoveBehindHill)
 			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_7, true, 0.0)
-			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			call Game.fadeIn()
 			if (wait(2.0)) then
 				return
 			endif

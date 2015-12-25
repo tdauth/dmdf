@@ -113,11 +113,10 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			call this.addGrimoireEntry('A1A9', 'A1AA')
-			// TODO use different abilities
-			call this.addGrimoireEntry('A1A9', 'A1AA')
-			call this.addGrimoireEntry('A1A9', 'A1AA')
-			call this.addGrimoireEntry('A1A9', 'A1AA')
-			call this.addGrimoireEntry('A1A9', 'A1AA')
+			call this.addGrimoireEntry('A1HN', 'A1HS')
+			call this.addGrimoireEntry('A1HO', 'A1AT')
+			call this.addGrimoireEntry('A1HP', 'A1AU')
+			call this.addGrimoireEntry('A1AQ', 'A1AV')
 
 			return this
 		endmethod
