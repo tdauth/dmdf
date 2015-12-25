@@ -19,7 +19,7 @@ library StructSpellsSpellEpidemic requires Asl, StructGameClasses, StructGameSpe
 		
 		private static method filter takes nothing returns boolean
 			local unit filterUnit = GetFilterUnit()
-			local boolean result = not IsUnitDeadBJ(filterUnit)
+			local boolean result = not IsUnitDeadBJ(filterUnit) and not IsUnitType(filterUnit, UNIT_TYPE_MECHANICAL)
 			set filterUnit = null
 			return result
 		endmethod

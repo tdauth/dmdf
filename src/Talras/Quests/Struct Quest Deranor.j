@@ -35,10 +35,23 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		endmethod
 	endstruct
 
+	struct QuestAreaDeranorsTomb extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call QuestDeranor.quest.evaluate().completeMeetAtDeranorsTomb.execute()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+	
 	struct QuestDeranor extends AQuest
 		public static constant integer questItemEnterTheTomb = 0
 		public static constant integer questItemKillDeranor = 1
+		public static constant integer questItemMeetAtTomb = 2
 		private QuestAreaDeranor m_questArea
+		private QuestAreaDeranorsTomb m_questAreaDeranorsTomb
 
 		implement Quest
 
@@ -82,12 +95,22 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		endmethod
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
+			set this.m_questAreaDeranorsTomb = QuestAreaDeranorsTomb.create(gg_rct_quest_deranor_tomb)
+			call this.questItem(thistype.questItemMeetAtTomb).setState(thistype.stateNew)
+			call this.displayState()
+		endmethod
+		
+		public method completeMeetAtDeranorsTomb takes nothing returns nothing
 			local integer i
 			call Fellows.dragonSlayer().reset()
 			call TalkDragonSlayer.initTalk()
 			
 			call VideoDeranorsDeath.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
+			
+			call this.complete()
+			
 			// wait until the video has played to complete the quest
 			// hide death spawn point
 			call SpawnPoints.deathVault().enable()
@@ -106,7 +129,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNPowerLich.blp")
 			call this.setDescription(tre("In der Todesgruft soll es einen Eingang zu einem Gewölbe unter der Erde geben. Dort soll sich der mächtige Nekromant Deranor der Schreckliche aufhalten. Die Drachentöterin bittet euch darum, ihn gemeinsam mit ihr zu vernichten, um Mittillant vor einer weiteren Bedrohung zu bewahren.", "In the tomb of death there will be an entrance to the vault under the ground. There the mighty necromancer Deranor the Terrible is believed to be. The dragon slayer asks you to destroy him to destroy him with her in order to preserve Mittilant before a further threat."))
-			call this.setReward(AAbstractQuest.rewardExperience, 1000)
+			call this.setReward(thistype.rewardExperience, 1000)
 
 			set questItem = AQuestItem.create(this, tre("Betretet das unterirdische Gewölbe.", "Enter the underground vault."))
 			call questItem.setPing(true)
@@ -119,6 +142,11 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted1)
 			call questItem.setPing(true)
 			call questItem.setPingUnit(gg_unit_u00A_0353)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			
+			set questItem = AQuestItem.create(this, tre("Trefft euch in Deranors Gewölbe.", "Meet at Deranor's vault."))
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_deranor_tomb)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			return this

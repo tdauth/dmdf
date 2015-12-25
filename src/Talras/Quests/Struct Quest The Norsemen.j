@@ -375,6 +375,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			local thistype this = thistype(questItem.quest())
 			debug call Print("Quest The Norsemen target 1 completed -> starting with video Wigberht")
 			
+			call this.questItem(thistype.questItemMeetAtTheOutpost).setState(thistype.stateNew)
+			call this.displayUpdate()
 			set this.m_questAreAfterTheBattle = QuestAreaTheNorsemenAfterTheBattle.create(gg_rct_quest_the_defense_of_talras)
 		endmethod
 		

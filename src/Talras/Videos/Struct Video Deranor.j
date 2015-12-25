@@ -50,6 +50,10 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			call IssueImmediateOrder(this.m_actorDragonSlayer, "stop")
 			call ShowUnit(thistype.actor(), true)
 			call IssueImmediateOrder(thistype.actor(), "stop")
+			
+			if (wait(2.0)) then
+				return
+			endif
 		
 			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Seht euch das an! In diesem mächtigen unterirdischen Gewölbe muss er sich versteckt halten. Nun werden wir Deranor dem Schrecklichen ein ebenso schreckliches Ende bereiten."), null)
 			

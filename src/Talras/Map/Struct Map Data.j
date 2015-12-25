@@ -829,10 +829,23 @@ static if (DEBUG_MODE) then
 					 * Plays video "Deranor's Death".
 					 */
 					call KillUnit(gg_unit_u00A_0353)
+
+					if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemKillDeranor).isCompleted()) then
+						debug call Print("Failed to complete kill deranor.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
+				endif
+				
+				if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemMeetAtTomb).isCompleted()) then
+					/*
+					 * Plays video "Deranor's Death".
+					 */
+					call thistype.moveCharactersToRect(gg_rct_quest_deranor_tomb)
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemKillDeranor).isCompleted()) then
+					if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemMeetAtTomb).isCompleted()) then
 						debug call Print("Failed to complete kill deranor.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
@@ -1443,10 +1456,10 @@ endif
 			call thistype.startRainCountdown()
 			
 			// call GetCamOffset after initialization to make sure it returns the correct value
-			call CameraHeight.addRect(gg_rct_bridge_talras_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)) + 50.0)
-			call CameraHeight.addRect(gg_rct_bridge_talras_down_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)) + 50.0)
-			call CameraHeight.addRect(gg_rct_bridge_death_vault_0_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)) + 50.0)
-			call CameraHeight.addRect(gg_rct_bridge_death_vault_1_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)) + 50.0)
+			call CameraHeight.addRect(gg_rct_bridge_talras_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)) / 2.0)
+			call CameraHeight.addRect(gg_rct_bridge_talras_down_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)) / 2.0)
+			call CameraHeight.addRect(gg_rct_bridge_death_vault_0_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)) / 2.0)
+			call CameraHeight.addRect(gg_rct_bridge_death_vault_1_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)) / 2.0)
 			
 			call VideoIntro.video().play()
 		endmethod

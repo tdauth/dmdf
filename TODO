@@ -795,12 +795,13 @@ Für Version 0.6:
 * Trotz Werten wie 0.4 droppen Gegenstände bei Spawns immer?
 * Charakter stirbt an Pfeilhagel selbst aber nur wenn auf Gegner angewandt, Gegner sind im Zielgebiet (mit Stufe 5 der Fähigkeit).
 * Tastenkürzel für alle Klassen
-* Restliche Klassenzauber: Nekromant (1 Zauber), Ritter (2 Zauber), Waldläufer
+* Restliche Klassenzauber: Nekromant (1 Zauber), Ritter (1 Zauber), Waldläufer
 * Standfestigkeit auf Gebiet mit Gruppenheilung, sonst zu schlecht.
 * Bezwingung Tooltip fixen und Anzahl und Stärke und Dauer der beschworenen Templer reduzieren.
 * Sprungattacke: Knockback wird nicht ausgeführt, nur eine Einheit wird gelähmt.
 * Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
 * Musik aus Klassenauswahl nach Video beenden!
+* Forschung in Stützpunkt, die Pferd schneller macht oder mehr Einkünfte erlaubt.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
