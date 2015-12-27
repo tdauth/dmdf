@@ -41,6 +41,8 @@ endif
 		 * In this trigger the attack animation of the character is determined.
 		 */
 		private trigger m_animationOrderTrigger
+		
+		private AHashTable m_realSpellLevels
 
 		// dynamic members
 
@@ -197,18 +199,26 @@ endif
 			call SetUnitManaPercentBJ(this.unit(), MapData.revivalManaPercentage)
 		endmethod
 		
+		private method hasRealSpellLevels takes nothing returns boolean
+			return this.m_realSpellLevels != 0
+		endmethod
+		
 		/**
 		 * \return Returns the stored hash table with ability id - level pairs (parent key - 0, child key - ability id, value - level).
 		 * \sa Grimoire#spellLevels
 		 */
 		public method realSpellLevels takes nothing returns AHashTable
-			return AHashTable(DmdfHashTable.global().handleInteger(this.unit(), "SpellLevels"))
+			debug if (this.m_realSpellLevels == 0) then
+			debug call Print("No spell levels stored!")
+			debug endif
+			return this.m_realSpellLevels
 		endmethod
 		
-		public method clearRealSpellLevels takes nothing returns boolean
-			if (DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
+		private method clearRealSpellLevels takes nothing returns boolean
+			debug call Print("Clearing real spell levels")
+			if (this.hasRealSpellLevels()) then
 				call this.realSpellLevels().destroy()
-				call DmdfHashTable.global().removeHandleInteger(this.unit(), "SpellLevels")
+				set this.m_realSpellLevels = 0
 				
 				return true
 			endif
@@ -222,11 +232,11 @@ endif
 		 */
 		public method updateRealSpellLevels takes nothing returns nothing
 			call this.clearRealSpellLevels()
-			call DmdfHashTable.global().setHandleInteger(this.unit(), "SpellLevels", this.grimoire().spellLevels.evaluate())
+			set this.m_realSpellLevels = this.grimoire().spellLevels.evaluate()
 		endmethod
 		
 		public method restoreRealSpellLevels takes nothing returns boolean
-			if (DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
+			if (this.hasRealSpellLevels()) then
 				call this.grimoire().readd.evaluate(this.realSpellLevels())
 				
 				return true
@@ -257,7 +267,7 @@ endif
 		 * \note Has to be called just after the character's unit restores from morphing.
 		 */
 		public method restoreUnit takes boolean disableInventory returns boolean
-			if (not DmdfHashTable.global().hasHandleInteger(this.unit(), "SpellLevels")) then
+			if (not this.hasRealSpellLevels()) then
 				debug call Print("Has not been morphed before!")
 				return false
 			endif
@@ -266,6 +276,8 @@ endif
 				debug call Print("Enabling inventory again")
 				call this.inventory().setEnableAgain(true)
 				call this.inventory().enable()
+			else
+				call this.inventory().enableOnlyRucksack(false)
 			endif
 			
 			call this.updateGrimoireAfterPassiveTransformation()
@@ -303,6 +315,9 @@ endif
 				// Should remove but store all items and their permanently added abilities if the rucksack is open!
 				call this.inventory().disable()
 				debug call Print("After disabling inventory")
+			else
+				// unequipping leads to melee unit, always!
+				call this.inventory().enableOnlyRucksack(true)
 			endif
 			
 			set this.m_isMorphed = true
@@ -424,7 +439,7 @@ endif
 		private static method triggerActionOrder takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local AIntegerVector values = 0
-			if (not this.m_isMorphed) then
+			if (not this.isMorphed()) then
 				// Attack 1 - 15, no weapon
 				if (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
 					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(13, 20))
@@ -518,6 +533,8 @@ endif
 			call TriggerAddAction(this.m_animationOrderTrigger, function thistype.triggerActionOrder)
 			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, "this", this)
 
+			set this.m_realSpellLevels = 0
+			
 			return this
 		endmethod
 
@@ -536,6 +553,10 @@ endif
 			set this.m_classSpells = 0
 			call DmdfHashTable.global().destroyTrigger(this.m_animationOrderTrigger)
 			set this.m_animationOrderTrigger = null
+			
+			if (this.hasRealSpellLevels()) then
+				call this.clearRealSpellLevels()
+			endif
 		endmethod
 
 		/**

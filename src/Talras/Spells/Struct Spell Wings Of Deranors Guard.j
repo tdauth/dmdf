@@ -30,6 +30,7 @@ library StructMapSpellsSpellWingsOfDeranorsGuard requires Asl, StructGameClasses
 		public static method create takes Character character, integer abilityId, integer morphAbiliyId, integer unmorphAbilityId returns thistype
 			local thistype this = thistype.allocate(character, abilityId, morphAbiliyId, unmorphAbilityId)
 			call this.setDisableGrimoire(false)
+			call this.setDisableInventory(false)
 			
 			return this
 		endmethod

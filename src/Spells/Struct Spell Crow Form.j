@@ -2,6 +2,17 @@
 library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis, StructSpellsSpellAlpha, StructSpellsSpellZoology
 
 	struct SpellCrowFormMetamorphosis extends SpellMetamorphosis
+	
+		public stub method canRestore takes nothing returns boolean
+			// seems to work wrongly
+			if (IsTerrainPathable(GetUnitX(this.character().unit()), GetUnitY(this.character().unit()), PATHING_TYPE_WALKABILITY)) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Charakter muss sich außerhalb des Wassers befinden.", "Character must be located outside of water."))
+			
+				return false
+			endif
+			
+			return true
+		endmethod
 
 		public stub method onMorph takes nothing returns nothing
 			local integer level
@@ -69,6 +80,8 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.m_metamorphosis = SpellCrowFormMetamorphosis.create(character, thistype.abilityId, 'A0KZ', 'A13V')
+			call this.m_metamorphosis.setDisableInventory(false)
+			
 			call this.addGrimoireEntry('A0CH', 'A0CI')
 			call this.addGrimoireEntry('A0CJ', 'A0CN')
 			call this.addGrimoireEntry('A0CK', 'A0CO')

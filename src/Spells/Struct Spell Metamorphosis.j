@@ -89,7 +89,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		
 		private static method triggerConditionStart takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			local boolean result = GetTriggerUnit() == this.character().unit() and GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId() and GetTriggerUnit() == this.character().unit()
+			local boolean result = GetTriggerUnit() == this.character().unit() and GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId()
 			return result
 		endmethod
 		
@@ -210,12 +210,14 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			// morph
 			if (not Character(this.character()).isMorphed()) then
 				call this.morph()
-			// restore
-			else
+			// restore only if morphed with this spell
+			elseif (this.isMorphed()) then
 				/**
-				* Now readd all removed abilities and restory the inventory.
-				*/
+				 * Now readd all removed abilities and restory the inventory.
+				 */
 				call this.restoreUnit()
+			else
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Charakter ist bereits verwandelt.", "Character is already transformed."))
 			endif
 			
 			call EnableTrigger(this.m_channelTrigger)

@@ -512,7 +512,7 @@
 * DEPRECATED: Klauen des Angriffs basierte Fähigkeiten für Fernkampfwaffen testen. Wenn Geschoss angezeigt wird, dann diese Fähigkeiten als Basisfähigkeiten verwenden, da sie kein Icon haben. Geschoss geht NICHT.
 * DEPRECATED: Frostkugelfähigkeit hat auch ein Icon. Auf keinen Fall Langsamkeitskugel verwenden. Geht nicht, da sich Frostkugeleffekt dann nicht deaktivieren lässt.
 * Alle Langsamkeitskugelfähigkeiten müssen nun den Channel-basierten Dummy-Effekt verwenden.
-* Stab des Druiden usw. brauchen Orb-basierte Fähigkeit, ansonsten wird kein eigenes Geschoss verwendet.
+* FIXED: Stab des Druiden usw. brauchen Orb-basierte Fähigkeit, ansonsten wird kein eigenes Geschoss verwendet.
 * FIXED: Fulco und Tellborn sollten einen gemeinsamen Marktstand haben. Ist sonst schwer zu finden und zu merken.
 * FIXED: Tanka und Haid brauchen einen Marktstand.
 * DEPRECATED: Drachentöter Zauber: Beute. Erhält einen zufälligen Gegenstand aus einem Laden in der Karte.

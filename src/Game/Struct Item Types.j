@@ -4,7 +4,6 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	 * \brief Default item type struct for all item types in DMdF.
 	 */
 	struct ItemType extends AItemType
-		public static constant string twoSlotAnimationProperties = "Alternate"
 		private static AIntegerVector m_twoSlotItems
 		
 		public stub method checkRequirement takes ACharacter character returns boolean
@@ -47,43 +46,6 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_twoSlotItems.pushBack('I05B')
 			call thistype.m_twoSlotItems.pushBack('I05C')
 		endmethod
-		
-		/*
-		* TODO
-		 * Knight has the ability to increase armory from items.
-		 * Get the item's armor bonus by adding a dummy unit with inventory and calculating it when adding and removing the item.
-		 */
-		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
-			local ACharacter character = ACharacter.getCharacterByUnit(whichUnit)
-			local boolean twoSlotItem = thistype.m_twoSlotItems.contains(this.itemType())
-			
-			/*
-			 * If he carries only one weapon there is only these sword fight animations for melee weapons.
-			 * Therefore if he carries no buckler and it is a melee item use the same animations.
-			 */
-			if (twoSlotItem or (not twoSlotItem and this.equipmentType() == thistype.equipmentTypePrimaryWeapon and character.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0)) then
-				/**
-				 * The "Alternate" tag should lead the character to do two hand melee fighting animations instead normal ones.
-				 */
-				call AddUnitAnimationProperties(whichUnit, thistype.twoSlotAnimationProperties, true)
-			endif
-		endmethod
-		
-		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
-			local ACharacter character = ACharacter.getCharacterByUnit(whichUnit)
-			local boolean twoSlotItem = thistype.m_twoSlotItems.contains(this.itemType())
-			
-			/*
-			 * If he carries only one weapon there is only these sword fight animations for melee weapons.
-			 * Therefore if he carries no buckler and it is a melee item use the same animations.
-			 */
-			if (twoSlotItem or (not twoSlotItem and this.equipmentType() == thistype.equipmentTypePrimaryWeapon and character.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0)) then
-				/**
-				 * The "Alternate" tag should lead the character to do two hand melee fighting animations instead normal ones.
-				 */
-				call AddUnitAnimationProperties(whichUnit, thistype.twoSlotAnimationProperties, false)
-			endif
-		endmethod
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
 			local thistype this = thistype.allocate(itemType, equipmentType, requiredLevel, requiredStrength, requiredAgility, requiredIntelligence, requiredClass)
@@ -103,16 +65,14 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	 * \note Note that orbs do not stack so it can only be used if there is only one weapon.
 	 */
 	struct RangeItemType extends ItemType
-		public static constant string animationProperties = "Throw 7"
 	
 		public static method createSimpleRange takes integer itemType, integer equipmentType returns thistype
 			return thistype.allocate(itemType, equipmentType, 0, 0, 0, 0, 0)
 		endmethod
 	
-		// Attack Throw 6
-		// Attack Throw 7
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			local Character character = ACharacter.getCharacterByUnit(whichUnit)
+			local AHashTable realSpellLevels = 0
 			local integer i
 			debug call Print("Range item attach")
 			
@@ -122,7 +82,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				/**
 				 * Make sure the current spell levels are up to date for later restoration.
 				 */
-				call character.updateRealSpellLevels()
+				set realSpellLevels = character.grimoire().spellLevels.evaluate()
+
 				/*
 				 * These two lines of code do the passive transformation to a range fighting unit.
 				 */
@@ -131,33 +92,27 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				/*
 				 * Now the spell levels have to be readded and the grimoire needs to be updated since all abilities are gone.
 				 */
-				call character.restoreRealSpellLevels()
-				call character.clearRealSpellLevels()
+				call character.grimoire().readd.evaluate(realSpellLevels)
+				call realSpellLevels.destroy()
+				set realSpellLevels = 0
 				call character.grimoire().updateUi.evaluate()
-				
-				/**
-				 * The throw tag should lead the character to do range fighting animations instead of melee ones.
-				 */
-				 // TODO the index is not recognized
-				call AddUnitAnimationProperties(whichUnit, thistype.animationProperties, true)
 			endif
 		endmethod
 		
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
 			local Character character = ACharacter.getCharacterByUnit(whichUnit)
+			local AHashTable realSpellLevels = 0
 			debug call Print("Range item drop")
 			
 			if (character != 0) then
 				debug call Print("Adding and removing ability " + GetObjectName(Classes.classMeleeAbilityIdByCharacter.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
-				call character.updateRealSpellLevels()
+				set realSpellLevels = character.grimoire().spellLevels.evaluate()
 				call UnitAddAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter.evaluate(character))
 				call UnitRemoveAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter.evaluate(character))
-				call character.restoreRealSpellLevels()
-				call character.clearRealSpellLevels()
+				call character.grimoire().readd.evaluate(realSpellLevels)
+				call realSpellLevels.destroy()
+				set realSpellLevels = 0
 				call character.grimoire().updateUi.evaluate()
-				
-				// TODO the index is not recognized
-				call AddUnitAnimationProperties(whichUnit, thistype.animationProperties, false)
 			endif
 		endmethod
 
@@ -371,7 +326,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		public static method init takes nothing returns nothing
 			//integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns AItemType
 			set thistype.m_simpleDruidStaff = RangeItemType.createSimpleRange('I06J', AItemType.equipmentTypePrimaryWeapon)
-			call thistype.m_simpleDruidStaff.addAbility('A01K', true)
+			call thistype.m_simpleDruidStaff.addAbility('A1HX', true)
 			
 			set thistype.m_blessedSword = ItemType.createSimple('I03R', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_blessedSword.addAbility('Alcs', true)
@@ -669,7 +624,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			set thistype.m_druidStaff = RangeItemType.createSimpleRange('I02X', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_druidStaff.addAbility('A044', false)
-			call thistype.m_druidStaff.addAbility('A01K', true)
+			call thistype.m_druidStaff.addAbility('A1HX', true)
 			
 			set thistype.m_staffOfBan = RangeItemType.createSimpleRange('I04Z', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_staffOfBan.addAbility('A16F', true)

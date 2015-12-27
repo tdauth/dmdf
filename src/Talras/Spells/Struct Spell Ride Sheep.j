@@ -7,7 +7,6 @@ library StructMapSpellsSpellRideSheep requires Asl, StructGameClasses, StructSpe
 			/*
 			 * Make sure other animation tags are removed before.
 			 */
-			call AddUnitAnimationProperties(this.character().unit(), RangeItemType.animationProperties, false)
 			call AddUnitAnimationProperties(this.character().unit(), DefenceItemType.animationProperties, false)
 			/**
 			 * This tag adds the sheep.

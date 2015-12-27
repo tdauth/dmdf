@@ -287,11 +287,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			return this.m_heroLevel
 		endmethod
 		
-		/**
-		 * The ability for the grimoire must have level 0 - 100 for displaying the number of available skill points.
-		 */
-		public method setSkillPoints takes integer skillPoints returns nothing
-			set this.m_skillPoints = skillPoints
+		private method setGrimoireAbilityToSkillPoints takes integer skillPoints returns nothing
 			if (skillPoints < 0) then
 				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 0)
 			// use + 1 since the first level is for 0 skill points
@@ -300,6 +296,14 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			else
 				call SetUnitAbilityLevel(this.character().unit(), this.ability(), skillPoints + 1)
 			endif
+		endmethod
+		
+		/**
+		 * The ability for the grimoire must have level 0 - 100 for displaying the number of available skill points.
+		 */
+		public method setSkillPoints takes integer skillPoints returns nothing
+			set this.m_skillPoints = skillPoints
+			call this.setGrimoireAbilityToSkillPoints(skillPoints)
 			
 			/**
 			 * This is necessary to show the skill points in the hero icon.
@@ -943,6 +947,26 @@ endif
 			debug call Print("Learned spells count: " + I2S(this.m_learnedSpells.size()))
 			debug call Print("Total spells count: " + I2S(this.spells()))
 			debug call Print("Loaded game")
+			
+			/*
+			 * Readd normal unit abilities.
+			 */
+			call UnitRemoveAbility(this.character().unit(), 'Aatk')
+			call UnitRemoveAbility(this.character().unit(), 'Amov')
+			call UnitAddAbility(this.character().unit(), 'Aatk')
+			call UnitAddAbility(this.character().unit(), 'Amov')
+			// TODO patrol, stop
+			
+			/*
+			 * Readd backpack, grimoire and spells abilities to fix their icon positions.
+			 */
+			call UnitRemoveAbility(this.character().unit(), Grimoire.abilityId)
+			call UnitRemoveAbility(this.character().unit(), 'A015')
+			call UnitRemoveAbility(this.character().unit(), 'A02Z')
+			call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
+			call UnitAddAbility(this.character().unit(), 'A015')
+			call UnitAddAbility(this.character().unit(), 'A02Z')
+			call this.setGrimoireAbilityToSkillPoints(this.skillPoints())
 		endmethod
 		
 		private method createLoadTrigger takes nothing returns nothing

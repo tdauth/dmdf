@@ -68,6 +68,8 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.m_metamorphosis = SpellBearFormMetamorphosis.create(character, thistype.abilityId, 'A09H', 'A13W')
+			call this.m_metamorphosis.setDisableInventory(false)
+			
 			call this.addGrimoireEntry('A0C7', 'A0CC')
 			call this.addGrimoireEntry('A0C8', 'A0CD')
 			call this.addGrimoireEntry('A0C9', 'A0CE')
