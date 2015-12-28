@@ -913,6 +913,7 @@ endif
 			endloop
 			call EnableTransparency()
 			call CameraHeight.resume()
+			call VolumeGroupResetBJ()
 			call MapData.resetVideoSettings.evaluate()
 		endmethod
 

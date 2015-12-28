@@ -10,7 +10,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				call SmartCameraPanWithZForPlayer(Player(i), GetUnitX(Npcs.dago()), GetUnitY(Npcs.dago()), 0.0, 0.0)
+				call SmartCameraPanWithZForPlayer(Player(i), GetRectCenterX(gg_rct_quest_rescue_dago_camera_view), GetRectCenterY(gg_rct_quest_rescue_dago_camera_view), 0.0, 0.0)
 				set i = i + 1
 			endloop
 		endmethod
@@ -24,6 +24,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		private static constant real rectRange = 500.0
 		private timer m_timer
 		private QuestAreaRescueDago m_questArea
+		private real m_dagosMoveSpeed = 0.0
 
 		implement Quest
 		
@@ -76,13 +77,18 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			local integer i
 			call VideoRescueDago1.video.evaluate().play()
 			call waitForVideo(MapData.videoWaitInterval)
-			call ACharacter.panCameraSmartToAll()
+			// make sure dago starts at the correct position
+			call SetUnitX(Npcs.dago(), GetRectCenterX(gg_rct_quest_rescue_dago_dagos_position))
+			call SetUnitY(Npcs.dago(), GetRectCenterY(gg_rct_quest_rescue_dago_dagos_position))
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
+				call SmartCameraPanWithZForPlayer(Player(i), GetRectCenterX(gg_rct_quest_rescue_dago_camera_view), GetRectCenterY(gg_rct_quest_rescue_dago_camera_view), 0.0, 0.0)
 				call UnitShareVision(Npcs.dago(), Player(i), true)
 				set i = i + 1
 			endloop
+			set this.m_dagosMoveSpeed = GetUnitMoveSpeed(Npcs.dago())
+			call SetUnitMoveSpeed(Npcs.dago(), 180.0) // slow him down that the characters can easily follow him
 			call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_0), GetRectCenterY(gg_rct_waypoint_dago_0))
 			/*
 			 * This timer makes sure that Dago keeps on moving even if he is blocked by units. Otherwise the quest will never be completed.
@@ -116,12 +122,13 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_2), GetRectCenterY(gg_rct_waypoint_dago_2))
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_2), GetRectCenterY(gg_rct_waypoint_dago_2), thistype.rectRange)) then
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3))
+					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("Wir sind fast da.", "We are almost there."), gg_snd_DagoRescueDago6)
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3), thistype.rectRange)) then
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4))
-					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("Wir sind fast da.", "We are almost there."), gg_snd_DagoRescueDago6)
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4), thistype.rectRange)) then
 				
 					call SetUnitFacing(Npcs.dago(), 265.0)
+					call SetUnitMoveSpeed(Npcs.dago(), this.m_dagosMoveSpeed)
 					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich.", "Fine, if you follow the way you reach the castle's gate. I will join you later but now I have to collect some mushrooms in the area. For the duke of course."), gg_snd_DagoRescueDago7)
 					call TalkDago.initTalk()
 					call PauseTimer(this.m_timer)

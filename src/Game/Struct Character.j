@@ -41,6 +41,7 @@ endif
 		 * In this trigger the attack animation of the character is determined.
 		 */
 		private trigger m_animationOrderTrigger
+		private trigger m_danceTrigger
 		
 		private AHashTable m_realSpellLevels
 
@@ -458,7 +459,7 @@ endif
 					debug call Print("Attack with bow")
 				// throwing spear
 				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsThrowingSpear.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 119)
+					call SetUnitAnimationByIndex(GetAttacker(), 118) //  119
 					debug call Print("Attack with a throwing spear")
 				// attacking with spear in melee
 				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsMeleeSpear.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
@@ -472,6 +473,21 @@ endif
 				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedHammer.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
 					call SetUnitAnimationByIndex(GetAttacker(), 62)
 					debug call Print("Attack with two handed hammer")
+				// attack with a weapon in each hand -> no buckler in right hand
+				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
+					// attack either with left or right hand TODO animation for both hands?
+					set values = AIntegerVector.create()
+					call values.pushBack(21)
+					call values.pushBack(22)
+					call values.pushBack(40)
+					call values.pushBack(41)
+					call values.pushBack(23)
+					call values.pushBack(24)
+					call values.pushBack(25)
+					call values.pushBack(26)
+					call SetUnitAnimationByIndex(GetAttacker(), values.random())
+					call values.destroy()
+					debug call Print("Attack with two weapons")
 				// Attack with one left handed weapon
 				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
 					set values = AIntegerVector.create()
@@ -482,6 +498,31 @@ endif
 					call SetUnitAnimationByIndex(GetAttacker(), values.random())
 					call values.destroy()
 					debug call Print("Attack with one left handed weapon")
+				// Attack with one right handed weapon
+				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
+					set values = AIntegerVector.create()
+					call values.pushBack(22)
+					call values.pushBack(41)
+					call values.pushBack(24)
+					call values.pushBack(26)
+					call SetUnitAnimationByIndex(GetAttacker(), values.random())
+					call values.destroy()
+					debug call Print("Attack with one right handed weapon")
+				debug else
+					debug call Print("Unknown attack style! Implement animation!")
+				endif
+			endif
+		endmethod
+		
+		private static method triggerActionDance takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			if (not IsUnitDeadBJ(this.unit())) then
+				if (GetEventPlayerChatString() == "-dance") then
+					call SetUnitAnimationByIndex(this.unit(), 187)
+				elseif (GetEventPlayerChatString() == "-pray") then
+					call SetUnitAnimationByIndex(this.unit(), 195)
+				elseif (GetEventPlayerChatString() == "-magic") then
+					call SetUnitAnimationByIndex(this.unit(), GetRandomInt(85, 87))
 				endif
 			endif
 		endmethod
@@ -532,6 +573,11 @@ endif
 			call TriggerAddCondition(this.m_animationOrderTrigger, Condition(function thistype.triggerConditionOrder))
 			call TriggerAddAction(this.m_animationOrderTrigger, function thistype.triggerActionOrder)
 			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, "this", this)
+			
+			set this.m_danceTrigger = CreateTrigger()
+			call TriggerRegisterPlayerChatEvent(this.m_danceTrigger, whichPlayer, "-", false)
+			call TriggerAddAction(this.m_danceTrigger, function thistype.triggerActionDance)
+			call DmdfHashTable.global().setHandleInteger(this.m_danceTrigger, "this", this)
 
 			set this.m_realSpellLevels = 0
 			
@@ -553,6 +599,8 @@ endif
 			set this.m_classSpells = 0
 			call DmdfHashTable.global().destroyTrigger(this.m_animationOrderTrigger)
 			set this.m_animationOrderTrigger = null
+			call DmdfHashTable.global().destroyTrigger(this.m_danceTrigger)
+			set this.m_danceTrigger = null
 			
 			if (this.hasRealSpellLevels()) then
 				call this.clearRealSpellLevels()

@@ -16,6 +16,9 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
 			call SetTimeOfDay(6.00)
+			
+			call SetSpeechVolumeGroupsBJ()
+			
 			call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 			call CameraSetupApplyForceDuration(gg_cam_intro_orc, true, 0.00)
 			call SetUnitPositionRect(thistype.actor(), gg_rct_video_intro_character)

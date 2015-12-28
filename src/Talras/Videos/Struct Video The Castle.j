@@ -7,6 +7,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings()
 			call SetTimeOfDay(16.00)
+			call SetSpeechVolumeGroupsBJ()
 			call PlayThematicMusic("Music\\TheCastle.mp3")
 			call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 			call CameraSetupApplyForceDuration(gg_cam_new_the_castle_0, true, 0.0)

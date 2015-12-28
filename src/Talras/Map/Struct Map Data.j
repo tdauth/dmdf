@@ -1387,7 +1387,8 @@ endif
 
 		private static method timerFunctionThunder takes nothing returns nothing
 			local integer i
-			if (thistype.m_rainWeatherEffect != null) then
+			// don't create thunder effect if it is not raining anymore or the rain stops in a few seconds
+			if (thistype.m_rainWeatherEffect != null and TimerGetRemaining(thistype.m_resetRainTimer) > 5.0) then
 				set i = 0
 				loop
 					exitwhen (i == MapData.maxPlayers)
@@ -1395,7 +1396,7 @@ endif
 						// only play thunder if view is in playable area where it rains
 						if (GetCameraTargetPositionX() <= GetRectMaxX(gg_rct_area_playable) and GetCameraTargetPositionX() >= GetRectMinX(gg_rct_area_playable) and GetCameraTargetPositionY() <= GetRectMaxY(gg_rct_area_playable) and GetCameraTargetPositionY() >= GetRectMinY(gg_rct_area_playable)) then
 							call StartSound(gg_snd_RollingThunder1)
-							call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUTIN, 0.20, "ReplaceableTextures\\CameraMasks\\White_mask.blp", 100.0, 100.0, 100.0, 0)
+							call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUTIN, 0.10, "ReplaceableTextures\\CameraMasks\\White_mask.blp", 100.0, 100.0, 100.0, 0)
 						endif
 					endif
 					set i = i + 1
@@ -1422,7 +1423,7 @@ endif
 			call EnableWeatherEffect(thistype.m_rainWeatherEffect, true)
 			
 			call thistype.startThunderCountdown.evaluate()
-			call TimerStart(thistype.m_resetRainTimer, GetRandomReal(20.0, 30.0), false, function thistype.timerFunctionRestartRain)
+			call TimerStart(thistype.m_resetRainTimer, GetRandomReal(45.0, 60.0), false, function thistype.timerFunctionRestartRain)
 		endmethod
 		
 		private static method startThunderCountdown takes nothing returns nothing
@@ -1430,7 +1431,7 @@ endif
 		endmethod
 		
 		private static method startRainCountdown takes nothing returns nothing
-			call TimerStart(thistype.m_rainTimer, GetRandomReal(80.0, 120.0), false, function thistype.timerFunctionRain)
+			call TimerStart(thistype.m_rainTimer, GetRandomReal(120.0, 180.0), false, function thistype.timerFunctionRain)
 		endmethod
 		
 		public static method initMapSpells takes ACharacter character returns nothing

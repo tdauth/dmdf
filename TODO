@@ -783,9 +783,9 @@ Test mit zwei menschlichen Spielern:
 * Bei der Verteidigung von Talras zu Beginn auch Nordmänner, Dorfbewohner und Waldläufer platzieren da in Video.
 
 Für Version 0.6:
-* "-repick" erlauben, vor allem in Arena: Stufe bleibt erhalten.
+* DONE: "-repick" erlauben, vor allem in Arena: Stufe bleibt erhalten.
 * Save/Load-System einführen: Klasse, Stufe/Erfahrung, Attribute?, Gold, Holz?, Zauber nicht, reskillen spart Platz!, Equipment, Items aus Rucksack? Quests kann man noch einmal machen, Spiel beginnt von vorne
-* Während Verwandlung zumindest Zugriff auf Rucksack zulassen, damit Gegenstände eingesammelt werden können und Tränke benutzt.
+* DONE: Während Verwandlung zumindest Zugriff auf Rucksack zulassen, damit Gegenstände eingesammelt werden können und Tränke benutzt.
 * ATimedRevival: Abstraktion von ARevival und dem Revival im struct Fellow.
 * DONE: Alle 4 Slots verwenden: http://www.hiveworkshop.com/forums/spells-569/easy-item-stack-n-split-v2-7-4-a-153287/?prev=search%3Dstack%26d%3Dlist%26r%3D20
 * Wenn man Gegenstände auf den Boden legt (Drop) alle Aufladungen ablegen, wenn man Gegenstände gibt (Order), nur eine Aufladung geben
@@ -802,6 +802,9 @@ Für Version 0.6:
 * Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
 * Musik aus Klassenauswahl nach Video beenden!
 * Forschung in Stützpunkt, die Pferd schneller macht oder mehr Einkünfte erlaubt.
+* Nach dem Laden die Icon-Positionen fixen
+* Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
+* Ab dem zweiten Repick steht der alte Charakter noch da.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

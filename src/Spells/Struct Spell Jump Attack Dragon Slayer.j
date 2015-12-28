@@ -33,8 +33,9 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			local real damage = GetUnitAbilityLevel(this.source().unit(), SpellJumpAttackDragonSlayer.abilityId) * 10
 			call UnitDamageTargetBJ(this.source().unit(), this.target(), damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
 			call Spell.showDamageTextTag(this.target(), damage)
-			call SpellJumpAttackDragonSlayer.stunUnit.evaluate(this.target(), GetUnitAbilityLevel(this.source().unit(), SpellJumpAttackDragonSlayer.abilityId))
-			// TODO stun
+			if (SpellJumpAttackDragonSlayer.isFilterUnit.evaluate(this.target())) then
+				call SpellJumpAttackDragonSlayer.stunUnit.evaluate(this.target(), GetUnitAbilityLevel(this.source().unit(), SpellJumpAttackDragonSlayer.abilityId))
+			endif
 		endmethod
 		
 		public method increaseDistance takes real distance returns boolean
@@ -79,30 +80,35 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		endmethod
 		
 		public static method stunUnit takes unit whichUnit, integer level returns nothing
-			local unit dummy =  CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), thistype.dummyId, 0.0, 0.0, 0.0)
+			local unit dummy =  CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), thistype.dummyId, GetUnitX(whichUnit), GetUnitY(whichUnit), 0.0)
 			local timer tmpTimer
 			call SetUnitInvulnerable(dummy, true)
 			call SetUnitPathing(dummy, false)
 			call ShowUnit(dummy, false)
 			call SetUnitX(dummy, GetUnitX(whichUnit))
 			call SetUnitY(dummy, GetUnitY(whichUnit))
+			call UnitAddAbility(dummy, thistype.stunAbilityId)
 			call SetUnitAbilityLevel(dummy, thistype.stunAbilityId, level)
 			call IssueTargetOrder(dummy, "firebolt", whichUnit)
 			set tmpTimer = CreateTimer()
 			call DmdfHashTable.global().setHandleUnit(tmpTimer, "dummy", dummy)
-			call TimerStart(tmpTimer, 0.1, false, function thistype.timerFunctionRemoveDummy)
+			call TimerStart(tmpTimer, 0.5, false, function thistype.timerFunctionRemoveDummy)
 			set tmpTimer = null
 			set dummy = null
 		endmethod
 		
-		private static method filterIsNotDead takes nothing returns boolean
-			return not IsUnitDeadBJ(GetFilterUnit())
+		public static method isFilterUnit takes unit whichUnit returns boolean
+			return not IsUnitDeadBJ(whichUnit) and not IsUnitType(whichUnit, UNIT_TYPE_STUNNED) and not IsUnitType(whichUnit, UNIT_TYPE_SNARED) and not IsUnitType(whichUnit, UNIT_TYPE_MAGIC_IMMUNE)
+		endmethod
+		
+		private static method filter takes nothing returns boolean
+			return thistype.isFilterUnit(GetFilterUnit())
 		endmethod
 		
 		private method targets takes real x, real y returns AGroup
 			local AGroup result = AGroup.create()
 			local integer i = 0
-			call result.addUnitsInRange(x, y, 300.0, Filter(function thistype.filterIsNotDead))
+			call result.addUnitsInRange(x, y, 300.0, Filter(function thistype.filter))
 			loop
 				exitwhen (i == result.units().size())
 				if (not IsUnitEnemy(result.units()[i], this.character().player()) or IsUnitType(result.units()[i], UNIT_TYPE_FLYING)) then
@@ -131,9 +137,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			local integer i = 0
 			loop
 				exitwhen (i == targets.units().size())
-				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 120.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 400.0))
-				// TODO custom knockback and damage
-				//call KnockbackTarget(usedUnit, targets.units()[i], GetAngleBetweenUnits(usedUnit, targets.units()[i]), 600.0, 20.0, true, true, false)
+				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 300.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 300.0))
 				set i = i + 1
 			endloop
 			debug call Print("Loaded spell " + I2S(this))
@@ -142,31 +146,16 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			call ResetUnitAnimation(usedUnit)
 			call DmdfHashTable.global().flushKey(thistype.key)
 		endmethod
-		
-		private static method timerFunctionCast takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
-			local real x = DmdfHashTable.global().handleReal(GetExpiredTimer(), "x")
-			local real y = DmdfHashTable.global().handleReal(GetExpiredTimer(), "y")
-			call IssueImmediateOrder(this.character().unit(), "stop") // prevent endless order on unpausing
-			debug call Print("Store spell " + I2S(this))
-			call AJump.create(this.character().unit(), 600.0, x, y, thistype.alignAction, 400.0)
-			call SetUnitAnimation(this.character().unit(), "Attack Slam") // TODO correct slam animation depending on carried weapons
-			call PauseTimer(GetExpiredTimer())
-			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
-		endmethod
 
 		private method action takes nothing returns nothing
 			// store these values before ordering stop, otherwise they are not available anymore
 			local unit caster = GetTriggerUnit()
 			local real x = GetSpellTargetX()
 			local real y = GetSpellTargetY()
-			local timer tmpTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(caster, thistype.key, this)
-			call DmdfHashTable.global().setHandleInteger(tmpTimer, "this", this)
-			call DmdfHashTable.global().setHandleReal(tmpTimer, "x", x)
-			call DmdfHashTable.global().setHandleReal(tmpTimer, "y", y)
-			// make sure the cooldown works
-			call TimerStart(tmpTimer, 0.0, false, function thistype.timerFunctionCast)
+			call IssueImmediateOrder(caster, "stop") // prevent endless order on unpausing
+			debug call Print("Store spell " + I2S(this))
+			call AJump.create(caster, 600.0, x, y, thistype.alignAction, 400.0)
+			call SetUnitAnimationByIndex(caster,  28) // TODO set depending on weapon and set animation speed depending on distance and jump speed and animation duration!
 			set caster = null
 		endmethod
 

@@ -98,6 +98,18 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetCompleted(whichQuest, true)
 			
 			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tre("Info: Emotes", "Info: Emotes"))
+			call QuestSetDescription(whichQuest, tre("Emotes erlauben das Ausdrücken bestimmter Emotionen durch eine Animation Ihres Charakters.", "Emotes allow expressing certain emotions by an animation of your character."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNGauntletsOfOgrePower.blp")
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, "\"-dance\"")
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, "\"-pray\"")
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, "\"-magic\"")
+			call QuestSetCompleted(whichQuest, true)
+			
+			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Aufträge", "Info: Missions"))
 			call QuestSetDescription(whichQuest, tre("Aufträge im Spiel bestehen aus einem oder mehreren Zielen, die allesamt erfüllt werden müssen. Aufträge geben meist Belohnungen wie zusätzliche Erfahrungspunkte, Goldmünzen oder Gegenstände. Gemeinsame Aufträge müssen von allen Spielern gemeinsam erledigt werden, um die Handlung des Spiels voranzubringen. Eigene Aufträge können optional von jedem Spieler einzeln erledigt werden, um zusätzliche Belohnungen zu erhalten.", "Missions in the game consists of one or several objectives which has to be solved alltogether. Missions mostly give rewards like additional experience points, gold coins or items. Shared missions have to be solved by all players together to continue the plot of the game. Own missions can be solved optionally by each player to get additional rewards."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSpellBookBLS.blp")

@@ -1,5 +1,9 @@
 library StructSpellsDamageProtector requires Asl
 
+	/**
+	 * \brief The damage protector allows to protect a unit from a certain percentage of damage.
+	 * It might be useful for some protection spells.
+	 */
 	struct DamageProtector extends ADamageRecorder
 		private real m_protectedDamage
 		private real m_protectedDamagePercentage
