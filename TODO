@@ -805,6 +805,9 @@ Für Version 0.6:
 * Nach dem Laden die Icon-Positionen fixen
 * Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
 * Ab dem zweiten Repick steht der alte Charakter noch da.
+* Illusionen und Kopie in Video brauchen das gleiche Angriffsanimationssystem.
+* FIXED: Deranors Leibwache soll Runen oder Tränke droppen.
+* Deranor sollte nach Tod auch etwas droppen.
 
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.

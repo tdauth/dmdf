@@ -466,7 +466,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_norsemen_assembly_point)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 5000)
+			call questItem.setReward(thistype.rewardExperience, 2000)
 			// item 3
 			set questItem = AQuestItem.create(this, tre("Trefft euch am Außenposten.", "Meet at the outpost."))
 			call questItem.setPing(true)

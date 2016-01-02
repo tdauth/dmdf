@@ -98,7 +98,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		endmethod
 		
 		public static method isFilterUnit takes unit whichUnit returns boolean
-			return not IsUnitDeadBJ(whichUnit) and not IsUnitType(whichUnit, UNIT_TYPE_STUNNED) and not IsUnitType(whichUnit, UNIT_TYPE_SNARED) and not IsUnitType(whichUnit, UNIT_TYPE_MAGIC_IMMUNE)
+			return not IsUnitDeadBJ(whichUnit) and not IsUnitType(whichUnit, UNIT_TYPE_STUNNED) and not IsUnitType(whichUnit, UNIT_TYPE_SNARED) and not IsUnitType(whichUnit, UNIT_TYPE_MAGIC_IMMUNE) and not IsUnitType(whichUnit, UNIT_TYPE_FLYING) and not IsUnitPaused(whichUnit) and not IsUnitInvulnerable(whichUnit)
 		endmethod
 		
 		private static method filter takes nothing returns boolean
@@ -111,7 +111,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			call result.addUnitsInRange(x, y, 300.0, Filter(function thistype.filter))
 			loop
 				exitwhen (i == result.units().size())
-				if (not IsUnitEnemy(result.units()[i], this.character().player()) or IsUnitType(result.units()[i], UNIT_TYPE_FLYING)) then
+				if (not IsUnitEnemy(result.units()[i], this.character().player())) then
 					call result.units().erase(i)
 				else
 					set i = i + 1
@@ -154,6 +154,8 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			local real y = GetSpellTargetY()
 			call IssueImmediateOrder(caster, "stop") // prevent endless order on unpausing
 			debug call Print("Store spell " + I2S(this))
+			// warning allows the spell only once at a time per caster
+			call DmdfHashTable.global().setHandleInteger(caster, thistype.key, this)
 			call AJump.create(caster, 600.0, x, y, thistype.alignAction, 400.0)
 			call SetUnitAnimationByIndex(caster,  28) // TODO set depending on weapon and set animation speed depending on distance and jump speed and animation duration!
 			set caster = null

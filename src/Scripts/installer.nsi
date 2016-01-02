@@ -5,7 +5,7 @@ Unicode true
 !define INPUT_DIR "E:\Projekte\dmdf\maps\releases"
 !define INPUT_EXE_FILENAME "The Power of Fire.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
-!define VERSION "0.5"
+!define VERSION "0.6"
 
 Name "The Power of Fire"
 OutFile "The Power of Fire${VERSION}.exe"
@@ -41,16 +41,16 @@ Section "Application" Application
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
 SectionEnd
 
-LangString DESC_Application ${LANG_ENGLISH} "The application itself."
-LangString DESC_Application ${LANG_GERMAN} "Die Anwendung selbst."
+LangString DESC_Application ${LANG_ENGLISH} "The modification of Warcraft III: The Frozen Throne."
+LangString DESC_Application ${LANG_GERMAN} "Die Modifikation von Warcraft III: The Frozen Throne."
 
 Section "English Maps" EnglishMaps
   SetOutPath "$INSTDIR\Maps\The Power of Fire\en"
   File "${INPUT_DIR}\en\Talras${VERSION}.w3x"
 SectionEnd
 
-LangString DESC_EnglishMaps ${LANG_ENGLISH} "Maps of the modification (English)."
-LangString DESC_EnglishMaps ${LANG_GERMAN} "Karten der Modifikation (Deutsch)."
+LangString DESC_EnglishMaps ${LANG_ENGLISH} "English maps of the modification."
+LangString DESC_EnglishMaps ${LANG_GERMAN} "Englische Karten der Modifikation."
 
 Section "German Maps" GermanMaps
   SetOutPath "$INSTDIR\Maps\The Power of Fire\de"
@@ -58,8 +58,8 @@ Section "German Maps" GermanMaps
   File "${INPUT_DIR}\de\Arena${VERSION}.w3x"
 SectionEnd
 
-LangString DESC_GermanMaps ${LANG_ENGLISH} "Maps of the modification (German)."
-LangString DESC_GermanMaps ${LANG_GERMAN} "Karten der Modifikation (Deutsch)."
+LangString DESC_GermanMaps ${LANG_ENGLISH} "German maps of the modification."
+LangString DESC_GermanMaps ${LANG_GERMAN} "Deutsche Karten der Modifikation."
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
   !insertmacro MUI_DESCRIPTION_TEXT ${EnglishMaps} $(DESC_EnglishMaps)

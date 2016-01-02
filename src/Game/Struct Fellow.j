@@ -317,7 +317,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (IsUnitDeadBJ(this.m_unit)) then
 				call this.reviveAtActiveShrine(true)
 				if (this.m_revivalMessage != null) then
-					call TransmissionFromUnit(this.m_unit, this.m_revivalMessage, this.m_revivalSound)
+					call TransmissionFromUnitWithName(this.m_unit, this.revivalTitle(), this.m_revivalMessage, this.m_revivalSound)
 				endif
 			debug else
 				debug call Print("Unit is not dead?!")

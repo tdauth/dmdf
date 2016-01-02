@@ -1,6 +1,8 @@
 Custom Map Tutorial
 by Baradé
 
+This tutorial covers how to create a custom map for the modification "The Power of Fire".
+
 Step 1: Importing and defining code
 First you should define all ASL required boolean constants in your custom map script:
 globals

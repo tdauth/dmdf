@@ -1,0 +1,81 @@
+Requirements:
+- MPQ archive "TPoF.mpq"
+- JassNewGenPack: http://www.hiveworkshop.com/forums/tools-560/jassnewgenpack-5d-227445/
+- JassParser: http://www.wc3c.net/showthread.php?t=105235&highlight=JassParser
+
+Since it is all Open Source you can change/improve the modification as you would like to. The following small tutorial shows you how to install all necessary files:
+
+I've uploaded the custom MPQ archive "TPoF.mpq" at [url]http://wc3lib.org/dmdf/TPoF.mpq[/url].
+You have to download it and place it for example in your Warcraft III folder.
+
+The current maps can be found [url="http://gitweb.wc3lib.org/?p=dmdf.git;a=tree;f=maps]here[/url].
+
+You would have to install and setup the [URL="http://www.hiveworkshop.com/forums/tools-560/jassnewgenpack-5d-227445/"]JassNewGenPack[/URL] to load the MPQs.
+Edit the file "loadmpqs.lua" and add the entry to the bottom of the file:
+[CODE]
+loadmpq(15, "E:\\Projekte\\TPoF.mpq")
+[/CODE]
+
+Replace the path with the path to your downloaded MPQ file.
+
+Now you can start the JassNewGenPack World Editor and open one of the maps to change the terrain or the object data.
+
+If you want to work with the scripts as well you must checkout the source code for the ASL and TPoF:
+Use something like [url]http://www.heise.de/download/git.html[/url] to check both projects out.
+Use the following URLs to check both projects out into two different folders.
+[CODE]
+git clone git://wc3lib.org/asl.git
+git clone git://wc3lib.org/dmdf.git
+[/CODE]
+
+After that edit "jasshelper.conf" in your Warcraft III directory which comes from the JassNewGenPack and set:
+[CODE]
+[lookupfolders]
+// Just type the folders where //! import would look for if relative paths where used, include the final \
+// embed them in quotes
+// example: "c:\"
+// The order causes priority:
+"C:\\YourDirectory\\asl\\src"
+"C:\\YourDirectory\\dmdf\\src"
+
+[externaltools]
+// this is for //! external NAME args the syntax is "NAME","executable path"
+// example:
+//"OBJMERGE","c:\kool.exe"
+
+//* 
+//* grimextension pack by pitzermike:
+//*
+"FileImporter","grimext\FileImporter.exe"
+"ObjectMerger","grimext\ObjectMerger.exe"
+"PathMapper","grimext\PathMapper.exe"
+"TileSetter","gimext\TileSetter.exe"
+"ConstantMerger","grimext\ConstantMerger.exe"
+"TriggerMerger","grimext\TriggerMerger.exe"
+"FileExporter","grimext\\FileExporter.exe"
+"PatchGenerator","grimext\\PatchGenerator.exe"
+
+[wewarlock]
+//put the path to WEWarlock between quotes
+//Ex: "C:\WeWarlock-0.7.0\WarlockCompiler.exe"
+
+[jasscompiler]
+//this is to specify what compiler to use, normally pjass.exe,
+// though you may also want to use JassParserCLI.exe ...
+"JassParserCLI.exe"
+// The next line specifies the jass syntax checker's arguments:
+"--report-leaks --pjass $COMMONJ $BLIZZARDJ $WAR3MAPJ"
+// i.e. You can change it to "$COMMONJ +rb $BLIZZARDJ -rb $WAR3MAPJ"
+// in case of a recent  PJass version ...
+
+[forcemethodevaluate]
+[noimplicitthis] 
+[/CODE]
+
+JassParserCLI can be downloaded from wc3c.net: [url]http://www.wc3c.net/showthread.php?t=105235&highlight=JassParser[/url].
+It has to be installed into the subdirectory "jasshelper" of the Warcraft III directory.
+
+Finally you have to open the map in JassNewGenPack and to save it either in debug mode or without debug mode. To optimize the map you could use: [url]http://www.hiveworkshop.com/forums/tools-560/default-wc3mapoptimizer-5-0-a-251543/[/url]
+
+If you cant run Warcraft loading the MPQ you can use [url]http://www.hiveworkshop.com/forums/tools-560/mpqdraft-v20060913-62893/[/url]
+to create a custom Warcraft exe using the TPoF.mpq file.

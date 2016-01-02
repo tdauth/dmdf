@@ -951,10 +951,12 @@ endif
 			/*
 			 * Readd normal unit abilities.
 			 */
+			/*
 			call UnitRemoveAbility(this.character().unit(), 'Aatk')
 			call UnitRemoveAbility(this.character().unit(), 'Amov')
 			call UnitAddAbility(this.character().unit(), 'Aatk')
 			call UnitAddAbility(this.character().unit(), 'Amov')
+			*/
 			// TODO patrol, stop
 			
 			/*

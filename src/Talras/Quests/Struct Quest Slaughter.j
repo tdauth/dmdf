@@ -48,6 +48,19 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			return thistype.allocate(whichRect)
 		endmethod
 	endstruct
+	
+	struct QuestAreaSlaughterFinish extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoBloodthirstiness.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			call QuestSlaughter.quest.evaluate().complete()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
 
 	struct QuestSlaughter extends AQuest
 		public static constant integer questItemKillTheVampireLord = 0
@@ -57,8 +70,10 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		public static constant integer questItemEnterTheDeathVault = 4
 		public static constant integer questItemKillTheMedusa = 5
 		public static constant integer questItemKillTheDiacon = 6
+		public static constant integer questItemMeetAtTheDeathVault = 7
 		private QuestAreaSlaughter m_questArea
 		private QuestAreaSlaughterEnter m_questAreaEnter
+		private QuestAreaSlaughterFinish m_questAreaFinish
 
 		implement Quest
 
@@ -159,34 +174,44 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.quest().displayUpdate()
 			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.medusa)
 		endmethod
-
-		private static method stateConditionCompleted5 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.medusa) == 0
-		endmethod
 		
 		private static method finishQuest takes nothing returns nothing
-			call VideoBloodthirstiness.video().play()
+			local thistype this = thistype(thistype.quest())
+			// don't start the video immediately
+			set this.m_questAreaFinish = QuestAreaSlaughterFinish.create(gg_rct_quest_slaughter_finish)
+			call this.questItem(thistype.questItemKillTheMedusa).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemKillTheDiacon).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemMeetAtTheDeathVault).setState(thistype.stateNew)
+			call this.displayState()
 		endmethod
 
-		private static method stateActionCompleted5 takes AQuestItem questItem returns nothing
-			if (questItem.quest().questItem(6).state() == thistype.stateNew) then
-				call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!"), null)
-				call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.deacon)
-			else
-				call thistype.finishQuest()
+		private static method stateConditionCompleted5 takes AQuestItem questItem returns boolean
+			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.medusa) == 0) then
+				if (questItem.quest().questItem(6).state() == thistype.stateNew) then
+					call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!"), null)
+					call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.deacon)
+				else
+					call thistype.finishQuest()
+				endif
+				
+				return true
 			endif
+			
+			return false
 		endmethod
 
 		private static method stateConditionCompleted6 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0
-		endmethod
-
-		private static method stateActionCompleted6 takes AQuestItem questItem returns nothing
-			if (questItem.quest().questItem(5).state() == thistype.stateNew) then
-				call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!"), null)
-			else
-				call thistype.finishQuest()
+			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0) then
+				if (questItem.quest().questItem(5).state() == thistype.stateNew) then
+					call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!"), null)
+				else
+					call thistype.finishQuest()
+				endif
+				
+				return true
 			endif
+			
+			return false
 		endmethod
 
 		/// Considers death units (spawn points) and continues searching for the first one with unit type id \p unitTypeId of spawn point \p spawnPoint with an 1 second interval.
@@ -208,7 +233,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCorpseExplode.blp")
 			call this.setDescription(tr("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten berichten könnt."))
-			call this.setReward(AAbstractQuest.rewardExperience, 1000)
+			call this.setReward(thistype.rewardExperience, 1000)
 			set this.m_questArea = QuestAreaSlaughter.create(gg_rct_quest_slaughter_enable)
 
 			set questItem = AQuestItem.create(this, tre("Tötet den Vampirgebieter.", "Kill the Vampire Lord."))
@@ -241,12 +266,12 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			set questItem = AQuestItem.create(this, tre("Tötet die Medusa.", "Kill the Medusa."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted5)
-			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted5)
 
 			set questItem = AQuestItem.create(this, tre("Tötet den Diakon der Finsternis.", "Kill the Deacon of Darkness."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted6)
-			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted6)
+			
+			set questItem = AQuestItem.create(this, tre("Trefft euch in der „Todesgruft“.", "Meet at the \"Death Crypt\"."))
 
 			return this
 		endmethod

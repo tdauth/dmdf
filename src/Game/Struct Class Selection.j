@@ -187,7 +187,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endif
 			
 			// evaluate this calls since it may exceed the operations limit. Each time a spell is being added it updates the whole grimoire UI which takes many operations.
-			call character.grimoire().addClassSpellsFromCharacter.evaluate(character)
+			call thistype.addClassSpellsFromCharacterWithNewOpLimit.evaluate(character)
 
 			call initCharacterSpells(character)
 			call MapData.initMapSpells(character)
@@ -243,6 +243,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			else
 				call character.setMovable(true)
 			endif
+		endmethod
+		
+		private static method addClassSpellsFromCharacterWithNewOpLimit takes Character character returns nothing
+			call character.grimoire().addClassSpellsFromCharacter(character)
 		endmethod
 		
 		public stub method onCharacterCreation takes AClassSelection classSelection, unit whichUnit returns ACharacter
@@ -343,8 +347,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				
 				call ACharacter.playerCharacter(whichPlayer).inventory().dropAll(GetUnitX(ACharacter.playerCharacter(whichPlayer).unit()), GetUnitY(ACharacter.playerCharacter(whichPlayer).unit()))
 				
-				// TODO do not destroy, replace him! only destroy and replace unit
-				call ACharacter.playerCharacter(whichPlayer).destroy()
+				call thistype.destroyCharacterWithNewOpLimit.evaluate(whichPlayer)
 			endif
 			call this.selectClass()
 			if (repick) then
@@ -365,6 +368,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call ACharacter.playerCharacter(whichPlayer).select(false)
 			endif
 			set whichPlayer = null
+		endmethod
+		
+		private static method destroyCharacterWithNewOpLimit takes player whichPlayer returns nothing
+			// TODO do not destroy, replace him! only destroy and replace unit
+			call ACharacter.playerCharacter(whichPlayer).destroy()
 		endmethod
 		
 		private static method triggerActionChange takes nothing returns nothing
@@ -440,15 +448,25 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method createClassSelectionForPlayer takes player whichPlayer returns nothing
-			local ClassSelection classSelection = ClassSelection.create.evaluate(whichPlayer, gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
+			 // new OpLimit if possible
+			local ClassSelection classSelection = thistype.createClassSelectionForPlayerWithNewOpLimit.evaluate(whichPlayer)
 			call classSelection.setStartX(MapData.startX(GetPlayerId(whichPlayer)))
 			call classSelection.setStartY(MapData.startY(GetPlayerId(whichPlayer)))
 			call classSelection.setStartFacing(0.0)
 			call classSelection.setShowAttributes(true)
 			call classSelection.enableArrowKeySelection(false)
 			call classSelection.enableEscapeKeySelection(false)
-			call classSelection.show.evaluate() // new OpLimit if possible
+			// new OpLimit if possible
+			call thistype.showClassSelectionForPlayerWithNewOpLimit.evaluate(classSelection)
 			call classSelection.minimize(false) // show maximized
+		endmethod
+		
+		private static method createClassSelectionForPlayerWithNewOpLimit takes player whichPlayer returns ClassSelection
+			return ClassSelection.create(whichPlayer, gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
+		endmethod
+		
+		private static method showClassSelectionForPlayerWithNewOpLimit takes ClassSelection classSelection returns nothing
+			call classSelection.show.evaluate()
 		endmethod
 		
 		/**
@@ -495,7 +513,13 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method triggerConditionRepick takes nothing returns boolean
-			return ACharacter.playerCharacter(GetTriggerPlayer()) != 0 and ACharacter.playerCharacter(GetTriggerPlayer()).isMovable() and not IsUnitDeadBJ(ACharacter.playerCharacter(GetTriggerPlayer()).unit()) and thistype.playerClassSelection(GetTriggerPlayer()) == 0
+			local boolean result = ACharacter.playerCharacter(GetTriggerPlayer()) != 0 and ACharacter.playerCharacter(GetTriggerPlayer()).isMovable() and not IsUnitDeadBJ(ACharacter.playerCharacter(GetTriggerPlayer()).unit()) and thistype.playerClassSelection(GetTriggerPlayer()) == 0
+			
+			if (not result) then
+				call SimError(GetTriggerPlayer(), tre("Repick momentan nicht möglich.", "Repick is not possible at the moment."))
+			endif
+			
+			return result
 		endmethod
 		
 		private static method triggerActionRepick takes nothing returns nothing
