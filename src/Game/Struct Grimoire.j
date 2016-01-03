@@ -961,6 +961,7 @@ endif
 			
 			/*
 			 * Readd backpack, grimoire and spells abilities to fix their icon positions.
+			 * TODO does not work
 			 */
 			call UnitRemoveAbility(this.character().unit(), Grimoire.abilityId)
 			call UnitRemoveAbility(this.character().unit(), 'A015')

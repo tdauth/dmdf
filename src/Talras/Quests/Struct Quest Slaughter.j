@@ -179,8 +179,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			local thistype this = thistype(thistype.quest())
 			// don't start the video immediately
 			set this.m_questAreaFinish = QuestAreaSlaughterFinish.create(gg_rct_quest_slaughter_finish)
-			call this.questItem(thistype.questItemKillTheMedusa).setState(thistype.stateCompleted)
-			call this.questItem(thistype.questItemKillTheDiacon).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemMeetAtTheDeathVault).setState(thistype.stateNew)
 			call this.displayState()
 		endmethod
