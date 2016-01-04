@@ -805,11 +805,12 @@ Für Version 0.6:
 * Forschung in Stützpunkt, die Pferd schneller macht oder mehr Einkünfte erlaubt.
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
-* Ab dem zweiten Repick steht der alte Charakter noch da.
+* FIXED (neues OpLimit beim Zerstören aller Zauber des Charakters): Ab dem zweiten Repick steht der alte Charakter noch da.
 * Illusionen und Kopie in Video brauchen das gleiche Angriffsanimationssystem.
 * FIXED: Deranors Leibwache soll Runen oder Tränke droppen.
+* Nach Repick sollen die gedroppten Gegenstände noch dem Spieler gehören.
 * Deranor sollte nach Tod auch etwas droppen.
-* Grundzauber ist nach Repick nicht geskillt?
+* Wut der Elemente ist nach Repick nie in den Favoriten?!
 
 Abgeschlossene Punkte:
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.

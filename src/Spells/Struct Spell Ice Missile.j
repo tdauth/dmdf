@@ -12,7 +12,7 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 			local real time
 			local effect freezeEffect = AddSpellEffectTargetById(SpellIceMissile.abilityId, EFFECT_TYPE_TARGET, target, "chest")
 			call SetUnitMoveSpeed(target, moveSpeed)
-			call Spell.showMoveSpeedTextTag(target, moveSpeedDifference)
+			call Spell.showMoveSpeedTextTag(target, -moveSpeedDifference)
 			debug call Print("New move speed: " + R2S(moveSpeed) + " and old move speed " + R2S(oldMoveSpeed))
 			set time = SpellIceMissile.time
 			loop

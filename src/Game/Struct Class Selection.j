@@ -345,7 +345,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				set thistype.m_repickQuests[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).quests()
 				set thistype.m_repickFellows[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).fellows()
 				
-				call ACharacter.playerCharacter(whichPlayer).inventory().dropAll(GetUnitX(ACharacter.playerCharacter(whichPlayer).unit()), GetUnitY(ACharacter.playerCharacter(whichPlayer).unit()))
+				call ACharacter.playerCharacter(whichPlayer).inventory().dropAll(GetUnitX(ACharacter.playerCharacter(whichPlayer).unit()), GetUnitY(ACharacter.playerCharacter(whichPlayer).unit()), true)
 	
 				call thistype.destroyCharacterWithNewOpLimit.evaluate(whichPlayer)
 			endif
