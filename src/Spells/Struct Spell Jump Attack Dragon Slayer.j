@@ -140,6 +140,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 300.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 300.0))
 				set i = i + 1
 			endloop
+			call DestroyEffect(AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, GetUnitX(usedUnit), GetUnitY(usedUnit)))
 			debug call Print("Loaded spell " + I2S(this))
 			call thistype.startTimer.evaluate()
 			call SetUnitAnimation(usedUnit, "Attack Slam")

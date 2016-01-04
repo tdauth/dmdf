@@ -11,6 +11,9 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 		private static constant real damageBonusFactor = 0.30
 		private static constant real time = 10.0
 		
+		/**
+		 * Collects all elemental damage spells and returns them as newly allocated vector.
+		 */
 		private method spells takes nothing returns AIntegerVector
 			local AIntegerVector spells = AIntegerVector.create()
 			local integer i = 0
@@ -43,7 +46,7 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 			local AIntegerVector spells = this.spells()
 			local integer i = 0
 			loop
-				exitwhen (i == this.character().spellCount())
+				exitwhen (i == spells.size())
 				call SpellElementalMageDamageSpell(spells[i]).addDamageBonusFactor(thistype.damageBonusFactor)
 				call this.character().displayMessage(ACharacter.messageTypeInfo, StringArg(tre("\"%s\" wurde verstärkt!", "\"%s\" was strengthened!"), GetObjectName(Spell(spells[i]).ability())))
 				set i = i + 1

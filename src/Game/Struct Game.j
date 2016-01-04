@@ -328,7 +328,7 @@ static if (DEBUG_MODE) then
 endif
 			// environment systems
 			call ADamageRecorder.init(true, thistype.onDamageAction, false)
-			call AMissile.init(1.00, 9.80665, false) /// @todo Set correct refresh rate.
+			call AMissile.init(0.05)
 			// NOTE AJump is only required for a jump done by Wigberht in the video "Wigberht".
 			call AJump.init(0.05)
 			// interface systems

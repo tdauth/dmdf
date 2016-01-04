@@ -11,6 +11,9 @@ library StructSpellsSpellElementalForce requires Asl, StructSpellsSpellElemental
 		private static constant real damageBonusFactor = 0.80
 		private static constant real time = 20.0
 		
+		/**
+		 * Collects all elemental damage spells and returns them as newly allocated vector.
+		 */
 		private method spells takes nothing returns AIntegerVector
 			local AIntegerVector spells = AIntegerVector.create()
 			local integer i = 0

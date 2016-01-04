@@ -1,4 +1,5 @@
 2014-11-22 Tamino Dauth <tamino@cdauth.eu>
+Handlung:
 * Quest Blood Thristiness überarbeitet. Logischere Dialoge mit der Elfin, warum jagt sie die Kreaturen? - ist gar nicht soo schlecht
 * Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
 * Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle?
@@ -7,7 +8,7 @@
 * "Der dunkle Kult": Egal wann der Diakon getötet wird bzw. alle, muss es bereits abgeschlossen sein, solange der Charakter in der Nähe war.
 * Letzter Auftrag, statt pan eventuell Videosequenz, die das Spiel unterbricht und die Ansicht danach wiederherstellt.
 * Dialog mit Björn über Dago, wird alles automatisch ausgeführt.
-* Wenn Charakter verwandelt ist und im Dialog Gegenstände erhält, hat er kein Inventar. Gegenstände liegen dann dort. Kann nur unverwandelt ansprechen oder egal?
+* DEPRECATED (verwandelter Charakter hat Rucksack, zudem wird addItem() direkt aufgerufen): Wenn Charakter verwandelt ist und im Dialog Gegenstände erhält, hat er kein Inventar. Gegenstände liegen dann dort. Kann nur unverwandelt ansprechen oder egal?
 * Anstatt Items gleich zu verteilen einfach das Item n mal droppen?
 * DEPREACATED: Immediate stop bricht Zauberbuch hinzufügen etc. ab?!
 * Tool schreiben, das die MMP-Datei der Minimap nimmt, ein Gebiet ausschneidet und ein Bild mit einer bestimmten Größe daraus erzeugt.
@@ -15,7 +16,7 @@
 * Ursula: Dialog einbauen falls man Druide ist!
 * Verwandlung in Dämon castet gleichzeitig auch Druidenverwandlungen! Als Befehlsstring "NICHTS" eintragen?
 * Schild Attachmentpunkt ändern, ist sonst in der Hand des Charakters.
-* AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
+* DEPRECATED: AInventory: wenn es wieder aktiviert wird nach Verwandlung zur Sicherheit alle Items die gerade schon eingesammelt wurden droppen!
 * Guntrichs Mühle: Keine Geister bei der Mühle, dafür aber Plünderer mit Anführer. Dialog bei Guntrich aktivieren, nachdem man bei der Mühle war -> neues Quest "Vertreibe die Plünderer".
 * Guntrichs Auftrag "Geisterstunde": Neues Ziel einbauen, dass man selbst herausfinden muss woher das Trommeln kommt.
 * Guntrichs Dialog: Wegelagerer bei der Mühle? mit Geisterstunde verbinden - Neues Quest einbauen "Wegelagerer vertreiben"?
@@ -779,7 +780,7 @@ Test mit zwei menschlichen Spielern:
 * DEPRECATED: Da es zwei Wettertypen mit Regen gibt, regnet es sehr oft. ASL-System anpassen, sodass man pro Wettertyp die Wahrscheinlichkeit und Dauer angeben kann.
 * DONE: ASL-Regensystem entfernen. Stattdessen per Timer selten Regen starten mit Donner- und Blitz-Effekt.
 * FIXED: Es regnet in Videos obwohl das Wetter gestoppt werden sollte.
-* Keine Videos mehr direkt nach Events: Diakon stirbt, Deranor stirbt, Ork-Belagerungswaffen werden vernichtet, letzte Ork-Welle wird vernichtet.
+* FIXED: Keine Videos mehr direkt nach Events: Diakon stirbt, Deranor stirbt, Ork-Belagerungswaffen werden vernichtet, letzte Ork-Welle wird vernichtet, Dago tötet Bären, letzte Ork-Welle (Die Nordmänner)
 * Bei der Verteidigung von Talras zu Beginn auch Nordmänner, Dorfbewohner und Waldläufer platzieren da in Video.
 
 Für Version 0.6:
@@ -798,17 +799,19 @@ Für Version 0.6:
 * Restliche Klassenzauber: Nekromant (1 Zauber), Ritter (1 Zauber), Waldläufer
 * Standfestigkeit auf Gebiet mit Gruppenheilung, sonst zu schlecht.
 * Bezwingung Tooltip fixen und Anzahl und Stärke und Dauer der beschworenen Templer reduzieren.
-* Sprungattacke: Knockback wird nicht ausgeführt, nur eine Einheit wird gelähmt.
+* FIXED: Sprungattacke: Knockback wird nicht ausgeführt, nur eine Einheit wird gelähmt.
 * Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
 * Musik aus Klassenauswahl nach Video beenden!
 * Forschung in Stützpunkt, die Pferd schneller macht oder mehr Einkünfte erlaubt.
-* Nach dem Laden die Icon-Positionen fixen
+* Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
 * Ab dem zweiten Repick steht der alte Charakter noch da.
 * Illusionen und Kopie in Video brauchen das gleiche Angriffsanimationssystem.
 * FIXED: Deranors Leibwache soll Runen oder Tränke droppen.
 * Deranor sollte nach Tod auch etwas droppen.
+* Grundzauber ist nach Repick nicht geskillt?
 
+Abgeschlossene Punkte:
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
 * FIXED: Händler Haid: Invasion nicht in Unterdialog packen, sondern auf Startseite.
 * FIXED: Knechte arbeiten auch noch um 2 Uhr morgens.
