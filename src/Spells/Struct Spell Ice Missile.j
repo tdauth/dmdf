@@ -33,7 +33,7 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 			local SpellIceMissile spell = SpellIceMissile(this.m_character.spellByAbilityId(SpellIceMissile.abilityId)) // TODO slow
 			local unit target = this.m_targetUnit
 			local real damage = spell.level() * SpellIceMissile.damageFactor
-			set damage = damage + SpellElementalMageDamageSpell(this).damageBonusFactor() * damage
+			set damage = damage + spell.damageBonusFactor() * damage
 			call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_COLD)
 			call ShowBashTextTagForPlayer(null, GetUnitX(target), GetUnitY(target), R2I(damage))
 			// execute since this method is called by .evaluate and the missile is destroyed afterwards
