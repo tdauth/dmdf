@@ -33,14 +33,14 @@ library StructSpellsSpellReserves requires Asl, StructGameClasses, StructGameGam
 			if (GetTriggerUnit() != thistype.target[playerIndex]) then
 				set thistype.target[playerIndex] = GetTriggerUnit()
 				set thistype.counter[playerIndex] = 1
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("Reserven: %i"), thistype.counter[playerIndex]), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tre("Reserven: %i", "Reserves: %i"), thistype.counter[playerIndex]), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
 			elseif (thistype.counter[playerIndex] < thistype.counterStartValue + GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) * thistype.counterLevelValue) then
 				set thistype.counter[playerIndex] = thistype.counter[playerIndex] + 1
 				
 				if (thistype.counter[playerIndex] < thistype.counterStartValue + GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) * thistype.counterLevelValue) then
-					call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("Reserven: %i"), thistype.counter[playerIndex]), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
+					call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tre("Reserven: %i", "Reserves: %i"), thistype.counter[playerIndex]), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
 				else
-					call ShowGeneralFadingTextTagForPlayer(null, tr("Reserven!"), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
+					call ShowGeneralFadingTextTagForPlayer(null, tre("Reserven!", "Reserves!"), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
 				endif
 			endif
 			

@@ -68,13 +68,13 @@ library StructMapQuestsQuestStormingTheMill requires Asl, StructMapMapNpcs, Stru
 			local thistype this = thistype.allocate(character, tre("Sturm auf die Mühle", "Storm on the Mill"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNSheep.blp")
-			call this.setDescription(tr("Der Schafsjunge auf dem Mühlberg westlich vom Bauernhof hat den Verstand verloren. Er will, dass die Wegelagerer bei Guntrichs Mühle weiter nördlich auf dem Berg in einem Angriff auf einem Schaf vernichtet werden.
-Achtung: Die Wegelagerer müssen vom Schaf herab getötet werden."))
+			call this.setDescription(tre("Der Schafshirte auf dem Mühlberg westlich vom Bauernhof hat den Verstand verloren. Er will, dass die Wegelagerer bei Guntrichs Mühle weiter nördlich auf dem Berg in einem Angriff auf einem Schaf vernichtet werden.
+Achtung: Die Wegelagerer müssen vom Schaf herab getötet werden.", "The shepherd on the mill hill west of the farm has gone mad. H e wants that the brigands at Guntrich's mill further north on the hill will be destroyed during an attack on a sheep. Warning: The brigands have to be killed from a sheep."))
 	
 			call this.setReward(thistype.rewardExperience, 900)
 			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)
 			// item 0
-			set questItem = AQuestItem.create(this, tre("Kaufe ein Schaf vom Schafsjungen für einen „Freundschaftspreis“.", "Buy a sheep from the sheep boy for a \"friendship price\"."))
+			set questItem = AQuestItem.create(this, tre("Kaufe ein Schaf vom Schafshirten für einen „Freundschaftspreis“.", "Buy a sheep from the shepherd for a \"friendship price\"."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
@@ -92,7 +92,7 @@ Achtung: Die Wegelagerer müssen vom Schaf herab getötet werden."))
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 2
-			set questItem = AQuestItem.create(this, tre("Berichte dem Schafsjungen davon.", "Report to the sheep boy about it."))
+			set questItem = AQuestItem.create(this, tre("Berichte dem Schafshirten davon.", "Report to the shepherd about it."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.sheepBoy())
 			call questItem.setPingColour(100.0, 100.0, 100.0)

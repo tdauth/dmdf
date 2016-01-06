@@ -125,7 +125,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			local AGroup targets = this.targets(GetSpellTargetX(), GetSpellTargetY())
 			local boolean result = true
 			if (targets.units().empty()) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Keine gültigen Ziele in Reichweite."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine gültigen Ziele in Reichweite.", "No valid targets in range."))
 				set result = false
 			endif
 			return result

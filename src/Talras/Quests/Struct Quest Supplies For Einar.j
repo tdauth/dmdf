@@ -13,7 +13,7 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 				call character.giveQuestItem('I060')
 				
 				set QuestSuppliesForEinar.characterQuest(character).m_counter = QuestSuppliesForEinar.characterQuest(character).m_counter + 1
-				call QuestSuppliesForEinar.characterQuest(character).displayUpdateMessage(Format(tr("%1%/%2% Kurzschwerter hergestellt.")).i(QuestSuppliesForEinar.characterQuest(character).m_counter).i(thistype.maxSwords).result())
+				call QuestSuppliesForEinar.characterQuest(character).displayUpdateMessage(Format(tre("%1%/%2% Kurzschwerter hergestellt.", "Crafted %1%/%2% Shortswords.")).i(QuestSuppliesForEinar.characterQuest(character).m_counter).i(thistype.maxSwords).result())
 				
 				if (QuestSuppliesForEinar.characterQuest(character).m_counter == thistype.maxSwords) then
 					call character.removeOnCraftItemFunction(thistype.onCraftItemFunction)
@@ -43,7 +43,7 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 			local AQuestItem questItem
 			set this.m_counter = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNLongsword.blp")
-			call this.setDescription(tr("Der Waffenhändler Einar aus Talras benötigt fünf geschmiedete Kurzschwerter, die er verkaufen kann. Die Schwerter müsse neu geschmiedet werden. Er möchte keine weiterverkaufte Ware."))
+			call this.setDescription(tre("Der Waffenhändler Einar aus Talras benötigt fünf geschmiedete Kurzschwerter, die er verkaufen kann. Die Schwerter müsse neu geschmiedet werden. Er möchte keine weiterverkaufte Ware.", "The arms merchant Einar from Talras requires five forged shortswords which he can sell. The swords must be forged newly. He does not want any resold goods."))
 			call this.setReward(thistype.rewardExperience, 300)
 			call this.setReward(thistype.rewardGold, 1000) // 5 * 150 + 250 reward
 			call this.setStateAction(thistype.stateActionCompleted, thistype.stateActionCompleted)

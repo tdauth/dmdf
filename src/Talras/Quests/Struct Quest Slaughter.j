@@ -17,8 +17,8 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			debug call Print("Sharing fellow: " + I2S(Fellows.dragonSlayer()))
 			call Fellows.dragonSlayer().shareWith(0)
 			debug call Print("After sharing a fellow")
-			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), "Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.")
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!"), null)
+			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), tre("Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.", "The Dragon Slayer can switch between close and range combat."))
+			call TransmissionFromUnit(Npcs.dragonSlayer(), tre("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!", "Nearby there is a powerful vampire who rules over a handful of servants. It is time to slaughter him and to free this land from another parasite!"), null)
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
@@ -105,8 +105,8 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 				set i = i + 1
 			endloop
 
-			call Character.displayItemAcquiredToAll(GetObjectName('I02L'), tr("Ein Teil des am Träger verursachten Schadens wird auf den Verursacher zurückgeworfen."))
-			call Character.displayItemAcquiredToAll(GetObjectName('I02M'), tr("Macht den Verzehrenden eine Zeit lang unverwundbar."))
+			call Character.displayItemAcquiredToAll(GetObjectName('I02L'), tre("Ein Teil des am Träger verursachten Schadens wird auf den Verursacher zurückgeworfen.", "Part of the damage caused to the holder will be thrown back to the causing unit."))
+			call Character.displayItemAcquiredToAll(GetObjectName('I02M'), tre("Macht den Verzehrenden eine Zeit lang unverwundbar.", "Makes the consumer invulnerable for some time."))
 		endmethod
 
 		private static method stateEventCompleted takes AQuestItem questItem, trigger whichTrigger returns nothing
@@ -120,7 +120,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			call ShowUnit(GetTriggerUnit(), false) // hide him to hide the blood effect
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch mehr seiner Art."), null)
+			call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch mehr seiner Art.", "Good work! But that was not the only vampire in this area. Further west there are more of his kind."), null)
 			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.vampires0(), UnitTypes.vampire)
 			call questItem.quest().questItem(1).enable()
 		endmethod
@@ -133,7 +133,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 					return true
 				// get next one to ping
 				else
-					call questItem.quest().displayUpdateMessage(Format(tr("%1%/3 Vampire")).i(3 - count).result())
+					call questItem.quest().displayUpdateMessage(Format(tre("%1%/3 Vampire", "%1%/3 Vampires")).i(3 - count).result())
 					call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.vampires0(), UnitTypes.vampire)
 				endif
 			endif
@@ -141,7 +141,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Erst gestern beobachtete ich einen dunklen Engel des Todes, weiter östlich. Lasst uns ihn vernichten!"), null)
+			call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Erst gestern beobachtete ich einen dunklen Engel des Todes, weiter östlich. Lasst uns ihn vernichten!", "Just yesterday I watched a dark angel of death, further east. Let us destroy her!"), null)
 			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathAngel(), UnitTypes.deathAngel)
 			call questItem.quest().questItem(2).enable()
 		endmethod
@@ -151,7 +151,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateActionCompleted2 takes AQuestItem questItem returns nothing
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Einige untote Drachen haben sich weiter nördlich versammelt. Auf zum Kampf!"), null)
+			call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Einige untote Drachen haben sich weiter nördlich versammelt. Auf zum Kampf!", "Some undead dragons gathered further north. To the battle!"), null)
 			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.boneDragons(), UnitTypes.boneDragon)
 			call questItem.quest().questItem(3).enable()
 		endmethod
@@ -161,7 +161,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateActionCompleted3 takes AQuestItem questItem returns nothing
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Ausgezeichnet! In der Nähe befindet sich eine Höhle mit einer geheimen Gruft. Sie wird von Eingeweihten auch „die Todesgruft“ genannt."), null)
+			call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Ausgezeichnet! In der Nähe befindet sich eine Höhle mit einer geheimen Gruft. Sie wird von Eingeweihten auch „die Todesgruft“ genannt.", "Excellent! Nearby there is a cave with a secret crypt. It is also called \"the Death Crypt\" by insiders."), null)
 			set thistype(questItem.quest()).m_questAreaEnter = QuestAreaSlaughterEnter.create(gg_rct_quest_slaughter_death_vault)
 			call questItem.quest().questItem(4).enable()
 		endmethod
@@ -186,7 +186,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private static method stateConditionCompleted5 takes AQuestItem questItem returns boolean
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.medusa) == 0) then
 				if (questItem.quest().questItem(6).state() == thistype.stateNew) then
-					call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!"), null)
+					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!", "This mud snake cattle! Come on, continue, into the crypt!"), null)
 					call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.deacon)
 				else
 					call thistype.finishQuest()
@@ -201,7 +201,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private static method stateConditionCompleted6 takes AQuestItem questItem returns boolean
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0) then
 				if (questItem.quest().questItem(5).state() == thistype.stateNew) then
-					call TransmissionFromUnit(Npcs.dragonSlayer(), tr("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!"), null)
+					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!", "Bastard! Only the serpent beast, then it's done!"), null)
 				else
 					call thistype.finishQuest()
 				endif
@@ -230,7 +230,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			local thistype this = thistype.allocate(0, tre("Metzelei", "Slaughter"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCorpseExplode.blp")
-			call this.setDescription(tr("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten berichten könnt."))
+			call this.setDescription(tre("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten berichten könnt.", "The Dragon Slayer requires of you to accompany her on heir campaign against the creatures of the forest, so that you can report about her heroic deeds to others."))
 			call this.setReward(thistype.rewardExperience, 1000)
 			set this.m_questArea = QuestAreaSlaughter.create(gg_rct_quest_slaughter_enable)
 

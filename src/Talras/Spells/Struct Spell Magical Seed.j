@@ -22,12 +22,12 @@ library StructMapSpellsSpellMagicalSeed requires Asl, StructMapMapMapData, Struc
 			endif
 			
 			if (IsMaskedToPlayer(GetSpellTargetX(), GetSpellTargetY(), this.character().player())) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sichtbar sein."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sichtbar sein.", "Target point has to be visible."))
 				return
 			endif
 			call PingMinimapExForPlayer(Player(0), GetRectCenterX(gg_rct_trommons_vegetable_garden), GetRectCenterY(gg_rct_trommons_vegetable_garden), 10.0, 100, 100, 100, false)
 			if (dist > 800.0) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ziel-Punkt muss sich in Trommons Garten befinden."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sich in Trommons Garten befinden.", "Target point has to be in Trommon's garden."))
 				return
 			endif
 			

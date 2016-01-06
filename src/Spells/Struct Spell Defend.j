@@ -11,7 +11,7 @@ library StructSpellsSpellDefend requires Asl, StructGameClasses, StructGameGame,
 		
 		private method condition takes nothing returns boolean
 			if (this.character().inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0 or not ItemTypes.itemTypeIdIsBuckler(this.character().inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Ritter muss einen Schild tragen."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ritter muss einen Schild tragen.", "The knight has to carry a buckler."))
 				return false
 			endif
 			

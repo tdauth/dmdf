@@ -38,13 +38,13 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 		
 		private method condition takes nothing returns boolean
 			if (thistype.m_counter[GetPlayerId(this.character().player())] == 0) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Keine Gegner getötet."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine Gegner getötet.", "No opponents have been killed."))
 				
 				return false
 			endif
 			
 			if (DmdfHashTable.global().handleBoolean(this.character().unit(), thistype.enabledKey)) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tr("Zauber ist bereits aktiv."))
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Zauber ist bereits aktiv.", "Spell is already active."))
 				
 				return false
 			endif
@@ -71,7 +71,7 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 			if (GetKillingUnit() == this.character().unit() and thistype.m_counter[GetPlayerId(this.character().player())] < GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) * 2) then
 				debug call Print("Rage increase counter")
 				set thistype.m_counter[GetPlayerId(this.character().player())] = thistype.m_counter[GetPlayerId(this.character().player())] + 1
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("Rage: %i"), thistype.m_counter[GetPlayerId(this.character().player())]), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tre("Rage: %i", "Rage: %i"), thistype.m_counter[GetPlayerId(this.character().player())]), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
 			endif
 			
 			return false

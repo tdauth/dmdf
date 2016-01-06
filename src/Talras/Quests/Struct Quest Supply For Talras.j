@@ -48,21 +48,21 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 		endmethod
 		
 		private static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, tr("Die Versorgung von Talras"))
+			local thistype this = thistype.allocate(character, tre("Die Versorgung von Talras", "The Supply of Talras"))
 			local AQuestItem questItem
 
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMonsterLure.blp")
-			call this.setDescription(tr("Markward, die rechte Hand des Herzogs, möchte sich auf eine bevorstehende Belagerung von Talras vorbereiten. Daher will er Vorräte vom Bauern Manfred in der Burg einlagern."))
+			call this.setDescription(tre("Markward, die rechte Hand des Herzogs, möchte sich auf eine bevorstehende Belagerung von Talras vorbereiten. Daher will er Vorräte vom Bauern Manfred in der Burg einlagern.", "Markward, the right hand of the duke wants to prepare for the impending siege of Talras. Therefore, he wants to store supplies from the farme Manfred in the castle."))
 			call this.setReward(thistype.rewardExperience, 500)
 			call this.setReward(thistype.rewardGold, 300)
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Veranlasse dass Manfred Vorräte nach Talras schickt."))
+			set questItem = AQuestItem.create(this, tre("Veranlasse dass Manfred Vorräte nach Talras schickt.", "Cause Manfred to send supplies to Talras."))
 			call questItem.setPing(true)
 			call questItem.setPingWidget(Npcs.manfred())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Hole die Vorräte aus der Scheune."))
+			set questItem = AQuestItem.create(this, tre("Hole die Vorräte aus der Scheune.", "Get the supplies out of the barn."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedSupply0)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedSupply0)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedSupply0)
@@ -71,7 +71,7 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 2
-			set questItem = AQuestItem.create(this, tr("Hole die Vorräte von Guntrichs Mühle."))
+			set questItem = AQuestItem.create(this, tre("Hole die Vorräte von Guntrichs Mühle.", "Get the supplies from Guntrich's mill."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedSupply1)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedSupply1)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedSupply1)
@@ -80,14 +80,14 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 3
-			set questItem = AQuestItem.create(this, tr("Bringe die Vorräte zu Manfred."))
+			set questItem = AQuestItem.create(this, tre("Bringe die Vorräte zu Manfred.", "Bring the supplies to Manfred."))
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedSendSupply)
 			call questItem.setPing(true)
 			call questItem.setPingWidget(Npcs.manfred())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			// item 4
-			set questItem = AQuestItem.create(this, tr("Berichte Markward davon."))
+			set questItem = AQuestItem.create(this, tre("Berichte Markward davon.", "Report Markward thereof."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.markward())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
