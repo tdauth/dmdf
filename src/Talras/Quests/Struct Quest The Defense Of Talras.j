@@ -262,7 +262,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call this.questItem(thistype.questItemDefeatTheEnemy).setState(thistype.stateNew)
 			call this.displayState()
 			
-			call Character.displayUnitAcquiredToAll(tr("Dararos"), tr("Dararos ist der König der Hochelfen. Er ist ein mächtiger Zauberer."))
+			call Character.displayUnitAcquiredToAll(tre("Dararos", "Dararos"), tre("Dararos ist der König der Hochelfen. Er ist ein mächtiger Zauberer.", "Dararos is the king of the High Elves. He is a powerful wizard."))
 		endmethod
 		
 		public method finishDefeatTheEnemy takes nothing returns nothing
@@ -504,7 +504,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			if (this.m_orcWavesTimerDialog == null) then
 				set this.m_orcWavesTimerDialog = CreateTimerDialog(this.m_orcWavesTimer)
 			endif
-			call TimerDialogSetTitle(this.m_orcWavesTimerDialog, tr("Ork-Welle:"))
+			call TimerDialogSetTitle(this.m_orcWavesTimerDialog, tre("Ork-Welle:", "Orc Wave:"))
 			call TimerDialogDisplay(this.m_orcWavesTimerDialog, true)
 		endmethod
 		
@@ -610,13 +610,13 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			if (this.m_timerDialog == null) then
 				set this.m_timerDialog = CreateTimerDialog(this.m_timer)
 			endif
-			call TimerDialogSetTitle(this.m_timerDialog, tr("Vorbereitung:"))
+			call TimerDialogSetTitle(this.m_timerDialog, tre("Vorbereitung:", "Preparation:"))
 			call TimerDialogDisplay(this.m_timerDialog, true)
 			
 			call this.questItem(thistype.questItemMoveToCamp).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemPrepare).enable()
 			
-			call Character.displayUnitAcquiredToAll(tr("Knecht"), tr("Ein Knecht kann verschiedene Verteidigungsanlagen errichten wie z. B. Tore, Barrikaden oder Ballistas."))
+			call Character.displayUnitAcquiredToAll(tre("Knecht", "Servant"), tre("Ein Knecht kann verschiedene Verteidigungsanlagen errichten wie z. B. Tore, Barrikaden oder Ballistas.", "A servant can build various defenses like for example gates, barricades or ballistas."))
 
 			call PingMinimap(GetRectCenterX(gg_rct_quest_the_defense_of_talras_recruits), GetRectCenterY(gg_rct_quest_the_defense_of_talras_recruits), bj_RESCUE_PING_TIME)
 			call PanCameraTo(GetRectCenterX(gg_rct_quest_the_defense_of_talras_recruits), GetRectCenterY(gg_rct_quest_the_defense_of_talras_recruits))
@@ -648,7 +648,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			set this.m_timer = null
 			set this.m_timerDialog = null
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNGuardTower.blp")
-			call this.setDescription(tr("Ein Teil der Armee der Orks und Dunkelelfen ist in Talras eingetroffen. Verteidigt Talras um jeden Preis gegen die Horden der Orks und Dunkelelfen."))
+			call this.setDescription(tre("Ein Teil der Armee der Orks und Dunkelelfen ist in Talras eingetroffen. Verteidigt Talras um jeden Preis gegen die Horden der Orks und Dunkelelfen.", "A part of the army of Orcs and Dark Elves arrived in Talras. Defend Talras at all costs against the hordes of Orcs and Dark Elves."))
 			
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Begebt euch zum Außenposten und beginnt mit der Verteidigung.", "Make your way to the outpost and begin with the defense."))

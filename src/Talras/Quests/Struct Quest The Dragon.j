@@ -47,7 +47,7 @@ library StructMapQuestsQuestTheDragon requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, tr("Der gezähmte Drache"))
+			local thistype this = thistype.allocate(character, tre("Der gezähmte Drache", "The Tamed Dragon"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNGreenDragon.blp")
 			call this.setDescription(tr("Ricman hat mir zur Belohnung den „Stab der Unsterblichkeit“ überreicht. Der Legende nach soll man mit diesem Stab einen gezähmten Drachen beschwören können. Ricman hat mich gebeten, den Stab auszuprobieren und ihm davon zu berichten."))
