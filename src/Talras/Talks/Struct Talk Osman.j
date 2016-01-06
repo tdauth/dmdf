@@ -61,91 +61,102 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Hallo.", "Hello."), null)
 			if (character.class() == Classes.cleric()) then
-			call speech(info, character, true, tre("Sei gegrüßt werter Bruder. Es ist selten geworden, dass ich einen Glaubensgenossen treffe.", "Best greetings, brother. It happened to become a rareness to meet a coreligionist."), null)
-			call info.talk().showRange(this.m_youAreKnowBeliever.index(), this.m_itsMyPleasure.index(), character)
+				call speech(info, character, true, tre("Sei gegrüßt werter Bruder. Es ist selten geworden, dass ich einen Glaubensgenossen treffe.", "Best greetings, brother. It happened to become a rareness to meet a coreligionist."), null)
+				call this.showRange(this.m_youAreKnowBeliever.index(), this.m_itsMyPleasure.index(), character)
 			else
-			call speech(info, character, true, tre("Ich grüße dich.", "Be welcome."), null)
-			call info.talk().showStartPage(character)
+				call speech(info, character, true, tre("Ich grüße dich.", "Be welcome."), null)
+				call this.showStartPage(character)
 			endif
 		endmethod
 
 		// (Nach der Begrüßung, Osman steht vor den Gräbern und betet)
 		private static method infoCondition1 takes AInfo info, ACharacter character returns boolean
-			return info.talk().infoHasBeenShownToCharacter(0, character) and RectContainsUnit(gg_rct_waypoint_osman_0, gg_unit_n00R_0101)
+			local thistype this = thistype(info.talk())
+			return this.infoHasBeenShownToCharacter(0, character) and RectContainsUnit(gg_rct_waypoint_osman_0, gg_unit_n00R_0101)
 		endmethod
 
 		// Was machst du hier?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Was machst du hier?", "What are you doing here?"), null)
-			if (not TalkOsman(info.talk()).wasOffended(character.player())) then
-			call speech(info, character, true, tre("Nun, ich bin Osman, der Kleriker des Herzogs und wie du vielleicht gesehen hast, habe ich hier gebetet, um in meinem Glauben Kraft zu finden und unseren geliebten Herzog zu stärken.", "Well, I am Osman, the duke's cleric. And as you could eventually see I was praying, to become stronger due to my faith and to strengthen our beloved duke."), null)
-			call speech(info, character, true, tre("Dies hier sind die Gräber der Ahnen unseres Herzogs. Mögen sie in Frieden ruhen.", "These here are the graves of the ancestors. Do they rest in peace."), null)
-			call info.talk().showStartPage(character)
+			if (not this.wasOffended(character.player())) then
+				call speech(info, character, true, tre("Nun, ich bin Osman, der Kleriker des Herzogs und wie du vielleicht gesehen hast, habe ich hier gebetet, um in meinem Glauben Kraft zu finden und unseren geliebten Herzog zu stärken.", "Well, I am Osman, the duke's cleric. And as you could eventually see I was praying, to become stronger due to my faith and to strengthen our beloved duke."), null)
+				call speech(info, character, true, tre("Dies hier sind die Gräber der Ahnen unseres Herzogs. Mögen sie in Frieden ruhen.", "These here are the graves of the ancestors. Do they rest in peace."), null)
+				call this.showStartPage(character)
 			else
-			call speech(info, character, true, tre("Was maßt du dir an, mich weiterhin zu belästigen? Soll ich dich etwa der Ketzerei beschuldigen?", "How you arrogate to keep bothering me? Do you want to get blamed for heresy?"), null)
-			call info.talk().showRange(this.m_youLikeYoungBoys.index(), this.m_iAmSorry.index(), character)
+				call speech(info, character, true, tre("Was maßt du dir an, mich weiterhin zu belästigen? Soll ich dich etwa der Ketzerei beschuldigen?", "How you arrogate to keep bothering me? Do you want to get blamed for heresy?"), null)
+				if (not this.infoHasBeenShownToCharacter(this.m_youLikeYoungBoys.index(), character) or not this.infoHasBeenShownToCharacter(this.m_iAmSorry.index(), character)) then
+					call this.showRange(this.m_youLikeYoungBoys.index(), this.m_iAmSorry.index(), character)
+				else
+					call this.showStartPage(character)
+				endif
 			endif
 		endmethod
 
 		// (Charakter hat den Heiltrank erhalten)
 		private static method infoCondition2 takes AInfo info, ACharacter character returns boolean
-			return TalkOsman(info.talk()).gaveHealPotion(character)
+			local thistype this = thistype(info.talk())
+			return this.gaveHealPotion(character)
 		endmethod
 
 		// Hast du noch mehr Heilmittel?
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Hast du noch mehr Heilmittel?", "Do you have any more healings?"), null)
 			// (Wird zum ersten Mal aufgerufen)
-			if (not info.talk().infoHasBeenShownToCharacter(2, character)) then
-			call speech(info, character, true, tre("So, der Trank ist dir also gut bekommen? Das freut mich zu hören. Selbstverständlich habe ich noch mehr Heilmittel, allerdings wird dich das auch eine Kleinigkeit kosten.", "I see, the healing potion did well? I'm glad to hear that. Of course I have more healings, though it will cost you a trifle."), null)
+			if (not this.infoHasBeenShownToCharacter(2, character)) then
+				call speech(info, character, true, tre("So, der Trank ist dir also gut bekommen? Das freut mich zu hören. Selbstverständlich habe ich noch mehr Heilmittel, allerdings wird dich das auch eine Kleinigkeit kosten.", "I see, the healing potion did well? I'm glad to hear that. Of course I have more healings, though it will cost you a trifle."), null)
 			// (Wird nicht zum ersten Mal aufgerufen)
 			else
-			call speech(info, character, true, tre("Noch mehr? Mann, wo treibst du dich denn rum? Wie auch immer, selbstverständlich habe ich noch ein paar.", "Even more? Man, where are you around all the time? Anyways, of course I have to offer some more."), null)
+				call speech(info, character, true, tre("Noch mehr? Mann, wo treibst du dich denn rum? Wie auch immer, selbstverständlich habe ich noch ein paar.", "Even more? Man, where are you around all the time? Anyways, of course I have to offer some more."), null)
 			endif
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// (Nach der Begrüßung, Auftragsziel 1 des Auftrags „Geisterstunde“ ist aktiv)
 		private static method infoCondition3 takes AInfo info, ACharacter character returns boolean
-			return info.talk().infoHasBeenShownToCharacter(0, character) and QuestWitchingHour.characterQuest(character).questItem(0).isNew()
+			local thistype this = thistype(info.talk())
+			return this.infoHasBeenShownToCharacter(0, character) and QuestWitchingHour.characterQuest(character).questItem(0).isNew()
 		endmethod
 
 		// Guntrich braucht deine Hilfe.
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Guntrich braucht deine Hilfe. Er sagt, auf dem Berg, auf dem seine Mühle steht, würde es spuken und …", "Guntrich does need your help. He says it hounts, on the hill, right where his mill is placed  …"), null)
 			call speech(info, character, true, tre("Verdammt! Ich hab schon genug zu tun, hier in der Burg. Soll er sich doch selbst drum kümmern. Solange er das nicht bezahlen kann, werde ich keinen Finger krumm machen!", "Damn it! I'm busy enough here inside the castle. Shall he deal with it on his own. I won't lift a finger aslong as he can't pay!"), null)
 			// Auftragsziel 1 des Auftrags „Geisterstunde“ ist abgeschlossen
 			call QuestWitchingHour.characterQuest(character).questItem(0).setState(AAbstractQuest.stateCompleted)
 			call QuestWitchingHour.characterQuest(character).questItem(1).enable()
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// (Nach Begrüßung, permanent)
 		private static method infoConditionAboutTheGods takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
-			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character)
+			return this.infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
 
 		// Erzähl mir etwas über die Götter.
 		private static method infoActionAboutTheGods takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Erzähl mir etwas über die Götter.", "Tell me about the gods."), null)
 			call speech(info, character, true, tre("Die Götter wachen über uns. Sie blicken herab auf uns Diener, uns winzige Kreaturen. Sie beobachten jeden unserer Schritte und bewerten uns aufgrund unseres Willens, unserer Taten und unseres Glaubens.", "The gods are watching on us. They look down to us servants, us tiny creaturs. They observe all our decissions and judge us on the basis of our will, our deeds, and our faith."), null)
 			call speech(info, character, true, tre("Wendest du dich von ihnen ab, wird es dein Untergang sein! Sie vergeben nicht, sie vergessen nicht, und sie werden letztendlich immer ihre Rache vollziehen!", "Once you turn away from them, it will be your doom! They don't forgive, they don't forget, and in the end they will always enforce revenge."), null)
 			call speech(info, character, true, tre("Nimm dich in Acht vor dir selbst und wache über deine Taten auf dass du nicht ihren Zorn auf dich lenkst.", "Take care of yourself, and pay attention on your own deeds, so you will never direct theit wrath on you."), null)
 			call speech(info, character, false, tre("Interessant.", "Interesting."), null)
 			
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// (Nach Begrüßung, permanent)
 		private static method infoConditionArea takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
-			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character)
+			return this.infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
 
 		// Was weißt du über diese Gegend?
 		private static method infoActionArea takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Was weißt du über diese Gegend?", "What do you know about this area?"), null)
 			call speech(info, character, true, tre("Eine ganze Menge. Vor vielen Jahren ging ich von meinem Kloster auf Pilgerfahrt und zog durch das Königreich, um Antworten zu finden. Antworten auf alle Fragen, die ich mir in der langen Zeit im Kloster gestellt hatte.", "Whole a lot. Many years ago I went from my monastery on a pilgrimage and travelled though the kingdom to find answers. Answers to all my questions I had asked myself during the long stay in the monastery."), null)
 			call speech(info, character, true, tre("Als ich schließlich Talras erreichte, traf ich auf den damaligen Herzog, Heimrichs Vater, der mich als persönlichen Burgkleriker anstellte.", "When I finaly reached Talas, I met the then Duke, Heimrich's father, who hired me as his personal castle cleric."), null)
@@ -156,17 +167,18 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			call speech(info, character, true, tre("Aber da die Orks und Dunkelelfen bereits in das Königreich eingefallen sind, werden wird uns vermutlich bald mit übleren Kreaturen auseinandersetzen mÃ¼ssen.", "But since the orcs and dark evles have already invaded the kingdom, we probably will have to face even more evil creaturs very soon."), null)
 			call speech(info, character, true, tre("Mögen uns die Götter dabei beistehen!", "Shall the gods stay with us."), null)
 			
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// (Nach Begrüßung)
 		private static method infoConditionHelp takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
-			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character)
+			return this.infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
 
 		// Kann ich dir irgendwie helfen?
 		private static method infoActionHelp takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Kann ich dir irgendwie helfen?", "Is there something I can help with?"), null)
 			call speech(info, character, true, tre("Helfen? Sicherlich, Hilfe kann ich immer gebrauchen. Ein alter Mann wie ich spürt, dass es mit ihm zu Ende geht.", "Help? Of course, I can always need help. An old man like me feels when one's end comes closer."), null)
 			call speech(info, character, true, tre("Wenn mein Ende gekommen ist, wird die Frage im Raume stehen, ob ich meinem Glauben so gewissenhaft gedient habe, wie es die Götter von mir verlangt haben.", "When my time has come the question will arise if I served my faith as relegious, as the gods called for."), null)
@@ -182,17 +194,18 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			
 			call QuestTheDarkCult.characterQuest(character).enable()
 			
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 			
 		// (Nach „Kann ich dir irgendwie helfen?“ und Auftrag „Der dunkle Kult“ ist noch aktiv, permanent)
 		private static method infoConditionMoreAboutTheCult takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
-			return info.talk().infoHasBeenShownToCharacter(this.m_help.index(), character) and QuestTheDarkCult.characterQuest(character).isNew()
+			return this.infoHasBeenShownToCharacter(this.m_help.index(), character) and QuestTheDarkCult.characterQuest(character).isNew()
 		endmethod
 
 		// Erzähl mir mehr über den dunklen Kult.
 		private static method infoActionMoreAboutTheCult takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Erzähl mir mehr über den dunklen Kult.", "Tell me some more about this dark cult."), null)
 			call speech(info, character, true, tre("Dieser Kult hatte einen Anführer, einen dunklen Diakon. Er versprach seinen Gefolgsleuten das ewige Leben und so schlossen sich ihm einige Bewohner an.", "The culr had a leader, a dark deacon. He promised his followers an eternal life and could convice some of the residents this way."), null)
 			call speech(info, character, true, tre("Ich weiß nicht, woher er die Gewissheit nahm, das Leben kontrollieren zu können, aber anscheinend war er sehr überzeugend. Seine Leute taten alles für ihn und gehorchten ihm aufs Wort.", "I don't know where he got this confidence about being able to control the life, but apparently he was very convincingly. His followers were about to do everything for him and obeyed every single order."), null)
@@ -201,22 +214,23 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			call speech(info, character, false, tre("Wo befand sich ihr Versteck?", "Where was their hide?"), null)
 			call speech(info, character, true, tre("Hm, wenn ich das noch wüsste. Ich glaube, sie hielten sich irgendwo im nördlichen Wald versteckt.", "Hm, if I could just remember that. I believe they were hiding somewhere in the northern forest."), null)
 			
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// (Nach „Kann ich dir irgendwie helfen?“ und Auftrag „Der dunkle Kult“ ist noch aktiv)
 		private static method infoConditionSearchForTheCult takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
-			return info.talk().infoHasBeenShownToCharacter(this.m_help.index(), character) and QuestTheDarkCult.characterQuest(character).isNew()
+			return this.infoHasBeenShownToCharacter(this.m_help.index(), character) and QuestTheDarkCult.characterQuest(character).isNew()
 		endmethod
 
 		// Warum sucht keiner nach den verbliebenen Kultanhängern?
 		private static method infoActionSearchForTheCult takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Warum sucht keiner nach den verbliebenen Kultanhängern?", "Why noone is searching for the rest of culr followers?"), null)
 			call speech(info, character, true, tre("Ach … das ist eine lange Geschichte. Heimrich wuchs mit diesem dunklen Kapitel in der Geschichte seiner Heimat auf. Später wollte er nichts mehr davon wissen.", "Oh, this a quite long story. Heimrich grep up together with his homeland's dark chapter. But later on, he didn't want to deal with it anymore."), null)
 			call speech(info, character, true, tre("Auch die anderen Bewohner schweigen lieber darüber. Es scheint, den Leuten wird bei dem Gedanken an diese Geschichte sehr unbehaglich.", "Other residents also prefer to remain silent about it. It seems the people start to get very uncomfortable when thinking abour the past."), null)
 			
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// (Auftragsziel 1 des Auftrags „Der dunkle Kult“ ist abgeschlossen und Auftragsziel 2 des Auftrags ist noch aktiv)
@@ -226,6 +240,7 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 
 		// Ich habe den dunklen Kult ausfindig gemacht.
 		private static method infoActionFoundTheCult takes AInfo info, Character character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Ich habe den dunklen Kult ausfindig gemacht.", "I was able to locate the darc cult."), null)
 			call speech(info, character, true, tre("Was sagst du da? Der Kult existiert noch? Sprich rasch!", "You say what? The cult does still exist?"), null)
 			call speech(info, character, false, tre("Sie haben eine Halle in einem Berg im Norden. Dort halten sie irgendwelche Predigten ab.", "They settled down in a hall inside a mountain in the north. They hold certain sermons there."), null)
@@ -243,7 +258,7 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			// TODO give items
 			//call character.giveItem()
 			
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// (Auftragsziel 3 des Auftrags „Der dunkle Kult“ ist abgeschlossen und Auftragsziel 4 ist aktiv)
@@ -253,6 +268,7 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 
 		// Der Kult ist Geschichte.
 		private static method infoActionCultIsHistory takes AInfo info, Character character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Der Kult ist Geschichte.", "The cult became history."), null)
 			call speech(info, character, true, tre("Gepriesen seist du, Gottgesandter! Das Übel hat nun endlich ein Ende und ich muss nicht unwissend sterben. Nimm dies als Belohnung. Du hast es dir verdient.", "You shall be blessed, gods' ambassador. The evil is finaly defeated and I won't die unsespecting. Take this as reward, you really deserved it."), null)
 
@@ -260,34 +276,37 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			// TODO give items
 			//call character.giveItem()
 			
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// Du bist kein Glaubensgenosse. Du bist nur ein Feigling, der sich beim Herzog versteckt. Ein wahrer Kleriker zieht umher und kämpft für seinen Glauben.
 		private static method infoAction0_0 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Du bist kein Glaubensgenosse. Du bist nur ein Feigling, der sich beim Herzog versteckt. Ein wahrer Kleriker zieht umher und kämpft für seinen Glauben.", "You are no fellow believer. You're just a coward who fears the Duke. A true cleric travels around and fights for his faith."), null)
 			call speech(info, character, true, tre("Hüte deine Zunge elender Wurm!", "Watch your mouth, you miserable worm!"), null)
-			call TalkOsman(info.talk()).offend(character.player())
-			call info.talk().showStartPage(character)
+			call this.offend(character.player())
+			call this.showStartPage(character)
 		endmethod
 
 		// Die Freude ist ganz meinerseits.
 		private static method infoAction0_1 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Die Freude ist ganz meinerseits.", "The pleasure is mine."), null)
 			call speech(info, character, true, tre("Na das ist mir doch glatt ein paar Goldmünzen wert. Hier, nimm Bruder!", "Well, this is worth some of my gold coins! Here you are, brother."), null)
 			call character.addGold(thistype.brotherGoldReward)
 			call speech(info, character, false, tre("Danke.", "Thanks."), null)
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// So so, du stehst wohl auf junge Knaben.
 		private static method infoAction1_0 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("So so, du stehst wohl auf junge Knaben.", "Ahem, so you have a favel for young boys."), null)
 			call speech(info, character, true, tre("Jetzt reicht's mir! Ich werde mich beim Herzog persönlich über dich beschweren!","You went too far now! I persoanly will complain to the Duke about you."), null)
 			call QuestThePaedophilliacCleric.characterQuest(character).enable()
 			call speech(info, character, false, tre("Es war mir ein Vergnügen.", "It was a pleasure."), null)
 			call speech(info, character, true, tre("Du wirst schon noch dein blaues Wunder erleben!", "You will experience a nasty surprise soon!"), null)
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// Das vorhin tut mir leid. Ich hab das nicht so gemeint.
@@ -296,15 +315,16 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			call speech(info, character, false, tre("Das von vorhin tut mir leid. Ich hab das nicht so gemeint.", "I'm sorry about the situation before. It wasn't meant like that."), null)
 			call speech(info, character, true, tre("Schon gut. Ich weiß ja wie angespannt die Lage ist, da kann einem so etwas schon mal raus rutschen.", "Alright. Yet, I know how keen the current situation is, and something like this might easily happen then."), null)
 			call speech(info, character, true, tre("Verdammter Krieg eben.", "Just this goddamn war."), null)
-			call info.talk().showRange(this.m_shutUp.index(), this.m_back.index(), character)
+			call this.showRange(this.m_shutUp.index(), this.m_back.index(), character)
 		endmethod
 
 		// Halt den Mund du Tölpel!
 		private static method infoAction1_0_0 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Halt den Mund du Tölpel!", "Shut your mouth, you fool!"), null)
 			call speech(info, character, true, tre("Du scheinst wohl unter Stimmungsschwankungen zu leiden. Ich glaube, ich hab da was für dich. Wäre doch gelacht, wenn dir ein alter Kleriker wie ich nicht helfen könnte. Hier, nimm das!", "You seem to suffer from mood swings. I've got something for you. It was laughable if a old cleric like me was unable to help. Here you are!"), null)
-			call TalkOsman(info.talk()).giveHealPotion(character)
-			call info.talk().showStartPage(character)
+			call this.giveHealPotion(character)
+			call this.showStartPage(character)
 		endmethod
 
 		private static method create takes nothing returns thistype
@@ -312,9 +332,9 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			local integer i = 0
 			loop
 			exitwhen (i == MapData.maxPlayers)
-			set this.m_wasOffended[i] = false
-			set this.m_gaveHealPotion[i] = false
-			set i = i + 1
+				set this.m_wasOffended[i] = false
+				set this.m_gaveHealPotion[i] = false
+				set i = i + 1
 			endloop
 
 			// start page
