@@ -86,6 +86,11 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 	endstruct
 
 	struct MapData extends MapDataInterface
+static if (DEBUG_MODE) then
+		public static constant string mapName = "Karte 1 - Talras"
+else
+		public static constant string mapName = "Talras0.6"
+endif
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
@@ -124,6 +129,8 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		private static timer m_resetRainTimer
 		private static timer m_thunderTimer
 		private static weathereffect m_rainWeatherEffect
+		
+		private static Zone m_zoneHolzbruck
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -243,6 +250,8 @@ endif
 			call TriggerRegisterEnterRegion(thistype.m_talkHintTrigger, thistype.m_talkHintRegion, null)
 			call TriggerAddCondition(thistype.m_talkHintTrigger, Condition(function thistype.triggerConditionTalkHint))
 			call TriggerAddAction(thistype.m_talkHintTrigger, function thistype.triggerActionTalkHint)
+			
+			set thistype.m_zoneHolzbruck = Zone.create("Karte 2 - Holzbruck", gg_rct_zone_holzbruck)
 			
 			call AddDoodadOcclusion('D027')
 			call AddDoodadOcclusion('D028')

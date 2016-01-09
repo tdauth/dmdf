@@ -8,6 +8,7 @@
 //! import "Game/Struct Grimoire.j"
 //! import "Game/Struct History.j"
 //! import "Game/Struct Item Types.j"
+//! import "Game/Struct Map Changer.j"
 //! import "Game/Interface Map Data Interface.j"
 //! import "Game/Struct Quest Area.j"
 static if (DMDF_NPC_ROUTINES) then
@@ -19,7 +20,8 @@ endif
 //! import "Game/Struct Talk.j"
 //! import "Game/Struct Tree Transparency.j"
 //! import "Game/Struct Tutorial.j"
+//! import "Game/Struct Zone.j"
 //! import "Game/Library Language.j"
 
-library Game requires StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, LibraryGameLanguage
+library Game requires StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
 endlibrary

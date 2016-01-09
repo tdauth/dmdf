@@ -9,6 +9,8 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		private destructable array m_assemblyPointMarker[4]
 		private rect m_rect
 		private trigger m_enterTrigger
+		// dynamic members
+		private boolean m_destroyOnActivation
 		/**
 		 * The destructable type ID of an energie wall.
 		 */
@@ -17,6 +19,14 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		 * The length of an energie wall with scaling 1.0.
 		 */
 		private static constant real defaultLength = 6 * bj_CELLWIDTH
+		
+		public method setDestroyOnActivation takes boolean destroyOnActivation returns nothing
+			set this.m_destroyOnActivation = destroyOnActivation
+		endmethod
+		
+		public method destroyOnActivation takes nothing returns boolean
+			return this.m_destroyOnActivation
+		endmethod
 		
 		/**
 		 * Checks for a user specified condition which must be true to activate the event at all.
@@ -86,8 +96,10 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			 * A quest are should only be used once.
 			 * Therefore it will be disabled automatically.
 			 */
-			call this.cleanupRect()
-			call DisableTrigger(GetTriggeringTrigger())
+			if (this.destroyOnActivation()) then
+				call this.cleanupRect()
+				call DisableTrigger(GetTriggeringTrigger())
+			endif
 			/*
 			 * Must be executed since it contains TriggerSleepAction() calls most of the time like playing videos and waiting for them.
 			 */
@@ -148,6 +160,8 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			// bottom
 			set this.m_assemblyPointMarker[3] = CreateDestructable(thistype.destructableId, bottomX, bottomY, 90.0, horizontalScaling,  0)
 			call SetDestructableInvulnerable(this.m_assemblyPointMarker[3], true)
+			
+			call this.setDestroyOnActivation(true)
 			
 			set this.m_enterTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(this.m_enterTrigger, this.m_rect)

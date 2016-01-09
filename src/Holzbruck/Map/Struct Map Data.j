@@ -1,6 +1,11 @@
 library StructMapMapMapData requires Asl, StructGameGame
 
 	struct MapData extends MapDataInterface
+static if (DEBUG_MODE) then
+		public static constant string mapName = "Karte 2 - Holzbruck"
+else
+		public static constant string mapName = "Holzbruck0.6"
+endif
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
@@ -19,6 +24,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static sound cowSound = null
 		
+		private static Zone m_zoneTalras
+		
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
 		private static method create takes nothing returns thistype
@@ -33,6 +40,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static method init takes nothing returns nothing
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
+			
+			set thistype.m_zoneTalras = Zone.create("Karte 1 - Talras", gg_rct_zone_talras)
 			
 			call AddDoodadOcclusion('D027')
 			call AddDoodadOcclusion('D028')
@@ -136,6 +145,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref Game.
 		public static method resetCameraBoundsForPlayer takes player user returns nothing
+		endmethod
+		
+		/// Required by \ref Game.
+		public static method initMapSpells takes ACharacter character returns nothing
 		endmethod
 
 		/// Required by \ref Game.
