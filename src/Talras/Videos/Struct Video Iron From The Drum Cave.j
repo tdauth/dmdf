@@ -26,7 +26,7 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Was sagt ihr? Ihr braucht Eisen aus meinen Minen?"), null)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Was sagst du? Du brauchst Eisen aus meinen Minen?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -39,7 +39,7 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Was habe ich davon mein Eisen euch zu geben anstatt meine eigenen Krieger damit auszurüsten, um meinen Bruder endlich zu besiegen?"), null)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Was habe ich davon mein Eisen dir zu geben anstatt meine eigenen Krieger damit auszurüsten, um meinen Bruder endlich zu besiegen?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -65,19 +65,19 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Ich kann euch einen Teil meines Eisens geben. Meine Imps können es für euch zur Burg transportieren, jedoch brauche ich die kräftigsten Imps hier bei mir. Ich schicke euch also die schwachen Imps. Ihr müsst sie auf ihrem Weg beschützen, ansonsten werden sie vermutlich von wilden Kreaturen umgebracht."), null)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Ich kann dir einen Teil meines Eisens geben. Meine Imps können es für dich zur Burg transportieren, jedoch brauche ich die kräftigsten Imps hier bei mir. Ich schicke dir also die schwachen Imps. Du musst sie auf ihrem Weg beschützen, ansonsten werden sie vermutlich von wilden Kreaturen umgebracht."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Hört gut zu, ich möchte euch ein kleines Geheimnis anvertrauen. Diese Imps sind nicht das, was ich mir unter fürchterlichen Dämonen vorgestellt habe. Sie sind schwach, faul, ja es sind armselige Kreaturen."), null)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Hör gut zu, ich möchte dir ein kleines Geheimnis anvertrauen. Diese Imps sind nicht das, was ich mir unter fürchterlichen Dämonen vorgestellt habe. Sie sind schwach, faul, ja es sind armselige Kreaturen."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Es ist wohl besser sie umgehend loszuwerden, aber töten nein! Sie sind meine Schöpfung, das würde ich nicht über's ... über mich bringen. Verschafft ihnen eine Bleibe nachdem sie ihren Dienst für euch getan haben, dann sind wir quitt."), null)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Es ist wohl besser sie umgehend loszuwerden, aber töten nein! Sie sind meine Schöpfung, das würde ich nicht über's ... über mich bringen. Verschaffe ihnen eine Bleibe nachdem sie ihren Dienst für dich getan haben, dann sind wir quitt."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
