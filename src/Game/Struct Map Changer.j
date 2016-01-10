@@ -38,7 +38,7 @@ endif
 				set saveGameFolder = thistype.m_currentSaveGame + "\\"
 			endif
 			// "CustomSaves\\" +
-			return mapName + "\\" + thistype.zonesFolder + "\\" + saveGameFolder + mapName + ".w3z"
+			return thistype.zonesFolder + "\\" + saveGameFolder + mapName + ".w3z"
 		endmethod
 	
 		private static method currentLoadGamePath takes string mapName returns string
@@ -68,14 +68,20 @@ endif
 		 * Changes map to \p newMap and saves the current map.
 		 */
 		private static method changeMapSinglePlayer takes string oldMap, string newMap returns nothing
+			local string copyPath = newMap + "\\" + thistype.currentSaveGamePath(oldMap)
 			call SaveGame(thistype.currentSaveGamePath(oldMap))
-			debug call Print("Load game path: " + thistype.currentLoadGamePath(newMap))
-		
-			if (SaveGameExists(thistype.currentLoadGamePath(newMap))) then
-				call LoadGame(thistype.currentLoadGamePath(newMap), false)
-			else
-				debug call Print("Change map to " + thistype.mapPath(newMap))
-				call ChangeLevel(thistype.mapPath(newMap), false)
+			// copy save game to the folder of the new map
+			if (CopySaveGame(thistype.currentSaveGamePath(oldMap), copyPath)) then
+				debug call Print("Load game path: " + thistype.currentLoadGamePath(newMap))
+			
+				if (SaveGameExists(thistype.currentLoadGamePath(newMap))) then
+					call LoadGame(thistype.currentLoadGamePath(newMap), false)
+				else
+					debug call Print("Change map to " + thistype.mapPath(newMap))
+					call ChangeLevel(thistype.mapPath(newMap), false)
+				endif
+			debug else
+				debug call Print("Error on copying save game to " + copyPath)
 			endif
 		endmethod
 		
