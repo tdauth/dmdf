@@ -210,6 +210,12 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetDescription(whichQuest, tre("Jeder Spieler kann einen einzigen Stützpunkt errichten. Der Stützpunkt ist ein Gebäude, das abhängig von der Klasse des Spielercharakters ist. Um einen Stützpunkt zu errichten, muss ein entsprechender Bauplan bei einem Baumeister gekauft werden.", "Each player can construct one single base. The base is a building which is dependant on the class of the player character. To construct a base a corresponding construction plan has to be purchased from a builder."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNTinyCastle.blp")
 			call QuestSetCompleted(whichQuest, true)
+			
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tre("Info: Kontakt", "Info: Contact"))
+			call QuestSetDescription(whichQuest, tre("E-Mail: barade.barade@web.de", "Email: barade.barade@web.de"))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPossession.blp")
+			call QuestSetCompleted(whichQuest, true)
 		endmethod
 		
 		/**

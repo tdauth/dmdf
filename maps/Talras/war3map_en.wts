@@ -6,7 +6,7 @@ Learn Rush [|cffffcc00Level %d|r]
 
 STRING 1
 {
-Chapter 1: Talras 0.5
+Chapter 1: Talras 0.6
 }
 
 STRING 2
@@ -11627,7 +11627,7 @@ Open rucksack
 
 STRING 1941
 {
-Version 0.5
+Version 0.6
 }
 
 STRING 1942
@@ -79747,7 +79747,7 @@ Learn spells - 6 skill points (|cffffcc00Z|r)
 STRING 13305
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2|r|nDer Ritter wird <A0JZ,Dur1> Sekunden lang unverwundbar. Heileffekte werden in dieser Zeit um 50 %.
+|cffffcc00Ultimativzauber 2|r|nDer Ritter wird <A0JZ,Dur1> Sekunden lang unverwundbar. Heileffekte werden in dieser Zeit um 50 % erhöht.
 }
 
 STRING 13306
@@ -94980,6 +94980,42 @@ STRING 15844
 (Nekromant - basiert auf Wasserelementargeist)
 }
 
+STRING 15845
+// Fähigkeiten: A1DY (Kritischer Schlag), EditorSuffix (Editor-Suffix (ansf))
+{
+(Kriegsherr der Orks)
+}
+
+STRING 15846
+// Fähigkeiten: A1DZ (Befehls-Aura), EditorSuffix (Editor-Suffix (ansf))
+{
+(Kriegsherr der Orks)
+}
+
+STRING 15847
+// Fähigkeiten: A1E0 (Schmetter-Angriff), EditorSuffix (Editor-Suffix (ansf))
+{
+(Kriegsherr der Orks)
+}
+
+STRING 15848
+// Einheiten: n06F (Dunkelelfen-Hexer), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Boss)
+}
+
+STRING 15849
+// Einheiten: o005 (Kriegsherr der Orks), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Boss)
+}
+
+STRING 15850
+// Einheiten: H02I (Deranors Leibwache), Propernames (Eigennamen (upro))
+{
+Deranor's Bodyguard
+}
+
 STRING 15851
 // Fähigkeiten: A0CR (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -95002,6 +95038,12 @@ STRING 15854
 // Fähigkeiten: A1D6 (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
 {
 (Druide - Hain - Stufe 4)
+}
+
+STRING 15855
+// Fähigkeiten: A1E1 (Lebensauger), EditorSuffix (Editor-Suffix (ansf))
+{
+(Deranors Leibwache)
 }
 
 STRING 15856
@@ -95668,5 +95710,5224 @@ STRING 15966
 // Fähigkeiten: A0R2 (Klassenzauber), Hotkey (Tastaturkürzel - Normal (ahky))
 {
 Z
+}
+
+STRING 15967
+// Fähigkeiten: A1E2 (Rückkopplung), EditorSuffix (Editor-Suffix (ansf))
+{
+(Deranors Leibwache)
+}
+
+STRING 15968
+// Fähigkeiten: A1E3 (Aufträge - Der Weg nach Holzbruck), Name (Name (anam))
+{
+Aufträge - Der Weg nach Holzbruck
+}
+
+STRING 15969
+// Fähigkeiten: A1E3 (Aufträge - Der Weg nach Holzbruck), Tip (Tooltipp - Normal (atp1))
+{
+Der Weg nach Holzbruck
+}
+
+STRING 15970
+// Fähigkeiten: A1E3 (Aufträge - Der Weg nach Holzbruck), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Springt zum aktuellen Zielpunkt des Auftrags.
+}
+
+STRING 15971
+// Gegenstände: I067 (Eisenpanzer), Name (Name (unam))
+{
+Eisenpanzer
+}
+
+STRING 15972
+// Gegenstände: I067 (Eisenpanzer), Tip (Tooltipp - Einfach (utip))
+{
+Eisenpanzer kaufen
+}
+
+STRING 15973
+// Gegenstände: I067 (Eisenpanzer), Ubertip (Tooltipp - Erweitert (utub))
+{
+Verstärkt die Rüstung um <A1E4,DataA1>.
+}
+
+STRING 15974
+// Gegenstände: I067 (Eisenpanzer), Description (Beschreibung (ides))
+{
+Eine eiserne Rüstung.
+}
+
+STRING 15975
+// Gegenstände: I068 (Ritterschild), Name (Name (unam))
+{
+Ritterschild
+}
+
+STRING 15976
+// Gegenstände: I068 (Ritterschild), Description (Beschreibung (ides))
+{
+Der Schild eines Ritters.
+}
+
+STRING 15977
+// Gegenstände: I068 (Ritterschild), Ubertip (Tooltipp - Erweitert (utub))
+{
+Verstärkt die Rüstung um <A1E5,DataA1>. Erlaubt es dem Träger langsamer zu laufen und dafür mehr Schaden abzublocken.
+}
+
+STRING 15978
+// Gegenstände: I068 (Ritterschild), Tip (Tooltipp - Einfach (utip))
+{
+Ritterschild kaufen
+}
+
+STRING 15979
+// Gegenstände: I069 (Schädelmaske), Name (Name (unam))
+{
+Schädelmaske
+}
+
+STRING 15980
+// Gegenstände: I069 (Schädelmaske), Tip (Tooltipp - Einfach (utip))
+{
+Schädelmaske kaufen
+}
+
+STRING 15981
+// Gegenstände: I069 (Schädelmaske), Ubertip (Tooltipp - Erweitert (utub))
+{
+Verstärkt die Rüstung um <A1E9,DataA1> und erhöht das Wissen um <A1E8,DataC1>. Erlaubt es mit einem Zauber verbündete Untote zu heilen oder feindlichen Nicht-Untoten Schaden zuzufügen.
+}
+
+STRING 15982
+// Gegenstände: I069 (Schädelmaske), Description (Beschreibung (ides))
+{
+Eine magische Schädelmaske.
+}
+
+STRING 15983
+// Fähigkeiten: A1E4 (Eisenpanzer), EditorSuffix (Editor-Suffix (ansf))
+{
+(+6)
+}
+
+STRING 15984
+// Fähigkeiten: A1E4 (Eisenpanzer), Name (Name (anam))
+{
+Eisenpanzer
+}
+
+STRING 15985
+// Fähigkeiten: A1E5 (Ritterschild), EditorSuffix (Editor-Suffix (ansf))
+{
+(+6)
+}
+
+STRING 15986
+// Fähigkeiten: A1E5 (Ritterschild), Name (Name (anam))
+{
+Ritterschild
+}
+
+STRING 15987
+// Fähigkeiten: A1E6 (Ritterschild), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verteidigen)
+}
+
+STRING 15988
+// Fähigkeiten: A1E6 (Ritterschild), Name (Name (anam))
+{
+Ritterschild
+}
+
+STRING 15989
+// Fähigkeiten: A1E7 (Ritterschild), Name (Name (anam))
+{
+Ritterschild
+}
+
+STRING 15990
+// Fähigkeiten: A1E7 (Ritterschild), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
+}
+
+STRING 15991
+// Fähigkeiten: A1E8 (Schädelmaske), Name (Name (anam))
+{
+Schädelmaske
+}
+
+STRING 15992
+// Fähigkeiten: A1E9 (Schädelmaske), EditorSuffix (Editor-Suffix (ansf))
+{
+(+3 Rüstung)
+}
+
+STRING 15993
+// Fähigkeiten: A1E9 (Schädelmaske), Name (Name (anam))
+{
+Schädelmaske
+}
+
+STRING 15994
+// Fähigkeiten: A1EA (Schädelmaske), EditorSuffix (Editor-Suffix (ansf))
+{
+(Todesmantel)
+}
+
+STRING 15995
+// Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
+{
+Schädelmaske
+}
+
+STRING 15996
+// Fähigkeiten: A1EB (Schädelmaske), Name (Name (anam))
+{
+Schädelmaske
+}
+
+STRING 15997
+// Fähigkeiten: A1EB (Schädelmaske), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
+}
+
+STRING 15998
+// Gegenstände: I06A (Magierrüstung), Name (Name (unam))
+{
+Magierrüstung
+}
+
+STRING 15999
+// Gegenstände: I06A (Magierrüstung), Tip (Tooltipp - Einfach (utip))
+{
+Magierrüstung kaufen
+}
+
+STRING 16000
+// Gegenstände: I06A (Magierrüstung), Ubertip (Tooltipp - Erweitert (utub))
+{
+Verstärkt die Rüstung um <A1ED,DataA1>, erhöht das Wissen um <A1EF,DataC1> und das Mana um <A1EE,DataA1>.
+}
+
+STRING 16001
+// Gegenstände: I06A (Magierrüstung), Description (Beschreibung (ides))
+{
+Die Rüstung eines Magiers.
+}
+
+STRING 16002
+// Fähigkeiten: A1EC (Pfeilköcher), EditorSuffix (Editor-Suffix (ansf))
+{
+(Modell)
+}
+
+STRING 16003
+// Fähigkeiten: A1EJ (Pfeilköcher), Name (Name (anam))
+{
+Pfeilköcher
+}
+
+STRING 16004
+// Fähigkeiten: A1ED (Magierrüstung), EditorSuffix (Editor-Suffix (ansf))
+{
+(+4 Rüstung)
+}
+
+STRING 16005
+// Fähigkeiten: A1ED (Magierrüstung), Name (Name (anam))
+{
+Magierrüstung
+}
+
+STRING 16006
+// Fähigkeiten: A1EE (Magierrüstung), Name (Name (anam))
+{
+Magierrüstung
+}
+
+STRING 16007
+// Fähigkeiten: A1EE (Magierrüstung), EditorSuffix (Editor-Suffix (ansf))
+{
+(Mana-Bonus 100)
+}
+
+STRING 16008
+// Fähigkeiten: A1EF (Magierrüstung), Name (Name (anam))
+{
+Magierrüstung
+}
+
+STRING 16009
+// Gegenstände: I06B (Einfaches Gewand), Name (Name (unam))
+{
+Einfaches Gewand
+}
+
+STRING 16010
+// Gegenstände: I06B (Einfaches Gewand), Tip (Tooltipp - Einfach (utip))
+{
+Einfaches Gewand kaufen
+}
+
+STRING 16011
+// Gegenstände: I06B (Einfaches Gewand), Ubertip (Tooltipp - Erweitert (utub))
+{
+Ein einfaches Gewand.
+}
+
+STRING 16012
+// Gegenstände: I06B (Einfaches Gewand), Description (Beschreibung (ides))
+{
+Ein einfaches Gewand.
+}
+
+STRING 16013
+// Fähigkeiten: A1EG (Einfaches Gewand), EditorSuffix (Editor-Suffix (ansf))
+{
+(+1 Rüstung)
+}
+
+STRING 16014
+// Fähigkeiten: A1EG (Einfaches Gewand), Name (Name (anam))
+{
+Einfaches Gewand
+}
+
+STRING 16015
+// Einheiten: n05C (Fulcos Stand), Name (Name (unam))
+{
+Fulcos Stand
+}
+
+STRING 16016
+// Einheiten: n06H (Tellborns Stand), Name (Name (unam))
+{
+Tellborns Stand
+}
+
+STRING 16017
+// Einheiten: o006 (Herr der Bestien), Name (Name (unam))
+{
+Herr der Bestien
+}
+
+STRING 16018
+// Einheiten: o006 (Herr der Bestien), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Boss)
+}
+
+STRING 16019
+// Fähigkeiten: A1EH (Schlächter herbeirufen), Name (Name (anam))
+{
+Schlächter herbeirufen
+}
+
+STRING 16020
+// Fähigkeiten: A1EH (Schlächter herbeirufen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Herr der Bestien)
+}
+
+STRING 16021
+// Fähigkeiten: A1EI (Drachen beschwören), EditorSuffix (Editor-Suffix (ansf))
+{
+(Herr der Bestien)
+}
+
+STRING 16022
+// Fähigkeiten: A1EI (Drachen beschwören), Name (Name (anam))
+{
+Drachen beschwören
+}
+
+STRING 16023
+// Fähigkeiten: A1EJ (Pfeilköcher), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
+}
+
+STRING 16024
+// Fähigkeiten: A10W (Sprinten - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+}
+
+STRING 16025
+// Fähigkeiten: A10X (Sprinten - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+}
+
+STRING 16026
+// Fähigkeiten: A10Y (Sprinten - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+}
+
+STRING 16027
+// Fähigkeiten: A10Z (Sprinten - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+}
+
+STRING 16028
+// Fähigkeiten: A110 (Sprinten - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+}
+
+STRING 16029
+// Fähigkeiten: A1EK (Sprinten), Name (Name (anam))
+{
+Sprinten
+}
+
+STRING 16030
+// Fähigkeiten: A1EK (Sprinten), EditorSuffix (Editor-Suffix (ansf))
+{
+(Waldläufer - Berserk)
+}
+
+STRING 16031
+// Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
+{
+Sprint [|cffffcc00Level 1|r]
+}
+
+STRING 16032
+// Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
+{
+Sprint [|cffffcc00Level 2|r]
+}
+
+STRING 16033
+// Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
+{
+Sprint [|cffffcc00Level 3|r]
+}
+
+STRING 16034
+// Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
+{
+Sprint [|cffffcc00Level 4|r]
+}
+
+STRING 16035
+// Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
+{
+Sprint [|cffffcc00Level 5|r]
+}
+
+STRING 16036
+// Fähigkeiten: A1EK (Sprinten), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Increases the movement speed of the ranger by <A1EK,DataA1,%> % for <A1EK,Dur1> seconds.
+}
+
+STRING 16037
+// Gegenstände: I06H (Flügel von Deranors Leibwache), Tip (Tooltipp - Einfach (utip))
+{
+Nixenstein kaufen
+}
+
+STRING 16038
+// Gegenstände: I06H (Flügel von Deranors Leibwache), Description (Beschreibung (ides))
+{
+Verwandelt den Träger in Deranors Leibwache.
+}
+
+STRING 16039
+// Gegenstände: I06H (Flügel von Deranors Leibwache), Ubertip (Tooltipp - Erweitert (utub))
+{
+Verwandelt den Träger in Deranors Leibwache.
+}
+
+STRING 16040
+// Fähigkeiten: A04R (Dämonenfeuer), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandelter Charakter)
+}
+
+STRING 16041
+// Zauberverstärker/Effekte: B02U (), Bufftip (Tooltipp (ftip))
+{
+Sprinten
+}
+
+STRING 16042
+// Zauberverstärker/Effekte: B02U (), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Waldläufer)
+}
+
+STRING 16043
+// Zauberverstärker/Effekte: B02U (), Buffubertip (Tooltipp - Erweitert (fube))
+{
+Diese Einheit steht unter der Wirkung von 'Sprinten'; sie besitzt eine erhöhte Bewegungsgeschwindigkeit.
+}
+
+STRING 16044
+// Fähigkeiten: A1EK (Sprinten), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Increases the movement speed of the ranger by <A1EK,DataA2,%> % for <A1EK,Dur2> seconds.
+}
+
+STRING 16045
+// Fähigkeiten: A1EK (Sprinten), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Increases the movement speed of the ranger by <A1EK,DataA3,%> % for <A1EK,Dur3> seconds.
+}
+
+STRING 16046
+// Fähigkeiten: A1EK (Sprinten), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Increases the movement speed of the ranger by <A1EK,DataA4,%> % for <A1EK,Dur4> seconds.
+}
+
+STRING 16047
+// Fähigkeiten: A1EK (Sprinten), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Increases the movement speed of the ranger by <A1EK,DataA5,%> % for <A1EK,Dur5> seconds.
+}
+
+STRING 16048
+{
+ 
+}
+
+STRING 16049
+// Gegenstände: I06C (Kopfbedeckung), Name (Name (unam))
+{
+Kopfbedeckung
+}
+
+STRING 16050
+// Fähigkeiten: A1EL (Fliegen), Name (Name (anam))
+{
+Fliegen
+}
+
+STRING 16051
+// Gegenstände: I06D (Kleidung), Name (Name (unam))
+{
+Kleidung
+}
+
+STRING 16052
+// Fähigkeiten: A1EL (Fliegen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Deranors Leibwache)
+}
+
+STRING 16053
+// Gegenstände: I06E (Erstwaffe), Name (Name (unam))
+{
+Erstwaffe
+}
+
+STRING 16054
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Landet und verwandelt sich zurück in einen Menschen.
+}
+
+STRING 16055
+// Gegenstände: I06F (Zweitwaffe), Name (Name (unam))
+{
+Zweitwaffe
+}
+
+STRING 16056
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Ein Blitzschlag erfasst das Ziel, verursacht X Punkte Schaden und wirft es um einen Meter zurück.
+}
+
+STRING 16057
+// Gegenstände: I06G (Amulett oder Ring), Name (Name (unam))
+{
+Amulett oder Ring
+}
+
+STRING 16058
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Ein Blitzschlag erfasst das Ziel, verursacht X Punkte Schaden und wirft es um einen Meter zurück.
+}
+
+STRING 16059
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Ein Blitzschlag erfasst das Ziel, verursacht X Punkte Schaden und wirft es um einen Meter zurück.
+}
+
+STRING 16060
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Ein Blitzschlag erfasst das Ziel, verursacht X Punkte Schaden und wirft es um einen Meter zurück.
+}
+
+STRING 16061
+// Gegenstände: I06C (Kopfbedeckung), Ubertip (Tooltipp - Erweitert (utub))
+{
+The current headdress is shown in this slot.
+}
+
+STRING 16062
+// Gegenstände: I06D (Kleidung), Ubertip (Tooltipp - Erweitert (utub))
+{
+The current clothing is shown in this slot.
+}
+
+STRING 16063
+// Gegenstände: I06E (Erstwaffe), Ubertip (Tooltipp - Erweitert (utub))
+{
+The current primary weapon is shown in this slot.
+}
+
+STRING 16064
+// Gegenstände: I06F (Zweitwaffe), Ubertip (Tooltipp - Erweitert (utub))
+{
+The secondary weapon is shown in this slot.
+}
+
+STRING 16065
+// Gegenstände: I06G (Amulett oder Ring), Ubertip (Tooltipp - Erweitert (utub))
+{
+A carried amulet or carried ring is shown in this slot.
+}
+
+STRING 16066
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Tip (Tooltipp - Normal (atp1))
+{
+Lightning Strike [|cffffcc00Level 2|r]
+}
+
+STRING 16067
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Tip (Tooltipp - Normal (atp1))
+{
+Lightning Strike [|cffffcc00Level 3|r]
+}
+
+STRING 16068
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Tip (Tooltipp - Normal (atp1))
+{
+Lightning Strike [|cffffcc00Level 4|r]
+}
+
+STRING 16069
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Tip (Tooltipp - Normal (atp1))
+{
+Lightning Strike [|cffffcc00Level 5|r]
+}
+
+STRING 16070
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Tip (Tooltipp - Normal (atp1))
+{
+Landen
+}
+
+STRING 16071
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandlung)
+}
+
+STRING 16072
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16073
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Researchtip (Tooltipp - Erlernen (aret))
+{
+Blitzschlag [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16074
+// Fähigkeiten: A1EM (Flügel von Deranors Leibwache), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Ein Blitzschlag erfasst das Ziel, verursacht X Punkte Schaden und wirft es um einen Meter zurück.
+}
+
+STRING 16075
+// Fähigkeiten: A1EN (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandlung Drachentöter)
+}
+
+STRING 16076
+// Fähigkeiten: A1EN (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16077
+// Fähigkeiten: A1EO (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandlung Ritter)
+}
+
+STRING 16078
+// Fähigkeiten: A1EO (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16079
+// Fähigkeiten: A1EP (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandlung Waldläufer)
+}
+
+STRING 16080
+// Fähigkeiten: A1EP (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16081
+// Fähigkeiten: A1EQ (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandlung Elementarmagier)
+}
+
+STRING 16082
+// Fähigkeiten: A1EQ (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16083
+// Fähigkeiten: A1ER (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandlung Zauberer)
+}
+
+STRING 16084
+// Fähigkeiten: A1ER (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16085
+// Fähigkeiten: A1ES (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandlung Kleriker)
+}
+
+STRING 16086
+// Fähigkeiten: A1ES (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16087
+// Fähigkeiten: A1ET (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandlung Nekromant)
+}
+
+STRING 16088
+// Fähigkeiten: A1ET (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16089
+// Fähigkeiten: A1EU (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Verwandlung Druide)
+}
+
+STRING 16090
+// Fähigkeiten: A1EU (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16091
+// Fähigkeiten: A1EV (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Rückverwandlung Drachentöter)
+}
+
+STRING 16092
+// Fähigkeiten: A1EV (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16093
+// Fähigkeiten: A1EW (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Rückverwandlung Ritter)
+}
+
+STRING 16094
+// Fähigkeiten: A1EW (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16095
+// Fähigkeiten: A1EX (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Rückverwandlung Waldläufer)
+}
+
+STRING 16096
+// Fähigkeiten: A1EX (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16097
+// Fähigkeiten: A1EY (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Rückverwandlung Elementarmagier)
+}
+
+STRING 16098
+// Fähigkeiten: A1EY (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16099
+// Fähigkeiten: A1EZ (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Rückverwandlung Zauberer)
+}
+
+STRING 16100
+// Fähigkeiten: A1EZ (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16101
+// Fähigkeiten: A1F0 (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Rückverwandlung Kleriker)
+}
+
+STRING 16102
+// Fähigkeiten: A1F0 (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16103
+// Fähigkeiten: A1F1 (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Rückverwandlung Nekromant)
+}
+
+STRING 16104
+// Fähigkeiten: A1F1 (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16105
+// Fähigkeiten: A1F2 (Flügel von Deranors Leibwache), EditorSuffix (Editor-Suffix (ansf))
+{
+(Rückverwandlung Druide)
+}
+
+STRING 16106
+// Fähigkeiten: A1F2 (Flügel von Deranors Leibwache), Name (Name (anam))
+{
+Flügel von Deranors Leibwache
+}
+
+STRING 16107
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Name (Name (anam))
+{
+Unbarmherzigkeit
+}
+
+STRING 16108
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
+{
+Mercilessness [|cffffcc00Level 1|r]
+}
+
+STRING 16109
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
+{
+Mercilessness [|cffffcc00Level 2|r]
+}
+
+STRING 16110
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
+{
+Mercilessness [|cffffcc00Level 3|r]
+}
+
+STRING 16111
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
+{
+Mercilessness [|cffffcc00Level 4|r]
+}
+
+STRING 16112
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
+{
+Mercilessness [|cffffcc00Level 5|r]
+}
+
+STRING 16113
+// Fähigkeiten: A1HK (Verteidigen), Tip (Tooltipp - Normal (atp1))
+{
+Defend [|cffffcc00Level 1|r]
+}
+
+STRING 16114
+// Fähigkeiten: A1HK (Verteidigen), Untip (Tooltipp - Ausschalten (aut1))
+{
+Verteidigen [|cffffcc00Stufe 1|r] stoppen
+}
+
+STRING 16115
+// Fähigkeiten: A01X (Pure Energie), Tip (Tooltipp - Normal (atp1))
+{
+Feuergeschoss
+}
+
+STRING 16116
+// Fähigkeiten: A1H4 (Aura der Autorität - Upgrade 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Ritter)
+}
+
+STRING 16117
+// Fähigkeiten: A1HL (Verteidigen), Name (Name (anam))
+{
+Defend
+}
+
+STRING 16118
+// Fähigkeiten: A1F4 (Unbarmherzigkeit), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Drachentöter)
+}
+
+STRING 16119
+// Fähigkeiten: A1F4 (Unbarmherzigkeit), Name (Name (anam))
+{
+Unbarmherzigkeit
+}
+
+STRING 16120
+// Fähigkeiten: A1FR (Siegeswunsch), Name (Name (anam))
+{
+Siegeswunsch
+}
+
+STRING 16121
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16122
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16123
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16124
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16125
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16126
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16127
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16128
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16129
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Unbarmherzigkeit [|cffffcc00Stufe 1|r]
+}
+
+STRING 16130
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16131
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 1
+}
+
+STRING 16132
+// Fähigkeiten: A1FR (Siegeswunsch), Tip (Tooltipp - Normal (atp1))
+{
+Siegeswunsch [|cffffcc00Stufe 1|r]
+}
+
+STRING 16133
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16134
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16135
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16136
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16137
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16138
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16139
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16140
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16141
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Unbarmherzigkeit [|cffffcc00Stufe 2|r]
+}
+
+STRING 16142
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16143
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 2
+}
+
+STRING 16144
+// Fähigkeiten: A1FR (Siegeswunsch), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 2|r|nSchaden gegen Gegner wird um 5 % mal die Anzahl der weiteren verbliebenen Gegner im Umkreis erhöht.
+}
+
+STRING 16145
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16146
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16147
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16148
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16149
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16150
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16151
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16152
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16153
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Unbarmherzigkeit [|cffffcc00Stufe 3|r]
+}
+
+STRING 16154
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16155
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 3
+}
+
+STRING 16156
+// Fähigkeiten: A1FG (Rage), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Drachentöter)
+}
+
+STRING 16157
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16158
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16159
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16160
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16161
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16162
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16163
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16164
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16165
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Unbarmherzigkeit [|cffffcc00Stufe 4|r]
+}
+
+STRING 16166
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16167
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 4
+}
+
+STRING 16168
+// Fähigkeiten: A1FS (Siegeswunsch), Name (Name (anam))
+{
+Siegeswunsch
+}
+
+STRING 16169
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16170
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16171
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16172
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16173
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16174
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16175
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16176
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16177
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Unbarmherzigkeit [|cffffcc00Stufe 5|r]
+}
+
+STRING 16178
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16179
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 5
+}
+
+STRING 16180
+// Fähigkeiten: A1FA (Unbarmherzigkeit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16181
+// Fähigkeiten: A1FA (Unbarmherzigkeit - Stufe 1), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 1
+}
+
+STRING 16182
+// Fähigkeiten: A1FB (Unbarmherzigkeit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16183
+// Fähigkeiten: A1FB (Unbarmherzigkeit - Stufe 2), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 2
+}
+
+STRING 16184
+// Fähigkeiten: A1FC (Unbarmherzigkeit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16185
+// Fähigkeiten: A1FC (Unbarmherzigkeit - Stufe 3), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 3
+}
+
+STRING 16186
+// Fähigkeiten: A1FD (Unbarmherzigkeit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16187
+// Fähigkeiten: A1FD (Unbarmherzigkeit - Stufe 4), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 4
+}
+
+STRING 16188
+// Fähigkeiten: A1FE (Unbarmherzigkeit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16189
+// Fähigkeiten: A1FE (Unbarmherzigkeit - Stufe 5), Name (Name (anam))
+{
+Unbarmherzigkeit - Stufe 5
+}
+
+STRING 16190
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nSchaden gegen Gegner wird um 5 % mal die Anzahl der weiteren verbliebenen Gegner im Umkreis erhöht.
+}
+
+STRING 16191
+// Fähigkeiten: A1FH (Rage - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16192
+// Fähigkeiten: A1FH (Rage - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16193
+// Fähigkeiten: A1FH (Rage - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16194
+// Fähigkeiten: A1FH (Rage - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16195
+// Fähigkeiten: A1FF (Rage), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 2|r]
+}
+
+STRING 16196
+// Fähigkeiten: A1FF (Rage), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 3|r]
+}
+
+STRING 16197
+// Fähigkeiten: A1FF (Rage), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 4|r]
+}
+
+STRING 16198
+// Fähigkeiten: A1FF (Rage), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 5|r]
+}
+
+STRING 16199
+// Fähigkeiten: A1FF (Rage), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 1|r]
+}
+
+STRING 16200
+// Fähigkeiten: A1FS (Siegeswunsch), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Drachentöter)
+}
+
+STRING 16201
+// Fähigkeiten: A1FH (Rage - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16202
+// Fähigkeiten: A1FI (Rage - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16203
+// Fähigkeiten: A1FI (Rage - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16204
+// Fähigkeiten: A1FI (Rage - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16205
+// Fähigkeiten: A1FI (Rage - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16206
+// Fähigkeiten: A1FI (Rage - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16207
+// Fähigkeiten: A1FH (Rage - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16208
+// Fähigkeiten: A1FH (Rage - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16209
+// Fähigkeiten: A1FH (Rage - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16210
+// Fähigkeiten: A1FH (Rage - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 1|r]
+}
+
+STRING 16211
+// Fähigkeiten: A1FH (Rage - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16212
+// Fähigkeiten: A1FH (Rage - Stufe 1), Name (Name (anam))
+{
+Rage - Stufe 1
+}
+
+STRING 16213
+// Fähigkeiten: A1FI (Rage - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16214
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16215
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16216
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16217
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16218
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16219
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16220
+// Fähigkeiten: A1FI (Rage - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16221
+// Fähigkeiten: A1FI (Rage - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16222
+// Fähigkeiten: A1FI (Rage - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 2|r]
+}
+
+STRING 16223
+// Fähigkeiten: A1FI (Rage - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16224
+// Fähigkeiten: A1FI (Rage - Stufe 2), Name (Name (anam))
+{
+Rage - Stufe 2
+}
+
+STRING 16225
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16226
+// Fähigkeiten: A1FK (Rage - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16227
+// Fähigkeiten: A1FK (Rage - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16228
+// Fähigkeiten: A1FK (Rage - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16229
+// Fähigkeiten: A1FK (Rage - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16230
+// Fähigkeiten: A1FK (Rage - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16231
+// Fähigkeiten: A1FK (Rage - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16232
+// Fähigkeiten: A1FK (Rage - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16233
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16234
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 3|r]
+}
+
+STRING 16235
+// Fähigkeiten: A1FJ (Rage - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16236
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Name (Name (anam))
+{
+Rage - Stufe 3
+}
+
+STRING 16237
+// Fähigkeiten: A1FK (Rage - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16238
+// Fähigkeiten: A1FL (Rage - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16239
+// Fähigkeiten: A1FL (Rage - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16240
+// Fähigkeiten: A1FL (Rage - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16241
+// Fähigkeiten: A1FL (Rage - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16242
+// Fähigkeiten: A1FL (Rage - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16243
+// Fähigkeiten: A1FL (Rage - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16244
+// Fähigkeiten: A1FL (Rage - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16245
+// Fähigkeiten: A1FL (Rage - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16246
+// Fähigkeiten: A1FK (Rage - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 4|r]
+}
+
+STRING 16247
+// Fähigkeiten: A1FK (Rage - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16248
+// Fähigkeiten: A1FK (Rage - Stufe 4), Name (Name (anam))
+{
+Rage - Stufe 4
+}
+
+STRING 16249
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Siegeswunsch [|cffffcc00Stufe 1|r]
+}
+
+STRING 16250
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16251
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16252
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16253
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16254
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16255
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16256
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16257
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16258
+// Fähigkeiten: A1FL (Rage - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Rage [|cffffcc00Stufe 5|r]
+}
+
+STRING 16259
+// Fähigkeiten: A1FL (Rage - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16260
+// Fähigkeiten: A1FL (Rage - Stufe 5), Name (Name (anam))
+{
+Rage - Stufe 5
+}
+
+STRING 16261
+// Fähigkeiten: A1FM (Rage - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16262
+// Fähigkeiten: A1FM (Rage - Stufe 1), Name (Name (anam))
+{
+Rage - Stufe 1
+}
+
+STRING 16263
+// Fähigkeiten: A1FN (Rage - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16264
+// Fähigkeiten: A1FN (Rage - Stufe 2), Name (Name (anam))
+{
+Rage - Stufe 2
+}
+
+STRING 16265
+// Fähigkeiten: A1FO (Rage - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16266
+// Fähigkeiten: A1FO (Rage - Stufe 3), Name (Name (anam))
+{
+Rage - Stufe 3
+}
+
+STRING 16267
+// Fähigkeiten: A1FP (Rage - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16268
+// Fähigkeiten: A1FP (Rage - Stufe 4), Name (Name (anam))
+{
+Rage - Stufe 4
+}
+
+STRING 16269
+// Fähigkeiten: A1FQ (Rage - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16270
+// Fähigkeiten: A1FQ (Rage - Stufe 5), Name (Name (anam))
+{
+Rage - Stufe 5
+}
+
+STRING 16271
+// Zauberverstärker/Effekte: B00L (Rage), EditorName (Name (nur Editor) (fnam))
+{
+Rage
+}
+
+STRING 16272
+// Zauberverstärker/Effekte: B00L (Rage), Bufftip (Tooltipp (ftip))
+{
+Rage
+}
+
+STRING 16273
+// Fähigkeiten: A1FF (Rage), EditorSuffix (Editor-Suffix (ansf))
+{
+(Drachentöter)
+}
+
+STRING 16274
+// Fähigkeiten: A1FR (Siegeswunsch), EditorSuffix (Editor-Suffix (ansf))
+{
+(Drachentöter)
+}
+
+STRING 16275
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16276
+// Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Name (Name (anam))
+{
+Siegeswunsch - Stufe 1
+}
+
+STRING 16277
+// Fähigkeiten: A1FU (Siegeswunsch - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16278
+// Fähigkeiten: A1FU (Siegeswunsch - Stufe 1), Name (Name (anam))
+{
+Siegeswunsch - Stufe 1
+}
+
+STRING 16279
+// Fähigkeiten: A1FV (Reserven), Name (Name (anam))
+{
+Reserven
+}
+
+STRING 16280
+// Fähigkeiten: A1FF (Rage), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für bis zu 2 getötete Gegner an. Bei Aktivierung wird sein Schaden um 10  pro Gegner erhöht. Hält 5 Sekunden.
+}
+
+STRING 16281
+// Fähigkeiten: A1FF (Rage), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für bis zu 4 getötete Gegner an. Bei Aktivierung wird sein Schaden um 20  pro Gegner erhöht. Hält 5 Sekunden.
+}
+
+STRING 16282
+// Fähigkeiten: A1FF (Rage), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für bis zu 6 getötete Gegner an. Bei Aktivierung wird sein Schaden um 30  pro Gegner erhöht. Hält 5 Sekunden.
+}
+
+STRING 16283
+// Fähigkeiten: A1FF (Rage), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für bis zu 8 getötete Gegner an. Bei Aktivierung wird sein Schaden um 40  pro Gegner erhöht. Hält 5 Sekunden.
+}
+
+STRING 16284
+// Fähigkeiten: A1FF (Rage), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für bis zu 10 getötete Gegner an. Bei Aktivierung wird sein Schaden um 50  pro Gegner erhöht. Hält 5 Sekunden.
+}
+
+STRING 16285
+// Fähigkeiten: A1FH (Rage - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 5 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+}
+
+STRING 16286
+// Fähigkeiten: A1FI (Rage - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 5 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+}
+
+STRING 16287
+// Fähigkeiten: A1FJ (Rage - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 5 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+}
+
+STRING 16288
+// Fähigkeiten: A1FK (Rage - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 5 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+}
+
+STRING 16289
+// Fähigkeiten: A1FL (Rage - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 5 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+}
+
+STRING 16290
+// Zauberverstärker/Effekte: B02G (Beherrschung), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Elementarmagier)
+}
+
+STRING 16291
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16292
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16293
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16294
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16295
+// Einheiten: n06J (Spielerschrein), Name (Name (unam))
+{
+Spielerschrein
+}
+
+STRING 16296
+// Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 1|r]
+}
+
+STRING 16297
+// Fähigkeiten: A1FV (Reserven), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Schlägt der Drachentöter einen Gegner 6 mal am Stück, wird sein Schaden um 5 % erhöht.
+}
+
+STRING 16298
+// Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 2|r]
+}
+
+STRING 16299
+// Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 3|r]
+}
+
+STRING 16300
+// Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 4|r]
+}
+
+STRING 16301
+// Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 5|r]
+}
+
+STRING 16302
+// Fähigkeiten: A1FV (Reserven), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Schlägt der Drachentöter einen Gegner 5 mal am Stück, wird sein Schaden um 10 % erhöht.
+}
+
+STRING 16303
+// Fähigkeiten: A1FV (Reserven), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Schlägt der Drachentöter einen Gegner 4 mal am Stück, wird sein Schaden um 15 % erhöht.
+}
+
+STRING 16304
+// Fähigkeiten: A1FV (Reserven), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Schlägt der Drachentöter einen Gegner 3 mal am Stück, wird sein Schaden um 20 % erhöht.
+}
+
+STRING 16305
+// Fähigkeiten: A1FV (Reserven), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Schlägt der Drachentöter einen Gegner 2 mal am Stück, wird sein Schaden um 25 % erhöht.
+}
+
+STRING 16306
+// Fähigkeiten: A1FW (Siegeswunsch), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Drachentöter)
+}
+
+STRING 16307
+// Fähigkeiten: A1FW (Siegeswunsch), Name (Name (anam))
+{
+Siegeswunsch
+}
+
+STRING 16308
+// Fähigkeiten: A1FX (Reserven), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Drachentöter)
+}
+
+STRING 16309
+// Fähigkeiten: A1FX (Reserven), Name (Name (anam))
+{
+Reserven
+}
+
+STRING 16310
+// Fähigkeiten: A1GZ (Aura der Autorität - Upgrade 1), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 4|r]
+}
+
+STRING 16311
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16312
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16313
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16314
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16315
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16316
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16317
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16318
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16319
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 1|r]
+}
+
+STRING 16320
+// Fähigkeiten: A1FY (Reserven - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16321
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Name (Name (anam))
+{
+Reserven - Stufe 1
+}
+
+STRING 16322
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16323
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16324
+// Fähigkeiten: A1GZ (Aura der Autorität - Upgrade 1), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 5|r]
+}
+
+STRING 16325
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16326
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16327
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16328
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16329
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16330
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16331
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16332
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16333
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 2|r]
+}
+
+STRING 16334
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16335
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Name (Name (anam))
+{
+Reserven - Stufe 2
+}
+
+STRING 16336
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16337
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16338
+// Fähigkeiten: A1GZ (Aura der Autorität - Upgrade 1), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 1
+}
+
+STRING 16339
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16340
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16341
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16342
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16343
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16344
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16345
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16346
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16347
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 3|r]
+}
+
+STRING 16348
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16349
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Name (Name (anam))
+{
+Reserven - Stufe 3
+}
+
+STRING 16350
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16351
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16352
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area1> um <A0MH,DataA1,%> %.
+}
+
+STRING 16353
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16354
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16355
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16356
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16357
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16358
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16359
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16360
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16361
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 4|r]
+}
+
+STRING 16362
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16363
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Name (Name (anam))
+{
+Reserven - Stufe 4
+}
+
+STRING 16364
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16365
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16366
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area2> um <A0MH,DataA2,%> %.
+}
+
+STRING 16367
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16368
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16369
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16370
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16371
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16372
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16373
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16374
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16375
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Reserven [|cffffcc00Stufe 5|r]
+}
+
+STRING 16376
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16377
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Name (Name (anam))
+{
+Reserven - Stufe 5
+}
+
+STRING 16378
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16379
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16380
+// Fähigkeiten: A1G3 (Reserven - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16381
+// Fähigkeiten: A1G3 (Reserven - Stufe 1), Name (Name (anam))
+{
+Reserven - Stufe 1
+}
+
+STRING 16382
+// Fähigkeiten: A1G4 (Reserven - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16383
+// Fähigkeiten: A1G4 (Reserven - Stufe 2), Name (Name (anam))
+{
+Reserven - Stufe 2
+}
+
+STRING 16384
+// Fähigkeiten: A1G5 (Reserven - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16385
+// Fähigkeiten: A1G5 (Reserven - Stufe 3), Name (Name (anam))
+{
+Reserven - Stufe 3
+}
+
+STRING 16386
+// Fähigkeiten: A1G6 (Reserven - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16387
+// Fähigkeiten: A1G6 (Reserven - Stufe 4), Name (Name (anam))
+{
+Reserven - Stufe 4
+}
+
+STRING 16388
+// Fähigkeiten: A1G7 (Reserven - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16389
+// Fähigkeiten: A1G7 (Reserven - Stufe 5), Name (Name (anam))
+{
+Reserven - Stufe 5
+}
+
+STRING 16390
+// Fähigkeiten: A1FV (Reserven), EditorSuffix (Editor-Suffix (ansf))
+{
+(Drachentöter)
+}
+
+STRING 16391
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+{
+(Drachentöter)
+}
+
+STRING 16392
+// Fähigkeiten: A1FY (Reserven - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+}
+
+STRING 16393
+// Fähigkeiten: A1FZ (Reserven - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+}
+
+STRING 16394
+// Fähigkeiten: A1G0 (Reserven - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+}
+
+STRING 16395
+// Fähigkeiten: A1G1 (Reserven - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+}
+
+STRING 16396
+// Fähigkeiten: A1G2 (Reserven - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+}
+
+STRING 16397
+// Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 2|r]
+}
+
+STRING 16398
+// Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 3|r]
+}
+
+STRING 16399
+// Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 4|r]
+}
+
+STRING 16400
+// Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 5|r]
+}
+
+STRING 16401
+// Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 1|r]
+}
+
+STRING 16402
+// Fähigkeiten: A1G8 (Auge um Auge), Name (Name (anam))
+{
+Auge um Auge
+}
+
+STRING 16403
+// Fähigkeiten: A1G8 (Auge um Auge), Researchtip (Tooltipp - Erlernen (aret))
+{
+Feuergeschoss [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16404
+// Fähigkeiten: A1G8 (Auge um Auge), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Wirft ein Feuergeschoss auf den Gegner, verursacht X Punkte Feuerschaden und lässt ihn 3 Sekunden lang für weitere 2*X Punkte Schaden brennen.
+}
+
+STRING 16405
+// Fähigkeiten: A1G9 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Drachentöter)
+}
+
+STRING 16406
+// Fähigkeiten: A1G9 (Auge um Auge), Name (Name (anam))
+{
+Auge um Auge
+}
+
+STRING 16407
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area3> um <A0MH,DataA3,%> %.
+}
+
+STRING 16408
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16409
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16410
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16411
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16412
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16413
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16414
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16415
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16416
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 1|r]
+}
+
+STRING 16417
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16418
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Name (Name (anam))
+{
+Auge um Auge - Stufe 1
+}
+
+STRING 16419
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area4> um <A0MH,DataA4,%> %.
+}
+
+STRING 16420
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16421
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16422
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16423
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16424
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16425
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16426
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16427
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16428
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 2|r]
+}
+
+STRING 16429
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16430
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Name (Name (anam))
+{
+Auge um Auge - Stufe 2
+}
+
+STRING 16431
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area5> um <A0MH,DataA5,%> %.
+}
+
+STRING 16432
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16433
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16434
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16435
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16436
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16437
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16438
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16439
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16440
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 3|r]
+}
+
+STRING 16441
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16442
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Name (Name (anam))
+{
+Auge um Auge - Stufe 3
+}
+
+STRING 16443
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 1|r]
+}
+
+STRING 16444
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16445
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16446
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16447
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16448
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16449
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16450
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16451
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16452
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 4|r]
+}
+
+STRING 16453
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16454
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Name (Name (anam))
+{
+Auge um Auge - Stufe 4
+}
+
+STRING 16455
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 2|r]
+}
+
+STRING 16456
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16457
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16458
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16459
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16460
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16461
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16462
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16463
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16464
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Auge um Auge [|cffffcc00Stufe 5|r]
+}
+
+STRING 16465
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16466
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Name (Name (anam))
+{
+Auge um Auge - Stufe 5
+}
+
+STRING 16467
+// Fähigkeiten: A1GF (Auge um Auge - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16468
+// Fähigkeiten: A1GF (Auge um Auge - Stufe 1), Name (Name (anam))
+{
+Auge um Auge - Stufe 1
+}
+
+STRING 16469
+// Fähigkeiten: A1GG (Auge um Auge - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16470
+// Fähigkeiten: A1GG (Auge um Auge - Stufe 2), Name (Name (anam))
+{
+Auge um Auge - Stufe 2
+}
+
+STRING 16471
+// Fähigkeiten: A1GH (Auge um Auge - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16472
+// Fähigkeiten: A1GH (Auge um Auge - Stufe 3), Name (Name (anam))
+{
+Auge um Auge - Stufe 3
+}
+
+STRING 16473
+// Fähigkeiten: A1GI (Auge um Auge - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16474
+// Fähigkeiten: A1GI (Auge um Auge - Stufe 4), Name (Name (anam))
+{
+Auge um Auge - Stufe 4
+}
+
+STRING 16475
+// Fähigkeiten: A1GJ (Auge um Auge - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16476
+// Fähigkeiten: A1GJ (Auge um Auge - Stufe 5), Name (Name (anam))
+{
+Auge um Auge - Stufe 5
+}
+
+STRING 16477
+// Fähigkeiten: A1GK (Sprungattacke), EditorSuffix (Editor-Suffix (ansf))
+{
+(Drachentöter)
+}
+
+STRING 16478
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 1|r] (|cffffcc00K|r)
+}
+
+STRING 16479
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 2|r] (|cffffcc00K|r)
+}
+
+STRING 16480
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 3|r] (|cffffcc00K|r)
+}
+
+STRING 16481
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 4|r] (|cffffcc00K|r)
+}
+
+STRING 16482
+// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+{
+Segen [|cffffcc00Stufe 5|r] (|cffffcc00K|r)
+}
+
+STRING 16483
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 2|r] (|cffffcc00J|r)
+}
+
+STRING 16484
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 3|r] (|cffffcc00J|r)
+}
+
+STRING 16485
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 4|r] (|cffffcc00J|r)
+}
+
+STRING 16486
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 5|r] (|cffffcc00J|r)
+}
+
+STRING 16487
+// Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
+{
+Drohendes Unheil [|cffffcc00Stufe 1|r] (|cffffcc00J|r)
+}
+
+STRING 16488
+// Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
+{
+Heiliger Wille [|cffffcc00Stufe 1|r] (|cffffcc00Y|r)
+}
+
+STRING 16489
+// Fähigkeiten: A08D (Heiliger Wille), Hotkey (Tastaturkürzel - Normal (ahky))
+{
+Y
+}
+
+STRING 16490
+// Fähigkeiten: A08L (Böses bannen), Tip (Tooltipp - Normal (atp1))
+{
+Böses bannen (|cffffcc00L|r)
+}
+
+STRING 16491
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 2|r] (|cffffcc00G|r)
+}
+
+STRING 16492
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 3|r] (|cffffcc00G|r)
+}
+
+STRING 16493
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 4|r] (|cffffcc00G|r)
+}
+
+STRING 16494
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 5|r] (|cffffcc00G|r)
+}
+
+STRING 16495
+// Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
+{
+Märtyrer [|cffffcc00Stufe 1|r] (|cffffcc00G|r)
+}
+
+STRING 16496
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 3|r]
+}
+
+STRING 16497
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 4|r]
+}
+
+STRING 16498
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 5|r]
+}
+
+STRING 16499
+// Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 2
+}
+
+STRING 16500
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area1> um <A0MH,DataA1,%> %.
+}
+
+STRING 16501
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area2> um <A0MH,DataA2,%> %.
+}
+
+STRING 16502
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area3> um <A0MH,DataA3,%> %.
+}
+
+STRING 16503
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area4> um <A0MH,DataA4,%> %.
+}
+
+STRING 16504
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area5> um <A0MH,DataA5,%> %.
+}
+
+STRING 16505
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 1|r]
+}
+
+STRING 16506
+// Fähigkeiten: A1G8 (Auge um Auge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt 5 % des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden
+}
+
+STRING 16507
+// Fähigkeiten: A1G8 (Auge um Auge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt 10 % des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden
+}
+
+STRING 16508
+// Fähigkeiten: A1G8 (Auge um Auge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt 15 % des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden
+}
+
+STRING 16509
+// Fähigkeiten: A1G8 (Auge um Auge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt 20 % des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden
+}
+
+STRING 16510
+// Fähigkeiten: A1G8 (Auge um Auge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt 25 % des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden
+}
+
+STRING 16511
+// Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+}
+
+STRING 16512
+// Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+}
+
+STRING 16513
+// Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+}
+
+STRING 16514
+// Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+}
+
+STRING 16515
+// Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+}
+
+STRING 16516
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 2|r]
+}
+
+STRING 16517
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 3|r]
+}
+
+STRING 16518
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 4|r]
+}
+
+STRING 16519
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 5|r]
+}
+
+STRING 16520
+// Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 3
+}
+
+STRING 16521
+// Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 2|r]
+}
+
+STRING 16522
+// Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 3|r]
+}
+
+STRING 16523
+// Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 4|r]
+}
+
+STRING 16524
+// Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 5|r]
+}
+
+STRING 16525
+// Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 1|r]
+}
+
+STRING 16526
+// Fähigkeiten: A1GK (Sprungattacke), Name (Name (anam))
+{
+Sprungattacke
+}
+
+STRING 16527
+// Fähigkeiten: A1GK (Sprungattacke), Researchtip (Tooltipp - Erlernen (aret))
+{
+Feuergeschoss [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16528
+// Fähigkeiten: A1GK (Sprungattacke), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Wirft ein Feuergeschoss auf den Gegner, verursacht X Punkte Feuerschaden und lässt ihn 3 Sekunden lang für weitere 2*X Punkte Schaden brennen.
+}
+
+STRING 16529
+// Fähigkeiten: A1GL (Sprungattacke), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Drachentöter)
+}
+
+STRING 16530
+// Fähigkeiten: A1GL (Sprungattacke), Name (Name (anam))
+{
+Sprungattacke
+}
+
+STRING 16531
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area1> um <A0MH,DataA1,%> %.
+}
+
+STRING 16532
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16533
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16534
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16535
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16536
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16537
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16538
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16539
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16540
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 1|r]
+}
+
+STRING 16541
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16542
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Name (Name (anam))
+{
+Sprungattacke - Stufe 1
+}
+
+STRING 16543
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area2> um <A0MH,DataA2,%> %.
+}
+
+STRING 16544
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16545
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16546
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16547
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16548
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16549
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16550
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16551
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16552
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 2|r]
+}
+
+STRING 16553
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16554
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Name (Name (anam))
+{
+Sprungattacke - Stufe 2
+}
+
+STRING 16555
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area3> um <A0MH,DataA3,%> %.
+}
+
+STRING 16556
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16557
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16558
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16559
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16560
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16561
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16562
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16563
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16564
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 3|r]
+}
+
+STRING 16565
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16566
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Name (Name (anam))
+{
+Sprungattacke - Stufe 3
+}
+
+STRING 16567
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area4> um <A0MH,DataA4,%> %.
+}
+
+STRING 16568
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16569
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16570
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16571
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16572
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16573
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16574
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16575
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16576
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 4|r]
+}
+
+STRING 16577
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16578
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Name (Name (anam))
+{
+Sprungattacke - Stufe 4
+}
+
+STRING 16579
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area5> um <A0MH,DataA5,%> %.
+}
+
+STRING 16580
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16581
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16582
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16583
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16584
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16585
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16586
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16587
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16588
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Sprungattacke [|cffffcc00Stufe 5|r]
+}
+
+STRING 16589
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Drachentöter)
+}
+
+STRING 16590
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Name (Name (anam))
+{
+Sprungattacke - Stufe 5
+}
+
+STRING 16591
+// Fähigkeiten: A1GR (Sprungattacke - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16592
+// Fähigkeiten: A1GR (Sprungattacke - Stufe 1), Name (Name (anam))
+{
+Sprungattacke - Stufe 1
+}
+
+STRING 16593
+// Fähigkeiten: A1GS (Sprungattacke - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16594
+// Fähigkeiten: A1GS (Sprungattacke - Stufe 2), Name (Name (anam))
+{
+Sprungattacke - Stufe 2
+}
+
+STRING 16595
+// Fähigkeiten: A1GT (Sprungattacke - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16596
+// Fähigkeiten: A1GT (Sprungattacke - Stufe 3), Name (Name (anam))
+{
+Sprungattacke - Stufe 3
+}
+
+STRING 16597
+// Fähigkeiten: A1GU (Sprungattacke - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16598
+// Fähigkeiten: A1GU (Sprungattacke - Stufe 4), Name (Name (anam))
+{
+Sprungattacke - Stufe 4
+}
+
+STRING 16599
+// Fähigkeiten: A1GV (Sprungattacke - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Drachentöter)
+}
+
+STRING 16600
+// Fähigkeiten: A1GV (Sprungattacke - Stufe 5), Name (Name (anam))
+{
+Sprungattacke - Stufe 5
+}
+
+STRING 16601
+// Zauberverstärker/Effekte: B012 (Überlegenheit), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Drachentöter)
+}
+
+STRING 16602
+// Fähigkeiten: A1GW (Feuerblitz), EditorSuffix (Editor-Suffix (ansf))
+{
+(Drachentöter - Sprungattacke)
+}
+
+STRING 16603
+// Einheiten: h02J (Dummy Caster - Sprungattacke), Name (Name (unam))
+{
+Dummy Caster - Sprungattacke
+}
+
+STRING 16604
+// Zauberverstärker/Effekte: B024 (Koloss), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Drachentöter)
+}
+
+STRING 16605
+// Fähigkeiten: A1GK (Sprungattacke), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er 10 Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie für <A1GW,Dur1> Sekunden.
+}
+
+STRING 16606
+// Fähigkeiten: A1GK (Sprungattacke), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er 20 Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie für <A1GW,Dur2> Sekunden.
+}
+
+STRING 16607
+// Fähigkeiten: A1GK (Sprungattacke), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er 30 Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie für <A1GW,Dur3> Sekunden.
+}
+
+STRING 16608
+// Fähigkeiten: A1GK (Sprungattacke), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er 40 Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie für <A1GW,Dur4> Sekunden.
+}
+
+STRING 16609
+// Fähigkeiten: A1GK (Sprungattacke), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er 50 Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie für <A1GW,Dur5> Sekunden.
+}
+
+STRING 16610
+// Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+}
+
+STRING 16611
+// Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+}
+
+STRING 16612
+// Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+}
+
+STRING 16613
+// Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+}
+
+STRING 16614
+// Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+}
+
+STRING 16615
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 1|r]
+}
+
+STRING 16616
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 2|r]
+}
+
+STRING 16617
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 3|r]
+}
+
+STRING 16618
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 4|r]
+}
+
+STRING 16619
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 5|r]
+}
+
+STRING 16620
+// Fähigkeiten: A1H2 (Aura der Autorität - Upgrade 4), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 4
+}
+
+STRING 16621
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area1> um <A0MH,DataA1,%> %.
+}
+
+STRING 16622
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area2> um <A0MH,DataA2,%> %.
+}
+
+STRING 16623
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area3> um <A0MH,DataA3,%> %.
+}
+
+STRING 16624
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area4> um <A0MH,DataA4,%> %.
+}
+
+STRING 16625
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area5> um <A0MH,DataA5,%> %.
+}
+
+STRING 16626
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 1|r]
+}
+
+STRING 16627
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 2|r]
+}
+
+STRING 16628
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 3|r]
+}
+
+STRING 16629
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 4|r]
+}
+
+STRING 16630
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Tip (Tooltipp - Normal (atp1))
+{
+Aura der Autorität [|cffffcc00Stufe 5|r]
+}
+
+STRING 16631
+// Fähigkeiten: A1H3 (Aura der Autorität - Upgrade 5), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 5
+}
+
+STRING 16632
+// Fähigkeiten: A1H5 (Aura der Autorität - Upgrade 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Ritter)
+}
+
+STRING 16633
+// Fähigkeiten: A1H4 (Aura der Autorität - Upgrade 1), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 1
+}
+
+STRING 16634
+// Fähigkeiten: A1H6 (Aura der Autorität - Upgrade 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Ritter)
+}
+
+STRING 16635
+// Fähigkeiten: A1H5 (Aura der Autorität - Upgrade 2), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 2
+}
+
+STRING 16636
+// Fähigkeiten: A1H7 (Aura der Autorität - Upgrade 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Ritter)
+}
+
+STRING 16637
+// Fähigkeiten: A1H6 (Aura der Autorität - Upgrade 3), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 3
+}
+
+STRING 16638
+// Fähigkeiten: A1H8 (Aura der Autorität - Upgrade 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Ritter)
+}
+
+STRING 16639
+// Fähigkeiten: A1H7 (Aura der Autorität - Upgrade 4), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 4
+}
+
+STRING 16640
+// Fähigkeiten: A1HA (Bezwingung), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Ritter)
+}
+
+STRING 16641
+// Fähigkeiten: A1H8 (Aura der Autorität - Upgrade 5), Name (Name (anam))
+{
+Aura der Autorität - Upgrade 5
+}
+
+STRING 16642
+// Fähigkeiten: A1H9 (Bezwingung), Name (Name (anam))
+{
+Bezwingung
+}
+
+STRING 16643
+// Fähigkeiten: A1H9 (Bezwingung), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 1|r]
+}
+
+STRING 16644
+// Fähigkeiten: A1H9 (Bezwingung), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 2|r]
+}
+
+STRING 16645
+// Fähigkeiten: A1H9 (Bezwingung), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 3|r]
+}
+
+STRING 16646
+// Fähigkeiten: A1H9 (Bezwingung), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 4|r]
+}
+
+STRING 16647
+// Fähigkeiten: A1H9 (Bezwingung), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 5|r]
+}
+
+STRING 16648
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel um 5 * seine eigene Stufe erhöht.
+}
+
+STRING 16649
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel um 10 * seine eigene Stufe erhöht.
+}
+
+STRING 16650
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel um 15 * seine eigene Stufe erhöht.
+}
+
+STRING 16651
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel um 20 * seine eigene Stufe erhöht.
+}
+
+STRING 16652
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel um 25 * seine eigene Stufe erhöht.
+}
+
+STRING 16653
+// Fähigkeiten: A1HL (Verteidigen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Ritter)
+}
+
+STRING 16654
+// Fähigkeiten: A1HA (Bezwingung), Name (Name (anam))
+{
+Bezwingung
+}
+
+STRING 16655
+// Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+}
+
+STRING 16656
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16657
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16658
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16659
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16660
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16661
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16662
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16663
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16664
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 1|r]
+}
+
+STRING 16665
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Ritter)
+}
+
+STRING 16666
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Name (Name (anam))
+{
+Bezwingung - Stufe 1
+}
+
+STRING 16667
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16668
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16669
+// Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+}
+
+STRING 16670
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16671
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16672
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16673
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16674
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16675
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16676
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16677
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16678
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 2|r]
+}
+
+STRING 16679
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Ritter)
+}
+
+STRING 16680
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Name (Name (anam))
+{
+Bezwingung - Stufe 2
+}
+
+STRING 16681
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16682
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16683
+// Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+}
+
+STRING 16684
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16685
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16686
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16687
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16688
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16689
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16690
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16691
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16692
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 3|r]
+}
+
+STRING 16693
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Ritter)
+}
+
+STRING 16694
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Name (Name (anam))
+{
+Bezwingung - Stufe 3
+}
+
+STRING 16695
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16696
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16697
+// Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+}
+
+STRING 16698
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16699
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16700
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16701
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16702
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16703
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16704
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16705
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16706
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 4|r]
+}
+
+STRING 16707
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Ritter)
+}
+
+STRING 16708
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Name (Name (anam))
+{
+Bezwingung - Stufe 4
+}
+
+STRING 16709
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16710
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16711
+// Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+}
+
+STRING 16712
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16713
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16714
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16715
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16716
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16717
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16718
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16719
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16720
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Bezwingung [|cffffcc00Stufe 5|r]
+}
+
+STRING 16721
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Ritter)
+}
+
+STRING 16722
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Name (Name (anam))
+{
+Bezwingung - Stufe 5
+}
+
+STRING 16723
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16724
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16725
+// Fähigkeiten: A1HF (Bezwingung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Kleriker)
+}
+
+STRING 16726
+// Fähigkeiten: A1HF (Bezwingung - Stufe 1), Name (Name (anam))
+{
+Bezwingung - Stufe 1
+}
+
+STRING 16727
+// Fähigkeiten: A1HG (Bezwingung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Kleriker)
+}
+
+STRING 16728
+// Fähigkeiten: A1HG (Bezwingung - Stufe 2), Name (Name (anam))
+{
+Bezwingung - Stufe 2
+}
+
+STRING 16729
+// Fähigkeiten: A1HH (Bezwingung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Kleriker)
+}
+
+STRING 16730
+// Fähigkeiten: A1HH (Bezwingung - Stufe 3), Name (Name (anam))
+{
+Bezwingung - Stufe 3
+}
+
+STRING 16731
+// Fähigkeiten: A1HI (Bezwingung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Kleriker)
+}
+
+STRING 16732
+// Fähigkeiten: A1HI (Bezwingung - Stufe 4), Name (Name (anam))
+{
+Bezwingung - Stufe 4
+}
+
+STRING 16733
+// Fähigkeiten: A1HJ (Bezwingung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Kleriker)
+}
+
+STRING 16734
+// Fähigkeiten: A1HJ (Bezwingung - Stufe 5), Name (Name (anam))
+{
+Bezwingung - Stufe 5
+}
+
+STRING 16735
+// Zauberverstärker/Effekte: B007 (Aura der eisernen Haut), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Ritter)
+}
+
+STRING 16736
+// Zauberverstärker/Effekte: B008 (Konzentration), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Ritter)
+}
+
+STRING 16737
+// Zauberverstärker/Effekte: B013 (Selbstlosigkeit (Ziel)), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Ritter)
+}
+
+STRING 16738
+// Zauberverstärker/Effekte: B014 (Selbstlosigkeit), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Ritter)
+}
+
+STRING 16739
+// Zauberverstärker/Effekte: B023 (Unbeugsamkeit), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Ritter)
+}
+
+STRING 16740
+// Zauberverstärker/Effekte: B025 (Aura der Rücknahme), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Ritter)
+}
+
+STRING 16741
+// Fähigkeiten: A1H9 (Bezwingung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit mit maximaler Stufe 3 für die Manifestation von <A1H9,DataB2>Templern. Die betroffene Einheit kann keine Zauber wirken und nimmt <A1H9,DataA2> Punkte Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigen <A1H9,DataB2>Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden.
+}
+
+STRING 16742
+// Zauberverstärker/Effekte: B026 (Aura der Autorität), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Ritter)
+}
+
+STRING 16743
+// Fähigkeiten: A1H9 (Bezwingung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit mit maximaler Stufe 2 für die Manifestation eines Templers. Die betroffene Einheit kann keine Zauber wirken und nimmt <A1H9,DataA1> Punkte Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden.
+}
+
+STRING 16744
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16745
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16746
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16747
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16748
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Verteidigen [|cffffcc00Stufe 1|r]
+}
+
+STRING 16749
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Ritter)
+}
+
+STRING 16750
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Name (Name (anam))
+{
+Verteidigen - Stufe 1
+}
+
+STRING 16751
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16752
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16753
+// Zauberverstärker/Effekte: B02V (), Bufftip (Tooltipp (ftip))
+{
+Bezwingung
+}
+
+STRING 16754
+// Zauberverstärker/Effekte: B02W (), Bufftip (Tooltipp (ftip))
+{
+Bezwingung
+}
+
+STRING 16755
+// Zauberverstärker/Effekte: B02W (), EditorSuffix (Editor-Suffix (fnsf))
+{
+ (Ritter - Diener)
+}
+
+STRING 16756
+// Fähigkeiten: A1H9 (Bezwingung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit mit maximaler Stufe 4 für die Manifestation von <A1H9,DataB3>Templern. Die betroffene Einheit kann keine Zauber wirken und nimmt <A1H9,DataA3> Punkte Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigen <A1H9,DataB3>Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden.
+}
+
+STRING 16757
+// Fähigkeiten: A1H9 (Bezwingung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit mit maximaler Stufe 5 für die Manifestation von <A1H9,DataB4>Templern. Die betroffene Einheit kann keine Zauber wirken und nimmt <A1H9,DataA4> Punkte Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigen <A1H9,DataB4>Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden.
+}
+
+STRING 16758
+// Fähigkeiten: A1H9 (Bezwingung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit mit maximaler Stufe 6 für die Manifestation von <A1H9,DataB5>Templern. Die betroffene Einheit kann keine Zauber wirken und nimmt <A1H9,DataA5> Punkte Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigen <A1H9,DataB5>Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden.
+}
+
+STRING 16759
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit für die Manifestation eines oder mehrerer Templer. Die betroffene Einheit kann keine Zauber wirken und nimmt Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigen einer oder mehrere Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden. |n|n|cffffcc00Stufe 1|r - Gegner mit maximal Stufe 2, verursacht <A1H9,DataA1> Schaden pro Sekunde und beschwört von einen Templer.|n|cffffcc00Stufe 2|r - Gegner mit maximal Stufe 3, verursacht <A1H9,DataA2> Schaden pro Sekunde und beschwört <A1H9,DataB2>Templer.|n|cffffcc00Stufe 3|r - Gegner mit maximal Stufe 4, verursacht <A1H9,DataA3> Schaden pro Sekunde und beschwört <A1H9,DataB3>Templer.|n|cffffcc00Stufe 4|r - Gegner mit maximal Stufe 5, verursacht <A1H9,DataA4> Schaden pro Sekunde und beschwört <A1H9,DataB4>Templer.|n|cffffcc00Stufe 5|r - Gegner mit maximal Stufe 6, verursacht <A1H9,DataA5> Schaden pro Sekunde und beschwört <A1H9,DataB5>Templer.
+}
+
+STRING 16760
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit für die Manifestation eines oder mehrerer Templer. Die betroffene Einheit kann keine Zauber wirken und nimmt Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigen einer oder mehrere Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden. |n|n|cffffcc00Stufe 1|r - Gegner mit maximal Stufe 2, verursacht <A1H9,DataA1> Schaden pro Sekunde und beschwört von einen Templer.|n|cffffcc00Stufe 2|r - Gegner mit maximal Stufe 3, verursacht <A1H9,DataA2> Schaden pro Sekunde und beschwört <A1H9,DataB2>Templer.|n|cffffcc00Stufe 3|r - Gegner mit maximal Stufe 4, verursacht <A1H9,DataA3> Schaden pro Sekunde und beschwört <A1H9,DataB3>Templer.|n|cffffcc00Stufe 4|r - Gegner mit maximal Stufe 5, verursacht <A1H9,DataA4> Schaden pro Sekunde und beschwört <A1H9,DataB4>Templer.|n|cffffcc00Stufe 5|r - Gegner mit maximal Stufe 6, verursacht <A1H9,DataA5> Schaden pro Sekunde und beschwört <A1H9,DataB5>Templer.
+}
+
+STRING 16761
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit für die Manifestation eines oder mehrerer Templer. Die betroffene Einheit kann keine Zauber wirken und nimmt Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigen einer oder mehrere Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden. |n|n|cffffcc00Stufe 1|r - Gegner mit maximal Stufe 2, verursacht <A1H9,DataA1> Schaden pro Sekunde und beschwört von einen Templer.|n|cffffcc00Stufe 2|r - Gegner mit maximal Stufe 3, verursacht <A1H9,DataA2> Schaden pro Sekunde und beschwört <A1H9,DataB2>Templer.|n|cffffcc00Stufe 3|r - Gegner mit maximal Stufe 4, verursacht <A1H9,DataA3> Schaden pro Sekunde und beschwört <A1H9,DataB3>Templer.|n|cffffcc00Stufe 4|r - Gegner mit maximal Stufe 5, verursacht <A1H9,DataA4> Schaden pro Sekunde und beschwört <A1H9,DataB4>Templer.|n|cffffcc00Stufe 5|r - Gegner mit maximal Stufe 6, verursacht <A1H9,DataA5> Schaden pro Sekunde und beschwört <A1H9,DataB5>Templer.
+}
+
+STRING 16762
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit für die Manifestation eines oder mehrerer Templer. Die betroffene Einheit kann keine Zauber wirken und nimmt Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigen einer oder mehrere Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden. |n|n|cffffcc00Stufe 1|r - Gegner mit maximal Stufe 2, verursacht <A1H9,DataA1> Schaden pro Sekunde und beschwört von einen Templer.|n|cffffcc00Stufe 2|r - Gegner mit maximal Stufe 3, verursacht <A1H9,DataA2> Schaden pro Sekunde und beschwört <A1H9,DataB2>Templer.|n|cffffcc00Stufe 3|r - Gegner mit maximal Stufe 4, verursacht <A1H9,DataA3> Schaden pro Sekunde und beschwört <A1H9,DataB3>Templer.|n|cffffcc00Stufe 4|r - Gegner mit maximal Stufe 5, verursacht <A1H9,DataA4> Schaden pro Sekunde und beschwört <A1H9,DataB4>Templer.|n|cffffcc00Stufe 5|r - Gegner mit maximal Stufe 6, verursacht <A1H9,DataA5> Schaden pro Sekunde und beschwört <A1H9,DataB5>Templer.
+}
+
+STRING 16763
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Markiert eine Ziel-Einheit für die Manifestation eines oder mehrerer Templer. Die betroffene Einheit kann keine Zauber wirken und nimmt Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigen einer oder mehrere Templer aus ihrem Leichnam empor. 'Bezwingung' kann weder gebannt noch beendet werden. |n|n|cffffcc00Stufe 1|r - Gegner mit maximal Stufe 2, verursacht <A1H9,DataA1> Schaden pro Sekunde und beschwört von einen Templer.|n|cffffcc00Stufe 2|r - Gegner mit maximal Stufe 3, verursacht <A1H9,DataA2> Schaden pro Sekunde und beschwört <A1H9,DataB2>Templer.|n|cffffcc00Stufe 3|r - Gegner mit maximal Stufe 4, verursacht <A1H9,DataA3> Schaden pro Sekunde und beschwört <A1H9,DataB3>Templer.|n|cffffcc00Stufe 4|r - Gegner mit maximal Stufe 5, verursacht <A1H9,DataA4> Schaden pro Sekunde und beschwört <A1H9,DataB4>Templer.|n|cffffcc00Stufe 5|r - Gegner mit maximal Stufe 6, verursacht <A1H9,DataA5> Schaden pro Sekunde und beschwört <A1H9,DataB5>Templer.
+}
+
+STRING 16764
+// Einheiten: n06N (Minikarte - Eingang), Name (Name (unam))
+{
+Minikarte - Eingang
+}
+
+STRING 16765
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16766
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16767
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16768
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16769
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16770
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16771
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16772
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16776
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16777
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16779
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16780
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16781
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16782
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16783
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16784
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16785
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16786
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16790
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16791
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16793
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16794
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16795
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16796
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16797
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16798
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16799
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16800
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16804
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16805
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16807
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16808
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16809
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16810
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 16811
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 16812
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 16813
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 16814
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 16818
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 16819
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16820
+// Fähigkeiten: A1HR (Verteidigen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Ritter)
+}
+
+STRING 16821
+// Fähigkeiten: A1HR (Verteidigen - Stufe 1), Name (Name (anam))
+{
+Verteidigen - Stufe 1
+}
+
+STRING 16830
+// Zauberverstärker/Effekte: B02V (), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Ritter)
+}
+
+STRING 16831
+// Fähigkeiten: A1HK (Verteidigen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber|r|nAktivieren, um eine Chance von <A1HK,DataF1> % zu haben, Stichangriffe auf deren Quelle zu reflektieren und nur <A1HK,DataA1,%> % des Schadens durch Angriffe, die nicht reflektiert werden, zu nehmen. Während 'Verteidigung' aktiv ist, ist Bewegung auf <A1HK,DataC1,%> % der normalen Geschwindigkeit reduziert.|n|cffc3dbffDer Ritter muss einen Schild tragen, um diesen Zauber wirken zu können.|r
+}
+
+STRING 16832
+// Fähigkeiten: A1HM (Verteidigen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Grundzauber|r|nAktivieren, um eine Chance von <A1HK,DataF1> % zu haben, Stichangriffe auf deren Quelle zu reflektieren und nur <A1HK,DataA1,%> % des Schadens durch Angriffe, die nicht reflektiert werden, zu nehmen. Während 'Verteidigung' aktiv ist, ist Bewegung auf <A1HK,DataC1,%> % der normalen Geschwindigkeit reduziert.|n|cffc3dbffDer Ritter muss einen Schild tragen, um diesen Zauber wirken zu können.|r
+}
+
+STRING 16833
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+}
+
+STRING 16834
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Damned Ground [|cffffcc00Level 2|r]
+}
+
+STRING 16835
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Nekromant)
+}
+
+STRING 16836
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Name (Name (anam))
+{
+Verfluchter Boden - Stufe 2
+}
+
+STRING 16837
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+}
+
+STRING 16838
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Damned Ground [|cffffcc00Level 3|r]
+}
+
+STRING 16839
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Nekromant)
+}
+
+STRING 16840
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Name (Name (anam))
+{
+Verfluchter Boden - Stufe 3
+}
+
+STRING 16841
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+}
+
+STRING 16842
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Damned Ground [|cffffcc00Level 4|r]
+}
+
+STRING 16843
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Nekromant)
+}
+
+STRING 16844
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Name (Name (anam))
+{
+Verfluchter Boden - Stufe 4
+}
+
+STRING 16845
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+}
+
+STRING 16846
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Damned Ground [|cffffcc00Level 5|r]
+}
+
+STRING 16847
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Nekromant)
+}
+
+STRING 16848
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Name (Name (anam))
+{
+Verfluchter Boden - Stufe 5
+}
+
+STRING 16849
+// Fähigkeiten: A1HS (Verfluchter Boden - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Nekromant)
+}
+
+STRING 16850
+// Fähigkeiten: A1HS (Verfluchter Boden - Stufe 2), Name (Name (anam))
+{
+Verfluchter Boden - Stufe 2
+}
+
+STRING 16851
+// Fähigkeiten: A1HT (Verfluchter Boden - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Nekromant)
+}
+
+STRING 16852
+// Fähigkeiten: A1HT (Verfluchter Boden - Stufe 3), Name (Name (anam))
+{
+Verfluchter Boden - Stufe 3
+}
+
+STRING 16853
+// Fähigkeiten: A1HU (Verfluchter Boden - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Nekromant)
+}
+
+STRING 16854
+// Fähigkeiten: A1HU (Verfluchter Boden - Stufe 4), Name (Name (anam))
+{
+Verfluchter Boden - Stufe 4
+}
+
+STRING 16855
+// Fähigkeiten: A1HV (Verfluchter Boden - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Nekromant)
+}
+
+STRING 16856
+// Fähigkeiten: A1HV (Verfluchter Boden - Stufe 5), Name (Name (anam))
+{
+Verfluchter Boden - Stufe 5
+}
+
+STRING 16857
+// Einheiten: n06K (Wildschweinmutter), Name (Name (unam))
+{
+Boar Mother
+}
+
+STRING 16858
+// Einheiten: n06L (Junges Wildschwein), Name (Name (unam))
+{
+Young Boar
+}
+
+STRING 16859
+// Fähigkeiten: A1HW (Junge Wildschweine), Name (Name (anam))
+{
+Young Boars
 }
 
