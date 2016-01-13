@@ -3,7 +3,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 	struct TalkDago extends Talk
 
 		implement Talk
-		
+
 		private AInfo m_hi
 		private AInfo m_castle
 		private AInfo m_tastyMushrooms
@@ -15,10 +15,10 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		private AInfo m_apprentice
 		private AInfo m_arrows
 		private AInfo m_exit
-		
+
 		private AInfo m_whatKindOfMushrooms
 		private AInfo m_goodLuck
-		
+
 		private AInfo m_ofCourse
 		private AInfo m_no
 
@@ -78,18 +78,18 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call speech(info, character, true, tre("Einiges. Ich wurde immerhin hier geboren. Mann, wie die Zeit vergeht! Aber ich werde sowieso nicht mehr lange leben. Heute habt ihr mich zwar gerettet, aber morgen schon werden mich die Orks töten.", "Good stuff. I was born here, after all. Man, how time flies! But I'm not going to live much longer anyway. TOday, you have indeed saved me but tomorrow the Orcs will already kill me."), gg_snd_Dago18)
 			call speech(info, character, true, tre("Manchmal frage ich mich wirklich, welchen Sinn es macht, sich noch weiter abzumühen und auf seinen sicheren Tod zu warten.", "Sometimes I ask really ask myself if there is any sense in working hard and to wait for one's certain death."), gg_snd_Dago19)
 			call speech(info, character, false, tre("Die Gegend hier …", "This area …"), null)
-			call speech(info, character, true, tr("Ja, tut mir leid. Ich bin vom Thema abgewichen. Also, es gibt hier natürlich einmal die Burg Talras, welche dem Herzog oder besser gesagt dessen Familie gehört. Dann sind da noch die Bauern auf dem Hof im Westen. Die haben das Land vom Herzog gepachtet und sind nicht besonders gut auf ihn zu sprechen."), gg_snd_Dago20)
-			call speech(info, character, true, tr("Noch weiter westlich vom Bauernhof befindet sich der Mühlberg, auf welchem Guntrichs Mühle steht und manchmal die Kühe oder Schafe der Bauern grasen."), gg_snd_Dago21)
-			call speech(info, character, true, tr("Wir Jagdleute leben in der Burg. Wahrscheinlich wirst du auch noch einige Aussiedler wie den Fährmann Trommon treffen, die lieber für sich leben. Ach so und vor einer Weile sind einige Krieger aus dem Norden hier angekommen. Sie haben ihr Lager etwas weiter nördlich am Fluss aufgeschlagen."), gg_snd_Dago22)
-			call speech(info, character, true, tr("Weiß der Teufel, was die hier wollen!"), gg_snd_Dago23)
+			call speech(info, character, true, tre("Ja, tut mir leid. Ich bin vom Thema abgewichen. Also, es gibt hier natürlich einmal die Burg Talras, welche dem Herzog oder besser gesagt dessen Familie gehört. Dann sind da noch die Bauern auf dem Hof im Westen. Die haben das Land vom Herzog gepachtet und sind nicht besonders gut auf ihn zu sprechen.", "Yes, I am sorry. I am departing from the subject. So, there is of course once the castle Talras which is owned by the duke or rather is family. Then there are the farmers on the farm in the west. They leased the land from the duke and are not particulary good to say about him."), gg_snd_Dago20)
+			call speech(info, character, true, tre("Noch weiter westlich vom Bauernhof befindet sich der Mühlberg, auf welchem Guntrichs Mühle steht und manchmal die Kühe oder Schafe der Bauern grasen.", "Further to the west of the farm is the Mill Hill on which Guntrich's mill stands and sometimes the cows or sheeps of the farmers do graze."), gg_snd_Dago21)
+			call speech(info, character, true, tre("Wir Jagdleute leben in der Burg. Wahrscheinlich wirst du auch noch einige Aussiedler wie den Fährmann Trommon treffen, die lieber für sich leben. Ach so und vor einer Weile sind einige Krieger aus dem Norden hier angekommen. Sie haben ihr Lager etwas weiter nördlich am Fluss aufgeschlagen.", "We huntsmen do live in the castle. You'll probably meet a few emigrants like the ferryman Trommon as well who prefer to live own their own. Oh, and a while ago some warriors have arrived here from the north. They have built up their camp further north along the river."), gg_snd_Dago22)
+			call speech(info, character, true, tre("Weiß der Teufel, was die hier wollen!", "The devil knows what they want here!"), gg_snd_Dago23)
 			call speech(info, character, true, tr("Und pass auf, wenn du durch die Wälder hier ziehst. Hier gibt’s außer den wilden Tieren auch noch Wegelagerer, die dir für ein paar Goldmünzen die Haut bei lebendigem Leibe abziehen würden. Ganz zu schweigen von den Kreaturen, die sich nördlich des Hofes und am Ostufer des Flusses rumtreiben."), gg_snd_Dago24)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		private static method hasMushrooms takes ACharacter character returns boolean
 			return (character.inventory().hasItemType('I01L') or character.inventory().hasItemType('I01K') or character.inventory().hasItemType('I03Y')) // NOTE alle Pilze hinzufügen
 		endmethod
-		
+
 		private static method mushroomsAreTasty takes ACharacter character returns boolean
 			return (character.inventory().hasItemType('I01L') or character.inventory().hasItemType('I01K')) // NOTE alle Pilze hinzufügen
 		endmethod
@@ -182,7 +182,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			endif
 			call thistype.conclusion(info, character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Kunos Tochter“ aktiv und nicht abgeschlossen)
 		private static method infoConditionApprentice takes AInfo info, ACharacter character returns boolean
 			return QuestKunosDaughter.characterQuest(character).questItem(0).isNew()
@@ -194,7 +194,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call speech(info, character, true, tr("Einen Schüler? Nein, für so etwas habe ich keine Zeit!"), gg_snd_Dago31)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 3 des Auftrags „Die Befestigung von Talras“ ist aktiv)
 		private static method infoConditionArrows takes AInfo info, ACharacter character returns boolean
 			return QuestReinforcementForTalras.characterQuest(character).questItem(2).isNew()
