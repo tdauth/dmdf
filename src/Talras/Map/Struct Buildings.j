@@ -1,7 +1,7 @@
 library StructMapMapBuildings requires StructGameCharacter
 
 	struct Buildings
-		private static trigger m_harvestTrigger
+		private static timer m_refillTimer
 		private static trigger m_bringGoldTrigger
 		private static trigger m_usageTrigger
 		private static trigger m_constructionStartTrigger
@@ -10,13 +10,8 @@ library StructMapMapBuildings requires StructGameCharacter
 		private static unit array m_buildings
 		private static integer array m_collectedGold[12] // TODO MapData.maxPlayers
 		
-		private static method triggerConditionHarvest takes nothing returns boolean
-			if (GetUnitTypeId(GetTriggerUnit()) == 'h02A' and GetSpellAbilityId() == 'A1DR') then
-				debug call Print("Refill goldgg_unit_n06E_0487")
-				call SetResourceAmount(gg_unit_n06E_0487, GetResourceAmount(gg_unit_n06E_0487) + 10)
-			endif
-			
-			return false
+		private static method timerFunctionRefill takes nothing returns nothing
+			call SetResourceAmount(gg_unit_n06E_0487, GetResourceAmount(gg_unit_n06E_0487) + 10)
 		endmethod
 		
 		private static method triggerConditionBringGold takes nothing returns boolean
@@ -31,6 +26,10 @@ library StructMapMapBuildings requires StructGameCharacter
 				debug call Print("Gathered gold: " + I2S(gold))
 				if (gold < actualGold) then
 					call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD) - (actualGold - gold))
+					call Bounty(GetTriggerPlayer(), GetUnitX(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), GetUnitY(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), gold)
+				elseif (gold > actualGold) then
+					call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD) + (gold - actualGold))
+					call Bounty(GetTriggerPlayer(), GetUnitX(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), GetUnitY(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), gold)
 				endif
 			endif
 			
@@ -101,9 +100,8 @@ library StructMapMapBuildings requires StructGameCharacter
 		
 		private static method onInit takes nothing returns nothing
 			local integer i
-			set thistype.m_harvestTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(thistype.m_harvestTrigger, EVENT_PLAYER_UNIT_SPELL_CAST)
-			call TriggerAddCondition(thistype.m_harvestTrigger, Condition(function thistype.triggerConditionHarvest))
+			set thistype.m_refillTimer = CreateTimer()
+			call TimerStart(thistype.m_refillTimer, 2.0, true, function thistype.timerFunctionRefill)
 		
 			set thistype.m_bringGoldTrigger = CreateTrigger()
 			set i = 0

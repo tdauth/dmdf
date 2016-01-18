@@ -787,14 +787,17 @@ Für Version 0.6:
 * DONE: "-repick" erlauben, vor allem in Arena: Stufe bleibt erhalten.
 * Save/Load-System einführen: Klasse, Stufe/Erfahrung, Attribute?, Gold, Holz?, Zauber nicht, reskillen spart Platz!, Equipment, Items aus Rucksack? Quests kann man noch einmal machen, Spiel beginnt von vorne
 * DONE: Während Verwandlung zumindest Zugriff auf Rucksack zulassen, damit Gegenstände eingesammelt werden können und Tränke benutzt.
-* ATimedRevival: Abstraktion von ARevival und dem Revival im struct Fellow.
 * DONE: Alle 4 Slots verwenden: http://www.hiveworkshop.com/forums/spells-569/easy-item-stack-n-split-v2-7-4-a-153287/?prev=search%3Dstack%26d%3Dlist%26r%3D20
-* Wenn man Gegenstände auf den Boden legt (Drop) alle Aufladungen ablegen, wenn man Gegenstände gibt (Order), nur eine Aufladung geben
+* FIXED: Wenn man Gegenstände auf den Boden legt (Drop) alle Aufladungen ablegen
+* Wenn man Gegenstände gibt (Order), nur eine Aufladung geben
+* Spieler kann anderem Spieler keinen Gegenstand geben, selbe Funktion wie beim Aufheben einbauen.
+* FIXED (verkauft nur noch eine Aufladung): Spieler verkauft nun alle Charges eines Gegenstands am Shop, weil Drop alles dropt? Extra Sell-Event einbauen!
 * System für korrekte Kamerahöhe bei Brücken: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/camera-height-above-doodads-destructibles-273631/#post2767796
 * FIXED: Zumindest eine feste Höhe bei Brücken einstellen
-* Säule und Brücke verschwinden: http://www.wc3c.net/showthread.php?t=90920
+* FIXED: Säule verschwindet.
+* Brücke und Schiff verschwinden: http://www.wc3c.net/showthread.php?t=90920
 * FIXED: Disabled Icons für die disabled Icons der Inventarplatzhalter.
-* Trotz Werten wie 0.4 droppen Gegenstände bei Spawns immer?
+* DEPRECATED: Trotz Werten wie 0.4 droppen Gegenstände bei Spawns immer? Es müsste addItemType() verwendet werden. Gegenstandstypen können sich nur Gegenseitig ausschließen?
 * Charakter stirbt an Pfeilhagel selbst aber nur wenn auf Gegner angewandt, Gegner sind im Zielgebiet (mit Stufe 5 der Fähigkeit).
 * Tastenkürzel für alle Klassen
 * Restliche Klassenzauber: Nekromant (1 Zauber), Ritter (1 Zauber), Waldläufer (2 Zauber - Ultis)
@@ -803,17 +806,17 @@ Für Version 0.6:
 * FIXED: Sprungattacke: Knockback wird nicht ausgeführt, nur eine Einheit wird gelähmt.
 * Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
 * Musik aus Klassenauswahl nach Video beenden!
-* Forschung in Stützpunkt, die Pferd schneller macht oder mehr Einkünfte erlaubt.
+* DONE: Forschung in Stützpunkt, die Pferd schneller macht oder mehr Einkünfte erlaubt.
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
 * FIXED (neues OpLimit beim Zerstören aller Zauber des Charakters): Ab dem zweiten Repick steht der alte Charakter noch da.
-* Illusionen und Kopie in Video brauchen das gleiche Angriffsanimationssystem.
+* FIXED: Illusionen braucht das gleiche Angriffsanimationssystem.
+* FIXED: Kopie in Video braucht das gleiche Angriffsanimationssystem.
 * FIXED: Deranors Leibwache soll Runen oder Tränke droppen.
 * FIXED: Nach Repick sollen die gedroppten Gegenstände noch dem Spieler gehören.
 * Deranor sollte nach Tod auch etwas droppen.
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
-* Spieler kann anderem Spieler keinen Gegenstand geben, selbe Funktion wie beim Aufheben einbauen.
-* Spieler verkauft nun alle Charges eines Gegenstands am Shop, weil Drop alles dropt? Extra Sell-Event einbauen!
+* Vervielfachung oder Beschwörung von Illusionen sollte dazu führen, dass die Illusionen immer das Equipment an haben.
 
 Abgeschlossene Punkte:
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.

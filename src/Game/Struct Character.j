@@ -1,6 +1,130 @@
 library StructGameCharacter requires Asl, StructGameDmdfHashTable
 
 	/**
+	 * \brief Handles attack animations of the Villager255 model. Whenever the unit attacks the attack animation is replaced depending on the equipped items.
+	 */
+	struct OrderAnimations
+		private Character m_character
+		private unit m_unit
+		
+		public method unit takes nothing returns unit
+			return this.m_unit
+		endmethod
+		
+		/**
+		 * Since the Villager255 model is used, animation indices have to be set manually depending on the weapon.
+		 * In this trigger the attack animation of the character is determined.
+		 */
+		private trigger m_animationOrderTrigger
+		
+		private static method triggerConditionOrder takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			return this.unit() == GetAttacker()
+		endmethod
+		
+		private static method triggerActionOrder takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local AInventory inventory = this.m_character.inventory()
+			local AIntegerVector values = 0
+			/*
+			 * If the character is morphed it has not the villager255 model.
+			 * Illusions are only created from non-morphed characters.
+			 */
+			if (not this.m_character.isMorphed.evaluate() and IsUnitIllusion(this.unit())) then
+				// Attack 1 - 15, no weapon
+				if (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
+					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(13, 20))
+					debug call Print("Attack without weapon")
+				// Attack Alternate 1 - 9, two handed sword
+				elseif (false) then
+					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(27, 29))
+				// Attack Defend 1 - 2, attack with buckler
+				// basically this should be already provided by the animation tag "defend"
+				elseif (inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 112)
+					debug call Print("Attack with buckler")
+				// Attack throw 6 - 7, bow
+				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsBow.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(122, 123))
+					debug call Print("Attack with bow")
+				// throwing spear
+				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsThrowingSpear.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 118) //  119
+					debug call Print("Attack with a throwing spear")
+				// attacking with spear in melee
+				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsMeleeSpear.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 117)
+					debug call Print("Attack with spear in melee")
+				// attacking with two handed lance
+				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedLance.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 61)
+					debug call Print("Attack with two handed lance")
+				// attacking with two handed hammer
+				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedHammer.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
+					call SetUnitAnimationByIndex(GetAttacker(), 62)
+					debug call Print("Attack with two handed hammer")
+				// attack with a weapon in each hand -> no buckler in right hand
+				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
+					// attack either with left or right hand TODO animation for both hands?
+					set values = AIntegerVector.create()
+					call values.pushBack(21)
+					call values.pushBack(22)
+					call values.pushBack(40)
+					call values.pushBack(41)
+					call values.pushBack(23)
+					call values.pushBack(24)
+					call values.pushBack(25)
+					call values.pushBack(26)
+					call SetUnitAnimationByIndex(GetAttacker(), values.random())
+					call values.destroy()
+					debug call Print("Attack with two weapons")
+				// Attack with one left handed weapon
+				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
+					set values = AIntegerVector.create()
+					call values.pushBack(21)
+					call values.pushBack(40)
+					call values.pushBack(23)
+					call values.pushBack(25)
+					call SetUnitAnimationByIndex(GetAttacker(), values.random())
+					call values.destroy()
+					debug call Print("Attack with one left handed weapon")
+				// Attack with one right handed weapon
+				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
+					set values = AIntegerVector.create()
+					call values.pushBack(22)
+					call values.pushBack(41)
+					call values.pushBack(24)
+					call values.pushBack(26)
+					call SetUnitAnimationByIndex(GetAttacker(), values.random())
+					call values.destroy()
+					debug call Print("Attack with one right handed weapon")
+				debug else
+					debug call Print("Unknown attack style! Implement animation!")
+				endif
+			endif
+		endmethod
+		
+		public static method create takes Character character, unit whichUnit returns thistype
+			local thistype this = thistype.allocate()
+			set this.m_character = character
+			set this.m_unit = whichUnit
+			
+			set this.m_animationOrderTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(this.m_animationOrderTrigger, EVENT_PLAYER_UNIT_ATTACKED)
+			call TriggerAddCondition(this.m_animationOrderTrigger, Condition(function thistype.triggerConditionOrder))
+			call TriggerAddAction(this.m_animationOrderTrigger, function thistype.triggerActionOrder)
+			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, "this", this)
+			
+			return this
+		endmethod
+		
+		public method onDestroy takes nothing returns nothing
+			call DmdfHashTable.global().destroyTrigger(this.m_animationOrderTrigger)
+			set this.m_animationOrderTrigger = null
+		endmethod
+	endstruct
+
+	/**
 	 * This function interface can be used to react to crafting events.
 	 * Functions which match to this interface can be registered via \ref Character#addOnCraftItemFunction() and will be called whenever the character crafts an item.
 	 */
@@ -36,11 +160,26 @@ endif
 		private AIntegerVector m_fellows
 
 		private boolean m_isMorphed
+		
 		/**
-		 * Since the Villager255 model is used, animation indices have to be set manually depending on the weapon.
-		 * In this trigger the attack animation of the character is determined.
+		 * Handles Villager255 animations on attacking other units.
 		 */
-		private trigger m_animationOrderTrigger
+		private OrderAnimations m_orderAnimations
+		/**
+		 * Handles attacking animations of all summoned illusions.
+		 */
+		private AIntegerList m_illusionOrderAnimations
+		/**
+		 * Triggers whenever a new illusion is spawned.
+		 */
+		private trigger m_spawnIllusionTrigger
+		/**
+		 * Triggers whenever an illusion dies.
+		 */
+		private trigger m_illusionDiesTrigger
+		/**
+		 * Emotes trigger which allows playing character animations via chat commands.
+		 */
 		private trigger m_danceTrigger
 		
 		private AHashTable m_realSpellLevels
@@ -431,87 +570,38 @@ endif
 			call SelectUnitForPlayerSingle(this.unit(), this.player())
 			debug call Print("Selected worker")
 		endmethod
-
-		private static method triggerConditionOrder takes nothing returns boolean
+		
+		private static method triggerConditionIllusionDies takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			return this.unit() == GetAttacker()
+			local AIntegerListIterator iterator = 0
+			if (IsUnitIllusion(GetTriggerUnit())) then
+				set iterator = this.m_illusionOrderAnimations.begin()
+				loop
+					exitwhen (not iterator.isValid())
+					if (GetTriggerUnit() == OrderAnimations(iterator.data()).unit()) then
+						debug call Print("Removing order for illusion")
+						call OrderAnimations(iterator.data()).destroy()
+						call this.m_illusionOrderAnimations.erase(iterator)
+						exitwhen (true)
+					endif
+					call iterator.next()
+				endloop
+				call iterator.destroy()
+			endif
+			
+			return false
 		endmethod
 		
-		private static method triggerActionOrder takes nothing returns nothing
+		private static method triggerConditionSpawnIllusion takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			local AIntegerVector values = 0
-			if (not this.isMorphed()) then
-				// Attack 1 - 15, no weapon
-				if (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
-					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(13, 20))
-					debug call Print("Attack without weapon")
-				// Attack Alternate 1 - 9, two handed sword
-				elseif (false) then
-					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(27, 29))
-				// Attack Defend 1 - 2, attack with buckler
-				// basically this should be already provided by the animation tag "defend"
-				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and ItemTypes.itemTypeIdIsBuckler.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 112)
-					debug call Print("Attack with buckler")
-				// Attack throw 6 - 7, bow
-				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsBow.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(122, 123))
-					debug call Print("Attack with bow")
-				// throwing spear
-				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsThrowingSpear.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 118) //  119
-					debug call Print("Attack with a throwing spear")
-				// attacking with spear in melee
-				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsMeleeSpear.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 117)
-					debug call Print("Attack with spear in melee")
-				// attacking with two handed lance
-				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedLance.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 61)
-					debug call Print("Attack with two handed lance")
-				// attacking with two handed hammer
-				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedHammer.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 62)
-					debug call Print("Attack with two handed hammer")
-				// attack with a weapon in each hand -> no buckler in right hand
-				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
-					// attack either with left or right hand TODO animation for both hands?
-					set values = AIntegerVector.create()
-					call values.pushBack(21)
-					call values.pushBack(22)
-					call values.pushBack(40)
-					call values.pushBack(41)
-					call values.pushBack(23)
-					call values.pushBack(24)
-					call values.pushBack(25)
-					call values.pushBack(26)
-					call SetUnitAnimationByIndex(GetAttacker(), values.random())
-					call values.destroy()
-					debug call Print("Attack with two weapons")
-				// Attack with one left handed weapon
-				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
-					set values = AIntegerVector.create()
-					call values.pushBack(21)
-					call values.pushBack(40)
-					call values.pushBack(23)
-					call values.pushBack(25)
-					call SetUnitAnimationByIndex(GetAttacker(), values.random())
-					call values.destroy()
-					debug call Print("Attack with one left handed weapon")
-				// Attack with one right handed weapon
-				elseif (this.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(this.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
-					set values = AIntegerVector.create()
-					call values.pushBack(22)
-					call values.pushBack(41)
-					call values.pushBack(24)
-					call values.pushBack(26)
-					call SetUnitAnimationByIndex(GetAttacker(), values.random())
-					call values.destroy()
-					debug call Print("Attack with one right handed weapon")
-				debug else
-					debug call Print("Unknown attack style! Implement animation!")
-				endif
-			endif
+			
+			return GetSummoningUnit() == this.unit() and IsUnitIllusion(GetSummonedUnit()) and not this.isMorphed()
+		endmethod
+		
+		private static method triggerActionSpawnIllusion takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			debug call Print("Spawning illusion")
+			call this.m_illusionOrderAnimations.pushBack(OrderAnimations.create(this, GetSummonedUnit()))
 		endmethod
 		
 		private static method triggerActionDance takes nothing returns nothing
@@ -568,11 +658,20 @@ endif
 				set this.m_fellows = AIntegerVector.create()
 			endif
 			set this.m_isMorphed = false
-			set this.m_animationOrderTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(this.m_animationOrderTrigger, EVENT_PLAYER_UNIT_ATTACKED)
-			call TriggerAddCondition(this.m_animationOrderTrigger, Condition(function thistype.triggerConditionOrder))
-			call TriggerAddAction(this.m_animationOrderTrigger, function thistype.triggerActionOrder)
-			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, "this", this)
+			
+			set this.m_orderAnimations = OrderAnimations.create(this, this.unit())
+			set this.m_illusionOrderAnimations = AIntegerList.create()
+			
+			set this.m_spawnIllusionTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(this.m_spawnIllusionTrigger, EVENT_PLAYER_UNIT_SUMMON)
+			call TriggerAddCondition(this.m_spawnIllusionTrigger, Condition(function thistype.triggerConditionSpawnIllusion))
+			call TriggerAddAction(this.m_spawnIllusionTrigger, function thistype.triggerActionSpawnIllusion)
+			call DmdfHashTable.global().setHandleInteger(this.m_spawnIllusionTrigger, "this", this)
+			
+			set this.m_illusionDiesTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(this.m_illusionDiesTrigger, EVENT_PLAYER_UNIT_DEATH)
+			call TriggerAddCondition(this.m_illusionDiesTrigger, Condition(function thistype.triggerConditionIllusionDies))
+			call DmdfHashTable.global().setHandleInteger(this.m_illusionDiesTrigger, "this", this)
 			
 			set this.m_danceTrigger = CreateTrigger()
 			call TriggerRegisterPlayerChatEvent(this.m_danceTrigger, whichPlayer, "-", false)
@@ -597,8 +696,12 @@ static if (DMDF_INFO_LOG) then
 endif
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0
-			call DmdfHashTable.global().destroyTrigger(this.m_animationOrderTrigger)
-			set this.m_animationOrderTrigger = null
+			call this.m_orderAnimations.destroy()
+			call this.m_illusionOrderAnimations.destroy()
+			call DmdfHashTable.global().destroyTrigger(this.m_spawnIllusionTrigger)
+			set this.m_spawnIllusionTrigger = null
+			call DmdfHashTable.global().destroyTrigger(this.m_illusionDiesTrigger)
+			set this.m_illusionDiesTrigger = null
 			call DmdfHashTable.global().destroyTrigger(this.m_danceTrigger)
 			set this.m_danceTrigger = null
 			

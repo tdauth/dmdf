@@ -129,6 +129,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 		// NOTE take a look into struct Routines which ARoutinePeriod sub types you have to create and which parameters you could set for them!!!
 		public static method init takes nothing returns nothing
+			local AUnitRoutine routine
 			// Wigberht
 			set thistype.m_wigberhtTraining = NpcRoutineWithFacing.create(Routines.train(), Npcs.wigberht(), 18.00, 5.00, gg_rct_waypoint_wigberht_training)
 			call thistype.m_wigberhtTraining.setFacing(252.39)
@@ -314,13 +315,17 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_kunosDaughterTalksToKuno.setFacing(35.21)
 
 			// menials
-			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)
+			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)
+			call NpcRoutineWithFacing(routine).setFacing(GetRandomReal(0.0, 360.0))
 			call AUnitRoutine.create(Routines.moveTo(), gg_unit_n02J_0013, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
-			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0157, MapData.morning, MapData.evening, gg_rct_waypoint_menial_1)
+			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0157, MapData.morning, MapData.evening, gg_rct_waypoint_menial_1)
+			call NpcRoutineWithFacing(routine).setFacing(GetRandomReal(0.0, 360.0))
 			call AUnitRoutine.create(Routines.moveTo(), gg_unit_n02J_0157, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
-			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0159, MapData.morning, MapData.evening, gg_rct_waypoint_menial_2)
+			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0159, MapData.morning, MapData.evening, gg_rct_waypoint_menial_2)
+			call NpcRoutineWithFacing(routine).setFacing(GetRandomReal(0.0, 360.0))
 			call AUnitRoutine.create(Routines.moveTo(), gg_unit_n02J_0159, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
-			call NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0158, MapData.morning, MapData.evening, gg_rct_waypoint_menial_3)
+			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0158, MapData.morning, MapData.evening, gg_rct_waypoint_menial_3)
+			call NpcRoutineWithFacing(routine).setFacing(GetRandomReal(0.0, 360.0))
 			call AUnitRoutine.create(Routines.moveTo(), gg_unit_n02J_0158, MapData.evening, MapData.morning, gg_rct_waypoint_menials_sleep)
 		endmethod
 

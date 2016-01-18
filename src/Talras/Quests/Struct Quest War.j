@@ -90,7 +90,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 	
 	struct QuestAreaWarCartDestination extends QuestArea
 		public stub method onCheck takes nothing returns boolean
-			call Character.displayHintToAll(tr("In dieses Gebiet müssen die Versorgungswagen und die Knechte gebracht werden."))
+			call Character.displayHintToAll(tre("In dieses Gebiet müssen die Versorgungswagen und die Knechte gebracht werden.", "Supply carts and servants must be brought to this area."))
 			return false
 		endmethod
 	
@@ -103,7 +103,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			// TODO change moveManfredsSupplyToTheCamp
 			local boolean result = QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemLumberFromKuno).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemPlaceTraps).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemGetRecruits).state() == QuestWar.stateCompleted
 			if (not result) then
-				call Character.displayHintToAll(tr("Schließen Sie zunächst den Auftrag \"Krieg\" ab. Danach können Sie dem Herzog Bericht erstatten."))
+				call Character.displayHintToAll(tre("Schließen Sie zunächst den Auftrag \"Krieg\" ab. Danach können Sie dem Herzog Bericht erstatten.", "Complete the missiong \"War\" first. After that you can report to the duke."))
 			endif
 			
 			return result
@@ -305,7 +305,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call Game.setAlliedPlayerAlliedToAllCharacters()
 			
 			if (spawned) then
-				call this.displayUpdateMessage(tr("Neue Imps stehen zur Verfügung."))
+				call this.displayUpdateMessage(tre("Neue Imps stehen zur Verfügung.", "New imps are available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_imp_spawn), GetRectCenterY(gg_rct_quest_war_imp_spawn), 5.0, 255, 255, 255, true)
 			endif
 		endmethod
@@ -332,7 +332,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			call this.questItem(thistype.questItemMoveImpsToWieland).setState(thistype.stateNew)
 			debug call Print("state condition: " + I2S(this.questItem(thistype.questItemMoveImpsToWieland).stateCondition(thistype.stateCompleted)))
 			call this.displayUpdate()
-			call this.displayUpdateMessage(tr("Neue Imps stehen zur Verfügung."))
+			call this.displayUpdateMessage(tre("Neue Imps stehen zur Verfügung.", "New imps are available."))
 		endmethod
 		
 		/**
@@ -380,7 +380,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 				set counter = counter + 1 // entering unit
 				debug call Print("After counting " + I2S(counter))
 				
-				call questItem.quest().displayUpdateMessage(Format(tr("%1%/%2% Imps.")).i(counter).i(thistype.maxImps).result())
+				call questItem.quest().displayUpdateMessage(Format(tre("%1%/%2% Imps.", "%1%/%2% Imps.")).i(counter).i(thistype.maxImps).result())
 				
 				if (counter == thistype.maxImps) then
 					return true
@@ -417,7 +417,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local thistype this = thistype.quest()
 			if (IsUnitDeadBJ(this.m_weaponCart)) then
 				set this.m_weaponCart = CreateUnit(MapData.alliedPlayer, 'h020', GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 0.0)
-				call this.displayUpdateMessage(tr("Eine neue Waffenlieferung steht zur Verfügung."))
+				call this.displayUpdateMessage(tre("Eine neue Waffenlieferung steht zur Verfügung.", "A new supply of weapons is available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 5.0, 255, 255, 255, true)
 				
 				call Game.setAlliedPlayerAlliedToAllCharacters()
@@ -433,7 +433,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local thistype this = thistype.quest()
 			call this.questItem(thistype.questItemWaitForWielandsWeapons).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemMoveWielandWeaponsToTheCamp).setState(thistype.stateNew)
-			call this.displayUpdateMessage(tr("Wieland's Waffen sind fertig."))
+			call this.displayUpdateMessage(tre("Wieland's Waffen sind fertig.", "Wieland's weapons are finished."))
 			call this.displayUpdate()
 			
 			set this.m_weaponCart = CreateUnit(MapData.alliedPlayer, 'h020', GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 0.0)
@@ -591,7 +591,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local thistype this = thistype.quest()
 			if (IsUnitDeadBJ(this.m_supplyCart)) then
 				set this.m_supplyCart = CreateUnit(MapData.alliedPlayer, 'h022', GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 0.0)
-				call this.displayUpdateMessage(tr("Eine neue Nahrungslieferung steht zur Verfügung."))
+				call this.displayUpdateMessage(tre("Eine neue Nahrungslieferung steht zur Verfügung.", "A new supply of food is available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 5.0, 255, 255, 255, true)
 				
 				call Game.setAlliedPlayerAlliedToAllCharacters()
@@ -734,7 +734,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local thistype this = thistype.quest()
 			if (IsUnitDeadBJ(this.m_kunosCart)) then
 				set this.m_kunosCart = CreateUnit(MapData.alliedPlayer, 'h021', GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 0.0)
-				call this.displayUpdateMessage(tr("Eine neue Holzlieferung steht zur Verfügung."))
+				call this.displayUpdateMessage(tre("Eine neue Holzlieferung steht zur Verfügung.", "A new supply of wood is available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 5.0, 255, 255, 255, true)
 				
 				call Game.setAlliedPlayerAlliedToAllCharacters()
@@ -829,7 +829,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 		private method addTrap takes real x, real y returns nothing
 			call this.m_traps.pushBack(Location(x, y))
 			set this.m_trapsCounter = this.m_trapsCounter + 1
-			call this.displayUpdateMessage(Format(tr("%1%/%2% Fallen platziert.")).i(this.m_trapsCounter).i(thistype.maxPlacedTraps).result())
+			call this.displayUpdateMessage(Format(tre("%1%/%2% Fallen platziert.", "Placed %1%/%2% traps.")).i(this.m_trapsCounter).i(thistype.maxPlacedTraps).result())
 		endmethod
 		
 		/**
@@ -891,7 +891,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local thistype this = thistype.quest()
 			call SetUnitOwner(GetSoldUnit(), MapData.alliedPlayer, true)
 			call Game.setAlliedPlayerAlliedToAllCharacters()
-			call this.displayUpdateMessage(tr("Knecht angeworben."))
+			call this.displayUpdateMessage(tre("Knecht angeworben.", "Acquired servant."))
 			call PingMinimapEx(GetUnitX(GetSoldUnit()), GetUnitY(GetSoldUnit()), 5.0, 255, 255, 255, true)
 			call this.enableCartDestination()
 		endmethod
@@ -960,7 +960,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapVide
 			local thistype this = thistype.allocate(0, tre("Krieg", "War"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
-			call this.setDescription(tr("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden."))
+			call this.setDescription(tre("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden.", "In order to stop the impeding attacks of Orcs and Dark Elves, the conquered outpost has to be supplied. In addition, traps has to be placed before the walls that make it harder for the enemies to conquer the outpost. Furthermore, war suitable people need to be hired at the farm."))
 			call this.setReward(thistype.rewardExperience, 2000)
 			call this.setReward(thistype.rewardGold, 2000)
 

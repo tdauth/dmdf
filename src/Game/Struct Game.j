@@ -156,6 +156,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		private static AIntegerList m_onDamageActions
 		private static trigger m_killTrigger
 		private static AIntegerVector array m_hiddenUnits[12] /// \todo \ref MapData.maxPlayers
+		private static OrderAnimations m_actorOrderAnimations
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -786,6 +787,8 @@ endif
 		endmethod
 
 		/**
+		 * This function has to be called by all \ref Video instances on a videos initialization.
+		 *
 		 * Cinematic stuff (from Bonus Campaign)
 		 * - Disables gold and experience by kills.
 		 * - Setups music volume.
@@ -793,7 +796,12 @@ endif
 		 * - Hides all character owner units except actors.
 		 * - Removes specific buffs.
 		 * - Disables all sell abilities for all players to prevent arrows in videos.
-		 * - Disables shrine auras.
+		 * - Revive all fellows immediately.
+		 * - Disable transparency.
+		 * - Disable automatic camera height.
+		 * - Replace attack orders of the character's actor.
+		 *
+		 * \sa resetVideoSettings()
 		 */
 		public static method initVideoSettings takes nothing returns nothing
 			local integer i
@@ -846,6 +854,13 @@ endif
 			endloop
 			call DisableTransparency()
 			call CameraHeight.pause()
+			/*
+			 * The attack order animations of the Villager255 have to be handled for the actor as well.
+			 * Otherwise the wrong animations will be shown in a fight.
+			 */
+			if (AVideo.actor() != null) then
+				set thistype.m_actorOrderAnimations = OrderAnimations.create(Character(ACharacter.getFirstCharacter()), AVideo.actor())
+			endif
 			call MapData.initVideoSettings.evaluate()
 		endmethod
 
@@ -913,6 +928,10 @@ endif
 			endloop
 			call EnableTransparency()
 			call CameraHeight.resume()
+			if (thistype.m_actorOrderAnimations != 0) then
+				call thistype.m_actorOrderAnimations.destroy()
+				set thistype.m_actorOrderAnimations = 0
+			endif
 			call VolumeGroupResetBJ()
 			call MapData.resetVideoSettings.evaluate()
 		endmethod

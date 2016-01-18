@@ -84,7 +84,8 @@ library StructGameTreeTransparency initializer init requires Asl
 		set iterator = units.begin()
 		loop
 			exitwhen not iterator.isValid()
-			if (GetUnitTypeId(Unit(iterator.data()).whichUnit) != 0 and not IsUnitDeadBJ(Unit(iterator.data()).whichUnit) and IsUnitInRangeXY(Unit(iterator.data()).whichUnit, camX, camY, CAMERA_TARGET_RADIUS)) then
+			// allow corpses as well
+			if (GetUnitTypeId(Unit(iterator.data()).whichUnit) != 0 and IsUnitInRangeXY(Unit(iterator.data()).whichUnit, camX, camY, CAMERA_TARGET_RADIUS)) then
 				set Unit(iterator.data()).x = GetUnitX(Unit(iterator.data()).whichUnit)
 				set Unit(iterator.data()).y = GetUnitY(Unit(iterator.data()).whichUnit)
 				set j = 0

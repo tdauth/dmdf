@@ -104,7 +104,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_1, true, 0.0)
 
-			call TransmissionFromUnit(thistype.actor(), tr("Was?"), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Was?", "What?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

@@ -69,6 +69,7 @@ endif
 		 */
 		private static method changeMapSinglePlayer takes string oldMap, string newMap returns nothing
 			local string copyPath = newMap + "\\" + thistype.currentSaveGamePath(oldMap)
+			debug call Print("Saving map as " + thistype.currentSaveGamePath(oldMap))
 			call SaveGame(thistype.currentSaveGamePath(oldMap))
 			// copy save game to the folder of the new map
 			if (CopySaveGame(thistype.currentSaveGamePath(oldMap), copyPath)) then
