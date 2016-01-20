@@ -30,7 +30,7 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 			 * If the character is morphed it has not the villager255 model.
 			 * Illusions are only created from non-morphed characters.
 			 */
-			if (not this.m_character.isMorphed.evaluate() and IsUnitIllusion(this.unit())) then
+			if (not this.m_character.isMorphed.evaluate() or IsUnitIllusion(this.unit())) then
 				// Attack 1 - 15, no weapon
 				if (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
 					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(13, 20))
