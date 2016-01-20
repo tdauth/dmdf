@@ -126,7 +126,7 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 				endloop
 			// (Charakter hat weniger als zehn neue Tötungspunkte)
 			else
-				call speech(info, character, true, tr("Pah, töte erst mal mehr von seinen Leuten dann sehen wir weiter."), gg_snd_Baldar21)
+				call speech(info, character, true, tr("Pah, töte erst mal mehr von seinen Kriegern und dann sehen wir weiter."), gg_snd_Baldar21)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
