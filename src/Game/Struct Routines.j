@@ -224,7 +224,8 @@ library StructGameRoutines requires Asl
 					set i = 0
 					loop
 						exitwhen (i == MapData.maxPlayers)
-						if (ACharacter.playerCharacter(Player(i)) != 0 and GetDistanceBetweenUnitsWithoutZ(period.unit(), ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(period.unit(), Player(i)) and Player(i) == GetLocalPlayer()) then
+						// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
+						if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(period.unit(), ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(period.unit(), Player(i)) and Player(i) == GetLocalPlayer()) then
 							call PlaySoundOnUnitBJ(whichSound, 100.0, period.unit())
 						endif
 						set i = i + 1

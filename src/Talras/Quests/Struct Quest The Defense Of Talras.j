@@ -156,7 +156,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			local thistype this = thistype(whichQuestItem.quest())
 			if (this.m_orcSiege.units().contains(GetTriggerUnit())) then
 				call this.m_orcSiege.units().remove(GetTriggerUnit())
-				call this.displayUpdateMessage(Format(trp("%1% Belagerungswaffe verbleibt.", "%1% Belagerungswaffen verbleiben.", this.m_orcSiege.units().size())).i(this.m_orcSiege.units().size()).result())
+				call this.displayUpdateMessage(Format(trpe("%1% Belagerungswaffe verbleibt.", "%1% Belagerungswaffen verbleiben.", "%1% siege weapon remains.", "%1% siege weapons remain.", this.m_orcSiege.units().size())).i(this.m_orcSiege.units().size()).result())
 				
 				return this.m_orcSiege.units().empty()
 			endif

@@ -62,8 +62,8 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 			local unit characterUnit = character.unit()
 			local item whichItem
 			call speech(info, character, false, tr("Ich möchte der schwarzen Legion beitreten."), null)
-			call speech(info, character, true, tr("Du hast es dir also nochmal gründlich überlegt, was?"), gg_snd_Baldar11)
-			call speech(info, character, true, tr("Gut, zunächst einmal bekommst du diese Standarte hier. Es ist mein schwarzes Wappen, nicht so hässlich wie das weiße meines Bruders. Und damit du nicht das Gefühl hast, du müsstest hier umsonst kämpfen, hast du hier noch ein paar Goldmünzen und etwas Schwefel."), gg_snd_Baldar12)
+			call speech(info, character, true, tr("Das freut mich zu hören."), gg_snd_Baldar11)
+			call speech(info, character, true, tr("Zunächst einmal bekommst du diese Standarte hier. Es ist mein schwarzes Wappen, nicht so hässlich wie das weiße meines Bruders. Und damit du nicht das Gefühl hast, du müsstest hier umsonst kämpfen, hast du hier noch ein paar Goldmünzen und etwas Schwefel."), gg_snd_Baldar12)
 			call speech(info, character, true, tr("So, jetzt erkläre ich dir mal, wie das hier läuft, auf dem „Schlachtfeld“. Es gibt zwei Wege, die die beiden Lager miteinander verbinden. Auf jedem dieser Wege schicken mein Bruder und ich Truppen gegeneinander los. Du kannst dir aussuchen, auf welchem der Wege du kämpfen möchtest. Das ist mir ziemlich egal, Hauptsache du kämpfst."), gg_snd_Baldar13)
 			call speech(info, character, true, tr("Da gibt's nur ein kleines Problem. Mein Bruder und ich haben damals, als wir mit dem Kampf begonnen haben, ausgemacht, dass keiner außer uns beiden sich in den Streit einmischen darf. Die Krieger, die ich schicke, habe ich alle selbst erschaffen, das zählt also nicht als Einmischung."), gg_snd_Baldar14)
 			call speech(info, character, true, tr("Du dagegen würdest gegen die Regeln verstoßen. Nicht, dass ich viel für Regeln übrig hätte, aber ich will nicht, dass mich mein verdammter Bruder einen Feigling nennt."), gg_snd_Baldar15)
@@ -72,7 +72,7 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, false, tr("Aha."), null)
 			call speech(info, character, true, tr("Keine Angst, sobald du ihn erneut wirken lässt, wirst du dich natürlich zurückverwandeln."), gg_snd_Baldar17)
 			call speech(info, character, true, tr("Der Zauber wirkt allerdings nur innerhalb dieser Höhle. Außerhalb ist meine Aura nicht stark genug!"), gg_snd_Baldar18)
-			call speech(info, character, true, tr("Ach so und noch etwas: Hast du genügend Krieger getötet, bekommst du natürlich auch entsprechende Belohnungen, die du dir bei mir persönlich abholen kannst."), gg_snd_Baldar19)
+			call speech(info, character, true, tr("Ach so und noch etwas: Hast du genügend Feinde getötet, bekommst du natürlich auch entsprechende Belohnungen, die du dir bei mir persönlich abholen kannst."), gg_snd_Baldar19)
 			call Character(character).giveQuestItem('I01B') // Standarte
 			// Ring
 			if (character.class() == Classes.dragonSlayer()) then
@@ -146,7 +146,7 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 		// Schwarze Legion?
 		private static method infoActionBlackLegion takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Schwarze Legion?"), null)
-			call speech(info, character, true, tr("Ja. So nennen wir uns, also mein Gefolge und ich. Wir kämpfen hier schon seit vielen Jahren gegen die weiße Legion. Sie wird von meinem widerlichen Bruder Haldar angeführt, einem Erzengel."), gg_snd_Baldar23)
+			call speech(info, character, true, tr("Ja. So nennen wir uns, also mein Gefolge und ich. Wir kämpfen hier schon seit einiger Zeit gegen die weiße Legion. Sie wird von meinem widerlichen Bruder Haldar angeführt, einem Erzengel."), gg_snd_Baldar23)
 			call info.talk().showStartPage(character)
 		endmethod
 

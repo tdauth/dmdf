@@ -377,16 +377,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			
 			call this.questItem(thistype.questItemMeetAtTheOutpost).setState(thistype.stateNew)
 			call this.displayUpdate()
-			set this.m_questAreAfterTheBattle = QuestAreaTheNorsemenAfterTheBattle.create(gg_rct_quest_the_defense_of_talras)
-		endmethod
-		
-		public method completeMeetAtTheOutpost takes nothing returns nothing
-			local unit whichUnit
-			call VideoWigberht.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
-			call this.questItem(thistype.questItemMeetAtTheOutpost).setState(thistype.stateCompleted)
-			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
-			call this.displayUpdate()
 			
 			call Fellows.wigberht().reset()
 			call Fellows.ricman().reset()
@@ -400,6 +390,17 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			// the orc spawn point will be disabled forever. The camp is now in hands of norsemen, villagers and rangers
 			// new NPCs?
 			call SpawnPoints.destroyOrcs0()
+			
+			set this.m_questAreAfterTheBattle = QuestAreaTheNorsemenAfterTheBattle.create(gg_rct_quest_the_defense_of_talras)
+		endmethod
+		
+		public method completeMeetAtTheOutpost takes nothing returns nothing
+			local unit whichUnit
+			call VideoWigberht.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			call this.questItem(thistype.questItemMeetAtTheOutpost).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
+			call this.displayUpdate()
 			
 			/*
 			 * Create Norsemen

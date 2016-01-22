@@ -4,6 +4,10 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		private integer m_actorWigberht
 		private integer m_actorRicman
 		private integer m_actorDragonSlayer
+		private integer m_actorNorseman0
+		private integer m_actorNorseman1
+		private integer m_actorNorseman2
+		private integer m_actorNorseman3
 		private group m_firstActorGroup
 		private group m_secondActorGroup
 		private group m_firstAllyGroup
@@ -48,6 +52,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call GroupAddUnit(this.m_firstActorGroup, thistype.actor())
 			// norseman 0, 2
 			set index = thistype.saveUnitActor(gg_unit_n01I_0150)
+			set this.m_actorNorseman0 = index
 			call SetUnitX(thistype.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_0_position))
 			call SetUnitY(thistype.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_0_position))
 			call SetUnitFacing(thistype.unitActor(index), 144.28)
@@ -55,6 +60,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n01I_0150)
 			// norseman 1, 3
 			set index = thistype.saveUnitActor(gg_unit_n01I_0151)
+			set this.m_actorNorseman1 = index
 			call SetUnitX(thistype.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_1_position))
 			call SetUnitY(thistype.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_1_position))
 			call SetUnitFacing(thistype.unitActor(index), 147.53)
@@ -62,6 +68,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n01I_0151)
 			// norseman 2, 4
 			set index = thistype.saveUnitActor(gg_unit_n01I_0152)
+			set this.m_actorNorseman2 = index
 			call SetUnitX(thistype.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_2_position))
 			call SetUnitY(thistype.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_2_position))
 			call SetUnitFacing(thistype.unitActor(index), 131.23)
@@ -69,6 +76,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n01I_0152)
 			// norseman 3, 5
 			set index = thistype.saveUnitActor(gg_unit_n01I_0153)
+			set this.m_actorNorseman3 = index
 			call SetUnitX(thistype.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_3_position))
 			call SetUnitY(thistype.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_3_position))
 			call SetUnitFacing(thistype.unitActor(index), 160.94)
@@ -232,10 +240,10 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			// TODO ricman or someone runs back
 			call IssuePointOrder(thistype.unitActor(this.m_actorRicman), "move", GetRectCenterX(gg_rct_video_the_first_combat_ricmans_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_ricmans_hill_target))
 			call IssuePointOrder(thistype.actor(), "move", GetRectCenterX(gg_rct_video_the_first_combat_actors_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_actors_hill_target))
-			call IssuePointOrder(thistype.unitActor(2), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_0_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_0_hill_target))
-			call IssuePointOrder(thistype.unitActor(3), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_1_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_1_hill_target))
-			call IssuePointOrder(thistype.unitActor(4), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_2_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_2_hill_target))
-			call IssuePointOrder(thistype.unitActor(5), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_3_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_3_hill_target))
+			call IssuePointOrder(thistype.unitActor(this.m_actorNorseman0), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_0_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_0_hill_target))
+			call IssuePointOrder(thistype.unitActor(this.m_actorNorseman1), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_1_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_1_hill_target))
+			call IssuePointOrder(thistype.unitActor(this.m_actorNorseman2), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_2_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_2_hill_target))
+			call IssuePointOrder(thistype.unitActor(this.m_actorNorseman3), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_3_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_3_hill_target))
 			loop
 				exitwhen (RectContainsUnit(gg_rct_video_the_first_combat_wigberhts_hill_target, thistype.unitActor(this.m_actorWigberht)))
 				if (wait(1.0)) then

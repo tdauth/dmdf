@@ -30,6 +30,7 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 				call speech(info, character, true, tr("Dies ist das Lager der weißen Legion, meines Heers."), gg_snd_Haldar3)
 			// (Charakter hat bereits Baldar getroffen)
 			else
+				call speech(info, character, true, tr("Dies ist das Lager der weißen Legion, meines Heers."), gg_snd_Haldar3) // add these information here as well, otherwise the later options make no sense
 				call speech(info, character, false, tr("Bist du Baldars Bruder?"), null)
 				call speech(info, character, true, tr("Woher weißt du das?"), gg_snd_Haldar4)
 				call speech(info, character, false, tr("Ich habe mit ihm gesprochen."), null)

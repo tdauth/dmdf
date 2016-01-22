@@ -101,7 +101,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call PlaySoundOnUnitBJ(gg_snd_DispelMagicTarget, 100.0, period.unit())
 			call TriggerSleepAction(1.0)
 			if (not IsUnitPaused(period.unit())) then
-				call SetUnitFacing(period.unit(), period.facing())
+				call SetUnitFacing(period.unit(), GetAngleBetweenPoints(GetUnitX(period.unit()), GetUnitY(period.unit()), GetRectCenterX(gg_rct_waypoint_sisgard_spell_0), GetRectCenterY(gg_rct_waypoint_sisgard_spell_0)))
 				call QueueUnitAnimation(period.unit(), "Spell")
 				call TriggerSleepAction(1.267)
 				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl", GetRectCenterX(gg_rct_waypoint_sisgard_spell_0), GetRectCenterY(gg_rct_waypoint_sisgard_spell_0)))
@@ -109,7 +109,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 				call TriggerSleepAction(1.0)
 			endif
 			if (not IsUnitPaused(period.unit())) then
-				call SetUnitFacing(period.unit(), period.facing())
+				call SetUnitFacing(period.unit(), GetAngleBetweenPoints(GetUnitX(period.unit()), GetUnitY(period.unit()), GetRectCenterX(gg_rct_waypoint_sisgard_spell_1), GetRectCenterY(gg_rct_waypoint_sisgard_spell_1)))
 				call QueueUnitAnimation(period.unit(), "Spell")
 				call TriggerSleepAction(1.267)
 				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl", GetRectCenterX(gg_rct_waypoint_sisgard_spell_1), GetRectCenterY(gg_rct_waypoint_sisgard_spell_1)))
@@ -117,7 +117,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 				call TriggerSleepAction(1.0)
 			endif
 			if (not IsUnitPaused(period.unit())) then
-				call SetUnitFacing(period.unit(), period.facing())
+				call SetUnitFacing(period.unit(), GetAngleBetweenPoints(GetUnitX(period.unit()), GetUnitY(period.unit()), GetRectCenterX(gg_rct_waypoint_sisgard_spell_2), GetRectCenterY(gg_rct_waypoint_sisgard_spell_2)))
 				call QueueUnitAnimation(period.unit(), "Spell")
 				call TriggerSleepAction(1.267)
 				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl", GetRectCenterX(gg_rct_waypoint_sisgard_spell_2), GetRectCenterY(gg_rct_waypoint_sisgard_spell_2)))

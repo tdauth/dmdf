@@ -696,7 +696,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 		
 		public static method itemTypeIdIsBuckler takes integer itemTypeId returns boolean
-			return itemTypeId == 'I00M' or itemTypeId == 'I006' or itemTypeId == 'I02A' or itemTypeId == 'I005' or itemTypeId == 'I00N' or itemTypeId == 'I00O' or itemTypeId == 'I00Y' 
+			return itemTypeId == 'I00M' or itemTypeId == 'I006' or itemTypeId == 'I02A' or itemTypeId == 'I005' or itemTypeId == 'I00N' or itemTypeId == 'I00O' or itemTypeId == 'I00Y' or itemTypeId == 'I068'
 		endmethod
 		
 		public static method itemTypeIdIsBow takes integer itemTypeId returns boolean

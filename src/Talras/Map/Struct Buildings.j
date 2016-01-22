@@ -101,7 +101,7 @@ library StructMapMapBuildings requires StructGameCharacter
 		private static method onInit takes nothing returns nothing
 			local integer i
 			set thistype.m_refillTimer = CreateTimer()
-			call TimerStart(thistype.m_refillTimer, 2.0, true, function thistype.timerFunctionRefill)
+			call TimerStart(thistype.m_refillTimer, 0.10, true, function thistype.timerFunctionRefill)
 		
 			set thistype.m_bringGoldTrigger = CreateTrigger()
 			set i = 0
