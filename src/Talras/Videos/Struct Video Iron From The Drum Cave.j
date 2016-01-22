@@ -26,9 +26,9 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Was sagst du? Du brauchst Eisen aus meinen Minen?"), gg_snd_Baldar_Tontext1)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Was sagst du? Du brauchst Eisen aus meinen Minen?"), gg_snd_Baldar33)
 			
-			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar_Tontext1))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar33))) then
 				return
 			endif
 			
@@ -39,9 +39,9 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Was habe ich davon mein Eisen dir zu geben anstatt meine eigenen Krieger damit auszurüsten, um meinen Bruder endlich zu besiegen?"), gg_snd_Baldar_Tontext2)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Was habe ich davon mein Eisen dir zu geben anstatt meine eigenen Krieger damit auszurüsten, um meinen Bruder endlich zu besiegen?"), gg_snd_Baldar34)
 			
-			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar_Tontext2))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar34))) then
 				return
 			endif
 			
@@ -51,39 +51,39 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Nein. Die Menschen lassen uns zumindest in Ruhe. Sie haben vermutlich viel zu viel Angst als dass sie diese Höhle betreten würden. Alle bis auf euch."), gg_snd_Baldar_Tontext3)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Nein. Die Menschen lassen uns zumindest in Ruhe. Sie haben vermutlich viel zu viel Angst als dass sie diese Höhle betreten würden. Alle bis auf euch."), gg_snd_Baldar35)
 			
-			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar_Tontext3))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar35))) then
 				return
 			endif
 			
-			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
-			if (wait(2.0)) then
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 0.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(1.0)) then
 				return
 			endif
 			// TODO working imps?
 			call CameraSetupApplyForceDuration(gg_cam_iron_from_the_drum_cave_mine_0, true, 0.0)
 			call CameraSetupApplyForceDuration(gg_cam_iron_from_the_drum_cave_mine_1,  true, 4.00)
-			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
-			if (wait(2.0)) then
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 0.50, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+			if (wait(1.0)) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Ich kann dir einen Teil meines Eisens geben. Meine Imps können es für dich zur Burg transportieren, jedoch brauche ich die kräftigsten Imps hier bei mir. Ich schicke dir also die schwachen Imps. Du musst sie auf ihrem Weg beschützen, ansonsten werden sie vermutlich von wilden Kreaturen umgebracht."), gg_snd_Baldar_Tontext8)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Ich kann dir einen Teil meines Eisens geben. Meine Imps können es für dich zur Burg transportieren, jedoch brauche ich die kräftigsten Imps hier bei mir. Ich schicke dir also die schwachen Imps. Du musst sie auf ihrem Weg beschützen, ansonsten werden sie vermutlich von wilden Kreaturen umgebracht."), gg_snd_Baldar36)
 			
-			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar_Tontext8))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar36))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Hör gut zu, ich möchte dir ein kleines Geheimnis anvertrauen. Diese Imps sind nicht das, was ich mir unter fürchterlichen Dämonen vorgestellt habe. Sie sind schwach, faul, ja es sind armselige Kreaturen."), gg_snd_Baldar_Tontext5)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Hör gut zu, ich möchte dir ein kleines Geheimnis anvertrauen. Diese Imps sind nicht das, was ich mir unter fürchterlichen Dämonen vorgestellt habe. Sie sind schwach, faul, ja es sind armselige Kreaturen."), gg_snd_Baldar37)
 			
-			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar_Tontext5))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar37))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Es ist wohl besser sie umgehend loszuwerden, aber töten nein! Sie sind meine Schöpfung, das würde ich nicht über's ... über mich bringen. Verschaffe ihnen eine Bleibe nachdem sie ihren Dienst für dich getan haben, dann sind wir quitt."), gg_snd_Baldar_Tontext6)
+			call TransmissionFromUnit(this.m_actorBaldar, tr("Es ist wohl besser sie umgehend loszuwerden, aber töten nein! Sie sind meine Schöpfung, das würde ich nicht über's ... über mich bringen. Verschaffe ihnen eine Bleibe nachdem sie ihren Dienst für dich getan haben, dann sind wir quitt."), gg_snd_Baldar38)
 			
-			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar_Tontext6))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar38))) then
 				return
 			endif
 
