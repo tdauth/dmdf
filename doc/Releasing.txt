@@ -8,7 +8,7 @@ Requirements:
 - WinMerge or something similar
 
 To release a new version of The Power of Fire several steps have to be done:
-- Make sure the version number is bumped in all maps
+- Make sure the version number is bumped in all maps (in the map settings as well as in the interface strings for supply)
 - Save all maps without the debug mode in the JNGP
 - Merge the latest war3map.wts files from all maps into the German "war3map.wts" files in the folder "maps/MAPNAME".
 - Merge the German "war3map.wts" files from the folder "maps/MAPNAME" into the English ones and translate all new German entries.

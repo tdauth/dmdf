@@ -45,7 +45,7 @@ library StructSpellsSpellRob requires Asl, StructGameClasses, StructGameSpell
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
-					call AdjustPlayerStateBJ(gold, Player(i), PLAYER_STATE_RESOURCE_GOLD)
+					call SetPlayerState(Player(i), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(Player(i), PLAYER_STATE_RESOURCE_GOLD) + gold)
 					call ShowBountyTextTagForPlayer(Player(i), GetUnitX(GetSpellTargetUnit()), GetUnitY(GetSpellTargetUnit()), gold)
 				endif
 				set i = i + 1

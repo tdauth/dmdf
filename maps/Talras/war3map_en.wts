@@ -5730,7 +5730,7 @@ STRING 957
 STRING 958
 // Fähigkeiten: A0AJ (Kräuterheilung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Heilt <A0AJ,DataA1> Leben eines nicht-mechanischen Verbündeten während <A0AJ,Dur1> Sekunden.|nHat eine Reichweite von <A0AJ,Rng1>.
+Heals <A0AJ,DataA1> of a non-mechanic ally for <A0AJ,Dur1> seconds.|nHas a range of <A0AJ,Rng1>.
 }
 
 STRING 959
@@ -5866,13 +5866,13 @@ STRING 980
 }
 
 STRING 981
-// Fähigkeiten: A036 (Dunkler Diener), Name (Name (anam))
+// Zauberverstärker/Effekte: B004 (Dunkler Diener), EditorName (Name (nur Editor) (fnam))
 {
 Dunkler Diener
 }
 
 STRING 982
-// Fähigkeiten: A01U (Dunkler Diener), Name (Name (anam))
+// Zauberverstärker/Effekte: B004 (Dunkler Diener), Bufftip (Tooltipp (ftip))
 {
 Dunkler Diener
 }
@@ -6000,7 +6000,7 @@ Ein mächtiger Dämon.
 STRING 1003
 // Fähigkeiten: A0FF (Alpha), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Dunkler Diener
+|cffffcc00Ultimate Spell 1|r|nThe druid increases his movement and attack speed in animal form by 100 %. Lasts <A0FF,Dur1> seconds.
 }
 
 STRING 1004
@@ -6012,7 +6012,7 @@ STRING 1004
 STRING 1005
 // Fähigkeiten: A0FH (Alpha - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Dunkler Diener
+|cffffcc00Ultimate Spell 1 - Requires Level 12|r|nThe druid increases his movement and attack speed in animal form by 100 %. Lasts <A0FF,Dur1> seconds.
 }
 
 STRING 1006
@@ -6568,9 +6568,9 @@ Erdgefängnis [|cffffcc00Stufe 1|r]
 }
 
 STRING 1098
-// Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
+// Gegenstände: I06J (Einfacher Stab eines Druiden), Name (Name (unam))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+Simple Staff of a Druid
 }
 
 STRING 1099
@@ -7014,7 +7014,7 @@ STRING 1171
 STRING 1172
 // Einheiten: n008 (Braunbär), Name (Name (unam))
 {
-Brown bear
+Brown Bear
 }
 
 STRING 1173
@@ -7092,7 +7092,7 @@ Eine beschworene Katze.
 STRING 1185
 // Gegenstände: I009 (Kleiner Heiltrank), Name (Name (unam))
 {
-Kleiner Heiltrank
+Small Healing Potion
 }
 
 STRING 1186
@@ -8700,7 +8700,7 @@ Lower Skeleton
 STRING 1453
 // Einheiten: n00Y (Ghul), Name (Name (unam))
 {
-Ghul
+Ghoul
 }
 
 STRING 1454
@@ -8778,7 +8778,7 @@ Consume
 STRING 1466
 // Fähigkeiten: A02T (Verzehren), EditorSuffix (Editor-Suffix (ansf))
 {
-(Ghul)
+(Ghoul)
 }
 
 STRING 1467
@@ -9540,7 +9540,7 @@ Warrior
 STRING 1593
 // Einheiten: n01A (Armbrustschütze), Name (Name (unam))
 {
-Armbrustschütze
+Crossbowman
 }
 
 STRING 1594
@@ -9642,13 +9642,13 @@ Summon Pest Barrow [|cffffcc00Level 1|r]
 STRING 1610
 // Gegenstände: I04D (Amulett der Kraft), Name (Name (unam))
 {
-Amulett der Kraft
+Amulet of Strength
 }
 
 STRING 1611
-// Fähigkeiten: A0HG (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Einheiten: n03J (Dryadenquelle), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner <A0HH,DataA1> Sekunden lang <A0HH,DataB1> Schaden pro Sekunde erleiden.|n|cffc3dbffKann nur im Fernkampf angewandt werden.|r
+(Druide - Stufe 1)
 }
 
 STRING 1612
@@ -11770,13 +11770,13 @@ STRING 1964
 STRING 1965
 // Gegenstände: I017 (Fleischkeule), Description (Beschreibung (ides))
 {
-Stellt verlorene Trefferpunkte wieder her.
+Restores missing hitpoints.
 }
 
 STRING 1966
 // Gegenstände: I017 (Fleischkeule), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A04Q,DataA1> Trefferpunkte wieder her.
+Restores <A04Q,DataA1> hitpoints on usage.
 }
 
 STRING 1967
@@ -14532,7 +14532,7 @@ STRING 2429
 STRING 2430
 // Gegenstände: I00T (Schwerer Goldmünzenbeutel), Name (Name (unam))
 {
-Schwerer Goldmünzenbeutel
+Heavy Gold Coin Bag
 }
 
 STRING 2431
@@ -14562,7 +14562,7 @@ Schwerer Goldmünzenbeutel
 STRING 2435
 // Zauberverstärker/Effekte: B029 (), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Diese Einheit steht unter der Wirkung von 'Aura des Königs'; Bewegungstempo und Trefferpunkt-Regeneration wurden.
+Diese Einheit steht unter der Wirkung von 'Aura des Königs'; Bewegungstempo und Trefferpunkt-Regeneration wurden erhöht.
 }
 
 STRING 2436
@@ -16312,7 +16312,7 @@ STRING 2727
 STRING 2728
 // Gegenstände: I01P (Zauberring), Name (Name (unam))
 {
-Zauberring
+Magic Ring
 }
 
 STRING 2729
@@ -16330,7 +16330,7 @@ The Necromancer regenerates his life and mana with the help of a corpse. He conv
 STRING 2731
 // Gegenstände: I01P (Zauberring), Tip (Tooltipp - Einfach (utip))
 {
-Zauberring kaufen
+Buy Magic Ring
 }
 
 STRING 2732
@@ -16568,7 +16568,7 @@ Soul Theft
 }
 
 STRING 2771
-// Fähigkeiten: A01U (Dunkler Diener), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01W (Schattengeschoss), EditorSuffix (Editor-Suffix (ansf))
 {
 (Nekromant)
 }
@@ -17894,7 +17894,7 @@ Carsten
 STRING 2994
 // Einheiten: n043 (Frostwesen), Name (Name (unam))
 {
-Frostwesen
+Frost Creature
 }
 
 STRING 2995
@@ -19130,13 +19130,13 @@ Hail of Arrows [|cffffcc00Level 3|r]
 STRING 3200
 // Gegenstände: I04D (Amulett der Kraft), Tip (Tooltipp - Einfach (utip))
 {
-Amulett der Kraft kaufen
+Buy Amulet of Strength
 }
 
 STRING 3201
 // Gegenstände: I04D (Amulett der Kraft), Description (Beschreibung (ides))
 {
-Erhöht die Kraft um 1.
+Increases the strength by 1.
 }
 
 STRING 3202
@@ -19886,13 +19886,13 @@ Manaexplosion [|cffffcc00Stufe 4|r]
 STRING 3326
 // Gegenstände: I017 (Fleischkeule), Name (Name (unam))
 {
-Fleischkeule
+Meat Lobe
 }
 
 STRING 3327
 // Gegenstände: I017 (Fleischkeule), Tip (Tooltipp - Einfach (utip))
 {
-Fleischkeule kaufen
+Buy Meat Lobe
 }
 
 STRING 3328
@@ -19970,7 +19970,7 @@ Soul Theft [|cffffcc00Level 2|r]
 STRING 3340
 // Gegenstände: I029 (Wurfspeer), Name (Name (unam))
 {
-Wurfspeer
+Throwing Spear
 }
 
 STRING 3341
@@ -19982,43 +19982,43 @@ STRING 3341
 STRING 3342
 // Gegenstände: I029 (Wurfspeer), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A080,DataA1>.
+Increases the damage by <A080,DataA1>.
 }
 
 STRING 3343
 // Gegenstände: I029 (Wurfspeer), Tip (Tooltipp - Einfach (utip))
 {
-Wurfspeer kaufen
+Buy Throwing Spear
 }
 
 STRING 3344
 // Gegenstände: I02A (Großer Rundschild), Name (Name (unam))
 {
-Großer Rundschild
+Large Round Buckler
 }
 
 STRING 3345
 // Gegenstände: I02A (Großer Rundschild), Description (Beschreibung (ides))
 {
-Ein großer hölzener Rundschild.
+A big wooden round buckler.
 }
 
 STRING 3346
 // Gegenstände: I02A (Großer Rundschild), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A081,DataA1>.
+Increases the armour by <A081,DataA1>.
 }
 
 STRING 3347
 // Gegenstände: I02A (Großer Rundschild), Tip (Tooltipp - Einfach (utip))
 {
-Großen Rundschild kaufen
+Buy Large Round Buckler
 }
 
 STRING 3348
 // Fähigkeiten: A04S (Fleischkeule), Name (Name (anam))
 {
-Fleischkeule
+Meat Lobe
 }
 
 STRING 3349
@@ -20060,7 +20060,7 @@ Topfhelm
 STRING 3355
 // Fähigkeiten: A080 (Wurfspeer), Name (Name (anam))
 {
-Wurfspeer
+Throwing Spear
 }
 
 STRING 3356
@@ -20078,7 +20078,7 @@ STRING 3357
 STRING 3358
 // Fähigkeiten: A081 (Großer Rundschild), Name (Name (anam))
 {
-Großer Rundschild
+Large Round Buckler
 }
 
 STRING 3359
@@ -20108,7 +20108,7 @@ Lothar
 STRING 3363
 // Gegenstände: I01H (Wolfsfell), Tip (Tooltipp - Einfach (utip))
 {
-Wolfsfell kaufen
+Buy Wolf Fur
 }
 
 STRING 3364
@@ -20126,19 +20126,19 @@ Soul Theft - Level 2
 STRING 3366
 // Gegenstände: I02B (Lederpanzer), Name (Name (unam))
 {
-Lederpanzer
+Leather Armour
 }
 
 STRING 3367
 // Gegenstände: I02B (Lederpanzer), Tip (Tooltipp - Einfach (utip))
 {
-Lederpanzer kaufen
+Buy Leather Armour
 }
 
 STRING 3368
 // Gegenstände: I02B (Lederpanzer), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A082,DataA1>.
+Increases the armour by <A082,DataA1>.
 }
 
 STRING 3369
@@ -20198,25 +20198,25 @@ Ein eiserner Helm mit einem einfachen Nasenschutz.
 STRING 3378
 // Gegenstände: I02E (Eisenhut), Name (Name (unam))
 {
-Eisenhut
+Iron Helmet
 }
 
 STRING 3379
 // Gegenstände: I02E (Eisenhut), Tip (Tooltipp - Einfach (utip))
 {
-Eisenhut kaufen
+Buy Iron Helmet
 }
 
 STRING 3380
 // Gegenstände: I02E (Eisenhut), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A085,DataA1>.
+Increases the armour by <A085,DataA1>.
 }
 
 STRING 3381
 // Gegenstände: I02E (Eisenhut), Description (Beschreibung (ides))
 {
-Ein verstärkter eiserner Helm.
+An increased iron helmet
 }
 
 STRING 3382
@@ -20228,7 +20228,7 @@ STRING 3382
 STRING 3383
 // Fähigkeiten: A082 (Lederpanzer), Name (Name (anam))
 {
-Lederpanzer
+Leather Armour
 }
 
 STRING 3384
@@ -20418,7 +20418,7 @@ Click here|Nto get to the active shrine of your character.
 STRING 3418
 // Gegenstände: I01P (Zauberring), Description (Beschreibung (ides))
 {
-Erhöht das Mana und Wissen.
+Increases the mana and lore.
 }
 
 STRING 3419
@@ -20568,13 +20568,13 @@ Verstärkt die Rüstung.
 STRING 3443
 // Gegenstände: I029 (Wurfspeer), Description (Beschreibung (ides))
 {
-Erhöht den Schaden.
+Increases the damage.
 }
 
 STRING 3444
 // Gegenstände: I05F (Ritterhelm), Description (Beschreibung (ides))
 {
-Verstärkt die Rüstung.
+Increases the armour.
 }
 
 STRING 3445
@@ -20878,33 +20878,33 @@ Anstürmen [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 3495
-// Fähigkeiten: A0IV (Dunkler Diener - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Gegenstände: I064 (Spruchrolle der Kühe), Ubertip (Tooltipp - Erweitert (utub))
 {
-Dunkler Diener [|cffffcc00Stufe 1|r]
+Erzeugt explodierende Kühe.
 }
 
 STRING 3496
-// Fähigkeiten: A0IW (Dunkler Diener - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Gegenstände: I064 (Spruchrolle der Kühe), Description (Beschreibung (ides))
 {
-Dunkler Diener [|cffffcc00Stufe 2|r]
+Erzeugt explodierende Kühe.
 }
 
 STRING 3497
-// Fähigkeiten: A0IX (Dunkler Diener - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DF (Laden-Pfeil Rune), Name (Name (anam))
 {
-Dunkler Diener [|cffffcc00Stufe 3|r]
+Laden-Pfeil Rune
 }
 
 STRING 3498
-// Fähigkeiten: A0IY (Dunkler Diener - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1DF (Laden-Pfeil Rune), EditorSuffix (Editor-Suffix (ansf))
 {
-Dunkler Diener [|cffffcc00Stufe 4|r]
+(Laden)
 }
 
 STRING 3499
-// Fähigkeiten: A0IZ (Dunkler Diener - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HY (Dämonendiener - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Dunkler Diener [|cffffcc00Stufe 5|r]
+Ruft für <A01V,Dur1> Sekunden einen Dämon herbei Der beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r .|n|n|cffffcc00Stufe 1|r - Stufe <n00P,level>, verursacht <n00P,dmgplus1> Schaden und besitzt <n00P,def> Rüstung, <n00P,manaN> Mana und <n00P,HP> Leben. |n|cffffcc00Stufe 2|r - Stufe <n03S,level>, verursacht <n03S,dmgplus1> Schaden und besitzt <n03S,def> Rüstung, <n03S,manaN> Mana und <n03S,HP> Leben. |n|cffffcc00Stufe 3|r - Stufe <n03T,level>, verursacht <n03T,dmgplus1> Schaden und besitzt <n03T,def> Rüstung, <n03T,manaN> Mana und <n03T,HP> Leben. |n|cffffcc00Stufe 4|r - Stufe <n03U,level>, verursacht <n03U,dmgplus1> Schaden und besitzt <n03U,def> Rüstung, <n03U,manaN> Mana und <n03U,HP> Leben. |n|cffffcc00Stufe 5|r - Stufe <n03V,level>, verursacht <n03V,dmgplus1> Schaden und besitzt <n03V,def> Rüstung, <n03V,manaN> Mana und <n03V,HP> Leben.
 }
 
 STRING 3500
@@ -21096,7 +21096,7 @@ Eine blutige Drachenaxt.
 STRING 3531
 // Einheiten: n00Q (Sisgards Stand), Name (Name (unam))
 {
-Sisgards Stand
+Sisgard's Stall
 }
 
 STRING 3532
@@ -21933,7 +21933,7 @@ Eine Kopie des eigentlichen Illusionisten.
 STRING 3670
 // Einheiten: n01B (Ghul), Name (Name (unam))
 {
-Ghul
+Ghoul
 }
 
 STRING 3671
@@ -22900,7 +22900,7 @@ Medusa
 STRING 3831
 // Einheiten: n034 (Donnerwesen), Name (Name (unam))
 {
-Donnerwesen
+Thunder Creature
 }
 
 STRING 3832
@@ -22972,31 +22972,31 @@ Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 3843
 // Einheiten: H00H (Druide), Propernames (Eigennamen (upro))
 {
-Krähe
+Crow
 }
 
 STRING 3844
 // Einheiten: n035 (Diakon), Name (Name (unam))
 {
-Diakon
+Deacon
 }
 
 STRING 3845
 // Einheiten: n036 (Rabengaukler), Name (Name (unam))
 {
-Rabengaukler
+Raven Juggler
 }
 
 STRING 3846
 // Einheiten: n037 (Todgeweihter), Name (Name (unam))
 {
-Todgeweihter
+Doomed
 }
 
 STRING 3847
 // Einheiten: n038 (Missgeburt), Name (Name (unam))
 {
-Missgeburt
+Freak
 }
 
 STRING 3848
@@ -23014,13 +23014,13 @@ Zugang zur Gruft
 STRING 3850
 // Einheiten: n03A (Gefallene Walküre), Name (Name (unam))
 {
-Gefallene Walküre
+Fallen Valkyrie
 }
 
 STRING 3851
 // Einheiten: n03B (Verkommene Seele), Name (Name (unam))
 {
-Verkommene Seele
+Depraved Soul
 }
 
 STRING 3852
@@ -23044,7 +23044,7 @@ STRING 3854
 STRING 3855
 // Gegenstände: I01P (Zauberring), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht das Mana um <AImz,DataA1> und das Wissen um <AIi3,DataB1>.
+Increases the mana by <AImz,DataA1> and the lore by <AIi3,DataB1>.
 }
 
 STRING 3856
@@ -24734,55 +24734,55 @@ Manaexplosion [|cffffcc00Stufe 2|r]
 }
 
 STRING 4137
-// Fähigkeiten: A0HG (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0D3 (Dryadenquelle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner <A0HH,DataA3> Sekunden lang <A0HH,DataB3> Schaden pro Sekunde erleiden.|n|cffc3dbffKann nur im Fernkampf angewandt werden.|r
+Beschwört für <A0D3,Dur2> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis <A1D0,DataA1,%> % Leben pro Sekunde heilt.
 }
 
 STRING 4138
-// Fähigkeiten: A0HG (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0D3 (Dryadenquelle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner <A0HH,DataA4> Sekunden lang <A0HH,DataB4> Schaden pro Sekunde erleiden.|n|cffc3dbffKann nur im Fernkampf angewandt werden.|r
+Beschwört für <A0D3,Dur3> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis <A1D1,DataA1,%> % Leben pro Sekunde heilt.
 }
 
 STRING 4139
-// Fähigkeiten: A0HG (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0D3 (Dryadenquelle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner <A0HH,DataA5> Sekunden lang <A0HH,DataB5> Schaden pro Sekunde erleiden.|n|cffc3dbffKann nur im Fernkampf angewandt werden.|r
+Beschwört für <A0D3,Dur4> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis <A1D2,DataA1,%> % Leben pro Sekunde heilt.
 }
 
 STRING 4140
-// Fähigkeiten: A01U (Dunkler Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A01U (Dunkle Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies Stufe <n00O,level> mit <n00O,HP> Leben, <n00O,dmgplus1> Schaden und <n00O,def> Rüstung, der sich durch Kadaver regenerieren kann.
 }
 
 STRING 4141
-// Fähigkeiten: A01U (Dunkler Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A01U (Dunkle Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies Stufe <n03O,level> mit <n03O,HP> Leben, <n03O,dmgplus1> Schaden und <n03O,def> Rüstung, der sich durch Kadaver regenerieren kann.
 }
 
 STRING 4142
-// Fähigkeiten: A01U (Dunkler Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A01U (Dunkle Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies Stufe <n03P,level> mit <n03P,HP> Leben, <n03P,dmgplus1> Schaden und <n03P,def> Rüstung, der sich durch Kadaver regenerieren kann.
 }
 
 STRING 4143
-// Fähigkeiten: A01U (Dunkler Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A01U (Dunkle Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies Stufe <n03Q,level> mit <n03Q,HP> Leben, <n03Q,dmgplus1> Schaden und <n03Q,def> Rüstung, der sich durch Kadaver regenerieren kann.
 }
 
 STRING 4144
-// Fähigkeiten: A01U (Dunkler Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A01U (Dunkle Diener), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies Stufe <n03R,level> mit <n03R,HP> Leben, <n03R,dmgplus1> Schaden und <n03R,def> Rüstung, der sich durch Kadaver regenerieren kann.
 }
 
 STRING 4145
-// Fähigkeiten: A01U (Dunkler Diener), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A01U (Dunkle Diener), Tip (Tooltipp - Normal (atp1))
 {
 Dark Servants [|cffffcc00Level 1|r]
 }
@@ -24848,9 +24848,9 @@ Dark Servants [|cffffcc00Level 5|r]
 }
 
 STRING 4156
-// Fähigkeiten: A0IV (Dunkler Diener - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1DG (Laden-Pfeil Heiltrank), Name (Name (anam))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies.
+Laden-Pfeil Heiltrank
 }
 
 STRING 4157
@@ -27874,7 +27874,7 @@ STRING 4659
 STRING 4660
 // Fähigkeiten: A0DH (Baumhirte - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen mächtigen Gefährten, der sich einwurzeln kann. |n|n|cffffcc00Stufe 1|r - Beschwört einen mächtigen Gefährten mit <e000,realHP> Leben.|n|cffffcc00Stufe 2|r - Beschwört einen mächtigen Gefährten mit <e001,realHP> Leben.|n|cffffcc00Stufe 3|r - Beschwört einen mächtigen Gefährten mit <e002,realHP> Leben.|n|cffffcc00Stufe 4|r - Beschwört einen mächtigen Gefährten mit <e003,realHP> Leben.|n|cffffcc00Stufe 5|r - Beschwört einen mächtigen Gefährten mit <e004,realHP> Leben.
+Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summons a powerful fellow with <e000,realHP> life.|n|cffffcc00Level 2|r - Summons a powerful fellow with <e001,realHP> life.|n|cffffcc00Level 3|r - Summons a powerful fellow with <e002,realHP> life.|n|cffffcc00Level 4|r - Summons a powerful fellow with <e003,realHP> life.|n|cffffcc00Level 5|r - Summons a powerful fellow with <e004,realHP> life.
 }
 
 STRING 4661
@@ -27958,7 +27958,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 4674
 // Fähigkeiten: A0DI (Baumhirte - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen mächtigen Gefährten, der sich einwurzeln kann. |n|n|cffffcc00Stufe 1|r - Beschwört einen mächtigen Gefährten mit <e000,realHP> Leben.|n|cffffcc00Stufe 2|r - Beschwört einen mächtigen Gefährten mit <e001,realHP> Leben.|n|cffffcc00Stufe 3|r - Beschwört einen mächtigen Gefährten mit <e002,realHP> Leben.|n|cffffcc00Stufe 4|r - Beschwört einen mächtigen Gefährten mit <e003,realHP> Leben.|n|cffffcc00Stufe 5|r - Beschwört einen mächtigen Gefährten mit <e004,realHP> Leben.
+Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summons a powerful fellow with <e000,realHP> life.|n|cffffcc00Level 2|r - Summons a powerful fellow with <e001,realHP> life.|n|cffffcc00Level 3|r - Summons a powerful fellow with <e002,realHP> life.|n|cffffcc00Level 4|r - Summons a powerful fellow with <e003,realHP> life.|n|cffffcc00Level 5|r - Summons a powerful fellow with <e004,realHP> life.
 }
 
 STRING 4675
@@ -28042,7 +28042,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 4688
 // Fähigkeiten: A0DJ (Baumhirte - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen mächtigen Gefährten, der sich einwurzeln kann. |n|n|cffffcc00Stufe 1|r - Beschwört einen mächtigen Gefährten mit <e000,realHP> Leben.|n|cffffcc00Stufe 2|r - Beschwört einen mächtigen Gefährten mit <e001,realHP> Leben.|n|cffffcc00Stufe 3|r - Beschwört einen mächtigen Gefährten mit <e002,realHP> Leben.|n|cffffcc00Stufe 4|r - Beschwört einen mächtigen Gefährten mit <e003,realHP> Leben.|n|cffffcc00Stufe 5|r - Beschwört einen mächtigen Gefährten mit <e004,realHP> Leben.
+Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summons a powerful fellow with <e000,realHP> life.|n|cffffcc00Level 2|r - Summons a powerful fellow with <e001,realHP> life.|n|cffffcc00Level 3|r - Summons a powerful fellow with <e002,realHP> life.|n|cffffcc00Level 4|r - Summons a powerful fellow with <e003,realHP> life.|n|cffffcc00Level 5|r - Summons a powerful fellow with <e004,realHP> life.
 }
 
 STRING 4689
@@ -28126,7 +28126,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 4702
 // Fähigkeiten: A0DK (Baumhirte - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen mächtigen Gefährten, der sich einwurzeln kann. |n|n|cffffcc00Stufe 1|r - Beschwört einen mächtigen Gefährten mit <e000,realHP> Leben.|n|cffffcc00Stufe 2|r - Beschwört einen mächtigen Gefährten mit <e001,realHP> Leben.|n|cffffcc00Stufe 3|r - Beschwört einen mächtigen Gefährten mit <e002,realHP> Leben.|n|cffffcc00Stufe 4|r - Beschwört einen mächtigen Gefährten mit <e003,realHP> Leben.|n|cffffcc00Stufe 5|r - Beschwört einen mächtigen Gefährten mit <e004,realHP> Leben.
+Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summons a powerful fellow with <e000,realHP> life.|n|cffffcc00Level 2|r - Summons a powerful fellow with <e001,realHP> life.|n|cffffcc00Level 3|r - Summons a powerful fellow with <e002,realHP> life.|n|cffffcc00Level 4|r - Summons a powerful fellow with <e003,realHP> life.|n|cffffcc00Level 5|r - Summons a powerful fellow with <e004,realHP> life.
 }
 
 STRING 4703
@@ -28210,7 +28210,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 4716
 // Fähigkeiten: A0DL (Baumhirte - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen mächtigen Gefährten, der sich einwurzeln kann. |n|n|cffffcc00Stufe 1|r - Beschwört einen mächtigen Gefährten mit <e000,realHP> Leben.|n|cffffcc00Stufe 2|r - Beschwört einen mächtigen Gefährten mit <e001,realHP> Leben.|n|cffffcc00Stufe 3|r - Beschwört einen mächtigen Gefährten mit <e002,realHP> Leben.|n|cffffcc00Stufe 4|r - Beschwört einen mächtigen Gefährten mit <e003,realHP> Leben.|n|cffffcc00Stufe 5|r - Beschwört einen mächtigen Gefährten mit <e004,realHP> Leben.
+Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summons a powerful fellow with <e000,realHP> life.|n|cffffcc00Level 2|r - Summons a powerful fellow with <e001,realHP> life.|n|cffffcc00Level 3|r - Summons a powerful fellow with <e002,realHP> life.|n|cffffcc00Level 4|r - Summons a powerful fellow with <e003,realHP> life.|n|cffffcc00Level 5|r - Summons a powerful fellow with <e004,realHP> life.
 }
 
 STRING 4717
@@ -28246,13 +28246,13 @@ Manaexplosion [|cffffcc00Stufe 2|r]
 STRING 4722
 // Fähigkeiten: A0AJ (Kräuterheilung), Tip (Tooltipp - Normal (atp1))
 {
-Kräuterheilung
+Herbal Cure
 }
 
 STRING 4723
 // Fähigkeiten: A0AJ (Kräuterheilung), Name (Name (anam))
 {
-Kräuterheilung
+Herbal Cure
 }
 
 STRING 4724
@@ -28276,7 +28276,7 @@ STRING 4726
 STRING 4727
 // Fähigkeiten: A0AK (Kräuterheilung), Name (Name (anam))
 {
-Kräuterheilung
+Herbal Cure
 }
 
 STRING 4728
@@ -29398,41 +29398,41 @@ Tierkunde - Stufe 5 - Bärengestalt - Bärenhöhle
 STRING 4914
 // Einheiten: e000 (Baumhirte), Name (Name (unam))
 {
-Baumhirte
+Treefolk
 }
 
 STRING 4915
 // Fähigkeiten: A0DH (Baumhirte - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirte [|cffffcc00Stufe 1|r]
+Treefolk [|cffffcc00Level 1|r]
 }
 
 STRING 4916
 // Fähigkeiten: A0DI (Baumhirte - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirte [|cffffcc00Stufe 2|r]
+Treefolk [|cffffcc00Level 2|r]
 }
 
 STRING 4917
 // Fähigkeiten: A0DJ (Baumhirte - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirte [|cffffcc00Stufe 3|r]
+Treefolk [|cffffcc00Level 3|r]
 }
 
 STRING 4918
 // Fähigkeiten: A0DK (Baumhirte - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirte [|cffffcc00Stufe 4|r]
+Treefolk [|cffffcc00Level 4|r]
 }
 
 STRING 4919
 // Fähigkeiten: A0DL (Baumhirte - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirte [|cffffcc00Stufe 5|r]
+Treefolk [|cffffcc00Level 5|r]
 }
 
 STRING 4920
-// Fähigkeiten: A0V6 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A11X (Tierkunde - Stufe 5 - Krähengestalt - Nest), EditorSuffix (Editor-Suffix (ansf))
 {
 (Druide)
 }
@@ -29464,13 +29464,13 @@ STRING 4924
 STRING 4925
 // Einheiten: e002 (Baumhirte), Name (Name (unam))
 {
-Baumhirte
+Treefolk
 }
 
 STRING 4926
 // Einheiten: e003 (Baumhirte), Name (Name (unam))
 {
-Baumhirte
+Treefolk
 }
 
 STRING 4927
@@ -32255,7 +32255,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5390
 // Fähigkeiten: A0KZ (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 1|r]
+Crow Form [|cffffcc00Level 1|r]
 }
 
 STRING 5391
@@ -32351,7 +32351,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5406
 // Fähigkeiten: A0KZ (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 2|r]
+Crow Form [|cffffcc00Level 2|r]
 }
 
 STRING 5407
@@ -32435,7 +32435,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5420
 // Fähigkeiten: A0KZ (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 3|r]
+Crow Form [|cffffcc00Level 3|r]
 }
 
 STRING 5421
@@ -32519,7 +32519,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5434
 // Fähigkeiten: A0KZ (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 4|r]
+Crow Form [|cffffcc00Level 4|r]
 }
 
 STRING 5435
@@ -32603,7 +32603,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5448
 // Fähigkeiten: A0KZ (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 5|r]
+Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 5449
@@ -32679,13 +32679,13 @@ Krähengestalt - Stufe 5
 }
 
 STRING 5461
-// Einheiten: n03J (Dryadenquelle), Name (Name (unam))
+// Einheiten: n061 (Dryadenquelle), Name (Name (unam))
 {
 Dryadenquelle
 }
 
 STRING 5462
-// Fähigkeiten: A0D3 (Dryadenquelle), Name (Name (anam))
+// Einheiten: n062 (Dryadenquelle), Name (Name (unam))
 {
 Dryadenquelle
 }
@@ -32757,7 +32757,7 @@ STRING 5473
 }
 
 STRING 5474
-// Fähigkeiten: A0CS (Dryadenquelle), Name (Name (anam))
+// Einheiten: n063 (Dryadenquelle), Name (Name (unam))
 {
 Dryadenquelle
 }
@@ -33243,21 +33243,21 @@ Dryadenquelle - Stufe 5
 }
 
 STRING 5555
-// Fähigkeiten: A11T (Tierkunde - Stufe 1 - Junges - Krähengestalt), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A121 (Tierkunde - Stufe 4 - Bärengestalt - Winterschlaf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Druide)
 }
 
 STRING 5556
-// Fähigkeiten: A11W (Tierkunde - Stufe 4 - Krähengestalt - Flügelschlag), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A122 (Tierkunde - Stufe 5 - Bärengestalt - Bärenhöhle), EditorSuffix (Editor-Suffix (ansf))
 {
 (Druide)
 }
 
 STRING 5557
-// Fähigkeiten: A0CR (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
+// Gegenstände: I04S (Orkaxt), Description (Beschreibung (ides))
 {
-(Druide - Hain)
+Erhöht den Schaden.
 }
 
 STRING 5558
@@ -33333,7 +33333,7 @@ STRING 5569
 }
 
 STRING 5570
-// Zauberverstärker/Effekte: B01V (Baumhirte - Hain), Bufftip (Tooltipp (ftip))
+// Einheiten: n066 (Hain), Name (Name (unam))
 {
 Hain
 }
@@ -33839,31 +33839,31 @@ STRING 5653
 STRING 5654
 // Fähigkeiten: A0E1 (Baumhirte), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirten beschwören [|cffffcc00Stufe 1|r]
+Summon Treefolk [|cffffcc00Level 1|r]
 }
 
 STRING 5655
 // Fähigkeiten: A0E1 (Baumhirte), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirten beschwören [|cffffcc00Stufe 2|r]
+Summon Treefolk [|cffffcc00Level 2|r]
 }
 
 STRING 5656
 // Fähigkeiten: A0E1 (Baumhirte), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirten beschwören [|cffffcc00Stufe 3|r]
+Summon Treefolk [|cffffcc00Level 3|r]
 }
 
 STRING 5657
 // Fähigkeiten: A0E1 (Baumhirte), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirten beschwören [|cffffcc00Stufe 4|r]
+Summon Treefolk [|cffffcc00Level 4|r]
 }
 
 STRING 5658
 // Fähigkeiten: A0E1 (Baumhirte), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirten beschwören [|cffffcc00Stufe 5|r]
+Summon Treefolk [|cffffcc00Level 5|r]
 }
 
 STRING 5659
@@ -33873,7 +33873,7 @@ STRING 5659
 }
 
 STRING 5660
-// Fähigkeiten: A120 (Tierkunde - Stufe 3 - Bärengestalt - Tollwut), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A14D (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Druide)
 }
@@ -35009,7 +35009,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 5849
 // Fähigkeiten: A0E4 (Ranken - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Spießt eine Reihe von Gegnern auf.
+Revive [|cffffcc00Level 3|r] (|cffffcc00O|r)
 }
 
 STRING 5850
@@ -36562,7 +36562,7 @@ Springt zum aktuellen Zielpunkt des Auftrags.
 STRING 6108
 // Einheiten: n05Z (Verführerische Nixe), Name (Name (unam))
 {
-Verführerische Nixe
+Seductive Mermaid
 }
 
 STRING 6109
@@ -36754,7 +36754,7 @@ STRING 6139
 STRING 6140
 // Fähigkeiten: A1CA (Großer Heiltrank), Name (Name (anam))
 {
-Großer Heiltrank
+Big Healing Potion
 }
 
 STRING 6141
@@ -37582,7 +37582,7 @@ Worlds portal
 STRING 6278
 // Einheiten: u003 (Waldfestung), Name (Name (unam))
 {
-Waldfestung
+Forest Fortress
 }
 
 STRING 6279
@@ -37718,13 +37718,13 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 }
 
 STRING 6301
-// Fähigkeiten: A0F1 (Weltenportal - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1DH (Laden-Pfeil Manatrank), EditorSuffix (Editor-Suffix (ansf))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen.
+(Laden)
 }
 
 STRING 6302
-// Fähigkeiten: A0MN (Aura der Autorität - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
@@ -37802,9 +37802,9 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 }
 
 STRING 6315
-// Fähigkeiten: A0F2 (Weltenportal - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0CH (Krähengestalt - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen.
+The druid transforms himself into a crow. The mana regeneration and the armour are increased. Besides the druid flies and and deals piercing damage.|n|n|cffffcc00Level 1|r -  The mana regeneration is increased by <A14U,DataA1,%> % and the armour by <A094,DataA1> %. |n|cffffcc00Level 2|r -  The mana regeneration is increased by <A14U,DataA2,%> % and the armour by <A094,DataA2> %. |n|cffffcc00Level 3|r -  The mana regeneration is increased by <A14U,DataA3,%> % and the armour by <A094,DataA3> %. |n|cffffcc00Level 4|r -  The mana regeneration is increased by <A14U,DataA4,%> % and the armour by <A094,DataA4> %. |n|cffffcc00Level 5|r -  The mana regeneration is increased by <A14U,DataA5,%> % and the armour by <A094,DataA5> %.
 }
 
 STRING 6316
@@ -37886,9 +37886,9 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 }
 
 STRING 6329
-// Fähigkeiten: A0F3 (Weltenportal - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0CJ (Krähengestalt - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen.
+The druid transforms himself into a crow. The mana regeneration and the armour are increased. Besides the druid flies and and deals piercing damage.|n|n|cffffcc00Level 1|r -  The mana regeneration is increased by <A14U,DataA1,%> % and the armour by <A094,DataA1> %. |n|cffffcc00Level 2|r -  The mana regeneration is increased by <A14U,DataA2,%> % and the armour by <A094,DataA2> %. |n|cffffcc00Level 3|r -  The mana regeneration is increased by <A14U,DataA3,%> % and the armour by <A094,DataA3> %. |n|cffffcc00Level 4|r -  The mana regeneration is increased by <A14U,DataA4,%> % and the armour by <A094,DataA4> %. |n|cffffcc00Level 5|r -  The mana regeneration is increased by <A14U,DataA5,%> % and the armour by <A094,DataA5> %.
 }
 
 STRING 6330
@@ -37970,9 +37970,9 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 }
 
 STRING 6343
-// Fähigkeiten: A0EZ (Weltenportal - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0CK (Krähengestalt - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen.
+The druid transforms himself into a crow. The mana regeneration and the armour are increased. Besides the druid flies and and deals piercing damage.|n|n|cffffcc00Level 1|r -  The mana regeneration is increased by <A14U,DataA1,%> % and the armour by <A094,DataA1> %. |n|cffffcc00Level 2|r -  The mana regeneration is increased by <A14U,DataA2,%> % and the armour by <A094,DataA2> %. |n|cffffcc00Level 3|r -  The mana regeneration is increased by <A14U,DataA3,%> % and the armour by <A094,DataA3> %. |n|cffffcc00Level 4|r -  The mana regeneration is increased by <A14U,DataA4,%> % and the armour by <A094,DataA4> %. |n|cffffcc00Level 5|r -  The mana regeneration is increased by <A14U,DataA5,%> % and the armour by <A094,DataA5> %.
 }
 
 STRING 6344
@@ -38116,13 +38116,13 @@ Weltenportal - Stufe 5
 STRING 6367
 // Fähigkeiten: A0F9 (Waldfestung), Name (Name (anam))
 {
-Waldfestung
+Forest Fortress
 }
 
 STRING 6368
 // Fähigkeiten: A0F9 (Waldfestung), Tip (Tooltipp - Normal (atp1))
 {
-Waldfestung [|cffffcc00Stufe 1|r] beschwören
+Summon Forest Fortress [|cffffcc00Level 1|r]
 }
 
 STRING 6369
@@ -38158,7 +38158,7 @@ STRING 6373
 STRING 6374
 // Fähigkeiten: A0FB (Waldfestung), Name (Name (anam))
 {
-Waldfestung
+Forest Fortress
 }
 
 STRING 6375
@@ -42784,19 +42784,19 @@ Gift kaufen
 STRING 7145
 // Fähigkeiten: A0FC (Waldfestung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Waldfestung [|cffffcc00Stufe 1|r]
+Forest Fortress [|cffffcc00Level 1|r]
 }
 
 STRING 7146
 // Zauberverstärker/Effekte: B022 (Waldfestung), EditorName (Name (nur Editor) (fnam))
 {
-Waldfestung
+Forest Fortress
 }
 
 STRING 7147
 // Zauberverstärker/Effekte: B022 (Waldfestung), Bufftip (Tooltipp (ftip))
 {
-Waldfestung
+Forest Fortress
 }
 
 STRING 7148
@@ -44534,9 +44534,9 @@ STRING 7436
 }
 
 STRING 7437
-// Fähigkeiten: A0J0 (Dunkler Diener - Stufe 1), Name (Name (anam))
+// Fähigkeiten: A0CL (Krähengestalt - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Dunkler Diener - Stufe 1
+The druid transforms himself into a crow. The mana regeneration and the armour are increased. Besides the druid flies and and deals piercing damage.|n|n|cffffcc00Level 1|r -  The mana regeneration is increased by <A14U,DataA1,%> % and the armour by <A094,DataA1> %. |n|cffffcc00Level 2|r -  The mana regeneration is increased by <A14U,DataA2,%> % and the armour by <A094,DataA2> %. |n|cffffcc00Level 3|r -  The mana regeneration is increased by <A14U,DataA3,%> % and the armour by <A094,DataA3> %. |n|cffffcc00Level 4|r -  The mana regeneration is increased by <A14U,DataA4,%> % and the armour by <A094,DataA4> %. |n|cffffcc00Level 5|r -  The mana regeneration is increased by <A14U,DataA5,%> % and the armour by <A094,DataA5> %.
 }
 
 STRING 7438
@@ -44552,9 +44552,9 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 }
 
 STRING 7440
-// Fähigkeiten: A0IW (Dunkler Diener - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0CM (Krähengestalt - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur2> Sekunden einen schwachen Zombie Stufe <n000,level> mit <n000,HP> Leben, <n000,dmgplus1> Schaden und <n000,def> Rüstung, der sich durch Kadaver regenerieren kann.
+The druid transforms himself into a crow. The mana regeneration and the armour are increased. Besides the druid flies and and deals piercing damage.|n|n|cffffcc00Level 1|r -  The mana regeneration is increased by <A14U,DataA1,%> % and the armour by <A094,DataA1> %. |n|cffffcc00Level 2|r -  The mana regeneration is increased by <A14U,DataA2,%> % and the armour by <A094,DataA2> %. |n|cffffcc00Level 3|r -  The mana regeneration is increased by <A14U,DataA3,%> % and the armour by <A094,DataA3> %. |n|cffffcc00Level 4|r -  The mana regeneration is increased by <A14U,DataA4,%> % and the armour by <A094,DataA4> %. |n|cffffcc00Level 5|r -  The mana regeneration is increased by <A14U,DataA5,%> % and the armour by <A094,DataA5> %.
 }
 
 STRING 7441
@@ -44618,9 +44618,9 @@ STRING 7450
 }
 
 STRING 7451
-// Fähigkeiten: A0J1 (Dunkler Diener - Stufe 2), Name (Name (anam))
+// Fähigkeiten: A0JP (Erwachen des Waldes - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Dunkler Diener - Stufe 2
+Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Pro Sekunde werden <A09Z,DataA1> Widder beschworen.|nHält <A09Z,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Jeder explodierende Widder richtet <A09Z,DataC1> Punkte Schaden an. |n|cffffcc00Stufe 2|r -  Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |n|cffffcc00Stufe 3|r -  Jeder explodierende Widder richtet <A09Z,DataC3> Punkte Schaden an.|n|cffffcc00Stufe 4|r -  Jeder explodierende Widder richtet <A09Z,DataC4> Punkte Schaden an.|n|cffffcc00Stufe 5|r -  Jeder explodierende Widder richtet <A09Z,DataC5> Punkte Schaden an.
 }
 
 STRING 7452
@@ -46888,7 +46888,7 @@ Aktivieren, um Magie-Immunität zu erhalten und Magieschaden um  <A0K8,DataE1,%>
 STRING 7829
 // Einheiten: n03M (Taverne), Name (Name (unam))
 {
-Taverne
+Tavern
 }
 
 STRING 7830
@@ -47020,7 +47020,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 7851
 // Gegenstände: I03O (Apfel), Ubertip (Tooltipp - Erweitert (utub))
 {
-Heilt bei Benutzung <AIh1,DataA1> Trefferpunkte.|nBietet <I00A,uses> Aufladung.
+Heals <AIh1,DataA1> hitpoints on usage.|nProvides <I00A,uses> charges.
 }
 
 STRING 7852
@@ -47428,7 +47428,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 7919
 // Zauberverstärker/Effekte: B01X (), Bufftip (Tooltipp (ftip))
 {
-Baumhirte
+Treefolk
 }
 
 STRING 7920
@@ -48082,31 +48082,31 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8028
 // Fähigkeiten: A0KZ (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 1|r]
+Crow Form [|cffffcc00Level 1|r]
 }
 
 STRING 8029
 // Fähigkeiten: A0KZ (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 2|r]
+Crow Form [|cffffcc00Level 2|r]
 }
 
 STRING 8030
 // Fähigkeiten: A0KZ (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 3|r]
+Crow Form [|cffffcc00Level 3|r]
 }
 
 STRING 8031
 // Fähigkeiten: A0KZ (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 4|r]
+Crow Form [|cffffcc00Level 4|r]
 }
 
 STRING 8032
 // Fähigkeiten: A0KZ (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 5|r]
+Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 8033
@@ -48116,7 +48116,7 @@ Der Elementarmagier vereist das Gebiet in einem Umkreis von 600 um sich herum f�
 }
 
 STRING 8034
-// Fähigkeiten: A0PB (Genesung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0PD (Genesung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
@@ -49462,7 +49462,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 8258
 // Fähigkeiten: A0X2 (Kräuterheilung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Kräuterheilung [|cffffcc00Stufe 1|r]
+Herbal Cure [|cffffcc00Level 1|r]
 }
 
 STRING 8259
@@ -49510,7 +49510,7 @@ Erhöht den Schaden um <A0AD,DataA1>, die Mana-Regenerationsrate um <AIrm,DataA1
 STRING 8266
 // Fähigkeiten: A0X2 (Kräuterheilung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Heilt <A0AJ,DataA1> Leben eines nicht-mechanischen Verbündeten während <A0AJ,Dur1> Sekunden.|nHat eine Reichweite von <A0AJ,Rng1>.
+Heals <A0AJ,DataA1> life of a non-mechanic allied for <A0AJ,Dur1> seconds.|nHas a range of <A0AJ,Rng1>.
 }
 
 STRING 8267
@@ -59244,6 +59244,12 @@ STRING 9879
 // Fähigkeiten: A0W9 (Manaschild - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9880
+// Fähigkeiten: A19W (Stab der Klarsicht), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
 }
 
 STRING 9881
@@ -69930,13 +69936,13 @@ Setzt die Dauer beschworener Verbündeter auf 50 Sekunden oder beschworener Gegn
 }
 
 STRING 11670
-// Fähigkeiten: A127 (Standfestigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A12I (Pfeilhagel - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
 
 STRING 11671
-// Fähigkeiten: A125 (Standfestigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A127 (Standfestigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
 }
@@ -70595,7 +70601,7 @@ Sturm
 }
 
 STRING 11781
-// Fähigkeiten: A127 (Standfestigkeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A12H (Pfeilhagel - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 4|r]
 }
@@ -73255,31 +73261,31 @@ Gift
 STRING 12224
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 2|r]
+Crow Form [|cffffcc00Level 2|r]
 }
 
 STRING 12225
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 3|r]
+Crow Form [|cffffcc00Level 3|r]
 }
 
 STRING 12226
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 4|r]
+Crow Form [|cffffcc00Level 4|r]
 }
 
 STRING 12227
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 5|r]
+Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 12228
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 1|r]
+Crow Form [|cffffcc00Level 1|r]
 }
 
 STRING 12229
@@ -73321,61 +73327,61 @@ Giftstachel
 STRING 12235
 // Fähigkeiten: A13V (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 1|r]
+Crow Form [|cffffcc00Level 1|r]
 }
 
 STRING 12236
 // Fähigkeiten: A13V (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 2|r]
+Crow Form [|cffffcc00Level 2|r]
 }
 
 STRING 12237
 // Fähigkeiten: A13V (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 3|r]
+Crow Form [|cffffcc00Level 3|r]
 }
 
 STRING 12238
 // Fähigkeiten: A13V (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 4|r]
+Crow Form [|cffffcc00Level 4|r]
 }
 
 STRING 12239
 // Fähigkeiten: A13V (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 5|r]
+Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 12240
 // Fähigkeiten: A13V (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 1|r]
+Crow Form [|cffffcc00Level 1|r]
 }
 
 STRING 12241
 // Fähigkeiten: A13V (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 2|r]
+Crow Form [|cffffcc00Level 2|r]
 }
 
 STRING 12242
 // Fähigkeiten: A13V (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 3|r]
+Crow Form [|cffffcc00Level 3|r]
 }
 
 STRING 12243
 // Fähigkeiten: A13V (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 4|r]
+Crow Form [|cffffcc00Level 4|r]
 }
 
 STRING 12244
 // Fähigkeiten: A13V (Krähengestalt), Untip (Tooltipp - Ausschalten (aut1))
 {
-Krähengestalt [|cffffcc00Stufe 5|r]
+Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 12245
@@ -75414,19 +75420,19 @@ Mehrfachschuss [|cffffcc00Stufe 2|r]
 }
 
 STRING 12584
-// Zauberverstärker/Effekte: B022 (Waldfestung), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A01Y (Heilige Kraft), Tip (Tooltipp - Normal (atp1))
 {
-(Druide)
+Holy Power (|cffffcc00Q|r)
 }
 
 STRING 12585
-// Zauberverstärker/Effekte: B012 (Überlegenheit), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
 
 STRING 12586
-// Zauberverstärker/Effekte: B026 (Aura der Autorität), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A1HK (Verteidigen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Ritter)
 }
@@ -79231,7 +79237,7 @@ Ein Meutehund, der das aufgespürte Tier hetzt und seinem Herrn treu ergeben ist
 STRING 13219
 // Einheiten: n04L (Falkenkäfig), Name (Name (unam))
 {
-Falkenkäfig
+Falcon Cage
 }
 
 STRING 13220
@@ -79405,19 +79411,19 @@ STRING 13247
 STRING 13248
 // Einheiten: n005 (Armbrustschütze), Tip (Tooltipp - Einfach (utip))
 {
-Armbrustschützen ausbilden
+Train Crossbowman
 }
 
 STRING 13249
 // Einheiten: n015 (Krieger), Tip (Tooltipp - Einfach (utip))
 {
-Krieger ausbilden
+Train Warrior
 }
 
 STRING 13250
 // Einheiten: n03F (Waldläufer), Tip (Tooltipp - Einfach (utip))
 {
-Waldläufer ausbilden
+Train Ranger
 }
 
 STRING 13251
@@ -79435,7 +79441,7 @@ Recruit Farmhand
 STRING 13253
 // Einheiten: n04R (Osmans Kiste), Name (Name (unam))
 {
-Osmans Kiste
+Osman's Box
 }
 
 STRING 13254
@@ -79447,7 +79453,7 @@ STRING 13254
 STRING 13255
 // Einheiten: n04S (Einars Waffenkiste), Name (Name (unam))
 {
-Einars Waffenkiste
+Einar's Box of Weapons
 }
 
 STRING 13256
@@ -79459,7 +79465,7 @@ STRING 13256
 STRING 13257
 // Einheiten: n04T (Irminas Tränkekiste), Name (Name (unam))
 {
-Irminas Tränkekiste
+Irmina's Box of Potions
 }
 
 STRING 13258
@@ -79471,7 +79477,7 @@ STRING 13258
 STRING 13259
 // Einheiten: n04U (Björns Kiste), Name (Name (unam))
 {
-Björns Kiste
+Björn's Box
 }
 
 STRING 13260
@@ -79495,7 +79501,7 @@ Ausbau zum Magierpalast
 STRING 13263
 // Einheiten: n04W (Agihards Kiste), Name (Name (unam))
 {
-Agihards Kiste
+Agihard's Box
 }
 
 STRING 13264
@@ -79627,13 +79633,13 @@ The war hammer of a norseman.
 STRING 13285
 // Gegenstände: I05C (Nordischer Kriegshammer), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A17M,DataA1>. Verleiht eine Chance von <A17N,DataA1> % den Gegner <A17N,Dur1> Sekunden lang zu betäuben und einen zusätzlichen Schaden von <A17N,DataC1> zu versursachen.
+Increases the damage by <A17M,DataA1>. Grants a chance of  <A17N,DataA1> % to stun opponents for <A17N,Dur1> seconds and to deal an additional damage of <A17N,DataC1>.
 }
 
 STRING 13286
 // Gegenstände: I05C (Nordischer Kriegshammer), Tip (Tooltipp - Einfach (utip))
 {
-Nordischen Kriegshammer kaufen
+Buy Nordic War Hammer
 }
 
 STRING 13287
@@ -81031,25 +81037,25 @@ STRING 13518
 STRING 13519
 // Gegenstände: I05E (Nordischer Kriegshelm), Name (Name (unam))
 {
-Nordischer Kriegshelm
+Northern War Helmet
 }
 
 STRING 13520
 // Gegenstände: I05E (Nordischer Kriegshelm), Tip (Tooltipp - Einfach (utip))
 {
-Nordischen Kriegshelm kaufen
+Buy Northern War Helmet
 }
 
 STRING 13521
 // Gegenstände: I05E (Nordischer Kriegshelm), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A18J,DataA1>.
+Increases the armour by <A18J,DataA1>.
 }
 
 STRING 13522
 // Gegenstände: I05E (Nordischer Kriegshelm), Description (Beschreibung (ides))
 {
-Ein eiserner starker Helm.
+An iron strong helmet.
 }
 
 STRING 13523
@@ -81103,7 +81109,7 @@ STRING 13530
 STRING 13531
 // Fähigkeiten: A18J (Nordischer Kriegshelm), Name (Name (anam))
 {
-Nordischer Kriegshelm
+Northern War Helmet
 }
 
 STRING 13532
@@ -81217,7 +81223,7 @@ Einfache Knochen.
 STRING 13550
 // Fähigkeiten: A0E1 (Baumhirte), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen mächtigen Gefährten mit <e005,realHP> Leben, der sich einwurzeln kann.
+Summons a powerful fellow with <e005,realHP> life who can root himself.
 }
 
 STRING 13551
@@ -81235,7 +81241,7 @@ Spruchrolle der Totenbeschwörung herstellen
 STRING 13553
 // Fähigkeiten: A0F9 (Waldfestung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2|r|nErzeugt eine Waldfestung aus lebendigen Bäumen, die sie um jeden Preis verteidigen.
+|cffffcc00Ultimate Spell 2|r|nCreates a forest fortress from living trees which defend it at all costs.
 }
 
 STRING 13554
@@ -81697,19 +81703,19 @@ Magierturm
 STRING 13630
 // Einheiten: n056 (Meister Gerhard), Name (Name (unam))
 {
-Meister Gerhard
+Master Gerhard
 }
 
 STRING 13631
 // Einheiten: n057 (Meister Gerhards Stand), Name (Name (unam))
 {
-Meister Gerhards Stand
+Master Gerhard's Stall
 }
 
 STRING 13632
 // Einheiten: h029 (Kirche), Name (Name (unam))
 {
-Kirche
+Church
 }
 
 STRING 13633
@@ -82099,7 +82105,7 @@ STRING 13696
 STRING 13697
 // Einheiten: n05A (Armbrustschütze), Name (Name (unam))
 {
-Armbrustschütze
+Crossbowman
 }
 
 STRING 13698
@@ -94947,7 +94953,7 @@ STRING 15838
 STRING 15839
 // Fähigkeiten: A0FC (Waldfestung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nErzeugt eine Waldfestung aus lebendigen Bäumen, die sie um jeden Preis verteidigen.
+|cffffcc00Ultimate Spell 2 - Requires Level 25|r|nCreates a forest fortress from living trees which defend it at all costs.
 }
 
 STRING 15840
@@ -95295,7 +95301,7 @@ STRING 15896
 STRING 15897
 // Fähigkeiten: A0X2 (Kräuterheilung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nHeilt <A0AJ,DataA1> Leben eines nicht-mechanischen Verbündeten während <A0AJ,Dur1> Sekunden.|nHat eine Reichweite von <A0AJ,Rng1>.
+|cffffcc00Basic Spell|r|nHeals <A0AJ,DataA1> of a non-mechanic ally for <A0AJ,Dur1> seconds.|nHas a range of <A0AJ,Rng1>.
 }
 
 STRING 15898
@@ -95901,25 +95907,25 @@ STRING 15997
 STRING 15998
 // Gegenstände: I06A (Magierrüstung), Name (Name (unam))
 {
-Magierrüstung
+Mage Armour
 }
 
 STRING 15999
 // Gegenstände: I06A (Magierrüstung), Tip (Tooltipp - Einfach (utip))
 {
-Magierrüstung kaufen
+Buy Mage Armour
 }
 
 STRING 16000
 // Gegenstände: I06A (Magierrüstung), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A1ED,DataA1>, erhöht das Wissen um <A1EF,DataC1> und das Mana um <A1EE,DataA1>.
+Increases the armour by  <A1ED,DataA1>, increases the lore by <A1EF,DataC1> and the mana by <A1EE,DataA1>.
 }
 
 STRING 16001
 // Gegenstände: I06A (Magierrüstung), Description (Beschreibung (ides))
 {
-Die Rüstung eines Magiers.
+The armour of a mage.
 }
 
 STRING 16002
@@ -96206,7 +96212,7 @@ STRING 16048
 STRING 16049
 // Gegenstände: I06C (Kopfbedeckung), Name (Name (unam))
 {
-Kopfbedeckung
+Headgear
 }
 
 STRING 16050
@@ -96218,7 +96224,7 @@ Fliegen
 STRING 16051
 // Gegenstände: I06D (Kleidung), Name (Name (unam))
 {
-Kleidung
+Clothing
 }
 
 STRING 16052
@@ -96230,7 +96236,7 @@ STRING 16052
 STRING 16053
 // Gegenstände: I06E (Erstwaffe), Name (Name (unam))
 {
-Erstwaffe
+Primary Weapon
 }
 
 STRING 16054
@@ -96242,7 +96248,7 @@ Landet und verwandelt sich zurück in einen Menschen.
 STRING 16055
 // Gegenstände: I06F (Zweitwaffe), Name (Name (unam))
 {
-Zweitwaffe
+Secondary Weapon
 }
 
 STRING 16056
@@ -96254,7 +96260,7 @@ Ein Blitzschlag erfasst das Ziel, verursacht X Punkte Schaden und wirft es um ei
 STRING 16057
 // Gegenstände: I06G (Amulett oder Ring), Name (Name (unam))
 {
-Amulett oder Ring
+Amulet or Ring
 }
 
 STRING 16058
@@ -100547,6 +100553,21 @@ STRING 16772
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 16773
+{
+Version 0.6
+}
+
+STRING 16774
+{
+Demon:
+}
+
+STRING 16775
+{
+Demon
+}
+
 STRING 16776
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
 {
@@ -100557,6 +100578,12 @@ STRING 16777
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16778
+// Doodads: D0BN (Rüstung), Name (Name (dnam))
+{
+Rüstung
 }
 
 STRING 16779
@@ -100607,6 +100634,24 @@ STRING 16786
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 16787
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 4
+}
+
+STRING 16788
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 5
+}
+
+STRING 16789
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 6
+}
+
 STRING 16790
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
 {
@@ -100617,6 +100662,12 @@ STRING 16791
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16792
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 7
 }
 
 STRING 16793
@@ -100667,6 +100718,24 @@ STRING 16800
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 16801
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 8
+}
+
+STRING 16802
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 9
+}
+
+STRING 16803
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 10
+}
+
 STRING 16804
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
 {
@@ -100677,6 +100746,12 @@ STRING 16805
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16806
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 11
 }
 
 STRING 16807
@@ -100727,6 +100802,24 @@ STRING 16814
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 16815
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 12
+}
+
+STRING 16816
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 13
+}
+
+STRING 16817
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 14
+}
+
 STRING 16818
 // Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
 {
@@ -100749,6 +100842,54 @@ STRING 16821
 // Fähigkeiten: A1HR (Verteidigen - Stufe 1), Name (Name (anam))
 {
 Verteidigen - Stufe 1
+}
+
+STRING 16822
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 15
+}
+
+STRING 16823
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 16
+}
+
+STRING 16824
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 17
+}
+
+STRING 16825
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 18
+}
+
+STRING 16826
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 19
+}
+
+STRING 16827
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 20
+}
+
+STRING 16828
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 21
+}
+
+STRING 16829
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 22
 }
 
 STRING 16830
@@ -100778,7 +100919,7 @@ Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller au
 STRING 16834
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Damned Ground [|cffffcc00Level 2|r]
+Verfluchter Boden [|cffffcc00Stufe 2|r]
 }
 
 STRING 16835
@@ -100802,7 +100943,7 @@ Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller au
 STRING 16838
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Damned Ground [|cffffcc00Level 3|r]
+Verfluchter Boden [|cffffcc00Stufe 3|r]
 }
 
 STRING 16839
@@ -100826,7 +100967,7 @@ Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller au
 STRING 16842
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Damned Ground [|cffffcc00Level 4|r]
+Verfluchter Boden [|cffffcc00Stufe 4|r]
 }
 
 STRING 16843
@@ -100850,7 +100991,7 @@ Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller au
 STRING 16846
 // Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Damned Ground [|cffffcc00Level 5|r]
+Verfluchter Boden [|cffffcc00Stufe 5|r]
 }
 
 STRING 16847
@@ -100916,18 +101057,1692 @@ Verfluchter Boden - Stufe 5
 STRING 16857
 // Einheiten: n06K (Wildschweinmutter), Name (Name (unam))
 {
-Boar Mother
+Wildschweinmutter
 }
 
 STRING 16858
 // Einheiten: n06L (Junges Wildschwein), Name (Name (unam))
 {
-Young Boar
+Junges Wildschwein
 }
 
 STRING 16859
 // Fähigkeiten: A1HW (Junge Wildschweine), Name (Name (anam))
 {
-Young Boars
+Junge Wildschweine
+}
+
+STRING 16860
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 23
+}
+
+STRING 16861
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 24
+}
+
+STRING 16862
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 25
+}
+
+STRING 16863
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 26
+}
+
+STRING 16864
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 27
+}
+
+STRING 16865
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 28
+}
+
+STRING 16866
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 29
+}
+
+STRING 16867
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 30
+}
+
+STRING 16868
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 31
+}
+
+STRING 16869
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 32
+}
+
+STRING 16870
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 33
+}
+
+STRING 16871
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 34
+}
+
+STRING 16872
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 35
+}
+
+STRING 16873
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 36
+}
+
+STRING 16874
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 37
+}
+
+STRING 16875
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 38
+}
+
+STRING 16876
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 39
+}
+
+STRING 16877
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 40
+}
+
+STRING 16878
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 41
+}
+
+STRING 16879
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 42
+}
+
+STRING 16880
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 43
+}
+
+STRING 16881
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 44
+}
+
+STRING 16882
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 45
+}
+
+STRING 16883
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 46
+}
+
+STRING 16884
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 47
+}
+
+STRING 16885
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 48
+}
+
+STRING 16886
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 49
+}
+
+STRING 16887
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 50
+}
+
+STRING 16888
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 51
+}
+
+STRING 16889
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 52
+}
+
+STRING 16890
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 53
+}
+
+STRING 16891
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 54
+}
+
+STRING 16892
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 55
+}
+
+STRING 16893
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 56
+}
+
+STRING 16894
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 57
+}
+
+STRING 16895
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 58
+}
+
+STRING 16896
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 59
+}
+
+STRING 16897
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 60
+}
+
+STRING 16898
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 61
+}
+
+STRING 16899
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 62
+}
+
+STRING 16900
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 63
+}
+
+STRING 16901
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 64
+}
+
+STRING 16902
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 65
+}
+
+STRING 16903
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 66
+}
+
+STRING 16904
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 67
+}
+
+STRING 16905
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 68
+}
+
+STRING 16906
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 69
+}
+
+STRING 16907
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 70
+}
+
+STRING 16908
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 71
+}
+
+STRING 16909
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 72
+}
+
+STRING 16910
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 73
+}
+
+STRING 16911
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 74
+}
+
+STRING 16912
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 75
+}
+
+STRING 16913
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 76
+}
+
+STRING 16914
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 77
+}
+
+STRING 16915
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 78
+}
+
+STRING 16916
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 79
+}
+
+STRING 16917
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 80
+}
+
+STRING 16918
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 81
+}
+
+STRING 16919
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 82
+}
+
+STRING 16920
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 83
+}
+
+STRING 16921
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 84
+}
+
+STRING 16922
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 85
+}
+
+STRING 16923
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 86
+}
+
+STRING 16924
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 87
+}
+
+STRING 16925
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 88
+}
+
+STRING 16926
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 89
+}
+
+STRING 16927
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 90
+}
+
+STRING 16928
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 91
+}
+
+STRING 16929
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 92
+}
+
+STRING 16930
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 93
+}
+
+STRING 16931
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 94
+}
+
+STRING 16932
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 95
+}
+
+STRING 16933
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 96
+}
+
+STRING 16934
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 97
+}
+
+STRING 16935
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 98
+}
+
+STRING 16936
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 99
+}
+
+STRING 16937
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 100
+}
+
+STRING 16938
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 1 erforschen
+}
+
+STRING 16939
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 2 erforschen
+}
+
+STRING 16940
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 3 erforschen
+}
+
+STRING 16941
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 4 erforschen
+}
+
+STRING 16942
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 5 erforschen
+}
+
+STRING 16943
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 6 erforschen
+}
+
+STRING 16944
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 7 erforschen
+}
+
+STRING 16945
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 8 erforschen
+}
+
+STRING 16946
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 9 erforschen
+}
+
+STRING 16947
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 10 erforschen
+}
+
+STRING 16948
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 11 erforschen
+}
+
+STRING 16949
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 12 erforschen
+}
+
+STRING 16950
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 13 erforschen
+}
+
+STRING 16951
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 14 erforschen
+}
+
+STRING 16952
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 15 erforschen
+}
+
+STRING 16953
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 16 erforschen
+}
+
+STRING 16954
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 17 erforschen
+}
+
+STRING 16955
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 18 erforschen
+}
+
+STRING 16956
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 19 erforschen
+}
+
+STRING 16957
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 20 erforschen
+}
+
+STRING 16958
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 21 erforschen
+}
+
+STRING 16959
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 22 erforschen
+}
+
+STRING 16960
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 23 erforschen
+}
+
+STRING 16961
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 24 erforschen
+}
+
+STRING 16962
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 25 erforschen
+}
+
+STRING 16963
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 26 erforschen
+}
+
+STRING 16964
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 27 erforschen
+}
+
+STRING 16965
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 28 erforschen
+}
+
+STRING 16966
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 29 erforschen
+}
+
+STRING 16967
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 30 erforschen
+}
+
+STRING 16968
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 31 erforschen
+}
+
+STRING 16969
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 32 erforschen
+}
+
+STRING 16970
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 33 erforschen
+}
+
+STRING 16971
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 34 erforschen
+}
+
+STRING 16972
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 35 erforschen
+}
+
+STRING 16973
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 36 erforschen
+}
+
+STRING 16974
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 37 erforschen
+}
+
+STRING 16975
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 38 erforschen
+}
+
+STRING 16976
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 39 erforschen
+}
+
+STRING 16977
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 40 erforschen
+}
+
+STRING 16978
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 41 erforschen
+}
+
+STRING 16979
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 42 erforschen
+}
+
+STRING 16980
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 43 erforschen
+}
+
+STRING 16981
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 44 erforschen
+}
+
+STRING 16982
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 45 erforschen
+}
+
+STRING 16983
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 46 erforschen
+}
+
+STRING 16984
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 47 erforschen
+}
+
+STRING 16985
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 48 erforschen
+}
+
+STRING 16986
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 49 erforschen
+}
+
+STRING 16987
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 50 erforschen
+}
+
+STRING 16988
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 51 erforschen
+}
+
+STRING 16989
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 52 erforschen
+}
+
+STRING 16990
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 53 erforschen
+}
+
+STRING 16991
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 54 erforschen
+}
+
+STRING 16992
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 55 erforschen
+}
+
+STRING 16993
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 56 erforschen
+}
+
+STRING 16994
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 57 erforschen
+}
+
+STRING 16995
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 58 erforschen
+}
+
+STRING 16996
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 59 erforschen
+}
+
+STRING 16997
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 60 erforschen
+}
+
+STRING 16998
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 61 erforschen
+}
+
+STRING 16999
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 62 erforschen
+}
+
+STRING 17000
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 63 erforschen
+}
+
+STRING 17001
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 64 erforschen
+}
+
+STRING 17002
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 65 erforschen
+}
+
+STRING 17003
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 66 erforschen
+}
+
+STRING 17004
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 67 erforschen
+}
+
+STRING 17005
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 68 erforschen
+}
+
+STRING 17006
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 69 erforschen
+}
+
+STRING 17007
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 70 erforschen
+}
+
+STRING 17008
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 71 erforschen
+}
+
+STRING 17009
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 72 erforschen
+}
+
+STRING 17010
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 73 erforschen
+}
+
+STRING 17011
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 74 erforschen
+}
+
+STRING 17012
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 75 erforschen
+}
+
+STRING 17013
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 76 erforschen
+}
+
+STRING 17014
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 77 erforschen
+}
+
+STRING 17015
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 78 erforschen
+}
+
+STRING 17016
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 79 erforschen
+}
+
+STRING 17017
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 80 erforschen
+}
+
+STRING 17018
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 81 erforschen
+}
+
+STRING 17019
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 82 erforschen
+}
+
+STRING 17020
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 83 erforschen
+}
+
+STRING 17021
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 84 erforschen
+}
+
+STRING 17022
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 85 erforschen
+}
+
+STRING 17023
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 86 erforschen
+}
+
+STRING 17024
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 87 erforschen
+}
+
+STRING 17025
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 88 erforschen
+}
+
+STRING 17026
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 89 erforschen
+}
+
+STRING 17027
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 90 erforschen
+}
+
+STRING 17028
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 91 erforschen
+}
+
+STRING 17029
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 92 erforschen
+}
+
+STRING 17030
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 93 erforschen
+}
+
+STRING 17031
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 94 erforschen
+}
+
+STRING 17032
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 95 erforschen
+}
+
+STRING 17033
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 96 erforschen
+}
+
+STRING 17034
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 97 erforschen
+}
+
+STRING 17035
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 98 erforschen
+}
+
+STRING 17036
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 99 erforschen
+}
+
+STRING 17037
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 100 erforschen
+}
+
+STRING 17038
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17039
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17040
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17041
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17042
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17043
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17044
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17045
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17046
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17047
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17048
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17049
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17050
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17051
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17052
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17053
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17054
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17055
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17056
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17057
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17058
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17059
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17060
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17061
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17062
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17063
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17064
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17065
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17066
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17067
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17068
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17069
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17070
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17071
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17072
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17073
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17074
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17075
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17076
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17077
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17078
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17079
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17080
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17081
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17082
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17083
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17084
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17085
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17086
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17087
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17088
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17089
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17090
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17091
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17092
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17093
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17094
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17095
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17096
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17097
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17098
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17099
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17100
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17101
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17102
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17103
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17104
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17105
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17106
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17107
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17108
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17109
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17110
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17111
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17112
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17113
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17114
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17115
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17116
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17117
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17118
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17119
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17120
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17121
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17122
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17123
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17124
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17125
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17126
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17127
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17128
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17129
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17130
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17131
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17132
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17133
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17134
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17135
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17136
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17137
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17138
+// Ausbaustufen: R007 (Berserker-Kraft), effect1 (Effekt 1 (gef1))
+{
+rmvx
 }
 

@@ -11627,8 +11627,9 @@ Rucksack öffnen
 }
 
 STRING 1941
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Version 0.1
+Schneller Handel Stufe 1
 }
 
 STRING 1942
@@ -53080,12 +53081,7 @@ STRING 8861
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 20 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
-
-
-
-
-
+
 Setzt die Dauer beschworener Verbündeter auf 60 Sekunden oder beschworener Gegner auf 15 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -53093,12 +53089,7 @@ STRING 8862
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 15 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
-
-
-
-
-
+
 Setzt die Dauer beschworener Verbündeter auf 70 Sekunden oder beschworener Gegner auf 10 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -53106,12 +53097,7 @@ STRING 8863
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 10 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
-
-
-
-
-
+
 Setzt die Dauer beschworener Verbündeter auf 80 Sekunden oder beschworener Gegner auf 5 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -53119,12 +53105,7 @@ STRING 8864
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 5 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
-
-
-
-
-
+
 Setzt die Dauer beschworener Verbündeter auf 90 Sekunden oder beschworener Gegner auf 0 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -58743,8 +58724,9 @@ Eine Feuersbrunst erfasst ein Gebiet mit einem Radius von 300 und fügt Gegnern 
 }
 
 STRING 9795
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Dämonen:
+Schneller Handel Stufe 2
 }
 
 STRING 9796
@@ -69987,8 +69969,7 @@ STRING 11669
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
-
+
 Setzt die Dauer beschworener Verbündeter auf 50 Sekunden oder beschworener Gegner auf 20 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -70563,8 +70544,9 @@ Eine befreundete Einheit wird vor einer drohenden Gefahr beschützt. Der nächst
 }
 
 STRING 11765
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Dämonen
+Schneller Handel Stufe 3
 }
 
 STRING 11766
@@ -100615,6 +100597,21 @@ STRING 16772
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 16773
+{
+Version 0.6
+}
+
+STRING 16774
+{
+Dämon:
+}
+
+STRING 16775
+{
+Dämon
+}
+
 STRING 16776
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
 {
@@ -100625,6 +100622,12 @@ STRING 16777
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16778
+// Doodads: D0BN (Rüstung), Name (Name (dnam))
+{
+Rüstung
 }
 
 STRING 16779
@@ -100675,6 +100678,24 @@ STRING 16786
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 16787
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 4
+}
+
+STRING 16788
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 5
+}
+
+STRING 16789
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 6
+}
+
 STRING 16790
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
 {
@@ -100685,6 +100706,12 @@ STRING 16791
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16792
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 7
 }
 
 STRING 16793
@@ -100735,6 +100762,24 @@ STRING 16800
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 16801
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 8
+}
+
+STRING 16802
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 9
+}
+
+STRING 16803
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 10
+}
+
 STRING 16804
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
 {
@@ -100745,6 +100790,12 @@ STRING 16805
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
 {
 Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 16806
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 11
 }
 
 STRING 16807
@@ -100795,6 +100846,24 @@ STRING 16814
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 16815
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 12
+}
+
+STRING 16816
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 13
+}
+
+STRING 16817
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 14
+}
+
 STRING 16818
 // Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
 {
@@ -100817,6 +100886,54 @@ STRING 16821
 // Fähigkeiten: A1HR (Verteidigen - Stufe 1), Name (Name (anam))
 {
 Verteidigen - Stufe 1
+}
+
+STRING 16822
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 15
+}
+
+STRING 16823
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 16
+}
+
+STRING 16824
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 17
+}
+
+STRING 16825
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 18
+}
+
+STRING 16826
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 19
+}
+
+STRING 16827
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 20
+}
+
+STRING 16828
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 21
+}
+
+STRING 16829
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 22
 }
 
 STRING 16830
@@ -100997,5 +101114,1679 @@ STRING 16859
 // Fähigkeiten: A1HW (Junge Wildschweine), Name (Name (anam))
 {
 Junge Wildschweine
+}
+
+STRING 16860
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 23
+}
+
+STRING 16861
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 24
+}
+
+STRING 16862
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 25
+}
+
+STRING 16863
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 26
+}
+
+STRING 16864
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 27
+}
+
+STRING 16865
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 28
+}
+
+STRING 16866
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 29
+}
+
+STRING 16867
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 30
+}
+
+STRING 16868
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 31
+}
+
+STRING 16869
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 32
+}
+
+STRING 16870
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 33
+}
+
+STRING 16871
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 34
+}
+
+STRING 16872
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 35
+}
+
+STRING 16873
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 36
+}
+
+STRING 16874
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 37
+}
+
+STRING 16875
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 38
+}
+
+STRING 16876
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 39
+}
+
+STRING 16877
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 40
+}
+
+STRING 16878
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 41
+}
+
+STRING 16879
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 42
+}
+
+STRING 16880
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 43
+}
+
+STRING 16881
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 44
+}
+
+STRING 16882
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 45
+}
+
+STRING 16883
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 46
+}
+
+STRING 16884
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 47
+}
+
+STRING 16885
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 48
+}
+
+STRING 16886
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 49
+}
+
+STRING 16887
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 50
+}
+
+STRING 16888
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 51
+}
+
+STRING 16889
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 52
+}
+
+STRING 16890
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 53
+}
+
+STRING 16891
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 54
+}
+
+STRING 16892
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 55
+}
+
+STRING 16893
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 56
+}
+
+STRING 16894
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 57
+}
+
+STRING 16895
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 58
+}
+
+STRING 16896
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 59
+}
+
+STRING 16897
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 60
+}
+
+STRING 16898
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 61
+}
+
+STRING 16899
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 62
+}
+
+STRING 16900
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 63
+}
+
+STRING 16901
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 64
+}
+
+STRING 16902
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 65
+}
+
+STRING 16903
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 66
+}
+
+STRING 16904
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 67
+}
+
+STRING 16905
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 68
+}
+
+STRING 16906
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 69
+}
+
+STRING 16907
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 70
+}
+
+STRING 16908
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 71
+}
+
+STRING 16909
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 72
+}
+
+STRING 16910
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 73
+}
+
+STRING 16911
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 74
+}
+
+STRING 16912
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 75
+}
+
+STRING 16913
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 76
+}
+
+STRING 16914
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 77
+}
+
+STRING 16915
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 78
+}
+
+STRING 16916
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 79
+}
+
+STRING 16917
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 80
+}
+
+STRING 16918
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 81
+}
+
+STRING 16919
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 82
+}
+
+STRING 16920
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 83
+}
+
+STRING 16921
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 84
+}
+
+STRING 16922
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 85
+}
+
+STRING 16923
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 86
+}
+
+STRING 16924
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 87
+}
+
+STRING 16925
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 88
+}
+
+STRING 16926
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 89
+}
+
+STRING 16927
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 90
+}
+
+STRING 16928
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 91
+}
+
+STRING 16929
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 92
+}
+
+STRING 16930
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 93
+}
+
+STRING 16931
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 94
+}
+
+STRING 16932
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 95
+}
+
+STRING 16933
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 96
+}
+
+STRING 16934
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 97
+}
+
+STRING 16935
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 98
+}
+
+STRING 16936
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 99
+}
+
+STRING 16937
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
+{
+Schneller Handel Stufe 100
+}
+
+STRING 16938
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 1 erforschen
+}
+
+STRING 16939
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 2 erforschen
+}
+
+STRING 16940
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 3 erforschen
+}
+
+STRING 16941
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 4 erforschen
+}
+
+STRING 16942
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 5 erforschen
+}
+
+STRING 16943
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 6 erforschen
+}
+
+STRING 16944
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 7 erforschen
+}
+
+STRING 16945
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 8 erforschen
+}
+
+STRING 16946
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 9 erforschen
+}
+
+STRING 16947
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 10 erforschen
+}
+
+STRING 16948
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 11 erforschen
+}
+
+STRING 16949
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 12 erforschen
+}
+
+STRING 16950
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 13 erforschen
+}
+
+STRING 16951
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 14 erforschen
+}
+
+STRING 16952
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 15 erforschen
+}
+
+STRING 16953
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 16 erforschen
+}
+
+STRING 16954
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 17 erforschen
+}
+
+STRING 16955
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 18 erforschen
+}
+
+STRING 16956
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 19 erforschen
+}
+
+STRING 16957
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 20 erforschen
+}
+
+STRING 16958
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 21 erforschen
+}
+
+STRING 16959
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 22 erforschen
+}
+
+STRING 16960
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 23 erforschen
+}
+
+STRING 16961
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 24 erforschen
+}
+
+STRING 16962
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 25 erforschen
+}
+
+STRING 16963
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 26 erforschen
+}
+
+STRING 16964
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 27 erforschen
+}
+
+STRING 16965
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 28 erforschen
+}
+
+STRING 16966
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 29 erforschen
+}
+
+STRING 16967
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 30 erforschen
+}
+
+STRING 16968
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 31 erforschen
+}
+
+STRING 16969
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 32 erforschen
+}
+
+STRING 16970
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 33 erforschen
+}
+
+STRING 16971
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 34 erforschen
+}
+
+STRING 16972
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 35 erforschen
+}
+
+STRING 16973
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 36 erforschen
+}
+
+STRING 16974
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 37 erforschen
+}
+
+STRING 16975
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 38 erforschen
+}
+
+STRING 16976
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 39 erforschen
+}
+
+STRING 16977
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 40 erforschen
+}
+
+STRING 16978
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 41 erforschen
+}
+
+STRING 16979
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 42 erforschen
+}
+
+STRING 16980
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 43 erforschen
+}
+
+STRING 16981
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 44 erforschen
+}
+
+STRING 16982
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 45 erforschen
+}
+
+STRING 16983
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 46 erforschen
+}
+
+STRING 16984
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 47 erforschen
+}
+
+STRING 16985
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 48 erforschen
+}
+
+STRING 16986
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 49 erforschen
+}
+
+STRING 16987
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 50 erforschen
+}
+
+STRING 16988
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 51 erforschen
+}
+
+STRING 16989
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 52 erforschen
+}
+
+STRING 16990
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 53 erforschen
+}
+
+STRING 16991
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 54 erforschen
+}
+
+STRING 16992
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 55 erforschen
+}
+
+STRING 16993
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 56 erforschen
+}
+
+STRING 16994
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 57 erforschen
+}
+
+STRING 16995
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 58 erforschen
+}
+
+STRING 16996
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 59 erforschen
+}
+
+STRING 16997
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 60 erforschen
+}
+
+STRING 16998
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 61 erforschen
+}
+
+STRING 16999
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 62 erforschen
+}
+
+STRING 17000
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 63 erforschen
+}
+
+STRING 17001
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 64 erforschen
+}
+
+STRING 17002
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 65 erforschen
+}
+
+STRING 17003
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 66 erforschen
+}
+
+STRING 17004
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 67 erforschen
+}
+
+STRING 17005
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 68 erforschen
+}
+
+STRING 17006
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 69 erforschen
+}
+
+STRING 17007
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 70 erforschen
+}
+
+STRING 17008
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 71 erforschen
+}
+
+STRING 17009
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 72 erforschen
+}
+
+STRING 17010
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 73 erforschen
+}
+
+STRING 17011
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 74 erforschen
+}
+
+STRING 17012
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 75 erforschen
+}
+
+STRING 17013
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 76 erforschen
+}
+
+STRING 17014
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 77 erforschen
+}
+
+STRING 17015
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 78 erforschen
+}
+
+STRING 17016
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 79 erforschen
+}
+
+STRING 17017
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 80 erforschen
+}
+
+STRING 17018
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 81 erforschen
+}
+
+STRING 17019
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 82 erforschen
+}
+
+STRING 17020
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 83 erforschen
+}
+
+STRING 17021
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 84 erforschen
+}
+
+STRING 17022
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 85 erforschen
+}
+
+STRING 17023
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 86 erforschen
+}
+
+STRING 17024
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 87 erforschen
+}
+
+STRING 17025
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 88 erforschen
+}
+
+STRING 17026
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 89 erforschen
+}
+
+STRING 17027
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 90 erforschen
+}
+
+STRING 17028
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 91 erforschen
+}
+
+STRING 17029
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 92 erforschen
+}
+
+STRING 17030
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 93 erforschen
+}
+
+STRING 17031
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 94 erforschen
+}
+
+STRING 17032
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 95 erforschen
+}
+
+STRING 17033
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 96 erforschen
+}
+
+STRING 17034
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 97 erforschen
+}
+
+STRING 17035
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 98 erforschen
+}
+
+STRING 17036
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 99 erforschen
+}
+
+STRING 17037
+// Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
+{
+Schnellen Handel Stufe 100 erforschen
+}
+
+STRING 17038
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17039
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17040
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17041
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17042
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17043
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17044
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17045
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17046
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17047
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17048
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17049
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17050
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17051
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17052
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17053
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17054
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17055
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17056
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17057
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17058
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17059
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17060
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17061
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17062
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17063
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17064
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17065
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17066
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17067
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17068
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17069
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17070
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17071
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17072
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17073
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17074
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17075
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17076
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17077
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17078
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17079
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17080
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17081
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17082
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17083
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17084
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17085
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17086
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17087
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17088
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17089
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17090
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17091
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17092
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17093
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17094
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17095
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17096
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17097
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17098
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17099
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17100
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17101
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17102
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17103
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17104
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17105
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17106
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17107
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17108
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17109
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17110
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17111
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17112
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17113
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17114
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17115
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17116
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17117
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17118
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17119
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17120
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17121
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17122
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17123
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17124
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17125
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17126
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17127
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17128
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17129
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17130
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17131
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17132
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17133
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17134
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17135
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17136
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17137
+// Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
+{
+Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+}
+
+STRING 17138
+// Ausbaustufen: R007 (Berserker-Kraft), effect1 (Effekt 1 (gef1))
+{
+rmvx
 }
 

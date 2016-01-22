@@ -22,10 +22,10 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 
 		// Hallo.
 		private static method infoActionHello takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Ich grüße dich. Du bist nicht zufällig im Umgang mit Waffen geübt?"), null)
-			call speech(info, character, false, tr("Warum?"), null)
-			call speech(info, character, true, tr("Ich suche noch Leute, für meine Arena."), null)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("Ich grüße dich. Du bist nicht zufällig im Umgang mit Waffen geübt?", "I greet you. Are you proficient weapons?"), null)
+			call speech(info, character, false, tre("Warum?", "Why?"), null)
+			call speech(info, character, true, tre("Ich suche noch Leute, für meine Arena.", "I'm still looking for people for my arena."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -41,7 +41,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 
 		// Welche Arena?
 		private static method infoActionWhichArena takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Welche Arena?"), null)
+			call speech(info, character, false, tre("Welche Arena?", "Which arena?"), null)
 			call speech(info, character, true, tr("Eben eine ganz normale Arena. Man kämpft und wer gewinnt, bekommt Goldmünzen."), null)
 			call speech(info, character, true, tr("Die Kämpfe finden immer zwischen genau zwei Leuten statt."), null)
 			call info.talk().showStartPage(character)

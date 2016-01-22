@@ -601,7 +601,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			/*
 			 * The allied player needs a lot of gold to build something.
 			 */
-			call AdjustPlayerStateBJ(3000, MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD)
+			call SetPlayerState( MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState( MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD) + 3000)
 		
 			if (this.m_timer == null) then
 				set this.m_timer = CreateTimer()

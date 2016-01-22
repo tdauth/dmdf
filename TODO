@@ -817,7 +817,8 @@ Für Version 0.6:
 * Deranor sollte nach Tod auch etwas droppen.
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
 * Vervielfachung oder Beschwörung von Illusionen sollte dazu führen, dass die Illusionen immer das Equipment an haben.
-* Nie AdjustPlayerStateBJ() verwendet, gathered gold funktioniert nicht richtig wegen Gebäude!
+* FIXED: Nie AdjustPlayerStateBJ() verwendet, gathered gold funktioniert nicht richtig wegen Gebäude!
+* Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar.
 
 Abgeschlossene Punkte:
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.

@@ -1467,10 +1467,10 @@ endif
 			call thistype.startRainCountdown()
 			
 			// call GetCamOffset after initialization to make sure it returns the correct value
-			call CameraHeight.addRect(gg_rct_bridge_talras_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)) / 2.0)
-			call CameraHeight.addRect(gg_rct_bridge_talras_down_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)) / 2.0)
-			call CameraHeight.addRect(gg_rct_bridge_death_vault_0_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)) / 2.0)
-			call CameraHeight.addRect(gg_rct_bridge_death_vault_1_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)) / 2.0)
+			call CameraHeight.addRect(gg_rct_bridge_talras_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)) / 2.5)
+			call CameraHeight.addRect(gg_rct_bridge_talras_down_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras_down), GetRectCenterY(gg_rct_bridge_talras_down)) / 2.5)
+			call CameraHeight.addRect(gg_rct_bridge_death_vault_0_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)) / 2.5)
+			call CameraHeight.addRect(gg_rct_bridge_death_vault_1_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)) / 2.5)
 			
 			call VideoIntro.video().play()
 		endmethod
