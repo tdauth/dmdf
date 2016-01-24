@@ -45,6 +45,71 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		public stub method onSelectClass takes Character character, AClass class, boolean last returns nothing
 			local integer i
 			local integer j
+			call thistype.setupCharacterUnit.evaluate(character, class)
+			/*
+			 * If it is a repick don't add further items.
+			 * Otherwise it could be used to create more and more items.
+			 */
+			if (not thistype.m_gameStarted) then
+				call MapData.createClassItems(character)
+			endif
+			
+			call character.setMovable(false)
+			
+			//call SetUserInterfaceForPlayer(character.player(), false, false)
+			//call CameraSetupApplyForPlayer(false, gg_cam_class_selection, character.player(), 0.0)
+			call MapData.setCameraBoundsToPlayableAreaForPlayer(character.player())
+			call character.panCamera()
+			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, Format(tre("%s hat die Klasse \"%s\" gewählt.", "%s has choosen the class \"%s\".")).s(character.name()).s(GetUnitName(character.unit())).result(), character.player())
+			
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (i != GetPlayerId(this.player())) then
+					if (GetPlayerController(this.player()) == MAP_CONTROL_USER and GetPlayerSlotState(this.player()) == PLAYER_SLOT_STATE_PLAYING) then
+						call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+					else
+						call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
+					endif
+				endif
+				set i = i + 1
+			endloop
+			
+			if (not thistype.m_gameStarted) then
+				if (not last) then
+					debug call Print("Do not start the game")
+					call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
+				else
+					debug call Print("Start game")
+					call thistype.endTimer()
+					set thistype.m_gameStarted = true
+					call Game.start.execute()
+				endif
+			else
+				call character.setMovable(true)
+			endif
+		endmethod
+		
+		public static method setupCharacterUnit takes ACharacter character, AClass class returns nothing
+			call thistype.createClassSpellsForCharacter.evaluate(character, class)
+			
+			// evaluate this calls since it may exceed the operations limit. Each time a spell is being added it updates the whole grimoire UI which takes many operations.
+			call thistype.addClassSpellsFromCharacterWithNewOpLimit.evaluate(character)
+
+			call initCharacterSpells(character)
+			call MapData.initMapSpells(character)
+			
+			/*
+			 * Add hero glow.
+			 */
+			call UnitAddAbility(character.unit(), 'A13E')
+			call UnitMakeAbilityPermanent(character.unit(), true, 'A13E')
+			
+			call AddUnitOcclusion(character.unit())
+			call character.revival().setTime(MapData.revivalTime)
+		endmethod
+		
+		public static method createClassSpellsForCharacter takes ACharacter character, AClass class returns nothing
 			/**
 			 * Create all spells depending on the selected class.
 			 */
@@ -184,64 +249,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellMultiply.create(character)
 				call SpellTransfer.create(character)
 				// deprecated call SpellRepulsion.create(character)
-			endif
-			
-			// evaluate this calls since it may exceed the operations limit. Each time a spell is being added it updates the whole grimoire UI which takes many operations.
-			call thistype.addClassSpellsFromCharacterWithNewOpLimit.evaluate(character)
-
-			call initCharacterSpells(character)
-			call MapData.initMapSpells(character)
-			
-			/*
-			 * If it is a repick don't add further items.
-			 * Otherwise it could be used to create more and more items.
-			 */
-			if (not thistype.m_gameStarted) then
-				call MapData.createClassItems(character)
-			endif
-			
-			call character.setMovable(false)
-			call character.revival().setTime(MapData.revivalTime)
-			//call SetUserInterfaceForPlayer(character.player(), false, false)
-			//call CameraSetupApplyForPlayer(false, gg_cam_class_selection, character.player(), 0.0)
-			call MapData.setCameraBoundsToPlayableAreaForPlayer(character.player())
-			call character.panCamera()
-			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, Format(tre("%s hat die Klasse \"%s\" gewählt.", "%s has choosen the class \"%s\".")).s(character.name()).s(GetUnitName(character.unit())).result(), character.player())
-			
-			
-			call AddUnitOcclusion(character.unit())
-			
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (i != GetPlayerId(this.player())) then
-					if (GetPlayerController(this.player()) == MAP_CONTROL_USER and GetPlayerSlotState(this.player()) == PLAYER_SLOT_STATE_PLAYING) then
-						call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
-					else
-						call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
-					endif
-				endif
-				set i = i + 1
-			endloop
-			
-			/*
-			 * Add hero glow.
-			 */
-			call UnitAddAbility(character.unit(), 'A13E')
-			call UnitMakeAbilityPermanent(character.unit(), true, 'A13E')
-			
-			if (not thistype.m_gameStarted) then
-				if (not last) then
-					debug call Print("Do not start the game")
-					call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
-				else
-					debug call Print("Start game")
-					call thistype.endTimer()
-					set thistype.m_gameStarted = true
-					call Game.start.execute()
-				endif
-			else
-				call character.setMovable(true)
 			endif
 		endmethod
 		

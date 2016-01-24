@@ -14,6 +14,7 @@
 static if (DMDF_NPC_ROUTINES) then
 //! import "Game/Struct Routines.j"
 endif
+//! import "Game/Struct Save System.j"
 //! import "Game/Struct Shrine.j"
 //! import "Game/Struct Spawn Point.j"
 //! import "Game/Struct Spell.j"
@@ -23,5 +24,5 @@ endif
 //! import "Game/Struct Zone.j"
 //! import "Game/Library Language.j"
 
-library Game requires StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
+library Game requires StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructSaveSystem, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
 endlibrary
