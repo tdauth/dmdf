@@ -32,23 +32,23 @@ library StructMapQuestsQuestTheKingsCrown requires Asl, StructGameCharacter
 		endmethod
 
 		private static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, tr("Des Königs Krone"))
+			local thistype this = thistype.allocate(character, tre("Des Königs Krone", "The King's Crown"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNSkeletonKing.blp")
-			call this.setDescription(tr("Der Schmied Wieland aus Talras möchte, dass du den König der Untoten findest und ihm seine Krone abnimmst. Wieland möchte sie seinem Sohn schenken, sobald dieser vom Kriegsdienst zurückkehrt."))
-			call this.setReward(AAbstractQuest.rewardExperience, 800)
-			call this.setReward(AAbstractQuest.rewardGold, 200)
+			call this.setDescription(tre("Der Schmied Wieland aus Talras möchte, dass du den König der Untoten findest und ihm seine Krone abnimmst. Wieland möchte sie seinem Sohn schenken, sobald dieser vom Kriegsdienst zurückkehrt.", "The blacksmith Wieland from Talras wants you to find the king of the undead and to take his crown. Wieland wants to give the crown to his son as soon as he returns from military service."))
+			call this.setReward(thistype.rewardExperience, 800)
+			call this.setReward(thistype.rewardGold, 200)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tr("Finde den König der Untoten und nimm ihm seine Krone ab."))
-			call questItem0.setStateEvent(AAbstractQuest.stateCompleted, thistype.stateEventCompleted0)
-			call questItem0.setStateCondition(AAbstractQuest.stateCompleted, thistype.stateConditionCompleted0)
-			call questItem0.setStateAction(AAbstractQuest.stateCompleted, thistype.stateActionCompleted0)
+			set questItem0 = AQuestItem.create(this, tre("Finde den König der Untoten und nimm ihm seine Krone ab.", "Find the king of the undead and take from him his crown."))
+			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
+			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
+			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 			call questItem0.setPing(true)
 			call questItem0.setPingCoordinatesFromRect(gg_rct_quest_the_kings_crown_target_0_ping)
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			// item 1
-			set questItem1 = AQuestItem.create(this, tr("Bring die Krone zu Wieland."))
+			set questItem1 = AQuestItem.create(this, tre("Bringe die Krone zu Wieland.", "Bring the crown to Wieland."))
 			call questItem1.setPing(true)
 			call questItem1.setPingUnit(gg_unit_n01J_0154)
 			call questItem1.setPingColour(100.0, 100.0, 100.0)

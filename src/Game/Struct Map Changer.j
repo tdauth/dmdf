@@ -6,24 +6,27 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 	 * In multiplayer it shows a savecode.
 	 */
 	struct MapChanger
-static if (DEBUG_MODE) then
-		public static constant string mapFolder = "Maps\\DMDF"
-else
-		public static constant string mapFolder = "Maps\\The Power of Fire"
-endif
+		public static constant string mapFolder = ""
 		public static constant string zonesFolder = "TPoF"
 		private static trigger m_loadTrigger
 		private static trigger m_saveTrigger
-		private static string m_currentSaveGame
+		private static string m_currentSaveGame = null
 		
+		/**
+		 * \return Returns the file path of a map with the file name \p mapName (without extension) relatively to the Warcraft III directory.
+		 */
 		private static method mapPath takes string mapName returns string
-			return thistype.mapFolder + "\\" + mapName + ".w3x"
+			local string folder = ""
+			if (StringLength(thistype.mapFolder) > 0) then
+				set folder = thistype.mapFolder + "\\"
+			endif
+			return folder + mapName + ".w3x"
 		endmethod
 		
-		private static method saveGamePath takes string currentSaveGame, string mapName returns string
+		private static method saveGamePath takes string currentSaveGame,string mapName returns string
 			local string saveGameFolder = ""
-			if (currentSaveGame != null) then
-				set saveGameFolder = thistype.m_currentSaveGame + "\\"
+			if (StringLength(currentSaveGame) > 0) then
+				set saveGameFolder = currentSaveGame + "\\"
 			endif
 			return thistype.zonesFolder + "\\" + saveGameFolder + mapName + ".w3z"
 		endmethod
@@ -52,66 +55,90 @@ endif
 			set cache = null
 		endmethod
 		
-		private static method restoreCharacterSinglePlayer takes Character character returns nothing
+		public static method storeCharactersSinglePlayer takes nothing returns nothing
+			local gamecache cache = InitGameCache("TPoF.w3v")
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (Character.playerCharacter(Player(i)) != 0) then
+					call thistype.storeCharacterSinglePlayer(Character.playerCharacter(Player(i)))
+				endif
+				set i = i + 1
+			endloop
+			call StoreBoolean(cache, "Stored", "Stored", true)
+			set cache = null
+		endmethod
+		
+		public static method charactersExistSinglePlayer takes nothing returns boolean
 			local gamecache cache = null
-			local real x = GetUnitX(character.unit())
-			local real y = GetUnitY(character.unit())
-			local real facing = GetUnitFacing(character.unit())
 			if (ReloadGameCachesFromDisk()) then
 				set cache = InitGameCache("TPoF.w3v")
-				call character.restore(cache, "Character" + I2S(GetPlayerId(character.player())), x, y, facing)
-				call FlushGameCache(cache)
+				return HaveStoredBoolean(cache, "Stored", "Stored")
 			endif
+			
+			return false
+		endmethod
+		
+		private static method restoreCharacterSinglePlayer takes player whichPlayer, real x, real y, real facing returns nothing
+			local gamecache cache = null
+			if (ReloadGameCachesFromDisk()) then
+				set cache = InitGameCache("TPoF.w3v")
+				if (ACharacter.playerCharacter(whichPlayer) == 0) then
+					call ACharacter.setPlayerCharacter(whichPlayer, RestoreUnit(cache, "Character" + I2S(GetPlayerId(whichPlayer)), "Unit", whichPlayer, x, y, facing))
+				endif
+				call ACharacter.playerCharacter(whichPlayer).restore(cache, "Character" + I2S(GetPlayerId(whichPlayer)), x, y, facing)
+				set cache = null
+			endif
+		endmethod
+		
+		public static method restoreCharactersSinglePlayer takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call thistype.restoreCharacterSinglePlayer(Player(i), MapData.startX.evaluate(i), MapData.startY.evaluate(i), 0.0)
+				set i = i + 1
+			endloop
 		endmethod
 		
 		/**
 		 * Changes map to \p newMap and saves the current map.
 		 */
 		private static method changeMapSinglePlayer takes string oldMap, string newMap returns nothing
-			local string copyPath = newMap + "\\" + thistype.currentSaveGamePath(oldMap)
+			call thistype.storeCharactersSinglePlayer()
+		
 			debug call Print("Saving map as " + thistype.currentSaveGamePath(oldMap))
 			call SaveGame(thistype.currentSaveGamePath(oldMap))
-			// copy save game to the folder of the new map
-			if (CopySaveGame(thistype.currentSaveGamePath(oldMap), copyPath)) then
-				debug call Print("Load game path: " + thistype.currentLoadGamePath(newMap))
+			debug call Print("Load game path: " + thistype.currentLoadGamePath(newMap))
 			
-				if (SaveGameExists(thistype.currentLoadGamePath(newMap))) then
-					call LoadGame(thistype.currentLoadGamePath(newMap), false)
-				else
-					debug call Print("Change map to " + thistype.mapPath(newMap))
-					call ChangeLevel(thistype.mapPath(newMap), false)
-				endif
-			debug else
-				debug call Print("Error on copying save game to " + copyPath)
+			if (SaveGameExists(thistype.currentLoadGamePath(newMap))) then
+				call LoadGame(thistype.currentLoadGamePath(newMap), false)
+			else
+				debug call Print("Change map to " + thistype.mapPath(newMap))
+				call ChangeLevel(thistype.mapPath(newMap), false)
 			endif
 		endmethod
 		
 		public static method changeMap takes string newMap returns nothing
-			if (bj_isSinglePlayer) then
+			// changing map with saving the game does only work in campaign mode
+			if (bj_isSinglePlayer and Game.isCampaign.evaluate()) then
 				call thistype.changeMapSinglePlayer(MapData.mapName, newMap)
 			else
+				call Character.displayHintToAll(tre("Die Karte kann nur in der Einzelspieler-Kampagne gewechselt werden.", "The map can only be changed in the singleplayer campaign."))
 				debug call Print("TODO: Implement savecode generation.")
 			endif
 		endmethod
 		
 		private static method triggerConditionLoad takes nothing returns boolean
-			return IsMapFlagSet(MAP_RELOADED) and bj_isSinglePlayer
+			return IsMapFlagSet(MAP_RELOADED) and bj_isSinglePlayer and  Game.isCampaign.evaluate()
 		endmethod
 		
 		private static method triggerActionLoad takes nothing returns nothing
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (Character.playerCharacter(Player(i)) != 0) then
-					call thistype.restoreCharacterSinglePlayer(Character.playerCharacter(Player(i)))
-				endif
-				set i = i + 1
-			endloop
+			call thistype.restoreCharactersSinglePlayer()
 			debug call Print("Restored characters")
 		endmethod
 		
 		private static method triggerConditionSave takes nothing returns boolean
-			return bj_isSinglePlayer
+			return bj_isSinglePlayer and Game.isCampaign.evaluate()
 		endmethod
 		
 		/**

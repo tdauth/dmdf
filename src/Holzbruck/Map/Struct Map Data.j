@@ -1,11 +1,7 @@
 library StructMapMapMapData requires Asl, StructGameGame
 
 	struct MapData extends MapDataInterface
-static if (DEBUG_MODE) then
-		public static constant string mapName = "Karte 2 - Holzbruck"
-else
 		public static constant string mapName = "Holzbruck0.6"
-endif
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
@@ -41,46 +37,9 @@ endif
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 			
-			set thistype.m_zoneTalras = Zone.create("Karte 1 - Talras", gg_rct_zone_talras)
+			set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
 			
-			call AddDoodadOcclusion('D027')
-			call AddDoodadOcclusion('D028')
-			call AddDoodadOcclusion('D029')
-			call AddDoodadOcclusion('D02A')
-			call AddDoodadOcclusion('D02B')
-			call AddDoodadOcclusion('D02C')
-			call AddDoodadOcclusion('D02D')
-			call AddDoodadOcclusion('D02E')
-			call AddDoodadOcclusion('D02F')
-			call AddDoodadOcclusion('D02G')
-			call AddDoodadOcclusion('D02H')
-			call AddDoodadOcclusion('D02I')
-			call AddDoodadOcclusion('D02J')
-			call AddDoodadOcclusion('D02K')
-			call AddDoodadOcclusion('D074')
-			call AddDoodadOcclusion('D075')
-			call AddDoodadOcclusion('D076')
-			call AddDoodadOcclusion('D077')
-			call AddDoodadOcclusion('D078')
-			call AddDoodadOcclusion('D08E')
-			call AddDoodadOcclusion('D08F')
-			
-			call AddDoodadOcclusion('D02N')
-			call AddDoodadOcclusion('D02O')
-			call AddDoodadOcclusion('D02P')
-			call AddDoodadOcclusion('D02Q')
-			call AddDoodadOcclusion('D02R')
-			call AddDoodadOcclusion('D02S')
-			call AddDoodadOcclusion('D02T')
-			call AddDoodadOcclusion('D02U')
-			call AddDoodadOcclusion('D02V')
-			call AddDoodadOcclusion('D02W')
-			call AddDoodadOcclusion('D02X')
-			call AddDoodadOcclusion('D07B')
-			call AddDoodadOcclusion('D07C')
-			call AddDoodadOcclusion('D07D')
-			
-			call AddDoodadOcclusion('D04K')
+			call Game.addDefaultDoodadsOcclusion()
 		endmethod
 		
 		/**

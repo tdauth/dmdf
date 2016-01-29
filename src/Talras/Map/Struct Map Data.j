@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameGame, StructMapMapShrines, StructMapMapNpcRoutines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
+library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameGame, StructGameZone, StructMapMapShrines, StructMapMapNpcRoutines, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
 
 	//! inject config
 		call SetMapName( "TRIGSTR_001" )
@@ -86,11 +86,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 	endstruct
 
 	struct MapData extends MapDataInterface
-static if (DEBUG_MODE) then
-		public static constant string mapName = "Karte 1 - Talras"
-else
 		public static constant string mapName = "Talras0.6"
-endif
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
@@ -251,46 +247,9 @@ endif
 			call TriggerAddCondition(thistype.m_talkHintTrigger, Condition(function thistype.triggerConditionTalkHint))
 			call TriggerAddAction(thistype.m_talkHintTrigger, function thistype.triggerActionTalkHint)
 			
-			set thistype.m_zoneHolzbruck = Zone.create("Karte 2 - Holzbruck", gg_rct_zone_holzbruck)
+			set thistype.m_zoneHolzbruck = Zone.create("Holzbruck" + Game.gameVersion, gg_rct_zone_holzbruck)
 			
-			call AddDoodadOcclusion('D027')
-			call AddDoodadOcclusion('D028')
-			call AddDoodadOcclusion('D029')
-			call AddDoodadOcclusion('D02A')
-			call AddDoodadOcclusion('D02B')
-			call AddDoodadOcclusion('D02C')
-			call AddDoodadOcclusion('D02D')
-			call AddDoodadOcclusion('D02E')
-			call AddDoodadOcclusion('D02F')
-			call AddDoodadOcclusion('D02G')
-			call AddDoodadOcclusion('D02H')
-			call AddDoodadOcclusion('D02I')
-			call AddDoodadOcclusion('D02J')
-			call AddDoodadOcclusion('D02K')
-			call AddDoodadOcclusion('D074')
-			call AddDoodadOcclusion('D075')
-			call AddDoodadOcclusion('D076')
-			call AddDoodadOcclusion('D077')
-			call AddDoodadOcclusion('D078')
-			call AddDoodadOcclusion('D08E')
-			call AddDoodadOcclusion('D08F')
-			
-			call AddDoodadOcclusion('D02N')
-			call AddDoodadOcclusion('D02O')
-			call AddDoodadOcclusion('D02P')
-			call AddDoodadOcclusion('D02Q')
-			call AddDoodadOcclusion('D02R')
-			call AddDoodadOcclusion('D02S')
-			call AddDoodadOcclusion('D02T')
-			call AddDoodadOcclusion('D02U')
-			call AddDoodadOcclusion('D02V')
-			call AddDoodadOcclusion('D02W')
-			call AddDoodadOcclusion('D02X')
-			call AddDoodadOcclusion('D07B')
-			call AddDoodadOcclusion('D07C')
-			call AddDoodadOcclusion('D07D')
-			
-			call AddDoodadOcclusion('D04K')
+			call Game.addDefaultDoodadsOcclusion()
 		endmethod
 		
 		/**

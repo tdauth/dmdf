@@ -45,18 +45,18 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 		endmethod
 
 		private static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, tr("Der magische Schild"))
+			local thistype this = thistype.allocate(character, tre("Der magische Schild", "The Magical Shield"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCurb.blp")
-			call this.setDescription(tr("Sisgard hat einen Zauberspruch kreiert, der einen magischen Schild erschaffen soll, welcher den Zaubernden vor Pfeilen schützt. Da sie den Zauber nicht selbst ausprobieren will, hat sie dir zwei Zauberspruchrollen gegeben, um dich darum zu kümmern."))
+			call this.setDescription(tre("Sisgard hat einen Zauberspruch kreiert, der einen magischen Schild erschaffen soll, welcher den Zaubernden vor Pfeilen schützt. Da sie den Zauber nicht selbst ausprobieren will, hat sie dir zwei Zauberspruchrollen gegeben, um dich darum zu kümmern.", "Sisgard has crafted a spell which should create a magical shield which protects the caster from arrows. Sinceshe does not want to try out the spell for herself, she gave you two scrolls to take care of it."))
 			call this.setReward(thistype.rewardExperience, 500)
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Beschwöre den magischen Schild und die Pfeile."))
+			set questItem = AQuestItem.create(this, tre("Beschwöre den magischen Schild und die Pfeile.", "Summon a magical shield and the arrows."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Berichte Sisgard von deinem Erfolg."))
+			set questItem = AQuestItem.create(this, tre("Berichte Sisgard von deinem Erfolg.", "Report to Sisgard about your success."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.sisgard())
 			call questItem.setPingColour(100.0, 100.0, 100.0)

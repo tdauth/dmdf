@@ -152,6 +152,8 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 	endstruct
 
 	struct Game
+		public static constant string gameVersion = "0.6"
+	
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions
 		private static trigger m_killTrigger
@@ -164,11 +166,64 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 
 		private method onDestroy takes nothing returns nothing
 		endmethod
+		
+		public static method isCampaign takes nothing returns boolean
+			// this custom object should only exist in the campaign not in the usual maps
+			return GetObjectName('h600') == "IsCampaign"
+		endmethod
+		
+		/**
+		 * Adds occlusion detection to default doodads such as trees.
+		 * Of course they need the animation "Stand Alternate" which makes them transparent.
+		 */
+		public static method addDefaultDoodadsOcclusion takes nothing returns nothing
+			call AddDoodadOcclusion('D027')
+			call AddDoodadOcclusion('D028')
+			call AddDoodadOcclusion('D029')
+			call AddDoodadOcclusion('D02A')
+			call AddDoodadOcclusion('D02B')
+			call AddDoodadOcclusion('D02C')
+			call AddDoodadOcclusion('D02D')
+			call AddDoodadOcclusion('D02E')
+			call AddDoodadOcclusion('D02F')
+			call AddDoodadOcclusion('D02G')
+			call AddDoodadOcclusion('D02H')
+			call AddDoodadOcclusion('D02I')
+			call AddDoodadOcclusion('D02J')
+			call AddDoodadOcclusion('D02K')
+			call AddDoodadOcclusion('D074')
+			call AddDoodadOcclusion('D075')
+			call AddDoodadOcclusion('D076')
+			call AddDoodadOcclusion('D077')
+			call AddDoodadOcclusion('D078')
+			call AddDoodadOcclusion('D08E')
+			call AddDoodadOcclusion('D08F')
+			
+			call AddDoodadOcclusion('D02N')
+			call AddDoodadOcclusion('D02O')
+			call AddDoodadOcclusion('D02P')
+			call AddDoodadOcclusion('D02Q')
+			call AddDoodadOcclusion('D02R')
+			call AddDoodadOcclusion('D02S')
+			call AddDoodadOcclusion('D02T')
+			call AddDoodadOcclusion('D02U')
+			call AddDoodadOcclusion('D02V')
+			call AddDoodadOcclusion('D02W')
+			call AddDoodadOcclusion('D02X')
+			call AddDoodadOcclusion('D07B')
+			call AddDoodadOcclusion('D07C')
+			call AddDoodadOcclusion('D07D')
+			
+			call AddDoodadOcclusion('D04K')
+		endmethod
 
 		public static method hostilePlayer takes nothing returns player
 			return Player(PLAYER_NEUTRAL_AGGRESSIVE)
 		endmethod
 
+		/**
+		 * \return Returns the number of missing players from the character controlling players.
+		 */
 		public static method missingPlayers takes nothing returns integer
 			local integer result = 0
 			local integer i = 0
@@ -182,6 +237,10 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 			return result
 		endmethod
 
+		/**
+		 * Registers a global \p onDamageAction which is evaluated everytime a unit gets damage.
+		 * \note The more actions you register the slower fighting might become.
+		 */
 		public static method registerOnDamageAction takes ADamageRecorderOnDamageAction onDamageAction returns nothing
 			call thistype.m_onDamageActions.pushBack(onDamageAction)
 		endmethod
@@ -198,11 +257,8 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
 			local AIntegerListIterator iterator = thistype.m_onDamageActions.begin()
-			//debug call Print("DAMAGE RECORDER")
-			//debug call Print("Damage recorder list id :" + I2S(thistype.m_onDamageActions) + " and size: " + I2S(thistype.m_onDamageActions.size()))
 			loop
 				exitwhen (not iterator.isValid())
-				//debug call Print("Damage recorder")
 				call ADamageRecorderOnDamageAction(iterator.data()).evaluate(damageRecorder)
 				call iterator.next()
 			endloop
@@ -448,13 +504,18 @@ endif
 			
 			// class selection
 			call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
-			call ClassSelection.showClassSelection.evaluate() // multiboard is created
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call DisplayTextToPlayer(Player(i), 0.0, 0.0, Format(tre("Sprache: %1%", "Language: %1%")).s(GetLanguage()).result())
-				set i = i + 1
-			endloop
+			
+			if (not bj_isSinglePlayer or not Game.isCampaign() or not MapChanger.charactersExistSinglePlayer()) then
+				call ClassSelection.showClassSelection.evaluate() // multiboard is created
+				set i = 0
+				loop
+					exitwhen (i == MapData.maxPlayers)
+					call DisplayTextToPlayer(Player(i), 0.0, 0.0, Format(tre("Sprache: %1%", "Language: %1%")).s(GetLanguage()).result())
+					set i = i + 1
+				endloop
+			else
+				call MapChanger.restoreCharactersSinglePlayer()
+			endif
 			debug call benchmark.stop()
 		endmethod
 

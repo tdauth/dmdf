@@ -172,8 +172,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 						
 						call PingMinimap(GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), bj_RESCUE_PING_TIME)
 						
-						call TransmissionFromUnit(this.m_allyRangerLeader, tr("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!"), null)
-						call Character.displayUnitAcquiredToAll(tr("Waldläufer"), tr("Waldläufer sind geschickte Fernkämpfer, die ihre Gegner mit vergifteten Pfeilen beschießen können."))
+						call TransmissionFromUnit(this.m_allyRangerLeader, tre("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!", "Hey you there! We have come to assist you. Let us drive this pack out of our country!"), null)
+						call Character.displayUnitAcquiredToAll(tre("Waldläufer", "Ranger"), tre("Waldläufer sind geschickte Fernkämpfer, die ihre Gegner mit vergifteten Pfeilen beschießen können.", "Rangers are skilled range fighters who can bombard their opponents with poisoned arrows."))
 					// farmers (ally spawn)
 					elseif (this.m_currentGroupIndex == 3) then
 						call this.m_wavesDisplay.decreaseAllies()
@@ -184,8 +184,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 						
 						call PingMinimap(GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), bj_RESCUE_PING_TIME)
 	
-						call TransmissionFromUnit(this.m_allyFarmerLeader, tr("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!"), null)
-						call Character.displayUnitAcquiredToAll(tr("Bewaffnete Dorfbewohner"), tr("Bewaffnete Dorfbewohner sind mutige Fernkämpfer, die ihre Gegner mit Brandpfeilen beschießen können."))
+						call TransmissionFromUnit(this.m_allyFarmerLeader, tre("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!", "Come on guys, we can help them! Kill all the enemies!"), null)
+						call Character.displayUnitAcquiredToAll(tre("Bewaffnete Dorfbewohner", "Armed Villagers"), tre("Bewaffnete Dorfbewohner sind mutige Fernkämpfer, die ihre Gegner mit Brandpfeilen beschießen können.", "Armed villagers are courageous range fighters who can bombard their opponents with fire arrows."))
 					endif
 				endif
 			endif
@@ -249,7 +249,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, UnitTypes.orcPython, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnitWithName(Npcs.ricman(), tr("Ricman"), tr("Diese verdammten Hunde haben Verstärkung gerufen. Macht euch bereit Männer!"), gg_snd_RicmanTheNorsemenRicman1)
+				call TransmissionFromUnitWithName(Npcs.ricman(), tre("Ricman", "Ricman"), tre("Diese verdammten Hunde haben Verstärkung gerufen. Macht euch bereit Männer!", "Those damned bastards have called reinforcements. Get ready men!"), gg_snd_RicmanTheNorsemenRicman1)
 				
 				call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_1), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_1), bj_RESCUE_PING_TIME)
 			elseif (this.m_currentGroupIndex == 2) then
@@ -262,7 +262,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnitWithName(Npcs.ricman(), tr("Ricman"), tr("Schon wieder ein neuer Trupp."), gg_snd_RicmanTheNorsemenRicman2) // TODO wrong sound
+				call TransmissionFromUnitWithName(Npcs.ricman(), tre("Ricman", "Ricman"), tre("Schon wieder ein neuer Trupp.", "Again a new squad."), gg_snd_RicmanTheNorsemenRicman2) // TODO wrong sound
 			elseif (this.m_currentGroupIndex == 3) then
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
@@ -273,7 +273,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnitWithName(Npcs.ricman(), tr("Ricman"), tr("Schlachtet sie!"), gg_snd_RicmanTheNorsemenRicman3)
+				call TransmissionFromUnitWithName(Npcs.ricman(), tre("Ricman", "Ricman"), tre("Schlachtet sie!", "Slaughter them!"), gg_snd_RicmanTheNorsemenRicman3)
 			elseif (this.m_currentGroupIndex == 4) then
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
@@ -287,7 +287,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
-				call TransmissionFromUnit(orcLeader, tr("Ihr elenden Menschen, euer Ende ist nah!"), null)
+				call TransmissionFromUnit(orcLeader, tre("Ihr elenden Menschen, euer Ende ist nah!", "You wretched men, your end is near!"), null)
 			endif
 			call this.m_currentGroup.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_norsemen_enemy_target), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_target))
 			set owner = null
@@ -350,7 +350,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 			call ACharacter.enableShrineForAll(Shrines.hillShrine(), false)
 			call ACharacter.setToRandomPointOnRectForAll(gg_rct_video_the_first_combat_battle_field)
-			call Character.displayHintToAll(tr("Unterstützen Sie Wigberht und seine Männer und besiegen sie die Orks und Dunkelelfen."))
+			call Character.displayHintToAll(tre("Unterstützen Sie Wigberht und seine Männer und besiegen sie die Orks und Dunkelelfen.", "Support Wigberht and his men and defeat the Orcs and Dark Elves."))
 			/// @todo set map bounds that characters aren't able to move out of the camera bounds area
 			call Game.resetCameraBounds() // camera will be set to fight area automatically when spawn has started
 			call ACharacter.panCameraSmartToAll()

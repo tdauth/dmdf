@@ -43,7 +43,7 @@ library StructMapQuestsQuestWolvesHunt requires Asl, StructMapMapNpcs
 					return true
 				// get next one to ping
 				else
-					call questItem.quest().displayUpdateMessage(Format(tr("%1%/%2% Rudelführer")).i(count).i(thistype.maxRects).result())
+					call questItem.quest().displayUpdateMessage(Format(tre("%1%/%2% Rudelführer", "%1%/%2% Pack Leader")).i(count).i(thistype.maxRects).result())
 				endif
 			endif
 			return false
@@ -61,23 +61,23 @@ library StructMapQuestsQuestWolvesHunt requires Asl, StructMapMapNpcs
 		endmethod
 
 		private static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, tr("Wolfsjagd"))
+			local thistype this = thistype.allocate(character, tre("Wolfsjagd", "Wolf Hunting"))
 			local integer i
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNDireWolf.blp")
-			call this.setDescription(tr("Der Schafsjunge auf dem Mühlberg westlich vom Bauernhof will, dass alle Rudelführer in Talras getötet werden, damit die Wölfe seine Schafe in Ruhe lassen.
-Eigentlich würde er sich ja selbst darum kümmern …"))
+			call this.setDescription(tre("Der Schafsjunge auf dem Mühlberg westlich vom Bauernhof will, dass alle Rudelführer in Talras getötet werden, damit die Wölfe seine Schafe in Ruhe lassen.
+Eigentlich würde er sich ja selbst darum kümmern …", "The sheep boy on the Mill Hill west of the farm wants all pack leaders in Talras to be killed, so the wolves leave his sheeps in peace. Actually, he would take care of it himself ..."))
 			// 800 Erfahrung, 30 Goldmünzen, 3 Brotlaibe, 1 Zauberpunkt
 			call this.setReward(thistype.rewardExperience, 500)
 			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Töte alle Rudelführer in Talras."))
+			set questItem = AQuestItem.create(this, tre("Töte alle Rudelführer in Talras.", "Kill all pack leaders in Talras."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 			
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Berichte dem Schafsjungen davon."))
+			set questItem = AQuestItem.create(this, tre("Berichte dem Schafsjungen davon.", "Report to the sheep boy thereof."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.sheepBoy())
 			call questItem.setPingColour(100.0, 100.0, 100.0)

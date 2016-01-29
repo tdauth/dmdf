@@ -932,6 +932,7 @@ endif
 		 */
 		private static method triggerActionLoad takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local AIntegerVector favoriteLevels = 0
 			local integer i = 0
 			loop
 				exitwhen (i == this.m_learnedSpells.size())
@@ -959,6 +960,17 @@ endif
 			*/
 			// TODO patrol, stop
 			
+			
+			// remove favorite abilities
+			set favoriteLevels = AIntegerVector.create()
+			set i = 0
+			loop
+				exitwhen (i == this.m_favourites.size())
+				call favoriteLevels.pushBack(Spell(this.m_favourites[i]).level())
+				call Spell(this.m_favourites[i]).remove()
+				set i = i + 1
+			endloop
+			
 			/*
 			 * Readd backpack, grimoire and spells abilities to fix their icon positions.
 			 * TODO does not work
@@ -966,10 +978,23 @@ endif
 			call UnitRemoveAbility(this.character().unit(), Grimoire.abilityId)
 			call UnitRemoveAbility(this.character().unit(), 'A015')
 			call UnitRemoveAbility(this.character().unit(), 'A02Z')
+			
+			// add at the correct position
 			call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
 			call UnitAddAbility(this.character().unit(), 'A015')
 			call UnitAddAbility(this.character().unit(), 'A02Z')
+			// make sure the level is correct
 			call this.setGrimoireAbilityToSkillPoints(this.skillPoints())
+			
+			// readd favorite abilities
+			set i = 0
+			loop
+				exitwhen (i == this.m_favourites.size())
+				call Spell(this.m_favourites[i]).add()
+				call Spell(this.m_favourites[i]).setLevel(favoriteLevels[i])
+				set i = i + 1
+			endloop
+			call favoriteLevels.destroy()
 		endmethod
 		
 		private method createLoadTrigger takes nothing returns nothing

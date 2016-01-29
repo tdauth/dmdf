@@ -46,7 +46,7 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter, StructMa
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNSnazzyScroll.blp")
-			call this.setDescription(tr("Sisgard, die Zauberin, möchte, dass du ihr beweist, dass du der Zauberkunst mächtig bist. Vorher ist sie nicht bereit mit dir umher zu ziehen. Dazu hat sie dir eine Zauberspruchrolle mitgegeben, welche du in einem Runensteinkreis im Dunkelwald benutzen sollst."))
+			call this.setDescription(tre("Sisgard, die Zauberin, möchte, dass du ihr beweist, dass du der Zauberkunst mächtig bist. Vorher ist sie nicht bereit mit dir umher zu ziehen. Dazu hat sie dir eine Zauberspruchrolle mitgegeben, welche du in einem Runensteinkreis im Dunkelwald benutzen sollst.", "SIsgard, the sorceress, wants you to prove to her that you're able to use magic. Before that she is not ready to go with you around. For this purpose she has given you a scroll which you should use in a rune stone circle in the Dark Forest."))
 			call this.setReward(AAbstractQuest.rewardExperience, 500)
 			// item 0
 			set questItem0 = AQuestItem.create(this, tre("Suche nach dem Runensteinkreis und benutze dort die Zauberspruchrolle.", "Search for the runic stone circle and use the scroll there."))

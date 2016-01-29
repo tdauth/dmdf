@@ -50,34 +50,34 @@ library StructMapQuestsQuestTheDragon requires Asl, StructGameCharacter, StructM
 			local thistype this = thistype.allocate(character, tre("Der gezähmte Drache", "The Tamed Dragon"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNGreenDragon.blp")
-			call this.setDescription(tr("Ricman hat mir zur Belohnung den „Stab der Unsterblichkeit“ überreicht. Der Legende nach soll man mit diesem Stab einen gezähmten Drachen beschwören können. Ricman hat mich gebeten, den Stab auszuprobieren und ihm davon zu berichten."))
-			call this.setReward(AAbstractQuest.rewardExperience, 800)
+			call this.setDescription(tre("Ricman hat mir zur Belohnung den „Stab der Unsterblichkeit“ überreicht. Der Legende nach soll man mit diesem Stab einen gezähmten Drachen beschwören können. Ricman hat mich gebeten, den Stab auszuprobieren und ihm davon zu berichten.", "Ricman gave me as a reward the \"Staff of Immortality\". According to the legend one should be able to summon a dragon with this staff. Ricman asked me to try out the staff and tell him about it."))
+			call this.setReward(thistype.rewardExperience, 800)
 			// item 0
-			set questItem = AQuestItem.create(this, tr("Beschwöre mit Hilfe des „Stabs der Unsterblichkeit“ einen gezähmten Drachen."))
+			set questItem = AQuestItem.create(this, tre("Beschwöre mit Hilfe des „Stabs der Unsterblichkeit“ einen gezähmten Drachen.", "Summon a tamed dragon using the \"Staff of Immortality\"."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.questItem0CompletedEvent)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.questItem0CompletedCondition)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.questItem0CompletedAction)
 			
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Berichte Ricman davon."))
+			set questItem = AQuestItem.create(this, tre("Berichte Ricman davon.", "Report to Ricman thereof."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.ricman())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 2
-			set questItem = AQuestItem.create(this, tr("Reite auf dem gezähmten Drachen."))
+			set questItem = AQuestItem.create(this, tre("Reite auf dem gezähmten Drachen.", "Ride on the tamed dragon."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.questItem2CompletedEvent)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.questItem2CompletedCondition)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.questItem2CompletedAction)
 			
 			// item 3
-			set questItem = AQuestItem.create(this, tr("Berichte Ricman davon."))
+			set questItem = AQuestItem.create(this, tre("Berichte Ricman davon.", "Report to Ricman thereof."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.ricman())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 4
-			set questItem = AQuestItem.create(this, tr("Finde den verlassenen Drachenhorst und suche dort nach Dracheneiern."))
+			set questItem = AQuestItem.create(this, tre("Finde den verlassenen Drachenhorst und suche dort nach Dracheneiern.", "Find the abandoned dragon nest and search there for the dragon eggs."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.questItem4CompletedEvent)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.questItem4CompletedCondition)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.questItem4CompletedAction)
@@ -86,7 +86,7 @@ library StructMapQuestsQuestTheDragon requires Asl, StructGameCharacter, StructM
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// item 5
-			set questItem = AQuestItem.create(this, tr("Bringe die Dracheneier zu Ricman."))
+			set questItem = AQuestItem.create(this, tre("Bringe die Dracheneier zu Ricman.", "Bring the dragon eggs to Ricman."))
 			
 			return this
 		endmethod
