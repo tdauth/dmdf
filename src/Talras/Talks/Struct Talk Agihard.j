@@ -42,32 +42,32 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Welche Arena?
 		private static method infoActionWhichArena takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Welche Arena?", "Which arena?"), null)
-			call speech(info, character, true, tr("Eben eine ganz normale Arena. Man kämpft und wer gewinnt, bekommt Goldmünzen."), null)
-			call speech(info, character, true, tr("Die Kämpfe finden immer zwischen genau zwei Leuten statt."), null)
+			call speech(info, character, true, tre("Eben eine ganz normale Arena. Man kämpft und wer gewinnt, bekommt Goldmünzen.", "Just a normal arena. You fight and whoever wins gets gold coins."), null)
+			call speech(info, character, true, tre("Die Kämpfe finden immer zwischen genau zwei Leuten statt.", "The fights always take place between just two people."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Gibt es bestimmte Regeln in der Arena?
 		private static method infoActionAnyRules takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Gibt es bestimmte Regeln in der Arena?"), null)
-			call speech(info, character, true, tr("Ja, allerdings. Ich will nicht, dass das am Ende in einem Massaker endet. Wir wollen ja fair bleiben. Also ..."), null)
-			call speech(info, character, true, tr("1. Es ist nur ein Wettkampf, daher werden keine Gegner getötet oder sonst aufs Brutalste verstümmelt. Liegt ein Gegner am Boden, so ist der Kampf zu Ende."), null)
-			call speech(info, character, true, tr("2. Es kämpfen immer genau zwei Leute gegeneinander. Niemand hat sich da einzumischen!"), null)
-			call speech(info, character, true, tr("3. Wer die Arena verlässt, hat verloren."), null)
-			call speech(info, character, false, tr("Was passiert wenn ich gegen eine dieser Regeln verstoße?"), null)
-			call speech(info, character, true, tr("Probier es erst gar nicht! Wenn du gegen die zweite Regel verstößt, wird wohl kaum noch jemand in die Arena kommen, verstößt du gegen die erste, hast du ein ernsthaftes Problem!"), null)
+			call speech(info, character, false, tre("Gibt es bestimmte Regeln in der Arena?", "Are there certain rules in the arena?"), null)
+			call speech(info, character, true, tre("Ja, allerdings. Ich will nicht, dass das am Ende in einem Massaker endet. Wir wollen ja fair bleiben. Also ...", "Yes, indeed. I do no want it to end in a massacre finally. We want to be fair. So ..."), null)
+			call speech(info, character, true, tre("1. Es ist nur ein Wettkampf, daher werden keine Gegner getötet oder sonst aufs Brutalste verstümmelt. Liegt ein Gegner am Boden, so ist der Kampf zu Ende.", "1. It is only a competition, so no opponents are killed or otherwise mutilated on brutally. If an opponent lies on the ground, so the fight is over."), null)
+			call speech(info, character, true, tre("2. Es kämpfen immer genau zwei Leute gegeneinander. Niemand hat sich da einzumischen!", "2. It will always fight exactly two people against each other. Nobody has to intervene here!"), null)
+			call speech(info, character, true, tre("3. Wer die Arena verlässt, hat verloren.", "3. Who leaves the arena, has lost."), null)
+			call speech(info, character, false, tre("Was passiert wenn ich gegen eine dieser Regeln verstoße?", "What happens if I violate one of these rules?"), null)
+			call speech(info, character, true, tre("Probiere es erst gar nicht! Wenn du gegen die zweite Regel verstößt, wird wohl kaum noch jemand in die Arena kommen, verstößt du gegen die erste, hast du ein ernsthaftes Problem!", "Do not even try it! If you violate the second rule, hardly anyone will come to the arena, if you violate the first, you have a serious problem!"), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Was gibt es zu gewinnen?
 		private static method infoActionWhatToWin takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was gibt es zu gewinnen?"), null)
-			call speech(info, character, true, tr("War ja wieder klar, dass du das wissen willst. Ein wahrer Krieger kämpft ohne Aussicht auf Belohnung!"), null)
-			call speech(info, character, false, tr("Interessant."), null)
-			call speech(info, character, true, tr("Ja, ja, schon gut. Also, du kriegst deine Belohnung sobald der Kampf vorbei ist und du deinen Gegner besiegt hast."), null)
-			call speech(info, character, true, tr("Für jeden Sieg bekommst du ein paar Goldmünzen. Wenn du jedoch öfter als fünfmal gewinnst, erhältst du einen besonderen Preis."), null)
-			call speech(info, character, true, tr("Allerdings will ich noch nicht verraten, um was genau es sich dabei handelt. Mitmachen lohnt sich aber auf jeden Fall!"), null)
-			call speech(info, character, true, tr("Ach ja, den Preis gibt es natürlich nur einmal für jeden, der das schafft. Sonst werde ich ja noch arm (Lacht)."), null)
+			call speech(info, character, false, tre("Was gibt es zu gewinnen?", "What is there to win?"), null)
+			call speech(info, character, true, tre("War ja wieder klar, dass du das wissen willst. Ein wahrer Krieger kämpft ohne Aussicht auf Belohnung!", "Sure you want to know that. A true warrior fights with no prospect of a reward!"), null)
+			call speech(info, character, false, tre("Interessant.", "Interesting."), null)
+			call speech(info, character, true, tre("Ja, ja, schon gut. Also, du kriegst deine Belohnung sobald der Kampf vorbei ist und du deinen Gegner besiegt hast.", "Yes, yes all right. So, you get your reward when the fight is over and you have beaten your opponent."), null)
+			call speech(info, character, true, tre("Für jeden Sieg bekommst du ein paar Goldmünzen. Wenn du jedoch öfter als fünfmal gewinnst, erhältst du einen besonderen Preis.", "For every win you get a few gold coins. However, if you win more than five times, you get a special reward."), null)
+			call speech(info, character, true, tre("Allerdings will ich noch nicht verraten, um was genau es sich dabei handelt. Mitmachen lohnt sich aber auf jeden Fall!", "However, I don't want to tell you yet what exactly the reward is. Taking part is worth in any case!"), null)
+			call speech(info, character, true, tre("Ach ja, den Preis gibt es natürlich nur einmal für jeden, der das schafft. Sonst werde ich ja noch arm (Lacht).", "Oh, of course there is only one award for anyone who gets it. Otherwise I will become poor (Laughs)."), null)
 			if (QuestArenaChampion.characterQuest(character).isNotUsed()) then
 				call QuestArenaChampion.characterQuest(character).enable()
 			endif
@@ -82,12 +82,12 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Lass mich in die Arena!
 		private static method infoActionLetMeIn takes AInfo info, ACharacter character returns nothing
 			local unit arenaEnemy
-			call speech(info, character, false, tr("Lass mich in die Arena!"), null)
+			call speech(info, character, false, tre("Lass mich in die Arena!", "Let me in the arena!"), null)
 			if (not Arena.isFree()) then
-				call speech(info, character, true, tr("Tut mir leid, aber die Arena ist gerade belegt."), null)
+				call speech(info, character, true, tre("Tut mir leid, aber die Arena ist gerade belegt.", "Sorry, but the arena is currently occupied."), null)
 				call info.talk().showStartPage(character)
 			else
-				call speech(info, character, true, tr("Gut, und halte dich an die Regeln!"), null)
+				call speech(info, character, true, tre("Gut, und halte dich an die Regeln!", "Good, and stick to the rules!"), null)
 				call info.talk().close(character)
 				set arenaEnemy = Arena.getRandomEnemy(character)
 				call Arena.addUnit(arenaEnemy)
@@ -103,8 +103,8 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 
 		// Ich habe fünfmal gewonnen!
 		private static method infoActionICompleted takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ich habe fünfmal gewonnen!"), null)
-			call speech(info, character, true, tr("Tatsächlich! Du scheinst mir ein sehr starker Kämpfer zu sein. Nun gut, du hast dir deine Belohnung ehrenhaft verdient. Hier hast du sie."), null)
+			call speech(info, character, false, tre("Ich habe fünfmal gewonnen!", "I won five times!"), null)
+			call speech(info, character, true, tre("Tatsächlich! Du scheinst mir ein sehr starker Kämpfer zu sein. Nun gut, du hast dir deine Belohnung ehrenhaft verdient. Hier hast du sie.", "Really! You seem to be a very strong fighter. Well, you've earned your reward honorably. Here you have it."), null)
 			// TODO besondere Belohnung, Gegenstand
 			call QuestArenaChampion.characterQuest(character).questItem(1).complete()
 			call info.talk().showStartPage(character)
@@ -112,10 +112,10 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 
 		// Dienst du dem Herzog?
 		private static method infoActionServantOfDuke takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Dienst du dem Herzog?"), null)
-			call speech(info, character, true, tr("Wegen meiner Rüstung oder was? Ja, ich bin der Waffenmeister der Burg. Schon mein Vater diente Heimrichs Vater und ich bin stolz, sein Erbe weiterzutragen."), null)
-			call speech(info, character, false, tr("Dein Vater?"), null)
-			call speech(info, character, true, tr("Ja, er war ein großer Mann. Er war der beste Waffenmeister weit und breit und lehrte viele große Krieger das Kämpfen."), null)
+			call speech(info, character, false, tre("Dienst du dem Herzog?", "Do you serve the duke?"), null)
+			call speech(info, character, true, tre("Wegen meiner Rüstung oder was? Ja, ich bin der Waffenmeister der Burg. Schon mein Vater diente Heimrichs Vater und ich bin stolz, sein Erbe weiterzutragen.", "Because of my armour or what? Yes, I am the weapons master of the castle. My father served Heimrich's father and I am proud to carry on his legacy."), null)
+			call speech(info, character, false, tre("Dein Vater?", "Your father?"), null)
+			call speech(info, character, true, tre("Ja, er war ein großer Mann. Er war der beste Waffenmeister weit und breit und lehrte viele große Krieger das Kämpfen.", "Yes, he was a great man. He was the best weapons master far and wide, and taught many greate warriors fighting."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -126,9 +126,9 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 
 		// Kennst du dich mit Waffen aus?
 		private static method infoActionAboutWeapons takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Kennst du dich mit Waffen aus?"), null)
-			call speech(info, character, true, tr("Natürlich, worum geht's denn?"), null)
-			call speech(info, character, false, tr("Wo finde ich gute Waffen?"), null)
+			call speech(info, character, false, tre("Kennst du dich mit Waffen aus?", "Are you familiar with weapons?"), null)
+			call speech(info, character, true, tre("Natürlich, worum geht's denn?", "Of course, what's it about?"), null)
+			call speech(info, character, false, tre("Wo finde ich gute Waffen?", "Where can I find good weapons?"), null)
 			call speech(info, character, true, tr("(Lachend) Bei mir natürlich. Nein, im Ernst. Einar verkauft auch ganz gute Waffen und Wieland, der Burgschmied, verkauft sehr gute Rüstungen und Helme."), null)
 			call speech(info, character, true, tr("Ich selbst verkaufe ganz gute Schilde."), null)
 			call info.talk().showStartPage(character)

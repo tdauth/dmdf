@@ -19,7 +19,7 @@ library StructSpellsSpellDefend requires Asl, StructGameClasses, StructGameGame,
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), thistype.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, 0)
+			local thistype this = thistype.allocate(character, Classes.knight(), thistype.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, 0)
 			call this.addGrimoireEntry('A1HM', 'A1HR')
 			
 			return this
