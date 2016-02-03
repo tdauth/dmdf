@@ -29,7 +29,7 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				endif
 			endloop
 		
-			call TransmissionFromUnit(thistype.actor(), tr("Schmied Wieland!"), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Schmied Wieland!", "Blacksmith Wieland!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -53,25 +53,25 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Was gibt es?"), gg_snd_Wieland_a)
+			call TransmissionFromUnit(this.m_actorWieland, tre("Was gibt es?", "What is it?"), gg_snd_Wieland_a)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_a))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Der Herzog braucht Waffen für einen eroberten Außenposten der Orks und Dunkelelfen."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Der Herzog braucht Waffen für einen eroberten Außenposten der Orks und Dunkelelfen.", "The duke needs weapons for a conquered outpost of the Orcs and Dark Elves."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Der Herzog braucht immer Waffen! Wie stellt er sich das vor, bin ich doch der einzige Schmied in Talras? Ich habe jetzt schon genug zu tun."), gg_snd_Wieland_b)
+			call TransmissionFromUnit(this.m_actorWieland, tre("Der Herzog braucht immer Waffen! Wie stellt er sich das vor, bin ich doch der einzige Schmied in Talras? Ich habe jetzt schon genug zu tun.", "The duke always needs weapons! How does he imagine that when I am the only blacksmith in Talras? I already have to do enough at the moment."), gg_snd_Wieland_b)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_b))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Markward schickt mich. Der Außenposten muss befestigt werden um die Orks und Dunkelelfen abzuwehren."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Markward schickt mich. Der Außenposten muss befestigt werden um die Orks und Dunkelelfen abzuwehren.", "Markward sends me. The outpost has to be fortified to defend it from the Orcs and Dark Elves."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

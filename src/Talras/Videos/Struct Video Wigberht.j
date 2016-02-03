@@ -235,7 +235,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			if (wait(0.50)) then
 				return
 			endif
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tr("Wigberht"), tre("Geh mir aus dem Weg Untier, du bist kein würdiger Gegner für mich!", "Get out of my way beast, you're not a dignified opponent for me!"), gg_snd_Wigberht39)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tre("Geh mir aus dem Weg Untier, du bist kein würdiger Gegner für mich!", "Get out of my way beast, you're not a dignified opponent for me!"), gg_snd_Wigberht39)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht39))) then
 				return
 			endif
@@ -371,13 +371,13 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 				return
 			endif
 
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tr("Wigberht"), tr("Ihr habt mir bewiesen, dass ihr kämpfen könnt und Mut besitzt. Berichtet dem Herzog, dass wir ihn gegen die Dunkelelfen und Orks unterstützen werden."), gg_snd_Wigberht40)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Ihr habt mir bewiesen, dass ihr kämpfen könnt und Mut besitzt. Berichtet dem Herzog, dass wir ihn gegen die Dunkelelfen und Orks unterstützen werden."), gg_snd_Wigberht40)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht40))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tr("Wigberht"), tr("Danach begeben wir uns weiter auf die Suche nach meinem Vater. Sollten jedoch keine Feinde eintreffen, so müssen wir irgendwann aufbrechen."), gg_snd_Wigberht41)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Danach begeben wir uns weiter auf die Suche nach meinem Vater. Sollten jedoch keine Feinde eintreffen, so müssen wir irgendwann aufbrechen."), gg_snd_Wigberht41)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht41))) then
 				return

@@ -22,18 +22,18 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 
 		// Hallo.
 		private static method infoActionGreeting takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Wer bist du und was machst du in meinem Lager?"), gg_snd_Baldar1)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("Wer bist du und was machst du in meinem Lager?", "Who are you and what are you doing in my camp?"), gg_snd_Baldar1)
 			// (Charakter kennt noch keinen der beiden Brüder)
 			if (not TalkHaldar.talk.evaluate().infoHasBeenShownToCharacter(0, character)) then
-				call speech(info, character, false, tr("Dein Lager?"), null)
-				call speech(info, character, true, tr("Ja, mein Lager!"), gg_snd_Baldar2)
-				call speech(info, character, true, tr("Das ist das Lager der schwarzen Legion, meines Heers."), gg_snd_Baldar3)
+				call speech(info, character, false, tre("Dein Lager?", "Your camp?"), null)
+				call speech(info, character, true, tre("Ja, mein Lager!", "Yes, my camp!"), gg_snd_Baldar2)
+				call speech(info, character, true, tre("Das ist das Lager der schwarzen Legion, meines Heers.", "This is the camp of the Black Legion, my army!"), gg_snd_Baldar3)
 			// (Charakter hat bereits Haldar getroffen)
 			else
-				call speech(info, character, false, tr("Bist du Haldars Bruder?"), null)
-				call speech(info, character, true, tr("Woher weißt du das?"), gg_snd_Baldar4)
-				call speech(info, character, false, tr("Hab mit ihm gesprochen."), null)
+				call speech(info, character, false, tre("Bist du Haldars Bruder?", "Are you Haldar's brother?"), null)
+				call speech(info, character, true, tre("Woher weißt du das?", "Where do you know this from?"), gg_snd_Baldar4)
+				call speech(info, character, false, tre("Hab mit ihm gesprochen.", "I talked to him."), null)
 				call speech(info, character, true, tr("Du wagst es, mit diesem Feigling zu sprechen? Wie kannst du dir das nur antun?"), gg_snd_Baldar5)
 				call speech(info, character, false, tr("Ganz ruhig, Flügelmann."), null)
 				call speech(info, character, true, tr("Weißt du eigentlich wen du vor dir hast? Ich bin Baldar, der mächtige Erzdämon aus …"), gg_snd_Baldar6)

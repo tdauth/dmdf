@@ -129,8 +129,8 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			call speech(info, character, false, tre("Kennst du dich mit Waffen aus?", "Are you familiar with weapons?"), null)
 			call speech(info, character, true, tre("Natürlich, worum geht's denn?", "Of course, what's it about?"), null)
 			call speech(info, character, false, tre("Wo finde ich gute Waffen?", "Where can I find good weapons?"), null)
-			call speech(info, character, true, tr("(Lachend) Bei mir natürlich. Nein, im Ernst. Einar verkauft auch ganz gute Waffen und Wieland, der Burgschmied, verkauft sehr gute Rüstungen und Helme."), null)
-			call speech(info, character, true, tr("Ich selbst verkaufe ganz gute Schilde."), null)
+			call speech(info, character, true, tre("(Lachend) Bei mir natürlich. Nein, im Ernst. Einar verkauft auch ganz gute Waffen und Wieland, der Burgschmied, verkauft sehr gute Rüstungen und Helme.", "(Laughing) Of course with me. No, seriously. Einar also sells very good weapons and Wieland, the castle's blacksmith, sells very good armours and helmets."), null)
+			call speech(info, character, true, tre("Ich selbst verkaufe ganz gute Schilde.", "I myself sell very good bucklers."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -142,33 +142,33 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Was weißt du über die Lage?
 		private static method infoActionWhatDoYouKnow takes AInfo info, ACharacter character returns nothing
 			local boolean sayIt = false
-			call speech(info, character, false, tr("Was weißt du über die Lage?"), null)
-			call speech(info, character, true, tr("Über welche Lage? Meinst du die bevorstehenden Kämpfe?"), null)
-			call speech(info, character, false, tr("Ja."), null)
-			call speech(info, character, true, tr("Tut mir leid, aber darüber darf ich nicht sprechen."), null)
-			call speech(info, character, true, tr("Uns wurde das Reden über solche Angelegenheiten strengstens untersagt. Dadurch bekommen die Leute nur noch mehr Angst."), null)
+			call speech(info, character, false, tre("Was weißt du über die Lage?", "What do you know about the situation?"), null)
+			call speech(info, character, true, tre("Über welche Lage? Meinst du die bevorstehenden Kämpfe?", "About which situation? Are you talking about the upcoming fights?"), null)
+			call speech(info, character, false, tre("Ja.", "Yes."), null)
+			call speech(info, character, true, tre("Tut mir leid, aber darüber darf ich nicht sprechen.", "I am sory, but I'm not allowed to speak about that."), null)
+			call speech(info, character, true, tre("Uns wurde das Reden über solche Angelegenheiten strengstens untersagt. Dadurch bekommen die Leute nur noch mehr Angst.", "It was strictly prohibited that we talk about such matters. This gives people even more fear."), null)
 			if (Classes.isChaplain(character.class())) then
-				call speech(info, character, false, tr("Ich bin ein Geistlicher. Nicht einmal mir willst du etwas erzählen?!"), null)
-				call speech(info, character, true, tr("Na ja ..."), null)
-				call speech(info, character, false, tr("Mein Glaube verbietet mir, Unfrieden unter den Leuten zu stiften."), null)
+				call speech(info, character, false, tre("Ich bin ein Geistlicher. Nicht einmal mir willst du etwas erzählen?!", "I am aclergyman. You don't even want to tell me anything?"), null)
+				call speech(info, character, true, tre("Na ja ...", "Well ..."), null)
+				call speech(info, character, false, tre("Mein Glaube verbietet mir, Unfrieden unter den Leuten zu stiften.", "My faith forbids me to cause mischief among the people."), null)
 				set sayIt = true
 			elseif (character.class() == Classes.knight()) then
-				call speech(info, character, false, tr("Ich bin ein Ritter, ein treuer Diener des Königs, genau wie du. Mir kannst du es ruhig erzählen."), null)
+				call speech(info, character, false, tre("Ich bin ein Ritter, ein treuer Diener des Königs, genau wie du. Mir kannst du es ruhig erzählen.", "I am a knight, a faithful servant of the king, just like you. You can tell it calmly to me."), null)
 				set sayIt = true
 			elseif (character.class() == Classes.dragonSlayer()) then
-				call speech(info, character, false, tr("Kannst du nicht mal eine Ausnahme machen?"), null)
-				call speech(info, character, true, tr("Nein, ich würde damit gegen meinen Eid verstoßen!"), null)
-				call speech(info, character, false, tr("Ach was ist schon so ein Eid, ich erzähls auch bestimmt keinem."), null)
-				call speech(info, character, true, tr("Schluss jetzt! Entweder du bist hier, um zu kämpfen oder du verschwindest besser!"), null)
+				call speech(info, character, false, tre("Kannst du nicht mal eine Ausnahme machen?", "Can't you even make an exception?"), null)
+				call speech(info, character, true, tre("Nein, ich würde damit gegen meinen Eid verstoßen!", "No, I would violate my oath by that!"), null)
+				call speech(info, character, false, tre("Ach was ist schon so ein Eid, ich erzähls auch bestimmt keinem.", "Oh who cares about such an oath, I certainly won't tell it to anybody."), null)
+				call speech(info, character, true, tre("Schluss jetzt! Entweder du bist hier, um zu kämpfen oder du verschwindest besser!", "Stop it now! Either you're here to fight or you better leave!"), null)
 			endif
 			if (sayIt) then
-				call speech(info, character, true, tr("Also gut ... aber du darfst es niemandem erzählen!"), null)
-				call speech(info, character, false, tr("Keine Sorge!"), null)
-				call speech(info, character, true, tr("Ich glaube Markward, der treue Ritter unseres Herzogs Heimrich, würde dem Feind lieber mutig entgegenziehen, als hier in der Burg zu verrotten."), null)
-				call speech(info, character, true, tr("Doch Heimrich ist anderer Meinung. Loyal wie er nun mal ist, unterwirft sich Markward natürlich dem Willen des Herzogs."), null)
-				call speech(info, character, true, tr("Manche glauben, dass Heimrich auf irgendetwas Bestimmtes wartet. Das ist allerdings nur ein Gerücht und erzähl niemandem, dass du das von mir hast!"), null)
+				call speech(info, character, true, tre("Also gut ... aber du darfst es niemandem erzählen!", "All right ... but you must not tell anyone!"), null)
+				call speech(info, character, false, tre("Keine Sorge!", "Don't worry!"), null)
+				call speech(info, character, true, tre("Ich glaube Markward, der treue Ritter unseres Herzogs Heimrich, würde dem Feind lieber mutig entgegenziehen, als hier in der Burg zu verrotten.", "I think Markward, the faithful knight of our duke Heimrich, would prefer to bravely move against the enemy than rotting here in the castle."), null)
+				call speech(info, character, true, tre("Doch Heimrich ist anderer Meinung. Loyal wie er nun mal ist, unterwirft sich Markward natürlich dem Willen des Herzogs.", "But Heimrich disagrees. Loyal as he happens to be, Markward of course submits to the will of the duke."), null)
+				call speech(info, character, true, tre("Manche glauben, dass Heimrich auf irgendetwas Bestimmtes wartet. Das ist allerdings nur ein Gerücht und erzähl niemandem, dass du das von mir hast!", "Some believe that Heimrich is waiting for anything in particular. Howerver, this is only a rumor and don't tell anyone that you have this information from me."), null)
 				// Erfahrungsbonus
-				call Character(character).xpBonus(thistype.xpBonus, tr("Informationen erhalten."))
+				call Character(character).xpBonus(thistype.xpBonus, tre("Informationen erhalten.", "Received Information"))
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
@@ -180,13 +180,13 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 
 		// Irmina mag dich.
 		private static method infoActionIrminaLikesYou takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Irmina mag dich."), null)
-			call speech(info, character, true, tr("Was?"), null)
-			call speech(info, character, false, tr("…"), null)
-			call speech(info, character, true, tr("Irmina, die Händlerin? Wieso das denn?"), null)
-			call speech(info, character, false, tr("Ich wette, du wusstest es."), null)
-			call speech(info, character, true, tr("Na ja, ich dachte … vielleicht, aber ich war mir nicht sicher. Vielleicht sollte ich mal bei ihr vorbeischauen."), null)
-			call speech(info, character, true, tr("Mal unter uns, ich mag sie auch sehr. Erzähl das aber keinem, sonst schlage ich dir den Kopf ab!"), null)
+			call speech(info, character, false, tre("Irmina mag dich.", "Irmina likes you."), null)
+			call speech(info, character, true, tre("Was?", "What?"), null)
+			call speech(info, character, false, tre("…", "..."), null)
+			call speech(info, character, true, tre("Irmina, die Händlerin? Wieso das denn?", "Irmina, the merchant? Why is that?"), null)
+			call speech(info, character, false, tre("Ich wette, du wusstest es.", "I bet you knew."), null)
+			call speech(info, character, true, tre("Na ja, ich dachte … vielleicht, aber ich war mir nicht sicher. Vielleicht sollte ich mal bei ihr vorbeischauen.", "Well, I thought ... maybe, but I was not sure. Maybe I should look in on her."), null)
+			call speech(info, character, true, tre("Mal unter uns, ich mag sie auch sehr. Erzähl das aber keinem, sonst schlage ich dir den Kopf ab!", "Among us, I like her much, too. Don't tell this anyone or I cut off your head!"), null)
 			// Auftragsziel 1 des Auftrags „Talras' mutiger Waffenmeister“ abgeschlossen
 			call QuestTheBraveArmourerOfTalras.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)
@@ -195,16 +195,16 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.agihard(), thistype.startPageAction)
 			// start page
-			set this.m_hello = this.addInfo(false, false, 0, thistype.infoActionHello, tr("Hallo."))
-			set this.m_whichArena = this.addInfo(false, false, thistype.infoConditionBeforeArena, thistype.infoActionWhichArena, tr("Welche Arena?"))
-			set this.m_anyRules = this.addInfo(true, false, thistype.infoConditionAfterHello, thistype.infoActionAnyRules, tr("Gibt es bestimmte Regeln in der Arena?"))
-			set this.m_whatToWin = this.addInfo(true, false, thistype.infoConditionAfterHello, thistype.infoActionWhatToWin, tr("Was gibt es zu gewinnen?"))
-			set this.m_letMeIn = this.addInfo(true, false, thistype.infoConditionAfterHelloNearArena, thistype.infoActionLetMeIn, tr("Lass mich in die Arena!"))
-			set this.m_iCompleted = this.addInfo(true, false, thistype.infoConditionICompleted, thistype.infoActionICompleted, tr("Ich habe fünfmal gewonnen!"))
-			set this.m_servantOfDuke = this.addInfo(false, false, thistype.infoConditionAfterHello, thistype.infoActionServantOfDuke, tr("Dienst du dem Herzog?"))
-			set this.m_aboutWeapons = this.addInfo(true, false, thistype.infoConditionAboutWeapons, thistype.infoActionAboutWeapons, tr("Kennst du dich mit Waffen aus?"))
-			set this.m_whatDoYouKnow = this.addInfo(false, false, thistype.infoConditionWhatDoYouKnow, thistype.infoActionWhatDoYouKnow, tr("Was weißt du über die Lage?"))
-			set this.m_irminaLikesYou = this.addInfo(false, false, thistype.infoConditionIrminaLikesYou, thistype.infoActionIrminaLikesYou, tr("Irmina mag dich."))
+			set this.m_hello = this.addInfo(false, false, 0, thistype.infoActionHello, tre("Hallo.", "Hello."))
+			set this.m_whichArena = this.addInfo(false, false, thistype.infoConditionBeforeArena, thistype.infoActionWhichArena, tre("Welche Arena?", "Which arena?"))
+			set this.m_anyRules = this.addInfo(true, false, thistype.infoConditionAfterHello, thistype.infoActionAnyRules, tre("Gibt es bestimmte Regeln in der Arena?", "Are there certain rules in the arena?"))
+			set this.m_whatToWin = this.addInfo(true, false, thistype.infoConditionAfterHello, thistype.infoActionWhatToWin, tre("Was gibt es zu gewinnen?", "What is there to win?"))
+			set this.m_letMeIn = this.addInfo(true, false, thistype.infoConditionAfterHelloNearArena, thistype.infoActionLetMeIn, tre("Lass mich in die Arena!", "Let me in the arena!"))
+			set this.m_iCompleted = this.addInfo(true, false, thistype.infoConditionICompleted, thistype.infoActionICompleted, tre("Ich habe fünfmal gewonnen!", "I won five times!"))
+			set this.m_servantOfDuke = this.addInfo(false, false, thistype.infoConditionAfterHello, thistype.infoActionServantOfDuke, tre("Dienst du dem Herzog?", "Do you serve the duke?"))
+			set this.m_aboutWeapons = this.addInfo(true, false, thistype.infoConditionAboutWeapons, thistype.infoActionAboutWeapons, tre("Kennst du dich mit Waffen aus?", "Are you familiar with weapons?"))
+			set this.m_whatDoYouKnow = this.addInfo(false, false, thistype.infoConditionWhatDoYouKnow, thistype.infoActionWhatDoYouKnow, tre("Was weißt du über die Lage?", "What do you know about the situation?"))
+			set this.m_irminaLikesYou = this.addInfo(false, false, thistype.infoConditionIrminaLikesYou, thistype.infoActionIrminaLikesYou, tre("Irmina mag dich.", "Irmina likes you."))
 			set this.m_exit = this.addExitButton()
 
 			return this

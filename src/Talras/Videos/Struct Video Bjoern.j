@@ -45,19 +45,19 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tr("Ist es etwa schon soweit? Ist der Feind so nah?"), null)
+			call TransmissionFromUnit(this.m_actorBjoern, tre("Ist es etwa schon soweit? Ist der Feind so nah?", "Has the time already come? Is the enemy so close?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tr("Ja uns bleibt keine Zeit mehr!"), null)
+			call TransmissionFromUnit(this.m_actorBjoern, tre("Ja uns bleibt keine Zeit mehr!", "Yes we have no more time!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tr("Verdammt! Ich werde so viele Fallen geben wie du brauchst. Hoffentlich besiegen wir diesen verfluchten Feind so bald wie möglich. Meine Frau macht sich schon Sorgen."), null)
+			call TransmissionFromUnit(this.m_actorBjoern, tre("Verdammt! Ich werde dir so viele Fallen geben wie du brauchst. Hoffentlich besiegen wir diesen verfluchten Feind so bald wie möglich. Meine Frau macht sich schon Sorgen.", "Damn it! I will give you as many traps as you need. Hopefully we defeat this cursed enemy as soon as possible. My wife is already worreid."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
