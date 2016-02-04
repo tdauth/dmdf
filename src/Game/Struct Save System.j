@@ -8,6 +8,9 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 	 * <li>Hero Level</li>
 	 * <li>Gold</li>
 	 * </ul>
+	 *
+	 * TODO Encoding and decoding works but there should be some encryption keys, otherwise one could easily reproduce any savecode he/she wants to.
+	 * TODO Probably more digits could be saved if maximum values would be defined for certain values. In this case one single digit could be used to save more stuff?
 	 */
 	struct SaveSystem
 		public static constant string digits = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -19,6 +22,11 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			return R2I(Pow(I2R(StringLength(thistype.digits)), I2R(digits)))
 		endmethod
 		
+		/**
+		 * Converts the decimal value \p decValue into the number system using \ref thistype.digits as digits.
+		 * Therefore the number should get less digits.
+		 * \return Returns the converted number as a string of digits.
+		 */
 		public static method encode takes integer decValue returns string
 			local integer base = StringLength(thistype.digits)
 			local integer mod = 0
@@ -35,6 +43,10 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			return result
 		endmethod
 		
+		/**
+		 * Converts the number from the number system using \ref thistype.digits as digits into a decimal value.
+		 * \return Returns the decimal value.
+		 */
 		public static method decode takes string savValue returns integer
 			local integer base = StringLength(thistype.digits)
 			local integer result = 0
@@ -51,6 +63,11 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			return result
 		endmethod
 		
+		/**
+		 * Encodes all saved data by converting it into a different number system.
+		 * All values are separated by "-" characters.
+		 * \return Returns the save code for the character of \p whichPlayer.
+		 */
 		public static method encodePlayerCharacter takes player whichPlayer returns string
 			local unit hero = ACharacter.playerCharacter(whichPlayer).unit()
 			local string class = thistype.encode(ACharacter.playerCharacter(whichPlayer).class())
@@ -85,7 +102,7 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			local AShrine oldShrine = oldCharacter.shrine()
 			local boolean oldShowCharactersScheme = oldCharacter.showCharactersScheme()
 			local boolean oldShowWorker = oldCharacter.showWorker()
-			local real oldCameraDistance = oldCharacter.mainMenu().cameraDistance()
+			local real oldCameraDistance = oldCharacter.cameraDistance()
 			local boolean oldViewEnabled = oldCharacter.isViewEnabled()
 			
 			local Character newCharacter = 0
@@ -127,7 +144,7 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			call newCharacter.setShrine(oldShrine)
 			call newCharacter.setShowCharactersScheme(oldShowCharactersScheme)
 			call newCharacter.setShowWorker(oldShowWorker)
-			call newCharacter.mainMenu().setCameraDistance(oldCameraDistance)
+			call newCharacter.setCameraDistance(oldCameraDistance)
 			call newCharacter.setView(oldViewEnabled)
 			
 			// select and pan

@@ -194,6 +194,11 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		private static method groupFunctionLookAtHill takes nothing returns nothing
 			call SetUnitFacingToFaceRectTimed(GetEnumUnit(), gg_rct_video_the_first_combat_battle_field, 1.30)
 		endmethod
+		
+		private static method groupFunctionAttack takes nothing returns nothing
+			call SetUnitAnimation(GetEnumUnit(), "Attack")
+			call PlaySoundBJ(gg_snd_BattleRoar)
+		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 			call ForGroup(this.m_firstActorGroup, function thistype.groupFunctionSetHaldar)
@@ -276,7 +281,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 				return
 			endif
 			
-			call ForGroup(this.m_secondActorGroup, function thistype.groupFunctionStandVictory)
+			call ForGroup(this.m_secondActorGroup, function thistype.groupFunctionAttack)
 			if (wait(GetSoundDurationBJ(gg_snd_BattleRoar))) then
 				return
 			endif

@@ -347,7 +347,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				set thistype.m_repickShrine[GetPlayerId(whichPlayer)] = ACharacter.playerCharacter(whichPlayer).shrine()
 				set thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showCharactersScheme()
 				set thistype.m_repickShowWorker[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showWorker()
-				set thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).mainMenu().cameraDistance()
+				set thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).cameraDistance()
 				set thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).isViewEnabled()
 				set thistype.m_repickQuests[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).quests()
 				set thistype.m_repickFellows[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).fellows()
@@ -367,7 +367,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call thistype.m_repickShrine[GetPlayerId(whichPlayer)].enableForCharacter(ACharacter.playerCharacter(whichPlayer), false)
 				call Character(ACharacter.playerCharacter(whichPlayer)).setShowCharactersScheme(thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)])
 				call Character(ACharacter.playerCharacter(whichPlayer)).setShowWorker(thistype.m_repickShowWorker[GetPlayerId(whichPlayer)])
-				call Character(ACharacter.playerCharacter(whichPlayer)).mainMenu().setCameraDistance(thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)])
+				call Character(ACharacter.playerCharacter(whichPlayer)).setCameraDistance(thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)])
 				call Character(ACharacter.playerCharacter(whichPlayer)).setView(thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)])
 				
 				call MapData.resetCameraBoundsForPlayer.evaluate(whichPlayer)

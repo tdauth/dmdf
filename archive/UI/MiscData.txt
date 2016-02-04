@@ -64,11 +64,11 @@ ActiveButtonColor=255,75,150,255
 AOA=304,311,318,325,332,339
 FOV=70,70,70,70,70,70
 Rotation=90,90,90,90,90,90,20,20,20,20,20,20,160,160,160,160,160,160
-Distance=1650,1600,1500,1400,1275,1100
+Distance=2650,2600,2500,2400,2275,2100
 FarZ=5000,5000,5000,5000,5000,5000
 NearZ=100,100,100,100,100,100,60
 Height=0,0,0,0,0,0,0
-// Camera smoothing.
+// Camera smoothing. 
 Smoothing=0.00
 SmoothMaxDist=1000
 SmoothScale=0.80
@@ -163,17 +163,16 @@ File27="Doodads\Cinematic\ArthasIllidanFight\IllidanBlade_mip1.blp"
 [ArthasIllidanFightSounds]
 Scene1="FinalCinematic"
 
-// Revised for Die Macht des Feuers
 [Terrain]
 // terrain parameters
 
 // Maximum slope in degrees, (86+ will disable slope limits)
-MaxSlope=90
+MaxSlope=50
 
 // Global height limits
 // 0 = low ground, each cliff level = 128
-MaxHeight=2560
-MinHeight=-2560
+MaxHeight=1536
+MinHeight=-128
 
 [FlyerMap]
 // Radius, in pathing cells, to search for maximum height
@@ -334,11 +333,11 @@ LargeMapRange=9,12
 MeleeRangeMax=128
 SpeedVerySlow=175   // lower bound, everything below this is "very slow"
 SpeedSlow=220
-SpeedAverage=250 // 280, changed for "Die Macht des Feuers"
+SpeedAverage=280
 SpeedFast=350      // upper bound, everything above this is "very fast"
 AttackVerySlow=3   // upper bound, everything above this is "very slow"
-AttackSlow=2.5 // 2, changed for "Die Macht des Feuers"
-AttackAverage=2 // 1.5, changed for "Die Macht des Feuers"
+AttackSlow=2
+AttackAverage=1.5
 AttackFast=1       // lower bound, everything below this is "very fast"
 
 [Occlusion]

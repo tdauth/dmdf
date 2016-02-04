@@ -6,16 +6,6 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 	struct MainMenu
 		private Character m_character
 		private trigger m_keyTrigger
-		private real m_cameraDistance
-		
-		public method setCameraDistance takes real cameraDistance returns nothing
-			set this.m_cameraDistance = cameraDistance
-			call SetCameraFieldForPlayer(this.m_character.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
-		endmethod
-		
-		public method cameraDistance takes nothing returns real
-			return this.m_cameraDistance
-		endmethod
 
 		private static method dialogButtonActionSetTutorial takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
@@ -55,13 +45,13 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 
 		private static method dialogButtonActionIncreaseCameraDistance takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.setCameraDistance(this.cameraDistance() + 500.0)
+			call this.m_character.setCameraDistance(this.m_character.cameraDistance() + 500.0)
 			call this.showDialog.evaluate()
 		endmethod
 		
 		private static method dialogButtonActionDecreaseCameraDistance takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.setCameraDistance(this.cameraDistance() - 500.0)
+			call this.m_character.setCameraDistance(this.m_character.cameraDistance() - 500.0)
 			call this.showDialog.evaluate()
 		endmethod
 
@@ -169,7 +159,6 @@ endif
 			local thistype this = thistype.allocate()
 			set this.m_character = character
 			call this.createKeyTrigger()
-			set this.m_cameraDistance = bj_CAMERA_DEFAULT_DISTANCE
 
 			return this
 		endmethod

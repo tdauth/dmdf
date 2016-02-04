@@ -22,6 +22,7 @@ library StructGuisMainWindow requires Asl, StructMapMapMapData
 			local player whichPlayer = this.gui().player()
 			call Character(Character.playerCharacter(whichPlayer)).hideCharactersSchemeForPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setMovable(false)
+			call Character(ACharacter.playerCharacter(whichPlayer)).setCameraTimer(false)
 			call this.gui().setOnPressShortcutAction(AGui.shortcutEscape, thistype.onHideActionHide, this)
 		endmethod
 
@@ -31,6 +32,7 @@ library StructGuisMainWindow requires Asl, StructMapMapMapData
 			call Character(Character.playerCharacter(whichPlayer)).showCharactersSchemeToPlayer()
 			call MapData.resetCameraBoundsForPlayer(whichPlayer)
 			call ACharacter.playerCharacter(whichPlayer).panCameraSmart()
+			call Character(ACharacter.playerCharacter(whichPlayer)).setCameraTimer(true)
 			set whichPlayer = null
 		endmethod
 

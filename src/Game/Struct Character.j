@@ -135,6 +135,8 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 	 * This additional specialized struct is required for interaction with \ref Grimoire, \ref MainMenu, \ref InfoLog and metamorphosis spells.
 	 */
 	struct Character extends ACharacter
+		public static constant real defaultCameraDistance =  bj_CAMERA_DEFAULT_DISTANCE + 500.0
+		public static constant real cameraTimerInterval = 0.01
 		// dynamic members
 		private boolean m_isInPvp
 		private boolean m_showCharactersScheme
@@ -158,6 +160,14 @@ endif
 		 */
 		private AIntegerVector m_quests
 		private AIntegerVector m_fellows
+		
+		/**
+		 * Allows setting a custom camera distance.
+		 * The initial camera distance is different from the camera distance of Warcraft III which is \ref bj_CAMERA_DEFAULT_DISTANCE because the Doodads are much bigger.
+		 */
+		private real m_cameraDistance
+		private timer m_cameraTimer
+		private boolean m_cameraTimerEnabled
 
 		private boolean m_isMorphed
 		
@@ -194,12 +204,19 @@ endif
 			return this.m_isInPvp
 		endmethod
 
+		/**
+		 * Enables or disables the 3rd person camera view.
+		 * \param enabled If this value is true the 3rd person camera view will be enabled. Otherwise it will be disabled.
+		 * \note If it gets disabled the camera timer applying the custom camera distance will be started again.
+		 */
 		public method setView takes boolean enabled returns nothing
 			if (not enabled and this.view().enableAgain()) then
 				call this.view().setEnableAgain(false)
 				call this.view().disable()
 				call ResetToGameCameraForPlayer(this.player(), 0.0)
+				call this.setCameraTimer.evaluate(true)
 			elseif (enabled and not this.view().enableAgain()) then
+				call this.setCameraTimer.evaluate(false)
 				call this.view().setEnableAgain(true)
 				call this.view().enable()
 			debug else
@@ -466,6 +483,40 @@ endif
 			return true
 		endmethod
 		
+		public method setCameraDistance takes real cameraDistance returns nothing
+			set this.m_cameraDistance = cameraDistance
+			call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
+		endmethod
+		
+		public method cameraDistance takes nothing returns real
+			return this.m_cameraDistance
+		endmethod
+		
+		private static method timerFunctionCamera takes nothing returns nothing
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
+			if (not this.isViewEnabled() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown()) then
+				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, thistype.cameraTimerInterval)
+			endif
+		endmethod
+		
+		/**
+		 * Enables or disables the camera timer which applies the custom camera distance.
+		 */
+		public method setCameraTimer takes boolean enabled returns nothing
+			if (enabled and this.isViewEnabled()) then
+				return
+			endif
+			set this.m_cameraTimerEnabled = enabled
+			if (enabled) then
+				call TimerStart(this.m_cameraTimer, thistype.cameraTimerInterval, true, function thistype.timerFunctionCamera)
+			else
+				call PauseTimer(this.m_cameraTimer)
+			endif
+		endmethod
+		
+		/**
+		 * The character crafts an item of item type \p itemTypeId which calls all registered \ref onCraftItemFunction() instances with .evaluate.
+		 */
 		public method craftItem takes integer itemTypeId returns nothing
 			local integer i = 0
 			loop
@@ -571,6 +622,18 @@ endif
 			debug call Print("Selected worker")
 		endmethod
 		
+		private static method triggerConditionSpawnIllusion takes nothing returns boolean
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			
+			return GetSummoningUnit() == this.unit() and IsUnitIllusion(GetSummonedUnit()) and not this.isMorphed()
+		endmethod
+		
+		private static method triggerActionSpawnIllusion takes nothing returns nothing
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			debug call Print("Spawning illusion")
+			call this.m_illusionOrderAnimations.pushBack(OrderAnimations.create(this, GetSummonedUnit()))
+		endmethod
+		
 		private static method triggerConditionIllusionDies takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local AIntegerListIterator iterator = 0
@@ -590,18 +653,6 @@ endif
 			endif
 			
 			return false
-		endmethod
-		
-		private static method triggerConditionSpawnIllusion takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			
-			return GetSummoningUnit() == this.unit() and IsUnitIllusion(GetSummonedUnit()) and not this.isMorphed()
-		endmethod
-		
-		private static method triggerActionSpawnIllusion takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			debug call Print("Spawning illusion")
-			call this.m_illusionOrderAnimations.pushBack(OrderAnimations.create(this, GetSummonedUnit()))
 		endmethod
 		
 		private static method triggerActionDance takes nothing returns nothing
@@ -659,6 +710,14 @@ endif
 			endif
 			set this.m_isMorphed = false
 			
+			/*
+			 * We need a larger distance since the Doodads are much bigger in this modification than in the usual Warcraft III.
+			 */
+			set this.m_cameraDistance = thistype.defaultCameraDistance // NOTE updated UI/MiscData.txt
+			set this.m_cameraTimer = CreateTimer()
+			call DmdfHashTable.global().setHandleInteger(this.m_cameraTimer, "this", this)
+			call this.setCameraTimer(true)
+			
 			set this.m_orderAnimations = OrderAnimations.create(this, this.unit())
 			set this.m_illusionOrderAnimations = AIntegerList.create()
 			
@@ -696,6 +755,11 @@ static if (DMDF_INFO_LOG) then
 endif
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0
+			
+			call PauseTimer(this.m_cameraTimer)
+			call DmdfHashTable.global().destroyTimer(this.m_cameraTimer)
+			set this.m_cameraTimer = null
+			
 			call this.m_orderAnimations.destroy()
 			call this.m_illusionOrderAnimations.destroy()
 			call DmdfHashTable.global().destroyTrigger(this.m_spawnIllusionTrigger)

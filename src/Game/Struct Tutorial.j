@@ -217,7 +217,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Kontakt", "Info: Contact"))
-			call QuestSetDescription(whichQuest, tre("E-Mail: barade.barade@web.de", "Email: barade.barade@web.de"))
+			call QuestSetDescription(whichQuest, tre("E-Mail: barade.barade@web.de\nWebsite: http://wc3lib.org", "Email: barade.barade@web.de\nWebsite: http://wc3lib.org"))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPossession.blp")
 			call QuestSetCompleted(whichQuest, true)
 		endmethod

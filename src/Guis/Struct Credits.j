@@ -61,6 +61,10 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		endmethod
 	endstruct
 
+	/**
+	 * \brief The Credits GUI is placed at the class selection and shows all contributors of the project using floating text tags.
+	 * All contributors have to be added in the file "src/Game/Credits.j" which is imported and adds all contributors to a global list.
+	 */
 	struct Credits extends MainWindow
 		// static members
 		private static AIntegerVector m_contributors

@@ -893,6 +893,8 @@ endif
 					if (Character(ACharacter.playerCharacter(Player(i))).credits() != 0 and  Character(ACharacter.playerCharacter(Player(i))).credits().isShown()) then
 						call Character(ACharacter.playerCharacter(Player(i))).credits().hide()
 					endif
+					
+					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(false)
 				endif
 				set i = i + 1
 			endloop
@@ -964,7 +966,7 @@ endif
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().enableLevelTrigger()
 					call ACharacter.playerCharacter(Player(i)).panCameraSmart()
-					call SetCameraFieldForPlayer(Player(i), CAMERA_FIELD_TARGET_DISTANCE, Character(ACharacter.playerCharacter(Player(i))).mainMenu().cameraDistance.evaluate(), 0.0)
+					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(true)
 				endif
 				
 				set i = i + 1
