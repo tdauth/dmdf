@@ -373,6 +373,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call MapData.resetCameraBoundsForPlayer.evaluate(whichPlayer)
 				call ACharacter.playerCharacter(whichPlayer).panCameraSmart()
 				call ACharacter.playerCharacter(whichPlayer).select(false)
+				call Character(ACharacter.playerCharacter(whichPlayer)).setCameraTimer(true)
 			endif
 			set whichPlayer = null
 		endmethod
@@ -531,6 +532,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		
 		private static method triggerActionRepick takes nothing returns nothing
 			debug call Print("Repick!")
+			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).setCameraTimer(false)
 			call SetCameraBoundsToRectForPlayerBJ(GetTriggerPlayer(), GetPlayableMapRect())
 			call ACharacter.playerCharacter(GetTriggerPlayer()).setMovable(false)
 			call thistype.createClassSelectionForPlayer(GetTriggerPlayer())

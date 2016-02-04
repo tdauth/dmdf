@@ -36820,7 +36820,7 @@ Ruft Verstärkung aus dem Heer der Hochelfen.
 STRING 6151
 // Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bestiehlt eine Einheit, die nicht dem Spieler gehört. Die Ziel-Einheit kann erst nach 40 Sekunden erneut bestohlen werden. |n|n|cffffcc00Stufe 1|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit.|n|cffffcc00Stufe 2|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 2.|n|cffffcc00Stufe 3|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 3.|n|cffffcc00Stufe 4|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 4.|n|cffffcc00Stufe 5|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 5.
+Stealing from a unit that does not belong to the player. The target unit can be robbed again after 40 seconds. |n|n|cffffcc00Level 1|r - Steals for all players gold coins equal to the level of the unit.|n|cffffcc00Level 2|r - Steals for all players gold coins equal to the level of the unit multiplied by 2.|n|cffffcc00Level 3|r - Steals for all players gold coins equal to the level of the unit multiplied by 3.|n|cffffcc00Level 4|r - Steals for all players gold coins equal to the level of the unit multiplied by 4.|n|cffffcc00Level 5|r - Steals for all players gold coins equal to the level of the unit multiplied by 5.
 }
 
 STRING 6152
@@ -36904,7 +36904,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 6165
 // Fähigkeiten: A1CH (Bestehlen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bestiehlt eine Einheit, die nicht dem Spieler gehört. Die Ziel-Einheit kann erst nach 40 Sekunden erneut bestohlen werden. |n|n|cffffcc00Stufe 1|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit.|n|cffffcc00Stufe 2|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 2.|n|cffffcc00Stufe 3|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 3.|n|cffffcc00Stufe 4|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 4.|n|cffffcc00Stufe 5|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 5.
+Stealing from a unit that does not belong to the player. The target unit can be robbed again after 40 seconds. |n|n|cffffcc00Level 1|r - Steals for all players gold coins equal to the level of the unit.|n|cffffcc00Level 2|r - Steals for all players gold coins equal to the level of the unit multiplied by 2.|n|cffffcc00Level 3|r - Steals for all players gold coins equal to the level of the unit multiplied by 3.|n|cffffcc00Level 4|r - Steals for all players gold coins equal to the level of the unit multiplied by 4.|n|cffffcc00Level 5|r - Steals for all players gold coins equal to the level of the unit multiplied by 5.
 }
 
 STRING 6166
@@ -66553,7 +66553,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11106
 // Fähigkeiten: A0ZA (Erdgefängnis - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 1|r]
+Earth Prison [|cffffcc00Level 1|r]
 }
 
 STRING 11107
@@ -66637,7 +66637,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11120
 // Fähigkeiten: A0ZB (Erdgefängnis - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 2|r]
+Earth Prison [|cffffcc00Level 2|r]
 }
 
 STRING 11121
@@ -66721,7 +66721,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11134
 // Fähigkeiten: A0ZC (Erdgefängnis - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 3|r]
+Earth Prison [|cffffcc00Level 3|r]
 }
 
 STRING 11135
@@ -66805,7 +66805,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11148
 // Fähigkeiten: A0ZD (Erdgefängnis - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 4|r]
+Earth Prison [|cffffcc00Level 4|r]
 }
 
 STRING 11149
@@ -66889,7 +66889,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 11162
 // Fähigkeiten: A0ZE (Erdgefängnis - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 5|r]
+Earth Prison [|cffffcc00Level 5|r]
 }
 
 STRING 11163
@@ -77162,7 +77162,7 @@ Steigt vom Schaf ab.
 STRING 12874
 // Einheiten: H01J (Drachentöter), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 12875
@@ -78140,7 +78140,7 @@ Drachentöter
 STRING 13037
 // Einheiten: H01K (Drachentöter), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13038
@@ -78218,7 +78218,7 @@ Nekromant
 STRING 13050
 // Einheiten: H01N (Nekromant), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13051
@@ -78236,7 +78236,7 @@ Nekromant
 STRING 13053
 // Einheiten: H01O (Nekromant), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13054
@@ -78254,7 +78254,7 @@ Druid
 STRING 13056
 // Einheiten: H01P (Druide), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13057
@@ -78272,7 +78272,7 @@ Druid
 STRING 13059
 // Einheiten: H01Q (Druide), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13060
@@ -78290,7 +78290,7 @@ Ritter
 STRING 13062
 // Einheiten: H01R (Ritter), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13063
@@ -78308,7 +78308,7 @@ Ritter
 STRING 13065
 // Einheiten: H01S (Ritter), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13066
@@ -78326,7 +78326,7 @@ Waldläufer
 STRING 13068
 // Einheiten: H01T (Waldläufer), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13069
@@ -78344,7 +78344,7 @@ Waldläufer
 STRING 13071
 // Einheiten: H01U (Waldläufer), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13072
@@ -78362,7 +78362,7 @@ Elementarmagier
 STRING 13074
 // Einheiten: H01V (Elementarmagier), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13075
@@ -78380,7 +78380,7 @@ Elementarmagier
 STRING 13077
 // Einheiten: H01W (Elementarmagier), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13078
@@ -78398,7 +78398,7 @@ Zauberer
 STRING 13080
 // Einheiten: H01X (Zauberer), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13081
@@ -78416,7 +78416,7 @@ Zauberer
 STRING 13083
 // Einheiten: H01Y (Zauberer), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Schaf
+Man on a sheep
 }
 
 STRING 13084
@@ -78842,18 +78842,18 @@ Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|
 
 STRING 13153
 {
-Shared missions
+Shared Missions
 }
 
 STRING 13154
 {
-Own missions
+Own Missions
 }
 
 STRING 13155
 // Gegenstände: I053 (Ring der Stärke), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht die Stärke des Trägers um <AIs3,DataA1>.
+Increases the strength of the carrier by <AIs3,DataA1>.
 }
 
 STRING 13156
@@ -78889,7 +78889,7 @@ Buy Ring of Dexterity
 STRING 13161
 // Gegenstände: I055 (Ring der Treue), Name (Name (unam))
 {
-Ring der Treue
+Ring of Loyalty
 }
 
 STRING 13162
@@ -78907,13 +78907,13 @@ Increases all attributes of the wearing unit by 2.
 STRING 13164
 // Gegenstände: I055 (Ring der Treue), Tip (Tooltipp - Einfach (utip))
 {
-Ring der Treue kaufen
+Buy Ring of Loyalty
 }
 
 STRING 13165
 // Einheiten: u00C (Armseliger Imp-Arbeiter), Name (Name (unam))
 {
-Armseliger Imp-Arbeiter
+Miserable Imp Worker
 }
 
 STRING 13166
@@ -78973,31 +78973,31 @@ Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ri
 STRING 13175
 // Fähigkeiten: A0LV (Verspotten - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The knight taunts a target that it becomes angry and attacks the kinght in blind rage. |n|n|cffffcc00Level 1|r -  The selected target attacks for 5 seconds only the knight. Damage from the target against the knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target attacks for 6 seconds only the knight. Damage from the target against the knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target attacks for 7 seconds only the knight. Damage from the target against the knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target attacks for 8 seconds only the knight. Damage from the target against the knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target attacks for 9 seconds only the knight. Damage from the target against the knight deals only 40 % of the original damage.
 }
 
 STRING 13176
 // Fähigkeiten: A0LW (Verspotten - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The knight taunts a target that it becomes angry and attacks the kinght in blind rage. |n|n|cffffcc00Level 1|r -  The selected target attacks for 5 seconds only the knight. Damage from the target against the knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target attacks for 6 seconds only the knight. Damage from the target against the knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target attacks for 7 seconds only the knight. Damage from the target against the knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target attacks for 8 seconds only the knight. Damage from the target against the knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target attacks for 9 seconds only the knight. Damage from the target against the knight deals only 40 % of the original damage.
 }
 
 STRING 13177
 // Fähigkeiten: A0LX (Verspotten - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The knight taunts a target that it becomes angry and attacks the kinght in blind rage. |n|n|cffffcc00Level 1|r -  The selected target attacks for 5 seconds only the knight. Damage from the target against the knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target attacks for 6 seconds only the knight. Damage from the target against the knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target attacks for 7 seconds only the knight. Damage from the target against the knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target attacks for 8 seconds only the knight. Damage from the target against the knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target attacks for 9 seconds only the knight. Damage from the target against the knight deals only 40 % of the original damage.
 }
 
 STRING 13178
 // Fähigkeiten: A0LY (Verspotten - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The knight taunts a target that it becomes angry and attacks the kinght in blind rage. |n|n|cffffcc00Level 1|r -  The selected target attacks for 5 seconds only the knight. Damage from the target against the knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target attacks for 6 seconds only the knight. Damage from the target against the knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target attacks for 7 seconds only the knight. Damage from the target against the knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target attacks for 8 seconds only the knight. Damage from the target against the knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target attacks for 9 seconds only the knight. Damage from the target against the knight deals only 40 % of the original damage.
 }
 
 STRING 13179
 // Fähigkeiten: A0LZ (Verspotten - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The knight taunts a target that it becomes angry and attacks the kinght in blind rage. |n|n|cffffcc00Level 1|r -  The selected target attacks for 5 seconds only the knight. Damage from the target against the knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target attacks for 6 seconds only the knight. Damage from the target against the knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target attacks for 7 seconds only the knight. Damage from the target against the knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target attacks for 8 seconds only the knight. Damage from the target against the knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target attacks for 9 seconds only the knight. Damage from the target against the knight deals only 40 % of the original damage.
 }
 
 STRING 13180
@@ -79063,25 +79063,25 @@ Der Drachentöter schlägt kraftvoll zu und fügt dem angewählten Ziel Schaden 
 STRING 13190
 // Gegenstände: I058 (Fell eines wilden Bärenmenschen), Name (Name (unam))
 {
-Fell eines wilden Bärenmenschen
+Fur of a Wild Bear Man
 }
 
 STRING 13191
 // Gegenstände: I058 (Fell eines wilden Bärenmenschen), Description (Beschreibung (ides))
 {
-Das Fell eines wilden Bärenmenschen.
+The fur of a wild bear man.
 }
 
 STRING 13192
 // Gegenstände: I058 (Fell eines wilden Bärenmenschen), Tip (Tooltipp - Einfach (utip))
 {
-Fell eines wilden Bärenmenschen kaufen
+Buy Fur of a Wild Bear Man
 }
 
 STRING 13193
 // Gegenstände: I058 (Fell eines wilden Bärenmenschen), Ubertip (Tooltipp - Erweitert (utub))
 {
-Das Fell eines wilden Bärenmenschen.
+The fur of a wild bear man.
 }
 
 STRING 13194
@@ -79153,7 +79153,7 @@ STRING 13204
 STRING 13205
 // Gegenstände: I052 (Ring der Weisheit), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht das Wissen des Trägers um <AIi3,DataB1>.
+Increases the lore of the carrier by <AIi3,DataB1>.
 }
 
 STRING 13206
@@ -91843,13 +91843,13 @@ Bestiehlt eine Einheit, die nicht dem Spieler gehört. Stiehlt für alle Spieler
 STRING 15320
 // Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bestiehlt eine Einheit, die nicht dem Spieler gehört. Die Ziel-Einheit kann erst nach 40 Sekunden erneut bestohlen werden. |n|n|cffffcc00Stufe 1|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit.|n|cffffcc00Stufe 2|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 2.|n|cffffcc00Stufe 3|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 3.|n|cffffcc00Stufe 4|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 4.|n|cffffcc00Stufe 5|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 5.
+Stealing from a unit that does not belong to the player. The target unit can be robbed again after 40 seconds. |n|n|cffffcc00Level 1|r - Steals for all players gold coins equal to the level of the unit.|n|cffffcc00Level 2|r - Steals for all players gold coins equal to the level of the unit multiplied by 2.|n|cffffcc00Level 3|r - Steals for all players gold coins equal to the level of the unit multiplied by 3.|n|cffffcc00Level 4|r - Steals for all players gold coins equal to the level of the unit multiplied by 4.|n|cffffcc00Level 5|r - Steals for all players gold coins equal to the level of the unit multiplied by 5.
 }
 
 STRING 15321
 // Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Undead regenerate their hitpoints faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 15322
@@ -91885,13 +91885,13 @@ Verfluchter Boden
 STRING 15328
 // Fähigkeiten: A1AH (Nixenstein), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Taucht aus dem Wasser auf.
+Diving out of the water.
 }
 
 STRING 15329
 // Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 1|r]
+Cursed Ground [|cffffcc00Level 1|r]
 }
 
 STRING 15330
@@ -91921,31 +91921,31 @@ Ein Blitzschlag erfasst das Ziel, verursacht X Punkte Schaden und wirft es um ei
 STRING 15334
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 2|r]
+Cursed Ground [|cffffcc00Level 2|r]
 }
 
 STRING 15335
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 3|r]
+Cursed Ground [|cffffcc00Level 3|r]
 }
 
 STRING 15336
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 4|r]
+Cursed Ground [|cffffcc00Level 4|r]
 }
 
 STRING 15337
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 5|r]
+Cursed Ground [|cffffcc00Level 5|r]
 }
 
 STRING 15338
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 1|r]
+Cursed Ground [|cffffcc00Level 1|r]
 }
 
 STRING 15339
@@ -94381,7 +94381,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 15744
 // Fähigkeiten: A1CK (Bestehlen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bestiehlt eine Einheit, die nicht dem Spieler gehört. Die Ziel-Einheit kann erst nach 40 Sekunden erneut bestohlen werden. |n|n|cffffcc00Stufe 1|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit.|n|cffffcc00Stufe 2|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 2.|n|cffffcc00Stufe 3|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 3.|n|cffffcc00Stufe 4|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 4.|n|cffffcc00Stufe 5|r - Stiehlt für alle Spieler Goldmünzen in Höhe der Stufe der Einheit mal 5.
+Stealing from a unit that does not belong to the player. The target unit can be robbed again after 40 seconds. |n|n|cffffcc00Level 1|r - Steals for all players gold coins equal to the level of the unit.|n|cffffcc00Level 2|r - Steals for all players gold coins equal to the level of the unit multiplied by 2.|n|cffffcc00Level 3|r - Steals for all players gold coins equal to the level of the unit multiplied by 3.|n|cffffcc00Level 4|r - Steals for all players gold coins equal to the level of the unit multiplied by 4.|n|cffffcc00Level 5|r - Steals for all players gold coins equal to the level of the unit multiplied by 5.
 }
 
 STRING 15745
@@ -95637,31 +95637,31 @@ Der Elementarmagier schließt einen Gegner bis zu 4 Sekunden in einem Erdgefäng
 STRING 15953
 // Fähigkeiten: A0ZA (Erdgefängnis - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+The elemental mage traps an opponent in an earth prison for some time. During this time he cannot act. The prison removes all negative effects from the target and is broken by hostile damage. |n|n|cffffcc00Level 1|r - Lasts 2 seconds. |n|cffffcc00Level 2|r - Lasts 2,5 seconds. |n|cffffcc00Level 3|r - Lasts 3 seconds. |n|cffffcc00Level 4|r - Lasts 3,5 seconds. |n|cffffcc00Level 5|r - Lasts 4 seconds.
 }
 
 STRING 15954
 // Fähigkeiten: A0ZB (Erdgefängnis - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+The elemental mage traps an opponent in an earth prison for some time. During this time he cannot act. The prison removes all negative effects from the target and is broken by hostile damage. |n|n|cffffcc00Level 1|r - Lasts 2 seconds. |n|cffffcc00Level 2|r - Lasts 2,5 seconds. |n|cffffcc00Level 3|r - Lasts 3 seconds. |n|cffffcc00Level 4|r - Lasts 3,5 seconds. |n|cffffcc00Level 5|r - Lasts 4 seconds.
 }
 
 STRING 15955
 // Fähigkeiten: A0ZC (Erdgefängnis - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+The elemental mage traps an opponent in an earth prison for some time. During this time he cannot act. The prison removes all negative effects from the target and is broken by hostile damage. |n|n|cffffcc00Level 1|r - Lasts 2 seconds. |n|cffffcc00Level 2|r - Lasts 2,5 seconds. |n|cffffcc00Level 3|r - Lasts 3 seconds. |n|cffffcc00Level 4|r - Lasts 3,5 seconds. |n|cffffcc00Level 5|r - Lasts 4 seconds.
 }
 
 STRING 15956
 // Fähigkeiten: A0ZD (Erdgefängnis - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+The elemental mage traps an opponent in an earth prison for some time. During this time he cannot act. The prison removes all negative effects from the target and is broken by hostile damage. |n|n|cffffcc00Level 1|r - Lasts 2 seconds. |n|cffffcc00Level 2|r - Lasts 2,5 seconds. |n|cffffcc00Level 3|r - Lasts 3 seconds. |n|cffffcc00Level 4|r - Lasts 3,5 seconds. |n|cffffcc00Level 5|r - Lasts 4 seconds.
 }
 
 STRING 15957
 // Fähigkeiten: A0ZE (Erdgefängnis - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier schließt einen Gegner bis eine Zeit lang in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.. |n|n|cffffcc00Stufe 1|r - Hält 2 Sekunden. |n|cffffcc00Stufe 2|r - Hält 2,5 Sekunden. |n|cffffcc00Stufe 3|r - Hält 3 Sekunden. |n|cffffcc00Stufe 4|r - Hält 3,5 Sekunden. |n|cffffcc00Stufe 5|r - Hält 4 Sekunden.
+The elemental mage traps an opponent in an earth prison for some time. During this time he cannot act. The prison removes all negative effects from the target and is broken by hostile damage. |n|n|cffffcc00Level 1|r - Lasts 2 seconds. |n|cffffcc00Level 2|r - Lasts 2,5 seconds. |n|cffffcc00Level 3|r - Lasts 3 seconds. |n|cffffcc00Level 4|r - Lasts 3,5 seconds. |n|cffffcc00Level 5|r - Lasts 4 seconds.
 }
 
 STRING 15958
@@ -95745,73 +95745,73 @@ Springt zum aktuellen Zielpunkt des Auftrags.
 STRING 15971
 // Gegenstände: I067 (Eisenpanzer), Name (Name (unam))
 {
-Eisenpanzer
+Iron Armour
 }
 
 STRING 15972
 // Gegenstände: I067 (Eisenpanzer), Tip (Tooltipp - Einfach (utip))
 {
-Eisenpanzer kaufen
+Buy Iron Armour
 }
 
 STRING 15973
 // Gegenstände: I067 (Eisenpanzer), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A1E4,DataA1>.
+Increases the armour by <A1E4,DataA1>.
 }
 
 STRING 15974
 // Gegenstände: I067 (Eisenpanzer), Description (Beschreibung (ides))
 {
-Eine eiserne Rüstung.
+An iron armour.
 }
 
 STRING 15975
 // Gegenstände: I068 (Ritterschild), Name (Name (unam))
 {
-Ritterschild
+Knight Buckler
 }
 
 STRING 15976
 // Gegenstände: I068 (Ritterschild), Description (Beschreibung (ides))
 {
-Der Schild eines Ritters.
+The buckler of a knight.
 }
 
 STRING 15977
 // Gegenstände: I068 (Ritterschild), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A1E5,DataA1>. Erlaubt es dem Träger langsamer zu laufen und dafür mehr Schaden abzublocken.
+Increases the armour by <A1E5,DataA1>. Allows the carrying unit to move slower and to block more damage for it.
 }
 
 STRING 15978
 // Gegenstände: I068 (Ritterschild), Tip (Tooltipp - Einfach (utip))
 {
-Ritterschild kaufen
+Buy Knight Buckler
 }
 
 STRING 15979
 // Gegenstände: I069 (Schädelmaske), Name (Name (unam))
 {
-Schädelmaske
+Skull Mask
 }
 
 STRING 15980
 // Gegenstände: I069 (Schädelmaske), Tip (Tooltipp - Einfach (utip))
 {
-Schädelmaske kaufen
+Buy Skull Mask
 }
 
 STRING 15981
 // Gegenstände: I069 (Schädelmaske), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A1E9,DataA1> und erhöht das Wissen um <A1E8,DataC1>. Erlaubt es mit einem Zauber verbündete Untote zu heilen oder feindlichen Nicht-Untoten Schaden zuzufügen.
+Increases the armour by <A1E9,DataA1> and increases the lore by <A1E8,DataC1>. Allows to heal allied undead or to damage hostile non-undead with a spell.
 }
 
 STRING 15982
 // Gegenstände: I069 (Schädelmaske), Description (Beschreibung (ides))
 {
-Eine magische Schädelmaske.
+A magical skull mask.
 }
 
 STRING 15983
@@ -96063,31 +96063,31 @@ STRING 16023
 STRING 16024
 // Fähigkeiten: A10W (Sprinten - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16025
 // Fähigkeiten: A10X (Sprinten - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16026
 // Fähigkeiten: A10Y (Sprinten - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16027
 // Fähigkeiten: A10Z (Sprinten - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16028
 // Fähigkeiten: A110 (Sprinten - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16029
@@ -96141,19 +96141,19 @@ Increases the movement speed of the ranger by <A1EK,DataA1,%> % for <A1EK,Dur1> 
 STRING 16037
 // Gegenstände: I06H (Flügel von Deranors Leibwache), Tip (Tooltipp - Einfach (utip))
 {
-Nixenstein kaufen
+Buy Neck Stone
 }
 
 STRING 16038
 // Gegenstände: I06H (Flügel von Deranors Leibwache), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in Deranors Leibwache.
+Transforms the carrying unit into Deranor's bodyguard.
 }
 
 STRING 16039
 // Gegenstände: I06H (Flügel von Deranors Leibwache), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in Deranors Leibwache.
+Transforms the carrying unit into Deranor's bodyguard.
 }
 
 STRING 16040
@@ -100913,13 +100913,13 @@ STRING 16832
 STRING 16833
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Undead regenerate their hitpoints faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 16834
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 2|r]
+Cursed Ground [|cffffcc00Level 2|r]
 }
 
 STRING 16835
@@ -100937,13 +100937,13 @@ Verfluchter Boden - Stufe 2
 STRING 16837
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Undead regenerate their hitpoints faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 16838
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 3|r]
+Cursed Ground [|cffffcc00Level 3|r]
 }
 
 STRING 16839
@@ -100961,13 +100961,13 @@ Verfluchter Boden - Stufe 3
 STRING 16841
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Undead regenerate their hitpoints faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 16842
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 4|r]
+Cursed Ground [|cffffcc00Level 4|r]
 }
 
 STRING 16843
@@ -100985,13 +100985,13 @@ Verfluchter Boden - Stufe 4
 STRING 16845
 // Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Undead regenerate their hitpoints faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 16846
 // Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 5|r]
+Cursed Ground [|cffffcc00Level 5|r]
 }
 
 STRING 16847
@@ -102143,601 +102143,601 @@ Schnellen Handel Stufe 100 erforschen
 STRING 17038
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17039
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17040
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17041
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17042
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17043
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17044
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17045
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17046
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17047
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17048
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17049
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17050
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17051
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17052
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17053
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17054
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17055
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17056
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17057
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17058
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17059
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17060
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17061
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17062
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17063
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17064
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17065
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17066
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17067
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17068
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17069
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17070
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17071
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17072
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17073
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17074
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17075
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17076
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17077
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17078
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17079
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17080
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17081
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17082
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17083
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17084
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17085
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17086
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17087
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17088
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17089
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17090
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17091
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17092
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17093
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17094
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17095
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17096
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17097
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17098
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17099
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17100
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17101
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17102
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17103
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17104
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17105
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17106
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17107
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17108
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17109
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17110
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17111
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17112
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17113
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17114
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17115
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17116
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17117
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17118
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17119
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17120
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17121
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17122
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17123
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17124
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17125
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17126
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17127
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17128
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17129
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17130
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17131
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17132
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17133
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17134
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17135
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17136
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17137
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of pack horses.
 }
 
 STRING 17138
