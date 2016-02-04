@@ -41,30 +41,30 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, true, tr("He Fremder! Woher kommst du?"), null)
+			call speech(info, character, true, tre("He Fremder! Woher kommst du?", "Hey stranger! Where are you from?"), null)
 			call info.talk().showRange(this.m_fromFarAway.index(), this.m_noneOfYourBusiness.index(), character)
 		endmethod
 
 		// Woher kennst du Dago?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Woher kennst du Dago?"), null)
-			call speech(info, character, true, tr("Er wohnt in der unteren Hütte und ist mit mir der einzige Jäger in Talras."), null)
-			call speech(info, character, true, tr("Ich bin übrigens Björn."), null)
+			call speech(info, character, false, tre("Woher kennst du Dago?", "Where do you know Dago from?"), null)
+			call speech(info, character, true, tre("Er wohnt in der unteren Hütte und ist mit mir der einzige Jäger in Talras.", "He lives in the lower hut and is with me the only hunter in Talras."), null)
+			call speech(info, character, true, tre("Ich bin übrigens Björn.", "Anyway, I'm Björn."), null)
 			// (Björns Frau ist in der Nähe)
 			if (IsUnitInRange(gg_unit_n02U_0142, gg_unit_n02V_0146, 600.0)) then
-				call speech(info, character, false, tr("Ist das deine Frau?"), null)
-			endif
-			call speech(info, character, true, tr("Ja und lass dir bloß nichts Dummes einfallen. Wenn du sie blöd anmachst oder anquatscht, prügel ich dir deine Dreck￼sfresse zu Brei, verstanden?"), null)
-			// (Auftrag ￼„Felle für die Bauern￼“ nicht abgeschlossen)
-			if (not QuestCoatsForThePeasants.characterQuest(character).isCompleted()) then
-				call speech(info, character, false, tr("Komm mal wieder runter! Ich hab doch nur gefragt."), null)
-				call speech(info, character, true, tr("Schon gut, aber bei sowas verstehe ich keinen Spaß und habe schon schlechte Erfahrung mit Landstreichern gemacht."), null)
-			// (Auftrag ￼„Felle für die Bauern￼“ abgeschlossen)
-			else
-				call speech(info, character, false, tr("So so, du ￼Riese."), null)
-				call speech(info, character, true, tr("Ich ... äh ... ich, ich meine ... ich wollte nicht ... ich wollte nur ..."), null)
-				call speech(info, character, false, tr("Höflich sagen, dass ich deine Frau gut behandeln soll?"), null)
-				call speech(info, character, true, tr("Ja, ich meine ... ja, genau das!"), null)
+				call speech(info, character, false, tre("Ist das deine Frau?", "Is that your wife?"), null)
+				call speech(info, character, true, tre("Ja und lass dir bloß nichts Dummes einfallen. Wenn du sie blöd anmachst oder anquatscht, prügel ich dir deine Dreck￼sfresse zu Brei, verstanden?", "Yes, and don't think about anything stupid. If you pick her up stupidly or talk to her I beat your dirt face to mush, understood?"), null)
+				// (Auftrag ￼„Felle für die Bauern￼“ nicht abgeschlossen)
+				if (not QuestCoatsForThePeasants.characterQuest(character).isCompleted()) then
+					call speech(info, character, false, tre("Komm mal wieder runter! Ich hab doch nur gefragt.", "Calm down! I just asked."), null)
+					call speech(info, character, true, tre("Schon gut, aber bei sowas verstehe ich keinen Spaß und habe schon schlechte Erfahrung mit Landstreichern gemacht.", "All right, but with this don't understand any fun and have already had bad experience with vagrants."), null)
+				// (Auftrag ￼„Felle für die Bauern￼“ abgeschlossen)
+				else
+					call speech(info, character, false, tre("So so, du ￼Riese.", "Is that so you giant?"), null)
+					call speech(info, character, true, tre("Ich ... äh ... ich, ich meine ... ich wollte nicht ... ich wollte nur ...", "I ... uh ... I, I mean ... I did not ... I just wanted ..."), null)
+					call speech(info, character, false, tre("Höflich sagen, dass ich deine Frau gut behandeln soll?", "Politely say that I should treat your wife well?"), null)
+					call speech(info, character, true, tre("Ja, ich meine ... ja, genau das!", "Yes, I mean ... yes, exactly!"), null)
+				endif
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
@@ -76,11 +76,11 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 		// Was machst du hier?
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was machst du hier?"), null)
-			call speech(info, character, true, tr("Ich verkaufe dem Bauern Manfred Felle. Allerdings fehlen mir noch ￼Riesen-Felle. Die Viecher sind einfach zu stark für mich und ich bleibe lieber am Leben als dass ich ein besseres Geschäft mache."), null)
-			call speech(info, character, false, tr("￼Riesen-Felle?"), null)
-			call speech(info, character, true, tr("Ja, östlich vom Fluss leben einige ￼Riesen. Die sind groß und haben folglich große Felle, die man sehr teuer verkaufen kann. Du müsstest mit Trommons Fähre rüberfahren."), null)
-			call speech(info, character, true, tr("Allerdings würde ich dir das nicht empfehlen, da die Viecher einfach verdammt aggressiv und stark sind. Mit drei dieser verdammten Felle hätte ich bestimmt den Gewinn eines ganzen Jahres drinnen."), null)
+			call speech(info, character, false, tre("Was machst du hier?", "What are you doing here?"), null)
+			call speech(info, character, true, tre("Ich verkaufe dem Bauern Manfred Felle. Allerdings fehlen mir noch ￼Riesen-Felle. Die Viecher sind einfach zu stark für mich und ich bleibe lieber am Leben als dass ich ein besseres Geschäft mache.", "I sell furs to the farmer Manfred. However, I still need some giant furs. These critters are just too strong for me and I prefer to stay alive than doing a better business."), null)
+			call speech(info, character, false, tre("￼Riesen-Felle?", "Giant furs?"), null)
+			call speech(info, character, true, tre("Ja, östlich vom Fluss leben einige ￼Riesen. Die sind groß und haben folglich große Felle, die man sehr teuer verkaufen kann. Du müsstest mit Trommons Fähre rüberfahren.", "Yes, east of the river live some giants. They are large and therefore have large furs which you can sell very expensive. You'd have to cross the river with Trommon's ferryboat."), null)
+			call speech(info, character, true, tre("Allerdings würde ich dir das nicht empfehlen, da die Viecher einfach verdammt aggressiv und stark sind. Mit drei dieser verdammten Felle hätte ich bestimmt den Gewinn eines ganzen Jahres drinnen.", "However, I would not recommend you this because the critters are just damn aggressive and strong. WIth three of those damned furs I certainly would have the profit of a whole year."), null)
 			// Neuer Auftrag ￼„Felle für die Bauern￼“
 			call QuestCoatsForThePeasants.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
@@ -94,13 +94,13 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		// Ich habe hier drei Riesen-Felle.
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Ich habe hier drei Riesen-Felle."), null)
+			call speech(info, character, false, tre("Ich habe hier drei Riesen-Felle.", "I have three giant furs here."), null)
 			call character.inventory().removeItemType('I01Z')
 			call character.inventory().removeItemType('I01Z')
 			call character.inventory().removeItemType('I01Z')
-			call speech(info, character, true, tr("Willst du mich verarschen oder was? ... Tatsächlich! Verdammt, wie hast du das angestellt?"), null)
-			call speech(info, character, false, tr("Mit Gewalt."), null)
-			call speech(info, character, true, tr("Mann, vor dir sollte man sich besser in Acht nehmen. Scheinst ja ein harter Brocken zu sein. Wie viel willst du für die Felle?"), null)
+			call speech(info, character, true, tre("Willst du mich verarschen oder was? ... Tatsächlich! Verdammt, wie hast du das angestellt?", "Are you kidding me or what? ... Indeed! Damn, how did you do that?"), null)
+			call speech(info, character, false, tre("Mit Gewalt.", "With violence."), null)
+			call speech(info, character, true, tre("Mann, vor dir sollte man sich besser in Acht nehmen. Scheinst ja ein harter Brocken zu sein. Wie viel willst du für die Felle?", "Man, in front of you one should better be careful. You seem to be a tough one indeed. How much do you want for the furs?"), null)
 			call info.talk().showRange(this.m_coins.index(), this.m_halfOfYourReward.index(), character)
 		endmethod
 		
@@ -111,16 +111,16 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 		// Suchst du einen Schüler?
 		private static method infoActionApprentice takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Suchst du einen Schüler?"), null)
-			call speech(info, character, true, tr("Einen Schüler? Du meinst ich soll jemandem das Jagen beibringen?"), null)
-			call speech(info, character, false, tr("Ganz genau."), null)
-			call speech(info, character, true, tr("Möglich, ich würde es jedoch nicht umsonst tun! Um wen geht es denn?"), null)
-			call speech(info, character, false, tr("Um Kunos Tochter."), null)
-			call speech(info, character, true, tr("Kunos Tochter?! Na sowas, damit hätte ich jetzt nicht gerechnet. Also wenn das so ist …"), null)
-			call speech(info, character, true, tr("Kuno liefert Holz an den Bauernhof auf dem ich selbst Felle verkaufe. Er ist ein anständiger Kerl."), null)
-			call speech(info, character, true, tr("Er lebt da draußen ganz alleine mit seiner Tochter im Wald. Es könnte nicht schaden, wenn sie sich in der Wildnis besser zurechtfände. Immerhin ist das ein verdammt gefährlicher Wald."), null)
-			call speech(info, character, true, tr("Sag ihm, ich werde seine Tochter ausbilden, wenn er sie vorbeischickt. Es kostet ihn natürlich nichts."), null)
-			call speech(info, character, false, tr("Mache ich."), null)
+			call speech(info, character, false, tre("Suchst du einen Schüler?", "Are you looking for a student?"), null)
+			call speech(info, character, true, tre("Einen Schüler? Du meinst ich soll jemandem das Jagen beibringen?", "A student? You mean I should teach someone to hunt?"), null)
+			call speech(info, character, false, tre("Ganz genau.", "Exactly."), null)
+			call speech(info, character, true, tre("Möglich, ich würde es jedoch nicht umsonst tun! Um wen geht es denn?", "Possible, I would however not do it for free! Who is this about, anwyway?"), null)
+			call speech(info, character, false, tre("Um Kunos Tochter.", "It's about Kuno's daughter."), null)
+			call speech(info, character, true, tre("Kunos Tochter?! Na sowas, damit hätte ich jetzt nicht gerechnet. Also wenn das so ist …", "Kuno's daughter?! Well, that's something I would not have expected. So if it is like that ..."), null)
+			call speech(info, character, true, tre("Kuno liefert Holz an den Bauernhof auf dem ich selbst Felle verkaufe. Er ist ein anständiger Kerl.", "Kuno delivers wood to the farm on which I myself sell furs. He's a decent guy."), null)
+			call speech(info, character, true, tre("Er lebt da draußen ganz alleine mit seiner Tochter im Wald. Es könnte nicht schaden, wenn sie sich in der Wildnis besser zurechtfände. Immerhin ist das ein verdammt gefährlicher Wald.", "He lives far outside alone with his daughter in the woods. It would not hurt if she gets used to the wild better. After all, this is a damn dangerous forest."), null)
+			call speech(info, character, true, tre("Sag ihm, ich werde seine Tochter ausbilden, wenn er sie vorbeischickt. Es kostet ihn natürlich nichts.", "Tell him I'm going to train his daughter when he sends her over. Of course, it will cost him nothing."), null)
+			call speech(info, character, false, tre("Mache ich.", "I do."), null)
 			call QuestKunosDaughter.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)
 		endmethod
@@ -132,11 +132,11 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 		// Kannst du Pfeile herstellen? 
 		private static method infoActionArrows takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Kannst du Pfeile herstellen?"), null)
-			call speech(info, character, true, tr("Klar, wieso fragst du?"), null)
-			call speech(info, character, false, tr("Markward benötigt Pfeile zur Verteidigung der Burg."), null)
-			call speech(info, character, true, tr("Ich sehe schon es handelt sich um eine wichtige Angelegenheit. Pass auf ich fertige neue Pfeile an und gebe ihm noch ein paar von mir."), null)
-			call speech(info, character, true, tr("Das dauert allerdings eine Weile. Komm später noch einmal vorbei."), null)
+			call speech(info, character, false, tre("Kannst du Pfeile herstellen?", "Can you produce arrows?"), null)
+			call speech(info, character, true, tre("Klar, wieso fragst du?", "Sure, why do you ask?"), null)
+			call speech(info, character, false, tre("Markward benötigt Pfeile zur Verteidigung der Burg.", "Markward needs arrows to defend the castle."), null)
+			call speech(info, character, true, tre("Ich sehe schon es handelt sich um eine wichtige Angelegenheit. Pass auf ich fertige neue Pfeile an und gebe ihm noch ein paar von mir.", "I can see it is an important matter. Look, I make new arrows and still give him a couple of mine."), null)
+			call speech(info, character, true, tre("Das dauert allerdings eine Weile. Komm später noch einmal vorbei.", "However, this takes a while. Come back later."), null)
 			// Auftragsziel 3 des Auftrags „Die Befestigung von Talras“ abgeschlossen
 			call QuestReinforcementForTalras.characterQuest(character).questItem(2).setState(AAbstractQuest.stateCompleted)
 			// Auftragsziel 4 des Auftrags „Die Befestigung von Talras“ aktiviert
@@ -153,7 +153,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		// Sind die Pfeile fertig?
 		private static method infoActionArrowsDone takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Sind die Pfeile fertig?"), null)
+			call speech(info, character, false, tre("Sind die Pfeile fertig?", "Are the arrows ready?"), null)
 			// (Genügend Zeit ist vergangen)
 			if (QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character)).oneMinutePassed()) then
 				call speech(info, character, true, tr("Ja, hier hast du sie. Am besten du platzierst sie an strategisch wichtigen Orten in der Burg."), null)
