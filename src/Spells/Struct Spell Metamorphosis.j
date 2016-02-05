@@ -121,9 +121,10 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						set this.m_isMorphed = true
 						
 						// add unmorph spell
-						if (this.disableGrimoire() or this.disableInventory()) then
+						// there is always one free ability slot since disabling the rucksack is not allowed
+						//if (this.disableGrimoire() or this.disableInventory()) then
 							call UnitAddAbility(this.character().unit(), this.abilityId())
-						endif
+						//endif
 						
 						/**
 						 * Grimoire spells need to be readded.
@@ -225,7 +226,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		
 		private static method triggerConditionRevival takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			return this.isMorphed()
+			return GetTriggerUnit() == this.character().unit() and this.isMorphed()
 		endmethod
 		
 		private static method triggerActionRevival takes nothing returns nothing
@@ -255,8 +256,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			// unmorph unit if it is being revived and has been morphed
 			// when a character is revived it has automatically its original unit form but needs to be restored (skills etc.)
 			set this.m_revivalTrigger = CreateTrigger()
-			// TODO support repick with any event
-			call TriggerRegisterUnitEvent(this.m_revivalTrigger, this.character().unit(), EVENT_UNIT_HERO_REVIVE_FINISH)
+			call TriggerRegisterAnyUnitEventBJ(this.m_revivalTrigger, EVENT_PLAYER_HERO_REVIVE_FINISH)
 			call TriggerAddCondition(this.m_revivalTrigger, Condition(function thistype.triggerConditionRevival))
 			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionRevival)
 			call AHashTable.global().setHandleInteger(this.m_revivalTrigger, "this", this)

@@ -23,7 +23,7 @@ library StructSpellsSpellManaExplosion requires Asl, StructGameClasses, StructGa
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local unit target = GetSpellTargetUnit()
-			local ADynamicLightning dynamicLightning = ADynamicLightning.create(null, "XXXX", 0.01, caster, target) /// @todo drain mana lightning
+			local ADynamicLightning dynamicLightning = ADynamicLightning.create(null, "DRAM", 0.01, caster, target)
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
 			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
 			local real mana

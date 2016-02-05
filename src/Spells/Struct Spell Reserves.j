@@ -64,6 +64,8 @@ library StructSpellsSpellReserves requires Asl, StructGameClasses, StructGameGam
 			call this.addGrimoireEntry('A1G1', 'A1G6')
 			call this.addGrimoireEntry('A1G2', 'A1G7')
 			
+			call this.setIsPassive(true)
+			
 			call DmdfHashTable.global().setHandleBoolean(character.unit(), thistype.damageKey, false)
 			call Game.registerOnDamageActionOnce(thistype.onDamageAction)
 			

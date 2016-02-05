@@ -49,10 +49,9 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 			
-			// TODO kill
 			call SetUnitAnimation(this.m_actorDragonSlayer, "Spell")
 			
-			if (wait(2.0)) then
+			if (wait(1.0)) then
 				return
 			endif
 			

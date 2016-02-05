@@ -257,6 +257,9 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			call QuestTheDarkCult.characterQuest(character).questItem(3).enable()
 			// TODO give items
 			//call character.giveItem()
+			call character.giveItem('I06N')
+			call character.giveItem('I06N')
+			call character.giveItem('I06N')
 			
 			call this.showStartPage(character)
 		endmethod

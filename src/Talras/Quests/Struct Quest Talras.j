@@ -28,7 +28,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 		endmethod
 	endstruct
 
-	struct QuestTalras extends AQuest
+	struct QuestTalras extends SharedQuest
 		public static constant integer questItemReachTheCastle = 0
 		public static constant integer questItemMeetHeimrich = 1
 		private QuestAreaTalrasCastle m_questAreaCastle
@@ -50,7 +50,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tre("Talras", "Talras"))
+			local thistype this = thistype.allocate(tre("Talras", "Talras"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCastle.blp")

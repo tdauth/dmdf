@@ -75,7 +75,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			
 			call TransmissionFromUnitType('n00W', user, tre("Erzähler", "Narrator"), tre("Die Burg Talras schützte das umliegende Land vor Überfällen, doch würde sie auch einer Invasion der Orks und Dunkelelfen stand halten?", "The castle Talras protected the surrounding country from assaults but would it hold out against an invasion of Orcs and Dark Elves as well?"), gg_snd_ErzaehlerDieBurg2)
 			
-			if (wait(5.0)) then // TODO Transmission duration
+			if (wait(5.0)) then
 				return
 			endif
 			

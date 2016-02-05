@@ -19,6 +19,8 @@ library StructSpellsSpellFeedBack requires Asl, StructGameClasses, StructGameSpe
 			call this.addGrimoireEntry('A0VZ', 'A0W4')
 			call this.addGrimoireEntry('A0W0', 'A0W5')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

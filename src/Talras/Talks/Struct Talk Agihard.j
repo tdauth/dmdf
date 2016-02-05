@@ -102,11 +102,11 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		endmethod
 
 		// Ich habe fünfmal gewonnen!
-		private static method infoActionICompleted takes AInfo info, ACharacter character returns nothing
+		private static method infoActionICompleted takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("Ich habe fünfmal gewonnen!", "I won five times!"), null)
 			call speech(info, character, true, tre("Tatsächlich! Du scheinst mir ein sehr starker Kämpfer zu sein. Nun gut, du hast dir deine Belohnung ehrenhaft verdient. Hier hast du sie.", "Really! You seem to be a very strong fighter. Well, you've earned your reward honorably. Here you have it."), null)
-			// TODO besondere Belohnung, Gegenstand
 			call QuestArenaChampion.characterQuest(character).questItem(1).complete()
+			call character.giveItem('I06K') // amulet of power which increases the attack speed
 			call info.talk().showStartPage(character)
 		endmethod
 

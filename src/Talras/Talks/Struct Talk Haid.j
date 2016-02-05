@@ -28,7 +28,7 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 		// Wer bist du?
 		private static method infoActionWhoAreYou takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Wer bist du?", "Who are you?"), null)
-			call speech(info, character, true, tre("Ich bin Haid, ein fahrender Händler aus Trammar. Interessierst du dich zufällig für eine meiner Waren?", "I am Haid a traveling salesman. Are you randomly interested for one of goods?"), gg_snd_Haid1)
+			call speech(info, character, true, tre("Ich bin Haid, ein fahrender Händler aus Trammar. Interessierst du dich zufällig für eine meiner Waren?", "I am Haid a traveling salesman. Do you happen to be interested in one of my goods?"), gg_snd_Haid1)
 			call speech(info, character, false, tr("Was verkaufst du denn?"), null)
 			call speech(info, character, true, tr("Etwas zu essen und alles was man im Alltag gebrauchen kann: Brot, Äpfel, Wurst, Geschirr und noch vieles mehr."), gg_snd_Haid2)
 			call info.talk().showStartPage(character)

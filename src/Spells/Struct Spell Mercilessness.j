@@ -47,6 +47,8 @@ library StructSpellsSpellMercilessness requires Asl, StructGameClasses, StructGa
 			call this.addGrimoireEntry('A1F8', 'A1FD')
 			call this.addGrimoireEntry('A1F9', 'A1FE')
 			
+			call this.setIsPassive(true)
+			
 			call DmdfHashTable.global().setHandleBoolean(character.unit(), thistype.damageKey, false)
 			call Game.registerOnDamageActionOnce(thistype.onDamageAction)
 			

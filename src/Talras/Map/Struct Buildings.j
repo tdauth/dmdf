@@ -11,7 +11,9 @@ library StructMapMapBuildings requires StructGameCharacter
 		private static integer array m_collectedGold[12] // TODO MapData.maxPlayers
 		
 		private static method timerFunctionRefill takes nothing returns nothing
-			call SetResourceAmount(gg_unit_n06E_0487, GetResourceAmount(gg_unit_n06E_0487) + 10)
+			if (GetResourceAmount(gg_unit_n06E_0487) < 1000000) then
+				call SetResourceAmount(gg_unit_n06E_0487, 1000000)
+			endif
 		endmethod
 		
 		private static method triggerConditionBringGold takes nothing returns boolean

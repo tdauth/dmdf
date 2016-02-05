@@ -22,6 +22,8 @@ library StructSpellsSpellLivingWill requires Asl, StructGameClasses, StructGameS
 			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			call this.addGrimoireEntry('A0LJ', 'A0LK')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

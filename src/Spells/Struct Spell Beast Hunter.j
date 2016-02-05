@@ -13,6 +13,8 @@ library StructSpellsSpellBeastHunter requires Asl, StructGameClasses, StructGame
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), thistype.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			call this.addGrimoireEntry('A14V', 'A14W')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

@@ -11,6 +11,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		private AGroup m_orcGuardians
 		private AGroup m_hiddenCorpses
 		private trigger m_killTrigger
+		private effect m_effect
 
 		implement Video
 		
@@ -186,7 +187,6 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			local effect whichEffect // TODO leaks on stop
 			local AJump jump // TODO leaks on stop
 			
 			if (wait(4.0)) then
@@ -325,7 +325,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			call QueueUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Spell Alternate")
 			
 			// flames and kill
-			set whichEffect = AddSpecialEffect("Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireMissile.mdx", GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3)) /// \todo direction of orc leader!
+			set this.m_effect = AddSpecialEffect("Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireMissile.mdx", GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3)) /// \todo direction of orc leader!
 			//call SetUnitExploded(this.m_actorOrcLeader, true)
 			call KillUnit(this.m_actorOrcLeader)
 			
@@ -333,8 +333,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 				return
 			endif
 			
-			call DestroyEffect(whichEffect)
-			set whichEffect = null
+			call DestroyEffect(this.m_effect)
+			set this.m_effect = null
 			call QueueUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Spell")
 			
 			if (wait(2.0)) then
@@ -371,13 +371,13 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 				return
 			endif
 
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Ihr habt mir bewiesen, dass ihr kämpfen könnt und Mut besitzt. Berichtet dem Herzog, dass wir ihn gegen die Dunkelelfen und Orks unterstützen werden."), gg_snd_Wigberht40)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tre("Ihr habt mir bewiesen, dass ihr kämpfen könnt und Mut besitzt. Berichtet dem Herzog, dass wir ihn gegen die Dunkelelfen und Orks unterstützen werden.", "You've proven to me that you can fight have courage. Report to the duke that we will support him against the Orcs and Dark Elves."), gg_snd_Wigberht40)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht40))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Danach begeben wir uns weiter auf die Suche nach meinem Vater. Sollten jedoch keine Feinde eintreffen, so müssen wir irgendwann aufbrechen."), gg_snd_Wigberht41)
+			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tre("Danach begeben wir uns weiter auf die Suche nach meinem Vater. Sollten jedoch keine Feinde eintreffen, so müssen wir irgendwann aufbrechen.", "Then we go further in search of my father. However, if no enemies arrive, we have to leave sometime."), gg_snd_Wigberht41)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht41))) then
 				return
@@ -407,6 +407,12 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			call this.m_orcGuardians.destroy()
 			call DmdfHashTable.global().destroyTrigger(this.m_killTrigger)
 			set this.m_killTrigger = null
+			
+			if (this.m_effect != null) then
+				call DestroyEffect(this.m_effect)
+				set this.m_effect = null
+			endif
+			
 			call Game.resetVideoSettings()
 		endmethod
 

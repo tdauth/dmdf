@@ -17,6 +17,8 @@ library StructSpellsSpellAgility requires Asl, StructGameClasses, StructGameSpel
 			call this.addGrimoireEntry('A0YP', 'A0YU')
 			call this.addGrimoireEntry('A0YQ', 'A0YV')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

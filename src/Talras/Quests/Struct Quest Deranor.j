@@ -46,7 +46,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		endmethod
 	endstruct
 	
-	struct QuestDeranor extends AQuest
+	struct QuestDeranor extends SharedQuest
 		public static constant integer questItemEnterTheTomb = 0
 		public static constant integer questItemKillDeranor = 1
 		public static constant integer questItemMeetAtTomb = 2
@@ -125,7 +125,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tre("Deranor der Schreckliche", "Deranor the Terrible"))
+			local thistype this = thistype.allocate(tre("Deranor der Schreckliche", "Deranor the Terrible"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNPowerLich.blp")
 			call this.setDescription(tre("In der Todesgruft soll es einen Eingang zu einem Gewölbe unter der Erde geben. Dort soll sich der mächtige Nekromant Deranor der Schreckliche aufhalten. Die Drachentöterin bittet euch darum, ihn gemeinsam mit ihr zu vernichten, um Mittillant vor einer weiteren Bedrohung zu bewahren.", "In the tomb of death there will be an entrance to the vault under the ground. There the mighty necromancer Deranor the Terrible is believed to be. The dragon slayer asks you to destroy him to destroy him with her in order to preserve Mittilant before a further threat."))

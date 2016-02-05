@@ -62,7 +62,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 	endstruct
 
-	struct QuestSlaughter extends AQuest
+	struct QuestSlaughter extends SharedQuest
 		public static constant integer questItemKillTheVampireLord = 0
 		public static constant integer questItemKillTheVampires = 1
 		public static constant integer questItemKillTheDeathAngel = 2
@@ -227,7 +227,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tre("Metzelei", "Slaughter"))
+			local thistype this = thistype.allocate(tre("Metzelei", "Slaughter"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCorpseExplode.blp")
 			call this.setDescription(tre("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten berichten könnt.", "The Dragon Slayer requires of you to accompany her on heir campaign against the creatures of the forest, so that you can report about her heroic deeds to others."))

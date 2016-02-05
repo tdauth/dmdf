@@ -42,6 +42,8 @@ library StructSpellsSpellBlock requires Asl, StructGameClasses, StructGameSpell
 			call this.addGrimoireEntry('A0XB', 'A0XG')
 			call this.addGrimoireEntry('A0XC', 'A0XH')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 

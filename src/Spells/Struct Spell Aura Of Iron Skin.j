@@ -16,6 +16,8 @@ library StructSpellsSpellAuraOfIronSkin requires Asl, StructGameClasses, StructG
 			call this.addGrimoireEntry('A137', 'A13C')
 			call this.addGrimoireEntry('A138', 'A13D')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

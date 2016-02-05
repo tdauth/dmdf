@@ -58,6 +58,8 @@ library StructSpellsSpellThrillOfVictory requires Asl, StructGameClasses, Struct
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			call this.addGrimoireEntry('A1FT', 'A1FU')
 			
+			call this.setIsPassive(true)
+			
 			call DmdfHashTable.global().setHandleBoolean(character.unit(), thistype.damageKey, false)
 			call Game.registerOnDamageActionOnce(thistype.onDamageAction)
 			

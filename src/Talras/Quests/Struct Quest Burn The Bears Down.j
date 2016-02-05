@@ -62,7 +62,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 		endmethod
 
 		private static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, tre("Brennt die Bären nieder!", "Burn down the bears!"))
+			local thistype this = thistype.allocate(character, tre("Brennt die Bären nieder!", "Burn Down the Bears!"))
 			local AQuestItem questItem
 
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNLiquidFire.blp")

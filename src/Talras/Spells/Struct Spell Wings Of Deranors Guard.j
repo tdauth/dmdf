@@ -10,6 +10,7 @@ library StructMapSpellsSpellWingsOfDeranorsGuard requires Asl, StructGameClasses
 		
 		/// Called after unit has morphed.
 		public stub method onMorph takes nothing returns nothing
+			call AddUnitAnimationProperties(this.character().unit(), "Alternate", true)
 		endmethod
 		
 		public stub method canRestore takes nothing returns boolean
@@ -25,6 +26,7 @@ library StructMapSpellsSpellWingsOfDeranorsGuard requires Asl, StructGameClasses
 		
 		/// Called after unit has been restored.
 		public stub method onRestore takes nothing returns nothing
+			call AddUnitAnimationProperties(this.character().unit(), "Alternate", false)
 		endmethod
 
 		public static method create takes Character character, integer abilityId, integer morphAbiliyId, integer unmorphAbilityId returns thistype

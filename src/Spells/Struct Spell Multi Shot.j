@@ -17,6 +17,8 @@ library StructSpellsSpellMultiShot requires Asl, StructGameClasses, StructGameSp
 			call this.addGrimoireEntry('A17V', 'A180')
 			call this.addGrimoireEntry('A17W', 'A181')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

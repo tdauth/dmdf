@@ -49,11 +49,17 @@ SectionEnd
 
 Section "German Campaign" GermanCampaign
 	SetOutPath "$INSTDIR\Campaigns"
-	File "${INPUT_DIR}\de\TPoFCampaign${VERSION}.w3n"
+	File "${INPUT_DIR}\TPoFCampaign${VERSION}_de.w3n"
+SectionEnd
+
+Section "English Campaign" EnglishCampaign
+	SetOutPath "$INSTDIR\Campaigns"
+	File "${INPUT_DIR}\TPoFCampaign${VERSION}_en.w3n"
 SectionEnd
 
 Section "Uninstall"
-	 Delete "$INSTDIR\Campaigns\TPoFCampaign{VERSION}.w3n"
+	 Delete "$INSTDIR\Campaigns\TPoFCampaign{VERSION}_de.w3n"
+	 Delete "$INSTDIR\Campaigns\TPoFCampaign{VERSION}_en.w3n"
 	 RMDir /r "$INSTDIR\Maps\The Power of Fire"
 	 Delete "$INSTDIR\${INPUT_EXE_FILENAME}"
 	 Delete "$DESKTOP\The Power of Fire.lnk"

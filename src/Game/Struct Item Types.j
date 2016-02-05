@@ -173,6 +173,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_staffOfWizard
 		
 		// Agihard
+		private static ItemType m_amuletOfFight
 		private static DefenceItemType m_expandedShield
 		private static DefenceItemType m_knightBuckler
 		private static ItemType m_axe
@@ -220,6 +221,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_hood
 		private static RangeItemType m_huntingBow
 		private static RangeItemType m_longBow
+		private static RangeItemType m_bjoernsShortBow
 		private static ItemType m_huntingKnife
 		private static ItemType m_bootsOfSpeed
 		private static ItemType m_quiver
@@ -364,6 +366,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_staffOfWizard.addAbility('AIrm', true)
 			call thistype.m_staffOfWizard.addAbility('A02N', false)
 			call thistype.m_staffOfWizard.addAbility('AIi6', true)
+			
+			set thistype.m_amuletOfFight = ItemType.create('I06K', AItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
+			call thistype.m_amuletOfFight.addAbility('A01K', true)
 
 			set thistype.m_expandedShield = DefenceItemType.createSimpleDefence('I006', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_expandedShield.addAbility('A01S', true)
@@ -517,6 +522,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_longBow = RangeItemType.createSimpleRange('I021', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_longBow.addAbility('A19T', true)
 			call thistype.m_longBow.addAbility('A07P', true)
+			
+			set thistype.m_bjoernsShortBow = RangeItemType.createSimpleRange('I06M', AItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_bjoernsShortBow.addAbility('A1HZ', true)
+			call thistype.m_bjoernsShortBow.addAbility('A1I0', true)
 
 			set thistype.m_huntingKnife = ItemType.createSimple('I025', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_huntingKnife.addAbility('A07W', true)

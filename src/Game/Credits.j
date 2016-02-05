@@ -1,4 +1,5 @@
 // DMdF team
+call Credits.addTitle.evaluate(tre("Kern-Team", "Core Team"))
 call Credits.addContributor.evaluate("Tamino Dauth (Baradé)", tre("Projektleitung, Code, Inhalt, Landschaften", "Project leadership, code, content, landscapes"))
 call Credits.addContributor.evaluate("Oliver T. (Sardor)", tre("Modelle, Klassen, Zauber, Balancing und Inhalt", "Models, classes, spells, balancing and content"))
 call Credits.addContributor.evaluate("Andreas B. (Deranor)", tre("Inhalt, Landschaften, Tests", "Content, landscapes, tests"))

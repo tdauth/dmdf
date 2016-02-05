@@ -77,31 +77,31 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Ja ja schon gut, ich werde die Waffen herstellen. Allerdings braucht man dafür selbstverständlich auch Eisen und daran mangelt es in Talras."), gg_snd_Wieland_c)
+			call TransmissionFromUnit(this.m_actorWieland, tre("Ja ja schon gut, ich werde die Waffen herstellen. Allerdings braucht man dafür selbstverständlich auch Eisen und daran mangelt es in Talras.", "Yes okay, okay, I will make the weapons. However, you need for this of course iron and this is missing in Talras."), gg_snd_Wieland_c)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_c))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Wenn der Herzog die Waffen will, dann soll er mir das Eisen dafür geben. Zaubern kann ich leider nicht."), gg_snd_Wieland_d)
+			call TransmissionFromUnit(this.m_actorWieland, tre("Wenn der Herzog die Waffen will, dann soll er mir das Eisen dafür geben. Zaubern kann ich leider nicht.", "If the duke wants the weapons, then he should give me the iron for it. Unfortunately, I can't do magic."), gg_snd_Wieland_d)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_d))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Wo finde ich Eisen in dieser Gegend?"), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Wo finde ich Eisen in dieser Gegend?", "Where can I find iron in this area?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_actorWieland, tr("In Talras? Keine Ahnung, nirgendwo?! Hmm man erzählt sich die Legende von unterirdischen Gewölben im Mühlberg. Vielleicht birgt dieser Berg ja Eisen. Falls nicht musst du wohl nach Holzbruck aufbrechen. Dafür kannst du dich dann beim Herzog bedanken."), gg_snd_Wieland_e)
+			call TransmissionFromUnit(this.m_actorWieland, tre("In Talras? Keine Ahnung, nirgendwo?! Hmm man erzählt sich die Legende von unterirdischen Gewölben im Mühlberg. Vielleicht birgt dieser Berg ja Eisen. Falls nicht musst du wohl nach Holzbruck aufbrechen. Dafür kannst du dich dann beim Herzog bedanken.", "In Talras? No idea, nowhere?! Hmm, people tell the legend of underground vaults in the Mill Hill. Perhaps this hill holds iron. If not you will have to leave for Holzbruck. Then you can thank the duke for that."), gg_snd_Wieland_e)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_e))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWieland, tr("Bringt mir das Eisen und ich schmiede euch die besten Waffen in ganz Talras, mit denen ihr die verfluchten Orks und Dunkelelfen aufschlitzen könnt wie gemestetes Vieh. Die Bezahlung werde ich noch mit dem Vogt aushandeln. Ich will dabei ja nicht leer ausgehen."), gg_snd_Wieland_f)
+			call TransmissionFromUnit(this.m_actorWieland, tre("Bringt mir das Eisen und ich schmiede euch die besten Waffen in ganz Talras, mit denen ihr die verfluchten Orks und Dunkelelfen aufschlitzen könnt wie gemestetes Vieh. Die Bezahlung werde ich noch mit dem Vogt aushandeln. Ich will dabei ja nicht leer ausgehen.", "Bring me the iron and I forge you the best weapons throughout Talras, with which you can rip up the cursed Orcs and Dark Elves like fattened cattles. I will negotiate the payment with the steward. I do not want to get nothing from this."), gg_snd_Wieland_f)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wieland_f))) then
 				return

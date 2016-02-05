@@ -82,7 +82,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 	 * A battle with Wigberht, Ricman, Dragon Slayer and the arriving Dararos.
 	 * You fight waves of Orcs and Dark Elves, destroy their artillery and finally their commander with the help of Dararos.
 	 */
-	struct QuestTheDefenseOfTalras extends AQuest
+	struct QuestTheDefenseOfTalras extends SharedQuest
 		public static constant integer questItemMoveToCamp = 0
 		public static constant integer questItemPrepare = 1
 		public static constant integer questItemDefendAgainstOrcs = 2
@@ -643,7 +643,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tre("Die Verteidigung von Talras", "The Defense of Talras"))
+			local thistype this = thistype.allocate(tre("Die Verteidigung von Talras", "The Defense of Talras"))
 			local AQuestItem questItem
 			set this.m_timer = null
 			set this.m_timerDialog = null

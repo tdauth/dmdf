@@ -15,7 +15,7 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs, St
 		endmethod
 	endstruct
 
-	struct QuestTheWayToHolzbruck extends AQuest
+	struct QuestTheWayToHolzbruck extends SharedQuest
 		private QuestAreaTheWayToHolzbruck m_questArea
 	
 		implement Quest
@@ -32,7 +32,7 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs, St
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tre("Der Weg nach Holzbruck", "The Way to Holzbruck"))
+			local thistype this = thistype.allocate(tre("Der Weg nach Holzbruck", "The Way to Holzbruck"))
 			local AQuestItem questItem0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNShip.blp")
 			call this.setDescription(tre("Da der Herzog noch mehr Verbündete benötigt, sollt ihr in die flussaufwärts gelegene Stadt Holzbruck ziehen, um dort weitere Kriegsleute zu sammeln. ACHTUNG: Das Spiel endet mit diesem Auftrag!", "Since the duke still needs more allies you shall move to the town Holzbruck which is located upstream to gather more soldiers there. NOTE: The game ends with this mission!"))

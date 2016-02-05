@@ -54,7 +54,7 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 		endmethod
 
 		// Ich möchte der weißen Legion beitreten.
-		private static method infoActionIWantToJoin takes AInfo info, ACharacter character returns nothing
+		private static method infoActionIWantToJoin takes AInfo info, Character character returns nothing
 			local unit characterUnit = character.unit()
 			local item whichItem
 			call speech(info, character, false, tr("Ich möchte der weißen Legion beitreten."), null)
@@ -71,28 +71,29 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, true, tr("Keine Sorge, sobald du ihn erneut wirken lässt, wirst du dich natürlich zurückverwandeln."), gg_snd_Haldar18)
 			call speech(info, character, true, tr("Der Zauber wirkt allerdings nur innerhalb dieser Höhle. Außerhalb ist meine Aura nicht stark genug!"), gg_snd_Haldar17)
 			call speech(info, character, true, tr("Ach so und noch etwas: Hast du genügend Feinde getötet, bekommst du natürlich auch entsprechende Belohnungen, die du dir bei mir persönlich abholen kannst."), gg_snd_Haldar19)
-			call Character(character).giveQuestItem('I01C') // Standarte
-			// TODO gold und Weihwasser
+			call character.giveQuestItem('I01C') // Standarte
+			call character.giveItem('I06N') // holy water
+			call character.giveItem('I00T') // gold
 			// Ring
 			if (character.class() == Classes.dragonSlayer()) then
-				call Character(character).giveQuestItem('I034')
+				call character.giveQuestItem('I034')
 			elseif (character.class() == Classes.druid()) then
-				call Character(character).giveQuestItem('I035')
+				call character.giveQuestItem('I035')
 			elseif (character.class() == Classes.elementalMage()) then
-				call Character(character).giveQuestItem('I036')
+				call character.giveQuestItem('I036')
 			elseif (character.class() == Classes.cleric()) then
-				call Character(character).giveQuestItem('I038')
+				call character.giveQuestItem('I038')
 			elseif (character.class() == Classes.necromancer()) then
-				call Character(character).giveQuestItem('I039')
+				call character.giveQuestItem('I039')
 			elseif (character.class() == Classes.ranger()) then
-				call Character(character).giveQuestItem('I03B')
+				call character.giveQuestItem('I03B')
 			elseif (character.class() == Classes.knight()) then
-				call Character(character).giveQuestItem('I03A')
+				call character.giveQuestItem('I03A')
 			elseif (character.class() == Classes.wizard()) then
-				call Character(character).giveQuestItem('I03C')
+				call character.giveQuestItem('I03C')
 			else
 				debug call Print("Warnung: Unsupported class for ring.")
-				call Character(character).giveQuestItem('I033')
+				call character.giveQuestItem('I033')
 			endif
 			call QuestDeathToBlackLegion.characterQuest(character).enable()
 			call info.talk().showStartPage(character)

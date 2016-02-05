@@ -22,11 +22,14 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 		endmethod
 
 		// Ich habe gehört, du hast Tellborn einige Zutaten für seinen Trank besorgt
-		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction1 takes AInfo info, Character character returns nothing
 			call speech(info, character, true, tr("Ich habe gehört, du hast Tellborn einige Zutaten für seinen Trank besorgt"), null)
 			call speech(info, character, true, tr("Ich danke dir vielmals. Bald werde ich wieder aussehen wie ein Mensch! Hier hast du ein paar Gegenstände."), null)
 			// Charakter erhält 3 Manatränke und 1 Ring der Verborgenheit.
-			/// @todo Give items!
+			call character.giveItem('I00D')
+			call character.giveItem('I00D')
+			call character.giveItem('I00D')
+			call character.giveItem('I00V')
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -48,12 +51,16 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 
 		// ￼Meine Zauberkraft ist fast erloschen!
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
+			local effect whichEffect
 			call speech(info, character, false, tr("￼Meine Zauberkraft ist fast erloschen!"), null)
 			// Fulco macht Bewegungen.
-			/// @todo Animate with effect!
+			call QueueUnitAnimation(Npcs.fulco(), "Spell Channel")
+			set whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIma\\AImaTarget.mdl", character.unit(), "chest")
 			call speech(info, character, true, tr("Da hast du sie wieder."), null)
 			// Das Mana des Charakters wird aufgefüllt.
 			call SetUnitState(character.unit(), UNIT_STATE_MANA, GetUnitState(character.unit(), UNIT_STATE_MAX_MANA))
+			call DestroyEffect(whichEffect)
+			set whichEffect = null
 			call info.talk().showStartPage(character)
 		endmethod
 

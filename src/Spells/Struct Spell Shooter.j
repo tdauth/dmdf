@@ -13,6 +13,8 @@ library StructSpellsSpellShooter requires Asl, StructGameClasses, StructGameSpel
 			local thistype this = thistype.allocate(character, Classes.ranger(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			call this.addGrimoireEntry('A11G', 'A11H')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

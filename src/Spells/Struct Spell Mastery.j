@@ -46,6 +46,8 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			call this.addGrimoireEntry('A11L', 'A11Q')
 			call this.addGrimoireEntry('A11M', 'A11R')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 

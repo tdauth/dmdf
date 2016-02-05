@@ -138,6 +138,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 		private integer m_spellType
 		private AClass m_class
 		private boolean m_available
+		private boolean m_isPassive
 		private AIntegerVector m_grimoireEntries /// vector of \ref GrimoireSpellEntry instances
 		private integer m_index
 
@@ -155,6 +156,14 @@ library StructGameSpell requires Asl, StructGameCharacter
 
 		public method available takes nothing returns boolean
 			return this.m_available
+		endmethod
+		
+		public method setIsPassive takes boolean isPassive returns nothing
+			set this.m_isPassive = isPassive
+		endmethod
+		
+		public method isPassive takes nothing returns boolean
+			return this.m_isPassive
 		endmethod
 
 		/**
@@ -334,6 +343,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			set this.m_spellType = spellType
 			set this.m_class = class
 			set this.m_available = true
+			set this.m_isPassive = false
 			set this.m_grimoireEntries = AIntegerVector.createWithSize(maxLevel + 1, 0)
 			call character.addClassSpell(this)
 			

@@ -16,6 +16,8 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 			call this.addGrimoireEntry('A0EQ', 'A0EV')
 			call this.addGrimoireEntry('A0ER', 'A0EW')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

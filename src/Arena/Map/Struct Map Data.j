@@ -19,7 +19,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant integer maxLevel = 30
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static sound cowSound = null
-		public static constant integer maxScore = 50
+		public static constant integer maxScore = 25
 		private static trigger m_safeEnterTrigger
 		private static trigger m_safeLeaveTrigger
 		private static Shrine m_shrine
@@ -37,7 +37,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 		endmethod
 		
 		/// Required by \ref Game.
-		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
 		public static method init takes nothing returns nothing
 			local quest whichQuest
 			local questitem questItem
@@ -49,7 +48,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call QuestSetDescription(whichQuest, tre("Zu seiner Belustigung hat Heimrich, der Herzog von Talras, euch gemeinsam in eine Arena werfen lassen aus welcher der Sieg die einzige Möglichkeit zu entkommen ist.", "For his amusement Heimrich, the duke of Talras, has thrown you into an arena from which the victory is the only possibility to escape."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNCorpseExplode.blp")
 			call QuestSetEnabled(whichQuest, true)
-			call QuestSetRequired(whichQuest, true)
+			call QuestSetRequired(whichQuest, false) // don't show in infos
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, Format(tre("Tötet einander bis einer der Spieler %1% Punkte erreicht hat.", "Kill each other until one player has reached %1% kills.")).i(thistype.maxScore).result())
 			
@@ -65,6 +64,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 			
 			set talkRoutine = NpcTalksRoutine.create(Routines.talk(), gg_unit_n014_0038, 0.0, 24.00, gg_rct_waypoint_markward_0)
 			call talkRoutine.setPartner(gg_unit_n013_0012)
+			
+			call Game.addDefaultDoodadsOcclusion()
 		endmethod
 		
 		/**

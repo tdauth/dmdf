@@ -16,6 +16,8 @@ library StructSpellsSpellColossus requires Asl, StructGameClasses, StructGameSpe
 			call this.addGrimoireEntry('A0G0', 'A0G5')
 			call this.addGrimoireEntry('A0G1', 'A0G6')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

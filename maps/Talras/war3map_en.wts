@@ -59330,6 +59330,12 @@ STRING 9893
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9894
+// Einheiten: h02A (Packpferd), Ubertip (Tooltipp - Erweitert (utub))
+{
+Ein Packpferd kann zu einem Marktplatz geschickt werden, um zu handeln. Jeder Handel gibt dem Besitzer Goldmünzen. Die Menge der Goldmünzen steigt, je weiter die Gebäude voneinander entfernt sind.
+}
+
 STRING 9895
 // Fähigkeiten: A0SI (Meister der Nekromantie - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -59406,6 +59412,12 @@ STRING 9907
 // Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9908
+// Einheiten: n06E (Marktplatz), Name (Name (unam))
+{
+Marktplatz
 }
 
 STRING 9909
@@ -59486,6 +59498,12 @@ STRING 9921
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9922
+// Fähigkeiten: A1DR (Abbauen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Packpferd)
+}
+
 STRING 9923
 // Fähigkeiten: A0SK (Meister der Nekromantie - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -59562,6 +59580,12 @@ STRING 9935
 // Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9936
+// Fähigkeiten: A1DT (Mana-Regeneration), EditorSuffix (Editor-Suffix (ansf))
+{
+(Stützpunkt)
 }
 
 STRING 9937
@@ -59723,7 +59747,25 @@ Gods Favor [|cffffcc00Level 1|r]
 STRING 9963
 // Fähigkeiten: A0QE (Göttergunst - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Gods Favor [|cffffcc00Stufe 2|r]
+Göttergunst [|cffffcc00Stufe 2|r]
+}
+
+STRING 9964
+// Fähigkeiten: A1DU ('Goldmine'-Fähigkeit), EditorSuffix (Editor-Suffix (ansf))
+{
+(Markt)
+}
+
+STRING 9965
+// Einheiten: n06F (Dunkelelfen-Hexer), Name (Name (unam))
+{
+Dark Elves Witcher
+}
+
+STRING 9966
+// Einheiten: o005 (Kriegsherr der Orks), Name (Name (unam))
+{
+Warlord of the Orcs
 }
 
 STRING 9967
@@ -59822,6 +59864,12 @@ STRING 9982
 Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
+STRING 9983
+// Fähigkeiten: A1DV (Schmetterwelle), EditorSuffix (Editor-Suffix (ansf))
+{
+(Dunkelelfen-Hexer)
+}
+
 STRING 9984
 // Fähigkeiten: A0SM (Meister der Nekromantie - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
@@ -59898,6 +59946,12 @@ STRING 9996
 // Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 9997
+// Fähigkeiten: A1DW (Unheilige Aura), EditorSuffix (Editor-Suffix (ansf))
+{
+(Dunkelelfen-Hexer)
 }
 
 STRING 9998
@@ -102744,5 +102798,339 @@ STRING 17138
 // Ausbaustufen: R007 (Berserker-Kraft), effect1 (Effekt 1 (gef1))
 {
 rmvx
+}
+
+STRING 17139
+// Einheiten: n06O (Baldars Stand), Name (Name (unam))
+{
+Baldar's Stall
+}
+
+STRING 17140
+// Gegenstände: I06K (Amulett des Kampfes), Name (Name (unam))
+{
+Amulet of Fight
+}
+
+STRING 17141
+// Gegenstände: I06K (Amulett des Kampfes), Ubertip (Tooltipp - Erweitert (utub))
+{
+Increases the attack speed of the carrying unit by <A01K,DataA1,%> %.
+}
+
+STRING 17142
+// Gegenstände: I06K (Amulett des Kampfes), Tip (Tooltipp - Einfach (utip))
+{
+Buy Amulet of Fight
+}
+
+STRING 17143
+// Gegenstände: I06L (Schwefel), Name (Name (unam))
+{
+Sulfur
+}
+
+STRING 17144
+// Gegenstände: I06L (Schwefel), Description (Beschreibung (ides))
+{
+Erlaubt das Entzünden eines mächtigen Feuerregens.
+}
+
+STRING 17145
+// Gegenstände: I06L (Schwefel), Tip (Tooltipp - Einfach (utip))
+{
+Buy Sulfur
+}
+
+STRING 17146
+// Gegenstände: I06L (Schwefel), Ubertip (Tooltipp - Erweitert (utub))
+{
+Erlaubt das Entzünden eines mächtigen Feuerregens.
+}
+
+STRING 17147
+// Gegenstände: I06M (Björns Kurzbogen), Name (Name (unam))
+{
+Björn's Short Bow
+}
+
+STRING 17148
+// Gegenstände: I06M (Björns Kurzbogen), Description (Beschreibung (ides))
+{
+A short bow of the hunter Björn.
+}
+
+STRING 17149
+// Gegenstände: I06M (Björns Kurzbogen), Ubertip (Tooltipp - Erweitert (utub))
+{
+Increases the damage by <A07N,DataA1>.
+}
+
+STRING 17150
+// Gegenstände: I06M (Björns Kurzbogen), Tip (Tooltipp - Einfach (utip))
+{
+Buy Björn's Short Bow
+}
+
+STRING 17151
+// Fähigkeiten: A01K (Amulett des Kampfes), Name (Name (anam))
+{
+Amulett des Kampfes
+}
+
+STRING 17152
+// Fähigkeiten: A01K (Amulett des Kampfes), EditorSuffix (Editor-Suffix (ansf))
+{
+(Angriffstempo-Bonus)
+}
+
+STRING 17153
+// Fähigkeiten: A1HY (Feuerregen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Schwefel)
+}
+
+STRING 17154
+// Fähigkeiten: A1HZ (Björns Kurzbogen), EditorSuffix (Editor-Suffix (ansf))
+{
+(+9)
+}
+
+STRING 17155
+// Fähigkeiten: A1HZ (Björns Kurzbogen), Name (Name (anam))
+{
+Björns Kurzbogen
+}
+
+STRING 17156
+// Fähigkeiten: A1I0 (Björns Kurzbogen), EditorSuffix (Editor-Suffix (ansf))
+{
+(+3 Geschick)
+}
+
+STRING 17157
+// Fähigkeiten: A1I0 (Björns Kurzbogen), Name (Name (anam))
+{
+Björns Kurzbogen
+}
+
+STRING 17158
+// Einheiten: n06P (Haldars Stand), Name (Name (unam))
+{
+Haldar's Stall
+}
+
+STRING 17159
+// Gegenstände: I06N (Weihwasser), Name (Name (unam))
+{
+Holy Water
+}
+
+STRING 17160
+// Gegenstände: I06N (Weihwasser), Tip (Tooltipp - Einfach (utip))
+{
+Buy Holy Water
+}
+
+STRING 17161
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Increases the level of the spell as much as possible.
+}
+
+STRING 17162
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 20%.
+}
+
+STRING 17163
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 30%.
+}
+
+STRING 17164
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 40%.
+}
+
+STRING 17165
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 50%.
+}
+
+STRING 17166
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 2|r]
+}
+
+STRING 17167
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 3|r]
+}
+
+STRING 17168
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 4|r]
+}
+
+STRING 17169
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 5|r]
+}
+
+STRING 17170
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Maximum Spell Level
+}
+
+STRING 17171
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
+}
+
+STRING 17172
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Name (Name (anam))
+{
+Maximum Spell Level
+}
+
+STRING 17173
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17174
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17175
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Unlearns the spell.
+}
+
+STRING 17176
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 20%.
+}
+
+STRING 17177
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 30%.
+}
+
+STRING 17178
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 40%.
+}
+
+STRING 17179
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 50%.
+}
+
+STRING 17180
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 2|r]
+}
+
+STRING 17181
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 3|r]
+}
+
+STRING 17182
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 4|r]
+}
+
+STRING 17183
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 5|r]
+}
+
+STRING 17184
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Unlearn Spell
+}
+
+STRING 17185
+// Fähigkeiten: A1I2 (Zauber verlernen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
+}
+
+STRING 17186
+// Fähigkeiten: A1I2 (Zauber verlernen), Name (Name (anam))
+{
+Unlearn Spell
+}
+
+STRING 17187
+// Fähigkeiten: A1I2 (Zauber verlernen), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17188
+// Fähigkeiten: A1I2 (Zauber verlernen), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17189
+// Fähigkeiten: A1I3 (Maximale Zauberstufe), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit)
+}
+
+STRING 17190
+// Fähigkeiten: A1I3 (Maximale Zauberstufe), Name (Name (anam))
+{
+Maximum Spell Level
+}
+
+STRING 17191
+// Fähigkeiten: A1I4 (Zauber verlernen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit)
+}
+
+STRING 17192
+// Fähigkeiten: A1I4 (Zauber verlernen), Name (Name (anam))
+{
+Unlearn Spell
+}
+
+STRING 17193
+{
+Information
+}
+
+STRING 17194
+{
+Missions
 }
 

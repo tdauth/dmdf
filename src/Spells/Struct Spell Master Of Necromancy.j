@@ -53,6 +53,8 @@ library StructSpellsSpellMasterOfNecromancy requires Asl, StructGameClasses, Str
 			call this.addGrimoireEntry('A0SL', 'A0SQ')
 			call this.addGrimoireEntry('A0SM', 'A0SR')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 		

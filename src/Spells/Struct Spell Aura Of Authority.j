@@ -16,6 +16,8 @@ library StructSpellsSpellAuraOfAuthority requires Asl, StructGameClasses, Struct
 			call this.addGrimoireEntry('A0MM', 'A0MR')
 			call this.addGrimoireEntry('A0MN', 'A0MS')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

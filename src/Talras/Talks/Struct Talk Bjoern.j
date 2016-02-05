@@ -394,19 +394,20 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call speech(info, character, false, Format(tr("%1% Goldmünzen.")).i(thistype.goldReward1).result(), null)
 			call speech(info, character, true, Format(tr("In Ordnung. Hier hast du %1% Goldmünzen. Damit kriege ich immer noch ein Drittel des Gewinns rein. Vielen Dank.")).i(thistype.goldReward1).result(), null)
 			// Charakter erhält 600 Goldmünzen.
-			call character.addGold(600)
+			call character.addGold(thistype.goldReward1)
 			// Auftrag „Felle für die Bauern“ abgeschlossen
 			call QuestCoatsForThePeasants.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Die Hälfte deines Gewinns.
-		private static method infoAction2_1 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction2_1 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Die Hälfte deines Gewinns."), null)
 			call speech(info, character, true, Format(tr("In Ordnung. Hier hast du %1% Goldmünzen und zum Dank schenke ich dir noch einen meiner schönsten Bogen.")).i(thistype.goldReward2).result(), null)
 			// Charakter erhält „Björns Kurzbogen“ und 450 Goldmünzen.
-			call character.addGold(400)
-			/// TODO ADD BOW
+			call character.addGold(thistype.goldReward2)
+			/// add bow
+			call character.giveItem('I06M')
 			// Auftrag „Felle für die Bauern“ abgeschlossen.
 			call QuestCoatsForThePeasants.characterQuest(character).complete()
 			call info.talk().showStartPage(character)

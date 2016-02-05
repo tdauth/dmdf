@@ -17,6 +17,8 @@ library StructSpellsSpellAuraOfRedemption requires Asl, StructGameClasses, Struc
 			call this.addGrimoireEntry('A0MA', 'A0MF')
 			call this.addGrimoireEntry('A0MB', 'A0MG')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

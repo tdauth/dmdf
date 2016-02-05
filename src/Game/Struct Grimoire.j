@@ -49,6 +49,8 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		private AIntegerVector m_spells
 		private NextPage m_spellNextPage
 		private PreviousPage m_spellPreviousPage
+		private SetMax m_spellSetMax
+		private Unlearn m_spellUnlearn
 		private Increase m_spellIncrease
 		private Decrease m_spellDecrease
 		private AddToFavourites m_spellAddToFavourites
@@ -250,10 +252,14 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				call this.m_uiGrimoireSpells.pushBack(this.m_spellBackToGrimoire)
 				
 				if (this.currentSpell().isSkillable()) then
+					call this.m_spellSetMax.show.evaluate()
+					call this.m_uiGrimoireSpells.pushBack(this.m_spellSetMax)
 					call this.m_spellIncrease.show.evaluate()
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellIncrease)
 				endif
 				if (this.currentSpell().level() > 0) then
+					call this.m_spellUnlearn.show.evaluate()
+					call this.m_uiGrimoireSpells.pushBack(this.m_spellUnlearn)
 					call this.m_spellDecrease.show.evaluate()
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellDecrease)
 
@@ -454,7 +460,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call this.m_spells.pushBack(spell)
 
 			if (spell.spellType() == Spell.spellTypeDefault) then
-				if (this.m_favourites.size() < thistype.maxFavourites) then
+				if (this.m_favourites.size() < thistype.maxFavourites and not spell.isPassive()) then
 					call this.learnFavouriteSpell(spell)
 				else
 					call this.learnSpell(spell)
@@ -533,7 +539,7 @@ endif
 				if (spell.level() == 0) then
 					//debug call Print("Learning spell: " + spell.name() + " having " + I2S(this.m_favourites.size()) + " favorite spells.")
 				
-					if (this.m_favourites.size() < thistype.maxFavourites) then
+					if (this.m_favourites.size() < thistype.maxFavourites and not spell.isPassive()) then
 						call this.learnFavouriteSpell(spell)
 					else
 						call this.learnSpell(spell)
@@ -1019,6 +1025,8 @@ endif
 
 			set this.m_spellPreviousPage = PreviousPage.create.evaluate(this)
 			set this.m_spellNextPage = NextPage.create.evaluate(this)
+			set this.m_spellSetMax = SetMax.create.evaluate(this)
+			set this.m_spellUnlearn = Unlearn.create.evaluate(this)
 			set this.m_spellIncrease = Increase.create.evaluate(this)
 			set this.m_spellDecrease = Decrease.create.evaluate(this)
 			set this.m_spellAddToFavourites = AddToFavourites.create.evaluate(this)
@@ -1052,6 +1060,8 @@ endif
 
 			call this.m_spellNextPage.destroy.evaluate()
 			call this.m_spellPreviousPage.destroy.evaluate()
+			call this.m_spellSetMax.destroy.evaluate()
+			call this.m_spellUnlearn.destroy.evaluate()
 			call this.m_spellIncrease.destroy.evaluate()
 			call this.m_spellDecrease.destroy.evaluate()
 			call this.m_spellAddToFavourites.destroy.evaluate()
@@ -1152,6 +1162,52 @@ endif
 
 		public stub method onCastAction takes nothing returns nothing
 			call this.grimoire().increasePage()
+			
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+	
+	struct SetMax extends GrimoireSpell
+		public static constant integer id = 'A1I1'
+		public static constant integer grimoireAbilityId = 'A1I3'
+
+		public stub method onCastAction takes nothing returns nothing
+			debug call this.print("Set spell max")
+			call this.grimoire().setSpellLevel(this.grimoire().currentSpell(), IMinBJ(this.grimoire().currentSpell().getMaxLevel(), this.grimoire().currentSpell().level() + this.grimoire().skillPoints()), true)
+			
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
+		endmethod
+
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+
+			return this
+		endmethod
+	endstruct
+	
+	struct Unlearn extends GrimoireSpell
+		public static constant integer id = 'A1I2'
+		public static constant integer grimoireAbilityId = 'A1I4'
+
+		public stub method onCastAction takes nothing returns nothing
+			debug call this.print("Unlearn spell")
+			call this.grimoire().setSpellLevelWithoutConditions(this.grimoire().currentSpell(), 0, true)
 			
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner

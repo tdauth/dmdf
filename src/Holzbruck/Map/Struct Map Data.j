@@ -37,7 +37,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 			
-			set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
+			// TODO fix zone management first then uncomment this
+			//set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
 			
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod

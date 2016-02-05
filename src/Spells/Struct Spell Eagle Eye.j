@@ -16,6 +16,8 @@ library StructSpellsSpellEagleEye requires Asl, StructGameClasses, StructGameSpe
 			call this.addGrimoireEntry('A0YF', 'A0YK')
 			call this.addGrimoireEntry('A0YG', 'A0YL')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

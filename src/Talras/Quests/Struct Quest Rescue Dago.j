@@ -20,7 +20,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		endmethod
 	endstruct
 
-	struct QuestRescueDago extends AQuest
+	struct QuestRescueDago extends SharedQuest
 		private static constant real rectRange = 500.0
 		private timer m_timer
 		private QuestAreaRescueDago m_questArea
@@ -149,7 +149,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tre("Rettet Dago!", "Rescue Dago!"))
+			local thistype this = thistype.allocate(tre("Rettet Dago!", "Rescue Dago!"))
 			local AQuestItem questItem0
 			local AQuestItem questItem1
 			set this.m_timer = CreateTimer()

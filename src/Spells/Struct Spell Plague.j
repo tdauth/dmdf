@@ -16,6 +16,8 @@ library StructSpellsSpellPlague requires Asl, StructGameClasses, StructGameSpell
 			call this.addGrimoireEntry('A0HQ', 'A0HV')
 			call this.addGrimoireEntry('A0HR', 'A0HW')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

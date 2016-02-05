@@ -38,6 +38,8 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 			call this.addGrimoireEntry('A0XL', 'A0XQ')
 			call this.addGrimoireEntry('A0XM', 'A0XR')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 

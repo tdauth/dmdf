@@ -14,6 +14,8 @@ library StructSpellsSpellAlpha requires Asl, StructGameClasses, StructGameSpell
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			call this.addGrimoireEntry('A0FH', 'A0FI')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

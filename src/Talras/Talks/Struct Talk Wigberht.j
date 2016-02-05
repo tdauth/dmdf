@@ -203,7 +203,7 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.wigberht(), thistype.startPageAction)
-			call this.setName(tr("Wigberht"))
+			call this.setName(tre("Wigberht", "Wigberht"))
 			
 			// start page
 			set this.m_hi = this.addInfo(false, false, thistype.infoConditionHi, thistype.infoActionHi, tre("Hallo.", "Hello."))

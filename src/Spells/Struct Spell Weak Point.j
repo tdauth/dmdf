@@ -17,6 +17,8 @@ library StructSpellsSpellWeakPoint requires Asl, StructGameClasses, StructGameSp
 			call this.addGrimoireEntry('A0SV', 'A0T0')
 			call this.addGrimoireEntry('A0SW', 'A0T1')
 			
+			call this.setIsPassive(true)
+			
 			return this
 		endmethod
 	endstruct

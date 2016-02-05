@@ -98,7 +98,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 	endstruct
 
-	struct QuestTheNorsemen extends AQuest
+	struct QuestTheNorsemen extends SharedQuest
 		/**
 		 * The number of enemy waves of Orcs and Dark Elves which the Norsemen and characters have to fight.
 		 */
@@ -444,7 +444,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tre("Die Nordmänner", "The Norsemen"))
+			local thistype this = thistype.allocate(tre("Die Nordmänner", "The Norsemen"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
 			call this.setDescription(tre("Der Herzog will, dass ihr die Nordmänner vor der Burg auf seine Seite zieht, damit er neue Verbündete für den bevorstehenden Krieg gewinnt.", "The duke wants you to win the Norsemen in front of the castle for him for winning new allies for the upcoming war."))

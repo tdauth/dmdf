@@ -61,8 +61,6 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			private integer m_actorHeimrich
 			private integer m_actorMarkward
 			*/
-			
-			call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_MUSIC, 1.0) /// @todo test!
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing

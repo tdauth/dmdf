@@ -26,7 +26,7 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses, StructMapQues
 		// Verkaufst du auch Waffen?
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Verkaufst du auch Waffen?", "Do you sell weapons as well?"), null)
-			call speech(info, character, true, tre("Nein, ich stelle sie nur her. Einar verkauft welche am Tor zur Innenburg. Ich glaube, Agihard verkauft auch welche. Den findest du bei seiner Arena im Norden der Burg.", "No, I only carft them. Einar sells some at the gate to the inner castle. I think, Agihard sells some as well. You find him at his arena in the north of the castle."), gg_snd_Wieland19)
+			call speech(info, character, true, tre("Nein, ich stelle sie nur her. Einar verkauft welche am Tor zur Innenburg. Ich glaube, Agihard verkauft auch welche. Den findest du bei seiner Arena im Norden der Burg.", "No, I only craft them. Einar sells some at the gate to the inner castle. I think, Agihard sells some as well. You find him at his arena in the north of the castle."), gg_snd_Wieland19)
 			call speech(info, character, true, tre("Allerdings verkaufe ich wertvolle, selbst angefertigte Rüstungen und Helme.", "However, I sell valuable, self-made armours and helmets."), gg_snd_Wieland20)
 			if (Classes.isMage(character) or Classes.isChaplain(character)) then // (Charakter ist Geistlicher oder Magier)
 				call speech(info, character, true, tre("Vermutlich nichts für dich.", "Probably not for you."), gg_snd_Wieland21)

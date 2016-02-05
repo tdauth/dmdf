@@ -53081,7 +53081,12 @@ STRING 8861
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 20 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
+
+
+
+
 Setzt die Dauer beschworener Verbündeter auf 60 Sekunden oder beschworener Gegner auf 15 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -53089,7 +53094,12 @@ STRING 8862
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 15 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
+
+
+
+
 Setzt die Dauer beschworener Verbündeter auf 70 Sekunden oder beschworener Gegner auf 10 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -53097,7 +53107,12 @@ STRING 8863
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 10 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
+
+
+
+
 Setzt die Dauer beschworener Verbündeter auf 80 Sekunden oder beschworener Gegner auf 5 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -53105,7 +53120,12 @@ STRING 8864
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 5 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
+
+
+
+
 Setzt die Dauer beschworener Verbündeter auf 90 Sekunden oder beschworener Gegner auf 0 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -69969,7 +69989,8 @@ STRING 11669
 // Fähigkeiten: A08V (Arkane Zeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.
-
+
+
 Setzt die Dauer beschworener Verbündeter auf 50 Sekunden oder beschworener Gegner auf 20 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
@@ -102788,5 +102809,339 @@ STRING 17138
 // Ausbaustufen: R007 (Berserker-Kraft), effect1 (Effekt 1 (gef1))
 {
 rmvx
+}
+
+STRING 17139
+// Einheiten: n06O (Baldars Stand), Name (Name (unam))
+{
+Baldars Stand
+}
+
+STRING 17140
+// Gegenstände: I06K (Amulett des Kampfes), Name (Name (unam))
+{
+Amulett des Kampfes
+}
+
+STRING 17141
+// Gegenstände: I06K (Amulett des Kampfes), Ubertip (Tooltipp - Erweitert (utub))
+{
+Erhöht das Angriffstempo des Trägers um <A01K,DataA1,%> %.
+}
+
+STRING 17142
+// Gegenstände: I06K (Amulett des Kampfes), Tip (Tooltipp - Einfach (utip))
+{
+Amulett des Kampfes kaufen
+}
+
+STRING 17143
+// Gegenstände: I06L (Schwefel), Name (Name (unam))
+{
+Schwefel
+}
+
+STRING 17144
+// Gegenstände: I06L (Schwefel), Description (Beschreibung (ides))
+{
+Erlaubt das Entzünden eines mächtigen Feuerregens.
+}
+
+STRING 17145
+// Gegenstände: I06L (Schwefel), Tip (Tooltipp - Einfach (utip))
+{
+Schwefel kaufen
+}
+
+STRING 17146
+// Gegenstände: I06L (Schwefel), Ubertip (Tooltipp - Erweitert (utub))
+{
+Erlaubt das Entzünden eines mächtigen Feuerregens.
+}
+
+STRING 17147
+// Gegenstände: I06M (Björns Kurzbogen), Name (Name (unam))
+{
+Björns Kurzbogen
+}
+
+STRING 17148
+// Gegenstände: I06M (Björns Kurzbogen), Description (Beschreibung (ides))
+{
+Ein Kurzbogen vom Jäger Björn.
+}
+
+STRING 17149
+// Gegenstände: I06M (Björns Kurzbogen), Ubertip (Tooltipp - Erweitert (utub))
+{
+Erhöht den Schaden um <A07N,DataA1>.
+}
+
+STRING 17150
+// Gegenstände: I06M (Björns Kurzbogen), Tip (Tooltipp - Einfach (utip))
+{
+Björns Kurzbogen kaufen
+}
+
+STRING 17151
+// Fähigkeiten: A01K (Amulett des Kampfes), Name (Name (anam))
+{
+Amulett des Kampfes
+}
+
+STRING 17152
+// Fähigkeiten: A01K (Amulett des Kampfes), EditorSuffix (Editor-Suffix (ansf))
+{
+(Angriffstempo-Bonus)
+}
+
+STRING 17153
+// Fähigkeiten: A1HY (Feuerregen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Schwefel)
+}
+
+STRING 17154
+// Fähigkeiten: A1HZ (Björns Kurzbogen), EditorSuffix (Editor-Suffix (ansf))
+{
+(+9)
+}
+
+STRING 17155
+// Fähigkeiten: A1HZ (Björns Kurzbogen), Name (Name (anam))
+{
+Björns Kurzbogen
+}
+
+STRING 17156
+// Fähigkeiten: A1I0 (Björns Kurzbogen), EditorSuffix (Editor-Suffix (ansf))
+{
+(+3 Geschick)
+}
+
+STRING 17157
+// Fähigkeiten: A1I0 (Björns Kurzbogen), Name (Name (anam))
+{
+Björns Kurzbogen
+}
+
+STRING 17158
+// Einheiten: n06P (Haldars Stand), Name (Name (unam))
+{
+Haldars Stand
+}
+
+STRING 17159
+// Gegenstände: I06N (Weihwasser), Name (Name (unam))
+{
+Weihwasser
+}
+
+STRING 17160
+// Gegenstände: I06N (Weihwasser), Tip (Tooltipp - Einfach (utip))
+{
+Weihwasser kaufen
+}
+
+STRING 17161
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht die Stufe des Zaubers so weit wie möglich.
+}
+
+STRING 17162
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 20%.
+}
+
+STRING 17163
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 30%.
+}
+
+STRING 17164
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 40%.
+}
+
+STRING 17165
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 50%.
+}
+
+STRING 17166
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 2|r]
+}
+
+STRING 17167
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 3|r]
+}
+
+STRING 17168
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 4|r]
+}
+
+STRING 17169
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 5|r]
+}
+
+STRING 17170
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
+{
+Maximale Zauberstufe
+}
+
+STRING 17171
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
+}
+
+STRING 17172
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Name (Name (anam))
+{
+Maximale Zauberstufe
+}
+
+STRING 17173
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17174
+// Fähigkeiten: A1I1 (Maximale Zauberstufe), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17175
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Verlernt den Zauber.
+}
+
+STRING 17176
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 20%.
+}
+
+STRING 17177
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 30%.
+}
+
+STRING 17178
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 40%.
+}
+
+STRING 17179
+// Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um 50%.
+}
+
+STRING 17180
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 2|r]
+}
+
+STRING 17181
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 3|r]
+}
+
+STRING 17182
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 4|r]
+}
+
+STRING 17183
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Dämpfung [|cffffcc00Stufe 5|r]
+}
+
+STRING 17184
+// Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
+{
+Zauber verlernen
+}
+
+STRING 17185
+// Fähigkeiten: A1I2 (Zauber verlernen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch)
+}
+
+STRING 17186
+// Fähigkeiten: A1I2 (Zauber verlernen), Name (Name (anam))
+{
+Zauber verlernen
+}
+
+STRING 17187
+// Fähigkeiten: A1I2 (Zauber verlernen), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17188
+// Fähigkeiten: A1I2 (Zauber verlernen), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17189
+// Fähigkeiten: A1I3 (Maximale Zauberstufe), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit)
+}
+
+STRING 17190
+// Fähigkeiten: A1I3 (Maximale Zauberstufe), Name (Name (anam))
+{
+Maximale Zauberstufe
+}
+
+STRING 17191
+// Fähigkeiten: A1I4 (Zauber verlernen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit)
+}
+
+STRING 17192
+// Fähigkeiten: A1I4 (Zauber verlernen), Name (Name (anam))
+{
+Zauber verlernen
+}
+
+STRING 17193
+{
+Informationen
+}
+
+STRING 17194
+{
+Aufträge
 }
 
