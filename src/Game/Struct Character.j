@@ -494,7 +494,7 @@ endif
 		
 		private static method timerFunctionCamera takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
-			if (not this.isViewEnabled() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown()) then
+			if (not this.isViewEnabled() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown() and AClassSelection.playerClassSelection(this.player()) == 0) then
 				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, thistype.cameraTimerInterval)
 			endif
 		endmethod

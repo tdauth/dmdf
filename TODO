@@ -790,7 +790,7 @@ Für Version 0.6:
 * DONE: Während Verwandlung zumindest Zugriff auf Rucksack zulassen, damit Gegenstände eingesammelt werden können und Tränke benutzt.
 * DONE: Alle 4 Slots verwenden: http://www.hiveworkshop.com/forums/spells-569/easy-item-stack-n-split-v2-7-4-a-153287/?prev=search%3Dstack%26d%3Dlist%26r%3D20
 * FIXED: Wenn man Gegenstände auf den Boden legt (Drop) alle Aufladungen ablegen
-* Wenn man Gegenstände gibt (Order), nur eine Aufladung geben
+* Wenn man Gegenstände gibt (Order), nur eine Aufladung geben.
 * Spieler kann anderem Spieler keinen Gegenstand geben, wenn dessen Inventar voll ist: Dieselbe Funktion wie beim Aufheben einbauen.
 * FIXED (verkauft nur noch eine Aufladung): Spieler verkauft nun alle Charges eines Gegenstands am Shop, weil Drop alles dropt? Extra Sell-Event einbauen!
 * System für korrekte Kamerahöhe bei Brücken, welches jedoch nur das Offset zurückgibt, um die Kamra auf eine Höhe ohne Interpolation zu setzen: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/camera-height-above-doodads-destructibles-273631/#post2767796
@@ -824,11 +824,12 @@ Für Version 0.6:
 * FIXED: Minikarte von Talras aktualisieren (zentriert).
 * Schatten von Talras neu berechnen.
 * Schatten der Arena-Karte berechnen.
-* Wenn ein Equipment-Gegenstand mit mehreren Aufladnungen eingesammelt wird und das Equipment offen ist, hat der angelegte Gegenstand immer noch die Anzahl der Aufladungen.
+* Wenn ein Equipment-Gegenstand mit mehreren Aufladungen eingesammelt wird und das Equipment offen ist, hat der angelegte Gegenstand immer noch die Anzahl der Aufladungen.
 * Nach Repick ist Grundzauber nicht in den Favoriten.
 * Wenn das Hauptgebäude ausgebaut wird, verschwinden die Zauberbuchfähigkeiten.
 * DONE: Zauberbuch: Maximale Stufe, Zauber verlernen.
 * FIXED: Passive Zauber nicht in Favoriten.
+* Spruchrolle des Sammlers: Keine Powerups?
 
 Abgeschlossene Punkte:
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
