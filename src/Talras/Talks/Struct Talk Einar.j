@@ -21,9 +21,9 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 		// Hallo.
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Hallo. Neu hier nehme ich an. Ja, war ich auch vor ein paar Wochen. Ich bin Einar und verkaufe Waffen in Talras."), null)
-			call speech(info, character, true, tr("Du siehst wie einer aus, der Waffen gebrauchen kann, also wenn du bezahlen kannst, bekommst du auch was Anständiges von mir."), null)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("Hallo. Neu hier nehme ich an. Ja, war ich auch vor ein paar Wochen. Ich bin Einar und verkaufe Waffen in Talras.", "Hello. You are new here I suppose. Yes, I have been there myself a few weeks ago. I am Einar and sell weapons in Talras."), null)
+			call speech(info, character, true, tre("Du siehst wie einer aus, der Waffen gebrauchen kann, also wenn du bezahlen kannst, bekommst du auch was Anständiges von mir.", "You look like one who can use weapons, so if you can pay, you also get something decent from me."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -35,7 +35,7 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 		// Was hast du denn so im Angebot?
 		private static method infoActionOffer takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was hast du denn so im Angebot?"), null)
+			call speech(info, character, false, tre("Was hast du denn so im Angebot?", "What do you have in the offer?"), null)
 			call speech(info, character, true, tr("Alles was das Kriegerherz begehrt. Äxte, Schilde, Speere, Lanzen, Streitkolben, Morgensterne und natürlich Schwerter. Einige der Waffen habe ich mir nach Schlachten zusammengesammelt, manche stammen sogar von meinen Kameraden, die an meiner Seite fielen."), null)
 			call speech(info, character, true, tr("Nachschub bekomme ich vom hiesigen Schmied Wieland, allerdings ist es eher Qualitätsware als Nachschub, denn die einfachen Waffen verkaufen sich nicht besonders gut. Die meisten Leute hier sind ganz gut ausgestattet und manche, wie zum Beispiel die Bauern, glauben doch tatsächlich, dass sie nicht kämpfen werden müssen."), null)
 			call speech(info, character, true, tr("Aber was will man von einem Loch wie diesem auch erwarten. Ich bin nur froh, meine Ruhe zu haben und wenn hier die verdammten Dunkelelfen einfallen, bin ich schon weg."), null)

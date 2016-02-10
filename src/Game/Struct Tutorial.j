@@ -99,7 +99,9 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("\"-load <Save-Code>\" erlaubt das Laden eines Charakters.", "\"-load <save code>\" allows the loading of a character."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("\"-history n\" zeigt die n letzten Spielnachrichten an (standardmäßig fünf).", "\"-history n\" shows the recent n game messages (by default five)."))
-			call QuestSetCompleted(whichQuest, true)
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tre("\"-clear\" leert den Bildschirm von Spielnachrichten.", "\"-clear\" clears the screen from game messages."))
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Emotes", "Info: Emotes"))
@@ -111,7 +113,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, "\"-pray\"")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, "\"-magic\"")
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Aufträge", "Info: Missions"))
@@ -123,7 +125,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("Gemeinsame Aufträge müssen von allen Spielern gemeinsam erledigt werden.", "Shared missions must be completed together."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Eigene Aufträge kann jeder Spieler für sich selbst erledigen (optional).", "Custom missions can be solved by every player himself (optionally)."))
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Ausrüstung", "Info: Equipment"))
@@ -133,7 +135,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("RM auf Gegenstand und LM auf denselben Gegenstand verschiebt den Gegenstand in den Rucksack.", "RM on item and LM on the same item moves the item in the rucksack."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Ausrüstungstypen: Helm, Rüstung, Erstwaffe, Zweitwaffe, Amulett/Ring", "Equipment types: helmet, armour, primary weapon, secondary weapon, amulet/ring"))
-			call QuestSetCompleted(whichQuest, true)
+			
 			 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Rucksack", "Info: Backpack"))
@@ -151,7 +153,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("RM auf Gegenstand und LM auf das vierte dauerhaft freie Slot legt den Gegenstand mit allen Ladungen ab.", "RM on item and LM on the fourth permanently empty slot drops the item with all charges."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("RM auf Gegenstand und LM auf einen Taschengegenstand verschiebt den Gegenstand in eine andere Tasche.", "RM on item and LM on a bag item moves the item to another bag."))
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Schreine", "Info: Shrines"))
@@ -161,19 +163,19 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("Die Spruchrolle des Totenreichs ermöglicht den Teleport zu einem erkundeten Schrein.", "The Scroll of the Realm of Death allows teleporting to a discovered shrine."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Die Spruchrolle der Ahnen ermöglicht den Teleport zu einem erkundeten Schrein mit verbündeten Einheiten.", "The Scroll of the Ancestors allows teleporting to a discovered shrine together with allied units."))
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Gespräche mit Personen", "Info: Conversations with Persons"))
 			call QuestSetDescription(whichQuest, tre("Einige computergesteuerte Personen im Spiel bieten Gespräche an. Befindet sich der Charakter in der Nähe einer Person und ist der Charakter ausgewählt, so kann man mit einem Linksklick die entsprechende Person auswählen und mit einem Linksklick auf \"Person ansprechen\" ein Gespräch mit der Person beginnen. Einzelne Sätze können während des Gesprächs mit Escape übersprungen werden.", "Some Computer controlled persons in the game provide conversations. Is a character near to a person and is the character selected you can select the corresponding person with a left click and start a conversation with the person by a left click on \"Speak to person\". Separate sentences can be skipped by Escape during the conversation."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNTalking2.blp")
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Händler", "Info: Merchants"))
 			call QuestSetDescription(whichQuest, tre("Einige der computergesteuerte Personen verkaufen Waren an einem Stand. Andere verkaufen Waren aus ihrer Kiste. An den Ständen und Kisten können eigene Gegenstände für ihren Wert in Goldmünzen verkauft werden. Dazu muss ein Gegenstand mit einem Rechtsklick ausgewählt und mit einem Linksklick auf dem entsprechenden Stand oder der entsprechenden Kiste platziert werden.", "Some Computer controlled persons sell goods at a stall. Others sell goods from their box. At stalls and boxes own items can be selled for their value in gold coins. For this an item must be selected with a right click and be placed with a left click on the corresponding stall or the corresponding box."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNMerchant.blp")
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Erfahrung", "Info: Experience"))
@@ -181,7 +183,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNStatUp.blp")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Erfahrung für Unholde: Unholderfahrung / Anzahl der Spieler", "Experience for creeps: Creep experience / Number of players"))
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Goldmünzen", "Info: Gold Coins"))
@@ -189,13 +191,13 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Goldmünzen für Unholde: Unholdstufe * 2 / Anzahl der Spieler", "Gold coins for creeps: Creep level / Number of players"))
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Zauber", "Info: Spells"))
 			call QuestSetDescription(whichQuest, tre("Jede Klasse besitzt 15 verschiedene Zauber. Diese können im Einheitenmenü \"Zauber erlernen\" des Charakters erlernt werden. Einen Grundzauber dessen Stufe stets eins ist und der von Anfang erlernt wurde. Zwei Ultimativ-Zauber mit einer Stufe, die auf Stufe 12 und auf Stufe 25 erlernt werden können und zwölf gewöhnliche Zauber mit jeweils fünf Stufen. Das Erhöhen der Stufe eines Zaubers kostet einen Zauberpunkt. Pro Stufe erhält ein Charakter zwei Zauberpunkte. Er startet jedoch mit bereits drei Zauberpunkten. Zauberstufen können jederzeit wieder zurückgesetzt werden.", "Each class has 15 different spells. They can be learned in the unit menu \"Learn spells\" of the character. One basic spell of which the level is always one and which is learned from the beginning. Two ultimate spells with one level which can be learned at level 12 and level 25 and twelve usual spells with five levels each. Increasing the level of a spell costs one skill point. Per level a character gains two skill points. Yet he starts with already three skill points. Spell levels can be always be reset."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSpellBook.blp")
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Berufe", "Info: Professions"))
@@ -207,19 +209,19 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("Buch der Schmiedekunst", "Book of Forging"))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Buch der Magie", "Book of Magic"))
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Stützpunkte", "Info: Bases"))
 			call QuestSetDescription(whichQuest, tre("Jeder Spieler kann einen einzigen Stützpunkt errichten. Der Stützpunkt ist ein Gebäude, das abhängig von der Klasse des Spielercharakters ist. Um einen Stützpunkt zu errichten, muss ein entsprechender Bauplan bei einem Baumeister gekauft werden.", "Each player can construct one single base. The base is a building which is dependant on the class of the player character. To construct a base a corresponding construction plan has to be purchased from a builder."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNTinyCastle.blp")
-			call QuestSetCompleted(whichQuest, true)
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Info: Kontakt", "Info: Contact"))
 			call QuestSetDescription(whichQuest, tre("E-Mail: barade.barade@web.de\nWebsite: http://wc3lib.org", "Email: barade.barade@web.de\nWebsite: http://wc3lib.org"))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPossession.blp")
-			call QuestSetCompleted(whichQuest, true)
+			
 		endmethod
 		
 		/**

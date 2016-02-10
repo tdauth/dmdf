@@ -82,7 +82,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call speech(info, character, true, tre("Noch weiter westlich vom Bauernhof befindet sich der Mühlberg, auf welchem Guntrichs Mühle steht und manchmal die Kühe oder Schafe der Bauern grasen.", "Further to the west of the farm is the Mill Hill on which Guntrich's mill stands and sometimes the cows or sheeps of the farmers do graze."), gg_snd_Dago21)
 			call speech(info, character, true, tre("Wir Jagdleute leben in der Burg. Wahrscheinlich wirst du auch noch einige Aussiedler wie den Fährmann Trommon treffen, die lieber für sich leben. Ach so und vor einer Weile sind einige Krieger aus dem Norden hier angekommen. Sie haben ihr Lager etwas weiter nördlich am Fluss aufgeschlagen.", "We huntsmen do live in the castle. You'll probably meet a few emigrants like the ferryman Trommon as well who prefer to live own their own. Oh, and a while ago some warriors have arrived here from the north. They have built up their camp further north along the river."), gg_snd_Dago22)
 			call speech(info, character, true, tre("Weiß der Teufel, was die hier wollen!", "The devil knows what they want here!"), gg_snd_Dago23)
-			call speech(info, character, true, tr("Und pass auf, wenn du durch die Wälder hier ziehst. Hier gibt’s außer den wilden Tieren auch noch Wegelagerer, die dir für ein paar Goldmünzen die Haut bei lebendigem Leibe abziehen würden. Ganz zu schweigen von den Kreaturen, die sich nördlich des Hofes und am Ostufer des Flusses rumtreiben."), gg_snd_Dago24)
+			call speech(info, character, true, tre("Und pass auf, wenn du durch die Wälder hier ziehst. Hier gibt’s außer den wilden Tieren auch noch Wegelagerer, die dir für ein paar Goldmünzen die Haut bei lebendigem Leibe abziehen würden. Ganz zu schweigen von den Kreaturen, die sich nördlich des Hofes und am Ostufer des Flusses rumtreiben.", "And be careful when you move here in the woods. Except the wild animals there are also highwaymen who skin you alive for a few gold coins. Not to mention the creatures moving around in the north of the farm and on the eas bank of the river."), gg_snd_Dago24)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -115,37 +115,37 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 				endif
 				// (Pilze sind essbar, aber noch nicht genug)
 				if (not QuestMushroomSearch.characterQuest(character).addMushroom()) then
-					call speech(info, character, true, tr("Sehr gut, danke. Ich brauche aber noch mehr essbare Pilze."), gg_snd_Dago25)
+					call speech(info, character, true, tre("Sehr gut, danke. Ich brauche aber noch mehr essbare Pilze.", "Very good thank you. But I still need more edible mushrooms."), gg_snd_Dago25)
 				// (Pilze sind essbar und genug)
 				else
-					call speech(info, character, true, tr("Danke, das reicht, sogar dem Herzog (Lacht). Hier hast du ein paar Goldmünzen, danke für deine Mühen. Man trifft selten Leute, die noch was Anderes als sich selbst im Kopf haben."), gg_snd_Dago26)
+					call speech(info, character, true, tre("Danke, das reicht, sogar dem Herzog (Lacht). Hier hast du ein paar Goldmünzen, danke für deine Mühen. Man trifft selten Leute, die noch was Anderes als sich selbst im Kopf haben.", "Thanks, that's enough, even for the duke (Laughs). Here you have a few gold coins, thank you for your efforts. One rarely meets people who have something different than themselves in mind."), gg_snd_Dago26)
 					// Auftrag „Pilzsuche“ abgeschlossen
 					call QuestMushroomSearch.characterQuest(character).complete()
 				endif
 			// (Pilze sind nicht essbar)
 			else
-				call speech(info, character, true, tr("Tut mir leid, aber der sieht nicht gerade essbar aus. Nicht, dass mich das sonderlich stören würde, aber den Herzog wahrscheinlich schon."), null)
+				call speech(info, character, true, tre("Tut mir leid, aber der sieht nicht gerade essbar aus. Nicht, dass mich das sonderlich stören würde, aber den Herzog wahrscheinlich schon.", "I'm sorry, but that does not look edible. Not that it would bother me prticularly, but the duke probably."), null)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
 
 		private static method completeBoth takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Gleich beides also? Du bist mir wirklich eine große Hilfe, da werden die Bären nichts zu Lachen haben!"), gg_snd_Dago28)
+			call speech(info, character, true, tre("Gleich beides also? Du bist mir wirklich eine große Hilfe, da werden die Bären nichts zu Lachen haben!", "Already both? You are really a great help to me, the bears won't have anything to laugh with this!"), gg_snd_Dago28)
 			// Auftrag „Brennt die Bären nieder!“ mit Bonus abgeschlossen
 			call QuestBurnTheBearsDown.characterQuest(character).complete()
 			call Character(character).xpBonus(QuestBurnTheBearsDown.xpBonus, QuestBurnTheBearsDown.characterQuest(character).title())
 		endmethod
 
 		private static method complete takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Vielen Dank! Ich werde die Höhle mit den Drecksbären in Flammen aufgehen lassen!"), gg_snd_Dago29)
+			call speech(info, character, true, tre("Vielen Dank! Ich werde die Höhle mit den Drecksbären in Flammen aufgehen lassen!", "Thank you! I will set the cave with the mud bears up in flames!"), gg_snd_Dago29)
 			// Auftrag „Brennt die Bären nieder!“ abgeschlossen
 			call QuestBurnTheBearsDown.characterQuest(character).complete()
 		endmethod
 
 		private static method conclusion takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Hier hast du deine versprochene Belohnung."), gg_snd_Dago30)
+			call speech(info, character, true, tre("Hier hast du deine versprochene Belohnung.", "Here you have your promised reward."), gg_snd_Dago30)
 			call Character(character).giveItem(QuestBurnTheBearsDown.itemTypeIdDagger)
-			call Character.displayItemAcquiredToAll(tr("STRING 4869"), tr("STRING 4880"))
+			call Character.displayItemAcquiredToAll(GetLocalizedString("STRING 4869"), GetLocalizedString("STRING 4880"))
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -157,7 +157,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Hier ist dein Zauberspruch.
 		private static method infoActionSpell takes AInfo info, ACharacter character returns nothing
 			if (Character(character).inventory().totalItemTypeCharges(QuestBurnTheBearsDown.itemTypeIdWood) == QuestBurnTheBearsDown.maxWood) then // (Charakter besitzt zudem das Holz)
-				call speech(info, character, false, tr("Außerdem habe ich noch Holz für dich."), null)
+				call speech(info, character, false, tre("Außerdem habe ich noch Holz für dich.", "Besides I also have wood for you."), null)
 				call thistype.completeBoth(info, character)
 
 			else // (Charakter besitzt nur den Zauberspruch)
@@ -175,7 +175,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		private static method infoActionWood takes AInfo info, ACharacter character returns nothing
 			// (Charakter besitzt zudem den Zauberspruch)
 			if (Character(character).inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)) then
-				call speech(info, character, false, tr("Außerdem habe ich noch einen Zauberspruch für dich."), null)
+				call speech(info, character, false, tre("Außerdem habe ich noch einen Zauberspruch für dich.", "Besides I have also a spell for you."), null)
 				call thistype.completeBoth(info, character)
 			else // (Charakter besitzt nur das Holz)
 				call thistype.complete(info, character)
@@ -191,7 +191,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Suchst du einen Schüler?
 		private static method infoActionApprentice takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Suchst du einen Schüler?", "Are you looking for a student?"), null)
-			call speech(info, character, true, tr("Einen Schüler? Nein, für so etwas habe ich keine Zeit!"), gg_snd_Dago31)
+			call speech(info, character, true, tre("Einen Schüler? Nein, für so etwas habe ich keine Zeit!", "A student? No, I have no time for this."), gg_snd_Dago31)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -203,9 +203,9 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Kannst du Pfeile herstellen?
 		private static method infoActionArrows takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Kannst du Pfeile herstellen?", "Can you produce arrows?"), null)
-			call speech(info, character, true, tr("Natürlich kann ich das. Ich bin ja schließlich Jäger. Wieso fragst du denn?"), gg_snd_Dago32)
-			call speech(info, character, false, tr("Markward benötigt Pfeile zur Verteidigung der Burg."), null)
-			call speech(info, character, true, tr("So, braucht er die? Ich brauche aber selbst welche und außerdem habe ich gerade sowieso keine Zeit. Sprich mal mit Björn, der lässt sich gerne ausnutzen (grinst)."), gg_snd_Dago33)
+			call speech(info, character, true, tre("Natürlich kann ich das. Ich bin ja schließlich Jäger. Wieso fragst du denn?", "Of course I can. I am after all a hunter. Why are you asking?"), gg_snd_Dago32)
+			call speech(info, character, false, tre("Markward benötigt Pfeile zur Verteidigung der Burg.", "Markward needs arrows to defend the castle."), null)
+			call speech(info, character, true, tre("So, braucht er die? Ich brauche aber selbst welche und außerdem habe ich gerade sowieso keine Zeit. Sprich mal mit Björn, der lässt sich gerne ausnutzen (grinst).", "So, he needs them? But I need some myself and besides I have no time at the moment anyway. Talk to Björn who likes to be exploited (grins)."), gg_snd_Dago33)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -213,8 +213,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		private static method infoActionCastle_WhatKindOfMushrooms takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Was denn für Pilze?", "What kind of mushrooms?"), null)
-			call speech(info, character, true, tr("Ach alle Möglichen, Hauptsache essbar."), gg_snd_Dago8)
-			call speech(info, character, true, tr("Wieso fragst du überhaupt? Willst du mir etwa dabei helfen?"), gg_snd_Dago9)
+			call speech(info, character, true, tre("Ach alle Möglichen, Hauptsache essbar.", "Oh all sorts, the main thing is that they are edible."), gg_snd_Dago8)
+			call speech(info, character, true, tre("Wieso fragst du überhaupt? Willst du mir etwa dabei helfen?", "Why are you even asking? Do you want to help me with it?"), gg_snd_Dago9)
 			call info.talk().showRange(this.m_ofCourse.index(), this.m_no.index(), character)
 		endmethod
 
@@ -243,7 +243,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.dago(), thistype.startPageAction)
-			call this.setName(tr("Dago"))
+			call this.setName(tre("Dago", "Dago"))
 
 			// start page
 			set this.m_hi = this.addInfo(false, true, 0, thistype.infoActionHi, null)

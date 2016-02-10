@@ -191,6 +191,7 @@ endif
 		 * Emotes trigger which allows playing character animations via chat commands.
 		 */
 		private trigger m_danceTrigger
+		private trigger m_clearTrigger
 		
 		private AHashTable m_realSpellLevels
 
@@ -666,6 +667,12 @@ endif
 				endif
 			endif
 		endmethod
+		
+		private static method triggerActionClear takes nothing returns nothing
+			if (GetTriggerPlayer() == GetLocalPlayer()) then
+				call ClearTextMessages()
+			endif
+		endmethod
 
 		/**
 		 * \param quests Set to 0 on first creation but set to old quests on repick creation.
@@ -735,6 +742,11 @@ endif
 			call TriggerRegisterPlayerChatEvent(this.m_danceTrigger, whichPlayer, "-", false)
 			call TriggerAddAction(this.m_danceTrigger, function thistype.triggerActionDance)
 			call DmdfHashTable.global().setHandleInteger(this.m_danceTrigger, "this", this)
+			
+			set this.m_clearTrigger = CreateTrigger()
+			call TriggerRegisterPlayerChatEvent(this.m_clearTrigger, whichPlayer, "-clear", true)
+			call TriggerAddAction(this.m_clearTrigger, function thistype.triggerActionClear)
+			call DmdfHashTable.global().setHandleInteger(this.m_clearTrigger, "this", this)
 
 			set this.m_realSpellLevels = 0
 			
