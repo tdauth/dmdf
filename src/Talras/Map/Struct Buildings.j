@@ -7,6 +7,7 @@ library StructMapMapBuildings requires StructGameCharacter
 		private static trigger m_constructionStartTrigger
 		private static trigger m_constructionFinishTrigger
 		private static trigger m_deathTrigger
+		private static trigger m_upgradeTrigger
 		private static unit array m_buildings
 		private static integer array m_collectedGold[12] // TODO MapData.maxPlayers
 		
@@ -100,6 +101,38 @@ library StructMapMapBuildings requires StructGameCharacter
 			return false
 		endmethod
 		
+		private static method triggerConditionUpgrade takes nothing returns boolean
+			local integer i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYERS)
+				if (GetTriggerUnit() == thistype.m_buildings[i]) then
+					// mage
+					if (GetUnitTypeId(GetTriggerUnit()) == 'h027' or GetUnitTypeId(GetTriggerUnit()) == 'h02B') then
+						call UnitRemoveAbility(thistype.m_buildings[i], 'A19O')
+						call UnitAddAbility(thistype.m_buildings[i], 'A19O')
+					// castle
+					elseif (GetUnitTypeId(GetTriggerUnit()) == 'h028') then
+						call UnitRemoveAbility(thistype.m_buildings[i], 'A19P')
+						call UnitAddAbility(thistype.m_buildings[i], 'A19P')
+					// church
+					elseif (GetUnitTypeId(GetTriggerUnit()) == 'h029' or GetUnitTypeId(GetTriggerUnit()) == 'h02D') then
+						call UnitRemoveAbility(thistype.m_buildings[i], 'A19Q')
+						call UnitAddAbility(thistype.m_buildings[i], 'A19Q')
+					// tree
+					elseif (GetUnitTypeId(GetTriggerUnit()) == 'h02C') then
+						call UnitRemoveAbility(thistype.m_buildings[i], 'A19R')
+						call UnitAddAbility(thistype.m_buildings[i], 'A19R')
+					endif
+					
+					debug call Print("Readd spell book " + GetUnitName(GetTriggerUnit()))
+					
+					exitwhen (true)
+				endif
+				set i = i + 1
+			endloop
+			return false
+		endmethod
+		
 		private static method onInit takes nothing returns nothing
 			local integer i
 			set thistype.m_refillTimer = CreateTimer()
@@ -130,6 +163,14 @@ library StructMapMapBuildings requires StructGameCharacter
 			set thistype.m_deathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_deathTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(thistype.m_deathTrigger, Condition(function thistype.triggerConditionDeath))
+			
+			/*
+			 * When the building is upgraded the spell book abilities are lost.
+			 * Therefore they have to be readded manually.
+			 */
+			set thistype.m_upgradeTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_upgradeTrigger, EVENT_PLAYER_UNIT_UPGRADE_FINISH)
+			call TriggerAddCondition(thistype.m_upgradeTrigger, Condition(function thistype.triggerConditionUpgrade))
 		endmethod
 	endstruct
 

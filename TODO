@@ -824,9 +824,9 @@ Für Version 0.6:
 * FIXED: Minikarte von Talras aktualisieren (zentriert).
 * Schatten von Talras neu berechnen.
 * Schatten der Arena-Karte berechnen.
-* Wenn ein Equipment-Gegenstand mit mehreren Aufladungen eingesammelt wird und das Equipment offen ist, hat der angelegte Gegenstand immer noch die Anzahl der Aufladungen.
+* FIXED: Wenn ein Equipment-Gegenstand mit mehreren Aufladungen eingesammelt wird und das Equipment offen ist, hat der angelegte Gegenstand immer noch die Anzahl der Aufladungen.
 * Nach Repick ist Grundzauber nicht in den Favoriten.
-* Wenn das Hauptgebäude ausgebaut wird, verschwinden die Zauberbuchfähigkeiten.
+* FIXED: Wenn das Hauptgebäude ausgebaut wird, verschwinden die Zauberbuchfähigkeiten.
 * DONE: Zauberbuch: Maximale Stufe, Zauber verlernen.
 * FIXED: Passive Zauber nicht in Favoriten.
 * Spruchrolle des Sammlers: Keine Powerups?

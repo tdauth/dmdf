@@ -11268,13 +11268,13 @@ STRING 1880
 STRING 1881
 // Gegenstände: I00Q (Axt), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A02P,DataA1>.
+Increases the damage by <A02P,DataA1>.
 }
 
 STRING 1882
 // Gegenstände: I011 (Streitkolben), Name (Name (unam))
 {
-Streitkolben
+Mace
 }
 
 STRING 1883
@@ -11286,25 +11286,25 @@ STRING 1883
 STRING 1884
 // Gegenstände: I011 (Streitkolben), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A04L,DataA1>.
+Increases the damage by <A04L,DataA1>.
 }
 
 STRING 1885
 // Gegenstände: I011 (Streitkolben), Tip (Tooltipp - Einfach (utip))
 {
-Streitkolben kaufen
+Buy Mace
 }
 
 STRING 1886
 // Gegenstände: I012 (Langschwert), Name (Name (unam))
 {
-Langschwert
+Long Sword
 }
 
 STRING 1887
 // Gegenstände: I012 (Langschwert), Description (Beschreibung (ides))
 {
-Ein einfaches Langschwert.
+A plain long sword.
 }
 
 STRING 1888
@@ -11316,13 +11316,13 @@ STRING 1888
 STRING 1889
 // Gegenstände: I012 (Langschwert), Tip (Tooltipp - Einfach (utip))
 {
-Langschwert kaufen
+Buy Long Sword
 }
 
 STRING 1890
 // Gegenstände: I01X (Hellebarde), Name (Name (unam))
 {
-Hellebarde
+Halberd
 }
 
 STRING 1891
@@ -11340,7 +11340,7 @@ STRING 1892
 STRING 1893
 // Gegenstände: I01X (Hellebarde), Tip (Tooltipp - Einfach (utip))
 {
-Hellebarde kaufen
+Buy Halberd
 }
 
 STRING 1894
@@ -11352,7 +11352,7 @@ STRING 1894
 STRING 1895
 // Fähigkeiten: A04L (Streitkolben), Name (Name (anam))
 {
-Streitkolben
+Mace
 }
 
 STRING 1896
@@ -11364,7 +11364,7 @@ STRING 1896
 STRING 1897
 // Fähigkeiten: A04M (Langschwert), Name (Name (anam))
 {
-Langschwert
+Long Sword
 }
 
 STRING 1898
@@ -11376,7 +11376,7 @@ STRING 1898
 STRING 1899
 // Fähigkeiten: A07G (Hellebarde), Name (Name (anam))
 {
-Hellebarde
+Halberd
 }
 
 STRING 1900
@@ -11388,25 +11388,25 @@ STRING 1900
 STRING 1901
 // Gegenstände: I014 (Morgenstern), Name (Name (unam))
 {
-Morgenstern
+Morning Star
 }
 
 STRING 1902
 // Gegenstände: I014 (Morgenstern), Description (Beschreibung (ides))
 {
-Ein einfacher Morgenstern.
+A simple morning star.
 }
 
 STRING 1903
 // Gegenstände: I014 (Morgenstern), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A04O,DataA1>.
+Increases the damage by <A04O,DataA1>.
 }
 
 STRING 1904
 // Gegenstände: I014 (Morgenstern), Tip (Tooltipp - Einfach (utip))
 {
-Morgenstern kaufen
+Buy Morning Star
 }
 
 STRING 1905
@@ -11418,7 +11418,7 @@ STRING 1905
 STRING 1906
 // Fähigkeiten: A04O (Morgenstern), Name (Name (anam))
 {
-Morgenstern
+Morning Star
 }
 
 STRING 1907
@@ -81181,25 +81181,25 @@ Ritterhelm
 STRING 13534
 // Gegenstände: I05G (Buch der Magie), Name (Name (unam))
 {
-Buch der Magie
+Book of Magic
 }
 
 STRING 13535
 // Gegenstände: I05G (Buch der Magie), Description (Beschreibung (ides))
 {
-Ein Buch mit Anleitungen zum Herstellen von Spruchrollen.
+A book with instructions for producing scrolls.
 }
 
 STRING 13536
 // Gegenstände: I05G (Buch der Magie), Tip (Tooltipp - Einfach (utip))
 {
-Buch der Magie kaufen
+Buy Book of Magic
 }
 
 STRING 13537
 // Gegenstände: I05G (Buch der Magie), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Buch mit Anleitungen zum Herstellen von Spruchrollen.
+A book with instructions for producing scrolls.
 }
 
 STRING 13538
@@ -81223,7 +81223,7 @@ Die Locke einer Hexe.
 STRING 13541
 // Fähigkeiten: A18L (Buch der Magie), Name (Name (anam))
 {
-Buch der Magie
+Book of Magic
 }
 
 STRING 13542
@@ -81349,7 +81349,7 @@ STRING 13561
 STRING 13562
 // Einheiten: h026 (Barrikade), Name (Name (unam))
 {
-Barrikade
+Barricade
 }
 
 STRING 13563
@@ -81577,19 +81577,19 @@ Edlen Ritterhelm kaufen
 STRING 13600
 // Einheiten: h02C (Baumhaus), Name (Name (unam))
 {
-Baumhaus
+Treehouse
 }
 
 STRING 13601
 // Gegenstände: I05S (Baupläne eines Baumhauses), Name (Name (unam))
 {
-Baupläne eines Baumhauses
+Blueprints of a Treehouse
 }
 
 STRING 13602
 // Fähigkeiten: A15Z (Gift), Tip (Tooltipp - Normal (atp1))
 {
-Gift
+Poison
 }
 
 STRING 13603
@@ -81601,13 +81601,13 @@ STRING 13603
 STRING 13604
 // Fähigkeiten: A18V (Gift herstellen), Name (Name (anam))
 {
-Gift herstellen
+Craft Poison
 }
 
 STRING 13605
 // Fähigkeiten: A18V (Gift herstellen), Tip (Tooltipp - Normal (atp1))
 {
-Gift herstellen
+Craft Poison
 }
 
 STRING 13606
@@ -81637,13 +81637,13 @@ Edler Ritterhelm
 STRING 13610
 // Gegenstände: I05S (Baupläne eines Baumhauses), Description (Beschreibung (ides))
 {
-Ermöglicht den Bau eines Baumhauses.
+Allows the construction of a treehouse.
 }
 
 STRING 13611
 // Gegenstände: I028 (Topfhelm), Description (Beschreibung (ides))
 {
-Verstärkt die Rüstung und erhöht die Stärke.
+Increases the armour and the strength.
 }
 
 STRING 13612
@@ -81661,13 +81661,13 @@ Gewährt einen Rüstingsbonus von <A18X,DataA1>, einen Intelligenz-Bonus von <AI
 STRING 13614
 // Gegenstände: I05S (Baupläne eines Baumhauses), Tip (Tooltipp - Einfach (utip))
 {
-Baupläne eines Baumhauses kaufen
+Buy Blueprints of a Treehouse
 }
 
 STRING 13615
 // Gegenstände: I05N (Edler Ritterhelm), Description (Beschreibung (ides))
 {
-Verstärkt die Rüstung und erhöht die Stärke.
+Increases the armour and the strength.
 }
 
 STRING 13616
@@ -81787,43 +81787,43 @@ Verstärkt die Rüstung um <A18W,DataA1> und die Stärke um <AIs3,DataC1>.
 STRING 13635
 // Gegenstände: I05P (Baupläne eines Magierturms), Name (Name (unam))
 {
-Baupläne eines Magierturms
+Blueprints of a Mage's Tower
 }
 
 STRING 13636
 // Gegenstände: I05P (Baupläne eines Magierturms), Description (Beschreibung (ides))
 {
-Erzeugt einen Magierturm.
+Creates a mage tower.
 }
 
 STRING 13637
 // Gegenstände: I05P (Baupläne eines Magierturms), Tip (Tooltipp - Einfach (utip))
 {
-Baupläne eines Magierturms kaufen
+Buy Blueprints of a Mage's Tower
 }
 
 STRING 13638
 // Gegenstände: I05S (Baupläne eines Baumhauses), Ubertip (Tooltipp - Erweitert (utub))
 {
-|cffffcc00Druide und Waldläufer|r|nErzeugt an einem Zielort ein Baumhaus.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+|cffffcc00Druid and Ranger|r|nCreates a treehouse at the target location.|n|n|cffffcc00There can be only one building constructed at a time.|r
 }
 
 STRING 13639
 // Gegenstände: I05Q (Baupläne einer Burg), Name (Name (unam))
 {
-Baupläne einer Burg
+Blueprints of a Castle
 }
 
 STRING 13640
 // Gegenstände: I05Q (Baupläne einer Burg), Description (Beschreibung (ides))
 {
-Ermöglicht den Bau einer Burg.
+Allows the construction of a castle.
 }
 
 STRING 13641
 // Gegenstände: I05Q (Baupläne einer Burg), Tip (Tooltipp - Einfach (utip))
 {
-Baupläne einer Burg kaufen
+Buy Blueprints of a Castle
 }
 
 STRING 13642
@@ -81835,25 +81835,25 @@ STRING 13642
 STRING 13643
 // Gegenstände: I05R (Baupläne einer Kirche), Name (Name (unam))
 {
-Baupläne einer Kirche
+Blueprints of a Church
 }
 
 STRING 13644
 // Gegenstände: I05R (Baupläne einer Kirche), Description (Beschreibung (ides))
 {
-Ermöglicht den Bau einer Kirche.
+Allows the construction of a church.
 }
 
 STRING 13645
 // Gegenstände: I05R (Baupläne einer Kirche), Tip (Tooltipp - Einfach (utip))
 {
-Baupläne einer Kirche kaufen
+Buy Blueprints of a Church
 }
 
 STRING 13646
 // Fähigkeiten: A19E (Baumhaus erzeugen), Name (Name (anam))
 {
-Baumhaus erzeugen
+Create Treehouse
 }
 
 STRING 13647
@@ -81895,7 +81895,7 @@ Spruchrolle der Ahnen
 STRING 13653
 // Gegenstände: I05P (Baupläne eines Magierturms), Ubertip (Tooltipp - Erweitert (utub))
 {
-|cffffcc00Elementarmagier und Zauberer|r|nErzeugt an einem Zielort ein Magierturm.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+|cffffcc00Elemental Mage and Wizard|r|nCreates a mage tower at the target location.|n|n|cffffcc00There can be only one building constructed at a time.|r
 }
 
 STRING 13654
@@ -81907,7 +81907,7 @@ Ermöglicht es dem Träger, sich zusammen mit Verbündeten zu einem bereits erku
 STRING 13655
 // Gegenstände: I05R (Baupläne einer Kirche), Ubertip (Tooltipp - Erweitert (utub))
 {
-|cffffcc00Kleriker und Nekromant|r|nErzeugt an einem Zielort eine Kirche.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+|cffffcc00Cleric and Necromancer|r|nCreates a church at the target location.|n|n|cffffcc00There can be only one building constructed at a time.|r
 }
 
 STRING 13656
@@ -81961,7 +81961,7 @@ STRING 13663
 STRING 13664
 // Gegenstände: I05Q (Baupläne einer Burg), Ubertip (Tooltipp - Erweitert (utub))
 {
-|cffffcc00Ritter und Drachentöter|r|nErzeugt an einem Zielort eine Burg.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+|cffffcc00Knight and Dragon Slayer|r|nCreates a castle at the target location.|n|n|cffffcc00There can be only one building constructed at a time.|r
 }
 
 STRING 13665
@@ -82051,31 +82051,31 @@ Ein Blitzschlag erfasst das Ziel, verursacht X Punkte Schaden und wirft es um ei
 STRING 13679
 // Fähigkeiten: A19H (Spruchrolle der Ahnen), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 2|r]
+Lightning Strike [|cffffcc00Level 2|r]
 }
 
 STRING 13680
 // Fähigkeiten: A19H (Spruchrolle der Ahnen), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 3|r]
+Lightning Strike [|cffffcc00Level 3|r]
 }
 
 STRING 13681
 // Fähigkeiten: A19H (Spruchrolle der Ahnen), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 4|r]
+Lightning Strike [|cffffcc00Level 4|r]
 }
 
 STRING 13682
 // Fähigkeiten: A19H (Spruchrolle der Ahnen), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 5|r]
+Lightning Strike [|cffffcc00Level 5|r]
 }
 
 STRING 13683
 // Fähigkeiten: A19H (Spruchrolle der Ahnen), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 1|r]
+Lightning Strike [|cffffcc00Level 1|r]
 }
 
 STRING 13684
