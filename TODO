@@ -790,46 +790,52 @@ Für Version 0.6:
 * DONE: Alle 4 Slots verwenden: http://www.hiveworkshop.com/forums/spells-569/easy-item-stack-n-split-v2-7-4-a-153287/?prev=search%3Dstack%26d%3Dlist%26r%3D20
 * FIXED: Wenn man Gegenstände auf den Boden legt (Drop) alle Aufladungen ablegen
 * DEPRECATED: Wenn man Gegenstände gibt (Order), nur eine Aufladung geben.
-* Spieler kann anderem Spieler keinen Gegenstand geben, wenn dessen Inventar voll ist: Dieselbe Funktion wie beim Aufheben einbauen.
 * FIXED (verkauft nur noch eine Aufladung): Spieler verkauft nun alle Charges eines Gegenstands am Shop, weil Drop alles dropt? Extra Sell-Event einbauen!
-* System für korrekte Kamerahöhe bei Brücken, welches jedoch nur das Offset zurückgibt, um die Kamra auf eine Höhe ohne Interpolation zu setzen: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/camera-height-above-doodads-destructibles-273631/#post2767796
 * FIXED: Standardkameraentfernung erhöhen (durch die größeren Doodads im Verhältnis zu den Einheiten muss die Entfernung größer sein, damit man einen Überblick hat).
 * FIXED: Zumindest eine feste Höhe bei Brücken einstellen
 * FIXED: Säule verschwindet.
-* Brücke und Schiff verschwinden: http://www.wc3c.net/showthread.php?t=90920
 * FIXED: Disabled Icons für die disabled Icons der Inventarplatzhalter.
 * DEPRECATED: Trotz Werten wie 0.4 droppen Gegenstände bei Spawns immer? Es müsste addItemType() verwendet werden. Gegenstandstypen können sich nur Gegenseitig ausschließen?
-* Charakter stirbt an Pfeilhagel selbst aber nur wenn auf Gegner angewandt, Gegner sind im Zielgebiet (mit Stufe 5 der Fähigkeit). Mit Ziel "Nicht-selbst" verwundet er Verbündete.
-* Tastenkürzel für alle Klassenzauber.
-* Restliche Klassenzauber: Nekromant (1 Zauber), Ritter (1 Zauber), Waldläufer (2 Zauber - Ultis)
-* Standfestigkeit auf Gebiet mit Gruppenheilung, sonst zu schlecht.
 * FIXED: Bezwingung Tooltip fixen und Anzahl und Stärke und Dauer der beschworenen Templer reduzieren.
 * FIXED: Sprungattacke: Knockback wird nicht ausgeführt, nur eine Einheit wird gelähmt.
-* Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
-* Musik aus Klassenauswahl nach Video beenden!
 * DONE: Forschung in Stützpunkt, die Pferd schneller macht oder mehr Einkünfte erlaubt.
-* Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
-* Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
 * FIXED (neues OpLimit beim Zerstören aller Zauber des Charakters): Ab dem zweiten Repick steht der alte Charakter noch da.
 * FIXED: Illusionen braucht das gleiche Angriffsanimationssystem.
 * FIXED: Kopie in Video braucht das gleiche Angriffsanimationssystem.
 * FIXED: Deranors Leibwache soll Runen oder Tränke droppen.
 * FIXED: Nach Repick sollen die gedroppten Gegenstände noch dem Spieler gehören.
-* Deranor sollte nach Tod auch etwas droppen.
-* Wut der Elemente ist nach Repick nie in den Favoriten?!
 * FIXED: Vervielfachung oder Beschwörung von Illusionen sollte dazu führen, dass die Illusionen immer das Equipment an haben.
 * FIXED: Nie AdjustPlayerStateBJ() verwendet, gathered gold funktioniert nicht richtig wegen Gebäude!
-* Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar.
 * FIXED: Minikarte von Talras aktualisieren (zentriert).
-* Schatten von Talras neu berechnen.
-* Schatten der Arena-Karte berechnen.
 * FIXED: Wenn ein Equipment-Gegenstand mit mehreren Aufladungen eingesammelt wird und das Equipment offen ist, hat der angelegte Gegenstand immer noch die Anzahl der Aufladungen.
-* Nach Repick ist Grundzauber nicht in den Favoriten.
 * FIXED: Wenn das Hauptgebäude ausgebaut wird, verschwinden die Zauberbuchfähigkeiten.
 * DONE: Zauberbuch: Maximale Stufe, Zauber verlernen.
 * FIXED: Passive Zauber nicht in Favoriten.
+* DONE: Auftrag "Krieg" aufteilen, ist viel zu unübersichtlich: Waffen von Wieland, Holz von Kuno, Nahrung von Manfred, Fallen von Björn, Rekruten vom Bauernhof.
+* FIXED: Gräser und Blumen usw. haben keinen Schatten, Doodads ändern!
+* DONE: Schatten der Arena-Karte berechnen.
+* FIXED: Arenakarte braucht verschiede Streitmächte, ansonsten im lokalen Netzwerk nicht spielbar.
+
+Aufgehoben für Version 0.7:
+* Multiboard verschwindet manchmal bei Repick.
+* Minikartenfarben der Doodads festlegen.
+* Spieler kann anderem Spieler keinen Gegenstand geben, wenn dessen Inventar voll ist: Dieselbe Funktion wie beim Aufheben einbauen.
+* System für korrekte Kamerahöhe bei Brücken, welches jedoch nur das Offset zurückgibt, um die Kamra auf eine Höhe ohne Interpolation zu setzen: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/camera-height-above-doodads-destructibles-273631/#post2767796
+* Brücke und Schiff verschwinden: http://www.wc3c.net/showthread.php?t=90920
+* Charakter stirbt an Pfeilhagel selbst aber nur wenn auf Gegner angewandt, Gegner sind im Zielgebiet (mit Stufe 5 der Fähigkeit). Mit Ziel "Nicht-selbst" verwundet er Verbündete.
+* Tastenkürzel für alle Klassenzauber.
+* Restliche Klassenzauber: Nekromant (1 Zauber), Ritter (1 Zauber), Waldläufer (2 Zauber - Ultis)
+* Standfestigkeit auf Gebiet mit Gruppenheilung, sonst zu schlecht.
+* Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
+* Musik aus Klassenauswahl nach Video beenden!
+* Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
+* Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
+* Deranor sollte nach Tod auch etwas droppen.
+* Wut der Elemente ist nach Repick nie in den Favoriten?!
+* Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar.
+* Schatten von Talras neu berechnen.
+* Nach Repick ist Grundzauber nicht in den Favoriten.
 * Spruchrolle des Sammlers: Keine Powerups?
-* Auftrag "Krieg" aufteilen, ist viel zu unübersichtlich: Waffen von Wieland, Holz von Kuno, Nahrung von Manfred, Fallen von Björn, Rekruten vom Bauernhof.
 
 Abgeschlossene Punkte:
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.

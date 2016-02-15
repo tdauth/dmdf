@@ -78894,16 +78894,6 @@ STRING 13152
 Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r.|n|n|cffffcc00Stufe 1|r - Verbraucht 5 Mana pro Schadenspunkt und absorbiert maximal 100 Schaden.|n|cffffcc00Stufe 2|r - Verbraucht 4 Mana pro Schadenspunkt und absorbiert maximal 200 Schaden.|n|cffffcc00Stufe 3|r - Verbraucht 3 Mana pro Schadenspunkt und absorbiert maximal 300 Schaden.|n|cffffcc00Stufe 4|r - Verbraucht 2 Mana pro Schadenspunkt und absorbiert maximal 400 Schaden.|n|cffffcc00Stufe 5|r - Verbraucht 1 Mana pro Schadenspunkt und absorbiert maximal 500 Schaden.
 }
 
-STRING 13153
-{
-Shared Missions
-}
-
-STRING 13154
-{
-Own Missions
-}
-
 STRING 13155
 // Gegenstände: I053 (Ring der Stärke), Ubertip (Tooltipp - Erweitert (utub))
 {
