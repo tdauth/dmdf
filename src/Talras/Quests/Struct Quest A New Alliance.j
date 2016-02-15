@@ -23,7 +23,7 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 		endmethod
 	endstruct
 
-	struct QuestANewAlliance extends AQuest
+	struct QuestANewAlliance extends SharedQuest
 		private QuestAreaANewAlliance m_questArea
 
 		implement Quest

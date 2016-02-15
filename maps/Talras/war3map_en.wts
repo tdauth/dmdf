@@ -5478,7 +5478,7 @@ Sprinten [|cffffcc00Stufe %d|r] erlernen
 STRING 916
 // Fähigkeiten: A01N (Lebenswille), Name (Name (anam))
 {
-Lebenswille
+Will to Live
 }
 
 STRING 917
@@ -5502,7 +5502,7 @@ Beschwört für <A0D3,Dur4> Sekunden eine heilende Quelle, die bei Verbündeten 
 STRING 920
 // Fähigkeiten: A03R (Lebenswille), Name (Name (anam))
 {
-Lebenswille
+Will to Live
 }
 
 STRING 921
@@ -5604,31 +5604,31 @@ Block [|cffffcc00Stufe %d|r] erlernen
 STRING 937
 // Fähigkeiten: A01P (Block), Tip (Tooltipp - Normal (atp1))
 {
-Block [|cffffcc00Stufe 1|r]
+Block [|cffffcc00Level 1|r]
 }
 
 STRING 938
 // Fähigkeiten: A01P (Block), Tip (Tooltipp - Normal (atp1))
 {
-Block [|cffffcc00Stufe 2|r]
+Block [|cffffcc00Level 2|r]
 }
 
 STRING 939
 // Fähigkeiten: A01P (Block), Tip (Tooltipp - Normal (atp1))
 {
-Block [|cffffcc00Stufe 3|r]
+Block [|cffffcc00Level 3|r]
 }
 
 STRING 940
 // Fähigkeiten: A01P (Block), Tip (Tooltipp - Normal (atp1))
 {
-Block [|cffffcc00Stufe 4|r]
+Block [|cffffcc00Level 4|r]
 }
 
 STRING 941
 // Fähigkeiten: A01P (Block), Tip (Tooltipp - Normal (atp1))
 {
-Block [|cffffcc00Stufe 5|r]
+Block [|cffffcc00Level 5|r]
 }
 
 STRING 942
@@ -5880,7 +5880,7 @@ Dunkler Diener
 STRING 983
 // Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis <A0CR,DataA1,%> % Mana pro Sekunde regeneriert.
+Summons for <A0D4,Dur1> seconds a mana regenerating grove which regenerates <A0CR,DataA1,%> % mana per second at allies within range.
 }
 
 STRING 984
@@ -5910,25 +5910,25 @@ Fügt dem Angriff des Zerstörers einen zusätzlichen Schaden von <A075,DataA1> 
 STRING 988
 // Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur2> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis <A0CR,DataA1,%> % Mana pro Sekunde regeneriert.
+Summons for <A0D4,Dur2> seconds a mana regenerating grove which regenerates <A0CR,DataA1,%> % mana per second at allies within range.
 }
 
 STRING 989
 // Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur3> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis <A0CR,DataA1,%> % Mana pro Sekunde regeneriert.
+Summons for <A0D4,Dur3> seconds a mana regenerating grove which regenerates <A0CR,DataA1,%> % mana per second at allies within range.
 }
 
 STRING 990
 // Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur4> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis <A0CR,DataA1,%> % Mana pro Sekunde regeneriert.
+Summons for <A0D4,Dur4> seconds a mana regenerating grove which regenerates <A0CR,DataA1,%> % mana per second at allies within range.
 }
 
 STRING 991
 // Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur5> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis <A0CR,DataA1,%> % Mana pro Sekunde regeneriert.
+Summons for <A0D4,Dur5> seconds a mana regenerating grove which regenerates <A0CR,DataA1,%> % mana per second at allies within range.
 }
 
 STRING 992
@@ -6378,31 +6378,31 @@ Wut der Elemente
 STRING 1066
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 2|r]
+Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 1067
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 3|r]
+Fire Missile [|cffffcc00Level 3|r]
 }
 
 STRING 1068
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 4|r]
+Fire Missile [|cffffcc00Level 4|r]
 }
 
 STRING 1069
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 5|r]
+Fire Missile [|cffffcc00Level 5|r]
 }
 
 STRING 1070
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 1|r]
+Fire Missile [|cffffcc00Level 1|r]
 }
 
 STRING 1071
@@ -6612,25 +6612,25 @@ Changes to the previous class.
 STRING 1105
 // Fähigkeiten: A04H (Ziel markieren), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 2|r]
+Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 1106
 // Fähigkeiten: A04H (Ziel markieren), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 3|r]
+Fire Missile [|cffffcc00Level 3|r]
 }
 
 STRING 1107
 // Fähigkeiten: A04H (Ziel markieren), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 4|r]
+Fire Missile [|cffffcc00Level 4|r]
 }
 
 STRING 1108
 // Fähigkeiten: A04H (Ziel markieren), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 5|r]
+Fire Missile [|cffffcc00Level 5|r]
 }
 
 STRING 1109
@@ -7482,7 +7482,7 @@ Dummy Hero Ability
 STRING 1250
 // Fähigkeiten: A02A (Konzentration), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden 5 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds 5 % of his maximum life.
 }
 
 STRING 1251
@@ -7662,37 +7662,37 @@ STRING 1279
 STRING 1280
 // Fähigkeiten: A02A (Konzentration), Name (Name (anam))
 {
-Konzentration
+Concentration
 }
 
 STRING 1281
 // Fähigkeiten: A02A (Konzentration), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 1|r]
+Concentration [|cffffcc00Level 1|r]
 }
 
 STRING 1282
 // Fähigkeiten: A02A (Konzentration), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 2|r]
+Concentration [|cffffcc00Level 2|r]
 }
 
 STRING 1283
 // Fähigkeiten: A02A (Konzentration), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 3|r]
+Concentration [|cffffcc00Level 3|r]
 }
 
 STRING 1284
 // Fähigkeiten: A02A (Konzentration), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 4|r]
+Concentration [|cffffcc00Level 4|r]
 }
 
 STRING 1285
 // Fähigkeiten: A02A (Konzentration), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 5|r]
+Concentration [|cffffcc00Level 5|r]
 }
 
 STRING 1286
@@ -7758,7 +7758,7 @@ Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von
 STRING 1296
 // Fähigkeiten: A03Z (Konzentration), Name (Name (anam))
 {
-Konzentration
+Concentration
 }
 
 STRING 1297
@@ -7776,7 +7776,7 @@ ffnet das Zauberbuch Ihres Charakters. Im Zauberbuch befinden sich erlernte und 
 STRING 1299
 // Zauberverstärker/Effekte: B008 (Konzentration), EditorName (Name (nur Editor) (fnam))
 {
-Konzentration
+Concentration
 }
 
 STRING 1300
@@ -10536,7 +10536,7 @@ Erdgefängnis
 STRING 1759
 // Zauberverstärker/Effekte: B008 (Konzentration), Bufftip (Tooltipp (ftip))
 {
-Konzentration
+Concentration
 }
 
 STRING 1760
@@ -17852,7 +17852,7 @@ Mächtiger Zauberhut
 STRING 2987
 // Fähigkeiten: A0LJ (Lebenswille - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Lebenswille [|cffffcc00Stufe 1|r]
+Will to Live [|cffffcc00Level 1|r]
 }
 
 STRING 2988
@@ -23992,67 +23992,67 @@ STRING 4012
 STRING 4013
 // Fähigkeiten: A09X (Zorn des Waldes), Name (Name (anam))
 {
-Wrath of the forest
+Wrath of the Forest
 }
 
 STRING 4014
 // Fähigkeiten: A0ED (Zorn des Waldes - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Wrath of the forest [|cffffcc00Stufe 1|r]
+Wrath of the Forest [|cffffcc00Stufe 1|r]
 }
 
 STRING 4015
 // Fähigkeiten: A0EE (Zorn des Waldes - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Wrath of the forest [|cffffcc00Stufe 2|r]
+Wrath of the Forest [|cffffcc00Stufe 2|r]
 }
 
 STRING 4016
 // Fähigkeiten: A0EF (Zorn des Waldes - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Wrath of the forest [|cffffcc00Stufe 3|r]
+Wrath of the Forest [|cffffcc00Stufe 3|r]
 }
 
 STRING 4017
 // Fähigkeiten: A0EG (Zorn des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Wrath of the forest [|cffffcc00Stufe 4|r]
+Wrath of the Forest [|cffffcc00Stufe 4|r]
 }
 
 STRING 4018
 // Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Wrath of the forest [|cffffcc00Stufe 5|r]
+Wrath of the Forest [|cffffcc00Stufe 5|r]
 }
 
 STRING 4019
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur1> seconds.
 }
 
 STRING 4020
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur2> Sekunden lang an.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur2> seconds.
 }
 
 STRING 4021
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur3> Sekunden lang an.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur3> seconds.
 }
 
 STRING 4022
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur4> Sekunden lang an.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur4> seconds.
 }
 
 STRING 4023
 // Fähigkeiten: A09X (Zorn des Waldes), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur5> Sekunden lang an.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur5> seconds.
 }
 
 STRING 4024
@@ -24064,13 +24064,13 @@ STRING 4024
 STRING 4025
 // Fähigkeiten: A09Y (Zorn des Waldes), Name (Name (anam))
 {
-Wrath of the forest
+Wrath of the Forest
 }
 
 STRING 4026
 // Fähigkeiten: A0A0 (Erwachen des Waldes), Name (Name (anam))
 {
-Awakening of the forest
+Awakening of the Forest
 }
 
 STRING 4027
@@ -24082,61 +24082,61 @@ STRING 4027
 STRING 4028
 // Fähigkeiten: A0JP (Erwachen des Waldes - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Awakening of the forest [|cffffcc00Stufe 1|r]
+Awakening of the Forest [|cffffcc00Level 1|r]
 }
 
 STRING 4029
 // Fähigkeiten: A0JQ (Erwachen des Waldes - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Awakening of the forest [|cffffcc00Stufe 2|r]
+Awakening of the Forest [|cffffcc00Level 2|r]
 }
 
 STRING 4030
 // Fähigkeiten: A0JR (Erwachen des Waldes - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Awakening of the forest [|cffffcc00Stufe 3|r]
+Awakening of the Forest [|cffffcc00Level 3|r]
 }
 
 STRING 4031
 // Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Awakening of the forest [|cffffcc00Stufe 4|r]
+Awakening of the Forest [|cffffcc00Level 4|r]
 }
 
 STRING 4032
 // Fähigkeiten: A0JT (Erwachen des Waldes - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Awakening of the forest [|cffffcc00Stufe 5|r]
+Awakening of the Forest [|cffffcc00Level 5|r]
 }
 
 STRING 4033
 // Fähigkeiten: A0JP (Erwachen des Waldes - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC1> Punkte Schaden an. |nLasts <A09Z,Dur1> Sekunden lang an.
+Calls hordes of raving mad rams which explode at opponents of the druid. Each exploding ram deals <A09Z,DataC1> points of damage. |nLasts <A09Z,Dur1> seconds.
 }
 
 STRING 4034
 // Fähigkeiten: A0JQ (Erwachen des Waldes - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nLasts <A09Z,Dur2> Sekunden lang an.
+Calls hordes of raving mad rams which explode at opponents of the druid. Each exploding ram deals <A09Z,DataC2> points of damage. |nLasts <A09Z,Dur2> seconds.
 }
 
 STRING 4035
 // Fähigkeiten: A0JR (Erwachen des Waldes - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC3> Punkte Schaden an. |nLasts <A09Z,Dur3> Sekunden lang an.
+Calls hordes of raving mad rams which explode at opponents of the druid. Each exploding ram deals <A09Z,DataC3> points of damage. |nLasts <A09Z,Dur3> seconds.
 }
 
 STRING 4036
 // Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC4> Punkte Schaden an. |nLasts <A09Z,Dur4> Sekunden lang an.
+Calls hordes of raving mad rams which explode at opponents of the druid. Each exploding ram deals <A09Z,DataC4> points of damage. |nLasts <A09Z,Dur4> seconds.
 }
 
 STRING 4037
 // Fähigkeiten: A0JT (Erwachen des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC5> Punkte Schaden an. |nLasts <A09Z,Dur5> Sekunden lang an.
+Calls hordes of raving mad rams which explode at opponents of the druid. Each exploding ram deals <A09Z,DataC5> points of damage. |nLasts <A09Z,Dur5> seconds.
 }
 
 STRING 4038
@@ -24148,13 +24148,13 @@ STRING 4038
 STRING 4039
 // Fähigkeiten: A09Z (Erwachen des Waldes), Name (Name (anam))
 {
-Awakening of the forest
+Awakening of the Forest
 }
 
 STRING 4040
 // Fähigkeiten: A0A1 (Waldholzfäuste), Name (Name (anam))
 {
-Waldholzfäuste
+Forest Wood Fists
 }
 
 STRING 4041
@@ -24208,31 +24208,31 @@ STRING 4048
 STRING 4049
 // Fähigkeiten: A0A1 (Waldholzfäuste), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 1|r]
+Forest Wood Fists [|cffffcc00Level 1|r]
 }
 
 STRING 4050
 // Fähigkeiten: A0A1 (Waldholzfäuste), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 2|r]
+Forest Wood Fists [|cffffcc00Level 2|r]
 }
 
 STRING 4051
 // Fähigkeiten: A0A1 (Waldholzfäuste), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 3|r]
+Forest Wood Fists [|cffffcc00Level 3|r]
 }
 
 STRING 4052
 // Fähigkeiten: A0A1 (Waldholzfäuste), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 4|r]
+Forest Wood Fists [|cffffcc00Level 4|r]
 }
 
 STRING 4053
 // Fähigkeiten: A0A1 (Waldholzfäuste), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 5|r]
+Forest Wood Fists [|cffffcc00Level 5|r]
 }
 
 STRING 4054
@@ -24280,7 +24280,7 @@ STRING 4060
 STRING 4061
 // Fähigkeiten: A0A2 (Waldholzfäuste), Name (Name (anam))
 {
-Waldholzfäuste
+Forest Wood Fists
 }
 
 STRING 4062
@@ -24388,7 +24388,7 @@ STRING 4078
 STRING 4079
 // Zauberverstärker/Effekte: B01P (Waldholzfäuste), EditorName (Name (nur Editor) (fnam))
 {
-Waldholzfäuste
+Forest Wood Fists
 }
 
 STRING 4080
@@ -24400,7 +24400,7 @@ STRING 4080
 STRING 4081
 // Zauberverstärker/Effekte: B01P (Waldholzfäuste), Bufftip (Tooltipp (ftip))
 {
-Waldholzfäuste
+Forest Wood Fists
 }
 
 STRING 4082
@@ -29386,7 +29386,7 @@ STRING 4911
 STRING 4912
 // Einheiten: n03K (Hain), Name (Name (unam))
 {
-Hain
+Grove
 }
 
 STRING 4913
@@ -29446,13 +29446,13 @@ Baumhirte - Hain
 STRING 4922
 // Einheiten: n064 (Hain), Name (Name (unam))
 {
-Hain
+Grove
 }
 
 STRING 4923
 // Zauberverstärker/Effekte: B01V (Baumhirte - Hain), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Hain.
+Grove.
 }
 
 STRING 4924
@@ -33263,67 +33263,67 @@ Erhöht den Schaden.
 STRING 5558
 // Fähigkeiten: A0D5 (Hain), Name (Name (anam))
 {
-Hain
+Grove
 }
 
 STRING 5559
 // Fähigkeiten: A0D4 (Hain), Tip (Tooltipp - Normal (atp1))
 {
-Hain beschwören [|cffffcc00Stufe 1|r]
+Summon Grove [|cffffcc00Level 1|r]
 }
 
 STRING 5560
 // Fähigkeiten: A0D4 (Hain), Tip (Tooltipp - Normal (atp1))
 {
-Hain beschwören [|cffffcc00Stufe 2|r]
+Summon Grove [|cffffcc00Level 2|r]
 }
 
 STRING 5561
 // Fähigkeiten: A0D4 (Hain), Tip (Tooltipp - Normal (atp1))
 {
-Hain beschwören [|cffffcc00Stufe 3|r]
+Summon Grove [|cffffcc00Level 3|r]
 }
 
 STRING 5562
 // Fähigkeiten: A0D4 (Hain), Tip (Tooltipp - Normal (atp1))
 {
-Hain beschwören [|cffffcc00Stufe 4|r]
+Summon Grove [|cffffcc00Level 4|r]
 }
 
 STRING 5563
 // Fähigkeiten: A0D4 (Hain), Tip (Tooltipp - Normal (atp1))
 {
-Hain beschwören [|cffffcc00Stufe 5|r]
+Summon Grove [|cffffcc00Level 5|r]
 }
 
 STRING 5564
 // Fähigkeiten: A0D6 (Hain - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen Mana regenerierenden Hain.
+Summons a mana regenerating grove.
 }
 
 STRING 5565
 // Fähigkeiten: A0D7 (Hain - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen Mana regenerierenden Hain.
+Summons a mana regenerating grove.
 }
 
 STRING 5566
 // Fähigkeiten: A0D8 (Hain - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen Mana regenerierenden Hain.
+Summons a mana regenerating grove.
 }
 
 STRING 5567
 // Fähigkeiten: A0D9 (Hain - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen Mana regenerierenden Hain.
+Summons a mana regenerating grove.
 }
 
 STRING 5568
 // Fähigkeiten: A0DA (Hain - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört einen Mana regenerierenden Hain.
+Summons a mana regenerating grove.
 }
 
 STRING 5569
@@ -33335,7 +33335,7 @@ STRING 5569
 STRING 5570
 // Einheiten: n066 (Hain), Name (Name (unam))
 {
-Hain
+Grove
 }
 
 STRING 5571
@@ -33395,7 +33395,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5580
 // Fähigkeiten: A0D6 (Hain - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Hain [|cffffcc00Stufe 1|r]
+Grove [|cffffcc00Level 1|r]
 }
 
 STRING 5581
@@ -33479,7 +33479,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5594
 // Fähigkeiten: A0D7 (Hain - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Hain [|cffffcc00Stufe 2|r]
+Grove [|cffffcc00Level 2|r]
 }
 
 STRING 5595
@@ -33563,7 +33563,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5608
 // Fähigkeiten: A0D8 (Hain - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Hain [|cffffcc00Stufe 3|r]
+Grove [|cffffcc00Level 3|r]
 }
 
 STRING 5609
@@ -33647,7 +33647,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5622
 // Fähigkeiten: A0D9 (Hain - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Hain [|cffffcc00Stufe 4|r]
+Grove [|cffffcc00Level 4|r]
 }
 
 STRING 5623
@@ -33731,7 +33731,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5636
 // Fähigkeiten: A0DA (Hain - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Hain [|cffffcc00Stufe 5|r]
+Grove [|cffffcc00Level 5|r]
 }
 
 STRING 5637
@@ -34421,7 +34421,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5751
 // Fähigkeiten: A0DR (Waldholzfäuste - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 1|r]
+Forest Wood Fists [|cffffcc00Level 1|r]
 }
 
 STRING 5752
@@ -34505,7 +34505,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5765
 // Fähigkeiten: A0DS (Waldholzfäuste - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 2|r]
+Forest Wood Fists [|cffffcc00Level 2|r]
 }
 
 STRING 5766
@@ -34589,7 +34589,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5779
 // Fähigkeiten: A0DT (Waldholzfäuste - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 3|r]
+Forest Wood Fists [|cffffcc00Level 3|r]
 }
 
 STRING 5780
@@ -34673,7 +34673,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5793
 // Fähigkeiten: A0DU (Waldholzfäuste - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 4|r]
+Forest Wood Fists [|cffffcc00Level 4|r]
 }
 
 STRING 5794
@@ -34757,7 +34757,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5807
 // Fähigkeiten: A0DV (Waldholzfäuste - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste [|cffffcc00Stufe 5|r]
+Forest Wood Fists [|cffffcc00Level 5|r]
 }
 
 STRING 5808
@@ -34847,13 +34847,13 @@ Waldholzfäuste - Stufe 5
 STRING 5822
 // Fähigkeiten: A0E2 (Ranken), Name (Name (anam))
 {
-Ranken
+Tendrils
 }
 
 STRING 5823
 // Fähigkeiten: A0E3 (Ranken - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 1|r]
+Tendrils [|cffffcc00Level 1|r]
 }
 
 STRING 5824
@@ -34865,25 +34865,25 @@ Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die
 STRING 5825
 // Fähigkeiten: A0E4 (Ranken - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 2|r]
+Tendrils [|cffffcc00Level 2|r]
 }
 
 STRING 5826
 // Fähigkeiten: A0E5 (Ranken - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 3|r]
+Tendrils [|cffffcc00Level 3|r]
 }
 
 STRING 5827
 // Fähigkeiten: A0E6 (Ranken - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 4|r]
+Tendrils [|cffffcc00Level 4|r]
 }
 
 STRING 5828
 // Fähigkeiten: A0E7 (Ranken - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 5|r]
+Tendrils [|cffffcc00Level 5|r]
 }
 
 STRING 5829
@@ -34919,7 +34919,7 @@ STRING 5833
 STRING 5834
 // Fähigkeiten: A0DG (Ranken), Name (Name (anam))
 {
-Ranken
+Tendrils
 }
 
 STRING 5835
@@ -34979,7 +34979,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5844
 // Fähigkeiten: A0DG (Ranken), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 1|r]
+Tendrils [|cffffcc00Level 1|r]
 }
 
 STRING 5845
@@ -35063,7 +35063,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5858
 // Fähigkeiten: A0DG (Ranken), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 2|r]
+Tendrils [|cffffcc00Level 2|r]
 }
 
 STRING 5859
@@ -42820,43 +42820,43 @@ STRING 7150
 STRING 7151
 // Fähigkeiten: A0DG (Ranken), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 3|r]
+Tendrils [|cffffcc00Level 3|r]
 }
 
 STRING 7152
 // Fähigkeiten: A0DG (Ranken), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 4|r]
+Tendrils [|cffffcc00Level 4|r]
 }
 
 STRING 7153
 // Fähigkeiten: A0DG (Ranken), Tip (Tooltipp - Normal (atp1))
 {
-Ranken [|cffffcc00Stufe 5|r]
+Tendrils [|cffffcc00Level 5|r]
 }
 
 STRING 7154
 // Fähigkeiten: A09T (Tierkunde), Tip (Tooltipp - Normal (atp1))
 {
-Tierkunde [|cffffcc00Stufe 2|r]
+Zoology [|cffffcc00Level 2|r]
 }
 
 STRING 7155
 // Fähigkeiten: A09T (Tierkunde), Tip (Tooltipp - Normal (atp1))
 {
-Tierkunde [|cffffcc00Stufe 3|r]
+Zoology [|cffffcc00Level 3|r]
 }
 
 STRING 7156
 // Fähigkeiten: A09T (Tierkunde), Tip (Tooltipp - Normal (atp1))
 {
-Tierkunde [|cffffcc00Stufe 4|r]
+Zoology [|cffffcc00Level 4|r]
 }
 
 STRING 7157
 // Fähigkeiten: A09T (Tierkunde), Tip (Tooltipp - Normal (atp1))
 {
-Tierkunde [|cffffcc00Stufe 5|r]
+Zoology [|cffffcc00Level 5|r]
 }
 
 STRING 7158
@@ -44620,7 +44620,7 @@ STRING 7450
 STRING 7451
 // Fähigkeiten: A0JP (Erwachen des Waldes - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Pro Sekunde werden <A09Z,DataA1> Widder beschworen.|nHält <A09Z,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Jeder explodierende Widder richtet <A09Z,DataC1> Punkte Schaden an. |n|cffffcc00Stufe 2|r -  Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |n|cffffcc00Stufe 3|r -  Jeder explodierende Widder richtet <A09Z,DataC3> Punkte Schaden an.|n|cffffcc00Stufe 4|r -  Jeder explodierende Widder richtet <A09Z,DataC4> Punkte Schaden an.|n|cffffcc00Stufe 5|r -  Jeder explodierende Widder richtet <A09Z,DataC5> Punkte Schaden an.
+Calls hordes of raving mad rams which explode at opponents of the druid. Every second <A09Z,DataA1> rams are summoned. |nLasts <A09Z,Dur1> seconds.|n|n|cffffcc00Level 1|r -  Each exploding ram deals <A09Z,DataC1> points of damage. |n|cffffcc00Level 2|r -  Each exploding ram deals <A09Z,DataC2> points of damage. |n|cffffcc00Level 3|r -  Each exploding ram deals <A09Z,DataC3> points of damage.|n|cffffcc00Level 4|r -  Each exploding ram deals <A09Z,DataC4> points of damage.|n|cffffcc00Level 5|r -  Each exploding ram deals <A09Z,DataC5> points of damage.
 }
 
 STRING 7452
@@ -45484,7 +45484,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7595
 // Fähigkeiten: A0JF (Wohltat - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 1|r]
+Relief [|cffffcc00Level 1|r]
 }
 
 STRING 7596
@@ -45568,7 +45568,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7609
 // Fähigkeiten: A0JG (Wohltat - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 2|r]
+Relief [|cffffcc00Level 2|r]
 }
 
 STRING 7610
@@ -45652,7 +45652,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7623
 // Fähigkeiten: A0JH (Wohltat - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 3|r]
+Relief [|cffffcc00Level 3|r]
 }
 
 STRING 7624
@@ -45736,7 +45736,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7637
 // Fähigkeiten: A0JI (Wohltat - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 4|r]
+Relief [|cffffcc00Level 4|r]
 }
 
 STRING 7638
@@ -45820,7 +45820,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 7651
 // Fähigkeiten: A0JJ (Wohltat - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 5|r]
+Relief [|cffffcc00Level 5|r]
 }
 
 STRING 7652
@@ -49348,7 +49348,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 8239
 // Fähigkeiten: A01N (Lebenswille), Tip (Tooltipp - Normal (atp1))
 {
-Lebenswille [|cffffcc00Stufe 1|r]
+Will to Live [|cffffcc00Level 1|r]
 }
 
 STRING 8240
@@ -51850,31 +51850,31 @@ Aura der Autorität [|cffffcc00Stufe 5|r]
 STRING 8656
 // Fähigkeiten: A0ED (Zorn des Waldes - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur1> seconds. |n|n|cffffcc00Level 1|r -  Creates <A09X,DataA1> locusts of which <A09X,DataC1> attack a single opponent at maximum.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> locusts of which <A09X,DataC2> attack a single opponent at maximum.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> locusts of which <A09X,DataC3> attack a single opponent at maximum.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> locusts of which <A09X,DataC4> attack a single opponent at maximum.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> locusts of which <A09X,DataC5> attack a single opponent at maximum.
 }
 
 STRING 8657
 // Fähigkeiten: A0EE (Zorn des Waldes - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur1> seconds. |n|n|cffffcc00Level 1|r -  Creates <A09X,DataA1> locusts of which <A09X,DataC1> attack a single opponent at maximum.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> locusts of which <A09X,DataC2> attack a single opponent at maximum.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> locusts of which <A09X,DataC3> attack a single opponent at maximum.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> locusts of which <A09X,DataC4> attack a single opponent at maximum.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> locusts of which <A09X,DataC5> attack a single opponent at maximum.
 }
 
 STRING 8658
 // Fähigkeiten: A0EF (Zorn des Waldes - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur1> seconds. |n|n|cffffcc00Level 1|r -  Creates <A09X,DataA1> locusts of which <A09X,DataC1> attack a single opponent at maximum.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> locusts of which <A09X,DataC2> attack a single opponent at maximum.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> locusts of which <A09X,DataC3> attack a single opponent at maximum.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> locusts of which <A09X,DataC4> attack a single opponent at maximum.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> locusts of which <A09X,DataC5> attack a single opponent at maximum.
 }
 
 STRING 8659
 // Fähigkeiten: A0EG (Zorn des Waldes - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur1> seconds. |n|n|cffffcc00Level 1|r -  Creates <A09X,DataA1> locusts of which <A09X,DataC1> attack a single opponent at maximum.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> locusts of which <A09X,DataC2> attack a single opponent at maximum.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> locusts of which <A09X,DataC3> attack a single opponent at maximum.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> locusts of which <A09X,DataC4> attack a single opponent at maximum.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> locusts of which <A09X,DataC5> attack a single opponent at maximum.
 }
 
 STRING 8660
 // Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Heuschrecken, die in der Nähe befindliche Gegner beißen und zerfetzen. Während sie das Fleisch ihrer Feinde fressen, verwandeln sie es auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nLasts <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Heuschrecken, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Heuschrecken, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Heuschrecken, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Heuschrecken, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry locusts that bite and tear all nearby enemies. While they eat the flesh of their enemies, they turn it by this way in a substance that restores the life of the druid on its return. |nLasts <A09X,Dur1> seconds. |n|n|cffffcc00Level 1|r -  Creates <A09X,DataA1> locusts of which <A09X,DataC1> attack a single opponent at maximum.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> locusts of which <A09X,DataC2> attack a single opponent at maximum.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> locusts of which <A09X,DataC3> attack a single opponent at maximum.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> locusts of which <A09X,DataC4> attack a single opponent at maximum.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> locusts of which <A09X,DataC5> attack a single opponent at maximum.
 }
 
 STRING 8661
@@ -58710,19 +58710,19 @@ Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten 
 STRING 9790
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %. |nLasts <A0A1,Dur1> Sekunden lang an.
+Increases the damage of an ally by <A0A1,DataA1,%> %. |nLasts <A0A1,Dur1> seconds.
 }
 
 STRING 9791
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A2,DataA2,%> %. |nLasts <A0A2,Dur2> Sekunden lang an.
+Increases the damage of an ally by <A0A1,DataA2,%> %. |nLasts <A0A1,Dur1> seconds.
 }
 
 STRING 9792
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A3,DataA3,%> %. |nLasts <A0A3,Dur3> Sekunden lang an.
+Increases the damage of an ally by <A0A1,DataA3,%> %. |nLasts <A0A1,Dur1> seconds.
 }
 
 STRING 9793
@@ -62783,7 +62783,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10469
 // Fähigkeiten: A0XI (Konzentration - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 1|r]
+Concentration [|cffffcc00Level 1|r]
 }
 
 STRING 10470
@@ -62861,7 +62861,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10482
 // Fähigkeiten: A0XJ (Konzentration - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 2|r]
+Concentration [|cffffcc00Level 2|r]
 }
 
 STRING 10483
@@ -62939,7 +62939,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10495
 // Fähigkeiten: A0XK (Konzentration - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 3|r]
+Concentration [|cffffcc00Level 3|r]
 }
 
 STRING 10496
@@ -63017,7 +63017,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10508
 // Fähigkeiten: A0XL (Konzentration - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 4|r]
+Concentration [|cffffcc00Level 4|r]
 }
 
 STRING 10509
@@ -63095,7 +63095,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10521
 // Fähigkeiten: A0XM (Konzentration - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Konzentration [|cffffcc00Stufe 5|r]
+Concentration [|cffffcc00Level 5|r]
 }
 
 STRING 10522
@@ -65021,13 +65021,13 @@ STRING 10841
 STRING 10842
 // Fähigkeiten: A0LJ (Lebenswille - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12.|r|nDer Ritter kann <A01N,DataA1> Sekunden nach seinem Tod mit 50% seiner Lebensnenergie wiederauferstehen.
+|cffffcc00Ultimate Spell 1 - Requires Level 12.|r|nThe knight is able to resurrect <A01N,DataA1> seconds after his death with 50 % of his life.
 }
 
 STRING 10843
 // Fähigkeiten: A01N (Lebenswille), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1|r|nDer Ritter kann <A01N,DataA1> Sekunden nach seinem Tod mit 50% seiner Lebensnenergie wiederauferstehen.
+|cffffcc00Ultimate Spell 1|r|nThe knight is able to resurrect <A01N,DataA1> seconds after his death with 50 % of his life.
 }
 
 STRING 10844
@@ -67776,25 +67776,25 @@ Der Drachentöter erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,
 STRING 11301
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A4,DataA4,%> %. |nLasts <A0A4,Dur4> Sekunden lang an.
+Increases the damage of an ally by <A0A1,DataA4,%> %. |nLasts <A0A1,Dur4> seconds.
 }
 
 STRING 11302
 // Fähigkeiten: A0A1 (Waldholzfäuste), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten um <A0A5,DataA5,%> %. |nLasts <A0A5,Dur5> Sekunden lang an.
+Increases the damage of an ally by <A0A1,DataA5,%> %. |nLasts <A0A1,Dur5> seconds.
 }
 
 STRING 11303
 // Fähigkeiten: A0DR (Waldholzfäuste - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Increases the damage of an ally. |nLasts <A0A1,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the damage of an ally by <A0A1,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage of an ally by <A0A1,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage of an ally by <A0A1,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage of an ally by <A0A1,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage of an ally by <A0A1,DataA5,%> %.
 }
 
 STRING 11304
 // Fähigkeiten: A0DS (Waldholzfäuste - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Increases the damage of an ally. |nLasts <A0A1,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the damage of an ally by <A0A1,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage of an ally by <A0A1,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage of an ally by <A0A1,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage of an ally by <A0A1,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage of an ally by <A0A1,DataA5,%> %.
 }
 
 STRING 11305
@@ -71095,19 +71095,19 @@ Standfestigkeit - Stufe 5
 STRING 11854
 // Fähigkeiten: A0DT (Waldholzfäuste - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Increases the damage of an ally. |nLasts <A0A1,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the damage of an ally by <A0A1,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage of an ally by <A0A1,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage of an ally by <A0A1,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage of an ally by <A0A1,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage of an ally by <A0A1,DataA5,%> %.
 }
 
 STRING 11855
 // Fähigkeiten: A0DU (Waldholzfäuste - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Increases the damage of an ally. |nLasts <A0A1,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the damage of an ally by <A0A1,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage of an ally by <A0A1,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage of an ally by <A0A1,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage of an ally by <A0A1,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage of an ally by <A0A1,DataA5,%> %.
 }
 
 STRING 11856
 // Fähigkeiten: A0DV (Waldholzfäuste - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Schadenswirkung eines Verbündeten. |nLasts <A0A1,Dur1> Sekunden lang an. |n|n|cffffcc00Stufe 1|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA5,%> %.
+Increases the damage of an ally. |nLasts <A0A1,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the damage of an ally by <A0A1,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage of an ally by <A0A1,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage of an ally by <A0A1,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage of an ally by <A0A1,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage of an ally by <A0A1,DataA5,%> %.
 }
 
 STRING 11857
@@ -77264,7 +77264,7 @@ Diese Einheit steht unter der Wirkung von 'Bärengestalt'; Trefferpunkt-Regenera
 STRING 12882
 // Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur4> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis <A1D6,DataA1,%> % Mana pro Sekunde regeneriert.
+Summons for <A0D4,Dur4> seconds a mana regenerating grove which regenerates <A0CR,DataA1,%> % mana per second at allies within range.
 }
 
 STRING 12883
@@ -77336,19 +77336,19 @@ Transforms the druid into a bear. The life regeneration rate is increased by <A1
 STRING 12894
 // Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur5> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis <A1D7,DataA1,%> % Mana pro Sekunde regeneriert.
+Summons for <A0D4,Dur5> seconds a mana regenerating grove which regenerates <A0CR,DataA1,%> % mana per second at allies within range.
 }
 
 STRING 12895
 // Fähigkeiten: A0D4 (Hain), Name (Name (anam))
 {
-Hain
+Grove
 }
 
 STRING 12896
 // Fähigkeiten: A0D5 (Hain), Name (Name (anam))
 {
-Hain
+Grove
 }
 
 STRING 12897
@@ -79903,55 +79903,55 @@ STRING 13320
 STRING 13321
 // Fähigkeiten: A02A (Konzentration), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden 10 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds 10 % of his maximum life.
 }
 
 STRING 13322
 // Fähigkeiten: A02A (Konzentration), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden 15 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds 15 % of his maximum life.
 }
 
 STRING 13323
 // Fähigkeiten: A02A (Konzentration), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden 20 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds 20 % of his maximum life.
 }
 
 STRING 13324
 // Fähigkeiten: A02A (Konzentration), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden 25 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds 25 % of his maximum life.
 }
 
 STRING 13325
 // Fähigkeiten: A0XI (Konzentration - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds a partof his maximum life.|n|n|cffffcc00Level 1|r - 5 % of his maximum life. |n|cffffcc00Level 2|r - 10 % of his maximum life. |n|cffffcc00Level 3|r - 15 % of his maximum life. |n|cffffcc00Level 4|r - 20 % of his maximum life. |n|cffffcc00Level 5|r - 25 % of his maximum life.
 }
 
 STRING 13326
 // Fähigkeiten: A0XJ (Konzentration - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds a partof his maximum life.|n|n|cffffcc00Level 1|r - 5 % of his maximum life. |n|cffffcc00Level 2|r - 10 % of his maximum life. |n|cffffcc00Level 3|r - 15 % of his maximum life. |n|cffffcc00Level 4|r - 20 % of his maximum life. |n|cffffcc00Level 5|r - 25 % of his maximum life.
 }
 
 STRING 13327
 // Fähigkeiten: A0XK (Konzentration - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds a partof his maximum life.|n|n|cffffcc00Level 1|r - 5 % of his maximum life. |n|cffffcc00Level 2|r - 10 % of his maximum life. |n|cffffcc00Level 3|r - 15 % of his maximum life. |n|cffffcc00Level 4|r - 20 % of his maximum life. |n|cffffcc00Level 5|r - 25 % of his maximum life.
 }
 
 STRING 13328
 // Fähigkeiten: A0XL (Konzentration - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds a partof his maximum life.|n|n|cffffcc00Level 1|r - 5 % of his maximum life. |n|cffffcc00Level 2|r - 10 % of his maximum life. |n|cffffcc00Level 3|r - 15 % of his maximum life. |n|cffffcc00Level 4|r - 20 % of his maximum life. |n|cffffcc00Level 5|r - 25 % of his maximum life.
 }
 
 STRING 13329
 // Fähigkeiten: A0XM (Konzentration - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The knight regenerates every 10 seconds a partof his maximum life.|n|n|cffffcc00Level 1|r - 5 % of his maximum life. |n|cffffcc00Level 2|r - 10 % of his maximum life. |n|cffffcc00Level 3|r - 15 % of his maximum life. |n|cffffcc00Level 4|r - 20 % of his maximum life. |n|cffffcc00Level 5|r - 25 % of his maximum life.
 }
 
 STRING 13330
@@ -95391,7 +95391,7 @@ STRING 15902
 STRING 15903
 // Zauberverstärker/Effekte: B01V (Baumhirte - Hain), Bufftip (Tooltipp (ftip))
 {
-Hain
+Grove
 }
 
 STRING 15904
@@ -95403,7 +95403,7 @@ Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet v
 STRING 15905
 // Fähigkeiten: A0D6 (Hain - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons for <A0D4,Dur1> seconds a mana regenerating grove which regenerates mana per second at allies within range.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15906
@@ -95415,7 +95415,7 @@ Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet v
 STRING 15907
 // Fähigkeiten: A0D7 (Hain - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons for <A0D4,Dur1> seconds a mana regenerating grove which regenerates mana per second at allies within range.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15908
@@ -95427,7 +95427,7 @@ Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet v
 STRING 15909
 // Fähigkeiten: A0D8 (Hain - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons for <A0D4,Dur1> seconds a mana regenerating grove which regenerates mana per second at allies within range.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15910
@@ -95439,7 +95439,7 @@ Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet v
 STRING 15911
 // Fähigkeiten: A0D9 (Hain - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons for <A0D4,Dur1> seconds a mana regenerating grove which regenerates mana per second at allies within range.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15912
@@ -95451,7 +95451,7 @@ Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet v
 STRING 15913
 // Fähigkeiten: A0DA (Hain - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons for <A0D4,Dur1> seconds a mana regenerating grove which regenerates mana per second at allies within range.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15914
@@ -97916,7 +97916,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 16324
 // Fähigkeiten: A1GZ (Aura der Autorität - Upgrade 1), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 5|r]
+Aura of Authority [|cffffcc00Level 5|r]
 }
 
 STRING 16325
@@ -98084,7 +98084,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 16352
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area1> um <A0MH,DataA1,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area1> by <A0MH,DataA1,%> %.
 }
 
 STRING 16353
@@ -98168,7 +98168,7 @@ Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Pun
 STRING 16366
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area2> um <A0MH,DataA2,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area2> by <A0MH,DataA2,%> %.
 }
 
 STRING 16367
@@ -98414,7 +98414,7 @@ Auge um Auge
 STRING 16407
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area3> um <A0MH,DataA3,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area3> by <A0MH,DataA3,%> %.
 }
 
 STRING 16408
@@ -98486,7 +98486,7 @@ Auge um Auge - Stufe 1
 STRING 16419
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area4> um <A0MH,DataA4,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area4> by <A0MH,DataA4,%> %.
 }
 
 STRING 16420
@@ -98558,7 +98558,7 @@ Auge um Auge - Stufe 2
 STRING 16431
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area5> um <A0MH,DataA5,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area5> by <A0MH,DataA5,%> %.
 }
 
 STRING 16432
@@ -98630,7 +98630,7 @@ Auge um Auge - Stufe 3
 STRING 16443
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 1|r]
+Aura of Authority [|cffffcc00Level 1|r]
 }
 
 STRING 16444
@@ -98702,7 +98702,7 @@ Auge um Auge - Stufe 4
 STRING 16455
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 2|r]
+Aura of Authority [|cffffcc00Level 2|r]
 }
 
 STRING 16456
@@ -98948,19 +98948,19 @@ Märtyrer [|cffffcc00Stufe 1|r] (|cffffcc00G|r)
 STRING 16496
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 3|r]
+Aura of Authority [|cffffcc00Level 3|r]
 }
 
 STRING 16497
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 4|r]
+Aura of Authority [|cffffcc00Level 4|r]
 }
 
 STRING 16498
 // Fähigkeiten: A1H0 (Aura der Autorität - Upgrade 2), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 5|r]
+Aura of Authority [|cffffcc00Level 5|r]
 }
 
 STRING 16499
@@ -98972,37 +98972,37 @@ Aura der Autorität - Upgrade 2
 STRING 16500
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area1> um <A0MH,DataA1,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area1> by <A0MH,DataA1,%> %.
 }
 
 STRING 16501
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area2> um <A0MH,DataA2,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area2> by <A0MH,DataA2,%> %.
 }
 
 STRING 16502
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area3> um <A0MH,DataA3,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area3> by <A0MH,DataA3,%> %.
 }
 
 STRING 16503
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area4> um <A0MH,DataA4,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area4> by <A0MH,DataA4,%> %.
 }
 
 STRING 16504
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area5> um <A0MH,DataA5,%> %.
+Increases the damage of the knight and allies within a radius of <A0MH,Area5> by <A0MH,DataA5,%> %.
 }
 
 STRING 16505
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 1|r]
+Aura of Authority [|cffffcc00Level 1|r]
 }
 
 STRING 16506
@@ -99068,25 +99068,25 @@ Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und 
 STRING 16516
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 2|r]
+Aura of Authority [|cffffcc00Level 2|r]
 }
 
 STRING 16517
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 3|r]
+Aura of Authority [|cffffcc00Level 3|r]
 }
 
 STRING 16518
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 4|r]
+Aura of Authority [|cffffcc00Level 4|r]
 }
 
 STRING 16519
 // Fähigkeiten: A1H1 (Aura der Autorität - Upgrade 3), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität [|cffffcc00Stufe 5|r]
+Aura of Authority [|cffffcc00Level 5|r]
 }
 
 STRING 16520

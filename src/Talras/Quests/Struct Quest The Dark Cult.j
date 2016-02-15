@@ -26,6 +26,11 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 			 */
 			return SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0
 		endmethod
+		
+		private static method stateActionCompleted2 takes AQuestItem questItem returns boolean
+			local thistype this = thistype(questItem.quest())
+			call this.displayState()
+		endmethod
 
 		private static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, tre("Der dunkle Kult", "The Dark Cult"))
@@ -53,6 +58,7 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 			set questItem0 = AQuestItem.create(this, tre("Vernichte den „dunklen Kult“.", "Destroy the \"Dark Cult\"."))
 			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted2)
 			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted2)
+			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted2)
 			call questItem0.setPing(true)
 			call questItem0.setPingX(GetRectCenterX(gg_rct_quest_the_dark_cult))
 			call questItem0.setPingY(GetRectCenterY(gg_rct_quest_the_dark_cult))

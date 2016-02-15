@@ -312,8 +312,8 @@ Handlung:
 * DEPRECATED: Eventuell anderes Ende - der König kommt.
 * DONE: Auftrag "Krieg" einbauen.
 * DONE: Video "Heuert die Hochelfin an" einbauen.
-* Neuen Auftrag nach "Krieg" - "Die Verteidigung von Talras".
-* Danach kommt dann "Der Weg nach Holzbruck".
+* DONE: Neuen Auftrag nach "Krieg" - "Die Verteidigung von Talras".
+* DONE: Danach kommt dann "Der Weg nach Holzbruck".
 * Die Nordmänner: Bei Video "Der Anführer" Sammelgebiet für Charaktere verwenden.
 * DEPRECATED: Orks und Dunkelelfen geben keine XP.
 * FIXED: Berichtet dem Herzog von eurem Erfolg in Sammelgebiet.
@@ -369,7 +369,6 @@ Handlung:
 * Auftrag "Krieg": Videos schreiben und einbauen.
 * FIXED: Computer-Kontrolle vom Spieler MapData.alliedPlayer deaktivieren. Knechte laufen zurück usw. usw.
 * Extramarkierung für die Fallenplatzierung am Außenposten einbauen. Es muss deutlich werden wo die Fallen hinkommen.
-* Auftrag "Krieg" aufteilen, ist viel zu unübersichtlich: Waffen von Wieland, Holz von Kuno, Nahrung von Manfred, Fallen von Björn, Rekruten vom Bauernhof.
 * FIXED: Video-Fade kürzer machen: Siehe Bonus-Kampagne.
 * FIXED: Pfeilhagel verursacht keinen Schaden. Der originale Zauberverstärker muss erhalten bleiben: http://www.wc3c.net/showthread.php?t=101804
 * Charakterübersicht: Balken sind nicht ausgefüllt obwohl volle Werte (Leben, Mana).
@@ -830,6 +829,7 @@ Für Version 0.6:
 * DONE: Zauberbuch: Maximale Stufe, Zauber verlernen.
 * FIXED: Passive Zauber nicht in Favoriten.
 * Spruchrolle des Sammlers: Keine Powerups?
+* Auftrag "Krieg" aufteilen, ist viel zu unübersichtlich: Waffen von Wieland, Holz von Kuno, Nahrung von Manfred, Fallen von Björn, Rekruten vom Bauernhof.
 
 Abgeschlossene Punkte:
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
