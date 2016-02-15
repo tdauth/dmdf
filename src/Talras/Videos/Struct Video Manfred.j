@@ -90,7 +90,7 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 			set this.m_actorManfredsDog = null
 
 			call Game.resetVideoSettings()
-			call QuestWar.quest.evaluate().enableKillTheCornEaters.evaluate()
+			call QuestWarSupplyFromManfred.quest.evaluate().enableKillTheCornEaters.evaluate()
 		endmethod
 
 		private static method create takes nothing returns thistype

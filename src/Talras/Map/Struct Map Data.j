@@ -886,7 +886,7 @@ static if (DEBUG_MODE) then
 			
 			if (not QuestWar.quest.evaluate().isCompleted()) then
 			
-				if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).isCompleted()) then
+				if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemWeaponsFromWieland).isCompleted()) then
 					/*
 					 * Plays video "Wieland".
 					 */
@@ -896,7 +896,7 @@ static if (DEBUG_MODE) then
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 	
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemIronFromTheDrumCave).isCompleted()) then
+					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemIronFromTheDrumCave).isCompleted()) then
 						/*
 						 * Plays video "Iron From The Drum Cave".
 						 */
@@ -907,9 +907,9 @@ static if (DEBUG_MODE) then
 						call TriggerSleepAction(2.0 + 2.0)
 					endif
 				
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveImpsToWieland).isCompleted()) then
-						call QuestWar.quest.evaluate().moveImpsToWieland()
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveImpsToWieland).isCompleted()) then
+					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemMoveImpsToWieland).isCompleted()) then
+						call QuestWarWeaponsFromWieland.quest.evaluate().moveImpsToWieland()
+						if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemMoveImpsToWieland).isCompleted()) then
 							debug call Print("Failed to complete quest item move imps to wieland.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
@@ -917,7 +917,7 @@ static if (DEBUG_MODE) then
 
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemReportWieland).isCompleted()) then
+					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemReportWieland).isCompleted()) then
 						/*
 						 * Plays video "Weapons From Wieland".
 						 */
@@ -925,51 +925,51 @@ static if (DEBUG_MODE) then
 						call TriggerSleepAction(2.0 + 2.0)
 						call waitForVideo(MapData.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemReportWieland).isCompleted()) then
+						if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemReportWieland).isCompleted()) then
 							debug call Print("Failed to complete quest item report wieland.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemIronFromTheDrumCave).isCompleted()) then
+						if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemIronFromTheDrumCave).isCompleted()) then
 							debug call Print("Failed to complete quest item iron from the drum cave.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemWaitForWielandsWeapons).isCompleted()) then
+					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemWaitForWielandsWeapons).isCompleted()) then
 						call TriggerSleepAction(QuestWar.constructionTime + 2.0)
 						
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemWaitForWielandsWeapons).isCompleted()) then
+						if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemWaitForWielandsWeapons).isCompleted()) then
 							debug call Print("Failed to complete quest item wait for wielands weapons.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveWielandWeaponsToTheCamp).isCompleted()) then
+					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemMoveWielandWeaponsToTheCamp).isCompleted()) then
 						/*
 						 * Completes questItemMoveWielandWeaponsToTheCamp and questItemWeaponsFromWieland.
 						 */
-						call QuestWar.quest.evaluate().moveWeaponsCartToCamp()
+						call QuestWarWeaponsFromWieland.quest.evaluate().moveWeaponsCartToCamp()
 					
 						call TriggerSleepAction(1.0)
 						
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveWielandWeaponsToTheCamp).isCompleted()) then
+						if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemMoveWielandWeaponsToTheCamp).isCompleted()) then
 							debug call Print("Failed to complete quest item move wieland weapons to the camp.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).isCompleted()) then
+					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemWeaponsFromWieland).isCompleted()) then
 						debug call Print("Failed to complete quest item  weapons from wieland.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
 				
-				if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).isCompleted()) then
+				if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemSupplyFromManfred).isCompleted()) then
 					/*
 					 * Plays video "Manfred".
 					 */
@@ -978,26 +978,26 @@ static if (DEBUG_MODE) then
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).isNew()) then
+					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemSupplyFromManfred).isNew()) then
 						debug call Print("Failed to enable quest item supply from manfred.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemKillTheCornEaters).isCompleted()) then
+					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemKillTheCornEaters).isCompleted()) then
 						call SpawnPoints.cornEaters0().spawn()
 						call SpawnPoints.cornEaters1().spawn()
 						call SpawnPoints.cornEaters0().kill()
 						call SpawnPoints.cornEaters1().kill()
 					
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemKillTheCornEaters).isCompleted()) then
+						if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemKillTheCornEaters).isCompleted()) then
 							debug call Print("Failed to complete quest item kill the corn eaters.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemReportManfred).isCompleted()) then
+					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemReportManfred).isCompleted()) then
 						/*
 						* Plays video "Report Manfred".
 						*/
@@ -1006,43 +1006,43 @@ static if (DEBUG_MODE) then
 						call waitForVideo(MapData.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
 						
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemReportManfred).isCompleted()) then
+						if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemReportManfred).isCompleted()) then
 							debug call Print("Failed to complete quest item report manfred.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemWaitForManfredsSupply).isCompleted()) then
+					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemWaitForManfredsSupply).isCompleted()) then
 						call TriggerSleepAction(QuestWar.constructionTime + 2.0)
 						
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemWaitForManfredsSupply).isCompleted()) then
+						if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemWaitForManfredsSupply).isCompleted()) then
 							debug call Print("Failed to complete quest item wait for manfreds supply.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveManfredsSupplyToTheCamp).isCompleted()) then
-						call QuestWar.quest.evaluate().moveSupplyCartToCamp()
+					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemMoveManfredsSupplyToTheCamp).isCompleted()) then
+						call QuestWarSupplyFromManfred.quest.evaluate().moveSupplyCartToCamp()
 						
 						call TriggerSleepAction(1.0)
 						
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveManfredsSupplyToTheCamp).isCompleted()) then
+						if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemMoveManfredsSupplyToTheCamp).isCompleted()) then
 							debug call Print("Failed to complete quest item move manfreds supply to the camp.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).isCompleted()) then
+					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemSupplyFromManfred).isCompleted()) then
 						debug call Print("Failed to complete quest item supply from manfred.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
 				
-				if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemLumberFromKuno).isCompleted()) then
+				if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemLumberFromKuno).isCompleted()) then
 					/*
 					 * Plays video "Kuno".
 					 */
@@ -1051,13 +1051,13 @@ static if (DEBUG_MODE) then
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemLumberFromKuno).isNew()) then
+					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemLumberFromKuno).isNew()) then
 						debug call Print("Failed to enable quest item lumber from kuno.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemKillTheWitches).isCompleted()) then
+					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemKillTheWitches).isCompleted()) then
 						call SpawnPoints.witch0().spawn()
 						call SpawnPoints.witch1().spawn()
 						call SpawnPoints.witch2().spawn()
@@ -1067,14 +1067,14 @@ static if (DEBUG_MODE) then
 						call SpawnPoints.witch2().kill()
 						call SpawnPoints.witches().kill()
 						
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemKillTheWitches).isCompleted()) then
+						if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemKillTheWitches).isCompleted()) then
 							debug call Print("Failed to complete quest item kill the witches.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemReportKuno).isCompleted()) then
+					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemReportKuno).isCompleted()) then
 						/*
 						 * Plays video "Report Kuno".
 						 */
@@ -1083,33 +1083,33 @@ static if (DEBUG_MODE) then
 						call waitForVideo(MapData.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
 						
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemReportKuno).isCompleted()) then
+						if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemReportKuno).isCompleted()) then
 							debug call Print("Failed to complete quest item report kuno.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveKunosLumberToTheCamp).isCompleted()) then
-						call QuestWar.quest.evaluate().moveLumberCartToCamp()
+					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemMoveKunosLumberToTheCamp).isCompleted()) then
+						call QuestWarLumberFromKuno.quest.evaluate().moveLumberCartToCamp()
 						
 						call TriggerSleepAction(1.0)
 						
-						if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemMoveKunosLumberToTheCamp).isCompleted()) then
+						if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemMoveKunosLumberToTheCamp).isCompleted()) then
 							debug call Print("Failed to complete quest item report kuno.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemLumberFromKuno).isCompleted()) then
+					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemLumberFromKuno).isCompleted()) then
 						debug call Print("Failed to complete quest item lumber from kuno.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
 				
-				if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemTrapsFromBjoern).isCompleted()) then
+				if (not QuestWarTrapsFromBjoern.quest.evaluate().questItem(QuestWarTrapsFromBjoern.questItemTrapsFromBjoern).isCompleted()) then
 					/*
 					 * Plays video "Bjoern".
 					 */
@@ -1118,7 +1118,7 @@ static if (DEBUG_MODE) then
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemPlaceTraps).isNew()) then
+					if (not QuestWarTrapsFromBjoern.quest.evaluate().questItem(QuestWarTrapsFromBjoern.questItemPlaceTraps).isNew()) then
 						debug call Print("Failed to enable quest item place traps.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
@@ -1129,7 +1129,7 @@ static if (DEBUG_MODE) then
 					 */
 				endif
 				
-				if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemRecruit).isCompleted()) then
+				if (not QuestWarRecruit.quest.evaluate().questItem(QuestWarRecruit.questItemRecruit).isCompleted()) then
 					/*
 					 * Plays video "Recruit".
 					 */
@@ -1138,7 +1138,7 @@ static if (DEBUG_MODE) then
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemRecruit).isNew()) then
+					if (not QuestWarRecruit.quest.evaluate().questItem(QuestWarRecruit.questItemRecruit).isNew()) then
 						debug call Print("Failed to enable quest item recruit.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
@@ -1146,18 +1146,17 @@ static if (DEBUG_MODE) then
 					
 					set i = 0
 					loop
-						exitwhen (i == QuestWar.maxRecruits)
+						exitwhen (i == QuestWarRecruit.maxRecruits)
 						call CreateUnit(MapData.alliedPlayer, 'n02J', GetRectCenterX(gg_rct_quest_war_cart_destination), GetRectCenterY(gg_rct_quest_war_cart_destination), 0.0)
 						set i = i + 1
 					endloop
 					
-					if (not QuestWar.quest.evaluate().questItem(QuestWar.questItemGetRecruits).isCompleted() or not QuestWar.quest.evaluate().questItem(QuestWar.questItemRecruit).isCompleted()) then
+					if (not QuestWarRecruit.quest.evaluate().questItem(QuestWarRecruit.questItemGetRecruits).isCompleted() or not QuestWarRecruit.quest.evaluate().questItem(QuestWarRecruit.questItemRecruit).isCompleted()) then
 						debug call Print("Failed to complete quest item get recruits or quest item recruit.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
 				
 				/*
 				 * Plays video "Prepare For The Defense".

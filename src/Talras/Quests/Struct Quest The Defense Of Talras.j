@@ -554,7 +554,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		public method enableTimer takes nothing returns nothing
 			local integer i
 			
-			call QuestWar.quest().placeTraps()
+			call QuestWarTrapsFromBjoern.quest().placeTraps()
 			
 			/*
 			 * This shrine is finally used here.

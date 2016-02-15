@@ -71,7 +71,7 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 			set this.m_actorManfred = null
 
 			call Game.resetVideoSettings()
-			call QuestWar.quest.evaluate().enableGetRecruits.evaluate()
+			call QuestWarRecruit.quest.evaluate().enableGetRecruits.evaluate()
 		endmethod
 
 		private static method create takes nothing returns thistype

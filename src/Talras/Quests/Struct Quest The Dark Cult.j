@@ -27,7 +27,7 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 			return SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0
 		endmethod
 		
-		private static method stateActionCompleted2 takes AQuestItem questItem returns boolean
+		private static method stateActionCompleted2 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			call this.displayState()
 		endmethod

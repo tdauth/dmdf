@@ -120,7 +120,7 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 
 			call Game.resetVideoSettings()
 
-			call QuestWar.quest.evaluate().enableImpSpawn.evaluate()
+			call QuestWarWeaponsFromWieland.quest.evaluate().enableImpSpawn.evaluate()
 		endmethod
 
 		private static method create takes nothing returns thistype

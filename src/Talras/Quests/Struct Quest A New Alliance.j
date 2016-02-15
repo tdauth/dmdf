@@ -44,7 +44,7 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(0, tre("Ein neues Bündnis", "A New Alliance"))
+			local thistype this = thistype.allocate(tre("Ein neues Bündnis", "A New Alliance"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp")
 			call this.setDescription(tre("Da der Herzog noch mehr Verbündete benötigt, sollt ihr eine Hochelfin aufsuchen, die durch die hiesigen Ländereien des Herzogs zieht. Sie soll den Herzog beim Kampf gegen die Orks und Dunkelelfen Unterstützung anbieten.", "Since the Duke still needs more allies you shall seek the High Elf who travels through the local estates of the Duke. She shall provide support to the Duke for the battle with the Orcs and Dark Elves."))

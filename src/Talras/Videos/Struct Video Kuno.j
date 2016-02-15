@@ -113,7 +113,7 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 			set this.m_actorKunosDaughter = null
 
 			call Game.resetVideoSettings()
-			call QuestWar.quest.evaluate().enableKillTheWitches.evaluate()
+			call QuestWarLumberFromKuno.quest.evaluate().enableKillTheWitches.evaluate()
 		endmethod
 
 		private static method create takes nothing returns thistype

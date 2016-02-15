@@ -41,7 +41,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call QuestSlaughter.quest.evaluate().questItem(5).setState(AAbstractQuest.stateNew)
 			call QuestSlaughter.quest.evaluate().questItem(6).setState(AAbstractQuest.stateNew)
 			call QuestSlaughter.quest.evaluate().displayUpdate()
-			call QuestSlaughter.quest.evaluate().setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.medusa)
+			call setQuestItemPingByUnitTypeId.execute(QuestSlaughter.quest.evaluate(), SpawnPoints.deathVault(), UnitTypes.medusa)
 		endmethod
 	
 		public static method create takes rect whichRect returns thistype
@@ -119,13 +119,15 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
 			call ShowUnit(GetTriggerUnit(), false) // hide him to hide the blood effect
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch mehr seiner Art.", "Good work! But that was not the only vampire in this area. Further west there are more of his kind."), null)
-			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.vampires0(), UnitTypes.vampire)
+			call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.vampires0(), UnitTypes.vampire)
 			call questItem.quest().questItem(1).enable()
 		endmethod
 
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
+			local thistype this = thistype(questItem.quest())
 			local integer count
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.vampire) then
 				set count = SpawnPoints.vampires0().countUnitsOfType(UnitTypes.vampire)
@@ -134,15 +136,16 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 				// get next one to ping
 				else
 					call questItem.quest().displayUpdateMessage(Format(tre("%1%/3 Vampire", "%1%/3 Vampires")).i(3 - count).result())
-					call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.vampires0(), UnitTypes.vampire)
+					call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.vampires0(), UnitTypes.vampire)
 				endif
 			endif
 			return false
 		endmethod
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Erst gestern beobachtete ich einen dunklen Engel des Todes, weiter östlich. Lasst uns ihn vernichten!", "Just yesterday I watched a dark angel of death, further east. Let us destroy her!"), null)
-			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathAngel(), UnitTypes.deathAngel)
+			call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.deathAngel(), UnitTypes.deathAngel)
 			call questItem.quest().questItem(2).enable()
 		endmethod
 
@@ -151,8 +154,9 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateActionCompleted2 takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
 			call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Einige untote Drachen haben sich weiter nördlich versammelt. Auf zum Kampf!", "Some undead dragons gathered further north. To the battle!"), null)
-			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.boneDragons(), UnitTypes.boneDragon)
+			call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.boneDragons(), UnitTypes.boneDragon)
 			call questItem.quest().questItem(3).enable()
 		endmethod
 
@@ -167,12 +171,13 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateActionCompleted4 takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
 			call VideoDeathVault.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call questItem.quest().questItem(5).setState(thistype.stateNew)
 			call questItem.quest().questItem(6).setState(thistype.stateNew)
 			call questItem.quest().displayUpdate()
-			call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.medusa)
+			call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.deathVault(), UnitTypes.medusa)
 		endmethod
 		
 		private static method finishQuest takes nothing returns nothing
@@ -184,10 +189,11 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateConditionCompleted5 takes AQuestItem questItem returns boolean
+			local thistype this = thistype(questItem.quest())
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.medusa) == 0) then
 				if (questItem.quest().questItem(6).state() == thistype.stateNew) then
 					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!", "This mud snake cattle! Come on, continue, into the crypt!"), null)
-					call thistype(questItem.quest()).setPingByUnitTypeId.execute(SpawnPoints.deathVault(), UnitTypes.deacon)
+					call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.deathVault(), UnitTypes.deacon)
 				else
 					call thistype.finishQuest()
 				endif
@@ -212,20 +218,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			return false
 		endmethod
 
-		/// Considers death units (spawn points) and continues searching for the first one with unit type id \p unitTypeId of spawn point \p spawnPoint with an 1 second interval.
-		public method setPingByUnitTypeId takes ASpawnPoint spawnPoint, integer unitTypeId returns nothing
-			local unit whichUnit = spawnPoint.firstUnitOfType(unitTypeId)
-			if (whichUnit == null) then
-				call this.setPing(false)
-				call TriggerSleepAction(1.0)
-				call this.setPingByUnitTypeId.execute(spawnPoint, unitTypeId) // continue searching
-			else
-				call this.setPing(true)
-				call this.setPingUnit(whichUnit)
-				call this.setPingColour(100.0, 100.0, 100.0)
-			endif
-		endmethod
-
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Metzelei", "Slaughter"))
 			local AQuestItem questItem
@@ -239,7 +231,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 
-			call this.setPingByUnitTypeId.execute(SpawnPoints.vampireLord0(), UnitTypes.vampireLord)
+			call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.vampireLord0(), UnitTypes.vampireLord)
 
 			set questItem = AQuestItem.create(this, tre("Tötet die Vampire.", "Kill the vampires."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)

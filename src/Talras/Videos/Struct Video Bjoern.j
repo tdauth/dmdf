@@ -72,7 +72,7 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 			set this.m_actorBjoernsWife = null
 
 			call Game.resetVideoSettings()
-			call QuestWar.quest.evaluate().enablePlaceTraps.evaluate()
+			call QuestWarTrapsFromBjoern.quest.evaluate().enablePlaceTraps.evaluate()
 		endmethod
 
 		private static method create takes nothing returns thistype
