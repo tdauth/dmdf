@@ -51,7 +51,7 @@ library StructMapVideosVideoReportManfred requires Asl, StructGameGame
 
 			call Game.resetVideoSettings()
 			
-			call QuestWarSupplyFromManfred.quest.evaluate().questItem.evaluate(QuestWarSupplyFromManfred.questItemReportManfred).complete()
+			call QuestWarSupplyFromManfred.quest.evaluate().questItem.evaluate(QuestWarSupplyFromManfred.questItemReportManfred).setState(QuestWarSupplyFromManfred.stateCompleted) // don't complete, otherwise the update message is shown twice
 		endmethod
 
 		private static method create takes nothing returns thistype

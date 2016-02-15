@@ -8,6 +8,8 @@ library StructMapQuestsQuestWarSubQuest requires Asl, StructGameQuestArea
 		
 		private method stateActionComplete takes nothing returns nothing
 			call QuestWar.quest.evaluate().questItem.evaluate(this.m_itemIndex).setState(thistype.stateCompleted)
+			call this.displayState()
+			// TODO quest disappears after this call
 		endmethod
 	
 		public static method create takes string title, integer itemIndex returns thistype

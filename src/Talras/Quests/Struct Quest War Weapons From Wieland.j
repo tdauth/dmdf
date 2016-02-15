@@ -18,7 +18,7 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 	 */
 	struct QuestAreaWarImpTarget extends QuestArea
 		public stub method onCheck takes nothing returns boolean
-			call Character.displayHintToAll(tre("In dieses Gebiet müssen die Imps gebracht werden.", "The imps have to be brought in this area."))
+			call Character.displayHintToAll(tre("In dieses Gebiet müssen die Imps gebracht werden.", "The imps have to be brought to this area."))
 			return false
 		endmethod
 	

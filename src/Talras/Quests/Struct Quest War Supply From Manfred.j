@@ -73,6 +73,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 				set count0 = SpawnPoints.cornEaters0().countUnitsOfType(UnitTypes.cornEater)
 				set count1 = SpawnPoints.cornEaters1().countUnitsOfType(UnitTypes.cornEater)
 				if (count0 == 0 and count1 == 0) then
+					debug call Print("Both counts are 0")
 					return true
 				// get next one to ping
 				else
