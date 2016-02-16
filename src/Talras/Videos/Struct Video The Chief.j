@@ -64,7 +64,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_2, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorRicman, tr("Ricman"), tre("Was wollt ihr hier?", "What do you want here?"), gg_snd_RicmanTheChiefRicman1)
+			call TransmissionFromUnitWithName(this.m_actorRicman, tre("Ricman", "Ricman"), tre("Was wollt ihr hier?", "What do you want here?"), gg_snd_RicmanTheChiefRicman1)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheChiefRicman1))) then
 				return
 			endif
@@ -72,7 +72,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
-			call TransmissionFromUnitWithName(this.m_actorRicman, tr("Ricman"), tre("Der Herzog von Talras? Wieso kommt er nicht persönlich? Macht dass ihr wegkommt!", "The duke of Talras? Why doesn't he come himself? Get yourselves out of here!"), gg_snd_RicmanTheChiefRicman2)
+			call TransmissionFromUnitWithName(this.m_actorRicman, tre("Ricman", "Ricman"), tre("Der Herzog von Talras? Wieso kommt er nicht persönlich? Macht dass ihr wegkommt!", "The duke of Talras? Why doesn't he come himself? Get yourselves out of here!"), gg_snd_RicmanTheChiefRicman2)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheChiefRicman2) + 1.0)) then
 				return
 			endif
@@ -82,7 +82,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Lass sie!"), gg_snd_Wigberht29)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Lass sie!", "Let them!"), gg_snd_Wigberht29)
 			call SetUnitAnimation(this.m_actorWigberht, "Spell")
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht29))) then
@@ -105,27 +105,27 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			call SetUnitFacingToFaceUnit(this.m_actorRicman, this.m_actorWigberht)
 			call SetUnitFacingToFaceUnit(this.m_actorWigberht, thistype.actor())
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Was wollt ihr von mir?"), gg_snd_Wigberht30)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Was wollt ihr von mir?", "What do you want from me?"), gg_snd_Wigberht30)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht30))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tr("Heimrich, der Herzog von Talras, möchte wissen, ob er ein Bündnis mit Euch und Euren Männern eingehen kann. Er braucht Unterstützung im Kampf gegen den Feind."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Heimrich, der Herzog von Talras, möchte wissen, ob er ein Bündnis mit Euch und Euren Männern eingehen kann. Er braucht Unterstützung im Kampf gegen den Feind.", "Heimrich, the duke of Talras wants to know if he can enter into an alliance with you and your men. He need support in the fight against the enemy."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Wieso sollte ich ein Bündnis mit ihm eingehen?"), gg_snd_Wigberht31)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Wieso sollte ich ein Bündnis mit ihm eingehen?", "Why should I form an alliance with him?"), gg_snd_Wigberht31)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht31))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tr("Gemeinsam habt ihr eine größere Chance den Feind zu bezwingen."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Gemeinsam habt ihr eine größere Chance den Feind zu bezwingen.", "Toghether you have a greater chance to defeat the enemy."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Den Feind zu bezwingen? Seht, ich werde euch erklären, warum meine Männer und ich hier sind. Mein Vater, ein Kriegsherr des Nordens, wurde von Dunkelfelfen verschleppt. Wir folgten ihnen bis hier her."), gg_snd_Wigberht32)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Den Feind zu bezwingen? Seht, ich werde euch erklären, warum meine Männer und ich hier sind. Mein Vater, ein Kriegsherr des Nordens, wurde von Dunkelfelfen verschleppt. Wir folgten ihnen bis hier her.", "To defeat the enemy? Look, I'll tell you why my men and I are here. My father, a warlord of the north, was abducted by the Dark Elves. We followed them, until here."), gg_snd_Wigberht32)
 			
 			call Game.fadeOutWithWait()
 			// at night
@@ -155,47 +155,47 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
 			call Game.fadeInWithWait()
 			
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Wir machen hier Rast, um herauszufinden wie groß das Heer der Orks ist, das in dieses Land eingefallen ist und dann greifen wir es an. Wir müssen uns durch ihre Linien schlagen, um den Dunkelelfen weiter folgen zu können."), gg_snd_Wigberht33)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Wir machen hier Rast, um herauszufinden wie groß das Heer der Orks ist, das in dieses Land eingefallen ist und dann greifen wir es an. Wir müssen uns durch ihre Linien schlagen, um den Dunkelelfen weiter folgen zu können.", "We must take a stop to figure out how big the army of the Orcs is that invaded this land and then we attack it. We have to fight us through their lines in order to follow the Dark Elves further."), gg_snd_Wigberht33)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht33))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tr("Ihr paar wollt das Heer der Orks angreifen? Das ist Wahnsinn."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Ihr paar wollt das Heer der Orks angreifen? Das ist Wahnsinn.", "You few want to attack the army of Orcs? This is madness."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Der einzige Weg führt durch die Reihen der Orks. Wir haben keine Wahl. Dieser Herzog, der euch schickt, harrt in seiner Burg aus bis der Feind ihn angreift oder aushungern lässt. Wir sind keine Feiglinge, wir stellen uns dem Feind."), gg_snd_Wigberht34)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Der einzige Weg führt durch die Reihen der Orks. Wir haben keine Wahl. Dieser Herzog, der euch schickt, harrt in seiner Burg aus bis der Feind ihn angreift oder aushungern lässt. Wir sind keine Feiglinge, wir stellen uns dem Feind.", "The only way goes through the ranks of the Orcs. We have no choice. This duke who sends you waits in his castle until the enemy is attacking him or let's him starve. We are no cowards, we face the enemy."), gg_snd_Wigberht34)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht34))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tr("Und wann wollt ihr angreifen?"), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Und wann wollt ihr angreifen?", "And when you will attack?"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Einer unserer Späher hat gestern eine Vorhut der Orks entdeckt. Sie befindet sich irgendwo im nördlichen Wald. Sobald wir bereit sind, schlagen wir zu. Wenn es euch beliebt dann kommt mit. Ihr seht aus, als würdet ihr gerne ein paar Orks abschlachten."), gg_snd_Wigberht35)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Einer unserer Späher hat gestern eine Vorhut der Orks entdeckt. Sie befindet sich irgendwo im nördlichen Wald. Sobald wir bereit sind, schlagen wir zu. Wenn es euch beliebt dann kommt mit. Ihr seht aus, als würdet ihr gerne ein paar Orks abschlachten.", "One of our scouts discovered a vanguard of Orcs yesterday. It is located somewhere in the northern forest. Once we are ready, we attack. If it pleases you, then come with us. You look as though you like to slaughter a few Orcs."), gg_snd_Wigberht35)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht35))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tr("Und was wird aus dem Bündnis?"), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Und was wird aus dem Bündnis?", "And is with the alliance?"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Beweist mir, dass ihr kampfstark seid und ich werde mir überlegen, ob wir noch eine Weile hier bleiben, um den Herzog zu unterstützen."), gg_snd_Wigberht36)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Beweist mir, dass ihr kampfstark seid und ich werde mir überlegen, ob wir noch eine Weile hier bleiben, um den Herzog zu unterstützen.", "Prove to me that you are strong in the battle and I will think about whether we stay here for a while to help the duke."), gg_snd_Wigberht36)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht36))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tr("Sieht aus als hätten wir keine Wahl."), null)
+			call TransmissionFromUnit(thistype.actor(), tre("Sieht aus als hätten wir keine Wahl.", "Looks like we have no choice."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.m_actorWigberht, tr("Wigberht"), tr("Exakt."), gg_snd_Wigberht37)
+			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Exakt.", "Exactly."), gg_snd_Wigberht37)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht37))) then
 				return
 			endif

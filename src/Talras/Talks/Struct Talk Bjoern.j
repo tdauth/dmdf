@@ -270,10 +270,9 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		// Erkläre mir noch mal die Rebhuhnjagd.
 		private static method infoActionExplainHunt takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Erkläre mir noch mal die Rebhuhnjagd.", "Explain to me again the patridge hunting."), null)
-			
-			call speech(info, character, true, tr("So, ich dachte du bist ein erfahrener Jäger? Schon gut, jeder fängt mal klein an."), null)
-			call speech(info, character, true, tr("Du schickst deinen Vorstehhund los, um das Rebhuhn aufzuspüren. Hat er es aufgespürt, schickst du deinen Jagdfalken in die Nähe. Er hält sich bereit."), null)
-			call speech(info, character, true, tr("Dein Vorstehhund muss dann das Rebhuhn aufscheuchen. Es fliegt los und dein Falke greift es sich. Lass dir aber nicht zu viel Zeit, sonst verschwindet das Rebhuhn wieder."), null)
+			call speech(info, character, true, tre("So, ich dachte du bist ein erfahrener Jäger? Schon gut, jeder fängt mal klein an.", "So, I thought you were an experienced hunter? All right, everyone has to start somewhere."), null)
+			call speech(info, character, true, tre("Du schickst deinen Vorstehhund los, um das Rebhuhn aufzuspüren. Hat er es aufgespürt, schickst du deinen Jagdfalken in die Nähe. Er hält sich bereit.", "You send your pointing dog to track the patridge. Did he track it, you send your hunting falcon near it. He keeps himself ready."), null)
+			call speech(info, character, true, tre("Dein Vorstehhund muss dann das Rebhuhn aufscheuchen. Es fliegt los und dein Falke greift es sich. Lass dir aber nicht zu viel Zeit, sonst verschwindet das Rebhuhn wieder.", "Your pointing dog must then startle the patridge. It takes off and your falcon grabs it. But do not wait too long, otherwise the patridge disappears."), null)
 			
 			call info.talk().showStartPage(character)
 		endmethod
@@ -285,8 +284,8 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		
 		// Ich habe die Rebhühner.
 		private static method infoActionAnimals takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ich habe die Rebhühner."), null)
-			call speech(info, character, true, tr("Tatsächlich? Du scheinst ja ein fähiger Mann zu sein. Hier hast du deine Belohnung. Hab vielen Dank für die Mühe, da wird sich der Herzog freuen!"), null)
+			call speech(info, character, false, tre("Ich habe die Rebhühner.", "I have the patridges."), null)
+			call speech(info, character, true, tre("Tatsächlich? Du scheinst ja ein fähiger Mann zu sein. Hier hast du deine Belohnung. Hab vielen Dank für die Mühe, da wird sich der Herzog freuen!", "Really? You seem to be an able man. Here you have your reward. Have many thanks for the effort, the duke will be delighted!"), null)
 			// Rebhühner aus Rucksack entfernen
 			call character.inventory().removeItemTypeCount('I059', QuestPerdixHunt.maxAnimals)
 			// Auftrag „Rebhuhnjagd“ abgeschlossen
@@ -297,73 +296,73 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		
 
 		private static method infoAction0_0And0_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Er jagt irgendwo südöstlich der Burg und sollte eigentlich längst schon zurückgekehrt sein."), null)
+			call speech(info, character, true, tre("Er jagt irgendwo südöstlich der Burg und sollte eigentlich längst schon zurückgekehrt sein.", "He hunts somewhere southeast of the castle and was supposed to have returned long ago."), null)
 			// (Dago ist tot)
 			if (IsUnitDeadBJ(Npcs.dago())) then
-				call speech(info, character, false, tr("Dago ist tot. Die Bären haben ihn gefressen."), null)
+				call speech(info, character, false, tre("Dago ist tot. Die Bären haben ihn gefressen.", "Dago is dead. The bears ate him."), null)
 				// (Ist der erste Charakter, der vom Tod Dagos erzählt)
 				if (not thistype(info.talk()).m_toldDeath) then
-					call speech(info, character, true, tr("So eine Scheiße! Diese verdammten Bären!  Moment, bist du dir überhaupt sicher, dass es Dago war?"), null)
-					call speech(info, character, false, tr("Wenn er einen Bogen bei sich trug und Jagdkleidung an hatte, dann war es wohl Dago."), null)
-					call speech(info, character, true, tr("Ja, das tat er. Das gibt’s doch nicht. Getötet von Bären, der Arme."), null)
+					call speech(info, character, true, tre("So eine Scheiße! Diese verdammten Bären!  Moment, bist du dir überhaupt sicher, dass es Dago war?", "What a crap! Those damn bears! One second, are you sure at all that it was Dago?"), null)
+					call speech(info, character, false, tre("Wenn er einen Bogen bei sich trug und Jagdkleidung an hatte, dann war es wohl Dago.", "If he wore a bow with him and had on hunting clothes, then it was probably Dago."), null)
+					call speech(info, character, true, tre("Ja, das tat er. Das gibt’s doch nicht. Getötet von Bären, der Arme.", "Yes, he did. That's impossible. Killed by bears, the poor."), null)
 					set thistype(info.talk()).m_toldDeath = true
 				// (Ist nicht erste Charakter, der vom Tod Dagos erzählt)
 				else
-					call speech(info, character, true, tr("Dann muss es wahr sein. Du bist nicht der Erste, der mir das erzählt. Verdammter Mist!"), null)
+					call speech(info, character, true, tre("Dann muss es wahr sein. Du bist nicht der Erste, der mir das erzählt. Verdammter Mist!", "Then it must be true. You're not the first person to tell me this. Bloody hell!"), null)
 				endif
 			// (Dago lebt)
 			else
-				call speech(info, character, false, tr("Ja, bin ich."), null)
+				call speech(info, character, false, tre("Ja, bin ich.", "Yes, I have."), null)
 				if (QuestMushroomSearch.characterQuest(character).state() == AAbstractQuest.stateNotUsed and QuestBurnTheBearsDown.characterQuest(character) == AAbstractQuest.stateNotUsed) then
 					// (Charakter spielt mit anderen und weiß nichts von den Pilzen oder der Niederbrennung der Bären)
 					if (ACharacter.countAllPlaying() > 1) then
-						call speech(info, character, false, tr("Meine Gefährten und ich haben ihm geholfen, zwei Bären zu töten, die ihn angriffen."), null)
+						call speech(info, character, false, tre("Meine Gefährten und ich haben ihm geholfen, zwei Bären zu töten, die ihn angriffen.", "My fellows and I have helped him to kill two bears that attacked him."), null)
 						// (Ist der erste Charakter, der ihm davon berichtet)
 						if (thistype(info.talk()).m_toldBearFight == 0) then
-							call speech(info, character, true, tr("Tatsächlich? Hmm, ich werde mich mal umhören und schauen, ob ich dir das glauben kann. Na ja, du hast mir ja immerhin davon berichtet, dass er noch lebt und das glaube ich dir."), null)
-							call speech(info, character, true, IntegerArg(tr("Diese Information ist mir %i Goldmünzen wert. Da hast du sie."), thistype.smallGoldReward), null)
+							call speech(info, character, true, tre("Tatsächlich? Hmm, ich werde mich mal umhören und schauen, ob ich dir das glauben kann. Na ja, du hast mir ja immerhin davon berichtet, dass er noch lebt und das glaube ich dir.", "Really? Hmm, I'll ask around and see if I can believe you that. Well, you have reported me that he still lives after all and I believe you this."), null)
+							call speech(info, character, true, IntegerArg(tre("Diese Information ist mir %i Goldmünzen wert. Da hast du sie.", "This information is worth to me %i gold coins. There you have it."), thistype.smallGoldReward), null)
 							// Charakter erhält 20 Goldmünzen.
 							call character.addGold(thistype.smallGoldReward)
 							set thistype(info.talk()).m_toldBearFight = 1
 						// (Ist nicht der erste Charakter, der ihm davon berichtet)
 						else
-							call speech(info, character, true, IntegerArg(tr("Einer deiner Freunde hat mir etwas Ähnliches erzählt. Hier hast du %i Goldmünzen für eure noble Tat!"), thistype.bigGoldReward), null)
+							call speech(info, character, true, IntegerArg(tre("Einer deiner Freunde hat mir etwas Ähnliches erzählt. Hier hast du %i Goldmünzen für eure noble Tat!", "One of your friends told me something similar. Here you have %i gold coins for your noble act!"), thistype.bigGoldReward), null)
 							// Charakter erhält 100 Goldmünzen.
 							call character.addGold(thistype.bigGoldReward)
 							set thistype(info.talk()).m_toldBearFight = thistype(info.talk()).m_toldBearFight + 1
 						endif
 					// (Charakter spielt alleine und weiß nichts von den Pilzen oder der Niederbrennung der Bären)
 					else
-						call speech(info, character, false, tr("Ich habe ihm geholfen, zwei Bären zu töten, die ihn angriffen."), null)
-						call speech(info, character, true, tr("Was denn? Du ganz allein? Dass ich nicht lache! Na wenigstens geht es ihm gut. Danke für die Auskunft, Fremder. Hier hast du ein paar Goldmünzen."), null)
+						call speech(info, character, false, tre("Ich habe ihm geholfen, zwei Bären zu töten, die ihn angriffen.", "I helped him to kill two bears that attacked him."), null)
+						call speech(info, character, true, tre("Was denn? Du ganz allein? Dass ich nicht lache! Na wenigstens geht es ihm gut. Danke für die Auskunft, Fremder. Hier hast du ein paar Goldmünzen.", "What? You alone? Do not make me laugh! Well at least he's okay. Thanks for the information, stranger. Here you have a few gold coins."), null)
 						// Charakter erhält 20 Goldmünzen.
 						call character.addGold(thistype.smallGoldReward)
 					endif
 				else
 					// (Charakter weiß von den Pilzen)
 					if (QuestMushroomSearch.characterQuest(character).state() != AAbstractQuest.stateNotUsed) then
-						call speech(info, character, false, tr("Er wollte noch ein paar Pilze sammeln bevor, er in die Burg zurückkehrt."), null)
-						call speech(info, character, true, tr("Ja, das kann gut sein. Gut dass es ihm gut geht. Ich habe mir schon Sorgen gemacht."), null)
+						call speech(info, character, false, tre("Er wollte noch ein paar Pilze sammeln bevor, er in die Burg zurückkehrt.", "He wanted to collect a few more mushrooms before he returns to the castle."), null)
+						call speech(info, character, true, tre("Ja, das kann gut sein. Gut dass es ihm gut geht. Ich habe mir schon Sorgen gemacht.", "Yes, that is likely to be true. Good that he's fine. I was worried."), null)
 						// (Mehr als ein Charakter hat bereits von der Bärentat erzählt)
 						if (thistype(info.talk()).m_toldBearFight > 1) then
-							call speech(info, character, true, IntegerArg(tr("Mir ist übrigens von eurer noblen Tat zu Ohren gekommen. Danke, dass ihr Dago beschützt habt. Hier hast du %i Goldmünzen. Das ist es mir einfach wert."), thistype.bigGoldReward), null)
+							call speech(info, character, true, IntegerArg(tre("Mir ist übrigens von eurer noblen Tat zu Ohren gekommen. Danke, dass ihr Dago beschützt habt. Hier hast du %i Goldmünzen. Das ist es mir einfach wert.", "By the way, I heard about your noble act. Thank you for protecting Dago. Here you have %i gold coins. That's just worth it."), thistype.bigGoldReward), null)
 							// Charakter erhält 100 Goldmünzen.
 							call character.addGold(thistype.bigGoldReward)
 						endif
 					endif
 					// (Charakter hat den Auftrag „Brennt die Bären nieder!“ erhalten)
 					if (QuestBurnTheBearsDown.characterQuest(character).state() != AAbstractQuest.stateNotUsed) then
-						call speech(info, character, false, tr("Er wollte sich an einigen Bären rächen, von denen wir zwei gemeinsam getötet haben."), null)
-						call speech(info, character, true, tr("Das sieht ihm ähnlich."), null)
+						call speech(info, character, false, tre("Er wollte sich an einigen Bären rächen, von denen wir zwei gemeinsam getötet haben.", "He wanted to take revenge on some bears of which we killed two together."), null)
+						call speech(info, character, true, tre("Das sieht ihm ähnlich.", "That's just like him."), null)
 						// (Noch kein Charakter hat von der Sache mit den Bären berichtet)
 						if (thistype(info.talk()).m_toldBearFight == 0) then
-							call speech(info, character, true, IntegerArg(tr("Klingt nur etwas seltsam, das mit dem Töten zweier Bären meine ich. Dennoch, hier hast du %i Goldmünzen für die Auskunft."), thistype.smallGoldReward), null)
+							call speech(info, character, true, IntegerArg(tre("Klingt nur etwas seltsam, das mit dem Töten zweier Bären meine ich. Dennoch, hier hast du %i Goldmünzen für die Auskunft.", "Sounds just a little strange, I mean the killing of two bears. Yet, here you have %i gold coins for the information."), thistype.smallGoldReward), null)
 							// Charakter erhält 20 Goldmünzen
 							call character.addGold(thistype.smallGoldReward)
 							set thistype(info.talk()).m_toldBearFight = 1
 						// (Ist nicht der erste Charakter, der ihm davon berichtet)
 						else
-							call speech(info, character, true, IntegerArg(tr("Ich habe von eurem gemeinsamen Kampf gehört und bin stolz auf euch, dass ihr ihm geholfen habt. Hier hast du %i Goldmünzen."), thistype.bigGoldReward), null)
+							call speech(info, character, true, IntegerArg(tre("Ich habe von eurem gemeinsamen Kampf gehört und bin stolz auf euch, dass ihr ihm geholfen habt. Hier hast du %i Goldmünzen.", "I have heard of your fight which you fought together and am proud of you that you helped him. Here you have %i gold coins."), thistype.bigGoldReward), null)
 							// Charakter erhält 100 Goldmünzen
 							call character.addGold(thistype.bigGoldReward)
 							set thistype(info.talk()).m_toldBearFight =  thistype(info.talk()).m_toldBearFight + 1
@@ -376,22 +375,22 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 		// Von weit her.
 		private static method infoAction0_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Von weit her."), null)
-			call speech(info, character, true, tr("So, dann bist du vielleicht meinem Freund Dago begegnet.￼"), null)
+			call speech(info, character, false, tre("Von weit her.", "From far away."), null)
+			call speech(info, character, true, tre("So, dann bist du vielleicht meinem Freund Dago begegnet.￼", "So, then you might have met my friend Dago."), null)
 			call thistype.infoAction0_0And0_1(info, character)
 		endmethod
 
 		// Das geht dich überhaupt nichts an!
 		private static method infoAction0_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Das geht dich überhaupt nichts an!"), null)
-			call speech(info, character, true, tr("Ich wollte nur wissen, ob du vielleicht meinen Freund Dago begegnet bist."), null)
+			call speech(info, character, false, tre("Das geht dich überhaupt nichts an!", "That's none of your business!"), null)
+			call speech(info, character, true, tre("Ich wollte nur wissen, ob du vielleicht meinen Freund Dago begegnet bist.", "I just wanted to know if you might have met my friend Dago."), null)
 			call thistype.infoAction0_0And0_1(info, character)
 		endmethod
 
 		// %1% Goldmünzen.
 		private static method infoAction2_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, Format(tr("%1% Goldmünzen.")).i(thistype.goldReward1).result(), null)
-			call speech(info, character, true, Format(tr("In Ordnung. Hier hast du %1% Goldmünzen. Damit kriege ich immer noch ein Drittel des Gewinns rein. Vielen Dank.")).i(thistype.goldReward1).result(), null)
+			call speech(info, character, false, Format(tre("%1% Goldmünzen.",  "%1% gold coins.")).i(thistype.goldReward1).result(), null)
+			call speech(info, character, true, Format(tre("In Ordnung. Hier hast du %1% Goldmünzen. Damit kriege ich immer noch ein Drittel des Gewinns rein. Vielen Dank.", "Allright. Here you have %1% gold coins. So I get still one third of the profits. Thank you very much.")).i(thistype.goldReward1).result(), null)
 			// Charakter erhält 600 Goldmünzen.
 			call character.addGold(thistype.goldReward1)
 			// Auftrag „Felle für die Bauern“ abgeschlossen
@@ -401,8 +400,8 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 		// Die Hälfte deines Gewinns.
 		private static method infoAction2_1 takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Die Hälfte deines Gewinns."), null)
-			call speech(info, character, true, Format(tr("In Ordnung. Hier hast du %1% Goldmünzen und zum Dank schenke ich dir noch einen meiner schönsten Bogen.")).i(thistype.goldReward2).result(), null)
+			call speech(info, character, false, tre("Die Hälfte deines Gewinns.", "Half of your profits."), null)
+			call speech(info, character, true, Format(tre("In Ordnung. Hier hast du %1% Goldmünzen und zum Dank schenke ich dir noch einen meiner schönsten Bogen.", "Allright. Here you have %1% gold coins and in gratitude I even give you one of my most beautiful bows.")).i(thistype.goldReward2).result(), null)
 			// Charakter erhält „Björns Kurzbogen“ und 450 Goldmünzen.
 			call character.addGold(thistype.goldReward2)
 			/// add bow
@@ -420,30 +419,30 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 			// start page
 			set this.m_hi = this.addInfo(false, true, 0, thistype.infoAction0, null)
-			set this.m_aboutDago = this.addInfo(false, false, 0, thistype.infoAction1, tr("Woher kennst du Dago?"))
-			set this.m_whatAreYouDoingHere = this.addInfo(false, false, thistype.infoCondition2, thistype.infoAction2, tr("Was machst du hier?"))
-			set this.m_skins = this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tr("Ich habe hier drei Riesen-Felle."))
-			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tr("Suchst du einen Schüler?"))
-			set this.m_arrows = this.addInfo(false, false, thistype.infoConditionArrows, thistype.infoActionArrows, tr("Kannst du Pfeile herstellen?"))
-			set this.m_arrowsDone = this.addInfo(true, false, thistype.infoConditionArrowsDone, thistype.infoActionArrowsDone, tr("Sind die Pfeile fertig?"))
+			set this.m_aboutDago = this.addInfo(false, false, 0, thistype.infoAction1, tre("Woher kennst du Dago?", "Where do you know Dago from?"))
+			set this.m_whatAreYouDoingHere = this.addInfo(false, false, thistype.infoCondition2, thistype.infoAction2, tre("Was machst du hier?", "What are you doing here?"))
+			set this.m_skins = this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tre("Ich habe hier drei Riesen-Felle.", "I have three giant furs here."))
+			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tre("Suchst du einen Schüler?", "Are you looking for a student?"))
+			set this.m_arrows = this.addInfo(false, false, thistype.infoConditionArrows, thistype.infoActionArrows, tre("Kannst du Pfeile herstellen?", "Can you produce arrows?"))
+			set this.m_arrowsDone = this.addInfo(true, false, thistype.infoConditionArrowsDone, thistype.infoActionArrowsDone, tre("Sind die Pfeile fertig?", "Are the arrows ready?"))
 			
-			set this.m_whatDoYouSell = this.addInfo(true, false, 0, thistype.infoActionWhatDoYouSell, tr("Was verkaufst du?"))
-			set this.m_yourDogs = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourDogs, tr("Ist das dein Hundezwinger?"))
-			set this.m_yourFalcons = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourFalcons, tr("Ist das dein Falkenkäfig?"))
-			set this.m_hunt = this.addInfo(false, false, 0, thistype.infoActionHunt, tr("Geh mit mir auf die Jagd."))
-			set this.m_whereAnimals = this.addInfo(true, false, thistype.infoConditionWhereAnimals, thistype.infoActionWhereAnimals, tr("Wo finde ich Rebhühner?"))
-			set this.m_explainHunt = this.addInfo(true, false, thistype.infoConditionExplainHunt, thistype.infoActionExplainHunt, tr("Erkläre mir noch mal die Rebhuhnjagd."))
-			set this.m_animals = this.addInfo(false, false, thistype.infoConditionAnimals, thistype.infoActionAnimals, tr("Ich habe die Rebhühner."))
+			set this.m_whatDoYouSell = this.addInfo(true, false, 0, thistype.infoActionWhatDoYouSell, tre("Was verkaufst du?", "What do you sell?"))
+			set this.m_yourDogs = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourDogs, tre("Ist das dein Hundezwinger?", "Ist that your dog kennel?"))
+			set this.m_yourFalcons = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourFalcons, tre("Ist das dein Falkenkäfig?", "Is that your falcon cage?"))
+			set this.m_hunt = this.addInfo(false, false, 0, thistype.infoActionHunt, tre("Geh mit mir auf die Jagd.", "Go with me to hunt."))
+			set this.m_whereAnimals = this.addInfo(true, false, thistype.infoConditionWhereAnimals, thistype.infoActionWhereAnimals,  tre("Wo finde ich Rebhühner?", "Where can I find patridges?"))
+			set this.m_explainHunt = this.addInfo(true, false, thistype.infoConditionExplainHunt, thistype.infoActionExplainHunt, tre("Erkläre mir noch mal die Rebhuhnjagd.", "Explain to me again the patridge hunting."))
+			set this.m_animals = this.addInfo(false, false, thistype.infoConditionAnimals, thistype.infoActionAnimals, tre("Ich habe die Rebhühner.", "I have the patridges."))
 			
 			set this.m_exit = this.addExitButton()
 
 			// info 0
-			set this.m_fromFarAway = this.addInfo(false, false, 0, thistype.infoAction0_0, tr("Von weit her."))
-			set this.m_noneOfYourBusiness = this.addInfo(false, false, 0, thistype.infoAction0_1, tr("Das geht dich überhaupt nichts an!"))
+			set this.m_fromFarAway = this.addInfo(false, false, 0, thistype.infoAction0_0, tre("Von weit her.", "From far away."))
+			set this.m_noneOfYourBusiness = this.addInfo(false, false, 0, thistype.infoAction0_1, tre("Das geht dich überhaupt nichts an!", "That's none of your business!"))
 
 			// info 2
-			set this.m_coins = this.addInfo(false, false, 0, thistype.infoAction2_0, Format(tr("%1% Goldmünzen.")).i(thistype.goldReward1).result())
-			set this.m_halfOfYourReward = this.addInfo(false, false, 0, thistype.infoAction2_1, tr("Die Hälfte deines Gewinns."))
+			set this.m_coins = this.addInfo(false, false, 0, thistype.infoAction2_0, Format(tre("%1% Goldmünzen.",  "%1% gold coins.")).i(thistype.goldReward1).result())
+			set this.m_halfOfYourReward = this.addInfo(false, false, 0, thistype.infoAction2_1, tre("Die Hälfte deines Gewinns.", "Half of your profits."))
 
 			return this
 		endmethod

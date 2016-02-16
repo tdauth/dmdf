@@ -79,7 +79,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_0, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tr("Auf dann! Mein getreuer Ritter Markward wird sie mit ihrer Aufgabe vertraut machen und sie ein wenig über die Situation aufklären."), gg_snd_Heimrich18)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorHeimrich), tre("Auf dann! Mein getreuer Ritter Markward wird sie mit ihrer Aufgabe vertraut machen und sie ein wenig über die Situation aufklären.", "On then! My faithful knight Markward will familiarize them with their job and explain them a little about the situation."), gg_snd_Heimrich18)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich18) + 2.0)) then
 				return
@@ -108,28 +108,28 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorMarkward), thistype.actor())
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_3, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wie ihr wisst sind die Dunkelelfen mit einem Heer von Orks ins Königreich eingefallen. Es ist nur noch eine Frage der Zeit bis sie auch Talras angreifen werden."), gg_snd_Markward29)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Wie ihr wisst sind die Dunkelelfen mit einem Heer von Orks ins Königreich eingefallen. Es ist nur noch eine Frage der Zeit bis sie auch Talras angreifen werden.", "As you know the Dark Elves have invaded the kingdom with an army of Orcs. It is only a matter of time until they will attack Talras as well."), gg_snd_Markward29)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward29))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_2, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Wir brauchen jeden Kampffähigen, den wir finden können. Vor einer Weile sind einige merkwürdig aussehende Krieger nach Talras gekommen. Sie kamen von weit her, aus dem Norden, mit einem Langboot."), gg_snd_Markward30)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Wir brauchen jeden Kampffähigen, den wir finden können. Vor einer Weile sind einige merkwürdig aussehende Krieger nach Talras gekommen. Sie kamen von weit her, aus dem Norden, mit einem Langboot.", "We need everyone we can find who is able to fight. A while agon some strange looking warriors came to Talras. They came from far away, from the north, with a long tail boat."), gg_snd_Markward30)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward30))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_1, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Der Herzog ist sich sicher, dass sie wegen des bevorstehenden Krieges hier sind. Eure Aufgabe wird es sein, herauszufinden, ob der Herzog mit ihnen ein Bündnis eingehen kann."), gg_snd_Markward31)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Der Herzog ist sich sicher, dass sie wegen des bevorstehenden Krieges hier sind. Eure Aufgabe wird es sein, herauszufinden, ob der Herzog mit ihnen ein Bündnis eingehen kann.", "The duke is sure that they are here because of the impending war. Your task will be to find out if the duke can enter into an alliance with them."), gg_snd_Markward31)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward31))) then
 				return
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_3, true, 0.0)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tr("Sie haben ihr Lager nicht weit vor der Burg errichtet. Verlasst die Burg durch das Osttor, geht den Weg hinunter und dann weiter östlich des Aufstiegs in Richtung Norden. Ihr werdet den Weg schon finden. Viel Glück!"), gg_snd_Markward32)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorMarkward), tre("Sie haben ihr Lager nicht weit vor der Burg errichtet. Verlasst die Burg durch das Osttor, geht den Weg hinunter und dann weiter östlich des Aufstiegs in Richtung Norden. Ihr werdet den Weg schon finden. Viel Glück!", "They have built their camp not far in front of the castle. Leave the castle through the east gate, go down the path and further east from the climb to the north. You will find the way. Good luck!"), gg_snd_Markward32)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward32))) then
 				return

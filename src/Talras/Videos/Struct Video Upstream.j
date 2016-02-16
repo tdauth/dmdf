@@ -282,7 +282,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			
 			call SetUnitAnimation(thistype.unitActor(this.m_actorGiant), "Attack Slam")
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorGiant), tr("Haaalt! Wartet doch! Ich will auch mit, nehmt mich mit! Diese Karte ist langweilig!"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorGiant), tre("Haaalt! Wartet doch! Ich will auch mit, nehmt mich mit! Diese Karte ist langweilig!", "Stoop! Wait! I also want to go with you, take me with you! This map is boring!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -291,13 +291,13 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorKuno), thistype.unitActor(this.m_actorGiant))
 			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorKunosDaughter), thistype.unitActor(this.m_actorGiant))
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorKuno), tr("Was soll denn das? Verschwinde! Ich sehe überhaupt nichts!"), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorKuno), tre("Was soll denn das? Verschwinde! Ich sehe überhaupt nichts!", "What are you doing? Get out of here! I don't see anything!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorKunosDaughter), tr("Ja, wir sehen gar nichts! Du stehst in unserem Sichtfeld."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorKunosDaughter), tre("Ja, wir sehen gar nichts! Du stehst in unserem Sichtfeld.", "Yes, we see nothing! You are standing in our field of view."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -311,7 +311,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			
 			call SetUnitAnimation(thistype.unitActor(this.m_actorGiant), "Stand")
 			call SetUnitAnimationByIndex(thistype.unitActor(this.m_actorGiant), 3)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorGiant), tr("Oh, ich bitte um Verzeihung."), null)
+			call TransmissionFromUnit(thistype.unitActor(this.m_actorGiant), tre("Oh, ich bitte um Verzeihung.", "Oh, I beg your pardon."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
