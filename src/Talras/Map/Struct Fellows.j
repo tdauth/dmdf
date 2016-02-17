@@ -38,6 +38,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_sisgard.addAbility('A0QY')
 
 			set thistype.m_mathilda = Fellow.create(Npcs.mathilda(), TalkMathilda.talk.evaluate())
+			call thistype.m_mathilda.setTalk(true)
 			call thistype.m_mathilda.setRevival(true)
 			call thistype.m_mathilda.setRevivalTitle(tre("Mathilda", "Mathilda"))
 			call thistype.m_mathilda.setDescription(tre("Mathilda ist eine Vagabundin. Sie kann singen und musizieren, sonst nichts.", "Mathilda is a vagabond. She can sing and make music, nothing else."))

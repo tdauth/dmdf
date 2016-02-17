@@ -7,11 +7,11 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 		public static constant integer favouriteAbilityId = 'A03J'
 		public static constant integer classSelectionAbilityId = 'A0UV'
 		public static constant integer classSelectionGrimoireAbilityId = 'A0V0'
-		public static constant integer buffId = 'B00F'
 		public static constant integer maxLevel = 5
 		private static constant real rangeStartValue = 500.0
 		private static constant real rangeLevelValue = 100.0 //ab Stufe 1
 		private static constant real timeLevelSummand = 2.0 //wird zur Stufe addiert
+		private static sound whichSound
 
 		private static method filter takes nothing returns boolean
 			local unit filterUnit = GetFilterUnit()
@@ -68,9 +68,11 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 			local unit caster = GetTriggerUnit()
 			local effect spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "origin")
 			local AGroup targets = this.targets(caster)
+			local AEffectVector effects = AEffectVector.create()
 			local integer i
 			local unit target
 			local real time
+			call PlaySoundOnUnitBJ(thistype.whichSound, 100.0, caster)
 			if (not targets.units().empty()) then
 				set i = 0
 				loop
@@ -78,8 +80,7 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 					set target = targets.units()[i]
 					debug call Print("Stunning "  + GetUnitName(target))
 					call PauseUnit(target, true)
-					call UnitAddAbility(target, thistype.buffId)
-					call UnitMakeAbilityPermanent(target, true, thistype.buffId)
+					call effects.pushBack(AddSpecialEffectTarget("Models\\Effects\\FreezeBuff.mdx", target, "origin"))
 					set target = null
 					set i = i + 1
 				endloop
@@ -94,8 +95,9 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 						if (ASpell.enemyTargetLoopCondition(target)) then
 							debug call Print("Destunning "  + GetUnitName(target))
 							call PauseUnit(target, false)
-							call UnitRemoveAbility(target, thistype.buffId)
 							call targets.units().erase(i)
+							call DestroyEffect(effects[i])
+							call effects.erase(i)
 						else
 							set i = i + 1
 						endif
@@ -110,12 +112,13 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 					set target = targets.units()[i]
 					debug call Print("Destunning "  + GetUnitName(target))
 					call PauseUnit(target, false)
-					call UnitRemoveAbility(target, thistype.buffId)
+					call DestroyEffect(effects[i])
 					set target = null
 					set i = i + 1
 				endloop
 			endif
 			call targets.destroy()
+			call effects.destroy()
 			set caster = null
 			call DestroyEffect(spellEffect)
 			set spellEffect = null
@@ -130,6 +133,10 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 			call this.addGrimoireEntry('A0UZ', 'A0V4')
 			
 			return this
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.whichSound = CreateSound("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTarget1.wav", false, false, true, 12700, 12700, "")
 		endmethod
 	endstruct
 

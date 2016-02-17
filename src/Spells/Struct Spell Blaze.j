@@ -12,6 +12,7 @@ library StructSpellsSpellBlaze requires Asl, StructSpellsSpellElementalMageDamag
 		private static constant real damageStartValue = 20.0
 		private static constant real damageLevelValue = 10.0
 		private static constant real damageLevelBonus = 2.0
+		private static sound whichSound
 
 		private static method filter takes nothing returns boolean
 			local unit filterUnit = GetFilterUnit()
@@ -73,13 +74,14 @@ library StructSpellsSpellBlaze requires Asl, StructSpellsSpellElementalMageDamag
 			loop
 				exitwhen (i == targets.units().size())
 				set target = targets.units().at(i)
+				call PlaySoundOnUnitBJ(thistype.whichSound, 100.0, target)
 				call UnitDamageTargetBJ(caster, target, damage + this.damageBonusFactor() * damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_FIRE)
 				call ShowBashTextTagForPlayer(null, GetWidgetX(target), GetWidgetY(target), R2I(damage))
 				call spellEffects.pushBack(AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "chest"))
 				set target = null
 				set i = i + 1
 			endloop
-			call TriggerSleepAction(1.0)
+			call TriggerSleepAction(2.0)
 			set i = spellEffects.backIndex()
 			loop
 				exitwhen (i < 0)
@@ -101,6 +103,10 @@ library StructSpellsSpellBlaze requires Asl, StructSpellsSpellElementalMageDamag
 			call this.addGrimoireEntry('A0U5', 'A0UA')
 			
 			return this
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.whichSound = CreateSound("Abilities\\Spells\\Other\\Doom\\DoomTarget.wav", false, false, true, 12700, 12700, "")
 		endmethod
 	endstruct
 

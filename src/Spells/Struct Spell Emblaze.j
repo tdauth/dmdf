@@ -8,7 +8,6 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		public static constant integer classSelectionAbilityId = 'A0TR'
 		public static constant integer classSelectionGrimoireAbilityId = 'A0TW'
 		public static constant integer maxLevel = 5
-		private static constant integer buffId = 'B00D'
 		private static constant real time = 30.0
 		private static constant integer damageStartValue = 5
 		private static constant integer damageLevelFactor = 5
@@ -19,9 +18,8 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 			local unit target = GetSpellTargetUnit()
 			local integer damage = thistype.damageStartValue + thistype.damageLevelFactor * this.level()
 			local real time = thistype.time
+			local effect whichEffect = AddSpecialEffectTarget("Models\\Effects\\Emblaze.mdx", target, "origin")
 			debug call Print("Emblaze: Before buff.")
-			// TODO buggy
-			//call thistype.m_buff.add(target)
 			debug call Print("Emblaze: With " + R2S(damage) + " damage.")
 			call AUnitAddBonus(target, A_BONUS_TYPE_DAMAGE, damage)
 			call thistype.showWeaponDamageTextTag(target, damage)
@@ -32,8 +30,8 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 			endloop
 			debug call Print("Emblaze ends!")
 			call AUnitAddBonus(target, A_BONUS_TYPE_DAMAGE, -damage)
-			// TODO buggy
-			//call thistype.m_buff.remove(target)
+			call DestroyEffect(whichEffect)
+			set whichEffect = null
 			set target = null
 		endmethod
 
@@ -46,10 +44,6 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 			call this.addGrimoireEntry('A0TV', 'A0U0')
 			
 			return this
-		endmethod
-
-		private static method onInit takes nothing returns nothing
-			set thistype.m_buff = ABuff.create(thistype.buffId)
 		endmethod
 	endstruct
 

@@ -10,6 +10,7 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 		public static constant integer maxLevel = 1
 		private static constant real damageBonusFactor = 0.30
 		private static constant real time = 10.0
+		private static sound whichSound
 		
 		/**
 		 * Collects all elemental damage spells and returns them as newly allocated vector.
@@ -47,12 +48,13 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 			// Abilities\Spells\Items\AIob\AIobTarget.mdx
 			// Abilities\OrbWater\OrbWaterX.mdx
 			// Abilities\OrbLightning\OrbLightningX.mdx
-			local effect fireEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIfb\\AIfbTarget.mdx", this.character().unit(), "weapon")
-			local effect frostEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIob\\AIobTarget.mdx", this.character().unit(), "weapon")
-			local effect waterEffect = AddSpecialEffectTarget("Abilities\\OrbWater\\OrbWaterX.mdx", this.character().unit(), "weapon")
-			local effect lightningEffect = AddSpecialEffectTarget("Abilities\\OrbLightning\\OrbLightningX.mdx", this.character().unit(), "weapon")
+			local effect fireEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIfb\\AIfbTarget.mdx", this.character().unit(), "chest")
+			local effect frostEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIob\\AIobTarget.mdx", this.character().unit(), "chest")
+			local effect waterEffect = AddSpecialEffectTarget("Abilities\\OrbWater\\OrbWaterX.mdx", this.character().unit(), "origin")
+			local effect lightningEffect = AddSpecialEffectTarget("Abilities\\OrbLightning\\OrbLightningX.mdx", this.character().unit(), "origin")
 			local AIntegerVector spells = this.spells()
 			local integer i = 0
+			call PlaySoundOnUnitBJ(thistype.whichSound, 100.0, caster)
 			loop
 				exitwhen (i == spells.size())
 				call SpellElementalMageDamageSpell(spells[i]).addDamageBonusFactor(thistype.damageBonusFactor)
@@ -85,6 +87,10 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 			call this.addGrimoireEntry('A0ZM', 'A0ZN')
 			
 			return this
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.whichSound = CreateSound("Abilities\\Spells\\Other\\StormEarthFire\\PandarenUltimate.wav", false, false, true, 12700, 12700, "")
 		endmethod
 	endstruct
 

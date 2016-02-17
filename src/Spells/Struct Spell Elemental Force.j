@@ -10,6 +10,7 @@ library StructSpellsSpellElementalForce requires Asl, StructSpellsSpellElemental
 		public static constant integer maxLevel = 1
 		private static constant real damageBonusFactor = 0.80
 		private static constant real time = 20.0
+		private static sound whichSound
 		
 		/**
 		 * Collects all elemental damage spells and returns them as newly allocated vector.
@@ -51,6 +52,7 @@ library StructSpellsSpellElementalForce requires Asl, StructSpellsSpellElemental
 				call this.character().displayMessage(ACharacter.messageTypeInfo, StringArg(tre("\"%s\" wurde verstärkt!", "\"%s\" was strengthened."), GetObjectName(ASpell(spells[i]).ability())))
 				set i = i + 1
 			endloop
+			call PlaySoundOnUnitBJ(thistype.whichSound, 100.0, caster)
 			set spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "origin")
 			call TriggerSleepAction(thistype.time)
 			set i = 0
@@ -71,6 +73,10 @@ library StructSpellsSpellElementalForce requires Asl, StructSpellsSpellElemental
 			call this.addGrimoireEntry('A0Z8', 'A0Z9')
 			
 			return this
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.whichSound = CreateSound("Abilities\\Spells\\NightElf\\Starfall\\StarfallCaster1.wav", false, false, true, 12700, 12700, "")
 		endmethod
 	endstruct
 

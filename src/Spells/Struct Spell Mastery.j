@@ -10,6 +10,7 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 		public static constant integer maxLevel = 5
 		private static constant real interval = 10.0 //constant, does not change per level.
 		private static constant real manaLevelValue = 0.05 //changes per level.
+		private static sound whichSound
 		private timer m_effectTimer
 
 		private static method timerFunction takes nothing returns nothing
@@ -24,7 +25,8 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 				if (mana > 0) then
 					call SetUnitState(caster, UNIT_STATE_MANA, GetUnitState(caster, UNIT_STATE_MANA) + mana)
 					if (not IsUnitHidden(caster)) then
-						set spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
+						call PlaySoundOnUnitBJ(thistype.whichSound, 100.0, caster)
+						set spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
 						call Spell.showManaTextTag(caster, mana)
 						call DestroyEffect(spellEffect)
 						set spellEffect = null
@@ -55,6 +57,10 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			call PauseTimer(this.m_effectTimer)
 			call DmdfHashTable.global().destroyTimer(this.m_effectTimer)
 			set this.m_effectTimer = null
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.whichSound = CreateSound("Abilities\\Spells\\Items\\AIma\\ManaPotion.wav", false, false, true, 12700, 12700, "")
 		endmethod
 	endstruct
 
