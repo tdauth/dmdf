@@ -6,37 +6,37 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_wieland_forge_view, true, 0.0)
 
-			set this.m_actorWieland = thistype.unitActor(thistype.saveUnitActor(Npcs.wieland()))
+			set this.m_actorWieland = this.unitActor(this.saveUnitActor(Npcs.wieland()))
 			call SetUnitPositionRect(this.m_actorWieland, gg_rct_video_wieland_wieland)
 			call SetUnitFacing(this.m_actorWieland, 227.57)
 			call QueueUnitAnimation(this.m_actorWieland, "Attack First")
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_wieland_actor)
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorWieland)
-			call IssueRectOrder(thistype.actor(), "move", gg_rct_video_wieland_actor_target)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_wieland_actor)
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorWieland)
+			call IssueRectOrder(this.actor(), "move", gg_rct_video_wieland_actor_target)
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_wieland_actor_target, thistype.actor()))
+				exitwhen (RectContainsUnit(gg_rct_video_wieland_actor_target, this.actor()))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
 		
-			call TransmissionFromUnit(thistype.actor(), tre("Schmied Wieland!", "Blacksmith Wieland!"), null)
+			call TransmissionFromUnit(this.actor(), tre("Schmied Wieland!", "Blacksmith Wieland!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
 			call ResetUnitAnimation(this.m_actorWieland)
-			call SetUnitFacingToFaceUnit(this.m_actorWieland, thistype.actor())
+			call SetUnitFacingToFaceUnit(this.m_actorWieland, this.actor())
 			
 
 			if (wait(1.0)) then
@@ -59,7 +59,7 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tre("Der Herzog braucht Waffen für einen eroberten Außenposten der Orks und Dunkelelfen.", "The duke needs weapons for a conquered outpost of the Orcs and Dark Elves."), null)
+			call TransmissionFromUnit(this.actor(), tre("Der Herzog braucht Waffen für einen eroberten Außenposten der Orks und Dunkelelfen.", "The duke needs weapons for a conquered outpost of the Orcs and Dark Elves."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -71,7 +71,7 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tre("Markward schickt mich. Der Außenposten muss befestigt werden um die Orks und Dunkelelfen abzuwehren.", "Markward sends me. The outpost has to be fortified to defend it from the Orcs and Dark Elves."), null)
+			call TransmissionFromUnit(this.actor(), tre("Markward schickt mich. Der Außenposten muss befestigt werden um die Orks und Dunkelelfen abzuwehren.", "Markward sends me. The outpost has to be fortified to defend it from the Orcs and Dark Elves."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -89,7 +89,7 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tre("Wo finde ich Eisen in dieser Gegend?", "Where can I find iron in this area?"), null)
+			call TransmissionFromUnit(this.actor(), tre("Wo finde ich Eisen in dieser Gegend?", "Where can I find iron in this area?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -118,7 +118,10 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

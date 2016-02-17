@@ -7,23 +7,23 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(0.0)
 			call CameraSetupApplyForceDuration(gg_cam_deranors_death_0, true, 0.0)
 
-			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
+			set this.m_actorDragonSlayer = this.unitActor(this.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_deranors_death_dragon_slayer)
 			call SetUnitOwner(this.m_actorDragonSlayer, Player(PLAYER_NEUTRAL_PASSIVE), false)
 			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapData.alliedPlayer))
 			call SetUnitFacing(this.m_actorDragonSlayer, 270.0)
 
-			set this.m_actorDeranor = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deranor, gg_rct_video_deranors_death_deranor, 75.0))
+			set this.m_actorDeranor = this.unitActor(this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deranor, gg_rct_video_deranors_death_deranor, 75.0))
 			
 			
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_deranors_death_actor)
-			call SetUnitFacing(thistype.actor(), 270.0)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_deranors_death_actor)
+			call SetUnitFacing(this.actor(), 270.0)
 			
-			call IssueImmediateOrder(thistype.actor(), "stop")
+			call IssueImmediateOrder(this.actor(), "stop")
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
@@ -57,8 +57,8 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 				return
 			endif
 			
-			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, thistype.actor(), 0.50)
-			call SetUnitFacingToFaceUnitTimed(thistype.actor(), this.m_actorDragonSlayer, 0.50)
+			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, this.actor(), 0.50)
+			call SetUnitFacingToFaceUnitTimed(this.actor(), this.m_actorDragonSlayer, 0.50)
 			
 			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Ihr ahnt nicht welchen Gefallen ihr eurem Königreich damit getan habt. Lieder sollte man über diese Heldentat singen, doch vermutlich wird sie der Welt dort draußen unbekannt bleiben. Der Ruhm Einzelner gerät in Vergessenheit. Stattdessen schlachten sich nun die großen Völker."), null)
 			
@@ -66,7 +66,7 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Ihr habt eine Belohnung versprochen ..."), null)
+			call TransmissionFromUnit(this.actor(), tr("Ihr habt eine Belohnung versprochen ..."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -105,7 +105,10 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

@@ -54,7 +54,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 		endmethod
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(19.0)
 			
 			// hide old norseman
@@ -63,49 +63,49 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			call ShowUnit(gg_unit_n01I_0152, false)
 			call ShowUnit(gg_unit_n01I_0153, false)
 			
-			set this.m_actorBoat = thistype.saveUnitActor(gg_unit_n02E_0103)
+			set this.m_actorBoat = this.saveUnitActor(gg_unit_n02E_0103)
 			
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_upstream_actor)
-			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorBoat))
+			call SetUnitPositionRect(this.actor(), gg_rct_video_upstream_actor)
+			call SetUnitFacingToFaceUnit(this.actor(), this.unitActor(this.m_actorBoat))
 			
-			set this.m_actorWigberht = thistype.saveUnitActor(Npcs.wigberht())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_upstream_wigberht)
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorWigberht), thistype.unitActor(this.m_actorBoat))
+			set this.m_actorWigberht = this.saveUnitActor(Npcs.wigberht())
+			call SetUnitPositionRect(this.unitActor(this.m_actorWigberht), gg_rct_video_upstream_wigberht)
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorWigberht), this.unitActor(this.m_actorBoat))
 			
-			set this.m_actorRicman = thistype.saveUnitActor(Npcs.ricman())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_upstream_ricman)
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorRicman), thistype.unitActor(this.m_actorBoat))
+			set this.m_actorRicman = this.saveUnitActor(Npcs.ricman())
+			call SetUnitPositionRect(this.unitActor(this.m_actorRicman), gg_rct_video_upstream_ricman)
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorRicman), this.unitActor(this.m_actorBoat))
 			
-			set this.m_actorDragonSlayer = thistype.saveUnitActor(Npcs.dragonSlayer())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorDragonSlayer), gg_rct_video_upstream_dragon_slayer)
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorDragonSlayer), thistype.unitActor(this.m_actorBoat))
+			set this.m_actorDragonSlayer = this.saveUnitActor(Npcs.dragonSlayer())
+			call SetUnitPositionRect(this.unitActor(this.m_actorDragonSlayer), gg_rct_video_upstream_dragon_slayer)
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorDragonSlayer), this.unitActor(this.m_actorBoat))
 			
-			set this.m_actorNarrator = thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n00W', gg_rct_video_upstream_narrator, GetRandomFacing())
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorNarrator), thistype.unitActor(this.m_actorBoat))
+			set this.m_actorNarrator = this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n00W', gg_rct_video_upstream_narrator, GetRandomFacing())
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorNarrator), this.unitActor(this.m_actorBoat))
 			
-			set this.m_actorNorseman0 = thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_video_upstream_norseman_0, GetRandomFacing())
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorNorseman0), thistype.unitActor(this.m_actorBoat))
-			set this.m_actorNorseman1 = thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_video_upstream_norseman_1, GetRandomFacing())
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorNorseman1), thistype.unitActor(this.m_actorBoat))
+			set this.m_actorNorseman0 = this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_video_upstream_norseman_0, GetRandomFacing())
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorNorseman0), this.unitActor(this.m_actorBoat))
+			set this.m_actorNorseman1 = this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_video_upstream_norseman_1, GetRandomFacing())
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorNorseman1), this.unitActor(this.m_actorBoat))
 			
-			set this.m_actorKuno = thistype.saveUnitActor(Npcs.kuno())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorKuno), gg_rct_video_upstream_kuno)
-			call SetUnitFacing(thistype.unitActor(this.m_actorKuno), 106.44)
+			set this.m_actorKuno = this.saveUnitActor(Npcs.kuno())
+			call SetUnitPositionRect(this.unitActor(this.m_actorKuno), gg_rct_video_upstream_kuno)
+			call SetUnitFacing(this.unitActor(this.m_actorKuno), 106.44)
 			
-			set this.m_actorKunosDaughter = thistype.saveUnitActor(Npcs.kunosDaughter())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorKunosDaughter), gg_rct_video_upstream_kunos_daughter)
-			call SetUnitFacing(thistype.unitActor(this.m_actorKunosDaughter), 106.44)
+			set this.m_actorKunosDaughter = this.saveUnitActor(Npcs.kunosDaughter())
+			call SetUnitPositionRect(this.unitActor(this.m_actorKunosDaughter), gg_rct_video_upstream_kunos_daughter)
+			call SetUnitFacing(this.unitActor(this.m_actorKunosDaughter), 106.44)
 			
-			set this.m_actorGiant = thistype.createUnitActorAtRect(MapData.alliedPlayer, UnitTypes.giant, gg_rct_video_upstream_giant_start, 272.22)
-			call SetUnitColor(thistype.unitActor(this.m_actorGiant), GetPlayerColor(Player(PLAYER_NEUTRAL_PASSIVE)))
+			set this.m_actorGiant = this.createUnitActorAtRect(MapData.alliedPlayer, UnitTypes.giant, gg_rct_video_upstream_giant_start, 272.22)
+			call SetUnitColor(this.unitActor(this.m_actorGiant), GetPlayerColor(Player(PLAYER_NEUTRAL_PASSIVE)))
 			
 			set this.m_group = AGroup.create()
-			call this.m_group.units().pushBack(thistype.actor())
-			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorWigberht))
-			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorRicman))
-			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorDragonSlayer))
-			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorNorseman0))
-			call this.m_group.units().pushBack(thistype.unitActor(this.m_actorNorseman1))
+			call this.m_group.units().pushBack(this.actor())
+			call this.m_group.units().pushBack(this.unitActor(this.m_actorWigberht))
+			call this.m_group.units().pushBack(this.unitActor(this.m_actorRicman))
+			call this.m_group.units().pushBack(this.unitActor(this.m_actorDragonSlayer))
+			call this.m_group.units().pushBack(this.unitActor(this.m_actorNorseman0))
+			call this.m_group.units().pushBack(this.unitActor(this.m_actorNorseman1))
 			
 			call thistype.playMusic.execute()
 			call CameraSetupApplyForceDuration(gg_cam_upstream_0, true, 0.0)
@@ -114,33 +114,33 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 
 		private method continueShipRoute takes nothing returns nothing
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_2,  thistype.unitActor(this.m_actorBoat)))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_2,  this.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
-			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_3)
+			call IssueRectOrder(this.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_3)
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_3, thistype.unitActor(this.m_actorBoat)))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_3, this.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
-			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_4)
+			call IssueRectOrder(this.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_4)
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_4, thistype.unitActor(this.m_actorBoat)))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_4, this.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
-			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_5)
+			call IssueRectOrder(this.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_5)
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_5, thistype.unitActor(this.m_actorBoat)))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_5, this.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
-			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_6)
+			call IssueRectOrder(this.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_6)
 		endmethod
 
 		private static method showMovingTextTag takes string text, real size, integer red, integer green, integer blue, integer alpha returns nothing
@@ -174,7 +174,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorNarrator), tre("So segelten sie gemeinsam mit den Nordmännern nach Holzbruck. Doch was dort geschah ist eine andere Geschichte ...", "So they sailed together with the norsemen to Holzbruck. But what happened there is a different story ..."), gg_snd_ErzaehlerFlussaufwaerts1)
+			call TransmissionFromUnit(this.unitActor(this.m_actorNarrator), tre("So segelten sie gemeinsam mit den Nordmännern nach Holzbruck. Doch was dort geschah ist eine andere Geschichte ...", "So they sailed together with the norsemen to Holzbruck. But what happened there is a different story ..."), gg_snd_ErzaehlerFlussaufwaerts1)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerFlussaufwaerts1))) then
 				return
@@ -198,27 +198,27 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
-			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_0)
+			call IssueRectOrder(this.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_0)
 
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_0, thistype.unitActor(this.m_actorBoat)))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_0, this.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
 
 			call CameraSetupApplyForceDuration(gg_cam_upstream_5, true, 0.0)
-			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_1)
+			call IssueRectOrder(this.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_1)
 
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_1, thistype.unitActor(this.m_actorBoat)))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_1, this.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
 
 			call CameraSetupApplyForceDuration(gg_cam_upstream_6, true, 0.0)
-			call IssueRectOrder(thistype.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_2)
+			call IssueRectOrder(this.unitActor(this.m_actorBoat), "move", gg_rct_video_upstream_ship_2)
 
 			call this.continueShipRoute.execute()
 
@@ -268,59 +268,59 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Überspringen Sie das Video, um das Spiel zu verlassen.", "Skip the video to leave the game."))
 			
-			call IssueRectOrder(thistype.unitActor(this.m_actorGiant), "move", gg_rct_video_upstream_giant_target)
+			call IssueRectOrder(this.unitActor(this.m_actorGiant), "move", gg_rct_video_upstream_giant_target)
 			
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_giant_target, thistype.unitActor(this.m_actorGiant)))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_giant_target, this.unitActor(this.m_actorGiant)))
 
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
 			
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorGiant), thistype.unitActor(this.m_actorBoat))
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorGiant), this.unitActor(this.m_actorBoat))
 			
-			call SetUnitAnimation(thistype.unitActor(this.m_actorGiant), "Attack Slam")
+			call SetUnitAnimation(this.unitActor(this.m_actorGiant), "Attack Slam")
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorGiant), tre("Haaalt! Wartet doch! Ich will auch mit, nehmt mich mit! Diese Karte ist langweilig!", "Stoop! Wait! I also want to go with you, take me with you! This map is boring!"), null)
-			
-			if (wait(GetSimpleTransmissionDuration(null))) then
-				return
-			endif
-			
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorKuno), thistype.unitActor(this.m_actorGiant))
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorKunosDaughter), thistype.unitActor(this.m_actorGiant))
-			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorKuno), tre("Was soll denn das? Verschwinde! Ich sehe überhaupt nichts!", "What are you doing? Get out of here! I don't see anything!"), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorGiant), tre("Haaalt! Wartet doch! Ich will auch mit, nehmt mich mit! Diese Karte ist langweilig!", "Stoop! Wait! I also want to go with you, take me with you! This map is boring!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorKunosDaughter), tre("Ja, wir sehen gar nichts! Du stehst in unserem Sichtfeld.", "Yes, we see nothing! You are standing in our field of view."), null)
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorKuno), this.unitActor(this.m_actorGiant))
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorKunosDaughter), this.unitActor(this.m_actorGiant))
+			
+			call TransmissionFromUnit(this.unitActor(this.m_actorKuno), tre("Was soll denn das? Verschwinde! Ich sehe überhaupt nichts!", "What are you doing? Get out of here! I don't see anything!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorGiant), thistype.unitActor(this.m_actorKuno))
+			call TransmissionFromUnit(this.unitActor(this.m_actorKunosDaughter), tre("Ja, wir sehen gar nichts! Du stehst in unserem Sichtfeld.", "Yes, we see nothing! You are standing in our field of view."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorGiant), this.unitActor(this.m_actorKuno))
 			
 			if (wait(1.0)) then
 				return
 			endif
 			
-			call SetUnitAnimation(thistype.unitActor(this.m_actorGiant), "Stand")
-			call SetUnitAnimationByIndex(thistype.unitActor(this.m_actorGiant), 3)
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorGiant), tre("Oh, ich bitte um Verzeihung.", "Oh, I beg your pardon."), null)
+			call SetUnitAnimation(this.unitActor(this.m_actorGiant), "Stand")
+			call SetUnitAnimationByIndex(this.unitActor(this.m_actorGiant), 3)
+			call TransmissionFromUnit(this.unitActor(this.m_actorGiant), tre("Oh, ich bitte um Verzeihung.", "Oh, I beg your pardon."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call IssueRectOrder(thistype.unitActor(this.m_actorGiant), "move", gg_rct_video_upstream_giant_start)
+			call IssueRectOrder(this.unitActor(this.m_actorGiant), "move", gg_rct_video_upstream_giant_start)
 			
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_upstream_giant_start, thistype.unitActor(this.m_actorGiant)))
+				exitwhen (RectContainsUnit(gg_rct_video_upstream_giant_start, this.unitActor(this.m_actorGiant)))
 
 				if (wait(1.0)) then
 					return
@@ -336,7 +336,10 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

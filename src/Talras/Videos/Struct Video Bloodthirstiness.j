@@ -7,28 +7,28 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
 			call SetTimeOfDay(0.0)
 			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_1, true, 0.0)
 			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_2, true, 5.50)
 
-			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
+			set this.m_actorDragonSlayer = this.unitActor(this.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_bloodthirstiness_dragon_slayer)
 			call SetUnitOwner(this.m_actorDragonSlayer, Player(PLAYER_NEUTRAL_PASSIVE), false)
 			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapData.alliedPlayer))
 
-			set this.m_actorDeacon = thistype.unitActor(thistype.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deacon, gg_rct_video_bloodthirstiness_deacon, 0.0))
+			set this.m_actorDeacon = this.unitActor(this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deacon, gg_rct_video_bloodthirstiness_deacon, 0.0))
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_bloodthirstiness_actor)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_bloodthirstiness_actor)
 
 			call SetUnitFacingToFaceUnit(this.m_actorDragonSlayer, this.m_actorDeacon)
 			call SetUnitFacingToFaceUnit(this.m_actorDeacon, this.m_actorDragonSlayer)
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorDeacon)
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorDeacon)
 			
 			call IssueImmediateOrder(this.m_actorDragonSlayer, "holdposition")
 			call IssueImmediateOrder(this.m_actorDeacon, "holdposition")
-			call IssueImmediateOrder(thistype.actor(), "holdposition")
+			call IssueImmediateOrder(this.actor(), "holdposition")
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
@@ -66,8 +66,8 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 			endif
 			
 			call ResetUnitAnimation(this.m_actorDragonSlayer)
-			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, thistype.actor(), 0.50)
-			call SetUnitFacingToFaceUnitTimed(thistype.actor(), this.m_actorDragonSlayer, 0.50)
+			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, this.actor(), 0.50)
+			call SetUnitFacingToFaceUnitTimed(this.actor(), this.m_actorDragonSlayer, 0.50)
 			
 			if (wait(0.50)) then
 				return
@@ -103,7 +103,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Woher wisst Ihr das alles und wie könnt Ihr Euch da so sicher sein?"), null)
+			call TransmissionFromUnit(this.actor(), tr("Woher wisst Ihr das alles und wie könnt Ihr Euch da so sicher sein?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -144,7 +144,10 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

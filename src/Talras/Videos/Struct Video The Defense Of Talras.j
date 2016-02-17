@@ -17,20 +17,20 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			/*
 			 * Abenddämmerung
 			 */
 			call SetTimeOfDay(20.0)
 			
-			set this.m_actorWigberht = thistype.saveUnitActor(Npcs.wigberht())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorWigberht), gg_rct_video_the_defense_of_talras_wigberht)
-			set this.m_actorRicman = thistype.saveUnitActor(Npcs.ricman())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorRicman), gg_rct_video_the_defense_of_talras_ricman)
-			set this.m_actorDragonSlayer = thistype.saveUnitActor(Npcs.dragonSlayer())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorDragonSlayer), gg_rct_video_the_defense_of_talras_dragon_slayer)
+			set this.m_actorWigberht = this.saveUnitActor(Npcs.wigberht())
+			call SetUnitPositionRect(this.unitActor(this.m_actorWigberht), gg_rct_video_the_defense_of_talras_wigberht)
+			set this.m_actorRicman = this.saveUnitActor(Npcs.ricman())
+			call SetUnitPositionRect(this.unitActor(this.m_actorRicman), gg_rct_video_the_defense_of_talras_ricman)
+			set this.m_actorDragonSlayer = this.saveUnitActor(Npcs.dragonSlayer())
+			call SetUnitPositionRect(this.unitActor(this.m_actorDragonSlayer), gg_rct_video_the_defense_of_talras_dragon_slayer)
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_the_defense_of_talras_actor)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_the_defense_of_talras_actor)
 			
 			set this.m_warriors = AGroup.create()
 			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n01I', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
@@ -41,10 +41,10 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 			set this.m_villager1 = this.m_warriors.units()[this.m_warriors.units().size() - 2]
 			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n03F', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
 			
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorRicman), this.m_warriors.units().front())
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorWigberht), thistype.unitActor(this.m_actorRicman))
-			call SetUnitFacingToFaceUnit(thistype.unitActor(this.m_actorDragonSlayer), thistype.unitActor(this.m_actorRicman))
-			call SetUnitFacingToFaceUnit(thistype.actor(), thistype.unitActor(this.m_actorRicman))
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorRicman), this.m_warriors.units().front())
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorWigberht), this.unitActor(this.m_actorRicman))
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorDragonSlayer), this.unitActor(this.m_actorRicman))
+			call SetUnitFacingToFaceUnit(this.actor(), this.unitActor(this.m_actorRicman))
 		
 			call CameraSetupApplyForceDuration(gg_cam_the_defense_of_talras_0, true, 0.0)
 		endmethod
@@ -58,7 +58,7 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 			// TODO Finish this video
 			
 			
-			call TransmissionFromUnitWithName(thistype.unitActor(this.m_actorRicman), tr("Ricman"), tr("Männer, macht euch bereit für euer letztes Gefecht. Heute mag der Tag gekommen sein, da wir allesamt das Zeitliche segnen, doch vorher zahlen wir es diesen Bastarden heim."), gg_snd_RicmanTheDefenseOfTalrasRicman1)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tr("Ricman"), tr("Männer, macht euch bereit für euer letztes Gefecht. Heute mag der Tag gekommen sein, da wir allesamt das Zeitliche segnen, doch vorher zahlen wir es diesen Bastarden heim."), gg_snd_RicmanTheDefenseOfTalrasRicman1)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheDefenseOfTalrasRicman1))) then
 				return
@@ -110,7 +110,10 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

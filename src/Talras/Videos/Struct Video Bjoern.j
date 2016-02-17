@@ -7,27 +7,27 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_bjoern_initial_view, true, 0.0)
 
-			set this.m_actorBjoern = thistype.unitActor(thistype.saveUnitActor(Npcs.bjoern()))
+			set this.m_actorBjoern = this.unitActor(this.saveUnitActor(Npcs.bjoern()))
 			call SetUnitPositionRect(this.m_actorBjoern, gg_rct_video_bjoern_bjoern)
 			
-			set this.m_actorBjoernsWife = thistype.unitActor(thistype.saveUnitActor(Npcs.bjoernsWife()))
+			set this.m_actorBjoernsWife = this.unitActor(this.saveUnitActor(Npcs.bjoernsWife()))
 			call SetUnitPositionRect(this.m_actorBjoernsWife, gg_rct_video_bjoern_bjoerns_wife)
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_bjoern_actor)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_bjoern_actor)
 			
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorBjoern)
-			call SetUnitFacingToFaceUnit(this.m_actorBjoern, thistype.actor())
-			call SetUnitFacingToFaceUnit(this.m_actorBjoernsWife, thistype.actor())
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorBjoern)
+			call SetUnitFacingToFaceUnit(this.m_actorBjoern, this.actor())
+			call SetUnitFacingToFaceUnit(this.m_actorBjoernsWife, this.actor())
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(thistype.actor(), tre("Jäger Björn!", "Hunter Björn!"), null)
+			call TransmissionFromUnit(this.actor(), tre("Jäger Björn!", "Hunter Björn!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -39,7 +39,7 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tre("Der Herzog benötigt Fallen zur Verteidigung eines Außenpostens.", "The duke needs traps for the defense of an outpost."), null)
+			call TransmissionFromUnit(this.actor(), tre("Der Herzog benötigt Fallen zur Verteidigung eines Außenpostens.", "The duke needs traps for the defense of an outpost."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -76,7 +76,10 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

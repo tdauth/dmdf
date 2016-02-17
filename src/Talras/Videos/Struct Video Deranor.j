@@ -20,11 +20,11 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 		endmethod
 		
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(0.0)
 			call CameraSetupApplyForceDuration(gg_cam_deranor_0, true, 0.0)
 
-			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
+			set this.m_actorDragonSlayer = this.unitActor(this.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_deranor_dragon_slayer)
 			call SetUnitOwner(this.m_actorDragonSlayer, Player(PLAYER_NEUTRAL_PASSIVE), false)
 			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapData.alliedPlayer))
@@ -32,13 +32,13 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			call ShowUnit(this.m_actorDragonSlayer, false)
 			call IssueImmediateOrder(this.m_actorDragonSlayer, "stop")
 
-			set this.m_actorDeranor = thistype.unitActor(thistype.saveUnitActor(gg_unit_u00A_0353))
+			set this.m_actorDeranor = this.unitActor(this.saveUnitActor(gg_unit_u00A_0353))
 			
 			
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_deranor_actor)
-			call SetUnitFacing(thistype.actor(), 270.0)
-			call ShowUnit(thistype.actor(), false)
-			call IssueImmediateOrder(thistype.actor(), "stop")
+			call SetUnitPositionRect(this.actor(), gg_rct_video_deranor_actor)
+			call SetUnitFacing(this.actor(), 270.0)
+			call ShowUnit(this.actor(), false)
+			call IssueImmediateOrder(this.actor(), "stop")
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
@@ -48,8 +48,8 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			
 			call ShowUnit(this.m_actorDragonSlayer, true)
 			call IssueImmediateOrder(this.m_actorDragonSlayer, "stop")
-			call ShowUnit(thistype.actor(), true)
-			call IssueImmediateOrder(thistype.actor(), "stop")
+			call ShowUnit(this.actor(), true)
+			call IssueImmediateOrder(this.actor(), "stop")
 			
 			if (wait(2.0)) then
 				return
@@ -152,7 +152,10 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

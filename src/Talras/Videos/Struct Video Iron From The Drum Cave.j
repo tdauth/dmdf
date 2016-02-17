@@ -7,21 +7,21 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_iron_from_the_drum_cave_baldar, true, 0.0)
 
-			set this.m_actorBaldar = thistype.unitActor(thistype.saveUnitActor(Npcs.baldar()))
+			set this.m_actorBaldar = this.unitActor(this.saveUnitActor(Npcs.baldar()))
 			call SetUnitPositionRect(this.m_actorBaldar, gg_rct_video_iron_from_the_drum_cave_baldar)
 			
-			set this.m_actorImp = thistype.unitActor(thistype.saveUnitActor(gg_unit_u001_0190))
+			set this.m_actorImp = this.unitActor(this.saveUnitActor(gg_unit_u001_0190))
 			call SetUnitPositionRect(this.m_actorImp, gg_rct_video_iron_from_the_drum_cave_imp)
 			call QueueUnitAnimation(this.m_actorImp , "Attack")
 			
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_iron_from_the_drum_cave_actor)
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorBaldar)
-			call SetUnitFacingToFaceUnit(this.m_actorBaldar, thistype.actor())
+			call SetUnitPositionRect(this.actor(), gg_rct_video_iron_from_the_drum_cave_actor)
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorBaldar)
+			call SetUnitFacingToFaceUnit(this.m_actorBaldar, this.actor())
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
@@ -32,7 +32,7 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("So ist es."), null)
+			call TransmissionFromUnit(this.actor(), tr("So ist es."), null)
 			
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
@@ -45,7 +45,7 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Die Orks und Dunkelelfen werden sonst bald hier einfallen und alles dem Erdboden gleich machen. Ist Euch das lieber?"), null)
+			call TransmissionFromUnit(this.actor(), tr("Die Orks und Dunkelelfen werden sonst bald hier einfallen und alles dem Erdboden gleich machen. Ist Euch das lieber?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -124,7 +124,10 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

@@ -18,13 +18,13 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		public stub method onInitAction takes nothing returns nothing
 			local unit createdUnit
 			local integer index
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(5.00)
 			call PlayThematicMusic("Music\\TheFirstCombat.mp3")
 			call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_0, true, 0.0)
 			
-			call Fellows.hideDragonSlayerInVideo()
+			call Fellows.hideDragonSlayerInVideo(this)
 			
 			call SetPlayerAllianceStateBJ(MapData.haldarPlayer, MapData.baldarPlayer, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(MapData.baldarPlayer, MapData.haldarPlayer, bj_ALLIANCE_UNALLIED)
@@ -32,140 +32,140 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			set this.m_firstActorGroup = CreateGroup()
 			set this.m_firstAllyGroup = CreateGroup()
 			// Wigberht, 0
-			set this.m_actorWigberht = thistype.saveUnitActor(Npcs.wigberht())
-			call SetUnitX(thistype.unitActor(this.m_actorWigberht), GetRectCenterX(gg_rct_video_the_first_combat_wigberhts_position))
-			call SetUnitY(thistype.unitActor(this.m_actorWigberht), GetRectCenterY(gg_rct_video_the_first_combat_wigberhts_position))
-			call SetUnitFacing(thistype.unitActor(this.m_actorWigberht), 144.91)
-			call GroupAddUnit(this.m_firstActorGroup, thistype.unitActor(this.m_actorWigberht))
+			set this.m_actorWigberht = this.saveUnitActor(Npcs.wigberht())
+			call SetUnitX(this.unitActor(this.m_actorWigberht), GetRectCenterX(gg_rct_video_the_first_combat_wigberhts_position))
+			call SetUnitY(this.unitActor(this.m_actorWigberht), GetRectCenterY(gg_rct_video_the_first_combat_wigberhts_position))
+			call SetUnitFacing(this.unitActor(this.m_actorWigberht), 144.91)
+			call GroupAddUnit(this.m_firstActorGroup, this.unitActor(this.m_actorWigberht))
 			call GroupAddUnit(this.m_firstAllyGroup, Npcs.wigberht())
 			// Ricman, 1
-			set this.m_actorRicman = thistype.saveUnitActor(Npcs.ricman())
-			call SetUnitX(thistype.unitActor(this.m_actorRicman), GetRectCenterX(gg_rct_video_the_first_combat_ricmans_position))
-			call SetUnitY(thistype.unitActor(this.m_actorRicman), GetRectCenterY(gg_rct_video_the_first_combat_ricmans_position))
-			call SetUnitFacing(thistype.unitActor(this.m_actorRicman), 151.33)
-			call GroupAddUnit(this.m_firstActorGroup, thistype.unitActor(this.m_actorRicman))
+			set this.m_actorRicman = this.saveUnitActor(Npcs.ricman())
+			call SetUnitX(this.unitActor(this.m_actorRicman), GetRectCenterX(gg_rct_video_the_first_combat_ricmans_position))
+			call SetUnitY(this.unitActor(this.m_actorRicman), GetRectCenterY(gg_rct_video_the_first_combat_ricmans_position))
+			call SetUnitFacing(this.unitActor(this.m_actorRicman), 151.33)
+			call GroupAddUnit(this.m_firstActorGroup, this.unitActor(this.m_actorRicman))
 			call GroupAddUnit(this.m_firstAllyGroup, Npcs.ricman())
 			// actor, do not add to first ally group!
-			call SetUnitX(thistype.actor(), GetRectCenterX(gg_rct_video_the_first_combat_actors_position))
-			call SetUnitY(thistype.actor(), GetRectCenterY(gg_rct_video_the_first_combat_actors_position))
-			call SetUnitFacing(thistype.actor(), 154.36)
-			call GroupAddUnit(this.m_firstActorGroup, thistype.actor())
+			call SetUnitX(this.actor(), GetRectCenterX(gg_rct_video_the_first_combat_actors_position))
+			call SetUnitY(this.actor(), GetRectCenterY(gg_rct_video_the_first_combat_actors_position))
+			call SetUnitFacing(this.actor(), 154.36)
+			call GroupAddUnit(this.m_firstActorGroup, this.actor())
 			// norseman 0, 2
-			set index = thistype.saveUnitActor(gg_unit_n01I_0150)
+			set index = this.saveUnitActor(gg_unit_n01I_0150)
 			set this.m_actorNorseman0 = index
-			call SetUnitX(thistype.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_0_position))
-			call SetUnitY(thistype.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_0_position))
-			call SetUnitFacing(thistype.unitActor(index), 144.28)
-			call GroupAddUnit(this.m_firstActorGroup, thistype.unitActor(index))
+			call SetUnitX(this.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_0_position))
+			call SetUnitY(this.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_0_position))
+			call SetUnitFacing(this.unitActor(index), 144.28)
+			call GroupAddUnit(this.m_firstActorGroup, this.unitActor(index))
 			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n01I_0150)
 			// norseman 1, 3
-			set index = thistype.saveUnitActor(gg_unit_n01I_0151)
+			set index = this.saveUnitActor(gg_unit_n01I_0151)
 			set this.m_actorNorseman1 = index
-			call SetUnitX(thistype.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_1_position))
-			call SetUnitY(thistype.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_1_position))
-			call SetUnitFacing(thistype.unitActor(index), 147.53)
-			call GroupAddUnit(this.m_firstActorGroup, thistype.unitActor(index))
+			call SetUnitX(this.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_1_position))
+			call SetUnitY(this.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_1_position))
+			call SetUnitFacing(this.unitActor(index), 147.53)
+			call GroupAddUnit(this.m_firstActorGroup, this.unitActor(index))
 			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n01I_0151)
 			// norseman 2, 4
-			set index = thistype.saveUnitActor(gg_unit_n01I_0152)
+			set index = this.saveUnitActor(gg_unit_n01I_0152)
 			set this.m_actorNorseman2 = index
-			call SetUnitX(thistype.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_2_position))
-			call SetUnitY(thistype.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_2_position))
-			call SetUnitFacing(thistype.unitActor(index), 131.23)
-			call GroupAddUnit(this.m_firstActorGroup, thistype.unitActor(index))
+			call SetUnitX(this.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_2_position))
+			call SetUnitY(this.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_2_position))
+			call SetUnitFacing(this.unitActor(index), 131.23)
+			call GroupAddUnit(this.m_firstActorGroup, this.unitActor(index))
 			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n01I_0152)
 			// norseman 3, 5
-			set index = thistype.saveUnitActor(gg_unit_n01I_0153)
+			set index = this.saveUnitActor(gg_unit_n01I_0153)
 			set this.m_actorNorseman3 = index
-			call SetUnitX(thistype.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_3_position))
-			call SetUnitY(thistype.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_3_position))
-			call SetUnitFacing(thistype.unitActor(index), 160.94)
-			call GroupAddUnit(this.m_firstActorGroup, thistype.unitActor(index))
+			call SetUnitX(this.unitActor(index), GetRectCenterX(gg_rct_video_the_first_combat_norseman_3_position))
+			call SetUnitY(this.unitActor(index), GetRectCenterY(gg_rct_video_the_first_combat_norseman_3_position))
+			call SetUnitFacing(this.unitActor(index), 160.94)
+			call GroupAddUnit(this.m_firstActorGroup, this.unitActor(index))
 			call GroupAddUnit(this.m_firstAllyGroup, gg_unit_n01I_0153)
 
-			call thistype.setActorsMoveSpeed(200.0) // gleich schnell für normale Bewegung
-			call thistype.setActorsOwner(MapData.haldarPlayer) // change player to make sure that units do not walk back!
+			call this.setActorsMoveSpeed(200.0) // gleich schnell für normale Bewegung
+			call this.setActorsOwner(MapData.haldarPlayer) // change player to make sure that units do not walk back!
 			// orcs and dark elves
 			set this.m_secondActorGroup = CreateGroup()
 			set this.m_firstEnemyGroup = CreateGroup()
 			// orc leader, 6
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01F', gg_rct_video_the_first_combat_orc_leader, 107.04)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// orc 0, 7 - Armbrustschütze
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01A', gg_rct_video_the_first_combat_orc_0, 56.55)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// orc 1, 8 - Hexer
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n018', gg_rct_video_the_first_combat_orc_1, 224.73)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// orc 2, 9 - Krieger
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n019', gg_rct_video_the_first_combat_orc_2, 139.98)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// orc 3, 10 - Krieger
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n019', gg_rct_video_the_first_combat_orc_3, 25.90)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// orc 4, 11 - Armbrustschütze
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01A', gg_rct_video_the_first_combat_orc_4, 125.81)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// orc 5, 12 - Berserkerin
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01G', gg_rct_video_the_first_combat_orc_5, 331.54)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// orc 6, 13 - Armbrustschütze
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01A', gg_rct_video_the_first_combat_orc_6, 297.26)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// orc 7, 14 - Krieger
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n019', gg_rct_video_the_first_combat_orc_7, 267.69)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// dark elf 0, 15 - Waldgeist (männlich)
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01W', gg_rct_video_the_first_combat_dark_elf_0, 316.95)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// dark elf 1, 16 - Botin
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01V', gg_rct_video_the_first_combat_dark_elf_1, 99.77)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// dark elf 2, 17 - Satyr
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n02O', gg_rct_video_the_first_combat_dark_elf_2, 240.36)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 			// dark elf 3, 18 - Waldgeist (weiblich)
 			set createdUnit = CreateUnitAtRect(MapData.baldarPlayer, 'n01X', gg_rct_video_the_first_combat_dark_elf_3, 17.00)
 			call GroupAddUnit(this.m_firstEnemyGroup, createdUnit)
-			set index = thistype.saveUnitActor(createdUnit)
+			set index = this.saveUnitActor(createdUnit)
 			set createdUnit = null
-			call GroupAddUnit(this.m_secondActorGroup, thistype.unitActor(index))
+			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 
 			call GroupPointOrder(this.m_firstActorGroup, "move", GetRectCenterX(gg_rct_video_the_first_combat_first_target), GetRectCenterY(gg_rct_video_the_first_combat_first_target))
 		endmethod
@@ -240,17 +240,17 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			/*
 			 * Make Ricman the first to be standing on the hill.
 			 */
-			call SetUnitMoveSpeed(thistype.unitActor(this.m_actorWigberht), GetUnitMoveSpeed(thistype.unitActor(this.m_actorWigberht)) + 50.0)
-			call IssuePointOrder(thistype.unitActor(this.m_actorWigberht), "move", GetRectCenterX(gg_rct_video_the_first_combat_wigberhts_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_wigberhts_hill_target))
+			call SetUnitMoveSpeed(this.unitActor(this.m_actorWigberht), GetUnitMoveSpeed(this.unitActor(this.m_actorWigberht)) + 50.0)
+			call IssuePointOrder(this.unitActor(this.m_actorWigberht), "move", GetRectCenterX(gg_rct_video_the_first_combat_wigberhts_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_wigberhts_hill_target))
 			// TODO ricman or someone runs back
-			call IssuePointOrder(thistype.unitActor(this.m_actorRicman), "move", GetRectCenterX(gg_rct_video_the_first_combat_ricmans_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_ricmans_hill_target))
-			call IssuePointOrder(thistype.actor(), "move", GetRectCenterX(gg_rct_video_the_first_combat_actors_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_actors_hill_target))
-			call IssuePointOrder(thistype.unitActor(this.m_actorNorseman0), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_0_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_0_hill_target))
-			call IssuePointOrder(thistype.unitActor(this.m_actorNorseman1), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_1_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_1_hill_target))
-			call IssuePointOrder(thistype.unitActor(this.m_actorNorseman2), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_2_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_2_hill_target))
-			call IssuePointOrder(thistype.unitActor(this.m_actorNorseman3), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_3_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_3_hill_target))
+			call IssuePointOrder(this.unitActor(this.m_actorRicman), "move", GetRectCenterX(gg_rct_video_the_first_combat_ricmans_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_ricmans_hill_target))
+			call IssuePointOrder(this.actor(), "move", GetRectCenterX(gg_rct_video_the_first_combat_actors_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_actors_hill_target))
+			call IssuePointOrder(this.unitActor(this.m_actorNorseman0), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_0_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_0_hill_target))
+			call IssuePointOrder(this.unitActor(this.m_actorNorseman1), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_1_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_1_hill_target))
+			call IssuePointOrder(this.unitActor(this.m_actorNorseman2), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_2_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_2_hill_target))
+			call IssuePointOrder(this.unitActor(this.m_actorNorseman3), "move", GetRectCenterX(gg_rct_video_the_first_combat_norseman_3_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_norseman_3_hill_target))
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_the_first_combat_wigberhts_hill_target, thistype.unitActor(this.m_actorWigberht)))
+				exitwhen (RectContainsUnit(gg_rct_video_the_first_combat_wigberhts_hill_target, this.unitActor(this.m_actorWigberht)))
 				if (wait(1.0)) then
 					return
 				endif
@@ -258,19 +258,19 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			if (wait(4.0)) then
 				return
 			endif
-			call SetUnitAnimation(thistype.unitActor(this.m_actorWigberht), "Spell")
-			call TransmissionFromUnit(thistype.unitActor(this.m_actorWigberht), tre("Heil dir, Vater!", "Hail father!"), gg_snd_Wigberht38)
+			call SetUnitAnimation(this.unitActor(this.m_actorWigberht), "Spell")
+			call TransmissionFromUnit(this.unitActor(this.m_actorWigberht), tre("Heil dir, Vater!", "Hail father!"), gg_snd_Wigberht38)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht38))) then
 				return
 			endif
 			// Waffen heben und brüllen
 			call ForGroup(this.m_firstActorGroup, function thistype.groupFunctionStandVictory)
-			//call SetUnitAnimation(thistype.actor(), "Stand Victory 21")
-			call SetUnitAnimationByIndex(thistype.actor(), 21)
+			//call SetUnitAnimation(this.actor(), "Stand Victory 21")
+			call SetUnitAnimationByIndex(this.actor(), 21)
 			if (wait(GetSoundDurationBJ(gg_snd_BattleRoar))) then
 				return
 			endif
-			call thistype.setActorsMoveSpeed(200.0)
+			call this.setActorsMoveSpeed(200.0)
 			call GroupPointOrder(this.m_firstActorGroup, "attack", GetRectCenterX(gg_rct_video_the_first_combat_battle_field), GetRectCenterY(gg_rct_video_the_first_combat_battle_field))
 			if (wait(1.0)) then
 				return
@@ -311,7 +311,10 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

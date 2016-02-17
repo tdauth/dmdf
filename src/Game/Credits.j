@@ -42,9 +42,10 @@ call Credits.addContributor.evaluate("Opossum", tre("3rd-Person-Kamerasystem", "
 //call Credits.addContributor.evaluate("Anitarf", tre("Pfeiltastensteuerung", "Arrow key system"))
 
 // forums
-call Credits.addTitle.evaluate(tre("Foren und Chats", "Forums and Chats"))
+call Credits.addTitle.evaluate(tre("Websites, Foren und Chats", "Websites, Forums and Chats"))
 call Credits.addContributor.evaluate("inWarcraft.de", "")
 call Credits.addContributor.evaluate("inWarcraft.de IRC Chat", "http://webchat.quakenet.org/?channels=#inwc.de-maps")
 call Credits.addContributor.evaluate("hiveworkshop.com", tre("Unzählige Ressourcen, Fragen und die Projektvorstellung", "Countless resources, questions and the project presentation"))
+call Credits.addContributor.evaluate("hoer-talk.de", tre("Sprecher", "Voices"))
 
 // files

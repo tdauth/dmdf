@@ -5,7 +5,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(16.00)
 			call SetSpeechVolumeGroupsBJ()
 			call PlayThematicMusic("Music\\TheCastle.mp3")
@@ -13,10 +13,10 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_new_the_castle_0, true, 0.0)
 			
 			// actor
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_the_castle_character)
-			call SetUnitFacing(thistype.actor(), 182.64)
-			call IssuePointOrder(thistype.actor(), "move", GetRectCenterX(gg_rct_video_the_castle_character_target), GetRectCenterY(gg_rct_video_the_castle_character_target))
-			call SetUnitMoveSpeed(thistype.actor(), 200.0)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_the_castle_character)
+			call SetUnitFacing(this.actor(), 182.64)
+			call IssuePointOrder(this.actor(), "move", GetRectCenterX(gg_rct_video_the_castle_character_target), GetRectCenterY(gg_rct_video_the_castle_character_target))
+			call SetUnitMoveSpeed(this.actor(), 200.0)
 		endmethod
 
 		/*
@@ -137,7 +137,10 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

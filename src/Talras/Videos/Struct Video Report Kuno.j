@@ -7,33 +7,33 @@ library StructMapVideosVideoReportKuno requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_kuno_initial_view, true, 0.0)
 
-			set this.m_actorKuno = thistype.unitActor(thistype.saveUnitActor(Npcs.kuno()))
+			set this.m_actorKuno = this.unitActor(this.saveUnitActor(Npcs.kuno()))
 			call SetUnitPositionRect(this.m_actorKuno, gg_rct_video_kuno_kuno)
 			
-			set this.m_actorKunosDaughter = thistype.unitActor(thistype.saveUnitActor(Npcs.kunosDaughter()))
+			set this.m_actorKunosDaughter = this.unitActor(this.saveUnitActor(Npcs.kunosDaughter()))
 			call SetUnitPositionRect(this.m_actorKunosDaughter, gg_rct_video_kuno_kunos_daughter)
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_kuno_actor)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_kuno_actor)
 			
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorKuno)
-			call SetUnitFacingToFaceUnit(this.m_actorKuno, thistype.actor())
-			call SetUnitFacingToFaceUnit(this.m_actorKunosDaughter, thistype.actor())
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorKuno)
+			call SetUnitFacingToFaceUnit(this.m_actorKuno, this.actor())
+			call SetUnitFacingToFaceUnit(this.m_actorKunosDaughter, this.actor())
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(thistype.actor(), tr("Holzfäller Kuno!"), null)
+			call TransmissionFromUnit(this.actor(), tr("Holzfäller Kuno!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Die Hexen sind tot."), null)
+			call TransmissionFromUnit(this.actor(), tr("Die Hexen sind tot."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -63,7 +63,10 @@ library StructMapVideosVideoReportKuno requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

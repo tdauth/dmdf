@@ -9,25 +9,25 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(6.00)
 			call PlayThematicMusic("Music\\TheChief.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_0, true, 0.0)
 
-			set this.m_actorWigberht = thistype.unitActor(thistype.saveUnitActor(Npcs.wigberht()))
+			set this.m_actorWigberht = this.unitActor(this.saveUnitActor(Npcs.wigberht()))
 			call SetUnitPositionRect(this.m_actorWigberht, gg_rct_video_the_chief_wigberhts_position)
 			call SetUnitFacing(this.m_actorWigberht, 257.38)
 
-			set this.m_actorRicman = thistype.unitActor(thistype.saveUnitActor(Npcs.ricman()))
+			set this.m_actorRicman = this.unitActor(this.saveUnitActor(Npcs.ricman()))
 			call SetUnitPositionRect(this.m_actorRicman, gg_rct_video_the_chief_ricmans_position)
 			call SetUnitFacing(this.m_actorRicman, 299.92)
 			call UnitRemoveAbility(this.m_actorRicman, 'Aneu') // disable arrow
 
-			set this.m_actorNorseman0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n01I_0150))
+			set this.m_actorNorseman0 = this.unitActor(this.saveUnitActor(gg_unit_n01I_0150))
 			call SetUnitPositionRect(this.m_actorNorseman0, gg_rct_video_the_chief_norseman_0)
 			call SetUnitFacing(this.m_actorNorseman0, 303.74)
 
-			set this.m_actorNorseman1 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n01I_0151))
+			set this.m_actorNorseman1 = this.unitActor(this.saveUnitActor(gg_unit_n01I_0151))
 			call SetUnitPositionRect(this.m_actorNorseman1, gg_rct_video_the_chief_norseman_1)
 			call SetUnitFacing(this.m_actorNorseman1, 168.10)
 
@@ -36,20 +36,20 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			call ShowUnit(gg_unit_n01I_0153, false)
 			call ShowUnit(gg_unit_n01I_0152, false)
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_the_chief_actors_position)
-			call SetUnitFacing(thistype.actor(), 123.64)
-			call SetUnitMoveSpeed(thistype.actor(), 200.0)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_the_chief_actors_position)
+			call SetUnitFacing(this.actor(), 123.64)
+			call SetUnitMoveSpeed(this.actor(), 200.0)
 			
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_1, true, 10.0)
-			call IssueRectOrder(thistype.actor(), "move", gg_rct_video_the_chief_actors_target)
+			call IssueRectOrder(this.actor(), "move", gg_rct_video_the_chief_actors_target)
 		endmethod
 
 		private static method conditionActorIsInTargetRect takes AVideo this returns boolean
-			return RectContainsUnit(gg_rct_video_the_chief_actors_target, AVideo.actor())
+			return RectContainsUnit(gg_rct_video_the_chief_actors_target, this.actor())
 		endmethod
 
 		private static method conditionWigberhtIsInRicmansRect takes thistype this returns boolean
-			return RectContainsUnit(gg_rct_video_the_chief_ricmans_position,this.m_actorWigberht)
+			return RectContainsUnit(gg_rct_video_the_chief_ricmans_position, this.m_actorWigberht)
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
@@ -57,8 +57,8 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			if (waitForCondition(1.0, thistype.conditionActorIsInTargetRect)) then
 				return
 			endif
-			call SetUnitFacingToFaceUnit(this.m_actorRicman, thistype.actor())
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorRicman)
+			call SetUnitFacingToFaceUnit(this.m_actorRicman, this.actor())
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorRicman)
 			
 			if (wait(1.0)) then
 				return
@@ -68,7 +68,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheChiefRicman1))) then
 				return
 			endif
-			call TransmissionFromUnit(AVideo.actor(), tre("Wir wollen mit Eurem Anführer sprechen. Der Herzog von Talras schickt uns.", "We want to speak to your leader. The duke of Talras semds us."), null)
+			call TransmissionFromUnit(this.actor(), tre("Wir wollen mit Eurem Anführer sprechen. Der Herzog von Talras schickt uns.", "We want to speak to your leader. The duke of Talras semds us."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -103,14 +103,14 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 			call SetUnitFacingToFaceUnit(this.m_actorRicman, this.m_actorWigberht)
-			call SetUnitFacingToFaceUnit(this.m_actorWigberht, thistype.actor())
+			call SetUnitFacingToFaceUnit(this.m_actorWigberht, this.actor())
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_6, true, 0.0)
 			call TransmissionFromUnitWithName(this.m_actorWigberht, tre("Wigberht", "Wigberht"), tre("Was wollt ihr von mir?", "What do you want from me?"), gg_snd_Wigberht30)
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht30))) then
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tre("Heimrich, der Herzog von Talras, möchte wissen, ob er ein Bündnis mit Euch und Euren Männern eingehen kann. Er braucht Unterstützung im Kampf gegen den Feind.", "Heimrich, the duke of Talras wants to know if he can enter into an alliance with you and your men. He need support in the fight against the enemy."), null)
+			call TransmissionFromUnit(this.actor(), tre("Heimrich, der Herzog von Talras, möchte wissen, ob er ein Bündnis mit Euch und Euren Männern eingehen kann. Er braucht Unterstützung im Kampf gegen den Feind.", "Heimrich, the duke of Talras wants to know if he can enter into an alliance with you and your men. He need support in the fight against the enemy."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -120,7 +120,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tre("Gemeinsam habt ihr eine größere Chance den Feind zu bezwingen.", "Toghether you have a greater chance to defeat the enemy."), null)
+			call TransmissionFromUnit(this.actor(), tre("Gemeinsam habt ihr eine größere Chance den Feind zu bezwingen.", "Toghether you have a greater chance to defeat the enemy."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -160,7 +160,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tre("Ihr paar wollt das Heer der Orks angreifen? Das ist Wahnsinn.", "You few want to attack the army of Orcs? This is madness."), null)
+			call TransmissionFromUnit(this.actor(), tre("Ihr paar wollt das Heer der Orks angreifen? Das ist Wahnsinn.", "You few want to attack the army of Orcs? This is madness."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -170,7 +170,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tre("Und wann wollt ihr angreifen?", "And when you will attack?"), null)
+			call TransmissionFromUnit(this.actor(), tre("Und wann wollt ihr angreifen?", "And when you will attack?"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -180,7 +180,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tre("Und was wird aus dem Bündnis?", "And is with the alliance?"), null)
+			call TransmissionFromUnit(this.actor(), tre("Und was wird aus dem Bündnis?", "And is with the alliance?"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -190,7 +190,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tre("Sieht aus als hätten wir keine Wahl.", "Looks like we have no choice."), null)
+			call TransmissionFromUnit(this.actor(), tre("Sieht aus als hätten wir keine Wahl.", "Looks like we have no choice."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -215,7 +215,10 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

@@ -864,7 +864,7 @@ endif
 		 *
 		 * \sa resetVideoSettings()
 		 */
-		public static method initVideoSettings takes nothing returns nothing
+		public static method initVideoSettings takes AVideo video returns nothing
 			local integer i
 			// Disable all abilities which might be annoying it a video
 			set i = 0
@@ -921,8 +921,8 @@ endif
 			 * The attack order animations of the Villager255 have to be handled for the actor as well.
 			 * Otherwise the wrong animations will be shown in a fight.
 			 */
-			if (AVideo.actor() != null) then
-				set thistype.m_actorOrderAnimations = OrderAnimations.create(Character(ACharacter.getFirstCharacter()), AVideo.actor())
+			if (video.actor() != null) then
+				set thistype.m_actorOrderAnimations = OrderAnimations.create(Character(ACharacter.getFirstCharacter()), video.actor())
 			endif
 			call MapData.initVideoSettings.evaluate()
 		endmethod

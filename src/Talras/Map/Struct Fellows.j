@@ -107,10 +107,10 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			return thistype.m_dararos
 		endmethod
 		
-		public static method hideDragonSlayerInVideo takes nothing returns nothing
-			local integer actorIndex = AVideo.saveUnitActor(Npcs.dragonSlayer())
-			call ShowUnit(AVideo.unitActor(actorIndex), false)
-			call PauseUnit(AVideo.unitActor(actorIndex), true)
+		public static method hideDragonSlayerInVideo takes AVideo video returns nothing
+			local integer actorIndex = video.saveUnitActor(Npcs.dragonSlayer())
+			call ShowUnit(video.unitActor(actorIndex), false)
+			call PauseUnit(video.unitActor(actorIndex), true)
 		endmethod
 		
 		public static method initDararos takes unit whichUnit returns nothing

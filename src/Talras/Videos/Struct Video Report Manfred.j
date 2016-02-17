@@ -10,27 +10,27 @@ library StructMapVideosVideoReportManfred requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_manfred_initial_view, true, 0.0)
 
-			set this.m_actorManfred = thistype.unitActor(thistype.saveUnitActor(Npcs.manfred()))
+			set this.m_actorManfred = this.unitActor(this.saveUnitActor(Npcs.manfred()))
 			call SetUnitPositionRect(this.m_actorManfred, gg_rct_video_manfred_manfred)
 			
-			set this.m_actorManfredsDog = thistype.unitActor(thistype.saveUnitActor(Npcs.manfredsDog()))
+			set this.m_actorManfredsDog = this.unitActor(this.saveUnitActor(Npcs.manfredsDog()))
 			call SetUnitPositionRect(this.m_actorManfredsDog, gg_rct_video_manfred_dog)
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_manfred_actor)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_manfred_actor)
 			
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorManfred)
-			call SetUnitFacingToFaceUnit(this.m_actorManfred, thistype.actor())
-			call SetUnitFacingToFaceUnit(this.m_actorManfredsDog, thistype.actor())
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorManfred)
+			call SetUnitFacingToFaceUnit(this.m_actorManfred, this.actor())
+			call SetUnitFacingToFaceUnit(this.m_actorManfredsDog, this.actor())
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(thistype.actor(), tre("Die Kornfresser sind tot.", "The corn eaters are dead."), null)
+			call TransmissionFromUnit(this.actor(), tre("Die Kornfresser sind tot.", "The corn eaters are dead."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -55,7 +55,10 @@ library StructMapVideosVideoReportManfred requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

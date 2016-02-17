@@ -11,49 +11,49 @@ library StructMapVideosVideoDararos requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(24.0)
 			
-			set this.m_actorDararos = thistype.unitActor(thistype.saveUnitActor(Npcs.dararos()))
+			set this.m_actorDararos = this.unitActor(this.saveUnitActor(Npcs.dararos()))
 			call SetUnitPositionRect(this.m_actorDararos, gg_rct_video_dararos_dararos)
 			call SetUnitFacing(this.m_actorDararos, 0.0)
 			
 			// 12 like for the quest
 			set this.m_highElfWarriors = AGroup.create()
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
-			call this.m_highElfWarriors.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
+			call this.m_highElfWarriors.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'h02H', gg_rct_video_dararos_high_elves_warriors, 0.0)))
 			
 			set this.m_highElfArchers = AGroup.create()
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
-			call this.m_highElfArchers.units().pushBack(thistype.unitActor(thistype.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
+			call this.m_highElfArchers.units().pushBack(this.unitActor(this.createUnitActorAtRect(MapData.alliedPlayer, 'n05I', gg_rct_video_dararos_high_elves_archers, 0.0)))
 			
 			call CameraSetupApplyForceDuration(gg_cam_dararos_0, true, 0.0)
 			call CameraSetupApplyForceDuration(gg_cam_dararos_1, true, 4.0)
 			
 			// TODO the final ultimate battle
-			set this.m_norseman0 = thistype.unitActor(thistype.createUnitActorAtRect(MapData.haldarPlayer, 'n01I', gg_rct_video_dararos_norseman_0, 0.0))
+			set this.m_norseman0 = this.unitActor(this.createUnitActorAtRect(MapData.haldarPlayer, 'n01I', gg_rct_video_dararos_norseman_0, 0.0))
 			call SetUnitInvulnerable(this.m_norseman0, false)
-			set this.m_orc0 = thistype.unitActor(thistype.createUnitActorAtRect(MapData.baldarPlayer, 'n058', gg_rct_video_dararos_orc_0, 0.0))
+			set this.m_orc0 = this.unitActor(this.createUnitActorAtRect(MapData.baldarPlayer, 'n058', gg_rct_video_dararos_orc_0, 0.0))
 			call SetUnitInvulnerable(this.m_orc0, false)
 			call IssueTargetOrder(this.m_norseman0, "attack", this.m_orc0)
 			call IssueTargetOrder(this.m_orc0, "attack", this.m_norseman0)
@@ -95,7 +95,10 @@ library StructMapVideosVideoDararos requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

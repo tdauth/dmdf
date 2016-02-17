@@ -8,17 +8,17 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call Game.setDefaultMapMusic()
 
 			// bears
-			set this.m_actorBear0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0083))
+			set this.m_actorBear0 = this.unitActor(this.saveUnitActor(gg_unit_n008_0083))
 			call SetUnitPositionRect(this.m_actorBear0, gg_rct_video_rescue_dago_bear_0_position)
 			call SetUnitFacing(this.m_actorBear0, 56.02)
 			call UnitSuspendDecay(this.m_actorBear0, true)
 			call SetUnitLifeBJ(this.m_actorBear0, 0.0)
 
-			set this.m_actorBear1 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n008_0027))
+			set this.m_actorBear1 = this.unitActor(this.saveUnitActor(gg_unit_n008_0027))
 			call SetUnitPositionRect(this.m_actorBear1, gg_rct_video_rescue_dago_bear_1_position)
 			call SetUnitFacing(this.m_actorBear1, 116.66)
 			call UnitSuspendDecay(this.m_actorBear1, true)
@@ -27,15 +27,15 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 
 
 			// Dago
-			set this.m_actorDago = thistype.unitActor(thistype.saveUnitActor(Npcs.dago()))
+			set this.m_actorDago = this.unitActor(this.saveUnitActor(Npcs.dago()))
 			call SetUnitPositionRect(this.m_actorDago, gg_rct_video_rescue_dago_dagos_position)
 			call SetUnitOwner(this.m_actorDago, Player(PLAYER_NEUTRAL_PASSIVE), true) // change owner since he's shared
 
 			// actor
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_rescue_dago_actors_position)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_rescue_dago_actors_position)
 
-			call SetUnitFacingToFaceUnit(this.m_actorDago, thistype.actor())
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorDago)
+			call SetUnitFacingToFaceUnit(this.m_actorDago, this.actor())
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorDago)
 
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_2, true, 0.0)
 		endmethod
@@ -57,7 +57,7 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_3, true, 0.0)
-			call TransmissionFromUnit(thistype.actor(), tre("Wir sind Söldner aus dem Süden, auf dem Weg nach Talras.", "We are mercenaries from the south on the way to Talras."), null)
+			call TransmissionFromUnit(this.actor(), tre("Wir sind Söldner aus dem Süden, auf dem Weg nach Talras.", "We are mercenaries from the south on the way to Talras."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -97,6 +97,7 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
 			call this.setFadeIn(false) // don't fade in to skip death of bears
+			call this.setActorOwner(MapData.neutralPassivePlayer)
 			return this
 		endmethod
 	endstruct

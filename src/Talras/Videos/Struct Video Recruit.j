@@ -8,24 +8,24 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_recruit_initial_view, true, 0.0)
 
-			set this.m_actorFerdinand = thistype.unitActor(thistype.saveUnitActor(Npcs.ferdinand()))
+			set this.m_actorFerdinand = this.unitActor(this.saveUnitActor(Npcs.ferdinand()))
 			call SetUnitPositionRect(this.m_actorFerdinand, gg_rct_video_recruit_ferdinand)
 			
-			set this.m_actorManfred = thistype.unitActor(thistype.saveUnitActor(Npcs.manfred()))
+			set this.m_actorManfred = this.unitActor(this.saveUnitActor(Npcs.manfred()))
 			call SetUnitPositionRect(this.m_actorManfred, gg_rct_video_recruit_manfred)
 			
-			set this.m_actorWorker0 = thistype.unitActor(thistype.saveUnitActor(gg_unit_n02J_0159))
+			set this.m_actorWorker0 = this.unitActor(this.saveUnitActor(gg_unit_n02J_0159))
 			call SetUnitPositionRect(this.m_actorWorker0, gg_rct_video_recruit_worker_0)
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_recruit_actor)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_recruit_actor)
 			
 			call SetUnitFacingToFaceUnit(this.m_actorFerdinand, this.m_actorManfred)
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorManfred)
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorManfred)
 			call SetUnitFacingToFaceUnit(this.m_actorManfred, this.m_actorFerdinand)
 			call SetUnitFacingToFaceUnit(this.m_actorWorker0, this.m_actorFerdinand)
 		endmethod
@@ -75,7 +75,10 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

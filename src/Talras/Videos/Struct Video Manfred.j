@@ -7,27 +7,27 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
 			//call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
 			call CameraSetupApplyForceDuration(gg_cam_manfred_initial_view, true, 0.0)
 
-			set this.m_actorManfred = thistype.unitActor(thistype.saveUnitActor(Npcs.manfred()))
+			set this.m_actorManfred = this.unitActor(this.saveUnitActor(Npcs.manfred()))
 			call SetUnitPositionRect(this.m_actorManfred, gg_rct_video_manfred_manfred)
 			
-			set this.m_actorManfredsDog = thistype.unitActor(thistype.saveUnitActor(Npcs.manfredsDog()))
+			set this.m_actorManfredsDog = this.unitActor(this.saveUnitActor(Npcs.manfredsDog()))
 			call SetUnitPositionRect(this.m_actorManfredsDog, gg_rct_video_manfred_dog)
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_manfred_actor)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_manfred_actor)
 			
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorManfred)
-			call SetUnitFacingToFaceUnit(this.m_actorManfred, thistype.actor())
-			call SetUnitFacingToFaceUnit(this.m_actorManfredsDog, thistype.actor())
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorManfred)
+			call SetUnitFacingToFaceUnit(this.m_actorManfred, this.actor())
+			call SetUnitFacingToFaceUnit(this.m_actorManfredsDog, this.actor())
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(thistype.actor(), tr("Bauer Manfred!"), null)
+			call TransmissionFromUnit(this.actor(), tr("Bauer Manfred!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -39,7 +39,7 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Der Herzog benötigt Nahrungsmittel für einen besetzten Außenposten im Norden."), null)
+			call TransmissionFromUnit(this.actor(), tr("Der Herzog benötigt Nahrungsmittel für einen besetzten Außenposten im Norden."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -51,7 +51,7 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Ist es dir lieber, dass die Orks und Dunkelelfen hier einfallen und dich töten?"), null)
+			call TransmissionFromUnit(this.actor(), tr("Ist es dir lieber, dass die Orks und Dunkelelfen hier einfallen und dich töten?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -63,7 +63,7 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Was soll ich tun?"), null)
+			call TransmissionFromUnit(this.actor(), tr("Was soll ich tun?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -75,7 +75,7 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(thistype.actor(), tr("Abgemacht."), null)
+			call TransmissionFromUnit(this.actor(), tr("Abgemacht."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -94,7 +94,10 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 

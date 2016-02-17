@@ -785,7 +785,7 @@ Test mit zwei menschlichen Spielern:
 Für Version 0.6:
 * DONE: "-repick" erlauben, vor allem in Arena: Stufe bleibt erhalten.
 * DONE: Save/Load-System einführen: Klasse, Stufe/Erfahrung, Attribute?, Gold, Holz?, Zauber nicht, reskillen spart Platz!, Equipment, Items aus Rucksack? Quests kann man noch einmal machen, Spiel beginnt von vorne.
-* Kampagnen-Release mit allen Karten und Kartenwechsel zwischen Talras und Holzbruck.
+* DONE: Kampagnen-Release mit allen Karten.
 * DONE: Während Verwandlung zumindest Zugriff auf Rucksack zulassen, damit Gegenstände eingesammelt werden können und Tränke benutzt.
 * DONE: Alle 4 Slots verwenden: http://www.hiveworkshop.com/forums/spells-569/easy-item-stack-n-split-v2-7-4-a-153287/?prev=search%3Dstack%26d%3Dlist%26r%3D20
 * FIXED: Wenn man Gegenstände auf den Boden legt (Drop) alle Aufladungen ablegen
@@ -817,6 +817,15 @@ Für Version 0.6:
 * FIXED: Arenakarte braucht verschiede Streitmächte, ansonsten im lokalen Netzwerk nicht spielbar.
 
 Aufgehoben für Version 0.7:
+* Video "The First Combat": One view of the Orc camp is enough.
+* Video "Wigberht": Cut the shots of the Orcs which are annoying.
+* Video "The Castle": Make the movement with the shot of Heimrich faster.
+* Make sounds of Markward louder!
+* AVideo: If the actors are neutral passive always they do not attack other units but rather walk back (creeps etc.). Configure a global actor player which is a passive player to all creeps etc.
+* Videos: Disable any shadow abilities for the actor. Otherwise he will disappear at night.
+* DONE: Reintroduce pawn trigger in ASL and only pawn one slot. Otherwise you will get only the gold for charge for non usable items!
+* Multishot should be an ultimate spell and only add one or two other attacks. Otherwise it is quite unfair.
+* Introduce required levels for normal spells. For example you can only skill a spell every second level!
 * Multiboard verschwindet manchmal bei Repick.
 * Minikartenfarben der Doodads festlegen.
 * Spieler kann anderem Spieler keinen Gegenstand geben, wenn dessen Inventar voll ist: Dieselbe Funktion wie beim Aufheben einbauen.
@@ -836,8 +845,8 @@ Aufgehoben für Version 0.7:
 * Schatten von Talras neu berechnen.
 * Nach Repick ist Grundzauber nicht in den Favoriten.
 * Spruchrolle des Sammlers: Keine Powerups?
-* Tobias ist nicht unverwundbar.
-* Fähigkeiten wie Blitzschlag, Eis- und Feuergeschoss haben keine Abklingzeit und keinen Manaverbrauch wenn sie direkt töten.
+* FIXED: Tobias ist nicht unverwundbar.
+* FIXED: Fähigkeiten wie Blitzschlag, Eis- und Feuergeschoss haben keine Abklingzeit und keinen Manaverbrauch wenn sie direkt töten.
 * Mathilda kann nicht mehr angesprochen werden, wenn sie einen einmal begleitet.
 
 Abgeschlossene Punkte:

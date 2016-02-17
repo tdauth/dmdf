@@ -14,44 +14,44 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(6.00)
 			
 			call SetSpeechVolumeGroupsBJ()
 			
 			call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 			call CameraSetupApplyForceDuration(gg_cam_intro_orc, true, 0.00)
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_intro_character)
-			call SetUnitFacing(thistype.actor(), 0.0)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_intro_character)
+			call SetUnitFacing(this.actor(), 0.0)
 			
-			set this.m_worker0 = thistype.saveUnitActor(gg_unit_n02J_0013)
-			call SetUnitPositionRect(thistype.unitActor(this.m_worker0), gg_rct_video_intro_worker_0)
-			call SetUnitFacing(thistype.unitActor(this.m_worker0), 168.59)
-			call QueueUnitAnimation(thistype.unitActor(this.m_worker0), "Stand Work")
+			set this.m_worker0 = this.saveUnitActor(gg_unit_n02J_0013)
+			call SetUnitPositionRect(this.unitActor(this.m_worker0), gg_rct_video_intro_worker_0)
+			call SetUnitFacing(this.unitActor(this.m_worker0), 168.59)
+			call QueueUnitAnimation(this.unitActor(this.m_worker0), "Stand Work")
 			
-			set this.m_worker1 = thistype.saveUnitActor(gg_unit_n02J_0157)
-			call SetUnitPositionRect(thistype.unitActor(this.m_worker1), gg_rct_video_intro_worker_1)
-			call SetUnitFacing(thistype.unitActor(this.m_worker1), 322.41)
-			call QueueUnitAnimation(thistype.unitActor(this.m_worker1), "Stand Work")
+			set this.m_worker1 = this.saveUnitActor(gg_unit_n02J_0157)
+			call SetUnitPositionRect(this.unitActor(this.m_worker1), gg_rct_video_intro_worker_1)
+			call SetUnitFacing(this.unitActor(this.m_worker1), 322.41)
+			call QueueUnitAnimation(this.unitActor(this.m_worker1), "Stand Work")
 			
-			set this.m_worker2 = thistype.saveUnitActor(gg_unit_n02J_0159)
-			call SetUnitPositionRect(thistype.unitActor(this.m_worker2), gg_rct_video_intro_worker_2)
-			call SetUnitFacing(thistype.unitActor(this.m_worker2), 24.72)
-			call QueueUnitAnimation(thistype.unitActor(this.m_worker2), "Stand Work")
+			set this.m_worker2 = this.saveUnitActor(gg_unit_n02J_0159)
+			call SetUnitPositionRect(this.unitActor(this.m_worker2), gg_rct_video_intro_worker_2)
+			call SetUnitFacing(this.unitActor(this.m_worker2), 24.72)
+			call QueueUnitAnimation(this.unitActor(this.m_worker2), "Stand Work")
 			
 			// gg_unit_n02J_0158
 			
-			set this.m_actorMathilda = thistype.saveUnitActor(Npcs.mathilda())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorMathilda), gg_rct_video_intro_mathilda)
-			call SetUnitFacing(thistype.unitActor(this.m_actorMathilda), 74.69)
+			set this.m_actorMathilda = this.saveUnitActor(Npcs.mathilda())
+			call SetUnitPositionRect(this.unitActor(this.m_actorMathilda), gg_rct_video_intro_mathilda)
+			call SetUnitFacing(this.unitActor(this.m_actorMathilda), 74.69)
 			
-			set this.m_actorManfred = thistype.saveUnitActor(Npcs.manfred())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorManfred), gg_rct_video_intro_manfred)
-			call SetUnitFacing(thistype.unitActor(this.m_actorManfred), 338.19)
+			set this.m_actorManfred = this.saveUnitActor(Npcs.manfred())
+			call SetUnitPositionRect(this.unitActor(this.m_actorManfred), gg_rct_video_intro_manfred)
+			call SetUnitFacing(this.unitActor(this.m_actorManfred), 338.19)
 			
-			set this.m_actorManfredsDog = thistype.saveUnitActor(Npcs.manfredsDog())
-			call SetUnitPositionRect(thistype.unitActor(this.m_actorManfredsDog), gg_rct_video_intro_manfreds_dog)
-			call SetUnitFacing(thistype.unitActor(this.m_actorManfredsDog), 281.27)
+			set this.m_actorManfredsDog = this.saveUnitActor(Npcs.manfredsDog())
+			call SetUnitPositionRect(this.unitActor(this.m_actorManfredsDog), gg_rct_video_intro_manfreds_dog)
+			call SetUnitFacing(this.unitActor(this.m_actorManfredsDog), 281.27)
 			
 			/*
 			private integer m_actorMathilda
@@ -163,6 +163,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
 			call this.setPlayFilterTime(0.0)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
 			
 			return this
 		endmethod

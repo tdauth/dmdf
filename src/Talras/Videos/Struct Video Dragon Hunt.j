@@ -6,15 +6,15 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 		implement Video
 
 		public stub method onInitAction takes nothing returns nothing
-			call Game.initVideoSettings()
+			call Game.initVideoSettings(this)
 			call SetTimeOfDay(0.0)
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_0, true, 0.00)
 
-			call SetUnitPositionRect(thistype.actor(), gg_rct_video_dragon_hunt_actor)
-			call SetUnitFacing(thistype.actor(), 90.0)
-			call IssueRectOrder(thistype.actor(), "move", gg_rct_video_dragon_hunt_actor_target_0)
+			call SetUnitPositionRect(this.actor(), gg_rct_video_dragon_hunt_actor)
+			call SetUnitFacing(this.actor(), 90.0)
+			call IssueRectOrder(this.actor(), "move", gg_rct_video_dragon_hunt_actor_target_0)
 
-			set this.m_actorDragonSlayer = thistype.unitActor(thistype.saveUnitActor(Npcs.dragonSlayer()))
+			set this.m_actorDragonSlayer = this.unitActor(this.saveUnitActor(Npcs.dragonSlayer()))
 			//call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_dragon_hunt_dragon_slayer) use initial rect
 			//call SetUnitFacing(this.m_actorDragonSlayer, 90.0) use initial facing.
 
@@ -34,7 +34,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 			if (wait(1.0)) then
 				return
 			endif
-			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, thistype.actor(), 0.50)
+			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, this.actor(), 0.50)
 
 			if (wait(0.50)) then
 				return
@@ -47,34 +47,34 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 			endif
 			
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_dragon_hunt_actor_target_0, thistype.actor()))
+				exitwhen (RectContainsUnit(gg_rct_video_dragon_hunt_actor_target_0, this.actor()))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_2, true, 0.0)
-			call SetUnitFacingToFaceUnitTimed(thistype.actor(), this.m_actorDragonSlayer, 0.50)
+			call SetUnitFacingToFaceUnitTimed(this.actor(), this.m_actorDragonSlayer, 0.50)
 
 			if (wait(1.50)) then
 				return
 			endif
 
-			call IssueRectOrder(thistype.actor(), "move", gg_rct_video_dragon_hunt_actor_target_1)
+			call IssueRectOrder(this.actor(), "move", gg_rct_video_dragon_hunt_actor_target_1)
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_3, true, 4.0)
 
 			loop
-				exitwhen (RectContainsUnit(gg_rct_video_dragon_hunt_actor_target_1, thistype.actor()))
+				exitwhen (RectContainsUnit(gg_rct_video_dragon_hunt_actor_target_1, this.actor()))
 				if (wait(1.0)) then
 					return
 				endif
 			endloop
 
-			call SetUnitFacingToFaceUnit(this.m_actorDragonSlayer, thistype.actor())
-			call SetUnitFacingToFaceUnit(thistype.actor(), this.m_actorDragonSlayer)
+			call SetUnitFacingToFaceUnit(this.m_actorDragonSlayer, this.actor())
+			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorDragonSlayer)
 
-			call TransmissionFromUnit(thistype.actor(), tre("Was gibt es?", "What is it?"), null)
+			call TransmissionFromUnit(this.actor(), tre("Was gibt es?", "What is it?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -88,7 +88,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_4, true, 0.0)
 
-			call TransmissionFromUnit(thistype.actor(), tre("Meine Gefährten und ich ...", "My fellows and I ..."), null)
+			call TransmissionFromUnit(this.actor(), tre("Meine Gefährten und ich ...", "My fellows and I ..."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -104,7 +104,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_1, true, 0.0)
 
-			call TransmissionFromUnit(thistype.actor(), tre("Was?", "What?"), null)
+			call TransmissionFromUnit(this.actor(), tre("Was?", "What?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -124,7 +124,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnit(thistype.actor(), tre("Interessant.", "Interesting."), null)
+			call TransmissionFromUnit(this.actor(), tre("Interessant.", "Interesting."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -140,7 +140,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_1, true, 0.0)
 
-			call TransmissionFromUnit(thistype.actor(), tre("Wieso gehst du nicht in den Wald und tust es? Von uns Menschen hindert dich sicher keiner daran.", "Why don't you go into the woods and do it? From us humans nobody will prevent you for sure."), null)
+			call TransmissionFromUnit(this.actor(), tre("Wieso gehst du nicht in den Wald und tust es? Von uns Menschen hindert dich sicher keiner daran.", "Why don't you go into the woods and do it? From us humans nobody will prevent you for sure."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -156,7 +156,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_1, true, 0.0)
 
-			call TransmissionFromUnit(thistype.actor(), tre("Ach so ...", "Oh ..."), null)
+			call TransmissionFromUnit(this.actor(), tre("Ach so ...", "Oh ..."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -180,7 +180,10 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 		endmethod
 
 		private static method create takes nothing returns thistype
-			return thistype.allocate(true)
+			local thistype this = thistype.allocate(true)
+			call this.setActorOwner(MapData.neutralPassivePlayer)
+			
+			return this
 		endmethod
 	endstruct
 
