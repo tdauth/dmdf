@@ -13,7 +13,7 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 		private static constant real damageStartValue = 20.0
 		private static constant real damageLevelValue = 10.0
 
-		private static method filterCondition takes nothing returns boolean
+		private static method filter takes nothing returns boolean
 			local unit filterUnit = GetFilterUnit()
 			local boolean result = not IsUnitDeadBJ(filterUnit)
 			set filterUnit = null
@@ -25,13 +25,13 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "origin")
 			local real time = thistype.time
 			local group targets = CreateGroup()
-			local conditionfunc condition = Condition(function thistype.filterCondition)
+			local filterfunc filter = Filter(function thistype.filter)
 			local unit firstOfGroup
 			local real damage = thistype.damageStartValue + thistype.damageLevelValue * this.level()
 			local real newDamage
 			loop
 				exitwhen (time <= 0.0 or ASpell.allyTargetLoopCondition(caster))
-				call GroupEnumUnitsInRange(targets, GetUnitX(caster), GetUnitY(caster), thistype.radius, condition)
+				call GroupEnumUnitsInRange(targets, GetUnitX(caster), GetUnitY(caster), thistype.radius, filter)
 				loop
 					exitwhen (IsUnitGroupEmptyBJ(targets))
 					set firstOfGroup = FirstOfGroupSave(targets)
@@ -53,12 +53,12 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 			set casterEffect = null
 			call DestroyGroup(targets)
 			set targets = null
-			call DestroyCondition(condition)
-			set condition = null
+			call DestroyFilter(filter)
+			set filter = null
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.createWithEventDamageSpell(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
 			call this.addGrimoireEntry('A0KF', 'A0KK')
 			call this.addGrimoireEntry('A0KG', 'A0KL')
 			call this.addGrimoireEntry('A0KH', 'A0KM')

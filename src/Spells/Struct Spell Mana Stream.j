@@ -51,7 +51,7 @@ library StructSpellsSpellManaStream requires Asl, StructGameClasses, StructGameS
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.createWithEvent(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
 			call this.addGrimoireEntry('A15H', 'A15M')
 			call this.addGrimoireEntry('A15I', 'A15N')
 			call this.addGrimoireEntry('A15J', 'A15O')

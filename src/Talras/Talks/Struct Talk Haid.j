@@ -59,7 +59,7 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 			call speech(info, character, true, tr("Wo kommst du denn her oder gefällt dir der Ausdruck etwa nicht? Du glaubst doch nicht das Geschwafel unseres verehrten Herrn Königs oder doch?"), gg_snd_Haid5)
 			call speech(info, character, true, tr("Jeder hier weiß, dass diese verdammten Dunkelelfen einen Packt mit den Orks geschlossen haben. Ich habe selbst gesehen, wie diese Schweinehunde meine Heimatstadt Trammar in Flammen aufgehen ließen."), gg_snd_Haid6)
 			call speech(info, character, true, tr("Bin gerade nochmal so mit dem Leben davon gekommen! Der König unterschätzt die Lage vollkommen. Trammar war verdammt gut befestigt und wurde innerhalb eines einzigen Tages eingenommen."), gg_snd_Haid7)
-			call speech(info, character, true, tr("Diese Burg hier hat zwar eine bessere Lage, aber das wird ihr nichts nützen wenn erst mal hunderte von Orks und Dunkelefen hier anrücken."), gg_snd_Haid8)
+			call speech(info, character, true, tr("Diese Burg hier hat zwar eine bessere Lage, aber das wird ihr nichts nützen wenn erst mal hunderte von Orks und Dunkelelfen hier anrücken."), gg_snd_Haid8)
 			call speech(info, character, true, tr("Aber welche Wahl hab ich denn? Ich muss mir ein paar Goldmünzen dazu verdienen und vom Gewinn leben. Danach hau ich so schnell wie möglich ab und dir würde ich genau das Gleiche raten."), gg_snd_Haid9)
 			call speech(info, character, true, tr("Sicher, du wirst hier bestimmt einige treffen, die frohen Mutes dem Feind trotzen wollen, aber haben die etwa ihre Heimat untergehen sehen? Ich sag's dir Junge: Dieses Königreich wird untergehen!"), gg_snd_Haid10)
 			call info.talk().showStartPage(character)

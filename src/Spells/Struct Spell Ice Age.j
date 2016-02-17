@@ -23,67 +23,86 @@ library StructSpellsSpellIceAge requires Asl, StructGameClasses, StructGameSpell
 			set filterUnit = null
 			return result
 		endmethod
-
-		private method action takes nothing returns nothing
+		
+		private method targets takes nothing returns AGroup
 			local unit caster = this.character().unit()
 			local group targetGroup = CreateGroup()
 			local filterfunc filter = Filter(function thistype.filter)
-			local AGroup targets
+			local AGroup targets = AGroup.create()
+			local integer i
+			local unit target
+			call GroupEnumUnitsInRange(targetGroup, GetSpellTargetX(), GetSpellTargetY(), thistype.radius, filter)
+			call targets.addGroup(targetGroup, true, false) // destroys the group
+				
+			set i = 0
+			loop
+				exitwhen (i == targets.units().size())
+				set target = targets.units()[i]
+				if (GetUnitAllianceStateToUnit(caster, target) != bj_ALLIANCE_UNALLIED) then
+					call targets.units().erase(i)
+				else
+					set i = i + 1
+				endif
+				set target = null
+			endloop
+				
+			set targetGroup = null
+			set caster = null
+			call DestroyFilter(filter)
+			set filter = null
+			
+			return targets
+		endmethod
+		
+		private method condition takes nothing returns boolean
+			local AGroup targets = this.targets()
+			local boolean result = not targets.units().isEmpty()
+			
+			if (not result) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine gültigen Ziele.", "No valid targets."))
+			endif
+			
+			call targets.destroy()
+			
+			return result
+		endmethod
+
+		private method action takes nothing returns nothing
+			local unit caster = this.character().unit()
+			local AGroup targets = this.targets()
 			local integer i
 			local unit target
 			local real damage
 			local real time
-			call GroupEnumUnitsInRange(targetGroup, GetSpellTargetX(), GetSpellTargetY(), thistype.radius, filter)
-			if (not IsUnitGroupEmptyBJ(targetGroup)) then
-				set targets = AGroup.create()
-				call targets.addGroup(targetGroup, true, false) // destroys the group
-				set targetGroup = null
-				set i = 0
+			if (not targets.units().empty()) then
+				set damage = this.level() * thistype.damageLevelValue
+				set damage = SpellElementalMageDamageSpell(this).damageBonusFactor() * damage
+				set time = thistype.time
 				loop
-					exitwhen (i == targets.units().size())
-					set target = targets.units()[i]
-					if (GetUnitAllianceStateToUnit(caster, target) != bj_ALLIANCE_UNALLIED) then
-						call targets.units().erase(i)
-					else
-						set i = i + 1
-					endif
-					set target = null
-				endloop
-				if (not targets.units().empty()) then
-					set damage = this.level() * thistype.damageLevelValue
-					set damage = SpellElementalMageDamageSpell(this).damageBonusFactor() * damage
-					set time = thistype.time
+					exitwhen (time <= 0.0 or targets.units().empty())
+					set i = 0
 					loop
-						exitwhen (time <= 0.0 or targets.units().empty())
-						set i = 0
-						loop
-							exitwhen (i == targets.units().size())
-							set target = targets.units()[i]
-							if (not ASpell.enemyTargetLoopCondition(target)) then
-								call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_FIRE)
-								call ShowBashTextTagForPlayer(null, GetWidgetX(target), GetWidgetY(target), R2I(damage))
-								set i = i + 1
-							else
-								call targets.units().erase(i)
-							endif
-							set target = null
-						endloop
-						call TriggerSleepAction(thistype.damageInterval)
-						set time = time - thistype.damageInterval
+						exitwhen (i == targets.units().size())
+						set target = targets.units()[i]
+						if (not ASpell.enemyTargetLoopCondition(target)) then
+							call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_FIRE)
+							call ShowBashTextTagForPlayer(null, GetWidgetX(target), GetWidgetY(target), R2I(damage))
+							set i = i + 1
+						else
+							call targets.units().erase(i)
+						endif
+						set target = null
 					endloop
-				endif
-				call targets.destroy()
-			else
-				call DestroyGroup(targetGroup)
-				set targetGroup = null
+					call TriggerSleepAction(thistype.damageInterval)
+					set time = time - thistype.damageInterval
+				endloop
 			endif
+			call targets.destroy()
 			set caster = null
-			call DestroyFilter(filter)
-			set filter = null
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.createWithEventDamageSpell(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
 			call this.addGrimoireEntry('A0TH', 'A0TM')
 			call this.addGrimoireEntry('A0TI', 'A0TN')
 			call this.addGrimoireEntry('A0TJ', 'A0TO')

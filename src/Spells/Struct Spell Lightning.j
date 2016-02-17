@@ -26,7 +26,7 @@ library StructSpellsSpellLightning requires Asl, StructSpellsSpellElementalMageD
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.createWithEventDamageSpell(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
 			call this.addGrimoireEntry('A0UL', 'A0UQ')
 			call this.addGrimoireEntry('A0UM', 'A0UR')
 			call this.addGrimoireEntry('A0UN', 'A0US')

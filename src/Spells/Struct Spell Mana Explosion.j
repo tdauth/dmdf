@@ -27,7 +27,6 @@ library StructSpellsSpellManaExplosion requires Asl, StructGameClasses, StructGa
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
 			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
 			local real mana
-			call TriggerSleepAction(1.0)
 			if (not thistype.enemyTargetLoopCondition(target)) then
 				set mana = RMinBJ(thistype.manaStartValue + this.level() * thistype.manaLevelValue, GetUnitState(target, UNIT_STATE_MANA))
 				call SetUnitState(target, UNIT_STATE_MANA, GetUnitState(target, UNIT_STATE_MANA) - mana)
@@ -46,7 +45,7 @@ library StructSpellsSpellManaExplosion requires Asl, StructGameClasses, StructGa
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			local thistype this = thistype.createWithEvent(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
 			call this.addGrimoireEntry('A0AN', 'A0B2')
 			call this.addGrimoireEntry('A0AO', 'A0B3')
 			call this.addGrimoireEntry('A0AZ', 'A0B4')

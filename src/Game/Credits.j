@@ -38,7 +38,8 @@ call Credits.addContributor.evaluate("PitzerMike", tre("JassNewGenPack", "JassNe
 call Credits.addContributor.evaluate("Pipedream", tre("Grimoire", "Grimoire"))
 call Credits.addContributor.evaluate("SFilip", tre("TESH", "TESH"))
 call Credits.addContributor.evaluate("Opossum", tre("3rd-Person-Kamerasystem", "3rd person camera system"))
-call Credits.addContributor.evaluate("Anitarf", tre("Pfeiltastensteuerung", "Arrow key system"))
+// NOTE not used anymore
+//call Credits.addContributor.evaluate("Anitarf", tre("Pfeiltastensteuerung", "Arrow key system"))
 
 // forums
 call Credits.addTitle.evaluate(tre("Foren und Chats", "Forums and Chats"))

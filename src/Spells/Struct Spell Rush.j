@@ -19,7 +19,6 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 			local real bonus = Game.addUnitMoveSpeed(characterUnit, GetUnitMoveSpeed(characterUnit) * thistype.speedFactor)
 			local unit dummy
 			debug call Print("Bonus: " + R2S(bonus))
-			call TriggerSleepAction(0.0) // Wait. Otherwise the cooldown will be canceled.
 			call IssueTargetOrder(characterUnit, "attack", target)
 			loop
 				exitwhen (thistype.enemyTargetLoopCondition(target) or GetUnitCurrentOrder(characterUnit) != OrderId("attack"))
@@ -52,7 +51,7 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.createWithEvent(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
 			
 			set this.dummy = CreateUnit(GetOwningPlayer(character.unit()), thistype.dummyUnitTypeId, GetUnitX(character.unit()), GetUnitY(character.unit()), 0.0)
 			call SetUnitInvulnerable(this.dummy, true)

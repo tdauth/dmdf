@@ -23,6 +23,10 @@ library StructSpellsSpellElementalMageDamageSpell requires Asl, StructGameClasse
 		public static method create takes Character character, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbilityId, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction returns thistype
 			return thistype.allocate(character, Classes.elementalMage(), spellType, maxLevel, abilityId, favouriteAbilityId, upgradeAction, castCondition, castAction)
 		endmethod
+		
+		public static method createWithEventDamageSpell takes Character character, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbilityId, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent returns thistype
+			return thistype.createWithEvent(character, Classes.elementalMage(), spellType, maxLevel, abilityId, favouriteAbilityId, upgradeAction, castCondition, castAction, unitEvent)
+		endmethod
 	endstruct
 
 endlibrary

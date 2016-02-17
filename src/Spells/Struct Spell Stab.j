@@ -14,7 +14,6 @@ library StructSpellsSpellStab requires Asl, StructGameClasses, StructGameSpell
 			local unit caster = this.character().unit()
 			local unit target = GetSpellTargetUnit()
 			local real damage = this.level() * thistype.damageFactor
-			call TriggerSleepAction(0.0) // killing the unit with stab prevents the cooldown!
 			call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
 			call Spell.showDamageTextTag(target, damage)
 			set target = null
@@ -22,7 +21,7 @@ library StructSpellsSpellStab requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			local thistype this = thistype.createWithEvent(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
 			
 			call this.addGrimoireEntry('A0Y2', 'A0Y7')
 			call this.addGrimoireEntry('A0Y3', 'A0Y8')

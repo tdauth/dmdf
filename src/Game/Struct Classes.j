@@ -160,7 +160,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 				exitwhen (i == vector.size())
 				debug call Print("Preloading " + GetAbilityName(ClassGrimoireEntry(vector[i]).abilityId()))
 				call AbilityPreload(ClassGrimoireEntry(vector[i]).abilityId())
+				debug call Print("After preloading 1")
 				call AbilityPreload(ClassGrimoireEntry(vector[i]).grimoireAbilityId())
+				debug call Print("After preloading 2")
 				set i = i + 1
 			endloop
 		endmethod

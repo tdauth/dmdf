@@ -43,6 +43,14 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
+			// Abilities\Spells\Items\AIfb\AIfbTarget.mdx
+			// Abilities\Spells\Items\AIob\AIobTarget.mdx
+			// Abilities\OrbWater\OrbWaterX.mdx
+			// Abilities\OrbLightning\OrbLightningX.mdx
+			local effect fireEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIfb\\AIfbTarget.mdx", this.character().unit(), "weapon")
+			local effect frostEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIob\\AIobTarget.mdx", this.character().unit(), "weapon")
+			local effect waterEffect = AddSpecialEffectTarget("Abilities\\OrbWater\\OrbWaterX.mdx", this.character().unit(), "weapon")
+			local effect lightningEffect = AddSpecialEffectTarget("Abilities\\OrbLightning\\OrbLightningX.mdx", this.character().unit(), "weapon")
 			local AIntegerVector spells = this.spells()
 			local integer i = 0
 			loop
@@ -61,6 +69,15 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 			endloop
 			set caster = null
 			call spells.destroy()
+			
+			call DestroyEffect(fireEffect)
+			set fireEffect = null
+			call DestroyEffect(frostEffect)
+			set frostEffect = null
+			call DestroyEffect(waterEffect)
+			set waterEffect = null
+			call DestroyEffect(lightningEffect)
+			set lightningEffect = null
 		endmethod
 
 		public static method create takes Character character returns thistype
