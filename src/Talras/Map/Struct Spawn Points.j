@@ -1048,6 +1048,31 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_dearnorsGuard.addNewItemType(index, 'rhe2', 0.60)
 			call thistype.m_dearnorsGuard.addNewItemType(index, 'rman', 0.60)
 		endmethod
+		
+		private static method initMillHill takes nothing returns nothing
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0589, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0591, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0590, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0592, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0593, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0596, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0597, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0598, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0602, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0603, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0604, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0607, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0605, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0606, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0608, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0610, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0609, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0601, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0600, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0599, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0595, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0594, 1.0)
+		endmethod
 
 		/// \todo change unit type
 		public static method init takes nothing returns nothing
@@ -1062,6 +1087,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initFarm)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initLeftGate)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initDeranorsTomb)
+			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initMillHill)
 		endmethod
 
 		public static method spawn takes nothing returns nothing

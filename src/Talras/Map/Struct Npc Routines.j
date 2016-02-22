@@ -24,9 +24,9 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static NpcTalksRoutine m_bjoernsWifeTalksToBjoern
 		private static NpcRoutineWithFacing m_bjoernsWifeStandsNearFire1
 		// Osman
-		private static NpcRoutineWithFacing m_osmanPrays0
+		private static NpcTalksRoutine m_osmanPrays0
 		private static NpcRoutineWithFacing m_osmanStandsNearDuke
-		private static NpcRoutineWithFacing m_osmanPrays1
+		private static NpcTalksRoutine m_osmanPrays1
 		// Ferdinand
 		private static NpcRoutineWithFacing m_ferdinandStandsInCastle
 		private static NpcTalksRoutine m_ferdinandTalksToHeimrich
@@ -76,7 +76,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static NpcRoutineWithFacing m_trommonWorksInHisGarden
 		// Kuno
 		private static NpcRoutineWithFacing m_kunoCutsWood
-		private static NpcRoutineWithFacing m_kunoSellsWood
+		private static NpcTalksRoutine m_kunoSellsWood
 		private static NpcTalksRoutine m_kunoTalksToHisDaughter
 		// Kuno's daughter
 		private static NpcRoutineWithFacing m_kunosDaughterStandsInFrontOfTheHouse
@@ -170,12 +170,20 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_bjoernsWifeStandsNearFire1.setFacing(183.27)
 
 			// Osman
-			set thistype.m_osmanPrays0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.osman(), MapData.evening, 13.0, gg_rct_waypoint_osman_0)
+			set thistype.m_osmanPrays0 = NpcTalksRoutine.create(Routines.talk(), Npcs.osman(), MapData.evening, 13.0, gg_rct_waypoint_osman_0)
 			call thistype.m_osmanPrays0.setFacing(180.22)
+			call thistype.m_osmanPrays0.setPartner(null)
+			call thistype.m_osmanPrays0.addSound(tr("Mögen uns die Götter vor dem Feind beschützen."), null)
+			call thistype.m_osmanPrays0.addSound(tr("Oh Götter, sollen sie die armen und schwachen Bauern zuerst töten. Sie sind ihrem Glauben sowieso nicht treu!"), null)
+			call thistype.m_osmanPrays0.addSound(tr("(Zu sich selbst) Oh, der Herzog schaut herüber, rasch noch ein Gebet!"), null)
 			set thistype.m_osmanStandsNearDuke = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.osman(), 13.0, 16.0, gg_rct_waypoint_osman_2) // steht bei Herzog
 			call thistype.m_osmanStandsNearDuke.setFacing(154.47)
-			set thistype.m_osmanPrays1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.osman(), 16.0, MapData.evening, gg_rct_waypoint_osman_0)
+			set thistype.m_osmanPrays1 = NpcTalksRoutine.create(Routines.moveTo(), Npcs.osman(), 16.0, MapData.evening, gg_rct_waypoint_osman_0)
 			call thistype.m_osmanPrays1.setFacing(180.22)
+			call thistype.m_osmanPrays1.setPartner(null)
+			call thistype.m_osmanPrays1.addSound(tr("Mögen uns die Götter vor dem Feind beschützen."), null)
+			call thistype.m_osmanPrays1.addSound(tr("Oh Götter, sollen sie die armen und schwachen Bauern zuerst töten. Sie sind ihrem Glauben sowieso nicht treu!"), null)
+			call thistype.m_osmanPrays1.addSound(tr("(Zu sich selbst) Oh, der Herzog schaut herüber, rasch noch ein Gebet!"), null)
 
 			// Ferdinand
 			set thistype.m_ferdinandStandsInCastle = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.ferdinand(), MapData.evening, 13.00, gg_rct_waypoint_ferdinand_1)
@@ -263,8 +271,12 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_manfredCutsWood.setFacing(279.37)
 			set thistype.m_manfredTalksToGuntrich = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), MapData.midday, 16.00, gg_rct_waypoint_manfred_3)
 			call thistype.m_manfredTalksToGuntrich.setPartner(Npcs.guntrich())
+			call thistype.m_manfredTalksToGuntrich.addSound(tr("Ich brauche bald wieder Mehl."), null)
+			call thistype.m_manfredTalksToGuntrich.addSound(tr("Ach Guntrich hör doch auf!"), null)
+			call thistype.m_manfredTalksToGuntrich.addSound(tr("Die Zeiten werden nicht besser."), null)
 			set thistype.m_manfredTalksToBjoern = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), 16.00, MapData.evening, gg_rct_waypoint_manfred_1)
 			call thistype.m_manfredTalksToBjoern.setPartner(Npcs.bjoern())
+			// TODO talks really to Björn? Björn sells stuff?
 			call thistype.m_manfredTalksToBjoern.addSound(tre("Ja mein Lord!", "Yes my Lord!"), gg_snd_PeasantWhat1)
 			call thistype.m_manfredTalksToBjoern.addSound(tre("Was ist?", "What is it?"), gg_snd_PeasantWhat2)
 			call thistype.m_manfredTalksToBjoern.addSound(tre("Mehr Arbeit?", "More work?"), gg_snd_PeasantWhat3)
@@ -296,16 +308,18 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			// Kuno
 			set thistype.m_kunoCutsWood = NpcRoutineWithFacing.create(Routines.splitWood(), Npcs.kuno(), MapData.evening, MapData.midday, gg_rct_waypoint_kuno_4)
 			call thistype.m_kunoCutsWood.setFacing(0.0)
-			set thistype.m_kunoSellsWood = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.kuno(), MapData.midday, 16.0, gg_rct_waypoint_kuno_3)
+			set thistype.m_kunoSellsWood = NpcTalksRoutine.create(Routines.moveTo(), Npcs.kuno(), MapData.midday, 16.0, gg_rct_waypoint_kuno_3)
 			call thistype.m_kunoSellsWood.setFacing(276.32)
+			call thistype.m_kunoSellsWood.setPartner(null)
+			call thistype.m_kunoSellsWood.addSound(tr("Holz, frisches Holz!"), null)
+			call thistype.m_kunoSellsWood.addSound(tr("Kommt und greift zu, damit ihr es im Winter warm habt!"), null)
+			call thistype.m_kunoSellsWood.addSound(tr("Der beste Preis für das beste Holz!"), null)
 			set thistype.m_kunoTalksToHisDaughter = NpcTalksRoutine.create(Routines.talk(), Npcs.kuno(), 16.0, MapData.evening, gg_rct_waypoint_kuno_0)
 			call thistype.m_kunoTalksToHisDaughter.setPartner(Npcs.kunosDaughter())
 			call thistype.m_kunoTalksToHisDaughter.setFacing(357.00)
-			// TODO different stuff
-			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Ja mein Lord!", "Yes my Lord!"), gg_snd_PeasantWhat1)
-			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Was ist?", "What is it?"), gg_snd_PeasantWhat2)
-			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Mehr Arbeit?", "More work?"), gg_snd_PeasantWhat3)
-			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Was?", "Yes?"), gg_snd_PeasantWhat4)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Und pass gut auf dich auf!"), null)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Der Wald ist gefährlich."), null)
+			call thistype.m_kunoTalksToHisDaughter.addSound(tr("Wir schaffen das schon."), null)
 			
 			// Kuno's daughter
 			set thistype.m_kunosDaughterStandsInFrontOfTheHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.kunosDaughter(), MapData.evening, 16.0, gg_rct_waypoint_kunos_daughter_1)

@@ -817,12 +817,12 @@ Für Version 0.6:
 * FIXED: Arenakarte braucht verschiede Streitmächte, ansonsten im lokalen Netzwerk nicht spielbar.
 
 Aufgehoben für Version 0.7:
-* Osman, Kuno and Manfred got sentences for their routines, add them!
+* DONE: Osman, Kuno and Manfred got sentences for their routines, add them!
 * Video "The First Combat": One view of the Orc camp is enough.
 * Video "Wigberht": Cut the shots of the Orcs which are annoying.
 * Video "The Castle": Make the movement with the shot of Heimrich faster.
 * Make sounds of Markward louder!
-* AVideo: If the actors are neutral passive always they do not attack other units but rather walk back (creeps etc.). Configure a global actor player which is a passive player to all creeps etc.
+* FIXED: AVideo: If the actors are neutral passive always they do not attack other units but rather walk back (creeps etc.). Configure a global actor player which is a passive player to all creeps etc.
 * Videos: Disable any shadow abilities for the actor. Otherwise he will disappear at night.
 * DONE: Reintroduce pawn trigger in ASL and only pawn one slot. Otherwise you will get only the gold for charge for non usable items!
 * Multishot should be an ultimate spell and only add one or two other attacks. Otherwise it is quite unfair.

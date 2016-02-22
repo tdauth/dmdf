@@ -4652,7 +4652,7 @@ Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Hö
 STRING 778
 // Fähigkeiten: A01E (Feuersbrunst), Name (Name (anam))
 {
-Feuersbrunst
+Conflagration
 }
 
 STRING 779
@@ -6474,31 +6474,31 @@ Gleißendes Licht [|cffffcc00Stufe 1|r]
 STRING 1082
 // Fähigkeiten: A01E (Feuersbrunst), Tip (Tooltipp - Normal (atp1))
 {
-Feuersbrunst [|cffffcc00Stufe 2|r]
+Conflagration [|cffffcc00Level 2|r]
 }
 
 STRING 1083
 // Fähigkeiten: A01E (Feuersbrunst), Tip (Tooltipp - Normal (atp1))
 {
-Feuersbrunst [|cffffcc00Stufe 3|r]
+Conflagration [|cffffcc00Level 3|r]
 }
 
 STRING 1084
 // Fähigkeiten: A01E (Feuersbrunst), Tip (Tooltipp - Normal (atp1))
 {
-Feuersbrunst [|cffffcc00Stufe 4|r]
+Conflagration [|cffffcc00Level 4|r]
 }
 
 STRING 1085
 // Fähigkeiten: A01E (Feuersbrunst), Tip (Tooltipp - Normal (atp1))
 {
-Feuersbrunst [|cffffcc00Stufe 5|r]
+Conflagration [|cffffcc00Level 5|r]
 }
 
 STRING 1086
 // Fähigkeiten: A01E (Feuersbrunst), Tip (Tooltipp - Normal (atp1))
 {
-Feuersbrunst [|cffffcc00Stufe 1|r]
+Conflagration [|cffffcc00Level 1|r]
 }
 
 STRING 1087
@@ -7164,55 +7164,55 @@ Select class
 STRING 1197
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 2|r]
+Ice Missile [|cffffcc00Level 2|r]
 }
 
 STRING 1198
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 3|r]
+Ice Missile [|cffffcc00Level 3|r]
 }
 
 STRING 1199
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 4|r]
+Ice Missile [|cffffcc00Level 4|r]
 }
 
 STRING 1200
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 5|r]
+Ice Missile [|cffffcc00Level 5|r]
 }
 
 STRING 1201
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 1|r]
+Ice Missile [|cffffcc00Level 1|r]
 }
 
 STRING 1202
 // Fähigkeiten: A019 (Erfrierung), Tip (Tooltipp - Normal (atp1))
 {
-Erfrierung [|cffffcc00Stufe 2|r]
+Freeze [|cffffcc00Level 2|r]
 }
 
 STRING 1203
 // Fähigkeiten: A019 (Erfrierung), Tip (Tooltipp - Normal (atp1))
 {
-Erfrierung [|cffffcc00Stufe 3|r]
+Freeze [|cffffcc00Level 3|r]
 }
 
 STRING 1204
 // Fähigkeiten: A019 (Erfrierung), Tip (Tooltipp - Normal (atp1))
 {
-Erfrierung [|cffffcc00Stufe 4|r]
+Freeze [|cffffcc00Level 4|r]
 }
 
 STRING 1205
 // Fähigkeiten: A019 (Erfrierung), Tip (Tooltipp - Normal (atp1))
 {
-Erfrierung [|cffffcc00Stufe 5|r]
+Freeze [|cffffcc00Level 5|r]
 }
 
 STRING 1206
@@ -9336,13 +9336,13 @@ Damage -512
 STRING 1559
 // Fähigkeiten: A03J (Erfrierung), Name (Name (anam))
 {
-Erfrierung
+Freeze
 }
 
 STRING 1560
 // Zauberverstärker/Effekte: B00F (Erfrierung), EditorName (Name (nur Editor) (fnam))
 {
-Erfrierung
+Freeze
 }
 
 STRING 1561
@@ -9714,7 +9714,7 @@ STRING 1621
 STRING 1622
 // Fähigkeiten: A039 (Eisgeschoss), Name (Name (anam))
 {
-Eisgeschoss
+Ice Missile
 }
 
 STRING 1623
@@ -10122,7 +10122,7 @@ STRING 1689
 STRING 1690
 // Fähigkeiten: A03L (Feuersbrunst), Name (Name (anam))
 {
-Feuersbrunst
+Conflagration
 }
 
 STRING 1691
@@ -10554,7 +10554,7 @@ Zehren
 STRING 1762
 // Zauberverstärker/Effekte: B00F (Erfrierung), Bufftip (Tooltipp (ftip))
 {
-Erfrierung
+Freeze
 }
 
 STRING 1763
@@ -11064,25 +11064,25 @@ In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sow
 STRING 1847
 // Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 2|r]
+Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 1848
 // Fähigkeiten: A0KR (Feuergeschoss - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 3|r]
+Fire Missile [|cffffcc00Level 3|r]
 }
 
 STRING 1849
 // Fähigkeiten: A0KS (Feuergeschoss - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 4|r]
+Fire Missile [|cffffcc00Level 4|r]
 }
 
 STRING 1850
 // Fähigkeiten: A0KT (Feuergeschoss - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 5|r]
+Fire Missile [|cffffcc00Level 5|r]
 }
 
 STRING 1851
@@ -17144,31 +17144,31 @@ Besitz
 STRING 2869
 // Fähigkeiten: A017 (Eisgeschoss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht 50 Punkte Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners um 10 %.
+Throws an ice missile at an opponent, deals 50 points of ice damage and reduces the movement and attack speed of the opponent by 10 %.
 }
 
 STRING 2870
 // Fähigkeiten: A017 (Eisgeschoss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht 100 Punkte Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners um 20 %.
+Throws an ice missile at an opponent, deals 100 points of ice damage and reduces the movement and attack speed of the opponent by 20 %.
 }
 
 STRING 2871
 // Fähigkeiten: A017 (Eisgeschoss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht 150 Punkte Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners um 30 %.
+Throws an ice missile at an opponent, deals 150 points of ice damage and reduces the movement and attack speed of the opponent by 30 %.
 }
 
 STRING 2872
 // Fähigkeiten: A017 (Eisgeschoss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht 200 Punkte Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners um 40 %.
+Throws an ice missile at an opponent, deals 200 points of ice damage and reduces the movement and attack speed of the opponent by 40 %.
 }
 
 STRING 2873
 // Fähigkeiten: A017 (Eisgeschoss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht 250 Punkte Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners um 50 %.
+Throws an ice missile at an opponent, deals 250 points of ice damage and reduces the movement and attack speed of the opponent by 50 %.
 }
 
 STRING 2874
@@ -29512,7 +29512,7 @@ Dämpfung - Stufe 1
 STRING 4933
 // Fähigkeiten: A0KP (Feuergeschoss - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Feuergeschoss auf den Gegner, verursacht Feuerschaden und lässt ihn 3 Sekunden lang brennen. |n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und 4 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 65 Punkte Schaden und 6 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 80 Punkte Schaden und 8 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 95 Punkte Schaden und 10 Punkte zusätzlichen Schaden pro Sekunde.|n|cffffcc00Stufe 5|r - Verursacht 110 Punkte Schaden und 12 Punkte zusätzlichen Schaden pro Sekunde.
+Throws a fire missile at an opponent, deals fire damage and lets the opponent burn for 3 seconds. |n|n|cffffcc00Level 1|r - Deals 50 points of damage and 4 additional points of damage per second. |n|cffffcc00Level 2|r - Deals 65 points of damage and 6 additional points of damage per second. |n|cffffcc00Level 3|r - Deals 80 points of damage and 8 additional points of damage per second. |n|cffffcc00Level 4|r - Deals 95 points of damage and 10 additional points of damage per second.|n|cffffcc00Level 5|r - Deals 110 points of damage and 12 additional points of damage per second.
 }
 
 STRING 4934
@@ -30980,7 +30980,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 5178
 // Fähigkeiten: A0T7 (Eisgeschoss - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 1|r]
+Ice Missile [|cffffcc00Level 1|r]
 }
 
 STRING 5179
@@ -38560,7 +38560,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6441
 // Fähigkeiten: A0T8 (Eisgeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 2|r]
+Ice Missile [|cffffcc00Level 2|r]
 }
 
 STRING 6442
@@ -39166,7 +39166,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 6542
 // Fähigkeiten: A0T9 (Eisgeschoss - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 3|r]
+Ice Missile [|cffffcc00Level 3|r]
 }
 
 STRING 6543
@@ -41692,7 +41692,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 6963
 // Fähigkeiten: A0TA (Eisgeschoss - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 4|r]
+Ice Missile [|cffffcc00Level 4|r]
 }
 
 STRING 6964
@@ -42946,7 +42946,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 7172
 // Fähigkeiten: A0TB (Eisgeschoss - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 5|r]
+Ice Missile [|cffffcc00Level 5|r]
 }
 
 STRING 7173
@@ -50746,7 +50746,7 @@ Selbstlosigkeit - Stufe 5
 STRING 8472
 // Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Feuergeschoss auf den Gegner, verursacht Feuerschaden und lässt ihn 3 Sekunden lang brennen. |n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und 4 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 65 Punkte Schaden und 6 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 80 Punkte Schaden und 8 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 95 Punkte Schaden und 10 Punkte zusätzlichen Schaden pro Sekunde.|n|cffffcc00Stufe 5|r - Verursacht 110 Punkte Schaden und 12 Punkte zusätzlichen Schaden pro Sekunde.
+Throws a fire missile at an opponent, deals fire damage and lets the opponent burn for 3 seconds. |n|n|cffffcc00Level 1|r - Deals 50 points of damage and 4 additional points of damage per second. |n|cffffcc00Level 2|r - Deals 65 points of damage and 6 additional points of damage per second. |n|cffffcc00Level 3|r - Deals 80 points of damage and 8 additional points of damage per second. |n|cffffcc00Level 4|r - Deals 95 points of damage and 10 additional points of damage per second.|n|cffffcc00Level 5|r - Deals 110 points of damage and 12 additional points of damage per second.
 }
 
 STRING 8473
@@ -50830,7 +50830,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8486
 // Fähigkeiten: A0KR (Feuergeschoss - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Feuergeschoss auf den Gegner, verursacht Feuerschaden und lässt ihn 3 Sekunden lang brennen. |n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und 4 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 65 Punkte Schaden und 6 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 80 Punkte Schaden und 8 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 95 Punkte Schaden und 10 Punkte zusätzlichen Schaden pro Sekunde.|n|cffffcc00Stufe 5|r - Verursacht 110 Punkte Schaden und 12 Punkte zusätzlichen Schaden pro Sekunde.
+Throws a fire missile at an opponent, deals fire damage and lets the opponent burn for 3 seconds. |n|n|cffffcc00Level 1|r - Deals 50 points of damage and 4 additional points of damage per second. |n|cffffcc00Level 2|r - Deals 65 points of damage and 6 additional points of damage per second. |n|cffffcc00Level 3|r - Deals 80 points of damage and 8 additional points of damage per second. |n|cffffcc00Level 4|r - Deals 95 points of damage and 10 additional points of damage per second.|n|cffffcc00Level 5|r - Deals 110 points of damage and 12 additional points of damage per second.
 }
 
 STRING 8487
@@ -50914,7 +50914,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8500
 // Fähigkeiten: A0KS (Feuergeschoss - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Feuergeschoss auf den Gegner, verursacht Feuerschaden und lässt ihn 3 Sekunden lang brennen. |n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und 4 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 65 Punkte Schaden und 6 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 80 Punkte Schaden und 8 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 95 Punkte Schaden und 10 Punkte zusätzlichen Schaden pro Sekunde.|n|cffffcc00Stufe 5|r - Verursacht 110 Punkte Schaden und 12 Punkte zusätzlichen Schaden pro Sekunde.
+Throws a fire missile at an opponent, deals fire damage and lets the opponent burn for 3 seconds. |n|n|cffffcc00Level 1|r - Deals 50 points of damage and 4 additional points of damage per second. |n|cffffcc00Level 2|r - Deals 65 points of damage and 6 additional points of damage per second. |n|cffffcc00Level 3|r - Deals 80 points of damage and 8 additional points of damage per second. |n|cffffcc00Level 4|r - Deals 95 points of damage and 10 additional points of damage per second.|n|cffffcc00Level 5|r - Deals 110 points of damage and 12 additional points of damage per second.
 }
 
 STRING 8501
@@ -50998,7 +50998,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 8514
 // Fähigkeiten: A0KT (Feuergeschoss - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Feuergeschoss auf den Gegner, verursacht Feuerschaden und lässt ihn 3 Sekunden lang brennen. |n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und 4 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 65 Punkte Schaden und 6 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 80 Punkte Schaden und 8 Punkte zusätzlichen Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 95 Punkte Schaden und 10 Punkte zusätzlichen Schaden pro Sekunde.|n|cffffcc00Stufe 5|r - Verursacht 110 Punkte Schaden und 12 Punkte zusätzlichen Schaden pro Sekunde.
+Throws a fire missile at an opponent, deals fire damage and lets the opponent burn for 3 seconds. |n|n|cffffcc00Level 1|r - Deals 50 points of damage and 4 additional points of damage per second. |n|cffffcc00Level 2|r - Deals 65 points of damage and 6 additional points of damage per second. |n|cffffcc00Level 3|r - Deals 80 points of damage and 8 additional points of damage per second. |n|cffffcc00Level 4|r - Deals 95 points of damage and 10 additional points of damage per second.|n|cffffcc00Level 5|r - Deals 110 points of damage and 12 additional points of damage per second.
 }
 
 STRING 8515
@@ -61487,7 +61487,8 @@ Alle Gegner in einem Umkreis von 1000 um den Elementarmagier werden 7 Sekunden l
 STRING 10253
 // Fähigkeiten: A0UV (Erfrierung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Alle Gegner in einem um den Elementarmagier werden eine Zeit lang betäubt.|n|n|cffffcc00Stufe 1|r - Umkreis von 600, Dauer 3 Sekunden. |n|cffffcc00Stufe 2|r - Umkreis von 700, Dauer 4 Sekunden. |n|cffffcc00Stufe 3|r - Umkreis von 800, Dauer 5 Sekunden.|n|cffffcc00Stufe 4|r - Umkreis von 900, Dauer 6 Sekunden.|n|cffffcc00Stufe 5|r - Umkreis von 1000, Dauer 7 Sekunden.
+All opponents around the elemental mage are stunned for some time.|n|n|cffffcc00Level 1|r - Radius of 600, duration 3 seconds. |n|cffffcc00Level 2|r - Radius of 700, duration 4 seconds. |n|cffffcc00Level 3|r - Radius of 800, duration 5 seconds.|n|cffffcc00Level 4|r - Radius of 900, duration 6 seconds.|n|cffffcc00Level 5|r - Radius of 1000, duration 7 seconds.
+
 }
 
 STRING 10254
@@ -61541,7 +61542,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10262
 // Fähigkeiten: A0UV (Erfrierung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Erfrierung [|cffffcc00Stufe 1|r]
+Freeze [|cffffcc00Level 1|r]
 }
 
 STRING 10263
@@ -61571,7 +61572,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 10267
 // Fähigkeiten: A0UW (Erfrierung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Alle Gegner in einem um den Elementarmagier werden eine Zeit lang betäubt.|n|n|cffffcc00Stufe 1|r - Umkreis von 600, Dauer 3 Sekunden. |n|cffffcc00Stufe 2|r - Umkreis von 700, Dauer 4 Sekunden. |n|cffffcc00Stufe 3|r - Umkreis von 800, Dauer 5 Sekunden.|n|cffffcc00Stufe 4|r - Umkreis von 900, Dauer 6 Sekunden.|n|cffffcc00Stufe 5|r - Umkreis von 1000, Dauer 7 Sekunden.
+All opponents around the elemental mage are stunned for some time.|n|n|cffffcc00Level 1|r - Radius of 600, duration 3 seconds. |n|cffffcc00Level 2|r - Radius of 700, duration 4 seconds. |n|cffffcc00Level 3|r - Radius of 800, duration 5 seconds.|n|cffffcc00Level 4|r - Radius of 900, duration 6 seconds.|n|cffffcc00Level 5|r - Radius of 1000, duration 7 seconds.
 }
 
 STRING 10268
@@ -61625,7 +61626,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10276
 // Fähigkeiten: A0UW (Erfrierung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Erfrierung [|cffffcc00Stufe 2|r]
+Freeze [|cffffcc00Level 2|r]
 }
 
 STRING 10277
@@ -61655,7 +61656,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 10281
 // Fähigkeiten: A0UX (Erfrierung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Alle Gegner in einem um den Elementarmagier werden eine Zeit lang betäubt.|n|n|cffffcc00Stufe 1|r - Umkreis von 600, Dauer 3 Sekunden. |n|cffffcc00Stufe 2|r - Umkreis von 700, Dauer 4 Sekunden. |n|cffffcc00Stufe 3|r - Umkreis von 800, Dauer 5 Sekunden.|n|cffffcc00Stufe 4|r - Umkreis von 900, Dauer 6 Sekunden.|n|cffffcc00Stufe 5|r - Umkreis von 1000, Dauer 7 Sekunden.
+All opponents around the elemental mage are stunned for some time.|n|n|cffffcc00Level 1|r - Radius of 600, duration 3 seconds. |n|cffffcc00Level 2|r - Radius of 700, duration 4 seconds. |n|cffffcc00Level 3|r - Radius of 800, duration 5 seconds.|n|cffffcc00Level 4|r - Radius of 900, duration 6 seconds.|n|cffffcc00Level 5|r - Radius of 1000, duration 7 seconds.
 }
 
 STRING 10282
@@ -61709,7 +61710,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10290
 // Fähigkeiten: A0UX (Erfrierung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Erfrierung [|cffffcc00Stufe 3|r]
+Freeze [|cffffcc00Level 3|r]
 }
 
 STRING 10291
@@ -61739,7 +61740,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 10295
 // Fähigkeiten: A0UY (Erfrierung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Alle Gegner in einem um den Elementarmagier werden eine Zeit lang betäubt.|n|n|cffffcc00Stufe 1|r - Umkreis von 600, Dauer 3 Sekunden. |n|cffffcc00Stufe 2|r - Umkreis von 700, Dauer 4 Sekunden. |n|cffffcc00Stufe 3|r - Umkreis von 800, Dauer 5 Sekunden.|n|cffffcc00Stufe 4|r - Umkreis von 900, Dauer 6 Sekunden.|n|cffffcc00Stufe 5|r - Umkreis von 1000, Dauer 7 Sekunden.
+All opponents around the elemental mage are stunned for some time.|n|n|cffffcc00Level 1|r - Radius of 600, duration 3 seconds. |n|cffffcc00Level 2|r - Radius of 700, duration 4 seconds. |n|cffffcc00Level 3|r - Radius of 800, duration 5 seconds.|n|cffffcc00Level 4|r - Radius of 900, duration 6 seconds.|n|cffffcc00Level 5|r - Radius of 1000, duration 7 seconds.
 }
 
 STRING 10296
@@ -61793,7 +61794,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10304
 // Fähigkeiten: A0UY (Erfrierung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Erfrierung [|cffffcc00Stufe 4|r]
+Freeze [|cffffcc00Level 4|r]
 }
 
 STRING 10305
@@ -61823,7 +61824,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 10309
 // Fähigkeiten: A0UZ (Erfrierung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Alle Gegner in einem um den Elementarmagier werden eine Zeit lang betäubt.|n|n|cffffcc00Stufe 1|r - Umkreis von 600, Dauer 3 Sekunden. |n|cffffcc00Stufe 2|r - Umkreis von 700, Dauer 4 Sekunden. |n|cffffcc00Stufe 3|r - Umkreis von 800, Dauer 5 Sekunden.|n|cffffcc00Stufe 4|r - Umkreis von 900, Dauer 6 Sekunden.|n|cffffcc00Stufe 5|r - Umkreis von 1000, Dauer 7 Sekunden.
+All opponents around the elemental mage are stunned for some time.|n|n|cffffcc00Level 1|r - Radius of 600, duration 3 seconds. |n|cffffcc00Level 2|r - Radius of 700, duration 4 seconds. |n|cffffcc00Level 3|r - Radius of 800, duration 5 seconds.|n|cffffcc00Level 4|r - Radius of 900, duration 6 seconds.|n|cffffcc00Level 5|r - Radius of 1000, duration 7 seconds.
 }
 
 STRING 10310
@@ -61877,7 +61878,7 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 STRING 10318
 // Fähigkeiten: A0UZ (Erfrierung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Erfrierung [|cffffcc00Stufe 5|r]
+Freeze [|cffffcc00Level 5|r]
 }
 
 STRING 10319
@@ -68634,7 +68635,7 @@ Der Elementarmagier lähmt sein Ziel für 7 Sekunden.
 STRING 11444
 // Fähigkeiten: A0T7 (Eisgeschoss - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners.|n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verursacht 100 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verursacht 150 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verursacht 200 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verursacht 250 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 50 %.
+Throws an ice missile at an opponent, deals ice damage and reduces the movement and attack speed of the opponent.|n|n|cffffcc00Level 1|r - Deals 50 points of damage and reduces the movement and attack speed by 10 %.|n|cffffcc00Level 2|r - Deals 100 points of damage and reduces the movement and attack speed by 20 %.|n|cffffcc00Level 3|r - Deals 150 points of damage and reduces the movement and attack speed by 30 %.|n|cffffcc00Level 4|r - Deals 200 points of damage and reduces the movement and attack speed by 40 %.|n|cffffcc00Level 5|r - Deals 250 points of damage and reduces the movement and attack speed by 50 %.
 }
 
 STRING 11445
@@ -69713,25 +69714,25 @@ Schütze - Stufe 1
 STRING 11624
 // Fähigkeiten: A0T8 (Eisgeschoss - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners.|n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verursacht 100 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verursacht 150 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verursacht 200 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verursacht 250 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 50 %.
+Throws an ice missile at an opponent, deals ice damage and reduces the movement and attack speed of the opponent.|n|n|cffffcc00Level 1|r - Deals 50 points of damage and reduces the movement and attack speed by 10 %.|n|cffffcc00Level 2|r - Deals 100 points of damage and reduces the movement and attack speed by 20 %.|n|cffffcc00Level 3|r - Deals 150 points of damage and reduces the movement and attack speed by 30 %.|n|cffffcc00Level 4|r - Deals 200 points of damage and reduces the movement and attack speed by 40 %.|n|cffffcc00Level 5|r - Deals 250 points of damage and reduces the movement and attack speed by 50 %.
 }
 
 STRING 11625
 // Fähigkeiten: A0T9 (Eisgeschoss - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners.|n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verursacht 100 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verursacht 150 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verursacht 200 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verursacht 250 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 50 %.
+Throws an ice missile at an opponent, deals ice damage and reduces the movement and attack speed of the opponent.|n|n|cffffcc00Level 1|r - Deals 50 points of damage and reduces the movement and attack speed by 10 %.|n|cffffcc00Level 2|r - Deals 100 points of damage and reduces the movement and attack speed by 20 %.|n|cffffcc00Level 3|r - Deals 150 points of damage and reduces the movement and attack speed by 30 %.|n|cffffcc00Level 4|r - Deals 200 points of damage and reduces the movement and attack speed by 40 %.|n|cffffcc00Level 5|r - Deals 250 points of damage and reduces the movement and attack speed by 50 %.
 }
 
 STRING 11626
 // Fähigkeiten: A0TA (Eisgeschoss - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners.|n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verursacht 100 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verursacht 150 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verursacht 200 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verursacht 250 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 50 %.
+Throws an ice missile at an opponent, deals ice damage and reduces the movement and attack speed of the opponent.|n|n|cffffcc00Level 1|r - Deals 50 points of damage and reduces the movement and attack speed by 10 %.|n|cffffcc00Level 2|r - Deals 100 points of damage and reduces the movement and attack speed by 20 %.|n|cffffcc00Level 3|r - Deals 150 points of damage and reduces the movement and attack speed by 30 %.|n|cffffcc00Level 4|r - Deals 200 points of damage and reduces the movement and attack speed by 40 %.|n|cffffcc00Level 5|r - Deals 250 points of damage and reduces the movement and attack speed by 50 %.
 }
 
 STRING 11627
 // Fähigkeiten: A0TB (Eisgeschoss - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wirft ein Eisgeschoss auf den Gegner, verursacht Eisschaden und verringert die Bewegungs- und Angriffsgeschwindigkeit des Gegners.|n|n|cffffcc00Stufe 1|r - Verursacht 50 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verursacht 100 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verursacht 150 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verursacht 200 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verursacht 250 Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um 50 %.
+Throws an ice missile at an opponent, deals ice damage and reduces the movement and attack speed of the opponent.|n|n|cffffcc00Level 1|r - Deals 50 points of damage and reduces the movement and attack speed by 10 %.|n|cffffcc00Level 2|r - Deals 100 points of damage and reduces the movement and attack speed by 20 %.|n|cffffcc00Level 3|r - Deals 150 points of damage and reduces the movement and attack speed by 30 %.|n|cffffcc00Level 4|r - Deals 200 points of damage and reduces the movement and attack speed by 40 %.|n|cffffcc00Level 5|r - Deals 250 points of damage and reduces the movement and attack speed by 50 %.
 }
 
 STRING 11628

@@ -57,7 +57,8 @@ library StructGameRoutines requires Asl
 		endmethod
 	endstruct
 
-	struct NpcRoutineWithOtherNpc extends AUnitRoutine
+	// Inherits NpcRoutineWithFacing if no partner is used or if the partner is not available a facing can still be set.
+	struct NpcRoutineWithOtherNpc extends NpcRoutineWithFacing
 		private unit m_partner = null
 
 		public method setPartner takes unit partner returns nothing
@@ -75,15 +76,6 @@ library StructGameRoutines requires Asl
 		private sound array m_sounds[thistype.maxSounds]
 		private string array m_soundTexts[thistype.maxSounds]
 		private integer m_soundsCount = 0
-		private real m_facing = 0.0
-
-		public method setFacing takes real facing returns nothing
-			set this.m_facing = facing
-		endmethod
-
-		public method facing takes nothing returns real
-			return this.m_facing
-		endmethod
 
 		public method setRange takes real range returns nothing
 			set this.m_range = range
@@ -213,9 +205,13 @@ library StructGameRoutines requires Asl
 			local integer index
 			local integer i
 			
-			if (period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) then
+			if ((period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) or (period.partner() == null)) then
 				//debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
-				call SetUnitFacingToFaceUnit(period.unit(), period.partner())
+				if (period.partner() != null) then
+					call SetUnitFacingToFaceUnit(period.unit(), period.partner())
+				else
+					call SetUnitFacing(period.unit(), period.facing())
+				endif
 				call QueueUnitAnimation(period.unit(), "Stand Talk")
 				set index = GetRandomInt(0, period.soundsCount() - 1)
 				if (period.soundsCount() > 0) then
