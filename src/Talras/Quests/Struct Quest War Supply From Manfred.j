@@ -24,6 +24,9 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		private QuestAreaWarManfred m_questAreaManfred
 		private QuestAreaWarReportManfred m_questAreaReportManfred
 		
+		public static constant integer maxSpawnPoints = 4
+		private boolean array m_killedSpawnPoint[thistype.maxSpawnPoints]
+		
 		/*
 		 * Manfred
 		 */
@@ -58,6 +61,10 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 			// the units owner might be different due to abilities
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
+		
+		private static method unitLives takes unit whichUnit returns boolean
+			return not IsUnitDeadBJ(whichUnit)
+		endmethod
 
 		/**
 		 * There is two spawn points for Corn Eaters at the moment.
@@ -67,22 +74,38 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		 */
 		private static method stateConditionCompletedKillTheCornEaters takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
-			local integer count0
-			local integer count1
+			local integer tmpCount = 0
+			local integer count = 0
+			local integer total = 0
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.cornEater) then
-				set count0 = SpawnPoints.cornEaters0().countUnitsOfType(UnitTypes.cornEater)
-				set count1 = SpawnPoints.cornEaters1().countUnitsOfType(UnitTypes.cornEater)
-				if (count0 == 0 and count1 == 0) then
+				// if a spawn point is completely killed ONCE it is marked as completed, otherwise corn eaters would have to be killed again when they respawn
+				if (not this.m_killedSpawnPoint[0]) then
+					set tmpCount = SpawnPoints.cornEaters0().countUnitsIf(thistype.unitLives)
+					set this.m_killedSpawnPoint[0] = tmpCount == 0
+					set count = count + tmpCount
+				endif
+				if (not this.m_killedSpawnPoint[1]) then
+					set tmpCount = SpawnPoints.cornEaters1().countUnitsIf(thistype.unitLives)
+					set this.m_killedSpawnPoint[1] = tmpCount == 0
+					set count = count + tmpCount
+				endif
+				if (not this.m_killedSpawnPoint[2]) then
+					set tmpCount = SpawnPoints.cornEaters2().countUnitsIf(thistype.unitLives)
+					set this.m_killedSpawnPoint[2] = tmpCount == 0
+					set count = count + tmpCount
+				endif
+				if (not this.m_killedSpawnPoint[3]) then
+					set tmpCount = SpawnPoints.cornEaters3().countUnitsIf(thistype.unitLives)
+					set this.m_killedSpawnPoint[3] = tmpCount == 0
+					set count = count + tmpCount
+				endif
+				if (count == 0) then
 					debug call Print("Both counts are 0")
 					return true
 				// get next one to ping
 				else
-					call this.displayUpdateMessage(Format(tre("%1%/4 Kornfresser", "%1%/4 Corn Eaters")).i(4 - count0 - count1).result())
-					if (count0 > 0) then
-						call setQuestItemPingByUnitTypeId.execute(questItem, SpawnPoints.cornEaters0(), UnitTypes.cornEater)
-					else
-						call setQuestItemPingByUnitTypeId.execute(questItem, SpawnPoints.cornEaters1(), UnitTypes.cornEater)
-					endif
+					set total = SpawnPoints.cornEaters0().countMembers() + SpawnPoints.cornEaters1().countMembers() + SpawnPoints.cornEaters2().countMembers() + SpawnPoints.cornEaters3().countMembers()
+					call this.displayUpdateMessage(Format(tre("%1%/%2% Kornfresser", "%1%/%2% Corn Eaters")).i(total - count).i(total).result())
 				endif
 			endif
 			return false
@@ -168,7 +191,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 			set this.m_supplyCartSpawnTimer = null
 			
 			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateCompleted)
-			call this.displayState()
+			call this.complete()
 		endmethod
 		
 		public static method create takes nothing returns thistype
@@ -191,6 +214,10 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedKillTheCornEaters)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedKillTheCornEaters)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedKillTheCornEaters)
+			
+			call questItem.setPing(true)
+			call questItem.setPingRect(gg_rct_quest_war_corn_eaters)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 			
 			// quest item questItemReportManfred
 			set questItem = AQuestItem.create(this, tre("Berichtet Manfred davon.", "Report Manfred about it."))

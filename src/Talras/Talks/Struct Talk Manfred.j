@@ -27,7 +27,7 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Hallo. Suchst du zufällig Arbeit?"), null)
+			call speech(info, character, true, tr("Hallo. Suchst du zufällig Arbeit?"), gg_snd_Manfred1)
 			call this.showRange(this.m_hi_Yes.index(), this.m_hi_No.index(), character)
 		endmethod
 
@@ -41,13 +41,13 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		private static method infoActionAboutTheDuke takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Was hältst du vom Herzog?"), null)
-			call speech(info, character, true, tr("Er hat dich doch nicht etwa geschickt oder? Sonst würde ich wohl meine Zunge hüten."), null)
+			call speech(info, character, true, tr("Er hat dich doch nicht etwa geschickt oder? Sonst würde ich wohl meine Zunge hüten."), gg_snd_Manfred7)
 			call speech(info, character, false, tr("Nein."), null)
-			call speech(info, character, true, tr("Na ja, eigentlich kann's mir auch egal sein. Ohne mich und meine Leute hat er kaum etwas zu essen und falls es zur Belagerung käme, würde er schon nach ein paar Tagen verhungern."), null)
-			call speech(info, character, true, tr("Vor einer Weile waren seine Leute hier und haben sich nach der Ernte erkundigt. Ich wette, die nehmen sich einfach alles, wenn es hart auf hart kommt, aber mir bleibt keine Wahl."), null)
-			call speech(info, character, true, tr("Ich hab mir das hier nach und nach aufgebaut. Meine Eltern waren hart arbeitende Leute und hatten kaum genug zum Leben. Eigentlich müsste ich mit dem zufrieden sein, was ich habe."), null)
-			call speech(info, character, true, tr("Aber dieser verdammte Adel macht es einem ja nicht gerade leicht. Also, ich halte vom Herzog nicht allzu viel. Er sollte mir lieber mal ein paar Leute schicken, die auf meine Felder und Leute aufpassen, wenn es wirklich stimmt, dass der Feind schon recht nah ist."), null)
-			call speech(info, character, true, tr("Am Ende lassen die uns wahrscheinlich nicht mal in die Burg. Der Herzog hat jetzt auch noch unseren Kriegsdienst auf ein Jahr eingefordert, falls der Feind hier aufkreuzt. Als ob ich nicht genug zu tun hätte."), null)
+			call speech(info, character, true, tr("Na ja, eigentlich kann's mir auch egal sein. Ohne mich und meine Leute hat er kaum etwas zu essen und falls es zur Belagerung käme, würde er schon nach ein paar Tagen verhungern."), gg_snd_Manfred8)
+			call speech(info, character, true, tr("Vor einer Weile waren seine Leute hier und haben sich nach der Ernte erkundigt. Ich wette, die nehmen sich einfach alles, wenn es hart auf hart kommt, aber mir bleibt keine Wahl."), gg_snd_Manfred9)
+			call speech(info, character, true, tr("Ich hab mir das hier nach und nach aufgebaut. Meine Eltern waren hart arbeitende Leute und hatten kaum genug zum Leben. Eigentlich müsste ich mit dem zufrieden sein, was ich habe."), gg_snd_Manfred10)
+			call speech(info, character, true, tr("Aber dieser verdammte Adel macht es einem ja nicht gerade leicht. Also, ich halte vom Herzog nicht allzu viel. Er sollte mir lieber mal ein paar Leute schicken, die auf meine Felder und Leute aufpassen, wenn es wirklich stimmt, dass der Feind schon recht nah ist."), gg_snd_Manfred11)
+			call speech(info, character, true, tr("Am Ende lassen die uns wahrscheinlich nicht mal in die Burg. Der Herzog hat jetzt auch noch unseren Kriegsdienst auf ein Jahr eingefordert, falls der Feind hier aufkreuzt. Als ob ich nicht genug zu tun hätte."), gg_snd_Manfred12)
 			call this.showRange(this.m_aboutTheDuke_Yes.index(), this.m_aboutTheDuke_No.index(), character)
 		endmethod
 
@@ -60,11 +60,11 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Du lässt Mathilda in deiner Scheune pennen?
 		private static method infoActionMathilda takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Du lässt Mathilda in deiner Scheune pennen?"), null)
-			call speech(info, character, true, tr("Klar, wieso nicht? Sie hat mir dafür auch schon ein paar wirklich gute Geschichten erzählt. Sonst gibt's hier ja keine Unterhaltung und für's Herumreisen fehlen mir die nötigen Goldmünzen und die Zeit."), null)
-			call speech(info, character, true, tr("Außerdem ist sie doch wirklich nett. Dass musst du doch zugeben."), null)
+			call speech(info, character, true, tr("Klar, wieso nicht? Sie hat mir dafür auch schon ein paar wirklich gute Geschichten erzählt. Sonst gibt's hier ja keine Unterhaltung und für's Herumreisen fehlen mir die nötigen Goldmünzen und die Zeit."), gg_snd_Manfred18)
+			call speech(info, character, true, tr("Außerdem ist sie doch wirklich nett. Dass musst du doch zugeben."), gg_snd_Manfred19)
 			call speech(info, character, false, tr("Na ja ..."), null)
-			call speech(info, character, true, tr("Komm schon. Meine Frau ist vor drei Jahren an irgend so einer Krankheit gestorben. Was weiß ich? Ist schon lange her, dass ich was mit einer hatte. Die Mathilda wär genau die Richtige."), null)
-			call speech(info, character, true, tr("Zusammen könnten wir hier den Hof führen. Das wär doch was! (Lacht) Ich hab wohl zu viel gearbeitet. Na ja, nimm's nicht so ernst."), null)
+			call speech(info, character, true, tr("Komm schon. Meine Frau ist vor drei Jahren an irgend so einer Krankheit gestorben. Was weiß ich? Ist schon lange her, dass ich was mit einer hatte. Die Mathilda wär genau die Richtige."), gg_snd_Manfred20)
+			call speech(info, character, true, tr("Zusammen könnten wir hier den Hof führen. Das wär doch was! (Lacht) Ich hab wohl zu viel gearbeitet. Na ja, nimm's nicht so ernst."), gg_snd_Manfred21)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -76,18 +76,18 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Ich habe mit dem Vogt gesprochen.
 		private static method infoActionTalkedToFerdinand takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Ich habe mit dem Vogt gesprochen."), null)
-			call speech(info, character, true, tr("Und?"), null)
+			call speech(info, character, true, tr("Und?"), gg_snd_Manfred22)
 			if (QuestProtectThePeople.characterQuest(character).questItem(0).isCompleted()) then
 				call speech(info, character, false, tr("Er überlegt sich das mit dem Kriegsdienst nochmal und er wird ein paar Leute herschicken."), null)
-				call speech(info, character, true, tr("Donnerwetter! Wie hast du das angestellt? Obwohl, ich frag besser nicht. Das sind gute Neuigkeiten, mein Freund!"), null)
-				call speech(info, character, true, tr("Dafür werde ich dich auch gut entlohnen."), null)
+				call speech(info, character, true, tr("Donnerwetter! Wie hast du das angestellt? Obwohl, ich frag besser nicht. Das sind gute Neuigkeiten, mein Freund!"), gg_snd_Manfred23)
+				call speech(info, character, true, tr("Dafür werde ich dich auch gut entlohnen."), gg_snd_Manfred24)
 				// Auftrag „Schutz dem Volke“ abgeschlossen.
 				call QuestProtectThePeople.characterQuest(character).complete()
 			// (Auftrag „Zu den Waffen, Bauern!“ aktiv)
 			else
 				call speech(info, character, false, tr("Sieht schlecht aus, Freundchen. Du wirst gefälligst deinen Kriegsdienst leisten und deine Leute ebenso oder ich reiß dir deine Eingeweide heraus und verfüttere deine Leute an den Feind."), null)
 				call speech(info, character, false, tr("Und wegen den Leuten, die dein Hab und Gut bewachen sollen, wirst du dich auch nicht mehr beschweren, klar?"), null)
-				call speech(info, character, true, tr("Oh Mann, komm mal wieder runter. Schon gut, ich ... ich denke, das geht schon in Ordnung."), null)
+				call speech(info, character, true, tr("Oh Mann, komm mal wieder runter. Schon gut, ich ... ich denke, das geht schon in Ordnung."), gg_snd_Manfred25)
 				call speech(info, character, false, tr("Das will ich auch hoffen."), null)
 				// Auftragsziel 1 des Auftrags „Zu den Waffen, Bauern!“ abgeschlossen
 				call QuestAmongTheWeaponsPeasants.characterQuest(character).questItem(0).complete()
@@ -104,12 +104,12 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Markward benötigt Vorräte in der Burg.
 		private static method infoActionMarkwardNeedsSupply takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Markward benötigt Vorräte in der Burg."), null)
-			call speech(info, character, true, tr("Ich habe es geahnt. Wie ich es vorausgesagt habe, wir werden nun unserer hart erbrachten Ernte beraubt."), null)
+			call speech(info, character, true, tr("Ich habe es geahnt. Wie ich es vorausgesagt habe, wir werden nun unserer hart erbrachten Ernte beraubt."), gg_snd_Manfred26)
 			call speech(info, character, false, tr("…"), null)
-			call speech(info, character, true, tr("Gut ich sage lieber nichts mehr, am Ende werde ich noch eingesperrt. Wenn du schon Vorräte haben willst, dann sammle sie selbst ein und bringe sie zu mir. Ich schicke sie dann zur Burg."), null)
+			call speech(info, character, true, tr("Gut ich sage lieber nichts mehr, am Ende werde ich noch eingesperrt. Wenn du schon Vorräte haben willst, dann sammle sie selbst ein und bringe sie zu mir. Ich schicke sie dann zur Burg."), gg_snd_Manfred27)
 			call speech(info, character, false, tr("Und wo sind die Vorräte?"), null)
-			call speech(info, character, true, tr("Du kannst einen entsprechenden Teil von Guntrichs Mühle und in der Scheune mitnehmen, aber lass uns doch noch etwas übrig."), null)
-			call speech(info, character, true, tr("Wer weiß ob wir hier am Ende auf uns allein gestellt sind."), null)
+			call speech(info, character, true, tr("Du kannst einen entsprechenden Teil von Guntrichs Mühle und in der Scheune mitnehmen, aber lass uns doch noch etwas übrig."), gg_snd_Manfred28)
+			call speech(info, character, true, tr("Wer weiß ob wir hier am Ende auf uns allein gestellt sind."), gg_snd_Manfred29)
 			// Auftragsziele 2, 3 und 4 des Auftrags „Die Versorgung von Talras“ aktiviert
 			call QuestSupplyForTalras.characterQuest(character).questItem(1).setState(AAbstractQuest.stateNew)
 			call QuestSupplyForTalras.characterQuest(character).questItem(2).setState(AAbstractQuest.stateNew)
@@ -128,7 +128,7 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Hier sind die Vorräte.
 		private static method infoActionSupply takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hier sind die Vorräte."), null)
-			call speech(info, character, true, tr("Da hast du aber auch nicht gerade gespart. Na wie du meinst … ich schicke sie nun zur Burg. Du kannst Markward berichten, dass sie unterwegs sind."), null)
+			call speech(info, character, true, tr("Da hast du aber auch nicht gerade gespart. Na wie du meinst … ich schicke sie nun zur Burg. Du kannst Markward berichten, dass sie unterwegs sind."), gg_snd_Manfred30)
 			// Gegenstände entfernen
 			call character.inventory().removeItemType('I03S')
 			call character.inventory().removeItemType('I03T')
@@ -148,12 +148,12 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Bring dieses Holz zur Burg.
 		private static method infoActionLumber takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Bring dieses Holz zur Burg."), null)
-			call speech(info, character, true, tr("Was?! Was erlaubst du dir?"), null)
+			call speech(info, character, true, tr("Was?! Was erlaubst du dir?"), gg_snd_Manfred31)
 			call speech(info, character, false, tr("Markward benötigt das Holz für die Burg. Es stammt von Kuno und der hat mir gesagt du würdest es zur Burg schaffen."), null)
-			call speech(info, character, true, tr("Kuno? Verdammt, na gut. Kuno ist ein netter Kerl und verkauft uns immer gute Waren. Aber dieser Markward meint wohl wir machen die ganze Drecksarbeit für ihn."), null)
-			call speech(info, character, true, tr("Wenn die Orks und Dunkelelfen hier einfallen, gehen wir doch als erste drauf, das kann ich dir versichern …"), null)
+			call speech(info, character, true, tr("Kuno? Verdammt, na gut. Kuno ist ein netter Kerl und verkauft uns immer gute Waren. Aber dieser Markward meint wohl wir machen die ganze Drecksarbeit für ihn."), gg_snd_Manfred32)
+			call speech(info, character, true, tr("Wenn die Orks und Dunkelelfen hier einfallen, gehen wir doch als erste drauf, das kann ich dir versichern …"), gg_snd_Manfred33)
 			call speech(info, character, false, tr("…"), null)
-			call speech(info, character, true, tr("Schon gut ich schicke das Holz zur Burg, gib schon her!"), null)
+			call speech(info, character, true, tr("Schon gut ich schicke das Holz zur Burg, gib schon her!"), gg_snd_Manfred34)
 			// Charakter verliert Kunos Holz
 			call character.inventory().removeItemType('I051')
 			// Auftragsziel 1 des Auftrags „Die Befestigung von Talras“ abgeschlossen
@@ -167,26 +167,26 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Ja.
 		private static method infoActionHi_Yes takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Ja."), null)
-			call speech(info, character, true, tr("Gut, ich kann jeden Helfer gebrauchen. Falls du also Lust hast, dir ein paar Goldmünzen dazuzuverdienen, dann melde dich einfach bei mir."), null)
-			call speech(info, character, true, tr("Gerade ist Erntezeit und da kann man nicht genug Leute haben. Ich will ja schließlich noch ernten, bevor unser Feind hier auftaucht."), null)
+			call speech(info, character, true, tr("Gut, ich kann jeden Helfer gebrauchen. Falls du also Lust hast, dir ein paar Goldmünzen dazuzuverdienen, dann melde dich einfach bei mir."), gg_snd_Manfred2)
+			call speech(info, character, true, tr("Gerade ist Erntezeit und da kann man nicht genug Leute haben. Ich will ja schließlich noch ernten, bevor unser Feind hier auftaucht."), gg_snd_Manfred3)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Nein.
 		private static method infoActionHi_No takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Nein."), null)
-			call speech(info, character, true, tr("Schade. In diesen harten Zeiten findet man nur noch selten Leute, die Arbeit suchen."), null)
-			call speech(info, character, true, tr("Die Meisten wollen doch sowieso nur weg von der Grenze. Krieg, Krieg, das ist das Einzige, was sie noch interessiert. Aber ich muss meinen Hof führen. Die Leute in der Burg brauchen ja auch was zu beißen."), null)
-			call speech(info, character, true, tr("Aber auf uns Bauern wird sowieso nur rumgehackt, dabei lastet auf uns der ganze Rest."), null)
+			call speech(info, character, true, tr("Schade. In diesen harten Zeiten findet man nur noch selten Leute, die Arbeit suchen."), gg_snd_Manfred4)
+			call speech(info, character, true, tr("Die Meisten wollen doch sowieso nur weg von der Grenze. Krieg, Krieg, das ist das Einzige, was sie noch interessiert. Aber ich muss meinen Hof führen. Die Leute in der Burg brauchen ja auch was zu beißen."), gg_snd_Manfred5)
+			call speech(info, character, true, tr("Aber auf uns Bauern wird sowieso nur rumgehackt, dabei lastet auf uns der ganze Rest."), gg_snd_Manfred6)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Ich kümmere mich drum.
 		private static method infoActionAboutTheDuke_Yes takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Ich kümmere mich drum."), null)
-			call speech(info, character, true, tr("Wirklich? Das würdest du tun? Du musst mit dem Vogt in der Burg sprechen. Ferdinand ist sein Name. Ich war schon mal bei ihm, aber hat mich abgewiesen."), null)
-			call speech(info, character, true, tr("Verdammter Arschkriecher des Herzogs. Der Sack sitzt in der Burg mit ihren dicken Mauern und bekommt ne Menge Goldmünzen für's Faulenzen."), null)
-			call speech(info, character, true, tr("Lass dich nicht von ihm unterkriegen!"), null)
+			call speech(info, character, true, tr("Wirklich? Das würdest du tun? Du musst mit dem Vogt in der Burg sprechen. Ferdinand ist sein Name. Ich war schon mal bei ihm, aber er hat mich abgewiesen."), gg_snd_Manfred13)
+			call speech(info, character, true, tr("Verdammter Arschkriecher des Herzogs. Der Sack sitzt in der Burg mit ihren dicken Mauern und bekommt ne Menge Goldmünzen für's Faulenzen."), gg_snd_Manfred14)
+			call speech(info, character, true, tr("Lass dich nicht von ihm unterkriegen!"), gg_snd_Manfred15)
 			call QuestProtectThePeople.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
@@ -194,8 +194,8 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Wirst schon nicht draufgehen.
 		private static method infoActionAboutTheDuke_No takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wirst schon nicht draufgehen."), null)
-			call speech(info, character, true, tr("Hmm, wenn nicht ich, dann ein anderer. Das ist auch nicht viel besser. Ich wünschte, der Krieg wäre schon vorbei und wir würden gemeinsam etwas Neues aufbauen. Eine Welt ohne Adel, in der jeder nach seiner wirklichen Leistung beurteilt werden würde."), null)
-			call speech(info, character, true, tr("Ich wette, in einer solchen Welt wäre das Ansehen des Herzogs ganz unten."), null)
+			call speech(info, character, true, tr("Hmm, wenn nicht ich, dann ein anderer. Das ist auch nicht viel besser. Ich wünschte, der Krieg wäre schon vorbei und wir würden gemeinsam etwas Neues aufbauen. Eine Welt ohne Adel, in der jeder nach seiner wirklichen Leistung beurteilt werden würde."), gg_snd_Manfred16)
+			call speech(info, character, true, tr("Ich wette, in einer solchen Welt wäre das Ansehen des Herzogs ganz unten."), gg_snd_Manfred17)
 			call info.talk().showStartPage(character)
 		endmethod
 

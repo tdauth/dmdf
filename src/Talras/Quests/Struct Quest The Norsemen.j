@@ -454,13 +454,13 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call questItem.setPing(true)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_the_norsemen_quest_item_0)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 500)
+			call questItem.setReward(thistype.rewardExperience, 150)
 			// item 1
 			set questItem = AQuestItem.create(this, tre("Sammelt euch nahe des nordwestlichen Orklagers mit den Nordmännern.", "Gather yourselves with the Norsemen near to the north west Orc camp."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_norsemen_assembly_point)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 500)
+			call questItem.setReward(thistype.rewardExperience, 150)
 			// item 2
 			set questItem = AQuestItem.create(this, tre("Beweist eure Kampfstärke, indem ihr die Nordmänner im Kampf unterstützt.", "Prove your combat strength by supporting the Northmen in the fight."))
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted2)
@@ -478,7 +478,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_talras_quest_item_1)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 500)
+			call questItem.setReward(thistype.rewardExperience, 150)
 			// members
 			set this.m_hasStarted = false
 			set this.m_allyStartGroup = 0

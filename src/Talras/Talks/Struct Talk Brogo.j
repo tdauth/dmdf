@@ -72,49 +72,50 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 
 		// Hallo.
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
-			set thistype(info.talk()).m_playerHasTalkedTo[GetPlayerId(character.player())] = true
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Katze?"), null)
-			call speech(info, character, false, tr("Äh, was ist los?"), null)
-			call speech(info, character, true, tr("Katze?"), null)
-			call speech(info, character, false, tr("Was ist mit der?"), null)
-			call speech(info, character, true, tr("Du hast Katze?"), null)
-			call speech(info, character, false, tr("Hm?"), null)
-			call speech(info, character, true, tr("Brogo mag Katzen. Katzen zum Streicheln da. Brogo mag streicheln. Du bringst Katzen zu Brogo, dann Brogo glücklich."), null)
+			local thistype this = thistype(info.talk())
+			set this.m_playerHasTalkedTo[GetPlayerId(character.player())] = true
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("Katze?", "Cat?"), null)
+			call speech(info, character, false, tre("Äh, was ist los?", "Uh, what is going on?"), null)
+			call speech(info, character, true, tre("Katze?", "Cat?"), null)
+			call speech(info, character, false, tre("Was ist mit der?", "What's with her?"), null)
+			call speech(info, character, true, tre("Du hast Katze?", "You have cat?"), null)
+			call speech(info, character, false, tre("Hm?", "Hm?"), null)
+			call speech(info, character, true, tre("Brogo mag Katzen. Katzen zum Streicheln da. Brogo mag streicheln. Du bringst Katzen zu Brogo, dann Brogo glücklich.", "Brogo likes cats. Cats exist for stroking. Brogo likes stroke. You bring cats to Brogo, then Brogo happy."), null)
 			call QuestCatsForBrogo.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
 
 		/// @todo Katzen sind normale kaufbare Einheiten, welche vom Käuferspieler gesteuert werden können. Sie werden an Brogo übergeben und stehen am besten um ihn herum (Katzenflut und so).
 		private static method giveCatsToBrogo takes AInfo info, Character character returns nothing
-			local thistype talk = info.talk()
+			local thistype talk = thistype(info.talk())
 			local integer countedCats = talk.countCats(character.player())
 			debug call Print("Count cats: " + I2S(countedCats))
 			// (Ist Brogos erste Katze)
 			if (talk.cats() == 0) then
 				// (Charakter hat eine Katze)
 				if (countedCats == 1) then
-					call speech(info, character, true, tr("Toll, Katze, her damit. Brogo will streicheln!"), null)
+					call speech(info, character, true, tre("Toll, Katze, her damit. Brogo will streicheln!", "Great, cat, bring her on. Brogo wants to stroke!"), null)
 				// (Charakter hat mehrere Katzen)
 				else
-					call speech(info, character, true, tr("Toll, Katzen, her damit. Brogo will streicheln!"), null)
+					call speech(info, character, true, tre("Toll, Katzen, her damit. Brogo will streicheln!", "Great, cats, bring them on. Brogo wants to stroke!"), null)
 				endif
 				call character.addExperience(thistype.experienceBonus, true)
-				call character.displayMessage(ACharacter.messageTypeInfo, IntegerArg(tr("Erfahrungsbonus +%i"), thistype.experienceBonus))
-				call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, StringArg(tr("%s hat den Katzenbonus erhalten"), character.name()))
+				call character.displayMessage(ACharacter.messageTypeInfo, IntegerArg(tre("Erfahrungsbonus +%i", "Experience Bonus +%i"), thistype.experienceBonus))
+				call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, StringArg(tre("%s hat den Katzenbonus erhalten", "%s received the Cat Bonus"), character.name()))
 			// (Brogo hat schon Katzen, egal von welchem Charakter)
 			else
 				// (Charakter hat eine Katze)
 				if (countedCats == 1) then
-					call speech(info, character, true, tr("Toll, noch eine Katze."), null)
+					call speech(info, character, true, tre("Toll, noch eine Katze.", "Great, another cat."), null)
 				// (Charakter hat mehrere Katzen)
 				else
-					call speech(info, character, true, tr("Toll, noch mehr Katzen."), null)
+					call speech(info, character, true, tre("Toll, noch mehr Katzen.", "Great, even more cats."), null)
 				endif
 			endif
 			// (Brogos Maximalanzahl der geschenkten Katzen erreicht)
 			if (talk.characterHasReachedMaximum(character, countedCats)) then
-				call speech(info, character, true, tr("Jetzt aber genug Katzen. Brogo gibt dir Belohnung und dankt dir für Katzen."), null)
+				call speech(info, character, true, tre("Jetzt aber genug Katzen. Brogo gibt dir Belohnung und dankt dir für Katzen.", "But enough cats now. Brogo gives you reward and thanks you for cats."), null)
 				call speech(info, character, true, tr("Belohnung ist Waffe von Troll. Brogo hat getötet viele Trolle. Trolle böser als Katzen."), null)
 				call QuestCatsForBrogo.characterQuest(character).questItem(0).complete()
 				call character.giveItem('I062')

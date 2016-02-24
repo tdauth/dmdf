@@ -36,9 +36,9 @@ library StructMapVideosVideoReportManfred requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorManfred, tre("Manfred", "Manfred"), tre("Sehr gut! Damit hast du mir einen großen Gefallen erwiesen. Warte bis ich die Nahrung aufgeladen habe. Du kannst sie dann mitnehmen. Erteilt diesen verdammten Orks und Dunkelelfen eine ordentliche Lektion. Ich hoffe sie lassen sich dann nicht mehr hier blicken.", "Very good! Thus you have done me a great favor. Wait until I have loaded the food up. You can take it then. Let those damn Orcs and Dark Elves learn their lesson. I hope they won't show up anymore after that."), null)
+			call TransmissionFromUnitWithName(this.m_actorManfred, tre("Manfred", "Manfred"), tre("Sehr gut! Damit hast du mir einen großen Gefallen erwiesen. Warte bis ich die Nahrung aufgeladen habe. Du kannst sie dann mitnehmen. Erteilt diesen verdammten Orks und Dunkelelfen eine ordentliche Lektion. Ich hoffe sie lassen sich dann nicht mehr hier blicken.", "Very good! Thus you have done me a great favor. Wait until I have loaded the food up. You can take it then. Let those damn Orcs and Dark Elves learn their lesson. I hope they won't show up anymore after that."), gg_snd_Manfred39)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Manfred39))) then
 				return
 			endif
 

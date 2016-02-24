@@ -842,13 +842,15 @@ Aufgehoben für Version 0.7:
 * Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
 * Deranor sollte nach Tod auch etwas droppen.
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
-* Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar.
+* Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen?
 * Schatten von Talras neu berechnen.
 * Nach Repick ist Grundzauber nicht in den Favoriten.
 * Spruchrolle des Sammlers: Keine Powerups?
 * FIXED: Tobias ist nicht unverwundbar.
 * FIXED: Fähigkeiten wie Blitzschlag, Eis- und Feuergeschoss haben keine Abklingzeit und keinen Manaverbrauch wenn sie direkt töten.
 * Mathilda kann nicht mehr angesprochen werden, wenn sie einen einmal begleitet.
+* Magische Schockwellen: Terraindeformation fehlt, Sound fehlt.
+* Elementarwesen: Icon, pro Wesen eine Fähigkeit.
 
 Abgeschlossene Punkte:
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.

@@ -1,0 +1,142 @@
+//***************************************************************************
+[TriggerCategories]
+// Defines categories for organizing trigger functions
+// Key: Arbitrary category identifier
+// Value 0: Display text
+// Value 1: Icon image file
+// Value 2: Optional flag (defaults to 0) indicating to disable display of category name
+//
+TC_TPOF_CHARACTER="Character",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_TALK="Talk",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_FELLOW="Fellow",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_ITEM="Item",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_QUESTAREA="Quest Area",ReplaceableTextures\WorldEditUI\Actions-Camera
+//%%% DEBUG - Remove for retail
+//TC_OBSOLETE=WESTRING_TRIGCAT_OBSOLETE,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
+//TC_DEBUG=WESTRING_TRIGCAT_DEBUG,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
+
+//***************************************************************************
+[TriggerTypes]
+// Defines all trigger variable types to be used by the Script Editor
+// Key: type name
+// Value 0: first game version in which this type is valid
+// Value 1: flag (0 or 1) indicating if this type can be a global variable
+// Value 2: flag (0 or 1) indicating if this type can be used with comparison operators
+// Value 3: string to display in the editor
+// Value 4: base type, used only for custom types
+// Value 5: import type, for strings which represent files (optional)
+// Value 6: flag (0 or 1) indicating to treat this type as the base type in the editor
+
+// Trigger Variable Types
+// These are sorted so that they appear as such in the Variables dialog.
+Talk=0,1,1,"Talk",integer
+Fellow=0,1,1,"Fellow",integer
+AInfoCondition=0,1,1,"Info Condition",integer
+AInfoAction=0,1,1,"Info Action",integer
+
+ItemType=0,1,1,"Item Type",integer
+
+QuestArea=0,1,1,"Quest Area",integer
+
+//***************************************************************************
+[TriggerTypeDefaults]
+// Defines an optional default value for a trigger type used as a global variable
+// Key: variable type
+// Value 0: script text
+// Value 1: display text (if not present, script text will be used)
+//
+// If a type does not have an entry here, it will be set to null if it is a handle
+//
+Character=0,"No Character"
+Talk=0,"No Talk"
+Fellow=0,"No Fellow"
+
+
+
+//***************************************************************************
+[TriggerParams]
+// Defines possible values for variable types
+// Key: arbitrary text
+// Value 0: first game version in which this parameter is valid
+// Value 1: variable type
+// Value 2: code text (used in script)
+// Value 3: display text
+//
+// Note: If the code text is a literal string, surround it with backward single quotes (`),
+//       and they will be converted to double quotes in the script.
+//
+
+//***************************************************************************
+[TriggerEvents]
+// Defines events available in the editor
+// Key: script event function
+// Value 0: first game version in which this function is valid
+// Value 1+: argument types
+// Note that the first argument is always a `trigger`, and is excluded here
+
+//***************************************************************************
+[TriggerConditions]
+// Defines boolean condition functions
+// Key: condition function name
+// Value 0: first game version in which this function is valid
+// Value 1+: argument types
+
+//***************************************************************************
+[TriggerActions]
+// Defines action functions
+// Key: action function name
+// Value 0: first game version in which this function is valid
+// Value 1+: argument types
+
+AddInfo=1,Talk,boolean,boolean,AInfoCondition,AInfoAction,string
+_AddInfo_Defaults=
+_AddInfo_Category=TC_TPOF_TALK
+
+CreateQuestArea=1,rect
+_CreateQuestArea_Defaults=
+_CreateQuestArea_Category=TC_TPOF_QUESTAREA
+
+// Obsolete actions
+//AddPerfLogLabel=0,string
+//_AddPerfLogLabel_Defaults="Triggered Debug Label"
+//_AddPerfLogLabel_Category=TC_OBSOLETE
+
+//Cheat=0,string
+//_Cheat_Defaults="warnings"
+//_Cheat_Category=TC_OBSOLETE
+
+
+
+//***************************************************************************
+[TriggerCalls]
+// Defines function calls which may be used as parameter values
+// Key: Function name
+// Value 0: first game version in which this function is valid
+// Value 1: flag (0 or 1) indicating if the call can be used in events
+// Value 2: return type
+// Value 3+: argument types
+//
+// Note: Operators are specially handled by the editor
+
+// returns Character
+PlayerCharacter=1,0,Character,player
+_PlayerCharacter_Defaults=
+_PlayerCharacter_Category=TC_TPOF_CHARACTER
+
+ItemTypeByItem=1,0,ItemType,item
+_ItemTypeByItem_Defaults=
+_ItemTypeByItem_Category=TC_TPOF_ITEM
+
+CreateQuestArea=1,0,QuestArea,rect
+_CreateQuestArea_Defaults=
+_CreateQuestArea_Category=TC_TPOF_QUESTAREA
+
+//***************************************************************************
+[DefaultTriggerCategories]
+// Defines categories to be automatically added to new maps
+NumCategories=0
+
+//***************************************************************************
+[DefaultTriggers]
+// Defines triggers to be automatically added to new maps
+NumTriggers=0

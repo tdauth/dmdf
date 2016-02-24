@@ -25,7 +25,7 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 				if (mana > 0) then
 					call SetUnitState(caster, UNIT_STATE_MANA, GetUnitState(caster, UNIT_STATE_MANA) + mana)
 					if (not IsUnitHidden(caster)) then
-						call PlaySoundOnUnitBJ(thistype.whichSound, 100.0, caster)
+						call PlaySoundOnUnitBJ(thistype.whichSound, 60.0, caster)
 						set spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
 						call Spell.showManaTextTag(caster, mana)
 						call DestroyEffect(spellEffect)

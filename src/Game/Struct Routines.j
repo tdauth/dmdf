@@ -260,7 +260,7 @@ library StructGameRoutines requires Asl
 					set whichTextTag = null
 				endif
 				
-				call TriggerSleepAction(6.0) // set + 6 otherwise we have loop sounds all the time
+				call TriggerSleepAction(4.0) // set + 4 otherwise we have loop sounds all the time
 			else
 				// set at least facing properly
 				call SetUnitFacing(period.unit(), period.facing())
@@ -291,8 +291,8 @@ library StructGameRoutines requires Asl
 		private static method harvestTargetAction takes NpcRoutineWithFacing period returns nothing
 			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), "Stand Work")
-			call PlaySoundFileOnUnit("Abilities\\Spells\\Other\\Repair\\PeonRepair1.wav", period.unit())
 			call TriggerSleepAction(1.266)
+			call PlaySoundFileOnUnit("Abilities\\Spells\\Other\\Repair\\PeonRepair1.wav", period.unit())
 			call AContinueRoutineLoop(period, thistype.harvestTargetAction)
 		endmethod
 
@@ -304,6 +304,7 @@ library StructGameRoutines requires Asl
 			call SetUnitFacing(period.unit(), period.facing())
 			call QueueUnitAnimation(period.unit(), "Stand Work")
 			call TriggerSleepAction(1.266)
+			call PlaySoundFileOnUnit("Abilities\\Spells\\Other\\Repair\\PeonRepair1.wav", period.unit())
 			call AContinueRoutineLoop(period, thistype.splitWoodTargetAction)
 		endmethod
 

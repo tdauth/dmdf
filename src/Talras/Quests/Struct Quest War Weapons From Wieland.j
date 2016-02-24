@@ -318,7 +318,7 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 			set this.m_weaponCartSpawnTimer = null
 			
 			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateCompleted)
-			call this.displayState()
+			call this.complete()
 		endmethod
 		
 		public static method create takes nothing returns thistype

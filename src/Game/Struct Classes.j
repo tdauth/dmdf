@@ -387,12 +387,14 @@ library StructGameClasses requires Asl, StructGameCharacter
 			
 			set thistype.m_elementalMageGrimoireEntries = AIntegerVector.create()
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlaze.classSelectionAbilityId, SpellBlaze.classSelectionGrimoireAbilityId))
+			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellElementalCreatures.classSelectionAbilityId, SpellElementalCreatures.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellEarthPrison.classSelectionAbilityId, SpellEarthPrison.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellElementalForce.classSelectionAbilityId, SpellElementalForce.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellEmblaze.classSelectionAbilityId, SpellEmblaze.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFireMissile.classSelectionAbilityId, SpellFireMissile.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFreeze.classSelectionAbilityId, SpellFreeze.classSelectionGrimoireAbilityId))
-			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellGlisteningLight.classSelectionAbilityId, SpellGlisteningLight.classSelectionGrimoireAbilityId))
+			// remove one spell for elemental creatures
+			//call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellGlisteningLight.classSelectionAbilityId, SpellGlisteningLight.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellIceMissile.classSelectionAbilityId, SpellIceMissile.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellInferno.classSelectionAbilityId, SpellInferno.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellLightning.classSelectionAbilityId, SpellLightning.classSelectionGrimoireAbilityId))

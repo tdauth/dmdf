@@ -136,6 +136,8 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 	 */
 	struct Character extends ACharacter
 		public static constant real defaultCameraDistance =  bj_CAMERA_DEFAULT_DISTANCE + 250.0
+		public static constant real maxCameraDistance =  bj_CAMERA_DEFAULT_DISTANCE + 750.0
+		public static constant real minCameraDistance =  bj_CAMERA_DEFAULT_DISTANCE
 		public static constant real cameraTimerInterval = 0.01
 		// dynamic members
 		private boolean m_isInPvp

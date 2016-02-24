@@ -118,7 +118,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		private static method showMovingTextTag takes string text, real size, integer red, integer green, integer blue, integer alpha, player whichPlayer returns nothing
 			local texttag textTag = CreateTextTag()
 			call SetTextTagText(textTag, text, 0.023)
-			call SetTextTagPos(textTag, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), CameraSetupGetField(gg_cam_class_selection, CAMERA_FIELD_ZOFFSET))
+			call SetTextTagPos(textTag, GetRectCenterX(gg_rct_main_window_credits), GetRectCenterY(gg_rct_main_window_credits), CameraSetupGetField(gg_cam_class_selection, CAMERA_FIELD_ZOFFSET))
 			call SetTextTagColor(textTag, red, green, blue, alpha)
 			call SetTextTagVisibility(textTag, false)
 			call SetTextTagVelocity(textTag, 0.0, 0.040)
@@ -243,9 +243,11 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			set this.m_autoChangeTimer = null
 		endmethod
 
-		public static method init0 takes nothing returns nothing
-			//static members
+		public static method onInit takes nothing returns nothing
+			// static members
 			set thistype.m_contributors = AIntegerVector.create()
+			// this file adds all contributors to the credits
+			//! import "Game/Credits.j"
 		endmethod
 	endstruct
 

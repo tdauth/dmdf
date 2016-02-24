@@ -171,7 +171,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			call DestroyTimer(this.m_kunosCartSpawnTimer)
 			set this.m_kunosCartSpawnTimer = null
 			call this.questItem(thistype.questItemLumberFromKuno).setState(thistype.stateCompleted)
-			call this.displayUpdate()
+			call this.complete()
 		endmethod
 		
 		public static method create takes nothing returns thistype

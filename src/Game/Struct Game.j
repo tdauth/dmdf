@@ -447,8 +447,6 @@ static if (DMDF_VIOLENCE) then
 endif
 			call thistype.createKillTrigger()
 			// game guis
-			call Credits.init0.evaluate()
-			//! import "Game/Credits.j"
 			call Fellow.init.evaluate(tre("%1% hat sich Ihrer Gruppe angeschlossen.", "%1% has joined your group."), null, tre("%1% hat Ihre Gruppe verlassen.", "%1% has left your group"), null, tre("%1% ist gefallen und wird in %2% Sekunden wiederbelebt.", "%1% has fallen and will be revived in %2% seconds."), null)
 static if (DMDF_INVENTORY) then
 			call Inventory.init0.evaluate()

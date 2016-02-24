@@ -123,7 +123,8 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						// add unmorph spell
 						// there is always one free ability slot since disabling the rucksack is not allowed
 						//if (this.disableGrimoire() or this.disableInventory()) then
-							call UnitAddAbility(this.character().unit(), this.abilityId())
+						debug call Print("Adding ability " + GetObjectName(this.abilityId()) + " to unit")
+						call UnitAddAbility(this.character().unit(), this.abilityId())
 						//endif
 						
 						/**

@@ -1,14 +1,6 @@
 /// Wizard
 library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, StructGameSpell
 
-	/**
-	* Gegeben:
-	* Name					Variiert pro Stufe
-	* Umkreis				Nein
-	* Zeit					Nein
-	* prozentualer Schadensanteil		Ja
-	*/
-	/// Gegner im Umkreis von 600, die über kein Mana verfügen, erleiden 30 Sekunden lang X % mehr Schaden. Gegner mit Mana erleiden Y % Schaden, das anhand des maximalen Manas der Einheit berechnet wird.
 	struct SpellMagicalShockWaves extends Spell
 		public static constant integer abilityId = 'A05W'
 		public static constant integer favouriteAbilityId = 'A05X'
@@ -96,15 +88,16 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			local AGroup targets = this.targets()
 			local AIntegerVector damageRecorders
 			local AEffectVector effects
+			local ATerrainDeformationVector terrainDeformations
 			local ADamageRecorder damageRecorder
 			local integer i
 			local unit target
 			local real time
 			local real angle
-			local terraindeformation array terrainDeformation
 			if (not targets.units().empty()) then
 				set damageRecorders = AIntegerVector.create()
 				set effects = AEffectVector.create()
+				set terrainDeformations = ATerrainDeformationVector.create()
 				set i = 0
 				loop
 					exitwhen (i == targets.units().size())
@@ -115,6 +108,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 					call damageRecorder.setOnDamageAction(thistype.onDamageAction)
 					call damageRecorders.pushBack(damageRecorder)
 					call effects.pushBack(AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "origin"))
+					call terrainDeformations.pushBack(TerrainDeformWave(GetUnitX(caster), GetUnitY(caster), GetUnitX(target), GetUnitY(target), GetDistanceBetweenUnitsWithoutZ(caster, target), 100.0, 50.0, 0.0, 10, 50))
 					set target = null
 					set i = i + 1
 				endloop
@@ -138,6 +132,8 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 							call damageRecorders.erase(i)
 							call DestroyEffect(effects[i])
 							set effects[i] = null
+							call TerrainDeformStop(terrainDeformations[i], 0)
+							set terrainDeformations[i] = null
 						else
 							set i = i + 1
 						endif
@@ -154,6 +150,8 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 					call damageRecorder.destroy()
 					call DestroyEffect(effects[i])
 					set effects[i] = null
+					call TerrainDeformStop(terrainDeformations[i], 0)
+					set terrainDeformations[i] = null
 					set i = i + 1
 				endloop
 

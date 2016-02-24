@@ -22,6 +22,7 @@ library StructMapMapShrines requires Asl, StructGameShrine
 		private static Shrine m_norsemen
 		private static Shrine m_tomb
 		private static Shrine m_orcCamp
+		private static Shrine m_waterfall
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -63,6 +64,8 @@ library StructMapMapShrines requires Asl, StructGameShrine
 			set thistype.m_norsemen = Shrine.create(gg_unit_n02D_0216, gg_dest_B008_21758, gg_rct_shrine_norsemen_discover, gg_rct_shrine_norsemen_revival, 235.58)
 			
 			set thistype.m_tomb = Shrine.create(gg_unit_n02D_0262, gg_dest_B008_30012, gg_rct_shrine_tomb_discover, gg_rct_shrine_tomb_revival, 188.82)
+			
+			set thistype.m_waterfall = Shrine.create(gg_unit_n02D_0611, gg_dest_B008_4965, gg_rct_shrine_waterfall_discover, gg_rct_shrine_waterfall_revival, 136.44)
 			
 			/*
 			 * Used after finishing the quest The Norsemen.

@@ -1,4 +1,4 @@
-library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial, StructGameGame
+library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial, StructGameGame, StructGameDungeon
 
 	/**
 	 * \brief The main menu can be accessed using the chat command "-menu". It allows various game settings for each player.
@@ -45,14 +45,93 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 
 		private static method dialogButtonActionIncreaseCameraDistance takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.m_character.setCameraDistance(this.m_character.cameraDistance() + 500.0)
+			if (this.m_character.cameraDistance() < Character.maxCameraDistance) then
+				call this.m_character.setCameraDistance(this.m_character.cameraDistance() + 250.0)
+			endif
 			call this.showDialog.evaluate()
 		endmethod
 		
 		private static method dialogButtonActionDecreaseCameraDistance takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
-			call this.m_character.setCameraDistance(this.m_character.cameraDistance() - 500.0)
+			if (this.m_character.cameraDistance() > Character.minCameraDistance) then
+				call this.m_character.setCameraDistance(this.m_character.cameraDistance() - 250.0)
+			endif
 			call this.showDialog.evaluate()
+		endmethod
+		
+		private static method dialogButtonActionResetCameraDistance takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			call this.m_character.setCameraDistance(Character.defaultCameraDistance)
+			call this.showDialog.evaluate()
+		endmethod
+		
+		private static method dialogButtonActionChangeCameraToDungeonByIndex takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			call Dungeon(Dungeon.dungeons()[dialogButton.index()]).setCameraBoundsForPlayer(this.m_character.player())
+			call this.showDungeons.evaluate()
+		endmethod
+		
+		private static method dialogButtonActionBackToCameraMenu takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			call this.showCameraMenu.evaluate()
+		endmethod
+		
+		private method showDungeons takes nothing returns nothing
+			local integer i
+			call AGui.playerGui(this.m_character.player()).dialog().clear()
+			call AGui.playerGui(this.m_character.player()).dialog().setMessage(tre("Dungeons", "Dungeons"))
+			
+			set i = 0
+			loop
+				exitwhen (i == Dungeon.dungeons().size())
+				call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(Dungeon(Dungeon.dungeons()[i]).name(), thistype.dialogButtonActionChangeCameraToDungeonByIndex)
+				set i = i + 1
+			endloop
+			
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Zurück zum Kamera-Menü", "Back to the camera menu"), thistype.dialogButtonActionBackToCameraMenu)
+			call AGui.playerGui(this.m_character.player()).dialog().show()
+		endmethod
+		
+		private static method dialogButtonActionChangeCameraToDungeon takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			call this.showDungeons()
+		endmethod
+		
+		private static method dialogButtonActionBackToMainMenu takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			call this.showDialog.evaluate()
+		endmethod
+		
+		public method showCameraMenu takes nothing returns nothing
+			local string message
+			call AGui.playerGui(this.m_character.player()).dialog().clear()
+			call AGui.playerGui(this.m_character.player()).dialog().setMessage(tre("Kamera", "Camera"))
+			
+			if (ACharacter.useViewSystem()) then
+				if (this.m_character.view().isEnabled()) then
+					set message = tre("3rd-Person-Kamera deaktivieren", "Disable 3rd person camera")
+				else
+					set message = tre("3rd-Person-Kamera aktivieren", "Enable 3rd person camera")
+				endif
+
+				call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetView)
+			endif
+			
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Kameraentfernung vergrößern", "Increase camera distance"), thistype.dialogButtonActionIncreaseCameraDistance)
+			
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Kameraentfernung verkleinern", "Decrease camera distance"), thistype.dialogButtonActionDecreaseCameraDistance)
+			
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Kameraentfernung zurücksetzen", "Reset camera distance"), thistype.dialogButtonActionResetCameraDistance)
+			
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Kamera zu Dungeon wechseln", "Change camera to dungeon"), thistype.dialogButtonActionChangeCameraToDungeon)
+			
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Zurück zum Haupt-Menü", "Back to the main menu"), thistype.dialogButtonActionBackToMainMenu)
+			call AGui.playerGui(this.m_character.player()).dialog().show()
+		endmethod
+		
+		private static method dialogButtonActionCameraSettings takes ADialogButton dialogButton returns nothing
+			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			call this.showCameraMenu()
 		endmethod
 
 		private static method dialogButtonActionInfoLog takes ADialogButton dialogButton returns nothing
@@ -77,16 +156,6 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 			endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetTutorial)
 
-			if (ACharacter.useViewSystem()) then
-				if (this.m_character.view().isEnabled()) then
-					set message = tre("3rd-Person-Kamera deaktivieren", "Disable 3rd person camera")
-				else
-					set message = tre("3rd-Person-Kamera aktivieren", "Enable 3rd person camera")
-				endif
-
-				call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetView)
-			endif
-
 			if (this.m_character.showCharactersScheme()) then
 				set message = tre("Charaktere-Anzeige deaktivieren", "Disable characters view")
 			else
@@ -108,9 +177,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 			endif
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(message, thistype.dialogButtonActionSetControl)
 			
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Kameraentfernung vergrößern", "Increase camera distance"), thistype.dialogButtonActionIncreaseCameraDistance)
-			
-			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Kameraentfernung verkleinern", "Decrease camera distance"), thistype.dialogButtonActionDecreaseCameraDistance)
+			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Kameraeinstellungen", "Camera Settings"), thistype.dialogButtonActionCameraSettings)
 
 static if (DMDF_INFO_LOG) then
 			call AGui.playerGui(this.m_character.player()).dialog().addDialogButtonIndex(tre("Info-Log", "Info log"), thistype.dialogButtonActionInfoLog)

@@ -145,7 +145,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 			set this.m_questAreaBjoernPlaceTraps = 0
 			
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateCompleted)
-			call this.displayUpdate()
+			call this.complete()
 		endmethod
 		
 		public static method create takes nothing returns thistype

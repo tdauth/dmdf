@@ -199,6 +199,11 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_0), GetRectCenterY(gg_rct_arena_enemy_0), 180.0)
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_1), GetRectCenterY(gg_rct_arena_enemy_1), 0.0)
 			
+			call Dungeon.create(tre("Talras", "Talras"), gg_rct_area_playable, gg_rct_area_playable_view)
+			call Dungeon.create(tre("Taverne", "Tavern"), gg_rct_area_tavern_bounds, gg_rct_area_tavern_bounds_view)
+			call Dungeon.create(tre("Trommelhöhle", "Drum Cave"), gg_rct_area_aos, gg_rct_area_aos_view)
+			call Dungeon.create(tre("Gruft", "Crypt"), gg_rct_area_tomb, gg_rct_area_tomb_view)
+			
 static if (DMDF_NPC_ROUTINES) then
 			/*
 			 * Extract this call since it contains many many calls which should be executed in a different trigger to avoid OpLimit.

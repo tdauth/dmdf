@@ -97,7 +97,7 @@ library StructMapQuestsQuestWarRecruit requires Asl, StructGameQuestArea, Struct
 			set this.m_recruitTrigger = null
 			
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateCompleted)
-			call this.displayState()
+			call this.complete()
 			// TODO sell other recruits and distribute the costs to all players equally.
 		endmethod
 		

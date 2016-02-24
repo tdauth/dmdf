@@ -523,6 +523,12 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
 			
+			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
+			
+			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
+			
 			call SetPlayerColor(thistype.m_haldarsUser, PLAYER_COLOR_LIGHT_GRAY)
 			call SetPlayerColor(thistype.m_baldarsUser, ConvertPlayerColor(12)) // black
 

@@ -216,12 +216,14 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellKennels.create(character)
 			elseif (class == Classes.elementalMage()) then
 				call SpellBlaze.create(character)
+				call SpellElementalCreatures.create(character)
 				call SpellEarthPrison.create(character)
 				call SpellElementalForce.create(character)
 				call SpellEmblaze.create(character)
 				call SpellFireMissile.create(character)
 				call SpellFreeze.create(character)
-				call SpellGlisteningLight.create(character)
+				// remove one spell for elemental creatures
+				//call SpellGlisteningLight.create(character)
 				call SpellIceMissile.create(character)
 				call SpellInferno.create(character)
 				call SpellLightning.create(character)

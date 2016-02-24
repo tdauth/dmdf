@@ -1,0 +1,52 @@
+﻿// All entries in this file correspond to entries in TriggerData.txt
+// with the same key, and define the text to display for a given
+// function.
+//
+// The first value is the name of the function.
+// Following values are the layout of the text description,
+// and each value may either be raw text, or a parameter.
+// Parameters are distinguished from raw text with a '~' as the first
+// character.
+//
+// Any display text to have a comma must be contained in double quotes
+
+
+//***************************************************************************
+[TriggerEventStrings]
+
+//***************************************************************************
+[TriggerConditionStrings]
+
+//***************************************************************************
+[TriggerActionStrings]
+
+AddInfo="Add Information"
+AddInfo="Add information to ",~Talk," permanently ",~permanently," and important ",~important," with condition ",~condition," and action ",~action," and text ",~text
+AddInfo="Adds information to a talk."
+
+CreateQuestArea="Create Quest Area"
+CreateQuestArea="Creates quest area at rect ",~Rect
+CreateQuestArea="Creates a quest area where characters can gather to activate an event."
+
+// Obsolete actions
+//AddPerfLogLabel="** AddPerfLogLabel **"
+//AddPerfLogLabel="** AddPerfLogLabel(",~Label,") **"
+//AddPerfLogLabelHint="** This is for debugging purposes only - remove before ship. **"
+
+//Cheat="** Cheat **"
+//Cheat="** Cheat(",~Label,") **"
+//CheatHint="** This is for debugging purposes only - remove before ship. **"
+
+
+
+//***************************************************************************
+[TriggerCallStrings]
+
+// returns boolean
+PlayerCharacter="Player character"
+PlayerCharacter=~Player,"'s character"
+PlayerCharacter="Each player can have one character at maximum."
+
+CreateQuestArea="Create Quest Area"
+CreateQuestArea="Creates quest area at rect ",~Rect
+CreateQuestArea="Creates a quest area where characters can gather to activate an event."

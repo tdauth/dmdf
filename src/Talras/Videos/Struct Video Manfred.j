@@ -27,27 +27,27 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(this.actor(), tr("Bauer Manfred!"), null)
+			call TransmissionFromUnit(this.actor(), tre("Bauer Manfred!", "Farmer Manfred!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorManfred, tr("Manfred"), tr("Was gibt es?"), null)
+			call TransmissionFromUnitWithName(this.m_actorManfred, tre("Manfred", "Manfred"), tre("Was gibt es?", "What is it?"), gg_snd_Manfred35)
+			
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Manfred35))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.actor(), tre("Der Herzog benötigt Nahrungsmittel für einen besetzten Außenposten im Norden.", "The duke needs food for an occupied outpost in the north."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.actor(), tr("Der Herzog benötigt Nahrungsmittel für einen besetzten Außenposten im Norden."), null)
+			call TransmissionFromUnitWithName(this.m_actorManfred, tre("Manfred", "Manfred"), tr("Sonst noch etwas? Denkt der Herzog vielleicht, dass wir hier genug zu essen haben? Wenn der Winter kommt werden wir noch allesamt verhungern!"), gg_snd_Manfred36)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
-				return
-			endif
-			
-			call TransmissionFromUnitWithName(this.m_actorManfred, tr("Manfred"), tr("Sonst noch etwas? Denkt der Herzog vielleicht, dass wir hier genug zu essen haben? Wenn der Winter kommt werden wir noch allesamt verhungern!"), null)
-			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Manfred36))) then
 				return
 			endif
 			
@@ -57,9 +57,9 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorManfred, tr("Manfred"), tr("(Ängstlich) Nein, sicher nicht ... Also gut, wenn du mir einen Gefallen tust, kannst du die Nahrungsmittel haben."), null)
+			call TransmissionFromUnitWithName(this.m_actorManfred, tre("Manfred", "Manfred"), tr("(Ängstlich) Nein, sicher nicht ... Also gut, wenn du mir einen Gefallen tust, kannst du die Nahrungsmittel haben."), gg_snd_Manfred37)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Manfred37))) then
 				return
 			endif
 			
@@ -69,9 +69,9 @@ library StructMapVideosVideoManfred requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorManfred, tr("Manfred"), tr("Auf unseren Feldern treibt sich großes Ungeziefer herum. Die Kornfresser fressen nicht nur den Weizen, sondern auch meine Knechte. So fällt ein Teil der Ernte aus und ich verliere meine Arbeiter! Töte die Kornfresser und ich kümmere mich um die Nahrungsmittel."), null)
+			call TransmissionFromUnitWithName(this.m_actorManfred, tre("Manfred", "Manfred"), tr("Auf unseren Feldern treibt sich großes Ungeziefer herum. Die Kornfresser fressen nicht nur den Weizen, sondern auch meine Knechte. So fällt ein Teil der Ernte aus und ich verliere meine Arbeiter! Töte die Kornfresser und ich kümmere mich um die Nahrungsmittel."), gg_snd_Manfred38)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Manfred38))) then
 				return
 			endif
 			
