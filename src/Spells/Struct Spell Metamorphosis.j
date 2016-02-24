@@ -120,13 +120,6 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						
 						set this.m_isMorphed = true
 						
-						// add unmorph spell
-						// there is always one free ability slot since disabling the rucksack is not allowed
-						//if (this.disableGrimoire() or this.disableInventory()) then
-						debug call Print("Adding ability " + GetObjectName(this.abilityId()) + " to unit")
-						call UnitAddAbility(this.character().unit(), this.abilityId())
-						//endif
-						
 						/**
 						 * Grimoire spells need to be readded.
 						 */
@@ -144,6 +137,11 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 								call SetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId, this.character().skillPoints())
 							endif
 						endif
+						
+						// add unmorph spell
+						// there is always one free ability slot since disabling the rucksack is not allowed
+						debug call Print("Adding ability " + GetObjectName(this.abilityId()) + " to unit")
+						call UnitAddAbility(this.character().unit(), this.abilityId())
 				
 						// morph spells are expected to morph immediately
 						call this.onMorph.evaluate()
