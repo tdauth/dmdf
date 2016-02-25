@@ -1,21 +1,19 @@
 /// Wizard
 library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, StructGameSpell
 
-	struct SpellMagicalShockWaves extends Spell
-		public static constant integer abilityId = 'A05W'
-		public static constant integer favouriteAbilityId = 'A05X'
-		public static constant integer classSelectionAbilityId = 'A100'
-		public static constant integer classSelectionGrimoireAbilityId = 'A105'
-		public static constant integer maxLevel = 5
-		private static constant real range = 600.0
-		private static constant real time = 30.0
-		private static constant real damagePercentageStartValueMana = 4.0
-		private static constant real damagePercentageLevelValueMana = 2.0
-		private static constant real damagePercentageStartValue = 5.0
-		private static constant real damagePercentageLevelValue = 10.0
-
+	private struct Buff
+		private unit m_target
+		private ADamageRecorder m_damageRecorder
+		private effect m_effect
+		private ADynamicLightning m_lightning
+		private sound m_sound
+		
+		public method target takes nothing returns unit
+			return this.m_target
+		endmethod
+		
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local thistype this
+			local SpellMagicalShockWaves this
 			local unit caster
 			local unit target
 			local real damage
@@ -25,9 +23,9 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 					set caster = this.character().unit()
 					set target = damageRecorder.target()
 					if (GetUnitState(target, UNIT_STATE_MAX_MANA) > 0.0) then
-						set damage = GetUnitState(target, UNIT_STATE_MAX_MANA) * ((thistype.damagePercentageStartValueMana + this.level() * thistype.damagePercentageLevelValueMana) / 100.0)
+						set damage = GetUnitState(target, UNIT_STATE_MAX_MANA) * ((SpellMagicalShockWaves.damagePercentageStartValueMana + this.level() * SpellMagicalShockWaves.damagePercentageLevelValueMana) / 100.0)
 					else
-						set damage = GetEventDamage() * ((thistype.damagePercentageStartValue + this.level() * thistype.damagePercentageLevelValue) / 100.0)
+						set damage = GetEventDamage() * ((SpellMagicalShockWaves.damagePercentageStartValue + this.level() * SpellMagicalShockWaves.damagePercentageLevelValue) / 100.0)
 					endif
 					/*
 					 * Disable to prevent endless events.
@@ -45,6 +43,48 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 				debug call Print("Magical Shock Waves: no attached value")
 			endif
 		endmethod
+	
+		public static method create takes Spell spell, unit caster, unit target, real time returns thistype
+			local thistype this = thistype.allocate()
+			set this.m_target = target
+			debug call Print("Creating damage recorder for unit " + GetUnitName(target))
+			set this.m_damageRecorder = ADamageRecorder.create(target)
+			call DmdfHashTable.global().setInteger("SpellMagicalShockWaves:" + I2S(this.m_damageRecorder), "this", this)
+			call this.m_damageRecorder.setOnDamageAction(thistype.onDamageAction)
+			set this.m_effect = AddSpellEffectTargetById(SpellMagicalShockWaves.abilityId, EFFECT_TYPE_TARGET, target, "origin")
+			set this.m_lightning = ADynamicLightning.create(null, "DRAM", 0.01, caster, target)
+			set this.m_sound = CreateSound("Abilities\\Spells\\Other\\Drain\\SiphonManaLoop.wav", true, false, true, 12700, 12700, "")
+			call SetSoundChannel(this.m_sound, GetHandleId(SOUND_VOLUMEGROUP_SPELLS))
+			call PlaySoundOnUnitBJ(this.m_sound, 100.0, target)
+			
+			return this
+		endmethod
+		
+		public method onDestroy takes nothing returns nothing
+			call DmdfHashTable.global().removeInteger("SpellMagicalShockWaves:" + I2S(this.m_damageRecorder), "this")
+			call this.m_damageRecorder.destroy()
+			call DestroyEffect(this.m_effect)
+			set this.m_effect = null
+			call this.m_lightning.destroy()
+			call StopSound(this.m_sound, true, false)
+			set this.m_sound = null
+		endmethod
+		
+	endstruct
+
+	struct SpellMagicalShockWaves extends Spell
+		public static constant integer abilityId = 'A05W'
+		public static constant integer favouriteAbilityId = 'A05X'
+		public static constant integer classSelectionAbilityId = 'A100'
+		public static constant integer classSelectionGrimoireAbilityId = 'A105'
+		public static constant integer maxLevel = 5
+		public static constant real range = 600.0
+		public static constant real time = 30.0
+		public static constant real damagePercentageStartValueMana = 4.0
+		public static constant real damagePercentageLevelValueMana = 2.0
+		public static constant real damagePercentageStartValue = 5.0
+		public static constant real damagePercentageLevelValue = 10.0
+		private static sound castSound
 		
 		private static method filter takes nothing returns boolean
 			local unit filterUnit = GetFilterUnit()
@@ -86,77 +126,49 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local AGroup targets = this.targets()
-			local AIntegerVector damageRecorders
-			local AEffectVector effects
-			local ATerrainDeformationVector terrainDeformations
-			local ADamageRecorder damageRecorder
+			local AIntegerList buffs = 0
+			local AIntegerListIterator iterator = 0
 			local integer i
 			local unit target
-			local real time
-			local real angle
+			local real time = thistype.time
+			call PlaySoundOnUnitBJ(thistype.castSound, 100.0, caster)
 			if (not targets.units().empty()) then
-				set damageRecorders = AIntegerVector.create()
-				set effects = AEffectVector.create()
-				set terrainDeformations = ATerrainDeformationVector.create()
+				set buffs = AIntegerList.create()
 				set i = 0
 				loop
 					exitwhen (i == targets.units().size())
-					set target = targets.units()[i]
-					debug call Print("Creating damage recorder for unit " + GetUnitName(target))
-					set damageRecorder = ADamageRecorder.create(target)
-					call DmdfHashTable.global().setInteger("SpellMagicalShockWaves:" + I2S(damageRecorder), "this", this)
-					call damageRecorder.setOnDamageAction(thistype.onDamageAction)
-					call damageRecorders.pushBack(damageRecorder)
-					call effects.pushBack(AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "origin"))
-					call terrainDeformations.pushBack(TerrainDeformWave(GetUnitX(caster), GetUnitY(caster), GetUnitX(target), GetUnitY(target), GetDistanceBetweenUnitsWithoutZ(caster, target), 100.0, 50.0, 0.0, 10, 50))
-					set target = null
+					call buffs.pushBack(Buff.create(this, caster, targets.units()[i], thistype.time))
 					set i = i + 1
 				endloop
 
-				set time = thistype.time
 				loop
 					exitwhen (time <= 0.0 or targets.units().empty() or IsUnitDeadBJ(caster))
 					call TriggerSleepAction(1.0)
 					/*
 					 * Check all targets and filter out invalid targets.
 					 */
-					set i = 0
+					set iterator = buffs.begin()
 					loop
-						exitwhen (i == targets.units().size())
-						set target = targets.units()[i]
-						if (ASpell.enemyTargetLoopCondition(target)) then
-							debug call Print("Target dropped out: " + GetUnitName(target))
-							call targets.units().erase(i)
-							call DmdfHashTable.global().removeInteger("SpellMagicalShockWaves:" + I2S(damageRecorders[i]), "this")
-							call ADamageRecorder(damageRecorders[i]).destroy()
-							call damageRecorders.erase(i)
-							call DestroyEffect(effects[i])
-							set effects[i] = null
-							call TerrainDeformStop(terrainDeformations[i], 0)
-							set terrainDeformations[i] = null
+						exitwhen (not iterator.isValid())
+						if (ASpell.enemyTargetLoopCondition(Buff(iterator.data()).target())) then
+							debug call Print("Target dropped out: " + GetUnitName(Buff(iterator.data()).target()))
+							call Buff(iterator.data()).destroy()
+							set iterator = buffs.erase(iterator)
 						else
-							set i = i + 1
+							call iterator.next()
 						endif
-						set target = null
 					endloop
+					call iterator.destroy()
 					set time = time - 1.0
 				endloop
 				
-				set i = 0
+				set iterator = buffs.begin()
 				loop
-					exitwhen (i == damageRecorders.size())
-					set damageRecorder = ADamageRecorder(damageRecorders[i])
-					call DmdfHashTable.global().removeInteger("SpellMagicalShockWaves:" + I2S(damageRecorder), "this")
-					call damageRecorder.destroy()
-					call DestroyEffect(effects[i])
-					set effects[i] = null
-					call TerrainDeformStop(terrainDeformations[i], 0)
-					set terrainDeformations[i] = null
-					set i = i + 1
+					exitwhen (not iterator.isValid())
+					call Buff(iterator.data()).destroy()
+					call iterator.next()
 				endloop
-
-				call damageRecorders.destroy()
-				call effects.destroy()
+				call iterator.destroy()
 			endif
 			set caster = null
 			call targets.destroy()
@@ -171,6 +183,11 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			call this.addGrimoireEntry('A104', 'A109')
 			
 			return this
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.castSound = CreateSound("Abilities\\Spells\\Other\\Drain\\SiphonMana.wav", false, false, true, 12700, 12700, "")
+			call SetSoundChannel(thistype.castSound, GetHandleId(SOUND_VOLUMEGROUP_SPELLS))
 		endmethod
 	endstruct
 

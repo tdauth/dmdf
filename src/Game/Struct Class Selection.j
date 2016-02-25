@@ -214,6 +214,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellMultiShot.create(character)
 				call SpellTrap.create(character)
 				call SpellKennels.create(character)
+				call SpellLeprechaun.create(character)
 			elseif (class == Classes.elementalMage()) then
 				call SpellBlaze.create(character)
 				call SpellElementalCreatures.create(character)

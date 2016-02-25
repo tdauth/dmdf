@@ -96,6 +96,28 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
+			local item whichItem
+			local integer i = 0
+			// drop some items as reward for every player
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (Character.playerCharacter(Player(i)) != 0) then
+					set whichItem = CreateItem('I04B', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
+					call SetItemPlayer(whichItem, Player(i), true)
+					call SetItemCharges(whichItem, 3)
+					
+					set whichItem = CreateItem('I00B', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
+					call SetItemPlayer(whichItem, Player(i), true)
+					call SetItemCharges(whichItem, 5)
+					
+					set whichItem = CreateItem('I00C', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
+					call SetItemPlayer(whichItem, Player(i), true)
+					call SetItemCharges(whichItem, 5)
+				endif
+				set i = i + 1
+			endloop
+			
+			
 			set this.m_questAreaDeranorsTomb = QuestAreaDeranorsTomb.create(gg_rct_quest_deranor_tomb)
 			call this.questItem(thistype.questItemMeetAtTomb).setState(thistype.stateNew)
 			call this.displayState()

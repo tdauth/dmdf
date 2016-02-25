@@ -31,6 +31,7 @@ call thistype.addContributor("Stephanie Preis", tr("Tanka"))
 call thistype.addContributor("Carsten Thomas", tr("Carsten"))
 call thistype.addContributor("jonasclick", tr("Lothar"))
 call thistype.addContributor("Heinrich-Stefan N.", tr("Manfred"))
+call thistype.addContributor("Marco R.", tr("Einar"))
 
 // tools and systems
 call thistype.addTitle(tre("Werkzeuge und Systeme", "Tools and Systems"))

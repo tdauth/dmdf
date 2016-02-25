@@ -154,6 +154,7 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 		
 		// (Auftrag „Holz für die Hütte“ ist abgeschlossen)
 		private static method infoConditionMoreHelp takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
 			return QuestWoodForTheHut.characterQuest(character).isCompleted()
 		endmethod
 		
@@ -180,7 +181,7 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 		private static method infoActionSpecialSeed takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hier hast du einen ganz besonderen Samen."), null)
 			call speech(info, character, true, tr("Zeig her! Was ist daran so besonders?"), null)
-			call speech(info, character, false, tr("Das siehst, du wenn es soweit ist."), null)
+			call speech(info, character, false, tr("Das siehst du wenn es soweit ist."), null)
 			call speech(info, character, true, tr("Hm, ich vertraue dir mal. Hab vielen Dank und nimm das hier als Belohnung."), null)
 			call speech(info, character, true, tr("Wenn du willst kannst du ihn selbst einpflanzen."), null)
 			// Auftragsziel 2 des Auftrags „Samen für den Garten“ abgeschlossen
@@ -218,6 +219,7 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 
 		// Du kannst mich mal! Meines Vaters Vater, also mein Großvater und wiederum dessen Vater, also mein Urgroßvater, die waren alle Holzfäller und du machst dich einfach darüber lustig.
 		private static method infoActionStableHut_1 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Du kannst mich mal! Meines Vaters Vater, also mein Großvater und wiederum dessen Vater, also mein Urgroßvater, die waren alle Holzfäller und du machst dich einfach darüber lustig."), null)
 			call speech(info, character, true, tr("Verdammt Mann, krieg dich wieder ein! War ja nicht böse gemeint, dann halt nicht."), null)
 			call info.talk().showStartPage(character)

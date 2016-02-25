@@ -225,6 +225,12 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_wielandTalks.addSound(tre("Bei der Bezahlung kann ich meine Schmiede auch gleich schließen.", "Considering this paying I could close my forge just now."), gg_snd_Wieland39)
 			call thistype.m_wielandTalks.addSound(tre("Einar, du verdammter Hundesohn!", "Einar, you goddamn bastard!"), gg_snd_Wieland40)
 			call thistype.m_wielandTalks.addSound(tre("Hör mir auf mit den Orks!", "Stop with those Orcs!"), gg_snd_Wieland41)
+			
+			call thistype.m_wielandTalks.addSoundAnswer(tr("Mehr als du schmieden kannst!"), null) // TODO Missing sound!
+			call thistype.m_wielandTalks.addSoundAnswer(tr("Ich gebe dir 30 Goldmünzen pro Klinge."), gg_snd_Einar_25)
+			call thistype.m_wielandTalks.addSoundAnswer(tr("Geschäft ist Geschäft."),  gg_snd_Einar_26)
+			call thistype.m_wielandTalks.addSoundAnswer(tr("Bald kommen die Orks. Sei froh wenn du genügend Klingen geschmiedet hast."), gg_snd_Einar_27)
+			
 			//set thistype.m_wielandDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.wieland(), 14.00, MapData.evening, gg_rct_waypoint_wieland_2)
 			
 			// Mathilda
@@ -264,6 +270,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_einarSells.setFacing(35.83)
 			set thistype.m_einarTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.einar(), 13.00, MapData.evening, gg_rct_waypoint_einar_1) // talk to Wieland
 			call thistype.m_einarTalks.setPartner(Npcs.wieland())
+			// don't add any sounds here, the answers are already stored in m_wielandTalks!
 			//set thistype.m_einarDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.einar(), 14.00, MapData.evening, gg_rct_waypoint_einar_2) // drinks with Wieland in tavern
 
 			// Manfred

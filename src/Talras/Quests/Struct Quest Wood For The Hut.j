@@ -9,7 +9,7 @@ library StructMapQuestsQuestWoodForTheHut requires Asl
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
-			call questItem.quest().questItem(1).enable()
+			call questItem.quest().questItem(1).setState(thistype.stateNew)
 		endmethod
 
 		private static method create takes ACharacter character returns thistype

@@ -39,15 +39,15 @@ library StructMapVideosVideoReportKuno requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Ich danke euch vielmahls. Endlich kann ich wieder ruhig schlafen. Ich werde das Holz für euch aufladen."), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Ich danke euch vielmahls. Endlich kann ich wieder ruhig schlafen. Ich werde das Holz für euch aufladen."), gg_snd_Kuno38)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno38))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Hoffen wir dass der Herzog im Stande ist den Feind aufzuhalten. Noch mehr Unruhe kann ich nicht gebrauchen."), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Hoffen wir dass der Herzog im Stande ist den Feind aufzuhalten. Noch mehr Unruhe kann ich nicht gebrauchen."), gg_snd_Kuno39)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno39))) then
 				return
 			endif
 			

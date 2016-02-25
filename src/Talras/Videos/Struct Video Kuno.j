@@ -33,9 +33,9 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Was ist?"), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Was ist?"), gg_snd_Kuno30)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno30))) then
 				return
 			endif
 			
@@ -45,9 +45,9 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Also hat der Krieg schon begonnen? Bei den Göttern das wird kein gutes Ende haben. Aber wieso sollte ich den Herzog dabei unterstützen? Was habe ich davon?"), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Also hat der Krieg schon begonnen? Bei den Göttern das wird kein gutes Ende haben. Aber wieso sollte ich den Herzog dabei unterstützen? Was habe ich davon?"), gg_snd_Kuno31)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno31))) then
 				return
 			endif
 			
@@ -57,9 +57,9 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Schon gut schon gut, ich darf mich doch wenigstens noch aufregen über diesen Herzog. Aber eines sage ich dir, einfach so bekommt er mein Holz nicht."), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Schon gut schon gut, ich darf mich doch wenigstens noch aufregen über diesen Herzog. Aber eines sage ich dir, einfach so bekommt er mein Holz nicht."), gg_snd_Kuno32)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno32))) then
 				return
 			endif
 			
@@ -69,21 +69,21 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Pass auf, dieser Wald hier ist das Grauen geworden. Kein Ort an dem ein Kind aufwachsen sollte und schon gar nicht meine Tochter."), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Pass auf, dieser Wald hier ist das Grauen geworden. Kein Ort an dem ein Kind aufwachsen sollte und schon gar nicht meine Tochter."), gg_snd_Kuno33)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno33))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Im Süden leben bärenstarke Riesen und im Norden ..."), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Im Süden leben bärenstarke Riesen und im Norden ..."), gg_snd_Kuno34)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno34))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Im Norden habe ich grausame Hexen gesehen. Sie werden meine Tochter entführen oder verhexen wenn ich gerade nicht aufpasse. Das könnte ich nicht ertragen."), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Im Norden habe ich grausame Hexen gesehen. Sie werden meine Tochter entführen oder verhexen wenn ich gerade nicht aufpasse. Das könnte ich nicht ertragen."), gg_snd_Kuno35)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno35))) then
 				return
 			endif
 			
@@ -93,15 +93,15 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Genau. Tötet sie alle! Diese verlorenen Seelen haben ihr Recht auf ein Leben verwirkt, indem sie in meinem Wald Unfrieden stifteten. Danach kannst du das Holz haben."), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Genau. Tötet sie alle! Diese verlorenen Seelen haben ihr Recht auf ein Leben verwirkt, indem sie in meinem Wald Unfrieden stifteten. Danach kannst du das Holz haben."), gg_snd_Kuno36)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno36))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Allerdings musst du es alleine wegbringen."), null)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Allerdings musst du es alleine wegbringen."), gg_snd_Kuno37)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno37))) then
 				return
 			endif
 			
