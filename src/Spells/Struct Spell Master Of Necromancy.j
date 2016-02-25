@@ -27,7 +27,7 @@ library StructSpellsSpellMasterOfNecromancy requires Asl, StructGameClasses, Str
 	
 		private static method triggerConditionSummon takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
-			return GetTriggerUnit() == this.character().unit() and GetSummoningUnit() == this.character().unit() and IsUnitType(GetSummonedUnit(), UNIT_TYPE_UNDEAD) and GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) > 0
+			return GetOwningPlayer(GetSummoningUnit()) == this.character().player() and IsUnitType(GetSummonedUnit(), UNIT_TYPE_UNDEAD) and GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) > 0 // TODO does not work if the spell is not in favorites?
 		endmethod
 		
 		private static method triggerActionSummon takes nothing returns nothing

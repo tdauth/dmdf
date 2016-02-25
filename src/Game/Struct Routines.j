@@ -244,16 +244,6 @@ library StructGameRoutines requires Asl
 					set speaking = period.unit()
 					set whichSound = period.sound(index)
 					
-					set i = 0
-					loop
-						exitwhen (i == MapData.maxPlayers)
-						// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
-						if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and Player(i) == GetLocalPlayer()) then
-							call PlaySoundOnUnitBJ(whichSound, 100.0, speaking)
-						endif
-						set i = i + 1
-					endloop
-				
 					set whichTextTag = CreateTextTag()
 					call SetTextTagTextBJ(whichTextTag, period.text(index), 10.0)
 					call SetTextTagPosUnit(whichTextTag, speaking,  0.0)
@@ -261,17 +251,17 @@ library StructGameRoutines requires Asl
 					call SetTextTagVisibility(whichTextTag, false)
 					call SetTextTagPermanent(whichTextTag, true)
 					
-					/*
-					* Only show the text tag if the unit is not masked. Otherwise it will appear at a masked unit.
-					*/
 					set i = 0
 					loop
 						exitwhen (i == MapData.maxPlayers)
-						if (ACharacter.playerCharacter(Player(i)) != 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i))) then
+						// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
+						if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and Player(i) == GetLocalPlayer()) then
+							call PlaySoundOnUnitBJ(whichSound, 100.0, speaking)
 							call ShowTextTagForPlayer(Player(i), whichTextTag, true)
 						endif
 						set i = i + 1
 					endloop
+
 					
 					call thistype.m_textTags.pushBack(whichTextTag)
 
@@ -292,6 +282,13 @@ library StructGameRoutines requires Asl
 					if (period.answerSoundsCount() > index and not IsUnitPaused(period.partner())) then
 						set speaking = period.partner()
 						set whichSound = period.answerSound(index)
+						
+						set whichTextTag = CreateTextTag()
+						call SetTextTagTextBJ(whichTextTag, period.answerText(index), 10.0)
+						call SetTextTagPosUnit(whichTextTag, speaking,  0.0)
+						call SetTextTagColor(whichTextTag, 255, 255, 255, 0)
+						call SetTextTagVisibility(whichTextTag, false)
+						call SetTextTagPermanent(whichTextTag, true)
 					
 						set i = 0
 						loop
@@ -299,24 +296,6 @@ library StructGameRoutines requires Asl
 							// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
 							if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and Player(i) == GetLocalPlayer()) then
 								call PlaySoundOnUnitBJ(whichSound, 100.0, speaking)
-							endif
-							set i = i + 1
-						endloop
-					
-						set whichTextTag = CreateTextTag()
-						call SetTextTagTextBJ(whichTextTag, period.answerText(index), 10.0)
-						call SetTextTagPosUnit(whichTextTag, speaking,  0.0)
-						call SetTextTagColor(whichTextTag, 255, 255, 255, 0)
-						call SetTextTagVisibility(whichTextTag, false)
-						call SetTextTagPermanent(whichTextTag, true)
-						
-						/*
-						* Only show the text tag if the unit is not masked. Otherwise it will appear at a masked unit.
-						*/
-						set i = 0
-						loop
-							exitwhen (i == MapData.maxPlayers)
-							if (ACharacter.playerCharacter(Player(i)) != 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i))) then
 								call ShowTextTagForPlayer(Player(i), whichTextTag, true)
 							endif
 							set i = i + 1

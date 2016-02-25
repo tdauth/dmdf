@@ -3,7 +3,7 @@ library StructSpellsSpellLeprechaun requires Asl, StructGameClasses, StructGameS
 
 	private struct Buff
 		public static constant real periodicTimeout = 0.01
-		public static constant real rainBowDistance = 550.0
+		public static constant real rainBowDistance = 600.0
 		public static constant integer gold = 250
 		private SpellLeprechaun m_spell
 		private real m_startX
@@ -60,7 +60,7 @@ library StructSpellsSpellLeprechaun requires Asl, StructGameClasses, StructGameS
 			call TriggerSleepAction(2.0)
 			
 			call IssuePointOrder(this.m_unit, "move", GetPolarProjectionX(this.m_startX, this.m_startFace, thistype.rainBowDistance), GetPolarProjectionY(this.m_startY, this.m_startFace, thistype.rainBowDistance))
-			call TimerStart(this.m_timer, 5.0, false, function thistype.timerFunction)
+			call TimerStart(this.m_timer, 6.0, false, function thistype.timerFunction)
 		endmethod
 		
 		public static method create takes SpellLeprechaun spell, real x, real y, real face returns thistype
@@ -87,6 +87,7 @@ library StructSpellsSpellLeprechaun requires Asl, StructGameClasses, StructGameS
 			set this.m_unit = CreateUnit(spell.character().player(), 'h02S', x, y, this.m_startFace)
 			call SetUnitPathing(this.m_unit, false)
 			call SetUnitInvulnerable(this.m_unit, true)
+			call SetUnitPathing(this.m_unit, false)
 			call MakeUnitSelectable(this.m_unit, false)
 			
 			set this.m_timer = CreateTimer()

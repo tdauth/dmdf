@@ -835,7 +835,7 @@ Aufgehoben für Version 0.7:
 * Brücke und Schiff verschwinden: http://www.wc3c.net/showthread.php?t=90920
 * Charakter stirbt an Pfeilhagel selbst aber nur wenn auf Gegner angewandt, Gegner sind im Zielgebiet (mit Stufe 5 der Fähigkeit). Mit Ziel "Nicht-selbst" verwundet er Verbündete.
 * Tastenkürzel für alle Klassenzauber.
-* Restliche Klassenzauber: Nekromant (1 Zauber), Ritter (1 Zauber), Waldläufer (2 Zauber - Ultis)
+* Restliche Klassenzauber: Nekromant (1 Zauber), Ritter (1 Zauber), Waldläufer (1 Zauber - letzte Ulti)
 * Standfestigkeit auf Gebiet mit Gruppenheilung, sonst zu schlecht.
 * Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
 * Musik aus Klassenauswahl nach Video beenden!
@@ -853,6 +853,16 @@ Aufgehoben für Version 0.7:
 * FIXED: Magische Schockwellen: Terraindeformation fehlt, Sound fehlt.
 * Elementarwesen: Icon, pro Wesen eine Fähigkeit.
 * Quest Metzelei: Reihenfolge bis zur Höhle egal!
+* Für die Karte Talras das Menschen-Interface verwenden. Macht mehr Sinn, da man für die Menschen spielt und nicht für die Dämonen.
+* Haupt-Menü: Die Eisketten von Frozen Throne durch die Menügrafiken aus Reign of Chaos oder durch menschenähnlicheres ersetzen.
+* Gardonar: Hier Dämonen-Interface verwenden.
+* Talras: Ladehintergrund mit Ritter verwenden, irgendetwas das auf Menschen hindeutet.
+* Waldläufer: Weil sich die Pfeileffekte gegenseitig ausschließen anstatt Multishot eine temporäre Verwandlung zulassen, bei der für eine gewisse Zeit alle anderen Pfeilfähigkeiten deaktiviert und dafür Multishot aktiviert wird.
+* Idee um Warcraft III-Dialoge in Gesprächen zu vermeiden, da diese den Chat blockieren. Außerdem kann man mit der Spielkamera nicht herumfahren oder irgendwelche Buttons drücken:
+* NPC wird nicht pausiert (PauseUnit()) damit auch andere Spieler weiterhin "Person ansprechen" auswählen können.
+* Da die Spieler den NPC sowieso angeklickt haben, kann er auch weitere Buttons enthalten: Auswahl 1, Auswahl 2, Auswahl 3 usw.
+* Jeder dieser Buttons steht für einen Satz, der normalerweise als Button im Dialog erscheinen würde.
+* Die Sätze werden jedoch als Texttags über dem NPC aufgelistet.
 
 Abgeschlossene Punkte:
 * DONE: Fähre entfernen. Man muss direkt übersetzen können. Besser noch ein kleiner Durchgang neben dem Fels mit den Ogern. Vermutlich aber nicht möglich, daher einfach über Gebiet übersetzen erlauben.
