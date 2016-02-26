@@ -21,7 +21,7 @@ library StructSpellsSpellLeprechaun requires Asl, StructGameClasses, StructGameS
 			//Abilities\Spells\Items\ResourceItems\ResourceEffectTarget.mdl
 			// start gold effect
 			call IssueImmediateOrder(this.m_unit, "stop")
-			call SetUnitAnimationByIndex(this.m_unit, 8) // greet
+			call SetUnitAnimationByIndex(this.m_unit, 6) // greet
 			call TriggerSleepAction(2.0)
 			set whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Transmute\\PileofGold.mdl", this.m_unit, "overhead")
 			set i = 0

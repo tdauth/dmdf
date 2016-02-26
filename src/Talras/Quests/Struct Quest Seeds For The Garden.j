@@ -13,7 +13,8 @@ library StructMapQuestsQuestSeedsForTheGarden requires Asl, StructGameCharacter,
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNDust.blp")
 			call this.setDescription(tre("Trommon möchte etwas Neues in seinem Garten anpflanzen. Da er sich selbst nicht besonders gut auskennt, braucht er Ursulas Hilfe. Besorge Trommon für seinen Garten ein paar Samen von Ursula.", "Trommon wants to plant something new in his garden. Since he knows not much himself he needs the help of Ursula. Obtain Trommon a few seeds for his garden from Ursula."))
-			call this.setReward(AAbstractQuest.rewardExperience, 200)
+			call this.setReward(thistype.rewardExperience, 200)
+			call this.setReward(thistype.rewardGold, 200)
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Besorge ein paar Samen von Ursula.", "Get a few seeds from Ursula."))
 			call questItem.setPing(true)
