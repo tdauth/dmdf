@@ -132,11 +132,26 @@
 //! import "Spells/Struct Spell Wrath Of The Forest.j"
 //! import "Spells/Struct Spell Worlds Portal.j"
 //! import "Spells/Struct Spell Zoology.j"
+// spells from talras which are global now
+//! import "Spells/Struct Spell Amulet Of Foresight.j"
+//! import "Spells/Struct Spell Book Of Magic.j"
+//! import "Spells/Struct Spell Book Of Potions.j"
+//! import "Spells/Struct Spell Book Of Smith Craft.j"
+//! import "Spells/Struct Spell Neck Stone.j"
+//! import "Spells/Struct Spell Ride Sheep.j"
+//! import "Spells/Struct Spell Scroll Of Ancestors.j"
+//! import "Spells/Struct Spell Scroll Of Collector.j"
+//! import "Spells/Struct Spell Scroll Of The Realm Of The Dead.j"
+//! import "Spells/Struct Spell Unearth.j"
+//! import "Spells/Struct Spell Wings Of Deranors Guard.j"
 
-library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement, StructSpellsSpellAbsorbation, StructSpellsSpellAdduction, StructSpellsSpellAgility, StructSpellsSpellAlpha, StructSpellsSpellAncestorPact, StructSpellsSpellAnEyeForAnEye, StructSpellsSpellArcaneBinding, StructSpellsSpellArcaneHunger, StructSpellsSpellArcaneProtection, StructSpellsSpellArcaneRuse, StructSpellsSpellArcaneTime, StructSpellsSpellAstralSource,  StructSpellsSpellBan, StructSpellsSpellAuraOfAuthority, StructSpellsSpellAuraOfIronSkin, StructSpellsSpellAuraOfRedemption, StructSpellsSpellAwakeningOfTheForest, StructSpellsSpellBearForm, StructSpellsSpellBeastHunter, StructSpellsSpellBlaze, StructSpellsSpellBlessing, StructSpellsSpellBlind, StructSpellsSpellBlock, StructSpellsSpellBurningArrows, StructSpellsSpellCatRune, StructSpellsSpellClarity, StructSpellsSpellColossus, StructSpellsSpellConcentration, StructSpellsSpellConquest, StructSpellsSpellConsume, StructSpellsSpellControlledTimeFlow, StructSpellsSpellConversion, StructSpellsSpellCowNova, StructSpellsSpellCrowForm, StructSpellsSpellCurb, StructSpellsSpellDamnedGround, StructSpellsSpellDarkServant, StructSpellsSpellDarkSpell, StructSpellsSpellDaunt, StructSpellsSpellDeathHerald, StructSpellsSpellDefend, StructSpellsSpellDemonServant, StructSpellsSpellDryadSource, StructSpellsSpellEagleEye, StructSpellsSpellElementalCreatures, StructSpellsSpellEarthPrison, StructSpellsSpellElementalCreatures, StructSpellsSpellElementalForce, StructSpellsSpellElementalMageDamageSpell, StructSpellsSpellEmblaze, StructSpellsSpellEpidemic, StructSpellsSpellExorcizeEvil, StructSpellsSpellFeedBack, StructSpellsSpellFireMissile, StructSpellsSpellForestCastle, StructSpellsSpellForestFaeriesSpell, StructSpellsSpellForestWoodFists, StructSpellsSpellFreeze, StructSpellsSpellFrozenArrows, StructSpellsSpellFuriousBloodthirstiness, StructSpellsSpellGlisteningLight, StructSpellsSpellGodsFavor, StructSpellsSpellGrove, StructSpellsSpellHailOfArrows, StructSpellsSpellHolyPower, StructSpellsSpellHolyWill, StructSpellsSpellIceAge, StructSpellsSpellIceMissile, StructSpellsSpellImpendingDisaster, StructSpellsSpellInferno, StructSpellsSpellJumpAttackDragonSlayer, StructSpellsSpellJumpAttack, StructSpellsSpellKennels, StructSpellsSpellLeprechaun, StructSpellsSpellLieInWait, StructSpellsSpellLightning, StructSpellsSpellLivingWill, StructSpellsSpellMaertyrer, StructSpellsSpellMagicalShockWaves, StructSpellsSpellManaExplosion, StructSpellsSpellManaShield, StructSpellsSpellManaStream, StructSpellsSpellMastery, StructSpellsSpellMasterOfNecromancy, StructSpellsSpellMercilessness, StructSpellsSpellMetamorphosis, StructSpellsSpellMultiply, StructSpellsSpellMultiShot, StructSpellsSpellNecromancy, StructSpellsSpellParasite, StructSpellsSpellPlague, StructSpellsSpellPoisonedArrows, StructSpellsSpellPreventIll, StructSpellsSpellProtect, StructSpellsSpellPureEnergy, StructSpellsSpellQuiver, StructSpellsSpellRageOfElements, StructSpellsSpellRage, StructSpellsSpellRaid, StructSpellsSpellRecovery, StructSpellsSpellRelief, StructSpellsSpellRepulsion, StructSpellsSpellReserves, StructSpellsSpellResolution, StructSpellsSpellRob, StructSpellsSpellRush, StructSpellsSpellRevive, StructSpellsSpellRigidity, StructSpellsSpellSelectDestination, StructSpellsSpellSelflessness, StructSpellsSpellShooter, StructSpellsSpellShotIntoHeart, StructSpellsSpellSlash, StructSpellsSpellSoulThievery, StructSpellsSpellSprint, StructSpellsSpellStab, StructSpellsSpellSupremacy, StructSpellsSpellTaunt, StructSpellsSpellTeleportation, StructSpellsSpellTendrils, StructSpellsSpellThrillOfVictory, StructSpellsSpellTorment, StructSpellsSpellTransfer, StructSpellsSpellTrap, StructSpellsSpellTreefolk, StructSpellsSpellUndermine, StructSpellsSpellViolentDeath, StructSpellsSpellWeakPoint, StructSpellsSpellWrathOfTheForest, StructSpellsSpellWorldsPortal, StructSpellsSpellZoology
+library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement, StructSpellsSpellAbsorbation, StructSpellsSpellAdduction, StructSpellsSpellAgility, StructSpellsSpellAlpha, StructSpellsSpellAncestorPact, StructSpellsSpellAnEyeForAnEye, StructSpellsSpellArcaneBinding, StructSpellsSpellArcaneHunger, StructSpellsSpellArcaneProtection, StructSpellsSpellArcaneRuse, StructSpellsSpellArcaneTime, StructSpellsSpellAstralSource,  StructSpellsSpellBan, StructSpellsSpellAuraOfAuthority, StructSpellsSpellAuraOfIronSkin, StructSpellsSpellAuraOfRedemption, StructSpellsSpellAwakeningOfTheForest, StructSpellsSpellBearForm, StructSpellsSpellBeastHunter, StructSpellsSpellBlaze, StructSpellsSpellBlessing, StructSpellsSpellBlind, StructSpellsSpellBlock, StructSpellsSpellBurningArrows, StructSpellsSpellCatRune, StructSpellsSpellClarity, StructSpellsSpellColossus, StructSpellsSpellConcentration, StructSpellsSpellConquest, StructSpellsSpellConsume, StructSpellsSpellControlledTimeFlow, StructSpellsSpellConversion, StructSpellsSpellCowNova, StructSpellsSpellCrowForm, StructSpellsSpellCurb, StructSpellsSpellDamnedGround, StructSpellsSpellDarkServant, StructSpellsSpellDarkSpell, StructSpellsSpellDaunt, StructSpellsSpellDeathHerald, StructSpellsSpellDefend, StructSpellsSpellDemonServant, StructSpellsSpellDryadSource, StructSpellsSpellEagleEye, StructSpellsSpellElementalCreatures, StructSpellsSpellEarthPrison, StructSpellsSpellElementalCreatures, StructSpellsSpellElementalForce, StructSpellsSpellElementalMageDamageSpell, StructSpellsSpellEmblaze, StructSpellsSpellEpidemic, StructSpellsSpellExorcizeEvil, StructSpellsSpellFeedBack, StructSpellsSpellFireMissile, StructSpellsSpellForestCastle, StructSpellsSpellForestFaeriesSpell, StructSpellsSpellForestWoodFists, StructSpellsSpellFreeze, StructSpellsSpellFrozenArrows, StructSpellsSpellFuriousBloodthirstiness, StructSpellsSpellGlisteningLight, StructSpellsSpellGodsFavor, StructSpellsSpellGrove, StructSpellsSpellHailOfArrows, StructSpellsSpellHolyPower, StructSpellsSpellHolyWill, StructSpellsSpellIceAge, StructSpellsSpellIceMissile, StructSpellsSpellImpendingDisaster, StructSpellsSpellInferno, StructSpellsSpellJumpAttackDragonSlayer, StructSpellsSpellJumpAttack, StructSpellsSpellKennels, StructSpellsSpellLeprechaun, StructSpellsSpellLieInWait, StructSpellsSpellLightning, StructSpellsSpellLivingWill, StructSpellsSpellMaertyrer, StructSpellsSpellMagicalShockWaves, StructSpellsSpellManaExplosion, StructSpellsSpellManaShield, StructSpellsSpellManaStream, StructSpellsSpellMastery, StructSpellsSpellMasterOfNecromancy, StructSpellsSpellMercilessness, StructSpellsSpellMetamorphosis, StructSpellsSpellMultiply, StructSpellsSpellMultiShot, StructSpellsSpellNecromancy, StructSpellsSpellParasite, StructSpellsSpellPlague, StructSpellsSpellPoisonedArrows, StructSpellsSpellPreventIll, StructSpellsSpellProtect, StructSpellsSpellPureEnergy, StructSpellsSpellQuiver, StructSpellsSpellRageOfElements, StructSpellsSpellRage, StructSpellsSpellRaid, StructSpellsSpellRecovery, StructSpellsSpellRelief, StructSpellsSpellRepulsion, StructSpellsSpellReserves, StructSpellsSpellResolution, StructSpellsSpellRob, StructSpellsSpellRush, StructSpellsSpellRevive, StructSpellsSpellRigidity, StructSpellsSpellSelectDestination, StructSpellsSpellSelflessness, StructSpellsSpellShooter, StructSpellsSpellShotIntoHeart, StructSpellsSpellSlash, StructSpellsSpellSoulThievery, StructSpellsSpellSprint, StructSpellsSpellStab, StructSpellsSpellSupremacy, StructSpellsSpellTaunt, StructSpellsSpellTeleportation, StructSpellsSpellTendrils, StructSpellsSpellThrillOfVictory, StructSpellsSpellTorment, StructSpellsSpellTransfer, StructSpellsSpellTrap, StructSpellsSpellTreefolk, StructSpellsSpellUndermine, StructSpellsSpellViolentDeath, StructSpellsSpellWeakPoint, StructSpellsSpellWrathOfTheForest, StructSpellsSpellWorldsPortal, StructSpellsSpellZoology, StructSpellsSpellAmuletOfForesight, StructSpellsSpellBookOfMagic, StructSpellsSpellBookOfPotions, StructSpellsSpellBookOfSmithCraft, StructSpellsSpellNeckStone, StructSpellsSpellRideSheep, StructSpellsSpellScrollOfAncestors, StructSpellsSpellScrollOfCollector, StructSpellsSpellScrollOfTheRealmOfTheDead, StructSpellsSpellUnearth, StructSpellsSpellWingsOfDeranorsGuard
 
 	/// Init non-character spells!
 	function initSpells takes nothing returns nothing
+		// add all ditch spider-like unit type ids and all dich spider-like units here
+		call SpellUnearth.init()
+		call SpellUnearth.addUnitTypeId('n01E')
 		call SpellCatRune.init()
 		call SpellJumpAttack.init()
 		call SpellSelectDestination.init()
@@ -145,6 +160,86 @@ library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement,
 	
 	function initCharacterSpells takes Character character returns nothing
 		call SpellCowNova.create(character)
+		
+		call SpellAmuletOfForesight.create(character)
+		/// \todo Filter class for Baldars ring
+		// Baldar's and Haldar's rings
+		if (character.class() == Classes.dragonSlayer()) then
+			// ride a sheep
+			call SpellRideSheep.create(character, 'A15R', 'A15S', 'A15T')
+			// neck stone
+			call SpellNeckStone.create(character, 'A1AH', 'A1AM', 'A1AT')
+			// wings of deranors guard
+			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1EN', 'A1EV')
+		elseif (character.class() == Classes.druid()) then
+			// ride a sheep
+			call SpellRideSheep.create(character, 'A15R', 'A16Z', 'A176')
+			// neck stone
+			call SpellNeckStone.create(character, 'A1AH', 'A1AL', 'A1AS')
+			// wings of deranors guard
+			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1EU', 'A1F2')
+		elseif (character.class() == Classes.elementalMage()) then
+			// ride a sheep
+			call SpellRideSheep.create(character, 'A15R', 'A172', 'A179')
+			// neck stone
+			call SpellNeckStone.create(character, 'A1AH', 'A1AP', 'A1AW')
+			// wings of deranors guard
+			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1EQ', 'A1EY')
+		elseif (character.class() == Classes.cleric()) then
+			// ride a sheep
+			call SpellRideSheep.create(character, 'A15R', 'A16X', 'A174')
+			// neck stone
+			call SpellNeckStone.create(character, 'A1AH', 'A1AI', 'A1AJ')
+			// wings of deranors guard
+			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1ES', 'A1F0')
+		elseif (character.class() == Classes.necromancer()) then
+			// ride a sheep
+			call SpellRideSheep.create(character, 'A15R', 'A16Y', 'A175')
+			// neck stone
+			call SpellNeckStone.create(character, 'A1AH', 'A1AK', 'A1AR')
+			// wings of deranors guard
+			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1ET', 'A1F1')
+		elseif (character.class() == Classes.knight()) then
+			// ride a sheep
+			call SpellRideSheep.create(character, 'A15R', 'A170', 'A177')
+			// neck stone
+			call SpellNeckStone.create(character, 'A1AH', 'A1AN', 'A1AU')
+			// wings of deranors guard
+			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1EO', 'A1EW')
+		elseif (character.class() == Classes.ranger()) then
+			// ride a sheep
+			call SpellRideSheep.create(character, 'A15R', 'A171', 'A178')
+			// neck stone
+			call SpellNeckStone.create(character, 'A1AH', 'A1AO', 'A1AV')
+			// wings of deranors guard
+			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1EP', 'A1EX')
+		elseif (character.class() == Classes.wizard()) then
+			// ride a sheep
+			call SpellRideSheep.create(character, 'A15R', 'A173', 'A17A')
+			// neck stone
+			call SpellNeckStone.create(character, 'A1AH', 'A1AQ', 'A1AX')
+			// wings of deranors guard
+			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1ER', 'A1EZ')
+		endif
+
+		call SpellBookOfMagicScrollOfHex.create(character)
+		call SpellBookOfMagicScrollOfNecromancy.create(character)
+		call SpellBookOfMagicScrollOfHealing.create(character)
+		call SpellBookOfMagicScrollOfMana.create(character)
+		call SpellBookOfMagicScrollOfAncestors.create(character)
+		call SpellBookOfMagicScrollOfCollector.create(character)
+		call SpellBookOfMagicScrollOfWay.create(character)
+		call SpellBookOfPotionsHealPotion.create(character)
+		call SpellBookOfPotionsManaPotion.create(character)
+		call SpellBookOfPotionsPoison.create(character)
+		call SpellBookOfPotionsBigHealPotion.create(character)
+		call SpellBookOfPotionsBigManaPotion.create(character)
+		call SpellBookOfSmithCraftIron.create(character)
+		call SpellBookOfSmithCraftShortSword.create(character)
+		call SpellBookOfSmithCraftLongSword.create(character)
+		call SpellScrollOfAncestors.create(character)
+		call SpellScrollOfCollector.create(character)
+		call SpellScrollOfTheRealmOfTheDead.create(character)
 	endfunction
 
 endlibrary

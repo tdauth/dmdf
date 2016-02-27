@@ -113,7 +113,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						endif
 						
 						/*
-						 * These two lines of code do the passive transformation to a range fighting unit.
+						 * These two lines of code do the passive transformation to another unit type.
 						 */
 						call UnitAddAbility(this.character().unit(), this.morphAbilityId())
 						call UnitRemoveAbility(this.character().unit(), this.morphAbilityId())

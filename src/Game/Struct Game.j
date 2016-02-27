@@ -697,6 +697,20 @@ endif
 			call ACharactersScheme.setManaBarValueIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
 			call ACharactersScheme.setManaBarEmptyIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
 		endmethod
+		
+		public static method resetCameraBounds takes nothing returns nothing
+			local player user
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				set user = Player(i)
+				if (IsPlayerPlayingUser(user)) then
+					call Dungeon.resetCameraBoundsForPlayer.evaluate(user)
+				endif
+				set user = null
+				set i = i + 1
+			endloop
+		endmethod
 
 		/**
 		* This method usually is called after all players selected their character class.
@@ -737,6 +751,8 @@ endif
 
 			call Character.addSkillGrimoirePointsToAll(MapData.startSkillPoints)
 			
+			// apply initial camera bounds
+			call thistype.resetCameraBounds()
 			call CameraHeight.start()
 
 			// debug mode allows you to use various cheats
@@ -787,20 +803,6 @@ endif
 				if (Character.playerCharacter(Player(i)) != 0) then
 					call thistype.setAlliedPlayerAlliedToPlayer(Player(i))
 				endif
-				set i = i + 1
-			endloop
-		endmethod
-
-		public static method resetCameraBounds takes nothing returns nothing
-			local player user
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				set user = Player(i)
-				if (IsPlayerPlayingUser(user)) then
-					call MapData.resetCameraBoundsForPlayer.evaluate(user)
-				endif
-				set user = null
 				set i = i + 1
 			endloop
 		endmethod

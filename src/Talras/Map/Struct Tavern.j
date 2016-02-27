@@ -1,4 +1,4 @@
-library StructMapMapTavern requires Asl
+library StructMapMapTavern requires Asl, StructGameCharacter, StructMapMapDungeons
 
 	/**
 	 * \brief The tavern ia a specific building at the castle which can be entered via a portal and requires a custom camera view.
@@ -25,11 +25,12 @@ library StructMapMapTavern requires Asl
 
 		private static method triggerActionEnter takes nothing returns nothing
 			local unit triggerUnit = GetTriggerUnit()
-			local ACharacter character = ACharacter.getCharacterByUnit(triggerUnit)
+			local Character character = Character.getCharacterByUnit(triggerUnit)
 			local player user = character.player()
-			call MapData.setCameraBoundsToTavernForPlayer.evaluate(user)
+			call Dungeons.tavern().setCameraBoundsForPlayer(user)
 			call character.panCameraSmart()
 			if (not character.view().isEnabled()) then
+				call character.setCameraTimer(false)
 				call CameraSetupApplyForPlayer(true, gg_cam_tavern, user, 0.0)
 			endif
 			call character.displayMessage(ACharacter.messageTypeInfo, tre("Sie haben das Wirtshaus betreten.", "You have entered the tavern."))
@@ -45,12 +46,9 @@ library StructMapMapTavern requires Asl
 		endmethod
 
 		private static method triggerActionLeave takes nothing returns nothing
-			local ACharacter character = ACharacter.getCharacterByUnit(GetTriggerUnit())
-			if (not character.view().isEnabled()) then
-				call ResetToGameCameraForPlayer(character.player(), 0.0)
-				call character.panCameraSmart()
-			endif
-			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(character.player())
+			local Character character = Character.getCharacterByUnit(GetTriggerUnit())
+			call Dungeon.resetCameraBoundsForPlayer(character.player())
+			call character.setCameraTimer(true)
 			call character.displayMessage(ACharacter.messageTypeInfo, tre("Sie haben das Wirtshaus verlassen.", "You have left the tavern."))
 		endmethod
 

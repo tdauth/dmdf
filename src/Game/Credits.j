@@ -1,3 +1,8 @@
+/*
+ * Add all contributors to this file.
+ * They will be added automatically and shown in the Credits GUI.
+ */
+
 // DMdF team
 call thistype.addTitle(tre("Kern-Team", "Core Team"))
 call thistype.addContributor("Tamino Dauth (Baradé)", tre("Projektleitung, Code, Inhalt, Landschaften", "Project leadership, code, content, landscapes"))
@@ -32,7 +37,7 @@ call thistype.addContributor("Carsten Thomas", tr("Carsten"))
 call thistype.addContributor("jonasclick", tr("Lothar"))
 call thistype.addContributor("Heinrich-Stefan N.", tr("Manfred"))
 call thistype.addContributor("Marco R.", tr("Einar"))
-call thistype.addContributor("benkuly", tr("Trommon"))
+call thistype.addContributor("Benkenfilm", tr("Trommon"))
 
 // tools and systems
 call thistype.addTitle(tre("Werkzeuge und Systeme", "Tools and Systems"))

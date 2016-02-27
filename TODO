@@ -846,6 +846,7 @@ Aufgehoben für Version 0.7:
 * Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen?
 * Schatten von Talras neu berechnen.
 * Nach Repick ist Grundzauber nicht in den Favoriten.
+* Nach Repick ist ab und zu entweder ein Zauber der Klasse nicht da oder noch ein Zauber der alten Klasse stattdessen.
 * Spruchrolle des Sammlers: Keine Powerups?
 * FIXED: Tobias ist nicht unverwundbar.
 * FIXED: Fähigkeiten wie Blitzschlag, Eis- und Feuergeschoss haben keine Abklingzeit und keinen Manaverbrauch wenn sie direkt töten.
@@ -857,11 +858,13 @@ Aufgehoben für Version 0.7:
 * Haupt-Menü: Die Eisketten von Frozen Throne durch die Menügrafiken aus Reign of Chaos oder durch menschenähnlicheres ersetzen.
 * Gardonar: Hier Dämonen-Interface verwenden.
 * Talras: Ladehintergrund mit Ritter verwenden, irgendetwas das auf Menschen hindeutet.
+* FIXED: Spells from Talras: Move the following spells from the Talras folder to the Game folder. They should be usable in every map: Books of Crafting (all), Amulet of Foresight, Neckstone, Ride Sheep, all scrolls, unearth, wings of deranors guard. 
 * Waldläufer: Weil sich die Pfeileffekte gegenseitig ausschließen anstatt Multishot eine temporäre Verwandlung zulassen, bei der für eine gewisse Zeit alle anderen Pfeilfähigkeiten deaktiviert und dafür Multishot aktiviert wird.
 * Verwandlungen: Nixenstein etc., Rückverwandlungsfähigkeit erscheint nicht bei Charakter. Falls Gegenstand verkauft wird, ist Rückverwandlung unmöglich.
 * FIXED: Die Einträge für Trommon2.mp3, Trommon22.mp3, Trommon24.mp3 und Trommon25.mp3 sind kaputt. Wird nicht aufgelistet obwohl eingetragen und Datei vorhanden.
 * Check all sound files of NPCs and then delete the "old" subfolders with old versions of the sounds to reduce the MPQ size.
-* Idee um Warcraft III-Dialoge in Gesprächen zu vermeiden, da diese den Chat blockieren. Außerdem kann man mit der Spielkamera nicht herumfahren oder irgendwelche Buttons drücken:
+
+Idee um Warcraft III-Dialoge in Gesprächen zu vermeiden, da diese den Chat blockieren. Außerdem kann man mit der Spielkamera nicht herumfahren oder irgendwelche Buttons drücken:
 * NPC wird nicht pausiert (PauseUnit()) damit auch andere Spieler weiterhin "Person ansprechen" auswählen können.
 * Da die Spieler den NPC sowieso angeklickt haben, kann er auch weitere Buttons enthalten: Auswahl 1, Auswahl 2, Auswahl 3 usw.
 * Jeder dieser Buttons steht für einen Satz, der normalerweise als Button im Dialog erscheinen würde.

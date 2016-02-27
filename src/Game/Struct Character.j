@@ -2,6 +2,9 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 
 	/**
 	 * \brief Handles attack animations of the Villager255 model. Whenever the unit attacks the attack animation is replaced depending on the equipped items.
+	 *
+	 * This can be used for copies of a character unit as well as illusions.
+	 * Otherwise animations of the copy in videos and illusions from spells won't be played properly!
 	 */
 	struct OrderAnimations
 		private Character m_character

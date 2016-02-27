@@ -1,3 +1,12 @@
+/**
+ * Provides functions for internationalisation of the modification.
+ * While object strings have to be translated in the map strings file "war3map.wts" all code strings from custom vJass code (not from GUI triggers) can be translated using
+ * functions with text versions for multiple languages.
+ *
+ * The game detects the current language of a player using the function \ref GetLanguage() and returns the correct string.
+ *
+ * \note At the moment only German and English is supported.
+ */
 library LibraryGameLanguage requires Asl
 
 	/**

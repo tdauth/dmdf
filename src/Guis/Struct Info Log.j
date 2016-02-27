@@ -1,4 +1,3 @@
-/// @todo Finish this later.
 library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindow
 
 	private struct EntryText extends AText
@@ -10,7 +9,8 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 	endstruct
 
 	/**
-	* Links ist eine Liste der Infos und rechts der Inhalt der angeklickten Info.
+	 * \brief Lists all informations from all talks for a player.
+	 * If a player cannot remember what an NPC said in a talk he can look it up in this GUI.
 	*/
 	struct InfoLog extends MainWindow
 		private static constant integer entriesPerPage = 8

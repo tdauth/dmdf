@@ -1,4 +1,4 @@
-library StructGameClassSelection requires Asl, StructGameClasses, StructGameCharacter, StructGameGrimoire, Spells, StructMapMapMapData
+library StructGameClassSelection requires Asl, StructGameClasses, StructGameCharacter, StructGameDungeon, StructGameGrimoire, Spells, StructMapMapMapData
 
 	/**
 	 * Class selection allows change of class through abilities of the unit as well as displaying
@@ -15,6 +15,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		private integer m_page = 0
 		private trigger m_spellPagesTrigger
 		
+		/**
+		 * These attributes are used for storing data which has to be applied to the new character after the repick of the class.
+		 * @{
+		 */
 		private static trigger m_repickTrigger
 		private static real array m_repickX[12] // TODO MapData.maxPlayers
 		private static real array m_repickY[12] // TODO MapData.maxPlayers
@@ -26,6 +30,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		private static boolean array m_repickViewEnabled[12] // TODO MapData.maxPlayers
 		private static AIntegerVector array m_repickQuests[12] // TODO MapData.maxPlayers
 		private static AIntegerVector array m_repickFellows[12] // TODO MapData.maxPlayers
+		/**
+		 * @}
+		 */
 		private static boolean m_gameStarted = false
 		
 		/**
@@ -58,7 +65,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			
 			//call SetUserInterfaceForPlayer(character.player(), false, false)
 			//call CameraSetupApplyForPlayer(false, gg_cam_class_selection, character.player(), 0.0)
-			call MapData.setCameraBoundsToPlayableAreaForPlayer(character.player())
+			call ResetCameraBoundsToMapRectForPlayer(character.player())
 			call character.panCamera()
 			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, Format(tre("%s hat die Klasse \"%s\" gewählt.", "%s has choosen the class \"%s\".")).s(character.name()).s(GetUnitName(character.unit())).result(), character.player())
 			
@@ -373,7 +380,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call Character(ACharacter.playerCharacter(whichPlayer)).setCameraDistance(thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)])
 				call Character(ACharacter.playerCharacter(whichPlayer)).setView(thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)])
 				
-				call MapData.resetCameraBoundsForPlayer.evaluate(whichPlayer)
+				call Dungeon.resetCameraBoundsForPlayer(whichPlayer)
 				call ACharacter.playerCharacter(whichPlayer).panCameraSmart()
 				call ACharacter.playerCharacter(whichPlayer).select(false)
 				call Character(ACharacter.playerCharacter(whichPlayer)).setCameraTimer(true)

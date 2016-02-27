@@ -1,4 +1,4 @@
-library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindow, StructMapMapMapData
+library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindow
 
 	private struct Style extends AStyle
 		private static Style m_style
@@ -66,12 +66,16 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 	 * All contributors have to be added in the file "src/Game/Credits.j" which is imported and adds all contributors to a global list.
 	 */
 	struct Credits extends MainWindow
+		public static constant real viewTimeout = 0.01
+		public static constant real defaultVelocity = 0.040
 		// static members
 		private static AIntegerVector m_contributors
 		// members
 		private integer m_currentContributor
 		private timer m_viewTimer
 		private timer m_autoChangeTimer
+		private ATextTagVector m_textTags
+		private real m_velocity
 		
 		public static method addTitle takes string name returns nothing
 			call thistype.m_contributors.pushBack(Contributor.create(true, name, ""))
@@ -115,25 +119,39 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			return CameraSetupGetDestPositionY(gg_cam_class_selection)
 		endmethod
 		
-		private static method showMovingTextTag takes string text, real size, integer red, integer green, integer blue, integer alpha, player whichPlayer returns nothing
+		private static method showMovingTextTag takes string text, real size, integer red, integer green, integer blue, integer alpha, real velocity, player whichPlayer returns texttag
 			local texttag textTag = CreateTextTag()
 			call SetTextTagText(textTag, text, 0.023)
 			call SetTextTagPos(textTag, GetRectCenterX(gg_rct_main_window_credits), GetRectCenterY(gg_rct_main_window_credits), CameraSetupGetField(gg_cam_class_selection, CAMERA_FIELD_ZOFFSET))
 			call SetTextTagColor(textTag, red, green, blue, alpha)
 			call SetTextTagVisibility(textTag, false)
-			call SetTextTagVelocity(textTag, 0.0, 0.040)
+			call SetTextTagVelocity(textTag, 0.0, velocity)
 			call ShowTextTagForPlayer(whichPlayer, textTag, true)
-			set textTag = null
+			return textTag
 		endmethod
 
-		private method onPressShortcutActionRight takes nothing returns nothing
-			debug call Print("Right shortcut")
-			call this.showNextContributor.evaluate()
+		private method onPressShortcutIncreaseSpeed takes nothing returns nothing
+			local integer i
+			debug call Print("Up shortcut")
+			set this.m_velocity = RMinBJ(this.m_velocity + thistype.defaultVelocity, 1.0)
+			set i = 0
+			loop
+				exitwhen (i == this.m_textTags.size())
+				call SetTextTagVelocity(this.m_textTags[i], 0.0, this.m_velocity)
+				set i = i + 1
+			endloop
 		endmethod
 
-		private method onPressShortcutActionLeft takes nothing returns nothing
-			debug call Print("Left shortcut")
-			call this.showPreviousContributor.evaluate()
+		private method onPressShortcutDecreaseSpeed takes nothing returns nothing
+			local integer i
+			debug call Print("Down shortcut")
+			set this.m_velocity = RMaxBJ(this.m_velocity - thistype.defaultVelocity, 0.0)
+			set i = 0
+			loop
+				exitwhen (i == this.m_textTags.size())
+				call SetTextTagVelocity(this.m_textTags[i], 0.0, this.m_velocity)
+				set i = i + 1
+			endloop
 		endmethod
 		
 		private static method timerFunctionAutoChange takes nothing returns nothing
@@ -146,19 +164,19 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		private static method timerFunctionView takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
 			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, "this")
-			call CameraSetupApplyForPlayer(true, gg_cam_class_selection, this.gui().player(), 0.0)
+			call CameraSetupApplyForPlayer(true, gg_cam_class_selection, this.gui().player(), thistype.viewTimeout)
 			set expiredTimer = null
 		endmethod
 
 		public stub method onShow takes nothing returns nothing
 			local player whichPlayer = this.gui().player()
 			call super.onShow()
-			call this.gui().setOnPressShortcutAction(AGui.shortcutArrowRightDown, thistype.onPressShortcutActionRight, this)
-			call this.gui().setOnPressShortcutAction(AGui.shortcutArrowLeftDown, thistype.onPressShortcutActionLeft, this)
+			// these two shortcuts allow changing the speed of the credits which can be useful if the user wants to skip some of them
+			call this.gui().setOnPressShortcutAction(AGui.shortcutArrowUpDown, thistype.onPressShortcutIncreaseSpeed, this)
+			call this.gui().setOnPressShortcutAction(AGui.shortcutArrowDownDown, thistype.onPressShortcutDecreaseSpeed, this)
 			set this.m_currentContributor = 0 // restart with first
 			call this.showContributor.evaluate(this.m_currentContributor)
-			call MapData.setCameraBoundsToMapForPlayer(whichPlayer)
-			call TimerStart(this.m_viewTimer, 0.01, true, function thistype.timerFunctionView)
+			call TimerStart(this.m_viewTimer, thistype.viewTimeout, true, function thistype.timerFunctionView)
 			call TimerStart(this.m_autoChangeTimer, 4.0, false, function thistype.timerFunctionAutoChange)
 			call Game.setMapMusicForPlayer(whichPlayer, "Music\\Credits.mp3")
 			set whichPlayer = null
@@ -168,6 +186,9 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			local player whichPlayer = this.gui().player()
 			call PauseTimer(this.m_viewTimer)
 			call PauseTimer(this.m_autoChangeTimer)
+			// reset velocity and clear spawned texttags which have been destroyed automatically in the meantime
+			call this.m_textTags.clear()
+			set this.m_velocity = thistype.defaultVelocity
 			call super.onHide()
 			call Game.setDefaultMapMusicForPlayer(whichPlayer)
 			set whichPlayer = null
@@ -200,9 +221,9 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			endloop
 
 			if (contributor.isTitle()) then
-				call thistype.showMovingTextTag(text, fontSize, 255, 0, 0, 0, this.gui().player())
+				call this.m_textTags.pushBack(thistype.showMovingTextTag(text, fontSize, 255, 0, 0, 0, this.m_velocity, this.gui().player()))
 			else
-				call thistype.showMovingTextTag(text, fontSize, 255, 255, 255, 0, this.gui().player())
+				call this.m_textTags.pushBack(thistype.showMovingTextTag(text, fontSize, 255, 255, 255, 0, this.m_velocity, this.gui().player()))
 			endif
 			
 			set this.m_currentContributor = contributorIndex
@@ -226,6 +247,8 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			local thistype this = thistype.allocate(character, Style.style(), gg_rct_main_window_credits)
 			// members
 			set this.m_currentContributor = 0
+			set this.m_textTags = ATextTagVector.create()
+			set this.m_velocity = thistype.defaultVelocity
 			set this.m_viewTimer = CreateTimer()
 			call DmdfHashTable.global().setHandleInteger(this.m_viewTimer, "this", this)
 			set this.m_autoChangeTimer = CreateTimer()
@@ -235,6 +258,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
+			call this.m_textTags.destroy()
 			call PauseTimer(this.m_viewTimer)
 			call DmdfHashTable.global().destroyTimer(this.m_viewTimer)
 			call PauseTimer(this.m_autoChangeTimer)

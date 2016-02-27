@@ -1,5 +1,14 @@
 library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 
+	/**
+	 * \brief Revival shrine for characters.
+	 * All revival shrines are marked by their using players.
+	 * Every player which uses a shrine a rune unit appears at the shrine with the color of the player.
+	 *
+	 * All shrines of the current map can be accessed via \ref thistype.shrines().
+	 *
+	 * A player's shrine rune unit can be accessed via \ref thistype.playerUnit().
+	 */
 	struct Shrine extends AShrine
 		public static constant integer playerUnitId = 'n06J'
 		private unit m_unit
@@ -71,6 +80,10 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 			return thistype.m_shrines
 		endmethod
 		
+		/**
+		 * \param index The player index of the owner of the rune unit.
+		 * \return Returns a player's rune unit.
+		 */
 		public static method playerUnit takes integer index returns unit
 			return thistype.m_playerUnits[index]
 		endmethod

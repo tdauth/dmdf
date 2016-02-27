@@ -72,6 +72,7 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 
 		public method onDestroy takes nothing returns nothing
 			set this.m_cameraBounds = null
+			set this.m_viewRect = null
 			call thistype.m_dungeons.remove(this)
 		endmethod
 
@@ -81,6 +82,22 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 
 		public static method dungeons takes nothing returns AIntegerVector
 			return thistype.m_dungeons
+		endmethod
+		
+		/// Required by \ref Game.
+		public static method resetCameraBoundsForPlayer takes player whichPlayer returns nothing
+			local thistype dungeon = 0
+			local integer i = 0
+			debug call Print("Dungeons size: " + I2S(thistype.dungeons().size()))
+			loop
+				exitwhen (i == thistype.dungeons().size())
+				set dungeon = thistype(thistype.dungeons()[i])
+				if (RectContainsUnit(dungeon.cameraBounds(), Character.playerCharacter(whichPlayer).unit())) then
+					call dungeon.setCameraBoundsForPlayer(whichPlayer)
+					exitwhen (true)
+				endif
+				set i = i + 1
+			endloop
 		endmethod
 	endstruct
 

@@ -1,4 +1,4 @@
-library StructGuisMainWindow requires Asl, StructMapMapMapData
+library StructGuisMainWindow requires Asl, StructGameDungeon
 
 	struct MainWindow extends AMainWindow
 		private Character m_character
@@ -20,6 +20,8 @@ library StructGuisMainWindow requires Asl, StructMapMapMapData
 
 		public stub method onShow takes nothing returns nothing
 			local player whichPlayer = this.gui().player()
+			// Allow everything as camera bounds. Otherwise the GUI rect is outside the bounds.
+			call ResetCameraBoundsToMapRectForPlayer(whichPlayer)
 			call Character(Character.playerCharacter(whichPlayer)).hideCharactersSchemeForPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setMovable(false)
 			call Character(ACharacter.playerCharacter(whichPlayer)).setCameraTimer(false)
@@ -30,7 +32,7 @@ library StructGuisMainWindow requires Asl, StructMapMapMapData
 			local player whichPlayer = this.gui().player()
 			call ACharacter.playerCharacter(whichPlayer).setMovable(true)
 			call Character(Character.playerCharacter(whichPlayer)).showCharactersSchemeToPlayer()
-			call MapData.resetCameraBoundsForPlayer(whichPlayer)
+			call Dungeon.resetCameraBoundsForPlayer(whichPlayer)
 			call ACharacter.playerCharacter(whichPlayer).panCameraSmart()
 			call Character(ACharacter.playerCharacter(whichPlayer)).setCameraTimer(true)
 			set whichPlayer = null

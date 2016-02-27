@@ -1,5 +1,11 @@
 library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, StructGameMapChanger
 
+	/**
+	 * \brief Zones are used for map changes.
+	 * Like in the Bonus Campaign these areas can be entered by all characters. When all characters have entered the rect the map is changed.
+	 * In multiplayer of course this does not work so only the save code might be shown or nothing happens.
+	 * In a campaign the map is changed and everything is stored in a gamecache. The game is saved before that the player can return to the original map.
+	 */
 	struct Zone extends QuestArea
 		public static constant integer unitTypeId = 'n06N'
 		private static AIntegerVector m_zones

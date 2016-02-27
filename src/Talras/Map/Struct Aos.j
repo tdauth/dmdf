@@ -1,4 +1,4 @@
-library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, StructMapMapShrines, StructMapMapNpcs
+library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons, StructMapMapMapData, StructMapMapShrines, StructMapMapNpcs
 
 	/**
 	 * \brief Provides an API for the map's AOS which is realized in the drum cave where two brothers are fighting each others with armies.
@@ -161,7 +161,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		public static method characterJoins takes Character character returns nothing
 			local player user = character.player()
 			call PlayMusic("Music\\TheDrumCave.mp3") /// @todo for user
-			call MapData.setCameraBoundsToAosForPlayer.evaluate(user)
+			call Dungeons.drumCave().setCameraBoundsForPlayer(user)
 			call character.setCamera()
 			if (not thistype.m_characterHasEntered) then
 				set thistype.m_characterHasEntered = true
@@ -180,7 +180,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapMapData, 
 		public static method characterLeaves takes Character character returns nothing
 			local player user = character.player()
 			call StopMusic(false) /// @todo for user
-			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(user) // set camera bounds before rect!
+			call Dungeon.resetCameraBoundsForPlayer(user) // set camera bounds before rect!
 			call character.setCamera()
 			set user = null
 		endmethod

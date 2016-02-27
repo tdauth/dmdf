@@ -1,4 +1,4 @@
-library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData, StructMapMapShrines, StructMapMapNpcs
+library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapDungeons, StructMapMapMapData, StructMapMapShrines, StructMapMapNpcs
 
 	/**
 	 * \brief The tomb is an area under the earth which is reigned by Deranor and only can be entered in the quest "Slaughter".
@@ -13,14 +13,14 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapMapData,
 		public static method characterJoins takes Character character returns nothing
 			// TODO Tomb needs different music
 			call PlayMusic("Music\\TheDrumCave.mp3") /// @todo for user
-			call MapData.setCameraBoundsToTombForPlayer.evaluate(character.player())
+			call Dungeons.crypt().setCameraBoundsForPlayer(character.player())
 			call character.setCamera()
 			set thistype.m_playerJoined[GetPlayerId(character.player())] = true
 		endmethod
 
 		public static method characterLeaves takes Character character returns nothing
 			call StopMusic(false) /// @todo for user
-			call MapData.setCameraBoundsToPlayableAreaForPlayer.evaluate(character.player()) // set camera bounds before rect!
+			call Dungeon.resetCameraBoundsForPlayer(character.player()) // set camera bounds before rect!
 			call character.setCamera()
 			set thistype.m_playerJoined[GetPlayerId(character.player())] = false
 		endmethod
