@@ -150,15 +150,15 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_agihardStandsNearArena.setFacing(13.80)
 
 			// Björn
-			set thistype.m_bjoernWorksAtFurs = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.bjoern(), MapData.evening, 14.00, gg_rct_waypoint_bjoern_1)
+			set thistype.m_bjoernWorksAtFurs = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.bjoern(), MapData.evening, 11.00, gg_rct_waypoint_bjoern_1)
 			call thistype.m_bjoernWorksAtFurs.setFacing(35.48)
-			set thistype.m_bjoernTalksToHisWife = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoern(), 14.00, 16.00, gg_rct_waypoint_bjoern_2)
+			set thistype.m_bjoernTalksToHisWife = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoern(), 11.00, 14.00, gg_rct_waypoint_bjoern_2)
 			call thistype.m_bjoernTalksToHisWife.setPartner(Npcs.bjoernsWife())
 			call thistype.m_bjoernTalksToHisWife.addSound(tr("Ist alles in Ordnung?"), gg_snd_Bjoern101)
 			call thistype.m_bjoernTalksToHisWife.addSound(tr("Morgen muss ich Felle verkaufen."), gg_snd_Bjoern201)
 			call thistype.m_bjoernTalksToHisWife.addSound(tr("Hoffentlich veranstaltet der Herzog bald wieder eine Jagd."), gg_snd_Bjoern301)
 			call thistype.m_bjoernTalksToHisWife.addSound(tr("Du weißt wie viel du mir bedeutest."), gg_snd_Bjoern401)
-			set thistype.m_bjoernTalksToManfred = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoern(), 16.00, MapData.evening, gg_rct_waypoint_bjoern_3)
+			set thistype.m_bjoernTalksToManfred = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoern(), 14.00, MapData.evening, gg_rct_waypoint_bjoern_3)
 			call thistype.m_bjoernTalksToManfred.setPartner(Npcs.manfred())
 			call thistype.m_bjoernTalksToManfred.setPartner(Npcs.bjoernsWife())
 			call thistype.m_bjoernTalksToManfred.addSound(tr("Ich habe hier Felle für dich."), gg_snd_Bjoern501)
@@ -167,11 +167,11 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_bjoernTalksToManfred.addSound(tr("Du machst mich noch arm."), gg_snd_Bjoern801)
 
 			// Björn's wife
-			set thistype.m_bjoernsWifeStandsNearFire0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.bjoernsWife(), MapData.evening, 14.00, gg_rct_waypoint_bjoerns_wife)
+			set thistype.m_bjoernsWifeStandsNearFire0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.bjoernsWife(), MapData.evening, 11.00, gg_rct_waypoint_bjoerns_wife)
 			call thistype.m_bjoernsWifeStandsNearFire0.setFacing(183.27)
-			set thistype.m_bjoernsWifeTalksToBjoern = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoernsWife(), 14.00, 16.00, gg_rct_waypoint_bjoerns_wife)
+			set thistype.m_bjoernsWifeTalksToBjoern = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoernsWife(), 11.00, 14.00, gg_rct_waypoint_bjoerns_wife)
 			call thistype.m_bjoernsWifeTalksToBjoern.setPartner(Npcs.bjoern())
-			set thistype.m_bjoernsWifeStandsNearFire1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.bjoernsWife(), 16.00, MapData.evening, gg_rct_waypoint_bjoerns_wife)
+			set thistype.m_bjoernsWifeStandsNearFire1 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.bjoernsWife(), 14.00, MapData.evening, gg_rct_waypoint_bjoerns_wife)
 			call thistype.m_bjoernsWifeStandsNearFire1.setFacing(183.27)
 
 			// Osman

@@ -38,6 +38,7 @@ call thistype.addContributor("jonasclick", tr("Lothar"))
 call thistype.addContributor("Heinrich-Stefan N.", tr("Manfred"))
 call thistype.addContributor("Marco R.", tr("Einar"))
 call thistype.addContributor("Benkenfilm", tr("Trommon"))
+call thistype.addContributor("Martin B.", tr("Björn"))
 
 // tools and systems
 call thistype.addTitle(tre("Werkzeuge und Systeme", "Tools and Systems"))
