@@ -33,9 +33,9 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tre("Was gibt es?", "What is it?"), null)
+			call TransmissionFromUnit(this.m_actorBjoern, tre("Was gibt es?", "What is it?"), gg_snd_Bjoern67)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Bjoern67))) then
 				return
 			endif
 			
@@ -45,9 +45,9 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tre("Ist es etwa schon soweit? Ist der Feind so nah?", "Has the time already come? Is the enemy so close?"), null)
+			call TransmissionFromUnit(this.m_actorBjoern, tre("Ist es etwa schon soweit? Ist der Feind so nah?", "Has the time already come? Is the enemy so close?"), gg_snd_Bjoern68)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Bjoern68))) then
 				return
 			endif
 			
@@ -57,9 +57,9 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tre("Verdammt! Ich werde dir so viele Fallen geben wie du brauchst. Hoffentlich besiegen wir diesen verfluchten Feind so bald wie möglich. Meine Frau macht sich schon Sorgen.", "Damn it! I will give you as many traps as you need. Hopefully we defeat this cursed enemy as soon as possible. My wife is already worreid."), null)
+			call TransmissionFromUnit(this.m_actorBjoern, tre("Verdammt! Ich werde dir so viele Fallen geben wie du brauchst. Hoffentlich besiegen wir diesen verfluchten Feind so bald wie möglich. Meine Frau macht sich schon Sorgen.", "Damn it! I will give you as many traps as you need. Hopefully we defeat this cursed enemy as soon as possible. My wife is already worreid."), gg_snd_Bjoern69)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Bjoern69))) then
 				return
 			endif
 
