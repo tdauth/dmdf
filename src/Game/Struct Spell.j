@@ -499,8 +499,14 @@ library StructGameSpell requires Asl, StructGameCharacter
 		endmethod
 
 		public static method showWeaponDamageTextTag takes unit whichUnit, real weaponDamage returns nothing
+			local string sign
 			if (not IsUnitHidden(whichUnit)) then
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("+%i"), R2I(weaponDamage)), GetUnitX(whichUnit), GetUnitY(whichUnit), 139, 131, 134, 255)
+				if (weaponDamage < 0.0) then
+					set sign = ""
+				else
+					set sign = "+"
+				endif
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tr("%s%i"), sign), R2I(weaponDamage)), GetUnitX(whichUnit), GetUnitY(whichUnit), 139, 131, 134, 255)
 			endif
 		endmethod
 

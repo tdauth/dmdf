@@ -38,7 +38,7 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 			return result
 		endmethod
 		
-		public stub method onCastCondition takes nothing returns boolean
+		private method condition takes nothing returns boolean
 			local unit target = this.target()
 			
 			if (target == null) then
@@ -62,7 +62,7 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 			return false
 		endmethod
 
-		public stub method onCastAction takes nothing returns nothing
+		private method action takes nothing returns nothing
 			local unit target = this.target() // not necessarily the same unit but that's just okay
 			local real life
 			local real mana
@@ -86,7 +86,7 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
 			call this.addGrimoireEntry('A0RK', 'A0RP')
 			call this.addGrimoireEntry('A0RL', 'A0RQ')

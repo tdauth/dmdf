@@ -14,7 +14,7 @@ library StructSpellsSpellDefend requires Asl, StructGameClasses, StructGameGame,
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ritter muss einen Schild tragen.", "The knight has to carry a buckler."))
 				return false
 			endif
-			
+			debug call Print("Defend true")
 			return true
 		endmethod
 

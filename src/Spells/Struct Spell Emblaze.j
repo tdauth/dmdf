@@ -34,7 +34,12 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		endmethod
 		
 		private method onDestroy takes nothing returns nothing
+			call PauseTimer(this.m_timer)
+			call DmdfHashTable.global().destroyTimer(this.m_timer)
+			set this.m_timer = null
+			call Spell.showWeaponDamageTextTag(this.m_target, -this.m_damage)
 			call AUnitAddBonus(this.m_target, A_BONUS_TYPE_DAMAGE, -this.m_damage)
+			set this.m_target = null
 		endmethod
 		
 	endstruct
@@ -54,10 +59,6 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		endmethod
 		
 		public stub method onRemove takes unit source, unit whichUnit, integer index returns nothing
-			// remove old buff data first
-			local BuffData buffData = BuffData(DmdfHashTable.global().handleInteger(whichUnit, "SpellEmblazeBuffData"))
-			call buffData.destroy()
-			call DmdfHashTable.global().removeHandleInteger(whichUnit, "SpellEmblazeBuffData")
 		endmethod
 		
 		public static method create takes integer buffId returns thistype
@@ -83,7 +84,8 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		/// Multiple Buffs: Stop old buff and start new. Do not stack. It would be too unfair.
 		private method action takes nothing returns nothing
 			debug call Print("EMBLAZE!!!")
-			debug call Print("Source: " + GetUnitName(this.character().unit()) + " target: " + GetUnitName(GetSpellTargetUnit()) + " with buff " + I2S(thistype.m_buff))
+			debug call Print("Source: " + GetUnitName(this.character().unit()) + " target: " + GetUnitName(GetSpellTargetUnit()))
+			debug call Print("With buff: " + I2S(thistype.m_buff))
 			call thistype.m_buff.add(this.character().unit(), GetSpellTargetUnit())
 		endmethod
 

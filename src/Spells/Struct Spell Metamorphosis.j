@@ -141,10 +141,18 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						// add unmorph spell
 						// there is always one free ability slot since disabling the rucksack is not allowed
 						debug call Print("Adding ability " + GetObjectName(this.abilityId()) + " to unit " + GetUnitName(this.character().unit()))
+						call UnitRemoveAbility(this.character().unit(), this.abilityId()) // remove ability from item, the item can not be used for casting afterwards but the ability appears in the unit's UI
 						call UnitAddAbility(this.character().unit(), this.abilityId()) // TODO does not appear, make permanent?!
+						if (GetUnitAbilityLevel(this.character().unit(), this.abilityId()) > 0) then
+							debug call Print("UNIT HAS ABILITY WTF!")
+						endif
 				
 						// morph spells are expected to morph immediately
 						call this.onMorph.evaluate()
+						
+						if (GetUnitAbilityLevel(this.character().unit(), this.abilityId()) > 0) then
+							debug call Print("UNIT HAS ABILITY AFTERWARDS WTF!")
+						endif
 					endif
 				endif
 			else
