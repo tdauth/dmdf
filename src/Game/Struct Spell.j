@@ -485,6 +485,18 @@ library StructGameSpell requires Asl, StructGameCharacter
 				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tr("%s%i"), sign), R2I(moveSpeed)), GetUnitX(whichUnit), GetUnitY(whichUnit), 202, 198, 255, 255)
 			endif
 		endmethod
+		
+		public static method showTimeTextTag takes unit whichUnit, real time returns nothing
+			local string sign
+			if (not IsUnitHidden(whichUnit)) then
+				if (time < 0.0) then
+					set sign = ""
+				else
+					set sign = "+"
+				endif
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tr("%s%i"), sign), R2I(time)), GetUnitX(whichUnit), GetUnitY(whichUnit), 202, 198, 255, 255)
+			endif
+		endmethod
 
 		public static method showWeaponDamageTextTag takes unit whichUnit, real weaponDamage returns nothing
 			if (not IsUnitHidden(whichUnit)) then
