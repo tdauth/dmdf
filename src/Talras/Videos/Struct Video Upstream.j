@@ -80,7 +80,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			call SetUnitPositionRect(this.unitActor(this.m_actorDragonSlayer), gg_rct_video_upstream_dragon_slayer)
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorDragonSlayer), this.unitActor(this.m_actorBoat))
 			
-			set this.m_actorNarrator = this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n00W', gg_rct_video_upstream_narrator, GetRandomFacing())
+			set this.m_actorNarrator = this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n06V', gg_rct_video_upstream_narrator, GetRandomFacing())
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorNarrator), this.unitActor(this.m_actorBoat))
 			
 			set this.m_actorNorseman0 = this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.norseman, gg_rct_video_upstream_norseman_0, GetRandomFacing())
