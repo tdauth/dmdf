@@ -281,18 +281,18 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			// Manfred
 			set thistype.m_manfredCutsWood = NpcRoutineWithFacing.create(Routines.splitWood(), Npcs.manfred(), MapData.evening, MapData.midday, gg_rct_waypoint_manfred_2)
 			call thistype.m_manfredCutsWood.setFacing(279.37)
-			set thistype.m_manfredTalksToGuntrich = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), MapData.midday, 16.00, gg_rct_waypoint_manfred_3)
+			set thistype.m_manfredTalksToGuntrich = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), MapData.midday, 14.00, gg_rct_waypoint_manfred_3)
 			call thistype.m_manfredTalksToGuntrich.setPartner(Npcs.guntrich())
 			call thistype.m_manfredTalksToGuntrich.addSound(tre("Ich brauche bald wieder Mehl.", "I soon need flour again."), gg_snd_Manfred101)
 			call thistype.m_manfredTalksToGuntrich.addSound(tre("Ach Guntrich hör doch auf!", "Oh Guntrich stop it!"), gg_snd_Manfred201)
 			call thistype.m_manfredTalksToGuntrich.addSound(tre("Die Zeiten werden nicht besser.", "The times won't become better."), gg_snd_Manfred301)
-			set thistype.m_manfredTalksToBjoern = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), 16.00, MapData.evening, gg_rct_waypoint_manfred_1)
+			set thistype.m_manfredTalksToBjoern = NpcTalksRoutine.create(Routines.talk(), Npcs.manfred(), 14.00, MapData.evening, gg_rct_waypoint_manfred_1)
 			call thistype.m_manfredTalksToBjoern.setPartner(Npcs.bjoern())
 			// TODO talks really to Björn? Björn sells stuff?
-			call thistype.m_manfredTalksToBjoern.addSound(tre("Ja mein Lord!", "Yes my Lord!"), gg_snd_PeasantWhat1)
-			call thistype.m_manfredTalksToBjoern.addSound(tre("Was ist?", "What is it?"), gg_snd_PeasantWhat2)
-			call thistype.m_manfredTalksToBjoern.addSound(tre("Mehr Arbeit?", "More work?"), gg_snd_PeasantWhat3)
-			call thistype.m_manfredTalksToBjoern.addSound(tre("Was?", "Yes?"), gg_snd_PeasantWhat4)
+			//call thistype.m_manfredTalksToBjoern.addSound(tre("Ja mein Lord!", "Yes my Lord!"), gg_snd_PeasantWhat1)
+			//call thistype.m_manfredTalksToBjoern.addSound(tre("Was ist?", "What is it?"), gg_snd_PeasantWhat2)
+			//call thistype.m_manfredTalksToBjoern.addSound(tre("Mehr Arbeit?", "More work?"), gg_snd_PeasantWhat3)
+			//call thistype.m_manfredTalksToBjoern.addSound(tre("Was?", "Yes?"), gg_snd_PeasantWhat4)
 
 			// Guntrich
 			set thistype.m_guntrichStandsOnClimb0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.guntrich(), MapData.evening, MapData.midday, gg_rct_waypoint_guntrich_1)
