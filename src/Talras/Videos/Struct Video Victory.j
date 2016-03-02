@@ -42,8 +42,13 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 		implement Video
 		
 		private static method triggerActionKill takes nothing returns nothing
-			call SetUnitExploded(GetTriggerUnit(), true)
-			call KillUnit(GetTriggerUnit())
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			if (GetTriggerUnit() == this.unitActor(this.m_actorWigberht)) then
+				call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
+			else
+				call SetUnitExploded(GetTriggerUnit(), true)
+				call KillUnit(GetTriggerUnit())
+			endif
 		endmethod
 
 		public stub method onInitAction takes nothing returns nothing
@@ -61,7 +66,9 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorOrc), this.unitActor(this.m_actorWigberht))
 			
 			set this.m_hitTrigger = CreateTrigger()
-			call TriggerRegisterUnitEvent(this.m_hitTrigger, this.unitActor(this.m_actorOrc), EVENT_UNIT_ATTACKED)
+			call DmdfHashTable.global().setHandleInteger(this.m_hitTrigger, "this", this)
+			call TriggerRegisterUnitEvent(this.m_hitTrigger, this.unitActor(this.m_actorOrc), EVENT_UNIT_DAMAGED)
+			call TriggerRegisterUnitEvent(this.m_hitTrigger, this.unitActor(this.m_actorWigberht), EVENT_UNIT_DAMAGED)
 			call TriggerAddAction(this.m_hitTrigger, function thistype.triggerActionKill)
 			
 			set this.m_actorDararos = this.saveUnitActor(Npcs.dararos())
@@ -190,23 +197,25 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			call SetUnitFacingToFaceUnit(this.actor(), this.unitActor(this.m_actorRicman))
 			call Game.fadeInWithWait()
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Ihr habt Tapfer gekämpft. Diese Schlacht hätte auch anders ausgehen können. Wir kehren nun zu unserem Lager zurück."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Ihr habt tapfer gekämpft. Diese Schlacht hätte auch anders ausgehen können. Wir kehren nun zu unserem Lager zurück."), gg_snd_Wigberht44)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht44))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Warten wir ab, ob der Herzog noch unsere Hilfe braucht. Ricman kümmere dich darum, dass wir bald aufbrechen können!"), null)
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorWigberht), this.unitActor(this.m_actorRicman))
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Warten wir ab, ob der Herzog noch unsere Hilfe braucht. Ricman kümmere dich darum, dass wir bald aufbrechen können!"), gg_snd_Wigberht45)
+			
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht45))) then
 				return
 			endif
 			
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorRicman), this.unitActor(this.m_actorWigberht))
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tre("Ricman", "Ricman"), tr("Ich werde das Boot beladen lassen, mein Heer."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tre("Ricman", "Ricman"), tr("Ich werde das Boot beladen lassen, mein Heer."), gg_snd_RicmanVictoryRicman1)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanVictoryRicman1))) then
 				return
 			endif
 			
@@ -240,7 +249,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 		public stub method onStopAction takes nothing returns nothing
 			call Game.resetVideoSettings()
 			
-			call DestroyTrigger(this.m_hitTrigger)
+			call DmdfHashTable.global().destroyTrigger(this.m_hitTrigger)
 			set this.m_hitTrigger = null
 			
 			call this.m_corpses.forGroup(thistype.removeUnit)

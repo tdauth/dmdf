@@ -112,6 +112,21 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		public method skillPoints takes nothing returns integer
 			return this.m_skillPoints
 		endmethod
+		
+		/**
+		 * \return Returns the total number of skill points. The unused plus the used.
+		 */
+		public method totalSkillPoints takes nothing returns integer
+			local integer result = this.skillPoints()
+			local integer i = 0
+			loop
+				exitwhen (i == this.m_learnedSpells.size())
+				set result = result + Spell(this.m_learnedSpells[i]).level()
+				set i = i + 1
+			endloop
+			
+			return result
+		endmethod
 
 		/// \return Returns vector with \ref ASpell instances.
 		public method favourites takes nothing returns AIntegerVector

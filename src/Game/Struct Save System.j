@@ -77,7 +77,7 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			local string strength = thistype.encode(GetHeroStr(hero, false))
 			local string agility = thistype.encode(GetHeroAgi(hero, false))
 			local string intelligence = thistype.encode(GetHeroInt(hero, false))
-			local string skillPoints = thistype.encode(GetHeroSkillPoints(hero))
+			local string skillPoints = thistype.encode(character.grimoire().totalSkillPoints())
 			local string slot0Equipment = ""
 			local string slot1Equipment = ""
 			local string slot2Equipment = ""
