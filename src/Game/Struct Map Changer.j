@@ -95,7 +95,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			if (ReloadGameCachesFromDisk()) then
 				set cache = InitGameCache("TPoF.w3v")
 				if (ACharacter.playerCharacter(whichPlayer) == 0) then
-					call ACharacter.setPlayerCharacter(whichPlayer, RestoreUnit(cache, "Character" + I2S(GetPlayerId(whichPlayer)), "Unit", whichPlayer, x, y, facing))
+					call ACharacter.setPlayerCharacter(whichPlayer, null)
 				endif
 				call ACharacter.playerCharacter(whichPlayer).restore(cache, "Character" + I2S(GetPlayerId(whichPlayer)), x, y, facing)
 				set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", thistype.m_currentSaveGame)

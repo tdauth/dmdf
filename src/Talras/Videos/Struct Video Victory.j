@@ -93,6 +93,10 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			
 			call CameraSetupApplyForceDuration(gg_cam_victory_0, true, 0.0)
 		endmethod
+		
+		private static method setDead takes unit whichUnit returns nothing
+			call SetUnitAnimation(whichUnit, "Death")
+		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 			
@@ -170,7 +174,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tr(" Schließ dich den Nordmännern an und berichte mir von Zeit zu Zeit weiter wie bisher."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tr("Schließ dich den Nordmännern an und berichte mir von Zeit zu Zeit weiter wie bisher."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -221,6 +225,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n019', gg_rct_video_victory_corpse_3, GetRandomFacing()))
 			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01W', gg_rct_video_victory_corpse_4, GetRandomFacing()))
 			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01X', gg_rct_video_victory_corpse_5, GetRandomFacing()))
+			call this.m_corpses.forGroup(thistype.setDead)
 			call Game.fadeInWithWait()
 			
 			call TransmissionFromUnitWithName(this.unitActor(this.m_actorNarrator), tre("Erzähler", "Narrator"), tr("So siegten die Menschen über die Orks und Dunkelelfen in einer Schlacht von der man sich in Talras noch lange danach erzählen wird, wenn sich die Nachricht erst verbreitet hat."), gg_snd_ErzaehlerSieg1)

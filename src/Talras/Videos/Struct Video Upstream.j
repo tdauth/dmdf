@@ -198,7 +198,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorNarrator), tre("So segelten sie gemeinsam mit den Nordmännern nach Holzbruck. Doch was dort geschah ist eine andere Geschichte ...", "So they sailed together with the norsemen to Holzbruck. But what happened there is a different story ..."), gg_snd_ErzaehlerFlussaufwaerts1)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorNarrator), tre("Erzähler", "Narrator"), tre("So segelten sie gemeinsam mit den Nordmännern nach Holzbruck. Doch was dort geschah ist eine andere Geschichte ...", "So they sailed together with the norsemen to Holzbruck. But what happened there is a different story ..."), gg_snd_ErzaehlerFlussaufwaerts1)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_ErzaehlerFlussaufwaerts1))) then
 				return
