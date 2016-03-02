@@ -69,17 +69,42 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 		 * \return Returns the save code for the character of \p whichPlayer.
 		 */
 		public static method encodePlayerCharacter takes player whichPlayer returns string
-			local unit hero = ACharacter.playerCharacter(whichPlayer).unit()
-			local string class = thistype.encode(ACharacter.playerCharacter(whichPlayer).class())
+			local Character character = Character(ACharacter.playerCharacter(whichPlayer))
+			local unit hero = character.unit()
+			local string class = thistype.encode(character.class())
 			local string xp = thistype.encode(GetHeroXP(hero))
 			local string gold = thistype.encode(GetPlayerState(whichPlayer, PLAYER_STATE_RESOURCE_GOLD))
 			local string strength = thistype.encode(GetHeroStr(hero, false))
 			local string agility = thistype.encode(GetHeroAgi(hero, false))
 			local string intelligence = thistype.encode(GetHeroInt(hero, false))
 			local string skillPoints = thistype.encode(GetHeroSkillPoints(hero))
-			// TODO equipment and non-quest items
+			local string slot0Equipment = ""
+			local string slot1Equipment = ""
+			local string slot2Equipment = ""
+			local string slot3Equipment = ""
+			local string slot4Equipment = ""
+			local string slot5Equipment = ""
+			if (character.inventory().equipmentItemData(AItemType.equipmentTypeHeaddress) != 0) then
+				set slot0Equipment = thistype.encode(character.inventory().equipmentItemData(AItemType.equipmentTypeHeaddress).itemTypeId())
+			endif
+			if (character.inventory().equipmentItemData(AItemType.equipmentTypeArmour) != 0) then
+				set slot1Equipment = thistype.encode(character.inventory().equipmentItemData(AItemType.equipmentTypeArmour).itemTypeId())
+			endif
+			if (character.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0) then
+				set slot2Equipment = thistype.encode(character.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())
+			endif
+			if (character.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0) then
+				set slot3Equipment = thistype.encode(character.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())
+			endif
+			if (character.inventory().equipmentItemData(AItemType.equipmentTypeAmulet) != 0) then
+				set slot4Equipment = thistype.encode(character.inventory().equipmentItemData(AItemType.equipmentTypeAmulet).itemTypeId())
+			endif
+			if (character.inventory().equipmentItemData(AItemType.equipmentTypeAmulet + 1) != 0) then
+				set slot5Equipment = thistype.encode(character.inventory().equipmentItemData(AItemType.equipmentTypeAmulet + 1).itemTypeId())
+			endif
+			// TODO non-quest items
 			set hero = null
-			return class + "-" + xp + "-" + gold + "-" + strength + "-" + agility + "-" + intelligence + "-" + skillPoints
+			return class + "-" + xp + "-" + gold + "-" + strength + "-" + agility + "-" + intelligence + "-" + skillPoints + "-" + slot0Equipment + "-" + slot1Equipment + "-" + slot2Equipment + "-" + slot3Equipment + "-" + slot4Equipment + "-" + slot5Equipment
 		endmethod
 		
 		public static method decodePlayerCharacter takes player whichPlayer, string saveCode returns nothing
@@ -91,6 +116,12 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			local integer agility = 0
 			local integer intelligence = 0
 			local integer skillPoints = 0
+			local integer slot0Equipment = 0
+			local integer slot1Equipment = 0
+			local integer slot2Equipment = 0
+			local integer slot3Equipment = 0
+			local integer slot4Equipment = 0
+			local integer slot5Equipment = 0
 			// store old stuff
 			local Character oldCharacter = Character(ACharacter.playerCharacter(whichPlayer))
 			local unit hero = oldCharacter.unit()
@@ -118,6 +149,12 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			set agility = thistype.decode(tokenizer.next())
 			set intelligence = thistype.decode(tokenizer.next())
 			set skillPoints = thistype.decode(tokenizer.next())
+			set slot0Equipment = thistype.decode(tokenizer.next())
+			set slot1Equipment = thistype.decode(tokenizer.next())
+			set slot2Equipment = thistype.decode(tokenizer.next())
+			set slot3Equipment = thistype.decode(tokenizer.next())
+			set slot4Equipment = thistype.decode(tokenizer.next())
+			set slot5Equipment = thistype.decode(tokenizer.next())
 			
 			// drop all items
 			call oldCharacter.inventory().dropAll(oldX, oldY, true)
@@ -139,6 +176,24 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			call SetHeroAgi(hero, agility, true)
 			call SetHeroInt(hero, intelligence, true)
 			call newCharacter.grimoire().setSkillPoints(skillPoints)
+			if (slot0Equipment != 0) then
+				call newCharacter.giveItem(slot0Equipment)
+			endif
+			if (slot1Equipment != 0) then
+				call newCharacter.giveItem(slot1Equipment)
+			endif
+			if (slot2Equipment != 0) then
+				call newCharacter.giveItem(slot2Equipment)
+			endif
+			if (slot3Equipment != 0) then
+				call newCharacter.giveItem(slot3Equipment)
+			endif
+			if (slot4Equipment != 0) then
+				call newCharacter.giveItem(slot4Equipment)
+			endif
+			if (slot5Equipment != 0) then
+				call newCharacter.giveItem(slot5Equipment)
+			endif
 			
 			// assign old data
 			call newCharacter.setShrine(oldShrine)
