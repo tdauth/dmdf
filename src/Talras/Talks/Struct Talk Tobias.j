@@ -15,7 +15,7 @@ library StructMapTalksTalkTobias requires Asl
 			call speech(info, character, false, tr("Erlösen, wovon?"), null)
 			call speech(info, character, true, tr("Die Kartoffel hat mir prophezeit, dass ein sprechender Esel kommen wird, der dann wieder geht!"), null)
 			call speech(info, character, false, tr("Sprechender Esel, Kartoffel, wovon sprichst du überhaupt?"), null)
-			call speech(info, character, true, tr("Sag bloß, du kennst die heilige Kartoffel nicht. Sie ist die Gottheit unserer Welt. Aus ihr wurden wir alle geschaffen und sie besiegte das Huhn mit ihren Kochtopf! Du solltest dankbar sein, dass es sie gibt."), null)
+			call speech(info, character, true, tr("Sag bloß, du kennst die heilige Kartoffel nicht. Sie ist die Gottheit unserer Welt. Aus ihr wurden wir alle geschaffen und sie besiegte das Huhn mit ihrem Kochtopf! Du solltest dankbar sein, dass es sie gibt."), null)
 			call speech(info, character, false, tr("Hast du einen an der Waffel?"), null)
 			call speech(info, character, true, tr("Nein, das Zeitalter ist noch nicht gekommen."), null)
 			call info.talk().showStartPage(character)
