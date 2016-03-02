@@ -8,6 +8,7 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 		public static constant integer classSelectionAbilityId = 'A0LL'
 		public static constant integer classSelectionGrimoireAbilityId = 'A0LQ'
 		public static constant integer maxLevel = 5
+		// TODO base buff on slow aura tornado ability
 		private static constant integer casterBuffId = 'B014'
 		private static constant integer targetBuffId = 'B013'
 		private static constant integer time = 15 // 15 seconds
@@ -34,8 +35,8 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 
 		/// @todo Create lightning.
 		private method action takes nothing returns nothing
-			local integer casterBuffIndex = thistype.casterBuff.add(GetTriggerUnit())
-			local integer targetBuffIndex = thistype.targetBuff.add(GetSpellTargetUnit())
+			local integer casterBuffIndex = thistype.casterBuff.add(GetTriggerUnit(), GetTriggerUnit())
+			local integer targetBuffIndex = thistype.targetBuff.add(GetTriggerUnit(), GetSpellTargetUnit())
 			local integer counter = 0
 			local ADamageRecorder casterDamageRecorder = ADamageRecorder.create(GetTriggerUnit())
 			local ADamageRecorder targetDamageRecorder = ADamageRecorder.create(GetSpellTargetUnit())
@@ -52,8 +53,8 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 			call casterDamageRecorder.destroy()
 			call DmdfHashTable.global().removeInteger("SpellSelflessness", "TargetDamageRecorder" + I2S(targetDamageRecorder) + "Spell")
 			call targetDamageRecorder.destroy()
-			call thistype.casterBuff.remove(GetTriggerUnit())
-			call thistype.targetBuff.remove(GetSpellTargetUnit())
+			call thistype.casterBuff.remove(GetTriggerUnit(), GetTriggerUnit())
+			call thistype.targetBuff.remove(GetTriggerUnit(), GetSpellTargetUnit())
 		endmethod
 
 		public static method create takes Character character returns thistype
