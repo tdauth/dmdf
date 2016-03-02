@@ -1,5 +1,5 @@
 /// Item
-library StructSpellsSpellNeckStone requires Asl, StructGameClasses, StructMapMapAos, StructSpellsSpellMetamorphosis
+library StructSpellsSpellNeckStone requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis
 
 	struct SpellNeckStone extends SpellMetamorphosis
 

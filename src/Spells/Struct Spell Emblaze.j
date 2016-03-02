@@ -83,7 +83,7 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		/// Multiple Buffs: Stop old buff and start new. Do not stack. It would be too unfair.
 		private method action takes nothing returns nothing
 			debug call Print("EMBLAZE!!!")
-			debug call Print("Source: " + GetUnitName(this.character().unit()) + " target: " + GetUnitName(GetSpellTargetUnit()))
+			debug call Print("Source: " + GetUnitName(this.character().unit()) + " target: " + GetUnitName(GetSpellTargetUnit()) + " with buff " + I2S(thistype.m_buff))
 			call thistype.m_buff.add(this.character().unit(), GetSpellTargetUnit())
 		endmethod
 

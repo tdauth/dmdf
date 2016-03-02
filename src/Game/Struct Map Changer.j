@@ -6,7 +6,9 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 	 * In multiplayer it shows a savecode.
 	 */
 	struct MapChanger
+		/// In a custom campaign no subfolder is used for maps.
 		public static constant string mapFolder = ""
+		/// All map change save games will be saved into this folder.
 		public static constant string zonesFolder = "TPoF"
 		private static trigger m_loadTrigger
 		private static trigger m_saveTrigger
@@ -23,7 +25,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return folder + mapName + ".w3x"
 		endmethod
 		
-		private static method saveGamePath takes string currentSaveGame,string mapName returns string
+		/**
+		 * \return Returns a save game path using the zone folder and \p currentSaveGame as well as \p mapName.
+		 */
+		private static method saveGamePath takes string currentSaveGame, string mapName returns string
 			local string saveGameFolder = ""
 			if (StringLength(currentSaveGame) > 0) then
 				set saveGameFolder = currentSaveGame + "\\"
@@ -31,6 +36,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return thistype.zonesFolder + "\\" + saveGameFolder + mapName + ".w3z"
 		endmethod
 		
+		/**
+		 * This save game path should be used to save the current map before changing the level.
+		 * \return Returns the name of the save game for the current map with map name \p mapName.
+		 */
 		private static method currentSaveGamePath takes string mapName returns string
 			return thistype.saveGamePath(thistype.m_currentSaveGame, mapName)
 		endmethod
@@ -66,6 +75,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set i = i + 1
 			endloop
 			call StoreBoolean(cache, "Stored", "Stored", true)
+			// the current save game name has to be stored to know from where the save games have to be copied
+			call StoreString(cache, "CurrentSaveGame", "CurrentSaveGame", thistype.m_currentSaveGame)
 			set cache = null
 		endmethod
 		
@@ -87,6 +98,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 					call ACharacter.setPlayerCharacter(whichPlayer, RestoreUnit(cache, "Character" + I2S(GetPlayerId(whichPlayer)), "Unit", whichPlayer, x, y, facing))
 				endif
 				call ACharacter.playerCharacter(whichPlayer).restore(cache, "Character" + I2S(GetPlayerId(whichPlayer)), x, y, facing)
+				set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", thistype.m_currentSaveGame)
 				set cache = null
 			endif
 		endmethod
@@ -124,7 +136,6 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call thistype.changeMapSinglePlayer(MapData.mapName, newMap)
 			else
 				call Character.displayHintToAll(tre("Die Karte kann nur in der Einzelspieler-Kampagne gewechselt werden.", "The map can only be changed in the singleplayer campaign."))
-				debug call Print("TODO: Implement savecode generation.")
 			endif
 		endmethod
 		

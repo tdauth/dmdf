@@ -152,7 +152,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 	endstruct
 
 	struct Game
-		public static constant string gameVersion = "0.6"
+		public static constant string gameVersion = "0.7"
 	
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions

@@ -121,6 +121,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		private static trigger m_talkHintTrigger
 		private static boolean array m_talkHintShown[12]
 		
+		private static Zone m_zoneGardonar
 		private static Zone m_zoneHolzbruck
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
@@ -241,10 +242,16 @@ endif
 			call TriggerAddCondition(thistype.m_talkHintTrigger, Condition(function thistype.triggerConditionTalkHint))
 			call TriggerAddAction(thistype.m_talkHintTrigger, function thistype.triggerActionTalkHint)
 			
-			// TODO fix zone management first then uncomment this
-			//set thistype.m_zoneHolzbruck = Zone.create("Holzbruck" + Game.gameVersion, gg_rct_zone_holzbruck)
+			set thistype.m_zoneGardonar = Zone.create("Gardonar" + Game.gameVersion, gg_rct_zone_gardonar)
+			call thistype.m_zoneGardonar.disable()
+			set thistype.m_zoneHolzbruck = Zone.create("Holzbruck" + Game.gameVersion, gg_rct_zone_holzbruck)
+			call thistype.m_zoneHolzbruck.disable()
 			
 			call Game.addDefaultDoodadsOcclusion()
+		endmethod
+		
+		public static method enableWayToGardonar takes nothing returns nothing
+			call thistype.m_zoneGardonar.enable()
 		endmethod
 		
 		/**

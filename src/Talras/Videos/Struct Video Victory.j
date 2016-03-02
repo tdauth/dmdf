@@ -59,7 +59,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			call SetUnitPositionRect(this.unitActor(this.m_actorWigberht), gg_rct_video_victory_wigberht)
 			call SetUnitInvulnerable(this.unitActor(this.m_actorWigberht), false)
 			
-			set this.m_actorOrc = this.createUnitActorAtRect(MapData.alliedPlayer, 'o005', gg_rct_video_victory_orc, 180.0)
+			set this.m_actorOrc = this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'o005', gg_rct_video_victory_orc, 180.0)
 			call SetUnitInvulnerable(this.unitActor(this.m_actorOrc), false)
 			
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorWigberht), this.unitActor(this.m_actorOrc))
@@ -90,12 +90,6 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			call SetUnitAnimation(this.unitActor(this.m_actorWounded), "Death")
 			
 			set this.m_corpses = AGroup.create()
-			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01A', gg_rct_video_victory_corpse_0, GetRandomFacing()))
-			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01V', gg_rct_video_victory_corpse_1, GetRandomFacing()))
-			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n018', gg_rct_video_victory_corpse_2, GetRandomFacing()))
-			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n019', gg_rct_video_victory_corpse_3, GetRandomFacing()))
-			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01W', gg_rct_video_victory_corpse_4, GetRandomFacing()))
-			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01X', gg_rct_video_victory_corpse_5, GetRandomFacing()))
 			
 			call CameraSetupApplyForceDuration(gg_cam_victory_0, true, 0.0)
 		endmethod
@@ -221,6 +215,12 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			
 			call Game.fadeOutWithWait()
 			call CameraSetupApplyForceDuration(gg_cam_victory_battlefield, true, 0.0)
+			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01A', gg_rct_video_victory_corpse_0, GetRandomFacing()))
+			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01V', gg_rct_video_victory_corpse_1, GetRandomFacing()))
+			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n018', gg_rct_video_victory_corpse_2, GetRandomFacing()))
+			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n019', gg_rct_video_victory_corpse_3, GetRandomFacing()))
+			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01W', gg_rct_video_victory_corpse_4, GetRandomFacing()))
+			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01X', gg_rct_video_victory_corpse_5, GetRandomFacing()))
 			call Game.fadeInWithWait()
 			
 			call TransmissionFromUnitWithName(this.unitActor(this.m_actorNarrator), tre("Erzähler", "Narrator"), tr("So siegten die Menschen über die Orks und Dunkelelfen in einer Schlacht von der man sich in Talras noch lange danach erzählen wird, wenn sich die Nachricht erst verbreitet hat."), gg_snd_ErzaehlerSieg1)

@@ -24,10 +24,28 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			endloop
 		endmethod
 		
-		private static method dialogButtonActionYes takes ADialogButton dialogButton returns nothing
-			if (dialogButton.dialog().player() == GetLocalPlayer()) then
+		private static method endGame takes player whichPlayer returns nothing
+			// in single player campaigns the player can continue the game in the next level
+			if (bj_isSinglePlayer and Game.isCampaign.evaluate()) then
+				// from now on the player can change to the next map whenever he wants to
+				call MapData.enableWayToGardonar.evaluate()
+				call MapChanger.changeMap.evaluate("Gardonar" + Game.gameVersion)
+			elseif (whichPlayer == GetLocalPlayer()) then
 				call EndGame(true)
 			endif
+		endmethod
+		
+		private static method endGameForAll takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call thistype.endGame(Player(i))
+				set i = i + 1
+			endloop
+		endmethod
+		
+		private static method dialogButtonActionYes takes ADialogButton dialogButton returns nothing
+			call thistype.endGame(dialogButton.dialog().player())
 		endmethod
 		
 		private static method dialogButtonActionNo takes ADialogButton dialogButton returns nothing
@@ -39,18 +57,24 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 		endmethod
 		
 		public stub method onSkipCondition takes player skippingPlayer, integer skipablePlayers returns boolean
-			local force whichForce = CreateForce()
-			call ForceAddPlayer(whichForce, skippingPlayer)
-			call CinematicModeBJ(false, whichForce)
-			call DestroyForce(whichForce)
-			set whichForce = null
-			call AGui.playerGui(skippingPlayer).dialog().clear()
-			call AGui.playerGui(skippingPlayer).dialog().setMessage(tre("Spiel verlassen?", "Leave game?"))
-			call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tre("Ja", "Yes"), thistype.dialogButtonActionYes)
-			call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tre("Nein", "No"), thistype.dialogButtonActionNo)
-			call AGui.playerGui(skippingPlayer).dialog().show()
-		
-			return false
+			local force whichForce = null
+			
+			if (not bj_isSinglePlayer or not Game.isCampaign.evaluate()) then
+				set whichForce = CreateForce()
+				call ForceAddPlayer(whichForce, skippingPlayer)
+				call CinematicModeBJ(false, whichForce)
+				call DestroyForce(whichForce)
+				set whichForce = null
+				call AGui.playerGui(skippingPlayer).dialog().clear()
+				call AGui.playerGui(skippingPlayer).dialog().setMessage(tre("Spiel verlassen?", "Leave game?"))
+				call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tre("Ja", "Yes"), thistype.dialogButtonActionYes)
+				call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tre("Nein", "No"), thistype.dialogButtonActionNo)
+				call AGui.playerGui(skippingPlayer).dialog().show()
+				
+				return false
+			endif
+			
+			return true
 		endmethod
 
 		public stub method onInitAction takes nothing returns nothing
@@ -327,12 +351,12 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 				endif
 			endloop
 			
-			call EndGame(true)
+			call thistype.endGameForAll()
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
 			call this.m_group.destroy()
-			call EndGame(true)
+			call thistype.endGameForAll()
 		endmethod
 
 		private static method create takes nothing returns thistype

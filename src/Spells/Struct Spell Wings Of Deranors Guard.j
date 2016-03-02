@@ -1,5 +1,5 @@
 /// Item
-library StructSpellsSpellWingsOfDeranorsGuard requires Asl, StructGameClasses, StructMapMapAos, StructSpellsSpellMetamorphosis
+library StructSpellsSpellWingsOfDeranorsGuard requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis
 
 	struct SpellWingsOfDeranorsGuard extends SpellMetamorphosis
 

@@ -1,7 +1,7 @@
 library StructMapMapMapData requires Asl, StructGameGame
 
 	struct MapData extends MapDataInterface
-		public static constant string mapName = "Holzbruck0.6"
+		public static constant string mapName = "Holzbruck0.7"
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
@@ -21,6 +21,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static sound cowSound = null
 		
 		private static Zone m_zoneTalras
+		private static Zone m_zoneGardonar
 		
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -37,8 +38,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 			
-			// TODO fix zone management first then uncomment this
-			//set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
+			set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
+			set thistype.m_zoneGardonar = Zone.create("Gardonar" + Game.gameVersion, gg_rct_zone_gardonar)
 			
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod

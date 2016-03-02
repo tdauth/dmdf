@@ -11,6 +11,7 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		private static AIntegerVector m_zones
 		private string m_mapName
 		private unit m_iconUnit
+		private boolean m_isEnabled
 		
 		public static method zones takes nothing returns AIntegerVector
 			return thistype.m_zones
@@ -20,8 +21,20 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			return this.m_mapName
 		endmethod
 		
+		public method enable takes nothing returns nothing
+			set this.m_isEnabled = true
+		endmethod
+		
+		public method disable takes nothing returns nothing
+			set this.m_isEnabled = false
+		endmethod
+		
 		public stub method onCheck takes nothing returns boolean
-			return true
+			if (not this.m_isEnabled) then
+				call Character.displayHintToAll(tre("Dieser Kartenausgang kann noch nicht benutzt werden.", "This map exit cannot be used yet."))
+			endif
+			
+			return this.m_isEnabled
 		endmethod
 		
 		/**
@@ -40,6 +53,7 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call SetUnitInvulnerable(this.m_iconUnit, true)
 			call SetUnitPathing(this.m_iconUnit, false)
 			call UnitSetUsesAltIcon(this.m_iconUnit, true)
+			set this.m_isEnabled = true
 			return this
 		endmethod
 		
