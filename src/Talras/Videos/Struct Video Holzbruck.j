@@ -62,6 +62,7 @@ Markward: Hier habt ihr noch die Belohnung für den zuletzt erfolgreich abgeschl
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorWigberht), this.unitActor(this.m_actorHeimrich))
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorDragonSlayer), this.unitActor(this.m_actorHeimrich))
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorRicman), this.unitActor(this.m_actorHeimrich))
+			call SetUnitFacingToFaceUnit(this.actor(), this.unitActor(this.m_actorHeimrich))
 			
 			call CameraSetupApplyForceDuration(gg_cam_holzbruck_0, true, 0.0)
 		endmethod
@@ -80,6 +81,10 @@ Markward: Hier habt ihr noch die Belohnung für den zuletzt erfolgreich abgeschl
 			endif
 			
 			call IssueRectOrder(this.unitActor(this.m_actorHeimrich), "move", gg_rct_video_holzbruck_heimrichs_new_position)
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorWigberht), this.unitActor(this.m_actorMarkward))
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorDragonSlayer), this.unitActor(this.m_actorMarkward))
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorRicman), this.unitActor(this.m_actorMarkward))
+			call SetUnitFacingToFaceUnit(this.actor(), this.unitActor(this.m_actorMarkward))
 			call CameraSetupApplyForceDuration(gg_cam_holzbruck_1, true, 0.0)
 			
 			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Ausgezeichnete Arbeit. Von dieser Schlacht wird man noch sehr lange in Talras sprechen. Ihr habt dem Herzog und allen anderen in Talras neue Hoffung geschenkt."), gg_snd_Markward44)
