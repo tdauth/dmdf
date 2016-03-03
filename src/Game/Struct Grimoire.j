@@ -1000,13 +1000,6 @@ endif
 			call UnitRemoveAbility(this.character().unit(), 'A015')
 			call UnitRemoveAbility(this.character().unit(), 'A02Z')
 			
-			// add at the correct position
-			call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
-			call UnitAddAbility(this.character().unit(), 'A015')
-			call UnitAddAbility(this.character().unit(), 'A02Z')
-			// make sure the level is correct
-			call this.setGrimoireAbilityToSkillPoints(this.skillPoints())
-			
 			// readd favorite abilities
 			set i = 0
 			loop
@@ -1016,6 +1009,14 @@ endif
 				set i = i + 1
 			endloop
 			call favoriteLevels.destroy()
+			
+			// TODO test after adding the spells
+			// add at the correct position
+			call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
+			call UnitAddAbility(this.character().unit(), 'A015')
+			call UnitAddAbility(this.character().unit(), 'A02Z')
+			// make sure the level is correct
+			call this.setGrimoireAbilityToSkillPoints(this.skillPoints())
 		endmethod
 		
 		private method createLoadTrigger takes nothing returns nothing

@@ -817,23 +817,27 @@ Für Version 0.6:
 * FIXED: Arenakarte braucht verschiede Streitmächte, ansonsten im lokalen Netzwerk nicht spielbar.
 
 Aufgehoben für Version 0.7:
-* DONE: Osman, Kuno and Manfred got sentences for their routines, add them!
-* Video "The First Combat": One view of the Orc camp is enough.
-* Video "Wigberht": Cut the shots of the Orcs which are annoying.
-* Video "The Castle": Make the movement with the shot of Heimrich faster.
-* Make sounds of Markward louder!
-* Pawning an item just sells 1 slots although we want to sell all slots again!
-* FIXED: AVideo: If the actors are neutral passive always they do not attack other units but rather walk back (creeps etc.). Configure a global actor player which is a passive player to all creeps etc.
-* Videos: Disable any shadow abilities for the actor. Otherwise he will disappear at night.
-* DONE: Reintroduce pawn trigger in ASL and only pawn one slot. Otherwise you will get only the gold for charge for non usable items!
-* Multishot should be an ultimate spell and only add one or two other attacks. Otherwise it is quite unfair.
-* Introduce required levels for normal spells. For example you can only skill a spell every second level!
+Schwerwiegende Fehler:
+* Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
+* Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen?
 Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Multiboard verschwindet manchmal bei Repick.
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
 * Nach Repick ist Grundzauber nicht in den Favoriten.
 * Nach Repick ist ab und zu entweder ein Zauber der Klasse nicht da oder noch ein Zauber der alten Klasse stattdessen.
 
+Weitere TODOS:
+* DONE: Osman, Kuno and Manfred got sentences for their routines, add them!
+* Video "The First Combat": One view of the Orc camp is enough.
+* Video "Wigberht": Cut the shots of the Orcs which are annoying.
+* Video "The Castle": Make the movement with the shot of Heimrich faster.
+* Make sounds of Markward louder!
+* DEPRECATED (cannot be achieved without storing the gold which an item costs): Pawning an item just sells 1 slots although we want to sell all slots again!
+* FIXED: AVideo: If the actors are neutral passive always they do not attack other units but rather walk back (creeps etc.). Configure a global actor player which is a passive player to all creeps etc.
+* Videos: Disable any shadow abilities for the actor. Otherwise he will disappear at night.
+* DONE: Reintroduce pawn trigger in ASL and only pawn one slot. Otherwise you will get only the gold for charge for non usable items!
+* Multishot should be an ultimate spell and only add one or two other attacks. Otherwise it is quite unfair.
+* Introduce required levels for normal spells. For example you can only skill a spell every second level!
 * Minikartenfarben der Doodads festlegen.
 * Spieler kann anderem Spieler keinen Gegenstand geben, wenn dessen Inventar voll ist: Dieselbe Funktion wie beim Aufheben einbauen.
 * System für korrekte Kamerahöhe bei Brücken, welches jedoch nur das Offset zurückgibt, um die Kamra auf eine Höhe ohne Interpolation zu setzen: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/camera-height-above-doodads-destructibles-273631/#post2767796
@@ -844,10 +848,8 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Standfestigkeit auf Gebiet mit Gruppenheilung, sonst zu schlecht.
 * DEPRECATED: Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
 * Musik aus Klassenauswahl nach Video beenden!
-* Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
 * DONE: Deranor sollte nach Tod auch etwas droppen.
-* Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen?
 * Schatten von Talras neu berechnen.
 * DEPRECATED: Spruchrolle des Sammlers: Keine Powerups? Kann im Kampf aber sinnvoll sein.
 * FIXED: Tobias ist nicht unverwundbar.
@@ -863,7 +865,7 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED: Spells from Talras: Move the following spells from the Talras folder to the Game folder. They should be usable in every map: Books of Crafting (all), Amulet of Foresight, Neckstone, Ride Sheep, all scrolls, unearth, wings of deranors guard. 
 * Waldläufer: Weil sich die Pfeileffekte gegenseitig ausschließen anstatt Multishot eine temporäre Verwandlung zulassen, bei der für eine gewisse Zeit alle anderen Pfeilfähigkeiten deaktiviert und dafür Multishot aktiviert wird.
 * Remove cliffs in the Drum Cave which block sight of players.
-* Verwandlungen: Nixenstein etc., Rückverwandlungsfähigkeit erscheint nicht bei Charakter. Falls Gegenstand verkauft wird, ist Rückverwandlung unmöglich.
+* FIXED: Verwandlungen: Nixenstein etc., Rückverwandlungsfähigkeit erscheint nicht bei Charakter. Falls Gegenstand verkauft wird, ist Rückverwandlung unmöglich.
 * FIXED: Die Einträge für Trommon2.mp3, Trommon22.mp3, Trommon24.mp3 und Trommon25.mp3 sind kaputt. Wird nicht aufgelistet obwohl eingetragen und Datei vorhanden.
 * Check all sound files of NPCs and then delete the "old" subfolders with old versions of the sounds to reduce the MPQ size.
 * Bjoern14 und Bjoern15 gleicher Sound.
@@ -872,7 +874,7 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Bjoern64 und Bjoern66 gleicher Sound. Gleicher Satz (noch mal eine Erklärung?)
 * ErzaehlerSieg1 und ErzaehlerSieg2 gleicher Sound. Zweiterer enthält den richtigen Sound am Ende.
 * Get the name of the Dragon Slayer from the book.
-
+* Finish video "Recruit".
 
 Idee um Warcraft III-Dialoge in Gesprächen zu vermeiden, da diese den Chat blockieren. Außerdem kann man mit der Spielkamera nicht herumfahren oder irgendwelche Buttons drücken:
 * NPC wird nicht pausiert (PauseUnit()) damit auch andere Spieler weiterhin "Person ansprechen" auswählen können.

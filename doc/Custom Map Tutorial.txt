@@ -179,6 +179,7 @@ Creating spawn points
 Releasing map
 
 Steps:
+* Export object data from map Talras and import it into this map. Talras is the map where object data changes should be made.
 * Check equality of object data to other maps.
 * Generate map shadows when saving map.
 * Generate string translation files for selected languages by using the function tre() and by extracting the war3map.wts file merging it with the current German one and with the English one and translating remaining untranslated German strings.
@@ -193,6 +194,11 @@ Steps:
 * Check all model texture paths
 * Generate and compress new MPQ archive with best algorithms
 * Generate exe file by adding newly created MPQ archive
+* Make sure you saved all maps without Debug mode and the latest object data
+* Run script "Scripts/makereleasemaps.bat" which creates all optimized versions for the German release
+* Import the file "war3map.wts" into the map Talras and save it optimized as English release.
+* Copy the campaigns (English and German) and replace the maps
+* Run the installer script "installer.nsi" which generates the installation setup
 
 Creating the minimap for a map which uses custom camera bounds:
 - export Minimap in WE (File -> Export Minimap, not only playable area but without icons etc.)

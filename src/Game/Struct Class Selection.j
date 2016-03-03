@@ -1,6 +1,83 @@
 library StructGameClassSelection requires Asl, StructGameClasses, StructGameCharacter, StructGameDungeon, StructGameGrimoire, Spells, StructMapMapMapData
 
 	/**
+	 * \brief Stores all data which is reused after a player repicks his character class.
+	 * Whenever a player repicks his character class a new character is created based on the newly selected class.
+	 * Although the class is selected newly, some data of the old character is reused like the quests or current XP or skill points.
+	 * \todo Store items instead of relying on dropping them before destroying the old character.
+	 */
+	private struct RepickData
+		private Character m_character
+		/**
+		 * These attributes are used for storing data which has to be applied to the new character after the repick of the class.
+		 * @{
+		 */
+		private real m_x
+		private real m_y
+		private integer m_xp
+		private integer m_skillPoints
+		private Shrine m_shrine
+		private boolean m_showCharactersSchema
+		private boolean m_showWorker
+		private real m_cameraDistance
+		private boolean m_viewEnabled
+		private AIntegerVector m_quests
+		private AIntegerVector m_fellows
+		/**
+		 * @}
+		 */
+		 
+		public method quests takes nothing returns AIntegerVector
+			return this.m_quests
+		endmethod
+		
+		public method fellows takes nothing returns AIntegerVector
+			return this.m_fellows
+		endmethod
+		 
+		 public method restore takes nothing returns nothing
+			// restore everything
+			call SetUnitX(this.m_character.unit(), this.m_x)
+			call SetUnitY(this.m_character.unit(), this.m_y)
+			call SetHeroXP(this.m_character.unit(), this.m_xp, false)
+			// let the player reskill everything
+			call this.m_character.grimoire().setSkillPoints(this.m_skillPoints)
+			call this.m_shrine.enableForCharacter(this.m_character, false)
+			call this.m_character.setShowCharactersScheme(this.m_showCharactersSchema)
+			call this.m_character.setShowWorker(this.m_showWorker)
+			call this.m_character.setCameraDistance(this.m_cameraDistance)
+			call this.m_character.setView(this.m_viewEnabled)
+		endmethod
+	
+		public static method create takes player whichPlayer returns thistype
+			local thistype this = thistype.allocate()
+			
+			set this.m_character = Character(Character.playerCharacter(whichPlayer))
+			
+			// TODO store everything, items etc. if items cannot be stored easily just drop them and keep the owner
+			/*
+			 * Spells and GUIs and character systems like inventory are destroyed and recreated.
+			 * Quests and fellows must be preserved.
+			 * Items will be dropped to preserve them as well.
+			 */
+			set this.m_x = GetUnitX(this.m_character.unit())
+			set this.m_y = GetUnitY(this.m_character.unit())
+			set this.m_xp = GetHeroXP(this.m_character.unit())
+			set this.m_skillPoints = this.m_character.grimoire().totalSkillPoints()
+			set this.m_shrine = this.m_character.shrine()
+			set this.m_showCharactersSchema = this.m_character.showCharactersScheme()
+			set this.m_showWorker = this.m_character.showWorker()
+			set this.m_cameraDistance = this.m_character.cameraDistance()
+			set this.m_viewEnabled = this.m_character.isViewEnabled()
+			set this.m_quests = this.m_character.quests()
+			set this.m_fellows = this.m_character.fellows()
+			
+			return this
+		endmethod
+		
+	endstruct
+
+	/**
 	 * Class selection allows change of class through abilities of the unit as well as displaying
 	 * all available class spells in a spell book.
 	 * Besides it adds start items to the corresponding class.
@@ -15,24 +92,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		private integer m_page = 0
 		private trigger m_spellPagesTrigger
 		
-		/**
-		 * These attributes are used for storing data which has to be applied to the new character after the repick of the class.
-		 * @{
-		 */
 		private static trigger m_repickTrigger
-		private static real array m_repickX[12] // TODO MapData.maxPlayers
-		private static real array m_repickY[12] // TODO MapData.maxPlayers
-		private static integer array m_repickXp[12] // TODO MapData.maxPlayers
-		private static Shrine array m_repickShrine[12] // TODO MapData.maxPlayers
-		private static boolean array m_repickShowCharactersSchema[12] // TODO MapData.maxPlayers
-		private static boolean array m_repickShowWorker[12] // TODO MapData.maxPlayers
-		private static real array m_repickCameraDistance[12] // TODO MapData.maxPlayers
-		private static boolean array m_repickViewEnabled[12] // TODO MapData.maxPlayers
-		private static AIntegerVector array m_repickQuests[12] // TODO MapData.maxPlayers
-		private static AIntegerVector array m_repickFellows[12] // TODO MapData.maxPlayers
-		/**
-		 * @}
-		 */
+		private static RepickData array m_repickData[12] // TODO MapData.maxPlayers
+		/// This flag indicates if the game has already started.
 		private static boolean m_gameStarted = false
 		
 		/**
@@ -62,9 +124,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endif
 			
 			call character.setMovable(false)
-			
-			//call SetUserInterfaceForPlayer(character.player(), false, false)
-			//call CameraSetupApplyForPlayer(false, gg_cam_class_selection, character.player(), 0.0)
 			call ResetCameraBoundsToMapRectForPlayer(character.player())
 			call character.panCamera()
 			call thistype.displayMessageToAllPlayingUsers(bj_TEXT_DELAY_HINT, Format(tre("%s hat die Klasse \"%s\" gewählt.", "%s has choosen the class \"%s\".")).s(character.name()).s(GetUnitName(character.unit())).result(), character.player())
@@ -98,6 +157,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		public static method setupCharacterUnit takes ACharacter character, AClass class returns nothing
+			// new OpLimit, there is many many spells which are created
 			call thistype.createClassSpellsForCharacter.evaluate(character, class)
 			
 			// evaluate this calls since it may exceed the operations limit. Each time a spell is being added it updates the whole grimoire UI which takes many operations.
@@ -271,8 +331,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local AIntegerVector fellows = 0
 			// repick
 			if (thistype.m_gameStarted) then
-				set quests = thistype.m_repickQuests[GetPlayerId(this.player())]
-				set fellows = thistype.m_repickFellows[GetPlayerId(this.player())]
+				set quests = thistype.m_repickData[GetPlayerId(classSelection.player())].quests()
+				set fellows = thistype.m_repickData[GetPlayerId(classSelection.player())].fellows()
 			endif
 			
 			return Character.create(classSelection.player(), whichUnit, quests, fellows)
@@ -294,7 +354,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * This helps to inform the player about start items since he can see them but not use them.
 			 * The inventory ability should not allow to drop any of the items nor to use them.
 			 */
-			call MapData.createClassSelectionItems(this.class(), whichUnit)
+			call MapData.createClassSelectionItems(this.currentClass(), whichUnit)
 			
 			// change classes and select class
 			call UnitAddAbility(whichUnit, 'A0NB')
@@ -318,7 +378,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * Adds all class grimoire spells of the first grimoire page.
 			 */
 			set this.m_page = 0
-			call Classes.createClassAbilities(this.class(), whichUnit, this.m_page, thistype.spellsPerPage)
+			call Classes.createClassAbilities(this.currentClass(), whichUnit, this.m_page, thistype.spellsPerPage)
 		endmethod
 		
 		/*
@@ -345,22 +405,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local boolean repick = ACharacter.playerCharacter(whichPlayer) != 0
 			// repick!!!
 			if (repick) then
-				// TODO store everything, items etc. if items cannot be stored easily just drop them and keep the owner
-				/*
-				 * Spells and GUIs and character systems like inventory are destroyed and recreated.
-				 * Quests and fellows must be preserved.
-				 * Items will be dropped to preserve them as well.
-				 */
-				set thistype.m_repickX[GetPlayerId(whichPlayer)] = GetUnitX(ACharacter.playerCharacter(whichPlayer).unit())
-				set thistype.m_repickY[GetPlayerId(whichPlayer)] = GetUnitY(ACharacter.playerCharacter(whichPlayer).unit())
-				set thistype.m_repickXp[GetPlayerId(whichPlayer)] = GetHeroXP(ACharacter.playerCharacter(whichPlayer).unit())
-				set thistype.m_repickShrine[GetPlayerId(whichPlayer)] = ACharacter.playerCharacter(whichPlayer).shrine()
-				set thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showCharactersScheme()
-				set thistype.m_repickShowWorker[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).showWorker()
-				set thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).cameraDistance()
-				set thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).isViewEnabled()
-				set thistype.m_repickQuests[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).quests()
-				set thistype.m_repickFellows[GetPlayerId(whichPlayer)] = Character(ACharacter.playerCharacter(whichPlayer)).fellows()
+				// store all data of the current character which will be reused
+				set thistype.m_repickData[GetPlayerId(whichPlayer)] = RepickData.create(whichPlayer)
 				
 				call ACharacter.playerCharacter(whichPlayer).inventory().dropAll(GetUnitX(ACharacter.playerCharacter(whichPlayer).unit()), GetUnitY(ACharacter.playerCharacter(whichPlayer).unit()), true)
 	
@@ -368,17 +414,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endif
 			call this.selectClass()
 			if (repick) then
-				// restore everything
-				call SetUnitX(ACharacter.playerCharacter(whichPlayer).unit(), thistype.m_repickX[GetPlayerId(whichPlayer)])
-				call SetUnitY(ACharacter.playerCharacter(whichPlayer).unit(), thistype.m_repickY[GetPlayerId(whichPlayer)])
-				call SetHeroXP(ACharacter.playerCharacter(whichPlayer).unit(), thistype.m_repickXp[GetPlayerId(whichPlayer)], false)
-				// let the player reskill everything
-				call Character(ACharacter.playerCharacter(whichPlayer)).grimoire().setSkillPoints((GetHeroLevel(ACharacter.playerCharacter(whichPlayer).unit()) - 1) * MapData.levelSpellPoints + MapData.startSkillPoints)
-				call thistype.m_repickShrine[GetPlayerId(whichPlayer)].enableForCharacter(ACharacter.playerCharacter(whichPlayer), false)
-				call Character(ACharacter.playerCharacter(whichPlayer)).setShowCharactersScheme(thistype.m_repickShowCharactersSchema[GetPlayerId(whichPlayer)])
-				call Character(ACharacter.playerCharacter(whichPlayer)).setShowWorker(thistype.m_repickShowWorker[GetPlayerId(whichPlayer)])
-				call Character(ACharacter.playerCharacter(whichPlayer)).setCameraDistance(thistype.m_repickCameraDistance[GetPlayerId(whichPlayer)])
-				call Character(ACharacter.playerCharacter(whichPlayer)).setView(thistype.m_repickViewEnabled[GetPlayerId(whichPlayer)])
+				// restore the data which will be reused and clear the object
+				call thistype.m_repickData[GetPlayerId(whichPlayer)].restore()
+				call thistype.m_repickData[GetPlayerId(whichPlayer)].destroy()
+				set thistype.m_repickData[GetPlayerId(whichPlayer)] = 0
 				
 				call Dungeon.resetCameraBoundsForPlayer(whichPlayer)
 				call ACharacter.playerCharacter(whichPlayer).panCameraSmart()
@@ -423,25 +462,25 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			
 			if (GetSpellAbilityId() == Classes.classAbilitiesNextPageAbilityId()) then
-				if (this.m_page == Classes.maxClassAbilitiesPages(this.class(), thistype.spellsPerPage) - 1) then
+				if (this.m_page == Classes.maxClassAbilitiesPages(this.currentClass(), thistype.spellsPerPage) - 1) then
 					set this.m_page = 0
 				else
 					set this.m_page = this.m_page + 1
 				endif
 			elseif (GetSpellAbilityId() == Classes.classAbilitiesPreviousPageAbilityId()) then
 				if (this.m_page == 0) then
-					set this.m_page = Classes.maxClassAbilitiesPages(this.class(), thistype.spellsPerPage) - 1
+					set this.m_page = Classes.maxClassAbilitiesPages(this.currentClass(), thistype.spellsPerPage) - 1
 				else
 					set this.m_page = this.m_page - 1
 				endif
 			endif
 			
-			call Classes.createClassAbilities(this.class(), this.classUnit(), this.m_page, thistype.spellsPerPage)
+			call Classes.createClassAbilities(this.currentClass(), this.classUnit(), this.m_page, thistype.spellsPerPage)
 			call ForceUIKeyBJ(GetTriggerPlayer(), "Z") // WORKAROUND: whenever an ability is being removed it closes grimoire
 		endmethod
 		
-		public static method create takes player user, camerasetup cameraSetup, boolean hideUserInterface, real x, real y, real facing, real refreshRate, real rotationAngle, AClass firstClass, AClass lastClass, string strengthIconPath, string agilityIconPath, string intelligenceIconPath, string textTitle, string textStrength, string textAgility, string textIntelligence returns thistype
-			local thistype this = thistype.allocate(user, cameraSetup, hideUserInterface, x, y, facing, refreshRate, rotationAngle, firstClass, lastClass, strengthIconPath, agilityIconPath, intelligenceIconPath, textTitle, textStrength, textAgility, textIntelligence)
+		public static method create takes player user, camerasetup cameraSetup, boolean hideUserInterface, real x, real y, real facing, real refreshRate, real rotationAngle, string strengthIconPath, string agilityIconPath, string intelligenceIconPath, string textTitle, string textStrength, string textAgility, string textIntelligence returns thistype
+			local thistype this = thistype.allocate(user, cameraSetup, hideUserInterface, x, y, facing, refreshRate, rotationAngle, strengthIconPath, agilityIconPath, intelligenceIconPath, textTitle, textStrength, textAgility, textIntelligence)
 			
 			set this.m_classChangeTrigger = CreateTrigger()
 			call TriggerRegisterPlayerUnitEvent(this.m_classChangeTrigger, user, EVENT_PLAYER_UNIT_SPELL_CHANNEL, null)
@@ -455,6 +494,16 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call TriggerAddAction(this.m_spellPagesTrigger, function thistype.triggerActionChangeSpellsPage)
 			call DmdfHashTable.global().setHandleInteger(this.m_spellPagesTrigger, "this", this)
 			
+			// add all available classes of The Power of Fire to each player's class selection
+			call this.addClass(Classes.cleric())
+			call this.addClass(Classes.necromancer())
+			call this.addClass(Classes.druid())
+			call this.addClass(Classes.knight())
+			call this.addClass(Classes.dragonSlayer())
+			call this.addClass(Classes.ranger())
+			call this.addClass(Classes.elementalMage())
+			call this.addClass(Classes.wizard())
+			
 			return this
 		endmethod
 		
@@ -466,8 +515,14 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method createClassSelectionForPlayer takes player whichPlayer returns nothing
-			 // new OpLimit if possible
-			local ClassSelection classSelection = thistype.createClassSelectionForPlayerWithNewOpLimit.evaluate(whichPlayer)
+			local ClassSelection classSelection = 0
+			// hide the characters schema if shown to make place for a new multiboard
+			if (Character.playerCharacter(whichPlayer) != 0) then
+				call Character(Character.playerCharacter(whichPlayer)).hideCharactersSchemeForPlayer()
+			endif
+		
+			// new OpLimit if possible
+			set classSelection = thistype.createClassSelectionForPlayerWithNewOpLimit.evaluate(whichPlayer)
 			call classSelection.setStartX(MapData.startX(GetPlayerId(whichPlayer)))
 			call classSelection.setStartY(MapData.startY(GetPlayerId(whichPlayer)))
 			call classSelection.setStartFacing(0.0)
@@ -476,11 +531,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call classSelection.enableEscapeKeySelection(false)
 			// new OpLimit if possible
 			call thistype.showClassSelectionForPlayerWithNewOpLimit.evaluate(classSelection)
-			call classSelection.minimize(false) // show maximized
+			call classSelection.minimize(false) // show always maximized, otherwise the player might overlook this multiboard
 		endmethod
 		
 		private static method createClassSelectionForPlayerWithNewOpLimit takes player whichPlayer returns ClassSelection
-			return ClassSelection.create(whichPlayer, gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, Classes.cleric(), Classes.wizard(), "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
+			return ClassSelection.create(whichPlayer, gg_cam_class_selection, false, GetRectCenterX(gg_rct_class_selection), GetRectCenterY(gg_rct_class_selection), 270.0, 0.01, 2.0, "UI\\Widgets\\Console\\Human\\infocard-heroattributes-str.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-agi.blp", "UI\\Widgets\\Console\\Human\\infocard-heroattributes-int.blp", tre("%s (%i/%i)", "%s (%i/%i)"), tre("Stärke pro Stufe: %r", "Strength per level: %r"), tre("Geschick pro Stufe: %r", "Dexterity per level: %r"), tre("Wissen pro Stufe: %r", "Lore per level: %r"))
 		endmethod
 		
 		private static method showClassSelectionForPlayerWithNewOpLimit takes ClassSelection classSelection returns nothing
@@ -542,8 +597,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		
 		private static method triggerActionRepick takes nothing returns nothing
 			debug call Print("Repick!")
+			// disable the permanent camera, otherwise the camera of the class selection cannot be applied properly
 			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).setCameraTimer(false)
+			// the class selection rect might be outside of the current camera bounds
 			call SetCameraBoundsToRectForPlayerBJ(GetTriggerPlayer(), GetPlayableMapRect())
+			// do not let the character die or move while the player is selecting a class
 			call ACharacter.playerCharacter(GetTriggerPlayer()).setMovable(false)
 			call thistype.createClassSelectionForPlayer(GetTriggerPlayer())
 		endmethod
