@@ -641,6 +641,40 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			set this.m_questArea = QuestAreaQuestTheDefenseOfTalras.create(gg_rct_quest_the_defense_of_talras)
 			return super.enableUntil(thistype.questItemMoveToCamp)
 		endmethod
+		
+		public stub method distributeRewards takes nothing returns nothing
+			local integer i
+			local integer j
+			local item whichItem
+
+			call super.distributeRewards()
+			/*
+			 * 10 Big Healing Potions
+			 * 10 Big Mana Potions
+			 * 10 Scrolls of Healing
+			 * 10 Scrolls of Mana
+			 * Amulet from Talras
+			 */
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (Character.playerCharacter(Player(i)) != 0) then
+					set j = 0
+					loop
+						exitwhen (j == 10)
+						call Character(Character.playerCharacter(Player(i))).giveItem('I00B')
+						call Character(Character.playerCharacter(Player(i))).giveItem('I00C')
+						call Character(Character.playerCharacter(Player(i))).giveItem('I00F')
+						call Character(Character.playerCharacter(Player(i))).giveItem('I00G')
+						set j = j + 1
+					endloop
+					call Character(Character.playerCharacter(Player(i))).giveItem('I06P')
+				endif
+				set i = i + 1
+			endloop
+
+			call Character.displayItemAcquiredToAll(GetObjectName('I06P'), tre("Erhöht die Kraft, das Geschick und das Wissen des Trägers.", "Increases the strength, the skill and the lore of the carrying unit."))
+		endmethod
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Die Verteidigung von Talras", "The Defense of Talras"))
@@ -649,6 +683,8 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			set this.m_timerDialog = null
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNGuardTower.blp")
 			call this.setDescription(tre("Ein Teil der Armee der Orks und Dunkelelfen ist in Talras eingetroffen. Verteidigt Talras um jeden Preis gegen die Horden der Orks und Dunkelelfen.", "A part of the army of Orcs and Dark Elves arrived in Talras. Defend Talras at all costs against the hordes of Orcs and Dark Elves."))
+			call this.setReward(thistype.rewardExperience, 500)
+			call this.setReward(thistype.rewardGold, 500)
 			
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Begebt euch zum Außenposten und beginnt mit der Verteidigung.", "Make your way to the outpost and begin with the defense."))

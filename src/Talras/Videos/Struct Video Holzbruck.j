@@ -29,12 +29,101 @@ Markward: Hier habt ihr noch die Belohnung für den zuletzt erfolgreich abgeschl
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(20.0)
+			
+			set this.m_actorHeimrich = this.saveUnitActor(Npcs.heimrich())
+			call SetUnitPositionRect(this.unitActor(this.m_actorHeimrich), gg_rct_video_holzbruck_heimrich)
+			
+			set this.m_actorMarkward = this.saveUnitActor(Npcs.markward())
+			call SetUnitPositionRect(this.unitActor(this.m_actorMarkward), gg_rct_video_holzbruck_markward)
+			
+			set this.m_actorOsman = this.saveUnitActor(Npcs.osman())
+			call SetUnitPositionRect(this.unitActor(this.m_actorOsman), gg_rct_video_holzbruck_osman)
+			
+			set this.m_actorFerdinand = this.saveUnitActor(Npcs.ferdinand())
+			call SetUnitPositionRect(this.unitActor(this.m_actorFerdinand), gg_rct_video_holzbruck_ferdinand)
+			
+			set this.m_actorWigberht = this.saveUnitActor(Npcs.wigberht())
+			call SetUnitPositionRect(this.unitActor(this.m_actorWigberht), gg_rct_video_holzbruck_wigberht)
+			
+			set this.m_actorRicman = this.saveUnitActor(Npcs.ricman())
+			call SetUnitPositionRect(this.unitActor(this.m_actorRicman), gg_rct_video_holzbruck_ricman)
+			
+			set this.m_actorDragonSlayer = this.saveUnitActor(Npcs.dragonSlayer())
+			call SetUnitPositionRect(this.unitActor(this.m_actorDragonSlayer), gg_rct_video_holzbruck_dragon_slayer)
+			
+			call SetUnitPositionRect(this.actor(), gg_rct_video_holzbruck_actor)
+			
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorHeimrich), this.actor())
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorMarkward), this.actor())
+			
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorOsman), this.actor())
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorFerdinand), this.actor())
+			
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorWigberht), this.unitActor(this.m_actorHeimrich))
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorDragonSlayer), this.unitActor(this.m_actorHeimrich))
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorRicman), this.unitActor(this.m_actorHeimrich))
+			
+			call CameraSetupApplyForceDuration(gg_cam_holzbruck_0, true, 0.0)
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			// TODO Finish this video
+			call TransmissionFromUnit(this.actor(), tr("Wir haben den Außenposten erfolgreich verteidigt."), null)
+
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
 			
-			if (wait(4.0)) then // wait until end
+			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tr("Freude, Jubel, jauchzet und frohlocket, es ist vollbracht! Der Feind ist niedergestreckt, besiegt, die Hochelfen sind eingetroffen. Es hätte nicht schöner ausgehen können. Markward wird ihnen alle erdenklichen Wünsche erfüllen und sie mit ihrer nächsten Mission vertraut machen. Das war wirklich ausgezeichnete Arbeit!"), gg_snd_Heimrich30)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich30))) then
+				return
+			endif
+			
+			call IssueRectOrder(this.unitActor(this.m_actorHeimrich), "move", gg_rct_video_holzbruck_heimrichs_new_position)
+			call CameraSetupApplyForceDuration(gg_cam_holzbruck_1, true, 0.0)
+			
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Ausgezeichnete Arbeit. Von dieser Schlacht wird man noch sehr lange in Talras sprechen. Ihr habt dem Herzog und allen anderen in Talras neue Hoffung geschenkt."), gg_snd_Markward44)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward44))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Leider ist die Gefahr damit nur vorerst gebannt. Uns kam von weiteren Truppenbewegungen zu Ohren. Anscheinend haben die Orks und Dunkelelfen nun vor, die weiter nördlich gelegene Stadt Holzbruck anzugreifen."), gg_snd_Markward45)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward45))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Ich konnte den Herzog davon überzeugen euch nach Holzbruck zu schicken, um die Stadt bei ihrem Kampf zu unterstützen. Da die Nordmänner sowieso weiter in Richtung Norden segeln wollen, können sie euch sicherlich dorthin bringen."), gg_snd_Markward46)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward46))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Wir sind dank der Hochelfen erst einmal sicher."), gg_snd_Markward47)
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorMarkward), this.unitActor(this.m_actorDragonSlayer))
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward47))) then
+				return
+			endif
+			
+			//call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorMarkward), this.actor())
+			
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Mein König hat mir gestattet euch auf eurer weiteren Reise zu begleiten. Er sieht großen Nutzen darin, mehr über die Orks und Dunkelelfen in Erfahrung zu bringen. Das bedeutet, wir werden gemeinsam nach Holzbruck aufbrechen."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Sehr gut. Wenn ihr Holzbruck erfolgreich verteidigt habt, könnt ihr zurückkehren. Der Herzog wird euch reich belohnen, die Bewohner von Holzbruck selbst jedoch vermutlich noch reicher. Es handelt sich um eine sehr wohlhabende Stadt. Ich hoffe, wir verlieren euch nicht an sie."), gg_snd_Markward48)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward48))) then
+				return
+			endif
+			
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Hier habt ihr noch die Belohnung für den zuletzt erfolgreich abgeschlossenen Auftrag. Es war mir eine große Ehre euch zu treffen. Ich wünsche euch viel Glück auf eurer Reise!"), gg_snd_Markward49)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward49))) then
 				return
 			endif
 

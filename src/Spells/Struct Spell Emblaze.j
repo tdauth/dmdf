@@ -5,6 +5,7 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 	private struct BuffData
 		private SpellEmblaze m_spell
 		private unit m_target
+		private effect m_effect
 		private integer m_damage
 		private real m_time
 		private timer m_timer
@@ -25,6 +26,7 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 			debug call Print("Emblaze: With " + R2S(this.m_damage) + " damage.")
 			call AUnitAddBonus(target, A_BONUS_TYPE_DAMAGE, this.m_damage)
 			call Spell.showWeaponDamageTextTag(target, this.m_damage)
+			set this.m_effect = AddSpecialEffectTarget("Models\\Effects\\Emblaze.mdx", target, "origin")
 			
 			set this.m_timer = CreateTimer()
 			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
@@ -37,6 +39,8 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 			call PauseTimer(this.m_timer)
 			call DmdfHashTable.global().destroyTimer(this.m_timer)
 			set this.m_timer = null
+			call DestroyEffect(this.m_effect)
+			set this.m_effect = null
 			call Spell.showWeaponDamageTextTag(this.m_target, -this.m_damage)
 			call AUnitAddBonus(this.m_target, A_BONUS_TYPE_DAMAGE, -this.m_damage)
 			set this.m_target = null

@@ -282,6 +282,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_ringOfWisdom
 		private static ItemType m_ringOfDexterity
 		private static ItemType m_ringOfLoyality
+		private static ItemType m_amuletFromTalras
 		
 		// death vault drops
 		private static ItemType m_deathScythe
@@ -681,6 +682,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_ringOfDexterity.addAbility('AIa3', true)
 			set thistype.m_ringOfLoyality = ItemType.createSimple('I055', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfLoyality.addAbility('AIx2', true)
+			set thistype.m_amuletFromTalras = ItemType.createSimple('I06P', ItemType.equipmentTypeAmulet)
+			call thistype.m_amuletFromTalras.addAbility('A1IZ', true)
 			
 			// death vault drops
 			set thistype.m_deathScythe = ItemType.create('I05B', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
