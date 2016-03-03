@@ -359,6 +359,11 @@ library StructGameSpell requires Asl, StructGameCharacter
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
+			call thistype.destroyGrimoireEntriesWithNewOpLimit.evaluate(this) // new OpLimit
+			call thistype.removeFromClassSpellsWithNewOpLimit.evaluate(this) // new OpLimit
+		endmethod
+		
+		private static method destroyGrimoireEntriesWithNewOpLimit takes thistype this returns nothing
 			local integer i = 0
 			loop
 				exitwhen (i == this.m_grimoireEntries.size())
@@ -368,6 +373,9 @@ library StructGameSpell requires Asl, StructGameCharacter
 				set i = i + 1
 			endloop
 			call this.m_grimoireEntries.destroy()
+		endmethod
+		
+		private static method removeFromClassSpellsWithNewOpLimit takes thistype this returns nothing
 			call Character(this.character()).classSpells().remove(this)
 		endmethod
 
