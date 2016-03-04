@@ -78,6 +78,11 @@ library StructGameClasses requires Asl, StructGameCharacter
 		private static method onInit takes nothing returns nothing
 			set thistype.m_nextPageGrimoireEntry = ClassGrimoireEntry.create('A0AB', 'A0AX')
 			set thistype.m_previousPageGrimoireEntry = ClassGrimoireEntry.create('A0AA', 'A0AY')
+			
+			call AbilityPreload('A0AB')
+			call AbilityPreload('A0AX')
+			call AbilityPreload('A0AA')
+			call AbilityPreload('A0AY')
 		endmethod
 		
 		public static method classAbilitiesNextPageAbilityId takes nothing returns integer
@@ -153,6 +158,17 @@ library StructGameClasses requires Asl, StructGameCharacter
 			return 0
 		endmethod
 		
+		private static method preloadAbilities takes nothing returns nothing
+			// use new OpLimit everytime
+			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_clericGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_necromancerGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_druidGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_knightGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_dragonSlayerGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_rangerGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_elementalMageGrimoireEntries)
+			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_wizardGrimoireEntries)
+		endmethod
 		
 		private static method preloadAbilitiesFromVector takes AIntegerVector vector returns nothing
 			local integer i = 0
@@ -165,17 +181,6 @@ library StructGameClasses requires Asl, StructGameCharacter
 				debug call Print("After preloading 2")
 				set i = i + 1
 			endloop
-		endmethod
-		
-		private static method preloadAbilities takes nothing returns nothing
-			call thistype.preloadAbilitiesFromVector(thistype.m_clericGrimoireEntries)
-			call thistype.preloadAbilitiesFromVector(thistype.m_necromancerGrimoireEntries)
-			call thistype.preloadAbilitiesFromVector(thistype.m_druidGrimoireEntries)
-			call thistype.preloadAbilitiesFromVector(thistype.m_knightGrimoireEntries)
-			call thistype.preloadAbilitiesFromVector(thistype.m_dragonSlayerGrimoireEntries)
-			call thistype.preloadAbilitiesFromVector(thistype.m_rangerGrimoireEntries)
-			call thistype.preloadAbilitiesFromVector(thistype.m_elementalMageGrimoireEntries)
-			call thistype.preloadAbilitiesFromVector(thistype.m_wizardGrimoireEntries)
 		endmethod
 		
 		/**

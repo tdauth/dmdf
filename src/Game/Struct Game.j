@@ -371,17 +371,12 @@ endif
 		/// Most ASL systems are initialized here.
 		private static method onInit takes nothing returns nothing
 			local integer i
-			debug local ABenchmark benchmark
 			// Advanced Script Library
 			// general systems
 			call Asl.init()
 			// debugging systems
 static if (DEBUG_MODE) then
-				call ABenchmark.init()
-				set benchmark = ABenchmark.create("Initialization")
-				call TriggerSleepAction(0.0) //before starting timer
-				call benchmark.start()
-				call AInitUtilityCheats()
+			call AInitUtilityCheats()
 endif
 			// environment systems
 			call ADamageRecorder.init(true, thistype.onDamageAction, false)
@@ -513,7 +508,6 @@ endif
 			else
 				call MapChanger.restoreCharactersSinglePlayer()
 			endif
-			debug call benchmark.stop()
 		endmethod
 
 static if (DEBUG_MODE) then
@@ -886,6 +880,9 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'A1DI', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DL', false)
 				
+				// hide abilities
+				call SetPlayerAbilityAvailable(Player(i), 'S003', false)
+				
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().disableLevelTrigger()
 					
@@ -961,6 +958,9 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'A1DJ', true)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DI', true)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DL', true)
+				
+				// hide abilities
+				call SetPlayerAbilityAvailable(Player(i), 'S003', true)
 				
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().enableLevelTrigger()

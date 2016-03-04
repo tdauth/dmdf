@@ -138,21 +138,23 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 							endif
 						endif
 						
-						// add unmorph spell
-						// there is always one free ability slot since disabling the rucksack is not allowed
-						debug call Print("Adding ability " + GetObjectName(this.abilityId()) + " to unit " + GetUnitName(this.character().unit()))
-						if (not this.disableInventory()) then
-							// disabling the inventory removes the item ability
-							call this.character().inventory().disable()
-						endif
-						//call UnitRemoveAbility(this.character().unit(), this.abilityId()) // remove ability from item, the item can not be used for casting afterwards but the ability appears in the unit's UI
-						call UnitAddAbility(this.character().unit(), this.abilityId()) // TODO does not appear, make permanent?!
-						if (GetUnitAbilityLevel(this.character().unit(), this.abilityId()) > 0) then
-							debug call Print("UNIT HAS ABILITY WTF!")
-						endif
-						if (not this.disableInventory()) then
-							// no reenable the inventory to show the items as well
-							call this.character().inventory().enable()
+						// Add unmorph spell if at least one slot is free. Otherwise if you sell the item you cannot morph back.
+						if (this.disableInventory() or this.disableGrimoire()) then
+							// there is always one free ability slot since disabling the rucksack is not allowed
+							debug call Print("Adding ability " + GetObjectName(this.abilityId()) + " to unit " + GetUnitName(this.character().unit()))
+							if (not this.disableInventory()) then
+								// disabling the inventory removes the item ability
+								call this.character().inventory().disable()
+							endif
+							//call UnitRemoveAbility(this.character().unit(), this.abilityId()) // remove ability from item, the item can not be used for casting afterwards but the ability appears in the unit's UI
+							call UnitAddAbility(this.character().unit(), this.abilityId()) // TODO does not appear, make permanent?!
+							if (GetUnitAbilityLevel(this.character().unit(), this.abilityId()) > 0) then
+								debug call Print("UNIT HAS ABILITY WTF!")
+							endif
+							if (not this.disableInventory()) then
+								// no reenable the inventory to show the items as well
+								call this.character().inventory().enable()
+							endif
 						endif
 				
 						// morph spells are expected to morph immediately

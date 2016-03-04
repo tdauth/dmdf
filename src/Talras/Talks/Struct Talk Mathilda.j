@@ -1,4 +1,4 @@
-library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapNpcs, StructMapTalksTalkLothar, StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent
+library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapFellows, StructMapMapNpcs, StructMapTalksTalkLothar, StructMapQuestsQuestABigPresent, StructMapQuestsQuestALittlePresent
 
 	struct TalkMathilda extends Talk
 		private boolean array m_wasOffendedStories[12] /// \todo \ref MapData.maxPlayers
@@ -51,6 +51,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 
 		private method startPageAction takes ACharacter character returns nothing
 			if (not this.showInfo(5, character)) then
+				call this.showInfo(26, character) // leave
 				call this.showUntil(15, character)
 			endif
 		endmethod
@@ -147,7 +148,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 
 		// (Mathilda hat es ihm angeboten)
 		private static method infoCondition6 takes AInfo info, ACharacter character returns boolean
-			return info.talk().infoHasBeenShownToCharacter(5, character)
+			return info.talk().infoHasBeenShownToCharacter(5, character) and not Fellows.mathilda().isShared()
 		endmethod
 
 		// Lass uns umherziehen!
@@ -155,7 +156,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 			call speech(info, character, false, tr("Lass uns umherziehen!"), null)
 			call speech(info, character, true, tr("Na gut."), null)
 			// Mathilda schließt sich dem Charakter an
-			call Fellow.shareWithByUnit(Npcs.mathilda(), character)
+			call Fellows.mathilda().shareWith(character)
 			call info.talk().close(character)
 		endmethod
 
@@ -361,6 +362,19 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 			call speech(info, character, true, tr("Deine Entscheidung."), null)
 			call info.talk().showStartPage(character)
 		endmethod
+		
+		// (Mathilda begleitet den Charakter)
+		private static method infoConditionLeave takes AInfo info, ACharacter character returns boolean
+			return Fellows.mathilda().isSharedToCharacter() and Fellows.mathilda().character() == character
+		endmethod
+
+		// Geh.
+		private static method infoActionLeave takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tr("Geh."), null)
+			// Mathilda verlässt den Charakter
+			call Fellows.mathilda().reset()
+			call info.talk().close(character)
+		endmethod
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.mathilda(), thistype.startPageAction)
@@ -411,6 +425,9 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapN
 			call this.addInfo(true, false, 0, thistype.infoAction10_1, tr("Der Wandersmann.")) // 23
 			call this.addInfo(true, false, 0, thistype.infoAction10_2, tr("Die Waldgeister.")) // 24
 			call this.addInfo(true, false, 0, thistype.infoAction10_3, tr("Keines. Ich hab's mir anders überlegt.")) // 25
+			
+			// TODO move somewhere at the top
+			call this.addInfo(true, false, thistype.infoConditionLeave, thistype.infoActionLeave, tr("Geh.")) // 26
 
 			return this
 		endmethod

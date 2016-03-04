@@ -114,16 +114,26 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		endmethod
 		
 		/**
-		 * \return Returns the total number of skill points. The unused plus the used.
+		 * \return Returns the total number of skill points. The unused plus the used. It excludes the one skill point for the default spell!
 		 */
 		public method totalSkillPoints takes nothing returns integer
 			local integer result = this.skillPoints()
+			local boolean countedDefault = false
 			local integer i = 0
 			loop
 				exitwhen (i == this.m_learnedSpells.size())
-				set result = result + Spell(this.m_learnedSpells[i]).level()
+				if (Spell(this.m_learnedSpells[i]).spellType() != Spell.spellTypeDefault) then
+					set result = result + Spell(this.m_learnedSpells[i]).level()
+				else
+					set countedDefault = true
+				endif
 				set i = i + 1
 			endloop
+			
+			// if default is not leveled its skill point will be part of this.skillPoints()!
+			if (not countedDefault) then
+				set result = result - 1
+			endif
 			
 			return result
 		endmethod

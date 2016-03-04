@@ -828,8 +828,17 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Nach Repick ist Grundzauber nicht in den Favoriten.
 * Nach Repick ist ab und zu entweder ein Zauber der Klasse nicht da oder noch ein Zauber der alten Klasse stattdessen.
 * Vermutung: Spell.onDestroy() remove funktioniert nicht immer (OpLimit???) ODER Konstruktor Spell.create() bzw. Spell.createWithEvent() wird nicht verwendet. Dann landet der Zauber nicht in den classSpells().
+* Double Free AIntegerListIterator bei Spruchrolle der Kühe.
+* speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!).
+* FIXED: Auf Schaf reiten: Fähigkeit nicht hinzufügen, wenn Zauberbuch nicht deaktiviert wird UND Rucksack nicht deaktiviert wird.
+* FIXED: Auf Schaf reiten: Equipmentfähigkeiten werden nicht wieder hinzugefügt, nachdem man auf Schaf reitet (nach Verwandlung), wenn Rucksack offen ist.
+* Werden nach Repick die Spielcharakterzauber neu erzeugt? initCharacterSpells() Reiten auf Schaf geht nicht so richtig?
+* FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
 
 Weitere TODOS:
+* Salatköpfe von Trommon fehlen.
+* Kuno und Trommon sind zu leise.
+* Knochenbogen trotz deaktivierter Zauberbuchfähigkeit sieht man Icon.
 * DONE: Osman, Kuno and Manfred got sentences for their routines, add them!
 * Video "The First Combat": One view of the Orc camp is enough.
 * Video "Wigberht": Cut the shots of the Orcs which are annoying.

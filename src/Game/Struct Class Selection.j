@@ -163,8 +163,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			// evaluate this calls since it may exceed the operations limit. Each time a spell is being added it updates the whole grimoire UI which takes many operations.
 			call thistype.addClassSpellsFromCharacterWithNewOpLimit.evaluate(character)
 
-			call initCharacterSpells(character)
-			call MapData.initMapSpells(character)
+			call thistype.initCharacterSpellsWithNewOpLimit.evaluate(character)
+			call thistype.initMapSpellsWithNewOpLimit.evaluate(character)
 			
 			/*
 			 * Add hero glow.
@@ -324,6 +324,14 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		
 		private static method addClassSpellsFromCharacterWithNewOpLimit takes Character character returns nothing
 			call character.grimoire().addClassSpellsFromCharacter(character)
+		endmethod
+		
+		private static method initCharacterSpellsWithNewOpLimit takes Character character returns nothing
+			call initCharacterSpells(character)
+		endmethod
+		
+		private static method initMapSpellsWithNewOpLimit takes Character character returns nothing
+			call MapData.initMapSpells(character)
 		endmethod
 		
 		public stub method onCharacterCreation takes AClassSelection classSelection, unit whichUnit returns ACharacter
