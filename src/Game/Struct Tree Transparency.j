@@ -46,8 +46,7 @@ library StructGameTreeTransparency initializer init requires Asl
 		loop
 			exitwhen (not iterator.isValid())
 			if (Unit(iterator.data()).whichUnit == u) then
-				call units.erase(iterator)
-				call iterator.destroy()
+				call units.erase(iterator).destroy()
 				return true
 			endif
 			call iterator.next()

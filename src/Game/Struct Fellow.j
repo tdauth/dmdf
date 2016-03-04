@@ -256,7 +256,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				set i = 0
 				loop
 					exitwhen (i == this.m_sellingsAbilities.size())
-						call UnitAddAbility(this.unit(), this.m_sellingsAbilities[i])
+					call UnitAddAbility(this.unit(), this.m_sellingsAbilities[i])
 					set i = i + 1
 				endloop
 			endif

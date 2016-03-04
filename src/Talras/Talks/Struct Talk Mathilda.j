@@ -52,7 +52,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		private method startPageAction takes ACharacter character returns nothing
 			if (not this.showInfo(5, character)) then
 				call this.showInfo(26, character) // leave
-				call this.showUntil(15, character)
+				call this.showRange(0, 15, character)
 			endif
 		endmethod
 
@@ -153,11 +153,17 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 
 		// Lass uns umherziehen!
 		private static method infoAction6 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Lass uns umherziehen!"), null)
-			call speech(info, character, true, tr("Na gut."), null)
-			// Mathilda schließt sich dem Charakter an
-			call Fellows.mathilda().shareWith(character)
-			call info.talk().close(character)
+			if (this.characters().size() == 1) then
+				call speech(info, character, true, tr("Na gut."), null)
+				// Mathilda schließt sich dem Charakter an
+				call Fellows.mathilda().shareWith(character)
+				call this.close(character)
+			else
+				call character.displayMessage(ACharacter.messageTypeError, tr("Mathilda unterhält sich noch mit anderen Charakteren."))
+				call this.showStartPage(character)
+			endif
 		endmethod
 
 		// Du musizierst?
