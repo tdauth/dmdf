@@ -154,17 +154,17 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_bjoernWorksAtFurs.setFacing(35.48)
 			set thistype.m_bjoernTalksToHisWife = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoern(), 11.00, 14.00, gg_rct_waypoint_bjoern_2)
 			call thistype.m_bjoernTalksToHisWife.setPartner(Npcs.bjoernsWife())
-			call thistype.m_bjoernTalksToHisWife.addSound(tr("Ist alles in Ordnung?"), gg_snd_Bjoern101)
-			call thistype.m_bjoernTalksToHisWife.addSound(tr("Morgen muss ich Felle verkaufen."), gg_snd_Bjoern201)
-			call thistype.m_bjoernTalksToHisWife.addSound(tr("Hoffentlich veranstaltet der Herzog bald wieder eine Jagd."), gg_snd_Bjoern301)
-			call thistype.m_bjoernTalksToHisWife.addSound(tr("Du weißt wie viel du mir bedeutest."), gg_snd_Bjoern401)
+			call thistype.m_bjoernTalksToHisWife.addSound(tre("Ist alles in Ordnung?", "Is everything alright?"), gg_snd_Bjoern101)
+			call thistype.m_bjoernTalksToHisWife.addSound(tre("Morgen muss ich Felle verkaufen.", "Tomorrow I have to sell skins."), gg_snd_Bjoern201)
+			call thistype.m_bjoernTalksToHisWife.addSound(tre("Hoffentlich veranstaltet der Herzog bald wieder eine Jagd.", "Hopefully the duke will organize a hunt soon."), gg_snd_Bjoern301)
+			call thistype.m_bjoernTalksToHisWife.addSound(tre("Du weißt wie viel du mir bedeutest.", "You know how much you mean to me."), gg_snd_Bjoern401)
 			set thistype.m_bjoernTalksToManfred = NpcTalksRoutine.create(Routines.talk(), Npcs.bjoern(), 14.00, MapData.evening, gg_rct_waypoint_bjoern_3)
 			call thistype.m_bjoernTalksToManfred.setPartner(Npcs.manfred())
 			call thistype.m_bjoernTalksToManfred.setPartner(Npcs.bjoernsWife())
-			call thistype.m_bjoernTalksToManfred.addSound(tr("Ich habe hier Felle für dich."), gg_snd_Bjoern501)
-			call thistype.m_bjoernTalksToManfred.addSound(tr("Die besten Felle weit und breit."), gg_snd_Bjoern601)
-			call thistype.m_bjoernTalksToManfred.addSound(tr("Du weißt wie gut die Qualität ist."), gg_snd_Bjoern701)
-			call thistype.m_bjoernTalksToManfred.addSound(tr("Du machst mich noch arm."), gg_snd_Bjoern801)
+			call thistype.m_bjoernTalksToManfred.addSound(tre("Ich habe hier Felle für dich.", "I have skins for you."), gg_snd_Bjoern501)
+			call thistype.m_bjoernTalksToManfred.addSound(tre("Die besten Felle weit und breit.", "The best skins far and wide."), gg_snd_Bjoern601)
+			call thistype.m_bjoernTalksToManfred.addSound(tre("Du weißt wie gut die Qualität ist.", "You know how good the quality is."), gg_snd_Bjoern701)
+			call thistype.m_bjoernTalksToManfred.addSound(tre("Du machst mich noch arm.", "You will make me poor."), gg_snd_Bjoern801)
 
 			// Björn's wife
 			set thistype.m_bjoernsWifeStandsNearFire0 = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.bjoernsWife(), MapData.evening, 11.00, gg_rct_waypoint_bjoerns_wife)
@@ -231,10 +231,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_wielandTalks.addSound(tre("Einar, du verdammter Hundesohn!", "Einar, you goddamn bastard!"), gg_snd_Wieland40)
 			call thistype.m_wielandTalks.addSound(tre("Hör mir auf mit den Orks!", "Stop with those Orcs!"), gg_snd_Wieland41)
 			
-			call thistype.m_wielandTalks.addSoundAnswer(tr("Mehr als du schmieden kannst!"), null) // TODO Missing sound!
-			call thistype.m_wielandTalks.addSoundAnswer(tr("Ich gebe dir 30 Goldmünzen pro Klinge."), gg_snd_Einar_25)
-			call thistype.m_wielandTalks.addSoundAnswer(tr("Geschäft ist Geschäft."),  gg_snd_Einar_26)
-			call thistype.m_wielandTalks.addSoundAnswer(tr("Bald kommen die Orks. Sei froh wenn du genügend Klingen geschmiedet hast."), gg_snd_Einar_27)
+			call thistype.m_wielandTalks.addSoundAnswer(tre("Mehr als du schmieden kannst!", "More than you can forge!"), gg_snd_Einar_28)
+			call thistype.m_wielandTalks.addSoundAnswer(tre("Ich gebe dir 30 Goldmünzen pro Klinge.", "I give you 30 gold coins per blade."), gg_snd_Einar_25)
+			call thistype.m_wielandTalks.addSoundAnswer(tre("Geschäft ist Geschäft.", "Business is business."),  gg_snd_Einar_26)
+			call thistype.m_wielandTalks.addSoundAnswer(tre("Bald kommen die Orks. Sei froh wenn du genügend Klingen geschmiedet hast.", "Soon the Orcs will come. Be glad if you have forged enough blades."), gg_snd_Einar_27)
 			
 			//set thistype.m_wielandDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.wieland(), 14.00, MapData.evening, gg_rct_waypoint_wieland_2)
 			

@@ -49,13 +49,13 @@ library StructGameCommands requires Asl, StructGameCharacter
 			local AGroup selected = AGroup.create()
 			call selected.addUnitsSelected(GetTriggerPlayer(), Filter(function thistype.filterIsCharacter))
 			if (selected.units().isEmpty()) then
-				call SimError(GetTriggerPlayer(), tr("Kein Charakter ausgewählt."))
+				call SimError(GetTriggerPlayer(), tre("Kein Charakter ausgewählt.", "No character selected."))
 			else
 				set i = 0
 				loop
 					exitwhen (i == selected.units().size())
 					call ACharacter.getCharacterByUnit(selected.units()[i]).setMovable(true)
-					call ACharacter.getCharacterByUnit(selected.units()[i]).displayMessage(ACharacter.messageTypeInfo, tr("Vom Administrator wieder beweglich gemacht."))
+					call ACharacter.getCharacterByUnit(selected.units()[i]).displayMessage(ACharacter.messageTypeInfo, tre("Vom Administrator wieder beweglich gemacht.", "Made movable again by the admin."))
 					set i = i + 1
 				endloop
 			endif

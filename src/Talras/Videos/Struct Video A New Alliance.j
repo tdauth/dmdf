@@ -85,19 +85,19 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Doch bald werden die Orks und Dunkelelfen mit einem größeren Heer die Grenze überschreiten. Dieses kleine Gefecht war erst der Anfang."), gg_snd_Markward36)
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Doch bald werden die Orks und Dunkelelfen mit einem größeren Heer die Grenze überschreiten. Dieses kleine Gefecht war erst der Anfang.", "But soon the Orcs and Dark Elves will cross the border with a larger army. This small battle was just the beginning."), gg_snd_Markward36)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward36))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Wir erhielten Berichte von Überfällen an der Grenze und sogar von größeren Truppenbewegungen. Uns bleibt nun keine Zeit mehr und den König oder den restlichen Adel vom Ernst der Lage zu überzeugen scheint zwecklos."), gg_snd_Markward37)
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Wir erhielten Berichte von Überfällen an der Grenze und sogar von größeren Truppenbewegungen. Uns bleibt nun keine Zeit mehr und den König oder den restlichen Adel vom Ernst der Lage zu überzeugen scheint zwecklos.", "We received reports of attacks on the border and even of larger troop movements. We have no time left and to convince the king or the remaining nobility about the seriousness of the situation seems pointless."), gg_snd_Markward37)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward37))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Findet die Hochelfin und bringt sie um jeden Preis hier her. Hier habt ihr noch den Lohn für eure treuen Dienste. Viel Glück!"), gg_snd_Markward38)
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Findet die Hochelfin und bringt sie um jeden Preis hier her. Hier habt ihr noch den Lohn für eure treuen Dienste. Viel Glück!", "Find the High Elf and bring her over here at any price. Here you have your rewards for your faithful service. Good luck!"), gg_snd_Markward38)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward38))) then
 				return

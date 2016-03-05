@@ -6,7 +6,7 @@ Learn Rush [|cffffcc00Level %d|r]
 
 STRING 1
 {
-Chapter 1: Talras 0.6
+Chapter 1: Talras 0.7
 }
 
 STRING 2
@@ -11626,8 +11626,9 @@ Open rucksack
 }
 
 STRING 1941
+// Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Version 0.6
+Schneller Handel Stufe 1
 }
 
 STRING 1942
@@ -100599,8 +100600,9 @@ Manaexplosion [|cffffcc00Stufe 5|r]
 }
 
 STRING 16773
+// Einheiten: n06U (Gardonar der Dämonenfürst), Name (Name (unam))
 {
-Version 0.6
+Gardonar der Dämonenfürst
 }
 
 STRING 16774
@@ -103122,6 +103124,1139 @@ Information
 
 STRING 17194
 {
-Missions
+Aufträge
+}
+
+STRING 17195
+// Einheiten: h02L (Wasser-Elementarwesen), Name (Name (unam))
+{
+Wasser-Elementarwesen
+}
+
+STRING 17196
+// Einheiten: h02M (Sand-Elementarwesen), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Elementarwesen)
+}
+
+STRING 17197
+// Einheiten: h02M (Sand-Elementarwesen), Name (Name (unam))
+{
+Sand-Elementarwesen
+}
+
+STRING 17198
+// Einheiten: h02N (Wind-Elementarwesen), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Elementarwesen)
+}
+
+STRING 17199
+// Einheiten: h02N (Wind-Elementarwesen), Name (Name (unam))
+{
+Wind-Elementarwesen
+}
+
+STRING 17200
+// Einheiten: h02O (Feuer-Elementarwesen), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Elementarwesen)
+}
+
+STRING 17201
+// Einheiten: h02O (Feuer-Elementarwesen), Name (Name (unam))
+{
+Feuer-Elementarwesen
+}
+
+STRING 17202
+// Einheiten: h02P (Eis-Elementarwesen), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Elementarwesen)
+}
+
+STRING 17203
+// Einheiten: h02P (Eis-Elementarwesen), Name (Name (unam))
+{
+Eis-Elementarwesen
+}
+
+STRING 17204
+// Einheiten: h02Q (Magma-Elementarwesen), EditorSuffix (Name - Editor-Suffix (unsf))
+{
+(Elementarwesen)
+}
+
+STRING 17205
+// Einheiten: h02Q (Magma-Elementarwesen), Name (Name (unam))
+{
+Magma-Elementarwesen
+}
+
+STRING 17206
+// Fähigkeiten: A1I8 (Elementarwesen), Name (Name (anam))
+{
+Elementarwesen
+}
+
+STRING 17207
+// Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 1|r]
+}
+
+STRING 17208
+// Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 2|r]
+}
+
+STRING 17209
+// Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 3|r]
+}
+
+STRING 17210
+// Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 4|r]
+}
+
+STRING 17211
+// Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 5|r]
+}
+
+STRING 17212
+// Fähigkeiten: A1I8 (Elementarwesen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Zerlegt den Elementarmagier in Elementarwesen, sodass 5 spezielle Elementarwesen entstehen. Wenn eines von ihnen bis zum Ablauf der Beschwörungszeitspanne überlebt, wird der Elementarmagier wiedergeboren.|nHält <A1I8,Dur4> Sekunden.
+}
+
+STRING 17213
+// Fähigkeiten: A1I8 (Elementarwesen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Zerlegt den Elementarmagier in Elementarwesen, sodass 6 spezielle Elementarwesen entstehen. Wenn eines von ihnen bis zum Ablauf der Beschwörungszeitspanne überlebt, wird der Elementarmagier wiedergeboren.|nHält <A1I8,Dur5> Sekunden.
+}
+
+STRING 17214
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Zerlegt den Elementarmagier in Elementarwesen, sodass spezielle Elementarwesen entstehen. Wenn eines von ihnen bis zum Ablauf der Beschwörungszeitspanne überlebt, wird der Elementarmagier wiedergeboren.|nHält <A1I8,Dur1> Sekunden. |n|n|cffffcc00Stufe 1|r - Wasser- und Feuer-Elementarwesen. |n|cffffcc00Stufe 2|r - Wasser-, Feuer- und Magma-Elementarwesen. |n|cffffcc00Stufe 3|r - Wasser-, Feuer-, Magma- und Wind-Elementarwesen. |n|cffffcc00Stufe 4|r - Wasser-, Feuer-, Magma-, Wind- und Sand-Elementarwesen. |n|cffffcc00Stufe 5|r - Wasser-, Feuer-, Magma-, Wind-, Sand- und Eis-Elementarwesen.
+}
+
+STRING 17215
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Zerlegt den Elementarmagier in Elementarwesen, sodass spezielle Elementarwesen entstehen. Wenn eines von ihnen bis zum Ablauf der Beschwörungszeitspanne überlebt, wird der Elementarmagier wiedergeboren.|nHält <A1I8,Dur1> Sekunden. |n|n|cffffcc00Stufe 1|r - Wasser- und Feuer-Elementarwesen. |n|cffffcc00Stufe 2|r - Wasser-, Feuer- und Magma-Elementarwesen. |n|cffffcc00Stufe 3|r - Wasser-, Feuer-, Magma- und Wind-Elementarwesen. |n|cffffcc00Stufe 4|r - Wasser-, Feuer-, Magma-, Wind- und Sand-Elementarwesen. |n|cffffcc00Stufe 5|r - Wasser-, Feuer-, Magma-, Wind-, Sand- und Eis-Elementarwesen.
+}
+
+STRING 17216
+// Fähigkeiten: A1I9 (Elementarwesen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Elementarmagier)
+}
+
+STRING 17217
+// Fähigkeiten: A1I9 (Elementarwesen), Name (Name (anam))
+{
+Elementarwesen
+}
+
+STRING 17218
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Zerlegt den Elementarmagier in Elementarwesen, sodass spezielle Elementarwesen entstehen. Wenn eines von ihnen bis zum Ablauf der Beschwörungszeitspanne überlebt, wird der Elementarmagier wiedergeboren.|nHält <A1I8,Dur1> Sekunden. |n|n|cffffcc00Stufe 1|r - Wasser- und Feuer-Elementarwesen. |n|cffffcc00Stufe 2|r - Wasser-, Feuer- und Magma-Elementarwesen. |n|cffffcc00Stufe 3|r - Wasser-, Feuer-, Magma- und Wind-Elementarwesen. |n|cffffcc00Stufe 4|r - Wasser-, Feuer-, Magma-, Wind- und Sand-Elementarwesen. |n|cffffcc00Stufe 5|r - Wasser-, Feuer-, Magma-, Wind-, Sand- und Eis-Elementarwesen.
+}
+
+STRING 17219
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17220
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17221
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17222
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17223
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 17224
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 17225
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 17226
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 17227
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 1|r]
+}
+
+STRING 17228
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Elementarmagier)
+}
+
+STRING 17229
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Name (Name (anam))
+{
+Elementarwesen - Stufe 1
+}
+
+STRING 17230
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17231
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17232
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Zerlegt den Elementarmagier in Elementarwesen, sodass spezielle Elementarwesen entstehen. Wenn eines von ihnen bis zum Ablauf der Beschwörungszeitspanne überlebt, wird der Elementarmagier wiedergeboren.|nHält <A1I8,Dur1> Sekunden. |n|n|cffffcc00Stufe 1|r - Wasser- und Feuer-Elementarwesen. |n|cffffcc00Stufe 2|r - Wasser-, Feuer- und Magma-Elementarwesen. |n|cffffcc00Stufe 3|r - Wasser-, Feuer-, Magma- und Wind-Elementarwesen. |n|cffffcc00Stufe 4|r - Wasser-, Feuer-, Magma-, Wind- und Sand-Elementarwesen. |n|cffffcc00Stufe 5|r - Wasser-, Feuer-, Magma-, Wind-, Sand- und Eis-Elementarwesen.
+}
+
+STRING 17233
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17234
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17235
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17236
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17237
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 17238
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 17239
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 17240
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 17241
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 2|r]
+}
+
+STRING 17242
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Elementarmagier)
+}
+
+STRING 17243
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Name (Name (anam))
+{
+Elementarwesen - Stufe 2
+}
+
+STRING 17244
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17245
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17246
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Zerlegt den Elementarmagier in Elementarwesen, sodass spezielle Elementarwesen entstehen. Wenn eines von ihnen bis zum Ablauf der Beschwörungszeitspanne überlebt, wird der Elementarmagier wiedergeboren.|nHält <A1I8,Dur1> Sekunden. |n|n|cffffcc00Stufe 1|r - Wasser- und Feuer-Elementarwesen. |n|cffffcc00Stufe 2|r - Wasser-, Feuer- und Magma-Elementarwesen. |n|cffffcc00Stufe 3|r - Wasser-, Feuer-, Magma- und Wind-Elementarwesen. |n|cffffcc00Stufe 4|r - Wasser-, Feuer-, Magma-, Wind- und Sand-Elementarwesen. |n|cffffcc00Stufe 5|r - Wasser-, Feuer-, Magma-, Wind-, Sand- und Eis-Elementarwesen.
+}
+
+STRING 17247
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17248
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17249
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17250
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17251
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 17252
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 17253
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 17254
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 17255
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 3|r]
+}
+
+STRING 17256
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Elementarmagier)
+}
+
+STRING 17257
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Name (Name (anam))
+{
+Elementarwesen - Stufe 3
+}
+
+STRING 17258
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17259
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17260
+// Fähigkeiten: A1IK (Frost-Rüstung), EditorSuffix (Editor-Suffix (ansf))
+{
+(Eis-Elementarwesen)
+}
+
+STRING 17261
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17262
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17263
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17264
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17265
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 17266
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 17267
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 17268
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 17269
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 4|r]
+}
+
+STRING 17270
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Elementarmagier)
+}
+
+STRING 17271
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Name (Name (anam))
+{
+Elementarwesen - Stufe 4
+}
+
+STRING 17272
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17273
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17274
+// Fähigkeiten: A1IK (Frost-Rüstung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erzeugt einen Frostschild um eine angewählte befreundete Einheit herum. Der Schild erhöht die Rüstung um <A1IK,DataB1> und verlangsamt angreifende Nahkampf-Einheiten für die Dauer von <A1IK,Dur1> Sekunden. |nHält <A1IK,DataA1> Sekunden lang an.
+}
+
+STRING 17275
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17276
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17277
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17278
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17279
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 17280
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 17281
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 17282
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 17283
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+{
+Elementarwesen [|cffffcc00Stufe 5|r]
+}
+
+STRING 17284
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Elementarmagier)
+}
+
+STRING 17285
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Name (Name (anam))
+{
+Elementarwesen - Stufe 5
+}
+
+STRING 17286
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17287
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17288
+// Fähigkeiten: A1IF (Elementarwesen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Elementarmagier)
+}
+
+STRING 17289
+// Fähigkeiten: A1IF (Elementarwesen - Stufe 1), Name (Name (anam))
+{
+Elementarwesen - Stufe 1
+}
+
+STRING 17290
+// Fähigkeiten: A1IG (Elementarwesen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Elementarmagier)
+}
+
+STRING 17291
+// Fähigkeiten: A1IG (Elementarwesen - Stufe 2), Name (Name (anam))
+{
+Elementarwesen - Stufe 2
+}
+
+STRING 17292
+// Fähigkeiten: A1IH (Elementarwesen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Elementarmagier)
+}
+
+STRING 17293
+// Fähigkeiten: A1IH (Elementarwesen - Stufe 3), Name (Name (anam))
+{
+Elementarwesen - Stufe 3
+}
+
+STRING 17294
+// Fähigkeiten: A1II (Elementarwesen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Elementarmagier)
+}
+
+STRING 17295
+// Fähigkeiten: A1II (Elementarwesen - Stufe 4), Name (Name (anam))
+{
+Elementarwesen - Stufe 4
+}
+
+STRING 17296
+// Fähigkeiten: A1IJ (Elementarwesen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Elementarmagier)
+}
+
+STRING 17297
+// Fähigkeiten: A1IJ (Elementarwesen - Stufe 5), Name (Name (anam))
+{
+Elementarwesen - Stufe 5
+}
+
+STRING 17298
+// Zauberverstärker/Effekte: B02G (Beherrschung), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Elementarmagier)
+}
+
+STRING 17299
+// Zauberverstärker/Effekte: B00D (), Bufftip (Tooltipp (ftip))
+{
+Elementarwesen
+}
+
+STRING 17300
+// Zauberverstärker/Effekte: B00D (), Buffubertip (Tooltipp - Erweitert (fube))
+{
+Ein Elementarwesen.
+}
+
+STRING 17301
+// Fähigkeiten: A1IR (Verbrennen), EditorSuffix (Editor-Suffix (ansf))
+{
+(Elementarwesen)
+}
+
+STRING 17302
+// Einheiten: h02R (Regenbogenbrücke), Name (Name (unam))
+{
+Regenbogenbrücke
+}
+
+STRING 17303
+// Einheiten: h02S (Leprechaun), Name (Name (unam))
+{
+Leprechaun
+}
+
+STRING 17304
+// Fähigkeiten: A1IM (Leprechaun), EditorSuffix (Editor-Suffix (ansf))
+{
+(Waldläufer - Ultimativzauber 1)
+}
+
+STRING 17305
+// Fähigkeiten: A1IM (Leprechaun), Name (Name (anam))
+{
+Leprechaun
+}
+
+STRING 17306
+// Fähigkeiten: A1IM (Leprechaun), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 1|r|nDer Waldläufer ruft einen Leprechaun, der dem Waldläufer einen Topf voll Gold vom Ende seines Regenbogens bringt. Alle Spieler erhalten 500 Goldmünzen. Außerdem erzeugt der Lebrechaun eine Aura des Glücks, die <A1IO,Dur1> Sekunden lang die Rüstung um <A1IO,DataA1> erhöht und <A1IO,DataB1> Leben und <A1IO,DataC1> Mana bei Verbündeten regeneriert.
+}
+
+STRING 17307
+// Fähigkeiten: A10M (Arkane Zeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verbündeter Illusionen oder verringert die Dauer beschworener Gegner oder feindlicher Illusionen.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+}
+
+STRING 17308
+// Fähigkeiten: A1IN (Leprechaun), EditorSuffix (Editor-Suffix (ansf))
+{
+(Favoritenfähigkeit - Waldläufer)
+}
+
+STRING 17309
+// Fähigkeiten: A1IN (Leprechaun), Name (Name (anam))
+{
+Leprechaun
+}
+
+STRING 17310
+// Fähigkeiten: A1IO (Zeitlich beschränkter Gebiets-Rüstungs-Bonus), EditorSuffix (Editor-Suffix (ansf))
+{
+ (mit Leben- und Mana-Heilung) (Leprechaun)
+}
+
+STRING 17311
+// Fähigkeiten: A1IO (Zeitlich beschränkter Gebiets-Rüstungs-Bonus), Name (Name (anam))
+{
+Zeitlich beschränkter Gebiets-Rüstungs-Bonus
+}
+
+STRING 17312
+// Fähigkeiten: A15W (Inneres Feuer), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Erhöht die Schadenswirkung einer angewählten befreundeten Einheit um <A15W,DataA1,%> % und die Rüstung um <A15W,DataB1>. |nHält <A15W,Dur1> Sekunden lang an.
+}
+
+STRING 17313
+// Einheiten: n06T (Trainierte Ratte), Name (Name (unam))
+{
+Trainierte Ratte
+}
+
+STRING 17314
+// Gegenstände: I06O (Trainierte Ratte), Description (Beschreibung (ides))
+{
+Erzeugt eine trainierte Ratte.
+}
+
+STRING 17315
+// Gegenstände: I06O (Trainierte Ratte), Ubertip (Tooltipp - Erweitert (utub))
+{
+Erzeugt eine vom Spieler gesteuerte trainierte Ratte, mit der Feinde ausgespäht werden können.
+}
+
+STRING 17316
+// Gegenstände: I06O (Trainierte Ratte), Tip (Tooltipp - Einfach (utip))
+{
+Trainierte Ratte kaufen
+}
+
+STRING 17317
+// Gegenstände: I06O (Trainierte Ratte), Name (Name (unam))
+{
+Trainierte Ratte
+}
+
+STRING 17318
+// Fähigkeiten: A1IL (Trainierte Ratte), Name (Name (anam))
+{
+Trainierte Ratte
+}
+
+STRING 17319
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nDer Waldläufer ruft einen Leprechaun, der dem Waldläufer einen Topf voll Gold vom Ende seines Regenbogens bringt. Alle Spieler erhalten 500 Goldmünzen. Außerdem erzeugt der Lebrechaun eine Aura des Glücks, die <A1IO,Dur1> Sekunden lang die Rüstung um <A1IO,DataA1> erhöht und <A1IO,DataB1> Leben und <A1IO,DataC1> Mana bei Verbündeten regeneriert.
+}
+
+STRING 17320
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 120 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17321
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 140 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17322
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 180 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17323
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entzieht einem Gegner bis zu 240 Mana, fügt ihm dafür Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.
+}
+
+STRING 17324
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 2|r]
+}
+
+STRING 17325
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 3|r]
+}
+
+STRING 17326
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 4|r]
+}
+
+STRING 17327
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Manaexplosion [|cffffcc00Stufe 5|r]
+}
+
+STRING 17328
+// Fähigkeiten: A1IM (Leprechaun), Tip (Tooltipp - Normal (atp1))
+{
+Leprechaun [|cffffcc00Stufe 1|r]
+}
+
+STRING 17329
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuch - Waldläufer)
+}
+
+STRING 17330
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Name (Name (anam))
+{
+Leprechaun - Stufe 1
+}
+
+STRING 17331
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Researchtip (Tooltipp - Erlernen (aret))
+{
+Anstürmen [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 17332
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Researchubertip (Tooltipp - Erlernen - Erweitert (arut))
+{
+Der Ritter stürmt sein Ziel an, betäubt es 2 Sekunden lang und fügt ihm X Punkt Schaden zu.
+}
+
+STRING 17333
+// Fähigkeiten: A1IQ (Leprechaun - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
+{
+(Zauberbuchfähigkeit - Waldläufer)
+}
+
+STRING 17334
+// Fähigkeiten: A1IQ (Leprechaun - Stufe 1), Name (Name (anam))
+{
+Leprechaun - Stufe 1
+}
+
+STRING 17335
+// Fähigkeiten: A1IR (Verbrennen), Tip (Tooltipp - Normal (atp1))
+{
+Verbrennen
+}
+
+STRING 17336
+// Fähigkeiten: A1IR (Verbrennen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Jeder durchgeführte Angriff wird durch lebende Flammen verbessert, die das Ziel umschlingen. Diese Flammen erzeugen beim ersten Angriff <A1IR,DataA1> Punkte zusätzlichen Schaden, doppelt so viel beim zweiten Angriff, drei Mal so viel beim dritten Angriff usw.|n|nWenn eine Einheit, die von diesem Effekt betroffen ist, stirbt, verursacht sie <A1IR,DataB1> Punkte Schaden an allen in der Nähe befindlichen feindlichen Einheiten.
+}
+
+STRING 17337
+// Fähigkeiten: A1IS (Sandsturm), Tip (Tooltipp - Normal (atp1))
+{
+Sandsturm
+}
+
+STRING 17338
+// Fähigkeiten: A1IS (Sandsturm), EditorSuffix (Editor-Suffix (ansf))
+{
+(Elementarwesen)
+}
+
+STRING 17339
+// Fähigkeiten: A1IS (Sandsturm), Name (Name (anam))
+{
+Sandsturm
+}
+
+STRING 17340
+// Fähigkeiten: A1IT (Windlauf), EditorSuffix (Editor-Suffix (ansf))
+{
+(Elementarwesen)
+}
+
+STRING 17341
+// Fähigkeiten: A1IT (Windlauf), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Macht das Elementarwesen unsichtbar und lässt es <A1IT,DataB1,%>% schneller laufen. Wenn das Elementarwesen eine Einheit angreift, um wieder sichtbar zu werden, verursacht der Angriff einen zusätzlichen Schaden von <A1IT,DataC1> Punkten.
+}
+
+STRING 17342
+// Fähigkeiten: A1IU (Schmetterwelle), EditorSuffix (Editor-Suffix (ansf))
+{
+(Elementarwesen)
+}
+
+STRING 17343
+// Fähigkeiten: A1IU (Schmetterwelle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Schickt eine gigantische Welle aus, die <A1IU,DataA1> Punkte Schaden und maximal <A1IU,DataB1> Punkte Schaden an sämtlichen feindlichen in einer Reihe befindlichen Land-Einheiten verursacht.
+}
+
+STRING 17344
+// Fähigkeiten: A1J0 (Magma), EditorSuffix (Editor-Suffix (ansf))
+{
+(Elementarwesen)
+}
+
+STRING 17345
+// Einheiten: n06V (Baradé, Fürst der Dunkelelfen), Name (Name (unam))
+{
+Baradé, Fürst der Dunkelelfen
+}
+
+STRING 17346
+// Fähigkeiten: A1IV (Einheiten-Inventar), EditorSuffix (Editor-Suffix (ansf))
+{
+(Leprechaun)
+}
+
+STRING 17347
+// Zerstörbare Objekte: B00Y (Regenbogenbrücke), Name (Name (bnam))
+{
+Regenbogenbrücke
+}
+
+STRING 17348
+// Zauberverstärker/Effekte: B00F (), Bufftip (Tooltipp (ftip))
+{
+Leprechaun
+}
+
+STRING 17349
+// Zauberverstärker/Effekte: B00F (), Buffubertip (Tooltipp - Erweitert (fube))
+{
+Diese Einheit steht unter der Wirkung eines Leprechaun; ihre Rüstung ist eine Zeit lang erhöht.
+}
+
+STRING 17350
+// Zauberverstärker/Effekte: B00F (), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Waldläufer)
+}
+
+STRING 17351
+// Fähigkeiten: A1IP (Leprechaun - Stufe 1), Tip (Tooltipp - Normal (atp1))
+{
+Leprechaun [|cffffcc00Stufe 1|r]
+}
+
+STRING 17352
+{
+Version 0.7
+}
+
+STRING 17353
+// Einheiten: n06W (Gammar, Kriegsherr der Orks), Name (Name (unam))
+{
+Gammar, Kriegsherr der Orks
+}
+
+STRING 17354
+// Einheiten: n06X (Gardonars Leibwache), Name (Name (unam))
+{
+Gardonars Leibwache
+}
+
+STRING 17355
+// Fähigkeiten: A10N (Arkane Zeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verbündeter Illusionen oder verringert die Dauer beschworener Gegner oder feindlicher Illusionen.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+}
+
+STRING 17356
+// Fähigkeiten: A10O (Arkane Zeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verbündeter Illusionen oder verringert die Dauer beschworener Gegner oder feindlicher Illusionen.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+}
+
+STRING 17357
+// Fähigkeiten: A10P (Arkane Zeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verbündeter Illusionen oder verringert die Dauer beschworener Gegner oder feindlicher Illusionen.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+}
+
+STRING 17358
+// Fähigkeiten: A10Q (Arkane Zeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+{
+Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verbündeter Illusionen oder verringert die Dauer beschworener Gegner oder feindlicher Illusionen.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+}
+
+STRING 17359
+// Zauberverstärker/Effekte: B02X (), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Zauberer - Negativer Zauberverstärker)
+}
+
+STRING 17360
+// Zauberverstärker/Effekte: B02X (), Buffubertip (Tooltipp - Erweitert (fube))
+{
+Diese Einheit steht unter dem Einfluss von 'Arkane Zeit'; die Dauer positiver Zauberverstärker wurde reduziert.
+}
+
+STRING 17361
+// Gegenstände: I06P (Amulett aus Talras), Name (Name (unam))
+{
+Amulett aus Talras
+}
+
+STRING 17362
+// Zauberverstärker/Effekte: B02Y (), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Zauberer - Positiver Zauberverstärker)
+}
+
+STRING 17363
+// Zauberverstärker/Effekte: B02Y (), Buffubertip (Tooltipp - Erweitert (fube))
+{
+Diese Einheit steht unter dem Einfluss von 'Arkane Zeit'; die Dauer negativer Zauberverstärker wurde reduziert.
+}
+
+STRING 17364
+// Fähigkeiten: A1IY (Entzünden), EditorSuffix (Editor-Suffix (ansf))
+{
+(Elementarmagier - Positiver Zauberverstärker)
+}
+
+STRING 17365
+// Fähigkeiten: A1IY (Entzünden), Name (Name (anam))
+{
+Entzünden
+}
+
+STRING 17366
+// Gegenstände: I06P (Amulett aus Talras), Tip (Tooltipp - Einfach (utip))
+{
+Amulett der Kraft kaufen
+}
+
+STRING 17367
+// Zauberverstärker/Effekte: B02Z (), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Elementarmagier - Positiver Zauberverstärker)
+}
+
+STRING 17368
+// Zauberverstärker/Effekte: B02Z (), Buffubertip (Tooltipp - Erweitert (fube))
+{
+Diese Einheit steht unter dem Einfluss von 'Entzünden'; ihr Schaden wurde erhöht.
+}
+
+STRING 17369
+// Einheiten: n06Y (Gardonars Wächter), Name (Name (unam))
+{
+Gardonars Wächter
+}
+
+STRING 17370
+// Einheiten: n06Y (Gardonars Wächter), Tip (Tooltipp - Einfach (utip))
+{
+Gardonars Wächter anheuern
+}
+
+STRING 17371
+// Einheiten: n06Z (Gardonars Dämon), Name (Name (unam))
+{
+Gardonars Dämon
+}
+
+STRING 17372
+// Einheiten: n06Z (Gardonars Dämon), Tip (Tooltipp - Einfach (utip))
+{
+Gardonars Dämon anheuern
+}
+
+STRING 17373
+// Einheiten: n070 (Gardonars Dämon), Name (Name (unam))
+{
+Gardonars Dämon
+}
+
+STRING 17374
+// Einheiten: n070 (Gardonars Dämon), Tip (Tooltipp - Einfach (utip))
+{
+Gardonars Dämon anheuern
+}
+
+STRING 17375
+// Zauberverstärker/Effekte: B02Y (), Bufftip (Tooltipp (ftip))
+{
+|cff00ff00Arkane Zeit|r
+}
+
+STRING 17376
+// Zauberverstärker/Effekte: B02Z (), Bufftip (Tooltipp (ftip))
+{
+|cff00ff00Entzünden|r
+}
+
+STRING 17377
+// Gegenstände: I06P (Amulett aus Talras), Description (Beschreibung (ides))
+{
+Erhöht die Kraft, das Geschick und das Wissen des Trägers.
+}
+
+STRING 17378
+// Gegenstände: I06P (Amulett aus Talras), Ubertip (Tooltipp - Erweitert (utub))
+{
+Erhöht die Kraft des Trägers um <A1IZ,DataA1>, das Geschick um <A1IZ,DataB1> und das Wissen um <A1IZ,DataC1>.
+}
+
+STRING 17379
+// Fähigkeiten: A1IZ (Amulett aus Talras), Name (Name (anam))
+{
+Amulett aus Talras
+}
+
+STRING 17380
+// Fähigkeiten: A1IZ (Amulett aus Talras), EditorSuffix (Editor-Suffix (ansf))
+{
+(+10 zu allen Attributen)
+}
+
+STRING 17381
+// Fähigkeiten: A1J0 (Magma), Name (Name (anam))
+{
+Magma
+}
+
+STRING 17382
+// Fähigkeiten: A1J0 (Magma), Tip (Tooltipp - Normal (atp1))
+{
+Magma
+}
+
+STRING 17383
+// Zauberverstärker/Effekte: B00D (), EditorSuffix (Editor-Suffix (fnsf))
+{
+(Elementarwesen)
 }
 
