@@ -42,7 +42,7 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 			loop
 				exitwhen (i == result.units().size())
 				// can last his illusions longer
-				if (GetUnitAbilityLevel(result.units()[i], thistype.positiveBuffAbilityId) == 0 and GetUnitAbilityLevel(result.units()[i], thistype.negativeBuffAbilityId) == 0 and not IsUnitType(result.units()[i], UNIT_TYPE_SUMMONED) and not IsUnitIllusion(result.units()[i]) and ((GetUnitAllianceStateToUnit(this.character().unit(), result.units()[i]) == bj_ALLIANCE_UNALLIED and not UnitHasBuffsEx(result.units()[i], true, false, true, true, false, false, false)) or (GetUnitAllianceStateToUnit(this.character().unit(), result.units()[i]) != bj_ALLIANCE_UNALLIED and not UnitHasBuffsEx(result.units()[i], false, true, true, true, false, false, false)))) then
+				if (GetUnitAbilityLevel(result.units()[i], thistype.positiveBuffAbilityId) == 0 and GetUnitAbilityLevel(result.units()[i], thistype.negativeBuffAbilityId) == 0 and not IsUnitType(result.units()[i], UNIT_TYPE_SUMMONED) and not IsUnitIllusion(result.units()[i]) and ((GetUnitAllianceStateToUnit(this.character().unit(), result.units()[i]) == bj_ALLIANCE_UNALLIED and not UnitHasBuffsEx(result.units()[i], false, true, true, true, false, false, false)) or (GetUnitAllianceStateToUnit(this.character().unit(), result.units()[i]) != bj_ALLIANCE_UNALLIED and not UnitHasBuffsEx(result.units()[i], true, false, true, true, false, false, false)))) then
 					call result.units().erase(i)
 				else
 					set i = i + 1
@@ -173,7 +173,7 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 							call this.removeTimedLifeAfter.execute(time, target)
 						
 						else
-							set time = thistype.illusionRemovalTimeStartValue + (thistype.illusionRemovalTimeLevelValue * this.level())
+							set time = thistype.illusionTimeStartValue + (thistype.illusionTimeLevelValue * this.level())
 							call this.pauseTimedLifeFor.execute(time, target)
 						endif
 					else

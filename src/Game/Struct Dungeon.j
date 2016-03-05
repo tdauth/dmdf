@@ -76,7 +76,7 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 			call thistype.m_dungeons.remove(this)
 		endmethod
 
-		private static method onInit takes nothing returns nothing
+		public static method init takes nothing returns nothing
 			set thistype.m_dungeons = AIntegerVector.create()
 		endmethod
 

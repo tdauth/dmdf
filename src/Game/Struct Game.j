@@ -445,6 +445,8 @@ endif
 static if (DMDF_INVENTORY) then
 			call Inventory.init0.evaluate()
 endif
+
+			call Dungeon.init.evaluate() // before map data init
 			// game types
 			call Classes.init()
 			call ItemTypes.init() // after classes!

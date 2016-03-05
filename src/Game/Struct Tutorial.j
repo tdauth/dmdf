@@ -101,7 +101,15 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("\"-history n\" zeigt die n letzten Spielnachrichten an (standardmäßig fünf).", "\"-history n\" shows the recent n game messages (by default five)."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("\"-clear\" leert den Bildschirm von Spielnachrichten.", "\"-clear\" clears the screen from game messages."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tre("\"-admin\" zeigt den Administrator an.", "\"-admin\" shows the admin."))
 			
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tre("Admin-Befehle", "Admin Commands"))
+			call QuestSetDescription(whichQuest, tr("Spieler 1 ist der Administrator. Falls Spieler 1 nicht spielt, ist der nächste menschliche Spieler der Administrator. Der Administrator kann die obigen Befehle verwenden."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp")
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tr("\"-unlock\": Macht alle ausgewählten Charaktere wieder beweglich."))
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Emotes", "Emotes"))

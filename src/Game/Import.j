@@ -2,6 +2,7 @@
 //! import "Game/Struct Character.j"
 //! import "Game/Struct Classes.j"
 //! import "Game/Struct Class Selection.j"
+//! import "Game/Struct Commands.j"
 //! import "Game/Struct Dungeon.j"
 //! import "Game/Struct Fellow.j"
 //! import "Game/Struct Dmdf Hash Table.j"
@@ -25,5 +26,5 @@ endif
 //! import "Game/Struct Zone.j"
 //! import "Game/Library Language.j"
 
-library Game requires StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameFellow, StructGameDmdfHashTable, StructGameDungeon, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructSaveSystem, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
+library Game requires StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameCommands, StructGameFellow, StructGameDmdfHashTable, StructGameDungeon, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructSaveSystem, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
 endlibrary
