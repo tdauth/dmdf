@@ -46,6 +46,7 @@ library StructGameCommands requires Asl, StructGameCharacter
 		
 		private static method triggerConditionUnlock takes nothing returns boolean
 			local integer i
+			local Character character = 0
 			local AGroup selected = AGroup.create()
 			call selected.addUnitsSelected(GetTriggerPlayer(), Filter(function thistype.filterIsCharacter))
 			if (selected.units().isEmpty()) then
@@ -54,7 +55,12 @@ library StructGameCommands requires Asl, StructGameCharacter
 				set i = 0
 				loop
 					exitwhen (i == selected.units().size())
-					call ACharacter.getCharacterByUnit(selected.units()[i]).setMovable(true)
+					set character = Character(ACharacter.getCharacterByUnit(selected.units()[i]))
+					call character.setMovable(true)
+					call AGui.playerGui(character.player()).dialog().clear()
+					call ResetUnitLookAt(character.unit())
+					call character.setTalk(0)
+					
 					call ACharacter.getCharacterByUnit(selected.units()[i]).displayMessage(ACharacter.messageTypeInfo, tre("Vom Administrator wieder beweglich gemacht.", "Made movable again by the admin."))
 					set i = i + 1
 				endloop

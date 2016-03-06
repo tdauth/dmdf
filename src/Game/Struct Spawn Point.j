@@ -16,7 +16,9 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			call this.setSoundFilePath("Abilities\\Spells\\Orc\\EtherealForm\\SpiritWalkerMorph.wav")
 			call this.setDistributeItems(true)
 			call this.setOwner(Player(PLAYER_NEUTRAL_AGGRESSIVE))
-			call this.setTextDistributeItem(tre("%1% wurde für Spieler %2% fallen gelassen.", "%1% has been dropped for player %2%."))
+			// drop texts become really annoying so dont show anything
+			call this.setTextDistributeItem(null)
+			//call this.setTextDistributeItem(tre("%1% wurde für Spieler %2% fallen gelassen.", "%1% has been dropped for player %2%."))
 			
 			call thistype.m_spawnPoints.pushBack(this)
 	

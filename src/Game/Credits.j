@@ -40,6 +40,10 @@ call thistype.addContributor("Marco R.", tr("Einar"))
 call thistype.addContributor("Benkenfilm", tr("Trommon"))
 call thistype.addContributor("Martin B.", tr("Björn"))
 
+call thistype.addTitle(tre("Weitere Unterstützung", "Further Support"))
+call thistype.addContributor("WaterKnight", tre("Tests", "Tests"))
+call thistype.addContributor("Frotty", tre("Modelle und Tests", "Models and Tests"))
+
 // tools and systems
 call thistype.addTitle(tre("Werkzeuge und Systeme", "Tools and Systems"))
 call thistype.addContributor("Vexorian", tre("JassHelper/vJass, Wc3mapoptimizer, Funktionen und Systeme, teils implementiert, teils als Anregung", "JassHelper/vJass, Wc3mapoptimizer, functions and systems, partly implemented partly for ideas"))
@@ -58,3 +62,18 @@ call thistype.addContributor("hiveworkshop.com", tre("Unzählige Ressourcen, Fra
 call thistype.addContributor("hoer-talk.de", tre("Sprecher", "Voices"))
 
 // files
+call thistype.addTitle(tre("Modelle", "Models"))
+
+call thistype.addTitle(tre("Icons", "Icons"))
+call thistype.addContributor("olofmoleman", "BTNDeer.blp")
+call thistype.addContributor("Stanakin Skywalker", "BTNDuck.blp")
+call thistype.addContributor("Tenebrae", "BTNDunkelelf.blp")
+call thistype.addContributor("Werewulf", "BTNBestie.blp")
+call thistype.addContributor("bboy-tiger-", "BTNBestienhaeputling.blp")
+call thistype.addContributor("TDR", "BTNSchattenefreet.blp")
+call thistype.addContributor("dickxunder", "BTNZauberin.blp")
+call thistype.addContributor("Norinrad", "BTNZwergenkrieger.blp")
+call thistype.addContributor("Elenai", "BTNBotschafterin.blp, BTNKoeniglicherKleriker.blp")
+call thistype.addContributor("???", "BTNAttentaeter.tga") // TODO get name
+call thistype.addContributor("Michael Peppers", "BTNGeistlicheSchwertkaempferin.blp")
+// TODO finish

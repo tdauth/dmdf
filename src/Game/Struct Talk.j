@@ -52,7 +52,9 @@ library StructGameTalk requires Asl
 		
 		public static method create takes unit whichUnit, ATalkStartAction startAction returns thistype
 			local thistype this = thistype.allocate(whichUnit, startAction)
-			call this.setEffectPath(null) // "Abilities\\Spells\\Other\\Silence\\SilenceTarget.mdl")
+			call this.setEffectPath("Abilities\\Spells\\Other\\Silence\\SilenceTarget.mdl")
+			call this.setTextExit(tre("Ende", "Exit"))
+			call this.setTextBack(tre("Zurück", "Back"))
 			set this.m_sellTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(this.m_sellTrigger, whichUnit, EVENT_UNIT_SELL)
 			call TriggerAddCondition(this.m_sellTrigger, Condition(function thistype.triggerConditionSell))

@@ -836,7 +836,10 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
 
 Weitere TODOS:
+* Remove sound from talk effect.
+* FIXED: Don't show drop texts since it becomes really annoying.
 * Every spell needs one extra spell to learn it in the grimoire!
+* Once a player could talk to two different NPCs at the same time.
 * Illusions and split units (elemental mage) should cause transparency.
 * Make a fade animation for transparency.
 * Make trees less transparent.

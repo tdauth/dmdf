@@ -18,7 +18,7 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 		private static constant real summonedTimeLevelValue = 10.0
 		private static constant real summonedRemovalTimeStartValue = 25.0
 		private static constant real summonedRemovalTimeLevelValue = -5.0
-		private static constant real illusionTimeStartValue = 5.0
+		private static constant real illusionTimeStartValue = 0.0
 		private static constant real illusionTimeLevelValue = 5.0
 		private static constant real illusionRemovalTimeStartValue = 10.0
 		private static constant real illusionRemovalTimeLevelValue = -2.0
