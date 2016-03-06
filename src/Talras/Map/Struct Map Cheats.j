@@ -12,7 +12,6 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			debug call Print("forest")
 			debug call Print("aos")
 			debug call Print("aosentry")
-			debug call Print("tavern")
 			debug call Print("tomb")
 			debug call Print("orccamp")
 			debug call Print(tre("Video-Cheats:", "Video Cheats:"))
@@ -119,13 +118,6 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_aos_outside)
 			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
 			call Dungeon.resetCameraBoundsForPlayer(whichPlayer)
-			set whichPlayer = null
-		endmethod
-		
-		private static method onCheatActionTavern takes ACheat cheat returns nothing
-			local player whichPlayer = GetTriggerPlayer()
-			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_area_tavern_bounds)
-			call IssueImmediateOrder(ACharacter.playerCharacter(whichPlayer).unit(), "stop")
 			set whichPlayer = null
 		endmethod
 		
@@ -957,7 +949,6 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			call ACheat.create("forest", true, thistype.onCheatActionForest)
 			call ACheat.create("aos", true, thistype.onCheatActionAos)
 			call ACheat.create("aosentry", true, thistype.onCheatActionAosEntry)
-			call ACheat.create("tavern", true, thistype.onCheatActionTavern)
 			call ACheat.create("tomb", true, thistype.onCheatActionTomb)
 			call ACheat.create("orccamp", true, thistype.onCheatActionOrcCamp)
 			// videos

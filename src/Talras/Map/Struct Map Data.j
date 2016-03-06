@@ -208,7 +208,6 @@ static if (DMDF_NPC_ROUTINES) then
 endif
 			call Shrines.init()
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
-			call ForForce(bj_FORCE_PLAYER[0], function Tavern.init)
 			call ForForce(bj_FORCE_PLAYER[0], function Tomb.init)
 			/*
 			 * For functions the JassHelper always generates a TriggerEvaluate() call.

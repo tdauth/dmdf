@@ -21,8 +21,9 @@ library StructSpellsSpellAbatement requires Asl, StructGameClasses, StructGameSp
 
 		private method action takes nothing returns nothing
 			local unit target = GetSpellTargetUnit()
-			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "origin")
+			local effect targetEffect = AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, GetUnitX(target), GetUnitY(target)) // dont attach otherwise it rotates with the target
 			local real life = thistype.healStartValue + this.level() * thistype.healLevelValue
+			call QueueUnitAnimation(this.character().unit(), "Spell")
 			call SetUnitState(target, UNIT_STATE_LIFE, GetUnitState(target, UNIT_STATE_LIFE) + life)
 			call thistype.showLifeTextTag(target, life)
 			call TriggerSleepAction(1.0)

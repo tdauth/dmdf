@@ -86,7 +86,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, false, tr("Was ist das für ein großer Hammer?"), null)
 			call speech(info, character, true, tr("Ein Erbstück meiner Familie. Damit wurden schon viele Orks getötet, aber leider nur wenige Dunkelelfen."), gg_snd_Ricman7)
 			call speech(info, character, false, tr("Du magst Dunkelelfen wohl nicht besonders?"), null)
-			call speech(info, character, true, tr("Diese Orks sind hirnlose Bestien. Stark wie Bären, aber dumm. Dunkelefen dagegen sind gerissene, geschickte Krieger. Vor ihnen solltest du dich in Acht nehmen!"), gg_snd_Ricman8)
+			call speech(info, character, true, tr("Diese Orks sind hirnlose Bestien. Stark wie Bären, aber dumm. Dunkelelfen dagegen sind gerissene, geschickte Krieger. Vor ihnen solltest du dich in Acht nehmen!"), gg_snd_Ricman8)
 			call info.talk().showStartPage(character)
 		endmethod
 
