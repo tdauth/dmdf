@@ -1095,7 +1095,6 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0594, 1.0)
 		endmethod
 
-		/// \todo change unit type
 		public static method init takes nothing returns nothing
 			
 			/**

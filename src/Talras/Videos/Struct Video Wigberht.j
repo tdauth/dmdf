@@ -1,4 +1,3 @@
-/// @todo Finish this video.
 library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapFellows
 
 	struct VideoWigberht extends AVideo
@@ -12,6 +11,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		private AGroup m_hiddenCorpses
 		private trigger m_killTrigger
 		private effect m_effect
+		private AJump m_jump
 
 		implement Video
 		
@@ -187,8 +187,6 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			local AJump jump // TODO leaks on stop
-			
 			if (wait(4.0)) then
 				return
 			endif
@@ -209,6 +207,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			if (wait(1.0)) then
 				return
 			endif
+			/*
+			too many orc views
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_5, true, 0.0)
 			if (wait(1.0)) then
 				return
@@ -217,6 +217,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			if (wait(1.0)) then
 				return
 			endif
+			*/
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_7, true, 0.0)
 			if (wait(1.0)) then
 				return
@@ -309,7 +310,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			// wigberhts fire attack
 			call SetUnitTimeScale(this.unitActor(this.m_actorWigberht), 0.80)
 			call SetUnitTimeScale(this.m_actorOrcLeader, 0.80)
-			set jump = AJump.create(this.unitActor(this.m_actorWigberht), 400.0, GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3), 0, 100.0)
+			set this.m_jump = AJump.create(this.unitActor(this.m_actorWigberht), 400.0, GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3), 0, 100.0)
 			call SetUnitAnimation(this.unitActor(this.m_actorWigberht), "Attack Slam")
 			loop
 				exitwhen (RectContainsUnit(gg_rct_video_wigberht_wigberht_target_3, this.unitActor(this.m_actorWigberht)))

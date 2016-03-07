@@ -55,9 +55,6 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			// TODO Finish this video
-			
-			
 			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tr("Ricman"), tr("Männer, macht euch bereit für euer letztes Gefecht. Heute mag der Tag gekommen sein, da wir allesamt das Zeitliche segnen, doch vorher zahlen wir es diesen Bastarden heim."), gg_snd_RicmanTheDefenseOfTalrasRicman1)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheDefenseOfTalrasRicman1))) then
@@ -92,6 +89,26 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
+			
+			/*
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tr("Ricman"), tr("Wenn ihr sterben solltet, seid euch gewiss ihr seid ehrenvoll gestorben wenn eure Klinge vom Blute von mindestens zwanzig Dunkelelfen bedeckt ist."), gg_snd_RicmanTheDefenseOfTalrasRicman2)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheDefenseOfTalrasRicman2))) then
+				return
+			endif
+			
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tr("Ricman"), tr("Ihr wisst sie haben uns unseren König genommen, dafür nehmen wir ihnen das Leben! Schlachtet sie ab, lasst keinen am Leben!"), gg_snd_RicmanTheDefenseOfTalrasRicman3)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheDefenseOfTalrasRicman3))) then
+				return
+			endif
+			
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tr("Ricman"), tr("Auf dann, ein letztes Mal vor dem Morgengrauen! Kämpft für euren König, für seinen Sohn Wigberht, für die Ehre und für den Norden!"), gg_snd_RicmanTheDefenseOfTalrasRicman4)
+
+			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheDefenseOfTalrasRicman4))) then
+				return
+			endif
+			*/
 
 			call this.stop()
 		endmethod

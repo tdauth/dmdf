@@ -819,7 +819,7 @@ Für Version 0.6:
 Aufgehoben für Version 0.7:
 Schwerwiegende Fehler:
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
-* Lange Ladezeit: Widgetizer mit deutschem War3Patch ausprobieren.
+* Lange Ladezeit: Widgetizer mit deutschem War3Patch ausprobieren. Erst Widgetizer verwenden, dann war3mapoptimizer!
 * Lag am Anfang: Fähigkeiten preloaden.
 * Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen?
 Repickprobleme (vermutlich durch OpLimit irgendwo):

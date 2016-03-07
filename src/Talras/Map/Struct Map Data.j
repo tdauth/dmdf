@@ -54,8 +54,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer medusa = 'n033'
 		public static constant integer thunderCreature = 'n034'
 
-		public static constant integer boneDragon = 'n024' /// \todo FIXME
-		public static constant integer osseousDragon = 'n024'
+		public static constant integer boneDragon = 'n024'
 		
 		public static constant integer deranor = 'u00A'
 		
@@ -167,7 +166,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		endmethod
 		
 		/// Required by \ref Game.
-		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
+		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work when placed explicitely. The methods have to be declared below which forces .evaluate() to use a real TriggerEvaluate().
 		public static method init takes nothing returns nothing
 			local integer i = 0
 			loop
