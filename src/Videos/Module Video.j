@@ -1,5 +1,8 @@
 library ModuleVideosVideo
 
+	/**
+	 * \brief Every video should implement this module to provide a global instance.
+	 */
 	module Video
 		private static thistype m_video
 

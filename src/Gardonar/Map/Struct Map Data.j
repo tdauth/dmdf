@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame
+library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapQuestsQuestPalace, StructMapVideosVideoIntro
 
 	struct MapData extends MapDataInterface
 		public static constant string mapName = "Gardonar0.7"
@@ -37,6 +37,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static method init takes nothing returns nothing
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
+			
+			call Shrines.init()
+			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
+			call initMapVideos.evaluate()
 			
 			set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
 			set thistype.m_zoneHolzbruck = Zone.create("Holzbruck" + Game.gameVersion, gg_rct_zone_holzbruck)
@@ -114,15 +118,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
-			local integer i
-			
-			call SetMapFlag(MAP_FOG_HIDE_TERRAIN, false)
-			call SetMapFlag(MAP_FOG_ALWAYS_VISIBLE, true)
-			call SetMapFlag(MAP_FOG_MAP_EXPLORED, true)
-			call FogMaskEnableOff()
-			call FogEnableOff()
-			
-			set i = 0
+			local integer i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
@@ -131,6 +127,26 @@ library StructMapMapMapData requires Asl, StructGameGame
 				endif
 				set i = i + 1
 			endloop
+			
+			call initMapPrimaryQuests()
+			call initMapSecundaryQuests()
+			
+			call VideoIntro.video().play()
+		endmethod
+		
+		public static method startAfterIntro takes nothing returns nothing
+			debug call Print("Waited successfully for intro video.")
+			
+			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Geben Sie \"-menu\" im Chat ein, um ins Haupt-Menü zu gelangen.", "Enter \"-menu\" into the chat to reach the main menu."))
+			call ACharacter.panCameraSmartToAll()
+			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
+			call QuestPalace.quest().enable()
+
+			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
+			
+			// execute because of trigger sleep action
+			//call thistype.applyHandicap.execute()
 		endmethod
 
 		/// Required by \ref Classes.
