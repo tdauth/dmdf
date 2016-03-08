@@ -836,6 +836,8 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
 
 Weitere TODOS:
+* New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
+* The local files option does not work on Windows 8 or 10 as well. The only possible solution is mixing War3Patch with the data.
 * Remove sound from talk effect.
 * FIXED: Don't show drop texts since it becomes really annoying.
 * Every spell needs one extra spell to learn it in the grimoire!
