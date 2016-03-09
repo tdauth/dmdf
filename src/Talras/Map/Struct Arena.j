@@ -37,6 +37,13 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Arena\"")
 
+		/**
+		 * Removes the unit from the arena with index \p index.
+		 * Removing the unit from the arena removes the leaderboard item and revives the unit immediately if it is a character.
+		 * It also stops the character. Otherwise he will continue fighting.
+		 * It hides the leaderboard from the player if the unit is a character.
+		 * Normal units are simply removed.
+		 */
 		public static method removeUnitByIndex takes integer index returns nothing
 			local unit usedUnit = thistype.m_units[index]
 			local player owner = GetOwningPlayer(usedUnit)
@@ -46,18 +53,15 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			if (ACharacter.getCharacterByUnit(usedUnit) != 0) then
 				if (IsUnitDeadBJ(usedUnit)) then
 					call ReviveHero(usedUnit, thistype.m_outsideX, thistype.m_outsideY, true)
-					call SetUnitFacing(usedUnit, thistype.m_outsideFacing)
-					call SetUnitInvulnerable(usedUnit, false)
-					call PauseUnit(usedUnit, false)
-					call IssueImmediateOrder(usedUnit, "stop")
 				else
 					call SetUnitX(usedUnit, thistype.m_outsideX)
 					call SetUnitY(usedUnit, thistype.m_outsideY)
-					call SetUnitFacing(usedUnit, thistype.m_outsideFacing)
-					call SetUnitInvulnerable(usedUnit, false)
-					call PauseUnit(usedUnit, false)
-					call IssueImmediateOrder(usedUnit, "stop")
 				endif
+				
+				call SetUnitFacing(usedUnit, thistype.m_outsideFacing)
+				call SetUnitInvulnerable(usedUnit, false)
+				call PauseUnit(usedUnit, false)
+				call IssueImmediateOrder(usedUnit, "stop")
 				
 				// TODO triggered before revival starts
 				if (ACharacter.getCharacterByUnit(usedUnit).revival() != 0) then
@@ -114,6 +118,64 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.removeUnit(character.unit())
 			call character.displayMessage(ACharacter.messageTypeInfo, thistype.m_textLeave)
 		endmethod
+		
+		private static method destroyDamageTrigger takes nothing returns nothing
+			if (thistype.m_damageTrigger != null) then
+				call DestroyTrigger(thistype.m_damageTrigger)
+				set thistype.m_damageTrigger = null
+			endif
+		endmethod
+		
+		/**
+		 * When ending the fight all attacking units (summoned as well) should be stopped.
+		 */
+		private static method stopAttacks takes nothing returns nothing
+			local integer i
+			local integer j
+			// store all units which are still attacking the unit
+			local AGroup attackingUnits = AGroup.create()
+			call attackingUnits.addUnitsInRange(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 4000.0, null)
+			set i = 0
+			loop
+				exitwhen (i == attackingUnits.units().size())
+				set j = 0
+				loop
+					exitwhen (j == thistype.m_units.size())
+					if (GetOwningPlayer(attackingUnits.units()[i]) == GetOwningPlayer(thistype.m_units[j])) then
+						debug call Print("Stop arena unit " + GetUnitName(attackingUnits.units()[i]))
+						call IssueImmediateOrder(attackingUnits.units()[i], "stop")
+						exitwhen (true)
+					endif
+					set j = j + 1
+				endloop
+				set i = i + 1
+			endloop
+			call attackingUnits.destroy()
+		endmethod
+		
+		/**
+		 * Ends the fight by disabling the kill and leave triggers, removes all units and displays who won.
+		 */
+		private static method endFight takes nothing returns nothing
+			local ACharacter character = ACharacter.getCharacterByUnit(thistype.m_winner)
+			local string winnerName
+			if (character != 0) then
+				set winnerName = GetPlayerName(character.player())
+			else
+				set winnerName = GetUnitName(thistype.m_winner)
+			endif
+			// pause units
+			call thistype.destroyDamageTrigger()
+			call DisableTrigger(thistype.m_killTrigger)
+			call DisableTrigger(thistype.m_leaveTrigger)
+			call thistype.stopAttacks()
+			loop
+				exitwhen (thistype.m_units.empty())
+				call thistype.removeUnitByIndex(thistype.m_units.backIndex())
+			endloop
+			call AdjustPlayerStateSimpleBJ(GetOwningPlayer(thistype.m_winner), PLAYER_STATE_RESOURCE_GOLD, thistype.rewardGold)
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, Format(thistype.m_textEndFight).s(winnerName).i(thistype.rewardGold).result())
+		endmethod
 
 		private static method checkForEndFight takes nothing returns nothing
 			local integer aliveCount = 0
@@ -131,7 +193,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				endif
 				set i = i + 1
 			endloop
-			call thistype.endFight.execute()
+			call thistype.endFight()
 		endmethod
 
 		private static method triggerConditionIsFromArena takes nothing returns boolean
@@ -309,7 +371,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			set thistype.m_pvpTrigger = null
 			call DestroyLeaderboard(thistype.m_leaderboard)
 			set thistype.m_leaderboard = null
-			call thistype.destroyDamageTrigger.evaluate()
+			call thistype.destroyDamageTrigger()
 		endmethod
 
 		// static members
@@ -338,6 +400,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.m_startFacing.pushBack(facing)
 		endmethod
 		
+		/**
+		 * As long as the damaging unit is owned by one of the owners of the arena's units everything is fine.
+		 * Otherwise the damage is prevented and the interfering unit is punished by killing it.
+		 */
 		private static method triggerConditionDamage takes nothing returns boolean
 			local integer i = 0
 			loop
@@ -352,13 +418,6 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
 			
 			return false
-		endmethod
-		
-		private static method destroyDamageTrigger takes nothing returns nothing
-			if (thistype.m_damageTrigger != null) then
-				call DestroyTrigger(thistype.m_damageTrigger)
-				set thistype.m_damageTrigger = null
-			endif
 		endmethod
 		
 		private static method refreshDamageTrigger takes nothing returns nothing
@@ -465,57 +524,6 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				endif
 			endif
 			return null
-		endmethod
-		
-		/**
-		 * When ending the fight all attacking units (summoned as well) should be stopped.
-		 */
-		private static method stopAttacks takes nothing returns nothing
-			local integer i
-			local integer j
-			// store all units which are still attacking the unit
-			local AGroup attackingUnits = AGroup.create()
-			call attackingUnits.addUnitsInRange(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 4000.0, null)
-			set i = 0
-			loop
-				exitwhen (i == attackingUnits.units().size())
-				set j = 0
-				loop
-					exitwhen (j == thistype.m_units.size())
-					if (GetOwningPlayer(attackingUnits.units()[i]) == GetOwningPlayer(thistype.m_units[j])) then
-						debug call Print("Stop arena unit " + GetUnitName(attackingUnits.units()[i]))
-						call IssueImmediateOrder(attackingUnits.units()[i], "stop")
-						exitwhen (true)
-					endif
-					set j = j + 1
-				endloop
-				set i = i + 1
-			endloop
-			call attackingUnits.destroy()
-		endmethod
-
-		/**
-		 * Ends the fight by disabling the kill and leave triggers, removes all units and displays who won.
-		 */
-		private static method endFight takes nothing returns nothing
-			local ACharacter character = ACharacter.getCharacterByUnit(thistype.m_winner)
-			local string winnerName
-			if (character != 0) then
-				set winnerName = GetPlayerName(character.player())
-			else
-				set winnerName = GetUnitName(thistype.m_winner)
-			endif
-			// pause units
-			call thistype.destroyDamageTrigger()
-			call DisableTrigger(thistype.m_killTrigger)
-			call DisableTrigger(thistype.m_leaveTrigger)
-			call thistype.stopAttacks()
-			loop
-				exitwhen (thistype.m_units.empty())
-				call thistype.removeUnitByIndex(thistype.m_units.backIndex())
-			endloop
-			call AdjustPlayerStateSimpleBJ(GetOwningPlayer(thistype.m_winner), PLAYER_STATE_RESOURCE_GOLD, thistype.rewardGold)
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, Format(thistype.m_textEndFight).s(winnerName).i(thistype.rewardGold).result())
 		endmethod
 	endstruct
 

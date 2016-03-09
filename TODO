@@ -835,6 +835,20 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * DEPRECATED: Werden nach Repick die Spielcharakterzauber neu erzeugt? initCharacterSpells() Reiten auf Schaf geht nicht so richtig?
 * FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
 
+Mehrspielertest:
+* FIXED: Klassenauswahl ansicht verbuggt
+* Wenn man Diakon tötet Spielabsturz
+* Dorfbewohner spawnen einfach während Metzelei bei Diakon als Gegner?!
+* Jojo hat Arenakampf verloren und war danach einfach total langsam (Fähigkeit Arenagegner?)
+* bei jojo hat es während den Kämpfen geruckelt
+* Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
+* Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt??? Steht auch nicht im CharactersSchema.
+
+Nervig:
+* Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.
+* Spruchrolle umbenennen zu Schreinteleport.
+* Elementarwesen sind zu viele oder zu stark.
+
 Weitere TODOS:
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * The local files option does not work on Windows 8 or 10 as well. The only possible solution is mixing War3Patch with the data.

@@ -72,41 +72,6 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapDungeons
 			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 		endmethod
 		
-		private static method triggerConditionShake takes nothing returns boolean
-			return GetTriggerUnit() == gg_unit_u00A_0353 and GetSpellAbilityId() == 'A0BR'
-		endmethod
-		
-		private static method triggerActionShake takes nothing returns nothing
-			local force whichForce = CreateForce()
-			local integer i = 0
-			debug call Print("Shake!")
-			/*
-			 * Shake the camera for all players  which see the tomb.
-			 */
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (thistype.areaContainsCharacter(ACharacter.playerCharacter(Player(i)))) then
-					call CameraSetTargetNoiseForPlayer(Player(i), 5.0, 5.0)
-					call ForceAddPlayer(whichForce, Player(i))
-				endif
-				set i = i + 1
-			endloop
-			call TriggerSleepAction(4.0)
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (IsPlayerInForce(Player(i), whichForce)) then
-					debug call Print("Disable noise for player " + GetPlayerName(Player(i)))
-					call CameraClearNoiseForPlayer(Player(i))
-					// TODO not during video
-					call ResetToGameCameraForPlayer(Player(i), 0.0)
-				endif
-				set i = i + 1
-			endloop
-			call ForceClear(whichForce)
-			call DestroyForce(whichForce)
-			set whichForce = null
-		endmethod
-
 		public static method init takes nothing returns nothing
 			call thistype.createEnterTrigger()
 			call thistype.createLeaveTrigger()

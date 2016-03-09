@@ -184,6 +184,9 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			call SetPlayerAllianceStateBJ(MapData.orcPlayer, MapData.alliedPlayer, bj_ALLIANCE_UNALLIED_VISION)
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.orcPlayer, bj_ALLIANCE_UNALLIED_VISION)
 			
+			// preload everything like in the Warcraft III campaigns
+			//call Preloader("Scripts\\Talras.pld")
+			
 			call Aos.init.evaluate()
 			call Arena.init(GetRectCenterX(gg_rct_arena_outside), GetRectCenterY(gg_rct_arena_outside), 0.0, tre("Sie haben die Arena betreten.", "You have entered the arena."), tre("Sie haben die Arena verlassen.", "You have left the arena."), tre("Ein Arenakampf beginnt nun.", "An arena fight is starting now."), tre("Ein Arenakampf endet nun. Der Gewinner ist \"%1%\" und er bekommt %2% Goldmünzen.", "An arena fight is ending now. The winner is \"%1%\" and gets %2% gold coins."))
 			call Arena.addRect(gg_rct_arena_0)
