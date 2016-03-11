@@ -10,7 +10,7 @@ library StructSpellsSpellKennels requires Asl, StructGameClasses, StructGameSpel
 		public static constant integer buffId = 'B02Q'
 		public static constant integer summonAbilityId = 'B02Q'
 		public static constant integer dogBuffId = 'B02R'
-		public static constant real duration = 5.0
+		public static constant real duration = 2.0
 		public static constant real dogDuration = 30.0
 		private trigger m_summonTrigger
 		private trigger m_summonDogTrigger

@@ -376,10 +376,16 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 		// static members
 
+		/**
+		 * \return Returns the score of the player in the arena.
+		 */
 		public static method playerScore takes player user returns integer
 			return thistype.m_playerScore[GetPlayerId(user)]
 		endmethod
 
+		/**
+		 * \return Returns the current winner in the arena.
+		 */
 		public static method winner takes nothing returns unit
 			return thistype.m_winner
 		endmethod
@@ -455,10 +461,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call SetUnitX(usedUnit, thistype.m_startX[thistype.m_units.backIndex()])
 			call SetUnitY(usedUnit, thistype.m_startY[thistype.m_units.backIndex()])
 			call SetUnitFacing(usedUnit, thistype.m_startFacing[thistype.m_units.backIndex()])
-			call SetUnitInvulnerable(usedUnit, true)
-			call PauseUnit(usedUnit, true)
 			call IssueImmediateOrder(usedUnit, "stop") // prevent the unit from walking out of the arena
 			debug call Print("Stoping " + GetUnitName(usedUnit))
+			call SetUnitInvulnerable(usedUnit, true)
+			call PauseUnit(usedUnit, true)
 			
 			if (Character.getCharacterByUnit(usedUnit) != 0) then
 				set title = GetPlayerName(owner)

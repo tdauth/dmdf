@@ -138,9 +138,21 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 	 * This additional specialized struct is required for interaction with \ref Grimoire, \ref MainMenu, \ref InfoLog and metamorphosis spells.
 	 */
 	struct Character extends ACharacter
-		public static constant real defaultCameraDistance =  bj_CAMERA_DEFAULT_DISTANCE + 250.0
+		/**
+		 * The default camera distance for every character if the 3rd person view is not used.
+		 */
+		public static constant real defaultCameraDistance = bj_CAMERA_DEFAULT_DISTANCE + 250.0
+		/**
+		 * The maximum character distance for every character if the 3rd person view is not used.
+		 */
 		public static constant real maxCameraDistance =  bj_CAMERA_DEFAULT_DISTANCE + 750.0
+		/**
+		 * The minimum character distance for every character if the 3rd person view is not used.
+		 */
 		public static constant real minCameraDistance =  bj_CAMERA_DEFAULT_DISTANCE
+		/**
+		 * The periodic refresh interval in seconds which is used to refresh the camera distance to every character if the 3rd person view is not used.
+		 */
 		public static constant real cameraTimerInterval = 0.01
 		// dynamic members
 		private boolean m_isInPvp
@@ -333,10 +345,10 @@ endif
 			// is disabled in GUI
 			if (not AGui.playerGui(this.player()).isShown()) then
 				if (this.showCharactersScheme()) then
-					call ACharactersScheme.showForPlayer(this.player())
+					call Game.charactersScheme.evaluate().showForPlayer(this.player())
 					call MultiboardSuppressDisplayForPlayer(this.player(), false)
 				else
-					call ACharactersScheme.hideForPlayer(this.player())
+					call Game.charactersScheme.evaluate().hideForPlayer(this.player())
 				endif
 			endif
 		endmethod
@@ -347,7 +359,7 @@ endif
 		*/
 		public method hideCharactersSchemeForPlayer takes nothing returns nothing
 			if (this.showCharactersScheme()) then
-				call ACharactersScheme.hideForPlayer(this.player())
+				call Game.charactersScheme.evaluate().hideForPlayer(this.player())
 			endif
 		endmethod
 

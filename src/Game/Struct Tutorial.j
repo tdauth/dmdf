@@ -193,12 +193,14 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Die Spruchrolle der Ahnen ermöglicht den Teleport zu einem erkundeten Schrein mit verbündeten Einheiten.", "The Scroll of the Ancestors allows teleporting to a discovered shrine together with allied units."))
 			
-			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Gespräche mit Personen", "Conversations with Persons"))
-			call QuestSetDescription(whichQuest, tre("Einige computergesteuerte Personen im Spiel bieten Gespräche an. Befindet sich der Charakter in der Nähe einer Person und ist der Charakter ausgewählt, so kann man mit einem Linksklick die entsprechende Person auswählen und mit einem Linksklick auf \"Person ansprechen\" ein Gespräch mit der Person beginnen. Einzelne Sätze können während des Gesprächs mit Escape übersprungen werden.", "Some Computer controlled persons in the game provide conversations. Is a character near to a person and is the character selected you can select the corresponding person with a left click and start a conversation with the person by a left click on \"Speak to person\". Separate sentences can be skipped by Escape during the conversation."))
+			call QuestSetDescription(whichQuest, tre("Einige computergesteuerte Personen im Spiel bieten Gespräche an. Sie werden mit einer Sprechblase über ihrem Kopf markiert. Befindet sich der Charakter in der Nähe einer Person und ist der Charakter ausgewählt, so kann man mit einem Linksklick die entsprechende Person auswählen und mit einem Linksklick auf \"Person ansprechen\" ein Gespräch mit der Person beginnen. Einzelne Sätze können während des Gesprächs mit Escape übersprungen werden.", "Some Computer controlled persons in the game provide conversations. They are marked with a speech bubble over their head. Is a character near to a person and is the character selected you can select the corresponding person with a left click and start a conversation with the person by a left click on \"Speak to person\". Separate sentences can be skipped by Escape during the conversation."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNTalking2.blp")
-			
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tre("Einzelne Sätze können mit Escape übersprungen werden.", "Single sentences can be skipped with Escape."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tre("Ein Linksklick auf eine Person mit Sprechblase und auf \"Person ansprechen\" ermöglicht ein Gespräch.", "A left click on a person with a speech bubble and on \"Speak to Person\" makes a conversation possible."))
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Händler", "Merchants"))

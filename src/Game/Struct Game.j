@@ -25,7 +25,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		private static constant real alliedCharactersFactor = 1.0
 
 		public static method maxExperienceFormula takes unit hero returns integer
-			return GetHeroMaxXP(hero)
+			return GetHeroLevelMaxXP(GetHeroLevel(hero))
 		endmethod
 
 		/**
@@ -158,7 +158,14 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		private static AIntegerList m_onDamageActions
 		private static trigger m_killTrigger
 		private static AIntegerVector array m_hiddenUnits[12] /// \todo \ref MapData.maxPlayers
+		/**
+		 * The order animations for the actor of the character.
+		 */
 		private static OrderAnimations m_actorOrderAnimations
+		/**
+		 * The global characters scheme which can be shown or hidden by any player.
+		 */
+		private static ACharactersScheme m_charactersScheme
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -167,6 +174,17 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		private method onDestroy takes nothing returns nothing
 		endmethod
 		
+		/**
+		 * \return Returns the global characters scheme which uses a multiboard.
+		 */
+		public static method charactersScheme takes nothing returns ACharactersScheme
+			return thistype.m_charactersScheme
+		endmethod
+		
+		/**
+		 * This method detects if the current game is a map in the singleplayer campaign.
+		 * \returns Returns true if the current game is in the campaign. Otherwise if it's a normal map (for example in multiplayer) it returns false.
+		 */
 		public static method isCampaign takes nothing returns boolean
 			// this custom object should only exist in the campaign not in the usual maps
 			return GetObjectName('h600') == "IsCampaign"
@@ -653,43 +671,43 @@ endif
 		
 		private static method initCharactersScheme takes nothing returns nothing
 			local integer i
-			call ACharactersScheme.init(1.0, true, true, true, 20, GameExperience.maxExperienceFormula, 20, 20, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
-			call ACharactersScheme.setBarWidths(0.003)
-			call ACharactersScheme.setExperienceBarValueIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL8.tga")
-			call ACharactersScheme.setExperienceBarEmptyIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL0.tga")
+			set thistype.m_charactersScheme = ACharactersScheme.create(1.0, true, true, true, 20, GameExperience.maxExperienceFormula, 20, 20, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
+			call thistype.m_charactersScheme.setBarWidths(0.003)
+			call thistype.m_charactersScheme.setExperienceBarValueIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL8.tga")
+			call thistype.m_charactersScheme.setExperienceBarEmptyIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL0.tga")
 			set i = 1
 			loop
 				exitwhen (i == 19)
-				call ACharactersScheme.setExperienceBarValueIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM8.tga")
-				call ACharactersScheme.setExperienceBarEmptyIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM0.tga")
+				call thistype.m_charactersScheme.setExperienceBarValueIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM8.tga")
+				call thistype.m_charactersScheme.setExperienceBarEmptyIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM0.tga")
 				set i = i + 1
 			endloop
-			call ACharactersScheme.setExperienceBarValueIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR8.tga")
-			call ACharactersScheme.setExperienceBarEmptyIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR0.tga")
+			call thistype.m_charactersScheme.setExperienceBarValueIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR8.tga")
+			call thistype.m_charactersScheme.setExperienceBarEmptyIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR0.tga")
 
-			call ACharactersScheme.setHitPointsBarValueIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL2.tga")
-			call ACharactersScheme.setHitPointsBarEmptyIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL0.tga")
+			call thistype.m_charactersScheme.setHitPointsBarValueIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL2.tga")
+			call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL0.tga")
 			set i = 1
 			loop
 				exitwhen (i == 19)
-				call ACharactersScheme.setHitPointsBarValueIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM2.tga")
-				call ACharactersScheme.setHitPointsBarEmptyIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM0.tga")
+				call thistype.m_charactersScheme.setHitPointsBarValueIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM2.tga")
+				call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM0.tga")
 				set i = i + 1
 			endloop
-			call ACharactersScheme.setHitPointsBarValueIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR2.tga")
-			call ACharactersScheme.setHitPointsBarEmptyIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR0.tga")
+			call thistype.m_charactersScheme.setHitPointsBarValueIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR2.tga")
+			call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR0.tga")
 
-			call ACharactersScheme.setManaBarValueIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL8.tga")
-			call ACharactersScheme.setManaBarEmptyIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL0.tga")
+			call thistype.m_charactersScheme.setManaBarValueIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL8.tga")
+			call thistype.m_charactersScheme.setManaBarEmptyIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL0.tga")
 			set i = 1
 			loop
 				exitwhen (i == 19)
-				call ACharactersScheme.setManaBarValueIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM8.tga")
-				call ACharactersScheme.setManaBarEmptyIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM0.tga")
+				call thistype.m_charactersScheme.setManaBarValueIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM8.tga")
+				call thistype.m_charactersScheme.setManaBarEmptyIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM0.tga")
 				set i = i + 1
 			endloop
-			call ACharactersScheme.setManaBarValueIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
-			call ACharactersScheme.setManaBarEmptyIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
+			call thistype.m_charactersScheme.setManaBarValueIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
+			call thistype.m_charactersScheme.setManaBarEmptyIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
 		endmethod
 		
 		public static method resetCameraBounds takes nothing returns nothing
@@ -719,7 +737,6 @@ endif
 			// use new OpLimit
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initCharactersScheme)
 			
-
 			// create after character creation (character should be F1)
 			// disable RPG view
 			call Character.setViewForAll(false)
@@ -775,7 +792,7 @@ endif
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, whichPlayer, bj_ALLIANCE_ALLIED_ADVUNITS)
 			// works!
 			if (Character(Character.playerCharacter(whichPlayer)).showCharactersScheme()) then
-				call ACharactersScheme.showForPlayer(whichPlayer) // hide team resources
+				call thistype.charactersScheme().showForPlayer(whichPlayer) // hide team resources
 			else
 				call MultiboardSuppressDisplayForPlayer(whichPlayer, true) // hide team resources
 			endif
@@ -881,6 +898,8 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'A1DJ', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DI', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DL', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1J1', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1J2', false)
 				
 				// hide abilities
 				call SetPlayerAbilityAvailable(Player(i), 'S003', false)
@@ -960,6 +979,8 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'A1DJ', true)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DI', true)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DL', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1J1', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1J2', true)
 				
 				// hide abilities
 				call SetPlayerAbilityAvailable(Player(i), 'S003', true)

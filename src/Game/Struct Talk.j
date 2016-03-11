@@ -22,7 +22,7 @@ library StructGameTalk requires Asl
 			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), "soldunit")
 			
 			//if (ACharacter.isUnitCharacter(GetBuyingUnit())) then
-			if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and ACharacter.playerCharacter(GetOwningPlayer(soldUnit)) != 0 and IsUnitInRange(ACharacter.playerCharacter(GetOwningPlayer(soldUnit)).unit(), this.unit(), 600.0) and this.isEnabled()) then
+			if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and ACharacter.playerCharacter(GetOwningPlayer(soldUnit)) != 0 and IsUnitInRange(ACharacter.playerCharacter(GetOwningPlayer(soldUnit)).unit(), this.unit(), 600.0) and ACharacter.playerCharacter(GetOwningPlayer(soldUnit)).talk() == 0 and this.isEnabled()) then
 				call this.openForCharacter(ACharacter.playerCharacter(GetOwningPlayer(soldUnit)))
 			debug else
 				debug call this.print("No character!")
@@ -62,6 +62,8 @@ library StructGameTalk requires Asl
 			call DmdfHashTable.global().setHandleInteger(this.m_sellTrigger, "this", this)
 			
 			call UnitAddAbility(whichUnit, 'A19X')
+			call UnitAddAbility(whichUnit, 'Asud') // sell units
+			call RemoveUnitFromStock(whichUnit, 'n05E') // remove from units which do already sell it
 			call AddUnitToStock(whichUnit, 'n05E', 1, 1)
 			
 			/*
