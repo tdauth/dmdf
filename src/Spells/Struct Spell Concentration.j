@@ -10,17 +10,25 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 		public static constant integer maxLevel = 5
 		private static constant real interval = 10.0 //constant, does not change per level.
 		private static constant integer lifeLevelValue = 5 // percentage
+		private static sound whichSound
 		private timer effectTimer
 
 		private static method timerFunction takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
 			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, "this")
 			local unit caster = this.character().unit()
+			local effect spellEffect = null
 			local real life
 			if (this.level() > 0 and GetUnitMissingLife(caster) > 0.0) then
 				set life = this.level() * thistype.lifeLevelValue * GetUnitState(caster, UNIT_STATE_MAX_LIFE) / 100.0
 				call SetUnitState(caster, UNIT_STATE_LIFE, GetUnitState(caster, UNIT_STATE_LIFE) + life)
-				call Spell.showLifeTextTag(caster, life)
+				if (not IsUnitHidden(caster)) then
+					call PlaySoundOnUnitBJ(thistype.whichSound, 60.0, caster)
+					set spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
+					call Spell.showLifeTextTag(caster, life)
+					call DestroyEffect(spellEffect)
+					set spellEffect = null
+				endif
 			endif
 			set expiredTimer = null
 			set caster = null
@@ -47,6 +55,10 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 			call PauseTimer(this.effectTimer)
 			call DmdfHashTable.global().destroyTimer(this.effectTimer)
 			set this.effectTimer = null
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.whichSound = CreateSound("Abilities\\Spells\\Items\\AIre\\RestorationPotion.wav", false, false, true, 12700, 12700, "")
 		endmethod
 	endstruct
 

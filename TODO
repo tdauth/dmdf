@@ -838,6 +838,11 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Wieland und andere NPCs haben falsche Bewegungstempanimationsgeschwindigkeit (schweben).
 * FIXED: Textnachricht ausgeben wenn Zauber als passiver Zauber oder allgemein nicht in Favoriten geskillt wird.
 * Add a learning ability for every grimoire spell.
+* DONE: Hotkeys for all class spells.
+* Tiergestalten: Einfach Klassenzauber lassen.
+* Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen.
+* DONE: Heileffekt alle 10 Sekunden bei Ritter: Spezialeffekt mit Heilung und Sound wie bei Konzentration.
+* Waldholzfäuste: Anderes Icon.
 
 Mehrspielertest:
 * FIXED: Klassenauswahl ansicht verbuggt.
@@ -846,7 +851,8 @@ Mehrspielertest:
 * Jojo hat Arenakampf verloren und war danach einfach total langsam (Fähigkeit Arenagegner?).
 * Bei Jojo wurde die Kamera während den Kämpfen hin- und herbewegt (vor und zurück), cameraDistance() vs irgendwas anderes???
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
-* Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt??? Steht auch nicht im CharactersSchema.
+* Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
+* FIXED: Steht auch nicht im CharactersSchema.
 
 Nervig:
 * Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.

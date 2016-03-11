@@ -11,6 +11,7 @@ library StructSpellsSpellAgility requires Asl, StructGameClasses, StructGameSpel
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.ranger(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			call this.addGrimoireEntry('A01B', 'A01O')
 			call this.addGrimoireEntry('A0YM', 'A0YR')
 			call this.addGrimoireEntry('A0YN', 'A0YS')
 			call this.addGrimoireEntry('A0YO', 'A0YT')
