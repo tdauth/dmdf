@@ -419,6 +419,8 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 			call this.m_learnedSpells.pushBack(spell)
 			call spell.setLevel(1)
+			// indicate to player where the spell was moved to
+			call this.character().displayMessage(ACharacter.messageTypeInfo, Format(tre("%1% in Zauberfähigkeiten verschoben.", "Moved %1% into spell abilities.")).s(GetAbilityName(spell.ability())).result())
 			call spell.onLearn.evaluate()
 		endmethod
 

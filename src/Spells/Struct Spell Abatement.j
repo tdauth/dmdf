@@ -35,6 +35,7 @@ library StructSpellsSpellAbatement requires Asl, StructGameClasses, StructGameSp
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
+			call this.addGrimoireEntry('A1J4', 'A1J5')
 			call this.addGrimoireEntry('A0OD', 'A0OI')
 			call this.addGrimoireEntry('A0OE', 'A0OJ')
 			call this.addGrimoireEntry('A0OF', 'A0OK')

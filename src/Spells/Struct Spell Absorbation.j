@@ -92,6 +92,7 @@ library StructSpellsSpellAbsorbation requires Asl, StructGameClasses, StructGame
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			call this.createCastTrigger()
+			call this.addGrimoireEntry('A1J6', 'A1J7')
 			call this.addGrimoireEntry('A0C4', 'A0C5')
 			
 			call this.setIsPassive(true)

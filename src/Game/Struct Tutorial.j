@@ -110,6 +110,9 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("\"-unlock\": Macht alle ausgewählten Charaktere wieder beweglich.", "\"-unlock\": Makes the selected character movable again."))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tre("\"-kick <Spielername/Spielernummer>\": Kickt den Spieler aus dem Spiel.", "\"-kick <player name/player number>\": Kicks the player from the game."))
+			
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Emotes", "Emotes"))

@@ -6,7 +6,7 @@ library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMapMap
 	 */
 	struct SpellScrollOfTheRealmOfTheDead extends ASpell
 		public static constant integer abilityId = 'A066'
-		public static constant real distance = 400.0
+		public static constant real distance = 1200.0
 
 		// http://www.hiveworkshop.com/forums/triggers-scripts-269/does-getspelltargetx-y-work-177175/
 		// GetSpellTargetX() etc. does not work in conditions but in actions?

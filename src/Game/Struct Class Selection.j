@@ -182,8 +182,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 */
 			// cleric spells
 			if (class == Classes.cleric()) then
-				// deprecated
-				//call SpellAstralSource.create(character)
 				call SpellMaertyrer.create(character)
 				call SpellAbatement.create(character)
 				call SpellBlind.create(character)
@@ -194,12 +192,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellProtect.create(character)
 				call SpellRecovery.create(character)
 				call SpellRevive.create(character)
-				// deprecated
-				//call SpellTorment.create(character)
 				call SpellBlessing.create(character)
 				call SpellConversion.create(character)
 				call SpellGodsFavor.create(character)
-				
 				// ultimates on page 2
 				call SpellExorcizeEvil.create(character)
 				call SpellHolyWill.create(character)
@@ -211,8 +206,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellDeathHerald.create(character)
 				call SpellDemonServant.create(character)
 				call SpellSoulThievery.create(character)
-				// deprecated
-				//call SpellViolentDeath.create(character)
 				call SpellWorldsPortal.create(character)
 				call SpellNecromancy.create(character)
 				call SpellPlague.create(character)
@@ -290,8 +283,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellEmblaze.create(character)
 				call SpellFireMissile.create(character)
 				call SpellFreeze.create(character)
-				// remove one spell for elemental creatures
-				//call SpellGlisteningLight.create(character)
 				call SpellIceMissile.create(character)
 				call SpellInferno.create(character)
 				call SpellLightning.create(character)
@@ -302,8 +293,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellUndermine.create(character)
 			elseif (class == Classes.wizard()) then
 				call SpellAbsorbation.create(character)
-				//deprecated call SpellAdduction.create(character)
-				//deprecated call SpellArcaneBinding.create(character)
 				call SpellArcaneHunger.create(character)
 				call SpellArcaneProtection.create(character)
 				call SpellArcaneRuse.create(character)
@@ -318,7 +307,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellManaStream.create(character)
 				call SpellMultiply.create(character)
 				call SpellTransfer.create(character)
-				// deprecated call SpellRepulsion.create(character)
 			endif
 		endmethod
 		

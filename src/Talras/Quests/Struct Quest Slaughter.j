@@ -9,7 +9,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call QuestSlaughter.quest.evaluate().enable.evaluate()
 			call Fellows.dragonSlayer().shareWith(0)
 			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), tre("Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.", "The Dragon Slayer can switch between close and range combat."))
-			call TransmissionFromUnit(Npcs.dragonSlayer(), tre("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!", "Nearby there is a powerful vampire who rules over a handful of servants. It is time to slaughter him and to free this land from another parasite!"), null)
+			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!", "Nearby there is a powerful vampire who rules over a handful of servants. It is time to slaughter him and to free this land from another parasite!"), null)
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
@@ -116,7 +116,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private method checkForDeathVault takes nothing returns nothing
 			if (this.questItem(thistype.questItemKillTheVampireLord).isCompleted() and this.questItem(thistype.questItemKillTheVampires).isCompleted() and this.questItem(thistype.questItemKillTheDeathAngel).isCompleted() and this.questItem(thistype.questItemKillTheBoneDragons).isCompleted()) then
 				set this.m_questAreaEnter = QuestAreaSlaughterEnter.create(gg_rct_quest_slaughter_death_vault)
-				call this.displayState()
+				call this.questItem(thistype.questItemEnterTheDeathVault).setState(thistype.stateNew)
 			else
 				if (this.questItem(thistype.questItemKillTheVampireLord).isNew()) then
 					call setQuestItemPingByUnitTypeId.execute(this.questItem(thistype.questItemKillTheVampireLord), SpawnPoints.vampireLord0(), UnitTypes.vampireLord)
@@ -134,6 +134,8 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 					call setQuestItemPingByUnitTypeId.execute(this.questItem(thistype.questItemKillTheBoneDragons), SpawnPoints.boneDragons(), UnitTypes.boneDragon)
 				endif
 			endif
+			
+			call this.displayState()
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing

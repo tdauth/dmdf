@@ -834,6 +834,10 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED: Auf Schaf reiten: Equipmentfähigkeiten werden nicht wieder hinzugefügt, nachdem man auf Schaf reitet (nach Verwandlung), wenn Rucksack offen ist.
 * DEPRECATED: Werden nach Repick die Spielcharakterzauber neu erzeugt? initCharacterSpells() Reiten auf Schaf geht nicht so richtig?
 * FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
+* Kollisionsgrößen der Charaktere sind zu groß.
+* Wieland und andere NPCs haben falsche Bewegungstempanimationsgeschwindigkeit (schweben).
+* FIXED: Textnachricht ausgeben wenn Zauber als passiver Zauber oder allgemein nicht in Favoriten geskillt wird.
+* Add a learning ability for every grimoire spell.
 
 Mehrspielertest:
 * FIXED: Klassenauswahl ansicht verbuggt.
