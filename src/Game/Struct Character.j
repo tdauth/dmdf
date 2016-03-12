@@ -518,6 +518,7 @@ endif
 		
 		/**
 		 * Enables or disables the camera timer which applies the custom camera distance.
+		 * \param enabled If this value is true and the 3rd person view is not enbaled, the camera distance timer is started. Otherwise it is paused.
 		 */
 		public method setCameraTimer takes boolean enabled returns nothing
 			if (enabled and this.isViewEnabled()) then

@@ -2,26 +2,22 @@
 
 Unicode true
 
-!define INPUT_DIR "E:\Projekte\dmdf\maps\releases"
+!define PROJECTS_DIR "E:\Projekte\"
+!define INPUT_DIR_ASL "E:\Projekte\asl\"
+!define INPUT_DIR "E:\Projekte\dmdf\"
 !define INPUT_EXE_FILENAME "The Power of Fire.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
-!define VERSION "0.5"
+!define VERSION "0.7"
 
-Name "The Power of Fire"
-OutFile "The Power of Fire${VERSION}.exe"
+Name "The Power of Fire Development Version"
+OutFile "E:\Projekte\dmdf\releases\ThePowerOfFireDev${VERSION}.exe"
 InstallDir "$PROGRAMFILES\Warcraft III"
-
-#!define MUI_ICON "path\to\icon.ico"
-#!define MUI_WELCOMEFINISHPAGE_BITMAP "cropped-dmdf.bmp"
-#!define MUI_HEADERIMAGE
-#!define MUI_HEADERIMAGE_BITMAP "cropped-dmdf.bmp"
 
 !define MUI_ABORTWARNING
 
 !define MUI_DIRECTORYPAGE_TEXT_DESTINATION "Warcraft III directory"
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_COMPONENTS
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
@@ -41,38 +37,45 @@ Section "Application" Application
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
 SectionEnd
 
-LangString DESC_Application ${LANG_ENGLISH} "The modification of Warcraft III: The Frozen Throne."
-LangString DESC_Application ${LANG_GERMAN} "Die Modifikation von Warcraft III: The Frozen Throne."
-
-Section "English Maps" EnglishMaps
-  SetOutPath "$INSTDIR\Maps\The Power of Fire\en"
-  File "${INPUT_DIR}\en\Talras${VERSION}.w3x"
-SectionEnd
-
-LangString DESC_EnglishMaps ${LANG_ENGLISH} "English maps of the modification."
-LangString DESC_EnglishMaps ${LANG_GERMAN} "Englische Karten der Modifikation."
-
 Section "German Maps" GermanMaps
-  SetOutPath "$INSTDIR\Maps\The Power of Fire\de"
-  File "${INPUT_DIR}\de\Talras${VERSION}.w3x"
-  File "${INPUT_DIR}\de\Arena${VERSION}.w3x"
+	SetOutPath "$INSTDIR\The Power of Fire\Maps"
+	File "${INPUT_DIR}\maps\Karte 1 - Talras.w3x"
+	File "${INPUT_DIR}\maps\Karte 2 - Gardonar.w3x"
+	File "${INPUT_DIR}\maps\Karte 3 - Holzbruck.w3x"
+	File "${INPUT_DIR}\maps\Arena.w3x"
 SectionEnd
 
-LangString DESC_GermanMaps ${LANG_ENGLISH} "German maps of the modification."
-LangString DESC_GermanMaps ${LANG_GERMAN} "Deutsche Karten der Modifikation."
+Section "Source Code" SourceCode
+	SetOutPath "$INSTDIR\The Power of Fire\src"
+	File /r "${INPUT_DIR}\src"
+SectionEnd
 
-!insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-  !insertmacro MUI_DESCRIPTION_TEXT ${EnglishMaps} $(DESC_EnglishMaps)
-  !insertmacro MUI_DESCRIPTION_TEXT ${GermanMaps} $(DESC_GermanMaps)
-  !insertmacro MUI_DESCRIPTION_TEXT ${Application} $(DESC_Application)
-!insertmacro MUI_FUNCTION_DESCRIPTION_END
+Section "Archive" Archive
+	SetOutPath "$INSTDIR\The Power of Fire\"
+	File "${PROJECTS_DIR}\TPoF.mpq"
+SectionEnd
+
+Section "Documentation" Documentation
+	SetOutPath "$INSTDIR\The Power of Fire\doc"
+	File /r "${INPUT_DIR}\doc"
+SectionEnd
+
+Section "ASL Source Code" AslSourceCode
+	SetOutPath "$INSTDIR\ASL\src"
+	File /r "${INPUT_DIR_ASL}\src"
+SectionEnd
+
+Section "ASL Source Documentation" AslDocumentation
+	SetOutPath "$INSTDIR\ASL\doc"
+	File /r "${INPUT_DIR_ASL}\doc"
+SectionEnd
 
 Section "Uninstall"
-	 RMDir /r "$INSTDIR\Maps\The Power of Fire"
+	 RMDir /r "$INSTDIR\The Power of Fire"
+	 RMDir /r "$INSTDIR\ASL"
 	 Delete "$INSTDIR\${INPUT_EXE_FILENAME}"
 	 Delete "$DESKTOP\The Power of Fire.lnk"
 SectionEnd
-
 
 Function .onInit
 	Var /GLOBAL InstallPath

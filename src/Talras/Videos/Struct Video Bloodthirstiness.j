@@ -37,7 +37,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Verfluchte Missgeburt!"), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Verfluchte Missgeburt!", "Damn freak!"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null) + 1.0)) then
 				return
@@ -73,13 +73,13 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Dieser Diakon war nichts weiter als ein einfacher Diener. Der Diener eines Meisters, dessen Name seit Urzeiten bei uns Hochelfen für das pure Grauen steht."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Dieser Diakon war nichts weiter als ein einfacher Diener. Der Diener eines Meisters, dessen Name seit Urzeiten bei uns Hochelfen für das pure Grauen steht.", "This deacon was nothing more than a simple servant. The servant of a master whose name represents the pure horror for us High Elves for ages."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Deranor der Schreckliche, das ist sein Name. Er kam von den Todessümpfen, vermutlich um seinen eigenen Vorteil im Chaos zu suchen, das dieses Königreich bald überziehen wird. Genaues wissen jedoch auch wir Hochelfen nicht darüber."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Deranor der Schreckliche, das ist sein Name. Er kam von den Todessümpfen, vermutlich um seinen eigenen Vorteil im Chaos zu suchen, das dieses Königreich bald überziehen wird. Genaues wissen jedoch auch wir Hochelfen nicht darüber.", "Deranor the Terrible, that's his name. He came from the Death Swamps, presumably to seek his own advantage in the chaos that will impact upon this kingdom soon. But even we High Elves don't know accurate things about it."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

@@ -8,7 +8,7 @@ Unicode true
 !define VERSION "0.7"
 
 Name "The Power of Fire"
-OutFile "ThePowerOfFire${VERSION}.exe"
+OutFile "E:\Projekte\dmdf\releases\ThePowerOfFire${VERSION}.exe"
 InstallDir "$PROGRAMFILES\Warcraft III"
 
 !define MUI_ABORTWARNING

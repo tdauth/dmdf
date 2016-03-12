@@ -116,12 +116,12 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 			// (Brogos Maximalanzahl der geschenkten Katzen erreicht)
 			if (talk.characterHasReachedMaximum(character, countedCats)) then
 				call speech(info, character, true, tre("Jetzt aber genug Katzen. Brogo gibt dir Belohnung und dankt dir für Katzen.", "But enough cats now. Brogo gives you reward and thanks you for cats."), null)
-				call speech(info, character, true, tr("Belohnung ist Waffe von Troll. Brogo hat getötet viele Trolle. Trolle böser als Katzen."), null)
+				call speech(info, character, true, tre("Belohnung ist Waffe von Troll. Brogo hat getötet viele Trolle. Trolle böser als Katzen.", "Reward is weapon of troll. Brogo has killed many trolls. Trolls worse than cats."), null)
 				call QuestCatsForBrogo.characterQuest(character).questItem(0).complete()
 				call character.giveItem('I062')
 			// (Brogos Maximalanzahl der geschenkten Katzen noch nicht erreicht)
 			else
-				call speech(info, character, true, tr("Streicheln macht Brogo Spaß. Brogo will aber noch mehr Katzen."), null)
+				call speech(info, character, true, tre("Streicheln macht Brogo Spaß. Brogo will aber noch mehr Katzen.", "Stroking is fun to Brogo. But Brogo wants more cats."), null)
 			endif
 			call talk.addCats(character.player())
 		endmethod
@@ -133,7 +133,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 
 		// Hier hast du eine Katze.
 		private static method infoActionHereIsACat takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hier hast du eine Katze."), null)
+			call speech(info, character, false, tre("Hier hast du eine Katze.", "Here you have a cat."), null)
 			call thistype.giveCatsToBrogo(info, character)
 			call info.talk().showStartPage(character)
 		endmethod
@@ -145,7 +145,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 
 		// Hier hast du ein paar Katzen.
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hier hast du ein paar Katzen."), null)
+			call speech(info, character, false, tre("Hier hast du ein paar Katzen.", "Here you have a couple of cats."), null)
 			call thistype.giveCatsToBrogo(info, character)
 			call info.talk().showStartPage(character)
 		endmethod
@@ -157,10 +157,10 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 
 		// Bist du irgendwie verblödet?
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Bist du irgendwie verblödet?"), null)
-			call speech(info, character, true, tr("Nein! Brogo ist schlau. Tanka sagt immer zu Brogo: „Brogo ganz schlau, weil Brogo nicht dumm.“."), null)
-			call speech(info, character, false, tr("Ach so."), null)
-			call speech(info, character, true, tr("Brogo braucht jetzt seine Ruhe. Brogo muss Feuer beobachten. Feuer bewegt sich. Brogo passt auf, dass Feuer nicht abhaut. Brogo ist mutiger Wächter von Feuer."), null)
+			call speech(info, character, false, tre("Bist du irgendwie verblödet?", "Are you somehow stupid?"), null)
+			call speech(info, character, true, tre("Nein! Brogo ist schlau. Tanka sagt immer zu Brogo: „Brogo ganz schlau, weil Brogo nicht dumm.“.", "No! Brogo is smart. Tanka says always to Brogo \"Brogo quite clever because Brogo not stupid.\"."), null)
+			call speech(info, character, false, tre("Ach so.", "Ah."), null)
+			call speech(info, character, true, tre("Brogo braucht jetzt seine Ruhe. Brogo muss Feuer beobachten. Feuer bewegt sich. Brogo passt auf, dass Feuer nicht abhaut. Brogo ist mutiger Wächter von Feuer.", "Brogo now needs his rest. Brogo must observe fire. Fire moves. Brogo takes care that fire not leaving. Brogo is courageous guardin of fire."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -177,10 +177,10 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 			endloop
 
 			// start page
-			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tr("Hallo.")) // 0
-			set this.m_hereIsACat = this.addInfo(true, false, thistype.infoConditionQuestCatsForBrogoIsActive, thistype.infoActionHereIsACat, tr("Hier hast du eine Katze.")) // 1
-			call this.addInfo(true, false, thistype.infoCondition2, thistype.infoAction2, tr("Hier hast du ein paar Katzen.")) // 2
-			call this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tr("Bist du irgendwie verblödet?")) // 3
+			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Hallo.", "Hello.")) // 0
+			set this.m_hereIsACat = this.addInfo(true, false, thistype.infoConditionQuestCatsForBrogoIsActive, thistype.infoActionHereIsACat, tre("Hier hast du eine Katze.", "Here you have a cat.")) // 1
+			call this.addInfo(true, false, thistype.infoCondition2, thistype.infoAction2, tre("Hier hast du ein paar Katzen.", "Here you have a couple of cats.")) // 2
+			call this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tre("Bist du irgendwie verblödet?", "Are you somehow stupid?")) // 3
 			call this.addExitButton() // 4
 
 			return this

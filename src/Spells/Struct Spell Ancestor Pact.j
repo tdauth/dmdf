@@ -88,6 +88,7 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
+			call this.addGrimoireEntry('A05M', 'A05N')
 			call this.addGrimoireEntry('A0RK', 'A0RP')
 			call this.addGrimoireEntry('A0RL', 'A0RQ')
 			call this.addGrimoireEntry('A0RM', 'A0RR')

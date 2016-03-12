@@ -54,7 +54,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 		private static method enterCondition takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
 			local AGroup allies = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "allies")
-			if (GetUnitAllianceStateToUnit(this.character().unit(), GetTriggerUnit()) == bj_ALLIANCE_ALLIED and  not allies.units().contains(GetTriggerUnit())) then
+			if (GetUnitAllianceStateToUnit(this.character().unit(), GetTriggerUnit()) == bj_ALLIANCE_ALLIED and not allies.units().contains(GetTriggerUnit())) then
 				call PauseUnit(GetTriggerUnit(), false)
 				call allies.units().pushBack(GetTriggerUnit())
 				call thistype.applyAllyEffect(GetTriggerUnit())
@@ -105,14 +105,14 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			set i = 0
 			loop
 				exitwhen (i == allies.units().size())
-				if (GetUnitAllianceStateToUnit(caster, allies.units()[i]) != bj_ALLIANCE_ALLIED) then
+				if (GetUnitAllianceStateToUnit(caster, allies.units()[i]) != bj_ALLIANCE_ALLIED and caster != allies.units()[i]) then
 					call allies.units().erase(i)
 					debug call Print("Got ally " + GetUnitName(unitGroup.units()[i]) + " in range remaining units " + I2S(unitGroup.units().size()))
 				// remove all allies from the targets
 				else
 					debug call Print("Removing ally from all units " + GetUnitName(allies.units()[i]))
 					// FIXME seems to be too slow and the method cancels here.
-					call unitGroup.units().remove(allies.units()[i])
+					call thistype.removeUnitFromGroupWithNewOp.evaluate(unitGroup, allies.units()[i])
 					debug call Print("Done Removal!")
 					set i = i + 1
 				endif
@@ -164,6 +164,10 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			set mapTrigger = null
 			call RemoveRegion(mapRegion)
 			set mapRegion = null
+		endmethod
+		
+		private static method removeUnitFromGroupWithNewOp takes AGroup whichGroup, unit whichUnit returns nothing
+			call whichGroup.units().remove(whichUnit)
 		endmethod
 
 		public static method create takes Character character returns thistype

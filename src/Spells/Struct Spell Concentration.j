@@ -19,7 +19,7 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 			local unit caster = this.character().unit()
 			local effect spellEffect = null
 			local real life
-			if (this.level() > 0 and GetUnitMissingLife(caster) > 0.0) then
+			if (this.level() > 0 and GetUnitState(caster, UNIT_STATE_LIFE) < GetUnitState(caster, UNIT_STATE_MAX_LIFE)) then
 				set life = this.level() * thistype.lifeLevelValue * GetUnitState(caster, UNIT_STATE_MAX_LIFE) / 100.0
 				call SetUnitState(caster, UNIT_STATE_LIFE, GetUnitState(caster, UNIT_STATE_LIFE) + life)
 				if (not IsUnitHidden(caster)) then
@@ -37,8 +37,8 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 		public static method create takes Character character returns thistype
 			local thistype this =  thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.effectTimer = CreateTimer()
-			call TimerStart(this.effectTimer, thistype.interval, true, function thistype.timerFunction)
 			call DmdfHashTable.global().setHandleInteger(this.effectTimer, "this", this)
+			call TimerStart(this.effectTimer, thistype.interval, true, function thistype.timerFunction)
 			
 			call this.addGrimoireEntry('A0XI', 'A0XN')
 			call this.addGrimoireEntry('A0XJ', 'A0XO')

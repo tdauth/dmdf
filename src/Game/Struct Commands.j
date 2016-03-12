@@ -77,9 +77,10 @@ library StructGameCommands requires Asl, StructGameCharacter
 		private static method triggerConditionKick takes nothing returns boolean
 			local string kickedPlayersName
 			local integer i
-			local player kickedPlayer
+			local player kickedPlayer = null
 			if (GetTriggerPlayer() == thistype.m_adminPlayer) then
 				set kickedPlayersName = StringTrim(SubString(GetEventPlayerChatString(), StringLength("-kick"), StringLength(GetEventPlayerChatString())))
+				debug call Print("Kicking player " + kickedPlayersName)
 				if (StringLength(kickedPlayersName) == 0) then
 					call SimError(GetTriggerPlayer(), tre("Spielername oder -nummer fehlt.", "Player name or number is missing."))
 					
@@ -97,6 +98,8 @@ library StructGameCommands requires Asl, StructGameCharacter
 				endloop
 				if (kickedPlayer == GetTriggerPlayer()) then
 					call SimError(GetTriggerPlayer(), tre("Sie können sich nicht selbst kicken.", "You cannot kick yourself."))
+				elseif (kickedPlayer == null) then
+					call SimError(GetTriggerPlayer(), tre("Ungültiger Spieler.", "Invalid player."))
 				else
 					call CustomDefeatBJ(kickedPlayer, tre("Sie wurden aus dem Spiel gekickt.", "You have been kicked from the game."))
 				endif

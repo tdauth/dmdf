@@ -87,6 +87,7 @@ library StructSpellsSpellAnEyeForAnEye requires Asl, StructGameClasses, StructGa
 			set this.m_count = 0
 			set this.m_target = null
 			
+			call this.addGrimoireEntry('A04Y', 'A04Z')
 			call this.addGrimoireEntry('A1GA', 'A1GF')
 			call this.addGrimoireEntry('A1GB', 'A1GG')
 			call this.addGrimoireEntry('A1GC', 'A1GH')

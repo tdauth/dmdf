@@ -48,9 +48,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			local unit usedUnit = thistype.m_units[index]
 			local player owner = GetOwningPlayer(usedUnit)
 			local integer i
+			local Character character = Character(ACharacter.getCharacterByUnit(usedUnit))
 			call thistype.m_units.erase(index)
 			call LeaderboardRemoveItem(thistype.m_leaderboard, index)
-			if (ACharacter.getCharacterByUnit(usedUnit) != 0) then
+			if (character != 0) then
 				if (IsUnitDeadBJ(usedUnit)) then
 					call ReviveHero(usedUnit, thistype.m_outsideX, thistype.m_outsideY, true)
 				else
@@ -64,8 +65,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				call IssueImmediateOrder(usedUnit, "stop")
 				
 				// TODO triggered before revival starts
-				if (ACharacter.getCharacterByUnit(usedUnit).revival() != 0) then
-					call ACharacter.getCharacterByUnit(usedUnit).revival().end()
+				if (character.revival() != 0) then
+					call character.revival().end()
 				endif
 
 				call PanCameraToForPlayer(owner, GetUnitX(usedUnit), GetUnitY(usedUnit))
@@ -93,6 +94,9 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 					endif
 					set i = i + 1
 				endloop
+				
+				// removes the resources multiboard of shared vision with advanced units
+				call character.showCharactersSchemeToPlayer()
 			// remove newly created NPC units
 			else
 				call RemoveUnit(usedUnit)
@@ -106,6 +110,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			set owner = null
 		endmethod
 
+		/**
+		 * Removes unit \p usedUnit from the arena.
+		 * Nothing happens if the unit is not in the arena.
+		 */
 		public static method removeUnit takes unit usedUnit returns nothing
 			local integer index = thistype.m_units.find(usedUnit)
 			if (index == -1) then
@@ -169,6 +177,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call DisableTrigger(thistype.m_killTrigger)
 			call DisableTrigger(thistype.m_leaveTrigger)
 			call thistype.stopAttacks()
+			debug call Print("Units size: " + I2S(thistype.m_units.size()))
 			loop
 				exitwhen (thistype.m_units.empty())
 				call thistype.removeUnitByIndex(thistype.m_units.backIndex())
@@ -177,6 +186,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, Format(thistype.m_textEndFight).s(winnerName).i(thistype.rewardGold).result())
 		endmethod
 
+		/**
+		 * Checks if more than one unit is still alive.
+		 * If only one unit is alive it becomes the winner and the fight is ended.
+		 */
 		private static method checkForEndFight takes nothing returns nothing
 			local integer aliveCount = 0
 			local integer i = 0
