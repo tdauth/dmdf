@@ -5,8 +5,8 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 	struct SpellArcaneHunger extends Spell
 		public static constant integer abilityId = 'A05O'
 		public static constant integer favouriteAbilityId = 'A05P'
-		public static constant integer classSelectionAbilityId = 'A10A'
-		public static constant integer classSelectionGrimoireAbilityId = 'A10F'
+		public static constant integer classSelectionAbilityId = 'A05Y'
+		public static constant integer classSelectionGrimoireAbilityId = 'A05Z'
 		public static constant integer maxLevel = 5
 		private static constant real range = 900.0
 		private static constant real timeStartValue = 5.0

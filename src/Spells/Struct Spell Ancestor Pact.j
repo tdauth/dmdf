@@ -7,8 +7,8 @@ library StructSpellsSpellAncestorPact requires Asl, StructGameClasses, StructGam
 	struct SpellAncestorPact extends Spell
 		public static constant integer abilityId = 'A08N'
 		public static constant integer favouriteAbilityId = 'A08I'
-		public static constant integer classSelectionAbilityId = 'A0RK'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0RP'
+		public static constant integer classSelectionAbilityId = 'A05M'
+		public static constant integer classSelectionGrimoireAbilityId = 'A05N'
 		public static constant integer maxLevel = 5
 		private static constant real targetRadius = 200.0
 		private static constant real lifePercentage = 0.10

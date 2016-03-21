@@ -5,8 +5,8 @@ library StructSpellsSpellAnEyeForAnEye requires Asl, StructGameClasses, StructGa
 	struct SpellAnEyeForAnEye extends Spell
 		public static constant integer abilityId = 'A1G8'
 		public static constant integer favouriteAbilityId = 'A1G9'
-		public static constant integer classSelectionAbilityId = 'A1GA'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1GF'
+		public static constant integer classSelectionAbilityId = 'A04Y'
+		public static constant integer classSelectionGrimoireAbilityId = 'A04Z'
 		public static constant integer maxLevel = 5
 		private static constant integer maxCount = 4
 		private static constant real damageLevelFactor = 0.05

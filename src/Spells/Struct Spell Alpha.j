@@ -4,8 +4,8 @@ library StructSpellsSpellAlpha requires Asl, StructGameClasses, StructGameSpell
 	struct SpellAlpha extends Spell
 		public static constant integer abilityId = 'A0FE'
 		public static constant integer favouriteAbilityId = 'A0FG'
-		public static constant integer classSelectionAbilityId = 'A0FH'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0FI'
+		public static constant integer classSelectionAbilityId = 'A03M'
+		public static constant integer classSelectionGrimoireAbilityId = 'A03Y'
 		public static constant integer maxLevel = 1
 		/// This ability is added to the animal form if this spell is learned.
 		public static constant integer castAbilityId = 'A0FF'

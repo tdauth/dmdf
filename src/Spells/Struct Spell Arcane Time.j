@@ -8,8 +8,8 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 	struct SpellArcaneTime extends Spell
 		public static constant integer abilityId = 'A08V'
 		public static constant integer favouriteAbilityId = 'A08W'
-		public static constant integer classSelectionAbilityId = 'A10M'
-		public static constant integer classSelectionGrimoireAbilityId = 'A10R'
+		public static constant integer classSelectionAbilityId = 'A0PL'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0PM'
 		public static constant integer positiveBuffAbilityId = 'A1IX'
 		public static constant integer negativeBuffAbilityId = 'A1IW'
 		public static constant integer maxLevel = 5
@@ -194,6 +194,7 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A0PL', 'A0PM')
 			call this.addGrimoireEntry('A10M', 'A10R')
 			call this.addGrimoireEntry('A10N', 'A10S')
 			call this.addGrimoireEntry('A10O', 'A10T')
