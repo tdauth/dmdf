@@ -58,8 +58,8 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 	struct SpellBearForm extends Spell
 		public static constant integer abilityId = 'A13X'
 		public static constant integer favouriteAbilityId = 'A09S'
-		public static constant integer classSelectionAbilityId = 'A0C7'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0CC'
+		public static constant integer classSelectionAbilityId = 'A0UD'
+		public static constant integer classSelectionGrimoireAbilityId = 'A0UE'
 		public static constant integer maxLevel = 5
 		public static constant integer lifeAbilityId = 'A15V'
 		public static constant integer damageAbilityId = 'A09R'
@@ -70,6 +70,7 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			set this.m_metamorphosis = SpellBearFormMetamorphosis.create(character, thistype.abilityId, 'A09H', 'A13W')
 			call this.m_metamorphosis.setDisableInventory(false)
 			
+			call this.addGrimoireEntry('A0UD', 'A0UE')
 			call this.addGrimoireEntry('A0C7', 'A0CC')
 			call this.addGrimoireEntry('A0C8', 'A0CD')
 			call this.addGrimoireEntry('A0C9', 'A0CE')
