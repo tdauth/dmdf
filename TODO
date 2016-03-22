@@ -842,7 +842,8 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Tiergestalten: Einfach Klassenzauber lassen.
 * Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen.
 * DONE: Heileffekt alle 10 Sekunden bei Ritter: Spezialeffekt mit Heilung und Sound wie bei Konzentration.
-* Waldholzfäuste: Anderes Icon.
+* FIXED: Waldholzfäuste: Anderes Icon.
+* FIXED: Erwachen des Waldes: Anderes Icon.
 
 Mehrspielertest:
 * FIXED: Klassenauswahl ansicht verbuggt.
