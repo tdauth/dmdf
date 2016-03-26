@@ -835,12 +835,9 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * DEPRECATED: Werden nach Repick die Spielcharakterzauber neu erzeugt? initCharacterSpells() Reiten auf Schaf geht nicht so richtig?
 * FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
 * Kollisionsgrößen der Charaktere sind zu groß.
-* Wieland und andere NPCs haben falsche Bewegungstempanimationsgeschwindigkeit (schweben).
 * FIXED: Textnachricht ausgeben wenn Zauber als passiver Zauber oder allgemein nicht in Favoriten geskillt wird.
 * Add a learning ability for every grimoire spell.
 * DONE: Hotkeys for all class spells.
-* Tiergestalten: Einfach Klassenzauber lassen.
-* Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen.
 * DONE: Heileffekt alle 10 Sekunden bei Ritter: Spezialeffekt mit Heilung und Sound wie bei Konzentration.
 * FIXED: Waldholzfäuste: Anderes Icon.
 * FIXED: Erwachen des Waldes: Anderes Icon.
@@ -856,15 +853,20 @@ Mehrspielertest:
 * FIXED: Steht auch nicht im CharactersSchema.
 
 Nervig:
+* Tiergestalten: Einfach Klassenzauber lassen.
+* Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen.
 * Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.
 * Spruchrolle umbenennen zu Schreinteleport.
 * Elementarwesen sind zu viele oder zu stark.
 * FIXED: ACharactersScheme: Experience formula is wrong. GetHeroMaxXP() calculated for one level too low.
+* FIXED: Wieland und andere NPCs haben falsche Bewegungstempanimationsgeschwindigkeit (schweben).
 
 Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.
 
 Weitere TODOS:
+* Remove the leading I of item types from the save code since it is always I.
+* Highlight upper case and lower case letters with different colors.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * The local files option does not work on Windows 8 or 10 as well. The only possible solution is mixing War3Patch with the data.
 * Remove sound from talk effect.
