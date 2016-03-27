@@ -8,8 +8,8 @@ library StructSpellsSpellBlock requires Asl, StructGameClasses, StructGameSpell
 	struct SpellBlock extends Spell
 		public static constant integer abilityId = 'A01P'
 		public static constant integer favouriteAbilityId = 'A035'
-		public static constant integer classSelectionAbilityId = 'A0X8'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0XD'
+		public static constant integer classSelectionAbilityId = 'A1JA'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1JB'
 		public static constant integer maxLevel = 5
 		private static constant integer chance = 30
 		private static constant real damageStartValue = 0.10
@@ -36,6 +36,7 @@ library StructSpellsSpellBlock requires Asl, StructGameClasses, StructGameSpell
 			set this.m_damageRecorder = ADamageRecorder.create(character.unit())
 			call this.m_damageRecorder.setOnDamageAction(thistype.action)
 			
+			call this.addGrimoireEntry('A1JA', 'A1JB')
 			call this.addGrimoireEntry('A0X8', 'A0XD')
 			call this.addGrimoireEntry('A0X9', 'A0XE')
 			call this.addGrimoireEntry('A0XA', 'A0XF')

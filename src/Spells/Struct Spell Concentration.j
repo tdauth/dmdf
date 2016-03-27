@@ -5,8 +5,8 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 	struct SpellConcentration extends Spell
 		public static constant integer abilityId = 'A02A'
 		public static constant integer favouriteAbilityId = 'A03Z'
-		public static constant integer classSelectionAbilityId = 'A0XI'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0XN'
+		public static constant integer classSelectionAbilityId = 'A1JI'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1JJ'
 		public static constant integer maxLevel = 5
 		private static constant real interval = 10.0 //constant, does not change per level.
 		private static constant integer lifeLevelValue = 5 // percentage
@@ -40,6 +40,7 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 			call DmdfHashTable.global().setHandleInteger(this.effectTimer, "this", this)
 			call TimerStart(this.effectTimer, thistype.interval, true, function thistype.timerFunction)
 			
+			call this.addGrimoireEntry('A1JI', 'A1JJ')
 			call this.addGrimoireEntry('A0XI', 'A0XN')
 			call this.addGrimoireEntry('A0XJ', 'A0XO')
 			call this.addGrimoireEntry('A0XK', 'A0XP')

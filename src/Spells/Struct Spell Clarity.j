@@ -8,8 +8,8 @@ library StructSpellsSpellClarity requires Asl, StructGameClasses, StructGameSpel
 	struct SpellClarity extends Spell
 		public static constant integer abilityId = 'A052'
 		public static constant integer favouriteAbilityId = 'A053'
-		public static constant integer classSelectionAbilityId = 'A0OX'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0P2'
+		public static constant integer classSelectionAbilityId = 'A1JE'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1JF'
 		public static constant integer maxLevel = 5
 		
 		private method condition takes nothing returns boolean
@@ -29,6 +29,7 @@ library StructSpellsSpellClarity requires Asl, StructGameClasses, StructGameSpel
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
+			call this.addGrimoireEntry('A1JE', 'A1JF')
 			call this.addGrimoireEntry('A0OX', 'A0P2')
 			call this.addGrimoireEntry('A0OY', 'A0P3')
 			call this.addGrimoireEntry('A0OZ', 'A0P4')
