@@ -5,8 +5,8 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 	struct SpellCurb extends Spell
 		public static constant integer abilityId = 'A03B'
 		public static constant integer favouriteAbilityId = 'A03F'
-		public static constant integer classSelectionAbilityId = 'A0BA'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0B9'
+		public static constant integer classSelectionAbilityId = 'A1JT'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1JU'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00H'
 		private static constant real time = 15.0
@@ -164,6 +164,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			set this.m_units = 0
+			call this.addGrimoireEntry('A1JT', 'A1JU')
 			call this.addGrimoireEntry('A0BA', 'A0B9')
 			call this.addGrimoireEntry('A0BD', 'A0AQ')
 			call this.addGrimoireEntry('A0BE', 'A0BC')

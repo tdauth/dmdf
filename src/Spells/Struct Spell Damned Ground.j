@@ -97,8 +97,8 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 	struct SpellDamnedGround extends Spell
 		public static constant integer abilityId = 'A1AB'
 		public static constant integer favouriteAbilityId = 'A1A8'
-		public static constant integer classSelectionAbilityId = 'A1A9'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1AA'
+		public static constant integer classSelectionAbilityId = 'A1JV'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1JW'
 		public static constant integer maxLevel = 5
 		public static constant real time = 5.0
 		
@@ -112,6 +112,7 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A1JV', 'A1JW')
 			call this.addGrimoireEntry('A1A9', 'A1AA')
 			call this.addGrimoireEntry('A1HN', 'A1HS')
 			call this.addGrimoireEntry('A1HO', 'A1AT')

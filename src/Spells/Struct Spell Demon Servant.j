@@ -27,6 +27,7 @@ library StructSpellsSpellDemonServant requires Asl, StructGameClasses, StructGam
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			call this.addGrimoireEntry('A1K7', 'A1K8')
 			call this.addGrimoireEntry('A023', 'A0I2')
 			call this.addGrimoireEntry('A0HY', 'A0I3')
 			call this.addGrimoireEntry('A0HZ', 'A0I4')

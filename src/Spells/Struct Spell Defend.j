@@ -5,8 +5,8 @@ library StructSpellsSpellDefend requires Asl, StructGameClasses, StructGameGame,
 	struct SpellDefend extends Spell
 		public static constant integer abilityId = 'A1HK'
 		public static constant integer favouriteAbilityId = 'A1HL'
-		public static constant integer classSelectionAbilityId = 'A1HM'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1HR'
+		public static constant integer classSelectionAbilityId = 'A1K5'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1K6'
 		public static constant integer maxLevel = 1
 		
 		private method condition takes nothing returns boolean
@@ -20,6 +20,7 @@ library StructSpellsSpellDefend requires Asl, StructGameClasses, StructGameGame,
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.knight(), thistype.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, 0)
+			call this.addGrimoireEntry('A1K5', 'A1K6')
 			call this.addGrimoireEntry('A1HM', 'A1HR')
 			
 			return this

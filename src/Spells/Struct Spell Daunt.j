@@ -5,8 +5,8 @@ library StructSpellsSpellDaunt requires Asl, StructGameClasses, StructGameGame, 
 	struct SpellDaunt extends Spell
 		public static constant integer abilityId = 'A05Q'
 		public static constant integer favouriteAbilityId = 'A05R'
-		public static constant integer classSelectionAbilityId = 'A14X'
-		public static constant integer classSelectionGrimoireAbilityId = 'A152'
+		public static constant integer classSelectionAbilityId = 'A1K1'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1K2'
 		public static constant integer maxLevel = 5
 		private static constant real time = 7.0
 		private static constant real levelValue = 0.10
@@ -28,6 +28,7 @@ library StructSpellsSpellDaunt requires Asl, StructGameClasses, StructGameGame, 
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A1K1', 'A1K2')
 			call this.addGrimoireEntry('A14X', 'A152')
 			call this.addGrimoireEntry('A14Y', 'A153')
 			call this.addGrimoireEntry('A14Z', 'A154')

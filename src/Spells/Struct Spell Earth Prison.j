@@ -7,8 +7,8 @@ library StructSpellsSpellEarthPrison requires Asl, StructGameClasses, StructGame
 	struct SpellEarthPrison extends Spell
 		public static constant integer abilityId = 'A01H'
 		public static constant integer favouriteAbilityId = 'A03I'
-		public static constant integer classSelectionAbilityId = 'A0ZA'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0ZF'
+		public static constant integer classSelectionAbilityId = 'A1KD'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1KE'
 		public static constant integer maxLevel = 5
 		public static constant integer buffId = 'B005'
 		private static constant real timeStartValue = 1.5
@@ -40,6 +40,7 @@ library StructSpellsSpellEarthPrison requires Asl, StructGameClasses, StructGame
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			
+			call this.addGrimoireEntry('A1KD', 'A1KE')
 			call this.addGrimoireEntry('A0ZA', 'A0ZF')
 			call this.addGrimoireEntry('A0ZB', 'A0ZG')
 			call this.addGrimoireEntry('A0ZC', 'A0ZH')

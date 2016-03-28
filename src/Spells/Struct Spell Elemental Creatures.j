@@ -10,6 +10,7 @@ library StructSpellsSpellElementalCreatures requires Asl, StructSpellsSpellEleme
 		
 		public static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			call this.addGrimoireEntry('A1KF', 'A1KG')
 			call this.addGrimoireEntry('A1IA', 'A1IF')
 			call this.addGrimoireEntry('A1IB', 'A1IG')
 			call this.addGrimoireEntry('A1IC', 'A1IH')
