@@ -76,8 +76,8 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 	struct SpellEmblaze extends Spell
 		public static constant integer abilityId = 'A01C'
 		public static constant integer favouriteAbilityId = 'A03H'
-		public static constant integer classSelectionAbilityId = 'A0TR'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0TW'
+		public static constant integer classSelectionAbilityId = 'A1KN'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1KO'
 		public static constant integer buffAbilityId = 'A1IY'
 		public static constant integer maxLevel = 5
 		public static constant real time = 30.0
@@ -95,6 +95,7 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A1KN', 'A1KO')
 			call this.addGrimoireEntry('A0TR', 'A0TW')
 			call this.addGrimoireEntry('A0TS', 'A0TX')
 			call this.addGrimoireEntry('A0TT', 'A0TY')

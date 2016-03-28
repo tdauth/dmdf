@@ -5,8 +5,8 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 	struct SpellFreeze extends Spell
 		public static constant integer abilityId = 'A019'
 		public static constant integer favouriteAbilityId = 'A03J'
-		public static constant integer classSelectionAbilityId = 'A0UV'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0V0'
+		public static constant integer classSelectionAbilityId = 'A1L3'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1L4'
 		public static constant integer maxLevel = 5
 		private static constant real rangeStartValue = 500.0
 		private static constant real rangeLevelValue = 100.0 //ab Stufe 1
@@ -126,6 +126,7 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A1L3', 'A1L4')
 			call this.addGrimoireEntry('A0UV', 'A0V0')
 			call this.addGrimoireEntry('A0UW', 'A0V1')
 			call this.addGrimoireEntry('A0UX', 'A0V2')

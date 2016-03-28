@@ -5,8 +5,8 @@ library StructSpellsSpellFuriousBloodthirstiness requires Asl, StructGameClasses
 	struct SpellFuriousBloodthirstiness extends Spell
 		public static constant integer abilityId = 'A06S'
 		public static constant integer favouriteAbilityId = 'A06T'
-		public static constant integer classSelectionAbilityId = 'A0YW'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0YX'
+		public static constant integer classSelectionAbilityId = 'A1L7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1L8'
 		public static constant integer maxLevel = 1
 		private static constant real lifeUsagePercentage = 0.03 // mustn't be bigger than life min value
 		private static constant real damageBonusPercentage = 0.25
@@ -60,6 +60,7 @@ library StructSpellsSpellFuriousBloodthirstiness requires Asl, StructGameClasses
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A1L7', 'A1L8')
 			call this.addGrimoireEntry('A0YW', 'A0YX')
 			
 			call Game.registerOnDamageActionOnce(thistype.onDamageAction)

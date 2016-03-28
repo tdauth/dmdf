@@ -5,8 +5,8 @@ library StructSpellsSpellHolyWill requires Asl, StructGameClasses, StructGameSpe
 	struct SpellHolyWill extends Spell
 		public static constant integer abilityId = 'A08D'
 		public static constant integer favouriteAbilityId = 'A08E'
-		public static constant integer classSelectionAbilityId = 'A0PJ'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0PK'
+		public static constant integer classSelectionAbilityId = 'A1LJ'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1LK'
 		public static constant integer maxLevel = 1
 		private static constant integer time = 10
 		private static constant integer percentage = 95
@@ -35,6 +35,7 @@ library StructSpellsSpellHolyWill requires Asl, StructGameClasses, StructGameSpe
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), thistype.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			
+			call this.addGrimoireEntry('A1LJ', 'A1LK')
 			call this.addGrimoireEntry('A0PJ', 'A0PK')
 			
 			return this

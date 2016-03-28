@@ -69,8 +69,8 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 	struct SpellFireMissile extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A014'
 		public static constant integer favouriteAbilityId = 'A03K'
-		public static constant integer classSelectionAbilityId = 'A0KP'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0KU'
+		public static constant integer classSelectionAbilityId = 'A1KV'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1KW'
 		public static constant integer maxLevel = 5
 		public static constant real damageStartValue = 35.0
 		public static constant real damageFactor = 15.0 // Schadens-Stufenfaktor (ab Stufe 1)
@@ -93,6 +93,7 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A1KV', 'A1KW')
 			call this.addGrimoireEntry('A0KP', 'A0KU')
 			call this.addGrimoireEntry('A0KQ', 'A0KV')
 			call this.addGrimoireEntry('A0KR', 'A0KW')

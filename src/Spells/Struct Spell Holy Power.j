@@ -5,8 +5,8 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 	struct SpellHolyPower extends Spell
 		public static constant integer abilityId = 'A01Y'
 		public static constant integer favouriteAbilityId = 'A032'
-		public static constant integer classSelectionAbilityId = 'A0X4'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0X5'
+		public static constant integer classSelectionAbilityId = 'A1LH'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1LI'
 		public static constant integer maxLevel = 1
 		private static constant real manaFactor = 0.50
 		
@@ -34,6 +34,7 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 		public static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
+			call this.addGrimoireEntry('A1LH', 'A1LI')
 			call this.addGrimoireEntry('A0X4', 'A0X5')
 			
 			return this

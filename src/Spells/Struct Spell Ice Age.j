@@ -8,8 +8,8 @@ library StructSpellsSpellIceAge requires Asl, StructGameClasses, StructGameSpell
 	struct SpellIceAge extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A01D'
 		public static constant integer favouriteAbilityId = 'A03G'
-		public static constant integer classSelectionAbilityId = 'A0TH'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0TM'
+		public static constant integer classSelectionAbilityId = 'A1LL'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1LM'
 		public static constant integer maxLevel = 5
 		private static constant real radius = 600.0 // 20 Meter
 		private static constant real time = 20.0 // 20 Sekunden
@@ -103,6 +103,7 @@ library StructSpellsSpellIceAge requires Asl, StructGameClasses, StructGameSpell
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.createWithEventDamageSpell(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
+			call this.addGrimoireEntry('A1LL', 'A1LM')
 			call this.addGrimoireEntry('A0TH', 'A0TM')
 			call this.addGrimoireEntry('A0TI', 'A0TN')
 			call this.addGrimoireEntry('A0TJ', 'A0TO')

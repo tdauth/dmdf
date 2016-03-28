@@ -5,8 +5,8 @@ library StructSpellsSpellElementalForce requires Asl, StructSpellsSpellElemental
 	struct SpellElementalForce extends Spell
 		public static constant integer abilityId = 'A045'
 		public static constant integer favouriteAbilityId = 'A046'
-		public static constant integer classSelectionAbilityId = 'A0Z8'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0Z9'
+		public static constant integer classSelectionAbilityId = 'A1KL'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1KM'
 		public static constant integer maxLevel = 1
 		private static constant real damageBonusFactor = 0.80
 		private static constant real time = 20.0
@@ -70,6 +70,7 @@ library StructSpellsSpellElementalForce requires Asl, StructSpellsSpellElemental
 
 		public static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A1KL', 'A1KM')
 			call this.addGrimoireEntry('A0Z8', 'A0Z9')
 			
 			return this

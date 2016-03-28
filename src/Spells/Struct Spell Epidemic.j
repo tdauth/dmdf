@@ -5,8 +5,8 @@ library StructSpellsSpellEpidemic requires Asl, StructGameClasses, StructGameSpe
 	struct SpellEpidemic extends Spell
 		public static constant integer abilityId = 'A13N'
 		public static constant integer favouriteAbilityId = 'A13O'
-		public static constant integer classSelectionAbilityId = 'A13P'
-		public static constant integer classSelectionGrimoireAbilityId = 'A13Q'
+		public static constant integer classSelectionAbilityId = 'A1KP'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1KQ'
 		public static constant integer maxLevel = 1
 		private static constant real time = 30.0
 		private static constant real interval = 2.0
@@ -129,6 +129,7 @@ library StructSpellsSpellEpidemic requires Asl, StructGameClasses, StructGameSpe
 			call DmdfHashTable.global().setHandleInteger(this.m_deathTrigger, 0, this)
 			set this.m_targets = 0
 			
+			call this.addGrimoireEntry('A1KP', 'A1KQ')
 			call this.addGrimoireEntry('A13P', 'A13Q')
 			
 			return this

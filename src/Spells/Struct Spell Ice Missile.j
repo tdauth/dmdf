@@ -71,8 +71,8 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 	struct SpellIceMissile extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A017'
 		public static constant integer favouriteAbilityId = 'A039'
-		public static constant integer classSelectionAbilityId = 'A0T7'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0TC'
+		public static constant integer classSelectionAbilityId = 'A1LN'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1LO'
 		public static constant integer maxLevel = 5
 		public static constant real damageFactor = 50.0 // Schadens-Stufenfaktor (ab Stufe 1)
 		public static constant real speedFactor = 0.10 // Angriffs- und Bewegungsgeschwindigkeitsfaktor (ab Stufe 1, prozentual also 10 %)
@@ -94,6 +94,7 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			
+			call this.addGrimoireEntry('A1LN', 'A1LO')
 			call this.addGrimoireEntry('A0T7', 'A0TC')
 			call this.addGrimoireEntry('A0T8', 'A0TD')
 			call this.addGrimoireEntry('A0T9', 'A0TE')
