@@ -8,7 +8,7 @@ library StructSpellsSpellConversion requires Asl, StructGameClasses, StructGameS
 		private timer m_timer
 		
 		private static method timerFunction takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
 			call UnitRemoveBuffBJ(SpellConversion.buffId, this.m_target)
 			call SetUnitOwner(this.m_target, this.m_oldOwner, true)
 			call this.destroy()
@@ -25,7 +25,7 @@ library StructSpellsSpellConversion requires Asl, StructGameClasses, StructGameS
 			set this.m_target = target
 			set this.m_oldOwner = oldOwner
 			set this.m_timer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			
 			return this
 		endmethod

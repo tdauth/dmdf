@@ -28,8 +28,8 @@ library StructSpellsSpellRob requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 		
 		private static method timerFunctionReset takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
-			local unit target = DmdfHashTable.global().handleUnit(GetExpiredTimer(), "target")
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
+			local unit target = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 1)
 			call this.m_targets.remove(target)
 			debug call Print("Resetting rob target: " + GetUnitName(target))
 			set target = null
@@ -52,8 +52,8 @@ library StructSpellsSpellRob requires Asl, StructGameClasses, StructGameSpell
 			endloop
 			call this.m_targets.pushBack(GetSpellTargetUnit())
 			set whichTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(whichTimer, "this", this)
-			call DmdfHashTable.global().setHandleUnit(whichTimer, "target", GetSpellTargetUnit())
+			call DmdfHashTable.global().setHandleInteger(whichTimer, 0, this)
+			call DmdfHashTable.global().setHandleUnit(whichTimer, 1, GetSpellTargetUnit())
 			call TimerStart(whichTimer, thistype.time, false, function thistype.timerFunctionReset)
 			
 			call TriggerSleepAction(2.0)

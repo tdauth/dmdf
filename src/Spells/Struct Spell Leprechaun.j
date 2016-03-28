@@ -45,7 +45,7 @@ library StructSpellsSpellLeprechaun requires Asl, StructGameClasses, StructGameS
 		endmethod
 		
 		private static method timerFunction takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
 			call this.finish.execute() // without execute TriggerSleepAction() seems not to work properly
 		endmethod
 		
@@ -91,7 +91,7 @@ library StructSpellsSpellLeprechaun requires Asl, StructGameClasses, StructGameS
 			call MakeUnitSelectable(this.m_unit, false)
 			
 			set this.m_timer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			
 			set this.m_sound = CreateSound("Sound\\Spells\\Leprechaun\\leprechaun.mp3", false, false, true, 12700, 12700, "")
 			call SetSoundChannel(this.m_sound, GetHandleId(SOUND_VOLUMEGROUP_SPELLS))

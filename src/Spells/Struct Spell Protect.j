@@ -17,7 +17,7 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
 			local unit target = damageRecorder.target()
-			local real damage = GetEventDamage() * DmdfHashTable.global().real("SpellProtect" + I2S(damageRecorder), "damage")
+			local real damage = GetEventDamage() * DmdfHashTable.global().real(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder)
 			call SetUnitState(target, UNIT_STATE_LIFE, GetUnitState(target, UNIT_STATE_LIFE) + damage)
 			call Spell.showDamageAbsorbationTextTag(target, damage)
 			set target = null
@@ -32,13 +32,13 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 			local ADynamicLightning whichLightning = ADynamicLightning.create(null, "HWPB", 0.01, caster, target) 
 			local ADamageRecorder damageRecorder = ADamageRecorder.create(target)
 			call damageRecorder.setOnDamageAction(thistype.onDamageAction)
-			call DmdfHashTable.global().setReal("SpellProtect" + I2S(damageRecorder), "damage", damage)
+			call DmdfHashTable.global().setReal(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder, damage)
 			loop
 				exitwhen (time <= 0.0 or ASpell.allyChannelLoopCondition(caster) or ASpell.allyTargetLoopCondition(target) or GetUnitCurrentOrder(caster) != OrderId("ambush"))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop
-			call DmdfHashTable.global().removeReal("SpellProtect" + I2S(damageRecorder), "damage")
+			call DmdfHashTable.global().removeReal(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder)
 			call damageRecorder.destroy()
 			call whichLightning.destroy()
 			call DestroyEffect(targetEffect)

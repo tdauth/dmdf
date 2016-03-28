@@ -34,7 +34,7 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter, StructMa
 		endmethod
 		
 		private static method triggerConditionHint takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			if (GetTriggerUnit() == this.character().unit()) then
 				call this.displayUpdateMessage(tre("Runensteinkreis gefunden.", "Found runic stone circle."))
 			endif
@@ -66,7 +66,7 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter, StructMa
 			set this.m_hintTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(this.m_hintTrigger, gg_rct_weather_rune_circle)
 			call TriggerAddCondition(this.m_hintTrigger, Condition(function thistype.triggerConditionHint))
-			call DmdfHashTable.global().setHandleInteger(this.m_hintTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_hintTrigger, 0, this)
 			call DisableTrigger(this.m_hintTrigger)
 			
 			return this

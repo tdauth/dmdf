@@ -10,13 +10,13 @@ library StructSpellsSpellAnEyeForAnEye requires Asl, StructGameClasses, StructGa
 		public static constant integer maxLevel = 5
 		private static constant integer maxCount = 4
 		private static constant real damageLevelFactor = 0.05
-		private static constant string damageKey = "SpellAnEyeForAnEye:Damage"
+		private static constant integer damageKey = DMDF_HASHTABLE_KEY_ANEYEFORANEYE_DAMAGE
 		private ADamageRecorder m_damageRecorder
 		private integer m_count
 		private unit m_target
 		
 		private method disable takes nothing returns nothing
-			call DmdfHashTable.global().flushKey("SpellAnEyeForAnEye" + I2S(this.m_damageRecorder))
+			call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorder)
 			call this.m_damageRecorder.destroy()
 			set this.m_damageRecorder = 0
 			set this.m_count = 0
@@ -24,7 +24,7 @@ library StructSpellsSpellAnEyeForAnEye requires Asl, StructGameClasses, StructGa
 		endmethod
 
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local thistype spell = DmdfHashTable.global().integer("SpellAnEyeForAnEye" + I2S(damageRecorder), "this")
+			local thistype spell = thistype(DmdfHashTable.global().integer(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder))
 			local unit caster = damageRecorder.target()
 			local unit target = GetEventDamageSource()
 			local real damage = GetEventDamage() * thistype.damageLevelFactor
@@ -61,11 +61,6 @@ library StructSpellsSpellAnEyeForAnEye requires Asl, StructGameClasses, StructGa
 		private method condition takes nothing returns boolean
 			return true
 		endmethod
-		
-		private static method timerFunctionDisable takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
-			call this.disable()
-		endmethod
 
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
@@ -76,7 +71,7 @@ library StructSpellsSpellAnEyeForAnEye requires Asl, StructGameClasses, StructGa
 				call this.m_damageRecorder.destroy()
 			endif
 			call damageRecorder.setOnDamageAction(thistype.onDamageAction)
-			call DmdfHashTable.global().setInteger("SpellAnEyeForAnEye" + I2S(damageRecorder), "this", this)
+			call DmdfHashTable.global().setInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder, this)
 			set this.m_damageRecorder = damageRecorder
 			set caster = null
 		endmethod

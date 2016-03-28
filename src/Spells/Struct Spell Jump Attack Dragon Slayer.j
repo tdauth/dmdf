@@ -66,13 +66,13 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		public static constant integer stunAbilityId = 'A1GW'
 		public static constant integer dummyId = 'h02J'
 		private static constant real period = 0.01
-		private static constant string key = "SpellJumpAttackDragonSlayer"
+		private static constant integer key = DMDF_HASHTABLE_KEY_JUMPATTACK
 		private static timer m_knockBackTimer
 		private static boolean m_timerIsRunning = false
 		private static AIntegerList m_knockBacks
 		
 		private static method timerFunctionRemoveDummy takes nothing returns nothing
-			local unit dummy = DmdfHashTable.global().handleUnit(GetExpiredTimer(), "dummy")
+			local unit dummy = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 0)
 			call RemoveUnit(dummy)
 			set dummy = null
 			call PauseTimer(GetExpiredTimer())
@@ -91,7 +91,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			call SetUnitAbilityLevel(dummy, thistype.stunAbilityId, level)
 			call IssueTargetOrder(dummy, "firebolt", whichUnit)
 			set tmpTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleUnit(tmpTimer, "dummy", dummy)
+			call DmdfHashTable.global().setHandleUnit(tmpTimer, 0, dummy)
 			call TimerStart(tmpTimer, 0.5, false, function thistype.timerFunctionRemoveDummy)
 			set tmpTimer = null
 			set dummy = null

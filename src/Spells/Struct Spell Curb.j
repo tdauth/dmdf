@@ -20,7 +20,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 
 		/// @todo Check if it is magical damage (check units damage type)
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local thistype spell = DmdfHashTable.global().integer("SpellCurb" + I2S(damageRecorder), "spell")
+			local thistype spell = thistype(DmdfHashTable.global().integer(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder))
 			local real reducedDamage = GetEventDamage() * spell.level() * thistype.damageLevelValue
 			local unit target = damageRecorder.target()
 			call SetUnitState(target, UNIT_STATE_LIFE, GetUnitState(target, UNIT_STATE_LIFE) + reducedDamage)
@@ -31,7 +31,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 		private method addUnit takes unit whichUnit returns nothing
 			local ADamageRecorder damageRecorder = ADamageRecorder.create(whichUnit)
 			call damageRecorder.setOnDamageAction(thistype.onDamageAction)
-			call DmdfHashTable.global().setInteger("SpellCurb" + I2S(damageRecorder), "spell", this)
+			call DmdfHashTable.global().setInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder, this)
 			debug call Print(GetUnitName(whichUnit) + " enters curb region.")
 			call this.m_units.pushBack(whichUnit)
 			call this.m_damageRecorders.pushBack(damageRecorder)
@@ -44,7 +44,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			debug if (index == -1) then
 				debug call Print("Index shouldn't be -1")
 			debug endif
-			call DmdfHashTable.global().flushKey("SpellCurb" + I2S(this.m_damageRecorders[index]))
+			call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorders[index])
 			debug call Print(GetUnitName(whichUnit) + " leaves curb region.")
 			call ADamageRecorder(this.m_damageRecorders[index]).destroy()
 			call this.m_damageRecorders.erase(index)
@@ -54,7 +54,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 
 		private static method triggerConditionIsAllied takes nothing returns boolean
 			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, 0)
 			local unit caster = this.character().unit()
 			local unit triggerUnit = GetTriggerUnit()
 			local boolean result = GetUnitAllianceStateToUnit(caster, triggerUnit) == bj_ALLIANCE_ALLIED
@@ -66,7 +66,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 
 		private static method triggerActionEnter takes nothing returns nothing
 			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, 0)
 			local unit triggerUnit = GetTriggerUnit()
 			call this.addUnit(triggerUnit)
 			set triggeringTrigger = null
@@ -78,12 +78,12 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			call TriggerRegisterEnterRegionSimple(this.m_enterTrigger, this.m_region)
 			call TriggerAddCondition(this.m_enterTrigger, Condition(function thistype.triggerConditionIsAllied))
 			call TriggerAddAction(this.m_enterTrigger, function thistype.triggerActionEnter)
-			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger, 0, this)
 		endmethod
 
 		private static method triggerActionLeave takes nothing returns nothing
 			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, 0)
 			local unit triggerUnit = GetTriggerUnit()
 			call this.removeUnit(triggerUnit)
 			set triggeringTrigger = null
@@ -95,7 +95,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			call TriggerRegisterLeaveRegionSimple(this.m_leaveTrigger, this.m_region)
 			call TriggerAddCondition(this.m_leaveTrigger, Condition(function thistype.triggerConditionIsAllied))
 			call TriggerAddAction(this.m_leaveTrigger, function thistype.triggerActionLeave)
-			call DmdfHashTable.global().setHandleInteger(this.m_leaveTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_leaveTrigger, 0, this)
 		endmethod
 
 		private method destroyEnterTrigger takes nothing returns nothing
@@ -176,7 +176,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			local integer i = this.m_damageRecorders.backIndex()
 			loop
 				exitwhen (i < 0)
-				call DmdfHashTable.global().flushKey("SpellCurb" + I2S(this.m_damageRecorders[i]))
+				call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorders[i])
 				call ADamageRecorder(this.m_damageRecorders[i]).destroy()
 				call this.m_damageRecorders.popBack()
 				set i = i - 1

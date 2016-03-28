@@ -11,7 +11,7 @@ library StructSpellsSpellDemonServant requires Asl, StructGameClasses, StructGam
 		private unit m_servant /// There can only be one servant at once.
 		
 		private static method triggerConditionSummon takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			
 			if (GetSummoningUnit() == this.character().unit() and (GetUnitTypeId(GetSummonedUnit()) == 'n00P' or GetUnitTypeId(GetSummonedUnit()) == 'n03S' or GetUnitTypeId(GetSummonedUnit()) == 'n03T' or GetUnitTypeId(GetSummonedUnit()) == 'n03U' or GetUnitTypeId(GetSummonedUnit()) == 'n03V')) then
 				if (this.m_servant != null and not IsUnitDeadBJ(this.m_servant)) then
@@ -36,7 +36,7 @@ library StructSpellsSpellDemonServant requires Asl, StructGameClasses, StructGam
 			set this.m_summonTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)
 			call TriggerAddCondition(this.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
-			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, 0, this)
 			
 			return this
 		endmethod

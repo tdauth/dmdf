@@ -88,7 +88,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		endmethod
 		
 		private static method triggerConditionStart takes nothing returns boolean
-			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local boolean result = GetTriggerUnit() == this.character().unit() and GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId()
 			return result
 		endmethod
@@ -210,7 +210,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		endmethod
 		
 		private static method triggerActionStart takes nothing returns nothing
-			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local boolean result = false
 			
 			/*
@@ -242,12 +242,12 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		endmethod
 		
 		private static method triggerConditionRevival takes nothing returns boolean
-			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return GetTriggerUnit() == this.character().unit() and this.isMorphed()
 		endmethod
 		
 		private static method triggerActionRevival takes nothing returns nothing
-			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			/**
 			 * Now readd all removed abilities and restory the inventory.
 			 */
@@ -268,7 +268,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			call TriggerRegisterAnyUnitEventBJ(this.m_channelTrigger, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
 			call TriggerAddCondition(this.m_channelTrigger, Condition(function thistype.triggerConditionStart))
 			call TriggerAddAction(this.m_channelTrigger, function thistype.triggerActionStart)
-			call AHashTable.global().setHandleInteger(this.m_channelTrigger, "this", this)
+			call AHashTable.global().setHandleInteger(this.m_channelTrigger, 0, this)
 			
 			// unmorph unit if it is being revived and has been morphed
 			// when a character is revived it has automatically its original unit form but needs to be restored (skills etc.)
@@ -276,7 +276,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			call TriggerRegisterAnyUnitEventBJ(this.m_revivalTrigger, EVENT_PLAYER_HERO_REVIVE_FINISH)
 			call TriggerAddCondition(this.m_revivalTrigger, Condition(function thistype.triggerConditionRevival))
 			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionRevival)
-			call AHashTable.global().setHandleInteger(this.m_revivalTrigger, "this", this)
+			call AHashTable.global().setHandleInteger(this.m_revivalTrigger, 0, this)
 			
 			return this
 		endmethod

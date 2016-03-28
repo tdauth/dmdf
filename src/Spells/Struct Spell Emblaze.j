@@ -11,7 +11,7 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 		private timer m_timer
 		
 		private static method timerFunctionRemove takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
 			call SpellEmblaze.removeBuff.evaluate(this.m_spell.character().unit(), this.m_target)
 			call this.destroy()
 		endmethod
@@ -29,7 +29,7 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 			set this.m_effect = AddSpecialEffectTarget("Models\\Effects\\Emblaze.mdx", target, "origin")
 			
 			set this.m_timer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			call TimerStart(this.m_timer, this.m_time, false, function thistype.timerFunctionRemove)
 			
 			return this
@@ -55,11 +55,11 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 			local BuffData buffData = 0
 			if (index > 0) then
 				// remove old buff data first
-				set buffData = BuffData(DmdfHashTable.global().handleInteger(whichUnit, "SpellEmblazeBuffData"))
+				set buffData = BuffData(DmdfHashTable.global().handleInteger(whichUnit, DMDF_HASHTABLE_KEY_BUFFEMBLAZE))
 				call buffData.destroy()
 			endif
 			set buffData = BuffData.create(character.grimoire().spellByAbilityId(SpellEmblaze.abilityId), whichUnit)
-			call DmdfHashTable.global().setHandleInteger(whichUnit, "SpellEmblazeBuffData", buffData)
+			call DmdfHashTable.global().setHandleInteger(whichUnit, DMDF_HASHTABLE_KEY_BUFFEMBLAZE, buffData)
 		endmethod
 		
 		public stub method onRemove takes unit source, unit whichUnit, integer index returns nothing

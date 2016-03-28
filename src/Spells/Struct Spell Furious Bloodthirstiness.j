@@ -11,8 +11,8 @@ library StructSpellsSpellFuriousBloodthirstiness requires Asl, StructGameClasses
 		private static constant real lifeUsagePercentage = 0.03 // mustn't be bigger than life min value
 		private static constant real damageBonusPercentage = 0.25
 		private static constant real lifeMinPercentage = 0.10
-		private static constant string enabledKey = "SpellFuriousBloodthirstiness:IsEnabled"
-		private static constant string damageKey = "SpellFuriousBloodthirstiness:Damage"
+		private static constant integer enabledKey = DMDF_HASHTABLE_KEY_FURIOUSBLOODTHIRSTINESS_ENABLED
+		private static constant integer damageKey = DMDF_HASHTABLE_KEY_FURIOUSBLOODTHIRSTINESS_DAMAGE
 
 		/// Called by globan damage detection system.
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing

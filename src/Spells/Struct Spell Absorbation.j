@@ -16,7 +16,7 @@ library StructSpellsSpellAbsorbation requires Asl, StructGameClasses, StructGame
 
 		private static method triggerConditionSpell takes nothing returns boolean
 			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, 0)
 			local boolean result = this.level() > 0 and GetUnitAllianceStateToUnit(this.character().unit(), GetTriggerUnit()) != bj_ALLIANCE_ALLIED and GetDistanceBetweenUnits(this.character().unit(), GetTriggerUnit(), 0.0, 0.0) <= thistype.range
 			//debug call Print("Running condition of spell \"Absorbation\".")
 			//debug if (result) then
@@ -37,7 +37,7 @@ library StructSpellsSpellAbsorbation requires Asl, StructGameClasses, StructGame
 
 		private static method triggerActionSpell takes nothing returns nothing
 			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, 0)
 			local unit caster = this.character().unit()
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
 			local real mana
@@ -86,7 +86,7 @@ library StructSpellsSpellAbsorbation requires Asl, StructGameClasses, StructGame
 			call TriggerRegisterAnyUnitEventBJ(this.m_spellTrigger, EVENT_PLAYER_UNIT_SPELL_EFFECT)
 			call TriggerAddCondition(this.m_spellTrigger, Condition(function thistype.triggerConditionSpell))
 			call TriggerAddAction(this.m_spellTrigger, function thistype.triggerActionSpell)
-			call DmdfHashTable.global().setHandleInteger(this.m_spellTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_spellTrigger, 0, this)
 		endmethod
 
 		public static method create takes Character character returns thistype

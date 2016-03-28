@@ -9,8 +9,8 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 		public static constant integer classSelectionGrimoireAbilityId = 'A1FM'
 		public static constant integer maxLevel = 5
 		private static constant real damageBonusPerCountLevelValue = 10.0
-		private static constant string enabledKey = "SpellRage:IsEnabled"
-		private static constant string damageKey = "SpellRage:Damage"
+		private static constant integer enabledKey = DMDF_HASHTABLE_KEY_RAGE_ENABLED
+		private static constant integer damageKey = DMDF_HASHTABLE_KEY_RAGE_DAMAGE
 		private trigger m_killTrigger
 		private static integer array m_counter
 		private timer m_timer
@@ -53,7 +53,7 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 		endmethod
 		
 		private static method timerFunctionDisable takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0)
 			call DmdfHashTable.global().setHandleBoolean(this.character().unit(), thistype.enabledKey, false)
 			set thistype.m_counter[GetPlayerId(this.character().player())] = 0
 			debug call Print("Disable rage!")
@@ -62,12 +62,12 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 		private method action takes nothing returns nothing
 			call DmdfHashTable.global().setHandleBoolean(this.character().unit(), thistype.enabledKey, true)
 			call TimerStart(this.m_timer, 5.0, false, function thistype.timerFunctionDisable)
-			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			debug call Print("Enable rage")
 		endmethod
 		
 		private static method triggerConditionKill takes nothing returns boolean
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			if (GetKillingUnit() == this.character().unit() and thistype.m_counter[GetPlayerId(this.character().player())] < GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) * 2) then
 				debug call Print("Rage increase counter")
 				set thistype.m_counter[GetPlayerId(this.character().player())] = thistype.m_counter[GetPlayerId(this.character().player())] + 1
@@ -88,7 +88,7 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 			set this.m_killTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_killTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(this.m_killTrigger, Condition(function thistype.triggerConditionKill))
-			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, 0, this)
 			
 			set this.m_timer = CreateTimer()
 			set thistype.m_counter[GetPlayerId(this.character().player())] = 0

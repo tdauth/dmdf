@@ -27,7 +27,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 		endmethod
 		
 		private static method triggerConditionSummon takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			
 			 if (GetSummoningUnit() == this.character().unit() and thistype.isUnitOfType(GetSummonedUnit())) then
 				/*
@@ -48,7 +48,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 		endmethod
 		
 		private static method triggerConditionDeath takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			
 			if (thistype.isUnitOfType(GetTriggerUnit()) and this.m_units.units().contains(GetTriggerUnit())) then
 				call this.m_units.units().remove(GetTriggerUnit())
@@ -71,12 +71,12 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 			set this.m_summonTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)
 			call TriggerAddCondition(this.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
-			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, 0, this)
 			
 			set this.m_deathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_deathTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(this.m_deathTrigger, Condition(function thistype.triggerConditionDeath))
-			call DmdfHashTable.global().setHandleInteger(this.m_deathTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_deathTrigger, 0, this)
 			
 			return this
 		endmethod

@@ -37,12 +37,12 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 		endmethod
 
 		private static method triggerConditionKill takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this") 
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0) 
 			return GetKillingUnit() == this.character().unit() and this.isEnabled() and MapData.playerGivesXP.evaluate(GetOwningPlayer(GetTriggerUnit()))
 		endmethod
 		
 		private static method triggerActionKill takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this") 
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0) 
 			call DisableTrigger(GetTriggeringTrigger())
 			call this.character().displayHint(tre("Immer wenn Ihr Charakter einen Unhold tötet, erhalten alle Charaktere gleichmäßig viel Erfahrung und Beute für diesen.", "Whenever your character kills a creep all characters gain equally much experience and bounty for him."))
 			set this.m_killTrigger = null
@@ -67,7 +67,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call TriggerRegisterAnyUnitEventBJ(this.m_killTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(this.m_killTrigger, Condition(function thistype.triggerConditionKill))
 			call TriggerAddAction(this.m_killTrigger, function thistype.triggerActionKill)
-			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, 0, this)
 
 			return this
 		endmethod

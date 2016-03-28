@@ -36,7 +36,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 		endmethod
 		
 		private static method timerFunction takes nothing returns nothing
-			local thistype this = AHashTable.global().handleInteger(GetExpiredTimer(), "this")
+			local thistype this = AHashTable.global().handleInteger(GetExpiredTimer(), 0)
 			call this.displayUpdateMessage(tre("Zwei Tage sind vergangen.", "Two days have passed."))
 		endmethod
 			
@@ -47,7 +47,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 			set this.m_timer = CreateTimer()
 			// wait two days
 			call TimerStart(this.m_timer, 60.0, false, function thistype.timerFunction)
-			call AHashTable.global().setHandleInteger(this.m_timer, "this", this)
+			call AHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			set this.arrowsMarker[0] =  CreateDestructable('B00L', GetRectCenterX(gg_rct_quest_reinforcement_for_talras_arrows_0), GetRectCenterY(gg_rct_quest_reinforcement_for_talras_arrows_0), 0.0, 1.0, 0)
 			call SetDestructableInvulnerable(this.arrowsMarker[0], true)
 			set this.arrowsMarker[1] =  CreateDestructable('B00L', GetRectCenterX(gg_rct_quest_reinforcement_for_talras_arrows_1), GetRectCenterY(gg_rct_quest_reinforcement_for_talras_arrows_1), 0.0, 1.0, 0)
@@ -68,7 +68,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 		endmethod
 		
 		private static method stateConditionCompletedPlaceArrows takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local boolean result = GetTriggerUnit() == this.character().unit() and this.character().inventory().hasItemType('I03U')
 			local destructable box
 			
@@ -95,7 +95,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 		endmethod
 		
 		private static method stateActionCompletedPlaceArrows takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local integer i = 0
 			loop
 				exitwhen (i == thistype.maxArrows)
@@ -116,7 +116,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 				
 				call TriggerAddCondition(this.m_arrowTriggers[i], Condition(function thistype.stateConditionCompletedPlaceArrows))
 				call TriggerAddAction(this.m_arrowTriggers[i], function thistype.stateActionCompletedPlaceArrows)
-				call DmdfHashTable.global().setHandleInteger(this.m_arrowTriggers[i], "this", this)
+				call DmdfHashTable.global().setHandleInteger(this.m_arrowTriggers[i], 0, this)
 				
 				call DisableTrigger(this.m_arrowTriggers[i])
 				

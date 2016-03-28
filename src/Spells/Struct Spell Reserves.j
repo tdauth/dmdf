@@ -11,7 +11,7 @@ library StructSpellsSpellReserves requires Asl, StructGameClasses, StructGameGam
 		private static constant integer counterStartValue = 7
 		private static constant integer counterLevelValue = -1
 		private static constant real damagePercentageLevelValue = 0.05
-		private static constant string damageKey = "SpellReserves:Damage"
+		private static constant integer damageKey = DMDF_HASHTABLE_KEY_RESERVES_DAMAGE
 		private static unit array target[12] // TODO MapData.maxPlayers
 		private static integer array counter[12] // TODO MapData.maxPlayers
 

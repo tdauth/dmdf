@@ -15,7 +15,7 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 
 		private static method timerFunction takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
-			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, 0)
 			local unit caster = this.character().unit()
 			local effect spellEffect = null
 			local real life
@@ -37,7 +37,7 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 		public static method create takes Character character returns thistype
 			local thistype this =  thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.effectTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.effectTimer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.effectTimer, 0, this)
 			call TimerStart(this.effectTimer, thistype.interval, true, function thistype.timerFunction)
 			
 			call this.addGrimoireEntry('A1JI', 'A1JJ')

@@ -42,7 +42,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 		implement Video
 		
 		private static method triggerActionKill takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			if (GetTriggerUnit() == this.unitActor(this.m_actorWigberht)) then
 				call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
 			else
@@ -66,7 +66,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorOrc), this.unitActor(this.m_actorWigberht))
 			
 			set this.m_hitTrigger = CreateTrigger()
-			call DmdfHashTable.global().setHandleInteger(this.m_hitTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_hitTrigger, 0, this)
 			call TriggerRegisterUnitEvent(this.m_hitTrigger, this.unitActor(this.m_actorOrc), EVENT_UNIT_DAMAGED)
 			call TriggerRegisterUnitEvent(this.m_hitTrigger, this.unitActor(this.m_actorWigberht), EVENT_UNIT_DAMAGED)
 			call TriggerAddAction(this.m_hitTrigger, function thistype.triggerActionKill)

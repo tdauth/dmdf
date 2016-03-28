@@ -26,12 +26,12 @@ library StructSpellsSpellMasterOfNecromancy requires Asl, StructGameClasses, Str
 		endmethod
 	
 		private static method triggerConditionSummon takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return GetOwningPlayer(GetSummoningUnit()) == this.character().player() and IsUnitType(GetSummonedUnit(), UNIT_TYPE_UNDEAD) and GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) > 0 // TODO does not work if the spell is not in favorites?
 		endmethod
 		
 		private static method triggerActionSummon takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			call UnitAddAbility(GetSummonedUnit(), thistype.damageAbilityId)
 			call SetUnitAbilityLevel(GetSummonedUnit(), thistype.damageAbilityId, this.level())
 			
@@ -45,7 +45,7 @@ library StructSpellsSpellMasterOfNecromancy requires Asl, StructGameClasses, Str
 			call TriggerRegisterAnyUnitEventBJ(this.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)
 			call TriggerAddCondition(this.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
 			call TriggerAddAction(this.m_summonTrigger, function thistype.triggerActionSummon)
-			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, 0, this)
 			
 			call this.addGrimoireEntry('A0SI', 'A0SN')
 			call this.addGrimoireEntry('A0SJ', 'A0SO')

@@ -20,7 +20,7 @@ library StructSpellsSpellKennels requires Asl, StructGameClasses, StructGameSpel
 		endmethod
 		
 		private static method triggerConditionSummon takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			
 			if (thistype.isUnitOfType(GetSummonedUnit())) then
 				call UnitApplyTimedLife(GetSummonedUnit(), thistype.buffId, thistype.duration)
@@ -34,7 +34,7 @@ library StructSpellsSpellKennels requires Asl, StructGameClasses, StructGameSpel
 		endmethod
 		
 		private static method triggerConditionSummonDog takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			
 			if (thistype.isUnitOfType(GetSummoningUnit()) and thistype.isUnitOfTypeDog(GetSummonedUnit())) then
 				call UnitApplyTimedLife(GetSummonedUnit(), thistype.dogBuffId, thistype.dogDuration)
@@ -55,12 +55,12 @@ library StructSpellsSpellKennels requires Asl, StructGameClasses, StructGameSpel
 			set this.m_summonTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)
 			call TriggerAddCondition(this.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
-			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, 0, this)
 			
 			set this.m_summonDogTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_summonDogTrigger, EVENT_PLAYER_UNIT_SUMMON)
 			call TriggerAddCondition(this.m_summonDogTrigger, Condition(function thistype.triggerConditionSummonDog))
-			call DmdfHashTable.global().setHandleInteger(this.m_summonDogTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_summonDogTrigger, 0, this)
 			
 			return this
 		endmethod

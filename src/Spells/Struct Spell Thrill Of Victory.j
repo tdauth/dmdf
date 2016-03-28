@@ -9,7 +9,7 @@ library StructSpellsSpellThrillOfVictory requires Asl, StructGameClasses, Struct
 		public static constant integer classSelectionGrimoireAbilityId = 'A1FU'
 		public static constant integer maxLevel = 1
 		private static constant real damageOpponentPercentage = 0.05
-		private static constant string damageKey = "SpellThrillOfVictory:Damage"
+		private static constant integer damageKey = DMDF_HASHTABLE_KEY_THRILLOFVICTORY_DAMAGE
 		
 		private static method filterIsNotDead takes nothing returns boolean
 			return not IsUnitDeadBJ(GetFilterUnit())

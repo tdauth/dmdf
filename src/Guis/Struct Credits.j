@@ -156,14 +156,14 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		
 		private static method timerFunctionAutoChange takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
-			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, 0)
 			call this.showNextContributor.evaluate()
 			set expiredTimer = null
 		endmethod
 
 		private static method timerFunctionView takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
-			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, 0)
 			call CameraSetupApplyForPlayer(true, gg_cam_class_selection, this.gui().player(), thistype.viewTimeout)
 			set expiredTimer = null
 		endmethod
@@ -250,9 +250,9 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			set this.m_textTags = ATextTagVector.create()
 			set this.m_velocity = thistype.defaultVelocity
 			set this.m_viewTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_viewTimer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_viewTimer, 0, this)
 			set this.m_autoChangeTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_autoChangeTimer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_autoChangeTimer, 0, this)
 
 			return this
 		endmethod

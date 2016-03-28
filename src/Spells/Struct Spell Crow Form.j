@@ -19,13 +19,13 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			local integer alphaLevel = 0
 			local integer zoologyLevel = 0
 			call super.onMorph()
-			set level = Character(this.character()).realSpellLevels().integerByInteger(0, SpellCrowForm.abilityId)
+			set level = Character(this.character()).realSpellLevels().integer(0, SpellCrowForm.abilityId)
 			debug call Print("Crow Form: Morph! Level: " + I2S(level))
 			
 			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.manaAbilityId, level)
 			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.armorAbilityId, level)
 			
-			set alphaLevel = Character(this.character()).realSpellLevels().integerByInteger(0, SpellAlpha.abilityId)
+			set alphaLevel = Character(this.character()).realSpellLevels().integer(0, SpellAlpha.abilityId)
 			debug call Print("Crow Form: Alpha Level: " + I2S(alphaLevel))
 			
 			if (alphaLevel > 0) then
@@ -33,7 +33,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 				call UnitAddAbility(this.character().unit(), SpellAlpha.castAbilityId)
 			endif
 			
-			set zoologyLevel =  Character(this.character()).realSpellLevels().integerByInteger(0, SpellZoology.abilityId)
+			set zoologyLevel =  Character(this.character()).realSpellLevels().integer(0, SpellZoology.abilityId)
 			debug call Print("Crow Form: Zoology Level: " + I2S(zoologyLevel))
 			
 			if (zoologyLevel > 0) then
@@ -70,8 +70,8 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 	struct SpellCrowForm extends Spell
 		public static constant integer abilityId = 'A13U'
 		public static constant integer favouriteAbilityId = 'A092'
-		public static constant integer classSelectionAbilityId = 'A0CH'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0CI'
+		public static constant integer classSelectionAbilityId = 'A1JR'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1JS'
 		public static constant integer maxLevel = 5
 		public static constant integer manaAbilityId = 'A14U'
 		public static constant integer armorAbilityId = 'A094'
@@ -82,6 +82,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			set this.m_metamorphosis = SpellCrowFormMetamorphosis.create(character, thistype.abilityId, 'A0KZ', 'A13V')
 			call this.m_metamorphosis.setDisableInventory(false)
 			
+			call this.addGrimoireEntry('A1JR', 'A1JS')
 			call this.addGrimoireEntry('A0CH', 'A0CI')
 			call this.addGrimoireEntry('A0CJ', 'A0CN')
 			call this.addGrimoireEntry('A0CK', 'A0CO')

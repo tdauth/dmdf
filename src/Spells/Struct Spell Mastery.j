@@ -15,7 +15,7 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 
 		private static method timerFunction takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
-			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, 0)
 			local unit caster
 			local real mana
 			local effect spellEffect
@@ -41,7 +41,7 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.m_effectTimer = CreateTimer()
 			call TimerStart(this.m_effectTimer, thistype.interval, true, function thistype.timerFunction)
-			call DmdfHashTable.global().setHandleInteger(this.m_effectTimer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_effectTimer, 0, this)
 			call this.addGrimoireEntry('A11I', 'A11N')
 			call this.addGrimoireEntry('A11J', 'A11O')
 			call this.addGrimoireEntry('A11K', 'A11P')

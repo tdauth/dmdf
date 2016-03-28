@@ -40,7 +40,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		endmethod
 		
 		private static method triggerConditionKill takes nothing returns boolean
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			if (this.m_orcGuardians.units().contains(GetTriggerUnit()) and GetEventDamageSource() == this.unitActor(this.m_actorWigberht)) then
 				call KillUnit(GetTriggerUnit())
 				call DestroyEffect(AddSpecialEffect("Models\\Effects\\BloodExplosionSpecial1.mdx", GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit())))
@@ -166,7 +166,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 				set i = i + 1
 			endloop
 			call TriggerAddCondition(this.m_killTrigger, Condition(function thistype.triggerConditionKill))
-			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, 0, this)
 		endmethod
 
 		private static method setMoveSpeed takes unit whichUnit returns nothing

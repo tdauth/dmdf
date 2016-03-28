@@ -825,7 +825,7 @@ endif
 
 		private static method hideItem takes nothing returns nothing
 			call SetItemVisible(GetEnumItem(), false)
-			call DmdfHashTable.global().setHandleBoolean(GetEnumItem(), "Hidden", true)
+			call DmdfHashTable.global().setHandleBoolean(GetEnumItem(), DMDF_HASHTABLE_KEY_HIDDEN, true)
 		endmethod
 
 		private static method filterShownUnit takes nothing returns boolean
@@ -945,12 +945,12 @@ endif
 		endmethod
 
 		private static method filterHiddenItem takes nothing returns boolean
-			return DmdfHashTable.global().handleBoolean(GetFilterItem(), "Hidden")
+			return DmdfHashTable.global().handleBoolean(GetFilterItem(), DMDF_HASHTABLE_KEY_HIDDEN)
 		endmethod
 
 		private static method showItem takes nothing returns nothing
 			call SetItemVisible(GetEnumItem(), true)
-			call DmdfHashTable.global().removeHandleBoolean(GetEnumItem(), "Hidden")
+			call DmdfHashTable.global().removeHandleBoolean(GetEnumItem(), DMDF_HASHTABLE_KEY_HIDDEN)
 		endmethod
 
 		private static method showUnit takes unit whichUnit returns nothing

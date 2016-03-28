@@ -12,7 +12,7 @@ library StructSpellsSpellUnearth requires Asl, StructGameDmdfHashTable
 		private timer m_timer
 
 		private static method timerFunctionCheck takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
 			local group whichGroup = CreateGroup()
 			local AGroup unitGroup = AGroup.create()
 			call GroupEnumUnitsInRange(whichGroup, GetUnitX(this.m_unit), GetUnitY(this.m_unit), thistype.range, null)
@@ -27,13 +27,13 @@ library StructSpellsSpellUnearth requires Asl, StructGameDmdfHashTable
 		endmethod
 
 		private static method triggerConditionRange takes nothing returns boolean
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			debug call Print("Checking range of spell unearth")
 			return GetUnitAllianceStateToUnit(this.m_unit, GetTriggerUnit()) == bj_ALLIANCE_UNALLIED and not this.m_isUnearthed
 		endmethod
 
 		private static method triggerActionRange takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			debug call Print("UNEARTH: " + GetUnitName(this.m_unit))
 			call IssueImmediateOrder(this.m_unit, "unburrow")
 			set this.m_isUnearthed = true
@@ -41,7 +41,7 @@ library StructSpellsSpellUnearth requires Asl, StructGameDmdfHashTable
 		endmethod
 
 		private static method triggerActionDeath takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			call this.destroy()
 		endmethod
 
@@ -53,13 +53,13 @@ library StructSpellsSpellUnearth requires Asl, StructGameDmdfHashTable
 			call TriggerRegisterUnitInRange(this.m_rangeTrigger, whichUnit, thistype.range, null)
 			call TriggerAddCondition(this.m_rangeTrigger, Condition(function thistype.triggerConditionRange))
 			call TriggerAddAction(this.m_rangeTrigger, function thistype.triggerActionRange)
-			call DmdfHashTable.global().setHandleInteger(this.m_rangeTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_rangeTrigger, 0, this)
 			set this.m_deathTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(this.m_deathTrigger, whichUnit, EVENT_UNIT_DEATH)
 			call TriggerAddAction(this.m_deathTrigger, function thistype.triggerActionDeath)
-			call DmdfHashTable.global().setHandleInteger(this.m_deathTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_deathTrigger, 0, this)
 			set this.m_timer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			return this
 		endmethod
 

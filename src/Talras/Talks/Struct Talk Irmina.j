@@ -5,15 +5,17 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		private static constant integer strengthPotion = 'I01T'
 		private static constant integer dexterityPotion = 'I01U'
 		private static constant integer purificationPotion = 'I01V'
+		private static constant integer characterKey = 0
+		private static constant integer potionKey = 1
 		private timer array m_potionTimer[12] // MapData.maxPlayers
 
 		implement Talk
 
 		private method showPotionInfo takes Character character returns nothing
 			if (TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]) > 0.0) then
-				call character.displayHint(Format(tr("Irminas %1% benötigt noch %2% Sekunden bis zur Fertigstellung.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion"))).time(R2I(TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]))).result())
+				call character.displayHint(Format(tr("Irminas %1% benötigt noch %2% Sekunden bis zur Fertigstellung.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey))).time(R2I(TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]))).result())
 			else
-				call character.displayItemAcquired(GetItemTypeIdName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion")), Format(tr("Irminas %1% wurde fertiggestellt.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion"))).result())
+				call character.displayItemAcquired(GetItemTypeIdName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey)), Format(tr("Irminas %1% wurde fertiggestellt.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey))).result())
 			endif
 		endmethod
 
@@ -29,11 +31,11 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			if (this.m_potionTimer[GetPlayerId(character.player())] == null) then
 				return 0
 			endif
-			return DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion")
+			return DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey)
 		endmethod
 
 		private static method timerFunctionPotion takes nothing returns nothing
-			local Character character = DmdfHashTable.global().handleInteger(GetExpiredTimer(), "Character")
+			local Character character = DmdfHashTable.global().handleInteger(GetExpiredTimer(), thistype.characterKey)
 			call thistype(thistype.talk()).showPotionInfo(character)
 		endmethod
 
@@ -42,8 +44,8 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 				return
 			endif
 			set this.m_potionTimer[GetPlayerId(character.player())] = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Character", character)
-			call DmdfHashTable.global().setHandleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion", potion)
+			call DmdfHashTable.global().setHandleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.characterKey, character)
+			call DmdfHashTable.global().setHandleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey, potion)
 			call TimerStart(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionTime, false, function thistype.timerFunctionPotion)
 		endmethod
 
@@ -105,7 +107,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			if (not this.finishedPotion(character)) then
 				return
 			endif
-			call UnitAddItemById(character.unit(), DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], "Potion"))
+			call UnitAddItemById(character.unit(), DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey))
 			call DmdfHashTable.global().destroyTimer(this.m_potionTimer[GetPlayerId(character.player())])
 			set this.m_potionTimer[GetPlayerId(character.player())] = null
 		endmethod

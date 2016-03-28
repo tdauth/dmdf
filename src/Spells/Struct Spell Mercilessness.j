@@ -10,7 +10,7 @@ library StructSpellsSpellMercilessness requires Asl, StructGameClasses, StructGa
 		public static constant integer maxLevel = 5
 		private static constant real lifePercentage = 0.30
 		private static constant real damageLevelValue = 10.0
-		private static constant string damageKey = "SpellMercilessness:Damage"
+		private static constant integer damageKey = DMDF_HASHTABLE_KEY_MERCILESSNESS_DAMAGE
 
 		/// Called by globan damage detection system.
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing

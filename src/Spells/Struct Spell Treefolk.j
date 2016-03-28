@@ -10,12 +10,12 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 		private trigger m_summonTrigger
 		
 		private static method triggerConditionSummon takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return GetSummoningUnit() == this.character().unit() and (GetUnitTypeId(GetSummonedUnit()) == 'e000' or GetUnitTypeId(GetSummonedUnit()) == 'e002' or GetUnitTypeId(GetSummonedUnit()) == 'e003' or GetUnitTypeId(GetSummonedUnit()) == 'e004' or GetUnitTypeId(GetSummonedUnit()) == 'e005')
 		endmethod
 		
 		private static method triggerActionSummon takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			debug call Print("Unroot treefolk " + GetUnitName(GetSummonedUnit()))
 			call IssueImmediateOrder(GetSummonedUnit(), "unroot")
 		endmethod
@@ -26,7 +26,7 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 			call TriggerRegisterAnyUnitEventBJ(this.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)
 			call TriggerAddCondition(this.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
 			call TriggerAddAction(this.m_summonTrigger, function thistype.triggerActionSummon)
-			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, 0, this)
 			
 			call this.addGrimoireEntry('A0DH', 'A0DM')
 			call this.addGrimoireEntry('A0DI', 'A0DN')

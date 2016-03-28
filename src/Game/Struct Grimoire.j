@@ -170,11 +170,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				
 				//debug call Print("Spell id: " + I2S(integer(spell)))
 				
-				debug if (not table.hasIntegerByInteger(0, spell.ability())) then
+				debug if (not table.hasInteger(0, spell.ability())) then
 				debug call Print("Missing ability: " + GetAbilityName(spell.ability()) + " when readding spells")
 				debug endif
 				
-				set level = table.integerByInteger(0, spell.ability())
+				set level = table.integer(0, spell.ability())
 				
 				//debug call Print("Ability: " + GetAbilityName(spell.ability()) + " with restored level " + I2S(level))
 				
@@ -202,7 +202,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			local integer i = 0
 			loop
 				exitwhen (i == this.m_spells.size())
-				call table.setIntegerByInteger(0, Spell(this.m_spells[i]).ability(), Spell(this.m_spells[i]).level())
+				call table.setInteger(0, Spell(this.m_spells[i]).ability(), Spell(this.m_spells[i]).level())
 				set i = i + 1
 			endloop
 			return table
@@ -920,13 +920,13 @@ endif
 		endmethod
 		
 		private static method triggerConditionLevel takes nothing returns boolean
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			debug call Print("Level condition with unit " + GetUnitName(GetTriggerUnit()))
 			return GetTriggerUnit() == this.character().unit()
 		endmethod
 
 		private static method triggerActionLevel takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			local integer newLevel = GetHeroLevel(GetTriggerUnit())
 			local integer oldLevel = this.heroLevel()
 			local integer levels = newLevel - oldLevel
@@ -957,14 +957,14 @@ endif
 			call TriggerRegisterAnyUnitEventBJ(this.m_levelTrigger, EVENT_PLAYER_HERO_LEVEL)
 			call TriggerAddCondition(this.m_levelTrigger, Condition(function thistype.triggerConditionLevel))
 			call TriggerAddAction(this.m_levelTrigger, function thistype.triggerActionLevel)
-			call DmdfHashTable.global().setHandleInteger(this.m_levelTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_levelTrigger, 0, this)
 		endmethod
 		
 		/**
 		 * Whenever the game is loaded the spell levels of the non favorite spells are reset to one.
 		 */
 		private static method triggerActionLoad takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			local AIntegerVector favoriteLevels = 0
 			local integer i = 0
 			loop
@@ -1035,7 +1035,7 @@ endif
 			set this.m_loadTrigger = CreateTrigger()
 			call TriggerRegisterGameEvent(this.m_loadTrigger, EVENT_GAME_LOADED)
 			call TriggerAddAction(this.m_loadTrigger, function thistype.triggerActionLoad)
-			call DmdfHashTable.global().setHandleInteger(this.m_loadTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_loadTrigger, 0, this)
 		endmethod
 
 		public static method create takes Character character returns thistype

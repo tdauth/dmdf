@@ -63,7 +63,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		endmethod
 
 		private static method triggerConditionEnter takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local ACharacter enteringCharacter = ACharacter.getCharacterByUnit(GetTriggerUnit())
 			local integer i
 			local integer charactersCount
@@ -91,7 +91,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		endmethod
 
 		private static method triggerActionEnter takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			/*
 			 * A quest are should only be used once.
 			 * Therefore it will be disabled automatically.
@@ -167,7 +167,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			call TriggerRegisterEnterRectSimple(this.m_enterTrigger, this.m_rect)
 			call TriggerAddCondition(this.m_enterTrigger, Condition(function thistype.triggerConditionEnter))
 			call TriggerAddAction(this.m_enterTrigger, function thistype.triggerActionEnter)
-			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger, 0, this)
 			
 			return this
 		endmethod

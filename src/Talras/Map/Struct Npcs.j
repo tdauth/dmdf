@@ -62,8 +62,8 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		endmethod
 		
 		private static method timerFunctionSelectShop takes nothing returns nothing
-			local unit sellingUnit = thistype(DmdfHashTable.global().handleUnit(GetExpiredTimer(), "sellingunit"))
-			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), "soldunit")
+			local unit sellingUnit = thistype(DmdfHashTable.global().handleUnit(GetExpiredTimer(), 0))
+			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 1)
 			
 			if (sellingUnit == thistype.m_einar) then
 				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_einarsShop), GetUnitY(thistype.m_einarsShop), 0.0, 0.0)
@@ -91,8 +91,8 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		
 		private static method triggerActionSell takes nothing returns nothing
 			local timer whichTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleUnit(whichTimer, "sellingunit", GetSellingUnit()) 
-			call DmdfHashTable.global().setHandleUnit(whichTimer, "soldunit", GetSoldUnit()) 
+			call DmdfHashTable.global().setHandleUnit(whichTimer, 0, GetSellingUnit()) 
+			call DmdfHashTable.global().setHandleUnit(whichTimer, 1, GetSoldUnit()) 
 			
 			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
 			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))

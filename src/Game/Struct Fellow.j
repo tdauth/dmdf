@@ -350,18 +350,18 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		endmethod
 
 		private static method timerFunctionRevive takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0)
 			call TimerDialogDisplay(this.m_revivalTimerDialog, false)
 			call this.revive()
 		endmethod
 		
 		private static method triggerConditionRevival takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return GetTriggerUnit() == this.unit()
 		endmethod
 		
 		private static method triggerActionRevival takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local unit animationUnit
 			debug call Print("Unit is " + GetUnitName(this.m_unit))
 
@@ -380,7 +380,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				else
 					if (this.m_revivalTimer == null) then
 						set this.m_revivalTimer = CreateTimer()
-						call DmdfHashTable.global().setHandleInteger(this.m_revivalTimer, "this", this)
+						call DmdfHashTable.global().setHandleInteger(this.m_revivalTimer, 0, this)
 						set this.m_revivalTimerDialog = CreateTimerDialog(this.m_revivalTimer)
 						call TimerDialogSetTitle(this.m_revivalTimerDialog, this.revivalTitle())
 						call TimerDialogSetTitleColor(this.m_revivalTimerDialog, GetPlayerColorRed(GetPlayerColor(GetOwningPlayer(this.m_unit))), GetPlayerColorGreen(GetPlayerColor(GetOwningPlayer(this.m_unit))), GetPlayerColorBlue(GetPlayerColor(GetOwningPlayer(this.m_unit))), 0)
@@ -471,11 +471,11 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call TriggerRegisterAnyUnitEventBJ(this.m_revivalTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(this.m_revivalTrigger, Condition(function thistype.triggerConditionRevival))
 			call TriggerAddAction(this.m_revivalTrigger, function thistype.triggerActionRevival)
-			call DmdfHashTable.global().setHandleInteger(this.m_revivalTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_revivalTrigger, 0, this)
 			call DisableTrigger(this.m_revivalTrigger)
 			set this.m_revivalTimer = null
 			set this.m_revivalTimerDialog = null
-			call DmdfHashTable.global().setHandleInteger(this.m_unit, "Fellow", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_unit, DMDF_HASHTABLE_KEY_FELLOW, this)
 			set this.m_trades = false
 			set this.m_isShared = false
 			
@@ -499,7 +499,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call DestroyTimerDialog(this.m_revivalTimerDialog)
 				set this.m_revivalTimerDialog = null
 			endif
-			call DmdfHashTable.global().removeHandleInteger(this.m_unit, "Fellow")
+			call DmdfHashTable.global().removeHandleInteger(this.m_unit, DMDF_HASHTABLE_KEY_FELLOW)
 			call thistype.m_fellows.remove(this)
 		endmethod
 
@@ -521,7 +521,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 * \return Returns 0 if \p whichUnit is no fellow. Otherwise it returns the corresponding fellow instance.
 		 */
 		public static method getByUnit takes unit whichUnit returns thistype
-			return DmdfHashTable.global().handleInteger(whichUnit, "Fellow")
+			return DmdfHashTable.global().handleInteger(whichUnit, DMDF_HASHTABLE_KEY_FELLOW)
 		endmethod
 
 		public static method shareWithByUnit takes unit whichUnit, Character character returns boolean

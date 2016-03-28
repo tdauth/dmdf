@@ -103,12 +103,12 @@ library StructSpellsSpellEpidemic requires Asl, StructGameClasses, StructGameSpe
 		endmethod
 		
 		private static method triggerConditionDeath takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return this.m_targets != 0 and this.m_targets.units().contains(GetTriggerUnit())
 		endmethod
 		
 		private static method triggerActionDeath takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local AGroup newTargets = this.targets(this.character().unit(), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
 			if (not newTargets.units().isEmpty()) then
 				/*
@@ -126,7 +126,7 @@ library StructSpellsSpellEpidemic requires Asl, StructGameClasses, StructGameSpe
 			call TriggerRegisterAnyUnitEventBJ(this.m_deathTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(this.m_deathTrigger, Condition(function thistype.triggerConditionDeath))
 			call TriggerAddAction(this.m_deathTrigger, function thistype.triggerActionDeath)
-			call DmdfHashTable.global().setHandleInteger(this.m_deathTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_deathTrigger, 0, this)
 			set this.m_targets = 0
 			
 			call this.addGrimoireEntry('A13P', 'A13Q')

@@ -388,7 +388,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method triggerConditionChange takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return GetTriggerUnit() == this.classUnit() and (GetSpellAbilityId() == 'A0R0' or GetSpellAbilityId() == 'A0NB' or GetSpellAbilityId() == 'A0R1')
 		endmethod
 		
@@ -429,7 +429,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method triggerActionChange takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			if (GetSpellAbilityId() == 'A0NB') then
 				call this.changeToNext()
 			elseif (GetSpellAbilityId() == 'A0R0') then
@@ -450,12 +450,12 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method triggerConditionChangeSpellsPage takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return GetTriggerUnit() == this.classUnit() and (GetSpellAbilityId() == Classes.classAbilitiesNextPageAbilityId() or GetSpellAbilityId() == Classes.classAbilitiesPreviousPageAbilityId())
 		endmethod
 		
 		private static method triggerActionChangeSpellsPage takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			
 			if (GetSpellAbilityId() == Classes.classAbilitiesNextPageAbilityId()) then
 				if (this.m_page == Classes.maxClassAbilitiesPages(this.currentClass(), thistype.spellsPerPage) - 1) then
@@ -482,13 +482,13 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call TriggerRegisterPlayerUnitEvent(this.m_classChangeTrigger, user, EVENT_PLAYER_UNIT_SPELL_CHANNEL, null)
 			call TriggerAddCondition(this.m_classChangeTrigger, Condition(function thistype.triggerConditionChange))
 			call TriggerAddAction(this.m_classChangeTrigger, function thistype.triggerActionChange)
-			call DmdfHashTable.global().setHandleInteger(this.m_classChangeTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_classChangeTrigger, 0, this)
 			
 			set this.m_spellPagesTrigger = CreateTrigger()
 			call TriggerRegisterPlayerUnitEvent(this.m_spellPagesTrigger, user, EVENT_PLAYER_UNIT_SPELL_CHANNEL, null)
 			call TriggerAddCondition(this.m_spellPagesTrigger, Condition(function thistype.triggerConditionChangeSpellsPage))
 			call TriggerAddAction(this.m_spellPagesTrigger, function thistype.triggerActionChangeSpellsPage)
-			call DmdfHashTable.global().setHandleInteger(this.m_spellPagesTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_spellPagesTrigger, 0, this)
 			
 			// add all available classes of The Power of Fire to each player's class selection
 			call this.addClass(Classes.cleric())

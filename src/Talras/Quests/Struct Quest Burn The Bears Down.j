@@ -29,7 +29,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 		 * Ziel 1 und 2 werden nur einmal aktiviert.
 		 */
 		private static method triggerConditionPickup takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local integer count
 			local boolean completed = false
 			local boolean new = false
@@ -85,7 +85,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 			set this.m_pickupTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_pickupTrigger, EVENT_PLAYER_UNIT_PICKUP_ITEM)
 			call TriggerAddCondition(this.m_pickupTrigger, Condition(function thistype.triggerConditionPickup))
-			call DmdfHashTable.global().setHandleInteger(this.m_pickupTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_pickupTrigger, 0, this)
 			call DisableTrigger(this.m_pickupTrigger)
 
 			return this

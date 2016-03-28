@@ -41,7 +41,7 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 		endmethod
 		
 		private static method timerFunctionRemove takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
 			call this.destroy()
 		endmethod
 		
@@ -56,7 +56,7 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 			local integer index
 			set this.m_spell = spell
 			set this.m_timer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			set this.m_x = x
 			set this.m_y = y
 		

@@ -17,7 +17,7 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 		private effect m_effect
 
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local thistype spell = DmdfHashTable.global().integer("SpellManaShield" + I2S(damageRecorder), "spell")
+			local thistype spell = DmdfHashTable.global().integer(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder)
 			local unit caster = damageRecorder.target()
 			local real maxAbsorbedDamage = spell.level() * thistype.maxAbsorbedDamageLevelValue
 			local real absorbedDamage
@@ -65,7 +65,7 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 				debug call Print("Creating damage recorder.")
 				set this.m_damageRecorder = ADamageRecorder.create(this.character().unit())
 				call this.m_damageRecorder.setOnDamageAction(thistype.onDamageAction)
-				call DmdfHashTable.global().setInteger("SpellManaShield" + I2S(this.m_damageRecorder), "spell", this)
+				call DmdfHashTable.global().setInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorder, this)
 				call this.m_damageRecorder.disable()
 			endif
 			if (this.m_damageRecorder.isEnabled()) then
@@ -98,7 +98,7 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 
 		public method onDestroy takes nothing returns nothing
 			if (this.m_damageRecorder != 0) then
-				call DmdfHashTable.global().flushKey("SpellManaShield" + I2S(this.m_damageRecorder))
+				call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorder)
 				call this.m_damageRecorder.destroy()
 			endif
 			if (this.m_effect != null) then

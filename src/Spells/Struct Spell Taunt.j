@@ -6,10 +6,11 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 		private Spell m_spell
 		private unit m_target
 		private ADamageRecorder m_damageRecorder
+		public static constant integer buffKey = DMDF_HASHTABLE_KEY_BUFFTAUNT
 		
 		public method start takes real time returns nothing
 			local real elapsedTime = 0.0
-			call DmdfHashTable.global().setHandleInteger(this.m_target, "tauntBuff", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_target, thistype.buffKey, this)
 			call EnableTrigger(this.m_orderTrigger)
 			call this.m_damageRecorder.enable()
 			loop
@@ -20,7 +21,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			debug call Print("End taunt effect")
 			call DisableTrigger(this.m_orderTrigger)
 			call this.m_damageRecorder.disable()
-			call DmdfHashTable.global().removeHandleInteger(this.m_target, "tauntBuff")
+			call DmdfHashTable.global().removeHandleInteger(this.m_target, thistype.buffKey)
 		endmethod
 		
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
@@ -29,8 +30,8 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			local real blockedDamage = 0.0
 			debug call Print("OnDamage: " + GetUnitName(damageRecorder.target()))
 			debug call Print("Source: " + GetUnitName(GetEventDamageSource()))
-			if (DmdfHashTable.global().hasHandleInteger(GetEventDamageSource(), "tauntBuff")) then
-				set this = thistype(DmdfHashTable.global().handleInteger(GetEventDamageSource(), "tauntBuff"))
+			if (DmdfHashTable.global().hasHandleInteger(GetEventDamageSource(), thistype.buffKey)) then
+				set this = thistype(DmdfHashTable.global().handleInteger(GetEventDamageSource(), thistype.buffKey))
 				set character = ACharacter.getCharacterByUnit(damageRecorder.target())
 				if (character != 0 and this.m_spell.character() == character) then
 					debug call Print("Block")
@@ -47,7 +48,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 		
 		/// @todo Just if it's an attack order?
 		private static method triggerConditionOrder takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local boolean result = false
 			if (GetTriggerUnit() == this.m_target and GetIssuedOrderId() == OrderId("attack")) then
 				if (GetOrderTargetUnit() != this.m_spell.character().unit()) then
@@ -60,7 +61,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 
 		private static method triggerActionOrder takes nothing returns nothing
 			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, "this")
+			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, 0)
 			local unit triggerUnit = GetTriggerUnit() //or this.m_target
 			local unit caster = this.m_spell.character().unit()
 			call ShowGeneralFadingTextTagForPlayer(null, tre("Greife den Ritter an!", "Attack the knight!"), GetUnitX(triggerUnit), GetUnitY(triggerUnit), 255, 255, 255, 255)
@@ -74,7 +75,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			call TriggerRegisterAnyUnitEventBJ(this.m_orderTrigger, EVENT_PLAYER_UNIT_ISSUED_UNIT_ORDER)
 			call TriggerAddCondition(this.m_orderTrigger, Condition(function thistype.triggerConditionOrder))
 			call TriggerAddAction(this.m_orderTrigger, function thistype.triggerActionOrder)
-			call DmdfHashTable.global().setHandleInteger(this.m_orderTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_orderTrigger, 0, this)
 			call DisableTrigger(this.m_orderTrigger)
 		endmethod
 		
@@ -128,7 +129,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 			elseif (IsUnitType(GetSpellTargetUnit(), UNIT_TYPE_MAGIC_IMMUNE)) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel ist zauberimmun.", "Target is immune against spells."))
 				return false
-			elseif (DmdfHashTable.global().hasHandleInteger(GetSpellTargetUnit(), "tauntBuff")) then
+			elseif (DmdfHashTable.global().hasHandleInteger(GetSpellTargetUnit(), BuffTaunt.buffKey)) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel wird bereits verspottet.", "Target is already being taunted."))
 				return false
 			endif

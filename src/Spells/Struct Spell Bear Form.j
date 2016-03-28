@@ -8,13 +8,13 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			local integer alphaLevel = 0
 			local integer zoologyLevel = 0
 			call super.onMorph()
-			set level = Character(this.character()).realSpellLevels().integerByInteger(0, SpellBearForm.abilityId)
+			set level = Character(this.character()).realSpellLevels().integer(0, SpellBearForm.abilityId)
 			debug call Print("Bear Form: Morph! Level: " + I2S(level))
 			
 			call SetUnitAbilityLevel(this.character().unit(), SpellBearForm.lifeAbilityId, level)
 			call SetUnitAbilityLevel(this.character().unit(), SpellBearForm.damageAbilityId, level)
 			
-			set alphaLevel = Character(this.character()).realSpellLevels().integerByInteger(0, SpellAlpha.abilityId)
+			set alphaLevel = Character(this.character()).realSpellLevels().integer(0, SpellAlpha.abilityId)
 			debug call Print("Bear Form: Alpha Level: " + I2S(level))
 			
 			if (alphaLevel > 0) then
@@ -22,7 +22,7 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 				call UnitAddAbility(this.character().unit(), SpellAlpha.castAbilityId)
 			endif
 			
-			set zoologyLevel =  Character(this.character()).realSpellLevels().integerByInteger(0, SpellZoology.abilityId)
+			set zoologyLevel =  Character(this.character()).realSpellLevels().integer(0, SpellZoology.abilityId)
 			debug call Print("Bear Form: Zoology Level: " + I2S(zoologyLevel))
 			
 			if (zoologyLevel > 0) then

@@ -21,12 +21,12 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 		private trigger m_animationOrderTrigger
 		
 		private static method triggerConditionOrder takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return this.unit() == GetAttacker()
 		endmethod
 		
 		private static method triggerActionOrder takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local AInventory inventory = this.m_character.inventory()
 			local AIntegerVector values = 0
 			/*
@@ -116,7 +116,7 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 			call TriggerRegisterAnyUnitEventBJ(this.m_animationOrderTrigger, EVENT_PLAYER_UNIT_ATTACKED)
 			call TriggerAddCondition(this.m_animationOrderTrigger, Condition(function thistype.triggerConditionOrder))
 			call TriggerAddAction(this.m_animationOrderTrigger, function thistype.triggerActionOrder)
-			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, 0, this)
 			
 			return this
 		endmethod
@@ -510,7 +510,7 @@ endif
 		endmethod
 		
 		private static method timerFunctionCamera takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
 			if (not this.isViewEnabled() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown() and AClassSelection.playerClassSelection(this.player()) == 0) then
 				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, thistype.cameraTimerInterval)
 			endif
@@ -628,12 +628,12 @@ endif
 		endmethod
 
 		private static method triggerConditionWorker takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return GetTriggerPlayer() == this.player() and ACharacter.playerCharacter(GetTriggerPlayer()).shrine() != 0
 		endmethod
 
 		private static method triggerActionWorker takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			//call ACharacter.playerCharacter(GetTriggerPlayer()).select()
 			call SmartCameraPanWithZForPlayer(this.player(), GetDestructableX(this.shrine().destructable()), GetDestructableY(this.shrine().destructable()), 0.0, 0.0)
 			call SelectUnitForPlayerSingle(this.unit(), this.player())
@@ -641,19 +641,19 @@ endif
 		endmethod
 		
 		private static method triggerConditionSpawnIllusion takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			
 			return GetSummoningUnit() == this.unit() and IsUnitIllusion(GetSummonedUnit()) and not this.isMorphed()
 		endmethod
 		
 		private static method triggerActionSpawnIllusion takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			debug call Print("Spawning illusion")
 			call this.m_illusionOrderAnimations.pushBack(OrderAnimations.create(this, GetSummonedUnit()))
 		endmethod
 		
 		private static method triggerConditionIllusionDies takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local AIntegerListIterator iterator = 0
 			if (IsUnitIllusion(GetTriggerUnit())) then
 				set iterator = this.m_illusionOrderAnimations.begin()
@@ -674,7 +674,7 @@ endif
 		endmethod
 		
 		private static method triggerActionDance takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			if (not IsUnitDeadBJ(this.unit())) then
 				if (GetEventPlayerChatString() == "-dance") then
 					call SetUnitAnimationByIndex(this.unit(), 187)
@@ -739,7 +739,7 @@ endif
 			 */
 			set this.m_cameraDistance = thistype.defaultCameraDistance // NOTE updated UI/MiscData.txt
 			set this.m_cameraTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_cameraTimer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_cameraTimer, 0, this)
 			call this.setCameraTimer(true)
 			
 			set this.m_orderAnimations = OrderAnimations.create(this, this.unit())
@@ -749,22 +749,22 @@ endif
 			call TriggerRegisterAnyUnitEventBJ(this.m_spawnIllusionTrigger, EVENT_PLAYER_UNIT_SUMMON)
 			call TriggerAddCondition(this.m_spawnIllusionTrigger, Condition(function thistype.triggerConditionSpawnIllusion))
 			call TriggerAddAction(this.m_spawnIllusionTrigger, function thistype.triggerActionSpawnIllusion)
-			call DmdfHashTable.global().setHandleInteger(this.m_spawnIllusionTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_spawnIllusionTrigger, 0, this)
 			
 			set this.m_illusionDiesTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_illusionDiesTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(this.m_illusionDiesTrigger, Condition(function thistype.triggerConditionIllusionDies))
-			call DmdfHashTable.global().setHandleInteger(this.m_illusionDiesTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_illusionDiesTrigger, 0, this)
 			
 			set this.m_danceTrigger = CreateTrigger()
 			call TriggerRegisterPlayerChatEvent(this.m_danceTrigger, whichPlayer, "-", false)
 			call TriggerAddAction(this.m_danceTrigger, function thistype.triggerActionDance)
-			call DmdfHashTable.global().setHandleInteger(this.m_danceTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_danceTrigger, 0, this)
 			
 			set this.m_clearTrigger = CreateTrigger()
 			call TriggerRegisterPlayerChatEvent(this.m_clearTrigger, whichPlayer, "-clear", true)
 			call TriggerAddAction(this.m_clearTrigger, function thistype.triggerActionClear)
-			call DmdfHashTable.global().setHandleInteger(this.m_clearTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_clearTrigger, 0, this)
 
 			set this.m_realSpellLevels = 0
 			

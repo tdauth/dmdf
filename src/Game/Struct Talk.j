@@ -8,7 +8,7 @@ library StructGameTalk requires Asl
 		private trigger m_sellTrigger
 		
 		private static method triggerConditionSell takes nothing returns boolean
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			
 			if (GetSellingUnit() == this.unit() and GetUnitTypeId(GetSoldUnit()) == 'n05E') then
 				return true
@@ -18,8 +18,8 @@ library StructGameTalk requires Asl
 		endmethod
 		
 		private static method timerFunctionOpenForCharacter takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this"))
-			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), "soldunit")
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
+			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 1)
 			
 			//if (ACharacter.isUnitCharacter(GetBuyingUnit())) then
 			if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and ACharacter.playerCharacter(GetOwningPlayer(soldUnit)) != 0 and IsUnitInRange(ACharacter.playerCharacter(GetOwningPlayer(soldUnit)).unit(), this.unit(), 600.0) and ACharacter.playerCharacter(GetOwningPlayer(soldUnit)).talk() == 0 and this.isEnabled()) then
@@ -34,10 +34,10 @@ library StructGameTalk requires Asl
 		endmethod
 		
 		private static method triggerActionSell takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			local timer whichTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(whichTimer, "this", this) 
-			call DmdfHashTable.global().setHandleUnit(whichTimer, "soldunit", GetSoldUnit()) 
+			call DmdfHashTable.global().setHandleInteger(whichTimer, 0, this) 
+			call DmdfHashTable.global().setHandleUnit(whichTimer, 1, GetSoldUnit()) 
 			
 			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
 			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
@@ -59,7 +59,7 @@ library StructGameTalk requires Asl
 			call TriggerRegisterUnitEvent(this.m_sellTrigger, whichUnit, EVENT_UNIT_SELL)
 			call TriggerAddCondition(this.m_sellTrigger, Condition(function thistype.triggerConditionSell))
 			call TriggerAddAction(this.m_sellTrigger, function thistype.triggerActionSell)
-			call DmdfHashTable.global().setHandleInteger(this.m_sellTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_sellTrigger, 0, this)
 			
 			call UnitAddAbility(whichUnit, 'A19X')
 			call UnitAddAbility(whichUnit, 'Asud') // sell units
@@ -70,7 +70,7 @@ library StructGameTalk requires Asl
 			 * Store the talk on the unit to detect if the unit has a talk.
 			 * This is necessary for the trigger m_sellTriggerForNonTalks.
 			 */
-			call DmdfHashTable.global().setHandleInteger(whichUnit, "Talk", this)
+			call DmdfHashTable.global().setHandleInteger(whichUnit, DMDF_HASHTABLE_KEY_TALK, this)
 			
 			return this
 		endmethod
@@ -79,11 +79,11 @@ library StructGameTalk requires Asl
 			call DmdfHashTable.global().destroyTrigger(this.m_sellTrigger)
 			set this.m_sellTrigger = null
 			
-			call DmdfHashTable.global().removeHandleInteger(this.unit(), "Talk")
+			call DmdfHashTable.global().removeHandleInteger(this.unit(), DMDF_HASHTABLE_KEY_TALK)
 		endmethod
 		
 		private static method triggerConditionSellForNonTalks takes nothing returns boolean
-			if (GetUnitTypeId(GetSoldUnit()) == 'n05E' and not DmdfHashTable.global().hasHandleInteger(GetSellingUnit(), "Talk")) then
+			if (GetUnitTypeId(GetSoldUnit()) == 'n05E' and not DmdfHashTable.global().hasHandleInteger(GetSellingUnit(), DMDF_HASHTABLE_KEY_TALK)) then
 				return true
 			endif
 			

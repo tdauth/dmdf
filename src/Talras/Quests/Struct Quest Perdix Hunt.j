@@ -8,7 +8,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 		private unit m_unit
 		
 		private static method timerFunction takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), "this")
+			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0)
 			
 			call RemoveUnit(this.m_unit)
 			set this.m_unit = null
@@ -22,7 +22,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 		public static method create takes player whichPlayer, unit whichUnit returns thistype
 			local thistype this = thistype.allocate()
 			set this.m_timer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(this.m_timer, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			call TimerStart(this.m_timer, thistype.time, false, function thistype.timerFunction)
 			set this.m_timerDialog = CreateTimerDialog(this.m_timer)
 			call TimerDialogSetTitle(this.m_timerDialog, tre("Zeit bis das Rebhuhn wegfliegt", "Time until the partridge flies off"))
@@ -52,7 +52,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 		implement CharacterQuest
 		
 		private static method triggerConditionHint takes nothing returns boolean
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), "this"))
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			if (GetTriggerUnit() == this.character().unit()) then
 				call Character(this.character()).displayHint(tre("In diesem Gebiet befinden sich Rebhühner.", "In this area there are partridges."))
 			endif
@@ -64,7 +64,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 			set this.m_hintTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(this.m_hintTrigger, gg_rct_quest_perdix_hunt)
 			call TriggerAddCondition(this.m_hintTrigger, Condition(function thistype.triggerConditionHint))
-			call DmdfHashTable.global().setHandleInteger(this.m_hintTrigger, "this", this)
+			call DmdfHashTable.global().setHandleInteger(this.m_hintTrigger, 0, this)
 			
 			return super.enable()
 		endmethod
@@ -86,7 +86,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 					if (RectContainsUnit(gg_rct_quest_perdix_hunt, GetTriggerUnit())) then
 						if (GetRandomInt(0, 100) <= 80) then
 							set animal = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 'n04N', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 0.0)
-							call DmdfHashTable.global().setHandleInteger(animal, "timer", HuntTimer.create(this.character().player(), animal))
+							call DmdfHashTable.global().setHandleInteger(animal, 0, HuntTimer.create(this.character().player(), animal))
 							call this.displayUpdateMessage(tre("Scheuche das Rebhuhn auf!", "Rouse the partridge!"))
 						else
 							call this.displayUpdateMessage(tre("Kein Wild aufgespürt. Versuche es noch einmal.", "No wild tracked. Try it again."))
@@ -103,7 +103,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 				// Wild greifen
 				elseif (GetSpellAbilityId() == 'A17G') then
 					if (GetUnitTypeId(GetSpellTargetUnit()) == 'n04O') then
-						call HuntTimer(DmdfHashTable.global().handleInteger(GetSpellTargetUnit(), "timer")).destroy()
+						call HuntTimer(DmdfHashTable.global().handleInteger(GetSpellTargetUnit(), 0)).destroy()
 						call DmdfHashTable.global().destroyUnit(GetSpellTargetUnit())
 						
 						call Character(this.character()).giveQuestItem('I059')

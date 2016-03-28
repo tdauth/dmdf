@@ -17,8 +17,8 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			local unit caster
 			local unit target
 			local real damage
-			if (DmdfHashTable.global().hasInteger("SpellMagicalShockWaves:" + I2S(damageRecorder), "this")) then
-				set this = DmdfHashTable.global().integer("SpellMagicalShockWaves:" + I2S(damageRecorder), "this")
+			if (DmdfHashTable.global().hasInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder)) then
+				set this = DmdfHashTable.global().integer(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder)
 				if (this != 0) then
 					set caster = this.character().unit()
 					set target = damageRecorder.target()
@@ -49,7 +49,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			set this.m_target = target
 			debug call Print("Creating damage recorder for unit " + GetUnitName(target))
 			set this.m_damageRecorder = ADamageRecorder.create(target)
-			call DmdfHashTable.global().setInteger("SpellMagicalShockWaves:" + I2S(this.m_damageRecorder), "this", this)
+			call DmdfHashTable.global().setInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorder, this)
 			call this.m_damageRecorder.setOnDamageAction(thistype.onDamageAction)
 			set this.m_effect = AddSpellEffectTargetById(SpellMagicalShockWaves.abilityId, EFFECT_TYPE_TARGET, target, "origin")
 			set this.m_lightning = ADynamicLightning.create(null, "DRAM", 0.01, caster, target)
@@ -61,7 +61,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 		endmethod
 		
 		public method onDestroy takes nothing returns nothing
-			call DmdfHashTable.global().removeInteger("SpellMagicalShockWaves:" + I2S(this.m_damageRecorder), "this")
+			call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorder)
 			call this.m_damageRecorder.destroy()
 			call DestroyEffect(this.m_effect)
 			set this.m_effect = null
