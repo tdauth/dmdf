@@ -1094,6 +1094,24 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0595, 1.0)
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0594, 1.0)
 		endmethod
+		
+		private static method initStartItems takes nothing returns nothing
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06S_0618, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06Q_0619, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06R_0621, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06R_0620, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0622, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0631, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06Q_0630, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0632, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0638, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0639, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0635, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0637, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01L_0636, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03Y_0634, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03Y_0633, 1.0)
+		endmethod
 
 		public static method init takes nothing returns nothing
 			
@@ -1108,6 +1126,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initLeftGate)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initDeranorsTomb)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initMillHill)
+			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.initStartItems)
 		endmethod
 
 		public static method spawn takes nothing returns nothing

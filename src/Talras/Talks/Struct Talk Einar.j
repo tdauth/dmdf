@@ -36,9 +36,9 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		// Was hast du denn so im Angebot?
 		private static method infoActionOffer takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Was hast du denn so im Angebot?", "What do you have in the offer?"), null)
-			call speech(info, character, true, tr("Alles was das Kriegerherz begehrt. Äxte, Schilde, Speere, Lanzen, Streitkolben, Morgensterne und natürlich Schwerter. Einige der Waffen habe ich mir nach Schlachten zusammengesammelt, manche stammen sogar von meinen Kameraden, die an meiner Seite fielen."), gg_snd_Einar_3)
-			call speech(info, character, true, tr("Nachschub bekomme ich vom hiesigen Schmied Wieland, allerdings ist es eher Qualitätsware als Nachschub, denn die einfachen Waffen verkaufen sich nicht besonders gut. Die meisten Leute hier sind ganz gut ausgestattet und manche, wie zum Beispiel die Bauern, glauben doch tatsächlich, dass sie nicht kämpfen werden müssen."), gg_snd_Einar_4)
-			call speech(info, character, true, tr("Aber was will man von einem Loch wie diesem auch erwarten. Ich bin nur froh, meine Ruhe zu haben und wenn hier die verdammten Dunkelelfen einfallen, bin ich schon weg."), gg_snd_Einar_5)
+			call speech(info, character, true, tre("Alles was das Kriegerherz begehrt. Äxte, Schilde, Speere, Lanzen, Streitkolben, Morgensterne und natürlich Schwerter. Einige der Waffen habe ich mir nach Schlachten zusammengesammelt, manche stammen sogar von meinen Kameraden, die an meiner Seite fielen.", "Everything the heart of a warrior desires. Axes, bucklers, spears, lances, maces, morning stars and of course swords. I have gathered some of the weapons together after battles, some of them even come from my comrads who fell at my side."), gg_snd_Einar_3)
+			call speech(info, character, true, tre("Nachschub bekomme ich vom hiesigen Schmied Wieland, allerdings ist es eher Qualitätsware als Nachschub, denn die einfachen Waffen verkaufen sich nicht besonders gut. Die meisten Leute hier sind ganz gut ausgestattet und manche, wie zum Beispiel die Bauern, glauben doch tatsächlich, dass sie nicht kämpfen werden müssen.", "I get supplies from the local blacksmith Wieland, however it's more quality goods than supplies since the simple weapons do not sell particularly well. Most people here are very well equipped and some, such as the farmers, do actually believe that they won't have to fight."), gg_snd_Einar_4)
+			call speech(info, character, true, tre("Aber was will man von einem Loch wie diesem auch erwarten. Ich bin nur froh, meine Ruhe zu haben und wenn hier die verdammten Dunkelelfen einfallen, bin ich schon weg.", "But what do you expect from a hole like this. I'm just glad to have my rest and when those damned Dark Elves come here, I am gone already."), gg_snd_Einar_5)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -50,7 +50,7 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 		// Woher kommst du?
 		private static method infoActionWhereFrom takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Woher kommst du?"), null)
+			call speech(info, character, false, tre("Woher kommst du?", "Where are you from?"), null)
 			call speech(info, character, true, tr("Aus dem Nordwesten. Na ja eigentlich nicht direkt. Dort wurde ich geboren. Eigentlich komme ich aber aus unserer ach so schönen Hauptstadt (sarkastisch). Ich wurde aus dem Dienst des Königs entlassen, mit Belobigung (sarkastisch)! Dafür kann ich jetzt meinen rechten Arm nicht mehr richtig bewegen."), gg_snd_Einar_6)
 			call speech(info, character, true, tr("Das tut höllisch weh, seitdem da ein freundlicher Dunkelelf mit seiner Keule drauf gehauen hat."), gg_snd_Einar_7)
 			call speech(info, character, false, tr("Du warst also Krieger?"), null)
