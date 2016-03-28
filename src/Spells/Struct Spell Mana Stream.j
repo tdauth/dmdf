@@ -5,8 +5,8 @@ library StructSpellsSpellManaStream requires Asl, StructGameClasses, StructGameS
 	struct SpellManaStream extends Spell
 		public static constant integer abilityId = 'A08Q'
 		public static constant integer favouriteAbilityId = 'A08R'
-		public static constant integer classSelectionAbilityId = 'A15H'
-		public static constant integer classSelectionGrimoireAbilityId = 'A15M'
+		public static constant integer classSelectionAbilityId = 'A1MD'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1ME'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 0 /// @todo FIXME
 		private static constant real time = 5.0
@@ -52,6 +52,7 @@ library StructSpellsSpellManaStream requires Asl, StructGameClasses, StructGameS
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.createWithEvent(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
+			call this.addGrimoireEntry('A1MD', 'A1ME')
 			call this.addGrimoireEntry('A15H', 'A15M')
 			call this.addGrimoireEntry('A15I', 'A15N')
 			call this.addGrimoireEntry('A15J', 'A15O')

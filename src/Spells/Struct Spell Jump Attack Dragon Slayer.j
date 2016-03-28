@@ -60,8 +60,8 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 	struct SpellJumpAttackDragonSlayer extends Spell
 		public static constant integer abilityId = 'A1GK'
 		public static constant integer favouriteAbilityId = 'A1GL'
-		public static constant integer classSelectionAbilityId = 'A1GM'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1GR'
+		public static constant integer classSelectionAbilityId = 'A1LT'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1LU'
 		public static constant integer maxLevel = 5
 		public static constant integer stunAbilityId = 'A1GW'
 		public static constant integer dummyId = 'h02J'
@@ -165,6 +165,7 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 		public static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
+			call this.addGrimoireEntry('A1LT', 'A1LU')
 			call this.addGrimoireEntry('A1GM', 'A1GR')
 			call this.addGrimoireEntry('A1GN', 'A1GS')
 			call this.addGrimoireEntry('A1GO', 'A1GT')

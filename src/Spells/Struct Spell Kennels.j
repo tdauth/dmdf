@@ -4,8 +4,8 @@ library StructSpellsSpellKennels requires Asl, StructGameClasses, StructGameSpel
 	struct SpellKennels extends Spell
 		public static constant integer abilityId = 'A1BG'
 		public static constant integer favouriteAbilityId = 'A1BN'
-		public static constant integer classSelectionAbilityId = 'A1BO'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1BT'
+		public static constant integer classSelectionAbilityId = 'A1LV'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1LW'
 		public static constant integer maxLevel = 5
 		public static constant integer buffId = 'B02Q'
 		public static constant integer summonAbilityId = 'B02Q'
@@ -46,6 +46,7 @@ library StructSpellsSpellKennels requires Asl, StructGameClasses, StructGameSpel
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.ranger(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			
+			call this.addGrimoireEntry('A1LV', 'A1LW')
 			call this.addGrimoireEntry('A1BO', 'A1BT')
 			call this.addGrimoireEntry('A1BP', 'A1BU')
 			call this.addGrimoireEntry('A1BQ', 'A1BV')

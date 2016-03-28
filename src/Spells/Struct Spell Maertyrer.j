@@ -4,8 +4,8 @@ library StructSpellsSpellMaertyrer requires Asl, StructGameClasses, StructGameSp
 	struct SpellMaertyrer extends Spell
 		public static constant integer abilityId = 'A0NC'
 		public static constant integer favouriteAbilityId = 'A0ND'
-		public static constant integer classSelectionAbilityId = 'A0NE'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0NJ'
+		public static constant integer classSelectionAbilityId = 'A1M5'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1M6'
 		public static constant integer maxLevel = 5
 		private static constant real radius = 800.0
 		private static constant real healStartValue = 0.20
@@ -82,6 +82,7 @@ library StructSpellsSpellMaertyrer requires Asl, StructGameClasses, StructGameSp
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A1M5', 'A1M6')
 			call this.addGrimoireEntry('A0NE', 'A0NJ')
 			call this.addGrimoireEntry('A0NF', 'A0NK')
 			call this.addGrimoireEntry('A0NG', 'A0NL')

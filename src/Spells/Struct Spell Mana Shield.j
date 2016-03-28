@@ -5,8 +5,8 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 	struct SpellManaShield extends Spell
 		public static constant integer abilityId = 'A03A'
 		public static constant integer favouriteAbilityId = 'A03E'
-		public static constant integer classSelectionAbilityId = 'A0W6'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0WB'
+		public static constant integer classSelectionAbilityId = 'A1MB'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1MC'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00G'
 		private static constant real absorbedDamageManaCostStartValue = 6.0 /// Costs per damage point.
@@ -87,6 +87,7 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 			set this.m_absorbedDamage = 0.0
 			set this.m_effect = null
 			
+			call this.addGrimoireEntry('A1MB', 'A1MC')
 			call this.addGrimoireEntry('A0W6', 'A0WB')
 			call this.addGrimoireEntry('A0W7', 'A0WC')
 			call this.addGrimoireEntry('A0W8', 'A0WD')

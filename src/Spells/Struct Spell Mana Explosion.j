@@ -5,8 +5,8 @@ library StructSpellsSpellManaExplosion requires Asl, StructGameClasses, StructGa
 	struct SpellManaExplosion extends Spell
 		public static constant integer abilityId = 'A08H'
 		public static constant integer favouriteAbilityId = 'A08P'
-		public static constant integer classSelectionAbilityId = 'A0AN'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0B2'
+		public static constant integer classSelectionAbilityId = 'A1M9'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1MA'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 0 /// @todo FIXME
 		private static constant real manaStartValue = 40.0
@@ -46,6 +46,7 @@ library StructSpellsSpellManaExplosion requires Asl, StructGameClasses, StructGa
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.createWithEvent(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
+			call this.addGrimoireEntry('A1M9', 'A1MA')
 			call this.addGrimoireEntry('A0AN', 'A0B2')
 			call this.addGrimoireEntry('A0AO', 'A0B3')
 			call this.addGrimoireEntry('A0AZ', 'A0B4')

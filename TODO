@@ -818,6 +818,7 @@ Für Version 0.6:
 
 Aufgehoben für Version 0.7:
 Schwerwiegende Fehler:
+* gg_snd_Dago18 ist verbuggt. Kein Ton und kann nicht übersprungen werden. Entweder SLK oder kein unterstützes Format. VLC kann die Datei abspielen.
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Lange Ladezeit: Widgetizer mit deutschem War3Patch ausprobieren. Erst Widgetizer verwenden, dann war3mapoptimizer!
 * Lag am Anfang: Fähigkeiten preloaden.

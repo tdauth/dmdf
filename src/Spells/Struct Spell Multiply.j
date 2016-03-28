@@ -5,8 +5,8 @@ library StructSpellsSpellMultiply requires Asl, StructGameClasses, StructGameSpe
 	struct SpellMultiply extends Spell
 		public static constant integer abilityId = 'A08T'
 		public static constant integer favouriteAbilityId = 'A08U'
-		public static constant integer classSelectionAbilityId = 'A0WI'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0WN'
+		public static constant integer classSelectionAbilityId = 'A1MN'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1MO'
 		public static constant integer maxLevel = 5
 		
 		private method action takes nothing returns nothing
@@ -20,6 +20,7 @@ library StructSpellsSpellMultiply requires Asl, StructGameClasses, StructGameSpe
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.wizard(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A1MN', 'A1MO')
 			call this.addGrimoireEntry('A0WI', 'A0WN')
 			call this.addGrimoireEntry('A0WJ', 'A0WO')
 			call this.addGrimoireEntry('A0WK', 'A0WP')

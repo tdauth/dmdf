@@ -5,8 +5,8 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 	struct SpellMastery extends Spell
 		public static constant integer abilityId = 'A01F'
 		public static constant integer favouriteAbilityId = 'A034'
-		public static constant integer classSelectionAbilityId = 'A11I'
-		public static constant integer classSelectionGrimoireAbilityId = 'A11N'
+		public static constant integer classSelectionAbilityId = 'A1MH'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1MI'
 		public static constant integer maxLevel = 5
 		private static constant real interval = 10.0 //constant, does not change per level.
 		private static constant real manaLevelValue = 0.05 //changes per level.
@@ -42,6 +42,7 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			set this.m_effectTimer = CreateTimer()
 			call TimerStart(this.m_effectTimer, thistype.interval, true, function thistype.timerFunction)
 			call DmdfHashTable.global().setHandleInteger(this.m_effectTimer, 0, this)
+			call this.addGrimoireEntry('A1MH', 'A1MI')
 			call this.addGrimoireEntry('A11I', 'A11N')
 			call this.addGrimoireEntry('A11J', 'A11O')
 			call this.addGrimoireEntry('A11K', 'A11P')

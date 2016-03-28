@@ -8,8 +8,8 @@ library StructSpellsSpellMasterOfNecromancy requires Asl, StructGameClasses, Str
 	struct SpellMasterOfNecromancy extends Spell
 		public static constant integer abilityId = 'A0SG'
 		public static constant integer favouriteAbilityId = 'A0SH'
-		public static constant integer classSelectionAbilityId = 'A0SI'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0SN'
+		public static constant integer classSelectionAbilityId = 'A1MF'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1MG'
 		public static constant integer maxLevel = 5
 		public static constant integer damageAbilityId = 'A0WH'
 		public static constant integer defenseAbilityId = 'A0WG'
@@ -47,6 +47,7 @@ library StructSpellsSpellMasterOfNecromancy requires Asl, StructGameClasses, Str
 			call TriggerAddAction(this.m_summonTrigger, function thistype.triggerActionSummon)
 			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, 0, this)
 			
+			call this.addGrimoireEntry('A1MF', 'A1MG')
 			call this.addGrimoireEntry('A0SI', 'A0SN')
 			call this.addGrimoireEntry('A0SJ', 'A0SO')
 			call this.addGrimoireEntry('A0SK', 'A0SP')

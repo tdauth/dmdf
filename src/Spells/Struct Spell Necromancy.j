@@ -4,8 +4,8 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 	struct SpellNecromancy extends Spell
 		public static constant integer abilityId = 'A0FJ'
 		public static constant integer favouriteAbilityId = 'A0FK'
-		public static constant integer classSelectionAbilityId = 'A0FL'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0FQ'
+		public static constant integer classSelectionAbilityId = 'A1MP'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1MQ'
 		public static constant integer maxLevel = 5
 		public static constant integer maxUnits = 6
 		private AGroup m_units
@@ -60,6 +60,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, 0)
+			call this.addGrimoireEntry('A1MP', 'A1MQ')
 			call this.addGrimoireEntry('A0FL', 'A0FQ')
 			call this.addGrimoireEntry('A0FM', 'A0FR')
 			call this.addGrimoireEntry('A0FN', 'A0FS')

@@ -6,8 +6,8 @@ library StructSpellsSpellImpendingDisaster requires Asl, StructGameClasses, Stru
 	struct SpellImpendingDisaster extends Spell
 		public static constant integer abilityId = 'A08B'
 		public static constant integer favouriteAbilityId = 'A08C'
-		public static constant integer classSelectionAbilityId = 'A0ON'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0OS'
+		public static constant integer classSelectionAbilityId = 'A1LP'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1LQ'
 		public static constant integer maxLevel = 5
 		private static constant integer startPercentage = 10
 		private static constant integer levelPercentage = 5
@@ -27,6 +27,7 @@ library StructSpellsSpellImpendingDisaster requires Asl, StructGameClasses, Stru
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			
+			call this.addGrimoireEntry('A1LP', 'A1LQ')
 			call this.addGrimoireEntry('A0ON', 'A0OS')
 			call this.addGrimoireEntry('A0OM', 'A0OT')
 			call this.addGrimoireEntry('A0OP', 'A0OU')

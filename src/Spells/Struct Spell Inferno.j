@@ -5,8 +5,8 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 	struct SpellInferno extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A01A'
 		public static constant integer favouriteAbilityId = 'A03N'
-		public static constant integer classSelectionAbilityId = 'A0KF'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0KK'
+		public static constant integer classSelectionAbilityId = 'A1LR'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1LS'
 		public static constant integer maxLevel = 5
 		private static constant real time = 6.0
 		private static constant real radius = 400.0
@@ -59,6 +59,7 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.createWithEventDamageSpell(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
+			call this.addGrimoireEntry('A1LR', 'A1LS')
 			call this.addGrimoireEntry('A0KF', 'A0KK')
 			call this.addGrimoireEntry('A0KG', 'A0KL')
 			call this.addGrimoireEntry('A0KH', 'A0KM')

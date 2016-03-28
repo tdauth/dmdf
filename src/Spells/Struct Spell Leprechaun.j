@@ -115,8 +115,8 @@ library StructSpellsSpellLeprechaun requires Asl, StructGameClasses, StructGameS
 	struct SpellLeprechaun extends Spell
 		public static constant integer abilityId = 'A1IM'
 		public static constant integer favouriteAbilityId = 'A1IN'
-		public static constant integer classSelectionAbilityId = 'A1IP'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1IQ'
+		public static constant integer classSelectionAbilityId = 'A1LX'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1LY'
 		public static constant integer maxLevel = 1
 		
 		private method action takes nothing returns nothing
@@ -125,6 +125,7 @@ library StructSpellsSpellLeprechaun requires Asl, StructGameClasses, StructGameS
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.ranger(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A1LX', 'A1LY')
 			call this.addGrimoireEntry('A1IP', 'A1IQ')
 			
 			return this

@@ -75,8 +75,8 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 	struct SpellMagicalShockWaves extends Spell
 		public static constant integer abilityId = 'A05W'
 		public static constant integer favouriteAbilityId = 'A05X'
-		public static constant integer classSelectionAbilityId = 'A100'
-		public static constant integer classSelectionGrimoireAbilityId = 'A105'
+		public static constant integer classSelectionAbilityId = 'A1M7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1M8'
 		public static constant integer maxLevel = 5
 		public static constant real range = 600.0
 		public static constant real time = 30.0
@@ -176,6 +176,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A1M7', 'A1M8')
 			call this.addGrimoireEntry('A100', 'A105')
 			call this.addGrimoireEntry('A101', 'A106')
 			call this.addGrimoireEntry('A102', 'A107')

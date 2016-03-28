@@ -5,8 +5,8 @@ library StructSpellsSpellLightning requires Asl, StructSpellsSpellElementalMageD
 	struct SpellLightning extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A018'
 		public static constant integer favouriteAbilityId = 'A02C'
-		public static constant integer classSelectionAbilityId = 'A0UL'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0UQ'
+		public static constant integer classSelectionAbilityId = 'A1M1'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1M2'
 		public static constant integer maxLevel = 5
 		private static constant real startDamageValue = 0.0
 		private static constant real levelDamageFactor = 100.0
@@ -27,6 +27,7 @@ library StructSpellsSpellLightning requires Asl, StructSpellsSpellElementalMageD
 
 		public static method create takes ACharacter character returns thistype
 			local thistype this = thistype.createWithEventDamageSpell(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
+			call this.addGrimoireEntry('A1M1', 'A1M2')
 			call this.addGrimoireEntry('A0UL', 'A0UQ')
 			call this.addGrimoireEntry('A0UM', 'A0UR')
 			call this.addGrimoireEntry('A0UN', 'A0US')
