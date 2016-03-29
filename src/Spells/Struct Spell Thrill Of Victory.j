@@ -5,8 +5,8 @@ library StructSpellsSpellThrillOfVictory requires Asl, StructGameClasses, Struct
 	struct SpellThrillOfVictory extends Spell
 		public static constant integer abilityId = 'A1FR'
 		public static constant integer favouriteAbilityId = 'A1FS'
-		public static constant integer classSelectionAbilityId = 'A1FT'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1FU'
+		public static constant integer classSelectionAbilityId = 'A1OB'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1OC'
 		public static constant integer maxLevel = 1
 		private static constant real damageOpponentPercentage = 0.05
 		private static constant integer damageKey = DMDF_HASHTABLE_KEY_THRILLOFVICTORY_DAMAGE
@@ -56,6 +56,7 @@ library StructSpellsSpellThrillOfVictory requires Asl, StructGameClasses, Struct
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			call this.addGrimoireEntry('A1OB', 'A1OC')
 			call this.addGrimoireEntry('A1FT', 'A1FU')
 			
 			call this.setIsPassive(true)

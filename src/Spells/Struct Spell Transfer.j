@@ -4,8 +4,8 @@ library StructSpellsSpellTransfer requires Asl, StructGameClasses, StructGameSpe
 	struct SpellTransfer extends Spell
 		public static constant integer abilityId = 'A163'
 		public static constant integer favouriteAbilityId = 'A164'
-		public static constant integer classSelectionAbilityId = 'A165'
-		public static constant integer classSelectionGrimoireAbilityId = 'A16A'
+		public static constant integer classSelectionAbilityId = 'A1OD'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1OE'
 		public static constant integer maxLevel = 5
 		private static constant real startAllyPercentage = 0.0
 		private static constant real levelAllyPercentage = 0.05
@@ -70,6 +70,7 @@ library StructSpellsSpellTransfer requires Asl, StructGameClasses, StructGameSpe
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A1OD', 'A1OE')
 			call this.addGrimoireEntry('A165', 'A16A')
 			call this.addGrimoireEntry('A166', 'A16B')
 			call this.addGrimoireEntry('A167', 'A16C')

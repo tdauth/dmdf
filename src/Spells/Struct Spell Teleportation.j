@@ -4,8 +4,8 @@ library StructSpellsSpellTeleportation requires Asl, StructGameClasses, StructGa
 	struct SpellTeleportation extends Spell
 		public static constant integer abilityId = 'A01I'
 		public static constant integer favouriteAbilityId = 'A03P'
-		public static constant integer classSelectionAbilityId = 'A0L0'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0L5'
+		public static constant integer classSelectionAbilityId = 'A1O7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1O8'
 		public static constant integer maxLevel = 5
 		private static constant real damageLevelValue = 0.10 //Schadens-Stufenfaktor (ab Stufe 1)
 		private static constant real time = 5.0 //Zeitkonstante (unverändert)
@@ -58,6 +58,7 @@ library StructSpellsSpellTeleportation requires Asl, StructGameClasses, StructGa
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
+			call this.addGrimoireEntry('A1O7', 'A1O8')
 			call this.addGrimoireEntry('A0L0', 'A0L5')
 			call this.addGrimoireEntry('A0L1', 'A0L6')
 			call this.addGrimoireEntry('A0L2', 'A0L7')

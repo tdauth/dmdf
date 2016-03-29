@@ -4,8 +4,8 @@ library StructSpellsSpellRaid requires Asl, StructGameClasses, StructGameSpell
 	struct SpellRaid extends Spell
 		public static constant integer abilityId = 'A19Z'
 		public static constant integer favouriteAbilityId = 'A1A0'
-		public static constant integer classSelectionAbilityId = 'A1A1'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1A2'
+		public static constant integer classSelectionAbilityId = 'A1N7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1N8'
 		public static constant integer maxLevel = 5
 		private static itempool array m_itemPools[5]
 		
@@ -40,6 +40,7 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A1N7', 'A1N8')
 			call this.addGrimoireEntry('A1A1', 'A1A2')
 			call this.addGrimoireEntry('A1CP', 'A1CT')
 			call this.addGrimoireEntry('A1CQ', 'A1CU')

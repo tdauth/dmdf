@@ -6,8 +6,8 @@ library StructSpellsSpellUndermine requires Asl, StructGameClasses, StructGameSp
 	struct SpellUndermine extends Spell
 		public static constant integer abilityId = 'A01G'
 		public static constant integer favouriteAbilityId = 'A043'
-		public static constant integer classSelectionAbilityId = 'A0ZO'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0ZT'
+		public static constant integer classSelectionAbilityId = 'A1OJ'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1OK'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00E'
 		private boolean m_enabled
@@ -41,6 +41,7 @@ library StructSpellsSpellUndermine requires Asl, StructGameClasses, StructGameSp
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			set this.m_enabled = false
+			call this.addGrimoireEntry('A1OJ', 'A1OK')
 			call this.addGrimoireEntry('A0ZO', 'A0ZT')
 			call this.addGrimoireEntry('A0ZP', 'A0ZU')
 			call this.addGrimoireEntry('A0ZQ', 'A0ZV')

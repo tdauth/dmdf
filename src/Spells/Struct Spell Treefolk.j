@@ -4,8 +4,8 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 	struct SpellTreefolk extends Spell
 		public static constant integer abilityId = 'A0E1'
 		public static constant integer favouriteAbilityId = 'A0B7'
-		public static constant integer classSelectionAbilityId = 'A0DH'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0DM'
+		public static constant integer classSelectionAbilityId = 'A1OH'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1OI'
 		public static constant integer maxLevel = 5
 		private trigger m_summonTrigger
 		
@@ -28,6 +28,7 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 			call TriggerAddAction(this.m_summonTrigger, function thistype.triggerActionSummon)
 			call DmdfHashTable.global().setHandleInteger(this.m_summonTrigger, 0, this)
 			
+			call this.addGrimoireEntry('A1OH', 'A1OI')
 			call this.addGrimoireEntry('A0DH', 'A0DM')
 			call this.addGrimoireEntry('A0DI', 'A0DN')
 			call this.addGrimoireEntry('A0DJ', 'A0DO')

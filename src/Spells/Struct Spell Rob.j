@@ -4,8 +4,8 @@ library StructSpellsSpellRob requires Asl, StructGameClasses, StructGameSpell
 	struct SpellRob extends Spell
 		public static constant integer abilityId = 'A1A3'
 		public static constant integer favouriteAbilityId = 'A1A4'
-		public static constant integer classSelectionAbilityId = 'A1A5'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1A6'
+		public static constant integer classSelectionAbilityId = 'A1NL'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1NM'
 		public static constant integer maxLevel = 5
 		public static constant real time = 40.0
 		private AUnitList m_targets
@@ -63,6 +63,7 @@ library StructSpellsSpellRob requires Asl, StructGameClasses, StructGameSpell
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A1NL', 'A1NM')
 			call this.addGrimoireEntry('A1A5', 'A1A6')
 			call this.addGrimoireEntry('A1CH', 'A1CL')
 			call this.addGrimoireEntry('A1CI', 'A1CM')

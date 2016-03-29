@@ -8,8 +8,8 @@ library StructSpellsSpellPureEnergy requires Asl, StructGameClasses, StructGameS
 	struct SpellPureEnergy extends SpellElementalMageDamageSpell
 		public static constant integer abilityId = 'A01X'
 		public static constant integer favouriteAbilityId = 'A03O'
-		public static constant integer classSelectionAbilityId = 'A0ZK'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0ZL'
+		public static constant integer classSelectionAbilityId = 'A1N1'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1N2'
 		public static constant integer maxLevel = 1
 		public static sound soundTargetEffect
 
@@ -31,6 +31,7 @@ library StructSpellsSpellPureEnergy requires Asl, StructGameClasses, StructGameS
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.createWithEventDamageSpell(character, Spell.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
+			call this.addGrimoireEntry('A1N1', 'A1N2')
 			call this.addGrimoireEntry('A0ZK', 'A0ZL')
 			
 			return this

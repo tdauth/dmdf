@@ -8,8 +8,8 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 	struct SpellProtect extends Spell
 		public static constant integer abilityId = 'A050'
 		public static constant integer favouriteAbilityId = 'A051'
-		public static constant integer classSelectionAbilityId = 'A091'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0LE'
+		public static constant integer classSelectionAbilityId = 'A1MZ'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1N0'
 		public static constant integer maxLevel = 5
 		private static constant real damageLevelValue = 0.15
 		private static constant real damageLevelFactor = 0.05
@@ -49,6 +49,7 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 
 		public static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
+			call this.addGrimoireEntry('A1MZ', 'A1N0')
 			call this.addGrimoireEntry('A091', 'A0LE')
 			call this.addGrimoireEntry('A0LA', 'A0LF')
 			call this.addGrimoireEntry('A0LB', 'A0LG')

@@ -5,8 +5,8 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 	struct SpellSelflessness extends Spell
 		public static constant integer abilityId = 'A073'
 		public static constant integer favouriteAbilityId = 'A074'
-		public static constant integer classSelectionAbilityId = 'A0LL'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0LQ'
+		public static constant integer classSelectionAbilityId = 'A1NP'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1NQ'
 		public static constant integer maxLevel = 5
 		// TODO base buff on slow aura tornado ability
 		private static constant integer casterBuffId = 'B014'
@@ -59,6 +59,7 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			call this.addGrimoireEntry('A1NP', 'A1NQ')
 			call this.addGrimoireEntry('A0LL', 'A0LQ')
 			call this.addGrimoireEntry('A0LM', 'A0LR')
 			call this.addGrimoireEntry('A0LN', 'A0LS')

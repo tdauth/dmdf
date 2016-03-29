@@ -7,8 +7,8 @@ library StructSpellsSpellPreventIll requires Asl, StructGameClasses, StructGameS
 	struct SpellPreventIll extends Spell
 		public static constant integer abilityId = 'A055'
 		public static constant integer favouriteAbilityId = 'A054'
-		public static constant integer classSelectionAbilityId = 'A0QN'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0QS'
+		public static constant integer classSelectionAbilityId = 'A1MX'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1MY'
 		public static constant integer maxLevel = 5
 		private static constant real speedStartValue = 0.20
 		private static constant real speedLevelValue = 0.10
@@ -49,6 +49,7 @@ library StructSpellsSpellPreventIll requires Asl, StructGameClasses, StructGameS
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			
+			call this.addGrimoireEntry('A1MX', 'A1MY')
 			call this.addGrimoireEntry('A0QN', 'A0QS')
 			call this.addGrimoireEntry('A0QO', 'A0QT')
 			call this.addGrimoireEntry('A0QP', 'A0QU')

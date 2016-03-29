@@ -6,8 +6,8 @@ library StructSpellsSpellResolution requires Asl, StructGameClasses, StructGameS
 	struct SpellResolution extends Spell
 		public static constant integer abilityId = 'A028'
 		public static constant integer favouriteAbilityId = 'A040'
-		public static constant integer classSelectionAbilityId = 'A124'
-		public static constant integer classSelectionGrimoireAbilityId = 'A129'
+		public static constant integer classSelectionAbilityId = 'A1NF'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1NG'
 		public static constant integer maxLevel = 5
 		public static constant real lifeLevelValue = 100.0
 		public static constant real lifeStartValue = 50.0
@@ -39,6 +39,7 @@ library StructSpellsSpellResolution requires Asl, StructGameClasses, StructGameS
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A1NF', 'A1NG')
 			call this.addGrimoireEntry('A124', 'A129')
 			call this.addGrimoireEntry('A125', 'A12A')
 			call this.addGrimoireEntry('A126', 'A12B')

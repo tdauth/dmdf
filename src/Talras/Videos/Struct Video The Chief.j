@@ -68,7 +68,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheChiefRicman1))) then
 				return
 			endif
-			call TransmissionFromUnit(this.actor(), tre("Wir wollen mit Eurem Anführer sprechen. Der Herzog von Talras schickt uns.", "We want to speak to your leader. The duke of Talras semds us."), null)
+			call TransmissionFromUnit(this.actor(), tre("Wir wollen mit Eurem Anführer sprechen. Der Herzog von Talras schickt uns.", "We want to speak to your leader. The duke of Talras sends us."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif

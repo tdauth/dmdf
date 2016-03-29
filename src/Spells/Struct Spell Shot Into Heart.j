@@ -5,12 +5,13 @@ library StructSpellsSpellShotIntoHeart requires Asl, StructGameClasses, StructGa
 	struct SpellShotIntoHeart extends Spell
 		public static constant integer abilityId = 'A06Q'
 		public static constant integer favouriteAbilityId = 'A06R'
-		public static constant integer classSelectionAbilityId = 'A116'
-		public static constant integer classSelectionGrimoireAbilityId = 'A11B'
+		public static constant integer classSelectionAbilityId = 'A1NT'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1NU'
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.ranger(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			call this.addGrimoireEntry('A1NT', 'A1NU')
 			call this.addGrimoireEntry('A116', 'A11B')
 			call this.addGrimoireEntry('A117', 'A11C')
 			call this.addGrimoireEntry('A118', 'A11D')

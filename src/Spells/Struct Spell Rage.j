@@ -5,8 +5,8 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 	struct SpellRage extends Spell
 		public static constant integer abilityId = 'A1FF'
 		public static constant integer favouriteAbilityId = 'A1FG'
-		public static constant integer classSelectionAbilityId = 'A1FH'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1FM'
+		public static constant integer classSelectionAbilityId = 'A1N5'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1N6'
 		public static constant integer maxLevel = 5
 		private static constant real damageBonusPerCountLevelValue = 10.0
 		private static constant integer enabledKey = DMDF_HASHTABLE_KEY_RAGE_ENABLED
@@ -79,6 +79,7 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A1N5', 'A1N6')
 			call this.addGrimoireEntry('A1FH', 'A1FM')
 			call this.addGrimoireEntry('A1FI', 'A1FN')
 			call this.addGrimoireEntry('A1FJ', 'A1FO')

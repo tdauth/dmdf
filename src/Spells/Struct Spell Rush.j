@@ -5,8 +5,8 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 	struct SpellRush extends Spell
 		public static constant integer abilityId = 'A01Q'
 		public static constant integer favouriteAbilityId = 'A033'
-		public static constant integer classSelectionAbilityId = 'A0XS'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0XX'
+		public static constant integer classSelectionAbilityId = 'A1NN'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1NO'
 		public static constant integer maxLevel = 5
 		private static constant real speedFactor = 0.80
 		private static constant real damageFactor = 20.0
@@ -58,6 +58,7 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 			call ShowUnit(this.dummy, false)
 			call UnitAddAbility(this.dummy, 'A01R')
 			
+			call this.addGrimoireEntry('A1NN', 'A1NO')
 			call this.addGrimoireEntry('A0XS', 'A0XX')
 			call this.addGrimoireEntry('A0XT', 'A0XY')
 			call this.addGrimoireEntry('A0XU', 'A0XZ')

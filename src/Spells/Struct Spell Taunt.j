@@ -114,8 +114,8 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 	struct SpellTaunt extends Spell
 		public static constant integer abilityId = 'A02O'
 		public static constant integer favouriteAbilityId = 'A042'
-		public static constant integer classSelectionAbilityId = 'A0LV'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0M0'
+		public static constant integer classSelectionAbilityId = 'A1O5'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1O6'
 		public static constant integer maxLevel = 5
 		public static constant real timeStartValue = 4.0
 		public static constant real timeLevelFactor = 1.0
@@ -154,6 +154,7 @@ library StructSpellsSpellTaunt requires Asl, StructGameClasses, StructGameSpell
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			call this.addGrimoireEntry('A1O5', 'A1O6')
 			call this.addGrimoireEntry('A0LV', 'A0M0')
 			call this.addGrimoireEntry('A0LW', 'A0M1')
 			call this.addGrimoireEntry('A0LX', 'A0M2')
