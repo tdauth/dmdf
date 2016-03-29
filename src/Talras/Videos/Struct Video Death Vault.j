@@ -55,7 +55,7 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("In dieser Gruft befinden sich zwei starke böse Kreaturen. Zum Einen eine mächtige Medusa und zum Anderen der „Diakon der Finsternis“.", "In this crypt there is two powerful eveil creatures. On the ne hand a powerful Medusa and on the other hand the \"Deacon of Darkness\"."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("In dieser Gruft befinden sich zwei starke böse Kreaturen. Zum Einen eine mächtige Medusa und zum Anderen der „Diakon der Finsternis“.", "In this crypt there is two powerful evil creatures. On the ne hand a powerful Medusa and on the other hand the \"Deacon of Darkness\"."), null)
 
 			if (wait(0.50)) then
 				return
