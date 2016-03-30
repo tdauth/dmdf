@@ -20,7 +20,8 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			local integer index
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(5.00)
-			call PlayThematicMusic("Music\\TheFirstCombat.mp3")
+			//call PlayThematicMusic("Music\\TheFirstCombat.mp3")
+			call PlayThematicMusic("Music\\mp3Music\\Theyre-Closing-In_Looping.mp3")
 			call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_0, true, 0.0)
 			

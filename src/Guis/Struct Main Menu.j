@@ -67,6 +67,9 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 		
 		private static method dialogButtonActionChangeCameraToDungeonByIndex takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
+			if (this.m_character.isViewEnabled()) then
+				call this.m_character.setView(false) // make sure 3rd person camera is not enabled, otherwise there will be a crash
+			endif
 			call Dungeon(Dungeon.dungeons()[dialogButton.index()]).setCameraBoundsForPlayer(this.m_character.player())
 			call this.showDungeons.evaluate()
 		endmethod

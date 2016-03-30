@@ -819,7 +819,10 @@ Für Version 0.6:
 Aufgehoben für Version 0.7:
 Schwerwiegende Fehler:
 * gg_snd_Dago18 ist verbuggt. Kein Ton und kann nicht übersprungen werden. Entweder SLK oder kein unterstützes Format. VLC kann die Datei abspielen.
-* Orcs laufen zurück bei "Die Nordmänner" obwohl sie nicht neutral passiv sind. Verwirrend da man nicht weiß, ob man das Camp angreifen soll.
+* Orcs laufen zurück bei "Die Nordmänner" obwohl sie nicht neutral passiv sind. Verwirrend da man nicht weiß, ob man das Camp angreifen soll. Laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
+* Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
+* Crash wenn die Ansicht zu einem Dungeon gewechselt wird und die 3rd-Person-Kamera aktiv ist.
+* Double Free SpeechData bei speech().
 * Deranor beschwört zweimal Schattenriesen (einmal im Video). Die aus dem Video sind neutral und greifen nicht an. Am besten nach Video entfernen oder Zauber abklingen lassen.
 * FIXED: Schattenriesen bluten -> Untot oder mechanisch machen!
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
@@ -840,7 +843,7 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
 * Kollisionsgrößen der Charaktere sind zu groß.
 * FIXED: Textnachricht ausgeben wenn Zauber als passiver Zauber oder allgemein nicht in Favoriten geskillt wird.
-* Add a learning ability for every grimoire spell.
+* FIXED: Add a learning ability for every grimoire spell.
 * DONE: Hotkeys for all class spells.
 * DONE: Heileffekt alle 10 Sekunden bei Ritter: Spezialeffekt mit Heilung und Sound wie bei Konzentration.
 * FIXED: Waldholzfäuste: Anderes Icon.

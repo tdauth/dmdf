@@ -4,8 +4,8 @@ library StructSpellsSpellElementalCreatures requires Asl, StructSpellsSpellEleme
 	struct SpellElementalCreatures extends Spell
 		public static constant integer abilityId = 'A1I8'
 		public static constant integer favouriteAbilityId = 'A1I9'
-		public static constant integer classSelectionAbilityId = 'A1IA'
-		public static constant integer classSelectionGrimoireAbilityId = 'A1IF'
+		public static constant integer classSelectionAbilityId = 'A1KF'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1KG'
 		public static constant integer maxLevel = 5
 		
 		public static method create takes ACharacter character returns thistype

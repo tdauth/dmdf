@@ -4,8 +4,8 @@ library StructSpellsSpellDemonServant requires Asl, StructGameClasses, StructGam
 	struct SpellDemonServant extends Spell
 		public static constant integer abilityId = 'A1CZ'
 		public static constant integer favouriteAbilityId = 'A037'
-		public static constant integer classSelectionAbilityId = 'A023'
-		public static constant integer classSelectionGrimoireAbilityId = 'A0I2'
+		public static constant integer classSelectionAbilityId = 'A1K7'
+		public static constant integer classSelectionGrimoireAbilityId = 'A1K8'
 		public static constant integer maxLevel = 5
 		private trigger m_summonTrigger
 		private unit m_servant /// There can only be one servant at once.

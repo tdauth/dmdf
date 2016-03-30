@@ -641,10 +641,11 @@ endif
 		 * \param musicList File paths should be separated by ; character.
 		 */
 		public static method setMapMusic takes string musicList returns nothing
+			debug call Print("Setting music to " + musicList)
 			call StopMusic(false)
 			call ClearMapMusic()
 			call SetMapMusic(musicList, true, 0)
-			call ResumeMusic()
+			//call ResumeMusic()
 		endmethod
 
 		/**
@@ -654,6 +655,8 @@ endif
 		public static method setDefaultMapMusic takes nothing returns nothing
 			if (MapData.mapMusic != null) then
 				call thistype.setMapMusic(MapData.mapMusic)
+			debug else
+				debug call Print("Error: Map music is empty.")
 			endif
 		endmethod
 
@@ -725,12 +728,12 @@ endif
 		endmethod
 
 		/**
-		* This method usually is called after all players selected their character class.
-		*/
+		 * This method usually is called after all players selected their character class.
+		 */
 		public static method start takes nothing returns nothing
 			local integer i
-			call StopMusic(false)
 			call SuspendTimeOfDay(false)
+			call thistype.setDefaultMapMusic()
 			//call SetCreepCampFilterState(true)
 			//call SetAllyColorFilterState(0)
 			
@@ -780,7 +783,6 @@ static if (DEBUG_MODE) then
 			call ACheat.create("addotherclassspells", true, thistype.onCheatActionAddOtherClassSpells)
 			call ACheat.create("movable", true, thistype.onCheatActionMovable)
 endif
-			call thistype.setDefaultMapMusic()
 			/// has to be called by struct \ref MapData.
 			//call ACharacter.setAllMovable(true)
 			call MapData.start.execute()

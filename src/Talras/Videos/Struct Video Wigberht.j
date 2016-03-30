@@ -103,7 +103,6 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			call IssueImmediateOrder(this.actor(), "holdposition")
 
 			set this.m_staticActors = AGroup.create()
-			set this.m_orcGuardians = AGroup.create()
 			
 			// create norsemen
 			// create rangers
@@ -150,6 +149,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			// create orcs with leader
 			set this.m_actorOrcLeader = CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcLeader, gg_rct_video_wigberht_orc_leaders_position, 237.39)
 			call IssueImmediateOrder(this.m_actorOrcLeader, "holdposition")
+			
+			set this.m_orcGuardians = AGroup.create()
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_0, 308.79))
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_1, 200.36))
 			call this.m_orcGuardians.units().pushBack(CreateUnitAtRect(MapData.baldarPlayer, UnitTypes.orcWarrior, gg_rct_video_wigberht_orc_guardian_2, 327.94))

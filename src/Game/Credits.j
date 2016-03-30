@@ -44,6 +44,19 @@ call thistype.addTitle(tre("Weitere Unterstützung", "Further Support"))
 call thistype.addContributor("WaterKnight", tre("Tests", "Tests"))
 call thistype.addContributor("Frotty", tre("Modelle und Tests", "Models and Tests"))
 
+/*
+http://www.incompetech.com/music/royalty-free/mp3-royaltyfree/Pippin%20the%20Hunchback.mp3
+Pippin the Hunchback Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+*/
+
+/*
+Minstrel Guild Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+*/
+
 // tools and systems
 call thistype.addTitle(tre("Werkzeuge und Systeme", "Tools and Systems"))
 call thistype.addContributor("Vexorian", tre("JassHelper/vJass, Wc3mapoptimizer, Funktionen und Systeme, teils implementiert, teils als Anregung", "JassHelper/vJass, Wc3mapoptimizer, functions and systems, partly implemented partly for ideas"))

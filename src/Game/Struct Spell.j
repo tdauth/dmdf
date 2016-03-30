@@ -199,7 +199,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			if (this.grimoireEntries().empty()) then
 				return 0
 			endif
-			return this.grimoireEntries()[IMaxBJ(this.level() - 1, 0)]
+			return this.grimoireEntries()[this.level()]
 		endmethod
 
 		public method getMaxLevel takes nothing returns integer

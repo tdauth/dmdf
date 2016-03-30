@@ -218,6 +218,11 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call this.cleanUpBattleField()
 			return QuestTheNorsemen.quest().questItem(thistype.questItemFight).setState(AAbstractQuest.stateCompleted) // video Wigberht is played in quest completion action
 		endmethod
+		
+		private static method forGroupNoGuard takes unit whichUnit returns nothing
+			call SetUnitCreepGuard(whichUnit, false)
+			call RemoveGuardPosition(whichUnit)
+		endmethod
 
 		private static method triggerActionSpawn takes nothing returns nothing
 			local thistype this = thistype.quest()
@@ -289,6 +294,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 				call TransmissionFromUnit(orcLeader, tre("Ihr elenden Menschen, euer Ende ist nah!", "You wretched men, your end is near!"), null)
 			endif
+			
+			call this.m_currentGroup.forGroup(thistype.forGroupNoGuard) // prevents them from walking back to the spawn point
+			// TODO they do not walk back BUT some units dont move, maybe it is because of the unit type that they cant attack a point
 			call this.m_currentGroup.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_norsemen_enemy_target), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_target))
 			set owner = null
 		endmethod
