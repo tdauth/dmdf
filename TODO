@@ -818,11 +818,11 @@ Für Version 0.6:
 
 Aufgehoben für Version 0.7:
 Schwerwiegende Fehler:
-* gg_snd_Dago18 ist verbuggt. Kein Ton und kann nicht übersprungen werden. Entweder SLK oder kein unterstützes Format. VLC kann die Datei abspielen.
+* FIXED: gg_snd_Dago18 ist verbuggt. Kein Ton und kann nicht übersprungen werden. Entweder SLK oder kein unterstützes Format. VLC kann die Datei abspielen.
 * Orcs laufen zurück bei "Die Nordmänner" obwohl sie nicht neutral passiv sind. Verwirrend da man nicht weiß, ob man das Camp angreifen soll. Laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
-* Crash wenn die Ansicht zu einem Dungeon gewechselt wird und die 3rd-Person-Kamera aktiv ist.
-* Double Free SpeechData bei speech().
+* FIXED: Crash wenn die Ansicht zu einem Dungeon gewechselt wird und die 3rd-Person-Kamera aktiv ist.
+* Double Free AIntegerListIterator bei speech() wenn übersprungen wird.
 * Deranor beschwört zweimal Schattenriesen (einmal im Video). Die aus dem Video sind neutral und greifen nicht an. Am besten nach Video entfernen oder Zauber abklingen lassen.
 * FIXED: Schattenriesen bluten -> Untot oder mechanisch machen!
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
@@ -853,13 +853,14 @@ Mehrspielertest:
 * FIXED: Klassenauswahl ansicht verbuggt.
 * Wenn man Diakon tötet Spielabsturz.
 * Dorfbewohner spawnen einfach während Metzelei bei Diakon als Gegner?!
-* Jojo hat Arenakampf verloren und war danach einfach total langsam (Fähigkeit Arenagegner?).
+* Jojo hat Arenakampf verloren und war danach einfach total langsam (Fähigkeit Arenagegner?). Sie wurde auch nicht aus der Arena verschoben.
 * Bei Jojo wurde die Kamera während den Kämpfen hin- und herbewegt (vor und zurück), cameraDistance() vs irgendwas anderes???
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 * FIXED: Steht auch nicht im CharactersSchema.
 
 Nervig:
+* Keine HeroGlows für Schwert, Schild, Helm, Bogen und Lanze.
 * Tiergestalten: Einfach Klassenzauber lassen.
 * Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen.
 * Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.
