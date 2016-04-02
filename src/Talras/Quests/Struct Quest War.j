@@ -15,7 +15,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 			// TODO change moveManfredsSupplyToTheCamp
 			local boolean result = QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemLumberFromKuno).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemTrapsFromBjoern).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemRecruit).state() == QuestWar.stateCompleted
 			if (not result) then
-				call Character.displayHintToAll(tre("Schließen Sie zunächst den Auftrag \"Krieg\" ab. Danach können Sie dem Herzog Bericht erstatten.", "Complete the missiong \"War\" first. After that you can report to the duke."))
+				call Character.displayHintToAll(tre("Schließen Sie zunächst den Auftrag \"Krieg\" ab. Danach können Sie dem Herzog Bericht erstatten.", "Complete the mission \"War\" first. After that you can report to the duke."))
 			endif
 			
 			return result

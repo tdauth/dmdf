@@ -51,15 +51,15 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		// Woher kommst du?
 		private static method infoActionWhereFrom takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Woher kommst du?", "Where are you from?"), null)
-			call speech(info, character, true, tr("Aus dem Nordwesten. Na ja eigentlich nicht direkt. Dort wurde ich geboren. Eigentlich komme ich aber aus unserer ach so schönen Hauptstadt (sarkastisch). Ich wurde aus dem Dienst des Königs entlassen, mit Belobigung (sarkastisch)! Dafür kann ich jetzt meinen rechten Arm nicht mehr richtig bewegen."), gg_snd_Einar_6)
-			call speech(info, character, true, tr("Das tut höllisch weh, seitdem da ein freundlicher Dunkelelf mit seiner Keule drauf gehauen hat."), gg_snd_Einar_7)
-			call speech(info, character, false, tr("Du warst also Krieger?"), null)
-			call speech(info,  character, true, tr("Ja verdammt! Im Heer des Königs persönlich. Ich war bei den Feldzügen gegen den Karornwald dabei. Der König hat doch tatsächlich geglaubt, er könne sich beim Adel beliebt machen und Stärke zeigen, wenn er's diesen verdammten Dunkelelfen heimzahlt."), gg_snd_Einar_8)
-			call speech(info, character, true, tr("Frag mich nicht, warum wir Menschen die Dunkelelfen so sehr hassen und umgekehrt. Das wissen wohl nicht mal die, die oben sitzen und etwas zu sagen haben."), gg_snd_Einar_9)
-			call speech(info, character, true, tr("Jedenfalls war es das reinste Desaster. Wir sind in den dichten Wald hinein und kaum, waren wir eine Stunde unterwegs, fielen unsere Männer, einer nach dem anderen. Die Schweine hatten ihre Leute auf den riesigen Bäumen des Karornwaldes platziert und die haben uns wie Wild erlegt."), gg_snd_Einar_10)
-			call speech(info, character, true, tr("Dann kamen plötzlich riesige Bären, keine normalen, bei denen brannten die Augen wie Feuer. Sie waren vollkommen wahnsinnig und gingen auf uns los."), gg_snd_Einar_11)
-			call speech(info, character, true, tr("Und zu guter Letzt stürmten die Krieger der Dunkelelfen auf uns zu. Verdammt Mann, wir in unseren schweren Rüstungen standen da wie angewurzelt! Ich kann froh sein, mit dem Leben davon gekommen zu sein."), gg_snd_Einar_12)
-			call speech(info, character, true, tr("Jetzt sitze ich in diesem elenden Loch und verkaufe meinen letzten Bezug zur Hölle. Wenigstens habe ich so meine Ruhe."), gg_snd_Einar_13)
+			call speech(info, character, true, tre("Aus dem Nordwesten. Na ja eigentlich nicht direkt. Dort wurde ich geboren. Eigentlich komme ich aber aus unserer ach so schönen Hauptstadt (sarkastisch). Ich wurde aus dem Dienst des Königs entlassen, mit Belobigung (sarkastisch)! Dafür kann ich jetzt meinen rechten Arm nicht mehr richtig bewegen.", "From the northwest. Well, actually not directly. I was born there. Actually I am from our oh so beautiful captial (sarcastically). I was discharged from the service of the king, with commendation (sarcastically)! But now I cannot move my right arm properly."), gg_snd_Einar_6)
+			call speech(info, character, true, tre("Das tut höllisch weh, seitdem da ein freundlicher Dunkelelf mit seiner Keule drauf gehauen hat.", "That hurts like hell since a friendly Dark Elf has hit it with his curb."), gg_snd_Einar_7)
+			call speech(info, character, false, tre("Du warst also Krieger?", "So you were a warrior?"), null)
+			call speech(info,  character, true, tre("Ja verdammt! Im Heer des Königs persönlich. Ich war bei den Feldzügen gegen den Karornwald dabei. Der König hat doch tatsächlich geglaubt, er könne sich beim Adel beliebt machen und Stärke zeigen, wenn er's diesen verdammten Dunkelelfen heimzahlt.", "Yes dammit! In king's army itself. I was there at the campaigns against the Karorn Forest. The king actually believed that he could make himself popular among the nobility and show strength if he pays back those damned Dark Elves."), gg_snd_Einar_8)
+			call speech(info, character, true, tre("Frag mich nicht, warum wir Menschen die Dunkelelfen so sehr hassen und umgekehrt. Das wissen wohl nicht mal die, die oben sitzen und etwas zu sagen haben.", "Don't ask me why we humans do hate the Dark Elves that much and the other way around. Probably not even the ones who are powerful and who have something to say know this."), gg_snd_Einar_9)
+			call speech(info, character, true, tre("Jedenfalls war es das reinste Desaster. Wir sind in den dichten Wald hinein und kaum, waren wir eine Stunde unterwegs, fielen unsere Männer, einer nach dem anderen. Die Schweine hatten ihre Leute auf den riesigen Bäumen des Karornwaldes platziert und die haben uns wie Wild erlegt.", "Anyway, it was an absolute disaster. We went into the dens forest and when we were hardly walking for an hour, our men fell, one after another. Those pigs had placed their men on the huge trees of the Karorn Forest and they imposed us like wild animals."), gg_snd_Einar_10)
+			call speech(info, character, true, tre("Dann kamen plötzlich riesige Bären, keine normalen, bei denen brannten die Augen wie Feuer. Sie waren vollkommen wahnsinnig und gingen auf uns los.", "Then suddenly huge bears came, not normal ones, their eyes were burning like fire. They were completely mad and attacked us."), gg_snd_Einar_11)
+			call speech(info, character, true, tre("Und zu guter Letzt stürmten die Krieger der Dunkelelfen auf uns zu. Verdammt Mann, wir in unseren schweren Rüstungen standen da wie angewurzelt! Ich kann froh sein, mit dem Leben davon gekommen zu sein.", "And finally warriors of the Dark Elves stormed on us. Damn man, we in our heavy armour stood there rooted! I can be happy having survived all this."), gg_snd_Einar_12)
+			call speech(info, character, true, tre("Jetzt sitze ich in diesem elenden Loch und verkaufe meinen letzten Bezug zur Hölle. Wenigstens habe ich so meine Ruhe.", "Now I am sitting in this miserable hole and selling my last reference to hell. At least I have my peace that way."), gg_snd_Einar_13)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -70,15 +70,15 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		
 		// Verkaufst du auch eine ganz besondere Waffe?
 		private static method infoActionSpecialWeapon takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Verkaufst du auch eine ganz besondere Waffe?"), null)
-			call speech(info, character, true, tr("Solange du genügend Goldmünzen dabei hast, kann ich dir nur die beste Ware anbieten."), gg_snd_Einar_14)
-			call speech(info, character, false, tr("Sicher, Gold spielt bei mir keine Rolle."), null)
-			call speech(info, character, true, tr("(Gierig) Na wenn das so ist. Was hältst du denn von diesem Prachtstück hier? Es ist eines der besten Schwerter, die du im ganzen Königreich finden kannst."), gg_snd_Einar_15)
-			call speech(info, character, true, tr("Wieland der Schmied von Talras hat es geschmiedet. Seine Kunst ist unerreicht! Mit diesem Schwert wirst du jede Schlacht gewinnen …"), gg_snd_Einar_16)
-			call speech(info, character, false, tr("Wie viel?"), null)
-			call speech(info, character, true, tr("Hm, weil ich dich als guten Menschen einschätze sagen wir … 2000 Goldmünzen."), gg_snd_Einar_17)
-			call speech(info, character, false, tr("Lass mich noch mal darüber schlafen."), null)
-			call speech(info, character, true, tr("Klar, lass dir nur Zeit. Das Schwert läuft dir nicht davon. Ich bewahre es für dich auf."), gg_snd_Einar_18)
+			call speech(info, character, false, tre("Verkaufst du auch eine ganz besondere Waffe?", "Are you selling a very special weapon?"), null)
+			call speech(info, character, true, tre("Solange du genügend Goldmünzen dabei hast, kann ich dir nur die beste Ware anbieten.", "As long as you have enough gold coins with you, I can offer you only the best merchandise."), gg_snd_Einar_14)
+			call speech(info, character, false, tre("Sicher, Gold spielt bei mir keine Rolle.", "Sure, gold does not matter to me."), null)
+			call speech(info, character, true, tre("(Gierig) Na wenn das so ist. Was hältst du denn von diesem Prachtstück hier? Es ist eines der besten Schwerter, die du im ganzen Königreich finden kannst.", "(Greedy) Well if that is so. What do you think about this beauty here? It is one of the best swords that you can find in the whole kingdom."), gg_snd_Einar_15)
+			call speech(info, character, true, tre("Wieland der Schmied von Talras hat es geschmiedet. Seine Kunst ist unerreicht! Mit diesem Schwert wirst du jede Schlacht gewinnen …", "Wieland the blacksmith of Talras has forged it. His art is unmatched! With this sword you will win every battle ..."), gg_snd_Einar_16)
+			call speech(info, character, false, tre("Wie viel?", "How much?"), null)
+			call speech(info, character, true, tre("Hm, weil ich dich als guten Menschen einschätze sagen wir … 2000 Goldmünzen.", "Hm, because I value you as a good man let's say ... 2000 gold coins."), gg_snd_Einar_17)
+			call speech(info, character, false, tre("Lass mich noch mal darüber schlafen.", "Let me sleep on it again."), null)
+			call speech(info, character, true, tre("Klar, lass dir nur Zeit. Das Schwert läuft dir nicht davon. Ich bewahre es für dich auf.", "Sure, just take your time. The sword does not run away from you. I keep it for you."), gg_snd_Einar_18)
 			// Auftragsziel 1 des Auftrags „Wielands Schwert“ abgeschlossen
 			call QuestWielandsSword.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)
@@ -92,7 +92,7 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		
 		// Kann ich dir irgendwie helfen?
 		private static method infoActionHelp takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Kann ich dir irgendwie helfen?"), null)
+			call speech(info, character, false, tre("Kann ich dir irgendwie helfen?", "Can I help you?"), null)
 			call speech(info, character, true, tr("Klar kannst du das, allerdings nur wenn du ein guter Schmied bist. Nichts gegen Wieland, er ist ein hervorragender Schmied, aber er hat eben auch viele andere Aufträge hier in der Burg."), gg_snd_Einar_19)
 			call speech(info, character, true, tr("Ich brauche dringend mehr Schwerter. Die einfachen Schwerter verkaufen sich zwar nicht so gut, aber wenn ich gar keine mehr davon habe, hilft mir das auch nicht gerade."), gg_snd_Einar_20)
 			call speech(info, character, true, tr("Schmiede mir fünf Kurzschwerter und ich gebe dir eine entsprechende Summe an Goldmünzen dafür. Vergiss aber nicht, dass sie neu geschmiedet werden müssen. Also drehe mir keine weiterverkaufte Ware an!"), gg_snd_Einar_21)

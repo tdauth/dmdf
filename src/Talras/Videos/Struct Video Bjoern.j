@@ -57,7 +57,7 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tre("Verdammt! Ich werde dir so viele Fallen geben wie du brauchst. Hoffentlich besiegen wir diesen verfluchten Feind so bald wie möglich. Meine Frau macht sich schon Sorgen.", "Damn it! I will give you as many traps as you need. Hopefully we defeat this cursed enemy as soon as possible. My wife is already worreid."), gg_snd_Bjoern69)
+			call TransmissionFromUnit(this.m_actorBjoern, tre("Verdammt! Ich werde dir so viele Fallen geben wie du brauchst. Hoffentlich besiegen wir diesen verfluchten Feind so bald wie möglich. Meine Frau macht sich schon Sorgen.", "Damn it! I will give you as many traps as you need. Hopefully we defeat this cursed enemy as soon as possible. My wife is already worried."), gg_snd_Bjoern69)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Bjoern69))) then
 				return
