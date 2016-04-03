@@ -17,7 +17,7 @@ library StructMapQuestsQuestGoldForTheTradingPermission requires Asl, StructMapM
 			local AQuestItem questItem0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
 			call this.setDescription(tre("Der Händler Haid darf seine Waren nicht in der Burg Talras verkaufen, da ihm die benötigte Handelsgenehmigung fehlt. Leider fehlen ihm die nötigen Goldmünzen, um sich beim Vogt eine solche Handelsgenehmigung zu erwerben.", "The merchant Haid may not sell his goods in the castle Talras because he lacks the required distribution authorization. Unfortunately, he lacks the necessary gold coins to acquire such a distribution authorization at the bailiff."))
-			call this.setReward(thistype.rewardExperience, 400)
+			call this.setReward(thistype.rewardExperience, 150)
 			//item 0
 			set questItem0 = AQuestItem.create(this, tre("Gib Händler Haid die benötigten Goldmünzen für eine Handelsgenehmigung in Talras.", "Give merchant Haid the required gold coins for the trading permission in Talras."))
 			call questItem0.setPing(true)

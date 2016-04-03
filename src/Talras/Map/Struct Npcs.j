@@ -157,6 +157,12 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 			call SetUnitInvulnerable(gg_unit_n015_0118, true)
 			call SetUnitInvulnerable(gg_unit_n015_0456, true)
 			
+			// make norsemen invulnerable
+			call SetUnitInvulnerable(gg_unit_n01I_0150, true)
+			call SetUnitInvulnerable(gg_unit_n01I_0151, true)
+			call SetUnitInvulnerable(gg_unit_n01I_0152, true)
+			call SetUnitInvulnerable(gg_unit_n01I_0153, true)
+			
 			set thistype.m_sellTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_sellTrigger, EVENT_PLAYER_UNIT_SELL)
 			call TriggerAddCondition(thistype.m_sellTrigger, Condition(function thistype.triggerConditionSell))

@@ -9,6 +9,7 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 		public static constant integer classSelectionGrimoireAbilityId = 'A1LI'
 		public static constant integer maxLevel = 1
 		private static constant real manaFactor = 0.50
+		private static sound whichSound
 		
 		private method condition takes nothing returns boolean
 			local unit caster = this.character().unit()
@@ -26,6 +27,7 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 			local real mana = GetUnitState(caster, UNIT_STATE_MAX_MANA) * thistype.manaFactor
 			call SetUnitManaBJ(caster, GetUnitState(caster, UNIT_STATE_MANA) + mana)
 			call Spell.showManaTextTag(caster, mana)
+			call PlaySoundOnUnitBJ(thistype.whichSound, 60.0, caster)
 			set caster = null
 			call DestroyEffect(casterEffect)
 			set casterEffect = null
@@ -38,6 +40,10 @@ library StructSpellsSpellHolyPower requires Asl, StructGameClasses, StructGameSp
 			call this.addGrimoireEntry('A0X4', 'A0X5')
 			
 			return this
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.whichSound = CreateSound("Abilities\\Spells\\Items\\AIma\\ManaPotion.wav", false, false, true, 12700, 12700, "")
 		endmethod
 	endstruct
 

@@ -514,6 +514,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 		public static method addCharacter takes ACharacter character returns nothing
 			call thistype.addUnit(character.unit())
+			// auto select character, ready for the fight
+			call SelectUnitAddForPlayer(character.unit(), character.player())
 			call character.displayMessage(ACharacter.messageTypeInfo, thistype.m_textEnter)
 		endmethod
 

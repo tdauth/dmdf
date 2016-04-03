@@ -15,8 +15,8 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			call ShowUnit(whichUnit, false)
 		endmethod
 
-		private static method forGroupShow takes unit whichUnit returns nothing
-			call ShowUnit(whichUnit, true)
+		private static method forGroupRemove takes unit whichUnit returns nothing
+			call RemoveUnit(whichUnit)
 		endmethod
 		
 		public stub method onInitAction takes nothing returns nothing
@@ -145,7 +145,8 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			call Game.resetVideoSettings()
 			
 			if (this.m_summonedUnits != 0) then
-				call this.m_summonedUnits.forGroup(thistype.forGroupShow)
+				// remove them, otherwise he will summon them twice!
+				call this.m_summonedUnits.forGroup(thistype.forGroupRemove)
 				call this.m_summonedUnits.destroy()
 				set this.m_summonedUnits = 0
 			endif

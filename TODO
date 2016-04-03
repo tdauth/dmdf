@@ -824,7 +824,7 @@ Schwerwiegende Fehler:
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
 * FIXED: Crash wenn die Ansicht zu einem Dungeon gewechselt wird und die 3rd-Person-Kamera aktiv ist.
 * FIXED: Double Free AIntegerListIterator bei speech() wenn übersprungen wird.
-* Deranor beschwört zweimal Schattenriesen (einmal im Video). Die aus dem Video sind neutral und greifen nicht an. Am besten nach Video entfernen oder Zauber abklingen lassen.
+* FIXED: Deranor beschwört zweimal Schattenriesen (einmal im Video). Die aus dem Video sind neutral und greifen nicht an. Am besten nach Video entfernen oder Zauber abklingen lassen.
 * FIXED: Schattenriesen bluten -> Untot oder mechanisch machen!
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Lange Ladezeit: Widgetizer mit deutschem War3Patch ausprobieren. Erst Widgetizer verwenden, dann war3mapoptimizer!
@@ -861,6 +861,9 @@ Mehrspielertest:
 * FIXED: Steht auch nicht im CharactersSchema.
 
 Nervig:
+* FIXED: Autoselect character when entering the arena!
+* FIXED: Norsemen in the camp are not invulnerable from the start.
+* Arena opponnent walks out of the arena if he is blinded.
 * Kollisionsgrößen der Charaktere sind zu groß.
 * Sound bei Stilleffekt muss bei Unterhaltungen weg.
 * Keine HeroGlows für Schwert, Schild, Helm, Bogen und Lanze.

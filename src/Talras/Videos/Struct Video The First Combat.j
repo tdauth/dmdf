@@ -306,6 +306,12 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call firstEnemyGroup.addGroup(this.m_firstEnemyGroup, true, false)
 			set this.m_firstActorGroup = null
 			set this.m_firstEnemyGroup = null
+			
+			call SetUnitInvulnerable(gg_unit_n01I_0150, false)
+			call SetUnitInvulnerable(gg_unit_n01I_0151, false)
+			call SetUnitInvulnerable(gg_unit_n01I_0152, false)
+			call SetUnitInvulnerable(gg_unit_n01I_0153, false)
+			
 			// camera bounds reset is unnecessary
 			call Game.resetVideoSettings()
 			call QuestTheNorsemen.quest.evaluate().startSpawns.evaluate(firstAllyGroup, firstEnemyGroup) // don't destroy groups!

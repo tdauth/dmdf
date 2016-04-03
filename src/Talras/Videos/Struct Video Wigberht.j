@@ -397,14 +397,13 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
-			call this.m_hiddenCorpses.forGroup(thistype.groupFunctionShow)
-			call this.m_hiddenCorpses.destroy()
-			set this.m_hiddenCorpses = 0
+			call this.clearHiddenCorpses.evaluate() // new OpLimit
 		
 			call RemoveUnit(this.m_actorOrcLeader)
 			set this.m_actorOrcLeader = null
-			call this.m_staticActors.forGroup(thistype.groupFunctionRemove)
-			call this.m_staticActors.destroy()
+			
+			call this.clearStaticActors.evaluate() // new OpLimit
+			
 			debug call Print("Before orc guardians")
 			call this.m_orcGuardians.forGroup(thistype.groupFunctionRemove)
 			call this.m_orcGuardians.destroy()
@@ -418,6 +417,17 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			endif
 			
 			call Game.resetVideoSettings()
+		endmethod
+		
+		private method clearHiddenCorpses takes nothing returns nothing
+			call this.m_hiddenCorpses.forGroup(thistype.groupFunctionShow)
+			call this.m_hiddenCorpses.destroy()
+			set this.m_hiddenCorpses = 0
+		endmethod
+		
+		private method clearStaticActors takes nothing returns nothing
+			call this.m_staticActors.forGroup(thistype.groupFunctionRemove)
+			call this.m_staticActors.destroy()
 		endmethod
 
 		private static method create takes nothing returns thistype
