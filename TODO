@@ -860,6 +860,7 @@ Mehrspielertest:
 * FIXED: Steht auch nicht im CharactersSchema.
 
 Nervig:
+* Sound bei Stilleffekt muss bei Unterhaltungen weg.
 * Keine HeroGlows für Schwert, Schild, Helm, Bogen und Lanze.
 * Tiergestalten: Einfach Klassenzauber lassen.
 * Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen.

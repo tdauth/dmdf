@@ -102,25 +102,36 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		// Ich habe hier einen Pilz.
 		private static method infoActionIHaveMushrooms takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
+			local boolean finished = false
 			call speech(info, character, false, tre("Ich habe hier einen Pilz.", "I have one mushroom."), null)
 			if (thistype.mushroomsAreTasty(character)) then
-				// Steinpilz ist essbar
-				if (character.inventory().hasItemType('I01L')) then
-					// Pilz entfernen
-					call character.inventory().removeItemType('I01L')
-				// Pfifferling ist essbar
-				elseif (character.inventory().hasItemType('I01K')) then
-					// Pilz entfernen
-					call character.inventory().removeItemType('I01K')
-				endif
-				// (Pilze sind essbar, aber noch nicht genug)
-				if (not QuestMushroomSearch.characterQuest(character).addMushroom()) then
+				loop
+					exitwhen (finished)
+					// Steinpilz ist essbar
+					if (character.inventory().hasItemType('I01L')) then
+						// Pilz entfernen
+						call character.inventory().removeItemType('I01L')
+					// Pfifferling ist essbar
+					elseif (character.inventory().hasItemType('I01K')) then
+						// Pilz entfernen
+						call character.inventory().removeItemType('I01K')
+					else
+						exitwhen (true)
+					endif
+					// (Pilze sind essbar, aber noch nicht genug)
+					if (not QuestMushroomSearch.characterQuest(character).addMushroom()) then
+					// (Pilze sind essbar und genug)
+					else
+						call speech(info, character, true, tre("Danke, das reicht, sogar dem Herzog (Lacht). Hier hast du ein paar Goldmünzen, danke für deine Mühen. Man trifft selten Leute, die noch was Anderes als sich selbst im Kopf haben.", "Thanks, that's enough, even for the duke (Laughs). Here you have a few gold coins, thank you for your efforts. One rarely meets people who have something different than themselves in mind."), gg_snd_Dago26)
+						// Auftrag „Pilzsuche“ abgeschlossen
+						call QuestMushroomSearch.characterQuest(character).complete()
+						
+						set finished = true
+					endif
+				endloop
+				
+				if (not finished) then
 					call speech(info, character, true, tre("Sehr gut, danke. Ich brauche aber noch mehr essbare Pilze.", "Very good thank you. But I still need more edible mushrooms."), gg_snd_Dago25)
-				// (Pilze sind essbar und genug)
-				else
-					call speech(info, character, true, tre("Danke, das reicht, sogar dem Herzog (Lacht). Hier hast du ein paar Goldmünzen, danke für deine Mühen. Man trifft selten Leute, die noch was Anderes als sich selbst im Kopf haben.", "Thanks, that's enough, even for the duke (Laughs). Here you have a few gold coins, thank you for your efforts. One rarely meets people who have something different than themselves in mind."), gg_snd_Dago26)
-					// Auftrag „Pilzsuche“ abgeschlossen
-					call QuestMushroomSearch.characterQuest(character).complete()
 				endif
 			// (Pilze sind nicht essbar)
 			else

@@ -39,6 +39,7 @@ call thistype.addContributor("Heinrich-Stefan N.", tr("Manfred"))
 call thistype.addContributor("Marco R.", tr("Einar"))
 call thistype.addContributor("Benkenfilm", tr("Trommon"))
 call thistype.addContributor("Martin B.", tr("Björn"))
+call thistype.addContributor("Daniel Spieker", tr("Tobias"))
 
 call thistype.addTitle(tre("Weitere Unterstützung", "Further Support"))
 call thistype.addContributor("WaterKnight", tre("Tests", "Tests"))

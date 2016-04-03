@@ -10,7 +10,7 @@ library StructGameTalk requires Asl
 		private static method triggerConditionSell takes nothing returns boolean
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			
-			if (GetSellingUnit() == this.unit() and GetUnitTypeId(GetSoldUnit()) == 'n05E') then
+			if (GetSellingUnit() == this.unit() and (GetUnitTypeId(GetSoldUnit()) == 'n05E' or GetUnitTypeId(GetSoldUnit()) == 'n077')) then
 				return true
 			endif
 			
@@ -22,10 +22,14 @@ library StructGameTalk requires Asl
 			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 1)
 			
 			//if (ACharacter.isUnitCharacter(GetBuyingUnit())) then
-			if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and ACharacter.playerCharacter(GetOwningPlayer(soldUnit)) != 0 and IsUnitInRange(ACharacter.playerCharacter(GetOwningPlayer(soldUnit)).unit(), this.unit(), 600.0) and ACharacter.playerCharacter(GetOwningPlayer(soldUnit)).talk() == 0 and this.isEnabled()) then
-				call this.openForCharacter(ACharacter.playerCharacter(GetOwningPlayer(soldUnit)))
-			debug else
-				debug call this.print("No character!")
+			if (GetUnitTypeId(soldUnit) == 'n05E') then
+				if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and ACharacter.playerCharacter(GetOwningPlayer(soldUnit)) != 0 and IsUnitInRange(ACharacter.playerCharacter(GetOwningPlayer(soldUnit)).unit(), this.unit(), 600.0) and ACharacter.playerCharacter(GetOwningPlayer(soldUnit)).talk() == 0 and this.isEnabled()) then
+					call this.openForCharacter(ACharacter.playerCharacter(GetOwningPlayer(soldUnit)))
+				debug else
+					debug call this.print("No character!")
+				endif
+			elseif (GetUnitTypeId(soldUnit) == 'n077') then
+				call playerSkipsInfo(GetOwningPlayer(soldUnit))
 			endif
 			
 			call RemoveUnit(soldUnit)
@@ -63,8 +67,10 @@ library StructGameTalk requires Asl
 			
 			call UnitAddAbility(whichUnit, 'A19X')
 			call UnitAddAbility(whichUnit, 'Asud') // sell units
-			call RemoveUnitFromStock(whichUnit, 'n05E') // remove from units which do already sell it
+			// removing units from stock does not work
+			//call RemoveUnitFromStock(whichUnit, 'n05E') // remove from units which do already sell it
 			call AddUnitToStock(whichUnit, 'n05E', 1, 1)
+			call AddUnitToStock(whichUnit, 'n077', 1, 1)
 			
 			/*
 			 * Store the talk on the unit to detect if the unit has a talk.
@@ -83,7 +89,7 @@ library StructGameTalk requires Asl
 		endmethod
 		
 		private static method triggerConditionSellForNonTalks takes nothing returns boolean
-			if (GetUnitTypeId(GetSoldUnit()) == 'n05E' and not DmdfHashTable.global().hasHandleInteger(GetSellingUnit(), DMDF_HASHTABLE_KEY_TALK)) then
+			if ((GetUnitTypeId(GetSoldUnit()) == 'n05E' or GetUnitTypeId(GetSoldUnit()) == 'n077') and not DmdfHashTable.global().hasHandleInteger(GetSellingUnit(), DMDF_HASHTABLE_KEY_TALK)) then
 				return true
 			endif
 			

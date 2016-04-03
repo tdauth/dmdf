@@ -82,6 +82,8 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static NpcRoutineWithFacing m_kunosDaughterStandsInFrontOfTheHouse
 		private static NpcTalksRoutine m_kunosDaughterTalksToKuno
 
+		private static NpcTalksRoutine m_tobiasTalksToHimself
+		
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
@@ -339,7 +341,15 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_kunosDaughterTalksToKuno = NpcTalksRoutine.create(Routines.talk(), Npcs.kunosDaughter(), 16.0, MapData.evening, gg_rct_waypoint_kunos_daughter_0)
 			call thistype.m_kunosDaughterTalksToKuno.setPartner(Npcs.kuno())
 			call thistype.m_kunosDaughterTalksToKuno.setFacing(35.21)
-
+			
+			set thistype.m_tobiasTalksToHimself = NpcTalksRoutine.create(Routines.talk(), Npcs.tobias(), 0.0, 23.59, gg_rct_waypoint_tobias_0)
+			call thistype.m_tobiasTalksToHimself.setFacing(186.73)
+			call thistype.m_tobiasTalksToHimself.setPartner(null)
+			call thistype.m_tobiasTalksToHimself.addSound(tr("Gepriesen sei die heilige Kartoffel von dem fernen Kontinent mit strengen Einwanderungsbestimmungen für bärtige Leute."), gg_snd_Tobias101)
+			call thistype.m_tobiasTalksToHimself.addSound(tr("Oh höre mich an du Kreatur meiner Zuneigung."), gg_snd_Tobias201)
+			call thistype.m_tobiasTalksToHimself.addSound(tr("Hallo, hallo, hallo, hallo, hallo …"), gg_snd_Tobias301)
+			call thistype.m_tobiasTalksToHimself.addSound(tr("Huhn, Huhn, Huhn, Huhn, Huhn ..."), gg_snd_Tobias401)
+			
 			// menials
 			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)
 			call NpcRoutineWithFacing(routine).setFacing(GetRandomReal(0.0, 360.0))
