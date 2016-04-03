@@ -93,9 +93,9 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		// Kann ich dir irgendwie helfen?
 		private static method infoActionHelp takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("Kann ich dir irgendwie helfen?", "Can I help you?"), null)
-			call speech(info, character, true, tr("Klar kannst du das, allerdings nur wenn du ein guter Schmied bist. Nichts gegen Wieland, er ist ein hervorragender Schmied, aber er hat eben auch viele andere Aufträge hier in der Burg."), gg_snd_Einar_19)
-			call speech(info, character, true, tr("Ich brauche dringend mehr Schwerter. Die einfachen Schwerter verkaufen sich zwar nicht so gut, aber wenn ich gar keine mehr davon habe, hilft mir das auch nicht gerade."), gg_snd_Einar_20)
-			call speech(info, character, true, tr("Schmiede mir fünf Kurzschwerter und ich gebe dir eine entsprechende Summe an Goldmünzen dafür. Vergiss aber nicht, dass sie neu geschmiedet werden müssen. Also drehe mir keine weiterverkaufte Ware an!"), gg_snd_Einar_21)
+			call speech(info, character, true, tre("Klar kannst du das, allerdings nur wenn du ein guter Schmied bist. Nichts gegen Wieland, er ist ein hervorragender Schmied, aber er hat eben auch viele andere Aufträge hier in der Burg.", "Sure you can do that, but only if you're a good blacksmith. Nothing against Wieland, he is an excellent blacksmith, but he just has too many other jobs here in the castle."), gg_snd_Einar_19)
+			call speech(info, character, true, tre("Ich brauche dringend mehr Schwerter. Die einfachen Schwerter verkaufen sich zwar nicht so gut, aber wenn ich gar keine mehr davon habe, hilft mir das auch nicht gerade.", "I urgently need more swords. The simple swords don't sell that good, but if I have no more of it, it doesn't help me neither."), gg_snd_Einar_20)
+			call speech(info, character, true, tre("Schmiede mir fünf Kurzschwerter und ich gebe dir eine entsprechende Summe an Goldmünzen dafür. Vergiss aber nicht, dass sie neu geschmiedet werden müssen. Also drehe mir keine weiterverkaufte Ware an!", "Forge five short swords for me and I give you an appropriate amount of gold coins for it. But do not forget that they have to be forged newly. So don't give me further sold goods!"), gg_snd_Einar_21)
 			// Neuer Auftrag „Nachschub für Einar“
 			call QuestSuppliesForEinar.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
@@ -109,8 +109,8 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		
 		// Wo kann ich hier schmieden?
 		private static method infoActionForge takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wo kann ich hier schmieden?"), null)
-			call speech(info, character, true, tr("Vermutlich nur in Wielands Schmiede. Wenn du dich noch zu wenig mit dem Schmiedehandwerk auskennst, dann besorge dir doch ein gutes Buch mit Anleitungen von Wieland. Das wird dir sicher helfen."), gg_snd_Einar_22)
+			call speech(info, character, false, tre("Wo kann ich hier schmieden?", "Where can I forge here?"), null)
+			call speech(info, character, true, tre("Vermutlich nur in Wielands Schmiede. Wenn du dich noch zu wenig mit dem Schmiedehandwerk auskennst, dann besorge dir doch ein gutes Buch mit Anleitungen von Wieland. Das wird dir sicher helfen.", "Probably only in Wieland's forgery. If you don't know enough about the blacksmith, then just get yourself a good book with plans from Wieland. This will certainly help you."), gg_snd_Einar_22)
 			call info.talk().showStartPage(character)
 		endmethod
 		
@@ -122,8 +122,8 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		
 		// Hier sind fünf Kurzschwerter.
 		private static method infoActionWeapons takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hier sind fünf Kurzschwerter."), null)
-			call speech(info, character, true, tr("Sehr gut, mein Freund. Ich danke dir vielmals dafür. Hier hast du ein paar Goldmünzen."), gg_snd_Einar_23)
+			call speech(info, character, false, tre("Hier sind fünf Kurzschwerter.", "Here are five short swords."), null)
+			call speech(info, character, true, tre("Sehr gut, mein Freund. Ich danke dir vielmals dafür. Hier hast du ein paar Goldmünzen.", "Very good my friend. I thank you very much for that. Here you have a few gold coins."), gg_snd_Einar_23)
 			// Auftrag „Nachschub für Einar“ abgeschlossen
 			call QuestSuppliesForEinar.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
@@ -137,20 +137,20 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		
 		// Hey, hast du mich etwa bei Wieland angeschwärzt? Verdammt Mann, das war doch nicht so gemeint. Geschäft ist Geschäft, verstehst du das nicht?
 		private static method infoActionAboutWieland takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Hey, hast du mich etwa bei Wieland angeschwärzt? Verdammt Mann, das war doch nicht so gemeint. Geschäft ist Geschäft, verstehst du das nicht?"), gg_snd_Einar_24_1)
+			call speech(info, character, true, tre("Hey, hast du mich etwa bei Wieland angeschwärzt? Verdammt Mann, das war doch nicht so gemeint. Geschäft ist Geschäft, verstehst du das nicht?", "Hey, did you blacken me to Wieland? Damn man, it wasn't meant that way. Business is business, don't you understand?"), gg_snd_Einar_24_1)
 			call info.talk().showStartPage(character)
 		endmethod
 		
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.einar(), thistype.startPageAction)
 			// start page
-			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tr("Hallo."))
-			set this.m_offer = this.addInfo(false, false, thistype.infoConditionOffer, thistype.infoActionOffer, tr("Was hast du denn so im Angebot?"))
-			set this.m_whereFrom = this.addInfo(false, false, thistype.infoConditionWhereFrom, thistype.infoActionWhereFrom, tr("Woher kommst du?"))
-			set this.m_specialWeapon = this.addInfo(false, false, thistype.infoConditionSpecialWeapon, thistype.infoActionSpecialWeapon, tr("Verkaufst du auch eine ganz besondere Waffe?"))
-			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tr("Kann ich dir irgendwie helfen?"))
-			set this.m_forge = this.addInfo(true, false, thistype.infoConditionForge, thistype.infoActionForge, tr("Wo kann ich hier schmieden?"))
-			set this.m_weapons = this.addInfo(true, false, thistype.infoConditionWeapons, thistype.infoActionWeapons, tr("Hier sind fünf Kurzschwerter."))
+			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Hallo.", "Hello."))
+			set this.m_offer = this.addInfo(false, false, thistype.infoConditionOffer, thistype.infoActionOffer, tre("Was hast du denn so im Angebot?", "What do you have in the offer?"))
+			set this.m_whereFrom = this.addInfo(false, false, thistype.infoConditionWhereFrom, thistype.infoActionWhereFrom, tre("Woher kommst du?", "Where are you from?"))
+			set this.m_specialWeapon = this.addInfo(false, false, thistype.infoConditionSpecialWeapon, thistype.infoActionSpecialWeapon, tre("Verkaufst du auch eine ganz besondere Waffe?", "Are you selling a very special weapon?"))
+			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tre("Kann ich dir irgendwie helfen?", "Can I help you?"))
+			set this.m_forge = this.addInfo(true, false, thistype.infoConditionForge, thistype.infoActionForge, tre("Wo kann ich hier schmieden?", "Where can I forge here?"))
+			set this.m_weapons = this.addInfo(true, false, thistype.infoConditionWeapons, thistype.infoActionWeapons, tre("Hier sind fünf Kurzschwerter.", "Here are five short swords."))
 			set this.m_exit = this.addExitButton()
 			
 			set this.m_aboutWieland = this.addInfo(false, true, thistype.infoConditionAboutWieland, thistype.infoActionAboutWieland, null)

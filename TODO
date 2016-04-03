@@ -818,11 +818,12 @@ Für Version 0.6:
 
 Aufgehoben für Version 0.7:
 Schwerwiegende Fehler:
+* New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * FIXED: gg_snd_Dago18 ist verbuggt. Kein Ton und kann nicht übersprungen werden. Entweder SLK oder kein unterstützes Format. VLC kann die Datei abspielen.
 * Orcs laufen zurück bei "Die Nordmänner" obwohl sie nicht neutral passiv sind. Verwirrend da man nicht weiß, ob man das Camp angreifen soll. Laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
 * FIXED: Crash wenn die Ansicht zu einem Dungeon gewechselt wird und die 3rd-Person-Kamera aktiv ist.
-* Double Free AIntegerListIterator bei speech() wenn übersprungen wird.
+* FIXED: Double Free AIntegerListIterator bei speech() wenn übersprungen wird.
 * Deranor beschwört zweimal Schattenriesen (einmal im Video). Die aus dem Video sind neutral und greifen nicht an. Am besten nach Video entfernen oder Zauber abklingen lassen.
 * FIXED: Schattenriesen bluten -> Untot oder mechanisch machen!
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
@@ -830,18 +831,18 @@ Schwerwiegende Fehler:
 * Lag am Anfang: Fähigkeiten preloaden.
 * Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen?
 Repickprobleme (vermutlich durch OpLimit irgendwo):
+* ACharactersScheme: Multiboard update does not happen immediately!
 * Multiboard verschwindet manchmal bei Repick.
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
 * Nach Repick ist Grundzauber nicht in den Favoriten.
 * Nach Repick ist ab und zu entweder ein Zauber der Klasse nicht da oder noch ein Zauber der alten Klasse stattdessen.
 * Vermutung: Spell.onDestroy() remove funktioniert nicht immer (OpLimit???) ODER Konstruktor Spell.create() bzw. Spell.createWithEvent() wird nicht verwendet. Dann landet der Zauber nicht in den classSpells().
 * FIXED: Double Free AIntegerListIterator bei Spruchrolle der Kühe.
-* speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!).
+* speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!). Passiert nur manchmal.
 * FIXED: Auf Schaf reiten: Fähigkeit nicht hinzufügen, wenn Zauberbuch nicht deaktiviert wird UND Rucksack nicht deaktiviert wird.
 * FIXED: Auf Schaf reiten: Equipmentfähigkeiten werden nicht wieder hinzugefügt, nachdem man auf Schaf reitet (nach Verwandlung), wenn Rucksack offen ist.
 * DEPRECATED: Werden nach Repick die Spielcharakterzauber neu erzeugt? initCharacterSpells() Reiten auf Schaf geht nicht so richtig?
 * FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
-* Kollisionsgrößen der Charaktere sind zu groß.
 * FIXED: Textnachricht ausgeben wenn Zauber als passiver Zauber oder allgemein nicht in Favoriten geskillt wird.
 * FIXED: Add a learning ability for every grimoire spell.
 * DONE: Hotkeys for all class spells.
@@ -860,6 +861,7 @@ Mehrspielertest:
 * FIXED: Steht auch nicht im CharactersSchema.
 
 Nervig:
+* Kollisionsgrößen der Charaktere sind zu groß.
 * Sound bei Stilleffekt muss bei Unterhaltungen weg.
 * Keine HeroGlows für Schwert, Schild, Helm, Bogen und Lanze.
 * Tiergestalten: Einfach Klassenzauber lassen.
@@ -876,7 +878,6 @@ Kleriker:
 Weitere TODOS:
 * Remove the leading I of item types from the save code since it is always I.
 * Highlight upper case and lower case letters with different colors.
-* New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * The local files option does not work on Windows 8 or 10 as well. The only possible solution is mixing War3Patch with the data.
 * Remove sound from talk effect.
 * FIXED: Don't show drop texts since it becomes really annoying.

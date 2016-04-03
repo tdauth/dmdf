@@ -15,8 +15,8 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 
 		// Hallo.
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("￼Ich grüße dich. Tut mir leid, ich habe momentan viel zu tun, also sprich schnell, wenn du etwas zu sagen hast."), gg_snd_Ferdinand1)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("￼Ich grüße dich. Tut mir leid, ich habe momentan viel zu tun, also sprich schnell, wenn du etwas zu sagen hast.", "I greet you. I'm sorry, I currently have a lot to do, so talk fast when you have something to say."), gg_snd_Ferdinand1)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -27,8 +27,8 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 
 		// Was hast du denn zu tun?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was hast du denn zu tun?"), null)
-			call speech(info, character, true, tr("￼Nun, ich muss meines Lehnsherrn Gut verwalten und mich um dieses Lumpenpack von Bauern kümmern. Die wollen doch tatsächlich den Schwanz einziehen und sich aus dem Staub machen oder in der Burg verstecken, sobald unsere Feinde hier eintreffen."), gg_snd_Ferdinand2)
+			call speech(info, character, false, tre("Was hast du denn zu tun?", "What do you have to do?"), null)
+			call speech(info, character, true, tre("￼Nun, ich muss meines Lehnsherrn Gut verwalten und mich um dieses Lumpenpack von Bauern kümmern. Die wollen doch tatsächlich den Schwanz einziehen und sich aus dem Staub machen oder in der Burg verstecken, sobald unsere Feinde hier eintreffen.", "Well, I have to manage the good of my feudal lord and take care of this rabble of farmers. They actually want to move the tail and make off or hide in the castle as soon as our enemies arrive here."), gg_snd_Ferdinand2)
 			call speech(info, character, true, tr("Zum Kriegsdienst haben sie sich allesamt verpflichtet. Mindestens ein Jahr lang. Diese feigen Hunde. Und zu allem Überfluss beschweren sie sich auch noch über die angeblich zu hohen Abgaben."), gg_snd_Ferdinand3)
 			call speech(info, character, true, tr("Schlechte Ernte erzählen sie mir dauernd. Der Weizen blüht und die wollen mir was von einer Hungersnot verkaufen. Dabei müssen wir unsere Vorräte aufstocken und uns auf eine mögliche Belagerung vorbereiten."), gg_snd_Ferdinand4)
 			call speech(info, character, true, tr("Früher hätte man ein solches Verhalten nicht geduldet und sie einfach allesamt verprügeln lassen, aber wir leben ja seit Neustem in einer Zeit der Verhandlungen. Als Nächstes wollen sie vermutlich noch mitbestimmen, wer in der Burg leben darf und wer nicht, dieses Hundepack!"), gg_snd_Ferdinand5)

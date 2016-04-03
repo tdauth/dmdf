@@ -345,10 +345,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_tobiasTalksToHimself = NpcTalksRoutine.create(Routines.talk(), Npcs.tobias(), 0.0, 23.59, gg_rct_waypoint_tobias_0)
 			call thistype.m_tobiasTalksToHimself.setFacing(186.73)
 			call thistype.m_tobiasTalksToHimself.setPartner(null)
-			call thistype.m_tobiasTalksToHimself.addSound(tr("Gepriesen sei die heilige Kartoffel von dem fernen Kontinent mit strengen Einwanderungsbestimmungen für bärtige Leute."), gg_snd_Tobias101)
-			call thistype.m_tobiasTalksToHimself.addSound(tr("Oh höre mich an du Kreatur meiner Zuneigung."), gg_snd_Tobias201)
-			call thistype.m_tobiasTalksToHimself.addSound(tr("Hallo, hallo, hallo, hallo, hallo …"), gg_snd_Tobias301)
-			call thistype.m_tobiasTalksToHimself.addSound(tr("Huhn, Huhn, Huhn, Huhn, Huhn ..."), gg_snd_Tobias401)
+			call thistype.m_tobiasTalksToHimself.addSound(tre("Gepriesen sei die heilige Kartoffel von dem fernen Kontinent mit strengen Einwanderungsbestimmungen für bärtige Leute.", "Blessed be the holy potato from the distant continent with strict immigration rules for bearded people."), gg_snd_Tobias101)
+			call thistype.m_tobiasTalksToHimself.addSound(tre("Oh höre mich an du Kreatur meiner Zuneigung.", "Oh listen to me, you creature of my affection."), gg_snd_Tobias201)
+			call thistype.m_tobiasTalksToHimself.addSound(tre("Hallo, hallo, hallo, hallo, hallo …", "Hello, hello, hello, hello, hello …"), gg_snd_Tobias301)
+			call thistype.m_tobiasTalksToHimself.addSound(tre("Huhn, Huhn, Huhn, Huhn, Huhn …", "Chicken, chicken, chicken, chicken, chicken …"), gg_snd_Tobias401)
 			
 			// menials
 			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)
@@ -384,6 +384,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call AUnitRoutine.manualStart(Npcs.kuno())
 			call AUnitRoutine.manualStart(Npcs.kunosDaughter())
 			call AUnitRoutine.manualStart(Npcs.trommon())
+			call AUnitRoutine.manualStart(Npcs.tobias())
 			call AUnitRoutine.manualStart(gg_unit_n02J_0013)
 			call AUnitRoutine.manualStart(gg_unit_n02J_0157)
 			call AUnitRoutine.manualStart(gg_unit_n02J_0159)

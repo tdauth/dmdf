@@ -405,8 +405,10 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			set this.m_actorOrcLeader = null
 			call this.m_staticActors.forGroup(thistype.groupFunctionRemove)
 			call this.m_staticActors.destroy()
+			debug call Print("Before orc guardians")
 			call this.m_orcGuardians.forGroup(thistype.groupFunctionRemove)
 			call this.m_orcGuardians.destroy()
+			debug call Print("After orc guardians")
 			call DmdfHashTable.global().destroyTrigger(this.m_killTrigger)
 			set this.m_killTrigger = null
 			
