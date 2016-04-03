@@ -37,19 +37,19 @@ library StructMapVideosVideoPalace requires Asl, StructGameGame
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_the_gate_5, true, 0.00)
-			if (wait(4.0)) then
+			if (wait(2.0)) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_gate_6, true, 2.50)
-			if (wait(4.0)) then
+			call CameraSetupApplyForceDuration(gg_cam_the_gate_6, true, 1.50)
+			if (wait(2.0)) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_gate_7, true, 2.50)
-			if (wait(4.0)) then
+			call CameraSetupApplyForceDuration(gg_cam_the_gate_7, true, 1.50)
+			if (wait(2.0)) then
 				return
 			endif
-			call CameraSetupApplyForceDuration(gg_cam_the_gate_8, true, 2.50)
-			if (wait(4.0)) then
+			call CameraSetupApplyForceDuration(gg_cam_the_gate_8, true, 1.50)
+			if (wait(2.0)) then
 				return
 			endif
 		

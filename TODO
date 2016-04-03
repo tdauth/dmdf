@@ -861,6 +861,8 @@ Mehrspielertest:
 * FIXED: Steht auch nicht im CharactersSchema.
 
 Nervig:
+* FIXED: Fix black button background in Arena map.
+* Fix cursor in map Gardonar.
 * FIXED: Autoselect character when entering the arena!
 * FIXED: Norsemen in the camp are not invulnerable from the start.
 * Arena opponnent walks out of the arena if he is blinded.

@@ -1,4 +1,4 @@
-library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapVideosVideoPalace
+library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapVideosVideoPalace, StructMapVideosVideoWelcome
 
 	struct QuestAreaPalace extends QuestArea
 	
@@ -6,10 +6,21 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 			call VideoPalace.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call ACharacter.panCameraSmartToAll()
-			call QuestPalace.quest.evaluate().questItem(QuestPalace.questItemReachPalace).complete()
-			call Fellows.wigberht().shareWithAll()
-			call Fellows.ricman().shareWithAll()
-			call Fellows.dragonSlayer().shareWithAll()
+			call QuestPalace.quest.evaluate().completeReachPalace.evaluate()
+		endmethod
+	
+		public static method create takes rect whichRect returns thistype
+			return thistype.allocate(whichRect)
+		endmethod
+	endstruct
+	
+	struct QuestAreaPalaceInside extends QuestArea
+	
+		public stub method onStart takes nothing returns nothing
+			call VideoWelcome.video().play()
+			call waitForVideo(MapData.videoWaitInterval)
+			call ACharacter.panCameraSmartToAll()
+			call QuestPalace.quest.evaluate().completeReachPalace.evaluate()
 		endmethod
 	
 		public static method create takes rect whichRect returns thistype
@@ -19,13 +30,44 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 	
 	struct QuestPalace extends SharedQuest
 		public static constant integer questItemReachPalace = 0
+		public static constant integer questItemReachPalaceInside = 1
+		public static constant integer questItemFightThroughHell = 2
 		private QuestAreaPalace m_questAreaPalace
+		private QuestAreaPalace m_questAreaPalaceInside
 
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
 			set this.m_questAreaPalace = QuestAreaPalace.create(gg_rct_quest_palace_gather)
 			return this.enableUntil(thistype.questItemReachPalace)
+		endmethod
+		
+		public method completeReachPalace takes nothing returns nothing
+			call this.questItem(thistype.questItemReachPalace).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemReachPalaceInside).setState(thistype.stateNew)
+			call this.displayState()
+			
+			call ModifyGateBJ(bj_GATEOPERATION_OPEN, gg_dest_DTg5_0000)
+			
+			call SetUnitX(gg_unit_n06Y_0023, GetRectCenterX(gg_rct_quest_palace_guard_position_0))
+			call SetUnitY(gg_unit_n06Y_0023, GetRectCenterY(gg_rct_quest_palace_guard_position_0))
+			
+			call SetUnitX(gg_unit_n06Y_0024, GetRectCenterX(gg_rct_quest_palace_guard_position_1))
+			call SetUnitY(gg_unit_n06Y_0024, GetRectCenterY(gg_rct_quest_palace_guard_position_1))
+			
+			call SetUnitX(gg_unit_n06X_0016, GetRectCenterX(gg_rct_quest_palace_guard_position_2))
+			call SetUnitY(gg_unit_n06X_0016, GetRectCenterY(gg_rct_quest_palace_guard_position_2))
+			
+			call SetUnitX(gg_unit_n06X_0017, GetRectCenterX(gg_rct_quest_palace_guard_position_3))
+			call SetUnitY(gg_unit_n06X_0017, GetRectCenterY(gg_rct_quest_palace_guard_position_3))
+			
+			set this.m_questAreaPalaceInside = QuestAreaPalaceInside.create(gg_rct_quest_palace_gather_inside)
+		endmethod
+		
+		public method completeReachPalaceInside takes nothing returns nothing
+			call this.questItem(thistype.questItemReachPalaceInside).setState(thistype.stateCompleted)
+			call this.questItem(thistype.questItemFightThroughHell).setState(thistype.stateNew)
+			call this.displayState()
 		endmethod
 
 		private static method create takes nothing returns thistype
@@ -37,6 +79,19 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 			set questItem = AQuestItem.create(this, tr("Sammelt euch beim Palast."))
 			call questItem.setPing(true)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_palace_gather)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setReward(thistype.rewardExperience, 100)
+			
+			// item questItemReachPalaceInside
+			set questItem = AQuestItem.create(this, tr("Sammelt euch im Palast."))
+			call questItem.setPing(true)
+			call questItem.setPingCoordinatesFromRect(gg_rct_quest_palace_gather_inside)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setReward(thistype.rewardExperience, 100)
+			
+			// item questItemFightThroughHell
+			set questItem = AQuestItem.create(this, tr("Kämpft euch durch Gardonars Hölle."))
+			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 100)
 			

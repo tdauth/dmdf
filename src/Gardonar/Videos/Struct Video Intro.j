@@ -39,7 +39,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_intro_1, true, 0.00)
 			call Game.fadeInWithWait()
 		
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Wenn ihr dem Weg weiter folgt, kommt ihr zu einem Tor, das von Dämonen bewacht wird. Weiß der Teufel wo wir hier gelandet sind. Ihr solltet erst einmal die Gegend erkunden.", "If you continue to folow the path, you reach a gate which is guarded by demons. The devil knows where we ended up here. You should first explore this area."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Wenn ihr dem Weg weiter folgt, kommt ihr zu einem Tor, das von Dämonen bewacht wird. Weiß der Teufel wo wir hier gelandet sind. Ihr solltet erst einmal die Gegend erkunden.", "If you continue to follow the path, you reach a gate which is guarded by demons. The devil knows where we ended up here. You should first explore this area."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

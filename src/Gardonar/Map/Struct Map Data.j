@@ -141,6 +141,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Geben Sie \"-menu\" im Chat ein, um ins Haupt-Menü zu gelangen.", "Enter \"-menu\" into the chat to reach the main menu."))
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
+			
+			call Fellows.wigberht().shareWithAll()
+			call Fellows.ricman().shareWithAll()
+			call Fellows.dragonSlayer().shareWithAll()
+			
 			call QuestPalace.quest().enable()
 
 			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
