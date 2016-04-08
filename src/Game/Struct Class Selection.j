@@ -551,7 +551,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call SuspendTimeOfDay(true)
 			call SetTimeOfDay(0.0)
 			call ForceCinematicSubtitles(true)
-			call Game.setMapMusic("Music\\CharacterSelection.mp3")
+			
+			//call PlayMusic("Music\\CharacterSelection.mp3")
 
 			set i = 0
 			loop

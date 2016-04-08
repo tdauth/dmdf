@@ -84,6 +84,8 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 		private static NpcTalksRoutine m_tobiasTalksToHimself
 		
+		private static NpcTalksRoutine m_brogoTalksToHimself
+		
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
@@ -350,6 +352,14 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_tobiasTalksToHimself.addSound(tre("Hallo, hallo, hallo, hallo, hallo …", "Hello, hello, hello, hello, hello …"), gg_snd_Tobias301)
 			call thistype.m_tobiasTalksToHimself.addSound(tre("Huhn, Huhn, Huhn, Huhn, Huhn …", "Chicken, chicken, chicken, chicken, chicken …"), gg_snd_Tobias401)
 			
+			set thistype.m_brogoTalksToHimself = NpcTalksRoutine.create(Routines.talk(), Npcs.brogo(), 0.0, 23.59, gg_rct_waypoint_brogo_0)
+			call thistype.m_brogoTalksToHimself.setFacing(277.12)
+			call thistype.m_brogoTalksToHimself.setPartner(null)
+			call thistype.m_brogoTalksToHimself.addSound(tr("Feuer muss hier bleiben!"), gg_snd_Brogo13)
+			call thistype.m_brogoTalksToHimself.addSound(tr("Brogo mag Katzen."), gg_snd_Brogo14)
+			call thistype.m_brogoTalksToHimself.addSound(tr("Brogo vermisst Familie."), gg_snd_Brogo15)
+			call thistype.m_brogoTalksToHimself.addSound(tr("Tanka nett zu Brogo. Brogo nett zu Tanka."), gg_snd_Brogo16)
+			
 			// menials
 			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)
 			call NpcRoutineWithFacing(routine).setFacing(GetRandomReal(0.0, 360.0))
@@ -385,6 +395,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call AUnitRoutine.manualStart(Npcs.kunosDaughter())
 			call AUnitRoutine.manualStart(Npcs.trommon())
 			call AUnitRoutine.manualStart(Npcs.tobias())
+			call AUnitRoutine.manualStart(Npcs.brogo())
 			call AUnitRoutine.manualStart(gg_unit_n02J_0013)
 			call AUnitRoutine.manualStart(gg_unit_n02J_0157)
 			call AUnitRoutine.manualStart(gg_unit_n02J_0159)

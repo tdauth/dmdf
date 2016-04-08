@@ -178,7 +178,8 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			call this.showContributor.evaluate(this.m_currentContributor)
 			call TimerStart(this.m_viewTimer, thistype.viewTimeout, true, function thistype.timerFunctionView)
 			call TimerStart(this.m_autoChangeTimer, 4.0, false, function thistype.timerFunctionAutoChange)
-			call Game.setMapMusicForPlayer(whichPlayer, "Music\\Credits.mp3")
+			call StopMusicForPlayer(whichPlayer, false)
+			call PlayMusicForPlayer(whichPlayer, "Music\\Credits.mp3")
 			set whichPlayer = null
 		endmethod
 
@@ -190,7 +191,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			call this.m_textTags.clear()
 			set this.m_velocity = thistype.defaultVelocity
 			call super.onHide()
-			call Game.setDefaultMapMusicForPlayer(whichPlayer)
+			call ResumeMusicForPlayer(whichPlayer)
 			set whichPlayer = null
 		endmethod
 		

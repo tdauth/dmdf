@@ -87,7 +87,8 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 	struct MapData extends MapDataInterface
 		public static constant string mapName = "Talras0.7"
 		// Ascetic_-_06_-_Falling_into_Darkness.mp3
-		public static constant string mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3"//;Music\\mp3Music\\Pride_v002.mp3" //"Music\\Ingame.mp3;Music\\Talras.mp3"
+		// ;Music\\mp3Music\\Pride_v002.mp3
+		public static constant string mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3"// //"Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
 		public static constant player neutralPassivePlayer = Player(7)

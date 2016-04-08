@@ -9,7 +9,6 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
-			call Game.setDefaultMapMusic()
 
 			// bears
 			set this.m_actorBear0 = this.unitActor(this.saveUnitActor(gg_unit_n008_0083))
@@ -23,8 +22,6 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 			call SetUnitFacing(this.m_actorBear1, 116.66)
 			call UnitSuspendDecay(this.m_actorBear1, true)
 			call SetUnitLifeBJ(this.m_actorBear1, 0.0)
-
-
 
 			// Dago
 			set this.m_actorDago = this.unitActor(this.saveUnitActor(Npcs.dago()))

@@ -474,6 +474,15 @@ endif
 			// map
 			call MapData.init.evaluate()
 			
+			// the map music has to be set in the initialization
+			if (MapData.mapMusic != null) then
+				debug call Print("Setting music to " + musicList)
+				call ClearMapMusic()
+				call SetMapMusic(MapData.mapMusic, true, 0)
+			debug else
+				debug call Print("Error: Map music is empty.")
+			endif
+			
 			/*
 			 * DMdF uses a custom XP system.
 			 */
@@ -637,40 +646,6 @@ static if (DEBUG_MODE) then
 			endif
 		endmethod
 endif
-		/**
-		 * \param musicList File paths should be separated by ; character.
-		 */
-		public static method setMapMusic takes string musicList returns nothing
-			debug call Print("Setting music to " + musicList)
-			call StopMusic(false)
-			call ClearMapMusic()
-			call SetMapMusic(musicList, true, 0)
-			//call ResumeMusic()
-		endmethod
-
-		/**
-		 * Map data structure MapData should always have public static constant string member "mapMusic" which contains a list of music files.
-		 * If that value is equal to null music won't be changed.
-		 */
-		public static method setDefaultMapMusic takes nothing returns nothing
-			if (MapData.mapMusic != null) then
-				call thistype.setMapMusic(MapData.mapMusic)
-			debug else
-				debug call Print("Error: Map music is empty.")
-			endif
-		endmethod
-
-		public static method setMapMusicForPlayer takes player whichPlayer, string musicList returns nothing
-			call StopMusicForPlayer(whichPlayer, false)
-			call ClearMapMusicForPlayer(whichPlayer)
-			call SetMapMusicForPlayer(whichPlayer, musicList, true, 0)
-		endmethod
-
-		public static method setDefaultMapMusicForPlayer takes player whichPlayer returns nothing
-			if (MapData.mapMusic != null) then
-				call thistype.setMapMusicForPlayer(whichPlayer, MapData.mapMusic)
-			endif
-		endmethod
 		
 		private static method initCharactersScheme takes nothing returns nothing
 			local integer i
@@ -732,8 +707,8 @@ endif
 		 */
 		public static method start takes nothing returns nothing
 			local integer i
+			//call StopMusic(false) // stop music from class selection
 			call SuspendTimeOfDay(false)
-			call thistype.setDefaultMapMusic()
 			//call SetCreepCampFilterState(true)
 			//call SetAllyColorFilterState(0)
 			
@@ -936,6 +911,7 @@ endif
 			endloop
 			call DisableTransparency()
 			call CameraHeight.pause()
+			
 			/*
 			 * The attack order animations of the Villager255 have to be handled for the actor as well.
 			 * Otherwise the wrong animations will be shown in a fight.
@@ -997,10 +973,7 @@ endif
 			endloop
 			call thistype.resetCameraBounds()
 			call EnableTrigger(thistype.m_killTrigger)
-			/*
-			 * Make sure that not default wc3 music is played.
-			 */
-			call thistype.setDefaultMapMusic()
+
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.resumeAll)
 			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.resumeAll)
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterHiddenItem), function thistype.showItem)

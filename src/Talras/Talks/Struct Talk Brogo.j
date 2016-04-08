@@ -75,13 +75,13 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 			local thistype this = thistype(info.talk())
 			set this.m_playerHasTalkedTo[GetPlayerId(character.player())] = true
 			call speech(info, character, false, tre("Hallo.", "Hello."), null)
-			call speech(info, character, true, tre("Katze?", "Cat?"), null)
+			call speech(info, character, true, tre("Katze?", "Cat?"), gg_snd_Brogo1)
 			call speech(info, character, false, tre("Äh, was ist los?", "Uh, what is going on?"), null)
-			call speech(info, character, true, tre("Katze?", "Cat?"), null)
+			call speech(info, character, true, tre("Katze?", "Cat?"), gg_snd_Brogo2)
 			call speech(info, character, false, tre("Was ist mit der?", "What's with her?"), null)
-			call speech(info, character, true, tre("Du hast Katze?", "You have cat?"), null)
+			call speech(info, character, true, tre("Du hast Katze?", "You have cat?"), gg_snd_Brogo3)
 			call speech(info, character, false, tre("Hm?", "Hm?"), null)
-			call speech(info, character, true, tre("Brogo mag Katzen. Katzen zum Streicheln da. Brogo mag streicheln. Du bringst Katzen zu Brogo, dann Brogo glücklich.", "Brogo likes cats. Cats exist for stroking. Brogo likes stroke. You bring cats to Brogo, then Brogo happy."), null)
+			call speech(info, character, true, tre("Brogo mag Katzen. Katzen zum Streicheln da. Brogo mag streicheln. Du bringst Katzen zu Brogo, dann Brogo glücklich.", "Brogo likes cats. Cats exist for stroking. Brogo likes stroke. You bring cats to Brogo, then Brogo happy."), gg_snd_Brogo4)
 			call QuestCatsForBrogo.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
@@ -95,10 +95,10 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 			if (talk.cats() == 0) then
 				// (Charakter hat eine Katze)
 				if (countedCats == 1) then
-					call speech(info, character, true, tre("Toll, Katze, her damit. Brogo will streicheln!", "Great, cat, bring her on. Brogo wants to stroke!"), null)
+					call speech(info, character, true, tre("Toll, Katze, her damit. Brogo will streicheln!", "Great, cat, bring her on. Brogo wants to stroke!"), gg_snd_Brogo5)
 				// (Charakter hat mehrere Katzen)
 				else
-					call speech(info, character, true, tre("Toll, Katzen, her damit. Brogo will streicheln!", "Great, cats, bring them on. Brogo wants to stroke!"), null)
+					call speech(info, character, true, tre("Toll, Katzen, her damit. Brogo will streicheln!", "Great, cats, bring them on. Brogo wants to stroke!"), gg_snd_Brogo6)
 				endif
 				call character.addExperience(thistype.experienceBonus, true)
 				call character.displayMessage(ACharacter.messageTypeInfo, IntegerArg(tre("Erfahrungsbonus +%i", "Experience Bonus +%i"), thistype.experienceBonus))
@@ -107,21 +107,21 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 			else
 				// (Charakter hat eine Katze)
 				if (countedCats == 1) then
-					call speech(info, character, true, tre("Toll, noch eine Katze.", "Great, another cat."), null)
+					call speech(info, character, true, tre("Toll, noch eine Katze.", "Great, another cat."), gg_snd_Brogo7)
 				// (Charakter hat mehrere Katzen)
 				else
-					call speech(info, character, true, tre("Toll, noch mehr Katzen.", "Great, even more cats."), null)
+					call speech(info, character, true, tre("Toll, noch mehr Katzen.", "Great, even more cats."), gg_snd_Brogo8)
 				endif
 			endif
 			// (Brogos Maximalanzahl der geschenkten Katzen erreicht)
 			if (talk.characterHasReachedMaximum(character, countedCats)) then
-				call speech(info, character, true, tre("Jetzt aber genug Katzen. Brogo gibt dir Belohnung und dankt dir für Katzen.", "But enough cats now. Brogo gives you reward and thanks you for cats."), null)
-				call speech(info, character, true, tre("Belohnung ist Waffe von Troll. Brogo hat getötet viele Trolle. Trolle böser als Katzen.", "Reward is weapon of troll. Brogo has killed many trolls. Trolls worse than cats."), null)
+				call speech(info, character, true, tre("Jetzt aber genug Katzen. Brogo gibt dir Belohnung und dankt dir für Katzen.", "But enough cats now. Brogo gives you reward and thanks you for cats."), gg_snd_Brogo10) // TODO split gg_snd_Brogo10
+				call speech(info, character, true, tre("Belohnung ist Waffe von Troll. Brogo hat getötet viele Trolle. Trolle böser als Katzen.", "Reward is weapon of troll. Brogo has killed many trolls. Trolls worse than cats."), gg_snd_Brogo10)
 				call QuestCatsForBrogo.characterQuest(character).questItem(0).complete()
 				call character.giveItem('I062')
 			// (Brogos Maximalanzahl der geschenkten Katzen noch nicht erreicht)
 			else
-				call speech(info, character, true, tre("Streicheln macht Brogo Spaß. Brogo will aber noch mehr Katzen.", "Stroking is fun to Brogo. But Brogo wants more cats."), null)
+				call speech(info, character, true, tre("Streicheln macht Brogo Spaß. Brogo will aber noch mehr Katzen.", "Stroking is fun to Brogo. But Brogo wants more cats."), gg_snd_Brogo9)
 			endif
 			call talk.addCats(character.player())
 		endmethod
@@ -158,9 +158,9 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 		// Bist du irgendwie verblödet?
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Bist du irgendwie verblödet?", "Are you somehow stupid?"), null)
-			call speech(info, character, true, tre("Nein! Brogo ist schlau. Tanka sagt immer zu Brogo: „Brogo ganz schlau, weil Brogo nicht dumm.“.", "No! Brogo is smart. Tanka says always to Brogo \"Brogo quite clever because Brogo not stupid.\"."), null)
+			call speech(info, character, true, tre("Nein! Brogo ist schlau. Tanka sagt immer zu Brogo: „Brogo ganz schlau, weil Brogo nicht dumm.“.", "No! Brogo is smart. Tanka says always to Brogo \"Brogo quite clever because Brogo not stupid.\"."), gg_snd_Brogo11)
 			call speech(info, character, false, tre("Ach so.", "Ah."), null)
-			call speech(info, character, true, tre("Brogo braucht jetzt seine Ruhe. Brogo muss Feuer beobachten. Feuer bewegt sich. Brogo passt auf, dass Feuer nicht abhaut. Brogo ist mutiger Wächter von Feuer.", "Brogo now needs his rest. Brogo must observe fire. Fire moves. Brogo takes care that fire not leaving. Brogo is courageous guardin of fire."), null)
+			call speech(info, character, true, tre("Brogo braucht jetzt seine Ruhe. Brogo muss Feuer beobachten. Feuer bewegt sich. Brogo passt auf, dass Feuer nicht abhaut. Brogo ist mutiger Wächter von Feuer.", "Brogo now needs his rest. Brogo must observe fire. Fire moves. Brogo takes care that fire not leaving. Brogo is courageous guardin of fire."), gg_snd_Brogo12)
 			call info.talk().showStartPage(character)
 		endmethod
 
