@@ -1202,6 +1202,10 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		public static method witches takes nothing returns SpawnPoint
 			return thistype.m_witches
 		endmethod
+		
+		public static method spiderQueen takes nothing returns SpawnPoint
+			return thistype.m_spiderQueen
+		endmethod
 	endstruct
 
 endlibrary

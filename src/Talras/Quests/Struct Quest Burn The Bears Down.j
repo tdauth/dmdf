@@ -3,6 +3,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 	struct QuestBurnTheBearsDown extends AQuest
 		public static constant integer maxWood = 5
 		public static constant integer itemTypeIdScroll = 'I00R'
+		public static constant integer itemTypeIdPotion = 'I01F'
 		public static constant integer itemTypeIdWood = 'I02P'
 		public static constant integer itemTypeIdDagger = 'I02O'
 		public static constant integer xpBonus = 100
@@ -34,7 +35,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 			local boolean completed = false
 			local boolean new = false
 			if (GetTriggerUnit() == this.character().unit()) then
-				if (GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeIdScroll and this.questItem(1).isNotUsed()) then
+				if ((GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeIdScroll or GetItemTypeId(GetManipulatedItem()) == thistype.itemTypeIdPotion) and this.questItem(1).isNotUsed()) then
 					if (this.questItem(0).isNew()) then
 						call this.questItem(0).setState(thistype.stateCompleted)
 					endif

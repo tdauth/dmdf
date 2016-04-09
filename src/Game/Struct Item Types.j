@@ -326,6 +326,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			endloop
 		endmethod
 
+		/**
+		 * Call this method in the map initialization to create all item types.
+		 */
 		public static method init takes nothing returns nothing
 			//integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns AItemType
 			set thistype.m_simpleDruidStaff = RangeItemType.createSimpleRange('I06J', AItemType.equipmentTypePrimaryWeapon)

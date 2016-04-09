@@ -54,14 +54,15 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 	endstruct
 
 	struct QuestSlaughter extends SharedQuest
-		public static constant integer questItemKillTheVampireLord = 0
-		public static constant integer questItemKillTheVampires = 1
-		public static constant integer questItemKillTheDeathAngel = 2
-		public static constant integer questItemKillTheBoneDragons = 3
-		public static constant integer questItemEnterTheDeathVault = 4
-		public static constant integer questItemKillTheMedusa = 5
-		public static constant integer questItemKillTheDiacon = 6
-		public static constant integer questItemMeetAtTheDeathVault = 7
+		public static constant integer questItemKillTheBroodMother = 0
+		public static constant integer questItemKillTheVampireLord = 1
+		public static constant integer questItemKillTheVampires = 2
+		public static constant integer questItemKillTheDeathAngel = 3
+		public static constant integer questItemKillTheBoneDragons = 4
+		public static constant integer questItemEnterTheDeathVault = 5
+		public static constant integer questItemKillTheMedusa = 6
+		public static constant integer questItemKillTheDiacon = 7
+		public static constant integer questItemMeetAtTheDeathVault = 8
 		private QuestAreaSlaughter m_questArea
 		private QuestAreaSlaughterEnter m_questAreaEnter
 		private QuestAreaSlaughterFinish m_questAreaFinish
@@ -108,10 +109,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			// the units owner might be different due to abilities
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
-
-		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.vampireLord and SpawnPoints.vampireLord0().countUnitsOfType(UnitTypes.vampireLord) == 0
-		endmethod
 		
 		private method checkForDeathVault takes nothing returns nothing
 			if (this.questItem(thistype.questItemKillTheVampireLord).isCompleted() and this.questItem(thistype.questItemKillTheVampires).isCompleted() and this.questItem(thistype.questItemKillTheDeathAngel).isCompleted() and this.questItem(thistype.questItemKillTheBoneDragons).isCompleted()) then
@@ -137,7 +134,20 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			
 			call this.displayState()
 		endmethod
+		
+		private static method stateConditionCompletedBroodMother takes AQuestItem questItem returns boolean
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.broodMother and SpawnPoints.spiderQueen().countUnitsOfType(UnitTypes.broodMother) == 0
+		endmethod
 
+		private static method stateActionCompletedBroodMother takes AQuestItem questItem returns nothing
+			local thistype this = thistype(questItem.quest())
+			call this.checkForDeathVault()
+		endmethod
+
+		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.vampireLord and SpawnPoints.vampireLord0().countUnitsOfType(UnitTypes.vampireLord) == 0
+		endmethod
+		
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch mehr seiner Art.", "Good work! But that was not the only vampire in this area. Further west there are more of his kind."), null)
@@ -251,6 +261,14 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.setDescription(tre("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten berichten könnt.", "The Dragon Slayer requires of you to accompany her on heir campaign against the creatures of the forest, so that you can report about her heroic deeds to others."))
 			call this.setReward(thistype.rewardExperience, 1000)
 			set this.m_questArea = QuestAreaSlaughter.create(gg_rct_quest_slaughter_enable)
+			
+			// questItemKillTheBroodMother
+			set questItem = AQuestItem.create(this, tre("Tötet die Brutmutter.", "Kill the Brood Mother."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedBroodMother)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedBroodMother)
+			call questItem.setPing(true)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			set questItem = AQuestItem.create(this, tre("Tötet den Vampirgebieter.", "Kill the Vampire Lord."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)

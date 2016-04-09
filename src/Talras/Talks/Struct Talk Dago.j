@@ -140,29 +140,46 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call info.talk().showStartPage(character)
 		endmethod
 
-		private static method completeBoth takes AInfo info, ACharacter character returns nothing
+		private static method completeBoth takes AInfo info, Character character returns nothing
+			local integer i
 			call speech(info, character, true, tre("Gleich beides also? Du bist mir wirklich eine große Hilfe, da werden die Bären nichts zu Lachen haben!", "Already both? You are really a great help to me, the bears won't have anything to laugh with this!"), gg_snd_Dago28)
+			
+			// remove items for completing the quest
+			if (character.inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)) then
+				call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdScroll)
+			elseif (character.inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdPotion)) then
+				call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdPotion)
+			endif
+			
+			set i = 0
+			loop
+				exitwhen (i == QuestBurnTheBearsDown.itemTypeIdWood)
+				call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdWood)
+				set i = i + 1
+			endloop
+			
 			// Auftrag „Brennt die Bären nieder!“ mit Bonus abgeschlossen
 			call QuestBurnTheBearsDown.characterQuest(character).complete()
-			call Character(character).xpBonus(QuestBurnTheBearsDown.xpBonus, QuestBurnTheBearsDown.characterQuest(character).title())
+			call character.xpBonus(QuestBurnTheBearsDown.xpBonus, QuestBurnTheBearsDown.characterQuest(character).title())
 		endmethod
 
-		private static method complete takes AInfo info, ACharacter character returns nothing
+		private static method complete takes AInfo info, Character character returns nothing
 			call speech(info, character, true, tre("Vielen Dank! Ich werde die Höhle mit den Drecksbären in Flammen aufgehen lassen!", "Thank you! I will set the cave with the mud bears up in flames!"), gg_snd_Dago29)
+			
 			// Auftrag „Brennt die Bären nieder!“ abgeschlossen
 			call QuestBurnTheBearsDown.characterQuest(character).complete()
 		endmethod
 
-		private static method conclusion takes AInfo info, ACharacter character returns nothing
+		private static method conclusion takes AInfo info, Character character returns nothing
 			call speech(info, character, true, tre("Hier hast du deine versprochene Belohnung.", "Here you have your promised reward."), gg_snd_Dago30)
-			call Character(character).giveItem(QuestBurnTheBearsDown.itemTypeIdDagger)
+			call character.giveItem(QuestBurnTheBearsDown.itemTypeIdDagger)
 			call Character.displayItemAcquiredToAll(GetLocalizedString("STRING 4869"), GetLocalizedString("STRING 4880"))
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// (Auftrag „Brennt die Bären nieder!“ ist aktiv und Charakter besitzt Zauberspruch)
 		private static method infoConditionSpell takes AInfo info, ACharacter character returns boolean
-			return QuestBurnTheBearsDown.characterQuest(character).isNew() and Character(character).inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)
+			return QuestBurnTheBearsDown.characterQuest(character).isNew() and (character.inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll) or character.inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdPotion))
 		endmethod
 
 		// Hier ist dein Zauberspruch.
@@ -172,6 +189,12 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 				call thistype.completeBoth(info, character)
 
 			else // (Charakter besitzt nur den Zauberspruch)
+				if (character.inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)) then
+					call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdScroll)
+				elseif (character.inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdPotion)) then
+					call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdPotion)
+				endif
+			
 				call thistype.complete(info, character)
 			endif
 			call thistype.conclusion(info, character)
@@ -184,11 +207,19 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		// Hier ist dein Holz.
 		private static method infoActionWood takes AInfo info, ACharacter character returns nothing
+			local integer i
 			// (Charakter besitzt zudem den Zauberspruch)
 			if (Character(character).inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)) then
 				call speech(info, character, false, tre("Außerdem habe ich noch einen Zauberspruch für dich.", "Besides I have also a spell for you."), null)
 				call thistype.completeBoth(info, character)
 			else // (Charakter besitzt nur das Holz)
+				set i = 0
+				loop
+					exitwhen (i == QuestBurnTheBearsDown.itemTypeIdWood)
+					call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdWood)
+					set i = i + 1
+				endloop
+			
 				call thistype.complete(info, character)
 			endif
 			call thistype.conclusion(info, character)

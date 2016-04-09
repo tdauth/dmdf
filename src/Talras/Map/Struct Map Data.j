@@ -44,6 +44,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer ranger = 'n03F'
 		public static constant integer armedVillager = 'n03H'
 
+		public static constant integer broodMother = 'n05F'
 		public static constant integer deathAngel = 'n02K'
 		public static constant integer vampire = 'n02L'
 		public static constant integer vampireLord = 'n010'

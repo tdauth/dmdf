@@ -816,16 +816,54 @@ Für Version 0.6:
 * DONE: Schatten der Arena-Karte berechnen.
 * FIXED: Arenakarte braucht verschiede Streitmächte, ansonsten im lokalen Netzwerk nicht spielbar.
 
-Aufgehoben für Version 0.7:
-Schwerwiegende Fehler:
-* New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
+For version 0.7:
 * FIXED: gg_snd_Dago18 ist verbuggt. Kein Ton und kann nicht übersprungen werden. Entweder SLK oder kein unterstützes Format. VLC kann die Datei abspielen.
-* Orcs laufen zurück bei "Die Nordmänner" obwohl sie nicht neutral passiv sind. Verwirrend da man nicht weiß, ob man das Camp angreifen soll. Laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
-* Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
+* FIXED: Orcs laufen zurück bei "Die Nordmänner" obwohl sie nicht neutral passiv sind. Verwirrend da man nicht weiß, ob man das Camp angreifen soll.
 * FIXED: Crash wenn die Ansicht zu einem Dungeon gewechselt wird und die 3rd-Person-Kamera aktiv ist.
 * FIXED: Double Free AIntegerListIterator bei speech() wenn übersprungen wird.
 * FIXED: Deranor beschwört zweimal Schattenriesen (einmal im Video). Die aus dem Video sind neutral und greifen nicht an. Am besten nach Video entfernen oder Zauber abklingen lassen.
 * FIXED: Schattenriesen bluten -> Untot oder mechanisch machen!
+* FIXED: Double Free AIntegerListIterator bei Spruchrolle der Kühe.
+* FIXED: Auf Schaf reiten: Fähigkeit nicht hinzufügen, wenn Zauberbuch nicht deaktiviert wird UND Rucksack nicht deaktiviert wird.
+* FIXED: Auf Schaf reiten: Equipmentfähigkeiten werden nicht wieder hinzugefügt, nachdem man auf Schaf reitet (nach Verwandlung), wenn Rucksack offen ist.
+* DEPRECATED: Werden nach Repick die Spielcharakterzauber neu erzeugt? initCharacterSpells() Reiten auf Schaf geht nicht so richtig?
+* FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
+* FIXED: Textnachricht ausgeben wenn Zauber als passiver Zauber oder allgemein nicht in Favoriten geskillt wird.
+* FIXED: Add a learning ability for every grimoire spell.
+* DONE: Hotkeys for all class spells.
+* DONE: Heileffekt alle 10 Sekunden bei Ritter: Spezialeffekt mit Heilung und Sound wie bei Konzentration.
+* FIXED: Waldholzfäuste: Anderes Icon.
+* FIXED: Erwachen des Waldes: Anderes Icon.
+* FIXED: Klassenauswahlansicht verbuggt.
+* FIXED: Autoselect character when entering the arena!
+* FIXED: Norsemen in the camp are not invulnerable from the start.
+* FIXED: Fix black button background in Arena map.
+* FIXED: ACharactersScheme: Experience formula is wrong. GetHeroMaxXP() calculated for one level too low.
+* FIXED: Wieland und andere NPCs haben falsche Bewegungstempanimationsgeschwindigkeit (schweben).
+* FIXED: Spieler 6 steht auch nicht im CharactersSchema, wenn außer ihm nur Spierl 1 und 2 spielen.
+* FIXED: Don't show drop texts since it becomes really annoying.
+* FIXED: Einar_28.mp3 importieren und verwenden.
+* DONE: Osman, Kuno and Manfred got sentences for their routines, add them!
+* DEPRECATED (cannot be achieved without storing the gold which an item costs): Pawning an item just sells 1 slots although we want to sell all slots again!
+* FIXED: AVideo: If the actors are neutral passive always they do not attack other units but rather walk back (creeps etc.). Configure a global actor player which is a passive player to all creeps etc.
+* DONE: Reintroduce pawn trigger in ASL and only pawn one slot. Otherwise you will get only the gold for charge for non usable items!
+* DEPRECATED: Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
+* DONE: Deranor sollte nach Tod auch etwas droppen.
+* DEPRECATED: Spruchrolle des Sammlers: Keine Powerups? Kann im Kampf aber sinnvoll sein.
+* FIXED: Tobias ist nicht unverwundbar.
+* FIXED: Fähigkeiten wie Blitzschlag, Eis- und Feuergeschoss haben keine Abklingzeit und keinen Manaverbrauch wenn sie direkt töten.
+* FIXED: Mathilda kann nicht mehr angesprochen werden, wenn sie einen einmal begleitet.
+* FIXED: Magische Schockwellen: Terraindeformation fehlt, Sound fehlt.
+* FIXED: Spells from Talras: Move the following spells from the Talras folder to the Game folder. They should be usable in every map: Books of Crafting (all), Amulet of Foresight, Neckstone, Ride Sheep, all scrolls, unearth, wings of deranors guard. 
+* FIXED: Verwandlungen: Nixenstein etc., Rückverwandlungsfähigkeit erscheint nicht bei Charakter. Falls Gegenstand verkauft wird, ist Rückverwandlung unmöglich.
+* FIXED: Die Einträge für Trommon2.mp3, Trommon22.mp3, Trommon24.mp3 und Trommon25.mp3 sind kaputt. Wird nicht aufgelistet obwohl eingetragen und Datei vorhanden.
+* FIXED: Quest Metzelei: Reihenfolge bis zur Höhle egal!
+
+Aufgehoben für Version 0.8:
+Schwerwiegende Fehler:
+* New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
+* Orcs bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
+* Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Lange Ladezeit: Widgetizer mit deutschem War3Patch ausprobieren. Erst Widgetizer verwenden, dann war3mapoptimizer!
 * Lag am Anfang: Fähigkeiten preloaden.
@@ -837,34 +875,18 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Nach Repick ist Grundzauber nicht in den Favoriten.
 * Nach Repick ist ab und zu entweder ein Zauber der Klasse nicht da oder noch ein Zauber der alten Klasse stattdessen.
 * Vermutung: Spell.onDestroy() remove funktioniert nicht immer (OpLimit???) ODER Konstruktor Spell.create() bzw. Spell.createWithEvent() wird nicht verwendet. Dann landet der Zauber nicht in den classSpells().
-* FIXED: Double Free AIntegerListIterator bei Spruchrolle der Kühe.
 * speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!). Passiert nur manchmal.
-* FIXED: Auf Schaf reiten: Fähigkeit nicht hinzufügen, wenn Zauberbuch nicht deaktiviert wird UND Rucksack nicht deaktiviert wird.
-* FIXED: Auf Schaf reiten: Equipmentfähigkeiten werden nicht wieder hinzugefügt, nachdem man auf Schaf reitet (nach Verwandlung), wenn Rucksack offen ist.
-* DEPRECATED: Werden nach Repick die Spielcharakterzauber neu erzeugt? initCharacterSpells() Reiten auf Schaf geht nicht so richtig?
-* FIXED: Pawned items: Double free of AIntegerListIterator. AIntegerList.remove() has a double free in erase().
-* FIXED: Textnachricht ausgeben wenn Zauber als passiver Zauber oder allgemein nicht in Favoriten geskillt wird.
-* FIXED: Add a learning ability for every grimoire spell.
-* DONE: Hotkeys for all class spells.
-* DONE: Heileffekt alle 10 Sekunden bei Ritter: Spezialeffekt mit Heilung und Sound wie bei Konzentration.
-* FIXED: Waldholzfäuste: Anderes Icon.
-* FIXED: Erwachen des Waldes: Anderes Icon.
 
 Mehrspielertest:
-* FIXED: Klassenauswahl ansicht verbuggt.
 * Wenn man Diakon tötet Spielabsturz.
 * Dorfbewohner spawnen einfach während Metzelei bei Diakon als Gegner?!
 * Jojo hat Arenakampf verloren und war danach einfach total langsam (Fähigkeit Arenagegner?). Sie wurde auch nicht aus der Arena verschoben.
 * Bei Jojo wurde die Kamera während den Kämpfen hin- und herbewegt (vor und zurück), cameraDistance() vs irgendwas anderes???
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
-* FIXED: Steht auch nicht im CharactersSchema.
 
 Nervig:
-* FIXED: Fix black button background in Arena map.
 * Fix cursor in map Gardonar.
-* FIXED: Autoselect character when entering the arena!
-* FIXED: Norsemen in the camp are not invulnerable from the start.
 * Arena opponnent walks out of the arena if he is blinded.
 * Kollisionsgrößen der Charaktere sind zu groß.
 * Sound bei Stilleffekt muss bei Unterhaltungen weg.
@@ -874,8 +896,6 @@ Nervig:
 * Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.
 * Spruchrolle umbenennen zu Schreinteleport.
 * Elementarwesen sind zu viele oder zu stark.
-* FIXED: ACharactersScheme: Experience formula is wrong. GetHeroMaxXP() calculated for one level too low.
-* FIXED: Wieland und andere NPCs haben falsche Bewegungstempanimationsgeschwindigkeit (schweben).
 
 Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.
@@ -884,26 +904,20 @@ Weitere TODOS:
 * Remove the leading I of item types from the save code since it is always I.
 * Highlight upper case and lower case letters with different colors.
 * The local files option does not work on Windows 8 or 10 as well. The only possible solution is mixing War3Patch with the data.
-* Remove sound from talk effect.
-* FIXED: Don't show drop texts since it becomes really annoying.
-* Every spell needs one extra spell to learn it in the grimoire!
+* DONE: Remove sound from talk effect.
+* DONE: Every spell needs one extra spell to learn it in the grimoire!
 * Once a player could talk to two different NPCs at the same time.
 * Illusions and split units (elemental mage) should cause transparency.
 * Make a fade animation for transparency.
 * Make trees less transparent.
-* FIXED: Einar_28.mp3 importieren und verwenden.
 * Salatköpfe von Trommon fehlen.
 * Kuno und Trommon sind zu leise.
 * Knochenbogen trotz deaktivierter Zauberbuchfähigkeit sieht man Icon.
-* DONE: Osman, Kuno and Manfred got sentences for their routines, add them!
 * Video "The First Combat": One view of the Orc camp is enough.
 * Video "Wigberht": Cut the shots of the Orcs which are annoying.
 * Video "The Castle": Make the movement with the shot of Heimrich faster.
 * Make sounds of Markward louder!
-* DEPRECATED (cannot be achieved without storing the gold which an item costs): Pawning an item just sells 1 slots although we want to sell all slots again!
-* FIXED: AVideo: If the actors are neutral passive always they do not attack other units but rather walk back (creeps etc.). Configure a global actor player which is a passive player to all creeps etc.
 * Videos: Disable any shadow abilities for the actor. Otherwise he will disappear at night.
-* DONE: Reintroduce pawn trigger in ASL and only pawn one slot. Otherwise you will get only the gold for charge for non usable items!
 * Multishot should be an ultimate spell and only add one or two other attacks. Otherwise it is quite unfair.
 * Introduce required levels for normal spells. For example you can only skill a spell every second level!
 * Minikartenfarben der Doodads festlegen.
@@ -914,27 +928,16 @@ Weitere TODOS:
 * Tastenkürzel für alle Klassenzauber.
 * Restliche Klassenzauber: Nekromant (1 Zauber), Ritter (1 Zauber), Waldläufer (1 Zauber - letzte Ulti)
 * Standfestigkeit auf Gebiet mit Gruppenheilung, sonst zu schlecht.
-* DEPRECATED: Falls Elementarmagier noch eine schlechte Fähigkeit hat: Tornado, aber mit custom damage?
 * Musik aus Klassenauswahl nach Video beenden!
 * Angriff nur mit linker Hand, Angriff mit zwei Waffen: http://www.hiveworkshop.com/forums/tutorial-submission-283/villager-255-animation-index-list-how-remove-animation-delay-263727/
-* DONE: Deranor sollte nach Tod auch etwas droppen.
 * Schatten von Talras neu berechnen.
-* DEPRECATED: Spruchrolle des Sammlers: Keine Powerups? Kann im Kampf aber sinnvoll sein.
-* FIXED: Tobias ist nicht unverwundbar.
-* FIXED: Fähigkeiten wie Blitzschlag, Eis- und Feuergeschoss haben keine Abklingzeit und keinen Manaverbrauch wenn sie direkt töten.
-* FIXED: Mathilda kann nicht mehr angesprochen werden, wenn sie einen einmal begleitet.
-* FIXED: Magische Schockwellen: Terraindeformation fehlt, Sound fehlt.
 * Elementarwesen: Icon, pro Wesen eine Fähigkeit.
-* Quest Metzelei: Reihenfolge bis zur Höhle egal!
 * Für die Karte Talras das Menschen-Interface verwenden. Macht mehr Sinn, da man für die Menschen spielt und nicht für die Dämonen.
 * Haupt-Menü: Die Eisketten von Frozen Throne durch die Menügrafiken aus Reign of Chaos oder durch menschenähnlicheres ersetzen.
 * Gardonar: Hier Dämonen-Interface verwenden.
 * Talras: Ladehintergrund mit Ritter verwenden, irgendetwas das auf Menschen hindeutet.
-* FIXED: Spells from Talras: Move the following spells from the Talras folder to the Game folder. They should be usable in every map: Books of Crafting (all), Amulet of Foresight, Neckstone, Ride Sheep, all scrolls, unearth, wings of deranors guard. 
 * Waldläufer: Weil sich die Pfeileffekte gegenseitig ausschließen anstatt Multishot eine temporäre Verwandlung zulassen, bei der für eine gewisse Zeit alle anderen Pfeilfähigkeiten deaktiviert und dafür Multishot aktiviert wird.
-* Remove cliffs in the Drum Cave which block sight of players.
-* FIXED: Verwandlungen: Nixenstein etc., Rückverwandlungsfähigkeit erscheint nicht bei Charakter. Falls Gegenstand verkauft wird, ist Rückverwandlung unmöglich.
-* FIXED: Die Einträge für Trommon2.mp3, Trommon22.mp3, Trommon24.mp3 und Trommon25.mp3 sind kaputt. Wird nicht aufgelistet obwohl eingetragen und Datei vorhanden.
+* Remove cliffs in the Drum Cave which block sight of players. Removing cliffs is bugged and changes the whole terrain.
 * Check all sound files of NPCs and then delete the "old" subfolders with old versions of the sounds to reduce the MPQ size.
 * Bjoern14 und Bjoern15 gleicher Sound.
 * Bjoern20 und Bjoern21 und Bjoern22 gleicher Sound.

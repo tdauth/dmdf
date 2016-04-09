@@ -191,7 +191,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			call this.m_textTags.clear()
 			set this.m_velocity = thistype.defaultVelocity
 			call super.onHide()
-			call ResumeMusicForPlayer(whichPlayer)
+			call StopMusicForPlayer(whichPlayer, false)
 			set whichPlayer = null
 		endmethod
 		

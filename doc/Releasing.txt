@@ -14,6 +14,7 @@ To release a new version of The Power of Fire several steps have to be done:
 - Merge the German "war3map.wts" files from the folder "maps/MAPNAME" into the English ones and translate all new German entries.
 - Make a copy of every map for the English version of the map
 - Replace the "war3map.wts" file in every English map by its latest English "war3map.wts" file from the folder "maps/MAPNAME".
+- DOES NOT WORK AT THE MOMENT: Use Widgetizer or ultimate map SLK optimizer to optimize all maps loading time.
 - Use the war3mapoptimizer to optimize all maps (English and German) and save the optimized map into a directory which you later set in the variable "INPUT_DIR". You need a subfolder "de" for the German version of the maps and a subfolder "en" for the English versions.
 - Create the custom exe with the latest MPQ archive. Use MPQDraft to create this .exe file.
 - Modify the file "Scripts/installer.nsi" and update the variables at the top of the file:
