@@ -114672,18 +114672,18 @@ Bekehrung - Erlernen
 STRING 19119
 // Einheiten: n077 (Satz überspringen), Name (Name (unam))
 {
-Satz überspringen
+Skip sentence
 }
 
 STRING 19120
 // Einheiten: n077 (Satz überspringen), Tip (Tooltipp - Einfach (utip))
 {
-Satz überspringen
+Skip sentence
 }
 
 STRING 19121
 // Einheiten: n077 (Satz überspringen), Ubertip (Tooltipp - Erweitert (utub))
 {
-Überspringt den aktuellen Satz.
+Skips the current sentence.
 }
 

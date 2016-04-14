@@ -173,7 +173,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		private static method conclusion takes AInfo info, Character character returns nothing
 			call speech(info, character, true, tre("Hier hast du deine versprochene Belohnung.", "Here you have your promised reward."), gg_snd_Dago30)
 			call character.giveItem(QuestBurnTheBearsDown.itemTypeIdDagger)
-			call Character.displayItemAcquiredToAll(GetLocalizedString("STRING 4869"), GetLocalizedString("STRING 4880"))
+			call Character.displayItemAcquiredToAll(GetObjectName(QuestBurnTheBearsDown.itemTypeIdDagger), tre("Ein vergifteter Dolch.", "A poisoned dagger."))
 			call info.talk().showStartPage(character)
 		endmethod
 

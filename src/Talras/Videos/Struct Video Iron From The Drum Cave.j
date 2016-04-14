@@ -26,20 +26,20 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Was sagst du? Du brauchst Eisen aus meinen Minen?"), gg_snd_Baldar33)
+			call TransmissionFromUnit(this.m_actorBaldar, tre("Was sagst du? Du brauchst Eisen aus meinen Minen?", "What are you saying? You need iron from my mines?"), gg_snd_Baldar33)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar33))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.actor(), tr("So ist es."), null)
+			call TransmissionFromUnit(this.actor(), tre("So ist es.", "That's the way it is."), null)
 			
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Was habe ich davon mein Eisen dir zu geben anstatt meine eigenen Krieger damit auszurüsten, um meinen Bruder endlich zu besiegen?"), gg_snd_Baldar34)
+			call TransmissionFromUnit(this.m_actorBaldar, tre("Was habe ich davon mein Eisen dir zu geben anstatt meine eigenen Krieger damit auszurüsten, um meinen Bruder endlich zu besiegen?", "What do I get from giving you my iron instead of equipping my own warriors in order to defeat my brother finally?"), gg_snd_Baldar34)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar34))) then
 				return

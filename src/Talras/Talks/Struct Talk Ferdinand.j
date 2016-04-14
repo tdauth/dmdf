@@ -29,9 +29,9 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Was hast du denn zu tun?", "What do you have to do?"), null)
 			call speech(info, character, true, tre("￼Nun, ich muss meines Lehnsherrn Gut verwalten und mich um dieses Lumpenpack von Bauern kümmern. Die wollen doch tatsächlich den Schwanz einziehen und sich aus dem Staub machen oder in der Burg verstecken, sobald unsere Feinde hier eintreffen.", "Well, I have to manage the good of my feudal lord and take care of this rabble of farmers. They actually want to move the tail and make off or hide in the castle as soon as our enemies arrive here."), gg_snd_Ferdinand2)
-			call speech(info, character, true, tr("Zum Kriegsdienst haben sie sich allesamt verpflichtet. Mindestens ein Jahr lang. Diese feigen Hunde. Und zu allem Überfluss beschweren sie sich auch noch über die angeblich zu hohen Abgaben."), gg_snd_Ferdinand3)
-			call speech(info, character, true, tr("Schlechte Ernte erzählen sie mir dauernd. Der Weizen blüht und die wollen mir was von einer Hungersnot verkaufen. Dabei müssen wir unsere Vorräte aufstocken und uns auf eine mögliche Belagerung vorbereiten."), gg_snd_Ferdinand4)
-			call speech(info, character, true, tr("Früher hätte man ein solches Verhalten nicht geduldet und sie einfach allesamt verprügeln lassen, aber wir leben ja seit Neustem in einer Zeit der Verhandlungen. Als Nächstes wollen sie vermutlich noch mitbestimmen, wer in der Burg leben darf und wer nicht, dieses Hundepack!"), gg_snd_Ferdinand5)
+			call speech(info, character, true, tre("Zum Kriegsdienst haben sie sich allesamt verpflichtet. Mindestens ein Jahr lang. Diese feigen Hunde. Und zu allem Überfluss beschweren sie sich auch noch über die angeblich zu hohen Abgaben.", "They have all committed themselves for the military service. At least for one year. These cowardly dogs. And to make it worse, they complain even about the allegedly excessive charges."), gg_snd_Ferdinand3)
+			call speech(info, character, true, tre("Schlechte Ernte erzählen sie mir dauernd. Der Weizen blüht und die wollen mir was von einer Hungersnot verkaufen. Dabei müssen wir unsere Vorräte aufstocken und uns auf eine mögliche Belagerung vorbereiten.", "Poor harvest they tell me all the time. Wheat flowers and they want to tell me something about a famine. We need to increase our supplies and prepare for a possible siege."), gg_snd_Ferdinand4)
+			call speech(info, character, true, tre("Früher hätte man ein solches Verhalten nicht geduldet und sie einfach allesamt verprügeln lassen, aber wir leben ja seit Neustem in einer Zeit der Verhandlungen. Als Nächstes wollen sie vermutlich noch mitbestimmen, wer in der Burg leben darf und wer nicht, dieses Hundepack!", "In the past one would not have tolerated such behaviour and just let have them all beaten up, but we live most recently even in a time of negotiations. Next they probably want to say who is allowed to live in the castle and who isn't, this dog pack!"), gg_snd_Ferdinand5)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -42,11 +42,11 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 
 		// Wer bist du?
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wer bist du?"), null)
+			call speech(info, character, false, tre("Wer bist du?", "Who are you?"), null)
 			if (info.talk().infoHasBeenShownToCharacter(1, character)) then
-				call speech(info, character, true, tr("Na hör mal! Willst du mich jetzt auch für dumm verkaufen? Du kannst dir doch wohl denken, dass ich der Vogt des Herzogs bin."), gg_snd_Ferdinand6)
+				call speech(info, character, true, tre("Na hör mal! Willst du mich jetzt auch für dumm verkaufen? Du kannst dir doch wohl denken, dass ich der Vogt des Herzogs bin.", "Listen! Do you want to sell me for stupid? You can surely get that I am the reeve of the duke."), gg_snd_Ferdinand6)
 			else
-				call speech(info, character, true, tr("Ich bin der Vogt des Herzogs Heimrich, meines und vermutlich auch deines Herrn, und somit der Verwalter seines Besitzes."), gg_snd_Ferdinand7)
+				call speech(info, character, true, tre("Ich bin der Vogt des Herzogs Heimrich, meines und vermutlich auch deines Herrn, und somit der Verwalter seines Besitzes.", "I am the reeve of the duke Heimrich, the lord of me and probably yours too, and therefore the steward of his estate."), gg_snd_Ferdinand7)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
@@ -58,7 +58,7 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 
 		// Warum bekommt der Händler Haid keine Handelsgenehmigung für Talras?
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Warum bekommt der Händler Haid keine Handelsgenehmigung für Talras?"), null)
+			call speech(info, character, false, tre("Warum bekommt der Händler Haid keine Handelsgenehmigung für Talras?", "Why doesn't the merchant Haid get a trading permission for Talras?"), null)
 			call speech(info, character, true, tr("Nun, wenn er die lumpigen 10 Goldmünzen bezahlt, die das Ganze kostet, dann darf er auch hier seine Waren verkaufen, solange er keinen Ärger macht und mir einen gerechten Anteil seines Gewinns gibt."), gg_snd_Ferdinand8)
 			call speech(info, character, false, tr("10 Goldmünzen?"), null)
 			call speech(info, character, true, tr("Ja, 10 Goldmünzen. Das können selbst diese armen Bauern bezahlen."), gg_snd_Ferdinand9)

@@ -55,19 +55,19 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 				return
 			endif
 		
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Seht euch das an! In diesem mächtigen unterirdischen Gewölbe muss er sich versteckt halten. Nun werden wir Deranor dem Schrecklichen ein ebenso schreckliches Ende bereiten."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Seht euch das an! In diesem mächtigen unterirdischen Gewölbe muss er sich versteckt halten. Nun werden wir Deranor dem Schrecklichen ein ebenso schreckliches Ende bereiten.", "Look at that! In this mighty underground vault he must be hiding. Now we will put an equally terrible end to Deranor the Terrible."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Eine halbe Ewigkeit trieb er sein Unwesen in den Todessümpfen und kein Mensch wagte es je diese Sümpfe zu betreten. Nur zu gut wissen die Menschen, dass irgendwo dort seine finstere Burg stehen muss. Die Burg von der aus er das Land mit Tod und Verfall überzieht."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Eine halbe Ewigkeit trieb er sein Unwesen in den Todessümpfen und kein Mensch wagte es je diese Sümpfe zu betreten. Nur zu gut wissen die Menschen, dass irgendwo dort seine finstere Burg stehen muss. Die Burg von der aus er das Land mit Tod und Verfall überzieht.", "Half an eternity he did his worst in the Dead Marshes and no man dared ever to enter the marshes. Only too well people know that somewhere there his dark castle is located. The castel from where he covers the land with death and decay."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tr("Um diesen \"Menschen\", oder was er auch gewesen sein mag, ist es nicht schade. Lasst uns in unser letztes Gefecht ziehen und mögen euch die Götter vor seinem Fluch beschützen!"), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Um diesen \"Menschen\", oder was er auch gewesen sein mag, ist es nicht schade. Lasst uns in unser letztes Gefecht ziehen und mögen euch die Götter vor seinem Fluch beschützen!", "To this \"human\" or what he may have been it is not too bad. Let us go into our last battle and may the gods protect you from his curse!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -131,7 +131,7 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDeranor, tr("Wer wagt es mich zu stören?! Seid ihr etwa gekommen um mich aus diesem dem Untergang geweihten Land zu vertreiben? Ich werde euch lehren, was Untergang bedeutet ihr Narren!"), null)
+			call TransmissionFromUnit(this.m_actorDeranor, tre("Wer wagt es mich zu stören?! Seid ihr etwa gekommen um mich aus diesem dem Untergang geweihten Land zu vertreiben? Ich werde euch lehren, was Untergang bedeutet ihr Narren!", "Who dares to interfere with me?! Have you come to expel me from this doomed land? I will teach you what doom means you fools!"), null)
 			call QueueUnitAnimation(this.m_actorDeranor, "Spell Channel")
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then

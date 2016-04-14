@@ -355,10 +355,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_brogoTalksToHimself = NpcTalksRoutine.create(Routines.talk(), Npcs.brogo(), 0.0, 23.59, gg_rct_waypoint_brogo_0)
 			call thistype.m_brogoTalksToHimself.setFacing(277.12)
 			call thistype.m_brogoTalksToHimself.setPartner(null)
-			call thistype.m_brogoTalksToHimself.addSound(tr("Feuer muss hier bleiben!"), gg_snd_Brogo13)
-			call thistype.m_brogoTalksToHimself.addSound(tr("Brogo mag Katzen."), gg_snd_Brogo14)
-			call thistype.m_brogoTalksToHimself.addSound(tr("Brogo vermisst Familie."), gg_snd_Brogo15)
-			call thistype.m_brogoTalksToHimself.addSound(tr("Tanka nett zu Brogo. Brogo nett zu Tanka."), gg_snd_Brogo16)
+			call thistype.m_brogoTalksToHimself.addSound(tre("Feuer muss hier bleiben!", "Fire must stay here!"), gg_snd_Brogo13)
+			call thistype.m_brogoTalksToHimself.addSound(tre("Brogo mag Katzen.", "Brogo likes cats."), gg_snd_Brogo14)
+			call thistype.m_brogoTalksToHimself.addSound(tre("Brogo vermisst Familie.", "Brogo is missing family."), gg_snd_Brogo15)
+			call thistype.m_brogoTalksToHimself.addSound(tre("Tanka nett zu Brogo. Brogo nett zu Tanka.", "Tanka nice to Brogo. Brogo nice to Tanka."), gg_snd_Brogo16)
 			
 			// menials
 			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)
