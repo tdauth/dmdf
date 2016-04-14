@@ -46,6 +46,10 @@ call thistype.addTitle(tre("Weitere Unterstützung", "Further Support"))
 call thistype.addContributor("WaterKnight", tre("Tests", "Tests"))
 call thistype.addContributor("Frotty", tre("Modelle und Tests", "Models and Tests"))
 
+call thistype.addTitle(tre("Musik", "Music"))
+call thistype.addContributor("Kevin MacLeod (incompetech.com)", "Pippin the Hunchback")
+call thistype.addContributor("Kevin MacLeod (incompetech.com)", "Minstrel Guild")
+
 /*
 http://www.incompetech.com/music/royalty-free/mp3-royaltyfree/Pippin%20the%20Hunchback.mp3
 Pippin the Hunchback Kevin MacLeod (incompetech.com)

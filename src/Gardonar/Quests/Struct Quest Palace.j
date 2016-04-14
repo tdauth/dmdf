@@ -20,7 +20,7 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 			call VideoWelcome.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call ACharacter.panCameraSmartToAll()
-			call QuestPalace.quest.evaluate().completeReachPalace.evaluate()
+			call QuestPalace.quest.evaluate().completeReachPalaceInside.evaluate()
 		endmethod
 	
 		public static method create takes rect whichRect returns thistype
@@ -45,7 +45,7 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 		public method completeReachPalace takes nothing returns nothing
 			call this.questItem(thistype.questItemReachPalace).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemReachPalaceInside).setState(thistype.stateNew)
-			call this.displayState()
+			call this.displayUpdate()
 			
 			call ModifyGateBJ(bj_GATEOPERATION_OPEN, gg_dest_DTg5_0000)
 			
@@ -67,7 +67,16 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 		public method completeReachPalaceInside takes nothing returns nothing
 			call this.questItem(thistype.questItemReachPalaceInside).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemFightThroughHell).setState(thistype.stateNew)
-			call this.displayState()
+			call this.displayUpdate()
+			
+			// TODO make the way free through hell!
+			call SetUnitX(gg_unit_n070_0035, GetRectCenterX(gg_rct_quest_palace_guard_position_4))
+			call SetUnitY(gg_unit_n070_0035, GetRectCenterY(gg_rct_quest_palace_guard_position_4))
+			call SetUnitFacing(gg_unit_n070_0035, 270.0)
+			
+			call SetUnitX(gg_unit_n070_0034, GetRectCenterX(gg_rct_quest_palace_guard_position_5))
+			call SetUnitY(gg_unit_n070_0034, GetRectCenterY(gg_rct_quest_palace_guard_position_5))
+			call SetUnitFacing(gg_unit_n070_0034, 90.0)
 		endmethod
 
 		private static method create takes nothing returns thistype

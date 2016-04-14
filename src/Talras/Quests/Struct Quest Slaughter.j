@@ -132,7 +132,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 				endif
 			endif
 			
-			call this.displayState()
+			call this.displayUpdate()
 		endmethod
 		
 		private static method stateConditionCompletedBroodMother takes AQuestItem questItem returns boolean

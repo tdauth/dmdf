@@ -2,7 +2,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 	struct MapData extends MapDataInterface
 		public static constant string mapName = "Gardonar0.7"
-		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
+		public static constant string mapMusic = "Sound\\Music\\mp3Music\\War3XMainScreen.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
 		public static constant player neutralPassivePlayer = Player(PLAYER_NEUTRAL_PASSIVE)

@@ -160,6 +160,7 @@ library StructGameRoutines requires Asl
 		private static method moveToTargetAction takes NpcRoutineWithFacing period returns nothing
 			//debug call Print("Unit " + GetUnitName(period.unit()) + " gets new facing in target.")
 			call IssueImmediateOrder(period.unit(), "stop")
+			call TriggerSleepAction(0.0) // sometimes the facing is not applied
 			call SetUnitFacing(period.unit(), period.facing())
 		endmethod
 
