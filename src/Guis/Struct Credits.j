@@ -164,6 +164,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		private static method timerFunctionView takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
 			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, 0)
+			call CameraSetupApplyForPlayer(true, gg_cam_class_selection, this.gui().player(), 0.0)
 			call CameraSetupApplyForPlayer(true, gg_cam_class_selection, this.gui().player(), thistype.viewTimeout)
 			set expiredTimer = null
 		endmethod
@@ -178,8 +179,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			call this.showContributor.evaluate(this.m_currentContributor)
 			call TimerStart(this.m_viewTimer, thistype.viewTimeout, true, function thistype.timerFunctionView)
 			call TimerStart(this.m_autoChangeTimer, 4.0, false, function thistype.timerFunctionAutoChange)
-			call StopMusicForPlayer(whichPlayer, false)
-			call PlayMusicForPlayer(whichPlayer, "Music\\Credits.mp3")
+			call PlayThematicMusicForPlayer(whichPlayer, "Music\\Credits.mp3")
 			set whichPlayer = null
 		endmethod
 
@@ -190,8 +190,8 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			// reset velocity and clear spawned texttags which have been destroyed automatically in the meantime
 			call this.m_textTags.clear()
 			set this.m_velocity = thistype.defaultVelocity
+			call EndThematicMusicForPlayer(whichPlayer)
 			call super.onHide()
-			call StopMusicForPlayer(whichPlayer, false)
 			set whichPlayer = null
 		endmethod
 		

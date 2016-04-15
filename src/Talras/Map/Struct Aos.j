@@ -160,7 +160,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		 */
 		public static method characterJoins takes Character character returns nothing
 			local player user = character.player()
-			call PlayMusic("Music\\TheDrumCave.mp3") /// @todo for user
+			call PlayThematicMusicForPlayer(user, "Music\\TheDrumCave.mp3")
 			call Dungeons.drumCave().setCameraBoundsForPlayer(user)
 			call character.setCamera()
 			if (not thistype.m_characterHasEntered) then
@@ -179,7 +179,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 
 		public static method characterLeaves takes Character character returns nothing
 			local player user = character.player()
-			call StopMusic(false) /// @todo for user
+			call EndThematicMusicForPlayer(user)
 			call Dungeon.resetCameraBoundsForPlayer(user) // set camera bounds before rect!
 			call character.setCamera()
 			set user = null

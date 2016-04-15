@@ -886,7 +886,8 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Nervig:
-* Fix cursor in map Gardonar.
+* Add a custom music system to play custom music tracks on loop. As long as there is no custom music system PlayThematicMusicForPlayer() has to be used. Otherwise the ingame music will be stopped.
+* DONE: Fix cursor in map Gardonar.
 * Arena opponnent walks out of the arena if he is blinded.
 * Kollisionsgrößen der Charaktere sind zu groß.
 * Sound bei Stilleffekt muss bei Unterhaltungen weg.

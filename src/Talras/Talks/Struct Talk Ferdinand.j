@@ -59,9 +59,9 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 		// Warum bekommt der Händler Haid keine Handelsgenehmigung für Talras?
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Warum bekommt der Händler Haid keine Handelsgenehmigung für Talras?", "Why doesn't the merchant Haid get a trading permission for Talras?"), null)
-			call speech(info, character, true, tr("Nun, wenn er die lumpigen 10 Goldmünzen bezahlt, die das Ganze kostet, dann darf er auch hier seine Waren verkaufen, solange er keinen Ärger macht und mir einen gerechten Anteil seines Gewinns gibt."), gg_snd_Ferdinand8)
-			call speech(info, character, false, tr("10 Goldmünzen?"), null)
-			call speech(info, character, true, tr("Ja, 10 Goldmünzen. Das können selbst diese armen Bauern bezahlen."), gg_snd_Ferdinand9)
+			call speech(info, character, true, tre("Nun, wenn er die lumpigen 10 Goldmünzen bezahlt, die das Ganze kostet, dann darf er auch hier seine Waren verkaufen, solange er keinen Ärger macht und mir einen gerechten Anteil seines Gewinns gibt.", "Well, if he pays the dent 10 gold coins which the whole costs, then he may sell his goods here as long as he does not cause trouble and gives me a fair share of his winnings."), gg_snd_Ferdinand8)
+			call speech(info, character, false, tre("10 Goldmünzen?", "10 gold coins?"), null)
+			call speech(info, character, true, tre("Ja, 10 Goldmünzen. Das können selbst diese armen Bauern bezahlen.", "Yes, 10 gold coins. That even the poor peasants themselves can afford."), gg_snd_Ferdinand9)
 			set thistype(info.talk()).m_knowsCost[GetPlayerId(character.player())] = true
 			call info.talk().showStartPage(character)
 		endmethod
@@ -73,7 +73,7 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 
 		// Der Bauer Manfred fordert mehr Schutz für seinen Hof.
 		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Der Bauer Manfred fordert mehr Schutz für seinen Hof."), null)
+			call speech(info, character, false, tre("Der Bauer Manfred fordert mehr Schutz für seinen Hof.", "The farmer Manfred calls for more protection for his farm."), null)
 			call speech(info, character, true, tr("Was? Was erlaubt sich dieser Hund? Erst kommt er mir mit seiner Kriegsdienstverweigerung und jetzt auch noch so was?"), gg_snd_Ferdinand10)
 			call speech(info, character, true, tr("Die Bauern leben doch wie die Made im Speck. Die müssen sich ja auch keine Gedanken um die Verteidigung dieser Burg machen. Wenn der Feind kommt, rennen sie vermutlich wie die Hasen davon."), gg_snd_Ferdinand11)
 			call speech(info, character, true, tr("Pass auf! Sag deinem Bauernfreund, dass er selbst zu kämpfen hat, für seinen Herrn, den Herzog von Talras und wenn er das nicht tut, dann kommt er an den Pranger."), gg_snd_Ferdinand12)

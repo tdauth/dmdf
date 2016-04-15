@@ -476,7 +476,6 @@ endif
 			
 			// the map music has to be set in the initialization
 			if (MapData.mapMusic != null) then
-				debug call Print("Setting music to " + musicList)
 				call ClearMapMusic()
 				call SetMapMusic(MapData.mapMusic, true, 0)
 			debug else
