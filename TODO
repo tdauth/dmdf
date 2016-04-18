@@ -876,6 +876,8 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Nach Repick ist ab und zu entweder ein Zauber der Klasse nicht da oder noch ein Zauber der alten Klasse stattdessen.
 * Vermutung: Spell.onDestroy() remove funktioniert nicht immer (OpLimit???) ODER Konstruktor Spell.create() bzw. Spell.createWithEvent() wird nicht verwendet. Dann landet der Zauber nicht in den classSpells().
 * speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!). Passiert nur manchmal.
+* Equipmenteffekte gehen nach Reiten auf Schaf nicht direkt.
+* Schamanenmaske konnte nicht angelegt werden nachdem man auf Schaf war (obwohl Slot frei war). Es kam die Meldung "Slot wird bereits benutzt".
 
 Mehrspielertest:
 * Wenn man Diakon tötet Spielabsturz.

@@ -283,10 +283,13 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellIncrease)
 				endif
 				if (this.currentSpell().level() > 0) then
-					call this.m_spellUnlearn.show.evaluate()
-					call this.m_uiGrimoireSpells.pushBack(this.m_spellUnlearn)
-					call this.m_spellDecrease.show.evaluate()
-					call this.m_uiGrimoireSpells.pushBack(this.m_spellDecrease)
+					// Dont allow unlearning the default spell. Otherwise that skill point could be spent for another spell.
+					if (this.currentSpell().spellType() != Spell.spellTypeDefault) then
+						call this.m_spellUnlearn.show.evaluate()
+						call this.m_uiGrimoireSpells.pushBack(this.m_spellUnlearn)
+						call this.m_spellDecrease.show.evaluate()
+						call this.m_uiGrimoireSpells.pushBack(this.m_spellDecrease)
+					endif
 
 					if (this.m_favourites.contains(this.currentSpell())) then
 						debug call Print("Spell is part of favorites.")

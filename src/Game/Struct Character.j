@@ -662,7 +662,7 @@ endif
 					if (GetTriggerUnit() == OrderAnimations(iterator.data()).unit()) then
 						debug call Print("Removing order for illusion")
 						call OrderAnimations(iterator.data()).destroy()
-						call this.m_illusionOrderAnimations.erase(iterator)
+						set iterator = this.m_illusionOrderAnimations.erase(iterator)
 						exitwhen (true)
 					endif
 					call iterator.next()

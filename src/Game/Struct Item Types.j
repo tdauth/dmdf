@@ -485,7 +485,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			
 			set thistype.m_nordicWarHammer = ItemType.create('I05C', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_nordicWarHammer.addAbility('A17M', true)
-			call thistype.m_nordicWarHammer.addAbility('A03U', true)
+			call thistype.m_nordicWarHammer.addAbility('A0RU', true)
 			
 			set thistype.m_nordicWarHelmet = ItemType.create('I05E', AItemType.equipmentTypeHeaddress, 0, 0, 0, 0, 0)
 			call thistype.m_nordicWarHelmet.addAbility('A18J', true)
