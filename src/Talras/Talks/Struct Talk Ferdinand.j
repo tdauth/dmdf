@@ -74,9 +74,9 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 		// Der Bauer Manfred fordert mehr Schutz für seinen Hof.
 		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Der Bauer Manfred fordert mehr Schutz für seinen Hof.", "The farmer Manfred calls for more protection for his farm."), null)
-			call speech(info, character, true, tr("Was? Was erlaubt sich dieser Hund? Erst kommt er mir mit seiner Kriegsdienstverweigerung und jetzt auch noch so was?"), gg_snd_Ferdinand10)
-			call speech(info, character, true, tr("Die Bauern leben doch wie die Made im Speck. Die müssen sich ja auch keine Gedanken um die Verteidigung dieser Burg machen. Wenn der Feind kommt, rennen sie vermutlich wie die Hasen davon."), gg_snd_Ferdinand11)
-			call speech(info, character, true, tr("Pass auf! Sag deinem Bauernfreund, dass er selbst zu kämpfen hat, für seinen Herrn, den Herzog von Talras und wenn er das nicht tut, dann kommt er an den Pranger."), gg_snd_Ferdinand12)
+			call speech(info, character, true, tre("Was? Was erlaubt sich dieser Hund? Erst kommt er mir mit seiner Kriegsdienstverweigerung und jetzt auch noch so was?", "What? What is this dog thinking? First he comes to me with his military service objection and now even such a thing?"), gg_snd_Ferdinand10)
+			call speech(info, character, true, tre("Die Bauern leben doch wie die Made im Speck. Die müssen sich ja auch keine Gedanken um die Verteidigung dieser Burg machen. Wenn der Feind kommt, rennen sie vermutlich wie die Hasen davon.", "But the farmers live live how in clover. They do not have to worry about the defense of the castle. If the enemy comes, they probably run away like rabbits."), gg_snd_Ferdinand11)
+			call speech(info, character, true, tre("Pass auf! Sag deinem Bauernfreund, dass er selbst zu kämpfen hat, für seinen Herrn, den Herzog von Talras und wenn er das nicht tut, dann kommt er an den Pranger.", "Watch out! Tell your farmer friend that he has to fight himself for his master, the duke of Talras and if he does not, then he comes to the pillory."), gg_snd_Ferdinand12)
 			call QuestAmongTheWeaponsPeasants.characterQuest(character).enable()
 			call info.talk().showRange(7, 8, character)
 		endmethod
@@ -88,22 +88,22 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 
 		// Manfred macht dir keinen Ärger mehr.
 		private static method infoAction5 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Manfred macht dir keinen Ärger mehr."), null)
-			call speech(info, character, true, tr("Tatsächlich? Das freut mich zu hören. Dann lässt mich dieses elende Bauernpack hoffentlich endlich in Ruhe."), gg_snd_Ferdinand17)
-			call speech(info, character, true, tr("Hier hast du deinen Lohn. Du taugst wirklich etwas."), gg_snd_Ferdinand18)
+			call speech(info, character, false, tre("Manfred macht dir keinen Ärger mehr.", "Manfred won't make you any more trouble."), null)
+			call speech(info, character, true, tre("Tatsächlich? Das freut mich zu hören. Dann lässt mich dieses elende Bauernpack hoffentlich endlich in Ruhe.", "Really? That's good to hear. Then this miserable peasant pack will hopefully leave me alone."), gg_snd_Ferdinand17)
+			call speech(info, character, true, tre("Hier hast du deinen Lohn. Du taugst wirklich etwas.", "Here you have your reward. You're really good at something."), gg_snd_Ferdinand18)
 			call QuestAmongTheWeaponsPeasants.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Pass mal auf du Lustigbär …
 		private static method infoAction4_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Pass mal auf du Lustigbär …"), null)
-			call speech(info, character, false, tr("Du wirst den Bauern ein paar Leute schicken, die ihren Hof bewachen oder du hast das letzte Mal ruhig geschlafen."), null)
-			call speech(info, character, false, tr("Ich kenne genug Leute, die dir für ein paar Goldmünzen im Schlaf die Kehle durchschneiden würden. Manche machen das sogar umsonst!"), null)
-			call speech(info, character, false, tr("Schick ihm Wachen und über den Kriegsdienst reden wir nochmal."), null)
-			call speech(info, character, true, tr("Was? Was erlaubst du dir? Du, du … das meinst du doch nicht ernst oder?"), gg_snd_Ferdinand13)
-			call speech(info, character, false, tr("Hmm, lass mich überlegen. Ja verdammt, ich meine es ernst! Also tu was ich sage und ich vergesse meine netten Pläne ganz schnell wieder."), null)
-			call speech(info, character, true, tr("Na gut, ich werde ein paar Leute hinschicken. Kann ja nicht schaden, mal ein Auge auf die Sicherheit der Nahrungsbestände zu werfen. Nun komm aber wieder runter."), gg_snd_Ferdinand14)
+			call speech(info, character, false, tre("Pass mal auf du Lustigbär …", "Watch out you funny bear ..."), null)
+			call speech(info, character, false, tre("Du wirst den Bauern ein paar Leute schicken, die ihren Hof bewachen oder du hast das letzte Mal ruhig geschlafen.", "You'll end a couple of people to the farmers who guard their farm or it will be the last time you have slept quietly."), null)
+			call speech(info, character, false, tre("Ich kenne genug Leute, die dir für ein paar Goldmünzen im Schlaf die Kehle durchschneiden würden. Manche machen das sogar umsonst!", "I know plenty of people who would cut your throat for a few gold coins in your sleep. Some do it even for free!"), null)
+			call speech(info, character, false, tre("Schick ihm Wachen und über den Kriegsdienst reden wir nochmal.", "Send him guards and about the military service we talk again."), null)
+			call speech(info, character, true, tre("Was? Was erlaubst du dir? Du, du … das meinst du doch nicht ernst oder?", "What? How dare you? You, you ... you can not be serious right?"), gg_snd_Ferdinand13)
+			call speech(info, character, false, tre("Hmm, lass mich überlegen. Ja verdammt, ich meine es ernst! Also tu was ich sage und ich vergesse meine netten Pläne ganz schnell wieder.", "Hmm, let me think. Yes damn, I'm serious! So do as I say and I forget my nice plans very quickly."), null)
+			call speech(info, character, true, tre("Na gut, ich werde ein paar Leute hinschicken. Kann ja nicht schaden, mal ein Auge auf die Sicherheit der Nahrungsbestände zu werfen. Nun komm aber wieder runter.", "Well, I'll send in a few people. It cannot hurt, to keep an eye on the safety of the food stucks sometime. Now calm down again."), gg_snd_Ferdinand14)
 			call QuestAmongTheWeaponsPeasants.characterQuest(character).fail()
 			call QuestProtectThePeople.characterQuest(character).questItem(0).setState(AAbstractQuest.stateCompleted)
 			call QuestProtectThePeople.characterQuest(character).questItem(1).enable()
@@ -112,9 +112,9 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 
 		// Gut, ich werd's ihm weismachen.
 		private static method infoAction4_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Gut, ich werd's ihm weismachen."), null)
-			call speech(info, character, true, tr("Na das hört man doch gerne. Ein treuer Diener des Herzogs! Falls du ihn tatsächlich überzeugen kannst, kann ich mir die Mühe sparen, ein paar Wachen zu ihm zu schicken."), gg_snd_Ferdinand15)
-			call speech(info, character, true, tr("Damit wäre mir wirklich geholfen. Dafür würdest du natürlich auch bezahlt werden."), gg_snd_Ferdinand16)
+			call speech(info, character, false, tre("Gut, ich werd's ihm weismachen.", "Well, I will make him believe it."), null)
+			call speech(info, character, true, tre("Na das hört man doch gerne. Ein treuer Diener des Herzogs! Falls du ihn tatsächlich überzeugen kannst, kann ich mir die Mühe sparen, ein paar Wachen zu ihm zu schicken.", "Well, that one hears with pleasure. A faithful servant of the duke! If you can actually convince him, I can save myself the trouble to send a few guards to him."), gg_snd_Ferdinand15)
+			call speech(info, character, true, tre("Damit wäre mir wirklich geholfen. Dafür würdest du natürlich auch bezahlt werden.", "This would be really helpful. But of course you would also be paid."), gg_snd_Ferdinand16)
 			call QuestProtectThePeople.characterQuest(character).fail()
 			call info.talk().showStartPage(character)
 		endmethod
@@ -128,17 +128,17 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 				set i = i + 1
 			endloop
 			// start page
-			call this.addInfo(false, false, 0, thistype.infoAction0, tr("Hallo.")) // 0
-			call this.addInfo(false, false, thistype.infoCondition0, thistype.infoAction1, tr("Was hast du denn zu tun?")) // 1
-			call this.addInfo(false, false, thistype.infoCondition1, thistype.infoAction2, tr("Wer bist du?")) // 2
-			call this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tr("Warum bekommt der Händler Haid keine Handelsgenehmigung für Talras?")) // 3
-			call this.addInfo(false, false, thistype.infoCondition4, thistype.infoAction4, tr("Der Bauer Manfred fordert mehr Schutz für seinen Hof.")) // 4
-			call this.addInfo(false, false, thistype.infoCondition5, thistype.infoAction5, tr("Manfred macht dir keinen Ärger mehr.")) // 5
+			call this.addInfo(false, false, 0, thistype.infoAction0, tre("Hallo.", "Hello.")) // 0
+			call this.addInfo(false, false, thistype.infoCondition0, thistype.infoAction1, tre("Was hast du denn zu tun?", "What do you have to do?")) // 1
+			call this.addInfo(false, false, thistype.infoCondition1, thistype.infoAction2, tre("Wer bist du?", "Who are you?")) // 2
+			call this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tre("Warum bekommt der Händler Haid keine Handelsgenehmigung für Talras?", "Why doesn't the merchant Haid get a trading permission for Talras?")) // 3
+			call this.addInfo(false, false, thistype.infoCondition4, thistype.infoAction4, tre("Der Bauer Manfred fordert mehr Schutz für seinen Hof.", "The farmer Manfred calls for more protection for his farm.")) // 4
+			call this.addInfo(false, false, thistype.infoCondition5, thistype.infoAction5, tre("Manfred macht dir keinen Ärger mehr.", "Manfred won't make you any more trouble.")) // 5
 			call this.addExitButton() // 6
 
 			// info 4
-			call this.addInfo(false, false, 0, thistype.infoAction4_0, tr("Pass mal auf du Lustigbär …")) // 7
-			call this.addInfo(false, false, 0, thistype.infoAction4_1, tr("Gut, ich werd's ihm weismachen.")) // 8
+			call this.addInfo(false, false, 0, thistype.infoAction4_0, tre("Pass mal auf du Lustigbär …", "Watch out you funny bear ...")) // 7
+			call this.addInfo(false, false, 0, thistype.infoAction4_1, tre("Gut, ich werd's ihm weismachen.", "Well, I will make him believe it.")) // 8
 
 			return this
 		endmethod

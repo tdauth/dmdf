@@ -27,25 +27,25 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(this.actor(), tr("Holzfäller Kuno!"), null)
+			call TransmissionFromUnit(this.actor(), tre("Holzfäller Kuno!", "Lumberjack Kuno!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Was ist?"), gg_snd_Kuno30)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tre("Kuno", "Kuno"), tre("Was ist?", "What is it?"), gg_snd_Kuno30)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno30))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.actor(), tr("Der Herzog benötigt Holz für die Befestigung eines eroberten Außenpostens."), null)
+			call TransmissionFromUnit(this.actor(), tre("Der Herzog benötigt Holz für die Befestigung eines eroberten Außenpostens.", "The duke needs wood for the reinforcement of a conquered outpost."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Also hat der Krieg schon begonnen? Bei den Göttern das wird kein gutes Ende haben. Aber wieso sollte ich den Herzog dabei unterstützen? Was habe ich davon?"), gg_snd_Kuno31)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tre("Kuno", "Kuno"), tre("Also hat der Krieg schon begonnen? Bei den Göttern das wird kein gutes Ende haben. Aber wieso sollte ich den Herzog dabei unterstützen? Was habe ich davon?", "So the war has already begun? By the gods it won't have a good end. But why should I support the duke here? What do I get from that?"), gg_snd_Kuno31)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno31))) then
 				return
