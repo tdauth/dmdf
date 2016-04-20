@@ -25,7 +25,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		call InitCustomTeams(  )
 		call InitAllyPriorities(  )
 
-		call PlayMusic("Music\\LoadingScreen.mp3") /// WARNING: If file does not exist, game crashes?
+		//call PlayMusic("Music\\LoadingScreen.mp3") /// WARNING: If file does not exist, game crashes?
 	//! endinject
 
 	/**
@@ -347,9 +347,9 @@ endif
 			call Weather.startRainCountdown()
 			
 			// call GetCamOffset after initialization to make sure it returns the correct value
-			call CameraHeight.addRect(gg_rct_bridge_talras_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)) / 2.2)
-			call CameraHeight.addRect(gg_rct_bridge_death_vault_0_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)) / 2.2)
-			call CameraHeight.addRect(gg_rct_bridge_death_vault_1_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)) / 2.2)
+			call CameraHeight.addRect.evaluate(gg_rct_bridge_talras_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)) / 2.2)
+			call CameraHeight.addRect.evaluate(gg_rct_bridge_death_vault_0_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)) / 2.2)
+			call CameraHeight.addRect.evaluate(gg_rct_bridge_death_vault_1_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)) / 2.2)
 			
 			call VideoIntro.video().play()
 		endmethod

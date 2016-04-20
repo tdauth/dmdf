@@ -118,7 +118,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("In dem Wald dort hinten tummeln sich die Bestien dicht an dicht, aber keine Spur eines Drachen. Das beschäftigt mich schwer, denn ich habe seit Tagen kein Blut mehr gesehen.", "In the forest back there, the beasts frolicking densley packed but no trace of a dragon. This is on my mind heavily for I have seen no more blood ofr days."), gg_snd_DragonSlayer5)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("In dem Wald dort hinten tummeln sich die Bestien dicht an dicht, aber keine Spur eines Drachen. Das beschäftigt mich schwer, denn ich habe seit Tagen kein Blut mehr gesehen.", "In the forest back there, the beasts frolicking densley packed but no trace of a dragon. This is on my mind heavily for I have seen no more blood for days."), gg_snd_DragonSlayer5)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayer5))) then
 				return

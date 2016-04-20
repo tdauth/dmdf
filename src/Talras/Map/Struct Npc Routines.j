@@ -86,6 +86,8 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		
 		private static NpcTalksRoutine m_brogoTalksToHimself
 		
+		private static NpcTalksRoutine m_dragonSlayerSells = 0
+		
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
@@ -400,6 +402,16 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call AUnitRoutine.manualStart(gg_unit_n02J_0157)
 			call AUnitRoutine.manualStart(gg_unit_n02J_0159)
 			call AUnitRoutine.manualStart(gg_unit_n02J_0158)
+		endmethod
+		
+		public static method initDragonSlayerSells takes nothing returns nothing
+			set thistype.m_dragonSlayerSells = NpcTalksRoutine.create(Routines.talk(), Npcs.dragonSlayer(), 270.0, 23.59, gg_rct_waypoint_dragon_slayer_farm)
+			call thistype.m_dragonSlayerSells.setFacing(277.12)
+			call thistype.m_dragonSlayerSells.setPartner(null)
+			call thistype.m_dragonSlayerSells.addSound(tr("Beste Waren aus dem Königreich der Hochelfen."), gg_snd_DragonSlayerFarm1)
+			call thistype.m_dragonSlayerSells.addSound(tr("Greift zu solange die Ware noch frisch ist!"), gg_snd_DragonSlayerFarm2)
+			call thistype.m_dragonSlayerSells.addSound(tr("Das gab es noch nie: Eine Hochelfin räumt aus! Die besten Angebote, nur heute!"), gg_snd_DragonSlayerFarm3)
+			call thistype.m_dragonSlayerSells.addSound(tr("Artefakte, echte und gefälschte, nur bei mir!"), gg_snd_DragonSlayerFarm4)
 		endmethod
 	endstruct
 

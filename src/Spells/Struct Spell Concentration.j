@@ -15,7 +15,7 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 
 		private static method timerFunction takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
-			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, 0)
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(expiredTimer, 0))
 			local unit caster = this.character().unit()
 			local effect spellEffect = null
 			local real life

@@ -1,4 +1,4 @@
-library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcs, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath
+library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcRoutines, StructMapMapNpcs, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath
 
 	struct QuestAreaDeranor extends QuestArea
 	
@@ -127,6 +127,8 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			local integer i
 			call Fellows.dragonSlayer().reset()
 			call TalkDragonSlayer.initTalk()
+			call NpcRoutines.initDragonSlayerSells()
+			call AUnitRoutine.manualStart(Npcs.dragonSlayer())
 			
 			call VideoDeranorsDeath.video().play()
 			call waitForVideo(MapData.videoWaitInterval)

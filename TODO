@@ -882,12 +882,17 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 Mehrspielertest:
 * Wenn man Diakon tötet Spielabsturz.
 * Dorfbewohner spawnen einfach während Metzelei bei Diakon als Gegner?!
+* FIXED: Ritter ist zu schwach. Sollte 3 Punkte auf Hauptattribut pro Stufe kriegen, damit er mehr Schaden verursacht.
 * Jojo hat Arenakampf verloren und war danach einfach total langsam (Fähigkeit Arenagegner?). Sie wurde auch nicht aus der Arena verschoben.
-* Bei Jojo wurde die Kamera während den Kämpfen hin- und herbewegt (vor und zurück), cameraDistance() vs irgendwas anderes???
+* Bei Jojo wurde die Kamera während den Kämpfen hin- und herbewegt (vor und zurück), cameraDistance() vs irgendwas anderes??? Vielleicht CameraHeight!!! Läuft die ganze Zeit außer in Videos?!
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Nervig:
+* New unit sounds of Dragon Slayer dont work (because they are stereo??).
+* Fix standing animations of character (dont cross arms etc. when wearing weapons).
+* Make staff model bigger in width.
+* Add stalls with all degrees (0, 90, 180, 270) and replace those tiny boxes.
 * Add a custom music system to play custom music tracks on loop. As long as there is no custom music system PlayThematicMusicForPlayer() has to be used. Otherwise the ingame music will be stopped.
 * DONE: Fix cursor in map Gardonar.
 * Arena opponnent walks out of the arena if he is blinded.
@@ -899,6 +904,7 @@ Nervig:
 * Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.
 * Spruchrolle umbenennen zu Schreinteleport.
 * Elementarwesen sind zu viele oder zu stark.
+* Performance: At the moment there is 430 .evaluate() calls found in the code. This number should be reduced to improve the performance.
 
 Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.

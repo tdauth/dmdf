@@ -220,7 +220,7 @@ P;EArial;M200;SU;L37
 P;EArial;M200;SI
 P;EArial;M200
 F;P0;DG0G8;M255
-B;Y3393;X6;D0 0 2438 5
+B;Y3397;X6;D0 0 2438 5
 O;L;S;D;V0;K47;G100 0.001
 F;W1 1 27
 F;W2 2 35
@@ -27724,6 +27724,54 @@ F;X2
 C;K"Brogo16.wav";ECONCATENATE(RC[-1],".wav")
 F;X3
 C;K"Sound\Dialogue\Brogo\"
+F;X4
+C;K120
+F;X5
+C;K"CHANNELFULLPREEMPT|LISTFULLPREEMPT"
+F;X6
+C;K1
+F;Y3394;X1
+C;K"DragonSlayerFarm1"
+F;X2
+C;K"DragonSlayerFarm1.mp3";ECONCATENATE(RC[-1],".mp3")
+F;X3
+C;K"Sound\Dialogue\DragonSlayer\"
+F;X4
+C;K120
+F;X5
+C;K"CHANNELFULLPREEMPT|LISTFULLPREEMPT"
+F;X6
+C;K1
+F;Y3395;X1
+C;K"DragonSlayerFarm2"
+F;X2
+C;K"DragonSlayerFarm2.mp3";ECONCATENATE(RC[-1],".mp3")
+F;X3
+C;K"Sound\Dialogue\DragonSlayer\"
+F;X4
+C;K120
+F;X5
+C;K"CHANNELFULLPREEMPT|LISTFULLPREEMPT"
+F;X6
+C;K1
+F;Y3396;X1
+C;K"DragonSlayerFarm3"
+F;X2
+C;K"DragonSlayerFarm3.mp3";ECONCATENATE(RC[-1],".mp3")
+F;X3
+C;K"Sound\Dialogue\DragonSlayer\"
+F;X4
+C;K120
+F;X5
+C;K"CHANNELFULLPREEMPT|LISTFULLPREEMPT"
+F;X6
+C;K1
+F;Y3397;X1
+C;K"DragonSlayerFarm4"
+F;X2
+C;K"DragonSlayerFarm4.mp3";ECONCATENATE(RC[-1],".mp3")
+F;X3
+C;K"Sound\Dialogue\DragonSlayer\"
 F;X4
 C;K120
 F;X5

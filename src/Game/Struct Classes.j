@@ -296,9 +296,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 
 		private static method initKnight takes nothing returns nothing
 			set thistype.m_knight = AClass.create('H006', "spell", "Sound\\Units\\ClassKnight\\Class.wav", 1, 1)
-			call thistype.m_knight.setStrPerLevel(2.0)
-			call thistype.m_knight.setAgiPerLevel(2.0)
-			call thistype.m_knight.setIntPerLevel(2.0)
+			call thistype.m_knight.setStrPerLevel(3.0)
+			call thistype.m_knight.setAgiPerLevel(1.5)
+			call thistype.m_knight.setIntPerLevel(1.5)
 			call thistype.m_knight.addDescriptionLine(tre("Der Ritter ist ein starker Kämpfer, der an vorderster Front steht und eine dicke Rüstung trägt,", "The knight is a strong warrior who stands at the forefront and wears a thick armour"))
 			call thistype.m_knight.addDescriptionLine(tre("die ihn besonders überlebensfähig macht.", "which makes him particularly viable."))
 			call thistype.m_knight.addDescriptionLine(tre("Er sorgt dafür, dass seine Feinde die weniger gut geschützten Nah- und Fernkämpfer nicht erreichen.", "He makes sure that his enemies do not reach the less well-protected melee and range fighters."))

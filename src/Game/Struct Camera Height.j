@@ -1,6 +1,10 @@
-library StructGameCameraHeight requires Asl
+library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClassSelection
 	/**
 	 * \brief Adjusts the camera height add registered rects to a Z value.
+	 * Every rect can be registred using \ref addRect() with a certain height value.
+	 * This height value is used to set the player's camera Z offset value when his camera target is in the rect.
+	 * This helps certain rects to produce a correct camera Z offset which is otherwise not recognized. For example when a Doodad is
+	 * in the air but there is no corresponding cliff level the camera might be too low.
 	 */
 	struct CameraHeight
 		public static real period = 1.0
@@ -18,13 +22,13 @@ library StructGameCameraHeight requires Asl
 			local integer j
 			local real height = 0.0
 			local boolean found = false
-			//debug call Print("run")
-			//debug call Print("Terrain cliff level: " + I2S(GetTerrainCliffLevel(GetCameraTargetPositionX(), GetCameraTargetPositionY())) + " with distance " + R2S(GetCameraField(CAMERA_FIELD_ZOFFSET)))
-			
+			local Character character = 0
 			set j = 0
 			loop
 				exitwhen (j == MapData.maxPlayers)
-				if (GetLocalPlayer() == Player(j)) then
+				set character = Character(ACharacter.playerCharacter(Player(i)))
+				// make sure it is not always set otherwise the camera might move strangely in class selection or other GUIs
+				if (not character.isViewEnabled() and ClassSelection.playerClassSelection(Player(i)) == 0 and not AGui.playerGui(Player(i)).isShown() and GetLocalPlayer() == Player(j)) then
 					set i = 0
 					loop
 						exitwhen (i == thistype.m_rects.size() or found)
@@ -52,12 +56,21 @@ library StructGameCameraHeight requires Asl
 			call TimerStart(thistype.m_timer, thistype.period, true, function thistype.timerFunctionUpdateCameraHeight)
 		endmethod
 		
+		/**
+		 * Pauses the updating timer and resets the Z offset for all players to 0.
+		 * Therefore after calling this method the camera height is not updated anymore for any player.
+		 */
 		public static method pause takes nothing returns nothing
 			call PauseTimer(thistype.m_timer)
+			// reset z offset for safety
+			call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, thistype.period)
 		endmethod
 		
+		/**
+		 * Resumes the timer which updates the Z offset of the camera for all players.
+		 */
 		public static method resume takes nothing returns nothing
-			call TimerStart(thistype.m_timer, thistype.period, true, function thistype.timerFunctionUpdateCameraHeight)
+			call thistype.start()
 		endmethod
 		
 		private static method onInit takes nothing returns nothing

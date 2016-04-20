@@ -215,6 +215,24 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		public method shareWithAll takes nothing returns nothing
 			call this.shareWith(0)
 		endmethod
+		
+		/**
+		 * Revive always at the first character's enabled revival.
+		 */
+		private method reviveAtActiveShrine takes boolean showEffect returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (Character.playerCharacter(Player(i)) != 0 and Character.playerCharacter(Player(i)).revival() != 0) then
+					call ReviveHero(this.m_unit, Character.playerCharacter(Player(i)).revival().x(), Character.playerCharacter(Player(i)).revival().y(), showEffect)
+					
+					return
+				endif
+				set i = i + 1
+			endloop
+			debug call Print("Missing revival!")
+			call ReviveHero(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), showEffect)
+		endmethod
 
 		/**
 		 * Removes fellow from the characters group by resetting its owner and making it a normal NPC again.
@@ -227,7 +245,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 			// makes sure the fellow lives
 			if (IsUnitDeadBJ(this.m_unit)) then
-				call this.reviveAtActiveShrine.evaluate(false)
+				call this.reviveAtActiveShrine(false)
 			endif
 			
 			call SetUnitOwner(this.m_unit, MapData.neutralPassivePlayer, true)
@@ -288,24 +306,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call this.setShared(false)
 			
 			call RemoveUnitOcclusion(this.m_unit)
-		endmethod
-		
-		/**
-		 * Revive always at the first character's enabled revival.
-		 */
-		private method reviveAtActiveShrine takes boolean showEffect returns nothing
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				if (Character.playerCharacter(Player(i)) != 0 and Character.playerCharacter(Player(i)).revival() != 0) then
-					call ReviveHero(this.m_unit, Character.playerCharacter(Player(i)).revival().x(), Character.playerCharacter(Player(i)).revival().y(), showEffect)
-					
-					return
-				endif
-				set i = i + 1
-			endloop
-			debug call Print("Missing revival!")
-			call ReviveHero(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), showEffect)
 		endmethod
 
 		/**

@@ -10,6 +10,10 @@
 library LibraryGameLanguage requires Asl
 
 	/**
+	 * Allows to return a different string for every player depending on the language of the player's game.
+	 * \note This might lead to desyncs if the string return value is used for all players since it might be different for every player.
+	 * \param german The German version of the text.
+	 * \param english The English version of the text.
 	 * \return Returns \p german if the local player's language is German. Otherwise it returns \p english.
 	 */
 	function tre takes string german, string english returns string
@@ -20,7 +24,9 @@ library LibraryGameLanguage requires Asl
 		return english
 	endfunction
 	
-	
+	/**
+	 * The plural string version for German and English.
+	 */
 	function trpe takes string german0, string german1, string english0, string english1, integer counter returns string
 		if (GetLanguage() == "German") then
 			return trp(german0, german1, counter)

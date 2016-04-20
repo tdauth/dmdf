@@ -1,4 +1,4 @@
-library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter, StructGameItemTypes, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
+library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
 
 	/**
 	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
@@ -742,7 +742,7 @@ endif
 			
 			// apply initial camera bounds
 			call thistype.resetCameraBounds()
-			call CameraHeight.start()
+			call CameraHeight.start.evaluate()
 
 			// debug mode allows you to use various cheats
 static if (DEBUG_MODE) then
@@ -909,7 +909,7 @@ endif
 				set i = i + 1
 			endloop
 			call DisableTransparency()
-			call CameraHeight.pause()
+			call CameraHeight.pause.evaluate()
 			
 			/*
 			 * The attack order animations of the Villager255 have to be handled for the actor as well.
@@ -986,7 +986,7 @@ endif
 				set i = i + 1
 			endloop
 			call EnableTransparency()
-			call CameraHeight.resume()
+			call CameraHeight.resume.evaluate()
 			if (thistype.m_actorOrderAnimations != 0) then
 				call thistype.m_actorOrderAnimations.destroy()
 				set thistype.m_actorOrderAnimations = 0
