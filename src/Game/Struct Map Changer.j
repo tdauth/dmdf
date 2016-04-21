@@ -77,6 +77,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call StoreBoolean(cache, "Stored", "Stored", true)
 			// the current save game name has to be stored to know from where the save games have to be copied
 			call StoreString(cache, "CurrentSaveGame", "CurrentSaveGame", thistype.m_currentSaveGame)
+			call SaveGameCache(cache)
 			set cache = null
 		endmethod
 		

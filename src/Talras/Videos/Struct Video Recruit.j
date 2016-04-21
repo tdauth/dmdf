@@ -61,6 +61,12 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 			// TODO Obst werfen!
 			
 			// TODO Finish dialog, drum cave iron.
+			
+			call TransmissionFromUnit(this.m_actorFerdinand, tr("Das ist ja unerhört! Ich verbitte mir das oder wollt ihr etwa am Pranger landen? Das gemeine Volk taugt eben nichts. Sie beschweren sich immerzu."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
 
 			
 			call this.stop()

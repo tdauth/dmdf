@@ -8,7 +8,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		/**
 		 * For every kill a player gets this reward of gold.
 		 */
-		public static constant integer rewardGold = 10
+		public static constant integer rewardGoldPerLevel = 2
 		private static constant integer maxUnits = 2
 		// static construction members
 		private static real m_outsideX
@@ -24,6 +24,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static ARealVector m_startFacing
 		private static AUnitVector m_units
 		private static integer array m_playerScore[12] /// \todo \ref MapData.maxPlayers
+		private static integer m_level = 0
 		private static unit m_winner
 		private static region m_region
 		private static trigger m_killTrigger
@@ -34,6 +35,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		 */
 		private static trigger m_damageTrigger
 		private static leaderboard m_leaderboard
+		private static trigger m_sellTrigger
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Arena\"")
 
@@ -166,6 +168,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		 */
 		private static method endFight takes nothing returns nothing
 			local ACharacter character = ACharacter.getCharacterByUnit(thistype.m_winner)
+			local integer rewardGold = thistype.rewardGoldPerLevel * thistype.m_level
 			local string winnerName
 			if (character != 0) then
 				set winnerName = GetPlayerName(character.player())
@@ -182,8 +185,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				exitwhen (thistype.m_units.empty())
 				call thistype.removeUnitByIndex(thistype.m_units.backIndex())
 			endloop
-			call AdjustPlayerStateSimpleBJ(GetOwningPlayer(thistype.m_winner), PLAYER_STATE_RESOURCE_GOLD, thistype.rewardGold)
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, Format(thistype.m_textEndFight).s(winnerName).i(thistype.rewardGold).result())
+			call AdjustPlayerStateSimpleBJ(GetOwningPlayer(thistype.m_winner), PLAYER_STATE_RESOURCE_GOLD, rewardGold)
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, Format(thistype.m_textEndFight).s(winnerName).i(rewardGold).result())
 		endmethod
 
 		/**
@@ -333,6 +336,57 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call LeaderboardSetStyle(thistype.m_leaderboard, true, true, true, true)
 			call LeaderboardDisplay(thistype.m_leaderboard, false)
 		endmethod
+		
+		private static method triggerConditionSell takes nothing returns boolean
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
+			
+			if (GetSellingUnit() == Npcs.agihard() and (GetUnitTypeId(GetSoldUnit()) == 'h017' or GetUnitTypeId(GetSoldUnit()) == 'h018' or GetUnitTypeId(GetSoldUnit()) == 'h019' or GetUnitTypeId(GetSoldUnit()) == 'h01A' or GetUnitTypeId(GetSoldUnit()) == 'h01D')) then
+				return true
+			endif
+			
+			return false
+		endmethod
+		
+		private static method timerFunctionStartArenaFight takes nothing returns nothing
+			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 0)
+			local Character character = ACharacter.playerCharacter(GetOwningPlayer(soldUnit))
+			local unit arenaEnemy
+			
+			if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and character != 0 and character.isMovable() and thistype.isFree.evaluate()) then
+				set arenaEnemy = CreateUnit(MapData.arenaPlayer, GetUnitTypeId(soldUnit), 0.0, 0.0, 0.0)
+				call Arena.addUnit.evaluate(arenaEnemy)
+				set arenaEnemy = null
+				call Arena.addCharacter.evaluate(character)
+			debug else
+				debug call Print("No character!")
+			endif
+			
+			call RemoveUnit(soldUnit)
+			call PauseTimer(GetExpiredTimer())
+			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
+		endmethod
+		
+		private static method triggerActionSell takes nothing returns nothing
+			local timer whichTimer = CreateTimer()
+			call DmdfHashTable.global().setHandleUnit(whichTimer, 0, GetSoldUnit()) 
+			
+			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
+			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
+			debug call Print("Buying unit " + GetUnitName(GetBuyingUnit()))
+			call SetUnitInvulnerable(GetSoldUnit(), true)
+			call ShowUnit(GetSoldUnit(), false)
+			call PauseUnit(GetSoldUnit(), true)
+			
+			// wait since the selling unit is being paused
+			call TimerStart(whichTimer, 0.0, false, function thistype.timerFunctionStartArenaFight)
+		endmethod
+		
+		private static method createSellTrigger takes nothing returns nothing
+			set thistype.m_sellTrigger = CreateTrigger()
+			call TriggerRegisterUnitEvent(thistype.m_sellTrigger, Npcs.agihard(), EVENT_UNIT_SELL)
+			call TriggerAddCondition(thistype.m_sellTrigger, Condition(function thistype.triggerConditionSell))
+			call TriggerAddAction(thistype.m_sellTrigger, function thistype.triggerActionSell)
+		endmethod
 
 		public static method init takes real outsideX, real outsideY, real outsideFacing, string textEnter, string textLeave, string textStartFight, string textEndFight returns nothing
 			local integer i
@@ -365,6 +419,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.createLeaveTrigger()
 			call thistype.createPvpTrigger()
 			call thistype.createLeaderboard()
+			call thistype.createSellTrigger()
 		endmethod
 
 		public static method cleanUp takes nothing returns nothing
@@ -385,6 +440,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call DestroyLeaderboard(thistype.m_leaderboard)
 			set thistype.m_leaderboard = null
 			call thistype.destroyDamageTrigger()
+			call DestroyTrigger(thistype.m_sellTrigger)
+			set thistype.m_sellTrigger = null
 		endmethod
 
 		// static members
@@ -483,6 +540,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				set title = GetPlayerName(owner)
 			else
 				set title = GetUnitName(usedUnit)
+			endif
+			
+			if (not Character.isUnitCharacter(usedUnit) and GetOwningPlayer(usedUnit) == MapData.arenaPlayer) then
+				set thistype.m_level = GetUnitLevel(usedUnit)
 			endif
 			
 			call LeaderboardAddItemBJ(owner, thistype.m_leaderboard, title + ":", thistype.playerScore(owner))

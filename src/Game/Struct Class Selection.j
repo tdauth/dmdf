@@ -111,6 +111,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endloop
 		endmethod
 		
+		public static method startGame takes nothing returns nothing
+			set thistype.m_gameStarted = true
+			call Game.start.execute()
+		endmethod
+		
 		public stub method onSelectClass takes Character character, AClass class, boolean last returns nothing
 			local integer i
 			local integer j
@@ -148,8 +153,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				else
 					debug call Print("Start game")
 					call thistype.endTimer()
-					set thistype.m_gameStarted = true
-					call Game.start.execute()
+					call thistype.startGame()
 				endif
 			else
 				call character.setMovable(true)

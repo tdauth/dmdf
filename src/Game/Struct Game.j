@@ -152,7 +152,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 	endstruct
 
 	struct Game
-		public static constant string gameVersion = "0.7"
+		public static constant string gameVersion = "0.8"
 	
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions
@@ -388,6 +388,7 @@ endif
 
 		/// Most ASL systems are initialized here.
 		private static method onInit takes nothing returns nothing
+			local boolean restoreCharacters = bj_isSinglePlayer and Game.isCampaign()and MapChanger.charactersExistSinglePlayer() and IsMapFlagSet(MAP_RELOADED)
 			local integer i
 			// Advanced Script Library
 			// general systems
@@ -521,10 +522,15 @@ endif
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
 			
-			// class selection
-			call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
+			// if the game is new show the class selection, otherwise restore characters from the game cache (only in campaign mode)
+			if (restoreCharacters) then
+				call TriggerSleepAction(0.0)
+				call MapChanger.restoreCharactersSinglePlayer() // dont run in map initialization already, leads to not starting the map at all (probably because of unallowed function calls or waits)
+				call ClassSelection.startGame.evaluate()
+			else
+				// class selection
+				call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
 			
-			if (not bj_isSinglePlayer or not Game.isCampaign() or not MapChanger.charactersExistSinglePlayer()) then
 				call ClassSelection.showClassSelection.evaluate() // multiboard is created
 				set i = 0
 				loop
@@ -532,8 +538,6 @@ endif
 					call DisplayTextToPlayer(Player(i), 0.0, 0.0, Format(tre("Sprache: %1%", "Language: %1%")).s(GetLanguage()).result())
 					set i = i + 1
 				endloop
-			else
-				call MapChanger.restoreCharactersSinglePlayer()
 			endif
 		endmethod
 
@@ -731,6 +735,16 @@ endif
 					set i = i + 1
 				endloop
 			endif
+			
+			// enable camera timer after starting the game
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (ACharacter.playerCharacter(Player(i)) != 0) then
+					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(false)
+				endif
+				set i = i + 1
+			endloop
 			
 			// shows only if enabled, otherwise hide
 			call Character.showCharactersSchemeToAll()

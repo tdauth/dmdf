@@ -933,6 +933,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			call TestSpawnPoint.spawn()
 		endmethod
 		
+static if (DEBUG_MODE) then
 		private static method onInit takes nothing returns nothing
 			local ACheat cheat
 			debug call Print(tre("|c00ffcc00TEST-MODUS|r", "|c00ffcc00TEST MODE|r"))
@@ -986,6 +987,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)
 			debug call Print("Before creating all cheats")
 		endmethod
+endif
 
 	endstruct
 	

@@ -1,7 +1,7 @@
 library StructMapMapMapData requires Asl, StructGameGame
 
 	struct MapData extends MapDataInterface
-		public static constant string mapName = "Holzbruck0.7"
+		public static constant string mapName = "Holzbruck0.8"
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)

@@ -878,17 +878,19 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!). Passiert nur manchmal.
 * Equipmenteffekte gehen nach Reiten auf Schaf nicht direkt.
 * Schamanenmaske konnte nicht angelegt werden nachdem man auf Schaf war (obwohl Slot frei war). Es kam die Meldung "Slot wird bereits benutzt".
+* Talras map cheats work in non debug mode.
 
 Mehrspielertest:
 * Wenn man Diakon tötet Spielabsturz.
 * Dorfbewohner spawnen einfach während Metzelei bei Diakon als Gegner?!
 * FIXED: Ritter ist zu schwach. Sollte 3 Punkte auf Hauptattribut pro Stufe kriegen, damit er mehr Schaden verursacht.
-* Jojo hat Arenakampf verloren und war danach einfach total langsam (Fähigkeit Arenagegner?). Sie wurde auch nicht aus der Arena verschoben.
+* Jojo hat Arenakampf VERLOREN (hat was mit dem Verlieren zu tun???) und war danach einfach total langsam (Fähigkeit Arenagegner?). Sie wurde auch nicht aus der Arena verschoben.
 * Bei Jojo wurde die Kamera während den Kämpfen hin- und herbewegt (vor und zurück), cameraDistance() vs irgendwas anderes??? Vielleicht CameraHeight!!! Läuft die ganze Zeit außer in Videos?!
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Nervig:
+* In class selection the unit is not stopped even although the order is correctly detected.
 * New unit sounds of Dragon Slayer dont work (because they are stereo??).
 * Fix standing animations of character (dont cross arms etc. when wearing weapons).
 * Make staff model bigger in width.
@@ -897,7 +899,7 @@ Nervig:
 * DONE: Fix cursor in map Gardonar.
 * Arena opponnent walks out of the arena if he is blinded.
 * Kollisionsgrößen der Charaktere sind zu groß.
-* Sound bei Stilleffekt muss bei Unterhaltungen weg.
+* FIXED: Sound bei Stilleffekt muss bei Unterhaltungen weg.
 * Keine HeroGlows für Schwert, Schild, Helm, Bogen und Lanze.
 * Tiergestalten: Einfach Klassenzauber lassen.
 * Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen.
@@ -905,6 +907,10 @@ Nervig:
 * Spruchrolle umbenennen zu Schreinteleport.
 * Elementarwesen sind zu viele oder zu stark.
 * Performance: At the moment there is 430 .evaluate() calls found in the code. This number should be reduced to improve the performance.
+* Wigberht sound recording should be a battle cry.
+* Require voice recordings for the video "Recruit" from the voice actor of Ferdinand.
+* Finish video "Recruit" (last video?).
+* Update/improve video "Dararos".
 
 Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.

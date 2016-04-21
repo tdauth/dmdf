@@ -51,7 +51,7 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBjoern, tre("Ja uns bleibt keine Zeit mehr!", "Yes we have no more time!"), null)
+			call TransmissionFromUnit(this.actor(), tre("Ja uns bleibt keine Zeit mehr!", "Yes we have no more time!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

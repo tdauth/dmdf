@@ -740,7 +740,8 @@ endif
 			set this.m_cameraDistance = thistype.defaultCameraDistance // NOTE updated UI/MiscData.txt
 			set this.m_cameraTimer = CreateTimer()
 			call DmdfHashTable.global().setHandleInteger(this.m_cameraTimer, 0, this)
-			call this.setCameraTimer(true)
+			set this.m_cameraTimerEnabled = false
+			// dont start the timer since the character might be created during map initialization
 			
 			set this.m_orderAnimations = OrderAnimations.create(this, this.unit())
 			set this.m_illusionOrderAnimations = AIntegerList.create()

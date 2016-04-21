@@ -86,7 +86,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 	endstruct
 
 	struct MapData extends MapDataInterface
-		public static constant string mapName = "Talras0.7"
+		public static constant string mapName = "Talras0.8"
 		// Ascetic_-_06_-_Falling_into_Darkness.mp3
 		// ;Music\\mp3Music\\Pride_v002.mp3
 		public static constant string mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3"// //"Music\\Ingame.mp3;Music\\Talras.mp3"
@@ -247,7 +247,7 @@ endif
 			call TriggerAddAction(thistype.m_talkHintTrigger, function thistype.triggerActionTalkHint)
 			
 			set thistype.m_zoneGardonar = Zone.create("Gardonar" + Game.gameVersion, gg_rct_zone_gardonar)
-			call thistype.m_zoneGardonar.disable()
+			//call thistype.m_zoneGardonar.disable() TEST
 			set thistype.m_zoneHolzbruck = Zone.create("Holzbruck" + Game.gameVersion, gg_rct_zone_holzbruck)
 			call thistype.m_zoneHolzbruck.disable()
 			
