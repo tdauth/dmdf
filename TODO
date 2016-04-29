@@ -25,11 +25,11 @@ Handlung:
 * AOS-Gebiet: Bob muss Gegenstände verkaufen.
 * AOS-Gebiet: Die Dämonenhändler sichtbarer machen.
 * AOS-Gebiet: Oscar und Dämon sollen Dialoge bekommen. Leiden unter der Herrschaft von Haldar und Baldar.
-* Vermutlich verursacht EndThematicMusic() beim Beenden eines Videos dass die Human-Musik gespielt wird. Die aktuelle Musik muss daher nach jedem Video wiederhergestellt werden! Game.resetVideoSettings()! setMapMusic() hat nichts gebracht!
+* DEPRECATED (SetMapMusicList muss in Karteninitialisierung aufgerufen werden): Vermutlich verursacht EndThematicMusic() beim Beenden eines Videos dass die Human-Musik gespielt wird. Die aktuelle Musik muss daher nach jedem Video wiederhergestellt werden! Game.resetVideoSettings()! setMapMusic() hat nichts gebracht!
 * Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
 * Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
 * Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/ 
-* Eigentlich benötigen die Zauberbuchfähigkeiten 6 verschiedene! Die letzte entspricht der ausgelernten Stufe und gibt nur noch einmal die Werte an. Ansonsten wird immer die der nächsten Stufe angezeigt und nicht der aktuellen!
+* FIXED: Eigentlich benötigen die Zauberbuchfähigkeiten 6 verschiedene! Die letzte entspricht der ausgelernten Stufe und gibt nur noch einmal die Werte an. Ansonsten wird immer die der nächsten Stufe angezeigt und nicht der aktuellen!
 * Irgendwer in der Todesgruft kann Tote beschwören. Funktioniert jedoch nicht bei den eigenen Untoten? nur bei den Donnerwesen. Sollte bei allem funktionieren -> mehr Gegner.
 * Gruft des Todes: Missgeburt braucht Fähigkeiten.
 * Berserkerin benötigt Fähigkeiten.
@@ -67,7 +67,8 @@ Handlung:
 * Beim Zauber "Drohendes Unheil" sicherstellen, dass der Zauber pro Einheit nur einmal gleichzeitig angewandt werden kann.
 * Leider erlaubt der Zauber "Drohendes Unheil" auch, dass man z. B. bevor man in den Kampf zieht den Effekt auf alle Einheiten zaubert. Daher muss der Effekt zeitlich begrenzt werden!
 * Tutorial: Schreintipp für alle Gebiete von Anfang an aktivieren, auch für aktivierten Schrein.
-* Tutorial: Zunächst einblenden, dass man mit "-mainmenu" ins Haupt-Menü kommt.
+* Tutorial: Als erstes einblenden, dass Anleitungen im Quest-Log stehen.
+* Tutorial: Zunächst einblenden, dass man mit "-menu" ins Haupt-Menü kommt.
 * Tutorial: Einblenden, dass man eine Teleportationsrolle dabei hat.
 * Creep-Lager-Icons funktionieren im Editor aber nicht im Spiel. Liegt daran, dass nicht erkundete Gebiete überhaupt nicht sichtbar sind: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/creep-camps-not-showing-231992/index3.html
 * Klassenzauber auf Basis von "Mana und Leben auffüllen"?
@@ -756,7 +757,7 @@ Test mit zwei menschlichen Spielern:
 * FIXED: Riesenfell immer droppen.
 * FIXED: Riesenfellquest kann man schon mit zwei Fellen beenden und sie werden nicht entfernt.
 * FIXED: Sisgards Dialog wird allen angezeigt.
-* NPCs sollen unterbrechen wenn man einkauft. Alternativ, NPCS langsamer machen oder statische Läden platzieren.
+* DEPRECATED (statische Läden werden verwendet): NPCs sollen unterbrechen wenn man einkauft. Alternativ, NPCS langsamer machen oder statische Läden platzieren.
 * FIXED: Schuhe sind Nahkampfwaffe.
 * FIXED: Verbeugenanimation zeigt random animations in Video "Der Herzog von Talras".
 * FIXED: Pfeilbündelquest ist verbuggt. Björn stellt Pfeile her ohne dass Kuno Holz gibt. Kuno gibt kein Holz, kein Dialog.
@@ -866,7 +867,7 @@ Schwerwiegende Fehler:
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Lange Ladezeit: Widgetizer mit deutschem War3Patch ausprobieren. Erst Widgetizer verwenden, dann war3mapoptimizer!
-* Lag am Anfang: Fähigkeiten preloaden.
+* Lag am Anfang: Fähigkeiten preloaden. Nicht nur Klassenfähigkeiten???
 * Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen?
 Repickprobleme (vermutlich durch OpLimit irgendwo):
 * ACharactersScheme: Multiboard update does not happen immediately!
@@ -878,7 +879,7 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!). Passiert nur manchmal.
 * Equipmenteffekte gehen nach Reiten auf Schaf nicht direkt.
 * Schamanenmaske konnte nicht angelegt werden nachdem man auf Schaf war (obwohl Slot frei war). Es kam die Meldung "Slot wird bereits benutzt".
-* Talras map cheats work in non debug mode.
+* FIXED: Talras map cheats work in non debug mode.
 
 Mehrspielertest:
 * Wenn man Diakon tötet Spielabsturz.
@@ -889,7 +890,13 @@ Mehrspielertest:
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
-Nervig:
+Annoying for version 0.8:
+* Use water textures from Born2Modificates package.
+* Fade trees slowly.
+* Reduce transparency to 0.7 or something.
+* Show text on class selection on how to select the class.
+* Use accept button rather than human icon to accept the selected class.
+* Dago needs a different younger model.
 * In class selection the unit is not stopped even although the order is correctly detected.
 * New unit sounds of Dragon Slayer dont work (because they are stereo??).
 * Fix standing animations of character (dont cross arms etc. when wearing weapons).
@@ -900,7 +907,11 @@ Nervig:
 * Arena opponnent walks out of the arena if he is blinded.
 * Kollisionsgrößen der Charaktere sind zu groß.
 * FIXED: Sound bei Stilleffekt muss bei Unterhaltungen weg.
-* Keine HeroGlows für Schwert, Schild, Helm, Bogen und Lanze.
+* Keine HeroGlows für Schwert, Schild, Helm, Bogen, Lanze, Kräuter, Pilze und Gold.
+* No "defend" animation tag for the Defend ability of the Knight since he has to wear a buckler anyway.
+* Stop revival timer after losing an arena fight.
+* Remove talks from guards since they dont even show a marker.
+* Use difficulty (also in the campaign) to increase the life of the creeps.
 * Tiergestalten: Einfach Klassenzauber lassen.
 * Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen.
 * Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.
@@ -911,6 +922,9 @@ Nervig:
 * Require voice recordings for the video "Recruit" from the voice actor of Ferdinand.
 * Finish video "Recruit" (last video?).
 * Update/improve video "Dararos".
+* Finish the map Gardonar as the second chapter of the story.
+* Finish Deranor's tomb.
+* Fix the transition between maps in the campaign mode: The character should be at least transfered and the save game loaded. Besides there should be no class selection if the character is loaded.
 
 Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.
