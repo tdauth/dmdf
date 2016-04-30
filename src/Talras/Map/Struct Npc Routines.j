@@ -404,6 +404,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call AUnitRoutine.manualStart(gg_unit_n02J_0158)
 		endmethod
 		
+		/**
+		 * The dragon slayer's routine is created after the quest is done for her.
+		 * Before that she doesn't have any routine.
+		 */
 		public static method initDragonSlayerSells takes nothing returns nothing
 			set thistype.m_dragonSlayerSells = NpcTalksRoutine.create(Routines.talk(), Npcs.dragonSlayer(), 270.0, 23.59, gg_rct_waypoint_dragon_slayer_farm)
 			call thistype.m_dragonSlayerSells.setFacing(277.12)

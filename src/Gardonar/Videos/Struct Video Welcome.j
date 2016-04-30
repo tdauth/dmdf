@@ -1,6 +1,7 @@
-library StructMapVideosVideoWelcome requires Asl, StructGameGame
+library StructMapVideosVideoWelcome requires Asl, StructGameGame, StructMapMapNpcs
 
 	struct VideoWelcome extends AVideo
+		private integer m_actorGardonar
 
 		implement Video
 
@@ -8,12 +9,15 @@ library StructMapVideosVideoWelcome requires Asl, StructGameGame
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(6.00)
 			
+			set this.m_actorGardonar = this.saveUnitActor(Npcs.gardonar())
+			
 			call CameraSetupApplyForceDuration(gg_cam_welcome_0, true, 0.00)
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 
-			if (wait(4.0)) then
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorGardonar), tre("Gardonar", "Gardonar"), tr("Ich grüße euch, meine werten Krieger. Tapfer habt ihr euch geschlagen bisher. Ich bin Gardonar, Fürst der Dämonen."), null)
+			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 		

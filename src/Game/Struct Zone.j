@@ -41,7 +41,7 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		 * \note Is called with .execute().
 		 */
 		public stub method onStart takes nothing returns nothing
-			call MapChanger.changeMap(this.m_mapName)
+			call MapChanger.changeMap(this.mapName())
 		endmethod
 		
 		public static method create takes string mapName, rect whichRect returns thistype

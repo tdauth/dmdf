@@ -18,6 +18,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 30
 		public static constant integer workerUnitTypeId = 'h00E'
+		public static constant boolean isSeparateChapter = false
 		public static sound cowSound = null
 		
 		private static Zone m_zoneTalras
@@ -151,7 +152,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 			
 			// execute because of trigger sleep action
-			//call thistype.applyHandicap.execute()
+			call Game.applyHandicapToCreeps.execute()
 		endmethod
 
 		/// Required by \ref Classes.

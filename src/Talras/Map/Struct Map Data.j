@@ -86,19 +86,26 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 	endstruct
 
 	struct MapData extends MapDataInterface
+		/// The map name is used for zones for example to detect the map file name.
 		public static constant string mapName = "Talras0.8"
 		// Ascetic_-_06_-_Falling_into_Darkness.mp3
 		// ;Music\\mp3Music\\Pride_v002.mp3
+		/// This list of music files is set as map music during the map initialization.
 		public static constant string mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3"// //"Music\\Ingame.mp3;Music\\Talras.mp3"
+		/// The maximum number of human players who control a character.
 		public static constant integer maxPlayers = 6
+		/// The player who owns fellows whose control is shared by all users.
 		public static constant player alliedPlayer = Player(6)
+		/// The player for actors during video sequences. This prevents returning the units to their creep spots automatically.
 		public static constant player neutralPassivePlayer = Player(7)
+		/// This player is only required by Talras since there is an arena with opponents.
 		public static constant player arenaPlayer = Player(8)
 		public static constant real morning = 5.0
 		public static constant real midday = 12.0
 		public static constant real afternoon = 16.0
 		public static constant real evening = 18.0
 		public static constant real videoWaitInterval = 1.0
+		/// The fixed time in seconds which it takes until a character is revived automatically after his death.
 		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
@@ -106,6 +113,8 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 30
 		public static constant integer workerUnitTypeId = 'h00E'
+		/// If this value is true there will always be a class selection in the beginning if the map is started for the first time. Otherwise characters will be loaded from the gamecache in campaign mode if available.
+		public static constant boolean isSeparateChapter = true
 		public static sound cowSound = null
 		public static constant player orcPlayer = Player(9)
 		public static constant player haldarPlayer = Player(10)
@@ -354,17 +363,6 @@ endif
 			call VideoIntro.video().play()
 		endmethod
 		
-		private static method applyHandicap takes nothing returns nothing
-			local integer missingPlayers =  Game.missingPlayers()
-			local real handicap = 1.0 - missingPlayers * 0.10
-			// decrease difficulty for others if players are missing
-			if (missingPlayers > 0) then
-				call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
-				call TriggerSleepAction(4.0)
-				call Character.displayDifficultyToAll(Format(tre("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.", "Since you are starting the game without %1% players the enemies get a handicap of %2% %. Besides your character gains more experience as well as more gold coins from killing enemies.")).s(trpe("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), "one more", Format("%1% more").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
-			endif
-		endmethod
-		
 		/**
 		 * This method should be called after the intro has been shown.
 		 * It uses a boolean variable to make sure it is only called once in case the video "Intro" is run via a cheat
@@ -392,7 +390,7 @@ endif
 			call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 			
 			// execute because of trigger sleep action
-			call thistype.applyHandicap.execute()
+			call Game.applyHandicapToCreeps.execute()
 		endmethod
 
 		/// Required by \ref Classes.

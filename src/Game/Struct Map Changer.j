@@ -100,6 +100,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				endif
 				call ACharacter.playerCharacter(whichPlayer).restore(cache, "Character" + I2S(GetPlayerId(whichPlayer)), x, y, facing)
 				set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", thistype.m_currentSaveGame)
+				debug call Print("Current save game: " + thistype.m_currentSaveGame)
 				set cache = null
 			endif
 		endmethod
@@ -124,6 +125,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			debug call Print("Load game path: " + thistype.currentLoadGamePath(newMap))
 			
 			if (SaveGameExists(thistype.currentLoadGamePath(newMap))) then
+				debug call Print("Loading game since it exists.")
 				call LoadGame(thistype.currentLoadGamePath(newMap), false)
 			else
 				debug call Print("Change map to " + thistype.mapPath(newMap))

@@ -254,6 +254,35 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			endloop
 			return result
 		endmethod
+		
+		/**
+		 * Depending on the missing characters and the set difficulty the handicap of the player PLAYER_NEUTRAL_AGGRESSIVE is set.
+		 * Therefore the creeps become stronger or weaker.
+		 * This method does also print a hint about the handicap.
+		 */
+		public static method applyHandicapToCreeps takes nothing returns real
+			local integer missingPlayers = Game.missingPlayers()
+			local real handicap = 1.0 - missingPlayers * 0.10
+			
+			if (GetGameDifficulty() == MAP_DIFFICULTY_EASY) then
+				set handicap = handicap - 0.05
+			elseif (GetGameDifficulty() == MAP_DIFFICULTY_HARD) then
+				set handicap = handicap + 0.10
+			elseif (GetGameDifficulty() == MAP_DIFFICULTY_INSANE) then
+				set handicap = handicap + 0.30
+			endif
+			
+			call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
+			
+			// decrease difficulty for others if players are missing
+			if (missingPlayers > 0) then
+				call Character.displayDifficultyToAll(Format(tre("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.", "Since you are starting the game without %1% players the enemies get a handicap of %2% %. Besides your character gains more experience as well as more gold coins from killing enemies.")).s(trpe("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), "one more", Format("%1% more").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
+			elseif (handicap > 1.0 or handicap < 1.0) then
+				call Character.displayDifficultyToAll(Format(tre("Aufgrund der eingestellten Schwierigkeit starten die Unholde mit einem Handicap von %1%.", "Because of the set difficulty the creeps start with a handicap of %1%.")).rw(handicap * 100.0, 0, 0).result())
+			endif
+			
+			return handicap
+		endmethod
 
 		/**
 		 * Registers a global \p onDamageAction which is evaluated everytime a unit gets damage.
@@ -388,7 +417,8 @@ endif
 
 		/// Most ASL systems are initialized here.
 		private static method onInit takes nothing returns nothing
-			local boolean restoreCharacters = bj_isSinglePlayer and Game.isCampaign()and MapChanger.charactersExistSinglePlayer() and IsMapFlagSet(MAP_RELOADED)
+			// restore the characters in a single player campaign of the game is changed by loading or if it is not the initial chapter
+			local boolean restoreCharacters = bj_isSinglePlayer and Game.isCampaign()and MapChanger.charactersExistSinglePlayer() and (IsMapFlagSet(MAP_RELOADED) or not MapData.isSeparateChapter)
 			local integer i
 			// Advanced Script Library
 			// general systems

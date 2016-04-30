@@ -85,21 +85,21 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNDemonGate.blp")
 			call this.setDescription(tr("In der Nähe befindet sich ein Palast. Sammelt euch dort."))
 			// item questItemReachPalace
-			set questItem = AQuestItem.create(this, tr("Sammelt euch beim Palast."))
+			set questItem = AQuestItem.create(this, tre("Sammelt euch beim Palast.", "Gather at the palace."))
 			call questItem.setPing(true)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_palace_gather)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 100)
 			
 			// item questItemReachPalaceInside
-			set questItem = AQuestItem.create(this, tr("Sammelt euch im Palast."))
+			set questItem = AQuestItem.create(this, tre("Sammelt euch im Palast.", "Gather in the palace."))
 			call questItem.setPing(true)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_palace_gather_inside)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 100)
 			
 			// item questItemFightThroughHell
-			set questItem = AQuestItem.create(this, tr("Kämpft euch durch Gardonars Hölle."))
+			set questItem = AQuestItem.create(this, tre("Kämpft euch durch Gardonars Hölle.", "Fight through Gardonar's hell."))
 			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 100)

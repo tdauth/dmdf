@@ -7,6 +7,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		private static unit m_wigberht
 		private static unit m_ricman
 		private static unit m_dragonSlayer
+		private static unit m_gardonar
 		
 		private static method create takes nothing returns thistype
 			return 0
@@ -20,6 +21,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 			set thistype.m_dragonSlayer = gg_unit_H01F_0004
 			set thistype.m_ricman = gg_unit_H01E_0009
 			set thistype.m_wigberht = gg_unit_H01C_0003
+			set thistype.m_gardonar = gg_unit_n06U_0005
 		endmethod
 		
 		public static method dragonSlayer takes nothing returns unit
@@ -32,6 +34,10 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 
 		public static method wigberht takes nothing returns unit
 			return thistype.m_wigberht
+		endmethod
+		
+		public static method gardonar takes nothing returns unit
+			return thistype.m_gardonar
 		endmethod
 	endstruct
 
