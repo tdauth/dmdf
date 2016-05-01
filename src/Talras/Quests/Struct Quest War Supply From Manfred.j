@@ -83,24 +83,28 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 					set tmpCount = SpawnPoints.cornEaters0().countUnitsIf(thistype.unitLives)
 					set this.m_killedSpawnPoint[0] = tmpCount == 0
 					set count = count + tmpCount
+					debug call Print("Check spawn point 0: " + I2S(tmpCount))
 				endif
 				if (not this.m_killedSpawnPoint[1]) then
 					set tmpCount = SpawnPoints.cornEaters1().countUnitsIf(thistype.unitLives)
 					set this.m_killedSpawnPoint[1] = tmpCount == 0
 					set count = count + tmpCount
+					debug call Print("Check spawn point 1: " + I2S(tmpCount))
 				endif
 				if (not this.m_killedSpawnPoint[2]) then
 					set tmpCount = SpawnPoints.cornEaters2().countUnitsIf(thistype.unitLives)
 					set this.m_killedSpawnPoint[2] = tmpCount == 0
 					set count = count + tmpCount
+					debug call Print("Check spawn point 2: " + I2S(tmpCount))
 				endif
 				if (not this.m_killedSpawnPoint[3]) then
 					set tmpCount = SpawnPoints.cornEaters3().countUnitsIf(thistype.unitLives)
 					set this.m_killedSpawnPoint[3] = tmpCount == 0
 					set count = count + tmpCount
+					debug call Print("Check spawn point 3: " + I2S(tmpCount))
 				endif
 				if (count == 0) then
-					debug call Print("Both counts are 0")
+					debug call Print("All counts are 0")
 					return true
 				// get next one to ping
 				else
@@ -197,10 +201,18 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		public static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Nahrung von Manfred", "Supply from Manfred"), QuestWar.questItemSupplyFromManfred)
 			local AQuestItem questItem
+			local integer i
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMonsterLure.blp")
 			call this.setDescription(tre("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden.", "In order to stop the impeding attacks of Orcs and Dark Elves, the conquered outpost has to be supplied. In addition, traps has to be placed before the walls that make it harder for the enemies to conquer the outpost. Furthermore, war suitable people need to be hired at the farm."))
 			call this.setReward(thistype.rewardExperience, 200)
 			call this.setReward(thistype.rewardGold, 200)
+			
+			set i = 0
+			loop
+				exitwhen (i == thistype.maxSpawnPoints)
+				set this.m_killedSpawnPoint[i] = false
+				set i = i + 1
+			endloop
 			
 			// quest item questItemSupplyFromManfred
 			set questItem = AQuestItem.create(this, tre("Besorgt Nahrung vom Bauern Manfred.", "Get food from the farmer Manfred."))

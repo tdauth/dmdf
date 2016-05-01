@@ -225,7 +225,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n019', gg_rct_video_victory_corpse_3, GetRandomFacing()))
 			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01W', gg_rct_video_victory_corpse_4, GetRandomFacing()))
 			call this.m_corpses.units().pushBack(CreateCorpseAtRect(Player(PLAYER_NEUTRAL_PASSIVE), 'n01X', gg_rct_video_victory_corpse_5, GetRandomFacing()))
-			call this.m_corpses.forGroup(thistype.setDead)
+			//call this.m_corpses.forGroup(thistype.setDead) why should this be necessary?
 			call Game.fadeInWithWait()
 			
 			call TransmissionFromUnitWithName(this.unitActor(this.m_actorNarrator), tre("Erzähler", "Narrator"), tr("So siegten die Menschen über die Orks und Dunkelelfen in einer Schlacht von der man sich in Talras noch lange danach erzählen wird, wenn sich die Nachricht erst verbreitet hat."), gg_snd_ErzaehlerSieg1)

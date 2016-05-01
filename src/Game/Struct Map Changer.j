@@ -1,4 +1,4 @@
-library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGrimoire
+library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHashTable
 
 	/**
 	 * \brief Allows changing the map in singleplayer or in multiplayer.
@@ -110,7 +110,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			//call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, thistype.characterMissionKey(character), "Gold"))
 			// TODO restore skill points
 			// make sure the GUI of the grimoire is correct
-			call character.grimoire().updateUi()
+			call character.grimoire().updateUi.evaluate()
 			set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", "CurrentSaveGame")
 			debug call Print("Current save game: " + thistype.m_currentSaveGame)
 		endmethod

@@ -50,8 +50,8 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 			// Abilities\OrbLightning\OrbLightningX.mdx
 			local effect fireEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIfb\\AIfbTarget.mdx", this.character().unit(), "chest")
 			local effect frostEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIob\\AIobTarget.mdx", this.character().unit(), "chest")
-			local effect waterEffect = AddSpecialEffectTarget("Abilities\\OrbWater\\OrbWaterX.mdx", this.character().unit(), "origin")
-			local effect lightningEffect = AddSpecialEffectTarget("Abilities\\OrbLightning\\OrbLightningX.mdx", this.character().unit(), "origin")
+			//local effect waterEffect = AddSpecialEffectTarget("Abilities\\OrbWater\\OrbWaterX.mdx", this.character().unit(), "origin")
+			//local effect lightningEffect = AddSpecialEffectTarget("Abilities\\OrbLightning\\OrbLightningX.mdx", this.character().unit(), "origin")
 			local AIntegerVector spells = this.spells()
 			local integer i = 0
 			call PlaySoundOnUnitBJ(thistype.whichSound, 100.0, caster)
@@ -76,10 +76,10 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 			set fireEffect = null
 			call DestroyEffect(frostEffect)
 			set frostEffect = null
-			call DestroyEffect(waterEffect)
-			set waterEffect = null
-			call DestroyEffect(lightningEffect)
-			set lightningEffect = null
+			//call DestroyEffect(waterEffect)
+			//set waterEffect = null
+			//call DestroyEffect(lightningEffect)
+			//set lightningEffect = null
 		endmethod
 
 		public static method create takes Character character returns thistype

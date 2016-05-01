@@ -20,6 +20,44 @@ library StructMapVideosVideoWelcome requires Asl, StructGameGame, StructMapMapNp
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
+			
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorGardonar), tre("Gardonar", "Gardonar"), tr("Wir haben bereits viel von euch gehört, aber zunächst einmal möchte ich euch mit den Anwesenden bekannt machen."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorGardonar), tre("Gardonar", "Gardonar"), tr("Dies ist Deranor der Schreckliche, der Herr der Untoten. Ihm seid ihr ja bereits begegnet. Er freut sich euch wiederzusehen."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorGardonar), tre("Gardonar", "Gardonar"), tr("Dort steht Gammar, der oberste Kriegsherr der Orks. Seine Krieger habt ihr bereits getötet."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorGardonar), tre("Gardonar", "Gardonar"), tr("Und ganz rechts steht Baradé der Fürst der Dunkelelfen, auch seine Krieger habt ihr bereits getroffen."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorGardonar), tre("Gardonar", "Gardonar"), tr("Ich selbst habe mich bereits vorgestellt, also lasst uns keine Zeit mehr verlieren. Wir sind beeindruckt von euren Fähigkeiten. Leider scheint ihr sie für die falsche Seite einzusetzen. Auch wenn euch die Menschen etwas anderes erzählen, gibt es in kaum einem Krieg die Guten und die Bösen. Wir haben auch unsere Gründe für unser vorgehen."), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorGardonar), tre("Gardonar", "Gardonar"), tr("Wir haben euch hier her berufen, um euch ein Angebot zu machen: Kämpft für unsere Seite!"), null)
+			
+			if (wait(GetSimpleTransmissionDuration(null))) then
+				return
+			endif
+			
+			// TODO Die Drachentöterin unterbricht ihn, sie weiß über Gardonar usw. bescheid
 		
 			call this.stop()
 		endmethod

@@ -1,4 +1,4 @@
-library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
+library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameMapChanger, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
 
 	/**
 	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
@@ -418,7 +418,7 @@ endif
 		/// Most ASL systems are initialized here.
 		private static method onInit takes nothing returns nothing
 			// restore the characters in a single player campaign of the game is changed by loading or if it is not the initial chapter
-			local boolean restoreCharacters = bj_isSinglePlayer and Game.isCampaign()and MapChanger.charactersExistSinglePlayer.evaluate() and (IsMapFlagSet(MAP_RELOADED) or not MapData.isSeparateChapter)
+			local boolean restoreCharacters = bj_isSinglePlayer and Game.isCampaign()and MapChanger.charactersExistSinglePlayer() and (IsMapFlagSet(MAP_RELOADED) or not MapData.isSeparateChapter)
 			local integer i
 			// Advanced Script Library
 			// general systems
@@ -555,7 +555,7 @@ endif
 			// if the game is new show the class selection, otherwise restore characters from the game cache (only in campaign mode)
 			if (restoreCharacters) then
 				call TriggerSleepAction(0.0)
-				call MapChanger.restoreCharactersSinglePlayer.evaluate() // dont run in map initialization already, leads to not starting the map at all (probably because of unallowed function calls or waits)
+				call MapChanger.restoreCharactersSinglePlayer() // dont run in map initialization already, leads to not starting the map at all (probably because of unallowed function calls or waits)
 				call ClassSelection.startGame.evaluate()
 			else
 				// class selection

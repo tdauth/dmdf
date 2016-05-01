@@ -102,6 +102,7 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 			set questItem = AQuestItem.create(this, tre("Kämpft euch durch Gardonars Hölle.", "Fight through Gardonar's hell."))
 			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setPingCoordinatesFromRect(gg_rct_quest_palace_fight_through_hell)
 			call questItem.setReward(thistype.rewardExperience, 100)
 			
 			return this

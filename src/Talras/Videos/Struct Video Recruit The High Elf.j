@@ -69,7 +69,8 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			call TriggerSleepAction(2.50)
 			call CameraSetupApplyForceDuration(gg_cam_recruit_the_high_elf_talk_view, true, 0.0)
-			
+			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorDragonSlayer), this.actor()) // update facing
+			call SetUnitFacingToFaceUnit(this.actor(), this.unitActor(this.m_actorDragonSlayer))
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			

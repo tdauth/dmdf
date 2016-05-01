@@ -861,7 +861,7 @@ For version 0.7:
 * FIXED: Quest Metzelei: Reihenfolge bis zur Höhle egal!
 
 Aufgehoben für Version 0.8:
-Schwerwiegende Fehler:
+Critical errors:
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * Orcs bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
@@ -880,13 +880,16 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Equipmenteffekte gehen nach Reiten auf Schaf nicht direkt.
 * Schamanenmaske konnte nicht angelegt werden nachdem man auf Schaf war (obwohl Slot frei war). Es kam die Meldung "Slot wird bereits benutzt".
 * FIXED: Talras map cheats work in non debug mode.
+* Still no ability when transforming to Deranor's guard because the inventory is open and the item has the same ability and therefore the ability cannot be added a second time.
+* Loading game doesn't work.
+* Remove old save games when ending game or do not load them when changing the map for the first time to Gardonar. Otherwise if you start a new game it will try to load the old savegame.
 
 Mehrspielertest:
-* Wenn man Diakon tötet Spielabsturz.
+* Wenn man Diakon tötet, Spielabsturz. Konnte nicht immer reproduziert werden. Braucht man mindestens 2 menschliche Spieler?
 * Dorfbewohner spawnen einfach während Metzelei bei Diakon als Gegner?!
 * FIXED: Ritter ist zu schwach. Sollte 3 Punkte auf Hauptattribut pro Stufe kriegen, damit er mehr Schaden verursacht.
 * Jojo hat Arenakampf VERLOREN (hat was mit dem Verlieren zu tun???) und war danach einfach total langsam (Fähigkeit Arenagegner?). Sie wurde auch nicht aus der Arena verschoben.
-* Bei Jojo wurde die Kamera während den Kämpfen hin- und herbewegt (vor und zurück), cameraDistance() vs irgendwas anderes??? Vielleicht CameraHeight!!! Läuft die ganze Zeit außer in Videos?!
+* FIXED: Bei Jojo wurde die Kamera während den Kämpfen hin- und herbewegt (vor und zurück), cameraDistance() vs irgendwas anderes??? Vielleicht CameraHeight!!! Läuft die ganze Zeit außer in Videos?!
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
@@ -925,6 +928,13 @@ Annoying for version 0.8:
 * Finish the map Gardonar as the second chapter of the story.
 * Finish Deranor's tomb.
 * Fix the transition between maps in the campaign mode: The character should be at least transfered and the save game loaded. Besides there should be no class selection if the character is loaded.
+* FIXED: Imp Attack animation is no loop, leads to freeze unit.
+* Fix counting killing corn eaters in quest War. All spawn points seem to have 0 living units at the first kill.
+* Fix disappearing quest from Wieland in quest War.
+* DONE: Add special effect of traps in quest War.
+* FIXED: Dragon fire ability of Dragon who is summoned by one of the endbosses slows down the game! Reduce area and range.
+* Make Marwkard's recordings louder!
+* Some speeches in routines appear doubled.
 
 Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.

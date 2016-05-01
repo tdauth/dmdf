@@ -80,7 +80,7 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 			
 			call Game.fadeOutWithWait()
 			call CameraSetupApplyForceDuration(gg_cam_recruit_0, true, 0.0)
-			call CameraSetupApplyForceDuration(gg_cam_recruit_1, true, 6.0)
+			call CameraSetupApplyForceDuration(gg_cam_recruit_1, true, 10.0)
 			call Game.fadeInWithWait()
 			
 			call TransmissionFromUnit(this.m_actorFerdinand, tr("Das ist ja unerhört! Ich verbitte mir das oder wollt ihr etwa am Pranger landen? Das gemeine Volk taugt eben nichts. Sie beschweren sich immerzu."), null)

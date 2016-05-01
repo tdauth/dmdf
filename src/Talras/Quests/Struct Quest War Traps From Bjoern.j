@@ -37,7 +37,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 		 private timer m_bjoernsTrapsSpawnTimer
 		 private item array m_spawnedTraps[thistype.maxSpawnedTraps]
 		 private ALocationVector m_traps
-		 private integer m_trapsCounter
+		 private AEffectVector m_trapEffects
 		 
 		 implement Quest
 		 
@@ -80,7 +80,8 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 			call this.questItem(thistype.questItemPlaceTraps).setState(thistype.stateNew)
 			call this.displayUpdate()
 			
-			set this.m_trapsCounter = 0
+			set this.m_traps = ALocationVector.create()
+			set this.m_trapEffects = AEffectVector.create()
 			set this.m_bjoernsTrapsSpawnTimer = CreateTimer()
 			call TimerStart(this.m_bjoernsTrapsSpawnTimer, QuestWar.respawnTime, true, function thistype.timerFunctionSpawnBjoernsTraps)
 			
@@ -93,8 +94,8 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 		
 		private method addTrap takes real x, real y returns nothing
 			call this.m_traps.pushBack(Location(x, y))
-			set this.m_trapsCounter = this.m_trapsCounter + 1
-			call this.displayUpdateMessage(Format(tre("%1%/%2% Fallen platziert.", "Placed %1%/%2% traps.")).i(this.m_trapsCounter).i(thistype.maxPlacedTraps).result())
+			call this.m_trapEffects.pushBack(AddSpecialEffect("Objects\\InventoryItems\\Spiketrap\\Spiketrap.mdx", x, y))
+			call this.displayUpdateMessage(Format(tre("%1%/%2% Fallen platziert.", "Placed %1%/%2% traps.")).i(this.m_traps.size()).i(thistype.maxPlacedTraps).result())
 		endmethod
 		
 		/**
@@ -119,7 +120,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 			if (GetSpellAbilityId() == 'A0QZ' and RectContainsCoords(gg_rct_quest_war_bjoern_place_traps, GetSpellTargetX(), GetSpellTargetY())) then
 				call this.addTrap(GetSpellTargetX(), GetSpellTargetY())
 				
-				return this.m_trapsCounter == thistype.maxPlacedTraps
+				return this.m_traps.size() == thistype.maxPlacedTraps
 			endif
 			
 			return false
@@ -136,6 +137,15 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 				set this.m_spawnedTraps[i] = null
 				set i = i + 1
 			endloop
+			set i = 0
+			loop
+				exitwhen (i == this.m_trapEffects.size())
+				call DestroyEffect(this.m_trapEffects[i])
+				set this.m_trapEffects[i] = null
+				set i = i + 1
+			endloop
+			call this.m_trapEffects.destroy()
+			set this.m_trapEffects = 0
 			
 			call PauseTimer(this.m_bjoernsTrapsSpawnTimer)
 			call DestroyTimer(this.m_bjoernsTrapsSpawnTimer)

@@ -26,13 +26,6 @@ library StructMapVideosVideoReportKuno requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-		
-			call TransmissionFromUnit(this.actor(), tre("Holzfäller Kuno!", "Lumberjack Kuno!"), null)
-			
-			if (wait(GetSimpleTransmissionDuration(null))) then
-				return
-			endif
-			
 			call TransmissionFromUnit(this.actor(), tre("Die Hexen sind tot.", "The witches are dead."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
