@@ -1,4 +1,4 @@
-library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHashTable
+library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGrimoire
 
 	/**
 	 * \brief Allows changing the map in singleplayer or in multiplayer.
@@ -15,6 +15,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 	 * \note Whenever the game is saved in single player campaign mode the save game name is kept and all zone save games are copied to a folder with that savegame name. So the player does always save all zones, too when saving the game. Otherwise the savegames of the zones would be lost. This is the way the Bonus Campaign handles this, too. The savegame name is also stored in the gamecache and passed to every zone.
 	 */
 	struct MapChanger
+		public static constant string gameCacheName = "TPoF.w3v"
 		/// In a custom campaign no subfolder is used for maps.
 		public static constant string mapFolder = ""
 		/// All map change save games will be saved into this folder.
@@ -61,7 +62,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		endmethod
 	
 		private static method storeCharacterSinglePlayer takes Character character returns nothing
-			local gamecache cache = InitGameCache("TPoF.w3v")
+			local gamecache cache = InitGameCache(thistype.gameCacheName)
 			call character.store(cache, thistype.characterMissionKey(character))
 			call StoreInteger(cache, thistype.characterMissionKey(character), "Gold", GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD))
 			call SaveGameCache(cache)
@@ -69,7 +70,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		endmethod
 		
 		public static method storeCharactersSinglePlayer takes nothing returns nothing
-			local gamecache cache = InitGameCache("TPoF.w3v")
+			local gamecache cache = InitGameCache(thistype.gameCacheName)
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
@@ -89,7 +90,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local gamecache cache = null
 			local boolean result = false
 			if (ReloadGameCachesFromDisk()) then
-				set cache = InitGameCache("TPoF.w3v")
+				set cache = InitGameCache(thistype.gameCacheName)
 				set result = HaveStoredBoolean(cache, "Stored", "Stored")
 				set cache = null
 			endif
@@ -97,30 +98,38 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return result
 		endmethod
 		
-		private static method restoreCharacterSinglePlayer takes player whichPlayer, real x, real y, real facing returns nothing
-			local gamecache cache = null
+		private static method restoreCharacterSinglePlayer takes gamecache cache, player whichPlayer, real x, real y, real facing returns nothing
 			local Character character = Character(ACharacter.playerCharacter(whichPlayer))
-			if (ReloadGameCachesFromDisk()) then
-				set cache = InitGameCache("TPoF.w3v")
-				if (character == 0) then
-					set character = Character.create(whichPlayer, Character.restoreUnitFromCache(cache, thistype.characterMissionKey(character), whichPlayer, x, y, facing), 0, 0)
-					call ACharacter.setPlayerCharacterByCharacter(character)
-				endif
-				call character.restoreDataFromCache(cache, thistype.characterMissionKey(character))
-				call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, thistype.characterMissionKey(character), "Gold"))
-				set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", thistype.m_currentSaveGame)
-				debug call Print("Current save game: " + thistype.m_currentSaveGame)
-				set cache = null
+			if (character == 0) then
+				set character = Character.create(whichPlayer, Character.restoreUnitFromCache(cache, thistype.characterMissionKey(character), whichPlayer, x, y, facing), 0, 0)
+				call ACharacter.setPlayerCharacterByCharacter(character)
+				// TODO clear inventory! It will be restored by the AInventory system
 			endif
+			// TODO leads to crash: restoreDataFromCache
+			//call character.restoreDataFromCache(cache, thistype.characterMissionKey(character))
+			//call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, thistype.characterMissionKey(character), "Gold"))
+			// TODO restore skill points
+			// make sure the GUI of the grimoire is correct
+			call character.grimoire().updateUi()
+			set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", "CurrentSaveGame")
+			debug call Print("Current save game: " + thistype.m_currentSaveGame)
 		endmethod
 		
 		public static method restoreCharactersSinglePlayer takes nothing returns nothing
+			local gamecache cache = null
 			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call thistype.restoreCharacterSinglePlayer(Player(i), MapData.startX.evaluate(i), MapData.startY.evaluate(i), 0.0)
-				set i = i + 1
-			endloop
+			if (ReloadGameCachesFromDisk()) then
+				set cache = InitGameCache(thistype.gameCacheName)
+				set i = 0
+				loop
+					exitwhen (i == MapData.maxPlayers)
+					if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING) then
+						call thistype.restoreCharacterSinglePlayer(cache, Player(i), MapData.startX.evaluate(i), MapData.startY.evaluate(i), 0.0)
+					endif
+					set i = i + 1
+				endloop
+				set cache = null
+			endif
 		endmethod
 		
 		/**

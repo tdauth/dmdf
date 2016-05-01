@@ -5,7 +5,7 @@ Wigberht: Du denkst, du könntest mir Angst machen? Höre, ich habe den Tod gese
 
 Szene 2 - Dararos und die Drachentöterin:
 Drachentöterin: Mein König, ich wusste nicht, dass Ihr Euch persönlich auf den Weg macht.
-Dararos: <Name> (aus Buch) es musste sein. Deranors Verschwinden hat den Fürsten der Dunkelelfen aus seiner Festung gelockt. Ich konnte nicht zögern mir diese Chance entgehen zu lassen.
+Dararos: Es musste sein. Deranors Verschwinden hat den Fürsten der Dunkelelfen aus seiner Festung gelockt. Ich konnte nicht zögern mir diese Chance entgehen zu lassen.
 Dararos: Wir werden jedoch erst mehr Männer sammeln und dann in Richtung Norden ziehen. Vielleicht können wir ihn auf offenem Felde stellen.
 Drachentöterin: Ihr wollt Euren Bruder ... ich meine ihren Fürsten schließlich angreifen?
 Dararos: So ist es. Du hast sehr gute Dienste geleistet. Deranor war eine große Bedrohung für uns. Nun da er sich vermutlich für sehr lange Zeit erst einmal zurückziehen musste, ist mein Bruder geschwächt.
@@ -138,7 +138,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tr("<Name> (aus Buch) es musste sein. Deranors Verschwinden hat den Fürsten der Dunkelelfen aus seiner Festung gelockt. Ich konnte nicht zögern mir diese Chance entgehen zu lassen."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tr("Es musste sein. Deranors Verschwinden hat den Fürsten der Dunkelelfen aus seiner Festung gelockt. Ich konnte nicht zögern mir diese Chance entgehen zu lassen."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

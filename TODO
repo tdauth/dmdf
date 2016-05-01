@@ -604,8 +604,8 @@ Handlung:
 * Mitwirkende: Gebiet für Spieler 2 nicht sichtbar.
 * FIXED: Mitwirkende: Floating Text von Spieler 1 wird Spieler 2 angezeigt.
 * DONE: Info-Log: Stürzt ab, deaktivieren.
-* Video Victory einbauen.
-* Video Holzbruck einbauen.
+* DONE: Video Victory einbauen.
+* DONE: Video Holzbruck einbauen.
 * FIXED: Gefolgsleute bei einem Reset immer sicherheitshalber wiederbeleben.
 
 Mehrspielertest (0.4 - 2 Spieler):
@@ -974,7 +974,7 @@ Weitere TODOS:
 * Bjoern64 und Bjoern66 gleicher Sound. Gleicher Satz (noch mal eine Erklärung?)
 * ErzaehlerSieg1 und ErzaehlerSieg2 gleicher Sound. Zweiterer enthält den richtigen Sound am Ende.
 * Get the name of the Dragon Slayer from the book.
-* Finish video "Recruit".
+* DONE: Finish video "Recruit".
 
 Idee um Warcraft III-Dialoge in Gesprächen zu vermeiden, da diese den Chat blockieren. Außerdem kann man mit der Spielkamera nicht herumfahren oder irgendwelche Buttons drücken:
 * NPC wird nicht pausiert (PauseUnit()) damit auch andere Spieler weiterhin "Person ansprechen" auswählen können.
