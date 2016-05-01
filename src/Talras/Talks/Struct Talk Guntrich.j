@@ -10,8 +10,8 @@ library StructMapTalksTalkGuntrich requires Asl, StructMapMapNpcs, StructMapQues
 
 		// Hallo.
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Hallo Fremder. Kannst du mir vielleicht weiterhelfen?"), gg_snd_Guntrich1)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("Hallo Fremder. Kannst du mir vielleicht weiterhelfen?", "Hello stranger. Can you help me out, maybe?"), gg_snd_Guntrich1)
 			call info.talk().showRange(6, 7, character)
 		endmethod
 

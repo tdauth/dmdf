@@ -22,7 +22,6 @@
 //! import "Talras/Talks/Struct Talk Ricman.j"
 //! import "Talras/Talks/Struct Talk Sheep Boy.j"
 //! import "Talras/Talks/Struct Talk Sisgard.j"
-//! import "Talras/Talks/Struct Talk Talras Guardian.j"
 //! import "Talras/Talks/Struct Talk Tanka.j"
 //! import "Talras/Talks/Struct Talk Tellborn.j"
 //! import "Talras/Talks/Struct Talk Trommon.j"
@@ -31,7 +30,7 @@
 //! import "Talras/Talks/Struct Talk Wieland.j"
 //! import "Talras/Talks/Struct Talk Wigberht.j"
 
-library MapTalks requires StructMapTalksTalkAgihard, StructMapTalksTalkBaldar, StructMapTalksTalkBjoern, StructMapTalksTalkBrogo, StructMapTalksTalkCarsten, StructMapTalksTalkDago, StructMapTalksTalkDragonSlayer, StructMapTalksTalkEinar, StructMapTalksTalkFerdinand, StructMapTalksTalkFulco, StructMapTalksTalkGuntrich, StructMapTalksTalkHaid, StructMapTalksTalkHaldar, StructMapTalksTalkHeimrich, StructMapTalksTalkIrmina, StructMapTalksTalkKuno, StructMapTalksTalkLothar, StructMapTalksTalkManfred, StructMapTalksTalkMarkward, StructMapTalksTalkMathilda, StructMapTalksTalkOsman, StructMapTalksTalkRicman, StructMapTalksTalkSheepBoy, StructMapTalksTalkSisgard, StructMapTalksTalkTalrasGuardian, StructMapTalksTalkTanka, StructMapTalksTalkTellborn, StructMapTalksTalkTrommon, StructMapTalksTalkTobias, StructMapTalksTalkUrsula, StructMapTalksTalkWieland, StructMapTalksTalkWigberht
+library MapTalks requires StructMapTalksTalkAgihard, StructMapTalksTalkBaldar, StructMapTalksTalkBjoern, StructMapTalksTalkBrogo, StructMapTalksTalkCarsten, StructMapTalksTalkDago, StructMapTalksTalkDragonSlayer, StructMapTalksTalkEinar, StructMapTalksTalkFerdinand, StructMapTalksTalkFulco, StructMapTalksTalkGuntrich, StructMapTalksTalkHaid, StructMapTalksTalkHaldar, StructMapTalksTalkHeimrich, StructMapTalksTalkIrmina, StructMapTalksTalkKuno, StructMapTalksTalkLothar, StructMapTalksTalkManfred, StructMapTalksTalkMarkward, StructMapTalksTalkMathilda, StructMapTalksTalkOsman, StructMapTalksTalkRicman, StructMapTalksTalkSheepBoy, StructMapTalksTalkSisgard, StructMapTalksTalkTanka, StructMapTalksTalkTellborn, StructMapTalksTalkTrommon, StructMapTalksTalkTobias, StructMapTalksTalkUrsula, StructMapTalksTalkWieland, StructMapTalksTalkWigberht
 
 	function initMapTalks takes nothing returns nothing
 		local ATalk talk
@@ -66,15 +65,6 @@ library MapTalks requires StructMapTalksTalkAgihard, StructMapTalksTalkBaldar, S
 		call TalkUrsula.initTalk()
 		call TalkWieland.initTalk()
 		call TalkWigberht.initTalk()
-		// guardians
-		set talk = TalkTalrasGuardian.create(gg_unit_n015_0149)
-		call talk.setEffectPath(null)
-		set talk = TalkTalrasGuardian.create(gg_unit_n005_0119)
-		call talk.setEffectPath(null)
-		set talk = TalkTalrasGuardian.create(gg_unit_n015_0118)
-		call talk.setEffectPath(null)
-		set talk = TalkTalrasGuardian.create(gg_unit_n015_0456)
-		call talk.setEffectPath(null)
 	endfunction
 
 endlibrary

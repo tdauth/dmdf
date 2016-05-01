@@ -16,7 +16,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 		private static method dialogButtonActionSetView takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
 			call this.m_character.setView(not this.m_character.isViewEnabled())
-			call this.showDialog.evaluate()
+			call this.showCameraMenu.evaluate()
 		endmethod
 
 		private static method dialogButtonActionSetCharactersScheme takes ADialogButton dialogButton returns nothing
@@ -48,7 +48,7 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 			if (this.m_character.cameraDistance() < Character.maxCameraDistance) then
 				call this.m_character.setCameraDistance(this.m_character.cameraDistance() + 250.0)
 			endif
-			call this.showDialog.evaluate()
+			call this.showCameraMenu.evaluate()
 		endmethod
 		
 		private static method dialogButtonActionDecreaseCameraDistance takes ADialogButton dialogButton returns nothing
@@ -56,13 +56,13 @@ library StructGuisMainMenu requires Asl, StructGameCharacter, StructGameTutorial
 			if (this.m_character.cameraDistance() > Character.minCameraDistance) then
 				call this.m_character.setCameraDistance(this.m_character.cameraDistance() - 250.0)
 			endif
-			call this.showDialog.evaluate()
+			call this.showCameraMenu.evaluate()
 		endmethod
 		
 		private static method dialogButtonActionResetCameraDistance takes ADialogButton dialogButton returns nothing
 			local thistype this = Character(ACharacter.playerCharacter(dialogButton.dialog().player())).mainMenu()
 			call this.m_character.setCameraDistance(Character.defaultCameraDistance)
-			call this.showDialog.evaluate()
+			call this.showCameraMenu.evaluate()
 		endmethod
 		
 		private static method dialogButtonActionChangeCameraToDungeonByIndex takes ADialogButton dialogButton returns nothing

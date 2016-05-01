@@ -326,8 +326,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 
 			call QueueUnitAnimation(this.unitActor(this.m_actorWigberht), "Spell Alternate")
 			
-			// flames and kill
-			set this.m_effect = AddSpecialEffect("Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireMissile.mdx", GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3)) /// \todo direction of orc leader!
+			// frost and kill
+			set this.m_effect = AddSpecialEffect("Doodads\\Cinematic\\FrostTrapSide\\FrostTrapSide.mdx", GetRectCenterX(gg_rct_video_wigberht_wigberht_target_3), GetRectCenterY(gg_rct_video_wigberht_wigberht_target_3)) /// \todo direction of orc leader!
 			//call SetUnitExploded(this.m_actorOrcLeader, true)
 			call KillUnit(this.m_actorOrcLeader)
 			

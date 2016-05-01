@@ -1,4 +1,4 @@
-library StructMapQuestsQuestWoodForTheHut requires Asl
+library StructMapQuestsQuestWoodForTheHut requires Asl, StructGameCharacter, StructMapMapNpcs
 
 	struct QuestWoodForTheHut extends AQuest
 
@@ -6,6 +6,17 @@ library StructMapQuestsQuestWoodForTheHut requires Asl
 
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(0)
+		endmethod
+		
+		public stub method distributeRewards takes nothing returns nothing
+			// 4 Salatköpfe
+			call Character(this.character()).giveItem('I06U')
+			call Character(this.character()).giveItem('I06U')
+			call Character(this.character()).giveItem('I06U')
+			call Character(this.character()).giveItem('I06U')
+			
+			// call this method, otherwise the characters do not get their rewards
+			call super.distributeRewards()
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
@@ -24,12 +35,12 @@ library StructMapQuestsQuestWoodForTheHut requires Asl
 			set questItem0 = AQuestItem.create(this, tre("Frage Kuno nach ein paar Brettern für die Hütte.", "Ask Kuno for a few planks for the hut."))
 			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 			call questItem0.setPing(true)
-			call questItem0.setPingUnit(gg_unit_n022_0009)
+			call questItem0.setPingUnit(Npcs.kuno())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
 			//item 1
 			set questItem1 = AQuestItem.create(this, tre("Bringe die Bretter zu Trommon.", "Bring the planks to Trommon."))
 			call questItem1.setPing(true)
-			call questItem1.setPingUnit(gg_unit_n021_0004)
+			call questItem1.setPingUnit(Npcs.trommon())
 			call questItem1.setPingColour(100.0, 100.0, 100.0)
 
 			return this

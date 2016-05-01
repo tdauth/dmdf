@@ -606,6 +606,10 @@ endif
 			call this.addExperience(xp, true)
 		endmethod
 
+		/**
+		 * Creates an item of type \p itemTypeId and adds it to the inventory of the character.
+		 * Sets the owner of the item to the owner of the character.
+		 */
 		public method giveItem takes integer itemTypeId returns nothing
 			local item whichItem = CreateItem(itemTypeId, GetUnitX(this.unit()), GetUnitY(this.unit()))
 			call SetItemPlayer(whichItem, this.player(), true)

@@ -512,8 +512,10 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set thistype.m_vampireLord0 = SpawnPoint.create()
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n010_0110, 1.0)
 			call thistype.m_vampireLord0.addNewItemType(index, 'I013', 1.0)
-			call thistype.m_vampireLord0.addNewItemType(index, 'I04L', 1.00)
-			call thistype.m_vampireLord0.addNewItemType(index, 'I04G', 1.00)
+			call thistype.m_vampireLord0.addNewItemType(index, 'I04L', 1.0)
+			call thistype.m_vampireLord0.addNewItemType(index, 'I04G', 1.0)
+			call thistype.m_vampireLord0.addNewItemType(index, 'I00C', 1.0)
+			call thistype.m_vampireLord0.addNewItemType(index, 'I00B', 1.0)
 			set index = thistype.m_vampireLord0.addUnitWithType(gg_unit_n00Z_0106, 1.0)
 			call thistype.m_vampireLord0.addNewItemType(index, 'I00C', 1.0)
 			call thistype.m_vampireLord0.addNewItemType(index, 'I04V', 1.0)
@@ -1039,6 +1041,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static method initDeranorsTomb takes nothing returns nothing
 			local integer index
 			// deranors guard
+			// TODO dont use addNewItemType, they should exclude each other
 			set thistype.m_dearnorsGuard = SpawnPoint.create()
 			set index = thistype.m_dearnorsGuard.addUnitWithType(gg_unit_n06G_0576, 1.0)
 			call thistype.m_dearnorsGuard.addNewItemType(index, 'I06H', 0.30)

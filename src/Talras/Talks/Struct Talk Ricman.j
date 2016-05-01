@@ -1,4 +1,4 @@
-library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameClasses, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestTheWayToHolzbruck
+library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameClasses, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestTheWayToHolzbruck, StructSpellsSpellFetteBeute, StructSpellsSpellNordicPower, StructSpellsSpellFirstMan
 
 	struct TalkRicman extends Talk
 
@@ -15,6 +15,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		private AInfo m_rideDragon
 		private AInfo m_dragonEggs
 		private AInfo m_canYouTeachMe
+		private AInfo m_giveGold
 		private AInfo m_teachMe
 		private AInfo m_exit
 		
@@ -22,6 +23,9 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		private AInfo m_teachMeNordischeWucht
 		private AInfo m_teachMeFirstMan
 		private AInfo m_teachMeBack
+		
+		/// Non-dragon slayers have to give Ricman gold until he teaches them spells.
+		private boolean array m_gaveGold[6] // TODO MapData.maxPlayers
 
 		private method startPageAction takes ACharacter character returns nothing
 			if (this.infoHasBeenShownToCharacter(this.m_hi.index(), character) or not this.showInfo(this.m_hi.index(), character)) then
@@ -236,18 +240,37 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		// (Charakter ist Drachentöter und hat bereits danach gefragt)
 		private static method infoConditionTeachMe takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
-			return character.class() == Classes.dragonSlayer() and info.talk().infoHasBeenShownToCharacter(this.m_canYouTeachMe.index(), character)
+			return (character.class() == Classes.dragonSlayer() or this.m_gaveGold[GetPlayerId(character.player())]) and info.talk().infoHasBeenShownToCharacter(this.m_canYouTeachMe.index(), character)
 		endmethod
 
 		// Bring mir etwas bei!
 		private static method infoActionTeachMe takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, true, tr("Bring mir etwas bei!"), null)
-			call speech(info, character, false, tr("Klar, wenn du genügend Goldmünzen dabei hast."), gg_snd_Ricman39)
+			call speech(info, character, false, tr("Bring mir etwas bei!"), null)
+			call speech(info, character, true, tr("Klar, wenn du genügend Goldmünzen dabei hast."), gg_snd_Ricman39)
 			call info.talk().showRange(this.m_teachMeFetteBeute.index(), this.m_teachMeBack.index(), character)
+		endmethod
+		
+		// (Charakter ist kein Drachentöter, hat von den Fähigkeiten erfahren und noch nicht bestochen)
+		private static method infoConditionGiveGold takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
+			return (character.class() != Classes.dragonSlayer() and not this.m_gaveGold[GetPlayerId(character.player())]) and info.talk().infoHasBeenShownToCharacter(this.m_canYouTeachMe.index(), character)
+		endmethod
+
+		// (Bestechen)
+		private static method infoActionGiveGold takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
+			if (character.gold() < 200) then
+				call character.displayMessage(ACharacter.messageTypeError, tr("Nicht genügend Goldmünzen."))
+			else
+				call character.removeGold(200)
+				set this.m_gaveGold[GetPlayerId(character.player())] = true
+			endif
+			call this.showStartPage(character)
 		endmethod
 
 		private static method teachAbility takes AInfo info, Character character, integer gold, integer skillPoints, integer abilityId returns boolean
+			local Spell spell = 0
 			// (Charakter hat nicht genügend Goldmünzen)
 			if (character.gold() < gold) then
 				call speech(info, character, true, tr("Willst du mich verarschen? Besorge dir erst mal ein paar Goldmünzen!"), gg_snd_Ricman40)
@@ -255,67 +278,89 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			endif
 
 			// (Charakter hat nicht genügend Zauberpunkte)
+			/*
+			Charakter erlernt den Zauber erst im Zauberbuch!
 			if (character.grimoire().skillPoints() < skillPoints) then
 				call speech(info, character, true, tr("Tut mir leid, aber dir fehlt es noch an Erfahrung."), gg_snd_Ricman41)
 				debug call Print("Skill points " + I2S(skillPoints))
 				debug call Print("Existing skill points " + I2S(character.grimoire().skillPoints()))
 				return false
 			endif
+			*/
 
-			call UnitAddAbility(character.unit(), abilityId)
+			// TODO add as regular grimoire spell!
+			if (abilityId == SpellFetteBeute.abilityId) then
+				// Fette Beute
+				set spell = SpellFetteBeute.create(character)
+			elseif (abilityId == SpellNordicPower.abilityId) then
+				// Nordische Wucht
+				set spell = SpellNordicPower.create(character)
+			elseif (abilityId == SpellFirstMan.abilityId) then
+				// Erster Mann
+				set spell = SpellFirstMan.create(character)
+			endif
+			call character.grimoire().addSpell(spell, true)
 			call character.removeGold(gold)
-			call character.grimoire().removeSkillPoints(skillPoints)
 			call speech(info, character, true, tr("Also ..."), gg_snd_Ricman42)
 
 			return true
 		endmethod
 
 		// (Zauber wurde noch nicht erlernt)
-		private static method infoConditionTeachMeFetteBeute takes AInfo info, ACharacter character returns boolean
-			return GetUnitAbilityLevel(character.unit(), 'A07K') == 0
+		private static method infoConditionTeachMeFetteBeute takes AInfo info, Character character returns boolean
+			return character.spellByAbilityId(SpellFetteBeute.abilityId) == 0
 		endmethod
 
 		// Fette Beute (200 Goldmünzen, 1 Zauberpunkt)
-		private static method infoActionTeachMeFetteBeute takes AInfo info, ACharacter character returns nothing
+		private static method infoActionTeachMeFetteBeute takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
-			if (thistype.teachAbility(info, character, 200, 1, 'A07K')) then
+			if (thistype.teachAbility(info, character, 200, 1, SpellFetteBeute.abilityId)) then
 				call speech(info, character, true, tr("Besorg dir einfach mehr Goldmünzen! Ohne die kannst du dir keine anständige Ausrüstung kaufen und ohne anständige Ausrüstung geht überhaupt nichts."), gg_snd_Ricman43)
 				call speech(info, character, true, tr("Stell dir mal vor, wir würden unseren Feinden ohne Waffen entgegentreten!"), gg_snd_Ricman44)
+				call character.displayAbilityAcquired(GetObjectName(SpellFetteBeute.abilityId), tr("Der Spieler und seine Verbündeten erhalten je 250 Goldmünzen."))
 			endif
 			call info.talk().showRange(this.m_teachMeFetteBeute.index(), this.m_teachMeBack.index(), character)
 		endmethod
 
 		// (Zauber wurde noch nicht erlernt)
-		private static method infoConditionTeachMeNordischeWucht takes AInfo info, ACharacter character returns boolean
-			return GetUnitAbilityLevel(character.unit(), 'A07J') == 0
+		private static method infoConditionTeachMeNordischeWucht takes AInfo info, Character character returns boolean
+			return character.spellByAbilityId(SpellNordicPower.abilityId) == 0
 		endmethod
 
 		// Nordische Wucht (500 Goldmünzen, 1 Zauberpunkt)
-		private static method infoActionTeachMeNordischeWucht takes AInfo info, ACharacter character returns nothing
+		private static method infoActionTeachMeNordischeWucht takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
-			if (thistype.teachAbility(info, character, 500, 1, 'A07J')) then
+			if (thistype.teachAbility(info, character, 500, 1, SpellNordicPower.abilityId)) then
 				call speech(info, character, true, tr("Versuche in Zukunft nicht nur einen Gegner mit deiner Waffe zu verwunden. Wenn du weit genug ausholst, erwischt du meistens auch noch ein paar andere mit, vorausgesetzt du bist stark genug."), gg_snd_Ricman46)
+				call character.displayAbilityAcquired(GetObjectName(SpellNordicPower.abilityId), tr("Ein Teil des verursachten Schadens wird auf weitere Gegner im Umkreis übertragen."))
 			endif
 			call info.talk().showRange(this.m_teachMeFetteBeute.index(), this.m_teachMeBack.index(), character)
 		endmethod
 
 		// (Zauber wurde noch nicht erlernt)
-		private static method infoConditionTeachMeFirstMan takes AInfo info, ACharacter character returns boolean
-			return GetUnitAbilityLevel(character.unit(), 'A07I') == 0
+		private static method infoConditionTeachMeFirstMan takes AInfo info, Character character returns boolean
+			return character.spellByAbilityId(SpellFirstMan.abilityId) == 0
 		endmethod
 
 		// Erster Mann (1000 Goldmünzen, 1 Zauberpunkt)
-		private static method infoActionTeachMeFirstMan takes AInfo info, ACharacter character returns nothing
+		private static method infoActionTeachMeFirstMan takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
-			if (thistype.teachAbility(info, character, 1000, 1, 'A07I')) then
+			if (thistype.teachAbility(info, character, 1000, 1, SpellFirstMan.abilityId)) then
 				call speech(info, character, true, tr("Zeige mehr Mut, denn Mut ist der Schlüssel zum Sieg! Solange du Mut nicht mit blinder Wut oder völliger Furchtlosigkeit verwechselst, wirst du meist als Sieger aus Kämpfen hervorgehen."), gg_snd_Ricman48)
 				call speech(info, character, true, tr("Mut bedeutet nicht, niemals Furcht zu haben, sondern die Furcht zu überwinden. Bist du mutig, sind es deine Gefährten auch und ihr werdet allesamt stärker und zur unüberwindbaren Streitmacht werden."), gg_snd_Ricman49)
+				call character.displayAbilityAcquired(GetObjectName(SpellFirstMan.abilityId), tr("Erhöht den Nahkampfschaden von befreundeten Einheiten im Umkreis."))
 			endif
 			call info.talk().showRange(this.m_teachMeFetteBeute.index(), this.m_teachMeBack.index(), character)
 		endmethod
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.ricman(), thistype.startPageAction)
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				set this.m_gaveGold[i] = false
+				set i = i + 1
+			endloop
 			call this.setName(tr("Ricman"))
 			// start page
 			set this.m_hi = this.addInfo(false, true, thistype.infoConditionHi, thistype.infoActionHi, null)
@@ -329,13 +374,14 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			set this.m_rideDragon = this.addInfo(false, false, thistype.infoConditionRideDragon, thistype.infoActionRideDragon, tr("Ich bin auf dem Drachen geritten."))
 			set this.m_dragonEggs = this.addInfo(false, false, thistype.infoConditionDragonEggs, thistype.infoActionDragonEggs, tr("Hier sind einige Dracheneier."))
 			set this.m_canYouTeachMe = this.addInfo(false, false, 0, thistype.infoActionCanYouTeachMe, tr("Kannst du mir vielleicht etwas von deiner Kampfkunst beibringen?"))
+			set this.m_giveGold = this.addInfo(true, false, thistype.infoConditionGiveGold, thistype.infoActionGiveGold, tr("(Bestechen, um Kampfkunst zu erlernen - 200 Goldmünzen)"))
 			set this.m_teachMe = this.addInfo(true, false, thistype.infoConditionTeachMe, thistype.infoActionTeachMe, tr("Bring mir etwas bei!"))
 			set this.m_exit = this.addExitButton()
 
 			// info teach me
-			set this.m_teachMeFetteBeute = this.addInfo(true, false, thistype.infoConditionTeachMeFetteBeute, thistype.infoActionTeachMeFetteBeute, tr("Fette Beute (200 Goldmünzen, 1 Zauberpunkt)"))
-			set this.m_teachMeNordischeWucht = this.addInfo(true, false, thistype.infoConditionTeachMeNordischeWucht, thistype.infoActionTeachMeNordischeWucht, tr("Nordische Wucht (500 Goldmünzen, 1 Zauberpunkt)"))
-			set this.m_teachMeFirstMan = this.addInfo(true, false, thistype.infoConditionTeachMeFirstMan, thistype.infoActionTeachMeFirstMan, tr("Erster Mann (1000 Goldmünzen, 1 Zauberpunkt)"))
+			set this.m_teachMeFetteBeute = this.addInfo(true, false, thistype.infoConditionTeachMeFetteBeute, thistype.infoActionTeachMeFetteBeute, tr("Fette Beute (200 Goldmünzen, 1 Stufe)"))
+			set this.m_teachMeNordischeWucht = this.addInfo(true, false, thistype.infoConditionTeachMeNordischeWucht, thistype.infoActionTeachMeNordischeWucht, tr("Nordische Wucht (500 Goldmünzen, 1 Stufe)"))
+			set this.m_teachMeFirstMan = this.addInfo(true, false, thistype.infoConditionTeachMeFirstMan, thistype.infoActionTeachMeFirstMan, tr("Erster Mann (1000 Goldmünzen, 1 Stufe)"))
 			set this.m_teachMeBack = this.addBackToStartPageButton()
 
 			return this

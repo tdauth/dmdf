@@ -132,6 +132,8 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		private static trigger m_talkHintTrigger
 		private static boolean array m_talkHintShown[12]
 		
+		private static trigger m_giantDeathTrigger
+		
 		private static Zone m_zoneGardonar
 		private static Zone m_zoneHolzbruck
 
@@ -175,6 +177,15 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		private static method triggerActionTalkHint takes nothing returns nothing
 			call Character(ACharacter.getCharacterByUnit(GetTriggerUnit())).displayHint(tre("Schicken Sie Ihren Charakter in die Nähe einer Person, um diese anzusprechen. Klicken Sie dazu auf die Person und wählen Sie \"Person ansprechen\" aus.", "Send your character near a person to speak to the person. For that click on the person and select \"Speak to person\"."))
 			set thistype.m_talkHintShown[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = true
+		endmethod
+		
+		private static method triggerConditionGiantDeath takes nothing returns boolean
+			// always drop a fur?
+			if (GetUnitTypeId(GetTriggerUnit()) == 'n02R' and IsUnitType(GetTriggerUnit(), UNIT_TYPE_SUMMONED)) then
+				call CreateItem('I01Z', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
+			endif
+			
+			return false
 		endmethod
 		
 		/// Required by \ref Game.
@@ -254,6 +265,10 @@ endif
 			call TriggerRegisterEnterRegion(thistype.m_talkHintTrigger, thistype.m_talkHintRegion, null)
 			call TriggerAddCondition(thistype.m_talkHintTrigger, Condition(function thistype.triggerConditionTalkHint))
 			call TriggerAddAction(thistype.m_talkHintTrigger, function thistype.triggerActionTalkHint)
+			
+			set thistype.m_giantDeathTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_giantDeathTrigger, EVENT_PLAYER_UNIT_DEATH)
+			call TriggerAddCondition(thistype.m_giantDeathTrigger, Condition(function thistype.triggerConditionGiantDeath))
 			
 			set thistype.m_zoneGardonar = Zone.create("Gardonar" + Game.gameVersion, gg_rct_zone_gardonar)
 			//call thistype.m_zoneGardonar.disable() TEST

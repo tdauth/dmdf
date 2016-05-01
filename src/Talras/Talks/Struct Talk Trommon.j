@@ -141,7 +141,7 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 			return QuestWoodForTheHut.characterQuest(character).questItem(0).isCompleted() and  QuestWoodForTheHut.characterQuest(character).questItem(1).isNew() and character.inventory().hasItemType('I03P')
 		endmethod
 
-// 		// Hier sind ein paar Bretter von Kuno.
+		// Hier sind ein paar Bretter von Kuno.
 		private static method infoActionGetSomeWood takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hier sind ein paar Bretter von Kuno."), null)
 			call speech(info, character, true, tr("Wirklich? Ich danke dir. Hier hast du ein paar Salatköpfe aus meinem Gemüsegarten und natürlich auch ein paar Goldmünzen."), gg_snd_Trommon27)
