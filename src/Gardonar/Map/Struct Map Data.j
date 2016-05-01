@@ -22,7 +22,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static sound cowSound = null
 		
 		private static Zone m_zoneTalras
-		private static Zone m_zoneHolzbruck
+		private static Zone m_zoneGardonarsHell
 		
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -44,7 +44,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call initMapVideos.evaluate()
 			
 			set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
-			set thistype.m_zoneHolzbruck = Zone.create("Holzbruck" + Game.gameVersion, gg_rct_zone_holzbruck)
+			set thistype.m_zoneGardonarsHell = Zone.create("GardonarsHell" + Game.gameVersion, gg_rct_zone_gardonars_hell)
 			
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod

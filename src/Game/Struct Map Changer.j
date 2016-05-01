@@ -4,6 +4,15 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 	 * \brief Allows changing the map in singleplayer or in multiplayer.
 	 * In singleplayer it stores the character in the gamecache and changes the map.
 	 * In multiplayer it shows a savecode.
+	 *
+	 * Similar to the Bonus Campaign the campaign mode of The Power of Fire allows you to change to a map and back to the other map. Therefore the game is always saved when changing to another map.
+	 * This allows you to create a big universe consisting of many many maps.
+	 *
+	 * The character is stored with all of his items and attributes. The quests depend on the map and are not transfered.
+	 *
+	 * \todo Transfer gold.
+	 *
+	 * \note Whenever the game is saved in single player campaign mode the save game name is kept and all zone save games are copied to a folder with that savegame name. So the player does always save all zones, too when saving the game. Otherwise the savegames of the zones would be lost. This is the way the Bonus Campaign handles this, too. The savegame name is also stored in the gamecache and passed to every zone.
 	 */
 	struct MapChanger
 		/// In a custom campaign no subfolder is used for maps.
@@ -44,22 +53,17 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return thistype.saveGamePath(thistype.m_currentSaveGame, mapName)
 		endmethod
 		
-		private static method loadGamePath takes string currentSaveGame, string mapName returns string
-			local string saveGameFolder = ""
-			if (currentSaveGame != null) then
-				set saveGameFolder = thistype.m_currentSaveGame + "\\"
-			endif
-			// "CustomSaves\\" +
-			return thistype.zonesFolder + "\\" + saveGameFolder + mapName + ".w3z"
-		endmethod
-	
-		private static method currentLoadGamePath takes string mapName returns string
-			return thistype.loadGamePath(thistype.m_currentSaveGame, mapName)
+		/**
+		 * Every player character is stored with a unique mission key using the character's player ID.
+		 */
+		private static method characterMissionKey takes Character character returns string
+			return "Character" + I2S(GetPlayerId(character.player()))
 		endmethod
 	
 		private static method storeCharacterSinglePlayer takes Character character returns nothing
 			local gamecache cache = InitGameCache("TPoF.w3v")
-			call character.store(cache, "Character" + I2S(GetPlayerId(character.player())))
+			call character.store(cache, thistype.characterMissionKey(character))
+			call StoreInteger(cache, thistype.characterMissionKey(character), "Gold", GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD))
 			call SaveGameCache(cache)
 			set cache = null
 		endmethod
@@ -83,22 +87,27 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		
 		public static method charactersExistSinglePlayer takes nothing returns boolean
 			local gamecache cache = null
+			local boolean result = false
 			if (ReloadGameCachesFromDisk()) then
 				set cache = InitGameCache("TPoF.w3v")
-				return HaveStoredBoolean(cache, "Stored", "Stored")
+				set result = HaveStoredBoolean(cache, "Stored", "Stored")
+				set cache = null
 			endif
 			
-			return false
+			return result
 		endmethod
 		
 		private static method restoreCharacterSinglePlayer takes player whichPlayer, real x, real y, real facing returns nothing
 			local gamecache cache = null
+			local Character character = Character(ACharacter.playerCharacter(whichPlayer))
 			if (ReloadGameCachesFromDisk()) then
 				set cache = InitGameCache("TPoF.w3v")
-				if (ACharacter.playerCharacter(whichPlayer) == 0) then
-					call ACharacter.setPlayerCharacter(whichPlayer, null)
+				if (character == 0) then
+					set character = Character.create(whichPlayer, Character.restoreUnitFromCache(cache, thistype.characterMissionKey(character), whichPlayer, x, y, facing), 0, 0)
+					call ACharacter.setPlayerCharacterByCharacter(character)
 				endif
-				call ACharacter.playerCharacter(whichPlayer).restore(cache, "Character" + I2S(GetPlayerId(whichPlayer)), x, y, facing)
+				call character.restoreDataFromCache(cache, thistype.characterMissionKey(character))
+				call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, thistype.characterMissionKey(character), "Gold"))
 				set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", thistype.m_currentSaveGame)
 				debug call Print("Current save game: " + thistype.m_currentSaveGame)
 				set cache = null
@@ -122,11 +131,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		
 			debug call Print("Saving map as " + thistype.currentSaveGamePath(oldMap))
 			call SaveGame(thistype.currentSaveGamePath(oldMap))
-			debug call Print("Load game path: " + thistype.currentLoadGamePath(newMap))
+			debug call Print("Load game path: " + thistype.currentSaveGamePath(newMap))
 			
-			if (SaveGameExists(thistype.currentLoadGamePath(newMap))) then
+			if (SaveGameExists(thistype.currentSaveGamePath(newMap))) then
 				debug call Print("Loading game since it exists.")
-				call LoadGame(thistype.currentLoadGamePath(newMap), false)
+				call LoadGame(thistype.currentSaveGamePath(newMap), false)
 			else
 				debug call Print("Change map to " + thistype.mapPath(newMap))
 				call ChangeLevel(thistype.mapPath(newMap), false)

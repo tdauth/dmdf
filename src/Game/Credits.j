@@ -12,6 +12,7 @@ call thistype.addContributor("Johanna W.", tre("Tests", "Tests"))
 
 // voices
 call thistype.addTitle(tre("Sprecher", "Voices"))
+call thistype.addContributor("hoer-talk.de", tre("Website für Sprecher", "Website for Voices"))
 call thistype.addContributor("Rainer", tre("Erzähler", "Narrator"))
 call thistype.addContributor("Jan Langer", tr("Dago"))
 call thistype.addContributor("jam", tr("Wigberht"))
@@ -49,6 +50,7 @@ call thistype.addContributor("Frotty", tre("Modelle und Tests", "Models and Test
 call thistype.addTitle(tre("Musik", "Music"))
 call thistype.addContributor("Kevin MacLeod (incompetech.com)", "Pippin the Hunchback")
 call thistype.addContributor("Kevin MacLeod (incompetech.com)", "Minstrel Guild")
+// TODO add main menu music
 
 /*
 http://www.incompetech.com/music/royalty-free/mp3-royaltyfree/Pippin%20the%20Hunchback.mp3
@@ -78,7 +80,6 @@ call thistype.addTitle(tre("Websites, Foren und Chats", "Websites, Forums and Ch
 call thistype.addContributor("inWarcraft.de", "")
 call thistype.addContributor("inWarcraft.de IRC Chat", "http://webchat.quakenet.org/?channels=#inwc.de-maps")
 call thistype.addContributor("hiveworkshop.com", tre("Unzählige Ressourcen, Fragen und die Projektvorstellung", "Countless resources, questions and the project presentation"))
-call thistype.addContributor("hoer-talk.de", tre("Sprecher", "Voices"))
 
 // files
 call thistype.addTitle(tre("Modelle", "Models"))

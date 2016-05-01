@@ -1,5 +1,10 @@
 library StructGameTalk requires Asl
 
+	/**
+	 * Talks can be activated via a special unit which is sold by NPCs who have talks.
+	 * Additionally they sell a unit which is the button for skipping single informations.
+	 * This helps players who don't know that they could use the smart order and the escape button to find these options.
+	 */
 	struct Talk extends ATalk
 		/**
 		 * This trigger handles sellings of non talk NPCs and removes the sold units for them as well.

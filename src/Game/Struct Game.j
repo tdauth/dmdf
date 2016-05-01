@@ -555,7 +555,8 @@ endif
 			// if the game is new show the class selection, otherwise restore characters from the game cache (only in campaign mode)
 			if (restoreCharacters) then
 				call TriggerSleepAction(0.0)
-				call MapChanger.restoreCharactersSinglePlayer() // dont run in map initialization already, leads to not starting the map at all (probably because of unallowed function calls or waits)
+				// TEST
+				//call MapChanger.restoreCharactersSinglePlayer() // dont run in map initialization already, leads to not starting the map at all (probably because of unallowed function calls or waits)
 				call ClassSelection.startGame.evaluate()
 			else
 				// class selection

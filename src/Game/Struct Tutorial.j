@@ -85,6 +85,11 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			/*
 			 * Hint quest entries:
 			 */
+			 set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tre("Die Macht des Feuers", "The Power of Fire"))
+			call QuestSetDescription(whichQuest, tre("Die Macht des Feuers ist eine Rollenspielmodifikation für Warcraft III: The Frozen Throne. Sie spielen einen einzelnen Charakter, erledigen Aufträge, töten Unholde und versuchen die gemeinsamen Aufträge zu absolvieren, um das Spiel erfolgreich zu beenden. Die Modifikation kann sowohl im Einzel- als auch im Mehrspieler gespielt werden. Andere Spieler benötigen dabei jedoch ebenfalls die Modifikation auf ihrem Computer.", "The Power of Fire is a roleplay game modification for Warcraft III: The Frozen Throne. You play a single character, complete missions, kill creeps and try to solve the shared missions to end the game successfully. The modification can be played in singleplayer as well as in multiplayer. For that other players require the modification as well on their computer."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNFire.blp")
+			 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Chat-Befehle", "Chat Commands"))
 			call QuestSetDescription(whichQuest, tre("Die obigen Befehle können im Chat verwendet werden.", "The commands at the top can be used in the chat."))
@@ -250,6 +255,10 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetDescription(whichQuest, tre("Jeder Spieler kann einen einzigen Stützpunkt errichten. Der Stützpunkt ist ein Gebäude, das abhängig von der Klasse des Spielercharakters ist. Um einen Stützpunkt zu errichten, muss ein entsprechender Bauplan bei einem Baumeister gekauft werden.", "Each player can construct one single base. The base is a building which is dependant on the class of the player character. To construct a base a corresponding construction plan has to be purchased from a builder."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNTinyCastle.blp")
 			
+			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tre("Mitwirkende", "Credits"))
+			call QuestSetDescription(whichQuest, tre("Rufen Sie mit \"-menu\" das Hauptmenü auf und klicken Sie auf \"Mitwirkende\".", "Open the main menu using \"-menu\" and click on \"Credits\"."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNBerserk.blp")
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Kontakt", "Contact"))
