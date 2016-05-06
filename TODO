@@ -214,7 +214,7 @@ Handlung:
 * Dago: Ist in Dialog zu leise. Bonus-Kampagne verwendet  call SetSpeechVolumeGroupsBJ(  ) und call VolumeGroupResetBJ(  ) um Transmission außerhalb von Videos. Außerdem WaitForSoundBJ um zu warten. Vermutlich liegt es jedoch nicht daran, da es inzwischen eingebaut wurde.
 * Dago, Schafshirte und Tanka: Sound-Lautstärke an die wc3-Sounds angleichen.
 * Magische Schockwellen -> Effekt fehlt.
-* AInfo: Durch neue Lösung hängt des Skippen des Textes. Skip-Trigger einbauen -> Text direkt clearen.
+* DONE: AInfo: Durch neue Lösung hängt des Skippen des Textes. Skip-Trigger einbauen -> Text direkt clearen.
 * AInventory: Wenn ein Gegenstand aufgehoben wird, sollte er im Rucksack nach Möglichkeit auf der geöffneten Seite landen.
 * Minikarte muss leicht nach links verschoben werden.
 * AInventory: Drop wird trotzdem registriert, obwohl der Trigger disabled wird.

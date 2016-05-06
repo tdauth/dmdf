@@ -392,7 +392,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method triggerConditionChange takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			return GetTriggerUnit() == this.classUnit() and (GetSpellAbilityId() == 'A0R0' or GetSpellAbilityId() == 'A0NB' or GetSpellAbilityId() == 'A0R1')
 		endmethod
 		
@@ -432,12 +432,18 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call ACharacter.playerCharacter(whichPlayer).destroy()
 		endmethod
 		
+		private method showPage takes nothing returns nothing
+			call DisplayTimedTextToPlayer(this.player(), 0.0, 0.0, 6.0, Format(tre("Seite %1%/%2%", "Page %1%/%2%")).i(this.classIndex() + 1).i(this.classCount()).result()))
+		endmethod
+		
 		private static method triggerActionChange takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			if (GetSpellAbilityId() == 'A0NB') then
 				call this.changeToNext()
+				call this.showPage()
 			elseif (GetSpellAbilityId() == 'A0R0') then
 				call this.changeToPrevious()
+				call this.showPage()
 			/*
 			 * Select class.
 			 */
