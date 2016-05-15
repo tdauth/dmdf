@@ -432,18 +432,12 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call ACharacter.playerCharacter(whichPlayer).destroy()
 		endmethod
 		
-		private method showPage takes nothing returns nothing
-			call DisplayTimedTextToPlayer(this.player(), 0.0, 0.0, 6.0, Format(tre("Seite %1%/%2%", "Page %1%/%2%")).i(this.classIndex() + 1).i(this.classCount()).result()))
-		endmethod
-		
 		private static method triggerActionChange takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			if (GetSpellAbilityId() == 'A0NB') then
 				call this.changeToNext()
-				call this.showPage()
 			elseif (GetSpellAbilityId() == 'A0R0') then
 				call this.changeToPrevious()
-				call this.showPage()
 			/*
 			 * Select class.
 			 */
@@ -462,6 +456,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		private static method triggerConditionChangeSpellsPage takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return GetTriggerUnit() == this.classUnit() and (GetSpellAbilityId() == Classes.classAbilitiesNextPageAbilityId() or GetSpellAbilityId() == Classes.classAbilitiesPreviousPageAbilityId())
+		endmethod
+		
+		private method showPage takes nothing returns nothing
+			call DisplayTimedTextToPlayer(this.player(), 0.0, 0.0, 6.0, Format(tre("Seite %1%/%2%", "Page %1%/%2%")).i(this.m_page + 1).i(Classes.maxClassAbilitiesPages(this.currentClass(), thistype.spellsPerPage)).result())
 		endmethod
 		
 		private static method triggerActionChangeSpellsPage takes nothing returns nothing
@@ -483,6 +481,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			
 			call Classes.createClassAbilities(this.currentClass(), this.classUnit(), this.m_page, thistype.spellsPerPage)
 			call ForceUIKeyBJ(GetTriggerPlayer(), "Z") // WORKAROUND: whenever an ability is being removed it closes grimoire
+			call this.showPage()
 		endmethod
 		
 		public static method create takes player user, camerasetup cameraSetup, boolean hideUserInterface, real x, real y, real facing, real refreshRate, real rotationAngle, string strengthIconPath, string agilityIconPath, string intelligenceIconPath, string textTitle, string textStrength, string textAgility, string textIntelligence returns thistype

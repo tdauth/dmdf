@@ -45,13 +45,13 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.actor(), tr("Die Orks und Dunkelelfen werden sonst bald hier einfallen und alles dem Erdboden gleich machen. Ist Euch das lieber?"), null)
+			call TransmissionFromUnit(this.actor(), tre("Die Orks und Dunkelelfen werden sonst bald hier einfallen und alles dem Erdboden gleich machen. Ist Euch das lieber?", "The Orcs and Dark Elves will otherwise come here soon and make everything to the ground. Would you prefere that?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Nein. Die Menschen lassen uns zumindest in Ruhe. Sie haben vermutlich viel zu viel Angst als dass sie diese Höhle betreten würden. Alle bis auf euch."), gg_snd_Baldar35)
+			call TransmissionFromUnit(this.m_actorBaldar, tre("Nein. Die Menschen lassen uns zumindest in Ruhe. Sie haben vermutlich viel zu viel Angst als dass sie diese Höhle betreten würden. Alle bis auf euch.", "No. The humans at least let us at rest. They probably are too scared than they would enter this cave. All except you."), gg_snd_Baldar35)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar35))) then
 				return
@@ -69,19 +69,19 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Ich kann dir einen Teil meines Eisens geben. Meine Imps können es für dich zur Burg transportieren, jedoch brauche ich die kräftigsten Imps hier bei mir. Ich schicke dir also die schwachen Imps. Du musst sie auf ihrem Weg beschützen, ansonsten werden sie vermutlich von wilden Kreaturen umgebracht."), gg_snd_Baldar36)
+			call TransmissionFromUnit(this.m_actorBaldar, tre("Ich kann dir einen Teil meines Eisens geben. Meine Imps können es für dich zur Burg transportieren, jedoch brauche ich die kräftigsten Imps hier bei mir. Ich schicke dir also die schwachen Imps. Du musst sie auf ihrem Weg beschützen, ansonsten werden sie vermutlich von wilden Kreaturen umgebracht.", "I can give you some of my iron. My imps can transport it for you to the castle, but I need the strongest imps here with me. So I'm sending you the weak imps. You have to protect them on their way, otherwise they will probably be killed by wild creatures."), gg_snd_Baldar36)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar36))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Hör gut zu, ich möchte dir ein kleines Geheimnis anvertrauen. Diese Imps sind nicht das, was ich mir unter fürchterlichen Dämonen vorgestellt habe. Sie sind schwach, faul, ja es sind armselige Kreaturen."), gg_snd_Baldar37)
+			call TransmissionFromUnit(this.m_actorBaldar, tre("Hör gut zu, ich möchte dir ein kleines Geheimnis anvertrauen. Diese Imps sind nicht das, was ich mir unter fürchterlichen Dämonen vorgestellt habe. Sie sind schwach, faul, ja es sind armselige Kreaturen.", "Listen carefully, I would like to share a little secret with you. These imps are not what I expected from terrible demons. They are weak, lazy, yes, they are poor creatures."), gg_snd_Baldar37)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar37))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorBaldar, tr("Es ist wohl besser sie umgehend loszuwerden, aber töten nein! Sie sind meine Schöpfung, das würde ich nicht über's ... über mich bringen. Verschaffe ihnen eine Bleibe nachdem sie ihren Dienst für dich getan haben, dann sind wir quitt."), gg_snd_Baldar38)
+			call TransmissionFromUnit(this.m_actorBaldar, tre("Es ist wohl besser sie umgehend loszuwerden, aber töten nein! Sie sind meine Schöpfung, das würde ich nicht über's ... über mich bringen. Verschaffe ihnen eine Bleibe nachdem sie ihren Dienst für dich getan haben, dann sind wir quitt.", "It is probably better to get rid as soon as possible of them, but killing them, no! They are my creation, I would not have it ... bring  myself. Procure them a place to live after they have served their purpose for you, then we're even."), gg_snd_Baldar38) // TODO Wortspiel mit übers Herz bringen ins Englische übersetzen
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Baldar38))) then
 				return

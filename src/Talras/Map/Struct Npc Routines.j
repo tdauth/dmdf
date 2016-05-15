@@ -412,10 +412,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_dragonSlayerSells = NpcTalksRoutine.create(Routines.talk(), Npcs.dragonSlayer(), 270.0, 23.59, gg_rct_waypoint_dragon_slayer_farm)
 			call thistype.m_dragonSlayerSells.setFacing(277.12)
 			call thistype.m_dragonSlayerSells.setPartner(null)
-			call thistype.m_dragonSlayerSells.addSound(tr("Beste Waren aus dem Königreich der Hochelfen."), gg_snd_DragonSlayerFarm1)
-			call thistype.m_dragonSlayerSells.addSound(tr("Greift zu solange die Ware noch frisch ist!"), gg_snd_DragonSlayerFarm2)
-			call thistype.m_dragonSlayerSells.addSound(tr("Das gab es noch nie: Eine Hochelfin räumt aus! Die besten Angebote, nur heute!"), gg_snd_DragonSlayerFarm3)
-			call thistype.m_dragonSlayerSells.addSound(tr("Artefakte, echte und gefälschte, nur bei mir!"), gg_snd_DragonSlayerFarm4)
+			call thistype.m_dragonSlayerSells.addSound(tre("Beste Waren aus dem Königreich der Hochelfen.", "Best articles of the kingdom of the High Elves."), gg_snd_DragonSlayerFarm1)
+			call thistype.m_dragonSlayerSells.addSound(tre("Greift zu solange die Ware noch frisch ist!", "Take it as long as the product is still fresh!"), gg_snd_DragonSlayerFarm2)
+			call thistype.m_dragonSlayerSells.addSound(tre("Das gab es noch nie: Eine Hochelfin räumt aus! Die besten Angebote, nur heute!", "That never happened: A High Elf clears out! The best offers today only!"), gg_snd_DragonSlayerFarm3)
+			call thistype.m_dragonSlayerSells.addSound(tre("Artefakte, echte und gefälschte, nur bei mir!", "Artifacts, real and fake, just with me!"), gg_snd_DragonSlayerFarm4)
 		endmethod
 	endstruct
 

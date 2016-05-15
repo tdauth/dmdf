@@ -55,7 +55,7 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(this.actor(), tr("Wir haben den Auftrag erfüllt."), null)
+			call TransmissionFromUnit(this.actor(), tre("Wir haben den Auftrag erfüllt.", "We have completed the mission."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

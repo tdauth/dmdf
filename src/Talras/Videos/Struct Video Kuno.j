@@ -51,55 +51,55 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.actor(), tr("Hör zu, der Herzog bittet nicht darum und Markward auch nicht. Willst du lieber von den Orks und Dunkelelfen überrannt werden? Denk doch an deine Tochter."), null)
+			call TransmissionFromUnit(this.actor(), tre("Hör zu, der Herzog bittet nicht darum und Markward auch nicht. Willst du lieber von den Orks und Dunkelelfen überrannt werden? Denk doch an deine Tochter.", "Listen, the duke does not ask for it and Markward doesn't either. Would you rather be overrun by Orcs and Dark Elves? Think of your daughter."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Schon gut schon gut, ich darf mich doch wenigstens noch aufregen über diesen Herzog. Aber eines sage ich dir, einfach so bekommt er mein Holz nicht."), gg_snd_Kuno32)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tre("Kuno", "Kuno"), tre("Schon gut schon gut, ich darf mich doch wenigstens noch aufregen über diesen Herzog. Aber eines sage ich dir, einfach so bekommt er mein Holz nicht.", "All right all right, I may at least be upset about this duke. BUt one thing I tell you, he does not get my wood just like this."), gg_snd_Kuno32)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno32))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.actor(), tr("Was verlangst du?"), null)
+			call TransmissionFromUnit(this.actor(), tre("Was verlangst du?", "What do you demand?"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Pass auf, dieser Wald hier ist das Grauen geworden. Kein Ort an dem ein Kind aufwachsen sollte und schon gar nicht meine Tochter."), gg_snd_Kuno33)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tre("Kuno", "Kuno"), tre("Pass auf, dieser Wald hier ist das Grauen geworden. Kein Ort an dem ein Kind aufwachsen sollte und schon gar nicht meine Tochter.", "Look, this forest here has become the horror. No place at which a child should grow up, let alone my daughter."), gg_snd_Kuno33)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno33))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Im Süden leben bärenstarke Riesen und im Norden ..."), gg_snd_Kuno34)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tre("Kuno", "Kuno"), tre("Im Süden leben bärenstarke Riesen und im Norden ...", "In the south live giants as strong as an ox and in the north ..."), gg_snd_Kuno34)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno34))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Im Norden habe ich grausame Hexen gesehen. Sie werden meine Tochter entführen oder verhexen wenn ich gerade nicht aufpasse. Das könnte ich nicht ertragen."), gg_snd_Kuno35)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tre("Kuno", "Kuno"), tre("Im Norden habe ich grausame Hexen gesehen. Sie werden meine Tochter entführen oder verhexen wenn ich gerade nicht aufpasse. Das könnte ich nicht ertragen.", "In the north I saw cruel witches. They will kidnap or hex my daughter if I do not watch her. I could not bear this."), gg_snd_Kuno35)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno35))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.actor(), tr("Du willst dass wir die Hexen vertreiben."), null)
+			call TransmissionFromUnit(this.actor(), tre("Du willst dass wir die Hexen vertreiben.", "You want us to drive out the witches."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Genau. Tötet sie alle! Diese verlorenen Seelen haben ihr Recht auf ein Leben verwirkt, indem sie in meinem Wald Unfrieden stifteten. Danach kannst du das Holz haben."), gg_snd_Kuno36)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tre("Kuno", "Kuno"), tre("Genau. Tötet sie alle! Diese verlorenen Seelen haben ihr Recht auf ein Leben verwirkt, indem sie in meinem Wald Unfrieden stifteten. Danach kannst du das Holz haben.", "Exactly. Kill them all! THe lost souls have forfeited their right to live by incited discord in my forest. Then you can have the wood."), gg_snd_Kuno36)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno36))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.m_actorKuno, tr("Kuno"), tr("Allerdings musst du es alleine wegbringen."), gg_snd_Kuno37)
+			call TransmissionFromUnitWithName(this.m_actorKuno, tre("Kuno", "Kuno"), tre("Allerdings musst du es alleine wegbringen.", "However, you must bringt it away alone."), gg_snd_Kuno37)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Kuno37))) then
 				return
