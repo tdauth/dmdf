@@ -50,26 +50,26 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 		
-			call TransmissionFromUnit(this.m_actorFerdinand, tr("Hört mich an Bauern!"), null)
+			call TransmissionFromUnit(this.m_actorFerdinand, tre("Hört mich an Bauern!", "Hear me farmers!"), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorFerdinand, tr("Die Zeit ist nun gekommen da der Herzog eure Dienste einfordert. Lange Zeit durftet ihr wie König leben vom Lande eures Herzogs. Er ließ euch teilhaben an seinem Reichtum und ihr konntet in Frieden leben."), null)
+			call TransmissionFromUnit(this.m_actorFerdinand, tre("Die Zeit ist nun gekommen da der Herzog eure Dienste einfordert. Lange Zeit durftet ihr wie Könige leben vom Lande eures Herzogs. Er ließ euch teilhaben an seinem Reichtum und ihr konntet in Frieden leben.", "The time has come that the duke demands your services. FOr a long time you could live like kings from the land of your duke. He let you partake of his wealth and you could live in peace."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorManfred, tr("Heuchler!"), null)
+			call TransmissionFromUnit(this.m_actorManfred, tre("Heuchler!", "Hypocrite!"), null)
 			call QueueUnitAnimation(this.m_actorManfred, "Attack First")
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWorker0, tr("Scharlatan!"), null)
+			call TransmissionFromUnit(this.m_actorWorker0, tre("Scharlatan!", "Charlatan!"), null)
 			call QueueUnitAnimation(this.m_actorWorker0, "Attack")
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
@@ -83,13 +83,13 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_recruit_1, true, 10.0)
 			call Game.fadeInWithWait()
 			
-			call TransmissionFromUnit(this.m_actorFerdinand, tr("Das ist ja unerhört! Ich verbitte mir das oder wollt ihr etwa am Pranger landen? Das gemeine Volk taugt eben nichts. Sie beschweren sich immerzu."), null)
+			call TransmissionFromUnit(this.m_actorFerdinand, tre("Das ist ja unerhört! Ich verbitte mir das oder wollt ihr etwa am Pranger landen? Das gemeine Volk taugt eben nichts. Sie beschweren sich immerzu.", "That's outrageous! I will not tolerate that or do you want to land at the pillory? The common people is good for nothing. They complain constantly."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorFerdinand, tr("Wie dem auch sei, der Herzog fordert eure Dienste ein! Meldet euch freiwillig oder ihr werden mit Gewalt dazu gebracht, eure Pflicht zu erfüllen."), null)
+			call TransmissionFromUnit(this.m_actorFerdinand, tre("Wie dem auch sei, der Herzog fordert eure Dienste ein! Meldet euch freiwillig oder ihr werdtn mit Gewalt dazu gebracht, eure Pflicht zu erfüllen.", "Anyway, the duke calls for your services! Report voluntary or you will be brought by force to fulfill your duty."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

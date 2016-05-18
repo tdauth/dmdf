@@ -10,8 +10,8 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 
 		// Ich grüße Euch.
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ich grüße Euch."), null)
-			call speech(info, character, true, tr("Hat Er nicht einen Auftrag? Falls es Schwierigkeiten gibt, sollte Er sich zunächst an meinen getreuen Ritter Markward oder meinen Vogt Ferdinand wenden."), gg_snd_Heimrich1)
+			call speech(info, character, false, tre("Ich grüße Euch.", "I greet you."), null)
+			call speech(info, character, true, tre("Hat Er nicht einen Auftrag? Falls es Schwierigkeiten gibt, sollte Er sich zunächst an meinen getreuen Ritter Markward oder meinen Vogt Ferdinand wenden.", "Does He not have a job? If there are difficulties, He should first contact my loyal knight Markward or my steward Ferdinand."), gg_snd_Heimrich1)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -22,7 +22,7 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 
 		// Was ist mit Eurer Frau und Euren Nachkommen?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was ist mit Eurer Frau und Euren Nachkommen?"), null)
+			call speech(info, character, false, tre("Was ist mit Eurer Frau und Euren Nachkommen?", "What about your wife and children?"), null)
 			call speech(info, character, true, tr("Sie befinden sich bei meinem Vetter, in Sicherheit. Ich würde sie niemals der Gefahr hier aussetzen. Aber Er soll mir erklären, weshalb es Ihn interessiert."), gg_snd_Heimrich2)
 			call speech(info, character, false, tr("Ich war nur besorgt um Euch …"), null)
 			call speech(info, character, true, tr("So? Dann danke ich Ihm für Seine Anteilnahme, jedoch sollte Er sich nun wieder um die benötigte Verstärkung kümmern."), gg_snd_Heimrich3)

@@ -61,19 +61,19 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 				return
 			endif
 		
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Sehr gut! Es ist nun an ihnen den Feind aufzuhalten."), gg_snd_Heimrich23)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tre("Heimrich", "Heimrich"), tre("Sehr gut! Es ist nun an ihnen den Feind aufzuhalten.", "Very good! It is now on them to reside the enemy."), gg_snd_Heimrich23)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Markward berichtete mir von Truppenbewegungen im Norden. Die Orks und Dunkelelfen nahen und uns bleibt keine Zeit mehr. Sie werden zunächst den Außenposten angreifen, ich hoffe sie haben ihn gut befestigt."), gg_snd_Heimrich24)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tre("Heimrich", "Heimrich"), tr("Markward berichtete mir von Truppenbewegungen im Norden. Die Orks und Dunkelelfen nahen und uns bleibt keine Zeit mehr. Sie werden zunächst den Außenposten angreifen, ich hoffe sie haben ihn gut befestigt."), gg_snd_Heimrich24)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich24))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Der Feind darf auf keinen Fall die Burg erreichen. Das wäre unser Ende! Sie müssen diese Truppen aufhalten, um jeden Preis."), gg_snd_Heimrich25)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tre("Heimrich", "Heimrich"), tr("Der Feind darf auf keinen Fall die Burg erreichen. Das wäre unser Ende! Sie müssen diese Truppen aufhalten, um jeden Preis."), gg_snd_Heimrich25)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich25))) then
 				return
@@ -81,43 +81,43 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 			
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorHeimrich), this.unitActor(this.m_actorDragonSlayer))
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Werte Drachentöterin! Hat sie etwas mit ihrem Schreiben erreicht?"), gg_snd_Heimrich26)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tre("Heimrich", "Heimrich"), tr("Werte Drachentöterin! Hat sie etwas mit ihrem Schreiben erreicht?"), gg_snd_Heimrich26)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich26))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tr("Drachentöterin"), tr("In der Tat. Es kam eine Antwort. Der König selbst, Dararos, hat mir ein Eilschreiben zugesandt. Er schreibt, dass er Hilfe schicken wird, jedoch konnte er mir nicht versichern, wie lange diese Hilfe brauchen wird, bis sie hier eintrifft."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("In der Tat. Es kam eine Antwort. Der König selbst, Dararos, hat mir ein Eilschreiben zugesandt. Er schreibt, dass er Hilfe schicken wird, jedoch konnte er mir nicht versichern, wie lange diese Hilfe brauchen wird, bis sie hier eintrifft."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Der König der Hochelfen? Das hört sich besser an als erwartet. So lasst uns keine Zeit verschwenden. Machen sie sich bereit!"), gg_snd_Heimrich27)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tre("Heimrich", "Heimrich"), tr("Der König der Hochelfen? Das hört sich besser an als erwartet. So lasst uns keine Zeit verschwenden. Machen sie sich bereit!"), gg_snd_Heimrich27)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich27))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tr("Drachentöterin"), tr("Ich muss zugeben, dass es mich selbst ein wenig überrascht, dass mein König ein so großes Interesse an der Sache hat. Nichtsdestotrotz können uns die Truppen der Hochelfen von großem Nutzen sein, wenn sie rechtzeitig eintreffen."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Ich muss zugeben, dass es mich selbst ein wenig überrascht, dass mein König ein so großes Interesse an der Sache hat. Nichtsdestotrotz können uns die Truppen der Hochelfen von großem Nutzen sein, wenn sie rechtzeitig eintreffen."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tr("Drachentöterin"), tr("Verzeiht mir die Frage, aber wo werdet IHR euch postieren, verehrter Herzog?"), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Verzeiht mir die Frage, aber wo werdet IHR euch postieren, verehrter Herzog?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("Ich? Also ... ich, ich werde hier mit Markward ausharren. Wir halten die letzte Bastion gemeinsam. Erst wenn das Dorf gefallen ist und die tapferen Dorfbewohner ihr letztes Blut vergossen haben, wird der Feind sich mit uns anlegen müssen. Nicht wahr Markward (ängstlich)?"), gg_snd_Heimrich28)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tre("Heimrich", "Heimrich"), tr("Ich? Also ... ich, ich werde hier mit Markward ausharren. Wir halten die letzte Bastion gemeinsam. Erst wenn das Dorf gefallen ist und die tapferen Dorfbewohner ihr letztes Blut vergossen haben, wird der Feind sich mit uns anlegen müssen. Nicht wahr Markward (ängstlich)?"), gg_snd_Heimrich28)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich28))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tr("Heimrich"), tr("... natrürlich schicke ich Männer zum Außenposten und sie haben ja selbst bereits Männer angeworben. Es ist nun an der Zeit aufzubrechen. Ich wünsche ihnen viel Glück!"), gg_snd_Heimrich29)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorHeimrich), tre("Heimrich", "Heimrich"), tr("... natrürlich schicke ich Männer zum Außenposten und sie haben ja selbst bereits Männer angeworben. Es ist nun an der Zeit aufzubrechen. Ich wünsche ihnen viel Glück!"), gg_snd_Heimrich29)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich29))) then
 				return
