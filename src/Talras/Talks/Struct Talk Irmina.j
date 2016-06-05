@@ -13,9 +13,9 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 		private method showPotionInfo takes Character character returns nothing
 			if (TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]) > 0.0) then
-				call character.displayHint(Format(tr("Irminas %1% benötigt noch %2% Sekunden bis zur Fertigstellung.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey))).time(R2I(TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]))).result())
+				call character.displayHint(Format(tre("Irminas %1% benötigt noch %2% Sekunden bis zur Fertigstellung.", "Irmina's %1% still takes %2% seconds until it is finished.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey))).time(R2I(TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]))).result())
 			else
-				call character.displayItemAcquired(GetItemTypeIdName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey)), Format(tr("Irminas %1% wurde fertiggestellt.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey))).result())
+				call character.displayItemAcquired(GetItemTypeIdName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey)), Format(tre("Irminas %1% wurde fertiggestellt.", "Irmina's %1% has been finished.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey))).result())
 			endif
 		endmethod
 
@@ -118,8 +118,8 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 		// Hallo.
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Hallo. Möchtest du zufällig etwas bei mir kaufen?"), gg_snd_Irmina1)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("Hallo. Möchtest du zufällig etwas bei mir kaufen?", "Hello. Would you like to buy something from me?"), gg_snd_Irmina1)
 			call info.talk().showRange(9, 10, character)
 		endmethod
 
