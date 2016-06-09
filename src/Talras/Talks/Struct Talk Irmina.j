@@ -130,12 +130,12 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 		// Wer bist du?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wer bist du?"), null)
-			call speech(info, character, true, tr("Ich bin Irmina und sowohl der Stand hier als auch das Haus daneben gehören meinem Mann und mir. Ich verkaufe hier meine Ware, also falls du was brauchst ..."), gg_snd_Irmina5)
-			call speech(info, character, true, tr("Ich kenne mich mit Kräutern und anderen Pflanzen bestens aus und weiß, wie man sich alle möglichen nützlichen Dinge zusammenmischt. Man könnte fast sagen, ich sei eine Alchemistin."), gg_snd_Irmina6)
-			call speech(info, character, false, tr("Klingt gut."), null)
-			call speech(info, character, true, tr("Das will ich doch meinen. Ich mache auch gerechte Preise, denn ich habe selbst genug zum Leben und wenn mein Mann wieder aus Holzbruck zurückkehrt, dann werde ich vermutlich mein Geschäft schließen und mich meinen Studien widmen."), gg_snd_Irmina7)
-			call speech(info, character, true, tr("Das bringt nämlich letztlich mehr als die harte Arbeit hier."), gg_snd_Irmina8)
+			call speech(info, character, false, tre("Wer bist du?", "Who are you?"), null)
+			call speech(info, character, true, tre("Ich bin Irmina und sowohl der Stand hier als auch das Haus daneben gehören meinem Mann und mir. Ich verkaufe hier meine Ware, also falls du was brauchst ...", "I am Irmina and both the stall here and the house next to it belong to my husband and me. I am selling my merchandise, so if you need anything ..."), gg_snd_Irmina5)
+			call speech(info, character, true, tre("Ich kenne mich mit Kräutern und anderen Pflanzen bestens aus und weiß, wie man sich alle möglichen nützlichen Dinge zusammenmischt. Man könnte fast sagen, ich sei eine Alchemistin.", "I am well familiar with herbs and other plants and know how all sorts of useful things can be mixed together. One could almost say that I am an alchemist."), gg_snd_Irmina6)
+			call speech(info, character, false, tre("Klingt gut.", "Sounds good."), null)
+			call speech(info, character, true, tre("Das will ich doch meinen. Ich mache auch gerechte Preise, denn ich habe selbst genug zum Leben und wenn mein Mann wieder aus Holzbruck zurückkehrt, dann werde ich vermutlich mein Geschäft schließen und mich meinen Studien widmen.", "I certainly think so. I also make fair prices because I myself have enough to live on, and when my husband returns from Holzbruck, then I'll probably close my business and devote myself to my studies."), gg_snd_Irmina7)
+			call speech(info, character, true, tre("Das bringt nämlich letztlich mehr als die harte Arbeit hier.", "That ultimately gives me more than the hard work here."), gg_snd_Irmina8)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -146,21 +146,21 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 		// Kannst du mir auch was Spezielles brauen oder mischen?
 		private static method infoAction2 takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Kannst du mir auch was Spezielles brauen oder mischen?"), null)
-			call speech(info, character, true, tr("Natürlich, aber das kostet dich auch ein wenig und du musst mir die Zutaten beschaffen."), gg_snd_Irmina9)
-			call speech(info, character, true, tr("Ich muss hier nämlich meinen Laden führen und ich habe keine Lust mich noch um einen Bauern oder Jäger zu kümmern, der das für mich macht."), gg_snd_Irmina10)
-			call speech(info, character, true, tr("Am besten gebe ich dir Abschriften meiner Zutaten- und Preislisten für besondere Tränke. Manche Zutaten sind sehr selten, was ja auch erklärt, warum ich sie nicht in meinem Sortiment habe."), gg_snd_Irmina11)
+			call speech(info, character, false, tre("Kannst du mir auch was Spezielles brauen oder mischen?", "Can you brew or mix me something special?"), null)
+			call speech(info, character, true, tre("Natürlich, aber das kostet dich auch ein wenig und du musst mir die Zutaten beschaffen.", "Of course, but that will cost you a bit and you have to get me the ingredients."), gg_snd_Irmina9)
+			call speech(info, character, true, tre("Ich muss hier nämlich meinen Laden führen und ich habe keine Lust mich noch um einen Bauern oder Jäger zu kümmern, der das für mich macht.", "I have to run my shop here and I have no desire even to look after a farmer or hunter who does that for me."), gg_snd_Irmina10)
+			call speech(info, character, true, tre("Am besten gebe ich dir Abschriften meiner Zutaten- und Preislisten für besondere Tränke. Manche Zutaten sind sehr selten, was ja auch erklärt, warum ich sie nicht in meinem Sortiment habe.", "Best I give you my copies of ingriedents and price lists for special potions. Some ingredients are very rare, which indeed explains why I do not have them in my range."), gg_snd_Irmina11)
 			/**
 			 * Charakter erhält Zutatenliste.
 			 */
 			call character.giveQuestItem('I050')
-			call character.displayItemAcquired(GetObjectName('I050'), tr("Listet alle Zutaten für Tränke von Irmina auf."))
+			call character.displayItemAcquired(GetObjectName('I050'), tre("Listet alle Zutaten für Tränke von Irmina auf.", "Lists all ingredients of potions of Irmina."))
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Was macht dein Mann in Holzbruck?
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was macht dein Mann in Holzbruck?"), null)
+			call speech(info, character, false, tre("Was macht dein Mann in Holzbruck?", "What does you husband do in Holzbruck?"), null)
 			call speech(info, character, true, tr("Er hat dort Geschäfte zu erledigen. Er ist ein wohlhabender Kaufmann und handelt mit Salz, dem weißen Gold. Vor ein paar Monaten ist er mit einigen Wagen aufgebrochen, um sein Salz in Holzbruck zu verkaufen."), gg_snd_Irmina12)
 			call speech(info, character, true, tr("Du musst wissen, dass er ursprünglich aus Holzbruck kommt und sich hier nur meinetwegen niedergelassen hat."), gg_snd_Irmina13)
 			call speech(info, character, true, tr("Ich bin froh, einen solchen Mann getroffen und geheiratet zu haben. Meine Eltern waren einfache Leute und mussten noch viel härter arbeiten als ich und nun haben wir unser eigenes Haus hier und mir geht’s eigentlich recht gut."), gg_snd_Irmina14)
