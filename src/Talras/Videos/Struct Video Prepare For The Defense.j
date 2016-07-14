@@ -87,9 +87,9 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("In der Tat. Es kam eine Antwort. Der König selbst, Dararos, hat mir ein Eilschreiben zugesandt. Er schreibt, dass er Hilfe schicken wird, jedoch konnte er mir nicht versichern, wie lange diese Hilfe brauchen wird, bis sie hier eintrifft.", "As a matter of fact. There was an answer. The king himself Dararos has sent me a dispatch. He writes that he will send help, but he could not assure me how long this help will take until it gets here."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("In der Tat. Es kam eine Antwort. Der König selbst, Dararos, hat mir ein Eilschreiben zugesandt. Er schreibt, dass er Hilfe schicken wird, jedoch konnte er mir nicht versichern, wie lange diese Hilfe brauchen wird, bis sie hier eintrifft.", "As a matter of fact. There was an answer. The king himself Dararos has sent me a dispatch. He writes that he will send help, but he could not assure me how long this help will take until it gets here."), gg_snd_DragonSlayerPrepareForTheDefense1)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerPrepareForTheDefense1))) then
 				return
 			endif
 			
@@ -99,15 +99,15 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Ich muss zugeben, dass es mich selbst ein wenig überrascht, dass mein König ein so großes Interesse an der Sache hat. Nichtsdestotrotz können uns die Truppen der Hochelfen von großem Nutzen sein, wenn sie rechtzeitig eintreffen.", "I must admit that it surprises me a little that my king has such a great interest in the matter. Nevertheless, the troops of the High Elves can be of much use if they arrive on time."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Ich muss zugeben, dass es mich selbst ein wenig überrascht, dass mein König ein so großes Interesse an der Sache hat. Nichtsdestotrotz können uns die Truppen der Hochelfen von großem Nutzen sein, wenn sie rechtzeitig eintreffen.", "I must admit that it surprises me a little that my king has such a great interest in the matter. Nevertheless, the troops of the High Elves can be of much use if they arrive on time."), gg_snd_DragonSlayerPrepareForTheDefense2)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerPrepareForTheDefense2))) then
 				return
 			endif
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Verzeiht mir die Frage, aber wo werdet IHR euch postieren, verehrter Herzog?", "Pardon my asking, but where will YOU place yourself, dear duke?"), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Verzeiht mir die Frage, aber wo werdet IHR euch postieren, verehrter Herzog?", "Pardon my asking, but where will YOU place yourself, dear duke?"), gg_snd_DragonSlayerPrepareForTheDefense3)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerPrepareForTheDefense3))) then
 				return
 			endif
 			

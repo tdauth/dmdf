@@ -97,9 +97,9 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Doch nun können wir dem Schrecklichen ein Ende bereiten, denn er sitzt in der Falle! Dort hinten in der Todesgruft befindet sich eine Tür. Durch sie gelangt man in ein riesiges Gewölbe unter der Erde. Dort muss er sich aufhalten und dort wird er uns in die Falle gehen.", "But now can we put an end to the terrible, because he is trapped! There is a door in the back of the death tomb. Though it you get into a huge vaulted underground. There he must reside there he wil go into the trap."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Doch nun können wir dem Schrecklichen ein Ende bereiten, denn er sitzt in der Falle! Dort hinten in der Todesgruft befindet sich eine Tür. Durch sie gelangt man in ein riesiges Gewölbe unter der Erde. Dort muss er sich aufhalten und dort wird er uns in die Falle gehen.", "But now can we put an end to the terrible, because he is trapped! There is a door in the back of the death tomb. Though it you get into a huge vaulted underground. There he must reside there he wil go into the trap."), gg_snd_DragonSlayerBloodthirstiness1)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerBloodthirstiness1))) then
 				return
 			endif
 			
@@ -109,27 +109,27 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Wenn die Hochelfen eine große Stärke besitzen sollten, dann wäre es die des Wissens. Wir haben schon seit langer Zeit die Geschehnisse in dieser Welt beeinflusst. Auch die Menschen stehen gewissermaßen unter unserer Obhut. Wir sind gut versorgt mit Informationen.", "If the High Elves should have a great strength it would be the knowledge. We have influenced the events in this world for a long time. The humans are so to speak under our care as well. We are well supplied with information."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Wenn die Hochelfen eine große Stärke besitzen sollten, dann wäre es die des Wissens. Wir haben schon seit langer Zeit die Geschehnisse in dieser Welt beeinflusst. Auch die Menschen stehen gewissermaßen unter unserer Obhut. Wir sind gut versorgt mit Informationen.", "If the High Elves should have a great strength it would be the knowledge. We have influenced the events in this world for a long time. The humans are so to speak under our care as well. We are well supplied with information."), gg_snd_DragonSlayerBloodthirstiness2)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerBloodthirstiness2))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Vertraut mir und ihr werden dafür belohnt. Ich will euch nichts Böses, mein Auftrag ist es diesen Deranor aufzuhalten und eine Gefahr mehr, die dieses Königreich bedroht, zu bannen.", "Trust me and you will be rewarded. I want you no harm, my mission is to stop this Deranor and banish a danger more threatening this kingdom."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Vertraut mir und ihr werden dafür belohnt. Ich will euch nichts Böses, mein Auftrag ist es diesen Deranor aufzuhalten und eine Gefahr mehr, die dieses Königreich bedroht, zu bannen.", "Trust me and you will be rewarded. I want you no harm, my mission is to stop this Deranor and banish a danger more threatening this kingdom."), gg_snd_DragonSlayerBloodthirstiness3)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerBloodthirstiness3))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Doch nehmt euch in Acht! Ich weiß, dass ihr große Krieger seid, doch Deranor der Schreckliche ist einer der stärksten Nekromanten, die diese Welt je gesehen hat. Wenn ihr mir nun folgt, dann tut es mit dem Wissen, dass ihr vielleicht niemals lebend zurückkehren werdet.", "But take care! I know that you are great warriors but Deranor the Terrible is one of the strongest necromancers who has ever seen this world. If you follow me now do it with the knowledge that you will probably never return alive."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Doch nehmt euch in Acht! Ich weiß, dass ihr große Krieger seid, doch Deranor der Schreckliche ist einer der stärksten Nekromanten, die diese Welt je gesehen hat. Wenn ihr mir nun folgt, dann tut es mit dem Wissen, dass ihr vielleicht niemals lebend zurückkehren werdet.", "But take care! I know that you are great warriors but Deranor the Terrible is one of the strongest necromancers who has ever seen this world. If you follow me now do it with the knowledge that you will probably never return alive."), gg_snd_DragonSlayerBloodthirstiness4)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerBloodthirstiness4))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Nehmt aber zunächst diese Belohnung als Zeichen meiner Dankbarkeit entgegen. Ohne euch hätte ich diesen Kampf nicht überstanden.", "But first take this reward as sign of my gratitude towards you. Without you I would not have survived this battle."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Nehmt aber zunächst diese Belohnung als Zeichen meiner Dankbarkeit entgegen. Ohne euch hätte ich diesen Kampf nicht überstanden.", "But first take this reward as sign of my gratitude towards you. Without you I would not have survived this battle."), gg_snd_DragonSlayerBloodthirstiness5)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerBloodthirstiness5))) then
 				return
 			endif
 			

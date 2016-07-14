@@ -9,7 +9,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call QuestSlaughter.quest.evaluate().enable.evaluate()
 			call Fellows.dragonSlayer().shareWith(0)
 			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), tre("Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.", "The Dragon Slayer can switch between close and range combat."))
-			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!", "Nearby there is a powerful vampire who rules over a handful of servants. It is time to slaughter him and to free this land from another parasite!"), null)
+			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!", "Nearby there is a powerful vampire who rules over a handful of servants. It is time to slaughter him and to free this land from another parasite!"), gg_snd_DragonSlayerSlaughter1)
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
@@ -150,7 +150,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch mehr seiner Art.", "Good work! But that was not the only vampire in this area. Further west there are more of his kind."), null)
+			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch mehr seiner Art.", "Good work! But that was not the only vampire in this area. Further west there are more of his kind."), gg_snd_DragonSlayerSlaughter2)
 			call this.checkForDeathVault()
 		endmethod
 
@@ -172,7 +172,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Erst gestern beobachtete ich einen dunklen Engel des Todes, weiter östlich. Lasst uns ihn vernichten!", "Just yesterday I watched a dark angel of death, further east. Let us destroy her!"), null)
+			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Erst gestern beobachtete ich einen dunklen Engel des Todes, weiter östlich. Lasst uns ihn vernichten!", "Just yesterday I watched a dark angel of death, further east. Let us destroy her!"), gg_snd_DragonSlayerSlaughter3)
 			call this.checkForDeathVault()
 		endmethod
 
@@ -182,7 +182,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		private static method stateActionCompleted2 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Einige untote Drachen haben sich weiter nördlich versammelt. Auf zum Kampf!", "Some undead dragons gathered further north. To the battle!"), null)
+			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Einige untote Drachen haben sich weiter nördlich versammelt. Auf zum Kampf!", "Some undead dragons gathered further north. To the battle!"), gg_snd_DragonSlayerSlaughter4)
 			call this.checkForDeathVault()
 		endmethod
 
@@ -192,7 +192,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		private static method stateActionCompleted3 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Ausgezeichnet! In der Nähe befindet sich eine Höhle mit einer geheimen Gruft. Sie wird von Eingeweihten auch „die Todesgruft“ genannt.", "Excellent! Nearby there is a cave with a secret crypt. It is also called \"the Death Crypt\" by insiders."), null)
+			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Ausgezeichnet! In der Nähe befindet sich eine Höhle mit einer geheimen Gruft. Sie wird von Eingeweihten auch „die Todesgruft“ genannt.", "Excellent! Nearby there is a cave with a secret crypt. It is also called \"the Death Crypt\" by insiders."), gg_snd_DragonSlayerSlaughter5)
 			call this.checkForDeathVault()
 		endmethod
 
@@ -221,7 +221,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			local thistype this = thistype(questItem.quest())
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.medusa) == 0) then
 				if (questItem.quest().questItem(6).state() == thistype.stateNew) then
-					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!", "This mud snake cattle! Come on, continue, into the crypt!"), null)
+					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!", "This mud snake cattle! Come on, continue, into the crypt!"), gg_snd_DragonSlayerSlaughter6)
 					call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.deathVault(), UnitTypes.deacon)
 				endif
 				

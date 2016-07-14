@@ -39,9 +39,9 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Verdammt! Ein Zauber muss ihn am Leben halten. Dennoch wird seine Macht hier nun schwinden.", "Damn it! A spell must keep him alive. Yet his power here is now dwindling."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Verdammt! Ein Zauber muss ihn am Leben halten. Dennoch wird seine Macht hier nun schwinden.", "Damn it! A spell must keep him alive. Yet his power here is now dwindling."), gg_snd_DragonSlayerDeranorsDeath1)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerDeranorsDeath1))) then
 				return
 			endif
 			
@@ -60,9 +60,9 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 			call SetUnitFacingToFaceUnitTimed(this.m_actorDragonSlayer, this.actor(), 0.50)
 			call SetUnitFacingToFaceUnitTimed(this.actor(), this.m_actorDragonSlayer, 0.50)
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Ihr ahnt nicht welchen Gefallen ihr eurem Königreich damit getan habt. Lieder sollte man über diese Heldentat singen, doch vermutlich wird sie der Welt dort draußen unbekannt bleiben. Der Ruhm Einzelner gerät in Vergessenheit. Stattdessen schlachten sich nun die großen Völker.", "You cannot guess what service you did for your kingdom with this. Songs should be sung about this heroic act, but probably it will remain unknow for the world out there. The glory of individuals will become forgotten. Instead, now the great nations are slaughtering each other."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Ihr ahnt nicht welchen Gefallen ihr eurem Königreich damit getan habt. Lieder sollte man über diese Heldentat singen, doch vermutlich wird sie der Welt dort draußen unbekannt bleiben. Der Ruhm Einzelner gerät in Vergessenheit. Stattdessen schlachten sich nun die großen Völker.", "You cannot guess what service you did for your kingdom with this. Songs should be sung about this heroic act, but probably it will remain unknow for the world out there. The glory of individuals will become forgotten. Instead, now the great nations are slaughtering each other."), gg_snd_DragonSlayerDeranorsDeath2)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerDeranorsDeath2))) then
 				return
 			endif
 			
@@ -72,21 +72,21 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Natürlich und die sollt ihr bekommen. Jeder von euch bekommt einen Zacken von Deranors Krone. Die Zacken sind verzaubert und könne euch von Nutzen sein.", "Of course, and you shall receive it. Each of you gets a tad of Deranor's crown. The tads are enchanted and can be of service to you."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Natürlich und die sollt ihr bekommen. Jeder von euch bekommt einen Zacken von Deranors Krone. Die Zacken sind verzaubert und könne euch von Nutzen sein.", "Of course, and you shall receive it. Each of you gets a tad of Deranor's crown. The tads are enchanted and can be of service to you."), gg_snd_DragonSlayerDeranorsDeath3)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerDeranorsDeath3))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Außerdem bekommt jeder von euch ein paar mächtige Artefakte, um euch auf eurer weiteren Reise zu beschützen.", "Besides each of you gets some powerful artifacts in order to protect you on your further travel."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Außerdem bekommt jeder von euch ein paar mächtige Artefakte, um euch auf eurer weiteren Reise zu beschützen.", "Besides each of you gets some powerful artifacts in order to protect you on your further travel."), gg_snd_DragonSlayerDeranorsDeath4)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerDeranorsDeath4))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Mein Werk hier aber ist getan. Ich werde nun nach Talras gehen und dort andere Geschäfte verfolgen. Passt gut auf euch auf und vergesst niemals, welchen Heldenmut ihr bewiesen habt.", "My work here is done. I will now go to Talras and follow other business there. Take good care of you and never forget what heroism you have proved."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Mein Werk hier aber ist getan. Ich werde nun nach Talras gehen und dort andere Geschäfte verfolgen. Passt gut auf euch auf und vergesst niemals, welchen Heldenmut ihr bewiesen habt.", "My work here is done. I will now go to Talras and follow other business there. Take good care of you and never forget what heroism you have proved."), gg_snd_DragonSlayerDeranorsDeath5)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerDeranorsDeath5))) then
 				return
 			endif
 			

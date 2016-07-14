@@ -114,9 +114,9 @@ Markward: Hier habt ihr noch die Belohnung für den zuletzt erfolgreich abgeschl
 			
 			//call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorMarkward), this.actor())
 			
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Mein König hat mir gestattet euch auf eurer weiteren Reise zu begleiten. Er sieht großen Nutzen darin, mehr über die Orks und Dunkelelfen in Erfahrung zu bringen. Das bedeutet, wir werden gemeinsam nach Holzbruck aufbrechen.", "My king has allowed me to accompany you on your further travel. He sees great benefit in getting more information about the Orcs and Dark Elves. This means that we will leave together for Holzbruck."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Mein König hat mir gestattet euch auf eurer weiteren Reise zu begleiten. Er sieht großen Nutzen darin, mehr über die Orks und Dunkelelfen in Erfahrung zu bringen. Das bedeutet, wir werden gemeinsam nach Holzbruck aufbrechen.", "My king has allowed me to accompany you on your further travel. He sees great benefit in getting more information about the Orcs and Dark Elves. This means that we will leave together for Holzbruck."), gg_snd_DragonSlayerHolzbruck1)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerHolzbruck1))) then
 				return
 			endif
 			

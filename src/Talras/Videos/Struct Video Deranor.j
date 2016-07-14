@@ -55,21 +55,21 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 				return
 			endif
 		
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Seht euch das an! In diesem mächtigen unterirdischen Gewölbe muss er sich versteckt halten. Nun werden wir Deranor dem Schrecklichen ein ebenso schreckliches Ende bereiten.", "Look at that! In this mighty underground vault he must be hiding. Now we will put an equally terrible end to Deranor the Terrible."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Seht euch das an! In diesem mächtigen unterirdischen Gewölbe muss er sich versteckt halten. Nun werden wir Deranor dem Schrecklichen ein ebenso schreckliches Ende bereiten.", "Look at that! In this mighty underground vault he must be hiding. Now we will put an equally terrible end to Deranor the Terrible."), gg_snd_DragonSlayerDeranor1)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerDeranor1))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Eine halbe Ewigkeit trieb er sein Unwesen in den Todessümpfen und kein Mensch wagte es je diese Sümpfe zu betreten. Nur zu gut wissen die Menschen, dass irgendwo dort seine finstere Burg stehen muss. Die Burg von der aus er das Land mit Tod und Verfall überzieht.", "Half an eternity he did his worst in the Dead Marshes and no man dared ever to enter the marshes. Only too well people know that somewhere there his dark castle is located. The castel from where he covers the land with death and decay."), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Eine halbe Ewigkeit trieb er sein Unwesen in den Todessümpfen und kein Mensch wagte es je diese Sümpfe zu betreten. Nur zu gut wissen die Menschen, dass irgendwo dort seine finstere Burg stehen muss. Die Burg von der aus er das Land mit Tod und Verfall überzieht.", "Half an eternity he did his worst in the Dead Marshes and no man dared ever to enter the marshes. Only too well people know that somewhere there his dark castle is located. The castel from where he covers the land with death and decay."), gg_snd_DragonSlayerDeranor2)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerDeranor2))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Um diesen \"Menschen\", oder was er auch gewesen sein mag, ist es nicht schade. Lasst uns in unser letztes Gefecht ziehen und mögen euch die Götter vor seinem Fluch beschützen!", "To this \"human\" or what he may have been it is not too bad. Let us go into our last battle and may the gods protect you from his curse!"), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Um diesen \"Menschen\", oder was er auch gewesen sein mag, ist es nicht schade. Lasst uns in unser letztes Gefecht ziehen und mögen euch die Götter vor seinem Fluch beschützen!", "To this \"human\" or what he may have been it is not too bad. Let us go into our last battle and may the gods protect you from his curse!"), gg_snd_DragonSlayerDeranor3)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerDeranor3))) then
 				return
 			endif
 			

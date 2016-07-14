@@ -79,9 +79,9 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Sieh an, wie schnell wir uns wieder sehen. Was habt Ihr mir zu berichten, Mensch? Habt Ihr etwa schon wieder eine Heldentat vollbracht?"), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Sieh an, wie schnell wir uns wieder sehen. Was habt Ihr mir zu berichten, Mensch? Habt Ihr etwa schon wieder eine Heldentat vollbracht?"), gg_snd_DragonSlayerRecruitTheHighElf1)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf1))) then
 				return
 			endif
 			
@@ -91,15 +91,15 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Der Herzog Heimrich von Talras? Meine Hilfe? Wie kommt er zu diesem Schluss? Er kennt weder mich noch meine Absichten."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Der Herzog Heimrich von Talras? Meine Hilfe? Wie kommt er zu diesem Schluss? Er kennt weder mich noch meine Absichten."), gg_snd_DragonSlayerRecruitTheHighElf2)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf2))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Habt Ihr ihm bereits von unserer Metzelei berichtet und will er mich nun vorladen, damit ich Rechenschaft ablege?"), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Habt Ihr ihm bereits von unserer Metzelei berichtet und will er mich nun vorladen, damit ich Rechenschaft ablege?"), gg_snd_DragonSlayerRecruitTheHighElf3)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf3))) then
 				return
 			endif
 			
@@ -115,21 +115,21 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Der König? Das sieht ihm ähnlich. Dararos, der König der Hochelfen bestimmt praktisch über dieses Königreich Mittillant."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Der König? Das sieht ihm ähnlich. Dararos, der König der Hochelfen bestimmt praktisch über dieses Königreich Mittillant."), gg_snd_DragonSlayerRecruitTheHighElf4)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf4))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Er behandelt es als wäre es eine seiner zahlreichen Provinzen. Der König der Menschen ist schwach. Er weiß nicht wie er auf einen bevorstehenden Krieg reagieren soll."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Er behandelt es als wäre es eine seiner zahlreichen Provinzen. Der König der Menschen ist schwach. Er weiß nicht wie er auf einen bevorstehenden Krieg reagieren soll."), gg_snd_DragonSlayerRecruitTheHighElf5)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf5))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Doch wie sollte ich dem Herzog von Nutzen sein. Mein Auftrag ist erfüllt und bald kehre ich in unsere Hauptstadt zurück und erstatte König Dararos Bericht."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Doch wie sollte ich dem Herzog von Nutzen sein. Mein Auftrag ist erfüllt und bald kehre ich in unsere Hauptstadt zurück und erstatte König Dararos Bericht."), gg_snd_DragonSlayerRecruitTheHighElf6)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf6))) then
 				return
 			endif
 			
@@ -145,9 +145,9 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("In der Tat. Diese Burg würde einem ganzen Heer nicht lange Stand halten. Die Menschen hier sind freundlich zu mir. Es würde mir ganz und gar missfallen sie im Stich zu lassen."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("In der Tat. Diese Burg würde einem ganzen Heer nicht lange Stand halten. Die Menschen hier sind freundlich zu mir. Es würde mir ganz und gar missfallen sie im Stich zu lassen."), gg_snd_DragonSlayerRecruitTheHighElf7)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf7))) then
 				return
 			endif
 			
@@ -157,15 +157,15 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Ich selbst habe jedoch keinen großen Einfluss auf meinen König, genauso wenig wie Heimrich auf den seinen. Was ich euch anbieten kann ist jedoch meine eigene Hilfe hier und jetzt."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Ich selbst habe jedoch keinen großen Einfluss auf meinen König, genauso wenig wie Heimrich auf den seinen. Was ich euch anbieten kann ist jedoch meine eigene Hilfe hier und jetzt."), gg_snd_DragonSlayerRecruitTheHighElf8)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf8))) then
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Auch kann ich zumindest versuchen in meiner Heimat Hilfe zu ersuchen. Ihr habt mir geholfen Deranor den Schrecklichen zu besiegen! Ihr solltet in meiner Heimat als Helden gefeiert werden."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Auch kann ich zumindest versuchen in meiner Heimat Hilfe zu ersuchen. Ihr habt mir geholfen Deranor den Schrecklichen zu besiegen! Ihr solltet in meiner Heimat als Helden gefeiert werden."), gg_snd_DragonSlayerRecruitTheHighElf9)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf9))) then
 				return
 			endif
 			
@@ -211,9 +211,9 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Habt Dank werter Herzog. Es ist mir eine Ehre."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Habt Dank werter Herzog. Es ist mir eine Ehre."), gg_snd_DragonSlayerRecruitTheHighElf10)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf10))) then
 				return
 			endif
 			
@@ -223,9 +223,9 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Ich verstehe Eure Lage durchaus. Noch heute werde ich ein Schreiben an meine Heimat verfassen und um Hilfe bitten. Eure Gefährten hier haben mir treue Dienste erwiesen. Nie würde ich ihnen einen Wunsch verwehren."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Ich verstehe Eure Lage durchaus. Noch heute werde ich ein Schreiben an meine Heimat verfassen und um Hilfe bitten. Eure Gefährten hier haben mir treue Dienste erwiesen. Nie würde ich ihnen einen Wunsch verwehren."), gg_snd_DragonSlayerRecruitTheHighElf11)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf11))) then
 				return
 			endif
 			
