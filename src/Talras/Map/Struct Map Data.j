@@ -459,10 +459,16 @@ endif
 		
 		public static method initVideoSettings takes nothing returns nothing
 			call Weather.pauseWeather()
+			// shop markers
+			call ShowUnit(gg_unit_o008_0209, false)
+			call ShowUnit(gg_unit_o007_0208, false)
 		endmethod
 		
 		public static method resetVideoSettings takes nothing returns nothing
 			call Weather.resumeWeather()
+			// shop markers
+			call ShowUnit(gg_unit_o008_0209, true)
+			call ShowUnit(gg_unit_o007_0208, true)
 		endmethod
 	endstruct
 

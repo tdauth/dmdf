@@ -352,7 +352,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 			// info 0
 			call this.addInfo(false, false, 0, thistype.infoAction0_0, tre("Was verkaufst du denn?", "What are you selling?")) // 9
-			call this.addInfo(false, false, 0, thistype.infoAction0_1, tre("Nein.", "Nein.")) // 10
+			call this.addInfo(false, false, 0, thistype.infoAction0_1, tre("Nein.", "No.")) // 10
 
 			// info 3
 			call this.addInfo(false, false, 0, thistype.infoAction3_0, tre("Also Agihard, der mutige Waffenmeister!", "So Agihard, the brave armourer!")) // 11

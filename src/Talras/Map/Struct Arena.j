@@ -340,7 +340,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static method triggerConditionSell takes nothing returns boolean
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			
-			if (GetSellingUnit() == Npcs.agihard() and (GetUnitTypeId(GetSoldUnit()) == 'h017' or GetUnitTypeId(GetSoldUnit()) == 'h018' or GetUnitTypeId(GetSoldUnit()) == 'h019' or GetUnitTypeId(GetSoldUnit()) == 'h01A' or GetUnitTypeId(GetSoldUnit()) == 'h01D')) then
+			if (GetSellingUnit() == Npcs.agihard() and (GetUnitTypeId(GetSoldUnit()) == 'h017' or GetUnitTypeId(GetSoldUnit()) == 'h018' or GetUnitTypeId(GetSoldUnit()) == 'h019' or GetUnitTypeId(GetSoldUnit()) == 'h01A' or GetUnitTypeId(GetSoldUnit()) == 'h00D')) then
 				return true
 			endif
 			
