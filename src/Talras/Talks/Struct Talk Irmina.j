@@ -266,17 +266,17 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		// Nein.
 		private static method infoAction0_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Nein.", "Nein."), null)
-			call speech(info, character, true, tr("Toll, sind den Leuten auf einmal die Goldmünzen ausgegangen oder was? Plötzlich, bei Kriegsgefahr sparen sie alle, dabei sollten sie es doch lieber jetzt noch mal ausgeben. Wie auch immer, ist ja deine Sache."), gg_snd_Irmina4)
+			call speech(info, character, true, tre("Toll, sind den Leuten auf einmal die Goldmünzen ausgegangen oder was? Plötzlich, bei Kriegsgefahr sparen sie alle, dabei sollten sie es doch lieber jetzt noch mal ausgeben. Wie auch immer, ist ja deine Sache.", "Great, have people suddenly no more gold coins or what? Suddenly when the threaf of war is there they all save their gold, while they should rather spend it now. Anyway, this is your thing."), gg_snd_Irmina4)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Also Agihard, der mutige Waffenmeister!
 		private static method infoAction3_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Also Agihard, der mutige Waffenmeister!"), null)
-			call speech(info, character, true, tr("Ich weiß, ich sollte nicht so daherreden, aber was ich empfinde, ist nun mal da. Ich wünschte nur, er käme eines Tages mal zu mir, um etwas zu kaufen, dann könnte ich mich nett mit ihm unterhalten."), gg_snd_Irmina18)
-			call speech(info, character, false, tr("Unterhalten ..."), null)
-			call speech(info, character, true, tr("Ja! Ich würde ihm auch was umsonst geben."), gg_snd_Irmina19)
-			call speech(info, character, false, tr("Genau."), null)
+			call speech(info, character, false, tre("Also Agihard, der mutige Waffenmeister!", "So Agihard, the brave armourer!"), null)
+			call speech(info, character, true, tre("Ich weiß, ich sollte nicht so daherreden, aber was ich empfinde, ist nun mal da. Ich wünschte nur, er käme eines Tages mal zu mir, um etwas zu kaufen, dann könnte ich mich nett mit ihm unterhalten.", "I know I should not start talking like that but what I feel happens to be there. I just wish he would someday come to be to buy something, then I could be having a pleasant conversation with him."), gg_snd_Irmina18)
+			call speech(info, character, false, tre("Unterhalten ...", "Having a conversation ..."), null)
+			call speech(info, character, true, tre("Ja! Ich würde ihm auch was umsonst geben.", "Yes! I would give him something for free."), gg_snd_Irmina19)
+			call speech(info, character, false, tre("Genau.", "Exactly."), null)
 			// Neuer Auftrag: „Talras' mutiger Waffenmeister“
 			call QuestTheBraveArmourerOfTalras.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
@@ -284,7 +284,8 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 		// Glückwunsch!
 		private static method infoAction3_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Ja, Glück wünsche ich ihm wahrlich (seufzt)."), gg_snd_Irmina20)
+			call speech(info, character, false, tre("Glückwunsch!", "Congratulations!"), null)
+			call speech(info, character, true, tre("Ja, Glück wünsche ich ihm wahrlich (seufzt).", "Yes, I really wish him luck (sighs)."), gg_snd_Irmina20)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -293,7 +294,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			local integer i
 			// (Charakter hat die nötigen Zutaten und die geforderten Goldmünzen)
 			if (thistype(info.talk()).hasPotionRessources(character, potion) and thistype(info.talk()).hasPotionMoney(character, potion)) then
-				call speech(info, character, true, tr("Gut, komm in ein paar Minuten wieder!"), gg_snd_Irmina28)
+				call speech(info, character, true, tre("Gut, komm in ein paar Minuten wieder!", "Well, come back in a few minutes!"), gg_snd_Irmina28)
 				// Charakter gibt Irmina die Zutaten.
 				call character.removeGold(thistype.potionMoney(potion)) // remove gold
 				set ressources = thistype.potionRessources(potion)
@@ -308,30 +309,30 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 				call info.talk().showStartPage(character) // return to start page
 			// (Dem Charakter fehlen die nötigen Zutaten)
 			elseif (not thistype(info.talk()).hasPotionRessources(character, potion)) then
-				call speech(info, character, true, tr("Und wie ohne die nötigen Zutaten?"), gg_snd_Irmina29)
+				call speech(info, character, true, tre("Und wie ohne die nötigen Zutaten?", "And how without the necessary ingredients?"), gg_snd_Irmina29)
 				call info.talk().showRange(13, 16, character)
 			// (Dem Charakter fehlen die geforderten Goldmünzen)
 			else
-				call speech(info, character, true, tr("Ohne Bezahlung sicher nicht!"), gg_snd_Irmina30)
+				call speech(info, character, true, tre("Ohne Bezahlung sicher nicht!", "Without payment certainly not!"), gg_snd_Irmina30)
 				call info.talk().showRange(13, 16, character)
 			endif
 		endmethod
 
 		// Ein Stärketrank.
 		private static method infoAction6_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ein Stärketrank."), null)
+			call speech(info, character, false, tre("Ein Stärketrank.", "A strength potion."), null)
 			call thistype.potionAction(info, character, thistype.strengthPotion)
 		endmethod
 
 		// Ein Geschicklichkeitstrank.
 		private static method infoAction6_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ein Geschicklichkeitstrank."), null)
+			call speech(info, character, false, tre("Ein Geschicklichkeitstrank.", "A dexterity potion."), null)
 			call thistype.potionAction(info, character, thistype.dexterityPotion)
 		endmethod
 
 		// Ein Reinigungstrank.
 		private static method infoAction6_2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ein Reinigungstrank."), null)
+			call speech(info, character, false, tre("Ein Reinigungstrank.", "A clarity potion."), null)
 			call thistype.potionAction(info, character, thistype.purificationPotion)
 		endmethod
 
@@ -339,28 +340,28 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			local thistype this = thistype.allocate(gg_unit_n01S_0201, thistype.startPageAction)
 
 			// start page
-			call this.addInfo(false, false, 0, thistype.infoAction0, tr("Hallo.")) // 0
-			call this.addInfo(false, false, thistype.infoCondition1, thistype.infoAction1, tr("Wer bist du?")) // 1
-			call this.addInfo(false, false, thistype.infoCondition2And3, thistype.infoAction2, tr("Kannst du mir auch was Spezielles brauen oder mischen?")) // 2
-			call this.addInfo(false, false, thistype.infoCondition2And3, thistype.infoAction3, tr("Was macht dein Mann in Holzbruck?")) // 3
-			call this.addInfo(false, false, thistype.infoCondition4, thistype.infoAction4, tr("Agihard mag dich.")) // 4
-			call this.addInfo(false, false, thistype.infoCondition5, thistype.infoAction5, tr("Ich gehe nach Holzbruck.")) // 5
-			call this.addInfo(true, false, thistype.infoCondition6, thistype.infoAction6, tr("Braue mir einen speziellen Trank!")) // 6
-			call this.addInfo(true, false, thistype.infoCondition7, thistype.infoAction7, tr("Hast du den Trank für mich?")) // 7
+			call this.addInfo(false, false, 0, thistype.infoAction0, tre("Hallo.", "Hello.")) // 0
+			call this.addInfo(false, false, thistype.infoCondition1, thistype.infoAction1, tre("Wer bist du?", "Who are you?")) // 1
+			call this.addInfo(false, false, thistype.infoCondition2And3, thistype.infoAction2, tre("Kannst du mir auch was Spezielles brauen oder mischen?", "Can you brew or mix me something special?")) // 2
+			call this.addInfo(false, false, thistype.infoCondition2And3, thistype.infoAction3, tre("Was macht dein Mann in Holzbruck?", "What does you husband do in Holzbruck?")) // 3
+			call this.addInfo(false, false, thistype.infoCondition4, thistype.infoAction4, tre("Agihard mag dich.", "Agihard likes you.")) // 4
+			call this.addInfo(false, false, thistype.infoCondition5, thistype.infoAction5, tre("Ich gehe nach Holzbruck.", "I'm going to Holzbruck.")) // 5
+			call this.addInfo(true, false, thistype.infoCondition6, thistype.infoAction6, tre("Braue mir einen speziellen Trank!", "Make me a special potion!")) // 6
+			call this.addInfo(true, false, thistype.infoCondition7, thistype.infoAction7, tre("Hast du den Trank für mich?", "Do you have the potion for me?")) // 7
 			call this.addExitButton() // 8
 
 			// info 0
-			call this.addInfo(false, false, 0, thistype.infoAction0_0, tr("Was verkaufst du denn?")) // 9
-			call this.addInfo(false, false, 0, thistype.infoAction0_1, tr("Nein.")) // 10
+			call this.addInfo(false, false, 0, thistype.infoAction0_0, tre("Was verkaufst du denn?", "What are you selling?")) // 9
+			call this.addInfo(false, false, 0, thistype.infoAction0_1, tre("Nein.", "Nein.")) // 10
 
 			// info 3
-			call this.addInfo(false, false, 0, thistype.infoAction3_0, tr("Also Agihard, der mutige Waffenmeister!")) // 11
-			call this.addInfo(false, false, 0, thistype.infoAction3_1, tr("Glückwunsch!")) // 12
+			call this.addInfo(false, false, 0, thistype.infoAction3_0, tre("Also Agihard, der mutige Waffenmeister!", "So Agihard, the brave armourer!")) // 11
+			call this.addInfo(false, false, 0, thistype.infoAction3_1, tre("Glückwunsch!", "Congratulations!")) // 12
 
 			// info 6
-			call this.addInfo(true, false, 0, thistype.infoAction6_0, Format(tr("Ein Stärketrank (%1% Goldmünzen).")).i(thistype.potionMoney(thistype.strengthPotion)).result()) // 13
-			call this.addInfo(true, false, 0, thistype.infoAction6_1, Format(tr("Ein Geschicklichkeitstrank (%1% Goldmünzen).")).i(thistype.potionMoney(thistype.dexterityPotion)).result()) // 14
-			call this.addInfo(true, false, 0, thistype.infoAction6_2, Format(tr("Ein Reinigungstrank (%1% Goldmünzen).")).i(thistype.potionMoney(thistype.purificationPotion)).result()) // 15
+			call this.addInfo(true, false, 0, thistype.infoAction6_0, Format(tre("Ein Stärketrank (%1% Goldmünzen).", "A strength potion (%1% gold coins).")).i(thistype.potionMoney(thistype.strengthPotion)).result()) // 13
+			call this.addInfo(true, false, 0, thistype.infoAction6_1, Format(tre("Ein Geschicklichkeitstrank (%1% Goldmünzen).", "A dexterity potion (%1% gold coins).")).i(thistype.potionMoney(thistype.dexterityPotion)).result()) // 14
+			call this.addInfo(true, false, 0, thistype.infoAction6_2, Format(tre("Ein Reinigungstrank (%1% Goldmünzen).", "A clarity potion (%1% gold coins).")).i(thistype.potionMoney(thistype.purificationPotion)).result()) // 15
 			call this.addBackToStartPageButton() // 16
 
 			return this
