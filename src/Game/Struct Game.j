@@ -680,6 +680,9 @@ static if (DEBUG_MODE) then
 		endmethod
 endif
 		
+		/**
+		 * Creates the global scheme for a character overview which can be shown to every player.
+		 */
 		private static method initCharactersScheme takes nothing returns nothing
 			local integer i
 			set thistype.m_charactersScheme = ACharactersScheme.create(1.0, true, true, true, 20, GameExperience.maxExperienceFormula, 20, 20, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")

@@ -27,7 +27,7 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 		
 		private static method infoActionBusy takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, true, tr("Nicht jetzt, ich habe zu tun!"), gg_snd_Kuno1)
+			call speech(info, character, true, tre("Nicht jetzt, ich habe zu tun!", "Not now, I am busy!"), gg_snd_Kuno1)
 			call this.close(character)
 		endmethod
 		
@@ -39,7 +39,7 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 
 		// Hallo.
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hallo."), null)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
 			call speech(info, character, true, tr("￼Hallo. Was führt dich in diesen Wald?"), gg_snd_Kuno2)
 			call speech(info, character, true, tr("Warte, lass mich raten! Das Holz? Oder ist es einfach nur der Anblick der wunderbaren Bäume hier? Schon gut, ich heiße Kuno und bin Holzfäller, wie man sieht."), gg_snd_Kuno3)
 			call info.talk().showStartPage(character)

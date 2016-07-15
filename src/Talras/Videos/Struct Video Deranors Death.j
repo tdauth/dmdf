@@ -27,9 +27,9 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(this.m_actorDeranor, tre("\"Ein König fällt in Dunkelheit, doch bleibt des Reiches altes Leid.\" Mein Geist wird zu meiner Burg zurückkehren. Wenn ihr den Mut habt, dann kommt dorthin und wir werden uns wieder sehen.", "\"A king falls in darkness, but the empires old suffering remains.\" Ny spirit will return to my castle. IF you have the courage, then get there and we will see each other again."), null)
+			call TransmissionFromUnit(this.m_actorDeranor, tre("\"Ein König fällt in Dunkelheit, doch bleibt des Reiches altes Leid.\" Mein Geist wird zu meiner Burg zurückkehren. Wenn ihr den Mut habt, dann kommt dorthin und wir werden uns wieder sehen.", "\"A king falls in darkness, but the empires old suffering remains.\" Ny spirit will return to my castle. IF you have the courage, then get there and we will see each other again."), gg_snd_Deranor2Mod)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Deranor2Mod))) then
 				return
 			endif
 			

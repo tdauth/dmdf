@@ -131,10 +131,10 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorDeranor, tre("Wer wagt es mich zu stören?! Seid ihr etwa gekommen um mich aus diesem dem Untergang geweihten Land zu vertreiben? Ich werde euch lehren, was Untergang bedeutet ihr Narren!", "Who dares to interfere with me?! Have you come to expel me from this doomed land? I will teach you what doom means you fools!"), null)
+			call TransmissionFromUnit(this.m_actorDeranor, tre("Wer wagt es mich zu stören?! Seid ihr etwa gekommen, um mich aus diesem dem Untergang geweihten Land zu vertreiben? Ich werde euch lehren, was Untergang bedeutet ihr Narren!", "Who dares to interfere with me?! Have you come to expel me from this doomed land? I will teach you what doom means you fools!"), gg_snd_Deranor1Mod)
 			call QueueUnitAnimation(this.m_actorDeranor, "Spell Channel")
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Deranor1Mod))) then
 				return
 			endif
 			

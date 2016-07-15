@@ -284,7 +284,7 @@ Critical errors:
 * Lag am Anfang: Fähigkeiten preloaden. Nicht nur Klassenfähigkeiten???
 * Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen?
 Repickprobleme (vermutlich durch OpLimit irgendwo):
-* ACharactersScheme: Multiboard update does not happen immediately!
+* ACharactersScheme: Multiboard update does not happen immediately! It would also be better to show the characters schema after the intro video?
 * Multiboard verschwindet manchmal bei Repick.
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
 * Nach Repick ist Grundzauber nicht in den Favoriten.
@@ -308,6 +308,8 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Annoying for version 0.8:
+* FIXED: Unfair start attributes for different classes. Consider morphed classes too and attributes per level.
+* One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable!
 * Use water textures from Born2Modificates package.
 * Fade trees slowly.
 * Reduce transparency to 0.7 or something.
