@@ -33,6 +33,8 @@ library StructSpellsSpellWingsOfDeranorsGuard requires Asl, StructGameClasses, S
 			local thistype this = thistype.allocate(character, abilityId, morphAbiliyId, unmorphAbilityId)
 			call this.setDisableGrimoire(false)
 			call this.setDisableInventory(false)
+			// don't show equipment
+			call this.setEnableOnlyRucksack(true)
 			
 			return this
 		endmethod

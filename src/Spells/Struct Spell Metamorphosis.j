@@ -19,6 +19,8 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		private integer m_unmorphAbilityId
 		private boolean m_disableGrimoire
 		private boolean m_disableInventory
+		/// This flag has only an effect when the inventory is disabled. In this case the rucksack is still visible.
+		private boolean m_enableOnlyRucksack
 		private trigger m_channelTrigger
 		private trigger m_revivalTrigger
 		private boolean m_isMorphed
@@ -56,6 +58,14 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		
 		public method disableInventory takes nothing returns boolean
 			return this.m_disableInventory
+		endmethod
+		
+		public method setEnableOnlyRucksack takes boolean enable returns nothing
+			set this.m_enableOnlyRucksack = enable
+		endmethod
+		
+		public method enableOnlyRucksack takes nothing returns boolean
+			return this.m_enableOnlyRucksack
 		endmethod
 
 		/**
@@ -97,26 +107,27 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		 * Morphs the character.
 		 */
 		private method morph takes nothing returns nothing
+			local Character character = Character(this.character())
 			/*
 			 * Only allow one metamorphosis at a time.
 			 */
-			if (not this.character().isMorphed()) then
+			if (not character.isMorphed()) then
 				if (this.canMorph.evaluate()) then
-					if (Character(this.character()).morph(this.disableInventory())) then	
+					if (character.morph(this.disableInventory(), this.enableOnlyRucksack())) then	
 						/*
 						 * The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.	
 						 * Removing all grimoire abilities including the ability itself is only done for safety to make sure that no grimoire
 						 * ability is being cast which is in a spell book.
 						 */
 						if (this.disableGrimoire()) then
-							call Character(this.character()).grimoire().removeAllSpellsFromUnit()
+							call character.grimoire().removeAllSpellsFromUnit()
 						endif
 						
 						/*
 						 * These two lines of code do the passive transformation to another unit type.
 						 */
-						call UnitAddAbility(this.character().unit(), this.morphAbilityId())
-						call UnitRemoveAbility(this.character().unit(), this.morphAbilityId())
+						call UnitAddAbility(character.unit(), this.morphAbilityId())
+						call UnitRemoveAbility(character.unit(), this.morphAbilityId())
 						
 						set this.m_isMorphed = true
 						
@@ -124,49 +135,49 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 						 * Grimoire spells need to be readded.
 						 */
 						if (not this.disableGrimoire()) then
-							call this.character().updateGrimoireAfterPassiveTransformation()
+							call character.updateGrimoireAfterPassiveTransformation()
 							
 							/*
 							 * Add skill spell and abilities spell.
 							 */
-							if (GetUnitAbilityLevel(this.character().unit(), Grimoire.spellsAbilityId) == 0) then
-								call UnitAddAbility(this.character().unit(), Grimoire.spellsAbilityId)
+							if (GetUnitAbilityLevel(character.unit(), Grimoire.spellsAbilityId) == 0) then
+								call UnitAddAbility(character.unit(), Grimoire.spellsAbilityId)
 							endif
-							if (GetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId) == 0) then
-								call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
-								call SetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId, this.character().skillPoints())
+							if (GetUnitAbilityLevel(character.unit(), Grimoire.abilityId) == 0) then
+								call UnitAddAbility(character.unit(), Grimoire.abilityId)
+								call SetUnitAbilityLevel(character.unit(), Grimoire.abilityId, character.skillPoints())
 							endif
 						endif
 						
 						// Add unmorph spell if at least one slot is free. Otherwise if you sell the item you cannot morph back.
 						if (this.disableInventory() or this.disableGrimoire()) then
 							// there is always one free ability slot since disabling the rucksack is not allowed
-							debug call Print("Adding ability " + GetObjectName(this.abilityId()) + " to unit " + GetUnitName(this.character().unit()))
+							debug call Print("Adding ability " + GetObjectName(this.abilityId()) + " to unit " + GetUnitName(character.unit()))
 							if (not this.disableInventory()) then
 								// disabling the inventory removes the item ability
-								call this.character().inventory().disable()
+								call character.inventory().disable()
 							endif
-							//call UnitRemoveAbility(this.character().unit(), this.abilityId()) // remove ability from item, the item can not be used for casting afterwards but the ability appears in the unit's UI
-							call UnitAddAbility(this.character().unit(), this.abilityId()) // TODO does not appear, make permanent?!
-							if (GetUnitAbilityLevel(this.character().unit(), this.abilityId()) > 0) then
+							//call UnitRemoveAbility(character.unit(), this.abilityId()) // remove ability from item, the item can not be used for casting afterwards but the ability appears in the unit's UI
+							call UnitAddAbility(character.unit(), this.abilityId()) // TODO does not appear, make permanent?!
+							if (GetUnitAbilityLevel(character.unit(), this.abilityId()) > 0) then
 								debug call Print("UNIT HAS ABILITY WTF!")
 							endif
 							if (not this.disableInventory()) then
 								// no reenable the inventory to show the items as well
-								call this.character().inventory().enable()
+								call character.inventory().enable()
 							endif
 						endif
 				
 						// morph spells are expected to morph immediately
 						call this.onMorph.evaluate()
 						
-						if (GetUnitAbilityLevel(this.character().unit(), this.abilityId()) > 0) then
+						if (GetUnitAbilityLevel(character.unit(), this.abilityId()) > 0) then
 							debug call Print("UNIT HAS ABILITY AFTERWARDS WTF!")
 						endif
 					endif
 				endif
 			else
-				call this.character().displayMessage(ACharacter.messageTypeError, tre("Charakter ist bereits verwandelt.", "Character is already transformed."))
+				call character.displayMessage(ACharacter.messageTypeError, tre("Charakter ist bereits verwandelt.", "Character is already transformed."))
 			endif
 		endmethod
 		
@@ -198,7 +209,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 				/**
 				 * Now readd all removed abilities and restory the inventory.
 				 */
-				if (Character(this.character()).restoreUnit(this.disableInventory())) then
+				if (Character(this.character()).restoreUnit(this.disableInventory(), this.enableOnlyRucksack())) then
 					set this.m_isMorphed = false
 					call this.onRestore.evaluate()
 					
@@ -262,6 +273,8 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			set this.m_unmorphAbilityId = unmorphAbilityId
 			set this.m_disableGrimoire = true
 			set this.m_disableInventory = true
+			// still show the whole inventory
+			set this.m_enableOnlyRucksack = false
 			
 			set this.m_channelTrigger = CreateTrigger()
 			// register action before cast has finished!

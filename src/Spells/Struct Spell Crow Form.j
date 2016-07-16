@@ -81,6 +81,8 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.m_metamorphosis = SpellCrowFormMetamorphosis.create(character, thistype.abilityId, 'A0KZ', 'A13V')
 			call this.m_metamorphosis.setDisableInventory(false)
+			// don't show equipment
+			call this.m_metamorphosis.setEnableOnlyRucksack(true)
 			
 			call this.addGrimoireEntry('A1JR', 'A1JS')
 			call this.addGrimoireEntry('A0CH', 'A0CI')

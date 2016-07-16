@@ -41,6 +41,8 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 			local thistype this = thistype.allocate(character, abilityId, morphAbiliyId, unmorphAbilityId)
 			call this.setDisableGrimoire(false)
 			call this.setDisableInventory(false)
+			// don't show equipment
+			call this.setEnableOnlyRucksack(true)
 			set this.m_baldar = baldar
 			
 			return this

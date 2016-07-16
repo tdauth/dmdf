@@ -193,13 +193,13 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			
 			
 			set whichQuest = CreateQuest()
-			call QuestSetTitle(whichQuest, tre("Schreine", "Shrines"))
+			call QuestSetTitle(whichQuest, tre("Wiederbelebungs-Schreine", "Revival Shrines"))
 			call QuestSetDescription(whichQuest, Format(tre("Schreine dienen der Wiederbelebung des Charakters. Es kann immer nur ein Schrein aktiviert werden. An diesem Schrein wird der Charakter nach %1% Sekunden wiederbelebt, wenn er gestorben ist. Den aktiven Schrein erreicht man über das Symbol links unten oder mit F8. Zu allen erkundeten Schreinen kann sich der Charakter mit Hilfe der Spruchrolle des Totenreichs teleportieren.", "Shrines are for the revival of the character. There can only be one shrine activated all the time. At this shrine the character will be revived after %1% seconds when he died. The active shrine can be reached over the symbol at the left bottom or by F8. The character can teleport himself to all discovered shrines by using the Scroll of the Realm of the Dead.")).i(R2I(MapData.revivalTime)).result())
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNResStone.blp")
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tre("Die Spruchrolle des Totenreichs ermöglicht den Teleport zu einem erkundeten Schrein.", "The Scroll of the Realm of Death allows teleporting to a discovered shrine."))
+			call QuestItemSetDescription(questItem, tre("Die magische Rune der Wiederbelebungsschreine ermöglicht den Teleport zu einem erkundeten Schrein.", "The Magical Rune of the Revival Shrines allows teleporting to a discovered shrine."))
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tre("Die Spruchrolle der Ahnen ermöglicht den Teleport zu einem erkundeten Schrein mit verbündeten Einheiten.", "The Scroll of the Ancestors allows teleporting to a discovered shrine together with allied units."))
+			call QuestItemSetDescription(questItem, tre("Der magische Stein der Ahnen ermöglicht den Teleport zu einem erkundeten Schrein mit verbündeten Einheiten.", "The Magical Stone of the Ancestors allows teleporting to a discovered shrine together with allied units."))
 			
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Gespräche mit Personen", "Conversations with Persons"))

@@ -23,7 +23,7 @@ library StructSpellsSpellRideSheep requires Asl, StructGameClasses, StructSpells
 			 * This tag adds the sheep.
 			 * Actually it is already set for the unit but somehow is removed on passive hero transformation.
 			 */
-			//call AddUnitAnimationProperties(this.character().unit(), "Upgrade", false)
+			call AddUnitAnimationProperties(this.character().unit(), "Upgrade", false)
 			//debug call Print("After removing animation property from unit " + GetUnitName(this.character().unit()))
 		endmethod
 
@@ -31,6 +31,7 @@ library StructSpellsSpellRideSheep requires Asl, StructGameClasses, StructSpells
 			local thistype this = thistype.allocate(character, abilityId, morphAbiliyId, unmorphAbilityId)
 			call this.setDisableGrimoire(false)
 			call this.setDisableInventory(false)
+			call this.setEnableOnlyRucksack(false)
 			
 			return this
 		endmethod

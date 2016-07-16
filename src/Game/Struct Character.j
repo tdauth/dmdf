@@ -440,7 +440,7 @@ endif
 		 * The spell levels has been stored in \ref realSpellLevels() while calling \ref morph().
 		 * \note Has to be called just after the character's unit restores from morphing.
 		 */
-		public method restoreUnit takes boolean disableInventory returns boolean
+		public method restoreUnit takes boolean disableInventory, boolean enableRucksackOnly returns boolean
 			if (not this.hasRealSpellLevels()) then
 				debug call Print("Has not been morphed before!")
 				return false
@@ -450,7 +450,7 @@ endif
 				debug call Print("Enabling inventory again")
 				call this.inventory().setEnableAgain(true)
 				call this.inventory().enable()
-			else
+			elseif (enableRucksackOnly) then
 				call this.inventory().enableOnlyRucksack(false)
 			endif
 			
@@ -468,7 +468,7 @@ endif
 		* \note Has to be called just before the character's unit morphes.
 		* \param abilityId Id of the ability which has to be casted to morph the character.
 		*/
-		public method morph takes boolean disableInventory returns boolean
+		public method morph takes boolean disableInventory, boolean enableRucksackOnly returns boolean
 			debug if (GetUnitAbilityLevel(this.unit(), 'AInv') == 0) then
 			debug call Print("It is too late to store the items! Add a delay for the morphing ability!")
 			debug endif
@@ -489,7 +489,7 @@ endif
 				// Should remove but store all items and their permanently added abilities if the rucksack is open!
 				call this.inventory().disable()
 				debug call Print("After disabling inventory")
-			else
+			elseif (enableRucksackOnly) then
 				// unequipping leads to melee unit, always!
 				call this.inventory().enableOnlyRucksack(true)
 			endif
