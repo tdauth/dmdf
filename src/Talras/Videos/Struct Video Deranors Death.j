@@ -1,4 +1,4 @@
-library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
+library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame, StructMapMapNpcs
 
 	struct VideoDeranorsDeath extends AVideo
 		private unit m_actorDragonSlayer
@@ -17,6 +17,7 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapData.alliedPlayer))
 			call SetUnitFacing(this.m_actorDragonSlayer, 270.0)
 
+			call ShowUnit(Npcs.deranor(), false)
 			set this.m_actorDeranor = this.unitActor(this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deranor, gg_rct_video_deranors_death_deranor, 75.0))
 			
 			
@@ -27,7 +28,7 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(this.m_actorDeranor, tre("\"Ein König fällt in Dunkelheit, doch bleibt des Reiches altes Leid.\" Mein Geist wird zu meiner Burg zurückkehren. Wenn ihr den Mut habt, dann kommt dorthin und wir werden uns wieder sehen.", "\"A king falls in darkness, but the empires old suffering remains.\" Ny spirit will return to my castle. IF you have the courage, then get there and we will see each other again."), gg_snd_Deranor2Mod)
+			call TransmissionFromUnit(this.m_actorDeranor, tre("\"Ein König fällt in Dunkelheit, doch bleibt des Reiches altes Leid.\" Mein Geist wird zu meiner Burg zurückkehren. Wenn ihr den Mut habt, dann kommt dorthin und wir werden uns wieder sehen.", "\"A king falls in darkness, but the empires old suffering remains.\" My spirit will return to my castle. If you have the courage, then get there and we will see each other again."), gg_snd_Deranor2Mod)
 			
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Deranor2Mod))) then
 				return
@@ -102,6 +103,7 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame
 			call SetUnitFacing(Npcs.dragonSlayer(), 265.36)
 			set shop = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 'n04E', GetRectCenterX(gg_rct_dragon_slayer_shop), GetRectCenterY(gg_rct_dragon_slayer_shop), 0.0)
 			call SetUnitInvulnerable(shop, true)
+			call ShowUnit(Npcs.deranor(), true)
 		endmethod
 
 		private static method create takes nothing returns thistype

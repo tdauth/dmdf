@@ -301,6 +301,12 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Loading game doesn't work.
 * Remove old save games when ending game or do not load them when changing the map for the first time to Gardonar. Otherwise if you start a new game it will try to load the old savegame.
 * If all favorites are used in the grimoire there must be a switch with favorites button in the grimoire. Otherwise non spell can be removed!
+* Zone Transition: If you save a game for the first time and you copy all save games to the new folder, how do you know if the save games are not from older games which have never been saved? In this case you copy invalid save games for other zones. Only the current save game is guranteed to be valid. You need a temporary folder which has to be copied and deleted afterwards.
+* Zone Transition:
+* Skill points are not restored.
+* Spells are missing completely in grimoire.
+* Items are placed on the ground together with backpack changing items.
+* Changing back does not work. The savegame exists but loading does not work.
 
 Mehrspielertest:
 * Wenn man Diakon tötet, Spielabsturz. Konnte nicht immer reproduziert werden. Braucht man mindestens 2 menschliche Spieler?
@@ -320,6 +326,7 @@ Annoying for version 0.8:
 * One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable!
 * Use water textures from Born2Modificates package.
 * Fade trees slowly.
+* Update loading screens, different loading screen for map Gardonar.
 * Reduce transparency to 0.7 or something.
 * Show text on class selection on how to select the class.
 * Use accept button rather than human icon to accept the selected class.

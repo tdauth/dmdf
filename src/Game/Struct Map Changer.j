@@ -1,4 +1,4 @@
-library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHashTable
+library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGrimoire
 
 	/**
 	 * \brief Allows changing the map in singleplayer or in multiplayer.
@@ -20,6 +20,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		public static constant string mapFolder = ""
 		/// All map change save games will be saved into this folder.
 		public static constant string zonesFolder = "TPoF"
+		/// All zone save games come to this folder which do not belong to a savegame name. This folder has to be cleared whenever the game ends or is saved under a custom savegame name. Since the ending event cannot be captured the temporary folder is cleared whenever a new campaign is started from the first chapter.
+		public static constant string temporaryFolder = "Temporary"
 		private static trigger m_loadTrigger
 		private static trigger m_saveTrigger
 		private static string m_currentSaveGame = null
@@ -39,11 +41,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 * \return Returns a save game path using the zone folder and \p currentSaveGame as well as \p mapName.
 		 */
 		private static method saveGamePath takes string currentSaveGame, string mapName returns string
-			local string saveGameFolder = ""
 			if (StringLength(currentSaveGame) > 0) then
-				set saveGameFolder = currentSaveGame + "\\"
+				return thistype.zonesFolder + "\\" + currentSaveGame + "\\" + mapName + ".w3z"
 			endif
-			return thistype.zonesFolder + "\\" + saveGameFolder + mapName + ".w3z"
+			// use another folder if these are temporary zone files
+			return thistype.temporaryFolder + "\\" + mapName + ".w3z"
 		endmethod
 		
 		/**
@@ -64,6 +66,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		private static method storeCharacterSinglePlayer takes Character character returns nothing
 			local gamecache cache = InitGameCache(thistype.gameCacheName)
 			call character.store(cache, thistype.characterMissionKey(character))
+			call StoreInteger(cache, thistype.characterMissionKey(character), "SkillPoints", character.grimoire().totalSkillPoints())
 			call StoreInteger(cache, thistype.characterMissionKey(character), "Gold", GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD))
 			call SaveGameCache(cache)
 			set cache = null
@@ -100,17 +103,35 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		
 		private static method restoreCharacterSinglePlayer takes gamecache cache, player whichPlayer, real x, real y, real facing returns nothing
 			local Character character = Character(ACharacter.playerCharacter(whichPlayer))
+			local integer i = 0
 			if (character == 0) then
 				set character = Character.create(whichPlayer, Character.restoreUnitFromCache(cache, thistype.characterMissionKey(character), whichPlayer, x, y, facing), 0, 0)
 				call ACharacter.setPlayerCharacterByCharacter(character)
+				if (character.inventory() != 0) then
+					set i = 0
+					loop
+						exitwhen (i == bj_MAX_INVENTORY)
+						if (UnitItemInSlot(character.unit(), i) != null) then
+							call RemoveItem(UnitItemInSlot(character.unit(), i))
+						endif
+						set i = i + 1
+					endloop
+				endif
 				// TODO clear inventory! It will be restored by the AInventory system
 			endif
 			// TODO leads to crash: restoreDataFromCache
 			//call character.restoreDataFromCache(cache, thistype.characterMissionKey(character))
 			//call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, thistype.characterMissionKey(character), "Gold"))
 			// TODO restore skill points
+			call character.grimoire().setSkillPoints(GetStoredInteger(cache, thistype.characterMissionKey(character), "SkillPoints"))
+			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, thistype.characterMissionKey(character), "Gold"))
+			
 			// make sure the GUI of the grimoire is correct
 			call character.grimoire().updateUi.evaluate()
+			
+			// update inventory
+			call character.inventory().enable()
+			
 			set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", "CurrentSaveGame")
 			debug call Print("Current save game: " + thistype.m_currentSaveGame)
 		endmethod
@@ -191,6 +212,14 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				endif
 				set i = i + 1
 			endloop
+			
+			// If there was no save game before you have to clear the temporary folder, otherwise the zone savegames might be used by a different game.
+			// Don't clear save game folders from older save games which might still exist and be loaded!
+			// Clearing the temporary folder also happens whenever a completely new game is started from the beginning to make sure no invalid stored zones do exist.
+			if (StringLength(thistype.m_currentSaveGame) == 0) then
+				call RemoveSaveDirectory(thistype.temporaryFolder)
+			endif
+			
 			set thistype.m_currentSaveGame = GetSaveBasicFilename()
 			debug call Print("Copied zone save games for current save with size " + I2S(Zone.zones.evaluate().size()))
 		endmethod
@@ -215,6 +244,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call TriggerAddAction(thistype.m_saveTrigger, function thistype.triggerActionSave)
 			
 			set thistype.m_currentSaveGame = null
+			
+			// If the campaign is started completely new without loading it, the temporary folder should be cleared. Otherwise wrong zone save games from the last game might be used.
+			if (bj_isSinglePlayer and Game.isCampaign.evaluate() and not IsMapFlagSet(MAP_RELOADED) and MapData.isSeparateChapter) then
+				call RemoveSaveDirectory(thistype.temporaryFolder)
+			endif
 		endmethod
 	endstruct
 	

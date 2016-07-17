@@ -44,6 +44,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		private static unit m_osmansShop
 		private static unit m_bjoernsShop
 		private static unit m_agihardsShop
+		private static unit m_deranor
 		private static trigger m_sellTrigger
 
 		private static method create takes nothing returns thistype
@@ -147,6 +148,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 			set thistype.m_wigberht = gg_unit_H01C_0228
 			set thistype.m_sheepBoy = gg_unit_n02B_0058
 			set thistype.m_carsten = gg_unit_n05G_0393
+			set thistype.m_deranor = gg_unit_u00A_0353
 			set thistype.m_dararos = null
 			
 			/*
@@ -303,6 +305,10 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		
 		public static method carsten takes nothing returns unit
 			return thistype.m_carsten
+		endmethod
+		
+		public static method deranor takes nothing returns unit
+			return thistype.m_deranor
 		endmethod
 		
 		public static method initDararos takes unit whichUnit returns nothing

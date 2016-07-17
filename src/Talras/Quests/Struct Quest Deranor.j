@@ -87,7 +87,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		endmethod
 		
 		private static method stateEventCompleted1 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			call TriggerRegisterUnitEvent(usedTrigger, gg_unit_u00A_0353, EVENT_UNIT_DEATH)
+			call TriggerRegisterUnitEvent(usedTrigger, Npcs.deranor(), EVENT_UNIT_DEATH)
 		endmethod
 
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
