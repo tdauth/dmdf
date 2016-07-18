@@ -271,7 +271,7 @@ endif
 			call TriggerAddCondition(thistype.m_giantDeathTrigger, Condition(function thistype.triggerConditionGiantDeath))
 			
 			set thistype.m_zoneGardonar = Zone.create("Gardonar" + Game.gameVersion, gg_rct_zone_gardonar)
-			//call thistype.m_zoneGardonar.disable() TEST
+			call thistype.m_zoneGardonar.disable()
 			set thistype.m_zoneHolzbruck = Zone.create("Holzbruck" + Game.gameVersion, gg_rct_zone_holzbruck)
 			call thistype.m_zoneHolzbruck.disable()
 			
@@ -280,6 +280,14 @@ endif
 		
 		public static method enableWayToGardonar takes nothing returns nothing
 			call thistype.m_zoneGardonar.enable()
+		endmethod
+		
+		public static method zoneGardonar takes nothing returns Zone
+			return thistype.m_zoneGardonar
+		endmethod
+		
+		public static method zoneHolzbruck takes nothing returns Zone
+			return thistype.m_zoneHolzbruck
 		endmethod
 		
 		/**

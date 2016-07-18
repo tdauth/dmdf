@@ -182,7 +182,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		endmethod
 		
 		private static method triggerConditionLoad takes nothing returns boolean
-			return IsMapFlagSet(MAP_RELOADED) and bj_isSinglePlayer and  Game.isCampaign.evaluate()
+			return IsMapFlagSet(MAP_RELOADED) and bj_isSinglePlayer and Game.isCampaign.evaluate()
 		endmethod
 		
 		private static method triggerActionLoad takes nothing returns nothing

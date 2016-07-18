@@ -929,6 +929,16 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
 		
+		private static method onCheatActionZoneGardonar takes ACheat cheat returns nothing
+			debug call Print("Change map to Gardonar")
+			call MapChanger.changeMap(MapData.zoneGardonar.evaluate().mapName())
+		endmethod
+		
+		private static method onCheatActionZoneHolzbruck takes ACheat cheat returns nothing
+			debug call Print("Change map to Holzbruck")
+			call MapChanger.changeMap(MapData.zoneHolzbruck.evaluate().mapName())
+		endmethod
+		
 		private static method onCheatActionTestSpawnPoint takes ACheat cheat returns nothing
 			call TestSpawnPoint.spawn()
 		endmethod
@@ -983,6 +993,9 @@ static if (DEBUG_MODE) then
 			call ACheat.create("afteranewalliance", true, thistype.onCheatActionAfterANewAlliance)
 			call ACheat.create("afterwar", true, thistype.onCheatActionAfterWar)
 			call ACheat.create("afterthedefenseoftalras", true, thistype.onCheatActionAfterTheDefenseOfTalras)
+			// zones
+			call ACheat.create("zonegardonar", true, thistype.onCheatActionZoneGardonar)
+			call ACheat.create("zoneholzbruck", true, thistype.onCheatActionZoneHolzbruck)
 			// test cheats
 			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)
 			debug call Print("Before creating all cheats")
