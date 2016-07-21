@@ -71,6 +71,7 @@ library StructMapMapShrines requires Asl, StructGameShrine
 			 * Used after finishing the quest The Norsemen.
 			 */
 			set thistype.m_orcCamp = 0
+			call ShowUnit(gg_unit_n02D_0463, false)
 		endmethod
 
 		public static method startShrine takes nothing returns Shrine
@@ -111,6 +112,7 @@ library StructMapMapShrines requires Asl, StructGameShrine
 		
 		public static method initOrcCamp takes nothing returns nothing
 			set thistype.m_orcCamp = Shrine.create(gg_unit_n02D_0463, gg_dest_B008_32530, gg_rct_shrine_orc_camp_discover, gg_rct_shrine_orc_camp_revival, 319.94)
+			call ShowUnit(gg_unit_n02D_0463, true)
 		endmethod
 		
 		public static method orcCamp takes nothing returns Shrine

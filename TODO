@@ -273,6 +273,7 @@ Handlung:
 * Der Waldläufer tötet sich durch irgendeine Fähigkeit selbst. Brandpfeile? Mehrfachschuss? Lauern? Sprinten?
 * Zukünftiger Release-Vorgang: Optimizer jedoch nur mit Skriptoptimierungen damit war3map.wts unverändert bleibt. Karte kopieren und englische wts-Datei einfügen.
 * Mitwirkende: Gebiet für Spieler 2 nicht sichtbar.
+* wc3object editor should offer the function "Validate Field References" and check all <> entries.
 
 Aufgehoben für Version 0.8:
 Critical errors:

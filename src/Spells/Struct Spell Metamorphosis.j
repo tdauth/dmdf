@@ -3,6 +3,10 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 
 	/**
 	 * \brief Generic abstract spell for metamorphosis which allows specific behaviour on transformation and reset to the original unit.
+	 *
+	 * Transformation is done by passive hero transformation which means the transforming ability is added and immediately removed to transform the hero
+	 * into another unit type. The same is done when transforming the hero back to the original unit type.
+	 * Therefore two abilities are required plus the ability which casts the spell which might be based on Channel.
 	 * 
 	 * Uses \ref EVENT_PLAYER_UNIT_SPELL_CHANNEL to be executed before the unit is morphed to successfully store the inventory items.
 	 * 
@@ -36,14 +40,23 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			return this.m_abilityId
 		endmethod
 		
+		/**
+		 * \return Returns the ability ID of the ability which is used for the passive hero transformation into the other unit type.
+		 */
 		public method morphAbilityId takes nothing returns integer
 			return this.m_morphAbilityId
 		endmethod
 		
+		/**
+		 * \return Returns the ability ID of the ability which is used for the passive hero transformation back to the original unit type.
+		 */
 		public method unmorphAbilityId takes nothing returns integer
 			return this.m_unmorphAbilityId
 		endmethod
 		
+		/**
+		 * Specifies if the grimoire can still be used when transformed.
+		 */
 		public method setDisableGrimoire takes boolean disable returns nothing
 			set this.m_disableGrimoire = disable
 		endmethod
@@ -275,6 +288,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			set this.m_disableInventory = true
 			// still show the whole inventory
 			set this.m_enableOnlyRucksack = false
+			set this.m_isMorphed = false
 			
 			set this.m_channelTrigger = CreateTrigger()
 			// register action before cast has finished!

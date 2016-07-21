@@ -408,6 +408,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				// store all data of the current character which will be reused
 				set thistype.m_repickData[GetPlayerId(whichPlayer)] = RepickData.create(whichPlayer)
 				
+				// TODO instead of dropping all, store it in repick data and restory in the inventory!
 				call ACharacter.playerCharacter(whichPlayer).inventory().dropAll(GetUnitX(ACharacter.playerCharacter(whichPlayer).unit()), GetUnitY(ACharacter.playerCharacter(whichPlayer).unit()), true)
 	
 				call thistype.destroyCharacterWithNewOpLimit.evaluate(whichPlayer)
@@ -602,13 +603,14 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 		
 		private static method triggerActionRepick takes nothing returns nothing
+			local Character character = Character(ACharacter.playerCharacter(GetTriggerPlayer()))
 			debug call Print("Repick!")
 			// disable the permanent camera, otherwise the camera of the class selection cannot be applied properly
-			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).setCameraTimer(false)
+			call character.setCameraTimer(false)
 			// the class selection rect might be outside of the current camera bounds
 			call SetCameraBoundsToRectForPlayerBJ(GetTriggerPlayer(), GetPlayableMapRect())
 			// do not let the character die or move while the player is selecting a class
-			call ACharacter.playerCharacter(GetTriggerPlayer()).setMovable(false)
+			call character.setMovable(false)
 			call thistype.createClassSelectionForPlayer(GetTriggerPlayer())
 		endmethod
 		
