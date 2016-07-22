@@ -24,8 +24,8 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 
 		// (Automatisch)
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Gegrüßt seist du! Ich hoffe du und deine Leute, ihr benehmt euch anständig in der Burg und gegenüber dem Herzog, nun, da ihr ihm immerhin eure Treue geschworen habt."), gg_snd_Markward1)
-			call speech(info, character, false, tr("Sicher."), null)
+			call speech(info, character, true, tre("Gegrüßt seist du! Ich hoffe du und deine Leute, ihr benehmt euch anständig in der Burg und gegenüber dem Herzog, nun, da ihr ihm immerhin eure Treue geschworen habt.", "Hail! I hope you and your people, you behave decently in the castle and in front of the duke, now that you have after all sworn him your loyality."), gg_snd_Markward1)
+			call speech(info, character, false, tre("Sicher.", "Sure."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 

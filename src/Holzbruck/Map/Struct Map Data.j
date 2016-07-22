@@ -112,11 +112,22 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref Game.
 		public static method initMapSpells takes ACharacter character returns nothing
 		endmethod
+		
+		/// Required by \ref Game.
+		public static method onStart takes nothing returns nothing
+			call SuspendTimeOfDay(true)
+			call SetTimeOfDay(0.0)
+		endmethod
+		
+		/// Required by \ref ClassSelection.
+		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+		endmethod
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
 			local integer i
 			
+			call SuspendTimeOfDay(false)
 			call SetMapFlag(MAP_FOG_HIDE_TERRAIN, false)
 			call SetMapFlag(MAP_FOG_ALWAYS_VISIBLE, true)
 			call SetMapFlag(MAP_FOG_MAP_EXPLORED, true)

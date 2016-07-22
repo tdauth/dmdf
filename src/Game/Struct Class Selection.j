@@ -150,13 +150,16 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				if (not last) then
 					debug call Print("Do not start the game")
 					call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
+					call MapData.onSelectClass(character, class, last)
 				else
 					debug call Print("Start game")
 					call thistype.endTimer()
+					call MapData.onSelectClass(character, class, last)
 					call thistype.startGame()
 				endif
 			else
 				call character.setMovable(true)
+				call MapData.onSelectClass(character, class, last)
 			endif
 		endmethod
 		
@@ -558,8 +561,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local integer i
 			local player whichPlayer
 			
-			call SuspendTimeOfDay(true)
-			call SetTimeOfDay(0.0)
 			call ForceCinematicSubtitles(true)
 			
 			//call PlayMusic("Music\\CharacterSelection.mp3")

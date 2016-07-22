@@ -320,12 +320,14 @@ Mehrspielertest:
 
 Annoying for version 0.8:
 * Druid should have usual spells when transformed but the extra spells in a spell book since there is no rucksack button?
+* Druid Alpha has to be disabled when player transforms back into normal form.
 * FIXED: Scroll of the Realm of Death needs a custom icon and should be called Magical Rune of Revival Shrines. Otherwise player thinks he can use it only once.
 * FIXED: Do the same for Scroll of Ancestors.
 * Enchanted Staff should be bigger.
 * FIXED: Unfair start attributes for different classes. Consider morphed classes too and attributes per level.
 * One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable!
 * Use water textures from Born2Modificates package.
+* Arcane Time has the same ID as some other spell from the wizard. No valid targets in range comes when all spells are skilled in arena.
 * Fade trees slowly.
 * Update loading screens, different loading screen for map Gardonar.
 * Reduce transparency to 0.7 or something.

@@ -552,16 +552,17 @@ endif
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
 			
+			 // dont run in map initialization already, leads to not starting the map at all (probably because of unallowed function calls or waits)
+			call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
+			call MapData.onStart.evaluate()
+			
 			// if the game is new show the class selection, otherwise restore characters from the game cache (only in campaign mode)
 			if (restoreCharacters) then
-				call TriggerSleepAction(0.0)
-				call MapChanger.restoreCharactersSinglePlayer() // dont run in map initialization already, leads to not starting the map at all (probably because of unallowed function calls or waits)
+				call MapChanger.restoreCharactersSinglePlayer()
 				call ClassSelection.startGame.evaluate()
 			// Otherwise start the game from beginning by letting players select their class.
 			else
 				// class selection
-				call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
-			
 				call ClassSelection.showClassSelection.evaluate() // multiboard is created
 				set i = 0
 				loop
@@ -744,11 +745,7 @@ endif
 		 */
 		public static method start takes nothing returns nothing
 			local integer i
-			//call StopMusic(false) // stop music from class selection
-			call SuspendTimeOfDay(false)
-			//call SetCreepCampFilterState(true)
-			//call SetAllyColorFilterState(0)
-			
+
 			// use new OpLimit
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initCharactersScheme)
 			

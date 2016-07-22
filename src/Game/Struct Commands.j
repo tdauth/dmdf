@@ -10,6 +10,10 @@ library StructGameCommands requires Asl, StructGameCharacter
 		private static trigger m_unlockTrigger
 		private static trigger m_kickTrigger
 		
+		/**
+		 * One player is the administrator and has higher privileges than the other players.
+		 * He can use the admin commands.
+		 */
 		public static method adminPlayer takes nothing returns player
 			return thistype.m_adminPlayer
 		endmethod

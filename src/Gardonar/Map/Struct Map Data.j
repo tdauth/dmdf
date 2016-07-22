@@ -116,6 +116,16 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		/// Required by \ref Game.
 		public static method initMapSpells takes ACharacter character returns nothing
 		endmethod
+		
+		/// Required by \ref Game.
+		public static method onStart takes nothing returns nothing
+			call SuspendTimeOfDay(true)
+			call SetTimeOfDay(0.0)
+		endmethod
+		
+		/// Required by \ref ClassSelection.
+		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+		endmethod
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
@@ -131,6 +141,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
+			
+			call SuspendTimeOfDay(false)
 			
 			call VideoIntro.video().play()
 		endmethod

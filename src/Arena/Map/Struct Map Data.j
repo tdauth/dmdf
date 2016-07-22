@@ -46,7 +46,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			// info
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Regeln", "Rules"))
-			call QuestSetDescription(whichQuest, tre("Zu seiner Belustigung hat Heimrich, der Herzog von Talras, euch gemeinsam in eine Arena werfen lassen aus welcher der Sieg die einzige Möglichkeit zu entkommen ist.", "For his amusement Heimrich, the duke of Talras, has thrown you into an arena from which the victory is the only possibility to escape."))
+			call QuestSetDescription(whichQuest, tre("Zu seiner Belustigung hat Heimrich, der Herzog von Talras, euch gemeinsam in eine Arena werfen lassen, aus welcher der Sieg die einzige Möglichkeit zu entkommen ist.", "For his amusement Heimrich, the duke of Talras, has thrown you into an arena from which the victory is the only possibility to escape."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNCorpseExplode.blp")
 			call QuestSetEnabled(whichQuest, true)
 			call QuestSetRequired(whichQuest, false) // don't show in infos
@@ -248,6 +248,18 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref Game.
 		public static method initMapSpells takes ACharacter character returns nothing
 		endmethod
+		
+		/// Required by \ref Game.
+		public static method onStart takes nothing returns nothing
+			call SetTimeOfDay(12.0)
+			call SuspendTimeOfDay(true)
+		endmethod
+		
+		/// Required by \ref ClassSelection.
+		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+			// evaluate because of OpLimit
+			call thistype.autoSkill.evaluate(character.player())
+		endmethod
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
@@ -284,7 +296,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 			
 			call Character.showCharactersSchemeToAll()
 			
-			
 			call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, Format(tre("Schlachtet euch gegenseitig für Ruhm und Ehre in der Arena ab. Gewonnen hat derjenige, der zuerst %1% Gegner niedergestreckt hat.", "Slaughter each other in the arena for glory and honour. The one who slaughtered %1% enemies first has won.")).i(thistype.maxScore).result())
 		endmethod
 		
@@ -310,6 +321,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 				call LeaderboardAddItemBJ(whichPlayer, thistype.m_leaderboard, GetPlayerName(whichPlayer), 0)
 				
 				call SetUnitInvulnerable(ACharacter.playerCharacter(whichPlayer).unit(), true)
+				
 				// evaluate because of OpLimit
 				call thistype.autoSkill.evaluate(whichPlayer)
 			endif

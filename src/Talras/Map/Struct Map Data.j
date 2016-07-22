@@ -359,6 +359,16 @@ endif
 		public static method initMapSpells takes ACharacter character returns nothing
 			call initMapCharacterSpells.evaluate(character)
 		endmethod
+		
+		/// Required by \ref Game.
+		public static method onStart takes nothing returns nothing
+			call SuspendTimeOfDay(true)
+			call SetTimeOfDay(0.0)
+		endmethod
+		
+		/// Required by \ref ClassSelection.
+		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+		endmethod
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
@@ -366,6 +376,8 @@ endif
 			set thistype.cowSound = gg_snd_Cow
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
+			
+			call SuspendTimeOfDay(false)
 			
 			set i = 0
 			loop

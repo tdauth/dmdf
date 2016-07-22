@@ -151,7 +151,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 
 			call unitGroup.forGroup(thistype.unpauseTarget)
 			call allies.forGroup(thistype.removeAllyEffect)
-			call SuspendTimeOfDay(false)
+			call SuspendTimeOfDay(false) /// TODO only suspend if not suspended before, use hook!
 
 			set caster = null
 			call DestroyEffect(casterEffect)

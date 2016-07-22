@@ -677,14 +677,28 @@ endif
 			return false
 		endmethod
 		
+		private static method chatEmote takes player whichPlayer, string message returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (Player(i) != whichPlayer) then
+					call DisplayTimedTextToPlayer(Player(i), 0.0, 0.0, 4.0, Format(message).p(whichPlayer).result())
+				endif
+				set i = i + 1
+			endloop
+		endmethod
+		
 		private static method triggerActionDance takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			if (not IsUnitDeadBJ(this.unit())) then
 				if (GetEventPlayerChatString() == "-dance") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% tanzt.", "%1% is dancing"))
 					call SetUnitAnimationByIndex(this.unit(), 187)
 				elseif (GetEventPlayerChatString() == "-pray") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% betet.", "%1% is praying"))
 					call SetUnitAnimationByIndex(this.unit(), 195)
 				elseif (GetEventPlayerChatString() == "-magic") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% zaubert.", "%1% is using magic"))
 					call SetUnitAnimationByIndex(this.unit(), GetRandomInt(85, 87))
 				endif
 			endif
