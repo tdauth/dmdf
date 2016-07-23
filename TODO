@@ -328,6 +328,8 @@ Annoying for version 0.8:
 * One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable!
 * Use water textures from Born2Modificates package.
 * Arcane Time has the same ID as some other spell from the wizard. No valid targets in range comes when all spells are skilled in arena.
+* When talking to an NPC the NPC does not stop his routine, he walks away (Björn).
+* Hotkeys dont work when buying a unit like "Speak to NPC".
 * Fade trees slowly.
 * Update loading screens, different loading screen for map Gardonar.
 * Reduce transparency to 0.7 or something.

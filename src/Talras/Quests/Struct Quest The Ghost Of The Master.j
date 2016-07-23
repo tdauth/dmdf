@@ -23,8 +23,8 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 			call TalkSisgard.talk.evaluate().disable() // prevent any talks which would lead to side effects
 			call PauseUnit(Npcs.sisgard(), true)
 			call SetUnitInvulnerable(Npcs.sisgard(), true)
-			call TransmissionFromUnitForPlayer(questItem.character().player(), Npcs.sisgard(), tre("Da sind wir, nun lasse ich den Zauber wirken!", "Here we are, now I will cast the spell!"), null)
-			call TriggerSleepAction(GetSimpleTransmissionDuration(null))
+			call TransmissionFromUnitForPlayer(questItem.character().player(), Npcs.sisgard(), tre("Da sind wir, nun lasse ich den Zauber wirken!", "Here we are, now I will cast the spell!"), gg_snd_Sisgard64)
+			call TriggerSleepAction(GetSimpleTransmissionDuration(gg_snd_Sisgard64))
 			call waitForVideo(MapData.videoWaitInterval)
 			call QueueUnitAnimation(Npcs.sisgard(), "Spell")
 			set whichEffect = AddSpecialEffect("Abilities\\Spells\\Undead\\Darksummoning\\DarkSummonTarget.mdl", GetRectCenterX(gg_rct_quest_the_ghost_of_the_master_graveyard_spell), GetRectCenterY(gg_rct_quest_the_ghost_of_the_master_graveyard_spell))

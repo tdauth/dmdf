@@ -32,7 +32,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_sisgard.setDescription(tre("Sisgard ist eine erfahrene Zauberin. Sie kann die Zauber TODO wirken usw.", "Sisgard is an experienced sorceress."))
 			call thistype.m_sisgard.setRevivalTitle(tre("Sisgard", "Sisgard"))
 			call thistype.m_sisgard.setRevivalMessage(tre("Lasst uns ein paar Zauber wirken!", "Let us cast some spells!"))
-			call thistype.m_sisgard.setRevivalSound(null) /// \todo FIXME
+			call thistype.m_sisgard.setRevivalSound(gg_snd_SisgardRevival)
 			call thistype.m_sisgard.setRevivalTime(MapData.revivalTime)
 			call thistype.m_sisgard.addAbility('A0PY')
 			call thistype.m_sisgard.addAbility('A0QY')

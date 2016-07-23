@@ -223,14 +223,51 @@ library StructGameRoutines requires Asl
 		private static method talkEndAction takes ARoutinePeriod period returns nothing
 			call ResetUnitAnimation(period.unit())
 		endmethod
+		
+		/**
+		 * Let a unit talk to another unit by using a sound and a floating texttag.
+		 * The sound is only played and the texttag does only appear to players who have their characters in range and to whom the area is not masked.
+		 */
+		private static method unitTalks takes unit speaking, sound whichSound, string text returns nothing
+			local texttag whichTextTag = null
+			local integer i = 0
+			// talks can have answers by the other NPC
+			if (not IsUnitPaused(speaking)) then
+				set whichTextTag = CreateTextTag()
+				call SetTextTagTextBJ(whichTextTag, text, 10.0)
+				call SetTextTagPosUnit(whichTextTag, speaking,  0.0)
+				call SetTextTagColor(whichTextTag, 255, 255, 255, 0)
+				call SetTextTagVisibility(whichTextTag, false)
+				call SetTextTagPermanent(whichTextTag, true)
+			
+				set i = 0
+				loop
+					exitwhen (i == MapData.maxPlayers)
+					// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
+					if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and Player(i) == GetLocalPlayer()) then
+						call PlaySoundOnUnitBJ(whichSound, 100.0, speaking) // TODO sound is not always 3D? Distance should play a role (distance between unit and player's current camera view)
+						call ShowTextTagForPlayer(Player(i), whichTextTag, true)
+					endif
+					set i = i + 1
+				endloop
+				
+				call thistype.m_textTags.pushBack(whichTextTag)
+
+				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
+				call TriggerSleepAction(GetSoundDurationBJ(whichSound))
+				
+				//call StopSoundBJ(whichSound, false)
+				// TODO A set would be more efficient.
+				if (thistype.m_textTags.contains(whichTextTag)) then
+					call thistype.m_textTags.remove(whichTextTag)
+					call DestroyTextTag(whichTextTag)
+					set whichTextTag = null
+				endif
+			endif
+		endmethod
 
 		private static method talkTargetAction takes NpcTalksRoutine period returns nothing
-			local sound whichSound = null
-			local texttag whichTextTag = null
-			local boolean isVisibleAndInRange
-			local integer index
-			local integer i
-			local unit speaking
+			local integer index = 0
 			
 			if ((period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) or (period.partner() == null)) then
 				//debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
@@ -242,80 +279,11 @@ library StructGameRoutines requires Asl
 				call QueueUnitAnimation(period.unit(), "Stand Talk")
 				set index = GetRandomInt(0, period.soundsCount() - 1)
 				if (period.soundsCount() > index) then
-					set speaking = period.unit()
-					set whichSound = period.sound(index)
-					
-					set whichTextTag = CreateTextTag()
-					call SetTextTagTextBJ(whichTextTag, period.text(index), 10.0)
-					call SetTextTagPosUnit(whichTextTag, speaking,  0.0)
-					call SetTextTagColor(whichTextTag, 255, 255, 255, 0)
-					call SetTextTagVisibility(whichTextTag, false)
-					call SetTextTagPermanent(whichTextTag, true)
-					
-					set i = 0
-					loop
-						exitwhen (i == MapData.maxPlayers)
-						// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
-						if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and Player(i) == GetLocalPlayer()) then
-							call PlaySoundOnUnitBJ(whichSound, 100.0, speaking)
-							call ShowTextTagForPlayer(Player(i), whichTextTag, true)
-						endif
-						set i = i + 1
-					endloop
+					call thistype.unitTalks(period.unit(), period.sound(index), period.text(index))
 
-					
-					call thistype.m_textTags.pushBack(whichTextTag)
-
-					// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
-					call TriggerSleepAction(GetSoundDurationBJ(whichSound))
-					
-					//call StopSoundBJ(whichSound, false)
-					// TODO A set would be more efficient.
-					if (thistype.m_textTags.contains(whichTextTag)) then
-						call thistype.m_textTags.remove(whichTextTag)
-						call DestroyTextTag(whichTextTag)
-						set whichTextTag = null
-					endif
-					
-					set speaking = null
-					
 					// talks can have answers by the other NPC
-					if (period.answerSoundsCount() > index and not IsUnitPaused(period.partner())) then
-						set speaking = period.partner()
-						set whichSound = period.answerSound(index)
-						
-						set whichTextTag = CreateTextTag()
-						call SetTextTagTextBJ(whichTextTag, period.answerText(index), 10.0)
-						call SetTextTagPosUnit(whichTextTag, speaking,  0.0)
-						call SetTextTagColor(whichTextTag, 255, 255, 255, 0)
-						call SetTextTagVisibility(whichTextTag, false)
-						call SetTextTagPermanent(whichTextTag, true)
-					
-						set i = 0
-						loop
-							exitwhen (i == MapData.maxPlayers)
-							// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
-							if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and Player(i) == GetLocalPlayer()) then
-								call PlaySoundOnUnitBJ(whichSound, 100.0, speaking)
-								call ShowTextTagForPlayer(Player(i), whichTextTag, true)
-							endif
-							set i = i + 1
-						endloop
-						
-						call thistype.m_textTags.pushBack(whichTextTag)
-
-						// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
-						call TriggerSleepAction(GetSoundDurationBJ(whichSound))
-						
-						//call StopSoundBJ(whichSound, false)
-						// TODO A set would be more efficient.
-						if (thistype.m_textTags.contains(whichTextTag)) then
-							call thistype.m_textTags.remove(whichTextTag)
-							call DestroyTextTag(whichTextTag)
-							set whichTextTag = null
-						endif
-						
-						set speaking = null
+					if (period.answerSoundsCount() > index) then
+						call thistype.unitTalks(period.partner(), period.answerSound(index), period.answerText(index))
 					endif
 				endif
 					

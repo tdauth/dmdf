@@ -21,15 +21,17 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			local effect spellEffect
 			if (this.level() > 0) then
 				set caster = this.character().unit()
-				set mana = GetUnitState(caster, UNIT_STATE_MAX_MANA) * this.level() * thistype.manaLevelValue
-				if (mana > 0) then
-					call SetUnitState(caster, UNIT_STATE_MANA, GetUnitState(caster, UNIT_STATE_MANA) + mana)
-					if (not IsUnitHidden(caster)) then
-						call PlaySoundOnUnitBJ(thistype.whichSound, 60.0, caster)
-						set spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
-						call Spell.showManaTextTag(caster, mana)
-						call DestroyEffect(spellEffect)
-						set spellEffect = null
+				if (GetUnitState(caster, UNIT_STATE_MANA) < GetUnitState(caster, UNIT_STATE_MAX_MANA)) then
+					set mana = GetUnitState(caster, UNIT_STATE_MAX_MANA) * this.level() * thistype.manaLevelValue
+					if (mana > 0) then
+						call SetUnitState(caster, UNIT_STATE_MANA, GetUnitState(caster, UNIT_STATE_MANA) + mana)
+						if (not IsUnitHidden(caster)) then
+							call PlaySoundOnUnitBJ(thistype.whichSound, 60.0, caster)
+							set spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
+							call Spell.showManaTextTag(caster, mana)
+							call DestroyEffect(spellEffect)
+							set spellEffect = null
+						endif
 					endif
 				endif
 				set caster = null

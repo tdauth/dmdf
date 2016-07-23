@@ -64,6 +64,7 @@ library StructGameTalk requires Asl
 			call this.setEffectPath("UI\\TalkTarget.mdl")
 			call this.setTextExit(tre("Ende", "Exit"))
 			call this.setTextBack(tre("Zurück", "Back"))
+			call this.setOrderId(0) // don't allow order
 			set this.m_sellTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(this.m_sellTrigger, whichUnit, EVENT_UNIT_SELL)
 			call TriggerAddCondition(this.m_sellTrigger, Condition(function thistype.triggerConditionSell))
