@@ -119,7 +119,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				call TimerStart(whichTimer, 0.0, false, function thistype.timerFunctionHideRevival)
 			// remove newly created NPC units
 			else
-				call RemoveUnit(usedUnit)
+				if (not IsUnitDeadBJ(usedUnit)) then
+					call RemoveUnit(usedUnit)
+				endif
+				// let decay the corpse otherwise
 			endif
 			
 			
@@ -594,7 +597,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		public static method addCharacter takes ACharacter character returns nothing
 			call thistype.addUnit(character.unit())
 			// auto select character, ready for the fight
-			call SelectUnitAddForPlayer(character.unit(), character.player())
+			call SelectUnitForPlayerSingle(character.unit(), character.player())
 			call character.displayMessage(ACharacter.messageTypeInfo, thistype.m_textEnter)
 		endmethod
 
