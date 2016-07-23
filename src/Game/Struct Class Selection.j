@@ -343,6 +343,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		
 		public stub method onCreate takes unit whichUnit returns nothing
 			local integer i
+			local ItemType itemType = 0
 			// remove standard abilities
 			call UnitRemoveAbility(whichUnit, 'AInv')
 			call UnitRemoveAbility(whichUnit, 'A02Z')
@@ -358,6 +359,22 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * The inventory ability should not allow to drop any of the items nor to use them.
 			 */
 			call MapData.createClassSelectionItems(this.currentClass(), whichUnit)
+			
+			/*
+			 * Apply the abilities of equipment items since they show effects like attached weapons.
+			 * This has to be done manually since the inventory ability 'A0R3' does not allow using the items. Otherwise you could use scrolls etc. in class selection.
+			 */
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_INVENTORY)
+				if (UnitItemInSlot(whichUnit, i) != null) then
+					set itemType = ItemType.itemTypeOfItem(UnitItemInSlot(whichUnit, i))
+					if (itemType != 0) then
+						call itemType.addPermanentAbilities(whichUnit)
+					endif
+				endif
+				set i = i + 1
+			endloop
 			
 			// change classes and select class
 			call UnitAddAbility(whichUnit, 'A0NB')
