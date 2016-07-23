@@ -38,6 +38,20 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static trigger m_sellTrigger
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Arena\"")
+		
+		/**
+		 * Hides the revival timer of a character. This is required since the revival is triggered automatically when the character dies.
+		 */
+		private static method timerFunctionHideRevival takes nothing returns nothing
+			local Character character = Character(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
+			if (not IsUnitDeadBJ(character.unit())) then
+				if (character.revival() != 0) then
+					call character.revival().end()
+				endif
+			endif
+			call PauseTimer(GetExpiredTimer())
+			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
+		endmethod
 
 		/**
 		 * Removes the unit from the arena with index \p index.
@@ -49,7 +63,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		public static method removeUnitByIndex takes integer index returns nothing
 			local unit usedUnit = thistype.m_units[index]
 			local player owner = GetOwningPlayer(usedUnit)
-			local integer i
+			local integer i = 0
+			local timer whichTimer = null
 			local Character character = Character(ACharacter.getCharacterByUnit(usedUnit))
 			call thistype.m_units.erase(index)
 			call LeaderboardRemoveItem(thistype.m_leaderboard, index)
@@ -65,11 +80,9 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				call SetUnitInvulnerable(usedUnit, false)
 				call PauseUnit(usedUnit, false)
 				call IssueImmediateOrder(usedUnit, "stop")
-				
-				// TODO triggered before revival starts
-				if (character.revival() != 0) then
-					call character.revival().end()
-				endif
+				// refresh everything
+				call SetUnitState(usedUnit, UNIT_STATE_LIFE, GetUnitState(usedUnit, UNIT_STATE_MAX_LIFE))
+				call SetUnitState(usedUnit, UNIT_STATE_MANA, GetUnitState(usedUnit, UNIT_STATE_MAX_MANA))
 
 				call PanCameraToForPlayer(owner, GetUnitX(usedUnit), GetUnitY(usedUnit))
 				call ShowLeaderboardForPlayer(owner, thistype.m_leaderboard, false)
@@ -99,6 +112,11 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				
 				// removes the resources multiboard of shared vision with advanced units
 				call character.showCharactersSchemeToPlayer()
+				
+				// triggered before revival starts, therefore a 0 timer has to be used
+				set whichTimer = CreateTimer()
+				call DmdfHashTable.global().setHandleInteger(whichTimer, 0, character)
+				call TimerStart(whichTimer, 0.0, false, function thistype.timerFunctionHideRevival)
 			// remove newly created NPC units
 			else
 				call RemoveUnit(usedUnit)
