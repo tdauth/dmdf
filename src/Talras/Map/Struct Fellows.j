@@ -29,7 +29,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			/// @todo Set revival location to Talras
 			call thistype.m_sisgard.setTalk(true)
 			call thistype.m_sisgard.setRevival(true)
-			call thistype.m_sisgard.setDescription(tre("Sisgard ist eine erfahrene Zauberin. Sie kann die Zauber TODO wirken usw.", "Sisgard is an experienced sorceress."))
+			call thistype.m_sisgard.setDescription(tre("Sisgard ist eine erfahrene Zauberin. Sie kann die Zauber 'Teleportation' und 'Magie aufheben' wirken.", "Sisgard is an experienced sorceress. She can cast the spells 'Teleportation' and 'Ban Magic'."))
 			call thistype.m_sisgard.setRevivalTitle(tre("Sisgard", "Sisgard"))
 			call thistype.m_sisgard.setRevivalMessage(tre("Lasst uns ein paar Zauber wirken!", "Let us cast some spells!"))
 			call thistype.m_sisgard.setRevivalSound(gg_snd_SisgardRevival)

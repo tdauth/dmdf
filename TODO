@@ -328,7 +328,7 @@ Annoying for version 0.8:
 * One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable!
 * Use water textures from Born2Modificates package.
 * Arcane Time has the same ID as some other spell from the wizard. No valid targets in range comes when all spells are skilled in arena.
-* When talking to an NPC the NPC does not stop his routine, he walks away (Björn).
+* FIXED: When talking to an NPC the NPC does not stop his routine, he walks away (Björn).
 * Hotkeys dont work when buying a unit like "Speak to NPC".
 * Fade trees slowly.
 * Update loading screens, different loading screen for map Gardonar.
@@ -348,11 +348,11 @@ Annoying for version 0.8:
 * FIXED: Sound bei Stilleffekt muss bei Unterhaltungen weg.
 * Keine HeroGlows für Schwert, Schild, Helm, Bogen, Lanze, Kräuter, Pilze und Gold.
 * No "defend" animation tag for the Defend ability of the Knight since he has to wear a buckler anyway.
-* Stop revival timer after losing an arena fight.
+* FIXED: Stop revival timer after losing an arena fight.
 * Remove talks from guards since they dont even show a marker.
 * Use difficulty (also in the campaign) to increase the life of the creeps.
 * Tiergestalten: Einfach Klassenzauber lassen.
-* Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen.
+* Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen. Wenn doch Fähigkeiten dann in Zauberbuch, da es kein Icon für den Rucksack gibt.
 * Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.
 * Spruchrolle umbenennen zu Schreinteleport.
 * Elementarwesen sind zu viele oder zu stark.
