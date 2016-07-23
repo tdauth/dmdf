@@ -1,56 +1,44 @@
 /// Druid
-library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis, StructSpellsSpellAlpha, StructSpellsSpellZoology
+library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis
 
 	struct SpellBearFormMetamorphosis extends SpellMetamorphosis
 		
 		public stub method onMorph takes nothing returns nothing
-			local integer level
+			local Character character = Character(this.character())
+			local integer level = 0
 			local integer alphaLevel = 0
-			local integer zoologyLevel = 0
+			local SpellZoology zoologySpell = 0
 			call super.onMorph()
-			set level = Character(this.character()).realSpellLevels().integer(0, SpellBearForm.abilityId)
+			set level = GetUnitAbilityLevel(this.character().unit(), SpellBearForm.abilityId)
 			debug call Print("Bear Form: Morph! Level: " + I2S(level))
 			
+			call ResetUnitAnimation(this.character().unit())
+			
+			// Add spell book, all animal form abilities are moved into this spell book since the normal spells can be used as well.
+			call UnitAddAbility(this.character().unit(), 'A07K')
+			
+			call UnitAddAbility(this.character().unit(), SpellBearForm.lifeSpellBookAbilityId)
+			call SetPlayerAbilityAvailable(this.character().player(), SpellBearForm.lifeSpellBookAbilityId, false)
 			call SetUnitAbilityLevel(this.character().unit(), SpellBearForm.lifeAbilityId, level)
+			
+			call UnitAddAbility(this.character().unit(), SpellBearForm.damageSpellBookAbilityId)
+			call SetPlayerAbilityAvailable(this.character().player(), SpellBearForm.damageSpellBookAbilityId, false)
 			call SetUnitAbilityLevel(this.character().unit(), SpellBearForm.damageAbilityId, level)
 			
-			set alphaLevel = Character(this.character()).realSpellLevels().integer(0, SpellAlpha.abilityId)
+			set alphaLevel = GetUnitAbilityLevel(this.character().unit(), SpellAlpha.abilityId)
 			debug call Print("Bear Form: Alpha Level: " + I2S(level))
 			
 			if (alphaLevel > 0) then
 				debug call Print("Adding Alpha spell since Alpha is skilled: " + GetAbilityName(SpellAlpha.castAbilityId))
-				call UnitAddAbility(this.character().unit(), SpellAlpha.castAbilityId)
+				//call UnitAddAbility(this.character().unit(), SpellAlpha.castAbilityId)
+				call UnitAddAbility(this.character().unit(), SpellAlpha.castSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), SpellAlpha.castSpellBookAbilityId, false)
 			endif
 			
-			set zoologyLevel =  Character(this.character()).realSpellLevels().integer(0, SpellZoology.abilityId)
-			debug call Print("Bear Form: Zoology Level: " + I2S(zoologyLevel))
+			set zoologySpell = character.grimoire().spellByAbilityId(SpellZoology.abilityId)
 			
-			if (zoologyLevel > 0) then
-				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
-				
-				// zoology level 1 ability for bear form
-				// Gebrüll
-				call UnitAddAbility(this.character().unit(), 'A11S')
-				
-				// Prankenhieb
-				if (zoologyLevel > 1) then
-					call UnitAddAbility(this.character().unit(), 'A11Z')
-				endif
-
-				// Tollwut
-				if (zoologyLevel > 2) then
-					call UnitAddAbility(this.character().unit(), 'A120')
-				endif
-				
-				// Winterschlaf
-				if (zoologyLevel > 3) then
-					call UnitAddAbility(this.character().unit(), 'A121')
-				endif
-				
-				// Bärenhöhle
-				if (zoologyLevel > 4) then
-					call UnitAddAbility(this.character().unit(), 'A122')
-				endif
+			if (zoologySpell != 0) then
+				call zoologySpell.updateBearFormSpells.evaluate(zoologySpell.level())
 			endif
 		endmethod
 	endstruct
@@ -62,8 +50,44 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 		public static constant integer classSelectionGrimoireAbilityId = 'A0UE'
 		public static constant integer maxLevel = 5
 		public static constant integer lifeAbilityId = 'A15V'
+		public static constant integer lifeSpellBookAbilityId = 'A1PI'
 		public static constant integer damageAbilityId = 'A09R'
+		public static constant integer damageSpellBookAbilityId = 'A1PH'
 		private SpellBearFormMetamorphosis m_metamorphosis
+		
+		public method metamorphosis takes nothing returns SpellBearFormMetamorphosis
+			return this.m_metamorphosis
+		endmethod
+		
+		public stub method onLearn takes nothing returns nothing
+			call super.onLearn()
+			if (this.m_metamorphosis.isMorphed()) then
+				call UnitAddAbility(this.character().unit(), thistype.lifeSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), thistype.lifeSpellBookAbilityId, false)
+			
+				call UnitAddAbility(this.character().unit(), thistype.damageSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), thistype.damageSpellBookAbilityId, false)
+			endif
+		endmethod
+		
+		public stub method onUnlearn takes nothing returns nothing
+			call super.onUnlearn()
+			if (this.m_metamorphosis.isMorphed()) then
+				call UnitRemoveAbility(this.character().unit(), thistype.lifeSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), thistype.lifeSpellBookAbilityId, true)
+			
+				call UnitRemoveAbility(this.character().unit(), thistype.damageSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), thistype.damageSpellBookAbilityId, true)
+			endif
+		endmethod
+		
+		public stub method setLevel takes integer level returns nothing
+			call super.setLevel(level)
+			if (this.m_metamorphosis.isMorphed()) then
+				call SetUnitAbilityLevel(this.character().unit(), thistype.lifeAbilityId, level)
+				call SetUnitAbilityLevel(this.character().unit(), thistype.damageAbilityId, level)
+			endif
+		endmethod
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
@@ -71,6 +95,7 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			call this.m_metamorphosis.setDisableInventory(false)
 			// don't show equipment
 			call this.m_metamorphosis.setEnableOnlyRucksack(true)
+			call this.m_metamorphosis.setDisableGrimoire(false)
 			
 			call this.addGrimoireEntry('A0UD', 'A0UE')
 			call this.addGrimoireEntry('A0C7', 'A0CC')

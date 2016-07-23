@@ -56,6 +56,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		
 		/**
 		 * Specifies if the grimoire can still be used when transformed.
+		 * If the grimoire is disabled, spells can neither be learned nor used. All spells as well as the grimoire button disappear on transformation.
 		 */
 		public method setDisableGrimoire takes boolean disable returns nothing
 			set this.m_disableGrimoire = disable
@@ -65,6 +66,10 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			return this.m_disableGrimoire
 		endmethod
 		
+		/**
+		 * Specifies if the inventory is disabled when transforming the character.
+		 * \note You can only disable the equipment by using \ref setEnableOnlyRucksack().
+		 */
 		public method setDisableInventory takes boolean disable returns nothing
 			set this.m_disableInventory = disable
 		endmethod

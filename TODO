@@ -308,6 +308,7 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Spells are missing completely in grimoire.
 * Items are placed on the ground together with backpack changing items.
 * Changing back does not work. The savegame exists but loading does not work.
+* When selling an item and selecting the shop immediately afterwards, not the whole inventory is cleared. The sold item remains in the inventory and is dropped when the character is selected again. This allows doubeling items! 0 timer critical section?
 
 Mehrspielertest:
 * Wenn man Diakon tötet, Spielabsturz. Konnte nicht immer reproduziert werden. Braucht man mindestens 2 menschliche Spieler?

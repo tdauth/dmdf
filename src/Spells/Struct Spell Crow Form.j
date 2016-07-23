@@ -1,5 +1,5 @@
 /// Druid
-library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis, StructSpellsSpellAlpha, StructSpellsSpellZoology
+library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis
 
 	struct SpellCrowFormMetamorphosis extends SpellMetamorphosis
 	
@@ -15,53 +15,38 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 		endmethod
 
 		public stub method onMorph takes nothing returns nothing
-			local integer level
+			local Character character = Character(this.character())
+			local integer level = 0
 			local integer alphaLevel = 0
-			local integer zoologyLevel = 0
+			local SpellZoology zoologySpell = 0
 			call super.onMorph()
-			set level = Character(this.character()).realSpellLevels().integer(0, SpellCrowForm.abilityId)
+			set level = GetUnitAbilityLevel(this.character().unit(), SpellCrowForm.abilityId)
 			debug call Print("Crow Form: Morph! Level: " + I2S(level))
 			
+			// Add spell book, all animal form abilities are moved into this spell book since the normal spells can be used as well.
+			call UnitAddAbility(this.character().unit(), 'A07K')
+			
+			call UnitAddAbility(this.character().unit(), SpellCrowForm.manaSpellBookAbilityId)
+			call SetPlayerAbilityAvailable(this.character().player(), SpellCrowForm.manaSpellBookAbilityId, false)
 			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.manaAbilityId, level)
+			
+			call UnitAddAbility(this.character().unit(), SpellCrowForm.armorSpellBookAbilityId)
+			call SetPlayerAbilityAvailable(this.character().player(), SpellCrowForm.armorSpellBookAbilityId, false)
 			call SetUnitAbilityLevel(this.character().unit(), SpellCrowForm.armorAbilityId, level)
 			
-			set alphaLevel = Character(this.character()).realSpellLevels().integer(0, SpellAlpha.abilityId)
+			set alphaLevel = GetUnitAbilityLevel(this.character().unit(), SpellAlpha.abilityId)
 			debug call Print("Crow Form: Alpha Level: " + I2S(alphaLevel))
 			
 			if (alphaLevel > 0) then
 				debug call Print("Adding Alpha spell since Alpha is skilled: " + GetAbilityName(SpellAlpha.castAbilityId))
-				call UnitAddAbility(this.character().unit(), SpellAlpha.castAbilityId)
+				call UnitAddAbility(this.character().unit(), SpellAlpha.castSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), SpellAlpha.castSpellBookAbilityId, false)
 			endif
 			
-			set zoologyLevel =  Character(this.character()).realSpellLevels().integer(0, SpellZoology.abilityId)
-			debug call Print("Crow Form: Zoology Level: " + I2S(zoologyLevel))
+			set zoologySpell = character.grimoire().spellByAbilityId(SpellZoology.abilityId)
 			
-			if (zoologyLevel > 0) then
-				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
-				
-				// zoology level 1 ability for crow form
-				// Junges
-				call UnitAddAbility(this.character().unit(), 'A11T')
-				
-				// Sturm
-				if (zoologyLevel > 1) then
-					call UnitAddAbility(this.character().unit(), 'A11U')
-				endif
-
-				// Kreisen
-				if (zoologyLevel > 2) then
-					call UnitAddAbility(this.character().unit(), 'A11V')
-				endif
-				
-				// Flügelschlag
-				if (zoologyLevel > 3) then
-					call UnitAddAbility(this.character().unit(), 'A11W')
-				endif
-				
-				// Nest
-				if (zoologyLevel > 4) then
-					call UnitAddAbility(this.character().unit(), 'A11X')
-				endif
+			if (zoologySpell != 0) then
+				call zoologySpell.updateCrowFormSpells.evaluate(zoologySpell.level())
 			endif
 		endmethod
 		
@@ -74,8 +59,44 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 		public static constant integer classSelectionGrimoireAbilityId = 'A1JS'
 		public static constant integer maxLevel = 5
 		public static constant integer manaAbilityId = 'A14U'
+		public static constant integer manaSpellBookAbilityId = 'A1PK'
 		public static constant integer armorAbilityId = 'A094'
+		public static constant integer armorSpellBookAbilityId = 'A1PL'
 		private SpellCrowFormMetamorphosis m_metamorphosis
+		
+		public method metamorphosis takes nothing returns SpellCrowFormMetamorphosis
+			return this.m_metamorphosis
+		endmethod
+		
+		public stub method onLearn takes nothing returns nothing
+			call super.onLearn()
+			if (this.m_metamorphosis.isMorphed()) then
+				call UnitAddAbility(this.character().unit(), thistype.manaSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), thistype.manaSpellBookAbilityId, false)
+			
+				call UnitAddAbility(this.character().unit(), thistype.armorSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), thistype.armorSpellBookAbilityId, false)
+			endif
+		endmethod
+		
+		public stub method onUnlearn takes nothing returns nothing
+			call super.onUnlearn()
+			if (this.m_metamorphosis.isMorphed()) then
+				call UnitRemoveAbility(this.character().unit(), thistype.manaSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), thistype.manaSpellBookAbilityId, true)
+			
+				call UnitRemoveAbility(this.character().unit(), thistype.armorSpellBookAbilityId)
+				call SetPlayerAbilityAvailable(this.character().player(), thistype.armorSpellBookAbilityId, true)
+			endif
+		endmethod
+		
+		public stub method setLevel takes integer level returns nothing
+			call super.setLevel(level)
+			if (this.m_metamorphosis.isMorphed()) then
+				call SetUnitAbilityLevel(this.character().unit(), thistype.manaAbilityId, level)
+				call SetUnitAbilityLevel(this.character().unit(), thistype.armorAbilityId, level)
+			endif
+		endmethod
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
@@ -83,6 +104,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 			call this.m_metamorphosis.setDisableInventory(false)
 			// don't show equipment
 			call this.m_metamorphosis.setEnableOnlyRucksack(true)
+			call this.m_metamorphosis.setDisableGrimoire(false)
 			
 			call this.addGrimoireEntry('A1JR', 'A1JS')
 			call this.addGrimoireEntry('A0CH', 'A0CI')
