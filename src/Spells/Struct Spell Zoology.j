@@ -40,8 +40,8 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 					call UnitAddAbility(this.character().unit(), 'A1PV')
 					call SetPlayerAbilityAvailable(this.character().player(), 'A1PV', false)
 				else
-					call UnitRemoveAbility(this.character().unit(), 'A1PT')
-					call SetPlayerAbilityAvailable(this.character().player(), 'A1PT', true)
+					call UnitRemoveAbility(this.character().unit(), 'A1PV')
+					call SetPlayerAbilityAvailable(this.character().player(), 'A1PV', true)
 				endif
 				
 				// Bärenhöhle

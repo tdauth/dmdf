@@ -7,6 +7,7 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 		public static constant integer classSelectionAbilityId = 'A1OH'
 		public static constant integer classSelectionGrimoireAbilityId = 'A1OI'
 		public static constant integer maxLevel = 5
+		private static trigger m_summonTrigger
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
@@ -19,6 +20,20 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 			call this.addGrimoireEntry('A0DL', 'A0DQ')
 			
 			return this
+		endmethod
+		
+		private static method triggerConditionSummon takes nothing returns boolean
+			if (GetUnitTypeId(GetSummonedUnit()) == 'e000' or GetUnitTypeId(GetSummonedUnit()) == 'e002' or GetUnitTypeId(GetSummonedUnit()) == 'e003' or GetUnitTypeId(GetSummonedUnit()) == 'e004' or GetUnitTypeId(GetSummonedUnit()) == 'e005') then
+				// the model is summoned with a birth animation
+				call SetUnitAnimation(GetSummonedUnit(), "Stand")
+			endif
+			return false
+		endmethod
+		
+		private static method onInit takes nothing returns nothing
+			set thistype.m_summonTrigger = CreateTrigger()
+			call TriggerRegisterAnyUnitEventBJ(thistype.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)
+			call TriggerAddCondition(thistype.m_summonTrigger, Condition(function thistype.triggerConditionSummon))
 		endmethod
 	endstruct
 

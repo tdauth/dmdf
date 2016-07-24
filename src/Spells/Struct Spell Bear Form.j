@@ -2,17 +2,24 @@
 library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsSpellMetamorphosis
 
 	struct SpellBearFormMetamorphosis extends SpellMetamorphosis
+	
+		private static method timerFunctionResetAnimation takes nothing returns nothing
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
+			if (this.isMorphed()) then
+				call ResetUnitAnimation(this.character().unit())
+			endif
+			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
+		endmethod
 		
 		public stub method onMorph takes nothing returns nothing
 			local Character character = Character(this.character())
 			local integer level = 0
 			local integer alphaLevel = 0
 			local SpellZoology zoologySpell = 0
+			local timer whichTimer = null
 			call super.onMorph()
 			set level = GetUnitAbilityLevel(this.character().unit(), SpellBearForm.abilityId)
 			debug call Print("Bear Form: Morph! Level: " + I2S(level))
-			
-			call ResetUnitAnimation(this.character().unit())
 			
 			// Add spell book, all animal form abilities are moved into this spell book since the normal spells can be used as well.
 			call UnitAddAbility(this.character().unit(), 'A07K')
@@ -40,6 +47,11 @@ library StructSpellsSpellBearForm requires Asl, StructGameClasses, StructSpellsS
 			if (zoologySpell != 0) then
 				call zoologySpell.updateBearFormSpells.evaluate(zoologySpell.level())
 			endif
+			
+			// Reset the loop spell animation but after a timeout, since it seems to be applied after one. Reseting it immediately does not work.
+			set whichTimer = CreateTimer()
+			call DmdfHashTable.global().setHandleInteger(whichTimer, 0, this)
+			call TimerStart(whichTimer, 0.0, false, function thistype.timerFunctionResetAnimation)
 		endmethod
 	endstruct
 	
