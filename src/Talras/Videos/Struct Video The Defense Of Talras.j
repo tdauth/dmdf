@@ -77,9 +77,9 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_villager0, tr("Ich will nach Hause! Wir werden sowieso nicht bezahlt!"), null)
+			call TransmissionFromUnit(this.m_villager0, tr("Ich will nach Hause! Wir werden sowieso nicht bezahlt!"), gg_snd_Mercenary1)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Mercenary1))) then
 				return
 			endif
 			

@@ -229,8 +229,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 				return
 			endif
 			call QueueUnitAnimation(this.m_actorOrcLeader, "Attack")
-			call TransmissionFromUnit(this.m_actorOrcLeader, tre("Du elender Hund, dieses Königreich ist dem Untergang geweiht! Was willst du mit deiner kleinen Heerschar schon erreichen?", "You miserable dog, this kingdom is doomed! What do you want to achieve with your little army?"), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnit(this.m_actorOrcLeader, tre("Du elender Hund, dieses Königreich ist dem Untergang geweiht! Was willst du mit deiner kleinen Heerschar schon erreichen?", "You miserable dog, this kingdom is doomed! What do you want to achieve with your little army?"), gg_snd_OrcLeader1)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_OrcLeader1))) then
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_3, true, 0.0)
@@ -242,16 +242,16 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 				return
 			endif
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_8, true, 0.0)
-			call TransmissionFromUnit(this.m_actorOrcLeader, tre("Was verstehst du schon von Würde, Mensch?", "What do you know about dignity, human?"), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnit(this.m_actorOrcLeader, tre("Was verstehst du schon von Würde, Mensch?", "What do you know about dignity, human?"), gg_snd_OrcLeader2)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_OrcLeader2))) then
 				return
 			endif
 			call SetUnitFacingToFaceUnitTimed(this.m_actorOrcLeader, this.m_orcGuardians.units()[0], 0.30)
 			if (wait(0.50)) then
 				return
 			endif
-			call TransmissionFromUnit(this.m_actorOrcLeader, tre("Tötet den Bastard!", "Kill the bastard!"), null)
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			call TransmissionFromUnit(this.m_actorOrcLeader, tre("Tötet den Bastard!", "Kill the bastard!"), gg_snd_OrcLeader3)
+			if (wait(GetSimpleTransmissionDuration(gg_snd_OrcLeader3))) then
 				return
 			endif
 			// view from sky
@@ -291,7 +291,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			endif
 			call SetUnitTimeScale(this.m_actorOrcLeader, 0.40)
 			call QueueUnitAnimation(this.m_actorOrcLeader, "Attack") // duration (1.0) = 0.40
-			call TransmissionFromUnit(this.m_actorOrcLeader, tre("AHHHH!", "AHHHH!"), null)
+			call TransmissionFromUnit(this.m_actorOrcLeader, tre("AHHHH!", "AHHHH!"), gg_snd_OrcLeader4)
 			call CameraSetupApplyForceDuration(gg_cam_wigberht_13, true, 4.0)
 			if (wait(1.0)) then
 				return

@@ -306,9 +306,9 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			
 			call SetUnitAnimation(this.unitActor(this.m_actorGiant), "Attack Slam")
 			
-			call TransmissionFromUnit(this.unitActor(this.m_actorGiant), tre("Haaalt! Wartet doch! Ich will auch mit, nehmt mich mit! Diese Karte ist langweilig!", "Stoop! Wait! I also want to go with you, take me with you! This map is boring!"), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorGiant), tre("Haaalt! Wartet doch! Ich will auch mit, nehmt mich mit! Diese Karte ist langweilig!", "Stoop! Wait! I also want to go with you, take me with you! This map is boring!"), gg_snd_Giant1)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Giant1))) then
 				return
 			endif
 			
@@ -335,9 +335,9 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			
 			call SetUnitAnimation(this.unitActor(this.m_actorGiant), "Stand")
 			call SetUnitAnimationByIndex(this.unitActor(this.m_actorGiant), 3)
-			call TransmissionFromUnit(this.unitActor(this.m_actorGiant), tre("Oh, ich bitte um Verzeihung.", "Oh, I beg your pardon."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorGiant), tre("Oh, ich bitte um Verzeihung.", "Oh, I beg your pardon."), gg_snd_Giant2)
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Giant2))) then
 				return
 			endif
 			

@@ -69,10 +69,10 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorWorker0, tre("Scharlatan!", "Charlatan!"), null)
+			call TransmissionFromUnit(this.m_actorWorker0, tre("Scharlatan!", "Charlatan!"), gg_snd_Farmer1)
 			call QueueUnitAnimation(this.m_actorWorker0, "Attack")
 			
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Farmer1))) then
 				return
 			endif
 			
