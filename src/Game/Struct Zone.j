@@ -57,7 +57,7 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			return this
 		endmethod
 		
-		public static method onInit takes nothing returns nothing
+		public static method init takes nothing returns nothing
 			set thistype.m_zones = AIntegerVector.create()
 			call SetAltMinimapIcon("UI\\Minimap\\MiniMap-Entrance.blp")
 		endmethod
