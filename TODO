@@ -293,22 +293,23 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Vermutung: Spell.onDestroy() remove funktioniert nicht immer (OpLimit???) ODER Konstruktor Spell.create() bzw. Spell.createWithEvent() wird nicht verwendet. Dann landet der Zauber nicht in den classSpells().
 * speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!). Passiert nur manchmal.
 * Equipmenteffekte gehen nach Reiten auf Schaf nicht direkt.
-* Don't add equipment abilities to character actor if only rucksack is enabled or inventory is disabled completely.
+* FIXED: Don't add equipment abilities to character actor if only rucksack is enabled or inventory is disabled completely.
 * Schamanenmaske konnte nicht angelegt werden nachdem man auf Schaf war (obwohl Slot frei war). Es kam die Meldung "Slot wird bereits benutzt".
 * Change rucksack page after transforming to add the retransform spell?
-* Unmorph character before repick.
+* Unmorph character before repick. Should not be necessary since the Character instance is created newly and isMorphed should be false then, bug?
 * FIXED: Talras map cheats work in non debug mode.
 * Still no ability when transforming to Deranor's guard because the inventory is open and the item has the same ability and therefore the ability cannot be added a second time.
 * Loading game doesn't work.
 * Remove old save games when ending game or do not load them when changing the map for the first time to Gardonar. Otherwise if you start a new game it will try to load the old savegame.
 * If all favorites are used in the grimoire there must be a switch with favorites button in the grimoire. Otherwise non spell can be removed!
 * Zone Transition: If you save a game for the first time and you copy all save games to the new folder, how do you know if the save games are not from older games which have never been saved? In this case you copy invalid save games for other zones. Only the current save game is guranteed to be valid. You need a temporary folder which has to be copied and deleted afterwards.
-* Zone Transition:
+* When selling an item and selecting the shop immediately afterwards, not the whole inventory is cleared. The sold item remains in the inventory and is dropped when the character is selected again. This allows doubeling items! 0 timer critical section?
+
+Zone Transition:
 * Skill points are not restored.
 * Spells are missing completely in grimoire.
 * Items are placed on the ground together with backpack changing items.
 * Changing back does not work. The savegame exists but loading does not work.
-* When selling an item and selecting the shop immediately afterwards, not the whole inventory is cleared. The sold item remains in the inventory and is dropped when the character is selected again. This allows doubeling items! 0 timer critical section?
 
 Mehrspielertest:
 * Wenn man Diakon tötet, Spielabsturz. Konnte nicht immer reproduziert werden. Braucht man mindestens 2 menschliche Spieler?
@@ -320,11 +321,11 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Annoying for version 0.8:
-* Druid should have usual spells when transformed but the extra spells in a spell book since there is no rucksack button?
+* DONE: Druid should have usual spells when transformed but the extra spells in a spell book since there is no rucksack button?
 * Druid Alpha has to be disabled when player transforms back into normal form.
 * FIXED: Scroll of the Realm of Death needs a custom icon and should be called Magical Rune of Revival Shrines. Otherwise player thinks he can use it only once.
 * FIXED: Do the same for Scroll of Ancestors.
-* Enchanted Staff should be bigger.
+* FIXED: Enchanted Staff should be bigger.
 * FIXED: Unfair start attributes for different classes. Consider morphed classes too and attributes per level.
 * One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable!
 * Use water textures from Born2Modificates package.
@@ -334,13 +335,13 @@ Annoying for version 0.8:
 * Fade trees slowly.
 * Update loading screens, different loading screen for map Gardonar.
 * Reduce transparency to 0.7 or something.
-* Show text on class selection on how to select the class.
+* Some spell IDs of Zoology spells are the same as the normal ones for the Druid class.
+* DEPRECATED: Show text on class selection on how to select the class.
 * Use accept button rather than human icon to accept the selected class.
 * Dago needs a different younger model.
 * In class selection the unit is not stopped even although the order is correctly detected.
 * New unit sounds of Dragon Slayer dont work (because they are stereo??).
 * Fix standing animations of character (dont cross arms etc. when wearing weapons).
-* Make staff model bigger in width.
 * Add stalls with all degrees (0, 90, 180, 270) and replace those tiny boxes.
 * Add a custom music system to play custom music tracks on loop. As long as there is no custom music system PlayThematicMusicForPlayer() has to be used. Otherwise the ingame music will be stopped.
 * DONE: Fix cursor in map Gardonar.
@@ -350,12 +351,12 @@ Annoying for version 0.8:
 * Keine HeroGlows für Schwert, Schild, Helm, Bogen, Lanze, Kräuter, Pilze und Gold.
 * No "defend" animation tag for the Defend ability of the Knight since he has to wear a buckler anyway.
 * FIXED: Stop revival timer after losing an arena fight.
-* Remove talks from guards since they dont even show a marker.
+* FIXED: Remove talks from guards since they dont even show a marker.
 * Use difficulty (also in the campaign) to increase the life of the creeps.
-* Tiergestalten: Einfach Klassenzauber lassen.
-* Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen. Wenn doch Fähigkeiten dann in Zauberbuch, da es kein Icon für den Rucksack gibt.
+* DONE: Tiergestalten: Einfach Klassenzauber lassen.
+* FIXED: Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen. Wenn doch Fähigkeiten dann in Zauberbuch, da es kein Icon für den Rucksack gibt.
 * Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.
-* Spruchrolle umbenennen zu Schreinteleport.
+* DONE: Spruchrolle umbenennen zu Schreinteleport.
 * Elementarwesen sind zu viele oder zu stark.
 * Performance: At the moment there is 430 .evaluate() calls found in the code. This number should be reduced to improve the performance.
 * Wigberht sound recording should be a battle cry.

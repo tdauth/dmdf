@@ -36,6 +36,11 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static trigger m_damageTrigger
 		private static leaderboard m_leaderboard
 		private static trigger m_sellTrigger
+		private static unit m_franziska
+		private static unit m_valentin
+		private static unit m_anne
+		private static unit m_hartwig
+		private static unit m_leonard
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Arena\"")
 		
@@ -51,6 +56,20 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			endif
 			call PauseTimer(GetExpiredTimer())
 			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
+		endmethod
+		
+		private static method showOpponentByUnitTypeId takes integer unitTypeId, boolean show returns nothing
+			if (unitTypeId == GetUnitTypeId(thistype.m_franziska)) then
+				call ShowUnit(thistype.m_franziska, show)
+			elseif (unitTypeId == GetUnitTypeId(thistype.m_valentin)) then
+				call ShowUnit(thistype.m_valentin, show)
+			elseif (unitTypeId == GetUnitTypeId(thistype.m_anne)) then
+				call ShowUnit(thistype.m_anne, show)
+			elseif (unitTypeId == GetUnitTypeId(thistype.m_hartwig)) then
+				call ShowUnit(thistype.m_hartwig, show)
+			elseif (unitTypeId == GetUnitTypeId(thistype.m_leonard)) then
+				call ShowUnit(thistype.m_leonard, show)
+			endif
 		endmethod
 
 		/**
@@ -119,10 +138,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				call TimerStart(whichTimer, 0.0, false, function thistype.timerFunctionHideRevival)
 			// remove newly created NPC units
 			else
-				if (not IsUnitDeadBJ(usedUnit)) then
-					call RemoveUnit(usedUnit)
-				endif
-				// let decay the corpse otherwise
+				call thistype.showOpponentByUnitTypeId(GetUnitTypeId(usedUnit), true)
+				call RemoveUnit(usedUnit)
 			endif
 			
 			
@@ -374,6 +391,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			local unit arenaEnemy
 			
 			if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and character != 0 and character.isMovable() and thistype.isFree.evaluate()) then
+				call thistype.showOpponentByUnitTypeId(GetUnitTypeId(soldUnit), false)
 				set arenaEnemy = CreateUnit(MapData.arenaPlayer, GetUnitTypeId(soldUnit), 0.0, 0.0, 0.0)
 				call Arena.addUnit.evaluate(arenaEnemy)
 				set arenaEnemy = null
@@ -441,6 +459,17 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.createPvpTrigger()
 			call thistype.createLeaderboard()
 			call thistype.createSellTrigger()
+			
+			set thistype.m_franziska = gg_unit_h018_0640
+			call SetUnitInvulnerable(thistype.m_franziska, true)
+			set thistype.m_valentin = gg_unit_h019_0642
+			call SetUnitInvulnerable(thistype.m_valentin, true)
+			set thistype.m_anne = gg_unit_h01A_0644
+			call SetUnitInvulnerable(thistype.m_anne, true)
+			set thistype.m_hartwig = gg_unit_h00D_0643
+			call SetUnitInvulnerable(thistype.m_hartwig, true)
+			set thistype.m_leonard = gg_unit_h017_0641
+			call SetUnitInvulnerable(thistype.m_leonard, true)
 		endmethod
 
 		public static method cleanUp takes nothing returns nothing
