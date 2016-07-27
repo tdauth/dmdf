@@ -11,7 +11,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant real afternoon = 16.0
 		public static constant real evening = 18.0
 		public static constant real videoWaitInterval = 1.0
-		public static constant real revivalTime = 5.0
+		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
 		public static constant integer startSkillPoints = 4
@@ -20,7 +20,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static constant boolean isSeparateChapter = false
 		public static sound cowSound = null
-		
+
 		private static Zone m_zoneTalras
 		private static Zone m_zoneGardonar
 		
@@ -153,6 +153,24 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref Classes.
 		public static method startY takes integer index returns real
 			return GetRectCenterY(gg_rct_start)
+		endmethod
+		
+		/// Required by \ref MapChanger.
+		public static method restoreStartX takes integer index, string zone returns real
+			if (zone == "GardonarsHell" + Game.gameVersion) then
+				return GetRectCenterX(gg_rct_start_hell)
+			endif
+			
+			return GetRectCenterX(gg_rct_start_talras)
+		endmethod
+
+		/// Required by \ref MapChanger.
+		public static method restoreStartY takes integer index, string zone returns real
+			if (zone == "GardonarsHell" + Game.gameVersion) then
+				return GetRectCenterY(gg_rct_start_hell)
+			endif
+			
+			return GetRectCenterY(gg_rct_start_talras)
 		endmethod
 		
 		/**

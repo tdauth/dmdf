@@ -134,6 +134,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		
 		private static trigger m_giantDeathTrigger
 		
+		// Zones which can be reached directly from this map.
 		private static Zone m_zoneGardonar
 		private static Zone m_zoneHolzbruck
 
@@ -468,6 +469,24 @@ endif
 				return GetRectCenterY(gg_rct_character_5_start)
 			endif
 			return 0.0
+		endmethod
+		
+		/// Required by \ref MapChanger.
+		public static method restoreStartX takes integer index, string zone returns real
+			if (zone == "Gardonar" + Game.gameVersion) then
+				return GetRectCenterX(gg_rct_start_gardonar)
+			endif
+			
+			return GetRectCenterX(gg_rct_start_holzbruck)
+		endmethod
+
+		/// Required by \ref MapChanger.
+		public static method restoreStartY takes integer index, string zone returns real
+			if (zone == "Gardonar" + Game.gameVersion) then
+				return GetRectCenterY(gg_rct_start_gardonar)
+			endif
+			
+			return GetRectCenterY(gg_rct_start_holzbruck)
 		endmethod
 		
 		/**

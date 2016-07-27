@@ -358,6 +358,16 @@ library StructMapMapMapData requires Asl, StructGameGame
 			return GetRectCenterY(gg_rct_area_safe)
 		endmethod
 		
+		/// Required by \ref MapChanger.
+		public static method restoreStartX takes integer index, string zone returns real
+			return GetRectCenterX(gg_rct_area_safe)
+		endmethod
+
+		/// Required by \ref MapChanger.
+		public static method restoreStartY takes integer index, string zone returns real
+			return GetRectCenterY(gg_rct_area_safe)
+		endmethod
+		
 		/**
 		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
 		 */

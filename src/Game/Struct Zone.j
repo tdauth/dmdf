@@ -9,6 +9,8 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 	struct Zone extends QuestArea
 		public static constant integer unitTypeId = 'n06N'
 		private static AIntegerVector m_zones
+		/// All zone names even the names of zones which cannot be reached in this map. This is required for copying all save games.
+		private static AStringVector m_zoneNames
 		private string m_mapName
 		private unit m_iconUnit
 		private boolean m_isEnabled
@@ -23,10 +25,12 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		
 		public method enable takes nothing returns nothing
 			set this.m_isEnabled = true
+			call ShowUnit(this.m_iconUnit, true)
 		endmethod
 		
 		public method disable takes nothing returns nothing
 			set this.m_isEnabled = false
+			call ShowUnit(this.m_iconUnit, false)
 		endmethod
 		
 		public stub method onCheck takes nothing returns boolean
@@ -48,6 +52,7 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			local thistype this = thistype.allocate(whichRect)
 			set this.m_mapName = mapName
 			call this.setDestroyOnActivation(false)
+			call this.setFogModifiersEnabled(false) // don't make zones discovered from the beginning
 			call thistype.m_zones.pushBack(this)
 			set this.m_iconUnit = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), thistype.unitTypeId, GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
 			call SetUnitInvulnerable(this.m_iconUnit, true)
@@ -60,6 +65,16 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		public static method init takes nothing returns nothing
 			set thistype.m_zones = AIntegerVector.create()
 			call SetAltMinimapIcon("UI\\Minimap\\MiniMap-Entrance.blp")
+			set thistype.m_zoneNames = AStringVector.create()
+			/// All zone names of the current campaign must be added here. They have to be copied whenever the game is saved.
+			call thistype.m_zoneNames.pushBack("Talras" + Game.gameVersion)
+			call thistype.m_zoneNames.pushBack("Gardonar" + Game.gameVersion)
+			call thistype.m_zoneNames.pushBack("GardonarsHell" + Game.gameVersion)
+			call thistype.m_zoneNames.pushBack("Holzbruck" + Game.gameVersion)
+		endmethod
+		
+		public static method zoneNames takes nothing returns AIntegerVector
+			return thistype.m_zoneNames
 		endmethod
 	endstruct
 	

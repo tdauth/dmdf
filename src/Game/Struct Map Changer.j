@@ -37,15 +37,20 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return folder + mapName + ".w3x"
 		endmethod
 		
+		private static method saveGameFolder takes string currentSaveGame returns string
+			if (currentSaveGame != null and StringLength(currentSaveGame) > 0) then
+				return thistype.zonesFolder + "\\" + currentSaveGame
+			endif
+			// use another folder if these are temporary zone files
+			return thistype.temporaryFolder
+		endmethod
+			
+		
 		/**
 		 * \return Returns a save game path using the zone folder and \p currentSaveGame as well as \p mapName.
 		 */
 		private static method saveGamePath takes string currentSaveGame, string mapName returns string
-			if (StringLength(currentSaveGame) > 0) then
-				return thistype.zonesFolder + "\\" + currentSaveGame + "\\" + mapName + ".w3z"
-			endif
-			// use another folder if these are temporary zone files
-			return thistype.temporaryFolder + "\\" + mapName + ".w3z"
+			return thistype.saveGameFolder(currentSaveGame) + "\\" + mapName + ".w3z"
 		endmethod
 		
 		/**
@@ -56,18 +61,32 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return thistype.saveGamePath(thistype.m_currentSaveGame, mapName)
 		endmethod
 		
+		private static method playerMissionKey takes player whichPlayer returns string
+			return "Character" + GetPlayerName(whichPlayer)
+		endmethod
+		
 		/**
 		 * Every player character is stored with a unique mission key using the character's player ID.
 		 */
 		private static method characterMissionKey takes Character character returns string
-			return "Character" + I2S(GetPlayerId(character.player()))
+			return thistype.playerMissionKey(character.player())
 		endmethod
 	
 		private static method storeCharacterSinglePlayer takes Character character returns nothing
 			local gamecache cache = InitGameCache(thistype.gameCacheName)
-			call character.store(cache, thistype.characterMissionKey(character))
-			call StoreInteger(cache, thistype.characterMissionKey(character), "SkillPoints", character.grimoire().totalSkillPoints())
-			call StoreInteger(cache, thistype.characterMissionKey(character), "Gold", GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD))
+			local string missionKey = thistype.characterMissionKey(character)
+			local integer i = 0
+			local Spell spell = 0
+			call character.store(cache, missionKey)
+			call StoreInteger(cache, missionKey, "SkillPoints", character.grimoire().skillPoints())
+			call StoreInteger(cache, missionKey, "Gold", GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD))
+			set i = 0
+			loop
+				exitwhen (i == character.grimoire().spells())
+				set spell = character.grimoire().spell(i)
+				call StoreInteger(cache, missionKey, "Grimoire" + I2S(spell.ability()), spell.level())
+				set i = i + 1
+			endloop
 			call SaveGameCache(cache)
 			set cache = null
 		endmethod
@@ -85,10 +104,14 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call StoreBoolean(cache, "Stored", "Stored", true)
 			// the current save game name has to be stored to know from where the save games have to be copied
 			call StoreString(cache, "CurrentSaveGame", "CurrentSaveGame", thistype.m_currentSaveGame)
+			call StoreString(cache, "Zone", "Zone", MapData.mapName)
 			call SaveGameCache(cache)
 			set cache = null
 		endmethod
 		
+		/**
+		 * \return Returns true if characters are stored in the gamecache at all.
+		 */
 		public static method charactersExistSinglePlayer takes nothing returns boolean
 			local gamecache cache = null
 			local boolean result = false
@@ -103,49 +126,73 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		
 		private static method restoreCharacterSinglePlayer takes gamecache cache, player whichPlayer, real x, real y, real facing returns nothing
 			local Character character = Character(ACharacter.playerCharacter(whichPlayer))
+			local string missionKey = thistype.playerMissionKey(whichPlayer)
+			local unit restoredUnit = null
 			local integer i = 0
+			local Spell spell = 0
 			if (character == 0) then
-				set character = Character.create(whichPlayer, Character.restoreUnitFromCache(cache, thistype.characterMissionKey(character), whichPlayer, x, y, facing), 0, 0)
+				set restoredUnit = Character.restoreUnitFromCache(cache, missionKey, whichPlayer, x, y, facing)
+				// clear the inventory before
+				set i = 0
+				loop
+					exitwhen (i == bj_MAX_INVENTORY)
+					if (UnitItemInSlot(restoredUnit, i) != null) then
+						call RemoveItem(UnitItemInSlot(restoredUnit, i))
+					endif
+					set i = i + 1
+				endloop
+				// use the constructor from struct Character to make sure everything is run properly
+				set character = Character.create(whichPlayer, restoredUnit, 0, 0)
+				// restores the inventory automatically
+				call character.restoreDataFromCache(cache, missionKey)
 				call ACharacter.setPlayerCharacterByCharacter(character)
-				if (character.inventory() != 0) then
-					set i = 0
-					loop
-						exitwhen (i == bj_MAX_INVENTORY)
-						if (UnitItemInSlot(character.unit(), i) != null) then
-							call RemoveItem(UnitItemInSlot(character.unit(), i))
-						endif
-						set i = i + 1
-					endloop
-				endif
-				// TODO clear inventory! It will be restored by the AInventory system
+			debug else
+				debug call Print("Character is not 0!!!!!!!!!!!!!!!")
 			endif
-			// TODO leads to crash: restoreDataFromCache
-			//call character.restoreDataFromCache(cache, thistype.characterMissionKey(character))
-			//call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, thistype.characterMissionKey(character), "Gold"))
-			// TODO restore skill points
-			call character.grimoire().setSkillPoints(GetStoredInteger(cache, thistype.characterMissionKey(character), "SkillPoints"))
-			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, thistype.characterMissionKey(character), "Gold"))
+			
+			debug call Print("Creating spells")
+			// Creates spells which are required in the grimoire etc. and adds hero glow etc.
+			call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
+			
+			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"))
+			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, missionKey, "Gold"))
+			
+			// load the grimoire levels
+			set i = 0
+			loop
+				exitwhen (i == character.grimoire().spells())
+				set spell = character.grimoire().spell(i)
+				// reset OpLimit, otherwise OpLimit will be reached very fast
+				call thistype.restoreGrimoireSpellLevel.evaluate(character, cache, missionKey, i, "Grimoire" + I2S(spell.ability()))
+				set i = i + 1
+			endloop
 			
 			// make sure the GUI of the grimoire is correct
 			call character.grimoire().updateUi.evaluate()
 			
 			// update inventory
-			call character.inventory().enable()
+			//call character.inventory().enable()
 			
 			set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", "CurrentSaveGame")
 			debug call Print("Current save game: " + thistype.m_currentSaveGame)
 		endmethod
 		
+		private static method restoreGrimoireSpellLevel takes Character character, gamecache cache, string missionKey, integer spellIndex, string key returns nothing
+			call character.grimoire().setSpellLevelByIndex(spellIndex, GetStoredInteger(cache, missionKey, key), false)
+		endmethod
+
 		public static method restoreCharactersSinglePlayer takes nothing returns nothing
 			local gamecache cache = null
+			local string zone = null
 			local integer i = 0
 			if (ReloadGameCachesFromDisk()) then
 				set cache = InitGameCache(thistype.gameCacheName)
+				set zone = GetStoredString(cache, "Zone", "Zone") // the zone from which they come, this helps to place the character at the correct position
 				set i = 0
 				loop
 					exitwhen (i == MapData.maxPlayers)
 					if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING) then
-						call thistype.restoreCharacterSinglePlayer(cache, Player(i), MapData.startX.evaluate(i), MapData.startY.evaluate(i), 0.0)
+						call thistype.restoreCharacterSinglePlayer(cache, Player(i), MapData.restoreStartX.evaluate(i, zone), MapData.restoreStartY.evaluate(i, zone), 0.0)
 					endif
 					set i = i + 1
 				endloop
@@ -157,26 +204,30 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 * Changes map to \p newMap and saves the current map.
 		 */
 		private static method changeMapSinglePlayer takes string oldMap, string newMap returns nothing
+			local string savePath = thistype.currentSaveGamePath(oldMap)
+			local string loadPath = thistype.currentSaveGamePath(newMap)
+			local string nextLevelPath = thistype.mapPath(newMap)
+			debug call Print("Before storing characters")
 			call thistype.storeCharactersSinglePlayer()
-		
-			debug call Print("Saving map as " + thistype.currentSaveGamePath(oldMap))
-			call SaveGame(thistype.currentSaveGamePath(oldMap))
-			debug call Print("Load game path: " + thistype.currentSaveGamePath(newMap))
+			debug call Print("Saving map as " + savePath)
+			debug call Print("Load game path: " + loadPath)
 			
-			if (SaveGameExists(thistype.currentSaveGamePath(newMap))) then
+			if (SaveGameExists(loadPath)) then
 				debug call Print("Loading game since it exists.")
-				call LoadGame(thistype.currentSaveGamePath(newMap), false)
+				call SaveAndLoadGameBJ(savePath, loadPath, false)
 			else
-				debug call Print("Change map to " + thistype.mapPath(newMap))
-				call ChangeLevel(thistype.mapPath(newMap), false)
+				debug call Print("Change map to " + nextLevelPath)
+				call SaveAndChangeLevelBJ(savePath, nextLevelPath, false)
 			endif
 		endmethod
 		
 		public static method changeMap takes string newMap returns nothing
 			// changing map with saving the game does only work in campaign mode
 			if (bj_isSinglePlayer and Game.isCampaign.evaluate()) then
+				debug call Print("Change map single player campaign")
 				call thistype.changeMapSinglePlayer(MapData.mapName, newMap)
 			else
+				debug call Print("No change possible")
 				call Character.displayHintToAll(tre("Die Karte kann nur in der Einzelspieler-Kampagne gewechselt werden.", "The map can only be changed in the singleplayer campaign."))
 			endif
 		endmethod
@@ -198,17 +249,21 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 * Copying all save games of the zones to a folder which contains the save file name, saves all zones as well not only the current one.
 		 */
 		private static method triggerActionSave takes nothing returns nothing
-			local Zone zone = 0
+			local string zoneName = null
+			local AStringVector zoneNames = Zone.zoneNames.evaluate()
 			local integer i = 0
+			// Remove existing zones directory if a savegame already existed with the same name, otherwise old zone save games will remain.
+			call RemoveSaveDirectory(thistype.saveGameFolder(GetSaveBasicFilename()))
+			// Copy savegames for all zones into the new directory. Consider that every map needs ALL zones therefore. Disable unused zones in the map.
 			loop
-				exitwhen (i == Zone.zones.evaluate().size())
-				set zone = Zone(Zone.zones.evaluate()[i])
-				if (SaveGameExists(thistype.currentSaveGamePath(zone.mapName.evaluate()))) then
-					debug call Print("Copying: " + thistype.currentSaveGamePath(zone.mapName.evaluate()))
-					debug call Print("To: " + thistype.saveGamePath(GetSaveBasicFilename(), zone.mapName.evaluate()))
-					call CopySaveGame(thistype.currentSaveGamePath(zone.mapName.evaluate()), thistype.saveGamePath(GetSaveBasicFilename(), zone.mapName.evaluate()))
+				exitwhen (i == zoneNames.size())
+				set zoneName = thistype.currentSaveGamePath(zoneNames[i])
+				if (SaveGameExists(zoneName)) then
+					debug call Print("Copying: " + zoneName)
+					debug call Print("To: " + thistype.saveGamePath(GetSaveBasicFilename(), zoneName))
+					call CopySaveGame(zoneName, thistype.saveGamePath(GetSaveBasicFilename(), zoneName))
 				debug else
-					debug call Print("Missing: " + thistype.currentSaveGamePath(zone.mapName.evaluate()))
+					debug call Print("Missing: " + zoneName)
 				endif
 				set i = i + 1
 			endloop

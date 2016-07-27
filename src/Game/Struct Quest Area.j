@@ -45,6 +45,19 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			debug call Print("Super onStart")
 		endmethod
 		
+		public method setFogModifiersEnabled takes boolean enabled returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (enabled) then
+					call FogModifierStart(this.m_assemblyPointFogModifier[i])
+				else
+					call FogModifierStop(this.m_assemblyPointFogModifier[i])
+				endif
+				set i = i + 1
+			endloop
+		endmethod
+		
 		private method cleanupRect takes nothing returns nothing
 			local integer i = 0
 			loop

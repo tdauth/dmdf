@@ -717,6 +717,8 @@ endif
 		public static method create takes player whichPlayer, unit whichUnit, AIntegerVector quests, AIntegerVector fellows returns thistype
 			local thistype this = thistype.allocate(whichPlayer, whichUnit)
 			
+			debug call Print("Creating character for player " + GetPlayerName(whichPlayer))
+			
 			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeHeaddress, 'I06C')
 			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeArmour, 'I06D')
 			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypePrimaryWeapon, 'I06E')

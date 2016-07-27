@@ -652,6 +652,7 @@ endif
 			return result
 		endmethod
 
+		// TODO slow method, find method takes linear time
 		public method setSpellLevel takes Spell spell, integer level, boolean updateUi returns boolean
 			return this.setSpellLevelByIndex(this.m_spells.find(spell), level, updateUi)
 		endmethod

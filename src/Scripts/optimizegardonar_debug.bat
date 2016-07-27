@@ -1,2 +1,2 @@
-del "E:\Warcraft III Englisch\Maps\DMDF\Karte 2 - Gardonar.w3x"
-"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 2 - Gardonar.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\Karte 2 - Gardonar.w3x" --checkscriptstuff --exit
+del "E:\Warcraft III Englisch\Maps\DMDF\Gardonar0.8.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 2 - Gardonar.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\Gardonar0.8.w3x" --checkscriptstuff --exit
