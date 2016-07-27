@@ -12,16 +12,6 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 		private trigger m_summonTrigger
 		private trigger m_deathTrigger
 		
-		private method condition takes nothing returns boolean
-			if (this.m_units.units().size() == thistype.maxUnits) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tre("Es wurden bereits 6 Diener beschworen.", "There have already been summoned 6 servants."))
-			
-				return false
-			endif
-			
-			return true
-		endmethod
-		
 		private static method isUnitOfType takes unit whichUnit returns boolean
 			return (GetUnitTypeId(whichUnit) == 'n03N' or GetUnitTypeId(whichUnit) == 'n03W' or GetUnitTypeId(whichUnit) == 'n03X' or GetUnitTypeId(whichUnit) == 'n03Y' or GetUnitTypeId(whichUnit) == 'n03Z')
 		endmethod
@@ -59,7 +49,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, 0)
+			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			call this.addGrimoireEntry('A1MP', 'A1MQ')
 			call this.addGrimoireEntry('A0FL', 'A0FQ')
 			call this.addGrimoireEntry('A0FM', 'A0FR')

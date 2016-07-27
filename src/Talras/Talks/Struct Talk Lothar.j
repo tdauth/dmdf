@@ -22,14 +22,14 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// (Automatisch)
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Gegrüßt seist du, fremder Reisender! Kann ich dich vielleicht für einen leckeren Topf voll Honig von den glücklichsten Bienen im ganzen Königreich oder einen köstlichen Becher voll wunderbarem Wein begeistern?"), gg_snd_Lothar1)
-			call speech(info, character, true, tr("Greif zu solange noch Ware da ist! Ich kann für nichts garantieren. Vielleicht kommt gleich ein anderer Interessierter, der dir alles vor der Nase wegschnappt."), gg_snd_Lothar2)
+			call speech(info, character, true, tre("Gegrüßt seist du, fremder Reisender! Kann ich dich vielleicht für einen leckeren Topf voll Honig von den glücklichsten Bienen im ganzen Königreich oder einen köstlichen Becher voll wunderbarem Wein begeistern?", "Greetings foreign taveler! Can I impress you perhaps for a delicious pot of honey from the happiest bees in the kingdom or a delicious cup full of wonderful wine?"), gg_snd_Lothar1)
+			call speech(info, character, true, tre("Greif zu solange noch Ware da ist! Ich kann für nichts garantieren. Vielleicht kommt gleich ein anderer Interessierter, der dir alles vor der Nase wegschnappt.", "Take it as long as merchandise is here! I cannot guarantee anything. Perhaps another one comes along now who snaps off everything in front of you."), gg_snd_Lothar2)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Wer bist du?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wer bist du?"), null)
+			call speech(info, character, false, tre("Wer bist du?", "Who are you?"), null)
 			call speech(info, character, true, tr("Mein Name ist Lothar und ich bin zweifellos der erfolgreichste Händler im ganzen Königreich und zudem noch der glücklichste."), gg_snd_Lothar3)
 			call speech(info, character, true, tr("Ich verkaufe selbst hergestellten Wein und Honig. Die schönsten und genussvollsten Dinge des bescheidenen Lebens in dieser Welt!"), gg_snd_Lothar4)
 			call info.talk().showRange(10, 13, character)

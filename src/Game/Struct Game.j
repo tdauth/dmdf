@@ -774,7 +774,7 @@ endif
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
-					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(false)
+					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(true)
 				endif
 				set i = i + 1
 			endloop
