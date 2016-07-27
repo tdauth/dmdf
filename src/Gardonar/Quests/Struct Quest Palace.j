@@ -83,7 +83,7 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 			local thistype this = thistype.allocate(tre("Der Palast", "The Palace"))
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNDemonGate.blp")
-			call this.setDescription(tr("In der Nähe befindet sich ein Palast. Sammelt euch dort."))
+			call this.setDescription(tre("In der Nähe befindet sich ein Palast. Sammelt euch dort.", "Nearby there is a palace. Gather there."))
 			// item questItemReachPalace
 			set questItem = AQuestItem.create(this, tre("Sammelt euch beim Palast.", "Gather at the palace."))
 			call questItem.setPing(true)
