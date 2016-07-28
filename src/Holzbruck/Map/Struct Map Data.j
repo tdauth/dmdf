@@ -122,6 +122,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
 		endmethod
+		
+		/// Required by \ref ClassSelection.
+		public static method onRepick takes Character character returns nothing
+		endmethod
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing

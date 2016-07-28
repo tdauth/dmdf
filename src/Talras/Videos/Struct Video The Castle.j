@@ -85,21 +85,21 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 			call TriggerSleepAction(0.50)
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 2.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			
-			call CameraSetupApplyForceDuration(gg_cam_new_the_castle_4, true, 3.50)
+			call CameraSetupApplyForceDuration(gg_cam_new_the_castle_4, true, 2.50)
 			
-			if (wait(3.0)) then
+			if (wait(2.0)) then
 				return
 			endif
 			
-			call CameraSetupApplyForceDuration(gg_cam_new_the_castle_5, true, 3.50)
+			call CameraSetupApplyForceDuration(gg_cam_new_the_castle_5, true, 2.50)
 			
-			if (wait(3.0)) then
+			if (wait(2.0)) then
 				return
 			endif
 			
-			call CameraSetupApplyForceDuration(gg_cam_new_the_castle_6, true, 3.50)
+			call CameraSetupApplyForceDuration(gg_cam_new_the_castle_6, true, 2.50)
 			
-			if (wait(3.0)) then
+			if (wait(2.0)) then
 				return
 			endif
 			

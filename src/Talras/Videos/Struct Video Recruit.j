@@ -56,7 +56,7 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 				return
 			endif
 			
-			call TransmissionFromUnit(this.m_actorFerdinand, tre("Die Zeit ist nun gekommen da der Herzog eure Dienste einfordert. Lange Zeit durftet ihr wie Könige leben vom Lande eures Herzogs. Er ließ euch teilhaben an seinem Reichtum und ihr konntet in Frieden leben.", "The time has come that the duke demands your services. FOr a long time you could live like kings from the land of your duke. He let you partake of his wealth and you could live in peace."), null)
+			call TransmissionFromUnit(this.m_actorFerdinand, tre("Die Zeit ist nun gekommen da der Herzog eure Dienste einfordert. Lange Zeit durftet ihr wie Könige leben vom Lande eures Herzogs. Er ließ euch teilhaben an seinem Reichtum und ihr konntet in Frieden leben.", "The time has come that the duke demands your services. For a long time you could live like kings from the land of your duke. He let you partake of his wealth and you could live in peace."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

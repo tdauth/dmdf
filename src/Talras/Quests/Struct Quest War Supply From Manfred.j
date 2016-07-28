@@ -26,6 +26,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		
 		public static constant integer maxSpawnPoints = 4
 		private boolean array m_killedSpawnPoint[thistype.maxSpawnPoints]
+		private SpawnPoint array m_spawnPoint[thistype.maxSpawnPoints]
 		
 		/*
 		 * Manfred
@@ -77,38 +78,31 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 			local integer tmpCount = 0
 			local integer count = 0
 			local integer total = 0
+			local integer i = 0
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.cornEater) then
-				// if a spawn point is completely killed ONCE it is marked as completed, otherwise corn eaters would have to be killed again when they respawn
-				if (not this.m_killedSpawnPoint[0]) then
-					set tmpCount = SpawnPoints.cornEaters0().countUnitsIf(thistype.unitLives)
-					set this.m_killedSpawnPoint[0] = tmpCount == 0
-					set count = count + tmpCount
-					debug call Print("Check spawn point 0: " + I2S(tmpCount))
-				endif
-				if (not this.m_killedSpawnPoint[1]) then
-					set tmpCount = SpawnPoints.cornEaters1().countUnitsIf(thistype.unitLives)
-					set this.m_killedSpawnPoint[1] = tmpCount == 0
-					set count = count + tmpCount
-					debug call Print("Check spawn point 1: " + I2S(tmpCount))
-				endif
-				if (not this.m_killedSpawnPoint[2]) then
-					set tmpCount = SpawnPoints.cornEaters2().countUnitsIf(thistype.unitLives)
-					set this.m_killedSpawnPoint[2] = tmpCount == 0
-					set count = count + tmpCount
-					debug call Print("Check spawn point 2: " + I2S(tmpCount))
-				endif
-				if (not this.m_killedSpawnPoint[3]) then
-					set tmpCount = SpawnPoints.cornEaters3().countUnitsIf(thistype.unitLives)
-					set this.m_killedSpawnPoint[3] = tmpCount == 0
-					set count = count + tmpCount
-					debug call Print("Check spawn point 3: " + I2S(tmpCount))
-				endif
+				set i = 0
+				loop
+					exitwhen (i == thistype.maxSpawnPoints)
+					// if a spawn point is completely killed ONCE it is marked as completed, otherwise corn eaters would have to be killed again when they respawn
+					if (not this.m_killedSpawnPoint[i]) then
+						set tmpCount = this.m_spawnPoint[i].countUnitsIf(thistype.unitLives)
+						set this.m_killedSpawnPoint[i] = tmpCount == 0
+						set count = count + tmpCount
+						debug call Print("Check spawn point " + I2S(i) + ": " + I2S(tmpCount))
+					endif
+					set i = i + 1
+				endloop
 				if (count == 0) then
 					debug call Print("All counts are 0")
 					return true
 				// get next one to ping
 				else
-					set total = SpawnPoints.cornEaters0().countMembers() + SpawnPoints.cornEaters1().countMembers() + SpawnPoints.cornEaters2().countMembers() + SpawnPoints.cornEaters3().countMembers()
+					set i = 0
+					loop
+						exitwhen (i == thistype.maxSpawnPoints)
+						set total = total + this.m_spawnPoint[i].countMembers()
+						set i = i + 1
+					endloop
 					call this.displayUpdateMessage(Format(tre("%1%/%2% Kornfresser", "%1%/%2% Corn Eaters")).i(total - count).i(total).result())
 				endif
 			endif
@@ -213,6 +207,11 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 				set this.m_killedSpawnPoint[i] = false
 				set i = i + 1
 			endloop
+			
+			set this.m_spawnPoint[0] = SpawnPoints.cornEaters0()
+			set this.m_spawnPoint[1] = SpawnPoints.cornEaters1()
+			set this.m_spawnPoint[2] = SpawnPoints.cornEaters2()
+			set this.m_spawnPoint[3] = SpawnPoints.cornEaters3()
 			
 			// quest item questItemSupplyFromManfred
 			set questItem = AQuestItem.create(this, tre("Besorgt Nahrung vom Bauern Manfred.", "Get food from the farmer Manfred."))

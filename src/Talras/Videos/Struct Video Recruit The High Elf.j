@@ -247,6 +247,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 			
+			// TODO check if the actor is morphed
 			call SetUnitAnimationByIndex(this.actor(), 4)
 			
 			if (wait(4.5)) then

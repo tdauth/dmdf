@@ -11,13 +11,15 @@ library StructGameTreeTransparency initializer init requires Asl
 	endstruct
 
 	globals
-		private constant real OCCLUSION_RADIUS = 1200.0 //defines the radius around the unit in which doodads are occluded
+		private constant real OCCLUSION_RADIUS = 800.0 //defines the radius around the unit in which doodads are occluded
 		private constant real CAMERA_TARGET_RADIUS = 1200.0 //defines the radius around the camera target in which doodads are occluded
 
 		private timer Timer
 		private integer array raw
 		private integer rawcount = 0
 		private AIntegerList units
+		private real cameraX = 0.0
+		private real cameraY = 0.0
 	endglobals
 
 	/**
@@ -58,20 +60,21 @@ library StructGameTreeTransparency initializer init requires Asl
 	endfunction
 	
 	private function ResetTransparency takes nothing returns nothing
-		local AIntegerListIterator iterator = units.begin()
+		//local AIntegerListIterator iterator = units.begin()
 		local integer j
-		loop
-			exitwhen not iterator.isValid()
+		//loop
+		//	exitwhen not iterator.isValid()
 			set j = 0
 			loop
 				exitwhen j >= rawcount
-				call SetDoodadAnimation(Unit(iterator.data()).x, Unit(iterator.data()).y, OCCLUSION_RADIUS, raw[j], false, "stand", false)
+				//call SetDoodadAnimation(Unit(iterator.data()).x, Unit(iterator.data()).y, OCCLUSION_RADIUS, raw[j], false, "stand", false)
+				call SetDoodadAnimation(cameraX, cameraY, OCCLUSION_RADIUS, raw[j], false, "stand", false)
 				set j = j + 1
 			endloop
-			call iterator.next()
-		endloop
+		//	call iterator.next()
+		//endloop
 		
-		call iterator.destroy()
+		//call iterator.destroy()
 	endfunction
 	
 	private function periodic takes nothing returns nothing
@@ -80,6 +83,9 @@ library StructGameTreeTransparency initializer init requires Asl
 		local real camX = GetCameraTargetPositionX()
 		local real camY = GetCameraTargetPositionY()
 		call ResetTransparency()
+		set cameraX = camX
+		set cameraY = camY
+		/*
 		set iterator = units.begin()
 		loop
 			exitwhen not iterator.isValid()
@@ -87,17 +93,19 @@ library StructGameTreeTransparency initializer init requires Asl
 			if (GetUnitTypeId(Unit(iterator.data()).whichUnit) != 0 and IsUnitInRangeXY(Unit(iterator.data()).whichUnit, camX, camY, CAMERA_TARGET_RADIUS)) then
 				set Unit(iterator.data()).x = GetUnitX(Unit(iterator.data()).whichUnit)
 				set Unit(iterator.data()).y = GetUnitY(Unit(iterator.data()).whichUnit)
+				*/
 				set j = 0
 				loop
 					exitwhen j >= rawcount
-					call SetDoodadAnimation(Unit(iterator.data()).x, Unit(iterator.data()).y, OCCLUSION_RADIUS, raw[j], false, "stand alternate", false)
+					//call SetDoodadAnimation(Unit(iterator.data()).x, Unit(iterator.data()).y, OCCLUSION_RADIUS, raw[j], false, "stand alternate", false)
+					call SetDoodadAnimation(cameraX, cameraY, OCCLUSION_RADIUS, raw[j], false, "stand alternate", false)
 					set j = j + 1
 				endloop
-			endif
-			call iterator.next()
-		endloop
+			//endif
+		//	call iterator.next()
+		//endloop
 		
-		call iterator.destroy()
+		//call iterator.destroy()
 	endfunction
 	
 	function EnableTransparency takes nothing returns nothing

@@ -298,7 +298,7 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Change rucksack page after transforming to add the retransform spell?
 * Unmorph character before repick. Should not be necessary since the Character instance is created newly and isMorphed should be false then, bug?
 * FIXED: Talras map cheats work in non debug mode.
-* Still no ability when transforming to Deranor's guard because the inventory is open and the item has the same ability and therefore the ability cannot be added a second time.
+* Still no ability when transforming to Deranor's guard because the inventory is open and the item has the same ability and therefore the ability cannot be added a second time. Therefore, the item ability has to be removed (rucksack page hidden maybe) and then the ability has to be added, afterwards the rucksack page can be shown again.
 * Loading game doesn't work.
 * Remove old save games when ending game or do not load them when changing the map for the first time to Gardonar. Otherwise if you start a new game it will try to load the old savegame.
 * If all favorites are used in the grimoire there must be a switch with favorites button in the grimoire. Otherwise non spell can be removed!

@@ -87,7 +87,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 	 */
 	struct ClassSelection extends AClassSelection
 		public static constant integer spellsPerPage = 8
-		public static constant real infoDuration = 40.0
+		public static constant real infoDuration = 20.0
 		private trigger m_classChangeTrigger
 		private integer m_page = 0
 		private trigger m_spellPagesTrigger
@@ -444,6 +444,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call ACharacter.playerCharacter(whichPlayer).panCameraSmart()
 				call ACharacter.playerCharacter(whichPlayer).select(false)
 				call Character(ACharacter.playerCharacter(whichPlayer)).setCameraTimer(true)
+				
+				call MapData.onRepick.evaluate(Character(ACharacter.playerCharacter(whichPlayer)))
 			endif
 			set whichPlayer = null
 		endmethod

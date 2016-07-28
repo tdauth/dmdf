@@ -43,7 +43,7 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 			call TriggerSleepAction(GetSimpleTransmissionDuration(gg_snd_Meister1))
 			call waitForVideo(MapData.videoWaitInterval)
 			call TransmissionFromUnitForPlayer(questItem.character().player(), Npcs.sisgard(), tre("Meister! Ihr seid es tatsächlich! Ich fasse es nicht Euch nach so langer Zeit wiederzusehen!", "Master! It is you indeed! I cannot believe to see you again after such a long time!"), gg_snd_Sisgard61)
-			call TriggerSleepAction(GetSimpleTransmissionDuration(null))
+			call TriggerSleepAction(GetSimpleTransmissionDuration(gg_snd_Sisgard61))
 			call waitForVideo(MapData.videoWaitInterval)
 			call TransmissionFromUnitForPlayer(questItem.character().player(), master, tre("Ich bin es, Sisgard, und ich muss sagen du hättest dich ruhig ein bisschen beeilen können. In der Finsternis ist es nicht gerade spannend und ich hätte eigentlich gedacht ...", "I'm him Sisgard and I must say you could have hurried quite a bit. In the darkness it is not really exciting and I would have thought ..."), gg_snd_Meister2)
 			call TriggerSleepAction(GetSimpleTransmissionDuration(gg_snd_Meister2))

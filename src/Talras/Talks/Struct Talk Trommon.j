@@ -109,7 +109,7 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 
 		// (Nach „Deine Hütte sieht aber nicht grade stabil aus.“, Auftrag „Holz für die Hütte“ wurde noch nicht erhalten)
 		private static method infoConditionGetWood takes AInfo info, ACharacter character returns boolean
-			return info.talk().infoHasBeenShownToCharacter(5, character) and QuestWoodForTheHut.characterQuest(character).isNotUsed()
+			return info.talk().infoHasBeenShownToCharacter(3, character) and QuestWoodForTheHut.characterQuest(character).isNotUsed()
 		endmethod
 
 		// Ich hab's mir überlegt. Ich besorg dir dein Holz.

@@ -47,6 +47,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			debug call Print(tre("Zonen-Cheats:", "Zone Cheats:"))
 			debug call Print("zoneholzbruck")
 			debug call Print("zonegardonar")
+			debug call Print("loadtalras")
 			debug call Print(tre("Erzeugungs-Cheats:", "Spawn Cheats:"))
 			debug call Print("unitspawns")
 			debug call Print("testspawnpoint")
@@ -942,6 +943,10 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			call MapChanger.changeMap(MapData.zoneHolzbruck.evaluate().mapName())
 		endmethod
 		
+		private static method onCheatActionLoadTalras takes ACheat cheat returns nothing
+			call LoadGame("TPoF\\Campaign The Power of Fire shit\\Talras0.8.w3z", false)
+		endmethod
+		
 		private static method onCheatActionTestSpawnPoint takes ACheat cheat returns nothing
 			call TestSpawnPoint.spawn()
 		endmethod
@@ -999,6 +1004,7 @@ static if (DEBUG_MODE) then
 			// zones
 			call ACheat.create("zonegardonar", true, thistype.onCheatActionZoneGardonar)
 			call ACheat.create("zoneholzbruck", true, thistype.onCheatActionZoneHolzbruck)
+			call ACheat.create("loadtalras", true, thistype.onCheatActionLoadTalras)
 			// test cheats
 			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)
 			debug call Print("Before creating all cheats")

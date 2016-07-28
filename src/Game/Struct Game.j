@@ -157,7 +157,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions
 		private static trigger m_killTrigger
-		private static AIntegerVector array m_hiddenUnits[12] /// \todo \ref MapData.maxPlayers
+		private static AIntegerVector array m_hiddenUnits[12] /// \todo \ref MapData.maxPlayers + 1 (one additional for MapData.alliedPlayer)
 		/**
 		 * The order animations for the actor of the character.
 		 */
@@ -533,7 +533,8 @@ endif
 			 */
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				// one additional for MapData.alliedPlayer
+				exitwhen (i == MapData.maxPlayers + 1)
 				if (GetPlayerController(Player(i)) != MAP_CONTROL_NONE) then
 					set thistype.m_hiddenUnits[i] = AGroup.create()
 				endif
@@ -564,14 +565,14 @@ endif
 				call ClassSelection.startGame.evaluate()
 			// Otherwise start the game from beginning by letting players select their class.
 			else
-				// class selection
-				call ClassSelection.showClassSelection.evaluate() // multiboard is created
 				set i = 0
 				loop
 					exitwhen (i == MapData.maxPlayers)
 					call DisplayTextToPlayer(Player(i), 0.0, 0.0, Format(tre("Sprache: %1%", "Language: %1%")).s(GetLanguage()).result())
 					set i = i + 1
 				endloop
+				// class selection
+				call ClassSelection.showClassSelection.execute() // multiboard is created, uses TriggerSleepAction()
 			endif
 		endmethod
 
@@ -938,13 +939,12 @@ endif
 				endif
 				set i = i + 1
 			endloop
+			
 			call ForForce(bj_FORCE_PLAYER[0], function Fellow.reviveAllForVideo)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.pauseAll)
 			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.pauseAll)
 			call ForForce(bj_FORCE_PLAYER[0], function Routines.destroyTextTags)
 			call DisableTrigger(thistype.m_killTrigger)
-			//call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_UI, 1.0) /// @todo TEST
-			call VolumeGroupSetVolume(SOUND_VOLUMEGROUP_MUSIC, 1.0)
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterShownItem), function thistype.hideItem)
 			set i = 0
 			loop
@@ -955,6 +955,10 @@ endif
 				endif
 				set i = i + 1
 			endloop
+			// Allied fellows should be hidden too.
+			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).addUnitsOfPlayer(MapData.alliedPlayer, Filter(function thistype.filterShownUnit))
+			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).forGroup(thistype.hideUnit)
+			
 			call DisableTransparency()
 			call CameraHeight.pause.evaluate()
 			
@@ -965,6 +969,7 @@ endif
 			if (video.actor() != null) then
 				set thistype.m_actorOrderAnimations = OrderAnimations.create(Character(ACharacter.getFirstCharacter()), video.actor())
 			endif
+			call StopMusic(false)
 			call MapData.initVideoSettings.evaluate()
 		endmethod
 
@@ -1032,6 +1037,10 @@ endif
 				endif
 				set i = i + 1
 			endloop
+			// Show units of allied player, too.
+			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).forGroup(thistype.showUnit)
+			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).units().clear()
+			
 			call EnableTransparency()
 			call CameraHeight.resume.evaluate()
 			if (thistype.m_actorOrderAnimations != 0) then
@@ -1039,6 +1048,7 @@ endif
 				set thistype.m_actorOrderAnimations = 0
 			endif
 			call VolumeGroupResetBJ()
+			call ResumeMusic()
 			call MapData.resetVideoSettings.evaluate()
 		endmethod
 

@@ -324,6 +324,7 @@ endif
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
 		public static method createClassItems takes Character character returns nothing
+			local integer i = 0
 			if (character.class() == Classes.ranger()) then
 				// Hunting Bow
 				call character.giveItem('I020')
@@ -346,14 +347,13 @@ endif
 			call character.giveItem('I01N')
 			call character.giveQuestItem('I061')
 
-			call character.giveItem('I00A')
-			call character.giveItem('I00A')
-			call character.giveItem('I00A')
-			call character.giveItem('I00A')
-			call character.giveItem('I00D')
-			call character.giveItem('I00D')
-			call character.giveItem('I00D')
-			call character.giveItem('I00D')
+			set i = 0
+			loop
+				exitwhen (i == 10)
+				call character.giveItem('I00A')
+				call character.giveItem('I00D')
+				set i = i + 1
+			endloop
 		endmethod
 		
 		/// Required by \ref Game.
@@ -369,6 +369,10 @@ endif
 		
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+		endmethod
+		
+		/// Required by \ref ClassSelection.
+		public static method onRepick takes Character character returns nothing
 		endmethod
 
 		/// Required by \ref Game.

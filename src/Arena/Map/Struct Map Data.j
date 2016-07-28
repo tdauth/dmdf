@@ -257,6 +257,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 		
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+		endmethod
+		
+		/// Required by \ref ClassSelection.
+		public static method onRepick takes Character character returns nothing
+			debug call Print("Auto skill for player " + GetPlayerName(character.player()))
 			// evaluate because of OpLimit
 			call thistype.autoSkill.evaluate(character.player())
 		endmethod

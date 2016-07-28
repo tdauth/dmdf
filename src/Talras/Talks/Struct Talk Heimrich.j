@@ -35,7 +35,7 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 			call speech(info, character, true, tre("Talras wird von meinem Geschlecht seit drei Generationen bewohnt. Mein Großvater bekam dieses Land und den Titel eines Ritters vom König für seine Tapferkeit im Krieg.", "Talras is inhabited by my family for three generations. My grandfather got this land and the title of a knight from the king for his bravery in the war."), gg_snd_Heimrich4)
 			call speech(info, character, true, tre("Er ließ die einfache Holzbefestigung ausbauen, mit Stein und heute ist es eine stattliche Burg. Zusammen mit der Zeit vor meinem Großvater ist sie fast zweihundert Jahre alt.", "He had converted the simple wooden monting, with stone and today it is a stately castle. Along with the time before my grandfather is is nearly two hundred years old."), gg_snd_Heimrich5)
 			call speech(info, character, true, tre("Ebenfalls ein stattliches Alter. Ich fürchte jedoch dieser Tage um mein Erbe. Falls die Feinde es mir nehmen sollten, bin ich ein armer Mann, wie es einst mein Großvater war.", "Also a stately age. However, I'm afraid these days to my heritage. If the enemy should take it from me, I am a poor man, as it once was my grandfather."), gg_snd_Heimrich6)
-			call speech(info, character, false, tre("So so …", "So so ..."), null)
+			call speech(info, character, false, tre("So so …", "Alright ..."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
