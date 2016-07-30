@@ -72,14 +72,21 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return thistype.playerMissionKey(character.player())
 		endmethod
 	
-		private static method storeCharacterSinglePlayer takes Character character returns nothing
-			local gamecache cache = InitGameCache(thistype.gameCacheName)
+		/**
+		 * Stores a player's character into a game cache. It stores ASL character data, skill points, gold, lumber, and spell levels.
+		 * \param cache The game cache which the character is stored to.
+		 * \param character The character which is stored into the game cache.
+		 */
+		private static method storeCharacterSinglePlayer takes gamecache cache, Character character returns nothing
 			local string missionKey = thistype.characterMissionKey(character)
 			local integer i = 0
 			local Spell spell = 0
+			call FlushStoredMission(cache, missionKey) // flush old data, otherwise old inventory might be loaded
 			call character.store(cache, missionKey)
-			call StoreInteger(cache, missionKey, "SkillPoints", character.grimoire().skillPoints())
+			// Store all skill points since they are used to reskill the spells on restoration! They restored character starts with all spells with level 0.
+			call StoreInteger(cache, missionKey, "SkillPoints", character.grimoire().totalSkillPoints())
 			call StoreInteger(cache, missionKey, "Gold", GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD))
+			call StoreInteger(cache, missionKey, "Lumber", GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_LUMBER))
 			set i = 0
 			loop
 				exitwhen (i == character.grimoire().spells())
@@ -87,17 +94,20 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call StoreInteger(cache, missionKey, "Grimoire" + I2S(spell.ability()), spell.level())
 				set i = i + 1
 			endloop
-			call SaveGameCache(cache)
-			set cache = null
 		endmethod
 		
+		/**
+		 * Stores all player characters to a game cache as well as general data which is required in the next map.
+		 * Stores the current savegame name and the zone name of the current zone that the next map can identify where the characters come from.
+		 * The game cache uses the identifier \ref thistype.gameCacheName.
+		 */
 		public static method storeCharactersSinglePlayer takes nothing returns nothing
-			local gamecache cache = InitGameCache(thistype.gameCacheName)
+			local gamecache cache  = InitGameCache(thistype.gameCacheName)
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (Character.playerCharacter(Player(i)) != 0) then
-					call thistype.storeCharacterSinglePlayer(Character.playerCharacter(Player(i)))
+					call thistype.storeCharacterSinglePlayer(cache, Character.playerCharacter(Player(i)))
 				endif
 				set i = i + 1
 			endloop
@@ -153,10 +163,13 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			debug call Print("Creating spells")
 			// Creates spells which are required in the grimoire etc. and adds hero glow etc.
 			call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
+			debug call Print("After spell creation")
 			
 			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"))
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, missionKey, "Gold"))
+			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_LUMBER, GetStoredInteger(cache, missionKey, "Lumber"))
 			
+			debug call Print("Restoring spell levels")
 			// load the grimoire levels
 			set i = 0
 			loop
@@ -166,6 +179,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call thistype.restoreGrimoireSpellLevel.evaluate(character, cache, missionKey, i, "Grimoire" + I2S(spell.ability()))
 				set i = i + 1
 			endloop
+			debug call Print("After restoing spell levels")
 			
 			// make sure the GUI of the grimoire is correct
 			call character.grimoire().updateUi.evaluate()
@@ -196,6 +210,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 					endif
 					set i = i + 1
 				endloop
+				debug call Print("From zone: " + zone)
 				set cache = null
 			endif
 		endmethod
@@ -208,16 +223,17 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local string loadPath = thistype.currentSaveGamePath(newMap)
 			local string nextLevelPath = thistype.mapPath(newMap)
 			debug call Print("Before storing characters")
-			call thistype.storeCharactersSinglePlayer()
+			call ForForce(bj_FORCE_PLAYER[0], function thistype.storeCharactersSinglePlayer) // New Op Limit
 			debug call Print("Saving map as " + savePath)
 			debug call Print("Load game path: " + loadPath)
+			call SaveGame(savePath)
 			
 			if (SaveGameExists(loadPath)) then
 				debug call Print("Loading game since it exists.")
-				call SaveAndLoadGameBJ(savePath, loadPath, false)
+				call LoadGame(loadPath, false)
 			else
 				debug call Print("Change map to " + nextLevelPath)
-				call SaveAndChangeLevelBJ(savePath, nextLevelPath, false)
+				call ChangeLevel(nextLevelPath, false)
 			endif
 		endmethod
 		
@@ -242,7 +258,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		endmethod
 		
 		private static method triggerConditionSave takes nothing returns boolean
-			return bj_isSinglePlayer and Game.isCampaign.evaluate()
+			// Only copy all save games if the game is saved under a different file name and it is the singleplayer campaign
+			return bj_isSinglePlayer and Game.isCampaign.evaluate() and thistype.m_currentSaveGame != GetSaveBasicFilename()
 		endmethod
 		
 		/**
@@ -250,6 +267,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 */
 		private static method triggerActionSave takes nothing returns nothing
 			local string zoneName = null
+			local string zoneSaveGame = null
+			local string zoneTargetSaveGame = null
 			local AStringVector zoneNames = Zone.zoneNames.evaluate()
 			local integer i = 0
 			// Remove existing zones directory if a savegame already existed with the same name, otherwise old zone save games will remain.
@@ -257,13 +276,15 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// Copy savegames for all zones into the new directory. Consider that every map needs ALL zones therefore. Disable unused zones in the map.
 			loop
 				exitwhen (i == zoneNames.size())
-				set zoneName = thistype.currentSaveGamePath(zoneNames[i])
-				if (SaveGameExists(zoneName)) then
-					debug call Print("Copying: " + zoneName)
-					debug call Print("To: " + thistype.saveGamePath(GetSaveBasicFilename(), zoneName))
-					call CopySaveGame(zoneName, thistype.saveGamePath(GetSaveBasicFilename(), zoneName))
+				set zoneName = zoneNames[i]
+				set zoneSaveGame = thistype.currentSaveGamePath(zoneName)
+				if (SaveGameExists(zoneSaveGame)) then
+					set zoneTargetSaveGame = thistype.saveGamePath(GetSaveBasicFilename(), zoneName)
+					debug call Print("Copying: " + zoneSaveGame)
+					debug call Print("To: " + zoneTargetSaveGame)
+					call CopySaveGame(zoneSaveGame, zoneTargetSaveGame)
 				debug else
-					debug call Print("Missing: " + zoneName)
+					debug call Print("Missing: " + zoneSaveGame)
 				endif
 				set i = i + 1
 			endloop

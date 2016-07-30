@@ -457,7 +457,7 @@ endif
 			call this.updateGrimoireAfterPassiveTransformation()
 			
 			set this.m_isMorphed = false
-			debug call this.print("RESTORED")
+			debug call Print("RESTORED")
 			
 			return true
 		endmethod
@@ -522,6 +522,10 @@ endif
 		 */
 		public method setCameraTimer takes boolean enabled returns nothing
 			if (enabled and this.isViewEnabled()) then
+				return
+			endif
+			if (enabled and this.m_cameraTimerEnabled) then
+				debug call this.print("Enabling camera timer twice!")
 				return
 			endif
 			set this.m_cameraTimerEnabled = enabled

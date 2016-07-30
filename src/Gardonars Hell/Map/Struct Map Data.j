@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapFellows
+library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapFellows, MapQuests
 
 	struct MapData extends MapDataInterface
 		public static constant string mapName = "GardonarsHell0.8"
@@ -143,8 +143,10 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				set i = i + 1
 			endloop
 			
-			//call initMapPrimaryQuests()
-			//call initMapSecundaryQuests()
+			call initMapPrimaryQuests()
+			call initMapSecundaryQuests()
+			
+			call SuspendTimeOfDay(false)
 			
 			call thistype.startAfterIntro.evaluate()
 		endmethod

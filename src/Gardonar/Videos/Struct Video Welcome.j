@@ -27,6 +27,10 @@ library StructMapVideosVideoWelcome requires Asl, StructGameGame, StructMapMapNp
 				return
 			endif
 			
+			call Game.fadeOutWithWait()
+			call CameraSetupApplyForceDuration(gg_cam_welcome_1, true, 0.00)
+			call Game.fadeInWithWait()
+			
 			call TransmissionFromUnitWithName(this.unitActor(this.m_actorGardonar), tre("Gardonar", "Gardonar"), tr("Dies ist Deranor der Schreckliche, der Herr der Untoten. Ihm seid ihr ja bereits begegnet. Er freut sich euch wiederzusehen."), null)
 			
 			if (wait(GetSimpleTransmissionDuration(null))) then

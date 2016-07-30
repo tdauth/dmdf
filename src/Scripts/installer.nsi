@@ -44,6 +44,7 @@ Section "German Maps" GermanMaps
   SetOutPath "$INSTDIR\Maps\The Power of Fire\de"
   File "${INPUT_DIR}\de\Talras${VERSION}.w3x"
   File "${INPUT_DIR}\de\Gardonar${VERSION}.w3x"
+  File "${INPUT_DIR}\de\GardonarsHell${VERSION}.w3x"
   File "${INPUT_DIR}\de\Holzbruck${VERSION}.w3x"
   File "${INPUT_DIR}\de\Arena${VERSION}.w3x"
 SectionEnd

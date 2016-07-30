@@ -785,8 +785,6 @@ endif
 
 
 			//call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
-
-			call Character.addSkillGrimoirePointsToAll(MapData.startSkillPoints)
 			
 			// apply initial camera bounds
 			call thistype.resetCameraBounds()

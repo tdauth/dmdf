@@ -944,6 +944,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 		endmethod
 		
 		private static method onCheatActionLoadTalras takes ACheat cheat returns nothing
+			debug call Print("Loading Talras")
 			call LoadGame("TPoF\\Campaign The Power of Fire shit\\Talras0.8.w3z", false)
 		endmethod
 		

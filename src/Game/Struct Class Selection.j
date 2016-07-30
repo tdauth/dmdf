@@ -146,7 +146,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				set i = i + 1
 			endloop
 			
+			// Is no repick which means it is the first class selection in the beginning of the game.
 			if (not thistype.m_gameStarted) then
+				// Initial skill points depend on the map.
+				call character.grimoire().addSkillPoints.evaluate(MapData.startSkillPoints)
 				if (not last) then
 					debug call Print("Do not start the game")
 					call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
@@ -157,6 +160,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 					call MapData.onSelectClass(character, class, last)
 					call thistype.startGame()
 				endif
+			// Is a repick.
 			else
 				call character.setMovable(true)
 				call MapData.onSelectClass(character, class, last)
