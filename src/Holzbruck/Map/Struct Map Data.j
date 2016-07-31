@@ -177,6 +177,15 @@ library StructMapMapMapData requires Asl, StructGameGame
 			return GetRectCenterY(gg_rct_start_talras)
 		endmethod
 		
+		/// Required by \ref MapChanger.
+		public static method restoreStartFacing takes integer index, string zone returns real
+			if (zone == "GardonarsHell" + Game.gameVersion) then
+				return 270.0
+			endif
+			
+			return 180.0
+		endmethod
+		
 		/**
 		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
 		 */

@@ -201,6 +201,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			return GetRectCenterY(gg_rct_start_hell)
 		endmethod
 		
+		/// Required by \ref MapChanger.
+		public static method restoreStartFacing takes integer index, string zone returns real
+			return 90.0
+		endmethod
+		
 		/**
 		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
 		 */

@@ -206,7 +206,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				loop
 					exitwhen (i == MapData.maxPlayers)
 					if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING) then
-						call thistype.restoreCharacterSinglePlayer(cache, Player(i), MapData.restoreStartX.evaluate(i, zone), MapData.restoreStartY.evaluate(i, zone), 0.0)
+						call thistype.restoreCharacterSinglePlayer(cache, Player(i), MapData.restoreStartX.evaluate(i, zone), MapData.restoreStartY.evaluate(i, zone), MapData.restoreStartFacing.evaluate(i, zone))
 					endif
 					set i = i + 1
 				endloop

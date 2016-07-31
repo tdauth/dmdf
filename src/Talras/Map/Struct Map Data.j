@@ -493,6 +493,15 @@ endif
 			return GetRectCenterY(gg_rct_start_holzbruck)
 		endmethod
 		
+		/// Required by \ref MapChanger.
+		public static method restoreStartFacing takes integer index, string zone returns real
+			if (zone == "Gardonar" + Game.gameVersion) then
+				return 180.0
+			endif
+			
+			return 270.0
+		endmethod
+		
 		/**
 		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
 		 */

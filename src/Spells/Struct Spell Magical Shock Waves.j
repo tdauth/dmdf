@@ -87,10 +87,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 		private static sound castSound
 		
 		private static method filter takes nothing returns boolean
-			local unit filterUnit = GetFilterUnit()
-			local boolean result = not IsUnitDeadBJ(filterUnit) and not IsUnitType(filterUnit, UNIT_TYPE_MECHANICAL) // don't include mechanical boxes
-			set filterUnit = null
-			return result
+			return not IsUnitDeadBJ(GetFilterUnit()) and not IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) // don't include mechanical boxes
 		endmethod
 		
 		/**

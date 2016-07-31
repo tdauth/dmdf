@@ -163,6 +163,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call Fellows.ricman().shareWithAll()
 			call Fellows.dragonSlayer().shareWithAll()
 
+			call QuestHell.quest().enable()
+			
 			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 			
 			// execute because of trigger sleep action
@@ -195,6 +197,15 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			endif
 			
 			return GetRectCenterY(gg_rct_start_holzbruck)
+		endmethod
+		
+		/// Required by \ref MapChanger.
+		public static method restoreStartFacing takes integer index, string zone returns real
+			if (zone == "Gardonar" + Game.gameVersion) then
+				return 90.0
+			endif
+			
+			return 270.0
 		endmethod
 		
 		/**
