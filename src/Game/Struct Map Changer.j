@@ -215,6 +215,21 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			endif
 		endmethod
 		
+		private static method forGroupBanMagic takes unit whichUnit returns nothing
+			if (IsUnitType(whichUnit, UNIT_TYPE_SUMMONED)) then
+				call RemoveUnit(whichUnit)
+			else
+				call UnitRemoveBuffsBJ(bj_REMOVEBUFFS_ALL, whichUnit)
+			endif
+		endmethod
+		
+		private static method removeBuffsAndSummonedUnits takes nothing returns nothing
+			local AGroup whichGroup = AGroup.create()
+			call whichGroup.addUnitsInRect(GetPlayableMapRect(), null)
+			call whichGroup.forGroup(thistype.forGroupBanMagic)
+			call whichGroup.destroy()
+		endmethod
+		
 		/**
 		 * Changes map to \p newMap and saves the current map.
 		 */
@@ -223,6 +238,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local string loadPath = thistype.currentSaveGamePath(newMap)
 			local string nextLevelPath = thistype.mapPath(newMap)
 			debug call Print("Before storing characters")
+			// removing buffs and summoned units is also done in the Bonus Campaign, probably it indicates the elapsed time after a transition
+			call ForForce(bj_FORCE_PLAYER[0], function thistype.removeBuffsAndSummonedUnits)
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.storeCharactersSinglePlayer) // New Op Limit
 			debug call Print("Saving map as " + savePath)
 			debug call Print("Load game path: " + loadPath)

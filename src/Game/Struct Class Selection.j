@@ -183,7 +183,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call UnitAddAbility(character.unit(), 'A13E')
 			call UnitMakeAbilityPermanent(character.unit(), true, 'A13E')
 			
-			call AddUnitOcclusion(character.unit())
 			call character.revival().setTime(MapData.revivalTime)
 		endmethod
 		
@@ -212,6 +211,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			elseif (class == Classes.necromancer()) then
 				call SpellAncestorPact.create(character)
 				call SpellConsume.create(character)
+				call SpellDamnation.create(character)
 				call SpellDarkServant.create(character)
 				call SpellDarkSpell.create(character)
 				call SpellDeathHerald.create(character)
@@ -244,6 +244,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellBlock.create(character)
 				call SpellConcentration.create(character)
 				call SpellLivingWill.create(character)
+				call SpellPowerOfShrines.create(character)
 				call SpellResolution.create(character)
 				call SpellRigidity.create(character)
 				call SpellRush.create(character)

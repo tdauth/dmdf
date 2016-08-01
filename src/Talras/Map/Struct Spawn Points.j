@@ -716,14 +716,18 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set thistype.m_deathAngel = SpawnPoint.create()
 			set index = thistype.m_deathAngel.addUnitWithType(gg_unit_n02K_0160, 1.0)
 			call thistype.m_deathAngel.addNewItemType(index, 'I05B', 1.0)
+			call thistype.m_deathAngel.addNewItemType(index, 'I02Q', 1.0)
 			set index = thistype.m_deathAngel.addUnitWithType(gg_unit_n00Y_0185, 1.0)
 			set index = thistype.m_deathAngel.addUnitWithType(gg_unit_n00Y_0184, 1.0)
 			set index = thistype.m_deathAngel.addUnitWithType(gg_unit_n00Y_0183, 1.0)
 
 			set thistype.m_boneDragons = SpawnPoint.create()
 			set index = thistype.m_boneDragons.addUnitWithType(gg_unit_n024_0033, 1.0)
+			call thistype.m_boneDragons.addNewItemType(index, 'I05I', 1.0)
 			set index = thistype.m_boneDragons.addUnitWithType(gg_unit_n024_0032, 1.0)
+			call thistype.m_boneDragons.addNewItemType(index, 'I05I', 1.0)
 			set index = thistype.m_boneDragons.addUnitWithType(gg_unit_n024_0031, 1.0)
+			call thistype.m_boneDragons.addNewItemType(index, 'I05I', 1.0)
 			
 			set thistype.m_witch0 = SpawnPoint.create()
 			set index = thistype.m_witch0.addUnitWithType(gg_unit_h00F_0242, 1.0)

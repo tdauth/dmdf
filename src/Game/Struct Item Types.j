@@ -283,9 +283,15 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_ringOfDexterity
 		private static ItemType m_ringOfLoyality
 		private static ItemType m_amuletFromTalras
-		
 		// death vault drops
 		private static ItemType m_deathScythe
+		
+		// map Gardonar
+		private static ItemType m_demonicShoulderPlate
+		private static ItemType m_demonicFireBow
+		
+		// map Gardonar's Hell
+		private static ItemType m_tridentOfTheDevil
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -692,6 +698,22 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_deathScythe = ItemType.create('I05B', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_deathScythe.addAbility('A17K', true)
 			call thistype.m_deathScythe.addAbility('A1DQ', true)
+			
+			// Gardonar
+			
+			// demonic shoulder plate
+			set thistype.m_demonicShoulderPlate = ItemType.create('I06W', ItemType.equipmentTypeArmour, 0, 0, 0, 0, 0)
+			call thistype.m_demonicShoulderPlate.addAbility('A1Q7', true)
+			call thistype.m_demonicShoulderPlate.addAbility('A1Q8', true)
+						
+			set thistype.m_demonicFireBow = RangeItemType.createSimpleRange('I06Y', AItemType.equipmentTypePrimaryWeapon)
+			call thistype.m_demonicFireBow.addAbility('A1QB', true)
+			
+			// Gardonar's Hell
+			// trident of the devil
+			set thistype.m_tridentOfTheDevil = ItemType.create('I06X', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_tridentOfTheDevil.addAbility('A1QA', true)
+			call thistype.m_tridentOfTheDevil.addAbility('A1Q9', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType

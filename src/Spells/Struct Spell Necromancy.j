@@ -24,7 +24,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 				 * While the spell is canceled if alreay 6 minions exist it might be that the spell summons more than one minion and therefore the limit is reached.
 				 * In this case the longest existing minions are killed and therefore replaced.
 				 */
-				if (this.m_units.units().size() == thistype.maxUnits) then
+				if (this.m_units.units().size() >= thistype.maxUnits) then
 					call KillUnit(this.m_units.units()[0])
 					set this.m_units.units()[0] = GetSummonedUnit()
 				else

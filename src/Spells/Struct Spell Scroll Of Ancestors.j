@@ -38,11 +38,16 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 			return not IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) and GetOwningPlayer(GetFilterUnit()) != MapData.neutralPassivePlayer
 		endmethod
 		
+		private static method removeEffect takes effect whichEffect returns nothing
+			call DestroyEffect(whichEffect)
+		endmethod
+		
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local AGroup whichGroup = AGroup.create()
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
 			local effect targetEffect = AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, GetSpellTargetX(), GetSpellTargetY())
+			local AEffectVector casterEffects = AEffectVector.create()
 			local integer i = 0
 			debug call Print("Spell Scroll Of The Realm!")
 			call whichGroup.addUnitsInRange(GetUnitX(caster), GetUnitY(caster), 700.0, Filter(function thistype.filter))
@@ -65,6 +70,7 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 			set i = 0
 			loop
 				exitwhen (i == 12 or i == whichGroup.units().size())
+				call casterEffects.pushBack(AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest"))
 				call SetUnitPosition(whichGroup.units()[i], GetSpellTargetX(), GetSpellTargetY())
 				set i = i + 1
 			endloop
@@ -79,6 +85,8 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 			set casterEffect = null
 			call DestroyEffect(targetEffect)
 			set targetEffect = null
+			call casterEffects.forEach(thistype.removeEffect)
+			call casterEffects.destroy()
 		endmethod
 
 		public static method create takes Character character returns thistype

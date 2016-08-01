@@ -132,6 +132,9 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		private static trigger m_talkHintTrigger
 		private static boolean array m_talkHintShown[12]
 		
+		private static region m_deranorsDungeonHintRegion
+		private static trigger m_deranorsDungeonHintTrigger
+		
 		private static trigger m_giantDeathTrigger
 		
 		// Zones which can be reached directly from this map.
@@ -178,6 +181,14 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		private static method triggerActionTalkHint takes nothing returns nothing
 			call Character(ACharacter.getCharacterByUnit(GetTriggerUnit())).displayHint(tre("Schicken Sie Ihren Charakter in die Nähe einer Person, um diese anzusprechen. Klicken Sie dazu auf die Person und wählen Sie \"Person ansprechen\" aus.", "Send your character near a person to speak to the person. For that click on the person and select \"Speak to person\"."))
 			set thistype.m_talkHintShown[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = true
+		endmethod
+		
+		private static method triggerConditionDeranorsDungeonHint takes nothing returns boolean
+			return ACharacter.isUnitCharacter(GetTriggerUnit()) and not WaygateIsActive(gg_unit_n02I_0264)
+		endmethod
+		
+		private static method triggerActionDeranorsDungeonHint takes nothing returns nothing
+			call Character(ACharacter.getCharacterByUnit(GetTriggerUnit())).displayHint(tre("Der Zugang zur Gruft ist momentan verschlossen.", "The entry to the tomb is currently closed."))
 		endmethod
 		
 		private static method triggerConditionGiantDeath takes nothing returns boolean
@@ -266,6 +277,13 @@ endif
 			call TriggerRegisterEnterRegion(thistype.m_talkHintTrigger, thistype.m_talkHintRegion, null)
 			call TriggerAddCondition(thistype.m_talkHintTrigger, Condition(function thistype.triggerConditionTalkHint))
 			call TriggerAddAction(thistype.m_talkHintTrigger, function thistype.triggerActionTalkHint)
+			
+			set thistype.m_deranorsDungeonHintTrigger = CreateTrigger()
+			set thistype.m_deranorsDungeonHintRegion = CreateRegion()
+			call RegionAddRect(thistype.m_deranorsDungeonHintRegion, gg_rct_hint_deranors_dungeon)
+			call TriggerRegisterEnterRegion(thistype.m_deranorsDungeonHintTrigger, thistype.m_deranorsDungeonHintRegion, null)
+			call TriggerAddCondition(thistype.m_deranorsDungeonHintTrigger, Condition(function thistype.triggerConditionDeranorsDungeonHint))
+			call TriggerAddAction(thistype.m_deranorsDungeonHintTrigger, function thistype.triggerActionDeranorsDungeonHint)
 			
 			set thistype.m_giantDeathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_giantDeathTrigger, EVENT_PLAYER_UNIT_DEATH)

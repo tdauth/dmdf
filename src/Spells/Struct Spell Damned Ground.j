@@ -117,7 +117,7 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 			call this.addGrimoireEntry('A1HN', 'A1HS')
 			call this.addGrimoireEntry('A1HO', 'A1AT')
 			call this.addGrimoireEntry('A1HP', 'A1AU')
-			call this.addGrimoireEntry('A1AQ', 'A1AV')
+			call this.addGrimoireEntry('A1HQ', 'A1HV')
 
 			return this
 		endmethod
