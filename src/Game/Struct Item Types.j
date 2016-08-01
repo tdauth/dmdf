@@ -45,6 +45,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_twoSlotItems.pushBack('I04T')
 			call thistype.m_twoSlotItems.pushBack('I05B')
 			call thistype.m_twoSlotItems.pushBack('I05C')
+			call thistype.m_twoSlotItems.pushBack('I06Y')
 		endmethod
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype

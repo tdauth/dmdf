@@ -23,6 +23,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		// Zones which can be reached directly from this map.
 		private static Zone m_zoneTalras
 		private static Zone m_zoneGardonarsHell
+		// Multiplayer only
+		private static trigger m_winTrigger
 		
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -31,6 +33,13 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
+		endmethod
+		
+		private static method triggerConditionWin takes nothing returns boolean
+			if (GetOwningPlayer(GetTriggerUnit()) == GetLocalPlayer()) then
+				call EndGame(true)
+			endif
+			return false
 		endmethod
 		
 		/// Required by \ref Game.
@@ -46,6 +55,13 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			
 			set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
 			set thistype.m_zoneGardonarsHell = Zone.create("GardonarsHell" + Game.gameVersion, gg_rct_zone_gardonars_hell)
+			
+			// in single player campaigns the player can continue the game in the next level
+			if (not bj_isSinglePlayer or not Game.isCampaign.evaluate()) then
+				set thistype.m_winTrigger = CreateTrigger()
+				call TriggerRegisterEnterRectSimple(thistype.m_winTrigger, gg_rct_zone_gardonars_hell)
+				call TriggerAddCondition(thistype.m_winTrigger, Condition(function thistype.triggerConditionWin))
+			endif
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod

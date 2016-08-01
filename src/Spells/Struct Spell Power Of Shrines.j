@@ -67,9 +67,9 @@ library StructSpellsSpellPowerOfShrines requires Asl, StructGameClasses, StructG
 				endloop
 				
 				// the damage depends on the number of discovered shrines and the map size 
-				set mapSize = (((GetRectMaxX(GetPlayableMapRect()) - GetRectMinX(GetPlayableMapRect())) * (GetRectMaxY(GetPlayableMapRect()) - GetRectMinY(GetPlayableMapRect()))) * 0.0000001)
+				set mapSize = (((GetRectMaxX(GetPlayableMapRect()) - GetRectMinX(GetPlayableMapRect())) * (GetRectMaxY(GetPlayableMapRect()) - GetRectMinY(GetPlayableMapRect()))) * 0.00000001)
 				debug call Print("Map size: " + R2S(mapSize))
-				set damage = (I2R(dynamicLightings.size() + this.level()) * 10000.0) / mapSize
+				set damage = (I2R(dynamicLightings.size() + this.level()) * 100.0) / mapSize
 			
 				set i = 0
 				loop

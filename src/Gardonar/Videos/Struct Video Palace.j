@@ -41,11 +41,7 @@ library StructMapVideosVideoPalace requires Asl, StructGameGame
 			if (wait(1.50)) then
 				return
 			endif
-			// Die Wächterinnen machen sich über die Ankömmlinge lustig, lassen sie aber passieren
 			call CameraSetupApplyForceDuration(gg_cam_the_gate_4, true, 2.00)
-			if (wait(1.50)) then
-				return
-			endif
 			if (wait(3.50)) then
 				return
 			endif
