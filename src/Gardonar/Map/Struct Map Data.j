@@ -26,6 +26,10 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		// Multiplayer only
 		private static trigger m_winTrigger
 		
+		private static timer m_zombieTimer
+		private static integer m_waveCounter = 0
+		private static trigger m_zombieTrigger
+		
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
 		private static method create takes nothing returns thistype
@@ -38,6 +42,34 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		private static method triggerConditionWin takes nothing returns boolean
 			if (GetOwningPlayer(GetTriggerUnit()) == GetLocalPlayer()) then
 				call EndGame(true)
+			endif
+			return false
+		endmethod
+		
+		private static method zombieSpawn takes nothing returns nothing
+			local unit zombie = null
+			local integer i = 0
+			loop
+				exitwhen (i == 100)
+				set zombie = CreateUnit(Player(PLAYER_NEUTRAL_AGGRESSIVE), 'nzom', GetRandomReal(GetRectMinX(gg_rct_zombies), GetRectMaxX(gg_rct_zombies)), GetRandomReal(GetRectMinY(gg_rct_zombies), GetRectMaxY(gg_rct_zombies)), 0.0)
+				call SetUnitPathing(zombie, false)
+				call SetUnitAnimation(zombie, "Birth")
+				set i = i + 1
+			endloop
+			set thistype.m_waveCounter = thistype.m_waveCounter + 1
+			call StartSound(gg_snd_SoulPreservation)
+			
+			if (thistype.m_waveCounter >= 10) then
+				call PauseTimer(GetExpiredTimer())
+				call DestroyTimer(GetExpiredTimer())
+			endif
+		endmethod
+		
+		private static method triggerConditionZombies takes nothing returns boolean
+			if (ACharacter.isUnitCharacter(GetTriggerUnit())) then
+				call TimerStart(thistype.m_zombieTimer, 8.0, true, function thistype.zombieSpawn)
+				call thistype.zombieSpawn()
+				call DisableTrigger(GetTriggeringTrigger())
 			endif
 			return false
 		endmethod
@@ -62,6 +94,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				call TriggerRegisterEnterRectSimple(thistype.m_winTrigger, gg_rct_zone_gardonars_hell)
 				call TriggerAddCondition(thistype.m_winTrigger, Condition(function thistype.triggerConditionWin))
 			endif
+			
+			set thistype.m_zombieTimer = CreateTimer()
+			set thistype.m_zombieTrigger = CreateTrigger()
+			call TriggerRegisterEnterRectSimple(thistype.m_zombieTrigger, gg_rct_zombies)
+			call TriggerAddCondition(thistype.m_zombieTrigger, Condition(function thistype.triggerConditionZombies))
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod

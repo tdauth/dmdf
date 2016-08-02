@@ -309,7 +309,7 @@ Zone Transition:
 * FIXED: Skill points are not restored.
 * FIXED: Spells are missing completely in grimoire.
 * FIXED: Items are placed on the ground together with backpack changing items.
-* Changing back does not work. The savegame exists but loading does not work.
+* Changing back does not work. The savegame exists but loading does not work. Loading an invalid path (LoadGame()) does not lead to changing to the campaign screen. There is something wrong with the savegame or the state in which we call LoadGame().
 
 Mehrspielertest:
 * Wenn man Diakon tötet, Spielabsturz. Konnte nicht immer reproduziert werden. Braucht man mindestens 2 menschliche Spieler?
