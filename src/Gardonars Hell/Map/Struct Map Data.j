@@ -1,7 +1,7 @@
 library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapFellows, MapQuests
 
 	struct MapData extends MapDataInterface
-		public static constant string mapName = "GardonarsHell0.8"
+		public static constant string mapName = "GH"
 		public static constant string mapMusic = "Sound\\Music\\mp3Music\\War3XMainScreen.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
@@ -44,8 +44,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
 			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
 			
-			set thistype.m_zoneGardonar = Zone.create("Gardonar" + Game.gameVersion, gg_rct_zone_gardonar)
-			set thistype.m_zoneHolzbruck = Zone.create("Holzbruck" + Game.gameVersion, gg_rct_zone_holzbruck)
+			set thistype.m_zoneGardonar = Zone.create("GA", gg_rct_zone_gardonar)
+			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
 			
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
@@ -184,7 +184,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
-			if (zone == "Gardonar" + Game.gameVersion) then
+			if (zone == "GA") then
 				return GetRectCenterX(gg_rct_start)
 			endif
 			
@@ -193,7 +193,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartY takes integer index, string zone returns real
-			if (zone == "Gardonar" + Game.gameVersion) then
+			if (zone == "GA") then
 				return GetRectCenterY(gg_rct_start)
 			endif
 			
@@ -202,7 +202,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
-			if (zone == "Gardonar" + Game.gameVersion) then
+			if (zone == "GA") then
 				return 90.0
 			endif
 			

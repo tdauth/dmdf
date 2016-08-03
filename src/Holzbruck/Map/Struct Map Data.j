@@ -1,7 +1,7 @@
 library StructMapMapMapData requires Asl, StructGameGame
 
 	struct MapData extends MapDataInterface
-		public static constant string mapName = "Holzbruck0.8"
+		public static constant string mapName = "HB"
 		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
@@ -39,8 +39,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 			
-			set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
-			set thistype.m_zoneGardonar = Zone.create("Gardonar" + Game.gameVersion, gg_rct_zone_gardonar)
+			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
+			set thistype.m_zoneGardonar = Zone.create("GH", gg_rct_zone_gardonar)
 			
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
@@ -161,7 +161,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
-			if (zone == "GardonarsHell" + Game.gameVersion) then
+			if (zone == "GH") then
 				return GetRectCenterX(gg_rct_start_hell)
 			endif
 			
@@ -170,7 +170,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartY takes integer index, string zone returns real
-			if (zone == "GardonarsHell" + Game.gameVersion) then
+			if (zone == "GH") then
 				return GetRectCenterY(gg_rct_start_hell)
 			endif
 			
@@ -179,7 +179,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
-			if (zone == "GardonarsHell" + Game.gameVersion) then
+			if (zone == "GH") then
 				return 270.0
 			endif
 			

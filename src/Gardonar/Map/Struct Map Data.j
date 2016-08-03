@@ -1,7 +1,7 @@
 library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapQuestsQuestPalace, StructMapVideosVideoIntro
 
 	struct MapData extends MapDataInterface
-		public static constant string mapName = "Gardonar0.8"
+		public static constant string mapName = "GA"
 		public static constant string mapMusic = "Sound\\Music\\mp3Music\\War3XMainScreen.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
@@ -85,8 +85,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
 			call initMapVideos.evaluate()
 			
-			set thistype.m_zoneTalras = Zone.create("Talras" + Game.gameVersion, gg_rct_zone_talras)
-			set thistype.m_zoneGardonarsHell = Zone.create("GardonarsHell" + Game.gameVersion, gg_rct_zone_gardonars_hell)
+			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
+			set thistype.m_zoneGardonarsHell = Zone.create("GH", gg_rct_zone_gardonars_hell)
 			
 			// in single player campaigns the player can continue the game in the next level
 			if (not bj_isSinglePlayer or not Game.isCampaign.evaluate()) then
@@ -238,7 +238,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
 			debug call Print("From Zone: " + zone)
-			if (zone == "Talras" + Game.gameVersion) then
+			if (zone == "TL") then
 				return GetRectCenterX(gg_rct_start)
 			endif
 			
@@ -247,7 +247,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartY takes integer index, string zone returns real
-			if (zone == "Talras" + Game.gameVersion) then
+			if (zone == "TL") then
 				return GetRectCenterY(gg_rct_start)
 			endif
 			

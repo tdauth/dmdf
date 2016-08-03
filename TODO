@@ -310,6 +310,13 @@ Zone Transition:
 * FIXED: Spells are missing completely in grimoire.
 * FIXED: Items are placed on the ground together with backpack changing items.
 * Changing back does not work. The savegame exists but loading does not work. Loading an invalid path (LoadGame()) does not lead to changing to the campaign screen. There is something wrong with the savegame or the state in which we call LoadGame().
+* Without numbers and dots in names: start Gardonar (Temporary folder does not exist), move to Gardonars Hell, move back to Gardonar works but loading Gardonars Hell then does not work although the savegame exists. Do we have to delete the Temporary folder first? Is there an overwriting problem?! It is not Gardonar.w3z is overwritten!!! Loading overwritten Gardonar.w3z does also work!
+* There is a limit in the size of a savegame filename.
+
+http://www.hiveworkshop.com/threads/map-transition-does-not-work-when-loading-a-custom-savegame.286927/#post-3082377
+- No underscores in campaign names.
+- Shorter file names for savegames.
+- Probably no dots in savegames or campaign names.
 
 Mehrspielertest:
 * Wenn man Diakon tötet, Spielabsturz. Konnte nicht immer reproduziert werden. Braucht man mindestens 2 menschliche Spieler?

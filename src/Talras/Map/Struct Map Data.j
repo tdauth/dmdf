@@ -87,7 +87,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 
 	struct MapData extends MapDataInterface
 		/// The map name is used for zones for example to detect the map file name.
-		public static constant string mapName = "Talras0.8"
+		public static constant string mapName = "TL"
 		// Ascetic_-_06_-_Falling_into_Darkness.mp3
 		// ;Music\\mp3Music\\Pride_v002.mp3
 		/// This list of music files is set as map music during the map initialization.
@@ -289,9 +289,9 @@ endif
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_giantDeathTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(thistype.m_giantDeathTrigger, Condition(function thistype.triggerConditionGiantDeath))
 			
-			set thistype.m_zoneGardonar = Zone.create("Gardonar" + Game.gameVersion, gg_rct_zone_gardonar)
+			set thistype.m_zoneGardonar = Zone.create("GA", gg_rct_zone_gardonar)
 			call thistype.m_zoneGardonar.disable()
-			set thistype.m_zoneHolzbruck = Zone.create("Holzbruck" + Game.gameVersion, gg_rct_zone_holzbruck)
+			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
 			call thistype.m_zoneHolzbruck.disable()
 			
 			call Game.addDefaultDoodadsOcclusion()
@@ -495,7 +495,7 @@ endif
 		
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
-			if (zone == "Gardonar" + Game.gameVersion) then
+			if (zone == "GA") then
 				return GetRectCenterX(gg_rct_start_gardonar)
 			endif
 			
@@ -504,7 +504,7 @@ endif
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartY takes integer index, string zone returns real
-			if (zone == "Gardonar" + Game.gameVersion) then
+			if (zone == "GA") then
 				return GetRectCenterY(gg_rct_start_gardonar)
 			endif
 			
@@ -513,7 +513,7 @@ endif
 		
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
-			if (zone == "Gardonar" + Game.gameVersion) then
+			if (zone == "GA") then
 				return 180.0
 			endif
 			

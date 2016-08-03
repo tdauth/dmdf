@@ -67,10 +67,10 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call SetAltMinimapIcon("UI\\Minimap\\MiniMap-Entrance.blp")
 			set thistype.m_zoneNames = AStringVector.create()
 			/// All zone names of the current campaign must be added here. They have to be copied whenever the game is saved.
-			call thistype.m_zoneNames.pushBack("Talras" + Game.gameVersion)
-			call thistype.m_zoneNames.pushBack("Gardonar" + Game.gameVersion)
-			call thistype.m_zoneNames.pushBack("GardonarsHell" + Game.gameVersion)
-			call thistype.m_zoneNames.pushBack("Holzbruck" + Game.gameVersion)
+			call thistype.m_zoneNames.pushBack("TL")
+			call thistype.m_zoneNames.pushBack("GA")
+			call thistype.m_zoneNames.pushBack("GH")
+			call thistype.m_zoneNames.pushBack("HB")
 		endmethod
 		
 		public static method zoneNames takes nothing returns AIntegerVector

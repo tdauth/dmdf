@@ -140,30 +140,38 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local unit restoredUnit = null
 			local integer i = 0
 			local Spell spell = 0
+			set restoredUnit = Character.restoreUnitFromCache(cache, missionKey, whichPlayer, x, y, facing)
+			// clear the inventory before
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_INVENTORY)
+				if (UnitItemInSlot(restoredUnit, i) != null) then
+					call RemoveItem(UnitItemInSlot(restoredUnit, i))
+				endif
+				set i = i + 1
+			endloop
+			
+			// The map is started for the first time.
 			if (character == 0) then
-				set restoredUnit = Character.restoreUnitFromCache(cache, missionKey, whichPlayer, x, y, facing)
-				// clear the inventory before
-				set i = 0
-				loop
-					exitwhen (i == bj_MAX_INVENTORY)
-					if (UnitItemInSlot(restoredUnit, i) != null) then
-						call RemoveItem(UnitItemInSlot(restoredUnit, i))
-					endif
-					set i = i + 1
-				endloop
 				// use the constructor from struct Character to make sure everything is run properly
 				set character = Character.create(whichPlayer, restoredUnit, 0, 0)
 				// restores the inventory automatically
-				call character.restoreDataFromCache(cache, missionKey)
 				call ACharacter.setPlayerCharacterByCharacter(character)
-			debug else
-				debug call Print("Character is not 0!!!!!!!!!!!!!!!")
+				
+				debug call Print("Creating spells")
+				// Creates spells which are required in the grimoire etc. and adds hero glow etc.
+				call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
+				debug call Print("After spell creation")
+			// The map is laoded with an existing character in it.
+			else
+				call RemoveUnit(character.unit())
+				call character.replaceUnit(restoredUnit)
+				// TODO add grimoire abilities to the unit
+				debug call Print("Replaced character")
 			endif
 			
-			debug call Print("Creating spells")
-			// Creates spells which are required in the grimoire etc. and adds hero glow etc.
-			call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
-			debug call Print("After spell creation")
+			// Restores the inventory items etc.
+			call character.restoreDataFromCache(cache, missionKey)
 			
 			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"))
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, missionKey, "Gold"))
@@ -183,9 +191,6 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			
 			// make sure the GUI of the grimoire is correct
 			call character.grimoire().updateUi.evaluate()
-			
-			// update inventory
-			//call character.inventory().enable()
 			
 			set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", "CurrentSaveGame")
 			debug call Print("Current save game: " + thistype.m_currentSaveGame)
