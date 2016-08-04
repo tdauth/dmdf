@@ -2,6 +2,7 @@ library StructGameCommands requires Asl, StructGameCharacter
 
 	/**
 	 * \brief The first playing human player is the admin. He can use some special commands.
+	 * When the admin leaves, the next human player in the list becomes admin automatically to prevent that there is no admin.
 	 */
 	struct Commands
 		private static trigger m_leaveTrigger
@@ -13,6 +14,7 @@ library StructGameCommands requires Asl, StructGameCharacter
 		/**
 		 * One player is the administrator and has higher privileges than the other players.
 		 * He can use the admin commands.
+		 * \return Returns the current admin player.
 		 */
 		public static method adminPlayer takes nothing returns player
 			return thistype.m_adminPlayer

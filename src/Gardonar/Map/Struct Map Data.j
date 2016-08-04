@@ -50,7 +50,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			local unit zombie = null
 			local integer i = 0
 			loop
-				exitwhen (i == 100)
+				exitwhen (i == 40)
 				set zombie = CreateUnit(Player(PLAYER_NEUTRAL_AGGRESSIVE), 'nzom', GetRandomReal(GetRectMinX(gg_rct_zombies), GetRectMaxX(gg_rct_zombies)), GetRandomReal(GetRectMinY(gg_rct_zombies), GetRectMaxY(gg_rct_zombies)), 0.0)
 				call SetUnitPathing(zombie, false)
 				call SetUnitAnimation(zombie, "Birth")
@@ -257,6 +257,10 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
 			return 90.0
+		endmethod
+		
+		/// Required by \ref MapChanger.
+		public static method onRestoreCharacters takes string zone returns nothing
 		endmethod
 		
 		/**

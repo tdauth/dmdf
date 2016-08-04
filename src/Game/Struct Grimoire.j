@@ -215,6 +215,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			return this.m_learnedSpells.size()
 		endmethod
 		
+		/// \note Only use when making a map transition!
+		public method clearLearnedSpells takes nothing returns nothing
+			call this.m_learnedSpells.clear()
+		endmethod
+		
 		/**
 		 * Updates all buttons properly.
 		 * Central UI update is much easier to maintain!
@@ -964,11 +969,17 @@ endif
 			call DmdfHashTable.global().setHandleInteger(this.m_levelTrigger, 0, this)
 		endmethod
 		
+		/// Only update the UI automatically when it is no map transition. Otherwise the order has to be specified by \ref MapChanger.
+		private static method triggerConditionLoad takes nothing returns boolean
+			return not IsMapFlagSet(MAP_RELOADED)
+		endmethod
+		
 		/**
-		 * Whenever the game is loaded the spell levels of the non favorite spells are reset to one.
+		 * Updates the ability levels of all non favorite spells. The ability levels in a spellbook are lost after a load.
+		 * This is a Warcrat III bug.
+		 * Reorders the icon positions as well if possible. After a load some icon positions might be wrong. Another bug of Warcraft III.
 		 */
-		private static method triggerActionLoad takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
+		public method updateUiAfterLoad takes nothing returns nothing
 			local AIntegerVector favoriteLevels = 0
 			local integer i = 0
 			loop
@@ -1035,17 +1046,27 @@ endif
 			call this.setGrimoireAbilityToSkillPoints(this.skillPoints())
 		endmethod
 		
+		/**
+		 * Whenever the game is loaded the spell levels of the non favorite spells are reset to one.
+		 */
+		private static method triggerActionLoad takes nothing returns nothing
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
+			call this.updateUiAfterLoad()
+		endmethod
+		
 		private method createLoadTrigger takes nothing returns nothing
 			set this.m_loadTrigger = CreateTrigger()
 			call TriggerRegisterGameEvent(this.m_loadTrigger, EVENT_GAME_LOADED)
+			call TriggerAddCondition(this.m_loadTrigger, Condition(function thistype.triggerConditionLoad))
 			call TriggerAddAction(this.m_loadTrigger, function thistype.triggerActionLoad)
 			call DmdfHashTable.global().setHandleInteger(this.m_loadTrigger, 0, this)
 		endmethod
 
+		/**
+		 * Creates a new grimoire for character \p character.
+		 */
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, thistype.abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
-			//set this.m_unit = CreateUnit(character.player(), thistype.unitId, GetUnitX(character.unit()), GetUnitY(character.unit()), 0.0)
-			//call SetUnitInvulnerable(this.unit(), true)
 			set this.m_page = 0
 			set this.m_pageIsShown = false
 			set this.m_heroLevel = 1 // heroes start with level 1

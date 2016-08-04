@@ -78,8 +78,9 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		private static method triggerConditionEnter takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local ACharacter enteringCharacter = ACharacter.getCharacterByUnit(GetTriggerUnit())
-			local integer i
-			local integer charactersCount
+			local integer i = 0
+			local integer charactersCount = 0
+			debug call Print("Entering: " + GetUnitName(GetTriggerUnit()) + " character: " + I2S(enteringCharacter))
 			if (enteringCharacter != 0 and this.onCheck.evaluate()) then
 				set i = 0
 				/*
@@ -110,6 +111,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			 * Therefore it will be disabled automatically.
 			 */
 			if (this.destroyOnActivation()) then
+				debug call Print("Destroy on activation")
 				call this.cleanupRect()
 				call DisableTrigger(GetTriggeringTrigger())
 			endif

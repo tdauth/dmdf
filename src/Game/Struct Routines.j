@@ -144,7 +144,6 @@ library StructGameRoutines requires Asl
 		private static ARoutine m_leaveHouse
 		private static ARoutine m_hammer
 		private static ARoutine m_talk
-		private static ARoutine m_drink
 		private static ARoutine m_harvest
 		private static ARoutine m_splitWood
 		private static ARoutine m_sleep
@@ -299,18 +298,6 @@ library StructGameRoutines requires Asl
 			call AContinueRoutineLoop(period, thistype.talkTargetAction)
 		endmethod
 
-		private static method drinkEndAction takes ARoutinePeriod period returns nothing
-			call ResetUnitAnimation(period.unit())
-		endmethod
-
-		/// @todo FIXME
-		private static method drinkTargetAction takes NpcRoutineWithFacing period returns nothing
-			call SetUnitFacing(period.unit(), period.facing())
-			call QueueUnitAnimation(period.unit(), "Stand")
-			call TriggerSleepAction(1.0)
-			call AContinueRoutineLoop(period, thistype.drinkTargetAction)
-		endmethod
-
 		private static method harvestEndAction takes NpcRoutineWithFacing period returns nothing
 			call ResetUnitAnimation(period.unit())
 		endmethod
@@ -357,7 +344,6 @@ library StructGameRoutines requires Asl
 			set thistype.m_leaveHouse = ARoutine.create(true, false, thistype.leaveHouseCondition, 0, 0, thistype.leaveHouseTargetAction)
 			set thistype.m_hammer = ARoutine.create(true, true, 0, 0, thistype.hammerEndAction, thistype.hammerTargetAction)
 			set thistype.m_talk = ARoutine.create(true, true, 0, 0, thistype.talkEndAction, thistype.talkTargetAction)
-			set thistype.m_drink = ARoutine.create(true, true, 0, 0, thistype.drinkEndAction, thistype.drinkTargetAction)
 			set thistype.m_harvest = ARoutine.create(true, true, 0, 0, thistype.harvestEndAction, thistype.harvestTargetAction)
 			set thistype.m_splitWood = ARoutine.create(true, true, 0, 0, thistype.splitWoodEndAction, thistype.splitWoodTargetAction)
 			set thistype.m_sleep = ARoutine.create(true, true, 0, 0, thistype.sleepEndAction, thistype.sleepTargetAction)
@@ -386,10 +372,6 @@ library StructGameRoutines requires Asl
 
 		public static method talk takes nothing returns ARoutine
 			return thistype.m_talk
-		endmethod
-
-		public static method drink takes nothing returns ARoutine
-			return thistype.m_drink
 		endmethod
 
 		public static method harvest takes nothing returns ARoutine

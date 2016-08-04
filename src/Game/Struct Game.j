@@ -151,7 +151,12 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		endmethod
 	endstruct
 
+	/**
+	 * \brief The static game struct with all important global methods and attributes.
+	 * Has all the static initialization methods and relies on the static struct MapData in every map with specific methods and attributes.
+	 */
 	struct Game
+		/// The version of the current release of the modification.
 		public static constant string gameVersion = "0.8"
 	
 		private static constant real maxMoveSpeed = 522.0
@@ -235,6 +240,9 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			call AddDoodadOcclusion('D04K')
 		endmethod
 
+		/**
+		 * \return Returns the player who owns all the creeps in the map.
+		 */
 		public static method hostilePlayer takes nothing returns player
 			return Player(PLAYER_NEUTRAL_AGGRESSIVE)
 		endmethod
@@ -534,11 +542,7 @@ endif
 			set i = 0
 			loop
 				// one additional for MapData.alliedPlayer
-				exitwhen (i == MapData.maxPlayers + 1)
-				if (GetPlayerController(Player(i)) != MAP_CONTROL_NONE) then
-					set thistype.m_hiddenUnits[i] = AGroup.create()
-				endif
-				
+				exitwhen (i == MapData.maxPlayers)
 				// set allied player and neutral passive player alliance status
 				call SetPlayerAllianceStateBJ(Player(i), MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
 				call SetPlayerAllianceStateBJ(MapData.alliedPlayer, Player(i), bj_ALLIANCE_NEUTRAL)
@@ -555,13 +559,22 @@ endif
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
 			
+			set i = 0
+			loop
+				// one additional group for the allied player
+				exitwhen (i == MapData.maxPlayers + 1)
+				set thistype.m_hiddenUnits[i] = AGroup.create()
+				set i = i + 1
+			endloop
+			
 			 // dont run in map initialization already, leads to not starting the map at all (probably because of unallowed function calls or waits)
 			call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
 			call MapData.onStart.evaluate()
 			
 			// if the game is new show the class selection, otherwise restore characters from the game cache (only in campaign mode)
 			if (restoreCharacters) then
-				call MapChanger.restoreCharactersSinglePlayer()
+				// new OpLimit
+				call ForForce(bj_FORCE_PLAYER[0], function MapChanger.restoreCharactersSinglePlayer)
 				call ClassSelection.startGame.evaluate()
 			// Otherwise start the game from beginning by letting players select their class.
 			else
@@ -729,6 +742,9 @@ endif
 			call thistype.m_charactersScheme.setManaBarEmptyIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
 		endmethod
 		
+		/**
+		 * Resets the camera bounds for all human character controlling players to their current dungeon in which their character is at the moment.
+		 */
 		public static method resetCameraBounds takes nothing returns nothing
 			local player user
 			local integer i = 0
@@ -782,7 +798,6 @@ endif
 			
 			// shows only if enabled, otherwise hide
 			call Character.showCharactersSchemeToAll()
-
 
 			//call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
 			

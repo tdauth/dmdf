@@ -10,6 +10,10 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 		private Character m_character
 		private unit m_unit
 		
+		public method setUnit takes unit whichUnit returns nothing
+			set this.m_unit = whichUnit
+		endmethod
+		
 		public method unit takes nothing returns unit
 			return this.m_unit
 		endmethod
@@ -37,7 +41,7 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 				// Attack 1 - 15, no weapon
 				if (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
 					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(13, 20))
-					debug call Print("Attack without weapon")
+					//debug call Print("Attack without weapon")
 				// Attack Alternate 1 - 9, two handed sword
 				elseif (false) then
 					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(27, 29))
@@ -45,27 +49,27 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 				// basically this should be already provided by the animation tag "defend"
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
 					call SetUnitAnimationByIndex(GetAttacker(), 112)
-					debug call Print("Attack with buckler")
+					//debug call Print("Attack with buckler")
 				// Attack throw 6 - 7, bow
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsBow.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
 					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(122, 123))
-					debug call Print("Attack with bow")
+					//debug call Print("Attack with bow")
 				// throwing spear
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsThrowingSpear.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
 					call SetUnitAnimationByIndex(GetAttacker(), 118) //  119
-					debug call Print("Attack with a throwing spear")
+					//debug call Print("Attack with a throwing spear")
 				// attacking with spear in melee
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsMeleeSpear.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
 					call SetUnitAnimationByIndex(GetAttacker(), 117)
-					debug call Print("Attack with spear in melee")
+					//debug call Print("Attack with spear in melee")
 				// attacking with two handed lance
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedLance.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
 					call SetUnitAnimationByIndex(GetAttacker(), 61)
-					debug call Print("Attack with two handed lance")
+					//debug call Print("Attack with two handed lance")
 				// attacking with two handed hammer
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedHammer.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
 					call SetUnitAnimationByIndex(GetAttacker(), 62)
-					debug call Print("Attack with two handed hammer")
+					//debug call Print("Attack with two handed hammer")
 				// attack with a weapon in each hand -> no buckler in right hand
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
 					// attack either with left or right hand TODO animation for both hands?
@@ -80,7 +84,7 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 					call values.pushBack(26)
 					call SetUnitAnimationByIndex(GetAttacker(), values.random())
 					call values.destroy()
-					debug call Print("Attack with two weapons")
+					//debug call Print("Attack with two weapons")
 				// Attack with one left handed weapon
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
 					set values = AIntegerVector.create()
@@ -90,7 +94,7 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 					call values.pushBack(25)
 					call SetUnitAnimationByIndex(GetAttacker(), values.random())
 					call values.destroy()
-					debug call Print("Attack with one left handed weapon")
+					//debug call Print("Attack with one left handed weapon")
 				// Attack with one right handed weapon
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
 					set values = AIntegerVector.create()
@@ -100,7 +104,7 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 					call values.pushBack(26)
 					call SetUnitAnimationByIndex(GetAttacker(), values.random())
 					call values.destroy()
-					debug call Print("Attack with one right handed weapon")
+					//debug call Print("Attack with one right handed weapon")
 				debug else
 					debug call Print("Unknown attack style! Implement animation!")
 				endif
@@ -366,6 +370,10 @@ endif
 		public method setShowCharactersScheme takes boolean showCharactersScheme returns nothing
 			set this.m_showCharactersScheme = showCharactersScheme
 			call this.showCharactersSchemeToPlayer()
+		endmethod
+		
+		public stub method onReplaceUnit takes unit oldUnit, unit newUnit returns nothing
+			call this.m_orderAnimations.setUnit(newUnit)
 		endmethod
 		
 		public stub method onRevival takes nothing returns nothing

@@ -15,15 +15,18 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 	 * \note Whenever the game is saved in single player campaign mode the save game name is kept and all zone save games are copied to a folder with that savegame name. So the player does always save all zones, too when saving the game. Otherwise the savegames of the zones would be lost. This is the way the Bonus Campaign handles this, too. The savegame name is also stored in the gamecache and passed to every zone.
 	 */
 	struct MapChanger
+		/// The name of the gamecache which is used for storing all character data.
 		public static constant string gameCacheName = "TPoF.w3v"
 		/// In a custom campaign no subfolder is used for maps.
 		public static constant string mapFolder = ""
 		/// All map change save games will be saved into this folder.
 		public static constant string zonesFolder = "TPoF"
-		/// All zone save games come to this folder which do not belong to a savegame name. This folder has to be cleared whenever the game ends or is saved under a custom savegame name. Since the ending event cannot be captured the temporary folder is cleared whenever a new campaign is started from the first chapter.
+		/// All zone save games come to this folder which do not belong to a savegame name. This folder has to be cleared whenever the game ends or is started newly. Since the ending event cannot be captured the temporary folder is cleared whenever a new campaign is started from the first chapter.
 		public static constant string temporaryFolder = "Temporary"
-		private static trigger m_loadTrigger
-		private static trigger m_saveTrigger
+		private static trigger m_loadTriggerTransition
+		private static trigger m_loadTriggerUser
+		private static trigger m_saveTriggerUser
+		/// Stores the savegame name whenever the user saves the game. A directory is created with the same name which has a backup of all the zone savegames.
 		private static string m_currentSaveGame = null
 		
 		/**
@@ -59,6 +62,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 */
 		private static method currentSaveGamePath takes string mapName returns string
 			return thistype.saveGamePath(thistype.m_currentSaveGame, mapName)
+		endmethod
+		
+		private static method temporarySaveGamePath takes string mapName returns string
+			return thistype.saveGamePath("", mapName)
 		endmethod
 		
 		private static method playerMissionKey takes player whichPlayer returns string
@@ -136,6 +143,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		
 		private static method restoreCharacterSinglePlayer takes gamecache cache, player whichPlayer, real x, real y, real facing returns nothing
 			local Character character = Character(ACharacter.playerCharacter(whichPlayer))
+			local boolean createCompletelyNewCharacter = character == 0
 			local string missionKey = thistype.playerMissionKey(whichPlayer)
 			local unit restoredUnit = null
 			local integer i = 0
@@ -152,48 +160,60 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			endloop
 			
 			// The map is started for the first time.
-			if (character == 0) then
+			if (createCompletelyNewCharacter) then
 				// use the constructor from struct Character to make sure everything is run properly
 				set character = Character.create(whichPlayer, restoredUnit, 0, 0)
-				// restores the inventory automatically
+				// set the player character for the first time
 				call ACharacter.setPlayerCharacterByCharacter(character)
-				
+			// The map is laoded with an existing character in it.
+			else
+				call AHashTable.global().flushHandle(character.unit())
+				call RemoveUnit(character.unit())
+				call character.replaceUnit(restoredUnit)
+				// Reset all grimoire spells to reskill them afterwards with the total skill points. Besides the spells have to be removed from the skilled spells in grimoire.
+				debug call Print("Setting spells to level 0: " + I2S(character.grimoire().spells()))
+				call character.grimoire().clearLearnedSpells()
+				call character.grimoire().favourites().clear()
+			endif
+			
+			// Restores the class, inventory items etc.
+			call character.restoreDataFromCache(cache, missionKey)
+			
+			// Create spells only when the class is set, otherwise the grimoire stays empty.
+			if (createCompletelyNewCharacter) then
 				debug call Print("Creating spells")
 				// Creates spells which are required in the grimoire etc. and adds hero glow etc.
 				call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
-				debug call Print("After spell creation")
-			// The map is laoded with an existing character in it.
-			else
-				call RemoveUnit(character.unit())
-				call character.replaceUnit(restoredUnit)
-				// TODO add grimoire abilities to the unit
-				debug call Print("Replaced character")
+				debug call Print("After spell creation classes")
 			endif
-			
-			// Restores the inventory items etc.
-			call character.restoreDataFromCache(cache, missionKey)
 			
 			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"))
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, missionKey, "Gold"))
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_LUMBER, GetStoredInteger(cache, missionKey, "Lumber"))
 			
-			debug call Print("Restoring spell levels")
+			debug call Print("Restoring spell levels: " + I2S(character.grimoire().spells()) + " with character spells: " + I2S(character.spellCount()))
 			// load the grimoire levels
 			set i = 0
 			loop
 				exitwhen (i == character.grimoire().spells())
 				set spell = character.grimoire().spell(i)
-				// reset OpLimit, otherwise OpLimit will be reached very fast
+				// use new OpLimit, otherwise OpLimit will be reached very fast
 				call thistype.restoreGrimoireSpellLevel.evaluate(character, cache, missionKey, i, "Grimoire" + I2S(spell.ability()))
 				set i = i + 1
 			endloop
-			debug call Print("After restoing spell levels")
+			debug call Print("After restoring spell levels")
 			
 			// make sure the GUI of the grimoire is correct
 			call character.grimoire().updateUi.evaluate()
+			// TODO updateUiAfterLoad()???
 			
-			set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", "CurrentSaveGame")
-			debug call Print("Current save game: " + thistype.m_currentSaveGame)
+			debug call Print("After updating Grimoire UI")
+			
+			call SetUnitLifePercentBJ(restoredUnit, 100.0)
+			call SetUnitManaPercentBJ(restoredUnit, 100.0)
+			call SelectUnitForPlayerSingle(restoredUnit, whichPlayer)
+			debug call Print("After selecting character " + GetUnitName(restoredUnit) + " for player " + GetPlayerName(whichPlayer))
+			call SetCameraPositionForPlayer(whichPlayer, GetUnitX(restoredUnit), GetUnitY(restoredUnit))
 		endmethod
 		
 		private static method restoreGrimoireSpellLevel takes Character character, gamecache cache, string missionKey, integer spellIndex, string key returns nothing
@@ -206,7 +226,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local integer i = 0
 			if (ReloadGameCachesFromDisk()) then
 				set cache = InitGameCache(thistype.gameCacheName)
-				set zone = GetStoredString(cache, "Zone", "Zone") // the zone from which they come, this helps to place the character at the correct position
+				// the zone from which they come, this helps to place the character at the correct position
+				set zone = GetStoredString(cache, "Zone", "Zone")
+				// the current save game which is used as folder name for all zone savegames
+				set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", "CurrentSaveGame")
 				set i = 0
 				loop
 					exitwhen (i == MapData.maxPlayers)
@@ -216,6 +239,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 					set i = i + 1
 				endloop
 				debug call Print("From zone: " + zone)
+				debug call Print("Current save game: " + thistype.m_currentSaveGame)
+				call MapData.onRestoreCharacters.evaluate(zone)
 				set cache = null
 			endif
 		endmethod
@@ -239,19 +264,19 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 * Changes map to \p newMap and saves the current map.
 		 */
 		private static method changeMapSinglePlayer takes string oldMap, string newMap returns nothing
-			local string savePath = thistype.currentSaveGamePath(oldMap)
-			local string loadPath = thistype.currentSaveGamePath(newMap)
+			local string savePath = thistype.temporarySaveGamePath(oldMap)
+			local string loadPath = thistype.temporarySaveGamePath(newMap)
 			local string nextLevelPath = thistype.mapPath(newMap)
 			debug call Print("Before storing characters")
 			// removing buffs and summoned units is also done in the Bonus Campaign, probably it indicates the elapsed time after a transition
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.removeBuffsAndSummonedUnits)
+			call ForForce(bj_FORCE_PLAYER[0], function thistype.removeBuffsAndSummonedUnits) // New Op Limit
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.storeCharactersSinglePlayer) // New Op Limit
 			debug call Print("Saving map as " + savePath)
 			debug call Print("Load game path: " + loadPath)
 			call SaveGame(savePath)
 			
 			if (SaveGameExists(loadPath)) then
-				debug call Print("Loading game since it exists.")
+				debug call Print("Loading game since it exists: " + loadPath)
 				call LoadGame(loadPath, false)
 			else
 				debug call Print("Change map to " + nextLevelPath)
@@ -270,24 +295,52 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			endif
 		endmethod
 		
-		private static method triggerConditionLoad takes nothing returns boolean
+		private static method triggerConditionLoadTransition takes nothing returns boolean
 			return IsMapFlagSet(MAP_RELOADED) and bj_isSinglePlayer and Game.isCampaign.evaluate()
 		endmethod
 		
-		private static method triggerActionLoad takes nothing returns nothing
+		private static method triggerActionLoadTransition takes nothing returns nothing
 			call thistype.restoreCharactersSinglePlayer()
-			debug call Print("Restored characters")
+			debug call Print("Restored characters on loading the map in map transition")
 		endmethod
 		
-		private static method triggerConditionSave takes nothing returns boolean
-			// Only copy all save games if the game is saved under a different file name and it is the singleplayer campaign
-			return bj_isSinglePlayer and Game.isCampaign.evaluate() and thistype.m_currentSaveGame != GetSaveBasicFilename()
+		private static method triggerConditionLoadUser takes nothing returns boolean
+			return not IsMapFlagSet(MAP_RELOADED) and bj_isSinglePlayer and Game.isCampaign.evaluate()
+		endmethod
+		
+		/// Copy all to the temporary folder.
+		private static method triggerActionLoadUser takes nothing returns nothing
+			local string zoneName = null
+			local string zoneSaveGame = null
+			local string zoneTargetSaveGame = null
+			local AStringVector zoneNames = Zone.zoneNames.evaluate()
+			local integer i = 0
+			call RemoveSaveDirectory(thistype.temporaryFolder)
+			set i = 0
+			loop
+				exitwhen (i == zoneNames.size())
+				set zoneName = zoneNames[i]
+				set zoneSaveGame = thistype.currentSaveGamePath(zoneName)
+				if (SaveGameExists(zoneSaveGame)) then
+					set zoneTargetSaveGame = thistype.temporarySaveGamePath(zoneName)
+					debug call Print("Copying: " + zoneSaveGame)
+					debug call Print("To: " + zoneTargetSaveGame)
+					call CopySaveGame(zoneSaveGame, zoneTargetSaveGame)
+				debug else
+					debug call Print("Missing: " + zoneSaveGame)
+				endif
+				set i = i + 1
+			endloop
+		endmethod
+		
+		private static method triggerConditionSaveUser takes nothing returns boolean
+			return bj_isSinglePlayer and Game.isCampaign.evaluate()
 		endmethod
 		
 		/**
 		 * Copying all save games of the zones to a folder which contains the save file name, saves all zones as well not only the current one.
 		 */
-		private static method triggerActionSave takes nothing returns nothing
+		private static method triggerActionSaveUser takes nothing returns nothing
 			local string zoneName = null
 			local string zoneSaveGame = null
 			local string zoneTargetSaveGame = null
@@ -299,7 +352,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			loop
 				exitwhen (i == zoneNames.size())
 				set zoneName = zoneNames[i]
-				set zoneSaveGame = thistype.currentSaveGamePath(zoneName)
+				set zoneSaveGame = thistype.temporarySaveGamePath(zoneName)
 				if (SaveGameExists(zoneSaveGame)) then
 					set zoneTargetSaveGame = thistype.saveGamePath(GetSaveBasicFilename(), zoneName)
 					debug call Print("Copying: " + zoneSaveGame)
@@ -311,13 +364,6 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set i = i + 1
 			endloop
 			
-			// If there was no save game before you have to clear the temporary folder, otherwise the zone savegames might be used by a different game.
-			// Don't clear save game folders from older save games which might still exist and be loaded!
-			// Clearing the temporary folder also happens whenever a completely new game is started from the beginning to make sure no invalid stored zones do exist.
-			if (StringLength(thistype.m_currentSaveGame) == 0) then
-				call RemoveSaveDirectory(thistype.temporaryFolder)
-			endif
-			
 			set thistype.m_currentSaveGame = GetSaveBasicFilename()
 			debug call Print("Copied zone save games for current save with size " + I2S(Zone.zones.evaluate().size()))
 		endmethod
@@ -327,19 +373,29 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			 * This trigger only triggers when the game is loaded by a map change.
 			 * It restores all necessary data which needs to be updated from the previous map.
 			 */
-			set thistype.m_loadTrigger = CreateTrigger()
-			call TriggerRegisterGameEvent(thistype.m_loadTrigger, EVENT_GAME_LOADED)
-			call TriggerAddCondition(thistype.m_loadTrigger, Condition(function thistype.triggerConditionLoad))
-			call TriggerAddAction(thistype.m_loadTrigger, function thistype.triggerActionLoad)
+			set thistype.m_loadTriggerTransition = CreateTrigger()
+			call TriggerRegisterGameEvent(thistype.m_loadTriggerTransition, EVENT_GAME_LOADED)
+			call TriggerAddCondition(thistype.m_loadTriggerTransition, Condition(function thistype.triggerConditionLoadTransition))
+			call TriggerAddAction(thistype.m_loadTriggerTransition, function thistype.triggerActionLoadTransition)
+			
+			/*
+			 * Triggered when the user loads a game.
+			 * In this case the temporary directory is replaced by all zone save games.
+			 */
+			set thistype.m_loadTriggerUser = CreateTrigger()
+			call TriggerRegisterGameEvent(thistype.m_loadTriggerUser, EVENT_GAME_LOADED)
+			call TriggerAddCondition(thistype.m_loadTriggerUser, Condition(function thistype.triggerConditionLoadUser))
+			call TriggerAddAction(thistype.m_loadTriggerUser, function thistype.triggerActionLoadUser)
 			
 			/**
 			 * This trigger is triggered when the user saves the game.
 			 * It makes sure that all zone savegames are copied as well.
+			 * All savegames are backed up into a folder with the save game's name.
 			 */
-			set thistype.m_saveTrigger = CreateTrigger()
-			call TriggerRegisterGameEvent(thistype.m_saveTrigger, EVENT_GAME_SAVE)
-			call TriggerAddCondition(thistype.m_saveTrigger, Condition(function thistype.triggerConditionSave))
-			call TriggerAddAction(thistype.m_saveTrigger, function thistype.triggerActionSave)
+			set thistype.m_saveTriggerUser = CreateTrigger()
+			call TriggerRegisterGameEvent(thistype.m_saveTriggerUser, EVENT_GAME_SAVE)
+			call TriggerAddCondition(thistype.m_saveTriggerUser, Condition(function thistype.triggerConditionSaveUser))
+			call TriggerAddAction(thistype.m_saveTriggerUser, function thistype.triggerActionSaveUser)
 			
 			set thistype.m_currentSaveGame = null
 			

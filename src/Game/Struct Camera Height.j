@@ -28,7 +28,7 @@ library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClas
 				exitwhen (j == MapData.maxPlayers)
 				set character = Character(ACharacter.playerCharacter(Player(i)))
 				// make sure it is not always set otherwise the camera might move strangely in class selection or other GUIs
-				if (not character.isViewEnabled() and ClassSelection.playerClassSelection(Player(i)) == 0 and not AGui.playerGui(Player(i)).isShown() and GetLocalPlayer() == Player(j)) then
+				if (not thistype.m_rects.isEmpty() and not character.isViewEnabled() and ClassSelection.playerClassSelection(Player(i)) == 0 and not AGui.playerGui(Player(i)).isShown() and GetLocalPlayer() == Player(j)) then
 					set i = 0
 					loop
 						exitwhen (i == thistype.m_rects.size() or found)

@@ -7,6 +7,7 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 	 */
 	struct SpawnPoint extends ASpawnPoint
 		public static constant real respawnTime = 90.0
+		/// Stores all spawn points of the map for global pausing and resuming the respawn timers.
 		private static AIntegerList m_spawnPoints
 	
 		public static method create takes nothing returns thistype
@@ -33,6 +34,9 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			set thistype.m_spawnPoints = AIntegerList.create()
 		endmethod
 		
+		/**
+		 * Pauses the respawn timers for all spawn points.
+		 */
 		public static method pauseAll takes nothing returns nothing
 			local AIntegerListIterator iterator = thistype.m_spawnPoints.begin()
 			loop
@@ -43,6 +47,9 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			call iterator.destroy()
 		endmethod
 		
+		/**
+		 * Resumes the respawn timers for all spawn points.
+		 */
 		public static method resumeAll takes nothing returns nothing
 			local AIntegerListIterator iterator = thistype.m_spawnPoints.begin()
 			loop
@@ -61,6 +68,7 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 	 */
 	struct ItemSpawnPoint extends AItemSpawnPoint
 		public static constant real respawnTime = 20.0
+		/// Stores all spawn points of the map for global pausing and resuming the respawn timers.
 		private static AIntegerList m_spawnPoints
 
 		public static method create takes real x, real y, item whichItem returns thistype
@@ -82,6 +90,9 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			set thistype.m_spawnPoints = AIntegerList.create()
 		endmethod
 		
+		/**
+		 * Pauses the respawn timers for all spawn points.
+		 */
 		public static method pauseAll takes nothing returns nothing
 			local AIntegerListIterator iterator = thistype.m_spawnPoints.begin()
 			loop
@@ -92,6 +103,9 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			call iterator.destroy()
 		endmethod
 		
+		/**
+		 * Resumes the respawn timers for all spawn points.
+		 */
 		public static method resumeAll takes nothing returns nothing
 			local AIntegerListIterator iterator = thistype.m_spawnPoints.begin()
 			loop

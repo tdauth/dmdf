@@ -1,33 +1,5 @@
 library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameGame, StructGameZone, StructMapMapShrines, StructMapMapNpcRoutines, StructMapMapWeather, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
 
-	//! inject config
-		call SetMapName( "TRIGSTR_001" )
-		call SetMapDescription( "" )
-		call SetPlayers( 12 )
-		call SetTeams( 12 )
-		call SetGamePlacement( MAP_PLACEMENT_TEAMS_TOGETHER )
-
-		call DefineStartLocation( 0, -22592.0, 18944.0 )
-		call DefineStartLocation( 1, -22592.0, 18944.0 )
-		call DefineStartLocation( 2, -22592.0, 18944.0 )
-		call DefineStartLocation( 3, -22592.0, 18944.0 )
-		call DefineStartLocation( 4, -22592.0, 18944.0 )
-		call DefineStartLocation( 5, -22592.0, 18944.0 )
-		call DefineStartLocation( 6, -22592.0, 18944.0 )
-		call DefineStartLocation( 7, -22592.0, 18944.0 )
-		call DefineStartLocation( 8, -22592.0, 18944.0 )
-		call DefineStartLocation( 9, -22592.0, 18944.0 )
-		call DefineStartLocation( 10, -22592.0, 18944.0 )
-		call DefineStartLocation( 11, -22592.0, 18944.0 )
-
-		// Player setup
-		call InitCustomPlayerSlots(  )
-		call InitCustomTeams(  )
-		call InitAllyPriorities(  )
-
-		//call PlayMusic("Music\\LoadingScreen.mp3") /// WARNING: If file does not exist, game crashes?
-	//! endinject
-
 	/**
 	 * \brief A static class which defines unit type ids with identifiers.
 	 */
@@ -518,6 +490,15 @@ endif
 			endif
 			
 			return 270.0
+		endmethod
+		
+		/// Required by \ref MapChanger.
+		public static method onRestoreCharacters takes string zone returns nothing
+			// When the character finally comes back from Holzbruck you can directly travel to Holzbruck.
+			if (zone == "HB") then
+				call thistype.m_zoneHolzbruck.enable()
+				call Character.displayHintToAll(tre("Sie können nun direkt nach Holzbruck reisen.", "You can now directly travel to Holzbruck."))
+			endif
 		endmethod
 		
 		/**

@@ -2,7 +2,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 	struct MapData extends MapDataInterface
 		public static constant string mapName = "Arena0.7"
-		public static constant string mapMusic = "Music\\Ingame.mp3;Music\\Talras.mp3"
+		public static constant string mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3"
 		public static constant integer maxPlayers = 12
 		public static constant player alliedPlayer = null
 		public static constant player neutralPassivePlayer = Player(PLAYER_NEUTRAL_PASSIVE)
@@ -371,6 +371,15 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref MapChanger.
 		public static method restoreStartY takes integer index, string zone returns real
 			return GetRectCenterY(gg_rct_area_safe)
+		endmethod
+		
+		/// Required by \ref MapChanger.
+		public static method restoreStartFacing takes integer index, string zone returns real
+			return 0.0
+		endmethod
+		
+		/// Required by \ref MapChanger.
+		public static method onRestoreCharacters takes string zone returns nothing
 		endmethod
 		
 		/**

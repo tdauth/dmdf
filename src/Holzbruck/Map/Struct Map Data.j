@@ -186,6 +186,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 			return 180.0
 		endmethod
 		
+		/// Required by \ref MapChanger.
+		public static method onRestoreCharacters takes string zone returns nothing
+		endmethod
+		
 		/**
 		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
 		 */

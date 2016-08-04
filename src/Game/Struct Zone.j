@@ -15,6 +15,9 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		private unit m_iconUnit
 		private boolean m_isEnabled
 		
+		/**
+		 * \return Returns a vector of all \ref Zone instances in this map.
+		 */
 		public static method zones takes nothing returns AIntegerVector
 			return thistype.m_zones
 		endmethod
@@ -48,6 +51,11 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call MapChanger.changeMap(this.mapName())
 		endmethod
 		
+		/**
+		 * Creates a new zone which can be reached via a zone area. Make sure that the zone's name is also in the global zone's name list.
+		 * \param mapName This should be the name of the other map (without extension) which the zone belongs to.
+		 * \param whichRect Whenever this rect is entered by the character a map change is done.
+		 */
 		public static method create takes string mapName, rect whichRect returns thistype
 			local thistype this = thistype.allocate(whichRect)
 			set this.m_mapName = mapName
@@ -59,9 +67,17 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call SetUnitPathing(this.m_iconUnit, false)
 			call UnitSetUsesAltIcon(this.m_iconUnit, true)
 			set this.m_isEnabled = true
+			
+			debug if (not thistype.m_zoneNames.contains(mapName)) then
+			debug call Print("Missing zone name \"" + mapName + "\" in global zone name list.")
+			debug endif
+			
 			return this
 		endmethod
 		
+		/**
+		 * Initializes the zone system which has to be done before creating any zone.
+		 */
 		public static method init takes nothing returns nothing
 			set thistype.m_zones = AIntegerVector.create()
 			call SetAltMinimapIcon("UI\\Minimap\\MiniMap-Entrance.blp")

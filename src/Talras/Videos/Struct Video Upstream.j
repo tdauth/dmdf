@@ -29,7 +29,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame
 			if (bj_isSinglePlayer and Game.isCampaign.evaluate()) then
 				// from now on the player can change to the next map whenever he wants to
 				call MapData.enableWayToGardonar.evaluate()
-				call MapChanger.changeMap.evaluate("Gardonar" + Game.gameVersion)
+				call MapChanger.changeMap.evaluate("GA")
 			elseif (whichPlayer == GetLocalPlayer()) then
 				call EndGame(true)
 			endif

@@ -162,6 +162,10 @@ library StructGameSpell requires Asl, StructGameCharacter
 			set this.m_isPassive = isPassive
 		endmethod
 		
+		/**
+		 * \note Passive spells are automatically moved into the sub menu when learned since they cannot be actively casted.
+		 * \return Returns true if this spell is a passive spell. Otherwise it returns false.
+		 */
 		public method isPassive takes nothing returns boolean
 			return this.m_isPassive
 		endmethod
@@ -195,6 +199,9 @@ library StructGameSpell requires Asl, StructGameCharacter
 			set this.m_grimoireEntries[this.m_grimoireEntries.find(0)] = entry // assign to first empty place
 		endmethod
 
+		/**
+		 * \return Returns the corresponding grimoire spell entry for the spell's current level.
+		 */
 		public method grimoireEntry takes nothing returns GrimoireSpellEntry
 			if (this.grimoireEntries().empty()) then
 				return 0
@@ -202,10 +209,16 @@ library StructGameSpell requires Asl, StructGameCharacter
 			return this.grimoireEntries()[this.level()]
 		endmethod
 
+		/**
+		 * \return Returns the maximum possible level for the spell.
+		 */
 		public method getMaxLevel takes nothing returns integer
 			return this.m_maxLevel
 		endmethod
 
+		/**
+		 * \return Returns the type of the spell (\ref thistype.spellTypeDefault or \ref thistype.spellTypeNormal or \ref thistype.spellTypeUltimate0 or \ref thistype.spellTypeUltimate1).
+		 */
 		public method spellType takes nothing returns integer
 			return this.m_spellType
 		endmethod
@@ -222,19 +235,24 @@ library StructGameSpell requires Asl, StructGameCharacter
 		 * \return Returns true if the spell can be skilled up to level \p level. Otherwise it returns false.
 		 */
 		public method isSkillableTo takes integer level returns boolean
+			local Character character = Character(this.character())
 			if (level < 0) then
 				debug call Print("Level is less than 0: " + I2S(level))
 				return false
 			endif
-			if (Character(this.character()).grimoire().learnedSpells.evaluate() == Grimoire.maxSpells and this.level() == 0) then
-				debug call Print("Maximum of grimoire spells reached: " + I2S(Character(this.character()).grimoire().learnedSpells.evaluate()) + " - " + this.name())
+			// spells can always be skilled down
+			if (level < this.level()) then
+				return true
+			endif
+			if (character.grimoire().learnedSpells.evaluate() == Grimoire.maxSpells and this.level() == 0 and level > 0) then
+				debug call Print("Maximum of grimoire spells reached: " + I2S(character.grimoire().learnedSpells.evaluate()) + " - " + this.name())
 				return false
 			endif
 			if (not this.available()) then
 				debug call Print("Spell is not available: " + this.name())
 				return false
 			endif
-			if (Character(this.character()).grimoire().skillPoints.evaluate() < level - this.level()) then
+			if (character.grimoire().skillPoints.evaluate() < level - this.level()) then
 				debug call Print("Not enough skill points: " + this.name())
 				return false
 			endif
@@ -246,7 +264,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 				debug call Print("Default level: " + this.name())
 				return false
 			endif
-			if (this.spellType() == thistype.spellTypeDefault or (this.spellType() == thistype.spellTypeUltimate0 and GetHeroLevel(this.character().unit()) < Grimoire.ultimate0Level) or (this.spellType() == thistype.spellTypeUltimate1 and GetHeroLevel(this.character().unit()) < Grimoire.ultimate1Level)) then
+			if ((this.spellType() == thistype.spellTypeUltimate0 and GetHeroLevel(this.character().unit()) < Grimoire.ultimate0Level) or (this.spellType() == thistype.spellTypeUltimate1 and GetHeroLevel(this.character().unit()) < Grimoire.ultimate1Level)) then
 				debug call Print("Ultimate required: " + this.name())
 				return false
 			endif
