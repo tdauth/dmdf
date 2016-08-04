@@ -165,7 +165,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set character = Character.create(whichPlayer, restoredUnit, 0, 0)
 				// set the player character for the first time
 				call ACharacter.setPlayerCharacterByCharacter(character)
-			// The map is laoded with an existing character in it.
+			// The map is loaded with an existing character in it.
 			else
 				call AHashTable.global().flushHandle(character.unit())
 				call RemoveUnit(character.unit())
@@ -174,18 +174,25 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				debug call Print("Setting spells to level 0: " + I2S(character.grimoire().spells()))
 				call character.grimoire().clearLearnedSpells()
 				call character.grimoire().favourites().clear()
+				// Destroy all spells since the class might have been repicked! Include map specific spells etc. as well.
+				set i = 0
+				loop
+					exitwhen (i == character.spellCount())
+					call character.spell(i).destroy()
+					set i = i + 1
+				endloop
+				call character.clearSpells()
+				call character.classSpells().clear()
 			endif
 			
 			// Restores the class, inventory items etc.
 			call character.restoreDataFromCache(cache, missionKey)
 			
 			// Create spells only when the class is set, otherwise the grimoire stays empty.
-			if (createCompletelyNewCharacter) then
-				debug call Print("Creating spells")
-				// Creates spells which are required in the grimoire etc. and adds hero glow etc.
-				call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
-				debug call Print("After spell creation classes")
-			endif
+			debug call Print("Creating spells")
+			// Creates spells which are required in the grimoire etc. and adds hero glow etc.
+			call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
+			debug call Print("After spell creation classes")
 			
 			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"))
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, missionKey, "Gold"))

@@ -599,6 +599,7 @@ static if (DEBUG_MODE) then
 			call Print(tr("addclassspells - Der Charakter erhält sämtliche Zauber seiner Klasse im Zauberbuch."))
 			call Print(tr("addotherclassspells - Der Charakter erhält sämtliche Zauber der anderen Klassen im Zauberbuch."))
 			call Print(tr("movable - Der Charakter wird bewegbar oder nicht mehr bewegbar."))
+			call Print(tr("animation <index> - Spielt die Animation mit dem entsprechenden Index des Charakters ab."))
 		endmethod
 
 		private static method onCheatActionClasses takes ACheat cheat returns nothing
@@ -692,6 +693,16 @@ static if (DEBUG_MODE) then
 					call Character.playerCharacter(GetTriggerPlayer()).setMovable(true)
 					call Print(tr("Charakter bewegbar gemacht."))
 				endif
+			else
+				call Print(tr("Sie haben keinen Charakter."))
+			endif
+		endmethod
+		
+		private static method onCheatActionAnimation takes ACheat cheat returns nothing
+			local integer index = S2I(StringTrim(cheat.argument()))
+			if (Character.playerCharacter(GetTriggerPlayer()) != 0) then
+				call Print("Animation " + I2S(index))
+				call SetUnitAnimationByIndex(Character.playerCharacter(GetTriggerPlayer()).unit(), index)
 			else
 				call Print(tr("Sie haben keinen Charakter."))
 			endif
@@ -817,6 +828,7 @@ static if (DEBUG_MODE) then
 			call ACheat.create("addclassspells", true, thistype.onCheatActionAddClassSpells)
 			call ACheat.create("addotherclassspells", true, thistype.onCheatActionAddOtherClassSpells)
 			call ACheat.create("movable", true, thistype.onCheatActionMovable)
+			call ACheat.create("animation", false, thistype.onCheatActionAnimation)
 endif
 			/// has to be called by struct \ref MapData.
 			//call ACharacter.setAllMovable(true)

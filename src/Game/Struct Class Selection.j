@@ -167,6 +167,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endif
 		endmethod
 		
+		/**
+		 * Creates and adds all spells to the character (class spells as well as map specific spells).
+		 * Adds a hero glow ability to the character.
+		 * Updates the revival time of the character.
+		 */
 		public static method setupCharacterUnit takes ACharacter character, AClass class returns nothing
 			// new OpLimit, there is many many spells which are created
 			call thistype.createClassSpellsForCharacter.evaluate(character, class)
