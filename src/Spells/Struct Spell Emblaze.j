@@ -58,6 +58,7 @@ library StructSpellsSpellEmblaze requires Asl, StructGameClasses, StructGameSpel
 				set buffData = BuffData(DmdfHashTable.global().handleInteger(whichUnit, DMDF_HASHTABLE_KEY_BUFFEMBLAZE))
 				call buffData.destroy()
 			endif
+			// TODO slow spellByAbilityId()
 			set buffData = BuffData.create(character.grimoire().spellByAbilityId(SpellEmblaze.abilityId), whichUnit)
 			call DmdfHashTable.global().setHandleInteger(whichUnit, DMDF_HASHTABLE_KEY_BUFFEMBLAZE, buffData)
 		endmethod

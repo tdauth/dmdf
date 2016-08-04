@@ -308,6 +308,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// (Zauber wurde noch nicht erlernt)
 		private static method infoConditionTeachMeFetteBeute takes AInfo info, Character character returns boolean
+			// TODO slow spellByAbilityId()
 			return character.spellByAbilityId(SpellFetteBeute.abilityId) == 0
 		endmethod
 
@@ -324,6 +325,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// (Zauber wurde noch nicht erlernt)
 		private static method infoConditionTeachMeNordischeWucht takes AInfo info, Character character returns boolean
+			// TODO slow spellByAbilityId()
 			return character.spellByAbilityId(SpellNordicPower.abilityId) == 0
 		endmethod
 
@@ -339,6 +341,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// (Zauber wurde noch nicht erlernt)
 		private static method infoConditionTeachMeFirstMan takes AInfo info, Character character returns boolean
+			// TODO slow spellByAbilityId()
 			return character.spellByAbilityId(SpellFirstMan.abilityId) == 0
 		endmethod
 

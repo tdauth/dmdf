@@ -29,6 +29,7 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 			local thistype this = thistype(missile.missileType())
 			local unit caster = this.m_character.unit()
 			local integer level = GetUnitAbilityLevel(caster, SpellFireMissile.abilityId)
+			// TODO slow spellByAbilityId()
 			local SpellFireMissile spell = SpellFireMissile(this.m_character.spellByAbilityId(SpellFireMissile.abilityId)) // TODO slow function
 			local unit target = this.m_targetUnit
 			local real damage = SpellFireMissile.damageStartValue + level * SpellFireMissile.damageFactor

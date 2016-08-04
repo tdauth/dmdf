@@ -201,7 +201,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call thistype.restoreGrimoireSpellLevel.evaluate(character, cache, missionKey, i, "Grimoire" + I2S(spell.ability()))
 				set i = i + 1
 			endloop
-			debug call Print("After restoring spell levels")
+			debug call Print("After restoring spell levels. Total skill points: " + I2S(character.grimoire().totalSkillPoints()))
 			
 			// make sure the GUI of the grimoire is correct
 			call character.grimoire().updateUi.evaluate()

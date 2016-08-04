@@ -43,6 +43,7 @@ library StructSpellsSpellCrowForm requires Asl, StructGameClasses, StructSpellsS
 				call SetPlayerAbilityAvailable(this.character().player(), SpellAlpha.castSpellBookAbilityId, false)
 			endif
 			
+			// TODO slow spellByAbilityId()
 			set zoologySpell = character.grimoire().spellByAbilityId(SpellZoology.abilityId)
 			
 			if (zoologySpell != 0) then

@@ -299,7 +299,7 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Unmorph character before repick. Should not be necessary since the Character instance is created newly and isMorphed should be false then, bug?
 * FIXED: Talras map cheats work in non debug mode.
 * Still no ability when transforming to Deranor's guard because the inventory is open and the item has the same ability and therefore the ability cannot be added a second time. Therefore, the item ability has to be removed (rucksack page hidden maybe) and then the ability has to be added, afterwards the rucksack page can be shown again.
-* Loading game doesn't work.
+* FIXED: Loading game doesn't work.
 * Remove old save games when ending game or do not load them when changing the map for the first time to Gardonar. Otherwise if you start a new game it will try to load the old savegame.
 * If all favorites are used in the grimoire there must be a switch with favorites button in the grimoire. Otherwise non spell can be removed!
 * Zone Transition: If you save a game for the first time and you copy all save games to the new folder, how do you know if the save games are not from older games which have never been saved? In this case you copy invalid save games for other zones. Only the current save game is guranteed to be valid. You need a temporary folder which has to be copied and deleted afterwards.
@@ -309,9 +309,11 @@ Zone Transition:
 * FIXED: Skill points are not restored.
 * FIXED: Spells are missing completely in grimoire.
 * FIXED: Items are placed on the ground together with backpack changing items.
-* Changing back does not work. The savegame exists but loading does not work. Loading an invalid path (LoadGame()) does not lead to changing to the campaign screen. There is something wrong with the savegame or the state in which we call LoadGame().
-* Without numbers and dots in names: start Gardonar (Temporary folder does not exist), move to Gardonars Hell, move back to Gardonar works but loading Gardonars Hell then does not work although the savegame exists. Do we have to delete the Temporary folder first? Is there an overwriting problem?! It is not Gardonar.w3z is overwritten!!! Loading overwritten Gardonar.w3z does also work!
+* FIXED: Changing back does not work. The savegame exists but loading does not work. Loading an invalid path (LoadGame()) does not lead to changing to the campaign screen. There is something wrong with the savegame or the state in which we call LoadGame().
+* FIXED (use always the folder Temporary for loading): Without numbers and dots in names: start Gardonar (Temporary folder does not exist), move to Gardonars Hell, move back to Gardonar works but loading Gardonars Hell then does not work although the savegame exists. Do we have to delete the Temporary folder first? Is there an overwriting problem?! It is not Gardonar.w3z is overwritten!!! Loading overwritten Gardonar.w3z does also work!
 * There is a limit in the size of a savegame filename.
+* Skill point amount on restoring character in saved game is wrong. Becomes one skill point less with every load. Cannot skill to the stored level of the ability and therefore does not skill the spell at all.
+* Character is not being selected only for the player after restoring the character on loading a game.
 
 http://www.hiveworkshop.com/threads/map-transition-does-not-work-when-loading-a-custom-savegame.286927/#post-3082377
 - No underscores in campaign names.

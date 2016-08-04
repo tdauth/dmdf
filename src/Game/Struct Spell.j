@@ -184,6 +184,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 
 			if (this.level() == this.grimoireEntries().size() and this.available() and Character(this.character()).grimoire().pageIsShown.evaluate()) then
 				//debug call this.print("Page is shown")
+				// TODO calling spellIndex() is slow
 				set grimoireIndex = Character(this.character()).grimoire().spellIndex.evaluate(this)
 				//debug call this.print("Spell index " + I2S(grimoireIndex))
 				set firstIndex = Character(this.character()).grimoire().page.evaluate() * Grimoire.spellsPerPage
@@ -258,10 +259,6 @@ library StructGameSpell requires Asl, StructGameCharacter
 			endif
 			if (this.level() == this.getMaxLevel() and level > this.level()) then
 				debug call Print("Maximum level: " + this.name())
-				return false
-			endif
-			if (this.spellType() == thistype.spellTypeDefault and level >= 1) then
-				debug call Print("Default level: " + this.name())
 				return false
 			endif
 			if ((this.spellType() == thistype.spellTypeUltimate0 and GetHeroLevel(this.character().unit()) < Grimoire.ultimate0Level) or (this.spellType() == thistype.spellTypeUltimate1 and GetHeroLevel(this.character().unit()) < Grimoire.ultimate1Level)) then
@@ -341,16 +338,13 @@ library StructGameSpell requires Asl, StructGameCharacter
 		 * \sa thistype#showGrimoireEntry()
 		 */
 		public method hideGrimoireEntry takes nothing returns nothing
-			//call SetPlayerTechMaxAllowed(this.character().player(), this.tech(), 0)
 			if (this.grimoireEntry() != 0) then
 				call this.grimoireEntry().hide.evaluate()
 			endif
-			//call SetPlayerAbilityAvailable(this.character().player(), this.grimoireAbilities()[this.level()], false)
 		endmethod
 
 		public method isGrimoireEntryShown takes nothing returns boolean
 			return GrimoireSpellEntry(this.grimoireEntries()[this.level()]).isShown.evaluate()
-			//return GetPlayerTechMaxAllowed(this.character().player(), this.tech()) == this.getMaxLevel()
 		endmethod
 		
 		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent returns thistype
