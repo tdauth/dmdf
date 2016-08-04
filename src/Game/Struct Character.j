@@ -89,7 +89,8 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
 					set values = AIntegerVector.create()
 					call values.pushBack(21)
-					call values.pushBack(40)
+					call values.pushBack(41)
+					call values.pushBack(42)
 					call values.pushBack(23)
 					call values.pushBack(25)
 					call SetUnitAnimationByIndex(GetAttacker(), values.random())
@@ -99,7 +100,8 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
 					set values = AIntegerVector.create()
 					call values.pushBack(22)
-					call values.pushBack(41)
+					call values.pushBack(39)
+					call values.pushBack(40)
 					call values.pushBack(24)
 					call values.pushBack(26)
 					call SetUnitAnimationByIndex(GetAttacker(), values.random())
