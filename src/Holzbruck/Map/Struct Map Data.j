@@ -16,7 +16,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant real revivalManaPercentage = 100.0
 		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
 		public static constant integer levelSpellPoints = 2
-		public static constant integer maxLevel = 30
+		public static constant integer maxLevel = 10000
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static constant boolean isSeparateChapter = false
 		public static sound cowSound = null

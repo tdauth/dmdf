@@ -670,7 +670,7 @@ static if (DEBUG_MODE) then
 
 		private static method onCheatActionAddSkillPoints takes ACheat cheat returns nothing
 			local integer skillPoints = S2I(StringTrim(cheat.argument()))
-			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addSkillPoints.evaluate(skillPoints)
+			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addSkillPoints.evaluate(skillPoints, true)
 			call Print(Format(tr("%1% Zauberpunkt(e) erhalten.")).i(skillPoints).result())
 		endmethod
 

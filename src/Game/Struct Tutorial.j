@@ -145,7 +145,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Drachentöter: Kampf- und Beutezauber", "Dragon Slayer: Combat and bounty spells"))
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tre("Waldläufer: Fernkampfzauber", "Waldläufer: Range combat spells"))
+			call QuestItemSetDescription(questItem, tre("Waldläufer: Fernkampfzauber", "Ranger: Range combat spells"))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Elementarmagier: Schadenszauber", "Elemental Mage: Damage spells"))
 			set questItem = QuestCreateItem(whichQuest)

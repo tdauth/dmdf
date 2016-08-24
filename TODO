@@ -269,11 +269,12 @@ Handlung:
 * Götzenbild-Zauber fixen.
 * Sprinten zur Sicherheit auf Standardfähigkeit basieren lassen und auch Angriffsgeschwindikeit erhöhen.
 * Ricman: Schildblock entfernen oder ersetzen, trägt keinen Schild.
-* Nordmänner: Hero Glow entfernen. Unterscheidbar zu Ricman machen.
+* FIXED: Nordmänner: Hero Glow entfernen. Unterscheidbar zu Ricman machen.
 * Der Waldläufer tötet sich durch irgendeine Fähigkeit selbst. Brandpfeile? Mehrfachschuss? Lauern? Sprinten?
 * Zukünftiger Release-Vorgang: Optimizer jedoch nur mit Skriptoptimierungen damit war3map.wts unverändert bleibt. Karte kopieren und englische wts-Datei einfügen.
 * Mitwirkende: Gebiet für Spieler 2 nicht sichtbar.
 * wc3object editor should offer the function "Validate Field References" and check all <> entries.
+* Osman Grundrauschen abgleichen gegen normale Takes und damit Rauschen entfernen.
 
 Aufgehoben für Version 0.8:
 Critical errors:
@@ -303,7 +304,7 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Remove old save games when ending game or do not load them when changing the map for the first time to Gardonar. Otherwise if you start a new game it will try to load the old savegame.
 * If all favorites are used in the grimoire there must be a switch with favorites button in the grimoire. Otherwise non spell can be removed!
 * Zone Transition: If you save a game for the first time and you copy all save games to the new folder, how do you know if the save games are not from older games which have never been saved? In this case you copy invalid save games for other zones. Only the current save game is guranteed to be valid. You need a temporary folder which has to be copied and deleted afterwards.
-* When selling an item and selecting the shop immediately afterwards, not the whole inventory is cleared. The sold item remains in the inventory and is dropped when the character is selected again. This allows doubeling items! 0 timer critical section?
+* When selling an item and selecting the shop immediately afterwards, not the whole inventory is cleared. The sold item remains in the inventory and is dropped when the character is selected again. This allows doubeling items! 0 timer critical section? -> refreshRucksackItem() only update charges if shop is != null, otherwise the item is hidden.
 
 Zone Transition:
 * FIXED: Skill points are not restored.
@@ -388,6 +389,7 @@ Kleriker:
 
 Weitere TODOS:
 * Grundzauber reinschreiben nur eine Stufe.
+* Add spell attributes bonus with hidden icon and max level of 100. The player can skill this spell when he has skilled all other spells to maximum. Increase the max hero level to 200.
 * Arenagegner viel zu schwach. Magier auch Zauber benutzen, Krieger stärker.
 * Video Wigberht: Charakter ist weggelaufen bei Unterhaltung mit Wigberht.
 * Video Wigberht: Keine Angriffsanimation gegen Orkanführer.

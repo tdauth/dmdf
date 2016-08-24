@@ -139,6 +139,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 		private AClass m_class
 		private boolean m_available
 		private boolean m_isPassive
+		private boolean m_isHidden
 		private AIntegerVector m_grimoireEntries /// vector of \ref GrimoireSpellEntry instances
 		private integer m_index
 
@@ -168,6 +169,18 @@ library StructGameSpell requires Asl, StructGameCharacter
 		 */
 		public method isPassive takes nothing returns boolean
 			return this.m_isPassive
+		endmethod
+		
+		public method setIsHidden takes boolean isHidden returns nothing
+			set this.m_isHidden = isHidden
+		endmethod
+		
+		/**
+		 * \note Hidden spells can be learned even if the favorites and the other learned spells are full since they don't need space for an icon.
+		 * \return Returns true if no icon is shown for the spell when it is learned. Otherwise it returns false.
+		 */
+		public method isHidden takes nothing returns boolean
+			return this.m_isHidden
 		endmethod
 
 		/**
@@ -245,7 +258,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			if (level < this.level()) then
 				return true
 			endif
-			if (character.grimoire().learnedSpells.evaluate() == Grimoire.maxSpells and this.level() == 0 and level > 0) then
+			if (character.grimoire().learnedSpells.evaluate() >= Grimoire.maxSpells and this.level() == 0 and level > 0 and not this.isHidden()) then
 				debug call Print("Maximum of grimoire spells reached: " + I2S(character.grimoire().learnedSpells.evaluate()) + " - " + this.name())
 				return false
 			endif
@@ -302,7 +315,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 		public stub method setLevel takes integer level returns nothing
 			call super.setLevel(level)
 			set this.m_savedLevel = level
-			debug call Print("Set saved level to " + I2S(level) + " of spell " + GetAbilityName(this.ability()))
+			//debug call Print("Set saved level to " + I2S(level) + " of spell " + GetAbilityName(this.ability()))
 		endmethod
 		
 		public method savedLevel takes nothing returns integer
@@ -356,6 +369,8 @@ library StructGameSpell requires Asl, StructGameCharacter
 			set this.m_class = class
 			set this.m_available = true
 			set this.m_isPassive = false
+			set this.m_isHidden = false
+			// one entry for every level + one entry to learn the spell
 			set this.m_grimoireEntries = AIntegerVector.createWithSize(maxLevel + 1, 0)
 			call character.addClassSpell(this)
 			

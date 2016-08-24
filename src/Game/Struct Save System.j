@@ -175,7 +175,7 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			call SetHeroStr(hero, strength, true)
 			call SetHeroAgi(hero, agility, true)
 			call SetHeroInt(hero, intelligence, true)
-			call newCharacter.grimoire().setSkillPoints(skillPoints)
+			call newCharacter.grimoire().setSkillPoints(skillPoints, true)
 			if (slot0Equipment != 0) then
 				call newCharacter.giveItem(slot0Equipment)
 			endif

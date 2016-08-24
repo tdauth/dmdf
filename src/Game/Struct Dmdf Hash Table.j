@@ -1,6 +1,11 @@
 library StructGameDmdfHashTable requires Asl
 
 	globals
+		/**
+		 * Every hashtable key must be unique.
+		 *
+		 * @{
+		 */
 		constant integer DMDF_HASHTABLE_KEY_TALK = A_HASHTABLE_KEY_MAX
 		constant integer DMDF_HASHTABLE_KEY_FELLOW = A_HASHTABLE_KEY_MAX + 1
 		constant integer DMDF_HASHTABLE_KEY_BUFFTAUNT = A_HASHTABLE_KEY_MAX + 2
@@ -18,8 +23,16 @@ library StructGameDmdfHashTable requires Asl
 		constant integer DMDF_HASHTABLE_KEY_RAGE_DAMAGE = A_HASHTABLE_KEY_MAX + 14
 		constant integer DMDF_HASHTABLE_KEY_RESERVES_DAMAGE = A_HASHTABLE_KEY_MAX + 15
 		constant integer DMDF_HASHTABLE_KEY_THRILLOFVICTORY_DAMAGE = A_HASHTABLE_KEY_MAX + 16
+		/**
+		 * @}
+		 */
 	endglobals
 
+	/**
+	 * \brief Static struct for the singleton hashtable used by all systems in The Power of Fire.
+	 *
+	 * Use \ref thistype.global() to access the singleton instance.
+	 */
 	struct DmdfHashTable
 		private static AHashTable m_global
 

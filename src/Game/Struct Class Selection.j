@@ -41,7 +41,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call SetUnitY(this.m_character.unit(), this.m_y)
 			call SetHeroXP(this.m_character.unit(), this.m_xp, false)
 			// let the player reskill everything
-			call this.m_character.grimoire().setSkillPoints(this.m_skillPoints)
+			call this.m_character.grimoire().setSkillPoints(this.m_skillPoints, true)
 			call this.m_shrine.enableForCharacter(this.m_character, false)
 			call this.m_character.setShowCharactersScheme(this.m_showCharactersSchema)
 			call this.m_character.setShowWorker(this.m_showWorker)
@@ -149,7 +149,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			// Is no repick which means it is the first class selection in the beginning of the game.
 			if (not thistype.m_gameStarted) then
 				// Initial skill points depend on the map.
-				call character.grimoire().addSkillPoints.evaluate(MapData.startSkillPoints)
+				call character.grimoire().addSkillPoints.evaluate(MapData.startSkillPoints, true)
+				// TODO Now skill the default spell
 				if (not last) then
 					debug call Print("Do not start the game")
 					call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
@@ -325,6 +326,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellMultiply.create(character)
 				call SpellTransfer.create(character)
 			endif
+			
+			// for all classes
+			call SpellAttributeBonus.create(character)
 		endmethod
 		
 		private static method addClassSpellsFromCharacterWithNewOpLimit takes Character character returns nothing

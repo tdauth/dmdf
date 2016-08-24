@@ -83,7 +83,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant real revivalManaPercentage = 100.0
 		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
 		public static constant integer levelSpellPoints = 2
-		public static constant integer maxLevel = 30
+		public static constant integer maxLevel = 10000
 		public static constant integer workerUnitTypeId = 'h00E'
 		/// If this value is true there will always be a class selection in the beginning if the map is started for the first time. Otherwise characters will be loaded from the gamecache in campaign mode if available.
 		public static constant boolean isSeparateChapter = true
@@ -498,6 +498,8 @@ endif
 			if (zone == "HB") then
 				call thistype.m_zoneHolzbruck.enable()
 				call Character.displayHintToAll(tre("Sie können nun direkt nach Holzbruck reisen.", "You can now directly travel to Holzbruck."))
+			elseif (zone == "GA") then
+				call thistype.m_zoneGardonar.enable()
 			endif
 		endmethod
 		

@@ -29,6 +29,7 @@ library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClas
 				set character = Character(ACharacter.playerCharacter(Player(i)))
 				// make sure it is not always set otherwise the camera might move strangely in class selection or other GUIs
 				if (not thistype.m_rects.isEmpty() and not character.isViewEnabled() and ClassSelection.playerClassSelection(Player(i)) == 0 and not AGui.playerGui(Player(i)).isShown() and GetLocalPlayer() == Player(j)) then
+					set found = false
 					set i = 0
 					loop
 						exitwhen (i == thistype.m_rects.size() or found)
@@ -62,8 +63,8 @@ library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClas
 		 */
 		public static method pause takes nothing returns nothing
 			call PauseTimer(thistype.m_timer)
-			// reset z offset for safety
-			call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, thistype.period)
+			// reset z offset for safety, reset immediately, otherwise it might move in video sequences!
+			call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
 		endmethod
 		
 		/**

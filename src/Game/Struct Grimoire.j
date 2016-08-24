@@ -210,6 +210,16 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call this.m_learnedSpells.clear()
 		endmethod
 		
+		/// \note Only use when making a map transition!
+		public method clearSpells takes nothing returns nothing
+			call this.m_spells.clear()
+		endmethod
+		
+		/// \note Only use when making a map transition!
+		public method clearUiSpells takes nothing returns nothing
+			call this.m_uiGrimoireSpells.clear()
+		endmethod
+		
 		/**
 		 * Updates all buttons properly.
 		 * Central UI update is much easier to maintain!
@@ -295,7 +305,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 						debug call Print("Spell is not part of favorites but favorites are full.")
 					endif
 				debug else
-					debug call Print("Spell is level 0")
+					debug call Print("Spell is level 0: " + GetObjectName(this.currentSpell().ability()))
 				endif
 			endif
 		endmethod
@@ -327,7 +337,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		/**
 		 * The ability for the grimoire must have level 0 - 100 for displaying the number of available skill points.
 		 */
-		public method setSkillPoints takes integer skillPoints returns nothing
+		public method setSkillPoints takes integer skillPoints, boolean updateUi returns nothing
 			set this.m_skillPoints = skillPoints
 			call this.setGrimoireAbilityToSkillPoints(skillPoints)
 			
@@ -335,30 +345,32 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			 * This is necessary to show the skill points in the hero icon.
 			 */
 			call ModifyHeroSkillPoints(this.character().unit(), bj_MODIFYMETHOD_SET, skillPoints)
-			debug call Print("Setting skill points to " + I2S(skillPoints))
+			//debug call Print("Setting skill points to " + I2S(skillPoints))
 			
 			/*
 			 * Update the User Interface. The selected skill might become skillable!
 			 */
-			call this.updateUi()
+			 if (updateUi) then
+				call this.updateUi()
+			endif
 		endmethod
 
-		public method removeSkillPoints takes integer skillPoints returns nothing
-			call this.setSkillPoints(IMaxBJ(0, this.m_skillPoints - skillPoints))
+		public method removeSkillPoints takes integer skillPoints, boolean updateUi returns nothing
+			call this.setSkillPoints(IMaxBJ(0, this.m_skillPoints - skillPoints), updateUi)
 		endmethod
 
 		/**
 		 * Adds skill points to grimoire.
 		 * \param skillPoints The number of skill points to be added. If this value is negative, the skill points will be removed.
 		 */
-		public method addSkillPoints takes integer skillPoints returns nothing
+		public method addSkillPoints takes integer skillPoints, boolean updateUi returns nothing
 			if (skillPoints == 0) then
 				return
 			elseif (skillPoints < 0) then
-				call this.removeSkillPoints(-1 * skillPoints)
+				call this.removeSkillPoints(-1 * skillPoints, updateUi)
 				return
 			endif
-			call this.setSkillPoints(this.m_skillPoints + skillPoints)
+			call this.setSkillPoints(this.m_skillPoints + skillPoints, updateUi)
 		endmethod
 		
 		/**
@@ -417,7 +429,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		endmethod
 
 		private method learnSpell takes Spell spell returns nothing
-			debug call Print("Learning spell " + GetAbilityName(spell.ability()))
+			//debug call Print("Learning spell " + GetAbilityName(spell.ability()) + " with count of learned spells " + I2S(this.learnedSpells()))
 			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 			call this.m_learnedSpells.pushBack(spell)
@@ -543,7 +555,7 @@ endif
 			//debug call Print("Successfully skilling " + GetAbilityName(spell.ability()) + " to level " + I2S(level))
 
 			if (requiredSkillPoints < 0) then
-				call this.addSkillPoints(-1 * requiredSkillPoints)
+				call this.addSkillPoints(-1 * requiredSkillPoints, false)
 				if (level == 0) then
 					if (this.m_favourites.contains(spell)) then
 						call this.unlearnFavouriteSpell(spell)
@@ -554,7 +566,7 @@ endif
 					call spell.setLevel(level)
 				endif
 			else
-				call this.removeSkillPoints(requiredSkillPoints)
+				call this.removeSkillPoints(requiredSkillPoints, false)
 
 				if (spell.level() == 0) then
 					//debug call Print("Learning spell: " + spell.name() + " having " + I2S(this.m_favourites.size()) + " favorite spells.")
@@ -740,10 +752,8 @@ endif
 			loop
 				exitwhen (i == character.classSpells().size())
 				// do not add spells twice
-				if (not this.m_spells.contains(Spell(character.classSpells()[i]))) then
-					//debug call Print("Adding NEW spell " + GetAbilityName(Spell(character.classSpells()[i]).ability()))
-					call spells.pushBack(Spell(character.classSpells()[i]))
-				endif
+				//debug call Print("Adding NEW spell " + GetAbilityName(Spell(character.classSpells()[i]).ability()))
+				call spells.pushBack(Spell(character.classSpells()[i]))
 				set i = i + 1
 			endloop
 			call this.addSpells(spells, true)
@@ -917,7 +927,7 @@ endif
 			local integer levels = newLevel - oldLevel
 			local Character character = Character(this.character())
 			
-			call this.addSkillPoints(MapData.levelSpellPoints * levels)
+			call this.addSkillPoints(MapData.levelSpellPoints * levels, true)
 			debug call Print("Levels: " + I2S(levels))
 			
 			if (oldLevel < thistype.ultimate0Level and newLevel >= thistype.ultimate0Level) then
@@ -1052,15 +1062,16 @@ endif
 			set this.m_currentSpell = 0
 			set this.m_spells = AIntegerVector.create()
 
-			set this.m_spellPreviousPage = PreviousPage.create.evaluate(this)
-			set this.m_spellNextPage = NextPage.create.evaluate(this)
-			set this.m_spellSetMax = SetMax.create.evaluate(this)
-			set this.m_spellUnlearn = Unlearn.create.evaluate(this)
-			set this.m_spellIncrease = Increase.create.evaluate(this)
-			set this.m_spellDecrease = Decrease.create.evaluate(this)
-			set this.m_spellAddToFavourites = AddToFavourites.create.evaluate(this)
-			set this.m_spellRemoveFromFavourites = RemoveFromFavourites.create.evaluate(this)
-			set this.m_spellBackToGrimoire = BackToGrimoire.create.evaluate(this)
+			// pass character directly, never use grimoire.character() since it is not set yet
+			set this.m_spellPreviousPage = PreviousPage.create.evaluate(this, character)
+			set this.m_spellNextPage = NextPage.create.evaluate(this, character)
+			set this.m_spellSetMax = SetMax.create.evaluate(this, character)
+			set this.m_spellUnlearn = Unlearn.create.evaluate(this, character)
+			set this.m_spellIncrease = Increase.create.evaluate(this, character)
+			set this.m_spellDecrease = Decrease.create.evaluate(this, character)
+			set this.m_spellAddToFavourites = AddToFavourites.create.evaluate(this, character)
+			set this.m_spellRemoveFromFavourites = RemoveFromFavourites.create.evaluate(this, character)
+			set this.m_spellBackToGrimoire = BackToGrimoire.create.evaluate(this, character)
 			set this.m_uiGrimoireSpells = AIntegerVector.create()
 			call this.showPage()
 			call this.createLevelTrigger()
@@ -1106,6 +1117,9 @@ endif
 		endmethod
 	endstruct
 
+	/**
+	 * \brief A grimoire spell is a spell which represents a specific action button in the grimoire. Other than \ref Spell it is not a class spell.
+	 */
 	struct GrimoireSpell extends ASpell
 		private Grimoire m_grimoire
 		private integer m_grimoireAbility
@@ -1150,12 +1164,12 @@ endif
 			call super.onCastAction()
 		endmethod
 
-		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbility returns thistype
+		public static method create takes Grimoire grimoire, Character character, integer abilityId, integer grimoireAbility returns thistype
 			/*
 			 * Use EVENT_PLAYER_UNIT_SPELL_ENDCAST to prevent any null GetAbilityId() calls when the ability is removed before running trigger events.
 			 * Since the grimoire buttons do not need any event data like GetSpellTargetX() this event is just okay.
 			 */
-			local thistype this = thistype.allocate(grimoire.character(), abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_ENDCAST)
+			local thistype this = thistype.allocate(character, abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_ENDCAST)
 			set this.m_grimoire = grimoire
 			set this.m_grimoireAbility = grimoireAbility
 
@@ -1178,8 +1192,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire, Character character returns thistype
+			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1200,8 +1214,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire, Character character returns thistype
+			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1223,8 +1237,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire, Character character returns thistype
+			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1246,8 +1260,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire, Character character returns thistype
+			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1269,8 +1283,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire, Character character returns thistype
+			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1292,8 +1306,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire, Character character returns thistype
+			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1315,8 +1329,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire, Character character returns thistype
+			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1338,8 +1352,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire, Character character returns thistype
+			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1364,8 +1378,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire returns thistype
-			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire, Character character returns thistype
+			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1397,8 +1411,9 @@ endif
 			endif
 		endmethod
 
+		/// \note Call this after the construction of \ref Grimoire since it references the corresponding character
 		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbilityId, Spell spell returns thistype
-			local thistype this = thistype.allocate(grimoire, abilityId, grimoireAbilityId)
+			local thistype this = thistype.allocate(grimoire, grimoire.character(), abilityId, grimoireAbilityId)
 			set this.m_spell = spell
 
 			return this

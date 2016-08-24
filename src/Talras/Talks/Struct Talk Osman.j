@@ -61,7 +61,7 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Hallo.", "Hello."), null)
 			if (character.class() == Classes.cleric()) then
-				call speech(info, character, true, tre("Sei gegrüßt werter Bruder. Es ist selten geworden, dass ich einen Glaubensgenossen treffe.", "Best greetings, brother. It happened to become a rareness to meet a coreligionist."), null)
+				call speech(info, character, true, tre("Sei gegrüßt werter Bruder. Es ist selten geworden, dass ich einen Glaubensgenossen treffe.", "Best greetings, brother. It happened to become a rareness to meet a coreligionist."), gg_snd_Osman1)
 				call this.showRange(this.m_youAreKnowBeliever.index(), this.m_itsMyPleasure.index(), character)
 			else
 				call speech(info, character, true, tre("Ich grüße dich.", "Be welcome."), null)
@@ -286,7 +286,7 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 		private static method infoAction0_0 takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Du bist kein Glaubensgenosse. Du bist nur ein Feigling, der sich beim Herzog versteckt. Ein wahrer Kleriker zieht umher und kämpft für seinen Glauben.", "You are no fellow believer. You're just a coward who fears the Duke. A true cleric travels around and fights for his faith."), null)
-			call speech(info, character, true, tre("Hüte deine Zunge elender Wurm!", "Watch your mouth, you miserable worm!"), null)
+			call speech(info, character, true, tre("Hüte deine Zunge elender Wurm!", "Watch your mouth, you miserable worm!"), gg_snd_Osman2)
 			call this.offend(character.player())
 			call this.showStartPage(character)
 		endmethod

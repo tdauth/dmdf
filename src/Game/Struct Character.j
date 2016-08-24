@@ -945,7 +945,7 @@ endif
 			loop
 				exitwhen (i == MapData.maxPlayers)
 				if (thistype.playerCharacter(Player(i)) != 0) then
-					call thistype(thistype.playerCharacter(Player(i))).grimoire().addSkillPoints.evaluate(skillPoints)
+					call thistype(thistype.playerCharacter(Player(i))).grimoire().addSkillPoints.evaluate(skillPoints, true)
 				endif
 				set i = i + 1
 			endloop

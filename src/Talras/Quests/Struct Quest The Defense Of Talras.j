@@ -182,7 +182,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			local thistype this = thistype(whichQuestItem.quest())
 			
 			call Npcs.initDararos(CreateUnit(MapData.alliedPlayer, 'H02F', GetRectCenterX(gg_rct_quest_the_defense_of_talras_dararos), GetRectCenterY(gg_rct_quest_the_defense_of_talras_dararos), 0.0))
-			call SetHeroLevel(Npcs.dararos(), MapData.maxLevel, false)
+			call SetHeroLevel(Npcs.dararos(), 30, false)
 			call Fellows.initDararos(Npcs.dararos())
 			
 			call VideoDararos.video().play()
@@ -586,17 +586,17 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call Fellows.dragonSlayer().shareWithAll()
 			call SetUnitPositionRect(Fellows.dragonSlayer().unit(), gg_rct_quest_the_defense_of_talras_dragon_slayer)
 			call SetUnitFacing(Fellows.dragonSlayer().unit(), 270.0)
-			call SetHeroLevel(Fellows.dragonSlayer().unit(), MapData.maxLevel, false)
+			call SetHeroLevel(Fellows.dragonSlayer().unit(), 30, false)
 			
 			call Fellows.wigberht().shareWithAll()
 			call SetUnitPositionRect(Fellows.wigberht().unit(), gg_rct_quest_the_defense_of_talras_wigberht)
 			call SetUnitFacing(Fellows.wigberht().unit(), 270.0)
-			call SetHeroLevel(Fellows.wigberht().unit(), MapData.maxLevel, false)
+			call SetHeroLevel(Fellows.wigberht().unit(), 30, false)
 			
 			call Fellows.ricman().shareWithAll()
 			call SetUnitPositionRect(Fellows.ricman().unit(), gg_rct_quest_the_defense_of_talras_ricman)
 			call SetUnitFacing(Fellows.ricman().unit(), 270.0)
-			call SetHeroLevel(Fellows.ricman().unit(), MapData.maxLevel, false)
+			call SetHeroLevel(Fellows.ricman().unit(), 30, false)
 			
 			/*
 			 * The allied player needs a lot of gold to build something.

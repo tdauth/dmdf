@@ -141,6 +141,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return result
 		endmethod
 		
+		/**
+		 * Restores a single player character from \p cache for \p whichPlayer at \p x, \p y with \p facing.
+		 * If the map is started for the first time, the character is created newly. Otherwise its unit and spells are replaced as well as the inventory.
+		 * The resources are loaded as well.
+		 */
 		private static method restoreCharacterSinglePlayer takes gamecache cache, player whichPlayer, real x, real y, real facing returns nothing
 			local Character character = Character(ACharacter.playerCharacter(whichPlayer))
 			local boolean createCompletelyNewCharacter = character == 0
@@ -169,36 +174,41 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			else
 				call AHashTable.global().flushHandle(character.unit())
 				call RemoveUnit(character.unit())
+				// Replace the old character unit by the newly restored. This triggers also all updates which have to use the new unit reference.
 				call character.replaceUnit(restoredUnit)
 				// Reset all grimoire spells to reskill them afterwards with the total skill points. Besides the spells have to be removed from the skilled spells in grimoire.
-				debug call Print("Setting spells to level 0: " + I2S(character.grimoire().spells()))
+				debug call Print("Clearing grimoire spells with count: " + I2S(character.grimoire().spells()))
 				call character.grimoire().clearLearnedSpells()
 				call character.grimoire().favourites().clear()
+				// Make sure that the grimoire spells (also not learned spells are cleared). They can only be removed by Grimoire.removeSpellByIndex() or simply by clearing them.
+				call character.grimoire().clearSpells()
+				// For showing a new page better clear the currently showed UI spells as well.
+				call character.grimoire().clearUiSpells()
+				debug call Print("New grimoire spells count: " + I2S(character.grimoire().spells()) + " favorite spells count: " + I2S(character.grimoire().favourites().size()) + " and learned spells count " + I2S(character.grimoire().learnedSpells()))
 				// Destroy all spells since the class might have been repicked! Include map specific spells etc. as well.
-				set i = 0
-				loop
-					exitwhen (i == character.spellCount())
-					call character.spell(i).destroy()
-					set i = i + 1
-				endloop
-				call character.clearSpells()
+				call thistype.destroyAllSpells.evaluate(character) // New OpLimit.
+				// don't clear spells, otherwise Grimoire spells which inherit ASpell will be cleared completely.
+				//call character.clearSpells()
 				call character.classSpells().clear()
+				debug call Print("Spell count: " + I2S(character.spellCount()) + " class spells count: " + I2S(character.classSpells().size()))
+				// until here everything works fine, all counts are 0 in the end!!! This also means that grimoire spells are not skipped, all are destroyed!!!
 			endif
 			
+			if (createCompletelyNewCharacter) then // TEST!!!!!!!
 			// Restores the class, inventory items etc.
 			call character.restoreDataFromCache(cache, missionKey)
 			
 			// Create spells only when the class is set, otherwise the grimoire stays empty.
-			debug call Print("Creating spells")
+			//debug call Print("Creating spells, character has " + I2S(character.spellCount()) + " spells")
 			// Creates spells which are required in the grimoire etc. and adds hero glow etc.
 			call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
-			debug call Print("After spell creation classes")
+			//debug call Print("After spell creation classes, character has " + I2S(character.spellCount()) + " spells")
 			
-			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"))
+			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"), false) // grimoire UI will be updated in the end
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, missionKey, "Gold"))
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_LUMBER, GetStoredInteger(cache, missionKey, "Lumber"))
 			
-			debug call Print("Restoring spell levels: " + I2S(character.grimoire().spells()) + " with character spells: " + I2S(character.spellCount()))
+			debug call Print("Restoring spell levels: " + I2S(character.grimoire().spells()) + " with character spells: " + I2S(character.spellCount()) + " and learned grimoire spells: " + I2S(character.grimoire().learnedSpells()))
 			// load the grimoire levels
 			set i = 0
 			loop
@@ -208,23 +218,74 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call thistype.restoreGrimoireSpellLevel.evaluate(character, cache, missionKey, i, "Grimoire" + I2S(spell.ability()))
 				set i = i + 1
 			endloop
-			debug call Print("After restoring spell levels. Total skill points: " + I2S(character.grimoire().totalSkillPoints()))
+			//debug call Print("After restoring spell levels. Total skill points: " + I2S(character.grimoire().totalSkillPoints()))
 			
 			// make sure the GUI of the grimoire is correct
-			call character.grimoire().updateUi.evaluate()
-			// TODO updateUiAfterLoad()???
+			// updates the UI and makes sure the page is shown not the current spell
+			call character.grimoire().setPage.evaluate(0)
 			
-			debug call Print("After updating Grimoire UI")
+			endif /// TESST!!!
 			
+			//debug call Print("After updating Grimoire UI")
+			
+			// Since the character traveled for some time fill stats.
 			call SetUnitLifePercentBJ(restoredUnit, 100.0)
 			call SetUnitManaPercentBJ(restoredUnit, 100.0)
 			call SelectUnitForPlayerSingle(restoredUnit, whichPlayer)
-			debug call Print("After selecting character " + GetUnitName(restoredUnit) + " for player " + GetPlayerName(whichPlayer))
+			//debug call Print("After selecting character " + GetUnitName(restoredUnit) + " for player " + GetPlayerName(whichPlayer))
 			call SetCameraPositionForPlayer(whichPlayer, GetUnitX(restoredUnit), GetUnitY(restoredUnit))
 		endmethod
 		
+		/**
+		 * \return Returns true if \p abilityId belongs to a grimoire action.
+		 */
+		private static method isGrimoireAbility takes integer abilityId returns boolean
+			return abilityId == PreviousPage.id or abilityId == NextPage.id or abilityId == SetMax.id or abilityId == Unlearn.id or abilityId == Increase.id or abilityId == Decrease.id or abilityId == AddToFavourites.id or abilityId == RemoveFromFavourites.id or abilityId == BackToGrimoire.id
+		endmethod
+		
+		private static method destroyAllSpells takes Character character returns nothing
+			local integer i = 0
+			local boolean foundGrimoireAbility = false
+			// Destroy Spell instances (class spells) first which automatically destroys the corresponding grimoire entries and removes the spells from class spells
+			loop
+				exitwhen (character.classSpells().isEmpty())
+				call thistype.destroyClassSpell.evaluate(Spell(character.classSpells().back())) // New OpLimit
+			endloop
+			debug call Print("Spell count without class spells: " + I2S(character.spellCount()))
+			// Now that all grimoire entries are removed and the class spells are cleared all remaining spells except the grimoire actions have to be destroyed, since they are recreated later.
+			set i = 0
+			loop
+				exitwhen (i == character.spellCount())
+				// Never destroy the Grimoire spells which are required by the grimoire but do destroy grimoire entries of spells.
+				if (not thistype.isGrimoireAbility(character.spell(i).ability())) then
+					// Removes the spell automatically from the spells.
+					// Use new OpLimit
+					debug call Print("Destroying " + GetObjectName(character.spell(i).ability()) + " with remaining size " + I2S(character.spellCount() - 1))
+					call thistype.destroySpell.evaluate(character, i)
+				else
+					debug call Print("Skipping: " + GetObjectName(character.spell(i).ability()))
+					set foundGrimoireAbility = true
+					set i = i + 1
+				endif
+			endloop
+			if (not foundGrimoireAbility) then
+				debug call Print("How the fuck is there no grimoire ability?!")
+			endif
+		endmethod
+		
+		private static method destroyClassSpell takes Spell spell returns nothing
+			call spell.destroy()
+		endmethod
+		
+		private static method destroySpell takes Character character, integer index returns nothing
+			call character.spell(index).destroy()
+		endmethod
+		
 		private static method restoreGrimoireSpellLevel takes Character character, gamecache cache, string missionKey, integer spellIndex, string key returns nothing
-			call character.grimoire().setSpellLevelByIndex(spellIndex, GetStoredInteger(cache, missionKey, key), false)
+			local integer level = GetStoredInteger(cache, missionKey, key)
+			if (level > 0) then
+				call character.grimoire().setSpellLevelByIndex(spellIndex, level, false)
+			endif
 		endmethod
 
 		public static method restoreCharactersSinglePlayer takes nothing returns nothing
@@ -245,8 +306,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 					endif
 					set i = i + 1
 				endloop
-				debug call Print("From zone: " + zone)
-				debug call Print("Current save game: " + thistype.m_currentSaveGame)
+				//debug call Print("From zone: " + zone)
+				//debug call Print("Current save game: " + thistype.m_currentSaveGame)
 				call MapData.onRestoreCharacters.evaluate(zone)
 				set cache = null
 			endif
