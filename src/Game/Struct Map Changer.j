@@ -10,8 +10,6 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 	 *
 	 * The character is stored with all of his items and attributes. The quests depend on the map and are not transfered.
 	 *
-	 * \todo Transfer gold.
-	 *
 	 * \note Whenever the game is saved in single player campaign mode the save game name is kept and all zone save games are copied to a folder with that savegame name. So the player does always save all zones, too when saving the game. Otherwise the savegames of the zones would be lost. This is the way the Bonus Campaign handles this, too. The savegame name is also stored in the gamecache and passed to every zone.
 	 */
 	struct MapChanger
@@ -28,7 +26,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		private static trigger m_saveTriggerUser
 		/// Stores the savegame name whenever the user saves the game. A directory is created with the same name which has a backup of all the zone savegames.
 		private static string m_currentSaveGame = null
-		
+
 		/**
 		 * \return Returns the file path of a map with the file name \p mapName (without extension) relatively to the Warcraft III directory.
 		 */
@@ -39,7 +37,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			endif
 			return folder + mapName + ".w3x"
 		endmethod
-		
+
 		private static method saveGameFolder takes string currentSaveGame returns string
 			if (currentSaveGame != null and StringLength(currentSaveGame) > 0) then
 				return thistype.zonesFolder + "\\" + currentSaveGame
@@ -47,15 +45,15 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// use another folder if these are temporary zone files
 			return thistype.temporaryFolder
 		endmethod
-			
-		
+
+
 		/**
 		 * \return Returns a save game path using the zone folder and \p currentSaveGame as well as \p mapName.
 		 */
 		private static method saveGamePath takes string currentSaveGame, string mapName returns string
 			return thistype.saveGameFolder(currentSaveGame) + "\\" + mapName + ".w3z"
 		endmethod
-		
+
 		/**
 		 * This save game path should be used to save the current map before changing the level.
 		 * \return Returns the name of the save game for the current map with map name \p mapName.
@@ -63,22 +61,22 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		private static method currentSaveGamePath takes string mapName returns string
 			return thistype.saveGamePath(thistype.m_currentSaveGame, mapName)
 		endmethod
-		
+
 		private static method temporarySaveGamePath takes string mapName returns string
 			return thistype.saveGamePath("", mapName)
 		endmethod
-		
+
 		private static method playerMissionKey takes player whichPlayer returns string
 			return "Character" + GetPlayerName(whichPlayer)
 		endmethod
-		
+
 		/**
 		 * Every player character is stored with a unique mission key using the character's player ID.
 		 */
 		private static method characterMissionKey takes Character character returns string
 			return thistype.playerMissionKey(character.player())
 		endmethod
-	
+
 		/**
 		 * Stores a player's character into a game cache. It stores ASL character data, skill points, gold, lumber, and spell levels.
 		 * \param cache The game cache which the character is stored to.
@@ -102,7 +100,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set i = i + 1
 			endloop
 		endmethod
-		
+
 		/**
 		 * Stores all player characters to a game cache as well as general data which is required in the next map.
 		 * Stores the current savegame name and the zone name of the current zone that the next map can identify where the characters come from.
@@ -125,7 +123,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call SaveGameCache(cache)
 			set cache = null
 		endmethod
-		
+
 		/**
 		 * \return Returns true if characters are stored in the gamecache at all.
 		 */
@@ -137,10 +135,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set result = HaveStoredBoolean(cache, "Stored", "Stored")
 				set cache = null
 			endif
-			
+
 			return result
 		endmethod
-		
+
 		/**
 		 * Restores a single player character from \p cache for \p whichPlayer at \p x, \p y with \p facing.
 		 * If the map is started for the first time, the character is created newly. Otherwise its unit and spells are replaced as well as the inventory.
@@ -163,7 +161,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				endif
 				set i = i + 1
 			endloop
-			
+
 			// The map is started for the first time.
 			if (createCompletelyNewCharacter) then
 				// use the constructor from struct Character to make sure everything is run properly
@@ -185,29 +183,25 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				// For showing a new page better clear the currently showed UI spells as well.
 				call character.grimoire().clearUiSpells()
 				debug call Print("New grimoire spells count: " + I2S(character.grimoire().spells()) + " favorite spells count: " + I2S(character.grimoire().favourites().size()) + " and learned spells count " + I2S(character.grimoire().learnedSpells()))
-				// Destroy all spells since the class might have been repicked! Include map specific spells etc. as well.
+				// Destroy all spells since the class might have been repicked! Include map specific spells etc. as well. Exclude Grimoire control spells as well as the grimoire spell itself.
 				call thistype.destroyAllSpells.evaluate(character) // New OpLimit.
-				// don't clear spells, otherwise Grimoire spells which inherit ASpell will be cleared completely.
-				//call character.clearSpells()
+				// don't clear all ASpell spells, otherwise Grimoire spells which inherit ASpell will be cleared completely.
 				call character.classSpells().clear()
-				debug call Print("Spell count: " + I2S(character.spellCount()) + " class spells count: " + I2S(character.classSpells().size()))
-				// until here everything works fine, all counts are 0 in the end!!! This also means that grimoire spells are not skipped, all are destroyed!!!
 			endif
-			
-			if (createCompletelyNewCharacter) then // TEST!!!!!!!
+
 			// Restores the class, inventory items etc.
 			call character.restoreDataFromCache(cache, missionKey)
-			
+
 			// Create spells only when the class is set, otherwise the grimoire stays empty.
 			//debug call Print("Creating spells, character has " + I2S(character.spellCount()) + " spells")
 			// Creates spells which are required in the grimoire etc. and adds hero glow etc.
 			call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
 			//debug call Print("After spell creation classes, character has " + I2S(character.spellCount()) + " spells")
-			
+
 			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"), false) // grimoire UI will be updated in the end
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, missionKey, "Gold"))
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_LUMBER, GetStoredInteger(cache, missionKey, "Lumber"))
-			
+
 			debug call Print("Restoring spell levels: " + I2S(character.grimoire().spells()) + " with character spells: " + I2S(character.spellCount()) + " and learned grimoire spells: " + I2S(character.grimoire().learnedSpells()))
 			// load the grimoire levels
 			set i = 0
@@ -219,15 +213,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set i = i + 1
 			endloop
 			//debug call Print("After restoring spell levels. Total skill points: " + I2S(character.grimoire().totalSkillPoints()))
-			
+
 			// make sure the GUI of the grimoire is correct
 			// updates the UI and makes sure the page is shown not the current spell
 			call character.grimoire().setPage.evaluate(0)
-			
-			endif /// TESST!!!
-			
-			//debug call Print("After updating Grimoire UI")
-			
+
 			// Since the character traveled for some time fill stats.
 			call SetUnitLifePercentBJ(restoredUnit, 100.0)
 			call SetUnitManaPercentBJ(restoredUnit, 100.0)
@@ -235,22 +225,23 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			//debug call Print("After selecting character " + GetUnitName(restoredUnit) + " for player " + GetPlayerName(whichPlayer))
 			call SetCameraPositionForPlayer(whichPlayer, GetUnitX(restoredUnit), GetUnitY(restoredUnit))
 		endmethod
-		
+
 		/**
 		 * \return Returns true if \p abilityId belongs to a grimoire action.
 		 */
 		private static method isGrimoireAbility takes integer abilityId returns boolean
-			return abilityId == PreviousPage.id or abilityId == NextPage.id or abilityId == SetMax.id or abilityId == Unlearn.id or abilityId == Increase.id or abilityId == Decrease.id or abilityId == AddToFavourites.id or abilityId == RemoveFromFavourites.id or abilityId == BackToGrimoire.id
+			return  abilityId == Grimoire.abilityId or abilityId == PreviousPage.id or abilityId == NextPage.id or abilityId == SetMax.id or abilityId == Unlearn.id or abilityId == Increase.id or abilityId == Decrease.id or abilityId == AddToFavourites.id or abilityId == RemoveFromFavourites.id or abilityId == BackToGrimoire.id
 		endmethod
-		
+
 		private static method destroyAllSpells takes Character character returns nothing
 			local integer i = 0
 			local boolean foundGrimoireAbility = false
-			// Destroy Spell instances (class spells) first which automatically destroys the corresponding grimoire entries and removes the spells from class spells
+			// Destroy Spell instances (class spells) first which automatically destroys the corresponding grimoire entries (of type ASpell) and removes the spells from class spells
 			loop
 				exitwhen (character.classSpells().isEmpty())
 				call thistype.destroyClassSpell.evaluate(Spell(character.classSpells().back())) // New OpLimit
 			endloop
+			debug call Print("Remaining class spells: " + I2S(character.classSpells().size()))
 			debug call Print("Spell count without class spells: " + I2S(character.spellCount()))
 			// Now that all grimoire entries are removed and the class spells are cleared all remaining spells except the grimoire actions have to be destroyed, since they are recreated later.
 			set i = 0
@@ -269,18 +260,18 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				endif
 			endloop
 			if (not foundGrimoireAbility) then
-				debug call Print("How the fuck is there no grimoire ability?!")
+				debug call Print("How the fuck is there no grimoire ability?! character " + I2S(character) + " spell count " + I2S(character.spellCount()))
 			endif
 		endmethod
-		
+
 		private static method destroyClassSpell takes Spell spell returns nothing
 			call spell.destroy()
 		endmethod
-		
+
 		private static method destroySpell takes Character character, integer index returns nothing
 			call character.spell(index).destroy()
 		endmethod
-		
+
 		private static method restoreGrimoireSpellLevel takes Character character, gamecache cache, string missionKey, integer spellIndex, string key returns nothing
 			local integer level = GetStoredInteger(cache, missionKey, key)
 			if (level > 0) then
@@ -312,7 +303,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set cache = null
 			endif
 		endmethod
-		
+
 		private static method forGroupBanMagic takes unit whichUnit returns nothing
 			if (IsUnitType(whichUnit, UNIT_TYPE_SUMMONED)) then
 				call RemoveUnit(whichUnit)
@@ -320,14 +311,14 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call UnitRemoveBuffsBJ(bj_REMOVEBUFFS_ALL, whichUnit)
 			endif
 		endmethod
-		
+
 		private static method removeBuffsAndSummonedUnits takes nothing returns nothing
 			local AGroup whichGroup = AGroup.create()
 			call whichGroup.addUnitsInRect(GetPlayableMapRect(), null)
 			call whichGroup.forGroup(thistype.forGroupBanMagic)
 			call whichGroup.destroy()
 		endmethod
-		
+
 		/**
 		 * Changes map to \p newMap and saves the current map.
 		 */
@@ -342,7 +333,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			debug call Print("Saving map as " + savePath)
 			debug call Print("Load game path: " + loadPath)
 			call SaveGame(savePath)
-			
+
 			if (SaveGameExists(loadPath)) then
 				debug call Print("Loading game since it exists: " + loadPath)
 				call LoadGame(loadPath, false)
@@ -351,7 +342,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call ChangeLevel(nextLevelPath, false)
 			endif
 		endmethod
-		
+
 		public static method changeMap takes string newMap returns nothing
 			// changing map with saving the game does only work in campaign mode
 			if (bj_isSinglePlayer and Game.isCampaign.evaluate()) then
@@ -362,20 +353,20 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call Character.displayHintToAll(tre("Die Karte kann nur in der Einzelspieler-Kampagne gewechselt werden.", "The map can only be changed in the singleplayer campaign."))
 			endif
 		endmethod
-		
+
 		private static method triggerConditionLoadTransition takes nothing returns boolean
 			return IsMapFlagSet(MAP_RELOADED) and bj_isSinglePlayer and Game.isCampaign.evaluate()
 		endmethod
-		
+
 		private static method triggerActionLoadTransition takes nothing returns nothing
 			call thistype.restoreCharactersSinglePlayer()
 			debug call Print("Restored characters on loading the map in map transition")
 		endmethod
-		
+
 		private static method triggerConditionLoadUser takes nothing returns boolean
 			return not IsMapFlagSet(MAP_RELOADED) and bj_isSinglePlayer and Game.isCampaign.evaluate()
 		endmethod
-		
+
 		/// Copy all to the temporary folder.
 		private static method triggerActionLoadUser takes nothing returns nothing
 			local string zoneName = null
@@ -400,11 +391,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set i = i + 1
 			endloop
 		endmethod
-		
+
 		private static method triggerConditionSaveUser takes nothing returns boolean
 			return bj_isSinglePlayer and Game.isCampaign.evaluate()
 		endmethod
-		
+
 		/**
 		 * Copying all save games of the zones to a folder which contains the save file name, saves all zones as well not only the current one.
 		 */
@@ -431,11 +422,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				endif
 				set i = i + 1
 			endloop
-			
+
 			set thistype.m_currentSaveGame = GetSaveBasicFilename()
 			debug call Print("Copied zone save games for current save with size " + I2S(Zone.zones.evaluate().size()))
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			/*
 			 * This trigger only triggers when the game is loaded by a map change.
@@ -445,7 +436,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call TriggerRegisterGameEvent(thistype.m_loadTriggerTransition, EVENT_GAME_LOADED)
 			call TriggerAddCondition(thistype.m_loadTriggerTransition, Condition(function thistype.triggerConditionLoadTransition))
 			call TriggerAddAction(thistype.m_loadTriggerTransition, function thistype.triggerActionLoadTransition)
-			
+
 			/*
 			 * Triggered when the user loads a game.
 			 * In this case the temporary directory is replaced by all zone save games.
@@ -454,7 +445,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call TriggerRegisterGameEvent(thistype.m_loadTriggerUser, EVENT_GAME_LOADED)
 			call TriggerAddCondition(thistype.m_loadTriggerUser, Condition(function thistype.triggerConditionLoadUser))
 			call TriggerAddAction(thistype.m_loadTriggerUser, function thistype.triggerActionLoadUser)
-			
+
 			/**
 			 * This trigger is triggered when the user saves the game.
 			 * It makes sure that all zone savegames are copied as well.
@@ -464,14 +455,14 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call TriggerRegisterGameEvent(thistype.m_saveTriggerUser, EVENT_GAME_SAVE)
 			call TriggerAddCondition(thistype.m_saveTriggerUser, Condition(function thistype.triggerConditionSaveUser))
 			call TriggerAddAction(thistype.m_saveTriggerUser, function thistype.triggerActionSaveUser)
-			
+
 			set thistype.m_currentSaveGame = null
-			
+
 			// If the campaign is started completely new without loading it, the temporary folder should be cleared. Otherwise wrong zone save games from the last game might be used.
 			if (bj_isSinglePlayer and Game.isCampaign.evaluate() and not IsMapFlagSet(MAP_RELOADED) and MapData.isSeparateChapter) then
 				call RemoveSaveDirectory(thistype.temporaryFolder)
 			endif
 		endmethod
 	endstruct
-	
+
 endlibrary

@@ -311,13 +311,18 @@ else
 endif
 		endmethod
 		
+		/**
+		 * Adds a new class spell to the character. Class spells should be spells which can be learned in the grimoire.
+		 * \note This method has no effect on the spell. It has to be added to the grimoire separately.
+		 */
 		public method addClassSpell takes Spell spell returns nothing
 			call this.m_classSpells.pushBack(spell)
 		endmethod
 		
 		/**
 		 * Since \ref ACharacter.spells() contains all spells belonging to the character it includes non class spells such as
-		 * "Grimoire" or "Add to Favorites". This container stores only class spells which should be listed in the grimoire for example.
+		 * "Grimoire" or "Add to Favorites". This container stores only class spells which should be listed in the grimoire and which can be skilled.
+		 * \return Returns a vector of \ref Spell instances.
 		 */
 		public method classSpells takes nothing returns AIntegerVector
 			return this.m_classSpells
@@ -725,6 +730,8 @@ endif
 		endmethod
 
 		/**
+		 * \param whichPlayer The player who owns the character.
+		 * \param whichUnit The unit which is used as character unit.
 		 * \param quests Set to 0 on first creation but set to old quests on repick creation.
 		 * \param fellows Set to 0 on first creation but set to old quests on repick creation.
 		 */

@@ -5,7 +5,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	 */
 	struct ItemType extends AItemType
 		private static AIntegerVector m_twoSlotItems
-		
+
 		public stub method checkRequirement takes ACharacter character returns boolean
 			local integer i
 			if (this.equipmentType() == AItemType.equipmentTypeSecondaryWeapon and character.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0) then
@@ -29,10 +29,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 					set i = i + 1
 				endloop
 			endif
-		
+
 			return super.checkRequirement(character)
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			/**
 			 * All items which require two slots have to be registered here.
@@ -50,11 +50,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
 			local thistype this = thistype.allocate(itemType, equipmentType, requiredLevel, requiredStrength, requiredAgility, requiredIntelligence, requiredClass)
-			
+
 			return this
 		endmethod
 	endstruct
-	
+
 	/**
 	 * \brief Item type for all range based weapons.
 	 * This item type should enable the proper attack animations for characters as well as range attack when being equipped.
@@ -66,17 +66,17 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	 * \note Note that orbs do not stack so it can only be used if there is only one weapon.
 	 */
 	struct RangeItemType extends ItemType
-	
+
 		public static method createSimpleRange takes integer itemType, integer equipmentType returns thistype
 			return thistype.allocate(itemType, equipmentType, 0, 0, 0, 0, 0)
 		endmethod
-	
+
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			local Character character = ACharacter.getCharacterByUnit(whichUnit)
 			local AHashTable realSpellLevels = 0
 			local integer i
 			debug call Print("Range item attach")
-			
+
 			// TODO unmorph before if it is morphed already
 			if (character != 0) then
 				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityIdByCharacter.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
@@ -99,12 +99,12 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call character.grimoire().updateUi.evaluate()
 			endif
 		endmethod
-		
+
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
 			local Character character = ACharacter.getCharacterByUnit(whichUnit)
 			local AHashTable realSpellLevels = 0
 			debug call Print("Range item drop")
-			
+
 			if (character != 0) then
 				debug call Print("Adding and removing ability " + GetObjectName(Classes.classMeleeAbilityIdByCharacter.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
 				set realSpellLevels = character.grimoire().spellLevels.evaluate()
@@ -118,35 +118,35 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 
 	endstruct
-	
+
 	/**
 	 * \brief Item type for defense items like bucklers.
 	 */
 	struct DefenceItemType extends ItemType
 		public static constant string animationProperties = "Defend"
-	
+
 		public static method createSimpleDefence takes integer itemType, integer equipmentType returns thistype
 			return thistype.allocate(itemType, equipmentType, 0, 0, 0, 0, 0)
 		endmethod
-	
+
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Defend item attach")
 			call AddUnitAnimationProperties(whichUnit, thistype.animationProperties, true)
 		endmethod
-		
+
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Defend item drop")
 			call AddUnitAnimationProperties(whichUnit, thistype.animationProperties, false)
 		endmethod
 
 	endstruct
-	
+
 	struct MeleeItemType extends ItemType
-	
+
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Melee item attach")
 		endmethod
-		
+
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Melee item drop")
 		endmethod
@@ -160,19 +160,19 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	struct ItemTypes
 		// start items
 		private static RangeItemType m_simpleDruidStaff
-	
+
 		private static ItemType m_blessedSword // Markwards item
 		private static ItemType m_preciousClericHelmet
 		private static ItemType m_bigDoubleAxe
 		private static ItemType m_vassalLance
-		
+
 		// Ricman
 		private static DefenceItemType m_ricmansShield
 		private static ItemType m_ricmansSpear
 		private static ItemType m_ringOfLatency
 		private static ItemType m_staffOfNecromancer
 		private static ItemType m_staffOfWizard
-		
+
 		// Agihard
 		private static ItemType m_amuletOfFight
 		private static DefenceItemType m_expandedShield
@@ -231,7 +231,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_amuletOfForesight
 		private static ItemType m_amuletOfTerror
 		private static ItemType m_swordOfDarkness
-		
+
 		private static ItemType m_amuletOfStrength
 		private static ItemType m_amuletOfLife
 		private static ItemType m_bloodyDragonAxe
@@ -263,17 +263,17 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_druidBoots
 		// Deranor's artefact
 		private static ItemType m_deranorsCrownPiece
-		
+
 		// corn eaters items
 		private static ItemType m_manaAmulet
-		
+
 		// bandits drops
 		private static ItemType m_ringOfProtection2
-		
+
 		// wild creatures
 		private static ItemType m_amuletOfLore
 		private static ItemType m_ringOfProtection3
-		
+
 		// orcs
 		private static ItemType m_crownOfKarornForest
 		private static ItemType m_orcAxe
@@ -286,11 +286,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_amuletFromTalras
 		// death vault drops
 		private static ItemType m_deathScythe
-		
+
 		// map Gardonar
 		private static ItemType m_demonicShoulderPlate
 		private static ItemType m_demonicFireBow
-		
+
 		// map Gardonar's Hell
 		private static ItemType m_tridentOfTheDevil
 
@@ -300,7 +300,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		private method onDestroy takes nothing returns nothing
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			local integer i
 			// disable the spell book ability to get a passive ability without icon
@@ -340,11 +340,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			//integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns AItemType
 			set thistype.m_simpleDruidStaff = RangeItemType.createSimpleRange('I06J', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_simpleDruidStaff.addAbility('A1HX', true)
-			
+
 			set thistype.m_blessedSword = ItemType.createSimple('I03R', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_blessedSword.addAbility('Alcs', true)
 			call thistype.m_blessedSword.addAbility('A04M', true)
-			
+
 			set thistype.m_preciousClericHelmet = ItemType.createSimple('I00I', AItemType.equipmentTypeHeaddress)
 			call thistype.m_preciousClericHelmet.addAbility('A02E', true)
 
@@ -377,13 +377,13 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_staffOfWizard.addAbility('AIrm', true)
 			call thistype.m_staffOfWizard.addAbility('A02N', false)
 			call thistype.m_staffOfWizard.addAbility('AIi6', true)
-			
+
 			set thistype.m_amuletOfFight = ItemType.create('I06K', AItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
 			call thistype.m_amuletOfFight.addAbility('A01K', true)
 
 			set thistype.m_expandedShield = DefenceItemType.createSimpleDefence('I006', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_expandedShield.addAbility('A01S', true)
-			
+
 			set thistype.m_knightBuckler = DefenceItemType.createSimpleDefence('I068', AItemType.equipmentTypeSecondaryWeapon)
 			call thistype.m_knightBuckler.addAbility('A1E7', true)
 			call thistype.m_knightBuckler.addAbility('A1E5', true)
@@ -414,7 +414,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_morningStar = ItemType.create('I014', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_morningStar.addAbility('A04O', true)
-			
+
 			set thistype.m_morningStarSecondary = ItemType.create('I06I', AItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_morningStarSecondary.addAbility('A1GX', true)
 
@@ -440,7 +440,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_magicHat.addAbility('AImv', true)
 			call thistype.m_magicHat.addAbility('A06H', true)
 			call thistype.m_magicHat.addAbility('A06G', true)
-			
+
 			set thistype.m_powerfulMagicHat = ItemType.create('I05A', AItemType.equipmentTypeHeaddress, 0, 0, 0, 0, 0)
 			call thistype.m_powerfulMagicHat.addAbility('A17J', true)
 
@@ -489,11 +489,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_dart = RangeItemType.createSimpleRange('I029', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_dart.addAbility('A080', true)
-			
+
 			set thistype.m_nordicWarHammer = ItemType.create('I05C', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_nordicWarHammer.addAbility('A17M', true)
 			call thistype.m_nordicWarHammer.addAbility('A0RU', true)
-			
+
 			set thistype.m_nordicWarHelmet = ItemType.create('I05E', AItemType.equipmentTypeHeaddress, 0, 0, 0, 0, 0)
 			call thistype.m_nordicWarHelmet.addAbility('A18J', true)
 
@@ -507,14 +507,14 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_greatHelm = ItemType.createSimple('I028', AItemType.equipmentTypeHeaddress)
 			call thistype.m_greatHelm.addAbility('A07Z', true)
 			call thistype.m_greatHelm.addAbility('AIs6', true)
-			
+
 			set thistype.m_knightHelmet = ItemType.createSimple('I05F', AItemType.equipmentTypeHeaddress)
 			call thistype.m_knightHelmet.addAbility('A18K', true)
-			
+
 			set thistype.m_fineKnightHelmet = ItemType.createSimple('I05N', AItemType.equipmentTypeHeaddress)
 			call thistype.m_fineKnightHelmet.addAbility('A18W', true)
 			call thistype.m_fineKnightHelmet.addAbility('AIs3', true)
-			
+
 			set thistype.m_ironArmour = ItemType.createSimple('I067', AItemType.equipmentTypeArmour)
 			call thistype.m_ironArmour.addAbility('A1E4', true)
 
@@ -533,21 +533,21 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_longBow = RangeItemType.createSimpleRange('I021', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_longBow.addAbility('A19T', true)
 			call thistype.m_longBow.addAbility('A07P', true)
-			
+
 			set thistype.m_bjoernsShortBow = RangeItemType.createSimpleRange('I06M', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_bjoernsShortBow.addAbility('A1HZ', true)
 			call thistype.m_bjoernsShortBow.addAbility('A1I0', true)
 
 			set thistype.m_huntingKnife = ItemType.createSimple('I025', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_huntingKnife.addAbility('A07W', true)
-			
+
 			set thistype.m_bootsOfSpeed = ItemType.createSimple('I04M', AItemType.equipmentTypeAmulet)
 			call thistype.m_bootsOfSpeed.addAbility('AIms', true)
-			
+
 			set thistype.m_quiver = ItemType.createSimple('I04W', AItemType.equipmentTypeAmulet)
 			call thistype.m_quiver.addAbility('A1EC', true)
 			call thistype.m_quiver.addAbility('A1EJ', true)
-			
+
 			set thistype.m_simpleClothes = ItemType.createSimple('I06B', AItemType.equipmentTypeArmour)
 			call thistype.m_simpleClothes.addAbility('A1EG', true)
 
@@ -561,32 +561,32 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_swordOfDarkness = ItemType.createSimple('I02K', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_swordOfDarkness.addAbility('A095', true)
 			call thistype.m_swordOfDarkness.addAbility('S005', true)
-			
+
 			set thistype.m_amuletOfStrength = ItemType.createSimple('I04D', AItemType.equipmentTypeAmulet)
 			call thistype.m_amuletOfStrength.addAbility('AIs1', true)
-			
+
 			set thistype.m_amuletOfLife = ItemType.createSimple('I04K', AItemType.equipmentTypeAmulet)
 			call thistype.m_amuletOfLife.addAbility('A0VS', true)
-			
+
 			set thistype.m_bloodyDragonAxe = ItemType.create('I04E', AItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, Classes.dragonSlayer())
 			call thistype.m_bloodyDragonAxe.addAbility('A0VM', true)
-			
+
 			set thistype.m_hornOfFighting = ItemType.createSimple('I04G', AItemType.equipmentTypeAmulet)
 			call thistype.m_hornOfFighting.addAbility('A1B6', true)
-			
+
 			set thistype.m_hornOfLife = ItemType.createSimple('I04I', AItemType.equipmentTypeAmulet)
 			call thistype.m_hornOfLife.addAbility('A1B7', true)
-			
+
 			set thistype.m_hornOfProtection = ItemType.createSimple('I04H', AItemType.equipmentTypeAmulet)
 			call thistype.m_hornOfProtection.addAbility('A1B8', true)
-			
+
 			set thistype.m_demonSkull = ItemType.create('I04L', AItemType.equipmentTypeAmulet, 0, 0, 0, 0, Classes.necromancer())
 			call thistype.m_demonSkull.addAbility('A0VT', true)
 			call thistype.m_demonSkull.addAbility('AIi4', true)
 
 			set thistype.m_staffOfFreezing = RangeItemType.createSimpleRange('I04J', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_staffOfFreezing.addAbility('A0VR', true)
-			
+
 			set thistype.m_staffOfSlowing = RangeItemType.createSimpleRange('I04F', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_staffOfSlowing.addAbility('A1DP', true)
 
@@ -600,7 +600,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_staffOfClarity.addAbility('A0AD', true)
 			call thistype.m_staffOfClarity.addAbility('A19W', true)
 			call thistype.m_staffOfClarity.addAbility('AIi4', true)
-			
+
 			set thistype.m_shamanMask = ItemType.createSimple('I05V', ItemType.equipmentTypeHeaddress)
 			call thistype.m_shamanMask.addAbility('AIi4', true)
 			call thistype.m_shamanMask.addAbility('A1AE', true)
@@ -618,71 +618,71 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_vampireNecklace = ItemType.createSimple('I02T', ItemType.equipmentTypeArmour)
 			call thistype.m_vampireNecklace.addAbility('AIi4', true)
 			call thistype.m_vampireNecklace.addAbility('A03X', true)
-			
+
 			set thistype.m_hauntedStaff = RangeItemType.create('I03V', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_hauntedStaff.addAbility('A0B8', true)
-			
+
 			// Sisgard's reward
 			set thistype.m_necromancerHelmet = ItemType.createSimple('I044', ItemType.equipmentTypeHeaddress)
 			call thistype.m_necromancerHelmet.addAbility('A18X', true)
 			call thistype.m_necromancerHelmet.addAbility('AIi4', true)
 			call thistype.m_necromancerHelmet.addAbility('AIva', false)
-			
+
 			// Sisgard's items
 			set thistype.m_amuletOfWisdom = ItemType.createSimple('I048', ItemType.equipmentTypeAmulet)
 			call thistype.m_amuletOfWisdom.addAbility('AIrm', true)
-			
+
 			set thistype.m_mageArmour = ItemType.createSimple('I06A', ItemType.equipmentTypeArmour)
 			call thistype.m_mageArmour.addAbility('A1ED', true)
 			call thistype.m_mageArmour.addAbility('A1EF', true)
 			call thistype.m_mageArmour.addAbility('A1EE', true)
-			
+
 			// Ursuala's items
 			set thistype.m_druidCloak = ItemType.createSimple('I015', ItemType.equipmentTypeArmour)
 			call thistype.m_druidCloak.addAbility('AIi3', true)
 			call thistype.m_druidCloak.addAbility('AId3', true)
-			
+
 			set thistype.m_druidStaff = RangeItemType.createSimpleRange('I02X', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_druidStaff.addAbility('A044', false)
 			call thistype.m_druidStaff.addAbility('A1HX', true)
-			
+
 			set thistype.m_staffOfBan = RangeItemType.createSimpleRange('I04Z', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_staffOfBan.addAbility('A16F', true)
 			call thistype.m_staffOfBan.addAbility('A16G', false)
-			
+
 			set thistype.m_druidBoots = ItemType.createSimple('I033', ItemType.equipmentTypeAmulet)
 			call thistype.m_druidBoots.addAbility('A04V', true)
-			
+
 			// Deranor's artefact
 			set thistype.m_deranorsCrownPiece =  ItemType.createSimple('I04A', ItemType.equipmentTypeAmulet)
 			call thistype.m_deranorsCrownPiece.addAbility('A1BA', true)
 			call thistype.m_deranorsCrownPiece.addAbility('AIx2', true)
-			
+
 			// corn eaters items
 			set thistype.m_manaAmulet = ItemType.createSimple('I046', ItemType.equipmentTypeAmulet)
 			call thistype.m_manaAmulet.addAbility('AIbm', true)
-			
+
 			set thistype.m_ringOfProtection2 = ItemType.createSimple('I04C', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfProtection2.addAbility('AId2', true)
-			
+
 			// wild creatures
 			set thistype.m_amuletOfLore = ItemType.createSimple('I04O', ItemType.equipmentTypeAmulet)
 			call thistype.m_amuletOfLore.addAbility('AIi1', true)
 			set thistype.m_ringOfProtection3 = ItemType.createSimple('I04P', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfProtection3.addAbility('AId3', true)
-			
+
 			// orcs
 			set thistype.m_crownOfKarornForest = ItemType.createSimple('I04R', ItemType.equipmentTypeHeaddress)
 			call thistype.m_crownOfKarornForest.addAbility('AIi3', true)
 			call thistype.m_crownOfKarornForest.addAbility('AId3', true)
-			
+
 			set thistype.m_orcAxe = ItemType.createSimple('I04S', ItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_orcAxe.addAbility('A13T', true)
 			call thistype.m_orcAxe.addAbility('A13S', true)
-			
+
 			set thistype.m_orcCrossBow = RangeItemType.create('I04T', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_orcCrossBow.addAbility('AItk', true)
-			
+
 			// Markward
 			set thistype.m_ringOfStrength = ItemType.createSimple('I053', ItemType.equipmentTypeAmulet)
 			call thistype.m_ringOfStrength.addAbility('AIs3', true)
@@ -694,22 +694,22 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_ringOfLoyality.addAbility('AIx2', true)
 			set thistype.m_amuletFromTalras = ItemType.createSimple('I06P', ItemType.equipmentTypeAmulet)
 			call thistype.m_amuletFromTalras.addAbility('A1IZ', true)
-			
+
 			// death vault drops
 			set thistype.m_deathScythe = ItemType.create('I05B', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_deathScythe.addAbility('A17K', true)
 			call thistype.m_deathScythe.addAbility('A1DQ', true)
-			
+
 			// Gardonar
-			
+
 			// demonic shoulder plate
 			set thistype.m_demonicShoulderPlate = ItemType.create('I06W', ItemType.equipmentTypeArmour, 0, 0, 0, 0, 0)
 			call thistype.m_demonicShoulderPlate.addAbility('A1Q7', true)
 			call thistype.m_demonicShoulderPlate.addAbility('A1Q8', true)
-						
+
 			set thistype.m_demonicFireBow = RangeItemType.createSimpleRange('I06Y', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_demonicFireBow.addAbility('A1QB', true)
-			
+
 			// Gardonar's Hell
 			// trident of the devil
 			set thistype.m_tridentOfTheDevil = ItemType.create('I06X', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
@@ -732,27 +732,27 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		public static method swordOfDarkness takes nothing returns ItemType
 			return thistype.m_swordOfDarkness
 		endmethod
-		
+
 		public static method itemTypeIdIsBuckler takes integer itemTypeId returns boolean
 			return itemTypeId == 'I00M' or itemTypeId == 'I006' or itemTypeId == 'I02A' or itemTypeId == 'I005' or itemTypeId == 'I00N' or itemTypeId == 'I00O' or itemTypeId == 'I00Y' or itemTypeId == 'I068'
 		endmethod
-		
+
 		public static method itemTypeIdIsBow takes integer itemTypeId returns boolean
-			return itemTypeId == 'I013' or itemTypeId == 'I020' or itemTypeId == 'I021'
+			return itemTypeId == 'I013' or itemTypeId == 'I020' or itemTypeId == 'I021' or itemTypeId == 'I06Y'
 		endmethod
-		
+
 		public static method itemTypeIdIsThrowingSpear takes integer itemTypeId returns boolean
 			return itemTypeId == 'I029'
 		endmethod
-		
+
 		public static method itemTypeIdIsMeleeSpear takes integer itemTypeId returns boolean
 			return itemTypeId == 'I002' or itemTypeId == 'I01W' or itemTypeId == 'I00K' or itemTypeId == 'I01X'
 		endmethod
-		
+
 		public static method itemTypeIdIsTwoHandedLance takes integer itemTypeId returns boolean
 			return itemTypeId == 'I05B'
 		endmethod
-		
+
 		public static method itemTypeIdIsTwoHandedHammer takes integer itemTypeId returns boolean
 			return itemTypeId == 'I05C'
 		endmethod

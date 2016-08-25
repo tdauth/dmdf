@@ -1062,16 +1062,15 @@ endif
 			set this.m_currentSpell = 0
 			set this.m_spells = AIntegerVector.create()
 
-			// pass character directly, never use grimoire.character() since it is not set yet
-			set this.m_spellPreviousPage = PreviousPage.create.evaluate(this, character)
-			set this.m_spellNextPage = NextPage.create.evaluate(this, character)
-			set this.m_spellSetMax = SetMax.create.evaluate(this, character)
-			set this.m_spellUnlearn = Unlearn.create.evaluate(this, character)
-			set this.m_spellIncrease = Increase.create.evaluate(this, character)
-			set this.m_spellDecrease = Decrease.create.evaluate(this, character)
-			set this.m_spellAddToFavourites = AddToFavourites.create.evaluate(this, character)
-			set this.m_spellRemoveFromFavourites = RemoveFromFavourites.create.evaluate(this, character)
-			set this.m_spellBackToGrimoire = BackToGrimoire.create.evaluate(this, character)
+			set this.m_spellPreviousPage = PreviousPage.create.evaluate(this)
+			set this.m_spellNextPage = NextPage.create.evaluate(this)
+			set this.m_spellSetMax = SetMax.create.evaluate(this)
+			set this.m_spellUnlearn = Unlearn.create.evaluate(this)
+			set this.m_spellIncrease = Increase.create.evaluate(this)
+			set this.m_spellDecrease = Decrease.create.evaluate(this)
+			set this.m_spellAddToFavourites = AddToFavourites.create.evaluate(this)
+			set this.m_spellRemoveFromFavourites = RemoveFromFavourites.create.evaluate(this)
+			set this.m_spellBackToGrimoire = BackToGrimoire.create.evaluate(this)
 			set this.m_uiGrimoireSpells = AIntegerVector.create()
 			call this.showPage()
 			call this.createLevelTrigger()
@@ -1164,12 +1163,12 @@ endif
 			call super.onCastAction()
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character, integer abilityId, integer grimoireAbility returns thistype
+		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbility returns thistype
 			/*
 			 * Use EVENT_PLAYER_UNIT_SPELL_ENDCAST to prevent any null GetAbilityId() calls when the ability is removed before running trigger events.
 			 * Since the grimoire buttons do not need any event data like GetSpellTargetX() this event is just okay.
 			 */
-			local thistype this = thistype.allocate(character, abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_ENDCAST)
+			local thistype this = thistype.allocate(grimoire.character(), abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_ENDCAST)
 			set this.m_grimoire = grimoire
 			set this.m_grimoireAbility = grimoireAbility
 
@@ -1192,8 +1191,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character returns thistype
-			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1214,8 +1213,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character returns thistype
-			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1237,8 +1236,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character returns thistype
-			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1260,8 +1259,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character returns thistype
-			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1283,8 +1282,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character returns thistype
-			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1306,8 +1305,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character returns thistype
-			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1329,8 +1328,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character returns thistype
-			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1352,8 +1351,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character returns thistype
-			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1378,8 +1377,8 @@ endif
 			endif
 		endmethod
 
-		public static method create takes Grimoire grimoire, Character character returns thistype
-			local thistype this = thistype.allocate(grimoire, character, thistype.id, thistype.grimoireAbilityId)
+		public static method create takes Grimoire grimoire returns thistype
+			local thistype this = thistype.allocate(grimoire, thistype.id, thistype.grimoireAbilityId)
 
 			return this
 		endmethod
@@ -1413,7 +1412,7 @@ endif
 
 		/// \note Call this after the construction of \ref Grimoire since it references the corresponding character
 		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbilityId, Spell spell returns thistype
-			local thistype this = thistype.allocate(grimoire, grimoire.character(), abilityId, grimoireAbilityId)
+			local thistype this = thistype.allocate(grimoire, abilityId, grimoireAbilityId)
 			set this.m_spell = spell
 
 			return this

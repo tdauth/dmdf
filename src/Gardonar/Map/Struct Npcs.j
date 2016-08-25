@@ -26,6 +26,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 			set thistype.m_wigberht = gg_unit_H01C_0003
 			set thistype.m_gardonar = gg_unit_n06U_0005
 			set thistype.m_deranor = gg_unit_u00A_0006
+			call SetUnitInvulnerable(thistype.m_deranor, true)
 			set thistype.m_gammar = gg_unit_n06W_0007
 			set thistype.m_barade = gg_unit_n06V_0008
 		endmethod
