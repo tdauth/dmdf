@@ -218,6 +218,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// updates the UI and makes sure the page is shown not the current spell
 			call character.grimoire().setPage.evaluate(0)
 
+			// update 3rd person camera
+			if (character.isViewEnabled()) then
+				call character.view().enable()
+			endif
+
 			// Since the character traveled for some time fill stats.
 			call SetUnitLifePercentBJ(restoredUnit, 100.0)
 			call SetUnitManaPercentBJ(restoredUnit, 100.0)

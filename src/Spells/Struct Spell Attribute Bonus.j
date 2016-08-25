@@ -1,6 +1,10 @@
 /// All Classes
 library StructSpellsSpellAttributeBonus requires Asl, StructGameClasses, StructGameSpell
 
+	/**
+	 * \brief This spell can be skilled by every class to increase all attributes by 3 points per level.
+	 * The same spell is used in the Warcraft III Bonus Campaign.
+	 */
 	struct SpellAttributeBonus extends Spell
 		public static constant integer abilityId = 'A1QX'
 		public static constant integer favouriteAbilityId = 'A1QY'
@@ -13,17 +17,21 @@ library StructSpellsSpellAttributeBonus requires Asl, StructGameClasses, StructG
 			call this.setIsPassive(true)
 			call this.setIsHidden(true)
 			call this.addGrimoireEntries.evaluate() // New OpLimit
-			
+
 			return this
 		endmethod
-		
+
 		private method addGrimoireEntries takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == thistype.maxLevel)
-				call this.addGrimoireEntry('A1QZ', 'A1R0')
+				exitwhen (i == thistype.maxLevel + 1)
+				call thistype.addGrimoireEntryNewOpLimit.evaluate(this) // New OpLimit
 				set i = i + 1
 			endloop
+		endmethod
+
+		private static method addGrimoireEntryNewOpLimit takes thistype this returns nothing
+			call this.addGrimoireEntry('A1QZ', 'A1R0')
 		endmethod
 	endstruct
 
