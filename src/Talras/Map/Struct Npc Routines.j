@@ -68,7 +68,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		// Ursula
 		private static NpcRoutineWithFacing m_ursulaReadsBook
 		private static NpcRoutineWithFacing m_ursulaStandsNearFire
-		
+
 		// forest
 		// Trommon
 		private static NpcRoutineWithFacing m_trommonInFrontOfHisHouse
@@ -83,18 +83,18 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static NpcTalksRoutine m_kunosDaughterTalksToKuno
 
 		private static NpcTalksRoutine m_tobiasTalksToHimself
-		
+
 		private static NpcTalksRoutine m_brogoTalksToHimself
-		
+
 		private static NpcTalksRoutine m_dragonSlayerSells = 0
-		
+
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
 		endmethod
-		
+
 		private static method sisgardCastSpellEndAction takes NpcRoutineWithFacing period returns nothing
 			call ResetUnitAnimation(period.unit())
 		endmethod
@@ -139,7 +139,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			// Wigberht
 			set thistype.m_wigberhtTraining = NpcRoutineWithFacing.create(Routines.train(), Npcs.wigberht(), 18.00, 5.00, gg_rct_waypoint_wigberht_training)
 			call thistype.m_wigberhtTraining.setFacing(252.39)
-			
+
 			// Ricman
 			set thistype.m_ricmanStands = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.ricman(), 0.0, 23.59, gg_rct_waypoint_ricman)
 			call thistype.m_ricmanStands.setFacing(353.10)
@@ -184,9 +184,9 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_osmanPrays0 = NpcTalksRoutine.create(Routines.talk(), Npcs.osman(), MapData.evening, 13.0, gg_rct_waypoint_osman_0)
 			call thistype.m_osmanPrays0.setFacing(180.22)
 			call thistype.m_osmanPrays0.setPartner(null)
-			call thistype.m_osmanPrays0.addSound(tre("Mögen uns die Götter vor dem Feind beschützen.", "May the gods protect us from the enemy."), null)
-			call thistype.m_osmanPrays0.addSound(tre("Oh Götter, sollen sie die armen und schwachen Bauern zuerst töten. Sie sind ihrem Glauben sowieso nicht treu!", "Oh gods, they shall kill the poor and weak farmers at first. They aren't loyal to their faiths anyway!"), null)
-			call thistype.m_osmanPrays0.addSound(tre("(Zu sich selbst) Oh, der Herzog schaut herüber, rasch noch ein Gebet!", "(To himself) Oh, the duke looks over here, quick still one more prayer!"), null)
+			call thistype.m_osmanPrays0.addSound(tre("Mögen uns die Götter vor dem Feind beschützen.", "May the gods protect us from the enemy."), gg_snd_Osman49)
+			call thistype.m_osmanPrays0.addSound(tre("Oh Götter, sollen sie die armen und schwachen Bauern zuerst töten. Sie sind ihrem Glauben sowieso nicht treu!", "Oh gods, they shall kill the poor and weak farmers at first. They aren't loyal to their faiths anyway!"), gg_snd_Osman50)
+			call thistype.m_osmanPrays0.addSound(tre("(Zu sich selbst) Oh, der Herzog schaut herüber, rasch noch ein Gebet!", "(To himself) Oh, the duke looks over here, quick still one more prayer!"), gg_snd_Osman51)
 			set thistype.m_osmanStandsNearDuke = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.osman(), 13.0, 16.0, gg_rct_waypoint_osman_2) // steht bei Herzog
 			call thistype.m_osmanStandsNearDuke.setFacing(154.47)
 			set thistype.m_osmanPrays1 = NpcTalksRoutine.create(Routines.moveTo(), Npcs.osman(), 16.0, MapData.evening, gg_rct_waypoint_osman_0)
@@ -236,14 +236,14 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_wielandTalks.addSound(tre("Bei der Bezahlung kann ich meine Schmiede auch gleich schließen.", "Considering this paying I could close my forge just now."), gg_snd_Wieland39)
 			call thistype.m_wielandTalks.addSound(tre("Einar, du verdammter Hundesohn!", "Einar, you goddamn bastard!"), gg_snd_Wieland40)
 			call thistype.m_wielandTalks.addSound(tre("Hör mir auf mit den Orks!", "Stop with those Orcs!"), gg_snd_Wieland41)
-			
+
 			call thistype.m_wielandTalks.addSoundAnswer(tre("Mehr als du schmieden kannst!", "More than you can forge!"), gg_snd_Einar_28)
 			call thistype.m_wielandTalks.addSoundAnswer(tre("Ich gebe dir 30 Goldmünzen pro Klinge.", "I give you 30 gold coins per blade."), gg_snd_Einar_25)
 			call thistype.m_wielandTalks.addSoundAnswer(tre("Geschäft ist Geschäft.", "Business is business."),  gg_snd_Einar_26)
 			call thistype.m_wielandTalks.addSoundAnswer(tre("Bald kommen die Orks. Sei froh wenn du genügend Klingen geschmiedet hast.", "Soon the Orcs will come. Be glad if you have forged enough blades."), gg_snd_Einar_27)
-			
+
 			//set thistype.m_wielandDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.wieland(), 14.00, MapData.evening, gg_rct_waypoint_wieland_2)
-			
+
 			// Mathilda
 			set thistype.m_mathildaTalksAtBarn = NpcTalksRoutine.create(Routines.moveTo(), Npcs.mathilda(), MapData.evening, MapData.morning, gg_rct_waypoint_mathilda_1)
 			call thistype.m_mathildaTalksAtBarn.setPartner(gg_unit_n02J_0013)
@@ -313,7 +313,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_ursulaReadsBook.setFacing(73.58)
 			set thistype.m_ursulaStandsNearFire = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.ursula(), MapData.midday, MapData.evening, gg_rct_waypoint_ursula_2)
 			call thistype.m_ursulaStandsNearFire.setFacing(20.67)
-			
+
 			// forest
 			// Trommon
 			set thistype.m_trommonInFrontOfHisHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.trommon(), MapData.evening, MapData.midday, gg_rct_waypoint_trommon_0)
@@ -322,7 +322,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_trommonStandsInFrontOfHisFire.setFacing(153.48)
 			set thistype.m_trommonWorksInHisGarden = NpcRoutineWithFacing.create(Routines.splitWood(), Npcs.trommon(), 14.0, MapData.evening, gg_rct_waypoint_trommon_2)
 			call thistype.m_trommonWorksInHisGarden.setFacing(235.02)
-			
+
 			// Kuno
 			set thistype.m_kunoCutsWood = NpcRoutineWithFacing.create(Routines.splitWood(), Npcs.kuno(), MapData.evening, MapData.midday, gg_rct_waypoint_kuno_4)
 			call thistype.m_kunoCutsWood.setFacing(0.0)
@@ -338,14 +338,14 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Und pass gut auf dich auf!", "And take care of yourself!"), null)
 			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Der Wald ist gefährlich.", "The forest is dangerous."), null)
 			call thistype.m_kunoTalksToHisDaughter.addSound(tre("Wir schaffen das schon.", "We can do it."), null)
-			
+
 			// Kuno's daughter
 			set thistype.m_kunosDaughterStandsInFrontOfTheHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.kunosDaughter(), MapData.evening, 16.0, gg_rct_waypoint_kunos_daughter_1)
 			call thistype.m_kunosDaughterStandsInFrontOfTheHouse.setFacing(272.23)
 			set thistype.m_kunosDaughterTalksToKuno = NpcTalksRoutine.create(Routines.talk(), Npcs.kunosDaughter(), 16.0, MapData.evening, gg_rct_waypoint_kunos_daughter_0)
 			call thistype.m_kunosDaughterTalksToKuno.setPartner(Npcs.kuno())
 			call thistype.m_kunosDaughterTalksToKuno.setFacing(35.21)
-			
+
 			set thistype.m_tobiasTalksToHimself = NpcTalksRoutine.create(Routines.talk(), Npcs.tobias(), 0.0, 23.59, gg_rct_waypoint_tobias_0)
 			call thistype.m_tobiasTalksToHimself.setFacing(186.73)
 			call thistype.m_tobiasTalksToHimself.setPartner(null)
@@ -353,7 +353,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_tobiasTalksToHimself.addSound(tre("Oh höre mich an du Kreatur meiner Zuneigung.", "Oh listen to me, you creature of my affection."), gg_snd_Tobias201)
 			call thistype.m_tobiasTalksToHimself.addSound(tre("Hallo, hallo, hallo, hallo, hallo …", "Hello, hello, hello, hello, hello …"), gg_snd_Tobias301)
 			call thistype.m_tobiasTalksToHimself.addSound(tre("Huhn, Huhn, Huhn, Huhn, Huhn …", "Chicken, chicken, chicken, chicken, chicken …"), gg_snd_Tobias401)
-			
+
 			set thistype.m_brogoTalksToHimself = NpcTalksRoutine.create(Routines.talk(), Npcs.brogo(), 0.0, 23.59, gg_rct_waypoint_brogo_0)
 			call thistype.m_brogoTalksToHimself.setFacing(277.12)
 			call thistype.m_brogoTalksToHimself.setPartner(null)
@@ -361,7 +361,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_brogoTalksToHimself.addSound(tre("Brogo mag Katzen.", "Brogo likes cats."), gg_snd_Brogo14)
 			call thistype.m_brogoTalksToHimself.addSound(tre("Brogo vermisst Familie.", "Brogo is missing family."), gg_snd_Brogo15)
 			call thistype.m_brogoTalksToHimself.addSound(tre("Tanka nett zu Brogo. Brogo nett zu Tanka.", "Tanka nice to Brogo. Brogo nice to Tanka."), gg_snd_Brogo16)
-			
+
 			// menials
 			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)
 			call NpcRoutineWithFacing(routine).setFacing(GetRandomReal(0.0, 360.0))
@@ -403,7 +403,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call AUnitRoutine.manualStart(gg_unit_n02J_0159)
 			call AUnitRoutine.manualStart(gg_unit_n02J_0158)
 		endmethod
-		
+
 		/**
 		 * The dragon slayer's routine is created after the quest is done for her.
 		 * Before that she doesn't have any routine.

@@ -158,7 +158,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 	struct Game
 		/// The version of the current release of the modification.
 		public static constant string gameVersion = "0.8"
-	
+
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions
 		private static trigger m_killTrigger
@@ -178,14 +178,14 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 
 		private method onDestroy takes nothing returns nothing
 		endmethod
-		
+
 		/**
 		 * \return Returns the global characters scheme which uses a multiboard.
 		 */
 		public static method charactersScheme takes nothing returns ACharactersScheme
 			return thistype.m_charactersScheme
 		endmethod
-		
+
 		/**
 		 * This method detects if the current game is a map in the singleplayer campaign.
 		 * \returns Returns true if the current game is in the campaign. Otherwise if it's a normal map (for example in multiplayer) it returns false.
@@ -194,7 +194,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			// this custom object should only exist in the campaign not in the usual maps
 			return GetObjectName('h600') == "IsCampaign"
 		endmethod
-		
+
 		/**
 		 * Adds occlusion detection to default doodads such as trees.
 		 * Of course they need the animation "Stand Alternate" which makes them transparent.
@@ -221,7 +221,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			call AddDoodadOcclusion('D078')
 			call AddDoodadOcclusion('D08E')
 			call AddDoodadOcclusion('D08F')
-			
+
 			call AddDoodadOcclusion('D02N')
 			call AddDoodadOcclusion('D02O')
 			call AddDoodadOcclusion('D02P')
@@ -236,7 +236,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			call AddDoodadOcclusion('D07B')
 			call AddDoodadOcclusion('D07C')
 			call AddDoodadOcclusion('D07D')
-			
+
 			call AddDoodadOcclusion('D04K')
 		endmethod
 
@@ -262,7 +262,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			endloop
 			return result
 		endmethod
-		
+
 		/**
 		 * Depending on the missing characters and the set difficulty the handicap of the player PLAYER_NEUTRAL_AGGRESSIVE is set.
 		 * Therefore the creeps become stronger or weaker.
@@ -271,7 +271,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		public static method applyHandicapToCreeps takes nothing returns real
 			local integer missingPlayers = Game.missingPlayers()
 			local real handicap = 1.0 - missingPlayers * 0.10
-			
+
 			if (GetGameDifficulty() == MAP_DIFFICULTY_EASY) then
 				set handicap = handicap - 0.05
 			elseif (GetGameDifficulty() == MAP_DIFFICULTY_HARD) then
@@ -279,16 +279,16 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			elseif (GetGameDifficulty() == MAP_DIFFICULTY_INSANE) then
 				set handicap = handicap + 0.30
 			endif
-			
+
 			call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
-			
+
 			// decrease difficulty for others if players are missing
 			if (missingPlayers > 0) then
 				call Character.displayDifficultyToAll(Format(tre("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.", "Since you are starting the game without %1% players the enemies get a handicap of %2% %. Besides your character gains more experience as well as more gold coins from killing enemies.")).s(trpe("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), "one more", Format("%1% more").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
 			elseif (handicap > 1.0 or handicap < 1.0) then
 				call Character.displayDifficultyToAll(Format(tre("Aufgrund der eingestellten Schwierigkeit starten die Unholde mit einem Handicap von %1%.", "Because of the set difficulty the creeps start with a handicap of %1%.")).rw(handicap * 100.0, 0, 0).result())
 			endif
-			
+
 			return handicap
 		endmethod
 
@@ -510,11 +510,11 @@ static if (DMDF_NPC_ROUTINES) then
 			call Routines.init()
 endif
 			call initSpells.evaluate() // after classes!
-			
+
 			call Zone.init.evaluate() // before map data initialization!
 			// map
 			call MapData.init.evaluate()
-			
+
 			// the map music has to be set in the initialization
 			if (MapData.mapMusic != null) then
 				call ClearMapMusic()
@@ -522,7 +522,7 @@ endif
 			debug else
 				debug call Print("Error: Map music is empty.")
 			endif
-			
+
 			/*
 			 * DMdF uses a custom XP system.
 			 */
@@ -534,7 +534,7 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), Grimoire.dummyHeroAbilityId, false)
 				set i = i + 1
 			endloop
-			
+
 			/*
 			 * Setup initial alliances:
 			 * Players must be  neutral to the allied and to the neutral passive player of the map.
@@ -553,12 +553,12 @@ endif
 				call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, Player(i), bj_ALLIANCE_ALLIED)
 				set i = i + 1
 			endloop
-			
+
 			call SetPlayerAllianceStateBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, Player(PLAYER_NEUTRAL_AGGRESSIVE), bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
-			
+
 			set i = 0
 			loop
 				// one additional group for the allied player
@@ -566,11 +566,11 @@ endif
 				set thistype.m_hiddenUnits[i] = AGroup.create()
 				set i = i + 1
 			endloop
-			
+
 			 // dont run in map initialization already, leads to not starting the map at all (probably because of unallowed function calls or waits)
 			call TriggerSleepAction(0.0) // class selection multiboard is shown and characters scheme multiboard is created.
 			call MapData.onStart.evaluate()
-			
+
 			// if the game is new show the class selection, otherwise restore characters from the game cache (only in campaign mode)
 			if (restoreCharacters) then
 				// new OpLimit
@@ -697,7 +697,7 @@ static if (DEBUG_MODE) then
 				call Print(tr("Sie haben keinen Charakter."))
 			endif
 		endmethod
-		
+
 		private static method onCheatActionAnimation takes ACheat cheat returns nothing
 			local integer index = S2I(StringTrim(cheat.argument()))
 			if (Character.playerCharacter(GetTriggerPlayer()) != 0) then
@@ -708,7 +708,7 @@ static if (DEBUG_MODE) then
 			endif
 		endmethod
 endif
-		
+
 		/**
 		 * Creates the global scheme for a character overview which can be shown to every player.
 		 */
@@ -751,8 +751,10 @@ endif
 			endloop
 			call thistype.m_charactersScheme.setManaBarValueIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
 			call thistype.m_charactersScheme.setManaBarEmptyIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
+			// initial refresh to fix widths
+			call thistype.m_charactersScheme.refresh()
 		endmethod
-		
+
 		/**
 		 * Resets the camera bounds for all human character controlling players to their current dungeon in which their character is at the moment.
 		 */
@@ -778,13 +780,13 @@ endif
 
 			// use new OpLimit
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initCharactersScheme)
-			
+
 			// create after character creation (character should be F1)
 			// disable RPG view
 			call Character.setViewForAll(false)
 			// enable tutorial by default for beginners
 			call Character.setTutorialForAll(true)
-			
+
 			// all but one missing, disable characters schema since it is not required
 			if (thistype.missingPlayers() == MapData.maxPlayers - 1) then
 				set i = 0
@@ -796,7 +798,7 @@ endif
 					set i = i + 1
 				endloop
 			endif
-			
+
 			// enable camera timer after starting the game
 			set i = 0
 			loop
@@ -806,12 +808,12 @@ endif
 				endif
 				set i = i + 1
 			endloop
-			
+
 			// shows only if enabled, otherwise hide
 			call Character.showCharactersSchemeToAll()
 
 			//call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
-			
+
 			// apply initial camera bounds
 			call thistype.resetCameraBounds()
 			call CameraHeight.start.evaluate()
@@ -885,22 +887,22 @@ endif
 			call ShowUnit(whichUnit, false)
 			call UnitRemoveBuffsBJ(bj_REMOVEBUFFS_NONTLIFE, whichUnit)
 		endmethod
-		
+
 		public static method fadeOut takes nothing returns nothing
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 		endmethod
-		
+
 		public static method fadeOutWithWait takes nothing returns nothing
 			call thistype.fadeOut()
 			if (wait(1.50)) then
 				return
 			endif
 		endmethod
-		
+
 		public static method fadeIn takes nothing returns nothing
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 		endmethod
-		
+
 		public static method fadeInWithWait takes nothing returns nothing
 			call thistype.fadeIn()
 			if (wait(1.50)) then
@@ -935,7 +937,7 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'Ane2', false)
 				call SetPlayerAbilityAvailable(Player(i), 'Asid', false)
 				call SetPlayerAbilityAvailable(Player(i), 'Apit', false)
-				
+
 				// marker abilities
 				call SetPlayerAbilityAvailable(Player(i), 'A0HG', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DK', false)
@@ -949,22 +951,22 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'A1DL', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1J1', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1J2', false)
-				
+
 				// hide abilities
 				call SetPlayerAbilityAvailable(Player(i), 'S003', false)
-				
+
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().disableLevelTrigger()
-					
+
 					if (Character(ACharacter.playerCharacter(Player(i))).credits() != 0 and  Character(ACharacter.playerCharacter(Player(i))).credits().isShown()) then
 						call Character(ACharacter.playerCharacter(Player(i))).credits().hide()
 					endif
-					
+
 					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(false)
 				endif
 				set i = i + 1
 			endloop
-			
+
 			call ForForce(bj_FORCE_PLAYER[0], function Fellow.reviveAllForVideo)
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.pauseAll)
 			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.pauseAll)
@@ -983,10 +985,10 @@ endif
 			// Allied fellows should be hidden too.
 			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).addUnitsOfPlayer(MapData.alliedPlayer, Filter(function thistype.filterShownUnit))
 			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).forGroup(thistype.hideUnit)
-			
+
 			call DisableTransparency()
 			call CameraHeight.pause.evaluate()
-			
+
 			/*
 			 * The attack order animations of the Villager255 have to be handled for the actor as well.
 			 * Otherwise the wrong animations will be shown in a fight.
@@ -1021,7 +1023,7 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'Ane2', true)
 				call SetPlayerAbilityAvailable(Player(i), 'Asid', true)
 				call SetPlayerAbilityAvailable(Player(i), 'Apit', true)
-				
+
 				// marker abilities
 				call SetPlayerAbilityAvailable(Player(i), 'A0HG', true)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DK', true)
@@ -1035,16 +1037,16 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'A1DL', true)
 				call SetPlayerAbilityAvailable(Player(i), 'A1J1', true)
 				call SetPlayerAbilityAvailable(Player(i), 'A1J2', true)
-				
+
 				// hide abilities
 				call SetPlayerAbilityAvailable(Player(i), 'S003', true)
-				
+
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).grimoire().enableLevelTrigger()
 					call ACharacter.playerCharacter(Player(i)).panCameraSmart()
 					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(true)
 				endif
-				
+
 				set i = i + 1
 			endloop
 			call thistype.resetCameraBounds()
@@ -1065,7 +1067,7 @@ endif
 			// Show units of allied player, too.
 			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).forGroup(thistype.showUnit)
 			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).units().clear()
-			
+
 			call EnableTransparency()
 			call CameraHeight.resume.evaluate()
 			if (thistype.m_actorOrderAnimations != 0) then

@@ -283,7 +283,7 @@ Critical errors:
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Lange Ladezeit: Widgetizer mit deutschem War3Patch ausprobieren. Erst Widgetizer verwenden, dann war3mapoptimizer!
-* Lag am Anfang: Fähigkeiten preloaden. Nicht nur Klassenfähigkeiten???
+* Lag am Anfang: Fähigkeiten preloaden. Nicht nur Klassenfähigkeiten??? Zauberbuchfähigkeiten, die in Klassenauswahl angezeigt werden etc.
 * Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen? Kritische Bereiche identifizieren und absichern!
 Repickprobleme (vermutlich durch OpLimit irgendwo):
 * ACharactersScheme: Multiboard update does not happen immediately! It would also be better to show the characters schema after the intro video?
@@ -690,7 +690,7 @@ For version 0.7:
 * FIXED: Fähigkeiten wie Blitzschlag, Eis- und Feuergeschoss haben keine Abklingzeit und keinen Manaverbrauch wenn sie direkt töten.
 * FIXED: Mathilda kann nicht mehr angesprochen werden, wenn sie einen einmal begleitet.
 * FIXED: Magische Schockwellen: Terraindeformation fehlt, Sound fehlt.
-* FIXED: Spells from Talras: Move the following spells from the Talras folder to the Game folder. They should be usable in every map: Books of Crafting (all), Amulet of Foresight, Neckstone, Ride Sheep, all scrolls, unearth, wings of deranors guard. 
+* FIXED: Spells from Talras: Move the following spells from the Talras folder to the Game folder. They should be usable in every map: Books of Crafting (all), Amulet of Foresight, Neckstone, Ride Sheep, all scrolls, unearth, wings of deranors guard.
 * FIXED: Verwandlungen: Nixenstein etc., Rückverwandlungsfähigkeit erscheint nicht bei Charakter. Falls Gegenstand verkauft wird, ist Rückverwandlung unmöglich.
 * FIXED: Die Einträge für Trommon2.mp3, Trommon22.mp3, Trommon24.mp3 und Trommon25.mp3 sind kaputt. Wird nicht aufgelistet obwohl eingetragen und Datei vorhanden.
 * FIXED: Quest Metzelei: Reihenfolge bis zur Höhle egal!
