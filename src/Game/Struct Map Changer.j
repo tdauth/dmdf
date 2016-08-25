@@ -192,13 +192,15 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// Restores the class, inventory items etc.
 			call character.restoreDataFromCache(cache, missionKey)
 
+			// Set skill points before creating spells. A skill point is required for the basic spell.
+			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"), false) // grimoire UI will be updated in the end
+
 			// Create spells only when the class is set, otherwise the grimoire stays empty.
 			//debug call Print("Creating spells, character has " + I2S(character.spellCount()) + " spells")
 			// Creates spells which are required in the grimoire etc. and adds hero glow etc.
 			call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
 			//debug call Print("After spell creation classes, character has " + I2S(character.spellCount()) + " spells")
 
-			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"), false) // grimoire UI will be updated in the end
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, missionKey, "Gold"))
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_LUMBER, GetStoredInteger(cache, missionKey, "Lumber"))
 

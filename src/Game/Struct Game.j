@@ -72,7 +72,9 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			local integer experience = thistype.unitExperienceForCharacter(character, whichUnit, killingUnit) / ACharacter.countAll()
 			//debug call Print("Experience: " + I2S(experience))
 			if (experience > 0) then
-				call ShowGeneralFadingTextTagForPlayer(character.player(), IntegerArg(tr("+%i"), experience), GetUnitX(character.unit()), GetUnitY(character.unit()), 255, 0, 255, 255)
+				if (not IsUnitDeadBJ(character.unit())) then
+					call ShowGeneralFadingTextTagForPlayer(character.player(), IntegerArg(tr("+%i"), experience), GetUnitX(character.unit()), GetUnitY(character.unit()), 255, 0, 255, 255)
+				endif
 				call character.addExperience(experience, true)
 			endif
 			return experience

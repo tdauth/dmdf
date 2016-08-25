@@ -20,11 +20,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static constant boolean isSeparateChapter = false
 		public static sound cowSound = null
-		
+
 		private static Zone m_zoneGardonar
 		private static Zone m_zoneHolzbruck
-		
-		
+
+
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
 		private static method create takes nothing returns thistype
@@ -33,23 +33,23 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 		private method onDestroy takes nothing returns nothing
 		endmethod
-		
+
 		/// Required by \ref Game.
 		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
 		public static method init takes nothing returns nothing
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
-			
+
 			call Shrines.init()
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
 			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
-			
+
 			set thistype.m_zoneGardonar = Zone.create("GA", gg_rct_zone_gardonar)
 			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
-			
+
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
-		
+
 		/**
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
@@ -57,7 +57,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			if (class == Classes.ranger()) then
 				// Hunting Bow
 				call UnitAddItemToSlotById(whichUnit, 'I020', 2)
-			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard()) then	
+			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard()) then
 				// Haunted Staff
 				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
 			else
@@ -67,11 +67,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
 			call UnitAddItemToSlotById(whichUnit, 'I061', 1)
-			
+
 			call UnitAddItemToSlotById(whichUnit, 'I00A', 4)
 			call UnitAddItemToSlotById(whichUnit, 'I00D', 5)
 		endmethod
-		
+
 		/**
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
@@ -79,14 +79,14 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			if (character.class() == Classes.ranger()) then
 				// Hunting Bow
 				call character.giveItem('I020')
-			elseif (character.class() == Classes.cleric() or character.class() == Classes.necromancer() or character.class() == Classes.elementalMage() or character.class() == Classes.wizard()) then	
+			elseif (character.class() == Classes.cleric() or character.class() == Classes.necromancer() or character.class() == Classes.elementalMage() or character.class() == Classes.wizard()) then
 				// Haunted Staff
 				call character.giveItem('I03V')
 			else
 				call character.giveItem(ItemTypes.shortword().itemType())
 				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
 			endif
-		
+
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call character.giveItem('I01N')
 			call character.giveQuestItem('I061')
@@ -100,7 +100,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call character.giveItem('I00D')
 			call character.giveItem('I00D')
 		endmethod
-		
+
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
 			call ResetCameraBoundsToMapRectForPlayer(user)
 		endmethod
@@ -113,21 +113,21 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		/// Required by \ref Game.
 		public static method resetCameraBoundsForPlayer takes player user returns nothing
 		endmethod
-		
+
 		/// Required by \ref Game.
 		public static method initMapSpells takes ACharacter character returns nothing
 		endmethod
-		
+
 		/// Required by \ref Game.
 		public static method onStart takes nothing returns nothing
 			call SuspendTimeOfDay(true)
 			call SetTimeOfDay(0.0)
 		endmethod
-		
+
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
 		endmethod
-		
+
 		/// Required by \ref ClassSelection.
 		public static method onRepick takes Character character returns nothing
 		endmethod
@@ -143,31 +143,31 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				endif
 				set i = i + 1
 			endloop
-			
+
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
-			
+
 			call SuspendTimeOfDay(false)
-			
+
 			call thistype.startAfterIntro.evaluate()
 		endmethod
-		
+
 		public static method startAfterIntro takes nothing returns nothing
 			debug call Print("Waited successfully for intro video.")
-			
+
 			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Geben Sie \"-menu\" im Chat ein, um ins Haupt-Menü zu gelangen.", "Enter \"-menu\" into the chat to reach the main menu."))
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
-			
+
 			call Fellows.wigberht().shareWithAll()
 			call Fellows.ricman().shareWithAll()
 			call Fellows.dragonSlayer().shareWithAll()
 
 			call QuestHell.quest().enable()
-			
+
 			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
-			
+
 			// execute because of trigger sleep action
 			call Game.applyHandicapToCreeps.execute()
 		endmethod
@@ -181,13 +181,18 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static method startY takes integer index returns real
 			return GetRectCenterY(gg_rct_start)
 		endmethod
-		
+
+		/// Required by \ref Classes.
+		public static method startFacing takes integer index returns real
+			return 90.0
+		endmethod
+
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
 			if (zone == "GA") then
 				return GetRectCenterX(gg_rct_start)
 			endif
-			
+
 			return GetRectCenterX(gg_rct_start_holzbruck)
 		endmethod
 
@@ -196,33 +201,33 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			if (zone == "GA") then
 				return GetRectCenterY(gg_rct_start)
 			endif
-			
+
 			return GetRectCenterY(gg_rct_start_holzbruck)
 		endmethod
-		
+
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
 			if (zone == "GA") then
 				return 90.0
 			endif
-			
+
 			return 270.0
 		endmethod
-		
+
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacters takes string zone returns nothing
 		endmethod
-		
+
 		/**
 		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
 		 */
 		public static method playerGivesXP takes player whichPlayer returns boolean
 			return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE)
 		endmethod
-		
+
 		public static method initVideoSettings takes nothing returns nothing
 		endmethod
-		
+
 		public static method resetVideoSettings takes nothing returns nothing
 		endmethod
 	endstruct

@@ -5,7 +5,7 @@ Unicode true
 !define INPUT_DIR "E:\Projekte\dmdf\maps\releases"
 !define INPUT_EXE_FILENAME "The Power of Fire.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
-!define VERSION "0.7"
+!define VERSION "0.8"
 
 Name "The Power of Fire"
 OutFile "E:\Projekte\dmdf\releases\ThePowerOfFire${VERSION}.exe"

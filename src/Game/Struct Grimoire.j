@@ -9,7 +9,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 
 	/**
 	 * \brief The grimoire of a character allows the player to skill any abilities of the character. It avoids a limit of 6 hero abilities.
-	 * 
+	 *
 	 * \todo At its current state \ref updateUi() may be called too many times. Please consider that the order of buttons in grimoire should always be equal regardless of which buttons became unavailable.
 	 */
 	struct Grimoire extends ASpell
@@ -61,7 +61,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		 * Since Warcraft III has the bug that when the game is loaded abilities in the spell book are reset to level 1 they have to be changed manually on each map loading.
 		 */
 		private trigger m_loadTrigger
-		
+
 		/**
 		 * The currently visible \ref GrimoireSpell instances which are shown in the UI.
 		 * Might also contain 0 entries depending on the spell!
@@ -77,7 +77,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		*/
 
 		/**
-		 * \return Returns the number of pages which depends on \ref spells() and \ref spellsPerPage. 
+		 * \return Returns the number of pages which depends on \ref spells() and \ref spellsPerPage.
 		 */
 		public method pages takes nothing returns integer
 			local integer result = this.m_spells.size() / thistype.spellsPerPage
@@ -112,7 +112,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		public method skillPoints takes nothing returns integer
 			return this.m_skillPoints
 		endmethod
-		
+
 		/**
 		 * \return Returns the total number of skill points. The unused plus the used. It includes the one skill point for the default spell!
 		 */
@@ -124,7 +124,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				set result = result + Spell(this.m_learnedSpells[i]).level()
 				set i = i + 1
 			endloop
-			
+
 			return result
 		endmethod
 
@@ -157,17 +157,17 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			loop
 				exitwhen (i == this.m_spells.size())
 				set spell = Spell(this.m_spells[i])
-				
+
 				//debug call Print("Spell id: " + I2S(integer(spell)))
-				
+
 				debug if (not table.hasInteger(0, spell.ability())) then
 				debug call Print("Missing ability: " + GetAbilityName(spell.ability()) + " when readding spells")
 				debug endif
-				
+
 				set level = table.integer(0, spell.ability())
-				
+
 				//debug call Print("Ability: " + GetAbilityName(spell.ability()) + " with restored level " + I2S(level))
-				
+
 				// only add if it has been there before!
 				if (level > 0) then
 					if (this.m_favourites.contains(spell)) then
@@ -204,22 +204,22 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		public method learnedSpells takes nothing returns integer
 			return this.m_learnedSpells.size()
 		endmethod
-		
+
 		/// \note Only use when making a map transition!
 		public method clearLearnedSpells takes nothing returns nothing
 			call this.m_learnedSpells.clear()
 		endmethod
-		
+
 		/// \note Only use when making a map transition!
 		public method clearSpells takes nothing returns nothing
 			call this.m_spells.clear()
 		endmethod
-		
+
 		/// \note Only use when making a map transition!
 		public method clearUiSpells takes nothing returns nothing
 			call this.m_uiGrimoireSpells.clear()
 		endmethod
-		
+
 		/**
 		 * Updates all buttons properly.
 		 * Central UI update is much easier to maintain!
@@ -253,7 +253,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				loop
 					exitwhen (i == thistype.spellsPerPage)
 					set index = Index2D(this.page(), i, thistype.spellsPerPage)
-					
+
 					if (index >= this.m_spells.size()) then
 						exitwhen (true)
 					endif
@@ -275,12 +275,12 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				// show in correct order, always show the spell entry itself as last one since it will become the last one whenever its level changes!
 				call this.currentSpell().showGrimoireEntry() // show info about current level
 				call this.m_uiGrimoireSpells.pushBack(this.currentSpell().grimoireEntry())
-			
+
 				// show an ability to return back to the spells overview
 				// in fact the grimoire spell itself has the same functionality but it is not recognizable by the user
 				call this.m_spellBackToGrimoire.show.evaluate()
 				call this.m_uiGrimoireSpells.pushBack(this.m_spellBackToGrimoire)
-				
+
 				if (this.currentSpell().isSkillable()) then
 					call this.m_spellSetMax.show.evaluate()
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellSetMax)
@@ -309,7 +309,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				endif
 			endif
 		endmethod
-		
+
 		/**
 		 * Sets the character's hero level to \p heroLevel.
 		 * This does not actually change any hero level but stores the current hero level which is required for reacting on level up events.
@@ -318,11 +318,11 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		private method setHeroLevel takes integer heroLevel returns nothing
 			set this.m_heroLevel = heroLevel
 		endmethod
-		
+
 		public method heroLevel takes nothing returns integer
 			return this.m_heroLevel
 		endmethod
-		
+
 		private method setGrimoireAbilityToSkillPoints takes integer skillPoints returns nothing
 			if (skillPoints < 0) then
 				call SetUnitAbilityLevel(this.character().unit(), this.ability(), 0)
@@ -333,20 +333,20 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 				call SetUnitAbilityLevel(this.character().unit(), this.ability(), skillPoints + 1)
 			endif
 		endmethod
-		
+
 		/**
 		 * The ability for the grimoire must have level 0 - 100 for displaying the number of available skill points.
 		 */
 		public method setSkillPoints takes integer skillPoints, boolean updateUi returns nothing
 			set this.m_skillPoints = skillPoints
 			call this.setGrimoireAbilityToSkillPoints(skillPoints)
-			
+
 			/**
 			 * This is necessary to show the skill points in the hero icon.
 			 */
 			call ModifyHeroSkillPoints(this.character().unit(), bj_MODIFYMETHOD_SET, skillPoints)
 			//debug call Print("Setting skill points to " + I2S(skillPoints))
-			
+
 			/*
 			 * Update the User Interface. The selected skill might become skillable!
 			 */
@@ -372,7 +372,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			endif
 			call this.setSkillPoints(this.m_skillPoints + skillPoints, updateUi)
 		endmethod
-		
+
 		/**
 		 * Gets a grimoire spell at the specified index.
 		 * \param index The index of the returned spell.
@@ -450,7 +450,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), true)
 			call spell.remove()
 		endmethod
-		
+
 		/**
 		 * The spell is being removed from the unit only.
 		 * It remains in \ref favorites() if it is a favorite spell.
@@ -494,7 +494,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 			call spell.setLevel(level)
-			
+
 			return true
 		endmethod
 
@@ -503,13 +503,13 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			debug if (this.m_spells.contains(spell)) then
 			debug call Print("Contains already spell: " + GetAbilityName(spell.ability()))
 			debug endif
-		
+
 			call this.m_spells.pushBack(spell)
 
 			if (spell.spellType() == Spell.spellTypeDefault) then
 				call this.setSpellMaxLevelByIndex.evaluate(this.m_spells.backIndex(), false)
 			endif
-			
+
 			if (updateUi) then
 				call this.updateUi()
 			endif
@@ -537,21 +537,21 @@ endif
 				endif
 			endif
 			call this.m_spells.erase(index)
-			
+
 			if (updateUi) then
 				call this.updateUi()
 			endif
 
 			return true
 		endmethod
-		
+
 		public method setSpellLevelWithoutConditions takes Spell spell, integer level, boolean updateUi returns boolean
 			local integer requiredSkillPoints = level - spell.level()
 
 			if (requiredSkillPoints == 0) then
 				return true
 			endif
-			
+
 			//debug call Print("Successfully skilling " + GetAbilityName(spell.ability()) + " to level " + I2S(level))
 
 			if (requiredSkillPoints < 0) then
@@ -570,7 +570,7 @@ endif
 
 				if (spell.level() == 0) then
 					//debug call Print("Learning spell: " + spell.name() + " having " + I2S(this.m_favourites.size()) + " favorite spells.")
-				
+
 					if (this.m_favourites.size() < thistype.maxFavourites and not spell.isPassive()) then
 						call this.learnFavouriteSpell(spell)
 					else
@@ -580,7 +580,7 @@ endif
 
 				call spell.setLevel(level)
 			endif
-			
+
 			if (updateUi) then
 				call this.updateUi()
 			endif
@@ -601,12 +601,12 @@ endif
 
 		public method setSpellAvailable takes Spell spell, boolean available, boolean updateUi returns nothing
 			call spell.setAvailable(available)
-			
+
 			if (updateUi) then
 				call this.updateUi()
 			endif
 		endmethod
-		
+
 		public method setSpellAvailableByIndex takes integer index, boolean available, boolean updateUi returns nothing
 static if (DEBUG_MODE) then
 			if (index < 0 or index >= this.m_spells.size()) then
@@ -617,7 +617,7 @@ endif
 
 			call this.setSpellAvailable(Spell(this.m_spells[index]), available, updateUi)
 		endmethod
-		
+
 		/**
 		 * This does neither unlearn nor completely remove spells from the grimoire.
 		 * It just clears the spells from the character's unit.
@@ -633,12 +633,12 @@ endif
 			endloop
 			call UnitRemoveAbility(this.character().unit(), this.ability())
 		endmethod
-		
+
 		public method setSpellLevel takes Spell spell, integer level, boolean updateUi returns boolean
 			if (not spell.isSkillableTo(level)) then
 				return false
 			endif
-			
+
 			return this.setSpellLevelWithoutConditions(spell, level, updateUi)
 		endmethod
 
@@ -648,10 +648,10 @@ static if (DEBUG_MODE) then
 				call this.printMethodError("setSpellLevelByIndex", "Wrong spell index: " + I2S(index) + ".")
 				return false
 			endif
-endif		
+endif
 			return this.setSpellLevel(Spell(this.m_spells[index]), level, updateUi)
 		endmethod
-		
+
 		public method setSpellMaxLevel takes Spell spell, boolean updateUi returns boolean
 			return this.setSpellLevel(spell, spell.getMaxLevel(), updateUi)
 		endmethod
@@ -662,7 +662,7 @@ static if (DEBUG_MODE) then
 				call this.printMethodError("setSpellMaxLevelByIndex", "Wrong spell index: " + I2S(index) + ".")
 				return false
 			endif
-			
+
 			if (Spell(this.m_spells[index]).getMaxLevel() <= 0) then
 				call this.printMethodError("setSpellMaxLevelByIndex", "Max level is <= 0 " + I2S(Spell(this.m_spells[index]).getMaxLevel()))
 			endif
@@ -745,18 +745,26 @@ endif
 				call this.addWizardSpells()
 			endif
 		endmethod
-		
+
 		public method addClassSpellsFromCharacter takes Character character returns nothing
 			local AIntegerVector spells = AIntegerVector.create()
+			local Spell basicSpell = 0
 			local integer i = 0
 			loop
 				exitwhen (i == character.classSpells().size())
 				// do not add spells twice
 				//debug call Print("Adding NEW spell " + GetAbilityName(Spell(character.classSpells()[i]).ability()))
 				call spells.pushBack(Spell(character.classSpells()[i]))
+				if (Spell(character.classSpells()[i]).spellType() == Spell.spellTypeDefault) then
+					set basicSpell = Spell(character.classSpells()[i])
+				endif
 				set i = i + 1
 			endloop
 			call this.addSpells(spells, true)
+			// the basic spell has to be learned from the beginning
+			if (basicSpell != 0) then
+				call this.setSpellLevel(basicSpell, 1, false)
+			endif
 		endmethod
 
 		public method addCharacterClassSpells takes nothing returns nothing
@@ -905,15 +913,15 @@ endif
 				return this.setPage(this.page() - 1)
 			endif
 		endmethod
-		
+
 		public method enableLevelTrigger takes nothing returns nothing
 			call EnableTrigger(this.m_levelTrigger)
 		endmethod
-		
+
 		public method disableLevelTrigger takes nothing returns nothing
 			call DisableTrigger(this.m_levelTrigger)
 		endmethod
-		
+
 		private static method triggerConditionLevel takes nothing returns boolean
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			debug call Print("Level condition with unit " + GetUnitName(GetTriggerUnit()))
@@ -926,20 +934,20 @@ endif
 			local integer oldLevel = this.heroLevel()
 			local integer levels = newLevel - oldLevel
 			local Character character = Character(this.character())
-			
+
 			call this.addSkillPoints(MapData.levelSpellPoints * levels, true)
 			debug call Print("Levels: " + I2S(levels))
-			
+
 			if (oldLevel < thistype.ultimate0Level and newLevel >= thistype.ultimate0Level) then
 				call character.displayHint(Format(tre("Sie haben Stufe %1% erreicht. Der erste Ultimativzauber kann nun erlernt werden.", "You have reached level %1%. The first ultimate spell can be learned now.")).i(thistype.ultimate0Level).result())
 			endif
-			
+
 			if (oldLevel < thistype.ultimate1Level and newLevel >= thistype.ultimate1Level) then
 				call character.displayHint(Format(tre("Sie haben Stufe %1% erreicht. Der zweite Ultimativzauber kann nun erlernt werden.", "You have reached level %1%. The second ultimate spell can be learned now.")).i(thistype.ultimate1Level).result())
 			endif
-			
+
 			call this.setHeroLevel(newLevel)
-			
+
 			// reached last level TODO: maybe we should give him a little present
 			if (newLevel == MapData.maxLevel) then
 				call character.displayFinalLevel(tre("Sie haben die letzte Stufe erreicht.", "You have reached the final level."))
@@ -954,12 +962,12 @@ endif
 			call TriggerAddAction(this.m_levelTrigger, function thistype.triggerActionLevel)
 			call DmdfHashTable.global().setHandleInteger(this.m_levelTrigger, 0, this)
 		endmethod
-		
+
 		/// Only update the UI automatically when it is no map transition. Otherwise the order has to be specified by \ref MapChanger.
 		private static method triggerConditionLoad takes nothing returns boolean
 			return not IsMapFlagSet(MAP_RELOADED)
 		endmethod
-		
+
 		/**
 		 * Updates the ability levels of all non favorite spells. The ability levels in a spellbook are lost after a load.
 		 * This is a Warcrat III bug.
@@ -982,7 +990,7 @@ endif
 			debug call Print("Learned spells count: " + I2S(this.m_learnedSpells.size()))
 			debug call Print("Total spells count: " + I2S(this.spells()))
 			debug call Print("Loaded game")
-			
+
 			/*
 			 * Readd normal unit abilities.
 			 */
@@ -993,8 +1001,8 @@ endif
 			call UnitAddAbility(this.character().unit(), 'Amov')
 			*/
 			// TODO patrol, stop
-			
-			
+
+
 			// remove favorite abilities
 			set favoriteLevels = AIntegerVector.create()
 			set i = 0
@@ -1004,7 +1012,7 @@ endif
 				call Spell(this.m_favourites[i]).remove()
 				set i = i + 1
 			endloop
-			
+
 			/*
 			 * Readd backpack, grimoire and spells abilities to fix their icon positions.
 			 * TODO does not work
@@ -1012,7 +1020,7 @@ endif
 			call UnitRemoveAbility(this.character().unit(), Grimoire.abilityId)
 			call UnitRemoveAbility(this.character().unit(), 'A015')
 			call UnitRemoveAbility(this.character().unit(), 'A02Z')
-			
+
 			// readd favorite abilities
 			set i = 0
 			loop
@@ -1022,7 +1030,7 @@ endif
 				set i = i + 1
 			endloop
 			call favoriteLevels.destroy()
-			
+
 			// TODO test after adding the spells
 			// add at the correct position
 			call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
@@ -1031,7 +1039,7 @@ endif
 			// make sure the level is correct
 			call this.setGrimoireAbilityToSkillPoints(this.skillPoints())
 		endmethod
-		
+
 		/**
 		 * Whenever the game is loaded the spell levels of the non favorite spells are reset to one.
 		 */
@@ -1039,7 +1047,7 @@ endif
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			call this.updateUiAfterLoad()
 		endmethod
-		
+
 		private method createLoadTrigger takes nothing returns nothing
 			set this.m_loadTrigger = CreateTrigger()
 			call TriggerRegisterGameEvent(this.m_loadTrigger, EVENT_GAME_LOADED)
@@ -1077,7 +1085,7 @@ endif
 			call this.createLoadTrigger()
 
 			call SetPlayerAbilityAvailable(character.player(), thistype.dummyAbilityId, false)
-			
+
 			return this
 		endmethod
 
@@ -1107,10 +1115,10 @@ endif
 			call this.m_spellRemoveFromFavourites.destroy.evaluate()
 			call this.m_spellBackToGrimoire.destroy.evaluate()
 			call this.m_uiGrimoireSpells.destroy()
-			
+
 			call DmdfHashTable.global().destroyTrigger(this.m_levelTrigger)
 			set this.m_levelTrigger = null
-			
+
 			call DmdfHashTable.global().destroyTrigger(this.m_loadTrigger)
 			set this.m_loadTrigger = null
 		endmethod
@@ -1182,7 +1190,7 @@ endif
 
 		public stub method onCastAction takes nothing returns nothing
 			call this.grimoire().decreasePage()
-			
+
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
@@ -1204,7 +1212,7 @@ endif
 
 		public stub method onCastAction takes nothing returns nothing
 			call this.grimoire().increasePage()
-			
+
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
@@ -1219,7 +1227,7 @@ endif
 			return this
 		endmethod
 	endstruct
-	
+
 	struct SetMax extends GrimoireSpell
 		public static constant integer id = 'A1I1'
 		public static constant integer grimoireAbilityId = 'A1I3'
@@ -1227,7 +1235,7 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Set spell max")
 			call this.grimoire().setSpellLevel(this.grimoire().currentSpell(), IMinBJ(this.grimoire().currentSpell().getMaxLevel(), this.grimoire().currentSpell().level() + this.grimoire().skillPoints()), true)
-			
+
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
@@ -1242,7 +1250,7 @@ endif
 			return this
 		endmethod
 	endstruct
-	
+
 	struct Unlearn extends GrimoireSpell
 		public static constant integer id = 'A1I2'
 		public static constant integer grimoireAbilityId = 'A1I4'
@@ -1250,7 +1258,7 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Unlearn spell")
 			call this.grimoire().setSpellLevelWithoutConditions(this.grimoire().currentSpell(), 0, true)
-			
+
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
@@ -1273,7 +1281,7 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Increasing spell")
 			call this.grimoire().increaseSpell()
-			
+
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
@@ -1296,7 +1304,7 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Decreasing spell")
 			call this.grimoire().decreaseSpell()
-			
+
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
@@ -1319,7 +1327,7 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Adding spell to favourites")
 			call this.grimoire().addSpellToFavourites()
-			
+
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
@@ -1342,7 +1350,7 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Removing spell from favourites")
 			call this.grimoire().removeSpellFromFavourites()
-			
+
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
@@ -1357,7 +1365,7 @@ endif
 			return this
 		endmethod
 	endstruct
-	
+
 	/**
 	 * This ability allows the user to get back to the overview of all grimoire spells when a specific spell is activated.
 	 */
@@ -1368,7 +1376,7 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			debug call this.print("Going back to grimoire")
 			call this.grimoire().showPage()
-			
+
 			// TODO if trigger player is not owner of the character!
 			// the trigger player is the player who issues the order/ability not necessarily the owner
 			// there fore only re open the grimoire if there is a trigger player
@@ -1400,7 +1408,7 @@ endif
 			// can be casted in spell menu as well!
 			if (this.grimoire().pageIsShown()) then
 				call this.grimoire().setCurrentSpell(this.spell())
-				
+
 				// TODO if trigger player is not owner of the character!
 				// the trigger player is the player who issues the order/ability not necessarily the owner
 				// there fore only re open the grimoire if there is a trigger player

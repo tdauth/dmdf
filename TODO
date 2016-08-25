@@ -375,7 +375,7 @@ Annoying for version 0.8:
 * Update/improve video "Dararos".
 * Finish the map Gardonar as the second chapter of the story.
 * Finish Deranor's tomb.
-* Fix the transition between maps in the campaign mode: The character should be at least transfered and the save game loaded. Besides there should be no class selection if the character is loaded.
+* FIXED: Fix the transition between maps in the campaign mode: The character should be at least transfered and the save game loaded. Besides there should be no class selection if the character is loaded.
 * FIXED: Imp Attack animation is no loop, leads to freeze unit.
 * Fix counting killing corn eaters in quest War. All spawn points seem to have 0 living units at the first kill.
 * Fix disappearing quest from Wieland in quest War.
@@ -388,6 +388,7 @@ Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.
 
 Weitere TODOS:
+* Splash Screen in der custom exe: Programm Resource Hacker: http://www.hiveworkshop.com/threads/how-to-replace-the-splash-screen-of-warcraft-iii.287721/#post-3088398
 * Grundzauber reinschreiben nur eine Stufe.
 * Add spell attributes bonus with hidden icon and max level of 100. The player can skill this spell when he has skilled all other spells to maximum. Increase the max hero level to 200.
 * Arenagegner viel zu schwach. Magier auch Zauber benutzen, Krieger stärker.

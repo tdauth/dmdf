@@ -7,7 +7,7 @@ Unicode true
 !define INPUT_DIR "E:\Projekte\dmdf\"
 !define INPUT_EXE_FILENAME "The Power of Fire.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
-!define VERSION "0.7"
+!define VERSION "0.8"
 
 Name "The Power of Fire Development Version"
 OutFile "E:\Projekte\dmdf\releases\ThePowerOfFireDev${VERSION}.exe"
@@ -34,15 +34,28 @@ Section "Application" Application
 	SetOutPath "$INSTDIR\"
 	File "${INPUT_EXE}"
 	CreateShortCut "$DESKTOP\The Power of Fire.lnk" "$INSTDIR\${INPUT_EXE_FILENAME}" ""
-	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
+	WriteUninstaller "$INSTDIR\UninstallThePowerOfFireDev.exe"
 SectionEnd
 
 Section "German Maps" GermanMaps
 	SetOutPath "$INSTDIR\The Power of Fire\Maps"
 	File "${INPUT_DIR}\maps\Karte 1 - Talras.w3x"
 	File "${INPUT_DIR}\maps\Karte 2 - Gardonar.w3x"
+	File "${INPUT_DIR}\maps\Karte 2.1 - Gardonars Unterwelt.w3x"
 	File "${INPUT_DIR}\maps\Karte 3 - Holzbruck.w3x"
+	File "${INPUT_DIR}\maps\Karte 4 - Karornwald.w3x"
+	File "${INPUT_DIR}\maps\Karte 5 - Deranor.w3x"
 	File "${INPUT_DIR}\maps\Arena.w3x"
+SectionEnd
+
+Section "German Campaign" GermanCampaign
+	SetOutPath "$INSTDIR\The Power of Fire\Campaigns"
+	File "${INPUT_DIR}\TPoFCampaign${VERSION}_de.w3n"
+SectionEnd
+
+Section "English Campaign" EnglishCampaign
+	SetOutPath "$INSTDIR\The Power of Fire\Campaigns"
+	File "${INPUT_DIR}\TPoFCampaign${VERSION}_en.w3n"
 SectionEnd
 
 Section "Source Code" SourceCode
