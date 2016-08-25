@@ -1,1 +1,4 @@
 To add range items like bows you have to create a custom item type.
+
+To use the proper attack animations the IDs of the item types have to added to methods like
+ItemTypes.itemTypeIdIsTwoHandedLance() for example.

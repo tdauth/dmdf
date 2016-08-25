@@ -6,6 +6,7 @@ Unicode true
 !define INPUT_EXE_FILENAME "The Power of Fire.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
 !define VERSION "0.8"
+!define CAMPAIGN_VERSION "08"
 
 Name "The Power of Fire"
 OutFile "E:\Projekte\dmdf\releases\ThePowerOfFire${VERSION}.exe"
@@ -51,17 +52,17 @@ SectionEnd
 
 Section "German Campaign" GermanCampaign
 	SetOutPath "$INSTDIR\Campaigns"
-	File "${INPUT_DIR}\TPoFCampaign${VERSION}_de.w3n"
+	File "${INPUT_DIR}\TPoF${CAMPAIGN_VERSION}de.w3n"
 SectionEnd
 
 Section "English Campaign" EnglishCampaign
 	SetOutPath "$INSTDIR\Campaigns"
-	File "${INPUT_DIR}\TPoFCampaign${VERSION}_en.w3n"
+	File "${INPUT_DIR}\TPoF${CAMPAIGN_VERSION}en.w3n"
 SectionEnd
 
 Section "Uninstall"
-	 Delete "$INSTDIR\Campaigns\TPoFCampaign{VERSION}_de.w3n"
-	 Delete "$INSTDIR\Campaigns\TPoFCampaign{VERSION}_en.w3n"
+	 Delete "$INSTDIR\Campaigns\TPoF{CAMPAIGN_VERSION}de.w3n"
+	 Delete "$INSTDIR\Campaigns\TPoF{CAMPAIGN_VERSION}en.w3n"
 	 RMDir /r "$INSTDIR\Maps\The Power of Fire"
 	 Delete "$INSTDIR\${INPUT_EXE_FILENAME}"
 	 Delete "$DESKTOP\The Power of Fire.lnk"

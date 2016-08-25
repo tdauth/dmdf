@@ -8,6 +8,7 @@ Unicode true
 !define INPUT_EXE_FILENAME "The Power of Fire.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
 !define VERSION "0.8"
+!define CAMPAIGN_VERSION "08"
 
 Name "The Power of Fire Development Version"
 OutFile "E:\Projekte\dmdf\releases\ThePowerOfFireDev${VERSION}.exe"
@@ -50,16 +51,16 @@ SectionEnd
 
 Section "German Campaign" GermanCampaign
 	SetOutPath "$INSTDIR\The Power of Fire\Campaigns"
-	File "${INPUT_DIR}\TPoFCampaign${VERSION}_de.w3n"
+	File "${INPUT_DIR}\maps\releases\TPoF${CAMPAIGN_VERSION}de.w3n"
 SectionEnd
 
 Section "English Campaign" EnglishCampaign
 	SetOutPath "$INSTDIR\The Power of Fire\Campaigns"
-	File "${INPUT_DIR}\TPoFCampaign${VERSION}_en.w3n"
+	File "${INPUT_DIR}\maps\releases\TPoF${CAMPAIGN_VERSION}en.w3n"
 SectionEnd
 
 Section "Source Code" SourceCode
-	SetOutPath "$INSTDIR\The Power of Fire\src"
+	SetOutPath "$INSTDIR\The Power of Fire\"
 	File /r "${INPUT_DIR}\src"
 SectionEnd
 
@@ -69,17 +70,17 @@ Section "Archive" Archive
 SectionEnd
 
 Section "Documentation" Documentation
-	SetOutPath "$INSTDIR\The Power of Fire\doc"
+	SetOutPath "$INSTDIR\The Power of Fire\"
 	File /r "${INPUT_DIR}\doc"
 SectionEnd
 
 Section "ASL Source Code" AslSourceCode
-	SetOutPath "$INSTDIR\ASL\src"
+	SetOutPath "$INSTDIR\ASL\"
 	File /r "${INPUT_DIR_ASL}\src"
 SectionEnd
 
 Section "ASL Source Documentation" AslDocumentation
-	SetOutPath "$INSTDIR\ASL\doc"
+	SetOutPath "$INSTDIR\ASL\"
 	File /r "${INPUT_DIR_ASL}\doc"
 SectionEnd
 

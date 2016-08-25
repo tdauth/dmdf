@@ -24,3 +24,5 @@ To release a new version of The Power of Fire several steps have to be done:
 	!define VERSION "0.5"
 - Run the application NSIS (available on the Internet) with the file "Scripts/installer.nsi".
 - Now you have the finished setup in the folder "Scripts/". It should be called "The Power of Fire${VERSION}.exe". This file can be distributed and run by everyone who has Warcraft III: The Frozen Throne.
+
+Note: The script "Scripts/makereleasemaps.bat" creates optimized versions for all German maps and copies to replace the war3map.wts files in English maps.

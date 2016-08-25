@@ -10,6 +10,8 @@ del "E:\Projekte\dmdf\maps\releases\de\Talras%VERSION%.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 1 - Talras.w3x" --do  "E:\Projekte\dmdf\maps\releases\de\Talras%VERSION%.w3x" --checkscriptstuff --exit
 del "E:\Projekte\dmdf\maps\releases\de\Gardonar%VERSION%.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 2 - Gardonar.w3x" --do  "E:\Projekte\dmdf\maps\releases\de\Gardonar%VERSION%.w3x" --checkscriptstuff --exit
+del "E:\Projekte\dmdf\maps\releases\de\GardonarsHell%VERSION%.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 2.1 - Gardonars Unterwelt.w3x" --do  "E:\Projekte\dmdf\maps\releases\de\GardonarsHell%VERSION%.w3x" --checkscriptstuff --exit
 del "E:\Projekte\dmdf\maps\releases\de\Holzbruck%VERSION%.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 3 - Holzbruck.w3x" --do  "E:\Projekte\dmdf\maps\releases\de\Holzbruck%VERSION%.w3x" --checkscriptstuff --exit
 del "E:\Projekte\dmdf\maps\releases\de\Arena%VERSION%.w3x"
