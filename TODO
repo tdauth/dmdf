@@ -278,6 +278,7 @@ Handlung:
 
 Aufgehoben für Version 0.8:
 Critical errors:
+* Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Exel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * Orcs bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
