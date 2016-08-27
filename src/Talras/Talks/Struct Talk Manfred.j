@@ -1,9 +1,9 @@
 library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalksTalkMathilda, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestReinforcementForTalras
 
 	struct TalkManfred extends Talk
-	
+
 		implement Talk
-		
+
 		private AInfo m_hi
 		private AInfo m_aboutTheDuke
 		private AInfo m_mathilda
@@ -12,10 +12,10 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		private AInfo m_supply
 		private AInfo m_lumber
 		private AInfo m_exit
-		
+
 		private AInfo m_hi_Yes
 		private AInfo m_hi_No
-		
+
 		private AInfo m_aboutTheDuke_Yes
 		private AInfo m_aboutTheDuke_No
 
@@ -26,8 +26,8 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Hallo.
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Hallo. Suchst du zufällig Arbeit?"), gg_snd_Manfred1)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("Hallo. Suchst du zufällig Arbeit?", "Hello. Are you looking for work coincidentally?"), gg_snd_Manfred1)
 			call this.showRange(this.m_hi_Yes.index(), this.m_hi_No.index(), character)
 		endmethod
 
@@ -40,14 +40,14 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Was hältst du vom Herzog?
 		private static method infoActionAboutTheDuke takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Was hältst du vom Herzog?"), null)
-			call speech(info, character, true, tr("Er hat dich doch nicht etwa geschickt oder? Sonst würde ich wohl meine Zunge hüten."), gg_snd_Manfred7)
-			call speech(info, character, false, tr("Nein."), null)
-			call speech(info, character, true, tr("Na ja, eigentlich kann's mir auch egal sein. Ohne mich und meine Leute hat er kaum etwas zu essen und falls es zur Belagerung käme, würde er schon nach ein paar Tagen verhungern."), gg_snd_Manfred8)
-			call speech(info, character, true, tr("Vor einer Weile waren seine Leute hier und haben sich nach der Ernte erkundigt. Ich wette, die nehmen sich einfach alles, wenn es hart auf hart kommt, aber mir bleibt keine Wahl."), gg_snd_Manfred9)
-			call speech(info, character, true, tr("Ich hab mir das hier nach und nach aufgebaut. Meine Eltern waren hart arbeitende Leute und hatten kaum genug zum Leben. Eigentlich müsste ich mit dem zufrieden sein, was ich habe."), gg_snd_Manfred10)
-			call speech(info, character, true, tr("Aber dieser verdammte Adel macht es einem ja nicht gerade leicht. Also, ich halte vom Herzog nicht allzu viel. Er sollte mir lieber mal ein paar Leute schicken, die auf meine Felder und Leute aufpassen, wenn es wirklich stimmt, dass der Feind schon recht nah ist."), gg_snd_Manfred11)
-			call speech(info, character, true, tr("Am Ende lassen die uns wahrscheinlich nicht mal in die Burg. Der Herzog hat jetzt auch noch unseren Kriegsdienst auf ein Jahr eingefordert, falls der Feind hier aufkreuzt. Als ob ich nicht genug zu tun hätte."), gg_snd_Manfred12)
+			call speech(info, character, false, tre("Was hältst du vom Herzog?", "What do you think of the duke?"), null)
+			call speech(info, character, true, tre("Er hat dich doch nicht etwa geschickt oder? Sonst würde ich wohl meine Zunge hüten.", "He did not send you did he? Otherwise I would probably guard my tongue."), gg_snd_Manfred7)
+			call speech(info, character, false, tre("Nein.", "No."), null)
+			call speech(info, character, true, tre("Na ja, eigentlich kann's mir auch egal sein. Ohne mich und meine Leute hat er kaum etwas zu essen und falls es zur Belagerung käme, würde er schon nach ein paar Tagen verhungern.", "Well, actually I don't have to care. Without me and my people he has little to eat and if it came to the siege, he would starve after a few days."), gg_snd_Manfred8)
+			call speech(info, character, true, tre("Vor einer Weile waren seine Leute hier und haben sich nach der Ernte erkundigt. Ich wette, die nehmen sich einfach alles, wenn es hart auf hart kommt, aber mir bleibt keine Wahl.", "A while ago his people were here and asked to have the harvest. I bet that they just take everything when it comes to the crunch, but I have no choice."), gg_snd_Manfred9)
+			call speech(info, character, true, tre("Ich hab mir das hier nach und nach aufgebaut. Meine Eltern waren hart arbeitende Leute und hatten kaum genug zum Leben. Eigentlich müsste ich mit dem zufrieden sein, was ich habe.", "I have built this up gradually. My parents were hardworking people and had barely enough to live on. Actually, I would be satisfied with what I have."), gg_snd_Manfred10)
+			call speech(info, character, true, tre("Aber dieser verdammte Adel macht es einem ja nicht gerade leicht. Also, ich halte vom Herzog nicht allzu viel. Er sollte mir lieber mal ein paar Leute schicken, die auf meine Felder und Leute aufpassen, wenn es wirklich stimmt, dass der Feind schon recht nah ist.", "But these damn aristocrats don't make it easy for one. So, I think not too much of the duke. He should rather send a few people to me who take care of my fields and people if it is really true that the enemy is already quite close to me."), gg_snd_Manfred11)
+			call speech(info, character, true, tre("Am Ende lassen die uns wahrscheinlich nicht mal in die Burg. Der Herzog hat jetzt auch noch unseren Kriegsdienst auf ein Jahr eingefordert, falls der Feind hier aufkreuzt. Als ob ich nicht genug zu tun hätte.", "At the end they probably do not let us even in the castle. The duke has now also demanded our conscientious to one year, if the enemy shows up here. As if I did not do enough."), gg_snd_Manfred12)
 			call this.showRange(this.m_aboutTheDuke_Yes.index(), this.m_aboutTheDuke_No.index(), character)
 		endmethod
 
@@ -59,7 +59,7 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 
 		// Du lässt Mathilda in deiner Scheune pennen?
 		private static method infoActionMathilda takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Du lässt Mathilda in deiner Scheune pennen?"), null)
+			call speech(info, character, false, tre("Du lässt Mathilda in deiner Scheune pennen?", "You let Mathilda sleep in your barn?"), null)
 			call speech(info, character, true, tr("Klar, wieso nicht? Sie hat mir dafür auch schon ein paar wirklich gute Geschichten erzählt. Sonst gibt's hier ja keine Unterhaltung und für's Herumreisen fehlen mir die nötigen Goldmünzen und die Zeit."), gg_snd_Manfred18)
 			call speech(info, character, true, tr("Außerdem ist sie doch wirklich nett. Dass musst du doch zugeben."), gg_snd_Manfred19)
 			call speech(info, character, false, tr("Na ja ..."), null)
@@ -94,7 +94,7 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Die Versorgung von Talras“ ist aktiv und sonst keines)
 		private static method infoConditionMarkwardNeedsSupply takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
@@ -117,8 +117,8 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 			call QuestSupplyForTalras.characterQuest(character).displayUpdate()
 			call info.talk().showStartPage(character)
 		endmethod
-		
-		
+
+
 		// (Charakter hat alle Vorräte im Inventar)
 		private static method infoConditionSupply takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
@@ -138,7 +138,7 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 			call QuestSupplyForTalras.characterQuest(character).displayUpdate()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 2 des Auftrags „Die Befestigung von Talras“ ist aktiv und Charakter hat das Holz dabei)
 		private static method infoConditionLumber takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
