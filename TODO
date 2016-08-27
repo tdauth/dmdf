@@ -331,6 +331,7 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Annoying for version 0.8:
+* Quest to fight with the Norsemen (first quest) doesn't give any gold rewards etc. although Markward says it in the video.
 * DONE: Druid should have usual spells when transformed but the extra spells in a spell book since there is no rucksack button?
 * Druid Alpha has to be disabled when player transforms back into normal form.
 * FIXED: Scroll of the Realm of Death needs a custom icon and should be called Magical Rune of Revival Shrines. Otherwise player thinks he can use it only once.
