@@ -168,7 +168,7 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 		private static method infoAction3_0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Na gut.", "Okay."), null)
 			call speech(info, character, true, tre("Vielen Dank. Es wird nicht dein Schaden sein, ich werde dich selbstverständlich angemessen dafür entlohnen.", "Thank you very much. It will not be your loss, I will of course pay adequately for it."), gg_snd_Lothar19)
-			call speech(info, character, true, tr("Hier hast du den Honigtopf."), gg_snd_Lothar20)
+			call speech(info, character, true, tre("Hier hast du den Honigtopf.", "Here you have the honeypot."), gg_snd_Lothar20)
 			// Neuer Auftrag „Ein kleines Geschenk“
 			call QuestALittlePresent.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
@@ -176,7 +176,7 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// Friss deinen Honig doch selbst, du dummer Fettsack!
 		private static method infoAction3_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Friss deinen Honig doch selbst, du dummer Fettsack!", "Eat your honey yourself, you stupid fatso!"), null)
+			call speech(info, character, false, tre("Friss deinen Honig doch selbst, du dummer Fettsack!", "Eat your honey yourself, you stupid fatso!"), null)
 			call speech(info, character, true, tre("Was? Unerhört, dieses törichte Verhalten! Du solltest solange du hier bist besser gut auf dich aufpassen!", "What? Unheard, this foolish behavior! You should better take good care of you as long as you're here!"), gg_snd_Lothar21)
 			call speech(info, character, false, tre("Willst du mich überrollen oder was?", "Do you want to run over me or what?"), null)
 			call speech(info, character, true, tre("Bitte, nimm doch etwas Rücksicht auf mich (schluchzt)!", "Please, take some consideration on me (sob)!"), gg_snd_Lothar22)
@@ -216,10 +216,10 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 		// Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?
 		private static method infoAction4_2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?"), null)
-			call speech(info, character, true, tr("Ich unterhalte mich mit ihr so gut wie jeden Tag, aber sie scheint nichts für mich zu empfinden."), gg_snd_Lothar29)
-			call speech(info, character, false, tr("Und zwei Honigtöpfe sollen das ändern?"), null)
-			call speech(info, character, true, tr("Wenn du mich so fragst, ja. Blumen gibt es hier in der Nähe ja kaum und ich gehe sicher nicht den weiten Weg in den Wald, nur um Gestrüpp zu pflücken."), gg_snd_Lothar30)
-			call speech(info, character, false, tr("Alles klar!"), null)
+			call speech(info, character, true, tre("Ich unterhalte mich mit ihr so gut wie jeden Tag, aber sie scheint nichts für mich zu empfinden.", "I talk to her almost every day, but she seems to feel nothing for me."), gg_snd_Lothar29)
+			call speech(info, character, false, tre("Und zwei Honigtöpfe sollen das ändern?", "And two honeypots should change that?"), null)
+			call speech(info, character, true, tre("Wenn du mich so fragst, ja. Blumen gibt es hier in der Nähe ja kaum und ich gehe sicher nicht den weiten Weg in den Wald, nur um Gestrüpp zu pflücken.", "If you keep asking me, yes. Flowers are hardly ardound here and I'm certainly not walking all the way into the forest, only to pick scrub."), gg_snd_Lothar30)
+			call speech(info, character, false, tre("Alles klar!", "All right!"), null)
 			// Charakter erhält Erfahrungsbonus aufgrund seiner weisen Art.
 			call Character(character).xpBonus(50, tre("Weisheitsbonus.", "Wisdom Bonus"))
 			// Achtung: Hier wird wieder die Seite mit „In Ordnung“ angezeigt. Diese Auswahl verhindert nicht, dass der Auftrag angenommen werden kann.
@@ -228,8 +228,8 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// Sie hat sich sehr gefreut.
 		private static method infoAction5_0 takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Sie hat sich sehr gefreut."), null)
-			call speech(info, character, true, tr("Tatsächlich? Das ist ja großartig! Hier hast du Goldmünzen und Wein. Ich werde mich heute erstmal kräftig zulaufen lassen, zur Feier des Tages!"), gg_snd_Lothar33)
+			call speech(info, character, false, tre("Sie hat sich sehr gefreut.", "She was very happy."), null)
+			call speech(info, character, true, tre("Tatsächlich? Das ist ja großartig! Hier hast du Goldmünzen und Wein. Ich werde mich heute erstmal kräftig zulaufen lassen, zur Feier des Tages!", "Really? That's great! Here you have gold coins and wine. I'll now first drink vigorously to celebrate the day!"), gg_snd_Lothar33)
 			// Charakter erhält 100 Goldmünzen und 2 Krüge Wein
 			call character.addGold(100)
 			call character.giveItem('I066')
@@ -239,21 +239,21 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// Sie war eher genervt.
 		private static method infoAction5_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Sie war eher genervt."), null)
+			call speech(info, character, false, tre("Sie war eher genervt.", "She was rather annoyed."), null)
 			// (Erfahrungsoption bei Mathilda freigeschaltet)
 			call thistype(info.talk()).sayTruth(character)
-			call speech(info, character, true, tr("Oh nein! Was habe ich getan? In Zukunft werde ich vorsichtiger bei ihr sein, das wollte ich wirklich nicht!"), gg_snd_Lothar34)
+			call speech(info, character, true, tre("Oh nein! Was habe ich getan? In Zukunft werde ich vorsichtiger bei ihr sein, das wollte ich wirklich nicht!", "Oh no! What have I done? In future I will be more careful with her, I realldy did not want that!"), gg_snd_Lothar34)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Sie meinte nur, du seist extrem fett.
 		private static method infoAction5_2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Sie meinte nur, du seist extrem fett."), null)
-			call speech(info, character, true, tr("Ich bin nicht fett, ich habe nur …"), gg_snd_Lothar35)
-			call speech(info, character, false, tr("… drei Riesen gefressen?"), null)
-			call speech(info, character, true, tr("Sehr lustig (zynisch)!"), gg_snd_Lothar36)
+			call speech(info, character, false, tre("Sie meinte nur, du seist extrem fett.", "She just said you were extremely fat."), null)
+			call speech(info, character, true, tre("Ich bin nicht fett, ich habe nur …", "I'm not fat, I only ..."), gg_snd_Lothar35)
+			call speech(info, character, false, tre("… drei Riesen gefressen?", "... ate three giants?"), null)
+			call speech(info, character, true, tre("Sehr lustig (zynisch)!", "Very funny (cynical)!"), gg_snd_Lothar36)
 			// Charakter erhält Erfahrungsbonus aufgrund seiner beleidigenden Art.
-			call Character(character).xpBonus(50, tr("Beleidigungsbonus."))
+			call Character(character).xpBonus(50, tre("Beleidigungsbonus.", "Insult Bonus"))
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -268,36 +268,36 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 			// start page
 			call this.addInfo(false, true, 0, thistype.infoAction0, null) // 0
-			call this.addInfo(false, false, 0, thistype.infoAction1, tr("Wer bist du?")) // 1
-			call this.addInfo(false, false, 0, thistype.infoAction2, tr("Woher kommst du?")) // 2
-			call this.addInfo(false, false, 0, thistype.infoAction3, tr("Was hältst du vom Bauernhof?")) // 3
-			call this.addInfo(false, false, thistype.infoCondition4, thistype.infoAction4, tr("Ich habe Mathilda deinen Honigtopf gegeben.")) // 4
-			call this.addInfo(false, false, thistype.infoCondition5, thistype.infoAction5, tr("Ich habe Mathilda deinen großen Honigtopf gegeben.")) // 5
-			call this.addInfo(false, false, 0, thistype.infoAction6, tr("Wie läuft das Geschäft?")) // 6
-			call this.addInfo(false, false, thistype.infoCondition7, thistype.infoAction7, tr("Du kannst wieder Trauben pflücken gehen.")) // 7
-			call this.addInfo(true, false, 0, thistype.infoAction8, tr("Was genau verkaufst du?")) // 8
+			call this.addInfo(false, false, 0, thistype.infoAction1, tre("Wer bist du?", "Who are you?")) // 1
+			call this.addInfo(false, false, 0, thistype.infoAction2, tre("Woher kommst du?", "Where are you from?")) // 2
+			call this.addInfo(false, false, 0, thistype.infoAction3, tre("Was hältst du vom Bauernhof?", "What do you think about the farm?")) // 3
+			call this.addInfo(false, false, thistype.infoCondition4, thistype.infoAction4, tre("Ich habe Mathilda deinen Honigtopf gegeben.", "I gave Mathilda the honey pot.")) // 4
+			call this.addInfo(false, false, thistype.infoCondition5, thistype.infoAction5, tre("Ich habe Mathilda deinen großen Honigtopf gegeben.", "I gave Matilda the big honey pot.")) // 5
+			call this.addInfo(false, false, 0, thistype.infoAction6, tre("Wie läuft das Geschäft?", "How does the business go?")) // 6
+			call this.addInfo(false, false, thistype.infoCondition7, thistype.infoAction7, tre("Du kannst wieder Trauben pflücken gehen.", "You can go pick grapes again.")) // 7
+			call this.addInfo(true, false, 0, thistype.infoAction8, tre("Was genau verkaufst du?", "What exactly are you selling?")) // 8
 			call this.addExitButton() // 9
 
 			// info 1
-			call this.addInfo(false, false, 0, thistype.infoAction1_0, tr("Fettsack!")) // 10
-			call this.addInfo(false, false, 0, thistype.infoAction1_1, tr("Du laberst ganz schön viel.")) // 11
-			call this.addInfo(false, false, 0, thistype.infoAction1_2, tr("Gib mir eine Kostprobe.")) // 12
+			call this.addInfo(false, false, 0, thistype.infoAction1_0, tre("Fettsack!", "Fatso!")) // 10
+			call this.addInfo(false, false, 0, thistype.infoAction1_1, tre("Du laberst ganz schön viel.", "You are talking quite a lot.")) // 11
+			call this.addInfo(false, false, 0, thistype.infoAction1_2, tre("Gib mir eine Kostprobe.", "Give me a taste.")) // 12
 			call this.addBackToStartPageButton() // 13
 
 			// info 3
-			call this.addInfo(false, false, 0, thistype.infoAction3_0, tr("Na gut.")) // 14
-			call this.addInfo(false, false, 0, thistype.infoAction3_1, tr("Friss deinen Honig doch selbst, du dummer Fettsack!")) // 15
-			call this.addInfo(false, false, 0, thistype.infoAction3_2, tr("Kein Interesse.")) // 16
+			call this.addInfo(false, false, 0, thistype.infoAction3_0, tre("Na gut.", "Okay.")) // 14
+			call this.addInfo(false, false, 0, thistype.infoAction3_1, tre("Friss deinen Honig doch selbst, du dummer Fettsack!", "Eat your honey yourself, you stupid fatso!")) // 15
+			call this.addInfo(false, false, 0, thistype.infoAction3_2, tre("Kein Interesse.", "No interest.")) // 16
 
 			// info 4
-			call this.addInfo(false, false, 0, thistype.infoAction4_0, tr("In Ordnung.")) // 17
-			call this.addInfo(false, false, 0, thistype.infoAction4_1, tr("Deine extreme Fettleibigkeit gefällt dagegen mir nicht!")) // 18
-			call this.addInfo(false, false, 0, thistype.infoAction4_2, tr("Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?")) // 19
+			call this.addInfo(false, false, 0, thistype.infoAction4_0, tre("In Ordnung.", "Agreed.")) // 17
+			call this.addInfo(false, false, 0, thistype.infoAction4_1, tre("Deine extreme Fettleibigkeit gefällt dagegen mir nicht!", "On the other hand I don't like you're extreme obesity!")) // 18
+			call this.addInfo(false, false, 0, thistype.infoAction4_2, tre("Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?")) // 19
 
 			// info 5
-			call this.addInfo(false, false, 0, thistype.infoAction5_0, tr("Sie hat sich sehr gefreut.")) // 20
-			call this.addInfo(false, false, 0, thistype.infoAction5_1, tr("Sie war eher genervt.")) // 21
-			call this.addInfo(false, false, 0, thistype.infoAction5_2, tr("Sie meinte nur, du seist extrem fett.")) // 22
+			call this.addInfo(false, false, 0, thistype.infoAction5_0, tre("Sie hat sich sehr gefreut.", "She was very happy.")) // 20
+			call this.addInfo(false, false, 0, thistype.infoAction5_1, tre("Sie war eher genervt.", "She was rather annoyed.")) // 21
+			call this.addInfo(false, false, 0, thistype.infoAction5_2, tre("Sie meinte nur, du seist extrem fett.", "She just said you were extremely fat.")) // 22
 
 			return this
 		endmethod
