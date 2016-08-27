@@ -38,11 +38,11 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 		// Woher kommst du?
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Woher kommst du?", "Where are you from?"), null)
-			call speech(info, character, true, tr("Ach, ähm, ja … es spielt doch keine Rolle woher wir kommen, vielmehr wohin wir gehen! Aber wenn du es unbedingt wissen willst, ich komme aus dem Südwesten des Königreichs."), gg_snd_Lothar8)
-			call speech(info, character, true, tr("Vor vielen Jahren zog es mich nach Talras und zufälligerweise fehlte auf dem Bauernhof ein echter Händler, der geschickt seine Ware unters Volk bringt."), gg_snd_Lothar9)
-			call speech(info, character, true, tr("Also zog ich in die Hütte des Totengräbers."), gg_snd_Lothar10)
-			call speech(info, character, false, tr("Des Totengräbers?"), null)
-			call speech(info, character, true, tr("Ähm, ja, ja des Totengräbers. Archibald war sein Name, wenn ich mich recht erinnere. Er war ein Mönch oder sowas und starb kurz bevor ich kam. Woran weiß ich nicht, ist mir auch egal."), gg_snd_Lothar11)
+			call speech(info, character, true, tre("Ach, ähm, ja … es spielt doch keine Rolle woher wir kommen, vielmehr wohin wir gehen! Aber wenn du es unbedingt wissen willst, ich komme aus dem Südwesten des Königreichs.", "Oh, um, yes ... it really does not matter where we come from, but where we are going! But if you want to know it absolutely, I'm from the south-west of the kingdom."), gg_snd_Lothar8)
+			call speech(info, character, true, tre("Vor vielen Jahren zog es mich nach Talras und zufälligerweise fehlte auf dem Bauernhof ein echter Händler, der geschickt seine Ware unters Volk bringt.", "Many years ago I moved to Talras and coincidentally a real trader was missing on the farm who brings his goods to the people cleverly."), gg_snd_Lothar9)
+			call speech(info, character, true, tre("Also zog ich in die Hütte des Totengräbers.", "So I moved into the hut of the gravedigger."), gg_snd_Lothar10)
+			call speech(info, character, false, tre("Des Totengräbers?", "Of the gravedigger?"), null)
+			call speech(info, character, true, tre("Ähm, ja, ja des Totengräbers. Archibald war sein Name, wenn ich mich recht erinnere. Er war ein Mönch oder sowas und starb kurz bevor ich kam. Woran weiß ich nicht, ist mir auch egal.", "Um, yes, yes of the gravedigger. Archibald was his name, if I remember it correctly. He was a monk or something like that and died shortly before I came. I don't know why and I don't care."), gg_snd_Lothar11)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -50,15 +50,15 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Was hältst du vom Bauernhof?", "What do you think about the farm?"), null)
 			call speech(info, character, true, tre("Wieso fragst du?", "Why do you ask?"), gg_snd_Lothar12)
-			call speech(info, character, true, tr("Dich schickt doch nicht etwa Manfred, oder Mathilda?"), gg_snd_Lothar13)
-			call speech(info, character, true, tr("Mathilda … hat sie, nein das kann nicht sein! Oder doch?"), gg_snd_Lothar14)
-			call speech(info, character, false, tr("Was?"), null)
-			call speech(info, character, true, tr("Mein Herz gehört ihr, auf ewig! Aber ich werde es ihr niemals sagen können …"), gg_snd_Lothar15)
-			call speech(info, character, true, tr("Du bist doch sicher mutig?"), gg_snd_Lothar16)
-			call speech(info, character, false, tr("Also …"), null)
-			call speech(info, character, true, tr("Bitte, du musst mir einen Gefallen tun! Gib ihr diesen Topf mit meinem besten Honig als Zeichen meiner Liebe. Sag ihr aber auf keinen Fall von wem er ist!"), gg_snd_Lothar17)
-			call speech(info, character, false, tr("Ähm, du bist der einzige Imker auf dem …"), null)
-			call speech(info, character, true, tr("Bitte!"), gg_snd_Lothar18)
+			call speech(info, character, true, tre("Dich schickt doch nicht etwa Manfred, oder Mathilda?", "But Manfred is not sending you, or Mathilda?"), gg_snd_Lothar13)
+			call speech(info, character, true, tre("Mathilda … hat sie, nein das kann nicht sein! Oder doch?", "Mathilda ... has she, no, that can not be! Or can it?"), gg_snd_Lothar14)
+			call speech(info, character, false, tre("Was?", "What?"), null)
+			call speech(info, character, true, tre("Mein Herz gehört ihr, auf ewig! Aber ich werde es ihr niemals sagen können …", "My heart belongs to her, forever! But I will never be able to tell it to her ..."), gg_snd_Lothar15)
+			call speech(info, character, true, tre("Du bist doch sicher mutig?", "You are surely brave?"), gg_snd_Lothar16)
+			call speech(info, character, false, tre("Also …", "Um ..."), null)
+			call speech(info, character, true, tre("Bitte, du musst mir einen Gefallen tun! Gib ihr diesen Topf mit meinem besten Honig als Zeichen meiner Liebe. Sag ihr aber auf keinen Fall von wem er ist!", "Please, you have to do me a favor! Give her this pot with my best honey as a sign of my love. But definetly do not tell here from whom it is!"), gg_snd_Lothar17)
+			call speech(info, character, false, tre("Ähm, du bist der einzige Imker auf dem …", "Um, you're the only beekeeper in the ..."), null)
+			call speech(info, character, true, tre("Bitte!", "Please!"), gg_snd_Lothar18)
 			call info.talk().showRange(14, 16, character)
 		endmethod
 
@@ -71,11 +71,11 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Ich habe Mathilda deinen Honigtopf gegeben.", "I gave Mathilda the honey pot."), null)
 
-			call speech(info, character, true, tr("Danke, mein Freund! Wie hat sie reagiert? War sie erfreut, entzückt?"), gg_snd_Lothar24)
-			call speech(info, character, false, tr("Na ja …"), null)
+			call speech(info, character, true, tre("Danke, mein Freund! Wie hat sie reagiert? War sie erfreut, entzückt?", "Thank you my friend! Was she pleased, delighted?"), gg_snd_Lothar24)
+			call speech(info, character, false, tre("Na ja …", "Well ..."), null)
 			// Auftrag „Ein kleines Geschenk“ abgeschlossen
 			call QuestALittlePresent.characterQuest(character).complete()
-			call speech(info, character, true, tr("Oh nein, ich habe es geahnt! Ich muss mir einfach mehr Mühe geben. Hier. Überreiche ihr diesen großen Honigtopf. Das muss ihr einfach gefallen."), gg_snd_Lothar25)
+			call speech(info, character, true, tre("Oh nein, ich habe es geahnt! Ich muss mir einfach mehr Mühe geben. Hier, überreiche ihr diesen großen Honigtopf. Das muss ihr einfach gefallen.", "Oh no, I've guessed it! I just have to put more effort into it. Here, give her this big honeypot. She just has to like this!"), gg_snd_Lothar25)
 
 			call info.talk().showRange(17, 19, character)
 		endmethod
@@ -88,24 +88,24 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 		// Ich habe Mathilda deinen großen Honigtopf gegeben.
 		private static method infoAction5 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Ich habe Mathilda deinen großen Honigtopf gegeben.", "I gave Matilda the big honey pot."), null)
-			call speech(info, character, true, tr("Hat sie sich diesmal wenigstens gefreut?"), gg_snd_Lothar31)
-			call speech(info, character, false, tr("Na ja …"), null)
+			call speech(info, character, true, tre("Hat sie sich diesmal wenigstens gefreut?", "Was she at least pleased this time?"), gg_snd_Lothar31)
+			call speech(info, character, false, tre("Na ja …", "Well ..."), null)
 			// Auftrag „Ein großes Geschenk“ abgeschlossen
 			call QuestABigPresent.characterQuest(character).complete()
-			call speech(info, character, true, tr("Nun sag schon!"), gg_snd_Lothar32)
+			call speech(info, character, true, tre("Nun sag schon!", "Now, tell me!"), gg_snd_Lothar32)
 			call info.talk().showRange(20, 22, character)
 		endmethod
 
 		// Wie läuft das Geschäft?
 		private static method infoAction6 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Wie läuft das Geschäft?", "How does the business go?"), null)
-			call speech(info, character, true, tr("Sehr gut, sehr gut, danke der Nachfrage! Also …"), gg_snd_Lothar37)
-			call speech(info, character, false, tr("Also was?"), null)
-			call speech(info, character, true, tr("Na ja, da ist so eine Sache …"), gg_snd_Lothar38)
-			call speech(info, character, false, tr("Spucks aus!"), null)
-			call speech(info, character, true, tr("Also, es geht um meine Weinreben, oben auf dem Mühlberg, wo auch der Müller Guntrich seine Mühle stehen hat. Vor einer Weile hat er mir von diesem Trommeln im Berg erzählt."), gg_snd_Lothar39)
-			call speech(info, character, true, tr("Als kämpfe ein ganzes Heer gegen ein anderes, hat er gesagt. Ich bin sicher kein Feigling, aber jetzt traue selbst ich mich nicht mehr auf den Berg."), gg_snd_Lothar40)
-			call speech(info, character, true, tr("So kann ich aber meine Trauben nicht pflücken und mir entgeht eine Menge Goldmünzen. Natürlich ist es vor allem zum Nachteil der armen Bauern, die keinen Wein mehr an ruhigen Abenden genießen können, diese Armen."), gg_snd_Lothar41)
+			call speech(info, character, true, tre("Sehr gut, sehr gut, danke der Nachfrage! Also …", "Very good, very good, thanks for asking! So ..."), gg_snd_Lothar37)
+			call speech(info, character, false, tre("Also was?", "So what?"), null)
+			call speech(info, character, true, tre("Na ja, da ist so eine Sache …", "Well, there is such a thing ..."), gg_snd_Lothar38)
+			call speech(info, character, false, tre("Spucks aus!", "Just tell me!"), null)
+			call speech(info, character, true, tre("Also, es geht um meine Weinreben, oben auf dem Mühlberg, wo auch der Müller Guntrich seine Mühle stehen hat. Vor einer Weile hat er mir von diesem Trommeln im Berg erzählt.", "So, it is about my vines, on the top of the Mill Hill where the miller Guntrich has also his mill. A while ago he told me about these drums in the mountain."), gg_snd_Lothar39)
+			call speech(info, character, true, tre("Als kämpfe ein ganzes Heer gegen ein anderes, hat er gesagt. Ich bin sicher kein Feigling, aber jetzt traue selbst ich mich nicht mehr auf den Berg.", "As there was fighting an army against another, he said. I'm surely not a coward, but now even I don't dare to go to the mountain anymore."), gg_snd_Lothar40)
+			call speech(info, character, true, tre("So kann ich aber meine Trauben nicht pflücken und mir entgeht eine Menge Goldmünzen. Natürlich ist es vor allem zum Nachteil der armen Bauern, die keinen Wein mehr an ruhigen Abenden genießen können, diese Armen.", "So I can't pick my grapes and I am missing a lot of gold coins. Of course, it is mainly to the detriment of the ppor farmers who cannot enjoy anymore wine in calm evenings, these poors."), gg_snd_Lothar41)
 			call speech(info, character, false, tre("Natürlich.", "Of course."), null)
 			call info.talk().showStartPage(character)
 		endmethod
@@ -117,48 +117,48 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// Du kannst wieder Trauben pflücken gehen.
 		private static method infoAction7 takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Du kannst wieder Trauben pflücken gehen."), null)
-			call speech(info, character, true, tr("Wie bitte?"), gg_snd_Lothar42)
-			call speech(info, character, false, tr("Da gibt es keine Geister. Ich habe nachgesehen."), null)
-			call speech(info, character, true, tr("Bist du sicher? Aber ich dachte selbst, ich hätte mal die Trommeln gehört, als ich gerade bei der Arbeit war. Ich …"), gg_snd_Lothar43)
-			call speech(info, character, false, tr("Da gibt es nichts, frag einfach Guntrich!"), null)
-			call speech(info, character, true, tr("Na gut, ich vertraue dir mal. Hier hast du einen Topf mit feinstem Honig. Erzähl aber bitte keinem davon, vor allem nicht Mathilda!"), gg_snd_Lothar44)
-			call speech(info, character, false, tr("Keine Sorge."), null)
+			call speech(info, character, false, tre("Du kannst wieder Trauben pflücken gehen.", "You can go pick grapes again."), null)
+			call speech(info, character, true, tre("Wie bitte?", "I beg your pardon?"), gg_snd_Lothar42)
+			call speech(info, character, false, tre("Da gibt es keine Geister. Ich habe nachgesehen.", "There are no ghosts. I checked."), null)
+			call speech(info, character, true, tre("Bist du sicher? Aber ich dachte selbst, ich hätte mal die Trommeln gehört, als ich gerade bei der Arbeit war. Ich …", "Are you sure? But I thought myself, I would have heard the drums when I was at work. I ..."), gg_snd_Lothar43)
+			call speech(info, character, false, tre("Da gibt es nichts, frag einfach Guntrich!", "There is nothing, just ask Guntrich!"), null)
+			call speech(info, character, true, tre("Na gut, ich vertraue dir mal. Hier hast du einen Topf mit feinstem Honig. Erzähl aber bitte keinem davon, vor allem nicht Mathilda!", "Well, I trust you once. Here you have a pot of the finest honey. But please don't tell anyone, especially not Mathilda!"), gg_snd_Lothar44)
+			call speech(info, character, false, tre("Keine Sorge.", "Don't worry."), null)
 			// Charakter erhält einen Honigtopf
 			call character.giveItem('I065')
 			// Charakter erhält einen Erfahrungsbonus
-			call Character(character).xpBonus(50, tr("Geisterstunde"))
+			call Character(character).xpBonus(50, tre("Geisterstunde", "Witching Hour"))
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Was genau verkaufst du?
 		private static method infoAction8 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was genau verkaufst du?"), null)
-			call speech(info, character, true, tr("Wie ich es dir schon angeboten habe, Wein und Honig, aber auch andere Lebensmittel und Gebrauchsgegenstände. Aber sicher keinen Ramsch, sondern nur das Beste vom Besten!"), gg_snd_Lothar45)
-			call speech(info, character, false, tr("Schon klar."), null)
-			call speech(info, character, true, tr("Wissen kann ich dir leider nicht anbieten (sarkastisch). Dafür ist die alte Schreckschraube Ursula da (grinst)."), gg_snd_Lothar46)
-			call speech(info, character, true, tr("Das ist so eine alte Hexe und Einsiedlerin, die im Süden ihre Grotte hat und glaubt, sie sei weise (lacht). Mich lässt schon der Gedanke an sie erschaudern."), gg_snd_Lothar47)
+			call speech(info, character, false, tre("Was genau verkaufst du?", "What exactly are you selling?"), null)
+			call speech(info, character, true, tre("Wie ich es dir schon angeboten habe, Wein und Honig, aber auch andere Lebensmittel und Gebrauchsgegenstände. Aber sicher keinen Ramsch, sondern nur das Beste vom Besten!", "As I have already offered you, wine and honey, as well as other food and utensils. But certainly not junk, rather only the best of the best!"), gg_snd_Lothar45)
+			call speech(info, character, false, tre("Schon klar.", "I got it."), null)
+			call speech(info, character, true, tre("Wissen kann ich dir leider nicht anbieten (sarkastisch). Dafür ist die alte Schreckschraube Ursula da (grinst).", "Knowledge I can not offer you unfortunately (sarcastic). For this the old hag Ursula exists (grins)."), gg_snd_Lothar46)
+			call speech(info, character, true, tre("Das ist so eine alte Hexe und Einsiedlerin, die im Süden ihre Grotte hat und glaubt, sie sei weise (lacht). Mich lässt schon der Gedanke an sie erschaudern.", "This is such an old hag and reculse, who has here grotto in the south and thinks she would be wise (laughs). Only thinking of her lets me cringe."), gg_snd_Lothar47)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Fettsack!
 		private static method infoAction1_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Fettsack!"), null)
-			call speech(info, character, true, tr("Was redest du da? Ist das etwa eine gebührliche Art, mit einem Fremden umzugehen?"), gg_snd_Lothar5)
+			call speech(info, character, false, tre("Fettsack!", "Fatso!"), null)
+			call speech(info, character, true, tre("Was redest du da? Ist das etwa eine gebührliche Art, mit einem Fremden umzugehen?", "What are you talking about? Is that a duly way of dealing with a stranger?"), gg_snd_Lothar5)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Du laberst ganz schön viel.
 		private static method infoAction1_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Du laberst ganz schön viel."), null)
-			call speech(info, character, true, tr("Männer meines Standes müssen ihre Ware an den Mann bringen. Ich kann es mir nicht leisten, darauf zu warten, dass sich meine Ware von selbst verkauft."), gg_snd_Lothar6)
+			call speech(info, character, false, tre("Du laberst ganz schön viel.", "You are talking quite a lot."), null)
+			call speech(info, character, true, tre("Männer meines Standes müssen ihre Ware an den Mann bringen. Ich kann es mir nicht leisten, darauf zu warten, dass sich meine Ware von selbst verkauft.", "Men of my class have to bring their goods to the man. I can not afford to wait for my goods getting sold by themselves."), gg_snd_Lothar6)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Gib mir eine Kostprobe.
 		private static method infoAction1_2 takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Gib mir eine Kostprobe."), null)
-			call speech(info, character, true, tr("Wie du wünschst, mein weiser Freund. Hier ist ein Krug voll köstlichem Wein, ganz umsonst für dich!"), gg_snd_Lothar7)
+			call speech(info, character, false, tre("Gib mir eine Kostprobe.", "Give me a taste."), null)
+			call speech(info, character, true, tre("Wie du wünschst, mein weiser Freund. Hier ist ein Krug voll köstlichem Wein, ganz umsonst für dich!", "As you wish, my wise friend. Here is a pitcher full of excellent wine, all in vain for you!"), gg_snd_Lothar7)
 			// Charakter erhält einen Weinkrug
 			call character.giveItem('I066')
 			call info.talk().showStartPage(character)
@@ -166,8 +166,8 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// Na gut.
 		private static method infoAction3_0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Na gut."), null)
-			call speech(info, character, true, tr("Vielen Dank. Es wird nicht dein Schaden sein, ich werde dich selbstverständlich angemessen dafür entlohnen."), gg_snd_Lothar19)
+			call speech(info, character, false, tre("Na gut.", "Okay."), null)
+			call speech(info, character, true, tre("Vielen Dank. Es wird nicht dein Schaden sein, ich werde dich selbstverständlich angemessen dafür entlohnen.", "Thank you very much. It will not be your loss, I will of course pay adequately for it."), gg_snd_Lothar19)
 			call speech(info, character, true, tr("Hier hast du den Honigtopf."), gg_snd_Lothar20)
 			// Neuer Auftrag „Ein kleines Geschenk“
 			call QuestALittlePresent.characterQuest(character).enable()
@@ -176,26 +176,26 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// Friss deinen Honig doch selbst, du dummer Fettsack!
 		private static method infoAction3_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Friss deinen Honig doch selbst, du dummer Fettsack!"), null)
-			call speech(info, character, true, tr("Was? Unerhört, dieses törichte Verhalten! Du solltest solange du hier bist besser gut auf dich aufpassen!"), gg_snd_Lothar21)
-			call speech(info, character, false, tr("Willst du mich überrollen oder was?"), null)
-			call speech(info, character, true, tr("Bitte, nimm doch etwas Rücksicht auf mich (schluchzt)!"), gg_snd_Lothar22)
+			call speech(info, character, false, tr("Friss deinen Honig doch selbst, du dummer Fettsack!", "Eat your honey yourself, you stupid fatso!"), null)
+			call speech(info, character, true, tre("Was? Unerhört, dieses törichte Verhalten! Du solltest solange du hier bist besser gut auf dich aufpassen!", "What? Unheard, this foolish behavior! You should better take good care of you as long as you're here!"), gg_snd_Lothar21)
+			call speech(info, character, false, tre("Willst du mich überrollen oder was?", "Do you want to run over me or what?"), null)
+			call speech(info, character, true, tre("Bitte, nimm doch etwas Rücksicht auf mich (schluchzt)!", "Please, take some consideration on me (sob)!"), gg_snd_Lothar22)
 			// Charakter erhält Erfahrungsbonus aufgrund seiner beleidigenden Art.
-			call Character(character).xpBonus(50, tr("Beleidigungsbonus"))
+			call Character(character).xpBonus(50, tre("Beleidigungsbonus", "Insult Bonus"))
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Kein Interesse.
 		private static method infoAction3_2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Kein Interesse."), null)
-			call speech(info, character, true, tr("Zu schade. So wird sie es nie erfahren."), gg_snd_Lothar23)
+			call speech(info, character, false, tre("Kein Interesse.", "No interest."), null)
+			call speech(info, character, true, tre("Zu schade. So wird sie es nie erfahren.", "Too bad. So she will never know."), gg_snd_Lothar23)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// In Ordnung.
 		private static method infoAction4_0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("In Ordnung.", "Agreed."), null)
-			call speech(info, character, true, tr("Gut. Vergiss aber nicht, meinen Namen nicht zu erwähnen!"), gg_snd_Lothar26)
+			call speech(info, character, true, tre("Gut. Vergiss aber nicht, meinen Namen nicht zu erwähnen!", "Good. But do not forget not to mention my name!"), gg_snd_Lothar26)
 			// Neuer Auftrag „Ein großes Geschenk“
 			call QuestABigPresent.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
@@ -203,19 +203,19 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// Deine extreme Fettleibigkeit gefällt dagegen mir nicht!
 		private static method infoAction4_1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Deine extreme Fettleibigkeit gefällt dagegen mir nicht!"), null)
-			call speech(info, character, true, tr("Wie kannst du es …"), gg_snd_Lothar27)
-			call speech(info, character, false, tr("Du bist einfach fett und jetzt halt die Fresse! Du wirst nie bei ihr landen, niemals!"), null)
-			call speech(info, character, true, tr("Bitte tritt nicht auf meine Träume (schluchzt)!"), gg_snd_Lothar28)
+			call speech(info, character, false, tre("Deine extreme Fettleibigkeit gefällt dagegen mir nicht!", "On the other hand I don't like you're extreme obesity!"), null)
+			call speech(info, character, true, tre("Wie kannst du es …", "How can you ..."), gg_snd_Lothar27)
+			call speech(info, character, false, tre("Du bist einfach fett und jetzt halt die Fresse! Du wirst nie bei ihr landen, niemals!", "You're fat and now shut up! You will never get her, never!"), null)
+			call speech(info, character, true, tre("Bitte tritt nicht auf meine Träume (schluchzt)!", "Please do not step on my dreams (sobs)!"), gg_snd_Lothar28)
 			// Charakter erhält Erfahrungsbonus aufgrund seiner beleidigenden Art.
-			call Character(character).xpBonus(50, tr("Beleidigungsbonus.
-			"))
+			call Character(character).xpBonus(50, tre("Beleidigungsbonus.
+			", "Insult Bonus"))
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?
 		private static method infoAction4_2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?"), null)
+			call speech(info, character, false, tre("Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?"), null)
 			call speech(info, character, true, tr("Ich unterhalte mich mit ihr so gut wie jeden Tag, aber sie scheint nichts für mich zu empfinden."), gg_snd_Lothar29)
 			call speech(info, character, false, tr("Und zwei Honigtöpfe sollen das ändern?"), null)
 			call speech(info, character, true, tr("Wenn du mich so fragst, ja. Blumen gibt es hier in der Nähe ja kaum und ich gehe sicher nicht den weiten Weg in den Wald, nur um Gestrüpp zu pflücken."), gg_snd_Lothar30)
