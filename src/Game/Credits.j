@@ -44,6 +44,7 @@ call thistype.addContributor("Benkenfilm", tr("Deranor der Schreckliche"))
 call thistype.addContributor("Benkenfilm", tr("Sisgards Meister"))
 call thistype.addContributor("Martin B.", tr("Björn"))
 call thistype.addContributor("Daniel Spieker", tr("Tobias"))
+call thistype.addContributor("Der Waschbär", tr("Osman"))
 
 call thistype.addTitle(tre("Weitere Unterstützung", "Further Support"))
 call thistype.addContributor("WaterKnight", tre("Tests", "Tests"))

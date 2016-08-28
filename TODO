@@ -352,6 +352,25 @@ Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
 * Passive icon of Bearform has no disabled version -> green icon.
 * Sisgards Meister: Kein Artefakt als Belohnung obwohl sie es sagt. Keine Erfahrung zum Abschluss? Nur Spruchrollen.
 * Sisgards Pfeilhagel: Kein Pfeilhagel im Effekt!!!
+* Camera Sichtdistanz in Videos mit Deranor weiter machen, Felsen im Hintergrund abgeschnitten.
+* Todesanimation von Gegenständen mit Hero Glow lässt Hero Glow stehen und Gegenstand liegt im Boden! Beides hiden bei Decay oder nach Death.
+* Bei Dungeon-Kamerawechsel an einen bestimmten Punkt im Dungeon springen (Einstiegspunkt) und nicht an den Rand. Sonst fällt es auf wo das Dungeon in Echt angrenzt.
+* Spruchrolle des Sammlers: Zauber nicht wirken, wenn es keine Gegenstände gibt.
+* Mehr Schwerter zum Schmieden einbauen.
+* Tobias ist zu leise.
+* Unterhaltungen als Tagesabläufe leiser machen als gewöhnliche Unterhaltungen.
+* Geräusche von Sisgards Zauberei noch leiser machen.
+* Auftrag Der mutige Waffenmeister, Belohnung Irminas fehlt (Salben).
+* Maximalstufen in Tutorial per Parameter eintragen. Sonst stimmen sie nicht. Maximalstufe 30.
+* Bei Zaubern, die zu Auftragspunkten springen Animation entfernen! Ansonsten zaubert Bärengestalt ewig.
+* Osmansprecher in Credits?
+* Idee zum Balancing: Man steigt im Einzelspieler zu schnell auf. Weniger Erfahrung für Creeps/Quests. Dafür nicht so wenig Erfahrung im Multiplayer, nicht unbedingt teilen durch Spieleranzahl. Man muss auch bedenken, dass man im Einzelspieler mehr Gold bekommt usw.
+* Kein besonderer Gegenstand für Arena-Champion als Belohnung.
+* Arenakampf: Sisgard kann unterstützen ohne Bestrafung. Schaden blocken, Sisgard töten oder stunnen. Besser Arenakampf verlieren.
+* Jagdfalke teurer: Dafür auch stärker.
+* Björn: "Klingt nur etwas seltsam das mit dem Töten zweier Bären, meine ich": Sound fehlt.
+* Erwachen des Waldes hat die gleiche ID wie eine Zauberbuchaktionen (Favoriten oder so).
+* Quest to fight with the Norsemen (first quest) doesn't give any gold rewards etc. although Markward says it in the video.
 * DONE: Druid should have usual spells when transformed but the extra spells in a spell book since there is no rucksack button?
 * Druid Alpha has to be disabled when player transforms back into normal form.
 * FIXED: Scroll of the Realm of Death needs a custom icon and should be called Magical Rune of Revival Shrines. Otherwise player thinks he can use it only once.
@@ -386,9 +405,9 @@ Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
 * Use difficulty (also in the campaign) to increase the life of the creeps.
 * DONE: Tiergestalten: Einfach Klassenzauber lassen.
 * FIXED: Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen. Wenn doch Fähigkeiten dann in Zauberbuch, da es kein Icon für den Rucksack gibt.
-* Wenn ein Spieler rausfliegt sollte sein Charakter gelöscht.
+* Wenn ein Spieler rausfliegt, sollte sein Charakter gelöscht werden.
 * DONE: Spruchrolle umbenennen zu Schreinteleport.
-* Elementarwesen sind zu viele oder zu stark.
+* Elementarwesen sind zu viele oder zu stark. Allerdings bei höherer Stufe nicht mehr. Eventuell Leben abhängig von Stufe des Charakters machen?
 * Performance: At the moment there is 430 .evaluate() calls found in the code. This number should be reduced to improve the performance.
 * Wigberht sound recording should be a battle cry.
 * Require voice recordings for the video "Recruit" from the voice actor of Ferdinand.
@@ -403,7 +422,13 @@ Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
 * DONE: Add special effect of traps in quest War.
 * FIXED: Dragon fire ability of Dragon who is summoned by one of the endbosses slows down the game! Reduce area and range.
 * Make Marwkard's recordings louder!
-* Some speeches in routines appear doubled.
+* Some speeches in routines appear doubled. Mostly in debug mode. See Let's Play.
+
+Idee: Für Holzbruck Kapitel 3:
+Eine Karte erstellen die genauso groß ist wie Holzbruck und als Unterwelt erreichbar machen.
+Sie sieht aus wie eine Dämonenkarte und hier bereiten die "Bösen" etwas vor. Der Spieler kann sich dann für eine Seite entscheiden. Muss vereinbar mit der Planung
+für Holzbruck sein.
+- Karte von Deranors Sumpf kann wieder über die Karte Talras erreicht werden. Die Treppe in Deranors Grab führt noch nirgendwo hin. Erst aktivieren, wenn es so weit ist.
 
 Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.
