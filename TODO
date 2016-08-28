@@ -331,7 +331,27 @@ Mehrspielertest:
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
-Annoying for version 0.8:
+Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
+* Die Aufnahmen des Schafsjungen sind im Spiel abgeschnitten. Neu formatieren.
+* Wegelagerer von Schaf herab töten für Auftrag Sturm auf den Mühlberg geht nicht.
+* Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht.
+* Extrafähigkeit für Einar ins Buch der Schmiedekunst einfügen. Ansonsten können keine normalen Kurzschwerter mehr geschmiedet werden.
+* Wenn das letzte Schwert für Einar geschmiedet wird, dann erscheint Guntrichs Dialog etc. etc. Achtung: Dieser Bug zerstört sogar den Spielstand. Nicht speichern!
+* Einars Schwerter werden nicht aus dem Rucksack entfernt.
+* Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel des Druiden, Stab der Verlangsamung, Knochenbogen.
+* Nach Rückverwandlung von Deranors Leibwache ist die Waffe zunächst nicht sichtbar.
+* Lothar: Hat die Fähigkeit Helden anwählen noch, muss weg. Ansonsten ist im Gespräch überspringen deaktiviert.
+* Dickes Buch ist mehr als doppelt so teuer wie ein Buch, obwohl es nicht mal doppelt so viel Wissen gibt.
+* Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung.
+* Er ist doch eben sehr Menschenscheu Sisgard: Wird nicht auf Ton gewartet bei Quest-Abschluss.
+* Sisgard folgt ihren Tagesabläufen (läuft weg) während sie einem folgt.
+* Manchmal hat man den Rucksackbutton obwohl man verwandelt ist. Nach dem Laden eines Spielstandes?
+* Quest der dunkle Kult wurde einfach abgeschlossen als man Knochendrache getötet hat, während die Diakongruppe tot war.
+* Rebhühner kommen IMMER bei Jagd, wenn man sie aufscheucht!
+* Markwards sounds take a while at the beginning. Cut it.
+* Passive icon of Bearform has no disabled version -> green icon.
+* Sisgards Meister: Kein Artefakt als Belohnung obwohl sie es sagt. Keine Erfahrung zum Abschluss? Nur Spruchrollen.
+* Sisgards Pfeilhagel: Kein Pfeilhagel im Effekt!!!
 * DONE: Druid should have usual spells when transformed but the extra spells in a spell book since there is no rucksack button?
 * Druid Alpha has to be disabled when player transforms back into normal form.
 * FIXED: Scroll of the Realm of Death needs a custom icon and should be called Magical Rune of Revival Shrines. Otherwise player thinks he can use it only once.
