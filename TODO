@@ -332,6 +332,10 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
+* Ins Zauberbuch Button für Hauptmenü einfügen.
+* Lothar ist nicht dick und hat das gleiche Modell wie Kuno.
+* Gegenstand einbauen, der Neben-Aufträge anpingt! Ansonsten findet man sich nicht zurecht.
+* "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?
 * Die Aufnahmen des Schafsjungen sind im Spiel abgeschnitten. Neu formatieren.
 * Wegelagerer von Schaf herab töten für Auftrag Sturm auf den Mühlberg geht nicht.
 * Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht.
@@ -363,7 +367,7 @@ Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
 * Auftrag Der mutige Waffenmeister, Belohnung Irminas fehlt (Salben).
 * Maximalstufen in Tutorial per Parameter eintragen. Sonst stimmen sie nicht. Maximalstufe 30.
 * Bei Zaubern, die zu Auftragspunkten springen Animation entfernen! Ansonsten zaubert Bärengestalt ewig.
-* Osmansprecher in Credits?
+* FIXED: Osmansprecher in Credits?
 * Idee zum Balancing: Man steigt im Einzelspieler zu schnell auf. Weniger Erfahrung für Creeps/Quests. Dafür nicht so wenig Erfahrung im Multiplayer, nicht unbedingt teilen durch Spieleranzahl. Man muss auch bedenken, dass man im Einzelspieler mehr Gold bekommt usw.
 * Kein besonderer Gegenstand für Arena-Champion als Belohnung.
 * Arenakampf: Sisgard kann unterstützen ohne Bestrafung. Schaden blocken, Sisgard töten oder stunnen. Besser Arenakampf verlieren.

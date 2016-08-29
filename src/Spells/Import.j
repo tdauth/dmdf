@@ -159,14 +159,14 @@ library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement,
 		call SpellQuiver.create()
 		call SpellFatherHeir.create()
 	endfunction
-	
+
 	/**
 	 * This function is called when the character class is selected and the character is newly created (on repick as well).
 	 * It initializes all spells specifically for \p character.
 	 */
 	function initCharacterSpells takes Character character returns nothing
 		call SpellCowNova.create(character)
-		
+
 		call SpellAmuletOfForesight.create(character)
 		/// \todo Filter class for Baldars ring
 		// Baldar's and Haldar's rings
@@ -241,8 +241,11 @@ library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement,
 		call SpellBookOfPotionsBigHealPotion.create(character)
 		call SpellBookOfPotionsBigManaPotion.create(character)
 		call SpellBookOfSmithCraftIron.create(character)
+		call SpellBookOfSmithCraftAxe.create(character)
 		call SpellBookOfSmithCraftShortSword.create(character)
 		call SpellBookOfSmithCraftLongSword.create(character)
+		call SpellBookOfSmithIronHelmet.create(character)
+		call SpellBookOfSmithCraftEinarsSword.create(character) // Quest spell
 		call SpellScrollOfAncestors.create(character)
 		call SpellScrollOfCollector.create(character)
 		call SpellScrollOfTheRealmOfTheDead.create(character)
