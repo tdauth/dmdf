@@ -215,7 +215,7 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 		// Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?
 		private static method infoAction4_2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tre("Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?"), null)
+			call speech(info, character, false, tre("Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?", "How about some flowers or a nice conversation?"), null)
 			call speech(info, character, true, tre("Ich unterhalte mich mit ihr so gut wie jeden Tag, aber sie scheint nichts für mich zu empfinden.", "I talk to her almost every day, but she seems to feel nothing for me."), gg_snd_Lothar29)
 			call speech(info, character, false, tre("Und zwei Honigtöpfe sollen das ändern?", "And two honeypots should change that?"), null)
 			call speech(info, character, true, tre("Wenn du mich so fragst, ja. Blumen gibt es hier in der Nähe ja kaum und ich gehe sicher nicht den weiten Weg in den Wald, nur um Gestrüpp zu pflücken.", "If you keep asking me, yes. Flowers are hardly ardound here and I'm certainly not walking all the way into the forest, only to pick scrub."), gg_snd_Lothar30)
@@ -292,7 +292,7 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 			// info 4
 			call this.addInfo(false, false, 0, thistype.infoAction4_0, tre("In Ordnung.", "Agreed.")) // 17
 			call this.addInfo(false, false, 0, thistype.infoAction4_1, tre("Deine extreme Fettleibigkeit gefällt dagegen mir nicht!", "On the other hand I don't like you're extreme obesity!")) // 18
-			call this.addInfo(false, false, 0, thistype.infoAction4_2, tre("Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?")) // 19
+			call this.addInfo(false, false, 0, thistype.infoAction4_2, tre("Wie wärs eigentlich mal mit Blumen oder einem netten Gespräch?", "How about some flowers or a nice conversation?")) // 19
 
 			// info 5
 			call this.addInfo(false, false, 0, thistype.infoAction5_0, tre("Sie hat sich sehr gefreut.", "She was very happy.")) // 20

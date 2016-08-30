@@ -5,28 +5,29 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 		private integer m_counter
 
 		implement CharacterQuest
-		
+
+		/// Called with .evaluate().
 		private static method onCraftItemFunction takes Character character, integer itemTypeId returns nothing
+			local thistype this = thistype.characterQuest(character)
 			debug call Print(GetUnitName(character.unit()) + " crafts " + GetObjectName(itemTypeId))
-			if (itemTypeId == 'I01Y') then
-				call character.inventory().removeItemType('I01Y')
-				call character.giveQuestItem('I060')
-				
-				set QuestSuppliesForEinar.characterQuest(character).m_counter = QuestSuppliesForEinar.characterQuest(character).m_counter + 1
-				call QuestSuppliesForEinar.characterQuest(character).displayUpdateMessage(Format(tre("%1%/%2% Kurzschwerter hergestellt.", "Crafted %1%/%2% Shortswords.")).i(QuestSuppliesForEinar.characterQuest(character).m_counter).i(thistype.maxSwords).result())
-				
-				if (QuestSuppliesForEinar.characterQuest(character).m_counter == thistype.maxSwords) then
+			if (itemTypeId == 'I060') then
+				set this.m_counter = this.m_counter + 1
+				call this.displayUpdateMessage(Format(tre("%1%/%2% Kurzschwerter hergestellt.", "Crafted %1%/%2% Shortswords.")).i(this.m_counter).i(thistype.maxSwords).result())
+
+				if (this.m_counter == thistype.maxSwords) then
+					// FIXME opens Guntrichs dialog and leads to corrupted savegame, OpLimit?!
+					call this.questItem(0).complete()
 					call character.removeOnCraftItemFunction(thistype.onCraftItemFunction)
-					call QuestSuppliesForEinar.characterQuest(character).questItem(0).complete()
 				endif
 			endif
 		endmethod
 
 		public stub method enable takes nothing returns boolean
 			call Character(this.character()).addOnCraftItemFunction(thistype.onCraftItemFunction)
+			call SetPlayerAbilityAvailable(this.character().player(), SpellBookOfSmithCraftEinarsSword.abilityId, true)
 			return super.enable()
 		endmethod
-		
+
 		private static method stateActionCompleted takes AQuest whichQuest returns nothing
 			local thistype this = thistype(whichQuest)
 			local integer i = 0
@@ -36,6 +37,7 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 				call this.character().inventory().removeItemType('I060')
 				set i = i + 1
 			endloop
+			call SetPlayerAbilityAvailable(this.character().player(), SpellBookOfSmithCraftEinarsSword.abilityId, false)
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
@@ -47,16 +49,16 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 			call this.setReward(thistype.rewardExperience, 300)
 			call this.setReward(thistype.rewardGold, 1000) // 5 * 150 + 250 reward
 			call this.setStateAction(thistype.stateActionCompleted, thistype.stateActionCompleted)
-			
+
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Schmiede fünf Kurzschwerter für Einar.", "Forge five short swords for Einar."))
-			
+
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Bringe Einar die geschmiedeten Kurzschwerter.", "Bring Einar the forged short swords."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.einar())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			return this
 		endmethod
 	endstruct
