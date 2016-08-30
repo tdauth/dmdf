@@ -331,6 +331,14 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Annoying for version 0.8:
+* elendeglich Dago
+* Beherrschung auf jeden Fall nur auslösen, wenn Mana fehlt und Geräusch leiser machen!!!!
+* Den Timer für die Klassenauswahl im Einzelspieler abschalten!!!!
+* Gebäude sollte 5000 Gold oder so kosten und erst ab Stufe 20 verfügbar sein.
+* Abklingzeit von Ursulas Totem ist zu gering.
+* Schrittesounds in Video das erste Gefecht einbauen, wenn die Nordmänner laufen.
+* Man kann durch Ursulas Stand laufen.
+* Deranors Land-Sound ist noch der falsche Sound!
 * Camera Sichtdistanz in Videos mit Deranor weiter machen, Felsen im Hintergrund abgeschnitten.
 * Todesanimation von Gegenständen mit Hero Glow lässt Hero Glow stehen und Gegenstand liegt im Boden! Beides hiden bei Decay oder nach Death.
 * Bei Dungeon-Kamerawechsel an einen bestimmten Punkt im Dungeon springen (Einstiegspunkt) und nicht an den Rand. Sonst fällt es auf wo das Dungeon in Echt angrenzt.

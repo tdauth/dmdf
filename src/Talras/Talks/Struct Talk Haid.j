@@ -43,16 +43,16 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 		private static method infoActionNotInCastle takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Wieso verkaufst du deine Waren nicht in der Burg?", "Why don't you sell your goods in the castle?"), null)
 			call speech(info, character, true, tre("Nun, ich bin ein fahrender Händler und die sieht man hier gar nicht mehr so gerne.", "Well, I'm a traveling salesman, and those one sees no longer here so much."), gg_snd_Haid3)
-			call speech(info, character, true, tre("Das Misstrauen ist seit Beginn der Invasion einfach zu groß geworden und hier gibt es schon mehr als genug Händler. Außerdem besitze ich nicht das nötige Kleingeld, um mir einen Platz in in der Burg zu erwerben.", "Mistrust has simply become too big since the invasion and there are already more than enough merchants. Besides I do not have the where withal to earn me a place in the castle."), gg_snd_Haid4)
+			call speech(info, character, true, tre("Das Misstrauen ist seit Beginn der Invasion einfach zu groß geworden und hier gibt es schon mehr als genug Händler. Außerdem besitze ich nicht das nötige Kleingeld, um mir einen Platz in der Burg zu erwerben.", "Mistrust has simply become too big since the invasion and there are already more than enough merchants. Besides I do not have the where withal to earn me a place in the castle."), gg_snd_Haid4)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		//  (Nach „Wieso verkaufst du deine Waren nicht in der Burg?“))
 		private static method infoConditionInvasion takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return info.talk().infoHasBeenShownToCharacter(this.m_notInCastle.index(), character)
 		endmethod
-		
+
 		// Invasion?
 		private static method infoActionInvasion takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Invasion?", "Invasion?"), null)
@@ -64,13 +64,13 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 			call speech(info, character, true, tre("Sicher, du wirst hier bestimmt einige treffen, die frohen Mutes dem Feind trotzen wollen, aber haben die etwa ihre Heimat untergehen sehen? Ich sag's dir Junge: Dieses Königreich wird untergehen!", "Sure, you'll meet some here who are determined to defy the enemy with good cheer, but have they seen their home perishing? I'm telling you boy: This kingdom will perish!"), gg_snd_Haid10)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach „Invasion?“)
 		private static method infoConditionWhatDoesTheKingSay takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return info.talk().infoHasBeenShownToCharacter(this.m_invasion.index(), character)
 		endmethod
-		
+
 		// Was sagt denn der König?
 		private static method infoActionWhatDoesTheKingSay takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Was sagt denn der König?", "What says the king?"), null)
@@ -81,13 +81,13 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 			call speech(info, character, false, tre("Keine Sorge.", "Do not worry."), null)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach „Wieso verkaufst du deine Waren nicht in der Burg?“)
 		private static method infoConditionHelp takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return info.talk().infoHasBeenShownToCharacter(this.m_notInCastle.index(), character)
 		endmethod
-		
+
 		// Kann ich dir irgendwie helfen?
 		private static method infoActionHelp takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Kann ich dir irgendwie helfen?", "Can I help you?"), null)
