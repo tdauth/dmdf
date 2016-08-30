@@ -16,9 +16,9 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 		private static method timerFunction takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
 			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, 0)
-			local unit caster
-			local real mana
-			local effect spellEffect
+			local unit caster = null
+			local real mana = 0.0
+			local effect spellEffect = null
 			if (this.level() > 0) then
 				set caster = this.character().unit()
 				if (GetUnitState(caster, UNIT_STATE_MANA) < GetUnitState(caster, UNIT_STATE_MAX_MANA)) then
@@ -26,7 +26,7 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 					if (mana > 0) then
 						call SetUnitState(caster, UNIT_STATE_MANA, GetUnitState(caster, UNIT_STATE_MANA) + mana)
 						if (not IsUnitHidden(caster)) then
-							call PlaySoundOnUnitBJ(thistype.whichSound, 60.0, caster)
+							call PlaySoundOnUnitBJ(thistype.whichSound, 40.0, caster)
 							set spellEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
 							call Spell.showManaTextTag(caster, mana)
 							call DestroyEffect(spellEffect)
@@ -50,9 +50,9 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			call this.addGrimoireEntry('A11K', 'A11P')
 			call this.addGrimoireEntry('A11L', 'A11Q')
 			call this.addGrimoireEntry('A11M', 'A11R')
-			
+
 			call this.setIsPassive(true)
-			
+
 			return this
 		endmethod
 
@@ -61,7 +61,7 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 			call DmdfHashTable.global().destroyTimer(this.m_effectTimer)
 			set this.m_effectTimer = null
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.whichSound = CreateSound("Abilities\\Spells\\Items\\AIma\\ManaPotion.wav", false, false, true, 12700, 12700, "")
 		endmethod

@@ -329,6 +329,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1EB', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1E7', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1EJ', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1R4', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -448,7 +449,6 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_magicRing.addAbility('AImz', true)
 			call thistype.m_magicRing.addAbility('AIi3', true)
 
-			/// \todo two-handed
 			set thistype.m_bonesBow = RangeItemType.createSimpleRange('I013', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_bonesBow.addAbility('A1DO', true)
 
@@ -651,7 +651,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_staffOfBan.addAbility('A16G', false)
 
 			set thistype.m_druidBoots = ItemType.createSimple('I033', ItemType.equipmentTypeAmulet)
-			call thistype.m_druidBoots.addAbility('A04V', true)
+			call thistype.m_druidBoots.addAbility('A1R4', true)
 
 			// Deranor's artefact
 			set thistype.m_deranorsCrownPiece =  ItemType.createSimple('I04A', ItemType.equipmentTypeAmulet)

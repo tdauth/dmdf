@@ -48,7 +48,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, true, tr("Hallo. Bist du vielleicht an einigen Zaubern oder Tränken interessiert?"), gg_snd_Sisgard1)
 			call info.talk().showRange(thistype.m_hi_whyNot.index(), thistype.m_hi_no.index(), character)
 		endmethod
-		
+
 		// Wieso nicht?
 		private static method infoActionHi_WhyNot takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wieso nicht?"), null)
@@ -74,7 +74,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, true, tr("Er war schon sehr alt und diese Gegend hier war seine Heimat. Er erinnerte sich sogar an die Zeit als hier noch keine Burg stand."), gg_snd_Sisgard5)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// Was genau verkaufst du?
 		private static method infoActionWhatDoYouSell takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was genau verkaufst du?"), null)
@@ -82,13 +82,13 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, true, tr("Ich biete nur das Beste an, was ich auch selbst verwenden würde."), gg_snd_Sisgard7)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach „Ist das dein Haus“, dauerhaft)
 		private static method infoConditionAboutYourMaster takes AInfo info, ACharacter character returns boolean
 			return info.talk().infoHasBeenShownToCharacter(thistype.m_yourHouse.index(), character)
 		endmethod
-		
-		// Erzähl mir mehr von deinem Meister. 
+
+		// Erzähl mir mehr von deinem Meister.
 		private static method infoActionAboutYourMaster takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Erzähl mir mehr von deinem Meister."), null)
 			call speech(info, character, true, tr("So, dich interessiert das also? Hmm, die meisten Leute würgen mich irgendwann ab, wenn ich mal wieder das Schwärmen von alten Zeiten anfange."), gg_snd_Sisgard8)
@@ -151,7 +151,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call speech(info, character, true, tr("Und, was ist passiert?"), gg_snd_Sisgard24)
 			call info.talk().showRange(thistype.m_beenAtTheRunes_magic.index(), thistype.m_beenAtTheRunes_nothing.index(), character)
 		endmethod
-		
+
 		// Ich spürte, wie die magischen Kräfte mich durchflossen.
 		private static method infoActionBeenAtTheRunes_Magic takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Ich spürte, wie die magischen Kräfte mich durchflossen."), null)
@@ -176,7 +176,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call character.giveItem('I00E')
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftrag „Die Zauberkunst“ ist fehlgeschlagen)
 		private static method infoConditionMakeGood takes AInfo info, ACharacter character returns boolean
 			return QuestTheMagic.characterQuest(character).isFailed()
@@ -204,7 +204,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call QuestTheMagicalShield.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Der magische Schild“ ist abgeschlossen und Auftragsziel 2 ist noch aktiv)
 		private static method infoConditionTriedTheShield takes AInfo info, ACharacter character returns boolean
 			return QuestTheMagicalShield.characterQuest(character).questItem(0).isCompleted() and QuestTheMagicalShield.characterQuest(character).questItem(1).isNew()
@@ -230,7 +230,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call character.giveItem('I00E')
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftrag „Die Zauberkunst“ abgeschlossen oder Auftrag „Der magische Schild“ ist abgeschlossen)
 		private static method infoConditionMoreHelp takes AInfo info, ACharacter character returns boolean
 			return QuestTheMagic.characterQuest(character).isCompleted() or QuestTheMagicalShield.characterQuest(character).isCompleted()
@@ -263,7 +263,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call QuestTheGhostOfTheMaster.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Der Geist des Meisters“ ist abgeschlossen und Auftrag ist noch aktiv)
 		private static method infoConditionMetYourMaster takes AInfo info, ACharacter character returns boolean
 			return QuestTheGhostOfTheMaster.characterQuest(character).questItem(0).isCompleted() and QuestTheGhostOfTheMaster.characterQuest(character).questItem(1).isNew()
@@ -286,6 +286,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 			call character.giveItem('I00G')
 			// Artefakt übergeben
 			call character.giveItem('I044')
+			call character.displayItemAcquired(GetObjectName('I044'), tre("Gewährt einen Rüstungs- und einen Wissensbonus sowie die Fähigkeit einem Gegner Leben zu entziehen und auf den Träger zu übertragen.", "Grants an armour and a lore bonus as well as the ability to drain life from an opponent and to transfer it to the carrying unit."))
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -340,7 +341,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.sisgard(), thistype.startPageAction)
 			call this.setName(tr("Sisgard"))
-			
+
 			set thistype.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tr("Hallo."))
 			set thistype.m_hi_whyNot = this.addInfo(false, false, 0, thistype.infoActionHi_WhyNot, tr("Wieso nicht?"))
 			set thistype.m_hi_no = this.addInfo(false, false, 0, thistype.infoActionHi_No, tr("Nein."))
