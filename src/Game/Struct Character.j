@@ -164,6 +164,9 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 		private boolean m_isInPvp
 		private boolean m_showCharactersScheme
 		private boolean m_showWorker
+		/**
+		 * A vector of all craft function handlers.
+		 */
 		private AIntegerVector m_onCraftItemFunctions
 		// members
 		private MainMenu m_mainMenu

@@ -1,7 +1,7 @@
 library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameDungeon, StructGameGame, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
 
 	struct MapCheats
-	
+
 		private static method onCheatActionMapCheats takes ACheat cheat returns nothing
 			debug call Print(tre("Örtlichkeiten-Cheats:", "Location Cheats:"))
 			debug call Print("bonus")
@@ -51,8 +51,9 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			debug call Print(tre("Erzeugungs-Cheats:", "Spawn Cheats:"))
 			debug call Print("unitspawns")
 			debug call Print("testspawnpoint")
+			debug call Print("iron")
 		endmethod
-		
+
 		private static method onCheatActionBonus takes ACheat cheat returns nothing
 			local player whichPlayer = GetTriggerPlayer()
 			call ACharacter.playerCharacter(whichPlayer).setRect(gg_rct_cheat_bonus)
@@ -124,12 +125,12 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			call Dungeon.resetCameraBoundsForPlayer(whichPlayer)
 			set whichPlayer = null
 		endmethod
-		
+
 		private static method onCheatActionTomb takes ACheat cheat returns nothing
 			call ACharacter.playerCharacter(GetTriggerPlayer()).setRect(gg_rct_cheat_tomb)
 			call IssueImmediateOrder(ACharacter.playerCharacter(GetTriggerPlayer()).unit(), "stop")
 		endmethod
-		
+
 		private static method onCheatActionOrcCamp takes ACheat cheat returns nothing
 			call ACharacter.playerCharacter(GetTriggerPlayer()).setRect(gg_rct_cheat_orc_camp)
 			call IssueImmediateOrder(ACharacter.playerCharacter(GetTriggerPlayer()).unit(), "stop")
@@ -182,43 +183,43 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 		private static method onCheatActionBloodthirstiness takes ACheat cheat returns nothing
 			call VideoBloodthirstiness.video().play()
 		endmethod
-		
+
 		private static method onCheatActionDeranor takes ACheat cheat returns nothing
 			call VideoDeranor.video().play()
 		endmethod
-		
+
 		private static method onCheatActionDeranorsDeath takes ACheat cheat returns nothing
 			call VideoDeranorsDeath.video().play()
 		endmethod
-		
+
 		private static method onCheatActionRecruitTheHighElf takes ACheat cheat returns nothing
 			call VideoRecruitTheHighElf.video().play()
 		endmethod
-		
+
 		private static method onCheatActionPrepareForTheDefense takes ACheat cheat returns nothing
 			call VideoPrepareForTheDefense.video().play()
 		endmethod
-		
+
 		private static method onCheatActionTheDefenseOfTalras takes ACheat cheat returns nothing
 			call VideoTheDefenseOfTalras.video().play()
 		endmethod
-		
+
 		private static method onCheatActionDararos takes ACheat cheat returns nothing
 			call VideoDararos.video().play()
 		endmethod
-		
+
 		private static method onCheatActionVictory takes ACheat cheat returns nothing
 			call VideoVictory.video().play()
 		endmethod
-		
+
 		private static method onCheatActionHolzbruck takes ACheat cheat returns nothing
 			call VideoHolzbruck.video().play()
 		endmethod
-			
+
 		private static method onCheatActionUpstream takes ACheat cheat returns nothing
 			call VideoUpstream.video().play()
 		endmethod
-		
+
 		private static method moveCharactersToRect takes rect whichRect returns nothing
 			local integer i = 0
 			loop
@@ -231,14 +232,14 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						call SetUnitX(ACharacter.playerCharacter(Player(i)).unit(), GetRectMaxX(whichRect) + 100.0)
 						call SetUnitY(ACharacter.playerCharacter(Player(i)).unit(), GetRectMaxY(whichRect) + 100.0)
 					endif
-				
+
 					call SetUnitX(ACharacter.playerCharacter(Player(i)).unit(), GetRectCenterX(whichRect))
 					call SetUnitY(ACharacter.playerCharacter(Player(i)).unit(), GetRectCenterY(whichRect))
 				endif
 				set i = i + 1
 			endloop
 		endmethod
-		
+
 		private static method makeCharactersInvulnerable takes boolean invulnerable returns nothing
 			local integer i = 0
 			loop
@@ -249,7 +250,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 				set i = i + 1
 			endloop
 		endmethod
-		
+
 		private static method onCheatActionAfterTalras takes ACheat cheat returns nothing
 			call thistype.makeCharactersInvulnerable(true)
 			if (not QuestTalras.quest.evaluate().isCompleted()) then
@@ -261,7 +262,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						return
 					endif
 				endif
-				
+
 				if (not QuestTalras.quest.evaluate().questItem(QuestTalras.questItemReachTheCastle).isCompleted()) then
 					debug call Print("Complete quest item 0 Talras")
 					/*
@@ -277,7 +278,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						return
 					endif
 				endif
-				
+
 				if (not QuestTalras.quest.evaluate().questItem(QuestTalras.questItemMeetHeimrich).isCompleted()) then
 					debug call Print("Complete quest item 1 Talras")
 					/*
@@ -291,7 +292,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			endif
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
-		
+
 		private static method onCheatActionAfterTheNorsemen takes ACheat cheat returns nothing
 			call thistype.makeCharactersInvulnerable(true)
 			if (not QuestTalras.quest().isCompleted()) then
@@ -310,7 +311,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						return
 					endif
 				endif
-			
+
 				if (not QuestTheNorsemen.quest.evaluate().questItem.evaluate(QuestTheNorsemen.questItemMeetTheNorsemen).isCompleted()) then
 					/*
 					 * Plays video "The Chief".
@@ -325,7 +326,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						return
 					endif
 				endif
-				
+
 				if (not QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheBattlefield).isCompleted()) then
 					/*
 					 * Plays video "The First combat".
@@ -340,22 +341,22 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						return
 					endif
 				endif
-				
+
 				if (not QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemFight).isCompleted()) then
 					/*
 					 * TODO cleanup does not work! Remove fighting troops, disable leaderboard etc.
 					 * TODO Does not change the state!
 					 */
 					if (QuestTheNorsemen.quest.evaluate().completeFight()) then
-						
+
 					else
 						debug call Print("Failed completing quest item fight.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
-				
+
+
 				if (not QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheOutpost).isCompleted()) then
 					/*
 					 * Plays video "Wigberht".
@@ -364,14 +365,14 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					
+
 					if (not  QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheOutpost).isCompleted()) then
 						debug call Print("Failed completing quest item meet at the outpost.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemReportHeimrich).isCompleted()) then
 					/*
 					 * Plays video "A new alliance"
@@ -384,7 +385,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			endif
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
-		
+
 		private static method onCheatActionAfterSlaughter takes ACheat cheat returns nothing
 			call thistype.makeCharactersInvulnerable(true)
 			if (not QuestSlaughter.quest().isCompleted()) then
@@ -395,7 +396,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						return
 					endif
 				endif
-			
+
 				// TODO it would be safer to complete the single quest items
 				call QuestSlaughter.quest().complete()
 				call TriggerSleepAction(2.0 + 2.0)
@@ -404,16 +405,16 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			endif
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
-		
+
 		private static method onCheatActionAfterDeranor takes ACheat cheat returns nothing
 			call thistype.makeCharactersInvulnerable(true)
-			
+
 			if (not QuestSlaughter.quest().isCompleted()) then
 				debug call Print("Quest Slaughter must be completed before.")
 				call thistype.makeCharactersInvulnerable(false)
 				return
 			endif
-			
+
 			if (not QuestDeranor.quest().isCompleted()) then
 				if (not QuestDeranor.quest().isNew()) then
 					if (not QuestDeranor.quest().enable()) then
@@ -422,7 +423,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						return
 					endif
 				endif
-			
+
 				if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemEnterTheTomb).isCompleted()) then
 					/*
 					 * Plays video "Deranor".
@@ -437,7 +438,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						return
 					endif
 				endif
-				
+
 				if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemKillDeranor).isCompleted()) then
 					/*
 					 * Plays video "Deranor's Death".
@@ -450,7 +451,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						return
 					endif
 				endif
-				
+
 				if (not QuestDeranor.quest.evaluate().questItem(QuestDeranor.questItemMeetAtTomb).isCompleted()) then
 					/*
 					 * Plays video "Deranor's Death".
@@ -468,7 +469,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			endif
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
-		
+
 		/**
 		 * This cheat action tries to emulate that the battle with the norseman has been done and now the quest "A new alliance" is active.
 		 * Therefore the following quests have been completed:
@@ -485,25 +486,25 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 			call thistype.onCheatActionAfterSlaughter(cheat)
 			call thistype.onCheatActionAfterDeranor(cheat)
 		endmethod
-		
+
 		private static method onCheatActionAfterANewAlliance takes ACheat cheat returns nothing
 			call thistype.onCheatActionAfterTheBattle(cheat)
-		
+
 			call thistype.makeCharactersInvulnerable(true)
-			
+
 			if (not QuestDeranor.quest().isCompleted()) then
 				debug call Print("Quest Deranor must be completed before.")
 				call thistype.makeCharactersInvulnerable(false)
 				return
 			endif
-			
-			
+
+
 			if (not QuestANewAlliance.quest().isCompleted()) then
 				/*
 				 * Plays video "A New Alliance".
 				 */
 				call thistype.moveCharactersToRect(gg_rct_quest_a_new_alliance)
-				
+
 				call TriggerSleepAction(2.0 + 2.0)
 				call waitForVideo(MapData.videoWaitInterval)
 				call TriggerSleepAction(2.0 + 2.0)
@@ -513,45 +514,45 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 					return
 				endif
 			endif
-			
+
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
-		
+
 		private static method onCheatActionAfterWar takes ACheat cheat returns nothing
 			local integer i = 0
 			call thistype.onCheatActionAfterANewAlliance(cheat)
 
 			call thistype.makeCharactersInvulnerable(true)
-			
+
 			if (not QuestANewAlliance.quest().isCompleted()) then
 				debug call Print("Quest A New Alliance must be completed before.")
 				call thistype.makeCharactersInvulnerable(false)
 				return
 			endif
-			
+
 			if (not QuestWar.quest.evaluate().isCompleted()) then
-			
+
 				if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemWeaponsFromWieland).isCompleted()) then
 					/*
 					 * Plays video "Wieland".
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_war_wieland)
-					
+
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-	
+
 					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemIronFromTheDrumCave).isCompleted()) then
 						/*
 						 * Plays video "Iron From The Drum Cave".
 						 */
 						call thistype.moveCharactersToRect(gg_rct_quest_war_iron_from_the_drum_cave)
-						
+
 						call TriggerSleepAction(2.0 + 2.0)
 						call waitForVideo(MapData.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
 					endif
-				
+
 					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemMoveImpsToWieland).isCompleted()) then
 						call QuestWarWeaponsFromWieland.quest.evaluate().moveImpsToWieland()
 						if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemMoveImpsToWieland).isCompleted()) then
@@ -561,7 +562,7 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						endif
 
 					endif
-					
+
 					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemReportWieland).isCompleted()) then
 						/*
 						 * Plays video "Weapons From Wieland".
@@ -581,39 +582,39 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemWaitForWielandsWeapons).isCompleted()) then
 						call TriggerSleepAction(QuestWar.constructionTime + 2.0)
-						
+
 						if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemWaitForWielandsWeapons).isCompleted()) then
 							debug call Print("Failed to complete quest item wait for wielands weapons.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemMoveWielandWeaponsToTheCamp).isCompleted()) then
 						/*
 						 * Completes questItemMoveWielandWeaponsToTheCamp and questItemWeaponsFromWieland.
 						 */
 						call QuestWarWeaponsFromWieland.quest.evaluate().moveWeaponsCartToCamp()
-					
+
 						call TriggerSleepAction(1.0)
-						
+
 						if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemMoveWielandWeaponsToTheCamp).isCompleted()) then
 							debug call Print("Failed to complete quest item move wieland weapons to the camp.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarWeaponsFromWieland.quest.evaluate().questItem(QuestWarWeaponsFromWieland.questItemWeaponsFromWieland).isCompleted()) then
 						debug call Print("Failed to complete quest item  weapons from wieland.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemSupplyFromManfred).isCompleted()) then
 					/*
 					 * Plays video "Manfred".
@@ -622,26 +623,26 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					
+
 					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemSupplyFromManfred).isNew()) then
 						debug call Print("Failed to enable quest item supply from manfred.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
-					
+
 					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemKillTheCornEaters).isCompleted()) then
 						call SpawnPoints.cornEaters0().spawn()
 						call SpawnPoints.cornEaters1().spawn()
 						call SpawnPoints.cornEaters0().kill()
 						call SpawnPoints.cornEaters1().kill()
-					
+
 						if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemKillTheCornEaters).isCompleted()) then
 							debug call Print("Failed to complete quest item kill the corn eaters.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemReportManfred).isCompleted()) then
 						/*
 						* Plays video "Report Manfred".
@@ -650,43 +651,43 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						call TriggerSleepAction(2.0 + 2.0)
 						call waitForVideo(MapData.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
-						
+
 						if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemReportManfred).isCompleted()) then
 							debug call Print("Failed to complete quest item report manfred.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemWaitForManfredsSupply).isCompleted()) then
 						call TriggerSleepAction(QuestWar.constructionTime + 2.0)
-						
+
 						if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemWaitForManfredsSupply).isCompleted()) then
 							debug call Print("Failed to complete quest item wait for manfreds supply.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemMoveManfredsSupplyToTheCamp).isCompleted()) then
 						call QuestWarSupplyFromManfred.quest.evaluate().moveSupplyCartToCamp()
-						
+
 						call TriggerSleepAction(1.0)
-						
+
 						if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemMoveManfredsSupplyToTheCamp).isCompleted()) then
 							debug call Print("Failed to complete quest item move manfreds supply to the camp.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarSupplyFromManfred.quest.evaluate().questItem(QuestWarSupplyFromManfred.questItemSupplyFromManfred).isCompleted()) then
 						debug call Print("Failed to complete quest item supply from manfred.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemLumberFromKuno).isCompleted()) then
 					/*
 					 * Plays video "Kuno".
@@ -695,13 +696,13 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					
+
 					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemLumberFromKuno).isNew()) then
 						debug call Print("Failed to enable quest item lumber from kuno.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
-					
+
 					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemKillTheWitches).isCompleted()) then
 						call SpawnPoints.witch0().spawn()
 						call SpawnPoints.witch1().spawn()
@@ -711,14 +712,14 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						call SpawnPoints.witch1().kill()
 						call SpawnPoints.witch2().kill()
 						call SpawnPoints.witches().kill()
-						
+
 						if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemKillTheWitches).isCompleted()) then
 							debug call Print("Failed to complete quest item kill the witches.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemReportKuno).isCompleted()) then
 						/*
 						 * Plays video "Report Kuno".
@@ -727,33 +728,33 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 						call TriggerSleepAction(2.0 + 2.0)
 						call waitForVideo(MapData.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
-						
+
 						if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemReportKuno).isCompleted()) then
 							debug call Print("Failed to complete quest item report kuno.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemMoveKunosLumberToTheCamp).isCompleted()) then
 						call QuestWarLumberFromKuno.quest.evaluate().moveLumberCartToCamp()
-						
+
 						call TriggerSleepAction(1.0)
-						
+
 						if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemMoveKunosLumberToTheCamp).isCompleted()) then
 							debug call Print("Failed to complete quest item report kuno.")
 							call thistype.makeCharactersInvulnerable(false)
 							return
 						endif
 					endif
-					
+
 					if (not QuestWarLumberFromKuno.quest.evaluate().questItem(QuestWarLumberFromKuno.questItemLumberFromKuno).isCompleted()) then
 						debug call Print("Failed to complete quest item lumber from kuno.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestWarTrapsFromBjoern.quest.evaluate().questItem(QuestWarTrapsFromBjoern.questItemTrapsFromBjoern).isCompleted()) then
 					/*
 					 * Plays video "Bjoern".
@@ -762,18 +763,18 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					
+
 					if (not QuestWarTrapsFromBjoern.quest.evaluate().questItem(QuestWarTrapsFromBjoern.questItemPlaceTraps).isNew()) then
 						debug call Print("Failed to enable quest item place traps.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
-					
+
 					/*
 					 * NOTE Placing traps still has to be done manually.
 					 */
 				endif
-				
+
 				if (not QuestWarRecruit.quest.evaluate().questItem(QuestWarRecruit.questItemRecruit).isCompleted()) then
 					/*
 					 * Plays video "Recruit".
@@ -782,27 +783,27 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					
+
 					if (not QuestWarRecruit.quest.evaluate().questItem(QuestWarRecruit.questItemRecruit).isNew()) then
 						debug call Print("Failed to enable quest item recruit.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
-					
+
 					set i = 0
 					loop
 						exitwhen (i == QuestWarRecruit.maxRecruits)
 						call CreateUnit(MapData.alliedPlayer, 'n02J', GetRectCenterX(gg_rct_quest_war_cart_destination), GetRectCenterY(gg_rct_quest_war_cart_destination), 0.0)
 						set i = i + 1
 					endloop
-					
+
 					if (not QuestWarRecruit.quest.evaluate().questItem(QuestWarRecruit.questItemGetRecruits).isCompleted() or not QuestWarRecruit.quest.evaluate().questItem(QuestWarRecruit.questItemRecruit).isCompleted()) then
 						debug call Print("Failed to complete quest item get recruits or quest item recruit.")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				/*
 				 * Plays video "Prepare For The Defense".
 				 */
@@ -810,78 +811,78 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 				call TriggerSleepAction(2.0 + 2.0)
 				call waitForVideo(MapData.videoWaitInterval)
 				call TriggerSleepAction(2.0 + 2.0)
-				
+
 				if (not QuestWar.quest.evaluate().isCompleted()) then
 					debug call Print("Failed to complete quest war.")
 					call thistype.makeCharactersInvulnerable(false)
 					return
 				endif
 			endif
-			
+
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
-		
+
 		private static method onCheatActionAfterTheDefenseOfTalras takes ACheat cheat returns nothing
 			local integer i = 0
 			call thistype.onCheatActionAfterWar(cheat)
 
 			call thistype.makeCharactersInvulnerable(true)
-			
+
 			if (not QuestWar.quest().isCompleted()) then
 				debug call Print("Quest War must be completed before.")
 				call thistype.makeCharactersInvulnerable(false)
 				return
 			endif
-			
+
 			if (not QuestTheDefenseOfTalras.quest.evaluate().isCompleted()) then
-			
+
 				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemMoveToCamp).isCompleted()) then
 					/*
 					 * Plays video "The Defense Of Talras".
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_the_defense_of_talras)
-					
+
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					
+
 					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemMoveToCamp).isCompleted()) then
 						debug call Print("Error on completing quest item move to camp")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemPrepare).isCompleted()) then
 					call QuestTheDefenseOfTalras.quest.evaluate().finishTimer()
-					
+
 					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemPrepare).isCompleted()) then
 						debug call Print("Error on completing quest item prepare")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDefendAgainstOrcs).isCompleted()) then
 					call QuestTheDefenseOfTalras.quest.evaluate().finishDefendAgainstOrcs()
-					
+
 					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDefendAgainstOrcs).isCompleted()) then
 						debug call Print("Error on completing quest item defend against the orcs")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDestroyArtillery).isCompleted()) then
 					call QuestTheDefenseOfTalras.quest.evaluate().finishDestroyArtillery()
-					
+
 					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDestroyArtillery).isCompleted()) then
 						debug call Print("Error on completing quest item destroy artillery")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemGatherAtTheCamp).isCompleted()) then
 					/*
 					 * Plays video "Dararos".
@@ -890,68 +891,81 @@ library StructMapMapMapCheats requires Asl, AStructSystemsCharacterVideo, Struct
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					
+
 					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemGatherAtTheCamp).isCompleted()) then
 						debug call Print("Error on completing quest item gather at the camp")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDefeatTheEnemy).isCompleted()) then
 					call QuestTheDefenseOfTalras.quest.evaluate().finishDefeatTheEnemy()
-					
+
 					// plays video "Victory"
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					
+
 					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemDefeatTheEnemy).isCompleted()) then
 						debug call Print("Error on completing quest item defeat the enemy")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 				if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemReportHeimrich).isCompleted()) then
 					call thistype.moveCharactersToRect(gg_rct_quest_the_defense_of_talras_heimrich)
-					
+
 					// plays video "Holzbruck"
 					call TriggerSleepAction(2.0 + 2.0)
 					call waitForVideo(MapData.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
-					
+
 					if (not QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemReportHeimrich).isCompleted()) then
 						debug call Print("Error on completing quest item report heimrich")
 						call thistype.makeCharactersInvulnerable(false)
 						return
 					endif
 				endif
-				
+
 			endif
-			
+
 			call thistype.makeCharactersInvulnerable(false)
 		endmethod
-		
+
 		private static method onCheatActionZoneGardonar takes ACheat cheat returns nothing
 			debug call Print("Change map to Gardonar")
 			call MapChanger.changeMap(MapData.zoneGardonar.evaluate().mapName())
 		endmethod
-		
+
 		private static method onCheatActionZoneHolzbruck takes ACheat cheat returns nothing
 			debug call Print("Change map to Holzbruck")
 			call MapChanger.changeMap(MapData.zoneHolzbruck.evaluate().mapName())
 		endmethod
-		
+
 		private static method onCheatActionLoadTalras takes ACheat cheat returns nothing
 			debug call Print("Loading Talras")
 			call LoadGame("TPoF\\Campaign The Power of Fire shit\\Talras0.8.w3z", false)
 		endmethod
-		
+
 		private static method onCheatActionTestSpawnPoint takes ACheat cheat returns nothing
 			call TestSpawnPoint.spawn()
 		endmethod
-		
+
+		private static method onCheatActionIron takes ACheat cheat returns nothing
+			local item whichItem = CreateItem('I05Z', GetRectCenterX(gg_rct_character_0_start), GetRectCenterY(gg_rct_character_0_start))
+			call SetItemCharges(whichItem, 300)
+			set whichItem = null
+		endmethod
+
+		private static method onCheatActionVectorRemoval takes ACheat cheat returns nothing
+			local AIntegerVector vector = AIntegerVector.create()
+			call vector.pushBack(1)
+			call vector.remove(1)
+			call vector.destroy()
+		endmethod
+
 static if (DEBUG_MODE) then
 		private static method onInit takes nothing returns nothing
 			local ACheat cheat
@@ -1008,10 +1022,12 @@ static if (DEBUG_MODE) then
 			call ACheat.create("loadtalras", true, thistype.onCheatActionLoadTalras)
 			// test cheats
 			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)
+			call ACheat.create("iron", true, thistype.onCheatActionIron)
+			call ACheat.create("vectorremoval", true, thistype.onCheatActionVectorRemoval)
 			debug call Print("Before creating all cheats")
 		endmethod
 endif
 
 	endstruct
-	
+
 endlibrary

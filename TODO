@@ -331,10 +331,9 @@ Mehrspielertest:
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
-
 Let's Play Critical Errors (have to be fixed in 0.9):
-* Wenn das letzte Schwert für Einar geschmiedet wird, dann erscheint Guntrichs Dialog etc. etc. Achtung: Dieser Bug zerstört sogar den Spielstand. Nicht speichern!
-* Einars Schwerter werden nicht aus dem Rucksack entfernt.
+* FIXED (removeOnCraftItemFunction() wird erst beim Beenden des gesamten Auftrags aufgerufen): Wenn das letzte Schwert für Einar geschmiedet wird, dann erscheint Guntrichs Dialog etc. etc. Achtung: Dieser Bug zerstört sogar den Spielstand. Nicht speichern! RemoveCraftFunction, Fehler bei AIntegerVector.remove(), wenn der Vektor eine Größe von 1 hat.
+* FIXED: Einars Schwerter werden nicht aus dem Rucksack entfernt.
 * Wenn man einer Legion beitritt geht durch irgendwas der Spielstand ebenfalls kaputt. Man kann noch speichern, aber wenn man den gespeicherten Spielstand lädt, kann man nicht mehr speichern.
 	* Liegt an Rückverwandlung vom Engel aus AOS. Danach konnte man nicht mehr abspeichern.
 	* Liegt nicht an Rückverwandlung, eventuell schon an Verwandlung oder Dialog mit Haldar.
@@ -345,6 +344,7 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Vielleicht auch einfach nach gewisser Zeit als Engel?!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug.
 * FIXED: Klassenauswahltext "unwiderruflich" stimmt nicht mehr.
 * FIXED: Hundezwinger sollten weniger Hunde erzeugen (Auftrag die Verteidigung von Talras).
 * FIXED: Hunde zeitlich beschränkt machen (Auftrag die Verteidigung von Talras).
@@ -362,7 +362,8 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Beherrschung auf jeden Fall nur auslösen, wenn Mana fehlt und Geräusch leiser machen!!!!
 * FIXED: Den Timer für die Klassenauswahl im Einzelspieler abschalten!!!!
 * FIXED: Gebäude sollte 5000 Gold oder so kosten und erst ab Stufe 20 verfügbar sein.
-* Abklingzeit von Ursulas Totem ist zu gering. Man kann sonst zu viele Kreaturen beschwören!
+* FIXED: Gegenstände brauchen "unendlich oft benutzbar" im Tooltip: Ursulas Totem, Runen von Tellborn.
+* FIXED: Abklingzeit von Ursulas Totem ist zu gering. Man kann sonst zu viele Kreaturen beschwören!
 * Schrittesounds in Video das erste Gefecht einbauen, wenn die Nordmänner laufen.
 * Man kann durch Ursulas Stand laufen. Obwohl Blocker da sind? War Spieler fliegend oder so? Nachdem er sich in Wache verwandelt hat?!
 * Deranors Land-Sound ist noch der falsche Sound!

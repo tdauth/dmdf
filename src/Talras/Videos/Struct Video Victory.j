@@ -18,7 +18,7 @@ Drachentöterin: Wie Ihr wünscht mein König.
 Szene 2 - Wigberht, die Nordmänner und die Charaktere:
 Wigberht: Ihr habt Tapfer gekämpft. Diese Schlacht hätte auch anders ausgehen können. Wir kehren nun zu unserem Lager zurück.
 Wigberht: Warten wir ab, ob der Herzog noch unsere Hilfe braucht. Ricman kümmere dich darum, dass wir bald aufbrechen können!
-Ricman: Ich werde das Boot beladen lassen, mein Heer.
+Ricman: Ich werde das Boot beladen lassen, mein Herr.
 
 
 Szene 3 - Das Schlachtfeld und der Fürst der Dunkelelfen:
@@ -211,7 +211,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorRicman), this.unitActor(this.m_actorWigberht))
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tre("Ricman", "Ricman"), tr("Ich werde das Boot beladen lassen, mein Heer."), gg_snd_RicmanVictoryRicman1)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tre("Ricman", "Ricman"), tr("Ich werde das Boot beladen lassen, mein Herr."), gg_snd_RicmanVictoryRicman1)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanVictoryRicman1))) then
 				return
