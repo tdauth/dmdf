@@ -344,6 +344,7 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Vielleicht auch einfach nach gewisser Zeit als Engel?!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* Wenn man sich mit Fellows unterhält während diese shared sind, sollten diese unverwundbar gemacht werden.
 * If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug.
 * FIXED: Klassenauswahltext "unwiderruflich" stimmt nicht mehr.
 * FIXED: Hundezwinger sollten weniger Hunde erzeugen (Auftrag die Verteidigung von Talras).
@@ -381,7 +382,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED (Kostet nun weniger als doppelt so viel, damit es sich lohnt): Dickes Buch ist mehr als doppelt so teuer wie ein Buch, obwohl es nicht mal doppelt so viel Wissen gibt.
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung.
 * FIXED: Er ist doch eben sehr Menschenscheu Sisgard: Wird nicht auf Ton gewartet bei Quest-Abschluss.
-* Sisgard folgt ihren Tagesabläufen (läuft weg) während sie einem folgt. AUnitRoutine.disableAll() muss verbuggt sein und deaktiviert die Tageszeitenauslöser nicht? Wird in shareWith() aufgerufen.
+* FIXED (werden nur nach Gespräch reaktiviert, wenn es kein Fellow ist, wurde aus der ASL in DMdF-Code verschoben): Sisgard folgt ihren Tagesabläufen (läuft weg) während sie einem folgt. AUnitRoutine.disableAll() muss verbuggt sein und deaktiviert die Tageszeitenauslöser nicht? Wird in shareWith() aufgerufen. Passiert nachdem man einmal mit ihr gesprochen hat.
 * Manchmal hat man den Rucksackbutton obwohl man verwandelt ist. Nach dem Laden eines Spielstandes?
 * Quest der dunkle Kult wurde einfach abgeschlossen als man Knochendrache getötet hat, während die Diakongruppe tot war.
 * Rebhühner kommen IMMER bei Jagd, wenn man sie aufscheucht! Die Chance lag bei 80 % im Code. Eventuell war der Seed auch auf 0? Nirgendwo ein Hinweis, auch nicht im Editor aktiviert.
@@ -417,7 +418,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Do the same for Scroll of Ancestors.
 * FIXED: Enchanted Staff should be bigger.
 * FIXED: Unfair start attributes for different classes. Consider morphed classes too and attributes per level.
-* One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable!
+* One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable! Fellows have to become invulnerable during talks. Otherwise they could just die.
 * Use water textures from Born2Modificates package.
 * Arcane Time has the same ID as some other spell from the wizard. No valid targets in range comes when all spells are skilled in arena.
 * FIXED: When talking to an NPC the NPC does not stop his routine, he walks away (Björn).
