@@ -12,7 +12,7 @@ call thistype.addContributor("Johanna W.", tre("Tests", "Tests"))
 
 // voices
 call thistype.addTitle(tre("Sprecher", "Voices"))
-call thistype.addContributor("hoer-talk.de", tre("Website für Sprecher", "Website for Voices"))
+call thistype.addContributor("http://hoer-talk.de", tre("Website für Sprecher", "Website for Voices"))
 call thistype.addContributor("Rainer", tre("Erzähler", "Narrator"))
 call thistype.addContributor("Jan Langer", tr("Dago"))
 call thistype.addContributor("jam", tr("Wigberht"))

@@ -276,7 +276,7 @@ Handlung:
 * wc3object editor should offer the function "Validate Field References" and check all <> entries.
 * Osman Grundrauschen abgleichen gegen normale Takes und damit Rauschen entfernen.
 
-Aufgehoben für Version 0.8:
+Aufgehoben für Version 0.9:
 Critical errors:
 * Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Exel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
@@ -331,8 +331,30 @@ Mehrspielertest:
 * Elementarmagier: Irgendwann konnte man nicht mehr zurück zur Zauberübersicht wenn man Inferno geskillt hat.
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
-Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
+
+Let's Play Critical Errors (have to be fixed in 0.9):
+* Wenn das letzte Schwert für Einar geschmiedet wird, dann erscheint Guntrichs Dialog etc. etc. Achtung: Dieser Bug zerstört sogar den Spielstand. Nicht speichern!
+* Einars Schwerter werden nicht aus dem Rucksack entfernt.
+* Wenn man einer Legion beitritt geht durch irgendwas der Spielstand ebenfalls kaputt. Man kann noch speichern, aber wenn man den gespeicherten Spielstand lädt, kann man nicht mehr speichern.
+	* Liegt an Rückverwandlung vom Engel aus AOS. Danach konnte man nicht mehr abspeichern.
+	* Liegt nicht an Rückverwandlung, eventuell schon an Verwandlung oder Dialog mit Haldar.
+	* Liegt nicht an Verwandlung selbst aber:
+	* Timer lief ab, neue Welle gespawnt, abgespeichert. Nach dem Laden konnte man nicht mehr speichern!
+	* Crash kam auch nach dem 10. Kill beim Speichern.
+	* Nach zweiter Verwandlung und Rückverwandlung?
+	* Vielleicht auch einfach nach gewisser Zeit als Engel?!
+
+Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* FIXED: Klassenauswahltext "unwiderruflich" stimmt nicht mehr.
+* FIXED: Hundezwinger sollten weniger Hunde erzeugen (Auftrag die Verteidigung von Talras).
+* FIXED: Hunde zeitlich beschränkt machen (Auftrag die Verteidigung von Talras).
+* Karren sollten nicht teleportiert werden könne (Auftrag Krieg).
+* Karren sollten durch schwebenden Gegenstand gekennzeichnet sein (Auftrag Krieg).
+* Ferdinand's sounds are missing in video Recruit.
+* FIXED (gekürzt und neu zu MP3 konvertiert): Carstens Sound sind abgeschnitten, neu als MP3 formatieren.
 * Nach dem Laden sind die verborgenen Zauberbuchfähigkeiten des Equipments nicht mehr verborgen.
+* AOS-Einheiten werden nicht pausiert während Video?! Spawn während Video? Evtl. wird Spawn Timer nicht pausiert in Video?
+* Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter?
 * Erbe und Eheweib sollen reparieren und einfache Gebäude für Gold errichten können.
 * FIXED: Alle Gebäude sollen die Zauber aus dem Turm ebenfalls bekommen.
 * FIXED: Baumhaus braucht vergleichbare Zauber wie Turm. Auffüllen rausnehmen kann nicht gleichzeitig mit reparieren aktiv sein.
@@ -352,8 +374,6 @@ Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
 * Wegelagerer von Schaf herab töten für Auftrag Sturm auf den Mühlberg geht nicht.
 * Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht. Verwandlung von Fernkampf ging nicht, wurde vorher nicht zu Melee gemacht und später wieder durch Equipment zu Fernkampf.
 * DONE: Extrafähigkeit für Einar ins Buch der Schmiedekunst einfügen. Ansonsten können keine normalen Kurzschwerter mehr geschmiedet werden.
-* Wenn das letzte Schwert für Einar geschmiedet wird, dann erscheint Guntrichs Dialog etc. etc. Achtung: Dieser Bug zerstört sogar den Spielstand. Nicht speichern!
-* Einars Schwerter werden nicht aus dem Rucksack entfernt.
 * Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel eines Druiden, Stab der Verzögerung, Knochenbogen. War das nur ein Bug? Nein Stiefel eines Druiden haben wirklich keine Zauberbuchfähigkeit. Stab der Verzögerung hatte allerdings deaktivierte Zauberbuchfähigkeit. Knochenbogen ebenfalls.
 * Nach Rückverwandlung von Deranors Leibwache ist die Waffe zunächst nicht sichtbar.
 * FIXED: Lothar: Hat die Fähigkeit Helden anwählen noch, muss weg. Ansonsten ist im Gespräch überspringen deaktiviert.
@@ -364,7 +384,9 @@ Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
 * Manchmal hat man den Rucksackbutton obwohl man verwandelt ist. Nach dem Laden eines Spielstandes?
 * Quest der dunkle Kult wurde einfach abgeschlossen als man Knochendrache getötet hat, während die Diakongruppe tot war.
 * Rebhühner kommen IMMER bei Jagd, wenn man sie aufscheucht! Die Chance lag bei 80 % im Code. Eventuell war der Seed auch auf 0? Nirgendwo ein Hinweis, auch nicht im Editor aktiviert.
-* Markwards sounds take a while at the beginning. Cut it.
+* FIXED (cut sounds): Markwards sounds take a while at the beginning. Cut it.
+* Markward4 corrupted sound. Is it even used? Not used in code.
+* Heimrich: "Was haben sie mir zu berichten?" fehlt.
 * FIXED: Passive icon of Bearform has no disabled version -> green icon.
 * FIXED: Sisgards Meister: Kein Artefakt als Belohnung obwohl sie es sagt. Keine Erfahrung zum Abschluss? Nur Spruchrollen. Doch man kriegt den Helm des Nekromanten, es wird nur nicht angezeigt.
 * Sisgards Pfeilhagel: Kein Pfeilhagel im Effekt!!!
@@ -378,7 +400,7 @@ Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
 * FIXED (40 % statt 70 %): Geräusche von Sisgards Zauberei noch leiser machen.
 * FIXED: Auftrag Der mutige Waffenmeister, Belohnung Irminas fehlt (Salben).
 * FIXED (zwei Läden mit Salben usw.): Irmina muss noch Salben, Lebensmittel und Kräuter verkaufen. Sagt sie zumindest. Zwei Shops?
-* Maximalstufen in Tutorial per Parameter eintragen. Sonst stimmen sie nicht. Maximalstufe 30.
+* FIXED: Maximalstufen in Tutorial per Parameter eintragen. Sonst stimmen sie nicht. Maximalstufe 30.
 * Bei Zaubern, die zu Auftragspunkten springen Animation entfernen! Ansonsten zaubert Bärengestalt ewig.
 * FIXED: Osmansprecher in Credits?
 * Idee zum Balancing: Man steigt im Einzelspieler zu schnell auf. Weniger Erfahrung für Creeps/Quests. Dafür nicht so wenig Erfahrung im Multiplayer, nicht unbedingt teilen durch Spieleranzahl. Man muss auch bedenken, dass man im Einzelspieler mehr Gold bekommt usw.
