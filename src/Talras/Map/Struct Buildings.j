@@ -1,6 +1,13 @@
 library StructMapMapBuildings requires StructGameCharacter
 
+	/**
+	 * \brief Every player can acquire a plan for a building for his class and use it once. The building provides units and spells and allows collecting resources.
+	 */
 	struct Buildings
+		/**
+		 * Since the building allows collecting gold and many more things it should become available at a higher level.
+		 */
+		public static constant integer requiredLevel = 20
 		private static timer m_refillTimer
 		private static trigger m_bringGoldTrigger
 		private static trigger m_usageTrigger
@@ -10,21 +17,21 @@ library StructMapMapBuildings requires StructGameCharacter
 		private static trigger m_upgradeTrigger
 		private static unit array m_buildings
 		private static integer array m_collectedGold[12] // TODO MapData.maxPlayers
-		
+
 		private static method timerFunctionRefill takes nothing returns nothing
 			if (GetResourceAmount(gg_unit_n06E_0487) < 1000000) then
 				call SetResourceAmount(gg_unit_n06E_0487, 1000000)
 			endif
 		endmethod
-		
+
 		private static method triggerConditionBringGold takes nothing returns boolean
 			local integer actualGold = 10
 			local integer gold = 10
 			if (GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED) > thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())]) then
 				set thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())] = GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED)
-		
+
 				call TriggerRegisterPlayerStateEvent(thistype.m_bringGoldTrigger, GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED, GREATER_THAN, thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())])
-				
+
 				set gold = IMaxBJ(1, 10 * R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], gg_unit_n06E_0487) / 1000.0))
 				debug call Print("Gathered gold: " + I2S(gold))
 				if (gold < actualGold) then
@@ -35,10 +42,10 @@ library StructMapMapBuildings requires StructGameCharacter
 					call Bounty(GetTriggerPlayer(), GetUnitX(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), GetUnitY(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), gold)
 				endif
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		private static method triggerConditionUsage takes nothing returns boolean
 			local ACharacter character = ACharacter.getCharacterByUnit(GetTriggerUnit())
 			local AClass class = 0
@@ -65,19 +72,23 @@ library StructMapMapBuildings requires StructGameCharacter
 			endif
 			return false
 		endmethod
-		
+
 		private static method triggerConditionConstructionStart takes nothing returns boolean
+			local ACharacter character = ACharacter.playerCharacter(GetOwningPlayer(GetTriggerUnit()))
 			if (GetUnitTypeId(GetConstructingStructure()) == 'h027' or GetUnitTypeId(GetConstructingStructure()) == 'h028' or GetUnitTypeId(GetConstructingStructure()) == 'h029' or GetUnitTypeId(GetConstructingStructure()) == 'h02C') then
 				if (thistype.m_buildings[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] != null) then
 					call IssueImmediateOrder(GetTriggerUnit(), "stop")
 					call SimError(GetOwningPlayer(GetTriggerUnit()), tre("Sie haben bereits ein Gebäude errichtet.", "You have already constructed a building."))
+				elseif (character != 0 and GetHeroLevel(character.unit()) < thistype.requiredLevel) then
+					call IssueImmediateOrder(GetTriggerUnit(), "stop")
+					call SimError(GetOwningPlayer(GetTriggerUnit()), Format(tre("Ihr Charakter muss mindestens Stufe %1% erreicht haben.", "Your character has to have reached at least level %1%.")).i(thistype.requiredLevel).result())
 				else
 					set thistype.m_buildings[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] = GetConstructingStructure()
 				endif
 			endif
 			return false
 		endmethod
-		
+
 		private static method triggerConditionConstructionFinish takes nothing returns boolean
 			if (GetUnitTypeId(GetConstructedStructure()) == 'h027' or GetUnitTypeId(GetConstructedStructure()) == 'h028' or GetUnitTypeId(GetConstructedStructure()) == 'h029' or GetUnitTypeId(GetConstructedStructure()) == 'h02C') then
 				call Character.displayHintToAll(Format(tre("%1% hat das Gebäude %2% errichtet. Kommt und besucht es!", "%1% has constructed the building %2%. Come and visit it!")).s(GetPlayerName(GetOwningPlayer(GetConstructedStructure()))).s(GetUnitName(GetConstructedStructure())).result())
@@ -86,7 +97,7 @@ library StructMapMapBuildings requires StructGameCharacter
 			endif
 			return false
 		endmethod
-		
+
 		private static method triggerConditionDeath takes nothing returns boolean
 			local integer i = 0
 			loop
@@ -100,7 +111,7 @@ library StructMapMapBuildings requires StructGameCharacter
 			endloop
 			return false
 		endmethod
-		
+
 		private static method triggerConditionUpgrade takes nothing returns boolean
 			local integer i = 0
 			loop
@@ -119,25 +130,25 @@ library StructMapMapBuildings requires StructGameCharacter
 						call UnitRemoveAbility(thistype.m_buildings[i], 'A19Q')
 						call UnitAddAbility(thistype.m_buildings[i], 'A19Q')
 					// tree
-					elseif (GetUnitTypeId(GetTriggerUnit()) == 'h02C') then
+					elseif (GetUnitTypeId(GetTriggerUnit()) == 'h02C' or GetUnitTypeId(GetTriggerUnit()) == 'h02U') then
 						call UnitRemoveAbility(thistype.m_buildings[i], 'A19R')
 						call UnitAddAbility(thistype.m_buildings[i], 'A19R')
 					endif
-					
+
 					debug call Print("Readd spell book " + GetUnitName(GetTriggerUnit()))
-					
+
 					exitwhen (true)
 				endif
 				set i = i + 1
 			endloop
 			return false
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			local integer i
 			set thistype.m_refillTimer = CreateTimer()
 			call TimerStart(thistype.m_refillTimer, 0.10, true, function thistype.timerFunctionRefill)
-		
+
 			set thistype.m_bringGoldTrigger = CreateTrigger()
 			set i = 0
 			loop
@@ -147,23 +158,23 @@ library StructMapMapBuildings requires StructGameCharacter
 				set i = i + 1
 			endloop
 			call TriggerAddCondition(thistype.m_bringGoldTrigger, Condition(function thistype.triggerConditionBringGold))
-		
+
 			set thistype.m_usageTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_usageTrigger, EVENT_PLAYER_UNIT_SPELL_CAST)
 			call TriggerAddCondition(thistype.m_usageTrigger, Condition(function thistype.triggerConditionUsage))
-			
+
 			set thistype.m_constructionStartTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_constructionStartTrigger, EVENT_PLAYER_UNIT_CONSTRUCT_START)
 			call TriggerAddCondition(thistype.m_constructionStartTrigger, Condition(function thistype.triggerConditionConstructionStart))
-			
+
 			set thistype.m_constructionFinishTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_constructionFinishTrigger, EVENT_PLAYER_UNIT_CONSTRUCT_FINISH)
 			call TriggerAddCondition(thistype.m_constructionFinishTrigger, Condition(function thistype.triggerConditionConstructionFinish))
-			
+
 			set thistype.m_deathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_deathTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(thistype.m_deathTrigger, Condition(function thistype.triggerConditionDeath))
-			
+
 			/*
 			 * When the building is upgraded the spell book abilities are lost.
 			 * Therefore they have to be readded manually.

@@ -334,54 +334,58 @@ Mehrspielertest:
 Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
 * AOS-Einheiten werden nicht pausiert während Video?! Spawn während Video? Evtl. wird Spawn Timer nicht pausiert in Video?
 * Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter?
-* Möglichkeit, dass man einen Gegenstand auf einmal verkaufen kann! Dafür müssen Preise gespeichert werden.
-* Beherrschung auf jeden Fall nur auslösen, wenn Mana fehlt und Geräusch leiser machen!!!!
-* Den Timer für die Klassenauswahl im Einzelspieler abschalten!!!!
-* Gebäude sollte 5000 Gold oder so kosten und erst ab Stufe 20 verfügbar sein.
-* Abklingzeit von Ursulas Totem ist zu gering.
+* Erbe und Eheweib sollen reparieren und einfache Gebäude für Gold errichten können.
+* FIXED: Alle Gebäude sollen die Zauber aus dem Turm ebenfalls bekommen.
+* FIXED: Baumhaus braucht vergleichbare Zauber wie Turm. Auffüllen rausnehmen kann nicht gleichzeitig mit reparieren aktiv sein.
+* Möglichkeit, dass man einen Gegenstand auf einmal verkaufen kann! Dafür müssen Preise gespeichert werden. Eventuell erstmal nur Markt dafür nehmen.
+* FIXED: Beherrschung auf jeden Fall nur auslösen, wenn Mana fehlt und Geräusch leiser machen!!!!
+* FIXED: Den Timer für die Klassenauswahl im Einzelspieler abschalten!!!!
+* FIXED: Gebäude sollte 5000 Gold oder so kosten und erst ab Stufe 20 verfügbar sein.
+* Abklingzeit von Ursulas Totem ist zu gering. Man kann sonst zu viele Kreaturen beschwören!
 * Schrittesounds in Video das erste Gefecht einbauen, wenn die Nordmänner laufen.
-* Man kann durch Ursulas Stand laufen.
+* Man kann durch Ursulas Stand laufen. Obwohl Blocker da sind? War Spieler fliegend oder so? Nachdem er sich in Wache verwandelt hat?!
 * Deranors Land-Sound ist noch der falsche Sound!
 * Ins Zauberbuch Button für Hauptmenü einfügen.
 * Lothar ist nicht dick und hat das gleiche Modell wie Kuno.
 * Gegenstand einbauen, der Neben-Aufträge anpingt! Ansonsten findet man sich nicht zurecht.
 * "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?
-* Die Aufnahmen des Schafsjungen sind im Spiel abgeschnitten. Neu formatieren.
+* FIXED: Die Aufnahmen des Schafsjungen sind im Spiel abgeschnitten. Neu formatieren.
 * Wegelagerer von Schaf herab töten für Auftrag Sturm auf den Mühlberg geht nicht.
-* Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht.
-* Extrafähigkeit für Einar ins Buch der Schmiedekunst einfügen. Ansonsten können keine normalen Kurzschwerter mehr geschmiedet werden.
+* Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht. Verwandlung von Fernkampf ging nicht, wurde vorher nicht zu Melee gemacht und später wieder durch Equipment zu Fernkampf.
+* DONE: Extrafähigkeit für Einar ins Buch der Schmiedekunst einfügen. Ansonsten können keine normalen Kurzschwerter mehr geschmiedet werden.
 * Wenn das letzte Schwert für Einar geschmiedet wird, dann erscheint Guntrichs Dialog etc. etc. Achtung: Dieser Bug zerstört sogar den Spielstand. Nicht speichern!
 * Einars Schwerter werden nicht aus dem Rucksack entfernt.
-* Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel des Druiden, Stab der Verlangsamung, Knochenbogen.
+* Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel eines Druiden, Stab der Verzögerung, Knochenbogen. War das nur ein Bug? Nein Stiefel eines Druiden haben wirklich keine Zauberbuchfähigkeit. Stab der Verzögerung hatte allerdings deaktivierte Zauberbuchfähigkeit. Knochenbogen ebenfalls.
 * Nach Rückverwandlung von Deranors Leibwache ist die Waffe zunächst nicht sichtbar.
-* Lothar: Hat die Fähigkeit Helden anwählen noch, muss weg. Ansonsten ist im Gespräch überspringen deaktiviert.
-* Dickes Buch ist mehr als doppelt so teuer wie ein Buch, obwohl es nicht mal doppelt so viel Wissen gibt.
+* FIXED: Lothar: Hat die Fähigkeit Helden anwählen noch, muss weg. Ansonsten ist im Gespräch überspringen deaktiviert.
+* FIXED (Kostet nun weniger als doppelt so viel, damit es sich lohnt): Dickes Buch ist mehr als doppelt so teuer wie ein Buch, obwohl es nicht mal doppelt so viel Wissen gibt.
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung.
-* Er ist doch eben sehr Menschenscheu Sisgard: Wird nicht auf Ton gewartet bei Quest-Abschluss.
-* Sisgard folgt ihren Tagesabläufen (läuft weg) während sie einem folgt.
+* FIXED: Er ist doch eben sehr Menschenscheu Sisgard: Wird nicht auf Ton gewartet bei Quest-Abschluss.
+* Sisgard folgt ihren Tagesabläufen (läuft weg) während sie einem folgt. AUnitRoutine.disableAll() muss verbuggt sein und deaktiviert die Tageszeitenauslöser nicht? Wird in shareWith() aufgerufen.
 * Manchmal hat man den Rucksackbutton obwohl man verwandelt ist. Nach dem Laden eines Spielstandes?
 * Quest der dunkle Kult wurde einfach abgeschlossen als man Knochendrache getötet hat, während die Diakongruppe tot war.
-* Rebhühner kommen IMMER bei Jagd, wenn man sie aufscheucht!
+* Rebhühner kommen IMMER bei Jagd, wenn man sie aufscheucht! Die Chance lag bei 80 % im Code. Eventuell war der Seed auch auf 0? Nirgendwo ein Hinweis, auch nicht im Editor aktiviert.
 * Markwards sounds take a while at the beginning. Cut it.
-* Passive icon of Bearform has no disabled version -> green icon.
-* Sisgards Meister: Kein Artefakt als Belohnung obwohl sie es sagt. Keine Erfahrung zum Abschluss? Nur Spruchrollen.
+* FIXED: Passive icon of Bearform has no disabled version -> green icon.
+* FIXED: Sisgards Meister: Kein Artefakt als Belohnung obwohl sie es sagt. Keine Erfahrung zum Abschluss? Nur Spruchrollen. Doch man kriegt den Helm des Nekromanten, es wird nur nicht angezeigt.
 * Sisgards Pfeilhagel: Kein Pfeilhagel im Effekt!!!
-* Camera Sichtdistanz in Videos mit Deranor weiter machen, Felsen im Hintergrund abgeschnitten.
+* FIXED: Kamera-Fern-Clipping in Videos mit Deranor weiter machen, Felsen im Hintergrund abgeschnitten.
 * Todesanimation von Gegenständen mit Hero Glow lässt Hero Glow stehen und Gegenstand liegt im Boden! Beides hiden bei Decay oder nach Death.
-* Bei Dungeon-Kamerawechsel an einen bestimmten Punkt im Dungeon springen (Einstiegspunkt) und nicht an den Rand. Sonst fällt es auf wo das Dungeon in Echt angrenzt.
-* Spruchrolle des Sammlers: Zauber nicht wirken, wenn es keine Gegenstände gibt.
-* Mehr Schwerter zum Schmieden einbauen.
-* Tobias ist zu leise.
+* Bei Dungeon-Kamerawechsel an einen bestimmten Punkt im Dungeon springen (Einstiegspunkt) und nicht an den Rand. Sonst fällt es auf wo das Dungeon in Echt angrenzt. Wenn der Charakter im Dungeon ist, einfach zum Charakter springen.
+* FIXED: Spruchrolle des Sammlers: Zauber nicht wirken, wenn es keine Gegenstände gibt.
+* FIXED (Axt, Eisenhut): Mehr Schwerter zum Schmieden einbauen.
+* FIXED (zumindest Gespräch, nicht die Sätze im Tagesablauf): Tobias ist zu leise.
 * Unterhaltungen als Tagesabläufe leiser machen als gewöhnliche Unterhaltungen.
-* Geräusche von Sisgards Zauberei noch leiser machen.
-* Auftrag Der mutige Waffenmeister, Belohnung Irminas fehlt (Salben).
+* FIXED (40 % statt 70 %): Geräusche von Sisgards Zauberei noch leiser machen.
+* FIXED: Auftrag Der mutige Waffenmeister, Belohnung Irminas fehlt (Salben).
+* FIXED (zwei Läden mit Salben usw.): Irmina muss noch Salben, Lebensmittel und Kräuter verkaufen. Sagt sie zumindest. Zwei Shops?
 * Maximalstufen in Tutorial per Parameter eintragen. Sonst stimmen sie nicht. Maximalstufe 30.
 * Bei Zaubern, die zu Auftragspunkten springen Animation entfernen! Ansonsten zaubert Bärengestalt ewig.
 * FIXED: Osmansprecher in Credits?
 * Idee zum Balancing: Man steigt im Einzelspieler zu schnell auf. Weniger Erfahrung für Creeps/Quests. Dafür nicht so wenig Erfahrung im Multiplayer, nicht unbedingt teilen durch Spieleranzahl. Man muss auch bedenken, dass man im Einzelspieler mehr Gold bekommt usw.
 * Kein besonderer Gegenstand für Arena-Champion als Belohnung.
 * Arenakampf: Sisgard kann unterstützen ohne Bestrafung. Schaden blocken, Sisgard töten oder stunnen. Besser Arenakampf verlieren.
-* Jagdfalke teurer: Dafür auch stärker.
+* FIXED: Jagdfalke teurer: Dafür auch stärker.
 * Björn: "Klingt nur etwas seltsam das mit dem Töten zweier Bären, meine ich": Sound fehlt.
 * Erwachen des Waldes hat die gleiche ID wie eine Zauberbuchaktionen (Favoriten oder so).
 * Quest to fight with the Norsemen (first quest) doesn't give any gold rewards etc. although Markward says it in the video.
@@ -397,7 +401,7 @@ Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
 * FIXED: When talking to an NPC the NPC does not stop his routine, he walks away (Björn).
 * Hotkeys dont work when buying a unit like "Speak to NPC".
 * Fade trees slowly.
-* Update loading screens, different loading screen for map Gardonar.
+* DEPRECATED: Update loading screens, different loading screen for map Gardonar.
 * Reduce transparency to 0.7 or something.
 * Some spell IDs of Zoology spells are the same as the normal ones for the Druid class.
 * DEPRECATED: Show text on class selection on how to select the class.

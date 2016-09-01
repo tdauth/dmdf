@@ -162,7 +162,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 					call MapData.onSelectClass(character, class, last)
 				else
 					debug call Print("Start game")
-					call thistype.endTimer()
+
+					if (not bj_isSinglePlayer) then
+						call thistype.endTimer()
+					endif
+
 					call MapData.onSelectClass(character, class, last)
 					call thistype.startGame()
 				endif
@@ -617,7 +621,13 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endloop
 
 			debug call Print("Starting timer")
-			call ClassSelection.startTimer(tre("Klassenauswahl:", "Class selection:"), 300.0)
+
+			/*
+			 * Don't show a timer in singleplayer since nobody has to wait for the player.
+			 */
+			if (not bj_isSinglePlayer) then
+				call ClassSelection.startTimer(tre("Klassenauswahl:", "Class selection:"), 300.0)
+			endif
 
 			/*
 			 * Wait until players are ready to realize.

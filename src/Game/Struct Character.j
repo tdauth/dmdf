@@ -9,26 +9,26 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 	struct OrderAnimations
 		private Character m_character
 		private unit m_unit
-		
+
 		public method setUnit takes unit whichUnit returns nothing
 			set this.m_unit = whichUnit
 		endmethod
-		
+
 		public method unit takes nothing returns unit
 			return this.m_unit
 		endmethod
-		
+
 		/**
 		 * Since the Villager255 model is used, animation indices have to be set manually depending on the weapon.
 		 * In this trigger the attack animation of the character is determined.
 		 */
 		private trigger m_animationOrderTrigger
-		
+
 		private static method triggerConditionOrder takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return this.unit() == GetAttacker()
 		endmethod
-		
+
 		private static method triggerActionOrder takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local AInventory inventory = this.m_character.inventory()
@@ -112,21 +112,21 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 				endif
 			endif
 		endmethod
-		
+
 		public static method create takes Character character, unit whichUnit returns thistype
 			local thistype this = thistype.allocate()
 			set this.m_character = character
 			set this.m_unit = whichUnit
-			
+
 			set this.m_animationOrderTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_animationOrderTrigger, EVENT_PLAYER_UNIT_ATTACKED)
 			call TriggerAddCondition(this.m_animationOrderTrigger, Condition(function thistype.triggerConditionOrder))
 			call TriggerAddAction(this.m_animationOrderTrigger, function thistype.triggerActionOrder)
 			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, 0, this)
-			
+
 			return this
 		endmethod
-		
+
 		public method onDestroy takes nothing returns nothing
 			call DmdfHashTable.global().destroyTrigger(this.m_animationOrderTrigger)
 			set this.m_animationOrderTrigger = null
@@ -176,14 +176,14 @@ static if (DMDF_INFO_LOG) then
 		private InfoLog m_infoLog
 endif
 		private AIntegerVector m_classSpells /// Only \ref Spell instances not \ref ASpell instances!
-		
+
 		/**
 		 * Required for repicking.
 		 * These instances won't be destroyed and therefore must be passed to the new character instance.
 		 */
 		private AIntegerVector m_quests
 		private AIntegerVector m_fellows
-		
+
 		/**
 		 * Allows setting a custom camera distance.
 		 * The initial camera distance is different from the camera distance of Warcraft III which is \ref bj_CAMERA_DEFAULT_DISTANCE because the Doodads are much bigger.
@@ -193,7 +193,7 @@ endif
 		private boolean m_cameraTimerEnabled
 
 		private boolean m_isMorphed
-		
+
 		/**
 		 * Handles Villager255 animations on attacking other units.
 		 */
@@ -215,7 +215,7 @@ endif
 		 */
 		private trigger m_danceTrigger
 		private trigger m_clearTrigger
-		
+
 		private AHashTable m_realSpellLevels
 
 		// dynamic members
@@ -264,19 +264,19 @@ endif
 		public method showWorker takes nothing returns boolean
 			return this.m_showWorker
 		endmethod
-		
+
 		public method addOnCraftItemFunction takes CharacterOnCraftItemFunction onCraftItemFunction returns nothing
 			call this.m_onCraftItemFunctions.pushBack(onCraftItemFunction)
 		endmethod
-		
+
 		public method removeOnCraftItemFunction takes CharacterOnCraftItemFunction onCraftItemFunction returns nothing
 			call this.m_onCraftItemFunctions.remove(onCraftItemFunction)
 		endmethod
-		
+
 		public method onCraftItemFunctionsCount takes nothing returns integer
 			return this.m_onCraftItemFunctions.size()
 		endmethod
-		
+
 		public method onCraftItemFunction takes integer index returns CharacterOnCraftItemFunction
 			return this.m_onCraftItemFunctions[index]
 		endmethod
@@ -310,7 +310,7 @@ else
 			return 0
 endif
 		endmethod
-		
+
 		/**
 		 * Adds a new class spell to the character. Class spells should be spells which can be learned in the grimoire.
 		 * \note This method has no effect on the spell. It has to be added to the grimoire separately.
@@ -318,7 +318,7 @@ endif
 		public method addClassSpell takes Spell spell returns nothing
 			call this.m_classSpells.pushBack(spell)
 		endmethod
-		
+
 		/**
 		 * Since \ref ACharacter.spells() contains all spells belonging to the character it includes non class spells such as
 		 * "Grimoire" or "Add to Favorites". This container stores only class spells which should be listed in the grimoire and which can be skilled.
@@ -327,23 +327,23 @@ endif
 		public method classSpells takes nothing returns AIntegerVector
 			return this.m_classSpells
 		endmethod
-		
+
 		public method addQuest takes AQuest whichQuest returns nothing
 			call this.m_quests.pushBack(whichQuest)
 		endmethod
-		
+
 		public method quests takes nothing returns AIntegerVector
 			return this.m_quests
 		endmethod
-		
+
 		public method addFellow takes Fellow fellow returns nothing
 			call this.m_fellows.pushBack(fellow)
 		endmethod
-		
+
 		public method removeFellow takes Fellow fellow returns nothing
 			call this.m_fellows.remove(fellow)
 		endmethod
-		
+
 		public method fellows takes nothing returns AIntegerVector
 			return this.m_fellows
 		endmethod
@@ -378,20 +378,20 @@ endif
 			set this.m_showCharactersScheme = showCharactersScheme
 			call this.showCharactersSchemeToPlayer()
 		endmethod
-		
+
 		public stub method onReplaceUnit takes unit oldUnit, unit newUnit returns nothing
 			call this.m_orderAnimations.setUnit(newUnit)
 		endmethod
-		
+
 		public stub method onRevival takes nothing returns nothing
 			call SetUnitLifePercentBJ(this.unit(), MapData.revivalLifePercentage)
 			call SetUnitManaPercentBJ(this.unit(), MapData.revivalManaPercentage)
 		endmethod
-		
+
 		private method hasRealSpellLevels takes nothing returns boolean
 			return this.m_realSpellLevels != 0
 		endmethod
-		
+
 		/**
 		 * \return Returns the stored hash table with ability id - level pairs (parent key - 0, child key - ability id, value - level).
 		 * \sa Grimoire#spellLevels
@@ -402,19 +402,19 @@ endif
 			debug endif
 			return this.m_realSpellLevels
 		endmethod
-		
+
 		private method clearRealSpellLevels takes nothing returns boolean
 			debug call Print("Clearing real spell levels")
 			if (this.hasRealSpellLevels()) then
 				call this.realSpellLevels().destroy()
 				set this.m_realSpellLevels = 0
-				
+
 				return true
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		/**
 		 * Stores all grimoire spell levels for later restoration by \ref restoreRealSpellLevels().
 		 * This has to be done for unit transformations since non permanent abilities get lost.
@@ -423,21 +423,21 @@ endif
 			call this.clearRealSpellLevels()
 			set this.m_realSpellLevels = this.grimoire().spellLevels.evaluate()
 		endmethod
-		
+
 		public method restoreRealSpellLevels takes nothing returns boolean
 			if (this.hasRealSpellLevels()) then
 				call this.grimoire().readd.evaluate(this.realSpellLevels())
-				
+
 				return true
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		public method isMorphed takes nothing returns boolean
 			return this.m_isMorphed
 		endmethod
-		
+
 		/**
 		 * Usually on passive hero transformation the grimoire abilities get lost, so they must be readded.
 		 */
@@ -460,7 +460,7 @@ endif
 				debug call Print("Has not been morphed before!")
 				return false
 			endif
-			
+
 			if (disableInventory) then
 				debug call Print("Enabling inventory again")
 				call this.inventory().setEnableAgain(true)
@@ -468,12 +468,12 @@ endif
 			elseif (enableRucksackOnly) then
 				call this.inventory().enableOnlyRucksack(false)
 			endif
-			
+
 			call this.updateGrimoireAfterPassiveTransformation()
-			
+
 			set this.m_isMorphed = false
 			debug call Print("RESTORED")
-			
+
 			return true
 		endmethod
 
@@ -487,18 +487,18 @@ endif
 			debug if (GetUnitAbilityLevel(this.unit(), 'AInv') == 0) then
 			debug call Print("It is too late to store the items! Add a delay for the morphing ability!")
 			debug endif
-			
+
 			call this.updateRealSpellLevels()
-			
+
+			/*
+			 * Make sure it is a melee character before it morphes since all morph spells are based on melee characters.
+			 * Otherwise one would have to create morph abilities for range and melee characters.
+			 */
+			call UnitAddAbility(this.unit(), Classes.classMeleeAbilityIdByCharacter.evaluate(this))
+			call UnitRemoveAbility(this.unit(), Classes.classMeleeAbilityIdByCharacter.evaluate(this))
+
 			// Make sure it won't be enabled again when the character is set movable.
 			if (disableInventory) then
-				/*
-				 * Make sure it is a melee character before it morphes since all morph spells are based on melee characters.
-				 * Otherwise one would have to create morph abilities for range and melee characters.
-				 */
-				call UnitAddAbility(this.unit(), Classes.classMeleeAbilityIdByCharacter.evaluate(this))
-				call UnitRemoveAbility(this.unit(), Classes.classMeleeAbilityIdByCharacter.evaluate(this))
-			
 				call this.inventory().setEnableAgain(false)
 				debug call Print("Disabling inventory")
 				// Should remove but store all items and their permanently added abilities if the rucksack is open!
@@ -508,29 +508,29 @@ endif
 				// unequipping leads to melee unit, always!
 				call this.inventory().enableOnlyRucksack(true)
 			endif
-			
+
 			set this.m_isMorphed = true
 			debug call this.print("MORPHED")
-			
+
 			return true
 		endmethod
-		
+
 		public method setCameraDistance takes real cameraDistance returns nothing
 			set this.m_cameraDistance = cameraDistance
 			call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
 		endmethod
-		
+
 		public method cameraDistance takes nothing returns real
 			return this.m_cameraDistance
 		endmethod
-		
+
 		private static method timerFunctionCamera takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
 			if (not this.isViewEnabled() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown() and AClassSelection.playerClassSelection(this.player()) == 0) then
 				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, thistype.cameraTimerInterval)
 			endif
 		endmethod
-		
+
 		/**
 		 * Enables or disables the camera timer which applies the custom camera distance.
 		 * \param enabled If this value is true and the 3rd person view is not enbaled, the camera distance timer is started. Otherwise it is paused.
@@ -550,7 +550,7 @@ endif
 				call PauseTimer(this.m_cameraTimer)
 			endif
 		endmethod
-		
+
 		/**
 		 * The character crafts an item of item type \p itemTypeId which calls all registered \ref onCraftItemFunction() instances with .evaluate.
 		 */
@@ -662,19 +662,19 @@ endif
 			call SelectUnitForPlayerSingle(this.unit(), this.player())
 			debug call Print("Selected worker")
 		endmethod
-		
+
 		private static method triggerConditionSpawnIllusion takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			
+
 			return GetSummoningUnit() == this.unit() and IsUnitIllusion(GetSummonedUnit()) and not this.isMorphed()
 		endmethod
-		
+
 		private static method triggerActionSpawnIllusion takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			debug call Print("Spawning illusion")
 			call this.m_illusionOrderAnimations.pushBack(OrderAnimations.create(this, GetSummonedUnit()))
 		endmethod
-		
+
 		private static method triggerConditionIllusionDies takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local AIntegerListIterator iterator = 0
@@ -692,10 +692,10 @@ endif
 				endloop
 				call iterator.destroy()
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		private static method chatEmote takes player whichPlayer, string message returns nothing
 			local integer i = 0
 			loop
@@ -706,7 +706,7 @@ endif
 				set i = i + 1
 			endloop
 		endmethod
-		
+
 		private static method triggerActionDance takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			if (not IsUnitDeadBJ(this.unit())) then
@@ -722,7 +722,7 @@ endif
 				endif
 			endif
 		endmethod
-		
+
 		private static method triggerActionClear takes nothing returns nothing
 			if (GetTriggerPlayer() == GetLocalPlayer()) then
 				call ClearTextMessages()
@@ -737,9 +737,9 @@ endif
 		 */
 		public static method create takes player whichPlayer, unit whichUnit, AIntegerVector quests, AIntegerVector fellows returns thistype
 			local thistype this = thistype.allocate(whichPlayer, whichUnit)
-			
+
 			debug call Print("Creating character for player " + GetPlayerName(whichPlayer))
-			
+
 			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeHeaddress, 'I06C')
 			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeArmour, 'I06D')
 			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypePrimaryWeapon, 'I06E')
@@ -747,7 +747,7 @@ endif
 			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeAmulet, 'I06G')
 			call this.inventory().setEquipmentTypePlaceholder(AItemType.equipmentTypeAmulet + 1, 'I06G')
 			call this.inventory().updateEquipmentTypePlaceholders()
-			
+
 			// dynamic members
 			set this.m_isInPvp = false
 			set this.m_showCharactersScheme = true
@@ -774,7 +774,7 @@ endif
 				set this.m_fellows = AIntegerVector.create()
 			endif
 			set this.m_isMorphed = false
-			
+
 			/*
 			 * We need a larger distance since the Doodads are much bigger in this modification than in the usual Warcraft III.
 			 */
@@ -783,39 +783,39 @@ endif
 			call DmdfHashTable.global().setHandleInteger(this.m_cameraTimer, 0, this)
 			set this.m_cameraTimerEnabled = false
 			// dont start the timer since the character might be created during map initialization
-			
+
 			set this.m_orderAnimations = OrderAnimations.create(this, this.unit())
 			set this.m_illusionOrderAnimations = AIntegerList.create()
-			
+
 			set this.m_spawnIllusionTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_spawnIllusionTrigger, EVENT_PLAYER_UNIT_SUMMON)
 			call TriggerAddCondition(this.m_spawnIllusionTrigger, Condition(function thistype.triggerConditionSpawnIllusion))
 			call TriggerAddAction(this.m_spawnIllusionTrigger, function thistype.triggerActionSpawnIllusion)
 			call DmdfHashTable.global().setHandleInteger(this.m_spawnIllusionTrigger, 0, this)
-			
+
 			set this.m_illusionDiesTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_illusionDiesTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(this.m_illusionDiesTrigger, Condition(function thistype.triggerConditionIllusionDies))
 			call DmdfHashTable.global().setHandleInteger(this.m_illusionDiesTrigger, 0, this)
-			
+
 			set this.m_danceTrigger = CreateTrigger()
 			call TriggerRegisterPlayerChatEvent(this.m_danceTrigger, whichPlayer, "-", false)
 			call TriggerAddAction(this.m_danceTrigger, function thistype.triggerActionDance)
 			call DmdfHashTable.global().setHandleInteger(this.m_danceTrigger, 0, this)
-			
+
 			set this.m_clearTrigger = CreateTrigger()
 			call TriggerRegisterPlayerChatEvent(this.m_clearTrigger, whichPlayer, "-clear", true)
 			call TriggerAddAction(this.m_clearTrigger, function thistype.triggerActionClear)
 			call DmdfHashTable.global().setHandleInteger(this.m_clearTrigger, 0, this)
 
 			set this.m_realSpellLevels = 0
-			
+
 			return this
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
 			call this.m_onCraftItemFunctions.destroy()
-		
+
 			call this.m_mainMenu.destroy.evaluate()
 static if (DMDF_CREDITS) then
 			call this.m_grimoire.destroy.evaluate()
@@ -826,11 +826,11 @@ static if (DMDF_INFO_LOG) then
 endif
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0
-			
+
 			call PauseTimer(this.m_cameraTimer)
 			call DmdfHashTable.global().destroyTimer(this.m_cameraTimer)
 			set this.m_cameraTimer = null
-			
+
 			call this.m_orderAnimations.destroy()
 			call this.m_illusionOrderAnimations.destroy()
 			call DmdfHashTable.global().destroyTrigger(this.m_spawnIllusionTrigger)
@@ -839,7 +839,7 @@ endif
 			set this.m_illusionDiesTrigger = null
 			call DmdfHashTable.global().destroyTrigger(this.m_danceTrigger)
 			set this.m_danceTrigger = null
-			
+
 			if (this.hasRealSpellLevels()) then
 				call this.clearRealSpellLevels()
 			endif

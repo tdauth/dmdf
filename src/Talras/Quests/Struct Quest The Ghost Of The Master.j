@@ -8,7 +8,7 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(0)
 		endmethod
-		
+
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger usedTrigger returns nothing
 			call TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_quest_the_ghost_of_the_master_graveyard)
 		endmethod
@@ -16,7 +16,7 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
 			return GetTriggerUnit() == Npcs.sisgard() and Fellows.sisgard().isShared() and Fellows.sisgard().character() == questItem.character()
 		endmethod
-		
+
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local unit master
 			local effect whichEffect
@@ -68,7 +68,7 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 			call TriggerSleepAction(2.0)
 			call waitForVideo(MapData.videoWaitInterval)
 			call TransmissionFromUnitForPlayer(questItem.character().player(), Npcs.sisgard(), tre("Meister? Das ist doch wieder typisch für ihn! Er ist eben einfach zu menschenscheu.", "Master? That is again typical for him! He's just simply unsociable."), gg_snd_Sisgard63)
-			call TriggerSleepAction(GetSimpleTransmissionDuration(null))
+			call TriggerSleepAction(GetSimpleTransmissionDuration(gg_snd_Sisgard63))
 			call waitForVideo(MapData.videoWaitInterval)
 			call PauseUnit(Npcs.sisgard(), false)
 			call SetUnitInvulnerable(Npcs.sisgard(), false)

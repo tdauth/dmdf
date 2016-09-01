@@ -177,7 +177,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		endmethod
 
 		// Agihard mag dich.
-		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction4 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("Agihard mag dich.", "Agihard likes you."), null)
 			call speech(info, character, true, tre("Was … äh … wie bitte? Hast du etwa mit ihm gesprochen?", "What ... uh ... what? Did you talk with him?"), gg_snd_Irmina21)
 			call speech(info, character, false, tre("Ja.", "Yes."), null)
@@ -188,7 +188,15 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 			call speech(info, character, true, tre("Was … also was hat er denn gesagt, also was genau?", "What … so what did he say, so what exactly?"), gg_snd_Irmina24)
 			call speech(info, character, false, tre("Er meinte nur, dass er dich sehr gerne hat und vielleicht mal in nächster Zeit bei dir vorbeischaut.", "He just said that he likes you very much and maybe in the near future will come around at you."), null)
 			call speech(info, character, true, tre("Tatsächlich! Ich meine, tatsächlich? Das wäre toll. Endlich mal eine gute Neuigkeit. Hier hast du ein paar Salben, danke!", "Indeed! I mean, indeed? That would be great. Finally a good news. Here you have a few ointments, thank you!"), gg_snd_Irmina25)
-			// TODO Salben geben!
+			// Salben geben
+			call character.giveItem('I070')
+			call character.giveItem('I070')
+			call character.giveItem('I070')
+			call character.giveItem('I070')
+			call character.giveItem('I071')
+			call character.giveItem('I071')
+			call character.giveItem('I071')
+			call character.giveItem('I071')
 			// Auftrag „Talras' mutiger Waffenmeister“ abgeschlossen
 			call QuestTheBraveArmourerOfTalras.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
