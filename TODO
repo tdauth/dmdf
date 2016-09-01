@@ -332,6 +332,7 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
+* Nach dem Laden sind die verborgenen Zauberbuchfähigkeiten des Equipments nicht mehr verborgen.
 * Erbe und Eheweib sollen reparieren und einfache Gebäude für Gold errichten können.
 * FIXED: Alle Gebäude sollen die Zauber aus dem Turm ebenfalls bekommen.
 * FIXED: Baumhaus braucht vergleichbare Zauber wie Turm. Auffüllen rausnehmen kann nicht gleichzeitig mit reparieren aktiv sein.
