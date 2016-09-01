@@ -332,6 +332,8 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Annoying for version 0.8 (obere Einträge aus Let's Play-Test):
+* AOS-Einheiten werden nicht pausiert während Video?! Spawn während Video? Evtl. wird Spawn Timer nicht pausiert in Video?
+* Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter?
 * Möglichkeit, dass man einen Gegenstand auf einmal verkaufen kann! Dafür müssen Preise gespeichert werden.
 * Beherrschung auf jeden Fall nur auslösen, wenn Mana fehlt und Geräusch leiser machen!!!!
 * Den Timer für die Klassenauswahl im Einzelspieler abschalten!!!!
