@@ -634,12 +634,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 
 		public stub method enable takes nothing returns boolean
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call SetPlayerAbilityAvailable(Player(i), SpellMissionTheDefenseOfTalras.abilityId, true)
-				set i = i + 1
-			endloop
+			call Missions.addMissionToAll('A1CF', 'A1RF', this)
 			set this.m_questArea = QuestAreaQuestTheDefenseOfTalras.create(gg_rct_quest_the_defense_of_talras)
 			return super.enableUntil(thistype.questItemMoveToCamp)
 		endmethod

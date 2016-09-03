@@ -1,9 +1,8 @@
 //! import "Talras/Spells/Struct Spell Aos Ring.j"
 //! import "Talras/Spells/Struct Spell Magical Seed.j"
-//! import "Talras/Spells/Struct Spell Missions.j"
 //! import "Talras/Spells/Struct Spell Open Gate.j"
 
-library MapSpells requires StructGameClasses, StructMapSpellsSpellAosRing, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellMissions, StructMapSpellsSpellOpenGate
+library MapSpells requires StructGameClasses, StructMapSpellsSpellAosRing, StructMapSpellsSpellMagicalSeed, StructMapSpellsSpellOpenGate
 
 	/**
 	 * Init non-character spells.
@@ -48,15 +47,8 @@ library MapSpells requires StructGameClasses, StructMapSpellsSpellAosRing, Struc
 			call SpellAosRing.create(character, 'A14B', 'A145', 'A0BP', true) // Wizard
 			call SpellAosRing.create(character, 'A14S', 'A14L', 'A14L', false) // Wizard
 		endif
-	
+
 		call SpellMagicalSeed.create(character)
-		call SpellMissionTalras.create(character)
-		call SpellMissionTheNorsemen.create(character)
-		call SpellMissionSlaughter.create(character)
-		call SpellMissionWar.create(character)
-		call SpellMissionANewAlliance.create(character)
-		call SpellMissionTheDefenseOfTalras.create(character)
-		call SpellMissionTheWayToHolzbruck.create(character)
 	endfunction
 
 endlibrary

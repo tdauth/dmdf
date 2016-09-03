@@ -1,23 +1,23 @@
 library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, StructMapVideosVideoRecruitTheHighElf, StructMapQuestsQuestDeranor
 
 	struct QuestAreaANewAlliance extends QuestArea
-	
+
 		public stub method onCheck takes nothing returns boolean
 			if (not QuestDeranor.quest().isCompleted()) then
 				call Character.displayHintToAll(tre("Sie müssen erst den Auftrag \"Deranor\" abschließen bevor dieser Auftrag begonnen werden kann.", "First you have to complete the mission \"Deranor\" before this mission can be started."))
 				return false
 			endif
-			
+
 			return true
 		endmethod
-	
+
 		public stub method onStart takes nothing returns nothing
 			call QuestANewAlliance.quest.evaluate().questItem(0).setState(AQuest.stateCompleted)
 			call QuestANewAlliance.quest.evaluate().questItem(1).setState(AQuest.stateCompleted)
 			call QuestANewAlliance.quest.evaluate().displayUpdate()
 			call VideoRecruitTheHighElf.video().play()
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
 			return thistype.allocate(whichRect)
 		endmethod
@@ -29,12 +29,7 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call SetPlayerAbilityAvailable(Player(i), SpellMissionANewAlliance.abilityId, true)
-				set i = i + 1
-			endloop
+			call Missions.addMissionToAll('A1CE', 'A1RB', this)
 			set this.m_questArea = QuestAreaANewAlliance.create(gg_rct_quest_a_new_alliance)
 			return this.enableUntil(1)
 		endmethod
@@ -52,7 +47,7 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 			call this.setReward(AAbstractQuest.rewardGold, 200)
 			// quest item 0
 			set questItem = AQuestItem.create(this, tre("Findet die Hochelfin in Talras.", "Find the High Elf in Talras."))
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_a_new_alliance)
 			call questItem.setPingColour(100.0, 100.0, 100.0)

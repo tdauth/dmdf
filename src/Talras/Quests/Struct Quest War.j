@@ -1,15 +1,15 @@
 library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQuestsQuestWarLumberFromKuno, StructMapQuestsQuestWarRecruit, StructMapQuestsQuestWarSupplyFromManfred, StructMapQuestsQuestWarTrapsFromBjoern, StructMapQuestsQuestWarWeaponsFromWieland, StructMapVideosVideoPrepareForTheDefense
-	
+
 	struct QuestAreaWarCartDestination extends QuestArea
 		public stub method onCheck takes nothing returns boolean
 			call Character.displayHintToAll(tre("In dieses Gebiet müssen die Versorgungswagen und die Knechte gebracht werden.", "Supply carts and servants must be brought to this area."))
 			return false
 		endmethod
-	
+
 		public stub method onStart takes nothing returns nothing
 		endmethod
 	endstruct
-	
+
 	struct QuestAreaWarReportHeimrich extends QuestArea
 		public stub method onCheck takes nothing returns boolean
 			// TODO change moveManfredsSupplyToTheCamp
@@ -17,15 +17,15 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 			if (not result) then
 				call Character.displayHintToAll(tre("Schließen Sie zunächst den Auftrag \"Krieg\" ab. Danach können Sie dem Herzog Bericht erstatten.", "Complete the mission \"War\" first. After that you can report to the duke."))
 			endif
-			
+
 			return result
 		endmethod
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoPrepareForTheDefense.video().play()
 		endmethod
 	endstruct
-	
+
 	// TODO add quest item wait for the traps.
 	struct QuestWar extends SharedQuest
 		public static constant integer questItemWeaponsFromWieland = 0
@@ -40,11 +40,11 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 		 * Quest area without effect to mark the destination of all carts.
 		 */
 		private QuestAreaWarCartDestination m_questAreaCartDestination
-		
+
 		private QuestAreaWarReportHeimrich m_questAreaReportHeimrich
 
 		implement Quest
-		
+
 		/**
 		 * Removes all carts and recruits from their destination.
 		 */
@@ -72,19 +72,15 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
-			
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call SetPlayerAbilityAvailable(Player(i), SpellMissionWar.abilityId, true)
-				set i = i + 1
-			endloop
-			
+
+			// TODO enable
+			//call Missions.addMissionToAll()
+
 			call this.displayState()
 
 			return result
 		endmethod
-		
+
 		/**
 		 * Enables an empty quest area to mark the carts destinations.
 		 */
@@ -93,7 +89,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 				set this.m_questAreaCartDestination = QuestAreaWarCartDestination.create(gg_rct_quest_war_cart_destination)
 			endif
 		endmethod
-		
+
 		/**
 		 * Makes \p whichUnit invulnerable and changes its owner.
 		 */
@@ -106,16 +102,16 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 			call IssueImmediateOrder(whichUnit, "stop")
 			call SetUnitInvulnerable(whichUnit, true)
 		endmethod
-		
+
 		private static method stateActionCompletedReportHeimrich takes AQuestItem questItem returns nothing
 			local thistype this = thistype.quest()
 			call this.m_questAreaCartDestination.destroy()
 			set this.m_questAreaCartDestination = 0
 		endmethod
-		
+
 		public stub method distributeRewards takes nothing returns nothing
 			// TODO besonderer Gegenstand für die Klasse
-			
+
 			// call this method, otherwise the characters do not get their rewards
 			call super.distributeRewards()
 		endmethod
@@ -130,43 +126,43 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 
 			// quest item questItemWeaponsFromWieland
 			set questItem = AQuestItem.create(this, tre("Besorgt Waffen vom Schmied Wieland.", "Get weapons from the smith Wieland."))
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_wieland)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// quest item questItemSupplyFromManfred
 			set questItem = AQuestItem.create(this, tre("Besorgt Nahrung vom Bauern Manfred.", "Get food from the farmer Manfred."))
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_manfred)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// quest item questItemLumberFromKuno
 			set questItem = AQuestItem.create(this, tre("Besorgt Holz vom Holzfäller Kuno.", "Get wood from the lumberjack Kuno."))
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_kuno)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// quest item questItemTrapsFromBjoern
 			set questItem = AQuestItem.create(this, tre("Besorgt Fallen vom Jäger Björn.", "Get traps from the hunter Björn."))
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_bjoern)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// quest item questItemRecruit
 			set questItem = AQuestItem.create(this, tre("Rekrutiert kriegstaugliche Leute auf dem Bauernhof.", "Recruit war suitable people at the farm."))
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_farm)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// quest item questItemReportHeimrich
 			set questItem = AQuestItem.create(this, tre("Berichtet Heimrich von eurem Erfolg.", "Report Heimrich of your success."))
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedReportHeimrich)
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_heimrich)
 			call questItem.setPingColour(100.0, 100.0, 100.0)

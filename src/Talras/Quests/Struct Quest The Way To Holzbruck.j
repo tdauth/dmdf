@@ -1,15 +1,15 @@
 library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs, StructMapVideosVideoUpstream
 
 	struct QuestAreaTheWayToHolzbruck extends QuestArea
-	
+
 		public stub method onCheck takes nothing returns boolean
 			return true
 		endmethod
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoUpstream.video().play()
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
 			return thistype.allocate(whichRect)
 		endmethod
@@ -17,16 +17,12 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs, St
 
 	struct QuestTheWayToHolzbruck extends SharedQuest
 		private QuestAreaTheWayToHolzbruck m_questArea
-	
+
 		implement Quest
 
 		public stub method enable takes nothing returns boolean
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call SetPlayerAbilityAvailable(Player(i), SpellMissionTheWayToHolzbruck.abilityId, true)
-				set i = i + 1
-			endloop
+			call Missions.addMissionToAll('A1E3', 'A1RG', this)
+
 			set this.m_questArea = QuestAreaTheWayToHolzbruck.create(gg_rct_quest_the_way_to_holzbruck)
 			return super.enable()
 		endmethod

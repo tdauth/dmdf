@@ -605,7 +605,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			call ForceCinematicSubtitles(true)
 
-			//call PlayMusic("Music\\CharacterSelection.mp3")
+			// TODO play thematic music for player from class selection
 
 			set i = 0
 			loop

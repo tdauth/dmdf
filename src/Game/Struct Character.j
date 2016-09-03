@@ -178,6 +178,7 @@ endif
 static if (DMDF_INFO_LOG) then
 		private InfoLog m_infoLog
 endif
+		private Missions m_missions
 		private AIntegerVector m_classSpells /// Only \ref Spell instances not \ref ASpell instances!
 
 		/**
@@ -312,6 +313,10 @@ static if (DMDF_INFO_LOG) then
 else
 			return 0
 endif
+		endmethod
+
+		public method missions takes nothing returns Missions
+			return this.m_missions
 		endmethod
 
 		/**
@@ -766,7 +771,7 @@ endif
 static if (DMDF_INFO_LOG) then
 			set this.m_infoLog = InfoLog.create.evaluate(this)
 endif
-
+			set this.m_missions = Missions.create.evaluate(this)
 			set this.m_classSpells = AIntegerVector.create()
 			set this.m_quests = quests
 			if (this.m_quests == 0) then
@@ -827,6 +832,7 @@ endif
 static if (DMDF_INFO_LOG) then
 			call this.m_infoLog.destroy.evaluate()
 endif
+			call this.m_missions.destroy.evaluate()
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0
 

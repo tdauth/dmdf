@@ -12,14 +12,12 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapDungeons
 
 		public static method characterJoins takes Character character returns nothing
 			// TODO Tomb needs different music
-			call PlayMusic("Music\\TheDrumCave.mp3") /// @todo for user
 			call Dungeons.crypt().setCameraBoundsForPlayer(character.player())
 			call character.setCamera()
 			set thistype.m_playerJoined[GetPlayerId(character.player())] = true
 		endmethod
 
 		public static method characterLeaves takes Character character returns nothing
-			call StopMusic(false) /// @todo for user
 			call Dungeon.resetCameraBoundsForPlayer(character.player()) // set camera bounds before rect!
 			call character.setCamera()
 			set thistype.m_playerJoined[GetPlayerId(character.player())] = false
@@ -31,7 +29,7 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapDungeons
 
 		private static method triggerConditionEnter takes nothing returns boolean
 			local ACharacter character = ACharacter.getCharacterByUnit(GetTriggerUnit())
-			return character != 0 and not thistype.m_playerJoined[GetPlayerId(character.player())] 
+			return character != 0 and not thistype.m_playerJoined[GetPlayerId(character.player())]
 		endmethod
 
 		private static method triggerActionEnter takes nothing returns nothing
@@ -50,7 +48,7 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapDungeons
 			call TriggerAddCondition(thistype.m_enterTrigger, Condition(function thistype.triggerConditionEnter))
 			call TriggerAddAction(thistype.m_enterTrigger, function thistype.triggerActionEnter)
 		endmethod
-		
+
 		private static method triggerConditionLeave takes nothing returns boolean
 			return ACharacter.isUnitCharacter(GetTriggerUnit()) and not RectContainsUnit(gg_rct_area_tomb, GetTriggerUnit()) and not RectContainsUnit(gg_rct_area_tomb_1, GetTriggerUnit())
 		endmethod
@@ -71,7 +69,7 @@ library StructMapMapTomb requires Asl, StructGameCharacter, StructMapMapDungeons
 			call TriggerAddCondition(thistype.m_leaveTrigger, Condition(function thistype.triggerConditionLeave))
 			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 		endmethod
-		
+
 		public static method init takes nothing returns nothing
 			call thistype.createEnterTrigger()
 			call thistype.createLeaveTrigger()

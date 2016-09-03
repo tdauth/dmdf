@@ -46,20 +46,20 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			set this.m_leaderboard = null
 		endmethod
 	endstruct
-	
+
 	struct QuestAreaTheNorsemenTheChief extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call QuestTheNorsemen.quest.evaluate().enableTheBattle.execute()
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
 			return thistype.allocate(whichRect)
 		endmethod
 	endstruct
-	
+
 	struct QuestAreaTheNorsemenBattle extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoTheFirstCombat.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
@@ -67,32 +67,32 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemFight).setState(AAbstractQuest.stateNew)
 			call QuestTheNorsemen.quest.evaluate().displayState()
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
 			return thistype.allocate(whichRect)
 		endmethod
 	endstruct
-	
+
 	struct QuestAreaTheNorsemenAfterTheBattle extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call QuestTheNorsemen.quest.evaluate().completeMeetAtTheOutpost.execute()
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
 			return thistype.allocate(whichRect)
 		endmethod
 	endstruct
-	
+
 	struct QuestAreaTheNorsemenHeimrich extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoANewAlliance.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemReportHeimrich).setState(AAbstractQuest.stateCompleted)
 			call QuestTheNorsemen.quest.evaluate().displayState()
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
 			return thistype.allocate(whichRect)
 		endmethod
@@ -127,7 +127,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private QuestAreaTheNorsemenAfterTheBattle m_questAreAfterTheBattle
 		private QuestAreaTheNorsemenHeimrich m_questAreaHeimrich
 		private AGroup m_finalNorsemen
-		
+
 		implement Quest
 
 		// members
@@ -139,12 +139,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		// methods
 
 		public stub method enable takes nothing returns boolean
-			local integer i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call SetPlayerAbilityAvailable(Player(i), SpellMissionTheNorsemen.abilityId, true)
-				set i = i + 1
-			endloop
+			call Missions.addMissionToAll('A1C0', 'A1RA', this)
 			set this.m_questAreaTheChief = QuestAreaTheNorsemenTheChief.create(gg_rct_quest_the_norsemen_quest_item_0)
 			return super.enableUntil(thistype.questItemMeetTheNorsemen)
 		endmethod
@@ -160,7 +155,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			if (this.m_currentGroup.units().contains(triggerUnit)) then
 				call this.m_currentGroup.units().remove(triggerUnit)
 				set result = this.m_currentGroup.units().empty()
-			
+
 				if (not result and this.m_currentGroup.units().size() == 5) then // Gruppen müssen immer größer als 5 sein
 					// rangers (ally spawn)
 					if (this.m_currentGroupIndex == 1) then
@@ -169,9 +164,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 						call this.m_allyRangerGroup.addGroup(CreateUnitsAtPoint(5, UnitTypes.ranger, MapData.alliedPlayer, GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0), true, false)
 						set this.m_allyRangerLeader = CreateUnit(MapData.alliedPlayer, 'n03G',  GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0)
 						call this.m_allyRangerGroup.units().pushBack(this.m_allyRangerLeader)
-						
+
 						call PingMinimap(GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), bj_RESCUE_PING_TIME)
-						
+
 						call TransmissionFromUnit(this.m_allyRangerLeader, tre("He ihr da! Wir sind gekommen, um euch zu unterstützen. Vertreiben wir diese Brut aus unserem Land!", "Hey you there! We have come to assist you. Let us drive this pack out of our country!"), null)
 						call Character.displayUnitAcquiredToAll(tre("Waldläufer", "Ranger"), tre("Waldläufer sind geschickte Fernkämpfer, die ihre Gegner mit vergifteten Pfeilen beschießen können.", "Rangers are skilled range fighters who can bombard their opponents with poisoned arrows."))
 					// farmers (ally spawn)
@@ -181,9 +176,9 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 						call this.m_allyFarmerGroup.addGroup(CreateUnitsAtPoint(5, UnitTypes.armedVillager, MapData.alliedPlayer, GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0), true, false)
 						set this.m_allyFarmerLeader = CreateUnit(MapData.alliedPlayer, 'n03I',  GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0)
 						call this.m_allyFarmerGroup.units().pushBack(this.m_allyFarmerLeader)
-						
+
 						call PingMinimap(GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), bj_RESCUE_PING_TIME)
-	
+
 						call TransmissionFromUnit(this.m_allyFarmerLeader, tre("Kommt Leute, helfen wir ihnen! Tötet alle Feinde!", "Come on guys, we can help them! Kill all the enemies!"), null)
 						call Character.displayUnitAcquiredToAll(tre("Bewaffnete Dorfbewohner", "Armed Villagers"), tre("Bewaffnete Dorfbewohner sind mutige Fernkämpfer, die ihre Gegner mit Brandpfeilen beschießen können.", "Armed villagers are courageous range fighters who can bombard their opponents with fire arrows."))
 					endif
@@ -213,12 +208,12 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 			call this.m_wavesDisplay.destroy()
 		endmethod
-		
+
 		public method completeFight takes nothing returns boolean
 			call this.cleanUpBattleField()
 			return QuestTheNorsemen.quest().questItem(thistype.questItemFight).setState(AAbstractQuest.stateCompleted) // video Wigberht is played in quest completion action
 		endmethod
-		
+
 		private static method forGroupNoGuard takes unit whichUnit returns nothing
 			call SetUnitCreepGuard(whichUnit, false)
 			call RemoveGuardPosition(whichUnit)
@@ -255,12 +250,12 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
 				call TransmissionFromUnitWithName(Npcs.ricman(), tre("Ricman", "Ricman"), tre("Diese verdammten Hunde haben Verstärkung gerufen. Macht euch bereit Männer!", "Those damned bastards have called reinforcements. Get ready men!"), gg_snd_RicmanTheNorsemenRicman1)
-				
+
 				call PingMinimap(GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_1), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_1), bj_RESCUE_PING_TIME)
 			elseif (this.m_currentGroupIndex == 2) then
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_0, 270.0), true, false)
-				
+
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(3, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
 
@@ -287,14 +282,14 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				set orcLeader = CreateUnit(owner, UnitTypes.orcLeader, GetRectCenterX(gg_rct_quest_the_norsemen_enemy_spawn_1), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_spawn_1), 270.0)
 				call this.m_currentGroup.units().pushBack(orcLeader)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_1, 270.0), true, false)
-				
+
 
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(4, UnitTypes.orcWarrior, owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 				call this.m_currentGroup.addGroup(CreateUnitsAtRect(1, 'n044', owner, gg_rct_quest_the_norsemen_enemy_spawn_2, 270.0), true, false)
 
 				call TransmissionFromUnit(orcLeader, tre("Ihr elenden Menschen, euer Ende ist nah!", "You wretched men, your end is near!"), null)
 			endif
-			
+
 			call this.m_currentGroup.forGroup(thistype.forGroupNoGuard) // prevents them from walking back to the spawn point
 			// TODO they do not walk back BUT some units dont move, maybe it is because of the unit type that they cant attack a point
 			call this.m_currentGroup.pointOrder("attack", GetRectCenterX(gg_rct_quest_the_norsemen_enemy_target), GetRectCenterY(gg_rct_quest_the_norsemen_enemy_target))
@@ -334,7 +329,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 				call ShowUnit(SpawnPoints.orcs0().unit(i), false)
 				set i = i + 1
 			endloop
-			
+
 
 			set this.m_allyStartGroup = allyStartGroup
 			set this.m_spawnTrigger = CreateTrigger()
@@ -374,7 +369,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call this.questItem(thistype.questItemMeetAtTheBattlefield).enable()
 			set this.m_questAreaBattle = QuestAreaTheNorsemenBattle.create(gg_rct_quest_the_norsemen_assembly_point)
 		endmethod
-		
+
 		private static method groupFunctionRemoveUnit takes unit enumUnit returns nothing
 			call RemoveUnit(enumUnit)
 		endmethod
@@ -382,26 +377,26 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private static method stateActionCompleted2 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			debug call Print("Quest The Norsemen target 1 completed -> starting with video Wigberht")
-			
+
 			call this.questItem(thistype.questItemMeetAtTheOutpost).setState(thistype.stateNew)
 			call this.displayUpdate()
-			
+
 			call Fellows.wigberht().reset()
 			call Fellows.ricman().reset()
-			
+
 			call SetUnitX(Npcs.wigberht(), GetRectCenterX(gg_rct_waypoint_wigberht_training))
 			call SetUnitY(Npcs.wigberht(), GetRectCenterY(gg_rct_waypoint_wigberht_training))
-			
+
 			call SetUnitX(Npcs.ricman(), GetRectCenterX(gg_rct_waypoint_ricman))
 			call SetUnitY(Npcs.ricman(), GetRectCenterY(gg_rct_waypoint_ricman))
-			
+
 			// the orc spawn point will be disabled forever. The camp is now in hands of norsemen, villagers and rangers
 			// new NPCs?
 			call SpawnPoints.destroyOrcs0()
-			
+
 			set this.m_questAreAfterTheBattle = QuestAreaTheNorsemenAfterTheBattle.create(gg_rct_quest_the_defense_of_talras)
 		endmethod
-		
+
 		public method completeMeetAtTheOutpost takes nothing returns nothing
 			local unit whichUnit
 			call VideoWigberht.video().play()
@@ -409,7 +404,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			call this.questItem(thistype.questItemMeetAtTheOutpost).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
 			call this.displayUpdate()
-			
+
 			/*
 			 * Create Norsemen
 			 */
@@ -432,19 +427,19 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			set whichUnit =  CreateUnitAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.ranger, gg_rct_waypoint_orc_camp_ranger_0, 296.12)
 			call SetUnitInvulnerable(whichUnit, true)
 			call this.m_finalNorsemen.units().pushBack(whichUnit)
-			
+
 			/*
 			 * This shrine is finally used here.
 			 */
 			call Shrines.initOrcCamp()
-			
+
 			set this.m_questAreaHeimrich = QuestAreaTheNorsemenHeimrich.create(gg_rct_quest_talras_quest_item_1)
 		endmethod
-		
+
 		private static method forEachFunctionRemoveUnit takes unit whichUnit returns nothing
 			call RemoveUnit(whichUnit)
 		endmethod
-		
+
 		public method cleanFinalNorsemen takes nothing returns nothing
 			call this.m_finalNorsemen.units().forEach(thistype.forEachFunctionRemoveUnit)
 			call this.m_finalNorsemen.destroy()

@@ -342,8 +342,15 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Crash kam auch nach dem 10. Kill beim Speichern.
 	* Nach zweiter Verwandlung und Rückverwandlung?
 	* Vielleicht auch einfach nach gewisser Zeit als Engel?!
+	* Vermutung: Evtl. PlayThematicMusicForPlayer() oder so.
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* FIXED (PlayThematicMusic() und StopMusic()): Wenn man Deranors Gruft betritt (nicht für Video), endet sie Hintergrundmusik für immer.
+* Credits in Karte Gardonar erscheinen zu weit oben. Beim Schließen Critical Error.
+* Karte Gardonar: Das Invenar ist voll-Sound kommt noch.
+* Untote Zombies sind zu schwach, Gardonar.
+* Blut eines Höllendieners kostet zu viel Gold.
+* Bau von Gebäuden ist nicht limitiert in anderen Karten als Talras.
 * Wenn man sich mit Fellows unterhält während diese shared sind, sollten diese unverwundbar gemacht werden.
 * If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug.
 * FIXED: Klassenauswahltext "unwiderruflich" stimmt nicht mehr.
@@ -370,7 +377,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Deranors Land-Sound ist noch der falsche Sound!
 * Ins Zauberbuch Button für Hauptmenü einfügen.
 * Lothar ist nicht dick und hat das gleiche Modell wie Kuno.
-* Gegenstand einbauen, der Neben-Aufträge anpingt! Ansonsten findet man sich nicht zurecht.
+* Gegenstand einbauen, der Neben-Aufträge anpingt! Ansonsten findet man sich nicht zurecht. Notfalls mit mehreren Seiten. Gegenstand Aufträge soll Seitenwechsel erlauben. Bei Abschluss sollen Symbole verschwinden, damit sie auf Seite 1 kommen.
 * "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?
 * FIXED: Die Aufnahmen des Schafsjungen sind im Spiel abgeschnitten. Neu formatieren.
 * Wegelagerer von Schaf herab töten für Auftrag Sturm auf den Mühlberg geht nicht.

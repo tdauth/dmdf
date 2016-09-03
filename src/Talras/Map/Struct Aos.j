@@ -57,7 +57,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		public static method pauseSpawn takes nothing returns nothing
 			call PauseTimerBJ(true, thistype.m_spawnTimer)
 		endmethod
-		
+
 		private static method timerFunctionSpawn takes nothing returns nothing
 			local effect createdEffect
 			local group haldarsGroup0 = CreateGroup()
@@ -149,7 +149,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			set baldarsGroup0 = null
 			call DestroyGroup(baldarsGroup1)
 			set baldarsGroup1 = null
-			
+
 			debug call Print("AOS Spawn End!")
 			debug call Print("AOS timeout: " + R2S(TimerGetTimeout(thistype.m_spawnTimer)))
 		endmethod
@@ -165,12 +165,11 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call character.setCamera()
 			if (not thistype.m_characterHasEntered) then
 				set thistype.m_characterHasEntered = true
-				/// @todo Play video The Vision.
 				// black legion workers
 				call IssueTargetOrder(gg_unit_u001_0190, "harvest", gg_dest_B00D_2651)
 				call IssueTargetOrder(gg_unit_u001_0191, "harvest", gg_dest_B00D_8151)
 				call IssueTargetOrder(gg_unit_u001_0192, "harvest", gg_dest_B00D_2623)
-				
+
 				call thistype.timerFunctionSpawn()
 				call TimerStart(thistype.m_spawnTimer, thistype.spawnTime, true, function thistype.timerFunctionSpawn)
 			endif
@@ -184,7 +183,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call character.setCamera()
 			set user = null
 		endmethod
-		
+
 		private static method setCharacterAllianceStateToOthers takes Character character, boolean haldar returns nothing
 			local integer i = 0
 			loop
@@ -224,7 +223,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 				call SetPlayerAllianceStateBJ(character.player(), thistype.m_baldarsUser, bj_ALLIANCE_ALLIED)
 			endif
 		endmethod
-		
+
 		private static method resetCharacterAllianceStateToOthers takes Character character returns nothing
 			local integer i = 0
 			loop
@@ -388,11 +387,11 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call TriggerAddCondition(thistype.m_leaveTrigger, Condition(function thistype.triggerConditionIsCharacter))
 			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 		endmethod
-		
+
 		private static method triggerConditionIsEnemyOfHaldar takes nothing returns boolean
 			return IsUnitEnemy(GetTriggerUnit(), thistype.m_haldarsUser)
 		endmethod
-		
+
 		private static method triggerActionKillEnemyOfHaldar takes nothing returns nothing
 			local effect whichEffect = AddSpecialEffectTarget("Models\\Effects\\Blitzschlag.mdx", GetTriggerUnit(), "origin")
 			call SetUnitExploded(GetTriggerUnit(), true)
@@ -401,18 +400,18 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call DestroyEffect(whichEffect)
 			set whichEffect = null
 		endmethod
-		
+
 		private static method createHaldarsAreaTrigger takes nothing returns nothing
 			set thistype.m_haldarsAreaTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(thistype.m_haldarsAreaTrigger, gg_rct_haldars_area)
 			call TriggerAddCondition(thistype.m_haldarsAreaTrigger, Condition(function thistype.triggerConditionIsEnemyOfHaldar))
 			call TriggerAddAction(thistype.m_haldarsAreaTrigger, function thistype.triggerActionKillEnemyOfHaldar)
 		endmethod
-		
+
 		private static method triggerConditionIsEnemyOfBaldar takes nothing returns boolean
 			return IsUnitEnemy(GetTriggerUnit(), thistype.m_baldarsUser)
 		endmethod
-		
+
 		private static method triggerActionKillEnemyOfBaldar takes nothing returns nothing
 			local effect whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Demon\\RainOfFire\\RainOfFireTarget.mdl", GetTriggerUnit(), "origin")
 			call SetUnitExploded(GetTriggerUnit(), true)
@@ -421,7 +420,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call DestroyEffect(whichEffect)
 			set whichEffect = null
 		endmethod
-		
+
 		private static method createBaldarsAreaTrigger takes nothing returns nothing
 			set thistype.m_baldarsAreaTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(thistype.m_baldarsAreaTrigger, gg_rct_baldars_area)
@@ -513,22 +512,22 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 				set user = null
 				set i = i + 1
 			endloop
-			
+
 			/*
 			 * It is important to set these relationship neutral since the Imps of the quest "War" are from player MapData.alliedPlayer.
 			 */
 			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
-			
+
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
-			
+
 			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
-			
+
 			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
-			
+
 			call SetPlayerColor(thistype.m_haldarsUser, PLAYER_COLOR_LIGHT_GRAY)
 			call SetPlayerColor(thistype.m_baldarsUser, ConvertPlayerColor(12)) // black
 
@@ -556,12 +555,12 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call DestroyTrigger(thistype.m_leaveTrigger)
 			set thistype.m_leaveTrigger = null
 		endmethod
-		
+
 		private static method destroyHaldarsAreaTrigger takes nothing returns nothing
 			call DestroyTrigger(thistype.m_haldarsAreaTrigger)
 			set thistype.m_haldarsAreaTrigger = null
 		endmethod
-		
+
 		private static method destroyBaldarsAreaTrigger takes nothing returns nothing
 			call DestroyTrigger(thistype.m_baldarsAreaTrigger)
 			set thistype.m_baldarsAreaTrigger = null

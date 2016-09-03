@@ -71,6 +71,7 @@ library StructGameTalk requires Asl, StructGameFellow
 		public stub method onOpenForCharacter takes Character character returns nothing
 			// first character, disable routines otherwise the NPC walks away at certain times of day
 			if (this.characters().size() == 1) then
+				// stopping the routines prevents the NPC from walking away.
 				call AUnitRoutine.disableAll(this.unit())
 				// don't pause, otherwise the NPC cannot sell anything
 			endif
