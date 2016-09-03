@@ -1,28 +1,28 @@
 library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen, StructMapVideosVideoTheDukeOfTalras
 
 	struct QuestAreaTalrasCastle extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoTheCastle.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call ACharacter.panCameraSmartToAll()
 			call QuestTalras.quest.evaluate().enableDuke.evaluate()
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
 			return thistype.allocate(whichRect)
 		endmethod
 	endstruct
-	
+
 	struct QuestAreaTalrasDuke extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoTheDukeOfTalras.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call QuestTalras.quest.evaluate().complete()
 			call QuestTheNorsemen.quest().enable()
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
 			return thistype.allocate(whichRect)
 		endmethod
@@ -38,6 +38,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 
 		public stub method enable takes nothing returns boolean
 			set this.m_questAreaCastle = QuestAreaTalrasCastle.create(gg_rct_quest_talras_quest_item_0)
+			call Missions.addMissionToAll('A1BZ', 'A1R7', this)
 			return this.enableUntil(thistype.questItemReachTheCastle)
 		endmethod
 
@@ -67,7 +68,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 			call questItem1.setPingCoordinatesFromRect(gg_rct_quest_talras_quest_item_1)
 			call questItem1.setPingColour(100.0, 100.0, 100.0)
 			call questItem1.setReward(thistype.rewardExperience, 400)
-			
+
 			return this
 		endmethod
 	endstruct

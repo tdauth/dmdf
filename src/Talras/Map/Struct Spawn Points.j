@@ -161,7 +161,9 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_cornEaters1
 		private static SpawnPoint m_cornEaters2
 		private static SpawnPoint m_cornEaters3
+		private static SpawnPoint m_cornEaters4
 		private static SpawnPoint m_spiderQueen
+		private static SpawnPoint m_undeadsForest
 
 		// drum cave
 		private static SpawnPoint m_skeletons0
@@ -884,6 +886,14 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_cornEaters3.addUnitWithType(gg_unit_n06Q_0629, 1.0)
 			call thistype.m_cornEaters3.addNewItemType(index, 'I063', 1.0)
 
+			set thistype.m_cornEaters4 = SpawnPoint.create()
+			set index = thistype.m_cornEaters4.addUnitWithType(gg_unit_n016_0663, 1.0)
+			call thistype.m_cornEaters4.addNewItemType(index, 'I063', 1.0)
+			set index = thistype.m_cornEaters4.addUnitWithType(gg_unit_n016_0662, 1.0)
+			call thistype.m_cornEaters4.addNewItemType(index, 'I063', 1.0)
+			set index = thistype.m_cornEaters4.addUnitWithType(gg_unit_n016_0661, 1.0)
+			call thistype.m_cornEaters4.addNewItemType(index, 'I063', 1.0)
+
 			 // spawn point spider queen
 			set thistype.m_spiderQueen = SpawnPoint.create()
 			set index = thistype.m_spiderQueen.addUnitWithType(gg_unit_n05F_0389, 1.0)
@@ -898,6 +908,13 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_spiderQueen.addUnitWithType(gg_unit_n01D_0392, 1.0)
 			call thistype.m_spiderQueen.addNewItemType(index, 'I041', 1.0)
 
+			// undeads forest
+			set thistype.m_undeadsForest = SpawnPoint.create()
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n00Z_0659, 1.0)
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n00Z_0660, 1.0)
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n01O_0658, 1.0)
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n01O_0656, 1.0)
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n01O_0657, 1.0)
 
 			// drum cave
 			set thistype.m_skeletons0 = SpawnPoint.create()
@@ -1197,6 +1214,10 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 		public static method cornEaters3 takes nothing returns SpawnPoint
 			return thistype.m_cornEaters3
+		endmethod
+
+		public static method cornEaters4 takes nothing returns SpawnPoint
+			return thistype.m_cornEaters4
 		endmethod
 
 		public static method witch0 takes nothing returns SpawnPoint

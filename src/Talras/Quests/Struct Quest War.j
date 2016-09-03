@@ -73,8 +73,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 			call this.questItem(thistype.questItemRecruit).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
 
-			// TODO enable
-			//call Missions.addMissionToAll()
+			call Missions.addMissionToAll('A1CD', 'A1RE', this)
 
 			call this.displayState()
 

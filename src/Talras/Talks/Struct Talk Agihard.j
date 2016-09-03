@@ -73,7 +73,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach Begrüßung, Agihard befindet sich in der Nähe der Arena)
 		private static method infoConditionAfterHelloNearArena takes AInfo info, ACharacter character returns boolean
 			return thistype.infoConditionAfterHello(info, character) and GetDistanceBetweenPointsWithoutZ(GetUnitX(Npcs.agihard()), GetUnitY(Npcs.agihard()), GetRectCenterX(gg_rct_arena), GetRectCenterY(gg_rct_arena)) < 1200.0
@@ -107,6 +107,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			call speech(info, character, true, tre("Tatsächlich! Du scheinst mir ein sehr starker Kämpfer zu sein. Nun gut, du hast dir deine Belohnung ehrenhaft verdient. Hier hast du sie.", "Really! You seem to be a very strong fighter. Well, you've earned your reward honorably. Here you have it."), null)
 			call QuestArenaChampion.characterQuest(character).questItem(1).complete()
 			call character.giveItem('I06K') // amulet of power which increases the attack speed
+			call character.displayItemAcquired(GetObjectName('I06K'), tre("Erhöhen das Angriffstempo.", "Increases the attack speed."))
 			call info.talk().showStartPage(character)
 		endmethod
 

@@ -16,44 +16,44 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 		//! runtextmacro A_STRUCT_DEBUG("\"Dungeon\"")
 
 		// dynamic members
-		
+
 		public method setName takes string name returns nothing
 			set this.m_name = name
 		endmethod
-		
+
 		public method name takes nothing returns string
 			return this.m_name
 		endmethod
-		
+
 		public method setCameraBounds takes rect whichRect returns nothing
 			set this.m_cameraBounds = whichRect
 		endmethod
-		
+
 		public method cameraBounds takes nothing returns rect
 			return this.m_cameraBounds
 		endmethod
-		
+
 		public method setViewRect takes rect whichRect returns nothing
 			set this.m_viewRect = whichRect
 		endmethod
-		
+
 		public method viewRect takes nothing returns rect
 			return this.m_viewRect
 		endmethod
-		
+
 		// methods
-		
+
 		public method setCameraBoundsForPlayer takes player whichPlayer returns nothing
 			call SetCameraBoundsToRectForPlayerBJ(whichPlayer, this.cameraBounds())
 			if (not IsUnitDeadBJ(Character.playerCharacter(whichPlayer).unit()) and RectContainsUnit(this.cameraBounds(), Character.playerCharacter(whichPlayer).unit())) then
 				call Character.playerCharacter(whichPlayer).panCamera()
 				debug call Print("Pan to character")
 			elseif (Character.playerCharacter(whichPlayer).shrine() != 0 and RectContainsCoords(this.cameraBounds(), GetRectCenterX(Character.playerCharacter(whichPlayer).shrine().revivalRect()), GetRectCenterY(Character.playerCharacter(whichPlayer).shrine().revivalRect()))) then
-				call PanCameraToForPlayer(whichPlayer, GetRectCenterX(Character.playerCharacter(whichPlayer).shrine().revivalRect()), GetRectCenterY(Character.playerCharacter(whichPlayer).shrine().revivalRect()))
+				call SetCameraPositionForPlayer(whichPlayer, GetRectCenterX(Character.playerCharacter(whichPlayer).shrine().revivalRect()), GetRectCenterY(Character.playerCharacter(whichPlayer).shrine().revivalRect()))
 				debug call Print("Pan to shrine rect")
 			elseif (this.viewRect() != null) then
 				// TODO panning camera after setting bounds does not work.
-				call PanCameraToForPlayer(whichPlayer, GetRectCenterX(this.viewRect()), GetRectCenterY(this.viewRect()))
+				call SetCameraPositionForPlayer(whichPlayer, GetRectCenterX(this.viewRect()), GetRectCenterY(this.viewRect()))
 				debug call Print("Pan to view rect")
 			endif
 		endmethod
@@ -64,9 +64,9 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 			set this.m_name = name
 			set this.m_cameraBounds = cameraBounds
 			set this.m_viewRect = viewRect
-			
+
 			call thistype.m_dungeons.pushBack(this)
-			
+
 			return this
 		endmethod
 
@@ -83,7 +83,7 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 		public static method dungeons takes nothing returns AIntegerVector
 			return thistype.m_dungeons
 		endmethod
-		
+
 		/// Required by \ref Game.
 		public static method resetCameraBoundsForPlayer takes player whichPlayer returns nothing
 			local thistype dungeon = 0

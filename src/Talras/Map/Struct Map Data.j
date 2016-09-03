@@ -87,6 +87,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant integer workerUnitTypeId = 'h00E'
 		/// If this value is true there will always be a class selection in the beginning if the map is started for the first time. Otherwise characters will be loaded from the gamecache in campaign mode if available.
 		public static constant boolean isSeparateChapter = true
+		public static constant unit goldmine = gg_unit_n06E_0487
 		public static sound cowSound = null
 		public static constant player orcPlayer = Player(9)
 		public static constant player haldarPlayer = Player(10)

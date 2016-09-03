@@ -448,9 +448,11 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Die Nordmänner", "The Norsemen"))
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
 			call this.setDescription(tre("Der Herzog will, dass ihr die Nordmänner vor der Burg auf seine Seite zieht, damit er neue Verbündete für den bevorstehenden Krieg gewinnt.", "The duke wants you to win the Norsemen in front of the castle for him for winning new allies for the upcoming war."))
+			// Markward says it gives you gold
+			call this.setReward(thistype.rewardGold, 500)
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Begebt euch zum Lager der Nordmänner östlich von der Burg.", "Move to the camp of the Norsemen east of the castle."))
 

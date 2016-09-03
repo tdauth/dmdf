@@ -18,6 +18,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 10000
 		public static constant integer workerUnitTypeId = 'h00E'
+		public static constant unit goldmine = gg_unit_n06E_0090
 		public static constant boolean isSeparateChapter = false
 		public static sound cowSound = null
 
