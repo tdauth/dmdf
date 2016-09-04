@@ -10,6 +10,10 @@ call thistype.addContributor("Oliver T. (Sardor)", tre("Modelle, Klassen, Zauber
 call thistype.addContributor("Andreas B. (Deranor)", tre("Inhalt, Landschaften, Tests", "Content, landscapes, tests"))
 call thistype.addContributor("Johanna W.", tre("Tests", "Tests"))
 
+// maps
+call thistype.addTitle(tre("Karten", "Maps"))
+call thistype.addContributor("Heinvers", tre("Gardonars Hölle, Deranors Sumpf", "Gardonar's Hell, Deranor's Swamp"))
+
 // voices
 call thistype.addTitle(tre("Sprecher", "Voices"))
 call thistype.addContributor("http://hoer-talk.de", tre("Website für Sprecher", "Website for Voices"))

@@ -165,7 +165,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call Fellows.ricman().shareWithAll()
 			call Fellows.dragonSlayer().shareWithAll()
 
-			call QuestHell.quest().enable()
+			call QuestGate.quest().enable()
 
 			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 

@@ -1,9 +1,9 @@
-//! import "Deranors Swamp/Quests/Struct Quest Hell.j"
+//! import "Deranors Swamp/Quests/Struct Quest Gate.j"
 
-library MapQuests requires StructMapQuestsQuestHell
+library MapQuests requires StructMapQuestsQuestGate
 
 	function initMapPrimaryQuests takes nothing returns nothing
-		call QuestHell.initQuest()
+		call QuestGate.initQuest()
 	endfunction
 
 	function initMapSecundaryQuests takes nothing returns nothing

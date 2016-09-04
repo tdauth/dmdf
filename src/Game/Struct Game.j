@@ -18,7 +18,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		private static constant real dividend = 10.0
 		/// \note If the range is 0.0 or smaller it is ignored.
 		private static constant real range = 0.0
-		private static constant real xpHandicap = 0.30 //0.20 // this XP factor is used to reduce the actual gained experience such as in the Bonus Campaign. We want to prevent the characters from leveling too fast. In the Bonus Campaign it is 10 % and on difficulty hard it is even 7 %.
+		private static constant real xpHandicap = 0.10 // this XP factor is used to reduce the actual gained experience such as in the Bonus Campaign. We want to prevent the characters from leveling too fast. In the Bonus Campaign it is 10 % and on difficulty hard it is even 7 %.
 		private static constant real unitsFactor = 1.0
 		private static constant real alliedUnitsFactor = 1.0
 		private static constant real characterFactor = 1.0

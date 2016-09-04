@@ -345,6 +345,7 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Vermutung: Evtl. PlayThematicMusicForPlayer() oder so.
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* Mit neuen MapData.goldmine-Konstanten wird Goldmine nicht aufgefüllt. Wird danach initialisiert?
 * Waldläufer haben Icon von Nachtelfin.
 * Creating an illusion by an item (Tellborns rune) does not create OrderAnimation or does not open the equipment stuff first!!! Better solution: On spawning illusions just remove all items from the illusion and add equipment items.
 * FIXED (PlayThematicMusic() und StopMusic()): Wenn man Deranors Gruft betritt (nicht für Video), endet sie Hintergrundmusik für immer.
