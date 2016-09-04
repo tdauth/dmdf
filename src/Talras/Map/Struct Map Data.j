@@ -517,6 +517,12 @@ endif
 		endmethod
 
 		public static method initVideoSettings takes nothing returns nothing
+			/*
+			 * If AOS spawn is not paused, warriors might spawn during a video sequence and not be paused.
+			 */
+			if (Aos.characterHasEntered.evaluate()) then
+				call Aos.pauseSpawn.evaluate()
+			endif
 			call Weather.pauseWeather()
 			// shop markers
 			call ShowUnit(gg_unit_o008_0209, false)
@@ -524,6 +530,9 @@ endif
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
+			if (Aos.characterHasEntered.evaluate()) then
+				call Aos.continueSpawn.evaluate()
+			endif
 			call Weather.resumeWeather()
 			// shop markers
 			call ShowUnit(gg_unit_o008_0209, true)

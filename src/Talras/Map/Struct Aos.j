@@ -47,6 +47,13 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Aos\"")
 
 		/**
+		 * \return Returns true if the first character has entered the AOS cave which means that units are spawned.
+		 */
+		public static method characterHasEntered takes nothing returns boolean
+			return thistype.m_characterHasEntered
+		endmethod
+
+		/**
 		 * Continues the AOS spawn on both sides.
 		 */
 		public static method continueSpawn takes nothing returns nothing

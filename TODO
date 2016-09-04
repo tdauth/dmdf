@@ -353,7 +353,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Karte Gardonar und Gardonars Unterwelt: Das Invenar ist voll-Sound kommt noch.
 * Untote Zombies sind zu schwach, Gardonar.
 * Blut eines Höllendieners kostet zu viel Gold.
-* Bau von Gebäuden ist nicht limitiert in anderen Karten als Talras.
+* FIXED: Bau von Gebäuden ist nicht limitiert in anderen Karten als Talras.
 * Wenn man sich mit Fellows unterhält während diese shared sind, sollten diese unverwundbar gemacht werden.
 * If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug.
 * FIXED: Klassenauswahltext "unwiderruflich" stimmt nicht mehr.
@@ -366,7 +366,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Nach dem Laden sind die verborgenen Zauberbuchfähigkeiten des Equipments nicht mehr verborgen.
 * AOS-Einheiten werden nicht pausiert während Video?! Spawn während Video? Evtl. wird Spawn Timer nicht pausiert in Video?
 * Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter?
-* Erbe und Eheweib sollen reparieren und einfache Gebäude für Gold errichten können.
+* DONE: Erbe und Eheweib sollen reparieren und einfache Gebäude für Gold errichten können.
 * FIXED: Alle Gebäude sollen die Zauber aus dem Turm ebenfalls bekommen.
 * FIXED: Baumhaus braucht vergleichbare Zauber wie Turm. Auffüllen rausnehmen kann nicht gleichzeitig mit reparieren aktiv sein.
 * Möglichkeit, dass man einen Gegenstand auf einmal verkaufen kann! Dafür müssen Preise gespeichert werden. Eventuell erstmal nur Markt dafür nehmen.
@@ -404,7 +404,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Sisgards Pfeilhagel: Kein Pfeilhagel im Effekt!!!
 * FIXED: Kamera-Fern-Clipping in Videos mit Deranor weiter machen, Felsen im Hintergrund abgeschnitten.
 * Todesanimation von Gegenständen mit Hero Glow lässt Hero Glow stehen und Gegenstand liegt im Boden! Beides hiden bei Decay oder nach Death.
-* Bei Dungeon-Kamerawechsel an einen bestimmten Punkt im Dungeon springen (Einstiegspunkt) und nicht an den Rand. Sonst fällt es auf wo das Dungeon in Echt angrenzt. Wenn der Charakter im Dungeon ist, einfach zum Charakter springen.
+* Bei Dungeon-Kamerawechsel an einen bestimmten Punkt im Dungeon springen (Einstiegspunkt) und nicht an den Rand. Sonst fällt es auf wo das Dungeon in Echt angrenzt. Wenn der Charakter im Dungeon ist, einfach zum Charakter springen. Funktioniert nur dann nicht, wenn der Weg zu weit ist, weil der Dialog direkt wieder kommt und das Spiel pausiert im Einzelspieler.
 * FIXED: Spruchrolle des Sammlers: Zauber nicht wirken, wenn es keine Gegenstände gibt.
 * FIXED (Axt, Eisenhut): Mehr Schwerter zum Schmieden einbauen.
 * FIXED (zumindest Gespräch, nicht die Sätze im Tagesablauf): Tobias ist zu leise.

@@ -991,6 +991,9 @@ endif
 			call DisableTransparency()
 			call CameraHeight.pause.evaluate()
 
+			// make sure camera is reset after resetting camera height and camera timer of characters
+			call ResetToGameCamera(0.0)
+
 			/*
 			 * The attack order animations of the Villager255 have to be handled for the actor as well.
 			 * Otherwise the wrong animations will be shown in a fight.

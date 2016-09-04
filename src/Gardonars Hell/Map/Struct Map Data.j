@@ -23,7 +23,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static sound cowSound = null
 
 		private static Zone m_zoneGardonar
-		private static Zone m_zoneHolzbruck
+		private static Zone m_zoneDeranorsSwamp
 
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
@@ -46,7 +46,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
 
 			set thistype.m_zoneGardonar = Zone.create("GA", gg_rct_zone_gardonar)
-			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
+			set thistype.m_zoneDeranorsSwamp = Zone.create("DS", gg_rct_zone_deranors_swamp)
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
@@ -194,7 +194,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				return GetRectCenterX(gg_rct_start)
 			endif
 
-			return GetRectCenterX(gg_rct_start_holzbruck)
+			return GetRectCenterX(gg_rct_start_deranors_swamp)
 		endmethod
 
 		/// Required by \ref MapChanger.
@@ -203,7 +203,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				return GetRectCenterY(gg_rct_start)
 			endif
 
-			return GetRectCenterY(gg_rct_start_holzbruck)
+			return GetRectCenterY(gg_rct_start_deranors_swamp)
 		endmethod
 
 		/// Required by \ref MapChanger.

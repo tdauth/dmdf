@@ -47,6 +47,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 			set thistype.m_zoneGardonarsHell = Zone.create("GH", gg_rct_zone_gardonars_hell)
 			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
+			call thistype.m_zoneHolzbruck.disable()
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
@@ -209,10 +210,10 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
 			if (zone == "GH") then
-				return 90.0
+				return 0.0
 			endif
 
-			return 270.0
+			return 180.0
 		endmethod
 
 		/// Required by \ref MapChanger.
@@ -230,6 +231,10 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
+		endmethod
+
+		public static method enableZoneHolzbruck takes nothing returns nothing
+			call thistype.m_zoneHolzbruck.enable()
 		endmethod
 	endstruct
 
