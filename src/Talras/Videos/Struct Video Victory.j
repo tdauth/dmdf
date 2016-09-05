@@ -132,9 +132,9 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_victory_dararos_and_dragon_slayer, true, 0.0)
 			call Game.fadeInWithWait()
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Mein König, ich wusste nicht, dass Ihr Euch persönlich auf den Weg macht.", "My king, I did not know that you make yourself personally on the way."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Mein König, ich wusste nicht, dass Ihr Euch persönlich auf den Weg macht.", "My king, I did not know that you make yourself personally on the way."), gg_snd_DragonSlayerVictory1)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerVictory1))) then
 				return
 			endif
 
@@ -150,9 +150,9 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Ihr wollt Euren Bruder ... ich meine ihren Fürsten schließlich angreifen?"), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Ihr wollt Euren Bruder ... ich meine ihren Fürsten schließlich angreifen?"), gg_snd_DragonSlayerVictory2)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerVictory2))) then
 				return
 			endif
 
@@ -180,9 +180,9 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Wie Ihr wünscht mein König."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Wie Ihr wünscht mein König."), gg_snd_DragonSlayerVictory3)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerVictory3))) then
 				return
 			endif
 

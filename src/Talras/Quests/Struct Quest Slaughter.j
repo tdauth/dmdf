@@ -234,7 +234,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private static method stateConditionCompleted6 takes AQuestItem questItem returns boolean
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0) then
 				if (questItem.quest().questItem(5).state() == thistype.stateNew) then
-					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!", "Bastard! Only the serpent beast, then it's done!"), null)
+					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!", "Bastard! Only the serpent beast, then it's done!"), gg_snd_DragonSlayerSlaughter7)
 				endif
 
 				return true
