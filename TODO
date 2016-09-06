@@ -345,6 +345,9 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Vermutung: Evtl. PlayThematicMusicForPlayer() oder so.
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* DONE: Nicht verwendete/alte Sounddateien aus dem MPQ-Archiv-Ordner entfernen (veschieben), damit die .exe-Datei kleiner wird:
+	* DONE: Noch Bar-Texturen entfernen, außer die aus dem Multiboard.
+* Gebäude gibt zu viel Gold wenn Distanz größer ist. Es steht da 20 Gold, man kriegt aber 40 Gold.
 * Unholde erwecken einbauen und in KI auch triggern wenn Gegner kommen.
 * FIXED: Guntrich muss Mehl verkaufen und andere nützliche Dinge.
 * FIXED: Geisterstunde konnte nicht abgeschlossen werden. Guntrich hatte keine Option, es gab keine Ziele mehr.

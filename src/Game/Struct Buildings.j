@@ -31,15 +31,18 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 			local integer gold = 10
 			if (GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED) > thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())]) then
 				set thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())] = GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED)
-
+				// TODO the trigger gets more and more events every time
 				call TriggerRegisterPlayerStateEvent(thistype.m_bringGoldTrigger, GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED, GREATER_THAN, thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())])
 
 				set gold = IMaxBJ(1, 10 * R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], MapData.goldmine()) / 1000.0))
 				debug call Print("Gathered gold: " + I2S(gold))
 				if (gold < actualGold) then
+					debug call Print("Adding gold: " + I2S(actualGold - gold))
 					call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD) - (actualGold - gold))
 					call Bounty(GetTriggerPlayer(), GetUnitX(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), GetUnitY(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), gold)
 				elseif (gold > actualGold) then
+					debug call Print("Old gold: " + I2S(GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD)))
+					debug call Print("Adding gold: " + I2S(gold - actualGold))
 					call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD) + (gold - actualGold))
 					call Bounty(GetTriggerPlayer(), GetUnitX(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), GetUnitY(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())]), gold)
 				endif
