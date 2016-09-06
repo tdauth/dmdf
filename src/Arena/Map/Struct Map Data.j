@@ -27,7 +27,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		private static leaderboard m_leaderboard
 		private static trigger m_deathTrigger
 		private static integer array m_score[12]
-		
+
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
 		private static method create takes nothing returns thistype
@@ -36,7 +36,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		private method onDestroy takes nothing returns nothing
 		endmethod
-		
+
 		/// Required by \ref Game.
 		public static method init takes nothing returns nothing
 			local quest whichQuest
@@ -52,23 +52,23 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call QuestSetRequired(whichQuest, false) // don't show in infos
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, Format(tre("Tötet einander bis einer der Spieler %1% Punkte erreicht hat.", "Kill each other until one player has reached %1% kills.")).i(thistype.maxScore).result())
-			
+
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
-			
+
 			set talkRoutine = NpcTalksRoutine.create(Routines.talk(), gg_unit_n013_0012, 0.0, 24.00, gg_rct_waypoint_heimrich_0)
 			call talkRoutine.setPartner(gg_unit_n014_0038)
 			call talkRoutine.addSound(tr("Was erlaubt sich das einfache Volk?"), gg_snd_Heimrich12)
 			call talkRoutine.addSound(tr("Wir müssen uns auf den Krieg vorbereiten."), gg_snd_Heimrich13)
 			call talkRoutine.addSound(tr("Hat Er sich um alles Nötige gekümmert?"), gg_snd_Heimrich14)
 			call talkRoutine.addSound(tr("Bald werden sie hier einfallen und dann?"), gg_snd_Heimrich15)
-			
+
 			set talkRoutine = NpcTalksRoutine.create(Routines.talk(), gg_unit_n014_0038, 0.0, 24.00, gg_rct_waypoint_markward_0)
 			call talkRoutine.setPartner(gg_unit_n013_0012)
-			
+
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
-		
+
 		/**
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
@@ -76,7 +76,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			if (class == Classes.ranger()) then
 				// Hunting Bow
 				call UnitAddItemToSlotById(whichUnit, 'I020', 2)
-			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard()) then	
+			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard()) then
 				// Haunted Staff
 				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
 			elseif (class == Classes.dragonSlayer()) then
@@ -93,11 +93,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
 			call UnitAddItemToSlotById(whichUnit, 'I061', 1)
-			
+
 			call UnitAddItemToSlotById(whichUnit, 'I00A', 4)
 			call UnitAddItemToSlotById(whichUnit, 'I00D', 5)
 		endmethod
-		
+
 		/**
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
@@ -105,7 +105,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			if (character.class() == Classes.ranger()) then
 				// Hunting Bow
 				call character.giveItem('I020')
-			elseif (character.class() == Classes.cleric() or character.class() == Classes.necromancer() or character.class() == Classes.elementalMage() or character.class() == Classes.wizard()) then	
+			elseif (character.class() == Classes.cleric() or character.class() == Classes.necromancer() or character.class() == Classes.elementalMage() or character.class() == Classes.wizard()) then
 				// Haunted Staff
 				call character.giveItem('I03V')
 			elseif (character.class() == Classes.dragonSlayer()) then
@@ -119,7 +119,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 				call character.giveItem(ItemTypes.shortword().itemType())
 				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
 			endif
-		
+
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call character.giveItem('I01N')
 			call character.giveQuestItem('I061')
@@ -133,7 +133,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call character.giveItem('I00D')
 			call character.giveItem('I00D')
 		endmethod
-		
+
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
 			call ResetCameraBoundsToMapRectForPlayer(user)
 		endmethod
@@ -146,11 +146,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref Game.
 		public static method resetCameraBoundsForPlayer takes player user returns nothing
 		endmethod
-		
+
 		private static method filterSummoned takes nothing returns boolean
 			return IsUnitType(GetFilterUnit(), UNIT_TYPE_SUMMONED)
 		endmethod
-		
+
 		private static method triggerConditionEnterSafe takes nothing returns boolean
 			local integer i = 0
 			local AGroup summonedUnits = 0
@@ -165,7 +165,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 					set i = i + 1
 				endloop
 				call SetUnitInvulnerable(GetTriggerUnit(), true)
-				
+
 				set summonedUnits = AGroup.create()
 				call summonedUnits.addUnitsInRect(gg_rct_area_playable, Filter(function thistype.filterSummoned))
 				set i = 0
@@ -179,11 +179,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 				call summonedUnits.destroy()
 				set summonedUnits = 0
 			endif
-		
-			
+
+
 			return false
 		endmethod
-		
+
 		private static method triggerConditionLeaveSafe takes nothing returns boolean
 			local integer i = 0
 			if (ACharacter.isUnitCharacter(GetTriggerUnit())) then
@@ -198,10 +198,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 				endloop
 				call SetUnitInvulnerable(GetTriggerUnit(), false)
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		private static method randomWord takes nothing returns string
 			local integer random = GetRandomInt(0, 3)
 			if (random == 0) then
@@ -211,10 +211,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 			elseif (random == 2) then
 				return tre("abgeschlachtet", "slaughtered")
 			endif
-			
+
 			return tr("gezeigt wo der Hammer hängt")
 		endmethod
-		
+
 		private static method victory takes player whichPlayer returns nothing
 			local integer i = 0
 			loop
@@ -226,39 +226,39 @@ library StructMapMapMapData requires Asl, StructGameGame
 			endloop
 			call MeleeVictoryDialogBJ(whichPlayer, false)
 		endmethod
-		
+
 		private static method triggerConditionDeath takes nothing returns boolean
 			local integer killerPlayerId
 			if (GetKillingUnit() != null and ACharacter.isUnitCharacter(GetTriggerUnit()) and GetOwningPlayer(GetKillingUnit()) != GetOwningPlayer(GetTriggerUnit())) then
 				call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, Format(tre("%1% hat %2% %3%.", "%1% has %2% %3%.")).s(GetPlayerName(GetOwningPlayer(GetKillingUnit()))).s(GetPlayerName(GetOwningPlayer(GetTriggerUnit()))).s(thistype.randomWord()).result())
-			
+
 				set killerPlayerId = GetPlayerId(GetOwningPlayer(GetKillingUnit()))
 				set thistype.m_score[killerPlayerId] = thistype.m_score[killerPlayerId] + 1
 				call LeaderboardSetPlayerItemValueBJ(GetOwningPlayer(GetKillingUnit()), thistype.m_leaderboard, thistype.m_score[killerPlayerId])
 				call LeaderboardSortItemsByValue(thistype.m_leaderboard, false)
-				
+
 				if (thistype.m_score[killerPlayerId] == thistype.maxScore) then
 					call thistype.victory(GetOwningPlayer(GetKillingUnit()))
 				endif
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		/// Required by \ref Game.
 		public static method initMapSpells takes ACharacter character returns nothing
 		endmethod
-		
+
 		/// Required by \ref Game.
 		public static method onStart takes nothing returns nothing
 			call SetTimeOfDay(12.0)
 			call SuspendTimeOfDay(true)
 		endmethod
-		
+
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
 		endmethod
-		
+
 		/// Required by \ref ClassSelection.
 		public static method onRepick takes Character character returns nothing
 			debug call Print("Auto skill for player " + GetPlayerName(character.player()))
@@ -269,7 +269,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
 			local integer i
-			
+
 			call SetMapFlag(MAP_FOG_HIDE_TERRAIN, false)
 			call SetMapFlag(MAP_FOG_ALWAYS_VISIBLE, true)
 			call SetMapFlag(MAP_FOG_MAP_EXPLORED, true)
@@ -279,31 +279,31 @@ library StructMapMapMapData requires Asl, StructGameGame
 			set thistype.m_safeEnterTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(thistype.m_safeEnterTrigger, gg_rct_area_safe)
 			call TriggerAddCondition(thistype.m_safeEnterTrigger, Condition(function thistype.triggerConditionEnterSafe))
-			
+
 			set thistype.m_safeLeaveTrigger = CreateTrigger()
 			call TriggerRegisterLeaveRectSimple(thistype.m_safeLeaveTrigger, gg_rct_area_safe)
 			call TriggerAddCondition(thistype.m_safeLeaveTrigger, Condition(function thistype.triggerConditionLeaveSafe))
-			
+
 			set thistype.m_shrine = Shrine.create(gg_unit_n02D_0000, gg_dest_B008_0000, gg_rct_shrine_discover, gg_rct_shrine_revival, 312.69)
-			
+
 			set thistype.m_leaderboard = CreateLeaderboardBJ(bj_FORCE_ALL_PLAYERS, tre("Punkte:", "Kills:"))
-			
+
 			set thistype.m_deathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_deathTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(thistype.m_deathTrigger, Condition(function thistype.triggerConditionDeath))
-			
+
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
 				call thistype.setupCharacter.evaluate(Player(i))
 				set i = i + 1
 			endloop
-			
+
 			call Character.showCharactersSchemeToAll()
-			
+
 			call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, Format(tre("Schlachtet euch gegenseitig für Ruhm und Ehre in der Arena ab. Gewonnen hat derjenige, der zuerst %1% Gegner niedergestreckt hat.", "Slaughter each other in the arena for glory and honour. The one who slaughtered %1% enemies first has won.")).i(thistype.maxScore).result())
 		endmethod
-		
+
 		private static method setupCharacter takes player whichPlayer returns nothing
 			local integer j
 			if (ACharacter.playerCharacter(whichPlayer) != 0) then
@@ -322,16 +322,16 @@ library StructMapMapMapData requires Asl, StructGameGame
 				call ACharacter.playerCharacter(whichPlayer).setMovable(true)
 				call ACharacter.playerCharacter(whichPlayer).panCamera()
 				call Character.setTutorialForAll(false) // no need in a PvP map
-				
+
 				call LeaderboardAddItemBJ(whichPlayer, thistype.m_leaderboard, GetPlayerName(whichPlayer), 0)
-				
+
 				call SetUnitInvulnerable(ACharacter.playerCharacter(whichPlayer).unit(), true)
-				
+
 				// evaluate because of OpLimit
 				call thistype.autoSkill.evaluate(whichPlayer)
 			endif
 		endmethod
-		
+
 		private static method autoSkill takes player whichPlayer returns nothing
 			local Grimoire grimoire = Character(ACharacter.playerCharacter(whichPlayer)).grimoire()
 			local integer i = 0
@@ -348,7 +348,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			endloop
 			call grimoire.updateUi.evaluate()
 		endmethod
-		
+
 		private static method autoSkillGrimoireSpell takes Grimoire grimoire, integer index returns boolean
 			return grimoire.setSpellMaxLevelByIndex.evaluate(index, false)
 		endmethod
@@ -362,7 +362,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static method startY takes integer index returns real
 			return GetRectCenterY(gg_rct_area_safe)
 		endmethod
-		
+
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
 			return GetRectCenterX(gg_rct_area_safe)
@@ -372,27 +372,32 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static method restoreStartY takes integer index, string zone returns real
 			return GetRectCenterY(gg_rct_area_safe)
 		endmethod
-		
+
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
 			return 0.0
 		endmethod
-		
+
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacters takes string zone returns nothing
 		endmethod
-		
+
 		/**
 		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
 		 */
 		public static method playerGivesXP takes player whichPlayer returns boolean
 			return false //whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE) or whichPlayer == thistype.orcPlayer
 		endmethod
-		
+
 		public static method initVideoSettings takes nothing returns nothing
 		endmethod
-		
+
 		public static method resetVideoSettings takes nothing returns nothing
+		endmethod
+
+		/// Required by \ref Buildings.
+		public static method goldmine takes nothing returns unit
+			return null
 		endmethod
 	endstruct
 

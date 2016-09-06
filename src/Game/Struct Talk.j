@@ -69,6 +69,8 @@ library StructGameTalk requires Asl, StructGameFellow
 		endmethod
 
 		public stub method onOpenForCharacter takes Character character returns nothing
+			call Routines.stopSoundsForPlayer(character.player()) // silence the talk sounds
+			call Routines.hideTexttagsForPlayer(character.player()) // hide text tags
 			// first character, disable routines otherwise the NPC walks away at certain times of day
 			if (this.characters().size() == 1) then
 				// stopping the routines prevents the NPC from walking away.

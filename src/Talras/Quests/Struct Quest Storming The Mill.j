@@ -28,17 +28,30 @@ library StructMapQuestsQuestStormingTheMill requires Asl, StructMapMapNpcs, Stru
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
 
+		private static method unitLives takes unit whichUnit returns boolean
+			return not IsUnitDeadBJ(whichUnit)
+		endmethod
+
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
 			local Character character = Character(this.character())
 			local integer unitTypeId = GetUnitTypeId(character.unit())
 			local integer count = 0
 			debug call Print("Quest storming the mill: Kill!")
+			debug if SpawnPoints.banditsAtGuntrichsMill().contains(GetTriggerUnit()) then // TODO is not true!!! Maybe because he died already?
+				debug call Print("Belongs to bandits.")
+			debug endif
+			debug if GetDistanceBetweenUnitsWithoutZ(GetTriggerUnit(), character.unit()) <= 1800.0 then
+				debug call Print("Is in distance.")
+			debug endif
+			debug if (unitTypeId == 'H01K' or unitTypeId == 'H01J' or unitTypeId == 'H01P' or unitTypeId == 'H01Q' or unitTypeId == 'H01W' or unitTypeId == 'H01V' or unitTypeId == 'H01M' or unitTypeId == 'H01L' or unitTypeId == 'H01O' or unitTypeId == 'H01N' or unitTypeId == 'H01S' or unitTypeId == 'H01R' or unitTypeId == 'H01U' or unitTypeId == 'H01T' or unitTypeId == 'H01Y' or unitTypeId == 'H01X') then
+				debug call Print("Character is on sheep.")
+			debug endif
 			// the character does not need to be the killing unit, it is enough when he is on a sheep and near the killing
 			if (SpawnPoints.banditsAtGuntrichsMill().contains(GetTriggerUnit()) and GetDistanceBetweenUnitsWithoutZ(GetTriggerUnit(), character.unit()) <= 1800.0) then
 				if (unitTypeId == 'H01K' or unitTypeId == 'H01J' or unitTypeId == 'H01P' or unitTypeId == 'H01Q' or unitTypeId == 'H01W' or unitTypeId == 'H01V' or unitTypeId == 'H01M' or unitTypeId == 'H01L' or unitTypeId == 'H01O' or unitTypeId == 'H01N' or unitTypeId == 'H01S' or unitTypeId == 'H01R' or unitTypeId == 'H01U' or unitTypeId == 'H01T' or unitTypeId == 'H01Y' or unitTypeId == 'H01X') then
-					set count = SpawnPoints.banditsAtGuntrichsMill().countUnits()
-					call this.displayUpdateMessage(Format(tre("%1%/%2% Wegelagerer", "%1%/%2% Highwaymen")).i(count).i(SpawnPoints.banditsAtGuntrichsMill().countMembers()).result())
+					set count = SpawnPoints.banditsAtGuntrichsMill().countUnitsIf(thistype.unitLives)
+					call this.displayUpdateMessage(Format(tre("%1%/%2% Wegelagerer", "%1%/%2% Highwaymen")).i(SpawnPoints.banditsAtGuntrichsMill().countMembers() - count).i(SpawnPoints.banditsAtGuntrichsMill().countMembers()).result())
 
 					return count == 0
 				else
@@ -50,10 +63,7 @@ library StructMapQuestsQuestStormingTheMill requires Asl, StructMapMapNpcs, Stru
 		endmethod
 
 		private static method stateActionCompleted1 takes AQuestItem questItem returns nothing
-			/*
-			 * Complete even without the first item since he might have bought a sheep already.
-			 */
-			call questItem.quest().complete()
+			call questItem.quest().displayState()
 		endmethod
 
 		private static method stateActionCompleted takes AQuest whichQuest returns nothing
@@ -72,7 +82,7 @@ library StructMapQuestsQuestStormingTheMill requires Asl, StructMapMapNpcs, Stru
 			local AQuestItem questItem
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNSheep.blp")
 			call this.setDescription(tre("Der Schafshirte auf dem Mühlberg westlich vom Bauernhof hat den Verstand verloren. Er will, dass die Wegelagerer bei Guntrichs Mühle weiter nördlich auf dem Berg in einem Angriff auf einem Schaf vernichtet werden.
-Achtung: Die Wegelagerer müssen vom Schaf herab getötet werden.", "The shepherd on the mill hill west of the farm has gone mad. H e wants that the brigands at Guntrich's mill further north on the hill will be destroyed during an attack on a sheep. Warning: The brigands have to be killed from a sheep."))
+Achtung: Die Wegelagerer müssen vom Schaf herab getötet werden.", "The shepherd on the mill hill west of the farm has gone mad. He wants that the brigands at Guntrich's mill further north on the hill will be destroyed during an attack on a sheep. Warning: The brigands have to be killed from a sheep."))
 
 			call this.setReward(thistype.rewardExperience, 900)
 			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)

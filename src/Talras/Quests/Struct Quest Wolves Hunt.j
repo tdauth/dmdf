@@ -4,7 +4,7 @@ library StructMapQuestsQuestWolvesHunt requires Asl, StructMapMapNpcs
 		public static constant integer maxRects = 2
 
 		implement CharacterQuest
-		
+
 		private rect array m_rect[2]
 		private boolean array m_flag[2]
 
@@ -48,16 +48,17 @@ library StructMapQuestsQuestWolvesHunt requires Asl, StructMapMapNpcs
 			endif
 			return false
 		endmethod
-		
+
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			call questItem.quest().displayUpdate()
 		endmethod
-		
+
 		private static method stateActionCompleted takes AQuest whichQuest returns nothing
+			local Character character = Character(whichQuest.character())
 			// 3 mal Wolle
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
+			call character.giveItem('I04X')
+			call character.giveItem('I04X')
+			call character.giveItem('I04X')
 		endmethod
 
 		private static method create takes Character character returns thistype
@@ -75,13 +76,13 @@ Eigentlich würde er sich ja selbst darum kümmern …", "The sheep boy on the M
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
-			
+
 			// item 1
 			set questItem = AQuestItem.create(this, tre("Berichte dem Schafsjungen davon.", "Report to the sheep boy thereof."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.sheepBoy())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxRects)

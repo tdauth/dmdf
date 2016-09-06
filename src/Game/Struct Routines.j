@@ -11,35 +11,35 @@ library StructGameRoutines requires Asl
 			return this.m_facing
 		endmethod
 	endstruct
-	
+
 	struct NpcHammerRoutine extends NpcRoutineWithFacing
 		private sound m_sound
 		private real m_soundVolume = 100.0
-		
+
 		public method setSound takes sound whichSound returns nothing
 			set this.m_sound = whichSound
 		endmethod
-		
+
 		public method sound takes nothing returns sound
 			return this.m_sound
 		endmethod
-		
+
 		public method setSoundVolume takes real soundVolume returns nothing
 			set this.m_soundVolume = soundVolume
 		endmethod
-		
+
 		public method soundVolume takes nothing returns real
 			return this.m_soundVolume
 		endmethod
 	endstruct
-	
+
 	struct NpcEntersHouseRoutine extends AUnitRoutine
 		private boolean m_hasChooseHero = false
-		
+
 		public method setHasChooseHero takes boolean hasChooseHero returns nothing
 			set this.m_hasChooseHero = hasChooseHero
 		endmethod
-		
+
 		public method hasChooseHero takes nothing returns boolean
 			return this.m_hasChooseHero
 		endmethod
@@ -47,11 +47,11 @@ library StructGameRoutines requires Asl
 
 	struct NpcLeavesHouseRoutine extends NpcRoutineWithFacing
 		private boolean m_hasChooseHero = false
-		
+
 		public method setHasChooseHero takes boolean hasChooseHero returns nothing
 			set this.m_hasChooseHero = hasChooseHero
 		endmethod
-		
+
 		public method hasChooseHero takes nothing returns boolean
 			return this.m_hasChooseHero
 		endmethod
@@ -80,7 +80,7 @@ library StructGameRoutines requires Asl
 		private sound array m_answerSounds[thistype.maxSounds]
 		private string array m_answerSoundTexts[thistype.maxSounds]
 		private integer m_answerSoundsCount = 0
-		
+
 		public method setRange takes real range returns nothing
 			set this.m_range = range
 		endmethod
@@ -92,7 +92,7 @@ library StructGameRoutines requires Asl
 		public method soundsCount takes nothing returns integer
 			return this.m_soundsCount
 		endmethod
-		
+
 		public method answerSoundsCount takes nothing returns integer
 			return this.m_answerSoundsCount
 		endmethod
@@ -105,7 +105,7 @@ library StructGameRoutines requires Asl
 			set this.m_soundTexts[this.soundsCount()] = text
 			set this.m_soundsCount = this.soundsCount() + 1
 		endmethod
-		
+
 		public method addSoundAnswer takes string text, sound whichSound returns nothing
 			if (this.answerSoundsCount() >= thistype.maxSounds) then
 				return
@@ -114,7 +114,7 @@ library StructGameRoutines requires Asl
 			set this.m_answerSoundTexts[this.answerSoundsCount()] = text
 			set this.m_answerSoundsCount = this.answerSoundsCount() + 1
 		endmethod
-		
+
 		public method text takes integer index returns string
 			return this.m_soundTexts[index]
 		endmethod
@@ -122,11 +122,11 @@ library StructGameRoutines requires Asl
 		public method sound takes integer index returns sound
 			return this.m_sounds[index]
 		endmethod
-		
+
 		public method answerText takes integer index returns string
 			return this.m_answerSoundTexts[index]
 		endmethod
-		
+
 		public method answerSound takes integer index returns sound
 			return this.m_answerSounds[index]
 		endmethod
@@ -148,6 +148,7 @@ library StructGameRoutines requires Asl
 		private static ARoutine m_splitWood
 		private static ARoutine m_sleep
 		private static ATextTagVector m_textTags
+		private static ASoundList m_sounds
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -222,7 +223,7 @@ library StructGameRoutines requires Asl
 		private static method talkEndAction takes ARoutinePeriod period returns nothing
 			call ResetUnitAnimation(period.unit())
 		endmethod
-		
+
 		/**
 		 * Let a unit talk to another unit by using a sound and a floating texttag.
 		 * The sound is only played and the texttag does only appear to players who have their characters in range and to whom the area is not masked.
@@ -238,23 +239,24 @@ library StructGameRoutines requires Asl
 				call SetTextTagColor(whichTextTag, 255, 255, 255, 0)
 				call SetTextTagVisibility(whichTextTag, false)
 				call SetTextTagPermanent(whichTextTag, true)
-			
+
 				set i = 0
 				loop
 					exitwhen (i == MapData.maxPlayers)
 					// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
-					if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and Player(i) == GetLocalPlayer()) then
-						call PlaySoundOnUnitBJ(whichSound, 100.0, speaking) // TODO sound is not always 3D? Distance should play a role (distance between unit and player's current camera view)
+					if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and Player(i) == GetLocalPlayer() and GetDistanceBetweenPointsWithoutZ(GetCameraTargetPositionX(), GetCameraTargetPositionY(), GetUnitX(speaking), GetUnitY(speaking)) <= 1000.0) then
+						call PlaySoundOnUnitBJ(whichSound, 60.0, speaking) // TODO sound is not always 3D? Distance should play a role (distance between unit and player's current camera view)
 						call ShowTextTagForPlayer(Player(i), whichTextTag, true)
 					endif
 					set i = i + 1
 				endloop
-				
+
 				call thistype.m_textTags.pushBack(whichTextTag)
+				call thistype.m_sounds.pushBack(whichSound)
 
 				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
 				call TriggerSleepAction(GetSoundDurationBJ(whichSound))
-				
+
 				//call StopSoundBJ(whichSound, false)
 				// TODO A set would be more efficient.
 				if (thistype.m_textTags.contains(whichTextTag)) then
@@ -262,12 +264,16 @@ library StructGameRoutines requires Asl
 					call DestroyTextTag(whichTextTag)
 					set whichTextTag = null
 				endif
+
+				if (thistype.m_sounds.contains(whichSound)) then
+					call thistype.m_sounds.remove(whichSound)
+				endif
 			endif
 		endmethod
 
 		private static method talkTargetAction takes NpcTalksRoutine period returns nothing
 			local integer index = 0
-			
+
 			if ((period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) or (period.partner() == null)) then
 				//debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
 				if (period.partner() != null) then
@@ -285,13 +291,13 @@ library StructGameRoutines requires Asl
 						call thistype.unitTalks(period.partner(), period.answerSound(index), period.answerText(index))
 					endif
 				endif
-					
+
 				call TriggerSleepAction(4.0) // set + 4 otherwise we have loop sounds all the time
 			else
 				// set at least facing properly
 				call SetUnitFacing(period.unit(), period.facing())
 				// set a smaller interval to check the condition faster.
-				
+
 				call TriggerSleepAction(2.0)
 			endif
 
@@ -347,7 +353,8 @@ library StructGameRoutines requires Asl
 			set thistype.m_harvest = ARoutine.create(true, true, 0, 0, thistype.harvestEndAction, thistype.harvestTargetAction)
 			set thistype.m_splitWood = ARoutine.create(true, true, 0, 0, thistype.splitWoodEndAction, thistype.splitWoodTargetAction)
 			set thistype.m_sleep = ARoutine.create(true, true, 0, 0, thistype.sleepEndAction, thistype.sleepTargetAction)
-			set thistype.m_textTags = ATextTagVector.create()
+			set thistype.m_textTags = ATextTagList.create()
+			set thistype.m_sounds = ASoundList.create()
 		endmethod
 
 		public static method moveTo takes nothing returns ARoutine
@@ -385,14 +392,45 @@ library StructGameRoutines requires Asl
 		public static method sleep takes nothing returns ARoutine
 			return thistype.m_sleep
 		endmethod
-		
+
 		private static method forEachDestroyTextTag takes texttag whichTextTag returns nothing
 			call DestroyTextTag(whichTextTag)
 		endmethod
-		
+
 		public static method destroyTextTags takes nothing returns nothing
 			call thistype.m_textTags.forEach(thistype.forEachDestroyTextTag)
 			call thistype.m_textTags.clear()
+		endmethod
+
+		private static method forEachStopSound takes sound whichSound returns nothing
+			call StopSoundBJ(whichSound, false)
+		endmethod
+
+		public static method stopSounds takes nothing returns nothing
+			call thistype.m_sounds.forEach(thistype.forEachStopSound)
+			call thistype.m_sounds.clear()
+		endmethod
+
+		public static method stopSoundsForPlayer takes player whichPlayer returns nothing
+			local ASoundListIterator iterator = thistype.m_sounds.begin()
+			loop
+				exitwhen (not iterator.isValid())
+				if (GetLocalPlayer() == whichPlayer) then
+					call StopSoundBJ(iterator.data(), false)
+				endif
+				call iterator.next()
+			endloop
+			call iterator.destroy()
+		endmethod
+
+		public static method hideTexttagsForPlayer takes player whichPlayer returns nothing
+			local ATextTagListIterator iterator = thistype.m_textTags.begin()
+			loop
+				exitwhen (not iterator.isValid())
+				call ShowTextTagForPlayer(whichPlayer, iterator.data(), false)
+				call iterator.next()
+			endloop
+			call iterator.destroy()
 		endmethod
 	endstruct
 

@@ -1046,6 +1046,11 @@ endif
 		private static method triggerActionLoad takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			call this.updateUiAfterLoad()
+
+			/*
+			 * TODO
+			 * Update equipment abilities as well since the spellbook abities will become visible again.
+			 */
 		endmethod
 
 		private method createLoadTrigger takes nothing returns nothing

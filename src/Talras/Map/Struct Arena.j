@@ -43,7 +43,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static unit m_leonard
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Arena\"")
-		
+
 		/**
 		 * Hides the revival timer of a character. This is required since the revival is triggered automatically when the character dies.
 		 */
@@ -57,7 +57,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call PauseTimer(GetExpiredTimer())
 			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
 		endmethod
-		
+
 		private static method showOpponentByUnitTypeId takes integer unitTypeId, boolean show returns nothing
 			if (unitTypeId == GetUnitTypeId(thistype.m_franziska)) then
 				call ShowUnit(thistype.m_franziska, show)
@@ -94,7 +94,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 					call SetUnitX(usedUnit, thistype.m_outsideX)
 					call SetUnitY(usedUnit, thistype.m_outsideY)
 				endif
-				
+
 				call SetUnitFacing(usedUnit, thistype.m_outsideFacing)
 				call SetUnitInvulnerable(usedUnit, false)
 				call PauseUnit(usedUnit, false)
@@ -110,7 +110,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				call LeaderboardRemovePlayerItemBJ(owner, thistype.m_leaderboard)
 				// fixes cinematic display of a leaderboard
 				call PlayerSetLeaderboard(owner, null)
-				
+
 				/*
 				 * Since only one character can be in the arena of a player the alliances can be reset safely.
 				 */
@@ -128,10 +128,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 					endif
 					set i = i + 1
 				endloop
-				
+
 				// removes the resources multiboard of shared vision with advanced units
 				call character.showCharactersSchemeToPlayer()
-				
+
 				// triggered before revival starts, therefore a 0 timer has to be used
 				set whichTimer = CreateTimer()
 				call DmdfHashTable.global().setHandleInteger(whichTimer, 0, character)
@@ -141,11 +141,11 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				call thistype.showOpponentByUnitTypeId(GetUnitTypeId(usedUnit), true)
 				call RemoveUnit(usedUnit)
 			endif
-			
-			
+
+
 			call SetPlayerAllianceStateBJ(owner, MapData.arenaPlayer, bj_ALLIANCE_ALLIED)
 			call SetPlayerAllianceStateBJ(MapData.arenaPlayer, owner, bj_ALLIANCE_ALLIED)
-			
+
 			set usedUnit = null
 			set owner = null
 		endmethod
@@ -166,14 +166,14 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.removeUnit(character.unit())
 			call character.displayMessage(ACharacter.messageTypeInfo, thistype.m_textLeave)
 		endmethod
-		
+
 		private static method destroyDamageTrigger takes nothing returns nothing
 			if (thistype.m_damageTrigger != null) then
 				call DestroyTrigger(thistype.m_damageTrigger)
 				set thistype.m_damageTrigger = null
 			endif
 		endmethod
-		
+
 		/**
 		 * When ending the fight all attacking units (summoned as well) should be stopped.
 		 */
@@ -200,7 +200,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			endloop
 			call attackingUnits.destroy()
 		endmethod
-		
+
 		/**
 		 * Ends the fight by disabling the kill and leave triggers, removes all units and displays who won.
 		 */
@@ -305,7 +305,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 					endif
 					set i = i + 1
 				endloop
-				
+
 				// remove unit
 				call thistype.removeUnit(triggerUnit)
 			else
@@ -313,7 +313,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				set thistype.m_playerScore[GetPlayerId(MapData.arenaPlayer)] = thistype.m_playerScore[GetPlayerId(MapData.arenaPlayer)] + 1
 				call LeaderboardSetItemValue(thistype.m_leaderboard, LeaderboardGetPlayerIndex(thistype.m_leaderboard, MapData.arenaPlayer), thistype.m_playerScore[GetPlayerId(MapData.arenaPlayer)])
 				call LeaderboardSortItemsByValue(thistype.m_leaderboard, true)
-				
+
 				// remove character
 				call thistype.removeCharacter(character)
 			endif
@@ -328,11 +328,11 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 			call DisableTrigger(thistype.m_leaveTrigger)
 		endmethod
-		
+
 		private static method filterPvp takes nothing returns boolean
 			return ACharacter.isUnitCharacter(GetFilterUnit())
 		endmethod
-		
+
 		private static method triggerConditionPvp takes nothing returns boolean
 			local AGroup unitsInRect
 			local integer i
@@ -358,10 +358,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 					call Character(Character.getCharacterByUnit(GetTriggerUnit())).displayHint(tre("Die Arena ist momentan belegt.", "The arena is occupied at the moment."))
 				endif
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		private static method createPvpTrigger takes nothing returns nothing
 			set thistype.m_pvpTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(thistype.m_pvpTrigger, gg_rct_arena_pvp)
@@ -374,22 +374,22 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call LeaderboardSetStyle(thistype.m_leaderboard, true, true, true, true)
 			call LeaderboardDisplay(thistype.m_leaderboard, false)
 		endmethod
-		
+
 		private static method triggerConditionSell takes nothing returns boolean
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
-			
+
 			if (GetSellingUnit() == Npcs.agihard() and (GetUnitTypeId(GetSoldUnit()) == 'h017' or GetUnitTypeId(GetSoldUnit()) == 'h018' or GetUnitTypeId(GetSoldUnit()) == 'h019' or GetUnitTypeId(GetSoldUnit()) == 'h01A' or GetUnitTypeId(GetSoldUnit()) == 'h00D')) then
 				return true
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		private static method timerFunctionStartArenaFight takes nothing returns nothing
 			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 0)
 			local Character character = ACharacter.playerCharacter(GetOwningPlayer(soldUnit))
 			local unit arenaEnemy
-			
+
 			if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and character != 0 and character.isMovable() and thistype.isFree.evaluate()) then
 				call thistype.showOpponentByUnitTypeId(GetUnitTypeId(soldUnit), false)
 				set arenaEnemy = CreateUnit(MapData.arenaPlayer, GetUnitTypeId(soldUnit), 0.0, 0.0, 0.0)
@@ -399,27 +399,27 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			debug else
 				debug call Print("No character!")
 			endif
-			
+
 			call RemoveUnit(soldUnit)
 			call PauseTimer(GetExpiredTimer())
 			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
 		endmethod
-		
+
 		private static method triggerActionSell takes nothing returns nothing
 			local timer whichTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleUnit(whichTimer, 0, GetSoldUnit()) 
-			
+			call DmdfHashTable.global().setHandleUnit(whichTimer, 0, GetSoldUnit())
+
 			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
 			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
 			debug call Print("Buying unit " + GetUnitName(GetBuyingUnit()))
 			call SetUnitInvulnerable(GetSoldUnit(), true)
 			call ShowUnit(GetSoldUnit(), false)
 			call PauseUnit(GetSoldUnit(), true)
-			
+
 			// wait since the selling unit is being paused
 			call TimerStart(whichTimer, 0.0, false, function thistype.timerFunctionStartArenaFight)
 		endmethod
-		
+
 		private static method createSellTrigger takes nothing returns nothing
 			set thistype.m_sellTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(thistype.m_sellTrigger, Npcs.agihard(), EVENT_UNIT_SELL)
@@ -459,7 +459,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.createPvpTrigger()
 			call thistype.createLeaderboard()
 			call thistype.createSellTrigger()
-			
+
 			set thistype.m_franziska = gg_unit_h018_0640
 			call SetUnitInvulnerable(thistype.m_franziska, true)
 			set thistype.m_valentin = gg_unit_h019_0642
@@ -525,7 +525,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.m_startY.pushBack(y)
 			call thistype.m_startFacing.pushBack(facing)
 		endmethod
-		
+
 		/**
 		 * As long as the damaging unit is owned by one of the owners of the arena's units everything is fine.
 		 * Otherwise the damage is prevented and the interfering unit is punished by killing it.
@@ -534,7 +534,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			local integer i = 0
 			loop
 				exitwhen (i == thistype.m_units.size())
-				if (GetOwningPlayer(GetEventDamageSource()) == GetOwningPlayer(thistype.m_units[i])) then
+				if (GetEventDamageSource() == thistype.m_units[i] or (GetOwningPlayer(GetEventDamageSource()) == GetOwningPlayer(thistype.m_units[i]) and IsUnitType(GetEventDamageSource(), UNIT_TYPE_SUMMONED))) then
+					debug call Print("Belongs to the arena or is summoned.")
 					return false
 				endif
 				set i = i + 1
@@ -542,12 +543,14 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call Character.displayWarningToAll(Format(tre("Die Einheit %1% wurde hingerichtet weil sie sich in einen Arenakampf eingemischt hat.", "The unit %1% has been executed since it interfered in an arena fight.")).s(GetUnitName(GetEventDamageSource())).result())
 			call KillUnit(GetEventDamageSource())
 			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
-			
+
+			// TODO if the unit belonged to one of the owners let him lose!
+
 			return false
 		endmethod
-		
+
 		private static method refreshDamageTrigger takes nothing returns nothing
-			local integer i
+			local integer i = 0
 			call thistype.destroyDamageTrigger()
 			set thistype.m_damageTrigger = CreateTrigger()
 			set i = 0
@@ -585,17 +588,17 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			debug call Print("Stoping " + GetUnitName(usedUnit))
 			call SetUnitInvulnerable(usedUnit, true)
 			call PauseUnit(usedUnit, true)
-			
+
 			if (Character.getCharacterByUnit(usedUnit) != 0) then
 				set title = GetPlayerName(owner)
 			else
 				set title = GetUnitName(usedUnit)
 			endif
-			
+
 			if (not Character.isUnitCharacter(usedUnit) and GetOwningPlayer(usedUnit) == MapData.arenaPlayer) then
 				set thistype.m_level = GetUnitLevel(usedUnit)
 			endif
-			
+
 			call LeaderboardAddItemBJ(owner, thistype.m_leaderboard, title + ":", thistype.playerScore(owner))
 			if (Character.getCharacterByUnit(usedUnit) == 0 and owner != MapData.arenaPlayer) then
 				call SetUnitOwner(usedUnit, MapData.arenaPlayer, true)
@@ -606,10 +609,10 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			if (thistype.m_units.size() == thistype.maxUnits) then
 				call thistype.startFight()
 			endif
-			
+
 			call SetPlayerAllianceStateBJ(owner, MapData.arenaPlayer, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(MapData.arenaPlayer, owner, bj_ALLIANCE_UNALLIED)
-			
+
 			set i = 0
 			loop
 				exitwhen (i == thistype.m_units.size())
@@ -619,7 +622,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				endif
 				set i = i + 1
 			endloop
-			
+
 			set owner = null
 		endmethod
 

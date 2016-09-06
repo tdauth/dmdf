@@ -345,14 +345,18 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Vermutung: Evtl. PlayThematicMusicForPlayer() oder so.
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
-* Mit neuen MapData.goldmine-Konstanten wird Goldmine nicht aufgefüllt. Wird danach initialisiert?
+* Unholde erwecken einbauen und in KI auch triggern wenn Gegner kommen.
+* FIXED: Guntrich muss Mehl verkaufen und andere nützliche Dinge.
+* FIXED: Geisterstunde konnte nicht abgeschlossen werden. Guntrich hatte keine Option, es gab keine Ziele mehr.
+* FIXED (Drachenfeuer endültig entfernt): Drachenfeuer oder ähnliche Fähigkeit hängt in Schlacht das ganze Spiel auf. Ziemlich sicher Drachenfeuer aus der Luft oder zufällig Schreckgeheul zur selben Zeit.
+* FIXED (zu Methode gemacht): Mit neuen MapData.goldmine-Konstanten wird Goldmine nicht aufgefüllt. Wird danach initialisiert?
 * Waldläufer haben Icon von Nachtelfin.
 * Creating an illusion by an item (Tellborns rune) does not create OrderAnimation or does not open the equipment stuff first!!! Better solution: On spawning illusions just remove all items from the illusion and add equipment items.
 * FIXED (PlayThematicMusic() und StopMusic()): Wenn man Deranors Gruft betritt (nicht für Video), endet sie Hintergrundmusik für immer.
 * Credits in Karte Gardonar erscheinen zu weit oben. Beim Schließen Critical Error.
 * FIXED: Karte Gardonar und Gardonars Unterwelt: Das Invenar ist voll-Sound kommt noch.
-* Untote Zombies sind zu schwach, Gardonar.
-* Blut eines Höllendieners kostet zu viel Gold.
+* FIXED: Untote Zombies sind zu schwach, Gardonar.
+* FIXED: Blut eines Höllendieners kostet zu viel Gold.
 * FIXED: Bau von Gebäuden ist nicht limitiert in anderen Karten als Talras.
 * Wenn man sich mit Fellows unterhält während diese shared sind, sollten diese unverwundbar gemacht werden.
 * If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug.
@@ -363,9 +367,9 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Karren sollten durch schwebenden Gegenstand gekennzeichnet sein (Auftrag Krieg).
 * Ferdinand's sounds are missing in video Recruit.
 * FIXED (gekürzt und neu zu MP3 konvertiert): Carstens Sound sind abgeschnitten, neu als MP3 formatieren.
-* Nach dem Laden sind die verborgenen Zauberbuchfähigkeiten des Equipments nicht mehr verborgen.
-* AOS-Einheiten werden nicht pausiert während Video?! Spawn während Video? Evtl. wird Spawn Timer nicht pausiert in Video?
-* Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter?
+* Nach dem Laden sind die verborgenen Zauberbuchfähigkeiten des Equipments nicht mehr verborgen. Scheint nicht nach dem Laden zu passieren sondern unter anderen Umständen?
+* FIXED: AOS-Einheiten werden nicht pausiert während Video?! Spawn während Video? Evtl. wird Spawn Timer nicht pausiert in Video?
+* Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter? ResetCamera() wurde nun eingefügt, behebt hoffentlich den Fehler.
 * DONE: Erbe und Eheweib sollen reparieren und einfache Gebäude für Gold errichten können.
 * FIXED: Alle Gebäude sollen die Zauber aus dem Turm ebenfalls bekommen.
 * FIXED: Baumhaus braucht vergleichbare Zauber wie Turm. Auffüllen rausnehmen kann nicht gleichzeitig mit reparieren aktiv sein.
@@ -383,18 +387,21 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Gegenstand einbauen, der Neben-Aufträge anpingt! Ansonsten findet man sich nicht zurecht. Notfalls mit mehreren Seiten. Gegenstand Aufträge soll Seitenwechsel erlauben. Bei Abschluss sollen Symbole verschwinden, damit sie auf Seite 1 kommen.
 * "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?
 * FIXED: Die Aufnahmen des Schafsjungen sind im Spiel abgeschnitten. Neu formatieren.
-* Wegelagerer von Schaf herab töten für Auftrag Sturm auf den Mühlberg geht nicht.
+* Schafshirte: Sounds am Anfang schneiden. Lauter machen, schadet nie!
+* FIXED: Tellborn: Sounds am Anfang und Ende schneiden und lauter machen.
+* FIXED: Wegelagerer von Schaf herab töten für Auftrag Sturm auf den Mühlberg geht nicht.
 * Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht. Verwandlung von Fernkampf ging nicht, wurde vorher nicht zu Melee gemacht und später wieder durch Equipment zu Fernkampf.
 * DONE: Extrafähigkeit für Einar ins Buch der Schmiedekunst einfügen. Ansonsten können keine normalen Kurzschwerter mehr geschmiedet werden.
-* Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel eines Druiden, Stab der Verzögerung, Knochenbogen. War das nur ein Bug? Nein Stiefel eines Druiden haben wirklich keine Zauberbuchfähigkeit. Stab der Verzögerung hatte allerdings deaktivierte Zauberbuchfähigkeit. Knochenbogen ebenfalls.
+* Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel eines Druiden, Stab der Verzögerung, Knochenbogen. War das nur ein Bug? Nein Stiefel eines Druiden haben wirklich keine Zauberbuchfähigkeit. Stab der Verzögerung hatte allerdings deaktivierte Zauberbuchfähigkeit. Knochenbogen ebenfalls. Stab der Verzögerung und Knochenbogen haben zusätzlich eine Kugelfähigkeit die auch im Zauberbuch verborgen werden muss.
+* Die Zauberbuchfähigkeiten von Gegenständen sollte 12 Dummys drin haben, damit die Symbole verborgen werden und keine Zauber verdrängen in Zauberfähigkeiten.
 * Nach Rückverwandlung von Deranors Leibwache ist die Waffe zunächst nicht sichtbar.
 * FIXED: Lothar: Hat die Fähigkeit Helden anwählen noch, muss weg. Ansonsten ist im Gespräch überspringen deaktiviert.
 * FIXED (Kostet nun weniger als doppelt so viel, damit es sich lohnt): Dickes Buch ist mehr als doppelt so teuer wie ein Buch, obwohl es nicht mal doppelt so viel Wissen gibt.
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung.
 * FIXED: Er ist doch eben sehr Menschenscheu Sisgard: Wird nicht auf Ton gewartet bei Quest-Abschluss.
-* FIXED (werden nur nach Gespräch reaktiviert, wenn es kein Fellow ist, wurde aus der ASL in DMdF-Code verschoben): Sisgard folgt ihren Tagesabläufen (läuft weg) während sie einem folgt. AUnitRoutine.disableAll() muss verbuggt sein und deaktiviert die Tageszeitenauslöser nicht? Wird in shareWith() aufgerufen. Passiert nachdem man einmal mit ihr gesprochen hat.
+* FIXED (werden nur nach Gespräch reaktiviert, wenn es kein Fellow ist, wurde aus der ASL in DMdF-Code verschoben): Sisgard folgt ihren Tagesabläufen (läuft weg) während sie einem folgt. Wird in shareWith() aufgerufen. Passiert nachdem man einmal mit ihr gesprochen hat.
 * Manchmal hat man den Rucksackbutton obwohl man verwandelt ist. Nach dem Laden eines Spielstandes?
-* Quest der dunkle Kult wurde einfach abgeschlossen als man Knochendrache getötet hat, während die Diakongruppe tot war.
+* FIXED: Quest der dunkle Kult wurde einfach abgeschlossen als man Knochendrache getötet hat, während die Diakongruppe tot war.
 * Rebhühner kommen IMMER bei Jagd, wenn man sie aufscheucht! Die Chance lag bei 80 % im Code. Eventuell war der Seed auch auf 0? Nirgendwo ein Hinweis, auch nicht im Editor aktiviert.
 * FIXED (cut sounds): Markwards sounds take a while at the beginning. Cut it.
 * Markward4 corrupted sound. Is it even used? Not used in code.
@@ -408,8 +415,9 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Spruchrolle des Sammlers: Zauber nicht wirken, wenn es keine Gegenstände gibt.
 * FIXED (Axt, Eisenhut): Mehr Schwerter zum Schmieden einbauen.
 * FIXED (zumindest Gespräch, nicht die Sätze im Tagesablauf): Tobias ist zu leise.
-* Unterhaltungssounds abbrechen sobald Video startet. Ebenso abbrechen wenn speech startet usw.
-* Unterhaltungen als Tagesabläufe leiser machen als gewöhnliche Unterhaltungen.
+* FIXED: Unterhaltungssounds abbrechen sobald Video startet. Ebenso abbrechen wenn speech startet usw. bzw. Gespräch begonnen wird.
+* FIXED: Unterhaltungen als Tagesabläufe leiser machen als gewöhnliche Unterhaltungen.
+* FIXED: Unterhaltungen nur abspielen wenn in Kamera-Sicht.
 * FIXED (40 % statt 70 %): Geräusche von Sisgards Zauberei noch leiser machen.
 * FIXED: Auftrag Der mutige Waffenmeister, Belohnung Irminas fehlt (Salben).
 * FIXED (zwei Läden mit Salben usw.): Irmina muss noch Salben, Lebensmittel und Kräuter verkaufen. Sagt sie zumindest. Zwei Shops?
@@ -418,7 +426,8 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Osmansprecher in Credits?
 * Idee zum Balancing: Man steigt im Einzelspieler zu schnell auf. Weniger Erfahrung für Creeps/Quests. Dafür nicht so wenig Erfahrung im Multiplayer, nicht unbedingt teilen durch Spieleranzahl. Man muss auch bedenken, dass man im Einzelspieler mehr Gold bekommt usw.
 * DEPRECATED (wurde nur nicht mitgeteilt): Kein besonderer Gegenstand für Arena-Champion als Belohnung.
-* Arenakampf: Sisgard kann unterstützen ohne Bestrafung. Schaden blocken, Sisgard töten oder stunnen. Besser Arenakampf verlieren.
+* FIXED: Arenakampf: Sisgard kann unterstützen ohne Bestrafung. Schaden blocken, Sisgard töten oder stunnen.
+* Besser Arenakampf verlieren, wenn eigene Einheit sich einmischt.
 * FIXED: Jagdfalke teurer: Dafür auch stärker.
 * Björn: "Klingt nur etwas seltsam das mit dem Töten zweier Bären, meine ich": Sound fehlt.
 * Erwachen des Waldes hat die gleiche ID wie eine Zauberbuchaktionen (Favoriten oder so).

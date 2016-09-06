@@ -7,7 +7,7 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(1)
 		endmethod
-		
+
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_the_dark_cult)
 		endmethod
@@ -15,18 +15,18 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			call questItem.quest().displayUpdateMessage(tre("„Dunklen Kult“ entdeckt!", "Discovered the \"Dark Cult\"!"))
 		endmethod
-		
+
 		private static method stateEventCompleted2 takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
 
 		private static method stateConditionCompleted2 takes AQuestItem questItem returns boolean
 			/*
-			 * Whenever a unit dies and the deacon is already dead finish this quest.
+			 * Whenever a unit dies from the spawn point and the deacon is already dead finish this quest.
 			 */
-			return SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0
+			return SpawnPoints.deathVault().contains(GetTriggerUnit()) and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0
 		endmethod
-		
+
 		private static method stateActionCompleted2 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			call this.displayState()
@@ -53,7 +53,7 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 			call questItem0.setPing(true)
 			call questItem0.setPingUnit(Npcs.osman())
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// item 2
 			set questItem0 = AQuestItem.create(this, tre("Vernichte den „dunklen Kult“.", "Destroy the \"Dark Cult\"."))
 			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted2)
@@ -63,7 +63,7 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 			call questItem0.setPingX(GetRectCenterX(gg_rct_quest_the_dark_cult))
 			call questItem0.setPingY(GetRectCenterY(gg_rct_quest_the_dark_cult))
 			call questItem0.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// item 3
 			set questItem0 = AQuestItem.create(this, tre("Berichte Osman davon.", "Report to Osman thereof."))
 			call questItem0.setPing(true)

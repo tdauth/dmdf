@@ -207,6 +207,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		public static method resetVideoSettings takes nothing returns nothing
 		endmethod
+
+		/// Required by \ref Buildings.
+		public static method goldmine takes nothing returns unit
+			return gg_unit_n06E_0008
+		endmethod
 	endstruct
 
 endlibrary

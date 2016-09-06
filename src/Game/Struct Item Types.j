@@ -325,6 +325,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1DE', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DO', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DP', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1S9', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DQ', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1EB', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1E7', false)
@@ -589,6 +590,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_staffOfSlowing = RangeItemType.createSimpleRange('I04F', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_staffOfSlowing.addAbility('A1DP', true)
+			// hides the orb effect as well
+			call thistype.m_staffOfSlowing.addAbility('A1S9', true)
 
 			// slaughter quest
 			set thistype.m_bloodAmulet = ItemType.createSimple('I02L', AItemType.equipmentTypeAmulet)

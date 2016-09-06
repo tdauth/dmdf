@@ -973,6 +973,7 @@ endif
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.pauseAll)
 			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.pauseAll)
 			call ForForce(bj_FORCE_PLAYER[0], function Routines.destroyTextTags)
+			call ForForce(bj_FORCE_PLAYER[0], function Routines.stopSounds)
 			call DisableTrigger(thistype.m_killTrigger)
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterShownItem), function thistype.hideItem)
 			set i = 0

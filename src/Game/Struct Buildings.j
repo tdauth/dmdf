@@ -1,4 +1,4 @@
-library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
+library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses, StructMapMapMapData
 
 	/**
 	 * \brief Every player can acquire a plan for a building for his class and use it once. The building provides units and spells and allows collecting resources.
@@ -19,8 +19,10 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 		private static integer array m_collectedGold[12] // TODO MapData.maxPlayers
 
 		private static method timerFunctionRefill takes nothing returns nothing
-			if (GetResourceAmount(MapData.goldmine) < 1000000) then
-				call SetResourceAmount(MapData.goldmine, 1000000)
+			if (MapData.goldmine() != null) then
+				if (GetResourceAmount(MapData.goldmine()) < 1000000) then
+					call SetResourceAmount(MapData.goldmine(), 1000000)
+				endif
 			endif
 		endmethod
 
@@ -32,7 +34,7 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 
 				call TriggerRegisterPlayerStateEvent(thistype.m_bringGoldTrigger, GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED, GREATER_THAN, thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())])
 
-				set gold = IMaxBJ(1, 10 * R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], MapData.goldmine) / 1000.0))
+				set gold = IMaxBJ(1, 10 * R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], MapData.goldmine()) / 1000.0))
 				debug call Print("Gathered gold: " + I2S(gold))
 				if (gold < actualGold) then
 					call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD) - (actualGold - gold))

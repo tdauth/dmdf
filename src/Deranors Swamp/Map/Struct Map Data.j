@@ -18,7 +18,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 10000
 		public static constant integer workerUnitTypeId = 'h00E'
-		public static constant unit goldmine = gg_unit_n06E_0011
 		public static constant boolean isSeparateChapter = false
 		public static sound cowSound = null
 
@@ -231,6 +230,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
+		endmethod
+
+		/// Required by \ref Buildings.
+		public static method goldmine takes nothing returns unit
+			return gg_unit_n06E_0011
 		endmethod
 
 		public static method enableZoneHolzbruck takes nothing returns nothing
