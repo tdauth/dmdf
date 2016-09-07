@@ -345,6 +345,14 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Vermutung: Evtl. PlayThematicMusicForPlayer() oder so.
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* Wenn ein Video in bestimmtem Moment unterbrochen wird (fade????) in Karte Gardonar (Intro) kommen danach noch Transmissions.
+* Noch einmal die ganzen Zaubertrigger prüfen: Wird Mana schon verbraucht, obwohl gestoppt wird?
+* Alle laufenden Zauber unterbrechen bevor man die Karte wechselt (DynamicLightnings etc.). Am besten auch Ausfaden wie in Bonus-Kampagne und Einheit pausieren, damit kein Unsinn mehr passiert.
+* Optional: ClassGrimoireEntry mit dem neuen AMultipageSpellbook-System umsetzen?
+* Mit dem neuen Startlevel beginnt man mit Stufe 2?!
+* Startlevel pro Karte einbauen, da manche Karten ein höheres Level erfordern.
+* FIXED: Die Tipps zum Erreichen der Stufe und Schrein kommen in jeder Karte erneut.
+* FIXED: Die Skillpunkte stimmen nach Kartenwechsel nicht, allerdings erst nach erstem Level Up (siehe Let's Play, auf einmal 78 Skill Punkte - auf Stufe 40 = 2 * 40???).
 * DONE: Nicht verwendete/alte Sounddateien aus dem MPQ-Archiv-Ordner entfernen (veschieben), damit die .exe-Datei kleiner wird:
 	* DONE: Noch Bar-Texturen entfernen, außer die aus dem Multiboard.
 * Gebäude gibt zu viel Gold wenn Distanz größer ist. Es steht da 20 Gold, man kriegt aber 40 Gold.
@@ -390,7 +398,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Gegenstand einbauen, der Neben-Aufträge anpingt! Ansonsten findet man sich nicht zurecht. Notfalls mit mehreren Seiten. Gegenstand Aufträge soll Seitenwechsel erlauben. Bei Abschluss sollen Symbole verschwinden, damit sie auf Seite 1 kommen.
 * "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?
 * FIXED: Die Aufnahmen des Schafsjungen sind im Spiel abgeschnitten. Neu formatieren.
-* Schafshirte: Sounds am Anfang schneiden. Lauter machen, schadet nie!
+* FIXED: Schafshirte: Sounds am Anfang schneiden. Lauter machen, schadet nie!
 * FIXED: Tellborn: Sounds am Anfang und Ende schneiden und lauter machen.
 * FIXED: Wegelagerer von Schaf herab töten für Auftrag Sturm auf den Mühlberg geht nicht.
 * Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht. Verwandlung von Fernkampf ging nicht, wurde vorher nicht zu Melee gemacht und später wieder durch Equipment zu Fernkampf.
@@ -400,7 +408,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Nach Rückverwandlung von Deranors Leibwache ist die Waffe zunächst nicht sichtbar.
 * FIXED: Lothar: Hat die Fähigkeit Helden anwählen noch, muss weg. Ansonsten ist im Gespräch überspringen deaktiviert.
 * FIXED (Kostet nun weniger als doppelt so viel, damit es sich lohnt): Dickes Buch ist mehr als doppelt so teuer wie ein Buch, obwohl es nicht mal doppelt so viel Wissen gibt.
-* Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung.
+* Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 * FIXED: Er ist doch eben sehr Menschenscheu Sisgard: Wird nicht auf Ton gewartet bei Quest-Abschluss.
 * FIXED (werden nur nach Gespräch reaktiviert, wenn es kein Fellow ist, wurde aus der ASL in DMdF-Code verschoben): Sisgard folgt ihren Tagesabläufen (läuft weg) während sie einem folgt. Wird in shareWith() aufgerufen. Passiert nachdem man einmal mit ihr gesprochen hat.
 * Manchmal hat man den Rucksackbutton obwohl man verwandelt ist. Nach dem Laden eines Spielstandes?

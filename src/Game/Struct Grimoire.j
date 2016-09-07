@@ -314,8 +314,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		 * Sets the character's hero level to \p heroLevel.
 		 * This does not actually change any hero level but stores the current hero level which is required for reacting on level up events.
 		 * Since level up events may occur once if multiple levels have been gained too this value allows you to check what was the old level.
+		 * \note Only set this when absolutely necessary for example when restoring characters from another map.
 		 */
-		private method setHeroLevel takes integer heroLevel returns nothing
+		public method setHeroLevel takes integer heroLevel returns nothing
 			set this.m_heroLevel = heroLevel
 		endmethod
 

@@ -69,6 +69,7 @@ library StructGameTalk requires Asl, StructGameFellow
 		endmethod
 
 		public stub method onOpenForCharacter takes Character character returns nothing
+			local Fellow fellow = Fellow.getByUnit(this.unit())
 			call Routines.stopSoundsForPlayer(character.player()) // silence the talk sounds
 			call Routines.hideTexttagsForPlayer(character.player()) // hide text tags
 			// first character, disable routines otherwise the NPC walks away at certain times of day
@@ -76,6 +77,13 @@ library StructGameTalk requires Asl, StructGameFellow
 				// stopping the routines prevents the NPC from walking away.
 				call AUnitRoutine.disableAll(this.unit())
 				// don't pause, otherwise the NPC cannot sell anything
+			endif
+
+			/*
+			 * When talking to a shared fellow the fellow should become invulnerable. Otherwise the fellow could die during the talk.
+			 */
+			if (fellow != 0 and fellow.isShared()) then
+				call SetUnitInvulnerable(this.unit(), true)
 			endif
 		endmethod
 
@@ -89,6 +97,14 @@ library StructGameTalk requires Asl, StructGameFellow
 				call AUnitRoutine.enableAll(this.unit())
 				// don't pause, otherwise the NPC cannot sell anything
 				//call PauseUnit(this.m_unit, false) // Enables routines or something else
+			endif
+
+			/*
+			 * When talking to a shared fellow the fellow should become invulnerable. Otherwise the fellow could die during the talk.
+			 * Therefore the fellow has to become vulnerable again here
+			 */
+			if (fellow != 0 and fellow.isShared()) then
+				call SetUnitInvulnerable(this.unit(), false)
 			endif
 		endmethod
 

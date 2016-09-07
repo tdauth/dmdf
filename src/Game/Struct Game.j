@@ -1,7 +1,7 @@
 library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameMapChanger, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
 
 	/**
-	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
+	 * \brief This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
 	 * As in Warcraft III itself characters do not necessarily have to kill enemies theirselfs (e. g. with a final hit).
 	 * A custom experience system is necessary to be able to distribute the whole gained experience equally (not like in Warcraft III where some do get more and some do get less).
 	 * \ref distributeUnitExperience() calculates the whole gained experience by one single kill which can be distributed on all characters.
@@ -43,8 +43,6 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			//debug call Print("Alliance state to killing unit: " + I2S(GetUnitAllianceStateToUnit(character.unit(), killingUnit)) + ".")
 			// never give XP for buildings. for example boxes are buildings as well
 			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) == bj_ALLIANCE_UNALLIED and (GetUnitAllianceStateToUnit(character.unit(), killingUnit) == bj_ALLIANCE_ALLIED or character.player() == GetOwningPlayer(killingUnit)) and ((thistype.range > 0.0 and GetDistanceBetweenUnitsWithZ(character.unit(), whichUnit) <= thistype.range) or thistype.range <= 0.0) and not IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
-				/// @todo FIXME, DMdF customized XP formula
-				//set result = thistype.damageFactor * GetUnitDamage(whichUnit) + thistype.damageTypeWeightFactor * GetUnitDamageType(whichUnit) + thistype.armourFactor * GetUnitArmour(whichUnit) + thistype.armourTypeWeightFactor * GetUnitArmourType(whichUnit) + thistype.hpFactor * GetUnitState(whichUnit, UNIT_STATE_LIFE) + thistype.manaFactor * GetUnitState(whichUnit, UNIT_STATE_MANA) + thistype.levelFactor * GetUnitLevel(whichUnit)
 				// Warcraft 3 default XP formula
 				set result = I2R(GetUnitXP(whichUnit)) * thistype.xpHandicap
 				//debug call Print("Result is " + R2S(result))
@@ -60,12 +58,11 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 				endif
 			endif
 
-			return IMaxBJ(R2I(result / ACharacter.countAllPlaying()), 1) // give at least 1 XP
+			return IMaxBJ(R2I(result), 1) // give at least 1 XP
 		endmethod
 
 		/**
 		 * Gives a character the XP gained for killing unit \p whichUnit by the killer \p killingUnit.
-		 * The XP is always divided by the number of players. Otherwise the game would be too easy for multiple players.
 		 * \return Returns the XP.
 		 */
 		public static method giveUnitExperienceToCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
@@ -121,7 +118,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) != bj_ALLIANCE_UNALLIED or (GetUnitAllianceStateToUnit(character.unit(), killingUnit) != bj_ALLIANCE_ALLIED and character.player() != GetOwningPlayer(killingUnit)) or IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
 				return 0
 			endif
-			return thistype.unitBounty(whichUnit) / ACharacter.countAllPlaying()
+			return thistype.unitBounty(whichUnit)
 		endmethod
 
 		public static method giveBountyToCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
@@ -173,6 +170,10 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		 * The global characters scheme which can be shown or hidden by any player.
 		 */
 		private static ACharactersScheme m_charactersScheme
+		/**
+		 * Indicates if the map has been started by a map transition in the singleplayer campaign or not.
+		 */
+		private static boolean m_restoreCharacters
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -195,6 +196,10 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		public static method isCampaign takes nothing returns boolean
 			// this custom object should only exist in the campaign not in the usual maps
 			return GetObjectName('h600') == "IsCampaign"
+		endmethod
+
+		public static method restoreCharacters takes nothing returns boolean
+			return thistype.m_restoreCharacters
 		endmethod
 
 		/**
@@ -282,13 +287,15 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 				set handicap = handicap + 0.30
 			endif
 
+			// decrease difficulty for others if players are missing
 			call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
 
-			// decrease difficulty for others if players are missing
-			if (missingPlayers > 0) then
-				call Character.displayDifficultyToAll(Format(tre("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.", "Since you are starting the game without %1% players the enemies get a handicap of %2% %. Besides your character gains more experience as well as more gold coins from killing enemies.")).s(trpe("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), "one more", Format("%1% more").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
-			elseif (handicap > 1.0 or handicap < 1.0) then
-				call Character.displayDifficultyToAll(Format(tre("Aufgrund der eingestellten Schwierigkeit starten die Unholde mit einem Handicap von %1%.", "Because of the set difficulty the creeps start with a handicap of %1%.")).rw(handicap * 100.0, 0, 0).result())
+			if (not Game.restoreCharacters()) then
+				if (missingPlayers > 0) then
+					call Character.displayDifficultyToAll(Format(tre("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.", "Since you are starting the game without %1% players the enemies get a handicap of %2% %. Besides your character gains more experience as well as more gold coins from killing enemies.")).s(trpe("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), "one more", Format("%1% more").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
+				elseif (handicap > 1.0 or handicap < 1.0) then
+					call Character.displayDifficultyToAll(Format(tre("Aufgrund der eingestellten Schwierigkeit starten die Unholde mit einem Handicap von %1%.", "Because of the set difficulty the creeps start with a handicap of %1%.")).rw(handicap * 100.0, 0, 0).result())
+				endif
 			endif
 
 			return handicap
@@ -427,9 +434,11 @@ endif
 
 		/// Most ASL systems are initialized here.
 		private static method onInit takes nothing returns nothing
+			local integer i = 0
+
 			// restore the characters in a single player campaign of the game is changed by loading or if it is not the initial chapter
-			local boolean restoreCharacters = bj_isSinglePlayer and Game.isCampaign() and MapChanger.charactersExistSinglePlayer() and (IsMapFlagSet(MAP_RELOADED) or not MapData.isSeparateChapter)
-			local integer i
+			set thistype.m_restoreCharacters = bj_isSinglePlayer and Game.isCampaign() and MapChanger.charactersExistSinglePlayer() and (IsMapFlagSet(MAP_RELOADED) or not MapData.isSeparateChapter)
+
 			// Advanced Script Library
 			// general systems
 			call Asl.init()
@@ -574,7 +583,7 @@ endif
 			call MapData.onStart.evaluate()
 
 			// if the game is new show the class selection, otherwise restore characters from the game cache (only in campaign mode)
-			if (restoreCharacters) then
+			if (thistype.restoreCharacters()) then
 				// new OpLimit
 				call ForForce(bj_FORCE_PLAYER[0], function MapChanger.restoreCharactersSinglePlayer)
 				call ClassSelection.startGame.evaluate()

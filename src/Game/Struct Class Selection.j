@@ -117,13 +117,16 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 
 		public stub method onSelectClass takes Character character, AClass class, boolean last returns nothing
-			local integer i
-			local integer j
+			local integer i = 0
 
 			// Is no repick which means it is the first class selection in the beginning of the game.
 			if (not thistype.m_gameStarted) then
+				call SetHeroLevel(character.unit(), MapData.startLevel, false)
+				debug call Print("Start level: " + I2S(MapData.startLevel))
 				// Initial skill points depend on the map.
 				call character.grimoire().addSkillPoints.evaluate(MapData.startSkillPoints, true)
+				// Initial hero level
+				//call character.grimoire().setHeroLevel(GetHeroLevel(character.unit()))
 			endif
 
 			// Create all class spells and skill the default spell.
