@@ -54,7 +54,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
@@ -69,7 +69,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
@@ -80,7 +80,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
@@ -94,7 +94,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 

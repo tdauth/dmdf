@@ -332,6 +332,8 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Let's Play Critical Errors (have to be fixed in 0.9):
+* Kartenausgänge unsichtbar machen!
+* Elementarwesen: Passive Rüstungs, Lebens- und Schadensfähigkeiten, die pro Stufe zu besser werden und jedes Elementarwesen erhält. Ansonsten sind die Wesen auf Dauer zu schwach.
 * FIXED (removeOnCraftItemFunction() wird erst beim Beenden des gesamten Auftrags aufgerufen): Wenn das letzte Schwert für Einar geschmiedet wird, dann erscheint Guntrichs Dialog etc. etc. Achtung: Dieser Bug zerstört sogar den Spielstand. Nicht speichern! RemoveCraftFunction, Fehler bei AIntegerVector.remove(), wenn der Vektor eine Größe von 1 hat.
 * FIXED: Einars Schwerter werden nicht aus dem Rucksack entfernt.
 * Wenn man einer Legion beitritt geht durch irgendwas der Spielstand ebenfalls kaputt. Man kann noch speichern, aber wenn man den gespeicherten Spielstand lädt, kann man nicht mehr speichern.

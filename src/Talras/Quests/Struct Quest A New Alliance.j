@@ -19,7 +19,7 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 

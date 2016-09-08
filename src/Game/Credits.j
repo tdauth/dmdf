@@ -54,6 +54,7 @@ call thistype.addContributor("Synchron", tr("Tellborn"))
 call thistype.addTitle(tre("Weitere Unterstützung", "Further Support"))
 call thistype.addContributor("WaterKnight", tre("Tests", "Tests"))
 call thistype.addContributor("Frotty", tre("Modelle und Tests", "Models and Tests"))
+call thistype.addContributor("Clemens Weichard", tre("Eigenes Let's Play", "Custom Let's Play"))
 
 call thistype.addTitle(tre("Musik", "Music"))
 call thistype.addContributor("Kevin MacLeod (incompetech.com)", "Pippin the Hunchback")

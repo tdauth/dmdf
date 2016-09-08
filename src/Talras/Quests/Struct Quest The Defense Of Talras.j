@@ -23,45 +23,33 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
 	struct QuestAreaQuestTheDefenseOfTalrasGather extends QuestArea
-
-		public stub method onCheck takes nothing returns boolean
-			return true
-		endmethod
 
 		public stub method onStart takes nothing returns nothing
 			call QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemGatherAtTheCamp).complete()
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
 	struct QuestAreaQuestTheDefenseOfTalrasGatherAgain extends QuestArea
-
-		public stub method onCheck takes nothing returns boolean
-			return true
-		endmethod
 
 		public stub method onStart takes nothing returns nothing
 			call QuestTheDefenseOfTalras.quest.evaluate().questItem(QuestTheDefenseOfTalras.questItemGatherAtTheCampAgain).complete()
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
 	struct QuestAreaQuestTheDefenseOfTalrasReportHeimrich extends QuestArea
-
-		public stub method onCheck takes nothing returns boolean
-			return true
-		endmethod
 
 		public stub method onStart takes nothing returns nothing
 			call VideoHolzbruck.video().play()
@@ -73,7 +61,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 

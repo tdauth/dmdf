@@ -3,7 +3,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 	struct QuestAreaSlaughter extends QuestArea
 
 		public stub method onStart takes nothing returns nothing
-			local integer i
 			call VideoDragonHunt.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call QuestSlaughter.quest.evaluate().enable.evaluate()
@@ -13,7 +12,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
@@ -30,7 +29,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
@@ -43,7 +42,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 

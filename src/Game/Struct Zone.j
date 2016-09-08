@@ -57,10 +57,10 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		 * \param whichRect Whenever this rect is entered by the character a map change is done.
 		 */
 		public static method create takes string mapName, rect whichRect returns thistype
-			local thistype this = thistype.allocate(whichRect)
+			local thistype this = thistype.allocate(whichRect, false) // Don't make zone areas visible from the beginning! Otherwise players can teleport there!
 			set this.m_mapName = mapName
+			// Zone areas have to be permanent.
 			call this.setDestroyOnActivation(false)
-			call this.setFogModifiersEnabled(false) // don't make zones discovered from the beginning
 			call thistype.m_zones.pushBack(this)
 			set this.m_iconUnit = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), thistype.unitTypeId, GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
 			call SetUnitInvulnerable(this.m_iconUnit, true)

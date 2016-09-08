@@ -1,6 +1,7 @@
 library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQuestsQuestWarLumberFromKuno, StructMapQuestsQuestWarRecruit, StructMapQuestsQuestWarSupplyFromManfred, StructMapQuestsQuestWarTrapsFromBjoern, StructMapQuestsQuestWarWeaponsFromWieland, StructMapVideosVideoPrepareForTheDefense
 
 	struct QuestAreaWarCartDestination extends QuestArea
+
 		public stub method onCheck takes nothing returns boolean
 			call Character.displayHintToAll(tre("In dieses Gebiet müssen die Versorgungswagen und die Knechte gebracht werden.", "Supply carts and servants must be brought to this area."))
 			return false
@@ -11,6 +12,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 	endstruct
 
 	struct QuestAreaWarReportHeimrich extends QuestArea
+
 		public stub method onCheck takes nothing returns boolean
 			// TODO change moveManfredsSupplyToTheCamp
 			local boolean result = QuestWar.quest.evaluate().questItem(QuestWar.questItemWeaponsFromWieland).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemSupplyFromManfred).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemLumberFromKuno).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemTrapsFromBjoern).state() == QuestWar.stateCompleted and QuestWar.quest.evaluate().questItem(QuestWar.questItemRecruit).state() == QuestWar.stateCompleted
@@ -64,7 +66,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 			call QuestWarLumberFromKuno.quest().enable()
 			call QuestWarTrapsFromBjoern.quest().enable()
 			call QuestWarRecruit.quest().enable()
-			set this.m_questAreaReportHeimrich = QuestAreaWarReportHeimrich.create(gg_rct_quest_war_heimrich)
+			set this.m_questAreaReportHeimrich = QuestAreaWarReportHeimrich.create(gg_rct_quest_war_heimrich, true)
 			set this.m_questAreaCartDestination = 0
 			call this.questItem(thistype.questItemWeaponsFromWieland).setState(thistype.stateNew)
 			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateNew)
@@ -85,7 +87,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 		 */
 		public method enableCartDestination takes nothing returns nothing
 			if (this.m_questAreaCartDestination == 0) then
-				set this.m_questAreaCartDestination = QuestAreaWarCartDestination.create(gg_rct_quest_war_cart_destination)
+				set this.m_questAreaCartDestination = QuestAreaWarCartDestination.create(gg_rct_quest_war_cart_destination, true)
 			endif
 		endmethod
 

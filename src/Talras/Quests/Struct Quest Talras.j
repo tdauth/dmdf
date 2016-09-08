@@ -10,7 +10,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
@@ -24,7 +24,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 

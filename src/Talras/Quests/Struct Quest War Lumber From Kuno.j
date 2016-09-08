@@ -1,28 +1,28 @@
 library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea, StructMapQuestsQuestWarSubQuest, StructMapVideosVideoKuno
 
 	struct QuestAreaWarKuno extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoKuno.video().play()
 		endmethod
 	endstruct
-	
+
 	struct QuestAreaWarReportKuno extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoReportKuno.video().play()
 		endmethod
 	endstruct
-	
+
 	struct QuestWarLumberFromKuno extends QuestWarSubQuest
 		public static constant integer questItemLumberFromKuno = 0
 		public static constant integer questItemKillTheWitches = 1
 		public static constant integer questItemReportKuno = 2
 		public static constant integer questItemMoveKunosLumberToTheCamp = 3
-		
+
 		private QuestAreaWarKuno m_questAreaKuno
 		private QuestAreaWarReportKuno m_questAreaReportKuno
-		
+
 		/*
 		 * Kuno
 		 */
@@ -30,29 +30,29 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		private boolean array m_killedWitches[thistype.witchSpawnPoints]
 		private timer m_kunosCartSpawnTimer
 		private unit m_kunosCart
-		
+
 		implement Quest
-		
+
 		public method cleanUnits takes nothing returns nothing
 			// Kuno
 			call RemoveUnit(this.m_kunosCart)
 			set this.m_kunosCart = null
 		endmethod
-		
+
 		public stub method enable takes nothing returns boolean
 			local boolean result = this.setState(thistype.stateNew)
 			call this.questItem(thistype.questItemLumberFromKuno).setState(thistype.stateNew)
-			
-			set this.m_questAreaKuno = QuestAreaWarKuno.create(gg_rct_quest_war_kuno)
-			
+
+			set this.m_questAreaKuno = QuestAreaWarKuno.create(gg_rct_quest_war_kuno, true)
+
 			return result
 		endmethod
-		
+
 		public method enableKillTheWitches takes nothing returns nothing
 			call this.questItem(thistype.questItemKillTheWitches).setState(thistype.stateNew)
 			call this.displayUpdate()
 		endmethod
-		
+
 		private static method stateEventCompletedKillTheWitches takes AQuestItem questItem, trigger whichTrigger returns nothing
 			// the units owner might be different due to abilities
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
@@ -107,7 +107,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			endif
 			return false
 		endmethod
-		
+
 		/**
 		 * After the Witches have been killed the characters must report Kuno.
 		 * The same rect is used as for talking to him in the first place.
@@ -116,20 +116,20 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			local thistype this = thistype(questItem.quest())
 			call this.questItem(thistype.questItemReportKuno).setState(thistype.stateNew)
 			call this.displayUpdate()
-			set this.m_questAreaReportKuno = QuestAreaWarReportKuno.create(gg_rct_quest_war_kuno)
+			set this.m_questAreaReportKuno = QuestAreaWarReportKuno.create(gg_rct_quest_war_kuno, true)
 		endmethod
-		
+
 		private static method timerFunctionSpawnKunosCart takes nothing returns nothing
 			local thistype this = thistype.quest()
 			if (IsUnitDeadBJ(this.m_kunosCart)) then
 				set this.m_kunosCart = CreateUnit(MapData.alliedPlayer, 'h021', GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 0.0)
 				call this.displayUpdateMessage(tre("Eine neue Holzlieferung steht zur Verfügung.", "A new supply of wood is available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 5.0, 255, 255, 255, true)
-				
+
 				call Game.setAlliedPlayerAlliedToAllCharacters()
 			endif
 		endmethod
-		
+
 		/**
 		 * Kuno gives the characters a cart with lumber.
 		 * It is owned by \ref MapData.alliedPlayer and has to be moved to the camp.
@@ -140,7 +140,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			call this.questItem(thistype.questItemReportKuno).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemMoveKunosLumberToTheCamp).setState(thistype.stateNew)
 			call this.displayUpdate()
-			
+
 			// TODO enable respawn timer
 			set this.m_kunosCart = CreateUnit(MapData.alliedPlayer, 'h021', GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 0.0)
 			set this.m_kunosCartSpawnTimer = CreateTimer()
@@ -148,22 +148,22 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			call Game.setAlliedPlayerAlliedToAllCharacters()
 			call QuestWar.quest.evaluate().enableCartDestination.evaluate()
 		endmethod
-		
+
 		public method moveLumberCartToCamp takes nothing returns nothing
 			call thistype.timerFunctionSpawnKunosCart()
 			call SetUnitX(this.m_kunosCart, GetRectCenterX(gg_rct_quest_war_cart_destination))
 			call SetUnitY(this.m_kunosCart, GetRectCenterY(gg_rct_quest_war_cart_destination))
 		endmethod
-		
+
 		private static method stateEventCompletedMoveKunosLumberToTheCamp takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_war_cart_destination)
 		endmethod
-		
+
 		private static method stateConditionCompletedMoveKunosLumberToTheCamp takes AQuestItem questItem returns boolean
 			local thistype this = thistype.quest()
 			return GetTriggerUnit() == this.m_kunosCart
 		endmethod
-		
+
 		private static method stateActionCompletedMoveKunosLumberToTheCamp takes AQuestItem questItem returns nothing
 			local thistype this = thistype.quest()
 			call QuestWar.quest.evaluate().setupUnitAtDestination.evaluate(this.m_kunosCart)
@@ -173,7 +173,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			call this.questItem(thistype.questItemLumberFromKuno).setState(thistype.stateCompleted)
 			call this.complete()
 		endmethod
-		
+
 		public static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Holz von Kuno", "Lumber from Kuno"), QuestWar.questItemLumberFromKuno)
 			local AQuestItem questItem
@@ -181,9 +181,9 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			call this.setDescription(tre("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden.", "In order to stop the impeding attacks of Orcs and Dark Elves, the conquered outpost has to be supplied. In addition, traps has to be placed before the walls that make it harder for the enemies to conquer the outpost. Furthermore, war suitable people need to be hired at the farm."))
 			call this.setReward(thistype.rewardExperience, 200)
 			call this.setReward(thistype.rewardGold, 200)
-			
+
 			set questItem = AQuestItem.create(this, tre("Besorgt Holz vom Holzfäller Kuno.", "Get wood from the lumberjack Kuno."))
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_kuno)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
@@ -193,26 +193,26 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedKillTheWitches)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedKillTheWitches)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedKillTheWitches)
-			
+
 			// quest item questItemReportKuno
 			set questItem = AQuestItem.create(this, tre("Berichte Kuno davon.", "Report Kuno about it."))
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_kuno)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// quest item questItemMoveKunosLumberToTheCamp
 			set questItem = AQuestItem.create(this, tre("Bringt Kunos Holz sicher zum Außenposten.", "Move Kuno's wood safely to the outpost."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedMoveKunosLumberToTheCamp)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedMoveKunosLumberToTheCamp)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedMoveKunosLumberToTheCamp)
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_cart_destination)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			return this
 		endmethod
 	endstruct
-	
+
 endlibrary

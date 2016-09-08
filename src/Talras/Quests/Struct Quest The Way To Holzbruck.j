@@ -2,16 +2,12 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructMapMapNpcs, St
 
 	struct QuestAreaTheWayToHolzbruck extends QuestArea
 
-		public stub method onCheck takes nothing returns boolean
-			return true
-		endmethod
-
 		public stub method onStart takes nothing returns nothing
 			call VideoUpstream.video().play()
 		endmethod
 
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 

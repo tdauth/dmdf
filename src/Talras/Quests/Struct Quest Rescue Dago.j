@@ -1,7 +1,7 @@
 library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, StructMapMapNpcs, StructMapTalksTalkDago
 
 	struct QuestAreaRescueDago extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			local integer i
 			call VideoRescueDago0.video.evaluate().play()
@@ -14,9 +14,9 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 				set i = i + 1
 			endloop
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
@@ -27,7 +27,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		private real m_dagosMoveSpeed = 0.0
 
 		implement Quest
-		
+
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(1)
 		endmethod
@@ -55,7 +55,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
 			return IsUnitDeadBJ(gg_unit_n008_0027) and IsUnitDeadBJ(gg_unit_n008_0083)
 		endmethod
-		
+
 		private static method timerFunctionMove takes nothing returns nothing
 			if (GetUnitCurrentOrder(Npcs.dago()) != OrderId("move")) then
 				if (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_0), GetRectCenterY(gg_rct_waypoint_dago_0), thistype.rectRange)) then
@@ -126,7 +126,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_3), GetRectCenterY(gg_rct_waypoint_dago_3), thistype.rectRange)) then
 					call IssuePointOrder(Npcs.dago(), "move", GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4))
 				elseif (IsUnitInRangeXY(Npcs.dago(), GetRectCenterX(gg_rct_waypoint_dago_4), GetRectCenterY(gg_rct_waypoint_dago_4), thistype.rectRange)) then
-				
+
 					call SetUnitFacing(Npcs.dago(), 265.0)
 					call SetUnitMoveSpeed(Npcs.dago(), this.m_dagosMoveSpeed)
 					call TransmissionFromUnitWithName(Npcs.dago(), tre("Dago", "Dago"), tre("So, wenn ihr dem Weg folgt, kommt ihr zum Burgtor. Ich komme später nach, aber jetzt muss ich noch ein paar Pilze in der Umgebung sammeln. Für den Herzog versteht sich.", "Fine, if you follow the way you reach the castle's gate. I will join you later but now I have to collect some mushrooms in the area. For the duke of course."), gg_snd_DagoRescueDago7)
@@ -134,14 +134,14 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 					call PauseTimer(this.m_timer)
 					call DestroyTimer(this.m_timer)
 					set this.m_timer = null
-					
+
 					set i = 0
 					loop
 						exitwhen (i == MapData.maxPlayers)
 						call UnitShareVision(Npcs.dago(), Player(i), false)
 						set i = i + 1
 					endloop
-					
+
 					return true
 				endif
 			endif
@@ -155,7 +155,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			set this.m_timer = CreateTimer()
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNAttentaeter.tga")
 			call this.setDescription(tre("Dago wird vor einer Höhle von zwei Bären angegriffen. Ihr müsst ihm zu Hilfe eilen.", "Dago is being attacked by two bears in front of a cage. You must help him."))
-			
+
 			call this.setStateEvent(thistype.stateFailed, thistype.stateEventFailed)
 			call this.setStateAction(thistype.stateFailed, thistype.stateActionFailed)
 			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)
@@ -174,7 +174,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			call questItem1.setPingColour(100.0, 100.0, 100.0)
 			call questItem1.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted1)
 			call questItem1.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted1)
-			
+
 			set this.m_questArea = QuestAreaRescueDago.create(gg_rct_quest_rescue_dago_enable)
 
 			return this

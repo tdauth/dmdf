@@ -47,7 +47,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 			local boolean result = this.setState(thistype.stateNew)
 			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateNew)
 
-			set this.m_questAreaManfred = QuestAreaWarManfred.create(gg_rct_quest_war_manfred)
+			set this.m_questAreaManfred = QuestAreaWarManfred.create(gg_rct_quest_war_manfred, true)
 
 			return result
 		endmethod
@@ -117,7 +117,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 			local thistype this = thistype(questItem.quest())
 			call this.questItem(thistype.questItemReportManfred).setState(thistype.stateNew)
 			call this.displayUpdate()
-			set this.m_questAreaReportManfred = QuestAreaWarReportManfred.create(gg_rct_quest_war_manfred)
+			set this.m_questAreaReportManfred = QuestAreaWarReportManfred.create(gg_rct_quest_war_manfred, true)
 		endmethod
 
 		private static method timerFunctionSpawnSupplyCart takes nothing returns nothing
