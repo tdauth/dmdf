@@ -341,6 +341,24 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			// for all classes
 			call SpellAttributeBonus.create(character)
+
+			if (class == Classes.dragonSlayer()) then
+				call SpellRideHorse.create(character, 'A1SL', 'A1SM')
+			elseif (class == Classes.druid()) then
+				call SpellRideHorse.create(character, 'A1SN', 'A1SU')
+			elseif (class == Classes.elementalMage()) then
+				call SpellRideHorse.create(character, 'A1SO', 'A1SV')
+			elseif (class == Classes.cleric()) then
+				call SpellRideHorse.create(character, 'A1SP', 'A1SW')
+			elseif (class == Classes.necromancer()) then
+				call SpellRideHorse.create(character, 'A1SQ', 'A1SX')
+			elseif (class == Classes.knight()) then
+				call SpellRideHorse.create(character, 'A1SR', 'A1SY')
+			elseif (class == Classes.wizard()) then
+				call SpellRideHorse.create(character, 'A1ST', 'A1T0')
+			elseif (class == Classes.ranger()) then
+				call SpellRideHorse.create(character, 'A1SS', 'A1SZ')
+			endif
 		endmethod
 
 		private static method addClassSpellsFromCharacterWithNewOpLimit takes Character character returns nothing

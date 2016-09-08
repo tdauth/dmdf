@@ -115,9 +115,16 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		public stub method onRestore takes nothing returns nothing
 		endmethod
 
+		public stub method onCondition takes nothing returns boolean
+			return true
+		endmethod
+
+		public stub method onStart takes nothing returns nothing
+		endmethod
+
 		private static method triggerConditionStart takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			local boolean result = GetTriggerUnit() == this.character().unit() and GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId()
+			local boolean result = GetTriggerUnit() == this.character().unit() and GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId() and this.onCondition.evaluate()
 			return result
 		endmethod
 
@@ -245,6 +252,11 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		private static method triggerActionStart takes nothing returns nothing
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local boolean result = false
+
+			/**
+			 * GetSpellTargetUnit() etc. has to be available.
+			 */
+			call this.onStart.evaluate()
 
 			/*
 			 * Disable trigger to make sure that it does not react on manually issued order in this trigger.

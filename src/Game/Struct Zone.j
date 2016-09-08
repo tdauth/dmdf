@@ -88,6 +88,7 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call thistype.m_zoneNames.pushBack("GH")
 			call thistype.m_zoneNames.pushBack("DS")
 			call thistype.m_zoneNames.pushBack("HB")
+			call thistype.m_zoneNames.pushBack("HU")
 		endmethod
 
 		public static method zoneNames takes nothing returns AIntegerVector

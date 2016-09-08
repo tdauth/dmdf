@@ -48,6 +48,7 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 				set this.m_unit[index] = GetTriggerUnit()
 				call IssueImmediateOrder(GetTriggerUnit(), "halt")
 				call EnableWeatherEffect(this.m_weatherEffect[index], false)
+				call StartSound(gg_snd_StarfallCaster1)
 				call this.displayUpdateMessage(Format(tr("%1%/%2% Kraftfelder deaktiviert")).i(this.countActivatedRects()).i(thistype.maxRects).result())
 
 				return this.countActivatedRects() == thistype.maxRects
@@ -95,6 +96,7 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 			set this.m_enterTrigger[index] = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(this.m_enterTrigger[index], whichRect)
 			call TriggerAddCondition(this.m_enterTrigger[index], Condition(function thistype.triggerConditionEnter))
+			call TriggerAddAction(this.m_enterTrigger[index], function thistype.triggerActionEnter)
 			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger[index], 0, this)
 			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger[index], 1, index)
 

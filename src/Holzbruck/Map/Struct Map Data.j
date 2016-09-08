@@ -14,6 +14,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
+		public static constant integer startLevel = 60
 		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 10000
@@ -23,6 +24,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		private static Zone m_zoneTalras
 		private static Zone m_zoneGardonar
+		private static Zone m_zoneUnderworld
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -41,6 +43,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
 			set thistype.m_zoneGardonar = Zone.create("GH", gg_rct_zone_gardonar)
+			set thistype.m_zoneUnderworld = Zone.create("HU", gg_rct_zone_holzbrucks_underworld)
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod

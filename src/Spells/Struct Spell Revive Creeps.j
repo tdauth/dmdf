@@ -5,7 +5,7 @@ library StructSpellsSpellReviveCreeps requires Asl, StructGameSpawnPoint
 
 		private static method triggerCondition takes nothing returns boolean
 			if (GetSpellAbilityId() == 'A1S8') then
-				call Character.displayWarningToAll(tre("Die Unholde erwachen!", "The creeps are awakening!"))
+				call Character.displayWarningToAll(Format(tre("Die Unholde wurden von %1% erweckt!", "The creeps have been awakened by %1%!")).s(GetUnitName(GetTriggerUnit())).result())
 				call SpawnPoint.spawnDeadOnlyAll()
 			endif
 
