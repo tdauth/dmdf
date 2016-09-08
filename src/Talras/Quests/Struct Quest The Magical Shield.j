@@ -13,7 +13,7 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 			call Character(this.character()).giveQuestItem(thistype.arrowsItemTypeId)
 			return super.enableUntil(0)
 		endmethod
-		
+
 		private static method stateEventCompleted0 takes AQuestItem questItem, trigger usedTrigger returns nothing
 			call TriggerRegisterUnitEvent(usedTrigger, questItem.character().unit(), EVENT_UNIT_USE_ITEM)
 		endmethod
@@ -26,8 +26,7 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 					set this.m_shieldEffect = AddSpecialEffectTarget("Abilities\\ForceFieldNocolour\\FieldBASE.mdx", GetTriggerUnit(), "chest")
 				endif
 			elseif (GetItemTypeId(GetManipulatedItem()) == thistype.arrowsItemTypeId) then
-				// TODO use arrow effect
-				call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Demon\\RainOfFire\\RainOfFireTarget.mdl", GetTriggerUnit(), "overhead"))
+				call DestroyEffect(AddSpecialEffectTarget("Abilities\\ArrowVolley\\ArrowVolleyV2.MDX", GetTriggerUnit(), "overhead"))
 				if (this.m_shieldEnabled) then
 					call DestroyEffect(this.m_shieldEffect)
 					set this.m_shieldEffect = null
@@ -36,10 +35,10 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 					call UnitDamageTargetBJ(GetTriggerUnit(), GetTriggerUnit(), 5000.0, ATTACK_TYPE_PIERCE, DAMAGE_TYPE_NORMAL)
 				endif
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			call questItem.quest().questItem(1).enable()
 		endmethod

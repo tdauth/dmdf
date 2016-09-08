@@ -220,7 +220,7 @@ P;EArial;M200;SU;L37
 P;EArial;M200;SI
 P;EArial;M200
 F;P0;DG0G8;M255
-B;Y3616;X6;D0 0 2438 5
+B;Y3619;X6;D0 0 2438 5
 O;L;S;D;V0;K47;G100 0.001
 F;W1 1 27
 F;W2 2 35
@@ -23267,9 +23267,9 @@ C;K"CHANNELFULLPREEMPT|LISTFULLPREEMPT"
 F;X6
 C;K1
 F;Y3019;X1
-C;K"Carsten9"
+C;K"CarstenRoutine1"
 F;X2
-C;K"Carsten9.mp3";ECONCATENATE(RC[-1],".mp3")
+C;K"CarstenRoutine1.mp3";ECONCATENATE(RC[-1],".mp3")
 F;X3
 C;K"Sound\Dialogue\Carsten\"
 F;X4
@@ -23279,9 +23279,9 @@ C;K"CHANNELFULLPREEMPT|LISTFULLPREEMPT"
 F;X6
 C;K1
 F;Y3020;X1
-C;K"Carsten10"
+C;K"CarstenRoutine2"
 F;X2
-C;K"Carsten10.mp3";ECONCATENATE(RC[-1],".mp3")
+C;K"CarstenRoutine2.mp3";ECONCATENATE(RC[-1],".mp3")
 F;X3
 C;K"Sound\Dialogue\Carsten\"
 F;X4
@@ -23291,9 +23291,9 @@ C;K"CHANNELFULLPREEMPT|LISTFULLPREEMPT"
 F;X6
 C;K1
 F;Y3021;X1
-C;K"Carsten11"
+C;K"CarstenRoutine3"
 F;X2
-C;K"Carsten11.mp3";ECONCATENATE(RC[-1],".mp3")
+C;K"CarstenRoutine3.mp3";ECONCATENATE(RC[-1],".mp3")
 F;X3
 C;K"Sound\Dialogue\Carsten\"
 F;X4
@@ -30406,4 +30406,31 @@ F;X5
 C;K"CHANNELFULLPREEMPT|LISTFULLPREEMPT"
 F;X6
 C;K1
+F;Y3617;X1
+C;K"CarstenRoutine4"
+F;X2
+C;K"CarstenRoutine4.mp3";ECONCATENATE(RC[-1],".mp3")
+F;X3
+C;K"Sound\Dialogue\Carsten\"
+F;X4
+C;K120
+F;X5
+F;Y3618;X1
+C;K"CarstenRoutine5"
+F;X2
+C;K"CarstenRoutine5.mp3";ECONCATENATE(RC[-1],".mp3")
+F;X3
+C;K"Sound\Dialogue\Carsten\"
+F;X4
+C;K120
+F;X5
+F;Y3619;X1
+C;K"CarstenRoutine6"
+F;X2
+C;K"CarstenRoutine6.mp3";ECONCATENATE(RC[-1],".mp3")
+F;X3
+C;K"Sound\Dialogue\Carsten\"
+F;X4
+C;K120
+F;X5
 E

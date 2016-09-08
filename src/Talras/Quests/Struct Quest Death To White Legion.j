@@ -28,7 +28,7 @@ library StructMapQuestsQuestDeathToWhiteLegion requires Asl
 			//call questItem0.setPingRect(gg_rct_haldar_spawn_point_0)
 			//call questItem0.setPingColour(100.0, 100.0, 100.0)
 			//quest item 1
-			set questItem1 = AQuestItem.create(this, tre("Töte so viele Krieger der weißen Legion wie möglich.", "Kill as many warriors of the White Legion as possible."))
+			set questItem1 = AQuestItem.create(this, tre("Töte so viele Krieger der weißen Legion wie möglich (10 pro Belohnung).", "Kill as many warriors of the White Legion as possible (10 per reward)."))
 			// for 10 kills
 			call questItem1.setReward(thistype.rewardExperience, 300)
 			call questItem1.setReward(thistype.rewardGold, 200)

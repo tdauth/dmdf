@@ -343,8 +343,13 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Nach zweiter Verwandlung und Rückverwandlung?
 	* Vielleicht auch einfach nach gewisser Zeit als Engel?!
 	* Vermutung: Evtl. PlayThematicMusicForPlayer() oder so.
+	* Evtl. weil Allianzen zu sich selbst gesetzt wurden (SetAllianceState Player(0) Player(0))
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* War transformed als Engel. Wurde getötet (mit rucksack only) beim Betreten von Baldars Gebiet. Nach Tod lagen Gegenstände auf dem Boden.
+* Trackables an den Grabsteinen erzeugen (Signs) zum Lesen. Easteregg wie in Gothic 2, Referenz zu Gothic. Hätte Faelon gerne gehabt.
+* Man konnte als Engel/Dämon verwandelt die Trommelhöhle verlassen. Beim verlassen der Höhle im struct Aos zurückverwandeln, falls verwandelt!
+* AOS-Leaderboard-Titel fehlte?!
 * Kornfresserauftrag nach erstem Kornfresser abgeschlossen.
 * Wenn ein Video in bestimmtem Moment unterbrochen wird (fade????) in Karte Gardonar (Intro) kommen danach noch Transmissions.
 * Noch einmal die ganzen Zaubertrigger prüfen: Wird Mana schon verbraucht, obwohl gestoppt wird?
@@ -370,8 +375,8 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Untote Zombies sind zu schwach, Gardonar.
 * FIXED: Blut eines Höllendieners kostet zu viel Gold.
 * FIXED: Bau von Gebäuden ist nicht limitiert in anderen Karten als Talras.
-* Wenn man sich mit Fellows unterhält während diese shared sind, sollten diese unverwundbar gemacht werden.
-* If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug.
+* FIXED: Wenn man sich mit Fellows unterhält während diese shared sind, sollten diese unverwundbar gemacht werden.
+* If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug. Do you have to know if the abilty stacks or not? Only for not stacking abilities!
 * FIXED: Klassenauswahltext "unwiderruflich" stimmt nicht mehr.
 * FIXED: Hundezwinger sollten weniger Hunde erzeugen (Auftrag die Verteidigung von Talras).
 * FIXED: Hunde zeitlich beschränkt machen (Auftrag die Verteidigung von Talras).
@@ -412,15 +417,15 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 * FIXED: Er ist doch eben sehr Menschenscheu Sisgard: Wird nicht auf Ton gewartet bei Quest-Abschluss.
 * FIXED (werden nur nach Gespräch reaktiviert, wenn es kein Fellow ist, wurde aus der ASL in DMdF-Code verschoben): Sisgard folgt ihren Tagesabläufen (läuft weg) während sie einem folgt. Wird in shareWith() aufgerufen. Passiert nachdem man einmal mit ihr gesprochen hat.
-* Manchmal hat man den Rucksackbutton obwohl man verwandelt ist. Nach dem Laden eines Spielstandes?
+* FIXED (load action von Grimoire hat einfach alle drei Fähigkeiten wieder hinzugefügt): Manchmal hat man den Rucksackbutton obwohl man verwandelt ist. Nach dem Laden eines Spielstandes?
 * FIXED: Quest der dunkle Kult wurde einfach abgeschlossen als man Knochendrache getötet hat, während die Diakongruppe tot war.
-* Rebhühner kommen IMMER bei Jagd, wenn man sie aufscheucht! Die Chance lag bei 80 % im Code. Eventuell war der Seed auch auf 0? Nirgendwo ein Hinweis, auch nicht im Editor aktiviert.
+* DEPRECATED (Chance reduziert, sollte aber nicht immer eintreten): Rebhühner kommen IMMER bei Jagd, wenn man sie aufscheucht! Die Chance lag bei 80 % im Code. Eventuell war der Seed auch auf 0? Nirgendwo ein Hinweis, auch nicht im Editor aktiviert.
 * FIXED (cut sounds): Markwards sounds take a while at the beginning. Cut it.
-* Markward4 corrupted sound. Is it even used? Not used in code.
+* DEPRECATED: Markward4 corrupted sound. Is it even used? Not used in code.
 * Heimrich: "Was haben sie mir zu berichten?" fehlt.
 * FIXED: Passive icon of Bearform has no disabled version -> green icon.
 * FIXED: Sisgards Meister: Kein Artefakt als Belohnung obwohl sie es sagt. Keine Erfahrung zum Abschluss? Nur Spruchrollen. Doch man kriegt den Helm des Nekromanten, es wird nur nicht angezeigt.
-* Sisgards Pfeilhagel: Kein Pfeilhagel im Effekt!!!
+* FIXED: Sisgards Pfeilhagel: Kein Pfeilhagel im Effekt!!!
 * FIXED: Kamera-Fern-Clipping in Videos mit Deranor weiter machen, Felsen im Hintergrund abgeschnitten.
 * Todesanimation von Gegenständen mit Hero Glow lässt Hero Glow stehen und Gegenstand liegt im Boden! Beides hiden bei Decay oder nach Death.
 * Bei Dungeon-Kamerawechsel an einen bestimmten Punkt im Dungeon springen (Einstiegspunkt) und nicht an den Rand. Sonst fällt es auf wo das Dungeon in Echt angrenzt. Wenn der Charakter im Dungeon ist, einfach zum Charakter springen. Funktioniert nur dann nicht, wenn der Weg zu weit ist, weil der Dialog direkt wieder kommt und das Spiel pausiert im Einzelspieler.
@@ -450,7 +455,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Do the same for Scroll of Ancestors.
 * FIXED: Enchanted Staff should be bigger.
 * FIXED: Unfair start attributes for different classes. Consider morphed classes too and attributes per level.
-* One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable! Fellows have to become invulnerable during talks. Otherwise they could just die.
+* FIXED: One can talk to Sisgard while she is a fellow (via sell button). She doesn't get invulnerable! Fellows have to become invulnerable during talks. Otherwise they could just die.
 * Use water textures from Born2Modificates package.
 * Arcane Time has the same ID as some other spell from the wizard. No valid targets in range comes when all spells are skilled in arena.
 * FIXED: When talking to an NPC the NPC does not stop his routine, he walks away (Björn).

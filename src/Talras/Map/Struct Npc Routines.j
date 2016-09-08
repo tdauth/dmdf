@@ -90,6 +90,8 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 		private static NpcTalksRoutine m_tellbornTalksToFulco
 
+		private static NpcTalksRoutine m_carstenTalks
+
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
@@ -374,6 +376,16 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_tellbornTalksToFulco.addSound(tr("Zumindest wird dir im Winter nicht mehr so schnell kalt."), gg_snd_TellbornTontext4)
 			call thistype.m_tellbornTalksToFulco.addSound(tr("Bald wird es hier sehr gefährlich werden."), gg_snd_TellbornTontext5)
 			call thistype.m_tellbornTalksToFulco.addSound(tr("Fulco, nun hab doch noch ein wenig Geduld."), gg_snd_TellbornTontext6)
+
+			set thistype.m_carstenTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.carsten(), 0.0, 23.59, gg_rct_waypoint_carsten)
+			call thistype.m_carstenTalks.setFacing(240.15)
+			call thistype.m_carstenTalks.setPartner(null)
+			call thistype.m_carstenTalks.addSound(tr("Diese Insel ist sehr klein!"), gg_snd_CarstenRoutine1)
+			call thistype.m_carstenTalks.addSound(tr("Ist da jemand?"), gg_snd_CarstenRoutine2)
+			call thistype.m_carstenTalks.addSound(tr("Haaaallloooo!"), gg_snd_CarstenRoutine3)
+			call thistype.m_carstenTalks.addSound(tr("Hm und was wenn mir die Tinte ausgeht? Fange ich dann einen Tintenfisch?"), gg_snd_CarstenRoutine4)
+			call thistype.m_carstenTalks.addSound(tr("Ich hab hier eine wunderbare selbstgemachte Ingwerlimo!"), gg_snd_CarstenRoutine5)
+			call thistype.m_carstenTalks.addSound(tr("Meine Frau hat mal ..."), gg_snd_CarstenRoutine6)
 
 			// menials
 			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)

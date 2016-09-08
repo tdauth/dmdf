@@ -78,6 +78,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_dragonSlayer.addAbility('A18T')
 			call thistype.m_dragonSlayer.addAbility('A0PW')
 			call thistype.m_dragonSlayer.addAbility('A09P')
+			call thistype.m_dragonSlayer.addAbility('A1TO')
 		endmethod
 
 		public static method dago takes nothing returns Fellow
@@ -103,17 +104,17 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 		public static method dragonSlayer takes nothing returns Fellow
 			return thistype.m_dragonSlayer
 		endmethod
-		
+
 		public static method dararos takes nothing returns Fellow
 			return thistype.m_dararos
 		endmethod
-		
+
 		public static method hideDragonSlayerInVideo takes AVideo video returns nothing
 			local integer actorIndex = video.saveUnitActor(Npcs.dragonSlayer())
 			call ShowUnit(video.unitActor(actorIndex), false)
 			call PauseUnit(video.unitActor(actorIndex), true)
 		endmethod
-		
+
 		public static method initDararos takes unit whichUnit returns nothing
 			set thistype.m_dararos = Fellow.create(whichUnit, 0)
 			call thistype.m_dararos.setTalk(false)

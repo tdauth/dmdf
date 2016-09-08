@@ -975,6 +975,9 @@ endif
 		 * Reorders the icon positions as well if possible. After a load some icon positions might be wrong. Another bug of Warcraft III.
 		 */
 		public method updateUiAfterLoad takes nothing returns nothing
+			local boolean hadGrimoireAbility = false
+			local boolean hadBackpackAbility = false
+			local boolean hadSpellsAbility = false
 			local AIntegerVector favoriteLevels = 0
 			local integer i = 0
 			loop
@@ -1003,7 +1006,6 @@ endif
 			*/
 			// TODO patrol, stop
 
-
 			// remove favorite abilities
 			set favoriteLevels = AIntegerVector.create()
 			set i = 0
@@ -1018,9 +1020,21 @@ endif
 			 * Readd backpack, grimoire and spells abilities to fix their icon positions.
 			 * TODO does not work
 			 */
-			call UnitRemoveAbility(this.character().unit(), Grimoire.abilityId)
-			call UnitRemoveAbility(this.character().unit(), 'A015')
-			call UnitRemoveAbility(this.character().unit(), 'A02Z')
+			set hadGrimoireAbility = GetUnitAbilityLevel(this.character().unit(), Grimoire.abilityId) > 0
+			set hadBackpackAbility = GetUnitAbilityLevel(this.character().unit(), 'A015') > 0
+			set hadSpellsAbility = GetUnitAbilityLevel(this.character().unit(), 'A02Z') > 0
+
+			if (hadGrimoireAbility) then
+				call UnitRemoveAbility(this.character().unit(), Grimoire.abilityId)
+			endif
+
+			if (hadBackpackAbility) then
+				call UnitRemoveAbility(this.character().unit(), 'A015')
+			endif
+
+			if (hadSpellsAbility) then
+				call UnitRemoveAbility(this.character().unit(), 'A02Z')
+			endif
 
 			// readd favorite abilities
 			set i = 0
@@ -1034,9 +1048,18 @@ endif
 
 			// TODO test after adding the spells
 			// add at the correct position
-			call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
-			call UnitAddAbility(this.character().unit(), 'A015')
-			call UnitAddAbility(this.character().unit(), 'A02Z')
+			if (hadGrimoireAbility) then
+				call UnitAddAbility(this.character().unit(), Grimoire.abilityId)
+			endif
+
+			if (hadBackpackAbility) then
+				call UnitAddAbility(this.character().unit(), 'A015')
+			endif
+
+			if (hadSpellsAbility) then
+				call UnitAddAbility(this.character().unit(), 'A02Z')
+			endif
+
 			// make sure the level is correct
 			call this.setGrimoireAbilityToSkillPoints(this.skillPoints())
 		endmethod

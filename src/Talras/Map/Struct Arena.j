@@ -370,8 +370,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 		private static method createLeaderboard takes nothing returns nothing
 			set thistype.m_leaderboard = CreateLeaderboard()
-			call LeaderboardSetLabel(thistype.m_leaderboard, tre("Arena:", "Arena:"))
-			call LeaderboardSetStyle(thistype.m_leaderboard, true, true, true, true)
+			call LeaderboardSetLabelBJ(thistype.m_leaderboard, tre("Arena:", "Arena:"))
+			call LeaderboardSetStyle(thistype.m_leaderboard, true, true, true, false)
 			call LeaderboardDisplay(thistype.m_leaderboard, false)
 		endmethod
 
