@@ -23,7 +23,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static sound cowSound = null
 
 		private static Zone m_zoneTalras
-		private static Zone m_zoneGardonar
+		private static Zone m_zoneDeranorsSwamp
 		private static Zone m_zoneUnderworld
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
@@ -42,7 +42,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
 			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
-			set thistype.m_zoneGardonar = Zone.create("GH", gg_rct_zone_gardonar)
+			set thistype.m_zoneDeranorsSwamp = Zone.create("DS", gg_rct_zone_deranors_swamp)
 			set thistype.m_zoneUnderworld = Zone.create("HU", gg_rct_zone_holzbrucks_underworld)
 
 			call Game.addDefaultDoodadsOcclusion()
@@ -169,8 +169,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
-			if (zone == "GH") then
-				return GetRectCenterX(gg_rct_start_hell)
+			if (zone == "DS") then
+				return GetRectCenterX(gg_rct_start_deranors_swamp)
 			endif
 
 			return GetRectCenterX(gg_rct_start_talras)
@@ -178,8 +178,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartY takes integer index, string zone returns real
-			if (zone == "GH") then
-				return GetRectCenterY(gg_rct_start_hell)
+			if (zone == "DS") then
+				return GetRectCenterY(gg_rct_start_deranors_swamp)
 			endif
 
 			return GetRectCenterY(gg_rct_start_talras)
@@ -187,7 +187,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
-			if (zone == "GH") then
+			if (zone == "DS") then
 				return 270.0
 			endif
 

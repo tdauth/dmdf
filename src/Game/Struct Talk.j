@@ -122,10 +122,12 @@ library StructGameTalk requires Asl, StructGameFellow
 
 			call UnitAddAbility(whichUnit, 'A19X')
 			call UnitAddAbility(whichUnit, 'Asud') // sell units
+
 			// removing units from stock does not work
 			//call RemoveUnitFromStock(whichUnit, 'n05E') // remove from units which do already sell it
-			call AddUnitToStock(whichUnit, 'n05E', 1, 1)
-			call AddUnitToStock(whichUnit, 'n077', 1, 1)
+			// dont add units in code to stock since hotkeys won't work
+			//call AddUnitToStock(whichUnit, 'n05E', 1, 1)
+			//call AddUnitToStock(whichUnit, 'n077', 1, 1)
 
 			/*
 			 * Store the talk on the unit to detect if the unit has a talk.

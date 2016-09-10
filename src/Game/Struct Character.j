@@ -134,6 +134,48 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 	endstruct
 
 	/**
+	 * \brief Hero button in the left top corner with options and lists of missions.
+	 */
+	struct Options
+		private Character m_character
+		private unit m_unit
+		private Missions m_missions
+		private DungeonSpellbook m_dungeons
+
+		public method missions takes nothing returns Missions
+			return this.m_missions
+		endmethod
+
+		public method dungeons takes nothing returns DungeonSpellbook
+			return this.m_dungeons
+		endmethod
+
+		public static method create takes Character character returns thistype
+			local thistype this = thistype.allocate()
+			set this.m_character = character
+			set this.m_unit = CreateUnit(character.player(), 'H03D', GetUnitX(character.unit()), GetUnitY(character.unit()), 0.0)
+			call SetUnitInvulnerable(this.m_unit, true)
+			call SetUnitPathing(this.m_unit, false)
+			call SetUnitVertexColor(this.m_unit, 255, 255, 255, 0)
+			set this.m_missions = Missions.create.evaluate(character, this.m_unit)
+			set this.m_dungeons = DungeonSpellbook.create.evaluate(character, this.m_unit)
+
+			call UnitAddAbility(this.m_unit, 'A1BY')
+			call UnitAddAbility(this.m_unit, 'A1TT')
+			call UnitAddAbility(this.m_unit, 'A1TU')
+
+			return this
+		endmethod
+
+		public method onDestroy takes nothing returns nothing
+			call RemoveUnit(this.m_unit)
+			set this.m_unit = null
+			call this.m_missions.destroy()
+			call this.m_dungeons.destroy()
+		endmethod
+	endstruct
+
+	/**
 	 * This function interface can be used to react to crafting events.
 	 * Functions which match to this interface can be registered via \ref Character#addOnCraftItemFunction() and will be called whenever the character crafts an item.
 	 */
@@ -178,7 +220,7 @@ endif
 static if (DMDF_INFO_LOG) then
 		private InfoLog m_infoLog
 endif
-		private Missions m_missions
+		private Options m_options
 		private AIntegerVector m_classSpells /// Only \ref Spell instances not \ref ASpell instances!
 
 		/**
@@ -315,8 +357,8 @@ else
 endif
 		endmethod
 
-		public method missions takes nothing returns Missions
-			return this.m_missions
+		public method options takes nothing returns Options
+			return this.m_options
 		endmethod
 
 		/**
@@ -771,7 +813,7 @@ endif
 static if (DMDF_INFO_LOG) then
 			set this.m_infoLog = InfoLog.create.evaluate(this)
 endif
-			set this.m_missions = Missions.create.evaluate(this)
+			set this.m_options = Options.create.evaluate(this)
 			set this.m_classSpells = AIntegerVector.create()
 			set this.m_quests = quests
 			if (this.m_quests == 0) then
@@ -832,7 +874,7 @@ endif
 static if (DMDF_INFO_LOG) then
 			call this.m_infoLog.destroy.evaluate()
 endif
-			call this.m_missions.destroy.evaluate()
+			call this.m_options.destroy.evaluate()
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0
 

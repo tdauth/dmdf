@@ -37,7 +37,7 @@ library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMapMap
 
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
-			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
+			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "origin")
 			local effect targetEffect = AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, GetSpellTargetX(), GetSpellTargetY())
 			debug call Print("Spell Scroll Of The Realm!")
 			call SetUnitPosition(caster, GetSpellTargetX(), GetSpellTargetY())

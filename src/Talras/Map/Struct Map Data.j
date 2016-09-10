@@ -372,6 +372,7 @@ endif
 			set thistype.cowSound = gg_snd_Cow
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
+			call ForForce(bj_FORCE_PLAYER[0], function Dungeons.addSpellbookAbilities)
 
 			call SuspendTimeOfDay(false)
 

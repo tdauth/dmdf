@@ -33,19 +33,19 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 			endif
 			return result
 		endmethod
-		
+
 		private static method filter takes nothing returns boolean
 			return not IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) and GetOwningPlayer(GetFilterUnit()) != MapData.neutralPassivePlayer
 		endmethod
-		
+
 		private static method removeEffect takes effect whichEffect returns nothing
 			call DestroyEffect(whichEffect)
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local AGroup whichGroup = AGroup.create()
-			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
+			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "origin")
 			local effect targetEffect = AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, GetSpellTargetX(), GetSpellTargetY())
 			local AEffectVector casterEffects = AEffectVector.create()
 			local integer i = 0
@@ -53,7 +53,7 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 			call whichGroup.addUnitsInRange(GetUnitX(caster), GetUnitY(caster), 700.0, Filter(function thistype.filter))
 			call whichGroup.removeEnemiesOfUnit(caster)
 			call whichGroup.units().remove(caster)
-			
+
 			set i = 0
 			loop
 				exitwhen (i == whichGroup.units().size())
@@ -66,7 +66,7 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 					set i = i + 1
 				endif
 			endloop
-			
+
 			set i = 0
 			loop
 				exitwhen (i == 12 or i == whichGroup.units().size())
@@ -76,7 +76,7 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 			endloop
 			call whichGroup.destroy()
 			set whichGroup = 0
-			
+
 			call SetUnitPosition(caster, GetSpellTargetX(), GetSpellTargetY())
 			call TriggerSleepAction(0.0)
 			call IssueImmediateOrder(caster, "stop")

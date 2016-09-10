@@ -43,7 +43,6 @@ library StructGameMissions requires Asl, StructGameCharacter
 	 */
 	struct Missions extends AMultipageSpellbook
 		private Character m_character
-		private trigger m_pickupTrigger
 
 		public method character takes nothing returns Character
 			return this.m_character
@@ -53,31 +52,14 @@ library StructGameMissions requires Asl, StructGameCharacter
 			return this.addEntry(MissionEntry.create(this, abilityId, spellBookAbilityId, whichQuest))
 		endmethod
 
-		private static method triggerConditionPickup takes nothing returns boolean
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
-			return GetItemTypeId(GetManipulatedItem()) == 'I061'
-		endmethod
-
-		private static method triggerActionPickup takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
-			debug call Print("Picked up missions book and updating UI")
-			call this.updateUi()
-		endmethod
-
-		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character.unit(), 'A1RH', 'A1RJ', 'A1RC', 'A1RI')
+		public static method create takes Character character, unit whichUnit returns thistype
+			local thistype this = thistype.allocate(whichUnit, 'A1RH', 'A1RJ', 'A1RC', 'A1RI')
 			set this.m_character = character
-			set this.m_pickupTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(this.m_pickupTrigger, EVENT_PLAYER_UNIT_PICKUP_ITEM)
-			call TriggerAddCondition(this.m_pickupTrigger, Condition(function thistype.triggerConditionPickup))
-			call TriggerAddAction(this.m_pickupTrigger, function thistype.triggerActionPickup)
-			call DmdfHashTable.global().setHandleInteger(this.m_pickupTrigger, 0, this)
+			call this.setShortcut(tr("A"))
 			return this
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
-			call DmdfHashTable.global().destroyTrigger(this.m_pickupTrigger)
-			set this.m_pickupTrigger = null
 		endmethod
 
 		public static method addMissionToAll takes integer abilityId, integer spellBookAbilityId, AQuest whichQuest returns nothing
@@ -87,7 +69,7 @@ library StructGameMissions requires Asl, StructGameCharacter
 				exitwhen (i == MapData.maxPlayers)
 				set character = Character.playerCharacter(Player(i))
 				if (character != 0) then
-					call character.missions().addMission(abilityId, spellBookAbilityId, whichQuest)
+					call character.options().missions().addMission(abilityId, spellBookAbilityId, whichQuest)
 				endif
 				set i = i + 1
 			endloop

@@ -101,4 +101,65 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 		endmethod
 	endstruct
 
+	private struct DungeonEntry extends AMultipageSpellbookAction
+		private Dungeon m_dungeon
+
+		public method dungeonSpellbook takes nothing returns DungeonSpellbook
+			return DungeonSpellbook(this.multipageSpellbook())
+		endmethod
+
+		public method dungeon takes nothing returns Dungeon
+			return this.m_dungeon
+		endmethod
+
+		public stub method onTrigger takes nothing returns nothing
+			call this.dungeon().setCameraBoundsForPlayer(this.dungeonSpellbook().character.evaluate().player())
+		endmethod
+
+		public static method create takes DungeonSpellbook dungeonSpellbook, integer abilityId, integer spellBookAbilityId, Dungeon dungeon returns thistype
+			local thistype this = thistype.allocate(dungeonSpellbook, abilityId, spellBookAbilityId)
+			set this.m_dungeon = dungeon
+
+			return this
+		endmethod
+	endstruct
+
+	/**
+	 * \brief Every character gets an item with a spellbook ability which contains icons for all active missions. Clicking on an icon pans the camera to the mission's target location.
+	 */
+	struct DungeonSpellbook extends AMultipageSpellbook
+		private Character m_character
+
+		public method character takes nothing returns Character
+			return this.m_character
+		endmethod
+
+		public method addDungeon takes integer abilityId, integer spellBookAbilityId, Dungeon dungeon returns integer
+			return this.addEntry(DungeonEntry.create(this, abilityId, spellBookAbilityId, dungeon))
+		endmethod
+
+		public static method create takes Character character, unit whichUnit returns thistype
+			local thistype this = thistype.allocate(whichUnit, 'A1TW', 'A1TY', 'A1TX', 'A1TZ')
+			set this.m_character = character
+			call this.setShortcut(tr("D"))
+			return this
+		endmethod
+
+		public method onDestroy takes nothing returns nothing
+		endmethod
+
+		public static method addDungeonToAll takes integer abilityId, integer spellBookAbilityId, Dungeon dungeon returns nothing
+			local Character character = 0
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				set character = Character.playerCharacter(Player(i))
+				if (character != 0) then
+					call character.options().dungeons().addDungeon(abilityId, spellBookAbilityId, dungeon)
+				endif
+				set i = i + 1
+			endloop
+		endmethod
+	endstruct
+
 endlibrary

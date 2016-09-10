@@ -348,9 +348,16 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Evtl. weil Allianzen zu sich selbst gesetzt wurden (SetAllianceState Player(0) Player(0))
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* Da Auftragsgegenstand mit mehreren Seiten nicht geht und Shortcuts für Optionen fehlen ("-menu" ist umständlich!), Helden-Button hinzufügen mit Auftragszielen, Dungeonoption usw usw.:
+	- Untermenü mit Auftragszielpunkten
+	- Untermenü mit Dungeons
+	- Untermenü mit Texten aus Gesprächen mit NPCs (AInfoLog)
+	- Untermenü mit Emotes
+
+* FIXED: Maximalstufe in Holzbruck ist nur 30.
 * War transformed als Engel. Wurde getötet (mit rucksack only) beim Betreten von Baldars Gebiet. Nach Tod lagen Gegenstände auf dem Boden.
 * Trackables an den Grabsteinen erzeugen (Signs) zum Lesen. Easteregg wie in Gothic 2, Referenz zu Gothic. Hätte Faelon gerne gehabt.
-* Man konnte als Engel/Dämon verwandelt die Trommelhöhle verlassen. Beim verlassen der Höhle im struct Aos zurückverwandeln, falls verwandelt!
+* Man konnte als Engel/Dämon verwandelt die Trommelhöhle verlassen. Beim Verlassen der Höhle im struct Aos zurückverwandeln, falls verwandelt!
 * AOS-Leaderboard-Titel fehlte?!
 * Kornfresserauftrag nach erstem Kornfresser abgeschlossen.
 * Wenn ein Video in bestimmtem Moment unterbrochen wird (fade????) in Karte Gardonar (Intro) kommen danach noch Transmissions.
@@ -358,7 +365,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Alle laufenden Zauber unterbrechen bevor man die Karte wechselt (DynamicLightnings etc.). Am besten auch Ausfaden wie in Bonus-Kampagne und Einheit pausieren, damit kein Unsinn mehr passiert.
 * Optional: ClassGrimoireEntry mit dem neuen AMultipageSpellbook-System umsetzen?
 * Mit dem neuen Startlevel beginnt man mit Stufe 2?!
-* Startlevel pro Karte einbauen, da manche Karten ein höheres Level erfordern.
+* FIXED: Startlevel pro Karte einbauen, da manche Karten ein höheres Level erfordern.
 * FIXED: Die Tipps zum Erreichen der Stufe und Schrein kommen in jeder Karte erneut.
 * FIXED: Die Skillpunkte stimmen nach Kartenwechsel nicht, allerdings erst nach erstem Level Up (siehe Let's Play, auf einmal 78 Skill Punkte - auf Stufe 40 = 2 * 40???).
 * DONE: Nicht verwendete/alte Sounddateien aus dem MPQ-Archiv-Ordner entfernen (veschieben), damit die .exe-Datei kleiner wird:
@@ -461,7 +468,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Use water textures from Born2Modificates package.
 * Arcane Time has the same ID as some other spell from the wizard. No valid targets in range comes when all spells are skilled in arena.
 * FIXED: When talking to an NPC the NPC does not stop his routine, he walks away (Björn).
-* Hotkeys dont work when buying a unit like "Speak to NPC".
+* FIXED (Hotkeys must be specified as sold unit in Object Editor): Hotkeys dont work when buying a unit like "Speak to NPC".
 * Fade trees slowly.
 * DEPRECATED: Update loading screens, different loading screen for map Gardonar.
 * Reduce transparency to 0.7 or something.
@@ -514,9 +521,10 @@ Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.
 
 Weitere TODOS:
+* Frostränder in Hauptmenü durch Ränder aus Dämonen-Interface ersetzen.
 * Splash Screen in der custom exe: Programm Resource Hacker: http://www.hiveworkshop.com/threads/how-to-replace-the-splash-screen-of-warcraft-iii.287721/#post-3088398
 * Grundzauber reinschreiben nur eine Stufe.
-* Add spell attributes bonus with hidden icon and max level of 100. The player can skill this spell when he has skilled all other spells to maximum. Increase the max hero level to 200.
+* DONE: Add spell attributes bonus with hidden icon and max level of 100. The player can skill this spell when he has skilled all other spells to maximum. Increase the max hero level to 200.
 * Arenagegner viel zu schwach. Magier auch Zauber benutzen, Krieger stärker.
 * Video Wigberht: Charakter ist weggelaufen bei Unterhaltung mit Wigberht.
 * Video Wigberht: Keine Angriffsanimation gegen Orkanführer.

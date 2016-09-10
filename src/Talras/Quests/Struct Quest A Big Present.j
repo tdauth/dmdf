@@ -7,7 +7,7 @@ library StructMapQuestsQuestABigPresent requires Asl, StructGameCharacter, Struc
 
 		public stub method enable takes nothing returns boolean
 			call Character(this.character()).giveQuestItem(thistype.itemTypeId)
-			call Character(this.character()).missions().addMission('A1RK', 'A1R8', this)
+			call Character(this.character()).options().missions().addMission('A1R8', 'A1RK', this)
 			return super.enableUntil(1)
 		endmethod
 

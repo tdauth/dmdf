@@ -7,7 +7,7 @@ library StructMapQuestsQuestALittlePresent requires Asl, StructGameCharacter, St
 
 		public stub method enable takes nothing returns boolean
 			call Character(this.character()).giveQuestItem(thistype.itemTypeId)
-			call Character(this.character()).missions().addMission('A1RL', 'A1R9', this)
+			call Character(this.character()).options().missions().addMission('A1R9', 'A1RL', this)
 			return super.enableUntil(1)
 		endmethod
 

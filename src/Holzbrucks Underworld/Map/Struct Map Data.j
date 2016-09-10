@@ -39,7 +39,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
-			set thistype.m_zoneHolzbruck = Zone.create("HL", gg_rct_zone_holzbruck)
+			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
