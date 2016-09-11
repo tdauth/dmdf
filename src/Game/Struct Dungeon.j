@@ -101,29 +101,6 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 		endmethod
 	endstruct
 
-	private struct DungeonEntry extends AMultipageSpellbookAction
-		private Dungeon m_dungeon
-
-		public method dungeonSpellbook takes nothing returns DungeonSpellbook
-			return DungeonSpellbook(this.multipageSpellbook())
-		endmethod
-
-		public method dungeon takes nothing returns Dungeon
-			return this.m_dungeon
-		endmethod
-
-		public stub method onTrigger takes nothing returns nothing
-			call this.dungeon().setCameraBoundsForPlayer(this.dungeonSpellbook().character.evaluate().player())
-		endmethod
-
-		public static method create takes DungeonSpellbook dungeonSpellbook, integer abilityId, integer spellBookAbilityId, Dungeon dungeon returns thistype
-			local thistype this = thistype.allocate(dungeonSpellbook, abilityId, spellBookAbilityId)
-			set this.m_dungeon = dungeon
-
-			return this
-		endmethod
-	endstruct
-
 	/**
 	 * \brief Every character gets an item with a spellbook ability which contains icons for all active missions. Clicking on an icon pans the camera to the mission's target location.
 	 */
@@ -135,7 +112,7 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 		endmethod
 
 		public method addDungeon takes integer abilityId, integer spellBookAbilityId, Dungeon dungeon returns integer
-			return this.addEntry(DungeonEntry.create(this, abilityId, spellBookAbilityId, dungeon))
+			return this.addEntry(DungeonEntry.create.evaluate(this, abilityId, spellBookAbilityId, dungeon))
 		endmethod
 
 		public static method create takes Character character, unit whichUnit returns thistype
@@ -159,6 +136,29 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 				endif
 				set i = i + 1
 			endloop
+		endmethod
+	endstruct
+
+	struct DungeonEntry extends AMultipageSpellbookAction
+		private Dungeon m_dungeon
+
+		public method dungeonSpellbook takes nothing returns DungeonSpellbook
+			return DungeonSpellbook(this.multipageSpellbook())
+		endmethod
+
+		public method dungeon takes nothing returns Dungeon
+			return this.m_dungeon
+		endmethod
+
+		public stub method onTrigger takes nothing returns nothing
+			call this.dungeon().setCameraBoundsForPlayer(this.dungeonSpellbook().character().player())
+		endmethod
+
+		public static method create takes DungeonSpellbook dungeonSpellbook, integer abilityId, integer spellBookAbilityId, Dungeon dungeon returns thistype
+			local thistype this = thistype.allocate(dungeonSpellbook, abilityId, spellBookAbilityId)
+			set this.m_dungeon = dungeon
+
+			return this
 		endmethod
 	endstruct
 

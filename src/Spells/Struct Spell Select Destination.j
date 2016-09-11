@@ -17,26 +17,17 @@ library StructSpellsSpellSelectDestination requires Asl
 		endmethod
 
 		private static method triggerActionSpell takes nothing returns nothing
-			local unit triggerUnit = GetTriggerUnit()
-			call WaygateSetDestination(triggerUnit, GetSpellTargetX(), GetSpellTargetY())
-			if (not WaygateIsActive(triggerUnit)) then
-				call WaygateActivate(triggerUnit, true)
+			call WaygateSetDestination(GetTriggerUnit(), GetSpellTargetX(), GetSpellTargetY())
+			if (not WaygateIsActive(GetTriggerUnit())) then
+				call WaygateActivate(GetTriggerUnit(), true)
 			endif
-			set triggerUnit = null
 		endmethod
 
 		public static method init takes nothing returns nothing
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_spellTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_spellTrigger, EVENT_PLAYER_UNIT_SPELL_CAST)
-			set conditionFunction = Condition(function thistype.triggerConditionSpell)
-			set triggerCondition = TriggerAddCondition(thistype.m_spellTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_spellTrigger, function thistype.triggerActionSpell)
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerAddCondition(thistype.m_spellTrigger, Condition(function thistype.triggerConditionSpell))
+			call TriggerAddAction(thistype.m_spellTrigger, function thistype.triggerActionSpell)
 		endmethod
 	endstruct
 

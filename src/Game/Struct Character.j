@@ -1,181 +1,6 @@
 library StructGameCharacter requires Asl, StructGameDmdfHashTable
 
 	/**
-	 * \brief Handles attack animations of the Villager255 model. Whenever the unit attacks the attack animation is replaced depending on the equipped items.
-	 *
-	 * This can be used for copies of a character unit as well as illusions.
-	 * Otherwise animations of the copy in videos and illusions from spells won't be played properly!
-	 */
-	struct OrderAnimations
-		private Character m_character
-		private unit m_unit
-
-		public method setUnit takes unit whichUnit returns nothing
-			set this.m_unit = whichUnit
-		endmethod
-
-		public method unit takes nothing returns unit
-			return this.m_unit
-		endmethod
-
-		/**
-		 * Since the Villager255 model is used, animation indices have to be set manually depending on the weapon.
-		 * In this trigger the attack animation of the character is determined.
-		 */
-		private trigger m_animationOrderTrigger
-
-		private static method triggerConditionOrder takes nothing returns boolean
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			return this.unit() == GetAttacker()
-		endmethod
-
-		private static method triggerActionOrder takes nothing returns nothing
-			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			local AInventory inventory = this.m_character.inventory()
-			local AIntegerVector values = 0
-			/*
-			 * If the character is morphed it has not the villager255 model.
-			 * Illusions are only created from non-morphed characters.
-			 */
-			if (not this.m_character.isMorphed.evaluate() or IsUnitIllusion(this.unit())) then
-				// Attack 1 - 15, no weapon
-				if (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
-					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(13, 20))
-					//debug call Print("Attack without weapon")
-				// Attack Alternate 1 - 9, two handed sword
-				elseif (false) then
-					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(27, 29))
-				// Attack Defend 1 - 2, attack with buckler
-				// basically this should be already provided by the animation tag "defend"
-				elseif (inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 112)
-					//debug call Print("Attack with buckler")
-				// Attack throw 6 - 7, bow
-				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsBow.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), GetRandomInt(122, 123))
-					//debug call Print("Attack with bow")
-				// throwing spear
-				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsThrowingSpear.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 118) //  119
-					//debug call Print("Attack with a throwing spear")
-				// attacking with spear in melee
-				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsMeleeSpear.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 117)
-					//debug call Print("Attack with spear in melee")
-				// attacking with two handed lance
-				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedLance.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 61)
-					//debug call Print("Attack with two handed lance")
-				// attacking with two handed hammer
-				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and ItemTypes.itemTypeIdIsTwoHandedHammer.evaluate(inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId())) then
-					call SetUnitAnimationByIndex(GetAttacker(), 62)
-					//debug call Print("Attack with two handed hammer")
-				// attack with a weapon in each hand -> no buckler in right hand
-				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
-					// attack either with left or right hand TODO animation for both hands?
-					set values = AIntegerVector.create()
-					call values.pushBack(21)
-					call values.pushBack(22)
-					call values.pushBack(40)
-					call values.pushBack(41)
-					call values.pushBack(23)
-					call values.pushBack(24)
-					call values.pushBack(25)
-					call values.pushBack(26)
-					call SetUnitAnimationByIndex(GetAttacker(), values.random())
-					call values.destroy()
-					//debug call Print("Attack with two weapons")
-				// Attack with one left handed weapon
-				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) == 0) then
-					set values = AIntegerVector.create()
-					call values.pushBack(21)
-					call values.pushBack(41)
-					call values.pushBack(42)
-					call values.pushBack(23)
-					call values.pushBack(25)
-					call SetUnitAnimationByIndex(GetAttacker(), values.random())
-					call values.destroy()
-					//debug call Print("Attack with one left handed weapon")
-				// Attack with one right handed weapon
-				elseif (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) == 0 and inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0 and not ItemTypes.itemTypeIdIsBuckler.evaluate(inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon).itemTypeId())) then
-					set values = AIntegerVector.create()
-					call values.pushBack(22)
-					call values.pushBack(39)
-					call values.pushBack(40)
-					call values.pushBack(24)
-					call values.pushBack(26)
-					call SetUnitAnimationByIndex(GetAttacker(), values.random())
-					call values.destroy()
-					//debug call Print("Attack with one right handed weapon")
-				debug else
-					debug call Print("Unknown attack style! Implement animation!")
-				endif
-			endif
-		endmethod
-
-		public static method create takes Character character, unit whichUnit returns thistype
-			local thistype this = thistype.allocate()
-			set this.m_character = character
-			set this.m_unit = whichUnit
-
-			set this.m_animationOrderTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(this.m_animationOrderTrigger, EVENT_PLAYER_UNIT_ATTACKED)
-			call TriggerAddCondition(this.m_animationOrderTrigger, Condition(function thistype.triggerConditionOrder))
-			call TriggerAddAction(this.m_animationOrderTrigger, function thistype.triggerActionOrder)
-			call DmdfHashTable.global().setHandleInteger(this.m_animationOrderTrigger, 0, this)
-
-			return this
-		endmethod
-
-		public method onDestroy takes nothing returns nothing
-			call DmdfHashTable.global().destroyTrigger(this.m_animationOrderTrigger)
-			set this.m_animationOrderTrigger = null
-		endmethod
-	endstruct
-
-	/**
-	 * \brief Hero button in the left top corner with options and lists of missions.
-	 */
-	struct Options
-		private Character m_character
-		private unit m_unit
-		private Missions m_missions
-		private DungeonSpellbook m_dungeons
-
-		public method missions takes nothing returns Missions
-			return this.m_missions
-		endmethod
-
-		public method dungeons takes nothing returns DungeonSpellbook
-			return this.m_dungeons
-		endmethod
-
-		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate()
-			set this.m_character = character
-			set this.m_unit = CreateUnit(character.player(), 'H03D', GetUnitX(character.unit()), GetUnitY(character.unit()), 0.0)
-			call SetUnitInvulnerable(this.m_unit, true)
-			call SetUnitPathing(this.m_unit, false)
-			call SetUnitVertexColor(this.m_unit, 255, 255, 255, 0)
-			set this.m_missions = Missions.create.evaluate(character, this.m_unit)
-			set this.m_dungeons = DungeonSpellbook.create.evaluate(character, this.m_unit)
-
-			call UnitAddAbility(this.m_unit, 'A1BY')
-			call UnitAddAbility(this.m_unit, 'A1TT')
-			call UnitAddAbility(this.m_unit, 'A1TU')
-
-			return this
-		endmethod
-
-		public method onDestroy takes nothing returns nothing
-			call RemoveUnit(this.m_unit)
-			set this.m_unit = null
-			call this.m_missions.destroy()
-			call this.m_dungeons.destroy()
-		endmethod
-	endstruct
-
-	/**
 	 * This function interface can be used to react to crafting events.
 	 * Functions which match to this interface can be registered via \ref Character#addOnCraftItemFunction() and will be called whenever the character crafts an item.
 	 */
@@ -274,6 +99,46 @@ endif
 			return this.m_isInPvp
 		endmethod
 
+		public method isViewEnabled takes nothing returns boolean
+			return this.view().isEnabled()
+		endmethod
+
+		public method setCameraDistance takes real cameraDistance returns nothing
+			set this.m_cameraDistance = cameraDistance
+			call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
+		endmethod
+
+		public method cameraDistance takes nothing returns real
+			return this.m_cameraDistance
+		endmethod
+
+		private static method timerFunctionCamera takes nothing returns nothing
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
+			if (not this.isViewEnabled() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown() and AClassSelection.playerClassSelection(this.player()) == 0) then
+				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, thistype.cameraTimerInterval)
+			endif
+		endmethod
+
+		/**
+		 * Enables or disables the camera timer which applies the custom camera distance.
+		 * \param enabled If this value is true and the 3rd person view is not enbaled, the camera distance timer is started. Otherwise it is paused.
+		 */
+		public method setCameraTimer takes boolean enabled returns nothing
+			if (enabled and this.isViewEnabled()) then
+				return
+			endif
+			if (enabled and this.m_cameraTimerEnabled) then
+				debug call this.print("Enabling camera timer twice!")
+				return
+			endif
+			set this.m_cameraTimerEnabled = enabled
+			if (enabled) then
+				call TimerStart(this.m_cameraTimer, thistype.cameraTimerInterval, true, function thistype.timerFunctionCamera)
+			else
+				call PauseTimer(this.m_cameraTimer)
+			endif
+		endmethod
+
 		/**
 		 * Enables or disables the 3rd person camera view.
 		 * \param enabled If this value is true the 3rd person camera view will be enabled. Otherwise it will be disabled.
@@ -284,18 +149,14 @@ endif
 				call this.view().setEnableAgain(false)
 				call this.view().disable()
 				call ResetToGameCameraForPlayer(this.player(), 0.0)
-				call this.setCameraTimer.evaluate(true)
+				call this.setCameraTimer(true)
 			elseif (enabled and not this.view().enableAgain()) then
-				call this.setCameraTimer.evaluate(false)
+				call this.setCameraTimer(false)
 				call this.view().setEnableAgain(true)
 				call this.view().enable()
 			debug else
 				debug call Print("Character: Error since view has already enabled state.")
 			endif
-		endmethod
-
-		public method isViewEnabled takes nothing returns boolean
-			return this.view().isEnabled()
 		endmethod
 
 		public method showCharactersScheme takes nothing returns boolean
@@ -430,7 +291,7 @@ endif
 		endmethod
 
 		public stub method onReplaceUnit takes unit oldUnit, unit newUnit returns nothing
-			call this.m_orderAnimations.setUnit(newUnit)
+			call this.m_orderAnimations.setUnit.evaluate(newUnit)
 		endmethod
 
 		public stub method onRevival takes nothing returns nothing
@@ -565,42 +426,6 @@ endif
 			return true
 		endmethod
 
-		public method setCameraDistance takes real cameraDistance returns nothing
-			set this.m_cameraDistance = cameraDistance
-			call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
-		endmethod
-
-		public method cameraDistance takes nothing returns real
-			return this.m_cameraDistance
-		endmethod
-
-		private static method timerFunctionCamera takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
-			if (not this.isViewEnabled() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown() and AClassSelection.playerClassSelection(this.player()) == 0) then
-				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, thistype.cameraTimerInterval)
-			endif
-		endmethod
-
-		/**
-		 * Enables or disables the camera timer which applies the custom camera distance.
-		 * \param enabled If this value is true and the 3rd person view is not enbaled, the camera distance timer is started. Otherwise it is paused.
-		 */
-		public method setCameraTimer takes boolean enabled returns nothing
-			if (enabled and this.isViewEnabled()) then
-				return
-			endif
-			if (enabled and this.m_cameraTimerEnabled) then
-				debug call this.print("Enabling camera timer twice!")
-				return
-			endif
-			set this.m_cameraTimerEnabled = enabled
-			if (enabled) then
-				call TimerStart(this.m_cameraTimer, thistype.cameraTimerInterval, true, function thistype.timerFunctionCamera)
-			else
-				call PauseTimer(this.m_cameraTimer)
-			endif
-		endmethod
-
 		/**
 		 * The character crafts an item of item type \p itemTypeId which calls all registered \ref onCraftItemFunction() instances with .evaluate.
 		 */
@@ -722,19 +547,22 @@ endif
 		private static method triggerActionSpawnIllusion takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			debug call Print("Spawning illusion")
-			call this.m_illusionOrderAnimations.pushBack(OrderAnimations.create(this, GetSummonedUnit()))
+			// TODO use equipment and not backpack before spawning or replace items of illusion!
+			call this.m_illusionOrderAnimations.pushBack(OrderAnimations.create.evaluate(this, GetSummonedUnit()))
 		endmethod
 
 		private static method triggerConditionIllusionDies takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
+			local OrderAnimations orderAnimations = 0
 			local AIntegerListIterator iterator = 0
 			if (IsUnitIllusion(GetTriggerUnit())) then
 				set iterator = this.m_illusionOrderAnimations.begin()
 				loop
 					exitwhen (not iterator.isValid())
-					if (GetTriggerUnit() == OrderAnimations(iterator.data()).unit()) then
+					set orderAnimations = OrderAnimations(iterator.data())
+					if (GetTriggerUnit() == orderAnimations.unit.evaluate()) then
 						debug call Print("Removing order for illusion")
-						call OrderAnimations(iterator.data()).destroy()
+						call orderAnimations.destroy.evaluate()
 						set iterator = this.m_illusionOrderAnimations.erase(iterator)
 						exitwhen (true)
 					endif
@@ -813,7 +641,12 @@ endif
 static if (DMDF_INFO_LOG) then
 			set this.m_infoLog = InfoLog.create.evaluate(this)
 endif
-			set this.m_options = Options.create.evaluate(this)
+			// hide hero icon, otherwise it takes the place of one by another player
+			if (GetPlayerController(this.player()) == MAP_CONTROL_USER) then
+				set this.m_options = Options.create.evaluate(this)
+			else
+				set this.m_options = 0
+			endif
 			set this.m_classSpells = AIntegerVector.create()
 			set this.m_quests = quests
 			if (this.m_quests == 0) then
@@ -834,7 +667,7 @@ endif
 			set this.m_cameraTimerEnabled = false
 			// dont start the timer since the character might be created during map initialization
 
-			set this.m_orderAnimations = OrderAnimations.create(this, this.unit())
+			set this.m_orderAnimations = OrderAnimations.create.evaluate(this, this.unit())
 			set this.m_illusionOrderAnimations = AIntegerList.create()
 
 			set this.m_spawnIllusionTrigger = CreateTrigger()
@@ -874,7 +707,10 @@ endif
 static if (DMDF_INFO_LOG) then
 			call this.m_infoLog.destroy.evaluate()
 endif
-			call this.m_options.destroy.evaluate()
+			if (this.m_options != 0) then
+				call this.m_options.destroy.evaluate()
+			endif
+
 			call this.m_classSpells.destroy()
 			set this.m_classSpells = 0
 

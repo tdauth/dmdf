@@ -124,8 +124,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 
 		private static method triggerConditionStart takes nothing returns boolean
 			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			local boolean result = GetTriggerUnit() == this.character().unit() and GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId() and this.onCondition.evaluate()
-			return result
+			return GetTriggerUnit() == this.character().unit() and GetSpellAbilityId() != null and GetSpellAbilityId() == this.abilityId() and this.onCondition.evaluate()
 		endmethod
 
 		/**

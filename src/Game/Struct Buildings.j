@@ -1,4 +1,4 @@
-library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses, StructMapMapMapData
+library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 
 	/**
 	 * \brief Every player can acquire a plan for a building for his class and use it once. The building provides units and spells and allows collecting resources.
@@ -19,9 +19,10 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 		private static integer array m_collectedGold[12] // TODO MapData.maxPlayers
 
 		private static method timerFunctionRefill takes nothing returns nothing
-			if (MapData.goldmine() != null) then
-				if (GetResourceAmount(MapData.goldmine()) < 1000000) then
-					call SetResourceAmount(MapData.goldmine(), 1000000)
+			local unit goldmine = MapData.goldmine.evaluate()
+			if (goldmine != null) then
+				if (GetResourceAmount(goldmine) < 1000000) then
+					call SetResourceAmount(goldmine, 1000000)
 				endif
 			endif
 		endmethod
@@ -34,7 +35,7 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 				// TODO the trigger gets more and more events every time
 				call TriggerRegisterPlayerStateEvent(thistype.m_bringGoldTrigger, GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED, GREATER_THAN, thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())])
 
-				set gold = IMaxBJ(1, 10 * R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], MapData.goldmine()) / 1000.0))
+				set gold = IMaxBJ(1, 10 * R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], MapData.goldmine.evaluate()) / 1000.0))
 				debug call Print("Gathered gold: " + I2S(gold))
 				if (gold < actualGold) then
 					debug call Print("Adding gold: " + I2S(actualGold - gold))
@@ -147,7 +148,7 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 		private static method onInit takes nothing returns nothing
 			local integer i
 			set thistype.m_refillTimer = CreateTimer()
-			call TimerStart(thistype.m_refillTimer, 0.10, true, function thistype.timerFunctionRefill)
+			call TimerStart(thistype.m_refillTimer, 4.0, true, function thistype.timerFunctionRefill)
 
 			set thistype.m_bringGoldTrigger = CreateTrigger()
 			set i = 0

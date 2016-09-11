@@ -150,8 +150,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Rettet Dago!", "Rescue Dago!"))
-			local AQuestItem questItem0
-			local AQuestItem questItem1
+			local AQuestItem questItem = 0
 			set this.m_timer = CreateTimer()
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNAttentaeter.tga")
 			call this.setDescription(tre("Dago wird vor einer Höhle von zwei Bären angegriffen. Ihr müsst ihm zu Hilfe eilen.", "Dago is being attacked by two bears in front of a cage. You must help him."))
@@ -160,20 +159,20 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			call this.setStateAction(thistype.stateFailed, thistype.stateActionFailed)
 			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tre("Helft Dago die Bären zu töten.", "Help Dago to kill the bears."))
-			call questItem0.setPing(true)
-			call questItem0.setPingUnit(Npcs.dago())
-			call questItem0.setPingColour(100.0, 100.0, 100.0)
-			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
-			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
-			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
+			set questItem = AQuestItem.create(this, tre("Helft Dago die Bären zu töten.", "Help Dago to kill the bears."))
+			call questItem.setPing(true)
+			call questItem.setPingUnit(Npcs.dago())
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 			// item 1
-			set questItem1 = AQuestItem.create(this, tre("Folgt Dago zum Burgeingang.", "Follow Dago to the castle's gate."))
-			call questItem1.setPing(true)
-			call questItem1.setPingUnit(Npcs.dago())
-			call questItem1.setPingColour(100.0, 100.0, 100.0)
-			call questItem1.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted1)
-			call questItem1.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted1)
+			set questItem = AQuestItem.create(this, tre("Folgt Dago zum Burgeingang.", "Follow Dago to the castle's gate."))
+			call questItem.setPing(true)
+			call questItem.setPingUnit(Npcs.dago())
+			call questItem.setPingColour(100.0, 100.0, 100.0)
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted1)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted1)
 
 			set this.m_questArea = QuestAreaRescueDago.create(gg_rct_quest_rescue_dago_enable)
 

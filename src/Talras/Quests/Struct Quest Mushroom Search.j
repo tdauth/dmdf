@@ -1,4 +1,4 @@
-library StructMapQuestsQuestMushroomSearch requires Asl
+library StructMapQuestsQuestMushroomSearch requires Asl, StructGameCharacter
 
 	struct QuestMushroomSearch extends AQuest
 		private static constant integer requiredMushrooms = 4
@@ -17,7 +17,7 @@ library StructMapQuestsQuestMushroomSearch requires Asl
 
 		private static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, tre("Pilzsuche", "Mushroom Search"))
-			local AQuestItem questItem0
+			local AQuestItem questItem = 0
 
 			set this.m_mushrooms = 0
 
@@ -26,7 +26,7 @@ library StructMapQuestsQuestMushroomSearch requires Asl
 			call this.setReward(thistype.rewardExperience, 200)
 			call this.setReward(thistype.rewardGold, 30)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tre("Sammle einige essbare Pilze für Dago.", "Collect some ediable mushrooms for Dago."))
+			set questItem = AQuestItem.create(this, tre("Sammle einige essbare Pilze für Dago.", "Collect some ediable mushrooms for Dago."))
 
 			return this
 		endmethod

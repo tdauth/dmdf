@@ -119,7 +119,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Krieg", "War"))
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
 			call this.setDescription(tre("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden.", "In order to stop the impeding attacks of Orcs and Dark Elves, the conquered outpost has to be supplied. In addition, traps has to be placed before the walls that make it harder for the enemies to conquer the outpost. Furthermore, war suitable people need to be hired at the farm."))
 			call this.setReward(thistype.rewardExperience, 2000)

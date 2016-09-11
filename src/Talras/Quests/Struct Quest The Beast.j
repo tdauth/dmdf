@@ -1,4 +1,4 @@
-library StructMapQuestsQuestTheBeast requires Asl
+library StructMapQuestsQuestTheBeast requires Asl, StructGameCharacter
 
 	struct QuestTheBeast extends AQuest
 		private boolean m_foundTracks
@@ -18,7 +18,7 @@ library StructMapQuestsQuestTheBeast requires Asl
 			else
 				call this.displayUpdateMessage(tre("Finde noch mehr Hinweise!", "Find even more clues!"))
 			endif
-			
+
 			return false
 		endmethod
 
@@ -51,15 +51,14 @@ library StructMapQuestsQuestTheBeast requires Asl
 			endif
 			return false
 		endmethod
-		
+
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			call thistype(questItem.quest()).displayState()
 		endmethod
 
 		private static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, tre("Die Bestie", "The Beast"))
-			local AQuestItem questItem0
-			local AQuestItem questItem1
+			local AQuestItem questItem = 0
 			set this.m_foundTracks = false
 			set this.m_talkedToKuno = false
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNBestienhaeuptling.blp")
@@ -67,13 +66,13 @@ library StructMapQuestsQuestTheBeast requires Asl
 			call this.setReward(thistype.rewardExperience, 300)
 			call this.setReward(thistype.rewardGold, 30)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tre("Suche nach Hinweisen bezüglich des Ungeheuers.", "Search for clues regarding the monster."))
-			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
-			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
-			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
+			set questItem = AQuestItem.create(this, tre("Suche nach Hinweisen bezüglich des Ungeheuers.", "Search for clues regarding the monster."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 
 			// item 1
-			set questItem1 = AQuestItem.create(this, tre("Berichte Tanka von den gefundenen Hinweisen.", "Report Tanka about the found clues."))
+			set questItem = AQuestItem.create(this, tre("Berichte Tanka von den gefundenen Hinweisen.", "Report Tanka about the found clues."))
 
 			return this
 		endmethod

@@ -5,7 +5,7 @@
  * Spells can be added to favourites and therefore be removed from the grimoire sub menu by using the "spell book" bug/exploit that abilities can be hidden, so each spell ability needs a corresponding favourites ability based on "spell book" which contains the spell ability and has the same spell book id as the grimoire sub menu ability.
  * \note Warcraft III's hero skills simply cannot be used since they are limited up to 5.
  */
-library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
+library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, StructGameGrimoireSpell
 
 	/**
 	 * \brief The grimoire of a character allows the player to skill any abilities of the character. It avoids a limit of 6 hero abilities.
@@ -228,6 +228,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 		public method updateUi takes nothing returns nothing
 			local integer i
 			local integer index
+			local unit whichUnit = this.character().unit()
 
 			//debug call Print("Hiding spells with count in grimoire: " + I2S(this.m_uiGrimoireSpells.size()))
 			/*
@@ -237,16 +238,16 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			loop
 				exitwhen (i == this.m_uiGrimoireSpells.size())
 				if (this.m_uiGrimoireSpells[i] != 0) then
-					call GrimoireSpell(this.m_uiGrimoireSpells[i]).hide.evaluate()
+					call GrimoireSpell(this.m_uiGrimoireSpells[i]).hide(whichUnit)
 				endif
 				set i = i + 1
 			endloop
 			call this.m_uiGrimoireSpells.clear()
 
 			if (this.pageIsShown()) then
-				call this.m_spellPreviousPage.show.evaluate()
+				call this.m_spellPreviousPage.show(whichUnit)
 				call this.m_uiGrimoireSpells.pushBack(this.m_spellPreviousPage)
-				call this.m_spellNextPage.show.evaluate()
+				call this.m_spellNextPage.show(whichUnit)
 				call this.m_uiGrimoireSpells.pushBack(this.m_spellNextPage)
 
 				set i = 0
@@ -278,28 +279,28 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 
 				// show an ability to return back to the spells overview
 				// in fact the grimoire spell itself has the same functionality but it is not recognizable by the user
-				call this.m_spellBackToGrimoire.show.evaluate()
+				call this.m_spellBackToGrimoire.show(whichUnit)
 				call this.m_uiGrimoireSpells.pushBack(this.m_spellBackToGrimoire)
 
 				if (this.currentSpell().isSkillable()) then
-					call this.m_spellSetMax.show.evaluate()
+					call this.m_spellSetMax.show(whichUnit)
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellSetMax)
-					call this.m_spellIncrease.show.evaluate()
+					call this.m_spellIncrease.show(whichUnit)
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellIncrease)
 				endif
 				if (this.currentSpell().level() > 0) then
-					call this.m_spellUnlearn.show.evaluate()
+					call this.m_spellUnlearn.show(whichUnit)
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellUnlearn)
-					call this.m_spellDecrease.show.evaluate()
+					call this.m_spellDecrease.show(whichUnit)
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellDecrease)
 
 					if (this.m_favourites.contains(this.currentSpell())) then
 						debug call Print("Spell is part of favorites.")
-						call this.m_spellRemoveFromFavourites.show.evaluate()
+						call this.m_spellRemoveFromFavourites.show(whichUnit)
 						call this.m_uiGrimoireSpells.pushBack(this.m_spellRemoveFromFavourites)
 					elseif (this.m_favourites.size() < thistype.maxFavourites) then
 						debug call Print("Spell is not part of favorites and favorites are not full.")
-						call this.m_spellAddToFavourites.show.evaluate()
+						call this.m_spellAddToFavourites.show(whichUnit)
 						call this.m_uiGrimoireSpells.pushBack(this.m_spellAddToFavourites)
 					debug else
 						debug call Print("Spell is not part of favorites but favorites are full.")
@@ -499,53 +500,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell
 			return true
 		endmethod
 
-		/// Adds spell \p spell to grimoire. If \p spellType is \ref Spell.spellTypeDefault it will be added with level 1.
-		public method addSpell takes Spell spell, boolean updateUi returns nothing
-			debug if (this.m_spells.contains(spell)) then
-			debug call Print("Contains already spell: " + GetAbilityName(spell.ability()))
-			debug endif
-
-			call this.m_spells.pushBack(spell)
-
-			if (spell.spellType() == Spell.spellTypeDefault) then
-				call this.setSpellMaxLevelByIndex.evaluate(this.m_spells.backIndex(), false)
-			endif
-
-			if (updateUi) then
-				call this.updateUi()
-			endif
-		endmethod
-
-		public method removeSpellByIndex takes integer index, boolean updateUi returns boolean
-			local Spell spell = 0
-static if (DEBUG_MODE) then
-			if (index < 0 or index >= this.m_spells.size()) then
-				call this.printMethodError("removeSpellByIndex", "Wrong spell index: " + I2S(index) + ".")
-				return false
-			endif
-endif
-			set spell = Spell(this.m_spells[index])
-static if (DEBUG_MODE) then
-			if (spell.spellType() == Spell.spellTypeDefault) then
-				call this.print("Warning: Removing default spell " + GetObjectName(spell.ability()) + ".")
-			endif
-endif
-			if (spell.level() > 0) then
-				if (this.m_favourites.contains(spell)) then
-					call this.unlearnFavouriteSpell(spell)
-				else
-					call this.unlearnSpell(spell)
-				endif
-			endif
-			call this.m_spells.erase(index)
-
-			if (updateUi) then
-				call this.updateUi()
-			endif
-
-			return true
-		endmethod
-
 		public method setSpellLevelWithoutConditions takes Spell spell, integer level, boolean updateUi returns boolean
 			local integer requiredSkillPoints = level - spell.level()
 
@@ -669,6 +623,53 @@ static if (DEBUG_MODE) then
 			endif
 endif
 			return this.setSpellMaxLevel(Spell(this.m_spells[index]), updateUi)
+		endmethod
+
+		/// Adds spell \p spell to grimoire. If \p spellType is \ref Spell.spellTypeDefault it will be added with level 1.
+		public method addSpell takes Spell spell, boolean updateUi returns nothing
+			debug if (this.m_spells.contains(spell)) then
+			debug call Print("Contains already spell: " + GetAbilityName(spell.ability()))
+			debug endif
+
+			call this.m_spells.pushBack(spell)
+
+			if (spell.spellType() == Spell.spellTypeDefault) then
+				call this.setSpellMaxLevelByIndex(this.m_spells.backIndex(), false)
+			endif
+
+			if (updateUi) then
+				call this.updateUi()
+			endif
+		endmethod
+
+		public method removeSpellByIndex takes integer index, boolean updateUi returns boolean
+			local Spell spell = 0
+static if (DEBUG_MODE) then
+			if (index < 0 or index >= this.m_spells.size()) then
+				call this.printMethodError("removeSpellByIndex", "Wrong spell index: " + I2S(index) + ".")
+				return false
+			endif
+endif
+			set spell = Spell(this.m_spells[index])
+static if (DEBUG_MODE) then
+			if (spell.spellType() == Spell.spellTypeDefault) then
+				call this.print("Warning: Removing default spell " + GetObjectName(spell.ability()) + ".")
+			endif
+endif
+			if (spell.level() > 0) then
+				if (this.m_favourites.contains(spell)) then
+					call this.unlearnFavouriteSpell(spell)
+				else
+					call this.unlearnSpell(spell)
+				endif
+			endif
+			call this.m_spells.erase(index)
+
+			if (updateUi) then
+				call this.updateUi()
+			endif
+
+			return true
 		endmethod
 
 		/**
@@ -1150,66 +1151,6 @@ endif
 
 			call DmdfHashTable.global().destroyTrigger(this.m_loadTrigger)
 			set this.m_loadTrigger = null
-		endmethod
-	endstruct
-
-	/**
-	 * \brief A grimoire spell is a spell which represents a specific action button in the grimoire. Other than \ref Spell it is not a class spell.
-	 */
-	struct GrimoireSpell extends ASpell
-		private Grimoire m_grimoire
-		private integer m_grimoireAbility
-
-		public method grimoire takes nothing returns Grimoire
-			return this.m_grimoire
-		endmethod
-
-		public method grimoireAbility takes nothing returns integer
-			return this.m_grimoireAbility
-		endmethod
-
-		public method isShown takes nothing returns boolean
-			return GetUnitAbilityLevel(this.grimoire().character().unit(), this.grimoireAbility()) > 0
-		endmethod
-
-		public method show takes nothing returns nothing
-			if (this.isShown()) then
-				return
-			endif
-
-			call UnitAddAbility(this.grimoire().character().unit(), this.grimoireAbility())
-			call SetPlayerAbilityAvailable(this.grimoire().character().player(), this.grimoireAbility(), false)
-			call SetUnitAbilityLevel(this.grimoire().character().unit(), this.ability(), 1)
-			call this.enable()
-		endmethod
-
-		public method hide takes nothing returns nothing
-			if (not this.isShown()) then
-				return
-			endif
-
-			call this.disable() // disable to prevent casts if some spells have the same id (spell book)
-			call UnitRemoveAbility(this.grimoire().character().unit(), this.grimoireAbility())
-		endmethod
-
-		public stub method onCastCondition takes nothing returns boolean
-			return this.grimoire().character().isMovable()
-		endmethod
-
-		public stub method onCastAction takes nothing returns nothing
-			call super.onCastAction()
-		endmethod
-
-		public static method create takes Grimoire grimoire, integer abilityId, integer grimoireAbility returns thistype
-			/*
-			 * Use EVENT_PLAYER_UNIT_SPELL_ENDCAST to prevent any null GetAbilityId() calls when the ability is removed before running trigger events.
-			 * Since the grimoire buttons do not need any event data like GetSpellTargetX() this event is just okay.
-			 */
-			local thistype this = thistype.allocate(grimoire.character(), abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_ENDCAST)
-			set this.m_grimoire = grimoire
-			set this.m_grimoireAbility = grimoireAbility
-
-			return this
 		endmethod
 	endstruct
 

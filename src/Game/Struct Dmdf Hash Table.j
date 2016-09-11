@@ -3,7 +3,7 @@ library StructGameDmdfHashTable requires Asl
 	globals
 		/**
 		 * Every hashtable key must be unique.
-		 *
+		 * These keys are only used on global objects such as units.
 		 * @{
 		 */
 		constant integer DMDF_HASHTABLE_KEY_TALK = A_HASHTABLE_KEY_MAX

@@ -348,9 +348,17 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Evtl. weil Allianzen zu sich selbst gesetzt wurden (SetAllianceState Player(0) Player(0))
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* Stall nach Holzbruck.
+* Reitender Charakter: Attachment Point-Namen für Hände vertauschen!
+* Extract game cheats into custom package to reduce .evaluate() calls.
+* FIXED: ItemTypes many .evaluates()
+* Spell.addGrimoireEntry() many .evaluates()
+* FIXED: Grimoire.updateUi() is slow because all show() and hide() methods are .evaluated!
 * Da Auftragsgegenstand mit mehreren Seiten nicht geht und Shortcuts für Optionen fehlen ("-menu" ist umständlich!), Helden-Button hinzufügen mit Auftragszielen, Dungeonoption usw usw.:
-	- Untermenü mit Auftragszielpunkten
-	- Untermenü mit Dungeons
+	- DONE: Untermenü mit Auftragszielpunkten
+	- DONE: Untermenü mit Dungeons
+	- DONE: Untermenü mit Spieloptionen
+	- DONE: Untermenü mit Kameraeinstellungen
 	- Untermenü mit Texten aus Gesprächen mit NPCs (AInfoLog)
 	- Untermenü mit Emotes
 
@@ -389,7 +397,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Klassenauswahltext "unwiderruflich" stimmt nicht mehr.
 * FIXED: Hundezwinger sollten weniger Hunde erzeugen (Auftrag die Verteidigung von Talras).
 * FIXED: Hunde zeitlich beschränkt machen (Auftrag die Verteidigung von Talras).
-* Karren sollten nicht teleportiert werden könne (Auftrag Krieg).
+* Karren und gekaufte Knechte sollten nicht teleportiert werden könne (Auftrag Krieg). Am besten MapData.excludeUnitTypeFromTeleport().
 * Karren sollten durch schwebenden Gegenstand gekennzeichnet sein (Auftrag Krieg).
 * Ferdinand's sounds are missing in video Recruit.
 * FIXED (gekürzt und neu zu MP3 konvertiert): Carstens Sound sind abgeschnitten, neu als MP3 formatieren.
@@ -408,7 +416,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Schrittesounds in Video das erste Gefecht einbauen, wenn die Nordmänner laufen.
 * Man kann durch Ursulas Stand laufen. Obwohl Blocker da sind? War Spieler fliegend oder so? Nachdem er sich in Wache verwandelt hat?!
 * Deranors Land-Sound ist noch der falsche Sound!
-* Ins Zauberbuch Button für Hauptmenü einfügen.
+* DEPRECATED (neues Hero-Icon): Ins Zauberbuch Button für Hauptmenü einfügen.
 * Lothar ist nicht dick und hat das gleiche Modell wie Kuno.
 * Gegenstand einbauen, der Neben-Aufträge anpingt! Ansonsten findet man sich nicht zurecht. Notfalls mit mehreren Seiten. Gegenstand Aufträge soll Seitenwechsel erlauben. Bei Abschluss sollen Symbole verschwinden, damit sie auf Seite 1 kommen.
 * "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?

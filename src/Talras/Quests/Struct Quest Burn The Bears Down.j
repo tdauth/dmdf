@@ -1,4 +1,4 @@
-library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
+library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructGameCharacter, StructMapMapNpcs
 
 	struct QuestBurnTheBearsDown extends AQuest
 		public static constant integer maxWood = 5
@@ -64,7 +64,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructMapMapNpcs
 
 		private static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, tre("Brennt die Bären nieder!", "Burn Down the Bears!"))
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNLiquidFire.blp")
 			call this.setDescription(tre("Dago, der Jäger, möchte gerne in der Bärenhöhle Feuer legen, um die dort verbliebenen Bären zu töten. Allerdings benötigt er dafür entsprechende Mittel.", "Dago the hunter would like to set fire in the bear cave to kill the remaining bears there. However he needs the corresponding resources."))

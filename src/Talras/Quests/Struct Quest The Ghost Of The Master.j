@@ -78,7 +78,7 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 
 		private static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, tre("Der Geist des Meisters", "The Ghost of the Master"))
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNUrnOfKelThuzad.blp")
 			call this.setDescription(tre("Sisgard kennt eine Zauberspruchformel, mit der sich Geister herbeirufen lassen. Da ihr Meister vor langer Zeit gestorben ist, will sie versuchen dessen Geist herbeizurufen, um wieder mit ihm in Kontakt zu treten. Ihr Meister wurde auf dem Friedhof nahe des Bauernhofs begraben.", "Sisgard knows a spell formula that can summon spirits. Since her master died long ago, she wants to try to summon his ghost to return to contact with him. Her master was buried in the graveyard next to the farm."))
 			call this.setReward(thistype.rewardExperience, 800)

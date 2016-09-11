@@ -1,4 +1,4 @@
-library StructMapQuestsQuestStormingTheMill requires Asl, StructMapMapNpcs, StructMapMapSpawnPoints
+library StructMapQuestsQuestStormingTheMill requires Asl, StructGameCharacter, StructMapMapNpcs, StructMapMapSpawnPoints
 
 	struct QuestStormingTheMill extends AQuest
 
@@ -79,12 +79,12 @@ library StructMapQuestsQuestStormingTheMill requires Asl, StructMapMapNpcs, Stru
 
 		private static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, tre("Sturm auf die Mühle", "Storm on the Mill"))
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNSheep.blp")
 			call this.setDescription(tre("Der Schafshirte auf dem Mühlberg westlich vom Bauernhof hat den Verstand verloren. Er will, dass die Wegelagerer bei Guntrichs Mühle weiter nördlich auf dem Berg in einem Angriff auf einem Schaf vernichtet werden.
 Achtung: Die Wegelagerer müssen vom Schaf herab getötet werden.", "The shepherd on the mill hill west of the farm has gone mad. He wants that the brigands at Guntrich's mill further north on the hill will be destroyed during an attack on a sheep. Warning: The brigands have to be killed from a sheep."))
 
-			call this.setReward(thistype.rewardExperience, 900)
+			call this.setReward(thistype.rewardExperience, 450)
 			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Kaufe ein Schaf vom Schafshirten für einen „Freundschaftspreis“.", "Buy a sheep from the shepherd for a \"friendship price\"."))

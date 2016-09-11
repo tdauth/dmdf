@@ -1,4 +1,4 @@
-library StructMapQuestsQuestABigPresent requires Asl, StructGameCharacter, StructMapMapNpcs
+library StructMapQuestsQuestABigPresent requires Asl, Game, StructMapMapNpcs
 
 	struct QuestABigPresent extends AQuest
 		public static constant integer itemTypeId = 'I03X'
@@ -6,8 +6,9 @@ library StructMapQuestsQuestABigPresent requires Asl, StructGameCharacter, Struc
 		implement CharacterQuest
 
 		public stub method enable takes nothing returns boolean
-			call Character(this.character()).giveQuestItem(thistype.itemTypeId)
-			call Character(this.character()).options().missions().addMission('A1R8', 'A1RK', this)
+			local Character character = Character(this.character())
+			call character.giveQuestItem(thistype.itemTypeId)
+			call character.options().missions().addMission('A1R8', 'A1RK', this)
 			return super.enableUntil(1)
 		endmethod
 

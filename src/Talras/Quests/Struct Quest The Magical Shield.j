@@ -45,7 +45,7 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 
 		private static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, tre("Der magische Schild", "The Magical Shield"))
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCurb.blp")
 			call this.setDescription(tre("Sisgard hat einen Zauberspruch kreiert, der einen magischen Schild erschaffen soll, welcher den Zaubernden vor Pfeilen schützt. Da sie den Zauber nicht selbst ausprobieren will, hat sie dir zwei Zauberspruchrollen gegeben, um dich darum zu kümmern.", "Sisgard has crafted a spell which should create a magical shield which protects the caster from arrows. Sinceshe does not want to try out the spell for herself, she gave you two scrolls to take care of it."))
 			call this.setReward(thistype.rewardExperience, 500)

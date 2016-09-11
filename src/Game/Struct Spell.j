@@ -1,4 +1,4 @@
-library StructGameSpell requires Asl, StructGameCharacter
+library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpell
 
 	/**
 	* @todo Use icon path and name etc. from ability with @param ABILITY_ID
@@ -205,10 +205,10 @@ library StructGameSpell requires Asl, StructGameCharacter
 				//debug call this.print("Last index " + I2S(firstIndex + Grimoire.spellsPerPage))
 				// spell doesn't belong to grimoire or is not shown on current page
 				if (grimoireIndex == -1 or (grimoireIndex < firstIndex or grimoireIndex >= firstIndex + Grimoire.spellsPerPage)) then
-					call entry.hide.evaluate()
+					call entry.hide(this.character().unit())
 				endif
 			else
-				call entry.hide.evaluate()
+				call entry.hide(this.character().unit())
 			endif
 			set this.m_grimoireEntries[this.m_grimoireEntries.find(0)] = entry // assign to first empty place
 		endmethod
@@ -353,7 +353,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 		 */
 		public method showGrimoireEntry takes nothing returns nothing
 			if (this.grimoireEntry() != 0) then
-				call this.grimoireEntry().show.evaluate()
+				call this.grimoireEntry().show(this.character().unit())
 			debug else
 				//debug call Print("Missing grimoire entry for spell " + GetObjectName(this.ability()) + " with level " + I2S(this.level()))
 			endif
@@ -367,12 +367,12 @@ library StructGameSpell requires Asl, StructGameCharacter
 		 */
 		public method hideGrimoireEntry takes nothing returns nothing
 			if (this.grimoireEntry() != 0) then
-				call this.grimoireEntry().hide.evaluate()
+				call this.grimoireEntry().hide(this.character().unit())
 			endif
 		endmethod
 
 		public method isGrimoireEntryShown takes nothing returns boolean
-			return GrimoireSpellEntry(this.grimoireEntries()[this.level()]).isShown.evaluate()
+			return GrimoireSpellEntry(this.grimoireEntries()[this.level()]).isShown(this.character().unit())
 		endmethod
 
 		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent returns thistype

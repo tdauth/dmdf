@@ -1,4 +1,4 @@
-library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructMapMapMapData
+library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructGameShrine
 
 	/**
 	 * \brief The scroll of the realm of the dead allows characters to teleport to any visible revival shrine on the map.

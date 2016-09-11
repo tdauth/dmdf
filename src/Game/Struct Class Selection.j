@@ -1,4 +1,4 @@
-library StructGameClassSelection requires Asl, StructGameClasses, StructGameCharacter, StructGameDungeon, StructGameGrimoire, Spells, StructMapMapMapData
+library StructGameClassSelection requires Asl, StructGameClasses, StructGameCharacter, StructGameDungeon, StructGameGrimoire, Spells
 
 	/**
 	 * \brief Stores all data which is reused after a player repicks his character class.
@@ -136,7 +136,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * Otherwise it could be used to create more and more items.
 			 */
 			if (not thistype.m_gameStarted) then
-				call MapData.createClassItems(character)
+				call MapData.createClassItems.evaluate(character)
 			endif
 
 			call character.setMovable(false)
@@ -162,7 +162,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				if (not last) then
 					debug call Print("Do not start the game")
 					call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
-					call MapData.onSelectClass(character, class, last)
+					call MapData.onSelectClass.evaluate(character, class, last)
 				else
 					debug call Print("Start game")
 
@@ -170,13 +170,13 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 						call thistype.endTimer()
 					endif
 
-					call MapData.onSelectClass(character, class, last)
+					call MapData.onSelectClass.evaluate(character, class, last)
 					call thistype.startGame()
 				endif
 			// Is a repick.
 			else
 				call character.setMovable(true)
-				call MapData.onSelectClass(character, class, last)
+				call MapData.onSelectClass.evaluate(character, class, last)
 			endif
 		endmethod
 
@@ -370,7 +370,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 
 		private static method initMapSpellsWithNewOpLimit takes Character character returns nothing
-			call MapData.initMapSpells(character)
+			call MapData.initMapSpells.evaluate(character)
 		endmethod
 
 		public stub method onCharacterCreation takes AClassSelection classSelection, unit whichUnit returns ACharacter
@@ -402,7 +402,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * This helps to inform the player about start items since he can see them but not use them.
 			 * The inventory ability should not allow to drop any of the items nor to use them.
 			 */
-			call MapData.createClassSelectionItems(this.currentClass(), whichUnit)
+			call MapData.createClassSelectionItems.evaluate(this.currentClass(), whichUnit)
 
 			/*
 			 * Apply the abilities of equipment items since they show effects like attached weapons.
@@ -595,9 +595,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			// new OpLimit if possible
 			set classSelection = thistype.createClassSelectionForPlayerWithNewOpLimit.evaluate(whichPlayer)
-			call classSelection.setStartX(MapData.startX(GetPlayerId(whichPlayer)))
-			call classSelection.setStartY(MapData.startY(GetPlayerId(whichPlayer)))
-			call classSelection.setStartFacing(MapData.startFacing(GetPlayerId(whichPlayer)))
+			call classSelection.setStartX(MapData.startX.evaluate(GetPlayerId(whichPlayer)))
+			call classSelection.setStartY(MapData.startY.evaluate(GetPlayerId(whichPlayer)))
+			call classSelection.setStartFacing(MapData.startFacing.evaluate(GetPlayerId(whichPlayer)))
 			call classSelection.setShowAttributes(true)
 			call classSelection.enableArrowKeySelection(false)
 			call classSelection.enableEscapeKeySelection(false)

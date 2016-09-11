@@ -129,7 +129,7 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 
 		private static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, tre("Rebhuhnjagd", "Partidge Hunting"))
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNWarEagle.blp")
 			call this.setDescription(tre("Der Jäger Björn aus Talras benötigt Rebhühner für den Herzog Heimrich. Um Rebhühner zu jagen braucht man einen Vorstehhund und einen Jagdfalken. Der Vorstehhund muss das Rebhuhn aufspüren und der Falke muss darüber abwarten. Sobald der Vorstehhund das Rebhuhn aufgescheucht hat und es losfliegt, stürzt der Falke sich darauf. Rebhühner befinden sich meist auf der Wiese neben dem Friedhof beim Bauernhof.", "The hunter Björn from Talras requires partridges for the duke Heimrich. In order to hunt partidges one needs a pointing dog and a hunting falcon. The pointing dog must track the partridge and the falcon must wait for it. Once the pointer dog has roused the partidge and it flies off the falcon pounces on it. Partridges are mostly located in the meadow next to the cemetery at the farm."))
 			call this.setReward(thistype.rewardExperience, 400)

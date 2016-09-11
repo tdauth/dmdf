@@ -1,4 +1,4 @@
-library StructSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
+library StructSpellsSpellScrollOfAncestors requires Asl, StructGameShrine
 
 	/**
 	 * This scroll is similar to \ref ScrollOfTheRealmOfTheDead but teleports multiple allied units to a shrine.
@@ -10,9 +10,9 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructMapMapMapData
 		// http://www.hiveworkshop.com/forums/triggers-scripts-269/does-getspelltargetx-y-work-177175/
 		// GetSpellTargetX() etc. does not work in conditions but in actions?
 		private method condition takes nothing returns boolean
-			local integer i
-			local Shrine shrine
-			local real dist
+			local integer i = 0
+			local Shrine shrine = 0
+			local real dist = 0.0
 			local boolean result = false
 			if (IsMaskedToPlayer(GetSpellTargetX(), GetSpellTargetY(), this.character().player())) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sichtbar sein.", "Target location has to be visible."))

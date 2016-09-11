@@ -1,4 +1,4 @@
-library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameMapChanger, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
+library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameMapChanger, StructGameOrderAnimations, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
 
 	/**
 	 * \brief This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
@@ -14,8 +14,6 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		private static constant real hpFactor = 1.0
 		private static constant real manaFactor = 2.0
 		private static constant real levelFactor = 100.0
-		private static constant real summands = 7.0
-		private static constant real dividend = 10.0
 		/// \note If the range is 0.0 or smaller it is ignored.
 		private static constant real range = 0.0
 		private static constant real xpHandicap = 0.10 // this XP factor is used to reduce the actual gained experience such as in the Bonus Campaign. We want to prevent the characters from leveling too fast. In the Bonus Campaign it is 10 % and on difficulty hard it is even 7 %.
@@ -46,7 +44,6 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 				// Warcraft 3 default XP formula
 				set result = I2R(GetUnitXP(whichUnit)) * thistype.xpHandicap
 				//debug call Print("Result is " + R2S(result))
-				//set result = result / (thistype.summands * (thistype.dividend - Game.missingPlayers.evaluate()))
 				if (killingUnit == character.unit()) then
 					set result = result * thistype.characterFactor
 				elseif (ACharacter.isUnitCharacter(killingUnit)) then
@@ -66,7 +63,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		 * \return Returns the XP.
 		 */
 		public static method giveUnitExperienceToCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
-			local integer experience = thistype.unitExperienceForCharacter(character, whichUnit, killingUnit) / ACharacter.countAll()
+			local integer experience = thistype.unitExperienceForCharacter(character, whichUnit, killingUnit)
 			//debug call Print("Experience: " + I2S(experience))
 			if (experience > 0) then
 				if (not IsUnitDeadBJ(character.unit())) then
@@ -122,7 +119,7 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		endmethod
 
 		public static method giveBountyToCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
-			local integer bounty = thistype.unitBountyForCharacter(character, whichUnit, killingUnit) / ACharacter.countAll()
+			local integer bounty = thistype.unitBountyForCharacter(character, whichUnit, killingUnit)
 			if (bounty > 0) then
 				call Bounty(character.player(), GetUnitX(whichUnit), GetUnitY(whichUnit), bounty)
 			endif

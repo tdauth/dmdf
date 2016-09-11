@@ -66,6 +66,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_boarsStart0
 		private static SpawnPoint m_boarsStart1
 		private static SpawnPoint m_boarsStart2
+		private static SpawnPoint m_boarsStart3
 
 		private static SpawnPoint m_wolves0
 		private static SpawnPoint m_wolves1
@@ -245,6 +246,15 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_boarsStart2.addNewItemType(index, 'I007', 1.0)
 			set index = thistype.m_boarsStart2.addUnitWithType(gg_unit_n002_0219, 1.0)
 			call thistype.m_boarsStart2.addNewItemType(index, 'I007', 1.0)
+
+			// boars start 3
+			set thistype.m_boarsStart3 = SpawnPoint.create()
+			set index = thistype.m_boarsStart3.addUnitWithType(gg_unit_n002_0688, 1.0)
+			call thistype.m_boarsStart3.addNewItemType(index, 'I007', 1.0)
+			set index = thistype.m_boarsStart3.addUnitWithType(gg_unit_n002_0682, 1.0)
+			call thistype.m_boarsStart3.addNewItemType(index, 'I007', 1.0)
+			set index = thistype.m_boarsStart3.addUnitWithType(gg_unit_n06K_0690, 1.0)
+			call thistype.m_boarsStart3.addNewItemType(index, 'I007', 1.0)
 
 			set thistype.m_wolves0 = SpawnPoint.create()
 			set index = thistype.m_wolves0.addUnitWithType(gg_unit_n02G_0140, 1.0)

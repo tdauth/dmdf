@@ -1,4 +1,4 @@
-library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
+library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter, StructGameGrimoire
 
 	/**
 	 * \brief Default item type struct for all item types in DMdF.
@@ -80,24 +80,24 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			// TODO unmorph before if it is morphed already
 			if (character != 0) then
-				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityIdByCharacter.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
+				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityIdByCharacter(character)) + " to unit " + GetUnitName(whichUnit))
 				/**
 				 * Make sure the current spell levels are up to date for later restoration.
 				 */
-				set realSpellLevels = character.grimoire().spellLevels.evaluate()
+				set realSpellLevels = character.grimoire().spellLevels()
 
 				/*
 				 * These two lines of code do the passive transformation to a range fighting unit.
 				 */
-				call UnitAddAbility(whichUnit, Classes.classRangeAbilityIdByCharacter.evaluate(character))
-				call UnitRemoveAbility(whichUnit, Classes.classRangeAbilityIdByCharacter.evaluate(character))
+				call UnitAddAbility(whichUnit, Classes.classRangeAbilityIdByCharacter(character))
+				call UnitRemoveAbility(whichUnit, Classes.classRangeAbilityIdByCharacter(character))
 				/*
 				 * Now the spell levels have to be readded and the grimoire needs to be updated since all abilities are gone.
 				 */
-				call character.grimoire().readd.evaluate(realSpellLevels)
+				call character.grimoire().readd(realSpellLevels)
 				call realSpellLevels.destroy()
 				set realSpellLevels = 0
-				call character.grimoire().updateUi.evaluate()
+				call character.grimoire().updateUi()
 			endif
 		endmethod
 
@@ -107,14 +107,14 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			debug call Print("Range item drop")
 
 			if (character != 0) then
-				debug call Print("Adding and removing ability " + GetObjectName(Classes.classMeleeAbilityIdByCharacter.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
-				set realSpellLevels = character.grimoire().spellLevels.evaluate()
-				call UnitAddAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter.evaluate(character))
-				call UnitRemoveAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter.evaluate(character))
-				call character.grimoire().readd.evaluate(realSpellLevels)
+				debug call Print("Adding and removing ability " + GetObjectName(Classes.classMeleeAbilityIdByCharacter(character)) + " to unit " + GetUnitName(whichUnit))
+				set realSpellLevels = character.grimoire().spellLevels()
+				call UnitAddAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter(character))
+				call UnitRemoveAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter(character))
+				call character.grimoire().readd(realSpellLevels)
 				call realSpellLevels.destroy()
 				set realSpellLevels = 0
-				call character.grimoire().updateUi.evaluate()
+				call character.grimoire().updateUi()
 			endif
 		endmethod
 

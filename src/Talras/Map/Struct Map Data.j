@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameGame, StructGameZone, StructMapMapShrines, StructMapMapNpcRoutines, StructMapMapWeather, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
+library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMapNpcRoutines, StructMapMapWeather, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapQuests, MapVideos
 
 	/**
 	 * \brief A static class which defines unit type ids with identifiers.

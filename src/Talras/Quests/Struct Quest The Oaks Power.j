@@ -44,26 +44,25 @@ library StructMapQuestsQuestTheOaksPower requires Asl, StructGameCharacter
 
 		private static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, tre("Die Kraft der Eiche", "The Power of the Oak"))
-			local AQuestItem questItem0
-			local AQuestItem questItem1
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNTreeOfEternity.blp")
 			call this.setDescription(tre("Ursula möchte, dass du die Seele einer wilden Kreatur unter einer alten Eiche einfängst und sie ihr bringst, damit sie die wilden Kreaturen, die sich seit Neustem bei der Eiche aufhalten verstehen lernen kann. Dazu hat sie dir ein Totem mitgegeben, mit welchem du die Seele einfangen kannst.", "Ursula wants you to capture the soul of a wild creature under an old oak tree and to bring it to her, so that she can learn to understand the wild creatures which reside most recently near to the oak. For this purpose she has given you a totem with which you can capture the soul."))
 			call this.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted)
 			call this.setReward(thistype.rewardExperience, 500)
 			call this.setReward(thistype.rewardGold, 300)
 			// item 0
-			set questItem0 = AQuestItem.create(this, tre("Fange die Seele einer der wilden Kreaturen bei der alten Eiche ein.", "Catch the soul of a wild creature at the old oak."))
-			call questItem0.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
-			call questItem0.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
-			call questItem0.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
-			call questItem0.setPing(true)
-			call questItem0.setPingCoordinatesFromRect(gg_rct_quest_the_oaks_power_quest_item_0)
-			call questItem0.setPingColour(100.0, 100.0, 100.0)
+			set questItem = AQuestItem.create(this, tre("Fange die Seele einer der wilden Kreaturen bei der alten Eiche ein.", "Catch the soul of a wild creature at the old oak."))
+			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
+			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
+			call questItem.setPing(true)
+			call questItem.setPingCoordinatesFromRect(gg_rct_quest_the_oaks_power_quest_item_0)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 			// item 1
-			set questItem1 = AQuestItem.create(this, tre("Bringe die eingefangene Seele zu Ursula.", "Bring the catched soul to Ursula."))
-			call questItem1.setPing(true)
-			call questItem1.setPingUnit(gg_unit_n01U_0203)
-			call questItem1.setPingColour(100.0, 100.0, 100.0)
+			set questItem = AQuestItem.create(this, tre("Bringe die eingefangene Seele zu Ursula.", "Bring the catched soul to Ursula."))
+			call questItem.setPing(true)
+			call questItem.setPingUnit(gg_unit_n01U_0203)
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			return this
 		endmethod
