@@ -11,22 +11,22 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_fireDemons
 		private static SpawnPoint m_boxes1
 		private static SpawnPoint m_boxes0
-		
+
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
 		endmethod
-		
+
 		public static method init takes nothing returns nothing
 			local integer index = 0
 			local integer itemIndex = 0
-			
+
 			// TODO add dropping item to boss I06X, to Gardonar's hell
 			//addNewItemType  integer itemTypeId, real weight returns integer
 			//addItemType takes integer index, integer itemTypeId, real weight returns nothing
-			
+
 			set thistype.m_demons3 = SpawnPoint.create()
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n07B_0126, 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n07B_0125, 1.0)
@@ -44,14 +44,16 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n072_0122, 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n072_0121, 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n07A_0129, 1.0)
+			set itemIndex = thistype.m_demons3.addNewItemType(index, 'I079', 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n07A_0128, 1.0)
+			set itemIndex = thistype.m_demons3.addNewItemType(index, 'I079', 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n07A_0127, 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n04C_0154, 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n04C_0155, 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n04D_0156, 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n02C_0157, 1.0)
 			set index = thistype.m_demons3.addUnitWithType(gg_unit_n02C_0158, 1.0)
-			
+
 			set thistype.m_demons2 = SpawnPoint.create()
 			set index = thistype.m_demons2.addUnitWithType(gg_unit_n07B_0117, 1.0)
 			set index = thistype.m_demons2.addUnitWithType(gg_unit_n07B_0118, 1.0)
@@ -60,7 +62,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_demons2.addUnitWithType(gg_unit_n04D_0151, 1.0)
 			set index = thistype.m_demons2.addUnitWithType(gg_unit_n04D_0152, 1.0)
 			set index = thistype.m_demons2.addUnitWithType(gg_unit_n04D_0150, 1.0)
-			
+
 			set thistype.m_demons1 = SpawnPoint.create()
 			set index = thistype.m_demons1.addUnitWithType(gg_unit_n079_0114, 1.0)
 			set itemIndex = thistype.m_demons1.addNewItemType(index, 'I06V', 1.0)
@@ -95,22 +97,26 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_demons1.addUnitWithType(gg_unit_n02C_0146, 1.0)
 			set index = thistype.m_demons1.addUnitWithType(gg_unit_n02C_0147, 1.0)
 			set index = thistype.m_demons1.addUnitWithType(gg_unit_n02C_0145, 1.0)
-			
+
 			set thistype.m_demons0 = SpawnPoint.create()
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n07A_0095, 1.0)
+			set itemIndex = thistype.m_demons0.addNewItemType(index, 'I079', 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n07A_0096, 1.0)
+			set itemIndex = thistype.m_demons0.addNewItemType(index, 'I079', 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n07B_0097, 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n04D_0141, 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n04C_0139, 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n04C_0140, 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n07B_0098, 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n07A_0094, 1.0)
+			set itemIndex = thistype.m_demons0.addNewItemType(index, 'I079', 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n07A_0093, 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n07A_0092, 1.0)
+			set itemIndex = thistype.m_demons0.addNewItemType(index, 'I079', 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n04B_0138, 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n04B_0137, 1.0)
 			set index = thistype.m_demons0.addUnitWithType(gg_unit_n04B_0136, 1.0)
-			
+
 			set thistype.m_hellServants1 = SpawnPoint.create()
 			set index = thistype.m_hellServants1.addUnitWithType(gg_unit_n073_0089, 1.0)
 			set itemIndex = thistype.m_hellServants1.addNewItemType(index, 'I06Z', 1.0)
@@ -120,7 +126,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_hellServants1.addUnitWithType(gg_unit_n073_0090, 1.0)
 			set itemIndex = thistype.m_hellServants1.addNewItemType(index, 'I06Z', 1.0)
 			set index = thistype.m_hellServants1.addUnitWithType(gg_unit_n073_0091, 1.0)
-			
+
 			set thistype.m_hellServants0 = SpawnPoint.create()
 			set index = thistype.m_hellServants0.addUnitWithType(gg_unit_n073_0080, 1.0)
 			set index = thistype.m_hellServants0.addUnitWithType(gg_unit_n073_0083, 1.0)
@@ -173,7 +179,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			// the beast itself
 			set index = thistype.m_demonBeast.addUnitWithType(gg_unit_n071_0039, 1.0)
 			set itemIndex = thistype.m_demonBeast.addNewItemType(index, 'I06W', 1.0)
-			
+
 			set thistype.m_fireDemons = SpawnPoint.create()
 			set index = thistype.m_fireDemons.addUnitWithType(gg_unit_n072_0040, 1.0)
 			set index = thistype.m_fireDemons.addUnitWithType(gg_unit_n072_0042, 1.0)
@@ -191,7 +197,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set itemIndex = thistype.m_boxes1.addNewItemType(index, 'I00T', 1.0)
 			set index = thistype.m_boxes1.addUnitWithType(gg_unit_n04D_0066, 1.0)
 			set itemIndex = thistype.m_boxes1.addNewItemType(index, 'I00T', 1.0)
-			
+
 			set thistype.m_boxes0 = SpawnPoint.create()
 			set index = thistype.m_boxes0.addUnitWithType(gg_unit_n04C_0063, 1.0)
 			set itemIndex = thistype.m_boxes0.addNewItemType(index, 'I00A', 1.0)

@@ -10,7 +10,8 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(16.0)
 			call PlayThematicMusic("Music\\TheDukeOfTalras.mp3")
-			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_0, true, 0.0)
+			//call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_0, true, 0.0)
+			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_1, true, 0.0)
 
 			set this.m_actorHeimrich = this.saveUnitActor(gg_unit_n013_0116)
 			call SetUnitPositionRect(this.unitActor(this.m_actorHeimrich), gg_rct_video_a_new_alliance_heimrichs_position)
@@ -26,6 +27,8 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			/*
+			TODO As long as the sound is missing don't show this.
 			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tre("Was haben sie mir zu berichten?", "What do they have to tell me?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
@@ -33,6 +36,8 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_a_new_alliance_1, true, 0.0)
+			*/
+
 			call TransmissionFromUnit(this.actor(), tre("Die Nordmänner sind bereit sich mit Euch zu verbünden. Sie werden Euch beim Kampf gegen die Dunkelelfen und Orks unterstützen￼.", "The norsemen are ready to ally with you. They will support you in the fight against the Dark Elves and Orcs."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
@@ -84,13 +89,13 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward35))) then
 				return
 			endif
-			
+
 			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Doch bald werden die Orks und Dunkelelfen mit einem größeren Heer die Grenze überschreiten. Dieses kleine Gefecht war erst der Anfang.", "But soon the Orcs and Dark Elves will cross the border with a larger army. This small battle was just the beginning."), gg_snd_Markward36)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward36))) then
 				return
 			endif
-			
+
 			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Wir erhielten Berichte von Überfällen an der Grenze und sogar von größeren Truppenbewegungen. Uns bleibt nun keine Zeit mehr und den König oder den restlichen Adel vom Ernst der Lage zu überzeugen scheint zwecklos.", "We received reports of attacks on the border and even of larger troop movements. We have no time left and to convince the king or the remaining nobility about the seriousness of the situation seems pointless."), gg_snd_Markward37)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward37))) then
@@ -114,7 +119,7 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
 			call this.setActorOwner(MapData.neutralPassivePlayer)
-			
+
 			return this
 		endmethod
 	endstruct
