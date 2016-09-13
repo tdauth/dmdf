@@ -23,9 +23,9 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Hallo.
 		private static method infoActionHello takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Hallo.", "Hello."), null)
-			call speech(info, character, true, tre("Ich grüße dich. Du bist nicht zufällig im Umgang mit Waffen geübt?", "I greet you. Are you proficient weapons?"), null)
+			call speech(info, character, true, tre("Ich grüße dich. Du bist nicht zufällig im Umgang mit Waffen geübt?", "I greet you. Are you proficient weapons?"), gg_snd_Agihard1)
 			call speech(info, character, false, tre("Warum?", "Why?"), null)
-			call speech(info, character, true, tre("Ich suche noch Leute, für meine Arena.", "I'm still looking for people for my arena."), null)
+			call speech(info, character, true, tre("Ich suche noch Leute, für meine Arena.", "I'm still looking for people for my arena."), gg_snd_Agihard2)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -42,32 +42,32 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Welche Arena?
 		private static method infoActionWhichArena takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Welche Arena?", "Which arena?"), null)
-			call speech(info, character, true, tre("Eben eine ganz normale Arena. Man kämpft und wer gewinnt, bekommt Goldmünzen.", "Just a normal arena. You fight and whoever wins gets gold coins."), null)
-			call speech(info, character, true, tre("Die Kämpfe finden immer zwischen genau zwei Leuten statt.", "The fights always take place between just two people."), null)
+			call speech(info, character, true, tre("Eben eine ganz normale Arena. Man kämpft und wer gewinnt, bekommt Goldmünzen.", "Just a normal arena. You fight and whoever wins gets gold coins."), gg_snd_Agihard3)
+			call speech(info, character, true, tre("Die Kämpfe finden immer zwischen genau zwei Leuten statt.", "The fights always take place between just two people."), gg_snd_Agihard3)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Gibt es bestimmte Regeln in der Arena?
 		private static method infoActionAnyRules takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Gibt es bestimmte Regeln in der Arena?", "Are there certain rules in the arena?"), null)
-			call speech(info, character, true, tre("Ja, allerdings. Ich will nicht, dass das am Ende in einem Massaker endet. Wir wollen ja fair bleiben. Also ...", "Yes, indeed. I do no want it to end in a massacre finally. We want to be fair. So ..."), null)
-			call speech(info, character, true, tre("1. Es ist nur ein Wettkampf, daher werden keine Gegner getötet oder sonst aufs Brutalste verstümmelt. Liegt ein Gegner am Boden, so ist der Kampf zu Ende.", "1. It is only a competition, so no opponents are killed or otherwise mutilated on brutally. If an opponent lies on the ground, so the fight is over."), null)
-			call speech(info, character, true, tre("2. Es kämpfen immer genau zwei Leute gegeneinander. Niemand hat sich da einzumischen!", "2. It will always fight exactly two people against each other. Nobody has to intervene here!"), null)
-			call speech(info, character, true, tre("3. Wer die Arena verlässt, hat verloren.", "3. Who leaves the arena, has lost."), null)
+			call speech(info, character, true, tre("Ja, allerdings. Ich will nicht, dass das am Ende in einem Massaker endet. Wir wollen ja fair bleiben. Also ...", "Yes, indeed. I do no want it to end in a massacre finally. We want to be fair. So ..."), gg_snd_Agihard4)
+			call speech(info, character, true, tre("1. Es ist nur ein Wettkampf, daher werden keine Gegner getötet oder sonst aufs Brutalste verstümmelt. Liegt ein Gegner am Boden, so ist der Kampf zu Ende.", "1. It is only a competition, so no opponents are killed or otherwise mutilated on brutally. If an opponent lies on the ground, so the fight is over."), gg_snd_Agihard5)
+			call speech(info, character, true, tre("2. Es kämpfen immer genau zwei Leute gegeneinander. Niemand hat sich da einzumischen!", "2. It will always fight exactly two people against each other. Nobody has to intervene here!"), gg_snd_Agihard6)
+			call speech(info, character, true, tre("3. Wer die Arena verlässt, hat verloren.", "3. Who leaves the arena, has lost."), gg_snd_Agihard7)
 			call speech(info, character, false, tre("Was passiert wenn ich gegen eine dieser Regeln verstoße?", "What happens if I violate one of these rules?"), null)
-			call speech(info, character, true, tre("Probiere es erst gar nicht! Wenn du gegen die zweite Regel verstößt, wird wohl kaum noch jemand in die Arena kommen, verstößt du gegen die erste, hast du ein ernsthaftes Problem!", "Do not even try it! If you violate the second rule, hardly anyone will come to the arena, if you violate the first, you have a serious problem!"), null)
+			call speech(info, character, true, tre("Probiere es erst gar nicht! Wenn du gegen die zweite Regel verstößt, wird wohl kaum noch jemand in die Arena kommen, verstößt du gegen die erste, hast du ein ernsthaftes Problem!", "Do not even try it! If you violate the second rule, hardly anyone will come to the arena, if you violate the first, you have a serious problem!"), gg_snd_Agihard8)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Was gibt es zu gewinnen?
 		private static method infoActionWhatToWin takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Was gibt es zu gewinnen?", "What is there to win?"), null)
-			call speech(info, character, true, tre("War ja wieder klar, dass du das wissen willst. Ein wahrer Krieger kämpft ohne Aussicht auf Belohnung!", "Sure you want to know that. A true warrior fights with no prospect of a reward!"), null)
+			call speech(info, character, true, tre("War ja wieder klar, dass du das wissen willst. Ein wahrer Krieger kämpft ohne Aussicht auf Belohnung!", "Sure you want to know that. A true warrior fights with no prospect of a reward!"), gg_snd_Agihard10)
 			call speech(info, character, false, tre("Interessant.", "Interesting."), null)
-			call speech(info, character, true, tre("Ja, ja, schon gut. Also, du kriegst deine Belohnung sobald der Kampf vorbei ist und du deinen Gegner besiegt hast.", "Yes, yes all right. So, you get your reward when the fight is over and you have beaten your opponent."), null)
-			call speech(info, character, true, tre("Für jeden Sieg bekommst du ein paar Goldmünzen. Wenn du jedoch öfter als fünfmal gewinnst, erhältst du einen besonderen Preis.", "For every win you get a few gold coins. However, if you win more than five times, you get a special reward."), null)
-			call speech(info, character, true, tre("Allerdings will ich noch nicht verraten, um was genau es sich dabei handelt. Mitmachen lohnt sich aber auf jeden Fall!", "However, I don't want to tell you yet what exactly the reward is. Taking part is worth in any case!"), null)
-			call speech(info, character, true, tre("Ach ja, den Preis gibt es natürlich nur einmal für jeden, der das schafft. Sonst werde ich ja noch arm (Lacht).", "Oh, of course there is only one award for anyone who gets it. Otherwise I will become poor (Laughs)."), null)
+			call speech(info, character, true, tre("Ja, ja, schon gut. Also, du kriegst deine Belohnung sobald der Kampf vorbei ist und du deinen Gegner besiegt hast.", "Yes, yes all right. So, you get your reward when the fight is over and you have beaten your opponent."), gg_snd_Agihard11)
+			call speech(info, character, true, tre("Für jeden Sieg bekommst du ein paar Goldmünzen. Wenn du jedoch öfter als fünfmal gewinnst, erhältst du einen besonderen Preis.", "For every win you get a few gold coins. However, if you win more than five times, you get a special reward."), gg_snd_Agihard12) // gg_snd_Agihard17
+			call speech(info, character, true, tre("Allerdings will ich noch nicht verraten, um was genau es sich dabei handelt. Mitmachen lohnt sich aber auf jeden Fall!", "However, I don't want to tell you yet what exactly the reward is. Taking part is worth in any case!"), gg_snd_Agihard13) // gg_snd_Agihard18
+			call speech(info, character, true, tre("Ach ja, den Preis gibt es natürlich nur einmal für jeden, der das schafft. Sonst werde ich ja noch arm (Lacht).", "Oh, of course there is only one award for anyone who gets it. Otherwise I will become poor (Laughs)."), gg_snd_Agihard14) // gg_snd_Agihard19
 			if (QuestArenaChampion.characterQuest(character).isNotUsed()) then
 				call QuestArenaChampion.characterQuest(character).enable()
 			endif
@@ -84,10 +84,10 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 			local unit arenaEnemy
 			call speech(info, character, false, tre("Lass mich in die Arena!", "Let me in the arena!"), null)
 			if (not Arena.isFree()) then
-				call speech(info, character, true, tre("Tut mir leid, aber die Arena ist gerade belegt.", "Sorry, but the arena is currently occupied."), null)
+				call speech(info, character, true, tre("Tut mir leid, aber die Arena ist gerade belegt.", "Sorry, but the arena is currently occupied."), gg_snd_Agihard15)
 				call info.talk().showStartPage(character)
 			else
-				call speech(info, character, true, tre("Gut, und halte dich an die Regeln!", "Good, and stick to the rules!"), null)
+				call speech(info, character, true, tre("Gut, und halte dich an die Regeln!", "Good, and stick to the rules!"), gg_snd_Agihard16)
 				call info.talk().close(character)
 				set arenaEnemy = Arena.getRandomEnemy(character)
 				call Arena.addUnit(arenaEnemy)
@@ -104,7 +104,7 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Ich habe fünfmal gewonnen!
 		private static method infoActionICompleted takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("Ich habe fünfmal gewonnen!", "I won five times!"), null)
-			call speech(info, character, true, tre("Tatsächlich! Du scheinst mir ein sehr starker Kämpfer zu sein. Nun gut, du hast dir deine Belohnung ehrenhaft verdient. Hier hast du sie.", "Really! You seem to be a very strong fighter. Well, you've earned your reward honorably. Here you have it."), null)
+			call speech(info, character, true, tre("Tatsächlich! Du scheinst mir ein sehr starker Kämpfer zu sein. Nun gut, du hast dir deine Belohnung ehrenhaft verdient. Hier hast du sie.", "Really! You seem to be a very strong fighter. Well, you've earned your reward honorably. Here you have it."), gg_snd_Agihard21)
 			call QuestArenaChampion.characterQuest(character).questItem(1).complete()
 			call character.giveItem('I06K') // amulet of power which increases the attack speed
 			call character.displayItemAcquired(GetObjectName('I06K'), tre("Erhöhen das Angriffstempo.", "Increases the attack speed."))
@@ -114,9 +114,9 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Dienst du dem Herzog?
 		private static method infoActionServantOfDuke takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Dienst du dem Herzog?", "Do you serve the duke?"), null)
-			call speech(info, character, true, tre("Wegen meiner Rüstung oder was? Ja, ich bin der Waffenmeister der Burg. Schon mein Vater diente Heimrichs Vater und ich bin stolz, sein Erbe weiterzutragen.", "Because of my armour or what? Yes, I am the weapons master of the castle. My father served Heimrich's father and I am proud to carry on his legacy."), null)
+			call speech(info, character, true, tre("Wegen meiner Rüstung oder was? Ja, ich bin der Waffenmeister der Burg. Schon mein Vater diente Heimrichs Vater und ich bin stolz, sein Erbe weiterzutragen.", "Because of my armour or what? Yes, I am the weapons master of the castle. My father served Heimrich's father and I am proud to carry on his legacy."), gg_snd_Agihard22)
 			call speech(info, character, false, tre("Dein Vater?", "Your father?"), null)
-			call speech(info, character, true, tre("Ja, er war ein großer Mann. Er war der beste Waffenmeister weit und breit und lehrte viele große Krieger das Kämpfen.", "Yes, he was a great man. He was the best weapons master far and wide, and taught many greate warriors fighting."), null)
+			call speech(info, character, true, tre("Ja, er war ein großer Mann. Er war der beste Waffenmeister weit und breit und lehrte viele große Krieger das Kämpfen.", "Yes, he was a great man. He was the best weapons master far and wide, and taught many greate warriors fighting."), gg_snd_Agihard23)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -128,10 +128,10 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Kennst du dich mit Waffen aus?
 		private static method infoActionAboutWeapons takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Kennst du dich mit Waffen aus?", "Are you familiar with weapons?"), null)
-			call speech(info, character, true, tre("Natürlich, worum geht's denn?", "Of course, what's it about?"), null)
+			call speech(info, character, true, tre("Natürlich, worum geht's denn?", "Of course, what's it about?"), gg_snd_Agihard24)
 			call speech(info, character, false, tre("Wo finde ich gute Waffen?", "Where can I find good weapons?"), null)
-			call speech(info, character, true, tre("(Lachend) Bei mir natürlich. Nein, im Ernst. Einar verkauft auch ganz gute Waffen und Wieland, der Burgschmied, verkauft sehr gute Rüstungen und Helme.", "(Laughing) Of course with me. No, seriously. Einar also sells very good weapons and Wieland, the castle's blacksmith, sells very good armours and helmets."), null)
-			call speech(info, character, true, tre("Ich selbst verkaufe ganz gute Schilde.", "I myself sell very good bucklers."), null)
+			call speech(info, character, true, tre("(Lachend) Bei mir natürlich. Nein, im Ernst. Einar verkauft auch ganz gute Waffen und Wieland, der Burgschmied, verkauft sehr gute Rüstungen und Helme.", "(Laughing) Of course with me. No, seriously. Einar also sells very good weapons and Wieland, the castle's blacksmith, sells very good armours and helmets."), gg_snd_Agihard25)
+			call speech(info, character, true, tre("Ich selbst verkaufe ganz gute Schilde.", "I myself sell very good bucklers."), gg_snd_Agihard26)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -144,13 +144,13 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		private static method infoActionWhatDoYouKnow takes AInfo info, ACharacter character returns nothing
 			local boolean sayIt = false
 			call speech(info, character, false, tre("Was weißt du über die Lage?", "What do you know about the situation?"), null)
-			call speech(info, character, true, tre("Über welche Lage? Meinst du die bevorstehenden Kämpfe?", "About which situation? Are you talking about the upcoming fights?"), null)
+			call speech(info, character, true, tre("Über welche Lage? Meinst du die bevorstehenden Kämpfe?", "About which situation? Are you talking about the upcoming fights?"), gg_snd_Agihard27)
 			call speech(info, character, false, tre("Ja.", "Yes."), null)
-			call speech(info, character, true, tre("Tut mir leid, aber darüber darf ich nicht sprechen.", "I am sory, but I'm not allowed to speak about that."), null)
-			call speech(info, character, true, tre("Uns wurde das Reden über solche Angelegenheiten strengstens untersagt. Dadurch bekommen die Leute nur noch mehr Angst.", "It was strictly prohibited that we talk about such matters. This gives people even more fear."), null)
+			call speech(info, character, true, tre("Tut mir leid, aber darüber darf ich nicht sprechen.", "I am sory, but I'm not allowed to speak about that."), gg_snd_Agihard28)
+			call speech(info, character, true, tre("Uns wurde das Reden über solche Angelegenheiten strengstens untersagt. Dadurch bekommen die Leute nur noch mehr Angst.", "It was strictly prohibited that we talk about such matters. This gives people even more fear."), gg_snd_Agihard29)
 			if (Classes.isChaplain(character.class())) then
 				call speech(info, character, false, tre("Ich bin ein Geistlicher. Nicht einmal mir willst du etwas erzählen?!", "I am aclergyman. You don't even want to tell me anything?"), null)
-				call speech(info, character, true, tre("Na ja ...", "Well ..."), null)
+				call speech(info, character, true, tre("Na ja ...", "Well ..."), gg_snd_Agihard30)
 				call speech(info, character, false, tre("Mein Glaube verbietet mir, Unfrieden unter den Leuten zu stiften.", "My faith forbids me to cause mischief among the people."), null)
 				set sayIt = true
 			elseif (character.class() == Classes.knight()) then
@@ -158,16 +158,16 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 				set sayIt = true
 			elseif (character.class() == Classes.dragonSlayer()) then
 				call speech(info, character, false, tre("Kannst du nicht mal eine Ausnahme machen?", "Can't you even make an exception?"), null)
-				call speech(info, character, true, tre("Nein, ich würde damit gegen meinen Eid verstoßen!", "No, I would violate my oath by that!"), null)
+				call speech(info, character, true, tre("Nein, ich würde damit gegen meinen Eid verstoßen!", "No, I would violate my oath by that!"), gg_snd_Agihard31)
 				call speech(info, character, false, tre("Ach was ist schon so ein Eid, ich erzähls auch bestimmt keinem.", "Oh who cares about such an oath, I certainly won't tell it to anybody."), null)
-				call speech(info, character, true, tre("Schluss jetzt! Entweder du bist hier, um zu kämpfen oder du verschwindest besser!", "Stop it now! Either you're here to fight or you better leave!"), null)
+				call speech(info, character, true, tre("Schluss jetzt! Entweder du bist hier, um zu kämpfen oder du verschwindest besser!", "Stop it now! Either you're here to fight or you better leave!"), gg_snd_Agihard32)
 			endif
 			if (sayIt) then
-				call speech(info, character, true, tre("Also gut ... aber du darfst es niemandem erzählen!", "All right ... but you must not tell anyone!"), null)
+				call speech(info, character, true, tre("Also gut ... aber du darfst es niemandem erzählen!", "All right ... but you must not tell anyone!"), gg_snd_Agihard33)
 				call speech(info, character, false, tre("Keine Sorge!", "Don't worry!"), null)
-				call speech(info, character, true, tre("Ich glaube Markward, der treue Ritter unseres Herzogs Heimrich, würde dem Feind lieber mutig entgegenziehen, als hier in der Burg zu verrotten.", "I think Markward, the faithful knight of our duke Heimrich, would prefer to bravely move against the enemy than rotting here in the castle."), null)
-				call speech(info, character, true, tre("Doch Heimrich ist anderer Meinung. Loyal wie er nun mal ist, unterwirft sich Markward natürlich dem Willen des Herzogs.", "But Heimrich disagrees. Loyal as he happens to be, Markward of course submits to the will of the duke."), null)
-				call speech(info, character, true, tre("Manche glauben, dass Heimrich auf irgendetwas Bestimmtes wartet. Das ist allerdings nur ein Gerücht und erzähl niemandem, dass du das von mir hast!", "Some believe that Heimrich is waiting for anything in particular. Howerver, this is only a rumor and don't tell anyone that you have this information from me."), null)
+				call speech(info, character, true, tre("Ich glaube Markward, der treue Ritter unseres Herzogs Heimrich, würde dem Feind lieber mutig entgegenziehen, als hier in der Burg zu verrotten.", "I think Markward, the faithful knight of our duke Heimrich, would prefer to bravely move against the enemy than rotting here in the castle."), gg_snd_Agihard34)
+				call speech(info, character, true, tre("Doch Heimrich ist anderer Meinung. Loyal wie er nun mal ist, unterwirft sich Markward natürlich dem Willen des Herzogs.", "But Heimrich disagrees. Loyal as he happens to be, Markward of course submits to the will of the duke."), gg_snd_Agihard35)
+				call speech(info, character, true, tre("Manche glauben, dass Heimrich auf irgendetwas Bestimmtes wartet. Das ist allerdings nur ein Gerücht und erzähl niemandem, dass du das von mir hast!", "Some believe that Heimrich is waiting for anything in particular. Howerver, this is only a rumor and don't tell anyone that you have this information from me."), gg_snd_Agihard36)
 				// Erfahrungsbonus
 				call Character(character).xpBonus(thistype.xpBonus, tre("Informationen erhalten.", "Received Information"))
 			endif
@@ -182,12 +182,12 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		// Irmina mag dich.
 		private static method infoActionIrminaLikesYou takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Irmina mag dich.", "Irmina likes you."), null)
-			call speech(info, character, true, tre("Was?", "What?"), null)
+			call speech(info, character, true, tre("Was?", "What?"), gg_snd_Agihard37)
 			call speech(info, character, false, tre("…", "..."), null)
-			call speech(info, character, true, tre("Irmina, die Händlerin? Wieso das denn?", "Irmina, the merchant? Why is that?"), null)
+			call speech(info, character, true, tre("Irmina, die Händlerin? Wieso das denn?", "Irmina, the merchant? Why is that?"), gg_snd_Agihard38)
 			call speech(info, character, false, tre("Ich wette, du wusstest es.", "I bet you knew."), null)
-			call speech(info, character, true, tre("Na ja, ich dachte … vielleicht, aber ich war mir nicht sicher. Vielleicht sollte ich mal bei ihr vorbeischauen.", "Well, I thought ... maybe, but I was not sure. Maybe I should look in on her."), null)
-			call speech(info, character, true, tre("Mal unter uns, ich mag sie auch sehr. Erzähl das aber keinem, sonst schlage ich dir den Kopf ab!", "Among us, I like her much, too. Don't tell this anyone or I cut off your head!"), null)
+			call speech(info, character, true, tre("Na ja, ich dachte … vielleicht, aber ich war mir nicht sicher. Vielleicht sollte ich mal bei ihr vorbeischauen.", "Well, I thought ... maybe, but I was not sure. Maybe I should look in on her."), gg_snd_Agihard39)
+			call speech(info, character, true, tre("Mal unter uns, ich mag sie auch sehr. Erzähl das aber keinem, sonst schlage ich dir den Kopf ab!", "Among us, I like her much, too. Don't tell this anyone or I cut off your head!"), gg_snd_Agihard40)
 			// Auftragsziel 1 des Auftrags „Talras' mutiger Waffenmeister“ abgeschlossen
 			call QuestTheBraveArmourerOfTalras.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)
