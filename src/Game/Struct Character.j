@@ -546,8 +546,26 @@ endif
 
 		private static method triggerActionSpawnIllusion takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			debug call Print("Spawning illusion")
 			// TODO use equipment and not backpack before spawning or replace items of illusion!
+			local integer i = 0
+			loop
+				exitwhen (i == bj_MAX_INVENTORY)
+				if (UnitItemInSlot(GetSummonedUnit(), i) != null) then
+					call RemoveItem(UnitItemInSlot(GetSummonedUnit(), i))
+				endif
+				set i = i + 1
+			endloop
+			set i = 0
+			loop
+				exitwhen (i == bj_MAX_INVENTORY)
+				if (this.inventory().equipmentItemData(i) != 0) then
+					call UnitAddItem(GetSummonedUnit(), this.inventory().equipmentItemData(i).createItem(GetUnitX(GetSummonedUnit()), GetUnitY(GetSummonedUnit())))
+				else
+					call UnitAddItemToSlotById(GetSummonedUnit(), this.inventory().equipmentTypePlaceholder(i), i)
+				endif
+				set i = i + 1
+			endloop
+			debug call Print("Spawning illusion")
 			call this.m_illusionOrderAnimations.pushBack(OrderAnimations.create.evaluate(this, GetSummonedUnit()))
 		endmethod
 

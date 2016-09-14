@@ -103,7 +103,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call speech(info, character, true, tre("Mann, vor dir sollte man sich besser in Acht nehmen. Scheinst ja ein harter Brocken zu sein. Wie viel willst du für die Felle?", "Man, in front of you one should better be careful. You seem to be a tough one indeed. How much do you want for the furs?"), gg_snd_Bjoern27)
 			call info.talk().showRange(this.m_coins.index(), this.m_halfOfYourReward.index(), character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Kunos Tochter“ aktiv und nicht abgeschlossen)
 		private static method infoConditionApprentice takes AInfo info, ACharacter character returns boolean
 			return QuestKunosDaughter.characterQuest(character).questItem(0).isNew()
@@ -124,27 +124,28 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call QuestKunosDaughter.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 3 des Auftrags „Die Befestigung von Talras“ ist aktiv)
 		private static method infoConditionArrows takes AInfo info, ACharacter character returns boolean
 			return QuestReinforcementForTalras.characterQuest(character).questItem(2).isNew()
 		endmethod
 
-		// Kannst du Pfeile herstellen? 
+		// Kannst du Pfeile herstellen?
 		private static method infoActionArrows takes AInfo info, ACharacter character returns nothing
+			local AQuest whichQuest = QuestReinforcementForTalras.characterQuest(character)
 			call speech(info, character, false, tre("Kannst du Pfeile herstellen?", "Can you produce arrows?"), null)
 			call speech(info, character, true, tre("Klar, wieso fragst du?", "Sure, why do you ask?"), gg_snd_Bjoern36)
 			call speech(info, character, false, tre("Markward benötigt Pfeile zur Verteidigung der Burg.", "Markward needs arrows to defend the castle."), null)
 			call speech(info, character, true, tre("Ich sehe schon es handelt sich um eine wichtige Angelegenheit. Pass auf ich fertige neue Pfeile an und gebe ihm noch ein paar von mir.", "I can see it is an important matter. Look, I make new arrows and still give him a couple of mine."), gg_snd_Bjoern37)
-			call speech(info, character, true, tre("Das dauert allerdings eine Weile. Komm später noch einmal vorbei.", "However, this takes a while. Come back later."), null)
+			call speech(info, character, true, tre("Das dauert allerdings eine Weile. Komm später noch einmal vorbei.", "However, this takes a while. Come back later."), gg_snd_Bjoern37_1)
 			// Auftragsziel 3 des Auftrags „Die Befestigung von Talras“ abgeschlossen
-			call QuestReinforcementForTalras.characterQuest(character).questItem(2).setState(AAbstractQuest.stateCompleted)
+			call whichQuest.questItem(2).setState(AAbstractQuest.stateCompleted)
 			// Auftragsziel 4 des Auftrags „Die Befestigung von Talras“ aktiviert
-			call QuestReinforcementForTalras.characterQuest(character).questItem(3).setState(AAbstractQuest.stateNew)
-			call QuestReinforcementForTalras.characterQuest(character).displayUpdate()
+			call whichQuest.questItem(3).setState(AAbstractQuest.stateNew)
+			call whichQuest.displayUpdate()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 4 des Auftrags „Die Befestigung von Talras“ ist aktiv)
 		private static method infoConditionArrowsDone takes AInfo info, ACharacter character returns boolean
 			return QuestReinforcementForTalras.characterQuest(character).questItem(3).isNew()
@@ -153,9 +154,10 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		// Sind die Pfeile fertig?
 		private static method infoActionArrowsDone takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
+			local QuestReinforcementForTalras whichQuest = QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character))
 			call speech(info, character, false, tre("Sind die Pfeile fertig?", "Are the arrows ready?"), null)
 			// (Genügend Zeit ist vergangen)
-			if (QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character)).oneMinutePassed()) then
+			if (whichQuest.oneMinutePassed()) then
 				call speech(info, character, true, tre("Ja, hier hast du sie. Am besten du platzierst sie an strategisch wichtigen Orten in der Burg.", "Yes, here you have it. It's best to place them at strategic important places in the castle."), null)
 				call speech(info, character, true, tre("Markward wird dich sowieso früher oder später mit den Pfeilen losschicken.", "Markward will send you out with the arrows sooner or later anyway."), gg_snd_Bjoern39)
 				// Charakter erhält Pfeilbündel
@@ -166,7 +168,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 				call QuestReinforcementForTalras.characterQuest(character).questItem(4).setState(AAbstractQuest.stateNew)
 				call QuestReinforcementForTalras.characterQuest(character).displayUpdate()
 			// (Weniger als fünf Sekunden sind vergangen)
-			elseif (QuestReinforcementForTalras(QuestReinforcementForTalras.characterQuest(character)).lessThanFiveSecondsPassed() and not this.m_bonus) then
+			elseif (whichQuest.lessThanFiveSecondsPassed() and not this.m_bonus) then
 				call speech(info, character, true, tre("Du bist ja lustig. Es sind noch nicht einmal fünf Sekunden vergangen!", "You're funny. It has not even lasted five seconds!"), gg_snd_Bjoern40)
 				// Erfahrungsbonus „Ungeduld“
 				call character.xpBonus(50, tre("Ungeduld", "Impatience"))
@@ -177,31 +179,30 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// Was verkaufst du?
 		private static method infoActionWhatDoYouSell takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("Was verkaufst du?", "What do you sell?"), null)
 			call speech(info, character, true, tre("Alles was ein Jäger so gebrauchen kann. Einen guten Bogen, warme Bekleidung, Pfeile, Fallen und Messer. Sieh es dir einfach an.", "Everything a hunter can use. A good bow, warm clothing, arrows, traps and knives. Just look at it."), gg_snd_Bjoern42)
-			
+
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Björn befindet sich in der Burg)
 		private static method infoConditionBjoernIsInCastle takes AInfo info, ACharacter character returns boolean
 			return RectContainsUnit(gg_rct_area_bjoern, Npcs.bjoern())
 		endmethod
-		
+
 		// Ist das dein Hundezwinger?
 		private static method infoActionYourDogs takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Ist das dein Hundezwinger?", "Ist that your dog kennel?"), null)
-			
 			call speech(info, character, true, tre("In der Tat, aber eigentlich gehört er dem Herzog. Dago und ich kümmern uns jedoch um die Hunde.", "Indeed, but actually it belongs to the duke. However Dago and I take care of the dogs."), gg_snd_Bjoern43)
-			
+
 			// (Dago ist tot)
 			if (IsUnitDeadBJ(Npcs.dago())) then
 				call speech(info, character, false, tre("Nun muss ich mich wohl alleine um sie kümmern.", "Now I have to take care of them alone."), gg_snd_Bjoern44)
 			endif
-		
+
 			call speech(info, character, true, tre("Die Hunde wurden von uns zu den besten Jagdhunden weit und breit ausgebildet. Sie spüren jeden Fuchs und jeden Hasen auf. Ich bin ganz besonders stolz auf sie.", "The dogs were trained by us to the best hunting dogs far and wide. They track down every fox and rabbit. I am particularly proud of them."), gg_snd_Bjoern45)
 			call speech(info, character, true, tre("Der Herzog veranstaltet nur selten eine Treibjagd, zu besonderen Anlässen. Wenn es soweit ist, dann müssen sie gut vorbereitet sein.", "The duke hosts rarely a battue, on sepcial occasions. When the time comes, then they must be well prepared."), gg_snd_Bjoern46)
 			call speech(info, character, false, tre("Verkaufst du auch Hunde?", "Do you sell dogs?"), null)
@@ -212,13 +213,12 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// Ist das dein Falkenkäfig?
 		private static method infoActionYourFalcons takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Ist das dein Falkenkäfig?", "Is that your falcon cage?"), null)
-			
 			call speech(info, character, true, tre("Ja das ist er. Die Falken darin gehören allerdings dem Herzog. Dago und ich haben diese Falken für ihn ausgebildet.", "Yes it is. The falcons however belong to the duke. Dago and I have trained these falcons for him."), gg_snd_Bjoern50)
-		
+
 			// (Dago ist tot)
 			if (IsUnitDeadBJ(Npcs.dago())) then
 				call speech(info, character, false, tre("Aber jetzt bin ich wohl alleine für sich verantwortlich (traurig).", "But now I am probably responsible for them by myself (sad)."), gg_snd_Bjoern51)
@@ -228,10 +228,10 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call speech(info, character, true, tre("Ich hoffe der Herzog geht bald wieder auf eine Jagd mit ihnen. Das ist das größte Erlebnis für einen einfachen Jäger wie mich.", "I hope the duke is soon on a hunt with them. This is the greatest experience for a simple hunter like me."), gg_snd_Bjoern54)
 			call speech(info, character, false, tre("Kann man sie auch kaufen?", "Can you buy them, too?"), null)
 			call speech(info, character, true, tre("Sicher, wenn du die nötigen Goldmünzen dabei hast. Das glaube ich aber kaum. Vielleicht hat der Herzog ja noch Schulden bei irgendwem, aber er gestattet tatsächlich den Verkauf dieser wunderbaren Tiere.", "Sure, if you have the necessary gold coins with you. But I can hardly believe that. Perhaps the duke has still debts to anyone, but he actually allows the sale of these wonderful animals."), gg_snd_Bjoern55)
-		
+
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// Geh mit mir auf die Jagd.
 		private static method infoActionHunt takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Geh mit mir auf die Jagd.", "Go with me to hunt."), null)
@@ -241,47 +241,47 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call speech(info, character, true, tre("Das ist nicht so einfach, aber wenn du ein erfahrener Jäger bist, schaffst du das sicher. Allerdings kann ich mir nicht vorstellen, dass du dir einen Jagdfalken leisten kannst.", "This is not that easy, but if you are an experience hunter, you can do it safely. However, I cannot imagine that you can afford a hunting falcon."), gg_snd_Bjoern58)
 			call speech(info, character, true, tre("Der Herzog verspeist Rebhühner als hätte er hunderte davon in der Küche herumliegen. Du würdest mir also einen großen Gefallen tun, wenn du welche für mich jagst.", "The duke eats patridges as if he had hundreds of them lying around in the kitchen. Therefore you would do me a great favor if you hunt some for me."), gg_snd_Bjoern59)
 			call speech(info, character, true, tre("Ich könnte dich dafür natürlich auch bezahlen.", "Of course I could pay you for that."), gg_snd_Bjoern60)
-		
+
 			// Neuer Auftrag „Rebhuhnjagd“
 			call QuestPerdixHunt.characterQuest(character).enable()
-		
+
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Rebhuhnjagd“ ist aktiv)
 		private static method infoConditionWhereAnimals takes AInfo info, ACharacter character returns boolean
 			return QuestPerdixHunt.characterQuest(character).questItem(0).isNew()
 		endmethod
-		
+
 		// Wo finde ich Rebhühner?
 		private static method infoActionWhereAnimals takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Wo finde ich Rebhühner?", "Where can I find patridges?"), null)
 			call speech(info, character, true, tre("Ich gehe immer in der Nähe des Friedhofs am Bauernhof jagen.", "I always go hunting near the cemetery at the farm."), gg_snd_Bjoern61)
 			call speech(info, character, true, tre("Westlich davon befindet sich eine kleine Wiese zwischen dem Friedhof und den Kühen. Dort gibt es einige Rebhühner.", "To the west there is a small meadow between the cemetery and the cows. There are some patridges."), gg_snd_Bjoern62)
-			
+
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Rebhuhnjagd“ ist aktiv)
 		private static method infoConditionExplainHunt takes AInfo info, ACharacter character returns boolean
 			return QuestPerdixHunt.characterQuest(character).questItem(0).isNew()
 		endmethod
-		
+
 		// Erkläre mir noch mal die Rebhuhnjagd.
 		private static method infoActionExplainHunt takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Erkläre mir noch mal die Rebhuhnjagd.", "Explain to me again the patridge hunting."), null)
 			call speech(info, character, true, tre("So, ich dachte du bist ein erfahrener Jäger? Schon gut, jeder fängt mal klein an.", "So, I thought you were an experienced hunter? All right, everyone has to start somewhere."), gg_snd_Bjoern63)
 			call speech(info, character, true, tre("Du schickst deinen Vorstehhund los, um das Rebhuhn aufzuspüren. Hat er es aufgespürt, schickst du deinen Jagdfalken in die Nähe. Er hält sich bereit.", "You send your pointing dog to track the patridge. Did he track it, you send your hunting falcon near it. He keeps himself ready."), gg_snd_Bjoern64)
 			call speech(info, character, true, tre("Dein Vorstehhund muss dann das Rebhuhn aufscheuchen. Es fliegt los und dein Falke greift es sich. Lass dir aber nicht zu viel Zeit, sonst verschwindet das Rebhuhn wieder.", "Your pointing dog must then startle the patridge. It takes off and your falcon grabs it. But do not wait too long, otherwise the patridge disappears."), null)
-			
+
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Rebhuhnjagd“ ist abgeschlossen und Charakter hat fünf tote Rebhühner im Rucksack)
 		private static method infoConditionAnimals takes AInfo info, ACharacter character returns boolean
 			return QuestPerdixHunt.characterQuest(character).questItem(0).isCompleted() and character.inventory().totalItemTypeCharges('I059') == QuestPerdixHunt.maxAnimals
 		endmethod
-		
+
 		// Ich habe die Rebhühner.
 		private static method infoActionAnimals takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Ich habe die Rebhühner.", "I have the patridges."), null)
@@ -290,10 +290,10 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			call character.inventory().removeItemTypeCount('I059', QuestPerdixHunt.maxAnimals)
 			// Auftrag „Rebhuhnjagd“ abgeschlossen
 			call QuestPerdixHunt.characterQuest(character).complete()
-		
+
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 
 		private static method infoAction0_0And0_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, true, tre("Er jagt irgendwo südöstlich der Burg und sollte eigentlich längst schon zurückgekehrt sein.", "He hunts somewhere southeast of the castle and was supposed to have returned long ago."), gg_snd_Bjoern4)
@@ -425,7 +425,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tre("Suchst du einen Schüler?", "Are you looking for a student?"))
 			set this.m_arrows = this.addInfo(false, false, thistype.infoConditionArrows, thistype.infoActionArrows, tre("Kannst du Pfeile herstellen?", "Can you produce arrows?"))
 			set this.m_arrowsDone = this.addInfo(true, false, thistype.infoConditionArrowsDone, thistype.infoActionArrowsDone, tre("Sind die Pfeile fertig?", "Are the arrows ready?"))
-			
+
 			set this.m_whatDoYouSell = this.addInfo(true, false, 0, thistype.infoActionWhatDoYouSell, tre("Was verkaufst du?", "What do you sell?"))
 			set this.m_yourDogs = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourDogs, tre("Ist das dein Hundezwinger?", "Ist that your dog kennel?"))
 			set this.m_yourFalcons = this.addInfo(true, false, thistype.infoConditionBjoernIsInCastle, thistype.infoActionYourFalcons, tre("Ist das dein Falkenkäfig?", "Is that your falcon cage?"))
@@ -433,7 +433,7 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 			set this.m_whereAnimals = this.addInfo(true, false, thistype.infoConditionWhereAnimals, thistype.infoActionWhereAnimals,  tre("Wo finde ich Rebhühner?", "Where can I find patridges?"))
 			set this.m_explainHunt = this.addInfo(true, false, thistype.infoConditionExplainHunt, thistype.infoActionExplainHunt, tre("Erkläre mir noch mal die Rebhuhnjagd.", "Explain to me again the patridge hunting."))
 			set this.m_animals = this.addInfo(false, false, thistype.infoConditionAnimals, thistype.infoActionAnimals, tre("Ich habe die Rebhühner.", "I have the patridges."))
-			
+
 			set this.m_exit = this.addExitButton()
 
 			// info 0

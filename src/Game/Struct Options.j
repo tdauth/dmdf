@@ -55,6 +55,12 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 
 		public stub method onTrigger takes nothing returns nothing
 			call this.spellbook().character().shareControl(not this.spellbook().character().isControlShared())
+
+			if (this.spellbook().character().isControlShared()) then
+				call this.spellbook().character().displayMessage(ACharacter.messageTypeInfo, tre("Kontrolle erlaubt.", "Allowed control."))
+			else
+				call this.spellbook().character().displayMessage(ACharacter.messageTypeInfo, tre("Kontrolle entzogen.", "Disallowed control."))
+			endif
 		endmethod
 
 		public static method create takes OptionsSpellbook spellbook returns thistype
@@ -114,6 +120,12 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 		public stub method onTrigger takes nothing returns nothing
 			local Tutorial tutorial = this.spellbook().character().tutorial()
 			call tutorial.setEnabled(not tutorial.isEnabled())
+
+			if (tutorial.isEnabled()) then
+				call this.spellbook().character().displayMessage(ACharacter.messageTypeInfo, tre("Tutorial aktiviert.", "Enabled tutorial."))
+			else
+				call this.spellbook().character().displayMessage(ACharacter.messageTypeInfo, tre("Tutorial deaktiviert.", "Disabled tutorial."))
+			endif
 		endmethod
 
 		public static method create takes OptionsSpellbook spellbook returns thistype

@@ -332,8 +332,6 @@ Mehrspielertest:
 * Wenn einer mit Spieler 6 und nur Spieler 1 und 2 spielen, dann kann Spieler 6 nach Video nicht spielen. Charakter ist immer noch hidden, wird überhaupt erzeugt???
 
 Let's Play Critical Errors (have to be fixed in 0.9):
-* Kartenausgänge unsichtbar machen!
-* Elementarwesen: Passive Rüstungs, Lebens- und Schadensfähigkeiten, die pro Stufe zu besser werden und jedes Elementarwesen erhält. Ansonsten sind die Wesen auf Dauer zu schwach.
 * FIXED (removeOnCraftItemFunction() wird erst beim Beenden des gesamten Auftrags aufgerufen): Wenn das letzte Schwert für Einar geschmiedet wird, dann erscheint Guntrichs Dialog etc. etc. Achtung: Dieser Bug zerstört sogar den Spielstand. Nicht speichern! RemoveCraftFunction, Fehler bei AIntegerVector.remove(), wenn der Vektor eine Größe von 1 hat.
 * FIXED: Einars Schwerter werden nicht aus dem Rucksack entfernt.
 * Wenn man einer Legion beitritt geht durch irgendwas der Spielstand ebenfalls kaputt. Man kann noch speichern, aber wenn man den gespeicherten Spielstand lädt, kann man nicht mehr speichern.
@@ -348,7 +346,7 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 	* Evtl. weil Allianzen zu sich selbst gesetzt wurden (SetAllianceState Player(0) Player(0))
 
 Critical Transformation and equipment bugs (Let's Play):
-* Creating an illusion by an item (Tellborns rune) does not create OrderAnimation or does not open the equipment stuff first!!! Better solution: On spawning illusions just remove all items from the illusion and add equipment items.
+* FIXED (always replace items by equipment): Creating an illusion by an item (Tellborns rune) does not create OrderAnimation or does not open the equipment stuff first!!! Better solution: On spawning illusions just remove all items from the illusion and add equipment items.
 * If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug. Do you have to know if the abilty stacks or not? Only for not stacking abilities!
 * Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht. Verwandlung von Fernkampf ging nicht, wurde vorher nicht zu Melee gemacht und später wieder durch Equipment zu Fernkampf.
 * Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel eines Druiden, Stab der Verzögerung, Knochenbogen. War das nur ein Bug? Nein Stiefel eines Druiden haben wirklich keine Zauberbuchfähigkeit. Stab der Verzögerung hatte allerdings deaktivierte Zauberbuchfähigkeit. Knochenbogen ebenfalls. Stab der Verzögerung und Knochenbogen haben zusätzlich eine Kugelfähigkeit die auch im Zauberbuch verborgen werden muss.
@@ -357,10 +355,16 @@ Critical Transformation and equipment bugs (Let's Play):
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* Kartenausgänge unsichtbar machen!
+* Elementarwesen: Passive Rüstungs, Lebens- und Schadensfähigkeiten, die pro Stufe zu besser werden und jedes Elementarwesen erhält. Ansonsten sind die Wesen auf Dauer zu schwach.
 * DONE: Stall nach Holzbruck.
 * FIXED: Reitender Charakter: Attachment Point-Namen für Hände vertauschen!
-* Extract game cheats into custom package to reduce .evaluate() calls.
+* FIXED: Extract game cheats into custom package to reduce .evaluate() calls.
 * FIXED: ItemTypes many .evaluates()
+* Reduce .evaluate() calls for Quest War and sub quests. Reverse dependencies!
+* Reduce .evaluate() calls for quest The Norsemen.
+* Reduce .evaluate() calls for quest Slaughter.
+* Reduce .evaluate() calls for video upstream.
 * Spell.addGrimoireEntry() many .evaluates()
 * FIXED: Grimoire.updateUi() is slow because all show() and hide() methods are .evaluated!
 * Da Auftragsgegenstand mit mehreren Seiten nicht geht und Shortcuts für Optionen fehlen ("-menu" ist umständlich!), Helden-Button hinzufügen mit Auftragszielen, Dungeonoption usw usw.:
@@ -371,11 +375,19 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 	- Untermenü mit Texten aus Gesprächen mit NPCs (AInfoLog)
 	- Untermenü mit Emotes
 
+* Idee zum Balancing: Man steigt im Einzelspieler zu schnell auf. Weniger Erfahrung für Creeps/Quests. Dafür nicht so wenig Erfahrung im Multiplayer, nicht unbedingt teilen durch Spieleranzahl. Man muss auch bedenken, dass man im Einzelspieler mehr Gold bekommt usw. Dafür müssen die Creeps im Multiplayer wesentlich stärker sein ohne mehr XP oder Gold zu geben (Handicap, Ausbaustufen!).
+	- Stufen von Creeps am Anfang reduzieren. Die Stufe entscheidet mit über die Erfahrung.
+	- FIXED: Orkspieler, Arenaspieler, Haldar- und Baldarspieler müssen auch Handicap erhalten (alle Gegner).
+	- DONE: Stufen der Gefolgsleuter verringern.
+
+* Für jeden optionalen Auftrag einen Eintrag in der Liste der Aufträge erzeugen.
+* Barrikaden der Orks blocken nicht. Einfach Blocker erzeugen pro Barrikade und bei Tod vernichten?! Wieso geht Verlauf nicht?
 * FIXED: Maximalstufe in Holzbruck ist nur 30.
 * War transformed als Engel. Wurde getötet (mit rucksack only) beim Betreten von Baldars Gebiet. Nach Tod lagen Gegenstände auf dem Boden.
 * Trackables an den Grabsteinen erzeugen (Signs) zum Lesen. Easteregg wie in Gothic 2, Referenz zu Gothic. Hätte Faelon gerne gehabt.
 * Man konnte als Engel/Dämon verwandelt die Trommelhöhle verlassen. Beim Verlassen der Höhle im struct Aos zurückverwandeln, falls verwandelt!
 * AOS-Leaderboard-Titel fehlte?!
+* FIXED: Keine Abklingzeit für Tellborns Geisterrune obwohl unendlich oft benutzbar.
 * Kornfresserauftrag nach erstem Kornfresser abgeschlossen.
 * Wenn ein Video in bestimmtem Moment unterbrochen wird (fade????) in Karte Gardonar (Intro) kommen danach noch Transmissions.
 * Noch einmal die ganzen Zaubertrigger prüfen: Wird Mana schon verbraucht, obwohl gestoppt wird?
@@ -460,7 +472,6 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Maximalstufen in Tutorial per Parameter eintragen. Sonst stimmen sie nicht. Maximalstufe 30.
 * Bei Zaubern, die zu Auftragspunkten springen Animation entfernen! Ansonsten zaubert Bärengestalt ewig.
 * FIXED: Osmansprecher in Credits?
-* Idee zum Balancing: Man steigt im Einzelspieler zu schnell auf. Weniger Erfahrung für Creeps/Quests. Dafür nicht so wenig Erfahrung im Multiplayer, nicht unbedingt teilen durch Spieleranzahl. Man muss auch bedenken, dass man im Einzelspieler mehr Gold bekommt usw. Dafür müssen die Creeps im Multiplayer wesentlich stärker sein ohne mehr XP oder Gold zu geben (Handicap, Ausbaustufen!).
 * DEPRECATED (wurde nur nicht mitgeteilt): Kein besonderer Gegenstand für Arena-Champion als Belohnung.
 * FIXED: Arenakampf: Sisgard kann unterstützen ohne Bestrafung. Schaden blocken, Sisgard töten oder stunnen.
 * Besser Arenakampf verlieren, wenn eigene Einheit sich einmischt.

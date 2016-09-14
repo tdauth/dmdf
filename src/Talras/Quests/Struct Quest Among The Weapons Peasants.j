@@ -5,6 +5,8 @@ library StructMapQuestsQuestAmongTheWeaponsPeasants requires Asl, StructGameChar
 		implement CharacterQuest
 
 		public stub method enable takes nothing returns boolean
+			local Character character = Character(this.character())
+			//call character.options().missions().addMission('A1R9', 'A1RL', this)
 			return super.enable()
 		endmethod
 

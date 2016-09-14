@@ -7,6 +7,7 @@
 //! import "Game/Struct Dungeon.j"
 //! import "Game/Struct Fellow.j"
 //! import "Game/Struct Dmdf Hash Table.j"
+//! import "Game/Struct Game Cheats.j"
 //! import "Game/Struct Game.j"
 //! import "Game/Struct Grimoire Spell.j"
 //! import "Game/Struct Grimoire.j"
@@ -31,5 +32,5 @@ endif
 //! import "Game/Struct Zone.j"
 //! import "Game/Library Language.j"
 
-library Game requires StructGameBuildings, StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameCommands, StructGameFellow, StructGameDmdfHashTable, StructGameDungeon, StructGameGame, StructGameGrimoireSpell, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, StructGameMissions, StructGameOptions, StructGameOrderAnimations, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructSaveSystem, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
+library Game requires StructGameBuildings, StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameCommands, StructGameFellow, StructGameDmdfHashTable, StructGameDungeon, StructGameGameCheats, StructGameGame, StructGameGrimoireSpell, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, StructGameMissions, StructGameOptions, StructGameOrderAnimations, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructSaveSystem, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
 endlibrary

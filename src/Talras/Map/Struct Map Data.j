@@ -405,6 +405,7 @@ endif
 		 * It is called in the onStopAction() of the video intro with .evaluate() which means it is called after unpausing all units and restoring all player data.
 		 */
 		public static method startAfterIntro takes nothing returns nothing
+			local real handicap = 0.0
 			// call the following code only once in case the intro is showed multiple times
 			if (thistype.m_startedGameAfterIntro) then
 				return
@@ -421,8 +422,11 @@ endif
 
 			call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 
-			// execute because of trigger sleep action
-			call Game.applyHandicapToCreeps.execute()
+			set handicap = Game.applyHandicapToCreeps()
+			call SetPlayerHandicap(MapData.orcPlayer, handicap)
+			call SetPlayerHandicap(MapData.haldarPlayer, handicap)
+			call SetPlayerHandicap(MapData.baldarPlayer, handicap)
+			call SetPlayerHandicap(MapData.arenaPlayer, handicap)
 		endmethod
 
 		/// Required by \ref Classes.

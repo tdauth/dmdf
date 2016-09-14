@@ -164,8 +164,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 
 			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 
-			// execute because of trigger sleep action
-			call Game.applyHandicapToCreeps.execute()
+			call Game.applyHandicapToCreeps()
 		endmethod
 
 		/// Required by \ref Classes.

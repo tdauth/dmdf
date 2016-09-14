@@ -78,7 +78,6 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			local integer i
 			debug call Print("Range item attach")
 
-			// TODO unmorph before if it is morphed already
 			if (character != 0) then
 				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityIdByCharacter(character)) + " to unit " + GetUnitName(whichUnit))
 				/**
@@ -270,6 +269,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// Tellborn's items
 		private static RangeItemType m_staffOfClarity
 		private static ItemType m_shamanMask
+		private static ItemType m_skullMask
 		// NEW
 		private static ItemType m_dagosDagger
 		private static ItemType m_wingsOfDeathAngel
@@ -640,6 +640,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_shamanMask = ItemType.createSimple('I05V', ItemType.equipmentTypeHeaddress)
 			call thistype.m_shamanMask.addAbility('AIi4', true)
 			call thistype.m_shamanMask.addAbility('A1AE', true)
+
+			set thistype.m_skullMask = ItemType.createSimple('I069', ItemType.equipmentTypeHeaddress)
+			call thistype.m_skullMask.addAbility('A1E9', true)
+			call thistype.m_skullMask.addAbility('A1E8', true)
+			call thistype.m_skullMask.addAbility('A1EB', true)
 
 			// NEW
 			set thistype.m_dagosDagger = ItemType.createSimple('I02O', ItemType.equipmentTypePrimaryWeapon)

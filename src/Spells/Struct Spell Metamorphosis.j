@@ -137,6 +137,9 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 			 */
 			if (not character.isMorphed()) then
 				if (this.canMorph.evaluate()) then
+					/*
+					 * This method changes the character ALWAY to its melee unit type to make sure that the passive hero transformation works afterwards.
+					 */
 					if (character.morph(this.disableInventory(), this.enableOnlyRucksack())) then
 						/*
 						 * The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.
@@ -175,24 +178,23 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 
 						// Disabling the inventory removes the item ability which is necessary to place the icon again. Besides the inventory has always to be reenabled.
 						if (not this.disableInventory()) then
+							debug call Print("Disable inventory")
 							call character.inventory().disable()
 						endif
 
 						// Add unmorph spell if at least one slot is free. Otherwise if you sell the item you cannot morph back.
-						if (this.disableInventory() or this.disableGrimoire()) then
+						if (this.disableInventory() or this.disableGrimoire() or this.enableOnlyRucksack()) then
 							// there is always one free ability slot since disabling the backpack is not allowed
 							debug call Print("Adding ability " + GetObjectName(this.abilityId()) + " to unit " + GetUnitName(character.unit()))
 
 							// Note: This would not appear if the item ability would still be active (For example when the backpack page with the item is seen).
 							call UnitAddAbility(character.unit(), this.abilityId())
-							if (GetUnitAbilityLevel(character.unit(), this.abilityId()) > 0) then
-								debug call Print("UNIT HAS ABILITY WTF!")
-							endif
 						endif
 
 						if (not this.disableInventory()) then
-							// no reenable the inventory to show the items as well
+							// now reenable the inventory to show the items as well
 							// This does also change the unit type to a range unit type if necessary since the items are re equipped! Note that in Character.morph() the character always became melee. If only the rucksack is enabled it does at least show the items again which had to be removed to make a free slot.
+							debug call Print("Enable inventory")
 							call character.inventory().enable()
 						endif
 
@@ -229,6 +231,16 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 					call this.character().updateRealSpellLevels()
 				endif
 
+				debug call Print("Restore passive hero transformation with: " + GetObjectName(this.unmorphAbilityId()))
+
+				/*
+				 * Disable inventory to make sure the character is a melee fighter. Otherwise the passive hero transformation won't work since it expects the melee unit type.
+				 * We have to do this here since unline in the morph() method the melee type of the transformed character is not guaranteed.
+				 */
+				if (not this.disableInventory()) then
+					debug call Print("Disable inventory")
+					call this.character().inventory().disable()
+				endif
 				/*
 				 * These two lines of code do the passive transformation to a range fighting unit.
 				 */
@@ -239,10 +251,20 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 				 */
 				if (Character(this.character()).restoreUnit(this.disableInventory(), this.enableOnlyRucksack())) then
 					set this.m_isMorphed = false
+
+					if (not this.disableInventory()) then
+						// now reenable the inventory to show the items as well
+						// This does also change the unit type to a range unit type if necessary since the items are re equipped! Note that before by disabling the inventory the character always became melee. If only the rucksack is enabled it does at least show the items again which had to be removed to make a free slot.
+						debug call Print("Enable inventory")
+						call this.character().inventory().enable()
+					endif
+
 					call this.onRestore.evaluate()
 
 					return true
 				endif
+			debug else
+				debug call Print("Cannot restore")
 			endif
 
 			return false
