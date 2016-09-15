@@ -1,4 +1,5 @@
-#include <QtGui/QApplication>
+#include <QApplication>
+#include <QMessageBox>
 #include <QProcess>
 #include <QSplashScreen>
 
@@ -7,12 +8,11 @@ int main(int argc, char** argv)
 {
 	QApplication app(argc, argv);
 
-	const QString program = "./The Power of Fire.exe";
+	const QString program = "../TPoF.exe";
 	QStringList arguments;
-	arguments << "-window" << "fusion";
-
-	QPixmap pixmap(":/cropped-dmdf.jpg");
-	QSplashScreen splash(pixmap);
+	// Warcraft III's splash screen has a size of 500x400 which has to be hidden.
+	QPixmap pixmap(":/cropped-dmdf-big.jpg");
+	QSplashScreen splash(pixmap, Qt::WindowStaysOnTopHint);
 	splash.show();
 	app.processEvents();
 

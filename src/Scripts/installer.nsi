@@ -3,7 +3,8 @@
 Unicode true
 
 !define INPUT_DIR "E:\Projekte\dmdf\maps\releases"
-!define INPUT_EXE_FILENAME "The Power of Fire.exe"
+!define INPUT_SPLASH_DIR "E:\Projekte\dmdf\splash\TPoFSplash\build\TPoF"
+!define INPUT_EXE_FILENAME "TPoF.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
 !define VERSION "0.8"
 !define CAMPAIGN_VERSION "08"
@@ -32,22 +33,26 @@ InstallDir "$PROGRAMFILES\Warcraft III"
 Section "Application" Application
 	SetOutPath "$INSTDIR\"
 	File "${INPUT_EXE}"
-	CreateShortCut "$DESKTOP\The Power of Fire.lnk" "$INSTDIR\${INPUT_EXE_FILENAME}" ""
+	File /r "${INPUT_SPLASH_DIR}"
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
+
+	SetOutPath "$INSTDIR\TPoF"
+	CreateShortCut "$INSTDIR\The Power of Fire.lnk" "$INSTDIR\TPoF\The Power of Fire.exe" ""
+	CreateShortCut "$DESKTOP\The Power of Fire.lnk" "$INSTDIR\The Power of Fire.lnk" ""
 SectionEnd
 
 Section "English Maps" EnglishMaps
-  SetOutPath "$INSTDIR\Maps\The Power of Fire\en"
-  File "${INPUT_DIR}\en\Talras${VERSION}.w3x"
+	SetOutPath "$INSTDIR\Maps\The Power of Fire\en"
+	File "${INPUT_DIR}\en\Talras${VERSION}.w3x"
 SectionEnd
 
 Section "German Maps" GermanMaps
-  SetOutPath "$INSTDIR\Maps\The Power of Fire\de"
-  File "${INPUT_DIR}\de\Talras${VERSION}.w3x"
-  File "${INPUT_DIR}\de\Gardonar${VERSION}.w3x"
-  File "${INPUT_DIR}\de\GardonarsHell${VERSION}.w3x"
-  File "${INPUT_DIR}\de\Holzbruck${VERSION}.w3x"
-  File "${INPUT_DIR}\de\Arena${VERSION}.w3x"
+	SetOutPath "$INSTDIR\Maps\The Power of Fire\de"
+	File "${INPUT_DIR}\de\Talras${VERSION}.w3x"
+	File "${INPUT_DIR}\de\Gardonar${VERSION}.w3x"
+	File "${INPUT_DIR}\de\GardonarsHell${VERSION}.w3x"
+	File "${INPUT_DIR}\de\Holzbruck${VERSION}.w3x"
+	File "${INPUT_DIR}\de\Arena${VERSION}.w3x"
 SectionEnd
 
 Section "German Campaign" GermanCampaign
@@ -65,6 +70,8 @@ Section "Uninstall"
 	 Delete "$INSTDIR\Campaigns\TPoF{CAMPAIGN_VERSION}en.w3n"
 	 RMDir /r "$INSTDIR\Maps\The Power of Fire"
 	 Delete "$INSTDIR\${INPUT_EXE_FILENAME}"
+	 RMDir /r "$INSTDIR\TPoF"
+	 Delete "$INSTDIR\The Power of Fire.lnk"
 	 Delete "$DESKTOP\The Power of Fire.lnk"
 SectionEnd
 
