@@ -385,7 +385,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Maximalstufe in Holzbruck ist nur 30.
 * War transformed als Engel. Wurde getötet (mit rucksack only) beim Betreten von Baldars Gebiet. Nach Tod lagen Gegenstände auf dem Boden.
 * Trackables an den Grabsteinen erzeugen (Signs) zum Lesen. Easteregg wie in Gothic 2, Referenz zu Gothic. Hätte Faelon gerne gehabt.
-* Man konnte als Engel/Dämon verwandelt die Trommelhöhle verlassen. Beim Verlassen der Höhle im struct Aos zurückverwandeln, falls verwandelt!
+* FIXED: Man konnte als Engel/Dämon verwandelt die Trommelhöhle verlassen. Beim Verlassen der Höhle im struct Aos zurückverwandeln, falls verwandelt!
 * AOS-Leaderboard-Titel fehlte?!
 * FIXED: Keine Abklingzeit für Tellborns Geisterrune obwohl unendlich oft benutzbar.
 * Kornfresserauftrag nach erstem Kornfresser abgeschlossen.
@@ -438,7 +438,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * DEPRECATED (neues Hero-Icon): Ins Zauberbuch Button für Hauptmenü einfügen.
 * Lothar ist nicht dick und hat das gleiche Modell wie Kuno.
 * DEPRECATED (Optionen): Gegenstand einbauen, der Neben-Aufträge anpingt! Ansonsten findet man sich nicht zurecht. Notfalls mit mehreren Seiten. Gegenstand Aufträge soll Seitenwechsel erlauben. Bei Abschluss sollen Symbole verschwinden, damit sie auf Seite 1 kommen.
-* "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?
+* FIXED: "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?
 * FIXED: Die Aufnahmen des Schafsjungen sind im Spiel abgeschnitten. Neu formatieren.
 * FIXED: Schafshirte: Sounds am Anfang schneiden. Lauter machen, schadet nie!
 * FIXED: Tellborn: Sounds am Anfang und Ende schneiden und lauter machen.

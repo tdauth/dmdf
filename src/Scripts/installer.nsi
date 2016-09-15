@@ -6,8 +6,8 @@ Unicode true
 !define INPUT_SPLASH_DIR "E:\Projekte\dmdf\splash\TPoFSplash\build\TPoF"
 !define INPUT_EXE_FILENAME "TPoF.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
-!define VERSION "0.8"
-!define CAMPAIGN_VERSION "08"
+!define VERSION "0.9"
+!define CAMPAIGN_VERSION "09"
 
 Name "The Power of Fire"
 OutFile "E:\Projekte\dmdf\releases\ThePowerOfFire${VERSION}.exe"

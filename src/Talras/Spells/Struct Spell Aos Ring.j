@@ -6,19 +6,29 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 	 */
 	struct SpellAosRing extends SpellMetamorphosis
 		private boolean m_baldar
+		private static thistype array m_baldarRingSpells[MapData.maxPlayers]
+		private static thistype array m_haldarRingSpells[MapData.maxPlayers]
+
+		public static method baldarRingSpell takes Character character returns thistype
+			return thistype.m_baldarRingSpells[GetPlayerId(character.player())]
+		endmethod
+		
+		public static method haldarRingSpell takes Character character returns thistype
+			return thistype.m_haldarRingSpells[GetPlayerId(character.player())]
+		endmethod
 
 		// Called with .evaluate()
 		public stub method canMorph takes nothing returns boolean
 			if (not Aos.areaContainsCharacter(this.character())) then
 				debug call Print("Area does not contain character!")
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Sie müssen sich in der Trommelhöhle befinden, um diesen Zauber wirken zu können.", "You have to be in the Drum Cave to be able to cast this spell."))
-				
+
 				return false
 			endif
-			
+
 			return true
 		endmethod
-		
+
 		/// Called after unit has morphed.
 		public stub method onMorph takes nothing returns nothing
 			if (this.m_baldar) then
@@ -27,7 +37,7 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 				call Aos.characterJoinsHaldar(this.character())
 			endif
 		endmethod
-		
+
 		/// Called after unit has been restored.
 		public stub method onRestore takes nothing returns nothing
 			if (Aos.baldarContainsCharacter(this.character())) then
@@ -44,10 +54,16 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 			// don't show equipment
 			call this.setEnableOnlyRucksack(true)
 			set this.m_baldar = baldar
-			
+
+			if (baldar) then
+				set thistype.m_baldarRingSpells[GetPlayerId(character.player())] = this
+			else
+				set thistype.m_haldarRingSpells[GetPlayerId(character.player())] = this
+			endif
+
 			return this
 		endmethod
-		
+
 		public method onDestroy takes nothing returns nothing
 		endmethod
 	endstruct

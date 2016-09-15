@@ -130,7 +130,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		/**
 		 * Morphs the character.
 		 */
-		private method morph takes nothing returns nothing
+		public method morph takes nothing returns nothing
 			local Character character = Character(this.character())
 			/*
 			 * Only allow one metamorphosis at a time.
@@ -216,7 +216,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 		 * Calls \ref onRestore() with .evaluate() and changes \ref isMorphed()
 		 * \note Does not issue any order/ability.
 		 */
-		private method restoreUnit takes nothing returns boolean
+		public method restoreUnit takes nothing returns boolean
 			/*
 			 * If this overwritten method returns false restoration is canceled.
 			 */
