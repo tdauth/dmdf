@@ -379,7 +379,16 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 	- Stufen von Creeps am Anfang reduzieren. Die Stufe entscheidet mit über die Erfahrung.
 	- FIXED: Orkspieler, Arenaspieler, Haldar- und Baldarspieler müssen auch Handicap erhalten (alle Gegner).
 	- DONE: Stufen der Gefolgsleuter verringern.
+	- Gardonars Dämonen etwas stärker machen.
+	- Deranors Kreaturen schwächer machen. Vor allem Schwere Rüstung entfernen, erhalten kaum Schaden.
 
+* Endlich die Objektdaten verkleinern: Reduziert Ladezeit, reduziert die Anzahl der Strings massiv.
+* FIXED: Verdeckte Gebiete sind teilweise sichtbar auf false in: Deranors Sumpf, Holzbruck, Holzbrucks Unterwelt.
+* Map Deranor: Needs Intro video with Deranor. Deranor should explain how the players have to open the next map exit.
+* Map transition: Nach map transition geht Schreinteleport nicht mehr. Man landet immer bei einem Gebiet. Nur bei Talras so. Hat das etwas mit dem Fehler -1 AIntegerVector zu tun, der auch nur bei Talras kam.
+* Map transition: -1 index AIntegerVector wenn man direkt nach Talras zurückgeht.
+* Map transition: Spieleoptionen icon ist weiter oben. Wird es entfernt?! Sollte bei Map transition auch neu erzeugt werden, zumindest die Einheit.
+* Iconpositionen von Zauberbüchern der Spieloptionen festlegen.
 * Für jeden optionalen Auftrag einen Eintrag in der Liste der Aufträge erzeugen.
 * Barrikaden der Orks blocken nicht. Einfach Blocker erzeugen pro Barrikade und bei Tod vernichten?! Wieso geht Verlauf nicht?
 * FIXED: Maximalstufe in Holzbruck ist nur 30.
@@ -544,7 +553,7 @@ Kleriker:
 Weitere TODOS:
 * Daten aus Spell conditions in actions weiterreichen, anonsten wird vieles zweimal berechnet.
 * Frostränder in Hauptmenü durch Ränder aus Dämonen-Interface ersetzen.
-* Splash Screen in der custom exe: Programm Resource Hacker: http://www.hiveworkshop.com/threads/how-to-replace-the-splash-screen-of-warcraft-iii.287721/#post-3088398
+* DONE: Splash Screen in der custom exe: Programm Resource Hacker: http://www.hiveworkshop.com/threads/how-to-replace-the-splash-screen-of-warcraft-iii.287721/#post-3088398
 * Grundzauber reinschreiben nur eine Stufe.
 * DONE: Add spell attributes bonus with hidden icon and max level of 100. The player can skill this spell when he has skilled all other spells to maximum. Increase the max hero level to 200.
 * Arenagegner viel zu schwach. Magier auch Zauber benutzen, Krieger stärker.

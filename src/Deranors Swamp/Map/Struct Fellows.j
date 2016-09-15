@@ -48,6 +48,7 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_dragonSlayer.addAbility('A18T')
 			call thistype.m_dragonSlayer.addAbility('A0PW')
 			call thistype.m_dragonSlayer.addAbility('A09P')
+			call thistype.m_dragonSlayer.addAbility('A1TO')
 		endmethod
 
 		public static method wigberht takes nothing returns Fellow

@@ -151,7 +151,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 			call SuspendTimeOfDay(false)
 
-			call thistype.startAfterIntro.evaluate()
+			call VideoIntro.video().play()
 		endmethod
 
 		public static method startAfterIntro takes nothing returns nothing

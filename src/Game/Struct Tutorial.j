@@ -63,11 +63,15 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			/*
 			 * This trigger shows information about XP and bounty share of killing enemies.
 			 */
-			set this.m_killTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(this.m_killTrigger, EVENT_PLAYER_UNIT_DEATH)
-			call TriggerAddCondition(this.m_killTrigger, Condition(function thistype.triggerConditionKill))
-			call TriggerAddAction(this.m_killTrigger, function thistype.triggerActionKill)
-			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, 0, this)
+			if (not Game.restoreCharacters.evaluate()) then
+				set this.m_killTrigger = CreateTrigger()
+				call TriggerRegisterAnyUnitEventBJ(this.m_killTrigger, EVENT_PLAYER_UNIT_DEATH)
+				call TriggerAddCondition(this.m_killTrigger, Condition(function thistype.triggerConditionKill))
+				call TriggerAddAction(this.m_killTrigger, function thistype.triggerActionKill)
+				call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, 0, this)
+			else
+				set this.m_killTrigger = null
+			endif
 
 			return this
 		endmethod
@@ -76,12 +80,13 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			// members
 			if (this.m_killTrigger != null) then
 				call DmdfHashTable.global().destroyTrigger(this.m_killTrigger)
+				set this.m_killTrigger = null
 			endif
 		endmethod
 
 		private static method onInit takes nothing returns nothing
-			local quest whichQuest
-			local questitem questItem
+			local quest whichQuest = null
+			local questitem questItem = null
 			/*
 			 * Hint quest entries:
 			 */
