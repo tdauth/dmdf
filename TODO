@@ -382,6 +382,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 	- Gardonars Dämonen etwas stärker machen.
 	- Deranors Kreaturen schwächer machen. Vor allem Schwere Rüstung entfernen, erhalten kaum Schaden.
 
+* Splash Screen ist nicht immer über dem von Warcraft III.
 * Endlich die Objektdaten verkleinern: Reduziert Ladezeit, reduziert die Anzahl der Strings massiv.
 * FIXED: Verdeckte Gebiete sind teilweise sichtbar auf false in: Deranors Sumpf, Holzbruck, Holzbrucks Unterwelt.
 * Map Deranor: Needs Intro video with Deranor. Deranor should explain how the players have to open the next map exit.
