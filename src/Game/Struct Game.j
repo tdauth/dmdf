@@ -1,7 +1,7 @@
-library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameMapChanger, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
+library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameMapChanger, StructGameOrderAnimations, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
 
 	/**
-	 * This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
+	 * \brief This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
 	 * As in Warcraft III itself characters do not necessarily have to kill enemies theirselfs (e. g. with a final hit).
 	 * A custom experience system is necessary to be able to distribute the whole gained experience equally (not like in Warcraft III where some do get more and some do get less).
 	 * \ref distributeUnitExperience() calculates the whole gained experience by one single kill which can be distributed on all characters.
@@ -14,11 +14,9 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		private static constant real hpFactor = 1.0
 		private static constant real manaFactor = 2.0
 		private static constant real levelFactor = 100.0
-		private static constant real summands = 7.0
-		private static constant real dividend = 10.0
 		/// \note If the range is 0.0 or smaller it is ignored.
 		private static constant real range = 0.0
-		private static constant real xpHandicap = 0.30 //0.20 // this XP factor is used to reduce the actual gained experience such as in the Bonus Campaign. We want to prevent the characters from leveling too fast. In the Bonus Campaign it is 10 % and on difficulty hard it is even 7 %.
+		private static constant real xpHandicap = 0.10 // this XP factor is used to reduce the actual gained experience such as in the Bonus Campaign. We want to prevent the characters from leveling too fast. In the Bonus Campaign it is 10 % and on difficulty hard it is even 7 %.
 		private static constant real unitsFactor = 1.0
 		private static constant real alliedUnitsFactor = 1.0
 		private static constant real characterFactor = 1.0
@@ -43,12 +41,9 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			//debug call Print("Alliance state to killing unit: " + I2S(GetUnitAllianceStateToUnit(character.unit(), killingUnit)) + ".")
 			// never give XP for buildings. for example boxes are buildings as well
 			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) == bj_ALLIANCE_UNALLIED and (GetUnitAllianceStateToUnit(character.unit(), killingUnit) == bj_ALLIANCE_ALLIED or character.player() == GetOwningPlayer(killingUnit)) and ((thistype.range > 0.0 and GetDistanceBetweenUnitsWithZ(character.unit(), whichUnit) <= thistype.range) or thistype.range <= 0.0) and not IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
-				/// @todo FIXME, DMdF customized XP formula
-				//set result = thistype.damageFactor * GetUnitDamage(whichUnit) + thistype.damageTypeWeightFactor * GetUnitDamageType(whichUnit) + thistype.armourFactor * GetUnitArmour(whichUnit) + thistype.armourTypeWeightFactor * GetUnitArmourType(whichUnit) + thistype.hpFactor * GetUnitState(whichUnit, UNIT_STATE_LIFE) + thistype.manaFactor * GetUnitState(whichUnit, UNIT_STATE_MANA) + thistype.levelFactor * GetUnitLevel(whichUnit)
 				// Warcraft 3 default XP formula
 				set result = I2R(GetUnitXP(whichUnit)) * thistype.xpHandicap
 				//debug call Print("Result is " + R2S(result))
-				//set result = result / (thistype.summands * (thistype.dividend - Game.missingPlayers.evaluate()))
 				if (killingUnit == character.unit()) then
 					set result = result * thistype.characterFactor
 				elseif (ACharacter.isUnitCharacter(killingUnit)) then
@@ -60,16 +55,15 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 				endif
 			endif
 
-			return IMaxBJ(R2I(result / ACharacter.countAllPlaying()), 1) // give at least 1 XP
+			return IMaxBJ(R2I(result), 1) // give at least 1 XP
 		endmethod
 
 		/**
 		 * Gives a character the XP gained for killing unit \p whichUnit by the killer \p killingUnit.
-		 * The XP is always divided by the number of players. Otherwise the game would be too easy for multiple players.
 		 * \return Returns the XP.
 		 */
 		public static method giveUnitExperienceToCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
-			local integer experience = thistype.unitExperienceForCharacter(character, whichUnit, killingUnit) / ACharacter.countAll()
+			local integer experience = thistype.unitExperienceForCharacter(character, whichUnit, killingUnit)
 			//debug call Print("Experience: " + I2S(experience))
 			if (experience > 0) then
 				if (not IsUnitDeadBJ(character.unit())) then
@@ -121,11 +115,11 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) != bj_ALLIANCE_UNALLIED or (GetUnitAllianceStateToUnit(character.unit(), killingUnit) != bj_ALLIANCE_ALLIED and character.player() != GetOwningPlayer(killingUnit)) or IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
 				return 0
 			endif
-			return thistype.unitBounty(whichUnit) / ACharacter.countAllPlaying()
+			return thistype.unitBounty(whichUnit)
 		endmethod
 
 		public static method giveBountyToCharacter takes Character character, unit whichUnit, unit killingUnit returns integer
-			local integer bounty = thistype.unitBountyForCharacter(character, whichUnit, killingUnit) / ACharacter.countAll()
+			local integer bounty = thistype.unitBountyForCharacter(character, whichUnit, killingUnit)
 			if (bounty > 0) then
 				call Bounty(character.player(), GetUnitX(whichUnit), GetUnitY(whichUnit), bounty)
 			endif
@@ -173,6 +167,10 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		 * The global characters scheme which can be shown or hidden by any player.
 		 */
 		private static ACharactersScheme m_charactersScheme
+		/**
+		 * Indicates if the map has been started by a map transition in the singleplayer campaign or not.
+		 */
+		private static boolean m_restoreCharacters
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -195,6 +193,10 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 		public static method isCampaign takes nothing returns boolean
 			// this custom object should only exist in the campaign not in the usual maps
 			return GetObjectName('h600') == "IsCampaign"
+		endmethod
+
+		public static method restoreCharacters takes nothing returns boolean
+			return thistype.m_restoreCharacters
 		endmethod
 
 		/**
@@ -282,13 +284,15 @@ library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, S
 				set handicap = handicap + 0.30
 			endif
 
+			// decrease difficulty for others if players are missing
 			call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
 
-			// decrease difficulty for others if players are missing
-			if (missingPlayers > 0) then
-				call Character.displayDifficultyToAll(Format(tre("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.", "Since you are starting the game without %1% players the enemies get a handicap of %2% %. Besides your character gains more experience as well as more gold coins from killing enemies.")).s(trpe("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), "one more", Format("%1% more").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
-			elseif (handicap > 1.0 or handicap < 1.0) then
-				call Character.displayDifficultyToAll(Format(tre("Aufgrund der eingestellten Schwierigkeit starten die Unholde mit einem Handicap von %1%.", "Because of the set difficulty the creeps start with a handicap of %1%.")).rw(handicap * 100.0, 0, 0).result())
+			if (not Game.restoreCharacters()) then
+				if (missingPlayers > 0) then
+					call Character.displayDifficultyToAll(Format(tre("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.", "Since you are starting the game without %1% players the enemies get a handicap of %2% %. Besides your character gains more experience as well as more gold coins from killing enemies.")).s(trpe("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), "one more", Format("%1% more").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
+				elseif (handicap > 1.0 or handicap < 1.0) then
+					call Character.displayDifficultyToAll(Format(tre("Aufgrund der eingestellten Schwierigkeit starten die Unholde mit einem Handicap von %1%.", "Because of the set difficulty the creeps start with a handicap of %1%.")).rw(handicap * 100.0, 0, 0).result())
+				endif
 			endif
 
 			return handicap
@@ -427,9 +431,11 @@ endif
 
 		/// Most ASL systems are initialized here.
 		private static method onInit takes nothing returns nothing
+			local integer i = 0
+
 			// restore the characters in a single player campaign of the game is changed by loading or if it is not the initial chapter
-			local boolean restoreCharacters = bj_isSinglePlayer and Game.isCampaign() and MapChanger.charactersExistSinglePlayer() and (IsMapFlagSet(MAP_RELOADED) or not MapData.isSeparateChapter)
-			local integer i
+			set thistype.m_restoreCharacters = bj_isSinglePlayer and Game.isCampaign() and MapChanger.charactersExistSinglePlayer() and (IsMapFlagSet(MAP_RELOADED) or not MapData.isSeparateChapter)
+
 			// Advanced Script Library
 			// general systems
 			call Asl.init()
@@ -574,7 +580,7 @@ endif
 			call MapData.onStart.evaluate()
 
 			// if the game is new show the class selection, otherwise restore characters from the game cache (only in campaign mode)
-			if (restoreCharacters) then
+			if (thistype.restoreCharacters()) then
 				// new OpLimit
 				call ForForce(bj_FORCE_PLAYER[0], function MapChanger.restoreCharactersSinglePlayer)
 				call ClassSelection.startGame.evaluate()
@@ -590,126 +596,6 @@ endif
 				call ClassSelection.showClassSelection.execute() // multiboard is created, uses TriggerSleepAction()
 			endif
 		endmethod
-
-static if (DEBUG_MODE) then
-		private static method onCheatActionCheats takes ACheat cheat returns nothing
-			call Print(tre("Spiel-Cheats:", "Game Cheats:"))
-			call Print(tr("classes - Listet alle verfügbaren Klassenkürzel auf."))
-			call Print(tr("addspells <Klasse> - Der Charakter erhält sämtliche Zauber der Klasse im Zauberbuch (keine Klassenangabe oder \"all\" bewirken das Hinzufügen aller Zauber der anderen Klassen)."))
-			call Print(tr("setspellsmax <Klasse> - Alle Zauber des Charakters der Klasse werden auf ihre Maximalstufe gesetzt (keine Klassenangabe oder \"all\" bewirken das Setzen aller Klassenzauber)."))
-			call Print(tr("addskillpoints <x> - Der Charakter erhält x Zauberpunkte."))
-			call Print(tr("addclassspells - Der Charakter erhält sämtliche Zauber seiner Klasse im Zauberbuch."))
-			call Print(tr("addotherclassspells - Der Charakter erhält sämtliche Zauber der anderen Klassen im Zauberbuch."))
-			call Print(tr("movable - Der Charakter wird bewegbar oder nicht mehr bewegbar."))
-			call Print(tr("animation <index> - Spielt die Animation mit dem entsprechenden Index des Charakters ab."))
-		endmethod
-
-		private static method onCheatActionClasses takes ACheat cheat returns nothing
-			call Print(tr("Klassenkürzelliste:"))
-			call Print(StringArg(tr("%s - \"c\""), Classes.className(Classes.cleric())))
-			call Print(StringArg(tr("%s - \"n\""), Classes.className(Classes.necromancer())))
-			call Print(StringArg(tr("%s - \"d\""), Classes.className(Classes.druid())))
-			call Print(StringArg(tr("%s - \"k\""), Classes.className(Classes.knight())))
-			call Print(StringArg(tr("%s - \"s\""), Classes.className(Classes.dragonSlayer())))
-			call Print(StringArg(tr("%s - \"r\""), Classes.className(Classes.ranger())))
-			call Print(StringArg(tr("%s - \"e\""), Classes.className(Classes.elementalMage())))
-			call Print(StringArg(tr("%s - \"w\""), Classes.className(Classes.wizard())))
-		endmethod
-
-		private static method onCheatActionAddSpells takes ACheat cheat returns nothing
-			local string class = StringTrim(cheat.argument())
-			if (class == "all" or class == null) then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAllOtherClassSpells.evaluate()
-				call Print(tr("Alle anderen Klassenzauber erhalten."))
-			elseif (class == "c") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addClericSpells.evaluate()
-				call Print(tr("Alle Klerikerzauber erhalten."))
-			elseif (class == "n") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addNecromancerSpells.evaluate()
-				call Print(tr("Alle Nekromantenzauber erhalten."))
-			elseif (class == "d") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addDruidSpells.evaluate()
-				call Print(tr("Alle Druidenzauber erhalten."))
-			elseif (class == "k") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addKnightSpells.evaluate()
-				call Print(tr("Alle Ritterzauber erhalten."))
-			elseif (class == "s") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addDragonSlayerSpells.evaluate()
-				call Print(tr("Alle Drachentöterzauber erhalten."))
-			elseif (class == "r") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addRangerSpells.evaluate()
-				call Print(tr("Alle Waldläuferzauber erhalten."))
-			elseif (class == "e") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addElementalMageSpells.evaluate()
-				call Print(tr("Alle Elementarmagierzauber erhalten."))
-			elseif (class == "w") then
-				call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addWizardSpells.evaluate()
-				call Print(tr("Alle Zaubererzauber erhalten."))
-			else
-				call Print(Format(tr("Unbekanntes Klassenkürzel: \"%1%\"")).s(class).result())
-			endif
-		endmethod
-
-		private static method onCheatActionSetSpellsMax takes ACheat cheat returns nothing
-			local Grimoire grimoire = Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire()
-			local integer i = 0
-			local boolean result = true
-			// try for every spell and do not exit before since it returns false on having the maximum level already
-			loop
-				exitwhen (i == grimoire.spells())
-				if (not grimoire.setSpellMaxLevelByIndex(i, false)) then
-					set result = false
-				endif
-				set i = i + 1
-			endloop
-			call grimoire.updateUi()
-			if (result) then
-				call Print(tr("Alle Zauber auf ihre Maximalstufe gesetzt."))
-			else
-				call Print(tr("Konnte nicht alle Zauber ihre Maximulstufe setzen (eventuell nicht genügend Zauberpunkte)."))
-			endif
-		endmethod
-
-		private static method onCheatActionAddSkillPoints takes ACheat cheat returns nothing
-			local integer skillPoints = S2I(StringTrim(cheat.argument()))
-			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addSkillPoints.evaluate(skillPoints, true)
-			call Print(Format(tr("%1% Zauberpunkt(e) erhalten.")).i(skillPoints).result())
-		endmethod
-
-		private static method onCheatActionAddClassSpells takes ACheat cheat returns nothing
-			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addCharacterClassSpells.evaluate()
-			call Print(tr("Alle Klassenzauber erhalten."))
-		endmethod
-
-		private static method onCheatActionAddOtherClassSpells takes ACheat cheat returns nothing
-			call Character(ACharacter.playerCharacter(GetTriggerPlayer())).grimoire().addAllOtherClassSpells.evaluate()
-			call Print(tr("Alle anderen Klassenzauber erhalten."))
-		endmethod
-
-		private static method onCheatActionMovable takes ACheat cheat returns nothing
-			if (Character.playerCharacter(GetTriggerPlayer()) != 0) then
-				if (Character.playerCharacter(GetTriggerPlayer()).isMovable()) then
-					call Character.playerCharacter(GetTriggerPlayer()).setMovable(false)
-					call Print(tr("Charakter unbewegbar gemacht."))
-				else
-					call Character.playerCharacter(GetTriggerPlayer()).setMovable(true)
-					call Print(tr("Charakter bewegbar gemacht."))
-				endif
-			else
-				call Print(tr("Sie haben keinen Charakter."))
-			endif
-		endmethod
-
-		private static method onCheatActionAnimation takes ACheat cheat returns nothing
-			local integer index = S2I(StringTrim(cheat.argument()))
-			if (Character.playerCharacter(GetTriggerPlayer()) != 0) then
-				call Print("Animation " + I2S(index))
-				call SetUnitAnimationByIndex(Character.playerCharacter(GetTriggerPlayer()).unit(), index)
-			else
-				call Print(tr("Sie haben keinen Charakter."))
-			endif
-		endmethod
-endif
 
 		/**
 		 * Creates the global scheme for a character overview which can be shown to every player.
@@ -822,17 +708,7 @@ endif
 
 			// debug mode allows you to use various cheats
 static if (DEBUG_MODE) then
-			call Print(tr("|c00ffcc00TEST-MODUS|r"))
-			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"gamecheats\", um eine Liste sämtlicher Spiel-Cheats zu erhalten."))
-			call ACheat.create("gamecheats", true, thistype.onCheatActionCheats)
-			call ACheat.create("classes", true, thistype.onCheatActionClasses)
-			call ACheat.create("addspells", false, thistype.onCheatActionAddSpells)
-			call ACheat.create("addskillpoints", false, thistype.onCheatActionAddSkillPoints)
-			call ACheat.create("setspellsmax", false, thistype.onCheatActionSetSpellsMax)
-			call ACheat.create("addclassspells", true, thistype.onCheatActionAddClassSpells)
-			call ACheat.create("addotherclassspells", true, thistype.onCheatActionAddOtherClassSpells)
-			call ACheat.create("movable", true, thistype.onCheatActionMovable)
-			call ACheat.create("animation", false, thistype.onCheatActionAnimation)
+			call GameCheats.init.evaluate()
 endif
 			/// has to be called by struct \ref MapData.
 			//call ACharacter.setAllMovable(true)
@@ -973,6 +849,7 @@ endif
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.pauseAll)
 			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.pauseAll)
 			call ForForce(bj_FORCE_PLAYER[0], function Routines.destroyTextTags)
+			call ForForce(bj_FORCE_PLAYER[0], function Routines.stopSounds)
 			call DisableTrigger(thistype.m_killTrigger)
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterShownItem), function thistype.hideItem)
 			set i = 0
@@ -990,6 +867,9 @@ endif
 
 			call DisableTransparency()
 			call CameraHeight.pause.evaluate()
+
+			// make sure camera is reset after resetting camera height and camera timer of characters
+			call ResetToGameCamera(0.0)
 
 			/*
 			 * The attack order animations of the Villager255 have to be handled for the actor as well.

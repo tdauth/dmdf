@@ -14,7 +14,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 	 * Each team spawns units periodically at both lines and sends them to the other team's camp.
 	 * The spawn interval is defined by \ref spawnTime.
 	 *
-	 * The players for the two teams are defined in \ref MapData as \ref MapData.haldarPlayer and \ref  MapData.baldarPlayer.
+	 * The players for the two teams are defined in \ref MapData as \ref MapData.haldarPlayer and \ref MapData.baldarPlayer.
 	 *
 	 * The characters can join one of the teams by using a special ring to transform themselves either in a demon or an angel without inventory and different abilities.
 	 * If they join a team they get the chance not only to fight the other team's computer controlled units but also the other players of the other team.
@@ -23,7 +23,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 	 *
 	 * Use \ref init() to initialize the whole AOS system.
 	 *
-	 * \note The spawn starts when the first character enters the area of the AOS. This should reduce the performance if the AOS is not used yet.
+	 * \note The spawn starts when the first character enters the area of the AOS. This should reduce the performance if the AOS is not used yet. It is paused during video sequences to suppress sound effects from the fights etc.
 	 */
 	struct Aos
 		private static constant real spawnTime = 60.0
@@ -47,6 +47,13 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Aos\"")
 
 		/**
+		 * \return Returns true if the first character has entered the AOS cave which means that units are spawned.
+		 */
+		public static method characterHasEntered takes nothing returns boolean
+			return thistype.m_characterHasEntered
+		endmethod
+
+		/**
 		 * Continues the AOS spawn on both sides.
 		 */
 		public static method continueSpawn takes nothing returns nothing
@@ -57,19 +64,18 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		public static method pauseSpawn takes nothing returns nothing
 			call PauseTimerBJ(true, thistype.m_spawnTimer)
 		endmethod
-		
+
 		private static method timerFunctionSpawn takes nothing returns nothing
-			local effect createdEffect
+			local effect createdEffect = null
 			local group haldarsGroup0 = CreateGroup()
 			local group haldarsGroup1 = CreateGroup()
 			local group baldarsGroup0 = CreateGroup()
 			local group baldarsGroup1 = CreateGroup()
-			local unit createdUnit
+			local unit createdUnit = null
 			debug call Print("AOS Spawn!")
 			// Haldar
 			if (not IsUnitPaused(Npcs.haldar())) then
 				call SetUnitAnimation(Npcs.haldar(), "Spell Slam")
-				call ResetUnitAnimation(Npcs.haldar())
 				call DestroyEffect(AddSpecialEffect("Models\\Effects\\TeleportationZaubernder.mdx", GetUnitX(Npcs.haldar()), GetUnitY(Npcs.haldar())))
 			endif
 			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_haldar_spawn_point_0), GetRectCenterY(gg_rct_haldar_spawn_point_0)))
@@ -106,7 +112,6 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			// baldar
 			if (not IsUnitPaused(Npcs.baldar())) then
 				call SetUnitAnimation(Npcs.baldar(), "Spell Slam")
-				call ResetUnitAnimation(Npcs.baldar())
 				call DestroyEffect(AddSpecialEffect("Models\\Effects\\TeleportationZaubernder.mdx", GetUnitX(Npcs.baldar()), GetUnitY(Npcs.baldar())))
 			endif
 			call DestroyEffect(AddSpecialEffect("Models\\Effects\\Teleportation.mdx", GetRectCenterX(gg_rct_baldar_spawn_point_0), GetRectCenterY(gg_rct_baldar_spawn_point_0)))
@@ -149,7 +154,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			set baldarsGroup0 = null
 			call DestroyGroup(baldarsGroup1)
 			set baldarsGroup1 = null
-			
+
 			debug call Print("AOS Spawn End!")
 			debug call Print("AOS timeout: " + R2S(TimerGetTimeout(thistype.m_spawnTimer)))
 		endmethod
@@ -159,59 +164,67 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		 * \note If this is the first time a character enters the area, the AOS spawns start. This reduces performance issues if nobody ever enters the AOS area.
 		 */
 		public static method characterJoins takes Character character returns nothing
-			local player user = character.player()
-			call PlayThematicMusicForPlayer(user, "Music\\TheDrumCave.mp3")
-			call Dungeons.drumCave().setCameraBoundsForPlayer(user)
+			call PlayThematicMusicForPlayer(character.player(), "Music\\TheDrumCave.mp3")
+			call Dungeons.drumCave().setCameraBoundsForPlayer(character.player())
 			call character.setCamera()
+			/*
+			 * Is the first character who enters the AOS area in the game.
+			 */
 			if (not thistype.m_characterHasEntered) then
 				set thistype.m_characterHasEntered = true
-				/// @todo Play video The Vision.
-				// black legion workers
+				// black legion workers start working
 				call IssueTargetOrder(gg_unit_u001_0190, "harvest", gg_dest_B00D_2651)
 				call IssueTargetOrder(gg_unit_u001_0191, "harvest", gg_dest_B00D_8151)
 				call IssueTargetOrder(gg_unit_u001_0192, "harvest", gg_dest_B00D_2623)
-				
+
+				// Initial spawn of armies.
 				call thistype.timerFunctionSpawn()
+				// Start the spawn timer periodically.
 				call TimerStart(thistype.m_spawnTimer, thistype.spawnTime, true, function thistype.timerFunctionSpawn)
 			endif
-			set user = null
 		endmethod
 
 		public static method characterLeaves takes Character character returns nothing
-			local player user = character.player()
-			call EndThematicMusicForPlayer(user)
-			call Dungeon.resetCameraBoundsForPlayer(user) // set camera bounds before rect!
+			call EndThematicMusicForPlayer(character.player())
+			call Dungeon.resetCameraBoundsForPlayer(character.player()) // set camera bounds before rect!
 			call character.setCamera()
-			set user = null
 		endmethod
-		
+
+		/**
+		 * Updates the alliance for the owner of \p character depending on the AOS legion the character has joined.
+		 * \param halder If true the character belongs to the team of the White Legion. Otherwise he belongs to the team of the Black Legion.
+		 */
 		private static method setCharacterAllianceStateToOthers takes Character character, boolean haldar returns nothing
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				if (thistype.m_playerHasJoinedHaldar[i] and haldar) then
-					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
-					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
-				elseif (thistype.m_playerHasJoinedHaldar[i] and not haldar) then
-					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_UNALLIED)
-					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_UNALLIED)
-				elseif (thistype.m_playerHasJoinedBaldar[i] and haldar) then
-					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_UNALLIED)
-					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_UNALLIED)
-				elseif (thistype.m_playerHasJoinedBaldar[i] and not haldar) then
-					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
-					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
-				else
-					if (character.player() == MAP_CONTROL_COMPUTER or GetPlayerController(Player(i)) == MAP_CONTROL_COMPUTER) then
-						call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_ADVUNITS)
-						call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
-					else
+				// Don't change alliance to the owner of the character himself.
+				if (Player(i) != character.player()) then
+					if (thistype.m_playerHasJoinedHaldar[i] and haldar) then
 						call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
 						call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+					elseif (thistype.m_playerHasJoinedHaldar[i] and not haldar) then
+						call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_UNALLIED)
+						call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_UNALLIED)
+					elseif (thistype.m_playerHasJoinedBaldar[i] and haldar) then
+						call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_UNALLIED)
+						call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_UNALLIED)
+					elseif (thistype.m_playerHasJoinedBaldar[i] and not haldar) then
+						call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
+						call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+					else
+						if (character.player() == MAP_CONTROL_COMPUTER or GetPlayerController(Player(i)) == MAP_CONTROL_COMPUTER) then
+							call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_ADVUNITS)
+							call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
+						else
+							call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
+							call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+						endif
 					endif
 				endif
 				set i = i + 1
 			endloop
+			// Update the alliance states to the legion players.
 			if (haldar) then
 				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, character.player(), bj_ALLIANCE_ALLIED_VISION)
 				call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, character.player(), bj_ALLIANCE_UNALLIED)
@@ -224,109 +237,136 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 				call SetPlayerAllianceStateBJ(character.player(), thistype.m_baldarsUser, bj_ALLIANCE_ALLIED)
 			endif
 		endmethod
-		
+
 		private static method resetCharacterAllianceStateToOthers takes Character character returns nothing
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				if (character.player() == MAP_CONTROL_COMPUTER or GetPlayerController(Player(i)) == MAP_CONTROL_COMPUTER) then
-					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_ADVUNITS)
-					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
-				else
-					call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
-					call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+				// Don't change alliance to the owner of the character himself.
+				if (Player(i) != character.player()) then
+					if (character.player() == MAP_CONTROL_COMPUTER or GetPlayerController(Player(i)) == MAP_CONTROL_COMPUTER) then
+						call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_ADVUNITS)
+						call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
+					else
+						call SetPlayerAllianceStateBJ(Player(i), character.player(), bj_ALLIANCE_ALLIED_VISION)
+						call SetPlayerAllianceStateBJ(character.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
+					endif
 				endif
 				set i = i + 1
 			endloop
-				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, character.player(), bj_ALLIANCE_NEUTRAL)
+
+			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, character.player(), bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, character.player(), bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(character.player(), thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(character.player(), thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
 		endmethod
 
+		/**
+		 * The character \p character joins the White Legion.
+		 */
 		public static method characterJoinsHaldar takes Character character returns nothing
-			local player user
+			if (thistype.m_playerHasJoinedHaldar[GetPlayerId(character.player())] or thistype.m_playerHasJoinedBaldar[GetPlayerId(character.player())]) then
+				debug call Print("Character is already in a legion.")
+				return
+			endif
+
+			if (character.isInPvp()) then
+				debug call Print("Character is already in PvP.")
+				return
+			endif
+
 			call character.setRect(gg_rct_haldar_start)
 			call character.setFacing(270.0)
 			call character.panCameraSmart()
 			call character.displayMessage(ACharacter.messageTypeInfo, tre("Sie sind Haldars Truppe beigetreten.", "You have joined Haldar's troops."))
 			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tre("%s ist Haldars Truppe beigetreten.", "%s has joined Haldar's troops."), character.name()))
-			set user = character.player()
-			call TimerDialogDisplayForPlayerBJ(true, thistype.m_spawnTimerDialog, user)
+			call TimerDialogDisplayForPlayerBJ(true, thistype.m_spawnTimerDialog, character.player())
 			call Shrines.aosShrineHaldar().enableForCharacter(character, false)
-			set thistype.m_playerHasJoinedHaldar[GetPlayerId(user)] = true
+			set thistype.m_playerHasJoinedHaldar[GetPlayerId(character.player())] = true
 			set thistype.m_haldarMembers = thistype.m_haldarMembers + 1
 			call thistype.setCharacterAllianceStateToOthers(character, true)
-			call LeaderboardAddItemBJ(user, thistype.m_leaderboard, character.name(), thistype.m_playerScore[GetPlayerId(user)])
-			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, true)
+			call LeaderboardAddItemBJ(character.player(), thistype.m_leaderboard, character.name(), thistype.m_playerScore[GetPlayerId(character.player())])
+			call ShowLeaderboardForPlayer(character.player(), thistype.m_leaderboard, true)
 			call character.setIsInPvp(true)
-			set user = null
 		endmethod
 
+		/**
+		 * The character \p character leaves the White Legion.
+		 */
 		public static method characterLeavesHaldar takes Character character returns nothing
-			local player user = character.player()
-			call TimerDialogDisplayForPlayerBJ(false, thistype.m_spawnTimerDialog, user)
+			if (not thistype.m_playerHasJoinedHaldar[GetPlayerId(character.player())]) then
+				debug call Print("Character is not in the White Legion.")
+				return
+			endif
+
+			call TimerDialogDisplayForPlayerBJ(false, thistype.m_spawnTimerDialog, character.player())
 			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tre("%s hat das Schlachtfeld und somit Haldars Truppe verlassen.", "%s has left the battlefield and therefore Haldar's troops."), character.name()))
-			set thistype.m_playerHasJoinedHaldar[GetPlayerId(user)] = false
+			set thistype.m_playerHasJoinedHaldar[GetPlayerId(character.player())] = false
 			set thistype.m_haldarMembers = thistype.m_haldarMembers - 1
-			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, false)
-			call LeaderboardRemovePlayerItem(thistype.m_leaderboard, user)
+			call ShowLeaderboardForPlayer(character.player(), thistype.m_leaderboard, false)
+			call LeaderboardRemovePlayerItem(thistype.m_leaderboard, character.player())
 			call thistype.resetCharacterAllianceStateToOthers(character)
 			call character.setIsInPvp(false)
-			set user = null
 		endmethod
 
+		/**
+		 * The character \p character joins the Black Legion.
+		 */
 		public static method characterJoinsBaldar takes Character character returns nothing
-			local player user
+			if (thistype.m_playerHasJoinedHaldar[GetPlayerId(character.player())] or thistype.m_playerHasJoinedBaldar[GetPlayerId(character.player())]) then
+				debug call Print("Character is already in a legion.")
+				return
+			endif
+
+			if (character.isInPvp()) then
+				debug call Print("Character is already in PvP.")
+				return
+			endif
+
 			call character.setRect(gg_rct_baldar_start)
 			call character.setFacing(90.0)
 			call character.panCameraSmart()
 			call character.displayMessage(ACharacter.messageTypeInfo, tre("Sie sind Baldars Truppe beigetreten.", "You have joined Baldar's troops."))
 			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tre("%s ist Baldars Truppe beigetreten.", "%s has joined Baldar's troops."), character.name()))
-			set user = character.player()
-			call TimerDialogDisplayForPlayerBJ(true, thistype.m_spawnTimerDialog, user)
+			call TimerDialogDisplayForPlayerBJ(true, thistype.m_spawnTimerDialog, character.player())
 			call Shrines.aosShrineBaldar().enableForCharacter(character, false)
-			set thistype.m_playerHasJoinedBaldar[GetPlayerId(user)] = true
+			set thistype.m_playerHasJoinedBaldar[GetPlayerId(character.player())] = true
 			set thistype.m_baldarMembers = thistype.m_baldarMembers + 1
 			call thistype.setCharacterAllianceStateToOthers(character, false)
-			call LeaderboardAddItemBJ(user, thistype.m_leaderboard, character.name(), thistype.m_playerScore[GetPlayerId(user)])
-			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, true)
+			call LeaderboardAddItemBJ(character.player(), thistype.m_leaderboard, character.name(), thistype.m_playerScore[GetPlayerId(character.player())])
+			call ShowLeaderboardForPlayer(character.player(), thistype.m_leaderboard, true)
 			call character.setIsInPvp(true)
-			set user = null
 		endmethod
 
+		/**
+		 * The character \p character leaves Black Legion.
+		 */
 		public static method characterLeavesBaldar takes Character character returns nothing
-			local player user = character.player()
-			call TimerDialogDisplayForPlayerBJ(false, thistype.m_spawnTimerDialog, user)
+			if (not thistype.m_playerHasJoinedBaldar[GetPlayerId(character.player())]) then
+				debug call Print("Character is not in the Black Legion.")
+				return
+			endif
+
+			call TimerDialogDisplayForPlayerBJ(false, thistype.m_spawnTimerDialog, character.player())
 			call character.displayMessageToAllOthers(ACharacter.messageTypeInfo, StringArg(tre("%s hat das Schlachtfeld und somit Baldars Truppe verlassen.", "%s has left the battlefield and therefore Baldar's troops."), character.name()))
-			set thistype.m_playerHasJoinedBaldar[GetPlayerId(user)] = false
+			set thistype.m_playerHasJoinedBaldar[GetPlayerId(character.player())] = false
 			set thistype.m_baldarMembers = thistype.m_baldarMembers - 1
-			call ShowLeaderboardForPlayer(user, thistype.m_leaderboard, false)
-			call LeaderboardRemovePlayerItem(thistype.m_leaderboard, user)
+			call ShowLeaderboardForPlayer(character.player(), thistype.m_leaderboard, false)
+			call LeaderboardRemovePlayerItem(thistype.m_leaderboard, character.player())
 			call thistype.resetCharacterAllianceStateToOthers(character)
 			call character.setIsInPvp(false)
-			set user = null
 		endmethod
 
 		public static method baldarContainsCharacter takes Character character returns boolean
-			local player user = character.player()
-			local boolean result = thistype.m_playerHasJoinedBaldar[GetPlayerId(user)]
-			set user = null
-			return result
+			return thistype.m_playerHasJoinedBaldar[GetPlayerId(character.player())]
 		endmethod
 
 		public static method haldarContainsCharacter takes Character character returns boolean
-			local player user = character.player()
-			local boolean result = thistype.m_playerHasJoinedHaldar[GetPlayerId(user)]
-			set user = null
-			return result
+			return thistype.m_playerHasJoinedHaldar[GetPlayerId(character.player())]
 		endmethod
 
 		public static method teamContainsCharacter takes Character character returns boolean
-			local player user = character.player()
-			local boolean result = thistype.m_playerHasJoinedHaldar[GetPlayerId(user)] or thistype.m_playerHasJoinedBaldar[GetPlayerId(user)]
-			set user = null
-			return result
+			return thistype.m_playerHasJoinedHaldar[GetPlayerId(character.player())] or thistype.m_playerHasJoinedBaldar[GetPlayerId(character.player())]
 		endmethod
 
 		public static method areaContainsCharacter takes Character character returns boolean
@@ -334,22 +374,9 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		endmethod
 
 		private static method createLeaderboard takes nothing returns nothing
-			//local integer i
-			//local player user
 			set thistype.m_leaderboard = CreateLeaderboard()
-			call LeaderboardSetLabel(thistype.m_leaderboard, tre("Schlachtfeld-Rangliste:", "Battlefield ranking:"))
-			call LeaderboardSetStyle(thistype.m_leaderboard, true, true, true, true)
-			//Usually not required because ShowLeaderboardForPlayer does the same work.
-			//set i = 0
-			//loop
-				//exitwhen (i == MapData.maxPlayers)
-				//set user = Player(i)
-				//if (IsPlayerPlayingUser(user)) then
-					//call PlayerSetLeaderboard(user, Aos.leaderBoard)
-				//endif
-				//set user = null
-				//set i = i + 1
-			//endloop
+			call LeaderboardSetLabelBJ(thistype.m_leaderboard, tre("Schlachtfeld-Rangliste:", "Battlefield ranking:"))
+			call LeaderboardSetStyle(thistype.m_leaderboard, true, true, true, false)
 			call LeaderboardDisplay(thistype.m_leaderboard, false)
 		endmethod
 
@@ -358,12 +385,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		endmethod
 
 		private static method triggerActionEnter takes nothing returns nothing
-			local unit triggerUnit = GetTriggerUnit()
-			local Character character = ACharacter.getCharacterByUnit(triggerUnit)
-			local player user = character.player()
+			local Character character = ACharacter.getCharacterByUnit(GetTriggerUnit())
 			call thistype.characterJoins(character)
-			set triggerUnit = null
-			set user = null
 		endmethod
 
 		private static method createEnterTrigger takes nothing returns nothing
@@ -374,12 +397,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		endmethod
 
 		private static method triggerActionLeave takes nothing returns nothing
-			local unit triggerUnit = GetTriggerUnit()
-			local Character character = ACharacter.getCharacterByUnit(triggerUnit)
-			local player user = character.player()
+			local Character character = ACharacter.getCharacterByUnit(GetTriggerUnit())
 			call thistype.characterLeaves(character)
-			set triggerUnit = null
-			set user = null
 		endmethod
 
 		private static method createLeaveTrigger takes nothing returns nothing
@@ -388,40 +407,52 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call TriggerAddCondition(thistype.m_leaveTrigger, Condition(function thistype.triggerConditionIsCharacter))
 			call TriggerAddAction(thistype.m_leaveTrigger, function thistype.triggerActionLeave)
 		endmethod
-		
+
 		private static method triggerConditionIsEnemyOfHaldar takes nothing returns boolean
 			return IsUnitEnemy(GetTriggerUnit(), thistype.m_haldarsUser)
 		endmethod
-		
+
 		private static method triggerActionKillEnemyOfHaldar takes nothing returns nothing
+			local Character character = Character.getCharacterByUnit(GetTriggerUnit())
 			local effect whichEffect = AddSpecialEffectTarget("Models\\Effects\\Blitzschlag.mdx", GetTriggerUnit(), "origin")
 			call SetUnitExploded(GetTriggerUnit(), true)
 			call KillUnit(GetTriggerUnit())
+
+			if (character != 0) then
+				call character.displayWarning(tre("Haldars Kraft vernichtet dich!", "Haldar's power destroys you!"))
+			endif
+
 			call TriggerSleepAction(2.0)
 			call DestroyEffect(whichEffect)
 			set whichEffect = null
 		endmethod
-		
+
 		private static method createHaldarsAreaTrigger takes nothing returns nothing
 			set thistype.m_haldarsAreaTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(thistype.m_haldarsAreaTrigger, gg_rct_haldars_area)
 			call TriggerAddCondition(thistype.m_haldarsAreaTrigger, Condition(function thistype.triggerConditionIsEnemyOfHaldar))
 			call TriggerAddAction(thistype.m_haldarsAreaTrigger, function thistype.triggerActionKillEnemyOfHaldar)
 		endmethod
-		
+
 		private static method triggerConditionIsEnemyOfBaldar takes nothing returns boolean
 			return IsUnitEnemy(GetTriggerUnit(), thistype.m_baldarsUser)
 		endmethod
-		
+
 		private static method triggerActionKillEnemyOfBaldar takes nothing returns nothing
+			local Character character = Character.getCharacterByUnit(GetTriggerUnit())
 			local effect whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Demon\\RainOfFire\\RainOfFireTarget.mdl", GetTriggerUnit(), "origin")
 			call SetUnitExploded(GetTriggerUnit(), true)
 			call KillUnit(GetTriggerUnit())
+
+			if (character != 0) then
+				call character.displayWarning(tre("Baldars Kraft vernichtet dich!", "Baldar's power destroys you!"))
+			endif
+
 			call TriggerSleepAction(2.0)
 			call DestroyEffect(whichEffect)
 			set whichEffect = null
 		endmethod
-		
+
 		private static method createBaldarsAreaTrigger takes nothing returns nothing
 			set thistype.m_baldarsAreaTrigger = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(thistype.m_baldarsAreaTrigger, gg_rct_baldars_area)
@@ -458,12 +489,10 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		endmethod
 
 		private static method triggerActionScore takes nothing returns nothing
-			local unit killingUnit = GetKillingUnit()
-			local player killingOwner = GetOwningPlayer(killingUnit)
+			local player killingOwner = GetOwningPlayer(GetKillingUnit())
 			set thistype.m_playerScore[GetPlayerId(killingOwner)] = thistype.m_playerScore[GetPlayerId(killingOwner)] + 1
 			call LeaderboardSetPlayerItemValueBJ(killingOwner, thistype.m_leaderboard, thistype.m_playerScore[GetPlayerId(killingOwner)])
 			call LeaderboardSortItemsByValue(thistype.m_leaderboard, false)
-			set killingUnit = null
 			set killingOwner = null
 		endmethod
 
@@ -475,10 +504,8 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		endmethod
 
 		private static method initStartUnits takes nothing returns nothing
-			//haldars camp
-			//baldars camp
-			//call SetUnitOwner(gg_unit_h00B_0200, thistype.m_baldarsUser, true)
-			//call SetUnitOwner(gg_unit_u000_0010, thistype.m_baldarsUser, true) // Lager
+			// Haldar's camp
+			// Baldar's camp
 			call SetUnitOwner(gg_unit_u001_0190, thistype.m_baldarsUser, true) // worker
 			call SetUnitOwner(gg_unit_u001_0191, thistype.m_baldarsUser, true) // worker
 			call SetUnitOwner(gg_unit_u001_0192, thistype.m_baldarsUser, true) // worker
@@ -491,44 +518,39 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		 * The system can be cleaned up using \ref cleanUp().
 		 */
 		public static method init takes nothing returns nothing
-			local integer i
-			local player user
+			local integer i = 0
 			set thistype.m_haldarsUser = MapData.haldarPlayer // don't use neutral victim since units will return like creeps!
 			set thistype.m_baldarsUser = MapData.baldarPlayer
 			set thistype.m_haldarMembers = 0
 			set thistype.m_baldarMembers = 0
 			set thistype.m_characterHasEntered = false
-			call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY, true, thistype.m_haldarsUser)
-			call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY, true, thistype.m_baldarsUser)
 			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, thistype.m_baldarsUser, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, thistype.m_haldarsUser, bj_ALLIANCE_UNALLIED)
 			set i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				set user = Player(i)
-				call SetPlayerAllianceStateBJ(user, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
-				call SetPlayerAllianceStateBJ(user, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
-				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, user, bj_ALLIANCE_NEUTRAL)
-				call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, user, bj_ALLIANCE_NEUTRAL)
-				set user = null
+				call SetPlayerAllianceStateBJ(Player(i), thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(Player(i), thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, Player(i), bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, Player(i), bj_ALLIANCE_NEUTRAL)
 				set i = i + 1
 			endloop
-			
+
 			/*
 			 * It is important to set these relationship neutral since the Imps of the quest "War" are from player MapData.alliedPlayer.
 			 */
 			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
-			
+
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
-			
+
 			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
-			
+
 			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
 			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
-			
+
 			call SetPlayerColor(thistype.m_haldarsUser, PLAYER_COLOR_LIGHT_GRAY)
 			call SetPlayerColor(thistype.m_baldarsUser, ConvertPlayerColor(12)) // black
 
@@ -556,12 +578,12 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call DestroyTrigger(thistype.m_leaveTrigger)
 			set thistype.m_leaveTrigger = null
 		endmethod
-		
+
 		private static method destroyHaldarsAreaTrigger takes nothing returns nothing
 			call DestroyTrigger(thistype.m_haldarsAreaTrigger)
 			set thistype.m_haldarsAreaTrigger = null
 		endmethod
-		
+
 		private static method destroyBaldarsAreaTrigger takes nothing returns nothing
 			call DestroyTrigger(thistype.m_baldarsAreaTrigger)
 			set thistype.m_baldarsAreaTrigger = null
@@ -580,12 +602,6 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			set thistype.m_scoreTrigger = null
 		endmethod
 
-		private static method cleanUpStartUnits takes nothing returns nothing
-			//haldars camp
-			//baldars camp
-			call SetUnitInvulnerable(gg_unit_n00J_0021, false)
-		endmethod
-
 		public static method cleanUp takes nothing returns nothing
 			set thistype.m_haldarsUser = null
 			set thistype.m_baldarsUser = null
@@ -596,7 +612,6 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call thistype.destroyBaldarsAreaTrigger()
 			call thistype.destroySpawnTimer()
 			call thistype.destroyScoreTrigger()
-			call thistype.cleanUpStartUnits()
 		endmethod
 
 		// static members

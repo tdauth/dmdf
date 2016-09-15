@@ -60,11 +60,11 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		// Du lässt Mathilda in deiner Scheune pennen?
 		private static method infoActionMathilda takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Du lässt Mathilda in deiner Scheune pennen?", "You let Mathilda sleep in your barn?"), null)
-			call speech(info, character, true, tr("Klar, wieso nicht? Sie hat mir dafür auch schon ein paar wirklich gute Geschichten erzählt. Sonst gibt's hier ja keine Unterhaltung und für's Herumreisen fehlen mir die nötigen Goldmünzen und die Zeit."), gg_snd_Manfred18)
-			call speech(info, character, true, tr("Außerdem ist sie doch wirklich nett. Dass musst du doch zugeben."), gg_snd_Manfred19)
-			call speech(info, character, false, tr("Na ja ..."), null)
-			call speech(info, character, true, tr("Komm schon. Meine Frau ist vor drei Jahren an irgend so einer Krankheit gestorben. Was weiß ich? Ist schon lange her, dass ich was mit einer hatte. Die Mathilda wär genau die Richtige."), gg_snd_Manfred20)
-			call speech(info, character, true, tr("Zusammen könnten wir hier den Hof führen. Das wär doch was! (Lacht) Ich hab wohl zu viel gearbeitet. Na ja, nimm's nicht so ernst."), gg_snd_Manfred21)
+			call speech(info, character, true, tre("Klar, wieso nicht? Sie hat mir dafür auch schon ein paar wirklich gute Geschichten erzählt. Sonst gibt's hier ja keine Unterhaltung und für's Herumreisen fehlen mir die nötigen Goldmünzen und die Zeit.", "Sure, why not? She has already told me a few really good stories. Other than that here's no entertainment and for traveling around I am lacking the necessary gold coins and time."), gg_snd_Manfred18)
+			call speech(info, character, true, tre("Außerdem ist sie doch wirklich nett. Dass musst du doch zugeben.", "Besides she is really nice. You have to admit that."), gg_snd_Manfred19)
+			call speech(info, character, false, tre("Na ja ...", "Well ..."), null)
+			call speech(info, character, true, tre("Komm schon. Meine Frau ist vor drei Jahren an irgend so einer Krankheit gestorben. Was weiß ich? Ist schon lange her, dass ich was mit einer hatte. Die Mathilda wär genau die Richtige.", "Come on. My wife died three years ago to something like a disease. What do I know? It's a long time since I had something with a woman. Mathilda would be just right."), gg_snd_Manfred20)
+			call speech(info, character, true, tre("Zusammen könnten wir hier den Hof führen. Das wär doch was! (Lacht) Ich hab wohl zu viel gearbeitet. Na ja, nimm's nicht so ernst.", "Together we could lead this farm here. That would be something! (Laughs) I'm probably working too hard. Well, do not take it so seriously."), gg_snd_Manfred21)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -75,10 +75,10 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 
 		// Ich habe mit dem Vogt gesprochen.
 		private static method infoActionTalkedToFerdinand takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ich habe mit dem Vogt gesprochen."), null)
-			call speech(info, character, true, tr("Und?"), gg_snd_Manfred22)
+			call speech(info, character, false, tre("Ich habe mit dem Vogt gesprochen.", "I have spoken with the steward."), null)
+			call speech(info, character, true, tre("Und?", "And?"), gg_snd_Manfred22)
 			if (QuestProtectThePeople.characterQuest(character).questItem(0).isCompleted()) then
-				call speech(info, character, false, tr("Er überlegt sich das mit dem Kriegsdienst nochmal und er wird ein paar Leute herschicken."), null)
+				call speech(info, character, false, tre("Er überlegt sich das mit dem Kriegsdienst nochmal und er wird ein paar Leute herschicken.", "He considers the military service again and he will send along a few people."), null)
 				call speech(info, character, true, tr("Donnerwetter! Wie hast du das angestellt? Obwohl, ich frag besser nicht. Das sind gute Neuigkeiten, mein Freund!"), gg_snd_Manfred23)
 				call speech(info, character, true, tr("Dafür werde ich dich auch gut entlohnen."), gg_snd_Manfred24)
 				// Auftrag „Schutz dem Volke“ abgeschlossen.

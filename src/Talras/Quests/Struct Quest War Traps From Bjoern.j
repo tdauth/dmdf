@@ -1,33 +1,33 @@
 library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea, StructMapQuestsQuestWarSubQuest, StructMapVideosVideoBjoern
-	
+
 	struct QuestAreaWarBjoern extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoBjoern.video().play()
 		endmethod
 	endstruct
-	
+
 	/**
 	 * Dummy quest area for the placement of traps.
 	 */
 	struct QuestAreaWarBjoernPlaceTraps extends QuestArea
-	
+
 		public stub method onCheck takes nothing returns boolean
 			call Character.displayHintToAll(tre("In diesem Gebiet müssen Björns Fallen platziert werden.", "Bjorn's traps have to be placed in this area."))
 			return false
 		endmethod
-	
+
 		public stub method onStart takes nothing returns nothing
 		endmethod
 	endstruct
-	
+
 	struct QuestWarTrapsFromBjoern extends QuestWarSubQuest
 		public static constant integer questItemTrapsFromBjoern = 0
 		public static constant integer questItemPlaceTraps = 1
-		
+
 		private QuestAreaWarBjoern m_questAreaBjoern
 		private QuestAreaWarBjoernPlaceTraps m_questAreaBjoernPlaceTraps
-		
+
 		/*
 		 * Björn
 		 */
@@ -38,18 +38,18 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 		 private item array m_spawnedTraps[thistype.maxSpawnedTraps]
 		 private ALocationVector m_traps
 		 private AEffectVector m_trapEffects
-		 
+
 		 implement Quest
-		 
+
 		public stub method enable takes nothing returns boolean
 			local boolean result = this.setState(thistype.stateNew)
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateNew)
-			
-			set this.m_questAreaBjoern = QuestAreaWarBjoern.create(gg_rct_quest_war_bjoern)
-			
+
+			set this.m_questAreaBjoern = QuestAreaWarBjoern.create(gg_rct_quest_war_bjoern, true)
+
 			return result
 		endmethod
-		
+
 		private static method timerFunctionSpawnBjoernsTraps takes nothing returns nothing
 			local thistype this = thistype.quest()
 			local boolean spawned = false
@@ -62,13 +62,13 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 				endif
 				set i = i + 1
 			endloop
-			
+
 			if (spawned) then
 				call this.displayUpdateMessage(tre("Neue Fallen verfügbar.", "New traps are available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_bjoern_traps), GetRectCenterY(gg_rct_quest_war_bjoern_traps), 5.0, 255, 255, 255, true)
 			endif
 		endmethod
-		
+
 		/**
 		 * Items are spawned at Kuno's place for all players.
 		 * If one player decides to not use them but picks them up there will be always a constant number of traps in the rect until the quest item is finished.
@@ -79,25 +79,25 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 		public method enablePlaceTraps takes nothing returns nothing
 			call this.questItem(thistype.questItemPlaceTraps).setState(thistype.stateNew)
 			call this.displayUpdate()
-			
+
 			set this.m_traps = ALocationVector.create()
 			set this.m_trapEffects = AEffectVector.create()
 			set this.m_bjoernsTrapsSpawnTimer = CreateTimer()
 			call TimerStart(this.m_bjoernsTrapsSpawnTimer, QuestWar.respawnTime, true, function thistype.timerFunctionSpawnBjoernsTraps)
-			
-			set this.m_questAreaBjoernPlaceTraps = QuestAreaWarBjoernPlaceTraps.create(gg_rct_quest_war_bjoern_place_traps)
+
+			set this.m_questAreaBjoernPlaceTraps = QuestAreaWarBjoernPlaceTraps.create(gg_rct_quest_war_bjoern_place_traps, true)
 		endmethod
-		
+
 		private static method stateEventCompletedPlaceTraps takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
 		endmethod
-		
+
 		private method addTrap takes real x, real y returns nothing
 			call this.m_traps.pushBack(Location(x, y))
 			call this.m_trapEffects.pushBack(AddSpecialEffect("Objects\\InventoryItems\\Spiketrap\\Spiketrap.mdx", x, y))
 			call this.displayUpdateMessage(Format(tre("%1%/%2% Fallen platziert.", "Placed %1%/%2% traps.")).i(this.m_traps.size()).i(thistype.maxPlacedTraps).result())
 		endmethod
-		
+
 		/**
 		 * Places all traps as trap units at the locations which have been specified.
 		 * This destroys and clears the stored locations afterwards to avoid memory leaks.
@@ -114,18 +114,18 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 			call this.m_traps.destroy()
 			set this.m_traps = 0
 		endmethod
-		
+
 		private static method stateConditionCompletedPlaceTraps takes AQuestItem questItem returns boolean
 			local thistype this = thistype.quest()
 			if (GetSpellAbilityId() == 'A0QZ' and RectContainsCoords(gg_rct_quest_war_bjoern_place_traps, GetSpellTargetX(), GetSpellTargetY())) then
 				call this.addTrap(GetSpellTargetX(), GetSpellTargetY())
-				
+
 				return this.m_traps.size() == thistype.maxPlacedTraps
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		private static method stateActionCompletedPlaceTraps takes AQuestItem questItem returns nothing
 			local thistype this = thistype.quest()
 			local integer i = 0
@@ -146,43 +146,43 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 			endloop
 			call this.m_trapEffects.destroy()
 			set this.m_trapEffects = 0
-			
+
 			call PauseTimer(this.m_bjoernsTrapsSpawnTimer)
 			call DestroyTimer(this.m_bjoernsTrapsSpawnTimer)
 			set this.m_bjoernsTrapsSpawnTimer = null
-			
+
 			call this.m_questAreaBjoernPlaceTraps.destroy()
 			set this.m_questAreaBjoernPlaceTraps = 0
-			
+
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateCompleted)
 			call this.complete()
 		endmethod
-		
+
 		public static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Fallen von Björn", "Traps from Bjoern"), QuestWar.questItemTrapsFromBjoern)
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNPitfall.blp")
 			call this.setDescription(tre("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden.", "In order to stop the impeding attacks of Orcs and Dark Elves, the conquered outpost has to be supplied. In addition, traps has to be placed before the walls that make it harder for the enemies to conquer the outpost. Furthermore, war suitable people need to be hired at the farm."))
 			call this.setReward(thistype.rewardExperience, 200)
 			call this.setReward(thistype.rewardGold, 200)
-		
+
 			// quest item questItemTrapsFromBjoern
 			set questItem = AQuestItem.create(this, tre("Besorgt Fallen vom Jäger Björn.", "Get traps from the hunter Björn."))
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_bjoern)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// quest item questItemPlaceTraps
 			set questItem = AQuestItem.create(this, tre("Platziert zehn Fallen vor dem Tor des Außenpostens.", "Place ten traps in front of the outpost's gate."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedPlaceTraps)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedPlaceTraps)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedPlaceTraps)
-			
+
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_war_bjoern_place_traps)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			return this
 		endmethod
 	endstruct

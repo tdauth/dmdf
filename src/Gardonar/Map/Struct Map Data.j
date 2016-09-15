@@ -14,6 +14,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
+		public static constant integer startLevel = 30
 		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 10000
@@ -51,7 +52,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			local integer i = 0
 			loop
 				exitwhen (i == 40)
-				set zombie = CreateUnit(Player(PLAYER_NEUTRAL_AGGRESSIVE), 'nzom', GetRandomReal(GetRectMinX(gg_rct_zombies), GetRectMaxX(gg_rct_zombies)), GetRandomReal(GetRectMinY(gg_rct_zombies), GetRectMaxY(gg_rct_zombies)), 0.0)
+				set zombie = CreateUnit(Player(PLAYER_NEUTRAL_AGGRESSIVE), 'n02M', GetRandomReal(GetRectMinX(gg_rct_zombies), GetRectMaxX(gg_rct_zombies)), GetRandomReal(GetRectMinY(gg_rct_zombies), GetRectMaxY(gg_rct_zombies)), 0.0)
 				call SetUnitPathing(zombie, false)
 				call SetUnitAnimation(zombie, "Birth")
 				set i = i + 1
@@ -222,8 +223,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 
-			// execute because of trigger sleep action
-			call Game.applyHandicapToCreeps.execute()
+			call Game.applyHandicapToCreeps()
 		endmethod
 
 		/// Required by \ref Classes.
@@ -280,6 +280,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
+		endmethod
+
+		/// Required by \ref Buildings.
+		public static method goldmine takes nothing returns unit
+			return gg_unit_n06E_0161
 		endmethod
 	endstruct
 

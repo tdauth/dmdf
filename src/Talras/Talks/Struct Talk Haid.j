@@ -73,7 +73,7 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 
 		// Was sagt denn der König?
 		private static method infoActionWhatDoesTheKingSay takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tre("Was sagt denn der König?", "What says the king?"), null)
+			call speech(info, character, false, tre("Was sagt denn der König zur Invasion?", "What says the king about the invasion?"), null)
 			call speech(info, character, true, tre("Der König? Dieser miese Sack, der behauptet doch glatt, dass es sich nur um kleinere Überfälle handele. Hab's nicht glauben wollen als ich's von einem Jäger gehört habe.", "The king? This lousy bag claims that it was only smaller raids. I did not want to believe it when I heard it from a hunter."), gg_snd_Haid11)
 			call speech(info, character, true, tre("Verdammte Scheiße, wozu haben wir denn den ganzen Adel mit all seinen Vasallen? Wollen die sich ewig nur um ihr beschissenes Gut streiten?", "Bloody hell, what do we have all the nobility with all its vassals for? Do they want to argue only about their shitty good forever?"), gg_snd_Haid12)
 			call speech(info, character, true, tre("Die sollen gefälligst ein Heer aufstellen! Ich hab viele gute Freunde in Trammer verloren. Dieser Dreckskönig, wenn ich ...", "They should kindly set forth a multitude! I lost many good friends in Trammar. This filth king, if I ..."), gg_snd_Haid13)
@@ -103,7 +103,7 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 		// (Charakter hat Auftrag "Gold für die Handelsgenehmigung" und die entsprechenden Goldmünzen)
 		private static method infoConditionGold takes AInfo info, ACharacter character returns boolean
 			local player user = character.player()
-			local boolean result = QuestGoldForTheTradingPermission.characterQuest(character).state() == AAbstractQuest.stateNew and ((GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) >= 40 and not TalkFerdinand.talk().knowsCost(character)) or (GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) >= 10 and TalkFerdinand.talk().knowsCost(character)))
+			local boolean result = QuestGoldForTheTradingPermission.characterQuest(character).state() == QuestGoldForTheTradingPermission.stateNew and ((GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) >= 40 and not TalkFerdinand.talk().knowsCost(character)) or (GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) >= 10 and TalkFerdinand.talk().knowsCost(character)))
 			set user = null
 			return result
 		endmethod
@@ -111,14 +111,17 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 		// Hier hast du deine Goldmünzen.
 		private static method infoActionGold takes AInfo info, Character character returns nothing
 			local player user = character.player()
-			if (TalkFerdinand.talk().knowsCost(character)) then // Charakter hat vom Vogt erfahren, wie viel eine Handelsgenehmigung kostet.
+
+			if (TalkFerdinand.talk().knowsCost(character) and GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) >= 10) then // Charakter hat vom Vogt erfahren, wie viel eine Handelsgenehmigung kostet.
 				call speech(info, character, false, tre("Hier hast du deine 10 Goldmünzen. Ich habe mal mit dem Vogt gesprochen. Willst du mich verarschen oder was?", "Here you have your 10 gold coins. I spoke once with the steward. Are you kidding me or what?"), null)
 				call speech(info, character, true, tre("Tut mir leid, aber so ist nun mal das Leben. Kriegst auch eine große Stärkung mit dazu.", "I'm sorry, but that's life. You get als o a great snack with it."), gg_snd_Haid18)
 				call SetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) - 10)
 				// große Stärkung geben
 				call QuestGoldForTheTradingPermission.characterQuest(character).improveReward()
 				call thistype(info.talk()).completeWithCostKnowledge(character.player())
-			else
+
+				call QuestGoldForTheTradingPermission.characterQuest(character).complete()
+			elseif (GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) >= 40) then
 				call speech(info, character, false, tre("Hier hast du deine 40 Goldmünzen.", "Here you have your 40 gold coins."), null)
 				call speech(info, character, true, tre("Danke vielmals. Hier hast du eine kleine Stärkung.", "Thank you very much. Here you have a little snack."), gg_snd_Haid19)
 				call SetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user, PLAYER_STATE_RESOURCE_GOLD) - 40)
@@ -127,8 +130,12 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 				call character.giveItem('I03O')
 				call character.giveItem('I016')
 				call character.giveItem('I016')
+
+				call QuestGoldForTheTradingPermission.characterQuest(character).complete()
+			else
+				call speech(info, character, false, tr("Da habe ich mich wohl vertan. Ich habe nicht genügend Goldmünzen dabei."), null)
 			endif
-			call QuestGoldForTheTradingPermission.characterQuest(character).complete()
+
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -154,9 +161,9 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 			set this.m_whoAreYou = this.addInfo(false, false, 0, thistype.infoActionWhoAreYou, tre("Wer bist du?", "Who are you?"))
 			set this.m_notInCastle = this.addInfo(false, false, thistype.infoConditionNotInCastle, thistype.infoActionNotInCastle, tre("Wieso verkaufst du deine Waren nicht in der Burg?", "Why don't you sell your goods in the castle?"))
 			set this.m_invasion = this.addInfo(true, false, thistype.infoConditionInvasion, thistype.infoActionInvasion, tre("Invasion?", "Invasion?"))
-			set this.m_whatDoesTheKingSay = this.addInfo(true, false, thistype.infoConditionWhatDoesTheKingSay, thistype.infoActionWhatDoesTheKingSay, tre("Was sagt denn der König?", "What says the king?"))
+			set this.m_whatDoesTheKingSay = this.addInfo(true, false, thistype.infoConditionWhatDoesTheKingSay, thistype.infoActionWhatDoesTheKingSay, tre("Was sagt denn der König zur Invasion?", "What says the king about the invasion?"))
 			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tre("Kann ich dir irgendwie helfen?", "Can I help you?"))
-			set this.m_gold = this.addInfo(false, false, thistype.infoConditionGold, thistype.infoActionGold, tre("Hier hast du deine Goldmünzen.", "Here you have your gold coins."))
+			set this.m_gold = this.addInfo(true, false, thistype.infoConditionGold, thistype.infoActionGold, tre("Hier hast du deine Goldmünzen.", "Here you have your gold coins."))
 			set this.m_goldBack = this.addInfo(false, false, thistype.infoConditionGoldBack, thistype.infoActionGoldBack, tre("Gib mir meine 30 Goldmünzen!", "Give me my 30 gold coins!"))
 			set this.m_exit = this.addExitButton()
 

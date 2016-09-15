@@ -1,4 +1,4 @@
-library ModuleQuestsCharacterQuest requires Asl
+library ModuleQuestsCharacterQuest requires Asl, StructGameCharacter
 
 	module CharacterQuest
 		private static thistype array m_characterQuest[12] /// @todo MapData.maxPlayers
@@ -11,17 +11,14 @@ library ModuleQuestsCharacterQuest requires Asl
 					set thistype.m_characterQuest[i] = thistype.create.evaluate(ACharacter.playerCharacter(Player(i)))
 					// use the required quest column for information only
 					call thistype.m_characterQuest[i].setIsRequired(false)
-					call Character(ACharacter.playerCharacter(Player(i))).addQuest.evaluate(thistype.m_characterQuest[i])
+					call Character(ACharacter.playerCharacter(Player(i))).addQuest(thistype.m_characterQuest[i])
 				endif
 				set i = i + 1
 			endloop
 		endmethod
 
 		public static method characterQuest takes ACharacter character returns thistype
-			local player whichPlayer = character.player()
-			local integer playerId = GetPlayerId(whichPlayer)
-			set whichPlayer = null
-			return thistype.m_characterQuest[playerId]
+			return thistype.m_characterQuest[GetPlayerId(character.player())]
 		endmethod
 	endmodule
 

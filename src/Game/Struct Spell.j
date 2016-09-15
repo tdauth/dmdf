@@ -1,4 +1,4 @@
-library StructGameSpell requires Asl, StructGameCharacter
+library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpell
 
 	/**
 	* @todo Use icon path and name etc. from ability with @param ABILITY_ID
@@ -20,11 +20,11 @@ library StructGameSpell requires Asl, StructGameCharacter
 	//! textmacro DMDF_CREATE_FAVOURITE_ABILITY takes FAVOURITE_ABILITY_ID, ABILITY_ID
 		///! external ObjectMerger w3a Aspb $FAVOURITE_ABILITY_ID$ anam "
 	//! endtextmacro
-	
+
 	//! textmacro DMDF_CREATE_GRIMOIRE_ABILITY_PAIR takes NAME, CLASS, LEVEL, SPELL_ID, GRIMOIRE_ABILITY_ID
 		///! external ObjectMerger w3a Aspb $GRIMOIRE_ABILITY_ID$ anam "$NAME$ - Stufe $LEVEL$" ansf "(Zauberbuchfähigkeit - $CLASS$)"
 	//! endtextmacro
-	
+
 	/// \todo Fix arithmetic operations, take base Ids, print addGrimoireEntry into a separate JASS file which later will be imported, use an array for base Ids like "whindwalk" to always use the same ones
 	/// \todo Add dummy ability n times in the spell book to specify the icon position
 	/*
@@ -43,10 +43,10 @@ library StructGameSpell requires Asl, StructGameCharacter
 		//! i makechange(current, "arac", "human")
 		//! i makechange(current, "aart", icon)
 		//! i end
-	
+
 		//! i function createGrimoireAbilityPair(name, tooltip, class, level, baseId, abilityId, grimoireAbilityId, icon )
 		//! i setobjecttype("abilities")
-		
+
 		//! i createobject("ANcl", abilityId)
 		//! i makechange(current, "anam", name.." - Stufe "..level)
 		//! i makechange(current, "ansf", "(Zauberbuch - "..class..")")
@@ -72,7 +72,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 		//! i makechange(current, "arac", "human")
 		//! i makechange(current, "aran", "1", "0.00")
 		//! i makechange(current, "aart", icon)
-		
+
 		//! i createobject("Aspb", grimoireAbilityId)
 		//! i makechange(current, "anam", name.." - Stufe "..level)
 		//! i makechange(current, "ansf", "(Zauberbuchfähigkeit - "..class..")")
@@ -85,18 +85,18 @@ library StructGameSpell requires Asl, StructGameCharacter
 		//! i makechange(current, "aite", "0")
 		//! i makechange(current, "arac", "human")
 		//! i end
-		
+
 		//! i function createGrimoireSpell(name, tooltip, icon, class, levels, abilityId, baseId, startId)
 			//! i createFavoriteAbility(name, class, startId, abilityId, icon)
 			////! i for i=1, levels do
 			//	//! i createGrimoireAbilityPair(name, tooltip, class, i, baseId, tonumber(startId) + 1 + i, tonumber(startId) + 2 + i, icon)
 			////! i end
 		//! i end
-		
+
 		//! i createGrimoireSpell("Testzauber", "Dieser Zauber besitzt einen tollen Effekt", "", "Kleriker", 5, "A000", "windwalk", "AY00")
 	//! endexternalblock
 	*/
-	
+
 	/**
 	 * Custom structure for character spells which support \ref Grimoire API.
 	 * For item spells etc. just use \ref ASpell.
@@ -158,11 +158,11 @@ library StructGameSpell requires Asl, StructGameCharacter
 		public method available takes nothing returns boolean
 			return this.m_available
 		endmethod
-		
+
 		public method setIsPassive takes boolean isPassive returns nothing
 			set this.m_isPassive = isPassive
 		endmethod
-		
+
 		/**
 		 * \note Passive spells are automatically moved into the sub menu when learned since they cannot be actively casted.
 		 * \return Returns true if this spell is a passive spell. Otherwise it returns false.
@@ -170,11 +170,11 @@ library StructGameSpell requires Asl, StructGameCharacter
 		public method isPassive takes nothing returns boolean
 			return this.m_isPassive
 		endmethod
-		
+
 		public method setIsHidden takes boolean isHidden returns nothing
 			set this.m_isHidden = isHidden
 		endmethod
-		
+
 		/**
 		 * \note Hidden spells can be learned even if the favorites and the other learned spells are full since they don't need space for an icon.
 		 * \return Returns true if no icon is shown for the spell when it is learned. Otherwise it returns false.
@@ -205,10 +205,10 @@ library StructGameSpell requires Asl, StructGameCharacter
 				//debug call this.print("Last index " + I2S(firstIndex + Grimoire.spellsPerPage))
 				// spell doesn't belong to grimoire or is not shown on current page
 				if (grimoireIndex == -1 or (grimoireIndex < firstIndex or grimoireIndex >= firstIndex + Grimoire.spellsPerPage)) then
-					call entry.hide.evaluate()
+					call entry.hide(this.character().unit())
 				endif
 			else
-				call entry.hide.evaluate()
+				call entry.hide(this.character().unit())
 			endif
 			set this.m_grimoireEntries[this.m_grimoireEntries.find(0)] = entry // assign to first empty place
 		endmethod
@@ -220,7 +220,11 @@ library StructGameSpell requires Asl, StructGameCharacter
 			if (this.grimoireEntries().empty()) then
 				return 0
 			endif
-			return this.grimoireEntries()[this.level()]
+			if (this.grimoireEntries()[this.level()] != 0) then
+				return this.grimoireEntries()[this.level()]
+			endif
+
+			return this.grimoireEntries()[0]
 		endmethod
 
 		/**
@@ -243,6 +247,13 @@ library StructGameSpell requires Asl, StructGameCharacter
 
 		public method setAvailable takes boolean available returns nothing
 			set this.m_available = available
+		endmethod
+
+		/**
+		 * This method can be reimplemented to add a custom condition for the case a spell can be skilled or not.
+		 */
+		public stub method onIsSkillable takes integer level returns boolean
+			return true
 		endmethod
 
 		/**
@@ -278,6 +289,10 @@ library StructGameSpell requires Asl, StructGameCharacter
 				debug call Print("Ultimate required: " + this.name())
 				return false
 			endif
+			if (not this.onIsSkillable.evaluate(level)) then
+				debug call Print("Custom condition is false.")
+				return false
+			endif
 
 			return true
 		endmethod
@@ -311,13 +326,13 @@ library StructGameSpell requires Asl, StructGameCharacter
 		/// Is called before spell is being removed from grimoire (via .evaluate()).
 		public stub method onUnlearn takes nothing returns nothing
 		endmethod
-		
+
 		public stub method setLevel takes integer level returns nothing
 			call super.setLevel(level)
 			set this.m_savedLevel = level
 			//debug call Print("Set saved level to " + I2S(level) + " of spell " + GetAbilityName(this.ability()))
 		endmethod
-		
+
 		public method savedLevel takes nothing returns integer
 			return this.m_savedLevel
 		endmethod
@@ -338,7 +353,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 		 */
 		public method showGrimoireEntry takes nothing returns nothing
 			if (this.grimoireEntry() != 0) then
-				call this.grimoireEntry().show.evaluate()
+				call this.grimoireEntry().show(this.character().unit())
 			debug else
 				//debug call Print("Missing grimoire entry for spell " + GetObjectName(this.ability()) + " with level " + I2S(this.level()))
 			endif
@@ -352,14 +367,14 @@ library StructGameSpell requires Asl, StructGameCharacter
 		 */
 		public method hideGrimoireEntry takes nothing returns nothing
 			if (this.grimoireEntry() != 0) then
-				call this.grimoireEntry().hide.evaluate()
+				call this.grimoireEntry().hide(this.character().unit())
 			endif
 		endmethod
 
 		public method isGrimoireEntryShown takes nothing returns boolean
-			return GrimoireSpellEntry(this.grimoireEntries()[this.level()]).isShown.evaluate()
+			return GrimoireSpellEntry(this.grimoireEntries()[this.level()]).isShown(this.character().unit())
 		endmethod
-		
+
 		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent returns thistype
 			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, unitEvent)
 			set this.m_savedLevel = 0
@@ -373,7 +388,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			// one entry for every level + one entry to learn the spell
 			set this.m_grimoireEntries = AIntegerVector.createWithSize(maxLevel + 1, 0)
 			call character.addClassSpell(this)
-			
+
 			return this
 		endmethod
 
@@ -389,7 +404,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			call thistype.destroyGrimoireEntriesWithNewOpLimit.evaluate(this) // new OpLimit
 			call thistype.removeFromClassSpellsWithNewOpLimit.evaluate(this) // new OpLimit
 		endmethod
-		
+
 		private static method destroyGrimoireEntriesWithNewOpLimit takes thistype this returns nothing
 			local integer i = 0
 			loop
@@ -401,7 +416,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 			endloop
 			call this.m_grimoireEntries.destroy()
 		endmethod
-		
+
 		private static method removeFromClassSpellsWithNewOpLimit takes thistype this returns nothing
 			call Character(this.character()).classSpells().remove(this)
 		endmethod
@@ -520,7 +535,7 @@ library StructGameSpell requires Asl, StructGameCharacter
 				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tr("%s%i"), sign), R2I(moveSpeed)), GetUnitX(whichUnit), GetUnitY(whichUnit), 202, 198, 255, 255)
 			endif
 		endmethod
-		
+
 		public static method showTimeTextTag takes unit whichUnit, real time returns nothing
 			local string sign
 			if (not IsUnitHidden(whichUnit)) then

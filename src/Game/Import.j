@@ -1,3 +1,4 @@
+//! import "Game/Struct Buildings.j"
 //! import "Game/Struct Camera Height.j"
 //! import "Game/Struct Character.j"
 //! import "Game/Struct Classes.j"
@@ -6,11 +7,16 @@
 //! import "Game/Struct Dungeon.j"
 //! import "Game/Struct Fellow.j"
 //! import "Game/Struct Dmdf Hash Table.j"
+//! import "Game/Struct Game Cheats.j"
 //! import "Game/Struct Game.j"
+//! import "Game/Struct Grimoire Spell.j"
 //! import "Game/Struct Grimoire.j"
 //! import "Game/Struct History.j"
 //! import "Game/Struct Item Types.j"
 //! import "Game/Struct Map Changer.j"
+//! import "Game/Struct Missions.j"
+//! import "Game/Struct Options.j"
+//! import "Game/Struct Order Animations.j"
 //! import "Game/Interface Map Data Interface.j"
 //! import "Game/Struct Quest Area.j"
 static if (DMDF_NPC_ROUTINES) then
@@ -26,5 +32,5 @@ endif
 //! import "Game/Struct Zone.j"
 //! import "Game/Library Language.j"
 
-library Game requires StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameCommands, StructGameFellow, StructGameDmdfHashTable, StructGameDungeon, StructGameGame, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructSaveSystem, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
+library Game requires StructGameBuildings, StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameCommands, StructGameFellow, StructGameDmdfHashTable, StructGameDungeon, StructGameGameCheats, StructGameGame, StructGameGrimoireSpell, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, StructGameMissions, StructGameOptions, StructGameOrderAnimations, InterfaceGameMapDataInterface, StructGameQuestArea, optional StructGameRoutines, StructSaveSystem, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
 endlibrary

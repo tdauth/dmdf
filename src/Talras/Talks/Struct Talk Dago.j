@@ -86,12 +86,16 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			call info.talk().showStartPage(character)
 		endmethod
 
-		private static method hasMushrooms takes ACharacter character returns boolean
-			return (character.inventory().hasItemType('I01L') or character.inventory().hasItemType('I01K') or character.inventory().hasItemType('I03Y')) // NOTE alle Pilze hinzufügen
+		private static method tastyMushrooms takes ACharacter character returns integer
+			return (character.inventory().totalItemTypeCharges('I01L') + character.inventory().totalItemTypeCharges('I01K')) // NOTE alle Pilze hinzufügen
 		endmethod
 
-		private static method mushroomsAreTasty takes ACharacter character returns boolean
-			return (character.inventory().hasItemType('I01L') or character.inventory().hasItemType('I01K')) // NOTE alle Pilze hinzufügen
+		private static method nonTastyMushrooms takes ACharacter character returns integer
+			return character.inventory().totalItemTypeCharges('I03Y')
+		endmethod
+
+		private static method hasMushrooms takes ACharacter character returns boolean
+			return thistype.tastyMushrooms(character) + thistype.nonTastyMushrooms(character) > 0
 		endmethod
 
 		// (Auftrag „Pilzsuche ist aktiv und Charakter hat Pilz dabei)
@@ -103,8 +107,14 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		private static method infoActionIHaveMushrooms takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			local boolean finished = false
-			call speech(info, character, false, tre("Ich habe hier einen Pilz.", "I have one mushroom."), null)
-			if (thistype.mushroomsAreTasty(character)) then
+			local integer tastyMushroomCount = thistype.tastyMushrooms(character)
+			local integer nonTastyMushrooms = thistype.nonTastyMushrooms(character)
+			if (tastyMushroomCount > 0) then
+				if (tastyMushroomCount == 1) then
+					call speech(info, character, false, tre("Ich habe hier einen Pilz.", "I have one mushroom."), null)
+				else
+					call speech(info, character, false, tre("Ich habe hier einige Pilze.", "I have some mushrooms."), null)
+				endif
 				loop
 					exitwhen (finished)
 					// Steinpilz ist essbar
@@ -125,16 +135,22 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 						call speech(info, character, true, tre("Danke, das reicht, sogar dem Herzog (Lacht). Hier hast du ein paar Goldmünzen, danke für deine Mühen. Man trifft selten Leute, die noch was Anderes als sich selbst im Kopf haben.", "Thanks, that's enough, even for the duke (Laughs). Here you have a few gold coins, thank you for your efforts. One rarely meets people who have something different than themselves in mind."), gg_snd_Dago26)
 						// Auftrag „Pilzsuche“ abgeschlossen
 						call QuestMushroomSearch.characterQuest(character).complete()
-						
+
 						set finished = true
 					endif
 				endloop
-				
+
 				if (not finished) then
 					call speech(info, character, true, tre("Sehr gut, danke. Ich brauche aber noch mehr essbare Pilze.", "Very good thank you. But I still need more edible mushrooms."), gg_snd_Dago25)
 				endif
 			// (Pilze sind nicht essbar)
 			else
+				if (nonTastyMushrooms == 1) then
+					call speech(info, character, false, tre("Ich habe hier einen Pilz.", "I have one mushroom."), null)
+				else
+					call speech(info, character, false, tre("Ich habe hier einige Pilze.", "I have some mushrooms."), null)
+				endif
+
 				call speech(info, character, true, tre("Tut mir leid, aber der sieht nicht gerade essbar aus. Nicht, dass mich das sonderlich stören würde, aber den Herzog wahrscheinlich schon.", "I'm sorry, but that does not look edible. Not that it would bother me prticularly, but the duke probably."), null)
 			endif
 			call info.talk().showStartPage(character)
@@ -143,21 +159,21 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 		private static method completeBoth takes AInfo info, Character character returns nothing
 			local integer i
 			call speech(info, character, true, tre("Gleich beides also? Du bist mir wirklich eine große Hilfe, da werden die Bären nichts zu Lachen haben!", "Already both? You are really a great help to me, the bears won't have anything to laugh with this!"), gg_snd_Dago28)
-			
+
 			// remove items for completing the quest
 			if (character.inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)) then
 				call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdScroll)
 			elseif (character.inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdPotion)) then
 				call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdPotion)
 			endif
-			
+
 			set i = 0
 			loop
 				exitwhen (i == QuestBurnTheBearsDown.itemTypeIdWood)
 				call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdWood)
 				set i = i + 1
 			endloop
-			
+
 			// Auftrag „Brennt die Bären nieder!“ mit Bonus abgeschlossen
 			call QuestBurnTheBearsDown.characterQuest(character).complete()
 			call character.xpBonus(QuestBurnTheBearsDown.xpBonus, QuestBurnTheBearsDown.characterQuest(character).title())
@@ -165,7 +181,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		private static method complete takes AInfo info, Character character returns nothing
 			call speech(info, character, true, tre("Vielen Dank! Ich werde die Höhle mit den Drecksbären in Flammen aufgehen lassen!", "Thank you! I will set the cave with the mud bears up in flames!"), gg_snd_Dago29)
-			
+
 			// Auftrag „Brennt die Bären nieder!“ abgeschlossen
 			call QuestBurnTheBearsDown.characterQuest(character).complete()
 		endmethod
@@ -194,7 +210,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 				elseif (character.inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdPotion)) then
 					call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdPotion)
 				endif
-			
+
 				call thistype.complete(info, character)
 			endif
 			call thistype.conclusion(info, character)
@@ -219,7 +235,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 					call character.inventory().removeItemType(QuestBurnTheBearsDown.itemTypeIdWood)
 					set i = i + 1
 				endloop
-			
+
 				call thistype.complete(info, character)
 			endif
 			call thistype.conclusion(info, character)
@@ -293,7 +309,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 			set this.m_tastyMushrooms = this.addInfo(false, false, thistype.infoConditionTastyMushrooms, thistype.infoActionTastyMushrooms, tre("Gibt’s hier leckere Pilze?", "Are there delecious mushrooms in this area?"))
 			set this.m_orcs = this.addInfo(false, false, 0, thistype.infoActionOrcs, tre("Schon was von den Orks gehört?", "Have you already heard something about the Orcs?"))
 			set this.m_area = this.addInfo(true, false, 0, thistype.infoActionArea, tre("Was weißt du über die Gegend hier?", "What do you know about the area here?"))
-			set this.m_iHaveMushrooms = this.addInfo(true, false, thistype.infoConditionIHaveMushrooms, thistype.infoActionIHaveMushrooms, tre("Ich habe hier einen Pilz.", "I have one mushroom."))
+			set this.m_iHaveMushrooms = this.addInfo(true, false, thistype.infoConditionIHaveMushrooms, thistype.infoActionIHaveMushrooms, tre("Pilze geben", "Give mushrooms"))
 			set this.m_spell = this.addInfo(false, false, thistype.infoConditionSpell, thistype.infoActionSpell, tre("Hier ist dein Zauberspruch.", "Here is your spell."))
 			set this.m_wood = this.addInfo(false, false, thistype.infoConditionWood, thistype.infoActionWood, tre("Hier ist dein Holz.", "Here is your wood."))
 			set this.m_apprentice = this.addInfo(false, false, thistype.infoConditionApprentice, thistype.infoActionApprentice, tre("Suchst du einen Schüler?", "Are you looking for a student?"))

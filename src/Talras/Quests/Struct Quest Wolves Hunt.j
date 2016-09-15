@@ -1,10 +1,10 @@
-library StructMapQuestsQuestWolvesHunt requires Asl, StructMapMapNpcs
+library StructMapQuestsQuestWolvesHunt requires Asl, StructGameCharacter, StructMapMapNpcs
 
 	struct QuestWolvesHunt extends AQuest
 		public static constant integer maxRects = 2
 
 		implement CharacterQuest
-		
+
 		private rect array m_rect[2]
 		private boolean array m_flag[2]
 
@@ -19,8 +19,8 @@ library StructMapQuestsQuestWolvesHunt requires Asl, StructMapMapNpcs
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
-			local integer count
-			local integer i
+			local integer count = 0
+			local integer i = 0
 			if (GetUnitTypeId(GetTriggerUnit()) == 'n02G') then
 				set i = 0
 				loop
@@ -48,22 +48,23 @@ library StructMapQuestsQuestWolvesHunt requires Asl, StructMapMapNpcs
 			endif
 			return false
 		endmethod
-		
+
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			call questItem.quest().displayUpdate()
 		endmethod
-		
+
 		private static method stateActionCompleted takes AQuest whichQuest returns nothing
+			local Character character = Character(whichQuest.character())
 			// 3 mal Wolle
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
-			call UnitAddItemById(whichQuest.character().unit(), 'I04X')
+			call character.giveItem('I04X')
+			call character.giveItem('I04X')
+			call character.giveItem('I04X')
 		endmethod
 
 		private static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, tre("Wolfsjagd", "Wolf Hunting"))
-			local integer i
-			local AQuestItem questItem
+			local integer i = 0
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNDireWolf.blp")
 			call this.setDescription(tre("Der Schafsjunge auf dem Mühlberg westlich vom Bauernhof will, dass alle Rudelführer in Talras getötet werden, damit die Wölfe seine Schafe in Ruhe lassen.
 Eigentlich würde er sich ja selbst darum kümmern …", "The sheep boy on the Mill Hill west of the farm wants all pack leaders in Talras to be killed, so the wolves leave his sheeps in peace. Actually, he would take care of it himself ..."))
@@ -75,13 +76,13 @@ Eigentlich würde er sich ja selbst darum kümmern …", "The sheep boy on the M
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted0)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
-			
+
 			// item 1
 			set questItem = AQuestItem.create(this, tre("Berichte dem Schafsjungen davon.", "Report to the sheep boy thereof."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.sheepBoy())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxRects)

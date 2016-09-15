@@ -66,6 +66,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_boarsStart0
 		private static SpawnPoint m_boarsStart1
 		private static SpawnPoint m_boarsStart2
+		private static SpawnPoint m_boarsStart3
 
 		private static SpawnPoint m_wolves0
 		private static SpawnPoint m_wolves1
@@ -161,7 +162,9 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_cornEaters1
 		private static SpawnPoint m_cornEaters2
 		private static SpawnPoint m_cornEaters3
+		private static SpawnPoint m_cornEaters4
 		private static SpawnPoint m_spiderQueen
+		private static SpawnPoint m_undeadsForest
 
 		// drum cave
 		private static SpawnPoint m_skeletons0
@@ -243,6 +246,15 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_boarsStart2.addNewItemType(index, 'I007', 1.0)
 			set index = thistype.m_boarsStart2.addUnitWithType(gg_unit_n002_0219, 1.0)
 			call thistype.m_boarsStart2.addNewItemType(index, 'I007', 1.0)
+
+			// boars start 3
+			set thistype.m_boarsStart3 = SpawnPoint.create()
+			set index = thistype.m_boarsStart3.addUnitWithType(gg_unit_n002_0688, 1.0)
+			call thistype.m_boarsStart3.addNewItemType(index, 'I007', 1.0)
+			set index = thistype.m_boarsStart3.addUnitWithType(gg_unit_n002_0682, 1.0)
+			call thistype.m_boarsStart3.addNewItemType(index, 'I007', 1.0)
+			set index = thistype.m_boarsStart3.addUnitWithType(gg_unit_n06K_0690, 1.0)
+			call thistype.m_boarsStart3.addNewItemType(index, 'I007', 1.0)
 
 			set thistype.m_wolves0 = SpawnPoint.create()
 			set index = thistype.m_wolves0.addUnitWithType(gg_unit_n02G_0140, 1.0)
@@ -621,7 +633,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		endmethod
 
 		private static method init2 takes nothing returns nothing
-			local integer index
+			local integer index = 0
+			local integer itemIndex = 0
 
 			// make boxes a separate spawn point, otherwise boxes might be left over
 			set thistype.m_medusaBoxes = SpawnPoint.create()
@@ -769,17 +782,17 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 			set thistype.m_wildCreatures = SpawnPoint.create()
 			set index = thistype.m_wildCreatures.addUnitWithType(gg_unit_n02Q_0402, 1.0)
-			call thistype.m_wildCreatures.addNewItemType(index, 'rhe2', 0.50)
-			call thistype.m_wildCreatures.addNewItemType(index, 'I04O', 0.60)
-			call thistype.m_wildCreatures.addNewItemType(index, 'I04P', 0.30)
+			set itemIndex = thistype.m_wildCreatures.addNewItemType(index, 'rhe2', 0.33)
+			call thistype.m_wildCreatures.addItemType(index, itemIndex, 'I04O', 0.33)
+			call thistype.m_wildCreatures.addItemType(index, itemIndex, 'I04P', 0.33)
 			set index = thistype.m_wildCreatures.addUnitWithType(gg_unit_n02Q_0404, 1.0)
-			call thistype.m_wildCreatures.addNewItemType(index, 'I04O', 0.60)
-			call thistype.m_wildCreatures.addNewItemType(index, 'rhe2', 0.50)
-			call thistype.m_wildCreatures.addNewItemType(index, 'I04P', 0.30)
+			set itemIndex = thistype.m_wildCreatures.addNewItemType(index, 'rhe2', 0.33)
+			call thistype.m_wildCreatures.addItemType(index, itemIndex, 'I04O', 0.33)
+			call thistype.m_wildCreatures.addItemType(index, itemIndex, 'I04P', 0.33)
 			set index = thistype.m_wildCreatures.addUnitWithType(gg_unit_n02Q_0403, 1.0)
-			call thistype.m_wildCreatures.addNewItemType(index, 'I04O', 0.60)
-			call thistype.m_wildCreatures.addNewItemType(index, 'rhe2', 0.50)
-			call thistype.m_wildCreatures.addNewItemType(index, 'I04P', 0.30)
+			set itemIndex = thistype.m_wildCreatures.addNewItemType(index, 'rhe2', 0.33)
+			call thistype.m_wildCreatures.addItemType(index, itemIndex, 'I04O', 0.33)
+			call thistype.m_wildCreatures.addItemType(index, itemIndex, 'I04P', 0.33)
 
 			set thistype.m_orcs0 = SpawnPoint.create()
 			set index = thistype.m_orcs0.addUnitWithType(gg_unit_n01A_0217, 1.0)
@@ -850,7 +863,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		endmethod
 
 		private static method init3 takes nothing returns nothing
-			local integer index
+			local integer index = 0
+			local integer itemIndex = 0
 
 			set thistype.m_cornEaters0 = SpawnPoint.create()
 			set index = thistype.m_cornEaters0.addUnitWithType(gg_unit_n016_0478, 1.0)
@@ -884,6 +898,14 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_cornEaters3.addUnitWithType(gg_unit_n06Q_0629, 1.0)
 			call thistype.m_cornEaters3.addNewItemType(index, 'I063', 1.0)
 
+			set thistype.m_cornEaters4 = SpawnPoint.create()
+			set index = thistype.m_cornEaters4.addUnitWithType(gg_unit_n016_0663, 1.0)
+			call thistype.m_cornEaters4.addNewItemType(index, 'I063', 1.0)
+			set index = thistype.m_cornEaters4.addUnitWithType(gg_unit_n016_0662, 1.0)
+			call thistype.m_cornEaters4.addNewItemType(index, 'I063', 1.0)
+			set index = thistype.m_cornEaters4.addUnitWithType(gg_unit_n016_0661, 1.0)
+			call thistype.m_cornEaters4.addNewItemType(index, 'I063', 1.0)
+
 			 // spawn point spider queen
 			set thistype.m_spiderQueen = SpawnPoint.create()
 			set index = thistype.m_spiderQueen.addUnitWithType(gg_unit_n05F_0389, 1.0)
@@ -898,6 +920,13 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_spiderQueen.addUnitWithType(gg_unit_n01D_0392, 1.0)
 			call thistype.m_spiderQueen.addNewItemType(index, 'I041', 1.0)
 
+			// undeads forest
+			set thistype.m_undeadsForest = SpawnPoint.create()
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n00Z_0659, 1.0)
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n00Z_0660, 1.0)
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n01O_0658, 1.0)
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n01O_0656, 1.0)
+			set index = thistype.m_undeadsForest.addUnitWithType(gg_unit_n01O_0657, 1.0)
 
 			// drum cave
 			set thistype.m_skeletons0 = SpawnPoint.create()
@@ -929,22 +958,44 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 			set thistype.m_necks0 = SpawnPoint.create()
 			set index = thistype.m_necks0.addUnitWithType(gg_unit_n05Z_0453, 1.0)
+			set itemIndex = thistype.m_necks0.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks0.addItemType(index, itemIndex, 'I00A', 0.80)
 			set index = thistype.m_necks0.addUnitWithType(gg_unit_n05Z_0466, 1.0)
+			set itemIndex = thistype.m_necks0.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks0.addItemType(index, itemIndex, 'I00A', 0.80)
 			set index = thistype.m_necks0.addUnitWithType(gg_unit_n05Z_0452, 1.0)
+			set itemIndex = thistype.m_necks0.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks0.addItemType(index, itemIndex, 'I00A', 0.80)
 
 			set thistype.m_necks1 = SpawnPoint.create()
 			set index = thistype.m_necks1.addUnitWithType(gg_unit_n05Z_0451, 1.0)
+			set itemIndex = thistype.m_necks1.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks1.addItemType(index, itemIndex, 'I00A', 0.80)
 			set index = thistype.m_necks1.addUnitWithType(gg_unit_n05Z_0447, 1.0)
+			set itemIndex = thistype.m_necks1.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks1.addItemType(index, itemIndex, 'I00A', 0.80)
 			set index = thistype.m_necks1.addUnitWithType(gg_unit_n05Z_0451, 1.0)
+			set itemIndex = thistype.m_necks1.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks1.addItemType(index, itemIndex, 'I00A', 0.80)
 
 			set thistype.m_necks2 = SpawnPoint.create()
 			set index = thistype.m_necks2.addUnitWithType(gg_unit_n05Z_0468, 1.0)
+			set itemIndex = thistype.m_necks2.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks2.addItemType(index, itemIndex, 'I00A', 0.80)
 			set index = thistype.m_necks2.addUnitWithType(gg_unit_n05Z_0467, 1.0)
+			set itemIndex = thistype.m_necks2.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks2.addItemType(index, itemIndex, 'I00A', 0.80)
 
 			set thistype.m_necks3 = SpawnPoint.create()
 			set index = thistype.m_necks3.addUnitWithType(gg_unit_n05Z_0469, 1.0)
+			set itemIndex = thistype.m_necks3.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks3.addItemType(index, itemIndex, 'I00A', 0.80)
 			set index = thistype.m_necks3.addUnitWithType(gg_unit_n05Z_0470, 1.0)
+			set itemIndex = thistype.m_necks3.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks3.addItemType(index, itemIndex, 'I00A', 0.80)
 			set index = thistype.m_necks3.addUnitWithType(gg_unit_n05Z_0471, 1.0)
+			set itemIndex = thistype.m_necks3.addNewItemType(index, 'I05W', 0.20)
+			call thistype.m_necks3.addItemType(index, itemIndex, 'I00A', 0.80)
 
 			// near ditch spiders
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I03Y_0480, 1.0)
@@ -1197,6 +1248,10 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 		public static method cornEaters3 takes nothing returns SpawnPoint
 			return thistype.m_cornEaters3
+		endmethod
+
+		public static method cornEaters4 takes nothing returns SpawnPoint
+			return thistype.m_cornEaters4
 		endmethod
 
 		public static method witch0 takes nothing returns SpawnPoint

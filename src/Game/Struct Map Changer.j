@@ -195,6 +195,9 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// Set skill points before creating spells. A skill point is required for the basic spell.
 			call character.grimoire().setSkillPoints(GetStoredInteger(cache, missionKey, "SkillPoints"), false) // grimoire UI will be updated in the end
 
+			// Set the stored level of the hero which is required for level ups. Otherwise hints will appear and the number of skill points will be wrong.
+			call character.grimoire().setHeroLevel(GetHeroLevel(character.unit()))
+
 			// Create spells only when the class is set, otherwise the grimoire stays empty.
 			//debug call Print("Creating spells, character has " + I2S(character.spellCount()) + " spells")
 			// Creates spells which are required in the grimoire etc. and adds hero glow etc.

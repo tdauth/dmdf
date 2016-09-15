@@ -26,19 +26,20 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 		public method unit takes nothing returns unit
 			return this.m_unit
 		endmethod
-		
+
 		public stub method onEnable takes Character character, Shrine oldShrine returns nothing
 			local location revivalLoc
 			local location playerUnitLoc
-			
+
 			// remove old player unit
 			if (thistype.m_playerUnits[GetPlayerId(character.player())] != null) then
 				call RemoveUnit(thistype.m_playerUnits[GetPlayerId(character.player())])
 				set thistype.m_playerUnits[GetPlayerId(character.player())] = null
 			endif
-			
+
 			set revivalLoc = GetUnitLoc(this.unit())
 			set playerUnitLoc = PolarProjectionBJ(revivalLoc, 50.0, GetPlayerId(character.player()) * 360 / MapData.maxPlayers)
+			call character.options().moveTo(GetLocationX(playerUnitLoc), GetLocationY(playerUnitLoc))
 			set thistype.m_playerUnits[GetPlayerId(character.player())] = CreateUnitAtLoc(character.player(), thistype.playerUnitId, playerUnitLoc, 0.0)
 			call RemoveLocation(revivalLoc)
 			set revivalLoc = null
@@ -56,7 +57,7 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 			/*
 			 * The first time enabling a shrine shows a hint if the tutorial is enabled.
 			 */
-			if (character.tutorial().isEnabled() and not character.tutorial().hasEnteredShrine()) then
+			if (not Game.restoreCharacters.evaluate() and character.tutorial().isEnabled() and not character.tutorial().hasEnteredShrine()) then
 				call character.tutorial().showShrineInfo()
 			endif
 		endmethod
@@ -79,7 +80,7 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 		public static method shrines takes nothing returns AIntegerVector
 			return thistype.m_shrines
 		endmethod
-		
+
 		/**
 		 * \param index The player index of the owner of the rune unit.
 		 * \return Returns a player's rune unit.

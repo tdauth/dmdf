@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGameCharacter, StructGameClasses, StructGameGame, StructGameZone, StructMapMapShrines, StructMapMapNpcRoutines, StructMapMapWeather, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapVideos
+library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMapNpcRoutines, StructMapMapWeather, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapQuests, MapVideos
 
 	/**
 	 * \brief A static class which defines unit type ids with identifiers.
@@ -81,6 +81,7 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
+		public static constant integer startLevel = 0
 		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 10000
@@ -172,6 +173,38 @@ library StructMapMapMapData requires Asl, AStructSystemsCharacterVideo, StructGa
 			return false
 		endmethod
 
+		private static method trigggerConditionTrack takes nothing returns boolean
+			local string text = DmdfHashTable.global().handleStr(GetTriggeringTrigger(), 0)
+			local integer i = 0
+			debug call Print("Tracked by " + GetPlayerName(GetTriggerPlayer()))
+			call DisplayTextToPlayer(GetTriggerPlayer(), 0.0, 0.0, text)
+			return false
+		endmethod
+
+		private static method createTombstone takes rect whichRect, string text returns nothing
+			local trackable tombStoneTrackable = CreateTrackable("Abilities\\Spells\\Human\\Banish\\BanishTarget.mdl", GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
+			local trigger trackTrigger = CreateTrigger()
+			call TriggerRegisterTrackableTrackEvent(trackTrigger, tombStoneTrackable)
+			call TriggerAddCondition(trackTrigger, Condition(function thistype.trigggerConditionTrack))
+			call DmdfHashTable.global().setHandleStr(trackTrigger, 0, text)
+		endmethod
+
+		private static method initTombstones takes nothing returns nothing
+			call thistype.createTombstone(gg_rct_sign_tombstone_0, tr("Vater wusste es besser."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_1, tr("Hier ruhe ich, nicht du!"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_2, tr("Du schuldest mir noch Goldmünzen für diesen Grabstein!"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_3, tr("Man sieht sich."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_4, tr("Brot kann schimmeln, was kannst du?"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_5, tr("Sprang von einer Klippe und kam auch unten an."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_6, tr("Es war todsicher."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_7, tr("Ein andermal vielleicht."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_8, tr("Begrabt mich auf keinen Fall. Verbrennt mich!"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_9, tr("Lag gerne herum und tat nichts."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_10, tr("Im nächsten Leben bin ich sicher reich."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_castle_1, tr("Regierte mit Strenge, aber regierte wenigstens."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_castle_2, tr("Ertrug ihren Mann bis zuletzt."))
+		endmethod
+
 		/// Required by \ref Game.
 		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work when placed explicitely. The methods have to be declared below which forces .evaluate() to use a real TriggerEvaluate().
 		public static method init takes nothing returns nothing
@@ -260,6 +293,8 @@ endif
 			set thistype.m_giantDeathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_giantDeathTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(thistype.m_giantDeathTrigger, Condition(function thistype.triggerConditionGiantDeath))
+
+			call thistype.initTombstones()
 
 			set thistype.m_zoneGardonar = Zone.create("GA", gg_rct_zone_gardonar)
 			call thistype.m_zoneGardonar.disable()
@@ -371,6 +406,7 @@ endif
 			set thistype.cowSound = gg_snd_Cow
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
+			call ForForce(bj_FORCE_PLAYER[0], function Dungeons.addSpellbookAbilities)
 
 			call SuspendTimeOfDay(false)
 
@@ -403,6 +439,7 @@ endif
 		 * It is called in the onStopAction() of the video intro with .evaluate() which means it is called after unpausing all units and restoring all player data.
 		 */
 		public static method startAfterIntro takes nothing returns nothing
+			local real handicap = 0.0
 			// call the following code only once in case the intro is showed multiple times
 			if (thistype.m_startedGameAfterIntro) then
 				return
@@ -419,8 +456,11 @@ endif
 
 			call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 
-			// execute because of trigger sleep action
-			call Game.applyHandicapToCreeps.execute()
+			set handicap = Game.applyHandicapToCreeps()
+			call SetPlayerHandicap(MapData.orcPlayer, handicap)
+			call SetPlayerHandicap(MapData.haldarPlayer, handicap)
+			call SetPlayerHandicap(MapData.baldarPlayer, handicap)
+			call SetPlayerHandicap(MapData.arenaPlayer, handicap)
 		endmethod
 
 		/// Required by \ref Classes.
@@ -516,6 +556,12 @@ endif
 		endmethod
 
 		public static method initVideoSettings takes nothing returns nothing
+			/*
+			 * If AOS spawn is not paused, warriors might spawn during a video sequence and not be paused.
+			 */
+			if (Aos.characterHasEntered.evaluate()) then
+				call Aos.pauseSpawn.evaluate()
+			endif
 			call Weather.pauseWeather()
 			// shop markers
 			call ShowUnit(gg_unit_o008_0209, false)
@@ -523,10 +569,18 @@ endif
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
+			if (Aos.characterHasEntered.evaluate()) then
+				call Aos.continueSpawn.evaluate()
+			endif
 			call Weather.resumeWeather()
 			// shop markers
 			call ShowUnit(gg_unit_o008_0209, true)
 			call ShowUnit(gg_unit_o007_0208, true)
+		endmethod
+
+		/// Required by \ref Buildings.
+		public static method goldmine takes nothing returns unit
+			return gg_unit_n06E_0487
 		endmethod
 	endstruct
 

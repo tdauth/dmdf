@@ -1,4 +1,4 @@
-library StructMapTalksTalkTobias requires Asl
+library StructMapTalksTalkTobias requires Asl, StructMapQuestsQuestTheHolyPotato
 
 	struct TalkTobias extends Talk
 

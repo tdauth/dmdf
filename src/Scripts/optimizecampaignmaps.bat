@@ -9,3 +9,9 @@ del "E:\Warcraft III Englisch\Maps\DMDF\GH.w3x"
 
 del "E:\Warcraft III Englisch\Maps\DMDF\HB.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 3 - Holzbruck.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\HB.w3x" --checkscriptstuff --exit
+
+del "E:\Warcraft III Englisch\Maps\DMDF\HU.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 3.1 - Holzbrucks Unterwelt.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\HU.w3x" --checkscriptstuff --exit
+
+del "E:\Warcraft III Englisch\Maps\DMDF\DS.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 5 - Deranor.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\DS.w3x" --checkscriptstuff --exit

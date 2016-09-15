@@ -1,4 +1,4 @@
-library StructGameClassSelection requires Asl, StructGameClasses, StructGameCharacter, StructGameDungeon, StructGameGrimoire, Spells, StructMapMapMapData
+library StructGameClassSelection requires Asl, StructGameClasses, StructGameCharacter, StructGameDungeon, StructGameGrimoire, Spells
 
 	/**
 	 * \brief Stores all data which is reused after a player repicks his character class.
@@ -117,13 +117,16 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 
 		public stub method onSelectClass takes Character character, AClass class, boolean last returns nothing
-			local integer i
-			local integer j
+			local integer i = 0
 
 			// Is no repick which means it is the first class selection in the beginning of the game.
 			if (not thistype.m_gameStarted) then
+				call SetHeroLevel(character.unit(), MapData.startLevel, false)
+				debug call Print("Start level: " + I2S(MapData.startLevel))
 				// Initial skill points depend on the map.
 				call character.grimoire().addSkillPoints.evaluate(MapData.startSkillPoints, true)
+				// Initial hero level
+				//call character.grimoire().setHeroLevel(GetHeroLevel(character.unit()))
 			endif
 
 			// Create all class spells and skill the default spell.
@@ -133,7 +136,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * Otherwise it could be used to create more and more items.
 			 */
 			if (not thistype.m_gameStarted) then
-				call MapData.createClassItems(character)
+				call MapData.createClassItems.evaluate(character)
 			endif
 
 			call character.setMovable(false)
@@ -159,7 +162,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				if (not last) then
 					debug call Print("Do not start the game")
 					call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
-					call MapData.onSelectClass(character, class, last)
+					call MapData.onSelectClass.evaluate(character, class, last)
 				else
 					debug call Print("Start game")
 
@@ -167,13 +170,13 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 						call thistype.endTimer()
 					endif
 
-					call MapData.onSelectClass(character, class, last)
+					call MapData.onSelectClass.evaluate(character, class, last)
 					call thistype.startGame()
 				endif
 			// Is a repick.
 			else
 				call character.setMovable(true)
-				call MapData.onSelectClass(character, class, last)
+				call MapData.onSelectClass.evaluate(character, class, last)
 			endif
 		endmethod
 
@@ -338,6 +341,24 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			// for all classes
 			call SpellAttributeBonus.create(character)
+
+			if (class == Classes.dragonSlayer()) then
+				call SpellRideHorse.create(character, 'A1SL', 'A1SM')
+			elseif (class == Classes.druid()) then
+				call SpellRideHorse.create(character, 'A1SN', 'A1SU')
+			elseif (class == Classes.elementalMage()) then
+				call SpellRideHorse.create(character, 'A1SO', 'A1SV')
+			elseif (class == Classes.cleric()) then
+				call SpellRideHorse.create(character, 'A1SP', 'A1SW')
+			elseif (class == Classes.necromancer()) then
+				call SpellRideHorse.create(character, 'A1SQ', 'A1SX')
+			elseif (class == Classes.knight()) then
+				call SpellRideHorse.create(character, 'A1SR', 'A1SY')
+			elseif (class == Classes.wizard()) then
+				call SpellRideHorse.create(character, 'A1ST', 'A1T0')
+			elseif (class == Classes.ranger()) then
+				call SpellRideHorse.create(character, 'A1SS', 'A1SZ')
+			endif
 		endmethod
 
 		private static method addClassSpellsFromCharacterWithNewOpLimit takes Character character returns nothing
@@ -349,7 +370,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 
 		private static method initMapSpellsWithNewOpLimit takes Character character returns nothing
-			call MapData.initMapSpells(character)
+			call MapData.initMapSpells.evaluate(character)
 		endmethod
 
 		public stub method onCharacterCreation takes AClassSelection classSelection, unit whichUnit returns ACharacter
@@ -381,7 +402,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * This helps to inform the player about start items since he can see them but not use them.
 			 * The inventory ability should not allow to drop any of the items nor to use them.
 			 */
-			call MapData.createClassSelectionItems(this.currentClass(), whichUnit)
+			call MapData.createClassSelectionItems.evaluate(this.currentClass(), whichUnit)
 
 			/*
 			 * Apply the abilities of equipment items since they show effects like attached weapons.
@@ -574,9 +595,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			// new OpLimit if possible
 			set classSelection = thistype.createClassSelectionForPlayerWithNewOpLimit.evaluate(whichPlayer)
-			call classSelection.setStartX(MapData.startX(GetPlayerId(whichPlayer)))
-			call classSelection.setStartY(MapData.startY(GetPlayerId(whichPlayer)))
-			call classSelection.setStartFacing(MapData.startFacing(GetPlayerId(whichPlayer)))
+			call classSelection.setStartX(MapData.startX.evaluate(GetPlayerId(whichPlayer)))
+			call classSelection.setStartY(MapData.startY.evaluate(GetPlayerId(whichPlayer)))
+			call classSelection.setStartFacing(MapData.startFacing.evaluate(GetPlayerId(whichPlayer)))
 			call classSelection.setShowAttributes(true)
 			call classSelection.enableArrowKeySelection(false)
 			call classSelection.enableEscapeKeySelection(false)
@@ -605,7 +626,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			call ForceCinematicSubtitles(true)
 
-			//call PlayMusic("Music\\CharacterSelection.mp3")
+			// TODO play thematic music for player from class selection
 
 			set i = 0
 			loop
@@ -634,7 +655,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * Then display informations about how to select the class as long as possible to keep players informed.
 			 */
 			call TriggerSleepAction(4.0)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Wählen Sie zunächst Ihre Charakterklasse aus. Diese Auswahl ist für die restliche Spielzeit unwiderruflich!", "Choose your character class first. This selection is irrevocable for the rest of the game."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Wählen Sie zunächst Ihre Charakterklasse aus.", "Choose your character class first."), null)
 			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Drücken Sie die Pfeilsymbole rechts unten, um die angezeigte Charakterklasse zu wechseln.", "- Press the arrow key icons at the bottom right to change the shown character class."), null)
 			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Drücken Sie das Charaktersymbol rechts unten, um die angezeigte Charakterklasse auszuwählen.", "- Press the character icon at the bottom right to select the shown character class."), null)
 			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Auf dem Zauberbuchsymbol rechts unten, können die Klassenzauber betrachtet werden.", "- At the grimoire icon at the bottom right the class spells can be viewed."), null)

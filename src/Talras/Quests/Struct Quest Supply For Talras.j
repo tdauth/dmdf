@@ -8,12 +8,12 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 			call this.setState(AAbstractQuest.stateNew)
 			call this.questItem(0).setState(AAbstractQuest.stateNew)
 			call this.questItem(4).setState(AAbstractQuest.stateNew)
-			
+
 			call this.displayState()
-			
+
 			return true
 		endmethod
-		
+
 		private static method stateEventCompletedSupply0 takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_supply_for_talras_supply_0)
 		endmethod
@@ -26,7 +26,7 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 			call Character(questItem.character()).giveQuestItem('I03S')
 			call questItem.quest().displayUpdate()
 		endmethod
-		
+
 		private static method stateEventCompletedSupply1 takes AQuestItem questItem, trigger whichTrigger returns nothing
 			call TriggerRegisterEnterRectSimple(whichTrigger, gg_rct_quest_supply_for_talras_supply_1)
 		endmethod
@@ -39,7 +39,7 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 			call Character(questItem.character()).giveQuestItem('I03T')
 			call questItem.quest().displayUpdate()
 		endmethod
-		
+
 		private static method stateActionCompletedSendSupply takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			local unit cart = CreateUnit(MapData.neutralPassivePlayer, 'h016', GetUnitX(Npcs.manfred()), GetUnitY(Npcs.manfred()), 0.0)
@@ -47,10 +47,10 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 			call IssuePointOrder(cart, "move", GetRectCenterX(gg_rct_quest_supply_for_talras_cart_destination), GetRectCenterY(gg_rct_quest_supply_for_talras_cart_destination))
 			set cart = null
 		endmethod
-		
+
 		private static method create takes ACharacter character returns thistype
 			local thistype this = thistype.allocate(character, tre("Die Versorgung von Talras", "The Supply of Talras"))
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMonsterLure.blp")
 			call this.setDescription(tre("Markward, die rechte Hand des Herzogs, möchte sich auf eine bevorstehende Belagerung von Talras vorbereiten. Daher will er Vorräte vom Bauern Manfred in der Burg einlagern.", "Markward, the right hand of the duke wants to prepare for the impending siege of Talras. Therefore, he wants to store supplies from the farme Manfred in the castle."))
@@ -61,7 +61,7 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 			call questItem.setPing(true)
 			call questItem.setPingWidget(Npcs.manfred())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// item 1
 			set questItem = AQuestItem.create(this, tre("Hole die Vorräte aus der Scheune.", "Get the supplies out of the barn."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedSupply0)
@@ -70,7 +70,7 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_supply_for_talras_supply_0)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// item 2
 			set questItem = AQuestItem.create(this, tre("Hole die Vorräte von Guntrichs Mühle.", "Get the supplies from Guntrich's mill."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedSupply1)
@@ -79,7 +79,7 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_supply_for_talras_supply_1)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			// item 3
 			set questItem = AQuestItem.create(this, tre("Bringe die Vorräte zu Manfred.", "Bring the supplies to Manfred."))
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedSendSupply)

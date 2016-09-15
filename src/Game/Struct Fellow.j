@@ -54,6 +54,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			return this.m_hasRevival
 		endmethod
 
+		/**
+		 * The description is shown when the fellow is shared.
+		 * @{
+		 */
 		public method setDescription takes string description returns nothing
 			set this.m_description = description
 		endmethod
@@ -61,11 +65,14 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		public method description takes nothing returns string
 			return this.m_description
 		endmethod
-		
+		/**
+		 * @}
+		 */
+
 		public method setRevivalTitle takes string title returns nothing
 			set this.m_revivalTitle = title
 		endmethod
-		
+
 		public method revivalTitle takes nothing returns string
 			return this.m_revivalTitle
 		endmethod
@@ -97,11 +104,11 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		public method disableSellings takes nothing returns boolean
 			return this.m_disableSellings
 		endmethod
-		
+
 		public method addAbility takes integer abilityId returns nothing
 			call this.m_abilities.pushBack(abilityId)
 		endmethod
-		
+
 		public method removeAbility takes integer abilityId returns nothing
 			call this.m_abilities.remove(abilityId)
 		endmethod
@@ -123,7 +130,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		endmethod
 
 		// methods
-		
+
 		private method setShared takes boolean shared returns nothing
 			set this.m_isShared = shared
 		endmethod
@@ -159,9 +166,9 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 			call SetUnitInvulnerable(this.m_unit, false)
 			call AUnitRoutine.disableAll(this.m_unit)
-			
+
 			set this.m_trades = (GetUnitAbilityLevel(this.m_unit, 'Aneu') > 0 or GetUnitAbilityLevel(this.m_unit, 'Asid') > 0 or GetUnitAbilityLevel(this.m_unit, 'Apit') > 0)
-			
+
 			if (this.m_trades) then
 				debug call Print("Has trades remove the abilities!")
 				call UnitRemoveAbility(this.m_unit, 'Aneu')
@@ -169,7 +176,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call UnitRemoveAbility(this.m_unit, 'Apit')
 				call SetItemTypeSlots(this.m_unit, 0)
 			endif
-			
+
 			if (not this.m_hasTalk and this.m_talk != 0) then
 				call this.m_talk.disable()
 				call RemoveUnitFromStock(this.m_unit, 'n05E')
@@ -209,11 +216,11 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				endif
 			endif
 		endmethod
-		
+
 		public method shareWithAll takes nothing returns nothing
 			call this.shareWith(0)
 		endmethod
-		
+
 		/**
 		 * Revive always at the first character's enabled revival.
 		 */
@@ -223,7 +230,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				exitwhen (i == MapData.maxPlayers)
 				if (Character.playerCharacter(Player(i)) != 0 and Character.playerCharacter(Player(i)).revival() != 0) then
 					call ReviveHero(this.m_unit, Character.playerCharacter(Player(i)).revival().x(), Character.playerCharacter(Player(i)).revival().y(), showEffect)
-					
+
 					return
 				endif
 				set i = i + 1
@@ -245,25 +252,25 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (IsUnitDeadBJ(this.m_unit)) then
 				call this.reviveAtActiveShrine(false)
 			endif
-			
+
 			call SetUnitOwner(this.m_unit, MapData.neutralPassivePlayer, true)
 			call SetUnitInvulnerable(this.m_unit, true)
 			call SetUnitLifePercentBJ(this.m_unit, 100.0)
-			
+
 			set i = 0
 			loop
 				exitwhen (i == this.m_abilities.size())
 				call UnitRemoveAbility(this.m_unit, this.m_abilities[i])
 				set i = i + 1
 			endloop
-			
+
 			if (this.m_trades) then
 				call UnitAddAbility(this.m_unit, 'Aneu')
 				call UnitAddAbility(this.m_unit, 'Asid')
 				call UnitAddAbility(this.m_unit, 'Apit')
 				call SetItemTypeSlots(this.m_unit, 12)
 			endif
-			
+
 			if (this.m_talk != 0) then
 				call this.m_talk.enable()
 				call AddUnitToStock(this.m_unit, 'n05E', 1, 1)
@@ -291,15 +298,15 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 					call PlaySoundForPlayer(this.m_character.player(), thistype.m_infoSoundLeave)
 				endif
 			endif
-			
+
 			call AUnitRoutine.enableAll(this.m_unit)
 			// restart old routine immediately
 			call AUnitRoutine.manualStart(this.m_unit)
-			
+
 			if (this.m_character != 0) then
 				call this.m_character.removeFellow(this)
 			endif
-			
+
 			set this.m_character = 0
 			call this.setShared(false)
 		endmethod
@@ -319,7 +326,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				debug call Print("Unit is not dead?!")
 			endif
 		endmethod
-		
+
 		/**
 		 * If the revival timer is running this resumes or pauses the timer.
 		 * Can be useful during video sequences.
@@ -333,7 +340,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				endif
 			endif
 		endmethod
-		
+
 		/**
 		 * Ends the revival without actually reviving the fellow.
 		 * Has to be used carefully for example when the fellow is being revived manually.
@@ -350,12 +357,12 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call TimerDialogDisplay(this.m_revivalTimerDialog, false)
 			call this.revive()
 		endmethod
-		
+
 		private static method triggerConditionRevival takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			return GetTriggerUnit() == this.unit()
 		endmethod
-		
+
 		private static method triggerActionRevival takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			local unit animationUnit
@@ -474,9 +481,9 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call DmdfHashTable.global().setHandleInteger(this.m_unit, DMDF_HASHTABLE_KEY_FELLOW, this)
 			set this.m_trades = false
 			set this.m_isShared = false
-			
+
 			call thistype.m_fellows.pushBack(this)
-			
+
 			return this
 		endmethod
 
@@ -546,18 +553,18 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call this.revive()
 			return true
 		endmethod
-		
+
 		private method reviveForVideo takes nothing returns nothing
 			if (this.m_revivalTimer != null) then
 				call PauseTimer(this.m_revivalTimer)
 				call TimerDialogDisplay(this.m_revivalTimerDialog, false)
 			endif
-			
+
 			if (IsUnitDeadBJ(this.m_unit)) then
 				call this.reviveAtActiveShrine(false)
 			endif
 		endmethod
-		
+
 		/**
 		 * Since fellows usually should not be dead in a video they will be revived manually before the video starts.
 		 */

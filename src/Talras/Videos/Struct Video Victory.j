@@ -18,7 +18,7 @@ Drachentöterin: Wie Ihr wünscht mein König.
 Szene 2 - Wigberht, die Nordmänner und die Charaktere:
 Wigberht: Ihr habt Tapfer gekämpft. Diese Schlacht hätte auch anders ausgehen können. Wir kehren nun zu unserem Lager zurück.
 Wigberht: Warten wir ab, ob der Herzog noch unsere Hilfe braucht. Ricman kümmere dich darum, dass wir bald aufbrechen können!
-Ricman: Ich werde das Boot beladen lassen, mein Heer.
+Ricman: Ich werde das Boot beladen lassen, mein Herr.
 
 
 Szene 3 - Das Schlachtfeld und der Fürst der Dunkelelfen:
@@ -132,9 +132,9 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_victory_dararos_and_dragon_slayer, true, 0.0)
 			call Game.fadeInWithWait()
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Mein König, ich wusste nicht, dass Ihr Euch persönlich auf den Weg macht.", "My king, I did not know that you make yourself personally on the way."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tre("Mein König, ich wusste nicht, dass Ihr Euch persönlich auf den Weg macht.", "My king, I did not know that you make yourself personally on the way."), gg_snd_DragonSlayerVictory1)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerVictory1))) then
 				return
 			endif
 
@@ -150,9 +150,9 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Ihr wollt Euren Bruder ... ich meine ihren Fürsten schließlich angreifen?"), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Ihr wollt Euren Bruder ... ich meine ihren Fürsten schließlich angreifen?"), gg_snd_DragonSlayerVictory2)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerVictory2))) then
 				return
 			endif
 
@@ -180,9 +180,9 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Wie Ihr wünscht mein König."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDragonSlayer), tre("Drachentöterin", "Dragon Slayer"), tr("Wie Ihr wünscht mein König."), gg_snd_DragonSlayerVictory3)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerVictory3))) then
 				return
 			endif
 
@@ -211,7 +211,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorRicman), this.unitActor(this.m_actorWigberht))
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tre("Ricman", "Ricman"), tr("Ich werde das Boot beladen lassen, mein Heer."), gg_snd_RicmanVictoryRicman1)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tre("Ricman", "Ricman"), tr("Ich werde das Boot beladen lassen, mein Herr."), gg_snd_RicmanVictoryRicman1)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanVictoryRicman1))) then
 				return

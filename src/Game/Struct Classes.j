@@ -7,15 +7,15 @@ library StructGameClasses requires Asl, StructGameCharacter
 	struct ClassGrimoireEntry
 		private integer m_abilityId
 		private integer m_grimoireAbilityId
-		
+
 		public method abilityId takes nothing returns integer
 			return this.m_abilityId
 		endmethod
-		
+
 		public method grimoireAbilityId takes nothing returns integer
 			return this.m_grimoireAbilityId
 		endmethod
-		
+
 		/**
 		 * Shows the given ability as grimoire ability for unit \p whichUnit.
 		 */
@@ -24,7 +24,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call SetPlayerAbilityAvailable(GetOwningPlayer(whichUnit), this.m_grimoireAbilityId, false)
 			call UnitAddAbility(whichUnit, this.m_abilityId)
 		endmethod
-		
+
 		/**
 		 * Hides the given ability from unit \p whichUnit.
 		 */
@@ -34,12 +34,12 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call UnitRemoveAbility(whichUnit, this.m_grimoireAbilityId)
 			endif
 		endmethod
-		
+
 		public static method create takes integer abilityId, integer grimoireAbilityId returns thistype
 			local thistype this = thistype.allocate()
 			set this.m_abilityId = abilityId
 			set this.m_grimoireAbilityId = grimoireAbilityId
-			
+
 			return this
 		endmethod
 	endstruct
@@ -64,7 +64,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		private static AIntegerVector m_elementalMageGrimoireEntries
 		private static AClass m_wizard
 		private static AIntegerVector m_wizardGrimoireEntries
-		
+
 		private static ClassGrimoireEntry m_nextPageGrimoireEntry
 		private static ClassGrimoireEntry m_previousPageGrimoireEntry
 
@@ -78,21 +78,21 @@ library StructGameClasses requires Asl, StructGameCharacter
 		private static method onInit takes nothing returns nothing
 			set thistype.m_nextPageGrimoireEntry = ClassGrimoireEntry.create('A0AB', 'A0AX')
 			set thistype.m_previousPageGrimoireEntry = ClassGrimoireEntry.create('A0AA', 'A0AY')
-			
+
 			call AbilityPreload('A0AB')
 			call AbilityPreload('A0AX')
 			call AbilityPreload('A0AA')
 			call AbilityPreload('A0AY')
 		endmethod
-		
+
 		public static method classAbilitiesNextPageAbilityId takes nothing returns integer
 			return thistype.m_nextPageGrimoireEntry.abilityId()
 		endmethod
-		
+
 		public static method classAbilitiesPreviousPageAbilityId takes nothing returns integer
 			return thistype.m_previousPageGrimoireEntry.abilityId()
 		endmethod
-		
+
 		public static method createClassAbilitiesWithEntries takes unit whichUnit, AIntegerVector grimoireEntries, integer page, integer spellsPerPage returns nothing
 			local integer i
 			local integer index
@@ -103,11 +103,11 @@ library StructGameClasses requires Asl, StructGameCharacter
 				call ClassGrimoireEntry(grimoireEntries[i]).hide(whichUnit)
 				set i = i + 1
 			endloop
-			
+
 			// show next and previous page buttons
 			call thistype.m_nextPageGrimoireEntry.show(whichUnit)
 			call thistype.m_previousPageGrimoireEntry.show(whichUnit)
-			
+
 			set i = 0
 			loop
 				exitwhen (i == spellsPerPage)
@@ -119,7 +119,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 				set i = i + 1
 			endloop
 		endmethod
-		
+
 		/**
 		 * \note Similar to \ref Grimoire#pages()
 		 */
@@ -132,10 +132,10 @@ library StructGameClasses requires Asl, StructGameCharacter
 			if (result == 0) then
 				set result = 1
 			endif
-			
+
 			return result
 		endmethod
-		
+
 		private static method classGrimoireEntries takes AClass class returns AIntegerVector
 			if (class == thistype.m_cleric) then
 				return thistype.m_clericGrimoireEntries
@@ -157,7 +157,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			debug call Print("Invalid class " + I2S(class))
 			return 0
 		endmethod
-		
+
 		private static method preloadAbilities takes nothing returns nothing
 			// use new OpLimit everytime
 			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_clericGrimoireEntries)
@@ -169,7 +169,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_elementalMageGrimoireEntries)
 			call thistype.preloadAbilitiesFromVector.evaluate(thistype.m_wizardGrimoireEntries)
 		endmethod
-		
+
 		private static method preloadAbilitiesFromVector takes AIntegerVector vector returns nothing
 			local integer i = 0
 			loop
@@ -182,7 +182,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 				set i = i + 1
 			endloop
 		endmethod
-		
+
 		/**
 		 * Creates grimoire abilities of the specified class \p class for \p whichUnit at \p page using at maximum \p spellsPerPage.
 		 * The grimoire abilities are used in the class selection to inform the selecting player which spells are available for each class.
@@ -190,7 +190,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		public static method createClassAbilities takes AClass class, unit whichUnit, integer page, integer spellsPerPage returns nothing
 			call thistype.createClassAbilitiesWithEntries(whichUnit, thistype.classGrimoireEntries(class), page, spellsPerPage)
 		endmethod
-		
+
 		/**
 		 * \return Returns the maximum number of pages for class \p class using \p spellsPerPage.
 		 */
@@ -198,7 +198,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			local AIntegerVector grimoireEntries = thistype.classGrimoireEntries(class)
 			return thistype.maxGrimoireEntriesPages(grimoireEntries, spellsPerPage)
 		endmethod
-		
+
 		private static method initCleric takes nothing returns nothing
 			set thistype.m_cleric = AClass.create('H000', "spell", "Sound\\Units\\ClassCleric\\Class.wav", 1, 1)
 			call thistype.m_cleric.setStrPerLevel(1.50)
@@ -211,7 +211,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_cleric.addDescriptionLine(tre("Ihre offensiven Fähigkeiten jedoch, sind stark eingeschränkt", "Their offensive abilities are largely limited"))
 			call thistype.m_cleric.addDescriptionLine(tre("und alleine sind sie häufig nicht in der Lage, mächtige Feinde", "and they are not capable of defeating"))
 			call thistype.m_cleric.addDescriptionLine(tre("zu bezwingen.", "powerful enemies alone."))
-			
+
 			set thistype.m_clericGrimoireEntries = AIntegerVector.create()
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMaertyrer.classSelectionAbilityId, SpellMaertyrer.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAbatement.classSelectionAbilityId, SpellAbatement.classSelectionGrimoireAbilityId))
@@ -226,12 +226,13 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlessing.classSelectionAbilityId, SpellBlessing.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellConversion.classSelectionAbilityId, SpellConversion.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellGodsFavor.classSelectionAbilityId, SpellGodsFavor.classSelectionGrimoireAbilityId))
-			
+
 			// ultimates on page 2
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellExorcizeEvil.classSelectionAbilityId, SpellExorcizeEvil.classSelectionGrimoireAbilityId))
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellHolyWill.classSelectionAbilityId, SpellHolyWill.classSelectionGrimoireAbilityId))
-			
+
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
+			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initNecromancer takes nothing returns nothing
@@ -248,7 +249,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_necromancer.addDescriptionLine(tre("Doch eines sollte nicht vergessen werden: Auch wenn die Magie selbst eine dunkle ist,", "But one thing should not be forgotten: Although the magic itself is a dark one"))
 			call thistype.m_necromancer.addDescriptionLine(tre("so muss sie nicht zwangsläufig einem bösen Zweck dienen. Es liegt in jedermanns eigener Hand,", "it has not necessarily to serve an evil purpose. It is in everyone's own hand"))
 			call thistype.m_necromancer.addDescriptionLine(tre("zu entscheiden, wofür sie genutzt wird.", "to decide what it is used for."))
-			
+
 			set thistype.m_necromancerGrimoireEntries = AIntegerVector.create()
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAncestorPact.classSelectionAbilityId, SpellAncestorPact.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellConsume.classSelectionAbilityId, SpellConsume.classSelectionGrimoireAbilityId))
@@ -265,8 +266,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMasterOfNecromancy.classSelectionAbilityId, SpellMasterOfNecromancy.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellEpidemic.classSelectionAbilityId, SpellEpidemic.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDamnedGround.classSelectionAbilityId, SpellDamnedGround.classSelectionGrimoireAbilityId))
-			
+
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
+			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initDruid takes nothing returns nothing
@@ -280,7 +282,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_druid.addDescriptionLine(tre("um anderen ihre Heil-  und Zauberkünste anzubieten. Ihre jahrelangen Studien der Tiere", "to offer their healing and magical crafts to others. Their years of studying animals"))
 			call thistype.m_druid.addDescriptionLine(tre("haben ihnen die Fähigkeit verliehen, die Gestalt dieser anzunehmen oder sie als", "have given them the ability to take the form of the animals or"))
 			call thistype.m_druid.addDescriptionLine(tre("unterstützende Gefährten herbeizurufen.", "to summon them as supporting fellows."))
-			
+
 			set thistype.m_druidGrimoireEntries = AIntegerVector.create()
 			call thistype.m_druidGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAwakeningOfTheForest.classSelectionAbilityId, SpellAwakeningOfTheForest.classSelectionGrimoireAbilityId))
 			call thistype.m_druidGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellCrowForm.classSelectionAbilityId, SpellCrowForm.classSelectionGrimoireAbilityId))
@@ -297,8 +299,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_druidGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellWrathOfTheForest.classSelectionAbilityId, SpellWrathOfTheForest.classSelectionGrimoireAbilityId))
 			call thistype.m_druidGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellForestCastle.classSelectionAbilityId, SpellForestCastle.classSelectionGrimoireAbilityId))
 			call thistype.m_druidGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAlpha.classSelectionAbilityId, SpellAlpha.classSelectionGrimoireAbilityId))
-			
+
 			call thistype.m_druidGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
+			call thistype.m_druidGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initKnight takes nothing returns nothing
@@ -311,7 +314,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_knight.addDescriptionLine(tre("Er sorgt dafür, dass seine Feinde die weniger gut geschützten Nah- und Fernkämpfer nicht erreichen.", "He makes sure that his enemies do not reach the less well-protected melee and range fighters."))
 			call thistype.m_knight.addDescriptionLine(tre("Durch seine kämpferische Ausstrahlung ist er in der Lage, die Moral und Kampfkraft", "Through his combative charisma he is able"))
 			call thistype.m_knight.addDescriptionLine(tre("seiner Gefährten zu steigern.", "to push the morale and fighting power of his fellows."))
-			
+
 			set thistype.m_knightGrimoireEntries = AIntegerVector.create()
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlock.classSelectionAbilityId, SpellBlock.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellConcentration.classSelectionAbilityId, SpellConcentration.classSelectionGrimoireAbilityId))
@@ -328,8 +331,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAuraOfIronSkin.classSelectionAbilityId, SpellAuraOfIronSkin.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellConquest.classSelectionAbilityId, SpellConquest.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDefend.classSelectionAbilityId, SpellDefend.classSelectionGrimoireAbilityId))
-			
+
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
+			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initDragonSlayer takes nothing returns nothing
@@ -343,7 +347,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_dragonSlayer.addDescriptionLine(tre("weshalb sie die Anwesenheit eines Ritters häufig nutzen, jedoch nicht schätzen.", "which is why they use the presence of a knight often but do not appreciate it."))
 			call thistype.m_dragonSlayer.addDescriptionLine(tre("Drachentöter beherrschen den Umgang mit ihren Waffen ausgezeichnet und sind in der Lage,", "Dragon slayers know how to user their weapons excellent and are able"))
 			call thistype.m_dragonSlayer.addDescriptionLine(tre("sehr schnell eine ganze Reihe von Gegnern abzuschlachten.", "to slaughter a number of opponents very quickly."))
-			
+
 			set thistype.m_dragonSlayerGrimoireEntries = AIntegerVector.create()
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBeastHunter.classSelectionAbilityId, SpellBeastHunter.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDaunt.classSelectionAbilityId, SpellDaunt.classSelectionGrimoireAbilityId))
@@ -360,8 +364,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellReserves.classSelectionAbilityId, SpellReserves.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAnEyeForAnEye.classSelectionAbilityId, SpellAnEyeForAnEye.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellJumpAttackDragonSlayer.classSelectionAbilityId, SpellJumpAttackDragonSlayer.classSelectionGrimoireAbilityId))
-			
+
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
+			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initRanger takes nothing returns nothing
@@ -374,7 +379,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_ranger.addDescriptionLine(tre("Im Nahkampf haben sie ihren Widersachern jedoch häufig nicht viel entgegenzusetzen,", "However, in melee they have not much to oppose their opponents mostly"))
 			call thistype.m_ranger.addDescriptionLine(tre("weshalb sie sich auf ihre Distanz zum Gegner verlassen und ihre Agilität verbessern,", "which is why they rely on their distance to the opponent and improve their agility"))
 			call thistype.m_ranger.addDescriptionLine(tre("um schnell auf Abstand kommen zu können.", "to be able to come to distance quickly."))
-			
+
 			set thistype.m_rangerGrimoireEntries = AIntegerVector.create()
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAgility.classSelectionAbilityId, SpellAgility.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellEagleEye.classSelectionAbilityId, SpellEagleEye.classSelectionGrimoireAbilityId))
@@ -390,8 +395,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellTrap.classSelectionAbilityId, SpellTrap.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellKennels.classSelectionAbilityId, SpellKennels.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellLeprechaun.classSelectionAbilityId, SpellLeprechaun.classSelectionGrimoireAbilityId))
-			
+
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
+			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initElementalMage takes nothing returns nothing
@@ -404,7 +410,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_elementalMage.addDescriptionLine(tre("Ihre Stärke zeigt sich besonders gegen mehrere Gegner,", "Their strength especially shows against multiple opponents"))
 			call thistype.m_elementalMage.addDescriptionLine(tre("wenn sie die Erde unter den Füßen dieser in Flammen aufgehen oder mit einer Welle", "if they set the ground underneath their opponents on fire or"))
 			call thistype.m_elementalMage.addDescriptionLine(tre("aus Eis die Umwelt erschüttern lassen.",  "let shake the environment with a wave of ice."))
-			
+
 			set thistype.m_elementalMageGrimoireEntries = AIntegerVector.create()
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlaze.classSelectionAbilityId, SpellBlaze.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellElementalCreatures.classSelectionAbilityId, SpellElementalCreatures.classSelectionGrimoireAbilityId))
@@ -423,8 +429,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellPureEnergy.classSelectionAbilityId, SpellPureEnergy.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellTeleportation.classSelectionAbilityId, SpellTeleportation.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellUndermine.classSelectionAbilityId, SpellUndermine.classSelectionGrimoireAbilityId))
-			
+
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
+			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
 		endmethod
 
 		private static method initWizard takes nothing returns nothing
@@ -437,7 +444,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_wizard.addDescriptionLine(tre("Er kann seinen Gegnern ihre magische Kraft entziehen und auf sich selbst", "He can withdraw the magical power from his opponents and transfer it to"))
 			call thistype.m_wizard.addDescriptionLine(tre("oder Verbündete übertragen, Zauber auf ihre Urheber zurücklenken oder sie sogar absorbieren,", "himself or his allies, retrace spells to their caster or even absorb them"))
 			call thistype.m_wizard.addDescriptionLine(tre("ohne selbst verletzt zu werden.", "without being hurt himself."))
-			
+
 			set thistype.m_wizardGrimoireEntries = AIntegerVector.create()
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAbsorbation.classSelectionAbilityId, SpellAbsorbation.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellArcaneHunger.classSelectionAbilityId, SpellArcaneHunger.classSelectionGrimoireAbilityId))
@@ -454,8 +461,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellManaStream.classSelectionAbilityId, SpellManaStream.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMultiply.classSelectionAbilityId, SpellMultiply.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellTransfer.classSelectionAbilityId, SpellTransfer.classSelectionGrimoireAbilityId))
-			
+
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
+			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
 			debug call Print("Size of wizard grimoire entries " + I2S(thistype.m_wizardGrimoireEntries.size()))
 		endmethod
 
@@ -540,7 +548,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 		public static method isMage takes AClass class returns boolean
 			return class == thistype.elementalMage() or class == thistype.wizard()
 		endmethod
-		
+
 		public static method classMeleeAbilityId takes AClass class returns integer
 			if (class == thistype.cleric()) then
 				debug call Print("Cleric")
@@ -569,7 +577,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			endif
 			return 0
 		endmethod
-		
+
 		public static method classRangeAbilityId takes AClass class returns integer
 			if (class == thistype.cleric()) then
 				debug call Print("Cleric")
@@ -598,61 +606,109 @@ library StructGameClasses requires Asl, StructGameCharacter
 			endif
 			return 0
 		endmethod
-		
+
 		public static method classRangeAbilityIdByCharacter takes Character character returns integer
-			// dragon slayer
+			// dragon slayer on sheep
 			if (GetUnitTypeId(character.unit()) == 'H01J') then
 				return 'A16I'
-			// cleric
+			// cleric on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01L') then
 				return 'A16J'
-			// necromancer
+			// necromancer on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01N') then
 				return 'A16K'
-			// druid
+			// druid on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01P') then
 				return 'A16L'
-			// knight
+			// knight on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01R') then
 				return 'A16M'
-			// ranger
+			// ranger on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01T') then
 				return 'A16N'
-			// elemental mage
+			// elemental mage on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01V') then
 				return 'A16O'
-			// wizard
+			// wizard on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01X') then
 				return 'A16P'
+			// dragon slayer on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H02W') then
+				return 'A1T9'
+			// druid on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H02Z') then
+				return 'A1TA'
+			// elemental mage on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H031') then
+				return 'A1TB'
+			// cleric on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H033') then
+				return 'A1TC'
+			// necromancer on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H035') then
+				return 'A1TD'
+			// knight on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H037') then
+				return 'A1TE'
+			// ranger on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H039') then
+				return 'A1TF'
+			// wizard on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H03B') then
+				return 'A1TG'
 			endif
 			return Classes.classRangeAbilityId(character.class())
 		endmethod
-		
+
 		public static method classMeleeAbilityIdByCharacter takes Character character returns integer
-			// dragon slayer
+			// dragon slayer on sheep
 			if (GetUnitTypeId(character.unit()) == 'H01K') then
 				return 'A16H'
-			// cleric
+			// cleric on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01M') then
 				return 'A16S'
-			// necromancer
+			// necromancer on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01O') then
 				return 'A16T'
-			// druid
+			// druid on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01Q') then
 				return 'A16Q'
-			// knight
+			// knight on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01S') then
 				return 'A16U'
-			// ranger
+			// ranger on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01U') then
 				return 'A16V'
-			// elemental mage
+			// elemental mage on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01W') then
 				return 'A16R'
-			// wizard
+			// wizard on sheep
 			elseif (GetUnitTypeId(character.unit()) == 'H01Y') then
 				return 'A16W'
+			// dragon slayer on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H02X') then
+				return 'A1T1'
+			// druid on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H030') then
+				return 'A1T2'
+			// elemental mage on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H032') then
+				return 'A1T3'
+			// cleric on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H034') then
+				return 'A1T4'
+			// necromancer on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H036') then
+				return 'A1T5'
+			// knight on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H038') then
+				return 'A1T6'
+			// ranger on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H03A') then
+				return 'A1T7'
+			// wizard on horse
+			elseif (GetUnitTypeId(character.unit()) == 'H03C') then
+				return 'A1T8'
 			endif
 			return Classes.classMeleeAbilityId(character.class())
 		endmethod

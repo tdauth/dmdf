@@ -1,30 +1,23 @@
 library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcs, StructMapMapSpawnPoints, StructMapVideosVideoBloodthirstiness, StructMapVideosVideoDeathVault, StructMapVideosVideoDragonHunt
 
 	struct QuestAreaSlaughter extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
-			local integer i
 			call VideoDragonHunt.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call QuestSlaughter.quest.evaluate().enable.evaluate()
 			call Fellows.dragonSlayer().shareWith(0)
 			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), tre("Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.", "The Dragon Slayer can switch between close and range combat."))
 			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("In der Nähe befindet sich ein mächtiger Vampir, der über eine Hand voll Diener gebietet. Es wird Zeit, ihn abzuschlachten und dieses Land von einem weiteren Parasiten zu befreien!", "Nearby there is a powerful vampire who rules over a handful of servants. It is time to slaughter him and to free this land from another parasite!"), gg_snd_DragonSlayerSlaughter1)
-			set i = 0
-			loop
-				exitwhen (i == MapData.maxPlayers)
-				call SetPlayerAbilityAvailable(Player(i), SpellMissionSlaughter.abilityId, true)
-				set i = i + 1
-			endloop
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
-	
+
 	struct QuestAreaSlaughterEnter extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoDeathVault.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
@@ -34,22 +27,22 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call QuestSlaughter.quest.evaluate().displayUpdate()
 			call setQuestItemPingByUnitTypeId.execute(QuestSlaughter.quest.evaluate(), SpawnPoints.deathVault(), UnitTypes.medusa)
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
-	
+
 	struct QuestAreaSlaughterFinish extends QuestArea
-	
+
 		public stub method onStart takes nothing returns nothing
 			call VideoBloodthirstiness.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 			call QuestSlaughter.quest.evaluate().complete()
 		endmethod
-	
+
 		public static method create takes rect whichRect returns thistype
-			return thistype.allocate(whichRect)
+			return thistype.allocate(whichRect, true)
 		endmethod
 	endstruct
 
@@ -68,8 +61,9 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private QuestAreaSlaughterFinish m_questAreaFinish
 
 		implement Quest
-		
+
 		public stub method enable takes nothing returns boolean
+			call Missions.addMissionToAll('A1C1', 'A1RD', this)
 			return super.enableUntil(thistype.questItemKillTheBoneDragons)
 		endmethod
 
@@ -109,7 +103,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			// the units owner might be different due to abilities
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
-		
+
 		private method checkForDeathVault takes nothing returns nothing
 			if (this.questItem(thistype.questItemKillTheVampireLord).isCompleted() and this.questItem(thistype.questItemKillTheVampires).isCompleted() and this.questItem(thistype.questItemKillTheDeathAngel).isCompleted() and this.questItem(thistype.questItemKillTheBoneDragons).isCompleted()) then
 				set this.m_questAreaEnter = QuestAreaSlaughterEnter.create(gg_rct_quest_slaughter_death_vault)
@@ -118,23 +112,23 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 				if (this.questItem(thistype.questItemKillTheVampireLord).isNew()) then
 					call setQuestItemPingByUnitTypeId.execute(this.questItem(thistype.questItemKillTheVampireLord), SpawnPoints.vampireLord0(), UnitTypes.vampireLord)
 				endif
-				
+
 				if (this.questItem(thistype.questItemKillTheVampires).isNew()) then
 					call setQuestItemPingByUnitTypeId.execute(this.questItem(thistype.questItemKillTheVampires), SpawnPoints.vampires0(), UnitTypes.vampire)
 				endif
-				
+
 				if (this.questItem(thistype.questItemKillTheDeathAngel).isNew()) then
 					call setQuestItemPingByUnitTypeId.execute(this.questItem(thistype.questItemKillTheDeathAngel), SpawnPoints.deathAngel(), UnitTypes.deathAngel)
 				endif
-				
+
 				if (this.questItem(thistype.questItemKillTheBoneDragons).isNew()) then
 					call setQuestItemPingByUnitTypeId.execute(this.questItem(thistype.questItemKillTheBoneDragons), SpawnPoints.boneDragons(), UnitTypes.boneDragon)
 				endif
 			endif
-			
+
 			call this.displayUpdate()
 		endmethod
-		
+
 		private static method stateConditionCompletedBroodMother takes AQuestItem questItem returns boolean
 			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.broodMother and SpawnPoints.spiderQueen().countUnitsOfType(UnitTypes.broodMother) == 0
 		endmethod
@@ -147,7 +141,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
 			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.vampireLord and SpawnPoints.vampireLord0().countUnitsOfType(UnitTypes.vampireLord) == 0
 		endmethod
-		
+
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			//call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Gute Arbeit! Das war aber nicht der einzige Vampir in dieser Gegend. Weiter westlich befinden sich noch mehr seiner Art.", "Good work! But that was not the only vampire in this area. Further west there are more of his kind."), gg_snd_DragonSlayerSlaughter2)
@@ -205,7 +199,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.quest().displayUpdate()
 			call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.deathVault(), UnitTypes.medusa)
 		endmethod
-		
+
 		// TODO Leads to crash in multiplayer?
 		private method finishQuest takes nothing returns nothing
 			local boolean finished = (this.questItem(thistype.questItemKillTheDiacon).isCompleted() and this.questItem(thistype.questItemKillTheMedusa).isCompleted())
@@ -224,13 +218,13 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!", "This mud snake cattle! Come on, continue, into the crypt!"), gg_snd_DragonSlayerSlaughter6)
 					call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.deathVault(), UnitTypes.deacon)
 				endif
-				
+
 				return true
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		private static method stateActionCompleted5 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			call this.finishQuest()
@@ -239,15 +233,15 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private static method stateConditionCompleted6 takes AQuestItem questItem returns boolean
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0) then
 				if (questItem.quest().questItem(5).state() == thistype.stateNew) then
-					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!", "Bastard! Only the serpent beast, then it's done!"), null)
+					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!", "Bastard! Only the serpent beast, then it's done!"), gg_snd_DragonSlayerSlaughter7)
 				endif
-				
+
 				return true
 			endif
-			
+
 			return false
 		endmethod
-		
+
 		private static method stateActionCompleted6 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			call ShowUnit(GetTriggerUnit(), false) // hide him to hide the blood effect
@@ -256,12 +250,12 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Metzelei", "Slaughter"))
-			local AQuestItem questItem
+			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNCorpseExplode.blp")
 			call this.setDescription(tre("Die Drachentöterin verlangt von euch, sie auf ihrem Feldzug gegen die Kreaturen des Waldes zu begleiten, damit ihr anderen von ihren Heldentaten berichten könnt.", "The Dragon Slayer requires of you to accompany her on heir campaign against the creatures of the forest, so that you can report about her heroic deeds to others."))
 			call this.setReward(thistype.rewardExperience, 1000)
 			set this.m_questArea = QuestAreaSlaughter.create(gg_rct_quest_slaughter_enable)
-			
+
 			// questItemKillTheBroodMother
 			set questItem = AQuestItem.create(this, tre("Tötet die Brutmutter.", "Kill the Brood Mother."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
@@ -276,21 +270,21 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
 			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			set questItem = AQuestItem.create(this, tre("Tötet die Vampire.", "Kill the vampires."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted1)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted1)
 			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			set questItem = AQuestItem.create(this, tre("Tötet den Todesengel.", "Kill the death angel."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted2)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted2)
 			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			
+
 			set questItem = AQuestItem.create(this, tre("Tötet die Knochendrachen.", "Kill the bone dragons."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted3)
@@ -312,7 +306,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted6)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted6)
-			
+
 			set questItem = AQuestItem.create(this, tre("Trefft euch in der „Todesgruft“.", "Meet at the \"Death Crypt\"."))
 
 			return this

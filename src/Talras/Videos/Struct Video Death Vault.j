@@ -55,7 +55,7 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("In dieser Gruft befinden sich zwei starke böse Kreaturen. Zum Einen eine mächtige Medusa und zum Anderen der „Diakon der Finsternis“.", "In this crypt there is two powerful evil creatures. On the ne hand a powerful Medusa and on the other hand the \"Deacon of Darkness\"."), null) // TODO DragonSlayerSound
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("In dieser Gruft befinden sich zwei starke böse Kreaturen. Zum Einen eine mächtige Medusa und zum Anderen der „Diakon der Finsternis“.", "In this crypt there is two powerful evil creatures. On the ne hand a powerful Medusa and on the other hand the \"Deacon of Darkness\"."), gg_snd_DragonSlayerDeathVault1)
 
 			if (wait(0.50)) then
 				return
@@ -108,10 +108,10 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 			if (wait(3.00)) then // kurzes Standbild auf Medusa
 				return
 			endif
-			
+
 			// Animation der Medusa
 			call QueueUnitAnimation(this.m_actorMedusa, "Spell")
-			
+
 			if (wait(3.50)) then // kurzes Standbild auf Medusa
 				return
 			endif
@@ -215,9 +215,9 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Nun aber auf in die Schlacht. Lasst keinen am Leben, hackt alle in Stücke und lasst uns für Ruhm und Ehre sterben!", "But now into the battle. Let nobody stay alive, slay all to pieces and let us die for honor and glory!"), null)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Nun aber auf in die Schlacht. Lasst keinen am Leben, hackt alle in Stücke und lasst uns für Ruhm und Ehre sterben!", "But now into the battle. Let nobody stay alive, slay all to pieces and let us die for honor and glory!"), gg_snd_DragonSlayerDeathVault2)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerDeathVault2))) then
 				return
 			endif
 
@@ -244,7 +244,7 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
 			call this.setActorOwner(MapData.neutralPassivePlayer)
-			
+
 			return this
 		endmethod
 	endstruct

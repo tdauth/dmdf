@@ -14,6 +14,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
+		public static constant integer startLevel = 30
 		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 10000
@@ -22,7 +23,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static sound cowSound = null
 
 		private static Zone m_zoneGardonar
-		private static Zone m_zoneHolzbruck
+		private static Zone m_zoneDeranorsSwamp
 
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
@@ -45,7 +46,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
 
 			set thistype.m_zoneGardonar = Zone.create("GA", gg_rct_zone_gardonar)
-			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
+			set thistype.m_zoneDeranorsSwamp = Zone.create("DS", gg_rct_zone_deranors_swamp)
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
@@ -168,8 +169,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
 
-			// execute because of trigger sleep action
-			call Game.applyHandicapToCreeps.execute()
+			call Game.applyHandicapToCreeps()
 		endmethod
 
 		/// Required by \ref Classes.
@@ -193,7 +193,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				return GetRectCenterX(gg_rct_start)
 			endif
 
-			return GetRectCenterX(gg_rct_start_holzbruck)
+			return GetRectCenterX(gg_rct_start_deranors_swamp)
 		endmethod
 
 		/// Required by \ref MapChanger.
@@ -202,7 +202,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				return GetRectCenterY(gg_rct_start)
 			endif
 
-			return GetRectCenterY(gg_rct_start_holzbruck)
+			return GetRectCenterY(gg_rct_start_deranors_swamp)
 		endmethod
 
 		/// Required by \ref MapChanger.
@@ -229,6 +229,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
+		endmethod
+
+		/// Required by \ref Buildings.
+		public static method goldmine takes nothing returns unit
+			return gg_unit_n06E_0090
 		endmethod
 	endstruct
 

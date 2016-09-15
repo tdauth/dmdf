@@ -88,6 +88,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 		private static NpcTalksRoutine m_dragonSlayerSells = 0
 
+		private static NpcTalksRoutine m_tellbornTalksToFulco
+
+		private static NpcTalksRoutine m_carstenTalks
+
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
@@ -361,6 +365,27 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_brogoTalksToHimself.addSound(tre("Brogo mag Katzen.", "Brogo likes cats."), gg_snd_Brogo14)
 			call thistype.m_brogoTalksToHimself.addSound(tre("Brogo vermisst Familie.", "Brogo is missing family."), gg_snd_Brogo15)
 			call thistype.m_brogoTalksToHimself.addSound(tre("Tanka nett zu Brogo. Brogo nett zu Tanka.", "Tanka nice to Brogo. Brogo nice to Tanka."), gg_snd_Brogo16)
+
+
+			set thistype.m_tellbornTalksToFulco = NpcTalksRoutine.create(Routines.talk(), Npcs.tellborn(), 0.0, 23.59, gg_rct_waypoint_tellborn_1)
+			call thistype.m_tellbornTalksToFulco.setFacing(138.07)
+			call thistype.m_tellbornTalksToFulco.setPartner(Npcs.fulco())
+			call thistype.m_tellbornTalksToFulco.addSound(tr("Hätte ich das Ganze trolliger, tiefer sprechen sollen bis hierin?"), gg_snd_TellbornTontext1)
+			call thistype.m_tellbornTalksToFulco.addSound(tr("Verschwindet ihr Geister und lasst diesen Körper frei!"), gg_snd_TellbornTontext2)
+			call thistype.m_tellbornTalksToFulco.addSound(tr("Es tut mir so leid."), gg_snd_TellbornTontext3)
+			call thistype.m_tellbornTalksToFulco.addSound(tr("Zumindest wird dir im Winter nicht mehr so schnell kalt."), gg_snd_TellbornTontext4)
+			call thistype.m_tellbornTalksToFulco.addSound(tr("Bald wird es hier sehr gefährlich werden."), gg_snd_TellbornTontext5)
+			call thistype.m_tellbornTalksToFulco.addSound(tr("Fulco, nun hab doch noch ein wenig Geduld."), gg_snd_TellbornTontext6)
+
+			set thistype.m_carstenTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.carsten(), 0.0, 23.59, gg_rct_waypoint_carsten)
+			call thistype.m_carstenTalks.setFacing(240.15)
+			call thistype.m_carstenTalks.setPartner(null)
+			call thistype.m_carstenTalks.addSound(tr("Diese Insel ist sehr klein!"), gg_snd_CarstenRoutine1)
+			call thistype.m_carstenTalks.addSound(tr("Ist da jemand?"), gg_snd_CarstenRoutine2)
+			call thistype.m_carstenTalks.addSound(tr("Haaaallloooo!"), gg_snd_CarstenRoutine3)
+			call thistype.m_carstenTalks.addSound(tr("Hm und was wenn mir die Tinte ausgeht? Fange ich dann einen Tintenfisch?"), gg_snd_CarstenRoutine4)
+			call thistype.m_carstenTalks.addSound(tr("Ich hab hier eine wunderbare selbstgemachte Ingwerlimo!"), gg_snd_CarstenRoutine5)
+			call thistype.m_carstenTalks.addSound(tr("Meine Frau hat mal ..."), gg_snd_CarstenRoutine6)
 
 			// menials
 			set routine = NpcRoutineWithFacing.create(Routines.harvest(), gg_unit_n02J_0013, MapData.morning, MapData.evening, gg_rct_waypoint_menial_0)

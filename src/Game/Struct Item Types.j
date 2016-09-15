@@ -1,4 +1,4 @@
-library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
+library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter, StructGameGrimoire
 
 	/**
 	 * \brief Default item type struct for all item types in DMdF.
@@ -46,6 +46,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_twoSlotItems.pushBack('I05B')
 			call thistype.m_twoSlotItems.pushBack('I05C')
 			call thistype.m_twoSlotItems.pushBack('I06Y')
+			call thistype.m_twoSlotItems.pushBack('I075')
 		endmethod
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
@@ -77,26 +78,25 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			local integer i
 			debug call Print("Range item attach")
 
-			// TODO unmorph before if it is morphed already
 			if (character != 0) then
-				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityIdByCharacter.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
+				debug call Print("Adding and removing ability " + GetObjectName(Classes.classRangeAbilityIdByCharacter(character)) + " to unit " + GetUnitName(whichUnit))
 				/**
 				 * Make sure the current spell levels are up to date for later restoration.
 				 */
-				set realSpellLevels = character.grimoire().spellLevels.evaluate()
+				set realSpellLevels = character.grimoire().spellLevels()
 
 				/*
 				 * These two lines of code do the passive transformation to a range fighting unit.
 				 */
-				call UnitAddAbility(whichUnit, Classes.classRangeAbilityIdByCharacter.evaluate(character))
-				call UnitRemoveAbility(whichUnit, Classes.classRangeAbilityIdByCharacter.evaluate(character))
+				call UnitAddAbility(whichUnit, Classes.classRangeAbilityIdByCharacter(character))
+				call UnitRemoveAbility(whichUnit, Classes.classRangeAbilityIdByCharacter(character))
 				/*
 				 * Now the spell levels have to be readded and the grimoire needs to be updated since all abilities are gone.
 				 */
-				call character.grimoire().readd.evaluate(realSpellLevels)
+				call character.grimoire().readd(realSpellLevels)
 				call realSpellLevels.destroy()
 				set realSpellLevels = 0
-				call character.grimoire().updateUi.evaluate()
+				call character.grimoire().updateUi()
 			endif
 		endmethod
 
@@ -106,14 +106,14 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			debug call Print("Range item drop")
 
 			if (character != 0) then
-				debug call Print("Adding and removing ability " + GetObjectName(Classes.classMeleeAbilityIdByCharacter.evaluate(character)) + " to unit " + GetUnitName(whichUnit))
-				set realSpellLevels = character.grimoire().spellLevels.evaluate()
-				call UnitAddAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter.evaluate(character))
-				call UnitRemoveAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter.evaluate(character))
-				call character.grimoire().readd.evaluate(realSpellLevels)
+				debug call Print("Adding and removing ability " + GetObjectName(Classes.classMeleeAbilityIdByCharacter(character)) + " to unit " + GetUnitName(whichUnit))
+				set realSpellLevels = character.grimoire().spellLevels()
+				call UnitAddAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter(character))
+				call UnitRemoveAbility(whichUnit, Classes.classMeleeAbilityIdByCharacter(character))
+				call character.grimoire().readd(realSpellLevels)
 				call realSpellLevels.destroy()
 				set realSpellLevels = 0
-				call character.grimoire().updateUi.evaluate()
+				call character.grimoire().updateUi()
 			endif
 		endmethod
 
@@ -149,6 +149,29 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
 			debug call Print("Melee item drop")
+		endmethod
+	endstruct
+
+	struct SaddleItemType extends ItemType
+		public static method isUnitOnHorse takes integer unitTypeId returns boolean
+			return unitTypeId == 'H02W' or unitTypeId == 'H02Z' or unitTypeId == 'H031' or unitTypeId == 'H033' or unitTypeId == 'H035' or unitTypeId == 'H037' or unitTypeId == 'H039' or unitTypeId == 'H03B' or unitTypeId == 'H02X' or unitTypeId == 'H030' or unitTypeId == 'H032' or unitTypeId == 'H034' or unitTypeId == 'H036' or unitTypeId == 'H038' or unitTypeId == 'H03A' or unitTypeId == 'H03C'
+		endmethod
+
+		public stub method checkRequirement takes ACharacter character returns boolean
+			local integer unitTypeId = GetUnitTypeId(character.unit())
+
+			if (not thistype.isUnitOnHorse(unitTypeId)) then
+				call character.displayMessage(ACharacter.messageTypeError, tre("Charakter muss Pferd reiten.", "Character has to ride a horse."))
+				return false
+			endif
+
+			return super.checkRequirement(character)
+		endmethod
+
+		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
+			local thistype this = thistype.allocate(itemType, equipmentType, requiredLevel, requiredStrength, requiredAgility, requiredIntelligence, requiredClass)
+
+			return this
 		endmethod
 	endstruct
 
@@ -246,6 +269,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// Tellborn's items
 		private static RangeItemType m_staffOfClarity
 		private static ItemType m_shamanMask
+		private static ItemType m_skullMask
 		// NEW
 		private static ItemType m_dagosDagger
 		private static ItemType m_wingsOfDeathAngel
@@ -294,6 +318,13 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// map Gardonar's Hell
 		private static ItemType m_tridentOfTheDevil
 
+		// map Holzbruck
+		private static SaddleItemType m_saddle
+		private static ItemType m_twoHandedSword
+
+		// map Holzbruck's underworld
+		private static ItemType m_warDrums
+
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
@@ -325,11 +356,14 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1DE', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DO', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DP', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1S9', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1DQ', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1EB', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1E7', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1EJ', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1R4', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1TL', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1TN', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -589,6 +623,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_staffOfSlowing = RangeItemType.createSimpleRange('I04F', AItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_staffOfSlowing.addAbility('A1DP', true)
+			// hides the orb effect as well
+			call thistype.m_staffOfSlowing.addAbility('A1S9', true)
 
 			// slaughter quest
 			set thistype.m_bloodAmulet = ItemType.createSimple('I02L', AItemType.equipmentTypeAmulet)
@@ -604,6 +640,11 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_shamanMask = ItemType.createSimple('I05V', ItemType.equipmentTypeHeaddress)
 			call thistype.m_shamanMask.addAbility('AIi4', true)
 			call thistype.m_shamanMask.addAbility('A1AE', true)
+
+			set thistype.m_skullMask = ItemType.createSimple('I069', ItemType.equipmentTypeHeaddress)
+			call thistype.m_skullMask.addAbility('A1E9', true)
+			call thistype.m_skullMask.addAbility('A1E8', true)
+			call thistype.m_skullMask.addAbility('A1EB', true)
 
 			// NEW
 			set thistype.m_dagosDagger = ItemType.createSimple('I02O', ItemType.equipmentTypePrimaryWeapon)
@@ -715,6 +756,19 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_tridentOfTheDevil = ItemType.create('I06X', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_tridentOfTheDevil.addAbility('A1QA', true)
 			call thistype.m_tridentOfTheDevil.addAbility('A1Q9', true)
+
+			// Holzbruck
+			set thistype.m_saddle = SaddleItemType.create('I074', ItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
+			call thistype.m_saddle.addAbility('A1TH', true)
+			call thistype.m_saddle.addAbility('A1TI', true)
+
+			set thistype.m_twoHandedSword = ItemType.create('I075', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_twoHandedSword.addAbility('A1TJ', true)
+			call thistype.m_twoHandedSword.addAbility('A1TL', true)
+
+			// Holzbruck's underworld
+			set thistype.m_warDrums = ItemType.create('I076', ItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
+			call thistype.m_warDrums.addAbility('A1TN', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType
@@ -754,7 +808,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 
 		public static method itemTypeIdIsTwoHandedHammer takes integer itemTypeId returns boolean
-			return itemTypeId == 'I05C'
+			return itemTypeId == 'I05C' or itemTypeId == 'I075'
 		endmethod
 	endstruct
 

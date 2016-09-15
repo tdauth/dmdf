@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame
+library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 
 	struct MapData extends MapDataInterface
 		public static constant string mapName = "HB"
@@ -14,6 +14,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
+		public static constant integer startLevel = 60
 		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 10000
@@ -22,7 +23,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static sound cowSound = null
 
 		private static Zone m_zoneTalras
-		private static Zone m_zoneGardonar
+		private static Zone m_zoneDeranorsSwamp
+		private static Zone m_zoneUnderworld
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -39,8 +41,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
+			call Shrines.init()
+
 			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
-			set thistype.m_zoneGardonar = Zone.create("GH", gg_rct_zone_gardonar)
+			set thistype.m_zoneDeranorsSwamp = Zone.create("DS", gg_rct_zone_deranors_swamp)
+			set thistype.m_zoneUnderworld = Zone.create("HU", gg_rct_zone_holzbrucks_underworld)
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
@@ -129,16 +134,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
-			local integer i
-
-			call SuspendTimeOfDay(false)
-			call SetMapFlag(MAP_FOG_HIDE_TERRAIN, false)
-			call SetMapFlag(MAP_FOG_ALWAYS_VISIBLE, true)
-			call SetMapFlag(MAP_FOG_MAP_EXPLORED, true)
-			call FogMaskEnableOff()
-			call FogEnableOff()
-
-			set i = 0
+			local integer i = 0
 			loop
 				exitwhen (i == thistype.maxPlayers)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
@@ -147,6 +143,32 @@ library StructMapMapMapData requires Asl, StructGameGame
 				endif
 				set i = i + 1
 			endloop
+
+			//call initMapPrimaryQuests()
+			//call initMapSecundaryQuests()
+
+			call SuspendTimeOfDay(false)
+
+			call thistype.startAfterIntro.evaluate()
+		endmethod
+
+		public static method startAfterIntro takes nothing returns nothing
+			debug call Print("Waited successfully for intro video.")
+
+			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Geben Sie \"-menu\" im Chat ein, um ins Haupt-Menü zu gelangen.", "Enter \"-menu\" into the chat to reach the main menu."))
+			call ACharacter.panCameraSmartToAll()
+			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
+
+			//call Fellows.wigberht().shareWithAll()
+			//call Fellows.ricman().shareWithAll()
+			//call Fellows.dragonSlayer().shareWithAll()
+
+			//call QuestHell.quest().enable()
+
+			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
+
+			call Game.applyHandicapToCreeps()
 		endmethod
 
 		/// Required by \ref Classes.
@@ -166,8 +188,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
-			if (zone == "GH") then
-				return GetRectCenterX(gg_rct_start_hell)
+			if (zone == "DS") then
+				return GetRectCenterX(gg_rct_start_deranors_swamp)
 			endif
 
 			return GetRectCenterX(gg_rct_start_talras)
@@ -175,8 +197,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartY takes integer index, string zone returns real
-			if (zone == "GH") then
-				return GetRectCenterY(gg_rct_start_hell)
+			if (zone == "DS") then
+				return GetRectCenterY(gg_rct_start_deranors_swamp)
 			endif
 
 			return GetRectCenterY(gg_rct_start_talras)
@@ -184,7 +206,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
-			if (zone == "GH") then
+			if (zone == "DS") then
 				return 270.0
 			endif
 
@@ -206,6 +228,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
+		endmethod
+
+		/// Required by \ref Buildings.
+		public static method goldmine takes nothing returns unit
+			return gg_unit_n06E_0008
 		endmethod
 	endstruct
 

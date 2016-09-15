@@ -268,7 +268,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 			call speech(info, character, true, tr("In Talras gibt’s bestimmt irgendwo welche zu kaufen. Ansonsten wüsste ich aber auch nichts. Hier auf dem Hof scheint's wohl keine zu geben."), null)
 			//(Mathilda fühlt sich angegriffen - egal ob bezüglich ihrer Musik oder Geschichten)
 			if (TalkMathilda(info.talk()).wasOffendedStories(character.player()) or TalkMathilda(info.talk()).wasOffendedSongs(character.player())) then
-				call speech(info, character, false, tr("Aber was willst du schon mit einem Instrument? Geschmack scheinst du ja nicht zu haben."), null)
+				call speech(info, character, true, tr("Aber was willst du schon mit einem Instrument? Geschmack scheinst du ja nicht zu haben."), null)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
@@ -337,7 +337,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 			call speech(info, character, true, tr("Der Tag neigt sich dem Ende zu, und alle Vögel werden müde, nur einer, der gibt keine Ruh', in seiner Heimat ist man prüde"), null)
 			call speech(info, character, true, tr("Er lief, ja rannte über Berge, traf fremde Wesen, auch die Zwerge, doch sollt er einen Menschen sehn, würd' er gleich wieder rückwärts gehen, sich glücklich an den Seinen rächen, gar jedem mal das Herz zerstechen, denn jeder seiner eignen Leut', hat zu viel Liebe stets gescheut"), null)
 			call speech(info, character, true, tr("Ja dort in seiner alten Heimat, ist weder Mauer, noch ein Tor, doch wär' ihm eine neue Bleibe, gar lieber als das triste Moor"), null)
-			
+
 			// Erfahrungsbonus (Hört das Lied zum ersten Mal)
 			if (not this.playedSong(character.player())) then
 				call character.xpBonus(50, tr("Ihr genießt die Musik!"))
@@ -353,7 +353,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 			call speech(info, character, true, tr("Im alten Wald, am großen Fluss, durch den ich täglich waten muss, dort traf ich traurig wie ich war, die mystisch schöne Geisterschaar"), null)
 			call speech(info, character, true, tr("Sie gaben mir, was ich vermisst, doch war es eine große List, Denn wollten sie nicht meinen Segen, stattdessen nur den eignen Regen, der kommt, wenn man aus einem Rachen, mal etwas hört wie sanftes Lachen"), null)
 			call speech(info, character, true, tr("Und wenns vergeht, ist's auch nicht schlimm, der Geist behält ja seine Stimm', kann Lieder singen, selbst oft lachen, er muss nun über gar nichts wachen, gestorben ist er sowieso, doch fragt mein Herz sich wo"), null)
-			
+
 			// Erfahrungsbonus (Hört das Lied zum ersten Mal)
 			if (not this.playedSong(character.player())) then
 				call character.xpBonus(50, tr("Ihr genießt die Musik!"))
@@ -368,7 +368,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 			call speech(info, character, true, tr("Deine Entscheidung."), null)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Mathilda begleitet den Charakter)
 		private static method infoConditionLeave takes AInfo info, ACharacter character returns boolean
 			return Fellows.mathilda().isSharedToCharacter() and Fellows.mathilda().character() == character
@@ -393,7 +393,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 				set this.m_playedSong[i] = false
 				set i = i + 1
 			endloop
-			
+
 			call this.setName(tr("Mathilda"))
 
 			// start page
@@ -431,7 +431,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 			call this.addInfo(true, false, 0, thistype.infoAction10_1, tr("Der Wandersmann.")) // 23
 			call this.addInfo(true, false, 0, thistype.infoAction10_2, tr("Die Waldgeister.")) // 24
 			call this.addInfo(true, false, 0, thistype.infoAction10_3, tr("Keines. Ich hab's mir anders überlegt.")) // 25
-			
+
 			// TODO move somewhere at the top
 			call this.addInfo(true, false, thistype.infoConditionLeave, thistype.infoActionLeave, tr("Geh.")) // 26
 

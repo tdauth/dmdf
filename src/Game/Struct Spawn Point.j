@@ -9,7 +9,7 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 		public static constant real respawnTime = 90.0
 		/// Stores all spawn points of the map for global pausing and resuming the respawn timers.
 		private static AIntegerList m_spawnPoints
-	
+
 		public static method create takes nothing returns thistype
 			local thistype this = thistype.allocate()
 			call this.setTime(thistype.respawnTime)
@@ -20,20 +20,20 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			// drop texts become really annoying so dont show anything
 			call this.setTextDistributeItem(null)
 			//call this.setTextDistributeItem(tre("%1% wurde für Spieler %2% fallen gelassen.", "%1% has been dropped for player %2%."))
-			
+
 			call thistype.m_spawnPoints.pushBack(this)
-	
+
 			return this
 		endmethod
-		
+
 		public method onDestroy takes nothing returns nothing
 			call thistype.m_spawnPoints.remove(this)
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.m_spawnPoints = AIntegerList.create()
 		endmethod
-		
+
 		/**
 		 * Pauses the respawn timers for all spawn points.
 		 */
@@ -46,7 +46,7 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			endloop
 			call iterator.destroy()
 		endmethod
-		
+
 		/**
 		 * Resumes the respawn timers for all spawn points.
 		 */
@@ -59,8 +59,18 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			endloop
 			call iterator.destroy()
 		endmethod
+
+		public static method spawnDeadOnlyAll takes nothing returns nothing
+			local AIntegerListIterator iterator = thistype.m_spawnPoints.begin()
+			loop
+				exitwhen (not iterator.isValid())
+				call thistype(iterator.data()).spawnDeadOnly()
+				call iterator.next()
+			endloop
+			call iterator.destroy()
+		endmethod
 	endstruct
-	
+
 	/**
 	 * \brief A spawn point for items which uses a uniform respawn time per spawn point of \ref respawnTime.
 	 * Like \ref SpawnPoint it allows global storage of all item spawn points and pausing as well resuming durion video sequences.
@@ -76,12 +86,12 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			call this.setTime(thistype.respawnTime)
 			call this.setEffectFilePath("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl")
 			call this.setSoundFilePath("Abilities\\Spells\\Orc\\EtherealForm\\SpiritWalkerMorph.wav")
-			
+
 			call thistype.m_spawnPoints.pushBack(this)
 
 			return this
 		endmethod
-		
+
 		public method onDestroy takes nothing returns nothing
 			call thistype.m_spawnPoints.remove(this)
 		endmethod
@@ -89,7 +99,7 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 		private static method onInit takes nothing returns nothing
 			set thistype.m_spawnPoints = AIntegerList.create()
 		endmethod
-		
+
 		/**
 		 * Pauses the respawn timers for all spawn points.
 		 */
@@ -102,7 +112,7 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			endloop
 			call iterator.destroy()
 		endmethod
-		
+
 		/**
 		 * Resumes the respawn timers for all spawn points.
 		 */

@@ -29,3 +29,6 @@ del "E:\Projekte\dmdf\maps\releases\GH.w3x"
 
 del "E:\Projekte\dmdf\maps\releases\HB.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 3 - Holzbruck.w3x" --do "E:\Projekte\dmdf\maps\releases\HB.w3x" --checkscriptstuff --exit
+
+del "E:\Projekte\dmdf\maps\releases\DS.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 5 - Deranor.w3x" --do "E:\Projekte\dmdf\maps\releases\DS.w3x" --checkscriptstuff --exit

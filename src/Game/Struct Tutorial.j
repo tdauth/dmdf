@@ -218,10 +218,8 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Erfahrung", "Experience"))
-			call QuestSetDescription(whichQuest, tre("Die maximale Stufe ist 30. Auf Stufe 12 und Stufe 25 kann jeweils eine Ultimate-Fähigkeit erlernt werden. Erfahrung vom Töten von Unholden wird gleichmäßig auf alle Charaktere in der gesamten Karte verteilt. Aufträge geben weitaus mehr Erfahrung als das Töten von Unholden.", "The maximum level is 30. At level l2 and level 25 each there can be learned an ultimate ability. Experience from killing of creeps will be distributed equally to the characters in the whole map. Quests give much more experience than the killing of creeps."))
+			call QuestSetDescription(whichQuest, Format(tre("Die maximale Stufe ist %1%. Auf Stufe %2% und Stufe %3% kann jeweils eine Ultimate-Fähigkeit erlernt werden. Erfahrung vom Töten von Unholden wird gleichmäßig auf alle Charaktere in der gesamten Karte verteilt. Aufträge geben weitaus mehr Erfahrung als das Töten von Unholden.", "The maximum level is %1%. At level %2% and level %3% each there can be learned an ultimate ability. Experience from killing of creeps will be distributed equally to the characters in the whole map. Quests give much more experience than the killing of creeps.")).i(MapData.maxLevel).i(Grimoire.ultimate0Level).i(Grimoire.ultimate1Level).result())
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNStatUp.blp")
-			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tre("Erfahrung für Unholde: Unholderfahrung / Anzahl der Spieler", "Experience for creeps: Creep experience / Number of players"))
 
 
 			set whichQuest = CreateQuest()
@@ -229,7 +227,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetDescription(whichQuest, tre("Goldmünzen erhält man für Aufträge und das Töten von Unholden. Die Goldmünzen durch das Töten von Unholden werden gleichmäßig an alle Charaktere auf der gesamten Karte verteilt. Aufträge geben weitaus mehr Goldmünzen als das Töten von Unholden.", "Gold coins are gained for quests and the killing of creeps. The gold coins gained by the killing of creeps will be distributed equally to all characters on the whole map. Quests give much more gold coins than the killing of creeps."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tre("Goldmünzen für Unholde: Unholdstufe * 2 / Anzahl der Spieler", "Gold coins for creeps: Creep level / Number of players"))
+			call QuestItemSetDescription(questItem, tre("Goldmünzen für Unholde: Unholdstufe * 2", "Gold coins for creeps: Creep level"))
 
 
 			set whichQuest = CreateQuest()

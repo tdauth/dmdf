@@ -1,4 +1,4 @@
-library StructSpellsSpellScrollOfCollector requires Asl, StructMapMapMapData
+library StructSpellsSpellScrollOfCollector requires Asl
 
 	struct SpellScrollOfCollector extends ASpell
 		public static constant integer abilityId = 'A133'
