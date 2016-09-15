@@ -8,40 +8,50 @@ library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructGameShrin
 		public static constant integer abilityId = 'A066'
 		public static constant real distance = 1200.0
 
-		// http://www.hiveworkshop.com/forums/triggers-scripts-269/does-getspelltargetx-y-work-177175/
-		// GetSpellTargetX() etc. does not work in conditions but in actions?
-		private method condition takes nothing returns boolean
+		public static method getNearestShrine takes player whichPlayer, real x, real y returns Shrine
 			local integer i
-			local Shrine shrine
+			local Shrine shrine = 0
 			local real dist
-			local boolean result = false
-			if (IsMaskedToPlayer(GetSpellTargetX(), GetSpellTargetY(), this.character().player())) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sichtbar sein.", "Target location has to be visible."))
-				return false
-			endif
+			local Shrine result = 0
 			set i = 0
 			loop
 				exitwhen (i == Shrine.shrines().size())
 				set shrine = Shrine(Shrine.shrines()[i])
-				set dist = GetDistanceBetweenPointsWithoutZ(GetRectCenterX(shrine.revivalRect()), GetRectCenterY(shrine.revivalRect()), GetSpellTargetX(), GetSpellTargetY())
-				if (dist <= thistype.distance) then
-					set result = true
+				if (not IsMaskedToPlayer(GetRectCenterX(shrine.revivalRect()), GetRectCenterY(shrine.revivalRect()), whichPlayer)) then
+					set dist = GetDistanceBetweenPointsWithoutZ(GetRectCenterX(shrine.revivalRect()), GetRectCenterY(shrine.revivalRect()), x, y)
+					if (dist <= thistype.distance) then
+						set result = shrine
+					endif
 				endif
 				set i = i + 1
 			endloop
-			if (not result) then
-				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sich in der Nähe eines Wiederbelebungsschreins befinden.", "Target location has to be in the range of a revival shrine."))
-			endif
+
 			return result
 		endmethod
 
+		// http://www.hiveworkshop.com/forums/triggers-scripts-269/does-getspelltargetx-y-work-177175/
+		// GetSpellTargetX() etc. does not work in conditions but in actions?
+		private method condition takes nothing returns boolean
+			local Shrine shrine = thistype.getNearestShrine(this.character().player(), GetSpellTargetX(), GetSpellTargetY())
+			if (shrine == 0) then
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sich in der Nähe eines erkundeten Wiederbelebungsschreins befinden.", "Target location has to be in the range of a discovered revival shrine."))
+
+				return false
+			endif
+	
+			return true
+		endmethod
+
 		private method action takes nothing returns nothing
+			local Shrine shrine = thistype.getNearestShrine(this.character().player(), GetSpellTargetX(), GetSpellTargetY())
+			local real x = GetRectCenterX(shrine.revivalRect())
+			local real y = GetRectCenterY(shrine.revivalRect())
 			local unit caster = this.character().unit()
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "origin")
-			local effect targetEffect = AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, GetSpellTargetX(), GetSpellTargetY())
+			local effect targetEffect = AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, x, y)
 			debug call Print("Spell Scroll Of The Realm!")
-			call SetUnitPosition(caster, GetSpellTargetX(), GetSpellTargetY())
-			call TriggerSleepAction(0.0)
+			call SetUnitPosition(caster, x, y)
+			call TriggerSleepAction(0.0) // TODO might interupt something else?
 			call IssueImmediateOrder(caster, "stop")
 			set caster = null
 			call DestroyEffect(casterEffect)

@@ -139,7 +139,11 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			// remove newly created NPC units
 			else
 				call thistype.showOpponentByUnitTypeId(GetUnitTypeId(usedUnit), true)
-				call RemoveUnit(usedUnit)
+
+				// otherwise show the death animation
+				if (not IsUnitDeadBJ(usedUnit)) then
+					call RemoveUnit(usedUnit)
+				endif
 			endif
 
 

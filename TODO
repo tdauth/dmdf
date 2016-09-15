@@ -348,14 +348,14 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 Critical Transformation and equipment bugs (Let's Play):
 * FIXED (always replace items by equipment): Creating an illusion by an item (Tellborns rune) does not create OrderAnimation or does not open the equipment stuff first!!! Better solution: On spawning illusions just remove all items from the illusion and add equipment items.
 * If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug. Do you have to know if the abilty stacks or not? Only for not stacking abilities!
-* Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht. Verwandlung von Fernkampf ging nicht, wurde vorher nicht zu Melee gemacht und später wieder durch Equipment zu Fernkampf.
+* FIXED (Teilweise Bugs in der ASL weil onUnequip() etc. nicht beim Deaktivieren des Inventars aufgerufen wurde): Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht. Verwandlung von Fernkampf ging nicht, wurde vorher nicht zu Melee gemacht und später wieder durch Equipment zu Fernkampf.
+* FIXED: Nach Rückverwandlung von Deranors Leibwache ist die Waffe zunächst nicht sichtbar.
 * Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel eines Druiden, Stab der Verzögerung, Knochenbogen. War das nur ein Bug? Nein Stiefel eines Druiden haben wirklich keine Zauberbuchfähigkeit. Stab der Verzögerung hatte allerdings deaktivierte Zauberbuchfähigkeit. Knochenbogen ebenfalls. Stab der Verzögerung und Knochenbogen haben zusätzlich eine Kugelfähigkeit die auch im Zauberbuch verborgen werden muss.
 * Die Zauberbuchfähigkeiten von Gegenständen sollte 12 Dummys drin haben, damit die Symbole verborgen werden und keine Zauber verdrängen in Zauberfähigkeiten.
-* Nach Rückverwandlung von Deranors Leibwache ist die Waffe zunächst nicht sichtbar.
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
-* Kartenausgänge unsichtbar machen!
+* FIXED: Kartenausgänge unsichtbar und unerkundet machen!
 * Elementarwesen: Passive Rüstungs, Lebens- und Schadensfähigkeiten, die pro Stufe zu besser werden und jedes Elementarwesen erhält. Ansonsten sind die Wesen auf Dauer zu schwach.
 * DONE: Stall nach Holzbruck.
 * FIXED: Reitender Charakter: Attachment Point-Namen für Hände vertauschen!
@@ -364,7 +364,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Reduce .evaluate() calls for Quest War and sub quests. Reverse dependencies!
 * Reduce .evaluate() calls for quest The Norsemen.
 * Reduce .evaluate() calls for quest Slaughter.
-* Reduce .evaluate() calls for video upstream.
+* FIXED: Reduce .evaluate() calls for video upstream.
 * Spell.addGrimoireEntry() many .evaluates()
 * FIXED: Grimoire.updateUi() is slow because all show() and hide() methods are .evaluated!
 * Da Auftragsgegenstand mit mehreren Seiten nicht geht und Shortcuts für Optionen fehlen ("-menu" ist umständlich!), Helden-Button hinzufügen mit Auftragszielen, Dungeonoption usw usw.:
@@ -542,6 +542,7 @@ Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.
 
 Weitere TODOS:
+* Daten aus Spell conditions in actions weiterreichen, anonsten wird vieles zweimal berechnet.
 * Frostränder in Hauptmenü durch Ränder aus Dämonen-Interface ersetzen.
 * Splash Screen in der custom exe: Programm Resource Hacker: http://www.hiveworkshop.com/threads/how-to-replace-the-splash-screen-of-warcraft-iii.287721/#post-3088398
 * Grundzauber reinschreiben nur eine Stufe.

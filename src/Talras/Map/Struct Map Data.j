@@ -173,6 +173,38 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 			return false
 		endmethod
 
+		private static method trigggerConditionTrack takes nothing returns boolean
+			local string text = DmdfHashTable.global().handleStr(GetTriggeringTrigger(), 0)
+			local integer i = 0
+			debug call Print("Tracked by " + GetPlayerName(GetTriggerPlayer()))
+			call DisplayTextToPlayer(GetTriggerPlayer(), 0.0, 0.0, text)
+			return false
+		endmethod
+
+		private static method createTombstone takes rect whichRect, string text returns nothing
+			local trackable tombStoneTrackable = CreateTrackable("Abilities\\Spells\\Human\\Banish\\BanishTarget.mdl", GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
+			local trigger trackTrigger = CreateTrigger()
+			call TriggerRegisterTrackableTrackEvent(trackTrigger, tombStoneTrackable)
+			call TriggerAddCondition(trackTrigger, Condition(function thistype.trigggerConditionTrack))
+			call DmdfHashTable.global().setHandleStr(trackTrigger, 0, text)
+		endmethod
+
+		private static method initTombstones takes nothing returns nothing
+			call thistype.createTombstone(gg_rct_sign_tombstone_0, tr("Vater wusste es besser."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_1, tr("Hier ruhe ich, nicht du!"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_2, tr("Du schuldest mir noch Goldmünzen für diesen Grabstein!"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_3, tr("Man sieht sich."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_4, tr("Brot kann schimmeln, was kannst du?"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_5, tr("Sprang von einer Klippe und kam auch unten an."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_6, tr("Es war todsicher."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_7, tr("Ein andermal vielleicht."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_8, tr("Begrabt mich auf keinen Fall. Verbrennt mich!"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_9, tr("Lag gerne herum und tat nichts."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_10, tr("Im nächsten Leben bin ich sicher reich."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_castle_1, tr("Regierte mit Strenge, aber regierte wenigstens."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_castle_2, tr("Ertrug ihren Mann bis zuletzt."))
+		endmethod
+
 		/// Required by \ref Game.
 		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work when placed explicitely. The methods have to be declared below which forces .evaluate() to use a real TriggerEvaluate().
 		public static method init takes nothing returns nothing
@@ -261,6 +293,8 @@ endif
 			set thistype.m_giantDeathTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_giantDeathTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(thistype.m_giantDeathTrigger, Condition(function thistype.triggerConditionGiantDeath))
+
+			call thistype.initTombstones()
 
 			set thistype.m_zoneGardonar = Zone.create("GA", gg_rct_zone_gardonar)
 			call thistype.m_zoneGardonar.disable()

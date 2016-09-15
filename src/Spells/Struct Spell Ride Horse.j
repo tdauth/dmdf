@@ -32,7 +32,8 @@ library StructSpellsSpellRideHorse requires Asl, StructGameClasses, StructSpells
 		endmethod
 
 		public stub method onStart takes nothing returns nothing
-			if (not this.isMorphed()) then
+			// Only hide if it will be successful
+			if (not this.character().isMorphed()) then
 				debug call Print("Target: " + GetUnitName(GetSpellTargetUnit()))
 				call SetUnitInvulnerable(GetSpellTargetUnit(), true)
 				call PauseUnit(GetSpellTargetUnit(), true)
@@ -125,10 +126,6 @@ library StructSpellsSpellRideHorse requires Asl, StructGameClasses, StructSpells
 		public static method create takes Character character, integer morphAbilityId, integer unmorphAbilityId returns thistype
 			local thistype this = thistype.allocate(character, 0, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
 			set this.m_metamorphosis = SpellRideHorseMetamorphosis.create(character, thistype.abilityId, morphAbilityId, unmorphAbilityId)
-			call this.m_metamorphosis.setDisableInventory(false)
-			// don't show equipment
-			call this.m_metamorphosis.setEnableOnlyRucksack(true)
-			call this.m_metamorphosis.setDisableGrimoire(false)
 
 			call this.addGrimoireEntry('A1SI', 'A1SJ')
 
