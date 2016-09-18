@@ -189,7 +189,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 			set this.m_supplyCartSpawnTimer = null
 
 			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateCompleted)
-			call this.complete()
+			call this.displayState()
 		endmethod
 
 		public static method create takes nothing returns thistype

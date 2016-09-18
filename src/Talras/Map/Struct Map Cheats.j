@@ -631,10 +631,16 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					endif
 
 					if (not QuestWarSupplyFromManfred.quest().questItem(QuestWarSupplyFromManfred.questItemKillTheCornEaters).isCompleted()) then
-						call SpawnPoints.cornEaters0().spawn()
-						call SpawnPoints.cornEaters1().spawn()
+						call SpawnPoints.cornEaters0().spawnDeadOnly()
+						call SpawnPoints.cornEaters1().spawnDeadOnly()
+						call SpawnPoints.cornEaters2().spawnDeadOnly()
+						call SpawnPoints.cornEaters3().spawnDeadOnly()
+						call SpawnPoints.cornEaters4().spawnDeadOnly()
 						call SpawnPoints.cornEaters0().kill()
 						call SpawnPoints.cornEaters1().kill()
+						call SpawnPoints.cornEaters2().kill()
+						call SpawnPoints.cornEaters3().kill()
+						call SpawnPoints.cornEaters4().kill()
 
 						if (not QuestWarSupplyFromManfred.quest().questItem(QuestWarSupplyFromManfred.questItemKillTheCornEaters).isCompleted()) then
 							debug call Print("Failed to complete quest item kill the corn eaters.")
@@ -704,10 +710,10 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					endif
 
 					if (not QuestWarLumberFromKuno.quest().questItem(QuestWarLumberFromKuno.questItemKillTheWitches).isCompleted()) then
-						call SpawnPoints.witch0().spawn()
-						call SpawnPoints.witch1().spawn()
-						call SpawnPoints.witch2().spawn()
-						call SpawnPoints.witches().spawn()
+						call SpawnPoints.witch0().spawnDeadOnly()
+						call SpawnPoints.witch1().spawnDeadOnly()
+						call SpawnPoints.witch2().spawnDeadOnly()
+						call SpawnPoints.witches().spawnDeadOnly()
 						call SpawnPoints.witch0().kill()
 						call SpawnPoints.witch1().kill()
 						call SpawnPoints.witch2().kill()
@@ -771,8 +777,21 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					endif
 
 					/*
-					 * NOTE Placing traps still has to be done manually.
+					 * Placing traps
 					 */
+					set i = 0
+					loop
+						exitwhen (i == QuestWarTrapsFromBjoern.maxPlacedTraps)
+						call QuestWarTrapsFromBjoern.quest().addTrap(GetRectCenterX(gg_rct_quest_war_bjoern_place_traps), GetRectCenterY(gg_rct_quest_war_bjoern_place_traps))
+						set i = i + 1
+					endloop
+					call QuestWarTrapsFromBjoern.quest().questItem(QuestWarTrapsFromBjoern.questItemPlaceTraps).complete()
+
+					if (not QuestWarTrapsFromBjoern.quest().questItem(QuestWarTrapsFromBjoern.questItemPlaceTraps).isCompleted()) then
+						debug call Print("Failed to complete quest item place traps.")
+						call thistype.makeCharactersInvulnerable(false)
+						return
+					endif
 				endif
 
 				if (not QuestWarRecruit.quest().questItem(QuestWarRecruit.questItemRecruit).isCompleted()) then

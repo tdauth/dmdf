@@ -32,9 +32,9 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructGameCharacter,
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Bittet die Nordmänner, euch nach Holzbruck zu bringen (ACHTUNG: Das Spiel endet hier!).", "Ask the Norsemen to bring you to Holzbruck (ATTENTION: The game ends here!)."))
 			call questItem.setPing(true)
-			call questItem.setPingUnit(Npcs.wigberht())
+			call questItem.setPingRect(gg_rct_quest_the_way_to_holzbruck)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 1000)
+			call questItem.setReward(thistype.rewardExperience, 500)
 
 			return this
 		endmethod

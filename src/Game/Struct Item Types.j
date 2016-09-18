@@ -321,6 +321,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// map Holzbruck
 		private static SaddleItemType m_saddle
 		private static ItemType m_twoHandedSword
+		private static ItemType m_helmetOfTheCommander
 
 		// map Holzbruck's underworld
 		private static ItemType m_warDrums
@@ -765,6 +766,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_twoHandedSword = ItemType.create('I075', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_twoHandedSword.addAbility('A1TJ', true)
 			call thistype.m_twoHandedSword.addAbility('A1TL', true)
+
+			set thistype.m_helmetOfTheCommander = ItemType.create('I072', ItemType.equipmentTypeHeaddress, 0, 0, 0, 0, 0)
+			call thistype.m_twoHandedSword.addAbility('A1V1', true)
+			call thistype.m_twoHandedSword.addAbility('A1V0', true)
 
 			// Holzbruck's underworld
 			set thistype.m_warDrums = ItemType.create('I076', ItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)

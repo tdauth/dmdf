@@ -24,12 +24,12 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call PlayThematicMusic("Music\\mp3Music\\Theyre-Closing-In_Looping.mp3")
 			call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_0, true, 0.0)
-			
+
 			call Fellows.hideDragonSlayerInVideo(this)
-			
+
 			call SetPlayerAllianceStateBJ(MapData.haldarPlayer, MapData.baldarPlayer, bj_ALLIANCE_UNALLIED)
 			call SetPlayerAllianceStateBJ(MapData.baldarPlayer, MapData.haldarPlayer, bj_ALLIANCE_UNALLIED)
-			
+
 			set this.m_firstActorGroup = CreateGroup()
 			set this.m_firstAllyGroup = CreateGroup()
 			// Wigberht, 0
@@ -170,21 +170,15 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 
 			call GroupPointOrder(this.m_firstActorGroup, "move", GetRectCenterX(gg_rct_video_the_first_combat_first_target), GetRectCenterY(gg_rct_video_the_first_combat_first_target))
 		endmethod
-		
+
 		private static method groupFunctionSetHaldar takes nothing returns nothing
 			call SetUnitOwner(GetEnumUnit(), MapData.haldarPlayer, false)
 			call SetUnitInvulnerable(GetEnumUnit(), false)
 		endmethod
-		
+
 		private static method groupFunctionSetBaldar takes nothing returns nothing
 			call SetUnitOwner(GetEnumUnit(), MapData.baldarPlayer, false)
 			call SetUnitInvulnerable(GetEnumUnit(), false)
-		endmethod
-
-		private static method groupFunctionMoveBehindHill takes nothing returns nothing
-			call SetUnitX(GetEnumUnit(), GetRectCenterX(gg_rct_video_the_first_combat_hill_waiting))
-			call SetUnitY(GetEnumUnit(), GetRectCenterY(gg_rct_video_the_first_combat_hill_waiting))
-			call SetUnitFacing(GetEnumUnit(), 270.0)
 		endmethod
 
 		private static method groupFunctionStandVictory takes nothing returns nothing
@@ -195,7 +189,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		private static method groupFunctionLookAtHill takes nothing returns nothing
 			call SetUnitFacingToFaceRectTimed(GetEnumUnit(), gg_rct_video_the_first_combat_battle_field, 1.30)
 		endmethod
-		
+
 		private static method groupFunctionAttack takes nothing returns nothing
 			call SetUnitAnimation(GetEnumUnit(), "Attack")
 			call PlaySoundBJ(gg_snd_BattleRoar)
@@ -222,24 +216,25 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			if (wait(3.0)) then
 				return
 			endif
-			
-			//filter
+
 			call Game.fadeOutWithWait()
-			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_6, true, 0.0)
-			call Game.fadeIn()
-			if (wait(3.0)) then
-				return
-			endif
-			
-			call Game.fadeOutWithWait()
-			call ForGroup(this.m_firstActorGroup, function thistype.groupFunctionMoveBehindHill)
+
+			// place everyone at distinct position to prevent blocking each other
+			call SetUnitPositionRectFacing(this.unitActor(this.m_actorNorseman0), gg_rct_video_the_first_combat_norseman_0_hill_waiting, 270.0)
+			call SetUnitPositionRectFacing(this.unitActor(this.m_actorNorseman1), gg_rct_video_the_first_combat_norseman_1_hill_waiting, 270.0)
+			call SetUnitPositionRectFacing(this.actor(), gg_rct_video_the_first_combat_actors_hill_waiting, 270.0)
+			call SetUnitPositionRectFacing(this.unitActor(this.m_actorWigberht), gg_rct_video_the_first_combat_wigberhts_hill_waiting, 270.0)
+			call SetUnitPositionRectFacing(this.unitActor(this.m_actorRicman), gg_rct_video_the_first_combat_ricmans_hill_waiting, 270.0)
+			call SetUnitPositionRectFacing(this.unitActor(this.m_actorNorseman2), gg_rct_video_the_first_combat_norseman_2_hill_waiting, 270.0)
+			call SetUnitPositionRectFacing(this.unitActor(this.m_actorNorseman3), gg_rct_video_the_first_combat_norseman_3_hill_waiting, 270.0)
+
 			call CameraSetupApplyForceDuration(gg_cam_the_first_combat_7, true, 0.0)
 			call Game.fadeIn()
 			if (wait(2.0)) then
 				return
 			endif
 			/*
-			 * Make Ricman the first to be standing on the hill.
+			 * Make Wigberht the first to be standing on the hill.
 			 */
 			call SetUnitMoveSpeed(this.unitActor(this.m_actorWigberht), GetUnitMoveSpeed(this.unitActor(this.m_actorWigberht)) + 50.0)
 			call IssuePointOrder(this.unitActor(this.m_actorWigberht), "move", GetRectCenterX(gg_rct_video_the_first_combat_wigberhts_hill_target), GetRectCenterY(gg_rct_video_the_first_combat_wigberhts_hill_target))
@@ -281,12 +276,15 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			if (wait(2.0)) then
 				return
 			endif
-			
+
 			call ForGroup(this.m_secondActorGroup, function thistype.groupFunctionAttack)
 			if (wait(GetSoundDurationBJ(gg_snd_BattleRoar))) then
 				return
 			endif
-			
+
+			// make sure the players can hear the battle
+			call VolumeGroupSetVolumeBJ(SOUND_VOLUMEGROUP_COMBAT, 100.0)
+			call VolumeGroupSetVolumeBJ(SOUND_VOLUMEGROUP_SPELLS, 100.0)
 			call GroupPointOrder(this.m_secondActorGroup, "attack", GetRectCenterX(gg_rct_video_the_first_combat_battle_field), GetRectCenterY(gg_rct_video_the_first_combat_battle_field))
 			if (wait(2.0)) then
 				return
@@ -306,12 +304,12 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call firstEnemyGroup.addGroup(this.m_firstEnemyGroup, true, false)
 			set this.m_firstActorGroup = null
 			set this.m_firstEnemyGroup = null
-			
+
 			call SetUnitInvulnerable(gg_unit_n01I_0150, false)
 			call SetUnitInvulnerable(gg_unit_n01I_0151, false)
 			call SetUnitInvulnerable(gg_unit_n01I_0152, false)
 			call SetUnitInvulnerable(gg_unit_n01I_0153, false)
-			
+
 			// camera bounds reset is unnecessary
 			call Game.resetVideoSettings()
 			call QuestTheNorsemen.quest.evaluate().startSpawns.evaluate(firstAllyGroup, firstEnemyGroup) // don't destroy groups!
@@ -320,7 +318,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
 			call this.setActorOwner(MapData.neutralPassivePlayer)
-			
+
 			return this
 		endmethod
 	endstruct

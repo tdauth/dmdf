@@ -182,7 +182,7 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 		endmethod
 
 		private static method createTombstone takes rect whichRect, string text returns nothing
-			local trackable tombStoneTrackable = CreateTrackable("Abilities\\Spells\\Human\\Banish\\BanishTarget.mdl", GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
+			local trackable tombStoneTrackable = CreateTrackable("units\\nightelf\\Wisp\\Wisp.mdl", GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
 			local trigger trackTrigger = CreateTrigger()
 			call TriggerRegisterTrackableTrackEvent(trackTrigger, tombStoneTrackable)
 			call TriggerAddCondition(trackTrigger, Condition(function thistype.trigggerConditionTrack))
@@ -402,7 +402,7 @@ endif
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
-			local integer i
+			local integer i = 0
 			set thistype.cowSound = gg_snd_Cow
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
@@ -581,6 +581,11 @@ endif
 		/// Required by \ref Buildings.
 		public static method goldmine takes nothing returns unit
 			return gg_unit_n06E_0487
+		endmethod
+
+		/// Required by teleport spells.
+		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
+			return unitTypeId == 'n04P' or unitTypeId == 'h021' or unitTypeId == 'h01Z' or unitTypeId == 'n04P' or unitTypeId == 'h022' or unitTypeId == 'h016' or unitTypeId == 'h020'
 		endmethod
 	endstruct
 

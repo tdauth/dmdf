@@ -16,43 +16,43 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(6.00)
-			
+
 			call SetSpeechVolumeGroupsBJ()
-			
+
 			call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 			call CameraSetupApplyForceDuration(gg_cam_intro_orc, true, 0.00)
 			call SetUnitPositionRect(this.actor(), gg_rct_video_intro_character)
 			call SetUnitFacing(this.actor(), 0.0)
-			
+
 			set this.m_worker0 = this.saveUnitActor(gg_unit_n02J_0013)
 			call SetUnitPositionRect(this.unitActor(this.m_worker0), gg_rct_video_intro_worker_0)
 			call SetUnitFacing(this.unitActor(this.m_worker0), 168.59)
 			call QueueUnitAnimation(this.unitActor(this.m_worker0), "Stand Work")
-			
+
 			set this.m_worker1 = this.saveUnitActor(gg_unit_n02J_0157)
 			call SetUnitPositionRect(this.unitActor(this.m_worker1), gg_rct_video_intro_worker_1)
 			call SetUnitFacing(this.unitActor(this.m_worker1), 322.41)
 			call QueueUnitAnimation(this.unitActor(this.m_worker1), "Stand Work")
-			
+
 			set this.m_worker2 = this.saveUnitActor(gg_unit_n02J_0159)
 			call SetUnitPositionRect(this.unitActor(this.m_worker2), gg_rct_video_intro_worker_2)
 			call SetUnitFacing(this.unitActor(this.m_worker2), 24.72)
 			call QueueUnitAnimation(this.unitActor(this.m_worker2), "Stand Work")
-			
+
 			// gg_unit_n02J_0158
-			
+
 			set this.m_actorMathilda = this.saveUnitActor(Npcs.mathilda())
 			call SetUnitPositionRect(this.unitActor(this.m_actorMathilda), gg_rct_video_intro_mathilda)
 			call SetUnitFacing(this.unitActor(this.m_actorMathilda), 74.69)
-			
+
 			set this.m_actorManfred = this.saveUnitActor(Npcs.manfred())
 			call SetUnitPositionRect(this.unitActor(this.m_actorManfred), gg_rct_video_intro_manfred)
 			call SetUnitFacing(this.unitActor(this.m_actorManfred), 338.19)
-			
+
 			set this.m_actorManfredsDog = this.saveUnitActor(Npcs.manfredsDog())
 			call SetUnitPositionRect(this.unitActor(this.m_actorManfredsDog), gg_rct_video_intro_manfreds_dog)
 			call SetUnitFacing(this.unitActor(this.m_actorManfredsDog), 281.27)
-			
+
 			/*
 			private integer m_actorMathilda
 			private integer m_actorLothar
@@ -65,7 +65,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 
 		public stub method onPlayAction takes nothing returns nothing
 			local player user = Player(PLAYER_NEUTRAL_PASSIVE)
-			local unit characterUnit
+			local unit characterUnit = null
+			call thistype.fixCamera(gg_cam_intro_orc)
 			call PlayThematicMusic("Music\\Intro.mp3")
 			if (wait(0.50)) then
 				return
@@ -154,7 +155,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		public stub method onStopAction takes nothing returns nothing
 			call EndThematicMusic()
 			call Game.resetVideoSettings()
-			
+
 			// now start the game
 			// call by .evaluate() since after the onStopAction() which is also called with .evaluate() there are some further actions
 			call MapData.startAfterIntro.evaluate()
@@ -164,7 +165,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			local thistype this = thistype.allocate(true)
 			call this.setPlayFilterTime(0.0)
 			call this.setActorOwner(MapData.neutralPassivePlayer)
-			
+
 			return this
 		endmethod
 	endstruct

@@ -129,8 +129,12 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.displayUpdate()
 		endmethod
 
+		private static method isUnitBroodMotherAndNotDead takes unit whichUnit returns boolean
+			return GetUnitTypeId(whichUnit) == UnitTypes.broodMother and not IsUnitDeadBJ(whichUnit)
+		endmethod
+
 		private static method stateConditionCompletedBroodMother takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.broodMother and SpawnPoints.spiderQueen().countUnitsOfType(UnitTypes.broodMother) == 0
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.broodMother and SpawnPoints.spiderQueen().countUnitsIf(thistype.isUnitBroodMotherAndNotDead) == 0
 		endmethod
 
 		private static method stateActionCompletedBroodMother takes AQuestItem questItem returns nothing
@@ -138,8 +142,12 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.checkForDeathVault()
 		endmethod
 
+		private static method isUnitVampireLordAndNotDead takes unit whichUnit returns boolean
+			return GetUnitTypeId(whichUnit) == UnitTypes.vampireLord and not IsUnitDeadBJ(whichUnit)
+		endmethod
+
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.vampireLord and SpawnPoints.vampireLord0().countUnitsOfType(UnitTypes.vampireLord) == 0
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.vampireLord and SpawnPoints.vampireLord0().countUnitsIf(thistype.isUnitVampireLordAndNotDead) == 0
 		endmethod
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
@@ -148,11 +156,15 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.checkForDeathVault()
 		endmethod
 
+		private static method isUnitVampireAndNotDead takes unit whichUnit returns boolean
+			return GetUnitTypeId(whichUnit) == UnitTypes.vampire and not IsUnitDeadBJ(whichUnit)
+		endmethod
+
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
 			local integer count
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.vampire) then
-				set count = SpawnPoints.vampires0().countUnitsOfType(UnitTypes.vampire)
+				set count = SpawnPoints.vampires0().countUnitsIf(thistype.isUnitVampireAndNotDead)
 				if (count == 0) then
 					return true
 				// get next one to ping
@@ -170,8 +182,12 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.checkForDeathVault()
 		endmethod
 
+		private static method isUnitDeathAngelAndNotDead takes unit whichUnit returns boolean
+			return GetUnitTypeId(whichUnit) == UnitTypes.deathAngel and not IsUnitDeadBJ(whichUnit)
+		endmethod
+
 		private static method stateConditionCompleted2 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deathAngel and SpawnPoints.deathAngel().countUnitsOfType(UnitTypes.deathAngel) == 0
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deathAngel and SpawnPoints.deathAngel().countUnitsIf(thistype.isUnitDeathAngelAndNotDead) == 0
 		endmethod
 
 		private static method stateActionCompleted2 takes AQuestItem questItem returns nothing
@@ -180,8 +196,12 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.checkForDeathVault()
 		endmethod
 
+		private static method isUnitBoneDragonAndNotDead takes unit whichUnit returns boolean
+			return GetUnitTypeId(whichUnit) == UnitTypes.boneDragon and not IsUnitDeadBJ(whichUnit)
+		endmethod
+
 		private static method stateConditionCompleted3 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.boneDragon and SpawnPoints.boneDragons().countUnitsOfType(UnitTypes.boneDragon) == 0
+			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.boneDragon and SpawnPoints.boneDragons().countUnitsIf(thistype.isUnitBoneDragonAndNotDead) == 0
 		endmethod
 
 		private static method stateActionCompleted3 takes AQuestItem questItem returns nothing
@@ -211,9 +231,13 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			endif
 		endmethod
 
+		private static method isUnitMedusaAndNotDead takes unit whichUnit returns boolean
+			return GetUnitTypeId(whichUnit) == UnitTypes.medusa and not IsUnitDeadBJ(whichUnit)
+		endmethod
+
 		private static method stateConditionCompleted5 takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
-			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.medusa) == 0) then
+			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.medusa and SpawnPoints.deathVault().countUnitsIf(thistype.isUnitMedusaAndNotDead) == 0) then
 				if (questItem.quest().questItem(6).state() == thistype.stateNew) then
 					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Dieses Drecksschlangenvieh! Los, weiter, in die Gruft hinein!", "This mud snake cattle! Come on, continue, into the crypt!"), gg_snd_DragonSlayerSlaughter6)
 					call setQuestItemPingByUnitTypeId.execute(this, SpawnPoints.deathVault(), UnitTypes.deacon)
@@ -230,8 +254,12 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call this.finishQuest()
 		endmethod
 
+		private static method isUnitDeaconAndNotDead takes unit whichUnit returns boolean
+			return GetUnitTypeId(whichUnit) == UnitTypes.deacon and not IsUnitDeadBJ(whichUnit)
+		endmethod
+
 		private static method stateConditionCompleted6 takes AQuestItem questItem returns boolean
-			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsOfType(UnitTypes.deacon) == 0) then
+			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.deacon and SpawnPoints.deathVault().countUnitsIf(thistype.isUnitDeaconAndNotDead) == 0) then
 				if (questItem.quest().questItem(5).state() == thistype.stateNew) then
 					call TransmissionFromUnit(Npcs.dragonSlayer(), tre("Verdammter Bastard! Nun noch das Schlangenvieh, dann ist es geschafft!", "Bastard! Only the serpent beast, then it's done!"), gg_snd_DragonSlayerSlaughter7)
 				endif

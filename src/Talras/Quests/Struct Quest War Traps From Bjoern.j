@@ -31,7 +31,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 		/*
 		 * Björn
 		 */
-		 public static constant integer maxSpawnedTraps = 5
+		 public static constant integer maxSpawnedTraps = 10
 		 public static constant integer maxPlacedTraps = 10
 		 public static constant integer trapItemTypeId = 'I057'
 		 private timer m_bjoernsTrapsSpawnTimer
@@ -92,7 +92,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
 		endmethod
 
-		private method addTrap takes real x, real y returns nothing
+		public method addTrap takes real x, real y returns nothing
 			call this.m_traps.pushBack(Location(x, y))
 			call this.m_trapEffects.pushBack(AddSpecialEffect("Objects\\InventoryItems\\Spiketrap\\Spiketrap.mdx", x, y))
 			call this.displayUpdateMessage(Format(tre("%1%/%2% Fallen platziert.", "Placed %1%/%2% traps.")).i(this.m_traps.size()).i(thistype.maxPlacedTraps).result())
@@ -120,7 +120,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 			if (GetSpellAbilityId() == 'A0QZ' and RectContainsCoords(gg_rct_quest_war_bjoern_place_traps, GetSpellTargetX(), GetSpellTargetY())) then
 				call this.addTrap(GetSpellTargetX(), GetSpellTargetY())
 
-				return this.m_traps.size() == thistype.maxPlacedTraps
+				return this.m_traps.size() >= thistype.maxPlacedTraps
 			endif
 
 			return false
@@ -155,7 +155,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 			set this.m_questAreaBjoernPlaceTraps = 0
 
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateCompleted)
-			call this.complete()
+			call this.displayState()
 		endmethod
 
 		public static method create takes nothing returns thistype

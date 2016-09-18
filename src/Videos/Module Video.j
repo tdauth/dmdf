@@ -13,6 +13,24 @@ library ModuleVideosVideo
 		public static method video takes nothing returns thistype
 			return thistype.m_video
 		endmethod
+
+		/**
+		 * Fixes the camera fields and resets the camera and then applies a camera setup.
+		 * This is necessary since \ref Character and \ref CameraHeight have systems which set camera fields.
+		 * This cannot be done in \ref onInitAction() since it is evaluated and not executed.
+		 */
+		public static method fixCamera takes camerasetup cameraSetup returns nothing
+			// reset z offset for safety, reset immediately, otherwise it might move in video sequences!
+			call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+			call TriggerSleepAction(CameraHeight.period) // wait the field time for safety, otherwise the field is set the whole time during videos
+			// make sure the field is not applied anymore
+			call TriggerSleepAction(Character.cameraTimerInterval)
+			call SetCameraField(CAMERA_FIELD_TARGET_DISTANCE, Character.defaultCameraDistance, 0.0)
+
+			if (cameraSetup != null) then
+				call CameraSetupApplyForceDuration(cameraSetup, true, 0.0)
+			endif
+		endmethod
 	endmodule
 
 endlibrary

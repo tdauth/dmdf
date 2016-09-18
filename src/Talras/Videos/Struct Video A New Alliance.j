@@ -27,6 +27,8 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+
+
 			/*
 			TODO As long as the sound is missing don't show this.
 			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tre("Was haben sie mir zu berichten?", "What do they have to tell me?"), null)

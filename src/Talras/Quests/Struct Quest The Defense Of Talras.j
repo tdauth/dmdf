@@ -130,12 +130,15 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 				call this.m_orcs.units().remove(GetTriggerUnit())
 
 				if (this.m_orcs.units().empty() and this.m_orcWavesCounter == thistype.maxOrcWaves) then
-					call this.enableOrcArtillery.evaluate()
-
 					return true
 				endif
 			endif
 			return false
+		endmethod
+
+		private static method stateActionCompletedDefendAgainstOrcs takes AQuestItem whichQuestItem returns nothing
+			local thistype this = thistype(whichQuestItem.quest())
+			call this.enableOrcArtillery.evaluate()
 		endmethod
 
 		private static method stateEventCompletedDestroyArtillery takes AQuestItem whichQuestItem, trigger whichTrigger returns nothing
@@ -690,19 +693,20 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 1000)
+			call questItem.setReward(thistype.rewardExperience, 100)
 
 			// item 1
 			set questItem = AQuestItem.create(this, tre("Baut eine Verteidigung auf.", "Construct a defense."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 1000)
+			call questItem.setReward(thistype.rewardExperience, 100)
 
 			// item 2
 			set questItem = AQuestItem.create(this, tre("Verteidigt euch gegen die Orks.", "Defend yourselves against the Orcs."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedDefendAgainstOrcs)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedDefendAgainstOrcs)
+			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedDefendAgainstOrcs)
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_defense_of_talras)
 			call questItem.setPingColour(100.0, 100.0, 100.0)

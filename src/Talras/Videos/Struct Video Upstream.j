@@ -49,22 +49,19 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 		endmethod
 
 		private static method dialogButtonActionNo takes ADialogButton dialogButton returns nothing
-			local force whichForce = CreateForce()
-			call ForceAddPlayer(whichForce, dialogButton.dialog().player())
-			call CinematicModeBJ(true, whichForce)
-			call DestroyForce(whichForce)
-			set whichForce = null
+			if (dialogButton.dialog().player() == GetLocalPlayer()) then
+				call ShowInterface(false, 1.0)
+				call EnableUserControl(false)
+				call thistype.resetSkippingPlayers() // player can skip again
+			endif
 		endmethod
 
 		public stub method onSkipCondition takes player skippingPlayer, integer skipablePlayers returns boolean
-			local force whichForce = null
-
 			if (not bj_isSinglePlayer or not Game.isCampaign.evaluate()) then
-				set whichForce = CreateForce()
-				call ForceAddPlayer(whichForce, skippingPlayer)
-				call CinematicModeBJ(false, whichForce)
-				call DestroyForce(whichForce)
-				set whichForce = null
+				if (skippingPlayer == GetLocalPlayer()) then
+					call ShowInterface(true, 1.0)
+					call EnableUserControl(true)
+				endif
 				call AGui.playerGui(skippingPlayer).dialog().clear()
 				call AGui.playerGui(skippingPlayer).dialog().setMessage(tre("Spiel verlassen?", "Leave game?"))
 				call AGui.playerGui(skippingPlayer).dialog().addDialogButtonIndex(tre("Ja", "Yes"), thistype.dialogButtonActionYes)
@@ -246,7 +243,12 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 
 			call this.continueShipRoute.execute()
 
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Wenn Sie das Video überspringen, können Sie das Spiel verlassen.", "If you skip the video, you can leave the game."))
+			set i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call DisplayTimedTextToPlayer(Player(i), 0.0, 0.0, 25.0, tre("Wenn Sie das Video überspringen, können Sie das Spiel verlassen.", "If you skip the video, you can leave the game."))
+				set i = i + 1
+			endloop
 
 			if (wait(3.0)) then
 				return

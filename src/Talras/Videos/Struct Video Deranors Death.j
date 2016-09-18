@@ -34,6 +34,13 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame, StructMa
 				return
 			endif
 
+			call QueueUnitAnimation(this.m_actorDeranor, "Spell Channel")
+
+			if (wait(2.0)) then
+				return
+			endif
+
+			call ResetUnitAnimation(this.m_actorDeranor)
 			call QueueUnitAnimation(this.m_actorDeranor, "Death")
 
 			if (wait(2.0)) then
