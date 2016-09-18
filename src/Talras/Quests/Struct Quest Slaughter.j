@@ -289,36 +289,26 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedBroodMother)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedBroodMother)
-			call questItem.setPing(true)
-			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			set questItem = AQuestItem.create(this, tre("Tötet den Vampirgebieter.", "Kill the Vampire Lord."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted0)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted0)
-			call questItem.setPing(true)
-			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			set questItem = AQuestItem.create(this, tre("Tötet die Vampire.", "Kill the vampires."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted1)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted1)
-			call questItem.setPing(true)
-			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			set questItem = AQuestItem.create(this, tre("Tötet den Todesengel.", "Kill the death angel."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted2)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted2)
-			call questItem.setPing(true)
-			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			set questItem = AQuestItem.create(this, tre("Tötet die Knochendrachen.", "Kill the bone dragons."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted3)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted3)
-			call questItem.setPing(true)
-			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			set questItem = AQuestItem.create(this, tre("Begebt euch zur „Todesgruft“.", "Move to the \"Death Crypt\"."))
 			call questItem.setPing(true)
@@ -334,8 +324,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompleted)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompleted6)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompleted6)
-
-			set questItem = AQuestItem.create(this, tre("Trefft euch in der „Todesgruft“.", "Meet at the \"Death Crypt\"."))
 
 			return this
 		endmethod

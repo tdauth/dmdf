@@ -382,8 +382,11 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 	- Gardonars Dämonen etwas stärker machen.
 	- Deranors Kreaturen schwächer machen. Vor allem Schwere Rüstung entfernen, erhalten kaum Schaden.
 
+* ASL bug: Items liegen bei totem Charakter auf dem Boden, wenn dieser eben tot ist und man einen Laden anwählt und abwählt. Sie dürfen nicht hinzugefügt werden, wenn der Charakter tot ist und nach Wiederbelebung müssen die Gegenstände erneut zum Inventar hinzugefügt werden.
+* Mitwirkende: Texte clearen wenn Mitwirkende geschlossen werden.
+* Kapuze: Unsichtbarkeitsfähigkeit geht nicht, wenn Rucksack offen ist.
 * war3.exe verwenden, zeigt keinen Splash Screen.
-* Drachentöterin Soundset geht nicht.
+* FIXED (muss Mono sein): Drachentöterin Soundset geht nicht.
 * DONE: Spieloptionen: Option "Pings deaktivieren".
 * FIXED: Durch die Änderung, dass getötete Einheiten nicht von Spawn Points entfernt werden überall nach countUnitsOfType(...) == 0 suchen und durch Bedingung, dass die Einheit tot ist ersetzen. Ansonsten gehen die Kill Quests nicht mehr.
 * Splash Screen ist nicht immer über dem von Warcraft III. Jetzt wird war3.exe verwendet, welches gar keinen Splash Screen zeigt. Allerdings muss getestet werden, ob der Pfad auch bei anderen Nutzern per Registry erkannt wird.
