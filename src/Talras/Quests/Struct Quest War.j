@@ -60,7 +60,6 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 
 		public stub method enable takes nothing returns boolean
 			local boolean result = this.setState(thistype.stateNew)
-			local integer i
 			call QuestWarWeaponsFromWieland.quest().enable()
 			call QuestWarSupplyFromManfred.quest().enable()
 			call QuestWarLumberFromKuno.quest().enable()

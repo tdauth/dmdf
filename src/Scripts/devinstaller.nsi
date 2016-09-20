@@ -5,10 +5,11 @@ Unicode true
 !define PROJECTS_DIR "E:\Projekte\"
 !define INPUT_DIR_ASL "E:\Projekte\asl\"
 !define INPUT_DIR "E:\Projekte\dmdf\"
+!define INPUT_SPLASH_DIR "E:\Projekte\dmdf\splash\TPoFSplash\build\TPoF"
 !define INPUT_EXE_FILENAME "The Power of Fire.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
-!define VERSION "0.8"
-!define CAMPAIGN_VERSION "08"
+!define VERSION "0.9"
+!define CAMPAIGN_VERSION "09"
 
 Name "The Power of Fire Development Version"
 OutFile "E:\Projekte\dmdf\releases\ThePowerOfFireDev${VERSION}.exe"
@@ -34,8 +35,12 @@ InstallDir "$PROGRAMFILES\Warcraft III"
 Section "Application" Application
 	SetOutPath "$INSTDIR\"
 	File "${INPUT_EXE}"
-	CreateShortCut "$DESKTOP\The Power of Fire.lnk" "$INSTDIR\${INPUT_EXE_FILENAME}" ""
+	File /r "${INPUT_SPLASH_DIR}"
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFireDev.exe"
+
+	SetOutPath "$INSTDIR\TPoF"
+	CreateShortCut "$INSTDIR\The Power of Fire.lnk" "$INSTDIR\TPoF\The Power of Fire.exe" ""
+	CreateShortCut "$DESKTOP\The Power of Fire.lnk" "$INSTDIR\The Power of Fire.lnk" ""
 SectionEnd
 
 Section "German Maps" GermanMaps
@@ -88,6 +93,8 @@ Section "Uninstall"
 	 RMDir /r "$INSTDIR\The Power of Fire"
 	 RMDir /r "$INSTDIR\ASL"
 	 Delete "$INSTDIR\${INPUT_EXE_FILENAME}"
+	 RMDir /r "$INSTDIR\TPoF"
+	 Delete "$INSTDIR\The Power of Fire.lnk"
 	 Delete "$DESKTOP\The Power of Fire.lnk"
 SectionEnd
 

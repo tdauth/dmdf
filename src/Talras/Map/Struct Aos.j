@@ -185,6 +185,18 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		endmethod
 
 		public static method characterLeaves takes Character character returns nothing
+			local SpellAosRing spellAosRingBaldar = SpellAosRing.baldarRingSpell.evaluate(character)
+			local SpellAosRing spellAosRingHaldar = SpellAosRing.haldarRingSpell.evaluate(character)
+			// Make sure the character is restored from the AOS ring since the ring should only work in the AOS cave. This also makes the character leave the legion.
+			if (character.isMorphed()) then
+				if (spellAosRingBaldar != 0 and spellAosRingBaldar.isMorphed()) then
+					call character.displayHint(tr("Die Kraft des Rings lässt nach."))
+					call spellAosRingBaldar.restoreUnit()
+				elseif (spellAosRingHaldar != 0 and spellAosRingHaldar.isMorphed()) then
+					call character.displayHint(tr("Die Kraft des Rings lässt nach."))
+					call spellAosRingHaldar.restoreUnit()
+				endif
+			endif
 			call EndThematicMusicForPlayer(character.player())
 			call Dungeon.resetCameraBoundsForPlayer(character.player()) // set camera bounds before rect!
 			call character.setCamera()
@@ -398,6 +410,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 
 		private static method triggerActionLeave takes nothing returns nothing
 			local Character character = ACharacter.getCharacterByUnit(GetTriggerUnit())
+			debug call Print("Character leaves: " + GetUnitName(character.unit()))
 			call thistype.characterLeaves(character)
 		endmethod
 

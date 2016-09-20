@@ -136,6 +136,7 @@ endif
 				call TimerStart(this.m_cameraTimer, thistype.cameraTimerInterval, true, function thistype.timerFunctionCamera)
 			else
 				call PauseTimer(this.m_cameraTimer)
+				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
 			endif
 		endmethod
 
@@ -220,6 +221,22 @@ endif
 
 		public method options takes nothing returns Options
 			return this.m_options
+		endmethod
+
+		/**
+		 * Recreates options if they did already exist which fixes the order of hero icons.
+		 */
+		public method refreshOptions takes nothing returns nothing
+			if (this.options() != 0) then
+				call this.options().destroy.evaluate()
+			endif
+
+			// hide hero icon, otherwise it takes the place of one by another player
+			if (GetPlayerController(this.player()) == MAP_CONTROL_USER) then
+				set this.m_options = Options.create.evaluate(this)
+			else
+				set this.m_options = 0
+			endif
 		endmethod
 
 		/**
@@ -659,12 +676,8 @@ endif
 static if (DMDF_INFO_LOG) then
 			set this.m_infoLog = InfoLog.create.evaluate(this)
 endif
-			// hide hero icon, otherwise it takes the place of one by another player
-			if (GetPlayerController(this.player()) == MAP_CONTROL_USER) then
-				set this.m_options = Options.create.evaluate(this)
-			else
-				set this.m_options = 0
-			endif
+			set this.m_options = 0
+			call this.refreshOptions()
 			set this.m_classSpells = AIntegerVector.create()
 			set this.m_quests = quests
 			if (this.m_quests == 0) then

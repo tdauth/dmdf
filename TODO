@@ -379,13 +379,30 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 	- Stufen von Creeps am Anfang reduzieren. Die Stufe entscheidet mit über die Erfahrung.
 	- FIXED: Orkspieler, Arenaspieler, Haldar- und Baldarspieler müssen auch Handicap erhalten (alle Gegner).
 	- DONE: Stufen der Gefolgsleuter verringern.
+	- Gardonars Dämonen etwas stärker machen.
+	- Deranors Kreaturen schwächer machen. Vor allem Schwere Rüstung entfernen, erhalten kaum Schaden.
 
+* ASL bug: Items liegen bei totem Charakter auf dem Boden, wenn dieser eben tot ist und man einen Laden anwählt und abwählt. Sie dürfen nicht hinzugefügt werden, wenn der Charakter tot ist und nach Wiederbelebung müssen die Gegenstände erneut zum Inventar hinzugefügt werden.
+* Mitwirkende: Texte clearen wenn Mitwirkende geschlossen werden.
+* Kapuze: Unsichtbarkeitsfähigkeit geht nicht, wenn Rucksack offen ist.
+* war3.exe verwenden, zeigt keinen Splash Screen.
+* FIXED (muss Mono sein): Drachentöterin Soundset geht nicht.
+* DONE: Spieloptionen: Option "Pings deaktivieren".
+* FIXED: Durch die Änderung, dass getötete Einheiten nicht von Spawn Points entfernt werden überall nach countUnitsOfType(...) == 0 suchen und durch Bedingung, dass die Einheit tot ist ersetzen. Ansonsten gehen die Kill Quests nicht mehr.
+* Splash Screen ist nicht immer über dem von Warcraft III. Jetzt wird war3.exe verwendet, welches gar keinen Splash Screen zeigt. Allerdings muss getestet werden, ob der Pfad auch bei anderen Nutzern per Registry erkannt wird.
+* Endlich die Objektdaten verkleinern: Reduziert Ladezeit, reduziert die Anzahl der Strings massiv.
+* FIXED: Verdeckte Gebiete sind teilweise sichtbar auf false in: Deranors Sumpf, Holzbruck, Holzbrucks Unterwelt.
+* DONE: Map Deranor: Needs Intro video with Deranor. Deranor should explain how the players have to open the next map exit.
+* Map transition: Nach map transition geht Schreinteleport nicht mehr. Man landet immer bei einem Gebiet. Nur bei Talras so. Hat das etwas mit dem Fehler -1 AIntegerVector zu tun, der auch nur bei Talras kam.
+* Map transition: -1 index AIntegerVector wenn man direkt nach Talras zurückgeht.
+* Map transition: Spieleoptionen icon ist weiter oben. Wird es entfernt?! Sollte bei Map transition auch neu erzeugt werden, zumindest die Einheit.
+* Iconpositionen von Zauberbüchern der Spieloptionen festlegen.
 * Für jeden optionalen Auftrag einen Eintrag in der Liste der Aufträge erzeugen.
-* Barrikaden der Orks blocken nicht. Einfach Blocker erzeugen pro Barrikade und bei Tod vernichten?! Wieso geht Verlauf nicht?
+* FIXED (muss Gebäude sein mit Verlauf): Barrikaden der Orks blocken nicht. Einfach Blocker erzeugen pro Barrikade und bei Tod vernichten?! Wieso geht Verlauf nicht?
 * FIXED: Maximalstufe in Holzbruck ist nur 30.
 * War transformed als Engel. Wurde getötet (mit rucksack only) beim Betreten von Baldars Gebiet. Nach Tod lagen Gegenstände auf dem Boden.
 * Trackables an den Grabsteinen erzeugen (Signs) zum Lesen. Easteregg wie in Gothic 2, Referenz zu Gothic. Hätte Faelon gerne gehabt.
-* Man konnte als Engel/Dämon verwandelt die Trommelhöhle verlassen. Beim Verlassen der Höhle im struct Aos zurückverwandeln, falls verwandelt!
+* FIXED: Man konnte als Engel/Dämon verwandelt die Trommelhöhle verlassen. Beim Verlassen der Höhle im struct Aos zurückverwandeln, falls verwandelt!
 * AOS-Leaderboard-Titel fehlte?!
 * FIXED: Keine Abklingzeit für Tellborns Geisterrune obwohl unendlich oft benutzbar.
 * Kornfresserauftrag nach erstem Kornfresser abgeschlossen.
@@ -422,11 +439,11 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED (gekürzt und neu zu MP3 konvertiert): Carstens Sound sind abgeschnitten, neu als MP3 formatieren.
 * Nach dem Laden sind die verborgenen Zauberbuchfähigkeiten des Equipments nicht mehr verborgen. Scheint nicht nach dem Laden zu passieren sondern unter anderen Umständen?
 * FIXED: AOS-Einheiten werden nicht pausiert während Video?! Spawn während Video? Evtl. wird Spawn Timer nicht pausiert in Video?
-* Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter? ResetCamera() wurde nun eingefügt, behebt hoffentlich den Fehler.
+* Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter? ResetCamera() wurde nun eingefügt, behebt hoffentlich den Fehler. Zoom kam trotzdem ab und zu, sehr selten (Video Wigberht). Eventuell muss boolean doPan immer false sein? Wäre aber Schwachsinn, weil man ja zum Kameraobjekt will. Wenn es einmal passiert, passiert es danach immer. Eventuell muss nachdem die Höhenkamera pausiert wurde noch die Zeit gewartet werden, die der pan der Höhenkamera braucht. In CameraHeight.pause() 1 Sekunde warten. Das Gleiche muss in Character.setCameraTimer() geschehen.
 * DONE: Erbe und Eheweib sollen reparieren und einfache Gebäude für Gold errichten können.
 * FIXED: Alle Gebäude sollen die Zauber aus dem Turm ebenfalls bekommen.
 * FIXED: Baumhaus braucht vergleichbare Zauber wie Turm. Auffüllen rausnehmen kann nicht gleichzeitig mit reparieren aktiv sein.
-* Möglichkeit, dass man einen Gegenstand auf einmal verkaufen kann! Dafür müssen Preise gespeichert werden. Eventuell erstmal nur Markt dafür nehmen.
+* FIXED (AInventory überarbeitet, holt sich die Gegenstandskosten und fügt fehlendes Gold hinzu): Möglichkeit, dass man einen Gegenstand auf einmal verkaufen kann! Dafür müssen Preise gespeichert werden. Eventuell erstmal nur Markt dafür nehmen. Nicht verderbliche Gegenstände zeigen immer nur den Preis für eine Aufladung an. Daher muss diese mit der Anzahl der Aufladungen multipliziert werden?
 * FIXED: Beherrschung auf jeden Fall nur auslösen, wenn Mana fehlt und Geräusch leiser machen!!!!
 * FIXED: Den Timer für die Klassenauswahl im Einzelspieler abschalten!!!!
 * FIXED: Gebäude sollte 5000 Gold oder so kosten und erst ab Stufe 20 verfügbar sein.
@@ -434,11 +451,11 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Abklingzeit von Ursulas Totem ist zu gering. Man kann sonst zu viele Kreaturen beschwören!
 * Schrittesounds in Video das erste Gefecht einbauen, wenn die Nordmänner laufen.
 * Man kann durch Ursulas Stand laufen. Obwohl Blocker da sind? War Spieler fliegend oder so? Nachdem er sich in Wache verwandelt hat?!
-* Deranors Land-Sound ist noch der falsche Sound!
+* FIXED: Deranors Land-Sound ist noch der falsche Sound!
 * DEPRECATED (neues Hero-Icon): Ins Zauberbuch Button für Hauptmenü einfügen.
 * Lothar ist nicht dick und hat das gleiche Modell wie Kuno.
 * DEPRECATED (Optionen): Gegenstand einbauen, der Neben-Aufträge anpingt! Ansonsten findet man sich nicht zurecht. Notfalls mit mehreren Seiten. Gegenstand Aufträge soll Seitenwechsel erlauben. Bei Abschluss sollen Symbole verschwinden, damit sie auf Seite 1 kommen.
-* "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?
+* FIXED: "Das Dauert allerdings noch eine Weile" Björn, kommt nicht in separater Aufnahme. Zusammenlegen?
 * FIXED: Die Aufnahmen des Schafsjungen sind im Spiel abgeschnitten. Neu formatieren.
 * FIXED: Schafshirte: Sounds am Anfang schneiden. Lauter machen, schadet nie!
 * FIXED: Tellborn: Sounds am Anfang und Ende schneiden und lauter machen.
@@ -453,7 +470,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * DEPRECATED (Chance reduziert, sollte aber nicht immer eintreten): Rebhühner kommen IMMER bei Jagd, wenn man sie aufscheucht! Die Chance lag bei 80 % im Code. Eventuell war der Seed auch auf 0? Nirgendwo ein Hinweis, auch nicht im Editor aktiviert.
 * FIXED (cut sounds): Markwards sounds take a while at the beginning. Cut it.
 * DEPRECATED: Markward4 corrupted sound. Is it even used? Not used in code.
-* Heimrich: "Was haben sie mir zu berichten?" fehlt.
+* Heimrich: "Was haben sie mir zu berichten?" fehlt. Erstmal auskommentiert, die Charaktere sprechen zu erst.
 * FIXED: Passive icon of Bearform has no disabled version -> green icon.
 * FIXED: Sisgards Meister: Kein Artefakt als Belohnung obwohl sie es sagt. Keine Erfahrung zum Abschluss? Nur Spruchrollen. Doch man kriegt den Helm des Nekromanten, es wird nur nicht angezeigt.
 * FIXED: Sisgards Pfeilhagel: Kein Pfeilhagel im Effekt!!!
@@ -492,10 +509,10 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED (Hotkeys must be specified as sold unit in Object Editor): Hotkeys dont work when buying a unit like "Speak to NPC".
 * Fade trees slowly.
 * DEPRECATED: Update loading screens, different loading screen for map Gardonar.
-* Reduce transparency to 0.7 or something.
+* FIXED: Reduce transparency to 0.7 or something.
 * Some spell IDs of Zoology spells are the same as the normal ones for the Druid class.
 * DEPRECATED: Show text on class selection on how to select the class.
-* Use accept button rather than human icon to accept the selected class.
+* FIXED: Use accept button rather than human icon to accept the selected class.
 * Dago needs a different younger model.
 * In class selection the unit is not stopped even although the order is correctly detected.
 * New unit sounds of Dragon Slayer dont work (because they are stereo??).
@@ -544,7 +561,8 @@ Kleriker:
 Weitere TODOS:
 * Daten aus Spell conditions in actions weiterreichen, anonsten wird vieles zweimal berechnet.
 * Frostränder in Hauptmenü durch Ränder aus Dämonen-Interface ersetzen.
-* Splash Screen in der custom exe: Programm Resource Hacker: http://www.hiveworkshop.com/threads/how-to-replace-the-splash-screen-of-warcraft-iii.287721/#post-3088398
+	* IncludeFile "UI\FrameDef\Glue\StandardTemplates.fdf",
+* DONE: Splash Screen in der custom exe: Programm Resource Hacker: http://www.hiveworkshop.com/threads/how-to-replace-the-splash-screen-of-warcraft-iii.287721/#post-3088398
 * Grundzauber reinschreiben nur eine Stufe.
 * DONE: Add spell attributes bonus with hidden icon and max level of 100. The player can skill this spell when he has skilled all other spells to maximum. Increase the max hero level to 200.
 * Arenagegner viel zu schwach. Magier auch Zauber benutzen, Krieger stärker.

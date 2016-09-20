@@ -187,6 +187,9 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call thistype.destroyAllSpells.evaluate(character) // New OpLimit.
 				// don't clear all ASpell spells, otherwise Grimoire spells which inherit ASpell will be cleared completely.
 				call character.classSpells().clear()
+
+				// update order of hero icons
+				call character.refreshOptions()
 			endif
 
 			// Restores the class, inventory items etc.

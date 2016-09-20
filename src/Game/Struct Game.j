@@ -1,4 +1,4 @@
-library StructGameGame requires Asl, StructGameCharacter, StructGameItemTypes, StructGameMapChanger, StructGameOrderAnimations, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
+library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter, StructGameItemTypes, StructGameMapChanger, StructGameOrderAnimations, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
 
 	/**
 	 * \brief This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
@@ -491,7 +491,7 @@ endif
 			call AAbstractQuest.init(25.0, "Sound\\Interface\\QuestNew.wav", "Sound\\Interface\\QuestCompleted.wav", "Sound\\Interface\\QuestFailed.wav", tre("%s", "%s"), tre("|cffc3dbff%s (Abgeschlossen)|r", "|cffc3dbff%s (Completed)|r"), tre("%s (|c00ff0000Fehlgeschlagen|r)", "%s (|c00ff0000Failed|r)"), tre("+%i Stufe(n)", "+%i level(s)"), tre("+%i Fähigkeitenpunkt(e)", "+%i skill point(s)"), tre("+%i Erfahrung", "+%i experience"), tre("+%i Stärke", "+%i strength"), tre("+%i Geschick", "+%i dexterity"), tre("+%i Wissen", "+%i lore"), tre("+%i Goldmünze(n)", "+%i gold coin(s)"), tre("+%i Holz", "+%i lumber"))
 			call ACharacter.init(true, true, true, false, false, true, true, true, DMDF_INFO_LOG)
 			call initSpeechSkip(AKeyEscape, 0.01)
-			call AInventory.init('I001', 'I000', 'A015', false, tre("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt.", "Equipment slot is already used by another item."), null, tre("Rucksack ist voll.", "Backpack is full."), tre("%1% im Rucksack verstaut.", "%1% put into the bag."), tre("Gegenstand konnte nicht verschoben werden.", "Item cannot be moved."), tre("Die Seitengegenstände können nicht abgelegt werden.", "The page items cannot be dropped."), tre("Die Seitengegenstände können nicht verschoben werden.", "The page items cannot be moved."), tre("Der Gegendstand gehört einem anderen Spieler.", "This item belongs to another player."), tre("Vorherige Seite ist bereits voll.", "Previous page is already full."), tre("Nächste Seite ist bereits voll.", "Next page is already full."))
+			call AInventory.init('I001', 'I000', 'A015', false, tre("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt.", "Equipment slot is already used by another item."), tre("%1% angelegt.", "Equipped %1%"), tre("Rucksack ist voll.", "Backpack is full."), tre("%1% im Rucksack verstaut.", "%1% put into the bag."), tre("Gegenstand konnte nicht verschoben werden.", "Item cannot be moved."), tre("Die Seitengegenstände können nicht abgelegt werden.", "The page items cannot be dropped."), tre("Die Seitengegenstände können nicht verschoben werden.", "The page items cannot be moved."), tre("Der Gegendstand gehört einem anderen Spieler.", "This item belongs to another player."), tre("Vorherige Seite ist bereits voll.", "Previous page is already full."), tre("Nächste Seite ist bereits voll.", "Next page is already full."))
 			call AItemType.init(tre("Gegenstand benötigt eine höhere Stufe.", "Item requires a higher level."), tre("Gegenstand benötigt mehr Stärke.", "Item requires more strength."), tre("Gegenstand benötigt mehr Geschick.", "Items requires more dexterity."), tre("Gegenstand benötigt mehr Wissen.", "Item requires more lore."), tre("Gegenstand benötigt eine andere Charakterklasse.", "Item requires another character class."))
 			call AQuest.init0(true, true, "Sound\\Interface\\QuestLog.wav", tre("|c00ffcc00NEUER AUFTRAG|r", "|c00ffcc00NEW QUEST|r"), tre("|c00ffcc00AUFTRAG ABGESCHLOSSEN|r", "|c00ffcc00QUEST COMPLETED|r"), tre("|c00ffcc00AUFTRAG FEHLGESCHLAGEN|r", "|c00ffcc00QUEST FAILED|r"), tre("|c00ffcc00AUFTRAGS-AKTUALISIERUNG|r", "|c00ffcc00QUEST UPDATE|r"), tre("- %s", "- %s"))
 			call AVideo.init(tre("Spieler %s möchte das Video überspringen.", "Player %s wants to skip the video."), tre("Video wird übersprungen.", "Video has been skipped."))
@@ -704,7 +704,7 @@ endif
 
 			// apply initial camera bounds
 			call thistype.resetCameraBounds()
-			call CameraHeight.start.evaluate()
+			call CameraHeight.start()
 
 			// debug mode allows you to use various cheats
 static if (DEBUG_MODE) then
@@ -806,7 +806,11 @@ endif
 		 * \sa resetVideoSettings()
 		 */
 		public static method initVideoSettings takes AVideo video returns nothing
-			local integer i
+			local Character character = 0
+			local integer i = 0
+			// make sure camera is reset before waiting for other camera resets, this resets at least any pans etc.
+			call ResetToGameCamera(0.0)
+
 			// Disable all abilities which might be annoying it a video
 			set i = 0
 			loop
@@ -832,15 +836,17 @@ endif
 
 				// hide abilities
 				call SetPlayerAbilityAvailable(Player(i), 'S003', false)
+				set character = Character(ACharacter.playerCharacter(Player(i)))
 
-				if (ACharacter.playerCharacter(Player(i)) != 0) then
-					call Character(ACharacter.playerCharacter(Player(i))).grimoire().disableLevelTrigger()
+				if (character != 0) then
+					call character.grimoire().disableLevelTrigger()
 
-					if (Character(ACharacter.playerCharacter(Player(i))).credits() != 0 and  Character(ACharacter.playerCharacter(Player(i))).credits().isShown()) then
-						call Character(ACharacter.playerCharacter(Player(i))).credits().hide()
+					if (character.credits() != 0 and  character.credits().isShown()) then
+						call character.credits().hide()
 					endif
 
-					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(false)
+					// has a trigger sleep action
+					call character.setCameraTimer(false)
 				endif
 				set i = i + 1
 			endloop
@@ -866,7 +872,8 @@ endif
 			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).forGroup(thistype.hideUnit)
 
 			call DisableTransparency()
-			call CameraHeight.pause.evaluate()
+			// has trigger sleep action
+			call CameraHeight.pause()
 
 			// make sure camera is reset after resetting camera height and camera timer of characters
 			call ResetToGameCamera(0.0)
@@ -896,7 +903,8 @@ endif
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
-			local integer i
+			local Character character = 0
+			local integer i = 0
 			// Enable all abilities which might be annoying it a video
 			set i = 0
 			loop
@@ -922,11 +930,12 @@ endif
 
 				// hide abilities
 				call SetPlayerAbilityAvailable(Player(i), 'S003', true)
+				set character = Character(ACharacter.playerCharacter(Player(i)))
 
-				if (ACharacter.playerCharacter(Player(i)) != 0) then
-					call Character(ACharacter.playerCharacter(Player(i))).grimoire().enableLevelTrigger()
-					call ACharacter.playerCharacter(Player(i)).panCameraSmart()
-					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(true)
+				if (character != 0) then
+					call character.grimoire().enableLevelTrigger()
+					call character.panCameraSmart()
+					call character.setCameraTimer(true)
 				endif
 
 				set i = i + 1
@@ -951,7 +960,7 @@ endif
 			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).units().clear()
 
 			call EnableTransparency()
-			call CameraHeight.resume.evaluate()
+			call CameraHeight.resume()
 			if (thistype.m_actorOrderAnimations != 0) then
 				call thistype.m_actorOrderAnimations.destroy()
 				set thistype.m_actorOrderAnimations = 0

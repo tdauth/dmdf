@@ -65,7 +65,11 @@ library StructGameMissions requires Asl, StructGameCharacter, StructGameOptions
 		endmethod
 
 		public stub method onTrigger takes nothing returns nothing
-			call PanToQuestForPlayer(this.missions().character().player(), this.quest())
+			if (this.quest().hasLatestPing()) then
+				call PanToQuestForPlayer(this.missions().character().player(), this.quest())
+			else
+				call this.missions().character().displayMessage(ACharacter.messageTypeError, tre("Auftrag hat kein Zielgebiet.", "Mission has no target location."))
+			endif
 		endmethod
 
 		public static method create takes Missions missions, integer abilityId, integer spellBookAbilityId, AQuest whichQuest returns thistype

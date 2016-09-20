@@ -27,6 +27,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		 * Kuno
 		 */
 		public static constant integer witchSpawnPoints = 4
+		private SpawnPoint array m_witchesSpawnPoint[thistype.witchSpawnPoints]
 		private boolean array m_killedWitches[thistype.witchSpawnPoints]
 		private timer m_kunosCartSpawnTimer
 		private unit m_kunosCart
@@ -49,6 +50,10 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		endmethod
 
 		public method enableKillTheWitches takes nothing returns nothing
+			set this.m_witchesSpawnPoint[0] = SpawnPoints.witch0()
+			set this.m_witchesSpawnPoint[1] = SpawnPoints.witch1()
+			set this.m_witchesSpawnPoint[2] = SpawnPoints.witch2()
+			set this.m_witchesSpawnPoint[3] = SpawnPoints.witches()
 			call this.questItem(thistype.questItemKillTheWitches).setState(thistype.stateNew)
 			call this.displayUpdate()
 		endmethod
@@ -56,6 +61,10 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		private static method stateEventCompletedKillTheWitches takes AQuestItem questItem, trigger whichTrigger returns nothing
 			// the units owner might be different due to abilities
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
+		endmethod
+
+		private static method isUnitWitchAndNotDead takes unit whichUnit returns boolean
+			return GetUnitTypeId(whichUnit) == UnitTypes.witch and not IsUnitDeadBJ(whichUnit)
 		endmethod
 
 		/**
@@ -68,40 +77,37 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		 */
 		private static method stateConditionCompletedKillTheWitches takes AQuestItem questItem returns boolean
 			local thistype this = thistype(questItem.quest())
-			local integer count0 = 0
-			local integer count1 = 0
-			local integer count2 = 0
-			local integer count3 = 0
+			local integer count = 0
+			local integer totalCount = 0
+			local boolean killedAll = true
+			local integer i = 0
+			local SpawnPoint pingTargetSpawnPoint = 0
 			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.witch) then
-				if (not this.m_killedWitches[0]) then
-					set count0 = SpawnPoints.witch0().countUnitsOfType(UnitTypes.witch)
-					set this.m_killedWitches[0] = count0 == 0
-				endif
-				if (not this.m_killedWitches[1]) then
-					set count1 = SpawnPoints.witch1().countUnitsOfType(UnitTypes.witch)
-					set this.m_killedWitches[1] = count1 == 0
-				endif
-				if (not this.m_killedWitches[2]) then
-					set count2 = SpawnPoints.witch2().countUnitsOfType(UnitTypes.witch)
-					set this.m_killedWitches[2] = count2 == 0
-				endif
-				if (not this.m_killedWitches[3]) then
-					set count3 = SpawnPoints.witches().countUnitsOfType(UnitTypes.witch)
-					set this.m_killedWitches[3] = count3 == 0
-				endif
-				if (this.m_killedWitches[0] and this.m_killedWitches[1] and this.m_killedWitches[2] and this.m_killedWitches[3]) then
+				set i = 0
+				loop
+					exitwhen (i == thistype.witchSpawnPoints)
+					if (not this.m_killedWitches[i]) then
+						set count = this.m_witchesSpawnPoint[i].countUnitsIf(thistype.isUnitWitchAndNotDead)
+						set this.m_killedWitches[i] = count == 0
+						set totalCount = totalCount + count
+
+						if (not this.m_killedWitches[i]) then
+							if (pingTargetSpawnPoint == 0) then
+								set pingTargetSpawnPoint = this.m_witchesSpawnPoint[i]
+							endif
+							set killedAll = false
+						endif
+					endif
+					set i = i + 1
+				endloop
+
+				if (killedAll) then
 					return true
 				// get next one to ping
 				else
-					call this.displayUpdateMessage(Format(tre("%1%/6 Waldfurien", "%1%/6 Forest Furies")).i(6 - count0 - count1 - count2 - count3).result())
-					if (count0 > 0) then
-						call setQuestItemPingByUnitTypeId.execute(questItem, SpawnPoints.witch0(), UnitTypes.witch)
-					elseif (count1 > 0) then
-						call setQuestItemPingByUnitTypeId.execute(questItem, SpawnPoints.witch1(), UnitTypes.witch)
-					elseif (count2 > 0) then
-						call setQuestItemPingByUnitTypeId.execute(questItem, SpawnPoints.witch2(), UnitTypes.witch)
-					else
-						call setQuestItemPingByUnitTypeId.execute(questItem, SpawnPoints.witches(), UnitTypes.witch)
+					call this.displayUpdateMessage(Format(tre("%1%/6 Waldfurien", "%1%/6 Forest Furies")).i(6 - totalCount).result())
+					if (pingTargetSpawnPoint != 0) then
+						call setQuestItemPingByUnitTypeId.execute(questItem, pingTargetSpawnPoint, UnitTypes.witch)
 					endif
 				endif
 			endif
@@ -171,7 +177,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			call DestroyTimer(this.m_kunosCartSpawnTimer)
 			set this.m_kunosCartSpawnTimer = null
 			call this.questItem(thistype.questItemLumberFromKuno).setState(thistype.stateCompleted)
-			call this.complete()
+			call this.displayState()
 		endmethod
 
 		public static method create takes nothing returns thistype

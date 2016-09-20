@@ -5,7 +5,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static constant string mapMusic = "Sound\\Music\\mp3Music\\War3XMainScreen.mp3"
 		public static constant integer maxPlayers = 6
 		public static constant player alliedPlayer = Player(6)
-		public static constant player neutralPassivePlayer = Player(PLAYER_NEUTRAL_PASSIVE)
+		public static constant player neutralPassivePlayer = Player(7)
 		public static constant real morning = 5.0
 		public static constant real midday = 12.0
 		public static constant real afternoon = 16.0
@@ -43,6 +43,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 			call Shrines.init()
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
+			call initMapVideos.evaluate()
 			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
 
 			set thistype.m_zoneGardonarsHell = Zone.create("GH", gg_rct_zone_gardonars_hell)
@@ -151,7 +152,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 			call SuspendTimeOfDay(false)
 
-			call thistype.startAfterIntro.evaluate()
+			call VideoIntro.video().play()
 		endmethod
 
 		public static method startAfterIntro takes nothing returns nothing

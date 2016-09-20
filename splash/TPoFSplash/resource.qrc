@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>cropped-dmdf.jpg</file>
+        <file>cropped-dmdf-big.jpg</file>
+    </qresource>
+</RCC>

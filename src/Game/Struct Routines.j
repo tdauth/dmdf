@@ -228,7 +228,7 @@ library StructGameRoutines requires Asl
 		 * Let a unit talk to another unit by using a sound and a floating texttag.
 		 * The sound is only played and the texttag does only appear to players who have their characters in range and to whom the area is not masked.
 		 */
-		private static method unitTalks takes unit speaking, sound whichSound, string text returns nothing
+		private static method unitTalks takes unit speaking, unit listening, sound whichSound, string text returns nothing
 			local texttag whichTextTag = null
 			local integer i = 0
 			// talks can have answers by the other NPC
@@ -244,7 +244,7 @@ library StructGameRoutines requires Asl
 				loop
 					exitwhen (i == MapData.maxPlayers)
 					// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
-					if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and Player(i) == GetLocalPlayer() and GetDistanceBetweenPointsWithoutZ(GetCameraTargetPositionX(), GetCameraTargetPositionY(), GetUnitX(speaking), GetUnitY(speaking)) <= 1000.0) then
+					if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and (not IsUnitFogged(speaking, Player(i)) or (not IsUnitFogged(listening, Player(i)) and listening != null)) and Player(i) == GetLocalPlayer() and GetDistanceBetweenPointsWithoutZ(GetCameraTargetPositionX(), GetCameraTargetPositionY(), GetUnitX(speaking), GetUnitY(speaking)) <= 1000.0) then
 						call PlaySoundOnUnitBJ(whichSound, 60.0, speaking) // TODO sound is not always 3D? Distance should play a role (distance between unit and player's current camera view)
 						call ShowTextTagForPlayer(Player(i), whichTextTag, true)
 					endif
@@ -284,11 +284,11 @@ library StructGameRoutines requires Asl
 				call QueueUnitAnimation(period.unit(), "Stand Talk")
 				set index = GetRandomInt(0, period.soundsCount() - 1)
 				if (period.soundsCount() > index) then
-					call thistype.unitTalks(period.unit(), period.sound(index), period.text(index))
+					call thistype.unitTalks(period.unit(), period.partner(), period.sound(index), period.text(index))
 
 					// talks can have answers by the other NPC
 					if (period.answerSoundsCount() > index) then
-						call thistype.unitTalks(period.partner(), period.answerSound(index), period.answerText(index))
+						call thistype.unitTalks(period.partner(), period.unit(), period.answerSound(index), period.answerText(index))
 					endif
 				endif
 

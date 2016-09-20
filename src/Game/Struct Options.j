@@ -10,6 +10,7 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 			call this.addEntry(OptionsEntryCredits.create.evaluate(this))
 			call this.addEntry(OptionsEntryEnableShrineButton.create.evaluate(this))
 			call this.addEntry(OptionsEntryEnableTutorial.create.evaluate(this))
+			call this.addEntry(OptionsEntryEnableQuestSignals.create.evaluate(this))
 
 			return this
 		endmethod
@@ -130,6 +131,34 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 
 		public static method create takes OptionsSpellbook spellbook returns thistype
 			local thistype this = thistype.allocate(spellbook, 'A1UB', 'A1UK')
+
+			return this
+		endmethod
+	endstruct
+
+	struct OptionsEntryEnableQuestSignals extends AMultipageSpellbookAction
+		private boolean m_enabled = true
+
+		public method spellbook takes nothing returns OptionsSpellbook
+			return OptionsSpellbook(this.multipageSpellbook())
+		endmethod
+
+		public stub method onTrigger takes nothing returns nothing
+			local Character character = this.spellbook().character()
+
+			if (this.m_enabled) then
+				set this.m_enabled = false
+				call AAbstractQuest.disablePingsForCharacter(character)
+				call character.displayMessage(ACharacter.messageTypeInfo, tre("Signale deaktiviert.", "Disabled signals."))
+			else
+				set this.m_enabled = true
+				call AAbstractQuest.disablePingsForCharacter(character)
+				call character.displayMessage(ACharacter.messageTypeInfo, tre("Signale aktiviert.", "Enabled signals."))
+			endif
+		endmethod
+
+		public static method create takes OptionsSpellbook spellbook returns thistype
+			local thistype this = thistype.allocate(spellbook, 'A1UY', 'A1UZ')
 
 			return this
 		endmethod

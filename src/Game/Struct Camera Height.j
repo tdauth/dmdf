@@ -1,4 +1,4 @@
-library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClassSelection
+library StructGameCameraHeight requires Asl, StructGameCharacter
 	/**
 	 * \brief Adjusts the camera height add registered rects to a Z value.
 	 * Every rect can be registred using \ref addRect() with a certain height value.
@@ -11,12 +11,12 @@ library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClas
 		private static timer m_timer
 		private static ARectVector m_rects
 		private static ARealVector m_heights
-		
+
 		public static method addRect takes rect whichRect, real height returns nothing
 			call thistype.m_rects.pushBack(whichRect)
 			call thistype.m_heights.pushBack(height)
 		endmethod
-		
+
 		private static method timerFunctionUpdateCameraHeight takes nothing returns nothing
 			local integer i = 0
 			local integer j
@@ -34,7 +34,7 @@ library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClas
 					loop
 						exitwhen (i == thistype.m_rects.size() or found)
 						set height = thistype.m_heights[i]
-						
+
 						if (RectContainsCoords(thistype.m_rects[i], GetCameraTargetPositionX(), GetCameraTargetPositionY())) then
 							call SetCameraField(CAMERA_FIELD_ZOFFSET, height, thistype.period)
 							debug call Print("Applying height: " + R2S(height))
@@ -43,7 +43,7 @@ library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClas
 
 						set i = i + 1
 					endloop
-					
+
 					// reset
 					if (not found) then
 						call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, thistype.period)
@@ -52,11 +52,11 @@ library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClas
 				set j = j + 1
 			endloop
 		endmethod
-		
+
 		public static method start takes nothing returns nothing
 			call TimerStart(thistype.m_timer, thistype.period, true, function thistype.timerFunctionUpdateCameraHeight)
 		endmethod
-		
+
 		/**
 		 * Pauses the updating timer and resets the Z offset for all players to 0.
 		 * Therefore after calling this method the camera height is not updated anymore for any player.
@@ -66,20 +66,20 @@ library StructGameCameraHeight requires Asl, StructGameCharacter, StructGameClas
 			// reset z offset for safety, reset immediately, otherwise it might move in video sequences!
 			call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
 		endmethod
-		
+
 		/**
 		 * Resumes the timer which updates the Z offset of the camera for all players.
 		 */
 		public static method resume takes nothing returns nothing
 			call thistype.start()
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.m_timer = CreateTimer()
 			set thistype.m_rects = ARectVector.create()
 			set thistype.m_heights = ARealVector.create()
 		endmethod
-		
+
 	endstruct
-	
+
 endlibrary
