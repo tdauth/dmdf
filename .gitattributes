@@ -1,3 +1,5 @@
 *.w3x -delta
 *.w3n -delta
 *.mpq -delta
+*.dll -delta
+*.exe -delta
