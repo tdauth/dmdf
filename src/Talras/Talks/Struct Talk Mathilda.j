@@ -59,7 +59,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Hallo.
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Hallo Wandersmann! Darf ich ein Lied für dich spielen?"), null)
+			call speech(info, character, true, tr("Hallo Wandersmann! Darf ich ein Lied für dich spielen?"), gg_snd_Mathilda1)
 			call info.talk().showRange(16, 17, character)
 		endmethod
 
@@ -71,17 +71,17 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Woher kommst du?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Woher kommst du?"), null)
-			call speech(info, character, true, tr("Von hier und dort. Ich weiß es schon nicht mehr, um ehrlich zu sein. Ich ziehe durchs Land, wie ich gerade Lust habe. Städte, Flüsse, Berge, Wälder, alles hat Namen, alles ist streng unterteilt. Wer braucht schon Namen und Unterteilungen, wenn man keine Grenzen hat?"), null)
-			call speech(info, character, true, tr("Alles ist fließend. Leider verstehen das weder die Menschen hier noch die, der anderen Orte, an denen ich war."), null)
+			call speech(info, character, true, tr("Von hier und dort. Ich weiß es schon nicht mehr, um ehrlich zu sein. Ich ziehe durchs Land, wie ich gerade Lust habe. Städte, Flüsse, Berge, Wälder, alles hat Namen, alles ist streng unterteilt. Wer braucht schon Namen und Unterteilungen, wenn man keine Grenzen hat?"), gg_snd_Mathilda5)
+			call speech(info, character, true, tr("Alles ist fließend. Leider verstehen das weder die Menschen hier noch die, der anderen Orte, an denen ich war."), gg_snd_Mathilda6)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Was hältst du vom Bauernhof?
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was hältst du vom Bauernhof?"), null)
-			call speech(info, character, true, tr("Ein ganz netter Ort. Die Leute sind sehr freundlich, vor allem der Bauer Manfred. Der fette Lothar dagegen geht mir mit seinem Gerede dauernd auf die Nerven."), null)
-			call speech(info, character, true, tr("Ich will ihn ja nicht verletzen, aber ich denke, er macht sich was vor. Vielleicht auch die anderen hier, weil es kaum Frauen hier gibt, vor allem nicht mehr seit Manfreds Frau verstorben ist."), null)
-			call speech(info, character, true, tr("Über Guntrich und die Knechte weiß ich nicht viel. Ich rede kaum mit ihnen, aber das kannst du ja tun, wenn sie dich so sehr interessieren."), null)
+			call speech(info, character, true, tr("Ein ganz netter Ort. Die Leute sind sehr freundlich, vor allem der Bauer Manfred. Der fette Lothar dagegen geht mir mit seinem Gerede dauernd auf die Nerven."), gg_snd_Mathilda7)
+			call speech(info, character, true, tr("Ich will ihn ja nicht verletzen, aber ich denke, er macht sich was vor. Vielleicht auch die anderen hier, weil es kaum Frauen hier gibt, vor allem nicht mehr seit Manfreds Frau verstorben ist."), gg_snd_Mathilda8)
+			call speech(info, character, true, tr("Über Guntrich und die Knechte weiß ich nicht viel. Ich rede kaum mit ihnen, aber das kannst du ja tun, wenn sie dich so sehr interessieren."), gg_snd_Mathilda9)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -93,11 +93,11 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Hier hast du einen Honigtopf!
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hier hast du einen Honigtopf!"), null)
-			call speech(info, character, true, tr("Was zum … wozu?"), null)
+			call speech(info, character, true, tr("Was zum … wozu?"), gg_snd_Mathilda10)
 			call speech(info, character, false, tr("Na zum Essen halt!"), null)
-			call speech(info, character, true, tr("Interessant. Ich nehme mal an, Lothar schickt dich."), null)
+			call speech(info, character, true, tr("Interessant. Ich nehme mal an, Lothar schickt dich."), gg_snd_Mathilda11)
 			call speech(info, character, false, tr("Ähm …"), null)
-			call speech(info, character, true, tr("Na gut, gib schon her! Ich will ja nicht, dass er sich noch das Leben nimmt."), null)
+			call speech(info, character, true, tr("Na gut, gib schon her! Ich will ja nicht, dass er sich noch das Leben nimmt."), gg_snd_Mathilda12)
 			// Honigtopf für Mathilda wird übergeben
 			call character.inventory().removeItemType(QuestALittlePresent.itemTypeId)
 			// Auftragsziel 1 des Auftrags „Ein kleines Geschenk“ abgeschlossen
@@ -113,8 +113,8 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Hier hast du einen großen Honigtopf!
 		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hier hast du einen großen Honigtopf!"), null)
-			call speech(info, character, true, tr("Also jetzt reicht es wirklich! Ich meine, was bildet er sich denn ein? Nur weil wir ab und zu miteinander plaudern."), null)
-			call speech(info, character, true, tr("Gib schon her! Ich will nicht als Herzensbrecherin enden."), null)
+			call speech(info, character, true, tr("Also jetzt reicht es wirklich! Ich meine, was bildet er sich denn ein? Nur weil wir ab und zu miteinander plaudern."), gg_snd_Mathilda13)
+			call speech(info, character, true, tr("Gib schon her! Ich will nicht als Herzensbrecherin enden."), gg_snd_Mathilda14)
 			// Honigtopf für Mathilda wird übergeben
 			call character.inventory().removeItemType(QuestABigPresent.itemTypeId)
 			// Auftragsziel 1 des Auftrags „Ein großes Geschenk“ abgeschlossen
@@ -129,20 +129,20 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 
 		// (Automatisch) Deinetwegen nervt mich Lothar jetzt nicht mehr so stark wie vorher.
 		private static method infoAction5 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Deinetwegen nervt mich Lothar jetzt nicht mehr so stark wie vorher."), null)
-			call speech(info, character, true, tr("Ja, ich habe Augen und Ohren und ich habe gemerkt, dass er gemerkt hat, dass seine Geschenke nicht so das Wahre waren."), null)
-			call speech(info, character, true, tr("Das heißt also, du hast ihm die Wahrheit gesagt."), null)
+			call speech(info, character, true, tr("Deinetwegen nervt mich Lothar jetzt nicht mehr so stark wie vorher."), gg_snd_Mathilda15)
+			call speech(info, character, true, tr("Ja, ich habe Augen und Ohren und ich habe gemerkt, dass er gemerkt hat, dass seine Geschenke nicht so das Wahre waren."), gg_snd_Mathilda16)
+			call speech(info, character, true, tr("Das heißt also, du hast ihm die Wahrheit gesagt."), gg_snd_Mathilda17)
 			// (Charakter mag beides nicht)
 			if (thistype(info.talk()).wasOffendedStories(character.player()) and thistype(info.talk()).wasOffendedSongs(character.player())) then
-				call speech(info, character, true, tr("Auch wenn du meine Geschichten und Lieder nicht besonders magst …"), null)
+				call speech(info, character, true, tr("Auch wenn du meine Geschichten und Lieder nicht besonders magst …"), gg_snd_Mathilda20)
 			// (Charakter mag die Geschichten nicht)
 			elseif (thistype(info.talk()).wasOffendedStories(character.player())) then
-				call speech(info, character, true, tr("Auch wenn du meine Geschichten nicht besonders magst …"), null)
+				call speech(info, character, true, tr("Auch wenn du meine Geschichten nicht besonders magst …"), gg_snd_Mathilda18)
 			// (Charakter mag die Lieder nicht)
 			elseif (thistype(info.talk()).wasOffendedSongs(character.player())) then
-				call speech(info, character, true, tr("Auch wenn du meine Lieder nicht besonders magst …"), null)
+				call speech(info, character, true, tr("Auch wenn du meine Lieder nicht besonders magst …"), gg_snd_Mathilda19)
 			endif
-			call speech(info, character, true, tr("… wir könnten doch ein wenig umherziehen, falls du Lust hast."), null)
+			call speech(info, character, true, tr("… wir könnten doch ein wenig umherziehen, falls du Lust hast."), gg_snd_Mathilda21)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -156,7 +156,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Lass uns umherziehen!"), null)
 			if (this.characters().size() == 1) then
-				call speech(info, character, true, tr("Na gut."), null)
+				call speech(info, character, true, tr("Na gut."), gg_snd_Mathilda22)
 				// Mathilda schließt sich dem Charakter an
 				call Fellows.mathilda().shareWith(character)
 				call this.close(character)
@@ -169,9 +169,9 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Du musizierst?
 		private static method infoAction7 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Du musizierst?"), null)
-			call speech(info, character, true, tr("Ja, ich kann einige Lieder auf meiner Schalmei spielen. Die habe ich schon seit ich noch sehr jung war. Das ist wahrscheinlich der einzige Besitz, den ich wirklich vermissen würde, falls er mir mal abhanden käme."), null)
-			call speech(info, character, true, tr("Ich mache übrigens nicht nur Musik, sondern erzähle auch gerne Geschichten. Damit verdiene ich mir meinen Lebensunterhalt. Ich brauche ja nicht gerade viel zum Leben."), null)
-			call speech(info, character, true, tr("Aber da hier ja bald die Hölle los sein wird, nach allem, was man so hört, verschwinde ich lieber bald wieder."), null)
+			call speech(info, character, true, tr("Ja, ich kann einige Lieder auf meiner Schalmei spielen. Die habe ich schon seit ich noch sehr jung war. Das ist wahrscheinlich der einzige Besitz, den ich wirklich vermissen würde, falls er mir mal abhanden käme."), gg_snd_Mathilda23)
+			call speech(info, character, true, tr("Ich mache übrigens nicht nur Musik, sondern erzähle auch gerne Geschichten. Damit verdiene ich mir meinen Lebensunterhalt. Ich brauche ja nicht gerade viel zum Leben."), gg_snd_Mathilda24)
+			call speech(info, character, true, tr("Aber da hier ja bald die Hölle los sein wird, nach allem, was man so hört, verschwinde ich lieber bald wieder."), gg_snd_Mathilda25)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -183,7 +183,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Was machst du in der Scheune?
 		private static method infoAction8 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was machst du in der Scheune?"), null)
-			call speech(info, character, true, tr("Schlafen, was sonst? Oder soll ich hier draußen erfrieren? Der Bauer Nado, ein sehr höflicher Mann, lässt mich dort umsonst übernachten."), null)
+			call speech(info, character, true, tr("Schlafen, was sonst? Oder soll ich hier draußen erfrieren? Der Bauer Nado, ein sehr höflicher Mann, lässt mich dort umsonst übernachten."), gg_snd_Mathilda26)
 			call thistype(info.talk()).tellThatSleepingInBarn(character.player())
 			call info.talk().showStartPage(character)
 		endmethod
@@ -192,16 +192,16 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		private static method infoAction9 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Erzähl mir eine Geschichte."), null)
 			if (not TalkMathilda(info.talk()).wasOffendedStories(character.player())) then
-				call speech(info, character, true, tr("Gut, welche willst du hören?"), null)
+				call speech(info, character, true, tr("Gut, welche willst du hören?"), gg_snd_Mathilda27)
 				call info.talk().showRange(18, 21, character)
 			else
-				call speech(info, character, true, tr("Mit Sicherheit nicht. Erzähl dir doch selbst eine!"), null)
+				call speech(info, character, true, tr("Mit Sicherheit nicht. Erzähl dir doch selbst eine!"), gg_snd_Mathilda44)
 				call info.talk().showStartPage(character)
 			endif
 		endmethod
 
 		private static method showSongs takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("Gut, welches willst du hören?"), null)
+			call speech(info, character, true, tr("Gut, welches willst du hören?"), gg_snd_Mathilda45)
 			call info.talk().showRange(22, 25, character)
 		endmethod
 
@@ -211,7 +211,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 			if (not TalkMathilda(info.talk()).wasOffendedSongs(character.player())) then
 				call thistype.showSongs(info, character)
 			else
-				call speech(info, character, true, tr("Bei dir hakt's wohl? Pfeif dir doch selbst eins!"), null)
+				call speech(info, character, true, tr("Bei dir hakt's wohl? Pfeif dir doch selbst eins!"), gg_snd_Mathilda50)
 				call info.talk().showStartPage(character)
 			endif
 		endmethod
@@ -227,7 +227,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 			call character.removeGold(10)
 			call TalkMathilda(info.talk()).offendStories(character.player(), false)
 			call TalkMathilda(info.talk()).offendSongs(character.player(), false)
-			call speech(info, character, true, tr("Oh danke. Das höre ich immer wieder gerne."), null)
+			call speech(info, character, true, tr("Oh danke. Das höre ich immer wieder gerne."), gg_snd_Mathilda51)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -240,7 +240,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		private static method infoAction12 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Deine Geschichten scheinen einem Haufen Scheiße zu gleichen."), null)
 			call TalkMathilda(info.talk()).offendStories(character.player(), true)
-			call speech(info, character, true, tr("Wenn's dir nicht passt, dann erzähl ich dir halt keine mehr!"), null)
+			call speech(info, character, true, tr("Wenn's dir nicht passt, dann erzähl ich dir halt keine mehr!"), gg_snd_Mathilda52)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -253,7 +253,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		private static method infoAction13 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Deine Musik ist ungefähr so hörenswert wie Gebärdensprache."), null)
 			call TalkMathilda(info.talk()).offendSongs(character.player(), true)
-			call speech(info, character, true, tr("Dir werd' ich sicher nicht nochmal ein Lied spielen!"), null)
+			call speech(info, character, true, tr("Dir werd' ich sicher nicht nochmal ein Lied spielen!"), gg_snd_Mathilda53)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -265,13 +265,32 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// ￼Weißt du, wo ich mir ein Instrument besorgen kann?
 		private static method infoAction14 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Weißt du, wo ich mir ein Instrument besorgen kann?"), null)
-			call speech(info, character, true, tr("In Talras gibt’s bestimmt irgendwo welche zu kaufen. Ansonsten wüsste ich aber auch nichts. Hier auf dem Hof scheint's wohl keine zu geben."), null)
+			call speech(info, character, true, tr("In Talras gibt’s bestimmt irgendwo welche zu kaufen. Ansonsten wüsste ich aber auch nichts. Hier auf dem Hof scheint's wohl keine zu geben."), gg_snd_Mathilda54)
+			// TODO gg_snd_Mathilda55
 			//(Mathilda fühlt sich angegriffen - egal ob bezüglich ihrer Musik oder Geschichten)
 			if (TalkMathilda(info.talk()).wasOffendedStories(character.player()) or TalkMathilda(info.talk()).wasOffendedSongs(character.player())) then
-				call speech(info, character, true, tr("Aber was willst du schon mit einem Instrument? Geschmack scheinst du ja nicht zu haben."), null)
+				call speech(info, character, true, tr("Aber was willst du schon mit einem Instrument? Geschmack scheinst du ja nicht zu haben."), gg_snd_Mathilda56)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
+
+		// TODO gg_snd_Mathilda57
+		// TODO gg_snd_Mathilda58
+		// TODO gg_snd_Mathilda59
+		// TODO gg_snd_Mathilda60
+		// TODO gg_snd_Mathilda61
+		// TODO gg_snd_Mathilda62
+		// TODO gg_snd_Mathilda63
+		// TODO gg_snd_Mathilda64
+
+		// TODO gg_snd_Mathilda65
+		// TODO gg_snd_Mathilda66
+		// TODO gg_snd_Mathilda67
+		// TODO gg_snd_Mathilda68
+		// TODO gg_snd_Mathilda69
+		// TODO gg_snd_Mathilda70
+		// TODO gg_snd_Mathilda71
+		// TODO gg_snd_Mathilda72
 
 		// Aber sicher doch.
 		private static method infoAction0_0 takes AInfo info, ACharacter character returns nothing
@@ -282,35 +301,50 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Nein, lieber nicht.
 		private static method infoAction0_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Nein, lieber nicht."), null)
-			call speech(info, character, true, tr("Schade, aber vielleicht möchtest du ja später eins hören."), null)
+			call speech(info, character, true, tr("Schade, aber vielleicht möchtest du ja später eins hören."), gg_snd_Mathilda4)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Die Geschichte vom Bären.
 		private static method infoAction9_0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Die Geschichte vom Bären."), null)
-			/// @todo FIXME
+			call speech(info, character, true, tr("Es war einmal ein Bär, der wanderte durch den Wald und dann fiel ein Baum um und erschlug den Bären."), gg_snd_Mathilda28)
+			call speech(info, character, true, tr("Es war einmal ein Mann, der einen Bären sah, der durch den Wald wanderte und dann fiel ein Baum um und erschlug den Bären."), gg_snd_Mathilda29)
+			call speech(info, character, true, tr("Es war einmal ein anderer Mann, der einen Mann sah, der einen Bären sah, der durch den Wald wanderte und dann fiel ein Baum um und erschlug den Bären."), gg_snd_Mathilda30)
+			call speech(info, character, true, tr("Es war einmal ein weiterer Mann, der einen anderen Mann sah, der einen Mann sah, der einen Bären sah, der durch den Wald wanderte und dann fiel ein Baum um und erschlug den Bären."), gg_snd_Mathilda31)
+			call speech(info, character, true, tr("Es war einmal …"), gg_snd_Mathilda32)
+			call speech(info, character, false, tr("Danke, ich glaube das reicht."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Der Ork und der Wolf.
 		private static method infoAction9_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Der Ork und der Wolf."), null)
-			/// @todo FIXME
+			call speech(info, character, true, tr("Vor langer langer Zeit, da lebte ein Ork in einer Höhle in den Bergen. Er war sehr einsam dort, denn in den Bergen lebten nur Tiere und keiner mit dem er sich hätte unterhalten können."), gg_snd_Mathilda33)
+			call speech(info, character, true, tr("Doch eines Tages, als der Ork sich auf die jagt begab, da traf er auf einen Wolf in der Wildnis und als sich der Ork dem Wolf näherte, da sprach der Wolf: „Wenn du mich tötest, dann bleibst du allein.“"), gg_snd_Mathilda34)
+			call speech(info, character, true, tr("Der Ork antwortete erstaunt: „Sag mir Wolf, wie kommt es dass ich dich verstehe?“"), gg_snd_Mathilda35)
+			call speech(info, character, true, tr("Der Wolf aber antwortete: „Sag mir Ork, wie kommt es, dass du mir zuhörst?“"), gg_snd_Mathilda36)
+			call speech(info, character, true, tr("Der Ork war verwundert, aber auch froh nach so langer Zeit wieder jemanden getroffen zu haben, mit dem er sich unterhalten konnte. Also fragte er den Wolf: „Sag Wolf, wenn ich dich verschone, begleitest du mich dann?“"), gg_snd_Mathilda37)
+			call speech(info, character, true, tr("Der Wolf antwortet daraufhin: „Sicher Ork, das werde ich.“ So gingen die beiden zusammen zur Höhle des Orks. Doch als sie dort ankamen sprach der Wolf: „Sieh Ork, verschont hast du mich und ich habe dich begleitet. Nun haben wir beide unser Wort gehalten, doch sieh welche Höhle du mir gezeigt hast, so warm und so groß.“ Da fraß der Wolf den Ork."), gg_snd_Mathilda38)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Das Hexenlied.
 		private static method infoAction9_2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Das Hexenlied."), null)
-			/// @todo FIXME
+			call speech(info, character, true, tr("Im nordöstlichen Wald von Talras, auf der anderen Seite des Flusses dort leben die alten verstoßenen Hexen. Einst gefürchtet von den Bewohnern Talras' plagt sie nun die unendliche Einsamkeit."), gg_snd_Mathilda39)
+			call speech(info, character, true, tr("Man erzählt sich, sie hätten schließlich Freundschaft mit den Riesen geschlossen, um ihrer Einsamkeit zu entgehen. Die Riesen, ebenfalls gefürchtet von jedem Bewohner in Talras, gingen tatsächlich auf diese Freundschaft ein."), gg_snd_Mathilda40)
+			call speech(info, character, true, tr("Die Hexen spielten ein verzaubertes Lied und die Riesen folgten ihrem Befehl. Nun gehorchen sie den Hexen und wann immer man auf eine Hexe trifft, da ist auch ein Riese nicht weit."), gg_snd_Mathilda41)
+			call speech(info, character, true, tr("Doch höre, wer auch immer das Lied spielen kann, dem wird auch der Riese folgen."), gg_snd_Mathilda42)
+			// TODO
+			// (Charakter erhält Hinweis, dass man mit dem Lied Riesen für sich gewinnen kann)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Keine. Ich hab's mir anders überlegt.
 		private static method infoAction9_3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Keine. Ich hab's mir anders überlegt."), null)
-			call speech(info, character, true, tr("Wie du meinst."), null)
+			call speech(info, character, true, tr("Wie du meinst."), gg_snd_Mathilda43)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -318,14 +352,13 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		private static method infoAction10_0 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Das Lied des Krieges."), null)
-			call speech(info, character, true, tr("Der Rittersmann, von unweit her, ward vom König selbst gerufen, er kam in Rüstung, samt dem Speer, mit Legenden, die ihn schufen"), null)
-			call speech(info, character, true, tr("Träumte er von Ruhm und Stolz, so war sein Speer doch nur aus Holz, und als er vor dem Drachen stand, setzte dieser ihn in Brand"), null)
-			call speech(info, character, true, tr("So brannten Ritter und die Sagen, an denen sich die Jungen laben, Am Ende bleibt der Tod, nicht mehr, so lange ist es gar nicht her!"), null)
+			call speech(info, character, true, tr("Der Rittersmann, von unweit her, ward vom König selbst gerufen, er kam in Rüstung, samt dem Speer, mit Legenden, die ihn schufen. Träumte er von Ruhm und Stolz, so war sein Speer doch nur aus Holz, und als er vor dem Drachen stand, setzte dieser ihn in Brand. So brannten Ritter und die Sagen, an denen sich die Jungen laben, Am Ende bleibt der Tod, nicht mehr, so lange ist es gar nicht her!"), gg_snd_Mathilda46)
 
 			// Erfahrungsbonus (Hört das Lied zum ersten Mal)
 			if (not this.playedSong(character.player())) then
 				call character.xpBonus(50, tr("Ihr genießt die Musik!"))
 			endif
+
 			call this.playSong(character.player())
 			call info.talk().showStartPage(character)
 		endmethod
@@ -334,14 +367,13 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		private static method infoAction10_1 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Der Wandersmann."), null)
-			call speech(info, character, true, tr("Der Tag neigt sich dem Ende zu, und alle Vögel werden müde, nur einer, der gibt keine Ruh', in seiner Heimat ist man prüde"), null)
-			call speech(info, character, true, tr("Er lief, ja rannte über Berge, traf fremde Wesen, auch die Zwerge, doch sollt er einen Menschen sehn, würd' er gleich wieder rückwärts gehen, sich glücklich an den Seinen rächen, gar jedem mal das Herz zerstechen, denn jeder seiner eignen Leut', hat zu viel Liebe stets gescheut"), null)
-			call speech(info, character, true, tr("Ja dort in seiner alten Heimat, ist weder Mauer, noch ein Tor, doch wär' ihm eine neue Bleibe, gar lieber als das triste Moor"), null)
+			call speech(info, character, true, tr("Der Tag neigt sich dem Ende zu, und alle Vögel werden müde, nur einer, der gibt keine Ruh', in seiner Heimat ist man prüde. Er lief, ja rannte über Berge, traf fremde Wesen, auch die Zwerge, doch sollt er einen Menschen sehn, würd' er gleich wieder rückwärts gehen, sich glücklich an den Seinen rächen, gar jedem mal das Herz zerstechen, denn jeder seiner eignen Leut', hat zu viel Liebe stets gescheut. Ja dort in seiner alten Heimat, ist weder Mauer, noch ein Tor, doch wär' ihm eine neue Bleibe, gar lieber als das triste Moor."), gg_snd_Mathilda47)
 
 			// Erfahrungsbonus (Hört das Lied zum ersten Mal)
 			if (not this.playedSong(character.player())) then
 				call character.xpBonus(50, tr("Ihr genießt die Musik!"))
 			endif
+
 			call this.playSong(character.player())
 			call info.talk().showStartPage(character)
 		endmethod
@@ -350,14 +382,13 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		private static method infoAction10_2 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Die Waldgeister."), null)
-			call speech(info, character, true, tr("Im alten Wald, am großen Fluss, durch den ich täglich waten muss, dort traf ich traurig wie ich war, die mystisch schöne Geisterschaar"), null)
-			call speech(info, character, true, tr("Sie gaben mir, was ich vermisst, doch war es eine große List, Denn wollten sie nicht meinen Segen, stattdessen nur den eignen Regen, der kommt, wenn man aus einem Rachen, mal etwas hört wie sanftes Lachen"), null)
-			call speech(info, character, true, tr("Und wenns vergeht, ist's auch nicht schlimm, der Geist behält ja seine Stimm', kann Lieder singen, selbst oft lachen, er muss nun über gar nichts wachen, gestorben ist er sowieso, doch fragt mein Herz sich wo"), null)
+			call speech(info, character, true, tr("Im alten Wald, am großen Fluss, durch den ich täglich waten muss, dort traf ich traurig wie ich war, die mystisch schöne Geisterschaar. Sie gaben mir, was ich vermisst, doch war es eine große List, Denn wollten sie nicht meinen Segen, stattdessen nur den eignen Regen, der kommt, wenn man aus einem Rachen, mal etwas hört wie sanftes Lachen. Und wenns vergeht, ist's auch nicht schlimm, der Geist behält ja seine Stimm', kann Lieder singen, selbst oft lachen, er muss nun über gar nichts wachen, gestorben ist er sowieso, doch fragt mein Herz sich wo."), gg_snd_Mathilda48)
 
 			// Erfahrungsbonus (Hört das Lied zum ersten Mal)
 			if (not this.playedSong(character.player())) then
 				call character.xpBonus(50, tr("Ihr genießt die Musik!"))
 			endif
+
 			call this.playSong(character.player())
 			call info.talk().showStartPage(character)
 		endmethod
@@ -365,7 +396,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Keines. Ich hab's mir anders überlegt.
 		private static method infoAction10_3 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Keines. Ich hab's mir anders überlegt."), null)
-			call speech(info, character, true, tr("Deine Entscheidung."), null)
+			call speech(info, character, true, tr("Deine Entscheidung."), gg_snd_Mathilda49)
 			call info.talk().showStartPage(character)
 		endmethod
 

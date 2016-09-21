@@ -50,6 +50,7 @@ call thistype.addContributor("Daniel Spieker", tr("Tobias"))
 call thistype.addContributor("Frank \"Waschbär\" Keiler", tr("Osman"))
 call thistype.addContributor("Synchron", tr("Tellborn"))
 call thistype.addContributor("Feluxus", tr("Agihard"))
+call thistype.addContributor("Tania", tr("Mathilda"))
 
 call thistype.addTitle(tre("Weitere Unterstützung", "Further Support"))
 call thistype.addContributor("WaterKnight", tre("Tests", "Tests"))
