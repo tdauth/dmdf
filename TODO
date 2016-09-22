@@ -278,7 +278,7 @@ Handlung:
 
 Aufgehoben für Version 0.9:
 Critical errors:
-* Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Exel table.
+* Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Excel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * Orcs bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
@@ -382,7 +382,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 	- Gardonars Dämonen etwas stärker machen.
 	- Deranors Kreaturen schwächer machen. Vor allem Schwere Rüstung entfernen, erhalten kaum Schaden.
 
-* ASL bug: Items liegen bei totem Charakter auf dem Boden, wenn dieser eben tot ist und man einen Laden anwählt und abwählt. Sie dürfen nicht hinzugefügt werden, wenn der Charakter tot ist und nach Wiederbelebung müssen die Gegenstände erneut zum Inventar hinzugefügt werden.
+* FIXED: ASL bug: Items liegen bei totem Charakter auf dem Boden, wenn dieser eben tot ist und man einen Laden anwählt und abwählt. Sie dürfen nicht hinzugefügt werden, wenn der Charakter tot ist und nach Wiederbelebung müssen die Gegenstände erneut zum Inventar hinzugefügt werden.
 * Mitwirkende: Texte clearen wenn Mitwirkende geschlossen werden.
 * Kapuze: Unsichtbarkeitsfähigkeit geht nicht, wenn Rucksack offen ist.
 * war3.exe verwenden, zeigt keinen Splash Screen.
