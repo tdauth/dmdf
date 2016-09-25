@@ -355,6 +355,7 @@ Critical Transformation and equipment bugs (Let's Play):
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* FIXED (in wc3lib): Object data compression: Excluding does not work. Exclude channel data fields from reset! 'ANcl' - DataA1 - DataF1, Ncl1 - Ncl6, aeat, atp1 etc. Actually these fields should be compressed: aret, arut
 * FIXED: Kartenausgänge unsichtbar und unerkundet machen!
 * Elementarwesen: Passive Rüstungs, Lebens- und Schadensfähigkeiten, die pro Stufe zu besser werden und jedes Elementarwesen erhält. Ansonsten sind die Wesen auf Dauer zu schwach.
 * DONE: Stall nach Holzbruck.
