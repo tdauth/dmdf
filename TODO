@@ -356,6 +356,8 @@ Critical Transformation and equipment bugs (Let's Play):
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED (in wc3lib): Object data compression: Excluding does not work. Exclude channel data fields from reset! 'ANcl' - DataA1 - DataF1, Ncl1 - Ncl6, aeat, atp1 etc. Actually these fields should be compressed: aret, arut
+* Object data compression: Ignores strings of higher levels when the object level is now 1 and not 100 anymore. Check for all higher levels than object levels!
+* Object data compression: Resets spb1 by mistake!
 * FIXED: Kartenausgänge unsichtbar und unerkundet machen!
 * Elementarwesen: Passive Rüstungs, Lebens- und Schadensfähigkeiten, die pro Stufe zu besser werden und jedes Elementarwesen erhält. Ansonsten sind die Wesen auf Dauer zu schwach.
 * DONE: Stall nach Holzbruck.
