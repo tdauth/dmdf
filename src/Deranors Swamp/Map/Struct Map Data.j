@@ -241,6 +241,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static method enableZoneHolzbruck takes nothing returns nothing
 			call thistype.m_zoneHolzbruck.enable()
 		endmethod
+
+		/// Required by teleport spells.
+		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
+			return false
+		endmethod
 	endstruct
 
 endlibrary

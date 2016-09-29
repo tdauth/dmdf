@@ -200,6 +200,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		// Hier ist dein Zauberspruch.
 		private static method infoActionSpell takes AInfo info, ACharacter character returns nothing
+			call speech(info, character, false, tre("Hier ist dein Zauberspruch.", "Here is your spell."), null)
 			if (Character(character).inventory().totalItemTypeCharges(QuestBurnTheBearsDown.itemTypeIdWood) == QuestBurnTheBearsDown.maxWood) then // (Charakter besitzt zudem das Holz)
 				call speech(info, character, false, tre("Außerdem habe ich noch Holz für dich.", "Besides I also have wood for you."), null)
 				call thistype.completeBoth(info, character)
@@ -223,7 +224,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 		// Hier ist dein Holz.
 		private static method infoActionWood takes AInfo info, ACharacter character returns nothing
-			local integer i
+			local integer i = 0
+			call speech(info, character, false, tre("Hier ist dein Holz.", "Here is your wood."), null)
 			// (Charakter besitzt zudem den Zauberspruch)
 			if (Character(character).inventory().hasItemType(QuestBurnTheBearsDown.itemTypeIdScroll)) then
 				call speech(info, character, false, tre("Außerdem habe ich noch einen Zauberspruch für dich.", "Besides I have also a spell for you."), null)

@@ -100,9 +100,15 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 			call info.talk().showStartPage(character)
 		endmethod
 
-		private static method completeHints takes AInfo info, ACharacter character returns nothing
+		private static method completeHints takes AInfo info, Character character returns nothing
 			call speech(info, character, true, tr("Ich denke, dass reicht schon mit den Hinweisen. Wir werden uns wohl bald möglichst in Richtung Süden aufmachen, um die Bestie zu jagen. Hier hast du ein paar Flammengemische zur Belohnung. Ich hoffe, sie werden sich dir im Kampf als nützlich erweisen und hier sind natürlich noch ein paar Goldmünzen."), gg_snd_Tanka16)
-			/// @todo Charakter erhält 6 Flammengemische
+			/// Charakter erhält 6 Flammengemische
+			call character.giveItem('I01F')
+			call character.giveItem('I01F')
+			call character.giveItem('I01F')
+			call character.giveItem('I01F')
+			call character.giveItem('I01F')
+			call character.giveItem('I01F')
 			call QuestTheBeast.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
 		endmethod
@@ -183,12 +189,12 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 			call speech(info, character, false, tr("Zeig mir wie man …"), null)
 			call info.talk().showRange(13, 17, character)
 		endmethod
-		
+
 		// (Nach „Hallo“ und Charakter hat mit Tellborn gesprochen und Auftrag „Schamanen in Talras“ noch nicht erhalten)
 		private static method infoConditionYouKnowTellborn takes AInfo info, ACharacter character returns boolean
 			return info.talk().infoHasBeenShownToCharacter(0, character) and TalkTellborn.talk.evaluate().infoHasBeenShownToCharacter(0, character) and QuestShamansInTalras.characterQuest(character).isNotUsed()
 		endmethod
-		
+
 		// Kennst du Tellborn?
 		private static method infoActionYouKnowTellborn takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Kennst du Tellborn?"), null)
@@ -199,15 +205,15 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 			call speech(info, character, false, tr("Also …"), null)
 			call speech(info, character, true, tr("Es ist immer wieder ein Ereignis seinesgleichen in den entlegensten Teilen dieser Welt anzutreffen. Vielleicht sollte ich mich einmal mit ihm unterhalten."), gg_snd_Tanka32)
 			call speech(info, character, true, tr("Leider kann ich Brogo hier nicht einfach sitzen lassen. Willst du vielleicht diesem „Tellborn“ ein Schreiben von mir überbringen?"), gg_snd_Tanka33)
-			
+
 			call info.talk().showRange(18, 19, character)
 		endmethod
-		
+
 		// (Charakter hat „Brief an Tanka“ dabei)
 		private static method infoConditionLetterFromTellborn  takes AInfo info, ACharacter character returns boolean
 			return character.inventory().hasItemType('I03K')
 		endmethod
-		
+
 		// Hier ist ein Brief von Tellborn.
 		private static method infoActionLetterFromTellborn takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Hier ist ein Brief von Tellborn."), null)
@@ -251,7 +257,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 
 		// (Auftrag „Die Bestie“ ist abgeschlossen)
 		private static method infoCondition8_0and1 takes AInfo info, ACharacter character returns boolean
@@ -294,7 +300,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 			call speech(info, character, true, tr("Sieh zu und lerne!"), gg_snd_Tanka25)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// Klar.
 		private static method infoActionYouKnowTellborn_Sure  takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Klar."), null)
@@ -309,7 +315,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 			call character.giveQuestItem('I03J')
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// Nein.
 		private static method infoActionYouKnowTellborn_No takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Nein."), null)
@@ -346,7 +352,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 			call this.addInfo(true, false, thistype.infoCondition8_2and3, thistype.infoAction8_2, tr("… seinen Schmerz teilt.")) // 15
 			call this.addInfo(true, false, thistype.infoCondition8_2and3, thistype.infoAction8_3, tr("… seinen Körper vervielfacht.")) // 16
 			call this.addBackToStartPageButton() // 17
-			
+
 			// info 10
 			call this.addInfo(true, false, 0, thistype.infoActionYouKnowTellborn_Sure, tr("Klar.")) // 18
 			call this.addInfo(true, false, 0, thistype.infoActionYouKnowTellborn_No, tr("Nein.")) // 19

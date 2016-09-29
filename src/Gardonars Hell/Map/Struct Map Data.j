@@ -235,6 +235,11 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static method goldmine takes nothing returns unit
 			return gg_unit_n06E_0090
 		endmethod
+
+		/// Required by teleport spells.
+		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
+			return false
+		endmethod
 	endstruct
 
 endlibrary

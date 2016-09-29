@@ -86,7 +86,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 			call info.talk().showStartPage(character)
 		endmethod
 
-		/// @todo Katzen sind normale kaufbare Einheiten, welche vom Käuferspieler gesteuert werden können. Sie werden an Brogo übergeben und stehen am besten um ihn herum (Katzenflut und so).
+		/// Katzen sind normale kaufbare Einheiten, welche vom Käuferspieler gesteuert werden können. Sie werden an Brogo übergeben und stehen am besten um ihn herum (Katzenflut und so).
 		private static method giveCatsToBrogo takes AInfo info, Character character returns nothing
 			local thistype talk = thistype(info.talk())
 			local integer countedCats = talk.countCats(character.player())

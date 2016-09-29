@@ -1,4 +1,4 @@
-SET VERSION=0.8
+SET VERSION=0.9
 
 del "E:\Projekte\dmdf\maps\releases\Talras%VERSION%.w3x"
 cp "E:\Projekte\dmdf\maps\Karte 1 - Talras.w3x" "E:\Projekte\dmdf\maps\releases\Talras%VERSION%.w3x"
@@ -12,8 +12,12 @@ del "E:\Projekte\dmdf\maps\releases\de\Gardonar%VERSION%.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 2 - Gardonar.w3x" --do  "E:\Projekte\dmdf\maps\releases\de\Gardonar%VERSION%.w3x" --checkscriptstuff --exit
 del "E:\Projekte\dmdf\maps\releases\de\GardonarsHell%VERSION%.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 2.1 - Gardonars Unterwelt.w3x" --do  "E:\Projekte\dmdf\maps\releases\de\GardonarsHell%VERSION%.w3x" --checkscriptstuff --exit
+del "E:\Projekte\dmdf\maps\releases\de\Deranor%VERSION%.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 5 - Deranor.w3x" --do "E:\Projekte\dmdf\maps\releases\de\Deranor%VERSION%.w3x" --checkscriptstuff --exit
 del "E:\Projekte\dmdf\maps\releases\de\Holzbruck%VERSION%.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 3 - Holzbruck.w3x" --do  "E:\Projekte\dmdf\maps\releases\de\Holzbruck%VERSION%.w3x" --checkscriptstuff --exit
+del "E:\Projekte\dmdf\maps\releases\de\HolzbrucksUnderworld%VERSION%.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 3.1 - Holzbrucks Unterwelt.w3x" --do  "E:\Projekte\dmdf\maps\releases\de\HolzbrucksUnderworld%VERSION%.w3x" --checkscriptstuff --exit
 del "E:\Projekte\dmdf\maps\releases\de\Arena%VERSION%.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Arena.w3x" --do  "E:\Projekte\dmdf\maps\releases\de\Arena%VERSION%.w3x" --checkscriptstuff --exit
 
@@ -29,6 +33,9 @@ del "E:\Projekte\dmdf\maps\releases\GH.w3x"
 
 del "E:\Projekte\dmdf\maps\releases\HB.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 3 - Holzbruck.w3x" --do "E:\Projekte\dmdf\maps\releases\HB.w3x" --checkscriptstuff --exit
+
+del "E:\Projekte\dmdf\maps\releases\HU.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 3.1 - Holzbrucks Unterwelt.w3x" --do "E:\Projekte\dmdf\maps\releases\HU.w3x" --checkscriptstuff --exit
 
 del "E:\Projekte\dmdf\maps\releases\DS.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 5 - Deranor.w3x" --do "E:\Projekte\dmdf\maps\releases\DS.w3x" --checkscriptstuff --exit

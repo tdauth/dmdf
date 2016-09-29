@@ -285,7 +285,7 @@ Critical errors:
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Lange Ladezeit: Widgetizer mit deutschem War3Patch ausprobieren. Erst Widgetizer verwenden, dann war3mapoptimizer!
 * Lag am Anfang: Fähigkeiten preloaden. Nicht nur Klassenfähigkeiten??? Zauberbuchfähigkeiten, die in Klassenauswahl angezeigt werden etc.
-* Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen? Kritische Bereiche identifizieren und absichern!
+* FIXED (AInventory revival trigger): Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen? Kritische Bereiche identifizieren und absichern!
 Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED (OpLimit was broken by too long calls before calling refresh()): ACharactersScheme: Multiboard update does not happen immediately! It would also be better to show the characters schema after the intro video?
 * Multiboard verschwindet manchmal bei Repick.
@@ -294,10 +294,10 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * Nach Repick ist ab und zu entweder ein Zauber der Klasse nicht da oder noch ein Zauber der alten Klasse stattdessen.
 * Vermutung: Spell.onDestroy() remove funktioniert nicht immer (OpLimit???) ODER Konstruktor Spell.create() bzw. Spell.createWithEvent() wird nicht verwendet. Dann landet der Zauber nicht in den classSpells().
 * speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!). Passiert nur manchmal.
-* Equipmenteffekte gehen nach Reiten auf Schaf nicht direkt.
+* FIXED (Verwandlungsbugs und AInventory onEquip() bugs): Equipmenteffekte gehen nach Reiten auf Schaf nicht direkt.
 * FIXED: Don't add equipment abilities to character actor if only rucksack is enabled or inventory is disabled completely.
 * Schamanenmaske konnte nicht angelegt werden nachdem man auf Schaf war (obwohl Slot frei war). Es kam die Meldung "Slot wird bereits benutzt".
-* Change rucksack page after transforming to add the retransform spell?
+* FIXED: Change rucksack page after transforming to add the retransform spell?
 * Unmorph character before repick. Should not be necessary since the Character instance is created newly and isMorphed should be false then, bug?
 * FIXED: Talras map cheats work in non debug mode.
 * Still no ability when transforming to Deranor's guard because the inventory is open and the item has the same ability and therefore the ability cannot be added a second time. Therefore, the item ability has to be removed (rucksack page hidden maybe) and then the ability has to be added, afterwards the rucksack page can be shown again.
@@ -314,7 +314,7 @@ Zone Transition:
 * FIXED: Changing back does not work. The savegame exists but loading does not work. Loading an invalid path (LoadGame()) does not lead to changing to the campaign screen. There is something wrong with the savegame or the state in which we call LoadGame().
 * FIXED (use always the folder Temporary for loading): Without numbers and dots in names: start Gardonar (Temporary folder does not exist), move to Gardonars Hell, move back to Gardonar works but loading Gardonars Hell then does not work although the savegame exists. Do we have to delete the Temporary folder first? Is there an overwriting problem?! It is not Gardonar.w3z is overwritten!!! Loading overwritten Gardonar.w3z does also work!
 * There is a limit in the size of a savegame filename.
-* Skill point amount on restoring character in saved game is wrong. Becomes one skill point less with every load. Cannot skill to the stored level of the ability and therefore does not skill the spell at all.
+* FIXED: Skill point amount on restoring character in saved game is wrong. Becomes one skill point less with every load. Cannot skill to the stored level of the ability and therefore does not skill the spell at all.
 * Character is not being selected only for the player after restoring the character on loading a game.
 
 http://www.hiveworkshop.com/threads/map-transition-does-not-work-when-loading-a-custom-savegame.286927/#post-3082377
@@ -390,7 +390,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: ASL bug: Items liegen bei totem Charakter auf dem Boden, wenn dieser eben tot ist und man einen Laden anwählt und abwählt. Sie dürfen nicht hinzugefügt werden, wenn der Charakter tot ist und nach Wiederbelebung müssen die Gegenstände erneut zum Inventar hinzugefügt werden.
 * Mitwirkende: Texte clearen wenn Mitwirkende geschlossen werden.
 * Kapuze: Unsichtbarkeitsfähigkeit geht nicht, wenn Rucksack offen ist. Liegt an Video? Beim Video wird sie deaktiviert.
-* war3.exe verwenden, zeigt keinen Splash Screen.
+* FIXED: war3.exe verwenden, zeigt keinen Splash Screen.
 * FIXED (muss Mono sein): Drachentöterin Soundset geht nicht.
 * DONE: Spieloptionen: Option "Pings deaktivieren".
 * FIXED: Durch die Änderung, dass getötete Einheiten nicht von Spawn Points entfernt werden überall nach countUnitsOfType(...) == 0 suchen und durch Bedingung, dass die Einheit tot ist ersetzen. Ansonsten gehen die Kill Quests nicht mehr.

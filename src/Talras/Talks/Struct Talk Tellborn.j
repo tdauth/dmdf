@@ -26,7 +26,7 @@ library StructMapTalksTalkTellborn requires Asl, StructMapTalksTalkFulco, Struct
 				call speech(info, character, true, tr("Ja, mein Freund bekam vor einigen Tagen Fieber und da ich ja selbst ein Schamane bin, wollte ich ihm natürlich dabei helfen, die Krankheit zu besiegen."), gg_snd_Tellborn7)
 				call speech(info, character, true, tr("Also habe ich einen Zauber auf ihn gesprochen, nur hat das dann irgendwie nicht so ganz geklappt und er verwandelte sich plötzlich in einen Bären."), gg_snd_Tellborn8)
 				call speech(info, character, true, tr("Das wollte ich wirklich nicht, das musst du mir glauben! Was sollen wir denn jetzt bloß tun? Am Ende wird er noch von einem Jäger erlegt."), gg_snd_Tellborn9)
-				/// @todo Charakter lacht/grinst
+				/// @todo Charakter lacht/grinst, irgendeine Freudenanimation
 			endif
 			call info.talk().showStartPage(character)
 		endmethod

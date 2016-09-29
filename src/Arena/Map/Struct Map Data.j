@@ -14,6 +14,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant real revivalTime = 5.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0
+		public static constant integer startLevel = 30
 		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 30
@@ -317,7 +318,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 					set j = j + 1
 				endloop
 				call SelectUnitForPlayerSingle(ACharacter.playerCharacter(whichPlayer).unit(), whichPlayer)
-				call SetHeroLevel(ACharacter.playerCharacter(whichPlayer).unit(), MapData.maxLevel, false)
 				call thistype.m_shrine.enableForCharacter(ACharacter.playerCharacter(whichPlayer), false)
 				call ACharacter.playerCharacter(whichPlayer).setMovable(true)
 				call ACharacter.playerCharacter(whichPlayer).panCamera()
@@ -363,6 +363,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 			return GetRectCenterY(gg_rct_area_safe)
 		endmethod
 
+		/// Required by \ref Classes.
+		public static method startFacing takes integer index returns real
+			return 0.0
+		endmethod
+
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
 			return GetRectCenterX(gg_rct_area_safe)
@@ -398,6 +403,11 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref Buildings.
 		public static method goldmine takes nothing returns unit
 			return null
+		endmethod
+
+		/// Required by teleport spells.
+		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
+			return false
 		endmethod
 	endstruct
 
