@@ -28,6 +28,8 @@ library StructMapVideosVideoDeranorsDeath requires Asl, StructGameGame, StructMa
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_deranors_death_0)
+
 			call TransmissionFromUnit(this.m_actorDeranor, tre("\"Ein König fällt in Dunkelheit, doch bleibt des Reiches altes Leid.\" Mein Geist wird zu meiner Burg zurückkehren. Wenn ihr den Mut habt, dann kommt dorthin und wir werden uns wieder sehen.", "\"A king falls in darkness, but the empires old suffering remains.\" My spirit will return to my castle. If you have the courage, then get there and we will see each other again."), gg_snd_Deranor2Mod)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Deranor2Mod))) then

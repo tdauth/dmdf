@@ -59,6 +59,8 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_recruit_the_high_elf_initial_view)
+
 			loop
 				exitwhen (RectContainsUnit(gg_rct_video_recruit_the_high_elf_character_target,  this.actor()))
 				if (wait(1.0)) then

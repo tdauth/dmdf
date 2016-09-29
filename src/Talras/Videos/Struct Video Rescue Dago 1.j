@@ -38,6 +38,8 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_rescue_dago_2)
+
 			// fade delay to skip death animations of bears!!!
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 0.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
 			if (wait(2.0)) then

@@ -32,6 +32,8 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_bloodthirstiness_1)
+			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_2, true, 5.50)
 
 			if (wait(2.50)) then
 				return

@@ -44,10 +44,24 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		endmethod
 
 		public stub method enable takes nothing returns boolean
+			local integer i = 0
 			local boolean result = this.setState(thistype.stateNew)
 			call this.questItem(thistype.questItemSupplyFromManfred).setState(thistype.stateNew)
 
 			set this.m_questAreaManfred = QuestAreaWarManfred.create(gg_rct_quest_war_manfred, true)
+
+			set i = 0
+			loop
+				exitwhen (i == thistype.maxSpawnPoints)
+				set this.m_killedSpawnPoint[i] = false
+				set i = i + 1
+			endloop
+
+			set this.m_spawnPoint[0] = SpawnPoints.cornEaters0()
+			set this.m_spawnPoint[1] = SpawnPoints.cornEaters1()
+			set this.m_spawnPoint[2] = SpawnPoints.cornEaters2()
+			set this.m_spawnPoint[3] = SpawnPoints.cornEaters3()
+			set this.m_spawnPoint[4] = SpawnPoints.cornEaters4()
 
 			return result
 		endmethod
@@ -64,6 +78,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		endmethod
 
 		private static method unitLives takes unit whichUnit returns boolean
+			debug call Print("Checking " + GetUnitName(whichUnit) + " with life: " + R2S(GetUnitState(whichUnit, UNIT_STATE_LIFE)))
 			return not IsUnitDeadBJ(whichUnit)
 		endmethod
 
@@ -88,7 +103,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 						set tmpCount = this.m_spawnPoint[i].countUnitsIf(thistype.unitLives)
 						set this.m_killedSpawnPoint[i] = tmpCount == 0
 						set count = count + tmpCount
-						debug call Print("Check spawn point " + I2S(i) + ": " + I2S(tmpCount))
+						debug call Print("Check spawn point " + I2S(i) + " with id " + I2S(this.m_spawnPoint[i]) + ": " + I2S(tmpCount) + " and total count of this spawn point units: " + I2S(this.m_spawnPoint[i].countUnits()))
 					endif
 					set i = i + 1
 				endloop
@@ -195,24 +210,10 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		public static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(tre("Nahrung von Manfred", "Supply from Manfred"), QuestWar.questItemSupplyFromManfred)
 			local AQuestItem questItem = 0
-			local integer i = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMonsterLure.blp")
 			call this.setDescription(tre("Um die bevorstehenden Angriffe der Orks und Dunkelelfen aufzuhalten, muss der eroberte Außenposten versorgt werden.  Außerdem müssen Fallen vor den Mauern aufgestellt werden, die es den Feinden erschweren, den Außenposten einzunehmen. Zusätzlich müssen auf dem Bauernhof kriegstaugliche Leute angeheuert werden.", "In order to stop the impeding attacks of Orcs and Dark Elves, the conquered outpost has to be supplied. In addition, traps has to be placed before the walls that make it harder for the enemies to conquer the outpost. Furthermore, war suitable people need to be hired at the farm."))
 			call this.setReward(thistype.rewardExperience, 200)
 			call this.setReward(thistype.rewardGold, 200)
-
-			set i = 0
-			loop
-				exitwhen (i == thistype.maxSpawnPoints)
-				set this.m_killedSpawnPoint[i] = false
-				set i = i + 1
-			endloop
-
-			set this.m_spawnPoint[0] = SpawnPoints.cornEaters0()
-			set this.m_spawnPoint[1] = SpawnPoints.cornEaters1()
-			set this.m_spawnPoint[2] = SpawnPoints.cornEaters2()
-			set this.m_spawnPoint[3] = SpawnPoints.cornEaters3()
-			set this.m_spawnPoint[4] = SpawnPoints.cornEaters4()
 
 			// quest item questItemSupplyFromManfred
 			set questItem = AQuestItem.create(this, tre("Besorgt Nahrung vom Bauern Manfred.", "Get food from the farmer Manfred."))

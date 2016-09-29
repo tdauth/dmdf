@@ -53,6 +53,8 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_the_chief_0)
+			call CameraSetupApplyForceDuration(gg_cam_the_chief_1, true, 10.0)
 
 			if (waitForCondition(1.0, thistype.conditionActorIsInTargetRect)) then
 				return

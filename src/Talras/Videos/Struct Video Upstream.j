@@ -134,6 +134,8 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 		endmethod
 
 		private method continueShipRoute takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_upstream_0)
+			call CameraSetupApplyForceDuration(gg_cam_upstream_1, true, 8.0)
 			loop
 				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_2,  this.unitActor(this.m_actorBoat)))
 				if (wait(1.0)) then

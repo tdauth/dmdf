@@ -833,6 +833,8 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'A1DL', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1J1', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1J2', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1UP', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1RM', false)
 
 				// hide abilities
 				call SetPlayerAbilityAvailable(Player(i), 'S003', false)
@@ -927,6 +929,8 @@ endif
 				call SetPlayerAbilityAvailable(Player(i), 'A1DL', true)
 				call SetPlayerAbilityAvailable(Player(i), 'A1J1', true)
 				call SetPlayerAbilityAvailable(Player(i), 'A1J2', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1UP', true)
+				call SetPlayerAbilityAvailable(Player(i), 'A1RM', true)
 
 				// hide abilities
 				call SetPlayerAbilityAvailable(Player(i), 'S003', true)

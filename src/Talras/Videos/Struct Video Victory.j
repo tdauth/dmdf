@@ -99,7 +99,7 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-
+			call thistype.fixCamera(gg_cam_victory_0)
 			call TransmissionFromUnitWithName(this.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tre("Du denkst, du könntest mir Angst machen? Höre, ich habe den Tod gesehen und er ließ mich kalt. Ich sah den Schrecken, den deine Sippe über mein Volk brachte, doch er ließ mich kalt. Dein Tod aber wird mir Freude bereiten!", "You think you could scare me? Listen, I've seen death and it left me cold. I saw the terror your clan brought over my people but it left me cold. But your death will delight me!"), gg_snd_Wigberht43)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Wigberht43))) then

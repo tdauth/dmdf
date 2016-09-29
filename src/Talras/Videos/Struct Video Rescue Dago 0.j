@@ -7,7 +7,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 		private trigger m_damageTrigger
 
 		implement Video
-		
+
 		private static method triggerConditionDamage takes nothing returns nothing
 			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
 		endmethod
@@ -31,24 +31,25 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 			set this.m_actorDago = this.unitActor(this.saveUnitActor(Npcs.dago()))
 			call IssueImmediateOrder(this.m_actorDago, "stop")
 			call SetUnitInvulnerable(this.m_actorDago, false)
-			
+
 			call ShowUnit(this.actor(), false)
 			call SetUnitInvulnerable(this.actor(), true)
 			call PauseUnit(this.actor(), true)
-			
+
 			set this.m_damageTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(this.m_damageTrigger, this.m_actorBear0, EVENT_UNIT_DAMAGED)
 			call TriggerRegisterUnitEvent(this.m_damageTrigger, this.m_actorBear1, EVENT_UNIT_DAMAGED)
 			call TriggerRegisterUnitEvent(this.m_damageTrigger, this.m_actorDago, EVENT_UNIT_DAMAGED)
 			call TriggerAddCondition(this.m_damageTrigger, Condition(function thistype.triggerConditionDamage))
-			
+
 			call IssueTargetOrder(this.m_actorBear0, "attack", this.m_actorDago)
 			call IssueTargetOrder(this.m_actorBear1, "attack", this.m_actorDago)
 			call IssueTargetOrder(this.m_actorDago, "attack", this.m_actorBear0)
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			
+			call thistype.fixCamera(gg_cam_rescue_dago_0)
+
 			call PlaySoundBJ(gg_snd_GrizzlyBearReady1)
 			if (wait(1.0)) then
 				return
@@ -105,7 +106,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 			call SetUnitInvulnerable(gg_unit_n008_0083, true)
 			call PauseUnit(gg_unit_n008_0027, true)
 			call SetUnitInvulnerable(gg_unit_n008_0027, true)
-			
+
 			return this
 		endmethod
 	endstruct

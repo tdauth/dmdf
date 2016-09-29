@@ -22,6 +22,8 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_dragon_hunt_0)
+
 			if (wait(1.0)) then
 				return
 			endif
@@ -45,7 +47,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayer1) + 1.0)) then
 				return
 			endif
-			
+
 			loop
 				exitwhen (RectContainsUnit(gg_rct_video_dragon_hunt_actor_target_0, this.actor()))
 				if (wait(1.0)) then
@@ -182,7 +184,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
 			call this.setActorOwner(MapData.neutralPassivePlayer)
-			
+
 			return this
 		endmethod
 	endstruct

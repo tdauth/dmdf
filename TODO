@@ -287,7 +287,7 @@ Critical errors:
 * Lag am Anfang: Fähigkeiten preloaden. Nicht nur Klassenfähigkeiten??? Zauberbuchfähigkeiten, die in Klassenauswahl angezeigt werden etc.
 * Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen? Kritische Bereiche identifizieren und absichern!
 Repickprobleme (vermutlich durch OpLimit irgendwo):
-* ACharactersScheme: Multiboard update does not happen immediately! It would also be better to show the characters schema after the intro video?
+* FIXED (OpLimit was broken by too long calls before calling refresh()): ACharactersScheme: Multiboard update does not happen immediately! It would also be better to show the characters schema after the intro video?
 * Multiboard verschwindet manchmal bei Repick.
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
 * Nach Repick ist Grundzauber nicht in den Favoriten.
@@ -350,14 +350,16 @@ Critical Transformation and equipment bugs (Let's Play):
 * If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug. Do you have to know if the abilty stacks or not? Only for not stacking abilities!
 * FIXED (Teilweise Bugs in der ASL weil onUnequip() etc. nicht beim Deaktivieren des Inventars aufgerufen wurde): Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht. Verwandlung von Fernkampf ging nicht, wurde vorher nicht zu Melee gemacht und später wieder durch Equipment zu Fernkampf.
 * FIXED: Nach Rückverwandlung von Deranors Leibwache ist die Waffe zunächst nicht sichtbar.
+Gegenstands-Icon-Fehler:
+* Nach dem Laden sind die verborgenen Zauberbuchfähigkeiten des Equipments nicht mehr verborgen. Scheint nicht nach dem Laden zu passieren sondern unter anderen Umständen?
 * Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel eines Druiden, Stab der Verzögerung, Knochenbogen. War das nur ein Bug? Nein Stiefel eines Druiden haben wirklich keine Zauberbuchfähigkeit. Stab der Verzögerung hatte allerdings deaktivierte Zauberbuchfähigkeit. Knochenbogen ebenfalls. Stab der Verzögerung und Knochenbogen haben zusätzlich eine Kugelfähigkeit die auch im Zauberbuch verborgen werden muss.
 * Die Zauberbuchfähigkeiten von Gegenständen sollte 12 Dummys drin haben, damit die Symbole verborgen werden und keine Zauber verdrängen in Zauberfähigkeiten.
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED (in wc3lib): Object data compression: Excluding does not work. Exclude channel data fields from reset! 'ANcl' - DataA1 - DataF1, Ncl1 - Ncl6, aeat, atp1 etc. Actually these fields should be compressed: aret, arut
-* Object data compression: Ignores strings of higher levels when the object level is now 1 and not 100 anymore. Check for all higher levels than object levels!
-* Object data compression: Resets spb1 by mistake!
+* FIXED (in wc3lib): Object data compression: Ignores strings of higher levels when the object level is now 1 and not 100 anymore. Check for all higher levels than object levels!
+* FIXED (in wc3lib): Object data compression: Resets spb1 by mistake!
 * FIXED: Kartenausgänge unsichtbar und unerkundet machen!
 * Elementarwesen: Passive Rüstungs, Lebens- und Schadensfähigkeiten, die pro Stufe zu besser werden und jedes Elementarwesen erhält. Ansonsten sind die Wesen auf Dauer zu schwach.
 * DONE: Stall nach Holzbruck.
@@ -387,13 +389,13 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 
 * FIXED: ASL bug: Items liegen bei totem Charakter auf dem Boden, wenn dieser eben tot ist und man einen Laden anwählt und abwählt. Sie dürfen nicht hinzugefügt werden, wenn der Charakter tot ist und nach Wiederbelebung müssen die Gegenstände erneut zum Inventar hinzugefügt werden.
 * Mitwirkende: Texte clearen wenn Mitwirkende geschlossen werden.
-* Kapuze: Unsichtbarkeitsfähigkeit geht nicht, wenn Rucksack offen ist.
+* Kapuze: Unsichtbarkeitsfähigkeit geht nicht, wenn Rucksack offen ist. Liegt an Video? Beim Video wird sie deaktiviert.
 * war3.exe verwenden, zeigt keinen Splash Screen.
 * FIXED (muss Mono sein): Drachentöterin Soundset geht nicht.
 * DONE: Spieloptionen: Option "Pings deaktivieren".
 * FIXED: Durch die Änderung, dass getötete Einheiten nicht von Spawn Points entfernt werden überall nach countUnitsOfType(...) == 0 suchen und durch Bedingung, dass die Einheit tot ist ersetzen. Ansonsten gehen die Kill Quests nicht mehr.
 * Splash Screen ist nicht immer über dem von Warcraft III. Jetzt wird war3.exe verwendet, welches gar keinen Splash Screen zeigt. Allerdings muss getestet werden, ob der Pfad auch bei anderen Nutzern per Registry erkannt wird.
-* Endlich die Objektdaten verkleinern: Reduziert Ladezeit, reduziert die Anzahl der Strings massiv.
+* FIXED (Abilities): Endlich die Objektdaten verkleinern: Reduziert Ladezeit, reduziert die Anzahl der Strings massiv.
 * FIXED: Verdeckte Gebiete sind teilweise sichtbar auf false in: Deranors Sumpf, Holzbruck, Holzbrucks Unterwelt.
 * DONE: Map Deranor: Needs Intro video with Deranor. Deranor should explain how the players have to open the next map exit.
 * Map transition: Nach map transition geht Schreinteleport nicht mehr. Man landet immer bei einem Gebiet. Nur bei Talras so. Hat das etwas mit dem Fehler -1 AIntegerVector zu tun, der auch nur bei Talras kam.
@@ -436,13 +438,12 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Klassenauswahltext "unwiderruflich" stimmt nicht mehr.
 * FIXED: Hundezwinger sollten weniger Hunde erzeugen (Auftrag die Verteidigung von Talras).
 * FIXED: Hunde zeitlich beschränkt machen (Auftrag die Verteidigung von Talras).
-* Karren und gekaufte Knechte sollten nicht teleportiert werden könne (Auftrag Krieg). Am besten MapData.excludeUnitTypeFromTeleport().
+* FIXED: Karren und gekaufte Knechte sollten nicht teleportiert werden könne (Auftrag Krieg). Am besten MapData.excludeUnitTypeFromTeleport().
 * Karren sollten durch schwebenden Gegenstand gekennzeichnet sein (Auftrag Krieg).
 * Ferdinand's sounds are missing in video Recruit.
 * FIXED (gekürzt und neu zu MP3 konvertiert): Carstens Sound sind abgeschnitten, neu als MP3 formatieren.
-* Nach dem Laden sind die verborgenen Zauberbuchfähigkeiten des Equipments nicht mehr verborgen. Scheint nicht nach dem Laden zu passieren sondern unter anderen Umständen?
 * FIXED: AOS-Einheiten werden nicht pausiert während Video?! Spawn während Video? Evtl. wird Spawn Timer nicht pausiert in Video?
-* Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter? ResetCamera() wurde nun eingefügt, behebt hoffentlich den Fehler. Zoom kam trotzdem ab und zu, sehr selten (Video Wigberht). Eventuell muss boolean doPan immer false sein? Wäre aber Schwachsinn, weil man ja zum Kameraobjekt will. Wenn es einmal passiert, passiert es danach immer. Eventuell muss nachdem die Höhenkamera pausiert wurde noch die Zeit gewartet werden, die der pan der Höhenkamera braucht. In CameraHeight.pause() 1 Sekunde warten. Das Gleiche muss in Character.setCameraTimer() geschehen.
+* Kamera zoomt in vielen Videos langsam hin. ResetCamera() oder so nicht nach Pause von CameraHeight oder des Timers für die obere Kamera vom Charakter? ResetCamera() wurde nun eingefügt, behebt hoffentlich den Fehler. Zoom kam trotzdem ab und zu, sehr selten (Video Wigberht). Eventuell muss boolean doPan immer false sein? Wäre aber Schwachsinn, weil man ja zum Kameraobjekt will. Wenn es einmal passiert, passiert es danach immer. Eventuell muss nachdem die Höhenkamera pausiert wurde noch die Zeit gewartet werden, die der pan der Höhenkamera braucht. In CameraHeight.pause() 1 Sekunde warten. Das Gleiche muss in Character.setCameraTimer() geschehen. call thistype.fixCamera(gg_cam_upstream_0) does not fix this problem, the zoom continues afterwards.
 * DONE: Erbe und Eheweib sollen reparieren und einfache Gebäude für Gold errichten können.
 * FIXED: Alle Gebäude sollen die Zauber aus dem Turm ebenfalls bekommen.
 * FIXED: Baumhaus braucht vergleichbare Zauber wie Turm. Auffüllen rausnehmen kann nicht gleichzeitig mit reparieren aktiv sein.
@@ -521,7 +522,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * New unit sounds of Dragon Slayer dont work (because they are stereo??).
 * Fix standing animations of character (dont cross arms etc. when wearing weapons).
 * Add stalls with all degrees (0, 90, 180, 270) and replace those tiny boxes.
-* Add a custom music system to play custom music tracks on loop. As long as there is no custom music system PlayThematicMusicForPlayer() has to be used. Otherwise the ingame music will be stopped.
+* Add a custom music system to play custom music tracks on loop (for example in dungeons). As long as there is no custom music system PlayThematicMusicForPlayer() has to be used. Otherwise the ingame music will be stopped.
 * DONE: Fix cursor in map Gardonar.
 * Arena opponnent walks out of the arena if he is blinded.
 * Kollisionsgrößen der Charaktere sind zu groß.
@@ -545,7 +546,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Finish Deranor's tomb.
 * FIXED: Fix the transition between maps in the campaign mode: The character should be at least transfered and the save game loaded. Besides there should be no class selection if the character is loaded.
 * FIXED: Imp Attack animation is no loop, leads to freeze unit.
-* Fix counting killing corn eaters in quest War. All spawn points seem to have 0 living units at the first kill.
+* Fix counting killing corn eaters in quest War. All spawn points seem to have 0 living units at the first kill. They are all dead and null units! addUnitWithType() bugged? or initialized before units are created. Corn eater unit is created in the map script at line 168298 (gg_unit_n016_0473) and witch (which works) is created at 168039 (gg_unit_h00F_0242). Maybe the function CreateNeutralHostile() reaches the OpLimit??? But then the units would not be created.
 * Fix disappearing quest from Wieland in quest War.
 * DONE: Add special effect of traps in quest War.
 * FIXED: Dragon fire ability of Dragon who is summoned by one of the endbosses slows down the game! Reduce area and range.

@@ -19,11 +19,11 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 
 			set this.m_actorMarkward = this.saveUnitActor(gg_unit_n014_0117)
 			call SetUnitPositionRect(this.unitActor(this.m_actorMarkward), gg_rct_video_the_duke_of_talras_markwards_position)
-			
+
 			set this.m_actorOsman = this.saveUnitActor(Npcs.osman())
 			call SetUnitPositionRect(this.unitActor(this.m_actorOsman), gg_rct_video_the_duke_of_talras_osmans_position)
 			call SetUnitFacing(this.unitActor(this.m_actorOsman), 290.39)
-			
+
 			set this.m_actorFerdinand = this.saveUnitActor(Npcs.ferdinand())
 			call SetUnitPositionRect(this.unitActor(this.m_actorFerdinand), gg_rct_video_the_duke_of_talras_ferdinands_position)
 			call SetUnitFacing(this.unitActor(this.m_actorFerdinand), 257.48)
@@ -38,6 +38,8 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_the_duke_of_talras_0)
+
 			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tre("Nun, sie sind also die Vasallen von denen mir berichtet wurde. Sie sollen rasch sprechen. Was treibt sie in diese Gegend?", "So, they are the vassals of whom was reported to me. They shall speak fast. What drives them to this area?"), gg_snd_Heimrich16)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich16))) then
@@ -145,7 +147,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
 			call this.setActorOwner(MapData.neutralPassivePlayer)
-			
+
 			return this
 		endmethod
 	endstruct

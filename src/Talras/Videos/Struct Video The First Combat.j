@@ -196,6 +196,8 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_the_first_combat_0)
+
 			call ForGroup(this.m_firstActorGroup, function thistype.groupFunctionSetHaldar)
 			call ForGroup(this.m_secondActorGroup, function thistype.groupFunctionSetBaldar)
 			if (wait(3.0)) then

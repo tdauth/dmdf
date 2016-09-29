@@ -49,6 +49,7 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
+			call thistype.fixCamera(gg_cam_recruit_initial_view)
 
 			call TransmissionFromUnit(this.m_actorFerdinand, tre("Hört mich an Bauern!", "Hear me farmers!"), null)
 
