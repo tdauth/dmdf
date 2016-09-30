@@ -357,6 +357,33 @@ Gegenstands-Icon-Fehler:
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* Hide timer dialog and stop revival timer when Fellow is dead and reset (quest The Norsemen).
+* Fix tombstones.
+* Bei Kill the bone dragons (Slaughter) kommt keine quest message mit counter!
+* Flügel des Todesengels brauchen Zauberbuchfähigkeit.
+* Alle Videofades durch einheitliche Funktionen ersetzen und mit Skipfade richtig umgehen!
+* Armselige Imps dürfen nicht teleportiert werden.
+* Wenn man Wielands Videos skipped stehen die Imps nicht da.
+* Forest fury ganz rechts wird ausgelassen bei Quest.
+* Wächter der Drachentöterin sollten kein Mana haben.
+* Ricman Schildblock ersetzen, passiv?
+* Ricmans Stand mit Tränken braucht Trankmarkierung (Die Verteidigung von Talras).
+* Die Belagerungswaffen zu zerstören und die Verteidigung geben zu viel Erfahrung? Am Ende viel Erfahrung geben.
+* Gebäude erst ab Stufe 30 erlauben.
+* Critical Error beim Kartenübergang zur Karte Gardonar, nach Einars Quest und Spruchrolle des Sammlers.
+* Ricman und Wigberht haben nach Reset Talkfähigkeit doppelt.
+* Wird UI und Cinematic mode zurückgesetzt bevor Kartenübergang zur Karte Gardonar?? Anscheinend schon, aber eventuell noch 2 Sekunden warten vor Map Change?
+* Computer AI steuert Verbündete in Karten außer Talras.
+* Dämonen-UI in Karten Deranors Sumpf und Holzbruck und Holzbrucks Unterwelt.
+* Deranors Sumpf braucht Musik.
+* Deranors Sumpf Gegner schwächer machen.
+* Deranors Sumpf Spawn Points mit Gegenständen!
+* Respawns zu Beginn deaktivieren erst nachdem das magische Tor geöffnet wurde Respawns von Creeps wieder aktivieren (Deranor).
+* Holzbruck braucht einen Ladehintergrund.
+* Holzbrucks Unterwelt braucht Ladehintergrund.
+* Holzbruck "Inventory is full" sound.
+* Find a working JNGP with a working test option and loadmpq as well as a war3error debugger to get all critical errors.
+* Vor Map change unbedingt unmorphen! Pferd kann nicht in eine andere Karte genommen werden! Unittype muss stimmen. morphed() ist danach false aber der unmorph findet nicht vor dem Change statt (Unit Type bleibt morphed).
 * FIXED (in wc3lib): Object data compression: Excluding does not work. Exclude channel data fields from reset! 'ANcl' - DataA1 - DataF1, Ncl1 - Ncl6, aeat, atp1 etc. Actually these fields should be compressed: aret, arut
 * FIXED (in wc3lib): Object data compression: Ignores strings of higher levels when the object level is now 1 and not 100 anymore. Check for all higher levels than object levels!
 * FIXED (in wc3lib): Object data compression: Resets spb1 by mistake!
