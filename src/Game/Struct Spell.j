@@ -333,6 +333,9 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 			//debug call Print("Set saved level to " + I2S(level) + " of spell " + GetAbilityName(this.ability()))
 		endmethod
 
+		/**
+		 * \return Returns the actual level of the spell which might differ from the ability level due to loading bugs of Warcraft III.
+		 */
 		public method savedLevel takes nothing returns integer
 			return this.m_savedLevel
 		endmethod

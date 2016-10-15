@@ -1,4 +1,10 @@
-﻿STRING 1
+﻿STRING 0
+// Gegenstände: I05P (Baupläne eines Magierturms), Ubertip (Tooltipp - Erweitert (utub))
+{
+|cffffcc00Benötigt Stufe 30|r|n|cffffcc00Elementarmagier und Zauberer|r|nErzeugt an einem Zielort ein Magierturm.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+}
+
+STRING 1
 {
 Kapitel 1: Talras 0.9
 }
@@ -1099,6 +1105,12 @@ STRING 184
 Schmiede (Grasland)
 }
 
+STRING 185
+// Gegenstände: I05Q (Baupläne einer Burg), Ubertip (Tooltipp - Erweitert (utub))
+{
+|cffffcc00Benötigt Stufe 30|r|n|cffffcc00Ritter und Drachentöter|r|nErzeugt an einem Zielort eine Burg.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+}
+
 STRING 186
 // Doodads: D03E (Stadtmauer 1 (Grasland)), Name (Name (dnam))
 {
@@ -1367,6 +1379,18 @@ STRING 230
 // Doodads: D04N (Treppe (Gebirge)), Name (Name (dnam))
 {
 Treppe (Gebirge)
+}
+
+STRING 231
+// Gegenstände: I05R (Baupläne einer Kirche), Ubertip (Tooltipp - Erweitert (utub))
+{
+|cffffcc00Benötigt Stufe 30|r|n|cffffcc00Kleriker und Nekromant|r|nErzeugt an einem Zielort eine Kirche.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+}
+
+STRING 232
+// Gegenstände: I05S (Baupläne eines Baumhauses), Ubertip (Tooltipp - Erweitert (utub))
+{
+|cffffcc00Benötigt Stufe 30|r|n|cffffcc00Druide und Waldläufer|r|nErzeugt an einem Zielort ein Baumhaus.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
 }
 
 STRING 235
@@ -4435,7 +4459,7 @@ Teleportiert den Elementarmagier an einen erkundeten Punkt auf der Karte und abs
 }
 
 STRING 873
-// Einheiten: h00B (Wächter), Name (Name (unam))
+// Einheiten: n055 (Wächter), Name (Name (unam))
 {
 Wächter
 }
@@ -7541,7 +7565,7 @@ STRING 1562
 }
 
 STRING 1563
-// Einheiten: n004 (Wigberht), Name (Name (unam))
+// Einheiten: H01C (Nordmann), Propernames (Eigennamen (upro))
 {
 Wigberht
 }
@@ -8926,102 +8950,6 @@ STRING 1912
 (Imp)
 }
 
-STRING 1913
-// Ausbaustufen: R001 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
-{
-Wächter stärken
-}
-
-STRING 1914
-// Ausbaustufen: R001 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
-{
-Wächter stärken
-}
-
-STRING 1915
-// Ausbaustufen: R001 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
-{
-Wächter stärken
-}
-
-STRING 1916
-// Ausbaustufen: R001 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
-{
-Wächter stärken
-}
-
-STRING 1917
-// Ausbaustufen: R001 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
-{
-Wächter stärken
-}
-
-STRING 1918
-// Ausbaustufen: R001 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
-{
-Wächter stärken
-}
-
-STRING 1919
-// Ausbaustufen: R001 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
-{
-Wächter stärken
-}
-
-STRING 1920
-// Ausbaustufen: R001 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
-{
-Wächter stärken
-}
-
-STRING 1921
-// Ausbaustufen: R002 (Verbesserter Holz-Abbau,Hoch entwickelter Holz-Abbau), Name (Name (gnam))
-{
-Steinabbau beschleunigen
-}
-
-STRING 1922
-// Ausbaustufen: R002 (Verbesserter Holz-Abbau,Hoch entwickelter Holz-Abbau), Name (Name (gnam))
-{
-Steinabbau beschleunigen
-}
-
-STRING 1923
-// Ausbaustufen: R002 (Verbesserter Holz-Abbau,Hoch entwickelter Holz-Abbau), Name (Name (gnam))
-{
-Steinabbau beschleunigen
-}
-
-STRING 1924
-// Ausbaustufen: R002 (Verbesserter Holz-Abbau,Hoch entwickelter Holz-Abbau), Name (Name (gnam))
-{
-Steinabbau beschleunigen
-}
-
-STRING 1925
-// Ausbaustufen: R002 (Verbesserter Holz-Abbau,Hoch entwickelter Holz-Abbau), Name (Name (gnam))
-{
-Steinabbau beschleunigen
-}
-
-STRING 1926
-// Ausbaustufen: R002 (Verbesserter Holz-Abbau,Hoch entwickelter Holz-Abbau), Name (Name (gnam))
-{
-Steinabbau beschleunigen
-}
-
-STRING 1927
-// Ausbaustufen: R002 (Verbesserter Holz-Abbau,Hoch entwickelter Holz-Abbau), Name (Name (gnam))
-{
-Steinabbau beschleunigen
-}
-
-STRING 1928
-// Ausbaustufen: R002 (Verbesserter Holz-Abbau,Hoch entwickelter Holz-Abbau), Name (Name (gnam))
-{
-Steinabbau beschleunigen
-}
-
 STRING 1930
 // Einheiten: u001 (Imp-Arbeiter), Name (Name (unam))
 {
@@ -9100,7 +9028,7 @@ Irmina
 }
 
 STRING 1951
-// Einheiten: n01T (Mathilda), Name (Name (unam))
+// Einheiten: H024 (Vagabundin), Propernames (Eigennamen (upro))
 {
 Mathilda
 }
@@ -10977,7 +10905,7 @@ STRING 2310
 }
 
 STRING 2311
-// Einheiten: h00B (Wächter), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n00L (Baldar), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Trommelhöhle - Schwarze Legion)
 }
@@ -10989,7 +10917,7 @@ STRING 2312
 }
 
 STRING 2313
-// Einheiten: n00L (Baldar), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n00N (Imp), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Trommelhöhle - Schwarze Legion)
 }
@@ -11001,13 +10929,13 @@ Lager der Schwarzen Legion
 }
 
 STRING 2315
-// Einheiten: n00N (Imp), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: u000 (Lager der Schwarzen Legion), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Trommelhöhle - Schwarze Legion)
 }
 
 STRING 2316
-// Einheiten: u000 (Lager der Schwarzen Legion), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: u001 (Imp-Arbeiter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Trommelhöhle - Schwarze Legion)
 }
@@ -11031,7 +10959,7 @@ Schwertkämpferin
 }
 
 STRING 2320
-// Einheiten: u001 (Imp-Arbeiter), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: u00C (Armseliger Imp-Arbeiter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Trommelhöhle - Schwarze Legion)
 }
@@ -15238,12 +15166,6 @@ STRING 3156
 Kunos Tochter
 }
 
-STRING 3157
-// Einheiten: n02S (Kunos Tochter), EditorSuffix (Name - Editor-Suffix (unsf))
-{
-(14 Jahre alt)
-}
-
 STRING 3158
 // Doodads: D0BJ (Erz (Grasland)), Name (Name (dnam))
 {
@@ -16556,12 +16478,6 @@ STRING 3395
 // Einheiten: n032 (Sack), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (2)
-}
-
-STRING 3396
-// Gegenstände: I02F (GNAAAAAAAAAAAAAAA), Name (Name (unam))
-{
-GNAAAAAAAAAAAAAAA
 }
 
 STRING 3397
@@ -30809,28 +30725,10 @@ STRING 7858
 Erhöht bei einer befreundeten Einheit die Angriffsrate um <A0KC,DataA1,%>% und das Bewegungstempo um <A0KC,DataB1,%>%. |nHält <A0KC,Dur1> Sekunden lang an.
 }
 
-STRING 7859
-// Einheiten: H015 (Metamorphosetester), Name (Name (unam))
-{
-Metamorphosetester
-}
-
-STRING 7860
-// Gegenstände: I03Q (Metamorphosetestgegenstand), Name (Name (unam))
-{
-Metamorphosetestgegenstand
-}
-
 STRING 7861
 // Fähigkeiten: A0KD (Metamorphosezauberbuch), Name (Name (anam))
 {
 Metamorphosezauberbuch
-}
-
-STRING 7862
-// Fähigkeiten: A0KE (Testmetamorphose), Name (Name (anam))
-{
-Testmetamorphose
 }
 
 STRING 7863
@@ -35869,12 +35767,6 @@ STRING 9804
 // Einheiten: H01C (Nordmann), Name (Name (unam))
 {
 Nordmann
-}
-
-STRING 9805
-// Einheiten: H01C (Nordmann), Propernames (Eigennamen (upro))
-{
-Wigberht
 }
 
 STRING 9806
@@ -45698,12 +45590,6 @@ STRING 13166
 Erhöht die Bewegungsgeschwindigkeit für <A1OX,Dur1> Sekunden um <A1OX,DataA1,%> %.
 }
 
-STRING 13167
-// Einheiten: u00C (Armseliger Imp-Arbeiter), EditorSuffix (Name - Editor-Suffix (unsf))
-{
-(Trommelhöhle - Schwarze Legion)
-}
-
 STRING 13168
 // Zerstörbare Objekte: B00S (Brücke), Name (Name (bnam))
 {
@@ -46296,12 +46182,6 @@ STRING 13266
 // Einheiten: H024 (Vagabundin), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Held)
-}
-
-STRING 13267
-// Einheiten: H024 (Vagabundin), Propernames (Eigennamen (upro))
-{
-Mathilda
 }
 
 STRING 13268
@@ -47367,7 +47247,7 @@ Nordischer Kriegshelm
 }
 
 STRING 13532
-// Einheiten: n055 (Wächter), Name (Name (unam))
+// Zauberverstärker/Effekte: B02N (), Bufftip (Tooltipp (ftip))
 {
 Wächter
 }
@@ -47754,12 +47634,6 @@ STRING 13596
 // Zauberverstärker/Effekte: B02N (), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Drachentöterin)
-}
-
-STRING 13597
-// Zauberverstärker/Effekte: B02N (), Bufftip (Tooltipp (ftip))
-{
-Wächter
 }
 
 STRING 13598
@@ -75571,30 +75445,6 @@ STRING 19770
 // Einheiten: n07G (Irminas Kiste mit Kräutern und Lebensmitteln), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Kräuter und Lebensmittel)
-}
-
-STRING 19771
-// Gegenstände: I05P (Baupläne eines Magierturms), Ubertip (Tooltipp - Erweitert (utub))
-{
-|cffffcc00Benötigt Stufe 20|r|n|cffffcc00Elementarmagier und Zauberer|r|nErzeugt an einem Zielort ein Magierturm.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
-}
-
-STRING 19772
-// Gegenstände: I05Q (Baupläne einer Burg), Ubertip (Tooltipp - Erweitert (utub))
-{
-|cffffcc00Benötigt Stufe 20|r|n|cffffcc00Ritter und Drachentöter|r|nErzeugt an einem Zielort eine Burg.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
-}
-
-STRING 19773
-// Gegenstände: I05R (Baupläne einer Kirche), Ubertip (Tooltipp - Erweitert (utub))
-{
-|cffffcc00Benötigt Stufe 20|r|n|cffffcc00Kleriker und Nekromant|r|nErzeugt an einem Zielort eine Kirche.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
-}
-
-STRING 19774
-// Gegenstände: I05S (Baupläne eines Baumhauses), Ubertip (Tooltipp - Erweitert (utub))
-{
-|cffffcc00Benötigt Stufe 20|r|n|cffffcc00Druide und Waldläufer|r|nErzeugt an einem Zielort ein Baumhaus.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
 }
 
 STRING 19775

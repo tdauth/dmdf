@@ -318,6 +318,7 @@ endif
 
 		/**
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
+		 * Required by \ref ClassSelection.
 		 */
 		public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
 			if (class == Classes.ranger()) then
@@ -550,11 +551,15 @@ endif
 
 		/**
 		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
+		 * Required by \ref Game.
 		 */
 		public static method playerGivesXP takes player whichPlayer returns boolean
 			return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE) or whichPlayer == thistype.orcPlayer
 		endmethod
 
+		/**
+		 * Required by \ref Game. Called by .evaluate()
+		 */
 		public static method initVideoSettings takes nothing returns nothing
 			/*
 			 * If AOS spawn is not paused, warriors might spawn during a video sequence and not be paused.
@@ -568,6 +573,9 @@ endif
 			call ShowUnit(gg_unit_o007_0208, false)
 		endmethod
 
+		/**
+		 * Required by \ref Game. Called by .evaluate()
+		 */
 		public static method resetVideoSettings takes nothing returns nothing
 			if (Aos.characterHasEntered.evaluate()) then
 				call Aos.continueSpawn.evaluate()
@@ -578,7 +586,7 @@ endif
 			call ShowUnit(gg_unit_o007_0208, true)
 		endmethod
 
-		/// Required by \ref Buildings.
+		/// Required by \ref Buildings. Called by .evaluate()
 		public static method goldmine takes nothing returns unit
 			return gg_unit_n06E_0487
 		endmethod

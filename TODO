@@ -374,7 +374,7 @@ Optimizing:
 * FIXED: Split up global hash tables and handle attachment hash tables.
 * FIXED: Split up unique keys as well.
 
-* Extract all war3map.wts files and use wc3trans.
+* Extract all war3map.wts files and use wc3trans. Import all current object data before.
 * wc3trans: Add option to copy translations for multiple strings.
 * Keiler: Kein Attachmentpoint für Schlafeffekt?
 * FIXED: Hide timer dialog and stop revival timer when Fellow is dead and reset (quest The Norsemen).
@@ -394,7 +394,7 @@ Optimizing:
 * Critical Error beim Kartenübergang zur Karte Gardonar, nach Einars Quest und Spruchrolle des Sammlers.
 * FIXED: Ricman und Wigberht haben nach Reset Talkfähigkeit doppelt.
 * Wird UI und Cinematic mode zurückgesetzt bevor Kartenübergang zur Karte Gardonar?? Anscheinend schon, aber eventuell noch 2 Sekunden warten vor Map Change?
-* Computer AI steuert Verbündete in Karten außer Talras. Die Steuerung des Spielers muss auf Neutral gesetzt werden (in allen Karten)!
+* FIXED: Computer AI steuert Verbündete in Karten außer Talras. Die Steuerung des Spielers muss auf Neutral gesetzt werden (in allen Karten)!
 * Dämonen-UI in Karten Deranors Sumpf und Holzbruck und Holzbrucks Unterwelt.
 * Deranors Sumpf braucht Musik.
 * Deranors Sumpf Gegner schwächer machen.

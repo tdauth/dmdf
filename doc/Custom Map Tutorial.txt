@@ -6,24 +6,19 @@ This tutorial covers how to create a custom map for the modification "The Power 
 Step 1: Importing and defining code
 First you should define all ASL required boolean constants in your custom map script:
 globals
-	constant boolean A_RTC = false
-	constant boolean A_JAPI = false
 	constant boolean A_SYSTEMS = true
-	constant boolean A_OBJECTS = true
 	constant boolean A_DEBUG_HANDLES = false
 	constant boolean A_DEBUG_NATIVES = false
-	constant boolean A_NET = false
-	constant boolean A_FPS_MOVEMENT = false
+	constant real A_MAX_COLLISION_SIZE = 300
+	constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
+	constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
 endglobals
 
 After that define the following constants in your custom map script:
-DMDF_TRADE - enables trade system via dialog
-DMDF_INVENTORY - enables advanced graphical inventory system
-DMDF_CHARACTER_MEMORY_ADMINISTRATION - enables saving and loading characters from disk
 DMDF_INFO_LOG - enables talk log system (GUI)
 DMDF_NPC_ROUTINES - enables NPC routines
-DMDF_CHARACTER_STATS - enables character stats system (GUI)
 DMDF_VIOLENCE - enables violence system (blood effects/sounds)
+DMDF_CREDITS - enables credits (GUI)
 
 After that you'll have to import the ASL and "Die Macht des Feuers" code by using the following
 statements in your custom map script:
@@ -36,21 +31,16 @@ Your custom map code should be imported like this:
 
 Here's an example custom map script of map "Talras":
 globals
-	constant boolean A_RTC = false
-	constant boolean A_JAPI = false
 	constant boolean A_SYSTEMS = true
-	constant boolean A_OBJECTS = true
 	constant boolean A_DEBUG_HANDLES = false
 	constant boolean A_DEBUG_NATIVES = false
-	constant boolean A_NET = false
-	constant boolean A_FPS_MOVEMENT = false
-	constant boolean DMDF_TRADE = true
-	constant boolean DMDF_INVENTORY = true
-	constant boolean DMDF_CHARACTER_MEMORY_ADMINISTRATION = true
+	constant real A_MAX_COLLISION_SIZE = 300
+	constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
+	constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
 	constant boolean DMDF_INFO_LOG = true
 	constant boolean DMDF_NPC_ROUTINES = true
-	constant boolean DMDF_CHARACTER_STATS = true
 	constant boolean DMDF_VIOLENCE = true
+	constant boolean DMDF_CREDITS = true
 endglobals
 
 //! import "Import Asl.j"
@@ -69,6 +59,152 @@ Import.j - file for map code library and import statements
 
 ...
 
+You have to provide the static struct MapData which defines several constants and methods required by the modification:
+
+struct MapData extends MapDataInterface
+	/// The map name is used for zones for example to detect the map file name.
+	public static constant string mapName = "TL"
+	/// This list of music files is set as map music during the map initialization.
+	public static constant string mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3"// //"Music\\Ingame.mp3;Music\\Talras.mp3"
+	/// The maximum number of human players who control a character.
+	public static constant integer maxPlayers = 6
+	/// The player who owns fellows whose control is shared by all users.
+	public static constant player alliedPlayer = Player(6)
+	/// The player for actors during video sequences. This prevents returning the units to their creep spots automatically.
+	public static constant player neutralPassivePlayer = Player(7)
+	/// This player is only required by Talras since there is an arena with opponents.
+	public static constant player arenaPlayer = Player(8)
+	public static constant real morning = 5.0
+	public static constant real midday = 12.0
+	public static constant real afternoon = 16.0
+	public static constant real evening = 18.0
+	public static constant real videoWaitInterval = 1.0
+	/// The fixed time in seconds which it takes until a character is revived automatically after his death.
+	public static constant real revivalTime = 35.0
+	public static constant real revivalLifePercentage = 100.0
+	public static constant real revivalManaPercentage = 100.0
+	public static constant integer startLevel = 0
+	public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
+	public static constant integer levelSpellPoints = 2
+	public static constant integer maxLevel = 10000
+	public static constant integer workerUnitTypeId = 'h00E'
+	/// If this value is true there will always be a class selection in the beginning if the map is started for the first time. Otherwise characters will be loaded from the gamecache in campaign mode if available.
+	public static constant boolean isSeparateChapter = true
+	public static sound cowSound = null
+
+	private static method create takes nothing returns thistype
+		return 0
+	endmethod
+
+	private method onDestroy takes nothing returns nothing
+	endmethod
+
+	/// Required by \ref Game.
+	public static method init takes nothing returns nothing
+	endmethod
+
+	/**
+	 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
+	 * Required by \ref ClassSelection.
+	 */
+	public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
+	endmethod
+
+	/// Required by \ref Classes.
+	public static method setCameraBoundsToPlayableAreaForPlayer takes player user returns nothing
+	endmethod
+
+	/// Required by \ref Game.
+	public static method resetCameraBoundsForPlayer takes player user returns nothing
+	endmethod
+
+	/// Required by \ref Game.
+	public static method initMapSpells takes ACharacter character returns nothing
+		call initMapCharacterSpells.evaluate(character)
+	endmethod
+
+	/// Required by \ref Game.
+	public static method onStart takes nothing returns nothing
+		call SuspendTimeOfDay(true)
+		call SetTimeOfDay(0.0)
+	endmethod
+
+	/// Required by \ref ClassSelection.
+	public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+	endmethod
+
+	/// Required by \ref ClassSelection.
+	public static method onRepick takes Character character returns nothing
+	endmethod
+
+	/// Required by \ref Game.
+	public static method start takes nothing returns nothing
+	endmethod
+
+	/// Required by \ref Classes.
+	public static method startX takes integer index returns real
+		return 0.0
+	endmethod
+
+	/// Required by \ref Classes.
+	public static method startY takes integer index returns real
+		return 0.0
+	endmethod
+
+	/// Required by \ref Classes.
+	public static method startFacing takes integer index returns real
+		return 0.0
+	endmethod
+
+	/// Required by \ref MapChanger.
+	public static method restoreStartX takes integer index, string zone returns real
+		return GetRectCenterX(gg_rct_start_holzbruck)
+	endmethod
+
+	/// Required by \ref MapChanger.
+	public static method restoreStartY takes integer index, string zone returns real
+		return GetRectCenterY(gg_rct_start_holzbruck)
+	endmethod
+
+	/// Required by \ref MapChanger.
+	public static method restoreStartFacing takes integer index, string zone returns real
+		return 270.0
+	endmethod
+
+	/// Required by \ref MapChanger.
+	public static method onRestoreCharacters takes string zone returns nothing
+	endmethod
+
+	/**
+	 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
+	 * Required by \ref Game.
+	 */
+	public static method playerGivesXP takes player whichPlayer returns boolean
+		return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE)
+	endmethod
+
+	/**
+	 * Required by \ref Game. Called by .evaluate()
+	 */
+	public static method initVideoSettings takes nothing returns nothing
+	endmethod
+
+	/**
+	 * Required by \ref Game. Called by .evaluate()
+	 */
+	public static method resetVideoSettings takes nothing returns nothing
+	endmethod
+
+	/// Required by \ref Buildings. Called by .evaluate()
+	public static method goldmine takes nothing returns unit
+		return null
+	endmethod
+
+	/// Required by teleport spells.
+	public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
+		return false
+	endmethod
+endstruct
 
 Step 2: Creating map terrain
 First of all you have to know that "Die Macht des Feuers" uses its own tileset ids.
@@ -179,7 +315,7 @@ Creating spawn points
 Releasing map
 
 Steps:
-* Export object data from map Talras and import it into this map. Talras is the map where object data changes should be made.
+* Export object data from map Talras and import it into this map. Talras is the map where object data changes should be made!
 * Check equality of object data to other maps.
 * Generate map shadows when saving map.
 * Generate string translation files for selected languages by using the function tre() and by extracting the war3map.wts file merging it with the current German one and with the English one and translating remaining untranslated German strings.
