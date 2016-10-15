@@ -72039,8 +72039,7 @@ STRING 18897
 Der Drachentöter erhöht sein Angriffstempo eine Zeit lang.|n<A06W,Cool1> Sekunden Abklingzeit. |n|n|cffffcc00Stufe 1|r - Erhöht sein Angriffstempo <A06W,Dur1> Sekunden lang um <A06W,DataB1,%> %.|n|cffffcc00Stufe 2|r - Erhöht sein Angriffstempo <A06W,Dur2> Sekunden lang um <A06W,DataB2,%> %.|n|cffffcc00Stufe 3|r -  Erhöht sein Angriffstempo <A06W,Dur3> Sekunden lang um <A06W,DataB3,%> %.|n|cffffcc00Stufe 4|r - Erhöht sein Angriffstempo <A06W,Dur4> Sekunden lang um <A06W,DataB4,%> %.|n|cffffcc00Stufe 5|r - Erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,DataB5,%> %.
 }
 
-STRING 18906
-// Fähigkeiten: A1O3 (Überlegenheit - Erlernen), Tip (Tooltipp - Normal (atp1))
+D
 {
 Überlegenheit erlernen
 }
