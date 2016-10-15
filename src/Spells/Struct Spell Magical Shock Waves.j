@@ -7,18 +7,18 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 		private effect m_effect
 		private ADynamicLightning m_lightning
 		private sound m_sound
-		
+
 		public method target takes nothing returns unit
 			return this.m_target
 		endmethod
-		
+
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
 			local SpellMagicalShockWaves this
 			local unit caster
 			local unit target
 			local real damage
-			if (DmdfHashTable.global().hasInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder)) then
-				set this = DmdfHashTable.global().integer(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder)
+			if (DmdfGlobalHashTable.global().hasInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, damageRecorder)) then
+				set this = DmdfGlobalHashTable.global().integer(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, damageRecorder)
 				if (this != 0) then
 					set caster = this.character().unit()
 					set target = damageRecorder.target()
@@ -43,25 +43,25 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 				debug call Print("Magical Shock Waves: no attached value")
 			endif
 		endmethod
-	
+
 		public static method create takes Spell spell, unit caster, unit target, real time returns thistype
 			local thistype this = thistype.allocate()
 			set this.m_target = target
 			debug call Print("Creating damage recorder for unit " + GetUnitName(target))
 			set this.m_damageRecorder = ADamageRecorder.create(target)
-			call DmdfHashTable.global().setInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorder, this)
+			call DmdfGlobalHashTable.global().setInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, this.m_damageRecorder, this)
 			call this.m_damageRecorder.setOnDamageAction(thistype.onDamageAction)
 			set this.m_effect = AddSpellEffectTargetById(SpellMagicalShockWaves.abilityId, EFFECT_TYPE_TARGET, target, "origin")
 			set this.m_lightning = ADynamicLightning.create(null, "DRAM", 0.01, caster, target)
 			set this.m_sound = CreateSound("Abilities\\Spells\\Other\\Drain\\SiphonManaLoop.wav", true, false, true, 12700, 12700, "")
 			call SetSoundChannel(this.m_sound, GetHandleId(SOUND_VOLUMEGROUP_SPELLS))
 			call PlaySoundOnUnitBJ(this.m_sound, 100.0, target)
-			
+
 			return this
 		endmethod
-		
+
 		public method onDestroy takes nothing returns nothing
-			call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorder)
+			call DmdfGlobalHashTable.global().removeInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, this.m_damageRecorder)
 			call this.m_damageRecorder.destroy()
 			call DestroyEffect(this.m_effect)
 			set this.m_effect = null
@@ -69,7 +69,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			call StopSound(this.m_sound, true, false)
 			set this.m_sound = null
 		endmethod
-		
+
 	endstruct
 
 	struct SpellMagicalShockWaves extends Spell
@@ -85,11 +85,11 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 		public static constant real damagePercentageStartValue = 5.0
 		public static constant real damagePercentageLevelValue = 10.0
 		private static sound castSound
-		
+
 		private static method filter takes nothing returns boolean
 			return not IsUnitDeadBJ(GetFilterUnit()) and not IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) // don't include mechanical boxes
 		endmethod
-		
+
 		/**
 		 * \return Returns a newly created group instance with all valid targets.
 		 */
@@ -107,7 +107,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			set filter = null
 			return targets
 		endmethod
-		
+
 		private method condition takes nothing returns boolean
 			local AGroup targets = this.targets()
 			local boolean result
@@ -158,7 +158,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 					call iterator.destroy()
 					set time = time - 1.0
 				endloop
-				
+
 				set iterator = buffs.begin()
 				loop
 					exitwhen (not iterator.isValid())
@@ -179,10 +179,10 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			call this.addGrimoireEntry('A102', 'A107')
 			call this.addGrimoireEntry('A103', 'A108')
 			call this.addGrimoireEntry('A104', 'A109')
-			
+
 			return this
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.castSound = CreateSound("Abilities\\Spells\\Other\\Drain\\SiphonMana.wav", false, false, true, 12700, 12700, "")
 			call SetSoundChannel(thistype.castSound, GetHandleId(SOUND_VOLUMEGROUP_SPELLS))

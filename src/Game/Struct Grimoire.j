@@ -149,7 +149,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		 * \param table Has to be a table with ability id - level entries (parent key - 0, child key - ability id, value - level).
 		 * \sa Grimoire#spellLevels
 		 */
-		public method readd takes AHashTable table returns nothing
+		public method readd takes AGlobalHashTable table returns nothing
 			local Spell spell
 			local integer level
 			local integer i = 0
@@ -187,8 +187,8 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		endmethod
 
 		/// \return Returns a newly created hash table with ability id - level entries  (parent key - 0, child key - ability id, value - level).
-		public method spellLevels takes nothing returns AHashTable
-			local AHashTable table = AHashTable.create()
+		public method spellLevels takes nothing returns AGlobalHashTable
+			local AGlobalHashTable table = AGlobalHashTable.create()
 			local integer i = 0
 			loop
 				exitwhen (i == this.m_spells.size())

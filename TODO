@@ -357,23 +357,44 @@ Gegenstands-Icon-Fehler:
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
-* Hide timer dialog and stop revival timer when Fellow is dead and reset (quest The Norsemen).
-* Fix tombstones.
+Optimizing:
+* Remove old unused data. This reduces the number of strings:
+	* DONE: Upgrades.
+	* Old wizard spells.
+	* Old wizard buffs.
+	* FIXED: Wächter in AOS.
+	* Old units.
+* FIXED: Remove tavern code.
+* Write tool to find unused object data in map script and other object (via selling abilities etc.).
+* Write a tool to find same base orders for abilities and group them.
+* Remove unused textures and models by writing a script which checks object data and texture paths/icon paths.
+* Removing some unused objects leads to critical errors.
+* Write script which checks for all units by neutral aggressive and checks if a spawn point is create or not.
+
+* FIXED: Split up global hash tables and handle attachment hash tables.
+* FIXED: Split up unique keys as well.
+
+* Extract all war3map.wts files and use wc3trans.
+* wc3trans: Add option to copy translations for multiple strings.
+* Keiler: Kein Attachmentpoint für Schlafeffekt?
+* FIXED: Hide timer dialog and stop revival timer when Fellow is dead and reset (quest The Norsemen).
+* Fix tombstones. Use an invisible model (platform doodad maybe).
+* Kamera ruckelt während Gespräch mit 3rd-Person-Kamera aktiviert.
 * Bei Kill the bone dragons (Slaughter) kommt keine quest message mit counter!
 * Flügel des Todesengels brauchen Zauberbuchfähigkeit.
 * Alle Videofades durch einheitliche Funktionen ersetzen und mit Skipfade richtig umgehen!
-* Armselige Imps dürfen nicht teleportiert werden.
+* FIXED: Armselige Imps dürfen nicht teleportiert werden.
 * Wenn man Wielands Videos skipped stehen die Imps nicht da.
-* Forest fury ganz rechts wird ausgelassen bei Quest.
-* Wächter der Drachentöterin sollten kein Mana haben.
+* FIXED: Forest fury ganz links am Ufer wird ausgelassen bei Quest.
+* FIXED: Wächter der Drachentöterin sollten kein Mana haben.
 * Ricman Schildblock ersetzen, passiv?
 * Ricmans Stand mit Tränken braucht Trankmarkierung (Die Verteidigung von Talras).
 * Die Belagerungswaffen zu zerstören und die Verteidigung geben zu viel Erfahrung? Am Ende viel Erfahrung geben.
-* Gebäude erst ab Stufe 30 erlauben.
+* FIXED: Gebäude erst ab Stufe 30 erlauben.
 * Critical Error beim Kartenübergang zur Karte Gardonar, nach Einars Quest und Spruchrolle des Sammlers.
-* Ricman und Wigberht haben nach Reset Talkfähigkeit doppelt.
+* FIXED: Ricman und Wigberht haben nach Reset Talkfähigkeit doppelt.
 * Wird UI und Cinematic mode zurückgesetzt bevor Kartenübergang zur Karte Gardonar?? Anscheinend schon, aber eventuell noch 2 Sekunden warten vor Map Change?
-* Computer AI steuert Verbündete in Karten außer Talras.
+* Computer AI steuert Verbündete in Karten außer Talras. Die Steuerung des Spielers muss auf Neutral gesetzt werden (in allen Karten)!
 * Dämonen-UI in Karten Deranors Sumpf und Holzbruck und Holzbrucks Unterwelt.
 * Deranors Sumpf braucht Musik.
 * Deranors Sumpf Gegner schwächer machen.

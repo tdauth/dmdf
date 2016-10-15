@@ -27,7 +27,7 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 
 		/// @todo Create effect.
 		private static method onTargetDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local integer level = Spell(DmdfHashTable.global().integer(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder)).level()
+			local integer level = Spell(DmdfGlobalHashTable.global().integer(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, damageRecorder)).level()
 			local real damage = GetEventDamage() * (thistype.damageReductionStartValueFactor + (level - 1) * thistype.damageReductionLevelBonus)
 			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + damage)
 			call Spell.showDamageAbsorbationTextTag(GetTriggerUnit(), damage)
@@ -44,14 +44,14 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 			call casterDamageRecorder.setOnDamageAction(thistype.onCasterDamageAction)
 			call targetDamageRecorder.setSaveData(false)
 			call targetDamageRecorder.setOnDamageAction(thistype.onTargetDamageAction)
-			call DmdfHashTable.global().setInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, targetDamageRecorder, this)
+			call DmdfGlobalHashTable.global().setInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, targetDamageRecorder, this)
 			loop
 				exitwhen (counter == thistype.time or not ASpell.allyTargetLoopCondition(GetSpellTargetUnit()) or not ASpell.allyTargetLoopCondition(GetTriggerUnit()))
 				call TriggerSleepAction(1.0)
 				set counter = counter + 1
 			endloop
 			call casterDamageRecorder.destroy()
-			call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, targetDamageRecorder)
+			call DmdfGlobalHashTable.global().removeInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, targetDamageRecorder)
 			call targetDamageRecorder.destroy()
 			call thistype.casterBuff.remove(GetTriggerUnit(), GetTriggerUnit())
 			call thistype.targetBuff.remove(GetTriggerUnit(), GetSpellTargetUnit())
@@ -65,7 +65,7 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 			call this.addGrimoireEntry('A0LN', 'A0LS')
 			call this.addGrimoireEntry('A0LO', 'A0LT')
 			call this.addGrimoireEntry('A0LP', 'A0LU')
-			
+
 			if (thistype.casterBuff == 0) then
 				set thistype.casterBuff = ABuff.create(thistype.casterBuffId)
 			endif

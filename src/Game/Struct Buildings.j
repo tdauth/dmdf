@@ -7,7 +7,7 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 		/**
 		 * Since the building allows collecting gold and many more things it should become available at a higher level.
 		 */
-		public static constant integer requiredLevel = 20
+		public static constant integer requiredLevel = 30
 		private static timer m_refillTimer
 		private static trigger m_bringGoldTrigger
 		private static trigger m_usageTrigger

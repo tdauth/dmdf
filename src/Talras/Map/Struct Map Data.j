@@ -585,7 +585,8 @@ endif
 
 		/// Required by teleport spells.
 		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
-			return unitTypeId == 'n04P' or unitTypeId == 'h021' or unitTypeId == 'h01Z' or unitTypeId == 'n04P' or unitTypeId == 'h022' or unitTypeId == 'h016' or unitTypeId == 'h020'
+			// Add all quest unit types of units which have to be moved somewhere.
+			return unitTypeId == 'n04P' or unitTypeId == 'h021' or unitTypeId == 'h01Z' or unitTypeId == 'n04P' or unitTypeId == 'h022' or unitTypeId == 'h016' or unitTypeId == 'h020' or unitTypeId == 'u00C'
 		endmethod
 	endstruct
 

@@ -155,6 +155,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_witch0
 		private static SpawnPoint m_witch1
 		private static SpawnPoint m_witch2
+		private static SpawnPoint m_witch3
 		private static SpawnPoint m_witches
 		private static SpawnPoint m_wildCreatures
 		private static SpawnPoint m_orcs0
@@ -757,6 +758,11 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call thistype.m_witch2.addNewItemType(index, 'I03E', 0.60)
 			call thistype.m_witch2.addNewItemType(index, 'I05H', 0.60)
 
+			set thistype.m_witch3 = SpawnPoint.create()
+			set index = thistype.m_witch3.addUnitWithType(gg_unit_h00F_0243, 1.0)
+			call thistype.m_witch3.addNewItemType(index, 'I03E', 0.60)
+			call thistype.m_witch3.addNewItemType(index, 'I05H', 0.60)
+
 			set thistype.m_witches = SpawnPoint.create()
 			set index = thistype.m_witches.addUnitWithType(gg_unit_h00F_0246, 1.0)
 			call thistype.m_witches.addNewItemType(index, 'I00B', 1.0)
@@ -1264,6 +1270,10 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 		public static method witch2 takes nothing returns SpawnPoint
 			return thistype.m_witch2
+		endmethod
+
+		public static method witch3 takes nothing returns SpawnPoint
+			return thistype.m_witch3
 		endmethod
 
 		public static method witches takes nothing returns SpawnPoint

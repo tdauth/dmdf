@@ -20,7 +20,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 
 		/// @todo Check if it is magical damage (check units damage type)
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local thistype spell = thistype(DmdfHashTable.global().integer(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder))
+			local thistype spell = thistype(DmdfGlobalHashTable.global().integer(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, damageRecorder))
 			local real reducedDamage = GetEventDamage() * spell.level() * thistype.damageLevelValue
 			local unit target = damageRecorder.target()
 			call SetUnitState(target, UNIT_STATE_LIFE, GetUnitState(target, UNIT_STATE_LIFE) + reducedDamage)
@@ -31,7 +31,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 		private method addUnit takes unit whichUnit returns nothing
 			local ADamageRecorder damageRecorder = ADamageRecorder.create(whichUnit)
 			call damageRecorder.setOnDamageAction(thistype.onDamageAction)
-			call DmdfHashTable.global().setInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder, this)
+			call DmdfGlobalHashTable.global().setInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, damageRecorder, this)
 			debug call Print(GetUnitName(whichUnit) + " enters curb region.")
 			call this.m_units.pushBack(whichUnit)
 			call this.m_damageRecorders.pushBack(damageRecorder)
@@ -44,7 +44,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			debug if (index == -1) then
 				debug call Print("Index shouldn't be -1")
 			debug endif
-			call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorders[index])
+			call DmdfGlobalHashTable.global().removeInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, this.m_damageRecorders[index])
 			debug call Print(GetUnitName(whichUnit) + " leaves curb region.")
 			call ADamageRecorder(this.m_damageRecorders[index]).destroy()
 			call this.m_damageRecorders.erase(index)
@@ -177,7 +177,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			local integer i = this.m_damageRecorders.backIndex()
 			loop
 				exitwhen (i < 0)
-				call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorders[i])
+				call DmdfGlobalHashTable.global().removeInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, this.m_damageRecorders[i])
 				call ADamageRecorder(this.m_damageRecorders[i]).destroy()
 				call this.m_damageRecorders.popBack()
 				set i = i - 1

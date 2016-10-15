@@ -26,7 +26,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		/*
 		 * Kuno
 		 */
-		public static constant integer witchSpawnPoints = 4
+		public static constant integer witchSpawnPoints = 5
 		private SpawnPoint array m_witchesSpawnPoint[thistype.witchSpawnPoints]
 		private boolean array m_killedWitches[thistype.witchSpawnPoints]
 		private timer m_kunosCartSpawnTimer
@@ -53,7 +53,8 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			set this.m_witchesSpawnPoint[0] = SpawnPoints.witch0()
 			set this.m_witchesSpawnPoint[1] = SpawnPoints.witch1()
 			set this.m_witchesSpawnPoint[2] = SpawnPoints.witch2()
-			set this.m_witchesSpawnPoint[3] = SpawnPoints.witches()
+			set this.m_witchesSpawnPoint[3] = SpawnPoints.witch3()
+			set this.m_witchesSpawnPoint[4] = SpawnPoints.witches()
 			call this.questItem(thistype.questItemKillTheWitches).setState(thistype.stateNew)
 			call this.displayUpdate()
 		endmethod

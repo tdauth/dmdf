@@ -17,7 +17,7 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 		private effect m_effect
 
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local thistype spell = DmdfHashTable.global().integer(DMDF_HASHTABLE_KEY_DAMAGERECORDER, damageRecorder)
+			local thistype spell = DmdfGlobalHashTable.global().integer(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, damageRecorder)
 			local unit caster = damageRecorder.target()
 			local real maxAbsorbedDamage = spell.level() * thistype.maxAbsorbedDamageLevelValue
 			local real absorbedDamage
@@ -39,11 +39,11 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 			set manaCost = absorbedDamage * manaCostPerDamagePoint
 			/// @todo Show casting effect
 			call SetUnitState(caster, UNIT_STATE_MANA, GetUnitState(caster, UNIT_STATE_MANA) - manaCost)
-			
+
 			if (GetUnitState(caster, UNIT_STATE_MANA) <= 0.0) then
 				set disable = true
 			endif
-			
+
 			call SetUnitState(caster, UNIT_STATE_LIFE, GetUnitState(caster, UNIT_STATE_LIFE) + absorbedDamage)
 			call thistype.showDamageAbsorbationTextTag(caster, absorbedDamage)
 
@@ -65,7 +65,7 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 				debug call Print("Creating damage recorder.")
 				set this.m_damageRecorder = ADamageRecorder.create(this.character().unit())
 				call this.m_damageRecorder.setOnDamageAction(thistype.onDamageAction)
-				call DmdfHashTable.global().setInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorder, this)
+				call DmdfGlobalHashTable.global().setInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, this.m_damageRecorder, this)
 				call this.m_damageRecorder.disable()
 			endif
 			if (this.m_damageRecorder.isEnabled()) then
@@ -86,7 +86,7 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 			set this.m_damageRecorder = 0
 			set this.m_absorbedDamage = 0.0
 			set this.m_effect = null
-			
+
 			call this.addGrimoireEntry('A1MB', 'A1MC')
 			call this.addGrimoireEntry('A0W6', 'A0WB')
 			call this.addGrimoireEntry('A0W7', 'A0WC')
@@ -99,7 +99,7 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 
 		public method onDestroy takes nothing returns nothing
 			if (this.m_damageRecorder != 0) then
-				call DmdfHashTable.global().removeInteger(DMDF_HASHTABLE_KEY_DAMAGERECORDER, this.m_damageRecorder)
+				call DmdfGlobalHashTable.global().removeInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, this.m_damageRecorder)
 				call this.m_damageRecorder.destroy()
 			endif
 			if (this.m_effect != null) then

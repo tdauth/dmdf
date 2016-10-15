@@ -225,18 +225,33 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 * Revive always at the first character's enabled revival.
 		 */
 		private method reviveAtActiveShrine takes boolean showEffect returns nothing
+			local boolean found = false
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapData.maxPlayers or found)
 				if (Character.playerCharacter(Player(i)) != 0 and Character.playerCharacter(Player(i)).revival() != 0) then
 					call ReviveHero(this.m_unit, Character.playerCharacter(Player(i)).revival().x(), Character.playerCharacter(Player(i)).revival().y(), showEffect)
 
-					return
+					set found = true
 				endif
 				set i = i + 1
 			endloop
-			debug call Print("Missing revival!")
-			call ReviveHero(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), showEffect)
+
+			if (found) then
+				debug call Print("Missing revival!")
+				call ReviveHero(this.m_unit, GetUnitX(this.m_unit), GetUnitY(this.m_unit), showEffect)
+			endif
+
+			/*
+			 * Make sure the timer does not run when the fellow is already being revived.
+			 */
+			if (this.m_revivalTimer != null) then
+				call PauseTimer(this.m_revivalTimer)
+			endif
+
+			if (this.m_revivalTimerDialog != null) then
+				call TimerDialogDisplay(this.m_revivalTimerDialog, false)
+			endif
 		endmethod
 
 		/**
@@ -273,7 +288,6 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 			if (this.m_talk != 0) then
 				call this.m_talk.enable()
-				call AddUnitToStock(this.m_unit, 'n05E', 1, 1)
 			endif
 			if (this.disableSellings()) then
 				set i = 0
