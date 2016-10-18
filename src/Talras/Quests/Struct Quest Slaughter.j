@@ -201,7 +201,19 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		endmethod
 
 		private static method stateConditionCompleted3 takes AQuestItem questItem returns boolean
-			return GetUnitTypeId(GetTriggerUnit()) == UnitTypes.boneDragon and SpawnPoints.boneDragons().countUnitsIf(thistype.isUnitBoneDragonAndNotDead) == 0
+			local thistype this = thistype(questItem.quest())
+			local integer count = 0
+			if (GetUnitTypeId(GetTriggerUnit()) == UnitTypes.boneDragon) then
+				set count = SpawnPoints.boneDragons().countUnitsIf(thistype.isUnitBoneDragonAndNotDead)
+				if (count == 0) then
+					return true
+				// get next one to ping
+				else
+					call this.displayUpdateMessage(Format(tre("%1%/3 Knochendrachen", "%1%/3 Bone Dragons")).i(3 - count).result())
+					call setQuestItemPingByUnitTypeId.execute(questItem, SpawnPoints.boneDragons(), UnitTypes.boneDragon)
+				endif
+			endif
+			return false
 		endmethod
 
 		private static method stateActionCompleted3 takes AQuestItem questItem returns nothing

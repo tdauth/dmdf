@@ -64,6 +64,7 @@ endif
 		private boolean m_cameraTimerEnabled
 
 		private boolean m_isMorphed
+		private SpellMetamorphosis m_morphSpell
 
 		/**
 		 * Handles Villager255 animations on attacking other units.
@@ -366,6 +367,10 @@ endif
 			return this.m_isMorphed
 		endmethod
 
+		public method morphSpell takes nothing returns SpellMetamorphosis
+			return this.m_morphSpell
+		endmethod
+
 		/**
 		 * Usually on passive hero transformation the grimoire abilities get lost, so they must be readded.
 		 */
@@ -400,6 +405,7 @@ endif
 			call this.updateGrimoireAfterPassiveTransformation()
 
 			set this.m_isMorphed = false
+			set this.m_morphSpell = 0
 			debug call Print("RESTORED")
 
 			return true
@@ -409,9 +415,12 @@ endif
 		* When a character morphes there has to be some remorph functionality e. g. when the character dies and is being revived.
 		* Besides he has to be restored when unmorphing (\ref Character#restoreUnit).
 		* \note Has to be called just before the character's unit morphes.
-		* \param abilityId Id of the ability which has to be casted to morph the character.
+		* \param spell The spell from which this method is called. Since there can only be one morphing at a time this spell can be accessed via \ref morphSpell() after successful morphing.
+		* \param disableInventory If this value is true, the inventory system of the characer is disabled.
+		* \param enableRucksackOnly If this value is true, at least the rucksack is enabled but \p disableInventory has to be false.
+		* \return Returns true on successful morphing. Otherwise it returns false.
 		*/
-		public method morph takes boolean disableInventory, boolean enableRucksackOnly returns boolean
+		public method morph takes SpellMetamorphosis spell, boolean disableInventory, boolean enableRucksackOnly returns boolean
 			debug if (GetUnitAbilityLevel(this.unit(), 'AInv') == 0) then
 			debug call Print("It is too late to store the items! Add a delay for the morphing ability!")
 			debug endif
@@ -438,6 +447,7 @@ endif
 			endif
 
 			set this.m_isMorphed = true
+			set this.m_morphSpell = spell
 			debug call this.print("MORPHED")
 
 			return true
@@ -688,6 +698,7 @@ endif
 				set this.m_fellows = AIntegerVector.create()
 			endif
 			set this.m_isMorphed = false
+			set this.m_morphSpell = 0
 
 			/*
 			 * We need a larger distance since the Doodads are much bigger in this modification than in the usual Warcraft III.

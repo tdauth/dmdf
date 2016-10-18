@@ -259,6 +259,8 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 			call VideoWeaponsFromWieland.video().play()
 			call waitForVideo(MapData.videoWaitInterval)
 
+			debug call Print("Place the imps.")
+
 			/*
 			 * Give the imps a new home.
 			 */

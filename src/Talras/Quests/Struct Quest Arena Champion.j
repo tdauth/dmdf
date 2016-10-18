@@ -1,10 +1,12 @@
-library StructMapQuestsQuestArenaChampion requires Asl, StructGameCharacter, StructMapMapNpcs
+library StructMapQuestsQuestArenaChampion requires Asl, Game, StructMapMapNpcs
 
 	struct QuestArenaChampion extends AQuest
 
 		implement CharacterQuest
 
 		public stub method enable takes nothing returns boolean
+			local Character character = Character(this.character())
+			call character.options().missions().addMission('A1UR', 'A1V3', this)
 			return super.enableUntil(0)
 		endmethod
 

@@ -1178,11 +1178,38 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		endmethod
 
 		private static method initKunosItems takes nothing returns nothing
-			//call ItemSpawnPoint.createFromItemWithType(gg_item_I06S_0618, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I02P_0651, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I02P_0652, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I02P_0653, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I02P_0654, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I02P_0647, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I02P_0648, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I02P_0650, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I02P_0649, 1.0)
+		endmethod
+
+		private static method initFarmSouthItems takes nothing returns nothing
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0668, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0667, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06S_0675, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0665, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0666, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06S_0674, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06S_0670, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06S_0669, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06S_0673, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06S_0672, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0679, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0681, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I01K_0680, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I016_0683, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I016_0684, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0676, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0677, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0678, 1.0)
 		endmethod
 
 		public static method init takes nothing returns nothing
-
 			/**
 			 * Start with new OpLimit since it takes many many operations.
 			 */
@@ -1196,6 +1223,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initMillHill)
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initStartItems)
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initKunosItems)
+			call ForForce(bj_FORCE_PLAYER[0], function thistype.initFarmSouthItems)
 		endmethod
 
 		public static method spawn takes nothing returns nothing

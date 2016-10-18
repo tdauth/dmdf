@@ -334,9 +334,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 
 		private static method onInit takes nothing returns nothing
-			local integer i
+			local integer i = 0
 			// disable the spell book ability to get a passive ability without icon
-			set i = 0
 			loop
 				exitwhen (i == bj_MAX_PLAYERS)
 				call SetPlayerAbilityAvailable(Player(i), 'A19N', false)
@@ -365,6 +364,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1R4', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1TL', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1TN', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A0KE', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -647,7 +647,6 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_skullMask.addAbility('A1E8', true)
 			call thistype.m_skullMask.addAbility('A1EB', true)
 
-			// NEW
 			set thistype.m_dagosDagger = ItemType.createSimple('I02O', ItemType.equipmentTypePrimaryWeapon)
 			call thistype.m_dagosDagger.addAbility('A020', true)
 			call thistype.m_dagosDagger.addAbility('A021', true)
@@ -655,7 +654,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_wingsOfDeathAngel = ItemType.createSimple('I02Q', ItemType.equipmentTypeArmour)
 			call thistype.m_wingsOfDeathAngel.addAbility('A030', true)
 			call thistype.m_wingsOfDeathAngel.addAbility('A02B', true)
-			call thistype.m_wingsOfDeathAngel.addAbility('A022', true)
+			call thistype.m_wingsOfDeathAngel.addAbility('A0KE', true)
 
 			set thistype.m_vampireNecklace = ItemType.createSimple('I02T', ItemType.equipmentTypeArmour)
 			call thistype.m_vampireNecklace.addAbility('AIi4', true)

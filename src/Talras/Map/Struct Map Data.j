@@ -182,7 +182,7 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 		endmethod
 
 		private static method createTombstone takes rect whichRect, string text returns nothing
-			local trackable tombStoneTrackable = CreateTrackable("units\\nightelf\\Wisp\\Wisp.mdl", GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
+			local trackable tombStoneTrackable = CreateTrackable("Doodads\\Terrain\\InvisiblePlatform\\InvisiblePlatform.mdl", GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
 			local trigger trackTrigger = CreateTrigger()
 			call TriggerRegisterTrackableTrackEvent(trackTrigger, tombStoneTrackable)
 			call TriggerAddCondition(trackTrigger, Condition(function thistype.trigggerConditionTrack))

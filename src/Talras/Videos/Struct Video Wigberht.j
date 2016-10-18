@@ -262,9 +262,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			call PauseUnit(this.unitActor(this.m_actorWigberht), false)
 			call SetUnitInvulnerable(this.unitActor(this.m_actorWigberht), false)
 			call SetUnitMoveSpeed(this.unitActor(this.m_actorWigberht), thistype.wigberhtMoveSpeed)
-			if (not this.m_orcGuardians.targetOrder("attack", this.unitActor(this.m_actorWigberht))) then
-				debug call Print("ORDER FAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIILED")
-			endif
+			call this.m_orcGuardians.targetOrder("attack", this.unitActor(this.m_actorWigberht))
 			call IssueTargetOrder(this.unitActor(this.m_actorWigberht), "attack",  this.m_orcGuardians.units().front())
 
 			loop

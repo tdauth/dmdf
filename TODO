@@ -278,9 +278,10 @@ Handlung:
 
 Aufgehoben für Version 0.9:
 Critical errors:
+* Fix the war3map_en.wts file for Talras by undoing some commits and update the English Talras map.
 * Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Excel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
-* Orcs bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
+* Orks bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
 * Nach dem Laden die Icon-Positionen fixen. Entfernen und Hinzufügen von Attack und Move führt dazu, dass die beiden Befehle ganz verschwinden.
 * Lange Ladezeit: Widgetizer mit deutschem War3Patch ausprobieren. Erst Widgetizer verwenden, dann war3mapoptimizer!
@@ -288,11 +289,13 @@ Critical errors:
 * FIXED (AInventory revival trigger): Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen? Kritische Bereiche identifizieren und absichern!
 Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED (OpLimit was broken by too long calls before calling refresh()): ACharactersScheme: Multiboard update does not happen immediately! It would also be better to show the characters schema after the intro video?
+Repick:
 * Multiboard verschwindet manchmal bei Repick.
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
 * Nach Repick ist Grundzauber nicht in den Favoriten.
 * Nach Repick ist ab und zu entweder ein Zauber der Klasse nicht da oder noch ein Zauber der alten Klasse stattdessen.
 * Vermutung: Spell.onDestroy() remove funktioniert nicht immer (OpLimit???) ODER Konstruktor Spell.create() bzw. Spell.createWithEvent() wird nicht verwendet. Dann landet der Zauber nicht in den classSpells().
+
 * speech(): es wird nicht gewartet neue speeches() überlappen (texttags?!). Passiert nur manchmal.
 * FIXED (Verwandlungsbugs und AInventory onEquip() bugs): Equipmenteffekte gehen nach Reiten auf Schaf nicht direkt.
 * FIXED: Don't add equipment abilities to character actor if only rucksack is enabled or inventory is disabled completely.
@@ -300,7 +303,7 @@ Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED: Change rucksack page after transforming to add the retransform spell?
 * Unmorph character before repick. Should not be necessary since the Character instance is created newly and isMorphed should be false then, bug?
 * FIXED: Talras map cheats work in non debug mode.
-* Still no ability when transforming to Deranor's guard because the inventory is open and the item has the same ability and therefore the ability cannot be added a second time. Therefore, the item ability has to be removed (rucksack page hidden maybe) and then the ability has to be added, afterwards the rucksack page can be shown again.
+* FIXED (done in SpellMetamorphosis): Still no ability when transforming to Deranor's guard because the inventory is open and the item has the same ability and therefore the ability cannot be added a second time. Therefore, the item ability has to be removed (rucksack page hidden maybe) and then the ability has to be added, afterwards the rucksack page can be shown again.
 * FIXED: Loading game doesn't work.
 * Remove old save games when ending game or do not load them when changing the map for the first time to Gardonar. Otherwise if you start a new game it will try to load the old savegame.
 * If all favorites are used in the grimoire there must be a switch with favorites button in the grimoire. Otherwise non spell can be removed!
@@ -313,14 +316,14 @@ Zone Transition:
 * FIXED: Items are placed on the ground together with backpack changing items.
 * FIXED: Changing back does not work. The savegame exists but loading does not work. Loading an invalid path (LoadGame()) does not lead to changing to the campaign screen. There is something wrong with the savegame or the state in which we call LoadGame().
 * FIXED (use always the folder Temporary for loading): Without numbers and dots in names: start Gardonar (Temporary folder does not exist), move to Gardonars Hell, move back to Gardonar works but loading Gardonars Hell then does not work although the savegame exists. Do we have to delete the Temporary folder first? Is there an overwriting problem?! It is not Gardonar.w3z is overwritten!!! Loading overwritten Gardonar.w3z does also work!
-* There is a limit in the size of a savegame filename.
-* FIXED: Skill point amount on restoring character in saved game is wrong. Becomes one skill point less with every load. Cannot skill to the stored level of the ability and therefore does not skill the spell at all.
-* Character is not being selected only for the player after restoring the character on loading a game.
-
+* FIXED (see name rules): There is a limit in the size of a savegame filename.
 http://www.hiveworkshop.com/threads/map-transition-does-not-work-when-loading-a-custom-savegame.286927/#post-3082377
 - No underscores in campaign names.
 - Shorter file names for savegames.
 - Probably no dots in savegames or campaign names.
+
+* FIXED: Skill point amount on restoring character in saved game is wrong. Becomes one skill point less with every load. Cannot skill to the stored level of the ability and therefore does not skill the spell at all.
+* Character is not being selected only for the player after restoring the character on loading a game. Needs 0 timer?
 
 Mehrspielertest:
 * Wenn man Diakon tötet, Spielabsturz. Konnte nicht immer reproduziert werden. Braucht man mindestens 2 menschliche Spieler?
@@ -380,15 +383,15 @@ Optimizing:
 * FIXED: Hide timer dialog and stop revival timer when Fellow is dead and reset (quest The Norsemen).
 * Fix tombstones. Use an invisible model (platform doodad maybe).
 * Kamera ruckelt während Gespräch mit 3rd-Person-Kamera aktiviert.
-* Bei Kill the bone dragons (Slaughter) kommt keine quest message mit counter!
-* Flügel des Todesengels brauchen Zauberbuchfähigkeit.
+* FIXED: Bei Kill the bone dragons (Slaughter) kommt keine quest message mit counter!
+* FIXED: Flügel des Todesengels brauchen Zauberbuchfähigkeit für den Teleport.
 * Alle Videofades durch einheitliche Funktionen ersetzen und mit Skipfade richtig umgehen!
 * FIXED: Armselige Imps dürfen nicht teleportiert werden.
-* Wenn man Wielands Videos skipped stehen die Imps nicht da.
+* Wenn man Wielands Videos skipt stehen die Imps nicht da. Sollte eigentlich nie passieren, siehe stateActionCompletedReportWieland(). Außer das Video wird nicht abgeschlossen.
 * FIXED: Forest fury ganz links am Ufer wird ausgelassen bei Quest.
 * FIXED: Wächter der Drachentöterin sollten kein Mana haben.
 * Ricman Schildblock ersetzen, passiv?
-* Ricmans Stand mit Tränken braucht Trankmarkierung (Die Verteidigung von Talras).
+* FIXED: Ricmans Stand mit Tränken braucht Trankmarkierung (Die Verteidigung von Talras).
 * Die Belagerungswaffen zu zerstören und die Verteidigung geben zu viel Erfahrung? Am Ende viel Erfahrung geben.
 * FIXED: Gebäude erst ab Stufe 30 erlauben.
 * Critical Error beim Kartenübergang zur Karte Gardonar, nach Einars Quest und Spruchrolle des Sammlers.
@@ -404,7 +407,7 @@ Optimizing:
 * Holzbrucks Unterwelt braucht Ladehintergrund.
 * Holzbruck "Inventory is full" sound.
 * Find a working JNGP with a working test option and loadmpq as well as a war3error debugger to get all critical errors.
-* Vor Map change unbedingt unmorphen! Pferd kann nicht in eine andere Karte genommen werden! Unittype muss stimmen. morphed() ist danach false aber der unmorph findet nicht vor dem Change statt (Unit Type bleibt morphed).
+* FIXED: Vor Map change unbedingt unmorphen! Pferd kann nicht in eine andere Karte genommen werden! Unittype muss stimmen. morphed() ist danach false aber der unmorph findet nicht vor dem Change statt (Unit Type bleibt morphed).
 * FIXED (in wc3lib): Object data compression: Excluding does not work. Exclude channel data fields from reset! 'ANcl' - DataA1 - DataF1, Ncl1 - Ncl6, aeat, atp1 etc. Actually these fields should be compressed: aret, arut
 * FIXED (in wc3lib): Object data compression: Ignores strings of higher levels when the object level is now 1 and not 100 anymore. Check for all higher levels than object levels!
 * FIXED (in wc3lib): Object data compression: Resets spb1 by mistake!
@@ -448,20 +451,20 @@ Optimizing:
 * DONE: Map Deranor: Needs Intro video with Deranor. Deranor should explain how the players have to open the next map exit.
 * Map transition: Nach map transition geht Schreinteleport nicht mehr. Man landet immer bei einem Gebiet. Nur bei Talras so. Hat das etwas mit dem Fehler -1 AIntegerVector zu tun, der auch nur bei Talras kam.
 * Map transition: -1 index AIntegerVector wenn man direkt nach Talras zurückgeht.
-* Map transition: Spieleoptionen icon ist weiter oben. Wird es entfernt?! Sollte bei Map transition auch neu erzeugt werden, zumindest die Einheit.
-* Iconpositionen von Zauberbüchern der Spieloptionen festlegen.
+* FIXED: Map transition: Spieleoptionen icon ist weiter oben. Wird es entfernt?! Sollte bei Map transition auch neu erzeugt werden, zumindest die Einheit.
+* FIXED: Iconpositionen von Zauberbüchern der Spieloptionen festlegen.
 * Für jeden optionalen Auftrag einen Eintrag in der Liste der Aufträge erzeugen.
 * FIXED (muss Gebäude sein mit Verlauf): Barrikaden der Orks blocken nicht. Einfach Blocker erzeugen pro Barrikade und bei Tod vernichten?! Wieso geht Verlauf nicht?
 * FIXED: Maximalstufe in Holzbruck ist nur 30.
 * War transformed als Engel. Wurde getötet (mit rucksack only) beim Betreten von Baldars Gebiet. Nach Tod lagen Gegenstände auf dem Boden.
-* Trackables an den Grabsteinen erzeugen (Signs) zum Lesen. Easteregg wie in Gothic 2, Referenz zu Gothic. Hätte Faelon gerne gehabt.
+* FIXED: Trackables an den Grabsteinen erzeugen (Signs) zum Lesen. Easteregg wie in Gothic 2, Referenz zu Gothic. Hätte Faelon gerne gehabt.
 * FIXED: Man konnte als Engel/Dämon verwandelt die Trommelhöhle verlassen. Beim Verlassen der Höhle im struct Aos zurückverwandeln, falls verwandelt!
 * AOS-Leaderboard-Titel fehlte?!
 * FIXED: Keine Abklingzeit für Tellborns Geisterrune obwohl unendlich oft benutzbar.
-* Kornfresserauftrag nach erstem Kornfresser abgeschlossen.
+* Kornfresserauftrag nach erstem Kornfresser abgeschlossen. Prüfen ob die Member der Spawnpoints initial null sind.
 * Wenn ein Video in bestimmtem Moment unterbrochen wird (fade????) in Karte Gardonar (Intro) kommen danach noch Transmissions.
 * Noch einmal die ganzen Zaubertrigger prüfen: Wird Mana schon verbraucht, obwohl gestoppt wird?
-* Alle laufenden Zauber unterbrechen bevor man die Karte wechselt (DynamicLightnings etc.). Am besten auch Ausfaden wie in Bonus-Kampagne und Einheit pausieren, damit kein Unsinn mehr passiert.
+* Alle laufenden Zauber unterbrechen bevor man die Karte wechselt (DynamicLightnings etc.). Am besten auch Ausfaden wie in Bonus-Kampagne und Einheit pausieren, damit kein Unsinn mehr passiert. Allerdings einfaden nicht vergessen wenn man wieder in die Karte kommt!
 * Optional: ClassGrimoireEntry mit dem neuen AMultipageSpellbook-System umsetzen?
 * FIXED: Mit dem neuen Startlevel beginnt man mit Stufe 2?!
 * FIXED: Startlevel pro Karte einbauen, da manche Karten ein höheres Level erfordern.

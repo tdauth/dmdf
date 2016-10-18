@@ -140,7 +140,7 @@ library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, Struct
 					/*
 					 * This method changes the character ALWAY to its melee unit type to make sure that the passive hero transformation works afterwards.
 					 */
-					if (character.morph(this.disableInventory(), this.enableOnlyRucksack())) then
+					if (character.morph(this, this.disableInventory(), this.enableOnlyRucksack())) then
 						/*
 						 * The ability is removed then made permanent and casted again that it will not be losed by the metamorphosis.
 						 * Removing all grimoire abilities including the ability itself is only done for safety to make sure that no grimoire

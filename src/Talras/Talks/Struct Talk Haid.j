@@ -1,4 +1,4 @@
-library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuestsQuestGoldForTheTradingPermission
+library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuestsQuestGoldForTheTradingPermission, StructMapTalksTalkFerdinand
 
 	struct TalkHaid extends Talk
 		private boolean array m_completedWithCostKnowledge[12] /// @todo MapData.maxPlayers

@@ -1,4 +1,4 @@
-library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcRoutines, StructMapMapNpcs, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath
+library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMapMapFellows, StructMapMapNpcRoutines, StructMapMapNpcs, StructMapTalksTalkDragonSlayer, StructMapVideosVideoDeranor, StructMapVideosVideoDeranorsDeath
 
 	struct QuestAreaDeranor extends QuestArea
 

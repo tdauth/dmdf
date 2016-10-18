@@ -1,4 +1,4 @@
-library StructMapQuestsQuestAmongTheWeaponsPeasants requires Asl, StructGameCharacter, StructMapMapNpcs
+library StructMapQuestsQuestAmongTheWeaponsPeasants requires Asl, Game, StructMapMapNpcs
 
 	struct QuestAmongTheWeaponsPeasants extends AQuest
 
@@ -6,7 +6,7 @@ library StructMapQuestsQuestAmongTheWeaponsPeasants requires Asl, StructGameChar
 
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
-			//call character.options().missions().addMission('A1R9', 'A1RL', this)
+			call character.options().missions().addMission('A1UQ', 'A1V2', this)
 			return super.enable()
 		endmethod
 

@@ -1,4 +1,4 @@
-library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGrimoire
+library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGrimoire, StructSpellsSpellMetamorphosis
 
 	/**
 	 * \brief Allows changing the map in singleplayer or in multiplayer.
@@ -102,17 +102,37 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		endmethod
 
 		/**
+		 * Unmorphing the character before a map change is essential. Otherwise the unit type is wrong on restoring the character when the character comes back to the map.
+		 * Besides the morphing would have to be considered in the next map.
+		 * \param character The character which is restored if he/she is currently morphed.
+		 */
+		private static method unmorphCharacterIfNecessary takes Character character returns boolean
+			if (character.isMorphed()) then
+				return character.morphSpell().restoreUnit()
+			endif
+
+			return true
+		endmethod
+
+		/**
 		 * Stores all player characters to a game cache as well as general data which is required in the next map.
 		 * Stores the current savegame name and the zone name of the current zone that the next map can identify where the characters come from.
 		 * The game cache uses the identifier \ref thistype.gameCacheName.
 		 */
-		public static method storeCharactersSinglePlayer takes nothing returns nothing
+		public static method storeCharactersSinglePlayer takes nothing returns boolean
 			local gamecache cache  = InitGameCache(thistype.gameCacheName)
+			local Character character = 0
 			local integer i = 0
 			loop
 				exitwhen (i == MapData.maxPlayers)
-				if (Character.playerCharacter(Player(i)) != 0) then
-					call thistype.storeCharacterSinglePlayer(cache, Character.playerCharacter(Player(i)))
+				set character = Character(Character.playerCharacter(Player(i)))
+				if (character != 0) then
+					if (not thistype.unmorphCharacterIfNecessary(character)) then
+						debug call Print("Could not unmorph character of player " + GetPlayerName(character.player()))
+						return false
+					endif
+				
+					call thistype.storeCharacterSinglePlayer(cache, character)
 				endif
 				set i = i + 1
 			endloop
@@ -122,6 +142,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call StoreString(cache, "Zone", "Zone", MapData.mapName)
 			call SaveGameCache(cache)
 			set cache = null
+
+			return true
 		endmethod
 
 		/**
@@ -342,7 +364,12 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			debug call Print("Before storing characters")
 			// removing buffs and summoned units is also done in the Bonus Campaign, probably it indicates the elapsed time after a transition
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.removeBuffsAndSummonedUnits) // New Op Limit
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.storeCharactersSinglePlayer) // New Op Limit
+
+			if (not thistype.storeCharactersSinglePlayerNewOpLimit.evaluate()) then // New Op Limit
+				debug call Print("Could store all characters.")
+				return
+			endif
+
 			debug call Print("Saving map as " + savePath)
 			debug call Print("Load game path: " + loadPath)
 			call SaveGame(savePath)
@@ -354,6 +381,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				debug call Print("Change map to " + nextLevelPath)
 				call ChangeLevel(nextLevelPath, false)
 			endif
+		endmethod
+
+		private static method storeCharactersSinglePlayerNewOpLimit takes nothing returns boolean
+			return thistype.storeCharactersSinglePlayer()
 		endmethod
 
 		public static method changeMap takes string newMap returns nothing
