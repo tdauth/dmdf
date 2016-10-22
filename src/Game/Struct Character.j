@@ -115,7 +115,7 @@ endif
 
 		private static method timerFunctionCamera takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
-			if (not this.isViewEnabled() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown() and AClassSelection.playerClassSelection(this.player()) == 0) then
+			if (not this.isViewEnabled() and not this.view().enableAgain() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown() and AClassSelection.playerClassSelection(this.player()) == 0) then
 				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, thistype.cameraTimerInterval)
 			endif
 		endmethod
@@ -137,6 +137,7 @@ endif
 				call TimerStart(this.m_cameraTimer, thistype.cameraTimerInterval, true, function thistype.timerFunctionCamera)
 			else
 				call PauseTimer(this.m_cameraTimer)
+				// TODO wait for thistype.cameraTimerInterval but make sure it is never called from .evaluate!
 				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
 			endif
 		endmethod

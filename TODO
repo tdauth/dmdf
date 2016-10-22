@@ -278,7 +278,11 @@ Handlung:
 
 Aufgehoben für Version 0.9:
 Critical errors:
+* Professions info add Book of Hunting.
+* Limit of skeletons does still not work.
+* Add info for options.
 * Fix the war3map_en.wts file for Talras by undoing some commits and update the English Talras map.
+* Druid summons Misha?! or is this an old version?
 * Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Excel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * Orks bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
@@ -360,6 +364,26 @@ Gegenstands-Icon-Fehler:
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* Nach dem Aufstieg auf Stufe 6 ging gar nichts mehr, keine Skillpoints, keine Wiederbelebung der Gefährten, keine Questgebiete mehr. OpLimit? Eventuell versuchen war3error zu verwenden.
+* Alle Schwerter und Äxte verursachen in Version 0.9 20 Schaden. Vermutlich Object Data Compression bug oder fehlender Eintrag in SLKs für die Ability.
+* Amulette und Ringe der Stärke in Talras verkaufen.
+* Holzschild und Schwerer Holzschild - Verteidigungswerte vergleichen.
+* FIXED (Werte haben nicht gestimmt): Tooltip Erlernen: Hieb 0 Schaden.
+* FIXED: Kräuter sollten 2 Gold kosten und Tränke 4 Gold, ansonsten gibt ein verkauftes Slot 0 Gold!
+* Waffen und Amulette usw. wesentlich teurer machen, da man schnell Gold bekommt. Andererseits kann man sie dann auch teuer verkaufen, sinnvoll?
+* Zoombug endlich beheben! Vermutlich timerFunctionCamera
+* FIXED: Fette Beute und Pferd reiten erlernen haben dieselbe ID.
+* Endlich eine vollständige ID-Liste erzeugen und überprüfen.
+* Kamera wackelt während Gesprächen wenn 3rd-Person-Kamera aktiv ist. Vermutlich timerFunctionCamera
+* FIXED: Kamera zurücksetzen: Nichts machen, wenn man in 3rd-Person-Kamera ist.
+* Wenn man mit 3rd-Person-Kamera stirbt, sollte die Ansicht zurückgesetzt werden, damit man besser weiterkämpfen kann.
+* Sprungattacke: Keine Abklingzeit. Vermutlich wegen des Stuns bzw. des verursachten Schadens ohne 0-Timer?
+* Kurzschwert des Drachentöters und Morgenstern machen viel zu viel Schaden.
+* FIXED: Fette Beute von Ricman gibt zu viel Gold, kostet zu wenig Mana und hat eine zu kurze Abklingzeit: 180 Mana, 60 Sekunden und 50 Gold.
+* FIXED: Fette Beute: Erlernen-Tooltip stimmt nicht.
+* Bestehlen braucht anderes Icon. Hat dasselbe Icon wie Fette Beute.
+* OrderAnimation: Nur bestimmte Stand-Animationen abspielen. Besser: Die Kratz- und Armeverschrenkanimation umbenennen, sodass sie nicht mehr automatisch abgespielt wird.
+* FIXED: Fette Beute hat die gleiche Cast-ID wie Überlegenheit!
 Optimizing:
 * Remove old unused data. This reduces the number of strings:
 	* DONE: Upgrades.
@@ -441,11 +465,11 @@ Optimizing:
 * FIXED: ASL bug: Items liegen bei totem Charakter auf dem Boden, wenn dieser eben tot ist und man einen Laden anwählt und abwählt. Sie dürfen nicht hinzugefügt werden, wenn der Charakter tot ist und nach Wiederbelebung müssen die Gegenstände erneut zum Inventar hinzugefügt werden.
 * Mitwirkende: Texte clearen wenn Mitwirkende geschlossen werden.
 * Kapuze: Unsichtbarkeitsfähigkeit geht nicht, wenn Rucksack offen ist. Liegt an Video? Beim Video wird sie deaktiviert.
-* FIXED: war3.exe verwenden, zeigt keinen Splash Screen.
+* DEPRECATED (if you use an absolute path it won't use the path from the registry!): war3.exe verwenden, zeigt keinen Splash Screen.
 * FIXED (muss Mono sein): Drachentöterin Soundset geht nicht.
 * DONE: Spieloptionen: Option "Pings deaktivieren".
 * FIXED: Durch die Änderung, dass getötete Einheiten nicht von Spawn Points entfernt werden überall nach countUnitsOfType(...) == 0 suchen und durch Bedingung, dass die Einheit tot ist ersetzen. Ansonsten gehen die Kill Quests nicht mehr.
-* Splash Screen ist nicht immer über dem von Warcraft III. Jetzt wird war3.exe verwendet, welches gar keinen Splash Screen zeigt. Allerdings muss getestet werden, ob der Pfad auch bei anderen Nutzern per Registry erkannt wird.
+* Splash Screen ist nicht immer über dem von Warcraft III. Jetzt wird war3.exe verwendet, welches gar keinen Splash Screen zeigt. Allerdings muss getestet werden, ob der Pfad auch bei anderen Nutzern per Registry erkannt wird. Dies geht jedoch nicht wenn ein bestimmter Pfad verwendet wird! MPQDraft bräuchte ein neues Profil zu war3.exe aus der Registry.
 * FIXED (Abilities): Endlich die Objektdaten verkleinern: Reduziert Ladezeit, reduziert die Anzahl der Strings massiv.
 * FIXED: Verdeckte Gebiete sind teilweise sichtbar auf false in: Deranors Sumpf, Holzbruck, Holzbrucks Unterwelt.
 * DONE: Map Deranor: Needs Intro video with Deranor. Deranor should explain how the players have to open the next map exit.

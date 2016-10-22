@@ -6,7 +6,7 @@ Unicode true
 !define INPUT_DIR_ASL "E:\Projekte\asl\"
 !define INPUT_DIR "E:\Projekte\dmdf\"
 !define INPUT_SPLASH_DIR "E:\Projekte\dmdf\splash\TPoFSplash\build\TPoF"
-!define INPUT_EXE_FILENAME "The Power of Fire.exe"
+!define INPUT_EXE_FILENAME "TPoF.exe"
 !define INPUT_EXE "E:\Warcraft III\${INPUT_EXE_FILENAME}"
 !define VERSION "0.9"
 !define CAMPAIGN_VERSION "09"

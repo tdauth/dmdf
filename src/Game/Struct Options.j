@@ -246,6 +246,11 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 			return CameraSpellbook(this.multipageSpellbook())
 		endmethod
 
+		public stub method onCheck takes nothing returns boolean
+			local Character character = this.spellbook().character()
+			return not character.isViewEnabled()
+		endmethod
+
 		public stub method onTrigger takes nothing returns nothing
 			local Character character = this.spellbook().character()
 			local real cameraDistance = character.cameraDistance()
