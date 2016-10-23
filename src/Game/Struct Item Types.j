@@ -1,7 +1,7 @@
 library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter, StructGameGrimoire
 
 	/**
-	 * \brief Default item type struct for all item types in DMdF.
+	 * \brief Default item type struct for all item types in The Power of Fire.
 	 */
 	struct ItemType extends AItemType
 		private static AIntegerVector m_twoSlotItems
@@ -152,6 +152,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 	endstruct
 
+	/**
+	 * \brief The saddle is a special item which can only be carried if the character rides on a horse.
+	 */
 	struct SaddleItemType extends ItemType
 		public static method isUnitOnHorse takes integer unitTypeId returns boolean
 			return unitTypeId == 'H02W' or unitTypeId == 'H02Z' or unitTypeId == 'H031' or unitTypeId == 'H033' or unitTypeId == 'H035' or unitTypeId == 'H037' or unitTypeId == 'H039' or unitTypeId == 'H03B' or unitTypeId == 'H02X' or unitTypeId == 'H030' or unitTypeId == 'H032' or unitTypeId == 'H034' or unitTypeId == 'H036' or unitTypeId == 'H038' or unitTypeId == 'H03A' or unitTypeId == 'H03C'
@@ -370,7 +373,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 
 		/**
-		 * Call this method in the map initialization to create all item types.
+		 * Call this method during the map initialization to create all item types.
+		 * The map has to contain the corresponding object data, otherwise the object IDs are invalid.
 		 */
 		public static method init takes nothing returns nothing
 			//integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns AItemType

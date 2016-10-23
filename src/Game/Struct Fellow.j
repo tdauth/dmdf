@@ -217,6 +217,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			endif
 		endmethod
 
+		/**
+		 * Shares the fellow with all playing players who own a character.
+		 * They can control the fellow unit together after it is shared with them since it is owned by the \ref MapData.alliedPlayer.
+		 */
 		public method shareWithAll takes nothing returns nothing
 			call this.shareWith(0)
 		endmethod

@@ -22,7 +22,7 @@ library StructGameTreeTransparency initializer init requires Asl
 		set raw[rawcount] = rawcode
 		set rawcount = rawcount+1
 	endfunction
-	
+
 	private function ResetTransparency takes nothing returns nothing
 		local integer j
 		set j = 0
@@ -32,7 +32,7 @@ library StructGameTreeTransparency initializer init requires Asl
 			set j = j + 1
 		endloop
 	endfunction
-	
+
 	private function periodic takes nothing returns nothing
 		local AIntegerListIterator iterator
 		local integer j
@@ -48,7 +48,10 @@ library StructGameTreeTransparency initializer init requires Asl
 			set j = j + 1
 		endloop
 	endfunction
-	
+
+	/**
+	 * Enables the tree transparency system which means that all trees will become transparent to all players if they are in range.
+	 */
 	function EnableTransparency takes nothing returns nothing
 		if (Timer == null) then
 			set Timer = CreateTimer()
@@ -56,7 +59,10 @@ library StructGameTreeTransparency initializer init requires Asl
 		endif
 		debug call Print("Enable transparency")
 	endfunction
-	
+
+	/**
+	 * Disables the tree transparency system which means that no tree will become transparent anymore and all transparency of trees is reset immediately.
+	 */
 	function DisableTransparency takes nothing returns nothing
 		if (Timer != null) then
 			call PauseTimer(Timer)

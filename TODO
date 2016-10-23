@@ -364,6 +364,7 @@ Gegenstands-Icon-Fehler:
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* Falsche Angriffsanimation mit Schild kommt manchmal. Der Charakter schlägt mit dem Schild zu.
 * Nach dem Aufstieg auf Stufe 6 ging gar nichts mehr, keine Skillpoints, keine Wiederbelebung der Gefährten, keine Questgebiete mehr. OpLimit? Eventuell versuchen war3error zu verwenden.
 * Alle Schwerter und Äxte verursachen in Version 0.9 20 Schaden. Vermutlich Object Data Compression bug oder fehlender Eintrag in SLKs für die Ability.
 * Amulette und Ringe der Stärke in Talras verkaufen.

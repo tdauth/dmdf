@@ -1,5 +1,8 @@
 library StructGameGameCheats requires Asl, StructGameCharacter, StructGameClasses, StructGameGrimoire
 
+	/**
+	 * \brief Contains cheats for the game which can be used in every map but only if the debug mode is enabled.
+	 */
 	struct GameCheats
 static if (DEBUG_MODE) then
 		private static method onCheatActionCheats takes ACheat cheat returns nothing
@@ -120,6 +123,9 @@ static if (DEBUG_MODE) then
 			endif
 		endmethod
 
+		/**
+		 * Initializes all game cheats. This method has to be called once during the game initialization.
+		 */
 		public static method init takes nothing returns nothing
 			call Print(tr("|c00ffcc00TEST-MODUS|r"))
 			call Print(tr("Sie befinden sich im Testmodus. Verwenden Sie den Cheat \"gamecheats\", um eine Liste sämtlicher Spiel-Cheats zu erhalten."))

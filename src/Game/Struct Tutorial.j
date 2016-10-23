@@ -1,7 +1,7 @@
 library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoint
 
 	/**
-	 * Provides some functionality which helps players to find their way through the game.
+	 * \brief Provides some functionality which helps players to find their way through the game.
 	 * It shows a message when a players character enables a shrine the first time.
 	 * Usually there's one Tutorial instance per character which can be accessed via \ref Character#tutorial().
 	 * All provided infos can be disabled via \ref setEnabled().

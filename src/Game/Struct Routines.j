@@ -70,6 +70,10 @@ library StructGameRoutines requires Asl
 		endmethod
 	endstruct
 
+	/**
+	 * \brief Basic routine type for talks between two NPCs.
+	 * The text is shown as floating texttag on the speaking unit and a corresponding sound is played.
+	 */
 	struct NpcTalksRoutine extends NpcRoutineWithOtherNpc
 		public static constant integer maxSounds = 4
 		private real m_range = 800.0
@@ -168,7 +172,6 @@ library StructGameRoutines requires Asl
 			call ResetUnitAnimation(period.unit())
 		endmethod
 
-		/// @todo Should check whether the unit has animation
 		private static method trainTargetAction takes NpcRoutineWithFacing period returns nothing
 			local integer index = GetRandomInt(0, thistype.m_trainAnimations.backIndex())
 			call SetUnitFacing(period.unit(), period.facing())
@@ -178,18 +181,11 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		private static method enterHouseTargetAction takes NpcEntersHouseRoutine period returns nothing
-			//debug call Print("Unit " + GetUnitName(period.unit()) + " enters house.")
 			call ShowUnit(period.unit(), false)
 			if (period.hasChooseHero()) then
 				call UnitRemoveAbility(period.unit(), 'Aneu')
 			endif
 			// TODO disable trading ability/hero selection
-			//debug call Print("After entering house")
-			//debug if (IsUnitHidden(period.unit())) then
-			//debug call Print("It is hidden")
-			//debug else
-			//debug call Print("It is not hidden")
-			//debug endif
 		endmethod
 
 		private static method leaveHouseCondition takes NpcLeavesHouseRoutine period returns boolean
@@ -197,7 +193,6 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		private static method leaveHouseTargetAction takes NpcLeavesHouseRoutine period returns nothing
-			//debug call Print("Unit " + GetUnitName(period.unit()) + " leaves house.")
 			call SetUnitFacing(period.unit(), period.facing()) // turn around
 			call ShowUnit(period.unit(), true)
 			if (period.hasChooseHero()) then
@@ -207,7 +202,6 @@ library StructGameRoutines requires Asl
 		endmethod
 
 		private static method hammerEndAction takes ARoutinePeriod period returns nothing
-			//debug call Print("Reset hammer animation.")
 			call ResetUnitAnimation(period.unit())
 		endmethod
 

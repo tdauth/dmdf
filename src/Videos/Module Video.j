@@ -6,10 +6,17 @@ library ModuleVideosVideo
 	module Video
 		private static thistype m_video
 
+		/**
+		 * Initializes the video object as singleton. After calling this method you can use \ref video() to access the global instance.
+		 * This method should be called for every video in the map initialization process.
+		 */
 		public static method initVideo takes nothing returns nothing
 			set thistype.m_video = thistype.create.evaluate()
 		endmethod
 
+		/**
+		 * \return Returns the global instance of the video.
+		 */
 		public static method video takes nothing returns thistype
 			return thistype.m_video
 		endmethod
