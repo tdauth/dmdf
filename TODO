@@ -366,9 +366,11 @@ Gegenstands-Icon-Fehler:
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Falsche Angriffsanimation mit Schild kommt manchmal. Der Charakter schlägt mit dem Schild zu.
 * Nach dem Aufstieg auf Stufe 6 ging gar nichts mehr, keine Skillpoints, keine Wiederbelebung der Gefährten, keine Questgebiete mehr. OpLimit? Eventuell versuchen war3error zu verwenden.
-* Alle Schwerter und Äxte verursachen in Version 0.9 20 Schaden. Vermutlich Object Data Compression bug oder fehlender Eintrag in SLKs für die Ability.
+* FIXED: Kurzschwert des Drachentöters und Morgenstern machen viel zu viel Schaden.
+* FIXED: Alle Schwerter und Äxte verursachen in Version 0.9 20 Schaden (AItx - DataA1).
+* wc3lib: Vermutlich Object Data Compression bug oder fehlender Eintrag in SLKs für die Ability (AItx - DataA1).
+* DEPRECATED (Werte stimmen): Holzschild und Schwerer Holzschild - Verteidigungswerte vergleichen. Tooltip-Fehler!
 * Amulette und Ringe der Stärke in Talras verkaufen.
-* Holzschild und Schwerer Holzschild - Verteidigungswerte vergleichen.
 * FIXED (Werte haben nicht gestimmt): Tooltip Erlernen: Hieb 0 Schaden.
 * FIXED: Kräuter sollten 2 Gold kosten und Tränke 4 Gold, ansonsten gibt ein verkauftes Slot 0 Gold!
 * Waffen und Amulette usw. wesentlich teurer machen, da man schnell Gold bekommt. Andererseits kann man sie dann auch teuer verkaufen, sinnvoll?
@@ -379,7 +381,6 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Kamera zurücksetzen: Nichts machen, wenn man in 3rd-Person-Kamera ist.
 * Wenn man mit 3rd-Person-Kamera stirbt, sollte die Ansicht zurückgesetzt werden, damit man besser weiterkämpfen kann.
 * Sprungattacke: Keine Abklingzeit. Vermutlich wegen des Stuns bzw. des verursachten Schadens ohne 0-Timer?
-* Kurzschwert des Drachentöters und Morgenstern machen viel zu viel Schaden.
 * FIXED: Fette Beute von Ricman gibt zu viel Gold, kostet zu wenig Mana und hat eine zu kurze Abklingzeit: 180 Mana, 60 Sekunden und 50 Gold.
 * FIXED: Fette Beute: Erlernen-Tooltip stimmt nicht.
 * Bestehlen braucht anderes Icon. Hat dasselbe Icon wie Fette Beute.
