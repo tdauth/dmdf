@@ -131,7 +131,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 						debug call Print("Could not unmorph character of player " + GetPlayerName(character.player()))
 						return false
 					endif
-				
+
 					call thistype.storeCharacterSinglePlayer(cache, character)
 				endif
 				set i = i + 1

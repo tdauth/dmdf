@@ -153,7 +153,12 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 	 */
 	struct Game
 		/// The version of the current release of the modification.
-		public static constant string gameVersion = "0.8"
+		public static constant string gameVersion = "0.9"
+
+		/**
+		 * The polling interval in seconds when waiting for a video.
+		 */
+		public static constant real videoWaitInterval = 1.0
 
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions
@@ -664,7 +669,10 @@ endif
 		 * This method usually is called after all players selected their character class.
 		 */
 		public static method start takes nothing returns nothing
-			local integer i
+			local integer i = 0
+
+			// TEST the command button should always be moved relatively to the camera!
+			call CommandButton.create(Player(0), 'B010', 'h00B', 0.0, 0.0)
 
 			// use new OpLimit
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initCharactersScheme)
@@ -847,7 +855,6 @@ endif
 						call character.credits().hide()
 					endif
 
-					// has a trigger sleep action
 					call character.setCameraTimer(false)
 				endif
 				set i = i + 1

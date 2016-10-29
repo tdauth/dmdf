@@ -389,7 +389,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (this.hasRevival()) then
 
 				if (thistype.m_infoMessageDeath != null) then
-					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageDeath).u(this.m_unit).i(R2I(this.m_revivalTime)).result())
+					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageDeath).s(this.revivalTitle()).i(R2I(this.m_revivalTime)).result())
 				endif
 
 				if (thistype.m_infoSoundDeath != null) then

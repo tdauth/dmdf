@@ -21,13 +21,14 @@ library StructSpellsSpellMercilessness requires Asl, StructGameClasses, StructGa
 			if (GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) == 0) then
 				return
 			endif
-			
+
 			if (GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) > GetUnitState(GetTriggerUnit(), UNIT_STATE_MAX_LIFE) * thistype.lifePercentage) then
 				debug call Print("Mercilessness too much life")
 				return
 			endif
-			
+
 			if (DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.damageKey)) then
+				debug call Print("Mercilessness: No double damage bonus.")
 				return
 			endif
 			set damage = thistype.damageLevelValue * GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) * GetHeroLevel(GetEventDamageSource())
@@ -47,12 +48,12 @@ library StructSpellsSpellMercilessness requires Asl, StructGameClasses, StructGa
 			call this.addGrimoireEntry('A1F7', 'A1FC')
 			call this.addGrimoireEntry('A1F8', 'A1FD')
 			call this.addGrimoireEntry('A1F9', 'A1FE')
-			
+
 			call this.setIsPassive(true)
-			
+
 			call DmdfHashTable.global().setHandleBoolean(character.unit(), thistype.damageKey, false)
 			call Game.registerOnDamageActionOnce(thistype.onDamageAction)
-			
+
 			return this
 		endmethod
 	endstruct

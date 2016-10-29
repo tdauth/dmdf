@@ -1,0 +1,24 @@
+Warcraft III does not allow multiplayer campaigns:
+- Changing the map by going to the next level or loading a game are asynchronous, so every player changes the level on his own.
+- The gamecache does not work in the multiplayer or is not guaranteed to be synchronous or to exist when the map is loaded.
+- http://www.hiveworkshop.com/threads/what-does-trigger-synchronization-do.86762/
+http://www.wc3c.net/showthread.php?t=83837
+
+Synchronizes the value of the host for everyone:
+
+function GetHost takes nothing returns integer
+  call StoreInteger ( cache, mission, key, GetPlayerId ( GetLocalPlayer () ) )
+  call TriggerSyncStart () // believe this tells players to begin synching
+  call SyncStoredInteger ( cache, mission, key ) // syncs this value, in most cases to the host although not always
+  call TriggerSyncReady () // believe this waits for everyone to sync back up
+  return GetStoredInteger ( cache, mission, key ) // returns host's player id
+endfunction
+
+So synchronizing before ending the game in multiplayer would be useful.
+
+
+
+The new scenario using a HostBot:
+- Save the current game for all players.
+- Instead of changing the level: Either start the next level manually or host the next level using a HostBot and end the game. Rehosting the game might even work with the code of the JNGP in LAN mode.
+- Now the gamecache data has to be synchronized from the host again on loading to make sure every character is loaded properly. This would be only for safety to prevent disconnects.

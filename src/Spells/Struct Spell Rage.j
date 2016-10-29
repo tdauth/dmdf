@@ -1,7 +1,7 @@
 /// Dragon Slayer
 library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, StructGameSpell
 
-	/// Der Drachentöter staut Wut für bis zu X getötete Gegner an. Bei Aktivierung wird sein Schaden um Y% pro Gegner erhöht. Hält 5 Sekunden für jeden getöteten Gegner an.
+	/// Der Drachentöter staut Wut für bis zu X getötete Gegner an. Bei Aktivierung wird sein Schaden um Y% pro Gegner erhöht. Hält 10 Sekunden an.
 	struct SpellRage extends Spell
 		public static constant integer abilityId = 'A1FF'
 		public static constant integer favouriteAbilityId = 'A1FG'
@@ -11,6 +11,7 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 		private static constant real damageBonusPerCountLevelValue = 10.0
 		private static constant integer enabledKey = DMDF_HASHTABLE_KEY_RAGE_ENABLED
 		private static constant integer damageKey = DMDF_HASHTABLE_KEY_RAGE_DAMAGE
+		private static constant real time = 10.0
 		private trigger m_killTrigger
 		private static integer array m_counter
 		private timer m_timer
@@ -35,23 +36,23 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 			call DmdfHashTable.global().setHandleBoolean(GetEventDamageSource(), thistype.damageKey, false)
 			call Spell.showDamageTextTag(GetTriggerUnit(), damage)
 		endmethod
-		
+
 		private method condition takes nothing returns boolean
 			if (thistype.m_counter[GetPlayerId(this.character().player())] == 0) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine Gegner getötet.", "No opponents have been killed."))
-				
+
 				return false
 			endif
-			
+
 			if (DmdfHashTable.global().handleBoolean(this.character().unit(), thistype.enabledKey)) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Zauber ist bereits aktiv.", "Spell is already active."))
-				
+
 				return false
 			endif
-			
+
 			return true
 		endmethod
-		
+
 		private static method timerFunctionDisable takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0)
 			call DmdfHashTable.global().setHandleBoolean(this.character().unit(), thistype.enabledKey, false)
@@ -61,19 +62,20 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 
 		private method action takes nothing returns nothing
 			call DmdfHashTable.global().setHandleBoolean(this.character().unit(), thistype.enabledKey, true)
-			call TimerStart(this.m_timer, 5.0, false, function thistype.timerFunctionDisable)
+			call TimerStart(this.m_timer, thistype.time, false, function thistype.timerFunctionDisable)
 			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			debug call Print("Enable rage")
 		endmethod
-		
+
 		private static method triggerConditionKill takes nothing returns boolean
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
-			if (GetKillingUnit() == this.character().unit() and thistype.m_counter[GetPlayerId(this.character().player())] < GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) * 2) then
+			// Do not allow increasing the counter during the cast of the spell.
+			if (not DmdfHashTable.global().handleBoolean(this.character().unit(), thistype.enabledKey) and GetKillingUnit() == this.character().unit() and thistype.m_counter[GetPlayerId(this.character().player())] < GetUnitAbilityLevel(this.character().unit(), thistype.abilityId) * 2) then
 				debug call Print("Rage increase counter")
 				set thistype.m_counter[GetPlayerId(this.character().player())] = thistype.m_counter[GetPlayerId(this.character().player())] + 1
 				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tre("Rage: %i", "Rage: %i"), thistype.m_counter[GetPlayerId(this.character().player())]), GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 139, 131, 134, 255)
 			endif
-			
+
 			return false
 		endmethod
 
@@ -85,20 +87,20 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 			call this.addGrimoireEntry('A1FJ', 'A1FO')
 			call this.addGrimoireEntry('A1FK', 'A1FP')
 			call this.addGrimoireEntry('A1FL', 'A1FQ')
-			
+
 			set this.m_killTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_killTrigger, EVENT_PLAYER_UNIT_DEATH)
 			call TriggerAddCondition(this.m_killTrigger, Condition(function thistype.triggerConditionKill))
 			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, 0, this)
-			
+
 			set this.m_timer = CreateTimer()
 			set thistype.m_counter[GetPlayerId(this.character().player())] = 0
-			
+
 			call Game.registerOnDamageActionOnce(thistype.onDamageAction)
-			
+
 			return this
 		endmethod
-		
+
 		private method onDestroy takes nothing returns nothing
 			call DmdfHashTable.global().destroyTrigger(this.m_killTrigger)
 			set this.m_killTrigger = null

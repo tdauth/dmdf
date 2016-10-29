@@ -43,6 +43,9 @@ library StructGameMissions requires Asl, StructGameCharacter, StructGameOptions
 		endmethod
 	endstruct
 
+	/**
+	 * \brief The entry for a single quest which can be clicked at and moves the player's camera to the curretn quest target location.
+	 */
 	struct MissionEntry extends AMultipageSpellbookAction
 		private AQuest m_quest
 

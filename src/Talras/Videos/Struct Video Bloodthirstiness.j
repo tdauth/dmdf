@@ -123,7 +123,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Doch nehmt euch in Acht! Ich weiß, dass ihr große Krieger seid, doch Deranor der Schreckliche ist einer der stärksten Nekromanten, die diese Welt je gesehen hat. Wenn ihr mir nun folgt, dann tut es mit dem Wissen, dass ihr vielleicht niemals lebend zurückkehren werdet.", "But take care! I know that you are great warriors but Deranor the Terrible is one of the strongest necromancers who has ever seen this world. If you follow me now do it with the knowledge that you will probably never return alive."), gg_snd_DragonSlayerBloodthirstiness4)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Doch nehmt euch in Acht! Ich weiß, dass ihr große Krieger seid, doch Deranor der Schreckliche ist einer der stärksten Nekromanten, den diese Welt je gesehen hat. Wenn ihr mir nun folgt, dann tut es mit dem Wissen, dass ihr vielleicht niemals lebend zurückkehren werdet.", "But take care! I know that you are great warriors but Deranor the Terrible is one of the strongest necromancers who has ever seen this world. If you follow me now do it with the knowledge that you will probably never return alive."), gg_snd_DragonSlayerBloodthirstiness4)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerBloodthirstiness4))) then
 				return

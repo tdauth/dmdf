@@ -257,7 +257,7 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 			call this.m_questAreaReportWieland.destroy()
 
 			call VideoWeaponsFromWieland.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 
 			debug call Print("Place the imps.")
 

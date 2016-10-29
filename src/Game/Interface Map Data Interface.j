@@ -4,7 +4,6 @@ library InterfaceGameMapDataInterface
 	/*
 		public static constant integer maxPlayers = 6
 		public static constant integer computerPlayers = 1 // one additional player for the arena and the last quest
-		public static constant real videoWaitInterval = 1.0
 		public static constant real revivalTime = 20.0
 		public static constant integer levelSpellPoints = 2
 		public static constant integer maxLevel = 25

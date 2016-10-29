@@ -96,11 +96,14 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNFire.blp")
 
 			set whichQuest = CreateQuest()
+			call QuestSetTitle(whichQuest, tre("Optionen", "Options"))
+			call QuestSetDescription(whichQuest, tre("Das Ausrufezeichen in der linken oberen Ecke erlaubt Ihnen, in die Optionen zu gelangen. Hier können diverse Einstellungen vorgenommen werden.", "The exclamation mark in the left top corner allows you to get to the options. Here you can make different settings."))
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNTalktoMe.blp")
+
+			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Chat-Befehle", "Chat Commands"))
 			call QuestSetDescription(whichQuest, tre("Die obigen Befehle können im Chat verwendet werden.", "The commands at the top can be used in the chat."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp")
-			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tre("\"-menu\" öffnet das Hauptmenü.", "\"-menu\" opens the main menu."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("\"-repick\" erlaubt die Wahl einer anderen Klasse.", "\"-repick\" allows the selection of a different class."))
 			set questItem = QuestCreateItem(whichQuest)
@@ -251,6 +254,8 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("Buch der Schmiedekunst", "Book of Forging"))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Buch der Magie", "Book of Magic"))
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tre("Buch der Jagd", "Book of Hunting"))
 
 
 			set whichQuest = CreateQuest()
@@ -262,7 +267,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Mitwirkende", "Credits"))
-			call QuestSetDescription(whichQuest, tre("Rufen Sie mit \"-menu\" das Hauptmenü auf und klicken Sie auf \"Mitwirkende\".", "Open the main menu using \"-menu\" and click on \"Credits\"."))
+			call QuestSetDescription(whichQuest, tre("Gehen Sie in die Optionen links oben und klicken Sie auf \"Mitwirkende\".", "Go to the options in the top left and click on \"Credits\"."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNBerserk.blp")
 
 			set whichQuest = CreateQuest()

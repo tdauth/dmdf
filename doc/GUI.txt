@@ -1,0 +1,19 @@
+Advanced GUI systems use destructables and not trackables anymore to be shown in the current camera view on the map.
+Even if trackables are still used in systems like "MUI" they could be dropped and only destructables could be used.
+
+Those could be moved with the camera view and therefore more buttons could be inserted.
+
+CreateDestructableZ(dt, x, y, 5, 0, 0.6, 0)
+call SaveDestructableHandle(udg_FSS, 2409 + pl, i, d)
+call ShowDestructable(d, false)
+
+Use the replaceable ID to replace the model's texture and create a destructable for every ability or command which has to be in the GUI.
+
+http://www.hiveworkshop.com/threads/player-select-a-destructible-event.162827/
+
+Since there is no selection event for destructables use a dummy unit for the selection event. The dummy unit needs a selection scale of 0.0 to
+hide its health bar. It should be an invisbile model with the same size of the destructable.
+
+Custom images cannot be used since they angle cannot be changed. You can only see them from the top.
+
+To change the Destructibles to the view of the player use billboarded textures.

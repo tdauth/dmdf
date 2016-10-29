@@ -10,7 +10,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static constant real midday = 12.0
 		public static constant real afternoon = 16.0
 		public static constant real evening = 18.0
-		public static constant real videoWaitInterval = 1.0
 		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
 		public static constant real revivalManaPercentage = 100.0

@@ -4,7 +4,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		public stub method onStart takes nothing returns nothing
 			call VideoDragonHunt.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call QuestSlaughter.quest.evaluate().enable.evaluate()
 			call Fellows.dragonSlayer().shareWith(0)
 			call Character.displayUnitAcquiredToAll(GetUnitName(Npcs.dragonSlayer()), tre("Die Drachentöterin kann zwischen Nah- und Fernkampf wechseln.", "The Dragon Slayer can switch between close and range combat."))
@@ -20,7 +20,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		public stub method onStart takes nothing returns nothing
 			call VideoDeathVault.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call QuestSlaughter.quest.evaluate().questItem(QuestSlaughter.questItemEnterTheDeathVault).setState(AAbstractQuest.stateCompleted)
 			call QuestSlaughter.quest.evaluate().questItem(QuestSlaughter.questItemKillTheMedusa).setState(AAbstractQuest.stateNew)
 			call QuestSlaughter.quest.evaluate().questItem(QuestSlaughter.questItemKillTheDiacon).setState(AAbstractQuest.stateNew)
@@ -37,7 +37,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 		public stub method onStart takes nothing returns nothing
 			call VideoBloodthirstiness.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call QuestSlaughter.quest.evaluate().complete()
 		endmethod
 
@@ -225,7 +225,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private static method stateActionCompleted4 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
 			call VideoDeathVault.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call questItem.quest().questItem(5).setState(thistype.stateNew)
 			call questItem.quest().questItem(6).setState(thistype.stateNew)
 			call questItem.quest().displayUpdate()

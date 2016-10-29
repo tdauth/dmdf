@@ -8,7 +8,7 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 
 	/**
 	 * \brief Customized character struct for characters in The Power of Fire.
-	 * This additional specialized struct is required for interaction with \ref Grimoire, \ref MainMenu, \ref InfoLog and metamorphosis spells.
+	 * This additional specialized struct is required for interaction with the custom systems of the modification.
 	 */
 	struct Character extends ACharacter
 		/**
@@ -36,7 +36,6 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable
 		 */
 		private AIntegerVector m_onCraftItemFunctions
 		// members
-		private MainMenu m_mainMenu
 static if (DMDF_CREDITS) then
 		private Credits m_credits
 endif
@@ -139,6 +138,8 @@ endif
 				call PauseTimer(this.m_cameraTimer)
 				// TODO wait for thistype.cameraTimerInterval but make sure it is never called from .evaluate!
 				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, 0.0)
+				call StopCameraForPlayerBJ(this.player()) // for safety
+				call ResetToGameCameraForPlayer(this.player(), 0.0) // for safety
 			endif
 		endmethod
 
@@ -192,10 +193,6 @@ endif
 		endmethod
 
 		// members
-
-		public method mainMenu takes nothing returns MainMenu
-			return this.m_mainMenu
-		endmethod
 
 		public method credits takes nothing returns Credits
 static if (DMDF_CREDITS) then
@@ -678,7 +675,6 @@ endif
 			set this.m_showWorker = true
 			set this.m_onCraftItemFunctions = AIntegerVector.create()
 			// members
-			set this.m_mainMenu = MainMenu.create.evaluate(this)
 static if (DMDF_CREDITS) then
 			set this.m_credits = Credits.create.evaluate(this)
 endif
@@ -742,7 +738,6 @@ endif
 		public method onDestroy takes nothing returns nothing
 			call this.m_onCraftItemFunctions.destroy()
 
-			call this.m_mainMenu.destroy.evaluate()
 static if (DMDF_CREDITS) then
 			call this.m_grimoire.destroy.evaluate()
 endif

@@ -270,7 +270,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_talras_quest_item_0)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					if (not  QuestTalras.quest().questItem(QuestTalras.questItemReachTheCastle).isCompleted()) then
 						debug call Print("Failed completing quest item meet at reach the castle.")
@@ -286,7 +286,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_talras_quest_item_1)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 				endif
 			endif
@@ -318,7 +318,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_the_norsemen_quest_item_0)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					if (not  QuestTheNorsemen.quest().questItem(QuestTheNorsemen.questItemMeetTheNorsemen).isCompleted()) then
 						debug call Print("Failed completing quest item meet at the norsemen.")
@@ -333,7 +333,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_the_norsemen_assembly_point)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					if (not  QuestTheNorsemen.quest().questItem(QuestTheNorsemen.questItemMeetAtTheBattlefield).isCompleted()) then
 						debug call Print("Failed completing quest item meet at the battlefield.")
@@ -363,7 +363,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_the_defense_of_talras)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not  QuestTheNorsemen.quest().questItem(QuestTheNorsemen.questItemMeetAtTheOutpost).isCompleted()) then
@@ -379,7 +379,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_talras_quest_item_1)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 				endif
 			endif
@@ -400,7 +400,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 				// TODO it would be safer to complete the single quest items
 				call QuestSlaughter.quest().complete()
 				call TriggerSleepAction(2.0 + 2.0)
-				call waitForVideo(MapData.videoWaitInterval)
+				call waitForVideo(Game.videoWaitInterval)
 				call TriggerSleepAction(2.0 + 2.0)
 			endif
 			call thistype.makeCharactersInvulnerable(false)
@@ -430,7 +430,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_deranor_characters)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					if (not QuestDeranor.quest().questItem(QuestDeranor.questItemEnterTheTomb).isCompleted()) then
 						debug call Print("Failed to complete enter the tomb.")
@@ -458,7 +458,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_deranor_tomb)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 					if (not QuestDeranor.quest().questItem(QuestDeranor.questItemMeetAtTomb).isCompleted()) then
 						debug call Print("Failed to complete kill deranor.")
@@ -506,7 +506,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 				call thistype.moveCharactersToRect(gg_rct_quest_a_new_alliance)
 
 				call TriggerSleepAction(2.0 + 2.0)
-				call waitForVideo(MapData.videoWaitInterval)
+				call waitForVideo(Game.videoWaitInterval)
 				call TriggerSleepAction(2.0 + 2.0)
 				if (not QuestANewAlliance.quest().isCompleted()) then
 					debug call Print("Failed to complete quest Deranor.")
@@ -539,7 +539,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					call thistype.moveCharactersToRect(gg_rct_quest_war_wieland)
 
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not QuestWarWeaponsFromWieland.quest().questItem(QuestWarWeaponsFromWieland.questItemIronFromTheDrumCave).isCompleted()) then
@@ -549,7 +549,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 						call thistype.moveCharactersToRect(gg_rct_quest_war_iron_from_the_drum_cave)
 
 						call TriggerSleepAction(2.0 + 2.0)
-						call waitForVideo(MapData.videoWaitInterval)
+						call waitForVideo(Game.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
 					endif
 
@@ -569,7 +569,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 						 */
 						call thistype.moveCharactersToRect(gg_rct_quest_war_wieland)
 						call TriggerSleepAction(2.0 + 2.0)
-						call waitForVideo(MapData.videoWaitInterval)
+						call waitForVideo(Game.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
 						if (not QuestWarWeaponsFromWieland.quest().questItem(QuestWarWeaponsFromWieland.questItemReportWieland).isCompleted()) then
 							debug call Print("Failed to complete quest item report wieland.")
@@ -621,7 +621,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_war_manfred)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not QuestWarSupplyFromManfred.quest().questItem(QuestWarSupplyFromManfred.questItemSupplyFromManfred).isNew()) then
@@ -655,7 +655,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 						*/
 						call thistype.moveCharactersToRect(gg_rct_quest_war_manfred)
 						call TriggerSleepAction(2.0 + 2.0)
-						call waitForVideo(MapData.videoWaitInterval)
+						call waitForVideo(Game.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
 
 						if (not QuestWarSupplyFromManfred.quest().questItem(QuestWarSupplyFromManfred.questItemReportManfred).isCompleted()) then
@@ -700,7 +700,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_war_kuno)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not QuestWarLumberFromKuno.quest().questItem(QuestWarLumberFromKuno.questItemLumberFromKuno).isNew()) then
@@ -732,7 +732,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 						 */
 						call thistype.moveCharactersToRect(gg_rct_quest_war_kuno)
 						call TriggerSleepAction(2.0 + 2.0)
-						call waitForVideo(MapData.videoWaitInterval)
+						call waitForVideo(Game.videoWaitInterval)
 						call TriggerSleepAction(2.0 + 2.0)
 
 						if (not QuestWarLumberFromKuno.quest().questItem(QuestWarLumberFromKuno.questItemReportKuno).isCompleted()) then
@@ -767,7 +767,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_war_bjoern)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not QuestWarTrapsFromBjoern.quest().questItem(QuestWarTrapsFromBjoern.questItemPlaceTraps).isNew()) then
@@ -800,7 +800,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_war_farm)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not QuestWarRecruit.quest().questItem(QuestWarRecruit.questItemRecruit).isNew()) then
@@ -828,7 +828,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 				 */
 				call thistype.moveCharactersToRect(gg_rct_quest_war_heimrich)
 				call TriggerSleepAction(2.0 + 2.0)
-				call waitForVideo(MapData.videoWaitInterval)
+				call waitForVideo(Game.videoWaitInterval)
 				call TriggerSleepAction(2.0 + 2.0)
 
 				if (not QuestWar.quest().isCompleted()) then
@@ -862,7 +862,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					call thistype.moveCharactersToRect(gg_rct_quest_the_defense_of_talras)
 
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not QuestTheDefenseOfTalras.quest().questItem(QuestTheDefenseOfTalras.questItemMoveToCamp).isCompleted()) then
@@ -908,7 +908,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					 */
 					call thistype.moveCharactersToRect(gg_rct_quest_the_defense_of_talras)
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not QuestTheDefenseOfTalras.quest().questItem(QuestTheDefenseOfTalras.questItemGatherAtTheCamp).isCompleted()) then
@@ -923,7 +923,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 
 					// plays video "Victory"
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not QuestTheDefenseOfTalras.quest().questItem(QuestTheDefenseOfTalras.questItemDefeatTheEnemy).isCompleted()) then
@@ -938,7 +938,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 
 					// plays video "Holzbruck"
 					call TriggerSleepAction(2.0 + 2.0)
-					call waitForVideo(MapData.videoWaitInterval)
+					call waitForVideo(Game.videoWaitInterval)
 					call TriggerSleepAction(2.0 + 2.0)
 
 					if (not QuestTheDefenseOfTalras.quest().questItem(QuestTheDefenseOfTalras.questItemReportHeimrich).isCompleted()) then

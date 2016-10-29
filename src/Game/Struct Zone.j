@@ -36,6 +36,10 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call ShowUnit(this.m_iconUnit, false)
 		endmethod
 
+		public method iconUnit takes nothing returns unit
+			return this.m_iconUnit
+		endmethod
+
 		public stub method onCheck takes nothing returns boolean
 			if (not this.m_isEnabled) then
 				call Character.displayHintToAll(tre("Dieser Kartenausgang kann noch nicht benutzt werden.", "This map exit cannot be used yet."))
@@ -83,12 +87,14 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call SetAltMinimapIcon("UI\\Minimap\\MiniMap-Entrance.blp")
 			set thistype.m_zoneNames = AStringVector.create()
 			/// All zone names of the current campaign must be added here. They have to be copied whenever the game is saved.
-			call thistype.m_zoneNames.pushBack("TL")
-			call thistype.m_zoneNames.pushBack("GA")
-			call thistype.m_zoneNames.pushBack("GH")
-			call thistype.m_zoneNames.pushBack("DS")
-			call thistype.m_zoneNames.pushBack("HB")
-			call thistype.m_zoneNames.pushBack("HU")
+			call thistype.m_zoneNames.pushBack("TL") // Talras
+			call thistype.m_zoneNames.pushBack("GA") // Gardonar
+			call thistype.m_zoneNames.pushBack("GH") // Gardonar's Hell
+			call thistype.m_zoneNames.pushBack("DS") // Deranor's Swamp
+			call thistype.m_zoneNames.pushBack("HB") // Holzbruck
+			call thistype.m_zoneNames.pushBack("HU") // Holzbruck's Underworld
+			call thistype.m_zoneNames.pushBack("WM") // World Map
+			call thistype.m_zoneNames.pushBack("DH") // Tutorial: Dornheim
 		endmethod
 
 		public static method zoneNames takes nothing returns AIntegerVector

@@ -76,7 +76,6 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 		public static constant real midday = 12.0
 		public static constant real afternoon = 16.0
 		public static constant real evening = 18.0
-		public static constant real videoWaitInterval = 1.0
 		/// The fixed time in seconds which it takes until a character is revived automatically after his death.
 		public static constant real revivalTime = 35.0
 		public static constant real revivalLifePercentage = 100.0
@@ -87,7 +86,7 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 		public static constant integer maxLevel = 10000
 		public static constant integer workerUnitTypeId = 'h00E'
 		/// If this value is true there will always be a class selection in the beginning if the map is started for the first time. Otherwise characters will be loaded from the gamecache in campaign mode if available.
-		public static constant boolean isSeparateChapter = true
+		public static constant boolean isSeparateChapter = false
 		public static sound cowSound = null
 		public static constant player orcPlayer = Player(9)
 		public static constant player haldarPlayer = Player(10)
@@ -113,6 +112,7 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 		// Zones which can be reached directly from this map.
 		private static Zone m_zoneGardonar
 		private static Zone m_zoneHolzbruck
+		private static Zone m_zoneDornheim
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -300,6 +300,7 @@ endif
 			call thistype.m_zoneGardonar.disable()
 			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
 			call thistype.m_zoneHolzbruck.disable()
+			set thistype.m_zoneDornheim = Zone.create("DH", gg_rct_zone_dornheim) // Tutorial
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
@@ -515,27 +516,33 @@ endif
 		public static method restoreStartX takes integer index, string zone returns real
 			if (zone == "GA") then
 				return GetRectCenterX(gg_rct_start_gardonar)
+			elseif (zone == "HB") then
+				return GetRectCenterX(gg_rct_start_holzbruck)
 			endif
 
-			return GetRectCenterX(gg_rct_start_holzbruck)
+			return GetRectCenterX(gg_rct_start_dornheim)
 		endmethod
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartY takes integer index, string zone returns real
 			if (zone == "GA") then
 				return GetRectCenterY(gg_rct_start_gardonar)
+			elseif (zone == "HB") then
+				return GetRectCenterY(gg_rct_start_holzbruck)
 			endif
 
-			return GetRectCenterY(gg_rct_start_holzbruck)
+			return GetRectCenterY(gg_rct_start_dornheim)
 		endmethod
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
 			if (zone == "GA") then
 				return 180.0
+			elseif (zone == "HB") then
+				return 270.0
 			endif
 
-			return 270.0
+			return 90.0
 		endmethod
 
 		/// Required by \ref MapChanger.

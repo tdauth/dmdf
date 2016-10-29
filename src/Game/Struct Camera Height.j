@@ -65,6 +65,8 @@ library StructGameCameraHeight requires Asl, StructGameCharacter
 			call PauseTimer(thistype.m_timer)
 			// reset z offset for safety, reset immediately, otherwise it might move in video sequences!
 			call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+			call StopCamera() // for safety
+			call ResetToGameCamera(0.0) // for safety
 		endmethod
 
 		/**

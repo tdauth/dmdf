@@ -67,13 +67,13 @@ Handlung:
 * Tutorial: Zunächst einblenden, dass man mit "-menu" ins Haupt-Menü kommt.
 * Tutorial: Einblenden, dass man eine Teleportationsrolle dabei hat.
 * Creep-Lager-Icons funktionieren im Editor aber nicht im Spiel. Liegt daran, dass nicht erkundete Gebiete überhaupt nicht sichtbar sind: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/creep-camps-not-showing-231992/index3.html
-* Klassenzauber auf Basis von "Mana und Leben auffüllen"?
+* DEPREACTED: Klassenzauber auf Basis von "Mana und Leben auffüllen"?
 * FIXED: Vampirgebietergruppe muss viel mehr droppen. Artefakte, Tränke, am besten Runen!
 * "Genesung" schadet dem Kleriker selbst. Sollte heilen aber ohne dem Kleriker selbst Leben abzuziehen.
-* "Böses bannen" hängt extrem.
+* FIXED (Standardwerte): "Böses bannen" hängt extrem.
 * Die Startbrücke endlich breiter machen!
-* Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
-* Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
+* DEPRECATED: Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
+* DEPRECATED: Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
 * ASL: Mehr API-Kommentare.
 * ASL: AClassSelection - Multiboard-Anzeige optional machen (dynamisch).
 * ASL: AClassSelection - Drehung optional machen (dynamisch).
@@ -96,12 +96,12 @@ Handlung:
 * Arenameister und Talras' mutiger Waffenmeister haben dasselbe Icon.
 * Wiederbelebungsbug erneut. Nach Video "Das erste Gefecht" wurde während des Spiels Charakter 0 getötet und kein Wiederbelebungstimer gestartet. Es erschien auch kein Timerdialog.
 * Bei allen Videosequenzen sollte nach der Ausblendung des Schwarzfilters bereits die Kamera in Bewegung sein. Sonst wirkt es nicht flüssig.
-* Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
+* FIXED: Spielhintergrundmodell runterladen, statt Frostthron. Am besten etwas mit Feuer und düsterer Stimmung.
 * FIXED (Hauptmenü): Button zum Durchschalten der Dungeons (Schreinbutton?).
 * FIXED: Video Wigberht: Frost statt Feuerwelle
-* Video Wigberht: Weniger Kameras um die Orks zu sehen, weniger Kameras um die terraindeformation und den Tot der Orks zu sehen.
+* FIXED: Video Wigberht: Weniger Kameras um die Orks zu sehen, weniger Kameras um die terraindeformation und den Tot der Orks zu sehen.
 * Rückkopplung beim Zauberer zieht kein Mana ab. Gameplaykonstanten?!
-* Großen Felsvorsprung über Bärenhöhle entfernen.
+* FIXED: Großen Felsvorsprung über Bärenhöhle entfernen.
 * 2 Items werden für Spieler 1 gedroppt und dann erst wieder 1 Item für Spieler 2.
 * Nordmänner kämpfen in Video gegen Drachentöterin. Was wenn Gefährten dabei sind?!
 * Video: Grundsätzlich alle Einheiten von Gefolgsleuten hiden, außer die, von welchen actor erzeugt werden.
@@ -116,7 +116,7 @@ Handlung:
 * Wenn Seitengegenstand anderem Charakter gegeben wird, wird er nicht richtig zurück gesetzt. Pickup sollte Seitengegenstand einfach entfernen.
 * Belichtungsfehler herausfinden und fixen. Die Schatten sind viel zu dunkel?! Der Belichtungsfehler stammt vom falschen Skymodell. Das Wetter ändert manchmal das Skymodell? Dann funktioniert die Belichtung wieder. Am besten in jedem Video das Skymodell festsetzen und danach mit AWeather wieder zurücksetzen. Falsch AWeather hat changeSky() auf false. Liegt an Uhrzeit?
 * Initialskymodell für Karte Talras setzen.
-* Ricman und Wigberht einfach nach letzter Schlacht automatisch ins Lager bewegen. Ansonsten verwirrend.
+* FIXED: Ricman und Wigberht einfach nach letzter Schlacht automatisch ins Lager bewegen. Ansonsten verwirrend.
 * Bei letzter Schlacht sollen sich zur Sicherheit Einheiten nicht töten können? Damage event verwenden und Leben wieder auffüllen so wie beim ersten Dago-Video.
 * Wigberht "Erzähl mir was über deine Heimat" "Nun komm schon" erzählt einfach direkt etwas.
 * Weniger Erfahrung für die leppische Hauptquests. Man steigt viel zu schnell auf.
@@ -133,13 +133,13 @@ Handlung:
 * Kisten und Fässer brauchen Zerstöranimation.
 * Bärgengestalt braucht Verwandlungsanimation (per Code). Suche Animationsnummer von Hive heraus!
 * Krähengestalt braucht Verwandlungsanimation (per Code). Suche Animationsnummer von Hive heraus!
-* Grimoirefähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
-* Inventar- und Grimoirefähigkeiten bei Verwandlung falls gefordert explizit entfernen, anstatt hinzuzufügen.
+* DEPRECATED: Grimoirefähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
+* FIXED: Inventar- und Grimoirefähigkeiten bei Verwandlung falls gefordert explizit entfernen, anstatt hinzuzufügen.
 * Schafsjunge vielleicht Hirtenjunge nennen?
 * Schafsjunge Satz "Was verkaufst du denn?".
 * FIXED: Schafsjunge soll Wolle usw. verkaufen.
 * FIXED: Wolle und Questbelohnung einbauen.
-* Beleidigung gegenüber Mathilda rausnehmen.
+* DEPRECATED: Beleidigung gegenüber Mathilda rausnehmen.
 * Magische Schockwellen Effekt.
 * Björn gibt keine Goldmünzen (real).
 * Lothar: Dialogoptionen sind nach Quest mit Mathilda einfach weg.
@@ -151,7 +151,7 @@ Handlung:
 * FIXED: Mit Wigberht reden sollte nur 200 Erfahrung geben.
 * FIXED: Sammeln sollte nur 200 Erfahrung geben.
 * FIXED: Orks laufen zurück bei letzter Schlacht (nicht patroullieren?).
-* Drachentöterin und Sisgard usw. während Video als Fellow unbesiegbar machen und hiden? Wird sonst angegriffen.
+* FIXED (Fellows werden verborgen): Drachentöterin und Sisgard usw. während Video als Fellow unbesiegbar machen und hiden? Wird sonst angegriffen.
 * FIXED: Quest Metzelei: Tötungsreihenfolge sollte egal sein. Zumindest bist zur Todesgruft.
 * FIXED: Verzauberter Stab: Kürzer machen.
 * FIXED: Verzauberter Stab: Breiter machen.
@@ -159,14 +159,14 @@ Handlung:
 * Versorgung von Talras: 200 Erfahrung?
 * DEPRECATED (Gegner werden angezeigt, wenn man ihn anklickt): Agihard einbauen "Gegen wen kann ich kämpfen?". Beschreibung des PvP-Kampfes.
 * Stäbe sollen Zweihandwaffen sein?
-* Sisgard, Ricman und Drachentöterin benötigen mehr interessante Fähigkeiten.
+* DEPRECATED: Sisgard, Ricman und Drachentöterin benötigen mehr interessante Fähigkeiten.
 * Das erste Gefecht: Gegner deutlich schwächer machen da das Quest sehr schnell nach Beginn des Spiels abgeschlossen werden kann.
-* "Gehen wir." nicht auswählbar nach erfolgreichem Abschluss von "Die Zauberkunst".
+* DEPRECATED: "Gehen wir." nicht auswählbar nach erfolgreichem Abschluss von "Die Zauberkunst".
 * DONE (kein custom spell mehr): Waldläufer wird durch Sprinten eventuell sehr langsam. Hängt mit Lauern zusammen??
 * DONE: Auftrag "Krieg": Videos schreiben und einbauen.
-* Extramarkierung für die Fallenplatzierung am Außenposten einbauen. Es muss deutlich werden wo die Fallen hinkommen.
-* Charakterübersicht: Balken sind nicht ausgefüllt obwohl volle Werte (Leben, Mana).
-* QuestWar (stattdessen Heuschreckenfähigkeit): setupUnitAtDestination -> das Unit-Pathing wird nicht deaktiviert. Und das obwohl "Disable unit pathing for Knecht" kommt.
+* FIXED: Extramarkierung für die Fallenplatzierung am Außenposten einbauen. Es muss deutlich werden wo die Fallen hinkommen.
+* FIXED: Charakterübersicht: Balken sind nicht ausgefüllt obwohl volle Werte (Leben, Mana).
+* FIXED: QuestWar (stattdessen Heuschreckenfähigkeit): setupUnitAtDestination -> das Unit-Pathing wird nicht deaktiviert. Und das obwohl "Disable unit pathing for Knecht" kommt.
 * Rebhuhnjagd: Rebhuhnmodell.
 * Rebhuhnjagd: Icons für die drei Jagdfähigkeiten.
 * Jagdfalke: Braucht mehr Fähigkeiten. Muss auch in anderen Kämpfen von Nutzen sein.
@@ -174,18 +174,18 @@ Handlung:
 * Nordmänner schwächer machen.
 * Ricman und Wigberht schwächer machen, siehe Orks und Dunkelelfen.
 * Wigberht actor in video Wigberht und character actor werden beim Überspringen nicht immer entfernt!
-* Drachentöterin läuft in Videos immer weg sobald Gegner in der Nähe sind!
+* FIXED (der Actor Owner muss richtig gesetzt sein): Drachentöterin läuft in Videos immer weg sobald Gegner in der Nähe sind!
 * Wiederbelebungen während Video pausieren.
 * Klippen unterhalb von Fulco mit Blockern versehen, ansonsten läuft Wigberht dorthin.
 * Cheat "afterwar": Immer wenn Charaktere in Gebiet bewegt werden muss geprüft werden ob sie sich bereits darin befinden. In diesem Fall müssen sie zuvor wegbewegt werden.
-* Video "Upstream": Das Schiff sollte gerade ausfahren und sich nicht ständig drehen.
+* Video "Upstream": Das Schiff sollte geradeaus fahren und sich nicht ständig drehen.
 * Video "Upstream": Der Erzähler muss so da stehen, dass man das Gelände unterhalb des Berges noch sieht.
 * Video "Upstream": Die Drachentöterin sollte mit fahren.
-* Wenn der Charakter zwei Stufen auf einmal aufsteigt, bekommt er nur für eine Stufe Zauberpunkte.
+* FIXED (die Stufendifferenz wird berechnet mit oldLevel, Grimoire.heroLevel): Wenn der Charakter zwei Stufen auf einmal aufsteigt, bekommt er nur für eine Stufe Zauberpunkte.
 * Arkane Zeit: Beschwörungszeit bei Gegnern weiter reduzieren.
-* Was passiert mit dem Handicap der Creeps wenn ein Spieler das Spiel verlässt.
+* Was passiert mit dem Handicap der Creeps wenn ein Spieler das Spiel verlässt?
 * 2/2 Rudelführer obwohl nur einer getötet wurde.
-* Eiserne Haut, Aura der Rücknahme, Autorität, Stich.
+* DONE: Eiserne Haut, Aura der Rücknahme, Autorität, Stich.
 * Verhindern dass Arenagegner Leute außerhalb der Arena angreift.
 * 2. Vorratswagen ist wieder zurückgefahren, Spieler 2. Timer einbauen wie bei Dago!
 * Aus Favoriten entfernen wird bei Spieler 2 nicht angezeigt. Hat 3 Zauber und dann 4 Zauber, Ritter, geht nie.
@@ -204,14 +204,14 @@ Handlung:
 * DONE (Reduziert den Lag kaum!): Alle Fähigkeiten aus Klassenauswahl preloaden. Reduziert Lag.
 * Spruchrollen günstiger machen.
 * Waffen bei Einar usw. viel mehr Aufladungen.
-* Spruchrolle einbauen, die eine Gruppe zu einem Schrein teleportiert.
+* FIXED (Magische Rune): Spruchrolle einbauen, die eine Gruppe zu einem Schrein teleportiert.
 * Agihards "Lass mich in die Arena" so umbauen wie es im Dialog steht.
 * Banditen droppen zu viel. Nicht jedes mal addNewItemType() aufrufen. Sollten sich gegenseitig ausschließen.
 * http://www.hiveworkshop.com/forums/general-mapping-tutorials-278/set-spell-ui-position-spellbook-240242/ mit Dummy-Zaubern die Icon-Positionen bestimmen.
-* Alle Zauber mit Icon-Position auf 0 | 2 setzen, damit sie unten positioniert werden.
+* Alle Zauber mit Icon-Position auf 0 | 2 setzen, damit sie unten positioniert werden. Werden dann aber auch im Zauberuntermenü unten platziert.
 * Ultimativzauber auf Seite 2 packen. Die Seite hängt davon ab, wann der Zauber für den Charakter erzeugt wurde. Also Ultimativzauber erst am Ende erzeugen. Nicht alphabetisch!
-* Intro: Dorfbewohner und Nordmänner als actors einfügen, ansonsten abhängig von der Tageszeit.
-* Dago: Ist in Dialog zu leise. Bonus-Kampagne verwendet  call SetSpeechVolumeGroupsBJ(  ) und call VolumeGroupResetBJ(  ) um Transmission außerhalb von Videos. Außerdem WaitForSoundBJ um zu warten. Vermutlich liegt es jedoch nicht daran, da es inzwischen eingebaut wurde.
+* Intro: Dorfbewohner und Nordmänner als actors einfügen, ansonsten abhängig von der Tageszeit. Es kann sein, dass die Klassenauswahl zu lange dauert.
+* FIXED: Dago: Ist in Dialog zu leise. Bonus-Kampagne verwendet  call SetSpeechVolumeGroupsBJ(  ) und call VolumeGroupResetBJ(  ) um Transmission außerhalb von Videos. Außerdem WaitForSoundBJ um zu warten. Vermutlich liegt es jedoch nicht daran, da es inzwischen eingebaut wurde.
 * Dago, Schafshirte und Tanka: Sound-Lautstärke an die wc3-Sounds angleichen.
 * Magische Schockwellen -> Effekt fehlt.
 * DONE: AInfo: Durch neue Lösung hängt des Skippen des Textes. Skip-Trigger einbauen -> Text direkt clearen.
@@ -225,7 +225,7 @@ Handlung:
 * Kollision von Einheiten kleiner machen.
 * Einheitenskalierungen verbessern.
 * Blocker in Burg und auf Felsen einbauen.
-* Arena: Wenn Spieler hilft dann killen.
+* FIXED: Arena: Wenn Spieler hilft dann killen.
 * HeroGlow für Ringmodell.
 * HeroGlow für Schwertmodell.
 * HeroGlow für Schildmodell.
@@ -234,7 +234,7 @@ Handlung:
 * AVideo: Charakter kann Geschwindigkeitsbonus haben der erhalten bleibt - Mantel. Dieser muss manuell zurückgesetzt werden. Einfach actor() auf feste Geschwindigkeit setzen?
 * Ricman braucht anderes Modell, muss sich abheben.
 * Auftrag "Die Verteidigung von Talras": Video sollte mögliche Angriffspunkte und Verteidigung erklären.
-* Orks kopieren und stärker machen als bei Auftrag "Die Nordmänner".
+* FIXED: Orks kopieren und stärker machen als bei Auftrag "Die Nordmänner".
 * Video "Prepare For The Defense": Herzog muss überrascht wirken und Markward begeistern, dass alle Aufträge erfüllt wurden. Große Belohnung.
 * Knechte sollen Tunnel graben können. So kann man sich Versorgung in den Außenposten holen.
 * Mehr Interaktion bei mehreren Spielern: Dararos sollte mit Hochelfen eintreffen und mit Interaktion sollte ein Zauber gewirkt werden. Charaktere müssen auf magischen Kreisen ausharren?
@@ -252,7 +252,7 @@ Handlung:
 * Björn: Dialog war verbuggt. Dialog aufgepoppt obwohl beendet, Spieler 2, dann unbesiegbar.
 * Bei Spieler 2 werden eindeutig bestimmte Dialoge nicht angezeigt. Zu viele struct-Instanzen? Falls ja alle Dialoge static machen!!!
 * Das erste Gefecht: Clipping und Kamerafahrt.
-* Klerikerzauber: Schutz durch Anzahl erkundeter Schreine?
+* DEPRECATED (gibt es jetzt beim Ritter): Klerikerzauber: Schutz durch Anzahl erkundeter Schreine?
 * Video "The First Combat": Vier Nordmänner stehen nebeneinander auf dem Hügel aber nicht Ricman.
 * Video "The Chief": Plötzliche cuts umbauen.
 * Video "The First Combat": Große Kameradrehungen ersetzen durch ein paar Ansichten und Fades.
@@ -265,25 +265,20 @@ Handlung:
 * Kurzes Video mit Belagerungswaffen einbauen oder Pan.
 * Ein Tutorial über 3D-Sounds lesen und die 3D-Sounds für Gespräche zwischen NPCs richtig einstellen.
 * Die Zauberbuchfähigkeiten für Icons von Gegenstände brauchen eine andere ID als spellbook. Ansonsten werden die Zauber in den Zauberfähigkeiten angezeigt? Wo würden sie aber ansonsten angezeigt werden?
-* Drachentöterin läuft in Videos immer noch weg. Wieso bringt der "stop"-Befehl nichts?! Computer KI??
+* FIXED (Actorspieler richtig setzen, außerdem muss Allied den Spieler Opfer haben und nicht Computer): Drachentöterin läuft in Videos immer noch weg. Wieso bringt der "stop"-Befehl nichts?! Computer KI??
 * Götzenbild-Zauber fixen.
-* Sprinten zur Sicherheit auf Standardfähigkeit basieren lassen und auch Angriffsgeschwindikeit erhöhen.
+* FIXED: Sprinten zur Sicherheit auf Standardfähigkeit basieren lassen und auch Angriffsgeschwindikeit erhöhen.
 * Ricman: Schildblock entfernen oder ersetzen, trägt keinen Schild.
 * FIXED: Nordmänner: Hero Glow entfernen. Unterscheidbar zu Ricman machen.
 * Der Waldläufer tötet sich durch irgendeine Fähigkeit selbst. Brandpfeile? Mehrfachschuss? Lauern? Sprinten?
-* Zukünftiger Release-Vorgang: Optimizer jedoch nur mit Skriptoptimierungen damit war3map.wts unverändert bleibt. Karte kopieren und englische wts-Datei einfügen.
+* Zukünftiger Release-Vorgang: Optimizer jedoch nur mit Skriptoptimierungen damit war3map.wts unverändert bleibt. Karte kopieren und englische wts-Datei einfügen. Dadurch ist die Karte jedoch unnötig groß und vor allem langsam.
 * Mitwirkende: Gebiet für Spieler 2 nicht sichtbar.
 * wc3object editor should offer the function "Validate Field References" and check all <> entries.
 * Osman Grundrauschen abgleichen gegen normale Takes und damit Rauschen entfernen.
 
 Aufgehoben für Version 0.9:
 Critical errors:
-* Professions info add Book of Hunting.
-* Limit of skeletons does still not work.
-* Add info for options.
-* Fix the war3map_en.wts file for Talras by undoing some commits and update the English Talras map.
-* Druid summons Misha?! or is this an old version?
-* Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Excel table.
+* FIXED: Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Excel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * Orks bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
 * Die Wachen des Orkanführers existieren noch nachdem das Video "Wigberht" übersprungen wurde!
@@ -364,8 +359,24 @@ Gegenstands-Icon-Fehler:
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* FIXED: Professions info add Book of Hunting.
+* Limit of skeletons does still not work (necromancer).
+* FIXED: Add info for options.
+* Fix the war3map_en.wts file for Talras by undoing some commits and update the English Talras map.
+* FIXED (in the mod) wc3lib bug: field Arsg:UnitID is compressed although it was changed! Druid summons Misha?! or is this an old version? Probably only for the last level of Treefolk.
+* Video mit Diakon und Medusa: Kamerafahrten vereinfachen. Die letzte Kamerafahrt beim Diakon macht keinen Sinn. Predigt oder zaubert er?
+* Allgemein: Alle Zauber des Drachentöters testen.
+* Deranors Schwertkämpfer haben keinen Luftangriff.
+* Rage: Braucht Spezialeffekt.
+* Rage: Funktioniert nur ein oder zweimal nach Draufhauen? Sieht eigentlich auch richtig aus. Dauer wurde auf 10 Sekunden erhöht.
+* Rage: Nicht nur durch Lasthit anstauen, sonst schlecht.
+* Unbarmherzigkeit (Passiv): Funktioniert gar nicht? Kommt zumindest keine Anzeige. Nochmal prüfen, Code sieht korrekt aus.
+* FIXED: Vasallenschild: Holzschild kaufen.
+* FIXED: Hochelfin ist gefallen und wird in ... wiederbelebt. Namen von Fellow verwenden!
 * Falsche Angriffsanimation mit Schild kommt manchmal. Der Charakter schlägt mit dem Schild zu.
-* Nach dem Aufstieg auf Stufe 6 ging gar nichts mehr, keine Skillpoints, keine Wiederbelebung der Gefährten, keine Questgebiete mehr. OpLimit? Eventuell versuchen war3error zu verwenden.
+* Falsche Angriffsanimationen mit zwei Waffen (Drachentöter). Wird gar nicht erkannt?
+* Kritischer Fehler (siehe Klimaanlage Let's Play Folge 2): Vermutlich nachdem die Drachentöterin starb. Nach dem Aufstieg auf Stufe 6 ging gar nichts mehr (vermutlich schon vorher), keine Skillpoints, keine Wiederbelebung der Gefährten, keine Questgebiete mehr. OpLimit? Eventuell versuchen war3error zu verwenden.
+* Große Doppelaxt bzw. für alle Zweihandwaffen ins Tooltip schreiben!
 * FIXED: Kurzschwert des Drachentöters und Morgenstern machen viel zu viel Schaden.
 * FIXED: Alle Schwerter und Äxte verursachen in Version 0.9 20 Schaden (AItx - DataA1).
 * wc3lib: Vermutlich Object Data Compression bug oder fehlender Eintrag in SLKs für die Ability (AItx - DataA1).
@@ -374,7 +385,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED (Werte haben nicht gestimmt): Tooltip Erlernen: Hieb 0 Schaden.
 * FIXED: Kräuter sollten 2 Gold kosten und Tränke 4 Gold, ansonsten gibt ein verkauftes Slot 0 Gold!
 * Waffen und Amulette usw. wesentlich teurer machen, da man schnell Gold bekommt. Andererseits kann man sie dann auch teuer verkaufen, sinnvoll?
-* Zoombug endlich beheben! Vermutlich timerFunctionCamera
+* Zoombug endlich beheben! Vermutlich timerFunctionCamera. An AThirdPersonCamera orientieren. Hier wird auch SetCameraField() verwendet und es kann auch zurückgesetzt werden. Zur Sicherheit StopCamera()? Oder an Timer-Funktion orientieren.
 * FIXED: Fette Beute und Pferd reiten erlernen haben dieselbe ID.
 * Endlich eine vollständige ID-Liste erzeugen und überprüfen.
 * Kamera wackelt während Gesprächen wenn 3rd-Person-Kamera aktiv ist. Vermutlich timerFunctionCamera
@@ -403,6 +414,7 @@ Optimizing:
 * FIXED: Split up global hash tables and handle attachment hash tables.
 * FIXED: Split up unique keys as well.
 
+* Add the tutorial map Dornheim with a custom loading screen and working transition to Talras. This map provides the first map transition which can always be used from the beginning.
 * Extract all war3map.wts files and use wc3trans. Import all current object data before.
 * wc3trans: Add option to copy translations for multiple strings.
 * Keiler: Kein Attachmentpoint für Schlafeffekt?

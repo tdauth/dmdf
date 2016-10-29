@@ -5,7 +5,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		public stub method onStart takes nothing returns nothing
 			local integer i
 			call VideoRescueDago0.video.evaluate().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call QuestRescueDago.quest.evaluate().enable.evaluate()
 			set i = 0
 			loop
@@ -76,7 +76,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			local thistype this = thistype(questItem.quest())
 			local integer i
 			call VideoRescueDago1.video.evaluate().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			// make sure dago starts at the correct position
 			call SetUnitX(Npcs.dago(), GetRectCenterX(gg_rct_quest_rescue_dago_dagos_position))
 			call SetUnitY(Npcs.dago(), GetRectCenterY(gg_rct_quest_rescue_dago_dagos_position))

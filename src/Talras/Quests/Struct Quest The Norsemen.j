@@ -62,7 +62,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		public stub method onStart takes nothing returns nothing
 			call VideoTheFirstCombat.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemMeetAtTheBattlefield).setState(AAbstractQuest.stateCompleted)
 			call QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemFight).setState(AAbstractQuest.stateNew)
 			call QuestTheNorsemen.quest.evaluate().displayState()
@@ -88,7 +88,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		public stub method onStart takes nothing returns nothing
 			call VideoANewAlliance.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call QuestTheNorsemen.quest.evaluate().questItem(QuestTheNorsemen.questItemReportHeimrich).setState(AAbstractQuest.stateCompleted)
 			call QuestTheNorsemen.quest.evaluate().displayState()
 		endmethod
@@ -365,7 +365,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		public method enableTheBattle takes nothing returns nothing
 			call this.questItem(thistype.questItemMeetTheNorsemen).complete()
 			call VideoTheChief.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call this.questItem(thistype.questItemMeetAtTheBattlefield).enable()
 			set this.m_questAreaBattle = QuestAreaTheNorsemenBattle.create(gg_rct_quest_the_norsemen_assembly_point)
 		endmethod
@@ -400,7 +400,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		public method completeMeetAtTheOutpost takes nothing returns nothing
 			local unit whichUnit
 			call VideoWigberht.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call this.questItem(thistype.questItemMeetAtTheOutpost).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemReportHeimrich).setState(thistype.stateNew)
 			call this.displayUpdate()

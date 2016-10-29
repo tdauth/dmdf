@@ -11,6 +11,7 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 			call this.addEntry(OptionsEntryEnableShrineButton.create.evaluate(this))
 			call this.addEntry(OptionsEntryEnableTutorial.create.evaluate(this))
 			call this.addEntry(OptionsEntryEnableQuestSignals.create.evaluate(this))
+			call this.addEntry(OptionsEntryWorldMap.create.evaluate(this))
 
 			return this
 		endmethod
@@ -159,6 +160,29 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 
 		public static method create takes OptionsSpellbook spellbook returns thistype
 			local thistype this = thistype.allocate(spellbook, 'A1UY', 'A1UZ')
+
+			return this
+		endmethod
+	endstruct
+
+	struct OptionsEntryWorldMap extends AMultipageSpellbookAction
+
+		public method spellbook takes nothing returns OptionsSpellbook
+			return OptionsSpellbook(this.multipageSpellbook())
+		endmethod
+
+		public stub method onTrigger takes nothing returns nothing
+			local Character character = this.spellbook().character()
+
+			if (MapData.mapName != "WM") then
+				call MapChanger.changeMap.evaluate("WM")
+			else
+				call character.displayMessage(Character.messageTypeError, tre("Sie sehen bereits die Weltkarte.", "You are already viewing the world map."))
+			endif
+		endmethod
+
+		public static method create takes OptionsSpellbook spellbook returns thistype
+			local thistype this = thistype.allocate(spellbook, 'A1V4', 'A1V5')
 
 			return this
 		endmethod

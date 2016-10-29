@@ -17,7 +17,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call QuestWar.quest().cleanUnits()
 
 			call VideoTheDefenseOfTalras.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 
 			call QuestTheDefenseOfTalras.quest.evaluate().enableTimer.evaluate()
 		endmethod
@@ -54,7 +54,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		public stub method onStart takes nothing returns nothing
 			call VideoHolzbruck.video().play()
 			debug call Print("After finish")
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			debug call Print("After wait")
 			call QuestTheDefenseOfTalras.quest.evaluate().complete()
 			call QuestTheWayToHolzbruck.quest().enable()
@@ -179,7 +179,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			call Fellows.initDararos(Npcs.dararos())
 
 			call VideoDararos.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 
 			call Fellows.dararos().shareWithAll()
 
@@ -304,7 +304,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			local unit guard
 
 			call VideoVictory.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 
 			call Fellows.ricman().reset()
 			call Fellows.wigberht().reset()

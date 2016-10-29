@@ -18,7 +18,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			// TODO Maybe enable the shrine for all characters?
 			// TODO Move characters down
 			call VideoDeranor.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 
 			call WaygateSetDestination(gg_unit_n02I_0264, GetRectCenterX(gg_rct_tomb_inside), GetRectCenterY(gg_rct_tomb_inside))
 			call WaygateActivate(gg_unit_n02I_0264, true)
@@ -131,7 +131,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			call AUnitRoutine.manualStart(Npcs.dragonSlayer())
 
 			call VideoDeranorsDeath.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 
 			call this.complete()
 

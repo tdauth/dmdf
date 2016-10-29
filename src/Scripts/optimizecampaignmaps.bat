@@ -15,3 +15,9 @@ del "E:\Warcraft III Englisch\Maps\DMDF\HU.w3x"
 
 del "E:\Warcraft III Englisch\Maps\DMDF\DS.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 5 - Deranor.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\DS.w3x" --checkscriptstuff --exit
+
+del "E:\Warcraft III Englisch\Maps\DMDF\WM.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\WorldMap.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\WM.w3x" --checkscriptstuff --exit
+
+del "E:\Warcraft III Englisch\Maps\DMDF\DH.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Tutorial.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\DH.w3x" --checkscriptstuff --exit

@@ -4,7 +4,7 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 
 		public stub method onStart takes nothing returns nothing
 			call VideoPalace.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call ACharacter.panCameraSmartToAll()
 			call QuestPalace.quest.evaluate().completeReachPalace.evaluate()
 		endmethod
@@ -18,7 +18,7 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 
 		public stub method onStart takes nothing returns nothing
 			call VideoWelcome.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call ACharacter.panCameraSmartToAll()
 			call QuestPalace.quest.evaluate().completeReachPalaceInside.evaluate()
 		endmethod

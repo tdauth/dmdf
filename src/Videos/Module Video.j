@@ -33,6 +33,9 @@ library ModuleVideosVideo
 			// make sure the field is not applied anymore
 			call TriggerSleepAction(Character.cameraTimerInterval)
 			call SetCameraField(CAMERA_FIELD_TARGET_DISTANCE, Character.defaultCameraDistance, 0.0)
+			call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+			call StopCamera() // for safety
+			call ResetToGameCamera(0.0) // for safety
 
 			if (cameraSetup != null) then
 				call CameraSetupApplyForceDuration(cameraSetup, true, 0.0)

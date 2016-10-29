@@ -28,6 +28,10 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			return this.m_destroyOnActivation
 		endmethod
 
+		public method rect takes nothing returns rect
+			return this.m_rect
+		endmethod
+
 		/**
 		 * Checks for a user specified condition which must be true to activate the event at all.
 		 * Otherwise not even a message is shown when a character enters.

@@ -12,7 +12,10 @@ call thistype.addContributor("Johanna W.", tre("Tests", "Tests"))
 
 // maps
 call thistype.addTitle(tre("Karten", "Maps"))
+call thistype.addContributor("Andreas B. (Deranor)", tre("Talras, Holzbruck", "Talras, Holzbruck"))
+call thistype.addContributor("Tamino Dauth (Baradé)", tre("Talras (Teile), Gardonar, Holzbrucks Unterwelt", "Talras (parts), Gardonar, Holzbruck's Underworld"))
 call thistype.addContributor("Heinvers", tre("Gardonars Hölle, Deranors Sumpf", "Gardonar's Hell, Deranor's Swamp"))
+call thistype.addContributor("PrinceYaser", tre("Dornheim", "Dornheim"))
 
 // voices
 call thistype.addTitle(tre("Sprecher", "Voices"))

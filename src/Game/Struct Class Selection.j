@@ -121,7 +121,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			// Is no repick which means it is the first class selection in the beginning of the game.
 			if (not thistype.m_gameStarted) then
-				call SetHeroLevel(character.unit(), MapData.startLevel, false)
+				call SetHeroLevelBJ(character.unit(), MapData.startLevel, false)
 				debug call Print("Start level: " + I2S(MapData.startLevel))
 				// Initial skill points depend on the map.
 				call character.grimoire().addSkillPoints.evaluate(MapData.startSkillPoints, true)

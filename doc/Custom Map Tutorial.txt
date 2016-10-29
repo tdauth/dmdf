@@ -78,7 +78,6 @@ struct MapData extends MapDataInterface
 	public static constant real midday = 12.0
 	public static constant real afternoon = 16.0
 	public static constant real evening = 18.0
-	public static constant real videoWaitInterval = 1.0
 	/// The fixed time in seconds which it takes until a character is revived automatically after his death.
 	public static constant real revivalTime = 35.0
 	public static constant real revivalLifePercentage = 100.0

@@ -4,7 +4,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 
 		public stub method onStart takes nothing returns nothing
 			call VideoTheCastle.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call ACharacter.panCameraSmartToAll()
 			call QuestTalras.quest.evaluate().enableDuke.evaluate()
 		endmethod
@@ -18,7 +18,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 
 		public stub method onStart takes nothing returns nothing
 			call VideoTheDukeOfTalras.video().play()
-			call waitForVideo(MapData.videoWaitInterval)
+			call waitForVideo(Game.videoWaitInterval)
 			call QuestTalras.quest.evaluate().complete()
 			call QuestTheNorsemen.quest().enable()
 		endmethod
