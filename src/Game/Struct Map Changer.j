@@ -161,6 +161,12 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return result
 		endmethod
 
+		private static method selectAndMoveCamera takes unit restoredUnit, player whichPlayer returns nothing
+			call SelectUnitForPlayerSingle(restoredUnit, whichPlayer)
+			//debug call Print("After selecting character " + GetUnitName(restoredUnit) + " for player " + GetPlayerName(whichPlayer))
+			call SetCameraPositionForPlayer(whichPlayer, GetUnitX(restoredUnit), GetUnitY(restoredUnit))
+		endmethod
+
 		/**
 		 * Restores a single player character from \p cache for \p whichPlayer at \p x, \p y with \p facing.
 		 * If the map is started for the first time, the character is created newly. Otherwise its unit and spells are replaced as well as the inventory.
@@ -256,9 +262,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// Since the character traveled for some time fill stats.
 			call SetUnitLifePercentBJ(restoredUnit, 100.0)
 			call SetUnitManaPercentBJ(restoredUnit, 100.0)
-			call SelectUnitForPlayerSingle(restoredUnit, whichPlayer)
-			//debug call Print("After selecting character " + GetUnitName(restoredUnit) + " for player " + GetPlayerName(whichPlayer))
-			call SetCameraPositionForPlayer(whichPlayer, GetUnitX(restoredUnit), GetUnitY(restoredUnit))
+			// NOTE works not on the load event.
+			call thistype.selectAndMoveCamera(restoredUnit, whichPlayer)
 		endmethod
 
 		/**
@@ -402,8 +407,25 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return IsMapFlagSet(MAP_RELOADED) and bj_isSinglePlayer and Game.isCampaign.evaluate()
 		endmethod
 
+		private static method timerFunctionSelectAndMoveCamera takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				if (Character.playerCharacter(Player(i)) != 0) then
+					call thistype.selectAndMoveCamera(Character.playerCharacter(Player(i)).unit(), Player(i))
+				endif
+				set i = i + 1
+			endloop
+			call PauseTimer(GetExpiredTimer())
+			call DestroyTimer(GetExpiredTimer())
+		endmethod
+
 		private static method triggerActionLoadTransition takes nothing returns nothing
+			local timer tmpTimer = null
 			call thistype.restoreCharactersSinglePlayer()
+			// start temporary 0 timer for selection and camera position, since it cannot be done without a delay on initialization
+			set tmpTimer = CreateTimer()
+			call TimerStart(tmpTimer, 0.0, false, function thistype.timerFunctionSelectAndMoveCamera)
 			debug call Print("Restored characters on loading the map in map transition")
 		endmethod
 

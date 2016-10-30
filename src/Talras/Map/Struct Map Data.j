@@ -451,7 +451,6 @@ endif
 			debug call Print("Waited successfully for intro video.")
 
 			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Geben Sie \"-menu\" im Chat ein, um ins Haupt-Menü zu gelangen.", "Enter \"-menu\" into the chat to reach the main menu."))
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
 			call QuestTalras.quest().enable()

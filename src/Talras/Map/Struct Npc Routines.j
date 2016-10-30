@@ -139,7 +139,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 		// NOTE take a look into struct Routines which ARoutinePeriod sub types you have to create and which parameters you could set for them!!!
 		public static method init takes nothing returns nothing
-			local AUnitRoutine routine
+			local AUnitRoutine routine = 0
 			// Wigberht
 			set thistype.m_wigberhtTraining = NpcRoutineWithFacing.create(Routines.train(), Npcs.wigberht(), 18.00, 5.00, gg_rct_waypoint_wigberht_training)
 			call thistype.m_wigberhtTraining.setFacing(252.39)

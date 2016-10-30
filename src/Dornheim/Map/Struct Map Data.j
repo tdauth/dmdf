@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapFellows
+library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests
 
 	struct MapData extends MapDataInterface
 		public static constant string mapName = "DH"
@@ -38,6 +38,13 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
+static if (DMDF_NPC_ROUTINES) then
+			/*
+			 * Use new OpLimit.
+			 */
+			call ForForce(bj_FORCE_PLAYER[0], function NpcRoutines.init)
+endif
+
 			call Shrines.init()
 			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
 			call initMapTalks.evaluate()
@@ -52,51 +59,12 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
 		public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
-			if (class == Classes.ranger()) then
-				// Hunting Bow
-				call UnitAddItemToSlotById(whichUnit, 'I020', 2)
-			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard()) then
-				// Haunted Staff
-				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
-			else
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemType(), 3)
-			endif
-			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
-			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
-			call UnitAddItemToSlotById(whichUnit, 'I061', 1)
-
-			call UnitAddItemToSlotById(whichUnit, 'I00A', 4)
-			call UnitAddItemToSlotById(whichUnit, 'I00D', 5)
 		endmethod
 
 		/**
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
 		public static method createClassItems takes Character character returns nothing
-			if (character.class() == Classes.ranger()) then
-				// Hunting Bow
-				call character.giveItem('I020')
-			elseif (character.class() == Classes.cleric() or character.class() == Classes.necromancer() or character.class() == Classes.elementalMage() or character.class() == Classes.wizard()) then
-				// Haunted Staff
-				call character.giveItem('I03V')
-			else
-				call character.giveItem(ItemTypes.shortword().itemType())
-				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
-			endif
-
-			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
-			call character.giveItem('I01N')
-			call character.giveQuestItem('I061')
-
-			call character.giveItem('I00A')
-			call character.giveItem('I00A')
-			call character.giveItem('I00A')
-			call character.giveItem('I00A')
-			call character.giveItem('I00D')
-			call character.giveItem('I00D')
-			call character.giveItem('I00D')
-			call character.giveItem('I00D')
 		endmethod
 
 		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
@@ -142,21 +110,35 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				set i = i + 1
 			endloop
 
+			call initMapPrimaryQuests()
+			call initMapSecundaryQuests()
+
 			call SuspendTimeOfDay(false)
 			call thistype.startAfterIntro.evaluate()
 		endmethod
 
 		public static method startAfterIntro takes nothing returns nothing
-			debug call Print("Waited successfully for intro video.")
-
 			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, tre("Geben Sie \"-menu\" im Chat ein, um ins Haupt-Menü zu gelangen.", "Enter \"-menu\" into the chat to reach the main menu."))
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
 
-			//call NpcRoutines.manualStart() // necessary since at the beginning time of day events might not have be called
-
 			call Game.applyHandicapToCreeps()
+
+			/*
+			 * Starts the tutorial:
+			 * - Select your character.
+			 * - Move to Ralph.
+			 * - Talk to Ralph and get a quest.
+			 * - Walk to your mother and talk to her.
+			 * - Collect herbals and sell them to get an item from the merchant.
+			 * - Get an item from the merchant.
+			 * - Give it to your mother.
+			 * - Talk to Gotlinde and level up.
+			 * - Skill some spell.
+			 * - Use the spell somewhere to kill a creep.
+			 * - The creep drops an equipment item, equip it.
+			 */
+			 call Character.displayHintToAll(tr("Willkommen bei Die Macht des Feuers. Klicken Sie zunächst Ihren Charakter an und schicken Sie ihn zu Ralph."))
 		endmethod
 
 		/// Required by \ref Classes.

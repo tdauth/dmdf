@@ -359,6 +359,8 @@ Gegenstands-Icon-Fehler:
 * Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
+* MapChanger: Does not save if a spell is NOT in favorites?
+* MapChanger: Options cannot be selected. But only in the map which is started via map transition for the first time. PauseUnit() by the intro video in Talras? Happens only sometimes.
 * FIXED: Professions info add Book of Hunting.
 * Limit of skeletons does still not work (necromancer).
 * FIXED: Add info for options.
