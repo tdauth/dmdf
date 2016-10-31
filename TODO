@@ -378,7 +378,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Falsche Angriffsanimation mit Schild kommt manchmal. Der Charakter schlägt mit dem Schild zu.
 * Falsche Angriffsanimationen mit zwei Waffen (Drachentöter). Wird gar nicht erkannt?
 * Kritischer Fehler (siehe Klimaanlage Let's Play Folge 2): Vermutlich nachdem die Drachentöterin starb. Nach dem Aufstieg auf Stufe 6 ging gar nichts mehr (vermutlich schon vorher), keine Skillpoints, keine Wiederbelebung der Gefährten, keine Questgebiete mehr. OpLimit? Eventuell versuchen war3error zu verwenden.
-* Große Doppelaxt bzw. für alle Zweihandwaffen ins Tooltip schreiben!
+* FIXED: Große Doppelaxt bzw. für alle Zweihandwaffen ins Tooltip schreiben!
 * FIXED: Kurzschwert des Drachentöters und Morgenstern machen viel zu viel Schaden.
 * FIXED: Alle Schwerter und Äxte verursachen in Version 0.9 20 Schaden (AItx - DataA1).
 * wc3lib: Vermutlich Object Data Compression bug oder fehlender Eintrag in SLKs für die Ability (AItx - DataA1).
@@ -394,6 +394,9 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Kamera zurücksetzen: Nichts machen, wenn man in 3rd-Person-Kamera ist.
 * Wenn man mit 3rd-Person-Kamera stirbt, sollte die Ansicht zurückgesetzt werden, damit man besser weiterkämpfen kann.
 * Sprungattacke: Keine Abklingzeit. Vermutlich wegen des Stuns bzw. des verursachten Schadens ohne 0-Timer?
+* Sprungattacke: Jump-Animation so langsam dass sie genauso lange dauert wie der Sprung.
+* Sprungattacke: Icon.
+* Sprungattacke: Effekte.
 * FIXED: Fette Beute von Ricman gibt zu viel Gold, kostet zu wenig Mana und hat eine zu kurze Abklingzeit: 180 Mana, 60 Sekunden und 50 Gold.
 * FIXED: Fette Beute: Erlernen-Tooltip stimmt nicht.
 * Bestehlen braucht anderes Icon. Hat dasselbe Icon wie Fette Beute.

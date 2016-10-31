@@ -672,7 +672,7 @@ endif
 			local integer i = 0
 
 			// TEST the command button should always be moved relatively to the camera!
-			call CommandButton.create(Player(0), 'B010', 'h00B', 0.0, 0.0)
+			//call CommandButton.create(Player(0), 'B010', 'h00B', 0.0, 0.0)
 
 			// use new OpLimit
 			call ForForce(bj_FORCE_PLAYER[0], function thistype.initCharactersScheme)

@@ -119,7 +119,7 @@ library StructGuisCommandButtons requires Asl, StructGameDmdfHashTable
 				call whichButton.updatePosition()
 				set i = i + 1
 			endloop
-			debug call Print("Updated all buttons")
+			//debug call Print("Updated all buttons")
 		endmethod
 
 		private static method onInit takes nothing returns nothing
