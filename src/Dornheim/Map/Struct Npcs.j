@@ -18,7 +18,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 
 		/// This method is and has to be called after unit creation.
 		private static method onInit takes nothing returns nothing
-			set thistype.m_ralph = gg_unit_H01D_0011
+			set thistype.m_ralph = gg_unit_H015_0029
 			set thistype.m_mother = gg_unit_H03H_0013
 			set thistype.m_gotlinde = gg_unit_H03I_0012
 			set thistype.m_hans = gg_unit_H03G_0008

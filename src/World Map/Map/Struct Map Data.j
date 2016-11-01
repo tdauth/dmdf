@@ -24,6 +24,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static constant boolean isSeparateChapter = false
 		public static sound cowSound = null
 
+		private static constant real refreshInterval = 0.05
+
 		private static Zone m_zoneDeranorsSwamp
 		private static Zone m_zoneGardonarsHell
 		private static Zone m_zoneGardonar
@@ -50,30 +52,43 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		private static method triggerActionTrack takes nothing returns nothing
 			local Zone zone = Zone(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
+			local string description = DmdfHashTable.global().handleStr(GetTriggeringTrigger(), 1)
+			local integer i = 0
 			debug call Print("Zone: " + zone.mapName())
+			loop
+				exitwhen (i == MapData.maxPlayers)
+				call DisplayTextToPlayer(Player(i), 0.0, 0.0, description)
+				set i = i + 1
+			endloop
 		endmethod
 
-		private static method createZoneChanger takes Zone zone, string imageFile returns nothing
+		private static method createZoneChanger takes Zone zone, string imageFile, string name, string description returns nothing
 			// TODO use a big invisible trackable with a big collision box
-			local trackable whichTrackable = CreateTrackableZ("Box1000x1000.mdx", GetRectCenterX(zone.rect()), GetRectCenterY(zone.rect()), 100.0, 0.0)
+			// Box1000x1000.mdx
+			local trackable whichTrackable = CreateTrackableZ("units\\nightelf\\Wisp\\Wisp.mdx", GetRectCenterX(zone.rect()), GetRectCenterY(zone.rect()), 100.0, 0.0)
 			local trigger clickTrigger = CreateTrigger()
 			local trigger trackTrigger = CreateTrigger()
 			local image whichImage = CreateImageEx(imageFile, GetRectCenterX(zone.rect()), GetRectCenterY(zone.rect()), 150.0, 200.0, 200.0)
+			local texttag textTag = CreateTextTag()
+			call SetTextTagPos(textTag, GetRectCenterX(zone.rect()), GetRectCenterY(zone.rect()), 100.0)
+			call SetTextTagTextBJ(textTag, name, 18.0)
+			call SetTextTagPermanent(textTag, true)
+			call SetTextTagVisibility(textTag, true)
 			call TriggerRegisterTrackableHitEvent(clickTrigger, whichTrackable)
 			call TriggerAddAction(clickTrigger, function thistype.triggerActionChangeZone)
 			call DmdfHashTable.global().setHandleInteger(clickTrigger, 0, zone)
 			call TriggerRegisterTrackableTrackEvent(trackTrigger, whichTrackable)
 			call TriggerAddAction(trackTrigger, function thistype.triggerActionTrack)
 			call DmdfHashTable.global().setHandleInteger(trackTrigger, 0, zone)
+			call DmdfHashTable.global().setHandleStr(trackTrigger, 1, description)
 			call ShowImage(whichImage, true)
-			call ShowUnit(zone.iconUnit(), false)
+			//call ShowUnit(zone.iconUnit(), false)
 		endmethod
 
 		private static method timerRefreshCamera takes nothing returns nothing
-			// TODO interfers with the character camera
-			//call SetCameraField(CAMERA_FIELD_ANGLE_OF_ATTACK, 270.0, 0.01)
-			//call SetCameraField(CAMERA_FIELD_TARGET_DISTANCE, 3000.0, 0.01)
-			//call SetCameraField(CAMERA_FIELD_FARZ, 4000.0, 0.01)
+			// TODO check if player GUI or class selection is enabled
+			call SetCameraField(CAMERA_FIELD_ANGLE_OF_ATTACK, 300.0, thistype.refreshInterval)
+			call SetCameraField(CAMERA_FIELD_TARGET_DISTANCE, 3000.0, thistype.refreshInterval)
 		endmethod
 
 		/// Required by \ref Game.
@@ -84,25 +99,24 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call SetMapFlag(MAP_FOG_HIDE_TERRAIN, false)
 			call SetMapFlag(MAP_FOG_MAP_EXPLORED, true)
 			call SetMapFlag(MAP_FOG_ALWAYS_VISIBLE, true)
-			call FogEnable(false)
 
 			set thistype.m_zoneDornheim = Zone.create("DH", gg_rct_zone_dornheim)
-			call thistype.createZoneChanger(thistype.m_zoneDornheim, "")
+			call thistype.createZoneChanger(thistype.m_zoneDornheim, "", tr("Dornheim"), tr("Dornheim ist ein kleines Dorf im Königreich der Menschen."))
 			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
-			call thistype.createZoneChanger(thistype.m_zoneTalras, "")
+			call thistype.createZoneChanger(thistype.m_zoneTalras, "", tr("Talras"), tr("Talras ist eine Burg im Grenzland des Königreichs der Menschen."))
 			set thistype.m_zoneGardonar = Zone.create("GA", gg_rct_zone_gardonars_hell)
-			call thistype.createZoneChanger(thistype.m_zoneGardonar, "Gardonar.tga")
+			call thistype.createZoneChanger(thistype.m_zoneGardonar, "Gardonar.tga", tr("Gardonar"), tr("Gardonar ist der Fürst der Dämonen."))
 			set thistype.m_zoneGardonarsHell = Zone.create("GH", gg_rct_zone_gardonars_hell)
-			call thistype.createZoneChanger(thistype.m_zoneGardonarsHell, "Gardonar.tga")
+			call thistype.createZoneChanger(thistype.m_zoneGardonarsHell, "Gardonar.tga", tr("Gardonars Hölle"), tr("Gardonars Hölle ist voll von Dämonen."))
 			set thistype.m_zoneDeranorsSwamp = Zone.create("DS", gg_rct_zone_deranors_swamp)
-			call thistype.createZoneChanger(thistype.m_zoneDeranorsSwamp, "")
+			call thistype.createZoneChanger(thistype.m_zoneDeranorsSwamp, "", tr("Deranors Todessumpf"), tr("Deranor der Schreckliche herrscht über die Untoten in seinem Sumpf."))
 			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
-			call thistype.createZoneChanger(thistype.m_zoneHolzbruck, "")
+			call thistype.createZoneChanger(thistype.m_zoneHolzbruck, "", tr("Holzbruck"), tr("Holzbruck ist eine reiche Handelsstadt im Königreich der Menschen."))
 			set thistype.m_zoneHolzbrucksUnderworld = Zone.create("HU", gg_rct_zone_holzbrucks_underworld)
-			call thistype.createZoneChanger(thistype.m_zoneHolzbrucksUnderworld, "Gardonar.tga")
+			call thistype.createZoneChanger(thistype.m_zoneHolzbrucksUnderworld, "Gardonar.tga", tr("Holzbrucks Unterwelt"), tr("In der Unterwelt von Holzbruck sammeln sich mächtige Kreaturen."))
 
 			set thistype.m_cameraTimer = CreateTimer()
-			call TimerStart(thistype.m_cameraTimer, 0.01, true, function thistype.timerRefreshCamera)
+			call TimerStart(thistype.m_cameraTimer, thistype.refreshInterval, true, function thistype.timerRefreshCamera)
 
 			//call Game.addDefaultDoodadsOcclusion()
 		endmethod
@@ -155,6 +169,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 				exitwhen (i == thistype.maxPlayers)
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call ACharacter.playerCharacter(Player(i)).setMovable(false)
+					call Character(Character.playerCharacter(Player(i))).setCameraTimer(false)
 					call ShowUnit(ACharacter.playerCharacter(Player(i)).unit(), false)
 				endif
 				set i = i + 1
@@ -163,6 +178,9 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
+			call FogMaskEnable(false)
+			call FogEnable(false) // show the whole world map
+			call CameraHeight.pause()
 			call thistype.hideCharacters()
 		endmethod
 

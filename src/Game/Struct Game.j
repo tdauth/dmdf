@@ -885,6 +885,7 @@ endif
 			call CameraHeight.pause()
 
 			// make sure camera is reset after resetting camera height and camera timer of characters
+			call StopCamera()
 			call ResetToGameCamera(0.0)
 
 			/*

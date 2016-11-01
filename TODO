@@ -368,7 +368,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED (in the mod) wc3lib bug: field Arsg:UnitID is compressed although it was changed! Druid summons Misha?! or is this an old version? Probably only for the last level of Treefolk.
 * Video mit Diakon und Medusa: Kamerafahrten vereinfachen. Die letzte Kamerafahrt beim Diakon macht keinen Sinn. Predigt oder zaubert er?
 * Allgemein: Alle Zauber des Drachentöters testen.
-* Deranors Schwertkämpfer haben keinen Luftangriff.
+* FIXED: Todgeweihte haben keinen Luftangriff.
 * Rage: Braucht Spezialeffekt.
 * Rage: Funktioniert nur ein oder zweimal nach Draufhauen? Sieht eigentlich auch richtig aus. Dauer wurde auf 10 Sekunden erhöht.
 * Rage: Nicht nur durch Lasthit anstauen, sonst schlecht.
@@ -393,13 +393,13 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Kamera wackelt während Gesprächen wenn 3rd-Person-Kamera aktiv ist. Vermutlich timerFunctionCamera
 * FIXED: Kamera zurücksetzen: Nichts machen, wenn man in 3rd-Person-Kamera ist.
 * Wenn man mit 3rd-Person-Kamera stirbt, sollte die Ansicht zurückgesetzt werden, damit man besser weiterkämpfen kann.
-* Sprungattacke: Keine Abklingzeit. Vermutlich wegen des Stuns bzw. des verursachten Schadens ohne 0-Timer?
-* Sprungattacke: Jump-Animation so langsam dass sie genauso lange dauert wie der Sprung.
-* Sprungattacke: Icon.
-* Sprungattacke: Effekte.
+* FIXED (anderes Event): Sprungattacke: Keine Abklingzeit. Vermutlich wegen des Stuns bzw. des verursachten Schadens ohne 0-Timer?
+* Sprungattacke: Jump-Animation so langsam dass sie genauso lange dauert wie der Sprung. Teilweise eingebaut. Animationsdauer fehlt noch und waffenabhängige Animation.
+* FIXED: Sprungattacke: Icon.
+* FIXED: Sprungattacke: Effekte.
 * FIXED: Fette Beute von Ricman gibt zu viel Gold, kostet zu wenig Mana und hat eine zu kurze Abklingzeit: 180 Mana, 60 Sekunden und 50 Gold.
 * FIXED: Fette Beute: Erlernen-Tooltip stimmt nicht.
-* Bestehlen braucht anderes Icon. Hat dasselbe Icon wie Fette Beute.
+* FIXED: Bestehlen braucht anderes Icon. Hat dasselbe Icon wie Fette Beute.
 * OrderAnimation: Nur bestimmte Stand-Animationen abspielen. Besser: Die Kratz- und Armeverschrenkanimation umbenennen, sodass sie nicht mehr automatisch abgespielt wird.
 * FIXED: Fette Beute hat die gleiche Cast-ID wie Überlegenheit!
 Optimizing:
@@ -419,7 +419,7 @@ Optimizing:
 * FIXED: Split up global hash tables and handle attachment hash tables.
 * FIXED: Split up unique keys as well.
 
-* Add the tutorial map Dornheim with a custom loading screen and working transition to Talras. This map provides the first map transition which can always be used from the beginning.
+* DONE: Add the tutorial map Dornheim with a custom loading screen and working transition to Talras. This map provides the first map transition which can always be used from the beginning.
 * Extract all war3map.wts files and use wc3trans. Import all current object data before.
 * wc3trans: Add option to copy translations for multiple strings.
 * Keiler: Kein Attachmentpoint für Schlafeffekt?
@@ -614,7 +614,7 @@ Optimizing:
 * Dago needs a different younger model.
 * In class selection the unit is not stopped even although the order is correctly detected.
 * New unit sounds of Dragon Slayer dont work (because they are stereo??).
-* Fix standing animations of character (dont cross arms etc. when wearing weapons).
+* FIXED (Renamed "Stand - 3" and "Stand - 4"): Fix standing animations of character (dont cross arms etc. when wearing weapons). Just rename both.
 * Add stalls with all degrees (0, 90, 180, 270) and replace those tiny boxes.
 * Add a custom music system to play custom music tracks on loop (for example in dungeons). As long as there is no custom music system PlayThematicMusicForPlayer() has to be used. Otherwise the ingame music will be stopped.
 * DONE: Fix cursor in map Gardonar.

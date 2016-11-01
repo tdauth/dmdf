@@ -194,6 +194,23 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 			return result
 		endmethod
 
+		private static method timerFunctionDestroyEffect takes nothing returns nothing
+			local effect whichEffect = DmdfHashTable.global().handleEffect(GetExpiredTimer(), 0)
+			call DestroyEffect(whichEffect)
+			set whichEffect = null
+			call PauseTimer(GetExpiredTimer())
+			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
+		endmethod
+
+		private static method createTimedEffect takes real x, real y returns nothing
+			local effect whichEffect = AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, x, y)
+			local timer tmpTimer = CreateTimer()
+			call DmdfHashTable.global().setHandleEffect(tmpTimer, 0, whichEffect)
+			call TimerStart(tmpTimer, 2.0, false, function thistype.timerFunctionDestroyEffect)
+			set tmpTimer = null
+			set whichEffect = null
+		endmethod
+
 		private static method alignAction takes unit usedUnit returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(usedUnit, thistype.key)
 			local AGroup targets = this.targets(GetUnitX(usedUnit), GetUnitY(usedUnit))
@@ -203,23 +220,23 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 				call thistype.m_knockBacks.pushBack(Knockback.create(Character(this.character()), targets.units()[i], 300.0, GetAngleBetweenUnits(usedUnit, targets.units()[i]), 300.0))
 				set i = i + 1
 			endloop
-			call DestroyEffect(AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, GetUnitX(usedUnit), GetUnitY(usedUnit))) // TODO gets destroyed immediately
+			call thistype.createTimedEffect(GetUnitX(usedUnit), GetUnitY(usedUnit))
 			debug call Print("Loaded spell " + I2S(this))
-			call thistype.startTimer()
+			call thistype.startTimer() // make sure all knockbacks are handled
 			call ResetUnitAnimation(usedUnit)
 			call SetUnitTimeScale(usedUnit, 1.0) // reset animation speed
 			call DmdfHashTable.global().removeHandleInteger(usedUnit, thistype.key)
 			call targets.destroy()
 		endmethod
 
-		private static method timerFunctionStartJump takes nothing returns nothing
-			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
-			local unit caster = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 1)
-			local real x = DmdfHashTable.global().handleReal(GetExpiredTimer(), 2)
-			local real y = DmdfHashTable.global().handleReal(GetExpiredTimer(), 3)
+		private method action takes nothing returns nothing
+			// store these values before ordering stop, otherwise they are not available anymore
+			local unit caster = GetTriggerUnit()
+			local real x = GetSpellTargetX()
+			local real y = GetSpellTargetY()
 			local real speed = 400.0 // the distance every second is moved
 			local real duration = GetDistanceBetweenPointsWithoutZ(x, y, GetUnitX(caster), GetUnitY(caster)) / speed // the duration in seconds
-			local real animationDuration = 2.0 // the duration of the animation which is used on the jump
+			local real animationDuration = 2.0 // the duration of the animation which is used on the jump TODO get the real duration
 
 			// TODO check all conditions again
 			if (not DmdfHashTable.global().hasHandleInteger(caster, thistype.key) and not IsUnitPaused(caster)) then
@@ -236,29 +253,11 @@ library StructSpellsSpellJumpAttackDragonSlayer requires Asl, StructGameClasses,
 				call PlaySoundOnUnitBJ(thistype.m_sound, 100.0, caster)
 			endif
 
-			call PauseTimer(GetExpiredTimer())
-			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
-		endmethod
-
-		private method action takes nothing returns nothing
-			// store these values before ordering stop, otherwise they are not available anymore
-			local unit caster = GetTriggerUnit()
-			local real x = GetSpellTargetX()
-			local real y = GetSpellTargetY()
-			local timer tmpTimer = null
-			call IssueImmediateOrder(caster, "stop") // prevent endless order on unpausing TODO prevents cooldown!
-			// Use 0 timer to get cooldown but use checks for pausing etc.
-			set tmpTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleInteger(tmpTimer, 0, this)
-			call DmdfHashTable.global().setHandleUnit(tmpTimer, 1, caster)
-			call DmdfHashTable.global().setHandleReal(tmpTimer, 2, x)
-			call DmdfHashTable.global().setHandleReal(tmpTimer, 3, y)
-			call TimerStart(tmpTimer, 0.0, false, function thistype.timerFunctionStartJump)
 			set caster = null
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
+			local thistype this = thistype.createWithEvent(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // when this event is fired, animation, cooldown and manacost are already used
 
 			call this.addGrimoireEntry('A1LT', 'A1LU')
 			call this.addGrimoireEntry('A1GM', 'A1GR')

@@ -2,7 +2,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 
 	private struct Style extends AStyle
 		private static Style m_style
-	
+
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate()
 			call this.setFrameTopImageFilePath(null)
@@ -11,11 +11,11 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			call this.setFrameRightImageFilePath(null)
 			return this
 		endmethod
-		
+
 		public static method style takes nothing returns thistype
 			return thistype.m_style
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.m_style = thistype.create()
 		endmethod
@@ -26,7 +26,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		private string m_name
 		private string m_description
 		private AStringVector m_files
-		
+
 		public method isTitle takes nothing returns boolean
 			return this.m_isTitle
 		endmethod
@@ -76,7 +76,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		private timer m_autoChangeTimer
 		private ATextTagVector m_textTags
 		private real m_velocity
-		
+
 		public static method addTitle takes string name returns nothing
 			call thistype.m_contributors.pushBack(Contributor.create(true, name, ""))
 		endmethod
@@ -84,7 +84,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		public static method addContributor takes string name, string description returns nothing
 			call thistype.m_contributors.pushBack(Contributor.create(false, name, description))
 		endmethod
-		
+
 		public static method contributorIsTitle takes integer index returns boolean
 			return Contributor(thistype.m_contributors[index]).isTitle()
 		endmethod
@@ -118,7 +118,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		public static method viewY takes nothing returns real
 			return CameraSetupGetDestPositionY(gg_cam_class_selection)
 		endmethod
-		
+
 		private static method showMovingTextTag takes string text, real size, integer red, integer green, integer blue, integer alpha, real velocity, player whichPlayer returns texttag
 			local texttag textTag = CreateTextTag()
 			call SetTextTagText(textTag, text, 0.023)
@@ -153,7 +153,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 				set i = i + 1
 			endloop
 		endmethod
-		
+
 		private static method timerFunctionAutoChange takes nothing returns nothing
 			local timer expiredTimer = GetExpiredTimer()
 			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, 0)
@@ -162,11 +162,9 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		endmethod
 
 		private static method timerFunctionView takes nothing returns nothing
-			local timer expiredTimer = GetExpiredTimer()
-			local thistype this = DmdfHashTable.global().handleInteger(expiredTimer, 0)
+			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0)
 			call CameraSetupApplyForPlayer(true, gg_cam_class_selection, this.gui().player(), 0.0)
 			call CameraSetupApplyForPlayer(true, gg_cam_class_selection, this.gui().player(), thistype.viewTimeout)
-			set expiredTimer = null
 		endmethod
 
 		public stub method onShow takes nothing returns nothing
@@ -194,7 +192,7 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			call super.onHide()
 			set whichPlayer = null
 		endmethod
-		
+
 		private method showContributor takes integer contributorIndex returns nothing
 			local Contributor contributor
 			local string text
@@ -226,20 +224,20 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 			else
 				call this.m_textTags.pushBack(thistype.showMovingTextTag(text, fontSize, 255, 255, 255, 0, this.m_velocity, this.gui().player()))
 			endif
-			
+
 			set this.m_currentContributor = contributorIndex
-			
+
 			/*
 			 * Restart auto change timer.
 			 */
 			call PauseTimer(this.m_autoChangeTimer)
 			call TimerStart(this.m_autoChangeTimer, 2.0, false, function thistype.timerFunctionAutoChange)
 		endmethod
-		
+
 		public method showNextContributor takes nothing returns nothing
 			call this.showContributor(this.m_currentContributor + 1)
 		endmethod
-		
+
 		public method showPreviousContributor takes nothing returns nothing
 			call this.showContributor(this.m_currentContributor - 1)
 		endmethod
