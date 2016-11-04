@@ -133,18 +133,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static method createClassItems takes Character character returns nothing
 		endmethod
 
-		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
-			call ResetCameraBoundsToMapRectForPlayer(user)
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method setCameraBoundsToPlayableAreaForPlayer takes player user returns nothing
-		endmethod
-
-		/// Required by \ref Game.
-		public static method resetCameraBoundsForPlayer takes player user returns nothing
-		endmethod
-
 		/// Required by \ref Game.
 		public static method initMapSpells takes ACharacter character returns nothing
 		endmethod

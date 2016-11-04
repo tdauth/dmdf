@@ -96,19 +96,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 			call character.giveItem('I00D')
 		endmethod
 
-		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
-			call ResetCameraBoundsToMapRectForPlayer(user)
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method setCameraBoundsToPlayableAreaForPlayer takes player user returns nothing
-			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_playable)
-		endmethod
-
-		/// Required by \ref Game.
-		public static method resetCameraBoundsForPlayer takes player user returns nothing
-		endmethod
-
 		/// Required by \ref Game.
 		public static method initMapSpells takes ACharacter character returns nothing
 		endmethod

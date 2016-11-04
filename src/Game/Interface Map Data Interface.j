@@ -25,8 +25,6 @@ library InterfaceGameMapDataInterface
 		/// Required by @struct Tutorial.
 		public static method shrineRect takes integer index returns rect
 		public static constant method alliedPlayer takes nothing returns player
-		/// Required by @struct Classes.
-		public static method setCameraBoundsToPlayableAreaForPlayer takes player user returns nothing
 	*/
 	endinterface
 

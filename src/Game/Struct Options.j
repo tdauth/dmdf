@@ -12,6 +12,7 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 			call this.addEntry(OptionsEntryEnableTutorial.create.evaluate(this))
 			call this.addEntry(OptionsEntryEnableQuestSignals.create.evaluate(this))
 			call this.addEntry(OptionsEntryWorldMap.create.evaluate(this))
+			call this.addEntry(OptionsEntryCharacterManagement.create.evaluate(this))
 
 			return this
 		endmethod
@@ -183,6 +184,25 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 
 		public static method create takes OptionsSpellbook spellbook returns thistype
 			local thistype this = thistype.allocate(spellbook, 'A1V4', 'A1V5')
+
+			return this
+		endmethod
+	endstruct
+
+	struct OptionsEntryCharacterManagement extends AMultipageSpellbookAction
+
+		public method spellbook takes nothing returns OptionsSpellbook
+			return OptionsSpellbook(this.multipageSpellbook())
+		endmethod
+
+		public stub method onTrigger takes nothing returns nothing
+			local Character character = this.spellbook().character()
+
+			call character.infoLog().show()
+		endmethod
+
+		public static method create takes OptionsSpellbook spellbook returns thistype
+			local thistype this = thistype.allocate(spellbook, 'A1V6', 'A1V7')
 
 			return this
 		endmethod

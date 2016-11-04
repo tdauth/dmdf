@@ -109,14 +109,6 @@ struct MapData extends MapDataInterface
 	public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
 	endmethod
 
-	/// Required by \ref Classes.
-	public static method setCameraBoundsToPlayableAreaForPlayer takes player user returns nothing
-	endmethod
-
-	/// Required by \ref Game.
-	public static method resetCameraBoundsForPlayer takes player user returns nothing
-	endmethod
-
 	/// Required by \ref Game.
 	public static method initMapSpells takes ACharacter character returns nothing
 		call initMapCharacterSpells.evaluate(character)

@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests
+library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapDungeons, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests
 
 	struct MapData extends MapDataInterface
 		public static constant string mapName = "DH"
@@ -38,6 +38,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
+			call ForForce(bj_FORCE_PLAYER[0], function Dungeons.init)
+
 static if (DMDF_NPC_ROUTINES) then
 			/*
 			 * Use new OpLimit.
@@ -65,19 +67,6 @@ endif
 		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 		 */
 		public static method createClassItems takes Character character returns nothing
-		endmethod
-
-		public static method setCameraBoundsToMapForPlayer takes player user returns nothing
-			call ResetCameraBoundsToMapRectForPlayer(user)
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method setCameraBoundsToPlayableAreaForPlayer takes player user returns nothing
-			call SetCameraBoundsToRectForPlayerBJ(user, gg_rct_area_playable)
-		endmethod
-
-		/// Required by \ref Game.
-		public static method resetCameraBoundsForPlayer takes player user returns nothing
 		endmethod
 
 		/// Required by \ref Game.

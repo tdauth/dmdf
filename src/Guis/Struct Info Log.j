@@ -12,7 +12,7 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 	 * \brief Lists all informations from all talks for a player.
 	 * If a player cannot remember what an NPC said in a talk he can look it up in this GUI.
 	*/
-	struct InfoLog extends MainWindow
+	struct InfoLog extends CharacterManagementMainWindow
 		private static constant integer entriesPerPage = 8
 		// construction members
 		private Character m_character
@@ -161,10 +161,7 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, AStyle.human(), gg_rct_main_window_info_log)
-			call this.setTooltipX(1100.0)
-			call this.setTooltipY(300.0)
-			//call this.setTooltipBackgroundImageFilePath("") /// @todo Set tooltip window, CRASHES GAME!
+			local thistype this = thistype.allocate(character, gg_rct_main_window_info_log)
 			// construction members
 			set this.m_character = character
 			// members
@@ -173,6 +170,7 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 			set this.m_speechPage = 0
 
 			call this.createGui()
+
 			return this
 		endmethod
 	endstruct
