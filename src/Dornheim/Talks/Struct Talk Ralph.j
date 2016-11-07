@@ -70,13 +70,13 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 			call QuestRalphsGarden.characterQuest(character).complete()
 
-			call speech(info, character, true, tr("Was?"), null)
+			call speech(info, character, false, tr("Was?"), null)
 			call speech(info, character, true, tr("Na du kennst doch Wotan, unseren irren Dorfältesten?"), null)
-			call speech(info, character, true, tr("Was ist mit ihm?"), null)
+			call speech(info, character, false, tr("Was ist mit ihm?"), null)
 			call speech(info, character, true, tr("Jetzt da du ja sowieso weggehst, könntest du ihm doch noch einen ordentlichen Denkzettel verpassen oder? Ach, war doch eine dumme Idee."), null)
-			call speech(info, character, true, tr("Sag doch einfach, was du vor hast."), null)
+			call speech(info, character, false, tr("Sag doch einfach, was du vor hast."), null)
 			call speech(info, character, true, tr("Du weißt doch wie sehr er seinen Thron auf der Insel liebt. Na, ich würde einfach auf seinen Thron scheißen."), null)
-			call speech(info, character, true, tr("Was?"), null)
+			call speech(info, character, false, tr("Was?!"), null)
 			call speech(info, character, true, tr("Ja! Damit ihm ein für alle mal klar ist, wer hier das sagen hat. Ich habe auch schon einen Lederbeutel mit Scheiße gefüllt. Das Problem ist nur, dass ich mich das nicht traue. Immerhin arbeite ich ja noch mein halbes Leben für ihn, bis er endlich abgkratzt."), null)
 			call speech(info, character, false, tr("Gib mir den Beutel."), null)
 			call speech(info, character, true, tr("Bist du sicher?"), null)

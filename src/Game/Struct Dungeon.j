@@ -12,6 +12,7 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 		private rect m_cameraBounds
 		/// The camera is moved to this rect if the bounds are applied and the character is not in the dungeon.
 		private rect m_viewRect
+		private trigger m_enterTrigger
 
 		//! runtextmacro A_STRUCT_DEBUG("\"Dungeon\"")
 
@@ -58,12 +59,36 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 			endif
 		endmethod
 
+		public method setEnterTrigger takes boolean enabled returns nothing
+			if (enabled) then
+				call EnableTrigger(this.m_enterTrigger)
+			else
+				call DisableTrigger(this.m_enterTrigger)
+			endif
+		endmethod
+
+		private static method triggerConditionEnter takes nothing returns boolean
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
+			local Character character = Character.getCharacterByUnit(GetTriggerUnit())
+
+			if (character != 0) then
+				call this.setCameraBoundsForPlayer(character.player())
+			endif
+			return false
+		endmethod
+
 		public static method create takes string name, rect cameraBounds, rect viewRect returns thistype
 			local thistype this = thistype.allocate()
 			// dynamic members
 			set this.m_name = name
 			set this.m_cameraBounds = cameraBounds
 			set this.m_viewRect = viewRect
+			// members
+			set this.m_enterTrigger = CreateTrigger()
+			call TriggerRegisterEnterRectSimple(this.m_enterTrigger, cameraBounds)
+			call TriggerAddCondition(this.m_enterTrigger, Condition(function thistype.triggerConditionEnter))
+			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger, 0, this)
+			call DisableTrigger(this.m_enterTrigger)
 
 			call thistype.m_dungeons.pushBack(this)
 
@@ -73,6 +98,8 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 		public method onDestroy takes nothing returns nothing
 			set this.m_cameraBounds = null
 			set this.m_viewRect = null
+			call DmdfHashTable.global().destroyTrigger(this.m_enterTrigger)
+			set this.m_enterTrigger = null
 			call thistype.m_dungeons.remove(this)
 		endmethod
 
