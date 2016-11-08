@@ -36,7 +36,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Gut.", "I'm fine."), null)
 
 			set thistype.m_wotanPrays = NpcTalksRoutine.create(Routines.talk(), Npcs.wotan(), 8.0, 23.0, gg_rct_waypoint_wotan_island)
-			call thistype.m_wotanPrays.setFacing(146.56)
+			call thistype.m_wotanPrays.setFacing(262.95)
 			call thistype.m_wotanPrays.setPartner(null)
 			call thistype.m_wotanPrays.addSound(tr("Ich bin WOOOOOTAAAAAAN und herrsche über diese Insel!"), null)
 

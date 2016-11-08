@@ -256,7 +256,8 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("Buch der Magie", "Book of Magic"))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Buch der Jagd", "Book of Hunting"))
-
+			set questItem = QuestCreateItem(whichQuest)
+			call QuestItemSetDescription(questItem, tre("Buch der Dämonologie", "Book of Demonology"))
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Stützpunkte", "Bases"))

@@ -66,13 +66,13 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNVillagerWoman.blp")
 			call this.setDescription(tre("Mutter will noch mit mir sprechen, bevor ich aufbreche.", "Mother wants to talk to me before I start off."))
-			call this.setReward(thistype.rewardExperience, 200)
+			call this.setReward(thistype.rewardExperience, 50)
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Sprich mit Mutter.", "Talk to mother."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.mother())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 50)
+			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item 1
 			set questItem = AQuestItem.create(this, tre("Besorge drei Laibe Brot und vier Äpfel von Hans.", "Get three loafs of bread and four apples from Hans."))
@@ -82,21 +82,21 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.hans())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 50)
+			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item 2
 			set questItem = AQuestItem.create(this, tre("Bringe die Waren zu Mutter.", "Bring the goods to mother."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.mother())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 50)
+			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item 3
 			set questItem = AQuestItem.create(this, tre("Sage Gotlinde Lebwohl.", "Say Farewell to Gotlinde."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.gotlinde())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 50)
+			call questItem.setReward(thistype.rewardExperience, 10)
 
 			set this.m_hintTriggerHans = CreateTrigger()
 			call TriggerRegisterEnterRectSimple(this.m_hintTriggerHans, gg_rct_quest_mother_hans)

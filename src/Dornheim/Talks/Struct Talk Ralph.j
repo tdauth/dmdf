@@ -1,4 +1,4 @@
-library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQuestMother, StructMapQuestsQuestRalphsGarden
+library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQuestMother, StructMapQuestsQuestRalphsGarden, StructMapQuestsQuestShitOnTheThrone
 
 	struct TalkRalph extends Talk
 
@@ -97,8 +97,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call speech(info, character, false, tr("Ja, aber wie komme ich auf die Insel?"), null)
 			call speech(info, character, true, tr("Tja, da musst selbst schauen wie Wotan dort hin kommt. Er steht immer recht früh auf. Aber wenn du das durchziehst, dann hast du meinen größten Respekt. Ich wäre gerne dabei, wenn er sich auf seinen Thron setzt und in Scheiße landet."), null)
 
-			// TODO enable quest
-			//call QuestRalphsGarden.characterQuest(character).enable()
+			call QuestShitOnTheThrone.characterQuest(character).enable()
 
 			call this.showStartPage(character)
 		endmethod

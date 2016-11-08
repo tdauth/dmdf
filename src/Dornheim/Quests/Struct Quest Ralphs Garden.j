@@ -57,7 +57,7 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNShimmerWeed.blp")
 			call this.setDescription(tr("Ralph braucht Hilfe beim Umgraben des Gartens. Besorge dir eine Harke beim Händler Hans und grabe den Garten damit um."))
-			call this.setReward(thistype.rewardExperience, 40)
+			call this.setReward(thistype.rewardExperience, 30)
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Besorge dir eine Harke beim Händler Hans.", "Get a ruke from the merchant Hans."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedBuyRake)
@@ -66,7 +66,7 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.hans())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 50)
+			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item 1
 			set questItem = AQuestItem.create(this, tr("Grabe den Garten mit der Harke um."))
@@ -76,14 +76,14 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_ralphs_garden_garden)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 50)
+			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item 2
 			set questItem = AQuestItem.create(this, tr("Berichte Ralph davon."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.ralph())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
-			call questItem.setReward(thistype.rewardExperience, 50)
+			call questItem.setReward(thistype.rewardExperience, 10)
 
 			return this
 		endmethod

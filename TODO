@@ -657,6 +657,10 @@ Kleriker:
 * Böses hindern, Drohendes Unheil und Reinheit auf Gruppen (Gebietseffekt), sonst zu schlecht.
 
 Weitere TODOS:
+* Bieneneinheit kleiner skalieren.
+* Double free of AHashTable beim Absteigen vom Pferd.
+* Pferde haben Schwarze Textur, allerdings nur im Spiel.
+* Dämoneninterface für Karte Dornheim.
 * Daten aus Spell conditions in actions weiterreichen, anonsten wird vieles zweimal berechnet.
 * Frostränder in Hauptmenü durch Ränder aus Dämonen-Interface ersetzen.
 	* IncludeFile "UI\FrameDef\Glue\StandardTemplates.fdf",

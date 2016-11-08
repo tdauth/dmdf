@@ -5,6 +5,7 @@ library StructMapMapShrines requires Asl, StructGameShrine
 	 */
 	struct Shrines
 		private static Shrine m_startShrine
+		private static Shrine m_endShrine
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -15,6 +16,7 @@ library StructMapMapShrines requires Asl, StructGameShrine
 
 		public static method init takes nothing returns nothing
 			set thistype.m_startShrine = Shrine.create(gg_unit_n02D_0010, gg_dest_B008_1343, gg_rct_shrine_start_discover, gg_rct_shrine_start_revival, 304.23)
+			set thistype.m_endShrine = Shrine.create(gg_unit_n02D_0125, gg_dest_B008_2661, gg_rct_shrine_end_discover, gg_rct_shrine_end_revival, 218.30)
 		endmethod
 
 		public static method startShrine takes nothing returns Shrine
