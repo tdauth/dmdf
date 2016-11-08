@@ -114,7 +114,8 @@ endif
 
 		private static method timerFunctionCamera takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
-			if (not this.isViewEnabled() and not this.view().enableAgain() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown() and AClassSelection.playerClassSelection(this.player()) == 0) then
+			local Dungeon dungeon = Dungeon.playerDungeon.evaluate(this.player())
+			if (not this.isViewEnabled() and not this.view().enableAgain() and AVideo.runningVideo() == 0 and not AGui.playerGui(this.player()).isShown() and AClassSelection.playerClassSelection(this.player()) == 0 and (dungeon == 0 or dungeon.cameraSetup.evaluate() == null)) then
 				call SetCameraFieldForPlayer(this.player(), CAMERA_FIELD_TARGET_DISTANCE, this.m_cameraDistance, thistype.cameraTimerInterval)
 			endif
 		endmethod

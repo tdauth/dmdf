@@ -35,14 +35,14 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			return QuestMother.characterQuest(character).questItem(QuestMother.questItemBring).isNew() and character.inventory().totalItemTypeCharges('I016') >= 3 and character.inventory().totalItemTypeCharges('I03O') >= 4
 		endmethod
 
-		private static method infoActionFood takes AInfo info, ACharacter character returns nothing
+		private static method infoActionFood takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			local integer i = 0
 			call speech(info, character, false, tre("Hier sind die Waren.", "There you have your goods."), null)
 			call speech(info, character, true, tr("Ich danke dir mein Sohn! Immerhin bist du noch zuverlässig. Nun lasse ich dich schließlich gehen, auch wenn es mir das Herz bricht. Pass auf dich auf und denke daran, unser Hof läuft schlecht. Etwas mehr Goldmünzen könnte ich gut gebrauchen."), null)
 			call speech(info, character, true, tr("Mögen die Götter dich beschützen und pass gut auf dich auf! ... Ach so, sei doch bitte so lieb und sag Gotlinde noch Lebwohl, so wie es sich gehört."), null)
 			call speech(info, character, false, tre("Mutter, ich ...", "Mother, I ..."), null)
-			call speech(info, character, true, tr("Nun mach schon."), null)
+			call speech(info, character, true, tr("Nun mach schon. Ach und nimm diesen Brief mit dir mein Sohn. Er soll dich an deine arme Mutter erinnern."), null)
 
 			set i = 0
 			loop
@@ -61,6 +61,8 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			call QuestMother.characterQuest(character).questItem(QuestMother.questItemBring).setState(QuestMother.stateCompleted)
 			call QuestMother.characterQuest(character).questItem(QuestMother.questItemGotlinde).setState(QuestMother.stateNew)
 			call QuestMother.characterQuest(character).displayState()
+
+			call character.giveItem('I061')
 
 			call this.showStartPage(character)
 		endmethod

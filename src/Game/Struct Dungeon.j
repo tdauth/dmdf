@@ -7,12 +7,16 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 	struct Dungeon
 		// static members
 		private static AIntegerVector m_dungeons
+		private static Dungeon array m_playerDungeon[12]
 		// dynamic members
 		private string m_name
 		private rect m_cameraBounds
 		/// The camera is moved to this rect if the bounds are applied and the character is not in the dungeon.
 		private rect m_viewRect
 		private trigger m_enterTrigger
+		private camerasetup m_cameraSetup
+		private timer m_cameraTimer
+		private APlayerVector m_players
 
 		//! runtextmacro A_STRUCT_DEBUG("\"Dungeon\"")
 
@@ -42,9 +46,52 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 			return this.m_viewRect
 		endmethod
 
+		public method cameraSetup takes nothing returns camerasetup
+			return this.m_cameraSetup
+		endmethod
+
 		// methods
 
+		private method destroyCameraTimer takes nothing returns nothing
+			if (this.m_cameraTimer != null) then
+				call PauseTimer(this.m_cameraTimer)
+				call DmdfHashTable.global().destroyTimer(this.m_cameraTimer)
+				set this.m_cameraTimer = null
+			endif
+		endmethod
+
+		private static method timerFunctionCamera takes nothing returns nothing
+			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
+			local integer i = 0
+			loop
+				exitwhen (i == this.m_players.size())
+				call CameraSetupApplyForPlayer(true, this.m_cameraSetup, this.m_players[i], 0.0)
+				set i = i + 1
+			endloop
+		endmethod
+
+		private method refreshCameraTimer takes nothing returns nothing
+			call this.destroyCameraTimer()
+			set this.m_cameraTimer = CreateTimer()
+			call DmdfHashTable.global().setHandleInteger(this.m_cameraTimer, 0, this)
+			call TimerStart(this.m_cameraTimer, 0.01, true, function thistype.timerFunctionCamera)
+		endmethod
+
+		public static method playerDungeon takes player whichPlayer returns thistype
+			return thistype.m_playerDungeon[GetPlayerId(whichPlayer)]
+		endmethod
+
 		public method setCameraBoundsForPlayer takes player whichPlayer returns nothing
+			local thistype old = thistype.m_playerDungeon[GetPlayerId(whichPlayer)]
+
+			if (old != 0) then
+				call old.m_players.remove(whichPlayer)
+
+				if (old.m_players.isEmpty()) then
+					call old.destroyCameraTimer()
+				endif
+			endif
+
 			call SetCameraBoundsToRectForPlayerBJ(whichPlayer, this.cameraBounds())
 			if (not IsUnitDeadBJ(Character.playerCharacter(whichPlayer).unit()) and RectContainsUnit(this.cameraBounds(), Character.playerCharacter(whichPlayer).unit())) then
 				call Character.playerCharacter(whichPlayer).panCamera()
@@ -57,6 +104,13 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 				call SetCameraPositionForPlayer(whichPlayer, GetRectCenterX(this.viewRect()), GetRectCenterY(this.viewRect()))
 				debug call Print("Pan to view rect")
 			endif
+
+			set thistype.m_playerDungeon[GetPlayerId(whichPlayer)] = this
+			call this.m_players.pushBack(whichPlayer)
+
+			if (this.m_cameraSetup != null) then
+				call this.refreshCameraTimer()
+			endif
 		endmethod
 
 		public method setEnterTrigger takes boolean enabled returns nothing
@@ -66,6 +120,11 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 				call DisableTrigger(this.m_enterTrigger)
 			endif
 		endmethod
+
+		public method setCameraSetup takes camerasetup cameraSetup returns nothing
+			set this.m_cameraSetup = cameraSetup
+		endmethod
+
 
 		private static method triggerConditionEnter takes nothing returns boolean
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
@@ -89,6 +148,9 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 			call TriggerAddCondition(this.m_enterTrigger, Condition(function thistype.triggerConditionEnter))
 			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger, 0, this)
 			call DisableTrigger(this.m_enterTrigger)
+			set this.m_cameraSetup = null
+			set this.m_cameraTimer = null
+			set this.m_players = AIntegerVector.create()
 
 			call thistype.m_dungeons.pushBack(this)
 
@@ -100,10 +162,18 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 			set this.m_viewRect = null
 			call DmdfHashTable.global().destroyTrigger(this.m_enterTrigger)
 			set this.m_enterTrigger = null
+			call this.destroyCameraTimer()
+			call this.m_players.destroy()
 			call thistype.m_dungeons.remove(this)
 		endmethod
 
 		public static method init takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == bj_MAX_PLAYERS)
+				set thistype.m_playerDungeon[i] = 0
+				set i = i + 1
+			endloop
 			set thistype.m_dungeons = AIntegerVector.create()
 		endmethod
 

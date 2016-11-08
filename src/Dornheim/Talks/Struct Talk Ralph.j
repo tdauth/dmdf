@@ -7,6 +7,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private AInfo m_hi
 		private AInfo m_howAreYou
 		private AInfo m_help
+		private AInfo m_ruke
 		private AInfo m_garden
 		private AInfo m_exit
 
@@ -56,6 +57,19 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call this.showStartPage(character)
 		endmethod
 
+		private static method infoConditionRuke takes AInfo info, Character character returns boolean
+			local thistype this = thistype(info.talk())
+			return QuestRalphsGarden.characterQuest(character).questItem(QuestRalphsGarden.questItemGarden).isNew() and character.inventory().totalItemTypeCharges('I02F') >= 1
+		endmethod
+
+		private static method infoActionRuke takes AInfo info, Character character returns nothing
+			local thistype this = thistype(info.talk())
+
+			call speech(info, character, false, tr("Ich habe die Harke."), null)
+			call speech(info, character, true, tr("Sehr gut. Geh damit einfach in den Garten hier und grabe ihn um."), null)
+
+			call this.showStartPage(character)
+		endmethod
 
 		private static method infoConditionGarden takes AInfo info, Character character returns boolean
 			local thistype this = thistype(info.talk())
@@ -116,6 +130,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Hallo Ralph!", "Hello Ralph!"))
 			set this.m_howAreYou = this.addInfo(false, false, thistype.infoConditionHowAreYou, thistype.infoActionHowAreYou, tr("Und wie gehts dir so?"))
 			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tr("Kann ich dir noch irgendwie helfen?"))
+			set this.m_ruke = this.addInfo(false, false, thistype.infoConditionRuke, thistype.infoActionRuke, tr("Ich habe die Harke."))
 			set this.m_garden = this.addInfo(false, false, thistype.infoConditionGarden, thistype.infoActionGarden, tr("Der Garten ist umgegraben."))
 			set this.m_exit = this.addExitButton()
 
