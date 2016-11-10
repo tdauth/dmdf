@@ -91,4 +91,74 @@ library StructSpellsSpellBookOfDemonology requires Asl, StructGameCharacter
 		endmethod
 	endstruct
 
+	struct SpellBookOfDemonologyBloodRitual extends ASpell
+		public static constant integer abilityId = 'A1VE'
+		public static constant real area = 300.0
+
+		// AFOD
+
+		private static method filter takes nothing returns boolean
+			return not IsUnitDeadBJ(GetFilterUnit())
+		endmethod
+
+		private method targets takes unit caster, real x, real y returns AGroup
+			local group targetGroup = CreateGroup()
+			local filterfunc filter = Filter(function thistype.filter)
+			local AGroup targets = AGroup.create()
+			call GroupEnumUnitsInRange(targetGroup, x, y, thistype.area, filter)
+			call targets.addGroup(targetGroup, true, false)
+			set targetGroup = null
+			call targets.removeAlliesOfUnit(caster)
+			call DestroyFilter(filter)
+			set filter = null
+			return targets
+		endmethod
+
+		private method condition takes nothing returns boolean
+			local AGroup targets = this.targets(this.character().unit(), GetSpellTargetX(), GetSpellTargetY())
+			local boolean result = not targets.units().empty()
+			if (not result) then
+				debug call Print("Success")
+
+				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine gültigen Ziele.", "No valid targets."))
+				call targets.destroy()
+			else
+				call DmdfHashTable.global().setHandleInteger(GetTriggeringTrigger(), 0, targets)
+			endif
+
+			return result
+		endmethod
+
+		private method action takes nothing returns nothing
+			local AGroup targets = AGroup(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
+			local integer i = 0
+			local AIntegerVector dynamicLightnings = 0
+			local effect whichEffect = null
+
+			if (targets != 0) then
+				set whichEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, this.character().unit(), "origin")
+				set dynamicLightnings = AIntegerVector.create()
+				set i = 0
+				loop
+					exitwhen (i == targets.units().size())
+					call dynamicLightnings.pushBack(ADynamicLightning.create(null, "AFOD", 0.01, this.character().unit(), targets.units()[i]))
+					set i = i + 1
+				endloop
+				call TriggerSleepAction(12.0)
+				set i = 0
+				loop
+					exitwhen (i == dynamicLightnings.size())
+					call ADynamicLightning(dynamicLightnings[i]).destroy()
+					set i = i + 1
+				endloop
+				call dynamicLightnings.destroy()
+				call targets.destroy()
+			endif
+		endmethod
+
+		public static method create takes Character character returns thistype
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+		endmethod
+	endstruct
+
 endlibrary

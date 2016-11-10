@@ -20,6 +20,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static constant integer workerUnitTypeId = 'h00E'
 		public static constant boolean isSeparateChapter = true
 		public static sound cowSound = null
+		private static boolean m_traveled = false
 
 		private static Zone m_zoneTalras
 
@@ -162,6 +163,7 @@ endif
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacters takes string zone returns nothing
+			set thistype.m_traveled = true
 		endmethod
 
 		/**
@@ -185,6 +187,10 @@ endif
 		/// Required by teleport spells.
 		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
 			return false
+		endmethod
+
+		public static method traveled takes nothing returns boolean
+			return thistype.m_traveled
 		endmethod
 	endstruct
 

@@ -9,6 +9,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private AInfo m_help
 		private AInfo m_ruke
 		private AInfo m_garden
+		private AInfo m_shit
 		private AInfo m_exit
 
 		private AInfo m_hi_yes
@@ -102,6 +103,24 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call this.showStartPage(character)
 		endmethod
 
+		private static method infoConditionShit takes AInfo info, ACharacter character returns boolean
+			local QuestShitOnTheThrone characterQuest = QuestShitOnTheThrone.characterQuest(character)
+			return characterQuest.questItem(QuestShitOnTheThrone.questItemTalkToWotan).isCompleted() and characterQuest.questItem(QuestShitOnTheThrone.questItemReport).isNew()
+		endmethod
+
+		private static method infoActionShit takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
+			local QuestShitOnTheThrone characterQuest = QuestShitOnTheThrone.characterQuest(character)
+
+			call speech(info, character, false, tr("Wotan hat sich auf den Beutel gesetzt."), null)
+			call speech(info, character, true, tr("Hervorragend. Du hast es wirklich drauf! Mann, ich hätte gerne sein Gesicht gesehen. Dieses arrogante Arschloch. Kumpel, ich werde dich echt vermissen!"), null)
+			call speech(info, character, false, tr("Hier hast du noch was zum Abschied. Mach's gut und pass auf dich auf!"), null)
+
+			call characterQuest.complete()
+
+			call this.showStartPage(character)
+		endmethod
+
 		private static method giveQuest takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, true, tre("Ich glaube deine Mutter wollte noch mit dir sprechen, bevor du aufbrichst.", "I believe your mother wanted to talk to you before you start off."), null)
@@ -131,6 +150,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tr("Kann ich dir noch irgendwie helfen?"))
 			set this.m_ruke = this.addInfo(false, false, thistype.infoConditionRuke, thistype.infoActionRuke, tr("Ich habe die Harke."))
 			set this.m_garden = this.addInfo(false, false, thistype.infoConditionGarden, thistype.infoActionGarden, tr("Der Garten ist umgegraben."))
+			set this.m_shit = this.addInfo(false, false, thistype.infoConditionShit, thistype.infoActionShit, tr("Wotan hat sich auf den Beutel gesetzt."))
 			set this.m_exit = this.addExitButton()
 
 			set this.m_hi_yes =  this.addInfo(true, false, 0, thistype.infoActionHi_Yes, tre("Ja.", "Yes."))

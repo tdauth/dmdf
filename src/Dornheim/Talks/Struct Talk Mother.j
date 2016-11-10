@@ -6,6 +6,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 
 		private AInfo m_hi
 		private AInfo m_food
+		private AInfo m_back
 		private AInfo m_exit
 
 		private method startPageAction takes ACharacter character returns nothing
@@ -39,7 +40,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			local thistype this = thistype(info.talk())
 			local integer i = 0
 			call speech(info, character, false, tre("Hier sind die Waren.", "There you have your goods."), null)
-			call speech(info, character, true, tr("Ich danke dir mein Sohn! Immerhin bist du noch zuverlässig. Nun lasse ich dich schließlich gehen, auch wenn es mir das Herz bricht. Pass auf dich auf und denke daran, unser Hof läuft schlecht. Etwas mehr Goldmünzen könnte ich gut gebrauchen."), null)
+			call speech(info, character, true, tr("Ich danke dir mein Sohn! Immerhin bist du noch zuverlässig. Nun lasse ich dich schließlich gehen, auch wenn es mir das Herz bricht. Pass auf dich auf und denke daran, unser Gasthof läuft schlecht. Etwas mehr Goldmünzen könnte ich gut gebrauchen."), null)
 			call speech(info, character, true, tr("Mögen die Götter dich beschützen und pass gut auf dich auf! ... Ach so, sei doch bitte so lieb und sag Gotlinde noch Lebwohl, so wie es sich gehört."), null)
 			call speech(info, character, false, tre("Mutter, ich ...", "Mother, I ..."), null)
 			call speech(info, character, true, tr("Nun mach schon. Ach und nimm diesen Brief mit dir mein Sohn. Er soll dich an deine arme Mutter erinnern."), null)
@@ -67,6 +68,22 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			call this.showStartPage(character)
 		endmethod
 
+		private static method infoConditionBack takes AInfo info, ACharacter character returns boolean
+			return MapData.traveled.evaluate()
+		endmethod
+
+		private static method infoActionBack takes AInfo info, Character character returns nothing
+			local thistype this = thistype(info.talk())
+			call speech(info, character, false, tr("Da bin ich wieder."), null)
+			call speech(info, character, true, tr("Mein Sohn! Den Göttern sei Dank, du bist gesund zurückgekehrt. Hier nimm diesen Kuchen, den ich für dich gebacken habe."), null)
+			call speech(info, character, true, tr("Sprich, hast du zufällig ein paar Goldmünzen für unseren Gasthof mitgebracht?"), null)
+
+			// TODO Apfelkuchen geben
+			// TODO Auswahl Gold geben
+
+			call this.showStartPage(character)
+		endmethod
+
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.mother(), thistype.startPageAction)
 			call this.setName(tre("Mutter", "Mother"))
@@ -74,6 +91,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			// start page
 			set this.m_hi = this.addInfo(false, false, thistype.infoConditionHi, thistype.infoActionHi, tre("Hallo Mutter!", "Hello mother!"))
 			set this.m_food = this.addInfo(false, false, thistype.infoConditionFood, thistype.infoActionFood, tre("Hier sind die Waren.", "There you have your goods."))
+			set this.m_back = this.addInfo(false, false, thistype.infoConditionBack, thistype.infoActionBack, tr("Da bin ich wieder."))
 			set this.m_exit = this.addExitButton()
 
 			return this
