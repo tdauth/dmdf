@@ -45,11 +45,13 @@ SectionEnd
 
 Section "German Maps" GermanMaps
 	SetOutPath "$INSTDIR\The Power of Fire\Maps"
+	File "${INPUT_DIR}\maps\Tutorial.w3x"
 	File "${INPUT_DIR}\maps\Karte 1 - Talras.w3x"
 	File "${INPUT_DIR}\maps\Karte 2 - Gardonar.w3x"
 	File "${INPUT_DIR}\maps\Karte 2.1 - Gardonars Unterwelt.w3x"
 	File "${INPUT_DIR}\maps\Karte 3 - Holzbruck.w3x"
 	File "${INPUT_DIR}\maps\Karte 3.1 - Holzbrucks Unterwelt.w3x"
+	File "${INPUT_DIR}\maps\TheNorth.w3x"
 	File "${INPUT_DIR}\maps\Karte 4 - Karornwald.w3x"
 	File "${INPUT_DIR}\maps\Karte 5 - Deranor.w3x"
 	File "${INPUT_DIR}\maps\Arena.w3x"

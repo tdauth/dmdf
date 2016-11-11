@@ -21,3 +21,6 @@ del "E:\Warcraft III Englisch\Maps\DMDF\WM.w3x"
 
 del "E:\Warcraft III Englisch\Maps\DMDF\DH.w3x"
 "E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Tutorial.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\DH.w3x" --checkscriptstuff --exit
+
+del "E:\Warcraft III Englisch\Maps\DMDF\TN.w3x"
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\TheNorth.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\TN.w3x" --checkscriptstuff --exit

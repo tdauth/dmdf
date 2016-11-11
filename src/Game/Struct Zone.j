@@ -95,6 +95,7 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call thistype.m_zoneNames.pushBack("HU") // Holzbruck's Underworld
 			call thistype.m_zoneNames.pushBack("WM") // World Map
 			call thistype.m_zoneNames.pushBack("DH") // Tutorial: Dornheim
+			call thistype.m_zoneNames.pushBack("TN") // The North
 		endmethod
 
 		public static method zoneNames takes nothing returns AIntegerVector

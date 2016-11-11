@@ -24,6 +24,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 		private static Zone m_zoneTalras
 		private static Zone m_zoneDeranorsSwamp
 		private static Zone m_zoneUnderworld
+		private static Zone m_zoneTheNorth
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -45,6 +46,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
 			set thistype.m_zoneDeranorsSwamp = Zone.create("DS", gg_rct_zone_deranors_swamp)
 			set thistype.m_zoneUnderworld = Zone.create("HU", gg_rct_zone_holzbrucks_underworld)
+			set thistype.m_zoneTheNorth = Zone.create("TN", gg_rct_zone_the_north)
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
