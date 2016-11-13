@@ -1,4 +1,4 @@
-2014-11-22 Tamino Dauth <tamino@cdauth.eu>
+Open TODO items:
 Handlung:
 * DEPRECATED: Quest Blood Thristiness überarbeitet. Logischere Dialoge mit der Elfin, warum jagt sie die Kreaturen? - ist gar nicht soo schlecht
 * DEPRECATED (lieber je nach Itemtyp mit dem OrderAnimation-Struct Animationen bei Befehlen steuern!): Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
