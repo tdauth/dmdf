@@ -176,29 +176,29 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartX takes integer index, string zone returns real
-			if (zone == "GH") then
-				return GetRectCenterX(gg_rct_start)
+			if (zone == "HB") then
+				return GetRectCenterX(gg_rct_start_holzbruck)
 			endif
 
-			return GetRectCenterX(gg_rct_start_holzbruck)
+			return GetRectCenterX(gg_rct_start)
 		endmethod
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartY takes integer index, string zone returns real
-			if (zone == "GH") then
-				return GetRectCenterY(gg_rct_start)
+			if (zone == "HB") then
+				return GetRectCenterY(gg_rct_start_holzbruck)
 			endif
 
-			return GetRectCenterY(gg_rct_start_holzbruck)
+			return GetRectCenterY(gg_rct_start)
 		endmethod
 
 		/// Required by \ref MapChanger.
 		public static method restoreStartFacing takes integer index, string zone returns real
-			if (zone == "GH") then
-				return 0.0
+			if (zone == "HB") then
+				return 180.0
 			endif
 
-			return 180.0
+			return 0.0
 		endmethod
 
 		/// Required by \ref MapChanger.

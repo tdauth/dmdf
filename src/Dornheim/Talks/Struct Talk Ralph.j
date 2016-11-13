@@ -125,6 +125,10 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			local thistype this = thistype(info.talk())
 			call speech(info, character, true, tre("Ich glaube deine Mutter wollte noch mit dir sprechen, bevor du aufbrichst.", "I believe your mother wanted to talk to you before you start off."), null)
 			call QuestMother.characterQuest(character).enable()
+
+			call speech(info, character, true, tr("Ich habe hier noch einen sehr nützlichen Gegenstand für dich. Ich habe ihn vom Dorfältesten gestohlen, aber erzähle es ihm bloß nicht. Du kannst dich mit dieser Rune zu einem magischen Schrein teleportieren. Ich hoffe er wird dir auf deiner Reise von Nutzen sein."), null)
+			call character.giveItem('I01N')
+
 			call this.showStartPage(character)
 		endmethod
 

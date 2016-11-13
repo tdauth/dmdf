@@ -54,6 +54,7 @@ endif
 			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
 
 			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
+			call thistype.m_zoneTalras.disable()
 
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
@@ -191,6 +192,11 @@ endif
 
 		public static method traveled takes nothing returns boolean
 			return thistype.m_traveled
+		endmethod
+
+		public static method enableZoneTalras takes nothing returns nothing
+			call thistype.m_zoneTalras.enable()
+			call Character.displayHintToAll(tr("Sie können nun nach Talras reisen. Stellen Sie sich dazu mit Ihrem Charakter in das Gebiet, das auf der Minikarte durch den grün umrandeteten Kartenausgang markiert ist."))
 		endmethod
 	endstruct
 

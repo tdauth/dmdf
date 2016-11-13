@@ -24,7 +24,7 @@ library StructMapTalksTalkGotlinde requires Asl, StructMapMapNpcs, StructMapQues
 			call speech(info, character, false, tre("Das werde ich.", "I will."), null)
 
 			call QuestMother.characterQuest(character).questItem(QuestMother.questItemGotlinde).complete()
-			// TODO enable zone
+			call MapData.enableZoneTalras()
 
 			call this.showStartPage(character)
 		endmethod

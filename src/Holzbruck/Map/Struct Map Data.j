@@ -177,6 +177,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 		public static method restoreStartX takes integer index, string zone returns real
 			if (zone == "DS") then
 				return GetRectCenterX(gg_rct_start_deranors_swamp)
+			elseif (zone == "TN")
+				return GetRectCenterX(gg_rct_start_the_north
 			endif
 
 			return GetRectCenterX(gg_rct_start_talras)
@@ -186,6 +188,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 		public static method restoreStartY takes integer index, string zone returns real
 			if (zone == "DS") then
 				return GetRectCenterY(gg_rct_start_deranors_swamp)
+			elseif (zone == "TN")
+				return GetRectCenterY(gg_rct_start_the_north
 			endif
 
 			return GetRectCenterY(gg_rct_start_talras)
@@ -195,6 +199,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 		public static method restoreStartFacing takes integer index, string zone returns real
 			if (zone == "DS") then
 				return 270.0
+			elseif (zone == "TN") then
+				return 180.0
 			endif
 
 			return 180.0

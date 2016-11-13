@@ -30,7 +30,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		/**
 		 * \return Returns the file path of a map with the file name \p mapName (without extension) relatively to the Warcraft III directory.
 		 */
-		private static method mapPath takes string mapName returns string
+		public static method mapPath takes string mapName returns string
 			local string folder = ""
 			if (StringLength(thistype.mapFolder) > 0) then
 				set folder = thistype.mapFolder + "\\"
@@ -38,7 +38,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return folder + mapName + ".w3x"
 		endmethod
 
-		private static method saveGameFolder takes string currentSaveGame returns string
+		public static method saveGameFolder takes string currentSaveGame returns string
 			if (currentSaveGame != null and StringLength(currentSaveGame) > 0) then
 				return thistype.zonesFolder + "\\" + currentSaveGame
 			endif
@@ -50,7 +50,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		/**
 		 * \return Returns a save game path using the zone folder and \p currentSaveGame as well as \p mapName.
 		 */
-		private static method saveGamePath takes string currentSaveGame, string mapName returns string
+		public static method saveGamePath takes string currentSaveGame, string mapName returns string
 			return thistype.saveGameFolder(currentSaveGame) + "\\" + mapName + ".w3z"
 		endmethod
 
@@ -58,22 +58,22 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 * This save game path should be used to save the current map before changing the level.
 		 * \return Returns the name of the save game for the current map with map name \p mapName.
 		 */
-		private static method currentSaveGamePath takes string mapName returns string
+		public static method currentSaveGamePath takes string mapName returns string
 			return thistype.saveGamePath(thistype.m_currentSaveGame, mapName)
 		endmethod
 
-		private static method temporarySaveGamePath takes string mapName returns string
+		public static method temporarySaveGamePath takes string mapName returns string
 			return thistype.saveGamePath("", mapName)
 		endmethod
 
-		private static method playerMissionKey takes player whichPlayer returns string
+		public static method playerMissionKey takes player whichPlayer returns string
 			return "Character" + GetPlayerName(whichPlayer)
 		endmethod
 
 		/**
 		 * Every player character is stored with a unique mission key using the character's player ID.
 		 */
-		private static method characterMissionKey takes Character character returns string
+		public static method characterMissionKey takes Character character returns string
 			return thistype.playerMissionKey(character.player())
 		endmethod
 

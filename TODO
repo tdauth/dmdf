@@ -1,9 +1,28 @@
 Open TODO items:
-Handlung:
-* DEPRECATED: Quest Blood Thristiness überarbeitet. Logischere Dialoge mit der Elfin, warum jagt sie die Kreaturen? - ist gar nicht soo schlecht
-* DEPRECATED (lieber je nach Itemtyp mit dem OrderAnimation-Struct Animationen bei Befehlen steuern!): Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
+Handlung (optionale Verbesserungen):
 * Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle?
 * Fulco will die Zauberkraft der Hexen im Norden. Neues Quest.
+* AOS-Gebiet: Oscar und Dämon sollen Dialoge bekommen. Leiden unter der Herrschaft von Haldar und Baldar.
+* Osman: Sollte im Zusammenhang mit dem Kultquest den Begriff „Todesgruft“ erwähnen. So wird sie laut Drachentöterin von Eingeweihten genannt. Er muss bereits davon gehört haben.
+* Drachentöterin: Hat nun ein Gespräch, muss aber noch geschrieben werden:
+	* Über die Bedeutung der Todesgruft informieren, wenn Quest von Osman erhalten wurde.
+	* Neues Quest "Das Heldenepos": Man schreibt ihre Taten auf -> innovatives Quest überlegen.
+	* Neues Quest "Die Hochelfen": Unterstützung der Hochelfen für den Herzog und das Grenzgebiet -> Holzbruck?
+	* Verbindung mit Ricman's Quest "Der gezähmte Drache" -> man kann der Drachentöterin davon berichten.
+* Ricman sollte mehr über den Stab der Unsterblichkeit berichten. Wirkt alles zu aufgesetzt. Warum will er unbedingt einen Drachen aus den alten Sagen?
+* Irminas Tagesablauf. Steht den ganzen Tag da und verkauft Sachen.
+* Sisgard: Frage "Was machst du wenn die Orks und Dunkelelfen kommen?".
+* Tobias erzählt von einer Kartoffel. Kartoffeln waren im Mittelalter unbekannt. Der Charakter sollte fragen, was eine Kartoffel ist und Tobias erzählt von Übersee.
+* Wigberht "Erzähl mir was über deine Heimat" "Nun komm schon" erzählt einfach direkt etwas.
+* Schafsjunge Satz "Was verkaufst du denn?".
+* Irmina: Fahrt nach Holzbruck prüfen, neues Quest.
+* Storyidee für Die Verteidigung von Talras: Dararos taucht auf und bekämpft den Fürst der Dunkelelfen. Der Fürst der Dunkelelfen taucht auf, da Deranor von der Hochelfin vertrieben wurde. Es kommt heraus, dass der Fürst der Dunkelelfen und Deranor gemeinsame Sache machen. Es kommt auch heraus, dass Dararos und der Fürst der Dunkelelfen Brüder sind.
+* Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
+
+Zeugs:
+* Karte "Der Norden" vervollständigen.
+* DEPRECATED: Quest Blood Thristiness überarbeitet. Logischere Dialoge mit der Elfin, warum jagt sie die Kreaturen? - ist gar nicht soo schlecht
+* DEPRECATED (lieber je nach Itemtyp mit dem OrderAnimation-Struct Animationen bei Befehlen steuern!): Angriffsanimationen für Items spezifizieren! Dafür müssen valide Suffixe verwendet werden. Siehe Hive-Thread. Modell muss bearbeitet werden!
 * DEPRECATED: Kuno: Einbauen "Diese Wälder sind gefährlich! Hier hausen starke Kreaturen, nehmt euch in Acht!"
 * "Der dunkle Kult": Egal wann der Diakon getötet wird bzw. alle, muss es bereits abgeschlossen sein, solange der Charakter in der Nähe war.
 * DEPRECATED (welcher Pan? Videosequenz!): Letzter Auftrag, statt pan eventuell Videosequenz, die das Spiel unterbricht und die Ansicht danach wiederherstellt.
@@ -21,22 +40,21 @@ Handlung:
 * AOS-Gebiet: oben auf Plateaus Sichtfeldblocker platzieren!
 * AOS-Gebiet: Bob muss Gegenstände verkaufen.
 * AOS-Gebiet: Die Dämonenhändler sichtbarer machen.
-* AOS-Gebiet: Oscar und Dämon sollen Dialoge bekommen. Leiden unter der Herrschaft von Haldar und Baldar.
 * Tagesabläufe gehen immer noch nicht. Neue Lösung: Immer wenn ein neuer Tagesablauf begonnen wird, wird in onStart() automatisch der alte beendet.
 * Damit die Zaubereffekte funktionieren muss man die Anzahl der Anhänge auf die Anzahl der eingetragenen Modell setzen!
-* Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/
+* DONE (Karte Deranors Sumpf): Gute Modelle: http://www.hiveworkshop.com/forums/models-530/dark-soldier-245141/
 * Irgendwer in der Todesgruft kann Tote beschwören. Funktioniert jedoch nicht bei den eigenen Untoten? nur bei den Donnerwesen. Sollte bei allem funktionieren -> mehr Gegner.
 * FIXED: Gruft des Todes: Missgeburt braucht Fähigkeiten.
 * FIXED: Berserkerin benötigt Fähigkeiten.
 * Osmans Quest nur aktivierbar machen falls man ihn nicht als Kleriker beleidigt hat. Ansonsten erst mal eine Abfrage einbauen.
-* Am besten Osmans Beleidigung rauslöschen und auch das Quest mit dem Anschwärzen beim Herzog.
+* DEPRECATED: Am besten Osmans Beleidigung rauslöschen und auch das Quest mit dem Anschwärzen beim Herzog.
 * Bei Questupdates immer manuelles setState() und dann displayUpdateMessage().
 * Arena: Mehr Gegner, klassenabhängig.
 * DEPRECATED (werden nun bei Agihard angezeigt): Agihard, Arena: "Wer kämpft in deiner Arena?" - "Leute aus dem ganzen Land, Namensauflistung!".
 * DEPRECATED (keine Storyänderungen mehr): Lothar: Neues Quest mit Weinreben auf dem Mühlberg. Weinreben ernten.
 * Goldmünzenbeutel: Beutelmodell.
 * Haid muss mehr Gegenstände verkaufen.
-* Ricmans "Und was machst du hier?" direkt auf Startseite anzeigen.
+* FIXED: Ricmans "Und was machst du hier?" direkt auf Startseite anzeigen.
 * FIXED: Ricman: Beutezug korrigieren. Fehler??? Goldtruhenfähigkeit wird nicht als Icon angezeigt. Custom Spell machen!
 * DONE: Ricman: Evtl. Bestechungsoption einbauen, damit alle Klassen die Zauber lernen können? Ansonsten hat der Drachentöter zu große Vorteile!
 * DONE: Ricman: Erlernbare Fähigkeiten als Drachentöter sollen Grimoire Spells werden und im Zauberbuch erscheinen. Ansonsten kann man sie nicht verlernen und die Zauberpunkte anderwertig verwenden. Achtung: Können dann eventuell nicht alle angezeigt werden?
@@ -47,31 +65,24 @@ Handlung:
 * ACharacter.setMovable() entfernen und durch jeweilige Funktionen ersetzen.
 * Viele unnötige Helpermethoden aus ACharacter rauswerfen.
 * Dago retten - Bedingung einbauen, Dago darf das Gebiet nicht verlassen, sonst ist der Auftrag fehlgeschlagen! Ansonsten kann man mit Dago alles abmetzeln!
-* Osman: Sollte im Zusammenhang mit dem Kultquest den Begriff „Todesgruft“ erwähnen. So wird sie laut Drachentöterin von Eingeweihten genannt. Er muss bereits davon gehört haben.
-* Drachentöterin: Hat nun ein Gespräch, muss aber noch geschrieben werden:
-	* Über die Bedeutung der Todesgruft informieren, wenn Quest von Osman erhalten wurde.
-	* Neues Quest "Das Heldenepos": Man schreibt ihre Taten auf -> innovatives Quest überlegen.
-	* Neues Quest "Die Hochelfen": Unterstützung der Hochelfen für den Herzog und das Grenzgebiet -> Holzbruck?
-	* Verbindung mit Ricman's Quest "Der gezähmte Drache" -> man kann der Drachentöterin davon berichten.
-* Drachentöterin benötigt Tagesablauf der nach dem Quest "Metzelei" aktiviert wird: Sie muss nach Talras gehen.
-* Viel viel viel mehr Schreine platzieren. Sind auch Teleportmöglichkeiten!
+* FIXED: Drachentöterin benötigt Tagesablauf der nach dem Quest "Metzelei" aktiviert wird: Sie muss nach Talras gehen.
+* FIXED: Viel viel viel mehr Schreine platzieren. Sind auch Teleportmöglichkeiten!
 * Mehr Kreaturen oder sammelbare Items platzieren. Die Karte ist viel zu leer -> mehr Spawn Points.
-* Quest-Pings deaktivierbar machen (pro Spieler).
-* Quest-Pings manuell durch Hauptmenü erlauben.
+* FIXED: Quest-Pings deaktivierbar machen (pro Spieler).
+* FIXED: Quest-Pings manuell durch Hauptmenü erlauben.
 * Video "Das erste Gefecht": Einheiten blockieren sich gegenseitig beim Laufen. Nicht in der selben Gruppe?! Abstände vergrößern, Geschwindigkeit anpassen auch bei Items!
-* Ricman sollte mehr über den Stab der Unsterblichkeit berichten. Wirkt alles zu aufgesetzt. Warum will er unbedingt einen Drachen aus den alten Sagen?
 * Beim Zauber "Drohendes Unheil" sicherstellen, dass der Zauber pro Einheit nur einmal gleichzeitig angewandt werden kann.
 * Leider erlaubt der Zauber "Drohendes Unheil" auch, dass man z. B. bevor man in den Kampf zieht den Effekt auf alle Einheiten zaubert. Daher muss der Effekt zeitlich begrenzt werden!
 * Tutorial: Schreintipp für alle Gebiete von Anfang an aktivieren, auch für aktivierten Schrein.
 * Tutorial: Als erstes einblenden, dass Anleitungen im Quest-Log stehen.
-* Tutorial: Zunächst einblenden, dass man mit "-menu" ins Haupt-Menü kommt.
+* DEPRECATED: Tutorial: Zunächst einblenden, dass man mit "-menu" ins Haupt-Menü kommt.
 * Tutorial: Einblenden, dass man eine Teleportationsrolle dabei hat.
 * Creep-Lager-Icons funktionieren im Editor aber nicht im Spiel. Liegt daran, dass nicht erkundete Gebiete überhaupt nicht sichtbar sind: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/creep-camps-not-showing-231992/index3.html
 * DEPREACTED: Klassenzauber auf Basis von "Mana und Leben auffüllen"?
 * FIXED: Vampirgebietergruppe muss viel mehr droppen. Artefakte, Tränke, am besten Runen!
 * "Genesung" schadet dem Kleriker selbst. Sollte heilen aber ohne dem Kleriker selbst Leben abzuziehen.
 * FIXED (Standardwerte): "Böses bannen" hängt extrem.
-* Die Startbrücke endlich breiter machen!
+* DEPRECATED: Die Startbrücke endlich breiter machen!
 * DEPRECATED: Metamorphose: Was passiert wenn der Charakter während der Rückverwandlung stirbt und das Inventar aktiviert wird wenn er tot ist?
 * DEPRECATED: Metamorphose: Verhindern, dass Charakter während Verwandlung stirbt, da sonst eventuell Nebeneffekte eintreten? Können Items trotzdem hinzugefügt werden?
 * ASL: Mehr API-Kommentare.
@@ -79,7 +90,6 @@ Handlung:
 * ASL: AClassSelection - Drehung optional machen (dynamisch).
 * AClassSelection: Multiboard ist zu breit. Die Breite nicht automatisch berechnen, sondern wie bei ACharactersScheme dynamisch festlegen lassen.
 * Auftrag mit Dago fehlschlagen lassen wenn man mit ihm flieht.
-* Irminas Tagesablauf. Steht den ganzen Tag da und verkauft Sachen.
 * Beide Quests von Wieland NICHT ablehnbar machen!
 * Haldar und Balder: Ich möchte aus der ... Legion austreten.
 * Haldar und Baldar gleichmäßigen Zutritt erlauben! Damit Teams gleich groß sind.
@@ -91,7 +101,6 @@ Handlung:
 * Quest Deranor: Man kann Osman danach auch berichten, was hinter dem Kult eigentlich steckt.
 * Dialog mit Drachenöterin über Deranor verbessern.
 * Bei allen Tötungsquests den Spieler Neutral Aggressiv entfernen. Einheiten könnten übernommen worden sein!
-* Sisgard: Frage "Was machst du wenn die Orks und Dunkelelfen kommen?".
 * Irmina: Agihards Quest nicht ablehnbar machen "Also Agihard" sollte einfach auf der Hauptseite angezeigt werden.
 * Arenameister und Talras' mutiger Waffenmeister haben dasselbe Icon.
 * Wiederbelebungsbug erneut. Nach Video "Das erste Gefecht" wurde während des Spiels Charakter 0 getötet und kein Wiederbelebungstimer gestartet. Es erschien auch kein Timerdialog.
@@ -108,9 +117,8 @@ Handlung:
 * Ricman gehört nach letzter Schlacht auf einmal der weißen Legion?!
 * Letzte Schlacht auch Dunkelelfen spawnen mit mehr Fähigkeiten, macht die Schlacht interessanter.
 * Alphafähigkeit wird in Verwandlung nicht angezeigt.
-* Veraltete Zauber der Klassen komplett aus dem Projekt entfernen. Siehe struct ClassSelection.
+* DONE: Veraltete Zauber der Klassen komplett aus dem Projekt entfernen. Siehe struct ClassSelection.
 * Ansprechen durch anderen Spieler funktioniert immer noch für menschliche Charaktere! Problem: Trigger player ist immer der Besitzer der Einheit, nicht der der den Befehl gibt.
-* Tobias erzählt von einer Kartoffel. Kartoffeln waren im Mittelalter unbekannt. Der Charakter sollte fragen, was eine Kartoffel ist und Tobias erzählt von Übersee.
 * Sichtfeldblocker in Trommelhöhle besser platzieren.
 * Weniger Erfahrung für Nebenquests und Hauptquests, vor allem am Anfang. Erfahrung auch durch Spielerzahl teilen?!
 * Wenn Seitengegenstand anderem Charakter gegeben wird, wird er nicht richtig zurück gesetzt. Pickup sollte Seitengegenstand einfach entfernen.
@@ -118,7 +126,6 @@ Handlung:
 * Initialskymodell für Karte Talras setzen.
 * FIXED: Ricman und Wigberht einfach nach letzter Schlacht automatisch ins Lager bewegen. Ansonsten verwirrend.
 * Bei letzter Schlacht sollen sich zur Sicherheit Einheiten nicht töten können? Damage event verwenden und Leben wieder auffüllen so wie beim ersten Dago-Video.
-* Wigberht "Erzähl mir was über deine Heimat" "Nun komm schon" erzählt einfach direkt etwas.
 * Weniger Erfahrung für die leppische Hauptquests. Man steigt viel zu schnell auf.
 * Dämpfung sollte nicht nur Magieschaden reduzieren. Der Effekt bringt sonst zu wenig, da wenige Einheiten Magieschaden verursachen. Vielleicht auch allgemein vor Schaden schützen von Einheiten, die Mana besitzen.
 * DONE: Mehr Bosse bei letzter Schlacht: Dunkelelfen-Hexer, Kriegsherr der Orks
@@ -135,8 +142,6 @@ Handlung:
 * Krähengestalt braucht Verwandlungsanimation (per Code). Suche Animationsnummer von Hive heraus!
 * DEPRECATED: Grimoirefähigkeiten permanent machen, sodass sie bei Verwandlung noch da sind.
 * FIXED: Inventar- und Grimoirefähigkeiten bei Verwandlung falls gefordert explizit entfernen, anstatt hinzuzufügen.
-* Schafsjunge vielleicht Hirtenjunge nennen?
-* Schafsjunge Satz "Was verkaufst du denn?".
 * FIXED: Schafsjunge soll Wolle usw. verkaufen.
 * FIXED: Wolle und Questbelohnung einbauen.
 * DEPRECATED: Beleidigung gegenüber Mathilda rausnehmen.
@@ -155,7 +160,6 @@ Handlung:
 * FIXED: Quest Metzelei: Tötungsreihenfolge sollte egal sein. Zumindest bist zur Todesgruft.
 * FIXED: Verzauberter Stab: Kürzer machen.
 * FIXED: Verzauberter Stab: Breiter machen.
-* Irmina: Fahrt nach Holzbruck prüfen, neues Quest.
 * Versorgung von Talras: 200 Erfahrung?
 * DEPRECATED (Gegner werden angezeigt, wenn man ihn anklickt): Agihard einbauen "Gegen wen kann ich kämpfen?". Beschreibung des PvP-Kampfes.
 * Stäbe sollen Zweihandwaffen sein?
@@ -196,7 +200,7 @@ Handlung:
 * Ursulas Druidensatz einbauen.
 * Mathildas Auftrag und Schalmei einbauen.
 * Spielnachrichten loggen und mit "-history" zugänglich machen. System nicht ganz so einfach umzusetzen? Mit Hook irgendwie?
-* Den Befehl "-help" einbauen, da man ihn standardmäßig ausprobieren würde.
+* DEPRECATED: Den Befehl "-help" einbauen, da man ihn standardmäßig ausprobieren würde.
 * Markwards Belohnungsgegenstand für Ritter ist zu gut.
 * Anstürmen: "attack" verhindert Abklingzeit des Zaubers?
 * Anstürmen: Stun geht nicht. Lieber dummy erzeugen.
@@ -217,7 +221,7 @@ Handlung:
 * DONE: AInfo: Durch neue Lösung hängt des Skippen des Textes. Skip-Trigger einbauen -> Text direkt clearen.
 * AInventory: Wenn ein Gegenstand aufgehoben wird, sollte er im Rucksack nach Möglichkeit auf der geöffneten Seite landen.
 * Minikarte muss leicht nach links verschoben werden.
-* AInventory: Drop wird trotzdem registriert, obwohl der Trigger disabled wird.
+* DEPRECATED: AInventory: Drop wird trotzdem registriert, obwohl der Trigger disabled wird.
 * Pick all units and remove buffs from shrine auras.
 * Kein Gold für PvP kill.
 * Ricman wurde während des Videos "Wigberht" wiederbelebt. Daher kam auch sein Dialog und er stand zwei mal da. Vor jedem Video alle Fellows wiederbeleben.
@@ -238,8 +242,6 @@ Handlung:
 * Video "Prepare For The Defense": Herzog muss überrascht wirken und Markward begeistern, dass alle Aufträge erfüllt wurden. Große Belohnung.
 * Knechte sollen Tunnel graben können. So kann man sich Versorgung in den Außenposten holen.
 * Mehr Interaktion bei mehreren Spielern: Dararos sollte mit Hochelfen eintreffen und mit Interaktion sollte ein Zauber gewirkt werden. Charaktere müssen auf magischen Kreisen ausharren?
-* Storyidee für Die Verteidigung von Talras: Dararos taucht auf und bekämpft den Fürst der Dunkelelfen. Der Fürst der Dunkelelfen taucht auf, da Deranor von der Hochelfin vertrieben wurde. Es kommt heraus, dass der Fürst der Dunkelelfen und Deranor gemeinsame Sache machen. Es kommt auch heraus, dass Dararos und der Fürst der Dunkelelfen Brüder sind.
-* Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 * Alle Langsamkeitskugelfähigkeiten müssen nun den Channel-basierten Dummy-Effekt verwenden.
 * Kisten allmählich durch Marktstände ersetzen. Man findet sie ansonsten nicht. Oder alternativ durch schwebende Gegenstände anzeigen lassen.
 * Desync bei erster Waldläuferverstärkung.
@@ -275,9 +277,23 @@ Handlung:
 * Mitwirkende: Gebiet für Spieler 2 nicht sichtbar.
 * wc3object editor should offer the function "Validate Field References" and check all <> entries.
 * Osman Grundrauschen abgleichen gegen normale Takes und damit Rauschen entfernen.
+* FIXED (wrong rect): Karte Gardonar ist nicht in der Weltkarte verfügbar.
+* World Map: Dont allow traveling to maps which have never been visited.
+* The North: Units are owned by player 1.
+* FIXED: Start position from The North in Holzbruck.
+* Dornheim: Ralph has to give him the teleport item.
+* Game options unit has shadow.
+* Wolfsfelle brauchen anderes Icon.
+* Arena Champion is completed although not new. Should be completed when given and the number is >= 5.
+* Magischer Stein der Ahnen geht oft nicht (nach Kartenwechsel?!)
+* Disabled Zones should not show any effect (Magical Barriers).
+* Talras: Game Options: Dungeons are not listed after map transition.
+* Haid: Buy items -> no shop.
 
 Aufgehoben für Version 0.9:
 Critical errors:
+* Holzbruck's Underworld: Right lever cannot be reached in melee fight.
+* Pestkarrenzauber beschwört Misha (wc3lib compression bug). Check all based abilities as well.
 * FIXED: Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Excel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * Orks bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
