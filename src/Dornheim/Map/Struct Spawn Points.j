@@ -1,9 +1,22 @@
 library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpawnPoint
 
+	/**
+	 * \brief Makes sure that invulnerable animals beceome vulnerable.
+	 */
+	private struct VulnerableSpawnPoint extends SpawnPoint
+		/**
+		 * Called by .evaluate() whenever a unit is respawned or added for the first time.
+		 */
+		public stub method onSpawnUnit takes unit whichUnit, integer memberIndex returns nothing
+			call SetUnitInvulnerable(whichUnit, false)
+		endmethod
+
+	endstruct
+
 	struct SpawnPoints
-		private static SpawnPoint m_chickens
-		private static SpawnPoint m_horses
-		private static SpawnPoint m_pigs
+		private static VulnerableSpawnPoint m_chickens
+		private static VulnerableSpawnPoint m_horses
+		private static VulnerableSpawnPoint m_pigs
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -20,7 +33,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			//addNewItemType  integer itemTypeId, real weight returns integer
 			//addItemType takes integer index, integer itemTypeId, real weight returns nothing
 
-			set thistype.m_chickens = SpawnPoint.create()
+			set thistype.m_chickens = VulnerableSpawnPoint.create()
 			set index = thistype.m_chickens.addUnitWithType(gg_unit_n02X_0101, 1.0)
 			set index = thistype.m_chickens.addUnitWithType(gg_unit_n02X_0103, 1.0)
 			set index = thistype.m_chickens.addUnitWithType(gg_unit_n02Y_0100, 1.0)
@@ -28,12 +41,12 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 			//set itemIndex = thistype.m_fireCreature.addNewItemType(index, 'I06X', 1.0)
 
-			set thistype.m_horses = SpawnPoint.create()
+			set thistype.m_horses = VulnerableSpawnPoint.create()
 			set index = thistype.m_horses.addUnitWithType(gg_unit_h02K_0121, 1.0)
 			set index = thistype.m_horses.addUnitWithType(gg_unit_h02K_0122, 1.0)
 			set index = thistype.m_horses.addUnitWithType(gg_unit_h02K_0123, 1.0)
 
-			set thistype.m_pigs = SpawnPoint.create()
+			set thistype.m_pigs = VulnerableSpawnPoint.create()
 			set index = thistype.m_pigs.addUnitWithType(gg_unit_n083_0116, 1.0)
 			set index = thistype.m_pigs.addUnitWithType(gg_unit_n083_0119, 1.0)
 			set index = thistype.m_pigs.addUnitWithType(gg_unit_n083_0117, 1.0)
