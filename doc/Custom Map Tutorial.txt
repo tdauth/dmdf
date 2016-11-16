@@ -315,6 +315,8 @@ Steps:
 Releasing DMdF version
 
 Steps:
+* Increase the version number in the "maps/war3mapSkin.txt" file.
+* Import "maps/war3mapSkin.txt" and "maps/war3mapMisc.txt" into every map file using an MPQ Editor.
 * Convert all textures/icons into correct format (which means converting them into BLP format and adding MIP maps if necessary -> see below).
 * Generate missing button icons (BTN etc.)
 * Generate maxmimum MIP maps for non-interface textures (units, effects etc.).

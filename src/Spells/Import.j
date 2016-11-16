@@ -236,6 +236,7 @@ library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement,
 		call SpellBookOfDemonologySacrificeAnimal.create(character)
 		call SpellBookOfDemonologyConjuration.create(character)
 		call SpellBookOfDemonologyBloodRitual.create(character)
+		call SpellBookOfDemonologyLordOfDarkness.create(character)
 		call SpellBookOfHuntingPullFangs.create(character)
 		call SpellBookOfHuntingPullFurs.create(character)
 		call SpellBookOfHuntingPullBones.create(character)
