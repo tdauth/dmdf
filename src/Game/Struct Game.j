@@ -504,6 +504,8 @@ endif
 			call ASpawnPoint.init()
 			// Die Macht des Feuers
 			// game
+			// TODO use when fixed
+			//call CommandButton.init.evaluate()
 			set thistype.m_onDamageActions = AIntegerList.create()
 static if (DMDF_VIOLENCE) then
 			call thistype.registerOnDamageActionOnce(thistype.onDamageActionViolence) // blood/violence system

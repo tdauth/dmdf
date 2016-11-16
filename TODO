@@ -293,7 +293,6 @@ Zeugs:
 Aufgehoben für Version 0.9:
 Critical errors:
 * Holzbruck's Underworld: Right lever cannot be reached in melee fight.
-* Pestkarrenzauber beschwört Misha (wc3lib compression bug). Check all based abilities as well.
 * FIXED: Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Excel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * Orks bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.
@@ -381,7 +380,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * Limit of skeletons does still not work (necromancer).
 * FIXED: Add info for options.
 * Fix the war3map_en.wts file for Talras by undoing some commits and update the English Talras map.
-* FIXED (in the mod) wc3lib bug: field Arsg:UnitID is compressed although it was changed! Druid summons Misha?! or is this an old version? Probably only for the last level of Treefolk.
+* FIXED (in the mod) wc3lib bug: field Arsg:UnitID is compressed although it was changed! Treefolk, Pest Carret and summon dragon.
 * Video mit Diakon und Medusa: Kamerafahrten vereinfachen. Die letzte Kamerafahrt beim Diakon macht keinen Sinn. Predigt oder zaubert er?
 * Allgemein: Alle Zauber des Drachentöters testen.
 * FIXED: Todgeweihte haben keinen Luftangriff.

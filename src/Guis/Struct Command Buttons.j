@@ -122,7 +122,10 @@ library StructGuisCommandButtons requires Asl, StructGameDmdfHashTable
 			//debug call Print("Updated all buttons")
 		endmethod
 
-		private static method onInit takes nothing returns nothing
+		/**
+		 * Initializes the whole system and starts the movement timer.
+		 */
+		public static method init takes nothing returns nothing
 			set thistype.m_buttons = AIntegerVector.create()
 			set thistype.m_updateTimer = CreateTimer()
 			call TimerStart(thistype.m_updateTimer, thistype.timeout, true, function thistype.updateAllButtons)
