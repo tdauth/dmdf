@@ -7,10 +7,13 @@
 // Value 2: Optional flag (defaults to 0) indicating to disable display of category name
 //
 TC_TPOF_CHARACTER="Character",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_MAP="Map",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_TALK="Talk",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_FELLOW="Fellow",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_ITEM="Item",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_QUESTAREA="Quest Area",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_SHRINE="Revival Shrine",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_SPAWNPOINT="Spawn Point",ReplaceableTextures\WorldEditUI\Actions-Camera
 //%%% DEBUG - Remove for retail
 //TC_OBSOLETE=WESTRING_TRIGCAT_OBSOLETE,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
 //TC_DEBUG=WESTRING_TRIGCAT_DEBUG,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
@@ -33,10 +36,17 @@ Talk=0,1,1,"Talk",integer
 Fellow=0,1,1,"Fellow",integer
 AInfoCondition=0,1,1,"Info Condition",integer
 AInfoAction=0,1,1,"Info Action",integer
+ATalkStartAction=0,1,1,"Talk Start Action",integer
 
 ItemType=0,1,1,"Item Type",integer
 
 QuestArea=0,1,1,"Quest Area",integer
+
+Shrine=0,1,1,"Revival Shrine",integer
+
+SpawnPoint=0,1,1,"Creep Spawn Point",integer
+
+ItemSpawnPoint=0,1,1,"Item Spawn Point",integer
 
 //***************************************************************************
 [TriggerTypeDefaults]
@@ -51,6 +61,13 @@ Character=0,"No Character"
 Talk=0,"No Talk"
 Fellow=0,"No Fellow"
 
+QuestArea=0,"No Quest Area"
+
+Shrine=0,"No Revival Shrine"
+
+SpawnPoint=0,"No Creep Spawn Point"
+
+ItemSpawnPoint=0,"No Item Spawn Point"
 
 
 //***************************************************************************
@@ -89,12 +106,32 @@ Fellow=0,"No Fellow"
 // Value 1+: argument types
 
 AddInfo=1,Talk,boolean,boolean,AInfoCondition,AInfoAction,string
-_AddInfo_Defaults=
+_AddInfo_Defaults=_,true,false,_,_,_
 _AddInfo_Category=TC_TPOF_TALK
 
-CreateQuestArea=1,rect
+CreateQuestArea=1,rect,boolean
 _CreateQuestArea_Defaults=
 _CreateQuestArea_Category=TC_TPOF_QUESTAREA
+
+SetFellowRevivalTitle=1,Fellow,string
+_SetFellowRevivalTitle_Defaults=
+_SetFellowRevivalTitle_Category=TC_TPOF_FELLOW
+
+ShareFellowWithAll=1,Fellow
+_ShareFellowWithAll_Defaults=
+_ShareFellowWithAll_Category=TC_TPOF_FELLOW
+
+ShareFellowWithCharacter=1,Fellow,Character
+_ShareFellowWithCharacter_Defaults=
+_ShareFellowWithCharacter_Category=TC_TPOF_FELLOW
+
+ResetFellow=1,Fellow
+_ResetFellow_Defaults=
+_ResetFellow_Category=TC_TPOF_FELLOW
+
+SetFellowDescription=1,Fellow,string
+_SetFellowDescription_Defaults=
+_SetFellowDescription_Category=TC_TPOF_FELLOW
 
 // Obsolete actions
 //AddPerfLogLabel=0,string
@@ -123,13 +160,61 @@ PlayerCharacter=1,0,Character,player
 _PlayerCharacter_Defaults=
 _PlayerCharacter_Category=TC_TPOF_CHARACTER
 
+MapZoneName=1,0,string
+_MapZoneName_Defaults=
+_MapZoneName_Category=TC_TPOF_MAP
+
 ItemTypeByItem=1,0,ItemType,item
 _ItemTypeByItem_Defaults=
 _ItemTypeByItem_Category=TC_TPOF_ITEM
 
-CreateQuestArea=1,0,QuestArea,rect
+CreateQuestArea=1,0,QuestArea,rect,boolean
 _CreateQuestArea_Defaults=
 _CreateQuestArea_Category=TC_TPOF_QUESTAREA
+
+CreateTalk=1,0,Talk,unit,ATalkStartAction
+_CreateTalk_Defaults=
+_CreateTalk_Category=TC_TPOF_TALK
+
+InfoConditionByTrigger=1,0,AInfoCondition,trigger
+_InfoConditionByTrigger_Defaults=
+_InfoConditionByTrigger_Category=TC_TPOF_TALK
+
+InfoActionByTrigger=1,0,AInfoAction,trigger
+_InfoActionByTrigger_Defaults=
+_InfoActionByTrigger_Category=TC_TPOF_TALK
+
+GetTriggerInfo=1,0,AInfo,trigger
+_GetTriggerInfo_Defaults=
+_GetTriggerInfo_Category=TC_TPOF_TALK
+
+GetTriggerCharacter=1,0,Character,trigger
+_GetTriggerCharacter_Defaults=
+_GetTriggerCharacter_Category=TC_TPOF_TALK
+
+CreateFellow=1,0,Fellow,unit,Talk
+_CreateFellow_Defaults=
+_CreateFellow_Category=TC_TPOF_FELLOW
+
+CreateShrine=1,0,Shrine,unit,destructable,rect,rect,real
+_CreateShrine_Defaults=_,_,_,_,270.0
+_CreateShrine_Category=TC_TPOF_SHRINE
+
+CreateSpawnPoint=1,0,SpawnPoint
+_SpawnPoint_Defaults=
+_SpawnPoint_Category=TC_TPOF_SPAWNPOINT
+
+SpawnPointAddUnitWithType=1,0,integer,SpawnPoint,unit,chance
+_SpawnPointAddUnitWithType_Defaults=
+_SpawnPointAddUnitWithType_Category=TC_TPOF_SPAWNPOINT
+
+SpawnPointAddNewItemType=1,0,integer,SpawnPoint,integer,itemcode,chance
+_SpawnPointAddNewItemType_Defaults=
+_SpawnPointAddNewItemType_Category=TC_TPOF_SPAWNPOINT
+
+CreateItemSpawnPoint=1,0,ItemSpawnPoint
+_CreateItemSpawnPoint_Defaults=
+_CreateItemSpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
 //***************************************************************************
 [DefaultTriggerCategories]

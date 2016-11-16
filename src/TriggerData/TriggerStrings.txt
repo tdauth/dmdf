@@ -22,11 +22,31 @@
 
 AddInfo="Add Information"
 AddInfo="Add information to ",~Talk," permanently ",~permanently," and important ",~important," with condition ",~condition," and action ",~action," and text ",~text
-AddInfo="Adds information to a talk."
+AddInfoHint="Adds information to a talk."
 
 CreateQuestArea="Create Quest Area"
-CreateQuestArea="Creates quest area at rect ",~Rect
-CreateQuestArea="Creates a quest area where characters can gather to activate an event."
+CreateQuestArea="Creates quest area at rect ",~Rect," using a fog modifier ",~Flag
+CreateQuestAreaHint="Creates a quest area where characters can gather to activate an event."
+
+SetFellowRevivalTitle="Set Fellow Revival Title"
+SetFellowRevivalTitle="Set revival title of ",~Fellow," to ",~title
+SetFellowRevivalTitleHint="Sets the title for the timer dialog which is shown on reviving the fellow."
+
+ShareFellowWithAll="Share Fellow With All"
+ShareFellowWithAll="Share fellow ",~Fellow," with all characters"
+ShareFellowWithAllHint="Shares the control via a fellow with all character owning players."
+
+ShareFellowWithCharacter="Share Fellow With Character"
+ShareFellowWithCharacter="Share fellow ",~Fellow," with character ",~Character
+ShareFellowWithCharacterHint="Shares the control via a fellow with a specific character owning players."
+
+ResetFellow="Reset Fellow"
+ResetFellow="Reset fellow ",~Fellow
+ResetFellowHint="Resets the control via a fellow. No human player can control the fellow afterwards."
+
+SetFellowDescription="Set Fellow Description"
+SetFellowDescription="Set description for fellow ",~Fellow," to ",~Description
+SetFellowDescriptionHint="The description is shown to a player when the fellow is shared with him."
 
 // Obsolete actions
 //AddPerfLogLabel="** AddPerfLogLabel **"
@@ -45,8 +65,52 @@ CreateQuestArea="Creates a quest area where characters can gather to activate an
 // returns boolean
 PlayerCharacter="Player character"
 PlayerCharacter=~Player,"'s character"
-PlayerCharacter="Each player can have one character at maximum."
+PlayerCharacterHint="Each player can have one character at maximum."
+
+MapZoneName="Map Zone Name"
+MapZoneName="Map Zone Name"
+MapZoneNameHint="The zone name of the current map, used for changing the map in singleplayer."
+
+ItemTypeByItem="Item Type By Item"
+ItemTypeByItem="Item Type By Item ",~Item
+ItemTypeByItemHint="Gets the item type by an item. If the item has no custom item type it returns 0."
 
 CreateQuestArea="Create Quest Area"
-CreateQuestArea="Creates quest area at rect ",~Rect
-CreateQuestArea="Creates a quest area where characters can gather to activate an event."
+CreateQuestArea="Creates quest area at rect ",~Rect," using a fog modifier ",~Flag
+CreateQuestAreaHint="Creates a quest area where characters can gather to activate an event."
+
+CreateTalk="Create Talk"
+CreateTalk="Creates a talk using unit ",~Unit," calling action ",~StartAction
+CreateTalkHint="Creates a talk which can be hold between a unit and a character."
+
+InfoConditionByTrigger="Info Condition By Trigger"
+InfoConditionByTrigger="Gets the info condition by trigger ",~Trigger
+InfoConditionByTriggerHint="Gets a info condition by a trigger. The trigger is evaluated and the parameters are stored in it."
+
+InfoActionByTrigger="Info Action By Trigger"
+InfoActionByTrigger="Gets the info action by trigger ",~Trigger
+InfoActionByTriggerHint="Gets a info action by a trigger. The trigger is executed and the parameters are stored in it."
+
+CreateFellow="Create Fellow"
+CreateFellow="Creates a fellow using the unit ",~Unit," and the unit's talk ",~Talk
+CreateFellowHint="Creates a new fellow who can be shared to the human players and controlled by them. Make sure it is a hero unit."
+
+CreateShrine="Create Shrine"
+CreateShrine="Create shrine using shrine unit ",~Unit,", shrine destructable ",~Destructable,", discover rect ",~DiscoverRect,", revival rect ",~RevivalRect," and revival facing angle ",~Facing
+CreateShrineHint="Creates a new revival shrine which can be discovered and used for reviving a character."
+
+CreateSpawnPoint="Create Creep Spawn Point"
+CreateSpawnPoint="Create creep spawn point"
+CreateSpawnPointHint="Creates a new creep spawn point where creeps will respawn automatically after dying and can drop items."
+
+SpawnPointAddUnitWithType="Add Unit to Spawn Point"
+SpawnPointAddUnitWithType="Add to spawn point ",~SpawnPoint," the unit ",~Unit," spawning with the chance of "~Chance
+SpawnPointAddUnitWithTypeHint=""
+
+SpawnPointAddNewItemType="Add New Dropping Item Type to Spawn Point"
+SpawnPointAddNewItemType"Add to spawn point ",~SpawnPoint," for respawning unit member with index ",~Index," the new dropping item type ",~ItemType," with a chance ",~Chance
+SpawnPointAddNewItemTypeHint=""
+
+CreateItemSpawnPoint="Create Item Spawn Point"
+CreateItemSpawnPoint="Create Item Spawn Point"
+CreateItemSpawnPointHint=""
