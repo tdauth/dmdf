@@ -1,0 +1,4 @@
+The modification offers some custom trigger data to use the trigger editor instead of JASS or vJass.
+
+The files "src/TriggerData/TriggerData.txt" and "src/TriggerData/TriggerStrings.txt" are automatically
+merged by the program "wc3converter" to generate the files "archive/UI/TriggerData.txt" and "archive/UI/TriggerStrings.txt".

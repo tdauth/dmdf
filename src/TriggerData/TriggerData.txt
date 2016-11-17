@@ -6,6 +6,7 @@
 // Value 1: Icon image file
 // Value 2: Optional flag (defaults to 0) indicating to disable display of category name
 //
+TC_TPOF_CORE="Core",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_CHARACTER="Character",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_MAP="Map",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_TALK="Talk",ReplaceableTextures\WorldEditUI\Actions-Camera
@@ -83,6 +84,21 @@ ItemSpawnPoint=0,"No Item Spawn Point"
 //       and they will be converted to double quotes in the script.
 //
 
+
+CharacterNull=0,Character,0,"No Character"
+
+TalkNull=0,Talk,0,"No Talk"
+
+FellowNull=0,Fellow,0,"No Fellow"
+
+QuestArea=0,QuestArea,0,"No Quest Area"
+
+Shrine=0,Shrine,0,"No Revival Shrine"
+
+SpawnPoint=0,SpawnPoint,0,"No Creep Spawn Point"
+
+ItemSpawnPoint=0,ItemSpawnPoint,0,"No Item Spawn Point"
+
 //***************************************************************************
 [TriggerEvents]
 // Defines events available in the editor
@@ -90,6 +106,14 @@ ItemSpawnPoint=0,"No Item Spawn Point"
 // Value 0: first game version in which this function is valid
 // Value 1+: argument types
 // Note that the first argument is always a `trigger`, and is excluded here
+
+TriggerRegisterMapInitEvent=1
+_TriggerRegisterMapInitEvent_Defaults=
+_TriggerRegisterMapInitEvent_Category=TC_TPOF_MAP
+
+TriggerRegisterMapStartEvent=1
+_TriggerRegisterMapStartEvent_Defaults=
+_TriggerRegisterMapStartEvent_Category=TC_TPOF_MAP
 
 //***************************************************************************
 [TriggerConditions]
@@ -105,9 +129,21 @@ ItemSpawnPoint=0,"No Item Spawn Point"
 // Value 0: first game version in which this function is valid
 // Value 1+: argument types
 
-AddInfo=1,Talk,boolean,boolean,AInfoCondition,AInfoAction,string
-_AddInfo_Defaults=_,true,false,_,_,_
-_AddInfo_Category=TC_TPOF_TALK
+SetInfoCondition=1,AInfo,AInfoCondition
+_SetInfoCondition_Defaults=
+_SetInfoCondition_Category=TC_TPOF_TALK
+
+SetInfoAction=1,AInfo,AInfoAction
+_SetInfoAction_Defaults=
+_SetInfoAction_Category=TC_TPOF_TALK
+
+SetInfoConditionAndActionByTrigger=1,AInfo,trigger
+_SetInfoConditionAndActionByTrigger_Defaults=
+_SetInfoConditionAndActionByTrigger_Category=TC_TPOF_TALK
+
+Speech=1,AInfo,Character,boolean,string,sound
+_Speech_Defaults=
+_Speech_Category=TC_TPOF_TALK
 
 CreateQuestArea=1,rect,boolean
 _CreateQuestArea_Defaults=
@@ -155,6 +191,10 @@ _SetFellowDescription_Category=TC_TPOF_FELLOW
 //
 // Note: Operators are specially handled by the editor
 
+EnglishGermanString=1,0,string,string,string
+_EnglishGermanString_Defaults=
+_EnglishGermanString_Category=TC_TPOF_CORE
+
 // returns Character
 PlayerCharacter=1,0,Character,player
 _PlayerCharacter_Defaults=
@@ -172,15 +212,19 @@ CreateQuestArea=1,0,QuestArea,rect,boolean
 _CreateQuestArea_Defaults=
 _CreateQuestArea_Category=TC_TPOF_QUESTAREA
 
-CreateTalk=1,0,Talk,unit,ATalkStartAction
+CreateTalk=1,0,Talk,unit
 _CreateTalk_Defaults=
 _CreateTalk_Category=TC_TPOF_TALK
 
-InfoConditionByTrigger=1,0,AInfoCondition,trigger
+AddInfo=1,0,AInfo,Talk,boolean,boolean,string
+_AddInfo_Defaults=_,true,false,_,_,_
+_AddInfo_Category=TC_TPOF_TALK
+
+InfoConditionByTrigger=1,0,AInfoCondition,trigger,AInfo
 _InfoConditionByTrigger_Defaults=
 _InfoConditionByTrigger_Category=TC_TPOF_TALK
 
-InfoActionByTrigger=1,0,AInfoAction,trigger
+InfoActionByTrigger=1,0,AInfoAction,trigger,AInfo
 _InfoActionByTrigger_Defaults=
 _InfoActionByTrigger_Category=TC_TPOF_TALK
 
@@ -191,6 +235,10 @@ _GetTriggerInfo_Category=TC_TPOF_TALK
 GetTriggerCharacter=1,0,Character,trigger
 _GetTriggerCharacter_Defaults=
 _GetTriggerCharacter_Category=TC_TPOF_TALK
+
+TalkStartActionByTrigger=1,0,ATalkStartAction,trigger,Talk
+_TalkStartActionByTrigger_Defaults=
+_TalkStartActionByTrigger_Category=TC_TPOF_TALK
 
 CreateFellow=1,0,Fellow,unit,Talk
 _CreateFellow_Defaults=
@@ -204,15 +252,15 @@ CreateSpawnPoint=1,0,SpawnPoint
 _SpawnPoint_Defaults=
 _SpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
-SpawnPointAddUnitWithType=1,0,integer,SpawnPoint,unit,chance
+SpawnPointAddUnitWithType=1,0,integer,SpawnPoint,unit,real
 _SpawnPointAddUnitWithType_Defaults=
 _SpawnPointAddUnitWithType_Category=TC_TPOF_SPAWNPOINT
 
-SpawnPointAddNewItemType=1,0,integer,SpawnPoint,integer,itemcode,chance
+SpawnPointAddNewItemType=1,0,integer,SpawnPoint,integer,itemcode,real
 _SpawnPointAddNewItemType_Defaults=
 _SpawnPointAddNewItemType_Category=TC_TPOF_SPAWNPOINT
 
-CreateItemSpawnPoint=1,0,ItemSpawnPoint
+CreateItemSpawnPoint=1,0,ItemSpawnPoint,real,real,item
 _CreateItemSpawnPoint_Defaults=
 _CreateItemSpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
