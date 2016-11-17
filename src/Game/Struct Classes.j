@@ -480,7 +480,7 @@ library StructGameClasses requires Asl, StructGameCharacter
 			 * Decreases the lag when changing to classes for the first time.
 			 * This might take many many abilities, so start with a new OpLimit.
 			 */
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.preloadAbilities)
+			call NewOpLimit(function thistype.preloadAbilities)
 		endmethod
 
 		public static method cleric takes nothing returns AClass

@@ -82,8 +82,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
 			call Shrines.init()
-			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
-			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
+			call NewOpLimit(function SpawnPoints.init)
+			call NewOpLimit(function Fellows.init) // init after talks (new)
 			call initMapVideos.evaluate()
 
 			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)

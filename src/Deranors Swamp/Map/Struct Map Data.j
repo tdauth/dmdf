@@ -41,9 +41,9 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
 			call Shrines.init()
-			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
+			call NewOpLimit(function SpawnPoints.init)
 			call initMapVideos.evaluate()
-			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
+			call NewOpLimit(function Fellows.init) // init after talks (new)
 
 			set thistype.m_zoneGardonarsHell = Zone.create("GH", gg_rct_zone_gardonars_hell)
 			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)

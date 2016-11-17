@@ -368,7 +368,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local string nextLevelPath = thistype.mapPath(newMap)
 			debug call Print("Before storing characters")
 			// removing buffs and summoned units is also done in the Bonus Campaign, probably it indicates the elapsed time after a transition
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.removeBuffsAndSummonedUnits) // New Op Limit
+			call NewOpLimit(function thistype.removeBuffsAndSummonedUnits) // New Op Limit
 
 			if (not thistype.storeCharactersSinglePlayerNewOpLimit.evaluate()) then // New Op Limit
 				debug call Print("Could store all characters.")

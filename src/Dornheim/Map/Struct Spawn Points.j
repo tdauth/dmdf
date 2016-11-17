@@ -17,6 +17,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static VulnerableSpawnPoint m_chickens
 		private static VulnerableSpawnPoint m_horses
 		private static VulnerableSpawnPoint m_pigs
+		private static VulnerableSpawnPoint m_ducks
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -28,10 +29,6 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		public static method init takes nothing returns nothing
 			local integer index = 0
 			local integer itemIndex = 0
-
-			// TODO add dropping item to boss I06X, to Gardonar's hell
-			//addNewItemType  integer itemTypeId, real weight returns integer
-			//addItemType takes integer index, integer itemTypeId, real weight returns nothing
 
 			set thistype.m_chickens = VulnerableSpawnPoint.create()
 			set index = thistype.m_chickens.addUnitWithType(gg_unit_n02X_0101, 1.0)
@@ -54,6 +51,19 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_pigs.addUnitWithType(gg_unit_n083_0115, 1.0)
 			set index = thistype.m_pigs.addUnitWithType(gg_unit_n083_0120, 1.0)
 			set index = thistype.m_pigs.addUnitWithType(gg_unit_n083_0118, 1.0)
+
+			set thistype.m_ducks = VulnerableSpawnPoint.create()
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0105, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0107, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0106, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0064, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0109, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0110, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0104, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0108, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0112, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0113, 1.0)
+			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0124, 1.0)
 
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0018, 1.0)
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0016, 1.0)

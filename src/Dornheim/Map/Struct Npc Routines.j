@@ -39,6 +39,8 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_wotanPrays.setFacing(262.95)
 			call thistype.m_wotanPrays.setPartner(null)
 			call thistype.m_wotanPrays.addSound(tr("Ich bin WOOOOOTAAAAAAN und herrsche über diese Insel!"), null)
+			call thistype.m_wotanPrays.addSound(tr("Nennt mich einen Gott!"), null)
+			call thistype.m_wotanPrays.addSound(tr("Ich herrsche, ihr dient!"), null)
 
 			set thistype.m_wotanHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.wotan(), 23.0, 4.0, gg_rct_waypoint_wotan_house)
 			call thistype.m_wotanPortal.setFacing(297.03)

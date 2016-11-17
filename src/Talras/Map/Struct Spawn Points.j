@@ -1213,17 +1213,17 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			/**
 			 * Start with new OpLimit since it takes many many operations.
 			 */
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.init0)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.init1)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.init2)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.init3)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.initFarm)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.initLeftGate)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.initDeranorsTomb)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.initMillHill)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.initStartItems)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.initKunosItems)
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.initFarmSouthItems)
+			call NewOpLimit(function thistype.init0)
+			call NewOpLimit(function thistype.init1)
+			call NewOpLimit(function thistype.init2)
+			call NewOpLimit(function thistype.init3)
+			call NewOpLimit(function thistype.initFarm)
+			call NewOpLimit(function thistype.initLeftGate)
+			call NewOpLimit(function thistype.initDeranorsTomb)
+			call NewOpLimit(function thistype.initMillHill)
+			call NewOpLimit(function thistype.initStartItems)
+			call NewOpLimit(function thistype.initKunosItems)
+			call NewOpLimit(function thistype.initFarmSouthItems)
 		endmethod
 
 		public static method spawn takes nothing returns nothing

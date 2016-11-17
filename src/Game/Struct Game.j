@@ -589,7 +589,7 @@ endif
 			// if the game is new show the class selection, otherwise restore characters from the game cache (only in campaign mode)
 			if (thistype.restoreCharacters()) then
 				// new OpLimit
-				call ForForce(bj_FORCE_PLAYER[0], function MapChanger.restoreCharactersSinglePlayer)
+				call NewOpLimit(function MapChanger.restoreCharactersSinglePlayer)
 				call ClassSelection.startGame.evaluate()
 			// Otherwise start the game from beginning by letting players select their class.
 			else
@@ -677,7 +677,7 @@ endif
 			//call CommandButton.create(Player(0), 'B010', 'h00B', 0.0, 0.0)
 
 			// use new OpLimit
-			call ForForce(bj_FORCE_PLAYER[0], function thistype.initCharactersScheme)
+			call NewOpLimit(function thistype.initCharactersScheme)
 
 			// create after character creation (character should be F1)
 			// disable RPG view
@@ -862,11 +862,11 @@ endif
 				set i = i + 1
 			endloop
 
-			call ForForce(bj_FORCE_PLAYER[0], function Fellow.reviveAllForVideo)
-			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.pauseAll)
-			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.pauseAll)
-			call ForForce(bj_FORCE_PLAYER[0], function Routines.destroyTextTags)
-			call ForForce(bj_FORCE_PLAYER[0], function Routines.stopSounds)
+			call NewOpLimit(function Fellow.reviveAllForVideo)
+			call NewOpLimit(function SpawnPoint.pauseAll)
+			call NewOpLimit(function ItemSpawnPoint.pauseAll)
+			call NewOpLimit(function Routines.destroyTextTags)
+			call NewOpLimit(function Routines.stopSounds)
 			call DisableTrigger(thistype.m_killTrigger)
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterShownItem), function thistype.hideItem)
 			set i = 0
@@ -957,8 +957,8 @@ endif
 			call thistype.resetCameraBounds()
 			call EnableTrigger(thistype.m_killTrigger)
 
-			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoint.resumeAll)
-			call ForForce(bj_FORCE_PLAYER[0], function ItemSpawnPoint.resumeAll)
+			call NewOpLimit(function SpawnPoint.resumeAll)
+			call NewOpLimit(function ItemSpawnPoint.resumeAll)
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterHiddenItem), function thistype.showItem)
 			set i = 0
 			loop

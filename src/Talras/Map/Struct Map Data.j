@@ -237,7 +237,7 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_0), GetRectCenterY(gg_rct_arena_enemy_0), 180.0)
 			call Arena.addStartPoint(GetRectCenterX(gg_rct_arena_enemy_1), GetRectCenterY(gg_rct_arena_enemy_1), 0.0)
 
-			call ForForce(bj_FORCE_PLAYER[0], function Dungeons.init)
+			call NewOpLimit(function Dungeons.init)
 
 static if (DMDF_NPC_ROUTINES) then
 			/*
@@ -246,18 +246,18 @@ static if (DMDF_NPC_ROUTINES) then
 			 * Unfortunately for calling already declared methods with .evaluate() the JassHelper does not generate such a trigger evaluation.
 			 * This workaround can be used for parameterless functions and calls the function with a separate OpLimit as well.
 			 */
-			call ForForce(bj_FORCE_PLAYER[0], function NpcRoutines.init)
+			call NewOpLimit(function NpcRoutines.init)
 endif
 			call Shrines.init()
-			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
-			call ForForce(bj_FORCE_PLAYER[0], function Tomb.init)
+			call NewOpLimit(function SpawnPoints.init)
+			call NewOpLimit(function Tomb.init)
 			/*
 			 * For functions the JassHelper always generates a TriggerEvaluate() call.
 			 */
 			call initMapSpells.evaluate()
 			call initMapTalks.evaluate()
 			call initMapVideos.evaluate()
-			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
+			call NewOpLimit(function Fellows.init) // init after talks (new)
 
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
@@ -408,7 +408,7 @@ endif
 			set thistype.cowSound = gg_snd_Cow
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
-			call ForForce(bj_FORCE_PLAYER[0], function Dungeons.addSpellbookAbilities)
+			call NewOpLimit(function Dungeons.addSpellbookAbilities)
 
 			call SuspendTimeOfDay(false)
 

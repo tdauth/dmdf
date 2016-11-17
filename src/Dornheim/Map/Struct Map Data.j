@@ -39,19 +39,19 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			// player should look like neutral passive
 			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
-			call ForForce(bj_FORCE_PLAYER[0], function Dungeons.init)
+			call NewOpLimit(function Dungeons.init)
 
 static if (DMDF_NPC_ROUTINES) then
 			/*
 			 * Use new OpLimit.
 			 */
-			call ForForce(bj_FORCE_PLAYER[0], function NpcRoutines.init)
+			call NewOpLimit(function NpcRoutines.init)
 endif
 
 			call Shrines.init()
-			call ForForce(bj_FORCE_PLAYER[0], function SpawnPoints.init)
+			call NewOpLimit(function SpawnPoints.init)
 			call initMapTalks.evaluate()
-			call ForForce(bj_FORCE_PLAYER[0], function Fellows.init) // init after talks (new)
+			call NewOpLimit(function Fellows.init) // init after talks (new)
 
 			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
 			call thistype.m_zoneTalras.disable()

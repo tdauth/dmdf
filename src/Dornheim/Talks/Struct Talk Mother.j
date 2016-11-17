@@ -9,6 +9,9 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 		private AInfo m_back
 		private AInfo m_exit
 
+		private AInfo m_gold
+		private AInfo m_goldBack
+
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(this.m_exit.index(), character)
 		endmethod
@@ -76,11 +79,37 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Da bin ich wieder."), null)
 			call speech(info, character, true, tr("Mein Sohn! Den Göttern sei Dank, du bist gesund zurückgekehrt. Hier nimm diesen Kuchen, den ich für dich gebacken habe."), null)
+			// Apfelkuchen geben
+			call character.giveItem('I07F')
 			call speech(info, character, true, tr("Sprich, hast du zufällig ein paar Goldmünzen für unseren Gasthof mitgebracht?"), null)
 
-			// TODO Apfelkuchen geben
-			// TODO Auswahl Gold geben
+			call this.showRange(this.m_gold.index(), this.m_goldBack.index(), character)
+		endmethod
 
+		private static method infoConditionGold takes AInfo info, Character character returns boolean
+			return GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) >= 50
+		endmethod
+
+		private static method infoActionGold takes AInfo info, Character character returns nothing
+			local thistype this = thistype(info.talk())
+
+			if (thistype.infoConditionGold(info, character)) then
+				call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) - 50)
+				call speech(info, character, false, tr("Hier sind 50 Goldmünzen."), null)
+				call speech(info, character, true, tr("Das freut mich aber, mein Sohn. Ich bin stolz auf dich. Bald können wir unseren Gasthof ausbauen, zu einem stattlichen Gebäude."), null)
+				// TODO some effect!
+			else
+				call speech(info, character, false, tr("Leider nicht."), null)
+				call speech(info, character, true, tr("Schade, sehr schade."), null)
+			endif
+
+			call this.showStartPage(character)
+		endmethod
+
+		private static method infoActionGoldBack takes AInfo info, Character character returns nothing
+			local thistype this = thistype(info.talk())
+			call speech(info, character, false, tr("Leider nicht."), null)
+			call speech(info, character, true, tr("Schade, sehr schade."), null)
 			call this.showStartPage(character)
 		endmethod
 
@@ -93,6 +122,9 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			set this.m_food = this.addInfo(false, false, thistype.infoConditionFood, thistype.infoActionFood, tre("Hier sind die Waren.", "There you have your goods."))
 			set this.m_back = this.addInfo(false, false, thistype.infoConditionBack, thistype.infoActionBack, tr("Da bin ich wieder."))
 			set this.m_exit = this.addExitButton()
+
+			set this.m_gold = this.addInfo(true, false, thistype.infoConditionGold, thistype.infoActionGold, tr("Hier sind 50 Goldmünzen."))
+			set this.m_goldBack = this.addInfo(true, false, 0, thistype.infoActionGoldBack, tr("Leider nicht."))
 
 			return this
 		endmethod
