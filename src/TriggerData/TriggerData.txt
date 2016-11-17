@@ -13,9 +13,11 @@ TC_TPOF_TALK="Talk",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_FELLOW="Fellow",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_ITEM="Item",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_QUESTAREA="Quest Area",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_QUEST="Quest",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_SHRINE="Revival Shrine",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_SPAWNPOINT="Spawn Point",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_DUNGEON="Dungeon",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_ROUTINE="Routine",ReplaceableTextures\WorldEditUI\Actions-Camera
 //%%% DEBUG - Remove for retail
 //TC_OBSOLETE=WESTRING_TRIGCAT_OBSOLETE,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
 //TC_DEBUG=WESTRING_TRIGCAT_DEBUG,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
@@ -36,6 +38,8 @@ TC_TPOF_DUNGEON="Dungeon",ReplaceableTextures\WorldEditUI\Actions-Camera
 // These are sorted so that they appear as such in the Variables dialog.
 
 Character=0,1,1,"Player Character",integer
+AClass=0,1,1,"Character Class",integer
+AInventory=0,1,1,"Character Inventory",integer
 
 Talk=0,1,1,"Talk",integer
 Fellow=0,1,1,"Fellow",integer
@@ -47,6 +51,7 @@ ATalkStartAction=0,1,1,"Talk Start Action",integer
 ItemType=0,1,1,"Item Type",integer
 
 QuestArea=0,1,1,"Quest Area",integer
+AQuest=0,1,"Quest",integer
 
 Shrine=0,1,1,"Revival Shrine",integer
 
@@ -58,6 +63,9 @@ Dungeon=0,1,1,"Dungeon",integer
 
 Zone=0,1,1,"Zone",integer
 
+ARoutine=0,1,1,"Routine",integer
+NpcTalksRoutine=0,1,1,"Routine Talks",integer
+
 //***************************************************************************
 [TriggerTypeDefaults]
 // Defines an optional default value for a trigger type used as a global variable
@@ -68,6 +76,7 @@ Zone=0,1,1,"Zone",integer
 // If a type does not have an entry here, it will be set to null if it is a handle
 //
 Character=0,"No Character"
+
 Talk=0,"No Talk"
 Fellow=0,"No Fellow"
 
@@ -116,6 +125,15 @@ DungeonNull=0,Dungeon,"No Dungeon"
 
 ZoneNull=0,Zone,"No Zone"
 
+ClassCleric=0,AClass,Classes.cleric(),"Class Cleric"
+ClassNecromancer=0,AClass,Classes.necromancer(),"Class Necromancer"
+ClassDruid=0,AClass,Classes.druid(),"Class Druid"
+ClassKnight=0,AClass,Classes.knight(),"Class Knight"
+ClassDragonSlayer=0,AClass,Classes.dragonSlayer(),"Class Dragon Slayer"
+ClassRanger=0,AClass,Classes.ranger(),"Class Ranger"
+ClassElementalMage=0,AClass,Classes.elementalMage(),"Class Elemental Mage"
+ClassWizard=0,AClass,Classes.wizard(),"Class Wizard"
+
 ZoneTalras=0,string,"TL","Zone Talras"
 ZoneGardonar=0,string,"GA","Zone Gardonar"
 ZoneGardonarsHell=0,string,"GH","Zone Gardonar's Hell"
@@ -125,6 +143,8 @@ ZoneHolzbrucksUnderworld=0,string,"HU","Zone Holzbruck's Underworld"
 ZoneWorldMap=0,string,"WM","Zone Worldmap"
 ZoneDornheim=0,string,"DH","Zone Dornheim"
 ZoneTheNorth=0,string,"TN","Zone The North"
+
+RoutineMoveTo=0,ARoutine,Routines.moveTo(),"Routine Move To"
 
 //***************************************************************************
 [TriggerEvents]
@@ -188,6 +208,10 @@ ShowTalkRange=1,Talk,integer,integer,Character
 _ShowTalkRange_Defaults=
 _ShowTalkRange_Category=TC_TPOF_TALK
 
+ShowTalkUntil=1,Talk,integer,Character
+_ShowTalkUntil_Defaults=
+_ShowTalkUntil_Category=TC_TPOF_TALK
+
 AddExitButton=1,Talk
 _AddExitButton_Defaults=
 _AddExitButton_Category=TC_TPOF_TALK
@@ -220,6 +244,14 @@ SetFellowDescription=1,Fellow,string
 _SetFellowDescription_Defaults=
 _SetFellowDescription_Category=TC_TPOF_FELLOW
 
+RoutineSetPartner=1,NpcTalksRoutine,unit
+_RoutineSetPartner_Defaults=
+_RoutineSetPartner_Category=TC_TPOF_TALK
+
+RoutineSetFacing=1,NpcTalksRoutine,real
+_RoutineSetFacing_Defaults=
+_RoutineSetFacing_Category=TC_TPOF_TALK
+
 // Obsolete actions
 //AddPerfLogLabel=0,string
 //_AddPerfLogLabel_Defaults="Triggered Debug Label"
@@ -250,10 +282,25 @@ EnglishGermanString=1,0,string,string,string
 _EnglishGermanString_Defaults=
 _EnglishGermanString_Category=TC_TPOF_CORE
 
-// returns Character
 PlayerCharacter=1,0,Character,player
 _PlayerCharacter_Defaults=
 _PlayerCharacter_Category=TC_TPOF_CHARACTER
+
+CharacterClass=1,0,Character,AClass
+_CharacterClass_Defaults=
+_CharacterClass_Category=TC_TPOF_CHARACTER
+
+CharacterInventory=1,0,AInventory,Character
+_CharacterInventory_Defaults=
+_CharacterInventory_Category=TC_TPOF_CHARACTER
+
+InventoryHasItemType=1,0,boolean,AInventory,itemcode
+_InventoryHasItemType_Defaults=
+_InventoryHashItemType_Category=TC_TPOF_CHARACTER
+
+InventoryTotalItemTypeCharges=1,0,integer,AInventory,itemcode
+_InventoryTotalItemTypeCharges_Defaults=
+_InventoryTotalItemTypeCharges_Category=TC_TPOF_CHARACTER
 
 MapZoneName=1,0,string
 _MapZoneName_Defaults=
@@ -274,6 +321,10 @@ _ItemTypeByItem_Category=TC_TPOF_ITEM
 CreateQuestArea=1,0,QuestArea,rect,boolean
 _CreateQuestArea_Defaults=
 _CreateQuestArea_Category=TC_TPOF_QUESTAREA
+
+CreateCharacterQuest=1,0,AQuest,Character,string
+_CreateCharacterQuest_Defaults=
+_CreateCharacterQuest_Category=TC_TPOF_QUEST
 
 CreateTalk=1,0,Talk,unit
 _CreateTalk_Defaults=
@@ -307,9 +358,13 @@ TalkStartActionByTrigger=1,0,ATalkStartAction,trigger,Talk
 _TalkStartActionByTrigger_Defaults=
 _TalkStartActionByTrigger_Category=TC_TPOF_TALK
 
-GetInfoTalk=1,0,AInfo,Talk
+GetInfoTalk=1,0,Talk,AInfo
 _GetInfoTalk_Defaults=
 _GetInfoTalk_Category=TC_TPOF_TALK
+
+GetInfoIndex=1,0,integer,AInfo
+_GetInfoIndex_Defaults=
+_GetInfoIndex_Category=TC_TPOF_TALK
 
 InfoHasBeenShownToCharacter=1,0,boolean,Talk,integer,Character
 _InfoHasBeenShownToCharacter_Defaults=
@@ -342,6 +397,10 @@ _CreateItemSpawnPoint_Category=TC_TPOF_SPAWNPOINT
 CreateDungeon=1,0,Dungeon,string,rect,rect
 _CreateDungeon_Defaults=
 _CreateDungeon_Category=TC_TPOF_DUNGEON
+
+CreateRoutineTalks=1,0,NpcTalksRoutine,ARoutine,unit,real,real,rect
+_CreateRotineTalks_Defaults=
+_CreateRoutineTalks_Category=TC_TPOF_TALK
 
 //***************************************************************************
 [DefaultTriggerCategories]

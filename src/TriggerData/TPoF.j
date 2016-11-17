@@ -85,12 +85,32 @@ function CreateQuestArea takes rect whichRect, boolean withFogModifier returns Q
 	return QuestArea.create(whichRect, withFogModifier)
 endfunction
 
+function CreateCharacterQuest takes Character character, string title returns AQuest
+	return AQuest.create(character, title)
+endfunction
+
 function SetFellowRevivalTitle takes Fellow fellow, string revivalTitle returns nothing
 	call fellow.setRevivalTitle(revivalTitle)
 endfunction
 
 function PlayerCharacter takes player whichPlayer returns Character
 	return Character(Character.playerCharacter(whichPlayer))
+endfunction
+
+function CharacterClass takes Character character returns AClass
+	return character.class()
+endfunction
+
+function CharacterInventory takes Character character returns AInventory
+	return character.inventory()
+endfunction
+
+function InventoryHasItemType takes AInventory inventory, integer itemCode returns boolean
+	return inventory.hasItemType(itemCode)
+endfunction
+
+function InventoryTotalItemTypeCharges takes AInventory inventory, integer itemCode returns integer
+	return inventory.totalItemTypeCharges(itemCode)
 endfunction
 
 function MapZoneName takes nothing returns string
@@ -140,6 +160,10 @@ function GetInfoTalk takes AInfo info returns Talk
 	return info.talk()
 endfunction
 
+function GetInfoIndex takes AInfo info returns integer
+	return info.index()
+endfunction
+
 function InfoHasBeenShownToCharacter takes Talk talk, integer index, Character character returns boolean
 	return talk.infoHasBeenShownToCharacter(index, character)
 endfunction
@@ -179,6 +203,10 @@ endfunction
 
 function ShowTalkRange takes Talk talk, integer index0, integer index1, Character character returns nothing
 	call talk.showRange(index0, index1, character)
+endfunction
+
+function ShowTalkUntil takes Talk talk, integer index, Character character returns nothing
+	call talk.showUntil(index, character)
 endfunction
 
 function AddExitButton takes Talk talk returns AInfo
@@ -240,6 +268,18 @@ endfunction
 
 function CreateDungeon takes string name, rect cameraBounds, rect viewRect returns Dungeon
 	return Dungeon.create(name, cameraBounds, viewRect)
+endfunction
+
+function CreateRoutineTalks takes ARoutine routine, unit npc, real startTimeOfDay, real endTimeOfDay, rect targetRect returns NpcTalksRoutine
+	return NpcTalksRoutine.create(routine, npc, startTimeOfDay, endTimeOfDay, targetRect)
+endfunction
+
+function RoutineSetPartner takes NpcTalksRoutine routine, unit partner returns nothing
+	call routine.setPartner(partner)
+endfunction
+
+function RoutineSetFacing takes NpcTalksRoutine routine, real facing returns nothing
+	call routine.setFacing(facing)
 endfunction
 
 struct MapData extends MapDataInterface

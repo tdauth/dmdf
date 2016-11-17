@@ -60,6 +60,10 @@ ShowTalkRange="Show Talk Range"
 ShowTalkRange="Show for Talk ",~Talk," from including info index ",~Index," to including info index ",~Index," infos to Character ",~Character
 ShowTalkRangeHint=""
 
+ShowTalkUntil="Show Talk Until"
+ShowTalkUntil="Show Talk ",~Talk," to including info index ",~Index," to Character ",~Character
+ShowTalkUntilHint=""
+
 AddExitButton="Add Exit Button"
 AddExitButton="Add Exit Button to Talk ",~Talk
 AddExitButtonHint="The exit button closes the talk."
@@ -92,6 +96,14 @@ SetFellowDescription="Set Fellow Description"
 SetFellowDescription="Set description for fellow ",~Fellow," to ",~Description
 SetFellowDescriptionHint="The description is shown to a player when the fellow is shared with him."
 
+RoutineSetPartner="Set Routine Partner"
+RoutineSetPartner="Set Partner for Routine ",~Routine," to unit ",~Unit
+RoutineSetPartnerHint=""
+
+RoutineSetFacing="Set Routine Facing"
+RoutineSetFacing="Set Facing for Routine ",~Routine," to ",~Real
+RoutineSetFacingHint=""
+
 // Obsolete actions
 //AddPerfLogLabel="** AddPerfLogLabel **"
 //AddPerfLogLabel="** AddPerfLogLabel(",~Label,") **"
@@ -114,10 +126,25 @@ EnglishGermanString="English German String"
 EnglishGermanString="Translate English ",~String," into German ",~String," if necessary"
 EnglishGermanStringHint="The resulting string depends on the players language."
 
-// returns boolean
 PlayerCharacter="Player character"
 PlayerCharacter=~Player,"'s character"
 PlayerCharacterHint="Each player can have one character at maximum."
+
+CharacterClass="Character Class"
+CharacterClass="Class of Character ",~Character
+CharacterClassHint="Every character has one class."
+
+CharacterInventory="Character Inventory"
+CharacterInventory="Inventory of Character ",~Character
+CharacterInventoryHint="Every character has one inventory."
+
+InventoryHasItemType="Inventory Has Item Type"
+InventoryHasItemType="Inventory ",~Inventory," has item type ",~ItemType
+InventoryHasItemTypeHint="Returns true if the item type is in the backpack or in the equipment."
+
+InventoryTotalItemTypeCharges="Inventory Total Item Charges"
+InventoryTotalItemTypeCharges="Total item charges in Inventory ",~Inventory," of item type ",~ItemType
+InventoryTotalItemTypeChargesHint="Adds all charges in the backpack as well as in the equipment."
 
 MapZoneName="Map Zone Name"
 MapZoneName="Map Zone Name"
@@ -138,6 +165,10 @@ ItemTypeByItemHint="Gets the item type by an item. If the item has no custom ite
 CreateQuestArea="Create Quest Area"
 CreateQuestArea="Creates quest area at rect ",~Rect," using a fog modifier ",~Flag
 CreateQuestAreaHint="Creates a quest area where characters can gather to activate an event."
+
+CreateCharacterQuest="Create Character Quest"
+CreateCharacterQuest="Create Quest for Character ",~Character," with title ",~Title
+CreateCharacterQuestHint="A character only quest."
 
 CreateTalk="Create Talk"
 CreateTalk="Creates a talk using unit ",~Unit
@@ -172,8 +203,12 @@ GetTriggerCharacter="Gets the character of trigger ",~Trigger
 GetTriggerCharacterHint="If the trigger is evaluated or executed for an info it has stored the character."
 
 GetInfoTalk="Get Info Talk"
-GetInfoTalk="Get Info of Talk ",~Talk
+GetInfoTalk="Get Talk of Info ",~Info
 GetInfoTalkHint="Gets the corresponding talk of an info."
+
+GetInfoIndex="Get Info Index"
+GetInfoIndex="Get Index of Info ",~Info
+GetInfoIndexHint="The index is used in many functions as parameter. Every index for a info in a specific talk must be unique."
 
 InfoHasBeenShownToCharacter="Info Has Been Shown To Character"
 InfoHasBeenShownToCharacter="Info of Talk ",~Talk," with Index ",~Index," has been shown to Character ",~Character
@@ -206,3 +241,7 @@ CreateItemSpawnPointHint=""
 CreateDungeon="Create Dungeon"
 CreateDungeon="Create Dungeon with Name ",~String," using Camera Bounds Rect ",~Rect," and view rect ",~Rect
 CreateDungeonHint="A dungeon is an area on the map where the camera bounds are set when the character enters it."
+
+CreateRoutineTalks="Create Routine Talks"
+CreateRoutineTalks="Create Routine talks using basic routine type ",~RoutineType," and NPC unit ",~Unit," and starting at ",~TimeOfDay," and ending at ",~TimeOfDay," with target rect ",~Rect
+CreateRoutineTalksHint=""
