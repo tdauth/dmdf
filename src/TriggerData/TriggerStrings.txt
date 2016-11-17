@@ -22,11 +22,23 @@ TriggerRegisterMapStartEvent="Trigger Register Map Start Event"
 TriggerRegisterMapStartEvent="Trigger Register Map Start Event"
 TriggerRegisterMapStartEventHint="The trigger is executed during the map start (after the final class selection)."
 
+TriggerRegisterMapOnRestoreCharactersEvent="Trigger Register Map On Restore Characters Event"
+TriggerRegisterMapOnRestoreCharactersEvent="Trigger Register Map On Restore Characters Event"
+TriggerRegisterMapOnRestoreCharactersEventHint="The trigger is evaluated when the characters are restored from another map."
+
 //***************************************************************************
 [TriggerConditionStrings]
 
 //***************************************************************************
 [TriggerActionStrings]
+
+ChangeMap="Change Map"
+ChangeMap="Change map to map with name ",~String
+ChangeMapHint="Can only be used in a singleplayer campaign."
+
+SetZoneEnabled="Set Zone Enabled"
+SetZoneEnabled="Set Zone ",~Zone," enabled status to ",~Flag
+SetZoneEnabledHint="A disabled zone does not change the map."
 
 SetInfoCondition="Set Info Condition"
 SetInfoCondition="Set for Info ",~Info," the condition to ",~Condition
@@ -39,6 +51,18 @@ SetInfoActionHint=""
 SetInfoConditionAndActionByTrigger="Set Info Condition And Action By Trigger"
 SetInfoConditionAndActionByTrigger="Set for Info ",~Info," the condition and action by trigger ",~Trigger
 SetInfoConditionAndActionByTriggerHint=""
+
+ShowTalkStartPage="Show Talk Start Page"
+ShowTalkStartPage="Show the talk start page of Talk ",~Talk," for Character ",~Character
+ShowTalkStartPageHint=""
+
+ShowTalkRange="Show Talk Range"
+ShowTalkRange="Show for Talk ",~Talk," from including info index ",~Index," to including info index ",~Index," infos to Character ",~Character
+ShowTalkRangeHint=""
+
+AddExitButton="Add Exit Button"
+AddExitButton="Add Exit Button to Talk ",~Talk
+AddExitButtonHint="The exit button closes the talk."
 
 Speech="Speech"
 Speech="Speech for Info ",~Info," to with character ",~Character," talking to character ",~Flag," with text ",~Text," and sound ",~Sound
@@ -82,6 +106,10 @@ SetFellowDescriptionHint="The description is shown to a player when the fellow i
 //***************************************************************************
 [TriggerCallStrings]
 
+JASS="JASS Code"
+JASS="JASS Code: ",~Code
+JASSHint="Is directly used as JASS code."
+
 EnglishGermanString="English German String"
 EnglishGermanString="Translate English ",~String," into German ",~String," if necessary"
 EnglishGermanStringHint="The resulting string depends on the players language."
@@ -94,6 +122,14 @@ PlayerCharacterHint="Each player can have one character at maximum."
 MapZoneName="Map Zone Name"
 MapZoneName="Map Zone Name"
 MapZoneNameHint="The zone name of the current map, used for changing the map in singleplayer."
+
+GetTriggerZoneName="Get Triggering Zone Name"
+GetTriggerZoneName="Get Triggering Zone Name"
+GetTriggerZoneNameHint="Can only be used with the character restores event. Returns the zone name of the zone from which the characters are restored."
+
+CreateZone="Create Zone"
+CreateZone="Create Zone with Map Name ",~Name," at Rect ",~Rect
+CreateZoneHint="When the rect is entered in a singleplayer campaign, the map with the name is loaded."
 
 ItemTypeByItem="Item Type By Item"
 ItemTypeByItem="Item Type By Item ",~Item
@@ -110,6 +146,10 @@ CreateTalkHint="Creates a talk which can be hold between a unit and a character.
 AddInfo="Add Information"
 AddInfo="Add information to ",~Talk," permanently ",~permanently," and important ",~important," with text ",~text
 AddInfoHint="Adds information to a talk."
+
+AddExitButton="Add exit button"
+AddExitButton="Add exit button to ",~Talk
+AddExitButtonHint="The exit button closes the talk."
 
 InfoConditionByTrigger="Info Condition By Trigger"
 InfoConditionByTrigger="Gets the info condition by trigger ",~Trigger," for info ",~Info
@@ -131,6 +171,14 @@ GetTriggerCharacter="Get Trigger Character"
 GetTriggerCharacter="Gets the character of trigger ",~Trigger
 GetTriggerCharacterHint="If the trigger is evaluated or executed for an info it has stored the character."
 
+GetInfoTalk="Get Info Talk"
+GetInfoTalk="Get Info of Talk ",~Talk
+GetInfoTalkHint="Gets the corresponding talk of an info."
+
+InfoHasBeenShownToCharacter="Info Has Been Shown To Character"
+InfoHasBeenShownToCharacter="Info of Talk ",~Talk," with Index ",~Index," has been shown to Character ",~Character
+InfoHasBeenShownToCharacterHint="A info has been shown to a character, when the player clicked on it."
+
 CreateFellow="Create Fellow"
 CreateFellow="Creates a fellow using the unit ",~Unit," and the unit's talk ",~Talk
 CreateFellowHint="Creates a new fellow who can be shared to the human players and controlled by them. Make sure it is a hero unit."
@@ -145,12 +193,16 @@ CreateSpawnPointHint="Creates a new creep spawn point where creeps will respawn 
 
 SpawnPointAddUnitWithType="Add Unit to Spawn Point"
 SpawnPointAddUnitWithType="Add to spawn point ",~SpawnPoint," the unit ",~Unit," spawning with the chance of ",~Chance
-SpawnPointAddUnitWithTypeHint=""
+SpawnPointAddUnitWithTypeHint="Adds an existing unit to a spawn point. It will be respawned after a timeout when it dies."
 
 SpawnPointAddNewItemType="Add New Dropping Item Type to Spawn Point"
 SpawnPointAddNewItemType"Add to spawn point ",~SpawnPoint," for respawning unit member with index ",~Index," the new dropping item type ",~ItemType," with a chance ",~Chance
 SpawnPointAddNewItemTypeHint=""
 
 CreateItemSpawnPoint="Create Item Spawn Point"
-CreateItemSpawnPoint="Create Item Spawn Point using X ",~Real," and Y ",~Y," and Item ",~Item
+CreateItemSpawnPoint="Create Item Spawn Point using X ",~Real," and Y ",~Real," and Item ",~Item
 CreateItemSpawnPointHint=""
+
+CreateDungeon="Create Dungeon"
+CreateDungeon="Create Dungeon with Name ",~String," using Camera Bounds Rect ",~Rect," and view rect ",~Rect
+CreateDungeonHint="A dungeon is an area on the map where the camera bounds are set when the character enters it."

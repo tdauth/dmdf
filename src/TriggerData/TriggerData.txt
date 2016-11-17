@@ -15,6 +15,7 @@ TC_TPOF_ITEM="Item",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_QUESTAREA="Quest Area",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_SHRINE="Revival Shrine",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_TPOF_SPAWNPOINT="Spawn Point",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_DUNGEON="Dungeon",ReplaceableTextures\WorldEditUI\Actions-Camera
 //%%% DEBUG - Remove for retail
 //TC_OBSOLETE=WESTRING_TRIGCAT_OBSOLETE,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
 //TC_DEBUG=WESTRING_TRIGCAT_DEBUG,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
@@ -33,8 +34,12 @@ TC_TPOF_SPAWNPOINT="Spawn Point",ReplaceableTextures\WorldEditUI\Actions-Camera
 
 // Trigger Variable Types
 // These are sorted so that they appear as such in the Variables dialog.
+
+Character=0,1,1,"Player Character",integer
+
 Talk=0,1,1,"Talk",integer
 Fellow=0,1,1,"Fellow",integer
+AInfo=0,1,1,"Talk Info",integer
 AInfoCondition=0,1,1,"Info Condition",integer
 AInfoAction=0,1,1,"Info Action",integer
 ATalkStartAction=0,1,1,"Talk Start Action",integer
@@ -48,6 +53,10 @@ Shrine=0,1,1,"Revival Shrine",integer
 SpawnPoint=0,1,1,"Creep Spawn Point",integer
 
 ItemSpawnPoint=0,1,1,"Item Spawn Point",integer
+
+Dungeon=0,1,1,"Dungeon",integer
+
+Zone=0,1,1,"Zone",integer
 
 //***************************************************************************
 [TriggerTypeDefaults]
@@ -70,6 +79,10 @@ SpawnPoint=0,"No Creep Spawn Point"
 
 ItemSpawnPoint=0,"No Item Spawn Point"
 
+Dungeon=0,"No Dungeon"
+
+Zone=0,"No Zone"
+
 
 //***************************************************************************
 [TriggerParams]
@@ -91,13 +104,27 @@ TalkNull=0,Talk,0,"No Talk"
 
 FellowNull=0,Fellow,0,"No Fellow"
 
-QuestArea=0,QuestArea,0,"No Quest Area"
+QuestAreaNull=0,QuestArea,0,"No Quest Area"
 
-Shrine=0,Shrine,0,"No Revival Shrine"
+ShrineNull=0,Shrine,0,"No Revival Shrine"
 
-SpawnPoint=0,SpawnPoint,0,"No Creep Spawn Point"
+SpawnPoinNullt=0,SpawnPoint,0,"No Creep Spawn Point"
 
-ItemSpawnPoint=0,ItemSpawnPoint,0,"No Item Spawn Point"
+ItemSpawnPointNull=0,ItemSpawnPoint,0,"No Item Spawn Point"
+
+DungeonNull=0,Dungeon,"No Dungeon"
+
+ZoneNull=0,Zone,"No Zone"
+
+ZoneTalras=0,string,"TL","Zone Talras"
+ZoneGardonar=0,string,"GA","Zone Gardonar"
+ZoneGardonarsHell=0,string,"GH","Zone Gardonar's Hell"
+ZoneDeranorsSwamp=0,string,"DS","Zone Deranor's Swamp"
+ZoneHolzbruck=0,string,"HB","Zone Holzbruck"
+ZoneHolzbrucksUnderworld=0,string,"HU","Zone Holzbruck's Underworld"
+ZoneWorldMap=0,string,"WM","Zone Worldmap"
+ZoneDornheim=0,string,"DH","Zone Dornheim"
+ZoneTheNorth=0,string,"TN","Zone The North"
 
 //***************************************************************************
 [TriggerEvents]
@@ -115,6 +142,10 @@ TriggerRegisterMapStartEvent=1
 _TriggerRegisterMapStartEvent_Defaults=
 _TriggerRegisterMapStartEvent_Category=TC_TPOF_MAP
 
+TriggerRegisterMapOnRestoreCharactersEvent=1
+_TriggerRegisterMapOnRestoreCharactersEvent_Defaults=
+_TriggerRegisterMapOnRestoreCharactersEvent_Category=TC_TPOF_MAP
+
 //***************************************************************************
 [TriggerConditions]
 // Defines boolean condition functions
@@ -129,6 +160,14 @@ _TriggerRegisterMapStartEvent_Category=TC_TPOF_MAP
 // Value 0: first game version in which this function is valid
 // Value 1+: argument types
 
+ChangeMap=1,string
+_ChangeMap_Defaults=ZoneTalras
+_ChangeMap_Category=TC_TPOF_MAP
+
+SetZoneEnabled=1,Zone,boolean
+_SetZoneEnabled_Defaults=_,true
+_SetZoneEnabled_Category=TC_TPOF_MAP
+
 SetInfoCondition=1,AInfo,AInfoCondition
 _SetInfoCondition_Defaults=
 _SetInfoCondition_Category=TC_TPOF_TALK
@@ -140,6 +179,18 @@ _SetInfoAction_Category=TC_TPOF_TALK
 SetInfoConditionAndActionByTrigger=1,AInfo,trigger
 _SetInfoConditionAndActionByTrigger_Defaults=
 _SetInfoConditionAndActionByTrigger_Category=TC_TPOF_TALK
+
+ShowTalkStartPage=1,Talk,Character
+_ShowTalkStartPage_Defaults=
+_ShowTalkStartPage_Category=TC_TPOF_TALK
+
+ShowTalkRange=1,Talk,integer,integer,Character
+_ShowTalkRange_Defaults=
+_ShowTalkRange_Category=TC_TPOF_TALK
+
+AddExitButton=1,Talk
+_AddExitButton_Defaults=
+_AddExitButton_Category=TC_TPOF_TALK
 
 Speech=1,AInfo,Character,boolean,string,sound
 _Speech_Defaults=
@@ -191,6 +242,10 @@ _SetFellowDescription_Category=TC_TPOF_FELLOW
 //
 // Note: Operators are specially handled by the editor
 
+JASS=1,1,scriptcode,scriptcode
+_JASS_Defaults=_
+_JASS_Category=TC_TPOF_CORE
+
 EnglishGermanString=1,0,string,string,string
 _EnglishGermanString_Defaults=
 _EnglishGermanString_Category=TC_TPOF_CORE
@@ -203,6 +258,14 @@ _PlayerCharacter_Category=TC_TPOF_CHARACTER
 MapZoneName=1,0,string
 _MapZoneName_Defaults=
 _MapZoneName_Category=TC_TPOF_MAP
+
+GetTriggerZoneName=1,0,string
+_GetTriggerZoneName_Defaults=
+_GetTriggerZoneName_Category=TC_TPOF_MAP
+
+CreateZone=1,0,Zone,string,rect
+_CreateZone_Defaults=
+_CreateZone_Category=TC_TPOF_MAP
 
 ItemTypeByItem=1,0,ItemType,item
 _ItemTypeByItem_Defaults=
@@ -219,6 +282,10 @@ _CreateTalk_Category=TC_TPOF_TALK
 AddInfo=1,0,AInfo,Talk,boolean,boolean,string
 _AddInfo_Defaults=_,true,false,_,_,_
 _AddInfo_Category=TC_TPOF_TALK
+
+AddExitButton=1,0,AInfo,Talk
+_AddExitButton_Defaults=
+_AddExitButton_Category=TC_TPOF_TALK
 
 InfoConditionByTrigger=1,0,AInfoCondition,trigger,AInfo
 _InfoConditionByTrigger_Defaults=
@@ -239,6 +306,14 @@ _GetTriggerCharacter_Category=TC_TPOF_TALK
 TalkStartActionByTrigger=1,0,ATalkStartAction,trigger,Talk
 _TalkStartActionByTrigger_Defaults=
 _TalkStartActionByTrigger_Category=TC_TPOF_TALK
+
+GetInfoTalk=1,0,AInfo,Talk
+_GetInfoTalk_Defaults=
+_GetInfoTalk_Category=TC_TPOF_TALK
+
+InfoHasBeenShownToCharacter=1,0,boolean,Talk,integer,Character
+_InfoHasBeenShownToCharacter_Defaults=
+_InfoHasBeenShownToCharacter_Category=TC_TPOF_TALK
 
 CreateFellow=1,0,Fellow,unit,Talk
 _CreateFellow_Defaults=
@@ -263,6 +338,10 @@ _SpawnPointAddNewItemType_Category=TC_TPOF_SPAWNPOINT
 CreateItemSpawnPoint=1,0,ItemSpawnPoint,real,real,item
 _CreateItemSpawnPoint_Defaults=
 _CreateItemSpawnPoint_Category=TC_TPOF_SPAWNPOINT
+
+CreateDungeon=1,0,Dungeon,string,rect,rect
+_CreateDungeon_Defaults=
+_CreateDungeon_Category=TC_TPOF_DUNGEON
 
 //***************************************************************************
 [DefaultTriggerCategories]

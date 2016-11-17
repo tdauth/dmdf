@@ -34,6 +34,7 @@ endfunction
 globals
 	ATriggerVector mapInitTriggers
 	ATriggerVector mapStartTriggers
+	ATriggerVector mapRestoreCharactersTriggers
 endglobals
 
 function TriggerRegisterMapInitEvent takes trigger whichTrigger returns nothing
@@ -42,6 +43,30 @@ endfunction
 
 function TriggerRegisterMapStartEvent takes trigger whichTrigger returns nothing
 	call mapStartTriggers.pushBack(whichTrigger)
+endfunction
+
+function TriggerRegisterMapOnRestoreCharactersEvent takes trigger whichTrigger returns nothing
+	call mapRestoreCharactersTriggers.pushBack(whichTrigger)
+endfunction
+
+function GetTriggerZoneName takes nothing returns string
+	return DmdfHashTable.global().handleStr(GetTriggeringTrigger(), 0)
+endfunction
+
+function CreateZone takes string mapName, rect enterRect returns Zone
+	return Zone.create(mapName, enterRect)
+endfunction
+
+function ChangeMap takes string mapName returns nothing
+	 call MapChanger.changeMap(mapName)
+endfunction
+
+function SetZoneEnabled takes Zone zone, boolean flag returns nothing
+	if (flag) then
+		call zone.enable()
+	else
+		call zone.disable()
+	endif
 endfunction
 
 function AddInfo takes Talk talk, boolean permanent, boolean important, string text returns AInfo
@@ -111,6 +136,14 @@ function GetTriggerCharacter takes trigger whichTrigger returns Character
 	return DmdfHashTable.global().handleInteger(whichTrigger, 1)
 endfunction
 
+function GetInfoTalk takes AInfo info returns Talk
+	return info.talk()
+endfunction
+
+function InfoHasBeenShownToCharacter takes Talk talk, integer index, Character character returns boolean
+	return talk.infoHasBeenShownToCharacter(index, character)
+endfunction
+
 function InfoConditionEvaluate takes AInfo info, Character character returns boolean
 	local trigger whichTrigger = TalkInfoConditionHashTable.trigger(info, 0)
 	call DmdfHashTable.global().setHandleInteger(whichTrigger, 0, info)
@@ -138,6 +171,18 @@ endfunction
 function SetInfoConditionAndActionByTrigger takes AInfo info, trigger whichTrigger returns nothing
 	call info.setCondition(InfoConditionByTrigger(whichTrigger, info))
 	call info.setAction(InfoActionByTrigger(whichTrigger, info))
+endfunction
+
+function ShowTalkStartPage takes Talk talk, Character character returns nothing
+	call talk.showStartPage(character)
+endfunction
+
+function ShowTalkRange takes Talk talk, integer index0, integer index1, Character character returns nothing
+	call talk.showRange(index0, index1, character)
+endfunction
+
+function AddExitButton takes Talk talk returns AInfo
+	return talk.addExitButton()
 endfunction
 
 function TalkStartActionExecute takes Talk talk, Character character returns nothing
@@ -191,6 +236,10 @@ endfunction
 
 function CreateItemSpawnPoint takes real x, real y, item whichItem returns ItemSpawnPoint
 	return ItemSpawnPoint.create(x, y, whichItem)
+endfunction
+
+function CreateDungeon takes string name, rect cameraBounds, rect viewRect returns Dungeon
+	return Dungeon.create(name, cameraBounds, viewRect)
 endfunction
 
 struct MapData extends MapDataInterface
@@ -306,6 +355,13 @@ struct MapData extends MapDataInterface
 
 	/// Required by \ref MapChanger.
 	public static method onRestoreCharacters takes string zone returns nothing
+		local integer i = 0
+		loop
+			exitwhen (i == mapRestoreCharactersTriggers.size())
+			call DmdfHashTable.global().setHandleStr(mapRestoreCharactersTriggers[i], 0, zone)
+			call TriggerEvaluate(mapRestoreCharactersTriggers[i])
+			set i = i + 1
+		endloop
 	endmethod
 
 	/**
