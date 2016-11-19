@@ -67,6 +67,16 @@ Section "English Campaign" EnglishCampaign
 	File "${INPUT_DIR}\maps\releases\TPoF${CAMPAIGN_VERSION}en.w3n"
 SectionEnd
 
+Section "Object Data" ObjectData
+	SetOutPath "$INSTDIR\The Power of Fire\"
+	File "${INPUT_DIR}\maps\ObjectData.w3o"
+SectionEnd
+
+Section "JNGP" JNGP
+	SetOutPath "$INSTDIR\The Power of Fire\JNGP"
+	File /r "${INPUT_DIR}\tools\JNGP"
+SectionEnd
+
 Section "Source Code" SourceCode
 	SetOutPath "$INSTDIR\The Power of Fire\"
 	File /r "${INPUT_DIR}\src"
