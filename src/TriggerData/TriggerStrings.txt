@@ -26,8 +26,28 @@ TriggerRegisterMapOnRestoreCharactersEvent="Trigger Register Map On Restore Char
 TriggerRegisterMapOnRestoreCharactersEvent="Trigger Register Map On Restore Characters Event"
 TriggerRegisterMapOnRestoreCharactersEventHint="The trigger is evaluated when the characters are restored from another map."
 
+TriggerRegisterMapOnInitVideoSettingsEvent="Trigger Register Map Init Video Settings Event"
+TriggerRegisterMapOnInitVideoSettingsEvent="Trigger Register Map Init Video Settings Event"
+TriggerRegisterMapOnInitVideoSettingsEventHint="Add all calls which have to be called when starting a video."
+
+TriggerRegisterMapOnInitVideoSettingsEvent="Trigger Register Map Init Video Settings Event"
+TriggerRegisterMapOnInitVideoSettingsEvent="Trigger Register Map Init Video Settings Event"
+TriggerRegisterMapOnInitVideoSettingsEventHint="Add all calls which have to be called when starting a video."
+
+TriggerRegisterMapOnResetVideoSettingsEvent="Trigger Register Map Reset Video Settings Event"
+TriggerRegisterMapOnResetVideoSettingsEvent="Trigger Register Map Reset Video Settings Event"
+TriggerRegisterMapOnResetVideoSettingsEventHint="Add all calls which have to be called when ending a video."
+
 //***************************************************************************
 [TriggerConditionStrings]
+
+OperatorCompareCharacter="Character Comparison"
+OperatorCompareCharacter=~Value," ",~Operator," ",~Value
+OperatorCompareCharacterHint=
+
+OperatorCompareClass="Character Class Comparison"
+OperatorCompareClass=~Value," ",~Operator," ",~Value
+OperatorCompareClassHint=
 
 //***************************************************************************
 [TriggerActionStrings]
@@ -64,6 +84,10 @@ ShowTalkUntil="Show Talk Until"
 ShowTalkUntil="Show Talk ",~Talk," to including info index ",~Index," to Character ",~Character
 ShowTalkUntilHint=""
 
+CloseTalk="Close Talk For Character"
+CloseTalk="Close Talk ",~Talk," for Character ",~Character
+CloseTalkHint=""
+
 AddExitButton="Add Exit Button"
 AddExitButton="Add Exit Button to Talk ",~Talk
 AddExitButtonHint="The exit button closes the talk."
@@ -75,6 +99,14 @@ SpeechHint=""
 CreateQuestArea="Create Quest Area"
 CreateQuestArea="Creates quest area at rect ",~Rect," using a fog modifier ",~Flag
 CreateQuestAreaHint="Creates a quest area where characters can gather to activate an event."
+
+SetCharacterQuestReward="Set Character Quest Reward"
+SetCharacterQuestReward="Set Reward for Character Quest ",~Quest," of Reward Type ",~Type," to Value ",~Value
+SetCharacterQuestRewardHint=""
+
+SetQuestItemReward="Set Quest Item Reward"
+SetQuestItemReward="Set Reward for Quest Item ",~QuestItem," of Reward Type ",~Type," to Value ",~Value
+SetQuestItemRewardHint=""
 
 SetFellowRevivalTitle="Set Fellow Revival Title"
 SetFellowRevivalTitle="Set revival title of ",~Fellow," to ",~title
@@ -96,6 +128,10 @@ SetFellowDescription="Set Fellow Description"
 SetFellowDescription="Set description for fellow ",~Fellow," to ",~Description
 SetFellowDescriptionHint="The description is shown to a player when the fellow is shared with him."
 
+SetFellowTalk="Set Fellow Talk"
+SetFellowTalk="Set Fellow ",~Fellow," Talk enabled to ",~Flag
+SetFellowTalkHint=""
+
 RoutineSetPartner="Set Routine Partner"
 RoutineSetPartner="Set Partner for Routine ",~Routine," to unit ",~Unit
 RoutineSetPartnerHint=""
@@ -103,6 +139,10 @@ RoutineSetPartnerHint=""
 RoutineSetFacing="Set Routine Facing"
 RoutineSetFacing="Set Facing for Routine ",~Routine," to ",~Real
 RoutineSetFacingHint=""
+
+ShrineEnableForAll="Enable Shrine For All"
+ShrineEnableForAll="Enable Shrine ",~Shrine," For All Characters Showing Effect ",~Flag
+ShrineEnableForAllHint=""
 
 // Obsolete actions
 //AddPerfLogLabel="** AddPerfLogLabel **"
@@ -125,6 +165,10 @@ JASSHint="Is directly used as JASS code."
 EnglishGermanString="English German String"
 EnglishGermanString="Translate English ",~String," into German ",~String," if necessary"
 EnglishGermanStringHint="The resulting string depends on the players language."
+
+GetCharacterPlayers="Get Character Players"
+GetCharacterPlayers="Get Character Players"
+GetCharacterPlayersHint="Gets all players which currently have a character."
 
 PlayerCharacter="Player character"
 PlayerCharacter=~Player,"'s character"
@@ -170,6 +214,10 @@ CreateCharacterQuest="Create Character Quest"
 CreateCharacterQuest="Create Quest for Character ",~Character," with title ",~Title
 CreateCharacterQuestHint="A character only quest."
 
+CreateCharacterQuestItem="Create Character Quest Item"
+CreateCharacterQuestItem="Create Quest Item for Quest ",~Quest," with title ",~Title
+CreateCharacterQuestItemHint=""
+
 CreateTalk="Create Talk"
 CreateTalk="Creates a talk using unit ",~Unit
 CreateTalkHint="Creates a talk which can be hold between a unit and a character."
@@ -195,11 +243,15 @@ TalkStartActionByTrigger="Gets the talk start action by trigger ",~Trigger," for
 TalkStartActionByTriggerHint="Gets the talk start action by a trigger. The trigger is executed and the parameters are stored in it."
 
 GetTriggerInfo="Get Trigger Info"
-GetTriggerInfo="Gets the info of trigger ",~Trigger
+GetTriggerInfo="Gets the info of trigger"
 GetTriggerInfoHint="If the trigger is evaluated or executed for an info it has stored the info."
 
+GetTriggerTalk="Get Trigger Talk"
+GetTriggerTalk="Gets the talk of trigger"
+GetTriggerTalkHint="If the trigger is evaluated or executed for an info it has stored the talk."
+
 GetTriggerCharacter="Get Trigger Character"
-GetTriggerCharacter="Gets the character of trigger ",~Trigger
+GetTriggerCharacter="Gets the character of trigger"
 GetTriggerCharacterHint="If the trigger is evaluated or executed for an info it has stored the character."
 
 GetInfoTalk="Get Info Talk"

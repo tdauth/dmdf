@@ -25,16 +25,41 @@ endglobals
 
 // All functions for the trigger data of The Power of Fire. Wrappers have to be used since the vJass syntax is not allowed for TriggerData.
 
-library TPoFTriggerData initializer Init requires Asl, Dmdf
+library TPoFTriggerData requires Asl, Dmdf
 
 function EnglishGermanString takes string english, string german returns string
 	return tre(german, english)
 endfunction
 
 globals
-	ATriggerVector mapInitTriggers
-	ATriggerVector mapStartTriggers
-	ATriggerVector mapRestoreCharactersTriggers
+	force CharacterPlayers = CreateForce()
+endglobals
+
+function GetCharacterPlayers takes nothing returns force
+	local integer i = 0
+	call ForceClear(CharacterPlayers)
+	loop
+		exitwhen (i == bj_MAX_PLAYERS)
+		if (Character.playerCharacter(Player(i)) != 0) then
+			call ForceAddPlayer(CharacterPlayers, Player(i))
+		endif
+		set i = i + 1
+	endloop
+
+	return CharacterPlayers
+endfunction
+
+globals
+	ATriggerVector mapInitTriggers = 0
+	ATriggerVector mapStartTriggers = 0
+	ATriggerVector mapRestoreCharactersTriggers = 0
+	ATriggerVector mapInitVideoSettingsTriggers = 0
+	ATriggerVector mapResetVideoSettingsTriggers = 0
+
+	constant integer TRIGGERDATA_KEY_INFO = 0
+	constant integer TRIGGERDATA_KEY_CHARACTER = 1
+	constant integer TRIGGERDATA_KEY_TALK = 2
+	constant integer TRIGGERDATA_KEY_ZONENAME = 3
 endglobals
 
 function TriggerRegisterMapInitEvent takes trigger whichTrigger returns nothing
@@ -49,8 +74,16 @@ function TriggerRegisterMapOnRestoreCharactersEvent takes trigger whichTrigger r
 	call mapRestoreCharactersTriggers.pushBack(whichTrigger)
 endfunction
 
+function TriggerRegisterMapOnInitVideoSettingsEvent takes trigger whichTrigger returns nothing
+	call mapInitVideoSettingsTriggers.pushBack(whichTrigger)
+endfunction
+
+function TriggerRegisterMapOnResetVideoSettingsEvent takes trigger whichTrigger returns nothing
+	call mapResetVideoSettingsTriggers.pushBack(whichTrigger)
+endfunction
+
 function GetTriggerZoneName takes nothing returns string
-	return DmdfHashTable.global().handleStr(GetTriggeringTrigger(), 0)
+	return DmdfHashTable.global().handleStr(GetTriggeringTrigger(), TRIGGERDATA_KEY_ZONENAME)
 endfunction
 
 function CreateZone takes string mapName, rect enterRect returns Zone
@@ -85,12 +118,28 @@ function CreateQuestArea takes rect whichRect, boolean withFogModifier returns Q
 	return QuestArea.create(whichRect, withFogModifier)
 endfunction
 
+function SetCharacterQuestReward takes AQuest whichQuest, integer rewardType, integer value returns nothing
+	call whichQuest.setReward(rewardType, value)
+endfunction
+
+function SetQuestItemReward takes AQuestItem whichQuestItem, integer rewardType, integer value returns nothing
+	call whichQuestItem.setReward(rewardType, value)
+endfunction
+
 function CreateCharacterQuest takes Character character, string title returns AQuest
 	return AQuest.create(character, title)
 endfunction
 
+function CreateCharacterQuestItem takes AQuest whichQuest, string title returns AQuestItem
+	return AQuestItem.create(whichQuest, title)
+endfunction
+
 function SetFellowRevivalTitle takes Fellow fellow, string revivalTitle returns nothing
 	call fellow.setRevivalTitle(revivalTitle)
+endfunction
+
+function SetFellowTalk takes Fellow fellow, boolean active returns nothing
+	call fellow.setTalk(active)
 endfunction
 
 function PlayerCharacter takes player whichPlayer returns Character
@@ -139,6 +188,10 @@ globals
 	AGlobalHashTable TalkStartActionsHashTable = 0
 endglobals
 
+
+/**
+ * This function has to be called before any other calls using these variables!
+ */
 function Init takes nothing returns nothing
 	set TalkInfoConditionHashTable = AGlobalHashTable.create()
 	set TalkInfoActionHashTable = AGlobalHashTable.create()
@@ -146,14 +199,28 @@ function Init takes nothing returns nothing
 
 	set mapInitTriggers = ATriggerVector.create()
 	set mapStartTriggers = ATriggerVector.create()
+	set mapRestoreCharactersTriggers = ATriggerVector.create()
+	set mapInitVideoSettingsTriggers = ATriggerVector.create()
+	set mapResetVideoSettingsTriggers = ATriggerVector.create()
 endfunction
 
 function GetTriggerInfo takes trigger whichTrigger returns AInfo
-	return DmdfHashTable.global().handleInteger(whichTrigger, 0)
+	return DmdfHashTable.global().handleInteger(whichTrigger, TRIGGERDATA_KEY_INFO)
+endfunction
+
+/*
+TODO
+function GetTriggerInfo takes nothing returns AInfo
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
+endfunction
+*/
+
+function GetTriggerTalk takes nothing returns Talk
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_TALK)
 endfunction
 
 function GetTriggerCharacter takes trigger whichTrigger returns Character
-	return DmdfHashTable.global().handleInteger(whichTrigger, 1)
+	return DmdfHashTable.global().handleInteger(whichTrigger, TRIGGERDATA_KEY_CHARACTER)
 endfunction
 
 function GetInfoTalk takes AInfo info returns Talk
@@ -170,8 +237,9 @@ endfunction
 
 function InfoConditionEvaluate takes AInfo info, Character character returns boolean
 	local trigger whichTrigger = TalkInfoConditionHashTable.trigger(info, 0)
-	call DmdfHashTable.global().setHandleInteger(whichTrigger, 0, info)
-	call DmdfHashTable.global().setHandleInteger(whichTrigger, 1, character)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_INFO, info)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_CHARACTER, character)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_TALK, info.talk())
 	return TriggerEvaluate(whichTrigger)
 endfunction
 
@@ -182,8 +250,9 @@ endfunction
 
 function InfoActionExecute takes AInfo info, Character character returns nothing
 	local trigger whichTrigger = TalkInfoActionHashTable.trigger(info, 0)
-	call DmdfHashTable.global().setHandleInteger(whichTrigger, 0, info)
-	call DmdfHashTable.global().setHandleInteger(whichTrigger, 1, character)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_INFO, info)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_CHARACTER, character)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_TALK, info.talk())
 	call TriggerExecute(whichTrigger)
 endfunction
 
@@ -209,14 +278,18 @@ function ShowTalkUntil takes Talk talk, integer index, Character character retur
 	call talk.showUntil(index, character)
 endfunction
 
+function CloseTalk takes Talk talk, Character character returns nothing
+	call talk.close(character)
+endfunction
+
 function AddExitButton takes Talk talk returns AInfo
 	return talk.addExitButton()
 endfunction
 
 function TalkStartActionExecute takes Talk talk, Character character returns nothing
 	local trigger whichTrigger = TalkStartActionsHashTable.trigger(talk, 0)
-	call DmdfHashTable.global().setHandleInteger(whichTrigger, 0, talk)
-	call DmdfHashTable.global().setHandleInteger(whichTrigger, 1, character)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_CHARACTER, character)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_TALK, talk)
 
 	call TriggerExecute(whichTrigger)
 endfunction
@@ -280,6 +353,10 @@ endfunction
 
 function RoutineSetFacing takes NpcTalksRoutine routine, real facing returns nothing
 	call routine.setFacing(facing)
+endfunction
+
+function ShrineEnableForAll takes Shrine shrine, boolean showEffect returns nothing
+	call ACharacter.enableShrineForAll(shrine, showEffect)
 endfunction
 
 struct MapData extends MapDataInterface
@@ -356,6 +433,9 @@ struct MapData extends MapDataInterface
 	/// Required by \ref Game.
 	public static method start takes nothing returns nothing
 		local integer i = 0
+		call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection
+		call ACharacter.panCameraSmartToAll()
+		call Game.applyHandicapToCreeps()
 		loop
 			exitwhen (i == mapStartTriggers.size())
 			call TriggerExecute(mapStartTriggers[i])
@@ -398,7 +478,7 @@ struct MapData extends MapDataInterface
 		local integer i = 0
 		loop
 			exitwhen (i == mapRestoreCharactersTriggers.size())
-			call DmdfHashTable.global().setHandleStr(mapRestoreCharactersTriggers[i], 0, zone)
+			call DmdfHashTable.global().setHandleStr(mapRestoreCharactersTriggers[i], TRIGGERDATA_KEY_ZONENAME, zone)
 			call TriggerEvaluate(mapRestoreCharactersTriggers[i])
 			set i = i + 1
 		endloop
@@ -412,9 +492,21 @@ struct MapData extends MapDataInterface
 	endmethod
 
 	public static method initVideoSettings takes nothing returns nothing
+		local integer i = 0
+		loop
+			exitwhen (i == mapInitVideoSettingsTriggers.size())
+			call TriggerEvaluate(mapInitVideoSettingsTriggers[i])
+			set i = i + 1
+		endloop
 	endmethod
 
 	public static method resetVideoSettings takes nothing returns nothing
+		local integer i = 0
+		loop
+			exitwhen (i == mapResetVideoSettingsTriggers.size())
+			call TriggerEvaluate(mapResetVideoSettingsTriggers[i])
+			set i = i + 1
+		endloop
 	endmethod
 
 	/// Required by \ref Buildings.
@@ -425,6 +517,17 @@ struct MapData extends MapDataInterface
 	/// Required by teleport spells.
 	public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
 		return false
+	endmethod
+
+	/**
+	 * Called before library initialization but must be called before Game.onInit and before InitCustomTriggers because of the trigger register calls.
+	 *
+	 * InitCustomTriggers() is called in main AFTER the struct and the library initializers, so this should work.
+	 *
+	 * TODO But Game.onInit() is called before as well, so the on map init event does not work with created triggers. Neither the event list has been created nor the custom triggers.
+	 */
+	private static method onInit takes nothing returns nothing
+		call Init()
 	endmethod
 endstruct
 
