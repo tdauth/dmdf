@@ -28,10 +28,10 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 			// don't make it black
 			call LeaderboardSetPlayerItemLabelColorBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, 100, 80, 20, 0)
 			call LeaderboardSetPlayerItemValueColorBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.m_leaderboard, 100, 80, 20, 0)
-			call LeaderboardAddItemBJ(MapData.alliedPlayer, this.m_leaderboard, tre("Verbündete:", "Allied:"), this.m_alliedWaves)
+			call LeaderboardAddItemBJ(MapSettings.alliedPlayer(), this.m_leaderboard, tre("Verbündete:", "Allied:"), this.m_alliedWaves)
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call PlayerSetLeaderboard(Player(i), this.m_leaderboard)
 				set i = i + 1
 			endloop
@@ -161,8 +161,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 					if (this.m_currentGroupIndex == 1) then
 						call this.m_wavesDisplay.decreaseAllies()
 						set this.m_allyRangerGroup = AGroup.create()
-						call this.m_allyRangerGroup.addGroup(CreateUnitsAtPoint(5, UnitTypes.ranger, MapData.alliedPlayer, GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0), true, false)
-						set this.m_allyRangerLeader = CreateUnit(MapData.alliedPlayer, 'n03G',  GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0)
+						call this.m_allyRangerGroup.addGroup(CreateUnitsAtPoint(5, UnitTypes.ranger, MapSettings.alliedPlayer(), GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0), true, false)
+						set this.m_allyRangerLeader = CreateUnit(MapSettings.alliedPlayer(), 'n03G',  GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0)
 						call this.m_allyRangerGroup.units().pushBack(this.m_allyRangerLeader)
 
 						call PingMinimap(GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), bj_RESCUE_PING_TIME)
@@ -173,8 +173,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 					elseif (this.m_currentGroupIndex == 3) then
 						call this.m_wavesDisplay.decreaseAllies()
 						set this.m_allyFarmerGroup = AGroup.create()
-						call this.m_allyFarmerGroup.addGroup(CreateUnitsAtPoint(5, UnitTypes.armedVillager, MapData.alliedPlayer, GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0), true, false)
-						set this.m_allyFarmerLeader = CreateUnit(MapData.alliedPlayer, 'n03I',  GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0)
+						call this.m_allyFarmerGroup.addGroup(CreateUnitsAtPoint(5, UnitTypes.armedVillager, MapSettings.alliedPlayer(), GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0), true, false)
+						set this.m_allyFarmerLeader = CreateUnit(MapSettings.alliedPlayer(), 'n03I',  GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), 90.0)
 						call this.m_allyFarmerGroup.units().pushBack(this.m_allyFarmerLeader)
 
 						call PingMinimap(GetUnitX(Npcs.wigberht()), GetUnitY(Npcs.wigberht()), bj_RESCUE_PING_TIME)
@@ -302,7 +302,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		private static method groupFunctionChangeOwnerToAlly takes unit enumUnit returns nothing
-			local player allyPlayer = MapData.alliedPlayer
+			local player allyPlayer = MapSettings.alliedPlayer()
 			call SetUnitOwner(enumUnit, allyPlayer, true)
 			set allyPlayer = null
 		endmethod

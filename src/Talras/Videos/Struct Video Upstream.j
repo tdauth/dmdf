@@ -38,7 +38,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 		private static method endGameForAll takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call thistype.endGame(Player(i))
 				set i = i + 1
 			endloop
@@ -117,7 +117,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 			call SetUnitPositionRect(this.unitActor(this.m_actorKunosDaughter), gg_rct_video_upstream_kunos_daughter)
 			call SetUnitFacing(this.unitActor(this.m_actorKunosDaughter), 106.44)
 
-			set this.m_actorGiant = this.createUnitActorAtRect(MapData.alliedPlayer, UnitTypes.giant, gg_rct_video_upstream_giant_start, 272.22)
+			set this.m_actorGiant = this.createUnitActorAtRect(MapSettings.alliedPlayer(), UnitTypes.giant, gg_rct_video_upstream_giant_start, 272.22)
 			call SetUnitColor(this.unitActor(this.m_actorGiant), GetPlayerColor(Player(PLAYER_NEUTRAL_PASSIVE)))
 
 			set this.m_group = AGroup.create()
@@ -247,7 +247,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call DisplayTimedTextToPlayer(Player(i), 0.0, 0.0, 25.0, tre("Wenn Sie das Video überspringen, können Sie das Spiel verlassen.", "If you skip the video, you can leave the game."))
 				set i = i + 1
 			endloop
@@ -365,7 +365,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
-			call this.setActorOwner(MapData.neutralPassivePlayer)
+			call this.setActorOwner(MapSettings.neutralPassivePlayer())
 
 			return this
 		endmethod

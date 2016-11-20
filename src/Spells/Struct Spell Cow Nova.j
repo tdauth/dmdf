@@ -3,6 +3,7 @@ library StructSpellsSpellCowNova requires Asl, StructGameClasses, StructGameSpel
 
 	struct SpellCowNova extends ASpell
 		public static constant integer abilityId = 'A031'
+		private static sound m_sound
 
 		/// @todo Replace by static method, vJass bug.
 		private static method alightAction takes unit usedUnit returns nothing
@@ -36,7 +37,7 @@ library StructSpellsSpellCowNova requires Asl, StructGameClasses, StructGameSpel
 				set cow = CreateUnit(owner, 'n000', GetUnitPolarProjectionX(caster, i, 300.0), GetUnitPolarProjectionY(caster, i, 300.0), i)
 				call AJump.create(cow, 1100.0, GetUnitPolarProjectionX(caster, i, 600.0), GetUnitPolarProjectionY(caster, i, 600.0), thistype.alightAction, 100.0)
 				call ShowGeneralFadingTextTagForPlayer(owner, tre("MUH!", "MOO!"), GetUnitX(cow), GetUnitY(cow), 255, 255, 255, 255)
-				call PlaySoundOnUnitBJ(MapData.cowSound, 100.0, cow)
+				call PlaySoundOnUnitBJ(thistype.m_sound, 100.0, cow)
 				set cow = null
 				set i = i - 30.0
 			endloop
@@ -46,6 +47,11 @@ library StructSpellsSpellCowNova requires Asl, StructGameClasses, StructGameSpel
 
 		public static method create takes ACharacter character returns thistype
 			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+		endmethod
+
+		private static method onInit takes nothing returns nothing
+			set thistype.m_sound = CreateSound("Sound\\Spells\\CowNova\\Cow.wav", false, false, true, 12700, 12700, "")
+			call SetSoundChannel(thistype.m_sound, GetHandleId(SOUND_VOLUMEGROUP_SPELLS))
 		endmethod
 	endstruct
 

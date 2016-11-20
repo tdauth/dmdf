@@ -14,6 +14,10 @@
 //***************************************************************************
 [TriggerEventStrings]
 
+TriggerRegisterMapInitSettingsEvent="Trigger Register Map Init Settings Event"
+TriggerRegisterMapInitSettingsEvent="Trigger Register Map Init Settings Event"
+TriggerRegisterMapInitSettingsEvent="The trigger is evaluated during the map settings initialization which is even before the game initialization."
+
 TriggerRegisterMapInitEvent="Trigger Register Map Init Event"
 TriggerRegisterMapInitEvent="Trigger Register Map Init Event"
 TriggerRegisterMapInitEventHint="The trigger is evaluated during the map initialization."

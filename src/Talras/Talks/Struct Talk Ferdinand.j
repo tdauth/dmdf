@@ -1,7 +1,7 @@
 library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWeaponsPeasants
 
 	struct TalkFerdinand extends Talk
-		private boolean array m_knowsCost[12] /// @todo @member MapData.maxPlayers
+		private boolean array m_knowsCost[12] /// @todo @member MapSettings.maxPlayers()
 
 		implement Talk
 
@@ -123,7 +123,7 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 			local thistype this = thistype.allocate(gg_unit_n01J_0154, thistype.startPageAction)
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set this.m_knowsCost[i] = false
 				set i = i + 1
 			endloop

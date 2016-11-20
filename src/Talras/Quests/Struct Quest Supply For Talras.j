@@ -42,7 +42,7 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 
 		private static method stateActionCompletedSendSupply takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			local unit cart = CreateUnit(MapData.neutralPassivePlayer, 'h016', GetUnitX(Npcs.manfred()), GetUnitY(Npcs.manfred()), 0.0)
+			local unit cart = CreateUnit(MapSettings.neutralPassivePlayer(), 'h016', GetUnitX(Npcs.manfred()), GetUnitY(Npcs.manfred()), 0.0)
 			call SetUnitInvulnerable(cart, true)
 			call IssuePointOrder(cart, "move", GetRectCenterX(gg_rct_quest_supply_for_talras_cart_destination), GetRectCenterY(gg_rct_quest_supply_for_talras_cart_destination))
 			set cart = null

@@ -16,10 +16,10 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 		private static trigger m_deathTrigger
 		private static trigger m_upgradeTrigger
 		private static unit array m_buildings
-		private static integer array m_collectedGold[12] // TODO MapData.maxPlayers
+		private static integer array m_collectedGold[12] // TODO MapSettings.maxPlayers()
 
 		private static method timerFunctionRefill takes nothing returns nothing
-			local unit goldmine = MapData.goldmine.evaluate()
+			local unit goldmine = MapSettings.goldmine()
 			if (goldmine != null) then
 				if (GetResourceAmount(goldmine) < 1000000) then
 					call SetResourceAmount(goldmine, 1000000)
@@ -31,7 +31,7 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 			local integer actualGold = 10
 			local integer gold = 10
 			if (GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED) > thistype.m_collectedGold[GetPlayerId(GetTriggerPlayer())]) then
-				set gold = IMaxBJ(1, 10 * R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], MapData.goldmine.evaluate()) / 1000.0))
+				set gold = IMaxBJ(1, 10 * R2I(GetDistanceBetweenUnitsWithoutZ(thistype.m_buildings[GetPlayerId(GetTriggerPlayer())], MapSettings.goldmine()) / 1000.0))
 				debug call Print("Gathered gold fixed value: " + I2S(gold))
 				debug call Print("Current gold: " + I2S(GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD)))
 				debug call Print("Gathered gold: " + I2S(GetPlayerState(GetTriggerPlayer(), PLAYER_STATE_GOLD_GATHERED)))
@@ -156,7 +156,7 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 			set thistype.m_bringGoldTrigger = CreateTrigger()
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set thistype.m_collectedGold[i] = 0
 				call TriggerRegisterPlayerStateEvent(thistype.m_bringGoldTrigger, Player(i), PLAYER_STATE_GOLD_GATHERED, GREATER_THAN, thistype.m_collectedGold[i])
 				set i = i + 1

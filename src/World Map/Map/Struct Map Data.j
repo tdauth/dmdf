@@ -44,7 +44,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			local integer i = 0
 			debug call Print("Zone: " + zone.mapName())
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call DisplayTextToPlayer(Player(i), 0.0, 0.0, description)
 				set i = i + 1
 			endloop
@@ -162,7 +162,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
 		public static method init takes nothing returns nothing
 			// player should look like neutral passive
-			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
+			call SetPlayerColor(MapSettings.neutralPassivePlayer(), ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 			call SetMapFlag(MAP_FOG_HIDE_TERRAIN, false)
 			call SetMapFlag(MAP_FOG_MAP_EXPLORED, true)
 			call SetMapFlag(MAP_FOG_ALWAYS_VISIBLE, true)

@@ -9,7 +9,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			call QuestRescueDago.quest.evaluate().enable.evaluate()
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call SmartCameraPanWithZForPlayer(Player(i), GetRectCenterX(gg_rct_quest_rescue_dago_camera_view), GetRectCenterY(gg_rct_quest_rescue_dago_camera_view), 0.0, 0.0)
 				set i = i + 1
 			endloop
@@ -82,7 +82,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 			call SetUnitY(Npcs.dago(), GetRectCenterY(gg_rct_quest_rescue_dago_dagos_position))
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call SmartCameraPanWithZForPlayer(Player(i), GetRectCenterX(gg_rct_quest_rescue_dago_camera_view), GetRectCenterY(gg_rct_quest_rescue_dago_camera_view), 0.0, 0.0)
 				call UnitShareVision(Npcs.dago(), Player(i), true)
 				set i = i + 1
@@ -137,7 +137,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 
 					set i = 0
 					loop
-						exitwhen (i == MapData.maxPlayers)
+						exitwhen (i == MapSettings.maxPlayers())
 						call UnitShareVision(Npcs.dago(), Player(i), false)
 						set i = i + 1
 					endloop

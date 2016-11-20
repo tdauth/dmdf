@@ -81,7 +81,7 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 			*/
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					call Character(Character.playerCharacter(Player(i))).giveItem('I02L')
 					call Character(Character.playerCharacter(Player(i))).giveItem('I02M')

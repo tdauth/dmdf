@@ -5,7 +5,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 	 * It is mostly used to ensure that all characters are at a certain point when the event starts and are movable and not in talks or something else.
 	 */
 	struct QuestArea
-		private fogmodifier array m_assemblyPointFogModifier[12] /// \todo MapData.maxPlayers
+		private fogmodifier array m_assemblyPointFogModifier[12] /// \todo MapSettings.maxPlayers()
 		private destructable array m_assemblyPointMarker[4]
 		private rect m_rect
 		private trigger m_enterTrigger
@@ -52,7 +52,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		public method setFogModifiersEnabled takes boolean enabled returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (this.m_assemblyPointFogModifier[i] != null) then
 					if (enabled) then
 						call FogModifierStart(this.m_assemblyPointFogModifier[i])
@@ -67,7 +67,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		private method cleanupRect takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (this.m_assemblyPointFogModifier[i] != null) then
 					call DestroyFogModifier(this.m_assemblyPointFogModifier[i])
 					set this.m_assemblyPointFogModifier[i] = null
@@ -97,7 +97,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 				 */
 				set charactersCount = 1
 				loop
-					exitwhen (i == MapData.maxPlayers)
+					exitwhen (i == MapSettings.maxPlayers())
 					if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)) != enteringCharacter and RectContainsUnit(this.m_rect, ACharacter.playerCharacter(Player(i)).unit()) and  ACharacter.playerCharacter(Player(i)).isMovable()) then
 						set charactersCount = charactersCount + 1
 					endif
@@ -151,7 +151,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			if (withFogModifier) then
 				set i = 0
 				loop
-					exitwhen (i == MapData.maxPlayers)
+					exitwhen (i == MapSettings.maxPlayers())
 					set this.m_assemblyPointFogModifier[i] = CreateFogModifierRect(Player(i), FOG_OF_WAR_VISIBLE, this.m_rect, true, true)
 					call FogModifierStart(this.m_assemblyPointFogModifier[i])
 					set i = i + 1

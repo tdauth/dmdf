@@ -22,7 +22,7 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructGameShrine, Struc
 		endmethod
 
 		private static method filter takes nothing returns boolean
-			return not IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) and GetOwningPlayer(GetFilterUnit()) != MapData.neutralPassivePlayer and not MapData.excludeUnitTypeFromTeleport.evaluate(GetUnitTypeId(GetFilterUnit()))
+			return not IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) and GetOwningPlayer(GetFilterUnit()) != MapSettings.neutralPassivePlayer() and not MapSettings.isUnitTypeIdExcludedFromTeleports(GetUnitTypeId(GetFilterUnit()))
 		endmethod
 
 		private static method removeEffect takes effect whichEffect returns nothing

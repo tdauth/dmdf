@@ -226,7 +226,7 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 			local Character character = 0
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set character = Character.playerCharacter(Player(i))
 				if (character != 0) then
 					call character.options().dungeons().addDungeon(abilityId, spellBookAbilityId, dungeon)

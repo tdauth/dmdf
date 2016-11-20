@@ -2,8 +2,8 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 
 	struct TalkTrommon extends Talk
 		private static constant integer goldCost = 10
-		private boolean array m_hasPaid[12] /// @todo @member MapData.maxPlayers
-		private boolean array m_wasOffended[12] /// @todo @member MapData.maxPlayers
+		private boolean array m_hasPaid[12] /// @todo @member MapSettings.maxPlayers()
+		private boolean array m_wasOffended[12] /// @todo @member MapSettings.maxPlayers()
 
 		implement Talk
 
@@ -151,13 +151,13 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 			call QuestWoodForTheHut.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftrag „Holz für die Hütte“ ist abgeschlossen)
 		private static method infoConditionMoreHelp takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return QuestWoodForTheHut.characterQuest(character).isCompleted()
 		endmethod
-		
+
 		// Brauchst du sonst noch etwas?
 		private static method infoActionMoreHelp takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Brauchst du sonst noch etwas?"), null)
@@ -171,12 +171,12 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 			call QuestSeedsForTheGarden.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Samen für den Garten“ ist abgeschlossen, Auftragsziel 2 des Auftrags „Samen für den Garten“ ist aktiv, Charakter hat Samen dabei)
 		private static method infoConditionSpecialSeed takes AInfo info, ACharacter character returns boolean
 			return QuestSeedsForTheGarden.characterQuest(character).questItem(0).isCompleted() and QuestSeedsForTheGarden.characterQuest(character).questItem(1).isNew() and  character.inventory().hasItemType('I03N')
 		endmethod
-		
+
 		// Hier hast du einen ganz besonderen Samen.
 		private static method infoActionSpecialSeed takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hier hast du einen ganz besonderen Samen."), null)
@@ -193,12 +193,12 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 			call QuestSeedsForTheGarden.characterQuest(character).displayUpdate()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 3 des Auftrags „Samen für den Garten“ abgeschlossen und Auftrag ist noch aktiv)
 		private static method infoConditionWhatDoYouThink takes AInfo info, ACharacter character returns boolean
 			return QuestSeedsForTheGarden.characterQuest(character).questItem(2).isCompleted() and QuestSeedsForTheGarden.characterQuest(character).questItem(3).isNew()
 		endmethod
-		
+
 		// Und was hältst du von dem Baum?
 		private static method infoActionWhatDoYouThink takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Und was hältst du von dem Baum?"), null)
@@ -236,7 +236,7 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 			local thistype this = thistype.allocate(gg_unit_n021_0004, thistype.startPageAction)
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set this.m_hasPaid[i] = false
 				set this.m_wasOffended[i] = false
 				set i = i + 1

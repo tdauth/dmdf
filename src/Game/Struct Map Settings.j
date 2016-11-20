@@ -1,0 +1,161 @@
+library StructGameMapSettings
+
+	/**
+	 * \brief All required map settings which have to be set before GameData.onInit() is called.
+	 *
+	 * Just use MapData.initSettings() to configure the settings.
+	 *
+	 * Note that most settings have default values.
+	 */
+	struct MapSettings
+		private static string m_mapName = ""
+		private static string m_mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3"
+		private static integer m_maxPlayers = 6
+		private static player m_alliedPlayer = Player(6)
+		private static player m_neutralPassivePlayer = Player(7)
+		private static boolean array m_playerGivesXP[16]
+		private static real m_revivalTime = 35.0
+		private static integer m_startLevel = 1
+		private static integer m_startSkillPoints = 1 /// Includes the skill point for the default spell.
+		private static integer m_levelSkillPoints = 2
+		private static integer m_maxLevel = 10000
+		private static boolean m_isSeparateChapter = false
+		private static unit m_goldmine
+		private static AGlobalHashTable m_excludedTeleportUnitTypeIds
+
+		public static method initDefaults takes nothing returns nothing
+			set thistype.m_excludedTeleportUnitTypeIds = AGlobalHashTable.create()
+			set thistype.m_playerGivesXP[GetPlayerId(Player(PLAYER_NEUTRAL_AGGRESSIVE))] = true
+		endmethod
+
+		public static method setMapName takes string mapName returns nothing
+			set thistype.m_mapName = mapName
+		endmethod
+
+		public static method mapName takes nothing returns string
+			return thistype.m_mapName
+		endmethod
+
+		public static method setMapMusic takes string musicList returns nothing
+			set thistype.m_mapMusic = musicList
+		endmethod
+
+		public static method mapMusic takes nothing returns string
+			return thistype.m_mapMusic
+		endmethod
+
+		public static method setMaxPlayers takes integer maxPlayers returns nothing
+			set thistype.m_maxPlayers = maxPlayers
+		endmethod
+
+		public static method maxPlayers takes nothing returns integer
+			return thistype.m_maxPlayers
+		endmethod
+
+		public static method setAlliedPlayer takes player whichPlayer returns nothing
+			set thistype.m_alliedPlayer = whichPlayer
+		endmethod
+
+		public static method alliedPlayer takes nothing returns player
+			return thistype.m_alliedPlayer
+		endmethod
+
+		/**
+		 * @{
+		 */
+		public static method setNeutralPassivePlayer takes player whichPlayer returns nothing
+			set thistype.m_neutralPassivePlayer = whichPlayer
+		endmethod
+
+		public static method neutralPassivePlayer takes nothing returns player
+			return thistype.m_neutralPassivePlayer
+		endmethod
+		/**
+		 * @}
+		 */
+
+		public static method setPlayerGivesXP takes player whichPlayer, boolean flag returns nothing
+			set thistype.m_playerGivesXP[GetPlayerId(whichPlayer)] = flag
+		endmethod
+
+		/**
+		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
+		 */
+		public static method playerGivesXP takes player whichPlayer returns boolean
+			return thistype.m_playerGivesXP[GetPlayerId(whichPlayer)]
+		endmethod
+
+		public static method setRevivalTime takes real revivalTime returns nothing
+			set thistype.m_revivalTime = revivalTime
+		endmethod
+
+		public static method revivalTime takes nothing returns real
+			return thistype.m_revivalTime
+		endmethod
+
+		public static method setStartLevel takes integer startLevel returns nothing
+			set thistype.m_startLevel = startLevel
+		endmethod
+
+		public static method startLevel takes nothing returns integer
+			return thistype.m_startLevel
+		endmethod
+
+		public static method setStartSkillPoints takes integer startSkillPoints returns nothing
+			set thistype.m_startSkillPoints = startSkillPoints
+		endmethod
+
+		public static method startSkillPoints takes nothing returns integer
+			return thistype.m_startSkillPoints
+		endmethod
+
+		public static method setLevelSkillPoints takes integer skillPoints returns nothing
+			set thistype.m_levelSkillPoints = skillPoints
+		endmethod
+
+		public static method levelSkillPoints takes nothing returns integer
+			return thistype.m_levelSkillPoints
+		endmethod
+
+		public static method setMaxLevel takes integer maxLevel returns nothing
+			set thistype.m_maxLevel = maxLevel
+		endmethod
+
+		public static method maxLevel takes nothing returns integer
+			return thistype.m_maxLevel
+		endmethod
+
+		public static method setIsSeparateChapter takes boolean isSeparateChapter returns nothing
+			set thistype.m_isSeparateChapter = isSeparateChapter
+		endmethod
+
+		public static method isSeparateChapter takes nothing returns boolean
+			return thistype.m_isSeparateChapter
+		endmethod
+
+		public static method setGoldmine takes unit goldmine returns nothing
+			set thistype.m_goldmine = goldmine
+		endmethod
+
+		public static method goldmine takes nothing returns unit
+			return thistype.m_goldmine
+		endmethod
+
+		public static method setUnitTypeIdExcludedFromTeleports takes integer unitTypeId, boolean flag returns nothing
+			if (flag) then
+				call thistype.m_excludedTeleportUnitTypeIds.setBoolean(0, unitTypeId, true)
+			else
+				call thistype.m_excludedTeleportUnitTypeIds.removeBoolean(0, unitTypeId)
+			endif
+		endmethod
+
+		public static method isUnitTypeIdExcludedFromTeleports takes integer unitTypeId returns boolean
+			if (not thistype.m_excludedTeleportUnitTypeIds.hasBoolean(0, unitTypeId)) then
+				return false
+			endif
+
+			return thistype.m_excludedTeleportUnitTypeIds.boolean(0, unitTypeId)
+		endmethod
+	endstruct
+
+endlibrary

@@ -1,25 +1,6 @@
 library StructMapMapMapData requires Asl, StructGameGame
 
 	struct MapData extends MapDataInterface
-		public static constant string mapName = "Arena0.7"
-		public static constant string mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3"
-		public static constant integer maxPlayers = 12
-		public static constant player alliedPlayer = null
-		public static constant player neutralPassivePlayer = Player(PLAYER_NEUTRAL_PASSIVE)
-		public static constant real morning = 5.0
-		public static constant real midday = 12.0
-		public static constant real afternoon = 16.0
-		public static constant real evening = 18.0
-		public static constant real revivalTime = 5.0
-		public static constant real revivalLifePercentage = 100.0
-		public static constant real revivalManaPercentage = 100.0
-		public static constant integer startLevel = 30
-		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
-		public static constant integer levelSpellPoints = 2
-		public static constant integer maxLevel = 30
-		public static constant integer workerUnitTypeId = 'h00E'
-		public static constant boolean isSeparateChapter = true
-		public static sound cowSound = null
 		public static constant integer maxScore = 25
 		private static trigger m_safeEnterTrigger
 		private static trigger m_safeLeaveTrigger
@@ -35,6 +16,22 @@ library StructMapMapMapData requires Asl, StructGameGame
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
+		endmethod
+
+		/// Required by \ref Game.
+		public static method initSettings takes nothing returns nothing
+			call MapSettings.setMapName("AR")
+			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3")
+			call MapSettings.setMaxPlayers(12)
+			call MapSettings.setAlliedPlayer(null)
+			call MapSettings.setNeutralPassivePlayer(Player(PLAYER_NEUTRAL_PASSIVE))
+			call MapSettings.setRevivalTime(5.0)
+			call MapSettings.setStartLevel(30)
+			call MapSettings.startSkillPoints(5)
+			call MapSettings.levelSkillPoints(2)
+			call MapSettings.setMaxLevel(30)
+			call MapSettings.setIsSeparateChapter(true)
+			call MapSettings.setPlayerGivesXP(Player(PLAYER_NEUTRAL_AGGRESSIVE), false)
 		endmethod
 
 		/// Required by \ref Game.
@@ -54,7 +51,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call QuestItemSetDescription(questItem, Format(tre("Tötet einander bis einer der Spieler %1% Punkte erreicht hat.", "Kill each other until one player has reached %1% kills.")).i(thistype.maxScore).result())
 
 			// player should look like neutral passive
-			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
+			call SetPlayerColor(MapSettings.neutralPassivePlayer(), ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
 			set talkRoutine = NpcTalksRoutine.create(Routines.talk(), gg_unit_n013_0012, 0.0, 24.00, gg_rct_waypoint_heimrich_0)
 			call talkRoutine.setPartner(gg_unit_n014_0038)
@@ -373,27 +370,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static method onRestoreCharacters takes string zone returns nothing
 		endmethod
 
-		/**
-		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
-		 */
-		public static method playerGivesXP takes player whichPlayer returns boolean
-			return false //whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE) or whichPlayer == thistype.orcPlayer
-		endmethod
-
 		public static method initVideoSettings takes nothing returns nothing
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
-		endmethod
-
-		/// Required by \ref Buildings.
-		public static method goldmine takes nothing returns unit
-			return null
-		endmethod
-
-		/// Required by teleport spells.
-		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
-			return false
 		endmethod
 	endstruct
 

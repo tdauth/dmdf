@@ -210,7 +210,7 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 		public static method init takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				/*
 				 * Players must see all Orc enemies.
 				 */
@@ -221,8 +221,8 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 
 			call SetPlayerAllianceStateBJ(MapData.orcPlayer, Player(PLAYER_NEUTRAL_AGGRESSIVE), bj_ALLIANCE_ALLIED)
 			call SetPlayerAllianceStateBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), MapData.orcPlayer, bj_ALLIANCE_ALLIED)
-			call SetPlayerAllianceStateBJ(MapData.orcPlayer, MapData.alliedPlayer, bj_ALLIANCE_UNALLIED_VISION)
-			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.orcPlayer, bj_ALLIANCE_UNALLIED_VISION)
+			call SetPlayerAllianceStateBJ(MapData.orcPlayer, MapSettings.alliedPlayer(), bj_ALLIANCE_UNALLIED_VISION)
+			call SetPlayerAllianceStateBJ(MapSettings.alliedPlayer(), MapData.orcPlayer, bj_ALLIANCE_UNALLIED_VISION)
 
 			// preload everything like in the Warcraft III campaigns
 			//call Preloader("Scripts\\Talras.pld")
@@ -258,9 +258,6 @@ endif
 			call initMapTalks.evaluate()
 			call initMapVideos.evaluate()
 			call NewOpLimit(function Fellows.init) // init after talks (new)
-
-			// player should look like neutral passive
-			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
 			set thistype.m_welcomeTalrasTrigger = CreateTrigger()
 			set thistype.m_welcomeRegion = CreateRegion()

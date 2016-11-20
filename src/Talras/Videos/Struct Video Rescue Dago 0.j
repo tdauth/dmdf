@@ -99,7 +99,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
-			call this.setActorOwner(MapData.neutralPassivePlayer)
+			call this.setActorOwner(MapSettings.neutralPassivePlayer())
 			call PauseUnit(Npcs.dago(), true)
 			call SetUnitInvulnerable(Npcs.dago(), true)
 			call PauseUnit(gg_unit_n008_0083, true)

@@ -21,7 +21,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 		endmethod
 
 		private static method stateActionCompletedSendLumber takes AQuestItem questItem returns nothing
-			local unit cart = CreateUnit(MapData.neutralPassivePlayer, 'h01Z', GetUnitX(Npcs.manfred()), GetUnitY(Npcs.manfred()), 0.0)
+			local unit cart = CreateUnit(MapSettings.neutralPassivePlayer(), 'h01Z', GetUnitX(Npcs.manfred()), GetUnitY(Npcs.manfred()), 0.0)
 			call SetUnitInvulnerable(cart, true)
 			call IssuePointOrder(cart, "move", GetRectCenterX(gg_rct_quest_reinforcements_of_talras_cart_destination), GetRectCenterY(gg_rct_quest_reinforcements_of_talras_cart_destination))
 			set cart = null

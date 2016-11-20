@@ -236,7 +236,7 @@ library StructGameRoutines requires Asl
 
 				set i = 0
 				loop
-					exitwhen (i == MapData.maxPlayers)
+					exitwhen (i == MapSettings.maxPlayers())
 					// don't play the sound in talk, otherwise it becomes annoying when listening to another NPC
 					if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)).talk() == 0 and GetDistanceBetweenUnitsWithoutZ(speaking, ACharacter.playerCharacter(Player(i)).unit()) <= 1000.0 and not IsUnitMasked(speaking, Player(i)) and (not IsUnitFogged(speaking, Player(i)) or (not IsUnitFogged(listening, Player(i)) and listening != null)) and Player(i) == GetLocalPlayer() and GetDistanceBetweenPointsWithoutZ(GetCameraTargetPositionX(), GetCameraTargetPositionY(), GetUnitX(speaking), GetUnitY(speaking)) <= 1000.0) then
 						call PlaySoundOnUnitBJ(whichSound, 60.0, speaking) // TODO sound is not always 3D? Distance should play a role (distance between unit and player's current camera view)

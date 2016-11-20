@@ -62,7 +62,7 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 			local integer index = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 1)
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					call PanCameraToForPlayer(Character.playerCharacter(Player(i)).player(), GetRectCenterX(gg_rct_quest_gate_weather), GetRectCenterY(gg_rct_quest_gate_weather))
 				endif

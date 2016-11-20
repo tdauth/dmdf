@@ -6,13 +6,13 @@ library StructMapSpellsSpellAosRing requires Asl, StructGameClasses, StructMapMa
 	 */
 	struct SpellAosRing extends SpellMetamorphosis
 		private boolean m_baldar
-		private static thistype array m_baldarRingSpells[MapData.maxPlayers]
-		private static thistype array m_haldarRingSpells[MapData.maxPlayers]
+		private static thistype array m_baldarRingSpells[MapSettings.maxPlayers()]
+		private static thistype array m_haldarRingSpells[MapSettings.maxPlayers()]
 
 		public static method baldarRingSpell takes Character character returns thistype
 			return thistype.m_baldarRingSpells[GetPlayerId(character.player())]
 		endmethod
-		
+
 		public static method haldarRingSpell takes Character character returns thistype
 			return thistype.m_haldarRingSpells[GetPlayerId(character.player())]
 		endmethod

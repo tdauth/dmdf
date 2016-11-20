@@ -78,7 +78,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 			local integer experience = 0
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					set experience = experience + thistype.giveUnitExperienceToCharacter(ACharacter.playerCharacter(Player(i)), whichUnit, killingUnit)
 				endif
@@ -130,7 +130,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 			local integer bounty = 0
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					set bounty = bounty + thistype.giveBountyToCharacter(ACharacter.playerCharacter(Player(i)), whichUnit, killingUnit)
 				endif
@@ -163,7 +163,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		private static constant real maxMoveSpeed = 522.0
 		private static AIntegerList m_onDamageActions
 		private static trigger m_killTrigger
-		private static AIntegerVector array m_hiddenUnits[12] /// \todo \ref MapData.maxPlayers + 1 (one additional for MapData.alliedPlayer)
+		private static AIntegerVector array m_hiddenUnits[12] /// \todo \ref MapSettings.maxPlayers() + 1 (one additional for MapSettings.alliedPlayer())
 		/**
 		 * The order animations for the actor of the character.
 		 */
@@ -263,7 +263,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 			local integer result = 0
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_EMPTY) then
 					set result = result + 1
 				endif
@@ -414,7 +414,7 @@ endif
 			/*
 			 * Characters get only experience if a creep is being killed.
 			 */
-			if (MapData.playerGivesXP.evaluate(GetOwningPlayer(GetTriggerUnit()))) then
+			if (MapSettings.playerGivesXP(GetOwningPlayer(GetTriggerUnit()))) then
 				call GameExperience.distributeUnitExperience(GetTriggerUnit(), GetKillingUnit())
 				call GameBounty.distributeUnitBounty(GetTriggerUnit(), GetKillingUnit())
 			endif
@@ -438,8 +438,19 @@ endif
 		private static method onInit takes nothing returns nothing
 			local integer i = 0
 
+			/*
+			 * Initialize the MapSettings properties here.
+			 */
+			call MapSettings.initDefaults()
+			call MapData.initSettings.evaluate()
+
+			if (MapSettings.neutralPassivePlayer() != null) then
+				// player should look like neutral passive
+				call SetPlayerColor(MapSettings.neutralPassivePlayer(), ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
+			endif
+
 			// restore the characters in a single player campaign of the game is changed by loading or if it is not the initial chapter
-			set thistype.m_restoreCharacters = bj_isSinglePlayer and Game.isCampaign() and MapChanger.charactersExistSinglePlayer() and (IsMapFlagSet(MAP_RELOADED) or not MapData.isSeparateChapter)
+			set thistype.m_restoreCharacters = bj_isSinglePlayer and Game.isCampaign() and MapChanger.charactersExistSinglePlayer() and (IsMapFlagSet(MAP_RELOADED) or not MapSettings.isSeparateChapter())
 
 			// Advanced Script Library
 			// general systems
@@ -531,9 +542,9 @@ endif
 			call MapData.init.evaluate()
 
 			// the map music has to be set in the initialization
-			if (MapData.mapMusic != null) then
+			if (MapSettings.mapMusic() != null) then
 				call ClearMapMusic()
-				call SetMapMusic(MapData.mapMusic, true, 0)
+				call SetMapMusic(MapSettings.mapMusic(), true, 0)
 			debug else
 				debug call Print("Error: Map music is empty.")
 			endif
@@ -556,28 +567,28 @@ endif
 			 */
 			set i = 0
 			loop
-				// one additional for MapData.alliedPlayer
-				exitwhen (i == MapData.maxPlayers)
+				// one additional for MapSettings.alliedPlayer()
+				exitwhen (i == MapSettings.maxPlayers())
 				// set allied player and neutral passive player alliance status
-				call SetPlayerAllianceStateBJ(Player(i), MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
-				call SetPlayerAllianceStateBJ(MapData.alliedPlayer, Player(i), bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(Player(i), MapSettings.alliedPlayer(), bj_ALLIANCE_NEUTRAL)
+				call SetPlayerAllianceStateBJ(MapSettings.alliedPlayer(), Player(i), bj_ALLIANCE_NEUTRAL)
 				// they have to be allied and not neutral. Otherwise shared shop won't work.
 				call SetPlayerAllianceStateBJ(Player(i), Player(PLAYER_NEUTRAL_PASSIVE), bj_ALLIANCE_ALLIED)
 				call SetPlayerAllianceStateBJ(Player(PLAYER_NEUTRAL_PASSIVE), Player(i), bj_ALLIANCE_ALLIED)
-				call SetPlayerAllianceStateBJ(Player(i), MapData.neutralPassivePlayer, bj_ALLIANCE_ALLIED)
-				call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, Player(i), bj_ALLIANCE_ALLIED)
+				call SetPlayerAllianceStateBJ(Player(i), MapSettings.neutralPassivePlayer(), bj_ALLIANCE_ALLIED)
+				call SetPlayerAllianceStateBJ(MapSettings.neutralPassivePlayer(), Player(i), bj_ALLIANCE_ALLIED)
 				set i = i + 1
 			endloop
 
-			call SetPlayerAllianceStateBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, Player(PLAYER_NEUTRAL_AGGRESSIVE), bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(Player(PLAYER_NEUTRAL_AGGRESSIVE), MapSettings.neutralPassivePlayer(), bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapSettings.neutralPassivePlayer(), Player(PLAYER_NEUTRAL_AGGRESSIVE), bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapSettings.alliedPlayer(), MapSettings.neutralPassivePlayer(), bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapSettings.neutralPassivePlayer(), MapSettings.alliedPlayer(), bj_ALLIANCE_NEUTRAL)
 
 			set i = 0
 			loop
 				// one additional group for the allied player
-				exitwhen (i == MapData.maxPlayers + 1)
+				exitwhen (i == MapSettings.maxPlayers() + 1)
 				set thistype.m_hiddenUnits[i] = AGroup.create()
 				set i = i + 1
 			endloop
@@ -595,7 +606,7 @@ endif
 			else
 				set i = 0
 				loop
-					exitwhen (i == MapData.maxPlayers)
+					exitwhen (i == MapSettings.maxPlayers())
 					call DisplayTextToPlayer(Player(i), 0.0, 0.0, Format(tre("Sprache: %1%", "Language: %1%")).s(GetLanguage()).result())
 					set i = i + 1
 				endloop
@@ -657,7 +668,7 @@ endif
 			local player user
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set user = Player(i)
 				if (IsPlayerPlayingUser(user)) then
 					call Dungeon.resetCameraBoundsForPlayer.evaluate(user)
@@ -686,10 +697,10 @@ endif
 			call Character.setTutorialForAll(true)
 
 			// all but one missing, disable characters schema since it is not required
-			if (thistype.missingPlayers() == MapData.maxPlayers - 1) then
+			if (thistype.missingPlayers() == MapSettings.maxPlayers() - 1) then
 				set i = 0
 				loop
-					exitwhen (i == MapData.maxPlayers)
+					exitwhen (i == MapSettings.maxPlayers())
 					if (ACharacter.playerCharacter(Player(i)) != 0) then
 						call Character(ACharacter.playerCharacter(Player(i))).setShowCharactersScheme(false)
 					endif
@@ -700,7 +711,7 @@ endif
 			// enable camera timer after starting the game
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Character(ACharacter.playerCharacter(Player(i))).setCameraTimer(true)
 				endif
@@ -727,8 +738,8 @@ endif
 
 		/// We've got one allied player for shared control with NPCs. Use this method to enable alliance.
 		public static method setAlliedPlayerAlliedToPlayer takes player whichPlayer returns nothing
-			call SetPlayerAllianceStateBJ(whichPlayer, MapData.alliedPlayer, bj_ALLIANCE_ALLIED_ADVUNITS)
-			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, whichPlayer, bj_ALLIANCE_ALLIED_ADVUNITS)
+			call SetPlayerAllianceStateBJ(whichPlayer, MapSettings.alliedPlayer(), bj_ALLIANCE_ALLIED_ADVUNITS)
+			call SetPlayerAllianceStateBJ(MapSettings.alliedPlayer(), whichPlayer, bj_ALLIANCE_ALLIED_ADVUNITS)
 			// works!
 			if (Character(Character.playerCharacter(whichPlayer)).showCharactersScheme()) then
 				call thistype.charactersScheme().showForPlayer(whichPlayer) // hide team resources
@@ -739,8 +750,8 @@ endif
 
 		/// The allied player can also be used for arena fights (one or several characters against NPCs without other characters)
 		public static method setAlliedPlayerUnalliedToPlayer takes player whichPlayer returns nothing
-			call SetPlayerAllianceStateBJ(whichPlayer, MapData.alliedPlayer, bj_ALLIANCE_UNALLIED)
-			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, whichPlayer, bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(whichPlayer, MapSettings.alliedPlayer(), bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(MapSettings.alliedPlayer(), whichPlayer, bj_ALLIANCE_UNALLIED)
 		endmethod
 
 		public static method setAlliedPlayerAlliedToCharacter takes Character character returns nothing
@@ -750,7 +761,7 @@ endif
 		public static method setAlliedPlayerAlliedToAllCharacters takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					call thistype.setAlliedPlayerAlliedToPlayer(Player(i))
 				endif
@@ -871,7 +882,7 @@ endif
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterShownItem), function thistype.hideItem)
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					call AGroup(thistype.m_hiddenUnits[i]).addUnitsOfPlayer(Player(i), Filter(function thistype.filterShownUnit))
 					call AGroup(thistype.m_hiddenUnits[i]).forGroup(thistype.hideUnit)
@@ -879,8 +890,8 @@ endif
 				set i = i + 1
 			endloop
 			// Allied fellows should be hidden too.
-			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).addUnitsOfPlayer(MapData.alliedPlayer, Filter(function thistype.filterShownUnit))
-			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).forGroup(thistype.hideUnit)
+			call AGroup(thistype.m_hiddenUnits[MapSettings.maxPlayers()]).addUnitsOfPlayer(MapSettings.alliedPlayer(), Filter(function thistype.filterShownUnit))
+			call AGroup(thistype.m_hiddenUnits[MapSettings.maxPlayers()]).forGroup(thistype.hideUnit)
 
 			call DisableTransparency()
 			// has trigger sleep action
@@ -962,7 +973,7 @@ endif
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterHiddenItem), function thistype.showItem)
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					call AGroup(thistype.m_hiddenUnits[i]).forGroup(thistype.showUnit)
 					call AGroup(thistype.m_hiddenUnits[i]).units().clear()
@@ -970,8 +981,8 @@ endif
 				set i = i + 1
 			endloop
 			// Show units of allied player, too.
-			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).forGroup(thistype.showUnit)
-			call AGroup(thistype.m_hiddenUnits[MapData.maxPlayers]).units().clear()
+			call AGroup(thistype.m_hiddenUnits[MapSettings.maxPlayers()]).forGroup(thistype.showUnit)
+			call AGroup(thistype.m_hiddenUnits[MapSettings.maxPlayers()]).units().clear()
 
 			call EnableTransparency()
 			call CameraHeight.resume()

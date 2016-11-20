@@ -1,7 +1,7 @@
 library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameClasses, StructMapMapAos, StructMapMapNpcs, StructMapQuestsQuestDeathToBlackLegion
 
 	struct TalkHaldar extends Talk
-		private boolean array m_gotOffer[12] /// \todo \ref MapData.maxPlayers
+		private boolean array m_gotOffer[12] /// \todo \ref MapSettings.maxPlayers()
 		private integer array m_lastRewardScore[12] /// \todo \ref MapData#maxPlayers
 
 		implement Talk
@@ -199,7 +199,7 @@ library StructMapTalksTalkHaldar requires Asl, StructGameCharacter, StructGameCl
 			local thistype this = thistype.allocate(Npcs.haldar(), thistype.startPageAction)
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set this.m_gotOffer[i] = false
 				set this.m_lastRewardScore[i] = 0
 				set i = i + 1

@@ -261,7 +261,7 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 			local thistype this = thistype.allocate(Npcs.lothar(), thistype.startPageAction)
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set this.m_saidTruth[i] = false
 				set i = i + 1
 			endloop

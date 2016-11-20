@@ -937,7 +937,7 @@ endif
 			local integer levels = newLevel - oldLevel
 			local Character character = Character(this.character())
 
-			call this.addSkillPoints(MapData.levelSpellPoints * levels, true)
+			call this.addSkillPoints(MapSettings.levelSkillPoints() * levels, true)
 			debug call Print("Levels: " + I2S(levels))
 
 			if (oldLevel < thistype.ultimate0Level and newLevel >= thistype.ultimate0Level) then
@@ -951,7 +951,7 @@ endif
 			call this.setHeroLevel(newLevel)
 
 			// reached last level TODO: maybe we should give him a little present
-			if (newLevel == MapData.maxLevel) then
+			if (newLevel == MapSettings.maxLevel()) then
 				call character.displayFinalLevel(tre("Sie haben die letzte Stufe erreicht.", "You have reached the final level."))
 				call character.displayFinalLevelToAllOthers(Format(tre("%1% hat die letzte Stufe erreicht.", "%1% has reached the final level.")).s(character.name()).result())
 			endif

@@ -47,7 +47,7 @@ library StructMapQuestsQuestWarRecruit requires Asl, StructGameQuestArea, Struct
 		 */
 		private static method triggerActionRecruit takes nothing returns nothing
 			local thistype this = thistype.quest()
-			call SetUnitOwner(GetSoldUnit(), MapData.alliedPlayer, true)
+			call SetUnitOwner(GetSoldUnit(), MapSettings.alliedPlayer(), true)
 			call Game.setAlliedPlayerAlliedToAllCharacters()
 			call this.displayUpdateMessage(tre("Knecht angeworben.", "Acquired servant."))
 			call PingMinimapEx(GetUnitX(GetSoldUnit()), GetUnitY(GetSoldUnit()), 5.0, 255, 255, 255, true)
@@ -56,12 +56,12 @@ library StructMapQuestsQuestWarRecruit requires Asl, StructGameQuestArea, Struct
 
 		/**
 		 * The recruits can be bought by any player from a building at the farm.
-		 * Whenever a recruit is bought its owner is changed to \ref MapData.alliedPlayer and it has to be moved to the camp until \ref thistype.maxRecruits units are at the camp.
+		 * Whenever a recruit is bought its owner is changed to \ref MapSettings.alliedPlayer() and it has to be moved to the camp until \ref thistype.maxRecruits units are at the camp.
 		 */
 		public method enableGetRecruits takes nothing returns nothing
 			call this.questItem(thistype.questItemGetRecruits).setState(thistype.stateNew)
 			call this.displayUpdate()
-			set this.m_recruitBuilding = CreateUnit(MapData.alliedPlayer, 'n04F', GetRectCenterX(gg_rct_quest_war_recruit_building), GetRectCenterY(gg_rct_quest_war_recruit_building), 0.0)
+			set this.m_recruitBuilding = CreateUnit(MapSettings.alliedPlayer(), 'n04F', GetRectCenterX(gg_rct_quest_war_recruit_building), GetRectCenterY(gg_rct_quest_war_recruit_building), 0.0)
 			set this.m_recruits = AGroup.create()
 			set this.m_recruitTrigger = CreateTrigger()
 			call TriggerRegisterUnitEvent(this.m_recruitTrigger, this.m_recruitBuilding, EVENT_UNIT_SELL)
@@ -76,7 +76,7 @@ library StructMapQuestsQuestWarRecruit requires Asl, StructGameQuestArea, Struct
 
 		private static method stateConditionCompletedGetRecruits takes AQuestItem questItem returns boolean
 			local thistype this = thistype.quest()
-			if (GetUnitTypeId(GetTriggerUnit()) == 'n02J' and GetOwningPlayer(GetTriggerUnit()) == MapData.alliedPlayer) then
+			if (GetUnitTypeId(GetTriggerUnit()) == 'n02J' and GetOwningPlayer(GetTriggerUnit()) == MapSettings.alliedPlayer()) then
 				call QuestWar.quest.evaluate().setupUnitAtDestination.evaluate(GetTriggerUnit())
 				call this.m_recruits.units().pushBack(GetTriggerUnit())
 

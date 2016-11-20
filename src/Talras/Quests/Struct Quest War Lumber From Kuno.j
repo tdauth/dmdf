@@ -129,7 +129,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		private static method timerFunctionSpawnKunosCart takes nothing returns nothing
 			local thistype this = thistype.quest()
 			if (IsUnitDeadBJ(this.m_kunosCart)) then
-				set this.m_kunosCart = CreateUnit(MapData.alliedPlayer, 'h021', GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 0.0)
+				set this.m_kunosCart = CreateUnit(MapSettings.alliedPlayer(), 'h021', GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 0.0)
 				call this.displayUpdateMessage(tre("Eine neue Holzlieferung steht zur Verfügung.", "A new supply of wood is available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 5.0, 255, 255, 255, true)
 
@@ -139,7 +139,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 
 		/**
 		 * Kuno gives the characters a cart with lumber.
-		 * It is owned by \ref MapData.alliedPlayer and has to be moved to the camp.
+		 * It is owned by \ref MapSettings.alliedPlayer() and has to be moved to the camp.
 		 * Whenever it is killed a new one spawns at Kuno's house.
 		 * It is checked periodically if it is killed.
 		 */
@@ -149,7 +149,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 			call this.displayUpdate()
 
 			// TODO enable respawn timer
-			set this.m_kunosCart = CreateUnit(MapData.alliedPlayer, 'h021', GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 0.0)
+			set this.m_kunosCart = CreateUnit(MapSettings.alliedPlayer(), 'h021', GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 0.0)
 			set this.m_kunosCartSpawnTimer = CreateTimer()
 			call TimerStart(this.m_kunosCartSpawnTimer, QuestWar.respawnTime, true, function thistype.timerFunctionSpawnKunosCart)
 			call Game.setAlliedPlayerAlliedToAllCharacters()

@@ -812,7 +812,7 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 					set i = 0
 					loop
 						exitwhen (i == QuestWarRecruit.maxRecruits)
-						call CreateUnit(MapData.alliedPlayer, 'n02J', GetRectCenterX(gg_rct_quest_war_cart_destination), GetRectCenterY(gg_rct_quest_war_cart_destination), 0.0)
+						call CreateUnit(MapSettings.alliedPlayer(), 'n02J', GetRectCenterX(gg_rct_quest_war_cart_destination), GetRectCenterY(gg_rct_quest_war_cart_destination), 0.0)
 						set i = i + 1
 					endloop
 

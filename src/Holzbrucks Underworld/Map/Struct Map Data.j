@@ -33,11 +33,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 		endmethod
 
 		/// Required by \ref Game.
-		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
 		public static method init takes nothing returns nothing
-			// player should look like neutral passive
-			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
-
 			call Shrines.init()
 
 			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)

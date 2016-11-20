@@ -50,6 +50,7 @@ function GetCharacterPlayers takes nothing returns force
 endfunction
 
 globals
+	ATriggerVector mapInitSettingsTriggers = 0
 	ATriggerVector mapInitTriggers = 0
 	ATriggerVector mapStartTriggers = 0
 	ATriggerVector mapRestoreCharactersTriggers = 0
@@ -61,6 +62,10 @@ globals
 	constant integer TRIGGERDATA_KEY_TALK = 2
 	constant integer TRIGGERDATA_KEY_ZONENAME = 3
 endglobals
+
+function TriggerRegisterMapInitSettingsEvent takes trigger whichTrigger returns nothing
+	call mapInitSettingsTriggers.pushBack(whichTrigger)
+endfunction
 
 function TriggerRegisterMapInitEvent takes trigger whichTrigger returns nothing
 	call mapInitTriggers.pushBack(whichTrigger)
@@ -163,7 +168,7 @@ function InventoryTotalItemTypeCharges takes AInventory inventory, integer itemC
 endfunction
 
 function MapZoneName takes nothing returns string
-	return MapData.mapName
+	return MapSettings.mapName()
 endfunction
 
 function ItemTypeByItem takes item whichItem returns ItemType
@@ -197,6 +202,7 @@ function Init takes nothing returns nothing
 	set TalkInfoActionHashTable = AGlobalHashTable.create()
 	set TalkStartActionsHashTable = AGlobalHashTable.create()
 
+	set mapInitSettingsTriggers = ATriggerVector.create()
 	set mapInitTriggers = ATriggerVector.create()
 	set mapStartTriggers = ATriggerVector.create()
 	set mapRestoreCharactersTriggers = ATriggerVector.create()
@@ -204,16 +210,9 @@ function Init takes nothing returns nothing
 	set mapResetVideoSettingsTriggers = ATriggerVector.create()
 endfunction
 
-function GetTriggerInfo takes trigger whichTrigger returns AInfo
-	return DmdfHashTable.global().handleInteger(whichTrigger, TRIGGERDATA_KEY_INFO)
-endfunction
-
-/*
-TODO
 function GetTriggerInfo takes nothing returns AInfo
-	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_INFO)
 endfunction
-*/
 
 function GetTriggerTalk takes nothing returns Talk
 	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_TALK)
@@ -359,27 +358,7 @@ function ShrineEnableForAll takes Shrine shrine, boolean showEffect returns noth
 	call ACharacter.enableShrineForAll(shrine, showEffect)
 endfunction
 
-struct MapData extends MapDataInterface
-	public static constant string mapName = "DH"
-	public static constant string mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3"
-	public static constant integer maxPlayers = 6
-	public static constant player alliedPlayer = Player(6)
-	public static constant player neutralPassivePlayer = Player(7)
-	public static constant real morning = 5.0
-	public static constant real midday = 12.0
-	public static constant real afternoon = 16.0
-	public static constant real evening = 18.0
-	public static constant real revivalTime = 35.0
-	public static constant real revivalLifePercentage = 100.0
-	public static constant real revivalManaPercentage = 100.0
-	public static constant integer startLevel = 1
-	public static constant integer startSkillPoints = 1 /// Includes the skill point for the default spell.
-	public static constant integer levelSpellPoints = 2
-	public static constant integer maxLevel = 10000
-	public static constant integer workerUnitTypeId = 'h00E'
-	public static constant boolean isSeparateChapter = true
-	public static sound cowSound = null
-
+struct MapData
 	//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
 	private static method create takes nothing returns thistype
@@ -390,7 +369,24 @@ struct MapData extends MapDataInterface
 	endmethod
 
 	/// Required by \ref Game.
-	// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
+	public static method initSettings takes nothing returns nothing
+		local integer i = 0
+		/**
+		 * Called before library initialization but must be called before Game.onInit and before InitCustomTriggers because of the trigger register calls.
+		 *
+		 * InitCustomTriggers() is called in main AFTER the struct and the library initializers, so this should work.
+		 *
+		 * Is called as first method in Game.onInit(), too.
+		 */
+		call Init()
+		loop
+			exitwhen (i == mapInitSettingsTriggers.size())
+			call TriggerEvaluate(mapInitSettingsTriggers[i])
+			set i = i + 1
+		endloop
+	endmethod
+
+	/// Required by \ref Game.
 	public static method init takes nothing returns nothing
 		local integer i = 0
 		loop
@@ -443,36 +439,6 @@ struct MapData extends MapDataInterface
 		endloop
 	endmethod
 
-	/// Required by \ref Classes.
-	public static method startX takes integer index returns real
-		return GetRectCenterX(gg_rct_start)
-	endmethod
-
-	/// Required by \ref Classes.
-	public static method startY takes integer index returns real
-		return GetRectCenterY(gg_rct_start)
-	endmethod
-
-	/// Required by \ref Classes.
-	public static method startFacing takes integer index returns real
-		return 90.0
-	endmethod
-
-	/// Required by \ref MapChanger.
-	public static method restoreStartX takes integer index, string zone returns real
-		return GetRectCenterX(gg_rct_start)
-	endmethod
-
-	/// Required by \ref MapChanger.
-	public static method restoreStartY takes integer index, string zone returns real
-		return GetRectCenterY(gg_rct_start)
-	endmethod
-
-	/// Required by \ref MapChanger.
-	public static method restoreStartFacing takes integer index, string zone returns real
-		return 180.0
-	endmethod
-
 	/// Required by \ref MapChanger.
 	public static method onRestoreCharacters takes string zone returns nothing
 		local integer i = 0
@@ -484,11 +450,8 @@ struct MapData extends MapDataInterface
 		endloop
 	endmethod
 
-	/**
-	 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
-	 */
-	public static method playerGivesXP takes player whichPlayer returns boolean
-		return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE)
+	/// Required by \ref MapChanger.
+	public static method onRestoreCharacter takes string zone, Character character returns nothing
 	endmethod
 
 	public static method initVideoSettings takes nothing returns nothing
@@ -507,27 +470,6 @@ struct MapData extends MapDataInterface
 			call TriggerEvaluate(mapResetVideoSettingsTriggers[i])
 			set i = i + 1
 		endloop
-	endmethod
-
-	/// Required by \ref Buildings.
-	public static method goldmine takes nothing returns unit
-		return null
-	endmethod
-
-	/// Required by teleport spells.
-	public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
-		return false
-	endmethod
-
-	/**
-	 * Called before library initialization but must be called before Game.onInit and before InitCustomTriggers because of the trigger register calls.
-	 *
-	 * InitCustomTriggers() is called in main AFTER the struct and the library initializers, so this should work.
-	 *
-	 * TODO But Game.onInit() is called before as well, so the on map init event does not work with created triggers. Neither the event list has been created nor the custom triggers.
-	 */
-	private static method onInit takes nothing returns nothing
-		call Init()
 	endmethod
 endstruct
 

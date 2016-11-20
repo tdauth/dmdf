@@ -14,14 +14,14 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 	 */
 	struct SaveSystem
 		public static constant string digits = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		
+
 		private static trigger m_chatSaveTrigger
 		private static trigger m_chatLoadTrigger
-		
+
 		public static method max takes integer digits returns integer
 			return R2I(Pow(I2R(StringLength(thistype.digits)), I2R(digits)))
 		endmethod
-		
+
 		/**
 		 * Converts the decimal value \p decValue into the number system using \ref thistype.digits as digits.
 		 * Therefore the number should get less digits.
@@ -37,12 +37,12 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 				set decValue = decValue / base
 				exitwhen (decValue == 0)
 			endloop
-			
+
 			// TODO cut leading zeroes
-			
+
 			return result
 		endmethod
-		
+
 		/**
 		 * Converts the number from the number system using \ref thistype.digits as digits into a decimal value.
 		 * \return Returns the decimal value.
@@ -59,10 +59,10 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 				set result = result + index * R2I(Pow(I2R(base), I2R(StringLength(savValue) - i - 1)))
 				set i = i + 1
 			endloop
-			
+
 			return result
 		endmethod
-		
+
 		/**
 		 * Encodes all saved data by converting it into a different number system.
 		 * All values are separated by "-" characters.
@@ -106,7 +106,7 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			set hero = null
 			return class + "-" + xp + "-" + gold + "-" + strength + "-" + agility + "-" + intelligence + "-" + skillPoints + "-" + slot0Equipment + "-" + slot1Equipment + "-" + slot2Equipment + "-" + slot3Equipment + "-" + slot4Equipment + "-" + slot5Equipment
 		endmethod
-		
+
 		public static method decodePlayerCharacter takes player whichPlayer, string saveCode returns nothing
 			local ATokenizer tokenizer = ATokenizer.create(saveCode)
 			local AClass class = 0
@@ -135,10 +135,10 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			local boolean oldShowWorker = oldCharacter.showWorker()
 			local real oldCameraDistance = oldCharacter.cameraDistance()
 			local boolean oldViewEnabled = oldCharacter.isViewEnabled()
-			
+
 			local Character newCharacter = 0
-			
-			
+
+
 			// decode everything
 			call tokenizer.setSeparators("-")
 			debug call Print("Decoding " + saveCode)
@@ -155,19 +155,19 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			set slot3Equipment = thistype.decode(tokenizer.next())
 			set slot4Equipment = thistype.decode(tokenizer.next())
 			set slot5Equipment = thistype.decode(tokenizer.next())
-			
+
 			// drop all items
 			call oldCharacter.inventory().dropAll(oldX, oldY, true)
-			
+
 			// replace character
 			call oldCharacter.destroy()
-			
-			
+
+
 			set newCharacter = Character.create.evaluate(whichPlayer, class.generateUnit(whichPlayer, oldX, oldY, oldFacing), oldQuests, oldFellows)
 			call ACharacter.setPlayerCharacterByCharacter(newCharacter)
-			
+
 			call ClassSelection.setupCharacterUnit.evaluate(newCharacter, class)
-			
+
 			// assign loaded data
 			set hero = newCharacter.unit()
 			call SetHeroXP(hero, xp, false)
@@ -194,59 +194,59 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			if (slot5Equipment != 0) then
 				call newCharacter.giveItem(slot5Equipment)
 			endif
-			
+
 			// assign old data
 			call newCharacter.setShrine(oldShrine)
 			call newCharacter.setShowCharactersScheme(oldShowCharactersScheme)
 			call newCharacter.setShowWorker(oldShowWorker)
 			call newCharacter.setCameraDistance(oldCameraDistance)
 			call newCharacter.setView(oldViewEnabled)
-			
+
 			// select and pan
 			call newCharacter.panCameraSmart()
 			call newCharacter.select(false)
-			
+
 			call tokenizer.destroy()
 		endmethod
-		
+
 		private static method triggerConditionCharacterIsMovable takes nothing returns boolean
 			return ACharacter.playerCharacter(GetTriggerPlayer()) != 0 and ACharacter.playerCharacter(GetTriggerPlayer()).isMovable()
 		endmethod
-		
+
 		private static method triggerActionSave takes nothing returns nothing
 			local string saveCode = thistype.encodePlayerCharacter(GetTriggerPlayer())
 			call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 999999.0, saveCode)
 			call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 999999.0, tre("Die Datei \"logs\\TPoF.txt\" in Ihrem Warcraft-III-Verzeichnis enthält den Save-Code.", "The file \"logs\\TPoF.txt\" in your Warcraft III directory contains the save code."))
-			
+
 			// log into file
 			call PreloadGenClear()
 			call PreloadGenStart()
 			call Preload("Savecode: " + saveCode)
 			call PreloadGenEnd("TPoF.txt")
 		endmethod
-		
+
 		private static method triggerActionLoad takes nothing returns nothing
 			local string saveCode = SubString(GetEventPlayerChatString(), StringLength("-load"), StringLength(GetEventPlayerChatString()) + 1)
 			call thistype.decodePlayerCharacter(GetTriggerPlayer(), StringTrim(saveCode))
 			call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 5.0, tre("Charakter geladen.", "Loaded character."))
 		endmethod
-		
+
 		public static method onInit takes nothing returns nothing
 			local integer i
 			set thistype.m_chatSaveTrigger = CreateTrigger()
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call TriggerRegisterPlayerChatEvent(thistype.m_chatSaveTrigger, Player(i), "-save", true)
 				set i = i + 1
 			endloop
 			call TriggerAddCondition(thistype.m_chatSaveTrigger, Condition(function thistype.triggerConditionCharacterIsMovable))
 			call TriggerAddAction(thistype.m_chatSaveTrigger, function thistype.triggerActionSave)
-			
+
 			set thistype.m_chatLoadTrigger = CreateTrigger()
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call TriggerRegisterPlayerChatEvent(thistype.m_chatLoadTrigger, Player(i), "-load", false)
 				set i = i + 1
 			endloop
@@ -254,5 +254,5 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 			call TriggerAddAction(thistype.m_chatLoadTrigger, function thistype.triggerActionLoad)
 		endmethod
 	endstruct
-	
+
 endlibrary

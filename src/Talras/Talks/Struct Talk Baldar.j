@@ -203,7 +203,7 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 			local thistype this = thistype.allocate(Npcs.baldar(), thistype.startPageAction)
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set this.m_gotOffer[i] = false
 				set this.m_lastRewardScore[i] = 0
 				set i = i + 1

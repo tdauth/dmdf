@@ -23,7 +23,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static ARealVector m_startY
 		private static ARealVector m_startFacing
 		private static AUnitVector m_units
-		private static integer array m_playerScore[12] /// \todo \ref MapData.maxPlayers
+		private static integer array m_playerScore[12] /// \todo \ref MapSettings.maxPlayers()
 		private static integer m_level = 0
 		private static unit m_winner
 		private static region m_region
@@ -43,6 +43,68 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		private static unit m_leonard
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Arena\"")
+
+		public static method isFree takes nothing returns boolean
+			debug call Print("Units size is " + I2S(thistype.m_units.size()))
+			return thistype.m_units.size() < thistype.maxUnits
+		endmethod
+
+		public static method addUnit takes unit usedUnit returns nothing
+			local player owner = GetOwningPlayer(usedUnit)
+			local integer i
+			local string title
+			call thistype.m_units.pushBack(usedUnit)
+			call SetUnitX(usedUnit, thistype.m_startX[thistype.m_units.backIndex()])
+			call SetUnitY(usedUnit, thistype.m_startY[thistype.m_units.backIndex()])
+			call SetUnitFacing(usedUnit, thistype.m_startFacing[thistype.m_units.backIndex()])
+			call IssueImmediateOrder(usedUnit, "stop") // prevent the unit from walking out of the arena
+			debug call Print("Stoping " + GetUnitName(usedUnit))
+			call SetUnitInvulnerable(usedUnit, true)
+			call PauseUnit(usedUnit, true)
+
+			if (Character.getCharacterByUnit(usedUnit) != 0) then
+				set title = GetPlayerName(owner)
+			else
+				set title = GetUnitName(usedUnit)
+			endif
+
+			if (not Character.isUnitCharacter(usedUnit) and GetOwningPlayer(usedUnit) == MapData.arenaPlayer) then
+				set thistype.m_level = GetUnitLevel(usedUnit)
+			endif
+
+			call LeaderboardAddItemBJ(owner, thistype.m_leaderboard, title + ":", thistype.playerScore(owner))
+			if (Character.getCharacterByUnit(usedUnit) == 0 and owner != MapData.arenaPlayer) then
+				call SetUnitOwner(usedUnit, MapData.arenaPlayer, true)
+			elseif (Character.getCharacterByUnit(usedUnit) != 0) then
+				call PanCameraToForPlayer(owner, GetUnitX(usedUnit), GetUnitY(usedUnit))
+				call ShowLeaderboardForPlayer(owner, thistype.m_leaderboard, true)
+			endif
+			if (thistype.m_units.size() == thistype.maxUnits) then
+				call thistype.startFight()
+			endif
+
+			call SetPlayerAllianceStateBJ(owner, MapData.arenaPlayer, bj_ALLIANCE_UNALLIED)
+			call SetPlayerAllianceStateBJ(MapData.arenaPlayer, owner, bj_ALLIANCE_UNALLIED)
+
+			set i = 0
+			loop
+				exitwhen (i == thistype.m_units.size())
+				if (Character.getCharacterByUnit(thistype.m_units[i]) != 0 and thistype.m_units[i] != usedUnit and GetOwningPlayer(thistype.m_units[i]) != owner) then
+					call SetPlayerAllianceStateBJ(owner, GetOwningPlayer(thistype.m_units[i]), bj_ALLIANCE_UNALLIED)
+					call SetPlayerAllianceStateBJ(GetOwningPlayer(thistype.m_units[i]), owner, bj_ALLIANCE_UNALLIED)
+				endif
+				set i = i + 1
+			endloop
+
+			set owner = null
+		endmethod
+
+		public static method addCharacter takes ACharacter character returns nothing
+			call thistype.addUnit(character.unit())
+			// auto select character, ready for the fight
+			call SelectUnitForPlayerSingle(character.unit(), character.player())
+			call character.displayMessage(ACharacter.messageTypeInfo, thistype.m_textEnter)
+		endmethod
 
 		/**
 		 * Hides the revival timer of a character. This is required since the revival is triggered automatically when the character dies.
@@ -116,7 +178,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 				 */
 				set i = 0
 				loop
-					exitwhen (i == MapData.maxPlayers)
+					exitwhen (i == MapSettings.maxPlayers())
 					if (i != GetPlayerId(owner)) then
 						if (GetPlayerController(owner) == MAP_CONTROL_COMPUTER or GetPlayerController(Player(i)) == MAP_CONTROL_COMPUTER) then
 							call SetPlayerAllianceStateBJ(owner, Player(i), bj_ALLIANCE_ALLIED_ADVUNITS)
@@ -342,7 +404,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			local integer i
 			local integer missing
 			if (ACharacter.isUnitCharacter(GetTriggerUnit())) then
-				if (thistype.isFree.evaluate()) then
+				if (thistype.isFree()) then
 					set unitsInRect = AGroup.create()
 					call unitsInRect.addUnitsInRect(gg_rct_arena_pvp, Filter(function thistype.filterPvp))
 					call unitsInRect.units().pushBack(GetTriggerUnit())
@@ -350,7 +412,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 						set i = 0
 						loop
 							exitwhen (i == thistype.maxUnits)
-							call thistype.addCharacter.evaluate(ACharacter.getCharacterByUnit(unitsInRect.units()[i]))
+							call thistype.addCharacter(ACharacter.getCharacterByUnit(unitsInRect.units()[i]))
 							set i = i + 1
 						endloop
 					else
@@ -394,12 +456,12 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			local Character character = ACharacter.playerCharacter(GetOwningPlayer(soldUnit))
 			local unit arenaEnemy
 
-			if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and character != 0 and character.isMovable() and thistype.isFree.evaluate()) then
+			if (GetPlayerController(GetOwningPlayer(soldUnit)) == MAP_CONTROL_USER and character != 0 and character.isMovable() and thistype.isFree()) then
 				call thistype.showOpponentByUnitTypeId(GetUnitTypeId(soldUnit), false)
 				set arenaEnemy = CreateUnit(MapData.arenaPlayer, GetUnitTypeId(soldUnit), 0.0, 0.0, 0.0)
-				call Arena.addUnit.evaluate(arenaEnemy)
+				call Arena.addUnit(arenaEnemy)
 				set arenaEnemy = null
-				call Arena.addCharacter.evaluate(character)
+				call Arena.addCharacter(character)
 			debug else
 				debug call Print("No character!")
 			endif
@@ -448,7 +510,7 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			set thistype.m_units = AUnitVector.create()
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set thistype.m_playerScore[i] = 0
 				call SetPlayerAllianceStateBJ(Player(i), MapData.arenaPlayer, bj_ALLIANCE_ALLIED)
 				call SetPlayerAllianceStateBJ(MapData.arenaPlayer, Player(i), bj_ALLIANCE_ALLIED)
@@ -578,68 +640,6 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call EnableTrigger(thistype.m_leaveTrigger)
 			call thistype.refreshDamageTrigger()
 			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, thistype.m_textStartFight)
-		endmethod
-
-		public static method addUnit takes unit usedUnit returns nothing
-			local player owner = GetOwningPlayer(usedUnit)
-			local integer i
-			local string title
-			call thistype.m_units.pushBack(usedUnit)
-			call SetUnitX(usedUnit, thistype.m_startX[thistype.m_units.backIndex()])
-			call SetUnitY(usedUnit, thistype.m_startY[thistype.m_units.backIndex()])
-			call SetUnitFacing(usedUnit, thistype.m_startFacing[thistype.m_units.backIndex()])
-			call IssueImmediateOrder(usedUnit, "stop") // prevent the unit from walking out of the arena
-			debug call Print("Stoping " + GetUnitName(usedUnit))
-			call SetUnitInvulnerable(usedUnit, true)
-			call PauseUnit(usedUnit, true)
-
-			if (Character.getCharacterByUnit(usedUnit) != 0) then
-				set title = GetPlayerName(owner)
-			else
-				set title = GetUnitName(usedUnit)
-			endif
-
-			if (not Character.isUnitCharacter(usedUnit) and GetOwningPlayer(usedUnit) == MapData.arenaPlayer) then
-				set thistype.m_level = GetUnitLevel(usedUnit)
-			endif
-
-			call LeaderboardAddItemBJ(owner, thistype.m_leaderboard, title + ":", thistype.playerScore(owner))
-			if (Character.getCharacterByUnit(usedUnit) == 0 and owner != MapData.arenaPlayer) then
-				call SetUnitOwner(usedUnit, MapData.arenaPlayer, true)
-			elseif (Character.getCharacterByUnit(usedUnit) != 0) then
-				call PanCameraToForPlayer(owner, GetUnitX(usedUnit), GetUnitY(usedUnit))
-				call ShowLeaderboardForPlayer(owner, thistype.m_leaderboard, true)
-			endif
-			if (thistype.m_units.size() == thistype.maxUnits) then
-				call thistype.startFight()
-			endif
-
-			call SetPlayerAllianceStateBJ(owner, MapData.arenaPlayer, bj_ALLIANCE_UNALLIED)
-			call SetPlayerAllianceStateBJ(MapData.arenaPlayer, owner, bj_ALLIANCE_UNALLIED)
-
-			set i = 0
-			loop
-				exitwhen (i == thistype.m_units.size())
-				if (Character.getCharacterByUnit(thistype.m_units[i]) != 0 and thistype.m_units[i] != usedUnit and GetOwningPlayer(thistype.m_units[i]) != owner) then
-					call SetPlayerAllianceStateBJ(owner, GetOwningPlayer(thistype.m_units[i]), bj_ALLIANCE_UNALLIED)
-					call SetPlayerAllianceStateBJ(GetOwningPlayer(thistype.m_units[i]), owner, bj_ALLIANCE_UNALLIED)
-				endif
-				set i = i + 1
-			endloop
-
-			set owner = null
-		endmethod
-
-		public static method addCharacter takes ACharacter character returns nothing
-			call thistype.addUnit(character.unit())
-			// auto select character, ready for the fight
-			call SelectUnitForPlayerSingle(character.unit(), character.player())
-			call character.displayMessage(ACharacter.messageTypeInfo, thistype.m_textEnter)
-		endmethod
-
-		public static method isFree takes nothing returns boolean
-			debug call Print("Units size is " + I2S(thistype.m_units.size()))
-			return thistype.m_units.size() < thistype.maxUnits
 		endmethod
 
 		/**

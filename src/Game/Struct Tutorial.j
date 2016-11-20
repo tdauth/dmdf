@@ -32,13 +32,13 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 		endmethod
 
 		public method showShrineInfo takes nothing returns nothing
-			call this.m_character.displayHint(Format(tre("Schreine dienen der Wiederbelebung Ihres Charakters. Sobald Ihr Charakter stirbt, wird er nach einer Dauer von %1% Sekunden an seinem aktivierten Schrein wiederbelebt. Es kann immer nur ein Schrein aktiviert sein. Ein Schrein wird aktiviert, indem der Charakter dessen näheres Umfeld betritt. Dabei wird der zuvor aktivierte Schrein automatisch deaktiviert.", "Shrines serve the revival of your character. As soon as your character dies he will be revived automatically after a duration of %1% seconds at his enabled shrine. There can only be one shrine activated at once. A shrine is being activated when the character enters its near surroundings. Here, the previously activated shrine is disabled automatically.")).i(R2I(MapData.revivalTime)).result())
+			call this.m_character.displayHint(Format(tre("Schreine dienen der Wiederbelebung Ihres Charakters. Sobald Ihr Charakter stirbt, wird er nach einer Dauer von %1% Sekunden an seinem aktivierten Schrein wiederbelebt. Es kann immer nur ein Schrein aktiviert sein. Ein Schrein wird aktiviert, indem der Charakter dessen näheres Umfeld betritt. Dabei wird der zuvor aktivierte Schrein automatisch deaktiviert.", "Shrines serve the revival of your character. As soon as your character dies he will be revived automatically after a duration of %1% seconds at his enabled shrine. There can only be one shrine activated at once. A shrine is being activated when the character enters its near surroundings. Here, the previously activated shrine is disabled automatically.")).i(R2I(MapSettings.revivalTime())).result())
 			set this.m_hasEnteredShrine = true
 		endmethod
 
 		private static method triggerConditionKill takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			return GetKillingUnit() == this.character().unit() and this.isEnabled() and MapData.playerGivesXP.evaluate(GetOwningPlayer(GetTriggerUnit()))
+			return GetKillingUnit() == this.character().unit() and this.isEnabled() and MapSettings.playerGivesXP(GetOwningPlayer(GetTriggerUnit()))
 		endmethod
 
 		private static method triggerActionKill takes nothing returns nothing
@@ -202,7 +202,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Wiederbelebungs-Schreine", "Revival Shrines"))
-			call QuestSetDescription(whichQuest, Format(tre("Schreine dienen der Wiederbelebung des Charakters. Es kann immer nur ein Schrein aktiviert werden. An diesem Schrein wird der Charakter nach %1% Sekunden wiederbelebt, wenn er gestorben ist. Den aktiven Schrein erreicht man über das Symbol links unten oder mit F8. Zu allen erkundeten Schreinen kann sich der Charakter mit Hilfe der Spruchrolle des Totenreichs teleportieren.", "Shrines are for the revival of the character. There can only be one shrine activated all the time. At this shrine the character will be revived after %1% seconds when he died. The active shrine can be reached over the symbol at the left bottom or by F8. The character can teleport himself to all discovered shrines by using the Scroll of the Realm of the Dead.")).i(R2I(MapData.revivalTime)).result())
+			call QuestSetDescription(whichQuest, Format(tre("Schreine dienen der Wiederbelebung des Charakters. Es kann immer nur ein Schrein aktiviert werden. An diesem Schrein wird der Charakter nach %1% Sekunden wiederbelebt, wenn er gestorben ist. Den aktiven Schrein erreicht man über das Symbol links unten oder mit F8. Zu allen erkundeten Schreinen kann sich der Charakter mit Hilfe der Spruchrolle des Totenreichs teleportieren.", "Shrines are for the revival of the character. There can only be one shrine activated all the time. At this shrine the character will be revived after %1% seconds when he died. The active shrine can be reached over the symbol at the left bottom or by F8. The character can teleport himself to all discovered shrines by using the Scroll of the Realm of the Dead.")).i(R2I(MapSettings.revivalTime())).result())
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNResStone.blp")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Die magische Rune der Wiederbelebungsschreine ermöglicht den Teleport zu einem erkundeten Schrein.", "The Magical Rune of the Revival Shrines allows teleporting to a discovered shrine."))
@@ -226,7 +226,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Erfahrung", "Experience"))
-			call QuestSetDescription(whichQuest, Format(tre("Die maximale Stufe ist %1%. Auf Stufe %2% und Stufe %3% kann jeweils eine Ultimate-Fähigkeit erlernt werden. Erfahrung vom Töten von Unholden wird gleichmäßig auf alle Charaktere in der gesamten Karte verteilt. Aufträge geben weitaus mehr Erfahrung als das Töten von Unholden.", "The maximum level is %1%. At level %2% and level %3% each there can be learned an ultimate ability. Experience from killing of creeps will be distributed equally to the characters in the whole map. Quests give much more experience than the killing of creeps.")).i(MapData.maxLevel).i(Grimoire.ultimate0Level).i(Grimoire.ultimate1Level).result())
+			call QuestSetDescription(whichQuest, Format(tre("Die maximale Stufe ist %1%. Auf Stufe %2% und Stufe %3% kann jeweils eine Ultimate-Fähigkeit erlernt werden. Erfahrung vom Töten von Unholden wird gleichmäßig auf alle Charaktere in der gesamten Karte verteilt. Aufträge geben weitaus mehr Erfahrung als das Töten von Unholden.", "The maximum level is %1%. At level %2% and level %3% each there can be learned an ultimate ability. Experience from killing of creeps will be distributed equally to the characters in the whole map. Quests give much more experience than the killing of creeps.")).i(MapSettings.maxLevel()).i(Grimoire.ultimate0Level).i(Grimoire.ultimate1Level).result())
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNStatUp.blp")
 
 
@@ -284,7 +284,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 		public static method printTip takes string tip returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character(Character.playerCharacter(Player(i))).tutorial().isEnabled()) then
 					call Character(Character.playerCharacter(Player(i))).displayHint(tip)
 				endif

@@ -31,9 +31,9 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		private static player m_baldarsUser
 		private static integer m_haldarMembers
 		private static integer m_baldarMembers
-		private static boolean array m_playerHasJoinedHaldar[12] /// \todo \ref MapData.maxPlayers
-		private static boolean array m_playerHasJoinedBaldar[12] /// \todo \ref MapData.maxPlayers
-		private static integer array m_playerScore[12] /// \todo \ref MapData.maxPlayers
+		private static boolean array m_playerHasJoinedHaldar[12] /// \todo \ref MapSettings.maxPlayers()
+		private static boolean array m_playerHasJoinedBaldar[12] /// \todo \ref MapSettings.maxPlayers()
+		private static integer array m_playerScore[12] /// \todo \ref MapSettings.maxPlayers()
 		private static leaderboard m_leaderboard
 		private static trigger m_enterTrigger
 		private static trigger m_leaveTrigger
@@ -209,7 +209,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		private static method setCharacterAllianceStateToOthers takes Character character, boolean haldar returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				// Don't change alliance to the owner of the character himself.
 				if (Player(i) != character.player()) then
 					if (thistype.m_playerHasJoinedHaldar[i] and haldar) then
@@ -253,7 +253,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 		private static method resetCharacterAllianceStateToOthers takes Character character returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				// Don't change alliance to the owner of the character himself.
 				if (Player(i) != character.player()) then
 					if (character.player() == MAP_CONTROL_COMPUTER or GetPlayerController(Player(i)) == MAP_CONTROL_COMPUTER) then
@@ -541,7 +541,7 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, thistype.m_haldarsUser, bj_ALLIANCE_UNALLIED)
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call SetPlayerAllianceStateBJ(Player(i), thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
 				call SetPlayerAllianceStateBJ(Player(i), thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
 				call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, Player(i), bj_ALLIANCE_NEUTRAL)
@@ -550,19 +550,19 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			endloop
 
 			/*
-			 * It is important to set these relationship neutral since the Imps of the quest "War" are from player MapData.alliedPlayer.
+			 * It is important to set these relationship neutral since the Imps of the quest "War" are from player MapSettings.alliedPlayer().
 			 */
-			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapData.alliedPlayer, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapSettings.alliedPlayer(), bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapSettings.alliedPlayer(), bj_ALLIANCE_NEUTRAL)
 
-			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(MapData.alliedPlayer, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapSettings.alliedPlayer(), thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapSettings.alliedPlayer(), thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
 
-			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapData.neutralPassivePlayer, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(thistype.m_haldarsUser, MapSettings.neutralPassivePlayer(), bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(thistype.m_baldarsUser, MapSettings.neutralPassivePlayer(), bj_ALLIANCE_NEUTRAL)
 
-			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
-			call SetPlayerAllianceStateBJ(MapData.neutralPassivePlayer, thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapSettings.neutralPassivePlayer(), thistype.m_haldarsUser, bj_ALLIANCE_NEUTRAL)
+			call SetPlayerAllianceStateBJ(MapSettings.neutralPassivePlayer(), thistype.m_baldarsUser, bj_ALLIANCE_NEUTRAL)
 
 			call SetPlayerColor(thistype.m_haldarsUser, PLAYER_COLOR_LIGHT_GRAY)
 			call SetPlayerColor(thistype.m_baldarsUser, ConvertPlayerColor(12)) // black

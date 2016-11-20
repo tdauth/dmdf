@@ -106,7 +106,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 			local integer i = 0
 			loop
 				exitwhen (i == this.m_traps.size())
-				call CreateUnit(MapData.alliedPlayer, 'n02W', GetLocationX(this.m_traps[i]), GetLocationY(this.m_traps[i]), 0.0)
+				call CreateUnit(MapSettings.alliedPlayer(), 'n02W', GetLocationX(this.m_traps[i]), GetLocationY(this.m_traps[i]), 0.0)
 				call RemoveLocation(this.m_traps[i])
 				set this.m_traps[i] = null
 				set i = i + 1

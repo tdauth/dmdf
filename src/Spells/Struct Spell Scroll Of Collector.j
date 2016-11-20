@@ -2,7 +2,7 @@ library StructSpellsSpellScrollOfCollector requires Asl
 
 	struct SpellScrollOfCollector extends ASpell
 		public static constant integer abilityId = 'A133'
-		private static thistype array m_spell[12] /// TODO MapData.maxPlayers
+		private static thistype array m_spell[12] /// TODO MapSettings.maxPlayers()
 		/// Indicates that at least one item has been found.
 		private boolean m_foundOne
 

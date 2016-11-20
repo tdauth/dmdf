@@ -11,7 +11,7 @@ library ModuleVideosVideo
 		 * This method should be called for every video in the map initialization process.
 		 */
 		public static method initVideo takes nothing returns nothing
-			set thistype.m_video = thistype.create.evaluate()
+			set thistype.m_video = thistype.create()
 		endmethod
 
 		/**

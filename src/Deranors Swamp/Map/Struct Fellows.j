@@ -20,7 +20,6 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_wigberht.setRevivalTitle(tre("Wigberht", "Wigberht"))
 			call thistype.m_wigberht.setRevivalMessage(tre("Vorwärts!", "Forward!"))
 			call thistype.m_wigberht.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_wigberht.setRevivalTime(MapData.revivalTime)
 			call thistype.m_wigberht.addAbility('A0N5')
 			call thistype.m_wigberht.addAbility('A05F')
 			call thistype.m_wigberht.addAbility('A05I')
@@ -32,7 +31,6 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_ricman.setRevivalTitle(tre("Ricman", "Ricman"))
 			call thistype.m_ricman.setRevivalMessage(tre("Ihr Hundesöhne, mich besiegt man nicht so leicht!", "You bastards, you do not defeat me that easy!"))
 			call thistype.m_ricman.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_ricman.setRevivalTime(MapData.revivalTime)
 			call thistype.m_ricman.addAbility('A19M')
 			call thistype.m_ricman.addAbility('A05G')
 			call thistype.m_ricman.addAbility('A05J')
@@ -44,7 +42,6 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_dragonSlayer.setRevivalMessage(tre("Für das Königreich der Hochelfen!", "For the kingdom of the high elves!"))
 			call thistype.m_dragonSlayer.setRevival(true)
 			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_dragonSlayer.setRevivalTime(MapData.revivalTime)
 			call thistype.m_dragonSlayer.addAbility('A18T')
 			call thistype.m_dragonSlayer.addAbility('A0PW')
 			call thistype.m_dragonSlayer.addAbility('A09P')

@@ -174,7 +174,7 @@ library StructSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
 		private static method onInit takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call SetPlayerAbilityAvailable(Player(i), thistype.abilityId, false)
 				set i = i + 1
 			endloop

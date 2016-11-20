@@ -38,7 +38,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
 		public static method init takes nothing returns nothing
 			// player should look like neutral passive
-			call SetPlayerColor(MapData.neutralPassivePlayer, ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
+			call SetPlayerColor(MapSettings.neutralPassivePlayer(), ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
 
 			call Shrines.init()
 			call NewOpLimit(function SpawnPoints.init)

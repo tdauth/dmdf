@@ -11,7 +11,7 @@ library StructSpellsSpellFetteBeute requires Asl, StructGameSpell
 			local effect whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Transmute\\PileofGold.mdl", this.character().unit(), "overhead")
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					call Bounty(Player(i), GetUnitX(Character.playerCharacter(Player(i)).unit()), GetUnitY(Character.playerCharacter(Player(i)).unit()), thistype.gold)
 					call SetPlayerState(Player(i), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(Player(i), PLAYER_STATE_RESOURCE_GOLD) + thistype.gold)

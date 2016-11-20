@@ -166,6 +166,10 @@ RoutineHarvest=0,ARoutine,Routines.harvest(),"Routine Harvest"
 // Value 1+: argument types
 // Note that the first argument is always a `trigger`, and is excluded here
 
+TriggerRegisterMapInitSettingsEvent=1
+_TriggerRegisterMapInitSettingsEvent_Defaults=
+_TriggerRegisterMapInitSettingsEvent_Category=TC_TPOF_MAP
+
 TriggerRegisterMapInitEvent=1
 _TriggerRegisterMapInitEvent_Defaults=
 _TriggerRegisterMapInitEvent_Category=TC_TPOF_MAP

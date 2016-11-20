@@ -27,7 +27,7 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			set this.m_actorDragonSlayer = this.unitActor(this.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_deranor_dragon_slayer)
 			call SetUnitOwner(this.m_actorDragonSlayer, Player(PLAYER_NEUTRAL_PASSIVE), false)
-			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapData.alliedPlayer))
+			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapSettings.alliedPlayer()))
 			call SetUnitFacing(this.m_actorDragonSlayer, 270.0)
 			call ShowUnit(this.m_actorDragonSlayer, false)
 			call IssueImmediateOrder(this.m_actorDragonSlayer, "stop")
@@ -156,7 +156,7 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
-			call this.setActorOwner(MapData.neutralPassivePlayer)
+			call this.setActorOwner(MapSettings.neutralPassivePlayer())
 
 			return this
 		endmethod

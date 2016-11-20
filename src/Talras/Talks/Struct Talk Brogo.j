@@ -6,8 +6,8 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 		private static constant integer maxCats = 5
 		// members
 		private AUnitVector m_cats
-		private integer array m_playerCatCount[12] /// @todo @member MapData.maxPlayers, vJass bug
-		private boolean array m_playerHasTalkedTo[12] /// @todo @member MapData.maxPlayers, vJass bug
+		private integer array m_playerCatCount[12] /// @todo @member MapSettings.maxPlayers(), vJass bug
+		private boolean array m_playerHasTalkedTo[12] /// @todo @member MapSettings.maxPlayers(), vJass bug
 		private AInfo m_hi
 		private AInfo m_hereIsACat
 
@@ -170,7 +170,7 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 			// members
 			set this.m_cats = AUnitVector.create()
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set this.m_playerCatCount[i] = 0
 				set this.m_playerHasTalkedTo[i] = false
 				set i = i + 1

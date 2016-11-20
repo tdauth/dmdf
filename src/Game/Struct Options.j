@@ -175,7 +175,7 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 		public stub method onTrigger takes nothing returns nothing
 			local Character character = this.spellbook().character()
 
-			if (MapData.mapName != "WM") then
+			if (MapSettings.mapName() != "WM") then
 				call MapChanger.changeMap.evaluate("WM")
 			else
 				call character.displayMessage(Character.messageTypeError, tre("Sie sehen bereits die Weltkarte.", "You are already viewing the world map."))

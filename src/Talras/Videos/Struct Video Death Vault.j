@@ -246,7 +246,7 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
-			call this.setActorOwner(MapData.neutralPassivePlayer)
+			call this.setActorOwner(MapSettings.neutralPassivePlayer())
 
 			return this
 		endmethod

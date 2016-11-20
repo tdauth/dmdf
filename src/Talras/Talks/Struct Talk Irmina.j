@@ -7,7 +7,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		private static constant integer purificationPotion = 'I01V'
 		private static constant integer characterKey = 0
 		private static constant integer potionKey = 1
-		private timer array m_potionTimer[12] // MapData.maxPlayers
+		private timer array m_potionTimer[12] // MapSettings.maxPlayers()
 
 		implement Talk
 

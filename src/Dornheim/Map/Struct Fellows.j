@@ -18,7 +18,6 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 			call thistype.m_ralph.setRevivalTitle(tre("Ralph", "Ralph"))
 			call thistype.m_ralph.setRevivalMessage(tre("Die frische Luft hier draußen tut mir gut!", "The fresh air outside is good for me!"))
 			call thistype.m_ralph.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_ralph.setRevivalTime(MapData.revivalTime)
 		endmethod
 
 		public static method ralph takes nothing returns Fellow

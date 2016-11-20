@@ -8,12 +8,12 @@ library StructSpellsSpellRaid requires Asl, StructGameClasses, StructGameSpell
 		public static constant integer classSelectionGrimoireAbilityId = 'A1N8'
 		public static constant integer maxLevel = 5
 		private static itempool array m_itemPools[5]
-		
+
 		private method levelItemPool takes nothing returns itempool
 			// prevent that really bad items are placed so make between max level and max level - 2
 			return thistype.m_itemPools[GetRandomInt(IMaxBJ(0, this.level() - 3), this.level() - 1)]
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 /*
 			CreateItemPool           takes nothing returns itempool
@@ -28,7 +28,7 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 			local item whichItem
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					set whichItem = PlaceRandomItem(this.levelItemPool(), GetUnitX(ACharacter.playerCharacter(Player(i)).unit()), GetUnitY(ACharacter.playerCharacter(Player(i)).unit()))
 					call SetItemPlayer(whichItem, Player(i), true)
@@ -52,10 +52,10 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 
 		public method onDestroy takes nothing returns nothing
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			// TODO fill more items
-			
+
 			// level 1 items
 			set thistype.m_itemPools[0] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I016', 1.0)
@@ -66,7 +66,7 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I01K', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I01L', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[0], 'I047', 1.0)
-			
+
 			// level 2 items
 			set thistype.m_itemPools[1] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I03O', 1.0)
@@ -76,7 +76,7 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I05L', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I00D', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[1], 'I049', 1.0)
-			
+
 			// level 3 items
 			set thistype.m_itemPools[2] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I057', 1.0)
@@ -86,7 +86,7 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I00B', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I00C', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[2], 'I041', 1.0)
-			
+
 			// level 4 items
 			set thistype.m_itemPools[3] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I00F', 1.0)
@@ -96,7 +96,7 @@ native ChooseRandomItemEx       takes itemtype whichType, integer level returns 
 			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I04N', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I045', 1.0)
 			call ItemPoolAddItemType(thistype.m_itemPools[3], 'I024', 1.0)
-			
+
 			// level 5 items
 			set thistype.m_itemPools[4] = CreateItemPool()
 			call ItemPoolAddItemType(thistype.m_itemPools[4], 'I04Q', 1.0)

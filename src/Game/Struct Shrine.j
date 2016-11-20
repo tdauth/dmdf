@@ -16,8 +16,9 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 		 * Player units are created on the corresponding shrine of the player's character.
 		 * They should be classified as worker to enable the worker button.
 		 */
-		private static unit array m_playerUnits[12] // TODO MapData.maxPlayers
+		private static unit array m_playerUnits[12] // TODO MapSettings.maxPlayers()
 		private static AIntegerVector m_shrines = 0
+		private static trigger m_hintTrigger = null
 
 		public method setUnit takes unit whichUnit returns nothing
 			set this.m_unit = whichUnit
@@ -38,7 +39,7 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 			endif
 
 			set revivalLoc = GetUnitLoc(this.unit())
-			set playerUnitLoc = PolarProjectionBJ(revivalLoc, 50.0, GetPlayerId(character.player()) * 360 / MapData.maxPlayers)
+			set playerUnitLoc = PolarProjectionBJ(revivalLoc, 50.0, GetPlayerId(character.player()) * 360 / MapSettings.maxPlayers())
 			call character.options().moveTo(GetLocationX(playerUnitLoc), GetLocationY(playerUnitLoc))
 			set thistype.m_playerUnits[GetPlayerId(character.player())] = CreateUnitAtLoc(character.player(), thistype.playerUnitId, playerUnitLoc, 0.0)
 			call RemoveLocation(revivalLoc)
@@ -51,15 +52,15 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 			call SetUnitVertexColor(thistype.m_playerUnits[GetPlayerId(character.player())], GetPlayerColorRed(GetPlayerColor(character.player())), GetPlayerColorGreen(GetPlayerColor(character.player())),  GetPlayerColorBlue(GetPlayerColor(character.player())), 255)
 		endmethod
 
-		public stub method onEnter takes Character character returns nothing
-			// call the super method to enable the shrine for the character
-			call super.onEnter(character)
+		private static method triggerConditionHint takes nothing returns boolean
+			local Character character = Character.getCharacterByUnit(GetTriggerUnit())
 			/*
-			 * The first time enabling a shrine shows a hint if the tutorial is enabled.
+			 * The first time entering a shrine rect it shows a hint if the tutorial is enabled.
 			 */
-			if (not Game.restoreCharacters.evaluate() and character.tutorial().isEnabled() and not character.tutorial().hasEnteredShrine()) then
+			if (character != 0 and not Game.restoreCharacters.evaluate() and character.tutorial().isEnabled() and not character.tutorial().hasEnteredShrine()) then
 				call character.tutorial().showShrineInfo()
 			endif
+			return false
 		endmethod
 
 		public static method create takes unit whichUnit, destructable usedDestructable, rect discoverRect, rect revivalRect, real facing returns thistype
@@ -67,10 +68,18 @@ library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
 			local thistype this = thistype.allocate(usedDestructable, discoverRegion, revivalRect, facing)
 			call RegionAddRect(discoverRegion, discoverRect)
 			set this.m_unit = whichUnit
+
 			if (thistype.m_shrines == 0) then
 				set thistype.m_shrines = AIntegerVector.create()
 			endif
 			call thistype.m_shrines.pushBack(this)
+
+			if (thistype.m_hintTrigger == null) then
+				set thistype.m_hintTrigger = CreateTrigger()
+				call TriggerAddCondition(thistype.m_hintTrigger, function thistype.triggerConditionHint)
+			endif
+			call TriggerRegisterEnterRectSimple(thistype.m_hintTrigger, discoverRect)
+
 			return this
 		endmethod
 

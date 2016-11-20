@@ -91,10 +91,10 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 			loop
 				exitwhen (i == thistype.maxImps)
 				if (this.m_imps.units().size() < i + 1) then
-					call this.m_imps.units().pushBack(CreateUnit(MapData.alliedPlayer, 'u00C', GetRectCenterX(gg_rct_quest_war_imp_spawn),  GetRectCenterY(gg_rct_quest_war_imp_spawn), 180.0))
+					call this.m_imps.units().pushBack(CreateUnit(MapSettings.alliedPlayer(), 'u00C', GetRectCenterX(gg_rct_quest_war_imp_spawn),  GetRectCenterY(gg_rct_quest_war_imp_spawn), 180.0))
 					set spawned = true
 				elseif (IsUnitDeadBJ(this.m_imps.units()[i])) then
-					set this.m_imps.units()[i] = CreateUnit(MapData.alliedPlayer, 'u00C', GetRectCenterX(gg_rct_quest_war_imp_spawn),  GetRectCenterY(gg_rct_quest_war_imp_spawn), 180.0)
+					set this.m_imps.units()[i] = CreateUnit(MapSettings.alliedPlayer(), 'u00C', GetRectCenterX(gg_rct_quest_war_imp_spawn),  GetRectCenterY(gg_rct_quest_war_imp_spawn), 180.0)
 					set spawned = true
 				endif
 				set i = i + 1
@@ -121,7 +121,7 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 			set i = 0
 			loop
 				exitwhen (i == thistype.maxImps)
-				call this.m_imps.units().pushBack(CreateUnit(MapData.alliedPlayer, 'u00C', GetRectCenterX(gg_rct_quest_war_imp_spawn),  GetRectCenterY(gg_rct_quest_war_imp_spawn), 180.0))
+				call this.m_imps.units().pushBack(CreateUnit(MapSettings.alliedPlayer(), 'u00C', GetRectCenterX(gg_rct_quest_war_imp_spawn),  GetRectCenterY(gg_rct_quest_war_imp_spawn), 180.0))
 				set i = i + 1
 			endloop
 			call Game.setAlliedPlayerAlliedToAllCharacters()
@@ -207,14 +207,14 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 			call PauseUnit(whichUnit, false)
 			call SetUnitPathing(whichUnit, true)
 			call IssueImmediateOrder(whichUnit, "halt")
-			call SetUnitOwner(whichUnit, MapData.neutralPassivePlayer, true)
+			call SetUnitOwner(whichUnit, MapSettings.neutralPassivePlayer(), true)
 			call SetUnitInvulnerable(whichUnit, true)
 		endmethod
 
 		private static method timerFunctionSpawnWeaponCart takes nothing returns nothing
 			local thistype this = thistype.quest()
 			if (IsUnitDeadBJ(this.m_weaponCart)) then
-				set this.m_weaponCart = CreateUnit(MapData.alliedPlayer, 'h020', GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 0.0)
+				set this.m_weaponCart = CreateUnit(MapSettings.alliedPlayer(), 'h020', GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 0.0)
 				call this.displayUpdateMessage(tre("Eine neue Waffenlieferung steht zur Verfügung.", "A new supply of weapons is available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 5.0, 255, 255, 255, true)
 
@@ -234,7 +234,7 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 			call this.displayUpdateMessage(tre("Wieland's Waffen sind fertig.", "Wieland's weapons are finished."))
 			call this.displayUpdate()
 
-			set this.m_weaponCart = CreateUnit(MapData.alliedPlayer, 'h020', GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 0.0)
+			set this.m_weaponCart = CreateUnit(MapSettings.alliedPlayer(), 'h020', GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 0.0)
 			set this.m_weaponCartSpawnTimer = CreateTimer()
 			call TimerStart(this.m_weaponCartSpawnTimer, QuestWar.respawnTime, true, function thistype.timerFunctionSpawnWeaponCart)
 			call Game.setAlliedPlayerAlliedToAllCharacters()

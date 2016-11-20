@@ -2,7 +2,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 	struct TalkTanka extends Talk
 		private static constant integer rewardGold = 30
-		private integer array m_hints[12] /// @todo @member MapData.maxPlayers, vJass bug
+		private integer array m_hints[12] /// @todo @member MapSettings.maxPlayers(), vJass bug
 
 		implement Talk
 
@@ -327,7 +327,7 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 			local thistype this = thistype.allocate(gg_unit_n023_0011, thistype.startPageAction)
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set this.m_hints[i] = 0
 				set i = i + 1
 			endloop

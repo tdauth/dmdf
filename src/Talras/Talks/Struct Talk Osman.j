@@ -334,7 +334,7 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 			local thistype this = thistype.allocate(Npcs.osman(), thistype.startPageAction)
 			local integer i = 0
 			loop
-			exitwhen (i == MapData.maxPlayers)
+			exitwhen (i == MapSettings.maxPlayers())
 				set this.m_wasOffended[i] = false
 				set this.m_gaveHealPotion[i] = false
 				set i = i + 1

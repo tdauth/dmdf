@@ -98,7 +98,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 			call SetUnitPathing(whichUnit, false)
 			call UnitAddAbility(whichUnit, 'Aloc') // makes the unit unselectable and disables collision
 			debug call Print("Disable unit pathing of unit " + GetUnitName(whichUnit))
-			call SetUnitOwner(whichUnit, MapData.neutralPassivePlayer, true)
+			call SetUnitOwner(whichUnit, MapSettings.neutralPassivePlayer(), true)
 			call IssueImmediateOrder(whichUnit, "stop")
 			call SetUnitInvulnerable(whichUnit, true)
 		endmethod

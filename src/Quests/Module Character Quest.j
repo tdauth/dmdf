@@ -7,7 +7,7 @@ library ModuleQuestsCharacterQuest requires Asl, StructGameCharacter
 	 * \note Use \ref ModuleQuest for shared quests instead.
 	 */
 	module CharacterQuest
-		private static thistype array m_characterQuest[12] /// @todo MapData.maxPlayers
+		private static thistype array m_characterQuest[12] /// @todo MapSettings.maxPlayers()
 
 		/**
 		 * Initializes all character quest instances for all playing characters.
@@ -17,9 +17,9 @@ library ModuleQuestsCharacterQuest requires Asl, StructGameCharacter
 		public static method initQuest takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
-					set thistype.m_characterQuest[i] = thistype.create.evaluate(ACharacter.playerCharacter(Player(i)))
+					set thistype.m_characterQuest[i] = thistype.create(ACharacter.playerCharacter(Player(i)))
 					// use the required quest column for information only
 					call thistype.m_characterQuest[i].setIsRequired(false)
 					call Character(ACharacter.playerCharacter(Player(i))).addQuest(thistype.m_characterQuest[i])

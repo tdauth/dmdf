@@ -5,7 +5,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 	 * Provides a hero revival timer and disables routine and talk (talk is optional).
 	 * Besides it shares control with a single player or all players.
 	 * Fellow data is directly assigned to its corresponding unit and can therefore be got by static methods which do only require a unit parameter (\ref Fellow#getByUnit).
-	 * When fellows are added to any fellowship their owner is changed to \ref MapData.alliedPlayer.
+	 * When fellows are added to any fellowship their owner is changed to \ref MapSettings.alliedPlayer().
 	 * \note Use \ref setDisableSellings() to remove sell ability while fellow is in fellowship. This is oftenly necessary to make all unit abilities of the fellow usable for any controlling user.
 	 * \todo If talks are still enabled it should only be available for shared players!
 	 * \note Fellow units must be heroes for proper revival.
@@ -161,7 +161,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				debug call Print("Share to all characters.")
 				/// \todo If player is in arena this won't work.
 				call Game.setAlliedPlayerAlliedToAllCharacters()
-				call SetUnitOwner(this.m_unit, MapData.alliedPlayer, true)
+				call SetUnitOwner(this.m_unit, MapSettings.alliedPlayer(), true)
 			endif
 
 			call SetUnitInvulnerable(this.m_unit, false)
@@ -219,7 +219,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 		/**
 		 * Shares the fellow with all playing players who own a character.
-		 * They can control the fellow unit together after it is shared with them since it is owned by the \ref MapData.alliedPlayer.
+		 * They can control the fellow unit together after it is shared with them since it is owned by the \ref MapSettings.alliedPlayer().
 		 */
 		public method shareWithAll takes nothing returns nothing
 			call this.shareWith(0)
@@ -232,7 +232,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			local boolean found = false
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers or found)
+				exitwhen (i == MapSettings.maxPlayers() or found)
 				if (Character.playerCharacter(Player(i)) != 0 and Character.playerCharacter(Player(i)).revival() != 0) then
 					call ReviveHero(this.m_unit, Character.playerCharacter(Player(i)).revival().x(), Character.playerCharacter(Player(i)).revival().y(), showEffect)
 
@@ -272,7 +272,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call this.reviveAtActiveShrine(false)
 			endif
 
-			call SetUnitOwner(this.m_unit, MapData.neutralPassivePlayer, true)
+			call SetUnitOwner(this.m_unit, MapSettings.neutralPassivePlayer(), true)
 			call SetUnitInvulnerable(this.m_unit, true)
 			call SetUnitLifePercentBJ(this.m_unit, 100.0)
 
@@ -479,7 +479,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_revivalTitle = GetUnitName(whichUnit)
 			set this.m_revivalMessage = null
 			set this.m_revivalSound = null
-			set this.m_revivalTime = MapData.revivalTime
+			set this.m_revivalTime = MapSettings.revivalTime()
 			set this.m_disableSellings = false
 			set this.m_abilities = AIntegerVector.create()
 			// construction members

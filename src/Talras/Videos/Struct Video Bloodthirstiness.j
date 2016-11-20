@@ -16,7 +16,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 			set this.m_actorDragonSlayer = this.unitActor(this.saveUnitActor(Npcs.dragonSlayer()))
 			call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_bloodthirstiness_dragon_slayer)
 			call SetUnitOwner(this.m_actorDragonSlayer, Player(PLAYER_NEUTRAL_PASSIVE), false)
-			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapData.alliedPlayer))
+			call SetUnitColor(this.m_actorDragonSlayer, GetPlayerColor(MapSettings.alliedPlayer()))
 
 			set this.m_actorDeacon = this.unitActor(this.createUnitActorAtRect(Player(PLAYER_NEUTRAL_PASSIVE), UnitTypes.deacon, gg_rct_video_bloodthirstiness_deacon, 0.0))
 
@@ -147,7 +147,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
-			call this.setActorOwner(MapData.neutralPassivePlayer)
+			call this.setActorOwner(MapSettings.neutralPassivePlayer())
 
 			return this
 		endmethod

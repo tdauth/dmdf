@@ -66,7 +66,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			 */
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					call Character(Character.playerCharacter(Player(i))).giveItem('I04A')
 					call Character(Character.playerCharacter(Player(i))).giveItem('I04B')
@@ -100,7 +100,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 			local integer i = 0
 			// drop some items as reward for every player
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					set whichItem = CreateItem('I04B', GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
 					call SetItemPlayer(whichItem, Player(i), true)

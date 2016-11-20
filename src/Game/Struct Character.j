@@ -312,8 +312,8 @@ endif
 		endmethod
 
 		public stub method onRevival takes nothing returns nothing
-			call SetUnitLifePercentBJ(this.unit(), MapData.revivalLifePercentage)
-			call SetUnitManaPercentBJ(this.unit(), MapData.revivalManaPercentage)
+			call SetUnitLifePercentBJ(this.unit(), 100.0)
+			call SetUnitManaPercentBJ(this.unit(), 100.0)
 		endmethod
 
 		private method hasRealSpellLevels takes nothing returns boolean
@@ -508,7 +508,7 @@ endif
 		public method displayFinalLevelToAllOthers takes string message returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0 and i != GetPlayerId(this.player())) then
 					call thistype(thistype.playerCharacter(Player(i))).displayFinalLevel(message)
 				endif
@@ -621,7 +621,7 @@ endif
 		private static method chatEmote takes player whichPlayer, string message returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Player(i) != whichPlayer) then
 					call DisplayTimedTextToPlayer(Player(i), 0.0, 0.0, 4.0, Format(message).p(whichPlayer).result())
 				endif
@@ -777,7 +777,7 @@ endif
 		public static method showCharactersSchemeToAll takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).showCharactersSchemeToPlayer()
 				endif
@@ -788,7 +788,7 @@ endif
 		public static method displayHintToAll takes string message returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).displayHint(message)
 				endif
@@ -799,7 +799,7 @@ endif
 		public static method displayUnitAcquiredToAll takes string unitName, string message returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).displayUnitAcquired(unitName, message)
 				endif
@@ -810,7 +810,7 @@ endif
 		public static method displayItemAcquiredToAll takes string itemName, string message returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).displayItemAcquired(itemName, message)
 				endif
@@ -821,7 +821,7 @@ endif
 		public static method displayAbilityAcquiredToAll takes string abilityName, string message returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).displayAbilityAcquired(abilityName, message)
 				endif
@@ -832,7 +832,7 @@ endif
 		public static method displayWarningToAll takes string message returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).displayWarning(message)
 				endif
@@ -843,7 +843,7 @@ endif
 		public static method displayDifficultyToAll takes string message returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).displayDifficulty(message)
 				endif
@@ -854,7 +854,7 @@ endif
 		public static method setViewForAll takes boolean enabled returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).setView(enabled)
 				endif
@@ -865,7 +865,7 @@ endif
 		public static method setTutorialForAll takes boolean enabled returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).tutorial().setEnabled.evaluate(enabled)
 				endif
@@ -876,7 +876,7 @@ endif
 		public static method addSkillGrimoirePointsToAll takes integer skillPoints returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (thistype.playerCharacter(Player(i)) != 0) then
 					call thistype(thistype.playerCharacter(Player(i))).grimoire().addSkillPoints.evaluate(skillPoints, true)
 				endif

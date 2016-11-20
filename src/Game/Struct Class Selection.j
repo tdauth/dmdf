@@ -78,7 +78,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 	endstruct
 
 	/**
-	 * Class selection allows change of class through abilities of the unit as well as displaying
+	 * \brief The class selection allows change of class through abilities of the unit as well as displaying
 	 * all available class spells in a spell book.
 	 * Besides it adds start items to the corresponding class.
 	 *
@@ -93,7 +93,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		private trigger m_spellPagesTrigger
 
 		private static trigger m_repickTrigger
-		private static RepickData array m_repickData[12] // TODO MapData.maxPlayers
+		private static RepickData array m_repickData[12] // TODO MapSettings.maxPlayers()
 		/// This flag indicates if the game has already started.
 		private static boolean m_gameStarted = false
 
@@ -103,7 +103,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		public static method displayMessageToAllPlayingUsers takes real time, string message, player excludingPlayer returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (GetPlayerSlotState(Player(i)) != PLAYER_SLOT_STATE_EMPTY and GetPlayerController(Player(i)) == MAP_CONTROL_USER and Player(i) != excludingPlayer) then
 					call DisplayTimedTextToPlayer(Player(i), 0.0, 0.0, time, message)
 				endif
@@ -121,10 +121,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			// Is no repick which means it is the first class selection in the beginning of the game.
 			if (not thistype.m_gameStarted) then
-				call SetHeroLevelBJ(character.unit(), MapData.startLevel, false)
-				debug call Print("Start level: " + I2S(MapData.startLevel))
+				call SetHeroLevelBJ(character.unit(), MapSettings.startLevel(), false)
+				debug call Print("Start level: " + I2S(MapSettings.startLevel()))
 				// Initial skill points depend on the map.
-				call character.grimoire().addSkillPoints.evaluate(MapData.startSkillPoints, true)
+				call character.grimoire().addSkillPoints(MapSettings.startSkillPoints(), true)
 				// Initial hero level
 				//call character.grimoire().setHeroLevel(GetHeroLevel(character.unit()))
 			endif
@@ -146,7 +146,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (i != GetPlayerId(this.player())) then
 					if (GetPlayerController(this.player()) == MAP_CONTROL_USER and GetPlayerSlotState(this.player()) == PLAYER_SLOT_STATE_PLAYING) then
 						call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_ALLIED_VISION)
@@ -201,7 +201,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call UnitAddAbility(character.unit(), 'A13E')
 			call UnitMakeAbilityPermanent(character.unit(), true, 'A13E')
 
-			call character.revival().setTime(MapData.revivalTime)
+			call character.revival().setTime(MapSettings.revivalTime())
 		endmethod
 
 		public static method createClassSpellsForCharacter takes ACharacter character, AClass class returns nothing
@@ -433,7 +433,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			// remove shared vision
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call SetPlayerAllianceStateBJ(this.player(), Player(i), bj_ALLIANCE_UNALLIED)
 				set i = i + 1
 			endloop
@@ -595,9 +595,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			// new OpLimit if possible
 			set classSelection = thistype.createClassSelectionForPlayerWithNewOpLimit.evaluate(whichPlayer)
-			call classSelection.setStartX(MapData.startX.evaluate(GetPlayerId(whichPlayer)))
-			call classSelection.setStartY(MapData.startY.evaluate(GetPlayerId(whichPlayer)))
-			call classSelection.setStartFacing(MapData.startFacing.evaluate(GetPlayerId(whichPlayer)))
+			call classSelection.setStartX(0.0)
+			call classSelection.setStartY(0.0)
+			call classSelection.setStartFacing(0.0)
 			call classSelection.setShowAttributes(true)
 			call classSelection.enableArrowKeySelection(false)
 			call classSelection.enableEscapeKeySelection(false)
@@ -630,7 +630,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set whichPlayer = Player(i)
 
 				if (GetPlayerSlotState(whichPlayer) != PLAYER_SLOT_STATE_EMPTY) then
@@ -690,7 +690,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call TriggerRegisterPlayerChatEvent(thistype.m_repickTrigger, Player(i), "-repick", true)
 				set i = i + 1
 			endloop

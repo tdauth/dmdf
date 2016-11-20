@@ -138,7 +138,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		private static method timerFunctionSpawnSupplyCart takes nothing returns nothing
 			local thistype this = thistype.quest()
 			if (IsUnitDeadBJ(this.m_supplyCart)) then
-				set this.m_supplyCart = CreateUnit(MapData.alliedPlayer, 'h022', GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 0.0)
+				set this.m_supplyCart = CreateUnit(MapSettings.alliedPlayer(), 'h022', GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 0.0)
 				call this.displayUpdateMessage(tre("Eine neue Nahrungslieferung steht zur Verfügung.", "A new supply of food is available."))
 				call PingMinimapEx(GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 5.0, 255, 255, 255, true)
 
@@ -152,7 +152,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 			call this.questItem(thistype.questItemMoveManfredsSupplyToTheCamp).setState(thistype.stateNew)
 			call this.displayUpdate()
 
-			set this.m_supplyCart = CreateUnit(MapData.alliedPlayer, 'h022', GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 0.0)
+			set this.m_supplyCart = CreateUnit(MapSettings.alliedPlayer(), 'h022', GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 0.0)
 			set this.m_supplyCartSpawnTimer = CreateTimer()
 			call TimerStart(this.m_supplyCartSpawnTimer, QuestWar.respawnTime, true, function thistype.timerFunctionSpawnSupplyCart)
 			call Game.setAlliedPlayerAlliedToAllCharacters()

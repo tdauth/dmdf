@@ -3,7 +3,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 	struct TalkRicman extends Talk
 
 		implement Talk
-		
+
 		private AInfo m_hi
 		private AInfo m_whoAreYou
 		private AInfo m_whatAreYouDoing
@@ -18,14 +18,14 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		private AInfo m_giveGold
 		private AInfo m_teachMe
 		private AInfo m_exit
-		
+
 		private AInfo m_teachMeFetteBeute
 		private AInfo m_teachMeNordischeWucht
 		private AInfo m_teachMeFirstMan
 		private AInfo m_teachMeBack
-		
+
 		/// Non-dragon slayers have to give Ricman gold until he teaches them spells.
-		private boolean array m_gaveGold[6] // TODO MapData.maxPlayers
+		private boolean array m_gaveGold[6] // TODO MapSettings.maxPlayers()
 
 		private method startPageAction takes ACharacter character returns nothing
 			if (this.infoHasBeenShownToCharacter(this.m_hi.index(), character) or not this.showInfo(this.m_hi.index(), character)) then
@@ -46,7 +46,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, false, tr("Ich doch nicht."), null)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Falls der Auftrag „Die Nordmänner“ noch nicht erhalten wurde)
 		private static method infoConditionWhoAreYou takes AInfo info, ACharacter character returns boolean
 			return QuestTheNorsemen.quest().isNotUsed()
@@ -58,11 +58,11 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, true, tr("Ich bin Ricman."), gg_snd_Ricman3)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		public method askedWhatAreYoDoing takes ACharacter character returns boolean
 			return this.infoHasBeenShownToCharacter(this.m_whatAreYouDoing.index(), character)
 		endmethod
-		
+
 		// (Falls der Auftrag „Die Nordmänner“ noch nicht erhalten wurde)
 		private static method infoConditionWhatAreDoingHere takes AInfo info, ACharacter character returns boolean
 			return QuestTheNorsemen.quest().isNotUsed()
@@ -110,11 +110,11 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		// Was werdet ihr nun tun?
 		private static method infoActionWhatAreYouGoingToDo takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Was werdet ihr nun tun?"), null)
-			// (Auftragsziel 2 des Auftrags „Die Nordmänner“ ist aktiv) 
+			// (Auftragsziel 2 des Auftrags „Die Nordmänner“ ist aktiv)
 			if (QuestTheNorsemen.quest().questItem(1).isNew()) then
 				call speech(info, character, true, tr("Wir, du meinst wir. Wir ziehen gemeinsam in den Kampf, sobald ihr bereit seid. Ich kann es gar nicht erwarten, die Hundesöhne zu schlachten."), gg_snd_Ricman14)
 				call speech(info, character, true, tr("Und falls ihr das Gemetzel überleben solltet, unterstützen wir den Herzog vermutlich noch eine Weile, damit er sich nicht in sein Seidengewand scheißt, der alte Hurenbock!"), gg_snd_Ricman15)
-			// (Auftragsziel 2 des Auftrags „Die Nordmänner“ ist abgeschlossen) 
+			// (Auftragsziel 2 des Auftrags „Die Nordmänner“ ist abgeschlossen)
 			elseif (QuestTheNorsemen.quest().questItem(1).isCompleted()) then
 				call speech(info, character, true, tr("Wie versprochen werden wir den Herzog unterstützen. Das bedeutet, wir werden unsere Zeit vorerst damit verbringen uns im Kampf zu üben."), gg_snd_Ricman11)
 			// (Auftrag „Der Weg nach Holzbruck“ ist abgeschlossen)
@@ -147,7 +147,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call QuestTheDragon.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Der gezähmte Drache“ ist abgeschlossen und Auftragsziel 2 ist aktiv)
 		private static method infoConditionSummonedDragon takes AInfo info, ACharacter character returns boolean
 			return QuestTheDragon.characterQuest(character).questItem(0).isCompleted() and QuestTheDragon.characterQuest(character).questItem(1).isNew()
@@ -167,7 +167,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call QuestTheDragon.characterQuest(character).displayState()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 3 des Auftrags „Der gezähmte Drache“ ist abgeschlossen und Auftragsziel 4 ist aktiv)
 		private static method infoConditionRideDragon takes AInfo info, ACharacter character returns boolean
 			return QuestTheDragon.characterQuest(character).questItem(2).isCompleted() and QuestTheDragon.characterQuest(character).questItem(3).isNew()
@@ -188,7 +188,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call QuestTheDragon.characterQuest(character).displayState()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 6 des Auftrags „Der gezähmte Drache“ ist aktiv, Charakter hat Dracheneier dabei)
 		private static method infoConditionDragonEggs takes AInfo info, ACharacter character returns boolean
 			return QuestTheDragon.characterQuest(character).questItem(5).isNew() and character.inventory().hasItemType('I03Z')
@@ -197,7 +197,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		// Hier sind einige Dracheneier.
 		private static method infoActionDragonEggs takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Hier sind einige Dracheneier."), null)
-			
+
 			call speech(info, character, true, tr("Bei den Göttern, das gibt es doch nicht! Du hast tatsächlich Dracheneier dabei! Weißt du eigentlich wie viel die Wert sind?"), gg_snd_Ricman30)
 			call speech(info, character, true, tr("Unbezahlbar sind die, das kann ich dir sagen. Pass auf, lass sie mich für dich verwahren. Ich gebe dir zum Dank auch eine wertvolle Belohnung."), gg_snd_Ricman31)
 			call speech(info, character, false, tr("Na gut, hier hast du sie."), null)
@@ -250,7 +250,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, true, tr("Klar, wenn du genügend Goldmünzen dabei hast."), gg_snd_Ricman39)
 			call info.talk().showRange(this.m_teachMeFetteBeute.index(), this.m_teachMeBack.index(), character)
 		endmethod
-		
+
 		// (Charakter ist kein Drachentöter, hat von den Fähigkeiten erfahren und noch nicht bestochen)
 		private static method infoConditionGiveGold takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
@@ -360,7 +360,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			local thistype this = thistype.allocate(Npcs.ricman(), thistype.startPageAction)
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set this.m_gaveGold[i] = false
 				set i = i + 1
 			endloop

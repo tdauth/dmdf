@@ -33,13 +33,13 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 			call SetUnitPositionRect(this.actor(), gg_rct_video_the_defense_of_talras_actor)
 
 			set this.m_warriors = AGroup.create()
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n01I', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n015', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n005', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n03H', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n01I', MapSettings.neutralPassivePlayer(), gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n015', MapSettings.neutralPassivePlayer(), gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n005', MapSettings.neutralPassivePlayer(), gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n03H', MapSettings.neutralPassivePlayer(), gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
 			set this.m_villager0 = this.m_warriors.units().back()
 			set this.m_villager1 = this.m_warriors.units()[this.m_warriors.units().size() - 2]
-			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n03F', MapData.neutralPassivePlayer, gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(3, 'n03F', MapSettings.neutralPassivePlayer(), gg_rct_video_the_defense_of_talras_warriors, 270), true, false)
 
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorRicman), this.m_warriors.units().front())
 			call SetUnitFacingToFaceUnit(this.unitActor(this.m_actorWigberht), this.unitActor(this.m_actorRicman))
@@ -130,7 +130,7 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
-			call this.setActorOwner(MapData.neutralPassivePlayer)
+			call this.setActorOwner(MapSettings.neutralPassivePlayer())
 
 			return this
 		endmethod

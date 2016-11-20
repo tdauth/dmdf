@@ -174,7 +174,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		private static method stateActionCompletedGatherAtTheCamp takes AQuestItem whichQuestItem returns nothing
 			local thistype this = thistype(whichQuestItem.quest())
 
-			call Npcs.initDararos(CreateUnit(MapData.alliedPlayer, 'H02F', GetRectCenterX(gg_rct_quest_the_defense_of_talras_dararos), GetRectCenterY(gg_rct_quest_the_defense_of_talras_dararos), 0.0))
+			call Npcs.initDararos(CreateUnit(MapSettings.alliedPlayer(), 'H02F', GetRectCenterX(gg_rct_quest_the_defense_of_talras_dararos), GetRectCenterY(gg_rct_quest_the_defense_of_talras_dararos), 0.0))
 			call SetHeroLevel(Npcs.dararos(), 30, false)
 			call Fellows.initDararos(Npcs.dararos())
 
@@ -185,8 +185,8 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 
 			 set this.m_highElves = AGroup.create()
 
-			 call this.m_highElves.addGroup(CreateUnitsAtRect(12, 'n05I', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_high_elf_archers, 0.0), true, false)
-			 call this.m_highElves.addGroup(CreateUnitsAtRect(12, 'h02H', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_high_elf_warriors, 0.0), true, false)
+			 call this.m_highElves.addGroup(CreateUnitsAtRect(12, 'n05I', MapSettings.alliedPlayer(), gg_rct_quest_the_defense_of_talras_high_elf_archers, 0.0), true, false)
+			 call this.m_highElves.addGroup(CreateUnitsAtRect(12, 'h02H', MapSettings.alliedPlayer(), gg_rct_quest_the_defense_of_talras_high_elf_warriors, 0.0), true, false)
 
 			 /*
 			  * TODO Create the final orcs from everywhere
@@ -329,25 +329,25 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 
 			call SetUnitPositionRectFacing(Npcs.dragonSlayer(), gg_rct_quest_the_defense_of_talras_camp_dragon_slayer, 270.0)
 			call SetUnitPositionRectFacing(Npcs.dararos(), gg_rct_quest_the_defense_of_talras_camp_dararos, 270.0)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_0, 0.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_0, 0.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_1, 0.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_1, 0.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_2, 270.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_2, 270.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_3, 270.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_3, 270.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_4, 0.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_4, 0.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_5, 180.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_5, 180.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_6, 90.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_6, 90.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'n05I', gg_rct_quest_the_defense_of_talras_camp_guard_7, 270.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'n05I', gg_rct_quest_the_defense_of_talras_camp_guard_7, 270.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_8, 270.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_8, 270.0)
 			call SetUnitInvulnerable(guard, true)
-			set guard = CreateUnitAtRect(MapData.neutralPassivePlayer, 'n05I', gg_rct_quest_the_defense_of_talras_camp_guard_9, 270.0)
+			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'n05I', gg_rct_quest_the_defense_of_talras_camp_guard_9, 270.0)
 			call SetUnitInvulnerable(guard, true)
 
 			set this.m_questAreaReportHeimrich = QuestAreaQuestTheDefenseOfTalrasReportHeimrich.create(gg_rct_quest_the_defense_of_talras_heimrich)
@@ -554,7 +554,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			 */
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call Shrines.orcCamp().enableForCharacter(ACharacter.playerCharacter(Player(i)), false)
 				endif
@@ -564,17 +564,17 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			/*
 			 * Setup the camp.
 			 */
-			set this.m_recruitBuilding = CreateUnitAtRect(MapData.alliedPlayer, 'n04Q', gg_rct_quest_the_defense_of_talras_recruit_building, 196.87)
-			set this.m_shop = CreateUnitAtRect(MapData.alliedPlayer, 'n04Y', gg_rct_quest_the_defense_of_talras_shop, 196.87)
+			set this.m_recruitBuilding = CreateUnitAtRect(MapSettings.alliedPlayer(), 'n04Q', gg_rct_quest_the_defense_of_talras_recruit_building, 196.87)
+			set this.m_shop = CreateUnitAtRect(MapSettings.alliedPlayer(), 'n04Y', gg_rct_quest_the_defense_of_talras_shop, 196.87)
 			set this.m_recruits = AGroup.create()
-			call this.m_recruits.addGroup(CreateUnitsAtRect(5, 'n04P', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_recruits, 270.0), true, false)
+			call this.m_recruits.addGroup(CreateUnitsAtRect(5, 'n04P', MapSettings.alliedPlayer(), gg_rct_quest_the_defense_of_talras_recruits, 270.0), true, false)
 
 			set this.m_warriors = AGroup.create()
-			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n015', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_warriors, 270.0), true, false)
-			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n005', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_warriors, 270.0), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n015', MapSettings.alliedPlayer(), gg_rct_quest_the_defense_of_talras_warriors, 270.0), true, false)
+			call this.m_warriors.addGroup(CreateUnitsAtRect(5, 'n005', MapSettings.alliedPlayer(), gg_rct_quest_the_defense_of_talras_warriors, 270.0), true, false)
 
 			set this.m_siege = AGroup.create()
-			call this.m_siege.addGroup(CreateUnitsAtRect(2, 'n007', MapData.alliedPlayer, gg_rct_quest_the_defense_of_talras_siege, 270.0), true, false)
+			call this.m_siege.addGroup(CreateUnitsAtRect(2, 'n007', MapSettings.alliedPlayer(), gg_rct_quest_the_defense_of_talras_siege, 270.0), true, false)
 
 			call Fellows.dragonSlayer().shareWithAll()
 			call SetUnitPositionRect(Fellows.dragonSlayer().unit(), gg_rct_quest_the_defense_of_talras_dragon_slayer)
@@ -594,7 +594,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			/*
 			 * The allied player needs a lot of gold to build something.
 			 */
-			call SetPlayerState( MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState( MapData.alliedPlayer, PLAYER_STATE_RESOURCE_GOLD) + 3000)
+			call SetPlayerState( MapSettings.alliedPlayer(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState( MapSettings.alliedPlayer(), PLAYER_STATE_RESOURCE_GOLD) + 3000)
 
 			if (this.m_timer == null) then
 				set this.m_timer = CreateTimer()
@@ -645,7 +645,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 			 */
 			set i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					set j = 0
 					loop

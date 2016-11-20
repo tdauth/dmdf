@@ -119,12 +119,12 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 * Stores the current savegame name and the zone name of the current zone that the next map can identify where the characters come from.
 		 * The game cache uses the identifier \ref thistype.gameCacheName.
 		 */
-		public static method storeCharactersSinglePlayer takes nothing returns boolean
+		public static method storeCharactersSinglePlayer takes string zone returns boolean
 			local gamecache cache  = InitGameCache(thistype.gameCacheName)
 			local Character character = 0
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				set character = Character(Character.playerCharacter(Player(i)))
 				if (character != 0) then
 					if (not thistype.unmorphCharacterIfNecessary(character)) then
@@ -139,7 +139,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call StoreBoolean(cache, "Stored", "Stored", true)
 			// the current save game name has to be stored to know from where the save games have to be copied
 			call StoreString(cache, "CurrentSaveGame", "CurrentSaveGame", thistype.m_currentSaveGame)
-			call StoreString(cache, "Zone", "Zone", MapData.mapName)
+			call StoreString(cache, "Zone", "Zone", zone)
 			call SaveGameCache(cache)
 			set cache = null
 
@@ -331,9 +331,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", "CurrentSaveGame")
 				set i = 0
 				loop
-					exitwhen (i == MapData.maxPlayers)
+					exitwhen (i == MapSettings.maxPlayers())
 					if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING) then
-						call thistype.restoreCharacterSinglePlayer(cache, Player(i), MapData.restoreStartX.evaluate(i, zone), MapData.restoreStartY.evaluate(i, zone), MapData.restoreStartFacing.evaluate(i, zone))
+						call thistype.restoreCharacterSinglePlayer(cache, Player(i), 0.0, 0.0, 0.0)
+						call MapData.onRestoreCharacter.evaluate(zone, Character(Character.playerCharacter(Player(i))))
 					endif
 					set i = i + 1
 				endloop
@@ -370,7 +371,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// removing buffs and summoned units is also done in the Bonus Campaign, probably it indicates the elapsed time after a transition
 			call NewOpLimit(function thistype.removeBuffsAndSummonedUnits) // New Op Limit
 
-			if (not thistype.storeCharactersSinglePlayerNewOpLimit.evaluate()) then // New Op Limit
+			if (not thistype.storeCharactersSinglePlayerNewOpLimit.evaluate(oldMap)) then // New Op Limit
 				debug call Print("Could store all characters.")
 				return
 			endif
@@ -388,15 +389,19 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			endif
 		endmethod
 
-		private static method storeCharactersSinglePlayerNewOpLimit takes nothing returns boolean
-			return thistype.storeCharactersSinglePlayer()
+		private static method storeCharactersSinglePlayerNewOpLimit takes string zone returns boolean
+			return thistype.storeCharactersSinglePlayer(zone)
 		endmethod
 
 		public static method changeMap takes string newMap returns nothing
 			// changing map with saving the game does only work in campaign mode
 			if (bj_isSinglePlayer and Game.isCampaign.evaluate()) then
 				debug call Print("Change map single player campaign")
-				call thistype.changeMapSinglePlayer(MapData.mapName, newMap)
+				if (StringLength(MapSettings.mapName()) > 0) then
+					call thistype.changeMapSinglePlayer(MapSettings.mapName(), newMap)
+				else
+					call Character.displayWarningToAll(tre("Der Zonenname dieser Karte wurde nicht bestimmt.", "The zone name of this map has not been specified."))
+				endif
 			else
 				debug call Print("No change possible")
 				call Character.displayHintToAll(tre("Die Karte kann nur in der Einzelspieler-Kampagne gewechselt werden.", "The map can only be changed in the singleplayer campaign."))
@@ -410,7 +415,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		private static method timerFunctionSelectAndMoveCamera takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == MapData.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (Character.playerCharacter(Player(i)) != 0) then
 					call thistype.selectAndMoveCamera(Character.playerCharacter(Player(i)).unit(), Player(i))
 				endif
@@ -525,7 +530,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			set thistype.m_currentSaveGame = null
 
 			// If the campaign is started completely new without loading it, the temporary folder should be cleared. Otherwise wrong zone save games from the last game might be used.
-			if (bj_isSinglePlayer and Game.isCampaign.evaluate() and not IsMapFlagSet(MAP_RELOADED) and MapData.isSeparateChapter) then
+			if (bj_isSinglePlayer and Game.isCampaign.evaluate() and not IsMapFlagSet(MAP_RELOADED) and MapSettings.isSeparateChapter()) then
 				call RemoveSaveDirectory(thistype.temporaryFolder)
 			endif
 		endmethod
