@@ -79,7 +79,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			return this
 		endmethod
 
-		private static method onInit takes nothing returns nothing
+		public static method init takes nothing returns nothing
 			set thistype.m_zoneData = AIntegerVector.create()
 		endmethod
 	endstruct
@@ -87,27 +87,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 	/**
 	 * \brief The world map allows the player to travel to other maps in the singleplayer campaign.
 	 */
-	struct MapData extends MapDataInterface
-		public static constant string mapName = "WM"
-		public static constant string mapMusic = "Sound\\Music\\mp3Music\\War3XMainScreen.mp3"
-		public static constant integer maxPlayers = 6
-		public static constant player alliedPlayer = Player(6)
-		public static constant player neutralPassivePlayer = Player(7)
-		public static constant real morning = 5.0
-		public static constant real midday = 12.0
-		public static constant real afternoon = 16.0
-		public static constant real evening = 18.0
-		public static constant real revivalTime = 35.0
-		public static constant real revivalLifePercentage = 100.0
-		public static constant real revivalManaPercentage = 100.0
-		public static constant integer startLevel = 50
-		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
-		public static constant integer levelSpellPoints = 2
-		public static constant integer maxLevel = 10000
-		public static constant integer workerUnitTypeId = 'h00E'
-		public static constant boolean isSeparateChapter = false
-		public static sound cowSound = null
-
+	struct MapData
 		private static constant real refreshInterval = 0.05
 
 		private static Zone m_zoneDeranorsSwamp
@@ -128,6 +108,18 @@ library StructMapMapMapData requires Asl, StructGameGame
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
+		endmethod
+
+		/// Required by \ref Game.
+		public static method initSettings takes nothing returns nothing
+			call MapSettings.setMapName("WM")
+			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\War3XMainScreen.mp3")
+			call MapSettings.setGoldmine(null)
+			call MapSettings.setNeutralPassivePlayer(Player(7))
+			call MapSettings.setPlayerGivesXP(Player(PLAYER_NEUTRAL_AGGRESSIVE), false)
+
+			// Make sure the container is created before using it.
+			call ZoneData.init()
 		endmethod
 
 		/**
@@ -223,7 +215,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		private static method hideCharacters takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == thistype.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call ACharacter.playerCharacter(Player(i)).setMovable(false)
 					call Character(Character.playerCharacter(Player(i))).setCameraTimer(false)
@@ -242,35 +234,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call thistype.updateZones()
 		endmethod
 
-		/// Required by \ref Classes.
-		public static method startX takes integer index returns real
-			return 0.0
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method startY takes integer index returns real
-			return 0.0
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method startFacing takes integer index returns real
-			return 0.0
-		endmethod
-
 		/// Required by \ref MapChanger.
-		public static method restoreStartX takes integer index, string zone returns real
-			return 0.0
+		public static method onRestoreCharacter takes string zone, Character character returns nothing
 		endmethod
 
-		/// Required by \ref MapChanger.
-		public static method restoreStartY takes integer index, string zone returns real
-			return 0.0
-		endmethod
-
-		/// Required by \ref MapChanger.
-		public static method restoreStartFacing takes integer index, string zone returns real
-			return 0.0
-		endmethod
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacters takes string zone returns nothing
@@ -278,27 +245,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call thistype.updateZones()
 		endmethod
 
-		/**
-		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
-		 */
-		public static method playerGivesXP takes player whichPlayer returns boolean
-			return false
-		endmethod
-
 		public static method initVideoSettings takes nothing returns nothing
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
-		endmethod
-
-		/// Required by \ref Buildings.
-		public static method goldmine takes nothing returns unit
-			return null
-		endmethod
-
-		/// Required by teleport spells.
-		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
-			return false
 		endmethod
 	endstruct
 

@@ -6,18 +6,18 @@
 // Value 1: Icon image file
 // Value 2: Optional flag (defaults to 0) indicating to disable display of category name
 //
-TC_TPOF_CORE="Core",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_CHARACTER="Character",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_MAP="Map",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_TALK="Talk",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_FELLOW="Fellow",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_ITEM="Item",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_QUESTAREA="Quest Area",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_QUEST="Quest",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_SHRINE="Revival Shrine",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_SPAWNPOINT="Spawn Point",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_DUNGEON="Dungeon",ReplaceableTextures\WorldEditUI\Actions-Camera
-TC_TPOF_ROUTINE="Routine",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_CORE="Core",,ReplaceableTextures\WorldEditUI\Actions-Nothing
+TC_TPOF_CHARACTER="Character",ReplaceableTextures\WorldEditUI\Actions-Hero
+TC_TPOF_MAP="Map",ReplaceableTextures\WorldEditUI\Actions-Game
+TC_TPOF_TALK="Talk",ReplaceableTextures\WorldEditUI\Actions-Dialog
+TC_TPOF_FELLOW="Fellow",ReplaceableTextures\WorldEditUI\Actions-AI
+TC_TPOF_ITEM="Item",ReplaceableTextures\WorldEditUI\Actions-Item
+TC_TPOF_QUESTAREA="Quest Area",ReplaceableTextures\WorldEditUI\Actions-Quest
+TC_TPOF_QUEST="Quest",ReplaceableTextures\WorldEditUI\Actions-Quest
+TC_TPOF_SHRINE="Revival Shrine",ReplaceableTextures\WorldEditUI\Actions-Goldmine
+TC_TPOF_SPAWNPOINT="Spawn Point",,ReplaceableTextures\WorldEditUI\Actions-Unit
+TC_TPOF_DUNGEON="Dungeon",ReplaceableTextures\WorldEditUI\Actions-Visibility
+TC_TPOF_ROUTINE="Routine",ReplaceableTextures\WorldEditUI\Actions-Environment
 //%%% DEBUG - Remove for retail
 //TC_OBSOLETE=WESTRING_TRIGCAT_OBSOLETE,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
 //TC_DEBUG=WESTRING_TRIGCAT_DEBUG,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
@@ -67,6 +67,7 @@ Zone=0,1,1,"Zone",integer
 
 ARoutine=0,1,1,"Routine",integer
 NpcTalksRoutine=0,1,1,"Routine Talks",integer
+NpcRoutineWithFacing=0,1,1,"Routine With Facing",integer
 
 //***************************************************************************
 [TriggerTypeDefaults]
@@ -157,6 +158,7 @@ ZoneTheNorth=0,string,`TN`,"Zone The North"
 
 RoutineMoveTo=0,ARoutine,Routines.moveTo(),"Routine Move To"
 RoutineHarvest=0,ARoutine,Routines.harvest(),"Routine Harvest"
+RoutineHarvestLumber=0,ARoutine,Routines.harvestLumber(),"Routine Harvest Lumber"
 
 //***************************************************************************
 [TriggerEvents]
@@ -211,6 +213,22 @@ _OperatorCompareClass_Category=TC_CONDITION
 // Key: action function name
 // Value 0: first game version in which this function is valid
 // Value 1+: argument types
+
+SetMapSettingsMapName=1,string
+_SetMapSettingsMapName_Defaults=ZoneTalras
+_SetMapSettingsMapName_Category=TC_TPOF_MAP
+
+SetMapSettingsAlliedPlayer=1,player
+_SetMapSettingsAlliedPlayer_Defaults=Player06
+_SetMapSettingsAlliedPlayer_Category=TC_TPOF_MAP
+
+SetMapSettingsPlayerGivesXP=1,player,boolean
+_SetMapSettingsPlayerGivesXP_Defaults=PlayerNA,true
+_SetMapSettingsPlayerGivesXP_Category=TC_TPOF_MAP
+
+SetMapSettingsGoldmine=1,unit
+_SetMapSettingsGoldmine_Defaults=_
+_SetMapSettingsGoldmine_Category=TC_TPOF_MAP
 
 ChangeMap=1,string
 _ChangeMap_Defaults=ZoneTalras
@@ -292,13 +310,13 @@ SetFellowTalk=1,Fellow,boolean
 _SetFellowTalk_Defaults=
 _SetFellowTalk_Category=TC_TPOF_FELLOW
 
+RoutineSetFacing=1,NpcRoutineWithFacing,real
+_RoutineSetFacing_Defaults=
+_RoutineSetFacing_Category=TC_TPOF_ROUTINE
+
 RoutineSetPartner=1,NpcTalksRoutine,unit
 _RoutineSetPartner_Defaults=
 _RoutineSetPartner_Category=TC_TPOF_ROUTINE
-
-RoutineSetFacing=1,NpcTalksRoutine,real
-_RoutineSetFacing_Defaults=
-_RoutineSetFacing_Category=TC_TPOF_ROUTINE
 
 ShrineEnableForAll=1,Shrine,boolean
 _ShrineEnableForAll_Defaults=
@@ -464,9 +482,17 @@ CreateDungeon=1,0,Dungeon,string,rect,rect
 _CreateDungeon_Defaults=
 _CreateDungeon_Category=TC_TPOF_DUNGEON
 
+CreateRoutineWithFacing=1,0,NpcRoutineWithFacing,ARoutine,unit,real,real,rect
+_CreateRoutineWithFacing_Defaults=
+_CreateRoutineWithFacing_Category=TC_TPOF_ROUTINE
+
 CreateRoutineTalks=1,0,NpcTalksRoutine,ARoutine,unit,real,real,rect
 _CreateRotineTalks_Defaults=
-_CreateRoutineTalks_Category=TC_TPOF_TALK
+_CreateRoutineTalks_Category=TC_TPOF_ROUTINE
+
+RoutineTalksToRoutineWithFacing=1,0,NpcRoutineWithFacing,NpcTalksRoutine
+_RoutineTalksToRoutineWithFacing_Defaults=
+_RoutineTalksToRoutineWithFacing_Category=TC_TPOF_ROUTINE
 
 //***************************************************************************
 [DefaultTriggerCategories]

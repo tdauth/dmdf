@@ -1,4 +1,4 @@
-﻿// All entries in this file correspond to entries in TriggerData.txt
+// All entries in this file correspond to entries in TriggerData.txt
 // with the same key, and define the text to display for a given
 // function.
 //

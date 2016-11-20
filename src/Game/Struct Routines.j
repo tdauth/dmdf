@@ -149,6 +149,7 @@ library StructGameRoutines requires Asl
 		private static ARoutine m_hammer
 		private static ARoutine m_talk
 		private static ARoutine m_harvest
+		private static ARoutine m_harvestLumber
 		private static ARoutine m_splitWood
 		private static ARoutine m_sleep
 		private static ATextTagVector m_textTags
@@ -310,6 +311,21 @@ library StructGameRoutines requires Asl
 			call AContinueRoutineLoop(period, thistype.harvestTargetAction)
 		endmethod
 
+		private static method harvestLumberStartAction takes NpcRoutineWithFacing period returns nothing
+			call AddUnitAnimationProperties(period.unit(), "Lumber", true)
+		endmethod
+
+		private static method harvestLumberEndAction takes NpcRoutineWithFacing period returns nothing
+			call AddUnitAnimationProperties(period.unit(), "Lumber", false)
+		endmethod
+
+		private static method harvestLumberTargetAction takes NpcRoutineWithFacing period returns nothing
+			call SetUnitFacing(period.unit(), period.facing())
+			call QueueUnitAnimation(period.unit(), "Attack")
+			call TriggerSleepAction(1.167)
+			call AContinueRoutineLoop(period, thistype.harvestLumberTargetAction)
+		endmethod
+
 		private static method splitWoodEndAction takes NpcRoutineWithFacing period returns nothing
 			call ResetUnitAnimation(period.unit())
 		endmethod
@@ -345,6 +361,7 @@ library StructGameRoutines requires Asl
 			set thistype.m_hammer = ARoutine.create(true, true, 0, 0, thistype.hammerEndAction, thistype.hammerTargetAction)
 			set thistype.m_talk = ARoutine.create(true, true, 0, 0, thistype.talkEndAction, thistype.talkTargetAction)
 			set thistype.m_harvest = ARoutine.create(true, true, 0, 0, thistype.harvestEndAction, thistype.harvestTargetAction)
+			set thistype.m_harvestLumber = ARoutine.create(true, true, 0, thistype.harvestLumberStartAction, thistype.harvestLumberEndAction, thistype.harvestLumberTargetAction)
 			set thistype.m_splitWood = ARoutine.create(true, true, 0, 0, thistype.splitWoodEndAction, thistype.splitWoodTargetAction)
 			set thistype.m_sleep = ARoutine.create(true, true, 0, 0, thistype.sleepEndAction, thistype.sleepTargetAction)
 			set thistype.m_textTags = ATextTagList.create()
@@ -377,6 +394,10 @@ library StructGameRoutines requires Asl
 
 		public static method harvest takes nothing returns ARoutine
 			return thistype.m_harvest
+		endmethod
+
+		public static method harvestLumber takes nothing returns ARoutine
+			return thistype.m_harvestLumber
 		endmethod
 
 		public static method splitWood takes nothing returns ARoutine

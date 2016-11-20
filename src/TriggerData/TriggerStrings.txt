@@ -56,6 +56,22 @@ OperatorCompareClassHint=
 //***************************************************************************
 [TriggerActionStrings]
 
+SetMapSettingsMapName="Set Map Settings Map Name"
+SetMapSettingsMapName="Set Map Settings Map Name to ",~String
+SetMapSettingsMapNameHint="The Map Name is used as Zone name and must be unique in the campaign. It also should not contain any spaces, underscores etc."
+
+SetMapSettingsAlliedPlayer="Set Map Settings Allied Player"
+SetMapSettingsAlliedPlayer="Set Map Settings Allied Player to ",~Player
+SetMapSettingsAlliedPlayerHint="The allied player is used as owner for fellows who are shared to all players. The human players have shared control with the allied player."
+
+SetMapSettingsPlayerGivesXP="Set Map Settings Player Gives XP"
+SetMapSettingsPlayerGivesXP="Set Map Settings Player ",~Player," Gives XP ",~Flag
+SetMapSettingsPlayerGivesXPHint="Only specified players will give XP. By default this is only neutral aggressive. It means that characters gain XP by killing units of the player."
+
+SetMapSettingsGoldmine="Set Map Settings Goldmine"
+SetMapSettingsGoldmine="Set Map Settings Goldmine to Unit ",~Unit
+SetMapSettingsGoldmineHint="The goldmine unit is usually one single market place on the map which is refilled automatically and can be used for collecting gold."
+
 ChangeMap="Change Map"
 ChangeMap="Change map to map with name ",~String
 ChangeMapHint="Can only be used in a singleplayer campaign."
@@ -136,13 +152,13 @@ SetFellowTalk="Set Fellow Talk"
 SetFellowTalk="Set Fellow ",~Fellow," Talk enabled to ",~Flag
 SetFellowTalkHint=""
 
-RoutineSetPartner="Set Routine Partner"
-RoutineSetPartner="Set Partner for Routine ",~Routine," to unit ",~Unit
-RoutineSetPartnerHint=""
-
 RoutineSetFacing="Set Routine Facing"
 RoutineSetFacing="Set Facing for Routine ",~Routine," to ",~Real
 RoutineSetFacingHint=""
+
+RoutineSetPartner="Set Routine Partner"
+RoutineSetPartner="Set Partner for Routine ",~Routine," to unit ",~Unit
+RoutineSetPartnerHint=""
 
 ShrineEnableForAll="Enable Shrine For All"
 ShrineEnableForAll="Enable Shrine ",~Shrine," For All Characters Showing Effect ",~Flag
@@ -287,7 +303,7 @@ SpawnPointAddUnitWithType="Add to spawn point ",~SpawnPoint," the unit ",~Unit,"
 SpawnPointAddUnitWithTypeHint="Adds an existing unit to a spawn point. It will be respawned after a timeout when it dies."
 
 SpawnPointAddNewItemType="Add New Dropping Item Type to Spawn Point"
-SpawnPointAddNewItemType"Add to spawn point ",~SpawnPoint," for respawning unit member with index ",~Index," the new dropping item type ",~ItemType," with a chance ",~Chance
+SpawnPointAddNewItemType="Add to spawn point ",~SpawnPoint," for respawning unit member with index ",~Index," the new dropping item type ",~ItemType," with a chance ",~Chance
 SpawnPointAddNewItemTypeHint=""
 
 CreateItemSpawnPoint="Create Item Spawn Point"
@@ -298,6 +314,14 @@ CreateDungeon="Create Dungeon"
 CreateDungeon="Create Dungeon with Name ",~String," using Camera Bounds Rect ",~Rect," and view rect ",~Rect
 CreateDungeonHint="A dungeon is an area on the map where the camera bounds are set when the character enters it."
 
+CreateRoutineWithFacing="Create Routine With Facing"
+CreateRoutineWithFacing="Create routine with facing using basic routine type ",~RoutineType," and NPC unit ",~Unit," and starting at ",~TimeOfDay," and ending at ",~TimeOfDay," with target rect ",~Rect
+CreateRoutineWithFacing=""
+
 CreateRoutineTalks="Create Routine Talks"
 CreateRoutineTalks="Create Routine talks using basic routine type ",~RoutineType," and NPC unit ",~Unit," and starting at ",~TimeOfDay," and ending at ",~TimeOfDay," with target rect ",~Rect
 CreateRoutineTalksHint=""
+
+RoutineTalksToRoutineWithFacing="Routine talks To Routine With Facing"
+RoutineTalksToRoutineWithFacing="Routine Talks ",~Routine," To Routine With Facing"
+RoutineTalksToRoutineWithFacingHint=""

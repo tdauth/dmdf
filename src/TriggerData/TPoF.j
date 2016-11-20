@@ -8,7 +8,7 @@ globals
 	constant real A_MAX_COLLISION_SIZE = 300
 	constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
 	constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
-	constant boolean DMDF_INFO_LOG = true
+	constant boolean DMDF_INFO_LOG = false
 	constant boolean DMDF_NPC_ROUTINES = true
 	constant boolean DMDF_VIOLENCE = true
 	constant boolean DMDF_CREDITS = true
@@ -94,6 +94,22 @@ endfunction
 
 function CreateZone takes string mapName, rect enterRect returns Zone
 	return Zone.create(mapName, enterRect)
+endfunction
+
+function SetMapSettingsMapName takes string mapName returns nothing
+	call MapSettings.setMapName(mapName)
+endfunction
+
+function SetMapSettingsAlliedPlayer takes player whichPlayer returns nothing
+	call MapSettings.setAlliedPlayer(whichPlayer)
+endfunction
+
+function SetMapSettingsPlayerGivesXP takes player whichPlayer, boolean flag returns nothing
+	call MapSettings.setPlayerGivesXP(whichPlayer, flag)
+endfunction
+
+function SetMapSettingsGoldmine takes unit goldmine returns nothing
+	call MapSettings.setGoldmine(goldmine)
 endfunction
 
 function ChangeMap takes string mapName returns nothing
@@ -343,16 +359,24 @@ function CreateDungeon takes string name, rect cameraBounds, rect viewRect retur
 	return Dungeon.create(name, cameraBounds, viewRect)
 endfunction
 
+function CreateRoutineWithFacing takes ARoutine routine, unit npc, real startTimeOfDay, real endTimeOfDay, rect targetRect returns NpcRoutineWithFacing
+	return NpcRoutineWithFacing.create(routine, npc, startTimeOfDay, endTimeOfDay, targetRect)
+endfunction
+
+function RoutineSetFacing takes NpcRoutineWithFacing routine, real facing returns nothing
+	call routine.setFacing(facing)
+endfunction
+
 function CreateRoutineTalks takes ARoutine routine, unit npc, real startTimeOfDay, real endTimeOfDay, rect targetRect returns NpcTalksRoutine
 	return NpcTalksRoutine.create(routine, npc, startTimeOfDay, endTimeOfDay, targetRect)
 endfunction
 
-function RoutineSetPartner takes NpcTalksRoutine routine, unit partner returns nothing
-	call routine.setPartner(partner)
+function RoutineTalksToRoutineWithFacing takes NpcTalksRoutine routine returns NpcRoutineWithFacing
+	return routine
 endfunction
 
-function RoutineSetFacing takes NpcTalksRoutine routine, real facing returns nothing
-	call routine.setFacing(facing)
+function RoutineSetPartner takes NpcTalksRoutine routine, unit partner returns nothing
+	call routine.setPartner(partner)
 endfunction
 
 function ShrineEnableForAll takes Shrine shrine, boolean showEffect returns nothing
@@ -415,8 +439,6 @@ struct MapData
 
 	/// Required by \ref Game.
 	public static method onStart takes nothing returns nothing
-		call SuspendTimeOfDay(false)
-		call SetTimeOfDay(12.0)
 	endmethod
 
 	/// Required by \ref ClassSelection.
@@ -441,6 +463,10 @@ struct MapData
 	endmethod
 
 	/// Required by \ref MapChanger.
+	public static method onRestoreCharacter takes string zone, Character character returns nothing
+	endmethod
+
+	/// Required by \ref MapChanger.
 	public static method onRestoreCharacters takes string zone returns nothing
 		local integer i = 0
 		loop
@@ -449,10 +475,6 @@ struct MapData
 			call TriggerEvaluate(mapRestoreCharactersTriggers[i])
 			set i = i + 1
 		endloop
-	endmethod
-
-	/// Required by \ref MapChanger.
-	public static method onRestoreCharacter takes string zone, Character character returns nothing
 	endmethod
 
 	public static method initVideoSettings takes nothing returns nothing
