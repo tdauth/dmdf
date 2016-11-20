@@ -1,8 +1,17 @@
 "Die Macht des Feuers" (engl. The Power of Fire) is a cooperative RPG multiplayer modification for Warcraft III: The Frozen Throne.
 All source code is under the GPLv3.
 
-Available boolean constants:
+If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
+Since I have pushed the history of binary map and campaign files as well, the history became quite big.
+
+The model, texture and sound resources are not part of this repository.
+
+You need the Advanced Script Library to use this code. The ASL is the core of this modification's code.
+
+Available boolean constants which have to be defined in a globals block:
 DMDF_CREDITS enables credits (GUI)
 DMDF_INFO_LOG enables talk log system (GUI)
 DMDF_NPC_ROUTINES enables NPC routines
 DMDF_VIOLENCE enables blood effects in fights
+
+Tamino Dauth <tamino@cdauth.eu>, 2016-11-20
