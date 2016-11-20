@@ -5,8 +5,6 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 		private boolean array m_hasPaid[12] /// @todo @member MapSettings.maxPlayers()
 		private boolean array m_wasOffended[12] /// @todo @member MapSettings.maxPlayers()
 
-		implement Talk
-
 		public method hasPaid takes player whichPlayer returns boolean
 			return this.m_hasPaid[GetPlayerId(whichPlayer)]
 		endmethod
@@ -261,6 +259,8 @@ library StructMapTalksTalkTrommon requires Asl, StructGameClasses, StructMapQues
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

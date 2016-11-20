@@ -4,8 +4,6 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 		private unit m_actorDragonSlayer
 		private unit m_actorDeacon
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
@@ -32,7 +30,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_bloodthirstiness_1)
+			call FixVideoCamera(gg_cam_bloodthirstiness_1)
 			call CameraSetupApplyForceDuration(gg_cam_bloodthirstiness_2, true, 5.50)
 
 			if (wait(2.50)) then
@@ -151,6 +149,8 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

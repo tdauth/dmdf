@@ -53,8 +53,6 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		private QuestAreaDeranor m_questArea
 		private QuestAreaDeranorsTomb m_questAreaDeranorsTomb
 
-		implement Quest
-
 		public stub method distributeRewards takes nothing returns nothing
 			local integer i
 			local item whichItem
@@ -175,6 +173,8 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

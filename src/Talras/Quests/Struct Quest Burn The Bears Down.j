@@ -9,8 +9,6 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructGameCharacter, 
 		public static constant integer xpBonus = 100
 		private trigger m_pickupTrigger
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			call EnableTrigger(this.m_pickupTrigger)
 			return super.enableUntil(0)
@@ -96,6 +94,8 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructGameCharacter, 
 			call DmdfHashTable.global().destroyTrigger(this.m_pickupTrigger)
 			set this.m_pickupTrigger = null
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

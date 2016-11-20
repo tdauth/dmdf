@@ -56,8 +56,6 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 		private AGroup m_imps
 		private QuestAreaWarReportWieland m_questAreaReportWieland
 
-		implement Quest
-
 		public method cleanUnits takes nothing returns nothing
 			// Wieland
 			call RemoveUnit(this.m_weaponCart)
@@ -85,7 +83,7 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 		 * Whenever Imps have been died they will be respawned periodically.
 		 */
 		private static method timerFunctionSpawnImps takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			local boolean spawned = false
 			local integer i = 0
 			loop
@@ -212,7 +210,7 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 		endmethod
 
 		private static method timerFunctionSpawnWeaponCart takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			if (IsUnitDeadBJ(this.m_weaponCart)) then
 				set this.m_weaponCart = CreateUnit(MapSettings.alliedPlayer(), 'h020', GetRectCenterX(gg_rct_quest_war_wieland), GetRectCenterY(gg_rct_quest_war_wieland), 0.0)
 				call this.displayUpdateMessage(tre("Eine neue Waffenlieferung steht zur Verfügung.", "A new supply of weapons is available."))
@@ -228,7 +226,7 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 		 * It will be respawned by another timer if it dies.
 		 */
 		private static method timerFunctionWielandsWeapons takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			call this.questItem(thistype.questItemWaitForWielandsWeapons).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemMoveWielandWeaponsToTheCamp).setState(thistype.stateNew)
 			call this.displayUpdateMessage(tre("Wieland's Waffen sind fertig.", "Wieland's weapons are finished."))
@@ -379,6 +377,8 @@ library StructMapQuestsQuestWarWeaponsFromWieland requires Asl, StructGameQuestA
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

@@ -3,8 +3,6 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 	struct QuestANewAlliance extends SharedQuest
 		private QuestAreaANewAlliance m_questArea
 
-		implement Quest
-
 		public stub method enable takes nothing returns boolean
 			call Missions.addMissionToAll('A1CE', 'A1RB', this)
 			set this.m_questArea = QuestAreaANewAlliance.create.evaluate(gg_rct_quest_a_new_alliance)
@@ -40,6 +38,8 @@ library StructMapQuestsQuestANewAlliance requires Asl, StructGameQuestArea, Stru
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 	struct QuestAreaANewAlliance extends QuestArea

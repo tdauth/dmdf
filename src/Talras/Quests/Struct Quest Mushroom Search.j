@@ -4,8 +4,6 @@ library StructMapQuestsQuestMushroomSearch requires Asl, StructGameCharacter
 		private static constant integer requiredMushrooms = 4
 		private integer m_mushrooms
 
-		implement CharacterQuest
-
 		public method addMushroom takes nothing returns boolean
 			set this.m_mushrooms = this.m_mushrooms + 1
 			return this.m_mushrooms == thistype.requiredMushrooms
@@ -30,6 +28,8 @@ library StructMapQuestsQuestMushroomSearch requires Asl, StructGameCharacter
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

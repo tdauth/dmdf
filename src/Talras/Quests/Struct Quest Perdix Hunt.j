@@ -49,8 +49,6 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 		private integer m_counter
 		private trigger m_hintTrigger
 
-		implement CharacterQuest
-
 		private static method triggerConditionHint takes nothing returns boolean
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			if (GetTriggerUnit() == this.character().unit()) then
@@ -154,6 +152,8 @@ library StructMapQuestsQuestPerdixHunt requires Asl, StructGameCharacter
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

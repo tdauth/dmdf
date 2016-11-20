@@ -5,8 +5,6 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 		private boolean array m_gotOffer[12] /// \todo \ref MapData#maxPlayers
 		private integer array m_lastRewardScore[12] /// \todo \ref MapData#maxPlayers
 
-		implement Talk
-
 		public method giveOffer takes player whichPlayer returns nothing
 			set this.m_gotOffer[GetPlayerId(whichPlayer)] = true
 		endmethod
@@ -226,6 +224,8 @@ library StructMapTalksTalkBaldar requires Asl, StructGameCharacter, StructGameCl
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

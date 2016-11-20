@@ -6,8 +6,6 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemSacrifice = 2
 		public static constant integer questItemRescue = 3
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
 			//call character.options().missions().addMission('A1R8', 'A1RK', this)
@@ -69,6 +67,8 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

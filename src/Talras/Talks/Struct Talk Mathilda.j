@@ -7,8 +7,6 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		private boolean array m_playedSong[12] /// \todo \ref MapSettings.maxPlayers()
 		private boolean array m_toldThatSleepingInBarn[12] /// \todo \ref MapSettings.maxPlayers()
 
-		implement Talk
-
 		private method offendStories takes player whichPlayer, boolean offend returns nothing
 			set this.m_wasOffendedStories[GetPlayerId(whichPlayer)] = offend
 		endmethod
@@ -468,6 +466,8 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

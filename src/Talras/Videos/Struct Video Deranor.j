@@ -5,8 +5,6 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 		private unit m_actorDeranor
 		private AGroup m_summonedUnits = 0
 
-		implement Video
-
 		private static method filterShadowGiant takes nothing returns boolean
 			return GetUnitTypeId(GetFilterUnit()) == 'n039'
 		endmethod
@@ -42,7 +40,7 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_deranor_0)
+			call FixVideoCamera(gg_cam_deranor_0)
 
 			if (wait(1.00)) then
 				return
@@ -160,6 +158,8 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

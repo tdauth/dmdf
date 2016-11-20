@@ -2,8 +2,6 @@ library StructMapQuestsQuestSeedsForTheGarden requires Asl, StructGameCharacter,
 
 	struct QuestSeedsForTheGarden extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(1)
 		endmethod
@@ -42,6 +40,8 @@ library StructMapQuestsQuestSeedsForTheGarden requires Asl, StructGameCharacter,
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

@@ -2,8 +2,6 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 
 	struct VideoTheCastle extends AVideo
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(16.00)
@@ -48,7 +46,7 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
      */
 		public stub method onPlayAction takes nothing returns nothing
 			local player user = Player(PLAYER_NEUTRAL_PASSIVE)
-			call thistype.fixCamera(gg_cam_new_the_castle_0)
+			call FixVideoCamera(gg_cam_new_the_castle_0)
 
 			call TransmissionFromUnitType('n06V', user, tre("Erzähler", "Narrator"), tre("So betraten unsere Helden die alte Burg Talras, um dem Herzog die Treue zu schwören. Doch was ihnen durch den Kopf ging war nicht etwa die Treue zu ihren Artgenossen, sondern viel mehr wie viele Goldmünzen der Herzog locker machen würde.", "Finally our heroes entered the old castle Talras to swear their loyality to the duke. Anyway, what they were thinking about wasn't their loyality to their fellow species rather than how many gold coins the duke would cough up."), gg_snd_ErzaehlerDieBurg1)
 
@@ -143,6 +141,8 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

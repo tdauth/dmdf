@@ -4,8 +4,6 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 		private integer m_actorHeimrich
 		private integer m_actorMarkward
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(16.0)
@@ -27,7 +25,7 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_a_new_alliance_1)
+			call FixVideoCamera(gg_cam_a_new_alliance_1)
 
 			/*
 			TODO As long as the sound is missing don't show this.
@@ -124,6 +122,8 @@ library StructMapVideosVideoANewAlliance requires Asl, StructGameGame, StructMap
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

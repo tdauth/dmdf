@@ -128,8 +128,6 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		private QuestAreaTheNorsemenHeimrich m_questAreaHeimrich
 		private AGroup m_finalNorsemen
 
-		implement Quest
-
 		// members
 
 		public method hasStarted takes nothing returns boolean
@@ -149,7 +147,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		 * Allied groups will be spawned in between while some of the enemy group's units are still alive.
 		 */
 		private static method triggerConditionSpawn takes nothing returns boolean
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			local unit triggerUnit = GetTriggerUnit()
 			local boolean result = false
 			if (this.m_currentGroup.units().contains(triggerUnit)) then
@@ -211,7 +209,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 		public method completeFight takes nothing returns boolean
 			call this.cleanUpBattleField()
-			return QuestTheNorsemen.quest().questItem(thistype.questItemFight).setState(AAbstractQuest.stateCompleted) // video Wigberht is played in quest completion action
+			return this.questItem(thistype.questItemFight).setState(thistype.stateCompleted) // video Wigberht is played in quest completion action
 		endmethod
 
 		private static method forGroupNoGuard takes unit whichUnit returns nothing
@@ -220,7 +218,7 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 		endmethod
 
 		private static method triggerActionSpawn takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			local player owner = MapData.orcPlayer
 			local unit orcLeader
 			call this.m_currentGroup.units().clear()
@@ -495,6 +493,8 @@ library StructMapQuestsQuestTheNorsemen requires Asl, StructMapMapFellows, Struc
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

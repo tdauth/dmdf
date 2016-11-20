@@ -2,8 +2,6 @@ library StructMapQuestsQuestStormingTheMill requires Asl, StructGameCharacter, S
 
 	struct QuestStormingTheMill extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(2)
 		endmethod
@@ -112,6 +110,8 @@ Achtung: Die Wegelagerer müssen vom Schaf herab getötet werden.", "The shepher
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

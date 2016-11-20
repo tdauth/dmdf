@@ -4,8 +4,6 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 	struct TalkLothar extends Talk
 		private boolean array m_saidTruth[12] /// \todo MapData.maxplayers
 
-		implement Talk
-
 		public method saidTruth takes Character character returns boolean
 			return this.m_saidTruth[GetPlayerId(character.player())]
 		endmethod
@@ -301,6 +299,8 @@ library StructMapTalksTalkLothar requires Asl, StructGameCharacter, StructMapMap
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

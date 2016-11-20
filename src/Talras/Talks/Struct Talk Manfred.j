@@ -1,9 +1,6 @@
 library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalksTalkMathilda, StructMapQuestsQuestSupplyForTalras, StructMapQuestsQuestReinforcementForTalras
 
 	struct TalkManfred extends Talk
-
-		implement Talk
-
 		private AInfo m_hi
 		private AInfo m_aboutTheDuke
 		private AInfo m_mathilda
@@ -222,6 +219,8 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

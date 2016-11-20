@@ -82,14 +82,14 @@ library StructMapMapMapData requires Asl, StructGameGame
 		endmethod
 
 		/// Required by \ref MapChanger.
-		public static method onRestoreCharacters takes string zone returns nothing
-		endmethod
-
-		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
 			call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_holzbruck))
 			call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_holzbruck))
 			call SetUnitFacing(character.unit(), 90.0)
+		endmethod
+
+		/// Required by \ref MapChanger.
+		public static method onRestoreCharacters takes string zone returns nothing
 		endmethod
 
 		public static method initVideoSettings takes nothing returns nothing

@@ -60,8 +60,6 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 		private QuestAreaSlaughterEnter m_questAreaEnter
 		private QuestAreaSlaughterFinish m_questAreaFinish
 
-		implement Quest
-
 		public stub method enable takes nothing returns boolean
 			call Missions.addMissionToAll('A1C1', 'A1RD', this)
 			return super.enableUntil(thistype.questItemKillTheBoneDragons)
@@ -339,6 +337,8 @@ library StructMapQuestsQuestSlaughter requires Asl, StructGameCharacter, StructM
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

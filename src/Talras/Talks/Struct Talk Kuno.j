@@ -8,29 +8,27 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 		private AInfo m_kunosDaughter
 		private AInfo m_markwardNeedsLumber
 		private AInfo m_exit
-	
+
 		private AInfo m_lonely_0
 		private AInfo m_lonely_1
 		private AInfo m_busy
 
-		implement Talk
-
 		private static method isInForest takes nothing returns boolean
 			return RectContainsUnit(gg_rct_kuno_forest, Npcs.kuno())
 		endmethod
-		
+
 		// (Falls Kuno nicht im Wald ist)
 		private static method infoConditionBusy takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return not thistype.isInForest()
 		endmethod
-		
+
 		private static method infoActionBusy takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, true, tre("Nicht jetzt, ich habe zu tun!", "Not now, I am busy!"), gg_snd_Kuno1)
 			call this.close(character)
 		endmethod
-		
+
 		private method startPageAction takes ACharacter character returns nothing
 			if (not this.showInfo(this.m_busy.index(), character)) then
 				call this.showUntil(this.m_exit.index(), character)
@@ -121,7 +119,7 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 			call character.giveItem('I01L')
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Die Befestigung von Talras“ ist aktiv und Auftragsziel 2 ist noch nicht aktiviert)
 		private static method infoConditionMarkwardNeedsLumber takes AInfo info, ACharacter character returns boolean
 			return QuestReinforcementForTalras.characterQuest(character).questItem(0).isNew() and not QuestReinforcementForTalras.characterQuest(character).questItem(1).isNew()
@@ -168,7 +166,7 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(gg_unit_n022_0009, thistype.startPageAction)
-			
+
 			// start page
 			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Hallo.", "Hello.")) // 0
 			set this.m_lonely = this.addInfo(false, false, thistype.infoConditionLonely, thistype.infoActionLonely, tre("Fühlst du dich nicht einsam?", "Don't you feel lonely?")) // 1
@@ -181,11 +179,13 @@ library StructMapTalksTalkKuno requires Asl, StructMapQuestsQuestKunosDaughter, 
 			// info 1
 			set this.m_lonely_0 = this.addInfo(false, false, 0, thistype.infoActionLonely_0, tre("Was will sie denn später mal machen?", "What does she want to do later?")) // 6
 			set this.m_lonely_1 = this.addInfo(false, false, 0, thistype.infoActionLonely_1, tre("Sie packt das schon.", "She will do fine.")) // 7
-			
+
 			set this.m_busy = this.addInfo(true, true, thistype.infoConditionBusy, thistype.infoActionBusy, null)
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

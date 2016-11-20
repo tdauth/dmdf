@@ -6,8 +6,6 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemReport = 2
 		private trigger m_hintTriggerHans
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
 			//call character.giveQuestItem(thistype.itemTypeId)
@@ -87,6 +85,8 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

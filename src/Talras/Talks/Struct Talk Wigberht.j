@@ -1,9 +1,6 @@
 library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen, StructMapTalksTalkRicman
 
 	struct TalkWigberht extends Talk
-
-		implement Talk
-		
 		private AInfo m_hi
 		private AInfo m_talkingTooMuch
 		private AInfo m_whatAreYouDoing
@@ -32,30 +29,30 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			call speech(info, character, true, tre("Hallo.", "Hello."), gg_snd_Wigberht1)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach Begrüßung)
 		private static method infoConditionTalkingTooMuch takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
-		
+
 		// Du bist wohl nicht so gesprächig?
 		private static method infoActionTalkingTooMuch takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Bist wohl nicht so gesprächig?", "You are probably not so talkative?"), null)
 			call speech(info, character, true, tre("Nein.", "No."), gg_snd_Wigberht2)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		public method askedWhatAreYoDoing takes ACharacter character returns boolean
 			return this.infoHasBeenShownToCharacter(this.m_whatAreYouDoing.index(), character)
 		endmethod
-		
+
 		// (Nach Begrüßung)
 		private static method infoConditionWhatAreYouDoing takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return this.infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
-		
+
 		// Was machst du hier?
 		private static method infoActionWhatAreYouDoing takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Was machst du hier?", "What are you doing here?"), null)
@@ -73,13 +70,13 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach Begrüßung)
 		private static method infoConditionWhoAreYou takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
-		
+
 		// Wer bist du?
 		private static method infoActionWhoAreYou takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Wer bist du?", "Who are you?"), null)
@@ -106,31 +103,31 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			call speech(info, character, true, tre("Nie.", "Never."), gg_snd_Wigberht11)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach „Wer bist du?“)
 		private static method infoConditionTellMeAboutYourHome takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return info.talk().infoHasBeenShownToCharacter(this.m_whoAreYou.index(), character) or not QuestTheNorsemen.quest().isNotUsed()
 		endmethod
-		
+
 		// Erzähl mir etwas über deine Heimat.
 		private static method infoActionTellMeAboutYourHome takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Erzähl mir etwas über deine Heimat.", "Tell me about your home."), null)
-			
+
 			call speech(info, character, true, tre("Dafür habe ich keine Zeit. Ich muss trainieren.", "I have no time for this. I have to train."), gg_snd_Wigberht12)
 			call speech(info, character, false, tre("Nun komm schon.", "Come on."), null)
 			call speech(info, character, true, tre("Meine Heimat ist das Gebirge im Nordwesten. Dort wo noch Schnee liegt um diese Jahreszeit. Es ist eine raue Gegend mit wilden, blutrünstigen Kreaturen.", "My home is the mountains in the northwest. Where there is still snow at this time of the year. It is a rough area with wild, bloodthirsty creatures."), gg_snd_Wigberht13)
 			call speech(info, character, true, tre("Ich werde sie bis zum Ende gegen die Orks und Dunkelelfen verteidigen.", "I will defend it to the end against the Orcs and Dark Elves."), gg_snd_Wigberht14)
-			
+
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach Begrüßung)
 		private static method infoConditionYourArmour takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character) or not QuestTheNorsemen.quest().isNotUsed()
 		endmethod
-		
+
 		// Was trägst du da für eine Rüstung?
 		private static method infoActionYourArmour takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Was trägst du da für eine Rüstung?", "What kind of armour a are you wearing?"), null)
@@ -138,7 +135,7 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			call speech(info, character, true, tre("Sie wurde meinem Vater genommen als man ihn verschleppte. Die Dunkelelfen haben sie aus Spott über uns zurückgelassen. Nun trage ich sie bis ich meinen Vater befreit habe.", "It was taken from my father when they abducted him. The Dark Elves have left it for mockery of us. Now I wear it until I've freed my father."), gg_snd_Wigberht16)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach Erhalt des zweiten Ziels des Auftrags “Die Nordmänner”, falls dieses noch nicht abgeschlossen ist)
 		private static method infoConditionLetUsAttack takes AInfo info, ACharacter character returns boolean
 			return QuestTheNorsemen.quest().questItem(1).isNew()
@@ -165,12 +162,12 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 			call speech(info, character, true, tre("Ich möchte euch aber für eure Hilfe danken. Gehe zu Ricman, er hat eine Belohnung für dich.", "But I want to thank you for your help. Go to Ricman, he has a reward for you."), gg_snd_Wigberht21)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach erfolgreichem Abschluss des Auftrags „Die Verteidigung von Talras“)
 		private static method infoConditionVictory takes AInfo info, ACharacter character returns boolean
 			return QuestTheDefenseOfTalras.quest().isCompleted()
 		endmethod
-		
+
 		// Erneut war der Sieg unser.
 		private static method infoActionVictory takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Erneut war der Sieg unser.", "Again, the victory was ours."), null)
@@ -204,7 +201,7 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.wigberht(), thistype.startPageAction)
 			call this.setName(tre("Wigberht", "Wigberht"))
-			
+
 			// start page
 			set this.m_hi = this.addInfo(false, false, thistype.infoConditionHi, thistype.infoActionHi, tre("Hallo.", "Hello."))
 			set this.m_talkingTooMuch = this.addInfo(false, false, thistype.infoConditionTalkingTooMuch, thistype.infoActionTalkingTooMuch, tre("Du bist wohl nicht so gesprächig?", "You are probably not so talkative?"))
@@ -221,6 +218,8 @@ library StructMapTalksTalkWigberht requires Asl, StructMapMapNpcRoutines, Struct
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

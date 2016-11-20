@@ -2,8 +2,6 @@ library StructMapTalksTalkGuntrich requires Asl, StructMapMapNpcs, StructMapQues
 
 	struct TalkGuntrich extends Talk
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(5, character)
 		endmethod
@@ -112,6 +110,8 @@ library StructMapTalksTalkGuntrich requires Asl, StructMapMapNpcs, StructMapQues
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

@@ -3,8 +3,6 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 	struct TalkFerdinand extends Talk
 		private boolean array m_knowsCost[12] /// @todo @member MapSettings.maxPlayers()
 
-		implement Talk
-
 		public method knowsCost takes ACharacter character returns boolean
 			return this.m_knowsCost[GetPlayerId(character.player())]
 		endmethod
@@ -142,6 +140,8 @@ library StructMapTalksTalkFerdinand requires Asl, StructMapQuestsQuestAmongTheWe
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

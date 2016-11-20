@@ -6,8 +6,6 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 		private boolean m_shieldEnabled
 		private effect m_shieldEffect
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			call Character(this.character()).giveQuestItem(thistype.shieldItemTypeId)
 			call Character(this.character()).giveQuestItem(thistype.arrowsItemTypeId)
@@ -62,6 +60,8 @@ library StructMapQuestsQuestTheMagicalShield requires Asl, StructGameCharacter, 
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

@@ -2,8 +2,6 @@ library StructMapQuestsQuestKunosDaughter requires Asl, StructGameCharacter, Str
 
 	struct QuestKunosDaughter extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enable()
 		endmethod
@@ -28,6 +26,8 @@ library StructMapQuestsQuestKunosDaughter requires Asl, StructGameCharacter, Str
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

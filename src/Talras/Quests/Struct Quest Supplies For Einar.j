@@ -4,11 +4,9 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 		public static constant integer maxSwords = 5
 		private integer m_counter
 
-		implement CharacterQuest
-
 		/// Called with .evaluate().
 		private static method onCraftItemFunction takes Character character, integer itemTypeId returns nothing
-			local thistype this = thistype.characterQuest(character)
+			local thistype this = thistype.characterQuest.evaluate(character)
 			debug call Print(GetUnitName(character.unit()) + " crafts " + GetObjectName(itemTypeId))
 			if (itemTypeId == 'I060') then
 				set this.m_counter = this.m_counter + 1
@@ -63,6 +61,8 @@ library StructMapQuestsQuestSuppliesForEinar requires Asl, StructGameCharacter
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

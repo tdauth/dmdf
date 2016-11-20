@@ -7,8 +7,6 @@ library StructMapVideosVideoReportManfred requires Asl, StructGameGame
 		private unit m_actorManfred
 		private unit m_actorManfredsDog
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
@@ -29,7 +27,7 @@ library StructMapVideosVideoReportManfred requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_manfred_initial_view)
+			call FixVideoCamera(gg_cam_manfred_initial_view)
 
 			call TransmissionFromUnit(this.actor(), tre("Die Kornfresser sind tot.", "The corn eaters are dead."), null)
 
@@ -61,6 +59,8 @@ library StructMapVideosVideoReportManfred requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

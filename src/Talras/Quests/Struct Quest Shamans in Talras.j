@@ -2,8 +2,6 @@ library StructMapQuestsQuestShamansInTalras requires Asl, Game, StructMapMapNpcs
 
 	struct QuestShamansInTalras extends AQuest
 
-		implement CharacterQuest
-
 		// do not enable any quest item yet
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(-1)
@@ -32,6 +30,8 @@ library StructMapQuestsQuestShamansInTalras requires Asl, Game, StructMapMapNpcs
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

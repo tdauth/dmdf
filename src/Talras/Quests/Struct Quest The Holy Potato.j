@@ -2,8 +2,6 @@ library StructMapQuestsQuestTheHolyPotato requires Asl, StructGameCharacter
 
 	struct QuestTheHolyPotato extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enable()
 		endmethod
@@ -19,6 +17,8 @@ library StructMapQuestsQuestTheHolyPotato requires Asl, StructGameCharacter
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

@@ -2,8 +2,6 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 
 	struct TalkHeimrich extends Talk
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(4, character)
 		endmethod
@@ -74,6 +72,8 @@ library StructMapTalksTalkHeimrich requires Asl, StructMapMapNpcs, StructMapQues
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

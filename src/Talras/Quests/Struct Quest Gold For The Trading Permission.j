@@ -2,8 +2,6 @@ library StructMapQuestsQuestGoldForTheTradingPermission requires Asl, StructGame
 
 	struct QuestGoldForTheTradingPermission extends AQuest
 
-		implement CharacterQuest
-
 		public method improveReward takes nothing returns nothing
 			call this.setReward(thistype.rewardExperience, 50)
 		endmethod
@@ -26,6 +24,8 @@ library StructMapQuestsQuestGoldForTheTradingPermission requires Asl, StructGame
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

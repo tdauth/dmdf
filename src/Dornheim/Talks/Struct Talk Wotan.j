@@ -1,9 +1,6 @@
 library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQuestShitOnTheThrone, StructMapQuestsQuestTheChildren
 
 	struct TalkWotan extends Talk
-
-		implement Talk
-
 		private AInfo m_hi
 		private AInfo m_howAreYou
 		private AInfo m_shit
@@ -152,6 +149,8 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 			return this
 		endmethod
+		
+		implement Talk
 	endstruct
 
 endlibrary

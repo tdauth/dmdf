@@ -8,8 +8,6 @@ library StructMapVideosVideoDararos requires Asl, StructGameGame
 		private unit m_norseman0
 		private unit m_orc0
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(24.0)
@@ -62,7 +60,7 @@ library StructMapVideosVideoDararos requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_dararos_0)
+			call FixVideoCamera(gg_cam_dararos_0)
 			call CameraSetupApplyForceDuration(gg_cam_dararos_1, true, 4.0)
 
 			if (wait(2.0)) then
@@ -104,6 +102,8 @@ library StructMapVideosVideoDararos requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

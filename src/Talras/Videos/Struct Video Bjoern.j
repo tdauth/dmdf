@@ -4,8 +4,6 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 		private unit m_actorBjoern
 		private unit m_actorBjoernsWife
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
@@ -26,7 +24,7 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_bjoern_initial_view)
+			call FixVideoCamera(gg_cam_bjoern_initial_view)
 
 			call TransmissionFromUnit(this.actor(), tre("Jäger Björn!", "Hunter Björn!"), null)
 
@@ -82,6 +80,8 @@ library StructMapVideosVideoBjoern requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

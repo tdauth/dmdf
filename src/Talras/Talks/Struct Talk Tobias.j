@@ -2,8 +2,6 @@ library StructMapTalksTalkTobias requires Asl, StructMapQuestsQuestTheHolyPotato
 
 	struct TalkTobias extends Talk
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(3, character)
 		endmethod
@@ -83,6 +81,8 @@ library StructMapTalksTalkTobias requires Asl, StructMapQuestsQuestTheHolyPotato
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

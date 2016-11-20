@@ -3,8 +3,6 @@ library StructMapQuestsQuestWitchingHour requires Asl, StructGameCharacter, Stru
 	struct QuestWitchingHour extends AQuest
 		private region m_aosRegion
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(0)
 		endmethod
@@ -81,6 +79,8 @@ library StructMapQuestsQuestWitchingHour requires Asl, StructGameCharacter, Stru
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

@@ -42,10 +42,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 		 * Quest area without effect to mark the destination of all carts.
 		 */
 		private QuestAreaWarCartDestination m_questAreaCartDestination
-
 		private QuestAreaWarReportHeimrich m_questAreaReportHeimrich
-
-		implement Quest
 
 		/**
 		 * Removes all carts and recruits from their destination.
@@ -104,7 +101,7 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 		endmethod
 
 		private static method stateActionCompletedReportHeimrich takes AQuestItem questItem returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype(questItem.quest())
 			call this.m_questAreaCartDestination.destroy()
 			set this.m_questAreaCartDestination = 0
 		endmethod
@@ -169,6 +166,8 @@ library StructMapQuestsQuestWar requires Asl, StructGameQuestArea, StructMapQues
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

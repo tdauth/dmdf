@@ -11,8 +11,6 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private AInfo m_exit
 		private AInfo m_aboutWieland
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			if (not this.showInfo(this.m_aboutWieland.index(), character)) then
 				call this.showUntil(this.m_exit.index(), character)
@@ -67,7 +65,7 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private static method infoConditionSpecialWeapon takes AInfo info, ACharacter character returns boolean
 			return QuestWielandsSword.characterQuest(character).questItem(0).isNew()
 		endmethod
-		
+
 		// Verkaufst du auch eine ganz besondere Waffe?
 		private static method infoActionSpecialWeapon takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Verkaufst du auch eine ganz besondere Waffe?", "Are you selling a very special weapon?"), null)
@@ -83,13 +81,13 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call QuestWielandsSword.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach Begrüßung)
 		private static method infoConditionHelp takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return this.infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
-		
+
 		// Kann ich dir irgendwie helfen?
 		private static method infoActionHelp takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("Kann ich dir irgendwie helfen?", "Can I help you?"), null)
@@ -100,26 +98,26 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call QuestSuppliesForEinar.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftrag „Nachschub für Einar“ ist aktiv)
 		private static method infoConditionForge takes AInfo info, Character character returns boolean
 			local thistype this = thistype(info.talk())
 			return QuestSuppliesForEinar.characterQuest(character).isNew()
 		endmethod
-		
+
 		// Wo kann ich hier schmieden?
 		private static method infoActionForge takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Wo kann ich hier schmieden?", "Where can I forge here?"), null)
 			call speech(info, character, true, tre("Vermutlich nur in Wielands Schmiede. Wenn du dich noch zu wenig mit dem Schmiedehandwerk auskennst, dann besorge dir doch ein gutes Buch mit Anleitungen von Wieland. Das wird dir sicher helfen.", "Probably only in Wieland's forgery. If you don't know enough about the blacksmith, then just get yourself a good book with plans from Wieland. This will certainly help you."), gg_snd_Einar_22)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftrag „Nachschub für Einar“ ist aktiv und Charakter hat fünf geschmiedete Kurzschwerter dabei)
 		private static method infoConditionWeapons takes AInfo info, Character character returns boolean
 			local thistype this = thistype(info.talk())
 			return QuestSuppliesForEinar.characterQuest(character).isNew() and character.inventory().totalItemTypeCharges('I060') >= QuestSuppliesForEinar.maxSwords
 		endmethod
-		
+
 		// Hier sind fünf Kurzschwerter.
 		private static method infoActionWeapons takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Hier sind fünf Kurzschwerter.", "Here are five short swords."), null)
@@ -128,19 +126,19 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call QuestSuppliesForEinar.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Charakter hat den Auftrag „Wielands Schwert“ abgeschlossen)
 		private static method infoConditionAboutWieland takes AInfo info, Character character returns boolean
 			local thistype this = thistype(info.talk())
 			return QuestWielandsSword.characterQuest(character).isCompleted()
 		endmethod
-		
+
 		// Hey, hast du mich etwa bei Wieland angeschwärzt? Verdammt Mann, das war doch nicht so gemeint. Geschäft ist Geschäft, verstehst du das nicht?
 		private static method infoActionAboutWieland takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, true, tre("Hey, hast du mich etwa bei Wieland angeschwärzt? Verdammt Mann, das war doch nicht so gemeint. Geschäft ist Geschäft, verstehst du das nicht?", "Hey, did you blacken me to Wieland? Damn man, it wasn't meant that way. Business is business, don't you understand?"), gg_snd_Einar_24_1)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.einar(), thistype.startPageAction)
 			// start page
@@ -152,11 +150,13 @@ library StructMapTalksTalkEinar requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			set this.m_forge = this.addInfo(true, false, thistype.infoConditionForge, thistype.infoActionForge, tre("Wo kann ich hier schmieden?", "Where can I forge here?"))
 			set this.m_weapons = this.addInfo(true, false, thistype.infoConditionWeapons, thistype.infoActionWeapons, tre("Hier sind fünf Kurzschwerter.", "Here are five short swords."))
 			set this.m_exit = this.addExitButton()
-			
+
 			set this.m_aboutWieland = this.addInfo(false, true, thistype.infoConditionAboutWieland, thistype.infoActionAboutWieland, null)
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

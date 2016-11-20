@@ -9,8 +9,6 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 		private AGroup m_actorsRavenJugglers
 		private AGroup m_actorsDoomedMen
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call Game.hideSpawnPointUnits(SpawnPoints.deathVault())
@@ -55,7 +53,7 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_death_vault_0)
+			call FixVideoCamera(gg_cam_death_vault_0)
 			call CameraSetupApplyForceDuration(gg_cam_death_vault_1, true, 3.0)
 
 			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("In dieser Gruft befinden sich zwei starke böse Kreaturen. Zum Einen eine mächtige Medusa und zum Anderen der „Diakon der Finsternis“.", "In this crypt there is two powerful evil creatures. On the ne hand a powerful Medusa and on the other hand the \"Deacon of Darkness\"."), gg_snd_DragonSlayerDeathVault1)
@@ -250,6 +248,8 @@ library StructMapVideosVideoDeathVault requires Asl, StructGameGame, StructMapMa
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

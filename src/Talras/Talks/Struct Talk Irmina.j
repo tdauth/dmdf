@@ -9,8 +9,6 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 		private static constant integer potionKey = 1
 		private timer array m_potionTimer[12] // MapSettings.maxPlayers()
 
-		implement Talk
-
 		private method showPotionInfo takes Character character returns nothing
 			if (TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]) > 0.0) then
 				call character.displayHint(Format(tre("Irminas %1% benötigt noch %2% Sekunden bis zur Fertigstellung.", "Irmina's %1% still takes %2% seconds until it is finished.")).s(GetObjectName(DmdfHashTable.global().handleInteger(this.m_potionTimer[GetPlayerId(character.player())], thistype.potionKey))).time(R2I(TimerGetRemaining(this.m_potionTimer[GetPlayerId(character.player())]))).result())
@@ -36,7 +34,7 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 		private static method timerFunctionPotion takes nothing returns nothing
 			local Character character = DmdfHashTable.global().handleInteger(GetExpiredTimer(), thistype.characterKey)
-			call thistype(thistype.talk()).showPotionInfo(character)
+			call thistype(thistype.talk.evaluate()).showPotionInfo(character)
 		endmethod
 
 		private method startPotionCreation takes Character character, integer potion returns nothing
@@ -220,47 +218,51 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 		// (Nachdem der Charakter danach gefragt hat)
 		private static method infoCondition6 takes AInfo info, ACharacter character returns boolean
-			return info.talk().infoHasBeenShownToCharacter(2, character)
+			local thistype this = thistype(info.talk())
+			return this.infoHasBeenShownToCharacter(2, character)
 		endmethod
 
 		// Braue mir einen speziellen Trank!
 		private static method infoAction6 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Braue mir einen speziellen Trank!", "Make me a special potion!"), null)
 			// (Irmina braut keinen speziellen Trank für den Charakter)
-			if (not thistype(info.talk()).createsPotion(character)) then
+			if (not this.createsPotion(character)) then
 				call speech(info, character, true, tre("Gut, wenn du die Zutaten und Goldmünzen hast. Welcher darf's denn sein?", "Well, if you have the ingredients and gold coins. What'll it be?"), gg_snd_Irmina27)
-				call info.talk().showRange(13, 16, character)
-			elseif (thistype(info.talk()).createsPotion(character)) then
+				call this.showRange(13, 16, character)
+			elseif (this.createsPotion(character)) then
 			// (Irmina braut bereits einen speziellen Trank für den Charakter)
 				call speech(info, character, true, tre("Ich braue dir doch bereits einen. Warte erst mal bis der fertig ist, dann sehen wir weiter!", "But I'll already making one for you. Just wait until that is done, then we'll see!"), gg_snd_Irmina31)
-				call thistype(thistype.talk()).showPotionInfo(character)
-				call info.talk().showStartPage(character)
+				call this.showPotionInfo(character)
+				call this.showStartPage(character)
 			// (Irmina braut keinen speziellen Trank, der Charakter hat sich den letzten aber noch nicht abgeholt)
-			elseif (thistype(info.talk()).finishedPotion(character)) then
+			elseif (this.finishedPotion(character)) then
 				call speech(info, character, true, tre("Gut, hier hast du noch deinen letzten Trank und welcher darf's als Nächstes sein?", "Well, here you still have your last potion and which must be the next?"), gg_snd_Irmina32)
-				call thistype(info.talk()).finishPotionCreation(character)
-				call info.talk().showRange(13, 16, character)
+				call this.finishPotionCreation(character)
+				call this.showRange(13, 16, character)
 			endif
 		endmethod
 
 		// (Irmina braut einen Trank für den Charakter oder ist bereits fertig damit)
 		private static method infoCondition7 takes AInfo info, ACharacter character returns boolean
-			return thistype(info.talk()).createsPotion(character) or thistype(info.talk()).finishedPotion(character)
+			local thistype this = thistype(info.talk())
+			return this.createsPotion(character) or this.finishedPotion(character)
 		endmethod
 
 		// Hast du den Trank für mich?
 		private static method infoAction7 takes AInfo info, ACharacter character returns nothing
+			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Hast du den Trank für mich?", "Do you have the potion for me?"), null)
 			// (Der Trank ist fertig)
-			if (thistype(thistype.talk()).finishedPotion(character)) then
+			if (this.finishedPotion(character)) then
 				call speech(info, character, true, tre("Ja. Bitteschön, hier hast du ihn.", "Yes. Here you go, here you have it."), gg_snd_Irmina33)
-				call thistype(thistype.talk()).finishPotionCreation(character)
+				call this.finishPotionCreation(character)
 			// (Der Trank ist noch nicht fertig)
 			else
 				call speech(info, character, false, tre("Nein. Es dauert noch eine Weile.", "No. It takes a while."), gg_snd_Irmina34)
-				call thistype(thistype.talk()).showPotionInfo(character)
+				call this.showPotionInfo(character)
 			endif
-			call info.talk().showStartPage(character)
+			call this.showStartPage(character)
 		endmethod
 
 		// Was verkaufst du denn?
@@ -374,6 +376,8 @@ library StructMapTalksTalkIrmina requires Asl, StructGameDmdfHashTable, StructMa
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

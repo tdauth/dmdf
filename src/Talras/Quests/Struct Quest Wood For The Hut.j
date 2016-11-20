@@ -2,8 +2,6 @@ library StructMapQuestsQuestWoodForTheHut requires Asl, StructGameCharacter, Str
 
 	struct QuestWoodForTheHut extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(0)
 		endmethod
@@ -45,6 +43,8 @@ library StructMapQuestsQuestWoodForTheHut requires Asl, StructGameCharacter, Str
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

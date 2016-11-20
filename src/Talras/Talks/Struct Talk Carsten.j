@@ -5,9 +5,6 @@ library StructMapTalksTalkCarsten requires Asl, StructMapQuestsQuestTheAuthor
 	 * \note If you overlook him in the game he will be suffering on his island forever!
 	 */
 	struct TalkCarsten extends Talk
-
-		implement Talk
-
 		private AInfo m_hi
 		private AInfo m_help
 		private AInfo m_scroll
@@ -85,6 +82,8 @@ library StructMapTalksTalkCarsten requires Asl, StructMapQuestsQuestTheAuthor
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

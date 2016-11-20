@@ -5,8 +5,6 @@ library StructMapQuestsQuestShitOnTheThrone requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemTalkToWotan = 1
 		public static constant integer questItemReport = 2
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
 			call character.giveQuestItem('I03Q')
@@ -63,6 +61,8 @@ library StructMapQuestsQuestShitOnTheThrone requires Asl, Game, StructMapMapNpcs
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

@@ -6,8 +6,6 @@ library StructMapQuestsQuestTheOaksPower requires Asl, StructGameCharacter
 		public static constant integer rewardItemTypeId = 'I05D'
 		private static constant integer abilityId = 'A067'
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(0)
 		endmethod
@@ -67,6 +65,7 @@ library StructMapQuestsQuestTheOaksPower requires Asl, StructGameCharacter
 			return this
 		endmethod
 
+		implement CharacterQuest
 	endstruct
 
 endlibrary

@@ -1,9 +1,6 @@
 library StructMapTalksTalkGotlinde requires Asl, StructMapMapNpcs, StructMapQuestsQuestMother
 
 	struct TalkGotlinde extends Talk
-
-		implement Talk
-
 		private AInfo m_hi
 		private AInfo m_exit
 
@@ -72,6 +69,8 @@ library StructMapTalksTalkGotlinde requires Asl, StructMapMapNpcs, StructMapQues
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

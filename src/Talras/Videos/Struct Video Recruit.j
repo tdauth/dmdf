@@ -12,8 +12,6 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 		private unit m_actorWorker3
 		private unit m_actorWorker4
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
@@ -49,7 +47,7 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_recruit_initial_view)
+			call FixVideoCamera(gg_cam_recruit_initial_view)
 
 			call TransmissionFromUnit(this.m_actorFerdinand, tre("Hört mich an Bauern!", "Hear me farmers!"), null)
 
@@ -113,6 +111,8 @@ library StructMapVideosVideoRecruit requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

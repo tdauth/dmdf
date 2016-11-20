@@ -4,8 +4,6 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter, StructMa
 		public static constant integer itemTypeId = 'I00Z'
 		private trigger m_hintTrigger
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			call Character(this.character()).giveQuestItem(thistype.itemTypeId)
 			call EnableTrigger(this.m_hintTrigger)
@@ -64,6 +62,8 @@ library StructMapQuestsQuestTheMagic requires Asl, StructGameCharacter, StructMa
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

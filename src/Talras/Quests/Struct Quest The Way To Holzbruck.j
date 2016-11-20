@@ -14,8 +14,6 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructGameCharacter,
 	struct QuestTheWayToHolzbruck extends SharedQuest
 		private QuestAreaTheWayToHolzbruck m_questArea
 
-		implement Quest
-
 		public stub method enable takes nothing returns boolean
 			call Missions.addMissionToAll('A1E3', 'A1RG', this)
 
@@ -38,6 +36,8 @@ library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructGameCharacter,
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

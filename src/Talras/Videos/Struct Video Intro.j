@@ -11,8 +11,6 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		private integer m_actorHeimrich
 		private integer m_actorMarkward
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(6.00)
@@ -66,7 +64,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		public stub method onPlayAction takes nothing returns nothing
 			local player user = Player(PLAYER_NEUTRAL_PASSIVE)
 			local unit characterUnit = null
-			call thistype.fixCamera(gg_cam_intro_orc)
+			call FixVideoCamera(gg_cam_intro_orc)
 			call PlayThematicMusic("Music\\Intro.mp3")
 			if (wait(0.50)) then
 				return
@@ -168,6 +166,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

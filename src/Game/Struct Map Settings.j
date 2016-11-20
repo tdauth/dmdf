@@ -8,17 +8,23 @@ library StructGameMapSettings
 	 * Note that most settings have default values.
 	 */
 	struct MapSettings
+		/// The map name is used for zones for example to detect the map file name.
 		private static string m_mapName = ""
+		/// This list of music files is set as map music during the map initialization.
 		private static string m_mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3"
 		private static integer m_maxPlayers = 6
+		/// The player who owns fellows whose control is shared by all users.
 		private static player m_alliedPlayer = Player(6)
-		private static player m_neutralPassivePlayer = Player(7)
+		/// The player for actors during video sequences. This prevents returning the units to their creep spots automatically.
+		private static player m_neutralPassivePlayer = Player(PLAYER_NEUTRAL_PASSIVE)
 		private static boolean array m_playerGivesXP[16]
+		/// The fixed time in seconds which it takes until a character is revived automatically after his death.
 		private static real m_revivalTime = 35.0
 		private static integer m_startLevel = 1
 		private static integer m_startSkillPoints = 1 /// Includes the skill point for the default spell.
 		private static integer m_levelSkillPoints = 2
 		private static integer m_maxLevel = 10000
+		/// If this value is true there will always be a class selection in the beginning if the map is started for the first time. Otherwise characters will be loaded from the gamecache in campaign mode if available.
 		private static boolean m_isSeparateChapter = false
 		private static unit m_goldmine
 		private static AGlobalHashTable m_excludedTeleportUnitTypeIds

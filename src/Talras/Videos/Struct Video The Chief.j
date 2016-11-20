@@ -6,8 +6,6 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 		private unit m_actorNorseman0
 		private unit m_actorNorseman1
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(6.00)
@@ -53,7 +51,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_the_chief_0)
+			call FixVideoCamera(gg_cam_the_chief_0)
 			call CameraSetupApplyForceDuration(gg_cam_the_chief_1, true, 10.0)
 
 			if (waitForCondition(1.0, thistype.conditionActorIsInTargetRect)) then
@@ -222,6 +220,8 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

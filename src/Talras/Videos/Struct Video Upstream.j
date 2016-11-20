@@ -13,8 +13,6 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 		private integer m_actorGiant
 		private AGroup m_group
 
-		implement Video
-
 		private static method playMusic takes nothing returns nothing
 			call PlayThematicMusic("Music\\Upstream.mp3")
 			call TriggerSleepAction(228.0) /// @todo Replace by WaitForMusic or something else (more exact).
@@ -134,7 +132,7 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 		endmethod
 
 		private method continueShipRoute takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_upstream_0)
+			call FixVideoCamera(gg_cam_upstream_0)
 			call CameraSetupApplyForceDuration(gg_cam_upstream_1, true, 8.0)
 			loop
 				exitwhen (RectContainsUnit(gg_rct_video_upstream_ship_before_2,  this.unitActor(this.m_actorBoat)))
@@ -369,6 +367,8 @@ library StructMapVideosVideoUpstream requires Asl, StructGameGame, StructGameMap
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

@@ -118,8 +118,6 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		// questItemReportHeimrich
 		private QuestAreaQuestTheDefenseOfTalrasReportHeimrich m_questAreaReportHeimrich
 
-		implement Quest
-
 		private static method stateEventCompletedDefendAgainstOrcs takes AQuestItem whichQuestItem, trigger whichTrigger returns nothing
 			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_DEATH)
 		endmethod
@@ -458,7 +456,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 
 		private static method timerFunctionOrcWave takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			local AGroup currentGroup = AGroup.create()
 			set this.m_orcWavesCounter = this.m_orcWavesCounter + 1
 			call currentGroup.addGroup(CreateUnitsAtRect(3, 'n058', MapData.orcPlayer, gg_rct_quest_the_defense_of_talras_orc_spawn_0, 90.0), true, false)
@@ -528,7 +526,7 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 		endmethod
 
 		private static method timerFunctionFinish takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 
 			call DestroyTimerDialog(this.m_timerDialog)
 			set this.m_timerDialog = null
@@ -749,6 +747,8 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

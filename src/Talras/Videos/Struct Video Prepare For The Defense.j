@@ -9,8 +9,6 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 		private integer m_actorRicman
 		private integer m_actorDragonSlayer
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
@@ -55,7 +53,7 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_the_duke_of_talras_0)
+			call FixVideoCamera(gg_cam_the_duke_of_talras_0)
 
 			call TransmissionFromUnit(this.actor(), tre("Wir haben den Auftrag erfüllt.", "We have completed the mission."), null)
 
@@ -141,6 +139,8 @@ library StructMapVideosVideoPrepareForTheDefense requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

@@ -11,8 +11,6 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 		private AInfo m_hi
 		private AInfo m_hereIsACat
 
-		implement Talk
-
 		public method playerHasTalkedTo takes player whichPlayer returns boolean
 			return this.m_playerHasTalkedTo[GetPlayerId(whichPlayer)]
 		endmethod
@@ -189,6 +187,8 @@ library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
 		private method onDestroy takes nothing returns nothing
 			call this.m_cats.destroy()
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

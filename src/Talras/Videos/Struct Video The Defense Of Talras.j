@@ -14,8 +14,6 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 		private unit m_villager0
 		private unit m_villager1
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			/*
@@ -55,7 +53,7 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_the_defense_of_talras_0)
+			call FixVideoCamera(gg_cam_the_defense_of_talras_0)
 
 			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tr("Ricman"), tr("Männer, macht euch bereit für euer letztes Gefecht. Heute mag der Tag gekommen sein, da wir allesamt das Zeitliche segnen, doch vorher zahlen wir es diesen Bastarden heim."), gg_snd_RicmanTheDefenseOfTalrasRicman1)
 
@@ -134,6 +132,8 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

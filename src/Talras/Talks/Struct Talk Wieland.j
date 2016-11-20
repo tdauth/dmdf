@@ -2,8 +2,6 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses, StructMapQues
 
 	struct TalkWieland extends Talk
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			if  (not this.showInfo(0, character)) then
 				call this.showRange(1, 5, character)
@@ -171,6 +169,8 @@ library StructMapTalksTalkWieland requires Asl, StructGameClasses, StructMapQues
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

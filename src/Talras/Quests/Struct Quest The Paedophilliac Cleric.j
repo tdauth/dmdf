@@ -2,8 +2,6 @@ library StructMapQuestsQuestThePaedophilliacCleric requires Asl, StructGameChara
 
 	struct QuestThePaedophilliacCleric extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enable()
 		endmethod
@@ -26,6 +24,8 @@ library StructMapQuestsQuestThePaedophilliacCleric requires Asl, StructGameChara
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

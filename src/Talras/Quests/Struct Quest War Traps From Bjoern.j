@@ -39,8 +39,6 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 		 private ALocationVector m_traps
 		 private AEffectVector m_trapEffects
 
-		 implement Quest
-
 		public stub method enable takes nothing returns boolean
 			local boolean result = this.setState(thistype.stateNew)
 			call this.questItem(thistype.questItemTrapsFromBjoern).setState(thistype.stateNew)
@@ -51,7 +49,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 		endmethod
 
 		private static method timerFunctionSpawnBjoernsTraps takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			local boolean spawned = false
 			local integer i = 0
 			loop
@@ -116,7 +114,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 		endmethod
 
 		private static method stateConditionCompletedPlaceTraps takes AQuestItem questItem returns boolean
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			if (GetSpellAbilityId() == 'A0QZ' and RectContainsCoords(gg_rct_quest_war_bjoern_place_traps, GetSpellTargetX(), GetSpellTargetY())) then
 				call this.addTrap(GetSpellTargetX(), GetSpellTargetY())
 
@@ -127,7 +125,7 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 		endmethod
 
 		private static method stateActionCompletedPlaceTraps takes AQuestItem questItem returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			local integer i = 0
 			loop
 				exitwhen (i == thistype.maxSpawnedTraps)
@@ -185,6 +183,8 @@ library StructMapQuestsQuestWarTrapsFromBjoern requires Asl, StructGameQuestArea
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

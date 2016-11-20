@@ -32,8 +32,6 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		private timer m_kunosCartSpawnTimer
 		private unit m_kunosCart
 
-		implement Quest
-
 		public method cleanUnits takes nothing returns nothing
 			// Kuno
 			call RemoveUnit(this.m_kunosCart)
@@ -127,7 +125,7 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		endmethod
 
 		private static method timerFunctionSpawnKunosCart takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			if (IsUnitDeadBJ(this.m_kunosCart)) then
 				set this.m_kunosCart = CreateUnit(MapSettings.alliedPlayer(), 'h021', GetRectCenterX(gg_rct_quest_war_kuno), GetRectCenterY(gg_rct_quest_war_kuno), 0.0)
 				call this.displayUpdateMessage(tre("Eine neue Holzlieferung steht zur Verfügung.", "A new supply of wood is available."))
@@ -167,12 +165,12 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 		endmethod
 
 		private static method stateConditionCompletedMoveKunosLumberToTheCamp takes AQuestItem questItem returns boolean
-			local thistype this = thistype.quest()
+			local thistype this = thistype(questItem.quest())
 			return GetTriggerUnit() == this.m_kunosCart
 		endmethod
 
 		private static method stateActionCompletedMoveKunosLumberToTheCamp takes AQuestItem questItem returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype(questItem.quest())
 			call QuestWar.quest.evaluate().setupUnitAtDestination.evaluate(this.m_kunosCart)
 			call PauseTimer(this.m_kunosCartSpawnTimer)
 			call DestroyTimer(this.m_kunosCartSpawnTimer)
@@ -220,6 +218,8 @@ library StructMapQuestsQuestWarLumberFromKuno requires Asl, StructGameQuestArea,
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

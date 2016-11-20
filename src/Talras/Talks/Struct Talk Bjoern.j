@@ -29,8 +29,6 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 		private integer m_toldBearFight
 		private boolean m_bonus
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			if (not this.infoHasBeenShownToCharacter(this.m_hi.index(), character)) then
 				call this.showInfo(this.m_hi.index(), character)
@@ -446,6 +444,8 @@ library StructMapTalksTalkBjoern requires Asl, StructMapQuestsQuestBurnTheBearsD
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

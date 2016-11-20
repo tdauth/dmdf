@@ -2,8 +2,6 @@ library StructMapTalksTalkTellborn requires Asl, StructMapTalksTalkFulco, Struct
 
 	struct TalkTellborn extends Talk
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(7, character)
 		endmethod
@@ -235,6 +233,8 @@ library StructMapTalksTalkTellborn requires Asl, StructMapTalksTalkFulco, Struct
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

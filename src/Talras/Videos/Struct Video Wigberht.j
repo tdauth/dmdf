@@ -13,8 +13,6 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		private effect m_effect
 		private AJump m_jump
 
-		implement Video
-
 		private static method filterIsDead takes nothing returns boolean
 			return IsUnitDeadBJ(GetFilterUnit())
 		endmethod
@@ -188,7 +186,7 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_wigberht_0)
+			call FixVideoCamera(gg_cam_wigberht_0)
 			if (wait(4.0)) then
 				return
 			endif
@@ -435,6 +433,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

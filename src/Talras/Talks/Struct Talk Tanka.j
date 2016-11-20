@@ -4,8 +4,6 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		private static constant integer rewardGold = 30
 		private integer array m_hints[12] /// @todo @member MapSettings.maxPlayers(), vJass bug
 
-		implement Talk
-
 		private method addHint takes player whichPlayer returns nothing
 			set this.m_hints[GetPlayerId(whichPlayer)] = this.m_hints[GetPlayerId(whichPlayer)] + 1
 		endmethod
@@ -359,6 +357,8 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

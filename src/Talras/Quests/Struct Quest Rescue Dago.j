@@ -26,8 +26,6 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		private QuestAreaRescueDago m_questArea
 		private real m_dagosMoveSpeed = 0.0
 
-		implement Quest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(1)
 		endmethod
@@ -178,6 +176,8 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

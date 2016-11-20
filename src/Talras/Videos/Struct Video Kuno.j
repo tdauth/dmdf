@@ -4,8 +4,6 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 		private unit m_actorKuno
 		private unit m_actorKunosDaughter
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
@@ -26,7 +24,7 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_kuno_initial_view)
+			call FixVideoCamera(gg_cam_kuno_initial_view)
 
 			call TransmissionFromUnit(this.actor(), tre("Holzfäller Kuno!", "Lumberjack Kuno!"), null)
 
@@ -123,6 +121,8 @@ library StructMapVideosVideoKuno requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

@@ -13,8 +13,6 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		private group m_firstAllyGroup
 		private group m_firstEnemyGroup
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			local unit createdUnit
 			local integer index
@@ -196,7 +194,7 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_the_first_combat_0)
+			call FixVideoCamera(gg_cam_the_first_combat_0)
 
 			call ForGroup(this.m_firstActorGroup, function thistype.groupFunctionSetHaldar)
 			call ForGroup(this.m_secondActorGroup, function thistype.groupFunctionSetBaldar)
@@ -323,6 +321,8 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

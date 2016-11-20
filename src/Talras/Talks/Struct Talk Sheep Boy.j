@@ -1,9 +1,6 @@
 library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, StructMapMapNpcs, StructMapQuestsQuestWolvesHunt, StructMapQuestsQuestStormingTheMill
 
 	struct TalkSheepBoy extends Talk
-	
-		implement Talk
-		
 		private AInfo m_hi
 		private AInfo m_whoAreYou
 		private AInfo m_fear
@@ -25,7 +22,7 @@ library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, Struct
 			call speech(info, character, true, tr("Was machst du hier? Willst du etwa ein Schaf stehlen? Sieh dich bloß vor, sonst kriegst du es mit mir zu tun!"), gg_snd_Schafshirte_01)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// Wer bist du?
 		private static method infoActionWhoAreYou takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wer bist du?"), null)
@@ -33,13 +30,13 @@ library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, Struct
 			call speech(info, character, true, tr("Ich bewache Manfreds Schafe, damit sie ungestört grasen können und bis zum Winter ordentlich fett werden und gesund bleiben."), gg_snd_Schafshirte_03)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach Begrüßung)
 		private static method infoConditionFear takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return this.infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
-		
+
 		// Hast du keine Angst ganz alleine hier?
 		private static method infoActionFear takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Hast du keine Angst ganz alleine hier?"), null)
@@ -48,13 +45,13 @@ library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, Struct
 			call speech(info, character, true, tr("Ja sicher, ob Wegelagerer, Orks oder Dunkelelfen. Die Männer auf dem Bauernhof sind doch allesamt Feiglinge. Ich würde es mit einer ganzen Armee aufnehmen wenn es sein muss."), gg_snd_Schafshirte_05)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach Begrüßung)
 		private static method infoConditionHelp takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return info.talk().infoHasBeenShownToCharacter(this.m_hi.index(), character)
 		endmethod
-		
+
 		// Kann ich dir irgendwie helfen?
 		private static method infoActionHelp takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Kann ich dir irgendwie helfen?"), null)
@@ -73,19 +70,19 @@ library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, Struct
 
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftrag „Wolfsjagd“ ist aktiv)
 		private static method infoConditionWhereAreWolves takes AInfo info, ACharacter character returns boolean
 			return QuestWolvesHunt.characterQuest(character).isNew()
 		endmethod
-		
+
 		// Wo finde ich die Rudelführer?
 		private static method infoActionWhereAreWolves takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Wo finde ich die Rudelführer?"), null)
 			call speech(info, character, true, tr("Einen habe ich neulich am Rande dieses Berges gesehen. Weiter nördlich vom Aufstieg."), gg_snd_Schafshirte_13)
 			call speech(info, character, true, tr("Ich habe auch von Angriffen weit im Südwesten gehört. Reisende auf dem Weg nach Talras sollen dort Vieh an Wölfe verloren haben."), gg_snd_Schafshirte_14)
 			call speech(info, character, true, tr("Töte sie alle!"), gg_snd_Schafshirte_15)
-		
+
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -105,17 +102,17 @@ library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, Struct
 			call QuestWolvesHunt.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Nach „Die Rudelführer sind tot“)
 		private static method infoConditionMoreHelp takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return info.talk().infoHasBeenShownToCharacter(this.m_wolvesDead.index(), character)
 		endmethod
-		
+
 		// Und sonst ist alles in Ordnung?
 		private static method infoActionMoreHelp takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Und sonst ist alles in Ordnung?"), null)
-			
+
 			call speech(info, character, true, tr("Nicht wirklich. Seit Guntrich nicht mehr zu seiner Mühle geht, haben sich dort hinten Wegelagerer breit gemacht."), gg_snd_Schafshirte_18)
 			call speech(info, character, true, tr("Die sitzen dort und fressen sich satt an unserem Korn. Wenn Guntrich nichts unternimmt, sind bald unsere gesamten Vorräte weg."), gg_snd_Schafshirte_19)
 			call speech(info, character, true, tr("Aber er glaubt ja es würde spuken, also muss ich mich wieder darum kümmern."), gg_snd_Schafshirte_20)
@@ -133,37 +130,37 @@ library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, Struct
 			call speech(info, character, false, tr("WAS?!"), null)
 			call speech(info, character, true, tr("Keine Angst, es ist nicht so teuer wie du denkst. Ich mache dir einen Freundschaftspreis."), gg_snd_Schafshirte_28)
 			call speech(info, character, true, tr("Nun denn, ziehe dahin für Ruhm und Ehre auf dass die Schafe diesen Berg für sich behaupten können!"), gg_snd_Schafshirte_29)
-			
+
 			// Neuer Auftrag „Sturm auf die Mühle“
 			call QuestStormingTheMill.characterQuest(character).enable()
-			
+
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 2 des Auftrags „Sturm auf die Mühle“ ist abgeschlossen)
 		private static method infoConditionBanditsDead takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return QuestStormingTheMill.characterQuest(character).questItem(1).isCompleted() and QuestStormingTheMill.characterQuest(character).questItem(2).isNew()
 		endmethod
-		
+
 		// Die Wegelagerer sind tot.
 		private static method infoActionBanditsDead takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Die Wegelagerer sind tot."), null)
 			call speech(info, character, true, tr("Tatsächlich? Ich hoffe dein Schaf hat dir als Schlachtross treue Dienste geleistet."), gg_snd_Schafshirte_30)
 			call speech(info, character, false, tr("Natürlich …"), null)
 			call speech(info, character, true, tr("Die Schafe danken dir für deine Ritterlichkeit. Endlich gehört der Berg wieder uns!"), gg_snd_Schafshirte_31)
-			
+
 			// Auftrag „Sturm auf die Mühle“ abgeschlossen.
 			call QuestStormingTheMill.characterQuest(character).complete()
-			
+
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// TODO gg_snd_Schafshirte_32
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.sheepBoy(), thistype.startPageAction)
-			
+
 			// start page
 			set this.m_hi = this.addInfo(false, true, 0, thistype.infoActionHi, null) // (Automatisch)
 			set this.m_whoAreYou = this.addInfo(false, false, 0, thistype.infoActionWhoAreYou, tr("Wer bist du?"))
@@ -177,6 +174,8 @@ library StructMapTalksTalkSheepBoy requires Asl, StructMapMapNpcRoutines, Struct
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

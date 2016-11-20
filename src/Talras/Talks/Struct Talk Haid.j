@@ -11,8 +11,6 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 		private AInfo m_goldBack
 		private AInfo m_exit
 
-		implement Talk
-
 		private method completeWithCostKnowledge takes player whichPlayer returns nothing
 			set this.m_completedWithCostKnowledge[GetPlayerId(whichPlayer)] = true
 		endmethod
@@ -169,6 +167,8 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

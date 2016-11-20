@@ -3,8 +3,6 @@ library StructMapQuestsQuestTheKingsCrown requires Asl, Game
 	struct QuestTheKingsCrown extends AQuest
 		public static constant integer crownItemTypeId = 'I01A'
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(0)
 		endmethod
@@ -44,6 +42,8 @@ library StructMapQuestsQuestTheKingsCrown requires Asl, Game
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

@@ -3,8 +3,6 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 	struct QuestTheGhostOfTheMaster extends AQuest
 		private static constant integer masterUnitTypeId = 'u009'
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(0)
 		endmethod
@@ -98,6 +96,8 @@ library StructMapQuestsQuestTheGhostOfTheMaster requires Asl, StructGameCharacte
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

@@ -35,8 +35,6 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		private timer m_supplyCartSpawnTimer
 		private timer m_manfredsSupplyTimer
 
-		implement Quest
-
 		public method cleanUnits takes nothing returns nothing
 			// Manfred
 			call RemoveUnit(this.m_supplyCart)
@@ -136,7 +134,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		endmethod
 
 		private static method timerFunctionSpawnSupplyCart takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			if (IsUnitDeadBJ(this.m_supplyCart)) then
 				set this.m_supplyCart = CreateUnit(MapSettings.alliedPlayer(), 'h022', GetRectCenterX(gg_rct_quest_war_manfred), GetRectCenterY(gg_rct_quest_war_manfred), 0.0)
 				call this.displayUpdateMessage(tre("Eine neue Nahrungslieferung steht zur Verfügung.", "A new supply of food is available."))
@@ -147,7 +145,7 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 		endmethod
 
 		private static method timerFunctionManfredsSupply takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			call this.questItem(thistype.questItemWaitForManfredsSupply).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemMoveManfredsSupplyToTheCamp).setState(thistype.stateNew)
 			call this.displayUpdate()
@@ -251,6 +249,8 @@ library StructMapQuestsQuestWarSupplyFromManfred requires Asl, StructGameQuestAr
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

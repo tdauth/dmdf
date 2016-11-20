@@ -2,8 +2,6 @@ library StructMapQuestsQuestProtectThePeople requires Asl, StructGameCharacter, 
 
 	struct QuestProtectThePeople extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(0)
 		endmethod
@@ -28,6 +26,8 @@ library StructMapQuestsQuestProtectThePeople requires Asl, StructGameCharacter, 
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

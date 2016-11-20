@@ -1,9 +1,6 @@
 library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuestsQuestMother
 
 	struct TalkMother extends Talk
-
-		implement Talk
-
 		private AInfo m_hi
 		private AInfo m_food
 		private AInfo m_back
@@ -128,6 +125,8 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

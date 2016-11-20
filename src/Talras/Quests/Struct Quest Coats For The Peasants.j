@@ -3,8 +3,6 @@ library StructMapQuestsQuestCoatsForThePeasants requires Asl, StructGameCharacte
 	struct QuestCoatsForThePeasants extends AQuest
 		private static constant integer itemTypeId = 'I01Z'
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enable()
 		endmethod
@@ -50,6 +48,8 @@ library StructMapQuestsQuestCoatsForThePeasants requires Asl, StructGameCharacte
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

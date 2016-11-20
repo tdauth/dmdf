@@ -21,8 +21,6 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 		private static AInfo m_busy
 		private static AInfo m_exit
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			call thistype.m_hi.show(character)
 			call thistype.m_yourHouse.show(character)
@@ -364,6 +362,8 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

@@ -7,8 +7,6 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 		private trigger array m_arrowTriggers[thistype.maxArrows]
 		private destructable array arrowsMarker[thistype.maxArrows]
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			call this.setState(AAbstractQuest.stateNew)
 			call this.questItem(0).setState(AAbstractQuest.stateNew)
@@ -181,6 +179,8 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

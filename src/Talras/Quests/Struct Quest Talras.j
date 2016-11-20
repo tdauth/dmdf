@@ -34,8 +34,6 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 		private QuestAreaTalrasCastle m_questAreaCastle
 		private QuestAreaTalrasDuke m_questAreaDuke
 
-		implement Quest
-
 		public stub method enable takes nothing returns boolean
 			set this.m_questAreaCastle = QuestAreaTalrasCastle.create(gg_rct_quest_talras_quest_item_0)
 			call Missions.addMissionToAll('A1BZ', 'A1R7', this)
@@ -71,6 +69,8 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

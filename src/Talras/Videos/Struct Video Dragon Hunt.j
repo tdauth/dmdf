@@ -3,8 +3,6 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 	struct VideoDragonHunt extends AVideo
 		private unit m_actorDragonSlayer
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(0.0)
@@ -17,12 +15,10 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 			set this.m_actorDragonSlayer = this.unitActor(this.saveUnitActor(Npcs.dragonSlayer()))
 			//call SetUnitPositionRect(this.m_actorDragonSlayer, gg_rct_video_dragon_hunt_dragon_slayer) use initial rect
 			//call SetUnitFacing(this.m_actorDragonSlayer, 90.0) use initial facing.
-
-
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_dragon_hunt_0)
+			call FixVideoCamera(gg_cam_dragon_hunt_0)
 
 			if (wait(1.0)) then
 				return
@@ -187,6 +183,8 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

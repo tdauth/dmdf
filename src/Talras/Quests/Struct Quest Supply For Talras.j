@@ -2,8 +2,6 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 
 	struct QuestSupplyForTalras extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			call this.setState(AAbstractQuest.stateNew)
 			call this.questItem(0).setState(AAbstractQuest.stateNew)
@@ -95,6 +93,8 @@ library StructMapQuestsQuestSupplyForTalras requires Asl, StructGameCharacter, S
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

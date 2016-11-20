@@ -2,8 +2,6 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 
 	struct TalkUrsula extends Talk
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(10, character)
 		endmethod
@@ -148,12 +146,12 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 			call speech(info, character, true, tr("Außerdem habe ich noch einige Gegenstände, um einen wahren Druiden auszurüsten. Vielleicht interessiert du dich ja dafür."), gg_snd_Ursula36)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Samen für den Garten“ ist aktiv, permanent)
 		private static method infoConditionSeedForTheGarden takes AInfo info, ACharacter character returns boolean
 			return QuestSeedsForTheGarden.characterQuest(character).questItem(0).isNew()
 		endmethod
-		
+
 		// Trommon benötigt ein paar Samen für seinen Garten.
 		private static method infoActionSeedForTheGarden takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Trommon benötigt ein paar Samen für seinen Garten."), null)
@@ -184,12 +182,12 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 			call speech(info, character, true, tr("Wie du meinst."), gg_snd_Ursula21)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Charakter hat mindestens 50 Goldmünzen, permanent)
 		private static method infoConditionEnoughGold takes AInfo info, ACharacter character returns boolean
 			return character.gold() >= 50
 		endmethod
-		
+
 		// Ja.
 		private static method infoActionSeedForTheGarden_Yes takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Ja."), null)
@@ -203,14 +201,14 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 			call QuestSeedsForTheGarden.characterQuest(character).questItem(0).complete()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// Nein.
 		private static method infoActionSeedForTheGarden_No takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tr("Nein."), null)
 			call speech(info, character, true, tr("Tut mir Leid aber ganz umsonst werde ich das nicht entbehren."), gg_snd_Ursula42)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// TODO
 		// gg_snd_Ursula43
 
@@ -233,13 +231,15 @@ library StructMapTalksTalkUrsula requires Asl, StructMapQuestsQuestTheOaksPower,
 			// info 5
 			call this.addInfo(false, false, 0, thistype.infoAction5_0, tr("Gut.")) // 11
 			call this.addInfo(false, false, 0, thistype.infoAction5_1, tr("Kein Interesse.")) // 12
-			
+
 			// info 9
 			call this.addInfo(true, false, thistype.infoConditionEnoughGold, thistype.infoActionSeedForTheGarden_Yes, tr("Ja.")) // 13
 			call this.addInfo(true, false, 0, thistype.infoActionSeedForTheGarden_No, tr("Nein.")) // 14
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

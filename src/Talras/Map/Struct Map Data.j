@@ -1,93 +1,8 @@
 library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMapNpcRoutines, StructMapMapWeather, StructMapQuestsQuestTalras, StructMapQuestsQuestTheNorsemen, MapQuests, MapVideos
 
-	/**
-	 * \brief A static class which defines unit type ids with identifiers.
-	 */
-	struct UnitTypes
-		public static constant integer orcCrossbow = 'n01A'
-		public static constant integer orcBerserk = 'n01G'
-		public static constant integer orcWarlock = 'n018'
-		public static constant integer orcWarrior = 'n019'
-		public static constant integer orcGolem = 'n025'
-		public static constant integer orcPython = 'n01F'
-		public static constant integer orcLeader = 'n02P'
-		public static constant integer darkElfSatyr = 'n02O'
-		public static constant integer norseman = 'n01I'
-		public static constant integer ranger = 'n03F'
-		public static constant integer armedVillager = 'n03H'
-
-		public static constant integer broodMother = 'n05F'
-		public static constant integer deathAngel = 'n02K'
-		public static constant integer vampire = 'n02L'
-		public static constant integer vampireLord = 'n010'
-		public static constant integer doomedMan = 'n037'
-		public static constant integer deacon = 'n035'
-		public static constant integer ravenJuggler = 'n036'
-		public static constant integer degenerateSoul = 'n038'
-		public static constant integer medusa = 'n033'
-		public static constant integer thunderCreature = 'n034'
-
-		public static constant integer boneDragon = 'n024'
-
-		public static constant integer deranor = 'u00A'
-
-		public static constant integer cornEater = 'n016'
-
-		public static constant integer witch = 'h00F'
-
-		public static constant integer giant = 'n02R'
-
-		private static method create takes nothing returns thistype
-			return 0
-		endmethod
-
-		private method onDestroy takes nothing returns nothing
-		endmethod
-
-		public static method spawn takes player whichPlayer, real x, real y returns nothing
-			call CreateUnit(whichPlayer, thistype.orcCrossbow, x, y, GetRandomFacing())
-			call CreateUnit(whichPlayer, thistype.orcBerserk, x, y, GetRandomFacing())
-			call CreateUnit(whichPlayer, thistype.orcWarlock, x, y, GetRandomFacing())
-			call CreateUnit(whichPlayer, thistype.orcWarrior, x, y, GetRandomFacing())
-			call CreateUnit(whichPlayer, thistype.orcGolem, x, y, GetRandomFacing())
-			call CreateUnit(whichPlayer, thistype.orcPython, x, y, GetRandomFacing())
-			call CreateUnit(whichPlayer, thistype.orcLeader, x, y, GetRandomFacing())
-			call CreateUnit(whichPlayer, thistype.darkElfSatyr, x, y, GetRandomFacing())
-			call CreateUnit(whichPlayer, thistype.norseman, x, y, GetRandomFacing())
-		endmethod
-	endstruct
-
-	struct MapData extends MapDataInterface
-		/// The map name is used for zones for example to detect the map file name.
-		public static constant string mapName = "TL"
-		// Ascetic_-_06_-_Falling_into_Darkness.mp3
-		// ;Music\\mp3Music\\Pride_v002.mp3
-		/// This list of music files is set as map music during the map initialization.
-		public static constant string mapMusic = "Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3"// //"Music\\Ingame.mp3;Music\\Talras.mp3"
-		/// The maximum number of human players who control a character.
-		public static constant integer maxPlayers = 6
-		/// The player who owns fellows whose control is shared by all users.
-		public static constant player alliedPlayer = Player(6)
-		/// The player for actors during video sequences. This prevents returning the units to their creep spots automatically.
-		public static constant player neutralPassivePlayer = Player(7)
+	struct MapData
 		/// This player is only required by Talras since there is an arena with opponents.
 		public static constant player arenaPlayer = Player(8)
-		public static constant real morning = 5.0
-		public static constant real midday = 12.0
-		public static constant real afternoon = 16.0
-		public static constant real evening = 18.0
-		/// The fixed time in seconds which it takes until a character is revived automatically after his death.
-		public static constant real revivalTime = 35.0
-		public static constant real revivalLifePercentage = 100.0
-		public static constant real revivalManaPercentage = 100.0
-		public static constant integer startLevel = 0
-		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
-		public static constant integer levelSpellPoints = 2
-		public static constant integer maxLevel = 10000
-		public static constant integer workerUnitTypeId = 'h00E'
-		/// If this value is true there will always be a class selection in the beginning if the map is started for the first time. Otherwise characters will be loaded from the gamecache in campaign mode if available.
-		public static constant boolean isSeparateChapter = false
-		public static sound cowSound = null
 		public static constant player orcPlayer = Player(9)
 		public static constant player haldarPlayer = Player(10)
 		public static constant player baldarPlayer = Player(11)
@@ -121,6 +36,26 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
+		endmethod
+
+		/// Required by \ref Game.
+		public static method initSettings takes nothing returns nothing
+			call MapSettings.setMapName("TL")
+			// Ascetic_-_06_-_Falling_into_Darkness.mp3
+			// ;Music\\mp3Music\\Pride_v002.mp3
+			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3")
+			call MapSettings.setGoldmine(gg_unit_n06E_0487)
+			call MapSettings.setNeutralPassivePlayer(Player(7))
+			call MapSettings.setPlayerGivesXP(thistype.orcPlayer, true)
+
+			// Add all quest unit types of units which have to be moved somewhere.
+			call MapSettings.setUnitTypeIdExcludedFromTeleports('n04P', true)
+			call MapSettings.setUnitTypeIdExcludedFromTeleports('h021', true)
+			call MapSettings.setUnitTypeIdExcludedFromTeleports('h01Z', true)
+			call MapSettings.setUnitTypeIdExcludedFromTeleports('h022', true)
+			call MapSettings.setUnitTypeIdExcludedFromTeleports('h016', true)
+			call MapSettings.setUnitTypeIdExcludedFromTeleports('h020', true)
+			call MapSettings.setUnitTypeIdExcludedFromTeleports('u00C', true)
 		endmethod
 
 		private static method triggerConditionWelcomeTalras takes nothing returns boolean
@@ -391,8 +326,51 @@ endif
 			call SetTimeOfDay(0.0)
 		endmethod
 
+		private static method startX takes integer index returns real
+			debug if (index < 0 or index >= MapSettings.maxPlayers()) then
+				debug call thistype.staticPrint("Error: Invalid start X index.")
+			debug endif
+			if (index == 0) then
+				return GetRectCenterX(gg_rct_character_0_start)
+			elseif (index == 1) then
+				return GetRectCenterX(gg_rct_character_1_start)
+			elseif (index == 2) then
+				return GetRectCenterX(gg_rct_character_2_start)
+			elseif (index == 3) then
+				return GetRectCenterX(gg_rct_character_3_start)
+			elseif (index == 4) then
+				return GetRectCenterX(gg_rct_character_4_start)
+			elseif (index == 5) then
+				return GetRectCenterX(gg_rct_character_5_start)
+			endif
+			return 0.0
+		endmethod
+
+		private static method startY takes integer index returns real
+			debug if (index < 0 or index >= MapSettings.maxPlayers()) then
+				debug call thistype.staticPrint("Error: Invalid start Y index.")
+			debug endif
+			if (index == 0) then
+				return GetRectCenterY(gg_rct_character_0_start)
+			elseif (index == 1) then
+				return GetRectCenterY(gg_rct_character_1_start)
+			elseif (index == 2) then
+				return GetRectCenterY(gg_rct_character_2_start)
+			elseif (index == 3) then
+				return GetRectCenterY(gg_rct_character_3_start)
+			elseif (index == 4) then
+				return GetRectCenterY(gg_rct_character_4_start)
+			elseif (index == 5) then
+				return GetRectCenterY(gg_rct_character_5_start)
+			endif
+			return 0.0
+		endmethod
+
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+			call SetUnitX(character.unit(), thistype.startX(GetPlayerId(character.player())))
+			call SetUnitY(character.unit(), thistype.startY(GetPlayerId(character.player())))
+			call SetUnitFacing(character.unit(), 0.0)
 		endmethod
 
 		/// Required by \ref ClassSelection.
@@ -402,7 +380,6 @@ endif
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
 			local integer i = 0
-			set thistype.cowSound = gg_snd_Cow
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
 			call NewOpLimit(function Dungeons.addSpellbookAbilities)
@@ -411,7 +388,7 @@ endif
 
 			set i = 0
 			loop
-				exitwhen (i == thistype.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
 				endif
@@ -461,84 +438,22 @@ endif
 			call SetPlayerHandicap(MapData.arenaPlayer, handicap)
 		endmethod
 
-		/// Required by \ref Classes.
-		public static method startX takes integer index returns real
-			debug if (index < 0 or index >= thistype.maxPlayers) then
-				debug call thistype.staticPrint("Error: Invalid start X index.")
-			debug endif
-			if (index == 0) then
-				return GetRectCenterX(gg_rct_character_0_start)
-			elseif (index == 1) then
-				return GetRectCenterX(gg_rct_character_1_start)
-			elseif (index == 2) then
-				return GetRectCenterX(gg_rct_character_2_start)
-			elseif (index == 3) then
-				return GetRectCenterX(gg_rct_character_3_start)
-			elseif (index == 4) then
-				return GetRectCenterX(gg_rct_character_4_start)
-			elseif (index == 5) then
-				return GetRectCenterX(gg_rct_character_5_start)
-			endif
-			return 0.0
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method startY takes integer index returns real
-			debug if (index < 0 or index >= thistype.maxPlayers) then
-				debug call thistype.staticPrint("Error: Invalid start Y index.")
-			debug endif
-			if (index == 0) then
-				return GetRectCenterY(gg_rct_character_0_start)
-			elseif (index == 1) then
-				return GetRectCenterY(gg_rct_character_1_start)
-			elseif (index == 2) then
-				return GetRectCenterY(gg_rct_character_2_start)
-			elseif (index == 3) then
-				return GetRectCenterY(gg_rct_character_3_start)
-			elseif (index == 4) then
-				return GetRectCenterY(gg_rct_character_4_start)
-			elseif (index == 5) then
-				return GetRectCenterY(gg_rct_character_5_start)
-			endif
-			return 0.0
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method startFacing takes integer index returns real
-			return 0.0
-		endmethod
-
 		/// Required by \ref MapChanger.
-		public static method restoreStartX takes integer index, string zone returns real
+		public static method onRestoreCharacter takes string zone, Character character returns nothing
 			if (zone == "GA") then
-				return GetRectCenterX(gg_rct_start_gardonar)
+				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_gardonar))
+				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_gardonar))
+				call SetUnitFacing(character.unit(), 180.0)
 			elseif (zone == "HB") then
-				return GetRectCenterX(gg_rct_start_holzbruck)
+				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_holzbruck))
+				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_holzbruck))
+				call SetUnitFacing(character.unit(), 270.0)
+			// Dornheim
+			else
+				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_dornheim))
+				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_dornheim))
+				call SetUnitFacing(character.unit(), 90.0)
 			endif
-
-			return GetRectCenterX(gg_rct_start_dornheim)
-		endmethod
-
-		/// Required by \ref MapChanger.
-		public static method restoreStartY takes integer index, string zone returns real
-			if (zone == "GA") then
-				return GetRectCenterY(gg_rct_start_gardonar)
-			elseif (zone == "HB") then
-				return GetRectCenterY(gg_rct_start_holzbruck)
-			endif
-
-			return GetRectCenterY(gg_rct_start_dornheim)
-		endmethod
-
-		/// Required by \ref MapChanger.
-		public static method restoreStartFacing takes integer index, string zone returns real
-			if (zone == "GA") then
-				return 180.0
-			elseif (zone == "HB") then
-				return 270.0
-			endif
-
-			return 90.0
 		endmethod
 
 		/// Required by \ref MapChanger.
@@ -550,14 +465,6 @@ endif
 			elseif (zone == "GA") then
 				call thistype.m_zoneGardonar.enable()
 			endif
-		endmethod
-
-		/**
-		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
-		 * Required by \ref Game.
-		 */
-		public static method playerGivesXP takes player whichPlayer returns boolean
-			return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE) or whichPlayer == thistype.orcPlayer
 		endmethod
 
 		/**
@@ -587,17 +494,6 @@ endif
 			// shop markers
 			call ShowUnit(gg_unit_o008_0209, true)
 			call ShowUnit(gg_unit_o007_0208, true)
-		endmethod
-
-		/// Required by \ref Buildings. Called by .evaluate()
-		public static method goldmine takes nothing returns unit
-			return gg_unit_n06E_0487
-		endmethod
-
-		/// Required by teleport spells.
-		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
-			// Add all quest unit types of units which have to be moved somewhere.
-			return unitTypeId == 'n04P' or unitTypeId == 'h021' or unitTypeId == 'h01Z' or unitTypeId == 'n04P' or unitTypeId == 'h022' or unitTypeId == 'h016' or unitTypeId == 'h020' or unitTypeId == 'u00C'
 		endmethod
 	endstruct
 

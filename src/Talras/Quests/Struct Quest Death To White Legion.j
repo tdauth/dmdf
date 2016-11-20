@@ -2,8 +2,6 @@ library StructMapQuestsQuestDeathToWhiteLegion requires Asl, StructGameCharacter
 
 	struct QuestDeathToWhiteLegion extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enable()
 		endmethod
@@ -31,6 +29,8 @@ library StructMapQuestsQuestDeathToWhiteLegion requires Asl, StructGameCharacter
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

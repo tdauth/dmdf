@@ -6,8 +6,6 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 		private integer m_actorOsman
 		private integer m_actorFerdinand
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
@@ -38,7 +36,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_the_duke_of_talras_0)
+			call FixVideoCamera(gg_cam_the_duke_of_talras_0)
 
 			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tre("Nun, sie sind also die Vasallen von denen mir berichtet wurde. Sie sollen rasch sprechen. Was treibt sie in diese Gegend?", "So, they are the vassals of whom was reported to me. They shall speak fast. What drives them to this area?"), gg_snd_Heimrich16)
 
@@ -150,6 +148,8 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

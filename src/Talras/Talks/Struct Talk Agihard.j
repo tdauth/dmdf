@@ -14,8 +14,6 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 		private AInfo m_irminaLikesYou
 		private AInfo m_exit
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(this.m_exit.index(), character)
 		endmethod
@@ -210,6 +208,8 @@ library StructMapTalksTalkAgihard requires Asl, StructGameClasses, StructMapMapA
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

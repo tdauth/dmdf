@@ -1,9 +1,6 @@
 library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDown, StructMapQuestsQuestReinforcementForTalras
 
 	struct TalkDago extends Talk
-
-		implement Talk
-
 		private AInfo m_hi
 		private AInfo m_castle
 		private AInfo m_tastyMushrooms
@@ -328,6 +325,8 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

@@ -44,9 +44,80 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"Arena\"")
 
+		/**
+		 * \return Returns the score of the player in the arena.
+		 */
+		public static method playerScore takes player user returns integer
+			return thistype.m_playerScore[GetPlayerId(user)]
+		endmethod
+
+		/**
+		 * \return Returns the current winner in the arena.
+		 */
+		public static method winner takes nothing returns unit
+			return thistype.m_winner
+		endmethod
+
 		public static method isFree takes nothing returns boolean
 			debug call Print("Units size is " + I2S(thistype.m_units.size()))
 			return thistype.m_units.size() < thistype.maxUnits
+		endmethod
+
+		/**
+		 * As long as the damaging unit is owned by one of the owners of the arena's units everything is fine.
+		 * Otherwise the damage is prevented and the interfering unit is punished by killing it.
+		 */
+		private static method triggerConditionDamage takes nothing returns boolean
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.m_units.size())
+				if (GetEventDamageSource() == thistype.m_units[i] or (GetOwningPlayer(GetEventDamageSource()) == GetOwningPlayer(thistype.m_units[i]) and IsUnitType(GetEventDamageSource(), UNIT_TYPE_SUMMONED))) then
+					debug call Print("Belongs to the arena or is summoned.")
+					return false
+				endif
+				set i = i + 1
+			endloop
+			call Character.displayWarningToAll(Format(tre("Die Einheit %1% wurde hingerichtet weil sie sich in einen Arenakampf eingemischt hat.", "The unit %1% has been executed since it interfered in an arena fight.")).s(GetUnitName(GetEventDamageSource())).result())
+			call KillUnit(GetEventDamageSource())
+			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
+
+			// TODO if the unit belonged to one of the owners let him lose!
+
+			return false
+		endmethod
+
+		private static method destroyDamageTrigger takes nothing returns nothing
+			if (thistype.m_damageTrigger != null) then
+				call DestroyTrigger(thistype.m_damageTrigger)
+				set thistype.m_damageTrigger = null
+			endif
+		endmethod
+
+		private static method refreshDamageTrigger takes nothing returns nothing
+			local integer i = 0
+			call thistype.destroyDamageTrigger()
+			set thistype.m_damageTrigger = CreateTrigger()
+			set i = 0
+			loop
+				exitwhen (i == thistype.m_units.size())
+				call TriggerRegisterUnitEvent(thistype.m_damageTrigger, thistype.m_units[i], EVENT_UNIT_DAMAGED)
+				set i = i + 1
+			endloop
+			call TriggerAddCondition(thistype.m_damageTrigger, Condition(function thistype.triggerConditionDamage))
+		endmethod
+
+		private static method startFight takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.m_units.size())
+				call SetUnitInvulnerable(thistype.m_units[i], false)
+				call PauseUnit(thistype.m_units[i], false)
+				set i = i + 1
+			endloop
+			call EnableTrigger(thistype.m_killTrigger)
+			call EnableTrigger(thistype.m_leaveTrigger)
+			call thistype.refreshDamageTrigger()
+			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, thistype.m_textStartFight)
 		endmethod
 
 		public static method addUnit takes unit usedUnit returns nothing
@@ -231,13 +302,6 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		public static method removeCharacter takes ACharacter character returns nothing
 			call thistype.removeUnit(character.unit())
 			call character.displayMessage(ACharacter.messageTypeInfo, thistype.m_textLeave)
-		endmethod
-
-		private static method destroyDamageTrigger takes nothing returns nothing
-			if (thistype.m_damageTrigger != null) then
-				call DestroyTrigger(thistype.m_damageTrigger)
-				set thistype.m_damageTrigger = null
-			endif
 		endmethod
 
 		/**
@@ -560,22 +624,6 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			set thistype.m_sellTrigger = null
 		endmethod
 
-		// static members
-
-		/**
-		 * \return Returns the score of the player in the arena.
-		 */
-		public static method playerScore takes player user returns integer
-			return thistype.m_playerScore[GetPlayerId(user)]
-		endmethod
-
-		/**
-		 * \return Returns the current winner in the arena.
-		 */
-		public static method winner takes nothing returns unit
-			return thistype.m_winner
-		endmethod
-
 		// static methods
 
 		public static method addRect takes rect usedRect returns nothing
@@ -590,56 +638,6 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 			call thistype.m_startX.pushBack(x)
 			call thistype.m_startY.pushBack(y)
 			call thistype.m_startFacing.pushBack(facing)
-		endmethod
-
-		/**
-		 * As long as the damaging unit is owned by one of the owners of the arena's units everything is fine.
-		 * Otherwise the damage is prevented and the interfering unit is punished by killing it.
-		 */
-		private static method triggerConditionDamage takes nothing returns boolean
-			local integer i = 0
-			loop
-				exitwhen (i == thistype.m_units.size())
-				if (GetEventDamageSource() == thistype.m_units[i] or (GetOwningPlayer(GetEventDamageSource()) == GetOwningPlayer(thistype.m_units[i]) and IsUnitType(GetEventDamageSource(), UNIT_TYPE_SUMMONED))) then
-					debug call Print("Belongs to the arena or is summoned.")
-					return false
-				endif
-				set i = i + 1
-			endloop
-			call Character.displayWarningToAll(Format(tre("Die Einheit %1% wurde hingerichtet weil sie sich in einen Arenakampf eingemischt hat.", "The unit %1% has been executed since it interfered in an arena fight.")).s(GetUnitName(GetEventDamageSource())).result())
-			call KillUnit(GetEventDamageSource())
-			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
-
-			// TODO if the unit belonged to one of the owners let him lose!
-
-			return false
-		endmethod
-
-		private static method refreshDamageTrigger takes nothing returns nothing
-			local integer i = 0
-			call thistype.destroyDamageTrigger()
-			set thistype.m_damageTrigger = CreateTrigger()
-			set i = 0
-			loop
-				exitwhen (i == thistype.m_units.size())
-				call TriggerRegisterUnitEvent(thistype.m_damageTrigger, thistype.m_units[i], EVENT_UNIT_DAMAGED)
-				set i = i + 1
-			endloop
-			call TriggerAddCondition(thistype.m_damageTrigger, Condition(function thistype.triggerConditionDamage))
-		endmethod
-
-		private static method startFight takes nothing returns nothing
-			local integer i = 0
-			loop
-				exitwhen (i == thistype.m_units.size())
-				call SetUnitInvulnerable(thistype.m_units[i], false)
-				call PauseUnit(thistype.m_units[i], false)
-				set i = i + 1
-			endloop
-			call EnableTrigger(thistype.m_killTrigger)
-			call EnableTrigger(thistype.m_leaveTrigger)
-			call thistype.refreshDamageTrigger()
-			call ACharacter.displayMessageToAll(ACharacter.messageTypeInfo, thistype.m_textStartFight)
 		endmethod
 
 		/**

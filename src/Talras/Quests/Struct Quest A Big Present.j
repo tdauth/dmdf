@@ -3,8 +3,6 @@ library StructMapQuestsQuestABigPresent requires Asl, Game, StructMapMapNpcs
 	struct QuestABigPresent extends AQuest
 		public static constant integer itemTypeId = 'I03X'
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
 			call character.giveQuestItem(thistype.itemTypeId)
@@ -32,6 +30,8 @@ library StructMapQuestsQuestABigPresent requires Asl, Game, StructMapMapNpcs
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

@@ -24,8 +24,6 @@ Markward: Hier habt ihr noch die Belohnung für den zuletzt erfolgreich abgeschl
 		private integer m_actorRicman
 		private integer m_actorDragonSlayer
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(20.0)
@@ -68,7 +66,7 @@ Markward: Hier habt ihr noch die Belohnung für den zuletzt erfolgreich abgeschl
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_holzbruck_0)
+			call FixVideoCamera(gg_cam_holzbruck_0)
 
 			call TransmissionFromUnit(this.actor(), tre("Wir haben den Außenposten erfolgreich verteidigt.", "We have successfully defended the outpost."), null)
 
@@ -147,6 +145,8 @@ Markward: Hier habt ihr noch die Belohnung für den zuletzt erfolgreich abgeschl
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

@@ -2,8 +2,6 @@ library StructMapQuestsQuestAmongTheWeaponsPeasants requires Asl, Game, StructMa
 
 	struct QuestAmongTheWeaponsPeasants extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
 			call character.options().missions().addMission('A1UQ', 'A1V2', this)
@@ -30,6 +28,8 @@ library StructMapQuestsQuestAmongTheWeaponsPeasants requires Asl, Game, StructMa
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

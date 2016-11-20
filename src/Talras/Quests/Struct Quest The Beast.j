@@ -4,8 +4,6 @@ library StructMapQuestsQuestTheBeast requires Asl, StructGameCharacter
 		private boolean m_foundTracks
 		private boolean m_talkedToKuno
 
-		implement CharacterQuest
-
 		public method talkedToKuno takes nothing returns boolean
 			return this.m_talkedToKuno
 		endmethod
@@ -76,6 +74,8 @@ library StructMapQuestsQuestTheBeast requires Asl, StructGameCharacter
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

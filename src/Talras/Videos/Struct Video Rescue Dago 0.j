@@ -6,8 +6,6 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 		private unit m_actorDago
 		private trigger m_damageTrigger
 
-		implement Video
-
 		private static method triggerConditionDamage takes nothing returns nothing
 			call SetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE, GetUnitState(GetTriggerUnit(), UNIT_STATE_LIFE) + GetEventDamage())
 		endmethod
@@ -48,7 +46,7 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_rescue_dago_0)
+			call FixVideoCamera(gg_cam_rescue_dago_0)
 
 			call PlaySoundBJ(gg_snd_GrizzlyBearReady1)
 			if (wait(1.0)) then
@@ -109,6 +107,8 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

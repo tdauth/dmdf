@@ -24,8 +24,6 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 		private AInfo m_shutUp
 		private AInfo m_back
 
-		implement Talk
-
 		private method offend takes player whichPlayer returns nothing
 			set this.m_wasOffended[GetPlayerId(whichPlayer)] = true
 		endmethod
@@ -368,6 +366,8 @@ library StructMapTalksTalkOsman requires Asl, StructGameClasses, StructMapMapNpc
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

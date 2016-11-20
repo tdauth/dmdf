@@ -19,8 +19,6 @@ library StructMapQuestsQuestWarRecruit requires Asl, StructGameQuestArea, Struct
 		 private trigger m_recruitTrigger
 		 private AGroup m_recruits
 
-		 implement Quest
-
 		 public method cleanUnits takes nothing returns nothing
 			local integer i = 0
 			loop
@@ -46,7 +44,7 @@ library StructMapQuestsQuestWarRecruit requires Asl, StructGameQuestArea, Struct
 		 * Then they can be moved to the camp.
 		 */
 		private static method triggerActionRecruit takes nothing returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype.quest.evaluate()
 			call SetUnitOwner(GetSoldUnit(), MapSettings.alliedPlayer(), true)
 			call Game.setAlliedPlayerAlliedToAllCharacters()
 			call this.displayUpdateMessage(tre("Knecht angeworben.", "Acquired servant."))
@@ -75,7 +73,7 @@ library StructMapQuestsQuestWarRecruit requires Asl, StructGameQuestArea, Struct
 		endmethod
 
 		private static method stateConditionCompletedGetRecruits takes AQuestItem questItem returns boolean
-			local thistype this = thistype.quest()
+			local thistype this = thistype(questItem.quest())
 			if (GetUnitTypeId(GetTriggerUnit()) == 'n02J' and GetOwningPlayer(GetTriggerUnit()) == MapSettings.alliedPlayer()) then
 				call QuestWar.quest.evaluate().setupUnitAtDestination.evaluate(GetTriggerUnit())
 				call this.m_recruits.units().pushBack(GetTriggerUnit())
@@ -89,7 +87,7 @@ library StructMapQuestsQuestWarRecruit requires Asl, StructGameQuestArea, Struct
 		endmethod
 
 		private static method stateActionCompletedGetRecruits takes AQuestItem questItem returns nothing
-			local thistype this = thistype.quest()
+			local thistype this = thistype(questItem.quest())
 
 			call RemoveUnit(this.m_recruitBuilding)
 			set this.m_recruitBuilding = null
@@ -128,6 +126,8 @@ library StructMapQuestsQuestWarRecruit requires Asl, StructGameQuestArea, Struct
 
 			return this
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

@@ -1,9 +1,6 @@
 library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameClasses, StructMapMapNpcs, StructMapQuestsQuestTheNorsemen, StructMapQuestsQuestTheWayToHolzbruck, StructSpellsSpellFetteBeute, StructSpellsSpellNordicPower, StructSpellsSpellFirstMan
 
 	struct TalkRicman extends Talk
-
-		implement Talk
-
 		private AInfo m_hi
 		private AInfo m_whoAreYou
 		private AInfo m_whatAreYouDoing
@@ -389,6 +386,8 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

@@ -2,8 +2,6 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 
 	struct QuestTheDarkCult extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enableUntil(1)
 		endmethod
@@ -76,6 +74,8 @@ library StructMapQuestsQuestTheDarkCult requires Asl, StructGameCharacter, Struc
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

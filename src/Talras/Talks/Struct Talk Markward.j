@@ -14,8 +14,6 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 		private AInfo m_secondHelpDone
 		private AInfo m_exit
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			if (not this.showInfo(this.m_hi.index(), character)) then
 				call this.showRange(this.m_whatsUp.index(), this.m_exit.index(), character)
@@ -66,12 +64,12 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			call speech(info, character, true, tr("Vermutlich kümmern sie sich um ihre eigenen Ländereien und sind viel zu feige, dem Feind direkt ins Auge zu blicken."), gg_snd_Markward12)
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Charakter ist Ritter)
 		private static method infoConditionHeyKnight takes AInfo info, ACharacter character returns boolean
 			return character.class() == Classes.knight()
 		endmethod
-		
+
 		// He da Rittersmann!
 		private static method infoActionHeyKnight takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("He da Rittersmann!"), null)
@@ -83,7 +81,7 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			call character.displayItemAcquired(GetObjectName('I03R'), "")
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// Kann ich sonst noch etwas tun?
 		private static method infoActionFirstHelp takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Kann ich sonst noch etwas tun?"), null)
@@ -94,12 +92,12 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			call QuestSupplyForTalras.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 1 des Auftrags „Die Versorgung von Talras“ ist abgeschlossen und Auftrag ist noch aktiv)
 		private static method infoConditionFirstHelpDone takes AInfo info, ACharacter character returns boolean
 			return QuestSupplyForTalras.characterQuest(character).questItem(0).isCompleted() and  QuestSupplyForTalras.characterQuest(character).isNew()
 		endmethod
-		
+
 		// Manfred schickt Vorräte in die Burg.
 		private static method infoActionFirstHelpDone takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Manfred schickt Vorräte in die Burg."), null)
@@ -116,12 +114,12 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			call QuestSupplyForTalras.characterQuest(character).complete()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftrag „Die Versorgung von Talras“ ist abgeschlossen)
 		private static method infoConditionSecondHelp takes AInfo info, ACharacter character returns boolean
 			return QuestSupplyForTalras.characterQuest(character).isCompleted()
 		endmethod
-		
+
 		// Gibt es noch etwas zu tun?
 		private static method infoActionSecondHelp takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Gibt es noch etwas zu tun?"), null)
@@ -134,12 +132,12 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			call QuestReinforcementForTalras.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 2 des Auftrags „Die Befestigung von Talras“ ist abgeschlossen)
 		private static method infoConditionSecondHelpDoneWood takes AInfo info, ACharacter character returns boolean
 			return QuestReinforcementForTalras.characterQuest(character).questItem(1).isCompleted()
 		endmethod
-		
+
 		// Manfred schickt Holz.
 		private static method infoActionSecondHelpDoneWood takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Manfred schickt Holz."), null)
@@ -151,12 +149,12 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			call character.giveItem('I00D')
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Auftragsziel 5 des Auftrags „Die Befestigung von Talras“ ist abgeschlossen)
 		private static method infoConditionSecondHelpDoneArrows takes AInfo info, ACharacter character returns boolean
 			return QuestReinforcementForTalras.characterQuest(character).questItem(4).isCompleted()
 		endmethod
-		
+
 		// Ich habe die Pfeile platziert.
 		private static method infoActionSecondHelpDoneArrows takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Ich habe die Pfeile platziert."), null)
@@ -169,13 +167,13 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			call character.giveItem('I00D')
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		// (Beide Infos wurden angeklickt)
 		private static method infoConditionSecondHelpDone takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
 			return this.infoHasBeenShownToCharacter(this.m_secondHelpDoneWood.index(), character) and this.infoHasBeenShownToCharacter(this.m_secondHelpDoneArrows.index(), character)
 		endmethod
-		
+
 		// Ihr seid nun bereit für eine Belagerung.
 		private static method infoActionSecondHelpDone takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tr("Ihr seid nun bereit für eine Belagerung."), null)
@@ -203,7 +201,7 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			set this.m_whatsUp = this.addInfo(true, false, 0, thistype.infoActionWhatsUp, tr("Wie ist die Lage?")) // 1
 			set this.m_whereFrom = this.addInfo(false, false, 0, thistype.infoActionWhereFrom, tr("Woher kommst du?")) // 2
 			set this.m_whatAreYouDoing = this.addInfo(false, false, 0, thistype.infoActionWhatAreYouDoing, tr("Was genau machst du hier?")) // 3
-			
+
 			set this.m_heyKnight = this.addInfo(false, false, thistype.infoConditionHeyKnight, thistype.infoActionHeyKnight, tr("He da Rittersmann!")) // 1
 			set this.m_firstHelp = this.addInfo(false, false, 0, thistype.infoActionFirstHelp, tr("Kann ich sonst noch etwas tun?")) // 1
 			set this.m_firstHelpDone = this.addInfo(false, false, thistype.infoConditionFirstHelpDone, thistype.infoActionFirstHelpDone, tr("Manfred schickt Vorräte in die Burg.")) // 1
@@ -211,11 +209,13 @@ library StructMapTalksTalkMarkward requires Asl, StructMapMapNpcs, StructMapQues
 			set this.m_secondHelpDoneWood = this.addInfo(false, false, thistype.infoConditionSecondHelpDoneWood, thistype.infoActionSecondHelpDoneWood, tr("Manfred schickt Holz.")) // 1
 			set this.m_secondHelpDoneArrows = this.addInfo(false, false, thistype.infoConditionSecondHelpDoneArrows, thistype.infoActionSecondHelpDoneArrows, tr("Ich habe die Pfeile platziert.")) // 1
 			set this.m_secondHelpDone = this.addInfo(false, false, thistype.infoConditionSecondHelpDone, thistype.infoActionSecondHelpDone, tr("Ihr seid nun bereit für eine Belagerung.")) // 1
-			
+
 			set this.m_exit = this.addExitButton() // 4
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

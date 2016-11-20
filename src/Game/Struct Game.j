@@ -1,6 +1,51 @@
 library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter, StructGameItemTypes, StructGameMapChanger, StructGameOrderAnimations, StructGameRoutines, StructGameTreeTransparency, LibraryGameLanguage
 
 	/**
+	 * \brief A static class which defines unit type ids with identifiers.
+	 */
+	struct UnitTypes
+		public static constant integer orcCrossbow = 'n01A'
+		public static constant integer orcBerserk = 'n01G'
+		public static constant integer orcWarlock = 'n018'
+		public static constant integer orcWarrior = 'n019'
+		public static constant integer orcGolem = 'n025'
+		public static constant integer orcPython = 'n01F'
+		public static constant integer orcLeader = 'n02P'
+		public static constant integer darkElfSatyr = 'n02O'
+		public static constant integer norseman = 'n01I'
+		public static constant integer ranger = 'n03F'
+		public static constant integer armedVillager = 'n03H'
+
+		public static constant integer broodMother = 'n05F'
+		public static constant integer deathAngel = 'n02K'
+		public static constant integer vampire = 'n02L'
+		public static constant integer vampireLord = 'n010'
+		public static constant integer doomedMan = 'n037'
+		public static constant integer deacon = 'n035'
+		public static constant integer ravenJuggler = 'n036'
+		public static constant integer degenerateSoul = 'n038'
+		public static constant integer medusa = 'n033'
+		public static constant integer thunderCreature = 'n034'
+
+		public static constant integer boneDragon = 'n024'
+
+		public static constant integer deranor = 'u00A'
+
+		public static constant integer cornEater = 'n016'
+
+		public static constant integer witch = 'h00F'
+
+		public static constant integer giant = 'n02R'
+
+		private static method create takes nothing returns thistype
+			return 0
+		endmethod
+
+		private method onDestroy takes nothing returns nothing
+		endmethod
+	endstruct
+
+	/**
 	 * \brief This static structure provides constants and functions for DMdFs experience calculation for all experience which is gained by killing other units.
 	 * As in Warcraft III itself characters do not necessarily have to kill enemies theirselfs (e. g. with a final hit).
 	 * A custom experience system is necessary to be able to distribute the whole gained experience equally (not like in Warcraft III where some do get more and some do get less).

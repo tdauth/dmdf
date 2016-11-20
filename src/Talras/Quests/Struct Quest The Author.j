@@ -2,8 +2,6 @@ library StructMapQuestsQuestTheAuthor requires Asl, StructGameCharacter
 
 	struct QuestTheAuthor extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enable()
 		endmethod
@@ -21,6 +19,8 @@ library StructMapQuestsQuestTheAuthor requires Asl, StructGameCharacter
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

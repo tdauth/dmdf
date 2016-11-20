@@ -3,8 +3,6 @@ library StructMapQuestsQuestCatsForBrogo requires Asl, StructGameCharacter, Stru
 	struct QuestCatsForBrogo extends AQuest
 		public static constant integer maxCats = 5
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enable()
 		endmethod
@@ -23,6 +21,8 @@ library StructMapQuestsQuestCatsForBrogo requires Asl, StructGameCharacter, Stru
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

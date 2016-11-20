@@ -1,6 +1,6 @@
 library StructMapMapMapData requires Asl, StructGameGame
 
-	struct MapData extends MapDataInterface
+	struct MapData
 		public static constant integer maxScore = 25
 		private static trigger m_safeEnterTrigger
 		private static trigger m_safeLeaveTrigger
@@ -27,8 +27,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call MapSettings.setNeutralPassivePlayer(Player(PLAYER_NEUTRAL_PASSIVE))
 			call MapSettings.setRevivalTime(5.0)
 			call MapSettings.setStartLevel(30)
-			call MapSettings.startSkillPoints(5)
-			call MapSettings.levelSkillPoints(2)
+			call MapSettings.setStartSkillPoints(5)
+			call MapSettings.setLevelSkillPoints(2)
 			call MapSettings.setMaxLevel(30)
 			call MapSettings.setIsSeparateChapter(true)
 			call MapSettings.setPlayerGivesXP(Player(PLAYER_NEUTRAL_AGGRESSIVE), false)
@@ -141,7 +141,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			if (ACharacter.isUnitCharacter(GetTriggerUnit())) then
 				set i = 0
 				loop
-					exitwhen (i == thistype.maxPlayers)
+					exitwhen (i == MapSettings.maxPlayers())
 					if (GetPlayerId(GetOwningPlayer(GetTriggerUnit())) != i) then
 						call SetPlayerAllianceStateBJ(Player(i), GetOwningPlayer(GetTriggerUnit()), bj_ALLIANCE_NEUTRAL)
 						call SetPlayerAllianceStateBJ(GetOwningPlayer(GetTriggerUnit()), Player(i), bj_ALLIANCE_NEUTRAL)
@@ -173,7 +173,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			if (ACharacter.isUnitCharacter(GetTriggerUnit())) then
 				set i = 0
 				loop
-					exitwhen (i == thistype.maxPlayers)
+					exitwhen (i == MapSettings.maxPlayers())
 					if (GetPlayerId(GetOwningPlayer(GetTriggerUnit())) != i and not RectContainsUnit(gg_rct_area_safe, ACharacter.playerCharacter(Player(i)).unit())) then
 						call SetPlayerAllianceStateBJ(Player(i), GetOwningPlayer(GetTriggerUnit()), bj_ALLIANCE_UNALLIED)
 						call SetPlayerAllianceStateBJ(GetOwningPlayer(GetTriggerUnit()), Player(i), bj_ALLIANCE_UNALLIED)
@@ -202,7 +202,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		private static method victory takes player whichPlayer returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == thistype.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (i != GetPlayerId(whichPlayer)) then
 					call MeleeDefeatDialogBJ(Player(i), false)
 				endif
@@ -241,6 +241,9 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+			call SetUnitX(character.unit(), GetRectCenterX(gg_rct_area_safe))
+			call SetUnitY(character.unit(), GetRectCenterY(gg_rct_area_safe))
+			call SetUnitFacing(character.unit(), 0.0)
 		endmethod
 
 		/// Required by \ref ClassSelection.
@@ -278,7 +281,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 			set i = 0
 			loop
-				exitwhen (i == thistype.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				call thistype.setupCharacter.evaluate(Player(i))
 				set i = i + 1
 			endloop
@@ -293,7 +296,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			if (ACharacter.playerCharacter(whichPlayer) != 0) then
 				set j = 0
 				loop
-					exitwhen (j == thistype.maxPlayers)
+					exitwhen (j == MapSettings.maxPlayers())
 					if (GetPlayerId(whichPlayer) != j) then
 						call SetPlayerAllianceStateBJ(whichPlayer, Player(j), bj_ALLIANCE_UNALLIED)
 						call SetPlayerAllianceStateBJ(Player(j), whichPlayer, bj_ALLIANCE_UNALLIED)
@@ -336,34 +339,8 @@ library StructMapMapMapData requires Asl, StructGameGame
 			return grimoire.setSpellMaxLevelByIndex.evaluate(index, false)
 		endmethod
 
-		/// Required by \ref Classes.
-		public static method startX takes integer index returns real
-			return GetRectCenterX(gg_rct_area_safe)
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method startY takes integer index returns real
-			return GetRectCenterY(gg_rct_area_safe)
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method startFacing takes integer index returns real
-			return 0.0
-		endmethod
-
 		/// Required by \ref MapChanger.
-		public static method restoreStartX takes integer index, string zone returns real
-			return GetRectCenterX(gg_rct_area_safe)
-		endmethod
-
-		/// Required by \ref MapChanger.
-		public static method restoreStartY takes integer index, string zone returns real
-			return GetRectCenterY(gg_rct_area_safe)
-		endmethod
-
-		/// Required by \ref MapChanger.
-		public static method restoreStartFacing takes integer index, string zone returns real
-			return 0.0
+		public static method onRestoreCharacter takes string zone, Character character returns nothing
 		endmethod
 
 		/// Required by \ref MapChanger.

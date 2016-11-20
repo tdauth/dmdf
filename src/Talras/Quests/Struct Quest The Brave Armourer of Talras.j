@@ -2,8 +2,6 @@ library StructMapQuestsQuestTheBraveArmourerOfTalras requires Asl, StructGameCha
 
 	struct QuestTheBraveArmourerOfTalras extends AQuest
 
-		implement CharacterQuest
-
 		public stub method enable takes nothing returns boolean
 			return super.enable()
 		endmethod
@@ -31,6 +29,8 @@ library StructMapQuestsQuestTheBraveArmourerOfTalras requires Asl, StructGameCha
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

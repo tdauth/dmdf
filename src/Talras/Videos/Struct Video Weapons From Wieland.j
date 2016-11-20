@@ -4,8 +4,6 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 		private unit m_actorWieland
 		private AGroup m_imps
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			local integer i
 			call Game.initVideoSettings(this)
@@ -37,7 +35,7 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_wieland_forge_view)
+			call FixVideoCamera(gg_cam_wieland_forge_view)
 
 			call TransmissionFromUnit(this.actor(), tre("Schmied Wieland!", "Blacksmith Wieland!"), null)
 
@@ -129,6 +127,8 @@ library StructMapVideosVideoWeaponsFromWieland requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

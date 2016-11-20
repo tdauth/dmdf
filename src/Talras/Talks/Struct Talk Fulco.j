@@ -2,8 +2,6 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 
 	struct TalkFulco extends Talk
 
-		implement Talk
-
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(4, character)
 		endmethod
@@ -43,7 +41,7 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
-		
+
 		//  (Nach der Feststellung, dass Fulco ein Zauberer ist)
 		private static method infoCondition3 takes AInfo info, ACharacter character returns boolean
 			return info.talk().infoHasBeenShownToCharacter(2, character)
@@ -89,6 +87,8 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary

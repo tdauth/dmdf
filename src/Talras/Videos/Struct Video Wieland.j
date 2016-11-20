@@ -3,8 +3,6 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 	struct VideoWieland extends AVideo
 		private unit m_actorWieland
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
@@ -22,7 +20,7 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_wieland_forge_view)
+			call FixVideoCamera(gg_cam_wieland_forge_view)
 
 			loop
 				exitwhen (RectContainsUnit(gg_rct_video_wieland_actor_target, this.actor()))
@@ -125,6 +123,8 @@ library StructMapVideosVideoWieland requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

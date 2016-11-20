@@ -4,8 +4,6 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 		private unit m_actorBaldar
 		private unit m_actorImp
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(12.0)
@@ -25,7 +23,7 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
-			call thistype.fixCamera(gg_cam_iron_from_the_drum_cave_baldar)
+			call FixVideoCamera(gg_cam_iron_from_the_drum_cave_baldar)
 
 			call TransmissionFromUnit(this.m_actorBaldar, tre("Was sagst du? Du brauchst Eisen aus meinen Minen?", "What are you saying? You need iron from my mines?"), gg_snd_Baldar33)
 
@@ -130,6 +128,8 @@ library StructMapVideosVideoIronFromTheDrumCave requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

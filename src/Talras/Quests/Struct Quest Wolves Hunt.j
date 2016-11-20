@@ -2,9 +2,6 @@ library StructMapQuestsQuestWolvesHunt requires Asl, StructGameCharacter, Struct
 
 	struct QuestWolvesHunt extends AQuest
 		public static constant integer maxRects = 2
-
-		implement CharacterQuest
-
 		private rect array m_rect[2]
 		private boolean array m_flag[2]
 
@@ -94,6 +91,8 @@ Eigentlich würde er sich ja selbst darum kümmern …", "The sheep boy on the M
 
 			return this
 		endmethod
+
+		implement CharacterQuest
 	endstruct
 
 endlibrary

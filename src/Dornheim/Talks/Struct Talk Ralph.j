@@ -1,9 +1,6 @@
 library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQuestMother, StructMapQuestsQuestRalphsGarden, StructMapQuestsQuestShitOnTheThrone
 
 	struct TalkRalph extends Talk
-
-		implement Talk
-
 		private AInfo m_hi
 		private AInfo m_howAreYou
 		private AInfo m_help
@@ -162,6 +159,8 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 			return this
 		endmethod
+
+		implement Talk
 	endstruct
 
 endlibrary
