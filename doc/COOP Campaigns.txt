@@ -2,23 +2,46 @@ Warcraft III does not allow multiplayer campaigns:
 - Changing the map by going to the next level or loading a game are asynchronous, so every player changes the level on his own.
 - The gamecache does not work in the multiplayer or is not guaranteed to be synchronous or to exist when the map is loaded.
 - http://www.hiveworkshop.com/threads/what-does-trigger-synchronization-do.86762/
-http://www.wc3c.net/showthread.php?t=83837
+- http://www.wc3c.net/showthread.php?t=83837
 
-Synchronizes the value of the host for everyone:
+This document describes a concept how to achieve multiplayer campaigns storing savegames AND using the gamecache.
+This should allow campaigns like the Bonus Campaign to be played in multiplayer.
+You have to bear in mind that there are some limitations to JASS functions which can only be used in campaigns.
 
-function GetHost takes nothing returns integer
-  call StoreInteger ( cache, mission, key, GetPlayerId ( GetLocalPlayer () ) )
-  call TriggerSyncStart () // believe this tells players to begin synching
-  call SyncStoredInteger ( cache, mission, key ) // syncs this value, in most cases to the host although not always
-  call TriggerSyncReady () // believe this waits for everyone to sync back up
-  return GetStoredInteger ( cache, mission, key ) // returns host's player id
-endfunction
-
-So synchronizing before ending the game in multiplayer would be useful.
-
-
+Requirements:
+SC Ext: http://www.hiveworkshop.com/pastebin/2021031d2d2e8097e938743a0264ae3d7723/
+Sync: http://www.hiveworkshop.com/threads/sync-game-cache.279148/
+HTTP: http://www.hiveworkshop.com/pastebin/504721758b07ea0ae99598f76b8770ba7667/
+- Synchronize the gamecache from one player (the host): http://www.hiveworkshop.com/threads/sync-game-cache.279148/
+- Synchronize the savegames to all players (from the host): http://www.hiveworkshop.com/threads/sharpcraft-extensions-optional-features-for-your-map-b-net-ready.288395/
+- Autorehost a saved game using HTTP commands and a running server which controls the HostBot: TODO
 
 The new scenario using a HostBot:
+- Save the gamecache for all players (the host's one is the important one).
 - Save the current game for all players.
-- Instead of changing the level: Either start the next level manually or host the next level using a HostBot and end the game. Rehosting the game might even work with the code of the JNGP in LAN mode.
-- Now the gamecache data has to be synchronized from the host again on loading to make sure every character is loaded properly. This would be only for safety to prevent disconnects.
+- Send information about the current savegame, gamecache and next level via HTTP to a custom server program.
+- The custom server program gets the package and uses Ghost++ to host the next level or savegame of the next level.
+- It also sends the required savegames to the client programs to make sure all other players have them. Of course they had to be part of the game before. Otherwise it wont work!
+- Now it that Ghost++ hosts the next level or the savegame of the next level it disconnects all players. The players now have to simply join the next game manually.
+- When the game has been started/loaded the GameCache is synchronized from the hosting player and all characters are loaded.
+
+Ghost++ Loading SaveGames:
+https://github.com/Mofsy/ghost-one
+
+Since Version 11.0 GHost++ can autosave games and load saved games.
+GHost++ will never create saved games itself, you must provide GHost++ with saved games which were created by Warcraft III.
+To load a saved game:
+
+1.) You need to set bot_savegamepath in ghost.cfg to the path where you put your saved games.
+
+Now, when you start GHost++:
+
+1.) Use the map or load command to load the correct map (the map the saved game was created on).
+2.) Use the loadsg command to load the saved game.
+3.) Use the enforcesg command to load a replay from the first game.
+ a.) The replay is used to enforce the correct player layout (e.g. which PID and which slot each player was in).
+ b.) This is necessary because the bot doesn't know how to read saved game files in order to find the correct player layout.
+ c.) If you do not have a replay from the first game, you won't be able to create the game.
+4.) Use the hostsg command to host the saved game. If the saved game was created on a different map it will refuse to host the game.
+ a.) Saved games are always created as private games and cannot be rehosted.
+5.) Use the start command to start the saved game.
