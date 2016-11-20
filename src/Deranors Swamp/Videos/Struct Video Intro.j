@@ -8,8 +8,6 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		private weathereffect array m_weatherEffect[4]
 		private effect m_effect
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(0.00)
@@ -192,6 +190,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

@@ -22,6 +22,7 @@ endglobals
 
 //! import "Import Asl.j"
 //! import "Import Dmdf.j"
+//! import "Systems/Debug/Text en.j"
 
 // All functions for the trigger data of The Power of Fire. Wrappers have to be used since the vJass syntax is not allowed for TriggerData.
 

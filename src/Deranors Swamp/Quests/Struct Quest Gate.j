@@ -13,8 +13,6 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 		private unit array m_unit[thistype.maxRects]
 		private weathereffect m_finalWeatherEffect
 
-		implement Quest
-
 		public method countActivatedRects takes nothing returns integer
 			local integer result = 0
 			local integer i = 0
@@ -166,8 +164,7 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 			return this
 		endmethod
 
-		private static method onInit takes nothing returns nothing
-		endmethod
+		implement Quest
 	endstruct
 
 endlibrary

@@ -3,8 +3,6 @@ library StructMapQuestsQuestHell requires Asl, StructMapMapFellows
 	struct QuestHell extends SharedQuest
 		public static constant integer questItemFightThroughHell = 0
 
-		implement Quest
-
 		public stub method enable takes nothing returns boolean
 			return this.enableUntil(thistype.questItemFightThroughHell)
 		endmethod
@@ -25,8 +23,7 @@ library StructMapQuestsQuestHell requires Asl, StructMapMapFellows
 			return this
 		endmethod
 
-		private static method onInit takes nothing returns nothing
-		endmethod
+		implement Quest
 	endstruct
 
 endlibrary

@@ -1,25 +1,6 @@
 library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapQuestsQuestPalace, StructMapVideosVideoIntro
 
-	struct MapData extends MapDataInterface
-		public static constant string mapName = "GA"
-		public static constant string mapMusic = "Sound\\Music\\mp3Music\\War3XMainScreen.mp3"
-		public static constant integer maxPlayers = 6
-		public static constant player alliedPlayer = Player(6)
-		public static constant player neutralPassivePlayer = Player(PLAYER_NEUTRAL_PASSIVE)
-		public static constant real morning = 5.0
-		public static constant real midday = 12.0
-		public static constant real afternoon = 16.0
-		public static constant real evening = 18.0
-		public static constant real revivalTime = 35.0
-		public static constant real revivalLifePercentage = 100.0
-		public static constant real revivalManaPercentage = 100.0
-		public static constant integer startLevel = 30
-		public static constant integer startSkillPoints = 5 /// Includes the skill point for the default spell.
-		public static constant integer levelSpellPoints = 2
-		public static constant integer maxLevel = 10000
-		public static constant integer workerUnitTypeId = 'h00E'
-		public static constant boolean isSeparateChapter = false
-		public static sound cowSound = null
+	struct MapData
 		// Zones which can be reached directly from this map.
 		private static Zone m_zoneTalras
 		private static Zone m_zoneGardonarsHell
@@ -37,6 +18,13 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
+		endmethod
+
+		/// Required by \ref Game.
+		public static method initSettings takes nothing returns nothing
+			call MapSettings.setMapName("GA")
+			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\War3XMainScreen.mp33")
+			call MapSettings.setGoldmine(gg_unit_n06E_0161)
 		endmethod
 
 		private static method triggerConditionWin takes nothing returns boolean
@@ -78,9 +66,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		/// Required by \ref Game.
 		// TODO split up in multiple trigger executions to avoid OpLimit, .evaluate doesn't seem to work.
 		public static method init takes nothing returns nothing
-			// player should look like neutral passive
-			call SetPlayerColor(MapSettings.neutralPassivePlayer(), ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
-
 			call Shrines.init()
 			call NewOpLimit(function SpawnPoints.init)
 			call NewOpLimit(function Fellows.init) // init after talks (new)
@@ -167,6 +152,9 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+			call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start))
+			call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start))
+			call SetUnitFacing(character.unit(), 90.0)
 		endmethod
 
 		/// Required by \ref ClassSelection.
@@ -177,7 +165,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		public static method start takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == thistype.maxPlayers)
+				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call ACharacter.playerCharacter(Player(i)).setMovable(true)
 					call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
@@ -211,70 +199,26 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call Game.applyHandicapToCreeps()
 		endmethod
 
-		/// Required by \ref Classes.
-		public static method startX takes integer index returns real
-			return GetRectCenterX(gg_rct_start)
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method startY takes integer index returns real
-			return GetRectCenterY(gg_rct_start)
-		endmethod
-
-		/// Required by \ref Classes.
-		public static method startFacing takes integer index returns real
-			return 90.0
-		endmethod
-
 		/// Required by \ref MapChanger.
-		public static method restoreStartX takes integer index, string zone returns real
-			debug call Print("From Zone: " + zone)
+		public static method onRestoreCharacter takes string zone, Character character returns nothing
 			if (zone == "TL") then
-				return GetRectCenterX(gg_rct_start)
+				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start))
+				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start))
+			else
+				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_hell))
+				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_hell))
 			endif
-
-			return GetRectCenterX(gg_rct_start_hell)
-		endmethod
-
-		/// Required by \ref MapChanger.
-		public static method restoreStartY takes integer index, string zone returns real
-			if (zone == "TL") then
-				return GetRectCenterY(gg_rct_start)
-			endif
-
-			return GetRectCenterY(gg_rct_start_hell)
-		endmethod
-
-		/// Required by \ref MapChanger.
-		public static method restoreStartFacing takes integer index, string zone returns real
-			return 90.0
+			call SetUnitFacing(character.unit(), 90.0)
 		endmethod
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacters takes string zone returns nothing
 		endmethod
 
-		/**
-		 * \return Returns true if characters gain experience from killing units of player \p whichPlayer. Otherwise it returns false.
-		 */
-		public static method playerGivesXP takes player whichPlayer returns boolean
-			return whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE)
-		endmethod
-
 		public static method initVideoSettings takes nothing returns nothing
 		endmethod
 
 		public static method resetVideoSettings takes nothing returns nothing
-		endmethod
-
-		/// Required by \ref Buildings.
-		public static method goldmine takes nothing returns unit
-			return gg_unit_n06E_0161
-		endmethod
-
-		/// Required by teleport spells.
-		public static method excludeUnitTypeFromTeleport takes integer unitTypeId returns boolean
-			return false
 		endmethod
 	endstruct
 

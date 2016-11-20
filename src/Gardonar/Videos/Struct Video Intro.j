@@ -5,8 +5,6 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		private integer m_actorRicman
 		private integer m_actorDragonSlayer
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(6.00)
@@ -75,6 +73,8 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary

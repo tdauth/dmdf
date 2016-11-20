@@ -35,8 +35,6 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 		private QuestAreaPalace m_questAreaPalace
 		private QuestAreaPalace m_questAreaPalaceInside
 
-		implement Quest
-
 		public stub method enable takes nothing returns boolean
 			set this.m_questAreaPalace = QuestAreaPalace.create(gg_rct_quest_palace_gather)
 			return this.enableUntil(thistype.questItemReachPalace)
@@ -111,6 +109,8 @@ library StructMapQuestsQuestPalace requires Asl, StructMapMapFellows, StructMapV
 		private static method onInit takes nothing returns nothing
 			call SetDestructableInvulnerable(gg_dest_DTg5_0000, true)
 		endmethod
+
+		implement Quest
 	endstruct
 
 endlibrary

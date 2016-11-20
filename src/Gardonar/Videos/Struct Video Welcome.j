@@ -6,8 +6,6 @@ library StructMapVideosVideoWelcome requires Asl, StructGameGame, StructMapMapNp
 		private integer m_actorGammar
 		private integer m_actorBarade
 
-		implement Video
-
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call SetTimeOfDay(6.00)
@@ -115,6 +113,8 @@ library StructMapVideosVideoWelcome requires Asl, StructGameGame, StructMapMapNp
 
 			return this
 		endmethod
+
+		implement Video
 	endstruct
 
 endlibrary
