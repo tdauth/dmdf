@@ -28,6 +28,14 @@ endglobals
 
 library TPoFTriggerData requires Asl, Dmdf
 
+globals
+	// Last X'd vars
+	Fellow lastCreatedFellow = 0
+	SpawnPoint lastCreatedSpawnPoint = 0
+	integer lastAddedSpawnPointMemberIndex = 0
+	integer lastAddedSpawnPointMemberItemTypeIndex = 0
+endglobals
+
 function EnglishGermanString takes string english, string german returns string
 	return tre(german, english)
 endfunction
@@ -57,11 +65,16 @@ globals
 	ATriggerVector mapRestoreCharactersTriggers = 0
 	ATriggerVector mapInitVideoSettingsTriggers = 0
 	ATriggerVector mapResetVideoSettingsTriggers = 0
+	ATriggerVector characterOnEquipItemTriggers = 0
+	ATriggerVector characterOnAddRucksackItemTriggers = 0
 
 	constant integer TRIGGERDATA_KEY_INFO = 0
 	constant integer TRIGGERDATA_KEY_CHARACTER = 1
 	constant integer TRIGGERDATA_KEY_TALK = 2
 	constant integer TRIGGERDATA_KEY_ZONENAME = 3
+	constant integer TRIGGERDATA_KEY_INVENTORY = 4
+	constant integer TRIGGERDATA_KEY_ITEMINDEX = 5
+	constant integer TRIGGERDATA_KEY_ITEMFIRSTTIME = 6
 endglobals
 
 function TriggerRegisterMapInitSettingsEvent takes trigger whichTrigger returns nothing
@@ -88,8 +101,28 @@ function TriggerRegisterMapOnResetVideoSettingsEvent takes trigger whichTrigger 
 	call mapResetVideoSettingsTriggers.pushBack(whichTrigger)
 endfunction
 
+function TriggerRegisterCharacterOnEquipItemEvent takes trigger whichTrigger returns nothing
+	call characterOnEquipItemTriggers.pushBack(whichTrigger)
+endfunction
+
+function TriggerRegisterCharacterOnAddItemToRucksackEvent takes trigger whichTrigger returns nothing
+	call characterOnAddRucksackItemTriggers.pushBack(whichTrigger)
+endfunction
+
 function GetTriggerZoneName takes nothing returns string
 	return DmdfHashTable.global().handleStr(GetTriggeringTrigger(), TRIGGERDATA_KEY_ZONENAME)
+endfunction
+
+function GetTriggerInventory takes nothing returns AInventory
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_INVENTORY)
+endfunction
+
+function GetTriggerEquipmentType takes nothing returns integer
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_ITEMINDEX)
+endfunction
+
+function GetTriggerAddedItemFirstTime takes nothing returns boolean
+	return DmdfHashTable.global().handleBoolean(GetTriggeringTrigger(), TRIGGERDATA_KEY_ITEMFIRSTTIME)
 endfunction
 
 function CreateZone takes string mapName, rect enterRect returns Zone
@@ -138,6 +171,9 @@ endfunction
 
 function CreateQuestArea takes rect whichRect, boolean withFogModifier returns QuestArea
 	return QuestArea.create(whichRect, withFogModifier)
+endfunction
+
+function SetQuestAreaConditionAndActionByTrigger takes QuestArea questArea, trigger whichTrigger returns nothing
 endfunction
 
 function SetCharacterQuestReward takes AQuest whichQuest, integer rewardType, integer value returns nothing
@@ -225,6 +261,8 @@ function Init takes nothing returns nothing
 	set mapRestoreCharactersTriggers = ATriggerVector.create()
 	set mapInitVideoSettingsTriggers = ATriggerVector.create()
 	set mapResetVideoSettingsTriggers = ATriggerVector.create()
+	set characterOnEquipItemTriggers = ATriggerVector.create()
+	set characterOnAddRucksackItemTriggers = ATriggerVector.create()
 endfunction
 
 function GetTriggerInfo takes nothing returns AInfo
@@ -235,8 +273,8 @@ function GetTriggerTalk takes nothing returns Talk
 	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_TALK)
 endfunction
 
-function GetTriggerCharacter takes trigger whichTrigger returns Character
-	return DmdfHashTable.global().handleInteger(whichTrigger, TRIGGERDATA_KEY_CHARACTER)
+function GetTriggerCharacter takes nothing returns Character
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_CHARACTER)
 endfunction
 
 function GetInfoTalk takes AInfo info returns Talk
@@ -316,15 +354,29 @@ function TalkStartActionByTrigger takes trigger whichTrigger, Talk talk returns 
 endfunction
 
 function CreateFellow takes unit whichUnit, Talk talk returns Fellow
-	return Fellow.create(whichUnit, talk)
+	set lastCreatedFellow = Fellow.create(whichUnit, talk)
+	return lastCreatedFellow
 endfunction
 
 function CreateShrine takes unit shrineUnit, destructable whichDestructable, rect discoverRect, rect revivalRect, real revivalFacing returns Shrine
 	return Shrine.create(shrineUnit, whichDestructable, discoverRect, revivalRect, revivalFacing)
 endfunction
 
+function GetLastCreatedSpawnPoint takes nothing returns SpawnPoint
+	return lastCreatedSpawnPoint
+endfunction
+
+function GetLastAddedSpawnPointMemberIndex takes nothing returns integer
+	return lastAddedSpawnPointMemberIndex
+endfunction
+
+function GetLastAddedSpawnPointMemberItemTypeIndexHint takes nothing returns integer
+	return lastAddedSpawnPointMemberItemTypeIndex
+endfunction
+
 function CreateSpawnPoint takes nothing returns SpawnPoint
-	return SpawnPoint.create()
+	set lastCreatedSpawnPoint = SpawnPoint.create()
+	return lastCreatedSpawnPoint
 endfunction
 
 function ShareFellowWithAll takes Fellow fellow returns nothing
@@ -344,11 +396,17 @@ function SetFellowDescription takes Fellow fellow, string description returns no
 endfunction
 
 function SpawnPointAddUnitWithType takes SpawnPoint spawnPoint, unit whichUnit, real chance returns integer
-	return spawnPoint.addUnitWithType(whichUnit, chance)
+	set lastAddedSpawnPointMemberIndex = spawnPoint.addUnitWithType(whichUnit, chance)
+	return lastAddedSpawnPointMemberIndex
 endfunction
 
 function SpawnPointAddNewItemType takes SpawnPoint spawnPoint, integer unitIndex, integer itemCode, real chance returns integer
-	return spawnPoint.addNewItemType(unitIndex, itemCode, chance)
+	set lastAddedSpawnPointMemberItemTypeIndex = spawnPoint.addNewItemType(unitIndex, itemCode, chance)
+	return lastAddedSpawnPointMemberItemTypeIndex
+endfunction
+
+function CreateItemSpawnPointAtItemPos takes item whichItem returns ItemSpawnPoint
+	return ItemSpawnPoint.create(GetItemX(whichItem), GetItemY(whichItem), whichItem)
 endfunction
 
 function CreateItemSpawnPoint takes real x, real y, item whichItem returns ItemSpawnPoint
@@ -379,6 +437,10 @@ function RoutineSetPartner takes NpcTalksRoutine routine, unit partner returns n
 	call routine.setPartner(partner)
 endfunction
 
+function RoutineManualStart takes unit whichUnit returns nothing
+	call AUnitRoutine.manualStart(whichUnit)
+endfunction
+
 function ShrineEnableForAll takes Shrine shrine, boolean showEffect returns nothing
 	call ACharacter.enableShrineForAll(shrine, showEffect)
 endfunction
@@ -406,7 +468,7 @@ struct MapData
 		call Init()
 		loop
 			exitwhen (i == mapInitSettingsTriggers.size())
-			call TriggerEvaluate(mapInitSettingsTriggers[i])
+			call ConditionalTriggerExecute(mapInitSettingsTriggers[i])
 			set i = i + 1
 		endloop
 	endmethod
@@ -416,7 +478,7 @@ struct MapData
 		local integer i = 0
 		loop
 			exitwhen (i == mapInitTriggers.size())
-			call TriggerEvaluate(mapInitTriggers[i])
+			call ConditionalTriggerExecute(mapInitTriggers[i])
 			set i = i + 1
 		endloop
 	endmethod
@@ -441,8 +503,35 @@ struct MapData
 	public static method onStart takes nothing returns nothing
 	endmethod
 
+	private static method onEquipItem takes AInventory inventory, integer index, boolean firstTime returns nothing
+		local integer i = 0
+		loop
+			exitwhen (i == characterOnEquipItemTriggers.size())
+			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory)
+			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_ITEMINDEX, index)
+			call DmdfHashTable.global().setHandleBoolean(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_ITEMFIRSTTIME, firstTime)
+			call ConditionalTriggerExecute(characterOnEquipItemTriggers[i])
+			set i = i + 1
+		endloop
+	endmethod
+
+	private static method onAddItemToRucksack takes AInventory inventory, integer index, boolean firstTime returns nothing
+		local integer i = 0
+		loop
+			exitwhen (i == characterOnAddRucksackItemTriggers.size())
+			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory)
+			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_ITEMINDEX, index)
+			call DmdfHashTable.global().setHandleBoolean(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_ITEMFIRSTTIME, firstTime)
+			call ConditionalTriggerExecute(characterOnAddRucksackItemTriggers[i])
+			set i = i + 1
+		endloop
+	endmethod
+
 	/// Required by \ref ClassSelection.
 	public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+		// Do this on the character creation ONCE!
+		call character.inventory().addOnEquipFunction(thistype.onEquipItem)
+		call character.inventory().addOnAddToRucksackFunction(thistype.onAddItemToRucksack)
 	endmethod
 
 	/// Required by \ref ClassSelection.
@@ -457,7 +546,7 @@ struct MapData
 		call Game.applyHandicapToCreeps()
 		loop
 			exitwhen (i == mapStartTriggers.size())
-			call TriggerExecute(mapStartTriggers[i])
+			call ConditionalTriggerExecute(mapStartTriggers[i])
 			set i = i + 1
 		endloop
 	endmethod
@@ -472,7 +561,7 @@ struct MapData
 		loop
 			exitwhen (i == mapRestoreCharactersTriggers.size())
 			call DmdfHashTable.global().setHandleStr(mapRestoreCharactersTriggers[i], TRIGGERDATA_KEY_ZONENAME, zone)
-			call TriggerEvaluate(mapRestoreCharactersTriggers[i])
+			call ConditionalTriggerExecute(mapRestoreCharactersTriggers[i])
 			set i = i + 1
 		endloop
 	endmethod
@@ -481,7 +570,7 @@ struct MapData
 		local integer i = 0
 		loop
 			exitwhen (i == mapInitVideoSettingsTriggers.size())
-			call TriggerEvaluate(mapInitVideoSettingsTriggers[i])
+			call ConditionalTriggerExecute(mapInitVideoSettingsTriggers[i])
 			set i = i + 1
 		endloop
 	endmethod
@@ -490,7 +579,7 @@ struct MapData
 		local integer i = 0
 		loop
 			exitwhen (i == mapResetVideoSettingsTriggers.size())
-			call TriggerEvaluate(mapResetVideoSettingsTriggers[i])
+			call ConditionalTriggerExecute(mapResetVideoSettingsTriggers[i])
 			set i = i + 1
 		endloop
 	endmethod

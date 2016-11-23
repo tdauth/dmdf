@@ -51,9 +51,10 @@ ATalkStartAction=0,1,1,"Talk Start Action",integer
 ItemType=0,1,1,"Item Type",integer
 
 QuestArea=0,1,1,"Quest Area",integer
-AQuest=0,1,"Character Quest",integer
-AQuestItem=0,1,"Quest Item",integer
-QuestReward=0,1,"Quest Reward",integer
+AQuest=0,1,1,"Character Quest",integer
+AQuestItem=0,1,1,"Quest Item",integer
+QuestState=0,1,1,"Quest State",integer
+QuestReward=0,1,1,"Quest Reward",integer
 
 Shrine=0,1,1,"Revival Shrine",integer
 
@@ -66,6 +67,7 @@ Dungeon=0,1,1,"Dungeon",integer
 Zone=0,1,1,"Zone",integer
 
 ARoutine=0,1,1,"Routine",integer
+AUnitRoutine=0,1,1,"Unit Routine",integer
 NpcTalksRoutine=0,1,1,"Routine Talks",integer
 NpcRoutineWithFacing=0,1,1,"Routine With Facing",integer
 
@@ -128,6 +130,11 @@ DungeonNull=0,Dungeon,"No Dungeon"
 
 ZoneNull=0,Zone,"No Zone"
 
+QuestStateNotUsed=0,QuestState,AAbstractQuest.stateNotUsed,"State Not Used"
+QuestStateNew=0,QuestState,AAbstractQuest.stateNew,"State New"
+QuestStateCompleted=0,QuestState,AAbstractQuest.stateCompleted,"State Completed"
+QuestStateFailed=0,QuestState,AAbstractQuest.stateFailed,"State Failed"
+
 QuestRewardLevel=0,QuestReward,AAbstractQuest.rewardLevel,"Reward Level"
 QuestRewardSkillPoints=0,QuestReward,AAbstractQuest.rewardSkillPoints,"Reward Skill Points"
 QuestRewardExperience=0,QuestReward,AAbstractQuest.rewardExperience,"Reward Experience"
@@ -168,6 +175,8 @@ RoutineHarvestLumber=0,ARoutine,Routines.harvestLumber(),"Routine Harvest Lumber
 // Value 1+: argument types
 // Note that the first argument is always a `trigger`, and is excluded here
 
+// Map API
+
 TriggerRegisterMapInitSettingsEvent=1
 _TriggerRegisterMapInitSettingsEvent_Defaults=
 _TriggerRegisterMapInitSettingsEvent_Category=TC_TPOF_MAP
@@ -192,6 +201,14 @@ TriggerRegisterMapOnResetVideoSettingsEvent=1
 _TriggerRegisterMapOnResetVideoSettingsEvent_Defaults=
 _TriggerRegisterMapOnResetVideoSettingsEvent_Category=TC_TPOF_MAP
 
+TriggerRegisterCharacterOnEquipItemEvent=1
+_TriggerRegisterCharacterOnEquipItemEvent_Defaults=
+_TriggerRegisterCharacterOnEquipItemEvent_Category=TC_TPOF_CHARACTER
+
+TriggerRegisterCharacterOnAddItemToRucksackEvent=1
+_TriggerRegisterCharacterOnAddItemToRucksackEvent_Defaults=
+_TriggerRegisterCharacterOnAddItemToRucksackEvent_Category=TC_TPOF_CHARACTER
+
 //***************************************************************************
 [TriggerConditions]
 // Defines boolean condition functions
@@ -213,6 +230,8 @@ _OperatorCompareClass_Category=TC_CONDITION
 // Key: action function name
 // Value 0: first game version in which this function is valid
 // Value 1+: argument types
+
+// Map API
 
 SetMapSettingsMapName=1,string
 _SetMapSettingsMapName_Defaults=ZoneTalras
@@ -238,6 +257,8 @@ SetZoneEnabled=1,Zone,boolean
 _SetZoneEnabled_Defaults=_,true
 _SetZoneEnabled_Category=TC_TPOF_MAP
 
+// Talk API
+
 SetInfoCondition=1,AInfo,AInfoCondition
 _SetInfoCondition_Defaults=
 _SetInfoCondition_Category=TC_TPOF_TALK
@@ -250,8 +271,12 @@ SetInfoConditionAndActionByTrigger=1,AInfo,trigger
 _SetInfoConditionAndActionByTrigger_Defaults=
 _SetInfoConditionAndActionByTrigger_Category=TC_TPOF_TALK
 
+SetTalkStartAction=1,Talk,ATalkStartAction
+_SetTalkStartAction_Defaults=_,TalkStartActionByTrigger
+_SetTalkStartAction_Category=TC_TPOF_TALK
+
 ShowTalkStartPage=1,Talk,Character
-_ShowTalkStartPage_Defaults=
+_ShowTalkStartPage_Defaults=GetTriggerTalk,GetTriggerCharacter
 _ShowTalkStartPage_Category=TC_TPOF_TALK
 
 ShowTalkRange=1,Talk,integer,integer,Character
@@ -264,27 +289,53 @@ _ShowTalkUntil_Category=TC_TPOF_TALK
 
 CloseTalk=1,Talk,Character
 _CloseTalk_Defaults=
-_CloseTalk_Category=TC_TPOF_CHARACTER
+_CloseTalk_Category=TC_TPOF_TALK
 
 AddExitButton=1,Talk
 _AddExitButton_Defaults=
 _AddExitButton_Category=TC_TPOF_TALK
 
 Speech=1,AInfo,Character,boolean,StringExt,sound
-_Speech_Defaults=
+_Speech_Defaults=GetTriggerInfo,GetTriggerCharacter,false,_,SoundNull
 _Speech_Category=TC_TPOF_TALK
+
+// Quest Area API
 
 CreateQuestArea=1,rect,boolean
 _CreateQuestArea_Defaults=
 _CreateQuestArea_Category=TC_TPOF_QUESTAREA
 
+// Quest API
+
+SetQuestAreaConditionAndActionByTrigger=1,QuestArea,trigger
+_SetQuestAreaConditionAndActionByTrigger_Defaults=
+_SetQuestAreaConditionAndActionByTrigger_Category=TC_TPOF_QUESTAREA
+
+SetCharacterQuestState=1,AQuest,QuestState
+_SetCharacterQuestState_Defaults=_,QuestStateNew
+_SetCharacterQuestState_Category=TC_TPOF_QUEST
+
+SetCharacterQuestStateTrigger=1,AQuest,QuestState,trigger
+_SetCharacterQuestStateTrigger_Defaults=_,QuestStateCompleted,_
+_SetCharacterQuestStateTrigger_Category=TC_TPOF_QUEST
+
 SetCharacterQuestReward=1,AQuest,QuestReward,integer
-_SetCharacterQuestReward_Defaults=
+_SetCharacterQuestReward_Defaults=_,QuestRewardGold,_
 _SetCharacterQuestReward_Category=TC_TPOF_QUEST
 
-SetQuestItemReward=1,AQuest,QuestReward,integer
+SetQuestItemState=1,AQuestItem,QuestState
+_SetQuestItemState_Defaults=_,QuestStateNew
+_SetQuestItemState_Category=TC_TPOF_QUEST
+
+SetQuestItemStateTrigger=1,AQuestItem,QuestState,trigger
+_SetQuestItemStateTrigger_Defaults=_,QuestStateCompleted,_
+_SetQuestItemStateTrigger_Category=TC_TPOF_QUEST
+
+SetQuestItemReward=1,AQuestItem,QuestReward,integer
 _SetQuestItemReward_Defaults=
 _SetQuestItemReward_Category=TC_TPOF_QUEST
+
+// Fellow API
 
 SetFellowRevivalTitle=1,Fellow,string
 _SetFellowRevivalTitle_Defaults=
@@ -310,6 +361,8 @@ SetFellowTalk=1,Fellow,boolean
 _SetFellowTalk_Defaults=
 _SetFellowTalk_Category=TC_TPOF_FELLOW
 
+// Routine API
+
 RoutineSetFacing=1,NpcRoutineWithFacing,real
 _RoutineSetFacing_Defaults=
 _RoutineSetFacing_Category=TC_TPOF_ROUTINE
@@ -318,8 +371,14 @@ RoutineSetPartner=1,NpcTalksRoutine,unit
 _RoutineSetPartner_Defaults=
 _RoutineSetPartner_Category=TC_TPOF_ROUTINE
 
+RoutineManualStart=1,unit
+_RoutineManualStart_Defaults=
+_RoutineManualStart_Category=TC_TPOF_ROUTINE
+
+// Shrine API
+
 ShrineEnableForAll=1,Shrine,boolean
-_ShrineEnableForAll_Defaults=
+_ShrineEnableForAll_Defaults=_,true
 _ShrineEnableForAll_Category=TC_TPOF_SHRINE
 
 
@@ -353,6 +412,8 @@ EnglishGermanString=1,0,string,StringExt,StringExt
 _EnglishGermanString_Defaults=
 _EnglishGermanString_Category=TC_TPOF_CORE
 
+// Character API
+
 // returns force
 GetCharacterPlayers=0,0,force
 _GetCharacterPlayers_Defaults=
@@ -362,7 +423,7 @@ PlayerCharacter=1,0,Character,player
 _PlayerCharacter_Defaults=
 _PlayerCharacter_Category=TC_TPOF_CHARACTER
 
-CharacterClass=1,0,Character,AClass
+CharacterClass=1,0,AClass,Character
 _CharacterClass_Defaults=
 _CharacterClass_Category=TC_TPOF_CHARACTER
 
@@ -378,6 +439,8 @@ InventoryTotalItemTypeCharges=1,0,integer,AInventory,itemcode
 _InventoryTotalItemTypeCharges_Defaults=
 _InventoryTotalItemTypeCharges_Category=TC_TPOF_CHARACTER
 
+// Map API
+
 MapZoneName=1,0,string
 _MapZoneName_Defaults=
 _MapZoneName_Category=TC_TPOF_MAP
@@ -390,13 +453,31 @@ CreateZone=1,0,Zone,string,rect
 _CreateZone_Defaults=
 _CreateZone_Category=TC_TPOF_MAP
 
+// Inventory API
+
+GetTriggerInventory=1,0,AInventory
+_GetTriggerInventory_Defaults=
+_GetTriggerInventory_Category=TC_TPOF_CHARACTER
+
+GetTriggerEquipmentType=1,0,integer
+_GetTriggerEquipmentType_Defaults=
+_GetTriggerEquipmentType_Category=TC_TPOF_CHARACTER
+
+GetTriggerAddedItemFirstTime=1,0,boolean
+_GetTriggerAddedItemFirstTime_Defaults=
+_GetTriggerAddedItemFirstTime_Category=TC_TPOF_CHARACTER
+
 ItemTypeByItem=1,0,ItemType,item
 _ItemTypeByItem_Defaults=
 _ItemTypeByItem_Category=TC_TPOF_ITEM
 
+// Quest Area API
+
 CreateQuestArea=1,0,QuestArea,rect,boolean
-_CreateQuestArea_Defaults=
+_CreateQuestArea_Defaults=_,true
 _CreateQuestArea_Category=TC_TPOF_QUESTAREA
+
+// Quest API
 
 CreateCharacterQuest=1,0,AQuest,Character,string
 _CreateCharacterQuest_Defaults=
@@ -405,6 +486,8 @@ _CreateCharacterQuest_Category=TC_TPOF_QUEST
 CreateCharacterQuestItem=1,0,AQuestItem,AQuest,string
 _CreateCharacterQuestItem_Defaults=
 _CreateCharacterQuestItem_Category=TC_TPOF_QUEST
+
+// Talk API
 
 CreateTalk=1,0,Talk,unit
 _CreateTalk_Defaults=
@@ -451,39 +534,69 @@ _GetInfoIndex_Defaults=
 _GetInfoIndex_Category=TC_TPOF_TALK
 
 InfoHasBeenShownToCharacter=1,0,boolean,Talk,integer,Character
-_InfoHasBeenShownToCharacter_Defaults=
+_InfoHasBeenShownToCharacter_Defaults=GetTriggerTalk,GetInfoIndex,GetTriggerCharacter
 _InfoHasBeenShownToCharacter_Category=TC_TPOF_TALK
 
+// Fellow API
+
+GetLastCreatedFellow=1,0,Fellow
+_GetLastCreatedFellow_Defaults=
+_GetLastCreatedFellow_Category=TC_TPOF_FELLOW
+
 CreateFellow=1,0,Fellow,unit,Talk
-_CreateFellow_Defaults=
+_CreateFellow_Defaults=_,TalkNull
 _CreateFellow_Category=TC_TPOF_FELLOW
+
+// Shrine API
 
 CreateShrine=1,0,Shrine,unit,destructable,rect,rect,real
 _CreateShrine_Defaults=_,_,_,_,270.0
 _CreateShrine_Category=TC_TPOF_SHRINE
+
+// Spawn Point API
+
+GetLastCreatedSpawnPoint=1,0,SpawnPoint
+_GetLastCreatedSpawnPoint_Defaults=
+_GetLastCreatedSpawnPoint_Category=TC_TPOF_SPAWNPOINT
+
+GetLastAddedSpawnPointMemberIndex=1,0,integer
+_GetLastAddedSpawnPointMemberIndex_Defaults=
+_GetLastAddedSpawnPointMemberIndex_Category=TC_TPOF_SPAWNPOINT
+
+GetLastAddedSpawnPointMemberItemTypeIndex=1,0,integer
+_GetLastAddedSpawnPointMemberItemTypeIndex_Defaults=
+_GetLastAddedSpawnPointMemberItemTypeIndex_Category=TC_TPOF_SPAWNPOINT
 
 CreateSpawnPoint=1,0,SpawnPoint
 _SpawnPoint_Defaults=
 _SpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
 SpawnPointAddUnitWithType=1,0,integer,SpawnPoint,unit,real
-_SpawnPointAddUnitWithType_Defaults=
+_SpawnPointAddUnitWithType_Defaults=_,_,1.0
 _SpawnPointAddUnitWithType_Category=TC_TPOF_SPAWNPOINT
 
 SpawnPointAddNewItemType=1,0,integer,SpawnPoint,integer,itemcode,real
-_SpawnPointAddNewItemType_Defaults=
+_SpawnPointAddNewItemType_Defaults=_,_,_,1.0
 _SpawnPointAddNewItemType_Category=TC_TPOF_SPAWNPOINT
+
+CreateItemSpawnPointAtItemPos=1,0,ItemSpawnPoint,item
+_CreateItemSpawnPointAtItemPos_Defaults=
+_CreateItemSpawnPointAtItemPos_Category=TC_TPOF_SPAWNPOINT
 
 CreateItemSpawnPoint=1,0,ItemSpawnPoint,real,real,item
 _CreateItemSpawnPoint_Defaults=
 _CreateItemSpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
+// Dungeon API
+
 CreateDungeon=1,0,Dungeon,string,rect,rect
 _CreateDungeon_Defaults=
 _CreateDungeon_Category=TC_TPOF_DUNGEON
 
+// Routine API
+
 CreateRoutineWithFacing=1,0,NpcRoutineWithFacing,ARoutine,unit,real,real,rect
-_CreateRoutineWithFacing_Defaults=
+_CreateRoutineWithFacing_Defaults=RoutineMoveTo,_,12.0,20.0,_
 _CreateRoutineWithFacing_Category=TC_TPOF_ROUTINE
 
 CreateRoutineTalks=1,0,NpcTalksRoutine,ARoutine,unit,real,real,rect
