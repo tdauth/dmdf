@@ -1,5 +1,22 @@
 /**
- * Predefinition simplifies usage.
+ * This file contains vJass code to use the custom trigger data of the modification "The Power of Fire".
+ * To use it, just open the trigger editor and select the custom map script and add the line:
+ * //! import "TriggerData/TPoF.j"
+ *
+ * The file predefines all required globals and structs and provides simple JASS functions as wrapper for the actual systems of TPoF and the ASL.
+ * Since the GUI trigger editor does not allow handling vJass code these adaptions are necessary.
+ *
+ * Event handling is realized by storing vectors of triggers which are registered for events using \ref ATriggerVector.
+ * The events are triggered for example by the \ref MapData methods. The trigger parameters are stored as values in the hashtable \ref DmdfHashTable.global()
+ * using the trigger's handle ID as parent key and a unique integer key as child key. They can be accessed in the trigger using the handle ID of \ref GetTriggeringTrigger()
+ * as parent key and the unique integer key as child key.
+ *
+ * Using triggers instead of function pointers is a bit more complicated. Since the GUI trigger does not simply allow handling with function references it is much easier to simply use a whole trigger as a function pointer. To use a trigger as function pointer a unique hash table has to be used such as \ref TalkStartActionsHashTable and the trigger has to be stored using a passed function argument (passed to the function of the function pointer) as parent key. Then a predefined function which matches the function interface has to be set as function pointer. When the function of the pointer is called it uses the parameter which was used as parent key again to restore the stored trigger and calls the trigger instead of doing anything else. Thus a trigger is called in the end which has been specified by the user. Any trigger parameters have to be attached as well like it is done for event handling using \ref DmdfHashTable.global() and the called trigger.
+ */
+
+/**
+ * Predefinition simplifies the usage of the systems.
+ * These are the default values for the ASL and the modification TPoF.
  */
 globals
 	constant boolean A_SYSTEMS = true
@@ -24,8 +41,9 @@ endglobals
 //! import "Import Dmdf.j"
 //! import "Systems/Debug/Text en.j"
 
-// All functions for the trigger data of The Power of Fire. Wrappers have to be used since the vJass syntax is not allowed for TriggerData.
-
+/**
+ * \brief All functions for the trigger data of The Power of Fire. Wrappers have to be used since the vJass syntax is not allowed for TriggerData.
+ */
 library TPoFTriggerData requires Asl, Dmdf
 
 globals
