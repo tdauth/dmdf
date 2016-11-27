@@ -18,6 +18,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static VulnerableSpawnPoint m_horses
 		private static VulnerableSpawnPoint m_pigs
 		private static VulnerableSpawnPoint m_ducks
+		private static VulnerableSpawnPoint m_children
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -64,6 +65,29 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0112, 1.0)
 			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0113, 1.0)
 			set index = thistype.m_ducks.addUnitWithType(gg_unit_n02N_0124, 1.0)
+
+			set thistype.m_children = VulnerableSpawnPoint.create()
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvlk_0077, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvlk_0078, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvlk_0079, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvlk_0080, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvlk_0081, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvlk_0082, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0083, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0084, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0085, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0086, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0087, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0088, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0089, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0090, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0091, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0092, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0093, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0094, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0095, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0096, 1.0)
+			set index = thistype.m_children.addUnitWithType(gg_unit_nvk2_0097, 1.0)
 
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I05K_0018, 1.0)
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I05L_0016, 1.0)

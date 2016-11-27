@@ -22,7 +22,7 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 		endmethod
 
 		private static method stateActionNew takes thistype this returns nothing
-			call this.questItem(thistype.questItemDiscover).setState(thistype.stateNew)
+			call this.questItem(thistype.questItemDiscover).setState(thistype.stateCompleted)
 			call this.questItem(thistype.questItemTalkToWotan).setState(thistype.stateNew)
 			call this.displayState()
 		endmethod
