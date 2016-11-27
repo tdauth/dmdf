@@ -28,6 +28,7 @@ library StructGameMapSettings
 		private static boolean m_isSeparateChapter = false
 		private static unit m_goldmine
 		private static AGlobalHashTable m_excludedTeleportUnitTypeIds
+		private static boolean m_allowTravelingWithUnits = true
 
 		public static method initDefaults takes nothing returns nothing
 			set thistype.m_excludedTeleportUnitTypeIds = AGlobalHashTable.create()

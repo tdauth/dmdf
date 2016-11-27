@@ -11,6 +11,7 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		private static AIntegerVector m_zones
 		/// All zone names even the names of zones which cannot be reached in this map. This is required for copying all save games.
 		private static AStringVector m_zoneNames
+		private static ABooleanVector m_zoneAllowTravelingWithOtherUnits
 		private string m_mapName
 		private unit m_iconUnit
 		private boolean m_isEnabled
@@ -86,20 +87,55 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			set thistype.m_zones = AIntegerVector.create()
 			call SetAltMinimapIcon("UI\\Minimap\\MiniMap-Entrance.blp")
 			set thistype.m_zoneNames = AStringVector.create()
+			set thistype.m_zoneAllowTravelingWithOtherUnits = ABooleanVector.create()
 			/// All zone names of the current campaign must be added here. They have to be copied whenever the game is saved.
 			call thistype.m_zoneNames.pushBack("TL") // Talras
+			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
+
 			call thistype.m_zoneNames.pushBack("GA") // Gardonar
+			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
+
 			call thistype.m_zoneNames.pushBack("GH") // Gardonar's Hell
+			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
+
 			call thistype.m_zoneNames.pushBack("DS") // Deranor's Swamp
+			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
+
 			call thistype.m_zoneNames.pushBack("HB") // Holzbruck
+			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
+
 			call thistype.m_zoneNames.pushBack("HU") // Holzbruck's Underworld
+			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
+
 			call thistype.m_zoneNames.pushBack("WM") // World Map
+			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(false)
+
 			call thistype.m_zoneNames.pushBack("DH") // Tutorial: Dornheim
+			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
+
 			call thistype.m_zoneNames.pushBack("TN") // The North
+			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
 		endmethod
 
 		public static method zoneNames takes nothing returns AIntegerVector
 			return thistype.m_zoneNames
+		endmethod
+
+		public static method zoneAllowTravelingWithOtherUnits takes string zoneName returns boolean
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.m_zoneNames.size())
+				if (thistype.m_zoneNames[i] == zoneName) then
+					if (thistype.m_zoneAllowTravelingWithOtherUnits.size() > i) then
+						return thistype.m_zoneAllowTravelingWithOtherUnits[i]
+					debug else
+						debug call Print("Missing Allow Traveling With Other Units Entry for Zone: " + zoneName)
+					endif
+				endif
+				set i = i + 1
+			endloop
+
+			return false
 		endmethod
 	endstruct
 

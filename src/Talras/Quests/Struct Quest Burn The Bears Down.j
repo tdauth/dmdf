@@ -29,7 +29,7 @@ library StructMapQuestsQuestBurnTheBearsDown requires Asl, StructGameCharacter, 
 		 */
 		private static method triggerConditionPickup takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			local integer count
+			local integer count = 0
 			local boolean completed = false
 			local boolean new = false
 			if (GetTriggerUnit() == this.character().unit()) then

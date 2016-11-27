@@ -95,43 +95,31 @@ library StructSpellsSpellUnearth requires Asl, StructGameDmdfHashTable
 		endmethod
 
 		private static method triggerConditionEnter takes nothing returns boolean
-			local unit triggerUnit = GetTriggerUnit()
 			local boolean result = false
 			local integer i = 0
 			loop
 				exitwhen (i == thistype.m_unitTypeIds.size())
-				if (GetUnitTypeId(triggerUnit) == thistype.m_unitTypeIds[i]) then
+				if (GetUnitTypeId(GetTriggerUnit()) == thistype.m_unitTypeIds[i]) then
 					set result = true
 					exitwhen (true)
 				endif
 				set i = i + 1
 			endloop
-			set triggerUnit = null
 			return result
 		endmethod
 
 		private static method triggerActionEnter takes nothing returns nothing
-			local unit triggerUnit = GetTriggerUnit()
-			call SpellData.create(triggerUnit)
-			set triggerUnit = null
+			call SpellData.create(GetTriggerUnit())
 		endmethod
 
 		public static method init takes nothing returns nothing
-			local event triggerEvent
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_unitTypeIds = AIntegerVector.create()
 			set thistype.m_region = CreateRegion()
 			call RegionAddRect(thistype.m_region, GetPlayableMapRect())
 			set thistype.m_enterTrigger = CreateTrigger()
-			set triggerEvent = TriggerRegisterEnterRegion(thistype.m_enterTrigger, thistype.m_region, null)
-			set conditionFunction = Condition(function thistype.triggerConditionEnter)
-			set triggerCondition = TriggerAddCondition(thistype.m_enterTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_enterTrigger, function thistype.triggerActionEnter)
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerRegisterEnterRegion(thistype.m_enterTrigger, thistype.m_region, null)
+			call TriggerAddCondition(thistype.m_enterTrigger, Condition(function thistype.triggerConditionEnter))
+			call TriggerAddAction(thistype.m_enterTrigger, function thistype.triggerActionEnter)
 		endmethod
 
 		public static method addUnitTypeId takes integer unitTypeId returns nothing

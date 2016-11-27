@@ -16,7 +16,7 @@
 
 TriggerRegisterMapInitSettingsEvent="Trigger Register Map Init Settings Event"
 TriggerRegisterMapInitSettingsEvent="Trigger Register Map Init Settings Event"
-TriggerRegisterMapInitSettingsEvent="The trigger is evaluated during the map settings initialization which is even before the game initialization."
+TriggerRegisterMapInitSettingsEventHint="The trigger is evaluated during the map settings initialization which is even before the game initialization."
 
 TriggerRegisterMapInitEvent="Trigger Register Map Init Event"
 TriggerRegisterMapInitEvent="Trigger Register Map Init Event"
@@ -63,6 +63,12 @@ OperatorCompareClassHint=
 
 //***************************************************************************
 [TriggerActionStrings]
+
+// Core API
+
+SetDmdfHashTableHandleInteger="Set TPoF Hash Table Handle Integer"
+SetDmdfHashTableHandleInteger="Set TPoF Hash Table Handle Integer For Handle ",~Handle," Using Child Key ",~Key," To Value ",~Value
+SetDmdfHashTableHandleIntegerHint="Allows attaching values to handles."
 
 // Map API
 
@@ -150,6 +156,14 @@ SetCharacterQuestStateTrigger="Set Character Quest State Trigger"
 SetCharacterQuestStateTrigger="Set Character Quest State Trigger For Quest ",~Quest," For State ",~State," To Trigger ",~Trigger
 SetCharacterQuestStateTriggerHint=""
 
+SetCharacterQuestDescription="Set Character Quest Description"
+SetCharacterQuestDescription="Set Description For Character Quest ",~Quest," To Description ",~Description
+SetCharacterQuestDescriptionHint=""
+
+SetCharacterQuestIconPath="Set Character Quest Icon Path"
+SetCharacterQuestIconPath="Set Icon Path for Character Quest ",~Quest," To Icon Path ",~IconPath
+SetCharacterQuestIconPathHint=""
+
 SetCharacterQuestReward="Set Character Quest Reward"
 SetCharacterQuestReward="Set Reward for Character Quest ",~Quest," of Reward Type ",~Type," to Value ",~Value
 SetCharacterQuestRewardHint=""
@@ -158,17 +172,31 @@ SetQuestItemState="Set Quest Item State"
 SetQuestItemState="Set State For Quest Item ",~QuestItem," to State ",~State
 SetQuestItemStateHint=""
 
-SetCharacterQuestItemStateTrigger="Set Quest Item State Trigger"
-SetCharacterQuestItemStateTrigger="Set Quest Item State Trigger For Quest Item ",~QuestItem," For State ",~State," To Trigger ",~Trigger
-SetCharacterQuestItemStateTriggerHint=""
+SetQuestItemStateTrigger="Set Quest Item State Trigger"
+SetQuestItemStateTrigger="Set Quest Item State Trigger For Quest Item ",~QuestItem," For State ",~State," To Trigger ",~Trigger
+SetQuestItemStateTriggerHint=""
 
 SetQuestItemReward="Set Quest Item Reward"
 SetQuestItemReward="Set Reward for Quest Item ",~QuestItem," of Reward Type ",~Type," to Value ",~Value
 SetQuestItemRewardHint=""
 
+EnableQuestUntil="Enable Quest Until"
+EnableQuestUntil="Enable Quest ",~Quest," until quest item index ",~Index
+EnableQuestUntilHint=""
+
+// Fellow API
+
+SetFellowRevival="Set Fellow Revival"
+SetFellowRevival="Set For Fellow ",~Fellow," Revival To ",~Flag
+SetFellowRevivalHint=""
+
 SetFellowRevivalTitle="Set Fellow Revival Title"
 SetFellowRevivalTitle="Set revival title of ",~Fellow," to ",~title
 SetFellowRevivalTitleHint="Sets the title for the timer dialog which is shown on reviving the fellow."
+
+SetFellowRevivalSound="Set Fellow Revival Sound"
+SetFellowRevivalSound="Set For Fellow ",~Fellow," the Revival Sound to ",~RevivalSound
+SetFellowRevivalSoundHint=""
 
 ShareFellowWithAll="Share Fellow With All"
 ShareFellowWithAll="Share fellow ",~Fellow," with all characters"
@@ -190,6 +218,10 @@ SetFellowTalk="Set Fellow Talk"
 SetFellowTalk="Set Fellow ",~Fellow," Talk enabled to ",~Flag
 SetFellowTalkHint=""
 
+FellowAddAbility="Add Fellow Ability"
+FellowAddAbility="Add To Fellow ",~Fellow~," Ability ",~Ability
+FellowAddAbilityHint=""
+
 RoutineSetFacing="Set Routine Facing"
 RoutineSetFacing="Set Facing for Routine ",~Routine," to ",~Real
 RoutineSetFacingHint=""
@@ -198,6 +230,14 @@ RoutineSetPartner="Set Routine Partner"
 RoutineSetPartner="Set Partner for Routine ",~Routine," to unit ",~Unit
 RoutineSetPartnerHint=""
 
+RoutineAddSound="Add Routine Sound"
+RoutineAddSound="Add to Routine ",~Routine," the sound text ",~Text," with the Sound ",~Sound
+RoutineAddSoundHint="The sound is played during a conversation with another NPC and the text is shown as subtitles."
+
+RoutineAddSoundAnswer="Add Routine Sound Answer"
+RoutineAddSoundAnswer="Add to Routine ",~Routine," the answer sound text ",~Text," with the Sound ",~Sound
+RoutineAddSoundAnswerHint="The sound is played during a conversation with another NPC and the text is shown as subtitles."
+
 RoutineManualStart="Routine Manual Start"
 RoutineManualStart="Start Routine Manually For Unit ",~Unit
 RoutineManualStartHint=""
@@ -205,6 +245,40 @@ RoutineManualStartHint=""
 ShrineEnableForAll="Enable Shrine For All"
 ShrineEnableForAll="Enable Shrine ",~Shrine," For All Characters Showing Effect ",~Flag
 ShrineEnableForAllHint=""
+
+// Video API
+
+VideoSetInitActionByTrigger="Video Set Init Action By Trigger"
+VideoSetInitActionByTrigger="Video ",~Video," Set Init Action By Trigger ",~Trigger
+VideoSetInitActionByTriggerHint=""
+
+VideoSetPlayActionByTrigger="Video Set Play Action By Trigger"
+VideoSetPlayActionByTrigger="Video ",~Video," Set Play Action By Trigger ",~Trigger
+VideoSetPlayActionByTriggerHint=""
+
+VideoSetStopActionByTrigger="Video Set Stop Action By Trigger"
+VideoSetStopActionByTrigger="Video ",~Video," Set Play Action By Trigger ",~Trigger
+VideoSetStopActionByTriggerHint=""
+
+VideoSetSkipActionByTrigger="Video Set Skip Action By Trigger"
+VideoSetSkipActionByTrigger="Video ",~Video," Set Skip Action By Trigger ",~Trigger
+VideoSetSkipActionByTriggerHint=""
+
+VideoStop="Video Stop"
+VideoStop="Stop Video ",~Video
+VideoStopHint=""
+
+VideoInitVideoSettings="Video Init Video Settings"
+VideoInitVideoSettings="Init Video Settings For Video ",~Video
+VideoInitVideoSettingsHint="Pauses spawn points, hides player units and certain abilities etc. disables tree transparency and sets up everything for a video sequence."
+
+VideoResetVideoSettings="Video Reset Video Settings"
+VideoResetVideoSettings="Reset Video Settings"
+VideoResetVideoSettingsHint="Enables spawn points again, shows player units again etc."
+
+VideoSetActorOwner="Video Set Actor Owner"
+VideoSetActorOwner="Set Actor Owner For Video ",~Video," To Player ",~Player
+VideoSetActorOwnerHint="The actor owner is the player who owns actors such as the character actor by default."
 
 // Obsolete actions
 //AddPerfLogLabel="** AddPerfLogLabel **"
@@ -244,6 +318,18 @@ CharacterInventory="Character Inventory"
 CharacterInventory="Inventory of Character ",~Character
 CharacterInventoryHint="Every character has one inventory."
 
+InventoryEquipmentItemType="Inventory Equipment Item Type"
+InventoryEquipmentItemType="Item Type of Inventory's ",~Inventory," Equipment Type ",~EquipmentType
+InventoryEquipmentItemTypeHint=""
+
+InventoryRucksackItemType="Inventory Rucksack Item Type"
+InventoryRucksackItemType="Item Type of Inventory's ",~Inventory," Rucksack Slot with Index ",~Index
+InventoryRucksackItemTypeHint=""
+
+InventoryRucksackItemCharges="Inventory Rucksack Item Charges"
+InventoryRucksackItemCharges="Item Charges of Inventory's ",~Inventory," Rucksack slot with Index ",~Index
+InventoryRucksackItemChargesHint=""
+
 InventoryHasItemType="Inventory Has Item Type"
 InventoryHasItemType="Inventory ",~Inventory," has item type ",~ItemType
 InventoryHasItemTypeHint="Returns true if the item type is in the backpack or in the equipment."
@@ -251,6 +337,12 @@ InventoryHasItemTypeHint="Returns true if the item type is in the backpack or in
 InventoryTotalItemTypeCharges="Inventory Total Item Charges"
 InventoryTotalItemTypeCharges="Total item charges in Inventory ",~Inventory," of item type ",~ItemType
 InventoryTotalItemTypeChargesHint="Adds all charges in the backpack as well as in the equipment."
+
+PlayerBuilding="Player Building"
+PlayerBuilding="Building of Player With Index ",~Index
+PlayerBuildingHint="Every player can have on building per map."
+
+// Map API
 
 MapZoneName="Map Zone Name"
 MapZoneName="Map Zone Name"
@@ -274,6 +366,10 @@ GetTriggerEquipmentType="Get Trigger Equipment Type"
 GetTriggerEquipmentType="Get Trigger Equipment Type"
 GetTriggerEquipmentTypeHint=""
 
+GetTriggerRucksackItemIndex="Get Trigger Rucksack Item Index"
+GetTriggerRucksackItemIndex="Get Trigger Rucksack Item Index"
+GetTriggerRucksackItemIndexHint=""
+
 GetTriggerAddedItemFirstTime="Get Trigger Added Item First Time"
 GetTriggerAddedItemFirstTime="Get Trigger Added Item First Time"
 GetTriggerAddedItemFirstTimeHint=""
@@ -281,6 +377,10 @@ GetTriggerAddedItemFirstTimeHint=""
 ItemTypeByItem="Item Type By Item"
 ItemTypeByItem="Item Type By Item ",~Item
 ItemTypeByItemHint="Gets the item type by an item. If the item has no custom item type it returns 0."
+
+ItemTypeRequiresTwoSlots="Item Type Requires Two Slots"
+ItemTypeRequiresTwoSlots="Item Type ",~ItemType," Requires Two Slots"
+ItemTypeRequiresTwoSlotsHint="Some Weapons have to be carried with two hands."
 
 // Quest Area API
 
@@ -405,3 +505,13 @@ CreateRoutineTalksHint=""
 RoutineTalksToRoutineWithFacing="Routine talks To Routine With Facing"
 RoutineTalksToRoutineWithFacing="Routine Talks ",~Routine," To Routine With Facing"
 RoutineTalksToRoutineWithFacingHint=""
+
+// Video API
+
+CreateVideo="Create Video"
+CreateVideo="Create Video Using A Character Actor ",~Flag
+CreateVideoHint=""
+
+VideoWait="Video Wait"
+VideoWait="Video Wait For ",~Time," Seconds"
+VideoWaitHint="Recognizes video skips."

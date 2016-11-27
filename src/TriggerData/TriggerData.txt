@@ -18,6 +18,7 @@ TC_TPOF_SHRINE="Revival Shrine",ReplaceableTextures\WorldEditUI\Actions-Goldmine
 TC_TPOF_SPAWNPOINT="Spawn Point",,ReplaceableTextures\WorldEditUI\Actions-Unit
 TC_TPOF_DUNGEON="Dungeon",ReplaceableTextures\WorldEditUI\Actions-Visibility
 TC_TPOF_ROUTINE="Routine",ReplaceableTextures\WorldEditUI\Actions-Environment
+TC_TPOF_VIDEO="Video",ReplaceableTextures\WorldEditUI\Actions-Camera
 //%%% DEBUG - Remove for retail
 //TC_OBSOLETE=WESTRING_TRIGCAT_OBSOLETE,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
 //TC_DEBUG=WESTRING_TRIGCAT_DEBUG,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
@@ -49,6 +50,7 @@ AInfoAction=0,1,1,"Info Action",integer
 ATalkStartAction=0,1,1,"Talk Start Action",integer
 
 ItemType=0,1,1,"Item Type",integer
+EquipmentType=0,1,1,"Equipment Type",integer
 
 QuestArea=0,1,1,"Quest Area",integer
 AQuest=0,1,1,"Character Quest",integer
@@ -70,6 +72,8 @@ ARoutine=0,1,1,"Routine",integer
 AUnitRoutine=0,1,1,"Unit Routine",integer
 NpcTalksRoutine=0,1,1,"Routine Talks",integer
 NpcRoutineWithFacing=0,1,1,"Routine With Facing",integer
+
+AVideo=0,1,1,"Video Sequence",integer
 
 //***************************************************************************
 [TriggerTypeDefaults]
@@ -129,6 +133,14 @@ ItemSpawnPointNull=0,ItemSpawnPoint,0,"No Item Spawn Point"
 DungeonNull=0,Dungeon,"No Dungeon"
 
 ZoneNull=0,Zone,"No Zone"
+
+EquipmentTypeNone=0,AItemType.equipmentTypeNone,"Equipment Type None"
+EquipmentTypeHeaddress=0,AItemType.equipmentTypeHeaddress,"Equipment Type Headdress"
+EquipmentTypeArmour=0,AItemType.equipmentTypeArmour,"Equipment Type Armour"
+EquipmentTypePrimaryWeapon=0,AItemType.equipmentTypePrimaryWeapon,"Equipment Type Primary Weapon"
+EquipmentTypeSecondaryWeapon=0,AItemType.equipmentTypeSecondaryWeapon,"Equipment Type Secondary Weapon"
+EquipmentTypeAmulet=0,AItemType.equipmentTypeAmulet,"Equipment Type Amulet"
+EquipmentTypeAmulet2=0,5,"Equipment Type Amulet 2"
 
 QuestStateNotUsed=0,QuestState,AAbstractQuest.stateNotUsed,"State Not Used"
 QuestStateNew=0,QuestState,AAbstractQuest.stateNew,"State New"
@@ -231,6 +243,12 @@ _OperatorCompareClass_Category=TC_CONDITION
 // Value 0: first game version in which this function is valid
 // Value 1+: argument types
 
+// Core API
+
+SetDmdfHashTableHandleInteger=1,handle,integer,integer
+_SetDmdfHashTableHandleInteger_Defaults=
+_SetDmdfHashTableHandleInteger_Category=TC_TPOF_CORE
+
 // Map API
 
 SetMapSettingsMapName=1,string
@@ -319,6 +337,14 @@ SetCharacterQuestStateTrigger=1,AQuest,QuestState,trigger
 _SetCharacterQuestStateTrigger_Defaults=_,QuestStateCompleted,_
 _SetCharacterQuestStateTrigger_Category=TC_TPOF_QUEST
 
+SetCharacterQuestDescription=1,AQuest,string
+_SetCharacterQuestDescription_Defaults=
+_SetCharacterQuestDescription_Category=TC_TPOF_QUEST
+
+SetCharacterQuestIconPath=1,AQuest,imagefile
+_SetCharacterQuestIconPath_Defaults=
+_SetCharacterQuestIconPath_Category=TC_TPOF_QUEST
+
 SetCharacterQuestReward=1,AQuest,QuestReward,integer
 _SetCharacterQuestReward_Defaults=_,QuestRewardGold,_
 _SetCharacterQuestReward_Category=TC_TPOF_QUEST
@@ -335,11 +361,43 @@ SetQuestItemReward=1,AQuestItem,QuestReward,integer
 _SetQuestItemReward_Defaults=
 _SetQuestItemReward_Category=TC_TPOF_QUEST
 
+EnableQuestUntil=1,AQuest,integer
+_EnableQuestUntil_Defaults=
+_EnableQuestUntil_Category=TC_TPOF_QUEST
+
+SetCharacterQuestPing=1,AQuest,boolean
+_SetCharacterQuestPing_Defaults=_,true
+_SetCharacterQuestPing_Category=TC_TPOF_QUEST
+
+SetCharacterQuestPingCoordinatesFromRect=1,AQuest,rect
+_SetCharacterQuestPingCoordinatesFromRect_Defaults=
+_SetCharacterQuestPingCoordinatesFromRect_Category=TC_TPOF_QUEST
+
+SetCharacterQuestPingUnit=1,AQuest,unit
+_SetCharacterQuestPingUnit_Defaults=
+_SetCharacterQuestPingUnit_Category=TC_TPOF_QUEST
+
+SetCharacterQuestPingColour=1,AQuest,real,real,real
+_SetCharacterQuestPingColour_Defaults=_,100.0,100.0,100.0
+_SetCharacterQuestPingColour_Category=TC_TPOF_QUEST
+
 // Fellow API
+
+SetFellowRevival=1,Fellow,boolean
+_SetFellowRevival_Defaults=_,true
+_SetFellowRevival_Category=TC_TPOF_FELLOW
 
 SetFellowRevivalTitle=1,Fellow,string
 _SetFellowRevivalTitle_Defaults=
 _SetFellowRevivalTitle_Category=TC_TPOF_FELLOW
+
+SetFellowRevivalMessage=1,Fellow,string
+_SetFellowRevivalMessage_Defaults=
+_SetFellowRevivalMessage_Category=TC_TPOF_FELLOW
+
+SetFellowRevivalSound=1,Fellow,sound
+_SetFellowRevivalSound_Defaults=
+_SetFellowRevivalSound_Category=TC_TPOF_FELLOW
 
 ShareFellowWithAll=1,Fellow
 _ShareFellowWithAll_Defaults=
@@ -361,6 +419,10 @@ SetFellowTalk=1,Fellow,boolean
 _SetFellowTalk_Defaults=
 _SetFellowTalk_Category=TC_TPOF_FELLOW
 
+FellowAddAbility=1,Fellow,abilcode
+_FellowAddAbility_Defaults=
+_FellowAddAbility_Category=TC_TPOF_FELLOW
+
 // Routine API
 
 RoutineSetFacing=1,NpcRoutineWithFacing,real
@@ -370,6 +432,14 @@ _RoutineSetFacing_Category=TC_TPOF_ROUTINE
 RoutineSetPartner=1,NpcTalksRoutine,unit
 _RoutineSetPartner_Defaults=
 _RoutineSetPartner_Category=TC_TPOF_ROUTINE
+
+RoutineAddSound=1,NpcTalksRoutine,string,sound
+_RoutineAddSound_Defaults=
+_RoutineAddSound_Category=TC_TPOF_ROUTINE
+
+RoutineAddSoundAnswer=1,NpcTalksRoutine,string,sound
+_RoutineAddSoundAnswer_Defaults=
+_RoutineAddSoundAnswer_Category=TC_TPOF_ROUTINE
 
 RoutineManualStart=1,unit
 _RoutineManualStart_Defaults=
@@ -381,6 +451,39 @@ ShrineEnableForAll=1,Shrine,boolean
 _ShrineEnableForAll_Defaults=_,true
 _ShrineEnableForAll_Category=TC_TPOF_SHRINE
 
+// Video API
+
+VideoSetInitActionByTrigger=1,AVideo,trigger
+_VideoSetInitActionByTrigger_Defaults=
+_VideoSetInitActionByTrigger_Category=TC_TPOF_VIDEO
+
+VideoSetPlayActionByTrigger=1,AVideo,trigger
+_VideoSetPlayActionByTrigger_Defaults=
+_VideoSetPlayActionByTrigger_Category=TC_TPOF_VIDEO
+
+VideoSetStopActionByTrigger=1,AVideo,trigger
+_VideoSetStopActionByTrigger_Defaults=
+_VideoSetStopActionByTrigger_Category=TC_TPOF_VIDEO
+
+VideoSetSkipActionByTrigger=1,AVideo,trigger
+_VideoSetSkipActionByTrigger_Defaults=
+_VideoSetSkipActionByTrigger_Category=TC_TPOF_VIDEO
+
+VideoStop=1,AVideo
+_VideoStop_Defaults=
+_VideoStop_Category=TC_TPOF_VIDEO
+
+VideoInitVideoSettings=1,AVideo
+_VideoInitVideoSettings_Defaults=
+_VideoInitVideoSettings_Category=TC_TPOF_VIDEO
+
+VideoResetVideoSettings=1
+_VideoResetVideoSettings_Defaults=
+_VideoResetVideoSettings_Category=TC_TPOF_VIDEO
+
+VideoSetActorOwner=1,AVideo,player
+_VideoSetActorOwner_Defaults=
+_VideoSetActorOwner_Category=TC_TPOF_VIDEO
 
 // Obsolete actions
 //AddPerfLogLabel=0,string
@@ -431,6 +534,18 @@ CharacterInventory=1,0,AInventory,Character
 _CharacterInventory_Defaults=
 _CharacterInventory_Category=TC_TPOF_CHARACTER
 
+InventoryEquipmentItemType=1,0,itemcode,AInventory,EquipmentType
+_InventoryEquipmentItemType_Defaults=
+_InventoryEquipmentItemType_Category=TC_TPOF_CHARACTER
+
+InventoryRucksackItemType=1,0,itemcode,AInventory,integer
+_InventoryRucksackItemType_Defaults=
+_InventoryRucksackItemType_Category=TC_TPOF_CHARACTER
+
+InventoryRucksackItemCharges=1,0,integer,AInventory,integer
+_InventoryRucksackItemCharges_Defaults=
+_InventoryRucksackItemCharges_Category=TC_TPOF_CHARACTER
+
 InventoryHasItemType=1,0,boolean,AInventory,itemcode
 _InventoryHasItemType_Defaults=
 _InventoryHashItemType_Category=TC_TPOF_CHARACTER
@@ -438,6 +553,10 @@ _InventoryHashItemType_Category=TC_TPOF_CHARACTER
 InventoryTotalItemTypeCharges=1,0,integer,AInventory,itemcode
 _InventoryTotalItemTypeCharges_Defaults=
 _InventoryTotalItemTypeCharges_Category=TC_TPOF_CHARACTER
+
+PlayerBuilding=1,0,unit,integer
+_PlayerBuilding_Defaults=1
+_PlayerBuilding_Category=TC_TPOF_CHARACTER
 
 // Map API
 
@@ -459,9 +578,13 @@ GetTriggerInventory=1,0,AInventory
 _GetTriggerInventory_Defaults=
 _GetTriggerInventory_Category=TC_TPOF_CHARACTER
 
-GetTriggerEquipmentType=1,0,integer
+GetTriggerEquipmentType=1,0,EquipmentType
 _GetTriggerEquipmentType_Defaults=
 _GetTriggerEquipmentType_Category=TC_TPOF_CHARACTER
+
+GetTriggerRucksackItemIndex=1,0,integer
+_GetTriggerRucksackItemIndex_Defaults=
+_GetTriggerRucksackItemIndex_Category=TC_TPOF_CHARACTER
 
 GetTriggerAddedItemFirstTime=1,0,boolean
 _GetTriggerAddedItemFirstTime_Defaults=
@@ -470,6 +593,10 @@ _GetTriggerAddedItemFirstTime_Category=TC_TPOF_CHARACTER
 ItemTypeByItem=1,0,ItemType,item
 _ItemTypeByItem_Defaults=
 _ItemTypeByItem_Category=TC_TPOF_ITEM
+
+ItemTypeRequiresTwoSlots=1,0,boolean,itemcode
+_ItemTypeRequiresTwoSlots_Defaults=
+_ItemTypeRequiresTwoSlots_Category=TC_TPOF_ITEM
 
 // Quest Area API
 
@@ -606,6 +733,16 @@ _CreateRoutineTalks_Category=TC_TPOF_ROUTINE
 RoutineTalksToRoutineWithFacing=1,0,NpcRoutineWithFacing,NpcTalksRoutine
 _RoutineTalksToRoutineWithFacing_Defaults=
 _RoutineTalksToRoutineWithFacing_Category=TC_TPOF_ROUTINE
+
+// Video API
+
+CreateVideo=1,0,AVideo,boolean
+_CreateVideo_Defaults=true
+_CreateVideo_Category=TC_TPOF_VIDEO
+
+VideoWait=1,0,boolean,real
+_VideoWait_Defaults=
+_VideoWait_Category=TC_TPOF_VIDEO
 
 //***************************************************************************
 [DefaultTriggerCategories]

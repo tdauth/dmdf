@@ -114,6 +114,41 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return true
 		endmethod
 
+		private static method filterUnit takes nothing returns boolean
+			return not IsUnitType(GetFilterUnit(), UNIT_TYPE_DEAD) and not IsUnitType(GetFilterUnit(), UNIT_TYPE_SUMMONED) and not IsUnitType(GetFilterUnit(), UNIT_TYPE_HERO) and not IsUnitType(GetFilterUnit(), UNIT_TYPE_STRUCTURE)
+		endmethod
+
+		/**
+		 * Stores all units who are no buildings, not dead and no heroes of player \p whichPlayer in a range of 900.0 of a point with the coordinates \p x and \p y.
+		 * This helps the player to use units like horses or bought units in other maps, too.
+		 * \todo Don't do this for the World Map.
+		 */
+		private static method storeUnitsSinglePlayer takes gamecache cache, player whichPlayer, real x, real y returns nothing
+			local string missionKey = thistype.playerMissionKey(whichPlayer) + "Units"
+			local integer i = 0
+			local AGroup whichGroup = AGroup.create()
+			call whichGroup.addUnitsInRange(x, y, 900.0, Filter(function thistype.filterUnit))
+			set i = 0
+			loop
+				exitwhen (i == whichGroup.units().size())
+				if (GetOwningPlayer(whichGroup.units()[i]) != whichPlayer or Character.isUnitCharacter(whichGroup.units()[i])) then
+					call whichGroup.units().erase(i)
+				else
+					set i = i + 1
+				endif
+			endloop
+			call StoreInteger(cache, missionKey, "Count", whichGroup.units().size())
+			set i = 0
+			loop
+				exitwhen (i == whichGroup.units().size())
+				if (StoreUnit(cache, missionKey, I2S(i), whichGroup.units()[i])) then
+					call RemoveUnit(whichGroup.units()[i])
+				endif
+				set i = i + 1
+			endloop
+			call whichGroup.destroy()
+		endmethod
+
 		/**
 		 * Stores all player characters to a game cache as well as general data which is required in the next map.
 		 * Stores the current savegame name and the zone name of the current zone that the next map can identify where the characters come from.
@@ -133,6 +168,14 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 					endif
 
 					call thistype.storeCharacterSinglePlayer(cache, character)
+
+					// Not all zones allow traveling with other units.
+					if (Zone.zoneAllowTravelingWithOtherUnits.evaluate(zone)) then
+						// Store horses in range for example and transfer them as well
+						call thistype.storeUnitsSinglePlayer(cache, character.player(), GetUnitX(character.unit()), GetUnitY(character.unit()))
+					else
+						call StoreInteger(cache, thistype.playerMissionKey(Player(i)) + "Units", "Count", 0)
+					endif
 				endif
 				set i = i + 1
 			endloop
@@ -159,6 +202,17 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			endif
 
 			return result
+		endmethod
+
+		private static method restoreUnitsSinglePlayer takes gamecache cache, player whichPlayer, real x, real y, real facing returns nothing
+			local string missionKey = thistype.playerMissionKey(whichPlayer) + "Units"
+			local integer count = GetStoredInteger(cache, missionKey, "Count")
+			local integer i = 0
+			loop
+				exitwhen (i == count)
+				call RestoreUnit(cache, missionKey, I2S(i), whichPlayer, x, y, facing)
+				set i = i + 1
+			endloop
 		endmethod
 
 		private static method selectAndMoveCamera takes unit restoredUnit, player whichPlayer returns nothing
@@ -257,6 +311,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// update 3rd person camera
 			if (character.isViewEnabled()) then
 				call character.view().enable()
+			endif
+
+			// Not all zones allow traveling with other units.
+			if (Zone.zoneAllowTravelingWithOtherUnits.evaluate(MapSettings.mapName())) then
+				call thistype.restoreUnitsSinglePlayer(cache, whichPlayer, x, y, facing)
 			endif
 
 			// Since the character traveled for some time fill stats.

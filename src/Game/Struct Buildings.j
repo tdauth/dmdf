@@ -18,6 +18,10 @@ library StructGameBuildings requires Asl, StructGameCharacter, StructGameClasses
 		private static unit array m_buildings
 		private static integer array m_collectedGold[12] // TODO MapSettings.maxPlayers()
 
+		public static method playerBuilding takes integer playerIndex returns unit
+			return thistype.m_buildings[playerIndex]
+		endmethod
+
 		private static method timerFunctionRefill takes nothing returns nothing
 			local unit goldmine = MapSettings.goldmine()
 			if (goldmine != null) then

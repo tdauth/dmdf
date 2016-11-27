@@ -93,7 +93,35 @@ globals
 	constant integer TRIGGERDATA_KEY_INVENTORY = 4
 	constant integer TRIGGERDATA_KEY_ITEMINDEX = 5
 	constant integer TRIGGERDATA_KEY_ITEMFIRSTTIME = 6
+	constant integer TRIGGERDATA_KEY_QUEST = 7
+	constant integer TRIGGERDATA_KEY_STATE = 8
+
+	AGlobalHashTable QuestAreaHashTable = 0
+	AGlobalHashTable QuestHashTable = 0
+	AGlobalHashTable TalkInfoConditionHashTable = 0
+	AGlobalHashTable TalkInfoActionHashTable = 0
+	AGlobalHashTable TalkStartActionsHashTable = 0
 endglobals
+
+/**
+ * This function has to be called before any other calls using these variables!
+ */
+function Init takes nothing returns nothing
+	set QuestAreaHashTable = AGlobalHashTable.create()
+	set QuestHashTable = AGlobalHashTable.create()
+	set TalkInfoConditionHashTable = AGlobalHashTable.create()
+	set TalkInfoActionHashTable = AGlobalHashTable.create()
+	set TalkStartActionsHashTable = AGlobalHashTable.create()
+
+	set mapInitSettingsTriggers = ATriggerVector.create()
+	set mapInitTriggers = ATriggerVector.create()
+	set mapStartTriggers = ATriggerVector.create()
+	set mapRestoreCharactersTriggers = ATriggerVector.create()
+	set mapInitVideoSettingsTriggers = ATriggerVector.create()
+	set mapResetVideoSettingsTriggers = ATriggerVector.create()
+	set characterOnEquipItemTriggers = ATriggerVector.create()
+	set characterOnAddRucksackItemTriggers = ATriggerVector.create()
+endfunction
 
 function TriggerRegisterMapInitSettingsEvent takes trigger whichTrigger returns nothing
 	call mapInitSettingsTriggers.pushBack(whichTrigger)
@@ -136,6 +164,10 @@ function GetTriggerInventory takes nothing returns AInventory
 endfunction
 
 function GetTriggerEquipmentType takes nothing returns integer
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_ITEMINDEX)
+endfunction
+
+function GetTriggerRucksackItemIndex takes nothing returns integer
 	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_ITEMINDEX)
 endfunction
 
@@ -191,7 +223,62 @@ function CreateQuestArea takes rect whichRect, boolean withFogModifier returns Q
 	return QuestArea.create(whichRect, withFogModifier)
 endfunction
 
+function QuestAreaEnterConditionEvaluate takes AInfo info, Character character returns boolean
+	local trigger whichTrigger = QuestAreaHashTable.trigger(info, 0)
+	// TODO set entering unit?
+	return TriggerEvaluate(whichTrigger)
+endfunction
+
+function QuestAreaEnterActionExecute takes AInfo info, Character character returns nothing
+	local trigger whichTrigger = QuestAreaHashTable.trigger(info, 0)
+	// TODO set entering unit?
+	call TriggerExecute(whichTrigger)
+endfunction
+
 function SetQuestAreaConditionAndActionByTrigger takes QuestArea questArea, trigger whichTrigger returns nothing
+	call QuestAreaHashTable.setTrigger(questArea, 0, whichTrigger)
+	call questArea.setEnterCondition(QuestAreaEnterConditionEvaluate)
+	call questArea.setEnterAction(QuestAreaEnterActionExecute)
+endfunction
+
+function SetCharacterQuestState takes AQuest whichQuest, integer state returns nothing
+	call whichQuest.setState(state)
+endfunction
+
+function QuestStateEvent takes AQuest whichQuest, integer state, trigger eventTrigger returns nothing
+	local trigger whichTrigger = QuestHashTable.trigger(whichQuest, state)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_QUEST, whichQuest)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_STATE, state)
+	// TODO how to transfer the events of which Trigger to the actual state trigger
+endfunction
+
+function QuestStateConditionEvaluate takes AQuest whichQuest, integer state returns boolean
+	local trigger whichTrigger = QuestHashTable.trigger(whichQuest, state)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_QUEST, whichQuest)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_STATE, state)
+	return TriggerEvaluate(whichTrigger)
+endfunction
+
+function QuestStateActionExecute takes AQuest whichQuest, integer state returns nothing
+	local trigger whichTrigger = QuestHashTable.trigger(whichQuest, state)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_QUEST, whichQuest)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_STATE, state)
+	call TriggerExecute(whichTrigger)
+endfunction
+
+function SetCharacterQuestStateTrigger takes AQuest whichQuest, integer state, trigger whichTrigger returns nothing
+	call QuestHashTable.setTrigger(whichQuest, state, whichTrigger)
+	call whichQuest.setStateEvent(state, QuestStateEvent)
+	call whichQuest.setStateCondition(state, QuestStateConditionEvaluate)
+	call whichQuest.setStateAction(state, QuestStateActionExecute)
+endfunction
+
+function SetCharacterQuestDescription takes AQuest whichQuest, string description returns nothing
+	call whichQuest.setDescription(description)
+endfunction
+
+function SetCharacterQuestIconPath takes AQuest whichQuest, string iconPath returns nothing
+	call whichQuest.setIconPath(iconPath)
 endfunction
 
 function SetCharacterQuestReward takes AQuest whichQuest, integer rewardType, integer value returns nothing
@@ -200,6 +287,10 @@ endfunction
 
 function SetQuestItemReward takes AQuestItem whichQuestItem, integer rewardType, integer value returns nothing
 	call whichQuestItem.setReward(rewardType, value)
+endfunction
+
+function EnableQuestUntil takes AQuest whichQuest, integer questItemIndex returns nothing
+	call whichQuest.enableUntil(questItemIndex)
 endfunction
 
 function CreateCharacterQuest takes Character character, string title returns AQuest
@@ -230,6 +321,30 @@ function CharacterInventory takes Character character returns AInventory
 	return character.inventory()
 endfunction
 
+function InventoryEquipmentItemType takes AInventory inventory, integer equipmentType returns integer
+	local AInventoryItemData itemData = inventory.equipmentItemData(equipmentType)
+	if (itemData != 0) then
+		return itemData.itemTypeId()
+	endif
+	return 0
+endfunction
+
+function InventoryRucksackItemType takes AInventory inventory, integer index returns integer
+	local AInventoryItemData itemData = inventory.rucksackItemData(index)
+	if (itemData != 0) then
+		return itemData.itemTypeId()
+	endif
+	return 0
+endfunction
+
+function InventoryRucksackItemCharges takes AInventory inventory, integer index returns integer
+	local AInventoryItemData itemData = inventory.rucksackItemData(index)
+	if (itemData != 0) then
+		return itemData.charges()
+	endif
+	return 0
+endfunction
+
 function InventoryHasItemType takes AInventory inventory, integer itemCode returns boolean
 	return inventory.hasItemType(itemCode)
 endfunction
@@ -238,12 +353,20 @@ function InventoryTotalItemTypeCharges takes AInventory inventory, integer itemC
 	return inventory.totalItemTypeCharges(itemCode)
 endfunction
 
+function PlayerBuilding takes integer playerIndex returns unit
+	return Buildings.playerBuilding(playerIndex - 1)
+endfunction
+
 function MapZoneName takes nothing returns string
 	return MapSettings.mapName()
 endfunction
 
 function ItemTypeByItem takes item whichItem returns ItemType
 	return ItemType.itemTypeOfItem(whichItem)
+endfunction
+
+function ItemTypeRequiresTwoSlots takes integer itemTypeId returns boolean
+	return ItemType.itemTypeIdRequiresTwoSlots(itemTypeId)
 endfunction
 
 function CreateTalk takes unit whichUnit returns Talk
@@ -256,31 +379,6 @@ endfunction
 
 function Speech takes AInfo info, Character character, boolean toCharacter, string text, sound whichSound returns nothing
 	call speech(info, character, toCharacter, text, whichSound)
-endfunction
-
-globals
-	AGlobalHashTable TalkInfoConditionHashTable = 0
-	AGlobalHashTable TalkInfoActionHashTable = 0
-	AGlobalHashTable TalkStartActionsHashTable = 0
-endglobals
-
-
-/**
- * This function has to be called before any other calls using these variables!
- */
-function Init takes nothing returns nothing
-	set TalkInfoConditionHashTable = AGlobalHashTable.create()
-	set TalkInfoActionHashTable = AGlobalHashTable.create()
-	set TalkStartActionsHashTable = AGlobalHashTable.create()
-
-	set mapInitSettingsTriggers = ATriggerVector.create()
-	set mapInitTriggers = ATriggerVector.create()
-	set mapStartTriggers = ATriggerVector.create()
-	set mapRestoreCharactersTriggers = ATriggerVector.create()
-	set mapInitVideoSettingsTriggers = ATriggerVector.create()
-	set mapResetVideoSettingsTriggers = ATriggerVector.create()
-	set characterOnEquipItemTriggers = ATriggerVector.create()
-	set characterOnAddRucksackItemTriggers = ATriggerVector.create()
 endfunction
 
 function GetTriggerInfo takes nothing returns AInfo
@@ -453,6 +551,14 @@ endfunction
 
 function RoutineSetPartner takes NpcTalksRoutine routine, unit partner returns nothing
 	call routine.setPartner(partner)
+endfunction
+
+function RoutineAddSound takes NpcTalksRoutine routine, string text, sound whichSound returns nothing
+	call routine.addSound(text, whichSound)
+endfunction
+
+function RoutineAddSoundAnswer takes NpcTalksRoutine routine, string text, sound whichSound returns nothing
+	call routine.addSoundAnswer(text, whichSound)
 endfunction
 
 function RoutineManualStart takes unit whichUnit returns nothing

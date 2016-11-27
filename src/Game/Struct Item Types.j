@@ -6,6 +6,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	struct ItemType extends AItemType
 		private static AIntegerVector m_twoSlotItems
 
+		public static method itemTypeIdRequiresTwoSlots takes integer itemTypeId returns boolean
+			return thistype.m_twoSlotItems.contains(itemTypeId)
+		endmethod
+
 		public stub method checkRequirement takes ACharacter character returns boolean
 			local integer i
 			if (this.equipmentType() == AItemType.equipmentTypeSecondaryWeapon and character.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0) then

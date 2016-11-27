@@ -1,5 +1,9 @@
 library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHashTable
 
+	function interface QuestAreaEnterCondition takes QuestArea questArea returns boolean
+
+	function interface QuestAreaEnterAction takes QuestArea questArea returns nothing
+
 	/**
 	 * \brief A quest are is a visible marked rect on the map for all players where all characters must move to to activate an event.
 	 * It is mostly used to ensure that all characters are at a certain point when the event starts and are movable and not in talks or something else.
@@ -10,6 +14,8 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		private rect m_rect
 		private trigger m_enterTrigger
 		// dynamic members
+		private QuestAreaEnterCondition m_enterCondition
+		private QuestAreaEnterAction m_enterAction
 		private boolean m_destroyOnActivation
 		/**
 		 * The destructable type ID of an energie wall.
@@ -32,6 +38,22 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			return this.m_rect
 		endmethod
 
+		public method setEnterCondition takes QuestAreaEnterCondition enterCondition returns nothing
+			set this.m_enterCondition = enterCondition
+		endmethod
+
+		public method enterCondition takes nothing returns QuestAreaEnterCondition
+			return this.m_enterCondition
+		endmethod
+
+		public method setEnterAction takes QuestAreaEnterAction enterAction returns nothing
+			set this.m_enterAction = enterAction
+		endmethod
+
+		public method enterAction takes nothing returns QuestAreaEnterAction
+			return this.m_enterAction
+		endmethod
+
 		/**
 		 * Checks for a user specified condition which must be true to activate the event at all.
 		 * Otherwise not even a message is shown when a character enters.
@@ -39,6 +61,9 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		 * \return Returns true if the event can be activated yet.
 		 */
 		public stub method onCheck takes nothing returns boolean
+			if (this.enterCondition() != 0) then
+				return this.enterCondition().evaluate(this)
+			endif
 			return true
 		endmethod
 
@@ -47,6 +72,9 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		 */
 		public stub method onStart takes nothing returns nothing
 			debug call Print("Super onStart")
+			if (this.enterAction() != 0) then
+				call this.enterAction().execute(this)
+			endif
 		endmethod
 
 		public method setFogModifiersEnabled takes boolean enabled returns nothing
@@ -186,6 +214,8 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			set this.m_assemblyPointMarker[3] = CreateDestructable(thistype.destructableId, bottomX, bottomY, 90.0, horizontalScaling,  0)
 			call SetDestructableInvulnerable(this.m_assemblyPointMarker[3], true)
 
+			set this.m_enterCondition = 0
+			set this.m_enterAction = 0
 			call this.setDestroyOnActivation(true)
 
 			set this.m_enterTrigger = CreateTrigger()
