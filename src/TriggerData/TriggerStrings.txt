@@ -50,6 +50,12 @@ TriggerRegisterCharacterOnAddItemToRucksackEvent="Trigger Register Character On 
 TriggerRegisterCharacterOnAddItemToRucksackEvent="Trigger Register Character On Add Item To Rucksack Event"
 TriggerRegisterCharacterOnAddItemToRucksackEventHint="The trigger is evaluated whenever any character adds an item to his backpack."
 
+// Game API
+
+TriggerRegisterOnDamageAnyUnit="Game Register On Damage Trigger"
+TriggerRegisterOnDamageAnyUnit="Game Register On Damage Trigger"
+TriggerRegisterOnDamageAnyUnitHint="The registered trigger is called whenever a unit gets damage."
+
 //***************************************************************************
 [TriggerConditionStrings]
 
@@ -66,9 +72,89 @@ OperatorCompareClassHint=
 
 // Core API
 
+AddIntegerVectorElementToBack="Add Integer Vector Element To Back"
+AddIntegerVectorElementToBack="Add To Integer Vector ",~Vector," Element ",~Integer," To Back"
+AddIntegerVectorElementToBackHint=
+
+RemoveIntegerVectorElementFromBack="Remove Integer Vector Element From Back"
+RemoveIntegerVectorElementFromBack="Remove From Integer Vector ",~Vector," Element From Back"
+RemoveIntegerVectorElementFromBackHint=
+
+ClearIntegerVector="Clear Integer Vector"
+ClearIntegerVector="Clear Integer Vector ",~Vector
+ClearIntegerVectorHint="Removes all elements."
+
+DestroyIntegerVector="Destroy Integer Vector"
+DestroyIntegerVector="Destroy Integer Vector ",~Vector
+DestroyIntegerVectorHint=
+
+DestroyUnitGroup="Destroy Unit Group"
+DestroyUnitGroup="Destroy Unit Group ",~Group
+DestroyUnitGroupHint=
+
+UnitGroupAddUnit="Unit Group Add Unit"
+UnitGroupAddUnit="Add To Unit Group ",~Group," Unit ",~Unit
+UnitGroupAddUnit=
+
 SetDmdfHashTableHandleInteger="Set TPoF Hash Table Handle Integer"
 SetDmdfHashTableHandleInteger="Set TPoF Hash Table Handle Integer For Handle ",~Handle," Using Child Key ",~Key," To Value ",~Value
 SetDmdfHashTableHandleIntegerHint="Allows attaching values to handles."
+
+SetUnitPositionRect="Set Unit Position To Rect"
+SetUnitPositionRect="Set Position of Unit ",~Unit," To The Center Of Rect ",~Rect
+SetUnitPositionRectHint=
+
+SetUnitFacingToFaceUnit="Set Unit Facing To Face Unit"
+SetUnitFacingToFaceUnit="Set Facing Of Unit ",~Unit," To Face Unit ",~Unit
+SetUnitFacingToFaceUnitHint=
+
+// Environment API
+
+DestroyDynamicLightning="Destroy Dynamic Lightning"
+DestroyDynamicLightning="Destroy Dynamic Lightning ",~Lightning
+DestroyDynamicLightningHint=
+
+DestroyMissile="Destroy Missile"
+DestroyMissile="Destroy Missile ",~Missile
+DestroyMissileHint=
+
+MissileStart="Missile Start"
+MissileStart="Start Missile ",~Missile," From X ",~X,", Y ",~Y," and Z ",~Z
+MissileStartHint=
+
+MissileSetTargetX="Missile Set Target X"
+MissileSetTargetX="Set Missile ",~Missile," Target X To ",~X
+MissileSetTargetXHint=
+
+MissileSetTargetY="Missile Set Target Y"
+MissileSetTargetY="Set Missile ",~Missile," Target Y To ",~Y
+MissileSetTargetYHint=
+
+MissileSetTargetZ="Missile Set Target Z"
+MissileSetTargetZ="Set Missile ",~Missile," Target Z To ",~Z
+MissileSetTargetZHint=
+
+MissileSetTargetWidget="Missile Set Target Widget"
+MissileSetTargetWidget="Set Missile ",~Missile," Target Widget To ",~Widget
+MissileSetTargetWidgetHint=
+
+// Character API
+
+CharacterCraftItem="Character Craft Item"
+CharacterCraftItem="Character ",~Character," Craft Item Of Type ",~Item
+CharacterCraftItemHint="This runs all the registered actions to be called."
+
+CharacterXPBonus="Character XP Bonus"
+CharacterXPBonus="Character ",~Character," Gets XP Bonus Of ",~Value," With Message ",~Message
+CharacterXPBonusHint=
+
+CharacterGiveItem="Character Give Item"
+CharacterGiveItem="Character ",~Character," Gets Item Of Type ",~Item
+CharacterGiveItemHint=
+
+CharacterGiveQuestItem="Character Give Quest Item"
+CharacterGiveQuestItem="Character ",~Character," Gets Quest Item Of Type ",~Item
+CharacterGiveQuestItemHint="Quest Items cannot be sold and are invulnerable."
 
 // Map API
 
@@ -280,6 +366,14 @@ VideoSetActorOwner="Video Set Actor Owner"
 VideoSetActorOwner="Set Actor Owner For Video ",~Video," To Player ",~Player
 VideoSetActorOwnerHint="The actor owner is the player who owns actors such as the character actor by default."
 
+VideoFadeOutWithWait="Video Fade Out With Wait"
+VideoFadeOutWithWait="Video Fade Out With Wait"
+VideoFadeOutWithWaitHint="Recognizes video skips by players"
+
+VideoFadeInWithWait="Video Fade In With Wait"
+VideoFadeInWithWait="Video Fade In With Wait"
+VideoFadeInWithWaitHint="Recognizes video skips by players"
+
 // Obsolete actions
 //AddPerfLogLabel="** AddPerfLogLabel **"
 //AddPerfLogLabel="** AddPerfLogLabel(",~Label,") **"
@@ -342,6 +436,16 @@ PlayerBuilding="Player Building"
 PlayerBuilding="Building of Player With Index ",~Index
 PlayerBuildingHint="Every player can have on building per map."
 
+// Game API
+
+GameIsCampaign="Game Is Campaign"
+GameIsCampaign="Game Is Campaign"
+GameIsCampaignHint="Returns true if it is the campaign of The Power of Fire and no single map."
+
+GameMissingCharacterPlayers="Game Missing Character Players"
+GameMissingCharacterPlayers="Game Missing Character Players"
+GameMissingCharacterPlayersHint="All players who have no character at the moment."
+
 // Map API
 
 MapZoneName="Map Zone Name"
@@ -381,6 +485,14 @@ ItemTypeByItemHint="Gets the item type by an item. If the item has no custom ite
 ItemTypeRequiresTwoSlots="Item Type Requires Two Slots"
 ItemTypeRequiresTwoSlots="Item Type ",~ItemType," Requires Two Slots"
 ItemTypeRequiresTwoSlotsHint="Some Weapons have to be carried with two hands."
+
+ItemTypeIsRange="Item Type Is Range"
+ItemTypeIsRange="Item Type ",~ItemType," Is Range"
+ItemTypeIsRangeHint="Range Items allow the character to use a range attack."
+
+ItemTypeIsDefence="Item Type Is Defence"
+ItemTypeIsDefence="Item Type ",~ItemType," Is Defence"
+ItemTypeIsDefenceHint="Defence items are hold with a defending animation."
 
 // Quest Area API
 
@@ -515,3 +627,11 @@ CreateVideoHint=""
 VideoWait="Video Wait"
 VideoWait="Video Wait For ",~Time," Seconds"
 VideoWaitHint="Recognizes video skips."
+
+VideoSaveUnitActor="Video Save Unit Actor"
+VideoSaveUnitActor="Video ",~Video," Save Unit ",~Unit," Actor"
+VideoSaveUnitActorHint="Unit Actors can be used during a video and are removed afterwards."
+
+VideoUnitActor="Video Unit Actor"
+VideoUnitActor="Video Unit Actor With Index ",~Index
+VideoUnitActorHint=

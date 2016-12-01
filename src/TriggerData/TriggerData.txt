@@ -6,8 +6,10 @@
 // Value 1: Icon image file
 // Value 2: Optional flag (defaults to 0) indicating to disable display of category name
 //
-TC_TPOF_CORE="Core",,ReplaceableTextures\WorldEditUI\Actions-Nothing
+TC_TPOF_CORE="Core",ReplaceableTextures\WorldEditUI\Actions-Nothing
+TC_TPOF_Environment="Environment",ReplaceableTextures\WorldEditUI\Actions-Environment
 TC_TPOF_CHARACTER="Character",ReplaceableTextures\WorldEditUI\Actions-Hero
+TC_TPOF_GAME="Game",ReplaceableTextures\WorldEditUI\Actions-Game
 TC_TPOF_MAP="Map",ReplaceableTextures\WorldEditUI\Actions-Game
 TC_TPOF_TALK="Talk",ReplaceableTextures\WorldEditUI\Actions-Dialog
 TC_TPOF_FELLOW="Fellow",ReplaceableTextures\WorldEditUI\Actions-AI
@@ -15,7 +17,7 @@ TC_TPOF_ITEM="Item",ReplaceableTextures\WorldEditUI\Actions-Item
 TC_TPOF_QUESTAREA="Quest Area",ReplaceableTextures\WorldEditUI\Actions-Quest
 TC_TPOF_QUEST="Quest",ReplaceableTextures\WorldEditUI\Actions-Quest
 TC_TPOF_SHRINE="Revival Shrine",ReplaceableTextures\WorldEditUI\Actions-Goldmine
-TC_TPOF_SPAWNPOINT="Spawn Point",,ReplaceableTextures\WorldEditUI\Actions-Unit
+TC_TPOF_SPAWNPOINT="Spawn Point",ReplaceableTextures\WorldEditUI\Actions-Unit
 TC_TPOF_DUNGEON="Dungeon",ReplaceableTextures\WorldEditUI\Actions-Visibility
 TC_TPOF_ROUTINE="Routine",ReplaceableTextures\WorldEditUI\Actions-Environment
 TC_TPOF_VIDEO="Video",ReplaceableTextures\WorldEditUI\Actions-Camera
@@ -38,6 +40,18 @@ TC_TPOF_VIDEO="Video",ReplaceableTextures\WorldEditUI\Actions-Camera
 // Trigger Variable Types
 // These are sorted so that they appear as such in the Variables dialog.
 
+// Core API
+
+AIntegerVector=0,1,1,"Integer Vector",integer
+AIntegerList=0,1,1,"Integer List",integer
+AGroup=0,1,1,"Unit Group",integer
+AFormat=0,1,1,"String Format",integer
+
+// Environment API
+
+ADynamicLightning=0,1,1,"Dynamic Lightning",integer
+AMissile=0,1,1,"Missile",integer
+
 Character=0,1,1,"Player Character",integer
 AClass=0,1,1,"Character Class",integer
 AInventory=0,1,1,"Character Inventory",integer
@@ -54,6 +68,7 @@ EquipmentType=0,1,1,"Equipment Type",integer
 
 QuestArea=0,1,1,"Quest Area",integer
 AQuest=0,1,1,"Character Quest",integer
+SharedQuest=0,1,1,"Shared Quest",integer
 AQuestItem=0,1,1,"Quest Item",integer
 QuestState=0,1,1,"Quest State",integer
 QuestReward=0,1,1,"Quest Reward",integer
@@ -84,6 +99,17 @@ AVideo=0,1,1,"Video Sequence",integer
 //
 // If a type does not have an entry here, it will be set to null if it is a handle
 //
+
+// Core API
+
+AIntegerVector=0,"No Integer Vector"
+AIntegerList=0,"No Integer List"
+AGroup=0,"No Unit Group"
+
+// Environment API
+
+ADynamicLightning=0,"No Dynamic Lightning"
+
 Character=0,"No Character"
 
 Talk=0,"No Talk"
@@ -115,6 +141,9 @@ Zone=0,"No Zone"
 //       and they will be converted to double quotes in the script.
 //
 
+AIntegerVectorNull=0,AIntegerVector,0,"No Integer Vector"
+AIntegerListNull=0,AIntegerList,0,"No Integer List"
+AGroupNull=0,AGroup,0,"No Unit Group"
 
 CharacterNull=0,Character,0,"No Character"
 
@@ -221,6 +250,12 @@ TriggerRegisterCharacterOnAddItemToRucksackEvent=1
 _TriggerRegisterCharacterOnAddItemToRucksackEvent_Defaults=
 _TriggerRegisterCharacterOnAddItemToRucksackEvent_Category=TC_TPOF_CHARACTER
 
+// Game API
+
+TriggerRegisterOnDamageAnyUnit=1
+_TriggerRegisterOnDamageAnyUnit_Defaults=
+_TriggerRegisterOnDamageAnyUnit_Category=TC_TPOF_GAME
+
 //***************************************************************************
 [TriggerConditions]
 // Defines boolean condition functions
@@ -245,9 +280,89 @@ _OperatorCompareClass_Category=TC_CONDITION
 
 // Core API
 
+AddIntegerVectorElementToBack=1,AIntegerVector,integer
+_AddIntegerVectorElementToBack_Defaults=
+_AddIntegerVectorElementToBack_Category=TC_TPOF_CORE
+
+RemoveIntegerVectorElementFromBack=1,AIntegerVector
+_RemoveIntegerVectorElementFromBack_Defaults=
+_RemoveIntegerVectorElementFromBack_Category=TC_TPOF_CORE
+
+ClearIntegerVector=1,AIntegerVector
+_ClearIntegerVector_Defaults=
+_ClearIntegerVector_Category=TC_TPOF_CORE
+
+DestroyIntegerVector=1,AIntegerVector
+_DestroyIntegerVector_Defaults=
+_DestroyIntegerVector_Category=TC_TPOF_CORE
+
+DestroyUnitGroup=1,AGroup
+_DestroyUnitGroup_Defaults=
+_DestroyUnitGroup_Category=TC_TPOF_CORE
+
+UnitGroupAddUnit=1,AGroup,unit
+_UnitGroupAddUnit_Defaults=
+_UnitGroupAddUnit_Category=TC_TPOF_CORE
+
 SetDmdfHashTableHandleInteger=1,handle,integer,integer
 _SetDmdfHashTableHandleInteger_Defaults=
 _SetDmdfHashTableHandleInteger_Category=TC_TPOF_CORE
+
+SetUnitPositionRect=1,unit,rect
+_SetUnitPositionRect_Defaults=
+_SetUnitPositionRect_Category=TC_TPOF_CORE
+
+SetUnitFacingToFaceUnit=1,unit,unit
+_SetUnitFacingToFaceUnit_Defaults=
+_SetUnitFacingToFaceUnit_Category=TC_TPOF_CORE
+
+// Environment API
+
+DestroyDynamicLightning=1,ADynamicLightning
+_DestroyDynamicLightning_Defaults=
+_DestroyDynamicLightning_Category=TC_TPOF_ENVIRONMENT
+
+DestroyMissile=1,AMissile
+_DestroyMissile_Defaults=
+_DestroyMissile_Category=TC_TPOF_ENVIRONMENT
+
+MissileStart=1,AMissile,real,real,real
+_MissileStart_Defaults=
+_MissileStart_Category=TC_TPOF_ENVIRONMENT
+
+MissileSetTargetX=1,AMissile,real
+_MissileSetTargetX_Defaults=
+_MissileSetTargetX_Category=TC_TPOF_ENVIRONMENT
+
+MissileSetTargetY=1,AMissile,real
+_MissileSetTargetY_Defaults=
+_MissileSetTargetY_Category=TC_TPOF_ENVIRONMENT
+
+MissileSetTargetZ=1,AMissile,real
+_MissileSetTargetZ_Defaults=
+_MissileSetTargetZ_Category=TC_TPOF_ENVIRONMENT
+
+MissileSetTargetWidget=1,AMissile,widget
+_MissileSetTargetWidget_Defaults=
+_MissileSetTargetWidget_Category=TC_TPOF_ENVIRONMENT
+
+// Character API
+
+CharacterCraftItem=1,Character,itemcode
+_CharacterCraftItem_Defaults=PlayerCharacter,_
+_CharacterCraftItem_Category=TC_TPOF_CHARACTER
+
+CharacterXPBonus=1,Character,integer,string
+_CharacterXPBonus_Defaults=PlayerCharacter,50,_
+_CharacterXPBonus_Category=TC_TPOF_CHARACTER
+
+CharacterGiveItem=1,Character,itemcode
+_CharacterGiveItem_Defaults=PlayerCharacter,_
+_CharacterGiveItem_Category=TC_TPOF_CHARACTER
+
+CharacterGiveQuestItem=1,Character,itemcode
+_CharacterGiveQuestItem_Defaults=PlayerCharacter,_
+_CharacterGiveQuestItem_Category=TC_TPOF_CHARACTER
 
 // Map API
 
@@ -485,6 +600,14 @@ VideoSetActorOwner=1,AVideo,player
 _VideoSetActorOwner_Defaults=
 _VideoSetActorOwner_Category=TC_TPOF_VIDEO
 
+VideoFadeOutWithWait=1
+_VideoFadeOutWithWait_Defaults=
+_VideoFadeOutWithWait_Category=TC_TPOF_VIDEO
+
+VideoFadeInWithWait=1
+_VideoFadeInWithWait_Defaults=
+_VideoFadeInWithWait_Category=TC_TPOF_VIDEO
+
 // Obsolete actions
 //AddPerfLogLabel=0,string
 //_AddPerfLogLabel_Defaults="Triggered Debug Label"
@@ -511,9 +634,99 @@ JASS=1,1,scriptcode,scriptcode
 _JASS_Defaults=_
 _JASS_Category=TC_TPOF_CORE
 
+// Int 2 struct conversion
+
+I2Character=1,0,Character,integer
+_I2Character_Defaults=GetIntegerVectorElement
+_I2Character_Category=TC_TPOF_CORE
+
+I2Class=1,0,AClass,integer
+_I2Class_Defaults=GetIntegerVectorElement
+_I2Class_Category=TC_TPOF_CORE
+
+// Core API
+
+CreateIntegerVector=1,0,AIntegerVector
+_CreateIntegerVector_Defaults=
+_CreateIntegerVector_Category=TC_TPOF_CORE
+
+GetIntegerVectorSize=1,0,integer,AIntegerVector
+_GetIntegerVectorSizet_Defaults=
+_GetIntegerVectorSize_Category=TC_TPOF_CORE
+
+GetIntegerVectorElement=1,0,integer,AIntegerVector,integer
+_GetIntegerVectorElement_Defaults=
+_GetIntegerVectorElement_Category=TC_TPOF_CORE
+
+CreateIntegerList=1,0,AIntegerList
+_CreateIntegerList_Defaults=
+_CreateIntegerList_Category=TC_TPOF_CORE
+
+CreateUnitGroup=1,0,AGroup
+_CreateUnitGroup_Defaults=
+_CreateUnitGroup_Category=TC_TPOF_CORE
+
+UnitGroupGetSize=1,0,integer,AGroup
+_UnitGroupGetSize_Defaults=
+_UnitGroupGetSize_Category=TC_TPOF_CORE
+
+UnitGroupGetUnit=1,0,unit,AGroup,integer
+_UnitGroupGetUnit_Defaults=
+_UnitGroupGetUnit_Category=TC_TPOF_CORE
+
+FindString=1,0,integer,string,string
+_FindString_Defaults=
+_FindString_Category=TC_TPOF_CORE
+
+Format=1,0,AFormat,string
+_Format_Defaults=
+_Format_Category=TC_TPOF_CORE
+
+String=1,0,String,AFormat
+_String_Defaults=
+_String_Category=TC_TPOF_CORE
+
+FormatInteger=1,0,AFormat,AFormat,integer
+_FormatInteger_Defaults=
+_FormatInteger_Category=TC_TPOF_CORE
+
+ReplaceString=1,0,string,string,string
+_ReplaceString_Defaults=
+_ReplaceString_Category=TC_TPOF_CORE
+
+RemoveString=1,0,string,string
+_RemoveString_Defaults=
+_RemoveString_Category=TC_TPOF_CORE
+
+InsertString=1,0,string,string,integer,string
+_InsertString_Defaults=
+_InsertString_Category=TC_TPOF_CORE
+
 EnglishGermanString=1,0,string,StringExt,StringExt
 _EnglishGermanString_Defaults=
 _EnglishGermanString_Category=TC_TPOF_CORE
+
+EnglishGermanPluralString=1,0,string,StringExt,StringExt,StringExt,StringExt,integer
+_EnglishGermanPluralString_Defaults=
+_EnglishGermanPluralString_Category=TC_TPOF_CORE
+
+LoadDmdfHashTableHandleInteger=1,0,integer,handle,integer
+_LoadDmdfHashTableHandleInteger_Defaults=
+_LoadDmdfHashTableHandleInteger_Category=TC_TPOF_CORE
+
+HaveDmdfHashTableHandleInteger=1,0,boolean,handle,integer
+_HaveDmdfHashTableHandleInteger_Defaults=
+_HaveDmdfHashTableHandleInteger_Category=TC_TPOF_CORE
+
+// Environment API
+
+CreateDynamicLightning=1,0,ADynamicLightning,player,lightningtype,real,unit,unit
+_CreateDynamicLightning_Defaults=_,LightningTypeCLPB,0.01,_,_
+_CreateDynamicLightning_Category=TC_TPOF_ENVIRONMENT
+
+CreateMissile=1,0,AMissile
+_CreateMissile_Defaults=
+_CreateMissile_Category=TC_TPOF_ENVIRONMENT
 
 // Character API
 
@@ -558,6 +771,16 @@ PlayerBuilding=1,0,unit,integer
 _PlayerBuilding_Defaults=1
 _PlayerBuilding_Category=TC_TPOF_CHARACTER
 
+// Game API
+
+GameIsCampaign=1,0,boolean
+_GameIsCampaign_Defaults=
+_GameIsCampaign_Category=TC_TPOF_GAME
+
+GameMissingCharacterPlayers=1,0,integer
+_GameMissingCharacterPlayers_Defaults=
+_GameMissingCharacterPlayers_Category=TC_TPOF_GAME
+
 // Map API
 
 MapZoneName=1,0,string
@@ -590,6 +813,10 @@ GetTriggerAddedItemFirstTime=1,0,boolean
 _GetTriggerAddedItemFirstTime_Defaults=
 _GetTriggerAddedItemFirstTime_Category=TC_TPOF_CHARACTER
 
+ItemTypeByItemTypeId=1,0,ItemType,itemcode
+_ItemTypeByItemTypeId_Defaults=
+_ItemTypeByItemTypeId_Category=TC_TPOF_ITEM
+
 ItemTypeByItem=1,0,ItemType,item
 _ItemTypeByItem_Defaults=
 _ItemTypeByItem_Category=TC_TPOF_ITEM
@@ -597,6 +824,14 @@ _ItemTypeByItem_Category=TC_TPOF_ITEM
 ItemTypeRequiresTwoSlots=1,0,boolean,itemcode
 _ItemTypeRequiresTwoSlots_Defaults=
 _ItemTypeRequiresTwoSlots_Category=TC_TPOF_ITEM
+
+ItemTypeIsRange=1,0,boolean,ItemType
+_ItemTypeIsRange_Defaults=ItemTypeByItemTypeId
+_ItemTypeIsRange_Category=TC_TPOF_ITEM
+
+ItemTypeIsDefence=1,0,boolean,ItemType
+_ItemTypeIsDefence_Defaults=ItemTypeByItemTypeId
+_ItemTypeIsDefence_Category=TC_TPOF_ITEM
 
 // Quest Area API
 
@@ -743,6 +978,14 @@ _CreateVideo_Category=TC_TPOF_VIDEO
 VideoWait=1,0,boolean,real
 _VideoWait_Defaults=
 _VideoWait_Category=TC_TPOF_VIDEO
+
+VideoSaveUnitActor=1,0,integer,unit
+_VideoSaveUnitActor_Defaults=
+_VideoSaveUnitActor_Category=TC_TPOF_VIDEO
+
+VideoUnitActor=1,0,unit,integer
+_VideoUnitActor_Defaults
+_VideoUnitActor_Category=TC_TPOF_VIDEO
 
 //***************************************************************************
 [DefaultTriggerCategories]
