@@ -12,10 +12,10 @@ library StructSpellsSpellTransfer requires Asl, StructGameClasses, StructGameSpe
 		private static constant real startEnemyPercentage = 0.0
 		private static constant real levelEnemyPercentage = 0.05
 		private static constant real time = 10.0
-		
+
 		private method condition takes nothing returns boolean
 			local boolean isAlly = GetUnitAllianceStateToUnit(this.character().unit(), GetSpellTargetUnit()) == bj_ALLIANCE_ALLIED
-			
+
 			if (not (GetUnitState(GetSpellTargetUnit(), UNIT_STATE_MAX_MANA) > 0.0)) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel hat kein Mana.", "Target has no mana."))
 				return false
@@ -32,10 +32,10 @@ library StructSpellsSpellTransfer requires Asl, StructGameClasses, StructGameSpe
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Charakter hat bereits volles Mana.", "Character does already have full mana."))
 				return false
 			endif
-			
+
 			return true
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			local boolean isAlly = GetUnitAllianceStateToUnit(this.character().unit(), GetSpellTargetUnit()) == bj_ALLIANCE_ALLIED
 			local real manaPercentage = 0.0
@@ -43,7 +43,7 @@ library StructSpellsSpellTransfer requires Asl, StructGameClasses, StructGameSpe
 			local unit to
 			local unit from
 			local real time = thistype.time
-			local ADynamicLightning whichLightning = ADynamicLightning.create(null, "DRAM", 0.01, this.character().unit(), GetSpellTargetUnit())
+			local ADynamicLightning whichLightning = ADynamicLightning.create(null, "DRAM", this.character().unit(), GetSpellTargetUnit())
 			call whichLightning.setDestroyOnDeath(false)
 			if (isAlly) then
 				set manaPercentage = thistype.startAllyPercentage + this.level() * thistype.levelAllyPercentage
@@ -76,7 +76,7 @@ library StructSpellsSpellTransfer requires Asl, StructGameClasses, StructGameSpe
 			call this.addGrimoireEntry('A167', 'A16C')
 			call this.addGrimoireEntry('A168', 'A16D')
 			call this.addGrimoireEntry('A169', 'A16E')
-			
+
 			return this
 		endmethod
 	endstruct

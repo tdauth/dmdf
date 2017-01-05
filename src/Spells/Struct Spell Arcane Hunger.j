@@ -20,15 +20,15 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 			set filterUnit = null
 			return result
 		endmethod
-		
+
 		private method time takes nothing returns real
 			return thistype.timeStartValue + this.level() * thistype.timeLevelValue
 		endmethod
-		
+
 		private method manaPercentage takes nothing returns real
 			return thistype.manaStartPercentage + this.level() * thistype.manaLevelPercentage
 		endmethod
-		
+
 		/**
 		 * \return Returns valid targets. You have to destroy the return value manually.
 		 */
@@ -45,19 +45,19 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 			call DestroyFilter(filter)
 			set filter = null
 			set caster = null
-			
+
 			return targets
 		endmethod
-		
+
 		private method condition takes nothing returns boolean
 			local AGroup targets = this.targets()
 			local boolean result = not targets.units().empty()
 			call targets.destroy()
-			
+
 			if (not result) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine verwertbaren Gegner im Umkreis.", "No explotable enemies in range."))
 			endif
-			
+
 			return result
 		endmethod
 
@@ -70,7 +70,7 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 			local unit target
 			local real time
 			local real mana
-			
+
 			// TODO checked already in condition if empty
 			if (not targets.units().empty()) then
 				set dynamicLightnings = AIntegerVector.create()
@@ -79,7 +79,7 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 					exitwhen (i == targets.units().size())
 					set target = targets.units().at(i)
 					debug call Print("Arcane Hunger: Target " + GetUnitName(target))
-					set dynamicLightning = ADynamicLightning.create(null, "DRAM", 0.01, caster, target)
+					set dynamicLightning = ADynamicLightning.create(null, "DRAM", caster, target)
 					call dynamicLightning.setDestroyOnDeath(false) // prevent double free
 					call dynamicLightnings.pushBack(dynamicLightning)
 					set target = null
@@ -121,7 +121,7 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 
 				call dynamicLightnings.destroy()
 			endif
-		
+
 			set caster = null
 			call targets.destroy()
 		endmethod
@@ -134,7 +134,7 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 			call this.addGrimoireEntry('A10C', 'A10H')
 			call this.addGrimoireEntry('A10D', 'A10I')
 			call this.addGrimoireEntry('A10E', 'A10J')
-			
+
 			return this
 		endmethod
 	endstruct

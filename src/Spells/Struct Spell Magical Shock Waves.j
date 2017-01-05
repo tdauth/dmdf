@@ -52,7 +52,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 			call DmdfGlobalHashTable.global().setInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, this.m_damageRecorder, this)
 			call this.m_damageRecorder.setOnDamageAction(thistype.onDamageAction)
 			set this.m_effect = AddSpellEffectTargetById(SpellMagicalShockWaves.abilityId, EFFECT_TYPE_TARGET, target, "origin")
-			set this.m_lightning = ADynamicLightning.create(null, "DRAM", 0.01, caster, target)
+			set this.m_lightning = ADynamicLightning.create(null, "DRAM", caster, target)
 			set this.m_sound = CreateSound("Abilities\\Spells\\Other\\Drain\\SiphonManaLoop.wav", true, false, true, 12700, 12700, "")
 			call SetSoundChannel(this.m_sound, GetHandleId(SOUND_VOLUMEGROUP_SPELLS))
 			call PlaySoundOnUnitBJ(this.m_sound, 100.0, target)

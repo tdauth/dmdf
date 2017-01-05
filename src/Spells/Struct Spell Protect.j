@@ -29,7 +29,7 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 			local real damage = thistype.damageLevelValue + this.level() * thistype.damageLevelFactor
 			local real time = thistype.time
 			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET,  target, "chest")
-			local ADynamicLightning whichLightning = ADynamicLightning.create(null, "HWPB", 0.01, caster, target)
+			local ADynamicLightning whichLightning = ADynamicLightning.create(null, "HWPB", caster, target)
 			local ADamageRecorder damageRecorder = ADamageRecorder.create(target)
 			call damageRecorder.setOnDamageAction(thistype.onDamageAction)
 			call DmdfGlobalHashTable.global().setReal(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, damageRecorder, damage)

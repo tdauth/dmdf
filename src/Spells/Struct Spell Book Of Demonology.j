@@ -144,7 +144,7 @@ library StructSpellsSpellBookOfDemonology requires Asl, StructGameCharacter, Str
 			set i = 0
 			loop
 				exitwhen (i == targets.units().size())
-				call this.m_dynamicLightnings.pushBack(ADynamicLightning.create(null, "AFOD", 0.01, character.unit(), targets.units()[i]))
+				call this.m_dynamicLightnings.pushBack(ADynamicLightning.create(null, "AFOD", character.unit(), targets.units()[i]))
 				set i = i + 1
 			endloop
 			set this.m_updateTimer = CreateTimer()

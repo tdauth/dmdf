@@ -11,7 +11,7 @@ library StructSpellsSpellTrollChains requires Asl
 			local unit caster = this.character().unit()
 			local unit target = GetSpellTargetUnit()
 			local player targetOwner = GetOwningPlayer(target)
-			local ADynamicLightning dynamicLightning = ADynamicLightning.create(null, "XXXX", 0.01, caster, target)
+			local ADynamicLightning dynamicLightning = ADynamicLightning.create(null, "DRAM", caster, target)
 			local real time = thistype.time
 			loop
 				exitwhen (time <= 0.0)

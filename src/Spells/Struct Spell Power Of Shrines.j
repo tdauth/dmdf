@@ -9,11 +9,11 @@ library StructSpellsSpellPowerOfShrines requires Asl, StructGameClasses, StructG
 		public static constant integer maxLevel = 5
 		public static constant real range = 300.0
 		private static sound castSound
-		
+
 		private static method filter takes nothing returns boolean
 			return not IsUnitDeadBJ(GetFilterUnit())
 		endmethod
-		
+
 		/**
 		 * \return Returns a newly created group instance with all valid targets.
 		 */
@@ -31,7 +31,7 @@ library StructSpellsSpellPowerOfShrines requires Asl, StructGameClasses, StructG
 			set filter = null
 			return targets
 		endmethod
-		
+
 		private method condition takes nothing returns boolean
 			local AGroup targets = this.targets()
 			local boolean result
@@ -60,17 +60,17 @@ library StructSpellsSpellPowerOfShrines requires Asl, StructGameClasses, StructG
 					exitwhen (i == Shrine.shrines())
 					set shrineUnit = Shrine(Shrine.shrines()[i]).unit()
 					if (IsVisibleToPlayer(GetUnitX(shrineUnit), GetUnitX(shrineUnit), this.character().player())) then
-						call dynamicLightings.pushBack(ADynamicLightning.create(null, "CHIM", 0.01, shrineUnit, caster))
+						call dynamicLightings.pushBack(ADynamicLightning.create(null, "CHIM", shrineUnit, caster))
 						call ADynamicLightning(dynamicLightings.back()).setDestroyOnDeath(false)
 					endif
 					set i = i + 1
 				endloop
-				
-				// the damage depends on the number of discovered shrines and the map size 
+
+				// the damage depends on the number of discovered shrines and the map size
 				set mapSize = (((GetRectMaxX(GetPlayableMapRect()) - GetRectMinX(GetPlayableMapRect())) * (GetRectMaxY(GetPlayableMapRect()) - GetRectMinY(GetPlayableMapRect()))) * 0.00000001)
 				debug call Print("Map size: " + R2S(mapSize))
 				set damage = (I2R(dynamicLightings.size() + this.level()) * 100.0) / mapSize
-			
+
 				set i = 0
 				loop
 					exitwhen (i == targets.units().size())
@@ -101,10 +101,10 @@ library StructSpellsSpellPowerOfShrines requires Asl, StructGameClasses, StructG
 			call this.addGrimoireEntry('A1QO', 'A1QU')
 			call this.addGrimoireEntry('A1QP', 'A1QV')
 			call this.addGrimoireEntry('A1QQ', 'A1QW')
-			
+
 			return this
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.castSound = CreateSound("Abilities\\Spells\\Human\\MarkOfChaos\\MarkOfChaos.wav", false, false, true, 12700, 12700, "")
 			call SetSoundChannel(thistype.castSound, GetHandleId(SOUND_VOLUMEGROUP_SPELLS))

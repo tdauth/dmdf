@@ -19,7 +19,7 @@ library StructSpellsSpellManaStream requires Asl, StructGameClasses, StructGameS
 		private method action takes nothing returns nothing
 			local unit caster = this.character().unit()
 			local unit target = GetSpellTargetUnit()
-			local ADynamicLightning dynamicLightning = ADynamicLightning.create(null, "DRAM", 0.01, caster, target)
+			local ADynamicLightning dynamicLightning = ADynamicLightning.create(null, "DRAM", caster, target)
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
 			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "chest")
 			local effect areaEffect
@@ -58,7 +58,7 @@ library StructSpellsSpellManaStream requires Asl, StructGameClasses, StructGameS
 			call this.addGrimoireEntry('A15J', 'A15O')
 			call this.addGrimoireEntry('A15K', 'A15P')
 			call this.addGrimoireEntry('A15L', 'A15Q')
-			
+
 			return this
 		endmethod
 	endstruct
