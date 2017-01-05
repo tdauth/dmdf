@@ -163,13 +163,13 @@ DungeonNull=0,Dungeon,"No Dungeon"
 
 ZoneNull=0,Zone,"No Zone"
 
-EquipmentTypeNone=0,AItemType.equipmentTypeNone,"Equipment Type None"
-EquipmentTypeHeaddress=0,AItemType.equipmentTypeHeaddress,"Equipment Type Headdress"
-EquipmentTypeArmour=0,AItemType.equipmentTypeArmour,"Equipment Type Armour"
-EquipmentTypePrimaryWeapon=0,AItemType.equipmentTypePrimaryWeapon,"Equipment Type Primary Weapon"
-EquipmentTypeSecondaryWeapon=0,AItemType.equipmentTypeSecondaryWeapon,"Equipment Type Secondary Weapon"
-EquipmentTypeAmulet=0,AItemType.equipmentTypeAmulet,"Equipment Type Amulet"
-EquipmentTypeAmulet2=0,5,"Equipment Type Amulet 2"
+EquipmentTypeNone=0,integer,AItemType.equipmentTypeNone,"Equipment Type None"
+EquipmentTypeHeaddress=0,integer,AItemType.equipmentTypeHeaddress,"Equipment Type Headdress"
+EquipmentTypeArmour=0,integer,AItemType.equipmentTypeArmour,"Equipment Type Armour"
+EquipmentTypePrimaryWeapon=0,integer,AItemType.equipmentTypePrimaryWeapon,"Equipment Type Primary Weapon"
+EquipmentTypeSecondaryWeapon=0,integer,AItemType.equipmentTypeSecondaryWeapon,"Equipment Type Secondary Weapon"
+EquipmentTypeAmulet=0,integer,AItemType.equipmentTypeAmulet,"Equipment Type Amulet"
+EquipmentTypeAmulet2=0,integer,5,"Equipment Type Amulet 2"
 
 QuestStateNotUsed=0,QuestState,AAbstractQuest.stateNotUsed,"State Not Used"
 QuestStateNew=0,QuestState,AAbstractQuest.stateNew,"State New"
@@ -720,7 +720,7 @@ _HaveDmdfHashTableHandleInteger_Category=TC_TPOF_CORE
 
 // Environment API
 
-CreateDynamicLightning=1,0,ADynamicLightning,player,lightningtype,real,unit,unit
+CreateDynamicLightning=1,0,ADynamicLightning,player,lightningtype,unit,unit
 _CreateDynamicLightning_Defaults=_,LightningTypeCLPB,0.01,_,_
 _CreateDynamicLightning_Category=TC_TPOF_ENVIRONMENT
 
