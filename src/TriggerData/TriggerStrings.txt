@@ -26,6 +26,18 @@ TriggerRegisterMapStartEvent="Trigger Register Map Start Event"
 TriggerRegisterMapStartEvent="Trigger Register Map Start Event"
 TriggerRegisterMapStartEventHint="The trigger is executed during the map start (after the final class selection)."
 
+TriggerRegisterMapOnSelectClassEvent="Trigger Register Map On Select Class Event"
+TriggerRegisterMapOnSelectClassEvent="Trigger Register Map On Select Class Event"
+TriggerRegisterMapOnSelectClassEventHint="The trigger is run when the class of a character is choosen by the player."
+
+TriggerRegisterMapOnRepickCharacterEvent="Trigger Register Map On Repick Character Event"
+TriggerRegisterMapOnRepickCharacterEvent="Trigger Register Map On Repick Character Event"
+TriggerRegisterMapOnRepickCharacterEventHint="The trigger is run when a single character class is repicked by a player."
+
+TriggerRegisterMapOnRestoreCharacterEvent="Trigger Register Map On Restore Character Event"
+TriggerRegisterMapOnRestoreCharacterEvent="Trigger Register Map On Restore Character Event"
+TriggerRegisterMapOnRestoreCharacterEventHint="The trigger is run when a single character is restored from another map. The character and the zone name can be accessed via event reaction functions."
+
 TriggerRegisterMapOnRestoreCharactersEvent="Trigger Register Map On Restore Characters Event"
 TriggerRegisterMapOnRestoreCharactersEvent="Trigger Register Map On Restore Characters Event"
 TriggerRegisterMapOnRestoreCharactersEventHint="The trigger is evaluated when the characters are restored from another map."
@@ -138,6 +150,12 @@ MissileSetTargetWidget="Missile Set Target Widget"
 MissileSetTargetWidget="Set Missile ",~Missile," Target Widget To ",~Widget
 MissileSetTargetWidgetHint=
 
+// Camera API
+
+CameraSetupApplyForceDuration="Camera Setup Apply Force Duration"
+CameraSetupApplyForceDuration="Apply ",~CameraSetup," with ",~Flag," over ",~Time," seconds"
+CameraSetupApplyForceDurationHint="Applies the camera setup for all players."
+
 // Character API
 
 CharacterCraftItem="Character Craft Item"
@@ -173,6 +191,10 @@ SetMapSettingsPlayerGivesXPHint="Only specified players will give XP. By default
 SetMapSettingsGoldmine="Set Map Settings Goldmine"
 SetMapSettingsGoldmine="Set Map Settings Goldmine to Unit ",~Unit
 SetMapSettingsGoldmineHint="The goldmine unit is usually one single market place on the map which is refilled automatically and can be used for collecting gold."
+
+SetMapSettingsMusic="Set Map Settings Music"
+SetMapSettingsMusic="Set Map Settings Music to ",~MusicList
+SetMapSettingsMusicHint="File paths are separated by the ; character. The map music is played whenever there is no video sequence."
 
 ChangeMap="Change Map"
 ChangeMap="Change map to map with name ",~String

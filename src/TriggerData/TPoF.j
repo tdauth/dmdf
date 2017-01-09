@@ -80,6 +80,9 @@ globals
 	ATriggerVector mapInitSettingsTriggers = 0
 	ATriggerVector mapInitTriggers = 0
 	ATriggerVector mapStartTriggers = 0
+	ATriggerVector mapSelectClassTriggers = 0
+	ATriggerVector mapRepickCharacterTriggers = 0
+	ATriggerVector mapRestoreCharacterTriggers = 0
 	ATriggerVector mapRestoreCharactersTriggers = 0
 	ATriggerVector mapInitVideoSettingsTriggers = 0
 	ATriggerVector mapResetVideoSettingsTriggers = 0
@@ -95,6 +98,7 @@ globals
 	constant integer TRIGGERDATA_KEY_ITEMFIRSTTIME = 6
 	constant integer TRIGGERDATA_KEY_QUEST = 7
 	constant integer TRIGGERDATA_KEY_STATE = 8
+	constant integer TRIGGERDATA_KEY_CLASS = 9
 
 	AGlobalHashTable QuestAreaHashTable = 0
 	AGlobalHashTable QuestHashTable = 0
@@ -116,6 +120,9 @@ function Init takes nothing returns nothing
 	set mapInitSettingsTriggers = ATriggerVector.create()
 	set mapInitTriggers = ATriggerVector.create()
 	set mapStartTriggers = ATriggerVector.create()
+	set mapSelectClassTriggers = ATriggerVector.create()
+	set mapRepickCharacterTriggers = ATriggerVector.create()
+	set mapRestoreCharacterTriggers = ATriggerVector.create()
 	set mapRestoreCharactersTriggers = ATriggerVector.create()
 	set mapInitVideoSettingsTriggers = ATriggerVector.create()
 	set mapResetVideoSettingsTriggers = ATriggerVector.create()
@@ -133,6 +140,18 @@ endfunction
 
 function TriggerRegisterMapStartEvent takes trigger whichTrigger returns nothing
 	call mapStartTriggers.pushBack(whichTrigger)
+endfunction
+
+function TriggerRegisterMapOnSelectClassEvent takes trigger whichTrigger returns nothing
+	call mapSelectClassTriggers.pushBack(whichTrigger)
+endfunction
+
+function TriggerRegisterMapOnRepickCharacterEvent takes trigger whichTrigger returns nothing
+	call mapRepickCharacterTriggers.pushBack(whichTrigger)
+endfunction
+
+function TriggerRegisterMapOnRestoreCharacterEvent takes trigger whichTrigger returns nothing
+	call mapRestoreCharacterTriggers.pushBack(whichTrigger)
 endfunction
 
 function TriggerRegisterMapOnRestoreCharactersEvent takes trigger whichTrigger returns nothing
@@ -193,6 +212,10 @@ endfunction
 
 function SetMapSettingsGoldmine takes unit goldmine returns nothing
 	call MapSettings.setGoldmine(goldmine)
+endfunction
+
+function SetMapSettingsMusic takes string musicList returns nothing
+	call MapSettings.setMapMusic(musicList)
 endfunction
 
 function ChangeMap takes string mapName returns nothing
@@ -569,6 +592,16 @@ function ShrineEnableForAll takes Shrine shrine, boolean showEffect returns noth
 	call ACharacter.enableShrineForAll(shrine, showEffect)
 endfunction
 
+// Video API
+
+function VideoCreate takes boolean hasCharacterActor returns AVideo
+	return AVideo.create(hasCharacterActor)
+endfunction
+
+function VideoWait takes real seconds returns boolean
+	return wait(seconds)
+endfunction
+
 struct MapData
 	//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 
@@ -653,13 +686,28 @@ struct MapData
 
 	/// Required by \ref ClassSelection.
 	public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+		local integer i = 0
 		// Do this on the character creation ONCE!
 		call character.inventory().addOnEquipFunction(thistype.onEquipItem)
 		call character.inventory().addOnAddToRucksackFunction(thistype.onAddItemToRucksack)
+		loop
+			exitwhen (i == mapSelectClassTriggers.size())
+			call DmdfHashTable.global().setHandleInteger(mapSelectClassTriggers[i], TRIGGERDATA_KEY_CHARACTER, character)
+			call DmdfHashTable.global().setHandleInteger(mapSelectClassTriggers[i], TRIGGERDATA_KEY_CLASS, class)
+			call ConditionalTriggerExecute(mapSelectClassTriggers[i])
+			set i = i + 1
+		endloop
 	endmethod
 
 	/// Required by \ref ClassSelection.
 	public static method onRepick takes Character character returns nothing
+		local integer i = 0
+		loop
+			exitwhen (i == mapRepickCharacterTriggers.size())
+			call DmdfHashTable.global().setHandleInteger(mapRepickCharacterTriggers[i], TRIGGERDATA_KEY_CHARACTER, character)
+			call ConditionalTriggerExecute(mapRepickCharacterTriggers[i])
+			set i = i + 1
+		endloop
 	endmethod
 
 	/// Required by \ref Game.
@@ -677,6 +725,14 @@ struct MapData
 
 	/// Required by \ref MapChanger.
 	public static method onRestoreCharacter takes string zone, Character character returns nothing
+		local integer i = 0
+		loop
+			exitwhen (i == mapRestoreCharacterTriggers.size())
+			call DmdfHashTable.global().setHandleStr(mapRestoreCharacterTriggers[i], TRIGGERDATA_KEY_ZONENAME, zone)
+			call DmdfHashTable.global().setHandleInteger(mapRestoreCharacterTriggers[i], TRIGGERDATA_KEY_CHARACTER, character)
+			call ConditionalTriggerExecute(mapRestoreCharacterTriggers[i])
+			set i = i + 1
+		endloop
 	endmethod
 
 	/// Required by \ref MapChanger.

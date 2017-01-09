@@ -230,6 +230,18 @@ TriggerRegisterMapStartEvent=1
 _TriggerRegisterMapStartEvent_Defaults=
 _TriggerRegisterMapStartEvent_Category=TC_TPOF_MAP
 
+TriggerRegisterMapOnSelectClassEvent=1
+_TriggerRegisterMapOnSelectClassEvent_Defaults=
+_TriggerRegisterMapOnSelectClassEvent_Category=TC_TPOF_MAP
+
+TriggerRegisterMapOnRepickCharacterEvent=1
+_TriggerRegisterMapOnRepickCharacterEvent_Defaults=
+_TriggerRegisterMapOnRepickCharacterEvent_Category=TC_TPOF_MAP
+
+TriggerRegisterMapOnRestoreCharacterEvent=1
+_TriggerRegisterMapOnRestoreCharacterEvent_Defaults=
+_TriggerRegisterMapOnRestoreCharacterEvent_Category=TC_TPOF_MAP
+
 TriggerRegisterMapOnRestoreCharactersEvent=1
 _TriggerRegisterMapOnRestoreCharactersEvent_Defaults=
 _TriggerRegisterMapOnRestoreCharactersEvent_Category=TC_TPOF_MAP
@@ -346,6 +358,13 @@ MissileSetTargetWidget=1,AMissile,widget
 _MissileSetTargetWidget_Defaults=
 _MissileSetTargetWidget_Category=TC_TPOF_ENVIRONMENT
 
+// Camera API
+
+CameraSetupApplyForceDuration=1,camerasetup,cameraapplyoption,real,
+_CameraSetupApplyForceDuration_Defaults=_,CameraApply,0
+_CameraSetupApplyForceDuration_Limits=_,_,_,_,0,_
+_CameraSetupApplyForceDuration_Category=TC_CAMERA
+
 // Character API
 
 CharacterCraftItem=1,Character,itemcode
@@ -381,6 +400,10 @@ _SetMapSettingsPlayerGivesXP_Category=TC_TPOF_MAP
 SetMapSettingsGoldmine=1,unit
 _SetMapSettingsGoldmine_Defaults=_
 _SetMapSettingsGoldmine_Category=TC_TPOF_MAP
+
+SetMapSettingsMusic=1,unit
+_SetMapSettingsMusic_Defaults=_
+_SetMapSettingsMusic_Category=TC_TPOF_MAP
 
 ChangeMap=1,string
 _ChangeMap_Defaults=ZoneTalras

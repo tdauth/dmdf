@@ -127,7 +127,6 @@
 //! import "Spells/Struct Spell Transfer.j"
 //! import "Spells/Struct Spell Trap.j"
 //! import "Spells/Struct Spell Treefolk.j"
-//! import "Spells/Struct Spell Troll Chains.j"
 //! import "Spells/Struct Spell Undermine.j"
 //! import "Spells/Struct Spell Weak Point.j"
 //! import "Spells/Struct Spell Wrath Of The Forest.j"
