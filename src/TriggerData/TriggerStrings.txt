@@ -154,13 +154,25 @@ MissileSetTargetWidgetHint=
 
 CameraSetupApplyForceDuration="Camera Setup Apply Force Duration"
 CameraSetupApplyForceDuration="Apply ",~CameraSetup," with ",~Flag," over ",~Time," seconds"
-CameraSetupApplyForceDurationHint="Applies the camera setup for all players."
+CameraSetupApplyForceDurationHint="Applies the camera setup for all players. Extension function from The Power of Fire."
 
 // Character API
 
+CharacterSetMovable="Character Set Movable"
+CharacterSetMovable="Set Character ",~Character," is movable to ",~Flag
+CharacterSetMovableHint="If the character is not movable, he/she is paused and invulnerable."
+
+CharacterSetAllMovable="Character Set All Movable"
+CharacterSetAllMovable="Set All Characters movable to ",~Flag
+CharacterSetAllMovableHint="If the character is not movable, he/she is paused and invulnerable."
+
+CharacterSelectSingle="Character Select Single"
+CharacterSelectSingle="Select Character ",~Character," single for player ",~Player
+CharacterSelectSingleHint="Clears the selection for the player and selects the character's unit only."
+
 CharacterCraftItem="Character Craft Item"
 CharacterCraftItem="Character ",~Character," Craft Item Of Type ",~Item
-CharacterCraftItemHint="This runs all the registered actions to be called."
+CharacterCraftItemHint="This runs all the registered callbacks which react to crafting an item."
 
 CharacterXPBonus="Character XP Bonus"
 CharacterXPBonus="Character ",~Character," Gets XP Bonus Of ",~Value," With Message ",~Message
@@ -168,11 +180,21 @@ CharacterXPBonusHint=
 
 CharacterGiveItem="Character Give Item"
 CharacterGiveItem="Character ",~Character," Gets Item Of Type ",~Item
-CharacterGiveItemHint=
+CharacterGiveItemHint="Adds the item to the inventory or equipment of the character and makes sure it does not end on the ground if the inventory is not full."
 
 CharacterGiveQuestItem="Character Give Quest Item"
 CharacterGiveQuestItem="Character ",~Character," Gets Quest Item Of Type ",~Item
 CharacterGiveQuestItemHint="Quest Items cannot be sold and are invulnerable."
+
+// Game API
+
+GameAddDefaultDoodadsOcclusion="Game Add Default Doodads Occlusion"
+GameAddDefaultDoodadsOcclusion="Game Add Default Doodads Occlusion"
+GameAddDefaultDoodadsOcclusionHint="Adds the default Doodad types for automatic occlusion/transparency of trees."
+
+GameApplyHandicapToCreeps="Game Apply Handicap To Creeps"
+GameApplyHandicapToCreeps="Game Apply Handicap To Creeps"
+GameApplyHandicapToCreeps="The handicap depends on the number of missing players and the difficulty. The handicap is applied to PLAYER_NEUTRAL_AGGRESSIVE."
 
 // Map API
 
@@ -195,6 +217,14 @@ SetMapSettingsGoldmineHint="The goldmine unit is usually one single market place
 SetMapSettingsMusic="Set Map Settings Music"
 SetMapSettingsMusic="Set Map Settings Music to ",~MusicList
 SetMapSettingsMusicHint="File paths are separated by the ; character. The map music is played whenever there is no video sequence."
+
+SetMapSettingsStartLevel="Set Map Settings Start Level"
+SetMapSettingsStartLevel="Set Map Settings Start Level To ",~Level
+SetMapSettingsStartLevelHint="The start level is set for all character hero units at the beginning of the map."
+
+SetMapSettingsStartSkillPoints="Set Map Settings Start Skill Points"
+SetMapSettingsStartSkillPoints="Set Map Settings Start Skill Points To ",~SkillPoints
+SetMapSettingsStartSkillPointsHint="The start skill points are set for all character hero units at the beginning of the map."
 
 ChangeMap="Change Map"
 ChangeMap="Change map to map with name ",~String
@@ -347,7 +377,7 @@ SetFellowTalk="Set Fellow ",~Fellow," Talk enabled to ",~Flag
 SetFellowTalkHint=""
 
 FellowAddAbility="Add Fellow Ability"
-FellowAddAbility="Add To Fellow ",~Fellow~," Ability ",~Ability
+FellowAddAbility="Add To Fellow ",~Fellow," Ability ",~Ability
 FellowAddAbilityHint=""
 
 RoutineSetFacing="Set Routine Facing"
@@ -504,7 +534,7 @@ InsertStringHint=""
 
 EnglishGermanString="English German String"
 EnglishGermanString="Translate English ",~String," into German ",~String," if necessary"
-EnglishGermanStringHint="The resulting string depends on the players language."
+EnglishGermanStringHint="The resulting string depends on the player's language."
 
 EnglishGermanPluralString="English German Plural String"
 EnglishGermanPluralString="German Singular ",~String," or German Plural ",~String," or English Singular ",~String," or English Plural ",~String," depending on counter ",~Counter
@@ -526,7 +556,7 @@ CreateDynamicLightningHint=""
 
 CreateMissile="Create Missile"
 CreateMissile="Create Missile"
-CreateMissileHint=""
+CreateMissileHint="The missile has to be configured and then started from somwhere to be used."
 
 // Character API
 
@@ -537,6 +567,10 @@ GetCharacterPlayersHint="Gets all players which currently have a character."
 PlayerCharacter="Player character"
 PlayerCharacter=~Player,"'s character"
 PlayerCharacterHint="Each player can have one character at maximum."
+
+CharacterUnit="Character Unit"
+CharacterUnit="Unit of Character ",~Character
+CharacterUnitHint="Every character is represented by one unit."
 
 CharacterClass="Character Class"
 CharacterClass="Class of Character ",~Character
@@ -706,7 +740,7 @@ CreateFellowHint="Creates a new fellow who can be shared to the human players an
 
 CreateShrine="Create Shrine"
 CreateShrine="Create shrine using shrine unit ",~Unit,", shrine destructable ",~Destructable,", discover rect ",~DiscoverRect,", revival rect ",~RevivalRect," and revival facing angle ",~Facing
-CreateShrineHint="Creates a new revival shrine which can be discovered and used for reviving a character."
+CreateShrineHint="Creates a new revival shrine which can be discovered and used for reviving a character. The discover rect is the area which has to be entered by the character for enabling the shrine for the character. The revival rect is the area where the character's hero unit is revived after some time with the given facing."
 
 GetLastCreatedSpawnPoint="Get Last Created Spawn Point"
 GetLastCreatedSpawnPoint="Get Last Created Spawn Point"
@@ -719,6 +753,10 @@ GetLastAddedSpawnPointMemberHint=""
 GetLastAddedSpawnPointMemberItemTypeIndex="Get Last Added Spawn Point Member Item Type Index"
 GetLastAddedSpawnPointMemberItemTypeIndex="Get Last Added Spawn Point Member Item Type Index"
 GetLastAddedSpawnPointMemberItemTypeIndexHint=""
+
+GetLastCreatedItemSpawnPoint="Get Last Created Item Spawn Point"
+GetLastCreatedItemSpawnPoint="Get Last Created Item Spawn Point"
+GetLastCreatedItemSpawnPointHint=""
 
 CreateSpawnPoint="Create Creep Spawn Point"
 CreateSpawnPoint="Create creep spawn point"
@@ -744,9 +782,19 @@ CreateDungeon="Create Dungeon"
 CreateDungeon="Create Dungeon with Name ",~String," using Camera Bounds Rect ",~Rect," and view rect ",~Rect
 CreateDungeonHint="A dungeon is an area on the map where the camera bounds are set when the character enters it."
 
+// Routine API
+
+GetLastCreatedRoutineWithFacing="Get Last Created Routine With Facing"
+GetLastCreatedRoutineWithFacing="Get Last Created Routine With Facing"
+GetLastCreatedRoutineWithFacingHint=""
+
 CreateRoutineWithFacing="Create Routine With Facing"
 CreateRoutineWithFacing="Create routine with facing using basic routine type ",~RoutineType," and NPC unit ",~Unit," and starting at ",~TimeOfDay," and ending at ",~TimeOfDay," with target rect ",~Rect
 CreateRoutineWithFacing=""
+
+GetLastCreatedRoutineTalks="Get Last Created Routine Talks"
+GetLastCreatedRoutineTalks="Get Last Created Routine Talks"
+GetLastCreatedRoutineTalksHint=""
 
 CreateRoutineTalks="Create Routine Talks"
 CreateRoutineTalks="Create Routine talks using basic routine type ",~RoutineType," and NPC unit ",~Unit," and starting at ",~TimeOfDay," and ending at ",~TimeOfDay," with target rect ",~Rect
@@ -758,18 +806,30 @@ RoutineTalksToRoutineWithFacingHint=""
 
 // Video API
 
+GetLastCreatedVideo="Get Last Created Video"
+GetLastCreatedVideo="Get Last Created Video"
+GetLastCreatedVideoHint=""
+
 CreateVideo="Create Video"
 CreateVideo="Create Video Using A Character Actor ",~Flag
 CreateVideoHint=""
 
 VideoWait="Video Wait"
 VideoWait="Video Wait For ",~Time," Seconds"
-VideoWaitHint="Recognizes video skips."
+VideoWaitHint="Recognizes video skips and returns true if the video has been skipped."
+
+VideoWaitForTransmission="Video Wait For Transmission"
+VideoWaitForTransmission="Video Wait For Transmission With Sound ",~Sound
+VideoWaitForTransmissionHint="Recognizes video skips and returns true if the video has been skipped."
 
 VideoSaveUnitActor="Video Save Unit Actor"
-VideoSaveUnitActor="Video Save Unit ",~Unit," Actor"
+VideoSaveUnitActor="Video ",~Video," Save Unit ",~Unit," Actor"
 VideoSaveUnitActorHint="Unit Actors can be used during a video and are removed afterwards."
 
 VideoUnitActor="Video Unit Actor"
-VideoUnitActor="Video Unit Actor With Index ",~Index
+VideoUnitActor="Video ",~Video," Unit Actor With Index ",~Index
 VideoUnitActorHint=
+
+VideoCharacterActor="Video Character Actor"
+VideoCharacterActor="Video ",~Video," Character Actor"
+VideoCharacterActorHint="Only works if the flag was set on video creation."

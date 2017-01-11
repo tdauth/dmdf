@@ -50,8 +50,13 @@ globals
 	// Last X'd vars
 	Fellow lastCreatedFellow = 0
 	SpawnPoint lastCreatedSpawnPoint = 0
+	ItemSpawnPoint lastCreatedItemSpawnPoint = 0
 	integer lastAddedSpawnPointMemberIndex = 0
 	integer lastAddedSpawnPointMemberItemTypeIndex = 0
+	NpcRoutineWithFacing lastCreatedRoutineWithFacing = 0
+	NpcTalksRoutine lastCreatedRoutineTalks = 0
+	AVideo lastCreatedVideo = 0
+	integer lastSavedUnitActor = 0
 endglobals
 
 function EnglishGermanString takes string english, string german returns string
@@ -392,6 +397,8 @@ function ItemTypeRequiresTwoSlots takes integer itemTypeId returns boolean
 	return ItemType.itemTypeIdRequiresTwoSlots(itemTypeId)
 endfunction
 
+// Talk API
+
 function CreateTalk takes unit whichUnit returns Talk
 	return Talk.create(whichUnit, 0) // Set the talk action by trigger AFTER creation!
 endfunction
@@ -513,6 +520,10 @@ function GetLastAddedSpawnPointMemberItemTypeIndexHint takes nothing returns int
 	return lastAddedSpawnPointMemberItemTypeIndex
 endfunction
 
+function GetLastCreatedItemSpawnPoint takes nothing returns ItemSpawnPoint
+	return lastCreatedItemSpawnPoint
+endfunction
+
 function CreateSpawnPoint takes nothing returns SpawnPoint
 	set lastCreatedSpawnPoint = SpawnPoint.create()
 	return lastCreatedSpawnPoint
@@ -530,6 +541,10 @@ function ResetFellow takes Fellow fellow returns nothing
 	call fellow.reset()
 endfunction
 
+function SetFellowRevival takes Fellow fellow, boolean enabled returns nothing
+	call fellow.setRevival(enabled)
+endfunction
+
 function SetFellowDescription takes Fellow fellow, string description returns nothing
 	call fellow.setDescription(description)
 endfunction
@@ -545,27 +560,41 @@ function SpawnPointAddNewItemType takes SpawnPoint spawnPoint, integer unitIndex
 endfunction
 
 function CreateItemSpawnPointAtItemPos takes item whichItem returns ItemSpawnPoint
-	return ItemSpawnPoint.create(GetItemX(whichItem), GetItemY(whichItem), whichItem)
+	set lastCreatedItemSpawnPoint = ItemSpawnPoint.create(GetItemX(whichItem), GetItemY(whichItem), whichItem)
+	return lastCreatedItemSpawnPoint
 endfunction
 
 function CreateItemSpawnPoint takes real x, real y, item whichItem returns ItemSpawnPoint
-	return ItemSpawnPoint.create(x, y, whichItem)
+	set lastCreatedItemSpawnPoint = ItemSpawnPoint.create(x, y, whichItem)
+	return lastCreatedItemSpawnPoint
 endfunction
 
 function CreateDungeon takes string name, rect cameraBounds, rect viewRect returns Dungeon
 	return Dungeon.create(name, cameraBounds, viewRect)
 endfunction
 
+// Routine API
+
+function GetLastCreatedRoutineWithFacing takes nothing returns NpcRoutineWithFacing
+	return lastCreatedRoutineWithFacing
+endfunction
+
 function CreateRoutineWithFacing takes ARoutine routine, unit npc, real startTimeOfDay, real endTimeOfDay, rect targetRect returns NpcRoutineWithFacing
-	return NpcRoutineWithFacing.create(routine, npc, startTimeOfDay, endTimeOfDay, targetRect)
+	set lastCreatedRoutineWithFacing = NpcRoutineWithFacing.create(routine, npc, startTimeOfDay, endTimeOfDay, targetRect)
+	return lastCreatedRoutineWithFacing
 endfunction
 
 function RoutineSetFacing takes NpcRoutineWithFacing routine, real facing returns nothing
 	call routine.setFacing(facing)
 endfunction
 
+function GetLastCreatedRoutineTalks takes nothing returns NpcTalksRoutine
+	return lastCreatedRoutineTalks
+endfunction
+
 function CreateRoutineTalks takes ARoutine routine, unit npc, real startTimeOfDay, real endTimeOfDay, rect targetRect returns NpcTalksRoutine
-	return NpcTalksRoutine.create(routine, npc, startTimeOfDay, endTimeOfDay, targetRect)
+	set lastCreatedRoutineTalks = NpcTalksRoutine.create(routine, npc, startTimeOfDay, endTimeOfDay, targetRect)
+	return lastCreatedRoutineTalks
 endfunction
 
 function RoutineTalksToRoutineWithFacing takes NpcTalksRoutine routine returns NpcRoutineWithFacing
@@ -594,12 +623,50 @@ endfunction
 
 // Video API
 
-function VideoCreate takes boolean hasCharacterActor returns AVideo
-	return AVideo.create(hasCharacterActor)
+function CreateVideo takes boolean hasCharacterActor returns AVideo
+	set lastCreatedVideo = AVideo.create(hasCharacterActor)
+	return lastCreatedVideo
+endfunction
+
+function GetLastCreatedVideo takes nothing returns AVideo
+	return lastCreatedVideo
+endfunction
+
+function VideoSetInitActionByTrigger takes AVideo video, trigger whichTrigger returns nothing
+	// TODO implement
+endfunction
+
+function VideoSetPlayActionByTrigger takes AVideo video, trigger whichTrigger returns nothing
+	// TODO implement
 endfunction
 
 function VideoWait takes real seconds returns boolean
 	return wait(seconds)
+endfunction
+
+function GetLastSavedUnitActor takes nothing returns integer
+	return lastSavedUnitActor
+endfunction
+
+function VideoSaveUnitActor takes AVideo video, unit whichUnit returns integer
+	set lastSavedUnitActor = video.saveUnitActor(whichUnit)
+	return lastSavedUnitActor
+endfunction
+
+function VideoUnitActor takes AVideo video, integer index returns unit
+	return video.unitActor(index)
+endfunction
+
+function VideoCharacterActor takes AVideo video returns unit
+	return video.actor()
+endfunction
+
+function VideoFadeOutWithWait takes nothing returns nothing
+	call Game.fadeOutWithWait()
+endfunction
+
+function VideoFadeInWithWait takes nothing returns nothing
+	call Game.fadeInWithWait()
 endfunction
 
 struct MapData

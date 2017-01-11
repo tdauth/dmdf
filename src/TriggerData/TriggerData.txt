@@ -88,7 +88,11 @@ AUnitRoutine=0,1,1,"Unit Routine",integer
 NpcTalksRoutine=0,1,1,"Routine Talks",integer
 NpcRoutineWithFacing=0,1,1,"Routine With Facing",integer
 
+// Video API
+
 AVideo=0,1,1,"Video Sequence",integer
+
+actor=0,1,1,"Video Actor",integer
 
 //***************************************************************************
 [TriggerTypeDefaults]
@@ -367,6 +371,18 @@ _CameraSetupApplyForceDuration_Category=TC_CAMERA
 
 // Character API
 
+CharacterSetMovable=1,Character,boolean
+_CharacterSetMovable_Defaults=PlayerCharacter,true
+_CharacterSetMovable_Category=TC_TPOF_CHARACTER
+
+CharacterSetAllMovable=1,boolean
+_CharacterSetAllMovable_Defaults=true
+_CharacterSetAllMovable_Category=TC_TPOF_CHARACTER
+
+CharacterSelectSingle=1,Character,player
+_CharacterSelectSingle_Defaults=PlayerCharacter,_
+_CharacterSelectSingle_Category=TC_TPOF_CHARACTER
+
 CharacterCraftItem=1,Character,itemcode
 _CharacterCraftItem_Defaults=PlayerCharacter,_
 _CharacterCraftItem_Category=TC_TPOF_CHARACTER
@@ -382,6 +398,16 @@ _CharacterGiveItem_Category=TC_TPOF_CHARACTER
 CharacterGiveQuestItem=1,Character,itemcode
 _CharacterGiveQuestItem_Defaults=PlayerCharacter,_
 _CharacterGiveQuestItem_Category=TC_TPOF_CHARACTER
+
+// Game API
+
+GameAddDefaultDoodadsOcclusion=1
+_GameAddDefaultDoodadsOcclusion_Defaults=
+_GameAddDefaultDoodadsOcclusion_Category=TC_TPOF_GAME
+
+GameApplyHandicapToCreeps=1
+_GameApplyHandicapToCreeps_Defaults=
+_GameApplyHandicapToCreeps_Category=TC_TPOF_GAME
 
 // Map API
 
@@ -401,9 +427,17 @@ SetMapSettingsGoldmine=1,unit
 _SetMapSettingsGoldmine_Defaults=_
 _SetMapSettingsGoldmine_Category=TC_TPOF_MAP
 
-SetMapSettingsMusic=1,unit
+SetMapSettingsMusic=1,string
 _SetMapSettingsMusic_Defaults=_
 _SetMapSettingsMusic_Category=TC_TPOF_MAP
+
+SetMapSettingsStartLevel=1,integer
+_SetMapSettingsStartLevel_Defaults=1
+_SetMapSettingsStartLevel_Category=TC_TPOF_MAP
+
+SetMapSettingsStartSkillPoints=1,integer
+_SetMapSettingsStartLevel_Defaults=1
+_SetMapSettingsStartLevel_Category=TC_TPOF_MAP
 
 ChangeMap=1,string
 _ChangeMap_Defaults=ZoneTalras
@@ -561,6 +595,16 @@ FellowAddAbility=1,Fellow,abilcode
 _FellowAddAbility_Defaults=
 _FellowAddAbility_Category=TC_TPOF_FELLOW
 
+// Spawn Point API
+
+SpawnPointAddUnitWithType=1,SpawnPoint,unit,real
+_SpawnPointAddUnitWithType_Defaults=GetLastCreatedSpawnPoint,_,1.0
+_SpawnPointAddUnitWithType_Category=TC_TPOF_SPAWNPOINT
+
+SpawnPointAddNewItemType=1,SpawnPoint,integer,itemcode,real
+_SpawnPointAddNewItemType_Defaults=GetLastCreatedSpawnPoint,GetLastAddedSpawnPointMemberIndex,_,1.0
+_SpawnPointAddNewItemType_Category=TC_TPOF_SPAWNPOINT
+
 // Routine API
 
 RoutineSetFacing=1,NpcRoutineWithFacing,real
@@ -713,11 +757,11 @@ FormatInteger=1,0,AFormat,AFormat,integer
 _FormatInteger_Defaults=
 _FormatInteger_Category=TC_TPOF_CORE
 
-ReplaceString=1,0,string,string,string
+ReplaceString=1,0,string,string,string,string
 _ReplaceString_Defaults=
 _ReplaceString_Category=TC_TPOF_CORE
 
-RemoveString=1,0,string,string
+RemoveString=1,0,string,string,string
 _RemoveString_Defaults=
 _RemoveString_Category=TC_TPOF_CORE
 
@@ -761,6 +805,10 @@ _GetCharacterPlayers_Category=TC_TPOF_CHARACTER
 PlayerCharacter=1,0,Character,player
 _PlayerCharacter_Defaults=
 _PlayerCharacter_Category=TC_TPOF_CHARACTER
+
+CharacterUnit=1,0,unit,Character
+_CharacterUnit_Defaults=
+_CharacterUnit_Category=TC_TPOF_CHARACTER
 
 CharacterClass=1,0,AClass,Character
 _CharacterClass_Defaults=
@@ -915,7 +963,7 @@ _GetInfoTalk_Defaults=
 _GetInfoTalk_Category=TC_TPOF_TALK
 
 GetInfoIndex=1,0,integer,AInfo
-_GetInfoIndex_Defaults=
+_GetInfoIndex_Defaults=_
 _GetInfoIndex_Category=TC_TPOF_TALK
 
 InfoHasBeenShownToCharacter=1,0,boolean,Talk,integer,Character
@@ -952,16 +1000,20 @@ GetLastAddedSpawnPointMemberItemTypeIndex=1,0,integer
 _GetLastAddedSpawnPointMemberItemTypeIndex_Defaults=
 _GetLastAddedSpawnPointMemberItemTypeIndex_Category=TC_TPOF_SPAWNPOINT
 
+GetLastCreatedItemSpawnPoint=1,0,ItemSpawnPoint
+_GetLastCreatedItemSpawnPoint_Defaults=
+_GetLastCreatedItemSpawnPoint_Category=TC_TPOF_SPAWNPOINT
+
 CreateSpawnPoint=1,0,SpawnPoint
 _SpawnPoint_Defaults=
 _SpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
 SpawnPointAddUnitWithType=1,0,integer,SpawnPoint,unit,real
-_SpawnPointAddUnitWithType_Defaults=_,_,1.0
+_SpawnPointAddUnitWithType_Defaults=GetLastCreatedSpawnPoint,_,1.0
 _SpawnPointAddUnitWithType_Category=TC_TPOF_SPAWNPOINT
 
 SpawnPointAddNewItemType=1,0,integer,SpawnPoint,integer,itemcode,real
-_SpawnPointAddNewItemType_Defaults=_,_,_,1.0
+_SpawnPointAddNewItemType_Defaults=GetLastCreatedSpawnPoint,GetLastAddedSpawnPointMemberIndex,_,1.0
 _SpawnPointAddNewItemType_Category=TC_TPOF_SPAWNPOINT
 
 CreateItemSpawnPointAtItemPos=1,0,ItemSpawnPoint,item
@@ -980,19 +1032,31 @@ _CreateDungeon_Category=TC_TPOF_DUNGEON
 
 // Routine API
 
+GetLastCreatedRoutineWithFacing=1,0,NpcRoutineWithFacing
+_GetLastCreatedRoutineWithFacing_Defaults=
+_GetLastCreatedRoutineWithFacing_Category=TC_TPOF_ROUTINE
+
 CreateRoutineWithFacing=1,0,NpcRoutineWithFacing,ARoutine,unit,real,real,rect
 _CreateRoutineWithFacing_Defaults=RoutineMoveTo,_,12.0,20.0,_
 _CreateRoutineWithFacing_Category=TC_TPOF_ROUTINE
 
+GetLastCreatedRoutineTalks=1,0,NpcTalksRoutine
+_GetLastCreatedRoutineTalks_Defaults=
+_GetLastCreatedRoutineTalks_Category=TC_TPOF_ROUTINE
+
 CreateRoutineTalks=1,0,NpcTalksRoutine,ARoutine,unit,real,real,rect
-_CreateRotineTalks_Defaults=
+_CreateRotineTalks_Defaults=RoutineMoveTo,_,12.0,20.0,_
 _CreateRoutineTalks_Category=TC_TPOF_ROUTINE
 
 RoutineTalksToRoutineWithFacing=1,0,NpcRoutineWithFacing,NpcTalksRoutine
-_RoutineTalksToRoutineWithFacing_Defaults=
+_RoutineTalksToRoutineWithFacing_Defaults=GetLastCreatedRoutineTalks
 _RoutineTalksToRoutineWithFacing_Category=TC_TPOF_ROUTINE
 
 // Video API
+
+GetLastCreatedVideo=1,0,AVideo
+_GetLastCreatedVideo_Defaults=
+_GetLastCreatedVideo_Category=TC_TPOF_VIDEO
 
 CreateVideo=1,0,AVideo,boolean
 _CreateVideo_Defaults=true
@@ -1002,12 +1066,20 @@ VideoWait=1,0,boolean,real
 _VideoWait_Defaults=
 _VideoWait_Category=TC_TPOF_VIDEO
 
-VideoSaveUnitActor=1,0,integer,unit
-_VideoSaveUnitActor_Defaults=
+VideoWaitForTransmission=1,0,boolean,sound
+_VideoWaitForTransmission_Defaults=SoundNull
+_VideoWaitForTransmission_Category=TC_TPOF_VIDEO
+
+VideoSaveUnitActor=1,0,actor,AVideo,unit
+_VideoSaveUnitActor_Defaults=GetLastCreatedVideo,_
 _VideoSaveUnitActor_Category=TC_TPOF_VIDEO
 
-VideoUnitActor=1,0,unit,integer
-_VideoUnitActor_Defaults
+VideoUnitActor=1,0,unit,AVideo,actor
+_VideoUnitActor_Defaults=GetLastCreatedVideo,_
+_VideoUnitActor_Category=TC_TPOF_VIDEO
+
+VideoCharacterActor=1,0,unit,AVideo
+_VideoUnitActor_Defaults=GetLastCreatedVideo
 _VideoUnitActor_Category=TC_TPOF_VIDEO
 
 //***************************************************************************

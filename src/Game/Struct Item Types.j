@@ -333,6 +333,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// map Holzbruck's underworld
 		private static ItemType m_warDrums
 
+		// map The North
+		private static ItemType m_enchantedDwarfBlade
+
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
@@ -781,6 +784,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			// Holzbruck's underworld
 			set thistype.m_warDrums = ItemType.create('I076', ItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
 			call thistype.m_warDrums.addAbility('A1TN', true)
+
+			// The North
+			set thistype.m_enchantedDwarfBlade = ItemType.create('I07E', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_enchantedDwarfBlade.addAbility('A1VF', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType
