@@ -110,7 +110,7 @@ UnitGroupAddUnit=
 
 SetDmdfHashTableHandleInteger="Set TPoF Hash Table Handle Integer"
 SetDmdfHashTableHandleInteger="Set TPoF Hash Table Handle Integer For Handle ",~Handle," Using Child Key ",~Key," To Value ",~Value
-SetDmdfHashTableHandleIntegerHint="Allows attaching values to handles."
+SetDmdfHashTableHandleIntegerHint="Allows attaching values to handles. Make sure that you use a unique child key for the handle!"
 
 SetUnitPositionRect="Set Unit Position To Rect"
 SetUnitPositionRect="Set Position of Unit ",~Unit," To The Center Of Rect ",~Rect
@@ -149,6 +149,10 @@ MissileSetTargetZHint=
 MissileSetTargetWidget="Missile Set Target Widget"
 MissileSetTargetWidget="Set Missile ",~Missile," Target Widget To ",~Widget
 MissileSetTargetWidgetHint=
+
+AddDoodadOcclusion"Add Doodad Occlusion"
+AddDoodadOcclusion="Add Doodad Occlusion for ",~Doodad
+AddDoodadOcclusionHint="Adds the doodad type to the doodads which are automatically get the 'stand alternate' animation when the player's camera gets near them. Of course the animation has to be supported by the model and should make it transparent."
 
 // Camera API
 
@@ -246,7 +250,7 @@ SetInfoActionHint=""
 
 SetInfoConditionAndActionByTrigger="Set Info Condition And Action By Trigger"
 SetInfoConditionAndActionByTrigger="Set for Info ",~Info," the condition and action by trigger ",~Trigger
-SetInfoConditionAndActionByTriggerHint=""
+SetInfoConditionAndActionByTriggerHint="The trigger is evaluated for its condition and if the condition is true the info is shown as dialog button. When the dialog button of the info is clicked the trigger is executed."
 
 SetTalkStartAction="Set Talk Start Action"
 SetTalkStartAction="Set Start Action For Talk ",~Talk," To Action ",~Action
@@ -274,13 +278,19 @@ AddExitButtonHint="The exit button closes the talk."
 
 Speech="Speech"
 Speech="Speech for Info ",~Info," to with character ",~Character," talking to character ",~Flag," with text ",~Text," and sound ",~Sound
-SpeechHint=""
+SpeechHint="Shows a text transmission as floating text on the character unit or the partner unit and plays the sound. The transmission can be skipped using the skip button of the NPC."
 
-// Quest API
+// Quest Area API
+
+GetLastCreatedQuestArea="Get Last Created Quest Area"
+GetLastCreatedQuestArea="Get Last Created Quest Area"
+GetLastCreatedQuestAreaHint=""
 
 CreateQuestArea="Create Quest Area"
 CreateQuestArea="Creates quest area at rect ",~Rect," using a fog modifier ",~Flag
 CreateQuestAreaHint="Creates a quest area where characters can gather to activate an event."
+
+// Quest API
 
 SetQuestAreaConditionAndActionByTrigger="Set Quest Area Condition And Action By Trigger"
 SetQuestAreaConditionAndActionByTrigger="Set Condition And Action for ",~QuestArea," to Trigger ",~Trigger
@@ -380,6 +390,24 @@ FellowAddAbility="Add Fellow Ability"
 FellowAddAbility="Add To Fellow ",~Fellow," Ability ",~Ability
 FellowAddAbilityHint=""
 
+// Spawn Point API
+
+SpawnPointSpawnDeadOnlyAll="Spawn Point Spawn Dead Only All"
+SpawnPointSpawnDeadOnlyAll="Spawn Point Spawn Dead Only All"
+SpawnPointSpawnDeadOnlyAllHint="Spawns all dead members of creep spawn points on the map"
+
+// Dungeon API
+
+DungeonSetEnterTrigger="Dungeon Set Enter Trigger"
+DungeonSetEnterTrigger="Dungeon ",~Dungeon," Set Enter Trigger To ",~Flag
+DungeonSetEnterTriggerHint="If the enter trigger is enabled, the dungeon is activated automatically after entering the rect."
+
+DungeonSetCameraSetup="Dungeon Set Camera Setup"
+DungeonSetCameraSetup="Dungeon ",~Dungeon," Set Camera Setup To ",~CameraSetup
+DungeonSetCameraSetupHint="When the dungeon is activated the camera setup is applied as fixed camera."
+
+// Routine API
+
 RoutineSetFacing="Set Routine Facing"
 RoutineSetFacing="Set Facing for Routine ",~Routine," to ",~Real
 RoutineSetFacingHint=""
@@ -446,6 +474,10 @@ VideoFadeInWithWait="Video Fade In With Wait"
 VideoFadeInWithWait="Video Fade In With Wait"
 VideoFadeInWithWaitHint="Recognizes video skips by players"
 
+VideoTransmissionFromUnit="Video Transmission From Unit"
+VideoTransmissionFromUnit="Video Transmision from Unit ",~Unit," with Text ",~Text," Using Sound ",~Sound
+VideoTransmissionFromUnitHint=""
+
 // Obsolete actions
 //AddPerfLogLabel="** AddPerfLogLabel **"
 //AddPerfLogLabel="** AddPerfLogLabel(",~Label,") **"
@@ -464,6 +496,18 @@ JASS="JASS Code"
 JASS="JASS Code: ",~Code
 JASSHint="Is directly used as JASS code."
 
+JASS2Integer="JASS Code"
+JASS2Integer="JASS Code: ",~Code
+JASS2IntegerHint="Is directly used as JASS code."
+
+JASS2Item="JASS Code"
+JASS2Item="JASS Code: ",~Code
+JASS2ItemHint="Is directly used as JASS code."
+
+JASS2Unit="JASS Code"
+JASS2Unit="JASS Code: ",~Code
+JASS2UnitHint="Is directly used as JASS code."
+
 // Int 2 struct conversion
 
 I2Character="Integer To Character"
@@ -475,6 +519,10 @@ I2Class="Integer ",~Integer," To Class"
 I2ClassHint="Converts an integer instance to a Class. Be carefuly with this kind of conversion!"
 
 // Core API
+
+GetLastCreatedIntegerVector="Get Last Created Integer Vector"
+GetLastCreatedIntegerVector="Get Last Created Integer Vector"
+GetLastCreatedIntegerVectorHint=""
 
 CreateIntegerVector="Create Integer Vector"
 CreateIntegerVector="Create Integer Vector"
@@ -488,9 +536,17 @@ GetIntegerVectorElement="Get Integer Vector Element"
 GetIntegerVectorElement="Get Element at Index ",~Index," of Integer Vector ",~Vector
 GetIntegerVectorElementHint="Make sure the index is between 0 and size - 1."
 
+GetLastCreatedIntegerList="Get Last Created Integer List"
+GetLastCreatedIntegerList="Get Last Created Integer List"
+GetLastCreatedIntegerListHint=""
+
 CreateIntegerList="Create Integer List"
 CreateIntegerList="Create Integer List"
 CreateIntegerListHint="Creates a doubled linked list."
+
+GetLastCreatedUnitGroup="Get Last Created Unit Group"
+GetLastCreatedUnitGroup="Get Last Created Unit Group"
+GetLastCreatedUnitGroupHint=""
 
 CreateUnitGroup="Create Unit Group"
 CreateUnitGroup="Create Unit Group"
@@ -568,6 +624,10 @@ PlayerCharacter="Player character"
 PlayerCharacter=~Player,"'s character"
 PlayerCharacterHint="Each player can have one character at maximum."
 
+CharacterPlayer="Character Player"
+CharacterPlayer="Player of Character ",~Character
+CharacterPlayerHint="Returns the corresponding player of a character."
+
 CharacterUnit="Character Unit"
 CharacterUnit="Unit of Character ",~Character
 CharacterUnitHint="Every character is represented by one unit."
@@ -624,6 +684,10 @@ GetTriggerZoneName="Get Triggering Zone Name"
 GetTriggerZoneName="Get Triggering Zone Name"
 GetTriggerZoneNameHint="Can only be used with the character restores event. Returns the zone name of the zone from which the characters are restored."
 
+GetLastCreatedZone="Get Last Created Zone"
+GetLastCreatedZone="Get Last Created Zone"
+GetLastCreatedZoneHint=""
+
 CreateZone="Create Zone"
 CreateZone="Create Zone with Map Name ",~Name," at Rect ",~Rect
 CreateZoneHint="When the rect is entered in a singleplayer campaign, the map with the name is loaded."
@@ -674,17 +738,35 @@ CreateQuestAreaHint="Creates a quest area where characters can gather to activat
 
 // Quest API
 
+GetLastCreatedCharacterQuest="Get Last Created Character Quest"
+GetLastCreatedCharacterQuest="Get Last Created Character Quest"
+GetLastCreatedCharacterQuestHint=""
+
 CreateCharacterQuest="Create Character Quest"
 CreateCharacterQuest="Create Quest for Character ",~Character," with title ",~Title
 CreateCharacterQuestHint="A character only quest."
+
+GetLastCreatedCharacterQuestItem="Get Last Created Character Quest Item"
+GetLastCreatedCharacterQuestItem="Get Last Created Character Quest Item"
+GetLastCreatedCharacterQuestItem=""
 
 CreateCharacterQuestItem="Create Character Quest Item"
 CreateCharacterQuestItem="Create Quest Item for Quest ",~Quest," with title ",~Title
 CreateCharacterQuestItemHint=""
 
+// Talk API
+
+GetLastCreatedTalk="Get Last Created Talk"
+GetLastCreatedTalk="Get Last Created Talk"
+GetLastCreatedTalkHint=""
+
 CreateTalk="Create Talk"
 CreateTalk="Creates a talk using unit ",~Unit
 CreateTalkHint="Creates a talk which can be hold between a unit and a character."
+
+GetLastCreatedInfo="Get Last Created Info"
+GetLastCreatedInfo="Get Last Created Info"
+GetLastCreatedInfoHint=""
 
 AddInfo="Add Information"
 AddInfo="Add information to ",~Talk," permanently ",~permanently," and important ",~important," with text ",~text
@@ -730,6 +812,8 @@ InfoHasBeenShownToCharacter="Info Has Been Shown To Character"
 InfoHasBeenShownToCharacter="Info of Talk ",~Talk," with Index ",~Index," has been shown to Character ",~Character
 InfoHasBeenShownToCharacterHint="A info has been shown to a character, when the player clicked on it."
 
+// Fellow API
+
 GetLastCreatedFellow="Get Last Created Fellow"
 GetLastCreatedFellow="Get Last Created Fellow"
 GetLastCreatedFellowHint=""
@@ -738,9 +822,17 @@ CreateFellow="Create Fellow"
 CreateFellow="Creates a fellow using the unit ",~Unit," and the unit's talk ",~Talk
 CreateFellowHint="Creates a new fellow who can be shared to the human players and controlled by them. Make sure it is a hero unit."
 
+// Shrine API
+
+GetLastCreatedShrine="Get Last Created Shrine"
+GetLastCreatedShrine="Get Last Created Shrine"
+GetLastCreatedShrineHint=""
+
 CreateShrine="Create Shrine"
 CreateShrine="Create shrine using shrine unit ",~Unit,", shrine destructable ",~Destructable,", discover rect ",~DiscoverRect,", revival rect ",~RevivalRect," and revival facing angle ",~Facing
 CreateShrineHint="Creates a new revival shrine which can be discovered and used for reviving a character. The discover rect is the area which has to be entered by the character for enabling the shrine for the character. The revival rect is the area where the character's hero unit is revived after some time with the given facing."
+
+// Spawn Point API
 
 GetLastCreatedSpawnPoint="Get Last Created Spawn Point"
 GetLastCreatedSpawnPoint="Get Last Created Spawn Point"
@@ -777,6 +869,12 @@ CreateItemSpawnPointAtItemPosHint=""
 CreateItemSpawnPoint="Create Item Spawn Point"
 CreateItemSpawnPoint="Create Item Spawn Point using X ",~Real," and Y ",~Real," and Item ",~Item
 CreateItemSpawnPointHint=""
+
+// Dungeon API
+
+GetLastCreatedDungeon="Get Last Created Dungeon"
+GetLastCreatedDungeon="Get Last Created Dungeon"
+GetLastCreatedDungeonHint=""
 
 CreateDungeon="Create Dungeon"
 CreateDungeon="Create Dungeon with Name ",~String," using Camera Bounds Rect ",~Rect," and view rect ",~Rect

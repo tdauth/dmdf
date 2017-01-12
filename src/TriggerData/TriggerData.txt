@@ -362,6 +362,10 @@ MissileSetTargetWidget=1,AMissile,widget
 _MissileSetTargetWidget_Defaults=
 _MissileSetTargetWidget_Category=TC_TPOF_ENVIRONMENT
 
+AddDoodadOcclusion=1,doodadcode
+_AddDoodadOcclusion_Defaults=
+_AddDoodadOcclusion_Category=TC_TPOF_ENVIRONMENT
+
 // Camera API
 
 CameraSetupApplyForceDuration=1,camerasetup,cameraapplyoption,real,
@@ -509,7 +513,7 @@ SetCharacterQuestStateTrigger=1,AQuest,QuestState,trigger
 _SetCharacterQuestStateTrigger_Defaults=_,QuestStateCompleted,_
 _SetCharacterQuestStateTrigger_Category=TC_TPOF_QUEST
 
-SetCharacterQuestDescription=1,AQuest,string
+SetCharacterQuestDescription=1,AQuest,StringExt
 _SetCharacterQuestDescription_Defaults=
 _SetCharacterQuestDescription_Category=TC_TPOF_QUEST
 
@@ -583,7 +587,7 @@ ResetFellow=1,Fellow
 _ResetFellow_Defaults=
 _ResetFellow_Category=TC_TPOF_FELLOW
 
-SetFellowDescription=1,Fellow,string
+SetFellowDescription=1,Fellow,StringExt
 _SetFellowDescription_Defaults=
 _SetFellowDescription_Category=TC_TPOF_FELLOW
 
@@ -604,6 +608,20 @@ _SpawnPointAddUnitWithType_Category=TC_TPOF_SPAWNPOINT
 SpawnPointAddNewItemType=1,SpawnPoint,integer,itemcode,real
 _SpawnPointAddNewItemType_Defaults=GetLastCreatedSpawnPoint,GetLastAddedSpawnPointMemberIndex,_,1.0
 _SpawnPointAddNewItemType_Category=TC_TPOF_SPAWNPOINT
+
+_SpawnPointSpawnDeadOnlyAll=1
+_SpawnPointSpawnDeadOnlyAll_Defaults=
+__SpawnPointSpawnDeadOnlyAll_Category=TC_TPOF_SPAWNPOINT
+
+// Dungeon API
+
+DungeonSetEnterTrigger=1,Dungeon,boolean
+_DungeonSetEnterTrigger_Defaults=GetLastCreatedDungeon,true
+_DungeonSetEnterTrigger_Category=TC_TPOF_DUNGEON
+
+DungeonSetCameraSetup=1,Dungeon,camerasetup
+_DungeonSetCameraSetup_Defaults=GetLastCreatedDungeon,_
+_DungeonSetCameraSetup_Category=TC_TPOF_DUNGEON
 
 // Routine API
 
@@ -675,6 +693,10 @@ VideoFadeInWithWait=1
 _VideoFadeInWithWait_Defaults=
 _VideoFadeInWithWait_Category=TC_TPOF_VIDEO
 
+VideoTransmissionFromUnit=1,unit,string,sound
+_VideoTransmissionFromUnit_Defaults=
+_VideoTransmissionFromUnit_Category=TC_TPOF_VIDEO
+
 // Obsolete actions
 //AddPerfLogLabel=0,string
 //_AddPerfLogLabel_Defaults="Triggered Debug Label"
@@ -701,6 +723,18 @@ JASS=1,1,scriptcode,scriptcode
 _JASS_Defaults=_
 _JASS_Category=TC_TPOF_CORE
 
+JASS2Integer=1,1,integer,scriptcode
+_JASS2Integer_Defaults=_
+_JASS2Integer_Category=TC_TPOF_CORE
+
+JASS2Item=1,1,item,scriptcode
+_JASS2Item_Defaults=_
+_JASS2Item_Category=TC_TPOF_CORE
+
+JASS2Unit=1,1,unit,scriptcode
+_JASS2Unit_Defaults=_
+_JASS2Unit_Category=TC_TPOF_CORE
+
 // Int 2 struct conversion
 
 I2Character=1,0,Character,integer
@@ -712,6 +746,10 @@ _I2Class_Defaults=GetIntegerVectorElement
 _I2Class_Category=TC_TPOF_CORE
 
 // Core API
+
+GetLastCreatedIntegerVector=1,0,IntegerVector
+_GetLastCreatedIntegerVector_Defaults=
+_GetLastCreatedIntegerVector_Category=TC_TPOF_CORE
 
 CreateIntegerVector=1,0,AIntegerVector
 _CreateIntegerVector_Defaults=
@@ -728,6 +766,10 @@ _GetIntegerVectorElement_Category=TC_TPOF_CORE
 CreateIntegerList=1,0,AIntegerList
 _CreateIntegerList_Defaults=
 _CreateIntegerList_Category=TC_TPOF_CORE
+
+GetLastCreatedUnitGroup=1,0,AGroup
+_GetLastCreatedUnitGroup_Defaults=
+_GetLastCreatedUnitGroup_Category=TC_TPOF_CORE
 
 CreateUnitGroup=1,0,AGroup
 _CreateUnitGroup_Defaults=
@@ -806,6 +848,10 @@ PlayerCharacter=1,0,Character,player
 _PlayerCharacter_Defaults=
 _PlayerCharacter_Category=TC_TPOF_CHARACTER
 
+CharacterPlayer=1,0,player,Character
+_CharacterPlayer_Defaults=
+_CharacterPlayer_Category=TC_TPOF_CHARACTER
+
 CharacterUnit=1,0,unit,Character
 _CharacterUnit_Defaults=
 _CharacterUnit_Category=TC_TPOF_CHARACTER
@@ -862,6 +908,10 @@ GetTriggerZoneName=1,0,string
 _GetTriggerZoneName_Defaults=
 _GetTriggerZoneName_Category=TC_TPOF_MAP
 
+GetLastCreatedZone=1,0,Zone
+_GetLastCreatedZone=
+_GetLastCreatedZone_Category=TC_TPOF_MAP
+
 CreateZone=1,0,Zone,string,rect
 _CreateZone_Defaults=
 _CreateZone_Category=TC_TPOF_MAP
@@ -906,15 +956,27 @@ _ItemTypeIsDefence_Category=TC_TPOF_ITEM
 
 // Quest Area API
 
+GetLastCreatedQuestArea=1,0,QuestArea
+_GetLastCreatedQuestArea_Defaults=
+_GetLastCreatedQuestArea_Category=TC_TPOF_QUESTAREA
+
 CreateQuestArea=1,0,QuestArea,rect,boolean
 _CreateQuestArea_Defaults=_,true
 _CreateQuestArea_Category=TC_TPOF_QUESTAREA
 
 // Quest API
 
+GetLastCreatedCharacterQuest=1,0,AQuest
+_GetLastCreatedCharacterQuest_Defaults=
+_GetLastCreatedCharacterQuest_Category=TC_TPOF_QUEST
+
 CreateCharacterQuest=1,0,AQuest,Character,string
 _CreateCharacterQuest_Defaults=
 _CreateCharacterQuest_Category=TC_TPOF_QUEST
+
+GetLastCreatedCharacterQuestItem=1,0,AQuestItem
+_GetLastCreatedCharacterQuestItem_Defaults=
+_GetLastCreatedCharacterQuestItem_Category=TC_TPOF_QUEST
 
 CreateCharacterQuestItem=1,0,AQuestItem,AQuest,string
 _CreateCharacterQuestItem_Defaults=
@@ -922,9 +984,17 @@ _CreateCharacterQuestItem_Category=TC_TPOF_QUEST
 
 // Talk API
 
+GetLastCreatedTalk=1,0,Talk
+_GetLastCreatedTalk_Defaults=
+_GetLastCreatedTalk_Category=TC_TPOF_TALK
+
 CreateTalk=1,0,Talk,unit
 _CreateTalk_Defaults=
 _CreateTalk_Category=TC_TPOF_TALK
+
+GetLastCreatedInfo=1,0,AInfo
+_GetLastCreatedInfo_Defaults=
+_GetLastCreatedInfo_Category=TC_TPOF_TALK
 
 AddInfo=1,0,AInfo,Talk,boolean,boolean,string
 _AddInfo_Defaults=_,true,false,_,_,_
@@ -982,6 +1052,10 @@ _CreateFellow_Category=TC_TPOF_FELLOW
 
 // Shrine API
 
+GetLastCreatedShrine=1,0,Shrine
+_GetLastCreatedShrine_Defaults=
+_GetLastCreatedShrine_Category=TC_TPOF_SHRINE
+
 CreateShrine=1,0,Shrine,unit,destructable,rect,rect,real
 _CreateShrine_Defaults=_,_,_,_,270.0
 _CreateShrine_Category=TC_TPOF_SHRINE
@@ -1025,6 +1099,10 @@ _CreateItemSpawnPoint_Defaults=
 _CreateItemSpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
 // Dungeon API
+
+GetLastCreatedDungeon=1,0,Dungeon
+_GetLastCreatedDungeon_Defaults=
+_GetLastCreatedDungeon_Category=TC_TPOF_DUNGEON
 
 CreateDungeon=1,0,Dungeon,string,rect,rect
 _CreateDungeon_Defaults=

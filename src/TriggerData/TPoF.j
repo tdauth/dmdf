@@ -499,6 +499,10 @@ function TalkStartActionByTrigger takes trigger whichTrigger, Talk talk returns 
 	return TalkStartActionExecute
 endfunction
 
+function GetLastCreatedFellow takes nothing returns Fellow
+	return lastCreatedFellow
+endfunction
+
 function CreateFellow takes unit whichUnit, Talk talk returns Fellow
 	set lastCreatedFellow = Fellow.create(whichUnit, talk)
 	return lastCreatedFellow
