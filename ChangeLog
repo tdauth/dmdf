@@ -1,3 +1,5 @@
+This file is not used anymore. Look at the GIT history to see all changes!
+
 2012-08-07 Tamino Dauth <tamino@cdauth.eu>
 * Game.showSpawnPointUnits() and Game.hideSpawnPointUnits() help videos to remove spawn point units during sequences.
 * Grimoire stays open now (use the proper shortcut!).

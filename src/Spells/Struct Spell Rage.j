@@ -14,17 +14,19 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 		private static constant real time = 10.0
 		private trigger m_killTrigger
 		private static integer array m_counter
+		private static sound m_sound
 		private timer m_timer
+		private effect m_effect
 
 		/// Called by globan damage detection system.
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
-			local real damage
+			local real damage = 0.0
 			// works on neutral and unallied units for the character but only if the ability is learned
 			if (GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) == 0) then
 				return
 			endif
 			// check class and ability
-			if (not DmdfHashTable.global().hasHandleBoolean(GetEventDamageSource(), thistype.enabledKey) or DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.damageKey)) then
+			if (not DmdfHashTable.global().hasHandleBoolean(GetEventDamageSource(), thistype.enabledKey) or not DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.enabledKey) or DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.damageKey)) then
 				return
 			endif
 
@@ -55,15 +57,19 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 
 		private static method timerFunctionDisable takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0)
-			call DmdfHashTable.global().setHandleBoolean(this.character().unit(), thistype.enabledKey, false)
+			call DmdfHashTable.global().removeHandleBoolean(this.character().unit(), thistype.enabledKey)
 			set thistype.m_counter[GetPlayerId(this.character().player())] = 0
+			call DestroyEffect(this.m_effect)
+			set this.m_effect = null
 			debug call Print("Disable rage!")
 		endmethod
 
 		private method action takes nothing returns nothing
+			set this.m_effect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, this.character().unit(), "chest")
 			call DmdfHashTable.global().setHandleBoolean(this.character().unit(), thistype.enabledKey, true)
 			call TimerStart(this.m_timer, thistype.time, false, function thistype.timerFunctionDisable)
 			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
+			call PlaySoundOnUnitBJ(thistype.m_sound, 100.0, this.character().unit())
 			debug call Print("Enable rage")
 		endmethod
 
@@ -107,6 +113,18 @@ library StructSpellsSpellRage requires Asl, StructGameClasses, StructGameGame, S
 			call PauseTimer(this.m_timer)
 			call DmdfHashTable.global().destroyTimer(this.m_timer)
 			set this.m_timer = null
+
+			call DmdfHashTable.global().removeHandleBoolean(this.character().unit(), thistype.enabledKey)
+
+			if (this.m_effect != null) then
+				call DestroyEffect(this.m_effect)
+				set this.m_effect = null
+			endif
+		endmethod
+
+		private static method onInit takes nothing returns nothing
+			set thistype.m_sound = CreateSound("Abilities\\Spells\\Orc\\BattleStations\\OrcBurrowBattleStationsWhat1.wav", false, false, true, 12700, 12700, "")
+			call SetSoundChannel(thistype.m_sound, GetHandleId(SOUND_VOLUMEGROUP_SPELLS))
 		endmethod
 	endstruct
 

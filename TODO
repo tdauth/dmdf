@@ -295,6 +295,7 @@ Zeugs:
 * Use race package for the map The North (its a WoW race but who cares): http://www.hiveworkshop.com/threads/vrykul-race-pack.241083/
 * Add a spell caster system with hand attachments: http://www.hiveworkshop.com/threads/caster-hand-attachments.63660/
 * Use a spell caster system with spell books: http://www.hiveworkshop.com/threads/spellbook-pack.144447/
+* Add Doodad types for new ice cliff models.
 
 Aufgehoben für Version 0.9:
 Critical errors:
@@ -309,7 +310,7 @@ Critical errors:
 * FIXED (AInventory revival trigger): Manchmal wenn der Charakter stirbt, liegen ganz viele Gegenstände auf dem Boden (auch Platzhalter) und fehlen danach im Inventar. Am besten in jeder timer-Funktion in AInventory erst prüfen, ob Charakter noch lebt. Ansonsten nichts durchführen? Kritische Bereiche identifizieren und absichern!
 Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED (OpLimit was broken by too long calls before calling refresh()): ACharactersScheme: Multiboard update does not happen immediately! It would also be better to show the characters schema after the intro video?
-Repick:
+Repick Issues:
 * Multiboard verschwindet manchmal bei Repick.
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
 * Nach Repick ist Grundzauber nicht in den Favoriten.
@@ -370,47 +371,50 @@ Let's Play Critical Errors (have to be fixed in 0.9):
 
 Critical Transformation and equipment bugs (Let's Play):
 * FIXED (always replace items by equipment): Creating an illusion by an item (Tellborns rune) does not create OrderAnimation or does not open the equipment stuff first!!! Better solution: On spawning illusions just remove all items from the illusion and add equipment items.
-* If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug. Do you have to know if the abilty stacks or not? Only for not stacking abilities!
+* If you unequip an item only remove the ability if no other item type has the same ability ID -> ASL bug. Do you have to know if the abilty stacks or not? Only for not stacking abilities! How do you remove one stacking ability then???
 * FIXED (Teilweise Bugs in der ASL weil onUnequip() etc. nicht beim Deaktivieren des Inventars aufgerufen wurde): Mensch auf einem Schaf steht nicht da, wenn man von Fernkampf auf Schaf reitet (Schaf benutzt). Bewegungsgeschwindigkeit auch nicht erhöht? Aber verwandelt, geht vielleicht nicht. Verwandlung von Fernkampf ging nicht, wurde vorher nicht zu Melee gemacht und später wieder durch Equipment zu Fernkampf.
 * FIXED: Nach Rückverwandlung von Deranors Leibwache ist die Waffe zunächst nicht sichtbar.
 Gegenstands-Icon-Fehler:
 * Nach dem Laden sind die verborgenen Zauberbuchfähigkeiten des Equipments nicht mehr verborgen. Scheint nicht nach dem Laden zu passieren sondern unter anderen Umständen?
 * Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel eines Druiden, Stab der Verzögerung, Knochenbogen. War das nur ein Bug? Nein Stiefel eines Druiden haben wirklich keine Zauberbuchfähigkeit. Stab der Verzögerung hatte allerdings deaktivierte Zauberbuchfähigkeit. Knochenbogen ebenfalls. Stab der Verzögerung und Knochenbogen haben zusätzlich eine Kugelfähigkeit die auch im Zauberbuch verborgen werden muss.
 * Die Zauberbuchfähigkeiten von Gegenständen sollte 12 Dummys drin haben, damit die Symbole verborgen werden und keine Zauber verdrängen in Zauberfähigkeiten.
-* Stab der Verlangsamung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
+* FIXED (hide spell book ability and hide 'A1S9' as well): Stab der Verzögerung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
-* MapChanger: Does not save if a spell is NOT in favorites?
+* FIXED: MapChanger: Does not save if a spell is NOT in favorites?
 * MapChanger: Options cannot be selected. But only in the map which is started via map transition for the first time. PauseUnit() by the intro video in Talras? Happens only sometimes.
 * FIXED: Professions info add Book of Hunting.
-* Limit of skeletons does still not work (necromancer).
+* Limit of skeletons does still not work (necromancer). Why does not work? Whenever a skeleton dies the counter is decremented. Whenever one unit is summoned it is incremented. Are more skeletons summoned at once?!
 * FIXED: Add info for options.
-* Fix the war3map_en.wts file for Talras by undoing some commits and update the English Talras map.
+* Fix the war3map_en.wts file for Talras by undoing some commits and update the English Talras map. Some previous commits corrupted the file and removed most of the English translations!
 * FIXED (in the mod) wc3lib bug: field Arsg:UnitID is compressed although it was changed! Treefolk, Pest Carret and summon dragon.
 * Video mit Diakon und Medusa: Kamerafahrten vereinfachen. Die letzte Kamerafahrt beim Diakon macht keinen Sinn. Predigt oder zaubert er?
 * Allgemein: Alle Zauber des Drachentöters testen.
 * FIXED: Todgeweihte haben keinen Luftangriff.
-* Rage: Braucht Spezialeffekt.
-* Rage: Funktioniert nur ein oder zweimal nach Draufhauen? Sieht eigentlich auch richtig aus. Dauer wurde auf 10 Sekunden erhöht.
+* FIXED: Rage: Braucht Spezialeffekt.
+* FIXED: Rage: Braucht Sound.
+* FIXED (added handleBoolean() check to damage function): Rage: Funktioniert nur ein oder zweimal nach Draufhauen? Sieht eigentlich auch richtig aus. Dauer wurde auf 10 Sekunden erhöht.
 * Rage: Nicht nur durch Lasthit anstauen, sonst schlecht.
+* Rage: Braucht eigenes Icon.
 * Unbarmherzigkeit (Passiv): Funktioniert gar nicht? Kommt zumindest keine Anzeige. Nochmal prüfen, Code sieht korrekt aus.
 * FIXED: Vasallenschild: Holzschild kaufen.
 * FIXED: Hochelfin ist gefallen und wird in ... wiederbelebt. Namen von Fellow verwenden!
 * Falsche Angriffsanimation mit Schild kommt manchmal. Der Charakter schlägt mit dem Schild zu.
 * Falsche Angriffsanimationen mit zwei Waffen (Drachentöter). Wird gar nicht erkannt?
-* Kritischer Fehler (siehe Klimaanlage Let's Play Folge 2): Vermutlich nachdem die Drachentöterin starb. Nach dem Aufstieg auf Stufe 6 ging gar nichts mehr (vermutlich schon vorher), keine Skillpoints, keine Wiederbelebung der Gefährten, keine Questgebiete mehr. OpLimit? Eventuell versuchen war3error zu verwenden.
+* Kritischer Fehler (siehe Klimaanlage Let's Play Folge 2): Vermutlich nachdem die Drachentöterin starb. Nach dem Aufstieg auf Stufe 6 ging gar nichts mehr (vermutlich schon vorher), keine Skillpoints, keine Wiederbelebung der Gefährten, keine Questgebiete mehr. OpLimit? Eventuell versuchen war3error zu verwenden. Let's Play mit Fehler: https://www.youtube.com/watch?v=MzrW0TLbGs8&index=2&list=PLhWYsSZhXgXJnclK63QPLPeNwvna5bFJm
 * FIXED: Große Doppelaxt bzw. für alle Zweihandwaffen ins Tooltip schreiben!
 * FIXED: Kurzschwert des Drachentöters und Morgenstern machen viel zu viel Schaden.
 * FIXED: Alle Schwerter und Äxte verursachen in Version 0.9 20 Schaden (AItx - DataA1).
 * wc3lib: Vermutlich Object Data Compression bug oder fehlender Eintrag in SLKs für die Ability (AItx - DataA1).
 * DEPRECATED (Werte stimmen): Holzschild und Schwerer Holzschild - Verteidigungswerte vergleichen. Tooltip-Fehler!
-* Amulette und Ringe der Stärke in Talras verkaufen.
+* DONE: Amulette und Ringe der Stärke in Talras verkaufen. Wichtig für stärkebasierte Klassen. Am besten bei Wieland verkaufen.
+* FIXED: Show the total sum of gold from selling items (ASL).
 * FIXED (Werte haben nicht gestimmt): Tooltip Erlernen: Hieb 0 Schaden.
 * FIXED: Kräuter sollten 2 Gold kosten und Tränke 4 Gold, ansonsten gibt ein verkauftes Slot 0 Gold!
 * Waffen und Amulette usw. wesentlich teurer machen, da man schnell Gold bekommt. Andererseits kann man sie dann auch teuer verkaufen, sinnvoll?
 * Zoombug endlich beheben! Vermutlich timerFunctionCamera. An AThirdPersonCamera orientieren. Hier wird auch SetCameraField() verwendet und es kann auch zurückgesetzt werden. Zur Sicherheit StopCamera()? Oder an Timer-Funktion orientieren.
 * FIXED: Fette Beute und Pferd reiten erlernen haben dieselbe ID.
-* Endlich eine vollständige ID-Liste erzeugen und überprüfen.
+* Endlich eine vollständige ID-Liste erzeugen und überprüfen. Klassen-LibreOffice-Dokument vervollständigen.
 * Kamera wackelt während Gesprächen wenn 3rd-Person-Kamera aktiv ist. Vermutlich timerFunctionCamera
 * FIXED: Kamera zurücksetzen: Nichts machen, wenn man in 3rd-Person-Kamera ist.
 * Wenn man mit 3rd-Person-Kamera stirbt, sollte die Ansicht zurückgesetzt werden, damit man besser weiterkämpfen kann.

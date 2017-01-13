@@ -126,7 +126,6 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("\"-kick <Spielername/Spielernummer>\": Kickt den Spieler aus dem Spiel.", "\"-kick <player name/player number>\": Kicks the player from the game."))
 
-
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Emotes", "Emotes"))
 			call QuestSetDescription(whichQuest, tre("Emotes erlauben das Ausdrücken bestimmter Emotionen durch eine Animation Ihres Charakters.", "Emotes allow expressing certain emotions by an animation of your character."))
@@ -159,7 +158,6 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Zauberer: Manazauber", "Wizard: Mana spells"))
 
-
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Aufträge", "Missions"))
 			call QuestSetDescription(whichQuest, tre("Aufträge im Spiel bestehen aus einem oder mehreren Zielen, die allesamt erfüllt werden müssen. Aufträge geben meist Belohnungen wie zusätzliche Erfahrungspunkte, Goldmünzen oder Gegenstände. Gemeinsame Aufträge müssen von allen Spielern gemeinsam erledigt werden, um die Handlung des Spiels voranzubringen. Eigene Aufträge können optional von jedem Spieler einzeln erledigt werden, um zusätzliche Belohnungen zu erhalten.", "Missions in the game consists of one or several objectives which has to be solved alltogether. Missions mostly give rewards like additional experience points, gold coins or items. Shared missions have to be solved by all players together to continue the plot of the game. Own missions can be solved optionally by each player to get additional rewards."))
@@ -171,7 +169,6 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Eigene Aufträge kann jeder Spieler für sich selbst erledigen (optional).", "Custom missions can be solved by every player himself (optionally)."))
 
-
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Ausrüstung", "Equipment"))
 			call QuestSetDescription(whichQuest, tre("Es gibt fünf verschiede Ausrüstungstypen. Von jedem Typ kann genau ein Gegenstand angelegt werden. Das letzte Fach bleibt dauerhaft leer, damit weiterhin Gegenstände eingesammelt werden können.", "There is five different equipment types. Of each type exactly one item can be equipped. The last slot stays permanently empty to still allow picking up items."))
@@ -180,7 +177,6 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("RM auf Gegenstand und LM auf denselben Gegenstand verschiebt den Gegenstand in den Rucksack.", "RM on item and LM on the same item moves the item in the rucksack."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Ausrüstungstypen: Helm, Rüstung, Erstwaffe, Zweitwaffe, Amulett/Ring", "Equipment types: helmet, armour, primary weapon, secondary weapon, amulet/ring"))
-
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Rucksack", "Backpack"))
@@ -198,7 +194,6 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestItemSetDescription(questItem, tre("RM auf Gegenstand und LM auf das vierte dauerhaft freie Slot legt den Gegenstand mit allen Ladungen ab.", "RM on item and LM on the fourth permanently empty slot drops the item with all charges."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("RM auf Gegenstand und LM auf einen Taschengegenstand verschiebt den Gegenstand in eine andere Tasche.", "RM on item and LM on a bag item moves the item to another bag."))
-
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Wiederbelebungs-Schreine", "Revival Shrines"))
@@ -223,12 +218,10 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			call QuestSetDescription(whichQuest, tre("Einige der computergesteuerte Personen verkaufen Waren an einem Stand. Andere verkaufen Waren aus ihrer Kiste. An den Ständen und Kisten können eigene Gegenstände für ihren Wert in Goldmünzen verkauft werden. Dazu muss ein Gegenstand mit einem Rechtsklick ausgewählt und mit einem Linksklick auf dem entsprechenden Stand oder der entsprechenden Kiste platziert werden.", "Some Computer controlled persons sell goods at a stall. Others sell goods from their box. At stalls and boxes own items can be selled for their value in gold coins. For this an item must be selected with a right click and be placed with a left click on the corresponding stall or the corresponding box."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNMerchant.blp")
 
-
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Erfahrung", "Experience"))
 			call QuestSetDescription(whichQuest, Format(tre("Die maximale Stufe ist %1%. Auf Stufe %2% und Stufe %3% kann jeweils eine Ultimate-Fähigkeit erlernt werden. Erfahrung vom Töten von Unholden wird gleichmäßig auf alle Charaktere in der gesamten Karte verteilt. Aufträge geben weitaus mehr Erfahrung als das Töten von Unholden.", "The maximum level is %1%. At level %2% and level %3% each there can be learned an ultimate ability. Experience from killing of creeps will be distributed equally to the characters in the whole map. Quests give much more experience than the killing of creeps.")).i(MapSettings.maxLevel()).i(Grimoire.ultimate0Level).i(Grimoire.ultimate1Level).result())
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNStatUp.blp")
-
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Goldmünzen", "Gold Coins"))
@@ -237,12 +230,10 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Goldmünzen für Unholde: Unholdstufe * 2", "Gold coins for creeps: Creep level"))
 
-
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Zauber", "Spells"))
-			call QuestSetDescription(whichQuest, tre("Jede Klasse besitzt 15 verschiedene Zauber. Diese können im Einheitenmenü \"Zauber erlernen\" des Charakters erlernt werden. Einen Grundzauber dessen Stufe stets eins ist und der von Anfang erlernt wurde. Zwei Ultimativ-Zauber mit einer Stufe, die auf Stufe 12 und auf Stufe 25 erlernt werden können und zwölf gewöhnliche Zauber mit jeweils fünf Stufen. Das Erhöhen der Stufe eines Zaubers kostet einen Zauberpunkt. Pro Stufe erhält ein Charakter zwei Zauberpunkte. Er startet jedoch mit bereits drei Zauberpunkten. Zauberstufen können jederzeit wieder zurückgesetzt werden.", "Each class has 15 different spells. They can be learned in the unit menu \"Learn spells\" of the character. One basic spell of which the level is always one and which is learned from the beginning. Two ultimate spells with one level which can be learned at level 12 and level 25 and twelve usual spells with five levels each. Increasing the level of a spell costs one skill point. Per level a character gains two skill points. Yet he starts with already three skill points. Spell levels can be always be reset."))
+			call QuestSetDescription(whichQuest, tre("Jede Klasse besitzt 15 verschiedene Zauber sowie die Fähigkeit \"Attribut-Bonus\". Diese können im Einheitenmenü \"Zauber erlernen\" des Charakters erlernt werden. Einen Grundzauber dessen Stufe stets eins ist und der von Anfang erlernt wurde. Zwei Ultimativ-Zauber mit einer Stufe, die auf Stufe 12 und auf Stufe 25 erlernt werden können und zwölf gewöhnliche Zauber mit jeweils fünf Stufen. Das Erhöhen der Stufe eines Zaubers kostet einen Zauberpunkt. Pro Stufe erhält ein Charakter zwei Zauberpunkte. Er startet jedoch mit bereits drei Zauberpunkten. Zauberstufen können jederzeit wieder zurückgesetzt werden.", "Each class has 15 different spells as well as the ability \"Attribute Bonus\". They can be learned in the unit menu \"Learn spells\" of the character. One basic spell of which the level is always one and which is learned from the beginning. Two ultimate spells with one level which can be learned at level 12 and level 25 and twelve usual spells with five levels each. Increasing the level of a spell costs one skill point. Per level a character gains two skill points. Yet he starts with already three skill points. Spell levels can be always be reset."))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNSpellBook.blp")
-
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Berufe", "Professions"))

@@ -183,7 +183,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	endstruct
 
 	/**
-	 * \brief Static class which stores all global item types of the mod.
+	 * \brief Static struct which stores all global item types of the mod.
+	 * The object data and item types must be available in EVERY map of the campaign since the character can travel from map to map.
+	 * Therefore the item types need to be specified globally (here) and not per map.
 	 * \note Do not add usable abilities, only permanents!
 	 * \note Only equipable item types have to be added. Charged usable items or quest items for the bagpack only do not have to be added at all.
 	 */
@@ -247,6 +249,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_knightHelmet
 		private static ItemType m_fineKnightHelmet
 		private static ItemType m_ironArmour
+		private static ItemType m_amuletOfStrength
+		private static ItemType m_decoratedAmuletOfStrength
+		private static ItemType m_ringOfStrength3
 		// Björn's items
 		private static ItemType m_cloak
 		private static ItemType m_hood
@@ -262,7 +267,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_amuletOfTerror
 		private static ItemType m_swordOfDarkness
 
-		private static ItemType m_amuletOfStrength
+		private static ItemType m_amuletOfPower
 		private static ItemType m_amuletOfLife
 		private static ItemType m_bloodyDragonAxe
 		private static ItemType m_hornOfFighting
@@ -564,6 +569,15 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_ironArmour = ItemType.createSimple('I067', AItemType.equipmentTypeArmour)
 			call thistype.m_ironArmour.addAbility('A1E4', true)
 
+			set thistype.m_amuletOfStrength = ItemType.createSimple('I07H', AItemType.equipmentTypeAmulet)
+			call thistype.m_amuletOfStrength.addAbility('AIs4', true)
+
+			set thistype.m_decoratedAmuletOfStrength = ItemType.createSimple('I07I', AItemType.equipmentTypeAmulet)
+			call thistype.m_decoratedAmuletOfStrength.addAbility('AIs6', true)
+
+			set thistype.m_ringOfStrength3 = ItemType.createSimple('I07J', AItemType.equipmentTypeAmulet)
+			call thistype.m_ringOfStrength3.addAbility('AIs3', true)
+
 			// Björn's items
 			set thistype.m_cloak = ItemType.createSimple('I023', AItemType.equipmentTypeArmour)
 			call thistype.m_cloak.addAbility('A1DC', true)
@@ -608,8 +622,8 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_swordOfDarkness.addAbility('A095', true)
 			call thistype.m_swordOfDarkness.addAbility('S005', true)
 
-			set thistype.m_amuletOfStrength = ItemType.createSimple('I04D', AItemType.equipmentTypeAmulet)
-			call thistype.m_amuletOfStrength.addAbility('AIs1', true)
+			set thistype.m_amuletOfPower = ItemType.createSimple('I04D', AItemType.equipmentTypeAmulet)
+			call thistype.m_amuletOfPower.addAbility('AIs1', true)
 
 			set thistype.m_amuletOfLife = ItemType.createSimple('I04K', AItemType.equipmentTypeAmulet)
 			call thistype.m_amuletOfLife.addAbility('A0VS', true)
