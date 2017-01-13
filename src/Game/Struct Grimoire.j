@@ -472,7 +472,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		 * \param spell The spell which is added to the favorites.
 		 * \return Returns true if the spell has been added to the favorites successfully. Otherwise it returns false.
 		 */
-		private method addFavouriteSpell takes Spell spell returns boolean
+		public method addFavouriteSpell takes Spell spell returns boolean
 			local integer level = spell.level()
 			local integer favouriteAbility = spell.favouriteAbility()
 			if (this.m_favourites.size() == thistype.maxFavourites) then
@@ -486,7 +486,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			return true
 		endmethod
 
-		private method removeFavouriteSpell takes Spell spell returns boolean
+		public method removeFavouriteSpell takes Spell spell returns boolean
 			local integer level = spell.level()
 			if (not this.m_favourites.contains(spell)) then
 				return false

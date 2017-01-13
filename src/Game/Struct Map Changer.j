@@ -96,7 +96,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			loop
 				exitwhen (i == character.grimoire().spells())
 				set spell = character.grimoire().spell(i)
-				call StoreInteger(cache, missionKey, "Grimoire" + I2S(spell.ability()), spell.level())
+				call StoreInteger(cache, missionKey, "Grimoire" + I2S(spell.ability()) + "Level", spell.level())
+				call StoreBoolean(cache, missionKey, "Grimoire" + I2S(spell.ability()) + "Favorites", character.grimoire().favourites().contains(spell))
 				set i = i + 1
 			endloop
 		endmethod
@@ -266,7 +267,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call character.grimoire().clearUiSpells()
 				debug call Print("New grimoire spells count: " + I2S(character.grimoire().spells()) + " favorite spells count: " + I2S(character.grimoire().favourites().size()) + " and learned spells count " + I2S(character.grimoire().learnedSpells()))
 				// Destroy all spells since the class might have been repicked! Include map specific spells etc. as well. Exclude Grimoire control spells as well as the grimoire spell itself.
-				call thistype.destroyAllSpells.evaluate(character) // New OpLimit.
+				call thistype.destroyAllNonGrimoireSpells.evaluate(character) // New OpLimit.
 				// don't clear all ASpell spells, otherwise Grimoire spells which inherit ASpell will be cleared completely.
 				call character.classSpells().clear()
 
@@ -299,7 +300,9 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				exitwhen (i == character.grimoire().spells())
 				set spell = character.grimoire().spell(i)
 				// use new OpLimit, otherwise OpLimit will be reached very fast
-				call thistype.restoreGrimoireSpellLevel.evaluate(character, cache, missionKey, i, "Grimoire" + I2S(spell.ability()))
+				call thistype.restoreGrimoireSpellLevel.evaluate(character, cache, missionKey, i, "Grimoire" + I2S(spell.ability()) + "Level")
+				// use new OpLimit, otherwise OpLimit will be reached very fast
+				call thistype.restoreGrimoireSpellIsInFavorites.evaluate(character, cache, missionKey, spell, "Grimoire" + I2S(spell.ability()) + "Favorites")
 				set i = i + 1
 			endloop
 			//debug call Print("After restoring spell levels. Total skill points: " + I2S(character.grimoire().totalSkillPoints()))
@@ -332,7 +335,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			return  abilityId == Grimoire.abilityId or abilityId == PreviousPage.id or abilityId == NextPage.id or abilityId == SetMax.id or abilityId == Unlearn.id or abilityId == Increase.id or abilityId == Decrease.id or abilityId == AddToFavourites.id or abilityId == RemoveFromFavourites.id or abilityId == BackToGrimoire.id
 		endmethod
 
-		private static method destroyAllSpells takes Character character returns nothing
+		private static method destroyAllNonGrimoireSpells takes Character character returns nothing
 			local integer i = 0
 			local boolean foundGrimoireAbility = false
 			// Destroy Spell instances (class spells) first which automatically destroys the corresponding grimoire entries (of type ASpell) and removes the spells from class spells
@@ -375,6 +378,13 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local integer level = GetStoredInteger(cache, missionKey, key)
 			if (level > 0) then
 				call character.grimoire().setSpellLevelByIndex(spellIndex, level, false)
+			endif
+		endmethod
+
+		private static method restoreGrimoireSpellIsInFavorites takes Character character, gamecache cache, string missionKey, Spell spell, string key returns nothing
+			local boolean inFavorites = GetStoredBoolean(cache, missionKey, key)
+			if (inFavorites) then
+				call character.grimoire().addFavouriteSpell(spell)
 			endif
 		endmethod
 
