@@ -197,8 +197,17 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 
 		public stub method onTrigger takes nothing returns nothing
 			local Character character = this.spellbook().character()
-
-			call character.infoLog().show()
+static if (DMDF_INFO_LOG) then
+			if (not character.infoLog().isShown()) then
+				debug call Print("Show info log: " + I2S(character.infoLog()))
+				call character.infoLog().showEx.execute()
+			else
+				debug call Print("Hide info log: " + I2S(character.infoLog()))
+				call character.infoLog().hide()
+			endif
+else
+			debug call Print("Dont show info log")
+endif
 		endmethod
 
 		public static method create takes OptionsSpellbook spellbook returns thistype

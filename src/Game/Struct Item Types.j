@@ -51,6 +51,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_twoSlotItems.pushBack('I05C')
 			call thistype.m_twoSlotItems.pushBack('I06Y')
 			call thistype.m_twoSlotItems.pushBack('I075')
+			call thistype.m_twoSlotItems.pushBack('I07L')
 		endmethod
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
@@ -340,6 +341,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		// map The North
 		private static ItemType m_enchantedDwarfBlade
+		private static ItemType m_twoHandedSwordCold
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -380,6 +382,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1TL', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1TN', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A0KE', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1VN', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -802,6 +805,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			// The North
 			set thistype.m_enchantedDwarfBlade = ItemType.create('I07E', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_enchantedDwarfBlade.addAbility('A1VF', true)
+
+			set thistype.m_twoHandedSwordCold = ItemType.create('I07L', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_twoHandedSwordCold.addAbility('A1VN', true)
+			call thistype.m_twoHandedSwordCold.addAbility('A1VL', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType

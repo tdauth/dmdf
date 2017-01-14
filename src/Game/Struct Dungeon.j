@@ -1,4 +1,4 @@
-library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGame, StructGameTreeTransparency
+library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGame, StructGameOptions, StructGameTreeTransparency
 
 	/**
 	 * \brief Dungeons allow the use of separate rects with custom camera bounds.

@@ -25,7 +25,8 @@ library StructGuisCharacterManagement requires Asl, StructGameCharacter, StructG
 			// construction members
 			set this.m_character = character
 			// members
-			set this.m_background = AImage.create(this, 0.0, 0.0, 1280.0, 960.0, "", 0, 0)
+			set this.m_background = AImage.create(this, 0.0, 0.0, GetRectWidthBJ(whichRect), GetRectHeightBJ(whichRect), "", 0, 0)
+			// TODO crash!
 			call this.m_background.setFile("CharacterManagement.tga")
 
 			return this

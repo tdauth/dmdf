@@ -1,4 +1,4 @@
-library StructGameShrine requires Asl, StructGameCharacter, StructGameTutorial
+library StructGameShrine requires Asl, StructGameCharacter, StructGameOptions, StructGameTutorial
 
 	/**
 	 * \brief Revival shrine for characters.

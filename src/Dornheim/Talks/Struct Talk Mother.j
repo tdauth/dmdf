@@ -92,11 +92,11 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 
 			if (thistype.infoConditionGold(info, character)) then
 				call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) - 50)
-				call speech(info, character, false, tr("Hier sind 50 Goldmünzen."), null)
+				call speech(info, character, false, tre("Hier sind 50 Goldmünzen.", "Here you have 50 gold coins."), null)
 				call speech(info, character, true, tr("Das freut mich aber, mein Sohn. Ich bin stolz auf dich. Bald können wir unseren Gasthof ausbauen, zu einem stattlichen Gebäude."), null)
 				// TODO some effect!
 			else
-				call speech(info, character, false, tr("Leider nicht."), null)
+				call speech(info, character, false, tre("Leider nicht.", "Unfortunately not."), null)
 				call speech(info, character, true, tr("Schade, sehr schade."), null)
 			endif
 
@@ -105,7 +105,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 
 		private static method infoActionGoldBack takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Leider nicht."), null)
+			call speech(info, character, false, tre("Leider nicht.", "Unfortunately not."), null)
 			call speech(info, character, true, tr("Schade, sehr schade."), null)
 			call this.showStartPage(character)
 		endmethod
@@ -120,8 +120,8 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			set this.m_back = this.addInfo(false, false, thistype.infoConditionBack, thistype.infoActionBack, tr("Da bin ich wieder."))
 			set this.m_exit = this.addExitButton()
 
-			set this.m_gold = this.addInfo(true, false, thistype.infoConditionGold, thistype.infoActionGold, tr("Hier sind 50 Goldmünzen."))
-			set this.m_goldBack = this.addInfo(true, false, 0, thistype.infoActionGoldBack, tr("Leider nicht."))
+			set this.m_gold = this.addInfo(true, false, thistype.infoConditionGold, thistype.infoActionGold, tre("Hier sind 50 Goldmünzen.", "Here you have 50 gold coins."))
+			set this.m_goldBack = this.addInfo(true, false, 0, thistype.infoActionGoldBack, tre("Leider nicht.", "Unfortunately not."))
 
 			return this
 		endmethod
