@@ -716,6 +716,12 @@ function VideoFadeInWithWait takes nothing returns nothing
 	call Game.fadeInWithWait()
 endfunction
 
+// Shop API
+
+function CreateShop takes unit npc, unit shop returns Shop
+	return Shop.create(npc, shop)
+endfunction
+
 struct MapData
 	//! runtextmacro optional A_STRUCT_DEBUG("\"MapData\"")
 

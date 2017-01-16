@@ -506,6 +506,12 @@ VideoTransmissionFromUnit="Video Transmission From Unit"
 VideoTransmissionFromUnit="Video Transmision from Unit ",~Unit," with Text ",~Text," Using Sound ",~Sound
 VideoTransmissionFromUnitHint=""
 
+// Shop API
+
+CreateShop="Create Shop"
+CreateShop="Create Shop with NPC ",~NPC," And Shop Unit ",~Shop
+CreateShopHint=""
+
 // Obsolete actions
 //AddPerfLogLabel="** AddPerfLogLabel **"
 //AddPerfLogLabel="** AddPerfLogLabel(",~Label,") **"

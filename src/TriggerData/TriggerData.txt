@@ -21,6 +21,7 @@ TC_TPOF_SPAWNPOINT="Spawn Point",ReplaceableTextures\WorldEditUI\Actions-Unit
 TC_TPOF_DUNGEON="Dungeon",ReplaceableTextures\WorldEditUI\Actions-Visibility
 TC_TPOF_ROUTINE="Routine",ReplaceableTextures\WorldEditUI\Actions-Environment
 TC_TPOF_VIDEO="Video",ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_TPOF_SHOP="Shop",ReplaceableTextures\WorldEditUI\Actions-Goldmine
 //%%% DEBUG - Remove for retail
 //TC_OBSOLETE=WESTRING_TRIGCAT_OBSOLETE,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
 //TC_DEBUG=WESTRING_TRIGCAT_DEBUG,ReplaceableTextures\WorldEditUI\Editor-TriggerFunction
@@ -716,6 +717,12 @@ _VideoFadeInWithWait_Category=TC_TPOF_VIDEO
 VideoTransmissionFromUnit=1,unit,string,sound
 _VideoTransmissionFromUnit_Defaults=
 _VideoTransmissionFromUnit_Category=TC_TPOF_VIDEO
+
+// Shop API
+
+CreateShop=1,unit,unit
+_CreateShop_Defaults=
+_CreateShop_Category=TC_TPOF_SHOP
 
 // Obsolete actions
 //AddPerfLogLabel=0,string
