@@ -6,7 +6,7 @@ library StructSpellsSpellCowNova requires Asl, StructGameClasses, StructGameSpel
 		private static sound m_sound
 
 		/// @todo Replace by static method, vJass bug.
-		private static method alightAction takes unit usedUnit returns nothing
+		private static method alignAction takes unit usedUnit returns nothing
 			local player owner = GetOwningPlayer(usedUnit)
 			local integer i
 			local AGroup targets = AGroup.create()
@@ -35,7 +35,7 @@ library StructSpellsSpellCowNova requires Asl, StructGameClasses, StructGameSpel
 			loop
 				exitwhen (i < 0.0)
 				set cow = CreateUnit(owner, 'n000', GetUnitPolarProjectionX(caster, i, 300.0), GetUnitPolarProjectionY(caster, i, 300.0), i)
-				call AJump.create(cow, 1100.0, GetUnitPolarProjectionX(caster, i, 600.0), GetUnitPolarProjectionY(caster, i, 600.0), thistype.alightAction, 100.0)
+				call AJump.create(cow, 1100.0, GetUnitPolarProjectionX(caster, i, 600.0), GetUnitPolarProjectionY(caster, i, 600.0), thistype.alignAction, 100.0)
 				call ShowGeneralFadingTextTagForPlayer(owner, tre("MUH!", "MOO!"), GetUnitX(cow), GetUnitY(cow), 255, 255, 255, 255)
 				call PlaySoundOnUnitBJ(thistype.m_sound, 100.0, cow)
 				set cow = null
@@ -46,7 +46,7 @@ library StructSpellsSpellCowNova requires Asl, StructGameClasses, StructGameSpel
 		endmethod
 
 		public static method create takes ACharacter character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 
 		private static method onInit takes nothing returns nothing

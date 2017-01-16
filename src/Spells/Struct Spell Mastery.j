@@ -40,7 +40,7 @@ library StructSpellsSpellMastery requires Asl, StructGameClasses, StructGameSpel
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			set this.m_effectTimer = CreateTimer()
 			call TimerStart(this.m_effectTimer, thistype.interval, true, function thistype.timerFunction)
 			call DmdfHashTable.global().setHandleInteger(this.m_effectTimer, 0, this)

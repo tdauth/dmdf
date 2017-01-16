@@ -11,13 +11,13 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05H')
 			call this.character().inventory().removeItemType('I007')
@@ -27,10 +27,10 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	/**
 	 * Allows the creation of scrolls with the corresponding resources.
 	 */
@@ -42,13 +42,13 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05I')
 			call this.character().inventory().removeItemType('I05I')
@@ -58,10 +58,10 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	struct SpellBookOfMagicScrollOfHealing extends ASpell
 		public static constant integer abilityId = 'A18O'
 
@@ -70,13 +70,13 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I00B')
 			call Character(this.character()).displayItemAcquired(GetObjectName('I00F'), tre("Hergestellt.", "Crafted."))
@@ -85,10 +85,10 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	struct SpellBookOfMagicScrollOfMana extends ASpell
 		public static constant integer abilityId = 'A18P'
 
@@ -97,13 +97,13 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I00C')
 			call Character(this.character()).displayItemAcquired(GetObjectName('I00G'), tre("Hergestellt.", "Crafted."))
@@ -112,10 +112,10 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	struct SpellBookOfMagicScrollOfAncestors extends ASpell
 		public static constant integer abilityId = 'A19Y'
 
@@ -124,13 +124,13 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05I')
 			call this.character().inventory().removeItemType('I05I')
@@ -141,10 +141,10 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	struct SpellBookOfMagicScrollOfCollector extends ASpell
 		public static constant integer abilityId = 'A1AC'
 
@@ -153,13 +153,13 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I03Y')
 			call this.character().inventory().removeItemType('I05K')
@@ -169,10 +169,10 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	struct SpellBookOfMagicScrollOfWay extends ASpell
 		public static constant integer abilityId = 'A1A7'
 
@@ -181,13 +181,13 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I047')
 
@@ -197,7 +197,7 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
 

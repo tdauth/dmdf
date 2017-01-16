@@ -21,23 +21,14 @@ library StructSpellsSpellCatRune requires Asl
 		endmethod
 
 		private static method triggerActionSummonCat takes nothing returns nothing
-			local unit summoningUnit = GetSummoningUnit()
-			call UnitAddAbility(summoningUnit, thistype.chaosAbilityId)
-			set summoningUnit = null
+			call UnitAddAbility(GetSummoningUnit(), thistype.chaosAbilityId)
 		endmethod
 
 		public static method init takes nothing returns nothing
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_summonTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)
-			set conditionFunction = Condition(function thistype.triggerConditionSummonCat)
-			set triggerCondition = TriggerAddCondition(thistype.m_summonTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_summonTrigger, function thistype.triggerActionSummonCat)
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerAddCondition(thistype.m_summonTrigger, Condition(function thistype.triggerConditionSummonCat))
+			call TriggerAddAction(thistype.m_summonTrigger, function thistype.triggerActionSummonCat)
 		endmethod
 	endstruct
 

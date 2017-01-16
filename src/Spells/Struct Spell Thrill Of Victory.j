@@ -10,7 +10,7 @@ library StructSpellsSpellThrillOfVictory requires Asl, StructGameClasses, Struct
 		public static constant integer maxLevel = 1
 		private static constant real damageOpponentPercentage = 0.05
 		private static constant integer damageKey = DMDF_HASHTABLE_KEY_THRILLOFVICTORY_DAMAGE
-		
+
 		private static method filterIsNotDead takes nothing returns boolean
 			return not IsUnitDeadBJ(GetFilterUnit())
 		endmethod
@@ -24,11 +24,11 @@ library StructSpellsSpellThrillOfVictory requires Asl, StructGameClasses, Struct
 			if (GetUnitAbilityLevel(GetEventDamageSource(), thistype.abilityId) == 0) then
 				return
 			endif
-			
+
 			if (DmdfHashTable.global().handleBoolean(GetEventDamageSource(), thistype.damageKey)) then
 				return
 			endif
-			
+
 			set opponents = AGroup.create()
 			call opponents.addUnitsInRange(GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 900.0, Filter(function thistype.filterIsNotDead))
 			set i = 0
@@ -40,7 +40,7 @@ library StructSpellsSpellThrillOfVictory requires Asl, StructGameClasses, Struct
 					set i = i + 1
 				endif
 			endloop
-			
+
 			if (not opponents.units().isEmpty()) then
 				set damage = thistype.damageOpponentPercentage * GetEventDamage() * opponents.units().size()
 				debug call Print(R2S(damage) + " is damage with " + I2S(opponents.units().size()) + " enemies in range.")
@@ -50,20 +50,20 @@ library StructSpellsSpellThrillOfVictory requires Asl, StructGameClasses, Struct
 				call DmdfHashTable.global().setHandleBoolean(GetEventDamageSource(), thistype.damageKey, false)
 				call Spell.showDamageTextTag(GetTriggerUnit(), damage)
 			endif
-			
+
 			call opponents.destroy()
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.dragonSlayer(), Spell.spellTypeUltimate0, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A1OB', 'A1OC')
 			call this.addGrimoireEntry('A1FT', 'A1FU')
-			
+
 			call this.setIsPassive(true)
-			
+
 			call DmdfHashTable.global().setHandleBoolean(character.unit(), thistype.damageKey, false)
 			call Game.registerOnDamageActionOnce(thistype.onDamageAction)
-			
+
 			return this
 		endmethod
 	endstruct

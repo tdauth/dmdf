@@ -48,6 +48,9 @@ library TPoFTriggerData requires Asl, Dmdf
 
 globals
 	// Last X'd vars
+	AQuest lastCreatedCharacterQuest = 0
+	Talk lastCreatedTalk = 0
+	AInfo lastCreatedInfo = 0
 	Fellow lastCreatedFellow = 0
 	SpawnPoint lastCreatedSpawnPoint = 0
 	ItemSpawnPoint lastCreatedItemSpawnPoint = 0
@@ -203,6 +206,14 @@ function CreateZone takes string mapName, rect enterRect returns Zone
 	return Zone.create(mapName, enterRect)
 endfunction
 
+function GameAddDefaultDoodadsOcclusion takes nothing returns nothing
+	call Game.addDefaultDoodadsOcclusion()
+endfunction
+
+function GameApplyHandicapToCreeps takes nothing returns nothing
+	call Game.applyHandicapToCreeps()
+endfunction
+
 function SetMapSettingsMapName takes string mapName returns nothing
 	call MapSettings.setMapName(mapName)
 endfunction
@@ -223,6 +234,10 @@ function SetMapSettingsMusic takes string musicList returns nothing
 	call MapSettings.setMapMusic(musicList)
 endfunction
 
+function SetMapSettingsStartLevel takes integer startLevel returns nothing
+	call MapSettings.setStartLevel(startLevel)
+endfunction
+
 function ChangeMap takes string mapName returns nothing
 	 call MapChanger.changeMap(mapName)
 endfunction
@@ -235,8 +250,13 @@ function SetZoneEnabled takes Zone zone, boolean flag returns nothing
 	endif
 endfunction
 
+function GetLastCreatedInfo takes nothing returns AInfo
+	return lastCreatedInfo
+endfunction
+
 function AddInfo takes Talk talk, boolean permanent, boolean important, string text returns AInfo
-	return talk.addInfo(permanent, important, 0, 0, text)
+	set lastCreatedInfo = talk.addInfo(permanent, important, 0, 0, text)
+	return lastCreatedInfo
 endfunction
 
 function SetInfoCondition takes AInfo info, AInfoCondition infoCondition returns nothing
@@ -321,8 +341,13 @@ function EnableQuestUntil takes AQuest whichQuest, integer questItemIndex return
 	call whichQuest.enableUntil(questItemIndex)
 endfunction
 
+function GetLastCreatedCharacterQuest takes nothing returns AQuest
+	return lastCreatedCharacterQuest
+endfunction
+
 function CreateCharacterQuest takes Character character, string title returns AQuest
-	return AQuest.create(character, title)
+	set lastCreatedCharacterQuest = AQuest.create(character, title)
+	return lastCreatedCharacterQuest
 endfunction
 
 function CreateCharacterQuestItem takes AQuest whichQuest, string title returns AQuestItem
@@ -399,8 +424,13 @@ endfunction
 
 // Talk API
 
+function GetLastCreatedTalk takes nothing returns Talk
+	return lastCreatedTalk
+endfunction
+
 function CreateTalk takes unit whichUnit returns Talk
-	return Talk.create(whichUnit, 0) // Set the talk action by trigger AFTER creation!
+	set lastCreatedTalk = Talk.create(whichUnit, 0) // Set the talk action by trigger AFTER creation!
+	return lastCreatedTalk
 endfunction
 
 function SetTalkStartAction takes Talk talk, ATalkStartAction startAction returns nothing
@@ -483,7 +513,8 @@ function CloseTalk takes Talk talk, Character character returns nothing
 endfunction
 
 function AddExitButton takes Talk talk returns AInfo
-	return talk.addExitButton()
+	set lastCreatedInfo = talk.addExitButton()
+	return lastCreatedInfo
 endfunction
 
 function TalkStartActionExecute takes Talk talk, Character character returns nothing
@@ -498,6 +529,8 @@ function TalkStartActionByTrigger takes trigger whichTrigger, Talk talk returns 
 	call TalkStartActionsHashTable.setTrigger(talk, 0, whichTrigger)
 	return TalkStartActionExecute
 endfunction
+
+// Fellow API
 
 function GetLastCreatedFellow takes nothing returns Fellow
 	return lastCreatedFellow
@@ -533,6 +566,8 @@ function CreateSpawnPoint takes nothing returns SpawnPoint
 	return lastCreatedSpawnPoint
 endfunction
 
+// Fellow API
+
 function ShareFellowWithAll takes Fellow fellow returns nothing
 	call fellow.shareWithAll()
 endfunction
@@ -551,6 +586,10 @@ endfunction
 
 function SetFellowDescription takes Fellow fellow, string description returns nothing
 	call fellow.setDescription(description)
+endfunction
+
+function FellowAddAbility takes Fellow fellow, integer abilityId returns nothing
+	call fellow.addAbility(abilityId)
 endfunction
 
 function SpawnPointAddUnitWithType takes SpawnPoint spawnPoint, unit whichUnit, real chance returns integer
@@ -663,6 +702,10 @@ endfunction
 
 function VideoCharacterActor takes AVideo video returns unit
 	return video.actor()
+endfunction
+
+function VideoPlay takes AVideo video returns nothing
+	call video.play()
 endfunction
 
 function VideoFadeOutWithWait takes nothing returns nothing

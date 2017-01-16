@@ -124,7 +124,7 @@ library StructSpellsSpellRideHorse requires Asl, StructGameClasses, StructSpells
 		endmethod
 
 		public static method create takes Character character, integer morphAbilityId, integer unmorphAbilityId returns thistype
-			local thistype this = thistype.allocate(character, 0, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, 0, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			set this.m_metamorphosis = SpellRideHorseMetamorphosis.create(character, thistype.abilityId, morphAbilityId, unmorphAbilityId)
 
 			call this.addGrimoireEntry('A1SI', 'A1SJ')

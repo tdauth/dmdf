@@ -35,20 +35,20 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this =  thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			set this.effectTimer = CreateTimer()
 			call DmdfHashTable.global().setHandleInteger(this.effectTimer, 0, this)
 			call TimerStart(this.effectTimer, thistype.interval, true, function thistype.timerFunction)
-			
+
 			call this.addGrimoireEntry('A1JI', 'A1JJ')
 			call this.addGrimoireEntry('A0XI', 'A0XN')
 			call this.addGrimoireEntry('A0XJ', 'A0XO')
 			call this.addGrimoireEntry('A0XK', 'A0XP')
 			call this.addGrimoireEntry('A0XL', 'A0XQ')
 			call this.addGrimoireEntry('A0XM', 'A0XR')
-			
+
 			call this.setIsPassive(true)
-			
+
 			return this
 		endmethod
 
@@ -57,7 +57,7 @@ library StructSpellsSpellConcentration requires Asl, StructGameClasses, StructGa
 			call DmdfHashTable.global().destroyTimer(this.effectTimer)
 			set this.effectTimer = null
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.whichSound = CreateSound("Abilities\\Spells\\Items\\AIre\\RestorationPotion.wav", false, false, true, 12700, 12700, "")
 		endmethod

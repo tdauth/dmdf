@@ -7,16 +7,16 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 		public static constant integer classSelectionAbilityId = 'A1OR'
 		public static constant integer classSelectionGrimoireAbilityId = 'A1OS'
 		public static constant integer maxLevel = 5
-		
+
 		public method updateBearFormSpells takes integer zoologyLevel returns nothing
 			if (zoologyLevel > 0) then
 				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
-				
+
 				// zoology level 1 ability for bear form
 				// Gebrüll
 				call UnitAddAbility(this.character().unit(), 'A1PR')
 				call SetPlayerAbilityAvailable(this.character().player(), 'A1PR', false)
-				
+
 				// Prankenhieb
 				if (zoologyLevel > 1) then
 					call UnitAddAbility(this.character().unit(), 'A1PS')
@@ -34,7 +34,7 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 					call UnitRemoveAbility(this.character().unit(), 'A1PT')
 					call SetPlayerAbilityAvailable(this.character().player(), 'A1PT', true)
 				endif
-				
+
 				// Winterschlaf
 				if (zoologyLevel > 3) then
 					call UnitAddAbility(this.character().unit(), 'A1PV')
@@ -43,7 +43,7 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 					call UnitRemoveAbility(this.character().unit(), 'A1PV')
 					call SetPlayerAbilityAvailable(this.character().player(), 'A1PV', true)
 				endif
-				
+
 				// Bärenhöhle
 				if (zoologyLevel > 4) then
 					call UnitAddAbility(this.character().unit(), 'A1PW')
@@ -57,16 +57,16 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 				call SetPlayerAbilityAvailable(this.character().player(), 'A1PR', true)
 			endif
 		endmethod
-		
+
 		public method updateCrowFormSpells takes integer zoologyLevel returns nothing
 			if (zoologyLevel > 0) then
 				debug call Print("Adding Zoology spell since Zoology is skilled: " + GetAbilityName(SpellZoology.abilityId))
-				
+
 				// zoology level 1 ability for crow form
 				// Junges
 				call UnitAddAbility(this.character().unit(), 'A1PM')
 				call SetPlayerAbilityAvailable(this.character().player(), 'A1PM', false)
-				
+
 				// Sturm
 				if (zoologyLevel > 1) then
 					call UnitAddAbility(this.character().unit(), 'A1PN')
@@ -84,7 +84,7 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 					call UnitRemoveAbility(this.character().unit(), 'A1PO')
 					call SetPlayerAbilityAvailable(this.character().player(), 'A1PO', true)
 				endif
-				
+
 				// Flügelschlag
 				if (zoologyLevel > 3) then
 					call UnitAddAbility(this.character().unit(), 'A1PP')
@@ -93,7 +93,7 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 					call UnitRemoveAbility(this.character().unit(), 'A1PP')
 					call SetPlayerAbilityAvailable(this.character().player(), 'A1PP', true)
 				endif
-				
+
 				// Nest
 				if (zoologyLevel > 4) then
 					call UnitAddAbility(this.character().unit(), 'A1PQ')
@@ -107,7 +107,7 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 				call SetPlayerAbilityAvailable(this.character().player(), 'A1PM', true)
 			endif
 		endmethod
-		
+
 		private method updateByLevel takes integer zoologyLevel returns nothing
 			local Character character = Character(this.character())
 			// TODO slow spellByAbilityId()
@@ -121,17 +121,17 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 				call this.updateCrowFormSpells(zoologyLevel)
 			endif
 		endmethod
-		
+
 		public stub method onLearn takes nothing returns nothing
 			call super.onLearn()
 			call this.updateByLevel(1)
 		endmethod
-		
+
 		public stub method onUnlearn takes nothing returns nothing
 			call super.onUnlearn()
 			call this.updateByLevel(0)
 		endmethod
-		
+
 		/**
 		 * When the level is changed while the character is already morphed, the abilities have to be added or removed.
 		 */
@@ -139,18 +139,18 @@ library StructSpellsSpellZoology requires Asl, StructGameClasses, StructGameSpel
 			call super.setLevel(level)
 			call this.updateByLevel(level)
 		endmethod
-		
+
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A1OR', 'A1OS')
 			call this.addGrimoireEntry('A0EN', 'A0ES')
 			call this.addGrimoireEntry('A0EO', 'A0ET')
 			call this.addGrimoireEntry('A0EP', 'A0EU')
 			call this.addGrimoireEntry('A0EQ', 'A0EV')
 			call this.addGrimoireEntry('A0ER', 'A0EW')
-			
+
 			call this.setIsPassive(true)
-			
+
 			return this
 		endmethod
 	endstruct

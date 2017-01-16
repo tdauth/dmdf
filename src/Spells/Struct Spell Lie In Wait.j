@@ -9,14 +9,14 @@ library StructSpellsSpellLieInWait requires Asl, StructGameClasses, StructGameSp
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.ranger(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.ranger(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A1LZ', 'A1M0')
 			call this.addGrimoireEntry('A12T', 'A12Y')
 			call this.addGrimoireEntry('A12U', 'A12Z')
 			call this.addGrimoireEntry('A12V', 'A130')
 			call this.addGrimoireEntry('A12W', 'A131')
 			call this.addGrimoireEntry('A12X', 'A132')
-			
+
 			return this
 		endmethod
 	endstruct

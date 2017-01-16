@@ -41,7 +41,7 @@ library StructSpellsSpellMercilessness requires Asl, StructGameClasses, StructGa
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A1MJ', 'A1MK')
 			call this.addGrimoireEntry('A1F5', 'A1FA')
 			call this.addGrimoireEntry('A1F6', 'A1FB')

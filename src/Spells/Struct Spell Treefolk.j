@@ -10,18 +10,18 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 		private static trigger m_summonTrigger
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
-			
+			local thistype this = thistype.createWithoutTriggers(character, Classes.druid(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
+
 			call this.addGrimoireEntry('A1OH', 'A1OI')
 			call this.addGrimoireEntry('A0DH', 'A0DM')
 			call this.addGrimoireEntry('A0DI', 'A0DN')
 			call this.addGrimoireEntry('A0DJ', 'A0DO')
 			call this.addGrimoireEntry('A0DK', 'A0DP')
 			call this.addGrimoireEntry('A0DL', 'A0DQ')
-			
+
 			return this
 		endmethod
-		
+
 		private static method triggerConditionSummon takes nothing returns boolean
 			if (GetUnitTypeId(GetSummonedUnit()) == 'e000' or GetUnitTypeId(GetSummonedUnit()) == 'e002' or GetUnitTypeId(GetSummonedUnit()) == 'e003' or GetUnitTypeId(GetSummonedUnit()) == 'e004' or GetUnitTypeId(GetSummonedUnit()) == 'e005') then
 				// the model is summoned with a birth animation
@@ -29,7 +29,7 @@ library StructSpellsSpellTreefolk requires Asl, StructGameClasses, StructGameSpe
 			endif
 			return false
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.m_summonTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)

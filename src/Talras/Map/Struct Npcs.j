@@ -17,6 +17,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		private static unit m_fulco
 		private static unit m_guntrich
 		private static unit m_haid
+		private static unit m_haidsShop
 		private static unit m_haldar
 		private static unit m_heimrich
 		private static unit m_irmina
@@ -45,65 +46,12 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		private static unit m_bjoernsShop
 		private static unit m_agihardsShop
 		private static unit m_deranor
-		private static trigger m_sellTrigger
 
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
 
 		private method onDestroy takes nothing returns nothing
-		endmethod
-		
-		private static method triggerConditionSell takes nothing returns boolean
-			if (GetUnitTypeId(GetSoldUnit()) == 'n05Y') then
-				return true
-			endif
-			
-			return false
-		endmethod
-		
-		private static method timerFunctionSelectShop takes nothing returns nothing
-			local unit sellingUnit = thistype(DmdfHashTable.global().handleUnit(GetExpiredTimer(), 0))
-			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 1)
-			
-			if (sellingUnit == thistype.m_einar) then
-				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_einarsShop), GetUnitY(thistype.m_einarsShop), 0.0, 0.0)
-				call SelectUnitForPlayerSingle(thistype.m_einarsShop, GetOwningPlayer(soldUnit))
-			elseif (sellingUnit == thistype.m_irmina) then
-				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_irminasShop), GetUnitY(thistype.m_irminasShop), 0.0, 0.0)
-				call SelectUnitForPlayerSingle(thistype.m_irminasShop, GetOwningPlayer(soldUnit))
-			elseif (sellingUnit == thistype.m_osman) then
-				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_osmansShop), GetUnitY(thistype.m_osmansShop), 0.0, 0.0)
-				call SelectUnitForPlayerSingle(thistype.m_osmansShop, GetOwningPlayer(soldUnit))
-			elseif (sellingUnit == thistype.m_bjoern) then
-				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_bjoernsShop), GetUnitY(thistype.m_bjoernsShop), 0.0, 0.0)
-				call SelectUnitForPlayerSingle(thistype.m_bjoernsShop, GetOwningPlayer(soldUnit))
-			elseif (sellingUnit == thistype.m_agihard) then
-				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(thistype.m_agihardsShop), GetUnitY(thistype.m_agihardsShop), 0.0, 0.0)
-				call SelectUnitForPlayerSingle(thistype.m_agihardsShop, GetOwningPlayer(soldUnit))
-			endif
-			
-			call RemoveUnit(soldUnit)
-			
-			
-			call PauseTimer(GetExpiredTimer())
-			call DmdfHashTable.global().destroyTimer(GetExpiredTimer())
-		endmethod
-		
-		private static method triggerActionSell takes nothing returns nothing
-			local timer whichTimer = CreateTimer()
-			call DmdfHashTable.global().setHandleUnit(whichTimer, 0, GetSellingUnit()) 
-			call DmdfHashTable.global().setHandleUnit(whichTimer, 1, GetSoldUnit()) 
-			
-			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
-			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
-			debug call Print("Buying unit " + GetUnitName(GetBuyingUnit()))
-			call SetUnitInvulnerable(GetSoldUnit(), true)
-			call ShowUnit(GetSoldUnit(), false)
-			call PauseUnit(GetSoldUnit(), true)
-			
-			// wait since the selling unit is being paused
-			call TimerStart(whichTimer, 0.0, false, function thistype.timerFunctionSelectShop)
 		endmethod
 
 		/// This method is and has to be called after unit creation.
@@ -122,6 +70,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 			set thistype.m_fulco = gg_unit_n012_0115
 			set thistype.m_guntrich = gg_unit_n02T_0141
 			set thistype.m_haid = gg_unit_n017_0137
+			set thistype.m_haidsShop = gg_unit_n05B_0025
 			set thistype.m_haldar = gg_unit_n00K_0040
 			set thistype.m_heimrich = gg_unit_n013_0116
 			set thistype.m_irmina = gg_unit_n01S_0201
@@ -150,7 +99,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 			set thistype.m_carsten = gg_unit_n05G_0393
 			set thistype.m_deranor = gg_unit_u00A_0353
 			set thistype.m_dararos = null
-			
+
 			/*
 			 * Make guardians invulnerable.
 			 */
@@ -158,17 +107,20 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 			call SetUnitInvulnerable(gg_unit_n005_0119, true)
 			call SetUnitInvulnerable(gg_unit_n015_0118, true)
 			call SetUnitInvulnerable(gg_unit_n015_0456, true)
-			
+
 			// make norsemen invulnerable
 			call SetUnitInvulnerable(gg_unit_n01I_0150, true)
 			call SetUnitInvulnerable(gg_unit_n01I_0151, true)
 			call SetUnitInvulnerable(gg_unit_n01I_0152, true)
 			call SetUnitInvulnerable(gg_unit_n01I_0153, true)
-			
-			set thistype.m_sellTrigger = CreateTrigger()
-			call TriggerRegisterAnyUnitEventBJ(thistype.m_sellTrigger, EVENT_PLAYER_UNIT_SELL)
-			call TriggerAddCondition(thistype.m_sellTrigger, Condition(function thistype.triggerConditionSell))
-			call TriggerAddAction(thistype.m_sellTrigger, function thistype.triggerActionSell)
+
+			// has to be called AFTER Shop.init()!
+			call Shop.create(thistype.m_einar, thistype.m_einarsShop)
+			call Shop.create(thistype.m_irmina, thistype.m_irminasShop)
+			call Shop.create(thistype.m_osman, thistype.m_osmansShop)
+			call Shop.create(thistype.m_bjoern, thistype.m_bjoernsShop)
+			call Shop.create(thistype.m_agihard, thistype.m_agihardsShop)
+			call Shop.create(thistype.m_haid, thistype.m_haidsShop)
 		endmethod
 
 		public static method agihard takes nothing returns unit
@@ -194,7 +146,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		public static method dago takes nothing returns unit
 			return thistype.m_dago
 		endmethod
-		
+
 		public static method dragonSlayer takes nothing returns unit
 			return thistype.m_dragonSlayer
 		endmethod
@@ -246,7 +198,7 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		public static method manfred takes nothing returns unit
 			return thistype.m_manfred
 		endmethod
-		
+
 		public static method manfredsDog takes nothing returns unit
 			return thistype.m_manfredsDog
 		endmethod
@@ -298,23 +250,23 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 		public static method wigberht takes nothing returns unit
 			return thistype.m_wigberht
 		endmethod
-		
+
 		public static method sheepBoy takes nothing returns unit
 			return thistype.m_sheepBoy
 		endmethod
-		
+
 		public static method carsten takes nothing returns unit
 			return thistype.m_carsten
 		endmethod
-		
+
 		public static method deranor takes nothing returns unit
 			return thistype.m_deranor
 		endmethod
-		
+
 		public static method initDararos takes unit whichUnit returns nothing
 			 set thistype.m_dararos = whichUnit
 		endmethod
-		
+
 		public static method dararos takes nothing returns unit
 			return thistype.m_dararos
 		endmethod

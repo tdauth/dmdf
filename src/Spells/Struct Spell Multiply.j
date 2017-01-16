@@ -10,7 +10,7 @@ library StructSpellsSpellMultiply requires Asl, StructGameClasses, StructGameSpe
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.wizard(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.wizard(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A1MN', 'A1MO')
 			call this.addGrimoireEntry('A0WI', 'A0WN')
 			call this.addGrimoireEntry('A0WJ', 'A0WO')

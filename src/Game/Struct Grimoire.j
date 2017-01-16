@@ -1090,7 +1090,7 @@ endif
 		 * Creates a new grimoire for character \p character.
 		 */
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, thistype.abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			local thistype this = thistype.allocate(character, thistype.abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, false, false)
 			set this.m_page = 0
 			set this.m_pageIsShown = false
 			set this.m_heroLevel = 1 // heroes start with level 1

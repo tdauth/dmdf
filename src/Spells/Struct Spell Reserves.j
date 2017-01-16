@@ -57,7 +57,7 @@ library StructSpellsSpellReserves requires Asl, StructGameClasses, StructGameGam
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.dragonSlayer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A1ND', 'A1NE')
 			call this.addGrimoireEntry('A1FY', 'A1G3')
 			call this.addGrimoireEntry('A1FZ', 'A1G4')

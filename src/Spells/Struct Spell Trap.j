@@ -11,14 +11,14 @@ library StructSpellsSpellTrap requires Asl, StructGameClasses, StructGameSpell
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.ranger(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.ranger(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A1OF', 'A1OG')
 			call this.addGrimoireEntry('A186', 'A18B')
 			call this.addGrimoireEntry('A187', 'A18C')
 			call this.addGrimoireEntry('A188', 'A18D')
 			call this.addGrimoireEntry('A189', 'A18E')
 			call this.addGrimoireEntry('A18A', 'A18F')
-			
+
 			return this
 		endmethod
 	endstruct

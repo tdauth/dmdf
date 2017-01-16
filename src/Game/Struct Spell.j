@@ -98,7 +98,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 	*/
 
 	/**
-	 * Custom structure for character spells which support \ref Grimoire API.
+	 * Custom structure for character spells which support the \ref Grimoire API.
 	 * For item spells etc. just use \ref ASpell.
 	 * Each spell which should be usable in grimoire needs extra spell pairs per level which are mainly used for
 	 * spell level icons.
@@ -111,6 +111,8 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 	 * <li>ultimate 1 (which can be skilled when character has at least level \ref Grimoire.ultimate1Level) - \ref spellTypeUltimate1</li>
 	 * </ul>
 	 * A spell's type can be specified in constructor.
+	 *
+	 * \ref onLearn(), \ref onUnlearn() and \ref setLevel() can be overridden to react to any spell leveling.
 	 *
 	 * \ref setAvailable() allows specifying if a spell can be used at all.
 	 */
@@ -141,8 +143,10 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 		private boolean m_isPassive
 		private boolean m_isHidden
 		private AIntegerVector m_grimoireEntries /// vector of \ref GrimoireSpellEntry instances
-		private integer m_index
 
+		/**
+		 * \return Returns the spell book based ability which has the same ID as the favorite spells spell book ability but only contains the ability of this spell.
+		 */
 		public method favouriteAbility takes nothing returns integer
 			return this.m_favouriteAbility
 		endmethod
@@ -376,8 +380,8 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 			return GrimoireSpellEntry(this.grimoireEntries()[this.level()]).isShown(this.character().unit())
 		endmethod
 
-		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent returns thistype
-			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, unitEvent)
+		public static method createEx takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent, boolean useUpgradeTrigger, boolean useChannelTrigger, boolean useCastTrigger returns thistype
+			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, unitEvent, useUpgradeTrigger, useChannelTrigger, useCastTrigger)
 			set this.m_savedLevel = 0
 			set this.m_favouriteAbility = favouriteAbility
 			set this.m_maxLevel = maxLevel
@@ -393,6 +397,27 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 			return this
 		endmethod
 
+		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent returns thistype
+			/*
+			 * Since no hero skills are used, always set useUpgradeTrigger to false. This saves one trigger creation.
+			 * This struct uses onLearn() instead.
+			 */
+			return thistype.createEx(character, class, spellType, maxLevel, abilityId, favouriteAbility, upgradeAction, castCondition, castAction, unitEvent, false, true, true)
+		endmethod
+
+		/**
+		 * If the custom spell has no custom code but is only based on a standard Warcraft III ability, you can use this constructor to increase the performance.
+		 * It won't create any triggers and never call the event methods.
+		 */
+		public static method createWithoutTriggers takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility returns thistype
+			return thistype.createEx(character, class, spellType, maxLevel, abilityId, favouriteAbility, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, false, false)
+		endmethod
+
+		/**
+		 * Creates a new class spell for one character which works with the grimpire.
+		 * \param character The character who can use the spell.
+		 * \param class The class to which the spell does belong.
+		 */
 		public static method create takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction returns thistype
 			/*
 			 * Make sure that GetSpellTargetX() and other event data works properly.
@@ -419,6 +444,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 		endmethod
 
 		private static method removeFromClassSpellsWithNewOpLimit takes thistype this returns nothing
+			// TODO slow
 			call Character(this.character()).classSpells().remove(this)
 		endmethod
 

@@ -289,13 +289,16 @@ Zeugs:
 * Magischer Stein der Ahnen geht oft nicht (nach Kartenwechsel?!)
 * Disabled Zones should not show any effect (Magical Barriers).
 * Talras: Game Options: Dungeons are not listed after map transition.
-* Haid: Buy items -> no shop.
+* FIXED: Haid: Buy items -> no shop.
+* DONE: Add Shop struct to use shop buttons in every map not only Talras.
 * The North: Only use GUI triggers as example map when the Trigger Data is ready.
 * Use new model packages (especially for the map The North) from: http://www.hiveworkshop.com/threads/hybrisfactory-terraining-and-mapping-resources.238310/page-46
 * Use race package for the map The North (its a WoW race but who cares): http://www.hiveworkshop.com/threads/vrykul-race-pack.241083/
 * Add a spell caster system with hand attachments: http://www.hiveworkshop.com/threads/caster-hand-attachments.63660/
 * Use a spell caster system with spell books: http://www.hiveworkshop.com/threads/spellbook-pack.144447/
 * Add Doodad types for new ice cliff models.
+* Performance: Don't create cast and skill triggers for spells which don't have custom functions.
+* Performance: Fix preloading all class spells, grimoire abilities etc. to fix lags in the beginning of the game.
 
 Aufgehoben für Version 0.9:
 Critical errors:
@@ -532,7 +535,7 @@ Optimizing:
 * Kornfresserauftrag nach erstem Kornfresser abgeschlossen. Prüfen ob die Member der Spawnpoints initial null sind.
 * Wenn ein Video in bestimmtem Moment unterbrochen wird (fade????) in Karte Gardonar (Intro) kommen danach noch Transmissions.
 * Noch einmal die ganzen Zaubertrigger prüfen: Wird Mana schon verbraucht, obwohl gestoppt wird?
-* Alle laufenden Zauber unterbrechen bevor man die Karte wechselt (DynamicLightnings etc.). Am besten auch Ausfaden wie in Bonus-Kampagne und Einheit pausieren, damit kein Unsinn mehr passiert. Allerdings einfaden nicht vergessen wenn man wieder in die Karte kommt!
+* Alle laufenden Zauber unterbrechen bevor man die Karte wechselt (DynamicLightnings etc. entfernen!). Am besten auch Ausfaden wie in Bonus-Kampagne und Einheit pausieren, damit kein Unsinn mehr passiert. Allerdings einfaden nicht vergessen wenn man wieder in die Karte kommt!
 * Optional: ClassGrimoireEntry mit dem neuen AMultipageSpellbook-System umsetzen?
 * FIXED: Mit dem neuen Startlevel beginnt man mit Stufe 2?!
 * FIXED: Startlevel pro Karte einbauen, da manche Karten ein höheres Level erfordern.
@@ -633,27 +636,27 @@ Optimizing:
 * Fade trees slowly.
 * DEPRECATED: Update loading screens, different loading screen for map Gardonar.
 * FIXED: Reduce transparency to 0.7 or something.
-* Some spell IDs of Zoology spells are the same as the normal ones for the Druid class.
+* Some spell IDs of Zoology spells are the same as the normal ones for the Druid class. Ad them to the LibreOffice Calc file to compare.
 * DEPRECATED: Show text on class selection on how to select the class.
 * FIXED: Use accept button rather than human icon to accept the selected class.
-* Dago needs a different younger model.
-* In class selection the unit is not stopped even although the order is correctly detected.
+* Dago needs a different younger model because of his voice.
+* FIXED (ASL): In class selection the unit is not stopped even although the order is correctly detected.
 * New unit sounds of Dragon Slayer dont work (because they are stereo??).
 * FIXED (Renamed "Stand - 3" and "Stand - 4"): Fix standing animations of character (dont cross arms etc. when wearing weapons). Just rename both.
 * Add stalls with all degrees (0, 90, 180, 270) and replace those tiny boxes.
 * Add a custom music system to play custom music tracks on loop (for example in dungeons). As long as there is no custom music system PlayThematicMusicForPlayer() has to be used. Otherwise the ingame music will be stopped.
 * DONE: Fix cursor in map Gardonar.
-* Arena opponnent walks out of the arena if he is blinded.
+* Arena opponnent walks out of the arena if he is blinded. This makes it too easy to win the fight.
 * Kollisionsgrößen der Charaktere sind zu groß.
 * FIXED: Sound bei Stilleffekt muss bei Unterhaltungen weg.
 * Keine HeroGlows für Schwert, Schild, Helm, Bogen, Lanze, Kräuter, Pilze und Gold.
 * No "defend" animation tag for the Defend ability of the Knight since he has to wear a buckler anyway.
 * FIXED: Stop revival timer after losing an arena fight.
 * FIXED: Remove talks from guards since they dont even show a marker.
-* Use difficulty (also in the campaign) to increase the life of the creeps.
+* DONE (Game.applyHandicapToCreeps()): Use difficulty (also in the campaign) to increase the life of the creeps.
 * DONE: Tiergestalten: Einfach Klassenzauber lassen.
 * FIXED: Tierkunde: Sollte die Werte der Tiergestalten verbessern und keine Fähigkeiten hinzufügen. Wenn doch Fähigkeiten dann in Zauberbuch, da es kein Icon für den Rucksack gibt.
-* Wenn ein Spieler rausfliegt, sollte sein Charakter gelöscht werden.
+* Wenn ein Spieler rausfliegt, sollte sein Charakter gelöscht werden. Die anderen Spieler wollen ihn nicht unbedingt steuern. Sein Gold und seine Erfahrung etc. könnte aufgeteilt werden.
 * DONE: Spruchrolle umbenennen zu Schreinteleport.
 * Elementarwesen sind zu viele oder zu stark. Allerdings bei höherer Stufe nicht mehr. Eventuell Leben abhängig von Stufe des Charakters machen?
 * Performance: At the moment there is 430 .evaluate() calls found in the code. This number should be reduced to improve the performance.
@@ -662,7 +665,7 @@ Optimizing:
 * Finish video "Recruit" (last video?).
 * Update/improve video "Dararos".
 * Finish the map Gardonar as the second chapter of the story.
-* Finish Deranor's tomb.
+* DONE: Finish Deranor's tomb.
 * FIXED: Fix the transition between maps in the campaign mode: The character should be at least transfered and the save game loaded. Besides there should be no class selection if the character is loaded.
 * FIXED: Imp Attack animation is no loop, leads to freeze unit.
 * Fix counting killing corn eaters in quest War. All spawn points seem to have 0 living units at the first kill. They are all dead and null units! addUnitWithType() bugged? or initialized before units are created. Corn eater unit is created in the map script at line 168298 (gg_unit_n016_0473) and witch (which works) is created at 168039 (gg_unit_h00F_0242). Maybe the function CreateNeutralHostile() reaches the OpLimit??? But then the units would not be created.

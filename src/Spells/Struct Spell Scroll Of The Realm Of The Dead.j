@@ -38,7 +38,7 @@ library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructGameShrin
 
 				return false
 			endif
-	
+
 			return true
 		endmethod
 
@@ -61,7 +61,7 @@ library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructGameShrin
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
 

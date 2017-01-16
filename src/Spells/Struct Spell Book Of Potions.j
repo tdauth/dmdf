@@ -11,13 +11,13 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05K')
 			call Character(this.character()).displayItemAcquired(GetObjectName('I00A'), tre("Hergestellt.", "Crafted."))
@@ -26,10 +26,10 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	struct SpellBookOfPotionsManaPotion extends ASpell
 		public static constant integer abilityId = 'A18S'
 
@@ -38,13 +38,13 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05L')
 			call Character(this.character()).displayItemAcquired(GetObjectName('I00D'), tre("Hergestellt.", "Crafted."))
@@ -53,10 +53,10 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	struct SpellBookOfPotionsPoison extends ASpell
 		public static constant integer abilityId = 'A18V'
 
@@ -65,13 +65,13 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I041')
 			call this.character().inventory().removeItemType('I041')
@@ -81,10 +81,10 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	struct SpellBookOfPotionsBigHealPotion extends ASpell
 		public static constant integer abilityId = 'A1CX'
 
@@ -93,13 +93,13 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05K')
 			call this.character().inventory().removeItemType('I05K')
@@ -109,10 +109,10 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
-	
+
 	struct SpellBookOfPotionsBigManaPotion extends ASpell
 		public static constant integer abilityId = 'A1CY'
 
@@ -121,13 +121,13 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 				debug call Print("Success")
 				return true
 			endif
-			
+
 			debug call Print("Fail")
 			call this.character().displayMessage(ACharacter.messageTypeError, tre("Benötigte Rohstoffe fehlen.", "Required resources are missing."))
-			
+
 			return false
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			call this.character().inventory().removeItemType('I05L')
 			call this.character().inventory().removeItemType('I05L')
@@ -137,7 +137,7 @@ library StructSpellsSpellBookOfPotions requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
 

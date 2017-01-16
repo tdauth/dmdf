@@ -14,13 +14,13 @@ library StructMapSpellsSpellMagicalSeed requires Asl, StructMapMapMapData, Struc
 			local real dist = GetDistanceBetweenPointsWithoutZ(GetRectCenterX(gg_rct_trommons_vegetable_garden), GetRectCenterY(gg_rct_trommons_vegetable_garden), GetSpellTargetX(), GetSpellTargetY())
 
 			call PingMinimapExForPlayer(Player(0), GetSpellTargetX(), GetSpellTargetY(), 10.0, 100, 100, 100, false)
-			
+
 			if (not QuestSeedsForTheGarden.characterQuest(this.character()).questItem(2).isNew()) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Der magische Samen ist für Trommon.", "The magical seed is for Trommon."))
-				
+
 				return
 			endif
-			
+
 			if (IsMaskedToPlayer(GetSpellTargetX(), GetSpellTargetY(), this.character().player())) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sichtbar sein.", "Target point has to be visible."))
 				return
@@ -30,14 +30,14 @@ library StructMapSpellsSpellMagicalSeed requires Asl, StructMapMapMapData, Struc
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sich in Trommons Garten befinden.", "Target point has to be in Trommon's garden."))
 				return
 			endif
-			
+
 			call QuestSeedsForTheGarden.characterQuest(this.character()).questItem(2).complete()
 			set whichUnit = CreateUnit(this.character().player(), 'e001', GetSpellTargetX(), GetSpellTargetY(), 0.0)
 			call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\Tranquility\\Tranquility.mdx", whichUnit, "overhead"))
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
 		endmethod
 	endstruct
 

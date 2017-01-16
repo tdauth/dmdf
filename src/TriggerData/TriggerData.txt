@@ -287,6 +287,10 @@ OperatorCompareClass=1,AClass,ComparisonOperator,AClass
 _OperatorCompareClass_Defaults=ClassCleric,OperatorEqual,ClassCleric
 _OperatorCompareClass_Category=TC_CONDITION
 
+OperatorCompareQuestState=1,QuestState,ComparisonOperator,QuestState
+_OperatorCompareQuestState_Defaults=QuestStateNew,OperatorEqual,QuestStateNew
+_OperatorCompareQuestState_Category=TC_CONDITION
+
 //***************************************************************************
 [TriggerActions]
 // Defines action functions
@@ -440,8 +444,8 @@ _SetMapSettingsStartLevel_Defaults=1
 _SetMapSettingsStartLevel_Category=TC_TPOF_MAP
 
 SetMapSettingsStartSkillPoints=1,integer
-_SetMapSettingsStartLevel_Defaults=1
-_SetMapSettingsStartLevel_Category=TC_TPOF_MAP
+_SetMapSettingsStartSkillPoints_Defaults=1
+_SetMapSettingsStartSkillPoints_Category=TC_TPOF_MAP
 
 ChangeMap=1,string
 _ChangeMap_Defaults=ZoneTalras
@@ -505,6 +509,10 @@ SetQuestAreaConditionAndActionByTrigger=1,QuestArea,trigger
 _SetQuestAreaConditionAndActionByTrigger_Defaults=
 _SetQuestAreaConditionAndActionByTrigger_Category=TC_TPOF_QUESTAREA
 
+CreateCharacterQuestItem=AQuest,string
+_CreateCharacterQuestItem_Defaults=
+_CreateCharacterQuestItem_Category=TC_TPOF_QUEST
+
 SetCharacterQuestState=1,AQuest,QuestState
 _SetCharacterQuestState_Defaults=_,QuestStateNew
 _SetCharacterQuestState_Category=TC_TPOF_QUEST
@@ -564,15 +572,15 @@ _SetFellowRevival_Defaults=_,true
 _SetFellowRevival_Category=TC_TPOF_FELLOW
 
 SetFellowRevivalTitle=1,Fellow,string
-_SetFellowRevivalTitle_Defaults=
+_SetFellowRevivalTitle_Defaults=GetLastCreatedFellow,_
 _SetFellowRevivalTitle_Category=TC_TPOF_FELLOW
 
 SetFellowRevivalMessage=1,Fellow,string
-_SetFellowRevivalMessage_Defaults=
+_SetFellowRevivalMessage_Defaults=GetLastCreatedFellow,_
 _SetFellowRevivalMessage_Category=TC_TPOF_FELLOW
 
 SetFellowRevivalSound=1,Fellow,sound
-_SetFellowRevivalSound_Defaults=
+_SetFellowRevivalSound_Defaults=GetLastCreatedFellow,_
 _SetFellowRevivalSound_Category=TC_TPOF_FELLOW
 
 ShareFellowWithAll=1,Fellow
@@ -588,15 +596,15 @@ _ResetFellow_Defaults=
 _ResetFellow_Category=TC_TPOF_FELLOW
 
 SetFellowDescription=1,Fellow,StringExt
-_SetFellowDescription_Defaults=
+_SetFellowDescription_Defaults=GetLastCreatedFellow,_
 _SetFellowDescription_Category=TC_TPOF_FELLOW
 
 SetFellowTalk=1,Fellow,boolean
-_SetFellowTalk_Defaults=
+_SetFellowTalk_Defaults=GetLastCreatedFellow,_
 _SetFellowTalk_Category=TC_TPOF_FELLOW
 
 FellowAddAbility=1,Fellow,abilcode
-_FellowAddAbility_Defaults=
+_FellowAddAbility_Defaults=GetLastCreatedFellow,_
 _FellowAddAbility_Category=TC_TPOF_FELLOW
 
 // Spawn Point API
@@ -612,6 +620,14 @@ _SpawnPointAddNewItemType_Category=TC_TPOF_SPAWNPOINT
 _SpawnPointSpawnDeadOnlyAll=1
 _SpawnPointSpawnDeadOnlyAll_Defaults=
 __SpawnPointSpawnDeadOnlyAll_Category=TC_TPOF_SPAWNPOINT
+
+CreateItemSpawnPointAtItemPos=1,item
+_CreateItemSpawnPointAtItemPos_Defaults=
+_CreateItemSpawnPointAtItemPos_Category=TC_TPOF_SPAWNPOINT
+
+CreateItemSpawnPoint=1,real,real,item
+_CreateItemSpawnPoint_Defaults=
+_CreateItemSpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
 // Dungeon API
 
@@ -668,6 +684,10 @@ _VideoSetStopActionByTrigger_Category=TC_TPOF_VIDEO
 VideoSetSkipActionByTrigger=1,AVideo,trigger
 _VideoSetSkipActionByTrigger_Defaults=
 _VideoSetSkipActionByTrigger_Category=TC_TPOF_VIDEO
+
+VideoPlay=1,AVideo
+_VideoPlay_Defaults=
+_VideoPlay_Category=TC_TPOF_VIDEO
 
 VideoStop=1,AVideo
 _VideoStop_Defaults=
@@ -982,6 +1002,14 @@ CreateCharacterQuestItem=1,0,AQuestItem,AQuest,string
 _CreateCharacterQuestItem_Defaults=
 _CreateCharacterQuestItem_Category=TC_TPOF_QUEST
 
+GetCharacterQuestState=1,0,QuestState,AQuest
+_GetCharacterQuestState=_Defaults=
+_GetCharacterQuestState_Category=TC_TPOF_QUEST
+
+GetSharedQuestState=1,0,QuestState,SharedQuest
+_GetSharedQuestState=_Defaults=
+_GetSharedQuestState_Category=TC_TPOF_QUEST
+
 // Talk API
 
 GetLastCreatedTalk=1,0,Talk
@@ -1136,6 +1164,10 @@ GetLastCreatedVideo=1,0,AVideo
 _GetLastCreatedVideo_Defaults=
 _GetLastCreatedVideo_Category=TC_TPOF_VIDEO
 
+GetTriggerVideo=1,0,AVideo
+_GetTriggerVideo_Defaults=
+_GetTriggerVideo_Category=TC_TPOF_VIDEO
+
 CreateVideo=1,0,AVideo,boolean
 _CreateVideo_Defaults=true
 _CreateVideo_Category=TC_TPOF_VIDEO
@@ -1148,6 +1180,10 @@ VideoWaitForTransmission=1,0,boolean,sound
 _VideoWaitForTransmission_Defaults=SoundNull
 _VideoWaitForTransmission_Category=TC_TPOF_VIDEO
 
+GetLastSavedUnitActor=1,0,actor
+_GetLastSavedUnitActor_Defaults=
+_GetLastSavedUnitActor_Category=TC_TPOF_VIDEO
+
 VideoSaveUnitActor=1,0,actor,AVideo,unit
 _VideoSaveUnitActor_Defaults=GetLastCreatedVideo,_
 _VideoSaveUnitActor_Category=TC_TPOF_VIDEO
@@ -1157,8 +1193,8 @@ _VideoUnitActor_Defaults=GetLastCreatedVideo,_
 _VideoUnitActor_Category=TC_TPOF_VIDEO
 
 VideoCharacterActor=1,0,unit,AVideo
-_VideoUnitActor_Defaults=GetLastCreatedVideo
-_VideoUnitActor_Category=TC_TPOF_VIDEO
+_VideoCharacterActor_Defaults=GetLastCreatedVideo
+_VideoCharacterActor_Category=TC_TPOF_VIDEO
 
 //***************************************************************************
 [DefaultTriggerCategories]

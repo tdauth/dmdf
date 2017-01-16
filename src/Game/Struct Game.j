@@ -582,7 +582,7 @@ static if (DMDF_NPC_ROUTINES) then
 			call Routines.init()
 endif
 			call initSpells.evaluate() // after classes!
-
+			call Shop.init.evaluate() // before map data initialization!
 			call Zone.init.evaluate() // before map data initialization!
 			// map
 			call MapData.init.evaluate()

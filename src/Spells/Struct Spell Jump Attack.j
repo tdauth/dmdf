@@ -32,17 +32,10 @@ library StructSpellsSpellJumpAttack requires Asl
 		endmethod
 
 		public static method init takes nothing returns nothing
-			local conditionfunc conditionFunction
-			local triggercondition triggerCondition
-			local triggeraction triggerAction
 			set thistype.m_castTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_castTrigger, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
-			set conditionFunction = Condition(function thistype.triggerCondition)
-			set triggerCondition = TriggerAddCondition(thistype.m_castTrigger, conditionFunction)
-			set triggerAction = TriggerAddAction(thistype.m_castTrigger, function thistype.triggerAction)
-			set conditionFunction = null
-			set triggerCondition = null
-			set triggerAction = null
+			call TriggerAddCondition(thistype.m_castTrigger, Condition(function thistype.triggerCondition))
+			call TriggerAddAction(thistype.m_castTrigger, function thistype.triggerAction)
 		endmethod
 	endstruct
 

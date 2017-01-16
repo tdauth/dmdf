@@ -13,7 +13,7 @@ library StructSpellsSpellAttributeBonus requires Asl, StructGameClasses, StructG
 		public static constant integer maxLevel = 100
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, 0, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, 0, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.setIsPassive(true)
 			call this.setIsHidden(true)
 			call this.addGrimoireEntries.evaluate() // New OpLimit

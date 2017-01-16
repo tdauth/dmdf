@@ -10,16 +10,16 @@ library StructSpellsSpellMultiShot requires Asl, StructGameClasses, StructGameSp
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.ranger(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.ranger(), thistype.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A1ML', 'A1MM')
 			call this.addGrimoireEntry('A17S', 'A17X')
 			call this.addGrimoireEntry('A17T', 'A17Y')
 			call this.addGrimoireEntry('A17U', 'A17Z')
 			call this.addGrimoireEntry('A17V', 'A180')
 			call this.addGrimoireEntry('A17W', 'A181')
-			
+
 			call this.setIsPassive(true)
-			
+
 			return this
 		endmethod
 	endstruct

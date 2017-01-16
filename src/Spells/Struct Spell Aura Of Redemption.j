@@ -10,16 +10,16 @@ library StructSpellsSpellAuraOfRedemption requires Asl, StructGameClasses, Struc
 		public static constant integer maxLevel = 5
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A0PR', 'A0PS')
 			call this.addGrimoireEntry('A0M7', 'A0MC')
 			call this.addGrimoireEntry('A0M8', 'A0MD')
 			call this.addGrimoireEntry('A0M9', 'A0ME')
 			call this.addGrimoireEntry('A0MA', 'A0MF')
 			call this.addGrimoireEntry('A0MB', 'A0MG')
-			
+
 			call this.setIsPassive(true)
-			
+
 			return this
 		endmethod
 	endstruct

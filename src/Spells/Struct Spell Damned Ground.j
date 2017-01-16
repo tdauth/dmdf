@@ -12,14 +12,14 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 		private boolean array m_damned[thistype.maxTilepoints]
 		private integer array m_terrainType[thistype.maxTilepoints]
 		private integer array m_terrainVariance[thistype.maxTilepoints]
-		
+
 		private method remove takes nothing returns nothing
 			local integer i
 			local integer j
 			local integer index
 			local real x
 			local real y
-			
+
 			set i = 0
 			loop
 				exitwhen (i >= thistype.width)
@@ -35,20 +35,20 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 					endif
 					set j = j + R2I(bj_CELLWIDTH)
 				endloop
-				
+
 				set i = i + R2I(bj_CELLWIDTH)
 			endloop
 		endmethod
-		
+
 		private static method timerFunctionRemove takes nothing returns nothing
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetExpiredTimer(), 0))
 			call this.destroy()
 		endmethod
-		
+
 		public method start takes real time returns nothing
 			call TimerStart(this.m_timer, time, false, function thistype.timerFunctionRemove)
 		endmethod
-		
+
 		public static method create takes SpellDamnedGround spell, real x, real y returns thistype
 			local thistype this = thistype.allocate()
 			local integer i
@@ -59,7 +59,7 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 			call DmdfHashTable.global().setHandleInteger(this.m_timer, 0, this)
 			set this.m_x = x
 			set this.m_y = y
-		
+
 			set i = 0
 			loop
 				exitwhen (i >= thistype.width)
@@ -77,13 +77,13 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 					endif
 					set j = j + R2I(bj_CELLWIDTH)
 				endloop
-				
+
 				set i = i + R2I(bj_CELLWIDTH)
 			endloop
-		
+
 			return this
 		endmethod
-		
+
 		public method onDestroy takes nothing returns nothing
 			call PauseTimer(this.m_timer)
 			call DmdfHashTable.global().destroyTimer(this.m_timer)
@@ -101,9 +101,9 @@ library StructSpellsSpellDamnedGround requires Asl, StructGameClasses, StructGam
 		public static constant integer classSelectionGrimoireAbilityId = 'A1JW'
 		public static constant integer maxLevel = 5
 		public static constant real time = 5.0
-		
+
 		private method action takes nothing returns nothing
-			local SpellDamnedGroundBuffData spellBuff
+			local SpellDamnedGroundBuffData spellBuff = 0
 			if (not IsPointBlighted(GetSpellTargetX(), GetSpellTargetY())) then
 				set spellBuff = SpellDamnedGroundBuffData.create(this, GetSpellTargetX(), GetSpellTargetY())
 				call spellBuff.start(thistype.time * this.level())

@@ -49,7 +49,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
+			local thistype this = thistype.createWithoutTriggers(character, Classes.necromancer(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId)
 			call this.addGrimoireEntry('A1MP', 'A1MQ')
 			call this.addGrimoireEntry('A0FL', 'A0FQ')
 			call this.addGrimoireEntry('A0FM', 'A0FR')

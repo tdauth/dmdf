@@ -79,6 +79,10 @@ OperatorCompareClass="Character Class Comparison"
 OperatorCompareClass=~Value," ",~Operator," ",~Value
 OperatorCompareClassHint=
 
+OperatorCompareQuestState="Quest State Comparison"
+OperatorCompareQuestState=~Value," ",~Operator," ",~Value
+OperatorCompareQuestStateHint=
+
 //***************************************************************************
 [TriggerActionStrings]
 
@@ -148,9 +152,9 @@ MissileSetTargetZHint=
 
 MissileSetTargetWidget="Missile Set Target Widget"
 MissileSetTargetWidget="Set Missile ",~Missile," Target Widget To ",~Widget
-MissileSetTargetWidgetHint=
+MissileSetTargetWidgetHint=""
 
-AddDoodadOcclusion"Add Doodad Occlusion"
+AddDoodadOcclusion="Add Doodad Occlusion"
 AddDoodadOcclusion="Add Doodad Occlusion for ",~Doodad
 AddDoodadOcclusionHint="Adds the doodad type to the doodads which are automatically get the 'stand alternate' animation when the player's camera gets near them. Of course the animation has to be supported by the model and should make it transparent."
 
@@ -198,7 +202,7 @@ GameAddDefaultDoodadsOcclusionHint="Adds the default Doodad types for automatic 
 
 GameApplyHandicapToCreeps="Game Apply Handicap To Creeps"
 GameApplyHandicapToCreeps="Game Apply Handicap To Creeps"
-GameApplyHandicapToCreeps="The handicap depends on the number of missing players and the difficulty. The handicap is applied to PLAYER_NEUTRAL_AGGRESSIVE."
+GameApplyHandicapToCreepsHint="The handicap depends on the number of missing players and the difficulty. The handicap is applied to PLAYER_NEUTRAL_AGGRESSIVE."
 
 // Map API
 
@@ -296,6 +300,10 @@ SetQuestAreaConditionAndActionByTrigger="Set Quest Area Condition And Action By 
 SetQuestAreaConditionAndActionByTrigger="Set Condition And Action for ",~QuestArea," to Trigger ",~Trigger
 SetQuestAreaConditionAndActionByTriggerHint="The trigger is checked and if the conditions return true it is executed."
 
+CreateCharacterQuestItem="Create Character Quest Item"
+CreateCharacterQuestItem="Create Character Quest Item"
+CreateCharacterQuestItemHint=""
+
 SetCharacterQuestState="Set Character Quest State"
 SetCharacterQuestState="Set State For Character Quest ",~Quest," To State ",~State
 SetCharacterQuestStateHint=""
@@ -392,9 +400,25 @@ FellowAddAbilityHint=""
 
 // Spawn Point API
 
+SpawnPointAddUnitWithType="Add Unit to Spawn Point"
+SpawnPointAddUnitWithType="Add to spawn point ",~SpawnPoint," the unit ",~Unit," spawning with the chance of ",~Chance
+SpawnPointAddUnitWithTypeHint="Adds an existing unit to a spawn point. It will be respawned after a timeout when it dies."
+
+SpawnPointAddNewItemType="Add New Dropping Item Type to Spawn Point"
+SpawnPointAddNewItemType="Add to spawn point ",~SpawnPoint," for respawning unit member with index ",~Index," the new dropping item type ",~ItemType," with a chance ",~Chance
+SpawnPointAddNewItemTypeHint=""
+
 SpawnPointSpawnDeadOnlyAll="Spawn Point Spawn Dead Only All"
 SpawnPointSpawnDeadOnlyAll="Spawn Point Spawn Dead Only All"
 SpawnPointSpawnDeadOnlyAllHint="Spawns all dead members of creep spawn points on the map"
+
+CreateItemSpawnPointAtItemPos="Create Item Spawn Point At Item Pos"
+CreateItemSpawnPointAtItemPos="Create Item Spawn Point At Item Pos For Item ",~Item
+CreateItemSpawnPointAtItemPosHint=""
+
+CreateItemSpawnPoint="Create Item Spawn Point"
+CreateItemSpawnPoint="Create Item Spawn Point using X ",~Real," and Y ",~Real," and Item ",~Item
+CreateItemSpawnPointHint=""
 
 // Dungeon API
 
@@ -449,6 +473,10 @@ VideoSetStopActionByTriggerHint=""
 VideoSetSkipActionByTrigger="Video Set Skip Action By Trigger"
 VideoSetSkipActionByTrigger="Video ",~Video," Set Skip Action By Trigger ",~Trigger
 VideoSetSkipActionByTriggerHint=""
+
+VideoPlay="Video Play"
+VideoPlay="Play Video ",~Video
+VideoPlayHint=""
 
 VideoStop="Video Stop"
 VideoStop="Stop Video ",~Video
@@ -754,6 +782,14 @@ CreateCharacterQuestItem="Create Character Quest Item"
 CreateCharacterQuestItem="Create Quest Item for Quest ",~Quest," with title ",~Title
 CreateCharacterQuestItemHint=""
 
+GetCharacterQuestState="Get Character Quest State"
+GetCharacterQuestState="Get State of Character Quest ",~CharacterQuest
+GetCharacterQuestStateHint=""
+
+GetSharedQuestState="Get Shared Quest State"
+GetSharedQuestState="Get State of Shared Quest ",~SharedQuest
+GetSharedQuestStateHint=""
+
 // Talk API
 
 GetLastCreatedTalk="Get Last Created Talk"
@@ -908,6 +944,10 @@ GetLastCreatedVideo="Get Last Created Video"
 GetLastCreatedVideo="Get Last Created Video"
 GetLastCreatedVideoHint=""
 
+GetTriggerVideo="Get Trigger Video"
+GetTriggerVideo="Get Trigger Video"
+GetTriggerVideoHint=""
+
 CreateVideo="Create Video"
 CreateVideo="Create Video Using A Character Actor ",~Flag
 CreateVideoHint=""
@@ -919,6 +959,10 @@ VideoWaitHint="Recognizes video skips and returns true if the video has been ski
 VideoWaitForTransmission="Video Wait For Transmission"
 VideoWaitForTransmission="Video Wait For Transmission With Sound ",~Sound
 VideoWaitForTransmissionHint="Recognizes video skips and returns true if the video has been skipped."
+
+GetLastSavedUnitActor="Get Last Saved Unit Actor"
+GetLastSavedUnitActor="Get Last Saved Unit Actor"
+GetLastSavedUnitActorHint=""
 
 VideoSaveUnitActor="Video Save Unit Actor"
 VideoSaveUnitActor="Video ",~Video," Save Unit ",~Unit," Actor"

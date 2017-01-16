@@ -23,6 +23,7 @@ static if (DMDF_NPC_ROUTINES) then
 //! import "Game/Struct Routines.j"
 endif
 //! import "Game/Struct Save System.j"
+//! import "Game/Struct Shop.j"
 //! import "Game/Struct Shrine.j"
 //! import "Game/Struct Spawn Point.j"
 //! import "Game/Struct Spell.j"
@@ -36,5 +37,5 @@ endif
  * \brief The game library contains all the core systems of The Power of Fire.
  * These systems are available in every map of the modification by default.
  */
-library Game requires StructGameBuildings, StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameCommands, StructGameFellow, StructGameDmdfHashTable, StructGameDungeon, StructGameGameCheats, StructGameGame, StructGameGrimoireSpell, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, StructGameMapSettings, StructGameMissions, StructGameOptions, StructGameOrderAnimations, StructGameQuestArea, optional StructGameRoutines, StructSaveSystem, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
+library Game requires StructGameBuildings, StructGameCameraHeight, StructGameCharacter, StructGameClasses, StructGameClassSelection, StructGameCommands, StructGameFellow, StructGameDmdfHashTable, StructGameDungeon, StructGameGameCheats, StructGameGame, StructGameGrimoireSpell, StructGameGrimoire, StructGameHistory, StructGameItemTypes, StructGameMapChanger, StructGameMapSettings, StructGameMissions, StructGameOptions, StructGameOrderAnimations, StructGameQuestArea, optional StructGameRoutines, StructSaveSystem, StructGameShop, StructGameShrine, StructGameSpawnPoint, StructGameSpell, StructGameTalk, StructGameTreeTransparency, StructGameTutorial, StructGameZone, LibraryGameLanguage
 endlibrary
