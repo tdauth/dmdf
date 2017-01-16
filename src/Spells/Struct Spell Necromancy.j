@@ -8,7 +8,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 		public static constant integer classSelectionGrimoireAbilityId = 'A1MQ'
 		public static constant integer maxLevel = 5
 		public static constant integer maxUnits = 6
-		private AGroup m_units
+		private AUnitList m_units
 		private trigger m_summonTrigger
 		private trigger m_deathTrigger
 
@@ -18,20 +18,24 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 
 		private static method triggerConditionSummon takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
+			local unit frontUnit = null
 
 			 if (GetSummoningUnit() == this.character().unit() and thistype.isUnitOfType(GetSummonedUnit())) then
 				/*
 				 * While the spell is canceled if alreay 6 minions exist it might be that the spell summons more than one minion and therefore the limit is reached.
-				 * In this case the longest existing minions are killed and therefore replaced.
+				 * In this case the longest existing minions are killed and removed from the group.
 				 */
-				if (this.m_units.units().size() >= thistype.maxUnits) then
-					call KillUnit(this.m_units.units()[0])
-					set this.m_units.units()[0] = GetSummonedUnit()
-				else
-					call this.m_units.units().pushBack(GetSummonedUnit())
+				if (this.m_units.size() >= thistype.maxUnits) then
+					set frontUnit = this.m_units.front()
+					call this.m_units.popFront()
+					// Kill AFTER removing from group to NOT trigger the death trigger!
+					call KillUnit(frontUnit)
+					set frontUnit = null
 				endif
 
-				debug call Print("Summoned " + GetUnitName(GetSummonedUnit()) + " with " + I2S(this.m_units.units().size()) + " minions.")
+				call this.m_units.pushBack(GetSummonedUnit())
+
+				debug call Print("Summoned " + GetUnitName(GetSummonedUnit()) + " with " + I2S(this.m_units.size()) + " minions.")
 			endif
 
 			return false
@@ -40,8 +44,8 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 		private static method triggerConditionDeath takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 
-			if (thistype.isUnitOfType(GetTriggerUnit()) and this.m_units.units().contains(GetTriggerUnit())) then
-				call this.m_units.units().remove(GetTriggerUnit())
+			if (thistype.isUnitOfType(GetTriggerUnit()) and this.m_units.contains(GetTriggerUnit())) then
+				call this.m_units.remove(GetTriggerUnit())
 				debug call Print("Removed summoned " + GetUnitName(GetTriggerUnit()))
 			endif
 
@@ -57,7 +61,7 @@ library StructSpellsSpellNecromancy requires Asl, StructGameClasses, StructGameS
 			call this.addGrimoireEntry('A0FO', 'A0FT')
 			call this.addGrimoireEntry('A0FP', 'A0FU')
 
-			set this.m_units = AGroup.create()
+			set this.m_units = AUnitList.create()
 
 			set this.m_summonTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(this.m_summonTrigger, EVENT_PLAYER_UNIT_SUMMON)

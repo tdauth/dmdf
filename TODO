@@ -382,12 +382,16 @@ Gegenstands-Icon-Fehler:
 * Folgende Gegenstände haben Icons ihrer Fähigkeiten nicht in den Zauberfähigkeiten: Stiefel eines Druiden, Stab der Verzögerung, Knochenbogen. War das nur ein Bug? Nein Stiefel eines Druiden haben wirklich keine Zauberbuchfähigkeit. Stab der Verzögerung hatte allerdings deaktivierte Zauberbuchfähigkeit. Knochenbogen ebenfalls. Stab der Verzögerung und Knochenbogen haben zusätzlich eine Kugelfähigkeit die auch im Zauberbuch verborgen werden muss.
 * Die Zauberbuchfähigkeiten von Gegenständen sollte 12 Dummys drin haben, damit die Symbole verborgen werden und keine Zauber verdrängen in Zauberfähigkeiten.
 * FIXED (hide spell book ability and hide 'A1S9' as well): Stab der Verzögerung hat keine Zauberbuchfähigkeit, Icon sichtbar der Verlangsamung. Kugelfähigkeit!
+* Parasit und Weltenportal haben im Zauberbuch dieselbe ID.
 
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: MapChanger: Does not save if a spell is NOT in favorites?
 * MapChanger: Options cannot be selected. But only in the map which is started via map transition for the first time. PauseUnit() by the intro video in Talras? Happens only sometimes.
+* Two Hand Sword of Cold and Two Hand Sword shoul have the right attack animations.
+* Fix tooltip for Two Hand Sword of Cold.
+* Fix tooltip of Necromancy.
 * FIXED: Professions info add Book of Hunting.
-* Limit of skeletons does still not work (necromancer). Why does not work? Whenever a skeleton dies the counter is decremented. Whenever one unit is summoned it is incremented. Are more skeletons summoned at once?!
+* FIXED: Limit of skeletons does still not work (necromancer). Why does not work? Whenever a skeleton dies the counter is decremented. Whenever one unit is summoned it is incremented. Are more skeletons summoned at once?! It has been removed AFTER being killed! It has to be removed before. Besides use AUnitList instead and add the new unit always to the back so that the longest living skeleton will be removed first and popFront() has a better performance.
 * FIXED: Add info for options.
 * Fix the war3map_en.wts file for Talras by undoing some commits and update the English Talras map. Some previous commits corrupted the file and removed most of the English translations!
 * FIXED (in the mod) wc3lib bug: field Arsg:UnitID is compressed although it was changed! Treefolk, Pest Carret and summon dragon.
@@ -641,7 +645,7 @@ Optimizing:
 * FIXED: Use accept button rather than human icon to accept the selected class.
 * Dago needs a different younger model because of his voice.
 * FIXED (ASL): In class selection the unit is not stopped even although the order is correctly detected.
-* New unit sounds of Dragon Slayer dont work (because they are stereo??).
+* FIXED: New unit sounds of Dragon Slayer dont work (because they are stereo??).
 * FIXED (Renamed "Stand - 3" and "Stand - 4"): Fix standing animations of character (dont cross arms etc. when wearing weapons). Just rename both.
 * Add stalls with all degrees (0, 90, 180, 270) and replace those tiny boxes.
 * Add a custom music system to play custom music tracks on loop (for example in dungeons). As long as there is no custom music system PlayThematicMusicForPlayer() has to be used. Otherwise the ingame music will be stopped.
