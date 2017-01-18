@@ -232,6 +232,14 @@ TriggerRegisterMapInitEvent=1
 _TriggerRegisterMapInitEvent_Defaults=
 _TriggerRegisterMapInitEvent_Category=TC_TPOF_MAP
 
+TriggerRegisterMapOnCreateClassSelectionItemsEvent=1
+_TriggerRegisterMapOnCreateClassSelectionItemsEvent_Defaults=
+_TriggerRegisterMapOnCreateClassSelectionItemsEvent_Category=TC_TPOF_MAP
+
+TriggerRegisterMapOnCreateClassItemsEvent=1
+_TriggerRegisterMapOnCreateClassItemsEvent_Defaults=
+_TriggerRegisterMapOnCreateClassItemsEvent_Category=TC_TPOF_MAP
+
 TriggerRegisterMapStartEvent=1
 _TriggerRegisterMapStartEvent_Defaults=
 _TriggerRegisterMapStartEvent_Category=TC_TPOF_MAP
@@ -333,6 +341,10 @@ _SetDmdfHashTableHandleInteger_Category=TC_TPOF_CORE
 SetUnitPositionRect=1,unit,rect
 _SetUnitPositionRect_Defaults=
 _SetUnitPositionRect_Category=TC_TPOF_CORE
+
+SetUnitFacing=1,unit,real
+_SetUnitFacing_Defaults=_,90.0
+_SetUnitFacing_Category=TC_TPOF_CORE
 
 SetUnitFacingToFaceUnit=1,unit,unit
 _SetUnitFacingToFaceUnit_Defaults=

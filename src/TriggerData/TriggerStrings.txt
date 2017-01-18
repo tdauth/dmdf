@@ -22,6 +22,14 @@ TriggerRegisterMapInitEvent="Trigger Register Map Init Event"
 TriggerRegisterMapInitEvent="Trigger Register Map Init Event"
 TriggerRegisterMapInitEventHint="The trigger is evaluated during the map initialization."
 
+TriggerRegisterMapOnCreateClassSelectionItemsEvent="Trigger Register Map On Create Class Selection Items Event"
+TriggerRegisterMapOnCreateClassSelectionItemsEvent="Trigger Register Map On Create Class Selection Items Event"
+TriggerRegisterMapOnCreateClassSelectionItemsEventHint="This trigger is evaluated when the class selection unit is created."
+
+TriggerRegisterMapOnCreateClassItemsEvent="Trigger Register Map On Create Class Items Event"
+TriggerRegisterMapOnCreateClassItemsEvent="Trigger Register Map On Create Class Items Event"
+TriggerRegisterMapOnCreateClassItemsEventHint="This trigger is evaluated when the class is selected for the first time."
+
 TriggerRegisterMapStartEvent="Trigger Register Map Start Event"
 TriggerRegisterMapStartEvent="Trigger Register Map Start Event"
 TriggerRegisterMapStartEventHint="The trigger is executed during the map start (after the final class selection)."
@@ -119,6 +127,10 @@ SetDmdfHashTableHandleIntegerHint="Allows attaching values to handles. Make sure
 SetUnitPositionRect="Set Unit Position To Rect"
 SetUnitPositionRect="Set Position of Unit ",~Unit," To The Center Of Rect ",~Rect
 SetUnitPositionRectHint=
+
+SetUnitFacing="Set Unit Facing"
+SetUnitFacing="Set Unit ",~Unit," Facing to ",~Facing
+SetUnitFacingHint=""
 
 SetUnitFacingToFaceUnit="Set Unit Facing To Face Unit"
 SetUnitFacingToFaceUnit="Set Facing Of Unit ",~Unit," To Face Unit ",~Unit

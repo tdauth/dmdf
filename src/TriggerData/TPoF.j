@@ -87,6 +87,8 @@ endfunction
 globals
 	ATriggerVector mapInitSettingsTriggers = 0
 	ATriggerVector mapInitTriggers = 0
+	ATriggerVector mapCreateClassSelectionItemsTriggers = 0
+	ATriggerVector mapCreateClassItemsTriggers = 0
 	ATriggerVector mapStartTriggers = 0
 	ATriggerVector mapSelectClassTriggers = 0
 	ATriggerVector mapRepickCharacterTriggers = 0
@@ -136,6 +138,8 @@ function Init takes nothing returns nothing
 
 	set mapInitSettingsTriggers = ATriggerVector.create()
 	set mapInitTriggers = ATriggerVector.create()
+	set mapCreateClassSelectionItemsTriggers = ATriggerVector.create()
+	set mapCreateClassItemsTriggers = ATriggerVector.create()
 	set mapStartTriggers = ATriggerVector.create()
 	set mapSelectClassTriggers = ATriggerVector.create()
 	set mapRepickCharacterTriggers = ATriggerVector.create()
@@ -153,6 +157,14 @@ endfunction
 
 function TriggerRegisterMapInitEvent takes trigger whichTrigger returns nothing
 	call mapInitTriggers.pushBack(whichTrigger)
+endfunction
+
+function TriggerRegisterMapOnCreateClassSelectionItemsEvent takes trigger whichTrigger returns nothing
+	call mapCreateClassSelectionItemsTriggers.pushBack(whichTrigger)
+endfunction
+
+function TriggerRegisterMapOnCreateClassItemsEvent takes trigger whichTrigger returns nothing
+	call mapCreateClassItemsTriggers.pushBack(whichTrigger)
 endfunction
 
 function TriggerRegisterMapStartEvent takes trigger whichTrigger returns nothing
@@ -815,6 +827,7 @@ struct MapData
 			call ConditionalTriggerExecute(mapInitSettingsTriggers[i])
 			set i = i + 1
 		endloop
+		// TODO wait for the execution of the triggers!
 	endmethod
 
 	/// Required by \ref Game.
@@ -825,18 +838,34 @@ struct MapData
 			call ConditionalTriggerExecute(mapInitTriggers[i])
 			set i = i + 1
 		endloop
+		// TODO wait for the execution of the triggers!
 	endmethod
 
 	/**
 	 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 	 */
 	public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
+		local integer i = 0
+		loop
+			exitwhen (i == mapCreateClassSelectionItemsTriggers.size())
+			call ConditionalTriggerExecute(mapCreateClassSelectionItemsTriggers[i])
+			set i = i + 1
+		endloop
+		// TODO wait for the execution of the triggers!
 	endmethod
 
 	/**
 	 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
+	 * This is not done on repicks or when restoring a character instead.
 	 */
 	public static method createClassItems takes Character character returns nothing
+		local integer i = 0
+		loop
+			exitwhen (i == mapCreateClassItemsTriggers.size())
+			call ConditionalTriggerExecute(mapCreateClassItemsTriggers[i])
+			set i = i + 1
+		endloop
+		// TODO wait for the execution of the triggers!
 	endmethod
 
 	/// Required by \ref Game.

@@ -507,7 +507,7 @@ endif
 			// environment systems
 			call ADamageRecorder.init(true, thistype.onDamageAction, false)
 			call AMissile.init(0.05)
-			call ADynamicLightning.init(0.05)
+			call ADynamicLightning.init(0.50)
 			// NOTE AJump is only required for a jump done by Wigberht in the video "Wigberht".
 			call AJump.init(0.05)
 			// interface systems

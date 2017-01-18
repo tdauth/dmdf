@@ -171,13 +171,15 @@ library StructGameClasses requires Asl, StructGameCharacter
 		endmethod
 
 		private static method preloadAbilitiesFromVector takes AIntegerVector vector returns nothing
+			local ClassGrimoireEntry classGrimoireEntry = 0
 			local integer i = 0
 			loop
 				exitwhen (i == vector.size())
-				debug call Print("Preloading " + GetAbilityName(ClassGrimoireEntry(vector[i]).abilityId()))
-				call AbilityPreload(ClassGrimoireEntry(vector[i]).abilityId())
+				set classGrimoireEntry = ClassGrimoireEntry(vector[i])
+				debug call Print("Preloading " + GetAbilityName(classGrimoireEntry.abilityId()))
+				call AbilityPreload(classGrimoireEntry.abilityId())
 				debug call Print("After preloading 1")
-				call AbilityPreload(ClassGrimoireEntry(vector[i]).grimoireAbilityId())
+				call AbilityPreload(classGrimoireEntry.grimoireAbilityId())
 				debug call Print("After preloading 2")
 				set i = i + 1
 			endloop
