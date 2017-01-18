@@ -11,6 +11,7 @@ TC_TPOF_Environment="Environment",ReplaceableTextures\WorldEditUI\Actions-Enviro
 TC_TPOF_CHARACTER="Character",ReplaceableTextures\WorldEditUI\Actions-Hero
 TC_TPOF_GAME="Game",ReplaceableTextures\WorldEditUI\Actions-Game
 TC_TPOF_MAP="Map",ReplaceableTextures\WorldEditUI\Actions-Game
+TC_TPOF_ENVIRONMENT="Environment",ReplaceableTextures\WorldEditUI\Actions-Environment
 TC_TPOF_TALK="Talk",ReplaceableTextures\WorldEditUI\Actions-Dialog
 TC_TPOF_FELLOW="Fellow",ReplaceableTextures\WorldEditUI\Actions-AI
 TC_TPOF_ITEM="Item",ReplaceableTextures\WorldEditUI\Actions-Item
@@ -566,6 +567,14 @@ SetCharacterQuestPingColour=1,AQuest,real,real,real
 _SetCharacterQuestPingColour_Defaults=_,100.0,100.0,100.0
 _SetCharacterQuestPingColour_Category=TC_TPOF_QUEST
 
+CompleteCharacterQuest=1,AQuest
+_CompleteCharacterQuest_Defaults=
+_CompleteCharacterQuest_Category=TC_TPOF_QUEST
+
+SetSharedQuestState=1,SharedQuest,QuestState
+_SetSharedQuestState_Defaults=
+_SetSharedQuestState_Category=TC_TPOF_QUEST
+
 // Fellow API
 
 SetFellowRevival=1,Fellow,boolean
@@ -609,6 +618,10 @@ _FellowAddAbility_Defaults=GetLastCreatedFellow,_
 _FellowAddAbility_Category=TC_TPOF_FELLOW
 
 // Spawn Point API
+
+CreateSpawnPoint=1
+_SpawnPoint_Defaults=
+_SpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
 SpawnPointAddUnitWithType=1,SpawnPoint,unit,real
 _SpawnPointAddUnitWithType_Defaults=GetLastCreatedSpawnPoint,_,1.0
@@ -1016,6 +1029,10 @@ _GetCharacterQuestState_Category=TC_TPOF_QUEST
 GetSharedQuestState=1,0,QuestState,SharedQuest
 _GetSharedQuestState=_Defaults=
 _GetSharedQuestState_Category=TC_TPOF_QUEST
+
+GetQuestItemState=1,0,QuestState,AQuestItem
+_GetQuestItemState=_Defaults=
+_GetQuestItemState_Category=TC_TPOF_QUEST
 
 // Talk API
 

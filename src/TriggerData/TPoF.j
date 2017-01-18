@@ -107,12 +107,17 @@ globals
 	constant integer TRIGGERDATA_KEY_QUEST = 7
 	constant integer TRIGGERDATA_KEY_STATE = 8
 	constant integer TRIGGERDATA_KEY_CLASS = 9
+	constant integer TRIGGERDATA_KEY_VIDEO = 10
 
 	AGlobalHashTable QuestAreaHashTable = 0
 	AGlobalHashTable QuestHashTable = 0
 	AGlobalHashTable TalkInfoConditionHashTable = 0
 	AGlobalHashTable TalkInfoActionHashTable = 0
 	AGlobalHashTable TalkStartActionsHashTable = 0
+	AGlobalHashTable VideoInitActionHashTable = 0
+	AGlobalHashTable VideoPlayActionHashTable = 0
+	AGlobalHashTable VideoStopActionHashTable = 0
+	AGlobalHashTable VideoSkipActionHashTable = 0
 endglobals
 
 /**
@@ -124,6 +129,10 @@ function Init takes nothing returns nothing
 	set TalkInfoConditionHashTable = AGlobalHashTable.create()
 	set TalkInfoActionHashTable = AGlobalHashTable.create()
 	set TalkStartActionsHashTable = AGlobalHashTable.create()
+	set VideoInitActionHashTable = AGlobalHashTable.create()
+	set VideoPlayActionHashTable = AGlobalHashTable.create()
+	set VideoStopActionHashTable = AGlobalHashTable.create()
+	set VideoSkipActionHashTable = AGlobalHashTable.create()
 
 	set mapInitSettingsTriggers = ATriggerVector.create()
 	set mapInitTriggers = ATriggerVector.create()
@@ -354,6 +363,12 @@ function CreateCharacterQuestItem takes AQuest whichQuest, string title returns 
 	return AQuestItem.create(whichQuest, title)
 endfunction
 
+function GetCharacterQuestState takes AQuest whichQuest returns integer
+	return whichQuest.state()
+endfunction
+
+// Fellow API
+
 function SetFellowRevivalTitle takes Fellow fellow, string revivalTitle returns nothing
 	call fellow.setRevivalTitle(revivalTitle)
 endfunction
@@ -364,6 +379,14 @@ endfunction
 
 function PlayerCharacter takes player whichPlayer returns Character
 	return Character(Character.playerCharacter(whichPlayer))
+endfunction
+
+function CharacterPlayer takes Character character returns player
+	return character.player()
+endfunction
+
+function CharacterUnit takes Character character returns unit
+	return character.unit()
 endfunction
 
 function CharacterClass takes Character character returns AClass
@@ -666,6 +689,10 @@ endfunction
 
 // Video API
 
+function GetTriggerVideo takes nothing returns Character
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_VIDEO)
+endfunction
+
 function CreateVideo takes boolean hasCharacterActor returns AVideo
 	set lastCreatedVideo = AVideo.create(hasCharacterActor)
 	return lastCreatedVideo
@@ -675,12 +702,48 @@ function GetLastCreatedVideo takes nothing returns AVideo
 	return lastCreatedVideo
 endfunction
 
+function VideoInitActionEvaluate takes AVideo video returns nothing
+	local trigger whichTrigger = VideoInitActionHashTable.trigger(video, 0)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_VIDEO, video)
+	call TriggerEvaluate(whichTrigger)
+endfunction
+
 function VideoSetInitActionByTrigger takes AVideo video, trigger whichTrigger returns nothing
-	// TODO implement
+	call VideoInitActionHashTable.setTrigger(video, 0, whichTrigger)
+	call video.setInitAction(VideoInitActionEvaluate)
+endfunction
+
+function VideoPlayActionExecute takes AVideo video returns nothing
+	local trigger whichTrigger = VideoPlayActionHashTable.trigger(video, 0)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_VIDEO, video)
+	call TriggerExecute(whichTrigger)
 endfunction
 
 function VideoSetPlayActionByTrigger takes AVideo video, trigger whichTrigger returns nothing
-	// TODO implement
+	call VideoPlayActionHashTable.setTrigger(video, 0, whichTrigger)
+	call video.setPlayAction(VideoPlayActionExecute)
+endfunction
+
+function VideoStopActionEvaluate takes AVideo video returns nothing
+	local trigger whichTrigger = VideoStopActionHashTable.trigger(video, 0)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_VIDEO, video)
+	call TriggerEvaluate(whichTrigger)
+endfunction
+
+function VideoSetStopActionByTrigger takes AVideo video, trigger whichTrigger returns nothing
+	call VideoStopActionHashTable.setTrigger(video, 0, whichTrigger)
+	call video.setStopAction(VideoStopActionEvaluate)
+endfunction
+
+function VideoSkipActionEvaluate takes AVideo video returns nothing
+	local trigger whichTrigger = VideoSkipActionHashTable.trigger(video, 0)
+	call DmdfHashTable.global().setHandleInteger(whichTrigger, TRIGGERDATA_KEY_VIDEO, video)
+	call TriggerEvaluate(whichTrigger)
+endfunction
+
+function VideoSetSkipActionByTrigger takes AVideo video, trigger whichTrigger returns nothing
+	call VideoSkipActionHashTable.setTrigger(video, 0, whichTrigger)
+	call video.setSkipAction(VideoSkipActionEvaluate)
 endfunction
 
 function VideoWait takes real seconds returns boolean
@@ -706,6 +769,10 @@ endfunction
 
 function VideoPlay takes AVideo video returns nothing
 	call video.play()
+endfunction
+
+function VideoStop takes AVideo video returns nothing
+	call video.stop()
 endfunction
 
 function VideoFadeOutWithWait takes nothing returns nothing

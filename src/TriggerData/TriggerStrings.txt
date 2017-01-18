@@ -301,7 +301,7 @@ SetQuestAreaConditionAndActionByTrigger="Set Condition And Action for ",~QuestAr
 SetQuestAreaConditionAndActionByTriggerHint="The trigger is checked and if the conditions return true it is executed."
 
 CreateCharacterQuestItem="Create Character Quest Item"
-CreateCharacterQuestItem="Create Character Quest Item"
+CreateCharacterQuestItem="Create Character Quest Item for Quest ",~Quest," with Title ",~Title
 CreateCharacterQuestItemHint=""
 
 SetCharacterQuestState="Set Character Quest State"
@@ -356,6 +356,18 @@ SetCharacterQuestPingColour="Set Character Quest Ping Colour"
 SetCharacterQuestPingColour="Set Ping Colour of ",~CharacterQuest," To Red ",~Red,", Green ",~Green," and Blue ",~Blue
 SetCharacterQuestPingColourHint=""
 
+CompleteCharacterQuest="Complete Character Quest"
+CompleteCharacterQuest="Complete Character Quest ",~Quest
+CompleteCharacterQuestHint=""
+
+SetSharedQuestState="Set Shared Quest State"
+SetSharedQuestState="Set Shared Quest ",~Quest," State to ",~State
+SetSharedQuestStateHint=""
+
+SetCharacterQuestState="Set Character Quest State"
+SetCharacterQuestState="Set Character Quest ",~CharacterQuest," State to ",~State
+SetCharacterQuestStateHint=""
+
 // Fellow API
 
 SetFellowRevival="Set Fellow Revival"
@@ -399,6 +411,10 @@ FellowAddAbility="Add To Fellow ",~Fellow," Ability ",~Ability
 FellowAddAbilityHint=""
 
 // Spawn Point API
+
+CreateSpawnPoint="Create Spawn Point"
+CreateSpawnPoint="Create Spawn Point"
+CreateSpawnPointHint=""
 
 SpawnPointAddUnitWithType="Add Unit to Spawn Point"
 SpawnPointAddUnitWithType="Add to spawn point ",~SpawnPoint," the unit ",~Unit," spawning with the chance of ",~Chance
@@ -795,6 +811,10 @@ GetCharacterQuestStateHint=""
 GetSharedQuestState="Get Shared Quest State"
 GetSharedQuestState="Get State of Shared Quest ",~SharedQuest
 GetSharedQuestStateHint=""
+
+GetQuestItemState="Get Quest Item State"
+GetQuestItemState="Get State of Quest Item ",~QuestItem
+GetQuestItemStateHint=""
 
 // Talk API
 
