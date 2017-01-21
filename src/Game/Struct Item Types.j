@@ -52,6 +52,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			call thistype.m_twoSlotItems.pushBack('I06Y')
 			call thistype.m_twoSlotItems.pushBack('I075')
 			call thistype.m_twoSlotItems.pushBack('I07L')
+			call thistype.m_twoSlotItems.pushBack('I07M')
 		endmethod
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype
@@ -331,6 +332,9 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// map Gardonar's Hell
 		private static ItemType m_tridentOfTheDevil
 
+		// map Deranor's Swamp
+		// Models\Items\DunklerSchild1.mdx
+
 		// map Holzbruck
 		private static SaddleItemType m_saddle
 		private static ItemType m_twoHandedSword
@@ -342,6 +346,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// map The North
 		private static ItemType m_enchantedDwarfBlade
 		private static ItemType m_twoHandedSwordCold
+		private static ItemType m_cursedHammer // Objects\InventoryItems\Cursed Hammer\CursedHummer.mdx
+		private static ItemType m_huntingArmor // Models\Items\LeatherPlate.mdx
+		private static ItemType m_nordicBuckler // Models\Items\RicmansSchild.mdx
+		private static ItemType m_nordicSpear // Models\Items\RicmansSpeer.mdx
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -809,6 +817,21 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_twoHandedSwordCold = ItemType.create('I07L', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_twoHandedSwordCold.addAbility('A1VN', true)
 			call thistype.m_twoHandedSwordCold.addAbility('A1VL', true)
+
+			set thistype.m_cursedHammer = ItemType.create('I07M', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_cursedHammer.addAbility('A1VP', true)
+			call thistype.m_cursedHammer.addAbility('A1VR', true)
+			call thistype.m_cursedHammer.addAbility('A1VQ', true)
+
+			set thistype.m_huntingArmor = ItemType.create('I07P', ItemType.equipmentTypeArmour, 0, 0, 0, 0, 0)
+			call thistype.m_huntingArmor.addAbility('A1VV', true)
+
+			set thistype.m_nordicBuckler = ItemType.create('I07N', ItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_nordicBuckler.addAbility('A1VS', true)
+
+			set thistype.m_nordicSpear = ItemType.create('I07O', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_nordicSpear.addAbility('A1VU', true)
+			call thistype.m_nordicSpear.addAbility('A1VT', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType
@@ -828,7 +851,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 
 		public static method itemTypeIdIsBuckler takes integer itemTypeId returns boolean
-			return itemTypeId == 'I00M' or itemTypeId == 'I006' or itemTypeId == 'I02A' or itemTypeId == 'I005' or itemTypeId == 'I00N' or itemTypeId == 'I00O' or itemTypeId == 'I00Y' or itemTypeId == 'I068'
+			return itemTypeId == 'I00M' or itemTypeId == 'I006' or itemTypeId == 'I02A' or itemTypeId == 'I005' or itemTypeId == 'I00N' or itemTypeId == 'I00O' or itemTypeId == 'I00Y' or itemTypeId == 'I068' or itemTypeId == 'I07N'
 		endmethod
 
 		public static method itemTypeIdIsBow takes integer itemTypeId returns boolean
@@ -840,7 +863,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 
 		public static method itemTypeIdIsMeleeSpear takes integer itemTypeId returns boolean
-			return itemTypeId == 'I002' or itemTypeId == 'I01W' or itemTypeId == 'I00K' or itemTypeId == 'I01X'
+			return itemTypeId == 'I002' or itemTypeId == 'I01W' or itemTypeId == 'I00K' or itemTypeId == 'I01X' or itemTypeId == 'I07O'
 		endmethod
 
 		public static method itemTypeIdIsTwoHandedLance takes integer itemTypeId returns boolean
@@ -848,7 +871,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		endmethod
 
 		public static method itemTypeIdIsTwoHandedHammer takes integer itemTypeId returns boolean
-			return itemTypeId == 'I05C' or itemTypeId == 'I075'
+			return itemTypeId == 'I05C' or itemTypeId == 'I075' or itemTypeId == 'I07M'
 		endmethod
 	endstruct
 

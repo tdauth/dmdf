@@ -350,6 +350,10 @@ SetUnitFacingToFaceUnit=1,unit,unit
 _SetUnitFacingToFaceUnit_Defaults=
 _SetUnitFacingToFaceUnit_Category=TC_TPOF_CORE
 
+IssueRectOrder=1,unit,unitorderutarg,rect
+_IssueRectOrder_Defaults=_,UnitOrderMove,_
+_IssueRectOrder_Category=TC_TPOF_CORE
+
 // Environment API
 
 DestroyDynamicLightning=1,ADynamicLightning
@@ -583,6 +587,10 @@ CompleteCharacterQuest=1,AQuest
 _CompleteCharacterQuest_Defaults=
 _CompleteCharacterQuest_Category=TC_TPOF_QUEST
 
+FailCharacterQuest=1,AQuest
+_FailCharacterQuest_Defaults=
+_FailCharacterQuest_Category=TC_TPOF_QUEST
+
 SetSharedQuestState=1,SharedQuest,QuestState
 _SetSharedQuestState_Defaults=
 _SetSharedQuestState_Category=TC_TPOF_QUEST
@@ -742,6 +750,10 @@ _VideoFadeInWithWait_Category=TC_TPOF_VIDEO
 VideoTransmissionFromUnit=1,unit,string,sound
 _VideoTransmissionFromUnit_Defaults=
 _VideoTransmissionFromUnit_Category=TC_TPOF_VIDEO
+
+VideoTransmissionFromUnitType=1,unitcode,player,string,string,sound
+_VideoTransmissionFromUnitType_Defaults=
+_VideoTransmissionFromUnitType_Category=TC_TPOF_VIDEO
 
 // Shop API
 
@@ -1231,6 +1243,10 @@ _VideoUnitActor_Category=TC_TPOF_VIDEO
 VideoCharacterActor=1,0,unit,AVideo
 _VideoCharacterActor_Defaults=GetLastCreatedVideo
 _VideoCharacterActor_Category=TC_TPOF_VIDEO
+
+GetSimpleTransmissionDuration=1,0,real,sound
+_GetSimpleTransmissionDuration_Defaults=
+_GetSimpleTransmissionDuration_Category=TC_TPOF_VIDEO
 
 //***************************************************************************
 [DefaultTriggerCategories]

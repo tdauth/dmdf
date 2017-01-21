@@ -758,6 +758,14 @@ function VideoSetSkipActionByTrigger takes AVideo video, trigger whichTrigger re
 	call video.setSkipAction(VideoSkipActionEvaluate)
 endfunction
 
+function VideoInitVideoSettings takes AVideo video returns nothing
+	call Game.initVideoSettings(video)
+endfunction
+
+function VideoResetVideoSettings takes nothing returns nothing
+	call Game.resetVideoSettings()
+endfunction
+
 function VideoWait takes real seconds returns boolean
 	return wait(seconds)
 endfunction

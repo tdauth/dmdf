@@ -302,7 +302,7 @@ Zeugs:
 
 Aufgehoben für Version 0.9:
 Critical errors:
-* Holzbruck's Underworld: Right lever cannot be reached in melee fight.
+* FIXED (at least in my version of the map): Holzbruck's Underworld: Right lever cannot be reached in melee fight.
 * FIXED: Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Excel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
 * Orks bei "Die Nordmänner" laufen zwar nicht mehr zurück, aber nicht alle folgen dem Befehl. Angriffstyp, oder zu viele? Kann auch der Grund sein wieso ein weiblicher Waldgeist im Video nicht mit angreift.

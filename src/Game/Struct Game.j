@@ -583,7 +583,8 @@ static if (DMDF_NPC_ROUTINES) then
 endif
 			call initSpells.evaluate() // after classes!
 			call Shop.init.evaluate() // before map data initialization!
-			call Zone.init.evaluate() // before map data initialization!
+			call QuestArea.init.evaluate() // before map data initialization!
+			call Zone.initZones.evaluate() // before map data initialization!
 			// map
 			call MapData.init.evaluate()
 
@@ -919,6 +920,7 @@ endif
 				set i = i + 1
 			endloop
 
+			call NewOpLimit(function QuestArea.hideAll)
 			call NewOpLimit(function Fellow.reviveAllForVideo)
 			call NewOpLimit(function SpawnPoint.pauseAll)
 			call NewOpLimit(function ItemSpawnPoint.pauseAll)
@@ -1014,6 +1016,7 @@ endif
 			call thistype.resetCameraBounds()
 			call EnableTrigger(thistype.m_killTrigger)
 
+			call NewOpLimit(function QuestArea.showAll)
 			call NewOpLimit(function SpawnPoint.resumeAll)
 			call NewOpLimit(function ItemSpawnPoint.resumeAll)
 			call EnumItemsInRect(GetPlayableMapRect(), Filter(function thistype.filterHiddenItem), function thistype.showItem)

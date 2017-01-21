@@ -9,6 +9,9 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 	 * It is mostly used to ensure that all characters are at a certain point when the event starts and are movable and not in talks or something else.
 	 */
 	struct QuestArea
+		// static members
+		private static AIntegerVector m_questAreas
+		// members
 		private fogmodifier array m_assemblyPointFogModifier[12] /// \todo MapSettings.maxPlayers()
 		private destructable array m_assemblyPointMarker[4]
 		private rect m_rect
@@ -157,6 +160,24 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			call this.onStart.execute()
 		endmethod
 
+		public stub method show takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == 4)
+				call ShowDestructable(this.m_assemblyPointMarker[i], true)
+				set i = i + 1
+			endloop
+		endmethod
+
+		public stub method hide takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == 4)
+				call ShowDestructable(this.m_assemblyPointMarker[i], false)
+				set i = i + 1
+			endloop
+		endmethod
+
 		/**
 		 * Creates a new quest area in rect \p whichRect.
 		 * This shows an energie wall around the rect and checks for condition \ref onCheck() when a character enters.
@@ -224,6 +245,8 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			call TriggerAddAction(this.m_enterTrigger, function thistype.triggerActionEnter)
 			call DmdfHashTable.global().setHandleInteger(this.m_enterTrigger, 0, this)
 
+			call thistype.m_questAreas.pushBack(this)
+
 			return this
 		endmethod
 
@@ -232,6 +255,34 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			set this.m_rect = null
 			call DmdfHashTable.global().destroyTrigger(this.m_enterTrigger)
 			set this.m_enterTrigger = null
+
+			call thistype.m_questAreas.remove(this)
+		endmethod
+
+		public static method init takes nothing returns nothing
+			set thistype.m_questAreas = AIntegerVector.create()
+		endmethod
+
+		public static method questAreas takes nothing returns AIntegerVector
+			return thistype.m_questAreas
+		endmethod
+
+		public static method showAll takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.questAreas().size())
+				call thistype(thistype.questAreas()[i]).show()
+				set i = i + 1
+			endloop
+		endmethod
+
+		public static method hideAll takes nothing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == thistype.questAreas().size())
+				call thistype(thistype.questAreas()[i]).hide()
+				set i = i + 1
+			endloop
 		endmethod
 	endstruct
 

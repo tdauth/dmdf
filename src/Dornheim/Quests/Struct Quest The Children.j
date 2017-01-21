@@ -31,35 +31,35 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 			local thistype this = thistype.allocate(character, tre("Die Kinder", "The Children"))
 			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNVillagerKid.blp")
-			call this.setDescription(tr("Der Dorfälteste treibt unchristliche Dinge im Obergeschoss seines Hauses."))
+			call this.setDescription(tre("Der Dorfälteste treibt unheilige Dinge im Obergeschoss seines Hauses.", "The village elders does unholy things on the top floor of his house."))
 			call this.setReward(thistype.rewardExperience, 40)
 			call this.setStateEvent(thistype.stateNew, thistype.stateEventNew)
 			call this.setStateCondition(thistype.stateNew, thistype.stateConditionNew)
 			call this.setStateAction(thistype.stateNew, thistype.stateActionNew)
 
 			// item questItemDiscover
-			set questItem = AQuestItem.create(this, tr("Finde heraus, was es mit dem Dorfältesten auf sich hat."))
+			set questItem = AQuestItem.create(this, tre("Finde heraus, was es mit dem Dorfältesten auf sich hat.", "Find out what it is about with the village elders."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_children_discover)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item questItemTalkToWotan
-			set questItem = AQuestItem.create(this, tr("Sprich mit Wotan über seine Experimente."))
+			set questItem = AQuestItem.create(this, tre("Sprich mit Wotan über seine Experimente.", "Talk to Wotan about his experiments."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.wotan())
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item questItemSacrifice
-			set questItem = AQuestItem.create(this, tr("Entweder: Opfere die Kinder für Wotans dämonische Macht."))
+			set questItem = AQuestItem.create(this, tre("Entweder: Opfere die Kinder für Wotans dämonische Macht.", "Either: Sacrifice the children for Wotan's demonic power."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_children_children)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item questItemRescue
-			set questItem = AQuestItem.create(this, tr("Oder: Rette die Kinder vor Wotans dämonischem Wahnsinn."))
+			set questItem = AQuestItem.create(this, tre("Oder: Rette die Kinder vor Wotans dämonischem Wahnsinn.", "Or: Rescue the children from Wotan's demonic madness."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_children_children)
 			call questItem.setPingColour(100.0, 100.0, 100.0)

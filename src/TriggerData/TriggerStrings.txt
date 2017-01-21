@@ -136,6 +136,10 @@ SetUnitFacingToFaceUnit="Set Unit Facing To Face Unit"
 SetUnitFacingToFaceUnit="Set Facing Of Unit ",~Unit," To Face Unit ",~Unit
 SetUnitFacingToFaceUnitHint=
 
+IssueRectOrder="Issue Rect Order"
+IssueRectOrder="Issue Unit ",~Unit," Order ",~Order," To Rect ",~Rect
+IssueRectOrderHint=""
+
 // Environment API
 
 DestroyDynamicLightning="Destroy Dynamic Lightning"
@@ -372,6 +376,10 @@ CompleteCharacterQuest="Complete Character Quest"
 CompleteCharacterQuest="Complete Character Quest ",~Quest
 CompleteCharacterQuestHint=""
 
+FailCharacterQuest="Fail Character Quest"
+FailCharacterQuest="Fail Character Quest ",~Quest
+FailCharacterQuestHint=""
+
 SetSharedQuestState="Set Shared Quest State"
 SetSharedQuestState="Set Shared Quest ",~Quest," State to ",~State
 SetSharedQuestStateHint=""
@@ -533,6 +541,10 @@ VideoFadeInWithWaitHint="Recognizes video skips by players"
 VideoTransmissionFromUnit="Video Transmission From Unit"
 VideoTransmissionFromUnit="Video Transmision from Unit ",~Unit," with Text ",~Text," Using Sound ",~Sound
 VideoTransmissionFromUnitHint=""
+
+VideoTransmissionFromUnitType="Video Transmission From Unit Type"
+VideoTransmissionFromUnitType="Video Transmission from Unit Type ",~UnitType," of Owner ",~Player," Using Name ",~Name," With Text ",~Text," And Sound ",~Sound
+VideoTransmissionFromUnitTypeHint=""
 
 // Shop API
 
@@ -1013,3 +1025,7 @@ VideoUnitActorHint=
 VideoCharacterActor="Video Character Actor"
 VideoCharacterActor="Video ",~Video," Character Actor"
 VideoCharacterActorHint="Only works if the flag was set on video creation."
+
+GetSimpleTransmissionDuration="Get Simple Transmission Duration"
+GetSimpleTransmissionDuration="Get Simple Transmission Duration For Sound ",~Sound
+GetSimpleTransmissionDurationHint=""

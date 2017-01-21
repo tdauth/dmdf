@@ -32,7 +32,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private static method infoActionHowAreYou takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 
-			call speech(info, character, false, tr("Und wie gehts dir so?"), null)
+			call speech(info, character, false, tre("Und wie gehts dir so?", "So, how are you?"), null)
 			call speech(info, character, true, tr("Ach ich weiß nicht. Die Feldarbeit macht mir zu schaffen und wir müssen ernten bevor es zu spät ist. Einen guten Pflug bräuchten wir, aber der Bauer hat natürlich kein Geld, du kennst ihn ja."), null)
 			call speech(info, character, true, tr("Ich beneide dich darum, dass du hier bald weggehst. Den ganzen Tag arbeiten arbeiten arbeiten, da wird man doch verrückt. Jetzt stell dir mal vor, dass Orks und Dunkelelfen dieses Dorf niederbrennen. Dann war alles umsonst."), null)
 
@@ -147,7 +147,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 			// start page
 			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Hallo Ralph!", "Hello Ralph!"))
-			set this.m_howAreYou = this.addInfo(false, false, thistype.infoConditionHowAreYou, thistype.infoActionHowAreYou, tr("Und wie gehts dir so?"))
+			set this.m_howAreYou = this.addInfo(false, false, thistype.infoConditionHowAreYou, thistype.infoActionHowAreYou, tre("Und wie gehts dir so?", "So, how are you?"))
 			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tr("Kann ich dir noch irgendwie helfen?"))
 			set this.m_ruke = this.addInfo(false, false, thistype.infoConditionRuke, thistype.infoActionRuke, tr("Ich habe die Harke."))
 			set this.m_garden = this.addInfo(false, false, thistype.infoConditionGarden, thistype.infoActionGarden, tr("Der Garten ist umgegraben."))

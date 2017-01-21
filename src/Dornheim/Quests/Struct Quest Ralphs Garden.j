@@ -54,7 +54,7 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 			local thistype this = thistype.allocate(character, tre("Ralphs Garten", "Ralph's Garden"))
 			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNShimmerWeed.blp")
-			call this.setDescription(tr("Ralph braucht Hilfe beim Umgraben des Gartens. Besorge dir eine Harke beim Händler Hans und grabe den Garten damit um."))
+			call this.setDescription(tre("Ralph braucht Hilfe beim Umgraben des Gartens. Besorge dir eine Harke beim Händler Hans und grabe den Garten damit um.", "Ralph needs help digging over the garden. Get a ruke from the merchant Hans and dig over the garden with it."))
 			call this.setReward(thistype.rewardExperience, 30)
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Besorge dir eine Harke beim Händler Hans.", "Get a ruke from the merchant Hans."))
@@ -67,7 +67,7 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item 1
-			set questItem = AQuestItem.create(this, tr("Grabe den Garten mit der Harke um."))
+			set questItem = AQuestItem.create(this, tre("Grabe den Garten mit der Harke um.", "Dig over the garden with the ruke."))
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedGarden)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedGarden)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedGarden)
@@ -77,7 +77,7 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item 2
-			set questItem = AQuestItem.create(this, tr("Berichte Ralph davon."))
+			set questItem = AQuestItem.create(this, tre("Berichte Ralph davon.", "Report to Ralph about it."))
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.ralph())
 			call questItem.setPingColour(100.0, 100.0, 100.0)

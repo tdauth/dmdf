@@ -68,7 +68,7 @@ library StructGameMapSettings
 		endmethod
 
 		/**
-		 * @{
+		 * \{
 		 */
 		public static method setNeutralPassivePlayer takes player whichPlayer returns nothing
 			set thistype.m_neutralPassivePlayer = whichPlayer
@@ -78,7 +78,7 @@ library StructGameMapSettings
 			return thistype.m_neutralPassivePlayer
 		endmethod
 		/**
-		 * @}
+		 * \}
 		 */
 
 		public static method setPlayerGivesXP takes player whichPlayer, boolean flag returns nothing
@@ -116,6 +116,10 @@ library StructGameMapSettings
 			return thistype.m_startSkillPoints
 		endmethod
 
+		/**
+		 * The skill points a character gains when leveling up.
+		 * \{
+		 */
 		public static method setLevelSkillPoints takes integer skillPoints returns nothing
 			set thistype.m_levelSkillPoints = skillPoints
 		endmethod
@@ -123,6 +127,9 @@ library StructGameMapSettings
 		public static method levelSkillPoints takes nothing returns integer
 			return thistype.m_levelSkillPoints
 		endmethod
+		/**
+		 * \}
+		 */
 
 		public static method setMaxLevel takes integer maxLevel returns nothing
 			set thistype.m_maxLevel = maxLevel

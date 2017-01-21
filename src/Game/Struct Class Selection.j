@@ -201,6 +201,21 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call UnitAddAbility(character.unit(), 'A13E')
 			call UnitMakeAbilityPermanent(character.unit(), true, 'A13E')
 
+			/*
+			 * Add spell book with command buttons.
+			 * Remove the command buttons first and readd them in a spell book.
+			 * This saves button icons which can be used for favorite spells instead.
+			 * Stop, Hold Position and Patrol are all connected with 'Amov'. They have no extra ability IDs.
+			 */
+			/*
+			call UnitRemoveAbility(character.unit(), 'Amov')
+			call UnitRemoveAbility(character.unit(), 'Aatk')
+			call UnitAddAbility(character.unit(), 'A1VO')
+			// Readd abilities, otherwise they won't be there anymore.
+			call UnitAddAbility(character.unit(), 'Amov')
+			call UnitAddAbility(character.unit(), 'Aatk')
+			*/
+
 			call character.revival().setTime(MapSettings.revivalTime())
 		endmethod
 

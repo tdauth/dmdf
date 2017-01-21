@@ -56,6 +56,16 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call MapChanger.changeMap(this.mapName())
 		endmethod
 
+		public stub method show takes nothing returns nothing
+			call super.show()
+			call ShowUnit(this.m_iconUnit, true)
+		endmethod
+
+		public stub method hide takes nothing returns nothing
+			call super.hide()
+			call ShowUnit(this.m_iconUnit, false)
+		endmethod
+
 		/**
 		 * Creates a new zone which can be reached via a zone area. Make sure that the zone's name is also in the global zone's name list.
 		 * \param mapName This should be the name of the other map (without extension) which the zone belongs to.
@@ -83,7 +93,7 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		/**
 		 * Initializes the zone system which has to be done before creating any zone.
 		 */
-		public static method init takes nothing returns nothing
+		public static method initZones takes nothing returns nothing
 			set thistype.m_zones = AIntegerVector.create()
 			call SetAltMinimapIcon("UI\\Minimap\\MiniMap-Entrance.blp")
 			set thistype.m_zoneNames = AStringVector.create()
