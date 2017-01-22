@@ -640,8 +640,8 @@ _FellowAddAbility_Category=TC_TPOF_FELLOW
 // Spawn Point API
 
 CreateSpawnPoint=1
-_SpawnPoint_Defaults=
-_SpawnPoint_Category=TC_TPOF_SPAWNPOINT
+_CreateSpawnPoint_Defaults=
+_CreateSpawnPoint_Category=TC_TPOF_SPAWNPOINT
 
 SpawnPointAddUnitWithType=1,SpawnPoint,unit,real
 _SpawnPointAddUnitWithType_Defaults=GetLastCreatedSpawnPoint,_,1.0
