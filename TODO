@@ -282,9 +282,9 @@ Zeugs:
 * World Map: Dont allow traveling to maps which have never been visited.
 * FIXED: The North: Units are owned by player 1.
 * FIXED: Start position from The North in Holzbruck.
-* Dornheim: Ralph has to give him the teleport item.
-* Game options unit has shadow.
-* Wolfsfelle brauchen anderes Icon.
+* DONE: Dornheim: Ralph has to give him the teleport item.
+* FIXED: Game options unit has shadow.
+* FIXED: Wolfsfelle brauchen anderes Icon.
 * Arena Champion is completed although not new. Should be completed when given and the number is >= 5.
 * Magischer Stein der Ahnen geht oft nicht (nach Kartenwechsel?!)
 * Disabled Zones should not show any effect (Magical Barriers).
@@ -297,8 +297,10 @@ Zeugs:
 * Add a spell caster system with hand attachments: http://www.hiveworkshop.com/threads/caster-hand-attachments.63660/
 * Use a spell caster system with spell books: http://www.hiveworkshop.com/threads/spellbook-pack.144447/
 * Add Doodad types for new ice cliff models.
+* Add Bronze items set which adds bonuses when all item are equipped.
 * Performance: Don't create cast and skill triggers for spells which don't have custom functions.
 * Performance: Fix preloading all class spells, grimoire abilities etc. to fix lags in the beginning of the game.
+* Add Bash script with imagemagick to create icons for the different levels for spells. Create a list of all those icons and create the ultimate generation script.
 
 Aufgehoben für Version 0.9:
 Critical errors:

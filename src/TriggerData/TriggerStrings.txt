@@ -210,6 +210,10 @@ CharacterGiveQuestItem="Character Give Quest Item"
 CharacterGiveQuestItem="Character ",~Character," Gets Quest Item Of Type ",~Item
 CharacterGiveQuestItemHint="Quest Items cannot be sold and are invulnerable."
 
+CharacterDisplayItemAcquired="Character Display Item Acquired"
+CharacterDisplayItemAcquired="Character ",~Character," display acquired message for Item with Name ",~Name," and text ",~Text
+CharacterDisplayItemAcquiredHint=""
+
 // Game API
 
 GameAddDefaultDoodadsOcclusion="Game Add Default Doodads Occlusion"
@@ -291,6 +295,10 @@ ShowTalkUntilHint=""
 CloseTalk="Close Talk For Character"
 CloseTalk="Close Talk ",~Talk," for Character ",~Character
 CloseTalkHint=""
+
+AddInfo="Add Information"
+AddInfo="Add information to ",~Talk," permanently ",~permanently," and important ",~important," with text ",~text
+AddInfoHint="Adds information to a talk."
 
 AddExitButton="Add Exit Button"
 AddExitButton="Add Exit Button to Talk ",~Talk

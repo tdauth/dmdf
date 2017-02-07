@@ -389,6 +389,8 @@ function SetFellowTalk takes Fellow fellow, boolean active returns nothing
 	call fellow.setTalk(active)
 endfunction
 
+// Character API
+
 function PlayerCharacter takes player whichPlayer returns Character
 	return Character(Character.playerCharacter(whichPlayer))
 endfunction
@@ -408,6 +410,16 @@ endfunction
 function CharacterInventory takes Character character returns AInventory
 	return character.inventory()
 endfunction
+
+function CharacterSetAllMovable takes boolean movable returns nothing
+	call Character.setAllMovable(movable)
+endfunction
+
+function CharacterGiveItem takes Character character, integer itemTypeId returns nothing
+	call character.giveItem(itemTypeId)
+endfunction
+
+// Inventory API
 
 function InventoryEquipmentItemType takes AInventory inventory, integer equipmentType returns integer
 	local AInventoryItemData itemData = inventory.equipmentItemData(equipmentType)
