@@ -301,6 +301,10 @@ Zeugs:
 * Performance: Don't create cast and skill triggers for spells which don't have custom functions.
 * Performance: Fix preloading all class spells, grimoire abilities etc. to fix lags in the beginning of the game.
 * Add Bash script with imagemagick to create icons for the different levels for spells. Create a list of all those icons and create the ultimate generation script.
+* Planning documents have names that don't work on Windows:
+	* Band 1: Der Meister.odt (Invalid argument)
+	* error: unable to create file doc/Planung/Hintergrunddefinition/Mythen/BÃ¼cher/Band 1: Der Meister.pdf (Invalid argument)
+	* error: unable to create file doc/Planung/Hintergrunddefinition/Mythen/BÃ¼cher/Gedicht: Gotlindes Worte.odt
 
 Aufgehoben für Version 0.9:
 Critical errors:
