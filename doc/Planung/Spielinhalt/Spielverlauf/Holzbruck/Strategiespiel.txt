@@ -1,0 +1,37 @@
+Holzbruck:
+Holbruck ist die erste Karte in "Die Macht des Feuers", die das KI-Modul von Warcraft 3 TFT verwendet
+
+Es gibt zwei Kontrahenten, gesteuert vom Computer:
+- Verteidiger (die Bewohner Holzbrucks und die dorthin geflohenen Bauern der Gemeinde vor der Stadt unter der Führung von Arnulf)
+- Belagerer (die Dunkelelfen und Orks unter der Führung Baradés)
+
+Beide besitzen eine (Kampagnen?-)KI, die dafür sorgt, dass bestimmte Einheiten Rohstoffe sammeln:
+- Bei den Verteidigern gehen Händler der Zünfte (Gilden/Patrizier wurden vertrieben) von Holzbruck mit Karren nach rechts an den Kartenrand
+- Bei den Angreifern gehen Ork- und Dunkelelfenarbeiter in die Wälder
+Die Rohstoffsammlung muss nicht zwingend wie bei Kampagnen-KIs üblich imitiert
+werden, es würde jedoch Sinn machen, wenn es nicht unendlich Rohstoffe gibt.
+Als Rohstoffe werden Goldmünzen und Baumaterialien gesammelt. Baumaterialien werden für die Reparatur und den Ausbau von Belager-
+bzw. Verteidigungsanlagen benötigt.
+Goldmünzen für Forschungen und die Rektrutierung von Soldaten.
+Es gibt kein Bevölkerungs-/Nahrungslimit!
+
+Einstellungen für beide KIS (JASS):
+CampaignAI(null, null)
+SetTargetHeroes(true)
+SetUnitsFlee(true)
+SetHeroesFlee(true)
+SetGroupsFlee(false)
+SetSlowChopping(true)
+SetPeonsRepair(true) // Reparieren Verteidigunsanlagen und Belagerungswaffen usw
+SetHeroesBuyItems(true)
+SetHeroesTakeItems(true)
+
+Es können von den Spielern unterschiedliche Einheiten ausgebildet werden
+und daraufhin werden unterschiedliche Wellen losgeschickt (ohne Helden, gibt kaum welche).
+Das Ganze muss allerdings mit der gemeinsamen Spielerkontrolle funktionieren.
+Das bedeutet, dass der Kauf von Einheiten durch menschliche Spieler als Ausbildung registriert werden muss und die Steuerung der Einheiten durch menschliche Spieler eine höhere Priorität als die durch die Computerspieler selbst hat!
+Dies sollte einfach mit einer erweiterten gemeinsamen Kontrolle funktionieren.
+
+In der Karte wird eine Reihe von Strategiespielneuerungen genutzt, die mit der ASL 2.0 und höher umsetzbar sind:
+- Befehlswarteschlangen: Man kann einer Einheit mehrere Befehle erteilen, die sie hintereinander abarbeitet.
+- Truppengruppierungen: Man kann Einheiten zu Trupps zusammenfassen, die automatisch selektiert werden. Eventuell auch ausbildbar.
