@@ -1,4 +1,4 @@
-library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs
+library StructMapTalksTalkBrogo requires Asl, StructMapMapNpcs, StructMapQuestsQuestCatsForBrogo
 
 	struct TalkBrogo extends Talk
 		private static constant integer experienceBonus = 50

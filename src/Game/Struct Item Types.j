@@ -193,9 +193,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			local Character character = Character.getCharacterByUnit(whichUnit)
 			debug call Print("Bronze item attach")
-			if (GetUnitAbilityLevel(whichUnit, 'A1W4') < 1 and character != 0 and character.inventory().equipmentItemData(thistype.equipmentTypeHeaddress) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypeHeaddress).itemTypeId() == 'I07Q' and character.inventory().equipmentItemData(thistype.equipmentTypeArmour) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypeArmour).itemTypeId() == 'I07X') then
+			if (GetUnitAbilityLevel(whichUnit, 'A1W4') < 1 and character != 0 and character.inventory().equipmentItemData(thistype.equipmentTypeHeaddress) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypeHeaddress).itemTypeId() == 'I07Q' and character.inventory().equipmentItemData(thistype.equipmentTypeArmour) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypeArmour).itemTypeId() == 'I07X' and character.inventory().equipmentItemData(thistype.equipmentTypePrimaryWeapon) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypePrimaryWeapon).itemTypeId() == 'I080' and character.inventory().equipmentItemData(thistype.equipmentTypeSecondaryWeapon) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypeSecondaryWeapon).itemTypeId() == 'I07Z' and ((character.inventory().equipmentItemData(thistype.equipmentTypeAmulet) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypeAmulet).itemTypeId() == 'I07Y' and character.inventory().equipmentItemData(thistype.equipmentTypeAmulet + 1) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypeAmulet + 1).itemTypeId() == 'I081') or (character.inventory().equipmentItemData(thistype.equipmentTypeAmulet) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypeAmulet).itemTypeId() == 'I081' and character.inventory().equipmentItemData(thistype.equipmentTypeAmulet + 1) != 0 and  character.inventory().equipmentItemData(thistype.equipmentTypeAmulet + 1).itemTypeId() == 'I07Y'))) then
 				call UnitAddAbility(whichUnit, 'A1W4')
 				call UnitMakeAbilityPermanent(whichUnit, true, 'A1W4')
+				call character.displayHint(tre("Gesamte Bronzerüstung ausgerüstet. Die Rüstung Ihres Charakters wird zusätzlich erhöht.", "Equipped the whole bronze armour. The armour of your character is increased additionally."))
 				debug call Print("Add Bronze bonus!")
 			endif
 		endmethod
@@ -376,6 +377,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		private static ItemType m_nordicSpear // Models\Items\RicmansSpeer.mdx
 		private static BronzeSetItemType m_bronzeHelmet
 		private static BronzeSetItemType m_bronzePlate
+		private static BronzeSetItemType m_bronzeBoots
+		private static BronzeSetItemType m_bronzeBuckler
+		private static BronzeSetItemType m_bronzeSword
+		private static BronzeSetItemType m_bronzeBracers
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -864,6 +869,18 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 			set thistype.m_bronzePlate = BronzeSetItemType.create('I07X', ItemType.equipmentTypeArmour, 0, 0, 0, 0, 0)
 			call thistype.m_bronzePlate.addAbility('A1W3', true)
+
+			set thistype.m_bronzeBoots = BronzeSetItemType.create('I07Y', ItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
+			call thistype.m_bronzeBoots.addAbility('A1W5', true)
+
+			set thistype.m_bronzeBuckler = BronzeSetItemType.create('I07Z', ItemType.equipmentTypeSecondaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_bronzeBuckler.addAbility('A1W6', true)
+
+			set thistype.m_bronzeSword = BronzeSetItemType.create('I080', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
+			call thistype.m_bronzeSword.addAbility('A1W7', true)
+
+			set thistype.m_bronzeBracers = BronzeSetItemType.create('I081', ItemType.equipmentTypeAmulet, 0, 0, 0, 0, 0)
+			call thistype.m_bronzeBracers.addAbility('A1W8', true)
 		endmethod
 
 		public static method lightWoodenShield takes nothing returns ItemType
