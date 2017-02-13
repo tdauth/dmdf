@@ -1,4 +1,4 @@
-library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashTable, StructGameGame, StructGameOptions, StructGameTreeTransparency
+library StructGameDungeon requires Asl, StructGameDmdfHashTable
 
 	/**
 	 * \brief Dungeons allow the use of separate rects with custom camera bounds.
@@ -83,6 +83,7 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 
 		public method setCameraBoundsForPlayer takes player whichPlayer returns nothing
 			local thistype old = thistype.m_playerDungeon[GetPlayerId(whichPlayer)]
+			local Character character = Character(Character.playerCharacter(whichPlayer))
 
 			if (old != 0) then
 				call old.m_players.remove(whichPlayer)
@@ -93,11 +94,11 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 			endif
 
 			call SetCameraBoundsToRectForPlayerBJ(whichPlayer, this.cameraBounds())
-			if (not IsUnitDeadBJ(Character.playerCharacter(whichPlayer).unit()) and RectContainsUnit(this.cameraBounds(), Character.playerCharacter(whichPlayer).unit())) then
-				call Character.playerCharacter(whichPlayer).panCamera()
+			if (character != 0 and not IsUnitDeadBJ(character.unit()) and RectContainsUnit(this.cameraBounds(), character.unit())) then
+				call character.panCamera()
 				debug call Print("Pan to character")
-			elseif (Character.playerCharacter(whichPlayer).shrine() != 0 and RectContainsCoords(this.cameraBounds(), GetRectCenterX(Character.playerCharacter(whichPlayer).shrine().revivalRect()), GetRectCenterY(Character.playerCharacter(whichPlayer).shrine().revivalRect()))) then
-				call SetCameraPositionForPlayer(whichPlayer, GetRectCenterX(Character.playerCharacter(whichPlayer).shrine().revivalRect()), GetRectCenterY(Character.playerCharacter(whichPlayer).shrine().revivalRect()))
+			elseif (character != 0 and character.shrine() != 0 and RectContainsCoords(this.cameraBounds(), GetRectCenterX(character.shrine().revivalRect()), GetRectCenterY(character.shrine().revivalRect()))) then
+				call SetCameraPositionForPlayer(whichPlayer, GetRectCenterX(character.shrine().revivalRect()), GetRectCenterY(character.shrine().revivalRect()))
 				debug call Print("Pan to shrine rect")
 			elseif (this.viewRect() != null) then
 				// TODO panning camera after setting bounds does not work.
@@ -229,7 +230,8 @@ library StructGameDungeon requires Asl, StructGameCharacter, StructGameDmdfHashT
 				exitwhen (i == MapSettings.maxPlayers())
 				set character = Character.playerCharacter(Player(i))
 				if (character != 0) then
-					call character.options().dungeons().addDungeon(abilityId, spellBookAbilityId, dungeon)
+					// Use .evaluate() here since it is only called once but Character needs the struct Dungeon in timerFunctionCamera() periodically.
+					call character.options.evaluate().dungeons.evaluate().addDungeon.evaluate(abilityId, spellBookAbilityId, dungeon)
 				endif
 				set i = i + 1
 			endloop

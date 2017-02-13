@@ -213,6 +213,7 @@ ZoneTheNorth=0,string,`TN`,"Zone The North"
 RoutineMoveTo=0,ARoutine,Routines.moveTo(),"Routine Move To"
 RoutineHarvest=0,ARoutine,Routines.harvest(),"Routine Harvest"
 RoutineHarvestLumber=0,ARoutine,Routines.harvestLumber(),"Routine Harvest Lumber"
+RoutineTrain=0,ARoutine,Routines.train(),"Routine Train"
 
 //***************************************************************************
 [TriggerEvents]
@@ -425,6 +426,10 @@ CharacterGiveQuestItem=1,Character,itemcode
 _CharacterGiveQuestItem_Defaults=PlayerCharacter,_
 _CharacterGiveQuestItem_Category=TC_TPOF_CHARACTER
 
+CharacterDisplayItemAcquired=1,Character,string,string
+_CharacterDisplayItemAcquired_Defaults=PlayerCharacter,GetItemName,_
+_CharacterDisplayItemAcquired_Category=TC_TPOF_CHARACTER
+
 // Game API
 
 GameAddDefaultDoodadsOcclusion=1
@@ -506,6 +511,10 @@ _ShowTalkUntil_Category=TC_TPOF_TALK
 CloseTalk=1,Talk,Character
 _CloseTalk_Defaults=
 _CloseTalk_Category=TC_TPOF_TALK
+
+AddInfo=1,Talk,boolean,boolean,string
+_AddInfo_Defaults=_,true,false,_,_,_
+_AddInfo_Category=TC_TPOF_TALK
 
 AddExitButton=1,Talk
 _AddExitButton_Defaults=

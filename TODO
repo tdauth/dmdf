@@ -60,7 +60,8 @@ Zeugs:
 * DONE: Ricman: Evtl. Bestechungsoption einbauen, damit alle Klassen die Zauber lernen können? Ansonsten hat der Drachentöter zu große Vorteile!
 * DONE: Ricman: Erlernbare Fähigkeiten als Drachentöter sollen Grimoire Spells werden und im Zauberbuch erscheinen. Ansonsten kann man sie nicht verlernen und die Zauberpunkte anderwertig verwenden. Achtung: Können dann eventuell nicht alle angezeigt werden?
 * Trommons Quest nicht einfach ablehnbar machen!
-* Alle Talk Members static machen, da es immer genau eine Talk-Instanz gibt -> Performance
+* Make all struct members of talks static since there is only one instance -> performance.
+* Make all struct members of shared quests static since there is only one instance -> performance.
 * Mit SharpCraft debuggen - optlimit etc.
 * ACharacter.displayMessage() entfernen und durch QuestMessageBJ() ersetzen. Eventuell QuestMessageBJ() für einzelnen Spieler anbieten? Neue Funktion QuestMessageForPlayer() aus der ASL verwenden.
 * ACharacter.setMovable() entfernen und durch jeweilige Funktionen ersetzen.
@@ -68,7 +69,7 @@ Zeugs:
 * Dago retten - Bedingung einbauen, Dago darf das Gebiet nicht verlassen, sonst ist der Auftrag fehlgeschlagen! Ansonsten kann man mit Dago alles abmetzeln!
 * FIXED: Drachentöterin benötigt Tagesablauf der nach dem Quest "Metzelei" aktiviert wird: Sie muss nach Talras gehen.
 * FIXED: Viel viel viel mehr Schreine platzieren. Sind auch Teleportmöglichkeiten!
-* Mehr Kreaturen oder sammelbare Items platzieren. Die Karte ist viel zu leer -> mehr Spawn Points.
+* Talras: Mehr Kreaturen oder sammelbare Items platzieren. Die Karte ist viel zu leer -> mehr Spawn Points.
 * FIXED: Quest-Pings deaktivierbar machen (pro Spieler).
 * FIXED: Quest-Pings manuell durch Hauptmenü erlauben.
 * Video "Das erste Gefecht": Einheiten blockieren sich gegenseitig beim Laufen. Nicht in der selben Gruppe?! Abstände vergrößern, Geschwindigkeit anpassen auch bei Items!
@@ -282,9 +283,9 @@ Zeugs:
 * World Map: Dont allow traveling to maps which have never been visited.
 * FIXED: The North: Units are owned by player 1.
 * FIXED: Start position from The North in Holzbruck.
-* Dornheim: Ralph has to give him the teleport item.
-* Game options unit has shadow.
-* Wolfsfelle brauchen anderes Icon.
+* DONE: Dornheim: Ralph has to give him the teleport item.
+* FIXED: Game options unit has shadow.
+* FIXED: Wolfsfelle brauchen anderes Icon.
 * Arena Champion is completed although not new. Should be completed when given and the number is >= 5.
 * Magischer Stein der Ahnen geht oft nicht (nach Kartenwechsel?!)
 * Disabled Zones should not show any effect (Magical Barriers).
@@ -296,9 +297,15 @@ Zeugs:
 * Use race package for the map The North (its a WoW race but who cares): http://www.hiveworkshop.com/threads/vrykul-race-pack.241083/
 * Add a spell caster system with hand attachments: http://www.hiveworkshop.com/threads/caster-hand-attachments.63660/
 * Use a spell caster system with spell books: http://www.hiveworkshop.com/threads/spellbook-pack.144447/
-* Add Doodad types for new ice cliff models.
+* DONE: Add Doodad types for new ice cliff models.
+* Add Bronze items set which adds bonuses when all item are equipped.
 * Performance: Don't create cast and skill triggers for spells which don't have custom functions.
 * Performance: Fix preloading all class spells, grimoire abilities etc. to fix lags in the beginning of the game.
+* Add Bash script with imagemagick to create icons for the different levels for spells. Create a list of all those icons and create the ultimate generation script.
+* FIXED: Planning documents have names that don't work on Windows:
+	* Band 1: Der Meister.odt (Invalid argument)
+	* error: unable to create file doc/Planung/Hintergrunddefinition/Mythen/BÃ¼cher/Band 1: Der Meister.pdf (Invalid argument)
+	* error: unable to create file doc/Planung/Hintergrunddefinition/Mythen/BÃ¼cher/Gedicht: Gotlindes Worte.odt
 
 Aufgehoben für Version 0.9:
 Critical errors:
