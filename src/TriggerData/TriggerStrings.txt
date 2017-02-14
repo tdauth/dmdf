@@ -392,10 +392,6 @@ SetSharedQuestState="Set Shared Quest State"
 SetSharedQuestState="Set Shared Quest ",~Quest," State to ",~State
 SetSharedQuestStateHint=""
 
-SetCharacterQuestState="Set Character Quest State"
-SetCharacterQuestState="Set Character Quest ",~CharacterQuest," State to ",~State
-SetCharacterQuestStateHint=""
-
 // Fellow API
 
 SetFellowRevival="Set Fellow Revival"
@@ -476,6 +472,14 @@ DungeonSetCameraSetupHint="When the dungeon is activated the camera setup is app
 
 // Routine API
 
+CreateRoutineWithFacing="Create Routine With Facing"
+CreateRoutineWithFacing="Create routine with facing using basic routine type ",~RoutineType," and NPC unit ",~Unit," and starting at ",~TimeOfDay," and ending at ",~TimeOfDay," with target rect ",~Rect
+CreateRoutineWithFacing=""
+
+CreateRoutineTalks="Create Routine Talks"
+CreateRoutineTalks="Create Routine talks using basic routine type ",~RoutineType," and NPC unit ",~Unit," and starting at ",~TimeOfDay," and ending at ",~TimeOfDay," with target rect ",~Rect
+CreateRoutineTalksHint=""
+
 RoutineSetFacing="Set Routine Facing"
 RoutineSetFacing="Set Facing for Routine ",~Routine," to ",~Real
 RoutineSetFacingHint=""
@@ -495,6 +499,12 @@ RoutineAddSoundAnswerHint="The sound is played during a conversation with anothe
 RoutineManualStart="Routine Manual Start"
 RoutineManualStart="Start Routine Manually For Unit ",~Unit
 RoutineManualStartHint=""
+
+RoutineManualStartAll="Routine Manual Start"
+RoutineManualStartAll="Start Routine Manually For All Units"
+RoutineManualStartAllHint=""
+
+// Shrine API
 
 ShrineEnableForAll="Enable Shrine For All"
 ShrineEnableForAll="Enable Shrine ",~Shrine," For All Characters Showing Effect ",~Flag
@@ -698,6 +708,14 @@ CreateMissileHint="The missile has to be configured and then started from somwhe
 
 // Character API
 
+GetTriggerCharacter="Get Trigger Character"
+GetTriggerCharacter="Gets the character of trigger"
+GetTriggerCharacterHint="If the trigger is evaluated or executed for an info it has stored the character."
+
+GetTriggerClass="Get Trigger Class"
+GetTriggerClass="Get Trigger Class"
+GetTriggerClassHint="Gets the trigger class of the selection."
+
 GetCharacterPlayers="Get Character Players"
 GetCharacterPlayers="Get Character Players"
 GetCharacterPlayersHint="Gets all players which currently have a character."
@@ -889,10 +907,6 @@ GetTriggerInfoHint="If the trigger is evaluated or executed for an info it has s
 GetTriggerTalk="Get Trigger Talk"
 GetTriggerTalk="Gets the talk of trigger"
 GetTriggerTalkHint="If the trigger is evaluated or executed for an info it has stored the talk."
-
-GetTriggerCharacter="Get Trigger Character"
-GetTriggerCharacter="Gets the character of trigger"
-GetTriggerCharacterHint="If the trigger is evaluated or executed for an info it has stored the character."
 
 GetInfoTalk="Get Info Talk"
 GetInfoTalk="Get Talk of Info ",~Info

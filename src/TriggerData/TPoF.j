@@ -391,6 +391,14 @@ endfunction
 
 // Character API
 
+function GetTriggerCharacter takes nothing returns Character
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_CHARACTER)
+endfunction
+
+function GetTriggerClass takes nothing returns AClass
+	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_CLASS)
+endfunction
+
 function PlayerCharacter takes player whichPlayer returns Character
 	return Character(Character.playerCharacter(whichPlayer))
 endfunction
@@ -494,10 +502,6 @@ endfunction
 
 function GetTriggerTalk takes nothing returns Talk
 	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_TALK)
-endfunction
-
-function GetTriggerCharacter takes nothing returns Character
-	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_CHARACTER)
 endfunction
 
 function GetInfoTalk takes AInfo info returns Talk
@@ -705,6 +709,10 @@ endfunction
 
 function RoutineManualStart takes unit whichUnit returns nothing
 	call AUnitRoutine.manualStart(whichUnit)
+endfunction
+
+function RoutineManualStartAll takes nothing returns nothing
+	call AUnitRoutine.manualStartAll()
 endfunction
 
 function ShrineEnableForAll takes Shrine shrine, boolean showEffect returns nothing

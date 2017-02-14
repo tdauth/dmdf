@@ -48,12 +48,6 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_wotanPortal = NpcRoutineWithFacing.create(thistype.m_teleport, Npcs.wotan(), 4.0, 8.0, gg_rct_waypoint_wotan_portal)
 			call thistype.m_wotanPortal.setFacing(297.03)
 		endmethod
-
-		// NOTE manual start ALL!
-		public static method manualStart takes nothing returns nothing
-			call AUnitRoutine.manualStart(Npcs.mother())
-			call AUnitRoutine.manualStart(Npcs.wotan())
-		endmethod
 	endstruct
 
 endlibrary

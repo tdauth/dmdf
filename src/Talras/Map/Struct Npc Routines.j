@@ -402,33 +402,6 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call AUnitRoutine.create(Routines.moveTo(), gg_unit_n02J_0158, bj_TOD_DUSK, bj_TOD_DAWN, gg_rct_waypoint_menials_sleep)
 		endmethod
 
-		// NOTE manual start ALL!
-		public static method manualStart takes nothing returns nothing
-			call AUnitRoutine.manualStart(Npcs.wigberht())
-			call AUnitRoutine.manualStart(Npcs.sisgard())
-			call AUnitRoutine.manualStart(Npcs.agihard())
-			call AUnitRoutine.manualStart(Npcs.bjoern())
-			call AUnitRoutine.manualStart(Npcs.bjoernsWife())
-			call AUnitRoutine.manualStart(Npcs.osman())
-			call AUnitRoutine.manualStart(Npcs.ferdinand())
-			call AUnitRoutine.manualStart(Npcs.heimrich())
-			call AUnitRoutine.manualStart(Npcs.markward())
-			call AUnitRoutine.manualStart(Npcs.wieland())
-			call AUnitRoutine.manualStart(Npcs.irmina())
-			call AUnitRoutine.manualStart(Npcs.einar())
-			call AUnitRoutine.manualStart(Npcs.mathilda())
-			call AUnitRoutine.manualStart(Npcs.lothar())
-			call AUnitRoutine.manualStart(Npcs.kuno())
-			call AUnitRoutine.manualStart(Npcs.kunosDaughter())
-			call AUnitRoutine.manualStart(Npcs.trommon())
-			call AUnitRoutine.manualStart(Npcs.tobias())
-			call AUnitRoutine.manualStart(Npcs.brogo())
-			call AUnitRoutine.manualStart(gg_unit_n02J_0013)
-			call AUnitRoutine.manualStart(gg_unit_n02J_0157)
-			call AUnitRoutine.manualStart(gg_unit_n02J_0159)
-			call AUnitRoutine.manualStart(gg_unit_n02J_0158)
-		endmethod
-
 		/**
 		 * The dragon slayer's routine is created after the quest is done for her.
 		 * Before that she doesn't have any routine.

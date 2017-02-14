@@ -481,15 +481,15 @@ _SetZoneEnabled_Category=TC_TPOF_MAP
 // Talk API
 
 SetInfoCondition=1,AInfo,AInfoCondition
-_SetInfoCondition_Defaults=
+_SetInfoCondition_Defaults=GetLastCreatedInfo,InfoConditionByTrigger
 _SetInfoCondition_Category=TC_TPOF_TALK
 
 SetInfoAction=1,AInfo,AInfoAction
-_SetInfoAction_Defaults=
+_SetInfoAction_Defaults=GetLastCreatedInfo,InfoActionByTrigger
 _SetInfoAction_Category=TC_TPOF_TALK
 
 SetInfoConditionAndActionByTrigger=1,AInfo,trigger
-_SetInfoConditionAndActionByTrigger_Defaults=
+_SetInfoConditionAndActionByTrigger_Defaults=GetLastCreatedInfo,_
 _SetInfoConditionAndActionByTrigger_Category=TC_TPOF_TALK
 
 SetTalkStartAction=1,Talk,ATalkStartAction
@@ -501,23 +501,23 @@ _ShowTalkStartPage_Defaults=GetTriggerTalk,GetTriggerCharacter
 _ShowTalkStartPage_Category=TC_TPOF_TALK
 
 ShowTalkRange=1,Talk,integer,integer,Character
-_ShowTalkRange_Defaults=
+_ShowTalkRange_Defaults=GetTriggerTalk,_,_,GetTriggerCharacter
 _ShowTalkRange_Category=TC_TPOF_TALK
 
 ShowTalkUntil=1,Talk,integer,Character
-_ShowTalkUntil_Defaults=
+_ShowTalkUntil_Defaults=GetTriggerTalk,_,GetTriggerCharacter
 _ShowTalkUntil_Category=TC_TPOF_TALK
 
 CloseTalk=1,Talk,Character
-_CloseTalk_Defaults=
+_CloseTalk_Defaults=GetTriggerTalk,GetTriggerCharacter
 _CloseTalk_Category=TC_TPOF_TALK
 
 AddInfo=1,Talk,boolean,boolean,string
-_AddInfo_Defaults=_,true,false,_,_,_
+_AddInfo_Defaults=GetLastCreatedTalk,true,false,_,_,_
 _AddInfo_Category=TC_TPOF_TALK
 
 AddExitButton=1,Talk
-_AddExitButton_Defaults=
+_AddExitButton_Defaults=GetLastCreatedTalk
 _AddExitButton_Category=TC_TPOF_TALK
 
 Speech=1,AInfo,Character,boolean,StringExt,sound
@@ -536,7 +536,7 @@ SetQuestAreaConditionAndActionByTrigger=1,QuestArea,trigger
 _SetQuestAreaConditionAndActionByTrigger_Defaults=
 _SetQuestAreaConditionAndActionByTrigger_Category=TC_TPOF_QUESTAREA
 
-CreateCharacterQuestItem=AQuest,string
+CreateCharacterQuestItem=1,AQuest,string
 _CreateCharacterQuestItem_Defaults=
 _CreateCharacterQuestItem_Category=TC_TPOF_QUEST
 
@@ -684,25 +684,37 @@ _DungeonSetCameraSetup_Category=TC_TPOF_DUNGEON
 
 // Routine API
 
+CreateRoutineWithFacing=1,ARoutine,unit,real,real,rect
+_CreateRoutineWithFacing_Defaults=RoutineMoveTo,_,12.0,20.0,_
+_CreateRoutineWithFacing_Category=TC_TPOF_ROUTINE
+
+CreateRoutineTalks=1,ARoutine,unit,real,real,rect
+_CreateRotineTalks_Defaults=RoutineMoveTo,_,12.0,20.0,_
+_CreateRoutineTalks_Category=TC_TPOF_ROUTINE
+
 RoutineSetFacing=1,NpcRoutineWithFacing,real
-_RoutineSetFacing_Defaults=
+_RoutineSetFacing_Defaults=GetLastCreatedRoutineWithFacing,90.0
 _RoutineSetFacing_Category=TC_TPOF_ROUTINE
 
 RoutineSetPartner=1,NpcTalksRoutine,unit
-_RoutineSetPartner_Defaults=
+_RoutineSetPartner_Defaults=GetLastCreatedRoutineTalks,_
 _RoutineSetPartner_Category=TC_TPOF_ROUTINE
 
 RoutineAddSound=1,NpcTalksRoutine,string,sound
-_RoutineAddSound_Defaults=
+_RoutineAddSound_Defaults=GetLastCreatedRoutineTalks,_,SoundNull
 _RoutineAddSound_Category=TC_TPOF_ROUTINE
 
 RoutineAddSoundAnswer=1,NpcTalksRoutine,string,sound
-_RoutineAddSoundAnswer_Defaults=
+_RoutineAddSoundAnswer_Defaults=GetLastCreatedRoutineTalks,_,SoundNull
 _RoutineAddSoundAnswer_Category=TC_TPOF_ROUTINE
 
 RoutineManualStart=1,unit
 _RoutineManualStart_Defaults=
 _RoutineManualStart_Category=TC_TPOF_ROUTINE
+
+RoutineManualStartAll=1
+_RoutineManualStartAll_Defaults=
+_RoutineManualStartAll_Category=TC_TPOF_ROUTINE
 
 // Shrine API
 
@@ -912,6 +924,14 @@ _CreateMissile_Category=TC_TPOF_ENVIRONMENT
 
 // Character API
 
+GetTriggerCharacter=1,0,Character
+_GetTriggerCharacter_Defaults=
+_GetTriggerCharacter_Category=TC_TPOF_CHARACTER
+
+GetTriggerClass=1,0,AClass
+_GetTriggerClass_Defaults=
+_GetTriggerClass_Category=TC_TPOF_CHARACTER
+
 // returns force
 GetCharacterPlayers=0,0,force
 _GetCharacterPlayers_Defaults=
@@ -1082,11 +1102,11 @@ _GetLastCreatedInfo_Defaults=
 _GetLastCreatedInfo_Category=TC_TPOF_TALK
 
 AddInfo=1,0,AInfo,Talk,boolean,boolean,string
-_AddInfo_Defaults=_,true,false,_,_,_
+_AddInfo_Defaults=GetLastCreatedTalk,true,false,_,_,_
 _AddInfo_Category=TC_TPOF_TALK
 
 AddExitButton=1,0,AInfo,Talk
-_AddExitButton_Defaults=
+_AddExitButton_Defaults=GetLastCreatedTalk
 _AddExitButton_Category=TC_TPOF_TALK
 
 InfoConditionByTrigger=1,0,AInfoCondition,trigger,AInfo
@@ -1104,10 +1124,6 @@ _GetTriggerInfo_Category=TC_TPOF_TALK
 GetTriggerTalk=1,0,Talk
 _GetTriggerTalk_Defaults=
 _GetTriggerTalk_Category=TC_TPOF_TALK
-
-GetTriggerCharacter=1,0,Character
-_GetTriggerCharacter_Defaults=
-_GetTriggerCharacter_Category=TC_TPOF_TALK
 
 TalkStartActionByTrigger=1,0,ATalkStartAction,trigger,Talk
 _TalkStartActionByTrigger_Defaults=
