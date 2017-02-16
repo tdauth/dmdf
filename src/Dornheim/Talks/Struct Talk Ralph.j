@@ -49,6 +49,8 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 			call speech(info, character, false, tr("Kann ich dir noch irgendwie helfen?"), null)
 			call speech(info, character, true, tr("Willst du dir das wirklich antun? Wenn du mir noch helfen willst, besorg dir eine Harke und grab den Garten hier um. Das würde mir schon sehr viel Arbeit abnehmen."), null)
+			call speech(info, character, true, tr("Natürlich gebe ich dir auch die Goldmünzen dafür, aber verschwende sie nicht für irgendetwas anderes!"), null)
+			call character.addGold(10)
 
 			call QuestRalphsGarden.characterQuest(character).enable()
 

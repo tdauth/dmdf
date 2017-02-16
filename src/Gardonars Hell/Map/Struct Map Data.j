@@ -97,7 +97,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
 			call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start))
-			call SetUnitX(character.unit(), GetRectCenterY(gg_rct_start))
+			call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start))
 			call SetUnitFacing(character.unit(), 90.0)
 		endmethod
 

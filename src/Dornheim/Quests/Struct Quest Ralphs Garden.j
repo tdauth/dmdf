@@ -6,27 +6,23 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemReport = 2
 		private trigger m_hintTriggerHans
 
+		private static method onAddItemToRucksackRuke takes AInventory inventory, integer index, boolean firstTime returns nothing
+			local thistype this = thistype.characterQuest.evaluate(inventory.character())
+			if (this.questItem(thistype.questItemBuyRake).isNew()) then
+				if (firstTime and inventory.rucksackItemData(index) != 0 and inventory.rucksackItemData(index).itemTypeId() == 'I02F') then
+					call this.questItem(thistype.questItemBuyRake).complete()
+				endif
+			endif
+		endmethod
+
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
 			//call character.giveQuestItem(thistype.itemTypeId)
 			//call character.options().missions().addMission('A1R8', 'A1RK', this)
+
+			call character.inventory().addOnAddToRucksackFunction(thistype.onAddItemToRucksackRuke)
+
 			return super.enableUntil(thistype.questItemGarden)
-		endmethod
-
-		private static method stateEventCompletedBuyRake takes AQuestItem questItem, trigger whichTrigger returns nothing
-			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_PICKUP_ITEM)
-		endmethod
-
-		/**
-		 * Wenn der Charakter die Gegenstände verliert/verkauft/zerstört macht das nichts.
-		 * Im Gespräch wird nochmal überprüft, ob er ihn dabei hat.
-		 */
-		private static method stateConditionCompletedBuyRake takes AQuestItem questItem returns boolean
-			local thistype this = thistype(questItem.quest())
-			if (GetTriggerUnit() == this.character().unit() and GetItemTypeId(GetManipulatedItem()) == 'I02F') then
-				return true
-			endif
-			return false
 		endmethod
 
 		private static method stateActionCompletedBuyRake takes AQuestItem questItem returns nothing
@@ -58,8 +54,6 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 			call this.setReward(thistype.rewardExperience, 30)
 			// item 0
 			set questItem = AQuestItem.create(this, tre("Besorge dir eine Harke beim Händler Hans.", "Get a ruke from the merchant Hans."))
-			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedBuyRake)
-			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedBuyRake)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedBuyRake)
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.hans())

@@ -117,7 +117,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call MapSettings.setGoldmine(null)
 			call MapSettings.setNeutralPassivePlayer(Player(7))
 			call MapSettings.setPlayerGivesXP(Player(PLAYER_NEUTRAL_AGGRESSIVE), false)
-			call MapSettings.setAllowTravelingWithOtherUnits(true)
 
 			// Make sure the container is created before using it.
 			call ZoneData.init()

@@ -52,14 +52,14 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item questItemSacrifice
-			set questItem = AQuestItem.create(this, tre("Entweder: Opfere die Kinder für Wotans dämonische Macht.", "Either: Sacrifice the children for Wotan's demonic power."))
+			set questItem = AQuestItem.create(this, tre("Entweder: Opfere die Kinder für Wotans dämonische Macht mit dessen Zepter.", "Either: Sacrifice the children for Wotan's demonic power with his sceptre."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_children_children)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 10)
 
 			// item questItemRescue
-			set questItem = AQuestItem.create(this, tre("Oder: Rette die Kinder vor Wotans dämonischem Wahnsinn.", "Or: Rescue the children from Wotan's demonic madness."))
+			set questItem = AQuestItem.create(this, tre("Oder: Rette die Kinder vor Wotans dämonischem Wahnsinn mit dessen Zepter.", "Or: Rescue the children from Wotan's demonic madness with his sceptre."))
 			call questItem.setPing(true)
 			call questItem.setPingRect(gg_rct_quest_the_children_children)
 			call questItem.setPingColour(100.0, 100.0, 100.0)

@@ -7,36 +7,32 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemGotlinde = 3
 		private trigger m_hintTriggerHans
 
+		private static method onAddItemToRucksackFood takes AInventory inventory, integer index, boolean firstTime returns nothing
+			local thistype this = thistype.characterQuest.evaluate(inventory.character())
+			local integer count0 = 0
+			local integer count1 = 0
+			if (this.questItem(thistype.questItemGoods).isNew()) then
+				if (firstTime and inventory.rucksackItemData(index) != 0 and (inventory.rucksackItemData(index).itemTypeId() == 'I016' or inventory.rucksackItemData(index).itemTypeId() == 'I03O')) then
+					set count0 = this.character().inventory().totalItemTypeCharges('I016')
+					set count1 = this.character().inventory().totalItemTypeCharges('I03O')
+
+					call this.displayUpdateMessage(Format(tre("%1% von %2% Brotlaiben. %3% von %4% Äpfeln.", "%1% of %2% loafs of bread. %3% of %4% of apples.")).i(count0).i(3).i(count1).i(4).result())
+
+					if (count0 >= 3 and count1 >= 4) then
+						call this.questItem(thistype.questItemGoods).complete()
+					endif
+				endif
+			endif
+		endmethod
+
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
 			//call character.giveQuestItem(thistype.itemTypeId)
 			//call character.options().missions().addMission('A1R8', 'A1RK', this)
+
+			call character.inventory().addOnAddToRucksackFunction(thistype.onAddItemToRucksackFood)
+
 			return super.enableUntil(thistype.questItemTalk)
-		endmethod
-
-		private static method stateEventCompletedFood takes AQuestItem questItem, trigger whichTrigger returns nothing
-			call TriggerRegisterAnyUnitEventBJ(whichTrigger, EVENT_PLAYER_UNIT_PICKUP_ITEM)
-		endmethod
-
-		/**
-		 * Wenn der Charakter die Gegenstände verliert/verkauft/zerstört macht das nichts.
-		 * Im Gespräch wird nochmal überprüft, ob er ihn dabei hat.
-		 */
-		private static method stateConditionCompletedFood takes AQuestItem questItem returns boolean
-			local thistype this = thistype(questItem.quest())
-			local integer count0 = 0
-			local integer count1 = 0
-			if (GetTriggerUnit() == this.character().unit() and (GetItemTypeId(GetManipulatedItem()) == 'I016' or GetItemTypeId(GetManipulatedItem()) == 'I03O')) then
-				set count0 = this.character().inventory().totalItemTypeCharges('I016')
-				set count1 = this.character().inventory().totalItemTypeCharges('I03O')
-
-				call this.displayUpdateMessage(Format(tre("%1% von %2% Brotlaiben. %3% von %4% Äpfeln.", "%1% of %2% loafs of bread. %3% of %4% of apples.")).i(count0).i(3).i(count1).i(4).result())
-
-				if (count0 >= 3 and count1 >= 4) then
-					return true
-				endif
-			endif
-			return false
 		endmethod
 
 		private static method stateActionCompletedFood takes AQuestItem questItem returns nothing
@@ -74,8 +70,6 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 
 			// item 1
 			set questItem = AQuestItem.create(this, tre("Besorge drei Laibe Brot und vier Äpfel von Hans.", "Get three loafs of bread and four apples from Hans."))
-			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventCompletedFood)
-			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionCompletedFood)
 			call questItem.setStateAction(thistype.stateCompleted, thistype.stateActionCompletedFood)
 			call questItem.setPing(true)
 			call questItem.setPingUnit(Npcs.hans())

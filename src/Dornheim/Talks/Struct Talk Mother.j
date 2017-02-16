@@ -17,17 +17,21 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			return QuestMother.characterQuest(character).questItem(QuestMother.questItemTalk).isNew()
 		endmethod
 
-		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
+		private static method infoActionHi takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Hallo Mutter!", "Hello Mother!"), null)
 			call speech(info, character, true, tre("Hallo, mein Sohn. Ich weiß du möchtest sobald wie möglich aufbrechen, doch kann ich dich noch um einen kleinen Gefallen bitten?", "Hello, my son. I know you want to start off as soon as possible but can I ask you for a small favor?"), null)
 			call speech(info, character, false, tre("Wenn es unbedingt sein muss.", "If it must be."), null)
 			call speech(info, character, true, tre("Also, wie sprichst du denn mit deiner Mutter? Könntest du mir noch einige Waren bei Hans besorgen? Ich habe gerade keine Zeit dafür.", "So, is that the way you talk to your mother? Could you bring me some goods from Hans? I'm busy at the moment."), null)
 			call speech(info, character, false, tre("Na gut.", "Fine."), null)
+			call speech(info, character, true, tr("Sehr gut, hier hast du ein paar Goldmünzen. Besorge mir drei Laibe Brot und vier Äpfel."), null)
+			call character.addGold(30)
 
 			call QuestMother.characterQuest(character).questItem(QuestMother.questItemTalk).setState(QuestMother.stateCompleted)
 			call QuestMother.characterQuest(character).questItem(QuestMother.questItemGoods).setState(QuestMother.stateNew)
 			call QuestMother.characterQuest(character).displayState()
+
+			call character.displayHint(tr("Falls Ihnen Goldmünzen fehlen, können Sie Pflanzen einsammeln und bei Hans verkaufen."))
 
 			call this.showStartPage(character)
 		endmethod
@@ -117,7 +121,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			// start page
 			set this.m_hi = this.addInfo(false, false, thistype.infoConditionHi, thistype.infoActionHi, tre("Hallo Mutter!", "Hello mother!"))
 			set this.m_food = this.addInfo(false, false, thistype.infoConditionFood, thistype.infoActionFood, tre("Hier sind die Waren.", "There you have your goods."))
-			set this.m_back = this.addInfo(false, false, thistype.infoConditionBack, thistype.infoActionBack, tre("Da bin ich wieder.", "Here I am."))
+			set this.m_back = this.addInfo(true, false, thistype.infoConditionBack, thistype.infoActionBack, tre("Da bin ich wieder.", "Here I am."))
 			set this.m_exit = this.addExitButton()
 
 			set this.m_gold = this.addInfo(true, false, thistype.infoConditionGold, thistype.infoActionGold, tre("Hier sind 50 Goldmünzen.", "Here you have 50 gold coins."))

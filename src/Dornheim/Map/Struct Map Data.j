@@ -70,7 +70,7 @@ endif
 		/// Required by \ref ClassSelection.
 		public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
 			call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start))
-			call SetUnitX(character.unit(), GetRectCenterY(gg_rct_start))
+			call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start))
 			call SetUnitFacing(character.unit(), 90.0)
 		endmethod
 
@@ -85,10 +85,12 @@ endif
 				exitwhen (i == MapSettings.maxPlayers())
 				if (ACharacter.playerCharacter(Player(i)) != 0) then
 					call ACharacter.playerCharacter(Player(i)).setMovable(true)
-					call SelectUnitForPlayerSingle(ACharacter.playerCharacter(Player(i)).unit(), Player(i))
 				endif
 				set i = i + 1
 			endloop
+
+			// clear unit selection for the tutorial
+			call ClearSelection()
 
 			call initMapPrimaryQuests()
 			call initMapSecundaryQuests()
@@ -118,7 +120,7 @@ endif
 			 * - Use the spell somewhere to kill a creep.
 			 * - The creep drops an equipment item, equip it.
 			 */
-			 call Character.displayHintToAll(tr("Willkommen bei Die Macht des Feuers. Klicken Sie zunächst Ihren Charakter an und schicken Sie ihn zu Ralph."))
+			 call Character.displayHintToAll(tre("Willkommen bei Die Macht des Feuers. Klicken Sie zunächst Ihren Charakter an und schicken Sie ihn zu Ralph.", "Welcome to The Power of Fire. First select your character and send him to Ralph."))
 		endmethod
 
 		/// Required by \ref MapChanger.

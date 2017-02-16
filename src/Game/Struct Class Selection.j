@@ -97,6 +97,11 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		/// This flag indicates if the game has already started.
 		private static boolean m_gameStarted = false
 
+		public static method startGame takes nothing returns nothing
+			set thistype.m_gameStarted = true
+			call Game.start.execute()
+		endmethod
+
 		/**
 		 * Displays message \p message to all players except \p excludingPlayer for \p time seconds.
 		 */
@@ -109,11 +114,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				endif
 				set i = i + 1
 			endloop
-		endmethod
-
-		public static method startGame takes nothing returns nothing
-			set thistype.m_gameStarted = true
-			call Game.start.execute()
 		endmethod
 
 		public stub method onSelectClass takes Character character, AClass class, boolean last returns nothing
@@ -466,7 +466,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		 */
 		public stub method onPlayerLeaves takes player whichPlayer, boolean last returns nothing
 			if (last) then
-				call Game.start.execute()
+				call thistype.startGame()
 			endif
 		endmethod
 

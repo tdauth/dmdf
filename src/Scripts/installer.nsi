@@ -57,6 +57,7 @@ Section "German Maps" GermanMaps
 	File "${INPUT_DIR}\de\HolzbrucksUnderworld${VERSION}.w3x"
 	File "${INPUT_DIR}\de\TheNorth${VERSION}.w3x"
 	File "${INPUT_DIR}\de\Arena${VERSION}.w3x"
+	File "${INPUT_DIR}\de\WorldMap${VERSION}.w3x"
 SectionEnd
 
 Section "German Campaign" GermanCampaign

@@ -95,7 +95,7 @@ library StructGameDungeon requires Asl, StructGameDmdfHashTable
 
 			call SetCameraBoundsToRectForPlayerBJ(whichPlayer, this.cameraBounds())
 			if (character != 0 and not IsUnitDeadBJ(character.unit()) and RectContainsUnit(this.cameraBounds(), character.unit())) then
-				call character.panCamera()
+				call SetCameraPositionForPlayer(whichPlayer, GetUnitX(character.unit()), GetUnitY(character.unit())) // pan immediately, otherwise the pan is annoying
 				debug call Print("Pan to character")
 			elseif (character != 0 and character.shrine() != 0 and RectContainsCoords(this.cameraBounds(), GetRectCenterX(character.shrine().revivalRect()), GetRectCenterY(character.shrine().revivalRect()))) then
 				call SetCameraPositionForPlayer(whichPlayer, GetRectCenterX(character.shrine().revivalRect()), GetRectCenterY(character.shrine().revivalRect()))
