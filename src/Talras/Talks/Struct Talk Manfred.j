@@ -76,16 +76,16 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 			call speech(info, character, true, tre("Und?", "And?"), gg_snd_Manfred22)
 			if (QuestProtectThePeople.characterQuest(character).questItem(0).isCompleted()) then
 				call speech(info, character, false, tre("Er überlegt sich das mit dem Kriegsdienst nochmal und er wird ein paar Leute herschicken.", "He considers the military service again and he will send along a few people."), null)
-				call speech(info, character, true, tr("Donnerwetter! Wie hast du das angestellt? Obwohl, ich frag besser nicht. Das sind gute Neuigkeiten, mein Freund!"), gg_snd_Manfred23)
-				call speech(info, character, true, tr("Dafür werde ich dich auch gut entlohnen."), gg_snd_Manfred24)
+				call speech(info, character, true, tre("Donnerwetter! Wie hast du das angestellt? Obwohl, ich frag besser nicht. Das sind gute Neuigkeiten, mein Freund!", "Bloody hell! How did you do that? Though, I better don't ask. This is good news, my friend!"), gg_snd_Manfred23)
+				call speech(info, character, true, tre("Dafür werde ich dich auch gut entlohnen.", "For that I will reward you well."), gg_snd_Manfred24)
 				// Auftrag „Schutz dem Volke“ abgeschlossen.
 				call QuestProtectThePeople.characterQuest(character).complete()
 			// (Auftrag „Zu den Waffen, Bauern!“ aktiv)
 			else
-				call speech(info, character, false, tr("Sieht schlecht aus, Freundchen. Du wirst gefälligst deinen Kriegsdienst leisten und deine Leute ebenso oder ich reiß dir deine Eingeweide heraus und verfüttere deine Leute an den Feind."), null)
-				call speech(info, character, false, tr("Und wegen den Leuten, die dein Hab und Gut bewachen sollen, wirst du dich auch nicht mehr beschweren, klar?"), null)
-				call speech(info, character, true, tr("Oh Mann, komm mal wieder runter. Schon gut, ich ... ich denke, das geht schon in Ordnung."), gg_snd_Manfred25)
-				call speech(info, character, false, tr("Das will ich auch hoffen."), null)
+				call speech(info, character, false, tre("Sieht schlecht aus, Freundchen. Du wirst gefälligst deinen Kriegsdienst leisten und deine Leute ebenso oder ich reiß dir deine Eingeweide heraus und verfüttere deine Leute an den Feind.", "Looks bad, friend. You will kindly do your military service and your people as well or I will tear your entrails and feed your people to the enemy."), null)
+				call speech(info, character, false, tre("Und wegen den Leuten, die dein Hab und Gut bewachen sollen, wirst du dich auch nicht mehr beschweren, klar?", "And about the people who are supposed to guard your belongings, you will not complain anymore, will you?"), null)
+				call speech(info, character, true, tre("Oh Mann, komm mal wieder runter. Schon gut, ich ... ich denke, das geht schon in Ordnung.", "Oh man, come down again. Alright, I ... I think that's all right."), gg_snd_Manfred25)
+				call speech(info, character, false, tre("Das will ich auch hoffen.", "I hope so."), null)
 				// Auftragsziel 1 des Auftrags „Zu den Waffen, Bauern!“ abgeschlossen
 				call QuestAmongTheWeaponsPeasants.characterQuest(character).questItem(0).complete()
 			endif

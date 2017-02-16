@@ -523,7 +523,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 
 		public static method showLifeTextTag takes unit whichUnit, real life returns nothing
 			if (not IsUnitHidden(whichUnit)) then
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("+%i"), R2I(life)), GetUnitX(whichUnit), GetUnitY(whichUnit), 0, 255, 0, 255)
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tre("+%i", "+%i"), R2I(life)), GetUnitX(whichUnit), GetUnitY(whichUnit), 0, 255, 0, 255)
 			endif
 		endmethod
 

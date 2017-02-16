@@ -8,7 +8,7 @@ library StructMapTalksTalkTobias requires Asl, StructMapQuestsQuestTheHolyPotato
 
 		// Was machst du da?
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was machst du da?"), null)
+			call speech(info, character, false, tre("Was machst du da?", "What are you doing here?"), null)
 			call speech(info, character, true, tr("Was? Wer bist du? Was willst du hier? Bist du gekommen, um mich zu erlösen?"), gg_snd_Tobias1)
 			call speech(info, character, false, tr("Erlösen, wovon?"), null)
 			call speech(info, character, true, tr("Die Kartoffel hat mir prophezeit, dass ein sprechender Esel kommen wird, der dann wieder geht!"), gg_snd_Tobias2)

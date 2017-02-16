@@ -125,19 +125,19 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 		endmethod
 
 		private static method initTombstones takes nothing returns nothing
-			call thistype.createTombstone(gg_rct_sign_tombstone_0, tr("Vater wusste es besser."))
-			call thistype.createTombstone(gg_rct_sign_tombstone_1, tr("Hier ruhe ich, nicht du!"))
-			call thistype.createTombstone(gg_rct_sign_tombstone_2, tr("Du schuldest mir noch Goldmünzen für diesen Grabstein!"))
-			call thistype.createTombstone(gg_rct_sign_tombstone_3, tr("Man sieht sich."))
-			call thistype.createTombstone(gg_rct_sign_tombstone_4, tr("Brot kann schimmeln, was kannst du?"))
-			call thistype.createTombstone(gg_rct_sign_tombstone_5, tr("Sprang von einer Klippe und kam auch unten an."))
-			call thistype.createTombstone(gg_rct_sign_tombstone_6, tr("Es war todsicher."))
-			call thistype.createTombstone(gg_rct_sign_tombstone_7, tr("Ein andermal vielleicht."))
-			call thistype.createTombstone(gg_rct_sign_tombstone_8, tr("Begrabt mich auf keinen Fall. Verbrennt mich!"))
-			call thistype.createTombstone(gg_rct_sign_tombstone_9, tr("Lag gerne herum und tat nichts."))
-			call thistype.createTombstone(gg_rct_sign_tombstone_10, tr("Im nächsten Leben bin ich sicher reich."))
-			call thistype.createTombstone(gg_rct_sign_tombstone_castle_1, tr("Regierte mit Strenge, aber regierte wenigstens."))
-			call thistype.createTombstone(gg_rct_sign_tombstone_castle_2, tr("Ertrug ihren Mann bis zuletzt."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_0, tre("Vater wusste es besser.", "Father knew better."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_1, tre("Hier ruhe ich, nicht du!", "Here I rest, not you!"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_2, tre("Du schuldest mir noch Goldmünzen für diesen Grabstein!", "You owe me gold coins for this tombstone!"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_3, tre("Man sieht sich.", "See you."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_4, tre("Brot kann schimmeln, was kannst du?", "Bread can mold, what can you do?"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_5, tre("Sprang von einer Klippe und kam auch unten an.", "Jumped from a cliff and also came down."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_6, tre("Es war todsicher.", "It was dead sure."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_7, tre("Ein andermal vielleicht.", "Another time perhaps."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_8, tre("Begrabt mich auf keinen Fall. Verbrennt mich!", "Do not bury me. Burn me!"))
+			call thistype.createTombstone(gg_rct_sign_tombstone_9, tre("Lag gerne herum und tat nichts.", "Liked lying around and doing nothing."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_10, tre("Im nächsten Leben bin ich sicher reich.", "In the next life I am certainly rich."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_castle_1, tre("Regierte mit Strenge, aber regierte wenigstens.", "Ruled with severity, but ruled at least."))
+			call thistype.createTombstone(gg_rct_sign_tombstone_castle_2, tre("Ertrug ihren Mann bis zuletzt.", "She beared her husband to the last."))
 		endmethod
 
 		/// Required by \ref Game.

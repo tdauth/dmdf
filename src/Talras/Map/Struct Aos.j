@@ -190,10 +190,10 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 			// Make sure the character is restored from the AOS ring since the ring should only work in the AOS cave. This also makes the character leave the legion.
 			if (character.isMorphed()) then
 				if (spellAosRingBaldar != 0 and spellAosRingBaldar.isMorphed()) then
-					call character.displayHint(tr("Die Kraft des Rings lässt nach."))
+					call character.displayHint(tre("Die Kraft des Rings lässt nach.", "The force of the ring decreases."))
 					call spellAosRingBaldar.restoreUnit()
 				elseif (spellAosRingHaldar != 0 and spellAosRingHaldar.isMorphed()) then
-					call character.displayHint(tr("Die Kraft des Rings lässt nach."))
+					call character.displayHint(tre("Die Kraft des Rings lässt nach.", "The force of the ring decreases."))
 					call spellAosRingHaldar.restoreUnit()
 				endif
 			endif

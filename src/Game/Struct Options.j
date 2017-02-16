@@ -4,7 +4,7 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 
 		public static method create takes Character character, unit whichUnit returns thistype
 			local thistype this = thistype.allocate(character, whichUnit, 0, 0, 0, 0)
-			call this.setShortcut(tr("O"))
+			call this.setShortcut(tre("O", "O"))
 			call this.addEntry(OptionsEntryShowCharactersSchema.create.evaluate(this))
 			call this.addEntry(OptionsEntryAllowControl.create.evaluate(this))
 			call this.addEntry(OptionsEntryCredits.create.evaluate(this))
@@ -221,7 +221,7 @@ endif
 
 		public static method create takes Character character, unit whichUnit returns thistype
 			local thistype this = thistype.allocate(character, whichUnit, 0, 0, 0, 0)
-			call this.setShortcut(tr("K"))
+			call this.setShortcut(tre("K", "K"))
 			call this.addEntry(CameraEntryEnableThirdPerson.create.evaluate(this))
 			call this.addEntry(CameraEntryIncreaseDistance.create.evaluate(this))
 			call this.addEntry(CameraEntryDecreaseDistance.create.evaluate(this))

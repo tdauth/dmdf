@@ -209,13 +209,13 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 				set fontSize = 20.0
 				set text = contributor.name()
 			else
-				set text = Format(tr("%1%\n%2%\n")).s(contributor.description()).s(contributor.name()).result()
+				set text = Format(tre("%1%\n%2%\n", "%1%\n%2%\n")).s(contributor.description()).s(contributor.name()).result()
 			endif
 
 			set i = 0
 			loop
 				exitwhen (i == contributor.files().size())
-				set text = Format(tr("%1%* %2%\n")).s(text).s(contributor.files()[i]).result()
+				set text = Format(tre("%1%* %2%\n", "%1%* %2%\n")).s(text).s(contributor.files()[i]).result()
 				set i = i + 1
 			endloop
 

@@ -216,7 +216,7 @@ library StructGameDungeon requires Asl, StructGameDmdfHashTable
 		public static method create takes Character character, unit whichUnit returns thistype
 			local thistype this = thistype.allocate(whichUnit, 'A1TW', 'A1TY', 'A1TX', 'A1TZ')
 			set this.m_character = character
-			call this.setShortcut(tr("D"))
+			call this.setShortcut(tre("D", "D"))
 			return this
 		endmethod
 

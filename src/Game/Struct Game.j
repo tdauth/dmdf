@@ -112,7 +112,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 			//debug call Print("Experience: " + I2S(experience))
 			if (experience > 0) then
 				if (not IsUnitDeadBJ(character.unit())) then
-					call ShowGeneralFadingTextTagForPlayer(character.player(), IntegerArg(tr("+%i"), experience), GetUnitX(character.unit()), GetUnitY(character.unit()), 255, 0, 255, 255)
+					call ShowGeneralFadingTextTagForPlayer(character.player(), IntegerArg(tre("+%i", "+%i"), experience), GetUnitX(character.unit()), GetUnitY(character.unit()), 255, 0, 255, 255)
 				endif
 				call character.addExperience(experience, true)
 			endif

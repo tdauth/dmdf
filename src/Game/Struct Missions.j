@@ -22,7 +22,7 @@ library StructGameMissions requires Asl, StructGameCharacter, StructGameOptions
 		public static method create takes Character character, unit whichUnit returns thistype
 			local thistype this = thistype.allocate(whichUnit, 'A1RH', 'A1RJ', 'A1RC', 'A1RI')
 			set this.m_character = character
-			call this.setShortcut(tr("A"))
+			call this.setShortcut(tre("A", "A"))
 			return this
 		endmethod
 

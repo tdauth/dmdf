@@ -131,7 +131,7 @@ library StructMapTalksTalkHaid requires Asl, StructGameCharacter, StructMapQuest
 
 				call QuestGoldForTheTradingPermission.characterQuest(character).complete()
 			else
-				call speech(info, character, false, tr("Da habe ich mich wohl vertan. Ich habe nicht genügend Goldmünzen dabei."), null)
+				call speech(info, character, false, tre("Da habe ich mich wohl vertan. Ich habe nicht genügend Goldmünzen dabei.", "I was probably wrong. I do not have enough gold coins."), null)
 			endif
 
 			call info.talk().showStartPage(character)

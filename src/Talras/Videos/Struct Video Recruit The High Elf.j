@@ -79,7 +79,7 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Sieh an, wie schnell wir uns wieder sehen. Was habt Ihr mir zu berichten, Mensch? Habt Ihr etwa schon wieder eine Heldentat vollbracht?"), gg_snd_DragonSlayerRecruitTheHighElf1)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Sieh an, wie schnell wir uns wieder sehen. Was habt Ihr mir zu berichten, Mensch? Habt Ihr etwa schon wieder eine Heldentat vollbracht?", "Look how quickly we meet again. What do you have to tell me, man? Have you already done a heroic act again?"), gg_snd_DragonSlayerRecruitTheHighElf1)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf1))) then
 				return
@@ -91,13 +91,13 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Der Herzog Heimrich von Talras? Meine Hilfe? Wie kommt er zu diesem Schluss? Er kennt weder mich noch meine Absichten."), gg_snd_DragonSlayerRecruitTheHighElf2)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Der Herzog Heimrich von Talras? Meine Hilfe? Wie kommt er zu diesem Schluss? Er kennt weder mich noch meine Absichten.", "The duke Heimrich of Talras? My help? How does he come to this conclusion? He neither knows me nor my intentions."), gg_snd_DragonSlayerRecruitTheHighElf2)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf2))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Habt Ihr ihm bereits von unserer Metzelei berichtet und will er mich nun vorladen, damit ich Rechenschaft ablege?"), gg_snd_DragonSlayerRecruitTheHighElf3)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Habt Ihr ihm bereits von unserer Metzelei berichtet und will er mich nun vorladen, damit ich Rechenschaft ablege?", "Have you already told him of our massacre and does he want to summon me now to account?"), gg_snd_DragonSlayerRecruitTheHighElf3)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf3))) then
 				return
@@ -109,43 +109,43 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 
-			call TransmissionFromUnit(this.actor(), tr("Nein, nichts davon. Er braucht mehr Verbündete im Kampf gegen die Orks und Dunkelelfen. Der König schickt ihm keine Hilfe."), null)
+			call TransmissionFromUnit(this.actor(), tre("Nein, nichts davon. Er braucht mehr Verbündete im Kampf gegen die Orks und Dunkelelfen. Der König schickt ihm keine Hilfe.", "No, nothing of it. He needs more allies in the fight against the Orcs and Dark Elves. The king does not help him."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Der König? Das sieht ihm ähnlich. Dararos, der König der Hochelfen bestimmt praktisch über dieses Königreich Mittillant."), gg_snd_DragonSlayerRecruitTheHighElf4)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Der König? Das sieht ihm ähnlich. Dararos, der König der Hochelfen bestimmt praktisch über dieses Königreich Mittillant.", "The king? This fits to him. Dararos, the king of the High Elves, practically decides what happens in this kingdom Mittillant."), gg_snd_DragonSlayerRecruitTheHighElf4)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf4))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Er behandelt es als wäre es eine seiner zahlreichen Provinzen. Der König der Menschen ist schwach. Er weiß nicht wie er auf einen bevorstehenden Krieg reagieren soll."), gg_snd_DragonSlayerRecruitTheHighElf5)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Er behandelt es als wäre es eine seiner zahlreichen Provinzen. Der König der Menschen ist schwach. Er weiß nicht wie er auf einen bevorstehenden Krieg reagieren soll.", "He treats it if it were one of his numerous provinces. The king of men is weak. He does not know how to react to an imminent war."), gg_snd_DragonSlayerRecruitTheHighElf5)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf5))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Doch wie sollte ich dem Herzog von Nutzen sein. Mein Auftrag ist erfüllt und bald kehre ich in unsere Hauptstadt zurück und erstatte König Dararos Bericht."), gg_snd_DragonSlayerRecruitTheHighElf6)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Doch wie sollte ich dem Herzog von Nutzen sein. Mein Auftrag ist erfüllt und bald kehre ich in unsere Hauptstadt zurück und erstatte König Dararos Bericht.", "But how should I benefit the duke? My commission is fulfilled and soon I return to our capital and report to king Dararos."), gg_snd_DragonSlayerRecruitTheHighElf6)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf6))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.actor(), tr("Heimrich fürchtet den baldigen Einmarsch der Orks und Dunkelelfen. Wenn sein König ihm keine Unterstützung schickt, wird Talras bald in der Hand des Feindes sein."), null)
+			call TransmissionFromUnit(this.actor(), tre("Heimrich fürchtet den baldigen Einmarsch der Orks und Dunkelelfen. Wenn sein König ihm keine Unterstützung schickt, wird Talras bald in der Hand des Feindes sein.", "Heimrich fears the early arrival of the Orcs and Dark Elves. If his king does not give him any support, Talras will soon be in the hands of the enemy."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.actor(), tr("Könnt ihr nicht Unterstützung von eurer Heimat fordern?"), null)
+			call TransmissionFromUnit(this.actor(), tre("Könnt ihr nicht Unterstützung von eurer Heimat fordern?", "Can't yo uask for support from your homeland?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("In der Tat. Diese Burg würde einem ganzen Heer nicht lange Stand halten. Die Menschen hier sind freundlich zu mir. Es würde mir ganz und gar missfallen sie im Stich zu lassen."), gg_snd_DragonSlayerRecruitTheHighElf7)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("In der Tat. Diese Burg würde einem ganzen Heer nicht lange Stand halten. Die Menschen hier sind freundlich zu mir. Es würde mir ganz und gar missfallen sie im Stich zu lassen.", "Indeed. This castle would not last long to a whole army. The people here are friendly to me. It wouldn't be alright to let them down."), gg_snd_DragonSlayerRecruitTheHighElf7)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf7))) then
 				return
@@ -157,25 +157,25 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Ich selbst habe jedoch keinen großen Einfluss auf meinen König, genauso wenig wie Heimrich auf den seinen. Was ich euch anbieten kann ist jedoch meine eigene Hilfe hier und jetzt."), gg_snd_DragonSlayerRecruitTheHighElf8)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Ich selbst habe jedoch keinen großen Einfluss auf meinen König, genauso wenig wie Heimrich auf den seinen. Was ich euch anbieten kann ist jedoch meine eigene Hilfe hier und jetzt.", "But I myself don't have great influence on my king, nor does Heimrich has on his own. What I can offer you, however, is my own help here and now."), gg_snd_DragonSlayerRecruitTheHighElf8)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf8))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Auch kann ich zumindest versuchen in meiner Heimat Hilfe zu ersuchen. Ihr habt mir geholfen Deranor den Schrecklichen zu besiegen! Ihr solltet in meiner Heimat als Helden gefeiert werden."), gg_snd_DragonSlayerRecruitTheHighElf9)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Auch kann ich zumindest versuchen in meiner Heimat Hilfe zu ersuchen. Ihr habt mir geholfen Deranor den Schrecklichen zu besiegen! Ihr solltet in meiner Heimat als Helden gefeiert werden.", "I can also try to get help in my homeland. You helped me to defeat Deranor the Terrible! You should be celebrated in my homeland as heroes."), gg_snd_DragonSlayerRecruitTheHighElf9)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf9))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.actor(), tr("So kommt mit zum Herzog und erzählt ihm davon!"), null)
+			call TransmissionFromUnit(this.actor(), tre("So kommt mit zum Herzog und erzählt ihm davon!", "So come to the duke and tell him about it!"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Nun gut, lasst uns keine Zeit mehr verlieren."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Nun gut, lasst uns keine Zeit mehr verlieren.", "WEll, let's not waste any more time."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -205,31 +205,31 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tr("Ich grüße Euch Hochelfin, seid willkommen in meiner Burg Talras."), gg_snd_Heimrich20)
+			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tre("Ich grüße Euch Hochelfin, seid willkommen in meiner Burg Talras.", "I greet you High Elf, welcome to my castle Talras."), gg_snd_Heimrich20)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich20))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Habt Dank werter Herzog. Es ist mir eine Ehre."), gg_snd_DragonSlayerRecruitTheHighElf10)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Habt Dank werter Herzog. Es ist mir eine Ehre.", "Thank yo dear duke. I'm honoured."), gg_snd_DragonSlayerRecruitTheHighElf10)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf10))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tr("Ich hoffe sie denkt nichts Falsches von uns. Keineswegs wollen wir sie ausnutzen, doch bleibt uns in dieser schwierigen Zeit nichts anderes mehr übrig."), gg_snd_Heimrich21)
+			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tre("Ich hoffe sie denkt nichts Falsches von uns. Keineswegs wollen wir sie ausnutzen, doch bleibt uns in dieser schwierigen Zeit nichts anderes mehr übrig.", "I hope she does not think anything wrong. We do not want to take advantage of her, but in this difficult time nothing else remains for us."), gg_snd_Heimrich21)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich21))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tr("Ich verstehe Eure Lage durchaus. Noch heute werde ich ein Schreiben an meine Heimat verfassen und um Hilfe bitten. Eure Gefährten hier haben mir treue Dienste erwiesen. Nie würde ich ihnen einen Wunsch verwehren."), gg_snd_DragonSlayerRecruitTheHighElf11)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDragonSlayer), tre("Ich verstehe Eure Lage durchaus. Noch heute werde ich ein Schreiben an meine Heimat verfassen und um Hilfe bitten. Eure Gefährten hier haben mir treue Dienste erwiesen. Nie würde ich ihnen einen Wunsch verwehren.", "I understand your situation. Just today, I will write a letter to my homeland and ask for help. Your companions here have shown me faithful service. I would never deny them a wish."), gg_snd_DragonSlayerRecruitTheHighElf11)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerRecruitTheHighElf11))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tr("Nun gut, habt Dank! Ritter Markward wird alles weitere mit ihr besprechen."), gg_snd_Heimrich22)
+			call TransmissionFromUnit(this.unitActor(this.m_actorHeimrich), tre("Nun gut, habt Dank! Ritter Markward wird alles weitere mit ihr besprechen.", "Well, thanks! Knight Markward will discuss everything else with her."), gg_snd_Heimrich22)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Heimrich22))) then
 				return
@@ -262,31 +262,31 @@ library StructMapVideosVideoRecruitTheHighElf requires Asl, StructGameGame, Stru
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Wir haben mit Hilfe der Nordmänner das Lager der Orks und Dunkelelfen besetzt. Sogar Dorfbewohner haben sich kampfbereit gemacht um auf eigene Faust gegen die Feinde vorzugehen."), gg_snd_Markward39)
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Wir haben mit Hilfe der Nordmänner das Lager der Orks und Dunkelelfen besetzt. Sogar Dorfbewohner haben sich kampfbereit gemacht um auf eigene Faust gegen die Feinde vorzugehen.", "We have occupied the camp of the Orcs and Dark Elves with the help of the Northmen. Even villagers have made themselves ready to attack the enemy on their own."), gg_snd_Markward39)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward39))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Wir müssen den Kampfgeist der Männer und die Gunst der Stunde nutzen bevor es zu spät ist."), gg_snd_Markward40)
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Wir müssen den Kampfgeist der Männer und die Gunst der Stunde nutzen bevor es zu spät ist.", "We must use the fighting spirit of the men and the favor of the hour before it is too late."), gg_snd_Markward40)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward40))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Unser Plan sieht vor das eroberte Lager zu befestigen und einen starken Vorposten zu errichten, der die Feinde solange wie möglich aufhalten wird."), gg_snd_Markward41)
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Unser Plan sieht vor das eroberte Lager zu befestigen und einen starken Vorposten zu errichten, der die Feinde solange wie möglich aufhalten wird.", "Our plan is to secure the conquered camp and build a strong outpost, which will stop the enemy as long as possible."), gg_snd_Markward41)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward41))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Zunächst müsst ihr dazu das Lager mit Waffen, Nahrung und Holz versorgen. Danach sollten Fallen vor den Mauern aufgestellt werden. Außerdem müssen mehr kriegstaugliche Leute auf dem Bauernhof rekrutiert werden."), gg_snd_Markward42)
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Zunächst müsst ihr dazu das Lager mit Waffen, Nahrung und Holz versorgen. Danach sollten Fallen vor den Mauern aufgestellt werden. Außerdem müssen mehr kriegstaugliche Leute auf dem Bauernhof rekrutiert werden.", "First of all you have to provide the camp with weapons, food and wood. After this, traps should be placed in the front of the walls. In addition, more warlike people must be recruited from the farm."), gg_snd_Markward42)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward42))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tr("Selbstverständlich wird der Herzog euch für eure Dienste wieder entsprechend entlohnen. Viel Glück!"), gg_snd_Markward43)
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Selbstverständlich wird der Herzog euch für eure Dienste wieder entsprechend entlohnen. Viel Glück!", "Of course the duke will reward you for your services. Good luck!"), gg_snd_Markward43)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward43))) then
 				return

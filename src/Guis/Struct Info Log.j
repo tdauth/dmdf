@@ -41,8 +41,8 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 					call this.m_entryText[i].setTooltip(description)
 					set this.m_entryText[i].infoIndex = index
 				else
-					call this.m_entryText[i].setTextAndSize(tr("-"), 10.0)
-					call this.m_entryText[i].setTooltip(tr("-"))
+					call this.m_entryText[i].setTextAndSize(tre("-", "-"), 10.0)
+					call this.m_entryText[i].setTooltip(tre("-", "-"))
 					set this.m_entryText[i].infoIndex = -1
 				endif
 				set i = i + 1
@@ -62,7 +62,7 @@ library StructGuisInfoLog requires Asl, StructGameCharacter, StructGuisMainWindo
 				set index = i * (pageNumber + 1)
 				if (this.m_selectedInfo != 0 and index < this.m_character.talkLog().speeches(this.m_selectedInfo)) then
 					if (this.m_character.talkLog().speechToCharacter(this.m_selectedInfo, index)) then
-						set speechText = tr("NPC")
+						set speechText = tre("NPC", "NPC")
 					else
 						set speechText = tre("Charakter", "Character")
 					endif

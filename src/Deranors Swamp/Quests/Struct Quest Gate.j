@@ -47,7 +47,7 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 				call IssueImmediateOrder(GetTriggerUnit(), "halt")
 				call EnableWeatherEffect(this.m_weatherEffect[index], false)
 				call StartSound(gg_snd_StarfallCaster1)
-				call this.displayUpdateMessage(Format(tr("%1%/%2% Kraftfelder deaktiviert")).i(this.countActivatedRects()).i(thistype.maxRects).result())
+				call this.displayUpdateMessage(Format(tre("%1%/%2% Kraftfelder deaktiviert", "Disabled %1%/%2% Force Fields")).i(this.countActivatedRects()).i(thistype.maxRects).result())
 
 				return this.countActivatedRects() == thistype.maxRects
 			endif
@@ -128,34 +128,34 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 		endmethod
 
 		private static method create takes nothing returns thistype
-			local thistype this = thistype.allocate(tr("Das versiegelte Tor"))
+			local thistype this = thistype.allocate(tre("Das versiegelte Tor", "The Sealed Gate"))
 			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMagicalSentry.blp")
 			call this.setDescription(tr("Deranor der Schreckliche hat das Tor seiner Welt mit einem Zauber versiegelt. Die Kraftfelder müssen zunächst deaktiviert werden, bevor die Versiegelung aufgehoben werden kann."))
 
 			// questItemGateActivator0
-			set questItem = AQuestItem.create(this, tr("Deaktviert das erste Kraftfeld."))
+			set questItem = AQuestItem.create(this, tre("Deaktviert das erste Kraftfeld.", "Disable the first Force Field."))
 			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_gate_activator_0)
 			call questItem.setReward(thistype.rewardExperience, 100)
 
 			// questItemGateActivator1
-			set questItem = AQuestItem.create(this, tr("Deaktviert das zweite Kraftfeld."))
+			set questItem = AQuestItem.create(this, tre("Deaktviert das zweite Kraftfeld.", "Disable the second Force Field."))
 			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_gate_activator_1)
 			call questItem.setReward(thistype.rewardExperience, 100)
 
 			// questItemGateActivator2
-			set questItem = AQuestItem.create(this, tr("Deaktviert das dritte Kraftfeld."))
+			set questItem = AQuestItem.create(this, tre("Deaktviert das dritte Kraftfeld.", "Disable the third Force Field."))
 			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_gate_activator_2)
 			call questItem.setReward(thistype.rewardExperience, 100)
 
 			// questItemGateActivator2
-			set questItem = AQuestItem.create(this, tr("Hebt die Versiegelung von Deranor auf."))
+			set questItem = AQuestItem.create(this, tre("Hebt die Versiegelung von Deranor auf.", "Clear the seal of Deranor."))
 			call questItem.setPing(true)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setPingCoordinatesFromRect(gg_rct_quest_gate_weather)

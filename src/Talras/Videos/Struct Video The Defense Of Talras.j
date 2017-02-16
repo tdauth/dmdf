@@ -55,7 +55,7 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 		public stub method onPlayAction takes nothing returns nothing
 			call FixVideoCamera(gg_cam_the_defense_of_talras_0)
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tr("Ricman"), tr("Männer, macht euch bereit für euer letztes Gefecht. Heute mag der Tag gekommen sein, da wir allesamt das Zeitliche segnen, doch vorher zahlen wir es diesen Bastarden heim."), gg_snd_RicmanTheDefenseOfTalrasRicman1)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorRicman), tre("Ricman", "Ricman"), tre("Männer, macht euch bereit für euer letztes Gefecht. Heute mag der Tag gekommen sein, da wir allesamt das Zeitliche segnen, doch vorher zahlen wir es diesen Bastarden heim.", "Men, get ready for your last battle. Today the day may have come that we all will die but before that we pay it back to these bastards."), gg_snd_RicmanTheDefenseOfTalrasRicman1)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_RicmanTheDefenseOfTalrasRicman1))) then
 				return
@@ -71,19 +71,19 @@ library StructMapVideosVideoTheDefenseOfTalras requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_villager0, tr("Wo ist der Herzog?"), null)
+			call TransmissionFromUnit(this.m_villager0, tre("Wo ist der Herzog?", "Where is the duke?"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_villager0, tr("Ich will nach Hause! Wir werden sowieso nicht bezahlt!"), gg_snd_Mercenary1)
+			call TransmissionFromUnit(this.m_villager0, tre("Ich will nach Hause! Wir werden sowieso nicht bezahlt!", "I want to go home! We won't be paid anyway!"), gg_snd_Mercenary1)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Mercenary1))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_villager1, tr("Ruhe!"), null)
+			call TransmissionFromUnit(this.m_villager1, tre("Ruhe!", "Silence!"), null)
 
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
