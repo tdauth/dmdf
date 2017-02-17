@@ -414,7 +414,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// (Charakter besitzt eine eigene Schalmei).
 		private static method infoConditionPlayMusic takes AInfo info, ACharacter character returns boolean
 			local thistype this = thistype(info.talk())
-			return character.inventory().totalItemTypeCharges(QuestShawm.itemTypeId) > 0
+			return character.inventory().totalItemTypeCharges(QuestShawm.itemTypeId) > 0 or character.inventory().totalItemTypeCharges('I083') > 0
 		endmethod
 
 		// Lass uns musizieren.
@@ -447,7 +447,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		endmethod
 
 		// Bring mir das Hexenlied bei.
-		private static method infoActionWitchSong takes AInfo info, ACharacter character returns nothing
+		private static method infoActionWitchSong takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tr("Bring mir das Hexenlied bei."), null)
 			call speech(info, character, true, tr("Du hast also gut aufgepasst bei meiner Geschichte."), gg_snd_Mathilda67)
@@ -461,7 +461,9 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 				call speech(info, character, false, tr("Sicher."), null)
 				call speech(info, character, true, tr("Gut, so geht das Lied …"), gg_snd_Mathilda71)
 				// (Charakter erlernt die Fähigkeit mit der Schalmei einen Riesen auf seine Seite zu bringen)
-				// TODO learn it
+				// Switch the instrument by another one.
+				call character.inventory().removeItemType(QuestShawm.itemTypeId)
+				call character.giveQuestItem('I083')
 			endif
 		endmethod
 

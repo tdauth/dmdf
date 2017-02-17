@@ -27,7 +27,7 @@ Zeugs:
 * Dornheim: Wotan's staff has mana costs. Reduce it to 50. Increase the area size and implement the quest.
 * Dornheim: Needs portal units: "Dornheim" and "First Floor" and "Second Floor".
 * FIXED: Dornheim: Give gold to the player for getting apples and bread.
-* Dornheim: Use the add item event of AInventory instead of Warcraft III's native events for the item quest items.
+* FIXED: Dornheim: Use the add item event of AInventory instead of Warcraft III's native events for the item quest items.
 * Dornheim: Wotan's transformation does not work.
 * FIXED: Dornheim: Make ways to Wotan bigger (through the river).
 * Clear all texttags from a talk routine when talking to an NPC.
@@ -217,7 +217,7 @@ Zeugs:
 * FIXED: Benötigte Stufe für Ultimates in Tooltip eintragen.
 * FIXED: Alle Hinweise in Tooltips in einheitlicher Farbe. Das gelb aus Warcraft benutzen, da es am besten lesbar ist.
 * Ursulas Druidensatz einbauen.
-* Mathildas Auftrag und Schalmei einbauen.
+* DONE: Mathildas Auftrag und Schalmei einbauen.
 * Spielnachrichten loggen und mit "-history" zugänglich machen. System nicht ganz so einfach umzusetzen? Mit Hook irgendwie?
 * DEPRECATED: Den Befehl "-help" einbauen, da man ihn standardmäßig ausprobieren würde.
 * Markwards Belohnungsgegenstand für Ritter ist zu gut.
@@ -324,6 +324,8 @@ Zeugs:
 	* Band 1: Der Meister.odt (Invalid argument)
 	* error: unable to create file doc/Planung/Hintergrunddefinition/Mythen/BÃ¼cher/Band 1: Der Meister.pdf (Invalid argument)
 	* error: unable to create file doc/Planung/Hintergrunddefinition/Mythen/BÃ¼cher/Gedicht: Gotlindes Worte.odt
+* Replaced UI textures for the main menu in the mod (red textures) don't use a transparent area. Therefore they have black borders. Replace the black areas by transparent areas (Alpha value?).
+* The campaign chapter buttons are still blue and not red.
 
 Aufgehoben für Version 0.9:
 Critical errors:
@@ -773,7 +775,7 @@ Weitere TODOS:
 * Once a player could talk to two different NPCs at the same time (WaterKnight - Test with 2 players).
 * Illusions and split units (elemental mage) should cause tree transparency.
 * Make a fade animation for transparency.
-* Make trees less transparent.
+* DONE: Make trees less transparent.
 * FIXED: Salatköpfe von Trommon fehlen (QuestWoodForTheHut reward).
 * FIXED (Audacity): Kuno und Trommon sind zu leise.
 * Knochenbogen trotz deaktivierter Zauberbuchfähigkeit sieht man Icon.
