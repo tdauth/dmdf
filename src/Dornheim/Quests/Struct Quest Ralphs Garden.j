@@ -10,7 +10,7 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 			local thistype this = thistype.characterQuest.evaluate(inventory.character())
 			if (this.questItem(thistype.questItemBuyRake).isNew()) then
 				if (firstTime and inventory.rucksackItemData(index) != 0 and inventory.rucksackItemData(index).itemTypeId() == 'I02F') then
-					call this.questItem(thistype.questItemBuyRake).complete()
+					call this.questItem(thistype.questItemBuyRake).setState(thistype.stateCompleted)
 				endif
 			endif
 		endmethod

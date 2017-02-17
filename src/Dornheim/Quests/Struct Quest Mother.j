@@ -19,7 +19,7 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 					call this.displayUpdateMessage(Format(tre("%1% von %2% Brotlaiben. %3% von %4% Äpfeln.", "%1% of %2% loafs of bread. %3% of %4% of apples.")).i(count0).i(3).i(count1).i(4).result())
 
 					if (count0 >= 3 and count1 >= 4) then
-						call this.questItem(thistype.questItemGoods).complete()
+						call this.questItem(thistype.questItemGoods).setState(thistype.stateCompleted)
 					endif
 				endif
 			endif
