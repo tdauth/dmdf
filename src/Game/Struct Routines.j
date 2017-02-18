@@ -247,7 +247,11 @@ library StructGameRoutines requires Asl
 				endloop
 
 				call thistype.m_textTags.pushBack(whichTextTag)
-				call thistype.m_sounds.pushBack(whichSound)
+
+				// If the sound is null it should never be added since there might be multiple null values in the sounds container then which must be removed.
+				if (whichSound != null) then
+					call thistype.m_sounds.pushBack(whichSound)
+				endif
 
 				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
 				call TriggerSleepAction(GetSoundDurationBJ(whichSound))
@@ -260,7 +264,8 @@ library StructGameRoutines requires Asl
 					set whichTextTag = null
 				endif
 
-				if (thistype.m_sounds.contains(whichSound)) then
+				// TODO A set would be more efficient.
+				if (whichSound != null and thistype.m_sounds.contains(whichSound)) then
 					call thistype.m_sounds.remove(whichSound)
 				endif
 			endif
@@ -426,6 +431,11 @@ library StructGameRoutines requires Asl
 			call thistype.m_sounds.clear()
 		endmethod
 
+		/**
+		 * Stops all currently played sounds for player \p whichPlayer only.
+		 * Talk routines usually play sounds and therefore the sounds can be stopped.
+		 * \param whichPlayer The player for whom the sounds are stopped.
+		 */
 		public static method stopSoundsForPlayer takes player whichPlayer returns nothing
 			local ASoundListIterator iterator = thistype.m_sounds.begin()
 			loop
@@ -438,6 +448,11 @@ library StructGameRoutines requires Asl
 			call iterator.destroy()
 		endmethod
 
+		/**
+		 * Hides all currently shown texttags for player \p whichPlayer only.
+		 * Talk routines usually show texttags and therefore the texttags can be hidden.
+		 * \param whichPlayer The player for whom the texttags are hidden.
+		 */
 		public static method hideTexttagsForPlayer takes player whichPlayer returns nothing
 			local ATextTagListIterator iterator = thistype.m_textTags.begin()
 			loop

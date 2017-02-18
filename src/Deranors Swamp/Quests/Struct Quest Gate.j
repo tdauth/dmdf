@@ -74,6 +74,7 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 				call this.destroyEnterAndLeaveTrigger(i)
 				set i = i + 1
 			endloop
+			call SpawnPoint.enableAll() // allow respawning creeps automatically now
 			call this.complete()
 			call MapData.enableZoneHolzbruck.evaluate()
 		endmethod
@@ -124,6 +125,7 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 				call this.createEnterAndLeaveTrigger(this.m_enterRect[i], i)
 				set i = i + 1
 			endloop
+			call SpawnPoint.disableAll() // disable respawning creeps automatically until the gate is open
 			return this.enableUntil(thistype.questItemActivate)
 		endmethod
 

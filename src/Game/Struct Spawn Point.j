@@ -60,6 +60,27 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 			call iterator.destroy()
 		endmethod
 
+		public static method disableAll takes nothing returns nothing
+			local AIntegerListIterator iterator = thistype.m_spawnPoints.begin()
+			loop
+				exitwhen (not iterator.isValid())
+				call thistype(iterator.data()).disable()
+				call iterator.next()
+			endloop
+			call iterator.destroy()
+		endmethod
+
+		public static method enableAll takes nothing returns nothing
+			local AIntegerListIterator iterator = thistype.m_spawnPoints.begin()
+			loop
+				exitwhen (not iterator.isValid())
+				call thistype(iterator.data()).enable()
+				call iterator.next()
+			endloop
+			call iterator.destroy()
+		endmethod
+
+
 		public static method spawnDeadOnlyAll takes nothing returns nothing
 			local AIntegerListIterator iterator = thistype.m_spawnPoints.begin()
 			loop

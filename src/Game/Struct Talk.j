@@ -97,7 +97,6 @@ library StructGameTalk requires Asl, StructGameFellow
 				// stopping the routines prevents the NPC from walking away.
 				call AUnitRoutine.enableAll(this.unit())
 				// don't pause, otherwise the NPC cannot sell anything
-				//call PauseUnit(this.m_unit, false) // Enables routines or something else
 			endif
 
 			/*

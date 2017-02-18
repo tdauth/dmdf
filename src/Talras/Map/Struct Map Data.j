@@ -402,7 +402,9 @@ endif
 			call CameraHeight.addRect.evaluate(gg_rct_bridge_death_vault_0_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)) / 2.2)
 			call CameraHeight.addRect.evaluate(gg_rct_bridge_death_vault_1_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)) / 2.2)
 
+			debug call Print("Before playing intro video")
 			call VideoIntro.video().play()
+			debug call Print("After playing intro video")
 		endmethod
 
 		/**

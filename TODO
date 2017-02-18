@@ -502,9 +502,9 @@ Optimizing:
 * Wird UI und Cinematic mode zurückgesetzt bevor Kartenübergang zur Karte Gardonar?? Anscheinend schon, aber eventuell noch 2 Sekunden warten vor Map Change?
 * FIXED: Computer AI steuert Verbündete in Karten außer Talras. Die Steuerung des Spielers muss auf Neutral gesetzt werden (in allen Karten)!
 * Dämonen-UI in Karten Deranors Sumpf und Holzbruck und Holzbrucks Unterwelt.
-* Deranors Sumpf braucht Musik.
+* Deranors Sumpf braucht Musik. "Swamp Sounds".
 * Deranors Sumpf Gegner schwächer machen.
-* Deranors Sumpf Spawn Points mit Gegenständen!
+* Deranors Sumpf Spawn Points mit Gegenständen! "Dunkle Essenz".
 * Respawns zu Beginn deaktivieren erst nachdem das magische Tor geöffnet wurde Respawns von Creeps wieder aktivieren (Deranor).
 * Holzbruck braucht einen Ladehintergrund.
 * Holzbrucks Unterwelt braucht Ladehintergrund.
