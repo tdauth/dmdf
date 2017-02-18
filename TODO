@@ -542,7 +542,7 @@ Optimizing:
 	- Deranors Kreaturen schwächer machen. Vor allem Schwere Rüstung entfernen, erhalten kaum Schaden.
 
 * FIXED: ASL bug: Items liegen bei totem Charakter auf dem Boden, wenn dieser eben tot ist und man einen Laden anwählt und abwählt. Sie dürfen nicht hinzugefügt werden, wenn der Charakter tot ist und nach Wiederbelebung müssen die Gegenstände erneut zum Inventar hinzugefügt werden.
-* Mitwirkende: Texte clearen wenn Mitwirkende geschlossen werden.
+* FIXED: Mitwirkende: Texte clearen wenn Mitwirkende geschlossen werden.
 * Kapuze: Unsichtbarkeitsfähigkeit geht nicht, wenn Rucksack offen ist. Liegt an Video? Beim Video wird sie deaktiviert.
 * DEPRECATED (if you use an absolute path it won't use the path from the registry!): war3.exe verwenden, zeigt keinen Splash Screen.
 * FIXED (muss Mono sein): Drachentöterin Soundset geht nicht.
@@ -556,7 +556,7 @@ Optimizing:
 * Map transition: -1 index AIntegerVector wenn man direkt nach Talras zurückgeht.
 * FIXED: Map transition: Spieleoptionen icon ist weiter oben. Wird es entfernt?! Sollte bei Map transition auch neu erzeugt werden, zumindest die Einheit.
 * FIXED: Iconpositionen von Zauberbüchern der Spieloptionen festlegen.
-* Für jeden optionalen Auftrag einen Eintrag in der Liste der Aufträge erzeugen.
+* Für jeden optionalen Auftrag einen Eintrag in der Liste der Aufträge erzeugen: "Die Schalmei" ...
 * FIXED (muss Gebäude sein mit Verlauf): Barrikaden der Orks blocken nicht. Einfach Blocker erzeugen pro Barrikade und bei Tod vernichten?! Wieso geht Verlauf nicht?
 * FIXED: Maximalstufe in Holzbruck ist nur 30.
 * War transformed als Engel. Wurde getötet (mit rucksack only) beim Betreten von Baldars Gebiet. Nach Tod lagen Gegenstände auf dem Boden.

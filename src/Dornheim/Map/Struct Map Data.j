@@ -147,7 +147,7 @@ endif
 
 		public static method enableZoneTalras takes nothing returns nothing
 			call thistype.m_zoneTalras.enable()
-			call Character.displayHintToAll(tr("Sie können nun nach Talras reisen. Stellen Sie sich dazu mit Ihrem Charakter in das Gebiet, das auf der Minikarte durch den grün umrandeteten Kartenausgang markiert ist."))
+			call Character.displayHintToAll(tre("Sie können nun nach Talras reisen. Stellen Sie sich dazu mit Ihrem Charakter in das Gebiet, das auf der Minikarte durch den grün umrandeteten Kartenausgang markiert ist.", "You can travel to Talras now. For this, place your character in the area marked on the minimap by the green bordered map exit."))
 		endmethod
 	endstruct
 

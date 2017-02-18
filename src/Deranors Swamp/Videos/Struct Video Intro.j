@@ -82,7 +82,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			call DestroyEffect(this.m_effect)
 			set this.m_effect = null
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDeranor), tr("Willkommen in den Todessümpfen. Dies ist mein Reich. Eure erste Prüfung, Gardonars Hölle zu durchqueren, habt ihr erfolgreich bestanden. Doch nun widmet euch eurer nächsten Prüfung. Durchquert meine Todessümpfe."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDeranor), tre("Willkommen in den Todessümpfen. Dies ist mein Reich. Eure erste Prüfung, Gardonars Hölle zu durchqueren, habt ihr erfolgreich bestanden. Doch nun widmet euch eurer nächsten Prüfung. Durchquert meine Todessümpfe.", "Welcome to the Death Swamps. This is my kingdom. Your first test crossing Gardonar's hell you have passed successfully. But now devote your next trial. Cross my Death Swamps."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
@@ -93,7 +93,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_intro_1, true, 3.50)
 			call Game.fadeInWithWait()
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDeranor), tr("Um das versiegelte Tor zu öffnen, müsst ihr drei magische Kraftfelder deaktiviern. Dies muss jedoch gleichzeitig geschehen. Daher müsst ihr euch aufteilen. Werden alle drei Kraftfelder gleichzeitig deaktiviert, so öffnet sich auch die Versiegelung meines Tors."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDeranor), tre("Um das versiegelte Tor zu öffnen, müsst ihr drei magische Kraftfelder deaktiviern. Dies muss jedoch gleichzeitig geschehen. Daher müsst ihr euch aufteilen. Werden alle drei Kraftfelder gleichzeitig deaktiviert, so öffnet sich auch die Versiegelung meines Tors.", "To open the sealed gate, you have to disable three magical force fields. However, this must be done at the same time. Therefore, you must divide. If all three force fields are deactivated at the same time, the sealing of my gate opens."), null)
 
 			if (wait(2.0)) then
 				return
@@ -127,7 +127,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_intro_exit_boss, true, 3.50)
 			call Game.fadeInWithWait()
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDeranor), tr("Doch nehmt euch vor dem Wächter des Tors in Acht. Er besitzt die Macht alle eure Feinde auf einmal wiederzuerwecken."), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDeranor), tre("Doch nehmt euch vor dem Wächter des Tors in Acht. Er besitzt die Macht alle eure Feinde auf einmal wiederzuerwecken!", "But beware of the guard of the gate. He has the power to resurrect all your enemies at once!"), null)
 
 			if (wait(2.0)) then
 				return
@@ -142,7 +142,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			call CameraSetupApplyForceDuration(gg_cam_intro_deranor, true, 0.00)
 			call Game.fadeInWithWait()
 
-			call TransmissionFromUnit(this.unitActor(this.m_actorDeranor), tr("Mögen die Spiele beginnen!"), null)
+			call TransmissionFromUnit(this.unitActor(this.m_actorDeranor), tre("Mögen die Spiele beginnen!", "Let the games begin!"), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

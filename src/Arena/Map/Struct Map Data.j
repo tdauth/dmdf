@@ -55,10 +55,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 			set talkRoutine = NpcTalksRoutine.create(Routines.talk(), gg_unit_n013_0012, 0.0, 24.00, gg_rct_waypoint_heimrich_0)
 			call talkRoutine.setPartner(gg_unit_n014_0038)
-			call talkRoutine.addSound(tr("Was erlaubt sich das einfache Volk?"), gg_snd_Heimrich12)
-			call talkRoutine.addSound(tr("Wir müssen uns auf den Krieg vorbereiten."), gg_snd_Heimrich13)
-			call talkRoutine.addSound(tr("Hat Er sich um alles Nötige gekümmert?"), gg_snd_Heimrich14)
-			call talkRoutine.addSound(tr("Bald werden sie hier einfallen und dann?"), gg_snd_Heimrich15)
+			call talkRoutine.addSound(tre("Was erlaubt sich das einfache Volk?", "Who does the common people think it is?"), gg_snd_Heimrich12)
+			call talkRoutine.addSound(tre("Wir müssen uns auf den Krieg vorbereiten.", "We have to prepare ourselves for the war."), gg_snd_Heimrich13)
+			call talkRoutine.addSound(tre("Hat Er sich um alles Nötige gekümmert?", "Did he take care of everything necessary?"), gg_snd_Heimrich14)
+			call talkRoutine.addSound(tre("Bald werden sie hier einfallen und dann?", "Soon they will come here and then?"), gg_snd_Heimrich15)
 
 			set talkRoutine = NpcTalksRoutine.create(Routines.talk(), gg_unit_n014_0038, 0.0, 24.00, gg_rct_waypoint_markward_0)
 			call talkRoutine.setPartner(gg_unit_n013_0012)

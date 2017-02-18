@@ -24,7 +24,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			call speech(info, character, false, tre("Wenn es unbedingt sein muss.", "If it must be."), null)
 			call speech(info, character, true, tre("Also, wie sprichst du denn mit deiner Mutter? Könntest du mir noch einige Waren bei Hans besorgen? Ich habe gerade keine Zeit dafür.", "So, is that the way you talk to your mother? Could you bring me some goods from Hans? I'm busy at the moment."), null)
 			call speech(info, character, false, tre("Na gut.", "Fine."), null)
-			call speech(info, character, true, tr("Sehr gut, hier hast du ein paar Goldmünzen. Besorge mir drei Laibe Brot und vier Äpfel."), null)
+			call speech(info, character, true, tre("Sehr gut, hier hast du ein paar Goldmünzen. Besorge mir drei Laibe Brot und vier Äpfel.", "Very good, here you have a few gold coins. Get three loaves of bread and four apples."), null)
 			call character.addGold(30)
 
 			call QuestMother.characterQuest(character).questItem(QuestMother.questItemTalk).setState(QuestMother.stateCompleted)

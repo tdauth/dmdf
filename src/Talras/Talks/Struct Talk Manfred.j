@@ -100,13 +100,13 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 
 		// Markward benötigt Vorräte in der Burg.
 		private static method infoActionMarkwardNeedsSupply takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Markward benötigt Vorräte in der Burg."), null)
-			call speech(info, character, true, tr("Ich habe es geahnt. Wie ich es vorausgesagt habe, wir werden nun unserer hart erbrachten Ernte beraubt."), gg_snd_Manfred26)
-			call speech(info, character, false, tr("…"), null)
-			call speech(info, character, true, tr("Gut ich sage lieber nichts mehr, am Ende werde ich noch eingesperrt. Wenn du schon Vorräte haben willst, dann sammle sie selbst ein und bringe sie zu mir. Ich schicke sie dann zur Burg."), gg_snd_Manfred27)
-			call speech(info, character, false, tr("Und wo sind die Vorräte?"), null)
-			call speech(info, character, true, tr("Du kannst einen entsprechenden Teil von Guntrichs Mühle und in der Scheune mitnehmen, aber lass uns doch noch etwas übrig."), gg_snd_Manfred28)
-			call speech(info, character, true, tr("Wer weiß ob wir hier am Ende auf uns allein gestellt sind."), gg_snd_Manfred29)
+			call speech(info, character, false, tre("Markward benötigt Vorräte in der Burg.", "Markward needs supplies in the castle."), null)
+			call speech(info, character, true, tre("Ich habe es geahnt. Wie ich es vorausgesagt habe, wir werden nun unserer hart erbrachten Ernte beraubt.", "I knew it. As I have foretold, we are now deprived of our hard-yielded harvest."), gg_snd_Manfred26)
+			call speech(info, character, false, tre("…", "..."), null)
+			call speech(info, character, true, tre("Gut ich sage lieber nichts mehr, am Ende werde ich noch eingesperrt. Wenn du schon Vorräte haben willst, dann sammle sie selbst ein und bringe sie zu mir. Ich schicke sie dann zur Burg.", "Well, I'd rather say nothing more, in the end I'll be imprisoned. If you want to have supplies, at least collect them yourself and bring them to me. I'll send them to the castle."), gg_snd_Manfred27)
+			call speech(info, character, false, tre("Und wo sind die Vorräte?", "And where are the supplies?"), null)
+			call speech(info, character, true, tre("Du kannst einen entsprechenden Teil von Guntrichs Mühle und in der Scheune mitnehmen, aber lass uns doch noch etwas übrig.", "You can take an appropriate part of Guntrich's mill and in the barn, but leave something for us."), gg_snd_Manfred28)
+			call speech(info, character, true, tre("Wer weiß ob wir hier am Ende auf uns allein gestellt sind.", "Who knows whether we are here in the end on our own."), gg_snd_Manfred29)
 			// Auftragsziele 2, 3 und 4 des Auftrags „Die Versorgung von Talras“ aktiviert
 			call QuestSupplyForTalras.characterQuest(character).questItem(1).setState(AAbstractQuest.stateNew)
 			call QuestSupplyForTalras.characterQuest(character).questItem(2).setState(AAbstractQuest.stateNew)
@@ -124,8 +124,8 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 
 		// Hier sind die Vorräte.
 		private static method infoActionSupply takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hier sind die Vorräte."), null)
-			call speech(info, character, true, tr("Da hast du aber auch nicht gerade gespart. Na wie du meinst … ich schicke sie nun zur Burg. Du kannst Markward berichten, dass sie unterwegs sind."), gg_snd_Manfred30)
+			call speech(info, character, false, tre("Hier sind die Vorräte.", "Here are the supplies."), null)
+			call speech(info, character, true, tre("Da hast du aber auch nicht gerade gespart. Na wie du meinst … ich schicke sie nun zur Burg. Du kannst Markward berichten, dass sie unterwegs sind.", "You did not save exactly, did you? Well, as you think ... I'll send them to the castle. You can tell Markward that they are on their way."), gg_snd_Manfred30)
 			// Gegenstände entfernen
 			call character.inventory().removeItemType('I03S')
 			call character.inventory().removeItemType('I03T')
@@ -144,8 +144,8 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 
 		// Bring dieses Holz zur Burg.
 		private static method infoActionLumber takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Bring dieses Holz zur Burg."), null)
-			call speech(info, character, true, tr("Was?! Was erlaubst du dir?"), gg_snd_Manfred31)
+			call speech(info, character, false, tre("Bring dieses Holz zur Burg.", "Bring this wood to the castle."), null)
+			call speech(info, character, true, tre("Was?! Was erlaubst du dir?", "What?! Who do you think you are?"), gg_snd_Manfred31)
 			call speech(info, character, false, tr("Markward benötigt das Holz für die Burg. Es stammt von Kuno und der hat mir gesagt du würdest es zur Burg schaffen."), null)
 			call speech(info, character, true, tr("Kuno? Verdammt, na gut. Kuno ist ein netter Kerl und verkauft uns immer gute Waren. Aber dieser Markward meint wohl wir machen die ganze Drecksarbeit für ihn."), gg_snd_Manfred32)
 			call speech(info, character, true, tr("Wenn die Orks und Dunkelelfen hier einfallen, gehen wir doch als erste drauf, das kann ich dir versichern …"), gg_snd_Manfred33)

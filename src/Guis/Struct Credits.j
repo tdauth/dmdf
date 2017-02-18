@@ -182,10 +182,17 @@ library StructGuisCredits requires Asl, StructGameCharacter, StructGuisMainWindo
 		endmethod
 
 		public stub method onHide takes nothing returns nothing
+			local integer i = 0
 			local player whichPlayer = this.gui().player()
 			call PauseTimer(this.m_viewTimer)
 			call PauseTimer(this.m_autoChangeTimer)
 			// reset velocity and clear spawned texttags which have been destroyed automatically in the meantime
+			set i = 0
+			loop
+				exitwhen (i == this.m_textTags.size())
+				call DestroyTextTag(this.m_textTags[i]) // warning, could be destroyed already
+				set i = i + 1
+			endloop
 			call this.m_textTags.clear()
 			set this.m_velocity = thistype.defaultVelocity
 			call EndThematicMusicForPlayer(whichPlayer)

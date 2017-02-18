@@ -133,7 +133,7 @@ library StructMapQuestsQuestGate requires Asl, StructMapMapFellows
 			local thistype this = thistype.allocate(tre("Das versiegelte Tor", "The Sealed Gate"))
 			local AQuestItem questItem = 0
 			call this.setIconPath("ReplaceableTextures\\CommandButtons\\BTNMagicalSentry.blp")
-			call this.setDescription(tr("Deranor der Schreckliche hat das Tor seiner Welt mit einem Zauber versiegelt. Die Kraftfelder müssen zunächst deaktiviert werden, bevor die Versiegelung aufgehoben werden kann."))
+			call this.setDescription(tre("Deranor der Schreckliche hat das Tor seiner Welt mit einem Zauber versiegelt. Die Kraftfelder müssen zunächst deaktiviert werden, bevor die Versiegelung aufgehoben werden kann.", "Deranor the Terrible has sealed the gate of his world with a spell. The force fields must first be deactivated before the seal can be removed."))
 
 			// questItemGateActivator0
 			set questItem = AQuestItem.create(this, tre("Deaktviert das erste Kraftfeld.", "Disable the first Force Field."))
