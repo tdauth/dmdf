@@ -146,11 +146,11 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 		private static method infoActionLumber takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Bring dieses Holz zur Burg.", "Bring this wood to the castle."), null)
 			call speech(info, character, true, tre("Was?! Was erlaubst du dir?", "What?! Who do you think you are?"), gg_snd_Manfred31)
-			call speech(info, character, false, tr("Markward benötigt das Holz für die Burg. Es stammt von Kuno und der hat mir gesagt du würdest es zur Burg schaffen."), null)
-			call speech(info, character, true, tr("Kuno? Verdammt, na gut. Kuno ist ein netter Kerl und verkauft uns immer gute Waren. Aber dieser Markward meint wohl wir machen die ganze Drecksarbeit für ihn."), gg_snd_Manfred32)
-			call speech(info, character, true, tr("Wenn die Orks und Dunkelelfen hier einfallen, gehen wir doch als erste drauf, das kann ich dir versichern …"), gg_snd_Manfred33)
-			call speech(info, character, false, tr("…"), null)
-			call speech(info, character, true, tr("Schon gut ich schicke das Holz zur Burg, gib schon her!"), gg_snd_Manfred34)
+			call speech(info, character, false, tre("Markward benötigt das Holz für die Burg. Es stammt von Kuno und der hat mir gesagt du würdest es zur Burg schaffen.", "Markward needs the wood for the castle. It comes from Kuno and he told me you would get it to the castle."), null)
+			call speech(info, character, true, tre("Kuno? Verdammt, na gut. Kuno ist ein netter Kerl und verkauft uns immer gute Waren. Aber dieser Markward meint wohl wir machen die ganze Drecksarbeit für ihn.", "Kuno? Damn, well. Kuno is a nice guy and always sells us good goods. But this Markward thinks we are doing the whole muck for him."), gg_snd_Manfred32)
+			call speech(info, character, true, tre("Wenn die Orks und Dunkelelfen hier einfallen, gehen wir doch als erste drauf, das kann ich dir versichern …", "When the Orcs and Dark Elves come up here, we will be killed first, I can assure you ..."), gg_snd_Manfred33)
+			call speech(info, character, false, tre("…", "..."), null)
+			call speech(info, character, true, tre("Schon gut ich schicke das Holz zur Burg, gib schon her!", "Alright, I send the wood to the castle, give it already!"), gg_snd_Manfred34)
 			// Charakter verliert Kunos Holz
 			call character.inventory().removeItemType('I051')
 			// Auftragsziel 1 des Auftrags „Die Befestigung von Talras“ abgeschlossen
@@ -163,36 +163,36 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 
 		// Ja.
 		private static method infoActionHi_Yes takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ja."), null)
-			call speech(info, character, true, tr("Gut, ich kann jeden Helfer gebrauchen. Falls du also Lust hast, dir ein paar Goldmünzen dazuzuverdienen, dann melde dich einfach bei mir."), gg_snd_Manfred2)
-			call speech(info, character, true, tr("Gerade ist Erntezeit und da kann man nicht genug Leute haben. Ich will ja schließlich noch ernten, bevor unser Feind hier auftaucht."), gg_snd_Manfred3)
+			call speech(info, character, false, tre("Ja.", "Yes."), null)
+			call speech(info, character, true, tre("Gut, ich kann jeden Helfer gebrauchen. Falls du also Lust hast, dir ein paar Goldmünzen dazuzuverdienen, dann melde dich einfach bei mir.", "Well, I can use any helper. So if you want to earn a few gold coins, just contact me."), gg_snd_Manfred2)
+			call speech(info, character, true, tre("Gerade ist Erntezeit und da kann man nicht genug Leute haben. Ich will ja schließlich noch ernten, bevor unser Feind hier auftaucht.", "At the moment it is harvest time and you cannot have enough people. I will finally harvest bevore our enemy appears here."), gg_snd_Manfred3)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Nein.
 		private static method infoActionHi_No takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Nein."), null)
-			call speech(info, character, true, tr("Schade. In diesen harten Zeiten findet man nur noch selten Leute, die Arbeit suchen."), gg_snd_Manfred4)
-			call speech(info, character, true, tr("Die Meisten wollen doch sowieso nur weg von der Grenze. Krieg, Krieg, das ist das Einzige, was sie noch interessiert. Aber ich muss meinen Hof führen. Die Leute in der Burg brauchen ja auch was zu beißen."), gg_snd_Manfred5)
-			call speech(info, character, true, tr("Aber auf uns Bauern wird sowieso nur rumgehackt, dabei lastet auf uns der ganze Rest."), gg_snd_Manfred6)
+			call speech(info, character, false, tre("Nein.", "No."), null)
+			call speech(info, character, true, tre("Schade. In diesen harten Zeiten findet man nur noch selten Leute, die Arbeit suchen.", "Too bad. In these hard times one rarely finds people who are looking for work."), gg_snd_Manfred4)
+			call speech(info, character, true, tre("Die Meisten wollen doch sowieso nur weg von der Grenze. Krieg, Krieg, das ist das Einzige, was sie noch interessiert. Aber ich muss meinen Hof führen. Die Leute in der Burg brauchen ja auch was zu beißen.", "Most people just want to leave the border anyway. War, war, that is the only thing they are still interested in. But I have to run my farm. The people in the castle need something to eat."), gg_snd_Manfred5)
+			call speech(info, character, true, tre("Aber auf uns Bauern wird sowieso nur rumgehackt, dabei lastet auf uns der ganze Rest.", "But they are picking on us farmers, anyway, although the whole rest is weighing on us."), gg_snd_Manfred6)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Ich kümmere mich drum.
 		private static method infoActionAboutTheDuke_Yes takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ich kümmere mich drum."), null)
-			call speech(info, character, true, tr("Wirklich? Das würdest du tun? Du musst mit dem Vogt in der Burg sprechen. Ferdinand ist sein Name. Ich war schon mal bei ihm, aber er hat mich abgewiesen."), gg_snd_Manfred13)
-			call speech(info, character, true, tr("Verdammter Arschkriecher des Herzogs. Der Sack sitzt in der Burg mit ihren dicken Mauern und bekommt ne Menge Goldmünzen für's Faulenzen."), gg_snd_Manfred14)
-			call speech(info, character, true, tr("Lass dich nicht von ihm unterkriegen!"), gg_snd_Manfred15)
+			call speech(info, character, false, tre("Ich kümmere mich drum.", "I take care of it."), null)
+			call speech(info, character, true, tre("Wirklich? Das würdest du tun? Du musst mit dem Vogt in der Burg sprechen. Ferdinand ist sein Name. Ich war schon mal bei ihm, aber er hat mich abgewiesen.", "For real? That you would do? You must talk to the steward in the castle. Ferdinand is his name. I've been to him before, but he turned me off."), gg_snd_Manfred13)
+			call speech(info, character, true, tre("Verdammter Arschkriecher des Herzogs. Der Sack sitzt in der Burg mit ihren dicken Mauern und bekommt ne Menge Goldmünzen für's Faulenzen.", "Damn ass of the duke. The sack sits in the castle with its thick walls and gets a lot of gold coins for lazing."), gg_snd_Manfred14)
+			call speech(info, character, true, tre("Lass dich nicht von ihm unterkriegen!", "Do not be put off by him!"), gg_snd_Manfred15)
 			call QuestProtectThePeople.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Wirst schon nicht draufgehen.
 		private static method infoActionAboutTheDuke_No takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wirst schon nicht draufgehen."), null)
-			call speech(info, character, true, tr("Hmm, wenn nicht ich, dann ein anderer. Das ist auch nicht viel besser. Ich wünschte, der Krieg wäre schon vorbei und wir würden gemeinsam etwas Neues aufbauen. Eine Welt ohne Adel, in der jeder nach seiner wirklichen Leistung beurteilt werden würde."), gg_snd_Manfred16)
-			call speech(info, character, true, tr("Ich wette, in einer solchen Welt wäre das Ansehen des Herzogs ganz unten."), gg_snd_Manfred17)
+			call speech(info, character, false, tre("Wirst schon nicht draufgehen.", "You won't die."), null)
+			call speech(info, character, true, tre("Hmm, wenn nicht ich, dann ein anderer. Das ist auch nicht viel besser. Ich wünschte, der Krieg wäre schon vorbei und wir würden gemeinsam etwas Neues aufbauen. Eine Welt ohne Adel, in der jeder nach seiner wirklichen Leistung beurteilt werden würde.", "Hmm, if not me, then another one. This not much better either. I wish the war was over and we would build something new together. A world without nobility, in which everyone would be judged according to his real achievement."), gg_snd_Manfred16)
+			call speech(info, character, true, tre("Ich wette, in einer solchen Welt wäre das Ansehen des Herzogs ganz unten.", "I bet that in such a world the reputation of the duke would be at the very bottom."), gg_snd_Manfred17)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -200,22 +200,22 @@ library StructMapTalksTalkManfred requires Asl, StructMapMapNpcs, StructMapTalks
 			local thistype this = thistype.allocate(Npcs.manfred(), thistype.startPageAction)
 
 			// start page
-			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tr("Hallo.")) // 0
-			set this.m_aboutTheDuke = this.addInfo(false, false, thistype.infoConditionAboutTheDuke, thistype.infoActionAboutTheDuke, tr("Was hältst du vom Herzog?"))
-			set this.m_mathilda = this.addInfo(false, false, thistype.infoConditionMathilda, thistype.infoActionMathilda, tr("Du lässt Mathilda in deiner Scheune pennen?"))
-			set this.m_talkedToFerdinand = this.addInfo(false, false, thistype.infoConditionTalkedToFerdinand, thistype.infoActionTalkedToFerdinand, tr("Ich habe mit dem Vogt gesprochen."))
-			set this.m_markwardNeedsSupply = this.addInfo(false, false, thistype.infoConditionMarkwardNeedsSupply, thistype.infoActionMarkwardNeedsSupply, tr("Markward benötigt Vorräte in der Burg."))
-			set this.m_supply = this.addInfo(false, false, thistype.infoConditionSupply, thistype.infoActionSupply, tr("Hier sind die Vorräte."))
-			set this.m_lumber = this.addInfo(false, false, thistype.infoConditionLumber, thistype.infoActionLumber, tr("Bring dieses Holz zur Burg."))
+			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Hallo.", "Hello.")) // 0
+			set this.m_aboutTheDuke = this.addInfo(false, false, thistype.infoConditionAboutTheDuke, thistype.infoActionAboutTheDuke, tre("Was hältst du vom Herzog?", "What do you think of the duke?"))
+			set this.m_mathilda = this.addInfo(false, false, thistype.infoConditionMathilda, thistype.infoActionMathilda, tre("Du lässt Mathilda in deiner Scheune pennen?", "You let Mathilda sleep in your barn?"))
+			set this.m_talkedToFerdinand = this.addInfo(false, false, thistype.infoConditionTalkedToFerdinand, thistype.infoActionTalkedToFerdinand, tre("Ich habe mit dem Vogt gesprochen.", "I have spoken with the steward."))
+			set this.m_markwardNeedsSupply = this.addInfo(false, false, thistype.infoConditionMarkwardNeedsSupply, thistype.infoActionMarkwardNeedsSupply, tre("Markward benötigt Vorräte in der Burg.", "Markward needs supplies in the castle."))
+			set this.m_supply = this.addInfo(false, false, thistype.infoConditionSupply, thistype.infoActionSupply, tre("Hier sind die Vorräte.", "Here are the supplies."))
+			set this.m_lumber = this.addInfo(false, false, thistype.infoConditionLumber, thistype.infoActionLumber, tre("Bring dieses Holz zur Burg.", "Bring this wood to the castle."))
 			set this.m_exit = this.addExitButton()
 
 			// info 0
-			set this.m_hi_Yes = this.addInfo(false, false, 0, thistype.infoActionHi_Yes, tr("Ja."))
-			set this.m_hi_No = this.addInfo(false, false, 0, thistype.infoActionHi_No, tr("Nein."))
+			set this.m_hi_Yes = this.addInfo(false, false, 0, thistype.infoActionHi_Yes, tre("Ja.", "Yes."))
+			set this.m_hi_No = this.addInfo(false, false, 0, thistype.infoActionHi_No, tre("Nein.", "No."))
 
 			// info 1
-			set this.m_aboutTheDuke_Yes = this.addInfo(false, false, 0, thistype.infoActionAboutTheDuke_Yes, tr("Ich kümmere mich drum."))
-			set this.m_aboutTheDuke_No = this.addInfo(false, false, 0, thistype.infoActionAboutTheDuke_No, tr("Wirst schon nicht draufgehen."))
+			set this.m_aboutTheDuke_Yes = this.addInfo(false, false, 0, thistype.infoActionAboutTheDuke_Yes, tre("Ich kümmere mich drum.", "I take care of it."))
+			set this.m_aboutTheDuke_No = this.addInfo(false, false, 0, thistype.infoActionAboutTheDuke_No, tre("Wirst schon nicht draufgehen.", "You won't die."))
 
 			return this
 		endmethod
