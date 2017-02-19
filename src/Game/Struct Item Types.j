@@ -80,7 +80,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		public stub method onEquipItem takes unit whichUnit, integer slot returns nothing
 			local Character character = ACharacter.getCharacterByUnit(whichUnit)
-			local AHashTable realSpellLevels = 0
+			local AGlobalHashTable realSpellLevels = 0
 			local integer i
 			debug call Print("Range item attach")
 
@@ -108,7 +108,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 
 		public stub method onUnequipItem takes unit whichUnit, integer slot returns nothing
 			local Character character = ACharacter.getCharacterByUnit(whichUnit)
-			local AHashTable realSpellLevels = 0
+			local AGlobalHashTable realSpellLevels = 0
 			debug call Print("Range item drop")
 
 			if (character != 0) then
