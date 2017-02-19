@@ -498,25 +498,25 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		private static method infoAction9_1 takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Der Ork und der Wolf.", "The Orc and the Wolf."), null)
-			call speech(info, character, true, tr("Vor langer langer Zeit, da lebte ein Ork in einer Höhle in den Bergen. Er war sehr einsam dort, denn in den Bergen lebten nur Tiere und keiner mit dem er sich hätte unterhalten können."), gg_snd_Mathilda33)
-			call speech(info, character, true, tr("Doch eines Tages, als der Ork sich auf die jagt begab, da traf er auf einen Wolf in der Wildnis und als sich der Ork dem Wolf näherte, da sprach der Wolf: „Wenn du mich tötest, dann bleibst du allein.“"), gg_snd_Mathilda34)
-			call speech(info, character, true, tr("Der Ork antwortete erstaunt: „Sag mir Wolf, wie kommt es dass ich dich verstehe?“"), gg_snd_Mathilda35)
-			call speech(info, character, true, tr("Der Wolf aber antwortete: „Sag mir Ork, wie kommt es, dass du mir zuhörst?“"), gg_snd_Mathilda36)
-			call speech(info, character, true, tr("Der Ork war verwundert, aber auch froh nach so langer Zeit wieder jemanden getroffen zu haben, mit dem er sich unterhalten konnte. Also fragte er den Wolf: „Sag Wolf, wenn ich dich verschone, begleitest du mich dann?“"), gg_snd_Mathilda37)
-			call speech(info, character, true, tr("Der Wolf antwortet daraufhin: „Sicher Ork, das werde ich.“ So gingen die beiden zusammen zur Höhle des Orks. Doch als sie dort ankamen sprach der Wolf: „Sieh Ork, verschont hast du mich und ich habe dich begleitet. Nun haben wir beide unser Wort gehalten, doch sieh welche Höhle du mir gezeigt hast, so warm und so groß.“ Da fraß der Wolf den Ork."), gg_snd_Mathilda38)
+			call speech(info, character, true, tre("Vor langer langer Zeit, da lebte ein Ork in einer Höhle in den Bergen. Er war sehr einsam dort, denn in den Bergen lebten nur Tiere und keiner mit dem er sich hätte unterhalten können.", "Long ago, an Orc lived in a cave in the mountains. He was very lonely there, beause in the mountains lived only animals and no one with whom he could have talked."), gg_snd_Mathilda33)
+			call speech(info, character, true, tre("Doch eines Tages, als der Ork sich auf die jagt begab, da traf er auf einen Wolf in der Wildnis und als sich der Ork dem Wolf näherte, da sprach der Wolf: „Wenn du mich tötest, dann bleibst du allein.“.", "But one day, when the Orc went hunting, he met a wolf in the wilderness, and when the Or approached the wolf, the wolf said \"If you kill me, then you will be left alone.\"."), gg_snd_Mathilda34)
+			call speech(info, character, true, tre("Der Ork antwortete erstaunt: „Sag mir Wolf, wie kommt es dass ich dich verstehe?“.", "The Orc replied in amazement: \"Tell me wolf, how come I understand you?\"."), gg_snd_Mathilda35)
+			call speech(info, character, true, tre("Der Wolf aber antwortete: „Sag mir Ork, wie kommt es, dass du mir zuhörst?“.", "But the wolf answered, \"Tell Orc, how is it that you are listening to me?\"."), gg_snd_Mathilda36)
+			call speech(info, character, true, tre("Der Ork war verwundert, aber auch froh nach so langer Zeit wieder jemanden getroffen zu haben, mit dem er sich unterhalten konnte. Also fragte er den Wolf: „Sag Wolf, wenn ich dich verschone, begleitest du mich dann?“.", "The Orc was surprised, but glad to have met someone with whom he could talk. So he asked the wolf: \"Tell wolf, if I spare you, will you accompany me?\"."), gg_snd_Mathilda37)
+			call speech(info, character, true, tre("Der Wolf antwortet daraufhin: „Sicher Ork, das werde ich.“. So gingen die beiden zusammen zur Höhle des Orks. Doch als sie dort ankamen sprach der Wolf: „Sieh Ork, verschont hast du mich und ich habe dich begleitet. Nun haben wir beide unser Wort gehalten, doch sieh welche Höhle du mir gezeigt hast, so warm und so groß.“. Da fraß der Wolf den Ork.", "The wolf replied, \"Surely Orc, I will.\". So they both went to the cave of the Orc. But when they got there, the wolf said, \"Look Orc, you spared me and I accompanied you. Now we have both kept our word, but see what cave you showed me, so warm and so great.\". Then the wolf ate the Orc."), gg_snd_Mathilda38)
 			call this.showStartPage(character)
 		endmethod
 
 		// Das Hexenlied.
 		private static method infoAction9_2 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Das Hexenlied."), null)
-			call speech(info, character, true, tr("Im nordöstlichen Wald von Talras, auf der anderen Seite des Flusses dort leben die alten verstoßenen Hexen. Einst gefürchtet von den Bewohnern Talras' plagt sie nun die unendliche Einsamkeit."), gg_snd_Mathilda39)
-			call speech(info, character, true, tr("Man erzählt sich, sie hätten schließlich Freundschaft mit den Riesen geschlossen, um ihrer Einsamkeit zu entgehen. Die Riesen, ebenfalls gefürchtet von jedem Bewohner in Talras, gingen tatsächlich auf diese Freundschaft ein."), gg_snd_Mathilda40)
-			call speech(info, character, true, tr("Die Hexen spielten ein verzaubertes Lied und die Riesen folgten ihrem Befehl. Nun gehorchen sie den Hexen und wann immer man auf eine Hexe trifft, da ist auch ein Riese nicht weit."), gg_snd_Mathilda41)
-			call speech(info, character, true, tr("Doch höre, wer auch immer das Lied spielen kann, dem wird auch der Riese folgen."), gg_snd_Mathilda42)
+			call speech(info, character, false, tre("Das Hexenlied.", "The witch song."), null)
+			call speech(info, character, true, tre("Im nordöstlichen Wald von Talras, auf der anderen Seite des Flusses dort leben die alten verstoßenen Hexen. Einst gefürchtet von den Bewohnern Talras' plagt sie nun die unendliche Einsamkeit.", "In the northeastern forest of Talras, on the other side of the river there live the ancient witches. Once feared by the inhabitants of Talras, it now pervades them the infinite solitude."), gg_snd_Mathilda39)
+			call speech(info, character, true, tre("Man erzählt sich, sie hätten schließlich Freundschaft mit den Riesen geschlossen, um ihrer Einsamkeit zu entgehen. Die Riesen, ebenfalls gefürchtet von jedem Bewohner in Talras, gingen tatsächlich auf diese Freundschaft ein.", "It is said that they had finally made friends with the giants to escape their loneliness, The giants, also feared by any inhabitant in Talras, actually went into this friendship."), gg_snd_Mathilda40)
+			call speech(info, character, true, tre("Die Hexen spielten ein verzaubertes Lied und die Riesen folgten ihrem Befehl. Nun gehorchen sie den Hexen und wann immer man auf eine Hexe trifft, da ist auch ein Riese nicht weit.", "The witches played an enchanted song and the giants followed their order. Now they obey the witches and whenever a you meet a witch, there is also a giant not far."), gg_snd_Mathilda41)
+			call speech(info, character, true, tre("Doch höre, wer auch immer das Lied spielen kann, dem wird auch der Riese folgen.", "But listen, whoever can play the song, the giant will follow him."), gg_snd_Mathilda42)
 			// (Charakter erhält Hinweis, dass man mit dem Lied Riesen für sich gewinnen kann)
-			call character.displayHint(tr("Mit dem Hexenlied kann der Charakter Riesen für sich gewinnen."))
+			call character.displayHint(tre("Mit dem Hexenlied kann der Charakter Riesen für sich gewinnen.", "With the witch song the character can win giants for himself."))
 			call this.showStartPage(character)
 		endmethod
 
@@ -540,8 +540,8 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Das Lied des Krieges.
 		private static method infoAction10_0 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Das Lied des Krieges."), null)
-			call speech(info, character, true, tr("Der Rittersmann, von unweit her, ward vom König selbst gerufen, er kam in Rüstung, samt dem Speer, mit Legenden, die ihn schufen. Träumte er von Ruhm und Stolz, so war sein Speer doch nur aus Holz, und als er vor dem Drachen stand, setzte dieser ihn in Brand. So brannten Ritter und die Sagen, an denen sich die Jungen laben, Am Ende bleibt der Tod, nicht mehr, so lange ist es gar nicht her!"), gg_snd_Mathilda46)
+			call speech(info, character, false, tre("Das Lied des Krieges.", "The song of war."), null)
+			call speech(info, character, true, tre("Der Rittersmann, von unweit her, ward vom König selbst gerufen, er kam in Rüstung, samt dem Speer, mit Legenden, die ihn schufen. Träumte er von Ruhm und Stolz, so war sein Speer doch nur aus Holz, und als er vor dem Drachen stand, setzte dieser ihn in Brand. So brannten Ritter und die Sagen, an denen sich die Jungen laben, Am Ende bleibt der Tod, nicht mehr, so lange ist es gar nicht her!", "The knight from nearby, was called by the king himself, he came in armor, with the spear, with legends that created him. If he dreamed of glory and pride, his spear was only made of wood, and when he stood before the dragon, the latter set him on fire. Thus the knight and the legends burned in which the boys were lividing. In the end, death remains, not more, it's not been that long ago!"), gg_snd_Mathilda46)
 
 			call this.playSongEx(character)
 			call this.showStartPage(character)
@@ -550,8 +550,8 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Der Wandersmann.
 		private static method infoAction10_1 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Der Wandersmann."), null)
-			call speech(info, character, true, tr("Der Tag neigt sich dem Ende zu, und alle Vögel werden müde, nur einer, der gibt keine Ruh', in seiner Heimat ist man prüde. Er lief, ja rannte über Berge, traf fremde Wesen, auch die Zwerge, doch sollt er einen Menschen sehn, würd' er gleich wieder rückwärts gehen, sich glücklich an den Seinen rächen, gar jedem mal das Herz zerstechen, denn jeder seiner eignen Leut', hat zu viel Liebe stets gescheut. Ja dort in seiner alten Heimat, ist weder Mauer, noch ein Tor, doch wär' ihm eine neue Bleibe, gar lieber als das triste Moor."), gg_snd_Mathilda47)
+			call speech(info, character, false, tre("Der Wandersmann.", "The wayfarer."), null)
+			call speech(info, character, true, tre("Der Tag neigt sich dem Ende zu, und alle Vögel werden müde, nur einer, der gibt keine Ruh', in seiner Heimat ist man prüde. Er lief, ja rannte über Berge, traf fremde Wesen, auch die Zwerge, doch sollt er einen Menschen sehn, würd' er gleich wieder rückwärts gehen, sich glücklich an den Seinen rächen, gar jedem mal das Herz zerstechen, denn jeder seiner eignen Leut', hat zu viel Liebe stets gescheut. Ja dort in seiner alten Heimat, ist weder Mauer, noch ein Tor, doch wär' ihm eine neue Bleibe, gar lieber als das triste Moor.", "The day is drawing to a close, and all the birds are weary, only one who gives no rest, in his homeland one is prudish. He ran, ran over mountains, met strange beings, even the dwarfs, but if he were to see a man, he would immediately go backwards, revenge himself with his own, punish every heart, for every one of his own people. Has always spared too much love. Yes, there in his old home, is neither wall nor gate, but he would prefer a new place over the dreary bog."), gg_snd_Mathilda47)
 
 			call this.playSongEx(character)
 			call this.showStartPage(character)
@@ -560,8 +560,8 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 		// Die Waldgeister.
 		private static method infoAction10_2 takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Die Waldgeister."), null)
-			call speech(info, character, true, tr("Im alten Wald, am großen Fluss, durch den ich täglich waten muss, dort traf ich traurig wie ich war, die mystisch schöne Geisterschaar. Sie gaben mir, was ich vermisst, doch war es eine große List, Denn wollten sie nicht meinen Segen, stattdessen nur den eignen Regen, der kommt, wenn man aus einem Rachen, mal etwas hört wie sanftes Lachen. Und wenns vergeht, ist's auch nicht schlimm, der Geist behält ja seine Stimm', kann Lieder singen, selbst oft lachen, er muss nun über gar nichts wachen, gestorben ist er sowieso, doch fragt mein Herz sich wo."), gg_snd_Mathilda48)
+			call speech(info, character, false, tre("Die Waldgeister.", "The forest spirits."), null)
+			call speech(info, character, true, tre("Im alten Wald, am großen Fluss, durch den ich täglich waten muss, dort traf ich traurig wie ich war, die mystisch schöne Geisterschaar. Sie gaben mir, was ich vermisst, doch war es eine große List, Denn wollten sie nicht meinen Segen, stattdessen nur den eignen Regen, der kommt, wenn man aus einem Rachen, mal etwas hört wie sanftes Lachen. Und wenns vergeht, ist's auch nicht schlimm, der Geist behält ja seine Stimm', kann Lieder singen, selbst oft lachen, er muss nun über gar nichts wachen, gestorben ist er sowieso, doch fragt mein Herz sich wo.", "In the old forest, on the big river, through which I have to wade every day, I met sad as I was, the mystially beautiful ghosts. They gave me what I missed, but it was a great trick, for they did not want my blessing, instead only their own rain coming from a throat something like gentle laughter. And when it goes by, it is not bad, the ghost its voie, can sing songs, laugh often, he does not have to watch anything, he is dead anyway, but my heart wonders where."), gg_snd_Mathilda48)
 
 			call this.playSongEx(character)
 			call this.showStartPage(character)
@@ -615,48 +615,48 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 			call this.setName(tre("Mathilda", "Mathilda"))
 
 			// start page
-			set this.m_infoHi = this.addInfo(false, false, 0, thistype.infoAction0, tr("Hallo.")) // 0
+			set this.m_infoHi = this.addInfo(false, false, 0, thistype.infoAction0, tre("Hallo.", "Hello.")) // 0
 
-			set this.m_infoWhereFrom = this.addInfo(false, false, thistype.infoConditionAfterGreeting, thistype.infoAction1, tr("Woher kommst du?")) // 1
-			set this.m_infoAboutTheFarm = this.addInfo(false, false, thistype.infoConditionAfterGreeting, thistype.infoAction2, tr("Was hältst du vom Bauernhof?")) // 2
-			set this.m_infoHoneyPot = this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tr("Hier hast du einen Honigtopf!")) // 3
-			set this.m_infoBigHoneyPot = this.addInfo(false, false, thistype.infoCondition4, thistype.infoAction4, tr("Hier hast du einen großen Honigtopf!")) // 4
+			set this.m_infoWhereFrom = this.addInfo(false, false, thistype.infoConditionAfterGreeting, thistype.infoAction1, tre("Woher kommst du?", "Where are you from?")) // 1
+			set this.m_infoAboutTheFarm = this.addInfo(false, false, thistype.infoConditionAfterGreeting, thistype.infoAction2, tre("Was hältst du vom Bauernhof?", "What do you think about the farm?")) // 2
+			set this.m_infoHoneyPot = this.addInfo(false, false, thistype.infoCondition3, thistype.infoAction3, tre("Hier hast du einen Honigtopf!", "Here you have a honeypot!")) // 3
+			set this.m_infoBigHoneyPot = this.addInfo(false, false, thistype.infoCondition4, thistype.infoAction4, tre("Hier hast du einen großen Honigtopf!", "Here you have a big honey pot!")) // 4
 			set this.m_infoAnnoyingLothar = this.addInfo(false, true, thistype.infoCondition5, thistype.infoAction5, null) // 5
-			set this.m_infoLetsGo = this.addInfo(true, false, thistype.infoCondition6, thistype.infoAction6, tr("Lass uns umherziehen!")) // 6
+			set this.m_infoLetsGo = this.addInfo(true, false, thistype.infoCondition6, thistype.infoAction6, tre("Lass uns umherziehen!", "Let's move!")) // 6
 
-			set this.m_infoAboutMusic = this.addInfo(true, false, thistype.infoConditionAfterGreeting, thistype.infoAction7, tr("Du musizierst?")) // 7
-			set this.m_infoBarn = this.addInfo(false, false, thistype.infoCondition8, thistype.infoAction8, tr("Was machst du in der Scheune?")) // 8
-			set this.m_infoTellAStory = this.addInfo(true, false, thistype.infoConditionAfterGreeting, thistype.infoAction9, tr("Erzähl mir eine Geschichte.")) // 9
-			set this.m_infoPlayASong = this.addInfo(true, false, thistype.infoConditionAfterGreeting, thistype.infoAction10, tr("Spiel mir ein Lied.")) // 10
-			set this.m_infoGoodStoriesAndSongs = this.addInfo(true, false, thistype.infoCondition11, thistype.infoAction11, tr("Du kannst gut erzählen und spielen. Hier hast du ein paar Goldmünzen (10 Goldmünzen geben).")) // 11
-			set this.m_infoBadStories = this.addInfo(true, false, thistype.infoCondition12, thistype.infoAction12, tr("Deine Geschichten scheinen einem Haufen Scheiße zu gleichen.")) // 12
-			set this.m_infoBadSongs = this.addInfo(false, false, thistype.infoCondition13, thistype.infoAction13, tr("Deine Musik ist ungefähr so hörenswert wie Gebärdensprache.")) // 13
-			set this.m_infoGetInstrument = this.addInfo(false, false, thistype.infoCondition14, thistype.infoAction14, tr("Weißt du, wo ich mir ein Instrument besorgen kann?")) // 14
-			set this.m_infoBuildInstrument = this.addInfo(true, false, thistype.infoConditionBuildInstrument, thistype.infoActionBuildInstrument, tr("Kannst du mir auch ein Instrument bauen?"))
-			set this.m_infoBuildMeAnInstrument = this.addInfo(false, false, thistype.infoConditionBuildMeAnInstrument, thistype.infoActionBuildMeAnInstrument, tr("Baue mir eine Schalmei."))
-			set this.m_infoLumberAndGold = this.addInfo(false, false, thistype.infoConditionLumberAndGold, thistype.infoActionLumberAndGold, tr("Hier sind das Holz und die Goldmünzen."))
-			set this.m_infoFinishedInstrument = this.addInfo(true, false, thistype.infoConditionFinishedInstrument, thistype.infoActionFinishedInstrument, tr("Ist die Schalmei fertig?"))
-			set this.m_infoPlayMusic = this.addInfo(true, false, thistype.infoConditionPlayMusic, thistype.infoActionPlayMusic, tr("Lass uns musizieren."))
-			set this.m_infoWitchSong = this.addInfo(true, false, thistype.infoConditionWitchSong, thistype.infoActionWitchSong, tr("Bring mir das Hexenlied bei."))
+			set this.m_infoAboutMusic = this.addInfo(true, false, thistype.infoConditionAfterGreeting, thistype.infoAction7, tre("Du musizierst?", "You are making music?")) // 7
+			set this.m_infoBarn = this.addInfo(false, false, thistype.infoCondition8, thistype.infoAction8, tre("Was machst du in der Scheune?", "What are you doing in the barn?")) // 8
+			set this.m_infoTellAStory = this.addInfo(true, false, thistype.infoConditionAfterGreeting, thistype.infoAction9, tre("Erzähl mir eine Geschichte.", "Tell me a story.")) // 9
+			set this.m_infoPlayASong = this.addInfo(true, false, thistype.infoConditionAfterGreeting, thistype.infoAction10, tre("Spiel mir ein Lied.", "Play me a song.")) // 10
+			set this.m_infoGoodStoriesAndSongs = this.addInfo(true, false, thistype.infoCondition11, thistype.infoAction11, tre("Du kannst gut erzählen und spielen. Hier hast du ein paar Goldmünzen.", "You can tell and play well. Here you have a few gold coins.")) // 11
+			set this.m_infoBadStories = this.addInfo(true, false, thistype.infoCondition12, thistype.infoAction12, tre("Deine Geschichten scheinen einem Haufen Scheiße zu gleichen.", "Your stories seem like a bunch of shit.")) // 12
+			set this.m_infoBadSongs = this.addInfo(false, false, thistype.infoCondition13, thistype.infoAction13, tre("Deine Musik ist ungefähr so hörenswert wie Gebärdensprache.", "Your music is about as audible as sign language.")) // 13
+			set this.m_infoGetInstrument = this.addInfo(false, false, thistype.infoCondition14, thistype.infoAction14, tre("Weißt du, wo ich mir ein Instrument besorgen kann?", "Do you know where I can get an instrument?")) // 14
+			set this.m_infoBuildInstrument = this.addInfo(true, false, thistype.infoConditionBuildInstrument, thistype.infoActionBuildInstrument, tre("Kannst du mir auch ein Instrument bauen?", "Can you build me an instrument?"))
+			set this.m_infoBuildMeAnInstrument = this.addInfo(false, false, thistype.infoConditionBuildMeAnInstrument, thistype.infoActionBuildMeAnInstrument, tre("Baue mir eine Schalmei.", "Build me a shawm."))
+			set this.m_infoLumberAndGold = this.addInfo(false, false, thistype.infoConditionLumberAndGold, thistype.infoActionLumberAndGold, tre("Hier sind das Holz und die Goldmünzen.", "Here is the wood and the gold coins."))
+			set this.m_infoFinishedInstrument = this.addInfo(true, false, thistype.infoConditionFinishedInstrument, thistype.infoActionFinishedInstrument, tre("Ist die Schalmei fertig?", "Have you finished the shawm?"))
+			set this.m_infoPlayMusic = this.addInfo(true, false, thistype.infoConditionPlayMusic, thistype.infoActionPlayMusic, tre("Lass uns musizieren.", "Let us play music."))
+			set this.m_infoWitchSong = this.addInfo(true, false, thistype.infoConditionWitchSong, thistype.infoActionWitchSong, tre("Bring mir das Hexenlied bei.", "Teach me the witch song."))
 			set this.m_infoExit = this.addExitButton() // 15
 
 			// info 0
-			set this.m_infoHi_YesSong = this.addInfo(false, false, 0, thistype.infoAction0_0, tr("Aber sicher doch.")) // 16
-			set this.m_infoHi_NoSong = this.addInfo(false, false, 0, thistype.infoAction0_1, tr("Nein, lieber nicht.")) // 17
+			set this.m_infoHi_YesSong = this.addInfo(false, false, 0, thistype.infoAction0_0, tre("Aber sicher doch.", "Of course.")) // 16
+			set this.m_infoHi_NoSong = this.addInfo(false, false, 0, thistype.infoAction0_1, tre("Nein, lieber nicht.", "No rather not.")) // 17
 
 			// info 9
-			set this.m_infoTellAStory_Bear = this.addInfo(true, false, 0, thistype.infoAction9_0, tr("Die Geschichte vom Bären.")) // 18
-			set this.m_infoTellAStory_OrcAndWolf = this.addInfo(true, false, 0, thistype.infoAction9_1, tr("Der Ork und der Wolf.")) // 19
-			set this.m_infoTellAStory_WitchSong = this.addInfo(true, false, 0, thistype.infoAction9_2, tr("Das Hexenlied.")) // 20
-			set this.m_infoTellAStory_None = this.addInfo(true, false, 0, thistype.infoAction9_3, tr("Keine. Ich hab's mir anders überlegt.")) // 21
+			set this.m_infoTellAStory_Bear = this.addInfo(true, false, 0, thistype.infoAction9_0, tre("Die Geschichte vom Bären.", "THe story of the bear.")) // 18
+			set this.m_infoTellAStory_OrcAndWolf = this.addInfo(true, false, 0, thistype.infoAction9_1, tre("Der Ork und der Wolf.", "The Orc and the Wolf.")) // 19
+			set this.m_infoTellAStory_WitchSong = this.addInfo(true, false, 0, thistype.infoAction9_2, tre("Das Hexenlied.", "The witch song.")) // 20
+			set this.m_infoTellAStory_None = this.addInfo(true, false, 0, thistype.infoAction9_3, tre("Keine. Ich hab's mir anders überlegt.", "None. I thought about it differently.")) // 21
 
 			// info 10
-			set this.m_infoPlayASong_War = this.addInfo(true, false, 0, thistype.infoAction10_0, tr("Das Lied des Krieges.")) // 22
-			set this.m_infoPlayASong_Wayfarer = this.addInfo(true, false, 0, thistype.infoAction10_1, tr("Der Wandersmann.")) // 23
-			set this.m_infoPlayASong_ForestSpirits = this.addInfo(true, false, 0, thistype.infoAction10_2, tr("Die Waldgeister.")) // 24
-			set this.m_infoPlayASong_None = this.addInfo(true, false, 0, thistype.infoAction10_3, tr("Keines. Ich hab's mir anders überlegt.")) // 25
+			set this.m_infoPlayASong_War = this.addInfo(true, false, 0, thistype.infoAction10_0, tre("Das Lied des Krieges.", "The song of war.")) // 22
+			set this.m_infoPlayASong_Wayfarer = this.addInfo(true, false, 0, thistype.infoAction10_1, tre("Der Wandersmann.", "The wayfarer.")) // 23
+			set this.m_infoPlayASong_ForestSpirits = this.addInfo(true, false, 0, thistype.infoAction10_2, tre("Die Waldgeister.", "The forest spirits.")) // 24
+			set this.m_infoPlayASong_None = this.addInfo(true, false, 0, thistype.infoAction10_3, tre("Keines. Ich hab's mir anders überlegt.", "None. I thought about it differently.")) // 25
 
-			set this.m_infoLeave = this.addInfo(true, false, thistype.infoConditionLeave, thistype.infoActionLeave, tr("Geh.")) // 26
+			set this.m_infoLeave = this.addInfo(true, false, thistype.infoConditionLeave, thistype.infoActionLeave, tre("Geh.", "Leave.")) // 26
 
 			set this.m_goAway = this.addInfo(true, true, thistype.infoConditionGoAway, thistype.infoActionGoAway, "")
 
