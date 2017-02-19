@@ -372,9 +372,13 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_tellbornTalksToFulco.setPartner(Npcs.fulco())
 			call thistype.m_tellbornTalksToFulco.addSound(tre("Hätte ich das Ganze trolliger, tiefer sprechen sollen bis hierin?", "Should I have said the whole more like a troll, deeper to this?"), gg_snd_TellbornTontext1)
 			call thistype.m_tellbornTalksToFulco.addSound(tre("Verschwindet ihr Geister und lasst diesen Körper frei!", "Disappear you spirits and release this body!"), gg_snd_TellbornTontext2)
+			call thistype.m_tellbornTalksToFulco.addSoundAnswer(tre("Ja, mach dich nur lustig.", "Yes, just make fun on me."), gg_snd_FulcoAmbient1)
 			call thistype.m_tellbornTalksToFulco.addSound(tre("Es tut mir so leid.", "I am so sorry."), gg_snd_TellbornTontext3)
+			call thistype.m_tellbornTalksToFulco.addSoundAnswer(tre("Das habe ich jetzt davon.", "That's what I got from it now."), gg_snd_FulcoAmbient2)
 			call thistype.m_tellbornTalksToFulco.addSound(tre("Zumindest wird dir im Winter nicht mehr so schnell kalt.", "At least you won't get that cold in winter."), gg_snd_TellbornTontext4)
+			call thistype.m_tellbornTalksToFulco.addSoundAnswer(tre("Du hättest eben Zauberer werden sollen.", "You should have become a wizard."), gg_snd_FulcoAmbient3)
 			call thistype.m_tellbornTalksToFulco.addSound(tre("Bald wird es hier sehr gefährlich werden.", "Soon it will be very dangerous here."), gg_snd_TellbornTontext5)
+			call thistype.m_tellbornTalksToFulco.addSoundAnswer(tre("Dieses Land ist mir nicht geheuer.", "I do not like this country."), gg_snd_FulcoAmbient4)
 			call thistype.m_tellbornTalksToFulco.addSound(tre("Fulco, nun hab doch noch ein wenig Geduld.", "Fulco, just have a little patience."), gg_snd_TellbornTontext6)
 
 			set thistype.m_carstenTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.carsten(), 0.0, 23.59, gg_rct_waypoint_carsten)

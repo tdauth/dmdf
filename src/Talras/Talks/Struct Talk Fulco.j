@@ -9,7 +9,7 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 		// Hallo Bär.
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Hallo Bär.", "Hello bear."), null)
-			call speech(info, character, true, tre("￼Ja ja, mach dich nur lustig über mich! Es ist ja auch so zum Lachen, wenn man aussieht wie ein Bär.", "Hey, hey, just make fun of me! It is quite funny if you look like a bear."), null)
+			call speech(info, character, true, tre("￼Ja ja, mach dich nur lustig über mich! Es ist ja auch so zum Lachen, wenn man aussieht wie ein Bär.", "Hey, hey, just make fun of me! It is quite funny if you look like a bear."), gg_snd_Fulco1)
 			call speech(info, character, false, tre("Allerdings.", "Certainly."), null)
 			call info.talk().showRange(5, 6, character)
 		endmethod
@@ -21,8 +21,8 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 
 		// Ich habe gehört, du hast Tellborn einige Zutaten für seinen Trank besorgt
 		private static method infoAction1 takes AInfo info, Character character returns nothing
-			call speech(info, character, true, tre("Ich habe gehört, du hast Tellborn einige Zutaten für seinen Trank besorgt.", "I heard you got a few ingredients for Tellborn for his potion."), null)
-			call speech(info, character, true, tre("Ich danke dir vielmals. Bald werde ich wieder aussehen wie ein Mensch! Hier hast du ein paar Gegenstände.", "I thank you very much. Soon I will look again like a man! Here you have a few items."), null)
+			call speech(info, character, true, tre("Ich habe gehört, du hast Tellborn einige Zutaten für seinen Trank besorgt.", "I heard you got a few ingredients for Tellborn for his potion."), gg_snd_Fulco5)
+			call speech(info, character, true, tre("Ich danke dir vielmals. Bald werde ich wieder aussehen wie ein Mensch! Hier hast du ein paar Gegenstände.", "I thank you very much. Soon I will look again like a man! Here you have a few items."), gg_snd_Fulco6)
 			// Charakter erhält 3 Manatränke und 1 Ring der Verborgenheit.
 			call character.giveItem('I00D')
 			call character.giveItem('I00D')
@@ -34,10 +34,10 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 		// Du siehst aus wie ein Magier.
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Du siehst aus wie ein Magier.", "You look like a magician."), null)
-			call speech(info, character, true, tre("￼￼Zauberer, wenn ich bitten darf. Das ist die korrekte Bezeichnung. Ich bin nicht irgendein Hokuspokusmöchtegernmagier, der Feuerbälle auf seine Feinde wirft. Ich suche nach Wissen.", "Wizard, if you please. This is the correct name. I'm not some hocus pocus magician throwing fireballs at his enemies. I'm looking for knowledge."), null)
+			call speech(info, character, true, tre("￼￼Zauberer, wenn ich bitten darf. Das ist die korrekte Bezeichnung. Ich bin nicht irgendein Hokuspokusmöchtegernmagier, der Feuerbälle auf seine Feinde wirft. Ich suche nach Wissen.", "Wizard, if you please. This is the correct name. I'm not some hocus pocus magician throwing fireballs at his enemies. I'm looking for knowledge."), gg_snd_Fulco7)
 			// (Charakter ist Zauberer)
 			if (character.class() == Classes.wizard()) then
-				call speech(info, character, true, tre("Das solltest du selbst aber am besten wissen.", "But that you should know yourself."), null)
+				call speech(info, character, true, tre("Das solltest du selbst aber am besten wissen.", "But that you should know yourself."), gg_snd_Fulco8)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
@@ -54,7 +54,7 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 			// Fulco macht Bewegungen.
 			call QueueUnitAnimation(Npcs.fulco(), "Spell Channel")
 			set whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIma\\AImaTarget.mdl", character.unit(), "chest")
-			call speech(info, character, true, tre("Da hast du sie wieder.", "There you have it again."), null)
+			call speech(info, character, true, tre("Da hast du sie wieder.", "There you have it again."), gg_snd_Fulco9)
 			// Das Mana des Charakters wird aufgefüllt.
 			call SetUnitState(character.unit(), UNIT_STATE_MANA, GetUnitState(character.unit(), UNIT_STATE_MAX_MANA))
 			call DestroyEffect(whichEffect)
@@ -65,9 +65,9 @@ library StructMapTalksTalkFulco requires Asl, StructGameClasses, StructMapQuests
 		// Was ist passiert?
 		private static method infoAction0_1 takes AInfo info, ACharacter character returns nothing
 			call speech(info, character, false, tre("Was ist passiert?", "What happened?"), null)
-			call speech(info, character, true, tre("Mein werter Freund Tellborn hat mich geheilt! Zumindest wollte er mich heilen, aber das hat wohl nicht so ganz geklappt.", "My dear friend Tellborn healed me! At least he wanted to heal me, but probably it did not quite work out."), null)
-			call speech(info, character, true, tre("Kann ja mal passieren, dass man den falschen Zauber anwendet, aber wieso zum Teufel gerade ein Zauber, der mich in einen Bären verwandelt?", "It can happen even once that one applies the wrong spell, but why the hell just a spell that turned me into a bear?"), null)
-			call speech(info, character, true, tre("So kann man sich doch nirgendwo mehr blicken lassen ohne gleich gejagt und erschlagen zu werden!", "So you cannot show yourself anywhere without being hunted and killed immediately."), null)
+			call speech(info, character, true, tre("Mein werter Freund Tellborn hat mich geheilt! Zumindest wollte er mich heilen, aber das hat wohl nicht so ganz geklappt.", "My dear friend Tellborn healed me! At least he wanted to heal me, but probably it did not quite work out."), gg_snd_Fulco2)
+			call speech(info, character, true, tre("Kann ja mal passieren, dass man den falschen Zauber anwendet, aber wieso zum Teufel gerade ein Zauber, der mich in einen Bären verwandelt?", "It can happen even once that one applies the wrong spell, but why the hell just a spell that turned me into a bear?"), gg_snd_Fulco3)
+			call speech(info, character, true, tre("So kann man sich doch nirgendwo mehr blicken lassen ohne gleich gejagt und erschlagen zu werden!", "So you cannot show yourself anywhere without being hunted and killed immediately."), gg_snd_Fulco4)
 			call info.talk().showStartPage(character)
 		endmethod
 
