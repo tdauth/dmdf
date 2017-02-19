@@ -121,6 +121,8 @@ Character=0,"No Character"
 Talk=0,"No Talk"
 Fellow=0,"No Fellow"
 
+AQuest=0,"No Quest"
+
 QuestArea=0,"No Quest Area"
 
 Shrine=0,"No Revival Shrine"
@@ -156,6 +158,8 @@ CharacterNull=0,Character,0,"No Character"
 TalkNull=0,Talk,0,"No Talk"
 
 FellowNull=0,Fellow,0,"No Fellow"
+
+QuestNull=0,AQuest,0,"No Quest"
 
 QuestAreaNull=0,QuestArea,0,"No Quest Area"
 
@@ -297,6 +301,10 @@ _OperatorCompareCharacter_Category=TC_CONDITION
 OperatorCompareClass=1,AClass,ComparisonOperator,AClass
 _OperatorCompareClass_Defaults=ClassCleric,OperatorEqual,ClassCleric
 _OperatorCompareClass_Category=TC_CONDITION
+
+OperatorCompareQuest=1,AQuest,ComparisonOperator,AQuest
+_OperatorCompareQuest_Defaults=QuestNull,OperatorEqual,QuestNull
+_OperatorCompareQuest_Category=TC_CONDITION
 
 OperatorCompareQuestState=1,QuestState,ComparisonOperator,QuestState
 _OperatorCompareQuestState_Defaults=QuestStateNew,OperatorEqual,QuestStateNew
@@ -559,6 +567,18 @@ _SetCharacterQuestIconPath_Category=TC_TPOF_QUEST
 SetCharacterQuestReward=1,AQuest,QuestReward,integer
 _SetCharacterQuestReward_Defaults=_,QuestRewardGold,_
 _SetCharacterQuestReward_Category=TC_TPOF_QUEST
+
+DisplayCharacterQuestState=1,AQuest
+_DisplayCharacterQuestState_Defaults=_
+_DisplayCharacterQuestState_Category=TC_TPOF_QUEST
+
+DisplayCharacterQuestUpdate=1,AQuest
+_DisplayCharacterQuestUpdate_Defaults=_
+_DisplayCharacterQuestUpdate_Category=TC_TPOF_QUEST
+
+DisplayCharacterQuestUpdateMessage=1,AQuest,string
+_DisplayCharacterQuestUpdateMessage_Defaults=_
+_DisplayCharacterQuestUpdateMessage_Category=TC_TPOF_QUEST
 
 SetQuestItemState=1,AQuestItem,QuestState
 _SetQuestItemState_Defaults=_,QuestStateNew

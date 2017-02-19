@@ -354,6 +354,22 @@ function SetCharacterQuestReward takes AQuest whichQuest, integer rewardType, in
 	call whichQuest.setReward(rewardType, value)
 endfunction
 
+function DisplayCharacterQuestState takes AQuest whichQuest returns nothing
+	call whichQuest.displayState()
+endfunction
+
+function DisplayCharacterQuestUpdate takes AQuest whichQuest returns nothing
+	call whichQuest.displayUpdate()
+endfunction
+
+function DisplayCharacterQuestUpdateMessage takes AQuest whichQuest, string message returns nothing
+	call whichQuest.displayUpdateMessage(message)
+endfunction
+
+function SetQuestItemState takes AQuestItem whichQuestItem, integer state returns nothing
+	call whichQuestItem.setState(state)
+endfunction
+
 function SetQuestItemReward takes AQuestItem whichQuestItem, integer rewardType, integer value returns nothing
 	call whichQuestItem.setReward(rewardType, value)
 endfunction
@@ -839,7 +855,7 @@ struct MapData
 	private method onDestroy takes nothing returns nothing
 	endmethod
 
-	/// Required by \ref Game.
+	/// Required by \ref Game and called via. evaluate().
 	public static method initSettings takes nothing returns nothing
 		local integer i = 0
 		/**
@@ -852,7 +868,8 @@ struct MapData
 		call Init()
 		loop
 			exitwhen (i == mapInitSettingsTriggers.size())
-			call ConditionalTriggerExecute(mapInitSettingsTriggers[i])
+			debug call Print("Init Settings trigger " + I2S(GetHandleId(mapInitSettingsTriggers[i])))
+			call ConditionalTriggerExecute(mapInitSettingsTriggers[i]) // trigger actions should be evaluated only
 			set i = i + 1
 		endloop
 		// TODO wait for the execution of the triggers!
@@ -908,6 +925,7 @@ struct MapData
 		local integer i = 0
 		loop
 			exitwhen (i == characterOnEquipItemTriggers.size())
+			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_CHARACTER, inventory.character())
 			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory)
 			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_ITEMINDEX, index)
 			call DmdfHashTable.global().setHandleBoolean(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_ITEMFIRSTTIME, firstTime)
@@ -920,6 +938,7 @@ struct MapData
 		local integer i = 0
 		loop
 			exitwhen (i == characterOnAddRucksackItemTriggers.size())
+			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_CHARACTER, inventory.character())
 			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory)
 			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_ITEMINDEX, index)
 			call DmdfHashTable.global().setHandleBoolean(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_ITEMFIRSTTIME, firstTime)

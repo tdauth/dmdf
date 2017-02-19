@@ -87,6 +87,10 @@ OperatorCompareClass="Character Class Comparison"
 OperatorCompareClass=~Value," ",~Operator," ",~Value
 OperatorCompareClassHint=
 
+OperatorCompareQuest="Quest Comparison"
+OperatorCompareQuest=~Value," ",~Operator," ",~Value
+OperatorCompareQuestHint=
+
 OperatorCompareQuestState="Quest State Comparison"
 OperatorCompareQuestState=~Value," ",~Operator," ",~Value
 OperatorCompareQuestStateHint=
@@ -348,6 +352,18 @@ SetCharacterQuestReward="Set Character Quest Reward"
 SetCharacterQuestReward="Set Reward for Character Quest ",~Quest," of Reward Type ",~Type," to Value ",~Value
 SetCharacterQuestRewardHint=""
 
+DisplayCharacterQuestState="Display Character Quest State"
+DisplayCharacterQuestState="Display State for Character Quest ",~Quest
+DisplayCharacterQuestStateHint="Displays a current state message with all items of the quest."
+
+DisplayCharacterQuestUpdate="Display Character Quest Update"
+DisplayCharacterQuestUpdate="Display Update for Character Quest",~Quest
+DisplayCharacterQuestUpdateHint="Displays an update message with all items of the quest."
+
+DisplayCharacterQuestUpdateMessage="Display Character Quest Update Message"
+DisplayCharacterQuestUpdateMessage="Display Update for Character Quest",~Quest," With the Message ",~Message
+DisplayCharacterQuestUpdateMessageHint="Displays an update message with a custom message."
+
 SetQuestItemState="Set Quest Item State"
 SetQuestItemState="Set State For Quest Item ",~QuestItem," to State ",~State
 SetQuestItemStateHint=""
@@ -500,9 +516,9 @@ RoutineManualStart="Routine Manual Start"
 RoutineManualStart="Start Routine Manually For Unit ",~Unit
 RoutineManualStartHint=""
 
-RoutineManualStartAll="Routine Manual Start"
+RoutineManualStartAll="Routine Manual Start All"
 RoutineManualStartAll="Start Routine Manually For All Units"
-RoutineManualStartAllHint=""
+RoutineManualStartAllHint="Starts the routine which should be active at the current time of day for every unit on the map."
 
 // Shrine API
 
