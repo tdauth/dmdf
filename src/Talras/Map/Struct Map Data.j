@@ -110,18 +110,26 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 
 		private static method trigggerConditionTrack takes nothing returns boolean
 			local string text = DmdfHashTable.global().handleStr(GetTriggeringTrigger(), 0)
-			local integer i = 0
-			debug call Print("Tracked by " + GetPlayerName(GetTriggerPlayer()))
-			call DisplayTextToPlayer(GetTriggerPlayer(), 0.0, 0.0, text)
+			local player whichPlayer = DmdfHashTable.global().handlePlayer(GetTriggeringTrigger(), 1)
+			debug call Print("Tracked by " + GetPlayerName(whichPlayer))
+			call DisplayTextToPlayer(whichPlayer, 0.0, 0.0, text)
 			return false
 		endmethod
 
 		private static method createTombstone takes rect whichRect, string text returns nothing
-			local trackable tombStoneTrackable = CreateTrackable("Doodads\\Terrain\\InvisiblePlatform\\InvisiblePlatform.mdl", GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
-			local trigger trackTrigger = CreateTrigger()
-			call TriggerRegisterTrackableTrackEvent(trackTrigger, tombStoneTrackable)
-			call TriggerAddCondition(trackTrigger, Condition(function thistype.trigggerConditionTrack))
-			call DmdfHashTable.global().setHandleStr(trackTrigger, 0, text)
+			local trackable tombStoneTrackable = null
+			local trigger trackTrigger = null
+			local integer i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				set tombStoneTrackable = CreateTrackableForPlayer(Player(i), "Doodads\\Terrain\\InvisiblePlatform\\InvisiblePlatform.mdl", GetRectCenterX(whichRect), GetRectCenterY(whichRect), 0.0)
+				set trackTrigger = CreateTrigger()
+				call TriggerRegisterTrackableTrackEvent(trackTrigger, tombStoneTrackable)
+				call TriggerAddCondition(trackTrigger, Condition(function thistype.trigggerConditionTrack))
+				call DmdfHashTable.global().setHandleStr(trackTrigger, 0, text)
+				call DmdfHashTable.global().setHandlePlayer(trackTrigger, 1, Player(i))
+				set i = i + 1
+			endloop
 		endmethod
 
 		private static method initTombstones takes nothing returns nothing
