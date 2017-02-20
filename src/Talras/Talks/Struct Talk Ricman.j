@@ -37,10 +37,10 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// Automatisch
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, true, tr("He, was machst du hier?"), gg_snd_Ricman1)
-			call speech(info, character, false, tr("Ich sehe mich nur ein wenig um."), null)
-			call speech(info, character, true, tr("Bring nichts durcheinander und komm erst gar nicht auf die unendlich dumme Idee, etwas zu stehlen!"), gg_snd_Ricman2)
-			call speech(info, character, false, tr("Ich doch nicht."), null)
+			call speech(info, character, true, tre("He, was machst du hier?", "Hey, what are you doing here?"), gg_snd_Ricman1)
+			call speech(info, character, false, tre("Ich sehe mich nur ein wenig um.", "I just look around a little."), null)
+			call speech(info, character, true, tre("Bring nichts durcheinander und komm erst gar nicht auf die unendlich dumme Idee, etwas zu stehlen!", "Do not mess things up and do not even come up with the endlessly stupid idea of stealing something!"), gg_snd_Ricman2)
+			call speech(info, character, false, tre("Ich doch nicht.", "Not me."), null)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -51,8 +51,8 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// Wer bist du?
 		private static method infoActionWhoAreYou takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wer bist du?"), null)
-			call speech(info, character, true, tr("Ich bin Ricman."), gg_snd_Ricman3)
+			call speech(info, character, false, tre("Wer bist du?", "Who are you?"), null)
+			call speech(info, character, true, tre("Ich bin Ricman.", "I am Ricman."), gg_snd_Ricman3)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -67,35 +67,35 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// Was machst du hier?
 		private static method infoActionWhatAreYouDoingHere takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was machst du hier?"), null)
-			call speech(info, character, true, tr("Ich warte."), gg_snd_Ricman4)
+			call speech(info, character, false, tre("Was machst du hier?", "What are you doing here?"), null)
+			call speech(info, character, true, tre("Ich warte.", "I'm waiting."), gg_snd_Ricman4)
 			// (Falls der Charakter Wigberht das Gleiche gefragt hat)
 			if (TalkWigberht.talk.evaluate().askedWhatAreYoDoing.evaluate(character)) then
-				call speech(info, character, false, tr("Warten alle Nordmänner auf irgendetwas?"), null)
-				call speech(info, character, true, tr("Anscheinend."), gg_snd_Ricman5)
+				call speech(info, character, false, tre("Warten alle Nordmänner auf irgendetwas?", "Are all Northmen waiting for something?"), null)
+				call speech(info, character, true, tre("Anscheinend.", "Apparently."), gg_snd_Ricman5)
 			// (Falls der Charakter Wigberht noch nicht das Gleiche gefragt hat)
 			else
-				call speech(info, character, false, tr("Und worauf?"), null)
-				call speech(info, character, true, tr("Auf einen Dunkelelf, dem ich dann seine Eingeweide herausreiße."), gg_snd_Ricman6)
-				call speech(info, character, false, tr("Interessant."), null)
+				call speech(info, character, false, tre("Und worauf?", "And for what?"), null)
+				call speech(info, character, true, tre("Auf einen Dunkelelf, dem ich dann seine Eingeweide herausreiße.", "For a Dark Elf, whom I then tear out his entrails."), gg_snd_Ricman6)
+				call speech(info, character, false, tre("Interessant.", "Interesting."), null)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Was ist das für ein großer Hammer?
 		private static method infoActionAboutYourWeapon takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was ist das für ein großer Hammer?"), null)
-			call speech(info, character, true, tr("Ein Erbstück meiner Familie. Damit wurden schon viele Orks getötet, aber leider nur wenige Dunkelelfen."), gg_snd_Ricman7)
-			call speech(info, character, false, tr("Du magst Dunkelelfen wohl nicht besonders?"), null)
-			call speech(info, character, true, tr("Diese Orks sind hirnlose Bestien. Stark wie Bären, aber dumm. Dunkelelfen dagegen sind gerissene, geschickte Krieger. Vor ihnen solltest du dich in Acht nehmen!"), gg_snd_Ricman8)
+			call speech(info, character, false, tre("Was ist das für ein großer Hammer?", "What is that big hammer?"), null)
+			call speech(info, character, true, tre("Ein Erbstück meiner Familie. Damit wurden schon viele Orks getötet, aber leider nur wenige Dunkelelfen.", "A heirloom of my family. Many Orcs were killed by it but unfortunately only a few Dark Elves."), gg_snd_Ricman7)
+			call speech(info, character, false, tre("Du magst Dunkelelfen wohl nicht besonders?", "You do not like the Dark Elves?"), null)
+			call speech(info, character, true, tre("Diese Orks sind hirnlose Bestien. Stark wie Bären, aber dumm. Dunkelelfen dagegen sind gerissene, geschickte Krieger. Vor ihnen solltest du dich in Acht nehmen!", "These Orcs are brainless beasts. Strong as bears, but stupid. Dark Elves, on the other hand, are torn, skillful warriors. You should be careful with them!"), gg_snd_Ricman8)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Handelst du auch mit irgendwas?
 		private static method infoActionTrade takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Handelst du auch mit irgendwas?"), null)
-			call speech(info, character, true, tr("Selbstverständlich. Wigberht hat mich dazu beauftragt, unsere Waren zu einem angemessenen Preis zu verkaufen oder gegen andere Gegenstände zu tauschen."), gg_snd_Ricman9)
-			call speech(info, character, true, tr("Ich habe Felle, Fleisch, Waffen, Helme und Rüstungen."), gg_snd_Ricman10)
+			call speech(info, character, false, tre("Handelst du auch mit irgendwas?", "Do you trade with anything?"), null)
+			call speech(info, character, true, tre("Selbstverständlich. Wigberht hat mich dazu beauftragt, unsere Waren zu einem angemessenen Preis zu verkaufen oder gegen andere Gegenstände zu tauschen.", "Of course. Wigberht has commissioned me to sell our goods at a reasonable prie or to exchange them for other items."), gg_snd_Ricman9)
+			call speech(info, character, true, tre("Ich habe Felle, Fleisch, Waffen, Helme und Rüstungen.", "I have skins, flesh, weapons, helmets and armor."), gg_snd_Ricman10)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -106,18 +106,18 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// Was werdet ihr nun tun?
 		private static method infoActionWhatAreYouGoingToDo takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was werdet ihr nun tun?"), null)
+			call speech(info, character, false, tre("Was werdet ihr nun tun?", "What are you going to do now?"), null)
 			// (Auftragsziel 2 des Auftrags „Die Nordmänner“ ist aktiv)
 			if (QuestTheNorsemen.quest().questItem(1).isNew()) then
-				call speech(info, character, true, tr("Wir, du meinst wir. Wir ziehen gemeinsam in den Kampf, sobald ihr bereit seid. Ich kann es gar nicht erwarten, die Hundesöhne zu schlachten."), gg_snd_Ricman14)
-				call speech(info, character, true, tr("Und falls ihr das Gemetzel überleben solltet, unterstützen wir den Herzog vermutlich noch eine Weile, damit er sich nicht in sein Seidengewand scheißt, der alte Hurenbock!"), gg_snd_Ricman15)
+				call speech(info, character, true, tre("Wir, du meinst wir. Wir ziehen gemeinsam in den Kampf, sobald ihr bereit seid. Ich kann es gar nicht erwarten, die Hundesöhne zu schlachten.", "We, you mean we. We go into the fight together as soon as you are ready. I cannot wait to slaughter the dog sons."), gg_snd_Ricman14)
+				call speech(info, character, true, tre("Und falls ihr das Gemetzel überleben solltet, unterstützen wir den Herzog vermutlich noch eine Weile, damit er sich nicht in sein Seidengewand scheißt, der alte Hurenbock!", "And if you were to survive the massacre, we are probably going to support the duke for a while, so he does not shit in his silk garb, the old harlot!"), gg_snd_Ricman15)
 			// (Auftragsziel 2 des Auftrags „Die Nordmänner“ ist abgeschlossen)
 			elseif (QuestTheNorsemen.quest().questItem(1).isCompleted()) then
-				call speech(info, character, true, tr("Wie versprochen werden wir den Herzog unterstützen. Das bedeutet, wir werden unsere Zeit vorerst damit verbringen uns im Kampf zu üben."), gg_snd_Ricman11)
+				call speech(info, character, true, tre("Wie versprochen werden wir den Herzog unterstützen. Das bedeutet, wir werden unsere Zeit vorerst damit verbringen uns im Kampf zu üben.", "As promised, we will support the duke. This means we will be spending our time for now in training in fighting."), gg_snd_Ricman11)
 			// (Auftrag „Der Weg nach Holzbruck“ ist abgeschlossen)
 			else
-				call speech(info, character, true, tr("Sieht so aus als würden wir gemeinsam den Fluss entlang fahren, in Richtung Norden. Der Gedanke daran gefällt mir immer besser."), gg_snd_Ricman12)
-				call speech(info, character, true, tr("Wir kommen dem Feind endlich näher und somit auch Wigberths Vater, unseres Königs. Ihr solltet euch gut vorbereiten. Wer weiß, was uns in Holzbruck erwartet?"), null)
+				call speech(info, character, true, tre("Sieht so aus als würden wir gemeinsam den Fluss entlang fahren, in Richtung Norden. Der Gedanke daran gefällt mir immer besser.", "Looks like we're moving along the river, heading north. I like the idea of it more and more."), gg_snd_Ricman12)
+				call speech(info, character, true, tre("Wir kommen dem Feind endlich näher und somit auch Wigberths Vater, unseres Königs. Ihr solltet euch gut vorbereiten. Wer weiß, was uns in Holzbruck erwartet?", "We are nearer to the enemy, and so nearer to Wigberht's father, our king. You should prepare well. Who knows what awaits us in Holzbruck?"), null)
 			endif
 			// TODO
 			// gg_snd_Ricman13
@@ -131,9 +131,9 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// Wir haben gesiegt.
 		private static method infoActionWeWon takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Wir haben gesiegt."), null)
-			call speech(info, character, true, tr("Das haben wir und ihr habt euch tapfer geschlagen. Dennoch war es nur eine kleine Vorhut."), gg_snd_Ricman16)
-			call speech(info, character, true, tr("Wir müssen uns gut vorbereiten wenn wir das Heer der Orks und Dunkelelfen schlagen wollen."), gg_snd_Ricman17)
+			call speech(info, character, false, tre("Wir haben gesiegt.", "We have won."), null)
+			call speech(info, character, true, tre("Das haben wir und ihr habt euch tapfer geschlagen. Dennoch war es nur eine kleine Vorhut.", "We have and you fought bravely. Still, it was only a small vanguard."), gg_snd_Ricman16)
+			call speech(info, character, true, tre("Wir müssen uns gut vorbereiten wenn wir das Heer der Orks und Dunkelelfen schlagen wollen.", "We have to prepare orselves well if we want to beat the army of the Orcs and Dark Elves."), gg_snd_Ricman17)
 			call speech(info, character, true, tr("Zum Dank für deine Dienste möchte ich dir diesen mächtigen Stab überreichen."), gg_snd_Ricman18)
 			call speech(info, character, true, tr("Er stammt aus einer alten Festung weit oben im Norden. Man sagt ein Magier habe ihn geschaffen, der einst die Drachen beherrschte."), gg_snd_Ricman19)
 			call speech(info, character, true, tr("Ich hoffe er wird dir von großem Nutzen sein. Der Legende nach kann man mit diesem Stab einen gezähmten Drachen beschwören, es handelt sich jedoch nur um ein Gerücht."), gg_snd_Ricman20)
