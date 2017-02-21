@@ -134,10 +134,10 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			call speech(info, character, false, tre("Wir haben gesiegt.", "We have won."), null)
 			call speech(info, character, true, tre("Das haben wir und ihr habt euch tapfer geschlagen. Dennoch war es nur eine kleine Vorhut.", "We have and you fought bravely. Still, it was only a small vanguard."), gg_snd_Ricman16)
 			call speech(info, character, true, tre("Wir müssen uns gut vorbereiten wenn wir das Heer der Orks und Dunkelelfen schlagen wollen.", "We have to prepare orselves well if we want to beat the army of the Orcs and Dark Elves."), gg_snd_Ricman17)
-			call speech(info, character, true, tr("Zum Dank für deine Dienste möchte ich dir diesen mächtigen Stab überreichen."), gg_snd_Ricman18)
-			call speech(info, character, true, tr("Er stammt aus einer alten Festung weit oben im Norden. Man sagt ein Magier habe ihn geschaffen, der einst die Drachen beherrschte."), gg_snd_Ricman19)
-			call speech(info, character, true, tr("Ich hoffe er wird dir von großem Nutzen sein. Der Legende nach kann man mit diesem Stab einen gezähmten Drachen beschwören, es handelt sich jedoch nur um ein Gerücht."), gg_snd_Ricman20)
-			call speech(info, character, true, tr("Probiere ihn doch einmal aus und berichte mir dann, ob es funktioniert."), gg_snd_Ricman21)
+			call speech(info, character, true, tre("Zum Dank für deine Dienste möchte ich dir diesen mächtigen Stab überreichen.", "I would like to thank you for your services by giving you this powerful staff."), gg_snd_Ricman18)
+			call speech(info, character, true, tre("Er stammt aus einer alten Festung weit oben im Norden. Man sagt ein Magier habe ihn geschaffen, der einst die Drachen beherrschte.", "It comes from an old fortress far up north. It is said that a magician had created it, who once dominated the dragons."), gg_snd_Ricman19)
+			call speech(info, character, true, tre("Ich hoffe er wird dir von großem Nutzen sein. Der Legende nach kann man mit diesem Stab einen gezähmten Drachen beschwören, es handelt sich jedoch nur um ein Gerücht.", "I hope it will be of great service to you. Legend has it that you can summon a tame dragon with this staff, but it is only a rumor."), gg_snd_Ricman20)
+			call speech(info, character, true, tre("Probiere ihn doch einmal aus und berichte mir dann, ob es funktioniert.", "Try it out once and then tell me if it works."), gg_snd_Ricman21)
 			// Stab der Unsterblichkeit erhalten
 			call character.giveQuestItem('I010')
 			// Neuer Auftrag „Der gezähmte Drache“
@@ -152,10 +152,10 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// Ich habe einen gezähmten Drachen beschworen.
 		private static method infoActionSummonedDragon takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Ich habe einen gezähmten Drachen beschworen."), null)
-			call speech(info, character, true, tr("Tatsächlich? Unglaublich dass es funktioniert hat."), gg_snd_Ricman22)
-			call speech(info, character, true, tr("Du musst wissen, in den alten Legenden heißt es weiter, dass der Magier sogar auf den Drachen geritten ist, um dort hin zu gelangen wo auch immer er hin wollte."), gg_snd_Ricman23)
-			call speech(info, character, true, tr("Probiere das doch einmal aus."), gg_snd_Ricman24)
+			call speech(info, character, false, tre("Ich habe einen gezähmten Drachen beschworen.", "I have summoned the dragon."), null)
+			call speech(info, character, true, tre("Tatsächlich? Unglaublich dass es funktioniert hat.", "Indeed? Unbelievable that it has worked."), gg_snd_Ricman22)
+			call speech(info, character, true, tre("Du musst wissen, in den alten Legenden heißt es weiter, dass der Magier sogar auf den Drachen geritten ist, um dort hin zu gelangen wo auch immer er hin wollte.", "You must know, in the ancient legends it goes that the magician has even ridden on the dragon to get whereever he wanted to go."), gg_snd_Ricman23)
+			call speech(info, character, true, tre("Probiere das doch einmal aus.", "Give it a try."), gg_snd_Ricman24)
 			// Auftragsziel 2 des Auftrags „Der gezähmte Drache“ abgeschlossen
 			call QuestTheDragon.characterQuest(character).questItem(1).setState(AAbstractQuest.stateCompleted)
 			// Auftragsziele 3 und 4 des Auftrags „Der gezähmte Drache“ aktiviert
@@ -172,12 +172,12 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// Ich bin auf dem Drachen geritten.
 		private static method infoActionRideDragon takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Ich bin auf dem Drachen geritten."), null)
-			call speech(info, character, true, tr("Das wird ja immer besser! Jetzt kommen wir aber zu meinem eigentlichen Anliegen."), gg_snd_Ricman25)
-			call speech(info, character, true, tr("Ich muss zugeben dich ausgenutzt zu haben, ich selbst hätte es nicht gewagt einen Drachen herbeizurufen geschweigedenn auf seinen Rücken zu steigen."), gg_snd_Ricman26)
-			call speech(info, character, true, tr("Bevor wir uns nach Talras aufmachten habe ich die Geschichte dieser Gegend in alten Schriften studiert."), gg_snd_Ricman27) // TODO Falsche aufnahme
-			call speech(info, character, true, tr("Vor langer langer Zeit sollen auch hier noch Drachen gelebt haben. Vielleicht kannst du mit Hilfe des Drachens einen verlassenen Drachenhorst ausfindig machen."), gg_snd_Ricman28)
-			call speech(info, character, true, tr("Vielleicht gibt es dort sogar noch Dracheneier. Wenn sie nicht ausgebrütet wurden, müssten sie noch gut erhalten sein. Ein Drachenei kann unbeschadet die Ewigkeit überdauern."), gg_snd_Ricman29)
+			call speech(info, character, false, tre("Ich bin auf dem Drachen geritten.", "I rode on the dragon."), null)
+			call speech(info, character, true, tre("Das wird ja immer besser! Jetzt kommen wir aber zu meinem eigentlichen Anliegen.", "It just keeps getting better! Now we come to my real concern."), gg_snd_Ricman25)
+			call speech(info, character, true, tre("Ich muss zugeben dich ausgenutzt zu haben, ich selbst hätte es nicht gewagt einen Drachen herbeizurufen geschweigedenn auf seinen Rücken zu steigen.", "I must admit that I have used you, I myself would not have dared to call a dragon or to get even on his back."), gg_snd_Ricman26)
+			call speech(info, character, true, tre("Bevor wir uns nach Talras aufmachten habe ich die Geschichte dieser Gegend in alten Schriften studiert.", "Before we went to Talras, I studied the history of this area in ancient writings."), gg_snd_Ricman27) // TODO Falsche aufnahme
+			call speech(info, character, true, tre("Vor langer langer Zeit sollen auch hier noch Drachen gelebt haben. Vielleicht kannst du mit Hilfe des Drachens einen verlassenen Drachenhorst ausfindig machen.", "A long time ago dragons have lived here. Maybe you can find a abandoned dragonhorse with the help of the dragon."), gg_snd_Ricman28)
+			call speech(info, character, true, tre("Vielleicht gibt es dort sogar noch Dracheneier. Wenn sie nicht ausgebrütet wurden, müssten sie noch gut erhalten sein. Ein Drachenei kann unbeschadet die Ewigkeit überdauern.", "Perhaps there are even dragon eggs there. If they were not hatched, they would still have to be well preserved. A dragon egg can last forever if it is unscathed."), gg_snd_Ricman29)
 			// Auftragsziel 4 des Auftrags „Der gezähmte Drache“ abgeschlossen
 			call QuestTheDragon.characterQuest(character).questItem(3).setState(AAbstractQuest.stateCompleted)
 			// Auftragsziel 5 des Auftrags „Der gezähmte Drache“ aktiviert
@@ -193,14 +193,14 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// Hier sind einige Dracheneier.
 		private static method infoActionDragonEggs takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Hier sind einige Dracheneier."), null)
+			call speech(info, character, false, tre("Hier sind einige Dracheneier.", "Here are some dragon eggs."), null)
 
-			call speech(info, character, true, tr("Bei den Göttern, das gibt es doch nicht! Du hast tatsächlich Dracheneier dabei! Weißt du eigentlich wie viel die Wert sind?"), gg_snd_Ricman30)
-			call speech(info, character, true, tr("Unbezahlbar sind die, das kann ich dir sagen. Pass auf, lass sie mich für dich verwahren. Ich gebe dir zum Dank auch eine wertvolle Belohnung."), gg_snd_Ricman31)
-			call speech(info, character, false, tr("Na gut, hier hast du sie."), null)
+			call speech(info, character, true, tre("Bei den Göttern, das gibt es doch nicht! Du hast tatsächlich Dracheneier dabei! Weißt du eigentlich wie viel die Wert sind?", "By the gods, this is not possible! You actually have dragon eggs! Do you really know how much the value is?"), gg_snd_Ricman30)
+			call speech(info, character, true, tre("Unbezahlbar sind die, das kann ich dir sagen. Pass auf, lass sie mich für dich verwahren. Ich gebe dir zum Dank auch eine wertvolle Belohnung.", "They are inexplicable, I can tell you that. Look, let me keep them for you. I also give you a valuable reward."), gg_snd_Ricman31)
+			call speech(info, character, false, tre("Na gut, hier hast du sie.", "Well, here you have them."), null)
 			// Dracheneier übergeben
 			call character.inventory().removeItemType('I03Z')
-			call speech(info, character, true, tr("Vielen Dank, das werde ich dir nicht vergessen!"), gg_snd_Ricman32)
+			call speech(info, character, true, tre("Vielen Dank, das werde ich dir nicht vergessen!", "Thank you, I will remember this!"), gg_snd_Ricman32)
 			// Auftrag „Der gezähmte Drache“ abgeschlossen
 			call QuestTheDragon.characterQuest(character).complete()
 			// Drachenfeuer erhalten
@@ -210,25 +210,25 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 
 		// Kannst du mir vielleicht etwas von deiner Kampfkunst beibringen?
 		private static method infoActionCanYouTeachMe takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false ,tr("Kannst du mir vielleicht etwas von deiner Kampfkunst beibringen?"), null)
+			call speech(info, character, false, tre("Kannst du mir vielleicht etwas von deiner Kampfkunst beibringen?", "Can you teach me something about your martial arts?"), null)
 			// (Charakter ist Drachentöter)
 			if (character.class() == Classes.dragonSlayer()) then
-				call speech(info, character, true, tr("Du bist ein Drachentöter, ein wahrer Krieger. Gib mir ein paar Goldmünzen und ich zeige dir ein paar nette Tricks!"), gg_snd_Ricman33)
+				call speech(info, character, true, tre("Du bist ein Drachentöter, ein wahrer Krieger. Gib mir ein paar Goldmünzen und ich zeige dir ein paar nette Tricks!", "You are a Dragon Slayer, a true warrior. Give me some gold coins and I'll show you some nice tricks!"), gg_snd_Ricman33)
 			// (Charakter ist kein Drachentöter)
 			else
-				call speech(info, character, true, tr("Tut mir leid, aber ich lehre nur wahre Krieger."), gg_snd_Ricman34)
+				call speech(info, character, true, tre("Tut mir leid, aber ich lehre nur wahre Krieger.", "Sorry, but I only teach true warriors."), gg_snd_Ricman34)
 				// (Charakter ist Geistlicher)
 				if (Classes.isChaplain(character.class())) then
-					call speech(info, character, true, tr("Du aber scheinst mir wohl eher so etwas wie ein Gläubiger zu sein, der auf seine Gebete vertraut."), gg_snd_Ricman35)
+					call speech(info, character, true, tre("Du aber scheinst mir wohl eher so etwas wie ein Gläubiger zu sein, der auf seine Gebete vertraut.", "But you seem to be something like a believer who trusts in his prayers."), gg_snd_Ricman35)
 				// (Charakter ist Ritter)
 				elseif (character.class() == Classes.knight()) then
-					call speech(info, character, true, tr("Du aber scheinst mir wohl eher so eine Art Idealist zu sein. Scher dich lieber weg! Ritter sind bei mir nicht gerade beliebt. Das gilt auch für ehemalige."), gg_snd_Ricman36)
+					call speech(info, character, true, tre("Du aber scheinst mir wohl eher so eine Art Idealist zu sein. Scher dich lieber weg! Ritter sind bei mir nicht gerade beliebt. Das gilt auch für ehemalige.", "But you seem to me to be a kind of idealist. Better leave! Knights are not exactly popular with me. This also applies for former knights."), gg_snd_Ricman36)
 				// (Charakter ist Waldläufer)
 				elseif (character.class() == Classes.ranger()) then
-					call speech(info, character, true, tr("Du aber scheinst mir zwar ein guter Jäger und Naturfreund zu sein, aber meine Kampfkunst ist mehr was für starke Kerle, die keine Angst vor dem Tod oder Schmerzen haben."), gg_snd_Ricman37) // TODO falscher sound
+					call speech(info, character, true, tre("Du aber scheinst mir zwar ein guter Jäger und Naturfreund zu sein, aber meine Kampfkunst ist mehr was für starke Kerle, die keine Angst vor dem Tod oder Schmerzen haben.", "But you seem to me to be a good hunter and nature lover, but my martial arts are more for strong guys who are not afraid of death and pain."), gg_snd_Ricman37) // TODO falscher sound
 				// (Charakter ist Magier)
 				else
-					call speech(info, character, true, tr("Du aber scheinst mir wohl eher so etwas wie ein Zauberer zu sein, der auf seine Zauberkunst anstatt auf eine gute Klinge oder einen starken Speer vertraut."), gg_snd_Ricman38)
+					call speech(info, character, true, tre("Du aber scheinst mir wohl eher so etwas wie ein Zauberer zu sein, der auf seine Zauberkunst anstatt auf eine gute Klinge oder einen starken Speer vertraut.", "But you seem to me to be something like a wizard who trusts in his magic instead of a good blade or a strong spear."), gg_snd_Ricman38)
 				endif
 			endif
 			call info.talk().showStartPage(character)
@@ -243,8 +243,8 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		// Bring mir etwas bei!
 		private static method infoActionTeachMe takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Bring mir etwas bei!"), null)
-			call speech(info, character, true, tr("Klar, wenn du genügend Goldmünzen dabei hast."), gg_snd_Ricman39)
+			call speech(info, character, false, tre("Bring mir etwas bei!", "Teach me something!"), null)
+			call speech(info, character, true, tre("Klar, wenn du genügend Goldmünzen dabei hast.", "Sure, if you have enough cold coins."), gg_snd_Ricman39)
 			call info.talk().showRange(this.m_teachMeFetteBeute.index(), this.m_teachMeBack.index(), character)
 		endmethod
 
@@ -258,7 +258,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		private static method infoActionGiveGold takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			if (character.gold() < 200) then
-				call character.displayMessage(ACharacter.messageTypeError, tr("Nicht genügend Goldmünzen."))
+				call character.displayMessage(ACharacter.messageTypeError, tre("Nicht genügend Goldmünzen.", "Not enough gold coins."))
 			else
 				call character.removeGold(200)
 				set this.m_gaveGold[GetPlayerId(character.player())] = true
@@ -270,7 +270,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			local Spell spell = 0
 			// (Charakter hat nicht genügend Goldmünzen)
 			if (character.gold() < gold) then
-				call speech(info, character, true, tr("Willst du mich verarschen? Besorge dir erst mal ein paar Goldmünzen!"), gg_snd_Ricman40)
+				call speech(info, character, true, tre("Willst du mich verarschen? Besorge dir erst mal ein paar Goldmünzen!", "Are you kidding me? Get some gold coins first!"), gg_snd_Ricman40)
 				return false
 			endif
 
@@ -278,14 +278,14 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			/*
 			Charakter erlernt den Zauber erst im Zauberbuch!
 			if (character.grimoire().skillPoints() < skillPoints) then
-				call speech(info, character, true, tr("Tut mir leid, aber dir fehlt es noch an Erfahrung."), gg_snd_Ricman41)
+				call speech(info, character, true, tre("Tut mir leid, aber dir fehlt es noch an Erfahrung.", "Sorry, but you still lack experience."), gg_snd_Ricman41)
 				debug call Print("Skill points " + I2S(skillPoints))
 				debug call Print("Existing skill points " + I2S(character.grimoire().skillPoints()))
 				return false
 			endif
 			*/
 
-			// TODO add as regular grimoire spell!
+			// Add as regular grimoire spell! This does not require skill points. Skill points are required when the grimoire spell is skilled. This allows reskilling and therefore is better than just learning them by adding an ability.
 			if (abilityId == SpellFetteBeute.abilityId) then
 				// Fette Beute
 				set spell = SpellFetteBeute.create(character)
@@ -298,7 +298,7 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 			endif
 			call character.grimoire().addSpell(spell, true)
 			call character.removeGold(gold)
-			call speech(info, character, true, tr("Also ..."), gg_snd_Ricman42)
+			call speech(info, character, true, tre("Also ...", "So ..."), gg_snd_Ricman42)
 
 			return true
 		endmethod
@@ -313,9 +313,9 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		private static method infoActionTeachMeFetteBeute takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			if (thistype.teachAbility(info, character, 200, 1, SpellFetteBeute.abilityId)) then
-				call speech(info, character, true, tr("Besorg dir einfach mehr Goldmünzen! Ohne die kannst du dir keine anständige Ausrüstung kaufen und ohne anständige Ausrüstung geht überhaupt nichts."), gg_snd_Ricman43)
-				call speech(info, character, true, tr("Stell dir mal vor, wir würden unseren Feinden ohne Waffen entgegentreten!"), gg_snd_Ricman44)
-				call character.displayAbilityAcquired(GetObjectName(SpellFetteBeute.abilityId), tr("Der Spieler und seine Verbündeten erhalten je 250 Goldmünzen."))
+				call speech(info, character, true, tre("Besorg dir einfach mehr Goldmünzen! Ohne die kannst du dir keine anständige Ausrüstung kaufen und ohne anständige Ausrüstung geht überhaupt nichts.", "Just get more gold coins! Without that you cannot buy decent equipment and without decent equipment nothing works at all."), gg_snd_Ricman43)
+				call speech(info, character, true, tre("Stell dir mal vor, wir würden unseren Feinden ohne Waffen entgegentreten!", "Imagine, we would oppose our enemies without weapons!"), gg_snd_Ricman44)
+				call character.displayAbilityAcquired(GetObjectName(SpellFetteBeute.abilityId), tre("Der Spieler und seine Verbündeten erhalten je 250 Goldmünzen.", "The player and his allies receive 250 gold coins each."))
 			endif
 			call info.talk().showRange(this.m_teachMeFetteBeute.index(), this.m_teachMeBack.index(), character)
 		endmethod
@@ -330,8 +330,8 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		private static method infoActionTeachMeNordischeWucht takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			if (thistype.teachAbility(info, character, 500, 1, SpellNordicPower.abilityId)) then
-				call speech(info, character, true, tr("Versuche in Zukunft nicht nur einen Gegner mit deiner Waffe zu verwunden. Wenn du weit genug ausholst, erwischt du meistens auch noch ein paar andere mit, vorausgesetzt du bist stark genug."), gg_snd_Ricman46)
-				call character.displayAbilityAcquired(GetObjectName(SpellNordicPower.abilityId), tr("Ein Teil des verursachten Schadens wird auf weitere Gegner im Umkreis übertragen."))
+				call speech(info, character, true, tre("Versuche in Zukunft nicht nur einen Gegner mit deiner Waffe zu verwunden. Wenn du weit genug ausholst, erwischt du meistens auch noch ein paar andere mit, vorausgesetzt du bist stark genug.", "Try not only to wreak an enemy with your weapon in the future. If you go far enough you'll usually get a few others, if you're strong enough."), gg_snd_Ricman46)
+				call character.displayAbilityAcquired(GetObjectName(SpellNordicPower.abilityId), tre("Ein Teil des verursachten Schadens wird auf weitere Gegner im Umkreis übertragen.", "A part of the damage caused will be transferred to other enemies in the surroundings."))
 			endif
 			call info.talk().showRange(this.m_teachMeFetteBeute.index(), this.m_teachMeBack.index(), character)
 		endmethod
@@ -346,9 +346,9 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 		private static method infoActionTeachMeFirstMan takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			if (thistype.teachAbility(info, character, 1000, 1, SpellFirstMan.abilityId)) then
-				call speech(info, character, true, tr("Zeige mehr Mut, denn Mut ist der Schlüssel zum Sieg! Solange du Mut nicht mit blinder Wut oder völliger Furchtlosigkeit verwechselst, wirst du meist als Sieger aus Kämpfen hervorgehen."), gg_snd_Ricman48)
-				call speech(info, character, true, tr("Mut bedeutet nicht, niemals Furcht zu haben, sondern die Furcht zu überwinden. Bist du mutig, sind es deine Gefährten auch und ihr werdet allesamt stärker und zur unüberwindbaren Streitmacht werden."), gg_snd_Ricman49)
-				call character.displayAbilityAcquired(GetObjectName(SpellFirstMan.abilityId), tr("Erhöht den Nahkampfschaden von befreundeten Einheiten im Umkreis."))
+				call speech(info, character, true, tre("Zeige mehr Mut, denn Mut ist der Schlüssel zum Sieg! Solange du Mut nicht mit blinder Wut oder völliger Furchtlosigkeit verwechselst, wirst du meist als Sieger aus Kämpfen hervorgehen.", "Show more courage, for courage is the key to victory! As long as you do not confuse courage with blind rage or complete fearlessness, you will usually emerge as a winner from fights."), gg_snd_Ricman48)
+				call speech(info, character, true, tre("Mut bedeutet nicht, niemals Furcht zu haben, sondern die Furcht zu überwinden. Bist du mutig, sind es deine Gefährten auch und ihr werdet allesamt stärker und zur unüberwindbaren Streitmacht werden.", "Courage does not mean, never to fear, but to overcome fear. If you are courageous, your companions will be, too and you will all become stronger and become an insuperable force."), gg_snd_Ricman49)
+				call character.displayAbilityAcquired(GetObjectName(SpellFirstMan.abilityId), tre("Erhöht den Nahkampfschaden von befreundeten Einheiten im Umkreis.", "Increases melee damage of nearby allied units."))
 			endif
 			call info.talk().showRange(this.m_teachMeFetteBeute.index(), this.m_teachMeBack.index(), character)
 		endmethod
@@ -361,27 +361,27 @@ library StructMapTalksTalkRicman requires Asl, StructGameCharacter, StructGameCl
 				set this.m_gaveGold[i] = false
 				set i = i + 1
 			endloop
-			call this.setName(tr("Ricman"))
+			call this.setName(tre("Ricman", "Ricman"))
 			// start page
 			set this.m_hi = this.addInfo(false, true, thistype.infoConditionHi, thistype.infoActionHi, null)
-			set this.m_whoAreYou = this.addInfo(false, false, thistype.infoConditionWhoAreYou, thistype.infoActionWhoAreYou, tr("Wer bist du?"))
-			set this.m_whatAreYouDoing = this.addInfo(false, false, thistype.infoConditionWhatAreDoingHere, thistype.infoActionWhatAreYouDoingHere, tr("Was machst du hier?"))
-			set this.m_aboutYourWeapon = this.addInfo(false, false, 0, thistype.infoActionAboutYourWeapon, tr("Was ist das für ein großer Hammer?"))
-			set this.m_trade = this.addInfo(false, false, 0, thistype.infoActionTrade, tr("Handelst du auch mit irgendwas?"))
-			set this.m_whatAreWeGoingToDoNow = this.addInfo(true, false, thistype.infoConditionWhatAreYouGoingToDo, thistype.infoActionWhatAreYouGoingToDo, tr("Was werdet ihr nun tun?"))
-			set this.m_weWon = this.addInfo(false, false, thistype.infoConditionWeWon, thistype.infoActionWeWon, tr("Wir haben gesiegt."))
-			set this.m_summonedDragon = this.addInfo(false, false, thistype.infoConditionSummonedDragon, thistype.infoActionSummonedDragon, tr("Ich habe einen gezähmten Drachen beschworen."))
-			set this.m_rideDragon = this.addInfo(false, false, thistype.infoConditionRideDragon, thistype.infoActionRideDragon, tr("Ich bin auf dem Drachen geritten."))
-			set this.m_dragonEggs = this.addInfo(false, false, thistype.infoConditionDragonEggs, thistype.infoActionDragonEggs, tr("Hier sind einige Dracheneier."))
-			set this.m_canYouTeachMe = this.addInfo(false, false, 0, thistype.infoActionCanYouTeachMe, tr("Kannst du mir vielleicht etwas von deiner Kampfkunst beibringen?"))
-			set this.m_giveGold = this.addInfo(true, false, thistype.infoConditionGiveGold, thistype.infoActionGiveGold, tr("(Bestechen, um Kampfkunst zu erlernen - 200 Goldmünzen)"))
-			set this.m_teachMe = this.addInfo(true, false, thistype.infoConditionTeachMe, thistype.infoActionTeachMe, tr("Bring mir etwas bei!"))
+			set this.m_whoAreYou = this.addInfo(false, false, thistype.infoConditionWhoAreYou, thistype.infoActionWhoAreYou, tre("Wer bist du?", "Who are you?"))
+			set this.m_whatAreYouDoing = this.addInfo(false, false, thistype.infoConditionWhatAreDoingHere, thistype.infoActionWhatAreYouDoingHere, tre("Was machst du hier?", "What are you doing here?"))
+			set this.m_aboutYourWeapon = this.addInfo(false, false, 0, thistype.infoActionAboutYourWeapon, tre("Was ist das für ein großer Hammer?", "What is that big hammer?"))
+			set this.m_trade = this.addInfo(false, false, 0, thistype.infoActionTrade, tre("Handelst du auch mit irgendwas?", "Do you trade with anything?"))
+			set this.m_whatAreWeGoingToDoNow = this.addInfo(true, false, thistype.infoConditionWhatAreYouGoingToDo, thistype.infoActionWhatAreYouGoingToDo, tre("Was werdet ihr nun tun?", "What are you going to do now?"))
+			set this.m_weWon = this.addInfo(false, false, thistype.infoConditionWeWon, thistype.infoActionWeWon, tre("Wir haben gesiegt.", "We have won."))
+			set this.m_summonedDragon = this.addInfo(false, false, thistype.infoConditionSummonedDragon, thistype.infoActionSummonedDragon, tre("Ich habe einen gezähmten Drachen beschworen.", "I have summoned the dragon."))
+			set this.m_rideDragon = this.addInfo(false, false, thistype.infoConditionRideDragon, thistype.infoActionRideDragon, tre("Ich bin auf dem Drachen geritten.", "I rode on the dragon."))
+			set this.m_dragonEggs = this.addInfo(false, false, thistype.infoConditionDragonEggs, thistype.infoActionDragonEggs, tre("Hier sind einige Dracheneier.", "Here are some dragon eggs."))
+			set this.m_canYouTeachMe = this.addInfo(false, false, 0, thistype.infoActionCanYouTeachMe, tre("Kannst du mir vielleicht etwas von deiner Kampfkunst beibringen?", "Can you teach me something about your martial arts?"))
+			set this.m_giveGold = this.addInfo(true, false, thistype.infoConditionGiveGold, thistype.infoActionGiveGold, tre("(Bestechen, um Kampfkunst zu erlernen - 200 Goldmünzen)", "(Bribe to learn martial arts - 200 gold coins)"))
+			set this.m_teachMe = this.addInfo(true, false, thistype.infoConditionTeachMe, thistype.infoActionTeachMe, tre("Bring mir etwas bei!", "Teach me something!"))
 			set this.m_exit = this.addExitButton()
 
 			// info teach me
-			set this.m_teachMeFetteBeute = this.addInfo(true, false, thistype.infoConditionTeachMeFetteBeute, thistype.infoActionTeachMeFetteBeute, tr("Fette Beute (200 Goldmünzen, 1 Stufe)"))
-			set this.m_teachMeNordischeWucht = this.addInfo(true, false, thistype.infoConditionTeachMeNordischeWucht, thistype.infoActionTeachMeNordischeWucht, tr("Nordische Wucht (500 Goldmünzen, 1 Stufe)"))
-			set this.m_teachMeFirstMan = this.addInfo(true, false, thistype.infoConditionTeachMeFirstMan, thistype.infoActionTeachMeFirstMan, tr("Erster Mann (1000 Goldmünzen, 1 Stufe)"))
+			set this.m_teachMeFetteBeute = this.addInfo(true, false, thistype.infoConditionTeachMeFetteBeute, thistype.infoActionTeachMeFetteBeute, tre("Fette Beute (200 Goldmünzen, 1 Stufe)", "Fat Prey (200 gold coins, 1 level)"))
+			set this.m_teachMeNordischeWucht = this.addInfo(true, false, thistype.infoConditionTeachMeNordischeWucht, thistype.infoActionTeachMeNordischeWucht, tre("Nordische Wucht (500 Goldmünzen, 1 Stufe)", "Nordic Force (500 gold coins, 1 level)"))
+			set this.m_teachMeFirstMan = this.addInfo(true, false, thistype.infoConditionTeachMeFirstMan, thistype.infoActionTeachMeFirstMan, tre("Erster Mann (1000 Goldmünzen, 1 Stufe)", "First Man (1000 gold coins, 1 level)"))
 			set this.m_teachMeBack = this.addBackToStartPageButton()
 
 			return this
