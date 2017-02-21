@@ -42,22 +42,22 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 
 		// Hallo.
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Hallo. Bist du vielleicht an einigen Zaubern oder Tränken interessiert?"), gg_snd_Sisgard1)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("Hallo. Bist du vielleicht an einigen Zaubern oder Tränken interessiert?", "Hello. Are you interested in some spells or potions?"), gg_snd_Sisgard1)
 			call info.talk().showRange(thistype.m_hi_whyNot.index(), thistype.m_hi_no.index(), character)
 		endmethod
 
 		// Wieso nicht?
 		private static method infoActionHi_WhyNot takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wieso nicht?"), null)
-			call speech(info, character, true, tr("Oh, das freut mich aber. In diesen schweren Zeiten trifft man nur noch selten Kauffreudige."), gg_snd_Sisgard2)
+			call speech(info, character, false, tre("Wieso nicht?", "Why not?"), null)
+			call speech(info, character, true, tre("Oh, das freut mich aber. In diesen schweren Zeiten trifft man nur noch selten Kauffreudige.", "Oh, I'm glad about that. In these difficult times you rarely meet people anymore who want to buy stuff."), gg_snd_Sisgard2)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Nein.
 		private static method infoActionHi_No takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Nein."), null)
-			call speech(info, character, true, tr("Schade, na ja, vielleicht überlegst du es dir ja noch."), gg_snd_Sisgard3)
+			call speech(info, character, false, tre("Nein.", "No."), null)
+			call speech(info, character, true, tre("Schade, na ja, vielleicht überlegst du es dir ja noch.", "Too bad, well, maybe you still think about it."), gg_snd_Sisgard3)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -67,17 +67,17 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 
 		// Ist das dein Haus?
 		private static method infoActionYourHouse takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ist das dein Haus?"), null)
-			call speech(info, character, true, tr("Ja, ich habe es für einen guten Preis erworben. Ich ließ mich hier nieder nachdem mein Meister vor einigen Jahren mit mir nach Talras ging und bald darauf starb."), gg_snd_Sisgard4)
-			call speech(info, character, true, tr("Er war schon sehr alt und diese Gegend hier war seine Heimat. Er erinnerte sich sogar an die Zeit als hier noch keine Burg stand."), gg_snd_Sisgard5)
+			call speech(info, character, false, tre("Ist das dein Haus?", "Is this your house?"), null)
+			call speech(info, character, true, tre("Ja, ich habe es für einen guten Preis erworben. Ich ließ mich hier nieder nachdem mein Meister vor einigen Jahren mit mir nach Talras ging und bald darauf starb.", "Yes, I bought it for a good price. I settled down here after my master went with me to Talras a few years ago and died soon after."), gg_snd_Sisgard4)
+			call speech(info, character, true, tre("Er war schon sehr alt und diese Gegend hier war seine Heimat. Er erinnerte sich sogar an die Zeit als hier noch keine Burg stand.", "He was already very old and this area was his home. He even remembered the time when there was no castle here."), gg_snd_Sisgard5)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Was genau verkaufst du?
 		private static method infoActionWhatDoYouSell takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was genau verkaufst du?"), null)
-			call speech(info, character, true, tr("Tränke und magische Gegenstände aller Art. Falls du ein Zauberer oder Magier bist, wirst du bei mir genau das Richtige finden."), gg_snd_Sisgard6)
-			call speech(info, character, true, tr("Ich biete nur das Beste an, was ich auch selbst verwenden würde."), gg_snd_Sisgard7)
+			call speech(info, character, false, tre("Was genau verkaufst du?", "What exactly do you sell?"), null)
+			call speech(info, character, true, tre("Tränke und magische Gegenstände aller Art. Falls du ein Zauberer oder Magier bist, wirst du bei mir genau das Richtige finden.", "Potions and magical objects of all kinds. If you are a wizard or magician, you will find exactly the right thing with me."), gg_snd_Sisgard6)
+			call speech(info, character, true, tre("Ich biete nur das Beste an, was ich auch selbst verwenden würde.", "I offer only the best, which I would use myself."), gg_snd_Sisgard7)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -88,24 +88,24 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 
 		// Erzähl mir mehr von deinem Meister.
 		private static method infoActionAboutYourMaster takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Erzähl mir mehr von deinem Meister."), null)
-			call speech(info, character, true, tr("So, dich interessiert das also? Hmm, die meisten Leute würgen mich irgendwann ab, wenn ich mal wieder das Schwärmen von alten Zeiten anfange."), gg_snd_Sisgard8)
-			call speech(info, character, true, tr("Mein Meister war ein großer Zauberer und sein Wissen war so umfassend, dass er selbst bei den Magiern der Hochelfen, welche sich eher mit den Elementen als mit der magischen Kraft und deren Beherrschung beschäftigen, ein hohes Ansehen genoss."), gg_snd_Sisgard9)
-			call speech(info, character, true, tr("Das erste Mal traf ich ihn im Kloster eines Klerikerordens, in welches mich meine Eltern geschickt hatten. Leider ist das oft die einzige Möglichkeit an Bildung heranzukommen und auch wenn sie es gut meinten, dieses ganze Beten und Huldigen war todlangweilig."), gg_snd_Sisgard10)
-			call speech(info, character, true, tr("Mein Meister war also auf der Durchreise und suchte einen Ort zum Übernachten. Ich war neugierig und fragte ihn über alles aus und da er schon lange keinen Schüler mehr gehabt hatte, bot ich mich ihm als solchen an."), gg_snd_Sisgard10_1)
-			call speech(info, character, true, tr("Schließlich willigte er gegen meine Erwartungen ein und von diesem Zeitpunkt an war ich eine Schülerin der Zauberkunst."), gg_snd_Sisgard11)
-			call speech(info, character, true, tr("Er hat mich vieles gelehrt und ihm verdanke ich so ziemlich alles, was ich heute bin. Er nahm mich mit ins Königreich der Hochelfen und Zwerge und selbst durch die Gebirge der Orks zogen wir. Wir trotzten allen Gefahren ..."), gg_snd_Sisgard12)
-			call speech(info, character, true, tr("Doch was rede ich da. Das ist längst Vergangenheit und nun bin ich nicht mehr als eine einfache Händlerin, die ihre verbliebene Zeit weiterhin für die Studien der Zauberkünste nutzt."), gg_snd_Sisgard13)
-			call speech(info, character, true, tr("Ich wünschte, ich könnte erneut losziehen, wie damals und gemeinsam mit Gleichgesinnten Abenteuer erleben und allen Feinden trotzen."), gg_snd_Sisgard14)
+			call speech(info, character, false, tre("Erzähl mir mehr von deinem Meister.", "Tell me about your master."), null)
+			call speech(info, character, true, tre("So, dich interessiert das also? Hmm, die meisten Leute würgen mich irgendwann ab, wenn ich mal wieder das Schwärmen von alten Zeiten anfange.", "So, you're interested in this? Hmm, most people choke me off as soon as I start becoming enthusiastic about ancient times."), gg_snd_Sisgard8)
+			call speech(info, character, true, tre("Mein Meister war ein großer Zauberer und sein Wissen war so umfassend, dass er selbst bei den Magiern der Hochelfen, welche sich eher mit den Elementen als mit der magischen Kraft und deren Beherrschung beschäftigen, ein hohes Ansehen genoss.", "My master was a great wizard and his knowledge was so comprehensive that he was highly respected even among the magicians of the High Elves, who were more concerned with the elements than with the magicial power and their mastery."), gg_snd_Sisgard9)
+			call speech(info, character, true, tre("Das erste Mal traf ich ihn im Kloster eines Klerikerordens, in welches mich meine Eltern geschickt hatten. Leider ist das oft die einzige Möglichkeit an Bildung heranzukommen und auch wenn sie es gut meinten, dieses ganze Beten und Huldigen war todlangweilig.", "The first time I met him in the monastery of the clerical order, to which my parents had sent me. Unfortunately, this is often the only way to get education, and even if they meant well, all this prayer and homage was dull."), gg_snd_Sisgard10)
+			call speech(info, character, true, tre("Mein Meister war also auf der Durchreise und suchte einen Ort zum Übernachten. Ich war neugierig und fragte ihn über alles aus und da er schon lange keinen Schüler mehr gehabt hatte, bot ich mich ihm als solchen an.", "So my master was on the way through and was looking for a place to stay. I was curious and asked him about everything, and since he had not had a student for a long time, I offered myself to him as such."), gg_snd_Sisgard10_1)
+			call speech(info, character, true, tre("Schließlich willigte er gegen meine Erwartungen ein und von diesem Zeitpunkt an war ich eine Schülerin der Zauberkunst.", "Finally, he agreed against my expectations, and from that time on I was a student of magic."), gg_snd_Sisgard11)
+			call speech(info, character, true, tre("Er hat mich vieles gelehrt und ihm verdanke ich so ziemlich alles, was ich heute bin. Er nahm mich mit ins Königreich der Hochelfen und Zwerge und selbst durch die Gebirge der Orks zogen wir. Wir trotzten allen Gefahren ...", "He taught me a lot and I owe him almost everything I am today. He took me with him into the kingdom of the High Elves and Dwarves and even through the mountains of the Orcs we moved. We defied all dangers ..."), gg_snd_Sisgard12)
+			call speech(info, character, true, tre("Doch was rede ich da. Das ist längst Vergangenheit und nun bin ich nicht mehr als eine einfache Händlerin, die ihre verbliebene Zeit weiterhin für die Studien der Zauberkünste nutzt.", "But what am I saying? This is long past and now I am no more than a simple trader who continues to use her remaining time for the studies of the magic arts."), gg_snd_Sisgard13)
+			call speech(info, character, true, tre("Ich wünschte, ich könnte erneut losziehen, wie damals und gemeinsam mit Gleichgesinnten Abenteuer erleben und allen Feinden trotzen.", "I wish I could go again, as I did at that time and together with the like-minded experience adventures, and defy all the enemies."), gg_snd_Sisgard14)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// Du bist wohl eine Zauberin?
 		private static method infoActionYouAreAWizard takes AInfo info, Character character returns nothing
-			call speech(info, character, false, tr("Du bist wohl eine Zauberin?"), null)
+			call speech(info, character, false, tre("Du bist wohl eine Zauberin?", "You're probably a sorceress?"), null)
 			if (character.class() == Classes.wizard()) then
-				call speech(info, character, true, tr("Und du bist wohl ein Zauberer. Freut mich dich kennenzulernen. Hier trifft man nicht oft andere Zauberer."), gg_snd_Sisgard15)
-				call speech(info, character, true, tr("Pass auf, ich schenke dir einige Zauberspruchrollen."), gg_snd_Sisgard16)
+				call speech(info, character, true, tre("Und du bist wohl ein Zauberer. Freut mich dich kennenzulernen. Hier trifft man nicht oft andere Zauberer.", "And you're probably a wizard. I am pleased to meet you. You do not often meet other wizards."), gg_snd_Sisgard15)
+				call speech(info, character, true, tre("Pass auf, ich schenke dir einige Zauberspruchrollen.", "Look, I'll give you some spell scrolls."), gg_snd_Sisgard16)
 				// TODO gg_snd_Sisgard17 ???
 				// TODO gg_snd_Sisgard18??
 				/// Charakter erhält Zauberspruchrollen
@@ -116,7 +116,7 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 				call character.giveItem('I00G')
 				call character.giveItem('I00G')
 			else
-				call speech(info, character, true, tr("Ja, ich bin eine Zauberin. Deshalb verkaufe ich ja auch Zauber und Tränke. Alles was das Magier- oder Zaubererherz begehrt."), gg_snd_Sisgard19)
+				call speech(info, character, true, tre("Ja, ich bin eine Zauberin. Deshalb verkaufe ich ja auch Zauber und Tränke. Alles was das Magier- oder Zaubererherz begehrt.", "Yes, I am a sorceress. That's why I'm selling spells and potions. Everything the magician or wizard heart desires."), gg_snd_Sisgard19)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
@@ -128,12 +128,12 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 
 		// Zieh mit mir in den Kampf!
 		private static method infoActionComeWithMe takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Zieh mit mir in den Kampf!"), null)
-			call speech(info, character, true, tr("Ich soll mit dir in den Kampf ziehen? Hmm, so wie damals mit meinem Meister. Das waren noch Zeiten ..."), gg_snd_Sisgard20)
-			call speech(info, character, true, tr("Beherrscht du denn auch die Zauberkunst?"), gg_snd_Sisgard21)
-			call speech(info, character, false, tr("Sicher."), null)
-			call speech(info, character, true, tr("Beweise es mir! In der Nähe gibt es einen Wald, wir nennen ihn den Dunkelwald. In diesem Wald stehen einige Runensteine, die dort vor einer Ewigkeit errichtet wurden. Mein Meister sprach von einer außergewöhnlichen Aura, welche diese Steine umgibt."), gg_snd_Sisgard22)
-			call speech(info, character, true, tr("Er gab mir vor seinem Tod einige Zauberspruchrollen, mit welchen es mir möglich sein sollte, jene Aura zu nutzen. Nimm eine dieser Zauberspruchrollen, geh zu den Runensteinen und probiere aus, was passiert wenn du sie wirken lässt, dann komm wieder und berichte mir davon."), gg_snd_Sisgard23)
+			call speech(info, character, false, tre("Zieh mit mir in den Kampf!", "Go into battle with me!"), null)
+			call speech(info, character, true, tre("Ich soll mit dir in den Kampf ziehen? Hmm, so wie damals mit meinem Meister. Das waren noch Zeiten ...", "I should go into battle with you? Hmm, as I did with my master. Those were the days ..."), gg_snd_Sisgard20)
+			call speech(info, character, true, tre("Beherrscht du denn auch die Zauberkunst?", "Do you master the magical art?"), gg_snd_Sisgard21)
+			call speech(info, character, false, tre("Sicher.", "For sure."), null)
+			call speech(info, character, true, tre("Beweise es mir! In der Nähe gibt es einen Wald, wir nennen ihn den Dunkelwald. In diesem Wald stehen einige Runensteine, die dort vor einer Ewigkeit errichtet wurden. Mein Meister sprach von einer außergewöhnlichen Aura, welche diese Steine umgibt.", "Prove it to me! Nearby there is a forest, we call it the Dark Forest. In this forest there are some rune stones that were built there an enternity ago. My master spoke of an extraordinary aura surrounding these stones."), gg_snd_Sisgard22)
+			call speech(info, character, true, tre("Er gab mir vor seinem Tod einige Zauberspruchrollen, mit welchen es mir möglich sein sollte, jene Aura zu nutzen. Nimm eine dieser Zauberspruchrollen, geh zu den Runensteinen und probiere aus, was passiert wenn du sie wirken lässt, dann komm wieder und berichte mir davon.", "He gave me a few spells to cast before his death, so I could use that aura. Take one of these spells, go to the rune stones and try what happens when you cast them, then come back and tell me about it."), gg_snd_Sisgard23)
 			call QuestTheMagic.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
@@ -145,8 +145,8 @@ library StructMapTalksTalkSisgard requires Asl, StructGameCharacter, StructGameC
 
 		// Ich war bei den Runensteinen.
 		private static method infoActionBeenAtTheRunes takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ich war bei den Runensteinen."), null)
-			call speech(info, character, true, tr("Und, was ist passiert?"), gg_snd_Sisgard24)
+			call speech(info, character, false, tre("Ich war bei den Runensteinen.", "I was at the rune stones."), null)
+			call speech(info, character, true, tre("Und, was ist passiert?", "And what happened?"), gg_snd_Sisgard24)
 			call info.talk().showRange(thistype.m_beenAtTheRunes_magic.index(), thistype.m_beenAtTheRunes_nothing.index(), character)
 		endmethod
 
