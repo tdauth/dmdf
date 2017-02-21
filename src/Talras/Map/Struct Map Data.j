@@ -199,6 +199,9 @@ endif
 			 */
 			call initMapSpells.evaluate()
 			call initMapTalks.evaluate()
+			/**
+			 * Use a new OpLimit since many videos are created.
+			 */
 			call initMapVideos.evaluate()
 			call NewOpLimit(function Fellows.init) // init after talks (new)
 
@@ -388,9 +391,12 @@ endif
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
 			local integer i = 0
-			call initMapPrimaryQuests()
-			call initMapSecundaryQuests()
+			// Need the created characters and add something to the quest log.
+			call NewOpLimit(function initMapPrimaryQuests)
+			call NewOpLimit(function initMapSecundaryQuests)
 			call NewOpLimit(function Dungeons.addSpellbookAbilities)
+
+			debug call Print("Map Start 1")
 
 			call SuspendTimeOfDay(false)
 
@@ -403,16 +409,26 @@ endif
 				set i = i + 1
 			endloop
 
+			debug call Print("Map Start 2")
+
 			call Weather.startRainCountdown()
+
+			debug call Print("Map Start 3")
 
 			// call GetCamOffset after initialization to make sure it returns the correct value
 			call CameraHeight.addRect.evaluate(gg_rct_bridge_talras_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_talras), GetRectCenterY(gg_rct_bridge_talras)) / 2.2)
 			call CameraHeight.addRect.evaluate(gg_rct_bridge_death_vault_0_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_0), GetRectCenterY(gg_rct_bridge_death_vault_0)) / 2.2)
 			call CameraHeight.addRect.evaluate(gg_rct_bridge_death_vault_1_camera_area, GetPointZ(GetRectCenterX(gg_rct_bridge_death_vault_1), GetRectCenterY(gg_rct_bridge_death_vault_1)) / 2.2)
 
-			debug call Print("Before playing intro video")
-			call VideoIntro.video().play()
-			debug call Print("After playing intro video")
+			debug call Print("Map Start 4")
+
+			debug call Print("Before playing intro video: " + I2S(VideoIntro.video())) // FIXME is 0!!!
+			if (VideoIntro.video() != 0) then
+				call VideoIntro.video().play()
+			else // WORKAROUND
+				call thistype.startAfterIntro.evaluate()
+			endif
+			debug call Print("After playing intro video: " + I2S(VideoIntro.video()))
 		endmethod
 
 		/**
