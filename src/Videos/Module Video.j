@@ -25,7 +25,7 @@ library ModuleVideosVideo
 	 * \brief Every video should implement this module to provide a global instance.
 	 */
 	module Video
-		private static thistype m_video
+		private static thistype m_video = 0
 
 		/**
 		 * Initializes the video object as singleton. After calling this method you can use \ref video() to access the global instance.
