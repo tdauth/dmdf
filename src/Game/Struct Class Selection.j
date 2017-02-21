@@ -97,8 +97,13 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		/// This flag indicates if the game has already started.
 		private static boolean m_gameStarted = false
 
+		/**
+		 * Starts the game by calling Game.start() via .execute().
+		 * Sets the flag to true which indicates the gamestart. The flag is important for the initial character setup and repick data, so always call this method in the very first beginning of the game.
+		 */
 		public static method startGame takes nothing returns nothing
 			set thistype.m_gameStarted = true
+			debug call Print("Executing Game.start")
 			call Game.start.execute()
 		endmethod
 
@@ -116,6 +121,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			endloop
 		endmethod
 
+		/**
+		 * Called by .evaluate().
+		 */
 		public stub method onSelectClass takes Character character, AClass class, boolean last returns nothing
 			local integer i = 0
 
@@ -170,7 +178,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 						call thistype.endTimer()
 					endif
 
+					debug call Print("Before on Select Class")
 					call MapData.onSelectClass.evaluate(character, class, last)
+					debug call Print("After on Select Class")
 					call thistype.startGame()
 				endif
 			// Is a repick.
