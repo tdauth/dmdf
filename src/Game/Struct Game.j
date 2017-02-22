@@ -648,6 +648,7 @@ endif
 			if (thistype.restoreCharacters()) then
 				// new OpLimit
 				call NewOpLimit(function MapChanger.restoreCharactersSinglePlayer)
+				// Make sure the flag is set to true that every repick is detected successfully.
 				call ClassSelection.startGame.evaluate()
 			// Otherwise start the game from beginning by letting players select their class.
 			else
@@ -768,7 +769,8 @@ endif
 			// shows only if enabled, otherwise hide
 			call Character.showCharactersSchemeToAll()
 
-			//call ACharacter.suspendExperienceForAll(true) // we're using a customized experience system
+			// we're using a customized experience system
+			call ACharacter.suspendExperienceForAll(true)
 
 			// apply initial camera bounds
 			call thistype.resetCameraBounds()
