@@ -37,6 +37,7 @@ library StructGameShop requires Asl
 			loop
 				exitwhen (not iterator.isValid())
 				set shop = thistype(iterator.data())
+				debug call Print("Checking shop " + GetUnitName(shop.m_npc))
 				if (sellingUnit == shop.m_npc) then
 					call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(shop.m_shop), GetUnitY(shop.m_shop), 0.0, 0.0)
 					call SelectUnitForPlayerSingle(shop.m_shop, GetOwningPlayer(soldUnit))
@@ -60,6 +61,7 @@ library StructGameShop requires Asl
 
 			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
 			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
+			debug call Print("Sold unit: " + GetUnitName(GetSoldUnit()))
 			debug call Print("Buying unit " + GetUnitName(GetBuyingUnit()))
 			call SetUnitInvulnerable(GetSoldUnit(), true)
 			call ShowUnit(GetSoldUnit(), false)
