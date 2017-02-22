@@ -20,7 +20,7 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
-* Talras: Intro is not played when the first map transition is done? Should happen: ClassSelection.startGame() is called on restoring characters.
+* The North: Repick creates items again.
 * Options are not hidden or moved to the character's position on restoring after map change. The hero can be seen on the minimap? Only in the beginning directly after loading?
 * FIXED: Dungeon: Leaving a dungeon with a camera pan should be an immediate pan to the character.
 * AInventory: When an item has no equipment type (ItemType) the message appears that the equipment slot is already used. There should be a message that the item cannot be equipped.
@@ -223,7 +223,7 @@ Zeugs:
 * Markwards Belohnungsgegenstand für Ritter ist zu gut.
 * Anstürmen: "attack" verhindert Abklingzeit des Zaubers?
 * Anstürmen: Stun geht nicht. Lieber dummy erzeugen.
-* Wenn Stich direkt tötet, benötigt es keine Abklingzeit.
+* Wenn Stich direkt tötet, benötigt es keine Abklingzeit. Allgemeines Problem bei allen Zaubern mit KillUnit() oder Damage, der direkt tötet.
 * DONE (Reduziert den Lag kaum!): Alle Fähigkeiten aus Klassenauswahl preloaden. Reduziert Lag.
 * Spruchrollen günstiger machen.
 * Waffen bei Einar usw. viel mehr Aufladungen.
@@ -316,6 +316,7 @@ Zeugs:
 * Use a spell caster system with spell books: http://www.hiveworkshop.com/threads/spellbook-pack.144447/
 * DONE: Add Doodad types for new ice cliff models.
 * DONE: Add Bronze items set which adds bonuses when all item are equipped.
+* DONE: Fix ice cliff doodads (cannot be placed).
 * Bronze items should be a reward for quests in the map "The North".
 * Performance: Don't create cast and skill triggers for spells which don't have custom functions.
 * Performance: Fix preloading all class spells, grimoire abilities etc. to fix lags in the beginning of the game.
@@ -324,8 +325,9 @@ Zeugs:
 	* Band 1: Der Meister.odt (Invalid argument)
 	* error: unable to create file doc/Planung/Hintergrunddefinition/Mythen/BÃ¼cher/Band 1: Der Meister.pdf (Invalid argument)
 	* error: unable to create file doc/Planung/Hintergrunddefinition/Mythen/BÃ¼cher/Gedicht: Gotlindes Worte.odt
-* Replaced UI textures for the main menu in the mod (red textures) don't use a transparent area. Therefore they have black borders. Replace the black areas by transparent areas (Alpha value?).
-* The campaign chapter buttons are still blue and not red.
+* FIXED: Replaced UI textures for the main menu in the mod (red textures) don't use a transparent area. Therefore they have black borders. Replace the black areas by transparent areas (Alpha value?). Use BLP Lab and convert all BLP files to TGA files. Leave the alpha channel. Replace the colors and convert it back.
+* Loading bar texture should be red not blue.
+* FIXED: The campaign chapter buttons are still blue and not red: UI\Widgets\Glues\GlueScreen-CampaignButton-Arrow.blp has to be changed etc. (from war3x.mpq).
 
 Aufgehoben für Version 0.9:
 Critical errors:
@@ -341,7 +343,7 @@ Critical errors:
 Repickprobleme (vermutlich durch OpLimit irgendwo):
 * FIXED (OpLimit was broken by too long calls before calling refresh()): ACharactersScheme: Multiboard update does not happen immediately! It would also be better to show the characters schema after the intro video?
 Repick Issues:
-* Multiboard verschwindet manchmal bei Repick. Es kommt die Nachricht, dass es refresht wird, wieso wird es dann nicht angezeigt?
+* Multiboard verschwindet manchmal bei Repick. Es kommt die Nachricht, dass es refresht wird, wieso wird es dann nicht angezeigt? Vielleicht liegt es auch an anderen verborgenen Multiboards? https://www.hiveworkshop.com/threads/multiboard-problem.171543/
 * Wut der Elemente ist nach Repick nie in den Favoriten?!
 * Nach Repick ist Grundzauber nicht in den Favoriten.
 * Nach Repick ist ab und zu entweder ein Zauber der Klasse nicht da oder noch ein Zauber der alten Klasse stattdessen.
@@ -424,6 +426,8 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED (in the mod) wc3lib bug: field Arsg:UnitID is compressed although it was changed! Treefolk, Pest Carret and summon dragon.
 * Video mit Diakon und Medusa: Kamerafahrten vereinfachen. Die letzte Kamerafahrt beim Diakon macht keinen Sinn. Predigt oder zaubert er?
 * Allgemein: Alle Zauber des Drachentöters testen.
+* FIXED: Drachentöter: Schwachstelle, Zaubericon ist grün.
+* Wilder Blutrausch: Effekt erzeugen und entfernen, damit man sieht, ob der Effekt aktiv ist.
 * FIXED: Todgeweihte haben keinen Luftangriff.
 * FIXED: Rage: Braucht Spezialeffekt.
 * FIXED: Rage: Braucht Sound.
