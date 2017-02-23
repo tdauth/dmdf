@@ -98,6 +98,7 @@ call thistype.addContributor("hiveworkshop.com", tre("Unzählige Ressourcen, Fra
 
 // files
 call thistype.addTitle(tre("Modelle", "Models"))
+call thistype.addContributor("Kitabatake", "Hell Campaign Screen: https://www.hiveworkshop.com/threads/hell-campaign-screen.121022/#resource-26801")
 call thistype.addContributor("Talavaj", "HybrisFactory - Multiple packages of realtexture models and textures: http://www.hiveworkshop.com/threads/hybrisfactory-terraining-and-mapping-resources.238310/")
 call thistype.addContributor("Sellenisko", "Vrykul Race Pack: http://www.hiveworkshop.com/threads/vrykul-race-pack.241083/")
 
