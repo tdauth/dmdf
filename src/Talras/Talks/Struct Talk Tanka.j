@@ -263,17 +263,19 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		endmethod
 
 		// … seine Waffen vergiftet.
-		private static method infoAction8_0 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction8_0 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("… seine Waffen vergiftet.", "... poison his weapons."), null)
-			/// @todo Charakter erhält Gegenstand „Angriffs-Totem“
+			/// Charakter erhält Gegenstand „Angriffs-Totem“
+			call character.giveItem('I085')
 			call speech(info, character, true, tre("Sieh zu und lerne!", "Watch and learn!"), gg_snd_Tanka25)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// … seinen Körper entflammt.
-		private static method infoAction8_1 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction8_1 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("… seinen Körper entflammt.", "... inflame his body."), null)
-			/// @todo Charakter erhält Gegenstand „Verteidigungs-Totem“
+			/// Charakter erhält Gegenstand „Verteidigungs-Totem“
+			call character.giveItem('I086')
 			call speech(info, character, true, tre("Sieh zu und lerne!", "Watch and learn!"), gg_snd_Tanka25)
 			call info.talk().showStartPage(character)
 		endmethod
@@ -284,17 +286,19 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 		endmethod
 
 		// … seinen Schmerz teilt.
-		private static method infoAction8_2 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction8_2 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("… seinen Schmerz teilt.", "... share his pain."), null)
-			/// @todo Charakter erhält Gegenstand „Geistes-Totem“
+			/// Charakter erhält Gegenstand „Geistes-Totem“
+			call character.giveItem('I087')
 			call speech(info, character, true, tre("Sieh zu und lerne!", "Watch and learn!"), gg_snd_Tanka25)
 			call info.talk().showStartPage(character)
 		endmethod
 
 		// … seinen Körper vervielfacht.
-		private static method infoAction8_3 takes AInfo info, ACharacter character returns nothing
+		private static method infoAction8_3 takes AInfo info, Character character returns nothing
 			call speech(info, character, false, tre("… seinen Körper vervielfacht.", "... multiply his body."), null)
-			/// @todo Charakter erhält Gegenstand „Körper-Totem“
+			/// Charakter erhält Gegenstand „Körper-Totem“
+			call character.giveItem('I088')
 			call speech(info, character, true, tre("Sieh zu und lerne!", "Watch and learn!"), gg_snd_Tanka25)
 			call info.talk().showStartPage(character)
 		endmethod

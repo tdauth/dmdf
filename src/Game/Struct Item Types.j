@@ -350,6 +350,10 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 		// death vault drops
 		private static ItemType m_deathScythe
 
+		// Tanka's Totems
+		private static ItemType m_attackTotem
+		private static ItemType m_defenseTotem
+
 		// map Gardonar
 		private static ItemType m_demonicShoulderPlate
 		private static ItemType m_demonicFireBow
@@ -422,6 +426,7 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 				call SetPlayerAbilityAvailable(Player(i), 'A1TN', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A0KE', false)
 				call SetPlayerAbilityAvailable(Player(i), 'A1VN', false)
+				call SetPlayerAbilityAvailable(Player(i), 'A1WD', false)
 				set i = i + 1
 			endloop
 		endmethod
@@ -807,6 +812,13 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			set thistype.m_deathScythe = ItemType.create('I05B', ItemType.equipmentTypePrimaryWeapon, 0, 0, 0, 0, 0)
 			call thistype.m_deathScythe.addAbility('A17K', true)
 			call thistype.m_deathScythe.addAbility('A1DQ', true)
+
+			// Tanka's Totems
+			set thistype.m_attackTotem = ItemType.createSimple('I085', ItemType.equipmentTypeAmulet)
+			call thistype.m_attackTotem.addAbility('A1WD', true)
+
+			set thistype.m_defenseTotem = ItemType.createSimple('I086', ItemType.equipmentTypeAmulet)
+			call thistype.m_defenseTotem.addAbility('A1WE', true)
 
 			// Gardonar
 
