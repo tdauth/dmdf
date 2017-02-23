@@ -33,8 +33,8 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			local thistype this = thistype(info.talk())
 
 			call speech(info, character, false, tre("Und wie gehts dir so?", "So, how are you?"), null)
-			call speech(info, character, true, tr("Ach ich weiß nicht. Die Feldarbeit macht mir zu schaffen und wir müssen ernten bevor es zu spät ist. Einen guten Pflug bräuchten wir, aber der Bauer hat natürlich kein Geld, du kennst ihn ja."), null)
-			call speech(info, character, true, tr("Ich beneide dich darum, dass du hier bald weggehst. Den ganzen Tag arbeiten arbeiten arbeiten, da wird man doch verrückt. Jetzt stell dir mal vor, dass Orks und Dunkelelfen dieses Dorf niederbrennen. Dann war alles umsonst."), null)
+			call speech(info, character, true, tre("Ach ich weiß nicht. Die Feldarbeit macht mir zu schaffen und wir müssen ernten bevor es zu spät ist. Einen guten Pflug bräuchten wir, aber der Bauer hat natürlich kein Geld, du kennst ihn ja.", "Oh, I do not know. The field work is very hard and  we have to harvest before it's too late. We need a good plow, but the farmer of course has no money, you know him."), null)
+			call speech(info, character, true, tre("Ich beneide dich darum, dass du hier bald weggehst. Den ganzen Tag arbeiten, arbeiten, arbeiten, da wird man doch verrückt. Jetzt stell dir mal vor, dass Orks und Dunkelelfen dieses Dorf niederbrennen. Dann war alles umsonst.", "I envy you that you will leave here soon. All day working, working, working, you get crazy. Now imagine that Orcs and Dark Elves burn down this village. Then everything was in vain."), null)
 
 			call this.showStartPage(character)
 		endmethod
@@ -47,9 +47,9 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private static method infoActionHelp takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 
-			call speech(info, character, false, tr("Kann ich dir noch irgendwie helfen?"), null)
-			call speech(info, character, true, tr("Willst du dir das wirklich antun? Wenn du mir noch helfen willst, besorg dir eine Harke und grab den Garten hier um. Das würde mir schon sehr viel Arbeit abnehmen."), null)
-			call speech(info, character, true, tr("Natürlich gebe ich dir auch die Goldmünzen dafür, aber verschwende sie nicht für irgendetwas anderes!"), null)
+			call speech(info, character, false, tre("Kann ich dir noch irgendwie helfen?", "Can I help you?"), null)
+			call speech(info, character, true, tre("Willst du dir das wirklich antun? Wenn du mir noch helfen willst, besorg dir eine Harke und grab den Garten hier um. Das würde mir schon sehr viel Arbeit abnehmen.", "Do you really want to do this? If you want to help me, get a rake and dig the garden here. That would take a lot of work from me."), null)
+			call speech(info, character, true, tre("Natürlich gebe ich dir auch die Goldmünzen dafür, aber verschwende sie nicht für irgendetwas anderes!", "Of course, I give you gold coins for it, but do not waste it for anything else!"), null)
 			call character.addGold(10)
 
 			call QuestRalphsGarden.characterQuest(character).enable()
@@ -65,8 +65,8 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private static method infoActionRuke takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 
-			call speech(info, character, false, tr("Ich habe die Harke."), null)
-			call speech(info, character, true, tr("Sehr gut. Geh damit einfach in den Garten hier und grabe ihn um."), null)
+			call speech(info, character, false, tre("Ich habe die Harke.", "I have the rake."), null)
+			call speech(info, character, true, tre("Sehr gut. Geh damit einfach in den Garten hier und grabe ihn um.", "Very good. Just go into the garden here and dig it."), null)
 
 			call this.showStartPage(character)
 		endmethod
@@ -79,23 +79,23 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private static method infoActionGarden takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 
-			call speech(info, character, false, tr("Der Garten ist umgegraben."), null)
-			call speech(info, character, true, tr("Du bist echt der Beste! Hier hast du ein paar Sachen für deine Reise. Also da wäre noch ..."), null)
+			call speech(info, character, false, tre("Der Garten ist umgegraben.", "The garden is dug."), null)
+			call speech(info, character, true, tre("Du bist echt der Beste! Hier hast du ein paar Sachen für deine Reise. Also da wäre noch ...", "You're the best! Here are some things for your trip. So there would still be ..."), null)
 
 			call QuestRalphsGarden.characterQuest(character).complete()
 
-			call speech(info, character, false, tr("Was?"), null)
-			call speech(info, character, true, tr("Na du kennst doch Wotan, unseren irren Dorfältesten?"), null)
-			call speech(info, character, false, tr("Was ist mit ihm?"), null)
-			call speech(info, character, true, tr("Jetzt da du ja sowieso weggehst, könntest du ihm doch noch einen ordentlichen Denkzettel verpassen oder? Ach, war doch eine dumme Idee."), null)
-			call speech(info, character, false, tr("Sag doch einfach, was du vor hast."), null)
-			call speech(info, character, true, tr("Du weißt doch wie sehr er seinen Thron auf der Insel liebt. Na, ich würde einfach auf seinen Thron scheißen."), null)
-			call speech(info, character, false, tr("Was?!"), null)
-			call speech(info, character, true, tr("Ja! Damit ihm ein für alle mal klar ist, wer hier das sagen hat. Ich habe auch schon einen Lederbeutel mit Scheiße gefüllt. Das Problem ist nur, dass ich mich das nicht traue. Immerhin arbeite ich ja noch mein halbes Leben für ihn, bis er endlich abgkratzt."), null)
-			call speech(info, character, false, tr("Gib mir den Beutel."), null)
-			call speech(info, character, true, tr("Bist du sicher?"), null)
-			call speech(info, character, false, tr("Ja, aber wie komme ich auf die Insel?"), null)
-			call speech(info, character, true, tr("Tja, da musst selbst schauen wie Wotan dort hin kommt. Er steht immer recht früh auf. Aber wenn du das durchziehst, dann hast du meinen größten Respekt. Ich wäre gerne dabei, wenn er sich auf seinen Thron setzt und in Scheiße landet."), null)
+			call speech(info, character, false, tre("Was?", "What?"), null)
+			call speech(info, character, true, tre("Na du kennst doch Wotan, unseren irren Dorfältesten?", "Well, you know Wotan, our crazy village elders?"), null)
+			call speech(info, character, false, tre("Was ist mit ihm?", "What about him?"), null)
+			call speech(info, character, true, tre("Jetzt da du ja sowieso weggehst, könntest du ihm doch noch einen ordentlichen Denkzettel verpassen oder? Ach, war doch eine dumme Idee.", "Now that you leave anyway, can you still give him a proper memorandum? Oh, it was a stupid idea."), null)
+			call speech(info, character, false, tre("Sag doch einfach, was du vor hast.", "Just tell me what you're up to."), null)
+			call speech(info, character, true, tre("Du weißt doch wie sehr er seinen Thron auf der Insel liebt. Na, ich würde einfach auf seinen Thron scheißen.", "You know how much he loves this throne on the islandd. Well, I would just shit on this throne."), null)
+			call speech(info, character, false, tre("Was?!", "What?!"), null)
+			call speech(info, character, true, tre("Ja! Damit ihm ein für alle mal klar ist, wer hier das sagen hat. Ich habe auch schon einen Lederbeutel mit Scheiße gefüllt. Das Problem ist nur, dass ich mich das nicht traue. Immerhin arbeite ich ja noch mein halbes Leben für ihn, bis er endlich abgkratzt.", "Yes! So that it is clear to him once and for all who has the power here. I have already filled a leather bag with shit. The problem is that I do not dare. After all, I still work my half life for him until he finally dies."), null)
+			call speech(info, character, false, tre("Gib mir den Beutel.", "Give me the bag."), null)
+			call speech(info, character, true, tre("Bist du sicher?", "Are you sure?"), null)
+			call speech(info, character, false, tre("Ja, aber wie komme ich auf die Insel?", "Yes, but how do I get to the island?"), null)
+			call speech(info, character, true, tre("Tja, da musst selbst schauen wie Wotan dort hin kommt. Er steht immer recht früh auf. Aber wenn du das durchziehst, dann hast du meinen größten Respekt. Ich wäre gerne dabei, wenn er sich auf seinen Thron setzt und in Scheiße landet.", "Well, you have to look yourself how Wotan gets there. He always gets up early. But if you go through it, you have my greatest respect. I'd like to be there when he sits down on his throne and lands in shit."), null)
 
 			call QuestShitOnTheThrone.characterQuest(character).enable()
 
@@ -111,9 +111,9 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			local thistype this = thistype(info.talk())
 			local QuestShitOnTheThrone characterQuest = QuestShitOnTheThrone.characterQuest(character)
 
-			call speech(info, character, false, tr("Wotan hat sich auf den Beutel gesetzt."), null)
-			call speech(info, character, true, tr("Hervorragend. Du hast es wirklich drauf! Mann, ich hätte gerne sein Gesicht gesehen. Dieses arrogante Arschloch. Kumpel, ich werde dich echt vermissen!"), null)
-			call speech(info, character, false, tr("Hier hast du noch was zum Abschied. Mach's gut und pass auf dich auf!"), null)
+			call speech(info, character, false, tre("Wotan hat sich auf den Beutel gesetzt.", "Wotan has put himself on the bag."), null)
+			call speech(info, character, true, tre("Hervorragend. Du hast es wirklich drauf! Mann, ich hätte gerne sein Gesicht gesehen. Dieses arrogante Arschloch. Kumpel, ich werde dich echt vermissen!", "Outstanding. You really got it! Man, I would have liked to see his face. This arrogant asshole. Buddy, I'll really miss you!"), null)
+			call speech(info, character, false, tre("Hier hast du noch was zum Abschied. Mach's gut und pass auf dich auf!", "Here you have something to say goodbye. Goodbye and take care of yourself!"), null)
 
 			call characterQuest.complete()
 
@@ -125,7 +125,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call speech(info, character, true, tre("Ich glaube deine Mutter wollte noch mit dir sprechen, bevor du aufbrichst.", "I believe your mother wanted to talk to you before you start off."), null)
 			call QuestMother.characterQuest(character).enable()
 
-			call speech(info, character, true, tr("Ich habe hier noch einen sehr nützlichen Gegenstand für dich. Ich habe ihn vom Dorfältesten gestohlen, aber erzähle es ihm bloß nicht. Du kannst dich mit dieser Rune zu einem magischen Schrein teleportieren. Ich hoffe er wird dir auf deiner Reise von Nutzen sein."), null)
+			call speech(info, character, true, tre("Ich habe hier noch einen sehr nützlichen Gegenstand für dich. Ich habe ihn vom Dorfältesten gestohlen, aber erzähle es ihm bloß nicht. Du kannst dich mit dieser Rune zu einem magischen Schrein teleportieren. Ich hoffe er wird dir auf deiner Reise von Nutzen sein.", "I have a very useful item for you. I stole it from the village elders, but do not tell him. You can use this rune to teleport to a magical shrine. I hope it will be of service to you on your journey."), null)
 			call character.giveItem('I01N')
 
 			call this.showStartPage(character)
@@ -150,10 +150,10 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			// start page
 			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Hallo Ralph!", "Hello Ralph!"))
 			set this.m_howAreYou = this.addInfo(false, false, thistype.infoConditionHowAreYou, thistype.infoActionHowAreYou, tre("Und wie gehts dir so?", "So, how are you?"))
-			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tr("Kann ich dir noch irgendwie helfen?"))
-			set this.m_ruke = this.addInfo(false, false, thistype.infoConditionRuke, thistype.infoActionRuke, tr("Ich habe die Harke."))
-			set this.m_garden = this.addInfo(false, false, thistype.infoConditionGarden, thistype.infoActionGarden, tr("Der Garten ist umgegraben."))
-			set this.m_shit = this.addInfo(false, false, thistype.infoConditionShit, thistype.infoActionShit, tr("Wotan hat sich auf den Beutel gesetzt."))
+			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tre("Kann ich dir noch irgendwie helfen?", "Can I help you?"))
+			set this.m_ruke = this.addInfo(false, false, thistype.infoConditionRuke, thistype.infoActionRuke, tre("Ich habe die Harke.", "I have the rake."))
+			set this.m_garden = this.addInfo(false, false, thistype.infoConditionGarden, thistype.infoActionGarden, tre("Der Garten ist umgegraben.", "The garden is dug."))
+			set this.m_shit = this.addInfo(false, false, thistype.infoConditionShit, thistype.infoActionShit, tre("Wotan hat sich auf den Beutel gesetzt.", "Wotan has put himself on the bag."))
 			set this.m_exit = this.addExitButton()
 
 			set this.m_hi_yes =  this.addInfo(true, false, 0, thistype.infoActionHi_Yes, tre("Ja.", "Yes."))
