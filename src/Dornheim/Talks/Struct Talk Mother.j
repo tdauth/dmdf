@@ -31,7 +31,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			call QuestMother.characterQuest(character).questItem(QuestMother.questItemGoods).setState(QuestMother.stateNew)
 			call QuestMother.characterQuest(character).displayState()
 
-			call character.displayHint(tr("Falls Ihnen Goldmünzen fehlen, können Sie Pflanzen einsammeln und bei Hans verkaufen."))
+			call character.displayHint(tre("Falls Ihnen Goldmünzen fehlen, können Sie Pflanzen einsammeln und bei Hans verkaufen.", "If you do not have gold coins, you can pick up plants and sell them to Hans."))
 
 			call this.showStartPage(character)
 		endmethod
@@ -44,8 +44,8 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			local thistype this = thistype(info.talk())
 			local integer i = 0
 			call speech(info, character, false, tre("Hier sind die Waren.", "There you have your goods."), null)
-			call speech(info, character, true, tr("Ich danke dir mein Sohn! Immerhin bist du noch zuverlässig. Nun lasse ich dich schließlich gehen, auch wenn es mir das Herz bricht. Pass auf dich auf und denke daran, unser Gasthof läuft schlecht. Etwas mehr Goldmünzen könnte ich gut gebrauchen."), null)
-			call speech(info, character, true, tr("Mögen die Götter dich beschützen und pass gut auf dich auf! ... Ach so, sei doch bitte so lieb und sag Gotlinde noch Lebwohl, so wie es sich gehört."), null)
+			call speech(info, character, true, tre("Ich danke dir mein Sohn! Immerhin bist du noch zuverlässig. Nun lasse ich dich schließlich gehen, auch wenn es mir das Herz bricht. Pass auf dich auf und denke daran, unser Gasthof läuft schlecht. Etwas mehr Goldmünzen könnte ich gut gebrauchen.", "I thank you my son! After all, you're still reliable. Now I'll let you go, even if it breaks my heart. Take care of yourself and remember that our inn runs badly. I could use a little more gold coins."), null)
+			call speech(info, character, true, tre("Mögen die Götter dich beschützen und pass gut auf dich auf! ... Ach so, sei doch bitte so lieb und sag Gotlinde noch Lebwohl, so wie es sich gehört.", "May the gods protect you and take good care of you! ... Oh, please be so kind and tell Gotlinde good-bye, as it is."), null)
 			call speech(info, character, false, tre("Mutter, ich ...", "Mother, I ..."), null)
 			call speech(info, character, true, tre("Nun mach schon. Ach und nimm diesen Brief mit dir mein Sohn. Er soll dich an deine arme Mutter erinnern.", "Come on. Oh and take this letter with you my son. It shall remind you of your poor mother."), null)
 
