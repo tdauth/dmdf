@@ -20,18 +20,24 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
+* Mephisto: Add talk abilities as sold units. They are added but apparently hero transformation removes them.
+* Dornheim: Make the way to Wotan bigger (river).
+* Wotan: Add transformation sound.
+* Finish Wotan's quest.
+* Wotan's quest: Add rescue sound.
 * DONE: Tanka: Add item types for learning stuff.
 * The North: Repick creates items again.
 * Options are not hidden or moved to the character's position on restoring after map change. The hero can be seen on the minimap? Only in the beginning directly after loading?
 * FIXED: Dungeon: Leaving a dungeon with a camera pan should be an immediate pan to the character.
 * AInventory: When an item has no equipment type (ItemType) the message appears that the equipment slot is already used. There should be a message that the item cannot be equipped.
-* Dornheim: Wotan's staff has mana costs. Reduce it to 50. Increase the area size and implement the quest.
-* Dornheim: Needs portal units: "Dornheim" and "First Floor" and "Second Floor".
+* FIXED: Dornheim: Wotan's staff has mana costs. Reduce it to 50. Increase the area size and implement the quest.
+* FIXED: Dornheim: Needs portal units: "Dornheim" and "First Floor" and "Second Floor".
 * FIXED: Dornheim: Give gold to the player for getting apples and bread.
 * FIXED: Dornheim: Use the add item event of AInventory instead of Warcraft III's native events for the item quest items.
-* Dornheim: Wotan's transformation does not work.
+* FIXED: Dornheim: Wotan's transformation does not work. Switch unit types in the ability and remove all flags.
 * FIXED: Dornheim: Make ways to Wotan bigger (through the river).
-* Clear all texttags from a talk routine when talking to an NPC. hideTexttagsForPlayer() is actually called, doesn't always work?
+* Clear all texttags from a talk routine when talking to an NPC. hideTexttagsForPlayer() is actually called, doesn't always work? Double free of ATextTagListIterator.
+* FIXED: Reduce selling cooldown for apple, loaf of bread etc.
 * World Map crashes on loading in current 0.9 release.
 * FIXED (SetUnitX() called twice): Dornheim start position in the campaign is not at Ralph.
 * Killing a box shows the creep XP hint.
@@ -724,8 +730,8 @@ Kleriker:
 Weitere TODOS:
 * FIXED: Bieneneinheit kleiner skalieren.
 * Double free of AHashTable beim Absteigen vom Pferd.
-* Pferde haben Schwarze Textur, allerdings nur im Spiel.
-* Dämoneninterface für Karte Dornheim.
+* Pferde haben Schwarze Textur, allerdings nur im Spiel und Editor, nicht im War3ModelEditor.
+* DONE: Dämoneninterface für Karte Dornheim.
 * Daten aus Spell conditions in actions weiterreichen, anonsten wird vieles zweimal berechnet.
 * Frostränder in Hauptmenü durch Ränder aus Dämonen-Interface ersetzen.
 	* IncludeFile "UI\FrameDef\Glue\StandardTemplates.fdf",
