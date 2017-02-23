@@ -47,7 +47,7 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 
 			if (this.questItem(thistype.questItemGoods).isNew()) then
 				// TODO narrator please.
-				call character.displayHint(tr("Klicken Sie mit Links auf den Laden um die Waren zu kaufen. Falls Sie nicht genügend Goldmünzen haben sollten, können Sie Kräuter in der Umgebung sammeln und bei Hans verkaufen. Die Kräuter wachsen nach einiger Zeit nach."))
+				call character.displayHint(tre("Klicken Sie mit Links auf den Laden um die Waren zu kaufen. Falls Sie nicht genügend Goldmünzen haben sollten, können Sie Kräuter in der Umgebung sammeln und bei Hans verkaufen. Die Kräuter wachsen nach einiger Zeit nach.", "Click on the shop with the left mouse button to buy the goods. If you do not have enough gold coins, you can collect herbs in the area and sell them to Hans. THe herbs regrow after some time."))
 
 				call DisableTrigger(GetTriggeringTrigger())
 			endif
