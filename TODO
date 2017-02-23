@@ -20,11 +20,12 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
-* Mephisto: Add talk abilities as sold units. They are added but apparently hero transformation removes them.
+* Mephisto: Add talk abilities as sold units. They are added but apparently hero transformation removes them. Besides he is not invulnerable after the transformation!
 * Dornheim: Make the way to Wotan bigger (river).
 * Wotan: Add transformation sound.
 * Finish Wotan's quest.
 * Wotan's quest: Add rescue sound.
+* Wotan's quest: Add to the description where the scepter is (inventory) and where the children are.
 * DONE: Tanka: Add item types for learning stuff.
 * The North: Repick creates items again.
 * Options are not hidden or moved to the character's position on restoring after map change. The hero can be seen on the minimap? Only in the beginning directly after loading?
