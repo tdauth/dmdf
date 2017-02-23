@@ -545,7 +545,7 @@ _SetQuestAreaConditionAndActionByTrigger_Defaults=
 _SetQuestAreaConditionAndActionByTrigger_Category=TC_TPOF_QUESTAREA
 
 CreateCharacterQuestItem=1,AQuest,string
-_CreateCharacterQuestItem_Defaults=
+_CreateCharacterQuestItem_Defaults=GetLastCreatedCharacterQuest,_
 _CreateCharacterQuestItem_Category=TC_TPOF_QUEST
 
 SetCharacterQuestState=1,AQuest,QuestState

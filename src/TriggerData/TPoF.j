@@ -49,6 +49,7 @@ library TPoFTriggerData requires Asl, Dmdf
 globals
 	// Last X'd vars
 	AQuest lastCreatedCharacterQuest = 0
+	AQuestItem lastCreatedCharacterQuestItem = 0
 	Talk lastCreatedTalk = 0
 	AInfo lastCreatedInfo = 0
 	Fellow lastCreatedFellow = 0
@@ -288,6 +289,8 @@ function SetInfoAction takes AInfo info, AInfoAction infoAction returns nothing
 	call info.setAction(infoAction)
 endfunction
 
+// Quest Area API
+
 function CreateQuestArea takes rect whichRect, boolean withFogModifier returns QuestArea
 	return QuestArea.create(whichRect, withFogModifier)
 endfunction
@@ -309,6 +312,8 @@ function SetQuestAreaConditionAndActionByTrigger takes QuestArea questArea, trig
 	call questArea.setEnterCondition(QuestAreaEnterConditionEvaluate)
 	call questArea.setEnterAction(QuestAreaEnterActionExecute)
 endfunction
+
+// Quest API
 
 function SetCharacterQuestState takes AQuest whichQuest, integer state returns nothing
 	call whichQuest.setState(state)
@@ -387,12 +392,21 @@ function CreateCharacterQuest takes Character character, string title returns AQ
 	return lastCreatedCharacterQuest
 endfunction
 
+function GetLastCreatedCharacterQuestItem takes nothing returns AQuestItem
+	return lastCreatedCharacterQuestItem
+endfunction
+
 function CreateCharacterQuestItem takes AQuest whichQuest, string title returns AQuestItem
-	return AQuestItem.create(whichQuest, title)
+	set lastCreatedCharacterQuestItem = AQuestItem.create(whichQuest, title)
+	return lastCreatedCharacterQuestItem
 endfunction
 
 function GetCharacterQuestState takes AQuest whichQuest returns integer
 	return whichQuest.state()
+endfunction
+
+function GetQuestItemState takes AQuestItem questItem returns integer
+	return questItem.state()
 endfunction
 
 // Fellow API
