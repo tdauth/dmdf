@@ -15,8 +15,8 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Ich grüße dich, Wotan."), null)
-			call speech(info, character, true, tr("Du bist derjenige, der aufbricht, in eine andere Welt."), null)
+			call speech(info, character, false, tre("Ich grüße dich, Wotan.", "I greet you Wotan."), null)
+			call speech(info, character, true, tre("Du bist derjenige, der aufbricht, in eine andere Welt.", "You are the one who starts off into another world."), null)
 
 			call this.showStartPage(character)
 		endmethod
@@ -28,9 +28,9 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 		private static method infoActionHowAreYou takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
-			call speech(info, character, false, tr("Ist alles in Ordnung?"), null)
-			call speech(info, character, true, tr("Ich bin der Geist der stets verneint, doch andern als ihr Herr erscheint."), null)
-			call speech(info, character, false, tr("Alles klar!"), null)
+			call speech(info, character, false, tre("Ist alles in Ordnung?", "Is everything ok?"), null)
+			call speech(info, character, true, tre("Ich bin der Geist der stets verneint, doch andern als ihr Herr erscheint.", "I am the spirit of ever denying, but others as their lord appears."), null)
+			call speech(info, character, false, tre("Alles klar!", "All right!"), null)
 
 			call this.showStartPage(character)
 		endmethod
@@ -43,11 +43,11 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private static method infoActionShit takes AInfo info, ACharacter character returns nothing
 			local thistype this = thistype(info.talk())
 			local QuestShitOnTheThrone characterQuest = QuestShitOnTheThrone.characterQuest(character)
-			call speech(info, character, false, tr("Wie sitzt es sich auf dem Thron?"), null)
-			call speech(info, character, true, tr("Wer hat es gewagt meinen Thron mit dieser Wurst zu beflecken? Möge der Frevler hervortreten auf dass ich ihn verzaubere, in ein elendes Huhn!"), null)
-			call speech(info, character, true, tr("Sprich, wer ist es, der mir dieses braune Gemisch unter meinem Arsch platzierte!"), null)
-			call speech(info, character, false, tr("Ich weiß nicht wovon du sprichst."), null)
-			call speech(info, character, true, tr("Ich warne dich! Denk ja nicht, dass jede Tat vergessen ist, wenn du wiederkehrst!"), null)
+			call speech(info, character, false, tre("Wie sitzt es sich auf dem Thron?", "How does it sit on the throne?"), null)
+			call speech(info, character, true, tre("Wer hat es gewagt meinen Thron mit dieser Wurst zu beflecken? Möge der Frevler hervortreten auf dass ich ihn verzaubere, in ein elendes Huhn!", "Who dared to stain my throne with this sausage? May the wicked stand up, that I may enchant him into a miserable chicken!"), null)
+			call speech(info, character, true, tre("Sprich, wer ist es, der mir dieses braune Gemisch unter meinem Arsch platzierte!", "Say, who is it, who placed this brown mixture under my ass!"), null)
+			call speech(info, character, false, tre("Ich weiß nicht wovon du sprichst.", "I don't know what you are talking about."), null)
+			call speech(info, character, true, tre("Ich warne dich! Denk ja nicht, dass jede Tat vergessen ist, wenn du wiederkehrst!", "I warn you! Do not think that every act is forgotten when you return!"), null)
 
 			call characterQuest.questItem(QuestShitOnTheThrone.questItemTalkToWotan).complete()
 
@@ -64,11 +64,11 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			local QuestTheChildren characterQuest = QuestTheChildren.characterQuest(character)
 			local effect whichEffect = null
 
-			call speech(info, character, false, tr("Ich war im Obergeschoss deines Hauses."), null)
-			call speech(info, character, true, tr("Neeeiiin! Wie konntest du nur?"), null)
-			call speech(info, character, false, tr("Was zur Hölle hast du dort getrieben?"), null)
+			call speech(info, character, false, tre("Ich war im Obergeschoss deines Hauses.", "I was on the first floor of your house."), null)
+			call speech(info, character, true, tre("Neeeiiin! Wie konntest du nur?", "Noooo! How could you?"), null)
+			call speech(info, character, false, tre("Was zur Hölle hast du dort getrieben?", "What the hell did you do there?"), null)
 
-			call speech(info, character, true, tr("Hölle? Die Hölle ist mein neues Zuhause!"), null)
+			call speech(info, character, true, tre("Hölle? Die Hölle ist mein neues Zuhause!", "Hell? Hell is my new home!"), null)
 
 			// Wotan verwandelt sich in Mephisto.
 			// These two lines of code do the passive transformation to another unit type.
@@ -76,9 +76,9 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call UnitRemoveAbility(Npcs.wotan(), 'A1VC')
 			set whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdx", Npcs.wotan(), "origin")
 
-			call speech(info, character, true, tr("Ich werde die Kinder opfern und mit Hilfe ihrer Seelen den dunklen Fürsten der Dämonen herbeirufen!"), null)
-			call speech(info, character, false, tr("Welche Kinder?"), null)
-			call speech(info, character, false, tr("Geh nun und lass mich allein. Der Untergang ist nahe!"), null)
+			call speech(info, character, true, tre("Ich werde die Kinder opfern und mit Hilfe ihrer Seelen den dunklen Fürsten der Dämonen herbeirufen!", "I will sacrifice my children and use their souls to summon the dark prince of demons!"), null)
+			call speech(info, character, false, tre("Welche Kinder?", "What children?"), null)
+			call speech(info, character, false, tre("Geh nun und lass mich allein. Der Untergang ist nahe!", "Now go and leave me alone. The downfall is near!"), null)
 
 			call characterQuest.questItem(QuestTheChildren.questItemTalkToWotan).setState(QuestTheChildren.stateCompleted)
 			call characterQuest.questItem(QuestTheChildren.questItemSacrifice).setState(QuestTheChildren.stateNew)
@@ -102,10 +102,10 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			local QuestTheChildren characterQuest = QuestTheChildren.characterQuest(character)
 			local thistype this = thistype(info.talk())
 
-			call speech(info, character, false, tr("Ich habe die Kinder gerettet."), null)
-			call speech(info, character, true, tr("Verflucht seist du! Wie konntest du mir das antun? Der Fürst wird mich bestrafen."), null)
-			call speech(info, character, false, tr("..."), null)
-			call character.xpBonus(30, tr("Rechtschaffenheit"))
+			call speech(info, character, false, tre("Ich habe die Kinder gerettet.", "I saved the children."), null)
+			call speech(info, character, true, tre("Verflucht seist du! Wie konntest du mir das antun? Der Fürst wird mich bestrafen.", "Cursed are you! How could you do this to me? The prince will punish me."), null)
+			call speech(info, character, false, tre("...", "..."), null)
+			call character.xpBonus(30, tre("Rechtschaffenheit", "Righteousness"))
 
 			call characterQuest.complete()
 
@@ -121,9 +121,9 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			local QuestTheChildren characterQuest = QuestTheChildren.characterQuest(character)
 			local thistype this = thistype(info.talk())
 
-			call speech(info, character, false, tr("Ich habe die Kinder geopfert."), null)
-			call speech(info, character, true, tr("Gut gemacht. Du bist nun ebenfalls ein Diener der Hölle. Ich überreiche dir diese Belohnung."), null)
-			call speech(info, character, false, tr("Nimm dich in Acht vor jenen, die uns nicht verstehen. Sonst werden sie dich jagen und verbrennen!"), null)
+			call speech(info, character, false, tre("Ich habe die Kinder geopfert.", "I have sacrified the children."), null)
+			call speech(info, character, true, tre("Gut gemacht. Du bist nun ebenfalls ein Diener der Hölle. Ich überreiche dir diese Belohnung.", "Well done. You are now also a servant of hell. I'll give you this reward."), null)
+			call speech(info, character, false, tre("Nimm dich in Acht vor jenen, die uns nicht verstehen. Sonst werden sie dich jagen und verbrennen!", "Beware of those who do not understand us. Otherwise, they will hunt you and burn you!"), null)
 			call character.giveItem('I07C')
 			call character.giveItem('I07C')
 			call character.giveItem('I07C')
@@ -139,17 +139,17 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call this.setName(tre("Wotan", "Wotan"))
 
 			// start page
-			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tr("Ich grüße dich, Wotan."))
-			set this.m_howAreYou = this.addInfo(false, false, thistype.infoConditionHowAreYou, thistype.infoActionHowAreYou, tr("Ist alles in Ordnung?"))
-			set this.m_shit = this.addInfo(false, false, thistype.infoConditionShit, thistype.infoActionShit, tr("Wie sitzt es sich auf dem Thron?"))
-			set this.m_house = this.addInfo(false, false, thistype.infoConditionHouse, thistype.infoActionHouse, tr("Ich war im Obergeschoss deines Hauses."))
-			set this.m_rescue = this.addInfo(false, false, thistype.infoConditionRescue, thistype.infoActionRescue, tr("Ich habe die Kinder gerettet."))
-			set this.m_sacrifice = this.addInfo(false, false, thistype.infoConditionSacrifice, thistype.infoActionSacrifice, tr("Ich habe die Kinder geopfert."))
+			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Ich grüße dich, Wotan.", "I greet you Wotan."))
+			set this.m_howAreYou = this.addInfo(false, false, thistype.infoConditionHowAreYou, thistype.infoActionHowAreYou, tre("Ist alles in Ordnung?", "Is everything ok?"))
+			set this.m_shit = this.addInfo(false, false, thistype.infoConditionShit, thistype.infoActionShit, tre("Wie sitzt es sich auf dem Thron?", "How does it sit on the throne?"))
+			set this.m_house = this.addInfo(false, false, thistype.infoConditionHouse, thistype.infoActionHouse, tre("Ich war im Obergeschoss deines Hauses.", "I was on the first floor of your house."))
+			set this.m_rescue = this.addInfo(false, false, thistype.infoConditionRescue, thistype.infoActionRescue, tre("Ich habe die Kinder gerettet.", "I saved the children."))
+			set this.m_sacrifice = this.addInfo(false, false, thistype.infoConditionSacrifice, thistype.infoActionSacrifice, tre("Ich habe die Kinder geopfert.", "I have sacrified the children."))
 			set this.m_exit = this.addExitButton()
 
 			return this
 		endmethod
-		
+
 		implement Talk
 	endstruct
 
