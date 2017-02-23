@@ -529,25 +529,25 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 
 		public static method showLifeCostTextTag takes unit whichUnit, real lifeCost returns nothing
 			if (not IsUnitHidden(whichUnit)) then
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("-%i"), R2I(lifeCost)), GetUnitX(whichUnit), GetUnitY(whichUnit), 82, 255, 82, 255) // values from mana burn but green has 255 instead of blue
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tre("-%i", "-%i"), R2I(lifeCost)), GetUnitX(whichUnit), GetUnitY(whichUnit), 82, 255, 82, 255) // values from mana burn but green has 255 instead of blue
 			endif
 		endmethod
 
 		public static method showManaTextTag takes unit whichUnit, real mana returns nothing
 			if (not IsUnitHidden(whichUnit)) then
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("+%i"), R2I(mana)), GetUnitX(whichUnit), GetUnitY(whichUnit), 0, 0, 255, 255)
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tre("+%i", "+%i"), R2I(mana)), GetUnitX(whichUnit), GetUnitY(whichUnit), 0, 0, 255, 255)
 			endif
 		endmethod
 
 		public static method showManaCostTextTag takes unit whichUnit, real manaCost returns nothing
 			if (not IsUnitHidden(whichUnit)) then
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("-%i"), R2I(manaCost)), GetUnitX(whichUnit), GetUnitY(whichUnit), 82, 82, 255, 255) // values from mana burn
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tre("-%i", "-%i"), R2I(manaCost)), GetUnitX(whichUnit), GetUnitY(whichUnit), 82, 82, 255, 255) // values from mana burn
 			endif
 		endmethod
 
 		public static method showDamageAbsorbationTextTag takes unit whichUnit, real damage returns nothing
 			if (not IsUnitHidden(whichUnit)) then
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tr("-%i"), R2I(damage)), GetUnitX(whichUnit), GetUnitY(whichUnit), 255, 243, 255, 255)
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(tre("-%i", "-%i"), R2I(damage)), GetUnitX(whichUnit), GetUnitY(whichUnit), 255, 243, 255, 255)
 			endif
 		endmethod
 
@@ -559,7 +559,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 				else
 					set sign = "+"
 				endif
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tr("%s%i"), sign), R2I(moveSpeed)), GetUnitX(whichUnit), GetUnitY(whichUnit), 202, 198, 255, 255)
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tre("%s%i", "%s%i"), sign), R2I(moveSpeed)), GetUnitX(whichUnit), GetUnitY(whichUnit), 202, 198, 255, 255)
 			endif
 		endmethod
 
@@ -571,7 +571,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 				else
 					set sign = "+"
 				endif
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tr("%s%i"), sign), R2I(time)), GetUnitX(whichUnit), GetUnitY(whichUnit), 202, 198, 255, 255)
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tre("%s%i", "%s%i"), sign), R2I(time)), GetUnitX(whichUnit), GetUnitY(whichUnit), 202, 198, 255, 255)
 			endif
 		endmethod
 
@@ -583,7 +583,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 				else
 					set sign = "+"
 				endif
-				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tr("%s%i"), sign), R2I(weaponDamage)), GetUnitX(whichUnit), GetUnitY(whichUnit), 139, 131, 134, 255)
+				call ShowGeneralFadingTextTagForPlayer(null, IntegerArg(StringArg(tre("%s%i", "%s%i"), sign), R2I(weaponDamage)), GetUnitX(whichUnit), GetUnitY(whichUnit), 139, 131, 134, 255)
 			endif
 		endmethod
 

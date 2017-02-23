@@ -196,7 +196,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 				return tre("abgeschlachtet", "slaughtered")
 			endif
 
-			return tr("gezeigt wo der Hammer hängt")
+			return tre("gezeigt wo der Hammer hängt", "shown who the boss is")
 		endmethod
 
 		private static method victory takes player whichPlayer returns nothing
