@@ -18,8 +18,8 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 		// Hallo.
 		private static method infoAction0 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Hallo."), null)
-			call speech(info, character, true, tr("Hallo. Scheint ja einiges los zu sein in dieser Gegend. Du bist nicht der Erste, der mir begegnet. Wie ich es geahnt habe, tut sich so einiges, wenn die Leute Angst bekommen."), gg_snd_Tanka1)
+			call speech(info, character, false, tre("Hallo.", "Hello."), null)
+			call speech(info, character, true, tre("Hallo. Scheint ja einiges los zu sein in dieser Gegend. Du bist nicht der Erste, der mir begegnet. Wie ich es geahnt habe, tut sich so einiges, wenn die Leute Angst bekommen.", "Hello. Seems to be a lot going on in this area. You are not the first to meet me. As I've guessed, there's a lot going on when people get scared."), gg_snd_Tanka1)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -30,15 +30,15 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 		// Wer bist du?
 		private static method infoAction1 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Wer bist du?"), null)
-			call speech(info, character, true, tr("Mein Name ist Tanka. Ich bin eine Schamanin und versuche ja nicht mich übers Ohr zu hauen, sonst haut mein Gefährte Brogo dich um."), gg_snd_Tanka2)
+			call speech(info, character, false, tre("Wer bist du?", "Who are you?"), null)
+			call speech(info, character, true, tre("Mein Name ist Tanka. Ich bin eine Schamanin und versuche ja nicht mich übers Ohr zu hauen, sonst haut mein Gefährte Brogo dich um.", "My name is Tanka. I'm a shaman, and do not try to hurt myself, or my fellow Brogo will kill you."), gg_snd_Tanka2)
 			// (Charakter hat noch nicht mit Brogo gesprochen)
 			if (not TalkBrogo.talk().characterHasTalkedTo(character)) then
-				call speech(info, character, false, tr("Wer ist Brogo?"), null)
-				call speech(info, character, true, tr("Na der große Bärenmensch da neben mir. Er ist mein treuer Gefährte und beschützt mich vor den größten Gefahren dieser Gegend."), gg_snd_Tanka3)
+				call speech(info, character, false, tre("Wer ist Brogo?", "Who is Brogo?"), null)
+				call speech(info, character, true, tre("Na der große Bärenmensch da neben mir. Er ist mein treuer Gefährte und beschützt mich vor den größten Gefahren dieser Gegend.", "Well ,the big bear man beside me. He is my faithful companion and protects me from the greatest dangers of this region."), gg_snd_Tanka3)
 			// (Charakter hat bereits mit Brogo gesprochen)
 			else
-				call speech(info, character, false ,tr("Schon klar."), null)
+				call speech(info, character, false, tre("Schon klar.", "Alright."), null)
 			endif
 			call info.talk().showStartPage(character)
 		endmethod
@@ -50,9 +50,9 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 		// Und was machst du hier?
 		private static method infoAction2 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Und was machst du hier?"), null)
-			call speech(info, character, true, tr("Die Frage sollte wohl eher lauten „Und was macht ihr hier?“. Wir jagen eine starke Bestie. Dieses Ungeheuer hat Brogos Stamm angegriffen und diesen so gut wie ausgerottet. Nur Brogo hier hat überlebt."), gg_snd_Tanka4)
-			call speech(info, character, true, tr("Ich habe ihn gefunden und mich um seine Verletzungen gekümmert und nun jagen wir gemeinsam die Bestie."), gg_snd_Tanka5)
+			call speech(info, character, false, tre("Und was machst du hier?", "And what are you doing here?"), null)
+			call speech(info, character, true, tre("Die Frage sollte wohl eher lauten „Und was macht ihr hier?“. Wir jagen eine starke Bestie. Dieses Ungeheuer hat Brogos Stamm angegriffen und diesen so gut wie ausgerottet. Nur Brogo hier hat überlebt.", "The question should rather be \"And what are you both doing here?\". We hut a strong beast. This monster attacked Brogo's tribe and exterminated it. Only Brogo here has survived."), gg_snd_Tanka4)
+			call speech(info, character, true, tre("Ich habe ihn gefunden und mich um seine Verletzungen gekümmert und nun jagen wir gemeinsam die Bestie.", "I found him and took care of his injuries, and now we hunt together the beast."), gg_snd_Tanka5)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -63,9 +63,9 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 		// Kannst du mir was beibringen?
 		private static method infoAction3 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Kannst du mir was beibringen?"), null)
-			call speech(info, character, true, tr("Können schon, aber wollen nicht unbedingt, sonst setzt du das Erlernte am Ende noch gegen mich ein und das fände ich nicht so toll."), gg_snd_Tanka6)
-			call speech(info, character, true, tr("Sobald ich der Meinung bin, dass du in Ordnung bist, bringe ich dir vielleicht etwas Nützliches bei."), gg_snd_Tanka7)
+			call speech(info, character, false, tre("Kannst du mir was beibringen?", "Can you teach me something?"), null)
+			call speech(info, character, true, tre("Können schon, aber wollen nicht unbedingt, sonst setzt du das Erlernte am Ende noch gegen mich ein und das fände ich nicht so toll.", "Sure I can but do not necessarily want to, otherwise you put the learned in the end against me and I wouldn't really like that."), gg_snd_Tanka6)
+			call speech(info, character, true, tre("Sobald ich der Meinung bin, dass du in Ordnung bist, bringe ich dir vielleicht etwas Nützliches bei.", "As soon as I feel that you're alright, I'll teach you something useful."), gg_snd_Tanka7)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -76,9 +76,9 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 		// Handelst du auch mit irgendwas?
 		private static method infoAction4 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Handelst du auch mit irgendwas?"), null)
-			call speech(info, character, true, tr("Allerdings. Als Schamanin kann man seine Freizeit ganz gut nutzen, um diverse Zaubergegenstände und Tränke herzustellen, wenn man das nötige Wissen und die benötigten Zutaten hat."), gg_snd_Tanka8)
-			call speech(info, character, true, tr("Also wenn du verrückte Sachen mit deinen Gegnern anstellen willst, bist du bei mir genau richtig. Aber ich warne dich Fremder: Mit diesen einfachen Zaubertricks wirst du nichts gegen mich ausrichten können!"), gg_snd_Tanka9)
+			call speech(info, character, false, tre("Handelst du auch mit irgendwas?", "Do you trade with anything?"), null)
+			call speech(info, character, true, tre("Allerdings. Als Schamanin kann man seine Freizeit ganz gut nutzen, um diverse Zaubergegenstände und Tränke herzustellen, wenn man das nötige Wissen und die benötigten Zutaten hat.", "Indeed. As a shaman you can use your leisure time to create various magic objects and potions, if you have the necessary knowledge and the necessary ingredients."), gg_snd_Tanka8)
+			call speech(info, character, true, tre("Also wenn du verrückte Sachen mit deinen Gegnern anstellen willst, bist du bei mir genau richtig. Aber ich warne dich Fremder: Mit diesen einfachen Zaubertricks wirst du nichts gegen mich ausrichten können!", "So if you want to do crazy things with your opponents, you are exactly right with me. BUt I warn you stranger. With these simple magic tricks, you will not be able to do anything against me!"), gg_snd_Tanka9)
 			call info.talk().showStartPage(character)
 		endmethod
 
@@ -89,17 +89,17 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 		// Was für ein Ungeheuer war das?
 		private static method infoAction5 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Was für ein Ungeheuer war das?"), null)
-			call speech(info, character, true, tr("Na, ein ziemlich großes eben. Diese Bestie ist verdammt blutrünstig und verdammt stark. Du musst wissen, dass Brogos Stamm nicht gerade klein war. Dieses Untier hat bestimmt zwanzig oder mehr Bärenmenschen getötet und da waren auch voll ausgewachsene dabei."), gg_snd_Tanka10)
-			call speech(info, character, true, tr("Brogo ist ja noch recht jung, so ein ausgewachsener Bärenmensch ist wesentlich größer und stärker, also kannst du dir ausrechnen, wie stark die Bestie ist."), gg_snd_Tanka11)
-			call speech(info, character, true, tr("Wir folgten der Fährte dieser Bestie bis hier her. Aber hier sind die Spuren zu undeutlich und Brogo konnte die Fährte nicht wieder aufnehmen. Vermutlich hat es zu lange gedauert, bis wir uns auf die Suche nach ihr machten."), gg_snd_Tanka12)
-			call speech(info, character, true, tr("Brogo war ja auch schwer verwundet. Na ja, wenn du irgendeinen Hinweis in der Umgebung findest, dann gib mir einfach Bescheid."), gg_snd_Tanka13)
+			call speech(info, character, false, tre("Was für ein Ungeheuer war das?", "What kind of monster was that?"), null)
+			call speech(info, character, true, tre("Na, ein ziemlich großes eben. Diese Bestie ist verdammt blutrünstig und verdammt stark. Du musst wissen, dass Brogos Stamm nicht gerade klein war. Dieses Untier hat bestimmt zwanzig oder mehr Bärenmenschen getötet und da waren auch voll ausgewachsene dabei.", "Well, a pretty big one. This beast is damned bloodthirsty and damn strong. You must know that Brogo's tribe was not exactly small. This monster had killed twenty or more bear men, and there were also grown-ups."), gg_snd_Tanka10)
+			call speech(info, character, true, tre("Brogo ist ja noch recht jung, so ein ausgewachsener Bärenmensch ist wesentlich größer und stärker, also kannst du dir ausrechnen, wie stark die Bestie ist.", "Brogo is still very young, a grown bear man is much bigger and stronger, so you can calculate how strong the beast is."), gg_snd_Tanka11)
+			call speech(info, character, true, tre("Wir folgten der Fährte dieser Bestie bis hier her. Aber hier sind die Spuren zu undeutlich und Brogo konnte die Fährte nicht wieder aufnehmen. Vermutlich hat es zu lange gedauert, bis wir uns auf die Suche nach ihr machten.", "We followed the trail of this beast to here. But here the tracks are too vague and Brogo could not resume the track. It probably took too long for us to look for it."), gg_snd_Tanka12)
+			call speech(info, character, true, tre("Brogo war ja auch schwer verwundet. Na ja, wenn du irgendeinen Hinweis in der Umgebung findest, dann gib mir einfach Bescheid.", "Brogo was also seriously wounded. Well, if you find any hint in the area, just let me know."), gg_snd_Tanka13)
 			call QuestTheBeast.characterQuest(character).enable()
 			call info.talk().showStartPage(character)
 		endmethod
 
 		private static method completeHints takes AInfo info, Character character returns nothing
-			call speech(info, character, true, tr("Ich denke, dass reicht schon mit den Hinweisen. Wir werden uns wohl bald möglichst in Richtung Süden aufmachen, um die Bestie zu jagen. Hier hast du ein paar Flammengemische zur Belohnung. Ich hoffe, sie werden sich dir im Kampf als nützlich erweisen und hier sind natürlich noch ein paar Goldmünzen."), gg_snd_Tanka16)
+			call speech(info, character, true, tre("Ich denke, dass reicht schon mit den Hinweisen. Wir werden uns wohl bald möglichst in Richtung Süden aufmachen, um die Bestie zu jagen. Hier hast du ein paar Flammengemische zur Belohnung. Ich hoffe, sie werden sich dir im Kampf als nützlich erweisen und hier sind natürlich noch ein paar Goldmünzen.", "I think that is enough with the hints. We'll probably heading south as soon as possible to hunt the beast. Here you have a few flames to reward. I hope they will be useful to you in the fight and here are of course a few gold coins."), gg_snd_Tanka16)
 			/// Charakter erhält 6 Flammengemische
 			call character.giveItem('I01F')
 			call character.giveItem('I01F')
@@ -118,12 +118,12 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 		// Ich habe einen Hinweis entdeckt.
 		private static method infoAction6 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Ich habe einen Hinweis entdeckt."), null)
-			call speech(info, character, true, tr("Welchen denn?"), gg_snd_Tanka14)
-			call speech(info, character, false, tr("Weiter südlich von hier sind einige Blutspuren und tote Tiere. Könnte die Bestie gewesen sein."), null)
-			call speech(info, character, true, tr("Ja, das wäre gut möglich. Ich danke dir. Hier hast du ein paar Goldmünzen zur Belohnung."), gg_snd_Tanka15)
+			call speech(info, character, false, tre("Ich habe einen Hinweis entdeckt.", "I've discovered a clue."), null)
+			call speech(info, character, true, tre("Welchen denn?", "Which one?"), gg_snd_Tanka14)
+			call speech(info, character, false, tre("Weiter südlich von hier sind einige Blutspuren und tote Tiere. Könnte die Bestie gewesen sein.", "Further south from here are some blood trails and dead animals. Could have been the beast."), null)
+			call speech(info, character, true, tre("Ja, das wäre gut möglich. Ich danke dir. Hier hast du ein paar Goldmünzen zur Belohnung.", "Yes, that would be possible. I thank you. Here you have a few gold coins to reward."), gg_snd_Tanka15)
 			call character.addGold(thistype.rewardGold)
-			call character.displayMessage(ACharacter.messageTypeInfo, IntegerArg(tr("%i Goldmünzen erhalten."), thistype.rewardGold))
+			call character.displayMessage(ACharacter.messageTypeInfo, IntegerArg(tre("%i Goldmünzen erhalten.", "Got %i gold coins."), thistype.rewardGold))
 			call thistype(info.talk()).addHint(character.player())
 			// (Beide Hinweise wurden angesprochen)
 			if (thistype(info.talk()).hints(character.player()) == 2) then
@@ -140,9 +140,9 @@ library StructMapTalksTalkTanka requires Asl, StructMapTalksTalkBrogo, StructMap
 
 		// Der Holzfäller Kuno hat die Bestie gesehen.
 		private static method infoAction7 takes AInfo info, ACharacter character returns nothing
-			call speech(info, character, false, tr("Der Holzfäller Kuno hat die Bestie gesehen."), null)
-			call speech(info, character, true, tr("Und wo?"), gg_snd_Tanka17)
-			call speech(info, character, false, tr("Weiter südlich. Vor ein paar Tagen ist sie an seiner Hütte vorbeigekommen während er im Bett lag."), null)
+			call speech(info, character, false, tre("Der Holzfäller Kuno hat die Bestie gesehen.", "THe woodcutter Kuno saw the beast."), null)
+			call speech(info, character, true, tre("Und wo?", "And where?"), gg_snd_Tanka17)
+			call speech(info, character, false, tre("Weiter südlich. Vor ein paar Tagen ist sie an seiner Hütte vorbeigekommen während er im Bett lag.", "Further south. A few days ago, it passed his hut while he was lying in bed."), null)
 			call speech(info, character, true, tr("Und er ist sich sicher, dass es die Bestie war?"), gg_snd_Tanka18)
 			call speech(info, character, false, tr("Na ja, er sprach von einem riesigen, haarigen Viech, welches nach Tod und Verderben stank."), null)
 			call speech(info, character, true, tr("Das kann nur die Bestie gewesen sein. Hier hast du ein paar Goldmünzen zur Belohnung."), gg_snd_Tanka19)
