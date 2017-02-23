@@ -633,14 +633,35 @@ endif
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
 			if (not IsUnitDeadBJ(this.unit())) then
 				if (GetEventPlayerChatString() == "-dance") then
-					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% tanzt.", "%1% is dancing"))
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% tanzt.", "%1% is dancing."))
 					call SetUnitAnimationByIndex(this.unit(), 187)
 				elseif (GetEventPlayerChatString() == "-pray") then
-					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% betet.", "%1% is praying"))
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% betet.", "%1% is praying."))
 					call SetUnitAnimationByIndex(this.unit(), 195)
 				elseif (GetEventPlayerChatString() == "-magic") then
-					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% zaubert.", "%1% is using magic"))
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% zaubert.", "%1% is using magic."))
 					call SetUnitAnimationByIndex(this.unit(), GetRandomInt(85, 87))
+				elseif (GetEventPlayerChatString() == "-dead") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% stirbt.", "%1% dies."))
+					call SetUnitAnimationByIndex(this.unit(), 70)
+				elseif (GetEventPlayerChatString() == "-jump") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% springt.", "%1% jumps."))
+					call SetUnitAnimationByIndex(this.unit(), 78)
+				elseif (GetEventPlayerChatString() == "-sleep") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% schläft.", "%1% sleeps."))
+					call SetUnitAnimationByIndex(this.unit(), 80)
+				elseif (GetEventPlayerChatString() == "-sport") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% macht Sport.", "%1% does sports."))
+					call SetUnitAnimationByIndex(this.unit(), GetRandomInt(97, 98))
+				elseif (GetEventPlayerChatString() == "-victory") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% feiert.", "%1% celebrates."))
+					call SetUnitAnimationByIndex(this.unit(), 105)
+				elseif (GetEventPlayerChatString() == "-cross") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% trägt ein Kreuz.", "%1% carries a cross."))
+					call SetUnitAnimationByIndex(this.unit(), 180)
+				elseif (GetEventPlayerChatString() == "-surrender") then
+					call thistype.chatEmote(GetTriggerPlayer(), tre("%1% ergibt sich.", "%1% surrenders."))
+					call SetUnitAnimationByIndex(this.unit(), 190)
 				endif
 			endif
 		endmethod
