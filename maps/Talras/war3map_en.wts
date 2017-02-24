@@ -3818,7 +3818,7 @@ Erhöht den Schaden um <A17K,DataA1> und gibt eine Chance von <A17L,DataA1> % de
 }
 
 STRING 637
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Einheiten: n00E (Feuergeschoss), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Elemental Mage)
 }
@@ -3954,7 +3954,7 @@ Increases the armour of an ally for a certain time.|n|n|cffffcc00Level 1|r - <A0
 }
 
 STRING 660
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01C (Prinz der Nordmänner), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -4091,9 +4091,9 @@ Strength
 }
 
 STRING 684
-// Fähigkeiten: A1V5 (Optionen - Weltkarte), Name (Name (anam))
+// Fähigkeiten: A1V4 (Optionen - Weltkarte), Name (Name (anam))
 {
-Optionen - Weltkarte
+Options - World Map
 }
 
 STRING 685
@@ -4200,7 +4200,7 @@ Mock [|cffffcc00Level 2|r]
 }
 
 STRING 703
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Einheiten: n06M (Feuergeschoss), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Elemental Mage)
 }
@@ -4242,7 +4242,7 @@ Gods Favor - Level 4
 }
 
 STRING 710
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H014 (Zauberin), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -4260,7 +4260,7 @@ Mutter
 }
 
 STRING 713
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01D (Jäger), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -4272,7 +4272,7 @@ Dorfbewohnerin
 }
 
 STRING 715
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A019 (Erfrierung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -4332,7 +4332,7 @@ Gotlinde
 }
 
 STRING 725
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01E (Nordmann), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -4344,7 +4344,7 @@ Hans' Stand
 }
 
 STRING 727
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A14T (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -4374,7 +4374,7 @@ Wotan
 }
 
 STRING 732
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01F (Hochelfin), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -4416,7 +4416,7 @@ Saugt 12 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und
 }
 
 STRING 739
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A017 (Eisgeschoss), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -4488,7 +4488,7 @@ Drains mana per second from each opponent in the range of 900 and transfers it t
 }
 
 STRING 751
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A014 (Feuergeschoss), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -4560,7 +4560,7 @@ STRING 762
 }
 
 STRING 763
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01I (Teleportation), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -4632,19 +4632,19 @@ Kreisen
 }
 
 STRING 775
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01D (Eiszeit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
 
 STRING 776
-// Fähigkeiten: A1V9 (Kind opfern), Name (Name (anam))
+// Fähigkeiten: A1V9 (Kind opfern), Tip (Tooltipp - Normal (atp1))
 {
-Kind opfern
+Sacrifice Child
 }
 
 STRING 777
-// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
+// Einheiten: n086 (Schattenefreet), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Book of Demonology)
 }
@@ -4674,15 +4674,15 @@ Sacrifice Animal
 }
 
 STRING 782
-// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
+// Einheiten: n087 (Berserker), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Book of Demonology)
 }
 
 STRING 783
-// Fähigkeiten: A1VA (Tier opfern), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1VA (Tier opfern), Name (Name (anam))
 {
-Tier opfern
+Sacrifice Animal
 }
 
 STRING 784
@@ -4704,7 +4704,7 @@ Drains mana per second from each opponent in the range of 900 and transfers it t
 }
 
 STRING 787
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01C (Entzünden), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -4746,7 +4746,7 @@ Mastery
 }
 
 STRING 794
-// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
+// Einheiten: n088 (Imp), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Book of Demonology)
 }
@@ -4776,13 +4776,13 @@ Mephisto
 }
 
 STRING 799
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A018 (Blitzschlag), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
 
 STRING 800
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H024 (Vagabundin), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -4848,7 +4848,7 @@ Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area4>
 }
 
 STRING 811
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01F (Beherrschung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -4902,9 +4902,9 @@ Der Geist eines Tieres
 }
 
 STRING 820
-// Gegenstände: I07D (Der Geist eines Tieres), Tip (Tooltipp - Einfach (utip))
+// Gegenstände: I07C (Die Seele eines Kindes), Tip (Tooltipp - Einfach (utip))
 {
-Die Seele eines Kindes kaufen
+Buy the Soul of a Child
 }
 
 STRING 821
@@ -4920,7 +4920,7 @@ Der Geist eines friedlichen Tieres.
 }
 
 STRING 823
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01G (Zehren), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -4992,7 +4992,7 @@ Increases the armour by <A094,DataA1>.
 }
 
 STRING 835
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1I8 (Elementarwesen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -5022,7 +5022,7 @@ Imp anheuern
 }
 
 STRING 840
-// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1OP (Zorn des Waldes - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
@@ -5034,7 +5034,7 @@ Flügelschlag
 }
 
 STRING 842
-// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EE (Zorn des Waldes - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
@@ -5064,7 +5064,7 @@ Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stec
 }
 
 STRING 847
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VH (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -5076,25 +5076,25 @@ Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stec
 }
 
 STRING 849
-// Fähigkeiten: A03Q (Wut der Elemente), Name (Name (anam))
+// Fähigkeiten: A01J (Wut der Elemente), Name (Name (anam))
 {
 Rage of Elements
 }
 
 STRING 850
-// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EG (Zorn des Waldes - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
 
 STRING 851
-// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0ED (Zorn des Waldes - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
 
 STRING 852
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01H (Erdgefängnis), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -5142,7 +5142,7 @@ Imp
 }
 
 STRING 860
-// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EF (Zorn des Waldes - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
@@ -5226,13 +5226,13 @@ Guardian
 }
 
 STRING 874
-// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0L2 (Teleportation - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
 
 STRING 875
-// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
+// Einheiten: n08V (Herr der Finsternis), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Book of Demonology)
 }
@@ -5250,19 +5250,19 @@ Baldar
 }
 
 STRING 878
-// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0L0 (Teleportation - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
 
 STRING 879
-// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1O7 (Teleportation - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
 
 STRING 880
-// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0L3 (Teleportation - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
@@ -5458,7 +5458,7 @@ STRING 912
 }
 
 STRING 913
-// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1VA (Tier opfern), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Demonology)
 }
@@ -5488,7 +5488,7 @@ Lebenswille erlernen
 }
 
 STRING 918
-// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1VB (Beschwörung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Demonology)
 }
@@ -5512,7 +5512,7 @@ STRING 921
 }
 
 STRING 922
-// Zauberverstärker/Effekte: B010 (Beschworener Dämon), EditorName (Name (nur Editor) (fnam))
+// Zauberverstärker/Effekte: B010 (Beschworener Dämon), Bufftip (Tooltipp (ftip))
 {
 Summoned Demon
 }
@@ -5560,7 +5560,7 @@ Blood Ritual
 }
 
 STRING 930
-// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1VD (Herr der Finsternis), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Demonology)
 }
@@ -5596,7 +5596,7 @@ STRING 935
 }
 
 STRING 936
-// Fähigkeiten: A09G (Blutritual), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A09G (Blutritual), Name (Name (anam))
 {
 Blood Ritual
 }
@@ -5638,7 +5638,7 @@ Orc Wolf Rider
 }
 
 STRING 943
-// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1VE (Blutritual), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Demonology)
 }
@@ -5710,7 +5710,7 @@ Cow
 }
 
 STRING 955
-// Einheiten: h03L (Reiterloses Pferd), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08B (Kuh), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (White)
 }
@@ -5818,7 +5818,7 @@ STRING 972
 }
 
 STRING 973
-// Gegenstände: I005 (Holzschild), Name (Name (unam))
+// Fähigkeiten: A01T (Holzschild), Name (Name (anam))
 {
 Wooden Shield
 }
@@ -5872,7 +5872,7 @@ Dark Servant
 }
 
 STRING 982
-// Zauberverstärker/Effekte: B004 (Dunkler Diener), EditorName (Name (nur Editor) (fnam))
+// Zauberverstärker/Effekte: B004 (Dunkler Diener), Bufftip (Tooltipp (ftip))
 {
 Dark Servant
 }
@@ -6202,7 +6202,7 @@ Diese Einheit ist gefangen; sie kann sich weder bewegen noch angreifen oder Zaub
 }
 
 STRING 1037
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VA (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -6238,7 +6238,7 @@ Frost Creature
 }
 
 STRING 1043
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08F (Alwis' Stand), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -6250,7 +6250,7 @@ Mutter der Medusa
 }
 
 STRING 1045
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08H (Frostwesen), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -6262,7 +6262,7 @@ Ork-Ältester
 }
 
 STRING 1047
-// Fähigkeiten: A01X (Pure Energie), Name (Name (anam))
+// Fähigkeiten: A03O (Pure Energie), Name (Name (anam))
 {
 Pure Energy
 }
@@ -6610,7 +6610,7 @@ Changes to the previous class.
 }
 
 STRING 1105
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03F (Konvertierter Inquisitor), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -6634,7 +6634,7 @@ Farmer
 }
 
 STRING 1109
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08J (Holzfäller), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -6646,7 +6646,7 @@ Miner
 }
 
 STRING 1111
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08K (Bauer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -6658,7 +6658,7 @@ Hunter
 }
 
 STRING 1113
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08L (Bergmann), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -6736,7 +6736,7 @@ Heals <A1C8,DataA1> hit points on usage.
 }
 
 STRING 1126
-// Fähigkeiten: A1VG (Mephistos Zepter), Name (Name (anam))
+// Gegenstände: I07G (Mephistos Zepter), Name (Name (unam))
 {
 Mephisto's Scepter
 }
@@ -6778,7 +6778,7 @@ STRING 1132
 }
 
 STRING 1133
-// Fähigkeiten: A1VH (Kinder opfern), Name (Name (anam))
+// Fähigkeiten: A1VH (Kinder opfern), Tip (Tooltipp - Normal (atp1))
 {
 Sacrifice Children
 }
@@ -6802,7 +6802,7 @@ Kinder retten
 }
 
 STRING 1137
-// Fähigkeiten: A1VH (Kinder opfern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1VI (Kinder retten), EditorSuffix (Editor-Suffix (ansf))
 {
 (Mephisto's Scepter)
 }
@@ -6874,7 +6874,7 @@ STRING 1148
 }
 
 STRING 1149
-// Fähigkeiten: A1Q5 (Stille), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: S007 (Lebendiebstahl), EditorSuffix (Editor-Suffix (ansf))
 {
 (Succubus)
 }
@@ -7156,7 +7156,7 @@ Nordfrau ausbilden
 }
 
 STRING 1196
-// Fähigkeiten: A1Q5 (Stille), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1Q4 (Bezauberung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Succubus)
 }
@@ -7636,7 +7636,7 @@ A Norseman is a strong melee fighter.
 }
 
 STRING 1276
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08M (Jäger), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -7708,7 +7708,7 @@ Ein bissiger gezähmter Wolf.
 }
 
 STRING 1288
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08T (Hauptmann), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -7822,7 +7822,7 @@ Kiste 2
 }
 
 STRING 1307
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08U (Gezähmter Wolf), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -7834,7 +7834,7 @@ Lightning
 }
 
 STRING 1309
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01E (Feuersbrunst), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -7882,9 +7882,9 @@ Stellt bei Benutzung <AImr,DataA1> Mana bei sich selbst und verbündeten Einheit
 }
 
 STRING 1317
-// Gegenstände: I00G (Spruchrolle der Zauberkraft), Description (Beschreibung (ides))
+// Gegenstände: I06S (Großes Manakraut), Description (Beschreibung (ides))
 {
-Stellt verlorenes Mana wieder her.
+Restores missing mana.
 }
 
 STRING 1318
@@ -8146,7 +8146,7 @@ Verstärkt die Rüstung um <A016,DataA1>.
 }
 
 STRING 1361
-// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B010 (Beschworener Dämon), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Book of Demonology)
 }
@@ -8296,7 +8296,7 @@ The summer fur of a red deer.
 }
 
 STRING 1386
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: h03R (Magier), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -8374,7 +8374,7 @@ Multishot
 }
 
 STRING 1399
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08W (Ork-Wolfsreiter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -8620,7 +8620,7 @@ Der Zaubernde springt zu einem bestimmten Punkt und fügt den dortigen Gegnern i
 }
 
 STRING 1440
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: h03S (Zwergenmagier), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -8980,7 +8980,7 @@ Zerlegt den Elementarmagier in Elementarwesen, sodass 2 spezielle Elementarwesen
 }
 
 STRING 1500
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B005 (Erdgefängnis), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Elemental Mage)
 }
@@ -9004,7 +9004,7 @@ Zehren
 }
 
 STRING 1504
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B00E (Zehren), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Elemental Mage)
 }
@@ -10264,7 +10264,7 @@ STRING 1713
 }
 
 STRING 1714
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08Z (Nordischer Ahne), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -11080,7 +11080,7 @@ Bronzeset - Rüstungsbonus
 }
 
 STRING 1850
-// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: h03T (Ginarr), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (The North)
 }
@@ -11715,9 +11715,9 @@ B
 }
 
 STRING 1960
-// Fähigkeiten: A1KH (Großes Heilkraut), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Heilung)
+(Healing)
 }
 
 STRING 1961
@@ -11756,9 +11756,9 @@ Loaf
 }
 
 STRING 1970
-// Fähigkeiten: A061 (Steinpilz), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Heilung)
+(Healing)
 }
 
 STRING 1971
@@ -14028,9 +14028,9 @@ Rigidity
 }
 
 STRING 2394
-// Fähigkeiten: A0N5 (Ruf des Nordens), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05I (Rundumhieb), EditorSuffix (Editor-Suffix (ansf))
 {
-(Wigberht)
+Ein friedliches Schaf, das sich gerne reiten lässt.
 }
 
 STRING 2395
@@ -14148,15 +14148,15 @@ Schil|cffffcc00d|rblock
 }
 
 STRING 2414
-// Zauberverstärker/Effekte: B00S (Speerwurf), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A05H (Speerwurf), Name (Name (anam))
 {
-Speerwurf
+Spear Throw
 }
 
 STRING 2415
-// Zauberverstärker/Effekte: B00S (Speerwurf), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A05H (Speerwurf), Name (Name (anam))
 {
-Speerwurf
+Spear Throw
 }
 
 STRING 2416
@@ -15007,9 +15007,9 @@ STRING 2581
 }
 
 STRING 2582
-// Fähigkeiten: A04S (Fleischkeule), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Heilung)
+(Healing)
 }
 
 STRING 2583
@@ -15019,9 +15019,9 @@ Chanterelle
 }
 
 STRING 2584
-// Fähigkeiten: A19J (Heilkraut), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Heilung)
+(Healing)
 }
 
 STRING 2585
@@ -16739,7 +16739,7 @@ Selbstlosigkeit [|cffffcc00Stufe 1|r]
 }
 
 STRING 2967
-// Fähigkeiten: A073 (Selbstlosigkeit), Name (Name (anam))
+// Fähigkeiten: A074 (Selbstlosigkeit), Name (Name (anam))
 {
 Selflessness
 }
@@ -16751,7 +16751,7 @@ STRING 2970
 }
 
 STRING 2971
-// Fähigkeiten: A073 (Selbstlosigkeit), Name (Name (anam))
+// Zauberverstärker/Effekte: B013 (Selbstlosigkeit (Ziel)), Bufftip (Tooltipp (ftip))
 {
 Selflessness
 }
@@ -16781,7 +16781,7 @@ Diese Einheit steht unter der Wirkung von 'Selbstlosigkeit'; ihr erlittener Scha
 }
 
 STRING 2976
-// Fähigkeiten: A073 (Selbstlosigkeit), Name (Name (anam))
+// Zauberverstärker/Effekte: B014 (Selbstlosigkeit), EditorName (Name (nur Editor) (fnam))
 {
 Selflessness
 }
@@ -16799,7 +16799,7 @@ Diese Einheit steht unter der Wirkung von 'Selbstlosigkeit'; ihr erlittener Scha
 }
 
 STRING 2980
-// Fähigkeiten: A073 (Selbstlosigkeit), Name (Name (anam))
+// Zauberverstärker/Effekte: B014 (Selbstlosigkeit), Bufftip (Tooltipp (ftip))
 {
 Selflessness
 }
@@ -16931,7 +16931,7 @@ Stiefel eines Druiden kaufen
 }
 
 STRING 3003
-// Zauberverstärker/Effekte: B038 (), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A0T2 (Bestienjäger), Name (Name (anam))
 {
 Beast Hunter
 }
@@ -16955,7 +16955,7 @@ STRING 3006
 }
 
 STRING 3007
-// Zauberverstärker/Effekte: B038 (), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A076 (Bestienjäger), Name (Name (anam))
 {
 Beast Hunter
 }
@@ -21232,7 +21232,7 @@ STRING 3870
 }
 
 STRING 3871
-// Fähigkeiten: A09G (Blutritual), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1VE (Blutritual), Name (Name (anam))
 {
 Blood Ritual
 }
@@ -21244,7 +21244,7 @@ STRING 3872
 }
 
 STRING 3873
-// Fähigkeiten: A09G (Blutritual), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1VE (Blutritual), Tip (Tooltipp - Normal (atp1))
 {
 Blood Ritual
 }
@@ -21718,31 +21718,31 @@ Bear form
 }
 
 STRING 3968
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 3969
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 3970
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 3971
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 3972
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
@@ -21808,7 +21808,7 @@ STRING 3982
 }
 
 STRING 3983
-// Einheiten: H02E (Nixe), Propernames (Eigennamen (upro))
+// Einheiten: H02E (Nixe), Name (Name (unam))
 {
 Neck
 }
@@ -23212,7 +23212,7 @@ Erhöht den Schaden von Verbündeten in der Nähe <A0VO,Dur1> Sekunden lang um <
 }
 
 STRING 4305
-// Fähigkeiten: A0VP (Horn des Schutzes), Name (Name (anam))
+// Gegenstände: I04H (Horn des Schutzes), Name (Name (unam))
 {
 Horn of Protection
 }
@@ -23266,7 +23266,7 @@ Entzieht einem Gegner Mana, fügt ihm Schaden in doppelter Höhe zu und übertr�
 }
 
 STRING 4314
-// Fähigkeiten: A0VQ (Horn des Lebens), Name (Name (anam))
+// Gegenstände: I04I (Horn des Lebens), Name (Name (unam))
 {
 Horn of Life
 }
@@ -23314,7 +23314,7 @@ STRING 4321
 }
 
 STRING 4322
-// Fähigkeiten: A0VP (Horn des Schutzes), Name (Name (anam))
+// Fähigkeiten: A0VP (Horn des Schutzes), Tip (Tooltipp - Normal (atp1))
 {
 Horn of Protection
 }
@@ -23326,7 +23326,7 @@ STRING 4323
 }
 
 STRING 4324
-// Fähigkeiten: A0VQ (Horn des Lebens), Name (Name (anam))
+// Fähigkeiten: A0VQ (Horn des Lebens), Tip (Tooltipp - Normal (atp1))
 {
 Horn of Life
 }
@@ -28795,13 +28795,13 @@ STRING 6113
 }
 
 STRING 6114
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C4 (Wirbelsturm), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
 
 STRING 6115
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C5 (Parasit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -28915,9 +28915,9 @@ Blessing [|cffffcc00Level 2|r]
 }
 
 STRING 6134
-// Fähigkeiten: A04Q (Brotlaib), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Heilung)
+(Healing)
 }
 
 STRING 6135
@@ -34291,7 +34291,7 @@ Eiszeit - Stufe 4
 }
 
 STRING 8366
-// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1MH (Beherrschung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
@@ -38245,9 +38245,9 @@ Exorcize Evil [|cffffcc00Level 1|r]
 }
 
 STRING 9803
-// Einheiten: n040 (Trommelhöhle), Name (Name (unam))
+// Fähigkeiten: A1U1 (Dungeons - Trommelhöhle), Tip (Tooltipp - Normal (atp1))
 {
-Trommelhöhle
+Drum Cave
 }
 
 STRING 9804
@@ -38257,7 +38257,7 @@ Norseman
 }
 
 STRING 9806
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H015 (Dorfbewohner), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -38293,7 +38293,7 @@ Sorceress
 }
 
 STRING 9813
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03G (Händler), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -38305,13 +38305,13 @@ Hunter
 }
 
 STRING 9817
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03H (Dorfbewohnerin), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
 
 STRING 9820
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03I (Dorfbewohnerin), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -38323,7 +38323,7 @@ High Elf
 }
 
 STRING 9823
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03J (Dorfältester), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -38941,7 +38941,7 @@ Feuersbrunst - Stufe 2
 }
 
 STRING 10037
-// Fähigkeiten: A11I (Beherrschung - Level 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
 {
 Mastery [|cffffcc00Level 1|r]
 }
@@ -39091,7 +39091,7 @@ Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 10130
-// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A11K (Beherrschung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
@@ -39691,7 +39691,7 @@ Melee
 }
 
 STRING 10371
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B02G (Beherrschung), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Elemental Mage)
 }
@@ -39769,7 +39769,7 @@ Fernkampf
 }
 
 STRING 10384
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1I7 (Wächter des Flusses beschwören), EditorSuffix (Editor-Suffix (ansf))
 {
 (Elemental Mage)
 }
@@ -42091,7 +42091,7 @@ Zehren - Stufe 5
 }
 
 STRING 11281
-// Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11J (Beherrschung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Mastery [|cffffcc00Level 2|r]
 }
@@ -42378,7 +42378,7 @@ Arkane Zeit - Stufe 2
 }
 
 STRING 11386
-// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A11I (Beherrschung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
@@ -43091,19 +43091,19 @@ Der Elementarmagier bekommt 60 Manapunkte für 10 Leben pro Sekunde zurück. Er 
 }
 
 STRING 11653
-// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UN (Blitzschlag - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
 
 STRING 11654
-// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UL (Blitzschlag - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
 
 STRING 11655
-// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UO (Blitzschlag - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
@@ -43115,7 +43115,7 @@ A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - D
 }
 
 STRING 11657
-// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UP (Blitzschlag - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
@@ -43157,25 +43157,25 @@ Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r -
 }
 
 STRING 11664
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0ER (Tierkunde - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 11665
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EQ (Tierkunde - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 11666
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EN (Tierkunde - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 11667
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1OR (Tierkunde - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
@@ -43253,7 +43253,7 @@ Arcane Time [|cffffcc00Level 5|r]
 }
 
 STRING 11690
-// Fähigkeiten: A11K (Beherrschung - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
 {
 Mastery [|cffffcc00Level 3|r]
 }
@@ -43271,13 +43271,13 @@ Beherrschung - Stufe 3
 }
 
 STRING 11695
-// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A11L (Beherrschung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
 
 STRING 11704
-// Fähigkeiten: A11L (Beherrschung - Level 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
 {
 Mastery [|cffffcc00Level 4|r]
 }
@@ -43463,7 +43463,7 @@ Erhöht die Angriffsgeschwindigkeit falls ein Bogen getragen wird.
 }
 
 STRING 11749
-// Gegenstände: I04W (Pfeilköcher), Name (Name (unam))
+// Fähigkeiten: A160 (Pfeilköcher), Name (Name (anam))
 {
 Arrows Quiver
 }
@@ -43649,7 +43649,7 @@ Standfestigkeit - Stufe 1
 }
 
 STRING 11788
-// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1NF (Standfestigkeit - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
@@ -43673,7 +43673,7 @@ Standfestigkeit - Stufe 2
 }
 
 STRING 11802
-// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A125 (Standfestigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
@@ -43697,7 +43697,7 @@ Standfestigkeit - Stufe 3
 }
 
 STRING 11816
-// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A128 (Standfestigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
@@ -43721,7 +43721,7 @@ Standfestigkeit - Stufe 4
 }
 
 STRING 11830
-// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A127 (Standfestigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
@@ -43835,7 +43835,7 @@ Learn spells - 8 skill points (|cffffcc00Z|r)
 }
 
 STRING 11860
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Einheiten: n067 (Hain), Name (Name (unam))
 {
 (Elemental Mage)
 }
@@ -44939,7 +44939,7 @@ Wolle kaufen
 }
 
 STRING 12222
-// Gegenstände: I04X (Wolle), Description (Beschreibung (ides))
+// Gegenstände: I04X (Wolle), Ubertip (Tooltipp - Erweitert (utub))
 {
 The wool of a sheep.
 }
@@ -45413,7 +45413,7 @@ Protect [|cffffcc00Level 1|r]
 }
 
 STRING 12423
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 (Elemental Mage)
 }
@@ -45785,7 +45785,7 @@ STRING 12588
 }
 
 STRING 12589
-// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 (Elemental Mage)
 }
@@ -48647,7 +48647,7 @@ Vagabundin
 }
 
 STRING 13266
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03K (Wahnsinniger Dorfältester), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -49703,7 +49703,7 @@ Nordischer Kriegshelm
 }
 
 STRING 13532
-// Einheiten: n055 (Wächter), Name (Name (unam))
+// Zauberverstärker/Effekte: B02N (), Bufftip (Tooltipp (ftip))
 {
 Guardian
 }
@@ -50039,9 +50039,9 @@ STRING 13587
 }
 
 STRING 13588
-// Gegenstände: I05L (Manakraut), Description (Beschreibung (ides))
+// Gegenstände: I06S (Großes Manakraut), Description (Beschreibung (ides))
 {
-Stellt verlorenes Mana wieder her.
+Restores missing mana.
 }
 
 STRING 13589
@@ -50699,9 +50699,9 @@ Bekehrung [|cffffcc00Stufe 2|r] (|cffffcc00T|r)
 }
 
 STRING 13711
-// Fähigkeiten: A1SA (Mehl), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Heilung)
+(Healing)
 }
 
 STRING 13712
@@ -59789,7 +59789,7 @@ Haids Stand
 }
 
 STRING 15226
-// Gegenstände: I04W (Pfeilköcher), Name (Name (unam))
+// Fähigkeiten: A1EJ (Pfeilköcher), Name (Name (anam))
 {
 Arrows Quiver
 }
@@ -60233,7 +60233,7 @@ Verfluchter Boden - Erlernen
 }
 
 STRING 15339
-// Fähigkeiten: A1AB (Verfluchter Boden), Name (Name (anam))
+// Fähigkeiten: A1A8 (Verfluchter Boden), Name (Name (anam))
 {
 Cursed Ground
 }
@@ -60899,9 +60899,9 @@ Erz
 }
 
 STRING 15461
-// Einheiten: n07H (Skelettmörder), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 15462
@@ -62447,13 +62447,13 @@ Horn des Kampfes
 }
 
 STRING 15834
-// Fähigkeiten: A0VQ (Horn des Lebens), Name (Name (anam))
+// Fähigkeiten: A1B7 (Horn des Lebens), Name (Name (anam))
 {
 Horn of Life
 }
 
 STRING 15835
-// Fähigkeiten: A0VP (Horn des Schutzes), Name (Name (anam))
+// Fähigkeiten: A1B8 (Horn des Schutzes), Name (Name (anam))
 {
 Horn of Protection
 }
@@ -62513,19 +62513,19 @@ STRING 15844
 }
 
 STRING 15845
-// Fähigkeiten: A1E0 (Schmetter-Angriff), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DZ (Befehls-Aura), EditorSuffix (Editor-Suffix (ansf))
 {
 (Warlord of the Orcs)
 }
 
 STRING 15846
-// Fähigkeiten: A1E0 (Schmetter-Angriff), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DX (Kriegsdonner), EditorSuffix (Editor-Suffix (ansf))
 {
 (Warlord of the Orcs)
 }
 
 STRING 15847
-// Fähigkeiten: A1E0 (Schmetter-Angriff), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1DY (Kritischer Schlag), EditorSuffix (Editor-Suffix (ansf))
 {
 (Warlord of the Orcs)
 }
@@ -63449,7 +63449,7 @@ STRING 16002
 }
 
 STRING 16003
-// Gegenstände: I04W (Pfeilköcher), Name (Name (unam))
+// Fähigkeiten: A1EC (Pfeilköcher), Name (Name (anam))
 {
 Arrows Quiver
 }
@@ -64845,7 +64845,7 @@ STRING 16405
 }
 
 STRING 16406
-// Fähigkeiten: A1G9 (Auge um Auge), Name (Name (anam))
+// Fähigkeiten: A1G8 (Auge um Auge), Name (Name (anam))
 {
 An Eye for an Eye
 }
@@ -72054,9 +72054,9 @@ STRING 17875
 }
 
 STRING 17876
-// Gegenstände: I06Q (Großes Heilkraut), Name (Name (unam))
+// Fähigkeiten: A1KH (Großes Heilkraut), Name (Name (anam))
 {
-Großes Heilkraut
+Big Healing Herb
 }
 
 STRING 17877
@@ -72078,9 +72078,9 @@ Big Healing Herb
 }
 
 STRING 17880
-// Fähigkeiten: A1KI (Kleines Heilkraut), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Heilung)
+(Healing)
 }
 
 STRING 17881
@@ -72150,9 +72150,9 @@ Buy Small Mana Herb
 }
 
 STRING 17892
-// Gegenstände: I06T (Kleines Manakraut), Description (Beschreibung (ides))
+// Gegenstände: I06S (Großes Manakraut), Description (Beschreibung (ides))
 {
-Stellt verlorenes Mana wieder her.
+Restores missing mana.
 }
 
 STRING 17893
@@ -72162,15 +72162,15 @@ Kleines Heilkraut
 }
 
 STRING 17894
-// Fähigkeiten: A1KJ (Großes Manakraut), Name (Name (anam))
+// Gegenstände: I06S (Großes Manakraut), Name (Name (unam))
 {
-Großes Manakraut
+Big Mana Herb
 }
 
 STRING 17895
-// Fähigkeiten: A1KK (Kleines Manakraut), Name (Name (anam))
+// Gegenstände: I06T (Kleines Manakraut), Name (Name (unam))
 {
-Kleines Manakraut
+Small Mana Herb
 }
 
 STRING 17904
@@ -73092,7 +73092,7 @@ Lauern - Erlernen
 }
 
 STRING 18309
-// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A1M1 (Blitzschlag - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
@@ -73374,7 +73374,7 @@ Meister der Nekromantie - Erlernen
 }
 
 STRING 18437
-// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A11M (Beherrschung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
@@ -73974,7 +73974,7 @@ Reserven - Erlernen
 }
 
 STRING 18705
-// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A124 (Standfestigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
@@ -74478,7 +74478,7 @@ Verspotten - Erlernen
 }
 
 STRING 18929
-// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0L1 (Teleportation - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
@@ -74832,7 +74832,7 @@ Zorn des Waldes - Erlernen
 }
 
 STRING 19087
-// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EP (Tierkunde - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
@@ -77682,9 +77682,9 @@ Axt herstellen
 }
 
 STRING 19753
-// Einheiten: n07I (Obsidian-Diener), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 19754
@@ -77934,9 +77934,9 @@ Missions - A New Alliance
 }
 
 STRING 19799
-// Einheiten: n07J (Dunkler Wächter), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 19800
@@ -78042,9 +78042,9 @@ Dunkler Wächter
 }
 
 STRING 19817
-// Einheiten: n07K (Missglücktes Experiment), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 19818
@@ -78066,9 +78066,9 @@ Herr der Gruft
 }
 
 STRING 19821
-// Einheiten: n07M (Schrecken der Erde), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 19822
@@ -78078,9 +78078,9 @@ Schrecken der Erde
 }
 
 STRING 19823
-// Einheiten: n07N (Deranors Unheil), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 19824
@@ -78090,9 +78090,9 @@ Deranors Unheil
 }
 
 STRING 19825
-// Einheiten: n07O (Meister der Magier), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 19826
@@ -78102,9 +78102,9 @@ Meister der Magier
 }
 
 STRING 19827
-// Einheiten: n07P (Deranors Leibwache), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 19828
@@ -78210,21 +78210,21 @@ STRING 19844
 }
 
 STRING 19845
-// Fähigkeiten: A1S1 (Zauber-Immunität), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1S0 (Stille), EditorSuffix (Editor-Suffix (ansf))
 {
-(Meister der Magier)
+(Master of Magicians)
 }
 
 STRING 19846
-// Fähigkeiten: A1RY (Fluch), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1S0 (Stille), EditorSuffix (Editor-Suffix (ansf))
 {
-(Meister der Magier)
+(Master of Magicians)
 }
 
 STRING 19847
-// Fähigkeiten: A1RZ (Manabrand), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1S0 (Stille), EditorSuffix (Editor-Suffix (ansf))
 {
-(Meister der Magier)
+(Master of Magicians)
 }
 
 STRING 19848
@@ -78276,9 +78276,9 @@ Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um
 }
 
 STRING 19856
-// Einheiten: n07U (Urwesen), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 19857
@@ -78324,9 +78324,9 @@ STRING 19863
 }
 
 STRING 19864
-// Fähigkeiten: A04B (Das Heer der Orks), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A04B (Das Heer der Orks), Name (Name (anam))
 {
-Das Heer der Orks
+The Army of the Orcs
 }
 
 STRING 19865
@@ -78450,9 +78450,9 @@ Heilt bei Benutzung <A1SA,DataA1> Trefferpunkte.
 }
 
 STRING 19885
-// Fähigkeiten: A060 (Pfifferling), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Heilung)
+(Healing)
 }
 
 STRING 19886
@@ -78504,9 +78504,9 @@ STRING 19901
 }
 
 STRING 19902
-// Fähigkeiten: A1ST (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19905
@@ -78552,9 +78552,9 @@ STRING 19919
 }
 
 STRING 19920
-// Fähigkeiten: A1SQ (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19921
@@ -78600,9 +78600,9 @@ STRING 19927
 }
 
 STRING 19928
-// Fähigkeiten: A1SW (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19929
@@ -78612,9 +78612,9 @@ STRING 19929
 }
 
 STRING 19930
-// Fähigkeiten: A1SN (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19931
@@ -78708,9 +78708,9 @@ STRING 19945
 }
 
 STRING 19946
-// Fähigkeiten: A1SX (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19947
@@ -78900,9 +78900,9 @@ STRING 19977
 }
 
 STRING 19978
-// Fähigkeiten: A1SR (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19979
@@ -78912,9 +78912,9 @@ STRING 19979
 }
 
 STRING 19980
-// Fähigkeiten: A1SM (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19981
@@ -78924,9 +78924,9 @@ STRING 19981
 }
 
 STRING 19982
-// Fähigkeiten: A1SU (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19983
@@ -78936,9 +78936,9 @@ STRING 19983
 }
 
 STRING 19984
-// Fähigkeiten: A1SH (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19985
@@ -78948,9 +78948,9 @@ STRING 19985
 }
 
 STRING 19986
-// Fähigkeiten: A1SY (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19987
@@ -78960,9 +78960,9 @@ STRING 19987
 }
 
 STRING 19988
-// Fähigkeiten: A1SO (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19989
@@ -78972,9 +78972,9 @@ STRING 19989
 }
 
 STRING 19990
-// Fähigkeiten: A1SK (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19991
@@ -78996,9 +78996,9 @@ STRING 19993
 }
 
 STRING 19994
-// Fähigkeiten: A1SS (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19995
@@ -79008,9 +79008,9 @@ STRING 19995
 }
 
 STRING 19996
-// Fähigkeiten: A1SV (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19997
@@ -79020,9 +79020,9 @@ STRING 19997
 }
 
 STRING 19998
-// Fähigkeiten: A1SL (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19999
@@ -79032,9 +79032,9 @@ STRING 19999
 }
 
 STRING 20000
-// Fähigkeiten: A1T0 (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 20001
@@ -79044,9 +79044,9 @@ STRING 20001
 }
 
 STRING 20002
-// Fähigkeiten: A1SZ (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 20003
@@ -79254,7 +79254,7 @@ STRING 20036
 }
 
 STRING 20037
-// Fähigkeiten: A1TI (Sattel), Name (Name (anam))
+// Gegenstände: I074 (Sattel), Name (Name (unam))
 {
 Saddle
 }
@@ -79290,7 +79290,7 @@ Saddle
 }
 
 STRING 20043
-// Fähigkeiten: A1TI (Sattel), Name (Name (anam))
+// Fähigkeiten: A1TH (Sattel), Name (Name (anam))
 {
 Saddle
 }
@@ -79302,7 +79302,7 @@ STRING 20044
 }
 
 STRING 20045
-// Fähigkeiten: A1TL (Zweihänder), Name (Name (anam))
+// Gegenstände: I075 (Zweihänder), Name (Name (unam))
 {
 Two-Handed Sword
 }
@@ -79320,7 +79320,7 @@ Increases the damage.
 }
 
 STRING 20049
-// Fähigkeiten: A1TL (Zweihänder), Name (Name (anam))
+// Fähigkeiten: A1TJ (Zweihänder), Name (Name (anam))
 {
 Two-Handed Sword
 }
@@ -79362,7 +79362,7 @@ Sattel kaufen
 }
 
 STRING 20056
-// Fähigkeiten: A1TL (Zweihänder), Name (Name (anam))
+// Fähigkeiten: A1TK (Zweihänder), Name (Name (anam))
 {
 Two-Handed Sword
 }
@@ -79380,9 +79380,9 @@ War Drums of the Orcs
 }
 
 STRING 20059
-// Gegenstände: I076 (Kriegstrommeln der Orks), Tip (Tooltipp - Einfach (utip))
+// Gegenstände: I076 (Kriegstrommeln der Orks), Name (Name (unam))
 {
-Kriegstrommeln der Orks
+War Drums of the Orcs
 }
 
 STRING 20060
@@ -79398,15 +79398,15 @@ Erhöhen den Schaden Verbündeter im Umkreis.
 }
 
 STRING 20062
-// Fähigkeiten: A1TN (Kriegstrommeln der Orks), Name (Name (anam))
+// Gegenstände: I076 (Kriegstrommeln der Orks), Name (Name (unam))
 {
-Kriegstrommeln der Orks
+War Drums of the Orcs
 }
 
 STRING 20063
-// Fähigkeiten: A1TM (Kriegstrommeln der Orks), Name (Name (anam))
+// Gegenstände: I076 (Kriegstrommeln der Orks), Name (Name (unam))
 {
-Kriegstrommeln der Orks
+War Drums of the Orcs
 }
 
 STRING 20064
@@ -79512,9 +79512,9 @@ Zieht die Hauer von einem toten Keiler.
 }
 
 STRING 20081
-// Fähigkeiten: A1TS (Knochen entfernen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1TQ (Hauer ziehen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Jagd)
+(Book of Hunting)
 }
 
 STRING 20082
@@ -79536,9 +79536,9 @@ Camera - Increase Camera Distance
 }
 
 STRING 20085
-// Fähigkeiten: A1TR (Fell abziehen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1TQ (Hauer ziehen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Jagd)
+(Book of Hunting)
 }
 
 STRING 20087
@@ -80040,7 +80040,7 @@ Sukkubus
 }
 
 STRING 20173
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03N (Ork-Ältester), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -80100,9 +80100,9 @@ Gestein aus der Unterwelt.
 }
 
 STRING 20183
-// Einheiten: n07Y (Sklavin), Name (Name (unam))
+// Einheiten: n081 (Sklavin), Name (Name (unam))
 {
-Sklavin
+Slave
 }
 
 STRING 20184
@@ -80118,9 +80118,9 @@ Sklavin erwerben
 }
 
 STRING 20186
-// Einheiten: n07Z (Sklavin), Name (Name (unam))
+// Einheiten: n081 (Sklavin), Name (Name (unam))
 {
-Sklavin
+Slave
 }
 
 STRING 20187
@@ -80136,9 +80136,9 @@ Sklavin erwerben
 }
 
 STRING 20189
-// Einheiten: n080 (Sklavin), Name (Name (unam))
+// Einheiten: n081 (Sklavin), Name (Name (unam))
 {
-Sklavin
+Slave
 }
 
 STRING 20190
@@ -80178,7 +80178,7 @@ Konvertierter Inquisitor
 }
 
 STRING 20196
-// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03O (Prinzessin der Nordmänner), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Hero)
 }
@@ -80208,9 +80208,9 @@ Jumps to the current target location of the mission.
 }
 
 STRING 20201
-// Fähigkeiten: A1V3 (Aufträge - Arenameister), Name (Name (anam))
+// Fähigkeiten: A1UR (Aufträge - Arenameister), Name (Name (anam))
 {
-Aufträge - Arenameister
+Missions - Arena Champison
 }
 
 STRING 20202
