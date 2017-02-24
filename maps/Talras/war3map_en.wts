@@ -3818,9 +3818,9 @@ Erhöht den Schaden um <A17K,DataA1> und gibt eine Chance von <A17L,DataA1> % de
 }
 
 STRING 637
-// Einheiten: n00E (Feuergeschoss), EditorSuffix (Name - Editor-Suffix (unsf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 638
@@ -3954,9 +3954,9 @@ Increases the armour of an ally for a certain time.|n|n|cffffcc00Level 1|r - <A0
 }
 
 STRING 660
-// Einheiten: H01C (Prinz der Nordmänner), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 661
@@ -4200,9 +4200,9 @@ Mock [|cffffcc00Level 2|r]
 }
 
 STRING 703
-// Einheiten: n06M (Feuergeschoss), EditorSuffix (Name - Editor-Suffix (unsf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 704
@@ -4242,9 +4242,9 @@ Gods Favor - Level 4
 }
 
 STRING 710
-// Einheiten: H014 (Zauberin), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 711
@@ -4260,9 +4260,9 @@ Mutter
 }
 
 STRING 713
-// Einheiten: H01D (Jäger), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 714
@@ -4272,9 +4272,9 @@ Dorfbewohnerin
 }
 
 STRING 715
-// Fähigkeiten: A019 (Erfrierung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 716
@@ -4332,9 +4332,9 @@ Gotlinde
 }
 
 STRING 725
-// Einheiten: H01E (Nordmann), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 726
@@ -4344,9 +4344,9 @@ Hans' Stand
 }
 
 STRING 727
-// Fähigkeiten: A14T (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 728
@@ -4374,9 +4374,9 @@ Wotan
 }
 
 STRING 732
-// Einheiten: H01F (Hochelfin), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 733
@@ -4416,9 +4416,9 @@ Saugt 12 % Mana pro Sekunde  jeweils von allen Gegnern im Umkreis von 900 ab und
 }
 
 STRING 739
-// Fähigkeiten: A017 (Eisgeschoss), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 740
@@ -4488,9 +4488,9 @@ Drains mana per second from each opponent in the range of 900 and transfers it t
 }
 
 STRING 751
-// Fähigkeiten: A014 (Feuergeschoss), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 752
@@ -4560,9 +4560,9 @@ STRING 762
 }
 
 STRING 763
-// Fähigkeiten: A01I (Teleportation), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 764
@@ -4632,9 +4632,9 @@ Kreisen
 }
 
 STRING 775
-// Fähigkeiten: A01D (Eiszeit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 776
@@ -4644,9 +4644,9 @@ Kind opfern
 }
 
 STRING 777
-// Einheiten: n086 (Schattenefreet), EditorSuffix (Name - Editor-Suffix (unsf))
+// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 778
@@ -4674,9 +4674,9 @@ Tier opfern
 }
 
 STRING 782
-// Einheiten: n087 (Berserker), EditorSuffix (Name - Editor-Suffix (unsf))
+// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 783
@@ -4704,9 +4704,9 @@ Drains mana per second from each opponent in the range of 900 and transfers it t
 }
 
 STRING 787
-// Fähigkeiten: A01C (Entzünden), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 788
@@ -4746,9 +4746,9 @@ Mastery
 }
 
 STRING 794
-// Einheiten: n088 (Imp), EditorSuffix (Name - Editor-Suffix (unsf))
+// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 795
@@ -4776,15 +4776,15 @@ Mephisto
 }
 
 STRING 799
-// Fähigkeiten: A018 (Blitzschlag), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 800
-// Einheiten: H024 (Vagabundin), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 801
@@ -4848,9 +4848,9 @@ Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area4>
 }
 
 STRING 811
-// Fähigkeiten: A01F (Beherrschung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 812
@@ -4920,9 +4920,9 @@ Der Geist eines friedlichen Tieres.
 }
 
 STRING 823
-// Fähigkeiten: A01G (Zehren), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 824
@@ -4992,9 +4992,9 @@ Increases the armour by <A094,DataA1>.
 }
 
 STRING 835
-// Fähigkeiten: A1I8 (Elementarwesen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 836
@@ -5022,9 +5022,9 @@ Imp anheuern
 }
 
 STRING 840
-// Fähigkeiten: A1OP (Zorn des Waldes - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stechen. Während sie ihre Feinde stechen, verwandeln sie deren Fleisch auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Bienen, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Bienen, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Bienen, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Bienen, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
 
 STRING 841
@@ -5034,9 +5034,9 @@ Flügelschlag
 }
 
 STRING 842
-// Fähigkeiten: A0EE (Zorn des Waldes - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stechen. Während sie ihre Feinde stechen, verwandeln sie deren Fleisch auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Bienen, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Bienen, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Bienen, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Bienen, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
 
 STRING 843
@@ -5064,9 +5064,9 @@ Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stec
 }
 
 STRING 847
-// Fähigkeiten: A0VH (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 848
@@ -5076,27 +5076,27 @@ Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stec
 }
 
 STRING 849
-// Fähigkeiten: A01J (Wut der Elemente), Name (Name (anam))
+// Fähigkeiten: A03Q (Wut der Elemente), Name (Name (anam))
 {
-Wut der Elemente
+Rage of Elements
 }
 
 STRING 850
-// Fähigkeiten: A0EG (Zorn des Waldes - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stechen. Während sie ihre Feinde stechen, verwandeln sie deren Fleisch auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Bienen, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Bienen, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Bienen, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Bienen, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
 
 STRING 851
-// Fähigkeiten: A0ED (Zorn des Waldes - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stechen. Während sie ihre Feinde stechen, verwandeln sie deren Fleisch auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Bienen, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Bienen, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Bienen, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Bienen, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
 
 STRING 852
-// Fähigkeiten: A01H (Erdgefängnis), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 853
@@ -5142,9 +5142,9 @@ Imp
 }
 
 STRING 860
-// Fähigkeiten: A0EF (Zorn des Waldes - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stechen. Während sie ihre Feinde stechen, verwandeln sie deren Fleisch auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Bienen, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Bienen, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Bienen, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Bienen, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
 
 STRING 861
@@ -5226,15 +5226,15 @@ Guardian
 }
 
 STRING 874
-// Fähigkeiten: A0L2 (Teleportation - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportiert den Elementarmagier an einen erkundeten Punkt auf der Karte und absorbiert 5 Sekunden lang erlittenen Schaden. |n|n|cffffcc00Stufe 1|r - 10 % Schaden, <A01I,Cool1> Sekunden Aklingzeit.|n|cffffcc00Stufe 2|r - 20 % Schaden, <A01I,Cool2> Sekunden Aklingzeit.|n|cffffcc00Stufe 3|r - 30 % Schaden, <A01I,Cool3> Sekunden Aklingzeit.|n|cffffcc00Stufe 4|r - 40 % Schaden, <A01I,Cool4> Sekunden Aklingzeit.|n|cffffcc00Stufe 5|r - 50 % Schaden, <A01I,Cool5> Sekunden Aklingzeit.
+Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
 
 STRING 875
-// Einheiten: n08V (Herr der Finsternis), EditorSuffix (Name - Editor-Suffix (unsf))
+// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 876
@@ -5250,21 +5250,21 @@ Baldar
 }
 
 STRING 878
-// Fähigkeiten: A0L0 (Teleportation - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportiert den Elementarmagier an einen erkundeten Punkt auf der Karte und absorbiert 5 Sekunden lang erlittenen Schaden. |n|n|cffffcc00Stufe 1|r - 10 % Schaden, <A01I,Cool1> Sekunden Aklingzeit.|n|cffffcc00Stufe 2|r - 20 % Schaden, <A01I,Cool2> Sekunden Aklingzeit.|n|cffffcc00Stufe 3|r - 30 % Schaden, <A01I,Cool3> Sekunden Aklingzeit.|n|cffffcc00Stufe 4|r - 40 % Schaden, <A01I,Cool4> Sekunden Aklingzeit.|n|cffffcc00Stufe 5|r - 50 % Schaden, <A01I,Cool5> Sekunden Aklingzeit.
+Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
 
 STRING 879
-// Fähigkeiten: A1O7 (Teleportation - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportiert den Elementarmagier an einen erkundeten Punkt auf der Karte und absorbiert 5 Sekunden lang erlittenen Schaden. |n|n|cffffcc00Stufe 1|r - 10 % Schaden, <A01I,Cool1> Sekunden Aklingzeit.|n|cffffcc00Stufe 2|r - 20 % Schaden, <A01I,Cool2> Sekunden Aklingzeit.|n|cffffcc00Stufe 3|r - 30 % Schaden, <A01I,Cool3> Sekunden Aklingzeit.|n|cffffcc00Stufe 4|r - 40 % Schaden, <A01I,Cool4> Sekunden Aklingzeit.|n|cffffcc00Stufe 5|r - 50 % Schaden, <A01I,Cool5> Sekunden Aklingzeit.
+Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
 
 STRING 880
-// Fähigkeiten: A0L3 (Teleportation - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportiert den Elementarmagier an einen erkundeten Punkt auf der Karte und absorbiert 5 Sekunden lang erlittenen Schaden. |n|n|cffffcc00Stufe 1|r - 10 % Schaden, <A01I,Cool1> Sekunden Aklingzeit.|n|cffffcc00Stufe 2|r - 20 % Schaden, <A01I,Cool2> Sekunden Aklingzeit.|n|cffffcc00Stufe 3|r - 30 % Schaden, <A01I,Cool3> Sekunden Aklingzeit.|n|cffffcc00Stufe 4|r - 40 % Schaden, <A01I,Cool4> Sekunden Aklingzeit.|n|cffffcc00Stufe 5|r - 50 % Schaden, <A01I,Cool5> Sekunden Aklingzeit.
+Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
 
 STRING 881
@@ -5458,9 +5458,9 @@ STRING 912
 }
 
 STRING 913
-// Fähigkeiten: A1VA (Tier opfern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 914
@@ -5488,9 +5488,9 @@ Lebenswille erlernen
 }
 
 STRING 918
-// Fähigkeiten: A1VB (Beschwörung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 919
@@ -5512,9 +5512,9 @@ STRING 921
 }
 
 STRING 922
-// Zauberverstärker/Effekte: B010 (Beschworener Dämon), Bufftip (Tooltipp (ftip))
+// Zauberverstärker/Effekte: B010 (Beschworener Dämon), EditorName (Name (nur Editor) (fnam))
 {
-Beschworener Dämon
+Summoned Demon
 }
 
 STRING 923
@@ -5560,9 +5560,9 @@ Blood Ritual
 }
 
 STRING 930
-// Fähigkeiten: A1VD (Herr der Finsternis), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 931
@@ -5596,9 +5596,9 @@ STRING 935
 }
 
 STRING 936
-// Fähigkeiten: A09G (Blutritual), Name (Name (anam))
+// Fähigkeiten: A09G (Blutritual), Tip (Tooltipp - Normal (atp1))
 {
-Blutritual
+Blood Ritual
 }
 
 STRING 937
@@ -5638,9 +5638,9 @@ Orc Wolf Rider
 }
 
 STRING 943
-// Fähigkeiten: A1VE (Blutritual), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 944
@@ -5710,9 +5710,9 @@ Cow
 }
 
 STRING 955
-// Einheiten: n08B (Kuh), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: h03L (Reiterloses Pferd), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Weiß)
+(White)
 }
 
 STRING 956
@@ -5818,9 +5818,9 @@ STRING 972
 }
 
 STRING 973
-// Fähigkeiten: A01T (Holzschild), Name (Name (anam))
+// Gegenstände: I005 (Holzschild), Name (Name (unam))
 {
-Holzschild
+Wooden Shield
 }
 
 STRING 974
@@ -5872,9 +5872,9 @@ Dark Servant
 }
 
 STRING 982
-// Zauberverstärker/Effekte: B004 (Dunkler Diener), Bufftip (Tooltipp (ftip))
+// Zauberverstärker/Effekte: B004 (Dunkler Diener), EditorName (Name (nur Editor) (fnam))
 {
-Dunkler Diener
+Dark Servant
 }
 
 STRING 983
@@ -6202,9 +6202,9 @@ Diese Einheit ist gefangen; sie kann sich weder bewegen noch angreifen oder Zaub
 }
 
 STRING 1037
-// Fähigkeiten: A0VA (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 1038
@@ -6238,9 +6238,9 @@ Frost Creature
 }
 
 STRING 1043
-// Einheiten: n08F (Alwis' Stand), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1044
@@ -6250,9 +6250,9 @@ Mutter der Medusa
 }
 
 STRING 1045
-// Einheiten: n08H (Frostwesen), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1046
@@ -6262,9 +6262,9 @@ Ork-Ältester
 }
 
 STRING 1047
-// Fähigkeiten: A03O (Pure Energie), Name (Name (anam))
+// Fähigkeiten: A01X (Pure Energie), Name (Name (anam))
 {
-Pure Energie
+Pure Energy
 }
 
 STRING 1048
@@ -6298,7 +6298,7 @@ Prince of the Northmen
 }
 
 STRING 1053
-// Fähigkeiten: A11I (Beherrschung - Level 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11I (Beherrschung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Mastery [|cffffcc00Level 1|r]
 }
@@ -6310,13 +6310,13 @@ Mastery [|cffffcc00Level 2|r]
 }
 
 STRING 1055
-// Fähigkeiten: A11K (Beherrschung - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11K (Beherrschung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Mastery [|cffffcc00Level 3|r]
 }
 
 STRING 1056
-// Fähigkeiten: A11L (Beherrschung - Level 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11L (Beherrschung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Mastery [|cffffcc00Level 4|r]
 }
@@ -6610,9 +6610,9 @@ Changes to the previous class.
 }
 
 STRING 1105
-// Einheiten: H03F (Konvertierter Inquisitor), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 1106
@@ -6634,9 +6634,9 @@ Farmer
 }
 
 STRING 1109
-// Einheiten: n08J (Holzfäller), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1110
@@ -6646,9 +6646,9 @@ Miner
 }
 
 STRING 1111
-// Einheiten: n08K (Bauer), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1112
@@ -6658,9 +6658,9 @@ Hunter
 }
 
 STRING 1113
-// Einheiten: n08L (Bergmann), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1114
@@ -6736,9 +6736,9 @@ Heals <A1C8,DataA1> hit points on usage.
 }
 
 STRING 1126
-// Gegenstände: I07G (Mephistos Zepter), Name (Name (unam))
+// Fähigkeiten: A1VG (Mephistos Zepter), Name (Name (anam))
 {
-Mephistos Zepter
+Mephisto's Scepter
 }
 
 STRING 1127
@@ -6778,9 +6778,9 @@ STRING 1132
 }
 
 STRING 1133
-// Fähigkeiten: A1VH (Kinder opfern), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1VH (Kinder opfern), Name (Name (anam))
 {
-Kinder opfern
+Sacrifice Children
 }
 
 STRING 1134
@@ -6802,9 +6802,9 @@ Kinder retten
 }
 
 STRING 1137
-// Fähigkeiten: A1VI (Kinder retten), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1VH (Kinder opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Mephistos Zepter)
+(Mephisto's Scepter)
 }
 
 STRING 1138
@@ -6874,9 +6874,9 @@ STRING 1148
 }
 
 STRING 1149
-// Fähigkeiten: S007 (Lebendiebstahl), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1Q5 (Stille), EditorSuffix (Editor-Suffix (ansf))
 {
-(Sukkubus)
+(Succubus)
 }
 
 STRING 1150
@@ -7156,9 +7156,9 @@ Nordfrau ausbilden
 }
 
 STRING 1196
-// Fähigkeiten: A1Q4 (Bezauberung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1Q5 (Stille), EditorSuffix (Editor-Suffix (ansf))
 {
-(Sukkubus)
+(Succubus)
 }
 
 STRING 1197
@@ -7636,9 +7636,9 @@ A Norseman is a strong melee fighter.
 }
 
 STRING 1276
-// Einheiten: n08M (Jäger), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1277
@@ -7708,9 +7708,9 @@ Ein bissiger gezähmter Wolf.
 }
 
 STRING 1288
-// Einheiten: n08T (Hauptmann), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1289
@@ -7822,9 +7822,9 @@ Kiste 2
 }
 
 STRING 1307
-// Einheiten: n08U (Gezähmter Wolf), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1308
@@ -7834,9 +7834,9 @@ Lightning
 }
 
 STRING 1309
-// Fähigkeiten: A01E (Feuersbrunst), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 1310
@@ -8146,9 +8146,9 @@ Verstärkt die Rüstung um <A016,DataA1>.
 }
 
 STRING 1361
-// Zauberverstärker/Effekte: B010 (Beschworener Dämon), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 1362
@@ -8296,9 +8296,9 @@ The summer fur of a red deer.
 }
 
 STRING 1386
-// Einheiten: h03R (Magier), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1387
@@ -8374,9 +8374,9 @@ Multishot
 }
 
 STRING 1399
-// Einheiten: n08W (Ork-Wolfsreiter), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1400
@@ -8620,9 +8620,9 @@ Der Zaubernde springt zu einem bestimmten Punkt und fügt den dortigen Gegnern i
 }
 
 STRING 1440
-// Einheiten: h03S (Zwergenmagier), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1441
@@ -8980,9 +8980,9 @@ Zerlegt den Elementarmagier in Elementarwesen, sodass 2 spezielle Elementarwesen
 }
 
 STRING 1500
-// Zauberverstärker/Effekte: B005 (Erdgefängnis), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 1501
@@ -9004,9 +9004,9 @@ Zehren
 }
 
 STRING 1504
-// Zauberverstärker/Effekte: B00E (Zehren), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 1505
@@ -10264,9 +10264,9 @@ STRING 1713
 }
 
 STRING 1714
-// Einheiten: n08Z (Nordischer Ahne), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1715
@@ -10318,7 +10318,7 @@ Buy Wooden Buckler
 }
 
 STRING 1723
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Einheiten: h02J (Dummy Caster - Sprungattacke), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Dragon Slayer)
 }
@@ -11080,9 +11080,9 @@ Bronzeset - Rüstungsbonus
 }
 
 STRING 1850
-// Einheiten: h03T (Ginarr), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1851
@@ -11655,7 +11655,7 @@ STRING 1945
 }
 
 STRING 1946
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B038 (), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Dragon Slayer)
 }
@@ -11954,7 +11954,7 @@ Klingen der Zweisamkeit (Erstwaffe)
 }
 
 STRING 2013
-// Gegenstände: I01E (Klingen der Zweisamkeit (Zweitwaffe)), Description (Beschreibung (ides))
+// Gegenstände: I01D (Klingen der Zweisamkeit (Erstwaffe)), Description (Beschreibung (ides))
 {
 A powerful blade.
 }
@@ -14599,7 +14599,7 @@ Einschüchtern [|cffffcc00Stufe 1|r]
 }
 
 STRING 2502
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05Q (Einschüchtern), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16078,7 +16078,7 @@ Wilder Blutrausch [|cffffcc00Stufe 1|r]
 }
 
 STRING 2823
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A06Y (Schwachstelle), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16126,7 +16126,7 @@ Eine kleine, süße Katze (auch roh genießbar).
 }
 
 STRING 2841
-// Einheiten: n04N (Rebhuhn), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n01L (Drache), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Ground)
 }
@@ -16379,7 +16379,7 @@ STRING 2898
 }
 
 STRING 2899
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1FV (Reserven), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16421,7 +16421,7 @@ Schwachstelle
 }
 
 STRING 2913
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VF (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16505,7 +16505,7 @@ Hieb
 }
 
 STRING 2927
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A146 (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16595,7 +16595,7 @@ Diese Einheit steht unter der Wirkung von 'Überlegenheit'; ihre Angriffsgeschwi
 }
 
 STRING 2943
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A14M (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16739,9 +16739,9 @@ Selbstlosigkeit [|cffffcc00Stufe 1|r]
 }
 
 STRING 2967
-// Fähigkeiten: A074 (Selbstlosigkeit), Name (Name (anam))
+// Fähigkeiten: A073 (Selbstlosigkeit), Name (Name (anam))
 {
-Selbstlosigkeit
+Selflessness
 }
 
 STRING 2970
@@ -16751,9 +16751,9 @@ STRING 2970
 }
 
 STRING 2971
-// Zauberverstärker/Effekte: B013 (Selbstlosigkeit (Ziel)), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A073 (Selbstlosigkeit), Name (Name (anam))
 {
-Selbstlosigkeit
+Selflessness
 }
 
 STRING 2972
@@ -16781,9 +16781,9 @@ Diese Einheit steht unter der Wirkung von 'Selbstlosigkeit'; ihr erlittener Scha
 }
 
 STRING 2976
-// Zauberverstärker/Effekte: B014 (Selbstlosigkeit), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A073 (Selbstlosigkeit), Name (Name (anam))
 {
-Selbstlosigkeit
+Selflessness
 }
 
 STRING 2977
@@ -16799,9 +16799,9 @@ Diese Einheit steht unter der Wirkung von 'Selbstlosigkeit'; ihr erlittener Scha
 }
 
 STRING 2980
-// Zauberverstärker/Effekte: B014 (Selbstlosigkeit), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A073 (Selbstlosigkeit), Name (Name (anam))
 {
-Selbstlosigkeit
+Selflessness
 }
 
 STRING 2981
@@ -16931,9 +16931,9 @@ Stiefel eines Druiden kaufen
 }
 
 STRING 3003
-// Fähigkeiten: A0T2 (Bestienjäger), Name (Name (anam))
+// Zauberverstärker/Effekte: B038 (), Bufftip (Tooltipp (ftip))
 {
-Bestienjäger
+Beast Hunter
 }
 
 STRING 3004
@@ -16955,9 +16955,9 @@ STRING 3006
 }
 
 STRING 3007
-// Fähigkeiten: A076 (Bestienjäger), Name (Name (anam))
+// Zauberverstärker/Effekte: B038 (), Bufftip (Tooltipp (ftip))
 {
-Bestienjäger
+Beast Hunter
 }
 
 STRING 3011
@@ -20944,7 +20944,7 @@ STRING 3815
 }
 
 STRING 3816
-// Fähigkeiten: A097 (Gewitter), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A097 (Gewitter), Name (Name (anam))
 {
 Thunderstorm
 }
@@ -21232,9 +21232,9 @@ STRING 3870
 }
 
 STRING 3871
-// Fähigkeiten: A1VE (Blutritual), Name (Name (anam))
+// Fähigkeiten: A09G (Blutritual), Tip (Tooltipp - Normal (atp1))
 {
-Blutritual
+Blood Ritual
 }
 
 STRING 3872
@@ -21244,9 +21244,9 @@ STRING 3872
 }
 
 STRING 3873
-// Fähigkeiten: A1VE (Blutritual), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A09G (Blutritual), Tip (Tooltipp - Normal (atp1))
 {
-Blutritual
+Blood Ritual
 }
 
 STRING 3874
@@ -21718,33 +21718,33 @@ Bear form
 }
 
 STRING 3968
-// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 3969
-// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 3970
-// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 3971
-// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 3972
-// Fähigkeiten: A09T (Tierkunde), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 3973
@@ -21808,9 +21808,9 @@ STRING 3982
 }
 
 STRING 3983
-// Einheiten: H02E (Nixe), Name (Name (unam))
+// Einheiten: H02E (Nixe), Propernames (Eigennamen (upro))
 {
-Nixe
+Neck
 }
 
 STRING 3985
@@ -23212,9 +23212,9 @@ Erhöht den Schaden von Verbündeten in der Nähe <A0VO,Dur1> Sekunden lang um <
 }
 
 STRING 4305
-// Gegenstände: I04H (Horn des Schutzes), Name (Name (unam))
+// Fähigkeiten: A0VP (Horn des Schutzes), Name (Name (anam))
 {
-Horn des Schutzes
+Horn of Protection
 }
 
 STRING 4306
@@ -23266,9 +23266,9 @@ Entzieht einem Gegner Mana, fügt ihm Schaden in doppelter Höhe zu und übertr�
 }
 
 STRING 4314
-// Gegenstände: I04I (Horn des Lebens), Name (Name (unam))
+// Fähigkeiten: A0VQ (Horn des Lebens), Name (Name (anam))
 {
-Horn des Lebens
+Horn of Life
 }
 
 STRING 4315
@@ -23314,9 +23314,9 @@ STRING 4321
 }
 
 STRING 4322
-// Fähigkeiten: A0VP (Horn des Schutzes), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0VP (Horn des Schutzes), Name (Name (anam))
 {
-Horn des Schutzes
+Horn of Protection
 }
 
 STRING 4323
@@ -23326,9 +23326,9 @@ STRING 4323
 }
 
 STRING 4324
-// Fähigkeiten: A0VQ (Horn des Lebens), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0VQ (Horn des Lebens), Name (Name (anam))
 {
-Horn des Lebens
+Horn of Life
 }
 
 STRING 4325
@@ -28795,15 +28795,15 @@ STRING 6113
 }
 
 STRING 6114
-// Fähigkeiten: A1C4 (Wirbelsturm), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 6115
-// Fähigkeiten: A1C5 (Parasit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 6116
@@ -30025,37 +30025,37 @@ Dämon.
 }
 
 STRING 6536
-// Fähigkeiten: A0K5 (Koloss), Name (Name (anam))
+// Fähigkeiten: A0FW (Koloss), Name (Name (anam))
 {
 Colossus
 }
 
 STRING 6537
-// Fähigkeiten: A0FX (Koloss - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
 {
 Colossus [|cffffcc00Level 1|r]
 }
 
 STRING 6543
-// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0FY (Koloss - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Colossus [|cffffcc00Level 2|r]
 }
 
 STRING 6544
-// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0FZ (Koloss - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Colossus [|cffffcc00Level 3|r]
 }
 
 STRING 6545
-// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0G0 (Koloss - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Colossus [|cffffcc00Level 4|r]
 }
 
 STRING 6546
-// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0G1 (Koloss - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Colossus [|cffffcc00Level 5|r]
 }
@@ -33121,13 +33121,13 @@ Rigidity
 }
 
 STRING 7819
-// Fähigkeiten: A0K5 (Koloss), Name (Name (anam))
+// Zauberverstärker/Effekte: B024 (Koloss), EditorName (Name (nur Editor) (fnam))
 {
 Colossus
 }
 
 STRING 7820
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A070 (Hieb), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -34291,9 +34291,9 @@ Eiszeit - Stufe 4
 }
 
 STRING 8366
-// Fähigkeiten: A1MH (Beherrschung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier regeneriert alle 10 Sekunden einen Teil seines Manas.|n|n|cffffcc00Stufe 1|r - Regeneriert 5 % seines Manas.|n|cffffcc00Stufe 2|r - Regeneriert 10 % seines Manas.|n|cffffcc00Stufe 3|r - Regeneriert 15 % seines Manas.|n|cffffcc00Stufe 4|r - Regeneriert 20 % seines Manas.|n|cffffcc00Stufe 5|r - Regeneriert 25 % seines Manas.
+The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
 
 STRING 8369
@@ -35497,7 +35497,7 @@ Gesegnetes Schwert kaufen
 }
 
 STRING 8855
-// Fähigkeiten: A0N5 (Ruf des Nordens), Name (Name (anam))
+// Zauberverstärker/Effekte: B036 (), Bufftip (Tooltipp (ftip))
 {
 Call of the North
 }
@@ -38257,9 +38257,9 @@ Norseman
 }
 
 STRING 9806
-// Einheiten: H015 (Dorfbewohner), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 9807
@@ -38293,9 +38293,9 @@ Sorceress
 }
 
 STRING 9813
-// Einheiten: H03G (Händler), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 9815
@@ -38305,15 +38305,15 @@ Hunter
 }
 
 STRING 9817
-// Einheiten: H03H (Dorfbewohnerin), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 9820
-// Einheiten: H03I (Dorfbewohnerin), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 9821
@@ -38323,9 +38323,9 @@ High Elf
 }
 
 STRING 9823
-// Einheiten: H03J (Dorfältester), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 9824
@@ -38941,9 +38941,9 @@ Feuersbrunst - Stufe 2
 }
 
 STRING 10037
-// Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11I (Beherrschung - Level 1), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 1|r]
+Mastery [|cffffcc00Level 1|r]
 }
 
 STRING 10047
@@ -39091,9 +39091,9 @@ Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 10130
-// Fähigkeiten: A11K (Beherrschung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier regeneriert alle 10 Sekunden einen Teil seines Manas.|n|n|cffffcc00Stufe 1|r - Regeneriert 5 % seines Manas.|n|cffffcc00Stufe 2|r - Regeneriert 10 % seines Manas.|n|cffffcc00Stufe 3|r - Regeneriert 15 % seines Manas.|n|cffffcc00Stufe 4|r - Regeneriert 20 % seines Manas.|n|cffffcc00Stufe 5|r - Regeneriert 25 % seines Manas.
+The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
 
 STRING 10140
@@ -39691,9 +39691,9 @@ Melee
 }
 
 STRING 10371
-// Zauberverstärker/Effekte: B02G (Beherrschung), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 10372
@@ -39709,7 +39709,7 @@ STRING 10373
 }
 
 STRING 10374
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0V8 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -39727,7 +39727,7 @@ Protect [|cffffcc00Level 1|r]
 }
 
 STRING 10377
-// Fähigkeiten: A0WT (Verbannen - Level 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1JH (Koloss - Erlernen), Name (Name (anam))
 {
 Ban [|cffffcc00Level 2|r]
 }
@@ -39769,9 +39769,9 @@ Fernkampf
 }
 
 STRING 10384
-// Fähigkeiten: A1I7 (Wächter des Flusses beschwören), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 10385
@@ -39787,7 +39787,7 @@ STRING 10386
 }
 
 STRING 10387
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1A3 (Bestehlen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -39859,7 +39859,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 }
 
 STRING 10431
-// Fähigkeiten: A0WT (Verbannen - Level 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1JG (Koloss - Erlernen), Name (Name (anam))
 {
 Ban [|cffffcc00Level 2|r]
 }
@@ -42091,9 +42091,9 @@ Zehren - Stufe 5
 }
 
 STRING 11281
-// Fähigkeiten: A11J (Beherrschung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 2|r]
+Mastery [|cffffcc00Level 2|r]
 }
 
 STRING 11282
@@ -42378,9 +42378,9 @@ Arkane Zeit - Stufe 2
 }
 
 STRING 11386
-// Fähigkeiten: A11I (Beherrschung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier regeneriert alle 10 Sekunden einen Teil seines Manas.|n|n|cffffcc00Stufe 1|r - Regeneriert 5 % seines Manas.|n|cffffcc00Stufe 2|r - Regeneriert 10 % seines Manas.|n|cffffcc00Stufe 3|r - Regeneriert 15 % seines Manas.|n|cffffcc00Stufe 4|r - Regeneriert 20 % seines Manas.|n|cffffcc00Stufe 5|r - Regeneriert 25 % seines Manas.
+The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
 
 STRING 11387
@@ -42516,7 +42516,7 @@ STRING 11435
 }
 
 STRING 11436
-// Fähigkeiten: A164 (Übertragung), Name (Name (anam))
+// Fähigkeiten: A163 (Übertragung), Name (Name (anam))
 {
 Transfer
 }
@@ -43091,21 +43091,21 @@ Der Elementarmagier bekommt 60 Manapunkte für 10 Leben pro Sekunde zurück. Er 
 }
 
 STRING 11653
-// Fähigkeiten: A0UN (Blitzschlag - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Blitzschlag erfasst das Ziel, verursacht Schaden. |n|n|cffffcc00Stufe 1|r - Verursacht 100 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 300 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 400 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 500 Schaden.
+A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
 
 STRING 11654
-// Fähigkeiten: A0UL (Blitzschlag - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Blitzschlag erfasst das Ziel, verursacht Schaden. |n|n|cffffcc00Stufe 1|r - Verursacht 100 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 300 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 400 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 500 Schaden.
+A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
 
 STRING 11655
-// Fähigkeiten: A0UO (Blitzschlag - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Blitzschlag erfasst das Ziel, verursacht Schaden. |n|n|cffffcc00Stufe 1|r - Verursacht 100 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 300 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 400 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 500 Schaden.
+A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
 
 STRING 11656
@@ -43115,9 +43115,9 @@ A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - D
 }
 
 STRING 11657
-// Fähigkeiten: A0UP (Blitzschlag - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Blitzschlag erfasst das Ziel, verursacht Schaden. |n|n|cffffcc00Stufe 1|r - Verursacht 100 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 300 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 400 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 500 Schaden.
+A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
 
 STRING 11658
@@ -43157,27 +43157,27 @@ Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r -
 }
 
 STRING 11664
-// Fähigkeiten: A0ER (Tierkunde - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 11665
-// Fähigkeiten: A0EQ (Tierkunde - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 11666
-// Fähigkeiten: A0EN (Tierkunde - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 11667
-// Fähigkeiten: A1OR (Tierkunde - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 11668
@@ -43199,7 +43199,7 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11675
-// Fähigkeiten: A10M (Arkane Zeit - Level 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1JM (Verzehren - Erlernen), Name (Name (anam))
 {
 Arcane Time [|cffffcc00Level 1|r]
 }
@@ -43211,7 +43211,7 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11677
-// Fähigkeiten: A10N (Arkane Zeit - Level 2), Tip (Tooltipp - Normal (atp1))
+// Einheiten: n075 (Eheweib), Name (Name (unam))
 {
 Arcane Time [|cffffcc00Level 2|r]
 }
@@ -43223,7 +43223,7 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11679
-// Fähigkeiten: A10O (Arkane Zeit - Level 3), Tip (Tooltipp - Normal (atp1))
+// Einheiten: n075 (Eheweib), Tip (Tooltipp - Einfach (utip))
 {
 Arcane Time [|cffffcc00Level 3|r]
 }
@@ -43235,7 +43235,7 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11681
-// Fähigkeiten: A10P (Arkane Zeit - Level 4), Tip (Tooltipp - Normal (atp1))
+// Einheiten: n075 (Eheweib), Ubertip (Tooltipp - Erweitert (utub))
 {
 Arcane Time [|cffffcc00Level 4|r]
 }
@@ -43247,15 +43247,15 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11683
-// Fähigkeiten: A10Q (Arkane Zeit - Level 5), Tip (Tooltipp - Normal (atp1))
+// Einheiten: n076 (Erbe), Name (Name (unam))
 {
 Arcane Time [|cffffcc00Level 5|r]
 }
 
 STRING 11690
-// Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11K (Beherrschung - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 3|r]
+Mastery [|cffffcc00Level 3|r]
 }
 
 STRING 11691
@@ -43271,15 +43271,15 @@ Beherrschung - Stufe 3
 }
 
 STRING 11695
-// Fähigkeiten: A11L (Beherrschung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier regeneriert alle 10 Sekunden einen Teil seines Manas.|n|n|cffffcc00Stufe 1|r - Regeneriert 5 % seines Manas.|n|cffffcc00Stufe 2|r - Regeneriert 10 % seines Manas.|n|cffffcc00Stufe 3|r - Regeneriert 15 % seines Manas.|n|cffffcc00Stufe 4|r - Regeneriert 20 % seines Manas.|n|cffffcc00Stufe 5|r - Regeneriert 25 % seines Manas.
+The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
 
 STRING 11704
-// Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11L (Beherrschung - Level 4), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 4|r]
+Mastery [|cffffcc00Level 4|r]
 }
 
 STRING 11705
@@ -43463,9 +43463,9 @@ Erhöht die Angriffsgeschwindigkeit falls ein Bogen getragen wird.
 }
 
 STRING 11749
-// Fähigkeiten: A160 (Pfeilköcher), Name (Name (anam))
+// Gegenstände: I04W (Pfeilköcher), Name (Name (unam))
 {
-Pfeilköcher
+Arrows Quiver
 }
 
 STRING 11750
@@ -43649,9 +43649,9 @@ Standfestigkeit - Stufe 1
 }
 
 STRING 11788
-// Fähigkeiten: A1NF (Standfestigkeit - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bei Aktivierung entfernt der Ritter alle negativen magischen Effekte von sich selbst und regeneriert sein Leben für jeden entfernten Effekt.|n|n|cffffcc00Stufe 1|r - Regeneriert 150 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 2|r - Regeneriert 250 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 3|r - Regeneriert 350 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 4|r - Regeneriert 450 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 5|r - Regeneriert 550 Leben für jeden entfernten Effekt.
+On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
 
 STRING 11797
@@ -43673,9 +43673,9 @@ Standfestigkeit - Stufe 2
 }
 
 STRING 11802
-// Fähigkeiten: A125 (Standfestigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bei Aktivierung entfernt der Ritter alle negativen magischen Effekte von sich selbst und regeneriert sein Leben für jeden entfernten Effekt.|n|n|cffffcc00Stufe 1|r - Regeneriert 150 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 2|r - Regeneriert 250 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 3|r - Regeneriert 350 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 4|r - Regeneriert 450 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 5|r - Regeneriert 550 Leben für jeden entfernten Effekt.
+On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
 
 STRING 11811
@@ -43697,9 +43697,9 @@ Standfestigkeit - Stufe 3
 }
 
 STRING 11816
-// Fähigkeiten: A128 (Standfestigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bei Aktivierung entfernt der Ritter alle negativen magischen Effekte von sich selbst und regeneriert sein Leben für jeden entfernten Effekt.|n|n|cffffcc00Stufe 1|r - Regeneriert 150 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 2|r - Regeneriert 250 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 3|r - Regeneriert 350 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 4|r - Regeneriert 450 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 5|r - Regeneriert 550 Leben für jeden entfernten Effekt.
+On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
 
 STRING 11825
@@ -43721,9 +43721,9 @@ Standfestigkeit - Stufe 4
 }
 
 STRING 11830
-// Fähigkeiten: A127 (Standfestigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bei Aktivierung entfernt der Ritter alle negativen magischen Effekte von sich selbst und regeneriert sein Leben für jeden entfernten Effekt.|n|n|cffffcc00Stufe 1|r - Regeneriert 150 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 2|r - Regeneriert 250 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 3|r - Regeneriert 350 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 4|r - Regeneriert 450 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 5|r - Regeneriert 550 Leben für jeden entfernten Effekt.
+On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
 
 STRING 11839
@@ -43835,9 +43835,9 @@ Learn spells - 8 skill points (|cffffcc00Z|r)
 }
 
 STRING 11860
-// Einheiten: n067 (Hain), Name (Name (unam))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 11862
@@ -44939,9 +44939,9 @@ Wolle kaufen
 }
 
 STRING 12222
-// Gegenstände: I04X (Wolle), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I04X (Wolle), Description (Beschreibung (ides))
 {
-Die Wolle eines Schafs.
+The wool of a sheep.
 }
 
 STRING 12223
@@ -45395,7 +45395,7 @@ STRING 12419
 }
 
 STRING 12420
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A06W (Überlegenheit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -45413,9 +45413,9 @@ Protect [|cffffcc00Level 1|r]
 }
 
 STRING 12423
-// Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 12424
@@ -45761,7 +45761,7 @@ Holy Power (|cffffcc00Q|r)
 }
 
 STRING 12585
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1FF (Rage), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -45785,9 +45785,9 @@ STRING 12588
 }
 
 STRING 12589
-// Fähigkeiten: A0D4 (Hain), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 12590
@@ -46919,7 +46919,7 @@ Arkaner Schutz [|cffffcc00Stufe 4|r]
 }
 
 STRING 12933
-// Fähigkeiten: A165 (Übertragung - Level 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A05Z (Arkaner Hunger - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Transfer [|cffffcc00Level 1|r]
 }
@@ -47075,7 +47075,7 @@ STRING 12968
 }
 
 STRING 12979
-// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Transfer [|cffffcc00Level 3|r]
 }
@@ -48395,7 +48395,7 @@ STRING 13223
 }
 
 STRING 13224
-// Einheiten: n04N (Rebhuhn), Name (Name (unam))
+// Einheiten: n04O (Rebhuhn), Name (Name (unam))
 {
 Patridge
 }
@@ -48647,9 +48647,9 @@ Vagabundin
 }
 
 STRING 13266
-// Einheiten: H03K (Wahnsinniger Dorfältester), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 13268
@@ -49703,9 +49703,9 @@ Nordischer Kriegshelm
 }
 
 STRING 13532
-// Zauberverstärker/Effekte: B02N (), Bufftip (Tooltipp (ftip))
+// Einheiten: n055 (Wächter), Name (Name (unam))
 {
-Wächter
+Guardian
 }
 
 STRING 13533
@@ -51959,601 +51959,601 @@ Ausbau zur verbesserten Baukunst Stufe 100
 }
 
 STRING 13921
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13922
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13923
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13924
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13925
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13926
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13927
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13928
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13929
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13930
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13931
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13932
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13933
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13934
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13935
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13936
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13937
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13938
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13939
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13940
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13941
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13942
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13943
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13944
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13945
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13946
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13947
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13948
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13949
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13950
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13951
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13952
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13953
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13954
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13955
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13956
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13957
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13958
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13959
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13960
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13961
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13962
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13963
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13964
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13965
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13966
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13967
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13968
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13969
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13970
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13971
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13972
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13973
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13974
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13975
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13976
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13977
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13978
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13979
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13980
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13981
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13982
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13983
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13984
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13985
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13986
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13987
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13988
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13989
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13990
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13991
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13992
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13993
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13994
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13995
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13996
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13997
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13998
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 13999
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14000
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14001
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14002
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14003
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14004
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14005
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14006
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14007
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14008
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14009
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14010
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14011
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14012
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14013
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14014
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14015
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14016
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14017
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14018
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14019
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
 
 STRING 14020
-// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
 Improves armour and hit points of the buildng.
 }
@@ -59789,9 +59789,9 @@ Haids Stand
 }
 
 STRING 15226
-// Fähigkeiten: A1EJ (Pfeilköcher), Name (Name (anam))
+// Gegenstände: I04W (Pfeilköcher), Name (Name (unam))
 {
-Pfeilköcher
+Arrows Quiver
 }
 
 STRING 15227
@@ -60143,7 +60143,7 @@ Stealing from a unit that does not belong to the player. The target unit can be 
 }
 
 STRING 15321
-// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1JV (Verfluchter Boden - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Transfer [|cffffcc00Level 3|r]
 }
@@ -60233,9 +60233,9 @@ Verfluchter Boden - Erlernen
 }
 
 STRING 15339
-// Fähigkeiten: A1A8 (Verfluchter Boden), Name (Name (anam))
+// Fähigkeiten: A1AB (Verfluchter Boden), Name (Name (anam))
 {
-Verfluchter Boden
+Cursed Ground
 }
 
 STRING 15346
@@ -62447,15 +62447,15 @@ Horn des Kampfes
 }
 
 STRING 15834
-// Fähigkeiten: A1B7 (Horn des Lebens), Name (Name (anam))
+// Fähigkeiten: A0VQ (Horn des Lebens), Name (Name (anam))
 {
-Horn des Lebens
+Horn of Life
 }
 
 STRING 15835
-// Fähigkeiten: A1B8 (Horn des Schutzes), Name (Name (anam))
+// Fähigkeiten: A0VP (Horn des Schutzes), Name (Name (anam))
 {
-Horn des Schutzes
+Horn of Protection
 }
 
 STRING 15836
@@ -62513,21 +62513,21 @@ STRING 15844
 }
 
 STRING 15845
-// Fähigkeiten: A1DZ (Befehls-Aura), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1E0 (Schmetter-Angriff), EditorSuffix (Editor-Suffix (ansf))
 {
-(Kriegsherr der Orks)
+(Warlord of the Orcs)
 }
 
 STRING 15846
-// Fähigkeiten: A1DX (Kriegsdonner), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1E0 (Schmetter-Angriff), EditorSuffix (Editor-Suffix (ansf))
 {
-(Kriegsherr der Orks)
+(Warlord of the Orcs)
 }
 
 STRING 15847
-// Fähigkeiten: A1DY (Kritischer Schlag), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1E0 (Schmetter-Angriff), EditorSuffix (Editor-Suffix (ansf))
 {
-(Kriegsherr der Orks)
+(Warlord of the Orcs)
 }
 
 STRING 15848
@@ -63257,7 +63257,7 @@ Jumps to the current target location of the mission.
 }
 
 STRING 15971
-// Fähigkeiten: A1E4 (Eisenpanzer), Name (Name (anam))
+// Gegenstände: I067 (Eisenpanzer), Name (Name (unam))
 {
 Iron Armour
 }
@@ -63281,7 +63281,7 @@ Eine eiserne Rüstung.
 }
 
 STRING 15975
-// Fähigkeiten: A1E7 (Ritterschild), Name (Name (anam))
+// Gegenstände: I068 (Ritterschild), Name (Name (unam))
 {
 Knight's Buckler
 }
@@ -63305,7 +63305,7 @@ Ritterschild kaufen
 }
 
 STRING 15979
-// Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
+// Gegenstände: I069 (Schädelmaske), Name (Name (unam))
 {
 Skull Mask
 }
@@ -63359,13 +63359,13 @@ STRING 15987
 }
 
 STRING 15988
-// Fähigkeiten: A1E7 (Ritterschild), Name (Name (anam))
+// Fähigkeiten: A1E6 (Ritterschild), Name (Name (anam))
 {
 Knight's Buckler
 }
 
 STRING 15989
-// Fähigkeiten: A1E7 (Ritterschild), Name (Name (anam))
+// Fähigkeiten: A1E5 (Ritterschild), Name (Name (anam))
 {
 Knight's Buckler
 }
@@ -63377,7 +63377,7 @@ Blind [|cffffcc00Level 3|r]
 }
 
 STRING 15991
-// Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
+// Fähigkeiten: A1E8 (Schädelmaske), Name (Name (anam))
 {
 Skull Mask
 }
@@ -63389,7 +63389,7 @@ STRING 15992
 }
 
 STRING 15993
-// Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
+// Fähigkeiten: A1E9 (Schädelmaske), Name (Name (anam))
 {
 Skull Mask
 }
@@ -63407,7 +63407,7 @@ Skull Mask
 }
 
 STRING 15996
-// Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
+// Fähigkeiten: A1EB (Schädelmaske), Name (Name (anam))
 {
 Skull Mask
 }
@@ -63449,9 +63449,9 @@ STRING 16002
 }
 
 STRING 16003
-// Fähigkeiten: A1EC (Pfeilköcher), Name (Name (anam))
+// Gegenstände: I04W (Pfeilköcher), Name (Name (unam))
 {
-Pfeilköcher
+Arrows Quiver
 }
 
 STRING 16004
@@ -64443,13 +64443,13 @@ Rage
 }
 
 STRING 16273
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0K5 (Koloss), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
 
 STRING 16274
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1FR (Siegeswunsch), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -64761,13 +64761,13 @@ Reserven - Stufe 5
 }
 
 STRING 16390
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19Z (Beutezug), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
 
 STRING 16391
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -64845,9 +64845,9 @@ STRING 16405
 }
 
 STRING 16406
-// Fähigkeiten: A1G8 (Auge um Auge), Name (Name (anam))
+// Fähigkeiten: A1G9 (Auge um Auge), Name (Name (anam))
 {
-Auge um Auge
+An Eye for an Eye
 }
 
 STRING 16407
@@ -65001,7 +65001,7 @@ Auge um Auge - Stufe 5
 }
 
 STRING 16477
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1GK (Sprungattacke), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -65481,7 +65481,7 @@ Sprungattacke - Stufe 5
 }
 
 STRING 16601
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B012 (Überlegenheit), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Dragon Slayer)
 }
@@ -65499,7 +65499,7 @@ Dummy Caster - Sprungattacke
 }
 
 STRING 16604
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B024 (Koloss), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Dragon Slayer)
 }
@@ -66259,7 +66259,7 @@ STRING 16832
 }
 
 STRING 16833
-// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Transfer [|cffffcc00Level 3|r]
 }
@@ -66283,7 +66283,7 @@ Verfluchter Boden - Stufe 2
 }
 
 STRING 16837
-// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Transfer [|cffffcc00Level 3|r]
 }
@@ -66307,7 +66307,7 @@ Verfluchter Boden - Stufe 3
 }
 
 STRING 16841
-// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Transfer [|cffffcc00Level 3|r]
 }
@@ -66325,7 +66325,7 @@ Verfluchter Boden - Stufe 4
 }
 
 STRING 16845
-// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Transfer [|cffffcc00Level 3|r]
 }
@@ -69035,7 +69035,7 @@ Diese Einheit steht unter dem Einfluss von 'Arkane Zeit'; die Dauer positiver Za
 }
 
 STRING 17361
-// Fähigkeiten: A1IZ (Amulett aus Talras), Name (Name (anam))
+// Gegenstände: I06P (Amulett aus Talras), Name (Name (unam))
 {
 Amulet of Talras
 }
@@ -73092,9 +73092,9 @@ Lauern - Erlernen
 }
 
 STRING 18309
-// Fähigkeiten: A1M1 (Blitzschlag - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Blitzschlag erfasst das Ziel, verursacht Schaden. |n|n|cffffcc00Stufe 1|r - Verursacht 100 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 300 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 400 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 500 Schaden.
+A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
 
 STRING 18318
@@ -73374,9 +73374,9 @@ Meister der Nekromantie - Erlernen
 }
 
 STRING 18437
-// Fähigkeiten: A11M (Beherrschung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier regeneriert alle 10 Sekunden einen Teil seines Manas.|n|n|cffffcc00Stufe 1|r - Regeneriert 5 % seines Manas.|n|cffffcc00Stufe 2|r - Regeneriert 10 % seines Manas.|n|cffffcc00Stufe 3|r - Regeneriert 15 % seines Manas.|n|cffffcc00Stufe 4|r - Regeneriert 20 % seines Manas.|n|cffffcc00Stufe 5|r - Regeneriert 25 % seines Manas.
+The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
 
 STRING 18446
@@ -73974,9 +73974,9 @@ Reserven - Erlernen
 }
 
 STRING 18705
-// Fähigkeiten: A124 (Standfestigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bei Aktivierung entfernt der Ritter alle negativen magischen Effekte von sich selbst und regeneriert sein Leben für jeden entfernten Effekt.|n|n|cffffcc00Stufe 1|r - Regeneriert 150 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 2|r - Regeneriert 250 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 3|r - Regeneriert 350 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 4|r - Regeneriert 450 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 5|r - Regeneriert 550 Leben für jeden entfernten Effekt.
+On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
 
 STRING 18714
@@ -74478,9 +74478,9 @@ Verspotten - Erlernen
 }
 
 STRING 18929
-// Fähigkeiten: A0L1 (Teleportation - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportiert den Elementarmagier an einen erkundeten Punkt auf der Karte und absorbiert 5 Sekunden lang erlittenen Schaden. |n|n|cffffcc00Stufe 1|r - 10 % Schaden, <A01I,Cool1> Sekunden Aklingzeit.|n|cffffcc00Stufe 2|r - 20 % Schaden, <A01I,Cool2> Sekunden Aklingzeit.|n|cffffcc00Stufe 3|r - 30 % Schaden, <A01I,Cool3> Sekunden Aklingzeit.|n|cffffcc00Stufe 4|r - 40 % Schaden, <A01I,Cool4> Sekunden Aklingzeit.|n|cffffcc00Stufe 5|r - 50 % Schaden, <A01I,Cool5> Sekunden Aklingzeit.
+Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
 
 STRING 18938
@@ -74832,9 +74832,9 @@ Zorn des Waldes - Erlernen
 }
 
 STRING 19087
-// Fähigkeiten: A0EP (Tierkunde - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 19096
@@ -78306,7 +78306,7 @@ Beschwört <A1EH,DataB1> Schlächter. |nHält <A1EH,Dur1> Sekunden lang an. |n|n
 }
 
 STRING 19861
-// Fähigkeiten: A1EI (Drachen beschwören), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1EI (Drachen beschwören), Name (Name (anam))
 {
 Summon Dragon
 }
@@ -79254,9 +79254,9 @@ STRING 20036
 }
 
 STRING 20037
-// Gegenstände: I074 (Sattel), Name (Name (unam))
+// Fähigkeiten: A1TI (Sattel), Name (Name (anam))
 {
-Sattel
+Saddle
 }
 
 STRING 20038
@@ -79290,9 +79290,9 @@ Saddle
 }
 
 STRING 20043
-// Fähigkeiten: A1TH (Sattel), Name (Name (anam))
+// Fähigkeiten: A1TI (Sattel), Name (Name (anam))
 {
-Sattel
+Saddle
 }
 
 STRING 20044
@@ -79302,9 +79302,9 @@ STRING 20044
 }
 
 STRING 20045
-// Gegenstände: I075 (Zweihänder), Name (Name (unam))
+// Fähigkeiten: A1TL (Zweihänder), Name (Name (anam))
 {
-Zweihänder
+Two-Handed Sword
 }
 
 STRING 20046
@@ -79320,9 +79320,9 @@ Increases the damage.
 }
 
 STRING 20049
-// Fähigkeiten: A1TJ (Zweihänder), Name (Name (anam))
+// Fähigkeiten: A1TL (Zweihänder), Name (Name (anam))
 {
-Zweihänder
+Two-Handed Sword
 }
 
 STRING 20050
@@ -79362,9 +79362,9 @@ Sattel kaufen
 }
 
 STRING 20056
-// Fähigkeiten: A1TK (Zweihänder), Name (Name (anam))
+// Fähigkeiten: A1TL (Zweihänder), Name (Name (anam))
 {
-Zweihänder
+Two-Handed Sword
 }
 
 STRING 20057
@@ -80040,9 +80040,9 @@ Sukkubus
 }
 
 STRING 20173
-// Einheiten: H03N (Ork-Ältester), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 20174
@@ -80178,9 +80178,9 @@ Konvertierter Inquisitor
 }
 
 STRING 20196
-// Einheiten: H03O (Prinzessin der Nordmänner), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 20197
