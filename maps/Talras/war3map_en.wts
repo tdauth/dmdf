@@ -7228,9 +7228,9 @@ Beschwört einen Schattenriesen aus den Lüften, die an feindlichen Land-Einheit
 }
 
 STRING 1208
-// Einheiten: H005 (Kleriker), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse - Fernkampf)
+(Character Class - Range Combat)
 }
 
 STRING 1209
@@ -8668,9 +8668,9 @@ Zweihänder der Kälte
 }
 
 STRING 1448
-// Zerstörbare Objekte: B00C (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
 {
-Brücke
+Bridge
 }
 
 STRING 1449
@@ -9430,9 +9430,9 @@ Nordischer Speer
 }
 
 STRING 1575
-// Zerstörbare Objekte: B00F (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
 {
-Brücke
+Bridge
 }
 
 STRING 1576
@@ -14352,9 +14352,9 @@ Mühle 2 (Grasland)
 }
 
 STRING 2448
-// Zerstörbare Objekte: B00G (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
 {
-Brücke
+Bridge
 }
 
 STRING 2449
@@ -17003,9 +17003,9 @@ Ancestors Pact [|cffffcc00Level 5|r]
 }
 
 STRING 3020
-// Zerstörbare Objekte: B00H (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
 {
-Brücke
+Bridge
 }
 
 STRING 3021
@@ -19348,9 +19348,9 @@ Increases the armour.
 }
 
 STRING 3445
-// Gegenstände: I02G (Fackel), Name (Name (unam))
+// Zauberverstärker/Effekte: B01F (Fackel), EditorName (Name (nur Editor) (fnam))
 {
-Fackel
+Torch
 }
 
 STRING 3446
@@ -19372,9 +19372,9 @@ Fackel kaufen
 }
 
 STRING 3449
-// Fähigkeiten: A088 (Fackel), Name (Name (anam))
+// Zauberverstärker/Effekte: B01F (Fackel), EditorName (Name (nur Editor) (fnam))
 {
-Fackel
+Torch
 }
 
 STRING 3450
@@ -19390,15 +19390,15 @@ STRING 3451
 }
 
 STRING 3452
-// Fähigkeiten: A087 (Fackel), Name (Name (anam))
+// Zauberverstärker/Effekte: B01F (Fackel), EditorName (Name (nur Editor) (fnam))
 {
-Fackel
+Torch
 }
 
 STRING 3453
-// Gegenstände: I02H (Kreis der Elemente), Name (Name (unam))
+// Fähigkeiten: A089 (Kreis der Elemente), Name (Name (anam))
 {
-Kreis der Elemente
+Circle of Elements
 }
 
 STRING 3454
@@ -19414,9 +19414,9 @@ Erhöht die Mana-Regenerationsrate und das Wissen und erlaubt es dem Träger, ge
 }
 
 STRING 3457
-// Fähigkeiten: A08A (Kreis der Elemente), Name (Name (anam))
+// Fähigkeiten: A089 (Kreis der Elemente), Name (Name (anam))
 {
-Kreis der Elemente
+Circle of Elements
 }
 
 STRING 3458
@@ -19570,15 +19570,15 @@ Steals the soul from a hostile target and drains life and mana from it per secon
 }
 
 STRING 3504
-// Fähigkeiten: A08K (Todesbote), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: S004 (Todesbote), Name (Name (anam))
 {
-Todesbote
+Death Herald
 }
 
 STRING 3505
-// Fähigkeiten: A08K (Todesbote), Name (Name (anam))
+// Fähigkeiten: S004 (Todesbote), Name (Name (anam))
 {
-Todesbote
+Death Herald
 }
 
 STRING 3507
@@ -19588,9 +19588,9 @@ STRING 3507
 }
 
 STRING 3508
-// Fähigkeiten: A08J (Todesbote), Name (Name (anam))
+// Fähigkeiten: S004 (Todesbote), Name (Name (anam))
 {
-Todesbote
+Death Herald
 }
 
 STRING 3510
@@ -19978,9 +19978,9 @@ Manaexplosion [|cffffcc00Stufe 1|r]
 }
 
 STRING 3613
-// Fähigkeiten: A08H (Manaexplosion), Name (Name (anam))
+// Fähigkeiten: A08P (Manaexplosion), Name (Name (anam))
 {
-Manaexplosion
+Mana Explosion
 }
 
 STRING 3616
@@ -20056,9 +20056,9 @@ Manastrom [|cffffcc00Stufe 1|r]
 }
 
 STRING 3628
-// Fähigkeiten: A08Q (Manastrom), Name (Name (anam))
+// Fähigkeiten: A08R (Manastrom), Name (Name (anam))
 {
-Manastrom
+Mana Stream
 }
 
 STRING 3631
@@ -20182,9 +20182,9 @@ Necromancy
 }
 
 STRING 3651
-// Fähigkeiten: A0FK (Totenbeschwörung), Name (Name (anam))
+// Fähigkeiten: A0FJ (Totenbeschwörung), Name (Name (anam))
 {
-Totenbeschwörung
+Necromancy
 }
 
 STRING 3652
@@ -20350,7 +20350,7 @@ STRING 3686
 }
 
 STRING 3687
-// Fähigkeiten: A08X (Amulett der Weitsicht), Name (Name (anam))
+// Gegenstände: I02J (Amulett der Weitsicht), Name (Name (unam))
 {
 Amulet of Farsight
 }
@@ -20368,7 +20368,7 @@ Erlaubt es dem Träger, nachts so weit zu sehen, wie am Tag. Enttarnt außerdem 
 }
 
 STRING 3690
-// Fähigkeiten: A08X (Amulett der Weitsicht), Name (Name (anam))
+// Fähigkeiten: A08Y (Amulett der Weitsicht), Name (Name (anam))
 {
 Amulet of Farsight
 }
@@ -20398,9 +20398,9 @@ STRING 3694
 }
 
 STRING 3695
-// Fähigkeiten: A090 (Arkane List), Name (Name (anam))
+// Fähigkeiten: A08Z (Arkane List), Name (Name (anam))
 {
-Arkane List
+Arcane Trick
 }
 
 STRING 3696
@@ -21052,7 +21052,7 @@ STRING 3833
 }
 
 STRING 3834
-// Fähigkeiten: A09A (Blitz), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A09A (Blitz), Name (Name (anam))
 {
 Lightning
 }
@@ -21208,7 +21208,7 @@ Verleiht eine Chance von <A09E,DataA1>%, bei einem Angriff <A09E,DataB1>-fachen 
 }
 
 STRING 3867
-// Fähigkeiten: A09F (Diener), Name (Name (anam))
+// Fähigkeiten: A09F (Diener), Tip (Tooltipp - Normal (atp1))
 {
 Servant
 }
@@ -21256,15 +21256,15 @@ Führt ein Blutritual durch, bei dem neuen dunkle Kreaturen entstehen.
 }
 
 STRING 3875
-// Fähigkeiten: A09I (Gefallene erwecken), Tip (Tooltipp - Normal (atp1))
+// Zauberverstärker/Effekte: B01L (Gefallene erwecken), Bufftip (Tooltipp (ftip))
 {
-Gefallene erwecken
+Resurrect Fallen
 }
 
 STRING 3876
-// Fähigkeiten: A09I (Gefallene erwecken), Name (Name (anam))
+// Zauberverstärker/Effekte: B01L (Gefallene erwecken), Bufftip (Tooltipp (ftip))
 {
-Gefallene erwecken
+Resurrect Fallen
 }
 
 STRING 3877
@@ -21406,7 +21406,7 @@ Kontrollierter Zeitfluss [|cffffcc00Stufe 1|r]
 }
 
 STRING 3906
-// Fähigkeiten: A09O (Kontrollierter Zeitfluss), Name (Name (anam))
+// Fähigkeiten: A09N (Kontrollierter Zeitfluss), Name (Name (anam))
 {
 Controlled Time Flow
 }
@@ -21436,7 +21436,7 @@ Schwerter ziehen
 }
 
 STRING 3912
-// Fähigkeiten: A09P (Meisterschützin), Name (Name (anam))
+// Fähigkeiten: A09P (Meisterschützin), Tip (Tooltipp - Normal (atp1))
 {
 Master Archer
 }
@@ -21814,9 +21814,9 @@ Nixe
 }
 
 STRING 3985
-// Zauberverstärker/Effekte: B01L (Gefallene erwecken), EditorName (Name (nur Editor) (fnam))
+// Zauberverstärker/Effekte: B01L (Gefallene erwecken), Bufftip (Tooltipp (ftip))
 {
-Gefallene erwecken
+Resurrect Fallen
 }
 
 STRING 3986
@@ -22438,7 +22438,7 @@ Infects a selected enemy with a lethal parasite who causes damage per second for
 }
 
 STRING 4100
-// Fähigkeiten: A0A7 (Verbannen), Name (Name (anam))
+// Fähigkeiten: A0A6 (Verbannen), Name (Name (anam))
 {
 Ban
 }
@@ -22594,7 +22594,7 @@ STRING 4125
 }
 
 STRING 4126
-// Fähigkeiten: A0A8 (Arkaner Schutz), Name (Name (anam))
+// Fähigkeiten: A0A9 (Arkaner Schutz), Name (Name (anam))
 {
 Arcane Protection
 }
@@ -22606,7 +22606,7 @@ STRING 4127
 }
 
 STRING 4128
-// Fähigkeiten: A0A7 (Verbannen), Name (Name (anam))
+// Zauberverstärker/Effekte: B01R (Verbannen), EditorName (Name (nur Editor) (fnam))
 {
 Ban
 }
@@ -22618,7 +22618,7 @@ STRING 4129
 }
 
 STRING 4130
-// Fähigkeiten: A0A7 (Verbannen), Name (Name (anam))
+// Zauberverstärker/Effekte: B01R (Verbannen), Bufftip (Tooltipp (ftip))
 {
 Ban
 }
@@ -22630,13 +22630,13 @@ Diese Einheit steht unter dem Einfluss von 'Verbannen'; sie kann keine Zauber wi
 }
 
 STRING 4132
-// Fähigkeiten: A0A8 (Arkaner Schutz), Name (Name (anam))
+// Zauberverstärker/Effekte: B01S (Arkaner Schutz), EditorName (Name (nur Editor) (fnam))
 {
 Arcane Protection
 }
 
 STRING 4133
-// Fähigkeiten: A0A8 (Arkaner Schutz), Name (Name (anam))
+// Zauberverstärker/Effekte: B01S (Arkaner Schutz), Bufftip (Tooltipp (ftip))
 {
 Arcane Protection
 }
@@ -26630,9 +26630,9 @@ Verwandelt einen Gegner in eine harmlose Kreatur.
 }
 
 STRING 5240
-// Fähigkeiten: A0C3 (Spruchrolle der Hexerei), Name (Name (anam))
+// Gegenstände: I03E (Spruchrolle der Hexerei), Name (Name (unam))
 {
-Spruchrolle der Hexerei
+Scroll of Witchcraft
 }
 
 STRING 5241
@@ -26882,7 +26882,7 @@ Reiter anheuern
 }
 
 STRING 5301
-// Einheiten: o002 (Bärenhöhle), Name (Name (unam))
+// Fähigkeiten: A122 (Tierkunde - Stufe 5 - Bärengestalt - Bärenhöhle), Tip (Tooltipp - Normal (atp1))
 {
 Bear Cave
 }
@@ -29977,15 +29977,15 @@ Protect [|cffffcc00Level 1|r]
 }
 
 STRING 6526
-// Zauberverstärker/Effekte: B01G (Totenbeschwörung), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A0FJ (Totenbeschwörung), Name (Name (anam))
 {
-Totenbeschwörung
+Necromancy
 }
 
 STRING 6527
-// Zauberverstärker/Effekte: B01G (Totenbeschwörung), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A0FJ (Totenbeschwörung), Name (Name (anam))
 {
-Totenbeschwörung
+Necromancy
 }
 
 STRING 6528
@@ -31567,9 +31567,9 @@ Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 S
 }
 
 STRING 7135
-// Fähigkeiten: A0V9 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 7139
@@ -39535,9 +39535,9 @@ Human
 }
 
 STRING 10345
-// Einheiten: H00A (Nekromant), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse - Fernkampf)
+(Character Class - Range Combat)
 }
 
 STRING 10346
@@ -39571,9 +39571,9 @@ Human
 }
 
 STRING 10351
-// Einheiten: H00S (Ritter), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse - Fernkampf)
+(Character Class - Range Combat)
 }
 
 STRING 10352
@@ -39589,9 +39589,9 @@ Human
 }
 
 STRING 10354
-// Einheiten: H00U (Drachentöter), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse - Fernkampf)
+(Character Class - Range Combat)
 }
 
 STRING 10355
@@ -39607,9 +39607,9 @@ Human
 }
 
 STRING 10357
-// Einheiten: H013 (Waldläufer), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse - Fernkampf)
+(Character Class - Range Combat)
 }
 
 STRING 10358
@@ -39625,9 +39625,9 @@ Human
 }
 
 STRING 10360
-// Einheiten: H01H (Elementarmagier), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse - Fernkampf)
+(Character Class - Range Combat)
 }
 
 STRING 10361
@@ -39649,45 +39649,45 @@ STRING 10363
 }
 
 STRING 10364
-// Einheiten: o002 (Bärenhöhle), Name (Name (unam))
+// Zauberverstärker/Effekte: B02L (Tierkunde - Stufe 5 - Bärengestalt - Bärenhöhle), Bufftip (Tooltipp (ftip))
 {
 Bear Cave
 }
 
 STRING 10365
-// Fähigkeiten: A0VB (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 10366
-// Fähigkeiten: A1T3 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 10367
-// Fähigkeiten: A16R (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 10368
-// Fähigkeiten: A1T5 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 10369
-// Fähigkeiten: A0V7 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 10370
-// Fähigkeiten: A16T (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 10371
@@ -44255,9 +44255,9 @@ Lying in Wait
 }
 
 STRING 12039
-// Gegenstände: I04N (Spruchrolle des Sammlers), Name (Name (unam))
+// Fähigkeiten: A133 (Spruchrolle des Sammlers), Name (Name (anam))
 {
-Spruchrolle des Sammlers
+Scroll of the Collector
 }
 
 STRING 12040
@@ -44273,9 +44273,9 @@ Teleports all items of the casting unit next to it.
 }
 
 STRING 12042
-// Gegenstände: I04N (Spruchrolle des Sammlers), Description (Beschreibung (ides))
+// Gegenstände: I04N (Spruchrolle des Sammlers), Ubertip (Tooltipp - Erweitert (utub))
 {
-Teleportiert sämtliche Gegenstände des Zaubernden zu ihm.
+Teleports all items of the casting unit next to it.
 }
 
 STRING 12045
@@ -47297,9 +47297,9 @@ STRING 13039
 }
 
 STRING 13040
-// Fähigkeiten: A1T6 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 13041
@@ -47657,9 +47657,9 @@ STRING 13099
 }
 
 STRING 13100
-// Fähigkeiten: A16V (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 13101
@@ -47669,9 +47669,9 @@ STRING 13101
 }
 
 STRING 13102
-// Fähigkeiten: A1T1 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 13103
@@ -47681,9 +47681,9 @@ STRING 13103
 }
 
 STRING 13104
-// Fähigkeiten: A16Q (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 13105
@@ -47693,9 +47693,9 @@ STRING 13105
 }
 
 STRING 13106
-// Fähigkeiten: A0V8 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 13107
@@ -47705,9 +47705,9 @@ STRING 13107
 }
 
 STRING 13108
-// Fähigkeiten: A0VA (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 13109
@@ -47717,9 +47717,9 @@ STRING 13109
 }
 
 STRING 13110
-// Fähigkeiten: A1T4 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 13111
@@ -47729,9 +47729,9 @@ STRING 13111
 }
 
 STRING 13112
-// Fähigkeiten: A1T2 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 13113
@@ -48059,9 +48059,9 @@ Erhöht die Bewegungsgeschwindigkeit für <A1OX,Dur1> Sekunden um <A1OX,DataA1,%
 }
 
 STRING 13168
-// Zerstörbare Objekte: B00S (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
 {
-Brücke
+Bridge
 }
 
 STRING 13169
@@ -49781,9 +49781,9 @@ Spruchrolle der Hexerei herstellen
 }
 
 STRING 13545
-// Fähigkeiten: A18O (Spruchrolle der Heilung herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Magie)
+(Book of Magic)
 }
 
 STRING 13546
@@ -49835,9 +49835,9 @@ STRING 13553
 }
 
 STRING 13554
-// Fähigkeiten: A18P (Spruchrolle der Zauberkraft herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Magie)
+(Book of Magic)
 }
 
 STRING 13555
@@ -49853,9 +49853,9 @@ Großen Manatrank herstellen
 }
 
 STRING 13557
-// Fähigkeiten: A1AC (Spruchrolle des Sammlers herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Magie)
+(Book of Magic)
 }
 
 STRING 13558
@@ -49877,9 +49877,9 @@ Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area5>
 }
 
 STRING 13561
-// Fähigkeiten: A19Y (Magischen Stein der Ahnen herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Magie)
+(Book of Magic)
 }
 
 STRING 13562
@@ -60017,9 +60017,9 @@ Nixe
 }
 
 STRING 15278
-// Gegenstände: I05W (Nixenstein), Name (Name (unam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15279
@@ -60305,9 +60305,9 @@ Teleportiert den Zaubernden mit Verbündeten im Umkreis zu einer anderen Einheit
 }
 
 STRING 15357
-// Fähigkeiten: A1A7 (Spruchrolle des Weges herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Magie)
+(Book of Magic)
 }
 
 STRING 15358
@@ -60329,9 +60329,9 @@ Teleportiert sämtliche Gegenstände des Zaubernden zu ihm.|n|nBenötigte Rohsto
 }
 
 STRING 15361
-// Fähigkeiten: A18N (Spruchrolle der Totenbeschwörung herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Magie)
+(Book of Magic)
 }
 
 STRING 15362
@@ -60341,9 +60341,9 @@ STRING 15362
 }
 
 STRING 15363
-// Gegenstände: I05V (Schamanenmaske), Name (Name (unam))
+// Fähigkeiten: A1AE (Schamanenmaske), Name (Name (anam))
 {
-Schamanenmaske
+Shaman Mask
 }
 
 STRING 15364
@@ -60389,9 +60389,9 @@ STRING 15373
 }
 
 STRING 15374
-// Fähigkeiten: A1AN (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15377
@@ -60413,9 +60413,9 @@ STRING 15379
 }
 
 STRING 15380
-// Fähigkeiten: A1AW (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15381
@@ -60425,9 +60425,9 @@ STRING 15381
 }
 
 STRING 15382
-// Fähigkeiten: A1AR (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15383
@@ -60437,9 +60437,9 @@ STRING 15383
 }
 
 STRING 15384
-// Fähigkeiten: A1AT (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15385
@@ -60449,9 +60449,9 @@ STRING 15385
 }
 
 STRING 15386
-// Fähigkeiten: A1AO (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15387
@@ -60461,9 +60461,9 @@ STRING 15387
 }
 
 STRING 15388
-// Fähigkeiten: A1AJ (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15389
@@ -60473,9 +60473,9 @@ STRING 15389
 }
 
 STRING 15390
-// Fähigkeiten: A1AI (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15391
@@ -60485,9 +60485,9 @@ STRING 15391
 }
 
 STRING 15392
-// Fähigkeiten: A1AH (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15393
@@ -60497,9 +60497,9 @@ STRING 15393
 }
 
 STRING 15394
-// Fähigkeiten: A1AP (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15395
@@ -60509,9 +60509,9 @@ STRING 15395
 }
 
 STRING 15396
-// Fähigkeiten: A1AS (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15397
@@ -60521,9 +60521,9 @@ STRING 15397
 }
 
 STRING 15398
-// Fähigkeiten: A1AU (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15399
@@ -60533,9 +60533,9 @@ STRING 15399
 }
 
 STRING 15400
-// Fähigkeiten: A1AK (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15401
@@ -60545,9 +60545,9 @@ STRING 15401
 }
 
 STRING 15402
-// Fähigkeiten: A1AV (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15403
@@ -60557,9 +60557,9 @@ STRING 15403
 }
 
 STRING 15404
-// Fähigkeiten: A1AL (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15405
@@ -60569,9 +60569,9 @@ STRING 15405
 }
 
 STRING 15406
-// Fähigkeiten: A1AX (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15407
@@ -60581,9 +60581,9 @@ STRING 15407
 }
 
 STRING 15408
-// Fähigkeiten: A1AQ (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15409
@@ -68304,9 +68304,9 @@ Informationen
 }
 
 STRING 17194
-// Gegenstände: I072 (Helm des Hauptmanns), Name (Name (unam))
+// Fähigkeiten: A1V1 (Helm des Hauptmanns), Name (Name (anam))
 {
-Helm des Hauptmanns
+Helmet of the Captain
 }
 
 STRING 17195
@@ -79056,9 +79056,9 @@ STRING 20003
 }
 
 STRING 20004
-// Fähigkeiten: A0C2 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 20005
@@ -79068,9 +79068,9 @@ STRING 20005
 }
 
 STRING 20006
-// Fähigkeiten: A16S (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 20007
@@ -79080,9 +79080,9 @@ STRING 20007
 }
 
 STRING 20008
-// Fähigkeiten: A1T7 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 20009
@@ -79092,9 +79092,9 @@ STRING 20009
 }
 
 STRING 20010
-// Fähigkeiten: A0V6 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 20011
@@ -79104,9 +79104,9 @@ STRING 20011
 }
 
 STRING 20012
-// Fähigkeiten: A1T8 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 20013
@@ -79116,9 +79116,9 @@ STRING 20013
 }
 
 STRING 20014
-// Fähigkeiten: A16U (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 20015
@@ -79128,9 +79128,9 @@ STRING 20015
 }
 
 STRING 20016
-// Fähigkeiten: A16H (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 20017
@@ -79140,9 +79140,9 @@ STRING 20017
 }
 
 STRING 20018
-// Fähigkeiten: A0V5 (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 20019
@@ -80442,9 +80442,9 @@ STRING 20239
 }
 
 STRING 20240
-// Fähigkeiten: A1V0 (Helm des Hauptmanns), Name (Name (anam))
+// Fähigkeiten: A1V1 (Helm des Hauptmanns), Name (Name (anam))
 {
-Helm des Hauptmanns
+Helmet of the Captain
 }
 
 STRING 20241
