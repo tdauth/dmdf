@@ -178,7 +178,7 @@ Necromancer
 STRING 30
 // Gegenstände: I04A (Zacken von Deranors Krone), Tip (Tooltipp - Einfach (utip))
 {
-Buy spike of Deranor's crown
+Buy Spike of Deranor's crown
 }
 
 STRING 31
@@ -5132,7 +5132,7 @@ Prevent Evil - Level 5
 STRING 858
 // Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schwarm wütender Bienen, die in der Nähe befindliche Gegner stechen. Während sie ihre Feinde stechen, verwandeln sie deren Fleisch auf diese Weise in eine Substanz, die nach ihrer Rückkehr das Leben des Druiden wiederherstellt. |nHält <A09X,Dur1> Sekunden lang an.|n|n|cffffcc00Stufe 1|r -  Erzeugt <A09X,DataA1> Bienen, von denen maximal <A09X,DataC1> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 2|r - Erzeugt <A09X,DataA2> Bienen, von denen maximal <A09X,DataC2> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 3|r - Erzeugt <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 4|r - Erzeugt <A09X,DataA4> Bienen, von denen maximal <A09X,DataC4> einen einzelnen Gegner angreifen.|n|cffffcc00Stufe 5|r - Erzeugt <A09X,DataA5> Bienen, von denen maximal <A09X,DataC5> einen einzelnen Gegner angreifen.
+Creates a swarm of angry bees that sting nearby opponents. While they sting their enemies, they transform their flash into a substance in this way which, after their return, restores the life of the druid.|n|n|cffffcc00Level 1|r - Creates <A09X,DataA1> bees of which a maximum of <A09X,DataC1> attack a single opponent.|n|cffffcc00Level 2|r - Creates <A09X,DataA2> bees of which a maximum of <A09X,DataC2> attack a single opponent.|n|cffffcc00Level 3|r - Creates <A09X,DataA3> Heuschrecken, von denen maximal <A09X,DataC3> attack a single opponent.|n|cffffcc00Level 4|r - Creates <A09X,DataA4> bees of which a maximum of <A09X,DataC4> attack a single opponent.|n|cffffcc00Level 5|r - Creates <A09X,DataA5> bees of which a maximum of <A09X,DataC5> attack a single opponent.
 }
 
 STRING 859
@@ -5216,13 +5216,13 @@ Prevent Evil - Level 5
 STRING 872
 // Fähigkeiten: A0L4 (Teleportation - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportiert den Elementarmagier an einen erkundeten Punkt auf der Karte und absorbiert 5 Sekunden lang erlittenen Schaden. |n|n|cffffcc00Stufe 1|r - 10 % Schaden, <A01I,Cool1> Sekunden Aklingzeit.|n|cffffcc00Stufe 2|r - 20 % Schaden, <A01I,Cool2> Sekunden Aklingzeit.|n|cffffcc00Stufe 3|r - 30 % Schaden, <A01I,Cool3> Sekunden Aklingzeit.|n|cffffcc00Stufe 4|r - 40 % Schaden, <A01I,Cool4> Sekunden Aklingzeit.|n|cffffcc00Stufe 5|r - 50 % Schaden, <A01I,Cool5> Sekunden Aklingzeit.
+Teleports the Elemental Mage to an explored location on the map, absorbing taken damage for 5 seconds. |n|n|cffffcc00Level 1|r - 10 % damage, <A01I,Cool1> seconds of cooldown.|n|cffffcc00Level 2|r - 20 % damage, <A01I,Cool2> seconds of cooldown.|n|cffffcc00Level 3|r - 30 % damage, <A01I,Cool3> seconds of cooldown.|n|cffffcc00Level 4|r - 40 % damage, <A01I,Cool4> seconds of cooldown.|n|cffffcc00Level 5|r - 50 % damage, <A01I,Cool5> seconds of cooldown.
 }
 
 STRING 873
 // Einheiten: n055 (Wächter), Name (Name (unam))
 {
-Wächter
+Guardian
 }
 
 STRING 874
@@ -5240,7 +5240,7 @@ STRING 875
 STRING 876
 // Fähigkeiten: A1V9 (Kind opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Dämonologie)
+(Book of Demonology)
 }
 
 STRING 877
@@ -5294,7 +5294,7 @@ Increases the armour by <A094,DataA3>.
 STRING 885
 // Gegenstände: I02X (Stab eines Druiden), Description (Beschreibung (ides))
 {
-Erhöht den Schaden und erlaubt die Heilung mehrerer Verbündeter.
+Increases damage and allows healing of multiple allies.
 }
 
 STRING 886
@@ -5341,7 +5341,7 @@ STRING 892
 STRING 893
 // Fähigkeiten: A073 (Selbstlosigkeit), Name (Name (anam))
 {
-Selbstlosigkeit
+Selflessness
 }
 
 STRING 894
@@ -5472,7 +5472,7 @@ Clarity [|cffffcc00Level 2|r] (|cffffcc00U|r)
 STRING 915
 // Zauberverstärker/Effekte: B010 (Beschworener Dämon), EditorName (Name (nur Editor) (fnam))
 {
-Beschworener Dämon
+Summoned Demon
 }
 
 STRING 916
@@ -5556,7 +5556,7 @@ Beschwört Dämonen für 60 Sekunden.|nBenötigte Gegenstände:|n- Eine Seele ei
 STRING 929
 // Fähigkeiten: A09G (Blutritual), Tip (Tooltipp - Normal (atp1))
 {
-Blutritual
+Blood Ritual
 }
 
 STRING 930
@@ -5634,7 +5634,7 @@ Block [|cffffcc00Level 5|r]
 STRING 942
 // Einheiten: n08W (Ork-Wolfsreiter), Name (Name (unam))
 {
-Ork-Wolfsreiter
+Orc Wolf Rider
 }
 
 STRING 943
@@ -5646,13 +5646,13 @@ STRING 943
 STRING 944
 // Zerstörbare Objekte: B012 (Untotes Experiment), Name (Name (bnam))
 {
-Untotes Experiment
+Undead Experiment
 }
 
 STRING 945
 // Einheiten: h03L (Reiterloses Pferd), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Weiß)
+(White)
 }
 
 STRING 946
@@ -5694,13 +5694,13 @@ Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von
 STRING 952
 // Einheiten: n000 (Kuh), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Braun)
+(Brown)
 }
 
 STRING 953
 // Einheiten: n08A (Schwarzbär), Name (Name (unam))
 {
-Schwarzbär
+Black Bear
 }
 
 STRING 954
@@ -5754,7 +5754,7 @@ Dämpfung [|cffffcc00Stufe 2|r]
 STRING 962
 // Gegenstände: I044 (Helm des Nekromanten), Description (Beschreibung (ides))
 {
-Ein verzauberter Helm eines mächtigen Nekromanten.
+An enchanted helmet of a powerful necromancer.
 }
 
 STRING 963
@@ -5772,13 +5772,13 @@ Bannt positive Zauberverstärker von feindlichen Einheiten und negative Zauberve
 STRING 965
 // Gegenstände: I005 (Holzschild), Name (Name (unam))
 {
-Holzschild
+Wooden Shield
 }
 
 STRING 966
 // Gegenstände: I005 (Holzschild), Tip (Tooltipp - Einfach (utip))
 {
-Holzschild kaufen
+Buy Wooden Shield
 }
 
 STRING 967
@@ -5790,13 +5790,13 @@ Breitschild
 STRING 968
 // Gegenstände: I045 (Spruchrolle des Schutzes), Name (Name (unam))
 {
-Spruchrolle des Schutzes
+Scroll of Protection
 }
 
 STRING 969
 // Gegenstände: I045 (Spruchrolle des Schutzes), Tip (Tooltipp - Einfach (utip))
 {
-Spruchrolle des Schutzes kaufen
+Buy Scroll of Protection
 }
 
 STRING 970
@@ -5868,7 +5868,7 @@ STRING 980
 STRING 981
 // Zauberverstärker/Effekte: B004 (Dunkler Diener), EditorName (Name (nur Editor) (fnam))
 {
-Dunkler Diener
+Dark Servant
 }
 
 STRING 982
@@ -6024,49 +6024,49 @@ Ein Zombie.
 STRING 1007
 // Fähigkeiten: A01W (Schattengeschoss), Name (Name (anam))
 {
-Schattengeschoss
+Shadow Missile
 }
 
 STRING 1008
 // Einheiten: n08D (Elchbulle), Name (Name (unam))
 {
-Elchbulle
+Elk Bull
 }
 
 STRING 1009
 // Einheiten: n08E (Elchkuh), Name (Name (unam))
 {
-Elchkuh
+Elk Cow
 }
 
 STRING 1010
 // Fähigkeiten: A01W (Schattengeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Schattengeschoss [|cffffcc00Stufe 1|r]
+Shadow Missile [|cffffcc00Level 1|r]
 }
 
 STRING 1011
 // Fähigkeiten: A01W (Schattengeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Schattengeschoss [|cffffcc00Stufe 2|r]
+Shadow Missile [|cffffcc00Level 2|r]
 }
 
 STRING 1012
 // Fähigkeiten: A01W (Schattengeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Schattengeschoss [|cffffcc00Stufe 3|r]
+Shadow Missile [|cffffcc00Level 3|r]
 }
 
 STRING 1013
 // Fähigkeiten: A01W (Schattengeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Schattengeschoss [|cffffcc00Stufe 4|r]
+Shadow Missile [|cffffcc00Level 4|r]
 }
 
 STRING 1014
 // Fähigkeiten: A01W (Schattengeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Schattengeschoss [|cffffcc00Stufe 5|r]
+Shadow Missile [|cffffcc00Level 5|r]
 }
 
 STRING 1015
@@ -6270,13 +6270,13 @@ Pure Energie
 STRING 1048
 // Fähigkeiten: A01X (Pure Energie), Name (Name (anam))
 {
-Pure Energie
+Pure Energy
 }
 
 STRING 1049
 // Fähigkeiten: A1N1 (Pure Energie - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Pure Energie erlernen
+Learn Pure Energy
 }
 
 STRING 1050
@@ -6288,43 +6288,43 @@ Droktar
 STRING 1051
 // Einheiten: H03E (Sukkubus), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Held)
+(Hero)
 }
 
 STRING 1052
 // Einheiten: H01C (Prinz der Nordmänner), Name (Name (unam))
 {
-Prinz der Nordmänner
+Prince of the Northmen
 }
 
 STRING 1053
-// Fähigkeiten: A11I (Beherrschung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11I (Beherrschung - Level 1), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 1|r]
+Mastery [|cffffcc00Level 1|r]
 }
 
 STRING 1054
 // Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 2|r]
+Mastery [|cffffcc00Level 2|r]
 }
 
 STRING 1055
-// Fähigkeiten: A11K (Beherrschung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11K (Beherrschung - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 3|r]
+Mastery [|cffffcc00Level 3|r]
 }
 
 STRING 1056
-// Fähigkeiten: A11L (Beherrschung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11L (Beherrschung - Level 4), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 4|r]
+Mastery [|cffffcc00Level 4|r]
 }
 
 STRING 1057
 // Fähigkeiten: A01F (Beherrschung), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 5|r]
+Mastery [|cffffcc00Level 5|r]
 }
 
 STRING 1058
@@ -6360,7 +6360,7 @@ Fügt dem angewählten Ziel 80 Punkte Schaden zu.
 STRING 1063
 // Fähigkeiten: A01A (Inferno), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 1064
@@ -6372,7 +6372,7 @@ Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area5>
 STRING 1065
 // Fähigkeiten: A03Q (Wut der Elemente), Name (Name (anam))
 {
-Wut der Elemente
+Rage of Elements
 }
 
 STRING 1066
@@ -6408,31 +6408,31 @@ Fire Missile [|cffffcc00Level 1|r]
 STRING 1071
 // Fähigkeiten: A0KG (Inferno - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Inferno [|cffffcc00Stufe 2|r]
+Inferno [|cffffcc00Level 2|r]
 }
 
 STRING 1072
 // Fähigkeiten: A0KH (Inferno - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Inferno [|cffffcc00Stufe 3|r]
+Inferno [|cffffcc00Level 3|r]
 }
 
 STRING 1073
 // Fähigkeiten: A0KI (Inferno - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Inferno [|cffffcc00Stufe 4|r]
+Inferno [|cffffcc00Level 4|r]
 }
 
 STRING 1074
 // Fähigkeiten: A0KJ (Inferno - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Inferno [|cffffcc00Stufe 5|r]
+Inferno [|cffffcc00Level 5|r]
 }
 
 STRING 1075
 // Fähigkeiten: A0KF (Inferno - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Inferno [|cffffcc00Stufe 1|r]
+Inferno [|cffffcc00Level 1|r]
 }
 
 STRING 1076
@@ -6540,31 +6540,31 @@ Parasite [|cffffcc00Level 4|r]
 STRING 1093
 // Fähigkeiten: A0ZB (Erdgefängnis - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 2|r]
+Earth Prison [|cffffcc00Level 2|r]
 }
 
 STRING 1094
 // Fähigkeiten: A0ZC (Erdgefängnis - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 3|r]
+Earth Prison [|cffffcc00Level 3|r]
 }
 
 STRING 1095
 // Fähigkeiten: A0ZD (Erdgefängnis - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 4|r]
+Earth Prison [|cffffcc00Level 4|r]
 }
 
 STRING 1096
 // Fähigkeiten: A0ZE (Erdgefängnis - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 5|r]
+Earth Prison [|cffffcc00Level 5|r]
 }
 
 STRING 1097
 // Fähigkeiten: A0ZA (Erdgefängnis - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 1|r]
+Earth Prison [|cffffcc00Level 1|r]
 }
 
 STRING 1098
@@ -6594,7 +6594,7 @@ STRING 1101
 STRING 1102
 // Einheiten: H03O (Prinzessin der Nordmänner), Name (Name (unam))
 {
-Prinzessin der Nordmänner
+Pricess of the Northmen
 }
 
 STRING 1103
@@ -6618,19 +6618,19 @@ STRING 1105
 STRING 1106
 // Einheiten: n08J (Holzfäller), Name (Name (unam))
 {
-Holzfäller
+Woodcutter
 }
 
 STRING 1107
 // Einheiten: n08I (Mutter der Medusa), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Der Norden)
+(The North)
 }
 
 STRING 1108
 // Einheiten: n08K (Bauer), Name (Name (unam))
 {
-Bauer
+Farmer
 }
 
 STRING 1109
@@ -6642,7 +6642,7 @@ STRING 1109
 STRING 1110
 // Einheiten: n08L (Bergmann), Name (Name (unam))
 {
-Bergmann
+Miner
 }
 
 STRING 1111
@@ -6690,43 +6690,43 @@ Learn Holy Power
 STRING 1118
 // Gegenstände: I07F (Kuchen), Name (Name (unam))
 {
-Kuchen
+Cake
 }
 
 STRING 1119
 // Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 2|r]
+Lightning Strike [|cffffcc00Level 2|r]
 }
 
 STRING 1120
 // Fähigkeiten: A0UN (Blitzschlag - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 3|r]
+Lightning Strike [|cffffcc00Level 3|r]
 }
 
 STRING 1121
 // Fähigkeiten: A0UO (Blitzschlag - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 4|r]
+Lightning Strike [|cffffcc00Level 4|r]
 }
 
 STRING 1122
 // Fähigkeiten: A0UP (Blitzschlag - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 5|r]
+Lightning Strike [|cffffcc00Level 5|r]
 }
 
 STRING 1123
 // Fähigkeiten: A0UL (Blitzschlag - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag [|cffffcc00Stufe 1|r]
+Lightning Strike [|cffffcc00Level 1|r]
 }
 
 STRING 1124
 // Gegenstände: I07F (Kuchen), Tip (Tooltipp - Einfach (utip))
 {
-Kuchen kaufen
+Buy Cake
 }
 
 STRING 1125
@@ -6756,7 +6756,7 @@ Rettet oder opfert die Seelen von Kindern.
 STRING 1129
 // Fähigkeiten: A1VG (Mephistos Zepter), Name (Name (anam))
 {
-Mephistos Zepter
+Mephisto's Scepter
 }
 
 STRING 1130
@@ -6768,13 +6768,13 @@ Blind [|cffffcc00Level 3|r]
 STRING 1131
 // Fähigkeiten: A1VH (Kinder opfern), Name (Name (anam))
 {
-Kinder opfern
+Sacrifice Children
 }
 
 STRING 1132
 // Fähigkeiten: A1VH (Kinder opfern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Mephistos Zepter)
+(Mephisto's Scepter)
 }
 
 STRING 1133
@@ -6894,7 +6894,7 @@ STRING 1151
 STRING 1152
 // Einheiten: n08N (Dorfhalle), Name (Name (unam))
 {
-Dorfhalle
+Village Hall
 }
 
 STRING 1153
@@ -6906,13 +6906,13 @@ F
 STRING 1154
 // Einheiten: n08O (Wotans Haus), Name (Name (unam))
 {
-Wotans Haus
+Wotan's House
 }
 
 STRING 1155
 // Fähigkeiten: A1Q5 (Stille), EditorSuffix (Editor-Suffix (ansf))
 {
-(Sukkubus)
+(Succubus)
 }
 
 STRING 1156
@@ -6924,7 +6924,7 @@ Dornheim
 STRING 1157
 // Fähigkeiten: A19X (NPC mit Dialog), Name (Name (anam))
 {
-NPC mit Dialog
+NPC with Dialog
 }
 
 STRING 1158
@@ -6936,7 +6936,7 @@ STRING 1158
 STRING 1159
 // Fähigkeiten: A14C (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
-(Elementarmagier)
+(Elemental Mage)
 }
 
 STRING 1160
@@ -6960,13 +6960,13 @@ Norseman
 STRING 1163
 // Einheiten: n01I (Nordmann), Tip (Tooltipp - Einfach (utip))
 {
-Train Norseman
+Train Northman
 }
 
 STRING 1164
 // Einheiten: n01I (Nordmann), Ubertip (Tooltipp - Erweitert (utub))
 {
-A Norseman is a strong melee fighter.
+A Northman is a strong melee fighter.
 }
 
 STRING 1165
@@ -7008,7 +7008,7 @@ The fangs of a wild boar.
 STRING 1171
 // Fähigkeiten: A0GH (Wut), EditorSuffix (Editor-Suffix (ansf))
 {
-(Keiler)
+(Boar)
 }
 
 STRING 1172
@@ -11634,7 +11634,7 @@ Schneller Handel Stufe 1
 STRING 1942
 // Zauberverstärker/Effekte: B038 (), Bufftip (Tooltipp (ftip))
 {
-Bestienjäger
+Beast Hunter
 }
 
 STRING 1943
@@ -59893,37 +59893,37 @@ Bestiehlt eine Einheit, die nicht dem Spieler gehört. Stiehlt für alle Spieler
 STRING 15243
 // Fähigkeiten: A1CP (Beutezug - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Beutezug [|cffffcc00Stufe 2|r]
+Raid [|cffffcc00Level 2|r]
 }
 
 STRING 15244
 // Fähigkeiten: A1CQ (Beutezug - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Beutezug [|cffffcc00Stufe 3|r]
+Raid [|cffffcc00Level 3|r]
 }
 
 STRING 15245
 // Fähigkeiten: A1CR (Beutezug - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Beutezug [|cffffcc00Stufe 4|r]
+Raid [|cffffcc00Level 4|r]
 }
 
 STRING 15246
 // Fähigkeiten: A1CS (Beutezug - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Beutezug [|cffffcc00Stufe 5|r]
+Raid [|cffffcc00Level 5|r]
 }
 
 STRING 15247
 // Fähigkeiten: A1A1 (Beutezug - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Beutezug [|cffffcc00Stufe 1|r]
+Raid [|cffffcc00Level 1|r]
 }
 
 STRING 15248
 // Fähigkeiten: A1A0 (Beutezug), Name (Name (anam))
 {
-Beutezug
+Raid
 }
 
 STRING 15251
@@ -59935,7 +59935,7 @@ STRING 15251
 STRING 15252
 // Fähigkeiten: A19Z (Beutezug), Name (Name (anam))
 {
-Beutezug
+Raid
 }
 
 STRING 15253
@@ -59989,7 +59989,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 15272
 // Fähigkeiten: A0VQ (Horn des Lebens), Name (Name (anam))
 {
-Horn des Lebens
+Horn of Life
 }
 
 STRING 15273
@@ -60001,7 +60001,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 15274
 // Fähigkeiten: A0VP (Horn des Schutzes), Name (Name (anam))
 {
-Horn des Schutzes
+Horn of Protection
 }
 
 STRING 15275
@@ -60013,7 +60013,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 15277
 // Einheiten: H02E (Nixe), Propernames (Eigennamen (upro))
 {
-Nixe
+Neck
 }
 
 STRING 15278
@@ -60043,25 +60043,25 @@ Verfluchter Boden - Erlernen
 STRING 15283
 // Fähigkeiten: A1CJ (Bestehlen - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen [|cffffcc00Stufe 4|r]
+Rob [|cffffcc00Level 4|r]
 }
 
 STRING 15284
 // Fähigkeiten: A1CK (Bestehlen - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen [|cffffcc00Stufe 5|r]
+Rob [|cffffcc00Level 5|r]
 }
 
 STRING 15285
 // Fähigkeiten: A1A5 (Bestehlen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen [|cffffcc00Stufe 1|r]
+Rob [|cffffcc00Level 1|r]
 }
 
 STRING 15286
 // Fähigkeiten: A1A3 (Bestehlen), Name (Name (anam))
 {
-Bestehlen
+Rob
 }
 
 STRING 15289
@@ -60073,7 +60073,7 @@ STRING 15289
 STRING 15290
 // Fähigkeiten: A1A4 (Bestehlen), Name (Name (anam))
 {
-Bestehlen
+Rob
 }
 
 STRING 15291
@@ -60163,13 +60163,13 @@ Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller au
 STRING 15326
 // Fähigkeiten: A1E0 (Schmetter-Angriff), EditorSuffix (Editor-Suffix (ansf))
 {
-(Kriegsherr der Orks)
+(Warlord of the Orcs)
 }
 
 STRING 15327
 // Fähigkeiten: A1AB (Verfluchter Boden), Name (Name (anam))
 {
-Verfluchter Boden
+Cursed Ground
 }
 
 STRING 15328
@@ -69217,7 +69217,7 @@ STRING 17390
 STRING 17391
 // Gegenstände: I06D (Kleidung), Ubertip (Tooltipp - Erweitert (utub))
 {
-In diesem Fach wird die aktuelle Kleidung angezeigt.
+The current clothing is displayed in this slot.
 }
 
 STRING 17392
@@ -69680,31 +69680,31 @@ Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten 
 STRING 17479
 // Fähigkeiten: A0EX (Weltenportal), Tip (Tooltipp - Normal (atp1))
 {
-Weltenportal [|cffffcc00Stufe 1|r] (|cffffcc00I|r)
+Worlds Portal [|cffffcc00Level 1|r] (|cffffcc00I|r)
 }
 
 STRING 17480
 // Fähigkeiten: A0EX (Weltenportal), Tip (Tooltipp - Normal (atp1))
 {
-Weltenportal [|cffffcc00Stufe 2|r] (|cffffcc00I|r)
+Worlds Portal [|cffffcc00Level 2|r] (|cffffcc00I|r)
 }
 
 STRING 17481
 // Fähigkeiten: A0EX (Weltenportal), Tip (Tooltipp - Normal (atp1))
 {
-Weltenportal [|cffffcc00Stufe 3|r] (|cffffcc00I|r)
+Worlds Portal [|cffffcc00Level 3|r] (|cffffcc00I|r)
 }
 
 STRING 17482
 // Fähigkeiten: A0EX (Weltenportal), Tip (Tooltipp - Normal (atp1))
 {
-Weltenportal [|cffffcc00Stufe 4|r] (|cffffcc00I|r)
+Worlds Portal [|cffffcc00Level 4|r] (|cffffcc00I|r)
 }
 
 STRING 17483
 // Fähigkeiten: A0EX (Weltenportal), Tip (Tooltipp - Normal (atp1))
 {
-Weltenportal [|cffffcc00Stufe 5|r] (|cffffcc00I|r)
+Worlds Portal [|cffffcc00Level 5|r] (|cffffcc00I|r)
 }
 
 STRING 17484
@@ -69746,31 +69746,31 @@ Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten 
 STRING 17490
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 1|r] (|cffffcc00O|r)
+Parasite [|cffffcc00Level 1|r] (|cffffcc00O|r)
 }
 
 STRING 17491
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 2|r] (|cffffcc00O|r)
+Parasite [|cffffcc00Level 2|r] (|cffffcc00O|r)
 }
 
 STRING 17492
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 3|r] (|cffffcc00O|r)
+Parasite [|cffffcc00Level 3|r] (|cffffcc00O|r)
 }
 
 STRING 17493
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 4|r] (|cffffcc00O|r)
+Parasite [|cffffcc00Level 4|r] (|cffffcc00O|r)
 }
 
 STRING 17494
 // Fähigkeiten: A0S4 (Parasit), Tip (Tooltipp - Normal (atp1))
 {
-Parasit [|cffffcc00Stufe 5|r] (|cffffcc00O|r)
+Parasite [|cffffcc00Level 5|r] (|cffffcc00O|r)
 }
 
 STRING 17495
@@ -69788,31 +69788,31 @@ Y
 STRING 17497
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 2|r] (|cffffcc00J|r)
+Cursed Ground [|cffffcc00Level 2|r] (|cffffcc00J|r)
 }
 
 STRING 17498
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 3|r] (|cffffcc00J|r)
+Cursed Ground [|cffffcc00Level 3|r] (|cffffcc00J|r)
 }
 
 STRING 17499
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 4|r] (|cffffcc00J|r)
+Cursed Ground [|cffffcc00Level 4|r] (|cffffcc00J|r)
 }
 
 STRING 17500
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 5|r] (|cffffcc00J|r)
+Cursed Ground [|cffffcc00Level 5|r] (|cffffcc00J|r)
 }
 
 STRING 17501
 // Fähigkeiten: A1AB (Verfluchter Boden), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 1|r] (|cffffcc00J|r)
+Cursed Ground [|cffffcc00Level 1|r] (|cffffcc00J|r)
 }
 
 STRING 17502
@@ -69830,31 +69830,31 @@ E
 STRING 17504
 // Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 1|r] (|cffffcc00E|r)
+Demon Servant [|cffffcc00Level 1|r] (|cffffcc00E|r)
 }
 
 STRING 17505
 // Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 2|r] (|cffffcc00E|r)
+Demon Servant [|cffffcc00Level 2|r] (|cffffcc00E|r)
 }
 
 STRING 17506
 // Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 3|r] (|cffffcc00E|r)
+Demon Servant [|cffffcc00Level 3|r] (|cffffcc00E|r)
 }
 
 STRING 17507
 // Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 4|r] (|cffffcc00E|r)
+Demon Servant [|cffffcc00Level 4|r] (|cffffcc00E|r)
 }
 
 STRING 17508
 // Fähigkeiten: A1CZ (Dämonendiener), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener [|cffffcc00Stufe 5|r] (|cffffcc00E|r)
+Demon Servant [|cffffcc00Level 5|r] (|cffffcc00E|r)
 }
 
 STRING 17509
@@ -69950,31 +69950,31 @@ Dryadenquelle beschwören [|cffffcc00Stufe 5|r] (|cffffcc00J|r)
 STRING 17524
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 1|r] (|cffffcc00T|r)
+Relief [|cffffcc00Level 1|r] (|cffffcc00T|r)
 }
 
 STRING 17525
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 2|r] (|cffffcc00T|r)
+Relief [|cffffcc00Level 2|r] (|cffffcc00T|r)
 }
 
 STRING 17526
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 3|r] (|cffffcc00T|r)
+Relief [|cffffcc00Level 3|r] (|cffffcc00T|r)
 }
 
 STRING 17527
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 4|r] (|cffffcc00T|r)
+Relief [|cffffcc00Level 4|r] (|cffffcc00T|r)
 }
 
 STRING 17528
 // Fähigkeiten: A0A4 (Wohltat), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat [|cffffcc00Stufe 5|r] (|cffffcc00T|r)
+Relief [|cffffcc00Level 5|r] (|cffffcc00T|r)
 }
 
 STRING 17529
@@ -79286,7 +79286,7 @@ STRING 20041
 STRING 20042
 // Fähigkeiten: A1TI (Sattel), Name (Name (anam))
 {
-Sattel
+Saddle
 }
 
 STRING 20043
@@ -79334,7 +79334,7 @@ STRING 20050
 STRING 20051
 // Fähigkeiten: A1TL (Zweihänder), Name (Name (anam))
 {
-Zweihänder
+Two-Handed Sword
 }
 
 STRING 20052
