@@ -1,0 +1,13 @@
+#!/bin/bash
+
+icons=( "Zehren.tga" "Wolfsform.tga" )
+
+if [ ! -d "./grimoireicons" ] ; then
+	mkdir ./grimoireicons
+fi
+
+REPLACEABLETEXUTERS_DIR="../../archives/DMdF/ReplaceableTextures/CommandButtons"
+
+for icon in ${icons[@]}; do
+	bash ./dmdf-grimoire-icon "$REPLACEABLETEXUTERS_DIR/BTN$icon" ./grimoireicons
+done

@@ -1,10 +1,23 @@
 #!/bin/bash
 
-if [ -z "$1" ] || [ ! -e "$1" ]; then
-	echo "Usage: $0 <icon file>" >&2
+if [ -z "$1" ] || [ -z "$2" ]; then
+	echo "Usage: $0 <icon file> <output directory>" >&2
 	exit 1
 fi
+
+if [ ! -e "$1" ]; then
+	echo "Input file $1 does not exist." >&2
+	exit 1
+fi
+
+if [ ! -d "$2" ]; then
+	echo "Output directory $2 does not exist." >&2
+	exit 1
+fi
+
+MAX_LEVELS="6"
+
 #-font dfst-m3u.ttf -pointsize 40 label:"$i"
-for ((i=1; i < 6; i++)) do
-	composite \( -gravity SouthEast human-button-lvls-overlay.png \) "$1" "$(basename "$1")Level$i.png"
+for ((i=0; i < "$MAX_LEVELS"; i++)) do
+	convert -gravity SouthEast "$1" human-button-lvls-overlay.png -composite -gravity SouthEast -pointsize 18 -fill white -annotate +10+5 $i "$2/$(basename "$1")Level$i.png"
 done
