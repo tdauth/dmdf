@@ -2270,9 +2270,9 @@ Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und �
 }
 
 STRING 379
-// Fähigkeiten: A00D (Kraftfeld), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 380
@@ -2342,9 +2342,9 @@ Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Hält 2
 }
 
 STRING 391
-// Fähigkeiten: A08T (Vervielfachung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 392
@@ -2414,9 +2414,9 @@ Zieht allen feindlichen Zielen im Umkreis von 800 augenblicklich bis zu 60(V1) M
 }
 
 STRING 403
-// Fähigkeiten: A0VB (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 404
@@ -2480,9 +2480,9 @@ Gibt allen befreundeten Zielen im Umkreis von 800 augenblicklich bis zu 60(V1) M
 }
 
 STRING 414
-// Fähigkeiten: A004 (Magische Explosion), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 415
@@ -2552,9 +2552,9 @@ Tauscht die Position des Zauberers mit der eines feindlichen Ziels im Umkreis vo
 }
 
 STRING 426
-// Fähigkeiten: A08H (Manaexplosion), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 427
@@ -2624,9 +2624,9 @@ Beschwört für 40(V1) Sekunden einen verzauberten Wächter, der die Mana-Regene
 }
 
 STRING 438
-// Fähigkeiten: A03B (Dämpfung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 439
@@ -2696,9 +2696,9 @@ Macht den Zauberer für 15(V1) Sekunden lang unsichtbar und erzeugt ein Nebelfel
 }
 
 STRING 450
-// Fähigkeiten: A03A (Manaschild), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 451
@@ -2768,9 +2768,9 @@ Gewährt dem Zauberer einen Schutz-Bonus von 15(V1) vor Magie.
 }
 
 STRING 462
-// Fähigkeiten: A14B (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 463
@@ -2840,9 +2840,9 @@ Teleportiert den Zauberer über eine Distanz von 400(V1) Feldern hinweg geradeau
 }
 
 STRING 474
-// Fähigkeiten: A002 (Magische Implusion), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 475
@@ -2906,9 +2906,9 @@ Macht den Zauberer für 15(V1) Sekunden lang Immun gegen negative Zauber.
 }
 
 STRING 485
-// Fähigkeiten: A08V (Arkane Zeit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 486
@@ -3128,9 +3128,9 @@ STRING 521
 }
 
 STRING 522
-// Fähigkeiten: A00A (Antizauber), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 523
@@ -3872,9 +3872,9 @@ Machtentzug
 }
 
 STRING 646
-// Fähigkeiten: A008 (Magie-Schutz), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 647
@@ -3890,9 +3890,9 @@ Machtübertragung
 }
 
 STRING 649
-// Fähigkeiten: A000 (Machtübertragung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 650
@@ -4182,7 +4182,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 }
 
 STRING 700
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1OU (Bekehrung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -4194,7 +4194,7 @@ Gods Favor - Level 1
 }
 
 STRING 702
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1JF (Reinheit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -4212,7 +4212,7 @@ Gods Favor - Level 2
 }
 
 STRING 705
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OB (Wiederbeleben - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -4230,7 +4230,7 @@ Gods Favor - Level 3
 }
 
 STRING 708
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QT (Böses hindern - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -4278,7 +4278,7 @@ STRING 715
 }
 
 STRING 716
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NJ (Märtyrer - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -5154,7 +5154,7 @@ Berserker
 }
 
 STRING 862
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QJ (Göttergunst - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -5166,7 +5166,7 @@ Prevent Evil - Level 1
 }
 
 STRING 864
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OI (Linderung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -5178,7 +5178,7 @@ Prevent Evil - Level 2
 }
 
 STRING 866
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PI (Genesung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -5190,7 +5190,7 @@ Prevent Evil - Level 3
 }
 
 STRING 868
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1N0 (Schützen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -5202,7 +5202,7 @@ Prevent Evil - Level 4
 }
 
 STRING 870
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HG (Bezwingung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -5578,9 +5578,9 @@ Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von
 }
 
 STRING 933
-// Fähigkeiten: A007 (Verborgenheit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 934
@@ -6454,7 +6454,7 @@ Auge um Auge - Erlernen
 }
 
 STRING 1079
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FN (Rage - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -9418,9 +9418,9 @@ STRING 1572
 }
 
 STRING 1573
-// Fähigkeiten: A08Q (Manastrom), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 1574
@@ -10012,9 +10012,9 @@ Rune der Stärke kaufen
 }
 
 STRING 1672
-// Fähigkeiten: A0A6 (Verbannen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 1673
@@ -10372,7 +10372,7 @@ STRING 1731
 }
 
 STRING 1732
-// Gegenstände: I003 (Stab), Name (Name (unam))
+// Fähigkeiten: A041 (Stich), Name (Name (anam))
 {
 Staff
 }
@@ -10516,15 +10516,15 @@ Die Grabenspinne vergräbt sich im Boden und wird unsichtbar.
 }
 
 STRING 1756
-// Fähigkeiten: A163 (Übertragung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 1757
-// Fähigkeiten: A005 (Körpertausch), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 1758
@@ -10576,9 +10576,9 @@ Manaschild
 }
 
 STRING 1766
-// Fähigkeiten: A0A8 (Arkaner Schutz), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 1767
@@ -10600,9 +10600,9 @@ Dämpfung
 }
 
 STRING 1770
-// Fähigkeiten: A0VU (Rückkopplung), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 1771
@@ -10624,9 +10624,9 @@ Absorbation
 }
 
 STRING 1774
-// Fähigkeiten: A05O (Arkaner Hunger), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 1775
@@ -11596,15 +11596,15 @@ Baldar's Ring
 }
 
 STRING 1936
-// Gegenstände: I02U (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 1937
-// Gegenstände: I02U (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 1938
@@ -13844,9 +13844,9 @@ Flammenhaut
 }
 
 STRING 2361
-// Fähigkeiten: A0R8 (Aura des Königs), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0R8 (Aura des Königs), Name (Name (anam))
 {
-Aura des Königs
+Aura of the King
 }
 
 STRING 2362
@@ -13930,9 +13930,9 @@ Baumaterial gesammelt
 }
 
 STRING 2377
-// Zauberverstärker/Effekte: B029 (), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A0R8 (Aura des Königs), Name (Name (anam))
 {
-Aura des Königs
+Aura of the King
 }
 
 STRING 2378
@@ -14196,9 +14196,9 @@ Dragon
 }
 
 STRING 2422
-// Fähigkeiten: A04E (Absetzen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A04D (Aufnehmen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drache)
+(Dragon)
 }
 
 STRING 2423
@@ -14208,9 +14208,9 @@ Drachenrücken
 }
 
 STRING 2424
-// Fähigkeiten: A04C (Abheben), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A04D (Aufnehmen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drache)
+(Dragon)
 }
 
 STRING 2425
@@ -14226,9 +14226,9 @@ Nimmt eine befreundete Land-Einheit auf den Rücken des Drachens auf.
 }
 
 STRING 2427
-// Fähigkeiten: S001 (Drachenrücken), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A04D (Aufnehmen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drache)
+(Dragon)
 }
 
 STRING 2428
@@ -14521,9 +14521,9 @@ STRING 2488
 }
 
 STRING 2489
-// Fähigkeiten: A05O (Arkaner Hunger), Name (Name (anam))
+// Fähigkeiten: A05P (Arkaner Hunger), Name (Name (anam))
 {
-Arkaner Hunger
+Arcane Hunger
 }
 
 STRING 2490
@@ -14533,9 +14533,9 @@ STRING 2490
 }
 
 STRING 2491
-// Fähigkeiten: A006 (Verzauberter Wächter), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 2492
@@ -14935,15 +14935,15 @@ Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündet
 }
 
 STRING 2570
-// Fähigkeiten: A14S (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 2571
-// Fähigkeiten: A001 (Machtentzug), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 2572
@@ -20074,15 +20074,15 @@ Manastrom
 }
 
 STRING 3633
-// Fähigkeiten: A009 (Teleportation), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 3634
-// Fähigkeiten: A0VI (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 3635
@@ -20338,9 +20338,9 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 3685
-// Zauberverstärker/Effekte: B000 (Machtentzug), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 3686
@@ -20476,9 +20476,9 @@ Arkane List
 }
 
 STRING 3708
-// Zauberverstärker/Effekte: B001 (Machtübertragung), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 3709
@@ -21802,9 +21802,9 @@ Zoology
 }
 
 STRING 3982
-// Zauberverstärker/Effekte: B00G (Manaschild), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 3983
@@ -22444,9 +22444,9 @@ Verbannen
 }
 
 STRING 4101
-// Zauberverstärker/Effekte: B00H (Dämpfung), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 4102
@@ -22600,9 +22600,9 @@ Arkaner Schutz
 }
 
 STRING 4127
-// Zauberverstärker/Effekte: B00I (Absorbation), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 4128
@@ -22612,9 +22612,9 @@ Verbannen
 }
 
 STRING 4129
-// Zauberverstärker/Effekte: B01R (Verbannen), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 4130
@@ -22648,9 +22648,9 @@ Diese Einheit verfügt über 'Arkaner Schutz'; gegen sie können keine Zauber ge
 }
 
 STRING 4135
-// Zauberverstärker/Effekte: B01S (Arkaner Schutz), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 4137
@@ -22780,9 +22780,9 @@ STRING 4173
 }
 
 STRING 4182
-// Fähigkeiten: A0AX (Nächste Seite), Name (Name (anam))
+// Fähigkeiten: A1RC (Aufträge - Nächste Seite), Tip (Tooltipp - Normal (atp1))
 {
-Nächste Seite
+Next Page
 }
 
 STRING 4183
@@ -22792,9 +22792,9 @@ Blind [|cffffcc00Level 3|r]
 }
 
 STRING 4184
-// Fähigkeiten: A0AB (Nächste Seite), Name (Name (anam))
+// Fähigkeiten: A1RC (Aufträge - Nächste Seite), Tip (Tooltipp - Normal (atp1))
 {
-Nächste Seite
+Next Page
 }
 
 STRING 4187
@@ -24454,7 +24454,7 @@ Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summon
 }
 
 STRING 4683
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PN (Aura der Autorität - Erlernen), Name (Name (anam))
 {
 Multiplication [|cffffcc00Level 2|r]
 }
@@ -24658,7 +24658,7 @@ Waldfeenzauber
 }
 
 STRING 4749
-// Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PO (Aura der Autorität - Erlernen), Name (Name (anam))
 {
 Multiplication [|cffffcc00Level 2|r]
 }
@@ -25852,15 +25852,15 @@ STRING 5076
 }
 
 STRING 5077
-// Gegenstände: I02V (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5078
-// Gegenstände: I02V (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5079
@@ -25870,69 +25870,69 @@ Transforms the carrying unit into a demon.
 }
 
 STRING 5080
-// Gegenstände: I02W (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5081
-// Gegenstände: I02Y (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5082
-// Gegenstände: I02Y (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5083
-// Gegenstände: I02Z (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5084
-// Gegenstände: I02Z (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5085
-// Gegenstände: I030 (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5086
-// Gegenstände: I030 (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5087
-// Gegenstände: I031 (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5088
-// Gegenstände: I031 (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5089
-// Gegenstände: I032 (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5090
-// Gegenstände: I032 (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5091
@@ -25954,9 +25954,9 @@ STRING 5093
 }
 
 STRING 5094
-// Fähigkeiten: A0T6 (Todesgeschoss), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0T6 (Todesgeschoss), Name (Name (anam))
 {
-Todesgeschoss
+Death Missile
 }
 
 STRING 5095
@@ -26288,7 +26288,7 @@ Rückverwandlung - Haldars Ring
 }
 
 STRING 5167
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GF (Auge um Auge - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -26348,7 +26348,7 @@ Haldars Ring
 }
 
 STRING 5179
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1MH (Beherrschung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -26942,7 +26942,7 @@ Bärengestalt - Stufe 3
 }
 
 STRING 5343
-// Fähigkeiten: A123 (Schaden erhöhen), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A123 (Schaden erhöhen), Name (Name (anam))
 {
 Increase damage
 }
@@ -28292,7 +28292,7 @@ Verringert die Angriffsgeschwindkeit eines Gegners für 7 Sekunden um 40 %.|n<A0
 }
 
 STRING 5941
-// Fähigkeiten: A0EE (Zorn des Waldes - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PR (Aura der Rücknahme - Erlernen), Name (Name (anam))
 {
 Wrath of the Forest [|cffffcc00Stufe 2|r]
 }
@@ -29269,7 +29269,7 @@ Schwachstelle - Stufe 5
 }
 
 STRING 6274
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A153 (Einschüchtern - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -29281,7 +29281,7 @@ Schwachstelle - Stufe 1
 }
 
 STRING 6276
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1OC (Siegeswunsch - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -29353,7 +29353,7 @@ Creates a portal to the world of demons through which demons are steaming out of
 }
 
 STRING 6296
-// Fähigkeiten: A0EE (Zorn des Waldes - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PS (Aura der Rücknahme - Erlernen), Name (Name (anam))
 {
 Wrath of the Forest [|cffffcc00Stufe 2|r]
 }
@@ -29377,7 +29377,7 @@ Blessing [|cffffcc00Level 2|r]
 }
 
 STRING 6310
-// Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0JT (Erwachen des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Worlds Portal [|cffffcc00Level 2|r]
 }
@@ -29557,7 +29557,7 @@ Schwachstelle - Stufe 2
 }
 
 STRING 6384
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GS (Sprungattacke - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -29755,7 +29755,7 @@ Schwachstelle - Stufe 3
 }
 
 STRING 6430
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0G6 (Koloss - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -29767,7 +29767,7 @@ Schwachstelle - Stufe 4
 }
 
 STRING 6432
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A156 (Einschüchtern - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -29809,7 +29809,7 @@ Totenbeschwörung [|cffffcc00Stufe 5|r]
 }
 
 STRING 6442
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0T8 (Eisgeschoss - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -30181,7 +30181,7 @@ Koloss - Stufe 5
 }
 
 STRING 6619
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1G3 (Reserven - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -30193,7 +30193,7 @@ Koloss - Stufe 1
 }
 
 STRING 6621
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1NM (Bestehlen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -30205,7 +30205,7 @@ Koloss - Stufe 2
 }
 
 STRING 6623
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CW (Beutezug - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -30217,7 +30217,7 @@ Koloss - Stufe 3
 }
 
 STRING 6625
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1K2 (Einschüchtern - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -30229,7 +30229,7 @@ Koloss - Stufe 4
 }
 
 STRING 6627
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0G3 (Koloss - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -30241,7 +30241,7 @@ Koloss - Stufe 5
 }
 
 STRING 6629
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0L4 (Teleportation - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -31021,7 +31021,7 @@ Blessing - Level 4
 }
 
 STRING 6977
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1IE (Elementarwesen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -31045,7 +31045,7 @@ Blessing - Level 5
 }
 
 STRING 6991
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1KS (Böses bannen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -31057,7 +31057,7 @@ Blessing - Level 1
 }
 
 STRING 6993
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1NA (Genesung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -31069,7 +31069,7 @@ Blessing - Level 2
 }
 
 STRING 6995
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0P8 (Böses bannen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -31081,7 +31081,7 @@ Blessing - Level 3
 }
 
 STRING 6997
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q9 (Bekehrung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -31093,7 +31093,7 @@ Blessing - Level 4
 }
 
 STRING 6999
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HF (Segen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -31711,7 +31711,7 @@ Dämonendiener - Stufe 2
 }
 
 STRING 7186
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0U1 (Feuersbrunst - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -32317,13 +32317,13 @@ Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3
 }
 
 STRING 7451
-// Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0JR (Erwachen des Waldes - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Worlds Portal [|cffffcc00Level 2|r]
 }
 
 STRING 7454
-// Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0JQ (Erwachen des Waldes - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Worlds Portal [|cffffcc00Level 2|r]
 }
@@ -32335,13 +32335,13 @@ Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3
 }
 
 STRING 7465
-// Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PT (Erwachen des Waldes - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Worlds Portal [|cffffcc00Level 2|r]
 }
 
 STRING 7468
-// Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0JP (Erwachen des Waldes - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Worlds Portal [|cffffcc00Level 2|r]
 }
@@ -32353,7 +32353,7 @@ Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3
 }
 
 STRING 7479
-// Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Worlds Portal [|cffffcc00Level 2|r]
 }
@@ -32755,7 +32755,7 @@ Calls hordes of raving mad rams which explode at opponents of the druid. Each ex
 }
 
 STRING 7675
-// Fähigkeiten: A0JP (Erwachen des Waldes - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UG (Bestienjäger - Erlernen), Name (Name (anam))
 {
 Awakening of the Forest [|cffffcc00Level 1|r]
 }
@@ -32815,7 +32815,7 @@ Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodi
 }
 
 STRING 7717
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Z3 (Überlegenheit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -32839,7 +32839,7 @@ Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodi
 }
 
 STRING 7731
-// Fähigkeiten: A0JP (Erwachen des Waldes - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UF (Bestienjäger - Erlernen), Name (Name (anam))
 {
 Awakening of the Forest [|cffffcc00Level 1|r]
 }
@@ -33103,7 +33103,7 @@ Erhöht das Wissen des Trägers um <A17J,DataB1>.
 }
 
 STRING 7815
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1LR (Inferno - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33301,7 +33301,7 @@ Ein Todesmantel, der eine befreundete untote Einheit heilen oder eine feindliche
 }
 
 STRING 7873
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UH (Feuersbrunst - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33319,7 +33319,7 @@ Ein Todesmantel, der eine befreundete untote Einheit heilen oder eine feindliche
 }
 
 STRING 7887
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1LL (Eiszeit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33337,7 +33337,7 @@ Ein Todesmantel, der eine befreundete untote Einheit heilen oder eine feindliche
 }
 
 STRING 7901
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0U4 (Feuersbrunst - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33355,7 +33355,7 @@ STRING 7905
 }
 
 STRING 7915
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TH (Eiszeit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33373,7 +33373,7 @@ Treefolk
 }
 
 STRING 7929
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KS (Feuergeschoss - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33451,13 +33451,13 @@ Der Elementarmagier regeneriert alle 10 Sekunden 5 % Mana.
 }
 
 STRING 7952
-// Fähigkeiten: A0KP (Feuergeschoss - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UH (Feuersbrunst - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
 Fire Missile [|cffffcc00Level 1|r]
 }
 
 STRING 7953
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UN (Blitzschlag - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33475,13 +33475,13 @@ Der Elementarmagier regeneriert alle 10 Sekunden 10 % Mana.
 }
 
 STRING 7966
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TJ (Eiszeit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 7967
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TV (Entzünden - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33499,13 +33499,13 @@ Der Elementarmagier regeneriert alle 10 Sekunden 15 % Mana.
 }
 
 STRING 7980
-// Fähigkeiten: A0KR (Feuergeschoss - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UH (Feuersbrunst - Erlernen), Name (Name (anam))
 {
 Fire Missile [|cffffcc00Level 3|r]
 }
 
 STRING 7981
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1N1 (Pure Energie - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33523,7 +33523,7 @@ Der Elementarmagier regeneriert alle 10 Sekunden 20 % Mana.
 }
 
 STRING 7995
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0L2 (Teleportation - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33541,7 +33541,7 @@ Der Elementarmagier regeneriert alle 10 Sekunden 25 % Mana.
 }
 
 STRING 8009
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Z8 (Elementare Gewalt - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33649,7 +33649,7 @@ Teleportation - Stufe 1
 }
 
 STRING 8059
-// Fähigkeiten: A0KR (Feuergeschoss - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UI (Feuersbrunst - Erlernen), Name (Name (anam))
 {
 Fire Missile [|cffffcc00Level 3|r]
 }
@@ -33661,7 +33661,7 @@ Teleportation [|cffffcc00Stufe 2|r]
 }
 
 STRING 8069
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11K (Beherrschung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33763,31 +33763,31 @@ Teleportation - Stufe 5
 }
 
 STRING 8125
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZO (Zehren - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 8126
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0L0 (Teleportation - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 8127
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZQ (Zehren - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 8128
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1LN (Eisgeschoss - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 8129
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TB (Eisgeschoss - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -33955,7 +33955,7 @@ Protect - Level 5
 }
 
 STRING 8215
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1LA (Göttergunst - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -33967,7 +33967,7 @@ Protect - Level 1
 }
 
 STRING 8217
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q6 (Bekehrung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -33979,7 +33979,7 @@ Protect - Level 2
 }
 
 STRING 8219
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OT (Drohendes Unheil - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -33991,7 +33991,7 @@ Protect - Level 3
 }
 
 STRING 8221
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1MY (Böses hindern - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -34003,7 +34003,7 @@ Protect - Level 4
 }
 
 STRING 8223
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PG (Genesung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -34081,7 +34081,7 @@ Lebenswille - Stufe 1
 }
 
 STRING 8248
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZB (Erdgefängnis - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -34159,7 +34159,7 @@ Holy Power - Level 1
 }
 
 STRING 8279
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NL (Märtyrer - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -34279,7 +34279,7 @@ Block - Stufe 4
 }
 
 STRING 8362
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZA (Erdgefängnis - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -34315,13 +34315,13 @@ Testzauber[|cffffcc00Stufe 1|r]
 }
 
 STRING 8379
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QL (Göttergunst - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
 
 STRING 8380
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1KD (Erdgefängnis - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -34573,7 +34573,7 @@ Throws a fire missile at an opponent, deals fire damage and lets the opponent bu
 }
 
 STRING 8495
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QW (Böses hindern - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -34621,7 +34621,7 @@ Throws a fire missile at an opponent, deals fire damage and lets the opponent bu
 }
 
 STRING 8523
-// Fähigkeiten: A0LY (Verspotten - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NV (Blenden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Mock [|cffffcc00Level 4|r]
 }
@@ -34981,9 +34981,9 @@ Teleportation [|cffffcc00Stufe 1|r]
 }
 
 STRING 8650
-// Fähigkeiten: A0MH (Aura der Autorität), Name (Name (anam))
+// Zauberverstärker/Effekte: B026 (Aura der Autorität), EditorName (Name (nur Editor) (fnam))
 {
-Aura der Autorität
+Aura of Authority
 }
 
 STRING 8651
@@ -35023,9 +35023,9 @@ STRING 8661
 }
 
 STRING 8662
-// Fähigkeiten: A0MI (Aura der Autorität), Name (Name (anam))
+// Zauberverstärker/Effekte: B026 (Aura der Autorität), EditorName (Name (nur Editor) (fnam))
 {
-Aura der Autorität
+Aura of Authority
 }
 
 STRING 8663
@@ -35221,9 +35221,9 @@ Aura of Authority
 }
 
 STRING 8745
-// Zauberverstärker/Effekte: B026 (Aura der Autorität), Bufftip (Tooltipp (ftip))
+// Zauberverstärker/Effekte: B026 (Aura der Autorität), EditorName (Name (nur Editor) (fnam))
 {
-Aura der Autorität
+Aura of Authority
 }
 
 STRING 8746
@@ -35647,7 +35647,7 @@ Eiszeit - Stufe 5
 }
 
 STRING 8887
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TT (Entzünden - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -36091,7 +36091,7 @@ Martyr - Level 5
 }
 
 STRING 9024
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NW (Blenden - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36103,7 +36103,7 @@ Martyr - Level 1
 }
 
 STRING 9026
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NZ (Blenden - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36115,7 +36115,7 @@ Martyr - Level 2
 }
 
 STRING 9028
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0P4 (Reinheit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36127,7 +36127,7 @@ Martyr - Level 3
 }
 
 STRING 9030
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HI (Bezwingung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36139,7 +36139,7 @@ Martyr - Level 4
 }
 
 STRING 9032
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QI (Göttergunst - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36151,7 +36151,7 @@ Martyr - Level 5
 }
 
 STRING 9036
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -36393,13 +36393,13 @@ Drachenfeuer kaufen
 }
 
 STRING 9078
-// Gegenstände: I040 (Drachenfeuer), Name (Name (unam))
+// Fähigkeiten: A1SE (Erdwesen beschwören), Tip (Tooltipp - Normal (atp1))
 {
 Dragon fire
 }
 
 STRING 9079
-// Gegenstände: I040 (Drachenfeuer), Name (Name (unam))
+// Fähigkeiten: A1SE (Erdwesen beschwören), Name (Name (anam))
 {
 Dragon fire
 }
@@ -36585,7 +36585,7 @@ Blind - Level 5
 }
 
 STRING 9165
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OC (Wiederbeleben - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36597,7 +36597,7 @@ Blind - Level 1
 }
 
 STRING 9167
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HD (Segen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36609,7 +36609,7 @@ Blind - Level 2
 }
 
 STRING 9169
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1LK (Heiliger Wille - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36621,7 +36621,7 @@ Blind - Level 3
 }
 
 STRING 9171
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0LE (Schützen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36633,7 +36633,7 @@ Blind - Level 4
 }
 
 STRING 9173
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QA (Bekehrung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36717,7 +36717,7 @@ Revive - Caster
 }
 
 STRING 9193
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NK (Märtyrer - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36735,7 +36735,7 @@ STRING 9195
 }
 
 STRING 9196
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KT (Feuergeschoss - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -36837,7 +36837,7 @@ Revive - Level 5
 }
 
 STRING 9266
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1J9 (Blenden - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36855,7 +36855,7 @@ Entfernt nach 5 Sekunden alle negativen Zauberverstärker eines Verbündeten ode
 }
 
 STRING 9269
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0LF (Schützen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36867,7 +36867,7 @@ Revive - Level 2
 }
 
 STRING 9271
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1NI (Wiederbeleben - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36879,7 +36879,7 @@ Revive - Level 3
 }
 
 STRING 9273
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0O8 (Wiederbeleben - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -36891,7 +36891,7 @@ Revive - Level 4
 }
 
 STRING 9275
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OV (Drohendes Unheil - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37077,7 +37077,7 @@ Entzünden [|cffffcc00Stufe 4|r]
 }
 
 STRING 9314
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1ID (Elementarwesen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -37201,7 +37201,7 @@ Relief - Level 5
 }
 
 STRING 9390
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1M6 (Märtyrer - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37213,7 +37213,7 @@ Relief - Level 1
 }
 
 STRING 9392
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HB (Segen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37225,7 +37225,7 @@ Relief - Level 2
 }
 
 STRING 9394
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1LQ (Drohendes Unheil - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37237,7 +37237,7 @@ Relief - Level 3
 }
 
 STRING 9396
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: AY01 (Testzauber - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37249,7 +37249,7 @@ Relief - Level 4
 }
 
 STRING 9398
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0P6 (Reinheit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37381,7 +37381,7 @@ Impeding Disaster - Level 5
 }
 
 STRING 9470
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PH (Genesung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37393,7 +37393,7 @@ Impeding Disaster - Level 1
 }
 
 STRING 9472
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HF (Bezwingung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37405,7 +37405,7 @@ Impeding Disaster - Level 2
 }
 
 STRING 9474
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q8 (Bekehrung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37417,7 +37417,7 @@ Impeding Disaster - Level 3
 }
 
 STRING 9476
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OL (Linderung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37429,7 +37429,7 @@ Impeding Disaster - Level 4
 }
 
 STRING 9478
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HJ (Bezwingung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37501,31 +37501,31 @@ Teleportation [|cffffcc00Stufe 2|r]
 }
 
 STRING 9490
-// Fähigkeiten: A0LY (Verspotten - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NU (Blenden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Mock [|cffffcc00Level 4|r]
 }
 
 STRING 9491
-// Fähigkeiten: A0LY (Verspotten - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1J8 (Blenden - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Mock [|cffffcc00Level 4|r]
 }
 
 STRING 9492
-// Fähigkeiten: A0LY (Verspotten - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NR (Blenden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Mock [|cffffcc00Level 4|r]
 }
 
 STRING 9493
-// Fähigkeiten: A0LY (Verspotten - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NT (Blenden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Mock [|cffffcc00Level 4|r]
 }
 
 STRING 9494
-// Fähigkeiten: A0LY (Verspotten - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NS (Blenden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Mock [|cffffcc00Level 4|r]
 }
@@ -37681,7 +37681,7 @@ Clarity - Level 5
 }
 
 STRING 9570
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NN (Märtyrer - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37693,7 +37693,7 @@ Clarity - Level 1
 }
 
 STRING 9572
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0LI (Schützen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37705,7 +37705,7 @@ Clarity - Level 2
 }
 
 STRING 9574
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PE (Genesung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37717,7 +37717,7 @@ Clarity - Level 3
 }
 
 STRING 9576
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OJ (Linderung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37729,7 +37729,7 @@ Clarity - Level 4
 }
 
 STRING 9578
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NX (Blenden - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37771,7 +37771,7 @@ Exorcize Evil - Level 1
 }
 
 STRING 9595
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1LI (Heilige Kraft - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37897,7 +37897,7 @@ Recovery - Level 5
 }
 
 STRING 9667
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OA (Wiederbeleben - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37909,7 +37909,7 @@ Recovery - Level 1
 }
 
 STRING 9669
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1J5 (Linderung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37921,7 +37921,7 @@ Recovery - Level 2
 }
 
 STRING 9671
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0P3 (Reinheit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37933,7 +37933,7 @@ Recovery - Level 3
 }
 
 STRING 9673
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NM (Märtyrer - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37945,7 +37945,7 @@ Recovery - Level 4
 }
 
 STRING 9675
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OU (Drohendes Unheil - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -37975,7 +37975,7 @@ Holy Will - Level 1
 }
 
 STRING 9691
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QK (Göttergunst - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -38053,31 +38053,31 @@ Selbstlosigkeit [|cffffcc00Stufe 3|r]
 }
 
 STRING 9763
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QV (Böses hindern - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
 
 STRING 9765
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0X5 (Heilige Kraft - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
 
 STRING 9767
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PF (Genesung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
 
 STRING 9769
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QU (Böses hindern - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
 
 STRING 9771
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0O9 (Wiederbeleben - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -38455,7 +38455,7 @@ Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündet
 }
 
 STRING 9847
-// Fähigkeiten: A14U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0BD (Dämpfung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Crow Form [|cffffcc00Level 5|r]
 }
@@ -38473,25 +38473,25 @@ Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündet
 }
 
 STRING 9850
-// Fähigkeiten: A14U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0BG (Dämpfung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 9851
-// Fähigkeiten: A14U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0BA (Dämpfung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 9852
-// Fähigkeiten: A14U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0BF (Dämpfung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Crow Form [|cffffcc00Level 5|r]
 }
 
 STRING 9853
-// Fähigkeiten: A14U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0BE (Dämpfung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Crow Form [|cffffcc00Level 5|r]
 }
@@ -38575,7 +38575,7 @@ Conversion
 }
 
 STRING 9871
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KG (Inferno - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -38671,7 +38671,7 @@ Conversion - Level 5
 }
 
 STRING 9941
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QS (Böses hindern - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -38683,7 +38683,7 @@ Conversion - Level 1
 }
 
 STRING 9943
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HH (Bezwingung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -38695,7 +38695,7 @@ Conversion - Level 2
 }
 
 STRING 9945
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0HE (Segen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -38707,7 +38707,7 @@ Conversion - Level 3
 }
 
 STRING 9947
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Q7 (Bekehrung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -38719,7 +38719,7 @@ Conversion - Level 4
 }
 
 STRING 9949
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0LH (Schützen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -38917,7 +38917,7 @@ Entzünden - Stufe 5
 }
 
 STRING 10019
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0U3 (Feuersbrunst - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -38929,7 +38929,7 @@ Feuersbrunst - Stufe 1
 }
 
 STRING 10033
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11I (Beherrschung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -38947,7 +38947,7 @@ Beherrschung [|cffffcc00Stufe 1|r]
 }
 
 STRING 10047
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0T9 (Eisgeschoss - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -38959,13 +38959,13 @@ Feuersbrunst - Stufe 3
 }
 
 STRING 10051
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UX (Erfrierung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 10061
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UL (Blitzschlag - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -38983,7 +38983,7 @@ Beherrschung - Stufe 1
 }
 
 STRING 10075
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1N3 (Wut der Elemente - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39055,7 +39055,7 @@ Feuersbrunst - Stufe 5
 }
 
 STRING 10098
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1IC (Elementarwesen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39067,7 +39067,7 @@ Gleißenes Licht [|cffffcc00Stufe 2|r]
 }
 
 STRING 10112
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0U5 (Feuersbrunst - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39085,7 +39085,7 @@ Gleißenes Licht [|cffffcc00Stufe 3|r]
 }
 
 STRING 10126
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11L (Beherrschung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39097,13 +39097,13 @@ Der Elementarmagier regeneriert alle 10 Sekunden einen Teil seines Manas.|n|n|cf
 }
 
 STRING 10140
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KI (Inferno - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
 
 STRING 10141
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0O0 (Blenden - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -39115,7 +39115,7 @@ Gleißenes Licht [|cffffcc00Stufe 3|r]
 }
 
 STRING 10154
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TA (Eisgeschoss - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39157,7 +39157,7 @@ Teleportation [|cffffcc00Stufe 1|r]
 }
 
 STRING 10178
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZR (Zehren - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39169,7 +39169,7 @@ Blitzschlag - Stufe 1
 }
 
 STRING 10192
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TI (Eiszeit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39181,7 +39181,7 @@ Blitzschlag - Stufe 2
 }
 
 STRING 10206
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UO (Blitzschlag - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39193,7 +39193,7 @@ Blitzschlag - Stufe 3
 }
 
 STRING 10220
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TR (Entzünden - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39205,7 +39205,7 @@ Blitzschlag - Stufe 4
 }
 
 STRING 10234
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1O7 (Teleportation - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39313,7 +39313,7 @@ All opponents around the elemental mage are stunned for some time.|n|n|cffffcc00
 }
 
 STRING 10263
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KR (Feuergeschoss - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39331,7 +39331,7 @@ All opponents around the elemental mage are stunned for some time.|n|n|cffffcc00
 }
 
 STRING 10277
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1KL (Elementare Gewalt - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39349,7 +39349,7 @@ All opponents around the elemental mage are stunned for some time.|n|n|cffffcc00
 }
 
 STRING 10291
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZD (Erdgefängnis - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39373,7 +39373,7 @@ Freeze [|cffffcc00Level 4|r]
 }
 
 STRING 10305
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TK (Eiszeit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39397,7 +39397,7 @@ Relief [|cffffcc00Level 5|r]
 }
 
 STRING 10319
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UV (Erfrierung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -39853,7 +39853,7 @@ Verbannen - Stufe 4
 }
 
 STRING 10422
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1LU (Sprungattacke - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -40165,7 +40165,7 @@ Konzentration - Stufe 5
 }
 
 STRING 10544
-// Fähigkeiten: A0XS (Anstürmen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0XM (Konzentration - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Rush [|cffffcc00Level 1|r]
 }
@@ -40975,7 +40975,7 @@ Wilder Blutrausch - Stufe 1
 }
 
 STRING 10891
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FB (Unbarmherzigkeit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -41065,7 +41065,7 @@ STRING 10960
 }
 
 STRING 10963
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FQ (Rage - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -41077,7 +41077,7 @@ STRING 10964
 }
 
 STRING 10965
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Z5 (Überlegenheit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -41089,7 +41089,7 @@ STRING 10966
 }
 
 STRING 10967
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GV (Sprungattacke - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -41101,7 +41101,7 @@ STRING 10968
 }
 
 STRING 10969
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GH (Auge um Auge - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -41113,7 +41113,7 @@ STRING 10970
 }
 
 STRING 10971
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GU (Sprungattacke - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -41131,9 +41131,9 @@ Changes to the previous page of the grimoire. On each page of the grimoire learn
 }
 
 STRING 10974
-// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Hunger [|cffffcc00Stufe 3|r]
+Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 10975
@@ -41779,7 +41779,7 @@ Arkaner Hunger - Stufe 3
 }
 
 STRING 11091
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UZ (Erfrierung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -41809,7 +41809,7 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 }
 
 STRING 11107
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1KF (Elementarwesen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -41827,7 +41827,7 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 }
 
 STRING 11121
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1L3 (Erfrierung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -41845,7 +41845,7 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 }
 
 STRING 11135
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZC (Erdgefängnis - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -41863,7 +41863,7 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 }
 
 STRING 11149
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1OJ (Zehren - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -41881,7 +41881,7 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 }
 
 STRING 11163
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TU (Entzünden - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -41959,7 +41959,7 @@ Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|
 }
 
 STRING 11187
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TL (Eiszeit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -41989,7 +41989,7 @@ Wut der Elemente [|cffffcc00Stufe 1|r]
 }
 
 STRING 11203
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0T7 (Eisgeschoss - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -42013,7 +42013,7 @@ Wut der Elemente - Stufe 1
 }
 
 STRING 11219
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KP (Feuergeschoss - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -42031,7 +42031,7 @@ Zehren [|cffffcc00Stufe 2|r]
 }
 
 STRING 11233
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UY (Erfrierung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -42049,7 +42049,7 @@ Zehren [|cffffcc00Stufe 3|r]
 }
 
 STRING 11247
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KF (Inferno - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -42067,7 +42067,7 @@ Zehren [|cffffcc00Stufe 4|r]
 }
 
 STRING 11261
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZK (Pure Energie - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -42079,7 +42079,7 @@ Zehren - Stufe 4
 }
 
 STRING 11275
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11J (Beherrschung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -42097,7 +42097,7 @@ Beherrschung [|cffffcc00Stufe 2|r]
 }
 
 STRING 11282
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1IA (Elementarwesen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -43259,7 +43259,7 @@ Beherrschung [|cffffcc00Stufe 3|r]
 }
 
 STRING 11691
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1KV (Feuergeschoss - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -43283,7 +43283,7 @@ Beherrschung [|cffffcc00Stufe 4|r]
 }
 
 STRING 11705
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UM (Blitzschlag - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -43307,7 +43307,7 @@ Beherrschung [|cffffcc00Stufe 5|r]
 }
 
 STRING 11719
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZP (Zehren - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -45389,9 +45389,9 @@ Baldar's Ring
 }
 
 STRING 12419
-// Einheiten: n067 (Hain), EditorSuffix (Name - Editor-Suffix (unsf))
+// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 12420
@@ -46109,7 +46109,7 @@ Einschüchtern - Stufe 5
 }
 
 STRING 12673
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A154 (Einschüchtern - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -46121,7 +46121,7 @@ Einschüchtern - Stufe 1
 }
 
 STRING 12675
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1G4 (Reserven - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -46133,7 +46133,7 @@ Einschüchtern - Stufe 2
 }
 
 STRING 12677
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0G4 (Koloss - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -46145,7 +46145,7 @@ Einschüchtern - Stufe 3
 }
 
 STRING 12679
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1N8 (Beutezug - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -46157,7 +46157,7 @@ Einschüchtern - Stufe 4
 }
 
 STRING 12681
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0YX (Wilder Blutrausch - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -46253,7 +46253,7 @@ Hieb - Stufe 5
 }
 
 STRING 12753
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1OM (Schwachstelle - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -46265,7 +46265,7 @@ Hieb - Stufe 1
 }
 
 STRING 12755
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CU (Beutezug - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -46277,7 +46277,7 @@ Hieb - Stufe 2
 }
 
 STRING 12757
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0SZ (Schwachstelle - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -46289,7 +46289,7 @@ Hieb - Stufe 3
 }
 
 STRING 12759
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Z7 (Überlegenheit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -46301,7 +46301,7 @@ Hieb - Stufe 4
 }
 
 STRING 12761
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1NW (Hieb - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -48953,31 +48953,31 @@ Der Ritter regeneriert alle 10 Sekunden 25 %  maximalen seiner Lebenspunkte.
 }
 
 STRING 13325
-// Fähigkeiten: A0XS (Anstürmen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0XK (Konzentration - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Rush [|cffffcc00Level 1|r]
 }
 
 STRING 13326
-// Fähigkeiten: A0XS (Anstürmen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0XL (Konzentration - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Rush [|cffffcc00Level 1|r]
 }
 
 STRING 13327
-// Fähigkeiten: A0XS (Anstürmen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0XI (Konzentration - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Rush [|cffffcc00Level 1|r]
 }
 
 STRING 13328
-// Fähigkeiten: A0XS (Anstürmen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0XJ (Konzentration - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Rush [|cffffcc00Level 1|r]
 }
 
 STRING 13329
-// Fähigkeiten: A0XS (Anstürmen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1JI (Konzentration - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Rush [|cffffcc00Level 1|r]
 }
@@ -59963,7 +59963,7 @@ Beutezug - Stufe 1
 }
 
 STRING 15267
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FE (Unbarmherzigkeit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -60095,7 +60095,7 @@ Bestehlen - Stufe 1
 }
 
 STRING 15305
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0SY (Schwachstelle - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -62243,7 +62243,7 @@ Bestehlen - Stufe 5
 }
 
 STRING 15758
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A15E (Hieb - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -62255,7 +62255,7 @@ Bestehlen - Stufe 2
 }
 
 STRING 15760
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1JH (Koloss - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -62267,7 +62267,7 @@ Bestehlen - Stufe 3
 }
 
 STRING 15762
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GR (Sprungattacke - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -62279,7 +62279,7 @@ Bestehlen - Stufe 4
 }
 
 STRING 15764
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CL (Bestehlen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -62375,7 +62375,7 @@ Beutezug - Stufe 5
 }
 
 STRING 15822
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0T0 (Schwachstelle - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -62387,7 +62387,7 @@ Beutezug - Stufe 2
 }
 
 STRING 15824
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A152 (Einschüchtern - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -62399,7 +62399,7 @@ Beutezug - Stufe 3
 }
 
 STRING 15826
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GJ (Auge um Auge - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -62411,7 +62411,7 @@ Beutezug - Stufe 4
 }
 
 STRING 15828
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1G7 (Reserven - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64185,7 +64185,7 @@ Unbarmherzigkeit - Stufe 5
 }
 
 STRING 16180
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UG (Bestienjäger - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64197,7 +64197,7 @@ Unbarmherzigkeit - Stufe 1
 }
 
 STRING 16182
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1N6 (Rage - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64209,7 +64209,7 @@ Unbarmherzigkeit - Stufe 2
 }
 
 STRING 16184
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FP (Rage - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64221,7 +64221,7 @@ Unbarmherzigkeit - Stufe 3
 }
 
 STRING 16186
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GT (Sprungattacke - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64233,7 +64233,7 @@ Unbarmherzigkeit - Stufe 4
 }
 
 STRING 16188
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CN (Bestehlen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64371,7 +64371,7 @@ Rage - Stufe 5
 }
 
 STRING 16261
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1MK (Unbarmherzigkeit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64383,7 +64383,7 @@ Rage - Stufe 1
 }
 
 STRING 16263
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0G5 (Koloss - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64395,7 +64395,7 @@ Rage - Stufe 2
 }
 
 STRING 16265
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1O4 (Überlegenheit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64407,7 +64407,7 @@ Rage - Stufe 3
 }
 
 STRING 16267
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A15G (Hieb - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64419,7 +64419,7 @@ Rage - Stufe 4
 }
 
 STRING 16269
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FO (Rage - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64467,7 +64467,7 @@ Siegeswunsch - Stufe 1
 }
 
 STRING 16277
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GG (Auge um Auge - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64701,7 +64701,7 @@ Reserven - Stufe 5
 }
 
 STRING 16380
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1L8 (Wilder Blutrausch - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64713,7 +64713,7 @@ Reserven - Stufe 1
 }
 
 STRING 16382
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A2 (Beutezug - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64725,7 +64725,7 @@ Reserven - Stufe 2
 }
 
 STRING 16384
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FD (Unbarmherzigkeit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64737,7 +64737,7 @@ Reserven - Stufe 3
 }
 
 STRING 16386
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FU (Siegeswunsch - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64749,7 +64749,7 @@ Reserven - Stufe 4
 }
 
 STRING 16388
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CV (Beutezug - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64941,7 +64941,7 @@ Auge um Auge - Stufe 5
 }
 
 STRING 16467
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FC (Unbarmherzigkeit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64953,7 +64953,7 @@ Auge um Auge - Stufe 1
 }
 
 STRING 16469
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A15D (Hieb - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64965,7 +64965,7 @@ Auge um Auge - Stufe 2
 }
 
 STRING 16471
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FM (Rage - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64977,7 +64977,7 @@ Auge um Auge - Stufe 3
 }
 
 STRING 16473
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GI (Auge um Auge - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -64989,7 +64989,7 @@ Auge um Auge - Stufe 4
 }
 
 STRING 16475
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A04Z (Auge um Auge - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -65421,7 +65421,7 @@ Sprungattacke - Stufe 5
 }
 
 STRING 16591
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Z4 (Überlegenheit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -65433,7 +65433,7 @@ Sprungattacke - Stufe 1
 }
 
 STRING 16593
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0G2 (Koloss - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -65445,7 +65445,7 @@ Sprungattacke - Stufe 2
 }
 
 STRING 16595
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A155 (Einschüchtern - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -65457,7 +65457,7 @@ Sprungattacke - Stufe 3
 }
 
 STRING 16597
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0T1 (Schwachstelle - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -65469,7 +65469,7 @@ Sprungattacke - Stufe 4
 }
 
 STRING 16599
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1A6 (Bestehlen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -65847,7 +65847,7 @@ Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird
 }
 
 STRING 16692
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CM (Bestehlen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -65913,7 +65913,7 @@ Bezwingung - Stufe 5
 }
 
 STRING 16725
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0QM (Göttergunst - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -66051,33 +66051,33 @@ Markiert eine Ziel-Einheit mit maximaler Stufe 6 für die Manifestation von <A1H
 }
 
 STRING 16759
-// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Hunger [|cffffcc00Stufe 3|r]
+Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 16760
-// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Hunger [|cffffcc00Stufe 3|r]
+Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 16761
-// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Hunger [|cffffcc00Stufe 3|r]
+Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 16762
-// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Hunger [|cffffcc00Stufe 3|r]
+Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 16763
-// Fähigkeiten: A1JK (Bezwingung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Hunger [|cffffcc00Stufe 3|r]
+Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 16764
@@ -68838,7 +68838,7 @@ Erdgefängnis erlernen
 }
 
 STRING 17326
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1KN (Entzünden - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -69318,7 +69318,7 @@ Elementarwesen erlernen
 }
 
 STRING 17417
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A11M (Beherrschung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -71688,7 +71688,7 @@ Arkaner Schutz [|cffffcc00Stufe 5|r] (|cffffcc00L|r)
 }
 
 STRING 17814
-// Fähigkeiten: A08H (Manaexplosion), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A03A (Manaschild), Tip (Tooltipp - Normal (atp1))
 {
 Drains up to 120 mana from an enemy, deals doubled damage to the enemy and transfers the mana to the wizard.
 }
@@ -72180,7 +72180,7 @@ Elementare Gewalt erlernen
 }
 
 STRING 17905
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1IB (Elementarwesen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -72216,7 +72216,7 @@ Entzünden erlernen
 }
 
 STRING 17921
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0L3 (Teleportation - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -72300,7 +72300,7 @@ Böses bannen - Erlernen
 }
 
 STRING 17957
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UK (Segen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -72360,7 +72360,7 @@ Feuergeschoss erlernen
 }
 
 STRING 17985
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KH (Inferno - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -72504,7 +72504,7 @@ Erfrierung erlernen
 }
 
 STRING 18049
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0TS (Entzünden - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -72588,7 +72588,7 @@ Wilder Blutrausch - Erlernen
 }
 
 STRING 18085
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1G5 (Reserven - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -72624,7 +72624,7 @@ Göttergunst - Erlernen
 }
 
 STRING 18101
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OW (Drohendes Unheil - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -72756,7 +72756,7 @@ Heilige Kraft - Erlernen
 }
 
 STRING 18165
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OM (Linderung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -72792,7 +72792,7 @@ Heiliger Wille - Erlernen
 }
 
 STRING 18181
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0PK (Heiliger Wille - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -72816,7 +72816,7 @@ Eiszeit erlernen
 }
 
 STRING 18193
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZE (Erdgefängnis - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -72852,7 +72852,7 @@ Eisgeschoss erlernen
 }
 
 STRING 18209
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZS (Zehren - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -72900,7 +72900,7 @@ Drohendes Unheil - Erlernen
 }
 
 STRING 18229
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OK (Linderung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -72924,7 +72924,7 @@ Inferno erlernen
 }
 
 STRING 18241
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UP (Blitzschlag - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -72972,7 +72972,7 @@ Sprungattacke - Erlernen
 }
 
 STRING 18259
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A15C (Hieb - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -73104,7 +73104,7 @@ Blitzschlag erlernen
 }
 
 STRING 18319
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0U2 (Feuersbrunst - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -73182,7 +73182,7 @@ Märtyrer - Erlernen
 }
 
 STRING 18355
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1JL (Bezwingung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -73386,7 +73386,7 @@ Beherrschung erlernen
 }
 
 STRING 18447
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0KJ (Inferno - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -73434,7 +73434,7 @@ Unbarmherzigkeit - Erlernen
 }
 
 STRING 18465
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1NE (Reserven - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -73686,7 +73686,7 @@ Böses hindern - Erlernen
 }
 
 STRING 18577
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0P2 (Reinheit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -73722,7 +73722,7 @@ Schützen - Erlernen
 }
 
 STRING 18593
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0P5 (Reinheit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -73740,7 +73740,7 @@ STRING 18595
 }
 
 STRING 18605
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0UW (Erfrierung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -73776,7 +73776,7 @@ Wut der Elemente erlernen
 }
 
 STRING 18621
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1M1 (Blitzschlag - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -73818,7 +73818,7 @@ Rage - Erlernen
 }
 
 STRING 18639
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1FA (Unbarmherzigkeit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -73854,7 +73854,7 @@ Beutezug - Erlernen
 }
 
 STRING 18655
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A14W (Bestienjäger - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -73890,7 +73890,7 @@ Genesung - Erlernen
 }
 
 STRING 18671
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0LG (Schützen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -73962,7 +73962,7 @@ Reserven - Erlernen
 }
 
 STRING 18703
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CT (Beutezug - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -74034,7 +74034,7 @@ Wiederbeleben - Erlernen
 }
 
 STRING 18735
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0NY (Blenden - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -74106,7 +74106,7 @@ Bestehlen - Erlernen
 }
 
 STRING 18767
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1G6 (Reserven - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -74286,7 +74286,7 @@ Hieb - Erlernen
 }
 
 STRING 18847
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A15F (Hieb - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -74430,7 +74430,7 @@ STRING 18908
 }
 
 STRING 18911
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0Z6 (Überlegenheit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -74490,7 +74490,7 @@ Teleportation erlernen
 }
 
 STRING 18939
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0L1 (Teleportation - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -74574,7 +74574,7 @@ Siegeswunsch - Erlernen
 }
 
 STRING 18973
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0SX (Schwachstelle - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -74706,7 +74706,7 @@ Zehren erlernen
 }
 
 STRING 19033
-// Fähigkeiten: A0KQ (Feuergeschoss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0ZM (Wut der Elemente - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Fire Missile [|cffffcc00Level 2|r]
 }
@@ -74754,7 +74754,7 @@ Schwachstelle - Erlernen
 }
 
 STRING 19053
-// Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1CO (Bestehlen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
 Awakening of the Forest [|cffffcc00Level 4|r]
 }
@@ -74892,7 +74892,7 @@ Bekehrung - Erlernen
 }
 
 STRING 19117
-// Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0OS (Drohendes Unheil - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
 Mock [|cffffcc00Level 2|r]
 }
@@ -77970,9 +77970,9 @@ Aufträge - Nächste Seite
 }
 
 STRING 19805
-// Fähigkeiten: A1TW (Dungeons - Nächste Seite), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1RC (Aufträge - Nächste Seite), Tip (Tooltipp - Normal (atp1))
 {
-Nächste Seite
+Next Page
 }
 
 STRING 19806
@@ -79482,9 +79482,9 @@ Ein Buch mit Anleitungen zum Ausnehmen von Tierkadavern.
 }
 
 STRING 20076
-// Fähigkeiten: A1TP (Buch der Jagd), Name (Name (anam))
+// Gegenstände: I077 (Buch der Jagd), Name (Name (unam))
 {
-Buch der Jagd
+Book of Hunting
 }
 
 STRING 20077
@@ -79980,9 +79980,9 @@ Erzeugt eine vom Spieler gesteuerte trainierte Ratte, mit der Feinde ausgespäht
 }
 
 STRING 20163
-// Fähigkeiten: A1U6 (Kamera - Kameradistanz vergrößern), Name (Name (anam))
+// Fähigkeiten: A1UM (Kamera - Kameradistanz vergrößern), Name (Name (anam))
 {
-Kamera - Kameradistanz vergrößern
+Camera - Increase Camera Distance
 }
 
 STRING 20164
