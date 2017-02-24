@@ -13690,7 +13690,7 @@ Lichtquelle rot klein (Extra)
 STRING 2333
 // Einheiten: n02C (Kiste), Name (Name (unam))
 {
-Kiste
+Box
 }
 
 STRING 2334
@@ -13768,7 +13768,7 @@ Vassals
 STRING 2347
 // Einheiten: n02E (Langboot), Name (Name (unam))
 {
-Langboot
+Long Boat
 }
 
 STRING 2348
@@ -13910,7 +13910,7 @@ Erhöht bei einer in der Nähe befindlichen befreundeten Einheit das Bewegungste
 STRING 2373
 // Fähigkeiten: A0R8 (Aura des Königs), Name (Name (anam))
 {
-Aura des Königs
+Aura of the King
 }
 
 STRING 2374
@@ -14216,7 +14216,7 @@ STRING 2424
 STRING 2425
 // Fähigkeiten: A04D (Aufnehmen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drache)
+(Dragon)
 }
 
 STRING 2426
@@ -14300,7 +14300,7 @@ STRING 2438
 STRING 2439
 // Fähigkeiten: A04F (Drachen herbeirufen), Name (Name (anam))
 {
-Drachen herbeirufen
+Call Dragon
 }
 
 STRING 2440
@@ -14481,13 +14481,13 @@ STRING 2479
 STRING 2480
 // Fähigkeiten: A10B (Arkaner Hunger - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Hunger [|cffffcc00Stufe 2|r]
+Arcane Hunger [|cffffcc00Level 2|r]
 }
 
 STRING 2481
 // Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Hunger [|cffffcc00Stufe 3|r]
+Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 2482
@@ -14511,7 +14511,7 @@ Arkaner Hunger [|cffffcc00Stufe 1|r]
 STRING 2485
 // Fähigkeiten: A05P (Arkaner Hunger), Name (Name (anam))
 {
-Arkaner Hunger
+Arcane Hunger
 }
 
 STRING 2488
@@ -14529,7 +14529,7 @@ Arkaner Hunger
 STRING 2490
 // Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer)
+(Wizard)
 }
 
 STRING 2491
@@ -14805,7 +14805,7 @@ STRING 2536
 STRING 2537
 // Einheiten: n02N (Ente), Name (Name (unam))
 {
-Ente
+Duck
 }
 
 STRING 2538
@@ -25866,7 +25866,7 @@ Verwandelt den Träger in einen Dämon.
 STRING 5079
 // Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Dämon.
+Transforms the carrying unit into a demon.
 }
 
 STRING 5080
@@ -25998,7 +25998,7 @@ STRING 5100
 STRING 5101
 // Fähigkeiten: A0T6 (Todesgeschoss), Name (Name (anam))
 {
-Todesgeschoss
+Death Missile
 }
 
 STRING 5102
@@ -26032,7 +26032,7 @@ Opfer
 STRING 5107
 // Fähigkeiten: A0DG (Ranken), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+Summons a healing spring for <A0D3,Dur1> seconds which heals life of nearby units. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A0QX,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A0QX,DataA1,%> % of the life per second.
 }
 
 STRING 5108
@@ -35217,7 +35217,7 @@ STRING 8743
 STRING 8744
 // Zauberverstärker/Effekte: B026 (Aura der Autorität), EditorName (Name (nur Editor) (fnam))
 {
-Aura der Autorität
+Aura of Authority
 }
 
 STRING 8745
@@ -79460,7 +79460,7 @@ Erhöht den Schaden um <A02L,DataA1>.|n|cffc3dbffNahkampfwaffe.|r
 STRING 20072
 // Gegenstände: I077 (Buch der Jagd), Name (Name (unam))
 {
-Buch der Jagd
+Book of Hunting
 }
 
 STRING 20073
@@ -79472,7 +79472,7 @@ Ein Buch mit Anleitungen zum Ausnehmen von Tierkadavern.
 STRING 20074
 // Gegenstände: I077 (Buch der Jagd), Tip (Tooltipp - Einfach (utip))
 {
-Buch der Jagd kaufen
+Buy Book of Hunting
 }
 
 STRING 20075
@@ -79532,7 +79532,7 @@ Fell abziehen
 STRING 20084
 // Fähigkeiten: A1UM (Kamera - Kameradistanz vergrößern), Name (Name (anam))
 {
-Kamera - Kameradistanz vergrößern
+Camera - Increase Camera Distance
 }
 
 STRING 20085
@@ -79604,7 +79604,7 @@ Eine Liste von Gesprächen, die mit Personen geführt wurden. Erlaubt das Auflis
 STRING 20099
 // Fähigkeiten: A1BY (Optionen - Aufträge), Tip (Tooltipp - Normal (atp1))
 {
-Aufträge (|cffffcc00A|r)
+Missions (|cffffcc00A|r)
 }
 
 STRING 20100
@@ -79622,7 +79622,7 @@ D
 STRING 20102
 // Fähigkeiten: A1TU (Optionen - Gespräche), Tip (Tooltipp - Normal (atp1))
 {
-Gespräche (|cffffcc00G|r)
+Talks (|cffffcc00G|r)
 }
 
 STRING 20103
@@ -79634,7 +79634,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 20105
 // Fähigkeiten: A1TV (Optionen - Kamera), Tip (Tooltipp - Normal (atp1))
 {
-Kamera (|cffffcc00K|r)
+Camera (|cffffcc00K|r)
 }
 
 STRING 20106
@@ -79658,7 +79658,7 @@ Dungeons - Nächste Seite
 STRING 20109
 // Fähigkeiten: A1RC (Aufträge - Nächste Seite), Tip (Tooltipp - Normal (atp1))
 {
-Nächste Seite
+Next Page
 }
 
 STRING 20110
