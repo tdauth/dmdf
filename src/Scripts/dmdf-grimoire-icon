@@ -19,5 +19,5 @@ MAX_LEVELS="6"
 
 #-font dfst-m3u.ttf -pointsize 40 label:"$i"
 for ((i=0; i < "$MAX_LEVELS"; i++)) do
-	convert -gravity SouthEast "$1" human-button-lvls-overlay.png -composite -gravity SouthEast -pointsize 18 -fill white -annotate +10+5 $i "$2/$(basename "$1")Level$i.png"
+	convert -gravity SouthEast "$1" human-button-lvls-overlay.png -composite -gravity SouthEast -pointsize 18 -fill white -annotate +10+5 $i "$2/$(basename "$1" .tga)Level$i.png"
 done
