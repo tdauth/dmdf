@@ -1,0 +1,338 @@
+\documentclass[a4paper,12pt,titlepage]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{color}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{listingsutf8} % UTF-8-Unterstützung, kein \lstset mit iterate wird mehr benötigt
+% clear type-Schriften, Output Encoding UTF-8, damit kopieren von Umlauten funktioniert.
+\usepackage[T1]{fontenc}
+% deutsche Anführungszeichen direkt benutzen
+% http://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_Anf%C3%BChrungszeichen
+\usepackage[ngerman]{babel}
+\usepackage[babel,german=quotes]{csquotes}
+% mit \enquote{ einheitlich!
+% für Zitate
+%\usepackage[round]{natbib}
+
+\PassOptionsToPackage{hyphens}{url} % Better line breaks in URLs http://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url
+\usepackage[pdftex,
+ pdfcreator=pdflatex]{hyperref}
+\hypersetup{
+	pdfauthor={Tamino Dauth},
+	pdftitle={The Power of Fire Developer Manual},
+	pdfsubject={The Power of Fire Developer Manual},
+	pdfkeywords={warcraft3,thepoweroffire},
+	pdfproducer={Tamino Dauth},
+	breaklinks=true
+}
+
+%\usepackage{calculator} % calculate mathematical expressions
+\usepackage{alltt} % for <pre> like quotes
+
+\usepackage[]{fancyhdr}
+
+
+% für Literaturverzeichnis
+% https://tex.stackexchange.com/questions/51434/biblatex-citation-order
+% Sortierreihenfolge und andere Daten stammen von folgender Seite:
+% http://www.studis-online.de/Studieren/Wissenschaftliche_Texte/literaturverzeichnis.php
+\usepackage[
+backend=biber,
+natbib=true,
+style=numeric,
+sorting=none,
+maxbibnames=99 % print all authors http://tex.stackexchange.com/questions/1554/biblatex-displaying-all-authors-of-multi-author-works-in-the-bibliography
+]{biblatex}
+
+% eigner Style
+% Beispiel: http://ctan.space-pro.be/tex-archive/macros/latex/contrib/biblatex-contrib/uni-wtal-ger/uni-wtal-ger.bbx
+% https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
+
+% We use the database biblatex-examples.bib.
+\addbibresource{Bibliographie.bib}
+
+%\AtEveryBibitem{
+%	\ifentrytype{manual}{Handbuch: }
+%	{
+%		\ifentrytype{article}{Artikel: }
+%		{
+%			\ifentrytype{online}{Online: }
+%			{
+%				\ifentrytype{book}{Buch: }
+%				{Paper: }
+%			}
+%		}
+%	}
+%}
+
+%\definecolor{mygray}{rgb}{0.76,0.76,0.76}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mygreen}{rgb}{0,0.4,0}
+% Go highlighting:
+% http://tex.stackexchange.com/questions/63496/how-to-add-go-to-the-programming-languages-list-in-lyx
+% Unter Gentoo:
+% /usr/share/texmf-dist/tex/latex/listings/
+
+
+% "define" JASS
+%Keyword list taken from the scaladoc definition.
+\lstdefinelanguage{JASS}{
+  morekeywords={%
+          function,takes,nothing},
+  otherkeywords={=>,<-,<\%,<:,>:,\#,@},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[n]{/*}{*/},
+  morestring=[b]",
+  morestring=[b]',
+  morestring=[b]"""
+}[keywords,comments,strings]
+
+
+
+\lstset{ %
+language=[]JASS, % [11]                % choose the language of the code
+morekeywords={override},
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize\color{mygray},      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,           % adds a frame around the code
+tabsize=2,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+%breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+breakatwhitespace, % http://tex.stackexchange.com/questions/64750/avoid-line-breaks-after-lstinline
+escapeinside={\%*}{*)},          % if you want to add a comment within your code
+keywordstyle=\color{blue}\ttfamily,
+stringstyle=\color{mymauve}\ttfamily,
+commentstyle=\color{mygreen}\ttfamily
+}
+
+\lstset{inputencoding=utf8/latin1}
+% Verhindert die Markierung!
+%\lstset{
+%literate={ö}{{\"o}}1
+%          {ä}{{\"a}}1
+%          {ü}{{\"u}}1
+%          {ß}{{\ss}}1
+%}
+
+% currentname
+\usepackage{nameref}
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+
+% remove line break after chapter
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter }{0.5em}{}
+
+% Fußzeile aktivieren
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{\currentname}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Redefine the plain page style
+% plain is always used by the chapters
+% http://tex.stackexchange.com/questions/117328/fancyhdr-does-not-apply-same-header-footer-on-chapter-and-non-chapter-pages
+\fancypagestyle{plain}{%
+ \fancyhf{}
+ \fancyfoot[R]{\thepage}
+ % Der Kapitelname ist auf der Seite des Kapitels nicht wichtig, daher weg lassen
+% \fancyfoot[L]{\currentname}
+ \renewcommand{\headrulewidth}{0pt}
+ \renewcommand{\footrulewidth}{0.4pt}
+}
+
+% disable indentation
+\setlength{\parindent}{0pt}
+% disable ``chapter'' expression
+\renewcommand{\chaptername}{}
+
+% disable "chapter" expression completely
+\addto\captionsngerman{\renewcommand{\chaptername}{}}
+
+%\chapterstyle{section}
+
+% http://tex.stackexchange.com/questions/103119/picture-on-title-page
+%\titlehead{\centering\includegraphics[width=6cm]{logo.jpg}}
+
+% \cite oder \cite
+% http://citeseerx.ist.psu.edu für Zitate
+% Alternativer Titel: Entwicklung einer C++-Schnittstelle mit austauschbarem Scheduler für die nebenläufige Ausführung von Tasks
+
+\title{The Power of Fire Developer Manual}
+\author{Tamino Dauth}
+
+\begin{document}
+
+%\bibliographystyle{alphadin}
+
+% http://tex.stackexchange.com/questions/10130/use-the-values-of-title-author-and-date-on-a-custom-title-page
+\makeatletter
+\begin{titlepage}
+\begin{center}
+        {\Huge \@title}\\[2cm]
+		 A Warcraft III: The Frozen Throne Modification\\
+         \@author
+        \\[0.5cm]
+        \@date
+\end{center}
+\vfill
+
+\end{titlepage}
+\makeatother
+
+%\maketitle
+
+
+\newpage
+
+%\cleardoublepage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+
+%\addtocontents{toc}{\setcounter{tocdepth}{-1}}
+%\chapter*{Inhaltsverzeichnis}
+%\addtocontents{toc}{\setcounter{tocdepth}{1}}
+
+\pagenumbering{Roman}
+%\setcounter{page}{0}
+\tableofcontents
+
+% http://tex.stackexchange.com/questions/2995/removing-page-number-from-toc
+\thispagestyle{empty}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+%\usetikzlibrary{patterns}
+
+
+\newpage
+
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+
+The Power of Fire (German \enquote{Die Macht des Feuers}) is a modification of the realtime strategy game Warcraft III: The Frozen Throne. It alters the game to a roleplay game which can either be played in multiplayer or in a singleplayer campaign traveling between multiple maps.
+
+
+Why should you create a map using The Power of Fire instead of creating your own map?
+Here are a few good reasons:
+\begin{itemize}
+\item Finished Roleplaygame systems: You have a complete roleplaying game which is tested and should work.
+\item Many great resources ready to use: Many great realtexture models are already implemented as Doodads and can be used. Besides many better looking ground textures can be used, too.
+\item Existing Content: There's a huge amount of spells and reference content in the original modification.
+\item Contribute to an Open Source project: Everything is Open Source. Your contribution may become part of the modification and might get improved. The project can grow with more contributors like you.
+\end{itemize}
+
+\newpage
+
+\chapter{vJass}
+
+vJass is a scripting language based on Warcraft III's scripting language JASS. It adds new features like object oriented programming to the scripting language and is implemented by several compilers which translate the vJass code into JASS code.
+
+The first and probably most popular compiler is the JassHelper. It has also been used for The Power of Fire.
+
+By now other approaches with a better syntax exist like Wurst which has not been there when the project was started. It is highly unlikely that the modification will change its core scripting language since too much code is based on it. Besides it has been tested with a specific version of the JassHelper, so there would be a risk of losing functionality or even missing features in the new scripting language.
+
+The size of the modification helped to find the limits of vJass and to make usage of nearly all features. I even wrote many posts on Wc3C.net to improve the language and to report bugs.
+
+\newpage
+
+\chapter{MPQ}
+
+Warcraft III uses the format MPQ for custom data archives. Therefore The Power of Fire provides a custom file called \enquote{TPoF.mpq} with all required resources such as models, textures, icons and sound files.
+
+This file has to be loaded in the game and in the World Editor.
+
+\newpage
+
+\chapter{JassNewGenPack}
+
+\newpage
+
+\chapter{Creating a new Map}
+
+\section{Globals}
+
+Every map has to provide several globals which configure the map's systems:
+
+\section{MapData}
+
+Every map has to provide a struct called \lstinline[]{MapData} with several methods and static constants which are used by the Game backend of the modification to run all required systems.
+
+\section{Required Rects}
+
+\section{Required Camera Setups}
+
+\newpage
+
+\chapter{Spawn Points}
+
+The Power of Fire allows you to respawn creeps and items on the map after being killd or picked up. This should improve the gameplay experience since after clearing a map returning to this map would be less interesting without any new creeps or items to collect.
+Besides the player would get a disadvantage since he cannot level his character nor collect valuable stuff.
+
+Usually the spawn points are created during the map initialization using existing units and items already placed on the map.
+
+\newpage
+
+\chapter{Translation}
+
+To translate all maps as well as the campaign into different languages, one has to extract the war3map.wts files (before optimizing them out). After extracting the files, the entries have to be replaced by strings in another language. A copy of the unoptimized map must be created. Then the modified war3map.wts files have to be readded to the copies of the maps. If the maps are optimized afterwards (both, the one for the original language and the translated), they will differ and on online games won't be considered the same map only translated but the string entries will be optimized and the loading will become faster.
+
+\vspace{\baselineskip}
+
+The campaign file has to be copied and uses the translated maps. Besides the information etc. has to be translated.
+
+\vspace{\baselineskip}
+
+Besides the file for the user interface has to be replaced.
+
+\newpage
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\newpage
+
+%\cleardoublepage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{List of Tables}
+%\listoftables
+%
+%\newpage
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Listings}
+\renewcommand\lstlistingname{Listings}
+\renewcommand\lstlistlistingname{Listings}
+\lstlistoflistings
+
+\newpage
+
+\setcounter{biburlnumpenalty}{9000}
+\setcounter{biburlucpenalty}{9000}
+\setcounter{biburllcpenalty}{9000}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography[title=Bibliography]
+
+\end{document}
