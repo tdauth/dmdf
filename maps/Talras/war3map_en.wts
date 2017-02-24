@@ -20382,7 +20382,7 @@ STRING 3691
 STRING 3692
 // Fähigkeiten: A08X (Amulett der Weitsicht), Name (Name (anam))
 {
-Amulett der Weitsicht
+Amulet of Farsight
 }
 
 STRING 3693
@@ -21042,7 +21042,7 @@ Thunder Creature
 STRING 3832
 // Fähigkeiten: A09A (Blitz), Tip (Tooltipp - Normal (atp1))
 {
-Blitz
+Lightning
 }
 
 STRING 3833
@@ -21222,7 +21222,7 @@ Die Missgeburt dient ihrem Herren mit völlig willenlos und spürt daher keinen 
 STRING 3869
 // Fähigkeiten: A09F (Diener), Name (Name (anam))
 {
-Diener
+Servant
 }
 
 STRING 3870
@@ -21378,7 +21378,7 @@ STRING 3894
 STRING 3895
 // Fähigkeiten: A09O (Kontrollierter Zeitfluss), Name (Name (anam))
 {
-Kontrollierter Zeitfluss
+Controlled Time Flow
 }
 
 STRING 3897
@@ -21420,7 +21420,7 @@ Summon Treefolk [|cffffcc00Level 3|r]
 STRING 3909
 // Fähigkeiten: A09P (Meisterschützin), Name (Name (anam))
 {
-Meisterschützin
+Master Archer
 }
 
 STRING 3910
@@ -22410,7 +22410,7 @@ STRING 4090
 STRING 4091
 // Einheiten: o002 (Bärenhöhle), Name (Name (unam))
 {
-Bärenhöhle
+Bear Cave
 }
 
 STRING 4092
@@ -22518,19 +22518,19 @@ STRING 4112
 STRING 4113
 // Fähigkeiten: A0A7 (Verbannen), Name (Name (anam))
 {
-Verbannen
+Ban
 }
 
 STRING 4114
 // Fähigkeiten: A0A8 (Arkaner Schutz), Name (Name (anam))
 {
-Arkaner Schutz
+Arcane Protection
 }
 
 STRING 4115
 // Fähigkeiten: A0G7 (Arkaner Schutz - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Schutz [|cffffcc00Stufe 1|r]
+Arcane Protection [|cffffcc00Level 1|r]
 }
 
 STRING 4116
@@ -74630,7 +74630,7 @@ Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie
 STRING 19000
 // Fähigkeiten: A1OF (Falle - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Falle erlernen
+Learn Trap
 }
 
 STRING 19001
@@ -74774,7 +74774,7 @@ Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strö
 STRING 19064
 // Fähigkeiten: A1ON (Weltenportal - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Weltenportal erlernen
+Learn Worlds Portal
 }
 
 STRING 19065
