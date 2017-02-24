@@ -2270,7 +2270,7 @@ Zieht einem feindlichen Ziel im Umkreis von 800 10(V1) Mana pro Sekunde ab und �
 }
 
 STRING 379
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A00D (Kraftfeld), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -2342,7 +2342,7 @@ Gibt einem befreundeten Ziel im Umkreis von 800 10(V1) Mana pro Sekunde. Hält 2
 }
 
 STRING 391
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A08T (Vervielfachung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -2414,7 +2414,7 @@ Zieht allen feindlichen Zielen im Umkreis von 800 augenblicklich bis zu 60(V1) M
 }
 
 STRING 403
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VB (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -2480,7 +2480,7 @@ Gibt allen befreundeten Zielen im Umkreis von 800 augenblicklich bis zu 60(V1) M
 }
 
 STRING 414
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A004 (Magische Explosion), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -2552,7 +2552,7 @@ Tauscht die Position des Zauberers mit der eines feindlichen Ziels im Umkreis vo
 }
 
 STRING 426
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A08H (Manaexplosion), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -2624,7 +2624,7 @@ Beschwört für 40(V1) Sekunden einen verzauberten Wächter, der die Mana-Regene
 }
 
 STRING 438
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A03B (Dämpfung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -2696,7 +2696,7 @@ Macht den Zauberer für 15(V1) Sekunden lang unsichtbar und erzeugt ein Nebelfel
 }
 
 STRING 450
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A03A (Manaschild), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -2768,7 +2768,7 @@ Gewährt dem Zauberer einen Schutz-Bonus von 15(V1) vor Magie.
 }
 
 STRING 462
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A14B (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -2840,7 +2840,7 @@ Teleportiert den Zauberer über eine Distanz von 400(V1) Feldern hinweg geradeau
 }
 
 STRING 474
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A002 (Magische Implusion), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -2906,7 +2906,7 @@ Macht den Zauberer für 15(V1) Sekunden lang Immun gegen negative Zauber.
 }
 
 STRING 485
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A08V (Arkane Zeit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -3128,7 +3128,7 @@ STRING 521
 }
 
 STRING 522
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A00A (Antizauber), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -3872,7 +3872,7 @@ Machtentzug
 }
 
 STRING 646
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A008 (Magie-Schutz), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -3890,7 +3890,7 @@ Machtübertragung
 }
 
 STRING 649
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A000 (Machtübertragung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -5578,7 +5578,7 @@ Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von
 }
 
 STRING 933
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A007 (Verborgenheit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -9418,7 +9418,7 @@ STRING 1572
 }
 
 STRING 1573
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A08Q (Manastrom), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -10012,7 +10012,7 @@ Rune der Stärke kaufen
 }
 
 STRING 1672
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0A6 (Verbannen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -10516,13 +10516,13 @@ Die Grabenspinne vergräbt sich im Boden und wird unsichtbar.
 }
 
 STRING 1756
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A163 (Übertragung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
 
 STRING 1757
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A005 (Körpertausch), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -10576,7 +10576,7 @@ Manaschild
 }
 
 STRING 1766
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0A8 (Arkaner Schutz), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -10600,7 +10600,7 @@ Dämpfung
 }
 
 STRING 1770
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VU (Rückkopplung), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -10624,7 +10624,7 @@ Absorbation
 }
 
 STRING 1774
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A05O (Arkaner Hunger), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -11596,13 +11596,13 @@ Baldar's Ring
 }
 
 STRING 1936
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02U (Baldars Ring), Description (Beschreibung (ides))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 1937
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02U (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
 Transforms the carrying unit into a demon.
 }
@@ -13844,7 +13844,7 @@ Flammenhaut
 }
 
 STRING 2361
-// Fähigkeiten: A0R8 (Aura des Königs), Name (Name (anam))
+// Fähigkeiten: A0R8 (Aura des Königs), Tip (Tooltipp - Normal (atp1))
 {
 Aura of the King
 }
@@ -13930,7 +13930,7 @@ Baumaterial gesammelt
 }
 
 STRING 2377
-// Fähigkeiten: A0R8 (Aura des Königs), Name (Name (anam))
+// Zauberverstärker/Effekte: B029 (), Bufftip (Tooltipp (ftip))
 {
 Aura of the King
 }
@@ -14196,7 +14196,7 @@ Dragon
 }
 
 STRING 2422
-// Fähigkeiten: A04D (Aufnehmen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A04E (Absetzen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon)
 }
@@ -14208,7 +14208,7 @@ Drachenrücken
 }
 
 STRING 2424
-// Fähigkeiten: A04D (Aufnehmen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A04C (Abheben), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon)
 }
@@ -14226,7 +14226,7 @@ Nimmt eine befreundete Land-Einheit auf den Rücken des Drachens auf.
 }
 
 STRING 2427
-// Fähigkeiten: A04D (Aufnehmen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: S001 (Drachenrücken), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon)
 }
@@ -14521,7 +14521,7 @@ STRING 2488
 }
 
 STRING 2489
-// Fähigkeiten: A05P (Arkaner Hunger), Name (Name (anam))
+// Fähigkeiten: A05O (Arkaner Hunger), Name (Name (anam))
 {
 Arcane Hunger
 }
@@ -14533,7 +14533,7 @@ STRING 2490
 }
 
 STRING 2491
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A006 (Verzauberter Wächter), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -14935,13 +14935,13 @@ Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündet
 }
 
 STRING 2570
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A14S (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
 
 STRING 2571
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A001 (Machtentzug), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -19184,7 +19184,7 @@ Ermöglicht es dem Träger, sich zu einem bereits erkundeten Wiederbelebungsschr
 
 STRING 3414
 {
-Wird am Schrein wiederbelebt
+Will be revived at the shrine.
 }
 
 STRING 3415
@@ -19224,7 +19224,7 @@ Erhöht die Manaregeneration um <AIrm,DataA1,%>%, reduziert die Dauer negativer 
 STRING 3422
 // Gegenstände: I01Q (Zauberamulett), Description (Beschreibung (ides))
 {
-Erhöht das Mana und blockiert negative Zauber.
+Increases mana and blocks negative spells.
 }
 
 STRING 3423
@@ -19272,7 +19272,7 @@ Increases the armour.
 STRING 3430
 // Gegenstände: I01W (Speer), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A07F,DataA1>.
+Increases the damage by <A07F,DataA1>.
 }
 
 STRING 3431
@@ -19422,7 +19422,7 @@ Kreis der Elemente
 STRING 3458
 // Fähigkeiten: A089 (Kreis der Elemente), Name (Name (anam))
 {
-Kreis der Elemente
+Circle of Elements
 }
 
 STRING 3459
@@ -19638,7 +19638,7 @@ STRING 3525
 STRING 3526
 // Fähigkeiten: S004 (Todesbote), Name (Name (anam))
 {
-Todesbote
+Death Herald
 }
 
 STRING 3527
@@ -19914,7 +19914,7 @@ Spruchrolle des Weges
 STRING 3595
 // Fähigkeiten: A0PL (Arkane Zeit - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit erlernen
+Learn Arcane Time
 }
 
 STRING 3596
@@ -19992,7 +19992,7 @@ STRING 3616
 STRING 3617
 // Fähigkeiten: A08P (Manaexplosion), Name (Name (anam))
 {
-Manaexplosion
+Mana Explosion
 }
 
 STRING 3618
@@ -20070,17 +20070,17 @@ STRING 3631
 STRING 3632
 // Fähigkeiten: A08R (Manastrom), Name (Name (anam))
 {
-Manastrom
+Mana Stream
 }
 
 STRING 3633
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A009 (Teleportation), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
 
 STRING 3634
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VI (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Wizard)
 }
@@ -20100,7 +20100,7 @@ Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten od
 STRING 3637
 // Zauberverstärker/Effekte: B01F (Fackel), EditorName (Name (nur Editor) (fnam))
 {
-Fackel
+Torch
 }
 
 STRING 3638
@@ -20178,7 +20178,7 @@ Spruchrolle der Totenbeschwörung
 STRING 3650
 // Fähigkeiten: A0FJ (Totenbeschwörung), Name (Name (anam))
 {
-Totenbeschwörung
+Necromancy
 }
 
 STRING 3651
@@ -20338,7 +20338,7 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 3685
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B000 (Machtentzug), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Wizard)
 }
@@ -20350,9 +20350,9 @@ STRING 3686
 }
 
 STRING 3687
-// Gegenstände: I02J (Amulett der Weitsicht), Name (Name (unam))
+// Fähigkeiten: A08X (Amulett der Weitsicht), Name (Name (anam))
 {
-Amulett der Weitsicht
+Amulet of Farsight
 }
 
 STRING 3688
@@ -20368,9 +20368,9 @@ Erlaubt es dem Träger, nachts so weit zu sehen, wie am Tag. Enttarnt außerdem 
 }
 
 STRING 3690
-// Fähigkeiten: A08Y (Amulett der Weitsicht), Name (Name (anam))
+// Fähigkeiten: A08X (Amulett der Weitsicht), Name (Name (anam))
 {
-Amulett der Weitsicht
+Amulet of Farsight
 }
 
 STRING 3691
@@ -20472,11 +20472,11 @@ STRING 3706
 STRING 3707
 // Fähigkeiten: A08Z (Arkane List), Name (Name (anam))
 {
-Arkane List
+Arcane Trick
 }
 
 STRING 3708
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B001 (Machtübertragung), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Wizard)
 }
@@ -21052,9 +21052,9 @@ STRING 3833
 }
 
 STRING 3834
-// Fähigkeiten: A09A (Blitz), Name (Name (anam))
+// Fähigkeiten: A09A (Blitz), Tip (Tooltipp - Normal (atp1))
 {
-Blitz
+Lightning
 }
 
 STRING 3835
@@ -21208,9 +21208,9 @@ Verleiht eine Chance von <A09E,DataA1>%, bei einem Angriff <A09E,DataB1>-fachen 
 }
 
 STRING 3867
-// Fähigkeiten: A09F (Diener), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A09F (Diener), Name (Name (anam))
 {
-Diener
+Servant
 }
 
 STRING 3868
@@ -21406,9 +21406,9 @@ Kontrollierter Zeitfluss [|cffffcc00Stufe 1|r]
 }
 
 STRING 3906
-// Fähigkeiten: A09N (Kontrollierter Zeitfluss), Name (Name (anam))
+// Fähigkeiten: A09O (Kontrollierter Zeitfluss), Name (Name (anam))
 {
-Kontrollierter Zeitfluss
+Controlled Time Flow
 }
 
 STRING 3908
@@ -21436,9 +21436,9 @@ Schwerter ziehen
 }
 
 STRING 3912
-// Fähigkeiten: A09P (Meisterschützin), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A09P (Meisterschützin), Name (Name (anam))
 {
-Meisterschützin
+Master Archer
 }
 
 STRING 3913
@@ -21802,7 +21802,7 @@ Zoology
 }
 
 STRING 3982
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B00G (Manaschild), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Wizard)
 }
@@ -21822,7 +21822,7 @@ Gefallene erwecken
 STRING 3986
 // Zauberverstärker/Effekte: B01L (Gefallene erwecken), Bufftip (Tooltipp (ftip))
 {
-Gefallene erwecken
+Resurrect Fallen
 }
 
 STRING 3987
@@ -22438,13 +22438,13 @@ Infects a selected enemy with a lethal parasite who causes damage per second for
 }
 
 STRING 4100
-// Fähigkeiten: A0A6 (Verbannen), Name (Name (anam))
+// Fähigkeiten: A0A7 (Verbannen), Name (Name (anam))
 {
-Verbannen
+Ban
 }
 
 STRING 4101
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B00H (Dämpfung), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Wizard)
 }
@@ -22594,33 +22594,33 @@ STRING 4125
 }
 
 STRING 4126
-// Fähigkeiten: A0A9 (Arkaner Schutz), Name (Name (anam))
+// Fähigkeiten: A0A8 (Arkaner Schutz), Name (Name (anam))
 {
-Arkaner Schutz
+Arcane Protection
 }
 
 STRING 4127
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B00I (Absorbation), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Wizard)
 }
 
 STRING 4128
-// Zauberverstärker/Effekte: B01R (Verbannen), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A0A7 (Verbannen), Name (Name (anam))
 {
-Verbannen
+Ban
 }
 
 STRING 4129
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B01R (Verbannen), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Wizard)
 }
 
 STRING 4130
-// Zauberverstärker/Effekte: B01R (Verbannen), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A0A7 (Verbannen), Name (Name (anam))
 {
-Verbannen
+Ban
 }
 
 STRING 4131
@@ -22630,15 +22630,15 @@ Diese Einheit steht unter dem Einfluss von 'Verbannen'; sie kann keine Zauber wi
 }
 
 STRING 4132
-// Zauberverstärker/Effekte: B01S (Arkaner Schutz), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A0A8 (Arkaner Schutz), Name (Name (anam))
 {
-Arkaner Schutz
+Arcane Protection
 }
 
 STRING 4133
-// Zauberverstärker/Effekte: B01S (Arkaner Schutz), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A0A8 (Arkaner Schutz), Name (Name (anam))
 {
-Arkaner Schutz
+Arcane Protection
 }
 
 STRING 4134
@@ -22648,7 +22648,7 @@ Diese Einheit verfügt über 'Arkaner Schutz'; gegen sie können keine Zauber ge
 }
 
 STRING 4135
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B01S (Arkaner Schutz), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Wizard)
 }
@@ -22780,7 +22780,7 @@ STRING 4173
 }
 
 STRING 4182
-// Fähigkeiten: A1RC (Aufträge - Nächste Seite), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0AX (Nächste Seite), Name (Name (anam))
 {
 Next Page
 }
@@ -22792,7 +22792,7 @@ Blind [|cffffcc00Level 3|r]
 }
 
 STRING 4184
-// Fähigkeiten: A1RC (Aufträge - Nächste Seite), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0AB (Nächste Seite), Name (Name (anam))
 {
 Next Page
 }
@@ -25852,13 +25852,13 @@ STRING 5076
 }
 
 STRING 5077
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02V (Baldars Ring), Description (Beschreibung (ides))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5078
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02V (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
 Transforms the carrying unit into a demon.
 }
@@ -25870,67 +25870,67 @@ Transforms the carrying unit into a demon.
 }
 
 STRING 5080
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02W (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5081
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02Y (Baldars Ring), Description (Beschreibung (ides))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5082
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02Y (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5083
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02Z (Baldars Ring), Description (Beschreibung (ides))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5084
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I02Z (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5085
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I030 (Baldars Ring), Description (Beschreibung (ides))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5086
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I030 (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5087
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I031 (Baldars Ring), Description (Beschreibung (ides))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5088
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I031 (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5089
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I032 (Baldars Ring), Description (Beschreibung (ides))
 {
 Transforms the carrying unit into a demon.
 }
 
 STRING 5090
-// Gegenstände: I02W (Baldars Ring), Description (Beschreibung (ides))
+// Gegenstände: I032 (Baldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
 Transforms the carrying unit into a demon.
 }
@@ -25954,7 +25954,7 @@ STRING 5093
 }
 
 STRING 5094
-// Fähigkeiten: A0T6 (Todesgeschoss), Name (Name (anam))
+// Fähigkeiten: A0T6 (Todesgeschoss), Tip (Tooltipp - Normal (atp1))
 {
 Death Missile
 }
@@ -26572,7 +26572,7 @@ Verlauf-Blocker 1
 STRING 5230
 // Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
 {
-Brücke
+Bridge
 }
 
 STRING 5231
@@ -26608,13 +26608,13 @@ Spruchrolle der |cffffcc00Z|rauberkraft kaufen
 STRING 5236
 // Gegenstände: I03E (Spruchrolle der Hexerei), Name (Name (unam))
 {
-Spruchrolle der Hexerei
+Scroll of Witchcraft
 }
 
 STRING 5237
 // Gegenstände: I03E (Spruchrolle der Hexerei), Tip (Tooltipp - Einfach (utip))
 {
-Spruchrolle der Hexerei kaufen
+Buy Scroll of Witchcraft
 }
 
 STRING 5238
@@ -26882,9 +26882,9 @@ Reiter anheuern
 }
 
 STRING 5301
-// Fähigkeiten: A122 (Tierkunde - Stufe 5 - Bärengestalt - Bärenhöhle), Tip (Tooltipp - Normal (atp1))
+// Einheiten: o002 (Bärenhöhle), Name (Name (unam))
 {
-Bärenhöhle
+Bear Cave
 }
 
 STRING 5310
@@ -34981,7 +34981,7 @@ Teleportation [|cffffcc00Stufe 1|r]
 }
 
 STRING 8650
-// Zauberverstärker/Effekte: B026 (Aura der Autorität), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A0MH (Aura der Autorität), Name (Name (anam))
 {
 Aura of Authority
 }
@@ -35023,7 +35023,7 @@ STRING 8661
 }
 
 STRING 8662
-// Zauberverstärker/Effekte: B026 (Aura der Autorität), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A0MI (Aura der Autorität), Name (Name (anam))
 {
 Aura of Authority
 }
@@ -35221,7 +35221,7 @@ Aura of Authority
 }
 
 STRING 8745
-// Zauberverstärker/Effekte: B026 (Aura der Autorität), EditorName (Name (nur Editor) (fnam))
+// Zauberverstärker/Effekte: B026 (Aura der Autorität), Bufftip (Tooltipp (ftip))
 {
 Aura of Authority
 }
@@ -36287,7 +36287,7 @@ Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünd
 STRING 9060
 // Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
 {
-Nahkampf
+Melee
 }
 
 STRING 9061
@@ -39645,13 +39645,13 @@ Human
 STRING 10363
 // Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Charakterklasse - Fernkampf)
+(Character Class - Range Combat)
 }
 
 STRING 10364
-// Zauberverstärker/Effekte: B02L (Tierkunde - Stufe 5 - Bärengestalt - Bärenhöhle), Bufftip (Tooltipp (ftip))
+// Einheiten: o002 (Bärenhöhle), Name (Name (unam))
 {
-Bärenhöhle
+Bear Cave
 }
 
 STRING 10365
@@ -41131,7 +41131,7 @@ Changes to the previous page of the grimoire. On each page of the grimoire learn
 }
 
 STRING 10974
-// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HE (Bezwingung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Arcane Hunger [|cffffcc00Level 3|r]
 }
@@ -44269,7 +44269,7 @@ Spruchrolle des Sammlers kaufen
 STRING 12041
 // Gegenstände: I04N (Spruchrolle des Sammlers), Ubertip (Tooltipp - Erweitert (utub))
 {
-Teleportiert sämtliche Gegenstände des Zaubernden zu ihm.
+Teleports all items of the casting unit next to it.
 }
 
 STRING 12042
@@ -44281,7 +44281,7 @@ Teleportiert sämtliche Gegenstände des Zaubernden zu ihm.
 STRING 12045
 // Fähigkeiten: A133 (Spruchrolle des Sammlers), Name (Name (anam))
 {
-Spruchrolle des Sammlers
+Scroll of the Collector
 }
 
 STRING 12046
@@ -45389,7 +45389,7 @@ Baldar's Ring
 }
 
 STRING 12419
-// Fähigkeiten: A05W (Magische Schockwellen), EditorSuffix (Editor-Suffix (ansf))
+// Einheiten: n067 (Hain), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Wizard)
 }
@@ -60271,7 +60271,7 @@ Erzeugt eine Illusion des Zaubernden.
 STRING 15351
 // Einheiten: n07H (Skelettmörder), Name (Name (unam))
 {
-Skelettmörder
+Skeleton Murderer
 }
 
 STRING 15352
@@ -60283,7 +60283,7 @@ Ermöglicht es dem Träger, sich zusammen mit Verbündeten zu einem bereits erku
 STRING 15353
 // Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Magie)
+(Book of Magic)
 }
 
 STRING 15354
@@ -60373,7 +60373,7 @@ STRING 15367
 STRING 15368
 // Fähigkeiten: A1AE (Schamanenmaske), Name (Name (anam))
 {
-Schamanenmaske
+Shaman Mask
 }
 
 STRING 15372
@@ -60403,7 +60403,7 @@ STRING 15377
 STRING 15378
 // Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
 {
-Nixenstein
+Neck Stone
 }
 
 STRING 15379
@@ -66051,31 +66051,31 @@ Markiert eine Ziel-Einheit mit maximaler Stufe 6 für die Manifestation von <A1H
 }
 
 STRING 16759
-// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HB (Bezwingung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 16760
-// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HD (Bezwingung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 16761
-// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1GY (Bezwingung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 16762
-// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1HC (Bezwingung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Arcane Hunger [|cffffcc00Level 3|r]
 }
 
 STRING 16763
-// Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1JK (Bezwingung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
 Arcane Hunger [|cffffcc00Level 3|r]
 }
@@ -77970,7 +77970,7 @@ Aufträge - Nächste Seite
 }
 
 STRING 19805
-// Fähigkeiten: A1RC (Aufträge - Nächste Seite), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1TW (Dungeons - Nächste Seite), Tip (Tooltipp - Normal (atp1))
 {
 Next Page
 }
@@ -79482,7 +79482,7 @@ Ein Buch mit Anleitungen zum Ausnehmen von Tierkadavern.
 }
 
 STRING 20076
-// Gegenstände: I077 (Buch der Jagd), Name (Name (unam))
+// Fähigkeiten: A1TP (Buch der Jagd), Name (Name (anam))
 {
 Book of Hunting
 }
@@ -79980,7 +79980,7 @@ Erzeugt eine vom Spieler gesteuerte trainierte Ratte, mit der Feinde ausgespäht
 }
 
 STRING 20163
-// Fähigkeiten: A1UM (Kamera - Kameradistanz vergrößern), Name (Name (anam))
+// Fähigkeiten: A1U6 (Kamera - Kameradistanz vergrößern), Name (Name (anam))
 {
 Camera - Increase Camera Distance
 }
@@ -80306,7 +80306,7 @@ Aufträge - Tod der weißen Legion
 STRING 20217
 // Fähigkeiten: A1UW (Aufträge - Tod der weißen Legion), Tip (Tooltipp - Normal (atp1))
 {
-Tod der weißen Legion
+Death to the White Legion
 }
 
 STRING 20218
@@ -80360,7 +80360,7 @@ Verstärkt die Rüstung um <A1E9,DataA1> und erhöht das Wissen um <A1E8,DataB1>
 STRING 20226
 // Gegenstände: I06A (Magierrüstung), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A1ED,DataA1>, erhöht das Wissen um <A1EF,DataB1> und das Mana um <A1EE,DataA1>.
+Strengthens the armour by <A1ED,DataA1>, increases the lore by <A1EF,DataB1> and the mana by <A1EE,DataA1>.
 }
 
 STRING 20227
@@ -80408,19 +80408,19 @@ STRING 20233
 STRING 20234
 // Gegenstände: I061 (Mutters Brief), Name (Name (unam))
 {
-Mutters Brief
+Mother's Letter
 }
 
 STRING 20235
 // Gegenstände: I061 (Mutters Brief), Description (Beschreibung (ides))
 {
-Ein Brief von Mutter.
+A letter from mother.
 }
 
 STRING 20236
 // Gegenstände: I061 (Mutters Brief), Tip (Tooltipp - Einfach (utip))
 {
-Brief kaufen
+Buy Letter
 }
 
 STRING 20237
@@ -80450,7 +80450,7 @@ Helm des Hauptmanns
 STRING 20241
 // Fähigkeiten: A1V1 (Helm des Hauptmanns), Name (Name (anam))
 {
-Helm des Hauptmanns
+Helmet of the Captain
 }
 
 STRING 20242
