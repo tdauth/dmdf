@@ -2968,7 +2968,7 @@ Aufträge - Zu den Waffen Bauern!
 STRING 495
 // Fähigkeiten: A1UR (Aufträge - Arenameister), Name (Name (anam))
 {
-Aufträge - Arenameister
+Missions - Arena Champison
 }
 
 STRING 496
@@ -3980,13 +3980,13 @@ Staff
 STRING 664
 // Fähigkeiten: A1V4 (Optionen - Weltkarte), Name (Name (anam))
 {
-Optionen - Weltkarte
+Options - World Map
 }
 
 STRING 665
 // Fähigkeiten: A1V4 (Optionen - Weltkarte), Tip (Tooltipp - Normal (atp1))
 {
-Weltkarte
+World Map
 }
 
 STRING 666
@@ -4658,19 +4658,19 @@ Conflagration
 STRING 779
 // Fähigkeiten: A1V9 (Kind opfern), Tip (Tooltipp - Normal (atp1))
 {
-Kind opfern
+Sacrifice Child
 }
 
 STRING 780
 // Fähigkeiten: A1V9 (Kind opfern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Opfert ein Kind.
+Sacrifices a child.
 }
 
 STRING 781
 // Fähigkeiten: A1VA (Tier opfern), Name (Name (anam))
 {
-Tier opfern
+Sacrifice Animal
 }
 
 STRING 782
@@ -4856,7 +4856,7 @@ STRING 811
 STRING 812
 // Einheiten: n084 (Mädchen), Name (Name (unam))
 {
-Mädchen
+Girl
 }
 
 STRING 813
@@ -4868,19 +4868,19 @@ Tierkunde - Stufe 4 - Krähengestalt - Flügelschlag
 STRING 814
 // Einheiten: n085 (Junge), Name (Name (unam))
 {
-Junge
+Boy
 }
 
 STRING 815
 // Gegenstände: I07C (Die Seele eines Kindes), Name (Name (unam))
 {
-Die Seele eines Kindes
+The Soul of a Child
 }
 
 STRING 816
 // Gegenstände: I07C (Die Seele eines Kindes), Tip (Tooltipp - Einfach (utip))
 {
-Die Seele eines Kindes kaufen
+Buy the Soul of a Child
 }
 
 STRING 817
@@ -14030,7 +14030,7 @@ Rigidity
 STRING 2394
 // Fähigkeiten: A0N5 (Ruf des Nordens), EditorSuffix (Editor-Suffix (ansf))
 {
-Ein friedliches Schaf, das sich gerne reiten lässt.
+(Wigberht)
 }
 
 STRING 2395
@@ -14048,7 +14048,7 @@ Macht Wigberht gegenüber allen Zaubern immun.
 STRING 2397
 // Fähigkeiten: A05G (Loyalität), Tip (Tooltipp - Normal (atp1))
 {
-Loyalität
+Loyalty
 }
 
 STRING 2398
@@ -14060,7 +14060,7 @@ STRING 2398
 STRING 2399
 // Fähigkeiten: A05G (Loyalität), Name (Name (anam))
 {
-Loyalität
+Loyalty
 }
 
 STRING 2400
@@ -14072,7 +14072,7 @@ Reduziert die Dauer negativer Zauber und macht Ricman immun gegen bestimmte Zaub
 STRING 2401
 // Fähigkeiten: A05H (Speerwurf), Name (Name (anam))
 {
-Speerwurf
+Spear Throw
 }
 
 STRING 2402
@@ -71084,31 +71084,31 @@ Lauern [|cffffcc00Stufe 5|r] (|cffffcc00T|r)
 STRING 17713
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 1|r] (|cffffcc00W|r)
+Trap [|cffffcc00Level 1|r] (|cffffcc00W|r)
 }
 
 STRING 17714
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 2|r] (|cffffcc00W|r)
+Trap [|cffffcc00Level 2|r] (|cffffcc00W|r)
 }
 
 STRING 17715
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 3|r] (|cffffcc00W|r)
+Trap [|cffffcc00Level 3|r] (|cffffcc00W|r)
 }
 
 STRING 17716
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 4|r] (|cffffcc00W|r)
+Trap [|cffffcc00Level 4|r] (|cffffcc00W|r)
 }
 
 STRING 17717
 // Fähigkeiten: A184 (Falle), Tip (Tooltipp - Normal (atp1))
 {
-Falle [|cffffcc00Stufe 5|r] (|cffffcc00W|r)
+Trap [|cffffcc00Level 5|r] (|cffffcc00W|r)
 }
 
 STRING 17718
@@ -71132,31 +71132,31 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 17721
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 1|r] (|cffffcc00G|r)
+Kennels [|cffffcc00Level 1|r] (|cffffcc00G|r)
 }
 
 STRING 17722
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 2|r] (|cffffcc00G|r)
+Kennels [|cffffcc00Level 2|r] (|cffffcc00G|r)
 }
 
 STRING 17723
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 3|r] (|cffffcc00G|r)
+Kennels [|cffffcc00Level 3|r] (|cffffcc00G|r)
 }
 
 STRING 17724
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 4|r] (|cffffcc00G|r)
+Kennels [|cffffcc00Level 4|r] (|cffffcc00G|r)
 }
 
 STRING 17725
 // Fähigkeiten: A1BG (Hundezwinger), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger [|cffffcc00Stufe 5|r] (|cffffcc00G|r)
+Kennels [|cffffcc00Level 5|r] (|cffffcc00G|r)
 }
 
 STRING 17726
@@ -71480,31 +71480,31 @@ Zehren [|cffffcc00Stufe 1|r] (|cffffcc00J|r)
 STRING 17779
 // Fähigkeiten: A01H (Erdgefängnis), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 2|r] (|cffffcc00K|r)
+Earth Prison [|cffffcc00Level 2|r] (|cffffcc00K|r)
 }
 
 STRING 17780
 // Fähigkeiten: A01H (Erdgefängnis), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 3|r] (|cffffcc00K|r)
+Earth Prison [|cffffcc00Level 3|r] (|cffffcc00K|r)
 }
 
 STRING 17781
 // Fähigkeiten: A01H (Erdgefängnis), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 4|r] (|cffffcc00K|r)
+Earth Prison [|cffffcc00Level 4|r] (|cffffcc00K|r)
 }
 
 STRING 17782
 // Fähigkeiten: A01H (Erdgefängnis), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 5|r] (|cffffcc00K|r)
+Earth Prison [|cffffcc00Level 5|r] (|cffffcc00K|r)
 }
 
 STRING 17783
 // Fähigkeiten: A01H (Erdgefängnis), Tip (Tooltipp - Normal (atp1))
 {
-Erdgefängnis [|cffffcc00Stufe 1|r] (|cffffcc00K|r)
+Earth Prison [|cffffcc00Level 1|r] (|cffffcc00K|r)
 }
 
 STRING 17784
@@ -71888,31 +71888,31 @@ Vervielfachung [|cffffcc00Stufe 5|r] (|cffffcc00U|r)
 STRING 17847
 // Fähigkeiten: A08V (Arkane Zeit), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 2|r] (|cffffcc00D|r)
+Arcane Time [|cffffcc00Level 2|r] (|cffffcc00D|r)
 }
 
 STRING 17848
 // Fähigkeiten: A08V (Arkane Zeit), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 3|r] (|cffffcc00D|r)
+Arcane Time [|cffffcc00Level 3|r] (|cffffcc00D|r)
 }
 
 STRING 17849
 // Fähigkeiten: A08V (Arkane Zeit), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 4|r] (|cffffcc00D|r)
+Arcane Time [|cffffcc00Level 4|r] (|cffffcc00D|r)
 }
 
 STRING 17850
 // Fähigkeiten: A08V (Arkane Zeit), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 5|r] (|cffffcc00D|r)
+Arcane Time [|cffffcc00Level 5|r] (|cffffcc00D|r)
 }
 
 STRING 17851
 // Fähigkeiten: A08V (Arkane Zeit), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 1|r] (|cffffcc00D|r)
+Arcane Time [|cffffcc00Level 1|r] (|cffffcc00D|r)
 }
 
 STRING 17852
@@ -71960,31 +71960,31 @@ Y
 STRING 17860
 // Fähigkeiten: A163 (Übertragung), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 2|r] (|cffffcc00J|r)
+Transfer [|cffffcc00Level 2|r] (|cffffcc00J|r)
 }
 
 STRING 17861
 // Fähigkeiten: A163 (Übertragung), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 3|r] (|cffffcc00J|r)
+Transfer [|cffffcc00Level 3|r] (|cffffcc00J|r)
 }
 
 STRING 17862
 // Fähigkeiten: A163 (Übertragung), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 4|r] (|cffffcc00J|r)
+Transfer [|cffffcc00Level 4|r] (|cffffcc00J|r)
 }
 
 STRING 17863
 // Fähigkeiten: A163 (Übertragung), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 5|r] (|cffffcc00J|r)
+Transfer [|cffffcc00Level 5|r] (|cffffcc00J|r)
 }
 
 STRING 17864
 // Fähigkeiten: A163 (Übertragung), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 1|r] (|cffffcc00J|r)
+Transfer [|cffffcc00Level 1|r] (|cffffcc00J|r)
 }
 
 STRING 17865
@@ -72068,13 +72068,13 @@ Großes Heilkraut kaufen
 STRING 17878
 // Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Heilung)
+(Healing)
 }
 
 STRING 17879
 // Fähigkeiten: A1KH (Großes Heilkraut), Name (Name (anam))
 {
-Großes Heilkraut
+Big Healing Herb
 }
 
 STRING 17880
@@ -72104,7 +72104,7 @@ Heilt bei Benutzung <A1KI,DataA1> Trefferpunkte.
 STRING 17884
 // Gegenstände: I06R (Kleines Heilkraut), Tip (Tooltipp - Einfach (utip))
 {
-Kleines Heilkraut kaufen
+Buy small Healing Herb
 }
 
 STRING 17885
@@ -72116,19 +72116,19 @@ Stellt bei Benutzung <A1KJ,DataA1> Mana wieder her.
 STRING 17886
 // Gegenstände: I06S (Großes Manakraut), Name (Name (unam))
 {
-Großes Manakraut
+Big Mana Herb
 }
 
 STRING 17887
 // Gegenstände: I06S (Großes Manakraut), Tip (Tooltipp - Einfach (utip))
 {
-Großes Manakraut kaufen
+Buy big Mana Herb
 }
 
 STRING 17888
 // Gegenstände: I06S (Großes Manakraut), Description (Beschreibung (ides))
 {
-Stellt verlorenes Mana wieder her.
+Restores missing mana.
 }
 
 STRING 17889
@@ -72140,13 +72140,13 @@ Stellt bei Benutzung <A19K,DataA1> Mana wieder her.|nBietet <I05L,uses> Aufladun
 STRING 17890
 // Gegenstände: I06T (Kleines Manakraut), Name (Name (unam))
 {
-Kleines Manakraut
+Small Mana Herb
 }
 
 STRING 17891
 // Gegenstände: I06T (Kleines Manakraut), Tip (Tooltipp - Einfach (utip))
 {
-Kleines Manakraut kaufen
+Buy Small Mana Herb
 }
 
 STRING 17892
@@ -78056,7 +78056,7 @@ Missglücktes Experiment
 STRING 19819
 // Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Deranors Sumpf)
+(Deranor's Swamp)
 }
 
 STRING 19820
@@ -78206,7 +78206,7 @@ STRING 19843
 STRING 19844
 // Fähigkeiten: A1S0 (Stille), EditorSuffix (Editor-Suffix (ansf))
 {
-(Meister der Magier)
+(Master of Magicians)
 }
 
 STRING 19845
@@ -78332,7 +78332,7 @@ Das Heer der Orks
 STRING 19865
 // Fähigkeiten: A04B (Das Heer der Orks), Name (Name (anam))
 {
-Das Heer der Orks
+The Army of the Orcs
 }
 
 STRING 19866
@@ -78986,7 +78986,7 @@ STRING 19991
 STRING 19992
 // Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
 {
-Pferd reiten
+Ride Horse
 }
 
 STRING 19993
@@ -79376,7 +79376,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 20058
 // Gegenstände: I076 (Kriegstrommeln der Orks), Name (Name (unam))
 {
-Kriegstrommeln der Orks
+War Drums of the Orcs
 }
 
 STRING 20059
@@ -79562,7 +79562,7 @@ Entfernt die Knochen von den Resten eines Untoten.
 STRING 20090
 // Fähigkeiten: A1TQ (Hauer ziehen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Buch der Jagd)
+(Book of Hunting)
 }
 
 STRING 20091
@@ -79724,7 +79724,7 @@ Dungeons - Trommelhöhle
 STRING 20120
 // Fähigkeiten: A1U1 (Dungeons - Trommelhöhle), Tip (Tooltipp - Normal (atp1))
 {
-Trommelhöhle
+Drum Cave
 }
 
 STRING 20121
@@ -79742,7 +79742,7 @@ Dungeons - Gruft
 STRING 20123
 // Fähigkeiten: A1U2 (Dungeons - Gruft), Tip (Tooltipp - Normal (atp1))
 {
-Gruft
+Crypt
 }
 
 STRING 20124
@@ -79832,13 +79832,13 @@ Options
 STRING 20138
 // Fähigkeiten: A1UA (Optionen), Tip (Tooltipp - Normal (atp1))
 {
-Optionen (|cffffcc00O|r)
+Options (|cffffcc00O|r)
 }
 
 STRING 20139
 // Fähigkeiten: A1UA (Optionen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Listet weitere Optionen auf.
+Lists further options.
 }
 
 STRING 20140
@@ -80078,13 +80078,13 @@ Das Blut eines Dämons.
 STRING 20179
 // Gegenstände: I07A (Gestein der Unterwelt), Name (Name (unam))
 {
-Gestein der Unterwelt
+Rock of the Underworld
 }
 
 STRING 20180
 // Gegenstände: I07A (Gestein der Unterwelt), Tip (Tooltipp - Einfach (utip))
 {
-Gestein der Unterwelt kaufen
+Buy Rock of the Underworld
 }
 
 STRING 20181
@@ -80156,7 +80156,7 @@ Sklavin erwerben
 STRING 20192
 // Einheiten: n081 (Sklavin), Name (Name (unam))
 {
-Sklavin
+Slave
 }
 
 STRING 20193
@@ -80216,7 +80216,7 @@ Aufträge - Arenameister
 STRING 20202
 // Fähigkeiten: A1UR (Aufträge - Arenameister), Tip (Tooltipp - Normal (atp1))
 {
-Arenameister
+Arena Champion
 }
 
 STRING 20203
