@@ -6,7 +6,7 @@ STRING 0
 
 STRING 1
 {
-Chapter 1: Talras 0.8
+Chapter 1: Talras 0.9
 }
 
 STRING 2
@@ -26926,7 +26926,7 @@ Bärengestalt - Stufe 2
 STRING 5329
 // Fähigkeiten: A123 (Schaden erhöhen), Tip (Tooltipp - Normal (atp1))
 {
-Schaden erhöhen
+Increase damage
 }
 
 STRING 5339
