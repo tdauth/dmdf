@@ -7228,7 +7228,7 @@ Beschwört einen Schattenriesen aus den Lüften, die an feindlichen Land-Einheit
 }
 
 STRING 1208
-// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H005 (Kleriker), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Character Class - Range Combat)
 }
@@ -8668,7 +8668,7 @@ Zweihänder der Kälte
 }
 
 STRING 1448
-// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00C (Brücke), Name (Name (bnam))
 {
 Bridge
 }
@@ -9430,7 +9430,7 @@ Nordischer Speer
 }
 
 STRING 1575
-// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00F (Brücke), Name (Name (bnam))
 {
 Bridge
 }
@@ -10318,9 +10318,9 @@ Buy Wooden Buckler
 }
 
 STRING 1723
-// Einheiten: h02J (Dummy Caster - Sprungattacke), EditorSuffix (Name - Editor-Suffix (unsf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 1724
@@ -11655,9 +11655,9 @@ STRING 1945
 }
 
 STRING 1946
-// Zauberverstärker/Effekte: B038 (), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 1948
@@ -11954,9 +11954,9 @@ Klingen der Zweisamkeit (Erstwaffe)
 }
 
 STRING 2013
-// Gegenstände: I01D (Klingen der Zweisamkeit (Erstwaffe)), Description (Beschreibung (ides))
+// Gegenstände: I01E (Klingen der Zweisamkeit (Zweitwaffe)), Description (Beschreibung (ides))
 {
-Eine mächtige Klinge.
+A powerful blade.
 }
 
 STRING 2014
@@ -14352,7 +14352,7 @@ Mühle 2 (Grasland)
 }
 
 STRING 2448
-// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00G (Brücke), Name (Name (bnam))
 {
 Bridge
 }
@@ -14599,9 +14599,9 @@ Einschüchtern [|cffffcc00Stufe 1|r]
 }
 
 STRING 2502
-// Fähigkeiten: A05Q (Einschüchtern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 2503
@@ -16078,9 +16078,9 @@ Wilder Blutrausch [|cffffcc00Stufe 1|r]
 }
 
 STRING 2823
-// Fähigkeiten: A06Y (Schwachstelle), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 2824
@@ -16126,9 +16126,9 @@ Eine kleine, süße Katze (auch roh genießbar).
 }
 
 STRING 2841
-// Einheiten: n01L (Drache), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n04N (Rebhuhn), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Boden)
+(Ground)
 }
 
 STRING 2842
@@ -16379,9 +16379,9 @@ STRING 2898
 }
 
 STRING 2899
-// Fähigkeiten: A1FV (Reserven), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 2906
@@ -16421,9 +16421,9 @@ Schwachstelle
 }
 
 STRING 2913
-// Fähigkeiten: A0VF (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 2914
@@ -16505,9 +16505,9 @@ Hieb
 }
 
 STRING 2927
-// Fähigkeiten: A146 (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 2928
@@ -16595,9 +16595,9 @@ Diese Einheit steht unter der Wirkung von 'Überlegenheit'; ihre Angriffsgeschwi
 }
 
 STRING 2943
-// Fähigkeiten: A14M (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 2944
@@ -17003,7 +17003,7 @@ Ancestors Pact [|cffffcc00Level 5|r]
 }
 
 STRING 3020
-// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00H (Brücke), Name (Name (bnam))
 {
 Bridge
 }
@@ -19348,7 +19348,7 @@ Increases the armour.
 }
 
 STRING 3445
-// Zauberverstärker/Effekte: B01F (Fackel), EditorName (Name (nur Editor) (fnam))
+// Gegenstände: I02G (Fackel), Name (Name (unam))
 {
 Torch
 }
@@ -19372,7 +19372,7 @@ Fackel kaufen
 }
 
 STRING 3449
-// Zauberverstärker/Effekte: B01F (Fackel), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A088 (Fackel), Name (Name (anam))
 {
 Torch
 }
@@ -19390,13 +19390,13 @@ STRING 3451
 }
 
 STRING 3452
-// Zauberverstärker/Effekte: B01F (Fackel), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A087 (Fackel), Name (Name (anam))
 {
 Torch
 }
 
 STRING 3453
-// Fähigkeiten: A089 (Kreis der Elemente), Name (Name (anam))
+// Gegenstände: I02H (Kreis der Elemente), Name (Name (unam))
 {
 Circle of Elements
 }
@@ -19414,7 +19414,7 @@ Erhöht die Mana-Regenerationsrate und das Wissen und erlaubt es dem Träger, ge
 }
 
 STRING 3457
-// Fähigkeiten: A089 (Kreis der Elemente), Name (Name (anam))
+// Fähigkeiten: A08A (Kreis der Elemente), Name (Name (anam))
 {
 Circle of Elements
 }
@@ -19570,13 +19570,13 @@ Steals the soul from a hostile target and drains life and mana from it per secon
 }
 
 STRING 3504
-// Fähigkeiten: S004 (Todesbote), Name (Name (anam))
+// Fähigkeiten: A08K (Todesbote), Tip (Tooltipp - Normal (atp1))
 {
 Death Herald
 }
 
 STRING 3505
-// Fähigkeiten: S004 (Todesbote), Name (Name (anam))
+// Fähigkeiten: A08K (Todesbote), Name (Name (anam))
 {
 Death Herald
 }
@@ -19588,7 +19588,7 @@ STRING 3507
 }
 
 STRING 3508
-// Fähigkeiten: S004 (Todesbote), Name (Name (anam))
+// Fähigkeiten: A08J (Todesbote), Name (Name (anam))
 {
 Death Herald
 }
@@ -19978,7 +19978,7 @@ Manaexplosion [|cffffcc00Stufe 1|r]
 }
 
 STRING 3613
-// Fähigkeiten: A08P (Manaexplosion), Name (Name (anam))
+// Fähigkeiten: A08H (Manaexplosion), Name (Name (anam))
 {
 Mana Explosion
 }
@@ -20056,7 +20056,7 @@ Manastrom [|cffffcc00Stufe 1|r]
 }
 
 STRING 3628
-// Fähigkeiten: A08R (Manastrom), Name (Name (anam))
+// Fähigkeiten: A08Q (Manastrom), Name (Name (anam))
 {
 Mana Stream
 }
@@ -20182,7 +20182,7 @@ Necromancy
 }
 
 STRING 3651
-// Fähigkeiten: A0FJ (Totenbeschwörung), Name (Name (anam))
+// Fähigkeiten: A0FK (Totenbeschwörung), Name (Name (anam))
 {
 Necromancy
 }
@@ -20290,31 +20290,31 @@ STRING 3674
 }
 
 STRING 3675
-// Fähigkeiten: A10N (Arkane Zeit - Level 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10N (Arkane Zeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Arcane Time [|cffffcc00Level 2|r]
 }
 
 STRING 3676
-// Fähigkeiten: A10O (Arkane Zeit - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10O (Arkane Zeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Arcane Time [|cffffcc00Level 3|r]
 }
 
 STRING 3677
-// Fähigkeiten: A10P (Arkane Zeit - Level 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10P (Arkane Zeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Arcane Time [|cffffcc00Level 4|r]
 }
 
 STRING 3678
-// Fähigkeiten: A10Q (Arkane Zeit - Level 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10Q (Arkane Zeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Arcane Time [|cffffcc00Level 5|r]
 }
 
 STRING 3679
-// Fähigkeiten: A10M (Arkane Zeit - Level 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10M (Arkane Zeit - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Arcane Time [|cffffcc00Level 1|r]
 }
@@ -20398,7 +20398,7 @@ STRING 3694
 }
 
 STRING 3695
-// Fähigkeiten: A08Z (Arkane List), Name (Name (anam))
+// Fähigkeiten: A090 (Arkane List), Name (Name (anam))
 {
 Arcane Trick
 }
@@ -20944,9 +20944,9 @@ STRING 3815
 }
 
 STRING 3816
-// Fähigkeiten: A097 (Gewitter), Name (Name (anam))
+// Fähigkeiten: A097 (Gewitter), Tip (Tooltipp - Normal (atp1))
 {
-Gewitter
+Thunderstorm
 }
 
 STRING 3817
@@ -21256,13 +21256,13 @@ Führt ein Blutritual durch, bei dem neuen dunkle Kreaturen entstehen.
 }
 
 STRING 3875
-// Zauberverstärker/Effekte: B01L (Gefallene erwecken), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A09I (Gefallene erwecken), Tip (Tooltipp - Normal (atp1))
 {
 Resurrect Fallen
 }
 
 STRING 3876
-// Zauberverstärker/Effekte: B01L (Gefallene erwecken), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A09I (Gefallene erwecken), Name (Name (anam))
 {
 Resurrect Fallen
 }
@@ -21814,7 +21814,7 @@ Nixe
 }
 
 STRING 3985
-// Zauberverstärker/Effekte: B01L (Gefallene erwecken), Bufftip (Tooltipp (ftip))
+// Zauberverstärker/Effekte: B01L (Gefallene erwecken), EditorName (Name (nur Editor) (fnam))
 {
 Resurrect Fallen
 }
@@ -22450,55 +22450,55 @@ STRING 4101
 }
 
 STRING 4102
-// Fähigkeiten: A0WS (Verbannen - Level 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Ban [|cffffcc00Level 1|r]
 }
 
 STRING 4103
-// Fähigkeiten: A0WT (Verbannen - Level 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WT (Verbannen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
 Ban [|cffffcc00Level 2|r]
 }
 
 STRING 4104
-// Fähigkeiten: A0WU (Verbannen - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WU (Verbannen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Ban [|cffffcc00Level 3|r]
 }
 
 STRING 4105
-// Fähigkeiten: A0WV (Verbannen - Level 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WV (Verbannen - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Ban [|cffffcc00Level 4|r]
 }
 
 STRING 4106
-// Fähigkeiten: A0WW (Verbannen - Level 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WW (Verbannen - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Ban [|cffffcc00Level 5|r]
 }
 
 STRING 4107
-// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A167 (Übertragung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
 Transfer [|cffffcc00Level 3|r]
 }
 
 STRING 4108
-// Fähigkeiten: A168 (Übertragung - Level 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A168 (Übertragung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
 Transfer [|cffffcc00Level 4|r]
 }
 
 STRING 4109
-// Fähigkeiten: A169 (Übertragung - Level 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A169 (Übertragung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
 Transfer [|cffffcc00Level 5|r]
 }
 
 STRING 4110
-// Fähigkeiten: A165 (Übertragung - Level 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A165 (Übertragung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
 Transfer [|cffffcc00Level 1|r]
 }
@@ -26630,7 +26630,7 @@ Verwandelt einen Gegner in eine harmlose Kreatur.
 }
 
 STRING 5240
-// Gegenstände: I03E (Spruchrolle der Hexerei), Name (Name (unam))
+// Fähigkeiten: A0C3 (Spruchrolle der Hexerei), Name (Name (anam))
 {
 Scroll of Witchcraft
 }
@@ -29977,13 +29977,13 @@ Protect [|cffffcc00Level 1|r]
 }
 
 STRING 6526
-// Fähigkeiten: A0FJ (Totenbeschwörung), Name (Name (anam))
+// Zauberverstärker/Effekte: B01G (Totenbeschwörung), EditorName (Name (nur Editor) (fnam))
 {
 Necromancy
 }
 
 STRING 6527
-// Fähigkeiten: A0FJ (Totenbeschwörung), Name (Name (anam))
+// Zauberverstärker/Effekte: B01G (Totenbeschwörung), Bufftip (Tooltipp (ftip))
 {
 Necromancy
 }
@@ -30025,39 +30025,39 @@ Dämon.
 }
 
 STRING 6536
-// Fähigkeiten: A0FW (Koloss), Name (Name (anam))
+// Fähigkeiten: A0K5 (Koloss), Name (Name (anam))
 {
-Koloss
+Colossus
 }
 
 STRING 6537
-// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0FX (Koloss - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 1|r]
+Colossus [|cffffcc00Level 1|r]
 }
 
 STRING 6543
-// Fähigkeiten: A0FY (Koloss - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 2|r]
+Colossus [|cffffcc00Level 2|r]
 }
 
 STRING 6544
-// Fähigkeiten: A0FZ (Koloss - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 3|r]
+Colossus [|cffffcc00Level 3|r]
 }
 
 STRING 6545
-// Fähigkeiten: A0G0 (Koloss - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 4|r]
+Colossus [|cffffcc00Level 4|r]
 }
 
 STRING 6546
-// Fähigkeiten: A0G1 (Koloss - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 5|r]
+Colossus [|cffffcc00Level 5|r]
 }
 
 STRING 6547
@@ -31567,7 +31567,7 @@ Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 S
 }
 
 STRING 7135
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A0V9 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -33121,15 +33121,15 @@ Rigidity
 }
 
 STRING 7819
-// Zauberverstärker/Effekte: B024 (Koloss), EditorName (Name (nur Editor) (fnam))
+// Fähigkeiten: A0K5 (Koloss), Name (Name (anam))
 {
-Koloss
+Colossus
 }
 
 STRING 7820
-// Fähigkeiten: A070 (Hieb), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 7821
@@ -35497,9 +35497,9 @@ Gesegnetes Schwert kaufen
 }
 
 STRING 8855
-// Zauberverstärker/Effekte: B036 (), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A0N5 (Ruf des Nordens), Name (Name (anam))
 {
-Ruf des Nordens
+Call of the North
 }
 
 STRING 8856
@@ -39535,7 +39535,7 @@ Human
 }
 
 STRING 10345
-// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H00A (Nekromant), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Character Class - Range Combat)
 }
@@ -39571,7 +39571,7 @@ Human
 }
 
 STRING 10351
-// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H00S (Ritter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Character Class - Range Combat)
 }
@@ -39589,7 +39589,7 @@ Human
 }
 
 STRING 10354
-// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H00U (Drachentöter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Character Class - Range Combat)
 }
@@ -39607,7 +39607,7 @@ Human
 }
 
 STRING 10357
-// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H013 (Waldläufer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Character Class - Range Combat)
 }
@@ -39625,7 +39625,7 @@ Human
 }
 
 STRING 10360
-// Einheiten: H01I (Zauberer), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: H01H (Elementarmagier), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Character Class - Range Combat)
 }
@@ -39655,37 +39655,37 @@ Bear Cave
 }
 
 STRING 10365
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A0VB (Nahkampf), Name (Name (anam))
 {
 Melee
 }
 
 STRING 10366
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A1T3 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
 
 STRING 10367
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16R (Nahkampf), Name (Name (anam))
 {
 Melee
 }
 
 STRING 10368
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A1T5 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
 
 STRING 10369
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A0V7 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
 
 STRING 10370
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16T (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -39709,9 +39709,9 @@ STRING 10373
 }
 
 STRING 10374
-// Fähigkeiten: A0V8 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 10375
@@ -39727,9 +39727,9 @@ Protect [|cffffcc00Level 1|r]
 }
 
 STRING 10377
-// Fähigkeiten: A1JH (Koloss - Erlernen), Name (Name (anam))
+// Fähigkeiten: A0WT (Verbannen - Level 2), Tip (Tooltipp - Normal (atp1))
 {
-Verbannen [|cffffcc00Stufe 2|r]
+Ban [|cffffcc00Level 2|r]
 }
 
 STRING 10378
@@ -39787,9 +39787,9 @@ STRING 10386
 }
 
 STRING 10387
-// Fähigkeiten: A1A3 (Bestehlen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 10388
@@ -39859,9 +39859,9 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 }
 
 STRING 10431
-// Fähigkeiten: A1JG (Koloss - Erlernen), Name (Name (anam))
+// Fähigkeiten: A0WT (Verbannen - Level 2), Tip (Tooltipp - Normal (atp1))
 {
-Verbannen [|cffffcc00Stufe 2|r]
+Ban [|cffffcc00Level 2|r]
 }
 
 STRING 10432
@@ -42516,9 +42516,9 @@ STRING 11435
 }
 
 STRING 11436
-// Fähigkeiten: A163 (Übertragung), Name (Name (anam))
+// Fähigkeiten: A164 (Übertragung), Name (Name (anam))
 {
-Übertragung
+Transfer
 }
 
 STRING 11438
@@ -43199,9 +43199,9 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11675
-// Fähigkeiten: A1JM (Verzehren - Erlernen), Name (Name (anam))
+// Fähigkeiten: A10M (Arkane Zeit - Level 1), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 1|r]
+Arcane Time [|cffffcc00Level 1|r]
 }
 
 STRING 11676
@@ -43211,9 +43211,9 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11677
-// Einheiten: n075 (Eheweib), Name (Name (unam))
+// Fähigkeiten: A10N (Arkane Zeit - Level 2), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 2|r]
+Arcane Time [|cffffcc00Level 2|r]
 }
 
 STRING 11678
@@ -43223,9 +43223,9 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11679
-// Einheiten: n075 (Eheweib), Tip (Tooltipp - Einfach (utip))
+// Fähigkeiten: A10O (Arkane Zeit - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 3|r]
+Arcane Time [|cffffcc00Level 3|r]
 }
 
 STRING 11680
@@ -43235,9 +43235,9 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11681
-// Einheiten: n075 (Eheweib), Ubertip (Tooltipp - Erweitert (utub))
+// Fähigkeiten: A10P (Arkane Zeit - Level 4), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 4|r]
+Arcane Time [|cffffcc00Level 4|r]
 }
 
 STRING 11682
@@ -43247,9 +43247,9 @@ Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verb�
 }
 
 STRING 11683
-// Einheiten: n076 (Erbe), Name (Name (unam))
+// Fähigkeiten: A10Q (Arkane Zeit - Level 5), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 5|r]
+Arcane Time [|cffffcc00Level 5|r]
 }
 
 STRING 11690
@@ -44255,7 +44255,7 @@ Lying in Wait
 }
 
 STRING 12039
-// Fähigkeiten: A133 (Spruchrolle des Sammlers), Name (Name (anam))
+// Gegenstände: I04N (Spruchrolle des Sammlers), Name (Name (unam))
 {
 Scroll of the Collector
 }
@@ -44273,7 +44273,7 @@ Teleports all items of the casting unit next to it.
 }
 
 STRING 12042
-// Gegenstände: I04N (Spruchrolle des Sammlers), Ubertip (Tooltipp - Erweitert (utub))
+// Gegenstände: I04N (Spruchrolle des Sammlers), Description (Beschreibung (ides))
 {
 Teleports all items of the casting unit next to it.
 }
@@ -45395,9 +45395,9 @@ STRING 12419
 }
 
 STRING 12420
-// Fähigkeiten: A06W (Überlegenheit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 12421
@@ -45761,9 +45761,9 @@ Holy Power (|cffffcc00Q|r)
 }
 
 STRING 12585
-// Fähigkeiten: A1FF (Rage), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 12586
@@ -46919,9 +46919,9 @@ Arkaner Schutz [|cffffcc00Stufe 4|r]
 }
 
 STRING 12933
-// Fähigkeiten: A05Z (Arkaner Hunger - Erlernen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A165 (Übertragung - Level 1), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 1|r]
+Transfer [|cffffcc00Level 1|r]
 }
 
 STRING 12934
@@ -47075,9 +47075,9 @@ STRING 12968
 }
 
 STRING 12979
-// Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 3|r]
+Transfer [|cffffcc00Level 3|r]
 }
 
 STRING 12980
@@ -47297,7 +47297,7 @@ STRING 13039
 }
 
 STRING 13040
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A1T6 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -47657,7 +47657,7 @@ STRING 13099
 }
 
 STRING 13100
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16V (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -47669,7 +47669,7 @@ STRING 13101
 }
 
 STRING 13102
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A1T1 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -47681,7 +47681,7 @@ STRING 13103
 }
 
 STRING 13104
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16Q (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -47693,7 +47693,7 @@ STRING 13105
 }
 
 STRING 13106
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A0V8 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -47705,7 +47705,7 @@ STRING 13107
 }
 
 STRING 13108
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A0VA (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -47717,7 +47717,7 @@ STRING 13109
 }
 
 STRING 13110
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A1T4 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -47729,7 +47729,7 @@ STRING 13111
 }
 
 STRING 13112
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A1T2 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -48059,7 +48059,7 @@ Erhöht die Bewegungsgeschwindigkeit für <A1OX,Dur1> Sekunden um <A1OX,DataA1,%
 }
 
 STRING 13168
-// Zerstörbare Objekte: B00J (Brücke), Name (Name (bnam))
+// Zerstörbare Objekte: B00S (Brücke), Name (Name (bnam))
 {
 Bridge
 }
@@ -48395,9 +48395,9 @@ STRING 13223
 }
 
 STRING 13224
-// Einheiten: n04O (Rebhuhn), Name (Name (unam))
+// Einheiten: n04N (Rebhuhn), Name (Name (unam))
 {
-Rebhuhn
+Patridge
 }
 
 STRING 13225
@@ -49781,7 +49781,7 @@ Spruchrolle der Hexerei herstellen
 }
 
 STRING 13545
-// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18O (Spruchrolle der Heilung herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Magic)
 }
@@ -49835,7 +49835,7 @@ STRING 13553
 }
 
 STRING 13554
-// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18P (Spruchrolle der Zauberkraft herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Magic)
 }
@@ -49853,7 +49853,7 @@ Großen Manatrank herstellen
 }
 
 STRING 13557
-// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1AC (Spruchrolle des Sammlers herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Magic)
 }
@@ -49877,7 +49877,7 @@ Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area5>
 }
 
 STRING 13561
-// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19Y (Magischen Stein der Ahnen herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Magic)
 }
@@ -51959,603 +51959,603 @@ Ausbau zur verbesserten Baukunst Stufe 100
 }
 
 STRING 13921
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13922
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13923
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13924
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13925
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13926
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13927
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13928
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13929
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13930
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13931
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13932
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13933
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13934
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13935
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13936
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13937
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13938
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13939
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13940
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13941
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13942
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13943
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13944
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13945
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13946
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13947
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13948
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13949
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13950
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13951
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13952
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13953
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13954
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13955
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13956
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13957
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13958
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13959
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13960
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13961
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13962
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13963
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13964
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13965
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13966
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13967
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13968
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13969
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13970
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13971
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13972
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13973
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13974
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13975
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13976
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13977
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13978
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13979
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13980
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13981
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13982
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13983
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13984
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13985
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13986
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13987
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13988
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13989
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13990
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13991
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13992
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13993
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13994
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13995
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13996
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13997
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13998
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 13999
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14000
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14001
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14002
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14003
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14004
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14005
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14006
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14007
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14008
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14009
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14010
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14011
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14012
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14013
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14014
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14015
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14016
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14017
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14018
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14019
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14020
-// Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
+// Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14021
@@ -57367,55 +57367,55 @@ Verleit dem Gebäude den Verteidigungstyp Göttlich.
 STRING 14822
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14823
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14824
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14825
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14826
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14827
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14828
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14829
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14830
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14831
@@ -57427,535 +57427,535 @@ Improves armour and hit points of the buildng.
 STRING 14832
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14833
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14834
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14835
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14836
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14837
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14838
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14839
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14840
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14841
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14842
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14843
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14844
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14845
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14846
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14847
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14848
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14849
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14850
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14851
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14852
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14853
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14854
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14855
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14856
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14857
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14858
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14859
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14860
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14861
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14862
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14863
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14864
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14865
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14866
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14867
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14868
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14869
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14870
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14871
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14872
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14873
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14874
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14875
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14876
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14877
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14878
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14879
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14880
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14881
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14882
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14883
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14884
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14885
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14886
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14887
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14888
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14889
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14890
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14891
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14892
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14893
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14894
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14895
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14896
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14897
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14898
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14899
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14900
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14901
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14902
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14903
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14904
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14905
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14906
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14907
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14908
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14909
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14910
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14911
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14912
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14913
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14914
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14915
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14916
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14917
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14918
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14919
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14920
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14921
@@ -60017,7 +60017,7 @@ Nixe
 }
 
 STRING 15278
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Gegenstände: I05W (Nixenstein), Name (Name (unam))
 {
 Neck Stone
 }
@@ -60143,9 +60143,9 @@ Stealing from a unit that does not belong to the player. The target unit can be 
 }
 
 STRING 15321
-// Fähigkeiten: A1JV (Verfluchter Boden - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 3|r]
+Transfer [|cffffcc00Level 3|r]
 }
 
 STRING 15324
@@ -60305,7 +60305,7 @@ Teleportiert den Zaubernden mit Verbündeten im Umkreis zu einer anderen Einheit
 }
 
 STRING 15357
-// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1A7 (Spruchrolle des Weges herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Magic)
 }
@@ -60329,7 +60329,7 @@ Teleportiert sämtliche Gegenstände des Zaubernden zu ihm.|n|nBenötigte Rohsto
 }
 
 STRING 15361
-// Fähigkeiten: A18M (Spruchrolle der Hexerei herstellen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A18N (Spruchrolle der Totenbeschwörung herstellen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Magic)
 }
@@ -60341,7 +60341,7 @@ STRING 15362
 }
 
 STRING 15363
-// Fähigkeiten: A1AE (Schamanenmaske), Name (Name (anam))
+// Gegenstände: I05V (Schamanenmaske), Name (Name (unam))
 {
 Shaman Mask
 }
@@ -60389,7 +60389,7 @@ STRING 15373
 }
 
 STRING 15374
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AN (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60413,7 +60413,7 @@ STRING 15379
 }
 
 STRING 15380
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AW (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60425,7 +60425,7 @@ STRING 15381
 }
 
 STRING 15382
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AR (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60437,7 +60437,7 @@ STRING 15383
 }
 
 STRING 15384
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AT (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60449,7 +60449,7 @@ STRING 15385
 }
 
 STRING 15386
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AO (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60461,7 +60461,7 @@ STRING 15387
 }
 
 STRING 15388
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AJ (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60473,7 +60473,7 @@ STRING 15389
 }
 
 STRING 15390
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AI (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60485,7 +60485,7 @@ STRING 15391
 }
 
 STRING 15392
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AH (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60497,7 +60497,7 @@ STRING 15393
 }
 
 STRING 15394
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AP (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60509,7 +60509,7 @@ STRING 15395
 }
 
 STRING 15396
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AS (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60521,7 +60521,7 @@ STRING 15397
 }
 
 STRING 15398
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AU (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60533,7 +60533,7 @@ STRING 15399
 }
 
 STRING 15400
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AK (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60545,7 +60545,7 @@ STRING 15401
 }
 
 STRING 15402
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AV (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60557,7 +60557,7 @@ STRING 15403
 }
 
 STRING 15404
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AL (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60569,7 +60569,7 @@ STRING 15405
 }
 
 STRING 15406
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AX (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -60581,7 +60581,7 @@ STRING 15407
 }
 
 STRING 15408
-// Fähigkeiten: A1AM (Nixenstein), Name (Name (anam))
+// Fähigkeiten: A1AQ (Nixenstein), Name (Name (anam))
 {
 Neck Stone
 }
@@ -63257,9 +63257,9 @@ Jumps to the current target location of the mission.
 }
 
 STRING 15971
-// Gegenstände: I067 (Eisenpanzer), Name (Name (unam))
+// Fähigkeiten: A1E4 (Eisenpanzer), Name (Name (anam))
 {
-Eisenpanzer
+Iron Armour
 }
 
 STRING 15972
@@ -63281,9 +63281,9 @@ Eine eiserne Rüstung.
 }
 
 STRING 15975
-// Gegenstände: I068 (Ritterschild), Name (Name (unam))
+// Fähigkeiten: A1E7 (Ritterschild), Name (Name (anam))
 {
-Ritterschild
+Knight's Buckler
 }
 
 STRING 15976
@@ -63305,9 +63305,9 @@ Ritterschild kaufen
 }
 
 STRING 15979
-// Gegenstände: I069 (Schädelmaske), Name (Name (unam))
+// Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
 {
-Schädelmaske
+Skull Mask
 }
 
 STRING 15980
@@ -63359,15 +63359,15 @@ STRING 15987
 }
 
 STRING 15988
-// Fähigkeiten: A1E6 (Ritterschild), Name (Name (anam))
+// Fähigkeiten: A1E7 (Ritterschild), Name (Name (anam))
 {
-Ritterschild
+Knight's Buckler
 }
 
 STRING 15989
-// Fähigkeiten: A1E5 (Ritterschild), Name (Name (anam))
+// Fähigkeiten: A1E7 (Ritterschild), Name (Name (anam))
 {
-Ritterschild
+Knight's Buckler
 }
 
 STRING 15990
@@ -63377,9 +63377,9 @@ Blind [|cffffcc00Level 3|r]
 }
 
 STRING 15991
-// Fähigkeiten: A1E8 (Schädelmaske), Name (Name (anam))
+// Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
 {
-Schädelmaske
+Skull Mask
 }
 
 STRING 15992
@@ -63389,9 +63389,9 @@ STRING 15992
 }
 
 STRING 15993
-// Fähigkeiten: A1E9 (Schädelmaske), Name (Name (anam))
+// Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
 {
-Schädelmaske
+Skull Mask
 }
 
 STRING 15994
@@ -63407,9 +63407,9 @@ Skull Mask
 }
 
 STRING 15996
-// Fähigkeiten: A1EB (Schädelmaske), Name (Name (anam))
+// Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
 {
-Schädelmaske
+Skull Mask
 }
 
 STRING 15997
@@ -64443,15 +64443,15 @@ Rage
 }
 
 STRING 16273
-// Fähigkeiten: A0K5 (Koloss), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 16274
-// Fähigkeiten: A1FR (Siegeswunsch), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 16275
@@ -64761,15 +64761,15 @@ Reserven - Stufe 5
 }
 
 STRING 16390
-// Fähigkeiten: A19Z (Beutezug), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 16391
-// Fähigkeiten: A1F3 (Unbarmherzigkeit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 16392
@@ -65001,9 +65001,9 @@ Auge um Auge - Stufe 5
 }
 
 STRING 16477
-// Fähigkeiten: A1GK (Sprungattacke), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 16478
@@ -65481,9 +65481,9 @@ Sprungattacke - Stufe 5
 }
 
 STRING 16601
-// Zauberverstärker/Effekte: B012 (Überlegenheit), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 16602
@@ -65499,9 +65499,9 @@ Dummy Caster - Sprungattacke
 }
 
 STRING 16604
-// Zauberverstärker/Effekte: B024 (Koloss), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 16605
@@ -66259,9 +66259,9 @@ STRING 16832
 }
 
 STRING 16833
-// Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 3|r]
+Transfer [|cffffcc00Level 3|r]
 }
 
 STRING 16834
@@ -66283,9 +66283,9 @@ Verfluchter Boden - Stufe 2
 }
 
 STRING 16837
-// Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 3|r]
+Transfer [|cffffcc00Level 3|r]
 }
 
 STRING 16838
@@ -66307,9 +66307,9 @@ Verfluchter Boden - Stufe 3
 }
 
 STRING 16841
-// Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 3|r]
+Transfer [|cffffcc00Level 3|r]
 }
 
 STRING 16843
@@ -66325,9 +66325,9 @@ Verfluchter Boden - Stufe 4
 }
 
 STRING 16845
-// Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
+// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 3|r]
+Transfer [|cffffcc00Level 3|r]
 }
 
 STRING 16847
@@ -68304,7 +68304,7 @@ Informationen
 }
 
 STRING 17194
-// Fähigkeiten: A1V1 (Helm des Hauptmanns), Name (Name (anam))
+// Gegenstände: I072 (Helm des Hauptmanns), Name (Name (unam))
 {
 Helmet of the Captain
 }
@@ -69035,9 +69035,9 @@ Diese Einheit steht unter dem Einfluss von 'Arkane Zeit'; die Dauer positiver Za
 }
 
 STRING 17361
-// Gegenstände: I06P (Amulett aus Talras), Name (Name (unam))
+// Fähigkeiten: A1IZ (Amulett aus Talras), Name (Name (anam))
 {
-Amulett aus Talras
+Amulet of Talras
 }
 
 STRING 17362
@@ -78306,9 +78306,9 @@ Beschwört <A1EH,DataB1> Schlächter. |nHält <A1EH,Dur1> Sekunden lang an. |n|n
 }
 
 STRING 19861
-// Fähigkeiten: A1EI (Drachen beschwören), Name (Name (anam))
+// Fähigkeiten: A1EI (Drachen beschwören), Tip (Tooltipp - Normal (atp1))
 {
-Drachen beschwören
+Summon Dragon
 }
 
 STRING 19862
@@ -79056,7 +79056,7 @@ STRING 20003
 }
 
 STRING 20004
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A0C2 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -79068,7 +79068,7 @@ STRING 20005
 }
 
 STRING 20006
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16S (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -79080,7 +79080,7 @@ STRING 20007
 }
 
 STRING 20008
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A1T7 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -79092,7 +79092,7 @@ STRING 20009
 }
 
 STRING 20010
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A0V6 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -79104,7 +79104,7 @@ STRING 20011
 }
 
 STRING 20012
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A1T8 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -79116,7 +79116,7 @@ STRING 20013
 }
 
 STRING 20014
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16U (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -79128,7 +79128,7 @@ STRING 20015
 }
 
 STRING 20016
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A16H (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -79140,7 +79140,7 @@ STRING 20017
 }
 
 STRING 20018
-// Fähigkeiten: A16W (Nahkampf), Name (Name (anam))
+// Fähigkeiten: A0V5 (Nahkampf), Name (Name (anam))
 {
 Melee
 }
@@ -80442,7 +80442,7 @@ STRING 20239
 }
 
 STRING 20240
-// Fähigkeiten: A1V1 (Helm des Hauptmanns), Name (Name (anam))
+// Fähigkeiten: A1V0 (Helm des Hauptmanns), Name (Name (anam))
 {
 Helmet of the Captain
 }
