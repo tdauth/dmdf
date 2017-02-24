@@ -1,7 +1,7 @@
 STRING 0
 // Gegenstände: I05P (Baupläne eines Magierturms), Ubertip (Tooltipp - Erweitert (utub))
 {
-|cffffcc00Benötigt Stufe 30|r|n|cffffcc00Elementarmagier und Zauberer|r|nErzeugt an einem Zielort ein Magierturm.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+|cffffcc00Requires Level 30|r|n|cffffcc00Elemental Mage and Wizard|r|nCreates a Magician Tower at the target location.|n|n|cffffcc00There can be only one building at a time.|r
 }
 
 STRING 1
@@ -11974,13 +11974,13 @@ Klingen der Zweisamkeit (Zweitwaffe)
 STRING 2016
 // Gegenstände: I01E (Klingen der Zweisamkeit (Zweitwaffe)), Description (Beschreibung (ides))
 {
-Eine mächtige Klinge.
+A powerful blade.
 }
 
 STRING 2017
 // Gegenstände: I01E (Klingen der Zweisamkeit (Zweitwaffe)), Ubertip (Tooltipp - Erweitert (utub))
 {
-Gewährt einen Schadensbonus von <A05B,DataA1>.
+Grants a damage bonus of <A05B,DataA1>.
 }
 
 STRING 2018
@@ -12004,7 +12004,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 2021
 // Fähigkeiten: A0N5 (Ruf des Nordens), Name (Name (anam))
 {
-Ruf des Nordens
+Call of the North
 }
 
 STRING 2022
@@ -20290,33 +20290,33 @@ STRING 3674
 }
 
 STRING 3675
-// Fähigkeiten: A10N (Arkane Zeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10N (Arkane Zeit - Level 2), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 2|r]
+Arcane Time [|cffffcc00Level 2|r]
 }
 
 STRING 3676
-// Fähigkeiten: A10O (Arkane Zeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10O (Arkane Zeit - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 3|r]
+Arcane Time [|cffffcc00Level 3|r]
 }
 
 STRING 3677
-// Fähigkeiten: A10P (Arkane Zeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10P (Arkane Zeit - Level 4), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 4|r]
+Arcane Time [|cffffcc00Level 4|r]
 }
 
 STRING 3678
-// Fähigkeiten: A10Q (Arkane Zeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10Q (Arkane Zeit - Level 5), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 5|r]
+Arcane Time [|cffffcc00Level 5|r]
 }
 
 STRING 3679
-// Fähigkeiten: A10M (Arkane Zeit - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A10M (Arkane Zeit - Level 1), Tip (Tooltipp - Normal (atp1))
 {
-Arkane Zeit [|cffffcc00Stufe 1|r]
+Arcane Time [|cffffcc00Level 1|r]
 }
 
 STRING 3680
@@ -20934,7 +20934,7 @@ Sendet einen Strom neutralisierender Magie aus, der bis zu <A096,DataC1>-mal abp
 STRING 3814
 // Fähigkeiten: A097 (Gewitter), Tip (Tooltipp - Normal (atp1))
 {
-Gewitter
+Thunderstorm
 }
 
 STRING 3815
@@ -22450,63 +22450,63 @@ STRING 4101
 }
 
 STRING 4102
-// Fähigkeiten: A0WS (Verbannen - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WS (Verbannen - Level 1), Tip (Tooltipp - Normal (atp1))
 {
-Verbannen [|cffffcc00Stufe 1|r]
+Ban [|cffffcc00Level 1|r]
 }
 
 STRING 4103
-// Fähigkeiten: A0WT (Verbannen - Stufe 2), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WT (Verbannen - Level 2), Tip (Tooltipp - Normal (atp1))
 {
-Verbannen [|cffffcc00Stufe 2|r]
+Ban [|cffffcc00Level 2|r]
 }
 
 STRING 4104
-// Fähigkeiten: A0WU (Verbannen - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WU (Verbannen - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Verbannen [|cffffcc00Stufe 3|r]
+Ban [|cffffcc00Level 3|r]
 }
 
 STRING 4105
-// Fähigkeiten: A0WV (Verbannen - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WV (Verbannen - Level 4), Tip (Tooltipp - Normal (atp1))
 {
-Verbannen [|cffffcc00Stufe 4|r]
+Ban [|cffffcc00Level 4|r]
 }
 
 STRING 4106
-// Fähigkeiten: A0WW (Verbannen - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A0WW (Verbannen - Level 5), Tip (Tooltipp - Normal (atp1))
 {
-Verbannen [|cffffcc00Stufe 5|r]
+Ban [|cffffcc00Level 5|r]
 }
 
 STRING 4107
-// Fähigkeiten: A167 (Übertragung - Stufe 3), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A167 (Übertragung - Level 3), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 3|r]
+Transfer [|cffffcc00Level 3|r]
 }
 
 STRING 4108
-// Fähigkeiten: A168 (Übertragung - Stufe 4), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A168 (Übertragung - Level 4), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 4|r]
+Transfer [|cffffcc00Level 4|r]
 }
 
 STRING 4109
-// Fähigkeiten: A169 (Übertragung - Stufe 5), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A169 (Übertragung - Level 5), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 5|r]
+Transfer [|cffffcc00Level 5|r]
 }
 
 STRING 4110
-// Fähigkeiten: A165 (Übertragung - Stufe 1), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A165 (Übertragung - Level 1), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung [|cffffcc00Stufe 1|r]
+Transfer [|cffffcc00Level 1|r]
 }
 
 STRING 4111
 // Fähigkeiten: A164 (Übertragung), Name (Name (anam))
 {
-Übertragung
+Transfer
 }
 
 STRING 4112
@@ -30069,7 +30069,7 @@ STRING 6547
 STRING 6548
 // Fähigkeiten: A0K5 (Koloss), Name (Name (anam))
 {
-Koloss
+Colossus
 }
 
 STRING 6549
@@ -30081,7 +30081,7 @@ Magische Schockwellen - Stufe 5
 STRING 6558
 // Fähigkeiten: A0FX (Koloss - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 1|r]
+Colossus [|cffffcc00Level 1|r]
 }
 
 STRING 6559
@@ -30093,13 +30093,13 @@ Relief [|cffffcc00Level 5|r]
 STRING 6560
 // Fähigkeiten: A0G2 (Koloss - Stufe 1), Name (Name (anam))
 {
-Koloss - Stufe 1
+Colossus - Level 1
 }
 
 STRING 6572
 // Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 2|r]
+Colossus [|cffffcc00Level 2|r]
 }
 
 STRING 6573
@@ -30111,13 +30111,13 @@ Relief [|cffffcc00Level 5|r]
 STRING 6574
 // Fähigkeiten: A0G3 (Koloss - Stufe 2), Name (Name (anam))
 {
-Koloss - Stufe 2
+Colossus - Level 2
 }
 
 STRING 6586
 // Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 3|r]
+Colossus [|cffffcc00Level 3|r]
 }
 
 STRING 6587
@@ -30129,7 +30129,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 6588
 // Fähigkeiten: A0G4 (Koloss - Stufe 3), Name (Name (anam))
 {
-Koloss - Stufe 3
+Colossus - Level 3
 }
 
 STRING 6591
@@ -30141,7 +30141,7 @@ Parasite [|cffffcc00Level 2|r]
 STRING 6600
 // Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 4|r]
+Colossus [|cffffcc00Level 4|r]
 }
 
 STRING 6601
@@ -30153,7 +30153,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 6602
 // Fähigkeiten: A0G0 (Koloss - Stufe 4), Name (Name (anam))
 {
-Koloss - Stufe 4
+Colossus - Level 4
 }
 
 STRING 6605
@@ -30165,7 +30165,7 @@ Magische Schockwellen - Stufe 1
 STRING 6614
 // Fähigkeiten: A0K5 (Koloss), Tip (Tooltipp - Normal (atp1))
 {
-Koloss [|cffffcc00Stufe 5|r]
+Colossus [|cffffcc00Level 5|r]
 }
 
 STRING 6615
@@ -30177,7 +30177,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 6616
 // Fähigkeiten: A0G6 (Koloss - Stufe 5), Name (Name (anam))
 {
-Koloss - Stufe 5
+Colossus - Level 5
 }
 
 STRING 6619
@@ -30189,7 +30189,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 6620
 // Fähigkeiten: A0FX (Koloss - Stufe 1), Name (Name (anam))
 {
-Koloss - Stufe 1
+Colossus - Level 1
 }
 
 STRING 6621
@@ -30201,7 +30201,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 6622
 // Fähigkeiten: A0FY (Koloss - Stufe 2), Name (Name (anam))
 {
-Koloss - Stufe 2
+Colossus - Level 2
 }
 
 STRING 6623
@@ -30213,7 +30213,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 6624
 // Fähigkeiten: A0FZ (Koloss - Stufe 3), Name (Name (anam))
 {
-Koloss - Stufe 3
+Colossus - Level 3
 }
 
 STRING 6625
@@ -30225,7 +30225,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 6626
 // Fähigkeiten: A0G5 (Koloss - Stufe 4), Name (Name (anam))
 {
-Koloss - Stufe 4
+Colossus - Level 4
 }
 
 STRING 6627
@@ -30237,7 +30237,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 6628
 // Fähigkeiten: A0G1 (Koloss - Stufe 5), Name (Name (anam))
 {
-Koloss - Stufe 5
+Colossus - Level 5
 }
 
 STRING 6629
@@ -30399,19 +30399,19 @@ Arkaner Schutz - Stufe 5
 STRING 6709
 // Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Drachentöter)
+(Dragon Slayer)
 }
 
 STRING 6710
 // Fähigkeiten: A0GH (Wut), Tip (Tooltipp - Normal (atp1))
 {
-Wut
+Rage
 }
 
 STRING 6711
 // Fähigkeiten: A0GH (Wut), Name (Name (anam))
 {
-Wut
+Rage
 }
 
 STRING 6712
@@ -48295,7 +48295,7 @@ Wildgrubenpfähle, die einem Gegner Schaden zufügen können, der auf sie fällt
 STRING 13207
 // Einheiten: h023 (Tor), Tip (Tooltipp - Einfach (utip))
 {
-Tor errichten
+Build Gate
 }
 
 STRING 13208
@@ -48379,19 +48379,19 @@ STRING 13220
 STRING 13221
 // Einheiten: n04M (Jagdfalke), Name (Name (unam))
 {
-Jagdfalke
+Hunting Falcon
 }
 
 STRING 13222
 // Einheiten: n04N (Rebhuhn), Name (Name (unam))
 {
-Rebhuhn
+Patridge
 }
 
 STRING 13223
 // Einheiten: n04N (Rebhuhn), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Boden)
+(Ground)
 }
 
 STRING 13224
@@ -48403,13 +48403,13 @@ Rebhuhn
 STRING 13225
 // Einheiten: n04O (Rebhuhn), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Luft)
+(Air)
 }
 
 STRING 13226
 // Gegenstände: I059 (Totes Rebhuhn), Name (Name (unam))
 {
-Totes Rebhuhn
+Dead Patridge
 }
 
 STRING 13227
@@ -57421,7 +57421,7 @@ Verbessert Panzerung und Trefferpunkte des Gebäudes.
 STRING 14831
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert Panzerung und Trefferpunkte des Gebäudes.
+Improves armour and hit points of the buildng.
 }
 
 STRING 14832
@@ -63337,7 +63337,7 @@ STRING 15983
 STRING 15984
 // Fähigkeiten: A1E4 (Eisenpanzer), Name (Name (anam))
 {
-Eisenpanzer
+Iron Armour
 }
 
 STRING 15985
@@ -63349,7 +63349,7 @@ STRING 15985
 STRING 15986
 // Fähigkeiten: A1E7 (Ritterschild), Name (Name (anam))
 {
-Ritterschild
+Knight's Buckler
 }
 
 STRING 15987
@@ -63403,7 +63403,7 @@ STRING 15994
 STRING 15995
 // Fähigkeiten: A1EA (Schädelmaske), Name (Name (anam))
 {
-Schädelmaske
+Skull Mask
 }
 
 STRING 15996
@@ -63565,7 +63565,7 @@ STRING 16021
 STRING 16022
 // Fähigkeiten: A1EI (Drachen beschwören), Tip (Tooltipp - Normal (atp1))
 {
-Drachen beschwören
+Summon Dragon
 }
 
 STRING 16023
@@ -69121,7 +69121,7 @@ Verleiht in der Nähe befindlichen befreundeten Einheiten eine zusätzliche Mana
 STRING 17375
 // Zauberverstärker/Effekte: B02Y (), Bufftip (Tooltipp (ftip))
 {
-|cff00ff00Arkane Zeit|r
+|cff00ff00Arcane Time|r
 }
 
 STRING 17376
@@ -69133,7 +69133,7 @@ STRING 17376
 STRING 17377
 // Gegenstände: I06P (Amulett aus Talras), Description (Beschreibung (ides))
 {
-Erhöht die Kraft, das Geschick und das Wissen des Trägers.
+Increases the strength, dexterity and lore of the carrying unit.
 }
 
 STRING 17378
@@ -69145,7 +69145,7 @@ Erhöht die Kraft des Trägers um <A1IZ,DataA1>, das Geschick um <A1IZ,DataB1> u
 STRING 17379
 // Fähigkeiten: A1IZ (Amulett aus Talras), Name (Name (anam))
 {
-Amulett aus Talras
+Amulet of Talras
 }
 
 STRING 17380
@@ -69410,7 +69410,7 @@ STRING 17433
 STRING 17434
 // Fähigkeiten: A03M (Alpha - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Alpha erlernen
+Learn Alpha
 }
 
 STRING 17435
@@ -69440,31 +69440,31 @@ Alpha - Erlernen
 STRING 17439
 // Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
 {
-Schützen [|cffffcc00Stufe 2|r] (|cffffcc00X|r)
+Protect [|cffffcc00Stufe 2|r] (|cffffcc00X|r)
 }
 
 STRING 17440
 // Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
 {
-Schützen [|cffffcc00Stufe 3|r] (|cffffcc00X|r)
+Protect [|cffffcc00Level 3|r] (|cffffcc00X|r)
 }
 
 STRING 17441
 // Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
 {
-Schützen [|cffffcc00Stufe 4|r] (|cffffcc00X|r)
+Protect [|cffffcc00Level 4|r] (|cffffcc00X|r)
 }
 
 STRING 17442
 // Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
 {
-Schützen [|cffffcc00Stufe 5|r] (|cffffcc00X|r)
+Protect [|cffffcc00Level 5|r] (|cffffcc00X|r)
 }
 
 STRING 17443
 // Fähigkeiten: A050 (Schützen), Tip (Tooltipp - Normal (atp1))
 {
-Schützen [|cffffcc00Stufe 1|r] (|cffffcc00X|r)
+Protect [|cffffcc00Level 1|r] (|cffffcc00X|r)
 }
 
 STRING 17444
@@ -69476,31 +69476,31 @@ X
 STRING 17445
 // Fähigkeiten: A01U (Dunkle Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 1|r] (|cffffcc00W|r)
+Dark Servant [|cffffcc00Level 1|r] (|cffffcc00W|r)
 }
 
 STRING 17446
 // Fähigkeiten: A01U (Dunkle Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 2|r] (|cffffcc00W|r)
+Dark Servant [|cffffcc00Level 2|r] (|cffffcc00W|r)
 }
 
 STRING 17447
 // Fähigkeiten: A01U (Dunkle Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 3|r] (|cffffcc00W|r)
+Dark Servant [|cffffcc00Level 3|r] (|cffffcc00W|r)
 }
 
 STRING 17448
 // Fähigkeiten: A01U (Dunkle Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 4|r] (|cffffcc00W|r)
+Dark Servant [|cffffcc00Level 4|r] (|cffffcc00W|r)
 }
 
 STRING 17449
 // Fähigkeiten: A01U (Dunkle Diener), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener [|cffffcc00Stufe 5|r] (|cffffcc00W|r)
+Dark Servant [|cffffcc00Level 5|r] (|cffffcc00W|r)
 }
 
 STRING 17450
@@ -69518,97 +69518,97 @@ Q
 STRING 17452
 // Fähigkeiten: A0VK (Pestkarren), Tip (Tooltipp - Normal (atp1))
 {
-Pestkarren beschwören [|cffffcc00Stufe 1|r] (|cffffcc00Q|r)
+Summon Plague Cart [|cffffcc00Level 1|r] (|cffffcc00Q|r)
 }
 
 STRING 17453
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 1|r] (|cffffcc00T|r)
+Dark Spell [|cffffcc00Level 1|r] (|cffffcc00T|r)
 }
 
 STRING 17454
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 2|r] (|cffffcc00T|r)
+Dark Spell [|cffffcc00Level 2|r] (|cffffcc00T|r)
 }
 
 STRING 17455
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 3|r] (|cffffcc00T|r)
+Dark Spell [|cffffcc00Level 3|r] (|cffffcc00T|r)
 }
 
 STRING 17456
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 4|r] (|cffffcc00T|r)
+Dark Spell [|cffffcc00Level 4|r] (|cffffcc00T|r)
 }
 
 STRING 17457
 // Fähigkeiten: A0I7 (Dunkler Zauber), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber [|cffffcc00Stufe 5|r] (|cffffcc00T|r)
+Dark Spell [|cffffcc00Level 5|r] (|cffffcc00T|r)
 }
 
 STRING 17458
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 1|r] (|cffffcc00U|r)
+Soul Robbery [|cffffcc00Level 1|r] (|cffffcc00U|r)
 }
 
 STRING 17459
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 2|r] (|cffffcc00U|r)
+Soul Robbery [|cffffcc00Level 2|r] (|cffffcc00U|r)
 }
 
 STRING 17460
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 3|r] (|cffffcc00U|r)
+Soul Robbery [|cffffcc00Level 3|r] (|cffffcc00U|r)
 }
 
 STRING 17461
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 4|r] (|cffffcc00U|r)
+Soul Robbery [|cffffcc00Level 4|r] (|cffffcc00U|r)
 }
 
 STRING 17462
 // Fähigkeiten: A06J (Seelendiebstahl), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl [|cffffcc00Stufe 5|r] (|cffffcc00U|r)
+Soul Robbery [|cffffcc00Level 5|r] (|cffffcc00U|r)
 }
 
 STRING 17463
 // Fähigkeiten: A0FJ (Totenbeschwörung), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 1|r] (|cffffcc00K|r)
+Necromancy [|cffffcc00Level 1|r] (|cffffcc00K|r)
 }
 
 STRING 17464
 // Fähigkeiten: A0FJ (Totenbeschwörung), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 2|r] (|cffffcc00K|r)
+Necromancy [|cffffcc00Level 2|r] (|cffffcc00K|r)
 }
 
 STRING 17465
 // Fähigkeiten: A0FJ (Totenbeschwörung), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 3|r] (|cffffcc00K|r)
+Necromancy [|cffffcc00Level 3|r] (|cffffcc00K|r)
 }
 
 STRING 17466
 // Fähigkeiten: A0FJ (Totenbeschwörung), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 4|r] (|cffffcc00K|r)
+Necromancy [|cffffcc00Level 4|r] (|cffffcc00K|r)
 }
 
 STRING 17467
 // Fähigkeiten: A0FJ (Totenbeschwörung), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 5|r] (|cffffcc00K|r)
+Necromancy [|cffffcc00Level 5|r] (|cffffcc00K|r)
 }
 
 STRING 17468
