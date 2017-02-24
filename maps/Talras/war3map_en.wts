@@ -43003,7 +43003,7 @@ Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im 
 STRING 11638
 // Fähigkeiten: A1LR (Inferno - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im Umkreis von 400 verbrennt.|nLasts 6 Sekunden..|n|n|cffffcc00Stufe 1|r - Verursacht 30 Schaden pro Sekunde. |n|cffffcc00Stufe 2|r - Verursacht 40 Schaden pro Sekunde. |n|cffffcc00Stufe 3|r - Verursacht 50 Schaden pro Sekunde. |n|cffffcc00Stufe 4|r - Verursacht 60 Schaden pro Sekunde. |n|cffffcc00Stufe 5|r - Verursacht 70 Schaden pro Sekunde.
+On the ground below the Elemental Mage an ocean of flames is created which burns opponents within a radius of 400.|nLasts 6 seconds.|n|n|cffffcc00Level 1|r - Deals 30 damage per second. |n|cffffcc00Level 2|r - Deals 40 damage per second. |n|cffffcc00Level 3|r - Deals 50 damage per second. |n|cffffcc00Level 4|r - Deals 60 damage per second. |n|cffffcc00Level 5|r - Deals 70 damage per second.
 }
 
 STRING 11639
@@ -43111,7 +43111,7 @@ Ein Blitzschlag erfasst das Ziel, verursacht Schaden. |n|n|cffffcc00Stufe 1|r - 
 STRING 11656
 // Fähigkeiten: A0UM (Blitzschlag - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Blitzschlag erfasst das Ziel, verursacht Schaden. |n|n|cffffcc00Stufe 1|r - Verursacht 100 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 300 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 400 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 500 Schaden.
+A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - Deals 100 damage.|n|cffffcc00Level 2|r - Deals 200 damage.|n|cffffcc00Level 3|r - Deals 300 damage.|n|cffffcc00Level 4|r - Deals 400 damage.|n|cffffcc00Level 5|r - Deals 500 damage.
 }
 
 STRING 11657
@@ -43153,7 +43153,7 @@ Der Elementarmagier bekommt Manapunkte für Leben pro Sekunde zurück. Er kann a
 STRING 11663
 // Fähigkeiten: A0EO (Tierkunde - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cffffcc00Stufe 1|r - Bärengestalt erhält Zauber "Gebrüll", Krähengestalt erhält Zauber "Junges".|n|cffffcc00Stufe 2|r - Bärengestalt erhält Zauber "Prankenhieb", Krähengestalt erhält Zauber "Sturm".|n|cffffcc00Stufe 3|r - Bärengestalt erhält Zauber "Tollwut", Krähengestalt erhält Zauber "Kreisen".|n|cffffcc00Stufe 4|r - Bärengestalt erhält Zauber "Winterschlaf", Krähengestalt erhält Zauber "Flügelschlag".|n|cffffcc00Stufe 5|r - Bärengestalt erhält Zauber "Bärenhöhle", Krähengestalt erhält Zauber "Nest".
+Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r - Bear Form gets the spell "Gebrüll", Crow Form gets the spell "Junges".|n|cffffcc00Level 2|r - Bear Form gets the spell "Swipe from a Paw", Crow Form gets the spell "Storm".|n|cffffcc00Level 3|r - Bear Form gets the spell "Rabies", Crow Form gets the spell "Circle".|n|cffffcc00Level 4|r - Bear Form gets the spell "Hibernation", Crow Form gets the spell "Beat of its Wings".|n|cffffcc00Level 5|r - Bear Form gets the spell "Bear Cave", Crow Form gets the spell "Nest".
 }
 
 STRING 11664
@@ -43183,7 +43183,7 @@ Ermöglicht es dem Druiden in seiner Tiergestalt neue Zauber zu wirken.|n|n|cfff
 STRING 11668
 // Fähigkeiten: A126 (Standfestigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Bei Aktivierung entfernt der Ritter alle negativen magischen Effekte von sich selbst und regeneriert sein Leben für jeden entfernten Effekt.|n|n|cffffcc00Stufe 1|r - Regeneriert 150 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 2|r - Regeneriert 250 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 3|r - Regeneriert 350 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 4|r - Regeneriert 450 Leben für jeden entfernten Effekt.|n|cffffcc00Stufe 5|r - Regeneriert 550 Leben für jeden entfernten Effekt.
+On activation the knight removes all the negative magical effects from himself and regenerates his life for every removed effect.|n|n|cffffcc00Level 1|r - Regenerates 150 life for every removed effect.|n|cffffcc00Level 2|r - Regenerates 250 life for every removed effect.|n|cffffcc00Level 3|r - Regenerates 350 life for every removed effect.|n|cffffcc00Level 4|r - Regenerates 450 life for every removed effect.|n|cffffcc00Level 5|r - Regenerates 550 life for every removed effect.
 }
 
 STRING 11669
@@ -43297,13 +43297,13 @@ Beherrschung - Stufe 4
 STRING 11709
 // Fähigkeiten: A11J (Beherrschung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier regeneriert alle 10 Sekunden einen Teil seines Manas.|n|n|cffffcc00Stufe 1|r - Regeneriert 5 % seines Manas.|n|cffffcc00Stufe 2|r - Regeneriert 10 % seines Manas.|n|cffffcc00Stufe 3|r - Regeneriert 15 % seines Manas.|n|cffffcc00Stufe 4|r - Regeneriert 20 % seines Manas.|n|cffffcc00Stufe 5|r - Regeneriert 25 % seines Manas.
+The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc00Level 1|r - Regenerates 5 % of his mana.|n|cffffcc00Level 2|r - Regenerates 10 % of his mana.|n|cffffcc00Level 3|r - Regenerates 15 % of his mana.|n|cffffcc00Level 4|r - Regenerates 20 % of his mana.|n|cffffcc00Level 5|r - Regenerates 25 % of his mana.
 }
 
 STRING 11718
 // Fähigkeiten: A11M (Beherrschung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung [|cffffcc00Stufe 5|r]
+Mastery [|cffffcc00Level 5|r]
 }
 
 STRING 11719
@@ -43441,19 +43441,19 @@ Herbal Cure
 STRING 11745
 // Gegenstände: I04W (Pfeilköcher), Name (Name (unam))
 {
-Pfeilköcher
+Arrows Quiver
 }
 
 STRING 11746
 // Gegenstände: I04W (Pfeilköcher), Tip (Tooltipp - Einfach (utip))
 {
-Pfeilköcher kaufen
+Buy Arrows Quiver
 }
 
 STRING 11747
 // Gegenstände: I04X (Wolle), Description (Beschreibung (ides))
 {
-Die Wolle eines Schafs.
+The wool of a sheep.
 }
 
 STRING 11748
@@ -64835,7 +64835,7 @@ Auge um Auge [|cffffcc00Stufe 1|r]
 STRING 16402
 // Fähigkeiten: A1G9 (Auge um Auge), Name (Name (anam))
 {
-Auge um Auge
+An Eye for an Eye
 }
 
 STRING 16405
@@ -65009,67 +65009,67 @@ STRING 16477
 STRING 16478
 // Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
 {
-Segen [|cffffcc00Stufe 1|r] (|cffffcc00K|r)
+Blessing [|cffffcc00Level 1|r] (|cffffcc00K|r)
 }
 
 STRING 16479
 // Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
 {
-Segen [|cffffcc00Stufe 2|r] (|cffffcc00K|r)
+Blessing [|cffffcc00Level 2|r] (|cffffcc00K|r)
 }
 
 STRING 16480
 // Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
 {
-Segen [|cffffcc00Stufe 3|r] (|cffffcc00K|r)
+Blessing [|cffffcc00Level 3|r] (|cffffcc00K|r)
 }
 
 STRING 16481
 // Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
 {
-Segen [|cffffcc00Stufe 4|r] (|cffffcc00K|r)
+Blessing [|cffffcc00Level 4|r] (|cffffcc00K|r)
 }
 
 STRING 16482
 // Fähigkeiten: A0H4 (Segen), Tip (Tooltipp - Normal (atp1))
 {
-Segen [|cffffcc00Stufe 5|r] (|cffffcc00K|r)
+Blessing [|cffffcc00Level 5|r] (|cffffcc00K|r)
 }
 
 STRING 16483
 // Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
 {
-Drohendes Unheil [|cffffcc00Stufe 2|r] (|cffffcc00J|r)
+Impending Disaster [|cffffcc00Level 2|r] (|cffffcc00J|r)
 }
 
 STRING 16484
 // Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
 {
-Drohendes Unheil [|cffffcc00Stufe 3|r] (|cffffcc00J|r)
+Impending Disaster [|cffffcc00Level 3|r] (|cffffcc00J|r)
 }
 
 STRING 16485
 // Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
 {
-Drohendes Unheil [|cffffcc00Stufe 4|r] (|cffffcc00J|r)
+Impending Disaster [|cffffcc00Level 4|r] (|cffffcc00J|r)
 }
 
 STRING 16486
 // Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
 {
-Drohendes Unheil [|cffffcc00Stufe 5|r] (|cffffcc00J|r)
+Impending Disaster [|cffffcc00Level 5|r] (|cffffcc00J|r)
 }
 
 STRING 16487
 // Fähigkeiten: A08B (Drohendes Unheil), Tip (Tooltipp - Normal (atp1))
 {
-Drohendes Unheil [|cffffcc00Stufe 1|r] (|cffffcc00J|r)
+Impending Disaster [|cffffcc00Level 1|r] (|cffffcc00J|r)
 }
 
 STRING 16488
 // Fähigkeiten: A08D (Heiliger Wille), Tip (Tooltipp - Normal (atp1))
 {
-Heiliger Wille [|cffffcc00Stufe 1|r] (|cffffcc00Y|r)
+Holy Will [|cffffcc00Level 1|r] (|cffffcc00Y|r)
 }
 
 STRING 16489
@@ -66083,7 +66083,7 @@ Arcane Hunger [|cffffcc00Level 3|r]
 STRING 16764
 // Einheiten: n06N (Minikarte - Eingang), Name (Name (unam))
 {
-Minikarte - Eingang
+Minimap - Entry
 }
 
 STRING 16773
@@ -66094,7 +66094,7 @@ Gardonar der Dämonenfürst
 
 STRING 16774
 {
-Dämon:
+Demon:
 }
 
 STRING 16775
@@ -66105,7 +66105,7 @@ Demon
 STRING 16778
 // Doodads: D0BN (Rüstung), Name (Name (dnam))
 {
-Rüstung
+Armour
 }
 
 STRING 16787
