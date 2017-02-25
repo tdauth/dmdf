@@ -5454,7 +5454,7 @@ Wirft ein Feuergeschoss auf den Gegner, verursacht 110 Punkte Feuerschaden und l
 STRING 912
 // Fähigkeiten: A0V9 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 913
@@ -10218,7 +10218,7 @@ Rune des Wissens
 STRING 1706
 // Fähigkeiten: A184 (Falle), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 1707
@@ -10260,7 +10260,7 @@ Ginarr
 STRING 1713
 // Fähigkeiten: A14R (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 1714
@@ -10650,7 +10650,7 @@ Archer
 STRING 1778
 // Fähigkeiten: A1BG (Hundezwinger), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 1779
@@ -15411,7 +15411,7 @@ Eagle Eye
 STRING 2669
 // Fähigkeiten: A0MT (Eispfeile), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 2670
@@ -15990,7 +15990,7 @@ Shot in the Heart
 STRING 2800
 // Fähigkeiten: A14A (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 2801
@@ -26164,19 +26164,19 @@ STRING 5138
 STRING 5142
 // Gegenstände: I034 (Haldars Ring), Name (Name (unam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5143
 // Gegenstände: I034 (Haldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5144
 // Gegenstände: I034 (Haldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5146
@@ -26188,7 +26188,7 @@ Rückverwandlung - Haldars Ring
 STRING 5148
 // Gegenstände: I035 (Haldars Ring), Name (Name (unam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5149
@@ -26212,7 +26212,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 5152
 // Gegenstände: I036 (Haldars Ring), Name (Name (unam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5153
@@ -26236,7 +26236,7 @@ Bestienjäger - Stufe 1
 STRING 5156
 // Gegenstände: I038 (Haldars Ring), Name (Name (unam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5157
@@ -26254,7 +26254,7 @@ Rückverwandlung - Haldars Ring
 STRING 5160
 // Gegenstände: I039 (Haldars Ring), Name (Name (unam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5161
@@ -26272,7 +26272,7 @@ Rückverwandlung - Haldars Ring
 STRING 5164
 // Gegenstände: I03A (Haldars Ring), Name (Name (unam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5165
@@ -26296,7 +26296,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 5168
 // Gegenstände: I03B (Haldars Ring), Name (Name (unam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5169
@@ -26320,7 +26320,7 @@ Bestienjäger - Stufe 1
 STRING 5172
 // Gegenstände: I03C (Haldars Ring), Name (Name (unam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5173
@@ -26344,7 +26344,7 @@ Recruit Farmhand
 STRING 5176
 // Fähigkeiten: A0BU (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5179
@@ -26356,7 +26356,7 @@ Fire Missile [|cffffcc00Level 2|r]
 STRING 5180
 // Fähigkeiten: A0BS (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5181
@@ -26374,7 +26374,7 @@ Eisgeschoss - Stufe 1
 STRING 5184
 // Fähigkeiten: A14I (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5185
@@ -26434,79 +26434,79 @@ Transforms the carrier into an angel.
 STRING 5195
 // Gegenstände: I035 (Haldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5196
 // Gegenstände: I036 (Haldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5197
 // Gegenstände: I036 (Haldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5198
 // Gegenstände: I038 (Haldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5199
 // Gegenstände: I038 (Haldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5200
 // Gegenstände: I039 (Haldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5201
 // Gegenstände: I039 (Haldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5202
 // Gegenstände: I03A (Haldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5203
 // Gegenstände: I03A (Haldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5204
 // Gegenstände: I03B (Haldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5205
 // Gegenstände: I03B (Haldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5206
 // Gegenstände: I03C (Haldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5207
 // Gegenstände: I03C (Haldars Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5209
@@ -26524,25 +26524,25 @@ Haldar's Ring
 STRING 5213
 // Fähigkeiten: A14Q (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5214
 // Fähigkeiten: A14F (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5215
 // Fähigkeiten: A14K (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5216
 // Fähigkeiten: A14R (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5223
@@ -30867,7 +30867,7 @@ Brandpfeile - Stufe 5
 STRING 6907
 // Fähigkeiten: A01M (Sprinten), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 6908
@@ -35469,7 +35469,7 @@ Eispfeile - Stufe 5
 STRING 8850
 // Fähigkeiten: A03S (Schütze), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 8851
@@ -37115,7 +37115,7 @@ Heals 300 life for an allied non-mechanic target.|n|cffc3dbffSpell can be used o
 STRING 9320
 // Fähigkeiten: A06O (Gewandtheit), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 9330
@@ -39699,7 +39699,7 @@ STRING 10371
 STRING 10372
 // Fähigkeiten: A0VG (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 10373
@@ -39777,7 +39777,7 @@ STRING 10384
 STRING 10385
 // Fähigkeiten: A06Q (Schuss ins Herz), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 10386
@@ -44011,7 +44011,7 @@ Hail of Arrows
 STRING 11945
 // Fähigkeiten: A182 (Mehrfachschuss), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 11946
@@ -44083,7 +44083,7 @@ Templer
 STRING 11957
 // Fähigkeiten: A0GS (Brandpfeile), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 11958
@@ -44101,7 +44101,7 @@ Lying in Wait
 STRING 11960
 // Fähigkeiten: A12E (Pfeilhagel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 11961
@@ -45421,7 +45421,7 @@ STRING 12423
 STRING 12424
 // Fähigkeiten: A12R (Lauern), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 12437
@@ -45505,7 +45505,7 @@ STRING 12449
 STRING 12450
 // Fähigkeiten: A0BV (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12451
@@ -45529,7 +45529,7 @@ STRING 12453
 STRING 12454
 // Fähigkeiten: A14M (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12455
@@ -45553,7 +45553,7 @@ STRING 12457
 STRING 12458
 // Fähigkeiten: A14E (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12459
@@ -45577,7 +45577,7 @@ STRING 12461
 STRING 12462
 // Fähigkeiten: A0BX (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12463
@@ -45601,7 +45601,7 @@ STRING 12465
 STRING 12466
 // Fähigkeiten: A14O (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12467
@@ -45625,7 +45625,7 @@ STRING 12469
 STRING 12470
 // Fähigkeiten: A14L (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12471
@@ -45649,7 +45649,7 @@ STRING 12473
 STRING 12474
 // Fähigkeiten: A14P (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12475
@@ -45673,19 +45673,19 @@ STRING 12477
 STRING 12478
 // Fähigkeiten: A14G (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12489
 // Fähigkeiten: A14H (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12502
 // Fähigkeiten: A0BW (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12514
@@ -45697,7 +45697,7 @@ Einschüchtern [|cffffcc00Stufe 2|r]
 STRING 12515
 // Fähigkeiten: A0BT (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12518
@@ -45715,13 +45715,13 @@ Einschüchtern - Stufe 2
 STRING 12528
 // Fähigkeiten: A14N (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12541
 // Fähigkeiten: A14J (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12544
@@ -45733,19 +45733,19 @@ Trap
 STRING 12554
 // Fähigkeiten: A14S (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12567
 // Fähigkeiten: A0BY (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12580
 // Fähigkeiten: A0C0 (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 12583
@@ -45793,7 +45793,7 @@ STRING 12589
 STRING 12590
 // Fähigkeiten: A068 (Adlerauge), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 12591
@@ -46567,7 +46567,7 @@ Wild Bear Man
 STRING 12872
 // Zauberverstärker/Effekte: B00J (Schütze), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 12873
@@ -48679,25 +48679,25 @@ The knight rushes to an opponent with 80 % increased speed, stuns him for 2 seco
 STRING 13277
 // Fähigkeiten: A0XT (Anstürmen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter stürmt auf einen Gegner mit um 80 % erhöhter Geschwindigkeit zu, betäubt diesen 2 Sekunden lang und fügt ihm danach Schaden zu.|n|n|cffffcc00Stufe 1|r - Fügt 50 Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt 100 Punkte Schaden zu.|n|cffffcc00Stufe 3|r - Fügt 150 Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt 200 Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt 250 Punkte Schaden zu.
+The knight rushes to an opponent with 80 % increased speed, stuns him for 2 seconds and deals damage to him afterwards.|n|n|cffffcc00Level 1|r - Deals 50 points of damage.|n|cffffcc00Level 2|r - Deals 100 points of damage.|n|cffffcc00Level 3|r - Deals 150 points of damage.|n|cffffcc00Level 4|r - Deals 200 points of damage.|n|cffffcc00Level 5|r - Deals 250 points of damage.
 }
 
 STRING 13278
 // Fähigkeiten: A0XW (Anstürmen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter stürmt auf einen Gegner mit um 80 % erhöhter Geschwindigkeit zu, betäubt diesen 2 Sekunden lang und fügt ihm danach Schaden zu.|n|n|cffffcc00Stufe 1|r - Fügt 50 Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt 100 Punkte Schaden zu.|n|cffffcc00Stufe 3|r - Fügt 150 Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt 200 Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt 250 Punkte Schaden zu.
+The knight rushes to an opponent with 80 % increased speed, stuns him for 2 seconds and deals damage to him afterwards.|n|n|cffffcc00Level 1|r - Deals 50 points of damage.|n|cffffcc00Level 2|r - Deals 100 points of damage.|n|cffffcc00Level 3|r - Deals 150 points of damage.|n|cffffcc00Level 4|r - Deals 200 points of damage.|n|cffffcc00Level 5|r - Deals 250 points of damage.
 }
 
 STRING 13279
 // Fähigkeiten: A0XS (Anstürmen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter stürmt auf einen Gegner mit um 80 % erhöhter Geschwindigkeit zu, betäubt diesen 2 Sekunden lang und fügt ihm danach Schaden zu.|n|n|cffffcc00Stufe 1|r - Fügt 50 Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt 100 Punkte Schaden zu.|n|cffffcc00Stufe 3|r - Fügt 150 Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt 200 Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt 250 Punkte Schaden zu.
+The knight rushes to an opponent with 80 % increased speed, stuns him for 2 seconds and deals damage to him afterwards.|n|n|cffffcc00Level 1|r - Deals 50 points of damage.|n|cffffcc00Level 2|r - Deals 100 points of damage.|n|cffffcc00Level 3|r - Deals 150 points of damage.|n|cffffcc00Level 4|r - Deals 200 points of damage.|n|cffffcc00Level 5|r - Deals 250 points of damage.
 }
 
 STRING 13280
 // Fähigkeiten: A0XV (Anstürmen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter stürmt auf einen Gegner mit um 80 % erhöhter Geschwindigkeit zu, betäubt diesen 2 Sekunden lang und fügt ihm danach Schaden zu.|n|n|cffffcc00Stufe 1|r - Fügt 50 Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt 100 Punkte Schaden zu.|n|cffffcc00Stufe 3|r - Fügt 150 Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt 200 Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt 250 Punkte Schaden zu.
+The knight rushes to an opponent with 80 % increased speed, stuns him for 2 seconds and deals damage to him afterwards.|n|n|cffffcc00Level 1|r - Deals 50 points of damage.|n|cffffcc00Level 2|r - Deals 100 points of damage.|n|cffffcc00Level 3|r - Deals 150 points of damage.|n|cffffcc00Level 4|r - Deals 200 points of damage.|n|cffffcc00Level 5|r - Deals 250 points of damage.
 }
 
 STRING 13281
@@ -49165,7 +49165,7 @@ Trap
 STRING 13387
 // Zauberverstärker/Effekte: B02I (), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 13388
@@ -49417,13 +49417,13 @@ Falle - Stufe 5
 STRING 13484
 // Zauberverstärker/Effekte: B02J (Lauern), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 13485
 // Zauberverstärker/Effekte: X002 (Pfeilhagel Effekt), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 13486
@@ -60727,7 +60727,7 @@ Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand mit der ma
 STRING 15432
 // Fähigkeiten: A1CR (Beutezug - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+Creates a random consumable item for all players. |n|n|cffffcc00Level 1|r - Creates an item with the maximum level of 1.|n|cffffcc00Level 2|r - Creates an item with the maximum level of 2.|n|cffffcc00Level 3|r - Creates an item with the maximum level of 3.|n|cffffcc00Level 4|r - Creates an item with the maximum level of 4.|n|cffffcc00Level 5|r - Creates an item with the maximum level of 5.
 }
 
 STRING 15433
@@ -61615,7 +61615,7 @@ Hundezwinger - Stufe 5
 STRING 15634
 // Zauberverstärker/Effekte: B02Q (), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 15635
@@ -61675,7 +61675,7 @@ Ein Hundezwinger.
 STRING 15644
 // Zauberverstärker/Effekte: B02R (), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 15645
@@ -62293,7 +62293,7 @@ Bestehlen - Stufe 5
 STRING 15766
 // Fähigkeiten: A1CQ (Beutezug - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+Creates a random consumable item for all players. |n|n|cffffcc00Level 1|r - Creates an item with the maximum level of 1.|n|cffffcc00Level 2|r - Creates an item with the maximum level of 2.|n|cffffcc00Level 3|r - Creates an item with the maximum level of 3.|n|cffffcc00Level 4|r - Creates an item with the maximum level of 4.|n|cffffcc00Level 5|r - Creates an item with the maximum level of 5.
 }
 
 STRING 15776
@@ -62311,7 +62311,7 @@ Beutezug - Stufe 2
 STRING 15780
 // Fähigkeiten: A1CS (Beutezug - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+Creates a random consumable item for all players. |n|n|cffffcc00Level 1|r - Creates an item with the maximum level of 1.|n|cffffcc00Level 2|r - Creates an item with the maximum level of 2.|n|cffffcc00Level 3|r - Creates an item with the maximum level of 3.|n|cffffcc00Level 4|r - Creates an item with the maximum level of 4.|n|cffffcc00Level 5|r - Creates an item with the maximum level of 5.
 }
 
 STRING 15790
@@ -62329,7 +62329,7 @@ Beutezug - Stufe 3
 STRING 15794
 // Fähigkeiten: A1CP (Beutezug - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+Creates a random consumable item for all players. |n|n|cffffcc00Level 1|r - Creates an item with the maximum level of 1.|n|cffffcc00Level 2|r - Creates an item with the maximum level of 2.|n|cffffcc00Level 3|r - Creates an item with the maximum level of 3.|n|cffffcc00Level 4|r - Creates an item with the maximum level of 4.|n|cffffcc00Level 5|r - Creates an item with the maximum level of 5.
 }
 
 STRING 15803
@@ -62869,49 +62869,49 @@ Summons a mana regenerating grove for <A0D4,Dur1> seconds which regenerates mana
 STRING 15906
 // Fähigkeiten: A0J5 (Waldfeenzauber - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+The fairies of the forest heal life of non-mechanical allies in an area of <A0AL,Area1> by jumping from one target to the next where the first target must be within a range of <A0AL,Rng1>.|nCan be used on oneself. |n|n|cffffcc00Level 1|r - Heals for <A0AL,DataB1> units maximum <A0AL,DataA1> life maximum. |n|cffffcc00Level 2|r - Heals for <A0AL,DataB2> units maximum <A0AL,DataA2> life maximum.|n|cffffcc00Level 3|r - Heals for <A0AL,DataB3> units maximum <A0AL,DataA3> life maximum.|n|cffffcc00Level 4|r - Heals for <A0AL,DataB4> units maximum <A0AL,DataA4> life maximum.|n|cffffcc00Level 5|r - Heals for <A0AL,DataB5> units maximum <A0AL,DataA5> life maximum.
 }
 
 STRING 15907
 // Fähigkeiten: A0DA (Hain - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons a mana regenerating grove for <A0D4,Dur1> seconds which regenerates mana per second of allies around.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15908
 // Fähigkeiten: A0J9 (Waldfeenzauber - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+The fairies of the forest heal life of non-mechanical allies in an area of <A0AL,Area1> by jumping from one target to the next where the first target must be within a range of <A0AL,Rng1>.|nCan be used on oneself. |n|n|cffffcc00Level 1|r - Heals for <A0AL,DataB1> units maximum <A0AL,DataA1> life maximum. |n|cffffcc00Level 2|r - Heals for <A0AL,DataB2> units maximum <A0AL,DataA2> life maximum.|n|cffffcc00Level 3|r - Heals for <A0AL,DataB3> units maximum <A0AL,DataA3> life maximum.|n|cffffcc00Level 4|r - Heals for <A0AL,DataB4> units maximum <A0AL,DataA4> life maximum.|n|cffffcc00Level 5|r - Heals for <A0AL,DataB5> units maximum <A0AL,DataA5> life maximum.
 }
 
 STRING 15909
 // Fähigkeiten: A0D6 (Hain - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons a mana regenerating grove for <A0D4,Dur1> seconds which regenerates mana per second of allies around.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15910
 // Fähigkeiten: A0J7 (Waldfeenzauber - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+The fairies of the forest heal life of non-mechanical allies in an area of <A0AL,Area1> by jumping from one target to the next where the first target must be within a range of <A0AL,Rng1>.|nCan be used on oneself. |n|n|cffffcc00Level 1|r - Heals for <A0AL,DataB1> units maximum <A0AL,DataA1> life maximum. |n|cffffcc00Level 2|r - Heals for <A0AL,DataB2> units maximum <A0AL,DataA2> life maximum.|n|cffffcc00Level 3|r - Heals for <A0AL,DataB3> units maximum <A0AL,DataA3> life maximum.|n|cffffcc00Level 4|r - Heals for <A0AL,DataB4> units maximum <A0AL,DataA4> life maximum.|n|cffffcc00Level 5|r - Heals for <A0AL,DataB5> units maximum <A0AL,DataA5> life maximum.
 }
 
 STRING 15911
 // Fähigkeiten: A0D7 (Hain - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons a mana regenerating grove for <A0D4,Dur1> seconds which regenerates mana per second of allies around.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15912
 // Fähigkeiten: A1KZ (Waldfeenzauber - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+The fairies of the forest heal life of non-mechanical allies in an area of <A0AL,Area1> by jumping from one target to the next where the first target must be within a range of <A0AL,Rng1>.|nCan be used on oneself. |n|n|cffffcc00Level 1|r - Heals for <A0AL,DataB1> units maximum <A0AL,DataA1> life maximum. |n|cffffcc00Level 2|r - Heals for <A0AL,DataB2> units maximum <A0AL,DataA2> life maximum.|n|cffffcc00Level 3|r - Heals for <A0AL,DataB3> units maximum <A0AL,DataA3> life maximum.|n|cffffcc00Level 4|r - Heals for <A0AL,DataB4> units maximum <A0AL,DataA4> life maximum.|n|cffffcc00Level 5|r - Heals for <A0AL,DataB5> units maximum <A0AL,DataA5> life maximum.
 }
 
 STRING 15913
 // Fähigkeiten: A0D9 (Hain - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons a mana regenerating grove for <A0D4,Dur1> seconds which regenerates mana per second of allies around.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15914
@@ -63655,7 +63655,7 @@ Sprint
 STRING 16042
 // Zauberverstärker/Effekte: B02U (), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 16043
@@ -68972,7 +68972,7 @@ Diese Einheit steht unter der Wirkung eines Leprechaun; ihre Rüstung ist eine Z
 STRING 17350
 // Zauberverstärker/Effekte: B00F (), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 17351
@@ -72422,7 +72422,7 @@ Waldfestung - Erlernen
 STRING 18007
 // Fähigkeiten: A0J8 (Waldfeenzauber - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+The fairies of the forest heal life of non-mechanical allies in an area of <A0AL,Area1> by jumping from one target to the next where the first target must be within a range of <A0AL,Rng1>.|nCan be used on oneself. |n|n|cffffcc00Level 1|r - Heals for <A0AL,DataB1> units maximum <A0AL,DataA1> life maximum. |n|cffffcc00Level 2|r - Heals for <A0AL,DataB2> units maximum <A0AL,DataA2> life maximum.|n|cffffcc00Level 3|r - Heals for <A0AL,DataB3> units maximum <A0AL,DataA3> life maximum.|n|cffffcc00Level 4|r - Heals for <A0AL,DataB4> units maximum <A0AL,DataA4> life maximum.|n|cffffcc00Level 5|r - Heals for <A0AL,DataB5> units maximum <A0AL,DataA5> life maximum.
 }
 
 STRING 18016
@@ -72638,7 +72638,7 @@ Göttergunst - Erlernen
 STRING 18103
 // Fähigkeiten: A1LB (Hain - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons a mana regenerating grove for <A0D4,Dur1> seconds which regenerates mana per second of allies around.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 18112
@@ -73832,7 +73832,7 @@ Rage - Erlernen
 STRING 18641
 // Fähigkeiten: A1A1 (Beutezug - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+Creates a random consumable item for all players. |n|n|cffffcc00Level 1|r - Creates an item with the maximum level of 1.|n|cffffcc00Level 2|r - Creates an item with the maximum level of 2.|n|cffffcc00Level 3|r - Creates an item with the maximum level of 3.|n|cffffcc00Level 4|r - Creates an item with the maximum level of 4.|n|cffffcc00Level 5|r - Creates an item with the maximum level of 5.
 }
 
 STRING 18650
@@ -74120,7 +74120,7 @@ Bestehlen - Erlernen
 STRING 18769
 // Fähigkeiten: A0XU (Anstürmen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter stürmt auf einen Gegner mit um 80 % erhöhter Geschwindigkeit zu, betäubt diesen 2 Sekunden lang und fügt ihm danach Schaden zu.|n|n|cffffcc00Stufe 1|r - Fügt 50 Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt 100 Punkte Schaden zu.|n|cffffcc00Stufe 3|r - Fügt 150 Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt 200 Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt 250 Punkte Schaden zu.
+The knight rushes to an opponent with 80 % increased speed, stuns him for 2 seconds and deals damage to him afterwards.|n|n|cffffcc00Level 1|r - Deals 50 points of damage.|n|cffffcc00Level 2|r - Deals 100 points of damage.|n|cffffcc00Level 3|r - Deals 150 points of damage.|n|cffffcc00Level 4|r - Deals 200 points of damage.|n|cffffcc00Level 5|r - Deals 250 points of damage.
 }
 
 STRING 18778
