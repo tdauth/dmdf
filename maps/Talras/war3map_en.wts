@@ -16429,31 +16429,31 @@ STRING 2913
 STRING 2914
 // Fähigkeiten: A06Y (Schwachstelle), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 1|r]
+Weak Spot [|cffffcc00Level 1|r]
 }
 
 STRING 2915
 // Fähigkeiten: A06Y (Schwachstelle), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 2|r]
+Weak Spot [|cffffcc00Level 2|r]
 }
 
 STRING 2916
 // Fähigkeiten: A06Y (Schwachstelle), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 3|r]
+Weak Spot [|cffffcc00Level 3|r]
 }
 
 STRING 2917
 // Fähigkeiten: A06Y (Schwachstelle), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 4|r]
+Weak Spot [|cffffcc00Level 4|r]
 }
 
 STRING 2918
 // Fähigkeiten: A0SW (Schwachstelle - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 5|r]
+Weak Spot [|cffffcc00Level 5|r]
 }
 
 STRING 2919
@@ -23190,7 +23190,7 @@ Master of Necromancy
 STRING 4301
 // Gegenstände: I04G (Horn des Kampfes), Name (Name (unam))
 {
-Horn des Kampfes
+Horn of the Fight
 }
 
 STRING 4302
@@ -23292,7 +23292,7 @@ Rückkopplung [|cffffcc00Stufe 3|r]
 STRING 4318
 // Fähigkeiten: A1B6 (Horn des Kampfes), Name (Name (anam))
 {
-Horn des Kampfes
+Horn of the Fight
 }
 
 STRING 4319
@@ -25110,7 +25110,7 @@ Ein einfaches Holzbrett.
 STRING 4886
 // Fähigkeiten: A030 (Flügel des Todesengels), Name (Name (anam))
 {
-Flügel des Todesengels
+Wings of the Death Angel
 }
 
 STRING 4887
@@ -25128,7 +25128,7 @@ Erhöhen die Rüstung um <A030,DataA1> und die Bewegungsgeschwindigkeit um <A02B
 STRING 4889
 // Fähigkeiten: A02B (Flügel des Todesengels), Name (Name (anam))
 {
-Flügel des Todesengels
+Wings of the Death Angel
 }
 
 STRING 4890
@@ -25140,7 +25140,7 @@ STRING 4890
 STRING 4891
 // Fähigkeiten: A022 (Flügel des Todesengels), Name (Name (anam))
 {
-Flügel des Todesengels
+Wings of the Death Angel
 }
 
 STRING 4892
@@ -25152,7 +25152,7 @@ STRING 4892
 STRING 4893
 // Fähigkeiten: A0KE (Flügel des Todesengels), Name (Name (anam))
 {
-Flügel des Todesengels
+Wings of the Death Angel
 }
 
 STRING 4894
@@ -28809,7 +28809,7 @@ STRING 6115
 STRING 6116
 // Gegenstände: I062 (Trollketten), Name (Name (unam))
 {
-Trollketten
+Troll Chains
 }
 
 STRING 6117
@@ -29175,7 +29175,7 @@ Weak Spot - Level 1
 STRING 6218
 // Fähigkeiten: A1OL (Schwachstelle - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffcc00Stufe 1|r - <A06Y,DataA1>%ige Chance.|n|cffffcc00Stufe 2|r - <A06Y,DataA2>%ige Chance.|n|cffffcc00Stufe 3|r - <A06Y,DataA3>%ige Chance.|n|cffffcc00Stufe 4|r - <A06Y,DataA4>%ige Chance.|n|cffffcc00Stufe 5|r - <A06Y,DataA5>%ige Chance.
+The Dragon Slayer has a chance to deal double damage. |n|n|cffffcc00Level 1|r - Chance of <A06Y,DataA1>%.|n|cffffcc00Level 2|r - Chance of <A06Y,DataA2>%.|n|cffffcc00Level 3|r - Chance of <A06Y,DataA3>%.|n|cffffcc00Level 4|r - Chance of <A06Y,DataA4>%.|n|cffffcc00Level 5|r - Chance of <A06Y,DataA5>%.
 }
 
 STRING 6227
@@ -29199,7 +29199,7 @@ Weak Spot - Level 2
 STRING 6232
 // Fähigkeiten: A0SU (Schwachstelle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffcc00Stufe 1|r - <A06Y,DataA1>%ige Chance.|n|cffffcc00Stufe 2|r - <A06Y,DataA2>%ige Chance.|n|cffffcc00Stufe 3|r - <A06Y,DataA3>%ige Chance.|n|cffffcc00Stufe 4|r - <A06Y,DataA4>%ige Chance.|n|cffffcc00Stufe 5|r - <A06Y,DataA5>%ige Chance.
+The Dragon Slayer has a chance to deal double damage. |n|n|cffffcc00Level 1|r - Chance of <A06Y,DataA1>%.|n|cffffcc00Level 2|r - Chance of <A06Y,DataA2>%.|n|cffffcc00Level 3|r - Chance of <A06Y,DataA3>%.|n|cffffcc00Level 4|r - Chance of <A06Y,DataA4>%.|n|cffffcc00Level 5|r - Chance of <A06Y,DataA5>%.
 }
 
 STRING 6241
@@ -29223,7 +29223,7 @@ Schwachstelle - Stufe 3
 STRING 6246
 // Fähigkeiten: A0SS (Schwachstelle - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffcc00Stufe 1|r - <A06Y,DataA1>%ige Chance.|n|cffffcc00Stufe 2|r - <A06Y,DataA2>%ige Chance.|n|cffffcc00Stufe 3|r - <A06Y,DataA3>%ige Chance.|n|cffffcc00Stufe 4|r - <A06Y,DataA4>%ige Chance.|n|cffffcc00Stufe 5|r - <A06Y,DataA5>%ige Chance.
+The Dragon Slayer has a chance to deal double damage. |n|n|cffffcc00Level 1|r - Chance of <A06Y,DataA1>%.|n|cffffcc00Level 2|r - Chance of <A06Y,DataA2>%.|n|cffffcc00Level 3|r - Chance of <A06Y,DataA3>%.|n|cffffcc00Level 4|r - Chance of <A06Y,DataA4>%.|n|cffffcc00Level 5|r - Chance of <A06Y,DataA5>%.
 }
 
 STRING 6255
@@ -29247,7 +29247,7 @@ Weak Spot - Level 4
 STRING 6260
 // Fähigkeiten: A0SV (Schwachstelle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffcc00Stufe 1|r - <A06Y,DataA1>%ige Chance.|n|cffffcc00Stufe 2|r - <A06Y,DataA2>%ige Chance.|n|cffffcc00Stufe 3|r - <A06Y,DataA3>%ige Chance.|n|cffffcc00Stufe 4|r - <A06Y,DataA4>%ige Chance.|n|cffffcc00Stufe 5|r - <A06Y,DataA5>%ige Chance.
+The Dragon Slayer has a chance to deal double damage. |n|n|cffffcc00Level 1|r - Chance of <A06Y,DataA1>%.|n|cffffcc00Level 2|r - Chance of <A06Y,DataA2>%.|n|cffffcc00Level 3|r - Chance of <A06Y,DataA3>%.|n|cffffcc00Level 4|r - Chance of <A06Y,DataA4>%.|n|cffffcc00Level 5|r - Chance of <A06Y,DataA5>%.
 }
 
 STRING 6269
@@ -29553,7 +29553,7 @@ Forest Fortress
 STRING 6375
 // Fähigkeiten: A0ST (Schwachstelle - Stufe 2), Name (Name (anam))
 {
-Schwachstelle - Stufe 2
+Weak Spot - Level 2
 }
 
 STRING 6384
@@ -29619,7 +29619,7 @@ Alpha
 STRING 6396
 // Fähigkeiten: A0FE (Alpha), Tip (Tooltipp - Normal (atp1))
 {
-Alpha [|cffffcc00Stufe 1|r]
+Alpha [|cffffcc00Level 1|r]
 }
 
 STRING 6397
@@ -29763,7 +29763,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 6431
 // Fähigkeiten: A0SV (Schwachstelle - Stufe 4), Name (Name (anam))
 {
-Schwachstelle - Stufe 4
+Weak Spot - Level 4
 }
 
 STRING 6432
@@ -29775,7 +29775,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 6433
 // Fähigkeiten: A0T1 (Schwachstelle - Stufe 5), Name (Name (anam))
 {
-Schwachstelle - Stufe 5
+Weak Spot - Level 5
 }
 
 STRING 6434
@@ -29895,7 +29895,7 @@ Totenbeschwörung - Stufe 4
 STRING 6510
 // Fähigkeiten: A0PT (Erwachen des Waldes - Erlernen), Name (Name (anam))
 {
-Totenbeschwörung [|cffffcc00Stufe 5|r]
+Necromancy [|cffffcc00Level 5|r]
 }
 
 STRING 6511
@@ -30285,7 +30285,7 @@ Arkaner Schutz - Stufe 2
 STRING 6666
 // Fähigkeiten: A0PU (Erwachen des Waldes - Erlernen), Name (Name (anam))
 {
-Totenbeschwörung [|cffffcc00Stufe 5|r]
+Necromancy [|cffffcc00Level 5|r]
 }
 
 STRING 6667
@@ -32643,7 +32643,7 @@ Wohltat - Stufe 3
 STRING 7628
 // Fähigkeiten: A14Y (Einschüchtern - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verringert die Angriffsgeschwindkeit eines Gegners 7 Sekunden lang.|n<A05Q,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r - Verringert die Angrifssgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verringert die Angrifssgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verringert die Angrifssgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verringert die Angrifssgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verringert die Angrifssgeschwindigkeit um 50 %.
+Reduces the attack speed of an opponent for 7 seconds.|n<A05Q,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Reduces the attack speed by 10 %.|n|cffffcc00Level 2|r - Reduces the attack speed by 20 %.|n|cffffcc00Level 3|r - Reduces the attack speed by 30 %.|n|cffffcc00Level 4|r - Reduces the attack speed by 40 %.|n|cffffcc00Level 5|r - Reduces the attack speed by 50 %.
 }
 
 STRING 7637
@@ -32667,7 +32667,7 @@ Wohltat - Stufe 4
 STRING 7642
 // Fähigkeiten: A1K1 (Einschüchtern - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verringert die Angriffsgeschwindkeit eines Gegners 7 Sekunden lang.|n<A05Q,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r - Verringert die Angrifssgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verringert die Angrifssgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verringert die Angrifssgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verringert die Angrifssgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verringert die Angrifssgeschwindigkeit um 50 %.
+Reduces the attack speed of an opponent for 7 seconds.|n<A05Q,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Reduces the attack speed by 10 %.|n|cffffcc00Level 2|r - Reduces the attack speed by 20 %.|n|cffffcc00Level 3|r - Reduces the attack speed by 30 %.|n|cffffcc00Level 4|r - Reduces the attack speed by 40 %.|n|cffffcc00Level 5|r - Reduces the attack speed by 50 %.
 }
 
 STRING 7651
@@ -33231,7 +33231,7 @@ STRING 7836
 STRING 7837
 // Fähigkeiten: A151 (Einschüchtern - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verringert die Angriffsgeschwindkeit eines Gegners 7 Sekunden lang.|n<A05Q,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r - Verringert die Angrifssgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verringert die Angrifssgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verringert die Angrifssgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verringert die Angrifssgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verringert die Angrifssgeschwindigkeit um 50 %.
+Reduces the attack speed of an opponent for 7 seconds.|n<A05Q,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Reduces the attack speed by 10 %.|n|cffffcc00Level 2|r - Reduces the attack speed by 20 %.|n|cffffcc00Level 3|r - Reduces the attack speed by 30 %.|n|cffffcc00Level 4|r - Reduces the attack speed by 40 %.|n|cffffcc00Level 5|r - Reduces the attack speed by 50 %.
 }
 
 STRING 7846
@@ -35697,7 +35697,7 @@ STRING 8894
 STRING 8895
 // Fähigkeiten: A14Z (Einschüchtern - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verringert die Angriffsgeschwindkeit eines Gegners 7 Sekunden lang.|n<A05Q,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r - Verringert die Angrifssgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verringert die Angrifssgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verringert die Angrifssgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verringert die Angrifssgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verringert die Angrifssgeschwindigkeit um 50 %.
+Reduces the attack speed of an opponent for 7 seconds.|n<A05Q,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Reduces the attack speed by 10 %.|n|cffffcc00Level 2|r - Reduces the attack speed by 20 %.|n|cffffcc00Level 3|r - Reduces the attack speed by 30 %.|n|cffffcc00Level 4|r - Reduces the attack speed by 40 %.|n|cffffcc00Level 5|r - Reduces the attack speed by 50 %.
 }
 
 STRING 8896
@@ -53761,307 +53761,307 @@ Ausbau zu Eisen-Schwertern Stufe 100
 STRING 14221
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14222
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14223
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14224
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14225
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14226
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14227
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14228
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14229
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14230
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14231
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14232
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14233
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14234
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14235
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14236
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14237
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14238
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14239
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14240
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14241
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14242
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14243
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14244
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14245
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14246
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14247
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14248
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14249
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14250
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14251
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14252
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14253
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14254
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14255
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14256
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14257
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14258
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14259
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14260
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14261
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14262
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14263
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14264
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14265
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14266
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14267
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14268
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14269
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14270
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14271
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14272
@@ -54073,289 +54073,289 @@ Improves the attack damage of the building.
 STRING 14273
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14274
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14275
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14276
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14277
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14278
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14279
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14280
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14281
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14282
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14283
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14284
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14285
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14286
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14287
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14288
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14289
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14290
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14291
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14292
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14293
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14294
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14295
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14296
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14297
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14298
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14299
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14300
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14301
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14302
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14303
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14304
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14305
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14306
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14307
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14308
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14309
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14310
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14311
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14312
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14313
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14314
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14315
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14316
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14317
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14318
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14319
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14320
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Improves the attack damage of the building.
 }
 
 STRING 14321
@@ -62251,7 +62251,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 15759
 // Fähigkeiten: A1CH (Bestehlen - Stufe 2), Name (Name (anam))
 {
-Bestehlen - Stufe 2
+Steal - Level 2
 }
 
 STRING 15760
@@ -62443,7 +62443,7 @@ Gibt in der Nähe befindlichen befreundeten Einheiten einen Lebensregenerations-
 STRING 15833
 // Fähigkeiten: A0VO (Horn des Kampfes), Name (Name (anam))
 {
-Horn des Kampfes
+Horn of the Fight
 }
 
 STRING 15834
@@ -63625,7 +63625,7 @@ Erhöht die Bewegungsgeschwindigkeit des Waldläufers für <A1EK,Dur1> Sekunden 
 STRING 16037
 // Gegenstände: I06H (Flügel von Deranors Leibwache), Tip (Tooltipp - Einfach (utip))
 {
-Nixenstein kaufen
+Buy Neck Stone
 }
 
 STRING 16038
@@ -64337,7 +64337,7 @@ Rage - Stufe 3
 STRING 16246
 // Fähigkeiten: A14X (Einschüchtern - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verringert die Angriffsgeschwindkeit eines Gegners 7 Sekunden lang.|n<A05Q,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r - Verringert die Angrifssgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verringert die Angrifssgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verringert die Angrifssgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verringert die Angrifssgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verringert die Angrifssgeschwindigkeit um 50 %.
+Reduces the attack speed of an opponent for 7 seconds.|n<A05Q,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Reduces the attack speed by 10 %.|n|cffffcc00Level 2|r - Reduces the attack speed by 20 %.|n|cffffcc00Level 3|r - Reduces the attack speed by 30 %.|n|cffffcc00Level 4|r - Reduces the attack speed by 40 %.|n|cffffcc00Level 5|r - Reduces the attack speed by 50 %.
 }
 
 STRING 16247
@@ -67479,43 +67479,43 @@ Schnellen Handel Stufe 100 erforschen
 STRING 17038
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17039
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17040
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17041
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17042
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17043
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17044
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17045
@@ -67527,553 +67527,553 @@ Increases the movement speed of packhorses.
 STRING 17046
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17047
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17048
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17049
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17050
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17051
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17052
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17053
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17054
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17055
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17056
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17057
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17058
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17059
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17060
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17061
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17062
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17063
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17064
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17065
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17066
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17067
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17068
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17069
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17070
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17071
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17072
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17073
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17074
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17075
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17076
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17077
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17078
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17079
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17080
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17081
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17082
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17083
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17084
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17085
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17086
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17087
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17088
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17089
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17090
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17091
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17092
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17093
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17094
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17095
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17096
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17097
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17098
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17099
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17100
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17101
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17102
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17103
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17104
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17105
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17106
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17107
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17108
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17109
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17110
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17111
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17112
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17113
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17114
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17115
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17116
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17117
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17118
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17119
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17120
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17121
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17122
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17123
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17124
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17125
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17126
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17127
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17128
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17129
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17130
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17131
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17132
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17133
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17134
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17135
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17136
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17137
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17138
@@ -74732,7 +74732,7 @@ Zehren - Erlernen
 STRING 19039
 // Fähigkeiten: A0ST (Schwachstelle - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffcc00Stufe 1|r - <A06Y,DataA1>%ige Chance.|n|cffffcc00Stufe 2|r - <A06Y,DataA2>%ige Chance.|n|cffffcc00Stufe 3|r - <A06Y,DataA3>%ige Chance.|n|cffffcc00Stufe 4|r - <A06Y,DataA4>%ige Chance.|n|cffffcc00Stufe 5|r - <A06Y,DataA5>%ige Chance.
+The Dragon Slayer has a chance to deal double damage. |n|n|cffffcc00Level 1|r - Chance of <A06Y,DataA1>%.|n|cffffcc00Level 2|r - Chance of <A06Y,DataA2>%.|n|cffffcc00Level 3|r - Chance of <A06Y,DataA3>%.|n|cffffcc00Level 4|r - Chance of <A06Y,DataA4>%.|n|cffffcc00Level 5|r - Chance of <A06Y,DataA5>%.
 }
 
 STRING 19048
@@ -77948,7 +77948,7 @@ Missions - Slaughter
 STRING 19801
 // Fähigkeiten: A1RE (Aufträge - Krieg), Name (Name (anam))
 {
-Aufträge - Krieg
+Missions - War
 }
 
 STRING 19802
