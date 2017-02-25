@@ -9870,7 +9870,7 @@ Rune der Macht
 STRING 1648
 // Gegenstände: I07U (Rune der Macht), Description (Beschreibung (ides))
 {
-Erhöht alle drei Attribute um 2.
+Increases all three attributes by 2.
 }
 
 STRING 1649
@@ -9888,7 +9888,7 @@ Erhöht alle drei Attribute um 2.
 STRING 1651
 // Fähigkeiten: A1VW (Schneeblume), Name (Name (anam))
 {
-Schneeblume
+Snow Flower
 }
 
 STRING 1652
@@ -11628,7 +11628,7 @@ Open Backpack
 STRING 1941
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 1
+Fast Trade Level 1
 }
 
 STRING 1942
@@ -50545,7 +50545,7 @@ Kathedrale
 STRING 13673
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 14|r]
+Attribute Bonus [|cffffcc00Level 14|r]
 }
 
 STRING 13684
@@ -50557,7 +50557,7 @@ STRING 13684
 STRING 13685
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 15|r]
+Attribute Bonus [|cffffcc00Level 15|r]
 }
 
 STRING 13688
@@ -52561,1201 +52561,1201 @@ Improves armour and hit points of the buildng.
 STRING 14021
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 1
+Iron Swords Level 1
 }
 
 STRING 14022
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 2
+Iron Swords Level 2
 }
 
 STRING 14023
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 3
+Iron Swords Level 3
 }
 
 STRING 14024
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 4
+Iron Swords Level 4
 }
 
 STRING 14025
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 5
+Iron Swords Level 5
 }
 
 STRING 14026
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 6
+Iron Swords Level 6
 }
 
 STRING 14027
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 7
+Iron Swords Level 7
 }
 
 STRING 14028
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 8
+Iron Swords Level 8
 }
 
 STRING 14029
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 9
+Iron Swords Level 9
 }
 
 STRING 14030
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 10
+Iron Swords Level 10
 }
 
 STRING 14031
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 11
+Iron Swords Level 11
 }
 
 STRING 14032
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 12
+Iron Swords Level 12
 }
 
 STRING 14033
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 13
+Iron Swords Level 13
 }
 
 STRING 14034
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 14
+Iron Swords Level 14
 }
 
 STRING 14035
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 15
+Iron Swords Level 15
 }
 
 STRING 14036
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 16
+Iron Swords Level 16
 }
 
 STRING 14037
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 17
+Iron Swords Level 17
 }
 
 STRING 14038
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 18
+Iron Swords Level 18
 }
 
 STRING 14039
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 19
+Iron Swords Level 19
 }
 
 STRING 14040
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 20
+Iron Swords Level 20
 }
 
 STRING 14041
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 21
+Iron Swords Level 21
 }
 
 STRING 14042
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 22
+Iron Swords Level 22
 }
 
 STRING 14043
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 23
+Iron Swords Level 23
 }
 
 STRING 14044
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 24
+Iron Swords Level 24
 }
 
 STRING 14045
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 25
+Iron Swords Level 25
 }
 
 STRING 14046
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 26
+Iron Swords Level 26
 }
 
 STRING 14047
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 27
+Iron Swords Level 27
 }
 
 STRING 14048
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 28
+Iron Swords Level 28
 }
 
 STRING 14049
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 29
+Iron Swords Level 29
 }
 
 STRING 14050
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 30
+Iron Swords Level 30
 }
 
 STRING 14051
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 31
+Iron Swords Level 31
 }
 
 STRING 14052
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 32
+Iron Swords Level 32
 }
 
 STRING 14053
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 33
+Iron Swords Level 33
 }
 
 STRING 14054
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 34
+Iron Swords Level 34
 }
 
 STRING 14055
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 35
+Iron Swords Level 35
 }
 
 STRING 14056
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 36
+Iron Swords Level 36
 }
 
 STRING 14057
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 37
+Iron Swords Level 37
 }
 
 STRING 14058
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 38
+Iron Swords Level 38
 }
 
 STRING 14059
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 39
+Iron Swords Level 39
 }
 
 STRING 14060
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 40
+Iron Swords Level 40
 }
 
 STRING 14061
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 41
+Iron Swords Level 41
 }
 
 STRING 14062
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 42
+Iron Swords Level 42
 }
 
 STRING 14063
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 43
+Iron Swords Level 43
 }
 
 STRING 14064
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 44
+Iron Swords Level 44
 }
 
 STRING 14065
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 45
+Iron Swords Level 45
 }
 
 STRING 14066
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 46
+Iron Swords Level 46
 }
 
 STRING 14067
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 47
+Iron Swords Level 47
 }
 
 STRING 14068
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 48
+Iron Swords Level 48
 }
 
 STRING 14069
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 49
+Iron Swords Level 49
 }
 
 STRING 14070
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 50
+Iron Swords Level 50
 }
 
 STRING 14071
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 51
+Iron Swords Level 51
 }
 
 STRING 14072
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 52
+Iron Swords Level 52
 }
 
 STRING 14073
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 53
+Iron Swords Level 53
 }
 
 STRING 14074
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 54
+Iron Swords Level 54
 }
 
 STRING 14075
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 55
+Iron Swords Level 55
 }
 
 STRING 14076
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 56
+Iron Swords Level 56
 }
 
 STRING 14077
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 57
+Iron Swords Level 57
 }
 
 STRING 14078
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 58
+Iron Swords Level 58
 }
 
 STRING 14079
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 59
+Iron Swords Level 59
 }
 
 STRING 14080
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 60
+Iron Swords Level 60
 }
 
 STRING 14081
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 61
+Iron Swords Level 61
 }
 
 STRING 14082
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 62
+Iron Swords Level 62
 }
 
 STRING 14083
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 63
+Iron Swords Level 63
 }
 
 STRING 14084
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 64
+Iron Swords Level 64
 }
 
 STRING 14085
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 65
+Iron Swords Level 65
 }
 
 STRING 14086
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 66
+Iron Swords Level 66
 }
 
 STRING 14087
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 67
+Iron Swords Level 67
 }
 
 STRING 14088
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 68
+Iron Swords Level 68
 }
 
 STRING 14089
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 69
+Iron Swords Level 69
 }
 
 STRING 14090
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 70
+Iron Swords Level 70
 }
 
 STRING 14091
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 71
+Iron Swords Level 71
 }
 
 STRING 14092
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 72
+Iron Swords Level 72
 }
 
 STRING 14093
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 73
+Iron Swords Level 73
 }
 
 STRING 14094
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 74
+Iron Swords Level 74
 }
 
 STRING 14095
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 75
+Iron Swords Level 75
 }
 
 STRING 14096
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 76
+Iron Swords Level 76
 }
 
 STRING 14097
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 77
+Iron Swords Level 77
 }
 
 STRING 14098
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 78
+Iron Swords Level 78
 }
 
 STRING 14099
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 79
+Iron Swords Level 79
 }
 
 STRING 14100
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 80
+Iron Swords Level 80
 }
 
 STRING 14101
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 81
+Iron Swords Level 81
 }
 
 STRING 14102
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 82
+Iron Swords Level 82
 }
 
 STRING 14103
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 83
+Iron Swords Level 83
 }
 
 STRING 14104
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 84
+Iron Swords Level 84
 }
 
 STRING 14105
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 85
+Iron Swords Level 85
 }
 
 STRING 14106
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 86
+Iron Swords Level 86
 }
 
 STRING 14107
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 87
+Iron Swords Level 87
 }
 
 STRING 14108
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 88
+Iron Swords Level 88
 }
 
 STRING 14109
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 89
+Iron Swords Level 89
 }
 
 STRING 14110
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 90
+Iron Swords Level 90
 }
 
 STRING 14111
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 91
+Iron Swords Level 91
 }
 
 STRING 14112
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 92
+Iron Swords Level 92
 }
 
 STRING 14113
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 93
+Iron Swords Level 93
 }
 
 STRING 14114
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 94
+Iron Swords Level 94
 }
 
 STRING 14115
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 95
+Iron Swords Level 95
 }
 
 STRING 14116
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 96
+Iron Swords Level 96
 }
 
 STRING 14117
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 97
+Iron Swords Level 97
 }
 
 STRING 14118
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 98
+Iron Swords Level 98
 }
 
 STRING 14119
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 99
+Iron Swords Level 99
 }
 
 STRING 14120
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Name (Name (gnam))
 {
-Eisen-Schwerter Stufe 100
+Iron Swords Level 100
 }
 
 STRING 14121
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 1
+Expansion to Iron Swords Level 1
 }
 
 STRING 14122
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 2
+Expansion to Iron Swords Level 2
 }
 
 STRING 14123
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 3
+Expansion to Iron Swords Level 3
 }
 
 STRING 14124
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 4
+Expansion to Iron Swords Level 4
 }
 
 STRING 14125
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 5
+Expansion to Iron Swords Level 5
 }
 
 STRING 14126
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 6
+Expansion to Iron Swords Level 6
 }
 
 STRING 14127
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 7
+Expansion to Iron Swords Level 7
 }
 
 STRING 14128
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 8
+Expansion to Iron Swords Level 8
 }
 
 STRING 14129
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 9
+Expansion to Iron Swords Level 9
 }
 
 STRING 14130
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 10
+Expansion to Iron Swords Level 10
 }
 
 STRING 14131
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 11
+Expansion to Iron Swords Level 11
 }
 
 STRING 14132
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 12
+Expansion to Iron Swords Level 12
 }
 
 STRING 14133
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 13
+Expansion to Iron Swords Level 13
 }
 
 STRING 14134
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 14
+Expansion to Iron Swords Level 14
 }
 
 STRING 14135
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 15
+Expansion to Iron Swords Level 15
 }
 
 STRING 14136
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 16
+Expansion to Iron Swords Level 16
 }
 
 STRING 14137
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 17
+Expansion to Iron Swords Level 17
 }
 
 STRING 14138
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 18
+Expansion to Iron Swords Level 18
 }
 
 STRING 14139
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 19
+Expansion to Iron Swords Level 19
 }
 
 STRING 14140
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 20
+Expansion to Iron Swords Level 20
 }
 
 STRING 14141
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 21
+Expansion to Iron Swords Level 21
 }
 
 STRING 14142
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 22
+Expansion to Iron Swords Level 22
 }
 
 STRING 14143
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 23
+Expansion to Iron Swords Level 23
 }
 
 STRING 14144
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 24
+Expansion to Iron Swords Level 24
 }
 
 STRING 14145
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 25
+Expansion to Iron Swords Level 25
 }
 
 STRING 14146
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 26
+Expansion to Iron Swords Level 26
 }
 
 STRING 14147
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 27
+Expansion to Iron Swords Level 27
 }
 
 STRING 14148
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 28
+Expansion to Iron Swords Level 28
 }
 
 STRING 14149
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 29
+Expansion to Iron Swords Level 29
 }
 
 STRING 14150
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 30
+Expansion to Iron Swords Level 30
 }
 
 STRING 14151
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 31
+Expansion to Iron Swords Level 31
 }
 
 STRING 14152
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 32
+Expansion to Iron Swords Level 32
 }
 
 STRING 14153
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 33
+Expansion to Iron Swords Level 33
 }
 
 STRING 14154
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 34
+Expansion to Iron Swords Level 34
 }
 
 STRING 14155
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 35
+Expansion to Iron Swords Level 35
 }
 
 STRING 14156
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 36
+Expansion to Iron Swords Level 36
 }
 
 STRING 14157
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 37
+Expansion to Iron Swords Level 37
 }
 
 STRING 14158
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 38
+Expansion to Iron Swords Level 38
 }
 
 STRING 14159
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 39
+Expansion to Iron Swords Level 39
 }
 
 STRING 14160
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 40
+Expansion to Iron Swords Level 40
 }
 
 STRING 14161
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 41
+Expansion to Iron Swords Level 41
 }
 
 STRING 14162
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 42
+Expansion to Iron Swords Level 42
 }
 
 STRING 14163
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 43
+Expansion to Iron Swords Level 43
 }
 
 STRING 14164
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 44
+Expansion to Iron Swords Level 44
 }
 
 STRING 14165
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 45
+Expansion to Iron Swords Level 45
 }
 
 STRING 14166
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 46
+Expansion to Iron Swords Level 46
 }
 
 STRING 14167
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 47
+Expansion to Iron Swords Level 47
 }
 
 STRING 14168
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 48
+Expansion to Iron Swords Level 48
 }
 
 STRING 14169
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 49
+Expansion to Iron Swords Level 49
 }
 
 STRING 14170
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 50
+Expansion to Iron Swords Level 50
 }
 
 STRING 14171
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 51
+Expansion to Iron Swords Level 51
 }
 
 STRING 14172
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 52
+Expansion to Iron Swords Level 52
 }
 
 STRING 14173
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 53
+Expansion to Iron Swords Level 53
 }
 
 STRING 14174
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 54
+Expansion to Iron Swords Level 54
 }
 
 STRING 14175
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 55
+Expansion to Iron Swords Level 55
 }
 
 STRING 14176
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 56
+Expansion to Iron Swords Level 56
 }
 
 STRING 14177
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 57
+Expansion to Iron Swords Level 57
 }
 
 STRING 14178
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 58
+Expansion to Iron Swords Level 58
 }
 
 STRING 14179
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 59
+Expansion to Iron Swords Level 59
 }
 
 STRING 14180
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 60
+Expansion to Iron Swords Level 60
 }
 
 STRING 14181
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 61
+Expansion to Iron Swords Level 61
 }
 
 STRING 14182
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 62
+Expansion to Iron Swords Level 62
 }
 
 STRING 14183
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 63
+Expansion to Iron Swords Level 63
 }
 
 STRING 14184
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 64
+Expansion to Iron Swords Level 64
 }
 
 STRING 14185
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 65
+Expansion to Iron Swords Level 65
 }
 
 STRING 14186
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 66
+Expansion to Iron Swords Level 66
 }
 
 STRING 14187
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 67
+Expansion to Iron Swords Level 67
 }
 
 STRING 14188
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 68
+Expansion to Iron Swords Level 68
 }
 
 STRING 14189
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 69
+Expansion to Iron Swords Level 69
 }
 
 STRING 14190
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 70
+Expansion to Iron Swords Level 70
 }
 
 STRING 14191
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 71
+Expansion to Iron Swords Level 71
 }
 
 STRING 14192
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 72
+Expansion to Iron Swords Level 72
 }
 
 STRING 14193
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 73
+Expansion to Iron Swords Level 73
 }
 
 STRING 14194
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 74
+Expansion to Iron Swords Level 74
 }
 
 STRING 14195
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 75
+Expansion to Iron Swords Level 75
 }
 
 STRING 14196
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 76
+Expansion to Iron Swords Level 76
 }
 
 STRING 14197
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 77
+Expansion to Iron Swords Level 77
 }
 
 STRING 14198
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 78
+Expansion to Iron Swords Level 78
 }
 
 STRING 14199
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 79
+Expansion to Iron Swords Level 79
 }
 
 STRING 14200
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 80
+Expansion to Iron Swords Level 80
 }
 
 STRING 14201
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 81
+Expansion to Iron Swords Level 81
 }
 
 STRING 14202
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 82
+Expansion to Iron Swords Level 82
 }
 
 STRING 14203
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 83
+Expansion to Iron Swords Level 83
 }
 
 STRING 14204
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 84
+Expansion to Iron Swords Level 84
 }
 
 STRING 14205
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 85
+Expansion to Iron Swords Level 85
 }
 
 STRING 14206
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 86
+Expansion to Iron Swords Level 86
 }
 
 STRING 14207
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 87
+Expansion to Iron Swords Level 87
 }
 
 STRING 14208
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 88
+Expansion to Iron Swords Level 88
 }
 
 STRING 14209
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 89
+Expansion to Iron Swords Level 89
 }
 
 STRING 14210
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 90
+Expansion to Iron Swords Level 90
 }
 
 STRING 14211
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 91
+Expansion to Iron Swords Level 91
 }
 
 STRING 14212
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 92
+Expansion to Iron Swords Level 92
 }
 
 STRING 14213
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 93
+Expansion to Iron Swords Level 93
 }
 
 STRING 14214
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 94
+Expansion to Iron Swords Level 94
 }
 
 STRING 14215
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 95
+Expansion to Iron Swords Level 95
 }
 
 STRING 14216
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 96
+Expansion to Iron Swords Level 96
 }
 
 STRING 14217
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 97
+Expansion to Iron Swords Level 97
 }
 
 STRING 14218
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 98
+Expansion to Iron Swords Level 98
 }
 
 STRING 14219
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 99
+Expansion to Iron Swords Level 99
 }
 
 STRING 14220
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Tip (Tooltipp (gtp1))
 {
-Ausbau zu Eisen-Schwertern Stufe 100
+Expansion to Iron Swords Level 100
 }
 
 STRING 14221
@@ -54361,1207 +54361,1207 @@ Improves the attack damage of the building.
 STRING 14321
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 1
+Berserker Power Level 1
 }
 
 STRING 14322
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 2
+Berserker Power Level 2
 }
 
 STRING 14323
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 3
+Berserker Power Level 3
 }
 
 STRING 14324
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 4
+Berserker Power Level 4
 }
 
 STRING 14325
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 5
+Berserker Power Level 5
 }
 
 STRING 14326
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 6
+Berserker Power Level 6
 }
 
 STRING 14327
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 7
+Berserker Power Level 7
 }
 
 STRING 14328
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 8
+Berserker Power Level 8
 }
 
 STRING 14329
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 9
+Berserker Power Level 9
 }
 
 STRING 14330
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 10
+Berserker Power Level 10
 }
 
 STRING 14331
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 11
+Berserker Power Level 11
 }
 
 STRING 14332
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 12
+Berserker Power Level 12
 }
 
 STRING 14333
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 13
+Berserker Power Level 13
 }
 
 STRING 14334
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 14
+Berserker Power Level 14
 }
 
 STRING 14335
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 15
+Berserker Power Level 15
 }
 
 STRING 14336
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 16
+Berserker Power Level 16
 }
 
 STRING 14337
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 17
+Berserker Power Level 17
 }
 
 STRING 14338
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 18
+Berserker Power Level 18
 }
 
 STRING 14339
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 19
+Berserker Power Level 19
 }
 
 STRING 14340
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 20
+Berserker Power Level 20
 }
 
 STRING 14341
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 21
+Berserker Power Level 21
 }
 
 STRING 14342
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 22
+Berserker Power Level 22
 }
 
 STRING 14343
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 23
+Berserker Power Level 23
 }
 
 STRING 14344
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 24
+Berserker Power Level 24
 }
 
 STRING 14345
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 25
+Berserker Power Level 25
 }
 
 STRING 14346
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 26
+Berserker Power Level 26
 }
 
 STRING 14347
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 27
+Berserker Power Level 27
 }
 
 STRING 14348
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 28
+Berserker Power Level 28
 }
 
 STRING 14349
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 29
+Berserker Power Level 29
 }
 
 STRING 14350
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 30
+Berserker Power Level 30
 }
 
 STRING 14351
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 31
+Berserker Power Level 31
 }
 
 STRING 14352
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 32
+Berserker Power Level 32
 }
 
 STRING 14353
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 33
+Berserker Power Level 33
 }
 
 STRING 14354
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 34
+Berserker Power Level 34
 }
 
 STRING 14355
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 35
+Berserker Power Level 35
 }
 
 STRING 14356
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 36
+Berserker Power Level 36
 }
 
 STRING 14357
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 37
+Berserker Power Level 37
 }
 
 STRING 14358
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 38
+Berserker Power Level 38
 }
 
 STRING 14359
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 39
+Berserker Power Level 39
 }
 
 STRING 14360
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 40
+Berserker Power Level 40
 }
 
 STRING 14361
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 41
+Berserker Power Level 41
 }
 
 STRING 14362
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 42
+Berserker Power Level 42
 }
 
 STRING 14363
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 43
+Berserker Power Level 43
 }
 
 STRING 14364
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 44
+Berserker Power Level 44
 }
 
 STRING 14365
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 45
+Berserker Power Level 45
 }
 
 STRING 14366
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 46
+Berserker Power Level 46
 }
 
 STRING 14367
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 47
+Berserker Power Level 47
 }
 
 STRING 14368
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 48
+Berserker Power Level 48
 }
 
 STRING 14369
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 49
+Berserker Power Level 49
 }
 
 STRING 14370
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 50
+Berserker Power Level 50
 }
 
 STRING 14371
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 51
+Berserker Power Level 51
 }
 
 STRING 14372
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 52
+Berserker Power Level 52
 }
 
 STRING 14373
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 53
+Berserker Power Level 53
 }
 
 STRING 14374
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 54
+Berserker Power Level 54
 }
 
 STRING 14375
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 55
+Berserker Power Level 55
 }
 
 STRING 14376
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 56
+Berserker Power Level 56
 }
 
 STRING 14377
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 57
+Berserker Power Level 57
 }
 
 STRING 14378
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 58
+Berserker Power Level 58
 }
 
 STRING 14379
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 59
+Berserker Power Level 59
 }
 
 STRING 14380
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 60
+Berserker Power Level 60
 }
 
 STRING 14381
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 61
+Berserker Power Level 61
 }
 
 STRING 14382
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 62
+Berserker Power Level 62
 }
 
 STRING 14383
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 63
+Berserker Power Level 63
 }
 
 STRING 14384
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 64
+Berserker Power Level 64
 }
 
 STRING 14385
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 65
+Berserker Power Level 65
 }
 
 STRING 14386
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 66
+Berserker Power Level 66
 }
 
 STRING 14387
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 67
+Berserker Power Level 67
 }
 
 STRING 14388
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 68
+Berserker Power Level 68
 }
 
 STRING 14389
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 69
+Berserker Power Level 69
 }
 
 STRING 14390
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 70
+Berserker Power Level 70
 }
 
 STRING 14391
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 71
+Berserker Power Level 71
 }
 
 STRING 14392
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 72
+Berserker Power Level 72
 }
 
 STRING 14393
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 73
+Berserker Power Level 73
 }
 
 STRING 14394
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 74
+Berserker Power Level 74
 }
 
 STRING 14395
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 75
+Berserker Power Level 75
 }
 
 STRING 14396
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 76
+Berserker Power Level 76
 }
 
 STRING 14397
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 77
+Berserker Power Level 77
 }
 
 STRING 14398
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 78
+Berserker Power Level 78
 }
 
 STRING 14399
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 79
+Berserker Power Level 79
 }
 
 STRING 14400
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 80
+Berserker Power Level 80
 }
 
 STRING 14401
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 81
+Berserker Power Level 81
 }
 
 STRING 14402
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 82
+Berserker Power Level 82
 }
 
 STRING 14403
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 83
+Berserker Power Level 83
 }
 
 STRING 14404
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 84
+Berserker Power Level 84
 }
 
 STRING 14405
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 85
+Berserker Power Level 85
 }
 
 STRING 14406
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 86
+Berserker Power Level 86
 }
 
 STRING 14407
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 87
+Berserker Power Level 87
 }
 
 STRING 14408
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 88
+Berserker Power Level 88
 }
 
 STRING 14409
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 89
+Berserker Power Level 89
 }
 
 STRING 14410
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 90
+Berserker Power Level 90
 }
 
 STRING 14411
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 91
+Berserker Power Level 91
 }
 
 STRING 14412
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 92
+Berserker Power Level 92
 }
 
 STRING 14413
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 93
+Berserker Power Level 93
 }
 
 STRING 14414
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 94
+Berserker Power Level 94
 }
 
 STRING 14415
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 95
+Berserker Power Level 95
 }
 
 STRING 14416
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 96
+Berserker Power Level 96
 }
 
 STRING 14417
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 97
+Berserker Power Level 97
 }
 
 STRING 14418
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 98
+Berserker Power Level 98
 }
 
 STRING 14419
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 99
+Berserker Power Level 99
 }
 
 STRING 14420
 // Ausbaustufen: R004 (Berserker-Kraft), Name (Name (gnam))
 {
-Berserker-Kraft Stufe 100
+Berserker Power Level 100
 }
 
 STRING 14421
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 1 erforschen
+Research Berserker Power Level 1
 }
 
 STRING 14422
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 2 erforschen
+Research Berserker Power Level 2
 }
 
 STRING 14423
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 3 erforschen
+Research Berserker Power Level 3
 }
 
 STRING 14424
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 4 erforschen
+Research Berserker Power Level 4
 }
 
 STRING 14425
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 5 erforschen
+Research Berserker Power Level 5
 }
 
 STRING 14426
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 6 erforschen
+Research Berserker Power Level 6
 }
 
 STRING 14427
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 7 erforschen
+Research Berserker Power Level 7
 }
 
 STRING 14428
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 8 erforschen
+Research Berserker Power Level 8
 }
 
 STRING 14429
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 9 erforschen
+Research Berserker Power Level 9
 }
 
 STRING 14430
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 10 erforschen
+Research Berserker Power Level 10
 }
 
 STRING 14431
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 11 erforschen
+Research Berserker Power Level 11
 }
 
 STRING 14432
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 12 erforschen
+Research Berserker Power Level 12
 }
 
 STRING 14433
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 13 erforschen
+Research Berserker Power Level 13
 }
 
 STRING 14434
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 14 erforschen
+Research Berserker Power Level 14
 }
 
 STRING 14435
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 15 erforschen
+Research Berserker Power Level 15
 }
 
 STRING 14436
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 16 erforschen
+Research Berserker Power Level 16
 }
 
 STRING 14437
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 17 erforschen
+Research Berserker Power Level 17
 }
 
 STRING 14438
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 18 erforschen
+Research Berserker Power Level 18
 }
 
 STRING 14439
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 19 erforschen
+Research Berserker Power Level 19
 }
 
 STRING 14440
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 20 erforschen
+Research Berserker Power Level 20
 }
 
 STRING 14441
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 21 erforschen
+Research Berserker Power Level 21
 }
 
 STRING 14442
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 22 erforschen
+Research Berserker Power Level 22
 }
 
 STRING 14443
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 23 erforschen
+Research Berserker Power Level 23
 }
 
 STRING 14444
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 24 erforschen
+Research Berserker Power Level 24
 }
 
 STRING 14445
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 25 erforschen
+Research Berserker Power Level 25
 }
 
 STRING 14446
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 26 erforschen
+Research Berserker Power Level 26
 }
 
 STRING 14447
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 27 erforschen
+Research Berserker Power Level 27
 }
 
 STRING 14448
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 28 erforschen
+Research Berserker Power Level 28
 }
 
 STRING 14449
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 29 erforschen
+Research Berserker Power Level 29
 }
 
 STRING 14450
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 30 erforschen
+Research Berserker Power Level 30
 }
 
 STRING 14451
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 31 erforschen
+Research Berserker Power Level 31
 }
 
 STRING 14452
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 32 erforschen
+Research Berserker Power Level 32
 }
 
 STRING 14453
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 33 erforschen
+Research Berserker Power Level 33
 }
 
 STRING 14454
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 34 erforschen
+Research Berserker Power Level 34
 }
 
 STRING 14455
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 35 erforschen
+Research Berserker Power Level 35
 }
 
 STRING 14456
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 36 erforschen
+Research Berserker Power Level 36
 }
 
 STRING 14457
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 37 erforschen
+Research Berserker Power Level 37
 }
 
 STRING 14458
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 38 erforschen
+Research Berserker Power Level 38
 }
 
 STRING 14459
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 39 erforschen
+Research Berserker Power Level 39
 }
 
 STRING 14460
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 40 erforschen
+Research Berserker Power Level 40
 }
 
 STRING 14461
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 41 erforschen
+Research Berserker Power Level 41
 }
 
 STRING 14462
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 42 erforschen
+Research Berserker Power Level 42
 }
 
 STRING 14463
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 43 erforschen
+Research Berserker Power Level 43
 }
 
 STRING 14464
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 44 erforschen
+Research Berserker Power Level 44
 }
 
 STRING 14465
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 45 erforschen
+Research Berserker Power Level 45
 }
 
 STRING 14466
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 46 erforschen
+Research Berserker Power Level 46
 }
 
 STRING 14467
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 47 erforschen
+Research Berserker Power Level 47
 }
 
 STRING 14468
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 48 erforschen
+Research Berserker Power Level 48
 }
 
 STRING 14469
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 49 erforschen
+Research Berserker Power Level 49
 }
 
 STRING 14470
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 50 erforschen
+Research Berserker Power Level 50
 }
 
 STRING 14471
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 51 erforschen
+Research Berserker Power Level 51
 }
 
 STRING 14472
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 52 erforschen
+Research Berserker Power Level 52
 }
 
 STRING 14473
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 53 erforschen
+Research Berserker Power Level 53
 }
 
 STRING 14474
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 54 erforschen
+Research Berserker Power Level 54
 }
 
 STRING 14475
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 55 erforschen
+Research Berserker Power Level 55
 }
 
 STRING 14476
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 56 erforschen
+Research Berserker Power Level 56
 }
 
 STRING 14477
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 57 erforschen
+Research Berserker Power Level 57
 }
 
 STRING 14478
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 58 erforschen
+Research Berserker Power Level 58
 }
 
 STRING 14479
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 59 erforschen
+Research Berserker Power Level 59
 }
 
 STRING 14480
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 60 erforschen
+Research Berserker Power Level 60
 }
 
 STRING 14481
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 61 erforschen
+Research Berserker Power Level 61
 }
 
 STRING 14482
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 62 erforschen
+Research Berserker Power Level 62
 }
 
 STRING 14483
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 63 erforschen
+Research Berserker Power Level 63
 }
 
 STRING 14484
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 64 erforschen
+Research Berserker Power Level 64
 }
 
 STRING 14485
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 65 erforschen
+Research Berserker Power Level 65
 }
 
 STRING 14486
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 66 erforschen
+Research Berserker Power Level 66
 }
 
 STRING 14487
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 67 erforschen
+Research Berserker Power Level 67
 }
 
 STRING 14488
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 68 erforschen
+Research Berserker Power Level 68
 }
 
 STRING 14489
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 69 erforschen
+Research Berserker Power Level 69
 }
 
 STRING 14490
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 70 erforschen
+Research Berserker Power Level 70
 }
 
 STRING 14491
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 71 erforschen
+Research Berserker Power Level 71
 }
 
 STRING 14492
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 72 erforschen
+Research Berserker Power Level 72
 }
 
 STRING 14493
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 73 erforschen
+Research Berserker Power Level 73
 }
 
 STRING 14494
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 74 erforschen
+Research Berserker Power Level 74
 }
 
 STRING 14495
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 75 erforschen
+Research Berserker Power Level 75
 }
 
 STRING 14496
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 76 erforschen
+Research Berserker Power Level 76
 }
 
 STRING 14497
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 77 erforschen
+Research Berserker Power Level 77
 }
 
 STRING 14498
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 78 erforschen
+Research Berserker Power Level 78
 }
 
 STRING 14499
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 79 erforschen
+Research Berserker Power Level 79
 }
 
 STRING 14500
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 80 erforschen
+Research Berserker Power Level 80
 }
 
 STRING 14501
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 81 erforschen
+Research Berserker Power Level 81
 }
 
 STRING 14502
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 82 erforschen
+Research Berserker Power Level 82
 }
 
 STRING 14503
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 83 erforschen
+Research Berserker Power Level 83
 }
 
 STRING 14504
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 84 erforschen
+Research Berserker Power Level 84
 }
 
 STRING 14505
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 85 erforschen
+Research Berserker Power Level 85
 }
 
 STRING 14506
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 86 erforschen
+Research Berserker Power Level 86
 }
 
 STRING 14507
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 87 erforschen
+Research Berserker Power Level 87
 }
 
 STRING 14508
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 88 erforschen
+Research Berserker Power Level 88
 }
 
 STRING 14509
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 89 erforschen
+Research Berserker Power Level 89
 }
 
 STRING 14510
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 90 erforschen
+Research Berserker Power Level 90
 }
 
 STRING 14511
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 91 erforschen
+Research Berserker Power Level 91
 }
 
 STRING 14512
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 92 erforschen
+Research Berserker Power Level 92
 }
 
 STRING 14513
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 93 erforschen
+Research Berserker Power Level 93
 }
 
 STRING 14514
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 94 erforschen
+Research Berserker Power Level 94
 }
 
 STRING 14515
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 95 erforschen
+Research Berserker Power Level 95
 }
 
 STRING 14516
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 96 erforschen
+Research Berserker Power Level 96
 }
 
 STRING 14517
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 97 erforschen
+Research Berserker Power Level 97
 }
 
 STRING 14518
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 98 erforschen
+Research Berserker Power Level 98
 }
 
 STRING 14519
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 99 erforschen
+Research Berserker Power Level 99
 }
 
 STRING 14520
 // Ausbaustufen: R004 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Berserker-Kraft Stufe 100 erforschen
+Research Berserker Power Level 100
 }
 
 STRING 14521
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14522
@@ -57967,1201 +57967,1201 @@ rart
 STRING 14922
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 1
+Spike Barricades Level 1
 }
 
 STRING 14923
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 2
+Spike Barricades Level 2
 }
 
 STRING 14924
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 3
+Spike Barricades Level 3
 }
 
 STRING 14925
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 4
+Spike Barricades Level 4
 }
 
 STRING 14926
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 5
+Spike Barricades Level 5
 }
 
 STRING 14927
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 6
+Spike Barricades Level 6
 }
 
 STRING 14928
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 7
+Spike Barricades Level 7
 }
 
 STRING 14929
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 8
+Spike Barricades Level 8
 }
 
 STRING 14930
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 9
+Spike Barricades Level 9
 }
 
 STRING 14931
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 10
+Spike Barricades Level 10
 }
 
 STRING 14932
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 11
+Spike Barricades Level 11
 }
 
 STRING 14933
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 12
+Spike Barricades Level 12
 }
 
 STRING 14934
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 13
+Spike Barricades Level 13
 }
 
 STRING 14935
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 14
+Spike Barricades Level 14
 }
 
 STRING 14936
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 15
+Spike Barricades Level 15
 }
 
 STRING 14937
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 16
+Spike Barricades Level 16
 }
 
 STRING 14938
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 17
+Spike Barricades Level 17
 }
 
 STRING 14939
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 18
+Spike Barricades Level 18
 }
 
 STRING 14940
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 19
+Spike Barricades Level 19
 }
 
 STRING 14941
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 20
+Spike Barricades Level 20
 }
 
 STRING 14942
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 21
+Spike Barricades Level 21
 }
 
 STRING 14943
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 22
+Spike Barricades Level 22
 }
 
 STRING 14944
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 23
+Spike Barricades Level 23
 }
 
 STRING 14945
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 24
+Spike Barricades Level 24
 }
 
 STRING 14946
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 25
+Spike Barricades Level 25
 }
 
 STRING 14947
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 26
+Spike Barricades Level 26
 }
 
 STRING 14948
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 27
+Spike Barricades Level 27
 }
 
 STRING 14949
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 28
+Spike Barricades Level 28
 }
 
 STRING 14950
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 29
+Spike Barricades Level 29
 }
 
 STRING 14951
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 30
+Spike Barricades Level 30
 }
 
 STRING 14952
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 31
+Spike Barricades Level 31
 }
 
 STRING 14953
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 32
+Spike Barricades Level 32
 }
 
 STRING 14954
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 33
+Spike Barricades Level 33
 }
 
 STRING 14955
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 34
+Spike Barricades Level 34
 }
 
 STRING 14956
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 35
+Spike Barricades Level 35
 }
 
 STRING 14957
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 36
+Spike Barricades Level 36
 }
 
 STRING 14958
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 37
+Spike Barricades Level 37
 }
 
 STRING 14959
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 38
+Spike Barricades Level 38
 }
 
 STRING 14960
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 39
+Spike Barricades Level 39
 }
 
 STRING 14961
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 40
+Spike Barricades Level 40
 }
 
 STRING 14962
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 41
+Spike Barricades Level 41
 }
 
 STRING 14963
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 42
+Spike Barricades Level 42
 }
 
 STRING 14964
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 43
+Spike Barricades Level 43
 }
 
 STRING 14965
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 44
+Spike Barricades Level 44
 }
 
 STRING 14966
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 45
+Spike Barricades Level 45
 }
 
 STRING 14967
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 46
+Spike Barricades Level 46
 }
 
 STRING 14968
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 47
+Spike Barricades Level 47
 }
 
 STRING 14969
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 48
+Spike Barricades Level 48
 }
 
 STRING 14970
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 49
+Spike Barricades Level 49
 }
 
 STRING 14971
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 50
+Spike Barricades Level 50
 }
 
 STRING 14972
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 51
+Spike Barricades Level 51
 }
 
 STRING 14973
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 52
+Spike Barricades Level 52
 }
 
 STRING 14974
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 53
+Spike Barricades Level 53
 }
 
 STRING 14975
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 54
+Spike Barricades Level 54
 }
 
 STRING 14976
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 55
+Spike Barricades Level 55
 }
 
 STRING 14977
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 56
+Spike Barricades Level 56
 }
 
 STRING 14978
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 57
+Spike Barricades Level 57
 }
 
 STRING 14979
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 58
+Spike Barricades Level 58
 }
 
 STRING 14980
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 59
+Spike Barricades Level 59
 }
 
 STRING 14981
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 60
+Spike Barricades Level 60
 }
 
 STRING 14982
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 61
+Spike Barricades Level 61
 }
 
 STRING 14983
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 62
+Spike Barricades Level 62
 }
 
 STRING 14984
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 63
+Spike Barricades Level 63
 }
 
 STRING 14985
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 64
+Spike Barricades Level 64
 }
 
 STRING 14986
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 65
+Spike Barricades Level 65
 }
 
 STRING 14987
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 66
+Spike Barricades Level 66
 }
 
 STRING 14988
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 67
+Spike Barricades Level 67
 }
 
 STRING 14989
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 68
+Spike Barricades Level 68
 }
 
 STRING 14990
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 69
+Spike Barricades Level 69
 }
 
 STRING 14991
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 70
+Spike Barricades Level 70
 }
 
 STRING 14992
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 71
+Spike Barricades Level 71
 }
 
 STRING 14993
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 72
+Spike Barricades Level 72
 }
 
 STRING 14994
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 73
+Spike Barricades Level 73
 }
 
 STRING 14995
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 74
+Spike Barricades Level 74
 }
 
 STRING 14996
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 75
+Spike Barricades Level 75
 }
 
 STRING 14997
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 76
+Spike Barricades Level 76
 }
 
 STRING 14998
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 77
+Spike Barricades Level 77
 }
 
 STRING 14999
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 78
+Spike Barricades Level 78
 }
 
 STRING 15000
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 79
+Spike Barricades Level 79
 }
 
 STRING 15001
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 80
+Spike Barricades Level 80
 }
 
 STRING 15002
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 81
+Spike Barricades Level 81
 }
 
 STRING 15003
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 82
+Spike Barricades Level 82
 }
 
 STRING 15004
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 83
+Spike Barricades Level 83
 }
 
 STRING 15005
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 84
+Spike Barricades Level 84
 }
 
 STRING 15006
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 85
+Spike Barricades Level 85
 }
 
 STRING 15007
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 86
+Spike Barricades Level 86
 }
 
 STRING 15008
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 87
+Spike Barricades Level 87
 }
 
 STRING 15009
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 88
+Spike Barricades Level 88
 }
 
 STRING 15010
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 89
+Spike Barricades Level 89
 }
 
 STRING 15011
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 90
+Spike Barricades Level 90
 }
 
 STRING 15012
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 91
+Spike Barricades Level 91
 }
 
 STRING 15013
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 92
+Spike Barricades Level 92
 }
 
 STRING 15014
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 93
+Spike Barricades Level 93
 }
 
 STRING 15015
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 94
+Spike Barricades Level 94
 }
 
 STRING 15016
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 95
+Spike Barricades Level 95
 }
 
 STRING 15017
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 96
+Spike Barricades Level 96
 }
 
 STRING 15018
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 97
+Spike Barricades Level 97
 }
 
 STRING 15019
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 98
+Spike Barricades Level 98
 }
 
 STRING 15020
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 99
+Spike Barricades Level 99
 }
 
 STRING 15021
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Name (Name (gnam))
 {
-Stachelbarrikaden Stufe 100
+Spike Barricades Level 100
 }
 
 STRING 15022
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 1
+Expansion to Spike Barricades Level 1
 }
 
 STRING 15023
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 2
+Expansion to Spike Barricades Level 2
 }
 
 STRING 15024
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 3
+Expansion to Spike Barricades Level 3
 }
 
 STRING 15025
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 4
+Expansion to Spike Barricades Level 4
 }
 
 STRING 15026
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 5
+Expansion to Spike Barricades Level 5
 }
 
 STRING 15027
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 6
+Expansion to Spike Barricades Level 6
 }
 
 STRING 15028
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 7
+Expansion to Spike Barricades Level 7
 }
 
 STRING 15029
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 8
+Expansion to Spike Barricades Level 8
 }
 
 STRING 15030
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 9
+Expansion to Spike Barricades Level 9
 }
 
 STRING 15031
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 10
+Expansion to Spike Barricades Level 10
 }
 
 STRING 15032
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 11
+Expansion to Spike Barricades Level 11
 }
 
 STRING 15033
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 12
+Expansion to Spike Barricades Level 12
 }
 
 STRING 15034
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 13
+Expansion to Spike Barricades Level 13
 }
 
 STRING 15035
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 14
+Expansion to Spike Barricades Level 14
 }
 
 STRING 15036
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 15
+Expansion to Spike Barricades Level 15
 }
 
 STRING 15037
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 16
+Expansion to Spike Barricades Level 16
 }
 
 STRING 15038
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 17
+Expansion to Spike Barricades Level 17
 }
 
 STRING 15039
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 18
+Expansion to Spike Barricades Level 18
 }
 
 STRING 15040
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 19
+Expansion to Spike Barricades Level 19
 }
 
 STRING 15041
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 20
+Expansion to Spike Barricades Level 20
 }
 
 STRING 15042
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 21
+Expansion to Spike Barricades Level 21
 }
 
 STRING 15043
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 22
+Expansion to Spike Barricades Level 22
 }
 
 STRING 15044
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 23
+Expansion to Spike Barricades Level 23
 }
 
 STRING 15045
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 24
+Expansion to Spike Barricades Level 24
 }
 
 STRING 15046
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 25
+Expansion to Spike Barricades Level 25
 }
 
 STRING 15047
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 26
+Expansion to Spike Barricades Level 26
 }
 
 STRING 15048
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 27
+Expansion to Spike Barricades Level 27
 }
 
 STRING 15049
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 28
+Expansion to Spike Barricades Level 28
 }
 
 STRING 15050
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 29
+Expansion to Spike Barricades Level 29
 }
 
 STRING 15051
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 30
+Expansion to Spike Barricades Level 30
 }
 
 STRING 15052
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 31
+Expansion to Spike Barricades Level 31
 }
 
 STRING 15053
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 32
+Expansion to Spike Barricades Level 32
 }
 
 STRING 15054
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 33
+Expansion to Spike Barricades Level 33
 }
 
 STRING 15055
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 34
+Expansion to Spike Barricades Level 34
 }
 
 STRING 15056
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 35
+Expansion to Spike Barricades Level 35
 }
 
 STRING 15057
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 36
+Expansion to Spike Barricades Level 36
 }
 
 STRING 15058
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 37
+Expansion to Spike Barricades Level 37
 }
 
 STRING 15059
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 38
+Expansion to Spike Barricades Level 38
 }
 
 STRING 15060
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 39
+Expansion to Spike Barricades Level 39
 }
 
 STRING 15061
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 40
+Expansion to Spike Barricades Level 40
 }
 
 STRING 15062
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 41
+Expansion to Spike Barricades Level 41
 }
 
 STRING 15063
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 42
+Expansion to Spike Barricades Level 42
 }
 
 STRING 15064
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 43
+Expansion to Spike Barricades Level 43
 }
 
 STRING 15065
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 44
+Expansion to Spike Barricades Level 44
 }
 
 STRING 15066
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 45
+Expansion to Spike Barricades Level 45
 }
 
 STRING 15067
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 46
+Expansion to Spike Barricades Level 46
 }
 
 STRING 15068
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 47
+Expansion to Spike Barricades Level 47
 }
 
 STRING 15069
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 48
+Expansion to Spike Barricades Level 48
 }
 
 STRING 15070
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 49
+Expansion to Spike Barricades Level 49
 }
 
 STRING 15071
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 50
+Expansion to Spike Barricades Level 50
 }
 
 STRING 15072
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 51
+Expansion to Spike Barricades Level 51
 }
 
 STRING 15073
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 52
+Expansion to Spike Barricades Level 52
 }
 
 STRING 15074
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 53
+Expansion to Spike Barricades Level 53
 }
 
 STRING 15075
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 54
+Expansion to Spike Barricades Level 54
 }
 
 STRING 15076
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 55
+Expansion to Spike Barricades Level 55
 }
 
 STRING 15077
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 56
+Expansion to Spike Barricades Level 56
 }
 
 STRING 15078
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 57
+Expansion to Spike Barricades Level 57
 }
 
 STRING 15079
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 58
+Expansion to Spike Barricades Level 58
 }
 
 STRING 15080
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 59
+Expansion to Spike Barricades Level 59
 }
 
 STRING 15081
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 60
+Expansion to Spike Barricades Level 60
 }
 
 STRING 15082
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 61
+Expansion to Spike Barricades Level 61
 }
 
 STRING 15083
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 62
+Expansion to Spike Barricades Level 62
 }
 
 STRING 15084
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 63
+Expansion to Spike Barricades Level 63
 }
 
 STRING 15085
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 64
+Expansion to Spike Barricades Level 64
 }
 
 STRING 15086
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 65
+Expansion to Spike Barricades Level 65
 }
 
 STRING 15087
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 66
+Expansion to Spike Barricades Level 66
 }
 
 STRING 15088
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 67
+Expansion to Spike Barricades Level 67
 }
 
 STRING 15089
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 68
+Expansion to Spike Barricades Level 68
 }
 
 STRING 15090
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 69
+Expansion to Spike Barricades Level 69
 }
 
 STRING 15091
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 70
+Expansion to Spike Barricades Level 70
 }
 
 STRING 15092
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 71
+Expansion to Spike Barricades Level 71
 }
 
 STRING 15093
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 72
+Expansion to Spike Barricades Level 72
 }
 
 STRING 15094
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 73
+Expansion to Spike Barricades Level 73
 }
 
 STRING 15095
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 74
+Expansion to Spike Barricades Level 74
 }
 
 STRING 15096
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 75
+Expansion to Spike Barricades Level 75
 }
 
 STRING 15097
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 76
+Expansion to Spike Barricades Level 76
 }
 
 STRING 15098
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 77
+Expansion to Spike Barricades Level 77
 }
 
 STRING 15099
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 78
+Expansion to Spike Barricades Level 78
 }
 
 STRING 15100
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 79
+Expansion to Spike Barricades Level 79
 }
 
 STRING 15101
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 80
+Expansion to Spike Barricades Level 80
 }
 
 STRING 15102
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 81
+Expansion to Spike Barricades Level 81
 }
 
 STRING 15103
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 82
+Expansion to Spike Barricades Level 82
 }
 
 STRING 15104
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 83
+Expansion to Spike Barricades Level 83
 }
 
 STRING 15105
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 84
+Expansion to Spike Barricades Level 84
 }
 
 STRING 15106
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 85
+Expansion to Spike Barricades Level 85
 }
 
 STRING 15107
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 86
+Expansion to Spike Barricades Level 86
 }
 
 STRING 15108
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 87
+Expansion to Spike Barricades Level 87
 }
 
 STRING 15109
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 88
+Expansion to Spike Barricades Level 88
 }
 
 STRING 15110
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 89
+Expansion to Spike Barricades Level 89
 }
 
 STRING 15111
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 90
+Expansion to Spike Barricades Level 90
 }
 
 STRING 15112
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 91
+Expansion to Spike Barricades Level 91
 }
 
 STRING 15113
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 92
+Expansion to Spike Barricades Level 92
 }
 
 STRING 15114
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 93
+Expansion to Spike Barricades Level 93
 }
 
 STRING 15115
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 94
+Expansion to Spike Barricades Level 94
 }
 
 STRING 15116
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 95
+Expansion to Spike Barricades Level 95
 }
 
 STRING 15117
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 96
+Expansion to Spike Barricades Level 96
 }
 
 STRING 15118
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 97
+Expansion to Spike Barricades Level 97
 }
 
 STRING 15119
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 98
+Expansion to Spike Barricades Level 98
 }
 
 STRING 15120
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 99
+Expansion to Spike Barricades Level 99
 }
 
 STRING 15121
 // Ausbaustufen: R006 (Stachelbarrikaden,Verbesserte Stachelbarrikaden,Hoch entwickelte Stachelbarrika), Tip (Tooltipp (gtp1))
 {
-Ausbau zur Stachelbarrikade Stufe 100
+Expansion to Spike Barricades Level 100
 }
 
 STRING 15122
@@ -66111,49 +66111,49 @@ Armour
 STRING 16787
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 4
+Fast Trade Level 4
 }
 
 STRING 16788
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 5
+Fast Trade Level 5
 }
 
 STRING 16789
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 6
+Fast Trade Level 6
 }
 
 STRING 16792
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 7
+Fast Trade Level 7
 }
 
 STRING 16801
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 8
+Fast Trade Level 8
 }
 
 STRING 16802
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 9
+Fast Trade Level 9
 }
 
 STRING 16803
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 10
+Fast Trade Level 10
 }
 
 STRING 16806
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 11
+Fast Trade Level 11
 }
 
 STRING 16814
@@ -66165,19 +66165,19 @@ Pestkarren erlernen
 STRING 16815
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 12
+Fast Trade Level 12
 }
 
 STRING 16816
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 13
+Fast Trade Level 13
 }
 
 STRING 16817
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 14
+Fast Trade Level 14
 }
 
 STRING 16820
@@ -66195,49 +66195,49 @@ Verteidigen - Stufe 1
 STRING 16822
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 15
+Fast Trade Level 15
 }
 
 STRING 16823
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 16
+Fast Trade Level 16
 }
 
 STRING 16824
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 17
+Fast Trade Level 17
 }
 
 STRING 16825
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 18
+Fast Trade Level 18
 }
 
 STRING 16826
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 19
+Fast Trade Level 19
 }
 
 STRING 16827
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 20
+Fast Trade Level 20
 }
 
 STRING 16828
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 21
+Fast Trade Level 21
 }
 
 STRING 16829
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 22
+Fast Trade Level 22
 }
 
 STRING 16830
@@ -66411,1069 +66411,1069 @@ Junge Wildschweine
 STRING 16860
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 23
+Fast Trade Level 23
 }
 
 STRING 16861
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 24
+Fast Trade Level 24
 }
 
 STRING 16862
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 25
+Fast Trade Level 25
 }
 
 STRING 16863
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 26
+Fast Trade Level 26
 }
 
 STRING 16864
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 27
+Fast Trade Level 27
 }
 
 STRING 16865
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 28
+Fast Trade Level 28
 }
 
 STRING 16866
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 29
+Fast Trade Level 29
 }
 
 STRING 16867
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 30
+Fast Trade Level 30
 }
 
 STRING 16868
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 31
+Fast Trade Level 31
 }
 
 STRING 16869
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 32
+Fast Trade Level 32
 }
 
 STRING 16870
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 33
+Fast Trade Level 33
 }
 
 STRING 16871
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 34
+Fast Trade Level 34
 }
 
 STRING 16872
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 35
+Fast Trade Level 35
 }
 
 STRING 16873
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 36
+Fast Trade Level 36
 }
 
 STRING 16874
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 37
+Fast Trade Level 37
 }
 
 STRING 16875
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 38
+Fast Trade Level 38
 }
 
 STRING 16876
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 39
+Fast Trade Level 39
 }
 
 STRING 16877
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 40
+Fast Trade Level 40
 }
 
 STRING 16878
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 41
+Fast Trade Level 41
 }
 
 STRING 16879
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 42
+Fast Trade Level 42
 }
 
 STRING 16880
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 43
+Fast Trade Level 43
 }
 
 STRING 16881
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 44
+Fast Trade Level 44
 }
 
 STRING 16882
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 45
+Fast Trade Level 45
 }
 
 STRING 16883
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 46
+Fast Trade Level 46
 }
 
 STRING 16884
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 47
+Fast Trade Level 47
 }
 
 STRING 16885
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 48
+Fast Trade Level 48
 }
 
 STRING 16886
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 49
+Fast Trade Level 49
 }
 
 STRING 16887
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 50
+Fast Trade Level 50
 }
 
 STRING 16888
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 51
+Fast Trade Level 51
 }
 
 STRING 16889
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 52
+Fast Trade Level 52
 }
 
 STRING 16890
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 53
+Fast Trade Level 53
 }
 
 STRING 16891
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 54
+Fast Trade Level 54
 }
 
 STRING 16892
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 55
+Fast Trade Level 55
 }
 
 STRING 16893
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 56
+Fast Trade Level 56
 }
 
 STRING 16894
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 57
+Fast Trade Level 57
 }
 
 STRING 16895
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 58
+Fast Trade Level 58
 }
 
 STRING 16896
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 59
+Fast Trade Level 59
 }
 
 STRING 16897
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 60
+Fast Trade Level 60
 }
 
 STRING 16898
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 61
+Fast Trade Level 61
 }
 
 STRING 16899
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 62
+Fast Trade Level 62
 }
 
 STRING 16900
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 63
+Fast Trade Level 63
 }
 
 STRING 16901
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 64
+Fast Trade Level 64
 }
 
 STRING 16902
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 65
+Fast Trade Level 65
 }
 
 STRING 16903
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 66
+Fast Trade Level 66
 }
 
 STRING 16904
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 67
+Fast Trade Level 67
 }
 
 STRING 16905
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 68
+Fast Trade Level 68
 }
 
 STRING 16906
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 69
+Fast Trade Level 69
 }
 
 STRING 16907
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 70
+Fast Trade Level 70
 }
 
 STRING 16908
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 71
+Fast Trade Level 71
 }
 
 STRING 16909
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 72
+Fast Trade Level 72
 }
 
 STRING 16910
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 73
+Fast Trade Level 73
 }
 
 STRING 16911
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 74
+Fast Trade Level 74
 }
 
 STRING 16912
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 75
+Fast Trade Level 75
 }
 
 STRING 16913
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 76
+Fast Trade Level 76
 }
 
 STRING 16914
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 77
+Fast Trade Level 77
 }
 
 STRING 16915
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 78
+Fast Trade Level 78
 }
 
 STRING 16916
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 79
+Fast Trade Level 79
 }
 
 STRING 16917
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 80
+Fast Trade Level 80
 }
 
 STRING 16918
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 81
+Fast Trade Level 81
 }
 
 STRING 16919
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 82
+Fast Trade Level 82
 }
 
 STRING 16920
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 83
+Fast Trade Level 83
 }
 
 STRING 16921
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 84
+Fast Trade Level 84
 }
 
 STRING 16922
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 85
+Fast Trade Level 85
 }
 
 STRING 16923
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 86
+Fast Trade Level 86
 }
 
 STRING 16924
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 87
+Fast Trade Level 87
 }
 
 STRING 16925
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 88
+Fast Trade Level 88
 }
 
 STRING 16926
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 89
+Fast Trade Level 89
 }
 
 STRING 16927
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 90
+Fast Trade Level 90
 }
 
 STRING 16928
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 91
+Fast Trade Level 91
 }
 
 STRING 16929
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 92
+Fast Trade Level 92
 }
 
 STRING 16930
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 93
+Fast Trade Level 93
 }
 
 STRING 16931
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 94
+Fast Trade Level 94
 }
 
 STRING 16932
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 95
+Fast Trade Level 95
 }
 
 STRING 16933
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 96
+Fast Trade Level 96
 }
 
 STRING 16934
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 97
+Fast Trade Level 97
 }
 
 STRING 16935
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 98
+Fast Trade Level 98
 }
 
 STRING 16936
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 99
+Fast Trade Level 99
 }
 
 STRING 16937
 // Ausbaustufen: R007 (Berserker-Kraft), Name (Name (gnam))
 {
-Schneller Handel Stufe 100
+Fast Trade Level 100
 }
 
 STRING 16938
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 1 erforschen
+Research Fast Trade Level 1
 }
 
 STRING 16939
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 2 erforschen
+Research Fast Trade Level 2
 }
 
 STRING 16940
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 3 erforschen
+Research Fast Trade Level 3
 }
 
 STRING 16941
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 4 erforschen
+Research Fast Trade Level 4
 }
 
 STRING 16942
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 5 erforschen
+Research Fast Trade Level 5
 }
 
 STRING 16943
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 6 erforschen
+Research Fast Trade Level 6
 }
 
 STRING 16944
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 7 erforschen
+Research Fast Trade Level 7
 }
 
 STRING 16945
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 8 erforschen
+Research Fast Trade Level 8
 }
 
 STRING 16946
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 9 erforschen
+Research Fast Trade Level 9
 }
 
 STRING 16947
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 10 erforschen
+Research Fast Trade Level 10
 }
 
 STRING 16948
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 11 erforschen
+Research Fast Trade Level 11
 }
 
 STRING 16949
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 12 erforschen
+Research Fast Trade Level 12
 }
 
 STRING 16950
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 13 erforschen
+Research Fast Trade Level 13
 }
 
 STRING 16951
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 14 erforschen
+Research Fast Trade Level 14
 }
 
 STRING 16952
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 15 erforschen
+Research Fast Trade Level 15
 }
 
 STRING 16953
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 16 erforschen
+Research Fast Trade Level 16
 }
 
 STRING 16954
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 17 erforschen
+Research Fast Trade Level 17
 }
 
 STRING 16955
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 18 erforschen
+Research Fast Trade Level 18
 }
 
 STRING 16956
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 19 erforschen
+Research Fast Trade Level 19
 }
 
 STRING 16957
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 20 erforschen
+Research Fast Trade Level 20
 }
 
 STRING 16958
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 21 erforschen
+Research Fast Trade Level 21
 }
 
 STRING 16959
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 22 erforschen
+Research Fast Trade Level 22
 }
 
 STRING 16960
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 23 erforschen
+Research Fast Trade Level 23
 }
 
 STRING 16961
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 24 erforschen
+Research Fast Trade Level 24
 }
 
 STRING 16962
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 25 erforschen
+Research Fast Trade Level 25
 }
 
 STRING 16963
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 26 erforschen
+Research Fast Trade Level 26
 }
 
 STRING 16964
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 27 erforschen
+Research Fast Trade Level 27
 }
 
 STRING 16965
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 28 erforschen
+Research Fast Trade Level 28
 }
 
 STRING 16966
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 29 erforschen
+Research Fast Trade Level 29
 }
 
 STRING 16967
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 30 erforschen
+Research Fast Trade Level 30
 }
 
 STRING 16968
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 31 erforschen
+Research Fast Trade Level 31
 }
 
 STRING 16969
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 32 erforschen
+Research Fast Trade Level 32
 }
 
 STRING 16970
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 33 erforschen
+Research Fast Trade Level 33
 }
 
 STRING 16971
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 34 erforschen
+Research Fast Trade Level 34
 }
 
 STRING 16972
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 35 erforschen
+Research Fast Trade Level 35
 }
 
 STRING 16973
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 36 erforschen
+Research Fast Trade Level 36
 }
 
 STRING 16974
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 37 erforschen
+Research Fast Trade Level 37
 }
 
 STRING 16975
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 38 erforschen
+Research Fast Trade Level 38
 }
 
 STRING 16976
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 39 erforschen
+Research Fast Trade Level 39
 }
 
 STRING 16977
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 40 erforschen
+Research Fast Trade Level 40
 }
 
 STRING 16978
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 41 erforschen
+Research Fast Trade Level 41
 }
 
 STRING 16979
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 42 erforschen
+Research Fast Trade Level 42
 }
 
 STRING 16980
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 43 erforschen
+Research Fast Trade Level 43
 }
 
 STRING 16981
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 44 erforschen
+Research Fast Trade Level 44
 }
 
 STRING 16982
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 45 erforschen
+Research Fast Trade Level 45
 }
 
 STRING 16983
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 46 erforschen
+Research Fast Trade Level 46
 }
 
 STRING 16984
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 47 erforschen
+Research Fast Trade Level 47
 }
 
 STRING 16985
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 48 erforschen
+Research Fast Trade Level 48
 }
 
 STRING 16986
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 49 erforschen
+Research Fast Trade Level 49
 }
 
 STRING 16987
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 50 erforschen
+Research Fast Trade Level 50
 }
 
 STRING 16988
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 51 erforschen
+Research Fast Trade Level 51
 }
 
 STRING 16989
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 52 erforschen
+Research Fast Trade Level 52
 }
 
 STRING 16990
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 53 erforschen
+Research Fast Trade Level 53
 }
 
 STRING 16991
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 54 erforschen
+Research Fast Trade Level 54
 }
 
 STRING 16992
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 55 erforschen
+Research Fast Trade Level 55
 }
 
 STRING 16993
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 56 erforschen
+Research Fast Trade Level 56
 }
 
 STRING 16994
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 57 erforschen
+Research Fast Trade Level 57
 }
 
 STRING 16995
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 58 erforschen
+Research Fast Trade Level 58
 }
 
 STRING 16996
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 59 erforschen
+Research Fast Trade Level 59
 }
 
 STRING 16997
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 60 erforschen
+Research Fast Trade Level 60
 }
 
 STRING 16998
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 61 erforschen
+Research Fast Trade Level 61
 }
 
 STRING 16999
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 62 erforschen
+Research Fast Trade Level 62
 }
 
 STRING 17000
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 63 erforschen
+Research Fast Trade Level 63
 }
 
 STRING 17001
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 64 erforschen
+Research Fast Trade Level 64
 }
 
 STRING 17002
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 65 erforschen
+Research Fast Trade Level 65
 }
 
 STRING 17003
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 66 erforschen
+Research Fast Trade Level 66
 }
 
 STRING 17004
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 67 erforschen
+Research Fast Trade Level 67
 }
 
 STRING 17005
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 68 erforschen
+Research Fast Trade Level 68
 }
 
 STRING 17006
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 69 erforschen
+Research Fast Trade Level 69
 }
 
 STRING 17007
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 70 erforschen
+Research Fast Trade Level 70
 }
 
 STRING 17008
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 71 erforschen
+Research Fast Trade Level 71
 }
 
 STRING 17009
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 72 erforschen
+Research Fast Trade Level 72
 }
 
 STRING 17010
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 73 erforschen
+Research Fast Trade Level 73
 }
 
 STRING 17011
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 74 erforschen
+Research Fast Trade Level 74
 }
 
 STRING 17012
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 75 erforschen
+Research Fast Trade Level 75
 }
 
 STRING 17013
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 76 erforschen
+Research Fast Trade Level 76
 }
 
 STRING 17014
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 77 erforschen
+Research Fast Trade Level 77
 }
 
 STRING 17015
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 78 erforschen
+Research Fast Trade Level 78
 }
 
 STRING 17016
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 79 erforschen
+Research Fast Trade Level 79
 }
 
 STRING 17017
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 80 erforschen
+Research Fast Trade Level 80
 }
 
 STRING 17018
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 81 erforschen
+Research Fast Trade Level 81
 }
 
 STRING 17019
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 82 erforschen
+Research Fast Trade Level 82
 }
 
 STRING 17020
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 83 erforschen
+Research Fast Trade Level 83
 }
 
 STRING 17021
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 84 erforschen
+Research Fast Trade Level 84
 }
 
 STRING 17022
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 85 erforschen
+Research Fast Trade Level 85
 }
 
 STRING 17023
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 86 erforschen
+Research Fast Trade Level 86
 }
 
 STRING 17024
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 87 erforschen
+Research Fast Trade Level 87
 }
 
 STRING 17025
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 88 erforschen
+Research Fast Trade Level 88
 }
 
 STRING 17026
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 89 erforschen
+Research Fast Trade Level 89
 }
 
 STRING 17027
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 90 erforschen
+Research Fast Trade Level 90
 }
 
 STRING 17028
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 91 erforschen
+Research Fast Trade Level 91
 }
 
 STRING 17029
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 92 erforschen
+Research Fast Trade Level 92
 }
 
 STRING 17030
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 93 erforschen
+Research Fast Trade Level 93
 }
 
 STRING 17031
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 94 erforschen
+Research Fast Trade Level 94
 }
 
 STRING 17032
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 95 erforschen
+Research Fast Trade Level 95
 }
 
 STRING 17033
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 96 erforschen
+Research Fast Trade Level 96
 }
 
 STRING 17034
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 97 erforschen
+Research Fast Trade Level 97
 }
 
 STRING 17035
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 98 erforschen
+Research Fast Trade Level 98
 }
 
 STRING 17036
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 99 erforschen
+Research Fast Trade Level 99
 }
 
 STRING 17037
 // Ausbaustufen: R007 (Berserker-Kraft), Tip (Tooltipp (gtp1))
 {
-Schnellen Handel Stufe 100 erforschen
+Research Fast Trade Level 100
 }
 
 STRING 17038
@@ -68085,7 +68085,7 @@ rmvx
 STRING 17139
 // Einheiten: n06O (Baldars Stand), Name (Name (unam))
 {
-Baldars Stand
+Baldar's Stand
 }
 
 STRING 17140
@@ -68175,7 +68175,7 @@ STRING 17154
 STRING 17155
 // Fähigkeiten: A1I0 (Björns Kurzbogen), Name (Name (anam))
 {
-Björns Kurzbogen
+Björn's Short Bow
 }
 
 STRING 17156
@@ -68199,13 +68199,13 @@ Haldars Stand
 STRING 17159
 // Gegenstände: I06N (Weihwasser), Name (Name (unam))
 {
-Weihwasser
+Holy Water
 }
 
 STRING 17160
 // Gegenstände: I06N (Weihwasser), Tip (Tooltipp - Einfach (utip))
 {
-Weihwasser kaufen
+Buy Holy Water
 }
 
 STRING 17161
@@ -68217,7 +68217,7 @@ Erhöht die Stufe des Zaubers so weit wie möglich.
 STRING 17170
 // Fähigkeiten: A1I3 (Maximale Zauberstufe), Name (Name (anam))
 {
-Maximale Zauberstufe
+Maximum Spell Level
 }
 
 STRING 17171
@@ -68247,7 +68247,7 @@ Pestkarren - Erlernen
 STRING 17175
 // Fähigkeiten: A1I2 (Zauber verlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verlernt den Zauber.
+Unlearns a spell.
 }
 
 STRING 17180
@@ -68259,7 +68259,7 @@ STRING 17180
 STRING 17184
 // Fähigkeiten: A1I4 (Zauber verlernen), Name (Name (anam))
 {
-Zauber verlernen
+Unlearn Spell
 }
 
 STRING 17185
@@ -68300,7 +68300,7 @@ Zauber verlernen
 
 STRING 17193
 {
-Informationen
+Information
 }
 
 STRING 17194
@@ -68384,31 +68384,31 @@ Elementarwesen
 STRING 17207
 // Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 1|r]
+Elemental Creatures [|cffffcc00Level 1|r]
 }
 
 STRING 17208
 // Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 2|r]
+Elemental Creatures [|cffffcc00Level 2|r]
 }
 
 STRING 17209
 // Fähigkeiten: A1IC (Elementarwesen - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 3|r]
+Elemental Creatures [|cffffcc00Level 3|r]
 }
 
 STRING 17210
 // Fähigkeiten: A1ID (Elementarwesen - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 4|r]
+Elemental Creatures [|cffffcc00Level 4|r]
 }
 
 STRING 17211
 // Fähigkeiten: A1IE (Elementarwesen - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 5|r]
+Elemental Creatures [|cffffcc00Level 5|r]
 }
 
 STRING 17212
@@ -68750,7 +68750,7 @@ Leprechaun
 STRING 17306
 // Fähigkeiten: A1IM (Leprechaun), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1|r|nDer Waldläufer ruft einen Leprechaun, der dem Waldläufer einen Topf voll Gold vom Ende seines Regenbogens bringt. Alle Spieler erhalten 500 Goldmünzen. Außerdem erzeugt der Lebrechaun eine Aura des Glücks, die <A1IO,Dur1> Sekunden lang die Rüstung um <A1IO,DataA1> erhöht und <A1IO,DataB1> Leben und <A1IO,DataC1> Mana bei Verbündeten regeneriert.
+|cffffcc00Ultimate Spell 1|r|nThe ranger calls a Leprechaun, which brings the ranger a pot of gold from the end of his rainbow. All players receive 500 gold coins. Besides the Leprechaun creates an aura of happiness that increases the armour by <A1IO,DataA1> for <A1IO,Dur1> seconds and regenerates <A1IO,DataB1> life and <A1IO,DataC1> mana of allies.
 }
 
 STRING 17307
@@ -68804,19 +68804,19 @@ Erzeugt eine trainierte Ratte.
 STRING 17315
 // Gegenstände: I05Y (Erz), Tip (Tooltipp - Einfach (utip))
 {
-Erz kaufen
+Buy Ore
 }
 
 STRING 17316
 // Gegenstände: I06O (Trainierte Ratte), Tip (Tooltipp - Einfach (utip))
 {
-Trainierte Ratte kaufen
+Buy Trained Rat
 }
 
 STRING 17317
 // Gegenstände: I06O (Trainierte Ratte), Name (Name (unam))
 {
-Trainierte Ratte
+Trained Rat
 }
 
 STRING 17318
@@ -68954,7 +68954,7 @@ STRING 17346
 STRING 17347
 // Zerstörbare Objekte: B00Y (Regenbogenbrücke), Name (Name (bnam))
 {
-Regenbogenbrücke
+Rainbow Bridge
 }
 
 STRING 17348
@@ -73592,7 +73592,7 @@ Parasit - Erlernen
 STRING 18531
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 16|r]
+Attribute Bonus [|cffffcc00Level 16|r]
 }
 
 STRING 18540
@@ -75428,7 +75428,7 @@ Erster Mann
 STRING 19279
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 17|r]
+Attribute Bonus [|cffffcc00Level 17|r]
 }
 
 STRING 19280
@@ -75440,7 +75440,7 @@ Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1
 STRING 19281
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 18|r]
+Attribute Bonus [|cffffcc00Level 18|r]
 }
 
 STRING 19282
@@ -75458,7 +75458,7 @@ Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1
 STRING 19284
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 19|r]
+Attribute Bonus [|cffffcc00Level 19|r]
 }
 
 STRING 19285
@@ -75974,7 +75974,7 @@ Blut eines Höllen-Dieners
 STRING 19371
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 20|r]
+Attribute Bonus [|cffffcc00Level 20|r]
 }
 
 STRING 19380
@@ -76016,7 +76016,7 @@ Verdammnis
 STRING 19386
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 21|r]
+Attribute Bonus [|cffffcc00Level 21|r]
 }
 
 STRING 19395
@@ -76040,7 +76040,7 @@ Verdammnis - Erlernen
 STRING 19400
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 22|r]
+Attribute Bonus [|cffffcc00Level 22|r]
 }
 
 STRING 19409
@@ -76064,19 +76064,19 @@ Verdammnis - Stufe 1
 STRING 19414
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 23|r]
+Attribute Bonus [|cffffcc00Level 23|r]
 }
 
 STRING 19415
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 24|r]
+Attribute Bonus [|cffffcc00Level 24|r]
 }
 
 STRING 19416
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 25|r]
+Attribute Bonus [|cffffcc00Level 25|r]
 }
 
 STRING 19417
@@ -76130,19 +76130,19 @@ Protect [|cffffcc00Level 1|r]
 STRING 19425
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 26|r]
+Attribute Bonus [|cffffcc00Level 26|r]
 }
 
 STRING 19426
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 27|r]
+Attribute Bonus [|cffffcc00Level 27|r]
 }
 
 STRING 19427
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 28|r]
+Attribute Bonus [|cffffcc00Level 28|r]
 }
 
 STRING 19428
@@ -76214,13 +76214,13 @@ Ruft für <A1CZ,Dur1> Sekunden einen Dämon herbei Der beschworene Dämon verbre
 STRING 19439
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 29|r]
+Attribute Bonus [|cffffcc00Level 29|r]
 }
 
 STRING 19440
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 30|r]
+Attribute Bonus [|cffffcc00Level 30|r]
 }
 
 STRING 19441
@@ -76280,31 +76280,31 @@ Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang
 STRING 19450
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 31|r]
+Attribute Bonus [|cffffcc00Level 31|r]
 }
 
 STRING 19451
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 32|r]
+Attribute Bonus [|cffffcc00Level 32|r]
 }
 
 STRING 19452
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 33|r]
+Attribute Bonus [|cffffcc00Level 33|r]
 }
 
 STRING 19453
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 34|r]
+Attribute Bonus [|cffffcc00Level 34|r]
 }
 
 STRING 19454
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 35|r]
+Attribute Bonus [|cffffcc00Level 35|r]
 }
 
 STRING 19455
@@ -76358,7 +76358,7 @@ Kraft der Schreine
 STRING 19463
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 36|r]
+Attribute Bonus [|cffffcc00Level 36|r]
 }
 
 STRING 19472
@@ -76382,7 +76382,7 @@ Kraft der Schreine - Erlernen
 STRING 19477
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 37|r]
+Attribute Bonus [|cffffcc00Level 37|r]
 }
 
 STRING 19486
@@ -76406,7 +76406,7 @@ Kraft der Schreine - Stufe 1
 STRING 19491
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 38|r]
+Attribute Bonus [|cffffcc00Level 38|r]
 }
 
 STRING 19500
@@ -76430,7 +76430,7 @@ Kraft der Schreine - Stufe 2
 STRING 19505
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 39|r]
+Attribute Bonus [|cffffcc00Level 39|r]
 }
 
 STRING 19514
@@ -76454,7 +76454,7 @@ Kraft der Schreine - Stufe 3
 STRING 19519
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 40|r]
+Attribute Bonus [|cffffcc00Level 40|r]
 }
 
 STRING 19528
@@ -76478,7 +76478,7 @@ Kraft der Schreine - Stufe 4
 STRING 19533
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 41|r]
+Attribute Bonus [|cffffcc00Level 41|r]
 }
 
 STRING 19542
@@ -76646,355 +76646,355 @@ Verbindet die Kraft aller erkundeten Wiederbelebungsschreine und fügt Gegnern i
 STRING 19571
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 42|r]
+Attribute Bonus [|cffffcc00Level 42|r]
 }
 
 STRING 19572
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 43|r]
+Attribute Bonus [|cffffcc00Level 43|r]
 }
 
 STRING 19573
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 44|r]
+Attribute Bonus [|cffffcc00Level 44|r]
 }
 
 STRING 19574
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 45|r]
+Attribute Bonus [|cffffcc00Level 45|r]
 }
 
 STRING 19575
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 46|r]
+Attribute Bonus [|cffffcc00Level 46|r]
 }
 
 STRING 19576
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 47|r]
+Attribute Bonus [|cffffcc00Level 47|r]
 }
 
 STRING 19577
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 48|r]
+Attribute Bonus [|cffffcc00Level 48|r]
 }
 
 STRING 19578
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 49|r]
+Attribute Bonus [|cffffcc00Level 49|r]
 }
 
 STRING 19579
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 50|r]
+Attribute Bonus [|cffffcc00Level 50|r]
 }
 
 STRING 19580
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 51|r]
+Attribute Bonus [|cffffcc00Level 51|r]
 }
 
 STRING 19581
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 52|r]
+Attribute Bonus [|cffffcc00Level 52|r]
 }
 
 STRING 19582
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 53|r]
+Attribute Bonus [|cffffcc00Level 53|r]
 }
 
 STRING 19583
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 54|r]
+Attribute Bonus [|cffffcc00Level 54|r]
 }
 
 STRING 19584
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 55|r]
+Attribute Bonus [|cffffcc00Level 55|r]
 }
 
 STRING 19585
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 56|r]
+Attribute Bonus [|cffffcc00Level 56|r]
 }
 
 STRING 19586
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 57|r]
+Attribute Bonus [|cffffcc00Level 57|r]
 }
 
 STRING 19587
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 58|r]
+Attribute Bonus [|cffffcc00Level 58|r]
 }
 
 STRING 19588
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 59|r]
+Attribute Bonus [|cffffcc00Level 59|r]
 }
 
 STRING 19589
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 60|r]
+Attribute Bonus [|cffffcc00Level 60|r]
 }
 
 STRING 19590
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 61|r]
+Attribute Bonus [|cffffcc00Level 61|r]
 }
 
 STRING 19591
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 62|r]
+Attribute Bonus [|cffffcc00Level 62|r]
 }
 
 STRING 19592
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 63|r]
+Attribute Bonus [|cffffcc00Level 63|r]
 }
 
 STRING 19593
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 64|r]
+Attribute Bonus [|cffffcc00Level 64|r]
 }
 
 STRING 19594
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 65|r]
+Attribute Bonus [|cffffcc00Level 65|r]
 }
 
 STRING 19595
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 66|r]
+Attribute Bonus [|cffffcc00Level 66|r]
 }
 
 STRING 19596
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 67|r]
+Attribute Bonus [|cffffcc00Level 67|r]
 }
 
 STRING 19597
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 68|r]
+Attribute Bonus [|cffffcc00Level 68|r]
 }
 
 STRING 19598
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 69|r]
+Attribute Bonus [|cffffcc00Level 69|r]
 }
 
 STRING 19599
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 70|r]
+Attribute Bonus [|cffffcc00Level 70|r]
 }
 
 STRING 19600
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 71|r]
+Attribute Bonus [|cffffcc00Level 71|r]
 }
 
 STRING 19601
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 72|r]
+Attribute Bonus [|cffffcc00Level 72|r]
 }
 
 STRING 19602
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 73|r]
+Attribute Bonus [|cffffcc00Level 73|r]
 }
 
 STRING 19603
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 74|r]
+Attribute Bonus [|cffffcc00Level 74|r]
 }
 
 STRING 19604
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 75|r]
+Attribute Bonus [|cffffcc00Level 75|r]
 }
 
 STRING 19605
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 76|r]
+Attribute Bonus [|cffffcc00Level 76|r]
 }
 
 STRING 19606
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 77|r]
+Attribute Bonus [|cffffcc00Level 77|r]
 }
 
 STRING 19607
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 78|r]
+Attribute Bonus [|cffffcc00Level 78|r]
 }
 
 STRING 19608
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 79|r]
+Attribute Bonus [|cffffcc00Level 79|r]
 }
 
 STRING 19609
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 80|r]
+Attribute Bonus [|cffffcc00Level 80|r]
 }
 
 STRING 19610
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 81|r]
+Attribute Bonus [|cffffcc00Level 81|r]
 }
 
 STRING 19611
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 82|r]
+Attribute Bonus [|cffffcc00Level 82|r]
 }
 
 STRING 19612
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 83|r]
+Attribute Bonus [|cffffcc00Level 83|r]
 }
 
 STRING 19613
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 84|r]
+Attribute Bonus [|cffffcc00Level 84|r]
 }
 
 STRING 19614
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 85|r]
+Attribute Bonus [|cffffcc00Level 85|r]
 }
 
 STRING 19615
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 86|r]
+Attribute Bonus [|cffffcc00Level 86|r]
 }
 
 STRING 19616
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 87|r]
+Attribute Bonus [|cffffcc00Level 87|r]
 }
 
 STRING 19617
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 88|r]
+Attribute Bonus [|cffffcc00Level 88|r]
 }
 
 STRING 19618
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 89|r]
+Attribute Bonus [|cffffcc00Level 89|r]
 }
 
 STRING 19619
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 90|r]
+Attribute Bonus [|cffffcc00Level 90|r]
 }
 
 STRING 19620
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 91|r]
+Attribute Bonus [|cffffcc00Level 91|r]
 }
 
 STRING 19621
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 92|r]
+Attribute Bonus [|cffffcc00Level 92|r]
 }
 
 STRING 19622
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 93|r]
+Attribute Bonus [|cffffcc00Level 93|r]
 }
 
 STRING 19623
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 94|r]
+Attribute Bonus [|cffffcc00Level 94|r]
 }
 
 STRING 19624
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 95|r]
+Attribute Bonus [|cffffcc00Level 95|r]
 }
 
 STRING 19625
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 96|r]
+Attribute Bonus [|cffffcc00Level 96|r]
 }
 
 STRING 19626
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 97|r]
+Attribute Bonus [|cffffcc00Level 97|r]
 }
 
 STRING 19627
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 98|r]
+Attribute Bonus [|cffffcc00Level 98|r]
 }
 
 STRING 19628
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 99|r]
+Attribute Bonus [|cffffcc00Level 99|r]
 }
 
 STRING 19629
 // Fähigkeiten: A1QX (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus [|cffffcc00Stufe 100|r]
+Attribute Bonus [|cffffcc00Level 100|r]
 }
 
 STRING 19630
@@ -80252,7 +80252,7 @@ Aufträge - Katzen für Brogo
 STRING 20208
 // Fähigkeiten: A1UT (Aufträge - Katzen für Brogo), Tip (Tooltipp - Normal (atp1))
 {
-Katzen für Brogo
+Cats for Brogo
 }
 
 STRING 20209
@@ -80330,7 +80330,7 @@ STRING 20220
 STRING 20221
 // Einheiten: n05Y (NPC-Laden), Tip (Tooltipp - Einfach (utip))
 {
-Gegenstände kaufen (|cffffcc00G|r)
+Buy Items (|cffffcc00G|r)
 }
 
 STRING 20222
@@ -80426,13 +80426,13 @@ Buy Letter
 STRING 20237
 // Gegenstände: I061 (Mutters Brief), Ubertip (Tooltipp - Erweitert (utub))
 {
-Mein Sohn, vergiss nicht deine Familie und wie viel du uns bedeutest. Doch bedenke, wir brauchen Goldmünzen, um den Hof halten zu können.|nMutter
+My son, do not forget your family and how much you mean to us. But remember, we need gold coins to hold the farm.|nMother
 }
 
 STRING 20238
 // Gegenstände: I072 (Helm des Hauptmanns), Description (Beschreibung (ides))
 {
-Ein eiserner starker Helm.
+An iron strong helmet.
 }
 
 STRING 20239
