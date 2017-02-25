@@ -9810,7 +9810,7 @@ Stellt bei Benutzung <A1VX,DataA1> Leben und <A1VW,DataA1> Mana wieder her.
 STRING 1638
 // Gegenstände: I07T (Schneeblume), Name (Name (unam))
 {
-Schneeblume
+Snow Flower
 }
 
 STRING 1639
@@ -9882,7 +9882,7 @@ Rune der Macht kaufen
 STRING 1650
 // Gegenstände: I07U (Rune der Macht), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht alle drei Attribute um 2.
+Increases all three attributes by 2.
 }
 
 STRING 1651
@@ -9906,7 +9906,7 @@ STRING 1653
 STRING 1654
 // Fähigkeiten: A1VX (Schneeblume), Name (Name (anam))
 {
-Schneeblume
+Snow Flower
 }
 
 STRING 1655
@@ -49645,7 +49645,7 @@ Verstärkt die Rüstung um <A18J,DataA1>.
 STRING 13522
 // Gegenstände: I05E (Nordischer Kriegshelm), Description (Beschreibung (ides))
 {
-Ein eiserner starker Helm.
+An iron strong helmet.
 }
 
 STRING 13523
@@ -55567,595 +55567,595 @@ Improves the fighting ability of the building by an increase of hitpoints and ad
 STRING 14522
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14523
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14524
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14525
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14526
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14527
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14528
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14529
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14530
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14531
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14532
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14533
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14534
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14535
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14536
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14537
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14538
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14539
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14540
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14541
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14542
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14543
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14544
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14545
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14546
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14547
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14548
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14549
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14550
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14551
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14552
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14553
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14554
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14555
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14556
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14557
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14558
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14559
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14560
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14561
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14562
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14563
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14564
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14565
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14566
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14567
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14568
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14569
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14570
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14571
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14572
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14573
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14574
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14575
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14576
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14577
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14578
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14579
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14580
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14581
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14582
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14583
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14584
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14585
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14586
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14587
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14588
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14589
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14590
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14591
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14592
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14593
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14594
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14595
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14596
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14597
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14598
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14599
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14600
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14601
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14602
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14603
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14604
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14605
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14606
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14607
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14608
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14609
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14610
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14611
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14612
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14613
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14614
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14615
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14616
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14617
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14618
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14619
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14620
 // Ausbaustufen: R004 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert die Kampffähigkeit des Gebäudes durch eine Trefferpunkt-Erhöhung und einen zusätzlichen Angriffsschaden.
+Improves the fighting ability of the building by an increase of hitpoints and additional attack damage.
 }
 
 STRING 14621
@@ -68133,7 +68133,7 @@ Erlaubt das Entzünden eines mächtigen Feuerregens.
 STRING 17147
 // Gegenstände: I06M (Björns Kurzbogen), Name (Name (unam))
 {
-Björns Kurzbogen
+Björn's Short Bow
 }
 
 STRING 17148
@@ -68187,7 +68187,7 @@ STRING 17156
 STRING 17157
 // Fähigkeiten: A1HZ (Björns Kurzbogen), Name (Name (anam))
 {
-Björns Kurzbogen
+Björn's Short Bow
 }
 
 STRING 17158
@@ -68229,7 +68229,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 17172
 // Fähigkeiten: A1I1 (Maximale Zauberstufe), Tip (Tooltipp - Normal (atp1))
 {
-Maximale Zauberstufe
+Maximum Spell Level
 }
 
 STRING 17173
@@ -68271,7 +68271,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 17186
 // Fähigkeiten: A1I2 (Zauber verlernen), Tip (Tooltipp - Normal (atp1))
 {
-Zauber verlernen
+Unlearn Spell
 }
 
 STRING 17189
@@ -68283,7 +68283,7 @@ STRING 17189
 STRING 17190
 // Fähigkeiten: A1I1 (Maximale Zauberstufe), Name (Name (anam))
 {
-Maximale Zauberstufe
+Maximum Spell Level
 }
 
 STRING 17191
@@ -68295,7 +68295,7 @@ STRING 17191
 STRING 17192
 // Fähigkeiten: A1I2 (Zauber verlernen), Name (Name (anam))
 {
-Zauber verlernen
+Unlearn Spell
 }
 
 STRING 17193
@@ -68474,7 +68474,7 @@ Herbal Cure
 STRING 17227
 // Fähigkeiten: A1IA (Elementarwesen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 1|r]
+Elemental Creatures [|cffffcc00Level 1|r]
 }
 
 STRING 17228
@@ -68510,7 +68510,7 @@ Dämonendiener erlernen
 STRING 17241
 // Fähigkeiten: A1IB (Elementarwesen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 2|r]
+Elemental Creatures [|cffffcc00Level 2|r]
 }
 
 STRING 17242
@@ -68558,7 +68558,7 @@ Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodi
 STRING 17255
 // Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 3|r]
+Elemental Creatures [|cffffcc00Level 3|r]
 }
 
 STRING 17257
@@ -68606,7 +68606,7 @@ Dryadenquelle - Erlernen
 STRING 17269
 // Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 4|r]
+Elemental Creatures [|cffffcc00Level 4|r]
 }
 
 STRING 17270
@@ -68642,7 +68642,7 @@ Entzünden [|cffffcc00Stufe 5|r]
 STRING 17283
 // Fähigkeiten: A1I8 (Elementarwesen), Tip (Tooltipp - Normal (atp1))
 {
-Elementarwesen [|cffffcc00Stufe 5|r]
+Elemental Creatures [|cffffcc00Level 5|r]
 }
 
 STRING 17284
@@ -68726,7 +68726,7 @@ STRING 17301
 STRING 17302
 // Einheiten: h02R (Regenbogenbrücke), Name (Name (unam))
 {
-Regenbogenbrücke
+Rainbow Bridge
 }
 
 STRING 17303
@@ -68792,7 +68792,7 @@ Erhöht die Schadenswirkung einer angewählten befreundeten Einheit um <A15W,Dat
 STRING 17313
 // Einheiten: n06T (Trainierte Ratte), Name (Name (unam))
 {
-Trainierte Ratte
+Trained Rat
 }
 
 STRING 17314
@@ -68822,7 +68822,7 @@ Trained Rat
 STRING 17318
 // Fähigkeiten: A1IL (Trainierte Ratte), Name (Name (anam))
 {
-Trainierte Ratte
+Trained Rat
 }
 
 STRING 17319
