@@ -54067,7 +54067,7 @@ Verbessert den Angriffsschaden des Gebäudes.
 STRING 14272
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Imporves the attack damage of the building.
+Improves the attack damage of the building.
 }
 
 STRING 14273
@@ -70196,7 +70196,7 @@ D
 STRING 17565
 // Fähigkeiten: A0BQ (Opfer), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+Summons a healing source for <A0D3,Dur1> seconds which heals life per second of allies in range. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A0QX,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A0QX,DataA1,%> % of the life per second.
 }
 
 STRING 17566
@@ -70214,61 +70214,61 @@ Y
 STRING 17568
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 2|r] (|cffffcc00E|r)
+Crow Form [|cffffcc00Level 2|r] (|cffffcc00E|r)
 }
 
 STRING 17569
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 3|r] (|cffffcc00E|r)
+Crow Form [|cffffcc00Level 3|r] (|cffffcc00E|r)
 }
 
 STRING 17570
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 4|r] (|cffffcc00E|r)
+Crow Form [|cffffcc00Level 4|r] (|cffffcc00E|r)
 }
 
 STRING 17571
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 5|r] (|cffffcc00E|r)
+Crow Form [|cffffcc00Level 5|r] (|cffffcc00E|r)
 }
 
 STRING 17572
 // Fähigkeiten: A13U (Krähengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Krähengestalt [|cffffcc00Stufe 1|r] (|cffffcc00E|r)
+Crow Form [|cffffcc00Level 1|r] (|cffffcc00E|r)
 }
 
 STRING 17573
 // Fähigkeiten: A13X (Bärengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Bärengestalt [|cffffcc00Stufe 2|r] (|cffffcc00G|r)
+Bear Form [|cffffcc00Level 2|r] (|cffffcc00G|r)
 }
 
 STRING 17574
 // Fähigkeiten: A13X (Bärengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Bärengestalt [|cffffcc00Stufe 3|r] (|cffffcc00G|r)
+Bear Form [|cffffcc00Level 3|r] (|cffffcc00G|r)
 }
 
 STRING 17575
 // Fähigkeiten: A13X (Bärengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Bärengestalt [|cffffcc00Stufe 4|r] (|cffffcc00G|r)
+Bear Form [|cffffcc00Level 4|r] (|cffffcc00G|r)
 }
 
 STRING 17576
 // Fähigkeiten: A13X (Bärengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Bärengestalt [|cffffcc00Stufe 5|r] (|cffffcc00G|r)
+Bear Form [|cffffcc00Level 5|r] (|cffffcc00G|r)
 }
 
 STRING 17577
 // Fähigkeiten: A13X (Bärengestalt), Tip (Tooltipp - Normal (atp1))
 {
-Bärengestalt [|cffffcc00Stufe 1|r] (|cffffcc00G|r)
+Bear Form [|cffffcc00Level 1|r] (|cffffcc00G|r)
 }
 
 STRING 17578
@@ -70292,157 +70292,157 @@ E
 STRING 17581
 // Fähigkeiten: A073 (Selbstlosigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 2|r] (|cffffcc00U|r)
+Selflessness [|cffffcc00Level 2|r] (|cffffcc00U|r)
 }
 
 STRING 17582
 // Fähigkeiten: A073 (Selbstlosigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r] (|cffffcc00U|r)
+Selflessness [|cffffcc00Level 3|r] (|cffffcc00U|r)
 }
 
 STRING 17583
 // Fähigkeiten: A073 (Selbstlosigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 4|r] (|cffffcc00U|r)
+Selflessness [|cffffcc00Level 4|r] (|cffffcc00U|r)
 }
 
 STRING 17584
 // Fähigkeiten: A073 (Selbstlosigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 5|r] (|cffffcc00U|r)
+Selflessness [|cffffcc00Level 5|r] (|cffffcc00U|r)
 }
 
 STRING 17585
 // Fähigkeiten: A073 (Selbstlosigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 1|r] (|cffffcc00U|r)
+Selflessness [|cffffcc00Level 1|r] (|cffffcc00U|r)
 }
 
 STRING 17586
 // Fähigkeiten: A027 (Stich), Tip (Tooltipp - Normal (atp1))
 {
-Stich [|cffffcc00Stufe 2|r] (|cffffcc00W|r)
+Stab [|cffffcc00Level 2|r] (|cffffcc00W|r)
 }
 
 STRING 17587
 // Fähigkeiten: A027 (Stich), Tip (Tooltipp - Normal (atp1))
 {
-Stich [|cffffcc00Stufe 3|r] (|cffffcc00W|r)
+Stab [|cffffcc00Level 3|r] (|cffffcc00W|r)
 }
 
 STRING 17588
 // Fähigkeiten: A027 (Stich), Tip (Tooltipp - Normal (atp1))
 {
-Stich [|cffffcc00Stufe 4|r] (|cffffcc00W|r)
+Stab [|cffffcc00Level 4|r] (|cffffcc00W|r)
 }
 
 STRING 17589
 // Fähigkeiten: A027 (Stich), Tip (Tooltipp - Normal (atp1))
 {
-Stich [|cffffcc00Stufe 5|r] (|cffffcc00W|r)
+Stab [|cffffcc00Level 5|r] (|cffffcc00W|r)
 }
 
 STRING 17590
 // Fähigkeiten: A027 (Stich), Tip (Tooltipp - Normal (atp1))
 {
-Stich [|cffffcc00Stufe 1|r] (|cffffcc00W|r)
+Stab [|cffffcc00Level 1|r] (|cffffcc00W|r)
 }
 
 STRING 17591
 // Fähigkeiten: A028 (Standfestigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Standfestigkeit [|cffffcc00Stufe 2|r] (|cffffcc00E|r)
+Stability [|cffffcc00Level 2|r] (|cffffcc00E|r)
 }
 
 STRING 17592
 // Fähigkeiten: A028 (Standfestigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Standfestigkeit [|cffffcc00Stufe 3|r] (|cffffcc00E|r)
+Stability [|cffffcc00Level 3|r] (|cffffcc00E|r)
 }
 
 STRING 17593
 // Fähigkeiten: A028 (Standfestigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Standfestigkeit [|cffffcc00Stufe 4|r] (|cffffcc00E|r)
+Stability [|cffffcc00Level 4|r] (|cffffcc00E|r)
 }
 
 STRING 17594
 // Fähigkeiten: A028 (Standfestigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Standfestigkeit [|cffffcc00Stufe 5|r] (|cffffcc00E|r)
+Stability [|cffffcc00Level 5|r] (|cffffcc00E|r)
 }
 
 STRING 17595
 // Fähigkeiten: A028 (Standfestigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Standfestigkeit [|cffffcc00Stufe 1|r] (|cffffcc00E|r)
+Stability [|cffffcc00Level 1|r] (|cffffcc00E|r)
 }
 
 STRING 17596
 // Fähigkeiten: A0F9 (Waldfestung), Tip (Tooltipp - Normal (atp1))
 {
-Waldfestung [|cffffcc00Stufe 1|r] beschwören (|cffffcc00X|r)
+Summon Forest Fortress [|cffffcc00Level 1|r] (|cffffcc00X|r)
 }
 
 STRING 17597
 // Fähigkeiten: A02O (Verspotten), Tip (Tooltipp - Normal (atp1))
 {
-Verspotten [|cffffcc00Stufe 2|r] (|cffffcc00I|r)
+Mock [|cffffcc00Level 2|r] (|cffffcc00I|r)
 }
 
 STRING 17598
 // Fähigkeiten: A02O (Verspotten), Tip (Tooltipp - Normal (atp1))
 {
-Verspotten [|cffffcc00Stufe 3|r] (|cffffcc00I|r)
+Mock [|cffffcc00Level 3|r] (|cffffcc00I|r)
 }
 
 STRING 17599
 // Fähigkeiten: A02O (Verspotten), Tip (Tooltipp - Normal (atp1))
 {
-Verspotten [|cffffcc00Stufe 4|r] (|cffffcc00I|r)
+Mock [|cffffcc00Level 4|r] (|cffffcc00I|r)
 }
 
 STRING 17600
 // Fähigkeiten: A02O (Verspotten), Tip (Tooltipp - Normal (atp1))
 {
-Verspotten [|cffffcc00Stufe 5|r] (|cffffcc00I|r)
+Mock [|cffffcc00Level 5|r] (|cffffcc00I|r)
 }
 
 STRING 17601
 // Fähigkeiten: A02O (Verspotten), Tip (Tooltipp - Normal (atp1))
 {
-Verspotten [|cffffcc00Stufe 1|r] (|cffffcc00I|r)
+Mock [|cffffcc00Level 1|r] (|cffffcc00I|r)
 }
 
 STRING 17602
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 2|r] (|cffffcc00T|r)
+Rush [|cffffcc00Level 2|r] (|cffffcc00T|r)
 }
 
 STRING 17603
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 3|r] (|cffffcc00T|r)
+Rush [|cffffcc00Level 3|r] (|cffffcc00T|r)
 }
 
 STRING 17604
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 4|r] (|cffffcc00T|r)
+Rush [|cffffcc00Level 4|r] (|cffffcc00T|r)
 }
 
 STRING 17605
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 5|r] (|cffffcc00T|r)
+Rush [|cffffcc00Level 5|r] (|cffffcc00T|r)
 }
 
 STRING 17606
 // Fähigkeiten: A01Q (Anstürmen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen [|cffffcc00Stufe 1|r] (|cffffcc00T|r)
+Rush [|cffffcc00Level 1|r] (|cffffcc00T|r)
 }
 
 STRING 17607
@@ -70466,13 +70466,13 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 STRING 17610
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 1|r] aktivieren (|cffffcc00D|r)
+Enable Rigidity [|cffffcc00Level 1|r] (|cffffcc00D|r)
 }
 
 STRING 17611
 // Fähigkeiten: A0JZ (Unbeugsamkeit), Untip (Tooltipp - Ausschalten (aut1))
 {
-Unbeugsamkeit [|cffffcc00Stufe 1|r] deaktivieren (|cffffcc00D|r)
+Disable Rigidity [|cffffcc00Level 1|r] (|cffffcc00D|r)
 }
 
 STRING 17612
@@ -70694,31 +70694,31 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 STRING 17648
 // Fähigkeiten: A1A3 (Bestehlen), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen [|cffffcc00Stufe 2|r] (|cffffcc00I|r)
+Steal [|cffffcc00Level 2|r] (|cffffcc00I|r)
 }
 
 STRING 17649
 // Fähigkeiten: A1A3 (Bestehlen), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen [|cffffcc00Stufe 3|r] (|cffffcc00I|r)
+Steal [|cffffcc00Level 3|r] (|cffffcc00I|r)
 }
 
 STRING 17650
 // Fähigkeiten: A1A3 (Bestehlen), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen [|cffffcc00Stufe 4|r] (|cffffcc00I|r)
+Steal [|cffffcc00Level 4|r] (|cffffcc00I|r)
 }
 
 STRING 17651
 // Fähigkeiten: A1A3 (Bestehlen), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen [|cffffcc00Stufe 5|r] (|cffffcc00I|r)
+Steal [|cffffcc00Level 5|r] (|cffffcc00I|r)
 }
 
 STRING 17652
 // Fähigkeiten: A1A3 (Bestehlen), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen [|cffffcc00Stufe 1|r] (|cffffcc00I|r)
+Steal [|cffffcc00Level 1|r] (|cffffcc00I|r)
 }
 
 STRING 17653
@@ -70766,31 +70766,31 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 STRING 17660
 // Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
 {
-Auge um Auge [|cffffcc00Stufe 2|r] (|cffffcc00E|r)
+An Eye for an Eye [|cffffcc00Level 2|r] (|cffffcc00E|r)
 }
 
 STRING 17661
 // Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
 {
-Auge um Auge [|cffffcc00Stufe 3|r] (|cffffcc00E|r)
+An Eye for an Eye [|cffffcc00Level 3|r] (|cffffcc00E|r)
 }
 
 STRING 17662
 // Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
 {
-Auge um Auge [|cffffcc00Stufe 4|r] (|cffffcc00E|r)
+An Eye for an Eye [|cffffcc00Level 4|r] (|cffffcc00E|r)
 }
 
 STRING 17663
 // Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
 {
-Auge um Auge [|cffffcc00Stufe 5|r] (|cffffcc00E|r)
+An Eye for an Eye [|cffffcc00Level 5|r] (|cffffcc00E|r)
 }
 
 STRING 17664
 // Fähigkeiten: A1G8 (Auge um Auge), Tip (Tooltipp - Normal (atp1))
 {
-Auge um Auge [|cffffcc00Stufe 1|r] (|cffffcc00E|r)
+An Eye for an Eye [|cffffcc00Level 1|r] (|cffffcc00E|r)
 }
 
 STRING 17665
@@ -70802,31 +70802,31 @@ E
 STRING 17666
 // Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 2|r] (|cffffcc00D|r)
+Jump Attack [|cffffcc00Level 2|r] (|cffffcc00D|r)
 }
 
 STRING 17667
 // Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 3|r] (|cffffcc00D|r)
+Jump Attack [|cffffcc00Level 3|r] (|cffffcc00D|r)
 }
 
 STRING 17668
 // Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 4|r] (|cffffcc00D|r)
+Jump Attack [|cffffcc00Level 4|r] (|cffffcc00D|r)
 }
 
 STRING 17669
 // Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 5|r] (|cffffcc00D|r)
+Jump Attack [|cffffcc00Level 5|r] (|cffffcc00D|r)
 }
 
 STRING 17670
 // Fähigkeiten: A1GK (Sprungattacke), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 1|r] (|cffffcc00D|r)
+Jump Attack [|cffffcc00Level 1|r] (|cffffcc00D|r)
 }
 
 STRING 17671
